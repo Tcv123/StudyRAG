@@ -1666,10 +1666,22 @@ function updateTimerDisplay() {
 }
 
 function timeUp() {
-  // Mark remaining questions as missed
+  // Capture current Q if user was mid-answer
+  if (results.length === qIndex && qIndex < questions.length) {
+    const q = questions[qIndex];
+    const input = document.getElementById('writtenInput');
+    const userAnswer = input ? input.value : '';
+    results.push({
+      marks: q.marks, earned: 0, level: 'miss',
+      question: q.q, markScheme: q.markScheme, userAnswer,
+    });
+  }
   while (results.length < questions.length) {
     const q = questions[results.length];
-    results.push({ marks: q.marks, earned: 0, level: 'miss' });
+    results.push({
+      marks: q.marks, earned: 0, level: 'miss',
+      question: q.q, markScheme: q.markScheme, userAnswer: '',
+    });
   }
   renderResults(true);
 }
@@ -1677,10 +1689,21 @@ function timeUp() {
 function confirmQuit() {
   if (confirm('End this practice early? Your progress so far will be shown.')) {
     stopTimer();
-    // Mark remaining as unanswered
+    if (results.length === qIndex && qIndex < questions.length) {
+      const q = questions[qIndex];
+      const input = document.getElementById('writtenInput');
+      const userAnswer = input ? input.value : '';
+      results.push({
+        marks: q.marks, earned: 0, level: 'skip',
+        question: q.q, markScheme: q.markScheme, userAnswer,
+      });
+    }
     while (results.length < questions.length) {
       const q = questions[results.length];
-      results.push({ marks: q.marks, earned: 0, level: 'skip' });
+      results.push({
+        marks: q.marks, earned: 0, level: 'skip',
+        question: q.q, markScheme: q.markScheme, userAnswer: '',
+      });
     }
     renderResults(false);
   }
@@ -1925,7 +1948,10 @@ function revealMarkScheme() {
   if (answerEmpty) {
     const q = questions[qIndex];
     const totalMarks = q.marks || 0;
-    results.push({ marks: totalMarks, earned: 0, level: 'miss' });
+    results.push({
+      marks: totalMarks, earned: 0, level: 'miss',
+      question: q.q, markScheme: q.markScheme, userAnswer: '',
+    });
     document.querySelectorAll('.self-mark-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
     const row = document.querySelector('.self-mark-row');
     if (row) {
@@ -1940,7 +1966,13 @@ function revealMarkScheme() {
 
 function selfMark(level, totalMarks) {
   const earned = level === 'full' ? totalMarks : level === 'partial' ? Math.ceil(totalMarks / 2) : 0;
-  results.push({ marks: totalMarks, earned, level });
+  const q = questions[qIndex];
+  const input = document.getElementById('writtenInput');
+  const userAnswer = input ? input.value : '';
+  results.push({
+    marks: totalMarks, earned, level,
+    question: q.q, markScheme: q.markScheme, userAnswer,
+  });
 
   document.querySelectorAll('.self-mark-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
   document.getElementById('btnNext').classList.add('show');
@@ -1976,6 +2008,14 @@ function renderResults(timedOut) {
     const subject = parts[0];
     const board = parts.slice(1).join('_');
     const data = getPracticeData(activeTopic);
+    const details = results.map(r => ({
+      question: r.question || '',
+      userAnswer: r.userAnswer || '',
+      markScheme: r.markScheme || '',
+      marks: r.marks,
+      earned: r.earned,
+      level: r.level,
+    }));
     supabaseClient.from('practice_attempts').insert({
       user_id: currentUser.id,
       subject,
@@ -1989,6 +2029,7 @@ function renderResults(timedOut) {
       answered,
       time_used_sec: timeUsed,
       timed_out: !!timedOut,
+      details,
     }).then(({ error }) => {
       if (error) console.warn('Practice attempt save failed', error);
     });

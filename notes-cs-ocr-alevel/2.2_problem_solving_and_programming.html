@@ -1,0 +1,1105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR 2.2 — Problem Solving and Programming</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #d2e5f3;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#1B2D4F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#5BADCF;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>2.2 Problem Solving and Programming</h1>
+<p class="spec-ref">OCR A-Level Computer Science (H446) &mdash; Component 02 (Algorithms and Programming)</p>
+
+<p>This topic links the theory of computational thinking (2.1) to the practice of writing, structuring, debugging and reasoning about code. It has two strands: <strong>2.2.1 Programming techniques</strong> (the tools a programmer uses: constructs, scope, subroutines, recursion, OOP, IDEs) and <strong>2.2.2 Computational methods</strong> (the strategies used to tackle problems: divide &amp; conquer, backtracking, heuristics, data mining, pipelining, visualisation). Depth and clear terminology matter &mdash; examiners reward precise definitions and worked examples.</p>
+
+<h2>2.2.1 Programming Techniques</h2>
+
+<h3>Programming Constructs</h3>
+
+<p>All imperative programs can be built from three fundamental constructs, identified by B&ouml;hm and Jacopini (1966): <strong>sequence</strong>, <strong>selection (branching)</strong> and <strong>iteration</strong>. These are sufficient (in a Turing-complete sense) to express any computable algorithm.</p>
+
+<div class="definition">
+    A <strong>programming construct</strong> is a syntactic structure that controls the flow of execution. The three core constructs are <strong>sequence</strong> (one statement after another), <strong>selection</strong> (choose between paths based on a condition), and <strong>iteration</strong> (repeat a block while a condition holds or for a fixed count).
+</div>
+
+<h3>Sequence</h3>
+
+<p><strong>Sequence</strong> is the default: statements execute top-to-bottom in the order written. Each statement runs exactly once, and the effects of earlier statements are visible to later ones. It is so obvious that beginners often overlook it, but reasoning about sequence (what state exists <em>after</em> each line) is the mental skill at the heart of structured programming. In multi-threaded code, sequence within one thread is preserved but interleaving between threads is not &mdash; that is a whole further topic (see 1.1 multi-core and later on concurrency).</p>
+
+<pre>total = 0
+total = total + price      # runs first
+total = total + tax        # runs second, sees updated 'total'
+print(total)               # runs third</pre>
+
+<h3>Selection / Branching</h3>
+
+<p>Selection chooses one of several execution paths depending on a Boolean condition.</p>
+
+<ul>
+    <li><strong><code>if</code> / <code>else if</code> (elif) / <code>else</code></strong> &mdash; the general form. Conditions are tested in order; the first true branch runs and the rest are skipped.</li>
+    <li><strong><code>switch</code> / <code>case</code></strong> &mdash; selects a branch based on the value of a single expression. Often compiled to a more efficient <em>jump table</em> than equivalent <code>if/elif</code> chains.</li>
+</ul>
+
+<pre>IF score &gt;= 70 THEN
+    grade = "A"
+ELSE IF score &gt;= 60 THEN
+    grade = "B"
+ELSE IF score &gt;= 50 THEN
+    grade = "C"
+ELSE
+    grade = "U"
+ENDIF
+
+SWITCH day:
+    CASE "Mon": open = 9
+    CASE "Sat", "Sun": open = 10
+    DEFAULT:     open = 8
+ENDSWITCH</pre>
+
+<div class="exam-tip">In pseudocode, examiners accept both <code>ELSEIF</code> and <code>ELSE IF</code>. Always close with <code>ENDIF</code> / <code>ENDSWITCH</code> to avoid ambiguity in nested conditionals.</div>
+
+<h3>Iteration</h3>
+
+<p>Iteration repeats a block of statements. Two main forms:</p>
+
+<table>
+    <tr><th>Type</th><th>Pseudocode</th><th>Use when...</th></tr>
+    <tr><td><strong>Count-controlled</strong> (<code>for</code>)</td><td><code>FOR i &larr; 0 TO 9 ... NEXT i</code></td><td>Number of iterations known in advance (e.g. process every element of an array).</td></tr>
+    <tr><td><strong>Condition-controlled pre-test</strong> (<code>while</code>)</td><td><code>WHILE cond DO ... ENDWHILE</code></td><td>May execute zero times; condition tested before entry.</td></tr>
+    <tr><td><strong>Condition-controlled post-test</strong> (<code>do-while</code> / <code>repeat-until</code>)</td><td><code>REPEAT ... UNTIL cond</code></td><td>Must execute at least once (e.g. input validation).</td></tr>
+</table>
+
+<pre># Count-controlled
+FOR i &larr; 1 TO 10
+    OUTPUT i * i
+NEXT i
+
+# Pre-test
+WHILE NOT eof(file) DO
+    line &larr; readLine(file)
+    process(line)
+ENDWHILE
+
+# Post-test &mdash; guarantees at least one prompt
+REPEAT
+    OUTPUT "Enter 1-10:"
+    n &larr; INPUT
+UNTIL n &gt;= 1 AND n &lt;= 10</pre>
+
+<p><strong>Break and continue.</strong> <code>break</code> exits the innermost loop immediately; <code>continue</code> (sometimes <code>next</code>) skips the rest of the current iteration and tests the loop condition again. Overuse can hurt readability but they are invaluable for early-exit searches.</p>
+
+<p><strong>Nested loops.</strong> A loop inside another loop. If the outer runs <em>m</em> times and the inner <em>n</em>, the inner body runs <em>m &times; n</em> times &mdash; this quickly leads to O(n&sup2;) or worse complexity. Common in grid/matrix work.</p>
+
+<pre>FOR row &larr; 0 TO 9
+    FOR col &larr; 0 TO 9
+        IF grid[row][col] = target THEN
+            OUTPUT row, col
+            BREAK              # exits inner loop only
+        ENDIF
+    NEXT col
+NEXT row</pre>
+
+<h3>Variables, Constants and Assignment</h3>
+
+<div class="definition">
+    A <strong>variable</strong> is a named location in memory whose value can change at run time. A <strong>constant</strong> is a named value fixed at declaration and cannot be reassigned. <strong>Assignment</strong> stores a value in a variable, written <code>x &larr; expr</code> in pseudocode or <code>x = expr</code> in most languages.
+</div>
+
+<p>Using constants (<code>PI = 3.14159</code>, <code>MAX_USERS = 500</code>) improves readability and maintainability: changing a single declaration updates every use, and the compiler prevents accidental modification.</p>
+
+<h3>Scope and Lifetime</h3>
+
+<div class="definition">
+    The <strong>scope</strong> of an identifier is the region of source code where that name is visible and usable. The <strong>lifetime</strong> of a variable is the period during execution when memory is allocated for it.
+</div>
+
+<table>
+    <tr><th>Kind</th><th>Scope</th><th>Lifetime</th><th>Notes</th></tr>
+    <tr><td><strong>Global</strong></td><td>Whole program (every module/function)</td><td>Entire program execution</td><td>Easy to read/write from anywhere &mdash; but creates hidden dependencies and makes testing hard.</td></tr>
+    <tr><td><strong>Local</strong></td><td>Only inside the block/subroutine where declared</td><td>From entry to exit of that call (on the call stack)</td><td>Safer, supports re-entrancy and recursion; different calls get independent copies.</td></tr>
+    <tr><td><strong>Static local</strong></td><td>Local to a function</td><td>Entire program execution &mdash; retains value between calls</td><td>Less common at A-Level but mentioned in some textbooks.</td></tr>
+</table>
+
+<div class="exam-tip">A classic exam question gives a snippet with a variable named the same inside and outside a function and asks what is printed. Answer: the local variable <em>shadows</em> the global inside the function, but outside the function the global is unchanged (unless <code>global</code>/<code>nonlocal</code> is used in Python, or reference semantics in other languages).</div>
+
+<h3>Procedures vs Functions</h3>
+
+<div class="definition">
+    A <strong>procedure</strong> (sometimes called a <em>subroutine</em> or <em>void function</em>) is a named block of code that performs an action but does not return a value. A <strong>function</strong> is a named block that computes and <strong>returns</strong> a value, and ideally has no side effects.
+</div>
+
+<table>
+    <tr><th>Aspect</th><th>Procedure</th><th>Function</th></tr>
+    <tr><td>Returns value?</td><td>No (or implicit nothing/void)</td><td>Yes &mdash; explicit <code>return</code></td></tr>
+    <tr><td>Called as...</td><td>A statement: <code>drawLine(x,y)</code></td><td>Part of an expression: <code>a = sqrt(n) + 1</code></td></tr>
+    <tr><td>Typical purpose</td><td>Perform I/O, mutate state, orchestrate other calls</td><td>Compute a derived value from inputs</td></tr>
+    <tr><td>Side effects</td><td>Usually &mdash; that&rsquo;s the point</td><td>Ideally none (pure function)</td></tr>
+</table>
+
+<h3>Parameters: By-Value vs By-Reference</h3>
+
+<div class="definition">
+    <strong>Pass-by-value</strong>: the called routine receives a <em>copy</em> of the argument. Changes to the parameter do not affect the caller&rsquo;s variable. <strong>Pass-by-reference</strong>: the called routine receives a reference (address) to the caller&rsquo;s variable; assignments propagate back to the caller.
+</div>
+
+<pre>PROCEDURE doubleIt(BYVAL x)      # x is a copy
+    x &larr; x * 2                   # caller sees no change
+ENDPROCEDURE
+
+PROCEDURE doubleRef(BYREF y)     # y is a reference
+    y &larr; y * 2                   # caller&rsquo;s variable is updated
+ENDPROCEDURE
+
+n &larr; 5
+doubleIt(n)                      # n is still 5
+doubleRef(n)                     # n is now 10</pre>
+
+<p>Many modern languages (Java, Python) pass <em>object references by value</em>: the reference is copied but both names refer to the same underlying object, so mutations through the reference are visible but reassignment is not.</p>
+
+<h3>Return Values</h3>
+
+<p>A function uses <code>return</code> to end execution and deliver a value. Multiple exit points are permitted but some style guides prefer a single exit for clarity. A function can return compound data (tuples, arrays, objects) to effectively return &ldquo;more than one thing&rdquo;.</p>
+
+<pre>FUNCTION divmod(a, b)
+    IF b = 0 THEN
+        RETURN (0, 0)     # early exit guards division by zero
+    ENDIF
+    q &larr; a DIV b
+    r &larr; a MOD b
+    RETURN (q, r)
+ENDFUNCTION</pre>
+
+<h3>Modularity</h3>
+
+<div class="definition">
+    <strong>Modularity</strong> is the principle of dividing a program into independent, self-contained units (<strong>modules</strong>, <strong>functions</strong>, <strong>classes</strong>) each with a single, well-defined responsibility and a clear interface to the rest of the system.
+</div>
+
+<p><strong>Benefits of modular design:</strong></p>
+
+<ul>
+    <li><strong>Reuse</strong> &mdash; the same module can be called from many places (one correct implementation of <code>sort()</code> rather than many copies).</li>
+    <li><strong>Maintainability</strong> &mdash; bugs are confined to one module; fixes do not ripple.</li>
+    <li><strong>Testability</strong> &mdash; small modules can be unit-tested in isolation with mocked dependencies.</li>
+    <li><strong>Parallel development</strong> &mdash; different team members can work on different modules simultaneously once interfaces are agreed.</li>
+    <li><strong>Abstraction</strong> &mdash; callers need know only <em>what</em> a module does, not <em>how</em>.</li>
+    <li><strong>Comprehension</strong> &mdash; small named units make the program read like a table of contents.</li>
+</ul>
+
+<p>Good modular design aims for <strong>high cohesion</strong> (each module does one thing well) and <strong>low coupling</strong> (modules depend on each other as little as possible).</p>
+
+<h3>IDE Features</h3>
+
+<div class="definition">
+    An <strong>Integrated Development Environment (IDE)</strong> is a software application providing a unified workspace with editor, compiler/interpreter, debugger and supporting tools, aimed at raising programmer productivity.
+</div>
+
+<table>
+    <tr><th>Feature</th><th>What it does</th><th>Why it matters</th></tr>
+    <tr><td><strong>Syntax highlighting</strong></td><td>Colours keywords, strings, comments, identifiers</td><td>Makes structure instantly readable; typos jump out (e.g. unclosed string).</td></tr>
+    <tr><td><strong>Autocomplete / IntelliSense</strong></td><td>Suggests identifiers, method signatures, parameters as you type</td><td>Reduces typos, surfaces APIs, shortens typing.</td></tr>
+    <tr><td><strong>Breakpoints</strong></td><td>Pause execution at a chosen line</td><td>Inspect state at exactly the point of interest.</td></tr>
+    <tr><td><strong>Step into / over / out</strong></td><td>Execute one statement at a time, entering or skipping calls</td><td>Trace logic through branches and recursion.</td></tr>
+    <tr><td><strong>Watch window</strong></td><td>Evaluate and re-evaluate named expressions while paused</td><td>Observe how a value changes across stops.</td></tr>
+    <tr><td><strong>Call stack view</strong></td><td>Shows the chain of active function calls</td><td>Essential for recursion and diagnosing crashes.</td></tr>
+    <tr><td><strong>Linter / static analysis</strong></td><td>Flags style problems and likely bugs without running code</td><td>Catches unused variables, shadowed names, unreachable code.</td></tr>
+    <tr><td><strong>Refactoring tools</strong></td><td>Automated rename, extract method, inline, move</td><td>Safe, mechanical transformations that preserve behaviour.</td></tr>
+    <tr><td><strong>Version control integration</strong></td><td>Git commits, diffs, blame, branch switching in the editor</td><td>History at your fingertips; easy bisecting and merge-conflict resolution.</td></tr>
+    <tr><td><strong>Build / run / test runners</strong></td><td>One-click compile, launch, run unit tests</td><td>Tight feedback loop &mdash; the secret of productive coding.</td></tr>
+</table>
+
+<h3>Debugging Techniques</h3>
+
+<p>Debugging is the disciplined activity of <em>locating</em> and <em>removing</em> defects. A defect (bug) is a difference between expected and actual behaviour. Techniques range from primitive to precise:</p>
+
+<ol>
+    <li><strong>Print/logging (&ldquo;printf debugging&rdquo;)</strong> &mdash; insert <code>print</code> or structured <code>log.debug</code> calls to dump variable values at key points. Quick and language-neutral. Downsides: editing code each time, noisy output, easy to forget to remove.</li>
+    <li><strong>Breakpoints</strong> &mdash; click a margin in the IDE to pause execution when a line is reached. Can be conditional (&ldquo;break only when <code>i == 50</code>&rdquo;).</li>
+    <li><strong>Step-through</strong> &mdash; advance execution one line at a time. <em>Step into</em> enters a called function; <em>step over</em> runs the call as a unit; <em>step out</em> runs to the end of the current function.</li>
+    <li><strong>Watch expressions</strong> &mdash; continuously display the value of an expression (e.g. <code>len(queue)</code>) each time execution halts.</li>
+    <li><strong>Call stack inspection</strong> &mdash; view the chain of pending calls; click any frame to inspect its local variables. Vital for recursion.</li>
+    <li><strong>Bisecting with version control</strong> &mdash; <code>git bisect</code> performs binary search over commits, testing each midpoint to locate the commit that introduced a regression. Turns &ldquo;when did this break?&rdquo; into O(log n) searches.</li>
+    <li><strong>Unit tests / regression tests</strong> &mdash; automate reproduction; once fixed, the test prevents the bug from re-entering.</li>
+</ol>
+
+<div class="exam-tip">Examiners often ask you to compare debugging methods. A strong answer pairs print-statements (quick, crude, messy) with breakpoints (precise, non-invasive, IDE-dependent). Mention conditional breakpoints to show depth.</div>
+
+<h3>Recursion</h3>
+
+<div class="definition">
+    <strong>Recursion</strong> is a technique in which a subroutine solves a problem by calling itself on a smaller version of that problem. Every recursive definition must include a <strong>base case</strong> (the smallest instance, solved directly, no further call) and at least one <strong>recursive (general) case</strong> that reduces toward the base case.
+</div>
+
+<p><strong>Why two cases are required:</strong> without a base case, recursion never stops and the program crashes with a <em>stack overflow</em>. Without a recursive case, the algorithm only handles the trivial input. Together they define an inductive process: solve the smallest case, then express bigger cases in terms of smaller ones.</p>
+
+<h3>Stack Frames and Stack Overflow</h3>
+
+<div class="definition">
+    A <strong>stack frame</strong> (activation record) is the block of memory pushed onto the <strong>call stack</strong> for each active subroutine invocation. It stores the return address, parameters, local variables and saved registers. When the call returns, its frame is popped.
+</div>
+
+<p>Every recursive call pushes a new frame. If recursion is too deep (e.g. <code>factorial(1000000)</code> in Python) the stack&rsquo;s reserved memory is exhausted and the run-time raises <em>stack overflow</em> / <code>RecursionError</code>. Typical defaults are 1&ndash;10&nbsp;MB of stack, allowing a few thousand levels.</p>
+
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="ar1" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Call Stack during factorial(4)</text>
+  <text x="360" y="42" text-anchor="middle" font-size="11" fill="#6b7280">Frames grow downwards as calls are made, then unwind upwards as each returns</text>
+
+  <!-- Stack frames -->
+  <rect x="200" y="60" width="320" height="45" rx="6" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="360" y="80" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">factorial(4)  &mdash; waiting on 4 * factorial(3)</text>
+  <text x="360" y="97" text-anchor="middle" font-size="10" fill="#374151">n=4, return addr = main</text>
+
+  <rect x="200" y="110" width="320" height="45" rx="6" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="360" y="130" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">factorial(3)  &mdash; waiting on 3 * factorial(2)</text>
+  <text x="360" y="147" text-anchor="middle" font-size="10" fill="#374151">n=3, return addr = factorial(4)</text>
+
+  <rect x="200" y="160" width="320" height="45" rx="6" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="360" y="180" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">factorial(2)  &mdash; waiting on 2 * factorial(1)</text>
+  <text x="360" y="197" text-anchor="middle" font-size="10" fill="#374151">n=2, return addr = factorial(3)</text>
+
+  <rect x="200" y="210" width="320" height="45" rx="6" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="360" y="230" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">factorial(1)  &mdash; BASE CASE, returns 1</text>
+  <text x="360" y="247" text-anchor="middle" font-size="10" fill="#374151">n=1, return addr = factorial(2)</text>
+
+  <!-- Arrows -->
+  <line x1="180" y1="82" x2="195" y2="82" stroke="#2563eb" stroke-width="2" marker-end="url(#ar1)"/>
+  <line x1="180" y1="132" x2="195" y2="132" stroke="#2563eb" stroke-width="2" marker-end="url(#ar1)"/>
+  <line x1="180" y1="182" x2="195" y2="182" stroke="#2563eb" stroke-width="2" marker-end="url(#ar1)"/>
+  <line x1="180" y1="232" x2="195" y2="232" stroke="#f59e0b" stroke-width="2" marker-end="url(#ar1)"/>
+
+  <text x="100" y="85" font-size="10" fill="#6b7280">push</text>
+  <text x="100" y="135" font-size="10" fill="#6b7280">push</text>
+  <text x="100" y="185" font-size="10" fill="#6b7280">push</text>
+  <text x="100" y="235" font-size="10" fill="#b45309">push (stops)</text>
+
+  <!-- Unwind -->
+  <text x="540" y="85" font-size="10" fill="#16a34a">returns 24</text>
+  <text x="540" y="135" font-size="10" fill="#16a34a">returns 6</text>
+  <text x="540" y="185" font-size="10" fill="#16a34a">returns 2</text>
+  <text x="540" y="235" font-size="10" fill="#16a34a">returns 1</text>
+
+  <!-- Direction label -->
+  <line x1="50" y1="60" x2="50" y2="255" stroke="#6b7280" stroke-width="1.5" marker-end="url(#ar1)"/>
+  <text x="30" y="160" font-size="10" fill="#6b7280" transform="rotate(-90 30 160)">stack grows</text>
+
+  <rect x="200" y="275" width="320" height="60" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="360" y="295" text-anchor="middle" font-size="11" font-weight="bold" fill="#166534">Unwinding: each return pops the top frame</text>
+  <text x="360" y="312" text-anchor="middle" font-size="10" fill="#374151">1 &rarr; 2&times;1=2 &rarr; 3&times;2=6 &rarr; 4&times;6=24</text>
+  <text x="360" y="327" text-anchor="middle" font-size="10" fill="#374151">Final answer reached only after all frames have returned</text>
+</svg>
+
+<h3>Worked Example 1: Factorial</h3>
+
+<p><strong>Definition</strong>: <em>n!</em> = n &times; (n&minus;1) &times; &hellip; &times; 2 &times; 1; and <em>0!</em> = 1.</p>
+
+<pre># Recursive
+FUNCTION factorial(n)
+    IF n &lt;= 1 THEN              # base case
+        RETURN 1
+    ELSE
+        RETURN n * factorial(n - 1)   # recursive case
+    ENDIF
+ENDFUNCTION
+
+# Iterative equivalent
+FUNCTION factorialIter(n)
+    result &larr; 1
+    FOR i &larr; 2 TO n
+        result &larr; result * i
+    NEXT i
+    RETURN result
+ENDFUNCTION</pre>
+
+<p>Both are O(n) time. The recursive version uses O(n) additional stack memory for frames; the iterative uses O(1).</p>
+
+<h3>Worked Example 2: Fibonacci &mdash; Naive vs Memoised</h3>
+
+<p>Fibonacci sequence: F(0)=0, F(1)=1, F(n)=F(n&minus;1)+F(n&minus;2).</p>
+
+<pre># Naive recursion &mdash; exponential O(2^n) because it re-computes the same
+# subproblems many times (e.g. F(5) calls F(3) twice, F(2) three times...)
+FUNCTION fib(n)
+    IF n &lt; 2 THEN RETURN n
+    RETURN fib(n - 1) + fib(n - 2)
+ENDFUNCTION
+
+# Memoised: store previously computed results &mdash; O(n) time, O(n) space
+memo &larr; new Dictionary()
+
+FUNCTION fibMemo(n)
+    IF n &lt; 2 THEN RETURN n
+    IF memo.contains(n) THEN
+        RETURN memo[n]            # cache hit &mdash; avoid recomputation
+    ENDIF
+    result &larr; fibMemo(n - 1) + fibMemo(n - 2)
+    memo[n] &larr; result
+    RETURN result
+ENDFUNCTION
+
+# Iterative O(n) time, O(1) space &mdash; best for large n
+FUNCTION fibIter(n)
+    a &larr; 0 ; b &larr; 1
+    FOR i &larr; 1 TO n
+        (a, b) &larr; (b, a + b)
+    NEXT i
+    RETURN a
+ENDFUNCTION</pre>
+
+<p>Running <code>fib(40)</code> on a modern laptop takes around a second; the memoised version is instant. The naive call tree for <code>fib(5)</code> has 15 nodes; for <code>fib(40)</code> it has over 300 million. The memoised version computes each of F(0)&hellip;F(n) exactly once.</p>
+
+<table>
+    <tr><th>Approach</th><th>Time</th><th>Space</th><th>Notes</th></tr>
+    <tr><td>Naive recursion</td><td>O(2<sup>n</sup>)</td><td>O(n) stack</td><td>Recomputes massively; fine for teaching, hopeless beyond n&approx;35.</td></tr>
+    <tr><td>Memoised recursion</td><td>O(n)</td><td>O(n) cache + stack</td><td>Each F(k) computed once; ideal when other results also needed.</td></tr>
+    <tr><td>Bottom-up iterative</td><td>O(n)</td><td>O(1)</td><td>Best when you only need F(n); no cache, no stack.</td></tr>
+    <tr><td>Matrix exponentiation</td><td>O(log n)</td><td>O(1)</td><td>Uses <code>[[1,1],[1,0]]<sup>n</sup></code>; out-of-scope but worth noting.</td></tr>
+</table>
+
+<h3>Worked Example 3: Towers of Hanoi</h3>
+
+<p>Move <em>n</em> disks from peg <em>A</em> to peg <em>C</em> using peg <em>B</em>, never placing a larger disk on a smaller one.</p>
+
+<pre>PROCEDURE hanoi(n, from, via, to)
+    IF n = 1 THEN
+        OUTPUT "Move disk 1 from " + from + " to " + to    # base case
+    ELSE
+        hanoi(n - 1, from, to, via)                        # 1. move n-1 aside
+        OUTPUT "Move disk " + n + " from " + from + " to " + to   # 2. move biggest
+        hanoi(n - 1, via, from, to)                        # 3. bring n-1 back
+    ENDIF
+ENDPROCEDURE
+
+hanoi(3, "A", "B", "C")</pre>
+
+<p>Total moves = 2<sup>n</sup>&minus;1 (7 moves for n=3, 1023 for n=10). The algorithm is provably optimal.</p>
+
+<svg viewBox="0 0 720 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Towers of Hanoi &mdash; starting state (n=3)</text>
+
+  <!-- Base -->
+  <rect x="60" y="260" width="600" height="10" fill="#6b7280"/>
+  <!-- Pegs -->
+  <rect x="155" y="130" width="6" height="130" fill="#374151"/>
+  <rect x="355" y="130" width="6" height="130" fill="#374151"/>
+  <rect x="555" y="130" width="6" height="130" fill="#374151"/>
+
+  <!-- Labels -->
+  <text x="158" y="290" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">A (from)</text>
+  <text x="358" y="290" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">B (via)</text>
+  <text x="558" y="290" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e3a5f">C (to)</text>
+
+  <!-- Disks on A, smallest at top -->
+  <rect x="130" y="230" width="60" height="20" rx="4" fill="#2563eb" stroke="#1e3a8a"/>
+  <text x="160" y="244" text-anchor="middle" font-size="11" font-weight="bold" fill="white">1</text>
+  <rect x="115" y="200" width="90" height="20" rx="4" fill="#7c3aed" stroke="#5b21b6"/>
+  <text x="160" y="214" text-anchor="middle" font-size="11" font-weight="bold" fill="white">2</text>
+  <rect x="100" y="170" width="120" height="20" rx="4" fill="#dc2626" stroke="#991b1b"/>
+  <text x="160" y="184" text-anchor="middle" font-size="11" font-weight="bold" fill="white">3</text>
+
+  <!-- Recursive breakdown labels -->
+  <rect x="50" y="40" width="640" height="80" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="370" y="60" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Recursive strategy for n disks:</text>
+  <text x="370" y="80" text-anchor="middle" font-size="11" fill="#374151">1. Move top n&minus;1 disks: A &rarr; B (using C as spare)</text>
+  <text x="370" y="97" text-anchor="middle" font-size="11" fill="#374151">2. Move largest disk n: A &rarr; C</text>
+  <text x="370" y="114" text-anchor="middle" font-size="11" fill="#374151">3. Move n&minus;1 disks: B &rarr; C (using A as spare)   &mdash;   Total: 2<tspan font-size="8" dy="-3">n</tspan><tspan dy="3">&minus;1 moves</tspan></text>
+
+  <text x="370" y="335" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7280">Each sub-move of n&minus;1 disks is itself a smaller Hanoi problem &mdash; perfect recursion.</text>
+</svg>
+
+<h3>Worked Example 4: In-order Binary Tree Traversal</h3>
+
+<p>A binary search tree (BST) stores smaller keys in the left subtree, larger in the right. An <em>in-order</em> traversal visits left &rarr; node &rarr; right, producing sorted output.</p>
+
+<pre>PROCEDURE inOrder(node)
+    IF node = NULL THEN RETURN               # base case: empty subtree
+    inOrder(node.left)                       # recurse left
+    OUTPUT node.value                        # visit
+    inOrder(node.right)                      # recurse right
+ENDPROCEDURE</pre>
+
+<p>Trivially extends to pre-order (visit before) and post-order (visit after). Natural fit for recursion because a tree is itself a recursive data structure.</p>
+
+<h3>Recursion vs Iteration</h3>
+
+<table>
+    <tr><th>Aspect</th><th>Recursion</th><th>Iteration</th></tr>
+    <tr><td>Code clarity</td><td>Often closer to the mathematical/structural definition (trees, fractals, divide-and-conquer)</td><td>Simpler for linear processes (sums, counts, loops over arrays)</td></tr>
+    <tr><td>Memory</td><td>One stack frame per call &mdash; O(depth) extra memory</td><td>Constant memory (one loop counter)</td></tr>
+    <tr><td>Speed</td><td>Call overhead per invocation</td><td>Slightly faster; no call overhead</td></tr>
+    <tr><td>Risk</td><td>Stack overflow on deep input; may recompute subproblems</td><td>No stack overflow; easy to write infinite loops if condition wrong</td></tr>
+    <tr><td>Termination</td><td>Must hit base case</td><td>Must eventually falsify loop condition</td></tr>
+</table>
+
+<p><strong>Converting recursion to iteration</strong> is always possible: replace the implicit call stack with an explicit <code>Stack</code> data structure and loop until it is empty. Example &mdash; iterative DFS in place of recursive:</p>
+
+<pre>PROCEDURE dfsIter(root)
+    stack &larr; new Stack()
+    stack.push(root)
+    WHILE NOT stack.isEmpty()
+        node &larr; stack.pop()
+        IF node &ne; NULL THEN
+            visit(node)
+            stack.push(node.right)   # pushed first so left is visited first
+            stack.push(node.left)
+        ENDIF
+    ENDWHILE
+ENDPROCEDURE</pre>
+
+<h3>Tail Recursion</h3>
+
+<div class="definition">
+    A call is <strong>tail recursive</strong> if it is the <em>last</em> action performed by the function &mdash; nothing remains to be computed after the call returns. Some compilers (Scheme, Scala) apply <strong>tail-call optimisation (TCO)</strong>: they reuse the current stack frame instead of pushing a new one, reducing space to O(1) and avoiding stack overflow.
+</div>
+
+<pre># Factorial rewritten in tail-recursive form (accumulator pattern)
+FUNCTION factorialTR(n, acc = 1)
+    IF n &lt;= 1 THEN RETURN acc
+    RETURN factorialTR(n - 1, acc * n)      # tail call &mdash; nothing follows
+ENDFUNCTION</pre>
+
+<p>Python, Java and C# do <em>not</em> perform TCO, so tail recursion there is mainly a stylistic choice. C/C++ compilers often apply it as an optimisation.</p>
+
+<h2>Object-Oriented Programming (OOP)</h2>
+
+<div class="definition">
+    <strong>Object-Oriented Programming</strong> is a programming paradigm in which programs are organised around <strong>objects</strong> &mdash; bundles of <strong>state</strong> (attributes/fields) and <strong>behaviour</strong> (methods) &mdash; that interact by sending messages (method calls).
+</div>
+
+<h3>Classes, Objects and Instances</h3>
+
+<table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td><strong>Class</strong></td><td>A blueprint/template describing the attributes and methods that objects of that kind will share.</td></tr>
+    <tr><td><strong>Object</strong></td><td>A concrete entity created at run time from a class; has its own copy of the attributes.</td></tr>
+    <tr><td><strong>Instance</strong></td><td>Synonym for object, emphasising the class it was instantiated from (&ldquo;<code>d</code> is an instance of <code>Dog</code>&rdquo;).</td></tr>
+    <tr><td><strong>Attribute / field</strong></td><td>A variable that belongs to an object (or class, if static).</td></tr>
+    <tr><td><strong>Method</strong></td><td>A function that belongs to an object (or class, if static).</td></tr>
+</table>
+
+<h3>Constructors and Destructors</h3>
+
+<p>A <strong>constructor</strong> is a special method, invoked automatically when an object is created, that initialises the new object&rsquo;s state. In most pseudocode it is <code>new</code> or <code>__init__</code>. A <strong>destructor</strong> runs when the object is destroyed &mdash; used to release resources (files, network connections, memory). In garbage-collected languages destructors are rarely used; C++ makes heavy use of them (RAII).</p>
+
+<h3>Static vs Instance Members</h3>
+
+<table>
+    <tr><th>Member</th><th>Belongs to</th><th>Accessed via</th><th>Example</th></tr>
+    <tr><td><strong>Instance</strong></td><td>A specific object; each object has its own copy</td><td>The object: <code>d.name</code></td><td>Every <code>Dog</code> has its own <code>name</code>.</td></tr>
+    <tr><td><strong>Static / class</strong></td><td>The class itself; one copy shared by all instances</td><td>The class: <code>Dog.totalDogs</code></td><td>A counter of how many <code>Dog</code> objects exist.</td></tr>
+</table>
+
+<h3>The Four Pillars of OOP</h3>
+
+<h3>Pillar 1 &mdash; Encapsulation</h3>
+
+<div class="definition">
+    <strong>Encapsulation</strong> is the bundling of state and the methods that operate on that state into a single unit (an object), combined with <strong>information hiding</strong>: restricting direct access to the internals so they can only be manipulated through a controlled public interface.
+</div>
+
+<p><strong>Access modifiers</strong> enforce encapsulation:</p>
+
+<table>
+    <tr><th>Modifier</th><th>Meaning</th></tr>
+    <tr><td><code>public</code></td><td>Accessible from anywhere.</td></tr>
+    <tr><td><code>private</code></td><td>Accessible only from within the same class.</td></tr>
+    <tr><td><code>protected</code></td><td>Accessible from the class and its subclasses.</td></tr>
+</table>
+
+<p><strong>Getters and setters</strong> (accessor/mutator methods) provide controlled access: the setter can validate input, the getter can transform or deny based on state. Clients talk only to the interface, so the class can change its internal representation without breaking callers.</p>
+
+<h3>Pillar 2 &mdash; Inheritance</h3>
+
+<div class="definition">
+    <strong>Inheritance</strong> lets a <em>child class</em> (subclass, derived class) acquire the attributes and methods of a <em>parent class</em> (superclass, base class). The child extends or specialises the parent. This creates a class hierarchy representing an &ldquo;<strong>is-a</strong>&rdquo; relationship: <em>a Dog is an Animal</em>.
+</div>
+
+<ul>
+    <li><strong>Override</strong> &mdash; a child class can provide its own implementation of an inherited method to specialise behaviour.</li>
+    <li><strong><code>super()</code></strong> &mdash; calls the parent&rsquo;s version of a method (e.g. to run the parent constructor first, then add subclass setup).</li>
+    <li><strong>Single vs multiple inheritance</strong> &mdash; some languages (Java, C#) allow only one parent (plus interfaces); others (Python, C++) allow multiple parents, which can cause the <em>diamond problem</em>.</li>
+</ul>
+
+<h3>Pillar 3 &mdash; Polymorphism</h3>
+
+<div class="definition">
+    <strong>Polymorphism</strong> (&ldquo;many forms&rdquo;) is the ability for one interface to represent different underlying types. A variable typed as a parent class can refer to any of its subclasses, and calling a method selects the correct subclass&rsquo;s version at run time.
+</div>
+
+<table>
+    <tr><th>Kind</th><th>Binding</th><th>Example</th></tr>
+    <tr><td><strong>Overloading</strong></td><td>Compile-time (static) &mdash; chosen by parameter signature</td><td><code>add(int, int)</code> vs <code>add(float, float)</code> vs <code>add(String, String)</code>.</td></tr>
+    <tr><td><strong>Overriding</strong></td><td>Run-time (dynamic) &mdash; chosen by the object&rsquo;s actual class</td><td><code>Animal a = new Dog(); a.speak();</code> calls <code>Dog.speak</code>.</td></tr>
+</table>
+
+<p><strong>Interfaces</strong> (Java, C#) or abstract methods (Python&rsquo;s <code>ABC</code>, C++&rsquo;s pure virtual) let unrelated classes share a common calling convention.</p>
+
+<p><strong>Liskov Substitution Principle (LSP).</strong> A program that uses a parent type should work correctly if any subclass is substituted. Subclasses must not strengthen preconditions or weaken postconditions.</p>
+
+<h3>Pillar 4 &mdash; Abstraction</h3>
+
+<div class="definition">
+    <strong>Abstraction</strong> is the act of exposing only the essential features of an object while hiding the implementation details. In OOP this is achieved using <strong>abstract classes</strong> (partially implemented; cannot be instantiated) and <strong>interfaces</strong> (pure contract &mdash; signatures only, no code).
+</div>
+
+<p>Encapsulation hides <em>data</em>; abstraction hides <em>implementation</em>. The two are complementary &mdash; good OOP uses both.</p>
+
+<table>
+    <tr><th>Device</th><th>Can be instantiated?</th><th>Can contain code?</th><th>Purpose</th></tr>
+    <tr><td><strong>Concrete class</strong></td><td>Yes</td><td>Yes, fully</td><td>Normal working class.</td></tr>
+    <tr><td><strong>Abstract class</strong></td><td>No &mdash; only subclasses can</td><td>Yes, partially (some methods abstract, others implemented)</td><td>Shared state + partial behaviour for a family of subclasses.</td></tr>
+    <tr><td><strong>Interface</strong></td><td>No</td><td>Signatures only (default methods in modern Java/C#)</td><td>Pure contract; multiple inheritance of behaviour in Java/C#.</td></tr>
+</table>
+
+<p><strong>When to choose which.</strong> Use an abstract class when subclasses genuinely share state and partial behaviour (the &ldquo;is-a-kind-of&rdquo; relationship). Use an interface when unrelated classes must merely obey the same calling convention (the &ldquo;can-do&rdquo; relationship &mdash; <code>Sortable</code>, <code>Printable</code>, <code>Comparable</code>).</p>
+
+<h3>Worked Example &mdash; Animal Hierarchy Showing All Four Pillars</h3>
+
+<pre>ABSTRACT CLASS Animal                          # ABSTRACTION &mdash; cannot instantiate
+    PRIVATE name                                # ENCAPSULATION &mdash; hidden field
+    PROTECTED age
+
+    CONSTRUCTOR(n, a)
+        name &larr; n
+        age  &larr; a
+    ENDCONSTRUCTOR
+
+    PUBLIC FUNCTION getName()                   # getter &mdash; controlled access
+        RETURN name
+    ENDFUNCTION
+
+    PUBLIC PROCEDURE setName(n)                 # setter &mdash; can validate
+        IF length(n) &gt; 0 THEN name &larr; n
+    ENDPROCEDURE
+
+    PUBLIC ABSTRACT PROCEDURE speak()           # must be overridden
+ENDCLASS
+
+CLASS Dog INHERITS Animal                       # INHERITANCE
+    PRIVATE breed
+
+    CONSTRUCTOR(n, a, b)
+        SUPER(n, a)                             # call Animal&rsquo;s constructor
+        breed &larr; b
+    ENDCONSTRUCTOR
+
+    PUBLIC PROCEDURE speak()                    # OVERRIDE &mdash; polymorphism
+        OUTPUT getName() + " says Woof!"
+    ENDPROCEDURE
+ENDCLASS
+
+CLASS Cat INHERITS Animal
+    PUBLIC PROCEDURE speak()                    # different OVERRIDE
+        OUTPUT getName() + " says Meow!"
+    ENDPROCEDURE
+ENDCLASS
+
+# POLYMORPHISM in action
+animals &larr; [new Dog("Rex", 3, "Labrador"), new Cat("Luna", 5)]
+FOR EACH a IN animals
+    a.speak()       # correct subclass method chosen at run time
+NEXT a</pre>
+
+<p>Output:</p>
+
+<pre>Rex says Woof!
+Luna says Meow!</pre>
+
+<p>This tiny example illustrates <strong>all four pillars</strong>: data is <em>encapsulated</em> with getters/setters, <em>inheritance</em> produces <code>Dog</code> and <code>Cat</code> from <code>Animal</code>, <em>polymorphism</em> lets the loop call the correct <code>speak()</code>, and <em>abstraction</em> is achieved by making <code>Animal</code> abstract with an unimplemented <code>speak()</code>.</p>
+
+<h3>UML Class Diagram</h3>
+
+<svg viewBox="0 0 720 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="inh" markerWidth="14" markerHeight="14" refX="12" refY="7" orient="auto">
+      <polygon points="0 0, 12 7, 0 14" fill="white" stroke="#1e40af" stroke-width="1.5"/>
+    </marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">UML Class Diagram &mdash; Animal Hierarchy</text>
+
+  <!-- Animal (abstract) -->
+  <rect x="260" y="50" width="200" height="140" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="260" y1="80" x2="460" y2="80" stroke="#2563eb"/>
+  <line x1="260" y1="130" x2="460" y2="130" stroke="#2563eb"/>
+  <text x="360" y="68" text-anchor="middle" font-size="12" font-weight="bold" font-style="italic" fill="#1e3a5f">&laquo;abstract&raquo; Animal</text>
+  <text x="270" y="97" font-size="10" fill="#374151">&minus; name : String</text>
+  <text x="270" y="112" font-size="10" fill="#374151"># age : Integer</text>
+  <text x="270" y="146" font-size="10" fill="#374151">+ getName() : String</text>
+  <text x="270" y="161" font-size="10" fill="#374151">+ setName(n : String)</text>
+  <text x="270" y="177" font-size="10" font-style="italic" fill="#374151">+ speak()  {abstract}</text>
+
+  <!-- Dog -->
+  <rect x="80" y="270" width="220" height="140" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="80" y1="300" x2="300" y2="300" stroke="#16a34a"/>
+  <line x1="80" y1="340" x2="300" y2="340" stroke="#16a34a"/>
+  <text x="190" y="290" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">Dog</text>
+  <text x="90" y="317" font-size="10" fill="#374151">&minus; breed : String</text>
+  <text x="90" y="357" font-size="10" fill="#374151">+ Dog(n, a, b)  &laquo;constructor&raquo;</text>
+  <text x="90" y="373" font-size="10" fill="#374151">+ speak()  {override}</text>
+  <text x="90" y="389" font-size="10" fill="#374151">+ fetch()</text>
+
+  <!-- Cat -->
+  <rect x="420" y="270" width="220" height="140" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="420" y1="300" x2="640" y2="300" stroke="#f59e0b"/>
+  <line x1="420" y1="340" x2="640" y2="340" stroke="#f59e0b"/>
+  <text x="530" y="290" text-anchor="middle" font-size="12" font-weight="bold" fill="#92400e">Cat</text>
+  <text x="430" y="317" font-size="10" fill="#374151">&minus; indoor : Boolean</text>
+  <text x="430" y="357" font-size="10" fill="#374151">+ Cat(n, a)  &laquo;constructor&raquo;</text>
+  <text x="430" y="373" font-size="10" fill="#374151">+ speak()  {override}</text>
+  <text x="430" y="389" font-size="10" fill="#374151">+ purr()</text>
+
+  <!-- Inheritance arrows (hollow triangle pointing to parent) -->
+  <line x1="190" y1="270" x2="320" y2="192" stroke="#1e40af" stroke-width="1.5" marker-end="url(#inh)"/>
+  <line x1="530" y1="270" x2="400" y2="192" stroke="#1e40af" stroke-width="1.5" marker-end="url(#inh)"/>
+
+  <!-- Key -->
+  <rect x="40" y="425" width="640" height="26" fill="#f9fafb" stroke="#d1d5db"/>
+  <text x="55" y="442" font-size="10" fill="#374151">Key: &minus; private   # protected   + public   &laquo;...&raquo; stereotype   hollow triangle = inheritance (&ldquo;is-a&rdquo;)</text>
+</svg>
+
+<h3>Advantages and Disadvantages of OOP</h3>
+
+<table>
+    <tr><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td>Models real-world domains naturally (students, invoices, animals)</td><td>More boilerplate &mdash; short scripts become verbose</td></tr>
+    <tr><td>Reuse via inheritance and composition</td><td>Inheritance overused leads to fragile, rigid hierarchies</td></tr>
+    <tr><td>Encapsulation improves maintainability</td><td>Indirection and dynamic dispatch have a small performance cost</td></tr>
+    <tr><td>Polymorphism enables extensible, open/closed designs</td><td>Steep learning curve; easy to misuse (God objects, tight coupling)</td></tr>
+    <tr><td>Large teams can divide work by class</td><td>Debugging call graphs across many classes can be hard</td></tr>
+</table>
+
+<h3>When OOP Is (and Isn&rsquo;t) the Right Tool</h3>
+
+<table>
+    <tr><th>Paradigm</th><th>Best for</th><th>Example languages</th></tr>
+    <tr><td><strong>OOP</strong></td><td>Long-lived systems with complex domain models &mdash; GUIs, games, business apps</td><td>Java, C#, C++, Python</td></tr>
+    <tr><td><strong>Procedural</strong></td><td>Short scripts, low-level system code, straightforward data transformations</td><td>C, early Pascal, shell</td></tr>
+    <tr><td><strong>Functional</strong></td><td>Heavy parallelism, mathematical transformations, when side-effects are dangerous</td><td>Haskell, F#, Scala, Clojure</td></tr>
+</table>
+
+<div class="exam-tip">If an exam asks when OOP is <em>not</em> appropriate, mention: tiny scripts (too much overhead), hot inner loops where virtual dispatch costs matter, problems that are naturally a pipeline of pure data transformations (functional fits better).</div>
+
+<h2>2.2.2 Computational Methods</h2>
+
+<p>Computational methods are the strategic toolkit for <em>solving</em> problems once they have been analysed with computational thinking (2.1). Where 2.1 asks &ldquo;how should I think about this problem?&rdquo;, 2.2.2 asks &ldquo;which algorithmic strategy fits?&rdquo;.</p>
+
+<h3>Problem Recognition</h3>
+
+<p>Before writing code, recognise which established class a problem belongs to:</p>
+
+<ul>
+    <li>Searching an unsorted list &rarr; linear search.</li>
+    <li>Searching a sorted list &rarr; binary search (divide and conquer).</li>
+    <li>Shortest path in a weighted graph &rarr; Dijkstra / A* (see 2.3).</li>
+    <li>Try-all-configurations with early abandonment &rarr; backtracking.</li>
+    <li>Finding patterns in huge datasets &rarr; data mining / machine learning.</li>
+    <li>Approximate answer needed fast &rarr; heuristic.</li>
+</ul>
+
+<p>Recognising the pattern means you can reach for a known-good algorithm rather than reinventing one. A surprising amount of professional programming is <em>pattern matching</em> existing problems to textbook solutions.</p>
+
+<h3>Worked walkthrough &mdash; picking a strategy</h3>
+
+<p>Consider: &ldquo;Given a million customer records, group them into similar-spending segments and flag unusual accounts.&rdquo; An experienced programmer immediately pattern-matches:</p>
+
+<ul>
+    <li>&ldquo;Group into similar-spending segments&rdquo; &rarr; <strong>clustering</strong> (unsupervised data mining) &mdash; probably k-means.</li>
+    <li>&ldquo;Flag unusual accounts&rdquo; &rarr; <strong>anomaly detection</strong> &mdash; distance from cluster centroids or isolation forest.</li>
+    <li>&ldquo;A million records&rdquo; &rarr; need efficient O(n) or O(n log n) per pass; cannot use O(n&sup2;) pairwise comparisons.</li>
+    <li>The pipeline: extract &rarr; clean (drop nulls, normalise currencies) &rarr; feature engineer (monthly spend, recency) &rarr; cluster &rarr; detect &rarr; visualise &rarr; report.</li>
+</ul>
+
+<p>Recognising this decomposition up-front turns a vague request into a concrete sequence of known-solvable sub-problems.</p>
+
+<h3>Problem Decomposition</h3>
+
+<div class="definition">
+    <strong>Decomposition</strong> (introduced in 2.1) is the act of breaking a complex problem into smaller, independently solvable sub-problems. Each sub-problem becomes a module/function with a clear input/output contract.
+</div>
+
+<p>Decomposition is the opposite face of modularity: modularity is about how the finished code is <em>structured</em>; decomposition is the <em>thought process</em> that gets you there. The end result of good decomposition is a program that reads like a table of contents.</p>
+
+<h3>Divide and Conquer</h3>
+
+<div class="definition">
+    <strong>Divide and conquer</strong> solves a problem by (1) <strong>dividing</strong> it into two or more smaller sub-problems of the same type, (2) <strong>conquering</strong> (solving) each sub-problem &mdash; usually recursively, (3) <strong>combining</strong> the sub-solutions into a solution for the original problem.
+</div>
+
+<table>
+    <tr><th>Algorithm</th><th>Divide</th><th>Conquer</th><th>Combine</th><th>Complexity</th></tr>
+    <tr><td><strong>Binary search</strong></td><td>Pick midpoint; compare</td><td>Search one half</td><td>None (return index)</td><td>O(log n)</td></tr>
+    <tr><td><strong>Merge sort</strong></td><td>Split array in half</td><td>Sort each half</td><td>Merge sorted halves</td><td>O(n log n)</td></tr>
+    <tr><td><strong>Quicksort</strong></td><td>Partition around pivot</td><td>Sort each partition</td><td>Concatenate</td><td>O(n log n) avg, O(n&sup2;) worst</td></tr>
+</table>
+
+<p>Detailed implementations appear in 2.3. The pattern is instantly recognisable: the recursive case makes calls on strictly smaller inputs and the base case handles a trivial input (empty/singleton array).</p>
+
+<h3>Abstraction in Problem Solving</h3>
+
+<p><strong>Abstraction</strong> (revisited from 2.1) is the suppression of irrelevant detail to reveal the essential structure. A tube map abstracts away geography; <code>Queue</code> abstracts away whether the queue is a linked list or a ring buffer. Good abstractions let you reason about a problem at the level it naturally lives, and they compose (solutions built from abstract parts remain tractable as size grows).</p>
+
+<h3>Thinking Ahead and Caching</h3>
+
+<p><strong>Thinking ahead</strong> (2.1.2) means predicting what inputs, edge cases and resources will be needed, and preparing for them. <strong>Caching</strong> is a specific form: store the result of an expensive computation so a repeat request returns instantly.</p>
+
+<ul>
+    <li><strong>Memoisation</strong> &mdash; function-level caching (see memoised Fibonacci above).</li>
+    <li><strong>Lookup tables</strong> &mdash; precompute all answers for a small domain (e.g. CRC tables, trig tables).</li>
+    <li><strong>Browser/HTTP caches</strong> &mdash; avoid re-downloading unchanged resources.</li>
+    <li><strong>CPU caches</strong> (1.1) &mdash; hardware form of the same idea.</li>
+</ul>
+
+<p>Caching trades memory for speed. It is only correct if the cached answer is still valid &mdash; cache invalidation is famously described as one of the two hard problems in computing.</p>
+
+<h3>Backtracking</h3>
+
+<div class="definition">
+    <strong>Backtracking</strong> is a refinement of brute-force search. It incrementally builds a partial solution and, at each step, tests whether the partial solution can still succeed. When it cannot, it abandons (&ldquo;backtracks&rdquo;) and tries the next alternative. This prunes away entire branches of the search tree that need not be explored.
+</div>
+
+<p>Classic applications: N-Queens, Sudoku solvers, maze running, parsing with ambiguous grammars, generating permutations.</p>
+
+<h3>Worked Example &mdash; N-Queens</h3>
+
+<p>Place N queens on an N&times;N chessboard so no two attack each other.</p>
+
+<pre>board &larr; array of N integers, board[row] = column of queen in that row
+
+FUNCTION isSafe(row, col)
+    FOR r &larr; 0 TO row - 1
+        IF board[r] = col THEN RETURN FALSE            # same column
+        IF abs(board[r] - col) = abs(r - row) THEN
+            RETURN FALSE                               # same diagonal
+        ENDIF
+    NEXT r
+    RETURN TRUE
+ENDFUNCTION
+
+FUNCTION solve(row)
+    IF row = N THEN
+        printBoard()
+        RETURN TRUE                # found a solution
+    ENDIF
+    FOR col &larr; 0 TO N - 1
+        IF isSafe(row, col) THEN
+            board[row] &larr; col     # place queen &mdash; partial solution
+            IF solve(row + 1) THEN RETURN TRUE
+            # implicit backtrack: loop continues, overwriting board[row]
+        ENDIF
+    NEXT col
+    RETURN FALSE                   # no column worked &mdash; caller will backtrack
+ENDFUNCTION
+
+solve(0)</pre>
+
+<h3>Worked Example &mdash; Maze Runner</h3>
+
+<pre>FUNCTION findPath(x, y)
+    IF (x, y) = goal THEN RETURN TRUE
+    IF NOT inBounds(x, y) OR maze[x][y] = WALL OR visited[x][y] THEN
+        RETURN FALSE
+    ENDIF
+    visited[x][y] &larr; TRUE                           # commit
+    FOR EACH (dx, dy) IN [(0,1), (1,0), (0,-1), (-1,0)]
+        IF findPath(x + dx, y + dy) THEN
+            path.push((x, y))
+            RETURN TRUE
+        ENDIF
+    NEXT
+    visited[x][y] &larr; FALSE                          # backtrack
+    RETURN FALSE
+ENDFUNCTION</pre>
+
+<svg viewBox="0 0 720 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="bk" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Backtracking Decision Tree (partial)</text>
+  <text x="360" y="40" text-anchor="middle" font-size="10" fill="#6b7280">Green = success branch, Red = dead end (backtrack)</text>
+
+  <!-- Root -->
+  <circle cx="360" cy="70" r="22" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="360" y="74" text-anchor="middle" font-size="10" font-weight="bold">start</text>
+
+  <!-- Level 1 -->
+  <line x1="360" y1="92" x2="180" y2="140" stroke="#2563eb" marker-end="url(#bk)"/>
+  <line x1="360" y1="92" x2="360" y2="140" stroke="#2563eb" marker-end="url(#bk)"/>
+  <line x1="360" y1="92" x2="540" y2="140" stroke="#2563eb" marker-end="url(#bk)"/>
+
+  <circle cx="170" cy="160" r="22" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="170" y="164" text-anchor="middle" font-size="10">A</text>
+  <circle cx="360" cy="160" r="22" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="360" y="164" text-anchor="middle" font-size="10">B</text>
+  <circle cx="550" cy="160" r="22" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="550" y="164" text-anchor="middle" font-size="10">C</text>
+
+  <text x="170" y="205" text-anchor="middle" font-size="9" fill="#dc2626">dead end</text>
+
+  <!-- Level 2 from B -->
+  <line x1="360" y1="182" x2="280" y2="240" stroke="#2563eb" marker-end="url(#bk)"/>
+  <line x1="360" y1="182" x2="440" y2="240" stroke="#2563eb" marker-end="url(#bk)"/>
+
+  <circle cx="270" cy="260" r="22" fill="#fee2e2" stroke="#dc2626"/>
+  <text x="270" y="264" text-anchor="middle" font-size="10">D</text>
+  <circle cx="450" cy="260" r="22" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="450" y="264" text-anchor="middle" font-size="10">E</text>
+  <text x="270" y="305" text-anchor="middle" font-size="9" fill="#dc2626">dead end</text>
+
+  <!-- Level 3 from E -->
+  <line x1="450" y1="282" x2="450" y2="340" stroke="#16a34a" marker-end="url(#bk)"/>
+  <circle cx="450" cy="360" r="22" fill="#16a34a" stroke="#14532d"/>
+  <text x="450" y="364" text-anchor="middle" font-size="10" fill="white" font-weight="bold">GOAL</text>
+
+  <!-- Level 2 from C (explored after backtracking from B's D) -->
+  <line x1="550" y1="182" x2="640" y2="240" stroke="#6b7280" stroke-dasharray="4 3"/>
+  <circle cx="650" cy="260" r="22" fill="#f3f4f6" stroke="#9ca3af"/>
+  <text x="650" y="264" text-anchor="middle" font-size="10" fill="#6b7280">?</text>
+  <text x="650" y="305" text-anchor="middle" font-size="9" fill="#6b7280">not explored</text>
+
+  <rect x="40" y="380" width="320" height="30" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="55" y="400" font-size="10" fill="#374151">Order explored: start &rarr; A (fail) &rarr; B &rarr; D (fail) &rarr; E &rarr; GOAL</text>
+</svg>
+
+<p>If N-Queens were solved by pure brute force it would examine N<sup>N</sup> boards (15 million for N=8). Backtracking with pruning examines only a few thousand &mdash; orders of magnitude fewer.</p>
+
+<p><strong>General structure of a backtracking algorithm:</strong></p>
+
+<pre>FUNCTION backtrack(partialSolution)
+    IF partialSolution is complete THEN
+        record or return solution
+        RETURN
+    ENDIF
+    FOR EACH candidate IN options(partialSolution)
+        IF candidate is valid THEN
+            apply(candidate)                 # extend partial solution
+            backtrack(partialSolution)       # recurse
+            undo(candidate)                  # undo &mdash; &ldquo;the backtrack&rdquo;
+        ENDIF
+    NEXT
+ENDFUNCTION</pre>
+
+<p>The two crucial steps are <strong>pruning</strong> (rejecting candidates that cannot extend to a full solution) and <strong>undoing</strong> (restoring state so the next candidate starts fresh). Without pruning backtracking degrades to brute force; without undoing, sibling branches inherit corrupt state.</p>
+
+<h3>Data Mining</h3>
+
+<div class="definition">
+    <strong>Data mining</strong> is the process of discovering patterns, correlations and anomalies in <em>large</em> datasets, usually combining statistics, machine learning, and database systems. It transforms raw data into actionable insight.
+</div>
+
+<p><strong>Common data mining tasks:</strong></p>
+
+<table>
+    <tr><th>Task</th><th>Goal</th><th>Example</th></tr>
+    <tr><td><strong>Clustering</strong></td><td>Group similar records without pre-defined labels</td><td>Customer segmentation from purchase histories (k-means).</td></tr>
+    <tr><td><strong>Classification</strong></td><td>Assign records to a known set of categories</td><td>Spam vs not-spam; cancerous vs benign tumour.</td></tr>
+    <tr><td><strong>Regression</strong></td><td>Predict a continuous value</td><td>House price from features.</td></tr>
+    <tr><td><strong>Association rule mining</strong></td><td>Find items that co-occur</td><td>&ldquo;People who buy nappies also buy beer&rdquo; (market-basket analysis).</td></tr>
+    <tr><td><strong>Anomaly detection</strong></td><td>Flag records that don&rsquo;t fit the pattern</td><td>Credit-card fraud, network intrusion.</td></tr>
+</table>
+
+<p><strong>Applications:</strong></p>
+
+<ul>
+    <li><strong>Retail</strong> &mdash; stock levels, product placement, recommendation engines.</li>
+    <li><strong>Finance</strong> &mdash; fraud detection, credit scoring, algorithmic trading.</li>
+    <li><strong>Healthcare</strong> &mdash; diagnosis support, epidemiology.</li>
+    <li><strong>Science</strong> &mdash; genomics, astrophysics, particle physics.</li>
+    <li><strong>Social media</strong> &mdash; friend suggestions, ad targeting.</li>
+</ul>
+
+<svg viewBox="0 0 720 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="dm" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+  </defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">The Data Mining Pipeline</text>
+
+  <rect x="30" y="80" width="110" height="80" rx="8" fill="#f0fdf4" stroke="#16a34a"/>
+  <text x="85" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#166534">Raw Data</text>
+  <text x="85" y="128" text-anchor="middle" font-size="9" fill="#374151">logs, forms,</text>
+  <text x="85" y="142" text-anchor="middle" font-size="9" fill="#374151">sensors, DB</text>
+
+  <rect x="170" y="80" width="120" height="80" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="230" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Preprocessing</text>
+  <text x="230" y="128" text-anchor="middle" font-size="9" fill="#374151">clean, dedupe,</text>
+  <text x="230" y="142" text-anchor="middle" font-size="9" fill="#374151">normalise, impute</text>
+
+  <rect x="320" y="80" width="120" height="80" rx="8" fill="#eff6ff" stroke="#2563eb"/>
+  <text x="380" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Transform</text>
+  <text x="380" y="128" text-anchor="middle" font-size="9" fill="#374151">feature engineering,</text>
+  <text x="380" y="142" text-anchor="middle" font-size="9" fill="#374151">reduce dimensions</text>
+
+  <rect x="470" y="80" width="120" height="80" rx="8" fill="#fef3c7" stroke="#f59e0b"/>
+  <text x="530" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">Model</text>
+  <text x="530" y="128" text-anchor="middle" font-size="9" fill="#374151">cluster, classify,</text>
+  <text x="530" y="142" text-anchor="middle" font-size="9" fill="#374151">regress, detect</text>
+
+  <rect x="620" y="80" width="80" height="80" rx="8" fill="#ede9fe" stroke="#7c3aed"/>
+  <text x="660" y="110" text-anchor="middle" font-size="11" font-weight="bold" fill="#5b21b6">Insight</text>
+  <text x="660" y="128" text-anchor="middle" font-size="9" fill="#374151">report,</text>
+  <text x="660" y="142" text-anchor="middle" font-size="9" fill="#374151">action</text>
+
+  <!-- Arrows -->
+  <line x1="140" y1="120" x2="170" y2="120" stroke="#2563eb" stroke-width="2" marker-end="url(#dm)"/>
+  <line x1="290" y1="120" x2="320" y2="120" stroke="#2563eb" stroke-width="2" marker-end="url(#dm)"/>
+  <line x1="440" y1="120" x2="470" y2="120" stroke="#2563eb" stroke-width="2" marker-end="url(#dm)"/>
+  <line x1="590" y1="120" x2="620" y2="120" stroke="#2563eb" stroke-width="2" marker-end="url(#dm)"/>
+
+  <!-- Feedback loop -->
+  <path d="M 660 160 Q 660 230, 380 230 Q 140 230, 85 160" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="4 3" fill="none" marker-end="url(#dm)"/>
+  <text x="370" y="248" text-anchor="middle" font-size="10" fill="#6b7280" font-style="italic">Iterate &mdash; insights drive new questions and more data</text>
+
+  <text x="360" y="270" text-anchor="middle" font-size="10" fill="#6b7280">Also called KDD &mdash; Knowledge Discovery in Databases</text>
+</svg>
+
+<h3>Heuristics</h3>
+
+<div class="definition">
+    A <strong>heuristic</strong> (&ldquo;rule of thumb&rdquo;) is a pragmatic technique that produces a <em>good enough</em> answer quickly, sacrificing guarantees of optimality for speed or simplicity. Used when an exact algorithm would be too slow, or no exact algorithm is known.
+</div>
+
+<table>
+    <tr><th>Application</th><th>Heuristic</th><th>Trade-off</th></tr>
+    <tr><td>Pathfinding (A*)</td><td>h(n) = straight-line distance to goal</td><td>May not find the absolute shortest path if h overestimates.</td></tr>
+    <tr><td>Spam filtering</td><td>Keyword score + sender reputation + Bayesian update</td><td>Occasional false positives/negatives; much faster than reading every email.</td></tr>
+    <tr><td>Travelling salesman</td><td>Nearest neighbour; 2-opt; simulated annealing</td><td>Near-optimal tour in seconds vs exact exponential algorithms.</td></tr>
+    <tr><td>Chess engines</td><td>Piece values, mobility, king safety</td><td>Can't evaluate every position to checkmate; heuristic guides pruning.</td></tr>
+    <tr><td>File compression</td><td>Huffman frequency estimation</td><td>May not be the theoretically optimal code length for the true distribution.</td></tr>
+</table>
+
+<div class="exam-tip">A good heuristic is <em>admissible</em> (never over-estimates cost, for A*), <em>consistent</em> (triangle inequality), and <em>cheap to compute</em>. Examiners love the contrast: heuristic = fast + approximate; exhaustive = slow + optimal.</div>
+
+<h3>Performance Modelling</h3>
+
+<div class="definition">
+    <strong>Performance modelling</strong> predicts and measures how a program&rsquo;s resource use (time, memory, power, bandwidth) scales with input size. It answers: &ldquo;Will this still be fast enough when the input grows 1000&times;?&rdquo;
+</div>
+
+<ul>
+    <li><strong>Analytical</strong> (Big-O, see 2.3) &mdash; predict asymptotic growth on paper before coding.</li>
+    <li><strong>Profiling</strong> &mdash; run the program with instrumentation that records where time and memory are spent (e.g. <code>cProfile</code>, <code>perf</code>, Visual Studio Profiler). Identifies the <em>hot spots</em> worth optimising.</li>
+    <li><strong>Benchmarking</strong> &mdash; time the program on representative workloads under controlled conditions.</li>
+    <li><strong>Stress / load testing</strong> &mdash; push inputs or users well beyond expected, to find breaking points.</li>
+</ul>
+
+<p>Performance is almost always a <em>time/space trade-off</em>. Caching, memoisation and lookup tables spend memory to save time. Compression and streaming spend time to save memory or bandwidth. The right point on the curve depends on the constraints of the deployment environment (server farm vs embedded device).</p>
+
+<h3>Pipelining (Software)</h3>
+
+<div class="definition">
+    <strong>Software pipelining</strong> structures a computation as a series of processing stages, each transforming the output of the previous stage. Data flows through like items on an assembly line. Stages can run <strong>concurrently</strong> on different items, improving throughput.
+</div>
+
+<p>Distinct from the <em>CPU pipelining</em> of 1.1 (fetch/decode/execute at the hardware level) but conceptually identical. Examples:</p>
+
+<ul>
+    <li><strong>Unix pipes</strong>: <code>cat logs | grep ERROR | sort | uniq -c</code> &mdash; four processes run simultaneously, each consuming what the previous emits.</li>
+    <li><strong>ETL pipelines</strong> (Extract, Transform, Load) in data engineering.</li>
+    <li><strong>Build pipelines</strong> &mdash; compile &rarr; test &rarr; package &rarr; deploy, with caching between stages.</li>
+    <li><strong>Graphics pipelines</strong> &mdash; vertices &rarr; transforms &rarr; rasterise &rarr; shade &rarr; blend.</li>
+    <li><strong>Machine-learning pipelines</strong> (scikit-learn <code>Pipeline</code>) &mdash; pre-process &rarr; feature-select &rarr; model &rarr; evaluate.</li>
+</ul>
+
+<p><strong>Benefits:</strong> modularity (each stage tested separately), parallelism (stages run on different cores/machines), streaming (don&rsquo;t need the full dataset in memory at once). <strong>Drawbacks:</strong> bottleneck stage limits whole pipeline throughput; debugging across stage boundaries can be harder; error handling is more complex when data has already flowed downstream.</p>
+
+<h3>Visualisation</h3>
+
+<div class="definition">
+    <strong>Visualisation</strong> is the representation of data or program state in graphical form &mdash; charts, diagrams, dashboards &mdash; to reveal patterns and outliers that are invisible in raw tables.
+</div>
+
+<p>Good visualisations are a computational method in their own right: an analyst can spot a cluster or spike in a scatter plot in seconds, whereas reading the underlying CSV would take hours. Choose the form to match the question:</p>
+
+<table>
+    <tr><th>Form</th><th>Good for</th></tr>
+    <tr><td><strong>Bar / column chart</strong></td><td>Comparing category totals</td></tr>
+    <tr><td><strong>Line chart</strong></td><td>Trends over time</td></tr>
+    <tr><td><strong>Scatter plot</strong></td><td>Correlation between two variables, outliers</td></tr>
+    <tr><td><strong>Heatmap</strong></td><td>Density, 2D distributions, correlation matrices</td></tr>
+    <tr><td><strong>Histogram / box plot</strong></td><td>Distribution of a single variable</td></tr>
+    <tr><td><strong>Network / graph diagram</strong></td><td>Relationships between entities</td></tr>
+    <tr><td><strong>Dashboard</strong></td><td>Multiple correlated views updated live</td></tr>
+    <tr><td><strong>UML / flowchart</strong></td><td>Structure of code or process</td></tr>
+</table>
+
+<p>Visualisation is also central to <strong>debugging and profiling</strong>: flame graphs, call-graph views, memory heat-maps and animation of data structures all use visual channels (position, colour, size) to compress information.</p>
+
+<p><strong>Principles of effective visualisation</strong> (Tufte, Few, Munzner):</p>
+
+<ul>
+    <li><strong>Data-to-ink ratio</strong> &mdash; every mark on the chart should carry information. Remove chartjunk (gratuitous gradients, 3-D effects).</li>
+    <li><strong>Accurate encoding</strong> &mdash; quantitative differences should be shown by length or position, not area or colour intensity, which are harder to compare.</li>
+    <li><strong>Axis honesty</strong> &mdash; don&rsquo;t truncate a y-axis to exaggerate a difference; don&rsquo;t use dual axes without clear labelling.</li>
+    <li><strong>Colour for category, not quantity</strong> &mdash; unless a proper sequential / diverging palette is used. Always check colour-blind safety.</li>
+    <li><strong>Small multiples</strong> &mdash; many small copies of the same chart with one variable changing is often clearer than one busy chart.</li>
+</ul>
+
+<div class="exam-tip">Whenever an exam question invites a worked answer with data or structures, a quick diagram (even a rough sketch) often scores the same marks as a paragraph &mdash; and is faster to produce.</div>
+
+<h3>Bringing 2.1 Concepts Back Together</h3>
+
+<p>2.2.2 is best viewed as the applied face of 2.1&rsquo;s computational thinking. The same ideas return with sharper teeth:</p>
+
+<table>
+    <tr><th>2.1 concept</th><th>Reappears in 2.2.2 as...</th></tr>
+    <tr><td>Abstraction</td><td>Hiding implementation in classes; picking the right level for a problem.</td></tr>
+    <tr><td>Decomposition</td><td>Dividing into modules, functions, pipeline stages.</td></tr>
+    <tr><td>Thinking ahead</td><td>Caching, memoisation, heuristics with lookahead.</td></tr>
+    <tr><td>Thinking procedurally</td><td>Programming constructs, subroutines.</td></tr>
+    <tr><td>Thinking logically</td><td>Selection, backtracking conditions, invariants.</td></tr>
+    <tr><td>Thinking concurrently</td><td>Pipelining, divide-and-conquer on multiple cores.</td></tr>
+</table>
+
+<h3>Common exam traps</h3>
+
+<ul>
+    <li>Confusing <strong>overloading</strong> (same name, different signatures, chosen at compile time) with <strong>overriding</strong> (subclass replaces a parent method, chosen at run time).</li>
+    <li>Forgetting that a procedure call with <code>BYREF</code> parameters can mutate the caller&rsquo;s variables &mdash; a frequent cause of exam trace-table errors.</li>
+    <li>Writing recursion without a <strong>base case</strong> &mdash; an automatic zero-mark in an exam solution.</li>
+    <li>Describing data mining purely as &ldquo;looking for patterns&rdquo; &mdash; you need to name concrete tasks (clustering, classification, anomaly detection).</li>
+    <li>Confusing <em>software pipelining</em> (this topic) with the <em>CPU pipelining</em> from 1.1.</li>
+</ul>
+
+<h2>Summary Checklist</h2>
+
+<ul>
+    <li>Three constructs: sequence, selection, iteration (for/while/do-while) &mdash; with break, continue, nesting.</li>
+    <li>Variables vs constants; scope (global/local) and lifetime; pass-by-value vs pass-by-reference.</li>
+    <li>Procedures return nothing; functions return a value.</li>
+    <li>Modularity benefits: reuse, maintainability, testability, parallel development, abstraction.</li>
+    <li>IDE features: syntax highlighting, autocomplete, breakpoints, stepping, watches, call stack, linting, refactoring, VCS.</li>
+    <li>Debugging hierarchy: print, breakpoints, stepping, watches, call stack, bisect.</li>
+    <li>Recursion: <strong>base case + recursive case</strong>; stack frames; stack overflow; factorial, Fibonacci (naive vs memoised), Hanoi, tree traversal; recursion &harr; iteration; tail recursion.</li>
+    <li>OOP four pillars: <strong>encapsulation, inheritance, polymorphism, abstraction</strong>. Classes/objects, constructors/destructors, static vs instance, overloading vs overriding, Liskov.</li>
+    <li>Computational methods: problem recognition, decomposition, divide and conquer, abstraction, thinking ahead/caching, backtracking, data mining, heuristics, performance modelling, pipelining, visualisation.</li>
+</ul>
+
+</div>
+</body>
+</html>
