@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 1.7 — Differentiation</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.7 Differentiation</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 1: Pure Mathematics</p>
+
+<p>Differentiation is the branch of calculus that measures how quickly one quantity changes in response to changes in another. Geometrically, the derivative of a function at a point is the gradient of the tangent line to its graph there; dynamically, it is the instantaneous rate of change. This chapter develops the machinery for computing derivatives — first principles, the standard-functions table, the product, quotient and chain rules, implicit and parametric differentiation — and uses them to classify stationary points, write down tangents and normals, and solve related-rates problems. The derivative is the single most useful tool in applied mathematics: every optimisation problem, every motion problem, and every model involving change ultimately rests on it.</p>
+
+<h2>1. The Gradient at a Point</h2>
+
+<p>For a straight line the gradient is constant and easy to measure: rise over run between any two points. For a curve the gradient varies from point to point, so "the gradient of the curve" has to be defined <em>at</em> a specific point. The key idea is that, on a sufficiently small scale, any smooth curve looks locally like a straight line — the tangent line. The gradient of that tangent is what we call the gradient of the curve at the point.</p>
+
+<div class="definition">
+<strong>Tangent and gradient of a curve.</strong> The <em>tangent</em> to a curve \(y = f(x)\) at the point \(P(a, f(a))\) is the straight line that touches the curve at \(P\) and has the same direction as the curve there. The <em>gradient of the curve at \(P\)</em> is the gradient of this tangent. Intuitively, it is the instantaneous rate at which \(y\) changes with \(x\) at that point.
+</div>
+
+<h3>From Average Rate to Instantaneous Rate</h3>
+
+<p>Take two points on the curve, \(P(a, f(a))\) and \(Q(a + h, f(a + h))\). The chord \(PQ\) has gradient
+\[ \frac{f(a + h) - f(a)}{h}, \]
+the <em>average rate of change</em> of \(f\) over the interval \([a, a + h]\). As \(Q\) is brought closer to \(P\) (i.e. \(h \to 0\)), the chord rotates about \(P\) and approaches the tangent. The limiting value of the chord gradient, if it exists, is the gradient of the tangent — the instantaneous rate of change at \(P\).</p>
+
+<svg viewBox="0 0 500 280" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <line x1="50" y1="240" x2="470" y2="240" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="80" y1="20"  x2="80" y2="260"  stroke="#1e3a5f" stroke-width="1.5"/>
+  <text x="465" y="255" font-size="11" fill="#1e3a5f">x</text>
+  <text x="85"  y="25"  font-size="11" fill="#1e3a5f">y</text>
+  <!-- curve y = (x-2)^2/20 + 1 rough -->
+  <path d="M 80,80 Q 180,230 250,200 T 460,40" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="420" y="55" font-size="12" fill="#2563eb">y = f(x)</text>
+  <!-- chord PQ -->
+  <line x1="230" y1="210" x2="360" y2="100" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="370" y="95" font-size="11" fill="#dc2626">chord PQ</text>
+  <!-- tangent at P -->
+  <line x1="170" y1="260" x2="340" y2="155" stroke="#16a34a" stroke-width="2"/>
+  <text x="340" y="150" font-size="11" fill="#16a34a">tangent at P</text>
+  <!-- points -->
+  <circle cx="230" cy="210" r="4" fill="#1a1a2e"/>
+  <text x="212" y="228" font-size="11" fill="#1a1a2e">P(a, f(a))</text>
+  <circle cx="360" cy="100" r="4" fill="#1a1a2e"/>
+  <text x="365" y="95"  font-size="11" fill="#1a1a2e">Q(a+h, f(a+h))</text>
+</svg>
+
+<p>This limiting process — <em>differentiation from first principles</em> — is the rigorous foundation on which every later shortcut (power rule, product rule, etc.) is built.</p>
+
+<h2>2. Differentiation from First Principles</h2>
+
+<div class="definition">
+<strong>Derivative (first principles).</strong> The <em>derivative</em> of \(f\) at \(x\), written \(f'(x)\) or \(\dfrac{dy}{dx}\), is the limit
+\[ f'(x) = \lim_{h \to 0} \frac{f(x + h) - f(x)}{h}, \]
+provided this limit exists. If it does, \(f\) is said to be <em>differentiable</em> at \(x\). The function \(f'\) that sends each \(x\) to this value is the <em>derivative function</em>.
+</div>
+
+<p>Three equivalent notations are used interchangeably: \(f'(x)\) (Lagrange), \(\dfrac{dy}{dx}\) (Leibniz), and \(\dot y\) (Newton, usually reserved for derivatives with respect to time). Each has its place: Leibniz is best for the chain rule; Lagrange is concise; Newton is standard in mechanics.</p>
+
+<div class="example">
+<h3>Worked Example 1 — Derive d/dx(x²) = 2x from first principles</h3>
+<pre>
+<span class="ln">1.</span>  Let f(x) = x². Apply the definition:
+<span class="ln">2.</span>     f'(x) = lim_(h→0) [f(x + h) − f(x)] / h
+<span class="ln">3.</span>           = lim_(h→0) [(x + h)² − x²] / h.
+<span class="ln">4.</span>  Expand the numerator:
+<span class="ln">5.</span>     (x + h)² − x² = x² + 2xh + h² − x² = 2xh + h².
+<span class="ln">6.</span>  Divide by h (valid while h ≠ 0):
+<span class="ln">7.</span>     (2xh + h²) / h = 2x + h.
+<span class="ln">8.</span>  Take the limit h → 0:
+<span class="ln">9.</span>     lim_(h→0) (2x + h) = 2x.
+<span class="ln">10.</span> ∴ d/dx(x²) = 2x.
+
+<span class="cm">// The same procedure gives d/dx(x³) = 3x² and, by induction, d/dx(xⁿ) = n x^(n−1)</span>
+<span class="cm">// for every positive integer n. The binomial theorem generalises it to all real n.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 2 — General power rule for small n</h3>
+<p>Show d/dx(x³) = 3x² from first principles.</p>
+<pre>
+<span class="ln">1.</span>  f(x) = x³, so f(x + h) = (x + h)³.
+<span class="ln">2.</span>  Expand by the binomial theorem:
+<span class="ln">3.</span>     (x + h)³ = x³ + 3x²h + 3xh² + h³.
+<span class="ln">4.</span>  Subtract f(x) and divide by h:
+<span class="ln">5.</span>     [f(x + h) − f(x)] / h = (3x²h + 3xh² + h³) / h
+<span class="ln">6.</span>                            = 3x² + 3xh + h².
+<span class="ln">7.</span>  Let h → 0:  every term with an h vanishes.
+<span class="ln">8.</span>     f'(x) = 3x².
+
+<span class="cm">// The general formula d/dx(xⁿ) = n x^(n−1) follows because in (x + h)ⁿ</span>
+<span class="cm">// the first two binomial terms are xⁿ + n x^(n−1) h; the rest all carry h².</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — first-principles questions are syllabus-required.</strong> OCR routinely asks you to "differentiate from first principles", usually for a polynomial of degree \(\leq 3\). Always (i) write the limit definition explicitly, (ii) expand the numerator, (iii) cancel the \(h\) in the denominator <em>before</em> taking the limit, and (iv) state "as \(h \to 0\)" at the final step. Skipping the limit statement loses a mark even if the algebra is correct.
+</div>
+
+<h2>3. Basic Rules of Differentiation</h2>
+
+<p>Three linearity rules let you differentiate any polynomial or sum of power functions term-by-term.</p>
+
+<div class="definition">
+<strong>Power rule.</strong> For any real \(n\),
+\[ \frac{d}{dx}(x^n) = n x^{n-1}. \]
+The rule holds for positive integers (proved above), negative integers (so \(\tfrac{d}{dx}(1/x) = -1/x^2\)), fractional powers (so \(\tfrac{d}{dx}(\sqrt{x}) = \tfrac{1}{2}x^{-1/2}\)), and even irrational powers.
+</div>
+
+<div class="definition">
+<strong>Sum, difference and constant-multiple rules.</strong> For differentiable \(f, g\) and constant \(c\):
+\[ (f + g)'(x) = f'(x) + g'(x), \quad (f - g)'(x) = f'(x) - g'(x), \quad (cf)'(x) = c f'(x). \]
+In particular, \(\dfrac{d}{dx}(c) = 0\) for any constant \(c\).
+</div>
+
+<table>
+<tr><th>Rule</th><th>Statement</th><th>Example</th></tr>
+<tr><td>Power</td><td>\((x^n)' = n x^{n-1}\)</td><td>\((x^5)' = 5 x^4\); \((x^{-2})' = -2 x^{-3}\)</td></tr>
+<tr><td>Constant multiple</td><td>\((c f)' = c f'\)</td><td>\((7 x^3)' = 21 x^2\)</td></tr>
+<tr><td>Sum / difference</td><td>\((f \pm g)' = f' \pm g'\)</td><td>\((x^3 - 4x)' = 3x^2 - 4\)</td></tr>
+<tr><td>Constant</td><td>\((c)' = 0\)</td><td>\((\pi)' = 0\)</td></tr>
+<tr><td>Linear</td><td>\((ax + b)' = a\)</td><td>\((5x - 3)' = 5\)</td></tr>
+</table>
+
+<div class="example">
+<h3>Worked Example 3 — Polynomial with mixed powers</h3>
+<p>Differentiate \(y = 4x^3 - 6\sqrt{x} + \dfrac{2}{x^2} + 7\).</p>
+<pre>
+<span class="ln">1.</span>  Rewrite everything as a power:
+<span class="ln">2.</span>     y = 4x³ − 6 x^(1/2) + 2 x^(−2) + 7.
+<span class="ln">3.</span>  Differentiate term by term using power + constant-multiple rules:
+<span class="ln">4.</span>     dy/dx = 12 x² − 3 x^(−1/2) − 4 x^(−3) + 0.
+<span class="ln">5.</span>  Rewrite in original style if required:
+<span class="ln">6.</span>     dy/dx = 12x² − 3/√x − 4/x³.
+
+<span class="cm">// Always convert roots and fractions to index notation BEFORE applying power rule.</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — rewrite before differentiating.</strong> Many wrong answers arise because a student tried to differentiate \(1/x^3\) or \(\sqrt{x}\) directly. Always rewrite as \(x^{-3}\) or \(x^{1/2}\) first — the power rule handles these effortlessly, while the original notation invites careless mistakes. The same applies to products inside fractions: simplify algebraically before reaching for the quotient rule if you can.
+</div>
+
+<h2>4. Derivatives of Standard Functions</h2>
+
+<p>Beyond polynomials, a handful of standard functions — trigonometric, exponential, logarithmic — have known derivatives that must be memorised. Each can be derived from first principles (some use the addition formulas; others require limits like \(\lim_{h\to 0}\sin h / h = 1\)), but in exams they are quoted directly.</p>
+
+<div class="equation">
+\( \dfrac{d}{dx}(\sin x) = \cos x, \quad \dfrac{d}{dx}(\cos x) = -\sin x, \quad \dfrac{d}{dx}(\tan x) = \sec^2 x. \)
+</div>
+
+<div class="equation">
+\( \dfrac{d}{dx}(e^x) = e^x, \quad \dfrac{d}{dx}(\ln x) = \dfrac{1}{x}, \quad \dfrac{d}{dx}(a^x) = a^x \ln a. \)
+</div>
+
+<p>A mnemonic for the trigonometric pair: differentiating \(\sin\) and \(\cos\) cycles through the pattern \(\sin \to \cos \to -\sin \to -\cos \to \sin\). The minus sign appears only when passing through \(\cos\).</p>
+
+<table>
+<tr><th>Function \(f(x)\)</th><th>Derivative \(f'(x)\)</th><th>Notes</th></tr>
+<tr><td>\(x^n\)</td><td>\(n x^{n-1}\)</td><td>Any real \(n\).</td></tr>
+<tr><td>\(\sin x\)</td><td>\(\cos x\)</td><td>\(x\) must be in radians.</td></tr>
+<tr><td>\(\cos x\)</td><td>\(-\sin x\)</td><td>Minus sign — easily forgotten.</td></tr>
+<tr><td>\(\tan x\)</td><td>\(\sec^2 x = 1/\cos^2 x\)</td><td>Undefined where \(\cos x = 0\).</td></tr>
+<tr><td>\(e^x\)</td><td>\(e^x\)</td><td>Unique: derivative equals the function.</td></tr>
+<tr><td>\(\ln x\)</td><td>\(1/x\)</td><td>Domain \(x > 0\).</td></tr>
+<tr><td>\(a^x\)</td><td>\(a^x \ln a\)</td><td>Extra factor of \(\ln a\) for \(a \neq e\).</td></tr>
+<tr><td>\(\log_a x\)</td><td>\(1/(x \ln a)\)</td><td>Becomes \(1/x\) when \(a = e\).</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — trig derivatives require radians.</strong> Every derivative formula for \(\sin, \cos, \tan\) assumes \(x\) is measured in radians. If you differentiate \(\sin x\) thinking in degrees, the answer is wrong by a factor of \(\pi/180\). OCR papers always work in radians unless explicitly stated — set your calculator to RAD mode before starting any calculus question.
+</div>
+
+<h2>5. The Product Rule</h2>
+
+<p>When \(y\) is the product of two functions of \(x\), its derivative is <em>not</em> the product of the individual derivatives. Instead:</p>
+
+<div class="definition">
+<strong>Product rule.</strong> If \(u, v\) are differentiable functions of \(x\), then
+\[ \frac{d}{dx}(u v) = u' v + u v' \quad\text{or, in Leibniz form,}\quad \frac{d}{dx}(uv) = v\frac{du}{dx} + u\frac{dv}{dx}. \]
+Mnemonic: "derivative of the first times the second, plus the first times the derivative of the second".
+</div>
+
+<p>The rule extends by induction to products of three or more factors: \((uvw)' = u'vw + uv'w + uvw'\) — each term differentiates one factor while leaving the others alone.</p>
+
+<div class="example">
+<h3>Worked Example 4 — d/dx(x · sin x)</h3>
+<pre>
+<span class="ln">1.</span>  Identify u = x, v = sin x.
+<span class="ln">2.</span>  Compute the pieces:
+<span class="ln">3.</span>     u' = 1        v' = cos x.
+<span class="ln">4.</span>  Apply the product rule:
+<span class="ln">5.</span>     (uv)' = u'v + uv'
+<span class="ln">6.</span>           = (1)(sin x) + (x)(cos x)
+<span class="ln">7.</span>           = sin x + x cos x.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 5 — d/dx(e^x · cos x)</h3>
+<pre>
+<span class="ln">1.</span>  u = eˣ, v = cos x.
+<span class="ln">2.</span>  u' = eˣ;  v' = −sin x.
+<span class="ln">3.</span>  (uv)' = eˣ · cos x + eˣ · (−sin x)
+<span class="ln">4.</span>        = eˣ (cos x − sin x).
+
+<span class="cm">// Factoring out eˣ gives a clean, simplified answer — examiners prefer this.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 6 — d/dx((x² + 1)(x³ − 2))</h3>
+<pre>
+<span class="ln">1.</span>  u = x² + 1,  v = x³ − 2.
+<span class="ln">2.</span>  u' = 2x,       v' = 3x².
+<span class="ln">3.</span>  (uv)' = (2x)(x³ − 2) + (x² + 1)(3x²)
+<span class="ln">4.</span>        = 2x⁴ − 4x + 3x⁴ + 3x²
+<span class="ln">5.</span>        = 5x⁴ + 3x² − 4x.
+<span class="ln">6.</span>  Check by expanding first:  (x² + 1)(x³ − 2) = x⁵ − 2x² + x³ − 2.
+<span class="ln">7.</span>         Differentiate: 5x⁴ − 4x + 3x² ✓  (same answer.)
+
+<span class="cm">// For polynomial products, expanding first is often quicker; the product rule</span>
+<span class="cm">// is essential only when expansion is impossible (e.g. x · sin x).</span>
+</pre>
+</div>
+
+<h2>6. The Quotient Rule</h2>
+
+<div class="definition">
+<strong>Quotient rule.</strong> If \(u, v\) are differentiable and \(v \neq 0\), then
+\[ \frac{d}{dx}\!\left(\frac{u}{v}\right) = \frac{u' v - u v'}{v^2}. \]
+Mnemonic: "bottom times derivative-of-top, minus top times derivative-of-bottom, all over bottom squared." The order \(u'v - uv'\) matters — swapping the subtraction sign gives the wrong answer.
+</div>
+
+<p>The quotient rule can always be derived from the product rule by writing \(u/v = u \cdot v^{-1}\) and applying the product and chain rules — but memorising it directly is faster in exams.</p>
+
+<div class="example">
+<h3>Worked Example 7 — d/dx(sin x / x)</h3>
+<pre>
+<span class="ln">1.</span>  u = sin x,  v = x.
+<span class="ln">2.</span>  u' = cos x,  v' = 1.
+<span class="ln">3.</span>  (u/v)' = (u'v − uv') / v²
+<span class="ln">4.</span>         = (cos x · x − sin x · 1) / x²
+<span class="ln">5.</span>         = (x cos x − sin x) / x².
+
+<span class="cm">// This derivative appears in the analysis of the "sinc" function used in signal</span>
+<span class="cm">// processing. As x → 0, (sin x)/x → 1, but its derivative at 0 is zero.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 8 — d/dx((x² + 1)/(x − 1))</h3>
+<pre>
+<span class="ln">1.</span>  u = x² + 1,  v = x − 1.
+<span class="ln">2.</span>  u' = 2x,       v' = 1.
+<span class="ln">3.</span>  (u/v)' = [2x(x − 1) − (x² + 1)(1)] / (x − 1)²
+<span class="ln">4.</span>         = [2x² − 2x − x² − 1] / (x − 1)²
+<span class="ln">5.</span>         = (x² − 2x − 1) / (x − 1)².
+<span class="ln">6.</span>  Domain: x ≠ 1 (where the original quotient is undefined).
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — don't mix up product and quotient order.</strong> Both rules contain "\(u'v\)" and "\(uv'\)", but the product rule adds, while the quotient rule subtracts — and the quotient rule's order is \(u'v - uv'\), not \(uv' - u'v\). A useful check: on the quotient rule, the term with the derivative of the <em>numerator</em> comes first (positive); the term with the derivative of the <em>denominator</em> carries the minus sign.
+</div>
+
+<h2>7. The Chain Rule</h2>
+
+<p>Most functions met in practice are composites: \(\sin(3x)\), \(e^{x^2}\), \((2x+1)^5\), \(\ln(x^2 + 1)\). To differentiate a composite \(y = f(g(x))\) you need the chain rule.</p>
+
+<div class="definition">
+<strong>Chain rule.</strong> If \(y = f(u)\) and \(u = g(x)\), both differentiable, then
+\[ \frac{dy}{dx} = \frac{dy}{du} \cdot \frac{du}{dx}, \qquad\text{equivalently}\qquad \big(f(g(x))\big)' = f'(g(x)) \cdot g'(x). \]
+Intuition: differentiate the <em>outer</em> function (treating the inside as a single blob), then multiply by the derivative of the inside.
+</div>
+
+<p>In Leibniz notation the rule looks like cancellation of \(du\): \(\frac{dy}{dx} = \frac{dy}{du}\cdot\frac{du}{dx}\). This is a deliberate feature of Leibniz's notation — it behaves like a fraction for this purpose, even though \(\frac{dy}{dx}\) is not literally a ratio.</p>
+
+<div class="example">
+<h3>Worked Example 9 — Four chain-rule calculations</h3>
+<pre>
+<span class="ln">1.</span>  d/dx (sin 3x):  outer = sin, inner = 3x.
+<span class="ln">2.</span>     Derivative = cos(3x) · 3 = 3 cos 3x.
+<span class="ln">3.</span>
+<span class="ln">4.</span>  d/dx (e^(x²)):  outer = eᵘ, inner = x².
+<span class="ln">5.</span>     Derivative = e^(x²) · 2x = 2x e^(x²).
+<span class="ln">6.</span>
+<span class="ln">7.</span>  d/dx ((2x + 1)⁵):  outer = u⁵, inner = 2x + 1.
+<span class="ln">8.</span>     Derivative = 5(2x + 1)⁴ · 2 = 10(2x + 1)⁴.
+<span class="ln">9.</span>
+<span class="ln">10.</span> d/dx (ln(x² + 1)):  outer = ln u, inner = x² + 1.
+<span class="ln">11.</span>    Derivative = [1/(x² + 1)] · 2x = 2x / (x² + 1).
+
+<span class="cm">// Pattern: "derivative of outer at the inside, times derivative of inside".</span>
+<span class="cm">// When the inner is linear (ax + b), the chain rule adds only a factor of a.</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — the chain-rule multiplier is easy to miss.</strong> Students who see \(y = \sin(3x)\) often write \(dy/dx = \cos(3x)\) and lose the factor of 3. A quick check: when the inner function is a linear term \(ax + b\), the chain rule contributes the factor \(a\). So \((e^{5x})' = 5 e^{5x}\); \((\cos(2x - 1))' = -2\sin(2x - 1)\); \((\ln(4x))' = 4/(4x) = 1/x\) — the factor sometimes cancels, but you still had to include it.
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — chain rule sign traps.</strong> The derivative of \(\cos(\text{stuff})\) is \(-\sin(\text{stuff}) \cdot (\text{stuff})'\) — the minus sign comes from differentiating the outer cosine, not from the inner function. Even when the inner function is \(-x\), the minus signs multiply: \((\cos(-x))' = -\sin(-x) \cdot (-1) = \sin(-x) \cdot 1 = -\sin x\) (using \(\sin(-x) = -\sin x\)). Work systematically with brackets when signs get confusing.
+</div>
+
+<h2>8. Implicit Differentiation</h2>
+
+<p>Sometimes \(y\) is defined implicitly by an equation in \(x\) and \(y\), without an explicit formula \(y = f(x)\). Examples include the circle \(x^2 + y^2 = 25\) and the folium \(x^3 + y^3 = 3xy\). To find \(dy/dx\), differentiate both sides with respect to \(x\), treating \(y\) as an unknown function of \(x\) and applying the chain rule to every \(y\)-term.</p>
+
+<div class="definition">
+<strong>Implicit differentiation.</strong> Given a relation \(F(x, y) = 0\), differentiate each term with respect to \(x\); wherever a \(y\) appears, multiply by \(\dfrac{dy}{dx}\) (chain rule). Then solve algebraically for \(\dfrac{dy}{dx}\). Key building blocks:
+\[ \frac{d}{dx}(y^n) = n y^{n-1} \frac{dy}{dx}, \qquad \frac{d}{dx}(xy) = y + x\frac{dy}{dx}, \qquad \frac{d}{dx}(\sin y) = \cos y \cdot \frac{dy}{dx}. \]
+</div>
+
+<div class="example">
+<h3>Worked Example 10 — Circle x² + y² = 25</h3>
+<pre>
+<span class="ln">1.</span>  Differentiate each term w.r.t. x:
+<span class="ln">2.</span>     d/dx(x²) + d/dx(y²) = d/dx(25)
+<span class="ln">3.</span>     2x + 2y · dy/dx = 0.
+<span class="ln">4.</span>  Solve for dy/dx:
+<span class="ln">5.</span>     2y · dy/dx = −2x
+<span class="ln">6.</span>     dy/dx = −x/y      (provided y ≠ 0).
+<span class="ln">7.</span>  Check at (3, 4):  dy/dx = −3/4.
+<span class="ln">8.</span>  Geometric check: radius OP has gradient 4/3; tangent ⟂ radius, so tangent
+<span class="ln">9.</span>  gradient = −3/4 ✓.
+
+<span class="cm">// The tangent to a circle is perpendicular to the radius — this implicit result</span>
+<span class="cm">// confirms it without any Pythagorean manipulation.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 11 — Implicit with a product term</h3>
+<p>Given \(x^2 y + x y^2 = 6\), find \(\dfrac{dy}{dx}\).</p>
+<pre>
+<span class="ln">1.</span>  Differentiate each term w.r.t. x, using the product rule on xⁿyᵐ terms.
+<span class="ln">2.</span>  Term 1: d/dx(x²y) = 2x · y + x² · dy/dx.
+<span class="ln">3.</span>  Term 2: d/dx(xy²) = y² + x · 2y · dy/dx = y² + 2xy · dy/dx.
+<span class="ln">4.</span>  RHS:    d/dx(6) = 0.
+<span class="ln">5.</span>  Combine:
+<span class="ln">6.</span>     2xy + x² dy/dx + y² + 2xy · dy/dx = 0.
+<span class="ln">7.</span>  Collect dy/dx terms:
+<span class="ln">8.</span>     (x² + 2xy) dy/dx = −(2xy + y²)
+<span class="ln">9.</span>     dy/dx = −(2xy + y²) / (x² + 2xy)
+<span class="ln">10.</span>          = −y(2x + y) / [x(x + 2y)].
+
+<span class="cm">// Final answer simplified by factoring numerator and denominator.</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — never forget the dy/dx factor.</strong> Every time you differentiate a term containing \(y\), the chain rule contributes a factor of \(dy/dx\). A missed \(dy/dx\) is the single commonest error in implicit-differentiation questions. After differentiating, every term that originally contained \(y\) should now contain either \(dy/dx\) or an explicit \(y\) — if neither appears, you have made an algebra slip.
+</div>
+
+<h2>9. Parametric Differentiation</h2>
+
+<p>A curve may be given parametrically as \(x = f(t)\), \(y = g(t)\), with \(t\) the parameter. To find \(dy/dx\) in terms of \(t\), differentiate both coordinates with respect to \(t\) and divide.</p>
+
+<div class="definition">
+<strong>Parametric differentiation formula.</strong> For a curve \(x = f(t)\), \(y = g(t)\) with \(f'(t) \neq 0\),
+\[ \frac{dy}{dx} = \frac{dy/dt}{dx/dt} = \frac{g'(t)}{f'(t)}. \]
+The formula follows from the chain rule: \(\dfrac{dy}{dt} = \dfrac{dy}{dx} \cdot \dfrac{dx}{dt}\), so rearranging gives the quoted identity.
+</div>
+
+<div class="example">
+<h3>Worked Example 12 — Circle x = r cos t, y = r sin t</h3>
+<pre>
+<span class="ln">1.</span>  dx/dt = −r sin t;     dy/dt = r cos t.
+<span class="ln">2.</span>  dy/dx = (dy/dt) / (dx/dt)
+<span class="ln">3.</span>         = (r cos t) / (−r sin t)
+<span class="ln">4.</span>         = −cos t / sin t
+<span class="ln">5.</span>         = −cot t.
+<span class="ln">6.</span>  Sanity check at t = π/2 (top of circle, point (0, r)):
+<span class="ln">7.</span>     dy/dx = −cot(π/2) = 0        ✓  (horizontal tangent.)
+<span class="ln">8.</span>  At t = π (leftmost point (−r, 0)):  dy/dx undefined (dx/dt = 0,
+<span class="ln">9.</span>  vertical tangent.)
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 13 — x = t² + 1, y = 2t</h3>
+<pre>
+<span class="ln">1.</span>  dx/dt = 2t;   dy/dt = 2.
+<span class="ln">2.</span>  dy/dx = 2 / (2t) = 1/t     (valid for t ≠ 0).
+<span class="ln">3.</span>  Eliminate parameter to check:
+<span class="ln">4.</span>     t = y/2  ⇒  x = (y/2)² + 1 = y²/4 + 1,
+<span class="ln">5.</span>     ⇒  y² = 4(x − 1)      (a parabola opening right.)
+<span class="ln">6.</span>  Differentiate implicitly: 2y · dy/dx = 4 ⇒ dy/dx = 2/y = 2/(2t) = 1/t ✓.
+
+<span class="cm">// Two routes (parametric and implicit) give the same answer, as they must.</span>
+</pre>
+</div>
+
+<h2>10. The Second Derivative</h2>
+
+<p>Differentiating \(f'(x)\) gives the <em>second derivative</em> \(f''(x) = \dfrac{d^2 y}{dx^2}\). Geometrically, it measures how the gradient is itself changing: the <em>rate of change of the rate of change</em>. In mechanics, if \(s(t)\) is displacement, \(s'(t)\) is velocity and \(s''(t)\) is acceleration.</p>
+
+<div class="definition">
+<strong>Second derivative and concavity.</strong> The second derivative \(f''(x)\) describes the <em>curvature</em> of the graph:
+<ul>
+  <li>\(f''(x) > 0\): graph is <em>concave up</em> (shaped like \(\cup\)) — tangent lines lie below the curve.</li>
+  <li>\(f''(x) < 0\): graph is <em>concave down</em> (shaped like \(\cap\)) — tangent lines lie above the curve.</li>
+  <li>\(f''(x) = 0\) with sign change: a <em>point of inflection</em>.</li>
+</ul>
+</div>
+
+<p>Example: for \(y = x^3\), \(y' = 3x^2\), \(y'' = 6x\). At \(x = 0\), \(y'' = 0\) and changes from negative (for \(x < 0\)) to positive (for \(x > 0\)) — the origin is a point of inflection.</p>
+
+<h2>11. Stationary Points</h2>
+
+<p>A point on the curve where the tangent is horizontal is called a <em>stationary point</em>. These are the candidates for local maxima, local minima, and certain kinds of inflection.</p>
+
+<div class="definition">
+<strong>Stationary point.</strong> A stationary point of \(f\) is a value \(x_0\) where \(f'(x_0) = 0\). The point on the graph is \((x_0, f(x_0))\). Stationary points fall into three categories:
+<ul>
+  <li><strong>Local maximum:</strong> \(f'\) changes from positive to negative at \(x_0\).</li>
+  <li><strong>Local minimum:</strong> \(f'\) changes from negative to positive at \(x_0\).</li>
+  <li><strong>Stationary point of inflection:</strong> \(f'\) does <em>not</em> change sign at \(x_0\) (e.g. \(y = x^3\) at origin).</li>
+</ul>
+</div>
+
+<h3>Classifying Stationary Points</h3>
+
+<p>Two tests are standard: the first-derivative (sign-change) test and the second-derivative test.</p>
+
+<table>
+<tr><th>Test</th><th>How it works</th><th>Conclusion</th></tr>
+<tr><td>First-derivative (sign change)</td><td>Examine sign of \(f'\) just before and just after \(x_0\).</td><td>\(+\) then \(-\): max. \(-\) then \(+\): min. Same sign either side: inflection.</td></tr>
+<tr><td>Second-derivative</td><td>Compute \(f''(x_0)\).</td><td>\(f''(x_0) > 0\): min. \(f''(x_0) < 0\): max. \(f''(x_0) = 0\): inconclusive.</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — when \(f''(x_0) = 0\), the second-derivative test FAILS.</strong> It does not mean "inflection" — it means "try something else". For \(y = x^4\) at \(x = 0\): \(f'(0) = 0\) and \(f''(0) = 0\), but the origin is a minimum (the graph sits on the x-axis and rises on both sides). Switch to the first-derivative test: \(f'(x) = 4x^3\) is negative for \(x < 0\) and positive for \(x > 0\), confirming a minimum.
+</div>
+
+<h2>12. Increasing and Decreasing Functions</h2>
+
+<div class="definition">
+<strong>Monotonicity from the derivative.</strong> On an interval \(I\):
+<ul>
+  <li>If \(f'(x) > 0\) for all \(x \in I\), then \(f\) is <em>strictly increasing</em> on \(I\).</li>
+  <li>If \(f'(x) < 0\) for all \(x \in I\), then \(f\) is <em>strictly decreasing</em> on \(I\).</li>
+  <li>If \(f'(x) \geq 0\) throughout \(I\) (equality only at isolated points), then \(f\) is (non-strictly) increasing.</li>
+</ul>
+</div>
+
+<p>To find the intervals on which a function is increasing or decreasing, solve the inequalities \(f'(x) > 0\) and \(f'(x) < 0\) — boundary points are the stationary points.</p>
+
+<h2>13. Points of Inflection</h2>
+
+<p>A <em>point of inflection</em> is where the concavity of the graph changes — i.e. where the second derivative changes sign. It need not be a stationary point (e.g. \(y = x^3 + x\) has an inflection at \(x = 0\) but \(y'(0) = 1 \neq 0\)).</p>
+
+<div class="definition">
+<strong>Point of inflection.</strong> A point \((x_0, f(x_0))\) is a point of inflection if \(f''(x_0) = 0\) <em>and</em> \(f''\) changes sign at \(x_0\). Additional cases:
+<ul>
+  <li><strong>Stationary point of inflection:</strong> \(f'(x_0) = 0\) <em>and</em> \(f''(x_0) = 0\) <em>and</em> \(f''\) changes sign. Example: \(y = x^3\) at origin.</li>
+  <li><strong>Non-stationary point of inflection:</strong> \(f''(x_0) = 0\) with \(f''\) changing sign, but \(f'(x_0) \neq 0\).</li>
+</ul>
+The condition "\(f''\) changes sign" is essential: \(y = x^4\) has \(f''(0) = 0\) but no inflection there.
+</div>
+
+<h2>14. Tangents and Normals</h2>
+
+<p>The tangent at \((a, f(a))\) passes through that point with gradient \(f'(a)\). The normal is the line through the same point perpendicular to the tangent.</p>
+
+<div class="equation">
+\( \text{Tangent:}\quad y - f(a) = f'(a)\,(x - a). \)
+</div>
+
+<div class="equation">
+\( \text{Normal:}\quad y - f(a) = -\dfrac{1}{f'(a)}\,(x - a) \quad(f'(a) \neq 0). \)
+</div>
+
+<p>If \(f'(a) = 0\), the tangent is horizontal (\(y = f(a)\)) and the normal is vertical (\(x = a\)).</p>
+
+<h2>15. Related Rates</h2>
+
+<p>If two quantities are both functions of time, the chain rule relates their rates of change. The pattern: differentiate an equation linking them w.r.t. \(t\), substitute known values, solve for the unknown rate.</p>
+
+<div class="equation">
+\( \dfrac{dy}{dt} = \dfrac{dy}{dx} \cdot \dfrac{dx}{dt}. \)
+</div>
+
+<p>Typical contexts: expanding balloons (volume vs radius), cones filling with water (volume vs height), ladders sliding down walls (positions at the two ends).</p>
+
+<h2>16. Applied Worked Examples</h2>
+
+<div class="example">
+<h3>Worked Example 14 — Classifying stationary points of y = x³ − 3x² + 2</h3>
+<pre>
+<span class="ln">1.</span>  Differentiate:
+<span class="ln">2.</span>     dy/dx = 3x² − 6x = 3x(x − 2).
+<span class="ln">3.</span>  Stationary points: 3x(x − 2) = 0  ⇒  x = 0 or x = 2.
+<span class="ln">4.</span>  y-values:
+<span class="ln">5.</span>     x = 0:  y = 0 − 0 + 2 = 2.    Point (0, 2).
+<span class="ln">6.</span>     x = 2:  y = 8 − 12 + 2 = −2.  Point (2, −2).
+<span class="ln">7.</span>  Second derivative: d²y/dx² = 6x − 6.
+<span class="ln">8.</span>  At x = 0: d²y/dx² = −6 &lt; 0  ⇒  local MAXIMUM at (0, 2).
+<span class="ln">9.</span>  At x = 2: d²y/dx² = 6 &gt; 0   ⇒  local MINIMUM at (2, −2).
+
+<span class="cm">// Inflection: d²y/dx² = 0 at x = 1. Sign: negative for x&lt;1, positive for x&gt;1,</span>
+<span class="cm">// so (1, 0) is a (non-stationary) point of inflection.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 15 — Tangent to y = 2 sin x at x = π/6</h3>
+<pre>
+<span class="ln">1.</span>  Find the point:
+<span class="ln">2.</span>     y(π/6) = 2 sin(π/6) = 2 · ½ = 1.       Point (π/6, 1).
+<span class="ln">3.</span>  Find the gradient:
+<span class="ln">4.</span>     dy/dx = 2 cos x.
+<span class="ln">5.</span>     at x = π/6:  dy/dx = 2 cos(π/6) = 2 · (√3/2) = √3.
+<span class="ln">6.</span>  Tangent equation:
+<span class="ln">7.</span>     y − 1 = √3 (x − π/6)
+<span class="ln">8.</span>     y = √3 · x − (√3 π)/6 + 1.
+
+<span class="cm">// Normal (perpendicular): gradient = −1/√3.</span>
+<span class="cm">// y − 1 = −(1/√3)(x − π/6).</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 16 — Cone filling with water (related rates)</h3>
+<p>A cone has radius \(r\) and height \(h\) with \(r = h\) (i.e. half-angle \(45°\)). Water is added so that the volume increases at \(5\,\text{cm}^3/\text{s}\). How fast is \(h\) increasing when \(h = 10\,\text{cm}\)?</p>
+<pre>
+<span class="ln">1.</span>  Volume of a cone:  V = (1/3) π r² h.
+<span class="ln">2.</span>  Use the constraint r = h to eliminate r:
+<span class="ln">3.</span>     V = (1/3) π h² · h = (π/3) h³.
+<span class="ln">4.</span>  Differentiate w.r.t. time t:
+<span class="ln">5.</span>     dV/dt = π h² · dh/dt.
+<span class="ln">6.</span>  Substitute dV/dt = 5, h = 10:
+<span class="ln">7.</span>     5 = π · 100 · dh/dt
+<span class="ln">8.</span>     dh/dt = 5 / (100π) = 1 / (20π) cm/s.
+<span class="ln">9.</span>  Numerical value:
+<span class="ln">10.</span>    dh/dt ≈ 0.0159 cm/s (≈ 1.59 × 10⁻² cm/s).
+
+<span class="cm">// Units: dV/dt in cm³/s; h² in cm²; so dh/dt in cm/s ✓.</span>
+<span class="cm">// Physically the water level rises slowly — most of the inflow is spreading outward.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 17 — Triple product: y = x · e^(2x) · ln x</h3>
+<pre>
+<span class="ln">1.</span>  Three-factor product rule:
+<span class="ln">2.</span>     (uvw)' = u'vw + uv'w + uvw'.
+<span class="ln">3.</span>  Take u = x, v = e^(2x), w = ln x.
+<span class="ln">4.</span>     u' = 1
+<span class="ln">5.</span>     v' = 2 e^(2x)         (chain rule)
+<span class="ln">6.</span>     w' = 1/x.
+<span class="ln">7.</span>  Assemble:
+<span class="ln">8.</span>     dy/dx = (1) · e^(2x) · ln x
+<span class="ln">9.</span>           + x · 2 e^(2x) · ln x
+<span class="ln">10.</span>          + x · e^(2x) · (1/x)
+<span class="ln">11.</span>         = e^(2x) ln x + 2x e^(2x) ln x + e^(2x)
+<span class="ln">12.</span>         = e^(2x) [ ln x + 2x ln x + 1 ]
+<span class="ln">13.</span>         = e^(2x) [ (1 + 2x) ln x + 1 ].
+
+<span class="cm">// Always factor out the common e^(2x) — tidy form is easier to differentiate</span>
+<span class="cm">// again or to substitute values into.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 18 — Parametric, second derivative: x = 2t, y = 4t² + 3</h3>
+<pre>
+<span class="ln">1.</span>  First derivatives w.r.t. t:
+<span class="ln">2.</span>     dx/dt = 2;      dy/dt = 8t.
+<span class="ln">3.</span>  First derivative dy/dx:
+<span class="ln">4.</span>     dy/dx = (dy/dt) / (dx/dt) = 8t / 2 = 4t.
+<span class="ln">5.</span>  At t = 1:  dy/dx = 4.
+<span class="ln">6.</span>
+<span class="ln">7.</span>  For the second derivative, differentiate dy/dx = 4t w.r.t. x (NOT t):
+<span class="ln">8.</span>     d²y/dx² = d/dx (4t) = (d/dt (4t)) / (dx/dt) = 4 / 2 = 2.
+<span class="ln">9.</span>  At t = 1:  d²y/dx² = 2.
+<span class="ln">10.</span>
+<span class="ln">11.</span> Sanity check: eliminate t. t = x/2, so y = 4(x/2)² + 3 = x² + 3.
+<span class="ln">12.</span> Direct: dy/dx = 2x; at x = 2 (t = 1), dy/dx = 4 ✓.
+<span class="ln">13.</span>         d²y/dx² = 2 ✓.
+
+<span class="cm">// For parametric second derivatives, NEVER just differentiate dy/dx w.r.t. t.</span>
+<span class="cm">// You must divide by dx/dt afterwards — a common slip that costs marks.</span>
+</pre>
+</div>
+
+<h2>17. Consolidated Summary and Exam Strategy</h2>
+
+<table>
+<tr><th>Situation</th><th>Technique</th><th>Key formula</th></tr>
+<tr><td>Polynomial / power function</td><td>Power rule, term-by-term</td><td>\((x^n)' = n x^{n-1}\)</td></tr>
+<tr><td>Trig / exp / log</td><td>Standard derivatives (quote)</td><td>See table in §4.</td></tr>
+<tr><td>Product of two functions</td><td>Product rule</td><td>\((uv)' = u'v + uv'\)</td></tr>
+<tr><td>Quotient</td><td>Quotient rule</td><td>\((u/v)' = (u'v - uv')/v^2\)</td></tr>
+<tr><td>Composite \(f(g(x))\)</td><td>Chain rule</td><td>\(\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}\)</td></tr>
+<tr><td>Implicit relation</td><td>Differentiate both sides; chain rule on \(y\)</td><td>Each \(y\)-term picks up \(dy/dx\).</td></tr>
+<tr><td>Parametric</td><td>Divide: \(dy/dx = (dy/dt)/(dx/dt)\)</td><td>\(d^2y/dx^2 = \frac{d}{dt}(dy/dx) \div dx/dt\)</td></tr>
+<tr><td>Classify stationary point</td><td>Second-deriv test, fallback to sign change</td><td>\(f'' > 0\) min; \(f'' < 0\) max.</td></tr>
+<tr><td>Related rates</td><td>Differentiate constraint w.r.t. \(t\)</td><td>\(\frac{dy}{dt} = \frac{dy}{dx}\frac{dx}{dt}\)</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Differentiation.</strong>
+<ul>
+  <li><strong>Know the standard derivatives by heart:</strong> \(x^n, \sin, \cos, \tan, e^x, \ln x, a^x\). Quoting them costs no marks; deriving them live costs time.</li>
+  <li><strong>First principles</strong> must show the limit definition, the algebraic simplification, and the statement "as \(h \to 0\)".</li>
+  <li><strong>Simplify BEFORE differentiating</strong> where possible — rewrite roots and fractions as indices.</li>
+  <li><strong>Chain rule: don't forget the inner factor.</strong> \((\sin 3x)' = 3\cos 3x\), not \(\cos 3x\).</li>
+  <li><strong>Implicit: every \(y\)-term gains \(dy/dx\).</strong> Then solve algebraically.</li>
+  <li><strong>Parametric second derivative:</strong> differentiate \(dy/dx\) w.r.t. \(t\) and divide by \(dx/dt\).</li>
+  <li><strong>Classify stationary points</strong> with \(f''\) first; if it's zero, use first-derivative sign test.</li>
+  <li><strong>Tangent: \(y - y_0 = m(x - x_0)\); normal gradient \(= -1/m\)</strong>, provided \(m \neq 0\).</li>
+  <li><strong>Always use radians</strong> for any calculus involving trig.</li>
+  <li><strong>State units</strong> in related-rates and applied problems.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Skipping the "\(\lim_{h \to 0}\)" in first-principles answers.</li>
+  <li>Forgetting the chain-rule inner derivative: writing \((e^{x^2})' = e^{x^2}\) instead of \(2x e^{x^2}\).</li>
+  <li>Misapplying the quotient rule order — writing \(uv' - u'v\) instead of \(u'v - uv'\).</li>
+  <li>Losing the \(dy/dx\) factor on one or more implicit terms.</li>
+  <li>Concluding "inflection" the moment \(f''(x_0) = 0\), without checking that \(f''\) changes sign.</li>
+  <li>In parametric questions, differentiating \(dy/dx\) w.r.t. \(t\) and calling that \(d^2y/dx^2\) (wrong — must divide by \(dx/dt\)).</li>
+  <li>Working in degrees by mistake, giving \((\sin x)' = \cos x \cdot \pi/180\) that goes uncaught.</li>
+  <li>Giving a tangent equation at a point where \(f\) is not defined, or a normal where \(f'(a) = 0\) (normal is vertical, not "undefined gradient" line).</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Formula snapshot (memorise).</strong>
+<ul>
+  <li>First principles: \(f'(x) = \lim_{h\to 0} [f(x+h) - f(x)]/h\).</li>
+  <li>Power: \((x^n)' = n x^{n-1}\). Sum/difference/constant-multiple: linear.</li>
+  <li>Trig: \((\sin x)' = \cos x\); \((\cos x)' = -\sin x\); \((\tan x)' = \sec^2 x\).</li>
+  <li>Exp/log: \((e^x)' = e^x\); \((\ln x)' = 1/x\); \((a^x)' = a^x \ln a\).</li>
+  <li>Product: \((uv)' = u'v + uv'\).</li>
+  <li>Quotient: \((u/v)' = (u'v - uv')/v^2\).</li>
+  <li>Chain: \(\frac{dy}{dx} = \frac{dy}{du}\frac{du}{dx}\).</li>
+  <li>Implicit: each \(y\)-term on differentiation carries a factor \(dy/dx\).</li>
+  <li>Parametric: \(dy/dx = (dy/dt)/(dx/dt)\); \(d^2y/dx^2 = \frac{d}{dt}(dy/dx) / (dx/dt)\).</li>
+  <li>Stationary classification: \(f''>0\) min; \(f''<0\) max; \(f''=0\) inconclusive.</li>
+  <li>Tangent: \(y - f(a) = f'(a)(x - a)\). Normal: \(y - f(a) = -(1/f'(a))(x - a)\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 1.4 — Sequences &amp; Series</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.4 Sequences &amp; Series</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 1: Pure Mathematics</p>
+
+<p>A <em>sequence</em> is an ordered list of numbers, each one called a <em>term</em>. A <em>series</em> is the sum produced by adding those terms together. The study of sequences and series lies at the centre of pure mathematics: arithmetic and geometric progressions appear in compound interest, population models, and physics problems; sigma notation compresses large sums into a single symbol; the binomial theorem extends polynomial expansion from exponents like \((1+x)^5\) into the infinite world of \((1+x)^{1/2}\) or \((1+x)^{-3}\). This topic also introduces the idea of a <em>limit</em> — the value a sequence approaches as more and more terms are produced — which foreshadows calculus.</p>
+
+<h2>1. Sequences — Notation and Definition</h2>
+
+<p>A sequence is a function whose domain is the positive integers (or sometimes \(\{0, 1, 2, \dots\}\)). The \(n\)th term is denoted \(a_n\) or \(u_n\); the whole sequence is written \((a_n)_{n \geq 1}\) or simply \(a_1, a_2, a_3, \dots\).</p>
+
+<div class="definition">
+<strong>Sequence.</strong> An ordered list of numbers \(a_1, a_2, a_3, \dots\) indexed by a positive integer \(n\). Each number \(a_n\) is a <em>term</em>; \(n\) is the <em>position</em> or <em>index</em> of that term. A sequence may be finite (with a last term) or infinite (continuing indefinitely).
+</div>
+
+<h3>Two Ways to Specify a Sequence</h3>
+
+<p>There are two standard ways to describe a sequence:</p>
+
+<ol>
+  <li><strong>Position-to-term formula</strong> — an explicit expression \(a_n = f(n)\) giving the \(n\)th term directly. Example: \(a_n = 3n + 2\) gives \(5, 8, 11, 14, \dots\).</li>
+  <li><strong>Term-to-term (recurrence) formula</strong> — a rule \(a_{n+1} = g(a_n)\) expressing each term in terms of the preceding one(s), together with an initial term. Example: \(a_{n+1} = a_n + 3\) with \(a_1 = 5\) gives the same sequence \(5, 8, 11, 14, \dots\).</li>
+</ol>
+
+<div class="definition">
+<strong>Recurrence relation.</strong> An equation \(a_{n+1} = g(a_n)\) (or involving more earlier terms) that expresses each term of a sequence as a function of one or more preceding terms. Together with initial condition(s) this uniquely determines the sequence.
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — deducing a formula from the first few terms.</strong> If a sequence begins \(2, 5, 8, 11, 14, \dots\) and you spot a common difference \(d = 3\), the explicit formula is \(a_n = a_1 + (n-1)d = 2 + 3(n-1) = 3n - 1\). Always verify your guess on at least two terms (e.g. \(n = 1\) gives \(2\) ✓; \(n = 4\) gives \(11\) ✓). Do not just check the first term — many different formulae agree at \(n = 1\).
+</div>
+
+<div class="example">
+<h3>Worked Example 1 — Converting between position-to-term and term-to-term</h3>
+<p>A sequence is defined by \(a_{n+1} = 2a_n - 1\) with \(a_1 = 2\). Compute \(a_1, \dots, a_5\) and find a position-to-term formula.</p>
+<pre>
+<span class="ln">1.</span>  Compute terms:
+<span class="ln">2.</span>     a₁ = 2
+<span class="ln">3.</span>     a₂ = 2·2 − 1 = 3
+<span class="ln">4.</span>     a₃ = 2·3 − 1 = 5
+<span class="ln">5.</span>     a₄ = 2·5 − 1 = 9
+<span class="ln">6.</span>     a₅ = 2·9 − 1 = 17.
+<span class="ln">7.</span>  Differences 1, 2, 4, 8 double → suggests 2ⁿ involvement.
+<span class="ln">8.</span>  Try aₙ = 2^(n−1) + 1:
+<span class="ln">9.</span>     n=1: 1 + 1 = 2 ✓
+<span class="ln">10.</span>    n=2: 2 + 1 = 3 ✓
+<span class="ln">11.</span>    n=3: 4 + 1 = 5 ✓
+<span class="ln">12.</span>    n=4: 8 + 1 = 9 ✓
+<span class="ln">13.</span> ∴ aₙ = 2^(n−1) + 1.      <span class="cm">// verified explicit formula</span>
+</pre>
+</div>
+
+<h2>2. Arithmetic Progressions (AP)</h2>
+
+<p>An arithmetic progression (AP) is a sequence in which each term is obtained from the previous one by adding a fixed constant, called the <em>common difference</em>.</p>
+
+<div class="definition">
+<strong>Arithmetic progression.</strong> A sequence \(a_1, a_2, a_3, \dots\) such that \(a_{n+1} - a_n = d\) for all \(n\), where \(d\) is a fixed real constant (the <em>common difference</em>). Equivalently, the \(n\)th term is
+\[ a_n = a + (n-1)d, \]
+where \(a = a_1\) is the first term.
+</div>
+
+<h3>Sum of an AP</h3>
+
+<p>Let \(S_n = a_1 + a_2 + \dots + a_n\) denote the sum of the first \(n\) terms. Writing the sum forwards and backwards and adding term-by-term gives Gauss's formula:</p>
+
+<div class="equation">
+\( S_n = \dfrac{n}{2}\bigl[2a + (n-1)d\bigr] = \dfrac{n}{2}(a + l), \)
+</div>
+
+<p>where \(l = a_n = a + (n-1)d\) is the last (or \(n\)th) term. The second form is especially useful when both endpoints of the sum are known.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — which AP sum formula to use.</strong> Use \(S_n = \tfrac{n}{2}(a + l)\) when you already know the first <em>and</em> last term of the sum (e.g. "sum all integers from 1 to 100"). Use \(S_n = \tfrac{n}{2}[2a + (n-1)d]\) when you know the first term and the common difference but not the last term. Both give the same answer — pick whichever avoids extra arithmetic.
+</div>
+
+<div class="example">
+<h3>Worked Example 2 — Sum of the first 100 positive integers</h3>
+<p>Compute \(1 + 2 + 3 + \dots + 100\).</p>
+<pre>
+<span class="ln">1.</span>  This is an AP:  a = 1,  d = 1,  n = 100,  l = 100.
+<span class="ln">2.</span>  Using S_n = n/2 · (a + l):
+<span class="ln">3.</span>     S₁₀₀ = 100/2 · (1 + 100) = 50 · 101 = 5050.
+<span class="ln">4.</span>  Check via other formula:
+<span class="ln">5.</span>     S₁₀₀ = 100/2 · [2·1 + 99·1] = 50 · 101 = 5050 ✓.
+
+<span class="cm">// Gauss famously produced this answer as a schoolboy by pairing</span>
+<span class="cm">// 1+100, 2+99, ..., 50+51 — fifty pairs each summing to 101.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 3 — AP with known first and last terms</h3>
+<p>An AP has 20 terms, first term \(5\) and last term \(100\). Find the common difference and the sum.</p>
+<pre>
+<span class="ln">1.</span>  Last term:  a_n = a + (n − 1)d.
+<span class="ln">2.</span>     100 = 5 + 19d   ⇒   19d = 95   ⇒   d = 5.
+<span class="ln">3.</span>  Sum:  S_n = n/2 · (a + l)
+<span class="ln">4.</span>     S₂₀ = 20/2 · (5 + 100) = 10 · 105 = 1050.
+<span class="ln">5.</span>  Quick sanity check — average term × number of terms:
+<span class="ln">6.</span>     mean = (5 + 100)/2 = 52.5;   52.5 × 20 = 1050 ✓.
+</pre>
+</div>
+
+<h3>Applications of APs</h3>
+
+<ul>
+  <li><strong>Salary with fixed annual raise.</strong> A worker earns £25 000 in year 1 with a £1 000 annual increase. Lifetime earnings over 30 years form an AP.</li>
+  <li><strong>Pile of logs / cans.</strong> A triangular stack with \(1\) log on top, \(2\) in the next row, \(\dots\), \(n\) at the base has total \(\tfrac{n}{2}(1 + n)\).</li>
+  <li><strong>Walking / driving with constant change.</strong> First day walk \(5\) km, each day walk \(0.5\) km more — total distance after \(n\) days is an AP sum.</li>
+</ul>
+
+<h2>3. Geometric Progressions (GP)</h2>
+
+<p>A geometric progression (GP) is a sequence in which each term is obtained by multiplying the previous one by a fixed non-zero constant called the <em>common ratio</em>.</p>
+
+<div class="definition">
+<strong>Geometric progression.</strong> A sequence \(a_1, a_2, a_3, \dots\) such that \(a_{n+1}/a_n = r\) for all \(n\), where \(r \neq 0\) is a fixed real constant (the <em>common ratio</em>). The \(n\)th term is
+\[ a_n = a \cdot r^{n-1}, \]
+where \(a = a_1\).
+</div>
+
+<h3>Sum of a GP</h3>
+
+<p>Let \(S_n = a + ar + ar^2 + \dots + ar^{n-1}\). Multiplying by \(r\) gives \(rS_n = ar + ar^2 + \dots + ar^n\). Subtracting:</p>
+
+<div class="equation">
+\( S_n = \dfrac{a(r^n - 1)}{r - 1} = \dfrac{a(1 - r^n)}{1 - r}, \qquad r \neq 1. \)
+</div>
+
+<p>The two forms are algebraically identical; the first is neater when \(|r| > 1\), the second when \(|r| < 1\).</p>
+
+<h3>Sum to Infinity — Convergence</h3>
+
+<p>If \(|r| < 1\) then \(r^n \to 0\) as \(n \to \infty\), and the infinite sum has a finite value:</p>
+
+<div class="equation">
+\( S_\infty = \dfrac{a}{1 - r}, \qquad \text{valid only if } |r| < 1. \)
+</div>
+
+<p>If \(|r| \geq 1\) the partial sums do not settle to any single number — we say the series <em>diverges</em> and \(S_\infty\) is undefined.</p>
+
+<div class="definition">
+<strong>Convergence of a GP.</strong> An infinite geometric series \(a + ar + ar^2 + \dots\) converges if and only if \(|r| < 1\). When it converges, its sum is \(S_\infty = a/(1 - r)\). When \(|r| \geq 1\) (and \(a \neq 0\)) it diverges — the partial sums either grow without bound or oscillate.
+</div>
+
+<div class="definition">
+<strong>Limit of a sequence.</strong> The sequence \((a_n)\) has limit \(L\) (written \(a_n \to L\) or \(\lim_{n \to \infty} a_n = L\)) if, informally, \(a_n\) can be made arbitrarily close to \(L\) by taking \(n\) sufficiently large. If no such \(L\) exists, the sequence diverges.
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — check convergence <em>before</em> summing.</strong> Every year OCR scripts lose marks by blindly applying \(S_\infty = a/(1-r)\) without verifying \(|r| < 1\). If the ratio is \(r = 2\) or \(r = -3\), the infinite sum is undefined — writing down \(a/(1-r)\) anyway will score zero on that part. Always state the validity condition explicitly in your answer.
+</div>
+
+<h3>AP vs GP — at a glance</h3>
+
+<table>
+<tr><th>Feature</th><th>Arithmetic progression</th><th>Geometric progression</th></tr>
+<tr><td>Recurrence</td><td>\(a_{n+1} = a_n + d\)</td><td>\(a_{n+1} = r \cdot a_n\)</td></tr>
+<tr><td>\(n\)th term</td><td>\(a + (n-1)d\)</td><td>\(a \cdot r^{n-1}\)</td></tr>
+<tr><td>Sum to \(n\) terms</td><td>\(\tfrac{n}{2}[2a + (n-1)d]\)</td><td>\(a(r^n - 1)/(r - 1)\)</td></tr>
+<tr><td>Sum to infinity</td><td>Always diverges (unless all terms zero)</td><td>Converges iff \(|r| < 1\), with \(S_\infty = a/(1-r)\)</td></tr>
+<tr><td>Test if given</td><td>Successive differences constant</td><td>Successive ratios constant</td></tr>
+<tr><td>Example</td><td>\(3, 7, 11, 15, \dots\)</td><td>\(3, 6, 12, 24, \dots\)</td></tr>
+</table>
+
+<div class="example">
+<h3>Worked Example 4 — GP with known sum</h3>
+<p>A GP has 5 terms with first term \(2\) and sum \(62\). Find the common ratio (\(r > 0\)).</p>
+<pre>
+<span class="ln">1.</span>  S_n = a(r^n − 1)/(r − 1):
+<span class="ln">2.</span>     62 = 2(r⁵ − 1)/(r − 1).
+<span class="ln">3.</span>  ⇒ 31 = (r⁵ − 1)/(r − 1) = 1 + r + r² + r³ + r⁴.
+<span class="ln">4.</span>  Try r = 2:  1 + 2 + 4 + 8 + 16 = 31 ✓.
+<span class="ln">5.</span>  ∴ r = 2.     <span class="cm">// common ratio</span>
+<span class="ln">6.</span>  Verify series: 2, 4, 8, 16, 32. Sum = 62 ✓.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 5 — Sum to infinity</h3>
+<p>A convergent GP has sum to infinity \(8\) and first term \(6\). Find the common ratio, and write down the first four terms.</p>
+<pre>
+<span class="ln">1.</span>  S∞ = a/(1 − r):
+<span class="ln">2.</span>     8 = 6/(1 − r)  ⇒  1 − r = 6/8 = 3/4  ⇒  r = 1/4.
+<span class="ln">3.</span>  Check convergence:  |r| = 1/4 < 1 ✓ — valid.
+<span class="ln">4.</span>  First four terms:  6, 6·(1/4) = 3/2, 3/2·(1/4) = 3/8, 3/8·(1/4) = 3/32.
+<span class="ln">5.</span>  Sum check:  6 + 1.5 + 0.375 + 0.09375 + ... ≈ 8 ✓.
+</pre>
+</div>
+
+<h3>Applications of GPs</h3>
+
+<ul>
+  <li><strong>Compound interest.</strong> £1000 invested at 5% per year grows as \(1000, 1000(1.05), 1000(1.05)^2, \dots\) — a GP with \(r = 1.05\).</li>
+  <li><strong>Radioactive decay.</strong> Mass remaining after \(n\) half-lives is \(M_0, M_0/2, M_0/4, \dots\) — a GP with \(r = 1/2\).</li>
+  <li><strong>Repeating decimals as fractions.</strong> \(0.\overline{3} = 0.3 + 0.03 + 0.003 + \dots = \tfrac{0.3}{1 - 0.1} = \tfrac{1}{3}\).</li>
+  <li><strong>Bouncing ball.</strong> A ball dropped from \(h\) metres rebounds to a fraction \(r\) of its previous height, so total distance travelled is a converging GP sum.</li>
+</ul>
+
+<h2>4. Sigma Notation</h2>
+
+<p>Sigma notation compresses long sums into a compact symbol. The Greek capital sigma \(\Sigma\) means "add up".</p>
+
+<div class="equation">
+\( \displaystyle\sum_{k=1}^{n} f(k) \;=\; f(1) + f(2) + f(3) + \dots + f(n). \)
+</div>
+
+<p>Here \(k\) is the <em>dummy index</em> (any letter will do — \(i, j, r\) are common alternatives). The lower limit is the starting value; the upper limit is the last value (inclusive). Changing the letter does not change the sum.</p>
+
+<h3>Standard Sums</h3>
+
+<table>
+<tr><th>Sum</th><th>Closed form</th><th>Used for</th></tr>
+<tr><td>\(\displaystyle\sum_{k=1}^{n} 1\)</td><td>\(n\)</td><td>Counting</td></tr>
+<tr><td>\(\displaystyle\sum_{k=1}^{n} k\)</td><td>\(\dfrac{n(n+1)}{2}\)</td><td>AP sum (natural numbers)</td></tr>
+<tr><td>\(\displaystyle\sum_{k=1}^{n} k^2\)</td><td>\(\dfrac{n(n+1)(2n+1)}{6}\)</td><td>Sum of squares — used in Pearson correlation, moment of inertia</td></tr>
+<tr><td>\(\displaystyle\sum_{k=1}^{n} k^3\)</td><td>\(\left[\dfrac{n(n+1)}{2}\right]^2\)</td><td>Sum of cubes — equals \((\sum k)^2\), a surprising identity</td></tr>
+</table>
+
+<h3>Linearity of Sigma</h3>
+
+<p>Sums distribute over addition and scalar multiplication:</p>
+
+<div class="equation">
+\( \displaystyle\sum_{k=1}^{n} [\,\alpha f(k) + \beta g(k)\,] = \alpha \sum_{k=1}^{n} f(k) + \beta \sum_{k=1}^{n} g(k). \)
+</div>
+
+<p>This is used to split a complicated sum into pieces you can evaluate using standard results.</p>
+
+<h3>Changing Limits</h3>
+
+<p>To compute \(\sum_{k=m}^{n}\) where \(m > 1\), subtract:</p>
+
+<div class="equation">
+\( \displaystyle\sum_{k=m}^{n} f(k) = \sum_{k=1}^{n} f(k) - \sum_{k=1}^{m-1} f(k). \)
+</div>
+
+<div class="example">
+<h3>Worked Example 6 — Using standard sum results</h3>
+<p>Evaluate \(\displaystyle\sum_{k=1}^{20} (3k^2 - 2k + 1).\)</p>
+<pre>
+<span class="ln">1.</span>  Split using linearity:
+<span class="ln">2.</span>     Σ (3k² − 2k + 1) = 3 Σ k² − 2 Σ k + Σ 1.
+<span class="ln">3.</span>  Apply standard results with n = 20:
+<span class="ln">4.</span>     Σ k²  = 20·21·41/6 = 2870.
+<span class="ln">5.</span>     Σ k   = 20·21/2    = 210.
+<span class="ln">6.</span>     Σ 1   = 20.
+<span class="ln">7.</span>  Combine:
+<span class="ln">8.</span>     3(2870) − 2(210) + 20
+<span class="ln">9.</span>     = 8610 − 420 + 20
+<span class="ln">10.</span>    = 8210.
+<span class="ln">11.</span> ∴ Σ_{k=1..20} (3k² − 2k + 1) = 8210.
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — watch the index start.</strong> \(\sum_{k=0}^{n}\) has \(n + 1\) terms, not \(n\). \(\sum_{k=1}^{n}\) has \(n\) terms. A frequent slip is reading a GP problem as "five terms starting with \(k = 0\)" and using \(n = 5\) in the formula when the correct value is \(n = 5\) with \(a = a_0\), but still <em>five</em> terms. Count the terms explicitly before plugging in.
+</div>
+
+<h2>5. Binomial Expansion — Positive Integer Index</h2>
+
+<p>The binomial theorem gives an expansion of \((1 + x)^n\) when \(n\) is a non-negative integer. The coefficients are the <em>binomial coefficients</em>, appearing in Pascal's triangle.</p>
+
+<div class="definition">
+<strong>Binomial coefficient.</strong> For non-negative integers \(n\) and \(k\) with \(0 \leq k \leq n\),
+\[ \binom{n}{k} = \;^nC_k = \dfrac{n!}{k!\,(n-k)!}, \]
+read "\(n\) choose \(k\)". It counts the number of ways to choose \(k\) objects from \(n\) distinguishable objects and is always a positive integer.
+</div>
+
+<h3>Binomial Theorem (Positive Integer \(n\))</h3>
+
+<div class="equation">
+\( (1 + x)^n = \displaystyle\sum_{k=0}^{n} \binom{n}{k} x^k = 1 + \binom{n}{1} x + \binom{n}{2} x^2 + \dots + \binom{n}{n} x^n. \)
+</div>
+
+<p>For a general binomial \((a + b)^n\):</p>
+
+<div class="equation">
+\( (a + b)^n = \displaystyle\sum_{k=0}^{n} \binom{n}{k} a^{n-k} b^k. \)
+</div>
+
+<p>For a positive integer \(n\) the expansion has exactly \(n + 1\) terms and <em>terminates</em>. No convergence condition is needed: the expansion is a finite polynomial identity, true for all real \(x\).</p>
+
+<h3>Pascal's Triangle (first six rows)</h3>
+
+<table>
+<tr><th>\(n\)</th><th>Row of coefficients \(\binom{n}{0}, \binom{n}{1}, \dots, \binom{n}{n}\)</th><th>Sum of row = \(2^n\)</th></tr>
+<tr><td>0</td><td>1</td><td>1</td></tr>
+<tr><td>1</td><td>1, 1</td><td>2</td></tr>
+<tr><td>2</td><td>1, 2, 1</td><td>4</td></tr>
+<tr><td>3</td><td>1, 3, 3, 1</td><td>8</td></tr>
+<tr><td>4</td><td>1, 4, 6, 4, 1</td><td>16</td></tr>
+<tr><td>5</td><td>1, 5, 10, 10, 5, 1</td><td>32</td></tr>
+<tr><td>6</td><td>1, 6, 15, 20, 15, 6, 1</td><td>64</td></tr>
+</table>
+
+<p>Each entry is the sum of the two entries diagonally above: \(\binom{n}{k} = \binom{n-1}{k-1} + \binom{n-1}{k}\) — this is <em>Pascal's rule</em>.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — finding a specific term.</strong> In \((a + b)^n\) the term containing \(b^k\) is \(\binom{n}{k} a^{n-k} b^k\). For example, the \(x^3\) term in \((1 + 2x)^6\) comes from \(k = 3\): coefficient \(= \binom{6}{3} \cdot 1^{3} \cdot 2^3 = 20 \cdot 8 = 160\), so the term is \(160 x^3\). You rarely need the whole expansion — just isolate the term you want.
+</div>
+
+<div class="example">
+<h3>Worked Example 7 — Binomial expansion of (1 + 2x)⁶</h3>
+<p>Expand \((1 + 2x)^6\) up to and including the term in \(x^3\).</p>
+<pre>
+<span class="ln">1.</span>  Use (1 + u)^6 = 1 + 6u + 15u² + 20u³ + ...   with u = 2x.
+<span class="ln">2.</span>  Term-by-term:
+<span class="ln">3.</span>     1
+<span class="ln">4.</span>     6 · (2x)       = 12x
+<span class="ln">5.</span>     15 · (2x)²     = 15 · 4x²   = 60x²
+<span class="ln">6.</span>     20 · (2x)³     = 20 · 8x³   = 160x³.
+<span class="ln">7.</span>  ∴ (1 + 2x)⁶ = 1 + 12x + 60x² + 160x³ + ...     (terms in x⁴, x⁵, x⁶ omitted).
+
+<span class="cm">// Full expansion (for interest, not required):</span>
+<span class="cm">// 1 + 12x + 60x² + 160x³ + 240x⁴ + 192x⁵ + 64x⁶.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 8 — Specific term in (3 − x)⁸</h3>
+<p>Find the coefficient of \(x^4\) in the expansion of \((3 - x)^8\).</p>
+<pre>
+<span class="ln">1.</span>  General term:  C(8, k) · 3^(8−k) · (−x)^k  =  C(8, k) · 3^(8−k) · (−1)^k · x^k.
+<span class="ln">2.</span>  Set k = 4:
+<span class="ln">3.</span>     coef = C(8, 4) · 3⁴ · (−1)⁴
+<span class="ln">4.</span>          = 70 · 81 · 1
+<span class="ln">5.</span>          = 5670.
+<span class="ln">6.</span>  ∴ coefficient of x⁴ is 5670.
+</pre>
+</div>
+
+<h2>6. Binomial Expansion — Rational / Negative Index</h2>
+
+<p>For a real (not necessarily integer) exponent \(n\), the binomial series still has a meaning, but as an <em>infinite</em> series that only converges for \(|x| < 1\).</p>
+
+<div class="equation">
+\( (1 + x)^n = 1 + nx + \dfrac{n(n-1)}{2!} x^2 + \dfrac{n(n-1)(n-2)}{3!} x^3 + \dots, \qquad |x| < 1. \)
+</div>
+
+<p>Notice two differences from the integer case:</p>
+
+<ul>
+  <li>The expansion is infinite — it does not terminate because \(n(n-1)(n-2)\cdots(n-k+1)\) is never zero when \(n\) is not a non-negative integer.</li>
+  <li>It is only valid for \(|x| < 1\). Outside this range the series diverges and gives nonsense.</li>
+</ul>
+
+<div class="definition">
+<strong>Generalised binomial coefficient.</strong> For any real \(n\) and non-negative integer \(k\),
+\[ \binom{n}{k} = \dfrac{n(n-1)(n-2)\cdots(n-k+1)}{k!}. \]
+When \(n\) is a non-negative integer and \(k > n\) one of the factors in the numerator is zero, so \(\binom{n}{k} = 0\), recovering the terminating case.
+</div>
+
+<h3>Expanding \((a + bx)^n\)</h3>
+
+<p>When the constant inside the brackets is not \(1\), factor it out first:</p>
+
+<div class="equation">
+\( (a + bx)^n = a^n \left(1 + \dfrac{bx}{a}\right)^n, \qquad \text{valid for } \left|\dfrac{bx}{a}\right| < 1, \text{ i.e. } |x| < |a/b|. \)
+</div>
+
+<p>Then expand \((1 + u)^n\) with \(u = bx/a\) and multiply through by \(a^n\).</p>
+
+<h3>Validity Range Summary</h3>
+
+<table>
+<tr><th>Form</th><th>Expansion</th><th>Valid for</th></tr>
+<tr><td>\((1 + x)^n\), \(n\) positive integer</td><td>Finite polynomial (\(n+1\) terms)</td><td>All real \(x\)</td></tr>
+<tr><td>\((1 + x)^n\), \(n\) negative or fractional</td><td>Infinite series</td><td>\(|x| < 1\)</td></tr>
+<tr><td>\((a + bx)^n\), \(n\) negative or fractional</td><td>\(a^n(1 + bx/a)^n\), infinite series</td><td>\(|bx/a| < 1\), i.e. \(|x| < |a/b|\)</td></tr>
+<tr><td>\((1 - x)^n\), \(n\) negative or fractional</td><td>Replace \(x\) with \(-x\) in standard expansion</td><td>\(|x| < 1\)</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — always state the validity range.</strong> OCR mark schemes award an explicit mark (often one of three or four) for stating the correct range of \(x\) for which the expansion is valid. For \((1 + 3x)^{-2}\), valid for \(|3x| < 1\), i.e. \(|x| < 1/3\). Writing just "valid for \(|x| < 1\)" is wrong here — the coefficient inside matters.
+</div>
+
+<div class="example">
+<h3>Worked Example 9 — First four terms of (1 + 3x)⁻²</h3>
+<p>Find the first four terms of the expansion of \((1 + 3x)^{-2}\) in ascending powers of \(x\), and state the range of \(x\) for which it is valid.</p>
+<pre>
+<span class="ln">1.</span>  General expansion:
+<span class="ln">2.</span>     (1 + u)^n = 1 + nu + n(n−1)/2! · u² + n(n−1)(n−2)/3! · u³ + ...
+<span class="ln">3.</span>  Here n = −2, u = 3x.
+<span class="ln">4.</span>  Compute coefficients:
+<span class="ln">5.</span>     n           =  −2
+<span class="ln">6.</span>     n(n−1)/2!   =  (−2)(−3)/2    =  3
+<span class="ln">7.</span>     n(n−1)(n−2)/3! = (−2)(−3)(−4)/6 = −4.
+<span class="ln">8.</span>  Terms:
+<span class="ln">9.</span>     1
+<span class="ln">10.</span>    (−2)(3x)           = −6x
+<span class="ln">11.</span>    3 · (3x)²          = 3 · 9x²     = 27x²
+<span class="ln">12.</span>    (−4) · (3x)³       = −4 · 27x³   = −108x³.
+<span class="ln">13.</span> ∴ (1 + 3x)⁻² = 1 − 6x + 27x² − 108x³ + ...
+
+<span class="ln">14.</span> Validity:  |3x| < 1   ⇒   |x| < 1/3.
+</pre>
+</div>
+
+<h2>7. Approximation Using the Binomial</h2>
+
+<p>The binomial series lets us approximate powers of numbers close to \(1\). If \(x\) is small the first few terms of \((1 + x)^n\) give a good estimate.</p>
+
+<div class="example">
+<h3>Worked Example 10 — Approximating √1.02</h3>
+<p>Use a binomial expansion up to the \(x^2\) term to approximate \(\sqrt{1.02}\), and estimate the error.</p>
+<pre>
+<span class="ln">1.</span>  Write √1.02 = (1 + 0.02)^(1/2).
+<span class="ln">2.</span>  Expansion with n = 1/2, u = 0.02:
+<span class="ln">3.</span>     (1 + u)^(1/2) = 1 + (1/2)u + (1/2)(−1/2)/2! · u² + ...
+<span class="ln">4.</span>                   = 1 + u/2 − u²/8 + ...
+<span class="ln">5.</span>  Substitute u = 0.02:
+<span class="ln">6.</span>     ≈ 1 + 0.01 − (0.0004)/8
+<span class="ln">7.</span>     = 1 + 0.01 − 0.00005
+<span class="ln">8.</span>     = 1.00995.
+
+<span class="ln">9.</span>  Calculator value:  √1.02 = 1.00995049...
+<span class="ln">10.</span> Error ≈ 5 × 10⁻⁸ — extremely accurate because u is small.
+
+<span class="cm">// The next term (u³ term) has coefficient (1/2)(−1/2)(−3/2)/6 = 1/16,</span>
+<span class="cm">// giving u³/16 ≈ (8 × 10⁻⁶)/16 = 5 × 10⁻⁷, consistent with observed error.</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — how many terms for a target accuracy?</strong> Each successive term in the binomial series shrinks roughly by a factor of \(x\) (when \(|x|\) is small). So if you want four-decimal-place accuracy and \(|x| = 0.02\), two terms past the constant usually suffice. Rule of thumb: the first omitted term is the dominant error — estimate it and check it is below your tolerance.
+</div>
+
+<h2>8. Recurrence Relations — Convergence to a Limit</h2>
+
+<p>Some recurrence relations \(a_{n+1} = g(a_n)\) produce sequences that settle down to a limit \(L\). If \(a_n \to L\) and \(g\) is continuous, then taking limits of both sides of \(a_{n+1} = g(a_n)\) gives \(L = g(L)\) — the limit must be a <em>fixed point</em> of \(g\).</p>
+
+<div class="equation">
+\( \text{If } a_n \to L \text{ as } n \to \infty, \text{ then } a_{n+1} \to L \text{ too, so } L = g(L). \)
+</div>
+
+<p>Solving \(L = g(L)\) locates the candidate limits. Not every fixed point is attracting; whether the sequence actually converges depends on the starting value and on \(|g'(L)|\) (a detail beyond the specification), but candidate limits are found by this fixed-point equation.</p>
+
+<div class="example">
+<h3>Worked Example 11 — Convergent recurrence</h3>
+<p>Let \(a_{n+1} = \tfrac{1}{2}(a_n + 4)\) with \(a_1 = 0\). Compute \(a_1, \dots, a_5\), and find the limit \(L\).</p>
+<pre>
+<span class="ln">1.</span>  Compute terms:
+<span class="ln">2.</span>     a₁ = 0
+<span class="ln">3.</span>     a₂ = (0 + 4)/2    = 2
+<span class="ln">4.</span>     a₃ = (2 + 4)/2    = 3
+<span class="ln">5.</span>     a₄ = (3 + 4)/2    = 3.5
+<span class="ln">6.</span>     a₅ = (3.5 + 4)/2  = 3.75
+<span class="ln">7.</span>     a₆ = (3.75 + 4)/2 = 3.875
+<span class="ln">8.</span>  Terms approach 4 from below.
+
+<span class="cm">// Fixed point equation: assume limit L exists and let n → ∞.</span>
+<span class="ln">9.</span>  L = (L + 4)/2
+<span class="ln">10.</span> 2L = L + 4
+<span class="ln">11.</span> L = 4.         ∴ aₙ → 4 as n → ∞.
+
+<span class="cm">// Distance to limit halves each step:  |aₙ − 4| → 4, 2, 1, 0.5, 0.25, ...</span>
+<span class="cm">// geometric decrease with ratio 1/2, confirming convergence.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 12 — Recurrence giving an AP</h3>
+<p>A sequence satisfies \(u_{n+1} = u_n + 5\) with \(u_1 = 3\). Find a closed-form expression for \(u_n\) and hence \(u_{20}\) and \(\sum_{k=1}^{20} u_k\).</p>
+<pre>
+<span class="ln">1.</span>  Recurrence u_{n+1} − u_n = 5 identifies an AP with
+<span class="ln">   </span>     first term a = 3 and common difference d = 5.
+<span class="ln">2.</span>  Closed form:  u_n = a + (n − 1)d = 3 + 5(n − 1) = 5n − 2.
+<span class="ln">3.</span>  Check:  u₁ = 3 ✓, u₂ = 8 ✓, u₃ = 13 ✓.
+<span class="ln">4.</span>  u₂₀ = 5·20 − 2 = 98.
+<span class="ln">5.</span>  Sum of first 20 terms:
+<span class="ln">6.</span>     S₂₀ = 20/2 · (u₁ + u₂₀) = 10 · (3 + 98) = 10 · 101 = 1010.
+<span class="ln">7.</span>  Check with other formula:
+<span class="ln">8.</span>     S₂₀ = 20/2 · [2·3 + 19·5] = 10 · [6 + 95] = 10 · 101 = 1010 ✓.
+</pre>
+</div>
+
+<h2>9. Worked Exam-Style Problems — Combined Techniques</h2>
+
+<div class="example">
+<h3>Worked Example 13 — Repeating decimal as a fraction</h3>
+<p>Express the recurring decimal \(0.\overline{27} = 0.272727\dots\) as a fraction in lowest terms using an infinite GP.</p>
+<pre>
+<span class="ln">1.</span>  Write as a sum:
+<span class="ln">2.</span>     0.272727... = 0.27 + 0.0027 + 0.000027 + ...
+<span class="ln">3.</span>  This is a GP with:
+<span class="ln">4.</span>     first term a = 0.27 = 27/100
+<span class="ln">5.</span>     common ratio r = 0.01 = 1/100 (each term is 1/100 of the previous).
+<span class="ln">6.</span>  |r| = 0.01 < 1, so the series converges.
+<span class="ln">7.</span>  Sum to infinity:
+<span class="ln">8.</span>     S∞ = a/(1 − r) = (27/100) / (99/100) = 27/99.
+<span class="ln">9.</span>  Simplify: gcd(27, 99) = 9, so 27/99 = 3/11.
+<span class="ln">10.</span> ∴ 0.272727... = 3/11.
+<span class="ln">11.</span> Check:  3 ÷ 11 = 0.272727... ✓.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 14 — Compound interest</h3>
+<p>£2000 is deposited at 4% compound interest per year. Find the value after 10 years and the total interest earned.</p>
+<pre>
+<span class="ln">1.</span>  After n years balance = 2000 · (1.04)^n — a GP with a = 2000, r = 1.04.
+<span class="ln">2.</span>  After 10 years:
+<span class="ln">3.</span>     V = 2000 · (1.04)^10.
+<span class="ln">4.</span>  (1.04)^10 — expand as (1 + 0.04)^10 using binomial (n = 10, positive integer):
+<span class="ln">5.</span>     = 1 + 10(0.04) + 45(0.04)² + 120(0.04)³ + ... ≈ 1.48024.
+<span class="ln">6.</span>     (Calculator value: 1.48024428...)
+<span class="ln">7.</span>  V ≈ 2000 × 1.48024 ≈ £2960.49.
+<span class="ln">8.</span>  Interest earned ≈ 2960.49 − 2000 = £960.49.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 15 — Wage calculation (AP application)</h3>
+<p>An employee earns £22 000 in year 1 and receives a £900 annual pay rise. Find total earnings over a 25-year career.</p>
+<pre>
+<span class="ln">1.</span>  AP with a = 22000, d = 900, n = 25.
+<span class="ln">2.</span>  Salary in year n:  a_n = 22000 + 900(n − 1).
+<span class="ln">3.</span>  Year 25 salary:  22000 + 900·24 = 22000 + 21600 = £43600.
+<span class="ln">4.</span>  Sum:
+<span class="ln">5.</span>     S₂₅ = 25/2 · [2·22000 + 24·900]
+<span class="ln">6.</span>          = 25/2 · [44000 + 21600]
+<span class="ln">7.</span>          = 25/2 · 65600
+<span class="ln">8.</span>          = 25 · 32800
+<span class="ln">9.</span>          = £820 000.
+
+<span class="cm">// Alternatively:  S₂₅ = 25/2 · (22000 + 43600) = 12.5 · 65600 = 820000. ✓</span>
+</pre>
+</div>
+
+<h2>10. Consolidated Summary and Exam Strategy</h2>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Sequences &amp; Series.</strong>
+<ul>
+  <li><strong>Identify the sequence type first.</strong> Common difference ⇒ AP; common ratio ⇒ GP; neither ⇒ use recurrence or general formulae.</li>
+  <li><strong>AP: \(a_n = a + (n-1)d\), \(S_n = \tfrac{n}{2}(a + l) = \tfrac{n}{2}[2a + (n-1)d]\).</strong></li>
+  <li><strong>GP: \(a_n = a r^{n-1}\), \(S_n = a(r^n - 1)/(r - 1)\). Sum to infinity requires \(|r| < 1\).</strong></li>
+  <li><strong>Sigma notation:</strong> memorise \(\Sigma k, \Sigma k^2, \Sigma k^3\); use linearity to split complicated sums.</li>
+  <li><strong>Binomial (positive integer \(n\)):</strong> finite expansion with \(n+1\) terms, valid for all real \(x\); coefficients from Pascal's triangle.</li>
+  <li><strong>Binomial (rational/negative \(n\)):</strong> infinite series, valid for \(|x| < 1\); for \((a + bx)^n\) factor out \(a^n\) first and validity becomes \(|x| < |a/b|\).</li>
+  <li><strong>Recurrence limits:</strong> assume limit \(L\) exists, substitute \(a_{n+1} = a_n = L\), solve \(L = g(L)\).</li>
+  <li><strong>State validity conditions</strong> explicitly for infinite GP and non-integer binomial — OCR awards a mark for this.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Using \(S_\infty = a/(1-r)\) without checking or stating \(|r| < 1\).</li>
+  <li>Omitting the validity range \(|x| < |a/b|\) for the expansion of \((a + bx)^n\).</li>
+  <li>Arithmetic slips in \(n(n-1)(n-2)/3!\) when \(n\) is negative — sign errors abound.</li>
+  <li>Wrong number of terms in a sigma sum (index starts at 0 vs 1).</li>
+  <li>Forgetting to factor \(a^n\) out of \((a + bx)^n\) before applying the series formula.</li>
+  <li>Writing \((1+x)^n = 1 + nx + \tfrac{n(n-1)}{2} x^2 + \dots\) while missing the \(2!\) in the denominator of subsequent terms' factorials.</li>
+  <li>Failing to verify a guessed explicit formula on multiple terms, not just the first.</li>
+  <li>Mixing up AP and GP formulae under exam pressure — confirm the structure before reaching for a formula.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Formula snapshot (memorise).</strong>
+<ul>
+  <li>AP \(n\)th term: \(a_n = a + (n-1)d\).</li>
+  <li>AP sum: \(S_n = \tfrac{n}{2}[2a + (n-1)d] = \tfrac{n}{2}(a + l)\).</li>
+  <li>GP \(n\)th term: \(a_n = a\, r^{n-1}\).</li>
+  <li>GP sum: \(S_n = a(r^n - 1)/(r - 1),\ r \neq 1\).</li>
+  <li>GP sum to infinity: \(S_\infty = a/(1 - r),\ |r| < 1\).</li>
+  <li>Standard sigma sums: \(\Sigma k = n(n+1)/2,\ \Sigma k^2 = n(n+1)(2n+1)/6,\ \Sigma k^3 = [n(n+1)/2]^2\).</li>
+  <li>Binomial (integer \(n\)): \((a+b)^n = \sum_{k=0}^n \binom{n}{k} a^{n-k} b^k\).</li>
+  <li>Binomial (general \(n\)): \((1+x)^n = 1 + nx + \tfrac{n(n-1)}{2!}x^2 + \tfrac{n(n-1)(n-2)}{3!}x^3 + \dots,\ |x| < 1\).</li>
+  <li>Fixed point of recurrence: \(L = g(L)\) if the limit exists.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

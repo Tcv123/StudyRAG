@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 1.6 — Exponentials &amp; Logarithms</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.6 Exponentials &amp; Logarithms</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 1: Pure Mathematics</p>
+
+<p>Exponential and logarithmic functions describe the mathematics of <em>proportional change</em>: a quantity whose instantaneous rate of change is proportional to its current size. This is the natural model for population growth, compound interest, radioactive decay, Newton's law of cooling, charge on a capacitor and countless other physical processes. The chapter builds the pair of inverse functions \(y = e^x\) and \(y = \ln x\) — together with their general-base relatives \(y = a^x\) and \(y = \log_a x\) — develops the algebra of logarithm laws, and uses them to solve exponential equations, fit power and exponential laws to experimental data, and model real-world growth and decay. A central idea is that the number \(e \approx 2.71828\) is uniquely "natural" because \(\tfrac{d}{dx} e^x = e^x\); every other exponential function carries an awkward factor of \(\ln a\).</p>
+
+<h2>1. The Exponential Function y = a^x</h2>
+
+<p>An <em>exponential function</em> has the variable in the exponent rather than the base. This is fundamentally different from a power function like \(x^2\): in \(y = 2^x\) the base is fixed and the exponent varies, giving explosive growth; in \(y = x^2\) the exponent is fixed and the growth is merely polynomial. By \(x = 10\), \(x^2 = 100\) but \(2^x = 1024\) — already ten times larger, and the gap widens without bound.</p>
+
+<div class="definition">
+<strong>Exponential function.</strong> For a constant \(a > 0\), \(a \neq 1\), the function
+\[ f(x) = a^x, \qquad x \in \mathbb{R} \]
+is called the exponential function with base \(a\). Its principal properties are:
+<ul>
+  <li><strong>Domain:</strong> all real \(x\).</li>
+  <li><strong>Range:</strong> \((0, \infty)\) — the function is strictly positive for every real \(x\).</li>
+  <li><strong>Intercept:</strong> passes through \((0, 1)\), since \(a^0 = 1\) for any \(a \neq 0\).</li>
+  <li><strong>Monotonicity:</strong> strictly increasing if \(a > 1\); strictly decreasing if \(0 < a < 1\).</li>
+  <li><strong>Horizontal asymptote:</strong> \(y = 0\) (the \(x\)-axis) — as \(x \to -\infty\) if \(a > 1\), or \(x \to +\infty\) if \(0 < a < 1\).</li>
+  <li><strong>One-to-one:</strong> so it has an inverse, the logarithm \(\log_a\).</li>
+</ul>
+</div>
+
+<h3>Graphs of y = a^x for Various Bases</h3>
+
+<p>All exponential curves pass through \((0, 1)\) and approach the \(x\)-axis asymptotically. The base controls how steeply they rise or fall. For \(a > 1\) they grow faster as \(a\) increases; for \(a < 1\) they decay faster as \(a\) decreases.</p>
+
+<svg viewBox="0 0 500 320" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <!-- axes -->
+  <line x1="50" y1="280" x2="480" y2="280" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="250" y1="20"  x2="250" y2="300" stroke="#1e3a5f" stroke-width="1.5"/>
+  <!-- ticks -->
+  <text x="250" y="295" font-size="11" fill="#1e3a5f" text-anchor="middle">0</text>
+  <text x="310" y="295" font-size="11" fill="#1e3a5f" text-anchor="middle">1</text>
+  <text x="370" y="295" font-size="11" fill="#1e3a5f" text-anchor="middle">2</text>
+  <text x="430" y="295" font-size="11" fill="#1e3a5f" text-anchor="middle">3</text>
+  <text x="190" y="295" font-size="11" fill="#1e3a5f" text-anchor="middle">-1</text>
+  <text x="130" y="295" font-size="11" fill="#1e3a5f" text-anchor="middle">-2</text>
+  <text x="240" y="220" font-size="11" fill="#1e3a5f" text-anchor="end">1</text>
+  <text x="240" y="160" font-size="11" fill="#1e3a5f" text-anchor="end">3</text>
+  <text x="240" y="100" font-size="11" fill="#1e3a5f" text-anchor="end">6</text>
+  <text x="475" y="275" font-size="11" fill="#1e3a5f">x</text>
+  <text x="255" y="25"  font-size="11" fill="#1e3a5f">y</text>
+  <!-- y = 2^x (green) -->
+  <path d="M 70,273 L 130,265 L 190,250 L 250,220 L 310,160 L 340,115 L 370,40" stroke="#16a34a" stroke-width="2" fill="none"/>
+  <text x="375" y="45"  font-size="12" fill="#16a34a">y = 2^x</text>
+  <!-- y = e^x (blue) -->
+  <path d="M 70,278 L 130,272 L 190,256 L 250,220 L 290,175 L 320,125 L 345,60" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="345" y="55"  font-size="12" fill="#2563eb">y = e^x</text>
+  <!-- y = 10^x (red) -->
+  <path d="M 70,279 L 130,277 L 190,270 L 250,220 L 275,170 L 295,100 L 310,30"  stroke="#dc2626" stroke-width="2" fill="none"/>
+  <text x="300" y="25"  font-size="12" fill="#dc2626">y = 10^x</text>
+  <!-- y = (1/2)^x (orange) -->
+  <path d="M 130,40 L 160,90 L 190,135 L 220,180 L 250,220 L 310,250 L 370,270 L 430,278" stroke="#f59e0b" stroke-width="2" fill="none"/>
+  <text x="110" y="45"  font-size="12" fill="#f59e0b">y = (1/2)^x</text>
+  <!-- point (0,1) -->
+  <circle cx="250" cy="220" r="3" fill="#1a1a2e"/>
+  <text x="258" y="235" font-size="11" fill="#1a1a2e">(0, 1)</text>
+  <!-- asymptote label -->
+  <text x="70"  y="270" font-size="10" fill="#64748b">asymptote y = 0</text>
+</svg>
+
+<p>Three features are worth noting: (i) all four curves share the point \((0, 1)\); (ii) the curves for \(a = 2, e, 10\) are all increasing, with \(y = 10^x\) rising fastest and \(y = 2^x\) rising slowest; (iii) the curve \(y = (1/2)^x = 2^{-x}\) is the reflection of \(y = 2^x\) in the \(y\)-axis — it decays from \(+\infty\) (as \(x \to -\infty\)) through \((0,1)\) down towards \(0\).</p>
+
+<div class="exam-tip">
+<strong>Exam tip — exponentials are always positive.</strong> Because \(a^x > 0\) for every real \(x\) and every positive base \(a\), an equation like \(e^x = -2\) or \(3^x + 1 = 0\) has <em>no real solution</em>. Spotting this saves wasted algebra. If after manipulation you end up trying to take \(\log\) of a negative number, either there is no solution or there is an error earlier.
+</div>
+
+<h2>2. The Number e</h2>
+
+<p>Among all exponential functions \(y = a^x\), exactly one has the property that its gradient at every point equals its height — that base is Euler's constant \(e \approx 2.71828\). This single fact is the reason \(e\) is called the <em>natural</em> base: calculus with \(e^x\) avoids extra multiplicative factors.</p>
+
+<div class="definition">
+<strong>Euler's number \(e\).</strong> The irrational constant
+\[ e = 2.71828182845904523536\ldots \]
+can be defined in several equivalent ways, of which two are standard at A-level:
+\[ e = \lim_{n \to \infty} \left(1 + \frac{1}{n}\right)^n, \qquad e = \sum_{n=0}^{\infty} \frac{1}{n!} = 1 + 1 + \tfrac{1}{2} + \tfrac{1}{6} + \tfrac{1}{24} + \cdots \]
+The first (limit) definition arises naturally from continuously compounded interest; the second (series) definition is the Taylor expansion of \(e^x\) evaluated at \(x = 1\).
+</div>
+
+<h3>Why e is Natural</h3>
+
+<p>Differentiating \(y = a^x\) from first principles gives
+\[ \frac{dy}{dx} = a^x \cdot \lim_{h \to 0} \frac{a^h - 1}{h}. \]
+The limit on the right depends only on the base \(a\), not on \(x\). For \(a = 2\) it equals \(\ln 2 \approx 0.693\); for \(a = 10\) it equals \(\ln 10 \approx 2.303\); for \(a = e\) it equals exactly \(1\). So \(e\) is the unique base for which \(\tfrac{d}{dx} a^x = a^x\) — no awkward factor.</p>
+
+<div class="equation">
+\( \dfrac{d}{dx}(e^x) = e^x. \)
+</div>
+
+<h3>Compound Interest and the Limit Definition</h3>
+
+<p>If £1 is invested at 100% interest compounded \(n\) times per year, the year-end value is \((1 + 1/n)^n\). As compounding becomes continuous (\(n \to \infty\)) this value approaches \(e\). Numerically: with \(n = 1\) it is 2; with \(n = 12\), 2.613; with \(n = 365\), 2.7146; in the limit, \(e\).</p>
+
+<table>
+<tr><th>\(n\)</th><th>1</th><th>2</th><th>12</th><th>365</th><th>8760</th><th>\(\to \infty\)</th></tr>
+<tr><td>\((1 + 1/n)^n\)</td><td>2.0000</td><td>2.2500</td><td>2.6130</td><td>2.7146</td><td>2.71813</td><td>\(e\)</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — memorise key values of \(e^x\).</strong> \(e^0 = 1\); \(e^1 \approx 2.718\); \(e^2 \approx 7.389\); \(e^{-1} \approx 0.3679\); \(e^{1/2} \approx 1.6487\). Knowing these speeds up sanity-checks: if your answer involves \(e^{10}\) and the question expected a two-digit answer, something is wrong (\(e^{10} \approx 22{,}026\)).
+</div>
+
+<h2>3. The Natural Logarithm ln(x)</h2>
+
+<p>The natural logarithm is the inverse of the exponential function with base \(e\). It answers the question: "to what power must I raise \(e\) to get \(x\)?"</p>
+
+<div class="definition">
+<strong>Natural logarithm.</strong> For \(x > 0\),
+\[ \ln x = \log_e x \iff e^{\ln x} = x. \]
+Equivalently, \(y = \ln x\) means \(e^y = x\). Properties:
+<ul>
+  <li><strong>Domain:</strong> \((0, \infty)\) — cannot take log of zero or a negative number.</li>
+  <li><strong>Range:</strong> all real numbers.</li>
+  <li><strong>Intercept:</strong> passes through \((1, 0)\), since \(\ln 1 = 0\).</li>
+  <li><strong>Monotonicity:</strong> strictly increasing.</li>
+  <li><strong>Vertical asymptote:</strong> \(x = 0\). As \(x \to 0^+\), \(\ln x \to -\infty\).</li>
+  <li><strong>Inverse identities:</strong> \(\ln(e^x) = x\) for all real \(x\); \(\,e^{\ln x} = x\) for \(x > 0\).</li>
+</ul>
+</div>
+
+<h3>Graphs of y = e^x and y = ln x</h3>
+
+<p>Because \(\ln\) is the inverse of the exponential, their graphs are reflections of each other in the line \(y = x\). The exponential rises steeply from the horizontal asymptote; the logarithm rises slowly from the vertical asymptote.</p>
+
+<svg viewBox="0 0 500 320" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <!-- axes -->
+  <line x1="50" y1="280" x2="480" y2="280" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="90" y1="20"  x2="90" y2="300" stroke="#1e3a5f" stroke-width="1.5"/>
+  <!-- diagonal y=x -->
+  <line x1="90" y1="280" x2="350" y2="20" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,4"/>
+  <text x="352" y="28"  font-size="10" fill="#64748b">y = x</text>
+  <!-- y = e^x (blue) -->
+  <path d="M 50,275 L 70,270 L 90,260 L 130,240 L 170,205 L 210,155 L 250,90 L 275,30" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="230" y="50" font-size="12" fill="#2563eb">y = e^x</text>
+  <!-- y = ln x (red) -->
+  <path d="M 95,30 L 110,170 L 130,220 L 170,245 L 210,255 L 250,263 L 310,270 L 400,275 L 470,278" stroke="#dc2626" stroke-width="2" fill="none"/>
+  <text x="400" y="265" font-size="12" fill="#dc2626">y = ln x</text>
+  <!-- key points -->
+  <circle cx="90" cy="260" r="2.5" fill="#1a1a2e"/>
+  <text x="70" y="256" font-size="10" fill="#1a1a2e">(0,1)</text>
+  <circle cx="130" cy="280" r="2.5" fill="#1a1a2e"/>
+  <text x="125" y="296" font-size="10" fill="#1a1a2e">(1,0)</text>
+  <!-- asymptote labels -->
+  <text x="300" y="275" font-size="10" fill="#64748b">y → 0 (e^x asymptote)</text>
+  <text x="50"  y="50"  font-size="10" fill="#64748b">x = 0 (ln asymptote)</text>
+  <text x="470" y="275" font-size="11" fill="#1e3a5f">x</text>
+  <text x="95"  y="25"  font-size="11" fill="#1e3a5f">y</text>
+</svg>
+
+<h3>General-Base Logarithm</h3>
+
+<p>For any base \(a > 0\), \(a \neq 1\), the logarithm \(\log_a\) is defined by
+\[ y = \log_a x \iff a^y = x. \]
+Special cases: \(\log_{10}\) (written just \(\log\) on calculators, the <em>common logarithm</em>), \(\log_2\) (common in computer science) and \(\log_e = \ln\).</p>
+
+<div class="definition">
+<strong>Common logarithm.</strong> \(\log_{10} x\), often written simply \(\log x\) on calculators and in engineering, is the logarithm with base 10. It tells you the number's order of magnitude: \(\log 1000 = 3\), \(\log 10{,}000 = 4\). The decibel and Richter scales are defined in terms of \(\log_{10}\).
+</div>
+
+<h2>4. Logarithm Laws</h2>
+
+<p>Three laws summarise how logarithms interact with multiplication, division and powers. They turn exponential relationships into linear ones — which is why they were invented in 1614 by John Napier, long before calculus, for the purpose of simplifying astronomical calculation.</p>
+
+<div class="definition">
+<strong>Laws of logarithms.</strong> For a fixed base \(b > 0\), \(b \neq 1\), and positive reals \(x\), \(y\):
+\[ \log_b(xy) = \log_b x + \log_b y \qquad \text{(product rule)} \]
+\[ \log_b\!\left(\tfrac{x}{y}\right) = \log_b x - \log_b y \qquad \text{(quotient rule)} \]
+\[ \log_b(x^n) = n \log_b x \qquad \text{(power rule, any real } n) \]
+Special values: \(\log_b b = 1\); \(\log_b 1 = 0\); \(\log_b(b^x) = x\); \(b^{\log_b x} = x\).
+</div>
+
+<h3>Proof of the Product Rule</h3>
+
+<p>Let \(\log_b x = p\) and \(\log_b y = q\), so by definition \(x = b^p\) and \(y = b^q\). Then
+\[ xy = b^p \cdot b^q = b^{p + q}, \]
+using the index law \(b^p b^q = b^{p+q}\). Taking \(\log_b\) of both sides,
+\[ \log_b(xy) = p + q = \log_b x + \log_b y. \qquad\square \]
+The quotient rule follows identically using \(b^p / b^q = b^{p-q}\); the power rule from \((b^p)^n = b^{np}\).</p>
+
+<h3>Change of Base</h3>
+
+<div class="definition">
+<strong>Change of base.</strong> For positive \(a, b, x\) with \(a, b \neq 1\),
+\[ \log_a x = \frac{\log_b x}{\log_b a} \quad\text{and in particular}\quad \log_a x = \frac{\ln x}{\ln a}. \]
+<em>Proof.</em> Let \(y = \log_a x\), so \(a^y = x\). Taking \(\log_b\) of both sides, \(y \log_b a = \log_b x\), which rearranges to the stated formula.
+</div>
+
+<p>The change-of-base formula means a calculator with only \(\ln\) and \(\log_{10}\) buttons can compute any logarithm: e.g. \(\log_2 5 = \ln 5 / \ln 2 \approx 1.6094 / 0.6931 \approx 2.322\).</p>
+
+<table>
+<tr><th>Law</th><th>Statement</th><th>Typical use</th></tr>
+<tr><td>Product</td><td>\(\log(xy) = \log x + \log y\)</td><td>Combine two log terms into one; split a log to solve.</td></tr>
+<tr><td>Quotient</td><td>\(\log(x/y) = \log x - \log y\)</td><td>Simplify \(\log(a/b)\) expressions; eliminate a fraction.</td></tr>
+<tr><td>Power</td><td>\(\log(x^n) = n \log x\)</td><td>Bring an exponent down — essential for solving \(a^x = b\).</td></tr>
+<tr><td>Zero</td><td>\(\log_b 1 = 0\)</td><td>Any log of 1 vanishes — watch for this in simplification.</td></tr>
+<tr><td>Unity</td><td>\(\log_b b = 1\)</td><td>\(\log_{10} 10 = 1\); \(\ln e = 1\).</td></tr>
+<tr><td>Change of base</td><td>\(\log_a x = \ln x / \ln a\)</td><td>Evaluate arbitrary-base logs with a standard calculator.</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — log laws require positivity.</strong> Every log law is stated for <em>positive</em> arguments. Writing \(\log(x^2) = 2\log x\) is wrong if \(x\) could be negative — the left side is defined (\(x^2 > 0\)) but the right side is not. The safe version is \(\log(x^2) = 2\log|x|\). When solving log equations, always check at the end that every argument of every log was positive.
+</div>
+
+<div class="example">
+<h3>Worked Example 1 — Combining logs</h3>
+<p>Write \(2\ln 3 + \ln 5 - \ln 2\) as a single logarithm.</p>
+<pre>
+<span class="ln">1.</span>  Use power rule on the first term:
+<span class="ln">2.</span>     2 ln 3 = ln(3²) = ln 9.
+<span class="ln">3.</span>  Use product rule to combine ln 9 + ln 5:
+<span class="ln">4.</span>     ln 9 + ln 5 = ln(9·5) = ln 45.
+<span class="ln">5.</span>  Use quotient rule to subtract ln 2:
+<span class="ln">6.</span>     ln 45 − ln 2 = ln(45/2) = ln 22.5.
+<span class="ln">7.</span>  ∴ 2 ln 3 + ln 5 − ln 2 = ln(45/2).
+
+<span class="cm">// Numerical check: 2(1.0986) + 1.6094 − 0.6931 = 3.1135 ≈ ln(22.5). ✓</span>
+</pre>
+</div>
+
+<h2>5. Solving Exponential Equations</h2>
+
+<p>An equation of the form \(a^x = b\) or \(e^{f(x)} = c\) is solved by taking logs of both sides. Which log? In principle any base works, but in practice use \(\ln\) (for \(e^{\cdots}\)) or \(\log_{10}\) (for \(10^{\cdots}\)), because every calculator has these. The power rule \(\log(a^x) = x \log a\) is what makes this work — it moves the unknown out of the exponent.</p>
+
+<div class="example">
+<h3>Worked Example 2 — Simple exponential</h3>
+<p>Solve \(2^x = 10\).</p>
+<pre>
+<span class="ln">1.</span>  Take ln of both sides (any base works; ln is convenient):
+<span class="ln">2.</span>     ln(2^x) = ln 10
+<span class="ln">3.</span>     x · ln 2 = ln 10                 (power rule)
+<span class="ln">4.</span>     x = ln 10 / ln 2.
+<span class="ln">5.</span>  Numerical value:
+<span class="ln">6.</span>     x = 2.302585 / 0.693147
+<span class="ln">7.</span>     x ≈ 3.3219 (4 d.p.)
+<span class="ln">8.</span>  Check: 2^3.3219 = e^(3.3219 · 0.693) = e^2.303 ≈ 10. ✓
+
+<span class="cm">// The exact answer is x = log₂ 10 = ln 10/ln 2 — both are acceptable forms.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 3 — Different bases on two sides</h3>
+<p>Solve \(3^{2x+1} = 5^x\).</p>
+<pre>
+<span class="ln">1.</span>  Take ln of both sides:
+<span class="ln">2.</span>     ln(3^(2x+1)) = ln(5^x)
+<span class="ln">3.</span>     (2x + 1) ln 3 = x ln 5             (power rule)
+<span class="ln">4.</span>  Expand and gather x-terms:
+<span class="ln">5.</span>     2x ln 3 + ln 3 = x ln 5
+<span class="ln">6.</span>     2x ln 3 − x ln 5 = − ln 3
+<span class="ln">7.</span>     x (2 ln 3 − ln 5) = − ln 3
+<span class="ln">8.</span>     x = − ln 3 / (2 ln 3 − ln 5) = ln 3 / (ln 5 − 2 ln 3).
+<span class="ln">9.</span>  Numerically:
+<span class="ln">10.</span>    x = 1.0986 / (1.6094 − 2.1972) = 1.0986 / (−0.5878) ≈ −1.869.
+
+<span class="cm">// Using the quotient rule: denominator = ln 5 − ln 9 = ln(5/9), so x = ln 3 / ln(5/9).</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 4 — Exponential plus constant</h3>
+<p>Solve \(e^x + 3 = 5\).</p>
+<pre>
+<span class="ln">1.</span>  Isolate the exponential:
+<span class="ln">2.</span>     e^x = 5 − 3 = 2.
+<span class="ln">3.</span>  Take ln:
+<span class="ln">4.</span>     x = ln 2 ≈ 0.6931.
+
+<span class="cm">// Reminder: e^x > 0 always. If we had e^x + 5 = 3, the equation would read</span>
+<span class="cm">// e^x = −2, which has NO real solution.</span>
+</pre>
+</div>
+
+<h2>6. Solving Logarithmic Equations</h2>
+
+<p>Log equations are solved by combining terms using the log laws until one side is a single log, then removing the log by exponentiating. Every candidate solution must then be checked: it must make <em>every</em> log argument in the original equation positive.</p>
+
+<div class="example">
+<h3>Worked Example 5 — Combined-log equation with domain check</h3>
+<p>Solve \(\log_2 x + \log_2(x - 2) = 3\).</p>
+<pre>
+<span class="ln">1.</span>  Domain: need x > 0 AND x − 2 > 0, so x > 2.
+<span class="ln">2.</span>  Combine using product rule:
+<span class="ln">3.</span>     log₂(x(x − 2)) = 3
+<span class="ln">4.</span>     x(x − 2) = 2³ = 8.
+<span class="ln">5.</span>  Expand:
+<span class="ln">6.</span>     x² − 2x − 8 = 0
+<span class="ln">7.</span>     (x − 4)(x + 2) = 0
+<span class="ln">8.</span>     x = 4   or   x = −2.
+<span class="ln">9.</span>  Check domain: x > 2.
+<span class="ln">10.</span>    x = 4 ✓     x = −2 ✗ (rejected — would give log of negative).
+<span class="ln">11.</span> ∴ x = 4.
+
+<span class="cm">// Forgetting to reject x = −2 is a classic lost mark.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 6 — Natural-log equation</h3>
+<p>Solve \(\ln x = 2\).</p>
+<pre>
+<span class="ln">1.</span>  By definition of ln, e^(ln x) = x, so exponentiate both sides:
+<span class="ln">2.</span>     e^(ln x) = e²
+<span class="ln">3.</span>     x = e² ≈ 7.389.
+<span class="ln">4.</span>  Domain: x > 0 ✓.
+</pre>
+</div>
+
+<h2>7. Modelling with Exponentials</h2>
+
+<p>Any quantity whose rate of change is proportional to its current size obeys an exponential law. If \(\tfrac{dP}{dt} = kP\) then \(P = P_0 e^{kt}\); positive \(k\) gives growth, negative \(k\) gives decay. This is the backbone of population models, radioactive decay, compound interest, discharge of a capacitor and heat loss (Newton's law of cooling).</p>
+
+<div class="definition">
+<strong>Exponential growth model.</strong>
+\[ P(t) = P_0 \, e^{kt}, \qquad k > 0. \]
+\(P_0 = P(0)\) is the initial value; \(k\) is the <em>continuous growth rate</em>. The <em>doubling time</em> \(T_2\) satisfies \(P(T_2) = 2P_0\), giving
+\[ T_2 = \frac{\ln 2}{k}. \]
+</div>
+
+<div class="definition">
+<strong>Exponential decay model.</strong>
+\[ N(t) = N_0 \, e^{-\lambda t}, \qquad \lambda > 0. \]
+\(\lambda\) is the <em>decay constant</em>. The <em>half-life</em> \(T_{1/2}\) is the time for the quantity to fall to half its value. From \(N_0 e^{-\lambda T_{1/2}} = \tfrac{1}{2} N_0\):
+\[ T_{1/2} = \frac{\ln 2}{\lambda}. \]
+</div>
+
+<table>
+<tr><th>Quantity</th><th>Formula</th><th>When the variable appears</th></tr>
+<tr><td>Doubling time</td><td>\(T_2 = (\ln 2)/k\)</td><td>Population, investment growing at rate \(k\).</td></tr>
+<tr><td>Half-life</td><td>\(T_{1/2} = (\ln 2)/\lambda\)</td><td>Radioactive decay, drug elimination.</td></tr>
+<tr><td>Time-to-multiple \(m\)</td><td>\(t = (\ln m)/k\)</td><td>Population reaches \(m\) times its initial size.</td></tr>
+<tr><td>Fraction remaining at \(t\)</td><td>\(N/N_0 = e^{-\lambda t} = (1/2)^{t/T_{1/2}}\)</td><td>Radiocarbon dating, drug levels.</td></tr>
+</table>
+
+<h3>Newton's Law of Cooling</h3>
+
+<p>An object at temperature \(T\) placed in surroundings at temperature \(T_s\) cools at a rate proportional to the excess temperature:
+\[ \frac{dT}{dt} = -k(T - T_s). \]
+Setting \(u = T - T_s\) gives \(du/dt = -ku\), so \(u = u_0 e^{-kt}\) and
+\[ T(t) = T_s + (T_0 - T_s)\, e^{-kt}. \]
+At \(t = 0\) this gives \(T = T_0\); as \(t \to \infty\), \(T \to T_s\). The graph is a decaying exponential asymptoting to ambient temperature.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — read off the model carefully.</strong> In \(P = P_0 e^{kt}\): \(P_0\) is the initial value (plug in \(t = 0\)); \(k\) is the continuous rate, not the percentage rate. If population grows by 5% per year, then after 1 year \(P = 1.05 P_0\), so \(e^k = 1.05\), giving \(k = \ln 1.05 \approx 0.04879\) — <em>not</em> 0.05. Always convert between percentage-per-period and continuous rate \(k\) with care.
+</div>
+
+<div class="example">
+<h3>Worked Example 7 — Population doubling</h3>
+<p>A town of 10,000 people grows at 5% per year. After how many whole years will the population first exceed 20,000?</p>
+<pre>
+<span class="ln">1.</span>  Annual multiplier = 1.05, so P(t) = 10000 · (1.05)^t.
+<span class="ln">2.</span>  Set P(t) = 20000:
+<span class="ln">3.</span>     10000 · (1.05)^t = 20000
+<span class="ln">4.</span>     (1.05)^t = 2.
+<span class="ln">5.</span>  Take ln of both sides:
+<span class="ln">6.</span>     t · ln 1.05 = ln 2
+<span class="ln">7.</span>     t = ln 2 / ln 1.05 = 0.6931 / 0.04879 ≈ 14.207.
+<span class="ln">8.</span>  t must be a whole year, so first whole year exceeding is t = 15.
+<span class="ln">9.</span>  Check:   P(14) = 10000 · 1.05^14 ≈ 19799    (under 20000)
+<span class="ln">10.</span>           P(15) = 10000 · 1.05^15 ≈ 20789    (over 20000) ✓
+
+<span class="cm">// Continuous-rate version: k = ln 1.05 ≈ 0.04879; T₂ = ln 2 / k ≈ 14.21 yr.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 8 — Radiocarbon dating</h3>
+<p>Carbon-14 has half-life \(T_{1/2} = 5730\) years. What fraction of the original carbon-14 remains after 10,000 years?</p>
+<pre>
+<span class="ln">1.</span>  Decay constant from half-life:
+<span class="ln">2.</span>     λ = ln 2 / T½ = 0.6931 / 5730 ≈ 1.2097 × 10⁻⁴  yr⁻¹.
+<span class="ln">3.</span>  Fraction remaining after t = 10000 years:
+<span class="ln">4.</span>     N/N₀ = e^(−λt) = e^(−1.2097e-4 · 10000) = e^(−1.2097).
+<span class="ln">5.</span>     N/N₀ ≈ 0.2982.
+<span class="ln">6.</span>  Equivalent form:
+<span class="ln">7.</span>     N/N₀ = (1/2)^(t/T½) = (1/2)^(10000/5730) = (1/2)^1.7452 ≈ 0.2982. ✓
+<span class="ln">8.</span>  ∴ about 29.8% remains.
+
+<span class="cm">// Radiocarbon dating is reliable up to ~50,000 yr — about 8 half-lives,</span>
+<span class="cm">// after which the remaining fraction (~0.4%) becomes too small to measure.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 9 — Newton's law of cooling</h3>
+<p>A cup of coffee follows \(T = 20 + 60\,e^{-0.1 t}\), with \(t\) in minutes and \(T\) in °C. When is \(T = 40\)°C?</p>
+<pre>
+<span class="ln">1.</span>  Set up the equation:
+<span class="ln">2.</span>     20 + 60 e^(−0.1 t) = 40
+<span class="ln">3.</span>     60 e^(−0.1 t) = 20
+<span class="ln">4.</span>     e^(−0.1 t) = 1/3.
+<span class="ln">5.</span>  Take ln:
+<span class="ln">6.</span>     −0.1 t = ln(1/3) = −ln 3
+<span class="ln">7.</span>     t = (ln 3)/0.1 = 10 ln 3 ≈ 10.986 min.
+<span class="ln">8.</span>  Initial check: T(0) = 20 + 60 = 80°C ✓; ambient T₍s₎ = 20°C ✓.
+
+<span class="cm">// As t → ∞, T → 20°C (the room temperature). The graph is a decaying</span>
+<span class="cm">// exponential shifted up by 20.</span>
+</pre>
+</div>
+
+<h2>8. Logarithmic Scales — Linearising Data</h2>
+
+<p>A key experimental technique is to use logs to convert a non-linear relationship into a linear one. Plotting logged quantities and looking for a straight line lets you read off unknown constants from the intercept and gradient.</p>
+
+<h3>Exponential Law y = a·b^x</h3>
+
+<p>Take logs of both sides (any base — pick \(\log_{10}\) or \(\ln\)):
+\[ \log y = \log a + x \log b. \]
+This is linear in \(x\): plotting \(\log y\) (vertical) against \(x\) (horizontal) gives a straight line with intercept \(\log a\) and gradient \(\log b\). So an exponential relationship in raw variables becomes a straight line after taking the log of only one axis (semi-log plot).</p>
+
+<h3>Power Law y = a·x^n</h3>
+
+<p>Take logs: \(\log y = \log a + n \log x\). Now plot \(\log y\) against \(\log x\) — a log-log plot. A straight line with gradient \(n\) and intercept \(\log a\) confirms a power law and reveals both constants.</p>
+
+<table>
+<tr><th>Model</th><th>Linearised form</th><th>Plot</th><th>Gradient</th><th>Intercept</th></tr>
+<tr><td>\(y = a b^x\)</td><td>\(\log y = \log a + x \log b\)</td><td>\(\log y\) vs \(x\)</td><td>\(\log b\)</td><td>\(\log a\)</td></tr>
+<tr><td>\(y = a x^n\)</td><td>\(\log y = \log a + n \log x\)</td><td>\(\log y\) vs \(\log x\)</td><td>\(n\)</td><td>\(\log a\)</td></tr>
+<tr><td>\(y = a e^{kx}\)</td><td>\(\ln y = \ln a + k x\)</td><td>\(\ln y\) vs \(x\)</td><td>\(k\)</td><td>\(\ln a\)</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — plot and check.</strong> In OCR modelling questions, if the examiner tells you data "fits a law \(y = a b^x\)", expect to plot \(\log y\) against \(x\) and show — using a table of values — that the points are (approximately) collinear. Then fit the line, read off gradient and intercept, and recover \(a, b\) by exponentiating. The straight line is the <em>evidence</em> that the model is correct; without it, you've only assumed the law.
+</div>
+
+<div class="example">
+<h3>Worked Example 10 — Fitting an exponential to data</h3>
+<p>Experimental data: \((x, y) = (1, 3.0), (2, 4.5), (3, 6.75)\). Find \(a\) and \(b\) so that \(y = a \cdot b^x\).</p>
+<pre>
+<span class="ln">1.</span>  Linearise: log y = log a + x log b.
+<span class="ln">2.</span>  Compute log₁₀ of each y:
+<span class="ln">3.</span>     x = 1:  log 3.0   = 0.4771
+<span class="ln">4.</span>     x = 2:  log 4.5   = 0.6532
+<span class="ln">5.</span>     x = 3:  log 6.75  = 0.8293
+<span class="ln">6.</span>  Check constant first differences (confirming linearity):
+<span class="ln">7.</span>     0.6532 − 0.4771 = 0.1761
+<span class="ln">8.</span>     0.8293 − 0.6532 = 0.1761    ✓ equal ⇒ exactly linear in x.
+<span class="ln">9.</span>  Gradient = log b = 0.1761   ⇒   b = 10^0.1761 = 1.5.
+<span class="ln">10.</span> Intercept at x = 1:  log a + 0.1761 = 0.4771  ⇒  log a = 0.3010  ⇒  a = 2.
+<span class="ln">11.</span> ∴ y = 2 · 1.5^x.
+<span class="ln">12.</span> Verify:  x = 1:  2 · 1.5 = 3.0 ✓;  x = 2:  2 · 2.25 = 4.5 ✓;  x = 3:  2 · 3.375 = 6.75 ✓.
+
+<span class="cm">// Each y is obtained from the previous by multiplying by 1.5 — a geometric</span>
+<span class="cm">// progression with common ratio b. Spotting that shortcuts the whole calculation.</span>
+</pre>
+</div>
+
+<h3>Linearised Plot (Schematic)</h3>
+
+<svg viewBox="0 0 500 260" width="100%" style="max-width:520px;display:block;margin:10px auto;background:#f8fafc;border:1px solid #cbd5e1;border-radius:6px;">
+  <!-- axes -->
+  <line x1="60" y1="220" x2="460" y2="220" stroke="#1e3a5f" stroke-width="1.5"/>
+  <line x1="60" y1="20"  x2="60" y2="220"  stroke="#1e3a5f" stroke-width="1.5"/>
+  <!-- ticks -->
+  <text x="60"  y="238" font-size="11" fill="#1e3a5f" text-anchor="middle">0</text>
+  <text x="160" y="238" font-size="11" fill="#1e3a5f" text-anchor="middle">1</text>
+  <text x="260" y="238" font-size="11" fill="#1e3a5f" text-anchor="middle">2</text>
+  <text x="360" y="238" font-size="11" fill="#1e3a5f" text-anchor="middle">3</text>
+  <text x="50"  y="175" font-size="11" fill="#1e3a5f" text-anchor="end">0.30</text>
+  <text x="50"  y="130" font-size="11" fill="#1e3a5f" text-anchor="end">0.48</text>
+  <text x="50"  y="85"  font-size="11" fill="#1e3a5f" text-anchor="end">0.65</text>
+  <text x="50"  y="40"  font-size="11" fill="#1e3a5f" text-anchor="end">0.83</text>
+  <text x="455" y="215" font-size="11" fill="#1e3a5f">x</text>
+  <text x="65"  y="25"  font-size="11" fill="#1e3a5f">log y</text>
+  <!-- best-fit line -->
+  <line x1="60" y1="175" x2="460" y2="5"  stroke="#2563eb" stroke-width="2"/>
+  <!-- data points -->
+  <circle cx="160" cy="130" r="4" fill="#dc2626"/>
+  <circle cx="260" cy="85"  r="4" fill="#dc2626"/>
+  <circle cx="360" cy="40"  r="4" fill="#dc2626"/>
+  <!-- annotations -->
+  <text x="170" y="122" font-size="10" fill="#1e3a5f">(1, 0.48)</text>
+  <text x="270" y="77"  font-size="10" fill="#1e3a5f">(2, 0.65)</text>
+  <text x="370" y="32"  font-size="10" fill="#1e3a5f">(3, 0.83)</text>
+  <text x="180" y="200" font-size="11" fill="#2563eb">gradient = log b = 0.176 ⇒ b = 1.5</text>
+  <text x="180" y="215" font-size="11" fill="#2563eb">intercept = log a = 0.30  ⇒ a = 2</text>
+</svg>
+
+<h2>9. Differentiation and Integration of Exponentials and Logarithms</h2>
+
+<p>The calculus rules for these functions are short, but ubiquitous. Only \(e^x\) and \(\ln x\) give clean formulas; general-base versions carry an extra factor of \(\ln a\).</p>
+
+<div class="equation">
+\( \dfrac{d}{dx}(e^x) = e^x, \qquad \dfrac{d}{dx}(e^{kx}) = k\,e^{kx}, \qquad \dfrac{d}{dx}(a^x) = a^x \ln a. \)
+</div>
+
+<div class="equation">
+\( \dfrac{d}{dx}(\ln x) = \dfrac{1}{x} \quad (x > 0), \qquad \dfrac{d}{dx}(\log_a x) = \dfrac{1}{x \ln a}. \)
+</div>
+
+<div class="equation">
+\( \int e^{kx}\, dx = \dfrac{1}{k} e^{kx} + C, \qquad \int \dfrac{1}{x}\, dx = \ln|x| + C. \)
+</div>
+
+<p>The absolute-value sign in \(\ln|x|\) is important: \(1/x\) is defined for \(x < 0\) as well, and integrating gives \(\ln(-x) + C\) there; \(\ln|x|\) covers both cases in one formula.</p>
+
+<table>
+<tr><th>Function</th><th>Derivative</th><th>Antiderivative</th></tr>
+<tr><td>\(e^x\)</td><td>\(e^x\)</td><td>\(e^x + C\)</td></tr>
+<tr><td>\(e^{kx}\)</td><td>\(k e^{kx}\)</td><td>\((1/k) e^{kx} + C\)</td></tr>
+<tr><td>\(a^x\)</td><td>\(a^x \ln a\)</td><td>\(a^x / \ln a + C\)</td></tr>
+<tr><td>\(\ln x\)</td><td>\(1/x\)</td><td>\(x \ln x - x + C\) (integration by parts)</td></tr>
+<tr><td>\(1/x\)</td><td>\(-1/x^2\)</td><td>\(\ln|x| + C\)</td></tr>
+<tr><td>\(\log_a x\)</td><td>\(1/(x \ln a)\)</td><td>\((x \log_a x - x/\ln a) + C\)</td></tr>
+</table>
+
+<p>(The antiderivative of \(\ln x\), while listed, is a topic of chapter 1.8 — integration by parts — rather than strict 1.6 content.)</p>
+
+<div class="exam-tip">
+<strong>Exam tip — when to use logs to differentiate.</strong> For \(y = a^x\) or \(y = x^x\) or anything with a variable in the exponent, take \(\ln\) of both sides first, then differentiate implicitly. For \(y = a^x\): \(\ln y = x \ln a\) ⇒ \(y'/y = \ln a\) ⇒ \(y' = a^x \ln a\). This "logarithmic differentiation" trick converts an exponent-position variable into a multiplier and then a derivative.
+</div>
+
+<h2>10. Quick-Reference Values</h2>
+
+<table>
+<tr><th>\(x\)</th><th>\(e^x\)</th><th>\(\ln x\)</th><th>\(\log_{10} x\)</th></tr>
+<tr><td>0.1</td><td>1.1052</td><td>\(-2.3026\)</td><td>\(-1\)</td></tr>
+<tr><td>0.5</td><td>1.6487</td><td>\(-0.6931\)</td><td>\(-0.3010\)</td></tr>
+<tr><td>1</td><td>2.7183 (\(= e\))</td><td>0</td><td>0</td></tr>
+<tr><td>2</td><td>7.3891</td><td>0.6931</td><td>0.3010</td></tr>
+<tr><td>e (\(\approx 2.718\))</td><td>15.154</td><td>1</td><td>0.4343</td></tr>
+<tr><td>3</td><td>20.086</td><td>1.0986</td><td>0.4771</td></tr>
+<tr><td>5</td><td>148.41</td><td>1.6094</td><td>0.6990</td></tr>
+<tr><td>10</td><td>22026</td><td>2.3026</td><td>1</td></tr>
+<tr><td>100</td><td>\(2.69 \times 10^{43}\)</td><td>4.6052</td><td>2</td></tr>
+</table>
+
+<p>Two handy identities used throughout: \(\ln 2 \approx 0.693\), \(\ln 10 \approx 2.303\). And because \(\log_{10} x = \ln x / \ln 10\), every \(\ln\)-to-\(\log_{10}\) conversion is a division by \(2.303\).</p>
+
+<div class="exam-tip">
+<strong>Exam tip — the range of a logarithm is all of \(\mathbb{R}\).</strong> Unlike sine or cosine, the output of \(\ln\) or \(\log_a\) is not bounded. If an equation reads \(\ln x = -15\), the solution \(x = e^{-15} \approx 3.06 \times 10^{-7}\) is perfectly valid — <em>not</em> "no solution". The only forbidden input is \(x \leq 0\); any real value can come <em>out</em>.
+</div>
+
+<h2>11. Consolidated Summary and Exam Strategy</h2>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Exponentials and Logarithms.</strong>
+<ul>
+  <li><strong>\(a^x\) is always positive.</strong> Rule out solutions where you'd need \(a^x \leq 0\).</li>
+  <li><strong>\(e^x\) and \(\ln x\) are inverses.</strong> \(e^{\ln x} = x\) for \(x > 0\); \(\ln(e^x) = x\) for all \(x\).</li>
+  <li><strong>Three log laws + change of base.</strong> Product, quotient, power — plus \(\log_a x = \ln x / \ln a\). These collapse every log expression.</li>
+  <li><strong>Solving \(a^x = b\):</strong> take logs, use power rule, divide. Any base works but \(\ln\) is default.</li>
+  <li><strong>Solving log equations:</strong> combine to a single log, exponentiate, then <em>check domain</em> of every argument.</li>
+  <li><strong>Growth/decay:</strong> \(P = P_0 e^{kt}\); doubling time \(T_2 = \ln 2 / k\); half-life \(T_{1/2} = \ln 2 / \lambda\).</li>
+  <li><strong>Linearising data:</strong> \(y = a b^x\) → plot \(\log y\) vs \(x\); \(y = a x^n\) → plot \(\log y\) vs \(\log x\). Gradient gives the power, intercept gives the constant.</li>
+  <li><strong>Calculus:</strong> \((e^{kx})' = k e^{kx}\); \((\ln x)' = 1/x\); \(\int e^{kx} dx = e^{kx}/k + C\); \(\int dx/x = \ln|x| + C\).</li>
+  <li><strong>State units and check realism</strong> in modelling answers. A population of \(-200\), or a half-life of \(-3\) years, is a sign of arithmetic error.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Writing \(\log(x + y) = \log x + \log y\) — wrong: it's the product, not the sum, that splits.</li>
+  <li>Failing to reject a log-equation root that makes a log argument negative (e.g. \(x = -2\) in Worked Example 5).</li>
+  <li>Confusing the percentage growth rate \(r\) (e.g. 5%) with the continuous rate \(k\): \(k = \ln(1 + r)\), not \(r\).</li>
+  <li>Misapplying the power rule as \(\log(x^n) = (\log x)^n\) — the exponent multiplies, it does not raise.</li>
+  <li>Giving \(\ln(-1)\) or \(\ln 0\) as a finite number — both are undefined in the reals.</li>
+  <li>Dropping the \(\ln a\) factor when differentiating \(a^x\) for \(a \neq e\).</li>
+  <li>Integrating \(1/x\) as \(\ln x + C\) instead of \(\ln|x| + C\) and losing marks when the region includes \(x < 0\).</li>
+  <li>Plotting \(y\) against \(\log x\) instead of \(\log y\) against \(x\) for an exponential model, giving a curved graph and no law.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Formula snapshot (memorise).</strong>
+<ul>
+  <li>Exponential: \(y = a^x\), domain \(\mathbb{R}\), range \((0, \infty)\), through \((0, 1)\), asymptote \(y = 0\).</li>
+  <li>Natural exponential: \(y = e^x\), with \((e^x)' = e^x\); Euler's constant \(e = \lim_{n\to\infty}(1 + 1/n)^n \approx 2.71828\).</li>
+  <li>Natural log: \(y = \ln x\), inverse of \(e^x\); domain \((0, \infty)\), range \(\mathbb{R}\), through \((1, 0)\), asymptote \(x = 0\).</li>
+  <li>Log laws: \(\log(xy) = \log x + \log y\); \(\log(x/y) = \log x - \log y\); \(\log(x^n) = n\log x\); \(\log_a x = \ln x / \ln a\).</li>
+  <li>Growth / decay: \(P = P_0 e^{kt}\); doubling time \(T_2 = \ln 2 / k\); half-life \(T_{1/2} = \ln 2 / \lambda\).</li>
+  <li>Linearising: \(y = a b^x\) ⇒ \(\log y = \log a + x\log b\); \(y = a x^n\) ⇒ \(\log y = \log a + n \log x\).</li>
+  <li>Calculus: \((e^{kx})' = k e^{kx}\); \((a^x)' = a^x \ln a\); \((\ln x)' = 1/x\); \(\int e^{kx} dx = e^{kx}/k + C\); \(\int dx/x = \ln|x| + C\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.2 &mdash; Fundamentals of Data Structures</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.2 Fundamentals of Data Structures</h1>
+<p class="spec-ref">Computer Science &mdash; AQA A-Level (7517) &mdash; Paper 1: On-screen Programming</p>
+
+<p>Topic 4.2 sits at the heart of Paper 1. Data structures provide the <strong>shapes</strong> in which data is stored so that algorithms can operate efficiently. Expect AQA to ask you to <em>describe</em> a data structure, <em>trace</em> its operations, <em>compare</em> alternative implementations, and <em>justify</em> which one to pick for a given scenario. You must know the difference between an <strong>abstract data type</strong> (the logical contract) and its possible <strong>implementations</strong> (how it is actually stored in memory).</p>
+
+<h2>4.2.1 Data Structures &mdash; General</h2>
+
+<div class="definition">
+    A <strong>data structure</strong> is an organised collection of related data elements, together with a set of operations that may be performed on them. It describes <em>how</em> data is stored so that it can be accessed and modified efficiently.
+</div>
+
+<h3>Static vs Dynamic Data Structures</h3>
+
+<table>
+    <tr><th>Aspect</th><th>Static</th><th>Dynamic</th></tr>
+    <tr><td>Size</td><td>Fixed at compile time; cannot grow or shrink.</td><td>Grows and shrinks at run time as items are added or removed.</td></tr>
+    <tr><td>Memory allocation</td><td>Allocated in one contiguous block on the stack or in the data segment.</td><td>Allocated on the <em>heap</em>, often in separately-linked nodes.</td></tr>
+    <tr><td>Typical example</td><td>Array of 100 integers.</td><td>Linked list, dynamic vector, tree.</td></tr>
+    <tr><td>Access time</td><td>Direct random access by index &mdash; O(1).</td><td>Often sequential &mdash; O(n) for a linked list.</td></tr>
+    <tr><td>Memory waste</td><td>Wastes space if only partially filled; overflows if the declared size is exceeded.</td><td>Uses exactly what it needs, but pays per-node overhead for pointers.</td></tr>
+</table>
+
+<h3>Abstract Data Type vs Implementation</h3>
+
+<div class="definition">
+    An <strong>abstract data type (ADT)</strong> is a mathematical / logical model of a data structure, defined by the <em>operations</em> that may be performed on it and the <em>contract</em> those operations obey &mdash; independent of how they are programmed. An <strong>implementation</strong> is the concrete arrangement of memory (and code) that realises an ADT.
+</div>
+
+<p>For instance, the <em>stack</em> ADT is specified by four operations (<code>push</code>, <code>pop</code>, <code>peek</code>, <code>isEmpty</code>) and the LIFO contract. That same ADT can be implemented using a fixed-size array plus an integer top-pointer, or using a singly-linked list of dynamically-allocated nodes. Client code that uses only the ADT operations will work with either implementation unchanged &mdash; this is the power of <em>abstraction</em>.</p>
+
+<div class="exam-tip">If AQA asks "what is an abstract data type?" state: (1) a logical description of a data structure, (2) defined by its operations and their behaviour, (3) with the implementation hidden from the user. A two-mark answer needs at least two of these three points.</div>
+
+<h2>4.2.2 Single- and Multi-Dimensional Arrays</h2>
+
+<div class="definition">
+    An <strong>array</strong> is a static data structure consisting of a fixed-size, ordered collection of elements <em>of the same data type</em>, stored in a single contiguous block of memory and accessed by an integer <strong>index</strong>.
+</div>
+
+<h3>Indexing and Bounds</h3>
+
+<ul>
+    <li>Most languages use <strong>zero-based</strong> indexing: a 5-element array has valid indices 0, 1, 2, 3, 4.</li>
+    <li>AQA pseudocode is commonly <strong>one-based</strong> or allows the programmer to declare bounds explicitly: <code>DECLARE a : ARRAY[1..10] OF Integer</code>.</li>
+    <li>Accessing an index outside the declared bounds raises an <code>IndexOutOfRange</code> exception (or produces undefined behaviour in C).</li>
+    <li>Access is <strong>O(1)</strong>: the address of element <code>a[i]</code> is computed as <code>base + i &times; elementSize</code>.</li>
+</ul>
+
+<h3>Memory Layout of 2D Arrays &mdash; Row-Major vs Column-Major</h3>
+
+<p>Computer memory is one-dimensional, so a 2D array must be flattened. There are two widely-used conventions:</p>
+
+<ul>
+    <li><strong>Row-major order</strong> (C, C++, Java, Python NumPy default) &mdash; rows are stored one after another. For an <code>m &times; n</code> array, element <code>a[i][j]</code> sits at offset <code>(i &times; n + j) &times; elementSize</code>.</li>
+    <li><strong>Column-major order</strong> (Fortran, MATLAB, R) &mdash; columns are stored one after another. Element <code>a[i][j]</code> sits at offset <code>(j &times; m + i) &times; elementSize</code>.</li>
+</ul>
+
+<pre>Array:   a[0][0] a[0][1] a[0][2]
+         a[1][0] a[1][1] a[1][2]
+
+Row-major memory:    [a00][a01][a02][a10][a11][a12]
+Column-major memory: [a00][a10][a01][a11][a02][a12]</pre>
+
+<p>The distinction matters for <strong>cache performance</strong>: iterating in the same order as storage minimises cache misses. A loop that traverses a row-major array row-by-row is much faster than column-by-column.</p>
+
+<h3>Higher-Dimensional Arrays</h3>
+
+<p>A <strong>3D array</strong> generalises naturally &mdash; e.g. <code>voxel[x][y][z]</code> for a cube of values. In row-major layout the address of <code>a[i][j][k]</code> in a <code>d1 &times; d2 &times; d3</code> array is <code>base + (i &times; d2 &times; d3 + j &times; d3 + k) &times; elementSize</code>. AQA occasionally asks students to compute such an offset.</p>
+
+<pre>// Declaring and using a 2D array in AQA pseudocode
+DECLARE grid : ARRAY[1..3, 1..3] OF Integer
+
+FOR r &larr; 1 TO 3
+    FOR c &larr; 1 TO 3
+        grid[r, c] &larr; (r - 1) * 3 + c
+    ENDFOR
+ENDFOR
+
+OUTPUT grid[2, 3]     // prints 6</pre>
+
+<div class="exam-tip">If an AQA question gives you a 2D array and asks for the address of an element, always state the formula <code>base + (row &times; cols + col) &times; size</code> (row-major) or state your assumption explicitly. Examiners want to see the offset calculation, not just the final number.</div>
+
+<h2>4.2.3 Fields, Records and Files</h2>
+
+<div class="definition">
+    A <strong>record</strong> is a <em>composite</em> (heterogeneous) data type consisting of a fixed collection of named <strong>fields</strong>, each of which may be of a different data type. A <strong>file</strong> is a named collection of records held on a backing store (disk, SSD, tape) and persisting beyond program execution.
+</div>
+
+<h3>Records</h3>
+
+<pre>TYPE Student = RECORD
+    studentID : Integer
+    surname   : String
+    forename  : String
+    dob       : Date
+    average   : Real
+ENDRECORD
+
+s : Student
+s.studentID &larr; 14072
+s.surname   &larr; "Lovelace"</pre>
+
+<p>Contrast with an array, which is <em>homogeneous</em> (every element has the same type). Records group logically-related information into a single entity that can be passed, returned and stored as a unit.</p>
+
+<h3>File Organisation</h3>
+
+<table>
+    <tr><th>Organisation</th><th>How records are ordered</th><th>Access method</th><th>Typical use</th></tr>
+    <tr><td><strong>Serial</strong></td><td>Stored in the <em>order they arrive</em>, with no sort key.</td><td>Sequential &mdash; read from start until required record is found.</td><td>Transaction logs, append-only capture (e.g. till receipts during a day).</td></tr>
+    <tr><td><strong>Sequential</strong></td><td>Stored in <em>sorted order</em> of a key field.</td><td>Sequential &mdash; but can stop early once key exceeded; enables merge-style batch updates.</td><td>Master files in batch-processing systems (payroll, student records).</td></tr>
+    <tr><td><strong>Random / Direct</strong></td><td>Position computed from the key by a hash function.</td><td>Direct &mdash; seek straight to the computed address in O(1) average time.</td><td>Online-transaction systems where instant look-up is required (bookings, stock).</td></tr>
+    <tr><td><strong>Indexed-sequential</strong></td><td>Sequential records plus a separate index that maps keys to block addresses.</td><td>Index look-up then sequential read within block.</td><td>Databases; ISAM; VSAM on mainframes.</td></tr>
+</table>
+
+<p>Serial and sequential files differ only in ordering: both are read <em>in order</em>. Random files trade insert-order simplicity for near-constant look-up time at the cost of potential collisions (see hash tables below).</p>
+
+<h2>4.2.4 Abstract Data Types &mdash; Overview</h2>
+
+<p>AQA 7517 lists these ADTs by name: <strong>queue</strong>, <strong>stack</strong>, <strong>graph</strong>, <strong>tree</strong>, <strong>hash table</strong>, <strong>dictionary</strong> and <strong>vector</strong>. Each has a well-known contract and more than one standard implementation. The subsections below give the required depth for each.</p>
+
+<table>
+    <tr><th>ADT</th><th>Key operations</th><th>Contract (discipline)</th><th>Typical implementations</th></tr>
+    <tr><td>Queue</td><td><code>enQueue</code>, <code>deQueue</code>, <code>peek</code>, <code>isEmpty</code>, <code>isFull</code></td><td>First-In-First-Out (FIFO)</td><td>Circular array, linked list</td></tr>
+    <tr><td>Stack</td><td><code>push</code>, <code>pop</code>, <code>peek</code>, <code>isEmpty</code>, <code>isFull</code></td><td>Last-In-First-Out (LIFO)</td><td>Array + top pointer, linked list</td></tr>
+    <tr><td>Graph</td><td>addVertex, addEdge, neighbours</td><td>Set of vertices and edges</td><td>Adjacency matrix, adjacency list</td></tr>
+    <tr><td>Tree</td><td>insert, delete, traverse</td><td>Connected acyclic graph with a root</td><td>Linked nodes, array (heaps)</td></tr>
+    <tr><td>Hash table</td><td>insert, lookup, remove</td><td>Key-value map via hash function</td><td>Array + chaining, open addressing</td></tr>
+    <tr><td>Dictionary</td><td>put, get, remove, contains</td><td>Unique keys &rarr; values</td><td>Hash table, balanced BST</td></tr>
+    <tr><td>Vector</td><td>append, get, set, length</td><td>Dynamic, index-addressable sequence</td><td>Resizing array (geometric growth)</td></tr>
+</table>
+
+<h2>4.2.5 Queues</h2>
+
+<div class="definition">
+    A <strong>queue</strong> is a First-In-First-Out (FIFO) abstract data type. Items are added at the <em>rear</em> (<code>enQueue</code>) and removed from the <em>front</em> (<code>deQueue</code>). The first element added is always the first one removed &mdash; mirroring a real-world queue at a supermarket till.
+</div>
+
+<h3>Standard Operations</h3>
+
+<ul>
+    <li><code>enQueue(item)</code> &mdash; add <code>item</code> to the rear. Fails if <code>isFull()</code>.</li>
+    <li><code>deQueue()</code> &mdash; remove and return the front item. Fails if <code>isEmpty()</code>.</li>
+    <li><code>peek()</code> / <code>front()</code> &mdash; return the front item without removing it.</li>
+    <li><code>isEmpty()</code> &mdash; return <code>True</code> if the queue has no items.</li>
+    <li><code>isFull()</code> &mdash; return <code>True</code> if the queue has no space (bounded implementations only).</li>
+</ul>
+
+<h3>Array-Backed Linear Queue &mdash; the Problem</h3>
+
+<p>The naive implementation uses an array with two pointers (<code>front</code> and <code>rear</code>). Each <code>deQueue</code> increments the front pointer, so the queue <em>drifts</em> rightwards through the array and wastes the space at the left. Eventually <code>rear</code> hits the end even though the left of the array is empty.</p>
+
+<h3>Circular Queue (Ring Buffer)</h3>
+
+<p>The standard fix is to treat the array as <em>circular</em>: when a pointer passes the last index it wraps around to index 0 using the <strong>modulo</strong> operator.</p>
+
+<pre>CONSTANT SIZE = 5
+DECLARE q     : ARRAY[0..SIZE-1] OF Integer
+DECLARE front : Integer &larr; 0
+DECLARE rear  : Integer &larr; 0
+DECLARE count : Integer &larr; 0
+
+PROCEDURE enQueue(item)
+    IF count = SIZE THEN
+        OUTPUT "Queue full"
+    ELSE
+        q[rear] &larr; item
+        rear  &larr; (rear + 1) MOD SIZE
+        count &larr; count + 1
+    ENDIF
+ENDPROCEDURE
+
+FUNCTION deQueue() RETURNS Integer
+    IF count = 0 THEN
+        OUTPUT "Queue empty" ; RETURN -1
+    ELSE
+        item  &larr; q[front]
+        front &larr; (front + 1) MOD SIZE
+        count &larr; count - 1
+        RETURN item
+    ENDIF
+ENDFUNCTION</pre>
+
+<h3>Worked Trace &mdash; Circular Queue of Size 5</h3>
+
+<p>Starting with <code>front = 0</code>, <code>rear = 0</code>, <code>count = 0</code>:</p>
+
+<table>
+    <tr><th>Step</th><th>Operation</th><th>front</th><th>rear</th><th>count</th><th>Array contents</th></tr>
+    <tr><td>1</td><td>enQueue(10)</td><td>0</td><td>1</td><td>1</td><td>[10, _, _, _, _]</td></tr>
+    <tr><td>2</td><td>enQueue(20)</td><td>0</td><td>2</td><td>2</td><td>[10, 20, _, _, _]</td></tr>
+    <tr><td>3</td><td>enQueue(30)</td><td>0</td><td>3</td><td>3</td><td>[10, 20, 30, _, _]</td></tr>
+    <tr><td>4</td><td>deQueue() &rarr; 10</td><td>1</td><td>3</td><td>2</td><td>[_, 20, 30, _, _]</td></tr>
+    <tr><td>5</td><td>enQueue(40)</td><td>1</td><td>4</td><td>3</td><td>[_, 20, 30, 40, _]</td></tr>
+    <tr><td>6</td><td>enQueue(50)</td><td>1</td><td>0</td><td>4</td><td>[_, 20, 30, 40, 50]</td></tr>
+    <tr><td>7</td><td>enQueue(60)</td><td>1</td><td>1</td><td>5</td><td>[60, 20, 30, 40, 50]</td></tr>
+    <tr><td>8</td><td>enQueue(70)</td><td colspan="4">Queue full &mdash; rejected</td></tr>
+</table>
+
+<p>Notice step 6: <code>rear</code> wraps from 4 to 0 via <code>(4 + 1) MOD 5 = 0</code>. This is why modulo arithmetic is essential.</p>
+
+<h3>Linked-List Queue</h3>
+
+<p>An alternative implementation uses nodes on the heap, each with a <code>data</code> field and a <code>next</code> pointer. The queue object stores just two pointers: <code>head</code> (front) and <code>tail</code> (rear).</p>
+
+<pre>TYPE Node = RECORD
+    data : Integer
+    next : Pointer TO Node
+ENDRECORD
+
+head &larr; NULL
+tail &larr; NULL
+
+PROCEDURE enQueue(x)
+    newNode &larr; NEW Node
+    newNode.data &larr; x
+    newNode.next &larr; NULL
+    IF tail = NULL THEN
+        head &larr; newNode
+    ELSE
+        tail.next &larr; newNode
+    ENDIF
+    tail &larr; newNode
+ENDPROCEDURE</pre>
+
+<h3>Priority Queue</h3>
+
+<div class="definition">
+    A <strong>priority queue</strong> is a queue in which each element has an associated <strong>priority</strong>. <code>deQueue()</code> returns the element with the <em>highest</em> priority, not necessarily the one added earliest. Ties are usually broken by insertion order (FIFO).
+</div>
+
+<p>Implementations include: a sorted linked list, an unsorted array scanned linearly for the highest priority, or a <strong>binary heap</strong> (the most efficient, giving O(log n) insert and remove). Priority queues underlie CPU scheduling, Dijkstra's shortest-path algorithm, and print-job queues.</p>
+
+<div class="exam-tip">When a 3-mark question says "describe a queue", write all three of: (1) FIFO discipline, (2) <code>enQueue</code> at rear and <code>deQueue</code> at front, (3) a real-world example (print queue, keyboard buffer, OS process queue). One mark each.</div>
+
+<h2>4.2.6 Stacks</h2>
+
+<div class="definition">
+    A <strong>stack</strong> is a Last-In-First-Out (LIFO) abstract data type. Items are <em>pushed</em> onto the top and <em>popped</em> from the top. Only the top item is ever accessible. Think of a pile of plates: you add and remove from the top; you never pull one out of the middle.
+</div>
+
+<h3>Standard Operations</h3>
+
+<ul>
+    <li><code>push(item)</code> &mdash; place <code>item</code> on top of the stack. Fails if <code>isFull()</code>.</li>
+    <li><code>pop()</code> &mdash; remove and return the top item. Fails if <code>isEmpty()</code>.</li>
+    <li><code>peek()</code> / <code>top()</code> &mdash; return the top item without removing it.</li>
+    <li><code>isEmpty()</code>, <code>isFull()</code> &mdash; as for queues.</li>
+</ul>
+
+<h3>Array Implementation with a Top Pointer</h3>
+
+<pre>CONSTANT SIZE = 100
+DECLARE stack : ARRAY[0..SIZE-1] OF Integer
+DECLARE top   : Integer &larr; -1      // -1 means empty
+
+PROCEDURE push(item)
+    IF top = SIZE - 1 THEN
+        OUTPUT "Stack overflow"
+    ELSE
+        top &larr; top + 1
+        stack[top] &larr; item
+    ENDIF
+ENDPROCEDURE
+
+FUNCTION pop() RETURNS Integer
+    IF top = -1 THEN
+        OUTPUT "Stack underflow" ; RETURN -1
+    ELSE
+        item &larr; stack[top]
+        top  &larr; top - 1
+        RETURN item
+    ENDIF
+ENDFUNCTION
+
+FUNCTION peek() RETURNS Integer
+    IF top = -1 THEN RETURN -1 ELSE RETURN stack[top] ENDIF
+ENDFUNCTION</pre>
+
+<h3>Worked Trace &mdash; Push / Pop</h3>
+
+<p>Starting with <code>top = &minus;1</code>:</p>
+
+<table>
+    <tr><th>Step</th><th>Operation</th><th>top</th><th>Stack (bottom &rarr; top)</th><th>Return</th></tr>
+    <tr><td>1</td><td>push(7)</td><td>0</td><td>[7]</td><td>&ndash;</td></tr>
+    <tr><td>2</td><td>push(3)</td><td>1</td><td>[7, 3]</td><td>&ndash;</td></tr>
+    <tr><td>3</td><td>push(9)</td><td>2</td><td>[7, 3, 9]</td><td>&ndash;</td></tr>
+    <tr><td>4</td><td>peek()</td><td>2</td><td>[7, 3, 9]</td><td>9</td></tr>
+    <tr><td>5</td><td>pop()</td><td>1</td><td>[7, 3]</td><td>9</td></tr>
+    <tr><td>6</td><td>push(4)</td><td>2</td><td>[7, 3, 4]</td><td>&ndash;</td></tr>
+    <tr><td>7</td><td>pop()</td><td>1</td><td>[7, 3]</td><td>4</td></tr>
+    <tr><td>8</td><td>pop()</td><td>0</td><td>[7]</td><td>3</td></tr>
+</table>
+
+<h3>Array vs Linked-List Implementation</h3>
+
+<table>
+    <tr><th>Aspect</th><th>Array + top pointer</th><th>Linked list</th></tr>
+    <tr><td>Memory</td><td>Pre-allocated, may waste space or overflow.</td><td>One node per item, but each node carries pointer overhead.</td></tr>
+    <tr><td>Size</td><td>Fixed maximum (static).</td><td>Grows and shrinks freely (dynamic).</td></tr>
+    <tr><td>Push / pop</td><td>O(1) &mdash; direct index access.</td><td>O(1) &mdash; manipulate head pointer.</td></tr>
+    <tr><td>Cache behaviour</td><td>Excellent &mdash; contiguous memory.</td><td>Poor &mdash; nodes scattered across heap.</td></tr>
+    <tr><td>Overflow</td><td>Possible if SIZE is exceeded.</td><td>Only if the entire heap is exhausted.</td></tr>
+</table>
+
+<h3>Applications of Stacks</h3>
+
+<ul>
+    <li><strong>Expression evaluation</strong> &mdash; in particular Reverse Polish (postfix) notation.</li>
+    <li><strong>Function call / recursion support</strong> &mdash; each call pushes a stack frame; <code>RETURN</code> pops one.</li>
+    <li><strong>Undo / redo</strong> in editors &mdash; each edit pushes a reversible action; <code>undo</code> pops.</li>
+    <li><strong>Back button</strong> in web browsers &mdash; URLs pushed on navigation.</li>
+    <li><strong>Depth-first search</strong> on graphs / trees &mdash; explicit stack replaces recursion.</li>
+    <li><strong>Syntax parsing</strong> &mdash; matching brackets, compiler symbol tables.</li>
+</ul>
+
+<h3>Worked Example &mdash; Reverse Polish Evaluation</h3>
+
+<p>Evaluate the postfix expression <code>5 1 2 + 4 * + 3 &minus;</code>. Read left to right: if it is a number, push it; if it is an operator, pop two operands, apply, push the result.</p>
+
+<table>
+    <tr><th>Token</th><th>Action</th><th>Stack after</th></tr>
+    <tr><td>5</td><td>push 5</td><td>[5]</td></tr>
+    <tr><td>1</td><td>push 1</td><td>[5, 1]</td></tr>
+    <tr><td>2</td><td>push 2</td><td>[5, 1, 2]</td></tr>
+    <tr><td>+</td><td>pop 2, pop 1, push 1+2=3</td><td>[5, 3]</td></tr>
+    <tr><td>4</td><td>push 4</td><td>[5, 3, 4]</td></tr>
+    <tr><td>*</td><td>pop 4, pop 3, push 3&times;4=12</td><td>[5, 12]</td></tr>
+    <tr><td>+</td><td>pop 12, pop 5, push 5+12=17</td><td>[17]</td></tr>
+    <tr><td>3</td><td>push 3</td><td>[17, 3]</td></tr>
+    <tr><td>&minus;</td><td>pop 3, pop 17, push 17&minus;3=14</td><td>[14]</td></tr>
+</table>
+
+<p>At end-of-input, the single value remaining on the stack (<code>14</code>) is the result. Infix equivalent: <code>(5 + (1 + 2) &times; 4) &minus; 3 = 14</code>.</p>
+
+<div class="exam-tip">AQA's favourite stack question is a Reverse Polish trace. Present your answer as a three-column table (Token, Action, Stack after). Always show the stack contents explicitly after every token &mdash; the marks are awarded per row, not per final answer.</div>
+
+<h2>4.2.7 Graphs</h2>
+
+<div class="definition">
+    A <strong>graph</strong> is a non-linear data structure consisting of a set of <strong>vertices</strong> (nodes) and a set of <strong>edges</strong> (connections) between pairs of vertices. Formally, G = (V, E).
+</div>
+
+<h3>Graph Terminology</h3>
+
+<ul>
+    <li><strong>Directed graph (digraph)</strong> &mdash; each edge has a direction, e.g. one-way streets; edge (A, B) &ne; edge (B, A).</li>
+    <li><strong>Undirected graph</strong> &mdash; edges are unordered pairs; connection works both ways.</li>
+    <li><strong>Weighted graph</strong> &mdash; each edge carries a numerical weight (distance, cost, capacity).</li>
+    <li><strong>Connected graph</strong> &mdash; a path exists between every pair of vertices.</li>
+    <li><strong>Cycle</strong> &mdash; a path that starts and ends at the same vertex via distinct edges.</li>
+    <li><strong>Degree</strong> of a vertex &mdash; the number of edges incident to it (in-degree and out-degree for digraphs).</li>
+    <li><strong>Tree</strong> &mdash; a connected, acyclic, undirected graph. A tree on n vertices has exactly n &minus; 1 edges.</li>
+</ul>
+
+<h3>Adjacency Matrix Representation</h3>
+
+<p>A V &times; V matrix where <code>M[i][j]</code> is 1 (or the edge weight) if there is an edge from vertex i to vertex j, and 0 otherwise.</p>
+
+<pre>Undirected graph: A&mdash;B, A&mdash;C, B&mdash;D, C&mdash;D
+
+         A  B  C  D
+      A [0, 1, 1, 0]
+      B [1, 0, 0, 1]
+      C [1, 0, 0, 1]
+      D [0, 1, 1, 0]</pre>
+
+<p>For undirected graphs the matrix is symmetric along the leading diagonal. Storage is <strong>O(V<sup>2</sup>)</strong> regardless of edge count.</p>
+
+<h3>Adjacency List Representation</h3>
+
+<p>For each vertex, store a list of the vertices it is connected to. Total storage is O(V + E).</p>
+
+<pre>A &rarr; [B, C]
+B &rarr; [A, D]
+C &rarr; [A, D]
+D &rarr; [B, C]</pre>
+
+<h3>When to Choose Which</h3>
+
+<table>
+    <tr><th>Aspect</th><th>Adjacency Matrix</th><th>Adjacency List</th></tr>
+    <tr><td>Space</td><td>O(V<sup>2</sup>) &mdash; wasteful for sparse graphs.</td><td>O(V + E) &mdash; efficient for sparse graphs.</td></tr>
+    <tr><td>Is there an edge i-j?</td><td>O(1) &mdash; single array look-up.</td><td>O(degree) &mdash; scan the list of i.</td></tr>
+    <tr><td>List all neighbours of i</td><td>O(V) &mdash; scan a whole row.</td><td>O(degree) &mdash; direct iteration.</td></tr>
+    <tr><td>Add edge</td><td>O(1).</td><td>O(1) at head of list.</td></tr>
+    <tr><td>Best use</td><td>Small or dense graphs; matrix maths required.</td><td>Large sparse graphs (social networks, road networks).</td></tr>
+</table>
+
+<div class="exam-tip">When AQA asks "which representation would you use for a road network of a city?" say <em>adjacency list</em> because road networks are sparse (each junction has only a few roads leaving it, so E is close to V not V<sup>2</sup>). For a completely-connected tournament graph, say <em>adjacency matrix</em>.</div>
+
+<h2>4.2.8 Trees</h2>
+
+<div class="definition">
+    A <strong>tree</strong> is a connected, acyclic graph with a designated <strong>root</strong> vertex. Every non-root vertex has exactly one parent. A tree with n vertices has exactly n &minus; 1 edges. Nodes with no children are called <strong>leaves</strong>.
+</div>
+
+<h3>Tree Terminology</h3>
+
+<ul>
+    <li><strong>Root</strong> &mdash; the unique topmost node; it has no parent.</li>
+    <li><strong>Parent / child</strong> &mdash; immediate predecessor / successor.</li>
+    <li><strong>Sibling</strong> &mdash; nodes sharing the same parent.</li>
+    <li><strong>Ancestor / descendant</strong> &mdash; any node on the path from root / to leaves.</li>
+    <li><strong>Leaf (external node)</strong> &mdash; has no children.</li>
+    <li><strong>Depth</strong> of a node &mdash; number of edges from the root to that node.</li>
+    <li><strong>Height</strong> of a tree &mdash; maximum depth of any leaf (height of single-node tree is 0).</li>
+    <li><strong>Subtree</strong> &mdash; a node together with all its descendants.</li>
+</ul>
+
+<h3>Binary Trees</h3>
+
+<p>A <strong>binary tree</strong> is a tree in which every node has <em>at most two</em> children, conventionally called <code>left</code> and <code>right</code>. Special cases:</p>
+
+<ul>
+    <li><strong>Full</strong> binary tree &mdash; every internal node has exactly two children.</li>
+    <li><strong>Complete</strong> binary tree &mdash; every level is filled left-to-right, with only the last level possibly short.</li>
+    <li><strong>Balanced</strong> &mdash; for every node, the heights of its two subtrees differ by no more than 1.</li>
+</ul>
+
+<h3>Binary Search Tree (BST)</h3>
+
+<div class="definition">
+    A <strong>binary search tree (BST)</strong> is a binary tree that maintains the <em>BST property</em>: for every node N, every key in N's left subtree is strictly less than N's key, and every key in its right subtree is strictly greater. This property enables O(log n) search, insert and delete on a balanced tree.
+</div>
+
+<h3>Building a BST &mdash; Worked Example</h3>
+
+<p>Insert the sequence <strong>50, 30, 70, 20, 40, 60, 80</strong> into an initially empty BST.</p>
+
+<ol>
+    <li><strong>50</strong> becomes the root.</li>
+    <li><strong>30</strong> &lt; 50 &rarr; left child of 50.</li>
+    <li><strong>70</strong> &gt; 50 &rarr; right child of 50.</li>
+    <li><strong>20</strong> &lt; 50 &rarr; go left to 30; 20 &lt; 30 &rarr; left child of 30.</li>
+    <li><strong>40</strong> &lt; 50 &rarr; go left to 30; 40 &gt; 30 &rarr; right child of 30.</li>
+    <li><strong>60</strong> &gt; 50 &rarr; go right to 70; 60 &lt; 70 &rarr; left child of 70.</li>
+    <li><strong>80</strong> &gt; 50 &rarr; go right to 70; 80 &gt; 70 &rarr; right child of 70.</li>
+</ol>
+
+<pre>               50
+             /    \
+           30      70
+          /  \    /  \
+        20   40  60   80</pre>
+
+<h3>BST Insertion (Recursive Pseudocode)</h3>
+
+<pre>TYPE TreeNode = RECORD
+    key   : Integer
+    left  : Pointer TO TreeNode
+    right : Pointer TO TreeNode
+ENDRECORD
+
+FUNCTION insert(node, key) RETURNS Pointer TO TreeNode
+    IF node = NULL THEN
+        newNode &larr; NEW TreeNode
+        newNode.key &larr; key
+        newNode.left &larr; NULL
+        newNode.right &larr; NULL
+        RETURN newNode
+    ENDIF
+    IF key &lt; node.key THEN
+        node.left &larr; insert(node.left, key)
+    ELSE IF key &gt; node.key THEN
+        node.right &larr; insert(node.right, key)
+    ENDIF
+    RETURN node
+ENDFUNCTION</pre>
+
+<h3>Searching a BST</h3>
+
+<pre>FUNCTION search(node, target) RETURNS Boolean
+    IF node = NULL THEN RETURN False ENDIF
+    IF node.key = target THEN RETURN True ENDIF
+    IF target &lt; node.key THEN
+        RETURN search(node.left, target)
+    ELSE
+        RETURN search(node.right, target)
+    ENDIF
+ENDFUNCTION</pre>
+
+<p>Worst-case complexity is O(h) where h is the tree's height. For a <em>balanced</em> tree h = &lceil;log<sub>2</sub>n&rceil;, giving O(log n). A pathologically unbalanced tree (keys inserted in sorted order) degenerates to h = n, so search becomes O(n).</p>
+
+<h3>Tree Traversals</h3>
+
+<p>A traversal visits every node exactly once in a defined order. The three canonical depth-first orders differ only in <em>where</em> the current node is visited relative to its subtrees.</p>
+
+<table>
+    <tr><th>Traversal</th><th>Order (for each node)</th><th>Result on example BST</th><th>Typical use</th></tr>
+    <tr><td>Pre-order</td><td>Node, Left, Right</td><td>50, 30, 20, 40, 70, 60, 80</td><td>Copy a tree; prefix notation.</td></tr>
+    <tr><td>In-order</td><td>Left, Node, Right</td><td>20, 30, 40, 50, 60, 70, 80</td><td>Visit BST in sorted order.</td></tr>
+    <tr><td>Post-order</td><td>Left, Right, Node</td><td>20, 40, 30, 60, 80, 70, 50</td><td>Delete / free a tree; postfix notation.</td></tr>
+</table>
+
+<p>A <strong>breadth-first</strong> (level-order) traversal visits nodes level by level and requires a queue (not a stack). Result: 50, 30, 70, 20, 40, 60, 80.</p>
+
+<pre>PROCEDURE inOrder(node)
+    IF node &ne; NULL THEN
+        inOrder(node.left)
+        OUTPUT node.key
+        inOrder(node.right)
+    ENDIF
+ENDPROCEDURE
+
+PROCEDURE preOrder(node)
+    IF node &ne; NULL THEN
+        OUTPUT node.key
+        preOrder(node.left)
+        preOrder(node.right)
+    ENDIF
+ENDPROCEDURE
+
+PROCEDURE postOrder(node)
+    IF node &ne; NULL THEN
+        postOrder(node.left)
+        postOrder(node.right)
+        OUTPUT node.key
+    ENDIF
+ENDPROCEDURE</pre>
+
+<div class="exam-tip">For BST-insertion questions, always write out each insertion step comparing the new key against every node on the path. Examiners award a mark per correct comparison as well as for the final tree diagram.</div>
+
+<h3>General Rooted Trees</h3>
+
+<p>A general tree allows any number of children per node. It is often represented using <em>first-child / next-sibling</em> pointers so each node still needs only two pointer fields. File-system directories, XML/HTML document trees, and organisation charts are all general rooted trees.</p>
+
+<h2>4.2.9 Hash Tables</h2>
+
+<div class="definition">
+    A <strong>hash table</strong> is a data structure that maps <em>keys</em> to <em>values</em> by passing the key through a <strong>hash function</strong> to obtain an array index. If the hash function spreads keys evenly, insert, look-up and delete run in <strong>O(1)</strong> average time.
+</div>
+
+<h3>Properties of a Good Hash Function</h3>
+
+<ul>
+    <li><strong>Deterministic</strong> &mdash; the same key always hashes to the same index.</li>
+    <li><strong>Uniform distribution</strong> &mdash; output values are spread evenly across the array's indices to minimise collisions.</li>
+    <li><strong>Fast to compute</strong> &mdash; hashing should add negligible overhead.</li>
+    <li><strong>Use the full key</strong> &mdash; every bit of the key should influence the output; otherwise similar keys collide.</li>
+</ul>
+
+<pre>// A simple hash function for an integer key
+FUNCTION hash(key, tableSize) RETURNS Integer
+    RETURN key MOD tableSize
+ENDFUNCTION
+
+// A simple hash function for a string key
+FUNCTION hashString(s, tableSize) RETURNS Integer
+    total &larr; 0
+    FOR i &larr; 1 TO LENGTH(s)
+        total &larr; (total * 31 + ASC(s[i])) MOD tableSize
+    ENDFOR
+    RETURN total
+ENDFUNCTION</pre>
+
+<h3>Collisions</h3>
+
+<div class="definition">
+    A <strong>collision</strong> occurs when two distinct keys hash to the same index. The pigeonhole principle guarantees collisions are unavoidable in any table with more possible keys than slots.
+</div>
+
+<h3>Collision Resolution &mdash; Chaining</h3>
+
+<p>Each slot in the array holds a <em>linked list</em> (or other small container) of all keys that hashed there. Insertion adds to the front of the list; look-up scans the list.</p>
+
+<pre>index 0: &rarr; (key="tom", val=25)
+index 1: &rarr; (key="ann", val=18) &rarr; (key="ian", val=42)   // collision
+index 2:
+index 3: &rarr; (key="eve", val=31)</pre>
+
+<h3>Collision Resolution &mdash; Open Addressing with Linear Probing</h3>
+
+<p>All entries live in the array itself. On collision, try the next slot, then the next, wrapping with modulo, until an empty slot is found.</p>
+
+<pre>FUNCTION insertLinear(key, value)
+    i &larr; hash(key, SIZE)
+    WHILE table[i] &ne; NULL AND table[i].key &ne; key DO
+        i &larr; (i + 1) MOD SIZE
+    ENDWHILE
+    table[i] &larr; (key, value)
+ENDFUNCTION</pre>
+
+<p>Linear probing is cache-friendly but suffers from <strong>primary clustering</strong>: long runs of occupied cells cause subsequent insertions to pile up. <em>Quadratic probing</em> (step by 1, 4, 9, 16, ...) and <em>double hashing</em> (step by a second hash of the key) reduce clustering.</p>
+
+<h3>Load Factor and Rehashing</h3>
+
+<div class="definition">
+    The <strong>load factor</strong> &lambda; of a hash table is the ratio <code>n / size</code> where <code>n</code> is the number of stored entries and <code>size</code> is the array length. As &lambda; rises, the probability of collision rises, and average operation time degrades.
+</div>
+
+<p><strong>Rehashing</strong> keeps performance near O(1): when &lambda; exceeds a threshold (typically 0.7 for open addressing, 1.0 for chaining) the table is replaced with one roughly double the size, and every existing key is re-inserted using the new size. Amortised cost of insertion remains O(1).</p>
+
+<div class="exam-tip">For a 4-mark "explain how a hash table works" question, hit: (1) keys hashed via a hash function, (2) resulting index gives O(1) access, (3) collisions resolved by chaining or open addressing, (4) load factor triggers rehashing when the table fills.</div>
+
+<h2>4.2.10 Dictionaries</h2>
+
+<div class="definition">
+    A <strong>dictionary</strong> (also called an <em>associative array</em>, <em>map</em>, or <em>symbol table</em>) is an ADT storing <strong>unique key &rarr; value</strong> pairs with the operations <code>put(key, value)</code>, <code>get(key)</code>, <code>remove(key)</code> and <code>contains(key)</code>. Keys must support equality testing; values can be of any type.
+</div>
+
+<h3>Typical Implementations</h3>
+
+<ul>
+    <li><strong>Hash table</strong> &mdash; average O(1) put / get; no natural ordering of keys. This is how Python <code>dict</code>, Java <code>HashMap</code> and C# <code>Dictionary</code> work internally.</li>
+    <li><strong>Balanced BST</strong> (red-black or AVL) &mdash; guarantees O(log n) worst case and keeps keys in sorted order, supporting range queries. Java <code>TreeMap</code>, C++ <code>std::map</code>.</li>
+    <li><strong>Sorted array + binary search</strong> &mdash; O(log n) look-up but O(n) insertion; viable when the dictionary is built once and then queried many times.</li>
+</ul>
+
+<pre>// AQA pseudocode dictionary
+DECLARE ages : Dictionary
+ages["Ada"]      &larr; 36
+ages["Babbage"]  &larr; 79
+ages["Turing"]   &larr; 41
+
+OUTPUT ages["Turing"]            // 41
+IF "Ada" IN ages THEN OUTPUT "known" ENDIF
+REMOVE ages["Babbage"]</pre>
+
+<h2>4.2.11 Vectors</h2>
+
+<div class="definition">
+    A <strong>vector</strong> is an ADT representing a <em>dynamic, index-addressable sequence</em>. It supports <code>get(i)</code>, <code>set(i, v)</code>, <code>length()</code> and <code>append(v)</code>, and can grow arbitrarily at run time. The standard implementation is a <em>resizing array</em> with <strong>geometric growth</strong>, giving <strong>amortised O(1)</strong> append.
+</div>
+
+<h3>Imperative (Resizing-Array) View</h3>
+
+<p>The vector holds a capacity <code>cap</code> (the array length) and a count <code>n</code> (number of items used). <code>append</code> writes to <code>data[n]</code> and increments <code>n</code>. When <code>n = cap</code>, the array is <em>doubled</em>: a new array of length <code>2 &times; cap</code> is allocated, all items copied across, and the old array discarded.</p>
+
+<pre>PROCEDURE append(v, item)
+    IF v.n = v.cap THEN
+        newCap &larr; IF v.cap = 0 THEN 1 ELSE v.cap * 2 ENDIF
+        newArr &larr; NEW ARRAY[newCap]
+        FOR i &larr; 0 TO v.n - 1
+            newArr[i] &larr; v.data[i]
+        ENDFOR
+        v.data &larr; newArr
+        v.cap  &larr; newCap
+    ENDIF
+    v.data[v.n] &larr; item
+    v.n &larr; v.n + 1
+ENDPROCEDURE</pre>
+
+<p>Even though a single resize costs O(n), the cost is <em>amortised</em> across the n cheap O(1) appends that preceded it, so the average append is still O(1). Linear growth (e.g. add a fixed 10 each time) would give O(n) amortised append &mdash; much worse.</p>
+
+<h3>Functional (Immutable) View</h3>
+
+<p>In functional programming languages (Haskell, Scala, Clojure, F#) a vector is often an <em>immutable</em> persistent data structure. Operations such as <code>set</code> do not modify the original vector; they return a new vector that <em>shares</em> most of its internal structure with the old one. This is typically implemented as a shallow tree (often a 32-way trie) giving O(log<sub>32</sub>n) &asymp; O(1) practical access while preserving immutability.</p>
+
+<p>Advantages of immutable vectors: thread-safety without locks, referential transparency (an expression always evaluates to the same value), easier reasoning, free undo (keep a reference to the previous version).</p>
+
+<div class="exam-tip">AQA distinguishes vectors from plain arrays by emphasising <em>dynamic resizing</em>. If asked "why is append O(1) amortised rather than O(1) worst-case?" explain that most appends are cheap but the occasional resize copies all n items; the doubling strategy ensures resizes are rare enough for the average to remain constant.</div>
+
+<h2>Big-O Summary Across Structures</h2>
+
+<p>The following table lists <em>typical average-case</em> complexities. Worst cases differ (e.g. an unbalanced BST degenerates to O(n), a hash table with a dreadful hash collapses to O(n)).</p>
+
+<table>
+    <tr><th>Structure</th><th>Access by index</th><th>Search by value</th><th>Insert</th><th>Delete</th><th>Space</th></tr>
+    <tr><td>Array (static)</td><td>O(1)</td><td>O(n)</td><td>O(n) (shift)</td><td>O(n) (shift)</td><td>O(n)</td></tr>
+    <tr><td>Vector (dynamic)</td><td>O(1)</td><td>O(n)</td><td>O(1) amortised (append)</td><td>O(n) (middle)</td><td>O(n)</td></tr>
+    <tr><td>Linked list</td><td>O(n)</td><td>O(n)</td><td>O(1) at head</td><td>O(1) given node</td><td>O(n)</td></tr>
+    <tr><td>Stack (array)</td><td>&ndash;</td><td>&ndash;</td><td>O(1) push</td><td>O(1) pop</td><td>O(n)</td></tr>
+    <tr><td>Queue (circular)</td><td>&ndash;</td><td>&ndash;</td><td>O(1) enQueue</td><td>O(1) deQueue</td><td>O(n)</td></tr>
+    <tr><td>BST (balanced)</td><td>&ndash;</td><td>O(log n)</td><td>O(log n)</td><td>O(log n)</td><td>O(n)</td></tr>
+    <tr><td>BST (worst)</td><td>&ndash;</td><td>O(n)</td><td>O(n)</td><td>O(n)</td><td>O(n)</td></tr>
+    <tr><td>Hash table</td><td>&ndash;</td><td>O(1) avg</td><td>O(1) avg</td><td>O(1) avg</td><td>O(n)</td></tr>
+    <tr><td>Graph (adj. matrix)</td><td>O(1) edge test</td><td>&ndash;</td><td>O(1) edge</td><td>O(1) edge</td><td>O(V<sup>2</sup>)</td></tr>
+    <tr><td>Graph (adj. list)</td><td>O(deg) edge test</td><td>&ndash;</td><td>O(1) edge</td><td>O(deg) edge</td><td>O(V+E)</td></tr>
+</table>
+
+<h2>Summary Checklist</h2>
+
+<ul>
+    <li>Distinguish static from dynamic data structures, and abstract data type from implementation.</li>
+    <li>Compute the memory address of an element in a 1D, 2D or 3D array using row-major and column-major formulas.</li>
+    <li>Design a record (composite) data type and distinguish serial, sequential and random file organisation.</li>
+    <li>Implement a circular queue using a fixed array plus front, rear and count variables with modulo arithmetic.</li>
+    <li>Trace a sequence of enQueue / deQueue operations including a wrap-around.</li>
+    <li>Implement a stack using an array and a top pointer; evaluate a Reverse Polish expression using a stack trace.</li>
+    <li>Compare array-based and linked-list-based stack / queue implementations.</li>
+    <li>Use correct graph terminology (vertex, edge, directed, weighted, connected, degree, cycle).</li>
+    <li>Compare adjacency matrix and adjacency list in terms of space (O(V<sup>2</sup>) vs O(V+E)) and time trade-offs.</li>
+    <li>Insert keys into a BST, then give pre-order, in-order and post-order traversals of the resulting tree.</li>
+    <li>Write recursive pseudocode for BST insert, search and in-order traversal.</li>
+    <li>Describe a hash function's required properties; explain chaining and linear probing; define load factor and rehashing.</li>
+    <li>State typical implementations of the dictionary ADT (hash table, balanced BST) and their complexities.</li>
+    <li>Explain why vector append is amortised O(1) and contrast the imperative and functional (immutable) views.</li>
+</ul>
+
+</div>
+</body>
+</html>

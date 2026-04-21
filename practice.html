@@ -553,6 +553,7 @@ const BUNDLE_MAP = {
   'Computer Science_OCR':         ['questions/cs/cs-ocr-gcse-practice.js'],
   'Computer Science_OCR|alevel':  ['questions/cs/cs-ocr-alevel-practice.js'],
   'Computer Science_AQA|gcse':    ['questions/cs/cs-aqa-gcse-practice.js'],
+  'Computer Science_AQA|alevel':  ['questions/cs/cs-aqa-alevel-practice.js'],
   'Physics_Edexcel':              ['questions/physics/physics-edexcel-practice.js'],
   'Physics_AQA':                  ['questions/physics/physics-aqa-practice.js'],
   'Physics_OCR A':                ['questions/physics/physics-ocr-a-practice.js'],
@@ -576,6 +577,7 @@ const BUNDLE_MAP = {
   'Geography_OCR':                ['questions/geography-ocr/geography-ocr-practice.js'],
   'Mathematics_AQA':              ['questions/maths-aqa/maths-aqa-practice.js'],
   'Mathematics_OCR|gcse':         ['questions/maths-ocr-gcse/maths-ocr-gcse-practice.js'],
+  'Mathematics_OCR|alevel':       ['questions/maths-ocr-alevel/maths-ocr-alevel-practice.js'],
   'Mathematics_Edexcel': [
     'questions/maths-edexcel/w-P1-P11.js',
     'questions/maths-edexcel/w-P12-P21.js',
@@ -646,6 +648,7 @@ const PRACTICE_MAP = {
   'Computer Science_OCR': () => typeof CS_OCR_PRACTICE !== 'undefined' ? CS_OCR_PRACTICE : null,
   'Computer Science_OCR|alevel': () => typeof CS_OCR_PRACTICE !== 'undefined' ? CS_OCR_PRACTICE : null,
   'Computer Science_AQA|gcse': () => typeof CS_AQA_PRACTICE !== 'undefined' ? CS_AQA_PRACTICE : null,
+  'Computer Science_AQA|alevel': () => typeof CS_AQA_PRACTICE !== 'undefined' ? CS_AQA_PRACTICE : null,
   'Physics_Edexcel': () => typeof PHYSICS_EDEXCEL_PRACTICE !== 'undefined' ? PHYSICS_EDEXCEL_PRACTICE : null,
   'Physics_AQA': () => typeof PHYSICS_AQA_PRACTICE !== 'undefined' ? PHYSICS_AQA_PRACTICE : null,
   'Physics_OCR A': () => typeof PHYSICS_OCR_A_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_PRACTICE : null,
@@ -669,6 +672,7 @@ const PRACTICE_MAP = {
   'Geography_OCR': () => typeof GEOGRAPHY_OCR_PRACTICE !== 'undefined' ? GEOGRAPHY_OCR_PRACTICE : null,
   'Mathematics_AQA': () => typeof MATHS_AQA_PRACTICE !== 'undefined' ? MATHS_AQA_PRACTICE : null,
   'Mathematics_OCR|gcse': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
+  'Mathematics_OCR|alevel': () => typeof MATHS_OCR_ALEVEL_PRACTICE !== 'undefined' ? MATHS_OCR_ALEVEL_PRACTICE : null,
   'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
   'Further Mathematics_Edexcel': () => typeof FM_EDEXCEL_PRACTICE !== 'undefined' ? FM_EDEXCEL_PRACTICE : null,
   'Further Mathematics_AQA': () => typeof FM_AQA_PRACTICE !== 'undefined' ? FM_AQA_PRACTICE : null,
@@ -729,6 +733,24 @@ const SUBJECT_TOPICS = {
         { id: '2.1', name: 'Elements of Computational Thinking', sub: 'Abstraction, decomposition, concurrency' },
         { id: '2.2', name: 'Problem Solving and Programming', sub: 'OOP, recursion, stacks, trees, hash tables' },
         { id: '2.3', name: 'Algorithms', sub: 'Big-O, Dijkstra, A*, search & sort analysis' },
+      ]},
+    ]
+  },
+  'Computer Science_AQA|alevel': {
+    sections: [
+      { label: 'AQA 7517 — Paper 1: On-screen (Programming)', topics: [
+        { id: '4.1', name: 'Fundamentals of Programming', sub: 'Data types, OOP, recursion, exception handling' },
+        { id: '4.2', name: 'Fundamentals of Data Structures', sub: 'Stacks, queues, trees, graphs, hash tables' },
+        { id: '4.3', name: 'Fundamentals of Algorithms', sub: 'Big-O, search, sort, graph traversal, Dijkstra, A*' },
+      ]},
+      { label: 'AQA 7517 — Paper 2: Written Theory', topics: [
+        { id: '4.4', name: 'Theory of Computation', sub: 'FSMs, regex, Turing machines, halting problem' },
+        { id: '4.5', name: 'Fundamentals of Data Representation', sub: 'Number systems, floating point, compression, encryption' },
+        { id: '4.6', name: 'Fundamentals of Computer Systems', sub: 'OS, Boolean algebra, logic gates, Karnaugh maps' },
+        { id: '4.7', name: 'Computer Organisation & Architecture', sub: 'Von Neumann, FDE cycle, CISC/RISC, pipelining, assembly' },
+        { id: '4.8', name: 'Consequences of Uses of Computing', sub: 'Ethics, legislation, AI, environmental impact' },
+        { id: '4.9', name: 'Communication & Networking', sub: 'TCP/IP, topologies, encryption, protocols' },
+        { id: '4.10', name: 'Fundamentals of Databases', sub: 'SQL, normalisation, ER modelling, ACID' },
       ]},
     ]
   },
@@ -1107,6 +1129,26 @@ const SUBJECT_TOPICS = {
       ]},
     ]
   },
+  'Mathematics_OCR|alevel': {
+    sections: [
+      { label: 'Pure Mathematics — Papers 1 & 2', topics: [
+        { id: '1.1', name: 'Proof', sub: 'Deduction, exhaustion, contradiction, counter-example' },
+        { id: '1.2', name: 'Algebra & Functions', sub: 'Indices, surds, quadratics, polynomials, partial fractions' },
+        { id: '1.3', name: 'Coordinate Geometry', sub: 'Lines, circles, parametric equations' },
+        { id: '1.4', name: 'Sequences & Series', sub: 'AP, GP, sigma notation, binomial expansion' },
+        { id: '1.5', name: 'Trigonometry', sub: 'Identities, equations, sec/csc/cot, Rsin(x+a)' },
+        { id: '1.6', name: 'Exponentials & Logarithms', sub: 'e^x, ln, log laws, modelling' },
+        { id: '1.7', name: 'Differentiation', sub: 'Chain/product/quotient, implicit, parametric' },
+        { id: '1.8', name: 'Integration', sub: 'Substitution, by parts, areas, diff equations' },
+        { id: '1.9', name: 'Numerical Methods', sub: 'Iteration, Newton-Raphson, trapezium rule' },
+        { id: '1.10', name: 'Vectors', sub: '2D/3D vectors, scalar product, geometric problems' },
+      ]},
+      { label: 'Statistics & Mechanics — Paper 3', topics: [
+        { id: '2.1', name: 'Statistics', sub: 'Sampling, distributions (binomial, normal), hypothesis testing' },
+        { id: '2.2', name: 'Mechanics', sub: 'Kinematics (SUVAT), forces (Newton laws), moments, projectiles' },
+      ]},
+    ]
+  },
   'Mathematics_OCR|gcse': {
     sections: [
       { label: 'Number', topics: [
@@ -1367,6 +1409,7 @@ const DIAG_PAGE = {
   'Computer Science_OCR':         { url: 'diagnostics/cs-ocr-gcse-diagnostic.html',      total: 11, first: '1.1' },
   'Computer Science_OCR|alevel':  { url: 'diagnostics/cs-ocr-alevel-diagnostic.html',    total: 8,  first: '1.1' },
   'Computer Science_AQA|gcse':    { url: 'diagnostics/cs-aqa-gcse-diagnostic.html',      total: 8,  first: '3.1' },
+  'Computer Science_AQA|alevel':  { url: 'diagnostics/cs-aqa-alevel-diagnostic.html',    total: 10, first: '4.1' },
   'Physics_Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13, first: 'T1'  },
   'Physics_AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8,  first: '3.1' },
   'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
@@ -1390,6 +1433,7 @@ const DIAG_PAGE = {
   'Geography_Eduqas|gcse':        { url: 'diagnostics/geography-eduqas-gcse-diagnostic.html', total: 12, first: '1.1' },
   'Mathematics_AQA':              { url: 'diagnostics/maths-aqa-diagnostic.html',             total: 17, first: '1.1' },
   'Mathematics_OCR|gcse':         { url: 'diagnostics/maths-ocr-gcse-diagnostic.html',        total: 19, first: '1.1' },
+  'Mathematics_OCR|alevel':       { url: 'diagnostics/maths-ocr-alevel-diagnostic.html',      total: 12, first: '1.1' },
   'Mathematics_Edexcel':          { url: 'diagnostics/maths-edexcel-diagnostic.html',         total: 36, first: 'P1'  },
   'Further Mathematics_AQA':      { url: 'diagnostics/further-maths-aqa-diagnostic.html',     total: 9,  first: '1.1' },
   'Further Mathematics_Edexcel':  { url: 'diagnostics/further-maths-edexcel-diagnostic.html', total: 17, first: 'CP1.1' },

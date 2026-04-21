@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.9 &mdash; Communication and Networking</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .case-study { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .case-study::before { content: "Case Study: "; font-weight: 700; color: #5b21b6; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .case-study { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.9 Communication &amp; Networking</h1>
+<p class="spec-ref">Computer Science &mdash; AQA A-Level (7517) &mdash; Paper 2: Written Theory</p>
+
+<p>Topic 4.9 is by far the largest theory unit in the entire specification. It weaves together physics (signals, attenuation, media), engineering (protocols, layered stacks, encapsulation), and a good deal of binary arithmetic (IP addressing, subnets, CIDR). The examiner rewards candidates who can keep these layers separate in their head: a question about MAC addresses lives at a different layer from a question about DNS, even though both can show up in the same scenario. Work from the bottom up in your revision &mdash; signals and media, then frames and switches, then packets and routers, then transport (TCP/UDP), then application (HTTP, DNS, SMTP). Once the layer cake is drawn on a mental napkin, every other concept in this topic slots into one of its layers.</p>
+
+<div class="exam-tip">
+    When a networking question spans multiple layers (a common 8-mark device), explicitly state which layer you are operating at before each move. "At the data-link layer, the switch forwards the frame using the destination MAC address. At the network layer, the router forwards the packet using the destination IP." Examiners mark by layer; signalling the layer is worth marks even before you get the detail right.
+</div>
+
+<h2>4.9.1 Communication Methods</h2>
+
+<h3>Serial vs parallel transmission</h3>
+
+<div class="definition">
+    <strong>Serial transmission</strong> &mdash; bits are sent one after another down a single data line. <strong>Parallel transmission</strong> &mdash; several bits (typically 8, 16, 32 or 64) are sent simultaneously down multiple parallel data lines, one wire per bit.
+</div>
+
+<p>Parallel is intuitively faster because <em>n</em> wires carry <em>n</em> bits per clock tick. In practice modern high-speed interfaces are almost all serial: SATA replaced PATA, PCIe replaced PCI, USB replaced the parallel printer port. The two reasons are physical.</p>
+
+<ul>
+    <li><strong>Skew.</strong> Parallel bits that left the transmitter together do not necessarily arrive together. Tiny differences in wire length, capacitance and impedance mean that one line's bit arrives a few picoseconds before another's. At low clock rates this is negligible; at gigabit-plus rates the spread of arrival times exceeds the bit period and the receiver cannot tell which set of bits belongs together. Parallel links therefore cannot be clocked arbitrarily fast; serial links can.</li>
+    <li><strong>Crosstalk.</strong> Adjacent parallel wires behave as coupled inductors and capacitors: a rising edge on one line induces noise on its neighbours. The problem worsens as wires get closer (miniaturisation) and as data rates rise. Serial links have fewer adjacent wires and can be shielded more aggressively (twisted pair, differential signalling).</li>
+</ul>
+
+<p>Parallel still wins in very short, controlled environments &mdash; the internal data bus of a CPU, the address and data buses on a motherboard &mdash; where distance is millimetres and clock can be kept modest. For anything longer than a few centimetres, modern design is serial with differential signalling.</p>
+
+<h3>Synchronous vs asynchronous transmission</h3>
+
+<div class="definition">
+    <strong>Synchronous transmission</strong> &mdash; sender and receiver share a common clock signal (either a physical clock line or a clock embedded in the data). Bits are sent as a continuous stream with no per-character delimiters. <strong>Asynchronous transmission</strong> &mdash; no shared clock; each byte or character is framed by a start bit and one or more stop bits that the receiver uses to resynchronise its local clock at every character.
+    </div>
+
+<p>Asynchronous transmission is historically what a UART (Universal Asynchronous Receiver-Transmitter) does, as used by classic RS-232 serial ports: the idle line sits high, a falling edge (start bit, logic 0) tells the receiver "a character is coming, start sampling at the agreed baud rate", then 7 or 8 data bits follow, then 1 or 2 stop bits (logic 1) return the line to idle. The overhead per byte is 2&ndash;3 bits &mdash; roughly 20&ndash;25% &mdash; which is acceptable for keyboard-speed data but wasteful for bulk transfer.</p>
+
+<p>Synchronous transmission amortises overhead across much larger frames (thousands of bytes). Ethernet, USB 2.0+ and SATA are all effectively synchronous, using embedded clock-recovery schemes (8b/10b or 64b/66b line coding) so that the clock is recoverable from the data transitions themselves &mdash; no separate clock line is needed.</p>
+
+<h3>Baud rate, bit rate and bandwidth</h3>
+
+<div class="definition">
+    <strong>Baud rate</strong> &mdash; the number of <em>signalling events</em> (symbol changes) per second on the medium, measured in baud. <strong>Bit rate</strong> &mdash; the number of <em>bits</em> transmitted per second, measured in bits/s. <strong>Bandwidth</strong> &mdash; in networking, the maximum data rate a link can sustain (bit/s); in signal theory, the width of the frequency range the medium supports (Hz).
+</div>
+
+<p>Baud rate and bit rate are equal only when each symbol encodes exactly one bit. Modern modulation schemes pack multiple bits per symbol: a constellation with four phase positions (QPSK) encodes 2 bits per symbol, so bit rate = 2 &times; baud. A 256-QAM constellation encodes 8 bits per symbol, so bit rate = 8 &times; baud. The absolute ceiling is given by the <strong>Shannon&ndash;Hartley theorem</strong>: channel capacity C = B &middot; log<sub>2</sub>(1 + SNR), where B is analogue bandwidth in hertz and SNR is the signal-to-noise ratio. Real engineering pushes towards this ceiling by using denser modulation until the noise floor defeats it.</p>
+
+<h3>Latency, attenuation, noise</h3>
+
+<ul>
+    <li><strong>Latency</strong> is the time delay between a bit being sent and received. Caused by propagation delay (speed of light in the medium), serialisation delay (time to push bits onto the wire at the given rate), queueing delay at each router, and processing delay at each hop. A transatlantic fibre has around 30&ndash;60&nbsp;ms round-trip time, which is a hard physical floor &mdash; no amount of engineering reduces it below the speed-of-light budget.</li>
+    <li><strong>Attenuation</strong> is the gradual loss of signal strength over distance. Copper attenuates more at higher frequencies; fibre attenuates very little (around 0.2&nbsp;dB/km at 1550&nbsp;nm). Links beyond their attenuation budget need repeaters/amplifiers.</li>
+    <li><strong>Noise</strong> is unwanted random signal added to the data &mdash; thermal noise, electromagnetic interference from nearby equipment, crosstalk from other wires. Noise raises the bit-error rate; fighting noise is the job of shielding, twisted pairs, differential signalling and error-detecting/correcting codes.</li>
+</ul>
+
+<h3>Error detection</h3>
+
+<ul>
+    <li><strong>Parity.</strong> A single extra bit is appended to each byte such that the total number of 1s is even (even parity) or odd (odd parity). Detects any odd number of bit errors; misses even-numbered ones. Cheap and historical &mdash; RS-232 memory.</li>
+    <li><strong>Checksum.</strong> The sender sums the data bytes (modulo some fixed N), appends the sum, and the receiver recomputes. Catches more errors than parity but still misses patterns that sum to the same value.</li>
+    <li><strong>Cyclic Redundancy Check (CRC).</strong> The sender treats the data as a large binary polynomial, divides by a fixed generator polynomial, and appends the remainder. Extremely good at catching burst errors &mdash; Ethernet uses CRC-32, which catches all burst errors up to 32 bits and detects larger bursts with probability 1&minus;2<sup>&minus;32</sup>.</li>
+</ul>
+
+<h3>Error correction &mdash; Hamming code</h3>
+
+<p>Parity, checksum and CRC only <em>detect</em> errors; the receiver must ask for retransmission. <strong>Forward error correction</strong> goes further: redundancy bits are added so the receiver can reconstruct the original without retransmission. Hamming(7,4) encodes 4 data bits as 7 transmitted bits (three parity bits interleaved with the data) and can correct any single-bit error and detect any double-bit error. Used where retransmission is expensive or impossible &mdash; deep-space links (Voyager), ECC RAM, flash storage.</p>
+
+<h2>4.9.2 Communication Basics</h2>
+
+<h3>Simplex, half-duplex, full-duplex</h3>
+
+<table>
+    <thead>
+        <tr><th>Mode</th><th>Direction</th><th>Simultaneous?</th><th>Example</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Simplex</td><td>One-way only</td><td>N/A</td><td>Broadcast TV/radio, keyboard to PC</td></tr>
+        <tr><td>Half-duplex</td><td>Both directions</td><td>No &mdash; one at a time</td><td>Walkie-talkies ("over"), classic Ethernet hub</td></tr>
+        <tr><td>Full-duplex</td><td>Both directions</td><td>Yes &mdash; simultaneously</td><td>Telephone, switched Ethernet, modern Wi-Fi with MU-MIMO</td></tr>
+    </tbody>
+</table>
+
+<h3>Broadcast, unicast, multicast</h3>
+
+<ul>
+    <li><strong>Unicast</strong> &mdash; one sender, one recipient. The overwhelming majority of internet traffic (a web page served to your browser).</li>
+    <li><strong>Broadcast</strong> &mdash; one sender, <em>every</em> node on the network. ARP requests are broadcast ("who has IP 192.168.1.1?"). Expensive at scale, so broadcast is typically confined to a single LAN segment.</li>
+    <li><strong>Multicast</strong> &mdash; one sender, a subscribed group of recipients. Used for IPTV, live-stream sports distribution inside an ISP, and routing-protocol control traffic (OSPF hellos). Sits between unicast and broadcast in cost.</li>
+</ul>
+
+<h3>Packet switching vs circuit switching</h3>
+
+<div class="definition">
+    <strong>Circuit switching</strong> &mdash; a dedicated end-to-end path is reserved for the duration of a conversation; bandwidth is guaranteed. Classic example: the traditional telephone network (PSTN). <strong>Packet switching</strong> &mdash; data is chopped into packets, each labelled with a destination address, and each packet is routed independently across a shared network; no path is reserved in advance.
+</div>
+
+<table>
+    <thead>
+        <tr><th>Property</th><th>Circuit switching</th><th>Packet switching</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Path setup</td><td>Explicit call setup; a fixed route held open</td><td>No setup; packets routed independently (datagrams)</td></tr>
+        <tr><td>Bandwidth</td><td>Guaranteed for the circuit</td><td>Best-effort; shared across many flows</td></tr>
+        <tr><td>Efficiency</td><td>Low &mdash; idle circuit still consumes capacity</td><td>High &mdash; idle senders consume nothing</td></tr>
+        <tr><td>Resilience to link failure</td><td>Poor &mdash; call drops if a link on the path fails</td><td>Good &mdash; packets reroute around failures</td></tr>
+        <tr><td>Jitter/latency predictability</td><td>Very predictable</td><td>Variable (queueing)</td></tr>
+        <tr><td>Use case</td><td>Historical voice (PSTN)</td><td>The internet; modern voice (VoIP over IP)</td></tr>
+    </tbody>
+</table>
+
+<p>Packet switching has two flavours. In a pure <strong>datagram</strong> service (IP), each packet stands alone and can take a different route to its peer. In a <strong>virtual-circuit</strong> service (ATM, MPLS, some legacy X.25), a logical path is signalled before data flows, all subsequent packets follow that label-switched path, but the underlying network is still statistically multiplexed rather than reserving physical capacity. Virtual circuits deliver predictable ordering and latency without the bandwidth waste of a true circuit.</p>
+
+<div class="definition">
+    <strong>Packet vs circuit switching</strong> &mdash; packet switching statistically multiplexes many flows over shared links; circuit switching reserves end-to-end capacity for the duration of a conversation. The internet chose packet switching because it scales efficiently and survives partial failures; voice networks historically chose circuit switching because it delivered predictable voice quality &mdash; a choice that has now been reversed as VoIP matured.
+</div>
+
+<h2>4.9.3 Networks &mdash; Types and Topologies</h2>
+
+<h3>Network types by scale</h3>
+
+<div class="definition">
+    <strong>LAN (Local Area Network)</strong> &mdash; a network confined to a single site (a home, a school, an office floor or building), typically owned and administered by one organisation. Built from Ethernet and Wi-Fi. High bandwidth (1&ndash;100&nbsp;Gbps), low latency (&lt;1&nbsp;ms), private address space.
+</div>
+
+<div class="definition">
+    <strong>WAN (Wide Area Network)</strong> &mdash; a network spanning a wide geographical area (a country or globe), usually leased from telecommunications carriers rather than owned by one organisation. Lower bandwidth per link than LAN and higher latency. The internet is the world's biggest WAN.
+</div>
+
+<ul>
+    <li><strong>PAN (Personal Area Network)</strong> &mdash; device-to-device within a few metres, typically Bluetooth or Zigbee (phone to earbuds, fitness tracker to watch).</li>
+    <li><strong>MAN (Metropolitan Area Network)</strong> &mdash; spans a city, often a university or municipal fibre ring connecting multiple LANs.</li>
+</ul>
+
+<h3>Topologies</h3>
+
+<table>
+    <thead>
+        <tr><th>Topology</th><th>Structure</th><th>Strengths</th><th>Weaknesses</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Bus</td><td>All nodes share one common backbone cable</td><td>Cheap; little cabling</td><td>Single-point failure (cable break = whole LAN down); collisions require CSMA/CD; obsolete for Ethernet</td></tr>
+        <tr><td>Star (physical)</td><td>All nodes cabled back to a central switch</td><td>Dominant modern LAN; switch failure isolates one port; cable fault affects only one host</td><td>Central switch is a single point of failure; more cabling than bus</td></tr>
+        <tr><td>Star (logical)</td><td>A physical star in which traffic is logically broadcast by a hub</td><td>Simple</td><td>Hub shares bandwidth &mdash; replaced by switches years ago</td></tr>
+        <tr><td>Ring</td><td>Each node connects to exactly two neighbours forming a closed loop; token passing arbitrates access</td><td>Deterministic access time; no collisions</td><td>Single cable fault breaks the ring (dual-counter-rotating rings mitigate); IBM Token Ring obsolete, SONET/SDH still uses rings</td></tr>
+        <tr><td>Mesh (full)</td><td>Every node connected to every other node</td><td>Maximum redundancy and fault tolerance</td><td>O(n<sup>2</sup>) links &mdash; impractical beyond a handful of nodes</td></tr>
+        <tr><td>Mesh (partial)</td><td>Critical nodes have multiple paths; others don't</td><td>Practical redundancy; used in WAN backbones and Wi-Fi mesh (e.g. home extenders)</td><td>More complex routing; more expensive than star</td></tr>
+    </tbody>
+</table>
+
+<p><strong>Physical vs logical topology.</strong> A modern Ethernet LAN is <em>physically</em> a star (each host plugs into a central switch) but may be <em>logically</em> a bus from the point of view of a protocol analyser: the original 10BASE-T standard broadcast every frame on every port via a hub. Switched Ethernet broke that logical bus by forwarding each frame only to the port on which the destination MAC lives. Always answer exam questions with both views: "physically a star, logically a switched star &mdash; frames are not broadcast, they are forwarded to the correct port."</p>
+
+<h3>Wireless networks &mdash; Wi-Fi standards</h3>
+
+<p>Wi-Fi is governed by IEEE 802.11 standards. You should recognise the generation names.</p>
+
+<table>
+    <thead>
+        <tr><th>IEEE</th><th>Wi-Fi name</th><th>Max throughput</th><th>Band</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>802.11b</td><td>&mdash;</td><td>11&nbsp;Mbps</td><td>2.4&nbsp;GHz</td></tr>
+        <tr><td>802.11g</td><td>&mdash;</td><td>54&nbsp;Mbps</td><td>2.4&nbsp;GHz</td></tr>
+        <tr><td>802.11n</td><td>Wi-Fi 4</td><td>600&nbsp;Mbps</td><td>2.4 and 5&nbsp;GHz</td></tr>
+        <tr><td>802.11ac</td><td>Wi-Fi 5</td><td>~3.5&nbsp;Gbps</td><td>5&nbsp;GHz</td></tr>
+        <tr><td>802.11ax</td><td>Wi-Fi 6 / 6E</td><td>~9.6&nbsp;Gbps</td><td>2.4, 5, 6&nbsp;GHz (6E)</td></tr>
+        <tr><td>802.11be</td><td>Wi-Fi 7</td><td>~46&nbsp;Gbps</td><td>2.4, 5, 6&nbsp;GHz</td></tr>
+    </tbody>
+</table>
+
+<h2>4.9.4 The Internet and its Uses</h2>
+
+<p>The internet is best described as a <strong>WAN of WANs</strong> &mdash; a global, interconnected collection of autonomous networks that agree to exchange traffic using the TCP/IP protocol suite. No single entity owns it; its routing emerges from bilateral and multilateral <strong>peering and transit</strong> agreements between Autonomous Systems (AS) &mdash; each AS is an ISP, university, tech giant, or similar organisation with its own routing policy and an AS number.</p>
+
+<h3>ISPs and the backbone</h3>
+
+<p>An <strong>Internet Service Provider (ISP)</strong> sells connectivity. Residential ISPs (BT, Virgin Media, Sky) deliver to homes; they themselves buy upstream transit from larger <strong>Tier 1</strong> carriers (Level 3/Lumen, NTT, Tata, Cogent, Deutsche Telekom) who peer globally without paying anyone for transit. The <strong>internet backbone</strong> is the informal term for the mesh of high-capacity fibre links between Tier 1 networks, typically landing at major <strong>Internet Exchange Points (IXPs)</strong> such as LINX (London), DE-CIX (Frankfurt) and AMS-IX (Amsterdam) where hundreds of networks physically interconnect.</p>
+
+<h3>URL anatomy</h3>
+
+<pre>scheme://user:pass@host:port/path?query#fragment
+
+https://www.example.co.uk:443/products/item?id=42&amp;sort=price#reviews
+&#9474;     &#9474;              &#9474;  &#9474;              &#9474;                &#9474;
+scheme host           port path           query            fragment</pre>
+
+<ul>
+    <li><strong>Scheme</strong> &mdash; the protocol (<code>http</code>, <code>https</code>, <code>ftp</code>, <code>mailto</code>, <code>ssh</code>).</li>
+    <li><strong>Host</strong> &mdash; a DNS name or an IP literal.</li>
+    <li><strong>Port</strong> &mdash; optional; defaults to 80 for http, 443 for https.</li>
+    <li><strong>Path</strong> &mdash; resource path on the server.</li>
+    <li><strong>Query string</strong> &mdash; key=value pairs passed to the server.</li>
+    <li><strong>Fragment</strong> &mdash; client-side only; the browser scrolls to this anchor, never sent to the server.</li>
+</ul>
+
+<h3>Internet governance &mdash; ICANN, IANA, RIRs</h3>
+
+<ul>
+    <li><strong>ICANN</strong> (Internet Corporation for Assigned Names and Numbers) &mdash; the non-profit which overall coordinates the DNS root and IP allocation policy.</li>
+    <li><strong>IANA</strong> (Internet Assigned Numbers Authority) &mdash; a function operated by ICANN: allocates IP blocks to the RIRs and maintains protocol-number registries (port numbers, ICMP types).</li>
+    <li><strong>Regional Internet Registries (RIRs)</strong> &mdash; five regional bodies that allocate IPs to ISPs and LIRs: RIPE NCC (Europe/Middle East), ARIN (North America), APNIC (Asia-Pacific), LACNIC (Latin America), AFRINIC (Africa).</li>
+</ul>
+
+<h3>Content Delivery Networks (CDNs)</h3>
+
+<p>A CDN (Cloudflare, Akamai, AWS CloudFront, Fastly) is a geographically distributed cache network that mirrors origin content close to end users. Benefits: lower latency (a London user hits a London CDN edge, not a Virginia origin); reduced origin load; DDoS absorption; TLS termination at the edge. Modern web relies heavily on CDNs &mdash; a significant outage at a major CDN (Cloudflare June 2022, Fastly June 2021) causes widespread internet disruption.</p>
+
+<h2>4.9.5 Internet Structure &mdash; DNS</h2>
+
+<div class="definition">
+    <strong>DNS (Domain Name System)</strong> &mdash; the distributed, hierarchical database that translates human-readable domain names (<code>www.example.com</code>) into IP addresses and other records. Often described as the "phone book of the internet".
+</div>
+
+<h3>DNS hierarchy</h3>
+
+<p>The DNS namespace is a tree, read right-to-left:</p>
+
+<pre>                   . (root)
+                 /    |    \
+            .com    .uk    .org      <- Top-Level Domains (TLDs)
+             |       |
+        example   .co.uk
+         .com      |
+                example.co.uk
+                   |
+               www.example.co.uk</pre>
+
+<ul>
+    <li><strong>Root servers</strong> &mdash; 13 logical root nameservers (A through M), mirrored to hundreds of physical sites via anycast. They know where the TLD servers are.</li>
+    <li><strong>TLD servers</strong> &mdash; one set per TLD. <code>.com</code> is operated by Verisign; <code>.uk</code> is operated by Nominet. They know where each second-level domain's authoritative servers are.</li>
+    <li><strong>Authoritative name servers</strong> &mdash; run by the domain owner (or their registrar/DNS-hosting provider). Contain the actual resource records for a zone.</li>
+</ul>
+
+<h3>Recursive vs iterative resolution</h3>
+
+<p>When your browser resolves <code>www.example.com</code>, the OS asks a <strong>recursive resolver</strong> (typically run by your ISP, or 1.1.1.1/8.8.8.8). The resolver does the work on your behalf. <em>Recursive</em> means "please give me the final answer"; <em>iterative</em> is the step-by-step walk the resolver performs across the DNS tree.</p>
+
+<pre>DNS LOOKUP OF www.example.com (uncached):
+
+  Client &rarr; Resolver:      "Give me A record for www.example.com" (recursive)
+  Resolver &rarr; Root:         "www.example.com ?"
+  Root &rarr; Resolver:         "I don't know, ask the .com TLD at 192.5.6.30"
+  Resolver &rarr; .com TLD:     "www.example.com ?"
+  .com TLD &rarr; Resolver:     "ask example.com's NS at ns1.example.com (A.B.C.D)"
+  Resolver &rarr; ns1.example: "www.example.com ?"
+  ns1.example &rarr; Resolver:  "A record = 93.184.216.34"   <- authoritative
+  Resolver &rarr; Client:      "93.184.216.34"
+  Resolver caches for the TTL (e.g. 3600 s) so the next lookup is one hop.</pre>
+
+<h3>Caching</h3>
+
+<p>DNS would collapse without caching. Every record carries a TTL (time-to-live) in seconds; resolvers must not serve the record beyond its TTL. Browser, OS stub-resolver, and recursive-resolver caches all honour it. Operators lower TTLs (to 60&nbsp;s, say) shortly before a planned migration so that the change propagates quickly.</p>
+
+<h3>Common record types</h3>
+
+<table>
+    <thead>
+        <tr><th>Type</th><th>Purpose</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>A</td><td>IPv4 address for a name</td></tr>
+        <tr><td>AAAA</td><td>IPv6 address ("quad-A")</td></tr>
+        <tr><td>CNAME</td><td>Canonical name &mdash; alias one name to another</td></tr>
+        <tr><td>MX</td><td>Mail exchanger &mdash; where to deliver email for the domain (with priority)</td></tr>
+        <tr><td>NS</td><td>Nameserver &mdash; who is authoritative for this zone</td></tr>
+        <tr><td>TXT</td><td>Arbitrary text &mdash; SPF, DKIM, domain-verification tokens</td></tr>
+        <tr><td>PTR</td><td>Reverse &mdash; IP back to name (in the <code>in-addr.arpa</code> zone)</td></tr>
+        <tr><td>SOA</td><td>Start of authority &mdash; zone metadata (serial, refresh, expire)</td></tr>
+    </tbody>
+</table>
+
+<div class="exam-tip">
+    DNS resolution is a favourite 6-mark question. Always mention: (1) the recursive resolver, (2) root &rarr; TLD &rarr; authoritative walk, (3) caching with TTL, (4) the returned IP is used to open a TCP connection &mdash; DNS itself is almost always carried over UDP on port 53. Examiners award a mark per bullet; missing any of the four caps your mark.
+</div>
+
+<h2>4.9.6 Packet Switching and Routing</h2>
+
+<h3>Packet structure</h3>
+
+<p>An IPv4 packet consists of a header (minimum 20 bytes) followed by a payload. Key header fields you should know:</p>
+
+<pre> 0                   1                   2                   3
+ 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1 2 3 4 5 6 7 8 9 0 1
++-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+-+
+|Ver=4  |  IHL  |Type of Service|          Total Length         |
++-------+-------+---------------+-------------------------------+
+|         Identification        |Flags|     Fragment Offset     |
++-------+---------------+-------+-------------------------------+
+|      TTL      |    Protocol   |         Header Checksum       |
++---------------+---------------+-------------------------------+
+|                       Source IP Address                       |
++---------------------------------------------------------------+
+|                    Destination IP Address                     |
++---------------------------------------------------------------+
+|                           ...Payload...                        |</pre>
+
+<ul>
+    <li><strong>Source / destination IP</strong> &mdash; 32 bits each; who sent it, where it is going.</li>
+    <li><strong>TTL (Time to Live)</strong> &mdash; decremented by each router. When it hits zero, the packet is discarded and an ICMP Time-Exceeded message is sent back. Prevents packets looping forever if a routing table is misconfigured.</li>
+    <li><strong>Protocol</strong> &mdash; what's inside the payload (6 = TCP, 17 = UDP, 1 = ICMP).</li>
+    <li><strong>Header checksum</strong> &mdash; protects the header only. The payload is protected by TCP/UDP checksums.</li>
+</ul>
+
+<h3>Routing &mdash; how a router decides where to send a packet</h3>
+
+<p>Every router holds a <strong>routing table</strong> keyed by destination network prefix. When a packet arrives the router performs a <strong>longest-prefix match</strong> against its table and forwards the packet out of the interface associated with the winning entry. The packet's destination IP is used &mdash; never the source. Layer-2 framing (with MAC addresses) is rewritten at every hop; Layer-3 addresses are preserved end-to-end.</p>
+
+<h3>Routing algorithms</h3>
+
+<table>
+    <thead>
+        <tr><th>Family</th><th>How it works</th><th>Example</th><th>Convergence</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Distance-vector</td><td>Each router tells its neighbours "this is how far I am from every destination"; neighbours add the link cost and re-advertise.</td><td>RIP (hop count, max 15)</td><td>Slow; prone to "count to infinity" loops</td></tr>
+        <tr><td>Link-state</td><td>Every router floods its local link information to every other router, so each builds a full map of the network, then runs Dijkstra's shortest-path algorithm locally.</td><td>OSPF, IS-IS</td><td>Fast; higher memory and CPU per router</td></tr>
+        <tr><td>Path-vector</td><td>Advertises the <em>entire path</em> (sequence of AS numbers) rather than a scalar distance, for loop avoidance between networks.</td><td>BGP &mdash; the protocol of the internet</td><td>Policy-driven; convergence can take minutes globally</td></tr>
+    </tbody>
+</table>
+
+<h3>Gateway routers</h3>
+
+<p>A <strong>gateway</strong> is a router that sits at the boundary between two networks using different protocols or administration domains. Your home router is a gateway between your LAN (RFC1918 private addressing) and your ISP (the public internet). Inside a large corporation, a <strong>border router</strong> peers with the ISP via BGP and advertises the corporation's public prefixes.</p>
+
+<div class="definition">
+    <strong>Router</strong> &mdash; a Layer-3 device that forwards packets between different IP networks using destination-IP longest-prefix match against its routing table. It terminates each Layer-2 frame and builds a new one for the outgoing link. <strong>Switch</strong> &mdash; a Layer-2 device that forwards frames within a single network using destination-MAC lookup against its MAC-address table.
+</div>
+
+<h2>4.9.7 Transmission Media</h2>
+
+<table>
+    <thead>
+        <tr><th>Medium</th><th>Typical bandwidth</th><th>Attenuation</th><th>Cost</th><th>Notes</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Unshielded twisted pair (UTP) &mdash; Cat&nbsp;5e/6/6a</td><td>1&ndash;10&nbsp;Gbps up to 100&nbsp;m</td><td>Moderate</td><td>Cheap</td><td>Twist cancels crosstalk; the universal modern LAN cable (RJ45)</td></tr>
+        <tr><td>Shielded twisted pair (STP)</td><td>As UTP</td><td>Lower (better shielding)</td><td>Higher than UTP</td><td>For electrically noisy environments (factory floors)</td></tr>
+        <tr><td>Coaxial</td><td>Up to several Gbps</td><td>Low for its frequency</td><td>Moderate</td><td>Cable TV, legacy 10BASE2/5 Ethernet, DOCSIS last-mile</td></tr>
+        <tr><td>Multi-mode fibre (MMF)</td><td>10&ndash;100&nbsp;Gbps up to a few hundred metres</td><td>Higher than SMF</td><td>Lower than SMF</td><td>Short-reach data centres; uses cheap VCSEL light sources; modal dispersion limits length</td></tr>
+        <tr><td>Single-mode fibre (SMF)</td><td>100&nbsp;Gbps+, tens to hundreds of km</td><td>Very low (~0.2&nbsp;dB/km at 1550&nbsp;nm)</td><td>Higher</td><td>Long-haul telco, transatlantic submarine cables; laser source</td></tr>
+        <tr><td>Radio (Wi-Fi, cellular)</td><td>Up to multi-Gbps (Wi-Fi 6E/7, 5G mmWave)</td><td>Distance, walls, interference</td><td>Low deployment, high spectrum</td><td>Shared medium; security is a design concern from the start</td></tr>
+        <tr><td>Microwave (line-of-sight)</td><td>Gbps</td><td>Rain fade; needs LoS</td><td>Tower/dish capital</td><td>Backhaul between cell sites; trading-firm low-latency links</td></tr>
+        <tr><td>Infrared</td><td>Low (legacy IrDA); high for FSO</td><td>Any obstruction</td><td>Low for IrDA</td><td>Remote controls, point-to-point free-space optics</td></tr>
+    </tbody>
+</table>
+
+<p><strong>Security differences:</strong> copper and fibre can be tapped physically (fibre tapping is harder but has been done by state-level actors); wireless is the easiest to intercept passively because the signal literally propagates through air &mdash; encryption is therefore not optional on Wi-Fi.</p>
+
+<h2>4.9.8 The Client-Server Model</h2>
+
+<p>Under the <strong>client-server</strong> model one or more client machines initiate requests to a dedicated server that responds. The web is the canonical example: a browser (client) issues an HTTP request; a web server returns the resource. Servers are usually always-on, rack-mounted, and identified by a stable DNS name; clients are ephemeral and may come and go.</p>
+
+<p>Contrast with <strong>peer-to-peer (P2P)</strong>, where every node acts as both client and server, sharing resources directly without a central coordinator. Examples: BitTorrent for file distribution, Bitcoin for the blockchain, early Skype voice. P2P scales with participants (more peers = more capacity) and has no single point of failure, but is harder to administer, harder to secure, and illegal-content distribution has been a recurrent problem.</p>
+
+<h3>Thin vs thick clients</h3>
+
+<div class="definition">
+    <strong>Thick (fat) client</strong> &mdash; does most of the processing locally; the server mainly stores/syncs data. Examples: a desktop Office install, a native mobile app that works offline. <strong>Thin client</strong> &mdash; the client is essentially a display and input layer; processing runs on the server. Examples: a browser rendering a cloud spreadsheet, RDP into a corporate desktop, a Chromebook.
+</div>
+
+<table>
+    <thead>
+        <tr><th>Dimension</th><th>Thin client</th><th>Thick client</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Processing</td><td>Server-side</td><td>Client-side</td></tr>
+        <tr><td>Hardware cost (client)</td><td>Low &mdash; any browser device</td><td>Higher &mdash; needs decent CPU/RAM</td></tr>
+        <tr><td>Network dependence</td><td>Total &mdash; dies offline</td><td>Partial &mdash; can work offline</td></tr>
+        <tr><td>Update/deployment</td><td>One place (the server)</td><td>Every client must update</td></tr>
+        <tr><td>Security</td><td>Data stays on server &mdash; easier to control</td><td>Data replicated to client &mdash; lose laptop, lose data</td></tr>
+    </tbody>
+</table>
+
+<h3>Load balancing</h3>
+
+<p>A <strong>load balancer</strong> sits in front of a pool of servers and distributes incoming requests across them &mdash; by round-robin, least-connections, or weighted algorithms. Modern implementations (HAProxy, nginx, AWS ELB) additionally perform health-checking (pull a dead server out of rotation automatically), TLS termination, and sticky sessions (keep a user pinned to one backend if state demands it).</p>
+
+<h2>4.9.9 / 4.9.11 Application-Layer Protocols</h2>
+
+<h3>HTTP and HTTPS</h3>
+
+<p>HTTP is a request-response text protocol running over TCP port 80. HTTPS is HTTP inside a TLS tunnel on TCP port 443. A minimal request:</p>
+
+<pre>GET /products/42 HTTP/1.1
+Host: www.example.com
+User-Agent: Mozilla/5.0
+Accept: text/html,application/xhtml+xml
+Accept-Language: en-GB
+Cookie: sessionid=abc123
+Connection: keep-alive
+
+</pre>
+
+<p>A minimal response:</p>
+
+<pre>HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Content-Length: 1324
+Cache-Control: max-age=3600
+Set-Cookie: sessionid=abc123; Secure; HttpOnly
+
+&lt;!DOCTYPE html&gt;&lt;html&gt;...&lt;/html&gt;</pre>
+
+<p><strong>Methods:</strong></p>
+<ul>
+    <li><strong>GET</strong> &mdash; retrieve a resource. Idempotent; safe; parameters go in the URL query string.</li>
+    <li><strong>POST</strong> &mdash; submit data to be processed (create a new resource, process a form). Not idempotent.</li>
+    <li><strong>PUT</strong> &mdash; create or replace the resource at a known URL. Idempotent.</li>
+    <li><strong>DELETE</strong> &mdash; remove the resource. Idempotent.</li>
+    <li><strong>HEAD</strong> &mdash; like GET but returns only headers; check metadata without downloading body.</li>
+    <li><strong>PATCH</strong> &mdash; partially update a resource.</li>
+</ul>
+
+<p><strong>Status codes</strong> come in families:</p>
+<ul>
+    <li><strong>1xx</strong> informational (100 Continue).</li>
+    <li><strong>2xx</strong> success &mdash; <strong>200 OK</strong>, 201 Created, 204 No Content.</li>
+    <li><strong>3xx</strong> redirection &mdash; <strong>301 Moved Permanently</strong>, 302 Found, 304 Not Modified.</li>
+    <li><strong>4xx</strong> client error &mdash; 400 Bad Request, 401 Unauthorised, 403 Forbidden, <strong>404 Not Found</strong>, 429 Too Many Requests.</li>
+    <li><strong>5xx</strong> server error &mdash; <strong>500 Internal Server Error</strong>, 502 Bad Gateway, 503 Service Unavailable.</li>
+</ul>
+
+<h3>Common ports</h3>
+
+<table>
+    <thead>
+        <tr><th>Port</th><th>Protocol</th><th>Use</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>20, 21</td><td>FTP</td><td>File transfer (data, control)</td></tr>
+        <tr><td>22</td><td>SSH / SCP / SFTP</td><td>Secure shell and secure file transfer</td></tr>
+        <tr><td>23</td><td>Telnet</td><td>Unencrypted remote login (obsolete)</td></tr>
+        <tr><td>25</td><td>SMTP</td><td>Send email server-to-server</td></tr>
+        <tr><td>53</td><td>DNS</td><td>Name resolution (UDP primarily, TCP for large responses)</td></tr>
+        <tr><td>80</td><td>HTTP</td><td>Unencrypted web</td></tr>
+        <tr><td>110</td><td>POP3</td><td>Retrieve mail (download-and-delete)</td></tr>
+        <tr><td>143</td><td>IMAP</td><td>Retrieve mail (leave on server, sync across devices)</td></tr>
+        <tr><td>443</td><td>HTTPS</td><td>HTTP over TLS</td></tr>
+        <tr><td>465 / 587</td><td>SMTPS / SMTP-submission</td><td>Send mail from a client (authenticated)</td></tr>
+        <tr><td>993</td><td>IMAPS</td><td>IMAP over TLS</td></tr>
+        <tr><td>995</td><td>POP3S</td><td>POP3 over TLS</td></tr>
+    </tbody>
+</table>
+
+<h3>FTP, SMTP, POP3 vs IMAP, SSH</h3>
+
+<ul>
+    <li><strong>FTP</strong> &mdash; a two-connection protocol (control on 21, data on 20). Cleartext; has been largely replaced by SFTP (over SSH) or HTTPS file endpoints.</li>
+    <li><strong>SMTP</strong> &mdash; Simple Mail Transfer Protocol, the push protocol used between mail servers and between a client and its outgoing server.</li>
+    <li><strong>POP3</strong> &mdash; Post Office Protocol v3. Downloads mail from the server to a single client and typically deletes the server copy.</li>
+    <li><strong>IMAP</strong> &mdash; Internet Message Access Protocol. Leaves mail on the server; synchronises folder state across multiple devices. Today's dominant retrieval protocol.</li>
+    <li><strong>SSH</strong> &mdash; Secure Shell: encrypted remote login, command execution and tunnelling. Uses asymmetric keys for authentication; replaced Telnet/rlogin/rsh.</li>
+</ul>
+
+<h3>TLS handshake (simplified)</h3>
+
+<pre>TLS 1.2 HANDSHAKE (abbreviated):
+
+  Client &rarr; Server:   ClientHello
+                       - TLS version supported
+                       - Cipher suites supported
+                       - Random nonce (Client Random)
+  Server &rarr; Client:   ServerHello
+                       - Chosen cipher suite
+                       - Random nonce (Server Random)
+                       Certificate (X.509 chain)
+                       ServerHelloDone
+  Client verifies certificate against trusted CA list.
+  Client &rarr; Server:   ClientKeyExchange
+                       - pre-master secret encrypted with server's public key
+                         (RSA suite) or ECDHE ephemeral key exchange
+                       ChangeCipherSpec
+                       Finished (encrypted)
+  Server &rarr; Client:   ChangeCipherSpec
+                       Finished (encrypted)
+  Both sides now derive the same symmetric session key from
+  Client Random + Server Random + pre-master secret, and switch
+  to symmetric encryption (AES-GCM etc.) for the bulk data.</pre>
+
+<p>TLS 1.3 (2018) streamlines this into a single round-trip and removes all legacy key-exchange algorithms with known weaknesses. The principle is the same: asymmetric crypto bootstraps trust and agrees a session key; symmetric crypto does the bulk work because it is orders of magnitude faster.</p>
+
+<h2>4.9.10 The TCP/IP Protocol Stack</h2>
+
+<div class="definition">
+    <strong>TCP (Transmission Control Protocol)</strong> &mdash; a connection-oriented, reliable, ordered, byte-stream transport protocol. Guarantees delivery by sequencing bytes, acknowledging them, and retransmitting anything not acknowledged. The cost is higher overhead and head-of-line blocking.
+</div>
+
+<div class="definition">
+    <strong>UDP (User Datagram Protocol)</strong> &mdash; a connectionless, unreliable, datagram transport protocol. No handshake, no retransmission, no ordering. The payoff is low overhead and low latency &mdash; ideal for DNS queries, live audio/video, gaming, and anything built on top of QUIC.
+</div>
+
+<h3>The four layers</h3>
+
+<table>
+    <thead>
+        <tr><th>TCP/IP layer</th><th>Role</th><th>Units of data</th><th>Example protocols</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Application</td><td>End-user protocols; generates the data to send</td><td>Messages / streams</td><td>HTTP, HTTPS, DNS, SMTP, IMAP, FTP, SSH</td></tr>
+        <tr><td>Transport</td><td>End-to-end delivery; reliability (TCP) or speed (UDP); multiplexes by port number</td><td>Segments (TCP) / datagrams (UDP)</td><td>TCP, UDP, QUIC (over UDP)</td></tr>
+        <tr><td>Internet (Network)</td><td>Addressing and routing across networks</td><td>Packets</td><td>IP (v4/v6), ICMP, ARP-adjacent</td></tr>
+        <tr><td>Network Access (Link)</td><td>Framing and bit-level delivery on a single physical link</td><td>Frames / bits</td><td>Ethernet, Wi-Fi (802.11), PPP</td></tr>
+    </tbody>
+</table>
+
+<h3>Encapsulation and decapsulation</h3>
+
+<pre>SENDING DOWN THE STACK (encapsulation):
+
+    Application:   [ HTTP GET /index.html ]
+    Transport:     [ TCP hdr | HTTP GET /index.html ]
+    Internet:      [ IP hdr  | TCP hdr | HTTP GET ... ]
+    Link:          [ Eth hdr | IP hdr  | TCP hdr | HTTP GET ... | Eth CRC ]
+                                                                    &darr; bits on wire
+
+RECEIVING UP THE STACK (decapsulation):
+    Strip Ethernet &rarr; give IP packet to IP layer
+    Strip IP       &rarr; give TCP segment to TCP layer
+    Strip TCP      &rarr; give HTTP message to the browser</pre>
+
+<p>Each layer adds its own header (and optionally trailer) to the payload it receives from the layer above. The receiver performs the reverse &mdash; strip off each header and pass the enclosed unit upward. Headers at different layers use different addresses: Layer 2 uses MAC, Layer 3 uses IP, Layer 4 uses port numbers. Crucially, <strong>IP addresses survive every hop across the internet; MAC addresses are rewritten at every router.</strong></p>
+
+<h3>Brief comparison with OSI 7-layer</h3>
+
+<table>
+    <thead>
+        <tr><th>OSI layer</th><th>TCP/IP equivalent</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>7 Application, 6 Presentation, 5 Session</td><td>Application</td></tr>
+        <tr><td>4 Transport</td><td>Transport</td></tr>
+        <tr><td>3 Network</td><td>Internet</td></tr>
+        <tr><td>2 Data link, 1 Physical</td><td>Network Access / Link</td></tr>
+    </tbody>
+</table>
+
+<div class="exam-tip">
+    When describing the TCP/IP stack, always give one concrete protocol per layer and one concrete action. "At the application layer HTTP formats the request; at the transport layer TCP opens a connection with a 3-way handshake and numbers the bytes; at the internet layer IP wraps each segment in a packet with source and destination IPs; at the link layer Ethernet adds the MAC addresses of the next hop and a CRC." That is a full-mark answer because every layer has a protocol and a behaviour.
+</div>
+
+<h3>TCP 3-way handshake</h3>
+
+<pre>Client                              Server
+  |  SYN  seq=x                       |
+  |---------------------------------&gt;|
+  |  SYN-ACK  seq=y, ack=x+1          |
+  |&lt;---------------------------------|
+  |  ACK  seq=x+1, ack=y+1            |
+  |---------------------------------&gt;|
+  |  (connection established)         |
+  |  HTTP GET ...                     |
+  |---------------------------------&gt;|</pre>
+
+<p>Three segments, one round-trip. Each side learns the other's initial sequence number; from this point on every byte has a sequence number and every received byte is acknowledged cumulatively. Connection teardown is a 4-way FIN/ACK exchange (each direction closes independently).</p>
+
+<h2>4.9.12 IP Addressing</h2>
+
+<h3>IPv4</h3>
+
+<p>An IPv4 address is 32 bits, written as four dotted decimal octets: <code>192.168.1.42</code>. That gives 2<sup>32</sup> &asymp; 4.3 billion addresses &mdash; fewer than there are humans, and the reason IPv4 exhaustion is a recurring theme. The public-IPv4 free-pool was formally exhausted by IANA in 2011; RIRs have since been allocating from progressively smaller reserves.</p>
+
+<h3>Classful addressing (historical)</h3>
+
+<p>Originally IPs were split into fixed classes: Class A (8-bit network, 24-bit host; 126 networks, 16M hosts each), Class B (16/16; 16k networks, 65k hosts), Class C (24/8; 2M networks, 254 hosts). Wasteful &mdash; a Class A is absurdly big, a Class C usually too small &mdash; and abandoned in 1993 in favour of CIDR.</p>
+
+<h3>CIDR &mdash; Classless Inter-Domain Routing</h3>
+
+<div class="definition">
+    <strong>CIDR notation</strong> &mdash; an IP prefix followed by a slash and the number of bits that form the network portion. <code>192.168.1.0/24</code> means the first 24 bits are network; the remaining 8 bits are host, giving 2<sup>8</sup> = 256 addresses (254 usable, after subtracting network and broadcast addresses).
+</div>
+
+<div class="definition">
+    <strong>Subnet mask</strong> &mdash; a 32-bit value with 1s in the network portion and 0s in the host portion; the ANDing of an IP with the mask yields the network address. <code>/24</code> is equivalent to <code>255.255.255.0</code>; <code>/26</code> is <code>255.255.255.192</code>.
+</div>
+
+<h3>Worked example &mdash; how many hosts on 192.168.1.0/24 ?</h3>
+
+<pre>/24 means 24 network bits, 32 - 24 = 8 host bits
+Total addresses   = 2^8       = 256
+Usable hosts      = 256 - 2   = 254   (minus network and broadcast)
+Network address   = 192.168.1.0
+Broadcast address = 192.168.1.255
+First host        = 192.168.1.1
+Last host         = 192.168.1.254</pre>
+
+<h3>Worked example &mdash; split 192.168.1.0/24 into /26 subnets</h3>
+
+<pre>Borrow 26 - 24 = 2 bits from the host portion.
+Number of subnets = 2^2 = 4.
+Remaining host bits = 32 - 26 = 6  &rarr;  2^6 = 64 addresses each,
+   of which 62 are usable.
+
+Subnet 0:  192.168.1.0/26     (hosts .1 - .62,    broadcast .63)
+Subnet 1:  192.168.1.64/26    (hosts .65 - .126,  broadcast .127)
+Subnet 2:  192.168.1.128/26   (hosts .129 - .190, broadcast .191)
+Subnet 3:  192.168.1.192/26   (hosts .193 - .254, broadcast .255)</pre>
+
+<h3>IP to binary example</h3>
+
+<pre>192 . 168 . 1 . 42
+ = 11000000 . 10101000 . 00000001 . 00101010
+
+Mask /26 = 11111111 . 11111111 . 11111111 . 11000000
+AND      = 11000000 . 10101000 . 00000001 . 00000000
+         = 192.168.1.0    &larr; network address of its /26 subnet</pre>
+
+<h3>Subnet size reference</h3>
+
+<table>
+    <thead>
+        <tr><th>CIDR</th><th>Mask</th><th>Addresses</th><th>Usable hosts</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>/24</td><td>255.255.255.0</td><td>256</td><td>254</td></tr>
+        <tr><td>/25</td><td>255.255.255.128</td><td>128</td><td>126</td></tr>
+        <tr><td>/26</td><td>255.255.255.192</td><td>64</td><td>62</td></tr>
+        <tr><td>/27</td><td>255.255.255.224</td><td>32</td><td>30</td></tr>
+        <tr><td>/28</td><td>255.255.255.240</td><td>16</td><td>14</td></tr>
+        <tr><td>/29</td><td>255.255.255.248</td><td>8</td><td>6</td></tr>
+        <tr><td>/30</td><td>255.255.255.252</td><td>4</td><td>2</td></tr>
+    </tbody>
+</table>
+
+<div class="exam-tip">
+    The single most common CIDR mistake is forgetting to subtract two (network + broadcast) for usable hosts. A /26 has 64 addresses but only 62 hosts. Another trap: a /31 has 4 addresses but only 2 are usable under RFC 1918; RFC 3021 allows point-to-point use of all 2 addresses on a /31. In exam conditions, always state the formula "2<sup>host bits</sup> &minus; 2" in your working.
+</div>
+
+<h3>Public vs private (RFC 1918)</h3>
+
+<table>
+    <thead>
+        <tr><th>Block</th><th>CIDR</th><th>Typical use</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>10.0.0.0 &ndash; 10.255.255.255</td><td>10.0.0.0/8</td><td>Large enterprise LANs</td></tr>
+        <tr><td>172.16.0.0 &ndash; 172.31.255.255</td><td>172.16.0.0/12</td><td>Medium enterprise LANs</td></tr>
+        <tr><td>192.168.0.0 &ndash; 192.168.255.255</td><td>192.168.0.0/16</td><td>Home routers, small offices</td></tr>
+        <tr><td>127.0.0.0/8</td><td>Loopback (127.0.0.1 = localhost)</td><td>Local machine only</td></tr>
+        <tr><td>169.254.0.0/16</td><td>Link-local (APIPA)</td><td>Auto-assigned when DHCP fails</td></tr>
+    </tbody>
+</table>
+
+<div class="definition">
+    <strong>NAT (Network Address Translation)</strong> &mdash; the technique by which a router rewrites the source IP (and port) of outbound packets to its own public IP, and undoes the mapping on return traffic. This allows many devices on a private-IP LAN to share a single public IPv4 address. NAT delayed IPv4 exhaustion by decades but breaks end-to-end connectivity: inbound connections to a host behind NAT require port forwarding or hole punching.
+</div>
+
+<h3>IPv4 exhaustion and IPv6</h3>
+
+<p>IPv6 addresses are 128 bits &mdash; 2<sup>128</sup> &asymp; 3.4 &times; 10<sup>38</sup>, enough for roughly 5 &times; 10<sup>28</sup> addresses per human on Earth. Written as eight 16-bit hex groups separated by colons, with double colons compressing runs of zeros:</p>
+
+<pre>2001:0db8:85a3:0000:0000:8a2e:0370:7334
+&rarr; 2001:db8:85a3::8a2e:370:7334      (canonical shortened form)
+
+fe80::/10   link-local
+fc00::/7    unique-local (private, analogous to RFC 1918)
+2000::/3    global unicast
+::1         loopback (analogous to 127.0.0.1)</pre>
+
+<table>
+    <thead>
+        <tr><th>Property</th><th>IPv4</th><th>IPv6</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Address length</td><td>32 bits</td><td>128 bits</td></tr>
+        <tr><td>Notation</td><td>Dotted decimal</td><td>Colon-separated hex</td></tr>
+        <tr><td>Address space</td><td>~4.3 billion</td><td>~3.4 &times; 10<sup>38</sup></td></tr>
+        <tr><td>Header</td><td>20 bytes minimum, variable</td><td>40 bytes fixed, extension headers</td></tr>
+        <tr><td>Broadcast</td><td>Yes</td><td>Replaced by multicast</td></tr>
+        <tr><td>NAT</td><td>Ubiquitous</td><td>Discouraged &mdash; global addressing</td></tr>
+        <tr><td>Checksum in header</td><td>Yes</td><td>Removed &mdash; trust lower/upper layers</td></tr>
+        <tr><td>Auto-configuration</td><td>DHCP</td><td>SLAAC (Stateless Address Autoconfiguration) + optional DHCPv6</td></tr>
+    </tbody>
+</table>
+
+<h2>4.9.14 Web Technologies</h2>
+
+<h3>Client-side: HTML, CSS, JavaScript</h3>
+
+<ul>
+    <li><strong>HTML</strong> &mdash; HyperText Markup Language; declarative structure of a page (headings, paragraphs, forms, tables). The browser's HTML parser builds the DOM (Document Object Model).</li>
+    <li><strong>CSS</strong> &mdash; Cascading Style Sheets; declarative presentation (colours, layout, typography). A rule's specificity + source order + <code>!important</code> determine who wins. The CSS parser builds the CSSOM, which is merged with the DOM into the render tree.</li>
+    <li><strong>JavaScript</strong> &mdash; the web's imperative programming language. Runs in every browser's JS engine (V8, SpiderMonkey, JavaScriptCore), can mutate the DOM, make asynchronous HTTP requests (<code>fetch</code>, XHR), and manage state.</li>
+</ul>
+
+<h3>Server-side scripting</h3>
+
+<p>Server-side code renders HTML or returns JSON in response to a request. Traditional stacks: PHP (WordPress, early Facebook), Node.js (JavaScript on the server), Python (Django, Flask, FastAPI), Ruby on Rails, Java (Spring), C# (.NET). Modern trend is for the server to expose a JSON API and the browser to render client-side, or for the framework (Next.js, Remix) to do hybrid server-side rendering.</p>
+
+<h3>REST</h3>
+
+<p><strong>REST</strong> (Representational State Transfer) is an architectural style for HTTP APIs: resources are identified by URLs; operations map to HTTP methods; state is transferred as representations (typically JSON). A RESTful endpoint: <code>GET /api/users/42</code> returns user 42; <code>DELETE /api/users/42</code> removes them; <code>POST /api/users</code> creates a new one. REST dominated APIs through the 2010s; alternatives such as GraphQL and gRPC have risen for specific cases.</p>
+
+<h3>AJAX</h3>
+
+<p>AJAX (Asynchronous JavaScript And XML &mdash; now more often JSON than XML) is the technique of updating a web page without a full reload: the page's JavaScript issues a background HTTP request, receives data, and patches the DOM. Underpinned the Web 2.0 revolution (Gmail 2004, Google Maps 2005); modern <code>fetch()</code> is AJAX with a nicer API.</p>
+
+<h2>4.9.15 MAC Addresses</h2>
+
+<div class="definition">
+    <strong>MAC address</strong> &mdash; a 48-bit Media Access Control address burned into a network interface at manufacture. Written as six colon- or hyphen-separated hex bytes: <code>00:1A:2B:3C:4D:5E</code>. The first 3 bytes (OUI &mdash; Organisationally Unique Identifier) identify the manufacturer (Cisco, Apple, Dell); the last 3 bytes uniquely identify the interface from that manufacturer, intended to be globally unique.
+</div>
+
+<p>MAC addresses operate at Layer 2 (the data-link layer). A switch's core job is to maintain a table of <em>which MAC is on which port</em> and forward each frame only to the port where the destination MAC lives. If the MAC is unknown the switch floods the frame out of every port except the one it came in on &mdash; and learns the sender's MAC from the source field as it goes.</p>
+
+<p><strong>MAC vs IP &mdash; different layers, different jobs:</strong></p>
+<table>
+    <thead>
+        <tr><th>Aspect</th><th>MAC address</th><th>IP address</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Layer</td><td>2 (Data-link)</td><td>3 (Network)</td></tr>
+        <tr><td>Length</td><td>48 bits</td><td>32 (v4) / 128 (v6)</td></tr>
+        <tr><td>Scope</td><td>One local network segment</td><td>Globally routable</td></tr>
+        <tr><td>Assigned by</td><td>Hardware manufacturer (IEEE OUI)</td><td>Admin / DHCP / ISP</td></tr>
+        <tr><td>Changes when device moves networks?</td><td>No</td><td>Yes</td></tr>
+        <tr><td>Used by</td><td>Switches</td><td>Routers</td></tr>
+    </tbody>
+</table>
+
+<p><strong>ARP</strong> (Address Resolution Protocol) glues the two together: when a host wants to send an IP packet on its local network, it must find the MAC of the next hop. It broadcasts "who has IP X?"; the owner replies with its MAC.</p>
+
+<div class="exam-tip">
+    A classic trick question: "A packet leaves London for Tokyo. What happens to the addresses?" The source and destination IP stay the same end-to-end (unless NAT intervenes). The source and destination MAC are rewritten at every single router hop. Stating that distinction is often worth 2 marks on its own.
+</div>
+
+<h2>4.9.16 Security</h2>
+
+<h3>Firewalls</h3>
+
+<div class="definition">
+    <strong>Firewall</strong> &mdash; a device or software that inspects network traffic and permits or denies it according to configured rules. Sits at a boundary between trusted and untrusted networks.
+</div>
+
+<table>
+    <thead>
+        <tr><th>Type</th><th>How it works</th><th>Strength</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Packet-filtering (stateless)</td><td>Inspects each packet independently against rules on IP, port and protocol.</td><td>Fast; no memory; blind to context (e.g. can't tell a SYN-ACK response from an unsolicited one).</td></tr>
+        <tr><td>Stateful inspection</td><td>Tracks active connections in a state table; allows return traffic only for flows that were explicitly initiated.</td><td>Dominant modern design.</td></tr>
+        <tr><td>Application-level gateway (proxy)</td><td>Terminates the connection, inspects at the application layer (HTTP, SMTP), then relays.</td><td>Deep visibility; can block on URL, user, content; slower and protocol-specific.</td></tr>
+        <tr><td>Next-Generation Firewall (NGFW)</td><td>Combines stateful + deep packet inspection + IDS + application identification.</td><td>What enterprises buy today.</td></tr>
+    </tbody>
+</table>
+
+<h3>Intrusion detection (IDS) and prevention (IPS)</h3>
+
+<p>An IDS passively monitors traffic and raises alerts on suspicious patterns; an IPS sits inline and can block. Signature-based detection matches traffic against a database of known attack patterns (fast, misses novel attacks). Anomaly-based detection builds a model of normal behaviour and flags deviations (catches novel attacks, more false positives). Snort and Suricata are the open-source canon.</p>
+
+<h3>VPNs</h3>
+
+<div class="definition">
+    <strong>VPN (Virtual Private Network)</strong> &mdash; a secure, encrypted tunnel over an untrusted network that makes two endpoints appear to be on the same private network. Implementations include IPsec (site-to-site), OpenVPN, WireGuard, SSL/TLS VPNs. Purposes: remote-access to a corporate network, protecting traffic on hostile Wi-Fi, bypassing geographic content restrictions.
+</div>
+
+<p>A VPN <strong>tunnels</strong> one protocol inside another (encrypted) protocol &mdash; typically IP packets inside ESP (IPsec) or UDP (WireGuard) &mdash; and the payload is encrypted with a symmetric key derived from a Diffie-Hellman exchange. To the outside world only the outer tunnel endpoints and encrypted bytes are visible; the inner IP addresses, ports and payloads are hidden.</p>
+
+<h3>HTTPS and TLS</h3>
+
+<div class="definition">
+    <strong>TLS (Transport Layer Security)</strong> &mdash; the cryptographic protocol that provides confidentiality, integrity and authentication for data transmitted over a TCP connection. Successor to SSL (SSL 3.0 is deprecated). TLS 1.2 is widely deployed; TLS 1.3 (2018) is the modern default. HTTPS is simply HTTP wrapped in TLS.
+</div>
+
+<h3>Symmetric vs asymmetric cryptography</h3>
+
+<ul>
+    <li><strong>Symmetric</strong> &mdash; one shared secret key encrypts and decrypts. Fast (AES at gigabytes per second on modern CPUs with AES-NI), but the key-distribution problem is severe: how do you share a secret before you have a secure channel?</li>
+    <li><strong>Asymmetric (public-key)</strong> &mdash; each party has a key pair (public + private). Data encrypted with the public key can only be decrypted with the private key; a signature made with the private key can be verified with the public key. Solves key distribution at the cost of being ~1000&times; slower than symmetric.</li>
+</ul>
+
+<p>Real systems compose them: use asymmetric crypto (RSA, ECDHE) to <em>exchange</em> a session key, then use symmetric crypto (AES) for the bulk of the conversation. This is what TLS does.</p>
+
+<h3>Diffie-Hellman key exchange (intro)</h3>
+
+<p>Diffie-Hellman allows two parties to agree on a shared secret over an insecure channel without ever transmitting the secret. They publicly agree on a prime <em>p</em> and generator <em>g</em>. Alice picks a private <em>a</em>, sends <em>g<sup>a</sup></em> mod <em>p</em>; Bob picks a private <em>b</em>, sends <em>g<sup>b</sup></em> mod <em>p</em>. Both compute <em>g<sup>ab</sup></em> mod <em>p</em> &mdash; the shared secret. An eavesdropper who sees <em>g<sup>a</sup></em> and <em>g<sup>b</sup></em> cannot feasibly recover <em>a</em> or <em>b</em> (discrete-log hardness).</p>
+
+<h3>Digital certificates and PKI</h3>
+
+<p>Public-key crypto answers "how do we agree a session key?" but not "is this actually Amazon's public key or an attacker's?". That is answered by <strong>PKI (Public-Key Infrastructure)</strong>:</p>
+
+<ul>
+    <li>A <strong>digital certificate</strong> (X.509 format) binds a public key to a domain name and is <em>signed by a Certificate Authority (CA)</em>.</li>
+    <li>A <strong>CA</strong> is a trusted third party (Let's Encrypt, DigiCert, GlobalSign). Browsers and operating systems ship with a built-in list of trusted root CAs.</li>
+    <li>A <strong>chain of trust</strong>: a website's certificate is usually signed by an intermediate CA, which is signed by a root CA, which is in the browser's trust store. The browser verifies every link in the chain.</li>
+    <li>Revocation: CRLs (Certificate Revocation Lists) and OCSP allow a CA to revoke a compromised cert before its expiry.</li>
+</ul>
+
+<p>This is why the green padlock means something: the browser has cryptographically confirmed that the TLS peer possesses the private key corresponding to a certificate signed by a CA the browser trusts, for the domain shown in the URL bar.</p>
+
+<h2>4.9.17 Wireless Networking Security</h2>
+
+<table>
+    <thead>
+        <tr><th>Standard</th><th>Year</th><th>Encryption</th><th>Status</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>WEP</td><td>1997</td><td>RC4 with 40/104-bit key + 24-bit IV</td><td>Broken &mdash; recoverable key in minutes; never use.</td></tr>
+        <tr><td>WPA</td><td>2003</td><td>TKIP (RC4 wrapper)</td><td>Transitional. Also broken; deprecated.</td></tr>
+        <tr><td>WPA2</td><td>2004</td><td>AES-CCMP (128-bit)</td><td>Still widely deployed. KRACK attack (2017) against the 4-way handshake was patched.</td></tr>
+        <tr><td>WPA3</td><td>2018</td><td>SAE (Simultaneous Authentication of Equals) + AES-GCMP</td><td>Current standard. SAE resists offline dictionary attacks that plagued WPA2-PSK.</td></tr>
+    </tbody>
+</table>
+
+<p><strong>SSID (Service Set Identifier)</strong> &mdash; the network name broadcast by the AP. Hiding the SSID is security theatre; clients actively probe for named networks and announce them. <strong>MAC filtering</strong> &mdash; allow/deny list of MACs permitted to associate. Trivially bypassed because MAC addresses are not authenticated and can be spoofed by software.</p>
+
+<p>A Wi-Fi frame carries more addresses than Ethernet: typically four MAC fields (source, destination, BSSID, optionally next-hop in mesh mode), plus 802.11-specific framing (frame-control, duration, sequence-control) and an FCS. This complexity is why Wi-Fi attacks &mdash; deauth floods, evil-twin APs, KRACK &mdash; have more surface area than wired attacks.</p>
+
+<h2>4.9.18 Thin-Client vs Thick-Client (revisited)</h2>
+
+<p>Beyond the basic split in 4.9.8, you should know the <strong>economic drivers</strong>. A school running 200 Chromebooks pushes all state to Google and can replace a Chromebook in minutes &mdash; the thin-client case. A video-editing studio cannot stream 4K raw footage over the internet every frame and must keep local horsepower &mdash; the thick-client case. The correct answer in an exam is almost always <em>"it depends on the workload and the network"</em>, with a sentence of justification drawn from bandwidth, latency, data sensitivity, and update-management costs.</p>
+
+<h2>4.9.19 WebSockets, Streaming, Caching</h2>
+
+<div class="definition">
+    <strong>WebSocket</strong> &mdash; a bidirectional, full-duplex communication channel that runs over a single long-lived TCP connection, established by an HTTP Upgrade handshake. Unlike plain HTTP, either side can push data at any time without the other polling. Used for chat, collaborative editing (Google Docs), live sports scoreboards, trading dashboards.
+</div>
+
+<pre>WEBSOCKET HANDSHAKE:
+  Client &rarr; Server:  GET /chat HTTP/1.1
+                      Host: example.com
+                      Upgrade: websocket
+                      Connection: Upgrade
+                      Sec-WebSocket-Key: dGhlIHNhbXBsZSBub25jZQ==
+                      Sec-WebSocket-Version: 13
+  Server &rarr; Client:  HTTP/1.1 101 Switching Protocols
+                      Upgrade: websocket
+                      Connection: Upgrade
+                      Sec-WebSocket-Accept: s3pPLMBiTxaQ9kYGzzhZRbK+xOo=
+  (connection now speaks WebSocket frames rather than HTTP)</pre>
+
+<p><strong>Streaming</strong> &mdash; video services (YouTube, Netflix) use HTTP-based adaptive streaming (HLS, DASH): the video is chopped into 2&ndash;10 second segments at several bitrates; the client fetches segments over HTTP and switches bitrate based on measured throughput. Live streaming (Twitch) is the same technique with short buffers. Under the hood this is still HTTP requests &mdash; which lets CDNs cache segments trivially.</p>
+
+<p><strong>Caching</strong> happens at many layers: browser cache (<code>Cache-Control: max-age=3600</code>), CDN edge cache (shared across users in a region), reverse proxy at the origin, and within the origin's database. Cache invalidation is, as the joke goes, one of the two hard problems in computer science.</p>
+
+<h2>End-to-End Worked Example &mdash; Visiting <code>https://www.example.com</code></h2>
+
+<div class="case-study">
+    <strong>What actually happens when you press Enter on <code>https://www.example.com</code>.</strong>
+    <br><br>
+    <strong>1. URL parse.</strong> Browser extracts scheme=<code>https</code>, host=<code>www.example.com</code>, port=443 (default), path=<code>/</code>.
+    <br><br>
+    <strong>2. DNS lookup.</strong> OS stub resolver asks the configured recursive resolver for an A/AAAA record. If cached, one round-trip. If not, recursive walk root &rarr; <code>.com</code> &rarr; example.com's authoritative NS, eventually returning <code>93.184.216.34</code>. TTL governs re-lookup.
+    <br><br>
+    <strong>3. TCP 3-way handshake.</strong> Browser opens a TCP connection to 93.184.216.34 port 443: SYN &rarr; SYN-ACK &rarr; ACK. At the internet layer each packet is wrapped in an IP header; at the link layer each IP packet is wrapped in an Ethernet/Wi-Fi frame whose destination MAC is the default gateway (found via ARP) &mdash; MACs are rewritten at every hop across the internet, source and destination IPs are not.
+    <br><br>
+    <strong>4. TLS handshake.</strong> ClientHello (with supported cipher suites and SNI carrying <code>www.example.com</code> so a shared-IP server knows which certificate to present) &rarr; ServerHello + Certificate &rarr; key agreement (ECDHE) &rarr; Finished. Browser verifies certificate chain against its trusted CA roots and that the domain in the cert matches <code>www.example.com</code>. Session keys derived.
+    <br><br>
+    <strong>5. HTTP request.</strong> Inside the TLS tunnel: <code>GET / HTTP/1.1</code> with Host, User-Agent, Accept, Cookie headers.
+    <br><br>
+    <strong>6. Server response.</strong> <code>HTTP/1.1 200 OK</code> with HTML body. Browser parses HTML, builds the DOM, fetches CSS/JS/images (often from CDN origins, which repeats steps 2&ndash;5 for each new origin), builds the render tree, paints.
+    <br><br>
+    <strong>7. Connection reuse / close.</strong> HTTP/1.1 keep-alive or HTTP/2 multiplexing reuses the TCP connection for further requests; eventually TCP FIN/ACK tears it down.
+    <br><br>
+    In one keystroke you have used DNS, TCP, TLS, HTTP, HTML, CSS, JavaScript, ARP, Ethernet/Wi-Fi, and IP routing across a dozen autonomous systems. Every layer of the stack in 300 milliseconds.
+</div>
+
+<h2>Summary &mdash; What to Memorise for 4.9</h2>
+
+<ul>
+    <li><strong>Layers.</strong> TCP/IP: Application &mdash; Transport &mdash; Internet &mdash; Link. One protocol and one action per layer.</li>
+    <li><strong>Encapsulation.</strong> Every layer wraps the one above it with its own header; destination MAC is rewritten at every router, destination IP survives end-to-end.</li>
+    <li><strong>Switching.</strong> Packet-switched = datagrams share links statistically; circuit-switched = reserved end-to-end; the internet chose the former.</li>
+    <li><strong>CIDR arithmetic.</strong> Usable hosts = 2<sup>32&minus;prefix</sup> &minus; 2. Practise splitting /24 into /26, /27, /28.</li>
+    <li><strong>DNS.</strong> Recursive resolver walks root &rarr; TLD &rarr; authoritative; caches with TTL; record types A/AAAA/MX/CNAME/NS/TXT.</li>
+    <li><strong>TCP 3-way handshake</strong> SYN / SYN-ACK / ACK; reliability via sequence numbers and ACKs; UDP has none of this.</li>
+    <li><strong>TLS.</strong> Asymmetric crypto bootstraps a symmetric session key; certificate + CA chain binds the key to the domain.</li>
+    <li><strong>Wi-Fi security.</strong> WEP broken; WPA broken; WPA2 with strong passphrase is acceptable; WPA3 is the modern standard.</li>
+    <li><strong>Ports.</strong> 22 SSH, 25 SMTP, 53 DNS, 80 HTTP, 110 POP3, 143 IMAP, 443 HTTPS.</li>
+    <li><strong>IPv4 vs IPv6.</strong> 32 vs 128 bits; dotted decimal vs colon hex; NAT vs native; exhaustion is the "why" of IPv6.</li>
+</ul>
+
+<p>Topic 4.9 is the one place in the specification where breadth beats any single deep insight. A candidate who can draw the TCP/IP stack on demand, walk a packet from browser to web server and back, and compute a subnet calculation without panicking, has 80% of the available marks already locked in. The remaining 20% is the application of protocols you have never heard of before, to scenarios you have never seen &mdash; but the layers are always the same, and that is what to rehearse.</p>
+
+</div>
+</body>
+</html>

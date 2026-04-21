@@ -304,6 +304,7 @@ const DIAG_PAGE = {
   'Computer Science|OCR':         { url: 'diagnostics/cs-ocr-gcse-diagnostic.html',      total: 11, first: '1.1' },
   'Computer Science|OCR|alevel':  { url: 'diagnostics/cs-ocr-alevel-diagnostic.html',    total: 8,  first: '1.1' },
   'Computer Science|AQA|gcse':    { url: 'diagnostics/cs-aqa-gcse-diagnostic.html',      total: 8,  first: '3.1' },
+  'Computer Science|AQA|alevel':  { url: 'diagnostics/cs-aqa-alevel-diagnostic.html',    total: 10, first: '4.1' },
   'Physics|Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13, first: 'T1'  },
   'Physics|AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8,  first: '3.1' },
   'Physics|OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
@@ -327,6 +328,7 @@ const DIAG_PAGE = {
   'Geography|Eduqas|gcse':        { url: 'diagnostics/geography-eduqas-gcse-diagnostic.html', total: 12, first: '1.1' },
   'Mathematics|AQA':              { url: 'diagnostics/maths-aqa-diagnostic.html',             total: 17, first: '1.1' },
   'Mathematics|OCR|gcse':         { url: 'diagnostics/maths-ocr-gcse-diagnostic.html',        total: 19, first: '1.1' },
+  'Mathematics|OCR|alevel':       { url: 'diagnostics/maths-ocr-alevel-diagnostic.html',      total: 12, first: '1.1' },
   'Mathematics|Edexcel':          { url: 'diagnostics/maths-edexcel-diagnostic.html',         total: 36, first: 'P1'  },
   'Further Mathematics|AQA':      { url: 'diagnostics/further-maths-aqa-diagnostic.html',     total: 9,  first: '1.1' },
   'Further Mathematics|Edexcel':  { url: 'diagnostics/further-maths-edexcel-diagnostic.html', total: 17, first: 'CP1.1' },
@@ -364,6 +366,21 @@ const NOTES_AVAILABLE = {
       { num: '2.1', name: 'Elements of Computational Thinking' },
       { num: '2.2', name: 'Problem Solving and Programming' },
       { num: '2.3', name: 'Algorithms' },
+    ]
+  },
+  'Computer Science|AQA|alevel': {
+    url: 'subject-notes/cs-aqa-alevel-notes.html',
+    topics: [
+      { num: '4.1', name: 'Fundamentals of Programming' },
+      { num: '4.2', name: 'Fundamentals of Data Structures' },
+      { num: '4.3', name: 'Fundamentals of Algorithms' },
+      { num: '4.4', name: 'Theory of Computation' },
+      { num: '4.5', name: 'Fundamentals of Data Representation' },
+      { num: '4.6', name: 'Fundamentals of Computer Systems' },
+      { num: '4.7', name: 'Computer Organisation & Architecture' },
+      { num: '4.8', name: 'Consequences of Uses of Computing' },
+      { num: '4.9', name: 'Communication & Networking' },
+      { num: '4.10', name: 'Fundamentals of Databases' },
     ]
   },
   'Computer Science|AQA|gcse': {
@@ -603,6 +620,23 @@ const NOTES_AVAILABLE = {
       { num: '2.4', name: 'Resource Security' },
       { num: '3.1', name: 'Fieldwork & Investigation' },
     ],
+  },
+  'Mathematics|OCR|alevel': {
+    url: 'subject-notes/maths-ocr-alevel-notes.html',
+    topics: [
+      { num: '1.1', name: 'Proof' },
+      { num: '1.2', name: 'Algebra & Functions' },
+      { num: '1.3', name: 'Coordinate Geometry' },
+      { num: '1.4', name: 'Sequences & Series' },
+      { num: '1.5', name: 'Trigonometry' },
+      { num: '1.6', name: 'Exponentials & Logarithms' },
+      { num: '1.7', name: 'Differentiation' },
+      { num: '1.8', name: 'Integration' },
+      { num: '1.9', name: 'Numerical Methods' },
+      { num: '1.10', name: 'Vectors' },
+      { num: '2.1', name: 'Statistics' },
+      { num: '2.2', name: 'Mechanics' },
+    ]
   },
   'Mathematics|OCR|gcse': {
     url: 'subject-notes/maths-ocr-gcse-notes.html',

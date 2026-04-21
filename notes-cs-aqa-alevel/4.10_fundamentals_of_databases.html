@@ -1,0 +1,769 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.10 &mdash; Fundamentals of Databases</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .case-study { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .case-study::before { content: "Case Study: "; font-weight: 700; color: #5b21b6; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .case-study { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.10 Fundamentals of Databases</h1>
+<p class="spec-ref">Computer Science &mdash; AQA A-Level (7517) &mdash; Paper 2: Written Theory</p>
+
+<p>Topic 4.10 is where the abstract theory of data structures meets the messy practical reality of storing information that real organisations depend on. A database is not just "a spreadsheet with rules"; it is a carefully engineered system whose design decisions &mdash; what entities to model, which attributes to make keys, how to break tables apart to remove redundancy, how to protect the data from concurrent access and from malicious users &mdash; ripple through every application built on top of it. Examiners reward candidates who treat database design as a sequence of deliberate choices with justifications: why this key, why this normal form, why this join, why this isolation level. Memorising SQL syntax alone is not enough; you must be able to argue design.</p>
+
+<div class="exam-tip">
+    Many 8&ndash;12 mark database questions follow a predictable structure: given a denormalised scenario, identify problems (redundancy, anomalies), normalise to 3NF showing the intermediate 1NF and 2NF tables, draw the ER diagram, and write SQL queries. Practise the full pipeline end-to-end &mdash; examiners award method marks at each stage even if a later stage goes wrong.
+</div>
+
+<h2>4.10.1 Conceptual Data Model &mdash; Entity Relationship Modelling</h2>
+
+<p>Before any tables are created, a database designer builds a <strong>conceptual data model</strong>: a technology-neutral picture of what entities exist in the problem domain, what attributes each has, and how they relate. The tool for this is the <strong>Entity Relationship Diagram (ERD)</strong>.</p>
+
+<div class="definition">
+    <strong>Entity</strong> &mdash; a thing of interest in the problem domain about which data will be stored. Entities become tables in the relational implementation. Examples: <em>Student</em>, <em>Course</em>, <em>Book</em>, <em>Order</em>.
+</div>
+
+<div class="definition">
+    <strong>Attribute</strong> &mdash; a property or characteristic of an entity. Attributes become columns of the table. Examples: a Student entity has attributes <em>StudentID</em>, <em>Surname</em>, <em>Forename</em>, <em>DateOfBirth</em>.
+</div>
+
+<div class="definition">
+    <strong>Relationship</strong> &mdash; an association between two (or occasionally more) entities that captures some real-world fact. Examples: a Student <em>enrols on</em> a Course; a Customer <em>places</em> an Order.
+</div>
+
+<h3>Cardinality</h3>
+
+<p>Every relationship has a <strong>cardinality</strong> (or degree) describing how many instances of one entity can relate to how many instances of the other. The three A-Level cases are:</p>
+
+<ul>
+    <li><strong>One-to-one (1:1)</strong> &mdash; each A relates to at most one B and vice versa. Example: a Person has one Passport; each Passport belongs to one Person.</li>
+    <li><strong>One-to-many (1:M)</strong> &mdash; each A relates to many Bs, but each B relates to exactly one A. Example: a Customer places many Orders; each Order belongs to exactly one Customer.</li>
+    <li><strong>Many-to-many (M:M)</strong> &mdash; each A relates to many Bs and each B relates to many As. Example: a Student takes many Courses; a Course is taken by many Students.</li>
+</ul>
+
+<h3>Notation &mdash; Chen vs crow's foot</h3>
+
+<p>Two notations dominate. <strong>Chen notation</strong> (1976) draws entities as rectangles, attributes as ellipses hanging off the rectangle, and relationships as a diamond on the line between entities, with cardinality labels (1, M, N) at each end. It is verbose but expressive and common in textbooks. <strong>Crow's foot notation</strong> (UK A-Level default) omits the diamond and annotates each end of the line with a symbol: a single bar means "exactly one", a circle means "zero", and a three-pronged "crow's foot" means "many". You read each end separately: a line with a crow's foot at the Course end and a single bar at the Enrolment end reads "one Enrolment relates to many Courses" &mdash; except of course you read it the other way for the relationship to make sense.</p>
+
+<h3>Worked ERD &mdash; Student, Course, Enrolment</h3>
+
+<p>A student can enrol on many courses and a course has many students &mdash; a classic M:M. Relational databases cannot implement M:M directly because a single foreign key column cannot hold a list. The resolution is a <strong>link entity</strong> (also called an associative or junction entity) that sits between the two and splits the relationship into two 1:M relationships.</p>
+
+<pre>
+   STUDENT  ----&lt;  ENROLMENT  &gt;----  COURSE
+   (1)         (M)     (M)            (1)
+
+   Student(StudentID PK, Surname, Forename, DateOfBirth)
+   Course (CourseID  PK, Title, Level, Credits)
+   Enrolment(StudentID FK, CourseID FK, EnrolDate, Grade)
+            -- composite PK = (StudentID, CourseID)
+</pre>
+
+<p>The link entity Enrolment has a <strong>composite primary key</strong> made of the two foreign keys to Student and Course. It can also carry its own attributes that describe the relationship itself (the enrolment date, the grade eventually awarded) &mdash; facts that belong to neither Student nor Course alone.</p>
+
+<h3>Worked ERD &mdash; Customer, Order, Product</h3>
+
+<pre>
+   CUSTOMER  ----&lt;  ORDER  ----&lt;  ORDERLINE  &gt;----  PRODUCT
+      (1)      (M)   (1)    (M)     (M)        (1)
+
+   Customer  (CustomerID PK, Name, Email, Address)
+   Order     (OrderID    PK, OrderDate, CustomerID FK)
+   OrderLine (OrderID FK, ProductID FK, Quantity, PriceAtSale)
+   Product   (ProductID  PK, Description, UnitPrice, StockLevel)
+</pre>
+
+<p>A Customer places many Orders (1:M). An Order contains many Products and a Product appears on many Orders, so OrderLine resolves that M:M. Note that PriceAtSale is stored on OrderLine rather than derived from Product.UnitPrice &mdash; because prices change over time and a historical invoice must reflect the price charged that day, not today's.</p>
+
+<div class="exam-tip">
+    When you see "many-to-many" in an exam scenario, resolving it with a link entity is nearly always expected. State it explicitly: "The M:M between Student and Course is resolved by a link entity Enrolment, whose composite primary key (StudentID, CourseID) combines the two foreign keys." That sentence alone often scores 3 marks.
+</div>
+
+<h2>4.10.2 Relational Databases</h2>
+
+<p>The relational model, invented by E. F. Codd in 1970, is the mathematical foundation of every mainstream SQL database (Oracle, SQL Server, PostgreSQL, MySQL, SQLite).</p>
+
+<div class="definition">
+    <strong>Relation</strong> &mdash; a two-dimensional table. Each <strong>tuple</strong> (row) represents one instance of the entity; each <strong>attribute</strong> (column) represents one property. The <strong>domain</strong> of an attribute is the set of permitted values (e.g. the domain of Age might be integers 0&ndash;150).
+</div>
+
+<h3>Keys</h3>
+
+<div class="definition">
+    <strong>Primary key</strong> &mdash; an attribute (or minimal set of attributes) whose value uniquely identifies each tuple in the relation. Every relation must have exactly one. Cannot be NULL (entity integrity).
+</div>
+
+<div class="definition">
+    <strong>Foreign key</strong> &mdash; an attribute in one relation whose values must match the primary key of another (or the same) relation. Enforces referential integrity: you cannot reference a row that does not exist.
+</div>
+
+<div class="definition">
+    <strong>Composite key</strong> &mdash; a primary key made up of two or more attributes because no single attribute is unique on its own. Typically found on link entities: (StudentID, CourseID) together identify an Enrolment, but neither alone does.
+</div>
+
+<ul>
+    <li><strong>Candidate key</strong> &mdash; any attribute (or minimal set) that <em>could</em> serve as primary key. A relation may have several candidate keys; the designer chooses one to be primary.</li>
+    <li><strong>Secondary (alternate) key</strong> &mdash; a candidate key not chosen as primary. Often given a UNIQUE index so lookups on it are fast.</li>
+</ul>
+
+<h3>Integrity rules</h3>
+
+<ul>
+    <li><strong>Entity integrity.</strong> No component of a primary key may be NULL. If the PK could be NULL you could not distinguish two NULL-keyed rows.</li>
+    <li><strong>Referential integrity.</strong> Every non-NULL foreign key value must match an existing primary key value in the referenced table. This prevents "orphan" rows &mdash; an Order referring to a CustomerID that has been deleted.</li>
+</ul>
+
+<div class="exam-tip">
+    Referential integrity does not prevent <em>bad data</em>, it prevents <em>dangling references</em>. A foreign key still lets you type any valid CustomerID &mdash; it just refuses CustomerIDs that do not exist. Students often confuse this with data validation.
+</div>
+
+<h2>4.10.3 Database Design and Normalisation</h2>
+
+<p>A poorly designed schema stores the same fact in several places. That causes three classes of problem:</p>
+
+<ul>
+    <li><strong>Update anomaly.</strong> If a customer's address is stored on every one of their orders, changing the address requires updating every row. Miss one and the data is now inconsistent.</li>
+    <li><strong>Insert anomaly.</strong> You cannot record a new course until at least one student enrols on it, if course data only lives on enrolment rows.</li>
+    <li><strong>Delete anomaly.</strong> Deleting the last student enrolled on a course also deletes the only copy of that course's information.</li>
+</ul>
+
+<div class="definition">
+    <strong>Normalisation</strong> &mdash; a formal, step-by-step process of decomposing relations to eliminate redundancy and the anomalies it causes, while preserving the information content. Each step removes a specific category of bad dependency.
+</div>
+
+<h3>1NF &mdash; First Normal Form</h3>
+
+<div class="definition">
+    <strong>1NF</strong> &mdash; every attribute value is atomic (no lists, sets or nested tables inside a cell), there are no repeating groups, and a primary key exists.
+</div>
+
+<p>An "Orders" column holding <code>"Milk, Bread, Eggs"</code> violates 1NF: the cell is not atomic. 1NF requires splitting that into multiple rows (or a separate OrderLine table).</p>
+
+<h3>2NF &mdash; Second Normal Form</h3>
+
+<div class="definition">
+    <strong>2NF</strong> &mdash; the relation is in 1NF and every non-key attribute depends on the <em>whole</em> of the primary key, not just part of it. Only relevant when the primary key is composite; if the PK is a single attribute, 1NF implies 2NF.
+</div>
+
+<h3>3NF &mdash; Third Normal Form</h3>
+
+<div class="definition">
+    <strong>3NF</strong> &mdash; the relation is in 2NF and no non-key attribute transitively depends on the primary key via another non-key attribute. In other words, non-key attributes depend only on the key, the whole key and nothing but the key.
+</div>
+
+<h3>Worked normalisation example</h3>
+
+<p>Start with an unnormalised "enrolment sheet":</p>
+
+<table>
+    <tr><th>StudentID</th><th>Name</th><th>Courses taken</th></tr>
+    <tr><td>S01</td><td>Ali Khan</td><td>CS101 Databases (Dr Smith, Room 12); MA201 Calculus (Dr Green, Room 07)</td></tr>
+    <tr><td>S02</td><td>Beth Lee</td><td>CS101 Databases (Dr Smith, Room 12)</td></tr>
+</table>
+
+<p><strong>Step 1 &rarr; 1NF.</strong> Split the repeating "Courses taken" column into separate atomic rows:</p>
+
+<table>
+    <tr><th>StudentID</th><th>Name</th><th>CourseID</th><th>CourseTitle</th><th>Tutor</th><th>Room</th></tr>
+    <tr><td>S01</td><td>Ali Khan</td><td>CS101</td><td>Databases</td><td>Dr Smith</td><td>12</td></tr>
+    <tr><td>S01</td><td>Ali Khan</td><td>MA201</td><td>Calculus</td><td>Dr Green</td><td>07</td></tr>
+    <tr><td>S02</td><td>Beth Lee</td><td>CS101</td><td>Databases</td><td>Dr Smith</td><td>12</td></tr>
+</table>
+
+<p>Composite PK = (StudentID, CourseID). The table is in 1NF.</p>
+
+<p><strong>Step 2 &rarr; 2NF.</strong> Examine partial dependencies. <em>Name</em> depends only on StudentID (half of the key). <em>CourseTitle</em>, <em>Tutor</em>, <em>Room</em> depend only on CourseID (the other half). These are partial dependencies &mdash; bad. Split into three tables:</p>
+
+<pre>
+Student  (<u>StudentID</u>, Name)
+Course   (<u>CourseID</u>,  CourseTitle, Tutor, Room)
+Enrolment(<u>StudentID, CourseID</u>)
+</pre>
+
+<p><strong>Step 3 &rarr; 3NF.</strong> Examine the Course table. Does any non-key attribute depend on another non-key attribute? <em>Room</em> arguably depends on <em>Tutor</em> (each tutor has their own office), not directly on CourseID. That is a transitive dependency: CourseID &rarr; Tutor &rarr; Room. Factor out:</p>
+
+<pre>
+Student  (<u>StudentID</u>, Name)
+Course   (<u>CourseID</u>,  CourseTitle, Tutor)      -- Tutor is FK to Staff
+Staff    (<u>Tutor</u>,     Room)
+Enrolment(<u>StudentID, CourseID</u>)
+</pre>
+
+<p>Now every non-key attribute in every relation depends on the key, the whole key, and nothing but the key. The schema is in 3NF.</p>
+
+<h3>Beyond 3NF</h3>
+
+<p><strong>Boyce&ndash;Codd Normal Form (BCNF)</strong> is a strengthening of 3NF that handles rare cases where a non-trivial dependency's determinant is not a superkey. <strong>4NF</strong> deals with multi-valued dependencies. Neither is core to AQA 7517, but awareness is worth a mark in a "what normal forms exist beyond 3NF" question. In practice most commercial schemas stop at 3NF; chasing higher forms often produces so many tables that joins become a performance problem.</p>
+
+<div class="exam-tip">
+    The memorable rhyme for 3NF: "each non-key attribute depends on the key, the whole key, and nothing but the key" &mdash; attributed to Bill Kent. "The key" = 1NF (there is a key), "the whole key" = 2NF (no partial dependency), "nothing but the key" = 3NF (no transitive dependency). Reciting this in an exam answer is worth marks.
+</div>
+
+<h2>4.10.4 SQL &mdash; Structured Query Language</h2>
+
+<p>SQL is the declarative language for talking to a relational database. "Declarative" means you specify <em>what</em> you want, not <em>how</em> to get it; the database's query optimiser chooses the execution plan.</p>
+
+<h3>SELECT, FROM, WHERE</h3>
+
+<pre>
+SELECT Forename, Surname, DateOfBirth
+FROM   Student
+WHERE  DateOfBirth &gt;= '2006-09-01'
+  AND  Surname LIKE 'K%'
+ORDER BY Surname ASC, Forename ASC;
+</pre>
+
+<p>The clauses are logically processed FROM &rarr; WHERE &rarr; SELECT &rarr; ORDER BY. Operators available in WHERE include:</p>
+
+<table>
+    <tr><th>Operator</th><th>Meaning</th><th>Example</th></tr>
+    <tr><td><code>=</code></td><td>equal</td><td><code>Surname = 'Khan'</code></td></tr>
+    <tr><td><code>&lt;&gt;</code> or <code>!=</code></td><td>not equal</td><td><code>Grade &lt;&gt; 'F'</code></td></tr>
+    <tr><td><code>&lt; &lt;= &gt; &gt;=</code></td><td>numeric/date compare</td><td><code>Age &gt;= 18</code></td></tr>
+    <tr><td><code>BETWEEN a AND b</code></td><td>inclusive range</td><td><code>Price BETWEEN 10 AND 20</code></td></tr>
+    <tr><td><code>IN (list)</code></td><td>set membership</td><td><code>Grade IN ('A','B','C')</code></td></tr>
+    <tr><td><code>LIKE '%pattern_'</code></td><td>pattern match: <code>%</code> any sequence, <code>_</code> any single char</td><td><code>Email LIKE '%@school.ac.uk'</code></td></tr>
+    <tr><td><code>IS NULL</code></td><td>test for NULL (never use <code>= NULL</code>)</td><td><code>MiddleName IS NULL</code></td></tr>
+    <tr><td><code>AND OR NOT</code></td><td>Boolean combinators</td><td><code>Age &gt;= 18 AND City = 'Leeds'</code></td></tr>
+</table>
+
+<h3>Aggregates, GROUP BY, HAVING</h3>
+
+<p>Aggregate functions collapse many rows to one: <code>COUNT</code>, <code>SUM</code>, <code>AVG</code>, <code>MIN</code>, <code>MAX</code>. Combined with <code>GROUP BY</code> they produce per-group summaries; <code>HAVING</code> filters the groups themselves (whereas <code>WHERE</code> filters rows before grouping).</p>
+
+<pre>
+SELECT   CourseID,
+         COUNT(*)       AS NumStudents,
+         AVG(Grade)     AS MeanGrade
+FROM     Enrolment
+WHERE    EnrolDate &gt;= '2025-09-01'        -- rows first
+GROUP BY CourseID                          -- then group
+HAVING   COUNT(*) &gt;= 10                    -- then filter groups
+ORDER BY MeanGrade DESC;
+</pre>
+
+<p>Expected output shape (illustrative):</p>
+
+<table>
+    <tr><th>CourseID</th><th>NumStudents</th><th>MeanGrade</th></tr>
+    <tr><td>CS101</td><td>42</td><td>68.3</td></tr>
+    <tr><td>MA201</td><td>31</td><td>64.1</td></tr>
+    <tr><td>EN301</td><td>18</td><td>59.7</td></tr>
+</table>
+
+<h3>INSERT, UPDATE, DELETE</h3>
+
+<pre>
+INSERT INTO Student (StudentID, Surname, Forename, DateOfBirth)
+VALUES ('S03', 'Davies', 'Charlie', '2007-02-14');
+
+UPDATE Student
+SET    Email = 'c.davies@school.ac.uk'
+WHERE  StudentID = 'S03';
+
+DELETE FROM Enrolment
+WHERE  StudentID = 'S03' AND CourseID = 'CS101';
+</pre>
+
+<p>An UPDATE or DELETE without a WHERE clause touches every row &mdash; a common and devastating mistake. Always write the WHERE first.</p>
+
+<h3>Data Definition Language &mdash; CREATE / ALTER / DROP</h3>
+
+<pre>
+CREATE TABLE Student (
+    StudentID   CHAR(4)      PRIMARY KEY,
+    Surname     VARCHAR(40)  NOT NULL,
+    Forename    VARCHAR(40)  NOT NULL,
+    DateOfBirth DATE         NOT NULL,
+    Email       VARCHAR(100) UNIQUE
+);
+
+CREATE TABLE Course (
+    CourseID    CHAR(5)      PRIMARY KEY,
+    Title       VARCHAR(80)  NOT NULL,
+    Credits     INT          CHECK (Credits BETWEEN 1 AND 60)
+);
+
+CREATE TABLE Enrolment (
+    StudentID   CHAR(4),
+    CourseID    CHAR(5),
+    EnrolDate   DATE          DEFAULT CURRENT_DATE,
+    Grade       CHAR(1),
+    PRIMARY KEY (StudentID, CourseID),
+    FOREIGN KEY (StudentID) REFERENCES Student(StudentID),
+    FOREIGN KEY (CourseID)  REFERENCES Course(CourseID)
+);
+
+ALTER TABLE Student ADD COLUMN TutorGroup VARCHAR(5);
+DROP  TABLE Enrolment;      -- deletes both data and schema
+</pre>
+
+<h2>4.10.5 SQL Joins</h2>
+
+<p>A join combines rows from two (or more) tables on a matching condition, usually foreign-key-to-primary-key.</p>
+
+<table>
+    <tr><th>Join type</th><th>Rows returned</th><th>Typical use</th></tr>
+    <tr><td><strong>INNER JOIN</strong></td><td>only rows with matches in both tables</td><td>"orders with customer info"</td></tr>
+    <tr><td><strong>LEFT (OUTER) JOIN</strong></td><td>all rows from left + matched rows from right; NULL if no match</td><td>"all customers, with their orders if any"</td></tr>
+    <tr><td><strong>RIGHT (OUTER) JOIN</strong></td><td>mirror of LEFT</td><td>rare in practice; rewrite as LEFT JOIN with tables reversed</td></tr>
+    <tr><td><strong>FULL OUTER JOIN</strong></td><td>all rows from both sides; NULLs where unmatched</td><td>reconciliation / diff between two sources</td></tr>
+    <tr><td><strong>Self-join</strong></td><td>joins a table to itself via aliases</td><td>"find each employee's manager" from an Employee(ID, ManagerID) table</td></tr>
+</table>
+
+<p>Example data &mdash; Customer:</p>
+
+<table>
+    <tr><th>CustomerID</th><th>Name</th></tr>
+    <tr><td>C1</td><td>Ali</td></tr>
+    <tr><td>C2</td><td>Beth</td></tr>
+    <tr><td>C3</td><td>Chen</td></tr>
+</table>
+
+<p>Order:</p>
+
+<table>
+    <tr><th>OrderID</th><th>CustomerID</th><th>Total</th></tr>
+    <tr><td>O100</td><td>C1</td><td>42.00</td></tr>
+    <tr><td>O101</td><td>C1</td><td>15.50</td></tr>
+    <tr><td>O102</td><td>C2</td><td>99.00</td></tr>
+</table>
+
+<pre>
+SELECT c.Name, o.OrderID, o.Total
+FROM   Customer c
+INNER JOIN Order o ON o.CustomerID = c.CustomerID;
+</pre>
+
+<p>INNER JOIN result (Chen has no orders, so is excluded):</p>
+
+<table>
+    <tr><th>Name</th><th>OrderID</th><th>Total</th></tr>
+    <tr><td>Ali</td><td>O100</td><td>42.00</td></tr>
+    <tr><td>Ali</td><td>O101</td><td>15.50</td></tr>
+    <tr><td>Beth</td><td>O102</td><td>99.00</td></tr>
+</table>
+
+<pre>
+SELECT c.Name, o.OrderID, o.Total
+FROM   Customer c
+LEFT  JOIN Order o ON o.CustomerID = c.CustomerID;
+</pre>
+
+<p>LEFT JOIN result (Chen included with NULLs):</p>
+
+<table>
+    <tr><th>Name</th><th>OrderID</th><th>Total</th></tr>
+    <tr><td>Ali</td><td>O100</td><td>42.00</td></tr>
+    <tr><td>Ali</td><td>O101</td><td>15.50</td></tr>
+    <tr><td>Beth</td><td>O102</td><td>99.00</td></tr>
+    <tr><td>Chen</td><td>NULL</td><td>NULL</td></tr>
+</table>
+
+<div class="exam-tip">
+    When asked "what is the difference between INNER and LEFT JOIN?" always answer with a concrete example of a row that would be <em>dropped</em> by INNER but <em>kept</em> (with NULLs) by LEFT. Abstract definitions alone rarely earn full marks.
+</div>
+
+<h2>4.10.6 Client-Server Databases</h2>
+
+<p>Small applications use an embedded database: the program links against a library (SQLite, Access) and reads/writes a file on local disk. This breaks once multiple users need simultaneous access, or when the data must survive the client machine.</p>
+
+<p>A <strong>client-server DBMS</strong> (Oracle, SQL Server, PostgreSQL, MySQL) runs as a long-lived server process on a dedicated machine. Clients &mdash; web servers, mobile apps, reporting tools &mdash; open network connections and send SQL strings; the server parses, optimises, executes and returns result sets. Key consequences:</p>
+
+<ul>
+    <li><strong>Concurrent access.</strong> Hundreds or thousands of clients can query and modify simultaneously. The DBMS provides locking and transaction isolation (see 4.10.9&ndash;10) to prevent them corrupting each other's work.</li>
+    <li><strong>Centralised integrity.</strong> Constraints (PK, FK, CHECK) are enforced in one place; no application can bypass them by writing directly to the files.</li>
+    <li><strong>Separation of concerns.</strong> Hardware, backups, security, tuning are administered on the server; clients see a uniform SQL interface regardless of their OS or language.</li>
+    <li><strong>Scalability.</strong> Vertical scaling (bigger server) is straightforward; horizontal scaling (many servers) is hard for relational systems because transactions must remain consistent &mdash; discussed further under Big Data.</li>
+</ul>
+
+<h2>4.10.7 Big Data</h2>
+
+<p>By the mid-2000s web-scale systems (Google, Amazon, Facebook) were generating datasets too large, too fast and too varied for traditional relational databases on single servers. The label <strong>Big Data</strong> captures that shift.</p>
+
+<h3>The five Vs</h3>
+
+<ul>
+    <li><strong>Volume</strong> &mdash; terabytes and petabytes, not gigabytes. Facebook ingests multiple petabytes per day.</li>
+    <li><strong>Velocity</strong> &mdash; data arrives continuously and often must be processed in near real-time (stock tickers, sensor streams, tweets).</li>
+    <li><strong>Variety</strong> &mdash; structured rows are only a fraction; the rest is JSON, XML, images, video, log lines, sensor readings.</li>
+    <li><strong>Veracity</strong> &mdash; data is noisy, incomplete and sometimes wrong; cleaning is a major cost.</li>
+    <li><strong>Value</strong> &mdash; the payoff: analytics, recommendations, fraud detection, research insights.</li>
+</ul>
+
+<h3>Why relational databases struggle</h3>
+
+<p>Relational systems give ACID guarantees by serialising writes through a central authority. That works beautifully up to perhaps one very large server &mdash; but horizontal scaling across many machines (a shared-nothing cluster) forces a choice: either give up full consistency (see the <em>CAP theorem</em>: among Consistency, Availability and Partition-tolerance you can have any two) or accept the huge coordination cost of distributed transactions. Web-scale systems almost always relax consistency in favour of availability and partition-tolerance.</p>
+
+<h3>NoSQL families</h3>
+
+<table>
+    <tr><th>Type</th><th>Example</th><th>Data model</th><th>When to use</th></tr>
+    <tr><td><strong>Document</strong></td><td>MongoDB, CouchDB</td><td>JSON-like documents grouped in collections</td><td>flexible, evolving schemas &mdash; user profiles, CMS content</td></tr>
+    <tr><td><strong>Key-value</strong></td><td>Redis, DynamoDB</td><td>simple key &rarr; value lookup</td><td>caches, session stores, feature flags; microsecond latency</td></tr>
+    <tr><td><strong>Column-family</strong></td><td>Cassandra, HBase</td><td>sparse wide rows grouped into column families</td><td>write-heavy time-series, event logging at petabyte scale</td></tr>
+    <tr><td><strong>Graph</strong></td><td>Neo4j, Neptune</td><td>nodes and edges with properties</td><td>social graphs, knowledge graphs, fraud rings, recommendation</td></tr>
+</table>
+
+<div class="definition">
+    <strong>NoSQL</strong> &mdash; "Not Only SQL". A family of non-relational databases designed for horizontal scalability, flexible schemas and high availability. They typically relax ACID to <em>BASE</em> (Basically Available, Soft-state, Eventual consistency).
+</div>
+
+<h3>Distributed storage &mdash; HDFS</h3>
+
+<p>The <strong>Hadoop Distributed File System (HDFS)</strong> stores enormous files by chopping them into 128&nbsp;MB blocks and spreading the blocks across a cluster of commodity machines. Each block is replicated (default three copies) on different nodes so that any single-machine failure loses nothing. A single <em>NameNode</em> holds the directory tree and block-location metadata; many <em>DataNodes</em> hold the blocks themselves. This is the substrate on top of which MapReduce and its successors run.</p>
+
+<h3>MapReduce</h3>
+
+<div class="definition">
+    <strong>MapReduce</strong> &mdash; a programming model for processing very large datasets across a cluster. The computation is expressed as two functions: <em>map</em> (independent transformation of each input record into key-value pairs) and <em>reduce</em> (aggregation of all values sharing a key). The framework handles splitting, distributing, shuffling, fault-tolerance and aggregation.
+</div>
+
+<pre>
+# Word count: how many times does each word appear across a corpus?
+
+function map(docID, docText):
+    for word in tokenise(docText):
+        emit(word, 1)
+
+function reduce(word, listOfOnes):
+    emit(word, sum(listOfOnes))
+
+# Input docs:   "the cat sat" , "the dog sat"
+# map emits:    (the,1)(cat,1)(sat,1)(the,1)(dog,1)(sat,1)
+# shuffle:      the -&gt; [1,1] ; cat -&gt; [1] ; sat -&gt; [1,1] ; dog -&gt; [1]
+# reduce emits: (the,2)(cat,1)(sat,2)(dog,1)
+</pre>
+
+<p>The power is that the same code runs over 1&nbsp;GB on a laptop or 10&nbsp;PB on 10,000 machines &mdash; the framework handles the scaling.</p>
+
+<h2>4.10.8 Functional Programming and Databases</h2>
+
+<p>There is a deep kinship between the relational model and the functional paradigm. A relation is an immutable set of tuples; SQL's SELECT is a pure function producing a new relation from existing ones without mutating input data. This is why SQL is called <em>declarative</em>: you describe the transformation, not the stepwise mutation.</p>
+
+<p>In Python, a list comprehension mirrors relational algebra. Selection (WHERE) corresponds to the <em>if</em> clause; projection (SELECT list) corresponds to the expression before <em>for</em>:</p>
+
+<pre>
+# SQL:  SELECT Forename FROM Student WHERE DateOfBirth &gt;= '2006-09-01';
+# Python equivalent:
+forenames = [s.forename for s in students if s.dob &gt;= date(2006,9,1)]
+</pre>
+
+<p>Immutability makes reasoning about distributed computation (MapReduce, Spark) dramatically easier: there are no shared mutable structures to lock, so the same logic parallelises across thousands of machines without race conditions.</p>
+
+<h2>4.10.9 Transactions and ACID</h2>
+
+<div class="definition">
+    <strong>Transaction</strong> &mdash; a unit of work comprising one or more SQL statements that must succeed or fail as an atomic whole. Bracketed by <code>BEGIN TRANSACTION</code> and either <code>COMMIT</code> (make changes permanent) or <code>ROLLBACK</code> (undo all changes since BEGIN).
+</div>
+
+<div class="definition">
+    <strong>ACID</strong> &mdash; the four guarantees a transactional DBMS provides: <strong>A</strong>tomicity, <strong>C</strong>onsistency, <strong>I</strong>solation, <strong>D</strong>urability.
+</div>
+
+<table>
+    <tr><th>Property</th><th>Meaning</th><th>How it is enforced</th></tr>
+    <tr><td>Atomicity</td><td>all statements commit or none do &mdash; no partial effect</td><td>undo log / rollback segments; on crash, incomplete transactions are rolled back during recovery</td></tr>
+    <tr><td>Consistency</td><td>all declared constraints (PK, FK, CHECK, triggers) hold before and after the transaction</td><td>constraint checking at commit time; transaction aborts if any constraint would be violated</td></tr>
+    <tr><td>Isolation</td><td>concurrent transactions produce the same result as if they had run one at a time in some order (serialisable)</td><td>locking (2PL) or multiversion concurrency control (MVCC); tunable by isolation level</td></tr>
+    <tr><td>Durability</td><td>once COMMIT returns, the change survives crashes, power loss, disk failures</td><td>write-ahead log (WAL) flushed to non-volatile storage before COMMIT reports success; replication</td></tr>
+</table>
+
+<h3>Worked example &mdash; bank transfer</h3>
+
+<pre>
+BEGIN TRANSACTION;
+
+    UPDATE Account
+    SET    Balance = Balance - 100.00
+    WHERE  AccountID = 'A123';
+
+    IF (SELECT Balance FROM Account WHERE AccountID = 'A123') &lt; 0 THEN
+        ROLLBACK;               -- insufficient funds; undo the debit
+        RAISE 'Insufficient funds';
+    END IF;
+
+    UPDATE Account
+    SET    Balance = Balance + 100.00
+    WHERE  AccountID = 'B456';
+
+COMMIT;                         -- both updates now permanent
+</pre>
+
+<p>Without atomicity a crash between the two updates could debit A123 without crediting B456 &mdash; money vanishes. Without isolation, a concurrent reader might observe the interim state where A has been debited but B not yet credited &mdash; the books don't balance. Without durability, a crash immediately after COMMIT might lose the transaction even though the customer has been told it succeeded.</p>
+
+<h3>Isolation levels</h3>
+
+<table>
+    <tr><th>Level</th><th>Prevents</th><th>Still allows</th><th>Cost</th></tr>
+    <tr><td>READ UNCOMMITTED</td><td>nothing</td><td>dirty reads, non-repeatable reads, phantoms</td><td>cheapest; almost never used</td></tr>
+    <tr><td>READ COMMITTED</td><td>dirty reads</td><td>non-repeatable reads, phantoms</td><td>default in PostgreSQL / SQL Server</td></tr>
+    <tr><td>REPEATABLE READ</td><td>dirty + non-repeatable reads</td><td>phantom rows (new rows appearing)</td><td>default in MySQL InnoDB</td></tr>
+    <tr><td>SERIALIZABLE</td><td>everything &mdash; transactions appear fully serial</td><td>nothing</td><td>highest overhead; deadlocks/aborts more frequent</td></tr>
+</table>
+
+<p>Higher isolation gives stronger guarantees at the cost of concurrency (more locks, more waiting, more aborts). A banking system must use SERIALIZABLE or equivalent; a news feed can get away with READ COMMITTED.</p>
+
+<div class="exam-tip">
+    Memorise ACID by imagining each letter failing: A fails = money teleports, C fails = constraints lie, I fails = other users see half-done work, D fails = commits evaporate after a power cut. Linking each letter to a concrete disaster cements the meaning.
+</div>
+
+<h2>4.10.10 Locking and Concurrency Control</h2>
+
+<p>Isolation in a relational DBMS is typically implemented by <strong>locks</strong>. Before a transaction reads a row it acquires a <em>shared lock</em> (multiple readers allowed); before it writes it acquires an <em>exclusive lock</em> (one writer, no concurrent readers on the same row).</p>
+
+<h3>Two-phase locking (2PL)</h3>
+
+<p>2PL guarantees serialisability by requiring every transaction to proceed in two phases: a <em>growing phase</em> in which locks are acquired but never released, followed by a <em>shrinking phase</em> in which locks are released but never acquired. In practice most DBMSs use <em>strict 2PL</em>: all locks are held until COMMIT or ROLLBACK, which also prevents cascading aborts.</p>
+
+<h3>Deadlock</h3>
+
+<p>A <strong>deadlock</strong> occurs when two or more transactions are each waiting for locks held by the other &mdash; a cycle in the wait-for graph. Classic pattern:</p>
+
+<pre>
+Transaction T1:             Transaction T2:
+  LOCK row A  (granted)       LOCK row B  (granted)
+  LOCK row B  (waits on T2)   LOCK row A  (waits on T1)
+</pre>
+
+<p>Neither can progress. Responses:</p>
+
+<ul>
+    <li><strong>Detection.</strong> The DBMS periodically examines the wait-for graph for cycles; on finding one it aborts a chosen "victim" transaction (usually the youngest or the one with fewest locks) and the other proceeds. The victim retries.</li>
+    <li><strong>Prevention.</strong> Impose a global ordering on resources and require every transaction to acquire locks in that order (no transaction can ever be waiting "behind" another in a cycle).</li>
+    <li><strong>Timeouts.</strong> A simple pragmatic fallback: if a lock wait exceeds a threshold, abort.</li>
+</ul>
+
+<h3>Timestamp ordering</h3>
+
+<p>An alternative to locking: each transaction is stamped with a start time; conflicting operations are resolved by aborting the transaction whose timestamp violates the serial order. No locks are taken, so no deadlocks &mdash; but more transactions may abort and retry. MVCC (multiversion concurrency control, used by PostgreSQL, Oracle) combines timestamping with multiple stored row versions so readers never block writers and vice versa.</p>
+
+<h2>4.10.11 Data Integrity Constraints</h2>
+
+<p>Constraints are declarations on a table that the DBMS enforces automatically on every INSERT or UPDATE. They are the first and cheapest line of data-quality defence.</p>
+
+<table>
+    <tr><th>Constraint</th><th>Guarantee</th><th>Example</th></tr>
+    <tr><td><code>NOT NULL</code></td><td>value must be supplied</td><td><code>Surname VARCHAR(40) NOT NULL</code></td></tr>
+    <tr><td><code>UNIQUE</code></td><td>no two rows share this value (NULLs usually allowed)</td><td><code>Email VARCHAR(100) UNIQUE</code></td></tr>
+    <tr><td><code>PRIMARY KEY</code></td><td>NOT NULL + UNIQUE, and marks the table's identifier</td><td><code>StudentID CHAR(4) PRIMARY KEY</code></td></tr>
+    <tr><td><code>FOREIGN KEY</code></td><td>value must exist as PK in referenced table</td><td><code>FOREIGN KEY(CustomerID) REFERENCES Customer(CustomerID)</code></td></tr>
+    <tr><td><code>CHECK</code></td><td>arbitrary Boolean predicate must hold</td><td><code>CHECK (Credits BETWEEN 1 AND 60)</code></td></tr>
+    <tr><td><code>DEFAULT</code></td><td>value used when none supplied</td><td><code>EnrolDate DATE DEFAULT CURRENT_DATE</code></td></tr>
+</table>
+
+<pre>
+CREATE TABLE Employee (
+    EmpID    CHAR(6)     PRIMARY KEY,
+    Email    VARCHAR(100) UNIQUE NOT NULL,
+    DeptID   CHAR(3)     NOT NULL,
+    Salary   DECIMAL(9,2) CHECK (Salary &gt;= 0),
+    Hired    DATE        DEFAULT CURRENT_DATE,
+    FOREIGN KEY (DeptID) REFERENCES Department(DeptID)
+        ON DELETE RESTRICT ON UPDATE CASCADE
+);
+</pre>
+
+<p><code>ON DELETE</code> and <code>ON UPDATE</code> clauses on a foreign key specify what happens when the referenced row is deleted or its key changes: <code>CASCADE</code> propagates the action, <code>RESTRICT</code> refuses the delete, <code>SET NULL</code> nulls the FK, <code>SET DEFAULT</code> resets it.</p>
+
+<h2>4.10.12 Database Security</h2>
+
+<h3>Access rights &mdash; GRANT and REVOKE</h3>
+
+<p>A DBMS authenticates users and authorises operations by role. <code>GRANT</code> adds a privilege; <code>REVOKE</code> removes it.</p>
+
+<pre>
+-- Grant read-only access on Student to the reporting role
+GRANT SELECT ON Student TO reporting_role;
+
+-- Grant full CRUD on Enrolment to the registrar role
+GRANT SELECT, INSERT, UPDATE, DELETE ON Enrolment TO registrar_role;
+
+-- Remove delete permission when retention policy tightens
+REVOKE DELETE ON Enrolment FROM registrar_role;
+</pre>
+
+<h3>SQL injection</h3>
+
+<div class="definition">
+    <strong>SQL injection</strong> &mdash; an attack in which user-supplied input is concatenated into an SQL string, allowing the attacker to terminate the intended query and append their own SQL. Defeated by <em>parameterised queries</em> (prepared statements) which send the SQL template and parameters separately, so user input can never be parsed as SQL syntax.
+</div>
+
+<table>
+    <tr><th>Vulnerable code</th><th>Parameterised fix</th></tr>
+    <tr><td><code>"SELECT * FROM User WHERE name='" + n + "' AND pw='" + p + "'"</code></td><td><code>"SELECT * FROM User WHERE name=? AND pw=?"</code> with <code>(n, p)</code> bound</td></tr>
+</table>
+
+<pre>
+# BAD -- vulnerable, user can inject SQL
+name = request.form['username']          # attacker sends:  ' OR '1'='1
+pw   = request.form['password']
+sql  = "SELECT * FROM User WHERE name='" + name + "' AND pw='" + pw + "'"
+# resulting query is:   SELECT * FROM User WHERE name='' OR '1'='1' AND pw='...'
+# which is true for every row -- login bypass.
+cursor.execute(sql)
+
+# GOOD -- parameterised; user input is data, never code
+cursor.execute(
+    "SELECT * FROM User WHERE name = ? AND pw = ?",
+    (name, pw)
+)
+</pre>
+
+<p>Other security measures:</p>
+
+<ul>
+    <li><strong>Auditing.</strong> Every DDL and security-sensitive DML is logged with user, timestamp, old/new values. Allows forensic reconstruction after a breach.</li>
+    <li><strong>Encryption at rest.</strong> The physical data files (and backups) are encrypted so that theft of the disk or tape does not expose the contents. Typically AES-256 with keys held in a separate key-management system.</li>
+    <li><strong>Encryption in transit.</strong> TLS on the client&ndash;server connection prevents network eavesdropping.</li>
+    <li><strong>Backups.</strong> Regular full + incremental backups stored off-site; routinely tested by restoring to a scratch server. "A backup you have never restored from is not a backup."</li>
+    <li><strong>Principle of least privilege.</strong> Each application connects with a role that has only the permissions it actually needs &mdash; never as the DBA.</li>
+</ul>
+
+<div class="case-study">
+    <strong>Knight Capital, 1 August 2012.</strong> The US high-frequency trading firm Knight Capital deployed new trading software to eight production servers. A critical configuration flag was set correctly on seven servers but not on the eighth, where legacy code was reactivated. In 45 minutes the misconfigured server sent millions of erroneous orders, accumulating a $460 million loss &mdash; more than four times the firm's annual profit. The company was effectively bankrupted within a day. The incident is a textbook example of how a database/deployment failure is rarely "just a bug": the weaknesses were in change-management (no atomic deployment across the cluster), auditing (no real-time check that all servers were on the same version), and rollback (no kill-switch to halt trading when the anomaly was detected). Every ACID property matters at scale, but so does the surrounding operational discipline.
+</div>
+
+<div class="case-study">
+    <strong>Facebook's MySQL + memcached architecture.</strong> Facebook famously ran (and largely still runs) user data on thousands of sharded MySQL instances fronted by a vast memcached layer. Rather than move to a NoSQL store, Facebook invested heavily in making relational storage scale horizontally: user IDs are sharded across servers, reads are served from memcached caches with eventual consistency, and writes go to a single authoritative shard. The lesson for exam answers: "big data" does not automatically mean "NoSQL". The choice depends on access patterns, consistency requirements and operational expertise. Relational with caching is often faster and more reliable than a naive migration to a document store.
+</div>
+
+<h2>Worked exam-style question &mdash; full pipeline</h2>
+
+<p>A worked walk-through shows how the topic's ideas combine. Scenario: a small library wants to track books, members and loans. A member can borrow many books (one copy at a time per title), and a book can be borrowed over its lifetime by many members. The librarian initially proposes a single spreadsheet:</p>
+
+<table>
+    <tr><th>MemberID</th><th>MemberName</th><th>Phone</th><th>Books borrowed</th></tr>
+    <tr><td>M01</td><td>Ali Khan</td><td>07700 900 111</td><td>B010 Pride &amp; Prejudice (out 02-Mar, back 09-Mar); B041 Dune (out 05-Mar)</td></tr>
+    <tr><td>M02</td><td>Beth Lee</td><td>07700 900 222</td><td>B010 Pride &amp; Prejudice (out 11-Mar)</td></tr>
+</table>
+
+<p><strong>Problems.</strong> The "Books borrowed" cell is not atomic (1NF violation). Member details repeat on every loan (update anomaly: changing a phone number requires editing many rows). You cannot record a newly-acquired book until someone borrows it (insert anomaly). Deleting the last loan of a book loses the book (delete anomaly).</p>
+
+<p><strong>Normalised design (3NF).</strong></p>
+
+<pre>
+Member(<u>MemberID</u>, Name, Phone, JoinDate)
+Book  (<u>BookID</u>,   Title, Author, ISBN, Acquired)
+Loan  (<u>LoanID</u>,   MemberID FK, BookID FK, DateOut, DateBack)
+</pre>
+
+<p>Loan uses a surrogate LoanID rather than (MemberID, BookID) as PK because a member may borrow the same title again later &mdash; the historical loans must all be distinguishable. MemberID and BookID become foreign keys.</p>
+
+<p><strong>ERD (crow's foot).</strong></p>
+
+<pre>
+    MEMBER  ---||----&lt;  LOAN  &gt;----||---  BOOK
+    (1)          (M)   (M)         (1)
+</pre>
+
+<p><strong>SQL &mdash; schema.</strong></p>
+
+<pre>
+CREATE TABLE Member (
+    MemberID CHAR(4)      PRIMARY KEY,
+    Name     VARCHAR(80)  NOT NULL,
+    Phone    VARCHAR(20),
+    JoinDate DATE         DEFAULT CURRENT_DATE
+);
+
+CREATE TABLE Book (
+    BookID   CHAR(5)      PRIMARY KEY,
+    Title    VARCHAR(200) NOT NULL,
+    Author   VARCHAR(100),
+    ISBN     CHAR(13)     UNIQUE,
+    Acquired DATE
+);
+
+CREATE TABLE Loan (
+    LoanID   INT          PRIMARY KEY,
+    MemberID CHAR(4)      NOT NULL,
+    BookID   CHAR(5)      NOT NULL,
+    DateOut  DATE         NOT NULL,
+    DateBack DATE,                            -- NULL while still on loan
+    CHECK (DateBack IS NULL OR DateBack &gt;= DateOut),
+    FOREIGN KEY (MemberID) REFERENCES Member(MemberID),
+    FOREIGN KEY (BookID)   REFERENCES Book(BookID)
+);
+</pre>
+
+<p><strong>SQL &mdash; typical queries.</strong></p>
+
+<pre>
+-- Q1: list members with books currently out
+SELECT m.Name, b.Title, l.DateOut
+FROM   Loan   l
+INNER JOIN Member m ON m.MemberID = l.MemberID
+INNER JOIN Book   b ON b.BookID   = l.BookID
+WHERE  l.DateBack IS NULL
+ORDER BY l.DateOut;
+
+-- Q2: top 5 most-borrowed books of the year
+SELECT   b.Title, COUNT(*) AS LoanCount
+FROM     Loan l
+JOIN     Book b ON b.BookID = l.BookID
+WHERE    l.DateOut BETWEEN '2026-01-01' AND '2026-12-31'
+GROUP BY b.Title
+HAVING   COUNT(*) &gt;= 3
+ORDER BY LoanCount DESC
+LIMIT    5;
+
+-- Q3: members who have never borrowed anything (candidates for a reminder email)
+SELECT m.Name, m.Phone
+FROM   Member m
+LEFT   JOIN Loan l ON l.MemberID = m.MemberID
+WHERE  l.LoanID IS NULL;
+</pre>
+
+<p>Query 3 is a classic LEFT JOIN + IS NULL idiom for "rows in the left table with no matching right-table rows" &mdash; useful whenever you need to find absences rather than presences.</p>
+
+<div class="exam-tip">
+    The "LEFT JOIN &hellip; WHERE &hellip; IS NULL" pattern is commonly tested. If a question asks "find all X that have no Y", resist the temptation to use a subquery (NOT IN / NOT EXISTS are alternatives, but NOT IN behaves surprisingly around NULLs). The LEFT JOIN pattern is fastest on most optimisers and the easiest to explain in writing.
+</div>
+
+<h2>Putting it together &mdash; a checklist for design questions</h2>
+
+<ol>
+    <li>Identify entities (nouns in the scenario).</li>
+    <li>List attributes for each entity; underline the primary key.</li>
+    <li>Identify relationships (verbs) and their cardinality.</li>
+    <li>Resolve any M:M with a link entity whose PK is composite.</li>
+    <li>Check 1NF (atomic values), 2NF (no partial dependency), 3NF (no transitive dependency).</li>
+    <li>Declare constraints: PK, FK, NOT NULL, UNIQUE, CHECK.</li>
+    <li>Write the SQL: CREATE TABLEs first, then queries; use joins to recombine what normalisation split apart.</li>
+    <li>Consider concurrency (transactions, isolation level) and security (roles, parameterised queries, encryption).</li>
+</ol>
+
+<p>The examiner's ideal script reads like a design diary: each decision is named and justified, each SQL fragment annotated with its purpose. Database questions are rarely won on raw syntax &mdash; they are won on the coherence of the design narrative.</p>
+
+</div>
+</body>
+</html>

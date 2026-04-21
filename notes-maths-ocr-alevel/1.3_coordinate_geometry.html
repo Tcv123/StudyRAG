@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 1.3 — Coordinate Geometry</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.3 Coordinate Geometry</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 1: Pure Mathematics</p>
+
+<p>Coordinate geometry translates geometric objects — lines, circles, and parametric curves — into algebraic equations in the Cartesian \((x, y)\) plane. The philosophy is Descartes': every geometric statement becomes algebraic, every algebraic statement becomes a picture. At A-level this topic blends synthetic-geometry reasoning (angles, perpendicularity, radii) with algebraic techniques (completing the square, discriminants, substitution) and sets the stage for calculus applications later in the course.</p>
+
+<h2>1. Straight Lines</h2>
+
+<p>A line in the plane is uniquely determined by either two distinct points or one point together with a direction (gradient). The gradient measures <em>rise over run</em>: the vertical change per unit horizontal change.</p>
+
+<div class="definition">
+<strong>Gradient.</strong> For two distinct points \(A(x_1, y_1)\) and \(B(x_2, y_2)\) with \(x_1 \neq x_2\), the gradient of the line \(AB\) is
+\[ m = \frac{y_2 - y_1}{x_2 - x_1}. \]
+If \(x_1 = x_2\) the line is vertical and its gradient is undefined; if \(y_1 = y_2\) the line is horizontal with gradient \(0\).
+</div>
+
+<h3>Three Standard Forms of a Line</h3>
+
+<table>
+<tr><th>Form</th><th>Equation</th><th>Best used when...</th></tr>
+<tr><td>Slope–intercept</td><td>\(y = mx + c\)</td><td>Gradient \(m\) and \(y\)-intercept \(c\) are known; also best for sketching.</td></tr>
+<tr><td>Point–slope</td><td>\(y - y_1 = m(x - x_1)\)</td><td>One point \((x_1, y_1)\) and the gradient \(m\) are known.</td></tr>
+<tr><td>General (implicit)</td><td>\(ax + by + c = 0\)</td><td>Required final form in some OCR questions; handles vertical lines (\(b = 0\)).</td></tr>
+<tr><td>Two-point</td><td>\(\dfrac{y - y_1}{y_2 - y_1} = \dfrac{x - x_1}{x_2 - x_1}\)</td><td>Two points are given; equivalent to point–slope after computing \(m\).</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — which form to use.</strong> OCR mark schemes usually accept any correct form unless a specific form is demanded. However, a question ending "...giving your answer in the form \(ax + by + c = 0\) where \(a, b, c\) are integers" means the implicit form with integer coefficients — not \(y = 2.5x - 1.5\). Multiply through to clear fractions and move everything to the left-hand side.
+</div>
+
+<h3>Parallel and Perpendicular Lines</h3>
+
+<p>Two non-vertical lines are <strong>parallel</strong> iff they have equal gradients: \(m_1 = m_2\). They are <strong>perpendicular</strong> iff the product of gradients is \(-1\).</p>
+
+<div class="definition">
+<strong>Perpendicularity condition.</strong> Two non-vertical, non-horizontal lines with gradients \(m_1\) and \(m_2\) are perpendicular if and only if
+\[ m_1 \cdot m_2 = -1, \qquad \text{equivalently} \qquad m_2 = -\frac{1}{m_1}. \]
+A horizontal line (\(m = 0\)) is perpendicular to a vertical line (gradient undefined); this is the limiting case not captured by the product rule.
+</div>
+
+<h3>Distance Between Two Points and Midpoint</h3>
+
+<p>Given \(A(x_1, y_1)\) and \(B(x_2, y_2)\):</p>
+
+<div class="equation">
+\( |AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}, \qquad M_{AB} = \left(\dfrac{x_1 + x_2}{2}, \dfrac{y_1 + y_2}{2}\right). \)
+</div>
+
+<p>The distance formula is Pythagoras applied to the right triangle with legs \(|x_2 - x_1|\) and \(|y_2 - y_1|\). The midpoint is simply the coordinate-wise average.</p>
+
+<!-- SVG: two points, gradient triangle -->
+<svg viewBox="0 0 420 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block;margin:20px auto;">
+  <line x1="20" y1="200" x2="400" y2="200" stroke="#64748b" stroke-width="1"/>
+  <line x1="60" y1="20" x2="60" y2="220" stroke="#64748b" stroke-width="1"/>
+  <text x="395" y="215" fill="#64748b" font-size="12">x</text>
+  <text x="68" y="28" fill="#64748b" font-size="12">y</text>
+  <line x1="110" y1="170" x2="340" y2="60" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="110" cy="170" r="3.5" fill="#dc2626"/>
+  <circle cx="340" cy="60" r="3.5" fill="#dc2626"/>
+  <text x="80" y="175" fill="#1e3a5f" font-size="12">A(x₁, y₁)</text>
+  <text x="345" y="55" fill="#1e3a5f" font-size="12">B(x₂, y₂)</text>
+  <line x1="110" y1="170" x2="340" y2="170" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="340" y1="170" x2="340" y2="60" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4 3"/>
+  <text x="215" y="188" fill="#f59e0b" font-size="11">x₂ − x₁  (run)</text>
+  <text x="345" y="120" fill="#f59e0b" font-size="11">y₂ − y₁</text>
+  <text x="350" y="132" fill="#f59e0b" font-size="11">(rise)</text>
+</svg>
+
+<div class="example">
+<h3>Worked Example 1 — Line through two points</h3>
+<p>Find the equation of the line through \(A(-1, 4)\) and \(B(3, -2)\) in the form \(ax + by + c = 0\) with integer \(a, b, c\). State the midpoint and the distance \(|AB|\).</p>
+<pre>
+<span class="ln"> 1.</span>  Gradient  m = (−2 − 4) / (3 − (−1))  =  −6 / 4  =  −3/2.
+<span class="ln"> 2.</span>  Point–slope using A(−1, 4):
+<span class="ln"> 3.</span>     y − 4 = −3/2 · (x − (−1))
+<span class="ln"> 4.</span>     y − 4 = −3/2 · (x + 1)
+<span class="ln"> 5.</span>     2(y − 4) = −3(x + 1)
+<span class="ln"> 6.</span>     2y − 8  = −3x − 3
+<span class="ln"> 7.</span>     3x + 2y − 5 = 0.           <span class="cm">// final form</span>
+
+<span class="ln"> 8.</span>  Midpoint  M = ((−1 + 3)/2, (4 + (−2))/2)  =  (1, 1).
+<span class="ln"> 9.</span>  Distance  |AB| = √[(3 − (−1))² + (−2 − 4)²]
+<span class="ln">10.</span>                 = √[16 + 36]  =  √52  =  2√13.
+<span class="ln">11.</span>  Check M lies on the line:  3(1) + 2(1) − 5 = 0 ✓.
+</pre>
+</div>
+
+<h3>Intersection of Two Lines</h3>
+
+<p>Two lines in the plane either (i) intersect at one point — non-parallel; (ii) are identical — infinitely many intersection points; (iii) are parallel and distinct — no intersection. To find the intersection, solve the system simultaneously (substitution or elimination).</p>
+
+<div class="example">
+<h3>Worked Example 2 — Perpendicular through a point</h3>
+<p>Find the equation of the line through \((1, 2)\) perpendicular to \(y = 3x - 1\).</p>
+<pre>
+<span class="ln">1.</span>  Gradient of given line:  m₁ = 3.
+<span class="ln">2.</span>  Perpendicular gradient:  m₂ = −1/m₁ = −1/3.
+<span class="ln">3.</span>  Point–slope at (1, 2):
+<span class="ln">4.</span>     y − 2 = −1/3 · (x − 1)
+<span class="ln">5.</span>     3(y − 2) = −(x − 1)
+<span class="ln">6.</span>     3y − 6   = −x + 1
+<span class="ln">7.</span>     x + 3y − 7 = 0.         <span class="cm">// or y = −x/3 + 7/3</span>
+<span class="ln">8.</span>  Check perpendicularity:  3 · (−1/3) = −1 ✓.
+<span class="ln">9.</span>  Check point:  1 + 3·2 − 7 = 0 ✓.
+</pre>
+</div>
+
+<h2>2. Circles — Standard and General Forms</h2>
+
+<p>A circle is the locus of points equidistant from a fixed centre. Translating this definition using the distance formula gives the equation of a circle.</p>
+
+<div class="definition">
+<strong>Circle — standard (centre–radius) form.</strong> The circle with centre \((a, b)\) and radius \(r > 0\) has equation
+\[ (x - a)^2 + (y - b)^2 = r^2. \]
+A point \((x_0, y_0)\) lies on the circle iff the equation is satisfied; inside iff LHS \(< r^2\); outside iff LHS \(> r^2\).
+</div>
+
+<div class="definition">
+<strong>Circle — general form.</strong> Expanding the standard form gives
+\[ x^2 + y^2 + 2gx + 2fy + c = 0, \]
+with centre \((-g, -f)\) and radius \(r = \sqrt{g^2 + f^2 - c}\) (a real circle requires \(g^2 + f^2 - c > 0\); equality gives a point, and a negative value gives no real locus).
+</div>
+
+<h3>Comparison of Forms</h3>
+
+<table>
+<tr><th>Feature</th><th>Standard form \((x - a)^2 + (y - b)^2 = r^2\)</th><th>General form \(x^2 + y^2 + 2gx + 2fy + c = 0\)</th></tr>
+<tr><td>Centre</td><td>\((a, b)\) — read directly</td><td>\((-g, -f)\) — half the coefficient of \(x\), negated</td></tr>
+<tr><td>Radius</td><td>\(r\) — square root of RHS</td><td>\(r = \sqrt{g^2 + f^2 - c}\)</td></tr>
+<tr><td>Convenient for...</td><td>Sketching, geometric reasoning</td><td>Substituting a line equation; line–circle intersection</td></tr>
+<tr><td>How to convert</td><td>Expand the brackets</td><td>Complete the square in \(x\) and \(y\) separately</td></tr>
+<tr><td>Validity check</td><td>\(r^2 > 0\)</td><td>\(g^2 + f^2 - c > 0\)</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — completing the square for a circle.</strong> OCR questions frequently hand you a circle in general form (e.g. \(x^2 + y^2 - 4x + 6y - 3 = 0\)) and ask for centre and radius. Complete the square in \(x\) and \(y\) <em>separately</em>: group \(x^2 - 4x\) and add/subtract \(4\); group \(y^2 + 6y\) and add/subtract \(9\); move the constants. Many students forget to subtract what they added and end up with the wrong \(r^2\).
+</div>
+
+<div class="example">
+<h3>Worked Example 3 — General to standard form</h3>
+<p>Find the centre and radius of the circle \(x^2 + y^2 - 4x + 6y - 3 = 0\).</p>
+<pre>
+<span class="ln">1.</span>  Group:        (x² − 4x) + (y² + 6y) − 3 = 0.
+<span class="ln">2.</span>  Complete the square in x:   x² − 4x = (x − 2)² − 4.
+<span class="ln">3.</span>  Complete the square in y:   y² + 6y = (y + 3)² − 9.
+<span class="ln">4.</span>  Substitute:   (x − 2)² − 4 + (y + 3)² − 9 − 3 = 0
+<span class="ln">5.</span>                (x − 2)² + (y + 3)² = 16.
+<span class="ln">6.</span>  ∴ centre (2, −3), radius r = 4.
+
+<span class="cm">// Sanity check using g, f, c directly:</span>
+<span class="ln">7.</span>  Compare with x² + y² + 2gx + 2fy + c = 0:  2g = −4, 2f = 6, c = −3.
+<span class="ln">8.</span>  g = −2, f = 3, so centre = (−g, −f) = (2, −3).  ✓
+<span class="ln">9.</span>  r² = g² + f² − c = 4 + 9 − (−3) = 16, so r = 4.  ✓
+</pre>
+</div>
+
+<h3>Point Lying on / Inside / Outside a Circle</h3>
+
+<p>Given a circle with centre \(C(a, b)\) and radius \(r\), and a point \(P(x_0, y_0)\), compute the distance \(d = |CP|\):</p>
+
+<ul>
+  <li>\(d = r\) — \(P\) lies on the circle;</li>
+  <li>\(d < r\) — \(P\) lies inside the circle;</li>
+  <li>\(d > r\) — \(P\) lies outside the circle.</li>
+</ul>
+
+<p>In practice you compare \(d^2\) with \(r^2\) to avoid square roots.</p>
+
+<h2>3. Circle Theorems Relevant to Coordinate Geometry</h2>
+
+<p>Three classical Euclidean theorems translate cleanly into coordinate-geometry tools. They are not proved here in detail (see GCSE circle theorems) but stated in the forms you will deploy.</p>
+
+<div class="definition">
+<strong>Theorem A — angle in a semicircle.</strong> If \(AB\) is a diameter of a circle and \(P\) is any other point on the circle, then \(\angle APB = 90°\). Conversely, if \(\angle APB = 90°\) for points \(A, B, P\), then \(P\) lies on the circle with diameter \(AB\).
+</div>
+
+<div class="definition">
+<strong>Theorem B — radius perpendicular to chord.</strong> The perpendicular from the centre of a circle to a chord bisects the chord. Conversely, the perpendicular bisector of any chord passes through the centre.
+</div>
+
+<div class="definition">
+<strong>Theorem C — tangent perpendicular to radius.</strong> The tangent to a circle at a point \(T\) is perpendicular to the radius drawn to \(T\). Thus if the radius \(CT\) has gradient \(m\), the tangent at \(T\) has gradient \(-1/m\) (when neither is vertical or horizontal).
+</div>
+
+<!-- SVG: circle with tangent and radius -->
+<svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block;margin:20px auto;">
+  <circle cx="180" cy="130" r="80" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="180" cy="130" r="3" fill="#1e3a5f"/>
+  <text x="165" y="125" fill="#1e3a5f" font-size="12">C</text>
+  <!-- tangent point at angle -30 deg from center -->
+  <line x1="180" y1="130" x2="249" y2="90" stroke="#f59e0b" stroke-width="2"/>
+  <text x="205" y="108" fill="#f59e0b" font-size="12">radius</text>
+  <circle cx="249" cy="90" r="3.5" fill="#dc2626"/>
+  <text x="255" y="86" fill="#dc2626" font-size="12">T</text>
+  <!-- tangent line: perpendicular to radius at T.  Radius direction (69,-40) normalized → normal (40,69) -->
+  <line x1="169" y1="20" x2="329" y2="160" stroke="#16a34a" stroke-width="2"/>
+  <text x="320" y="175" fill="#16a34a" font-size="12">tangent</text>
+  <!-- small right-angle marker at T -->
+  <polyline points="244,95 240,86 249,82" fill="none" stroke="#dc2626" stroke-width="1.2"/>
+  <text x="85" y="245" fill="#64748b" font-size="11">Tangent at T is perpendicular to the radius CT.</text>
+</svg>
+
+<h3>Applications</h3>
+
+<ul>
+  <li><strong>Equation of tangent at a given point</strong>: gradient of tangent = \(-1/\)(gradient of radius from centre to point); use point–slope form.</li>
+  <li><strong>Centre via perpendicular bisectors</strong>: for three points on a circle, the centre is the intersection of any two perpendicular bisectors.</li>
+  <li><strong>Right-angle detection</strong>: if three points satisfy Pythagoras' theorem, the right-angle vertex lies on the circle whose diameter is the hypotenuse.</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam tip — tangent at a point.</strong> If a question asks for the equation of the tangent to a circle at a specific point \(T\) on the circle, do <em>not</em> substitute \(y = mx + c\) into the circle equation and set the discriminant to zero. Use the radius-perpendicular-to-tangent theorem: compute the gradient of \(CT\), take the negative reciprocal, and apply point–slope at \(T\). This is faster and less error-prone than the discriminant approach, which is reserved for tangents from an <em>external</em> point.
+</div>
+
+<div class="example">
+<h3>Worked Example 4 — Tangent at a point on a circle</h3>
+<p>Find the equation of the tangent at \(T(5, 6)\) to the circle \((x - 2)^2 + (y - 2)^2 = 25\).</p>
+<pre>
+<span class="ln">1.</span>  Verify T lies on the circle:  (5−2)² + (6−2)² = 9 + 16 = 25 ✓.
+<span class="ln">2.</span>  Centre C = (2, 2). Gradient of radius CT:
+<span class="ln">3.</span>     m(CT) = (6 − 2)/(5 − 2) = 4/3.
+<span class="ln">4.</span>  Gradient of tangent at T = −3/4 (negative reciprocal).
+<span class="ln">5.</span>  Tangent equation, point–slope at (5, 6):
+<span class="ln">6.</span>     y − 6 = −3/4 · (x − 5)
+<span class="ln">7.</span>     4(y − 6) = −3(x − 5)
+<span class="ln">8.</span>     4y − 24  = −3x + 15
+<span class="ln">9.</span>     3x + 4y − 39 = 0.
+</pre>
+</div>
+
+<h2>4. Intersection of a Line and a Circle</h2>
+
+<p>To find the intersection(s) of a line \(L\) and a circle \(C\): solve the line for \(y\) (or \(x\)) in terms of the other variable and substitute into the circle equation. The result is a quadratic in one variable, whose discriminant \(\Delta\) classifies the geometry.</p>
+
+<table>
+<tr><th>Sign of \(\Delta\)</th><th>Number of intersections</th><th>Geometric meaning</th></tr>
+<tr><td>\(\Delta > 0\)</td><td>Two distinct points</td><td>Line is a <em>secant</em> (cuts the circle)</td></tr>
+<tr><td>\(\Delta = 0\)</td><td>One (repeated) point</td><td>Line is a <em>tangent</em> to the circle</td></tr>
+<tr><td>\(\Delta < 0\)</td><td>None</td><td>Line misses the circle entirely</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — tangent from an external point.</strong> When the line passes through an <em>external</em> point \((p, q)\) and is tangent to the circle, parametrise it as \(y - q = m(x - p)\), substitute into the circle equation, and set the discriminant equal to zero. You'll get a quadratic in \(m\) — two real solutions giving the two tangent gradients from the external point. Do not forget that the vertical line \(x = p\) may also be a tangent; check separately if the algebra hides this case.
+</div>
+
+<div class="example">
+<h3>Worked Example 5 — Tangents from an external point</h3>
+<p>Find the equations of both tangents from the external point \(P(7, 1)\) to the circle \(x^2 + y^2 = 25\).</p>
+<pre>
+<span class="ln"> 1.</span>  Circle: x² + y² = 25, centre (0,0), radius 5.
+<span class="ln"> 2.</span>  |OP|² = 49 + 1 = 50 > 25, so P is external. ✓
+<span class="ln"> 3.</span>  Line through P with gradient m:   y − 1 = m(x − 7), i.e. y = mx − 7m + 1.
+<span class="ln"> 4.</span>  Substitute into x² + y² = 25:
+<span class="ln"> 5.</span>     x² + (mx − 7m + 1)² = 25.
+<span class="ln"> 6.</span>  Let k = 1 − 7m.  Then y = mx + k.
+<span class="ln"> 7.</span>     x² + m²x² + 2mkx + k² = 25
+<span class="ln"> 8.</span>     (1 + m²)x² + 2mk x + (k² − 25) = 0.
+<span class="ln"> 9.</span>  Tangent ⇒ discriminant = 0:
+<span class="ln">10.</span>     (2mk)² − 4(1 + m²)(k² − 25) = 0
+<span class="ln">11.</span>     4m²k² − 4(k² − 25 + m²k² − 25m²) = 0
+<span class="ln">12.</span>     4m²k² − 4k² + 100 − 4m²k² + 100m² = 0
+<span class="ln">13.</span>     −4k² + 100 + 100m² = 0
+<span class="ln">14.</span>     k² = 25(1 + m²).
+<span class="ln">15.</span>  Substitute k = 1 − 7m:
+<span class="ln">16.</span>     (1 − 7m)² = 25(1 + m²)
+<span class="ln">17.</span>     1 − 14m + 49m² = 25 + 25m²
+<span class="ln">18.</span>     24m² − 14m − 24 = 0
+<span class="ln">19.</span>     12m² − 7m − 12 = 0.
+<span class="ln">20.</span>  Solve: m = [7 ± √(49 + 576)] / 24  =  [7 ± 25]/24.
+<span class="ln">21.</span>  ⇒ m = 32/24 = 4/3   or   m = −18/24 = −3/4.
+<span class="ln">22.</span>  Tangent equations:
+<span class="ln">23.</span>    y − 1 =  4/3 (x − 7)   ⇒   4x − 3y − 25 = 0.
+<span class="ln">24.</span>    y − 1 = −3/4 (x − 7)   ⇒   3x + 4y − 25 = 0.
+<span class="ln">25.</span>  Check product of gradients: (4/3)·(−3/4) = −1, so the two tangents are perpendicular.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 6 — Circle through three points</h3>
+<p>Find the equation of the circle through \(A(1, 1)\), \(B(5, 1)\), and \(C(1, 5)\).</p>
+<pre>
+<span class="ln"> 1.</span>  Strategy A — general form.  Substitute each point into
+<span class="ln">   </span>      x² + y² + 2gx + 2fy + c = 0.
+<span class="ln"> 2.</span>     A(1,1):  1 + 1 + 2g + 2f + c = 0   ⇒   2g + 2f + c = −2.
+<span class="ln"> 3.</span>     B(5,1): 25 + 1 + 10g + 2f + c = 0  ⇒  10g + 2f + c = −26.
+<span class="ln"> 4.</span>     C(1,5):  1 + 25 + 2g + 10f + c = 0 ⇒   2g + 10f + c = −26.
+<span class="ln"> 5.</span>  Subtract (2) from (3):  8g = −24  ⇒  g = −3.
+<span class="ln"> 6.</span>  Subtract (2) from (4):  8f = −24  ⇒  f = −3.
+<span class="ln"> 7.</span>  From (2):  −6 − 6 + c = −2  ⇒  c = 10.
+<span class="ln"> 8.</span>  ∴ x² + y² − 6x − 6y + 10 = 0,
+<span class="ln">   </span>   centre (3, 3), r² = 9 + 9 − 10 = 8, r = 2√2.
+
+<span class="cm">// Strategy B — perpendicular bisectors (for geometric insight).</span>
+<span class="ln"> 9.</span>  AB is horizontal, midpoint (3, 1), so its perpendicular bisector is x = 3.
+<span class="ln">10.</span>  AC is vertical, midpoint (1, 3),  so its perpendicular bisector is y = 3.
+<span class="ln">11.</span>  Centre = (3, 3), agreeing with Strategy A.
+<span class="ln">12.</span>  Radius = distance from (3,3) to A(1,1) = √(4 + 4) = 2√2.  ✓
+</pre>
+</div>
+
+<h2>5. Parametric Equations</h2>
+
+<p>Not every curve in the plane is conveniently described by a single equation \(y = f(x)\) or \(F(x, y) = 0\). <em>Parametric equations</em> describe a curve by letting both \(x\) and \(y\) depend on a third variable, the <em>parameter</em>, often called \(t\) or \(\theta\).</p>
+
+<div class="definition">
+<strong>Parametric equations.</strong> A curve given by
+\[ x = f(t), \quad y = g(t), \qquad t \in I, \]
+for some interval (or union of intervals) \(I \subseteq \mathbb{R}\). As \(t\) varies over \(I\), the point \((x, y)\) traces out the curve.
+</div>
+
+<div class="definition">
+<strong>Parameter.</strong> The independent variable \(t\) (or \(\theta, s, \lambda\), etc.) indexing the points of a parametric curve. The parameter often has a physical or geometric meaning — time in mechanics; angle for circles and ellipses; a non-geometric algebraic label otherwise.
+</div>
+
+<h3>Standard Parametrisations</h3>
+
+<table>
+<tr><th>Curve</th><th>Parametric form</th><th>Cartesian equation</th><th>Elimination technique</th></tr>
+<tr><td>Parabola</td><td>\(x = t^2,\ y = 2t\)</td><td>\(y^2 = 4x\)</td><td>From \(y = 2t\), \(t = y/2\); substitute</td></tr>
+<tr><td>Circle, radius \(a\)</td><td>\(x = a\cos t,\ y = a\sin t\)</td><td>\(x^2 + y^2 = a^2\)</td><td>Pythagorean identity \(\sin^2 t + \cos^2 t = 1\)</td></tr>
+<tr><td>Ellipse</td><td>\(x = a\cos t,\ y = b\sin t\)</td><td>\(\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1\)</td><td>\((x/a)^2 + (y/b)^2 = 1\)</td></tr>
+<tr><td>Rectangular hyperbola</td><td>\(x = t,\ y = c^2/t\)</td><td>\(xy = c^2\)</td><td>Multiply \(x\) and \(y\)</td></tr>
+<tr><td>Line</td><td>\(x = p + \lambda u,\ y = q + \lambda v\)</td><td>\(v(x - p) - u(y - q) = 0\)</td><td>Solve one for \(\lambda\), substitute</td></tr>
+</table>
+
+<h3>Conversion Techniques — Parametric to Cartesian</h3>
+
+<table>
+<tr><th>Parametric feature</th><th>Elimination method</th></tr>
+<tr><td>Polynomial in \(t\), one equation easily invertible</td><td>Solve for \(t\) in one equation, substitute into the other</td></tr>
+<tr><td>Both \(x\) and \(y\) are trigonometric (e.g. \(\cos t, \sin t\))</td><td>Use \(\sin^2 t + \cos^2 t = 1\), or \(1 + \tan^2 t = \sec^2 t\)</td></tr>
+<tr><td>Exponential parameters (e.g. \(e^t, e^{-t}\))</td><td>Multiply, or use \(\cosh^2 - \sinh^2 = 1\)</td></tr>
+<tr><td>Involves reciprocals \(t\) and \(1/t\)</td><td>Add or multiply to produce a simple symmetric function</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — range of the curve.</strong> Eliminating the parameter gives an equation \(F(x, y) = 0\) that the points of the curve must satisfy — but the Cartesian equation often describes a <em>larger</em> set than the original parametric curve. For example, \(x = t^2,\ y = t\) with \(t \in \mathbb{R}\) yields \(x = y^2\) — the full sideways parabola. But \(x = t^2,\ y = t,\ t \geq 0\) traces only the upper half (\(y \geq 0\)). Always state any restrictions on \(x\) or \(y\) inherited from the parameter's range.
+</div>
+
+<div class="example">
+<h3>Worked Example 7 — Trigonometric parametrisation</h3>
+<p>Show that \(x = 4\cos\theta,\ y = 4\sin\theta\) traces a circle; give its Cartesian equation and state its centre and radius.</p>
+<pre>
+<span class="ln">1.</span>   x² = 16 cos²θ,     y² = 16 sin²θ.
+<span class="ln">2.</span>   x² + y² = 16(cos²θ + sin²θ) = 16 · 1 = 16.
+<span class="ln">3.</span>   ∴ x² + y² = 16  —  circle, centre (0, 0), radius 4.
+
+<span class="cm">// As θ runs over [0, 2π), (x, y) traces the whole circle exactly once.</span>
+<span class="cm">// θ = 0 → (4, 0); θ = π/2 → (0, 4); θ = π → (−4, 0); θ = 3π/2 → (0, −4).</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 8 — Parabolic parametrisation</h3>
+<p>A curve is given by \(x = t^2,\ y = 2t\). (a) Find its Cartesian equation. (b) Find the points where it meets the line \(y = x - 3\).</p>
+<pre>
+<span class="cm">// (a) Eliminate t.</span>
+<span class="ln">1.</span>  From y = 2t:  t = y/2.
+<span class="ln">2.</span>  Substitute into x = t²:  x = (y/2)² = y²/4.
+<span class="ln">3.</span>  ∴ y² = 4x  —  a parabola, vertex at origin, axis along the x-axis.
+
+<span class="cm">// (b) Intersection with y = x − 3.</span>
+<span class="ln">4.</span>  Substitute x = y + 3 into y² = 4x:
+<span class="ln">5.</span>     y² = 4(y + 3)
+<span class="ln">6.</span>     y² − 4y − 12 = 0
+<span class="ln">7.</span>     (y − 6)(y + 2) = 0
+<span class="ln">8.</span>  ⇒ y = 6, x = 9    or    y = −2, x = 1.
+<span class="ln">9.</span>  Intersection points:  (9, 6) and (1, −2).
+</pre>
+</div>
+
+<h2>6. Differentiation of Parametric Curves</h2>
+
+<p>When \(x\) and \(y\) are both functions of \(t\), the gradient \(\mathrm{d}y/\mathrm{d}x\) of the curve can be computed without first eliminating the parameter.</p>
+
+<div class="equation">
+\( \dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{\mathrm{d}y/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t}, \qquad \text{provided } \dfrac{\mathrm{d}x}{\mathrm{d}t} \neq 0. \)
+</div>
+
+<p>This is the chain rule in disguise: \(\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{\mathrm{d}y}{\mathrm{d}t} \cdot \dfrac{\mathrm{d}t}{\mathrm{d}x}\). When \(\mathrm{d}x/\mathrm{d}t = 0\) the tangent is vertical — the formula breaks down, which it should, because the gradient is undefined.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — parametric \(\mathrm{d}y/\mathrm{d}x\).</strong> Always write out both \(\mathrm{d}y/\mathrm{d}t\) and \(\mathrm{d}x/\mathrm{d}t\) separately on the page, then divide. OCR marks the derivatives and the division as separate steps. Also: leave your answer in terms of \(t\) (not \(x\) or \(y\)) unless asked to convert — converting midway adds unnecessary algebra and is a common source of errors.
+</div>
+
+<h3>Worked Derivatives</h3>
+
+<table>
+<tr><th>Curve</th><th>\(\mathrm{d}x/\mathrm{d}t\)</th><th>\(\mathrm{d}y/\mathrm{d}t\)</th><th>\(\mathrm{d}y/\mathrm{d}x\)</th></tr>
+<tr><td>Parabola: \(x = t^2,\ y = 2t\)</td><td>\(2t\)</td><td>\(2\)</td><td>\(1/t\) (equivalently \(2/y\))</td></tr>
+<tr><td>Circle: \(x = a\cos t,\ y = a\sin t\)</td><td>\(-a\sin t\)</td><td>\(a\cos t\)</td><td>\(-\cot t = -x/y\)</td></tr>
+<tr><td>Ellipse: \(x = a\cos t,\ y = b\sin t\)</td><td>\(-a\sin t\)</td><td>\(b\cos t\)</td><td>\(-\dfrac{b}{a}\cot t\)</td></tr>
+<tr><td>Rect. hyperbola: \(x = t,\ y = c^2/t\)</td><td>\(1\)</td><td>\(-c^2/t^2\)</td><td>\(-c^2/t^2 = -y/x\)</td></tr>
+</table>
+
+<div class="example">
+<h3>Worked Example 9 — Tangent to a parametric curve</h3>
+<p>Find the equation of the tangent to the curve \(x = t^2,\ y = 2t\) at the point where \(t = 3\).</p>
+<pre>
+<span class="ln">1.</span>  Point at t = 3:  (x, y) = (9, 6).
+<span class="ln">2.</span>  dx/dt = 2t,   dy/dt = 2.
+<span class="ln">3.</span>  dy/dx = 2/(2t) = 1/t.
+<span class="ln">4.</span>  At t = 3:   dy/dx = 1/3.
+<span class="ln">5.</span>  Tangent:   y − 6 = (1/3)(x − 9)
+<span class="ln">6.</span>             3y − 18 = x − 9
+<span class="ln">7.</span>             x − 3y + 9 = 0.
+<span class="ln">8.</span>  Check on Cartesian form y² = 4x: implicit differentiation
+<span class="ln">   </span>     2y·y' = 4 ⇒ y' = 2/y = 2/6 = 1/3 ✓.
+</pre>
+</div>
+
+<h2>7. Applications — Worked Exam Problems</h2>
+
+<div class="example">
+<h3>Worked Example 10 — Area enclosed by a line and a parabola</h3>
+<p>Find the area enclosed between the parabola \(y = x^2 - 2x - 3\) and the line \(y = x - 3\).</p>
+<pre>
+<span class="ln"> 1.</span>  Find intersections:
+<span class="ln"> 2.</span>     x² − 2x − 3 = x − 3  ⇒  x² − 3x = 0  ⇒  x = 0 or x = 3.
+<span class="ln"> 3.</span>  On [0, 3] the line lies above the parabola (check at x = 1:
+<span class="ln">   </span>     line = −2, parabola = 1 − 2 − 3 = −4, so line > parabola). ✓
+<span class="ln"> 4.</span>  Area = ∫₀³ [(x − 3) − (x² − 2x − 3)] dx
+<span class="ln"> 5.</span>         = ∫₀³ [−x² + 3x] dx
+<span class="ln"> 6.</span>         = [−x³/3 + 3x²/2]₀³
+<span class="ln"> 7.</span>         = (−9 + 27/2) − 0
+<span class="ln"> 8.</span>         = 9/2.
+
+<span class="cm">// The enclosed region is the "lens" between the secant chord and the parabola.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 11 — Semicircle theorem in coordinates</h3>
+<p>Show that the triangle with vertices \(A(-3, 0), B(5, 0), C(1, 4)\) has a right angle at \(C\), and deduce the equation of the circle through \(A, B, C\).</p>
+<pre>
+<span class="ln">1.</span>  Vectors:  CA = A − C = (−4, −4);  CB = B − C = (4, −4).
+<span class="ln">2.</span>  Dot product:  CA · CB = (−4)(4) + (−4)(−4) = −16 + 16 = 0.
+<span class="ln">3.</span>  ∴ CA ⊥ CB, i.e. ∠ACB = 90°.
+<span class="ln">4.</span>  By the converse of "angle in a semicircle", C lies on the
+<span class="ln">   </span>     circle with diameter AB.
+<span class="ln">5.</span>  Centre = midpoint of AB = ((−3+5)/2, 0) = (1, 0).
+<span class="ln">6.</span>  Radius = |AB|/2 = 8/2 = 4.
+<span class="ln">7.</span>  Circle:  (x − 1)² + y² = 16.
+<span class="ln">8.</span>  Check C(1,4):  0 + 16 = 16 ✓.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 12 — Chord bisected by a perpendicular from centre</h3>
+<p>The circle \((x - 3)^2 + (y - 1)^2 = 25\) is cut by the line \(y = 2x - 3\). Find the length of the chord and verify that the perpendicular from the centre to the chord bisects it.</p>
+<pre>
+<span class="ln"> 1.</span>  Substitute y = 2x − 3 into the circle equation:
+<span class="ln"> 2.</span>     (x − 3)² + (2x − 4)² = 25
+<span class="ln"> 3.</span>     (x² − 6x + 9) + (4x² − 16x + 16) = 25
+<span class="ln"> 4.</span>     5x² − 22x + 0 = 0
+<span class="ln"> 5.</span>     x(5x − 22) = 0  ⇒  x = 0 or x = 22/5.
+<span class="ln"> 6.</span>  Corresponding y:  y = −3  and  y = 29/5.
+<span class="ln"> 7.</span>  Chord endpoints:  P(0, −3), Q(22/5, 29/5).
+<span class="ln"> 8.</span>  Chord length:
+<span class="ln"> 9.</span>     |PQ|² = (22/5)² + (29/5 + 3)²  = (22/5)² + (44/5)²
+<span class="ln">10.</span>           = (484 + 1936)/25  =  2420/25  =  96.8.
+<span class="ln">11.</span>     |PQ| = √96.8 = (22/5)√5.    <span class="cm">// exact form</span>
+<span class="ln">12.</span>  Midpoint M of PQ = (11/5, 7/5).
+<span class="ln">13.</span>  Vector from centre C(3, 1) to M:  (11/5 − 3, 7/5 − 1) = (−4/5, 2/5).
+<span class="ln">14.</span>  Direction of chord:  Q − P = (22/5, 44/5), parallel to (1, 2).
+<span class="ln">15.</span>  Dot product CM · (1, 2) = −4/5 + 4/5 = 0   ⇒   CM ⊥ chord ✓.
+<span class="ln">16.</span>  This confirms Theorem B: the perpendicular from the centre bisects the chord.
+</pre>
+</div>
+
+<h2>8. Locus Problems</h2>
+
+<p>A <em>locus</em> is the set of points satisfying a geometric condition. Translating the condition into coordinates and simplifying usually produces a line or circle equation.</p>
+
+<div class="example">
+<h3>Worked Example 13 — Locus equidistant from two points</h3>
+<p>Find the locus of points \(P(x, y)\) equidistant from \(A(-2, 3)\) and \(B(4, 1)\).</p>
+<pre>
+<span class="ln">1.</span>  |PA|² = |PB|² translates the condition:
+<span class="ln">2.</span>     (x + 2)² + (y − 3)² = (x − 4)² + (y − 1)²
+<span class="ln">3.</span>     x² + 4x + 4 + y² − 6y + 9 = x² − 8x + 16 + y² − 2y + 1
+<span class="ln">4.</span>     4x − 6y + 13 = −8x − 2y + 17
+<span class="ln">5.</span>     12x − 4y − 4 = 0
+<span class="ln">6.</span>     3x − y − 1 = 0.
+<span class="ln">7.</span>  ∴ the locus is the straight line 3x − y − 1 = 0
+<span class="ln">   </span>     — this is the perpendicular bisector of AB.
+<span class="ln">8.</span>  Check: midpoint of AB = (1, 2) lies on 3(1) − 2 − 1 = 0 ✓.
+<span class="ln">   </span>     gradient of AB = (1 − 3)/(4 + 2) = −1/3;
+<span class="ln">   </span>     perpendicular gradient = 3 — matches line gradient ✓.
+</pre>
+</div>
+
+<h2>9. Consolidated Summary and Exam Strategy</h2>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Coordinate Geometry.</strong>
+<ul>
+  <li><strong>Lines:</strong> know all three forms; convert to \(ax + by + c = 0\) with integer coefficients when asked.</li>
+  <li><strong>Gradient of perpendicular:</strong> negative reciprocal. Check \(m_1 m_2 = -1\) at the end.</li>
+  <li><strong>Circle from general form:</strong> complete the square in \(x\) and \(y\) separately; do not forget to subtract what you added.</li>
+  <li><strong>Point inside/outside circle:</strong> compare \((x_0 - a)^2 + (y_0 - b)^2\) with \(r^2\).</li>
+  <li><strong>Tangent at a point on a circle:</strong> gradient is negative reciprocal of radius gradient; use point–slope.</li>
+  <li><strong>Tangent from an external point:</strong> set discriminant of line-into-circle quadratic to zero.</li>
+  <li><strong>Line–circle intersection:</strong> substitute \(y\) from the line into the circle, solve the resulting quadratic; sign of discriminant tells the geometry.</li>
+  <li><strong>Parametric to Cartesian:</strong> eliminate \(t\) by substitution or trig identity; state any range restriction on \(x, y\).</li>
+  <li><strong>Parametric \(\mathrm{d}y/\mathrm{d}x\):</strong> \((\mathrm{d}y/\mathrm{d}t)/(\mathrm{d}x/\mathrm{d}t)\); leave in terms of \(t\).</li>
+  <li><strong>Three points on a circle:</strong> substitute into general form and solve for \(g, f, c\), or use two perpendicular bisectors to find the centre.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Writing a line equation in non-integer form when integer form was demanded.</li>
+  <li>Arithmetic slips when completing the square for a circle — especially sign errors on the constant term.</li>
+  <li>Using the "discriminant = 0" method for a tangent at a given <em>point on</em> the circle (over-complicated — use the perpendicular-radius method).</li>
+  <li>Failing to state the parameter range, so the Cartesian equation describes more of the plane than the actual parametric curve.</li>
+  <li>Dividing \(\mathrm{d}y/\mathrm{d}t\) by \(\mathrm{d}x/\mathrm{d}t\) in the wrong order, giving \(\mathrm{d}x/\mathrm{d}y\) instead.</li>
+  <li>Forgetting to verify that a point claimed to lie on a circle actually satisfies the equation before computing the tangent there.</li>
+  <li>Mishandling the external-tangent problem by assuming the tangent has a finite gradient, missing a vertical tangent case.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Formula snapshot (memorise).</strong>
+<ul>
+  <li>Gradient: \(m = (y_2 - y_1)/(x_2 - x_1)\).</li>
+  <li>Distance: \(|AB| = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}\).</li>
+  <li>Midpoint: \(M = ((x_1 + x_2)/2,\ (y_1 + y_2)/2)\).</li>
+  <li>Perpendicular: \(m_1 m_2 = -1\).</li>
+  <li>Circle standard: \((x - a)^2 + (y - b)^2 = r^2\).</li>
+  <li>Circle general: \(x^2 + y^2 + 2gx + 2fy + c = 0\); centre \((-g, -f)\), \(r^2 = g^2 + f^2 - c\).</li>
+  <li>Parametric derivative: \(\mathrm{d}y/\mathrm{d}x = (\mathrm{d}y/\mathrm{d}t)/(\mathrm{d}x/\mathrm{d}t)\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

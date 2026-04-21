@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.6 &mdash; Fundamentals of Computer Systems</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.6 Fundamentals of Computer Systems</h1>
+<p class="spec-ref">Computer Science &mdash; AQA A-Level (7517) &mdash; Paper 2: Written Theory</p>
+
+<p>Topic 4.6 binds the abstract (logic, languages, algorithms) to the physical (silicon, voltages, clocks). It opens with the hardware/software divide, steps up through language classifications and translators, drops down to Boolean algebra and gate-level circuitry, then climbs back to the operating system that orchestrates it all. This note walks sections 4.6.1&ndash;4.6.7 plus the combinatorial, sequential and OS content that AQA examines under this umbrella, in spec order, with the worked truth tables, Karnaugh maps and algebraic proofs that earn method marks.</p>
+
+<h2>4.6.1 Hardware and Software</h2>
+
+<div class="definition">
+    <strong>Hardware</strong> &mdash; the physical components of a computer system: the CPU, RAM, storage devices, motherboard, input/output peripherals, cables and power supply. Anything you can unplug.
+</div>
+
+<div class="definition">
+    <strong>Software</strong> &mdash; the programs and data that run on the hardware. Intangible; distributed as files or transmitted as bit streams. Anything you can <em>copy</em>.
+</div>
+
+<p>Software is further classified into two families &mdash; <strong>system software</strong>, which manages the machine itself, and <strong>application software</strong>, which performs tasks useful to the end user.</p>
+
+<h3>System software</h3>
+
+<ul>
+    <li><strong>Operating system</strong> &mdash; the master control program. Allocates CPU time, memory, files and I/O between processes, and presents a uniform interface to applications. Examples: Windows, macOS, Linux, Android.</li>
+    <li><strong>Utility programs</strong> &mdash; small tools that perform housekeeping: disk defragmenter, file compression (ZIP), antivirus, backup, task manager. Usually bundled with the OS.</li>
+    <li><strong>Library programs</strong> &mdash; precompiled code modules that applications can call rather than reinvent. Examples: the C standard library, <code>DirectX</code>, <code>libm</code> for maths functions, Python's <code>math</code> and <code>random</code> modules.</li>
+    <li><strong>Translators</strong> &mdash; assemblers, compilers and interpreters (see 4.6.3). They convert source code into a form the CPU can execute.</li>
+</ul>
+
+<h3>Application software</h3>
+
+<ul>
+    <li><strong>General-purpose</strong> &mdash; flexible tools designed to handle many kinds of task: Microsoft Word, Excel, Chrome, Photoshop. One product serves millions of users.</li>
+    <li><strong>Special-purpose</strong> &mdash; does one specific job very well but nothing else: a chess engine, a tax-return calculator, a supermarket till.</li>
+    <li><strong>Bespoke (custom)</strong> &mdash; written to order for a single client. Examples: NHS patient record systems, air-traffic control consoles, a bank's fraud-detection engine.</li>
+</ul>
+
+<h3>Bespoke vs off-the-shelf software</h3>
+
+<table>
+    <tr><th></th><th>Bespoke (custom)</th><th>Off-the-shelf</th></tr>
+    <tr><td>Cost</td><td>High &mdash; pays the entire development team.</td><td>Low &mdash; development cost spread across all customers.</td></tr>
+    <tr><td>Fit to requirements</td><td>Exact; built to the client's workflow.</td><td>Approximate; features you need plus many you don't.</td></tr>
+    <tr><td>Time to deploy</td><td>Months or years.</td><td>Minutes &mdash; install and run.</td></tr>
+    <tr><td>Maintenance</td><td>Depends on one supplier; expensive if they disappear.</td><td>Patched by the vendor for all users; large support community.</td></tr>
+    <tr><td>Reliability at launch</td><td>Low &mdash; never tested at scale.</td><td>High &mdash; bugs found and fixed by millions of users.</td></tr>
+    <tr><td>Competitive advantage</td><td>High &mdash; no rival has the same tool.</td><td>Low &mdash; competitors use the same product.</td></tr>
+</table>
+
+<div class="exam-tip">When an exam question says "a hospital needs patient-booking software", choose <em>bespoke</em> and justify with at least <em>two</em> of: exact fit to hospital workflow, integration with legacy systems, compliance with NHS data rules, no unnecessary features cluttering the interface. Avoid the vague "it does what you want".</div>
+
+<h2>4.6.2 Classification of Programming Languages</h2>
+
+<p>Programming languages sit on a spectrum from <strong>low-level</strong> (close to the hardware, one instruction per machine operation) to <strong>high-level</strong> (close to human thought, one statement may expand into dozens of machine instructions).</p>
+
+<h3>Low-level languages</h3>
+
+<ul>
+    <li><strong>Machine code</strong> &mdash; raw binary instructions the CPU executes directly. Each instruction is a bit pattern matching the processor's instruction set. Not portable: ARM binaries do not run on x86.</li>
+    <li><strong>Assembly language</strong> &mdash; mnemonics (<code>LDR</code>, <code>ADD</code>, <code>MOV</code>, <code>BEQ</code>) that map one-to-one onto machine instructions. Still processor-specific, but far more readable than hexadecimal. Translated to machine code by an <em>assembler</em>.</li>
+</ul>
+
+<h3>High-level languages and paradigms</h3>
+
+<p>A <strong>paradigm</strong> is a style of programming &mdash; a model of how a program is structured. Most modern languages support more than one paradigm, but each has a dominant style.</p>
+
+<table>
+    <tr><th>Paradigm</th><th>Core idea</th><th>Example languages</th></tr>
+    <tr><td>Imperative</td><td>Sequence of commands that change state. "Do this, then do that."</td><td>C, Pascal, early BASIC</td></tr>
+    <tr><td>Object-oriented (OOP)</td><td>Programs are collections of <em>objects</em> that encapsulate data + behaviour and send messages to each other.</td><td>Java, C#, Python, C++</td></tr>
+    <tr><td>Declarative</td><td>Describe <em>what</em> the answer is, not <em>how</em> to compute it. Includes logic languages.</td><td>SQL, Prolog, HTML</td></tr>
+    <tr><td>Functional</td><td>Computation as the evaluation of mathematical functions; no mutable state, no side-effects.</td><td>Haskell, F#, Lisp, Scheme</td></tr>
+</table>
+
+<h3>High-level vs low-level: trade-offs</h3>
+
+<table>
+    <tr><th></th><th>High-level</th><th>Low-level</th></tr>
+    <tr><td>Portability</td><td>High &mdash; compile once per platform.</td><td>None &mdash; tied to one instruction set.</td></tr>
+    <tr><td>Readability</td><td>Close to English/maths.</td><td>Terse; requires knowledge of registers, flags.</td></tr>
+    <tr><td>Development speed</td><td>Fast &mdash; rich libraries.</td><td>Slow &mdash; every detail is manual.</td></tr>
+    <tr><td>Execution speed</td><td>Slower &mdash; runtime overhead, abstraction layers.</td><td>Fast &mdash; programmer controls every cycle.</td></tr>
+    <tr><td>Hardware access</td><td>Indirect via OS calls/libraries.</td><td>Direct &mdash; can toggle individual register bits.</td></tr>
+    <tr><td>Typical use</td><td>Applications, web, games, business.</td><td>Device drivers, embedded firmware, bootloaders, critical kernels.</td></tr>
+</table>
+
+<div class="exam-tip">"Why write a device driver in assembly?" answers must cite <em>two</em> concrete reasons, e.g. <em>direct access to hardware registers</em> and <em>fine-grained timing control</em>. Do not just say "it's faster" &mdash; examiners want the mechanism, not the symptom.</div>
+
+<h2>4.6.3 Types of Program Translator</h2>
+
+<div class="definition">
+    <strong>Compiler</strong> &mdash; a translator that converts an entire high-level source program into equivalent machine (or object) code in a single translation step. The output executable can then be run many times without the compiler being present.
+</div>
+
+<div class="definition">
+    <strong>Interpreter</strong> &mdash; a translator that reads the source program one statement at a time, converts it to machine operations and executes it immediately. The interpreter must be present every time the program runs.
+</div>
+
+<h3>Assembler</h3>
+
+<p>Converts assembly language into machine code. Because the mapping is one-to-one (roughly), assembly translation is straightforward: each mnemonic is looked up in an opcode table and the operand fields are encoded beside it. Produces an object file that the linker combines with libraries into an executable.</p>
+
+<h3>Compiler vs interpreter</h3>
+
+<table>
+    <tr><th></th><th>Compiler</th><th>Interpreter</th></tr>
+    <tr><td>Translation timing</td><td>Once, before execution.</td><td>Every line, every run.</td></tr>
+    <tr><td>Output</td><td>A standalone executable.</td><td>No persistent output; results produced directly.</td></tr>
+    <tr><td>Execution speed</td><td>Fast &mdash; translation done.</td><td>Slow &mdash; re-translates each time through a loop.</td></tr>
+    <tr><td>Error reporting</td><td>All errors reported after full compile.</td><td>Stops at the first runtime error encountered.</td></tr>
+    <tr><td>Development cycle</td><td>Edit &rarr; compile &rarr; link &rarr; run. Slower.</td><td>Edit &rarr; run. Rapid iteration.</td></tr>
+    <tr><td>Portability of output</td><td>Executable tied to one CPU/OS.</td><td>Source runs anywhere the interpreter is installed.</td></tr>
+    <tr><td>Memory at runtime</td><td>Only the executable.</td><td>Executable <em>and</em> interpreter.</td></tr>
+    <tr><td>Typical languages</td><td>C, C++, Rust, Go.</td><td>Python (default), JavaScript, BASIC.</td></tr>
+</table>
+
+<h3>Intermediate code (bytecode) and JIT</h3>
+
+<p>A compromise between the two extremes: the compiler produces <strong>intermediate code</strong> (also called bytecode) for a virtual machine rather than a specific CPU. Examples: Java bytecode for the JVM, .NET CIL for the CLR, Python <code>.pyc</code> files. The bytecode is then either interpreted by the VM or translated on the fly.</p>
+
+<p><strong>Just-in-time (JIT) compilation</strong> profiles the bytecode as it runs and compiles hot loops to native machine code on demand, caching the result for subsequent iterations. Java HotSpot, V8 (Chrome) and .NET RyuJIT are JIT compilers. This gives the portability of bytecode with execution speeds approaching native compilation.</p>
+
+<div class="exam-tip">When AQA asks "compare compilation and interpretation", frame your answer as a table of <em>at least three</em> rows: translation timing, execution speed, error reporting. One sentence each. Examiners mark against discriminators, not generalities.</div>
+
+<h3>When to use each</h3>
+
+<ul>
+    <li><strong>Interpreter</strong> &mdash; during development (fast feedback), for scripting, for platform-independent distribution of source, for interactive shells.</li>
+    <li><strong>Compiler</strong> &mdash; for shipping finished products, where runtime speed matters, where source must be concealed, for embedded targets with no room for an interpreter.</li>
+    <li><strong>Bytecode + JIT</strong> &mdash; when you need cross-platform deployment <em>and</em> near-native speed (enterprise Java, modern JavaScript in browsers).</li>
+</ul>
+
+<h2>4.6.4 Logic Gates</h2>
+
+<div class="definition">
+    <strong>Logic gate</strong> &mdash; a physical electronic component (usually built from transistors) that implements a Boolean function of one or more binary inputs. Inputs and outputs are voltage levels interpreted as 0 (low) or 1 (high).
+</div>
+
+<div class="definition">
+    <strong>Truth table</strong> &mdash; a tabular listing of every possible combination of input values to a Boolean function alongside the corresponding output. An <em>n</em>-input function has 2<sup>n</sup> rows.
+</div>
+
+<h3>The six gates AQA examines</h3>
+
+<p>Each gate has a standardised symbol. Described in text (the shapes are learned for the exam):</p>
+
+<ul>
+    <li><strong>AND</strong> &mdash; flat-backed shield with a rounded nose. Output 1 only if both inputs are 1.</li>
+    <li><strong>OR</strong> &mdash; curved-backed shield with a pointed nose. Output 1 if either input is 1.</li>
+    <li><strong>NOT</strong> &mdash; triangle with a small circle (bubble) at the output. Inverts the input.</li>
+    <li><strong>NAND</strong> &mdash; AND shape with an output bubble. AND followed by NOT.</li>
+    <li><strong>NOR</strong> &mdash; OR shape with an output bubble. OR followed by NOT.</li>
+    <li><strong>XOR</strong> &mdash; OR shape with an extra curved arc on the input side. Output 1 iff inputs differ.</li>
+</ul>
+
+<h3>Truth tables</h3>
+
+<table>
+    <tr><th>A</th><th>B</th><th>A AND B</th><th>A OR B</th><th>A XOR B</th><th>A NAND B</th><th>A NOR B</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td><td>1</td><td>1</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>0</td><td>0</td><td>0</td></tr>
+</table>
+
+<table>
+    <tr><th>A</th><th>NOT A</th></tr>
+    <tr><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>0</td></tr>
+</table>
+
+<h3>Universal gates: NAND and NOR</h3>
+
+<p>A set of gates is <strong>functionally complete</strong> if any Boolean function can be built from it. NAND alone is complete, and so is NOR alone. This means entire CPUs can (and sometimes are) manufactured from a single gate type, which simplifies fabrication.</p>
+
+<pre>Building NOT, AND, OR from NAND only:
+
+  NOT A      =  A NAND A
+  A AND B    =  (A NAND B) NAND (A NAND B)
+  A OR B     =  (A NAND A) NAND (B NAND B)
+
+Verification of A OR B via NAND:
+  Let X = A NAND A = NOT A
+  Let Y = B NAND B = NOT B
+  X NAND Y = NOT(NOT A AND NOT B) = A OR B   (De Morgan)</pre>
+
+<h3>XOR from NAND (worked example)</h3>
+
+<pre>XOR needs four NANDs:
+
+  N1 = A NAND B
+  N2 = A NAND N1
+  N3 = B NAND N1
+  Out = N2 NAND N3   =   A XOR B
+
+Check when A=1, B=0:
+  N1 = 1 NAND 0 = 1
+  N2 = 1 NAND 1 = 0
+  N3 = 0 NAND 1 = 1
+  Out = 0 NAND 1 = 1   (correct: 1 XOR 0 = 1)</pre>
+
+<div class="exam-tip">In "build X using only NAND" questions, start by writing X in terms of AND, OR, NOT, then substitute each primitive with its NAND equivalent. Trying to see the NAND circuit directly almost always fails.</div>
+
+<h2>4.6.5 Boolean Algebra</h2>
+
+<p>Boolean algebra is the algebra of two values (0, 1) with three operations: AND (denoted <em>&middot;</em> or juxtaposition), OR (denoted <em>+</em>) and NOT (denoted by an overbar, written here as <em>A'</em>). It lets us simplify circuits <em>before</em> committing them to silicon.</p>
+
+<h3>Identities and laws</h3>
+
+<table>
+    <tr><th>Law</th><th>AND form</th><th>OR form</th></tr>
+    <tr><td>Identity</td><td>A &middot; 1 = A</td><td>A + 0 = A</td></tr>
+    <tr><td>Null (annulment)</td><td>A &middot; 0 = 0</td><td>A + 1 = 1</td></tr>
+    <tr><td>Idempotent</td><td>A &middot; A = A</td><td>A + A = A</td></tr>
+    <tr><td>Complement</td><td>A &middot; A' = 0</td><td>A + A' = 1</td></tr>
+    <tr><td>Double negation</td><td colspan="2">(A')' = A</td></tr>
+    <tr><td>Commutative</td><td>A &middot; B = B &middot; A</td><td>A + B = B + A</td></tr>
+    <tr><td>Associative</td><td>A &middot; (B &middot; C) = (A &middot; B) &middot; C</td><td>A + (B + C) = (A + B) + C</td></tr>
+    <tr><td>Distributive</td><td>A &middot; (B + C) = A&middot;B + A&middot;C</td><td>A + (B &middot; C) = (A+B) &middot; (A+C)</td></tr>
+    <tr><td>Absorption</td><td>A &middot; (A + B) = A</td><td>A + (A &middot; B) = A</td></tr>
+    <tr><td>De Morgan's 1st</td><td colspan="2">(A &middot; B)' = A' + B'</td></tr>
+    <tr><td>De Morgan's 2nd</td><td colspan="2">(A + B)' = A' &middot; B'</td></tr>
+</table>
+
+<h3>De Morgan's laws &mdash; proof by truth table</h3>
+
+<p>The two laws say that negating an AND gives an OR of negations, and vice versa. Verify the first form exhaustively:</p>
+
+<pre>A  B  | A&middot;B  (A&middot;B)'  | A'  B'  A'+B'
+------+----------------+-----------------
+0  0  |  0     1       |  1   1     1
+0  1  |  0     1       |  1   0     1
+1  0  |  0     1       |  0   1     1
+1  1  |  1     0       |  0   0     0
+
+Columns (A&middot;B)' and A'+B' match row-for-row. QED.</pre>
+
+<p>The second form is proved identically by swapping the middle operator. De Morgan lets us &ldquo;push&rdquo; a bubble through a gate, converting an AND-NOT into an OR-of-NOTs &mdash; crucial for simplification and for converting between NAND-only and NOR-only implementations.</p>
+
+<h3>Worked simplification: (A AND B) OR (A AND NOT B) = A</h3>
+
+<pre>   (A &middot; B) + (A &middot; B')
+ = A &middot; (B + B')          [distributive, factor out A]
+ = A &middot; 1                 [complement: B + B' = 1]
+ = A                       [identity]</pre>
+
+<p>A two-gate circuit (AND, AND, OR) collapses to a wire.</p>
+
+<h2>4.6.6 Karnaugh Maps</h2>
+
+<div class="definition">
+    <strong>Karnaugh map (K-map)</strong> &mdash; a two-dimensional grid representation of a truth table, arranged so that adjacent cells differ in exactly one variable (Gray code ordering). Grouping adjacent 1s visually simplifies a Boolean expression without algebraic manipulation.
+</div>
+
+<h3>Rules for grouping</h3>
+
+<ol>
+    <li>Group <em>only 1s</em> (for sum-of-products). Groups of 0s give product-of-sums.</li>
+    <li>Group sizes must be a <strong>power of 2</strong>: 1, 2, 4, 8, 16.</li>
+    <li>Groups must be <strong>rectangular</strong> &mdash; no diagonals, no L-shapes.</li>
+    <li>Make each group as <strong>large as possible</strong>; larger groups eliminate more variables.</li>
+    <li>Use as <strong>few groups as possible</strong>, but every 1 must be covered by at least one group.</li>
+    <li>Groups may <strong>wrap around</strong> edges (top&harr;bottom, left&harr;right) because those cells are adjacent in Gray-code terms.</li>
+    <li>Groups may <strong>overlap</strong>.</li>
+</ol>
+
+<h3>2-variable K-map</h3>
+
+<pre>         B=0   B=1
+       +-----+-----+
+ A=0   |  0  |  1  |     cell A=0,B=1
+       +-----+-----+
+ A=1   |  1  |  1  |     cell A=1,B=0 and A=1,B=1
+       +-----+-----+</pre>
+
+<p>Reading groups: the bottom row (two adjacent 1s) is A=1 regardless of B &rarr; term A. The right column (two adjacent 1s) is B=1 regardless of A &rarr; term B. Expression: <code>F = A + B</code>.</p>
+
+<h3>3-variable K-map: worked example</h3>
+
+<p>Suppose F(A,B,C) = 1 for minterms {1, 3, 5, 7} (i.e. whenever C = 1). The grid uses Gray-coded column labels BC: 00, 01, 11, 10.</p>
+
+<table>
+    <tr><th>A \ BC</th><th>00</th><th>01</th><th>11</th><th>10</th></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+
+<p>The four 1s form one 2&times;2 group covering the two middle columns. Across the group, A varies (top and bottom rows), B varies (column 01 has B=0, column 11 has B=1), and only C is constant at 1. Simplified: <code>F = C</code>.</p>
+
+<h3>3-variable K-map: a second example</h3>
+
+<p>F(A,B,C) = 1 for minterms {0, 2, 4, 6} (the even-indexed minterms &mdash; C = 0 in each).</p>
+
+<table>
+    <tr><th>A \ BC</th><th>00</th><th>01</th><th>11</th><th>10</th></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+</table>
+
+<p>The 1s sit in columns 00 and 10, which wrap around to be adjacent (edges touch in Gray-code). One 2&times;2 wrap-around group covers all four &rarr; <code>F = C'</code>.</p>
+
+<h3>4-variable K-map: worked example</h3>
+
+<p>Simplify F(A,B,C,D) with minterms {0, 2, 5, 7, 8, 10, 13, 15}. Column labels CD use Gray code 00, 01, 11, 10; row labels AB use Gray code 00, 01, 11, 10.</p>
+
+<pre>            CD=00   CD=01   CD=11   CD=10
+         +-------+-------+-------+-------+
+ AB=00   |   1   |   0   |   0   |   1   |   (m0, m2)
+         +-------+-------+-------+-------+
+ AB=01   |   0   |   1   |   1   |   0   |   (m5, m7)
+         +-------+-------+-------+-------+
+ AB=11   |   0   |   1   |   1   |   0   |   (m13, m15)
+         +-------+-------+-------+-------+
+ AB=10   |   1   |   0   |   0   |   1   |   (m8, m10)
+         +-------+-------+-------+-------+</pre>
+
+<p>Two groups of four emerge:</p>
+
+<ul>
+    <li><strong>Group 1</strong> &mdash; the four corners (m0, m2, m8, m10). They wrap horizontally and vertically to form a 2&times;2 block. Across this block A varies, C varies, but B = 0 and D = 0 throughout. Term: <code>B' &middot; D'</code>.</li>
+    <li><strong>Group 2</strong> &mdash; the central 2&times;2 at rows AB=01, AB=11 and columns CD=01, CD=11 (m5, m7, m13, m15). A varies, C varies, but B = 1 and D = 1 throughout. Term: <code>B &middot; D</code>.</li>
+</ul>
+
+<p>Simplified: <code>F = B'D' + BD</code> &mdash; which is simply <code>B XNOR D</code>, i.e. 1 whenever B and D agree.</p>
+
+<div class="exam-tip">Common K-map mistakes: (i) grouping an L-shape &mdash; groups must be rectangular; (ii) forgetting edge wrap on 4-variable maps; (iii) choosing too many small groups instead of one big one &mdash; the biggest valid group always gives the simplest term; (iv) labelling columns 00, 01, 10, 11 instead of the Gray-code 00, 01, 11, 10 &mdash; this breaks adjacency.</div>
+
+<h3>From truth table to K-map to expression</h3>
+
+<pre>Workflow:
+  1. List each row where F = 1 &mdash; its minterm index is the binary
+     reading of the inputs (e.g. A=1,B=0,C=1 is minterm 5).
+  2. Place a 1 in the K-map cell whose row/column labels match those inputs.
+  3. Place 0s elsewhere.
+  4. Cover all 1s with the fewest, largest rectangular power-of-2 groups,
+     allowing wrap-around and overlap.
+  5. For each group, drop the variables that change across it; keep those
+     that stay constant (barred if 0, unbarred if 1). AND them.
+  6. OR all group terms together.</pre>
+
+<h2>4.6.7 Boolean Simplification</h2>
+
+<p>Simplification can be algebraic (apply the laws) or graphical (K-map). Both paths reach the minimal sum-of-products expression. Complex expressions often reduce dramatically.</p>
+
+<h3>Worked example 1 &mdash; algebraic</h3>
+
+<pre>Simplify   F = A&middot;B&middot;C + A&middot;B&middot;C' + A&middot;B'&middot;C
+
+ = A&middot;B&middot;(C + C') + A&middot;B'&middot;C       [factor A&middot;B from first two terms]
+ = A&middot;B&middot;1      + A&middot;B'&middot;C       [complement]
+ = A&middot;B        + A&middot;B'&middot;C         [identity]
+ = A&middot;(B + B'&middot;C)                 [factor A]
+ = A&middot;(B + C)                     [absorption variant: B + B'&middot;C = B + C]
+
+Final: F = A&middot;B + A&middot;C  =  A&middot;(B + C)</pre>
+
+<h3>Worked example 2 &mdash; via 4-variable K-map</h3>
+
+<p>Simplify F(A,B,C,D) with minterms {1, 3, 5, 7, 9, 11, 13, 15} (every minterm with D = 1).</p>
+
+<table>
+    <tr><th>AB \ CD</th><th>00</th><th>01</th><th>11</th><th>10</th></tr>
+    <tr><td>00</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>01</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>11</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>10</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+
+<p>All eight 1s form a single 4&times;2 group covering the two middle columns. A, B and C all vary; only D is constant at 1. Simplified: <code>F = D</code>. An eight-term sum collapses to a wire.</p>
+
+<h3>Worked example 3 &mdash; mixed laws</h3>
+
+<pre>Simplify   F = (A + B) &middot; (A + B')
+
+ = A &middot; A + A &middot; B' + B &middot; A + B &middot; B'   [distribute]
+ = A       + A&middot;B'    + A&middot;B     + 0         [idempotent, complement]
+ = A       + A&middot;(B' + B)                      [factor A from last two]
+ = A       + A&middot;1                             [complement]
+ = A       + A                                  [identity]
+ = A                                            [idempotent]</pre>
+
+<p>Alternative one-line proof: <code>(A+B)&middot;(A+B') = A + B&middot;B' = A + 0 = A</code> using the OR-distributive form directly.</p>
+
+<h2>Combinatorial and Sequential Circuits</h2>
+
+<p>A <strong>combinatorial</strong> circuit produces an output that depends only on the current inputs &mdash; no memory, no clock. A <strong>sequential</strong> circuit has state: its output depends on current inputs <em>and</em> past inputs, held in flip-flops and synchronised by a clock.</p>
+
+<h3>Half-adder</h3>
+
+<div class="definition">
+    <strong>Half-adder</strong> &mdash; a combinatorial circuit that adds two single-bit inputs A and B, producing a <em>sum</em> bit and a <em>carry</em> bit. It cannot accept a carry-in from a previous stage, which is why it is called "half".
+</div>
+
+<table>
+    <tr><th>A</th><th>B</th><th>Sum (A XOR B)</th><th>Carry (A AND B)</th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+</table>
+
+<pre>Half-adder layout:
+
+    A ----+-------[ XOR ]---- Sum
+          |     /
+          |    /
+    B ----+---+---[ AND ]---- Carry
+
+    Sum   = A XOR B
+    Carry = A AND B</pre>
+
+<h3>Full-adder</h3>
+
+<p>A <strong>full-adder</strong> adds three bits: A, B and an incoming carry C<sub>in</sub>. It produces a sum and a carry-out. This is the building block of multi-bit addition.</p>
+
+<table>
+    <tr><th>A</th><th>B</th><th>C<sub>in</sub></th><th>Sum</th><th>C<sub>out</sub></th></tr>
+    <tr><td>0</td><td>0</td><td>0</td><td>0</td><td>0</td></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>0</td><td>1</td><td>1</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>0</td><td>1</td><td>0</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>0</td><td>0</td><td>1</td></tr>
+    <tr><td>1</td><td>1</td><td>1</td><td>1</td><td>1</td></tr>
+</table>
+
+<pre>Full-adder from two half-adders plus an OR:
+
+    A ----+-----[ HA1 ]---- S1 ----[ HA2 ]---- Sum
+          |       |                   |
+    B ----+       C1                  C2
+                                      |
+    Cin ----------------[ HA2 ]-------+
+                                       \
+                          C1 -----[ OR ]---- Cout
+                          C2 -----/
+
+    Sum  = A XOR B XOR Cin
+    Cout = (A AND B) OR (Cin AND (A XOR B))</pre>
+
+<h3>Building a 4-bit adder (ripple-carry)</h3>
+
+<p>Chain four full-adders so the C<sub>out</sub> of each stage feeds the C<sub>in</sub> of the next. The least significant bit's full-adder has C<sub>in</sub> = 0 (equivalently, use a half-adder there).</p>
+
+<pre>          A0 B0      A1 B1      A2 B2      A3 B3
+           |  |        |  |        |  |        |  |
+           v  v        v  v        v  v        v  v
+          +----+     +----+     +----+     +----+
+   0 --&gt;  | FA0 | -&gt;  | FA1 | -&gt;  | FA2 | -&gt;  | FA3 | --&gt; C4 (overflow)
+          +----+     +----+     +----+     +----+
+            |          |          |          |
+            S0         S1         S2         S3
+
+   Adds two 4-bit numbers A3A2A1A0 + B3B2B1B0 = C4 S3 S2 S1 S0.</pre>
+
+<p>The carry &ldquo;ripples&rdquo; left through the chain, which is why the circuit is slow for wide words &mdash; the final sum is only valid once the carry has propagated through every stage. Faster designs (carry-lookahead) are beyond the AQA spec but worth mentioning.</p>
+
+<h3>D-type flip-flop</h3>
+
+<div class="definition">
+    <strong>D-type flip-flop</strong> &mdash; an edge-triggered 1-bit storage element. On the active edge of the clock (typically rising), it samples the D input and copies it to the Q output; between edges the output holds its value regardless of D. The complementary output Q' is always the inverse of Q.
+</div>
+
+<pre>D-type symbol and behaviour:
+
+     +--------+
+ D --| D    Q |---- Q
+     |        |
+ Clk-&gt;|        |
+     |     Q' |---- Q' (= NOT Q)
+     +--------+
+
+ Behaviour on rising clock edge:   Q(next) = D
+ Otherwise (between edges):        Q(next) = Q(previous) &mdash; hold.</pre>
+
+<p><strong>Registers</strong> are built by wiring <em>n</em> D-type flip-flops in parallel, all sharing one clock line. A rising edge latches <em>n</em> data bits in lock-step. A 32-bit CPU register is 32 D-types behind a common clock. Memory cells in SRAM are essentially flip-flops; DRAM uses charge on a capacitor instead (cheaper, must refresh).</p>
+
+<p>The D-type solves the critical design problem of keeping computation <em>synchronised</em>: all downstream combinatorial logic can rely on inputs being stable between clock edges.</p>
+
+<h2>Operating System Functions</h2>
+
+<p>An operating system (OS) is the layer of system software that sits between applications and hardware. Applications do not poke disks or speak to network cards directly &mdash; they make system calls into the OS, which validates, schedules and executes the request on their behalf. The OS exists because (a) hardware is too fiddly and too varied to program directly, (b) many programs share one machine and must be kept apart, and (c) security boundaries must be enforced between users and between programs.</p>
+
+<h3>Memory management</h3>
+
+<ul>
+    <li><strong>Paging</strong> &mdash; physical RAM is divided into fixed-size frames (e.g. 4 KiB). A process's virtual address space is divided into pages of the same size. A page table per process maps page numbers to frame numbers. Pages can be placed in any frame, so fragmentation is minimal and processes grow or shrink easily.</li>
+    <li><strong>Segmentation</strong> &mdash; memory is divided into variable-size logical segments that correspond to program units (code, data, stack). Each segment has a base and a limit. More natural for the programmer but suffers from external fragmentation.</li>
+    <li><strong>Virtual memory</strong> &mdash; an abstraction giving each process the illusion of a large, contiguous private address space. Pages not currently needed are swapped to disk (the <em>page file</em>); when a process touches a page that is not in RAM, the OS raises a page fault, fetches the page and retries the instruction. Lets total process memory exceed physical RAM, at the cost of disk latency on misses (<em>thrashing</em> if overcommitted).</li>
+</ul>
+
+<div class="definition">
+    <strong>Virtual memory</strong> &mdash; an OS technique that presents each process with a contiguous logical address space larger than physical RAM by keeping only active pages resident and paging inactive ones to disk on demand.
+</div>
+
+<h3>Process management and scheduling</h3>
+
+<p>A modern CPU typically has far fewer cores than there are runnable processes, so the OS must share the CPU in time. The <strong>scheduler</strong> decides which ready process runs next.</p>
+
+<table>
+    <tr><th>Algorithm</th><th>Rule</th><th>Strengths</th><th>Weaknesses</th></tr>
+    <tr><td>First-come first-served (FCFS)</td><td>Queue order; run each to completion.</td><td>Simple, fair by arrival.</td><td>Long jobs block short ones (<em>convoy effect</em>). No interactivity.</td></tr>
+    <tr><td>Shortest job first (SJF)</td><td>Pick the ready job with the smallest predicted burst.</td><td>Minimises average waiting time.</td><td>Starves long jobs; requires knowing burst lengths.</td></tr>
+    <tr><td>Round-robin (RR)</td><td>Each ready process runs for a fixed time slice (quantum), then is pre-empted and placed at the back of the queue.</td><td>Fair, responsive, good for interactive/time-sharing systems.</td><td>Context-switch overhead; quantum choice is a trade-off between responsiveness and throughput.</td></tr>
+    <tr><td>Priority</td><td>Each process has a priority; highest runs first. May be pre-emptive.</td><td>Important jobs get CPU promptly.</td><td>Starvation of low-priority jobs &mdash; mitigated by <em>ageing</em>.</td></tr>
+    <tr><td>Multilevel feedback queue</td><td>Multiple queues with different priorities and quanta; jobs move between them based on behaviour.</td><td>Adapts to I/O-bound vs CPU-bound mix; used in Windows, Linux.</td><td>Complex tuning.</td></tr>
+</table>
+
+<h3>I/O management and interrupts</h3>
+
+<ul>
+    <li>The OS mediates every device access through <strong>device drivers</strong>, presenting uniform read/write interfaces regardless of vendor.</li>
+    <li>Rather than polling devices, the CPU is notified by <strong>interrupts</strong>: a hardware line raised by a device when it needs attention. The CPU finishes its current instruction, saves context, consults the interrupt vector, runs an <strong>interrupt service routine (ISR)</strong>, then resumes.</li>
+    <li>Interrupts have priorities; higher ones can pre-empt lower ISRs.</li>
+    <li>I/O is usually <strong>buffered</strong> (the OS copies between device and a RAM buffer) and may use <strong>DMA</strong> (direct memory access) so that large transfers occur without CPU involvement.</li>
+</ul>
+
+<h3>Kernel vs user mode</h3>
+
+<div class="definition">
+    <strong>Kernel (kernel mode)</strong> &mdash; the privileged execution mode in which the OS runs. Code in kernel mode can execute any CPU instruction and access any memory. User-mode applications cannot &mdash; they must ask the kernel via a system call.
+</div>
+
+<p>The CPU enforces a hardware <em>privilege bit</em>. In <strong>user mode</strong>, certain instructions (I/O, halt, change page tables) trap to the kernel. In <strong>kernel mode</strong>, all instructions are available. This boundary is the foundation of OS security: a buggy or hostile user program cannot directly corrupt other processes or the hardware &mdash; the kernel validates every privileged request.</p>
+
+<h3>Multi-tasking and multi-user</h3>
+
+<ul>
+    <li><strong>Multi-tasking</strong> &mdash; the OS runs many processes apparently in parallel on one (or a few) CPUs by rapid context switching. Pre-emptive multi-tasking (modern OSes) lets the OS interrupt a running process; cooperative multi-tasking (classic Mac OS, Windows 3.1) trusted each process to yield voluntarily.</li>
+    <li><strong>Multi-user</strong> &mdash; the OS supports multiple human users with separate accounts, file permissions and resource quotas, possibly logged in concurrently (Linux, mainframes) or serially (single-user desktops).</li>
+</ul>
+
+<div class="exam-tip">"Describe paging" in AQA answers wants: (1) RAM divided into fixed-size frames; (2) each process's address space divided into same-size pages; (3) a per-process page table maps pages to frames; (4) pages can be placed in <em>any</em> frame (no contiguous requirement); (5) inactive pages may be swapped to disk to support virtual memory. Five points, one mark each &mdash; don't just say "it splits memory up".</div>
+
+<h2>Extended Worked Examples</h2>
+
+<h3>Example A &mdash; XOR from AND, OR, NOT</h3>
+
+<p>The definition of XOR as "1 iff exactly one input is 1" becomes, as a sum of products:</p>
+
+<pre>   A XOR B = A&middot;B' + A'&middot;B
+
+Circuit reading:
+    A ----+---------+---[ AND ]---+
+          |         |             |
+         [NOT]-- A' |             +---[ OR ]---- A XOR B
+                    |             |
+          +--[NOT]-- B' ---[ AND ]+
+          |
+    B ----+---------+
+
+Two ANDs feed one OR; two NOTs provide the complemented inputs.</pre>
+
+<h3>Example B &mdash; simplify F = X&middot;Y + X&middot;Y&middot;Z + X&middot;Y'</h3>
+
+<pre>   F = X&middot;Y + X&middot;Y&middot;Z + X&middot;Y'
+     = X&middot;Y&middot;(1 + Z) + X&middot;Y'         [factor X&middot;Y from first two terms]
+     = X&middot;Y&middot;1       + X&middot;Y'         [null: 1 + Z = 1]
+     = X&middot;Y         + X&middot;Y'         [identity]
+     = X&middot;(Y + Y')                   [factor X]
+     = X&middot;1                          [complement]
+     = X                              [identity]
+
+Any three-term expression of this shape reduces to X alone.</pre>
+
+<h3>Example C &mdash; K-map with five minterms</h3>
+
+<p>F(A,B,C) = &Sigma;m(1, 2, 3, 5, 7). Three-variable K-map:</p>
+
+<table>
+    <tr><th>A \ BC</th><th>00</th><th>01</th><th>11</th><th>10</th></tr>
+    <tr><td>0</td><td>0</td><td>1</td><td>1</td><td>1</td></tr>
+    <tr><td>1</td><td>0</td><td>1</td><td>1</td><td>0</td></tr>
+</table>
+
+<p>Groupings:</p>
+<ul>
+    <li>Vertical pair in column BC=01 and BC=11 spanning both rows &rarr; 2&times;2 block, A varies, B varies, only C = 1 constant &rarr; <code>C</code>.</li>
+    <li>Remaining uncovered 1 at cell A=0, BC=10 (i.e. B=1, C=0) pairs with cell A=0, BC=11 &rarr; gives <code>A'&middot;B</code>.</li>
+</ul>
+
+<p>Simplified: <code>F = C + A'&middot;B</code>.</p>
+
+<h3>Example D &mdash; verifying De Morgan via simplification</h3>
+
+<pre>Prove   (A + B)'   =   A' &middot; B'   algebraically.
+
+Start from the RHS and expand by considering what each side outputs for every input pair:
+
+   A=0 B=0: LHS = (0+0)' = 0' = 1.   RHS = 1&middot;1 = 1.   match.
+   A=0 B=1: LHS = (0+1)' = 1' = 0.   RHS = 1&middot;0 = 0.   match.
+   A=1 B=0: LHS = (1+0)' = 1' = 0.   RHS = 0&middot;1 = 0.   match.
+   A=1 B=1: LHS = (1+1)' = 1' = 0.   RHS = 0&middot;0 = 0.   match.
+
+All four rows agree, therefore (A+B)' = A'&middot;B' identically.</pre>
+
+<h3>Example E &mdash; round-robin vs SJF illustrated</h3>
+
+<p>Four processes arrive at time 0 with CPU bursts P1=8, P2=4, P3=2, P4=1 ms. Compute average waiting time under SJF and round-robin (quantum = 2 ms).</p>
+
+<pre>SJF order (shortest first): P4(1), P3(2), P2(4), P1(8)
+
+  Gantt: | P4 | P3 | P2    | P1            |
+           1    3    7       15
+
+  Waiting times:
+    P4: 0      P3: 1      P2: 3      P1: 7
+  Average = (0+1+3+7)/4 = 2.75 ms.
+
+Round-robin (q=2), arrival order P1,P2,P3,P4:
+
+  Gantt: |P1|P2|P3|P4|P1|P2|P1|P2|P1|
+          2  4  6  7  9 11 13 14 15
+
+  Finish times: P3=6, P4=7, P2=14, P1=15.
+  Waiting = finish &minus; burst:
+    P1: 15 &minus; 8 = 7
+    P2: 14 &minus; 4 = 10
+    P3:  6 &minus; 2 = 4
+    P4:  7 &minus; 1 = 6
+  Average = (7+10+4+6)/4 = 6.75 ms.
+
+SJF wins on average waiting but starves long jobs when short jobs
+keep arriving; round-robin is predictable and interactive.</pre>
+
+<h3>Example F &mdash; 4-bit register from D-type flip-flops</h3>
+
+<pre>Four D-types sharing one clock line form a 4-bit parallel register:
+
+          D3    D2    D1    D0
+           |     |     |     |
+           v     v     v     v
+         +---+ +---+ +---+ +---+
+ Clk --&gt;| D |-| D |-| D |-| D |
+         | Q | | Q | | Q | | Q |
+         +-+-+ +-+-+ +-+-+ +-+-+
+           |     |     |     |
+          Q3    Q2    Q1    Q0
+
+On each rising clock edge, the four data bits on D3..D0 are captured
+simultaneously and appear on Q3..Q0 until the next edge.
+This is how CPU registers, pipeline latches and state machines are built.</pre>
+
+<h2>Common Misconceptions</h2>
+
+<ul>
+    <li><strong>"An interpreter translates the whole program once, then runs it."</strong> No &mdash; that's a compiler. An interpreter re-translates each line every time control reaches it.</li>
+    <li><strong>"Machine code and bytecode are the same."</strong> Bytecode is intermediate code for a <em>virtual</em> machine (the JVM, CPython VM). Machine code runs on the physical CPU directly.</li>
+    <li><strong>"NAND is just AND."</strong> NAND is AND <em>followed by NOT</em>. Its output is the opposite of AND.</li>
+    <li><strong>"K-map groups can be any rectangular shape."</strong> Only power-of-2 sizes: 1, 2, 4, 8, 16. A 3-cell group is invalid.</li>
+    <li><strong>"Virtual memory means the computer has more RAM than it really has."</strong> Virtual memory is an <em>abstraction</em>: each process sees a large address space, but pages may live on disk, not in RAM. Disk access is millions of times slower than RAM, so heavy use thrashes performance.</li>
+    <li><strong>"The kernel and the OS are different things."</strong> The kernel <em>is</em> the core of the OS &mdash; the part that runs in privileged mode. Utilities and shells are OS components that run in user mode.</li>
+</ul>
+
+<h2>Exam-Ready Summary</h2>
+
+<ul>
+    <li>Hardware = physical; software = programs. System vs application software; bespoke vs off-the-shelf trade cost for fit.</li>
+    <li>Languages span low-level (assembly, machine code &mdash; fast, hardware-specific) to high-level (portable, readable). Paradigms: imperative, OOP, declarative, functional.</li>
+    <li>Translators: assembler (assembly &rarr; machine), compiler (whole program, once), interpreter (line by line, every run), bytecode + JIT (hybrid).</li>
+    <li>Six gates: AND, OR, NOT, NAND, NOR, XOR. NAND and NOR are universal. Know truth tables cold.</li>
+    <li>Boolean algebra laws plus De Morgan's let you simplify expressions; Karnaugh maps do the same graphically. Group powers of 2, rectangles only, biggest groups, wrap edges.</li>
+    <li>Half-adder (XOR + AND), full-adder (two half-adders + OR), cascade full-adders for multi-bit addition. D-type flip-flop stores one bit at each clock edge and is the cell from which registers are built.</li>
+    <li>The OS manages memory (paging, segmentation, virtual memory), processes (FCFS, SJF, round-robin, priority), I/O (drivers, interrupts, DMA), and enforces the kernel/user boundary that makes multi-tasking and multi-user systems secure.</li>
+</ul>
+
+</div>
+</body>
+</html>

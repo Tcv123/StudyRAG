@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 1.5 — Trigonometry</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.5 Trigonometry</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 1: Pure Mathematics</p>
+
+<p>Trigonometry began as the mathematics of triangles — ratios of sides used in surveying, navigation and astronomy — but at A-level it becomes a far richer subject about <em>periodic functions</em>. The same three ratios \(\sin\), \(\cos\) and \(\tan\) that describe a right-angled triangle also describe circular motion, oscillations, alternating current, tides and sound waves. This chapter develops the machinery needed to work with them as functions: radian measure, graphs and transformations, the reciprocal functions \(\sec\), \(\csc\), \(\cot\), a family of <em>identities</em> (Pythagorean, compound-angle, double-angle, the \(R\sin(\theta + \alpha)\) form), methods for solving trig equations, and the inverse functions \(\arcsin\), \(\arccos\), \(\arctan\). Throughout, the key idea is that every trig identity is a statement true for <em>all</em> valid angles, while every trig equation asks for the specific angles making a statement true.</p>
+
+<h2>1. Degrees and Radians</h2>
+
+<p>An angle can be measured in two principal units. Degrees split a full turn into \(360\) equal parts — convenient for everyday use but mathematically arbitrary. Radians, by contrast, measure an angle by the arc length it subtends on a unit circle, and are the natural unit for calculus: the derivative of \(\sin x\) is \(\cos x\) only when \(x\) is in radians.</p>
+
+<div class="definition">
+<strong>Radian.</strong> One radian is the angle subtended at the centre of a circle by an arc equal in length to the radius. Consequently a full turn (circumference \(2\pi r\)) subtends \(2\pi\) radians, so
+\[ 180^\circ = \pi \text{ rad}, \qquad 1 \text{ rad} = \frac{180^\circ}{\pi} \approx 57.2958^\circ. \]
+</div>
+
+<h3>Converting Between Units</h3>
+
+<p>To convert from degrees to radians multiply by \(\pi/180\); to convert from radians to degrees multiply by \(180/\pi\).</p>
+
+<table>
+<tr><th>Degrees</th><th>0°</th><th>30°</th><th>45°</th><th>60°</th><th>90°</th><th>120°</th><th>135°</th><th>150°</th><th>180°</th><th>270°</th><th>360°</th></tr>
+<tr><td>Radians</td><td>0</td><td>\(\pi/6\)</td><td>\(\pi/4\)</td><td>\(\pi/3\)</td><td>\(\pi/2\)</td><td>\(2\pi/3\)</td><td>\(3\pi/4\)</td><td>\(5\pi/6\)</td><td>\(\pi\)</td><td>\(3\pi/2\)</td><td>\(2\pi\)</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — set your calculator to the correct mode.</strong> If the question uses \(\pi\), the angle is in radians; if it uses the \(^\circ\) symbol, the angle is in degrees. A calculator in the wrong mode is the single most common cause of marks lost in trigonometry questions. Always check the small DEG or RAD indicator before evaluating \(\sin 30\).
+</div>
+
+<h3>Arc Length and Sector Area</h3>
+
+<p>When \(\theta\) is measured in <em>radians</em>, two elegant formulae follow directly from the definition:</p>
+
+<div class="definition">
+<strong>Arc length.</strong> An arc of a circle of radius \(r\), subtending an angle \(\theta\) radians at the centre, has length
+\[ s = r\theta. \]
+</div>
+
+<div class="definition">
+<strong>Sector area.</strong> The area of a circular sector of radius \(r\) and angle \(\theta\) radians is
+\[ A = \tfrac{1}{2} r^2 \theta. \]
+The area of the corresponding triangular <em>segment</em> (bounded by the chord and two radii) is \(\tfrac{1}{2}r^2 \sin\theta\), so the crescent-shaped minor segment has area \(\tfrac{1}{2}r^2(\theta - \sin\theta)\).
+</div>
+
+<p>Both formulae fail in degrees: if \(\theta\) is in degrees you must first convert or use \(s = \pi r \theta/180\) and \(A = \pi r^2 \theta/360\).</p>
+
+<div class="example">
+<h3>Worked Example 1 — Arc, sector, segment</h3>
+<p>A sector of a circle has radius \(r = 10\) cm and subtends \(\theta = 1.2\) rad at the centre. Find the arc length, sector area, chord length and minor segment area.</p>
+<pre>
+<span class="ln">1.</span>  Arc length:   s = rθ = 10 · 1.2 = 12 cm.
+<span class="ln">2.</span>  Sector area:  A = ½ r² θ = ½ · 100 · 1.2 = 60 cm².
+<span class="ln">3.</span>  Chord length (isosceles triangle, two sides 10, included angle 1.2 rad):
+<span class="ln">4.</span>     c² = 10² + 10² − 2·10·10·cos 1.2   (cosine rule)
+<span class="ln">5.</span>        = 200 − 200·0.36236
+<span class="ln">6.</span>        = 200 − 72.47 = 127.53
+<span class="ln">7.</span>     c  ≈ 11.29 cm.
+<span class="ln">8.</span>  Triangle area:  ½·10·10·sin 1.2 = 50·0.9320 ≈ 46.60 cm².
+<span class="ln">9.</span>  Segment area:   A − triangle = 60 − 46.60 = 13.40 cm².
+
+<span class="cm">// The segment is the thin crescent between chord and arc.</span>
+</pre>
+</div>
+
+<h3>Small-Angle Approximations</h3>
+
+<p>When an angle \(x\) is small and measured in <em>radians</em>, the trig functions simplify dramatically. These approximations are the starting point of calculus with trig functions.</p>
+
+<div class="definition">
+<strong>Small-angle approximations.</strong> For \(x\) small and in radians,
+\[ \sin x \approx x, \qquad \cos x \approx 1 - \tfrac{x^2}{2}, \qquad \tan x \approx x. \]
+The errors are of order \(x^3\), \(x^4\) and \(x^3\) respectively, so for \(|x| < 0.1\) all three give four-decimal accuracy.
+</div>
+
+<p>These come from the Taylor (power) series of the trig functions. Intuitively, for a small arc on the unit circle, the arc length \(x\) and the vertical drop \(\sin x\) are nearly equal, and the horizontal coordinate \(\cos x\) drops from \(1\) by approximately half \(x^2\).</p>
+
+<div class="exam-tip">
+<strong>Exam tip — the approximations only work in radians.</strong> \(\sin x \approx x\) is false in degrees: \(\sin 5^\circ = 0.0872\), not \(5\). If a question uses small-angle approximations, the angles must be converted to radians first. Writing \(\sin 5 \approx 5\) in a script will lose every mark in the part.
+</div>
+
+<div class="example">
+<h3>Worked Example 2 — Small-angle limit</h3>
+<p>Use small-angle approximations to estimate \(\displaystyle\lim_{x \to 0} \dfrac{\sin 3x}{x}\) and \(\displaystyle\lim_{x \to 0} \dfrac{1 - \cos 2x}{x^2}\).</p>
+<pre>
+<span class="ln">1.</span>  For x → 0, use sin(3x) ≈ 3x:
+<span class="ln">2.</span>     sin(3x)/x ≈ 3x/x = 3.
+<span class="ln">3.</span>  For cos(2x) near 0 use cos(2x) ≈ 1 − (2x)²/2 = 1 − 2x²:
+<span class="ln">4.</span>     1 − cos(2x) ≈ 1 − (1 − 2x²) = 2x².
+<span class="ln">5.</span>     (1 − cos 2x)/x² ≈ 2x²/x² = 2.
+
+<span class="cm">// Both limits are rigorous — the approximation error vanishes as x → 0.</span>
+</pre>
+</div>
+
+<h2>2. Graphs of sin, cos and tan</h2>
+
+<p>Defining \(\sin\theta\) and \(\cos\theta\) as the \(y\)- and \(x\)-coordinates of the point on the unit circle at angle \(\theta\) from the positive \(x\)-axis immediately extends them to <em>all</em> real angles, not just those in a right-angled triangle. This gives graphs that repeat: they are <em>periodic functions</em>.</p>
+
+<h3>y = sin x</h3>
+
+<ul>
+  <li><strong>Domain:</strong> all real \(x\).</li>
+  <li><strong>Range:</strong> \(-1 \leq \sin x \leq 1\).</li>
+  <li><strong>Period:</strong> \(2\pi\) (or \(360^\circ\)).</li>
+  <li><strong>Amplitude:</strong> \(1\).</li>
+  <li><strong>Roots:</strong> \(x = k\pi\), \(k \in \mathbb{Z}\).</li>
+  <li><strong>Maxima:</strong> at \(x = \pi/2 + 2k\pi\), value \(1\). <strong>Minima:</strong> at \(x = -\pi/2 + 2k\pi\), value \(-1\).</li>
+  <li><strong>Symmetry:</strong> odd: \(\sin(-x) = -\sin x\).</li>
+</ul>
+
+<h3>y = cos x</h3>
+
+<ul>
+  <li><strong>Domain:</strong> all real \(x\). <strong>Range:</strong> \([-1, 1]\). <strong>Period:</strong> \(2\pi\).</li>
+  <li><strong>Roots:</strong> \(x = \pi/2 + k\pi\).</li>
+  <li><strong>Maxima:</strong> \(x = 2k\pi\). <strong>Minima:</strong> \(x = \pi + 2k\pi\).</li>
+  <li><strong>Symmetry:</strong> even: \(\cos(-x) = \cos x\). Also \(\cos x = \sin(x + \pi/2)\) — the cosine curve is the sine curve shifted left by \(\pi/2\).</li>
+</ul>
+
+<h3>y = tan x</h3>
+
+<ul>
+  <li><strong>Domain:</strong> all real \(x\) <em>except</em> \(x = \pi/2 + k\pi\) (where \(\cos x = 0\)).</li>
+  <li><strong>Range:</strong> all real numbers.</li>
+  <li><strong>Period:</strong> \(\pi\) — shorter than \(\sin\) and \(\cos\).</li>
+  <li><strong>Vertical asymptotes:</strong> at \(x = \pi/2 + k\pi\).</li>
+  <li><strong>Roots:</strong> \(x = k\pi\).</li>
+  <li><strong>Symmetry:</strong> odd: \(\tan(-x) = -\tan x\).</li>
+</ul>
+
+<table>
+<tr><th>Function</th><th>Period</th><th>Amplitude</th><th>Domain</th><th>Range</th></tr>
+<tr><td>\(\sin x\)</td><td>\(2\pi\)</td><td>\(1\)</td><td>\(\mathbb{R}\)</td><td>\([-1, 1]\)</td></tr>
+<tr><td>\(\cos x\)</td><td>\(2\pi\)</td><td>\(1\)</td><td>\(\mathbb{R}\)</td><td>\([-1, 1]\)</td></tr>
+<tr><td>\(\tan x\)</td><td>\(\pi\)</td><td>undefined</td><td>\(x \neq \pi/2 + k\pi\)</td><td>\(\mathbb{R}\)</td></tr>
+</table>
+
+<h3>Transformations y = a sin(bx + c) + d</h3>
+
+<p>Each of the four parameters reshapes the standard sine wave:</p>
+
+<ul>
+  <li>\(a\) — <strong>amplitude scale</strong>. The range becomes \([d - |a|, d + |a|]\). If \(a < 0\), the graph is reflected in the horizontal line \(y = d\).</li>
+  <li>\(b\) — <strong>horizontal (frequency) scale</strong>. Period becomes \(2\pi / |b|\). Larger \(b\) squashes the graph horizontally.</li>
+  <li>\(c\) — <strong>phase shift</strong>. The graph shifts left by \(c/b\): \(\sin(bx + c) = \sin\bigl(b(x + c/b)\bigr)\).</li>
+  <li>\(d\) — <strong>vertical shift</strong>. Moves the midline to \(y = d\).</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam tip — identifying a sinusoidal graph.</strong> Given a wave graph, read amplitude \(a\) from half the vertical distance between max and min; the vertical shift \(d\) is the midline \(y = \tfrac{1}{2}(\text{max} + \text{min})\); the period gives \(b\) via \(b = 2\pi/T\); and the phase \(c\) is fixed by one known point such as a maximum. Work in that order for reliability.
+</div>
+
+<div class="example">
+<h3>Worked Example 3 — Reading a transformation</h3>
+<p>The function \(y = 3\sin\bigl(2x - \tfrac{\pi}{3}\bigr) + 1\) has what amplitude, period, phase shift, and range?</p>
+<pre>
+<span class="ln">1.</span>  Compare with a sin(bx + c) + d.
+<span class="ln">2.</span>     a = 3, b = 2, c = −π/3, d = 1.
+<span class="ln">3.</span>  Amplitude = |a| = 3.
+<span class="ln">4.</span>  Period = 2π/|b| = 2π/2 = π.
+<span class="ln">5.</span>  Phase shift:  2x − π/3 = 2(x − π/6)  ⇒  shift right by π/6.
+<span class="ln">6.</span>  Vertical shift: d = 1 (midline y = 1).
+<span class="ln">7.</span>  Range:  [1 − 3, 1 + 3] = [−2, 4].
+</pre>
+</div>
+
+<h2>3. Reciprocal Trig Functions</h2>
+
+<p>Three further trig functions are defined as reciprocals of the three main ones:</p>
+
+<div class="equation">
+\( \sec x = \dfrac{1}{\cos x}, \qquad \csc x = \dfrac{1}{\sin x}, \qquad \cot x = \dfrac{1}{\tan x} = \dfrac{\cos x}{\sin x}. \)
+</div>
+
+<p>(UK textbooks sometimes write \(\text{cosec}\,x\) for \(\csc x\).) Each has vertical asymptotes wherever its defining function is zero, and a range that excludes the interval \((-1, 1)\) for \(\sec\) and \(\csc\).</p>
+
+<table>
+<tr><th>Function</th><th>Definition</th><th>Period</th><th>Domain (excluded points)</th><th>Range</th></tr>
+<tr><td>\(\sec x\)</td><td>\(1/\cos x\)</td><td>\(2\pi\)</td><td>\(x \neq \pi/2 + k\pi\)</td><td>\((-\infty, -1] \cup [1, \infty)\)</td></tr>
+<tr><td>\(\csc x\)</td><td>\(1/\sin x\)</td><td>\(2\pi\)</td><td>\(x \neq k\pi\)</td><td>\((-\infty, -1] \cup [1, \infty)\)</td></tr>
+<tr><td>\(\cot x\)</td><td>\(\cos x / \sin x\)</td><td>\(\pi\)</td><td>\(x \neq k\pi\)</td><td>\(\mathbb{R}\)</td></tr>
+</table>
+
+<p>Between consecutive asymptotes, the graphs of \(\sec\) and \(\csc\) look like opposing cup and cap shapes — the portions of the cosine or sine curve between \(\pm 1\) and \(\pm\infty\). The graph of \(\cot\) decreases from \(+\infty\) to \(-\infty\) between each pair of zeros of \(\sin\), mirror-image of \(\tan\).</p>
+
+<h2>4. Exact Values</h2>
+
+<p>Certain special angles have trig values expressible as simple surds. These must be memorised: OCR expects them without a calculator. They follow from two simple geometric facts — the \(45°\)-\(45°\)-\(90°\) isosceles right triangle (sides \(1, 1, \sqrt{2}\)) and the \(30°\)-\(60°\)-\(90°\) half-equilateral triangle (sides \(1, \sqrt{3}, 2\)).</p>
+
+<table>
+<tr><th>Angle (deg)</th><th>Angle (rad)</th><th>\(\sin\)</th><th>\(\cos\)</th><th>\(\tan\)</th></tr>
+<tr><td>\(0^\circ\)</td><td>\(0\)</td><td>\(0\)</td><td>\(1\)</td><td>\(0\)</td></tr>
+<tr><td>\(30^\circ\)</td><td>\(\pi/6\)</td><td>\(1/2\)</td><td>\(\sqrt{3}/2\)</td><td>\(1/\sqrt{3} = \sqrt{3}/3\)</td></tr>
+<tr><td>\(45^\circ\)</td><td>\(\pi/4\)</td><td>\(\sqrt{2}/2\)</td><td>\(\sqrt{2}/2\)</td><td>\(1\)</td></tr>
+<tr><td>\(60^\circ\)</td><td>\(\pi/3\)</td><td>\(\sqrt{3}/2\)</td><td>\(1/2\)</td><td>\(\sqrt{3}\)</td></tr>
+<tr><td>\(90^\circ\)</td><td>\(\pi/2\)</td><td>\(1\)</td><td>\(0\)</td><td>undefined</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — memory device.</strong> Write \(\sin 0, \sin 30, \sin 45, \sin 60, \sin 90\) as \(\tfrac{\sqrt{0}}{2}, \tfrac{\sqrt{1}}{2}, \tfrac{\sqrt{2}}{2}, \tfrac{\sqrt{3}}{2}, \tfrac{\sqrt{4}}{2}\) — a neat pattern. Cosine is the reverse order. \(\tan\) is \(\sin/\cos\). From these you can generate the values in all four quadrants using the CAST diagram.
+</div>
+
+<h2>5. Pythagorean Identity and its Corollaries</h2>
+
+<p>On the unit circle the point at angle \(\theta\) has coordinates \((\cos\theta, \sin\theta)\). Since the radius is \(1\), Pythagoras's theorem gives the foundational identity</p>
+
+<div class="equation">
+\( \sin^2\theta + \cos^2\theta = 1 \qquad \text{for all } \theta. \)
+</div>
+
+<p>Dividing through by \(\cos^2\theta\) (valid when \(\cos\theta \neq 0\)) gives the \(\tan\)-\(\sec\) form; dividing by \(\sin^2\theta\) gives the \(\cot\)-\(\csc\) form:</p>
+
+<div class="equation">
+\( \tan^2\theta + 1 = \sec^2\theta, \qquad 1 + \cot^2\theta = \csc^2\theta. \)
+</div>
+
+<table>
+<tr><th>Identity</th><th>Rearrangement useful for</th></tr>
+<tr><td>\(\sin^2\theta + \cos^2\theta = 1\)</td><td>Swapping between \(\sin^2\) and \(\cos^2\); simplifying under a surd.</td></tr>
+<tr><td>\(\sec^2\theta = 1 + \tan^2\theta\)</td><td>Integrals like \(\int \sec^2 x\, dx\); eliminating \(\sec\) in equations.</td></tr>
+<tr><td>\(\csc^2\theta = 1 + \cot^2\theta\)</td><td>Integrals like \(\int \csc^2 x\, dx\); eliminating \(\csc\).</td></tr>
+</table>
+
+<div class="example">
+<h3>Worked Example 4 — Using the Pythagorean identity to solve a quadratic in sin</h3>
+<p>Solve \(2\cos^2 x + \sin x = 1\) for \(0 \leq x \leq 2\pi\).</p>
+<pre>
+<span class="ln">1.</span>  Replace cos²x using cos²x = 1 − sin²x:
+<span class="ln">2.</span>     2(1 − sin²x) + sin x = 1
+<span class="ln">3.</span>     2 − 2sin²x + sin x = 1
+<span class="ln">4.</span>     2sin²x − sin x − 1 = 0.
+<span class="ln">5.</span>  Let s = sin x:  2s² − s − 1 = 0  ⇒  (2s + 1)(s − 1) = 0.
+<span class="ln">6.</span>     s = 1   or   s = −1/2.
+<span class="ln">7.</span>  Case sin x = 1:  x = π/2.
+<span class="ln">8.</span>  Case sin x = −1/2:  principal value arcsin(−1/2) = −π/6,
+<span class="ln">9.</span>     in [0, 2π]:  x = π + π/6 = 7π/6   or   x = 2π − π/6 = 11π/6.
+<span class="ln">10.</span> ∴ x ∈ {π/2, 7π/6, 11π/6}.
+</pre>
+</div>
+
+<h2>6. Compound-Angle Formulae</h2>
+
+<p>The compound-angle formulae express \(\sin(A \pm B)\), \(\cos(A \pm B)\) and \(\tan(A \pm B)\) in terms of the trig values of \(A\) and \(B\) separately. They are the central toolkit of A-level trigonometry: every other identity on the syllabus (double-angle, \(R\sin(\theta + \alpha)\), product-to-sum) is a corollary.</p>
+
+<div class="definition">
+<strong>Compound-angle formulae.</strong>
+\[ \sin(A \pm B) = \sin A \cos B \pm \cos A \sin B, \]
+\[ \cos(A \pm B) = \cos A \cos B \mp \sin A \sin B, \]
+\[ \tan(A \pm B) = \dfrac{\tan A \pm \tan B}{1 \mp \tan A \tan B}. \]
+The top sign in each formula goes with \(+\), the bottom with \(-\). Note the sign <em>flip</em> in the cosine formula: \(\cos(A + B) = \cos A \cos B - \sin A \sin B\).
+</div>
+
+<h3>Geometric Proof of sin(A + B)</h3>
+
+<p>Consider a diagram with two right-angled triangles stacked. In a unit square, place a point \(P\) so that \(\angle POQ = A\) along the horizontal, then rotate through a further angle \(B\) to reach \(R\). Drop perpendiculars and compare lengths. The vertical projection of \(OR\) onto the \(y\)-axis decomposes as</p>
+
+<div class="equation">
+\(\sin(A + B) = \underbrace{\sin A \cos B}_{\text{rise from rotating } A \text{ along horizontal}} + \underbrace{\cos A \sin B}_{\text{rise from rotating } B \text{ perpendicular}}.\)
+</div>
+
+<p>A fully rigorous proof uses the rotation matrix
+\( R(\theta) = \begin{pmatrix} \cos\theta & -\sin\theta \\ \sin\theta & \cos\theta \end{pmatrix} \)
+and the identity \(R(A+B) = R(A) R(B)\). Multiplying the two matrices and comparing entries gives both the sine and cosine compound-angle formulae simultaneously.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — memory pattern for compound angles.</strong> \(\sin(A+B)\) expands as "sincos + cossin" (the letters always appear in the order sin-cos, cos-sin). \(\cos(A+B)\) expands as "coscos − sinsin". The signs in \(\cos\) are opposite to the input sign; the signs in \(\sin\) match. Writing a formula sheet from memory each week until exam is the most efficient way to lock these in.
+</div>
+
+<div class="example">
+<h3>Worked Example 5 — Exact value using compound angle</h3>
+<p>Find the exact value of \(\sin 75^\circ\).</p>
+<pre>
+<span class="ln">1.</span>  Write 75° = 45° + 30°.
+<span class="ln">2.</span>  sin(45° + 30°) = sin 45° cos 30° + cos 45° sin 30°
+<span class="ln">3.</span>                 = (√2/2)(√3/2) + (√2/2)(1/2)
+<span class="ln">4.</span>                 = √6/4 + √2/4
+<span class="ln">5.</span>                 = (√6 + √2)/4.
+<span class="ln">6.</span>  Numerically: (2.449 + 1.414)/4 ≈ 0.9659 ✓ (matches calculator).
+
+<span class="cm">// Same idea:  cos 75° = (√6 − √2)/4,   tan 75° = 2 + √3.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 6 — Proving an identity</h3>
+<p>Prove \(\sin(x + \pi/2) = \cos x\) using the compound-angle formula.</p>
+<pre>
+<span class="ln">1.</span>  sin(x + π/2) = sin x cos(π/2) + cos x sin(π/2)
+<span class="ln">2.</span>              = sin x · 0 + cos x · 1
+<span class="ln">3.</span>              = cos x.                            ✓
+</pre>
+</div>
+
+<h2>7. Double-Angle Formulae</h2>
+
+<p>Setting \(B = A\) in the compound-angle formulae gives the <em>double-angle</em> formulae, which express trig functions of \(2A\) in terms of trig functions of \(A\).</p>
+
+<div class="definition">
+<strong>Double-angle formulae.</strong>
+\[ \sin 2A = 2 \sin A \cos A, \]
+\[ \cos 2A = \cos^2 A - \sin^2 A = 1 - 2\sin^2 A = 2\cos^2 A - 1, \]
+\[ \tan 2A = \dfrac{2 \tan A}{1 - \tan^2 A}. \]
+The three equivalent forms of \(\cos 2A\) follow from \(\sin^2 A + \cos^2 A = 1\).
+</div>
+
+<h3>Derivation from Compound Angles</h3>
+
+<p>Take \(B = A\) in \(\sin(A + B) = \sin A \cos B + \cos A \sin B\): this gives \(\sin 2A = \sin A \cos A + \cos A \sin A = 2 \sin A \cos A\). Similarly \(\cos(A + A) = \cos^2 A - \sin^2 A\), and the alternative forms follow by substituting \(\sin^2 A = 1 - \cos^2 A\) or \(\cos^2 A = 1 - \sin^2 A\).</p>
+
+<h3>Half-Angle / Power-Reducing Identities</h3>
+
+<p>Rearranging the \(\cos 2A\) identities gives the forms needed for integration:</p>
+
+<div class="equation">
+\( \sin^2 A = \dfrac{1 - \cos 2A}{2}, \qquad \cos^2 A = \dfrac{1 + \cos 2A}{2}. \)
+</div>
+
+<p>These let you integrate \(\sin^2\) and \(\cos^2\) by linearising them — an essential calculus technique.</p>
+
+<div class="exam-tip">
+<strong>Exam tip — choosing the right form of cos 2A.</strong> If the equation already contains only \(\sin\), use \(\cos 2A = 1 - 2\sin^2 A\). If it contains only \(\cos\), use \(\cos 2A = 2\cos^2 A - 1\). If it contains both, you may as well stick with \(\cos^2 A - \sin^2 A\). Picking the right form saves a line of algebra and reduces slip risk.
+</div>
+
+<div class="example">
+<h3>Worked Example 7 — Solving with double angle</h3>
+<p>Solve \(\sin 2x = \cos x\) for \(0 \leq x \leq 2\pi\).</p>
+<pre>
+<span class="ln">1.</span>  Use sin 2x = 2 sin x cos x:
+<span class="ln">2.</span>     2 sin x cos x = cos x
+<span class="ln">3.</span>     2 sin x cos x − cos x = 0
+<span class="ln">4.</span>     cos x (2 sin x − 1) = 0.
+<span class="ln">5.</span>  cos x = 0   ⇒   x = π/2, 3π/2.
+<span class="ln">6.</span>  sin x = 1/2 ⇒   x = π/6, 5π/6.
+<span class="ln">7.</span>  ∴ x ∈ {π/6, π/2, 5π/6, 3π/2}.
+
+<span class="cm">// WARNING: dividing both sides by cos x loses the solutions cos x = 0.</span>
+<span class="cm">// Always factor; never divide by something that could be zero.</span>
+</pre>
+</div>
+
+<h2>8. The R sin(θ + α) Form</h2>
+
+<p>Any linear combination \(a \sin\theta + b \cos\theta\) can be written as a single sine wave \(R \sin(\theta + \alpha)\) (or as a single cosine, depending on taste). This is essential for finding maxima and minima of expressions like \(3\sin x + 4\cos x\) and for solving equations of the form \(a\sin x + b\cos x = c\).</p>
+
+<div class="definition">
+<strong>R sin(θ + α) form.</strong> For real constants \(a, b\) with at least one non-zero,
+\[ a \sin\theta + b \cos\theta = R \sin(\theta + \alpha), \]
+where
+\[ R = \sqrt{a^2 + b^2} > 0, \qquad \tan\alpha = \frac{b}{a} \text{ (with } \alpha \text{ chosen so } \cos\alpha \text{ has the same sign as } a \text{)}. \]
+The maximum value of the expression is \(R\) (attained when \(\theta + \alpha = \pi/2\)) and the minimum is \(-R\).
+</div>
+
+<h3>Derivation</h3>
+
+<p>Expand the target form using the compound-angle formula:
+\(R\sin(\theta + \alpha) = R\sin\theta \cos\alpha + R\cos\theta \sin\alpha\).
+Matching coefficients of \(\sin\theta\) and \(\cos\theta\) in \(a\sin\theta + b\cos\theta\) gives</p>
+
+<div class="equation">
+\(a = R \cos\alpha, \qquad b = R \sin\alpha.\)
+</div>
+
+<p>Squaring and adding: \(a^2 + b^2 = R^2(\cos^2\alpha + \sin^2\alpha) = R^2\), so \(R = \sqrt{a^2 + b^2}\). Dividing the second equation by the first gives \(\tan\alpha = b/a\).</p>
+
+<table>
+<tr><th>Form</th><th>Expansion</th><th>Max</th><th>Min</th></tr>
+<tr><td>\(R\sin(\theta + \alpha)\)</td><td>\(R\cos\alpha\cdot\sin\theta + R\sin\alpha\cdot\cos\theta\)</td><td>\(R\) at \(\theta = \pi/2 - \alpha\)</td><td>\(-R\) at \(\theta = -\pi/2 - \alpha\)</td></tr>
+<tr><td>\(R\sin(\theta - \alpha)\)</td><td>\(R\cos\alpha\cdot\sin\theta - R\sin\alpha\cdot\cos\theta\)</td><td>\(R\) at \(\theta = \pi/2 + \alpha\)</td><td>\(-R\)</td></tr>
+<tr><td>\(R\cos(\theta - \alpha)\)</td><td>\(R\cos\alpha\cdot\cos\theta + R\sin\alpha\cdot\sin\theta\)</td><td>\(R\) at \(\theta = \alpha\)</td><td>\(-R\)</td></tr>
+<tr><td>\(R\cos(\theta + \alpha)\)</td><td>\(R\cos\alpha\cdot\cos\theta - R\sin\alpha\cdot\sin\theta\)</td><td>\(R\) at \(\theta = -\alpha\)</td><td>\(-R\)</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — which form to pick.</strong> OCR questions usually tell you which target form to use ("express in the form \(R\sin(\theta + \alpha)\)"). If the form is not specified, \(R\sin(\theta + \alpha)\) matches \(a\sin\theta + b\cos\theta\) cleanly and is the default. Make sure \(R > 0\) and \(\alpha\) is acute (in \([0, \pi/2]\)) unless otherwise stated.
+</div>
+
+<div class="example">
+<h3>Worked Example 8 — Full R sin(θ + α) solution</h3>
+<p>Express \(3\sin\theta + 4\cos\theta\) in the form \(R\sin(\theta + \alpha)\), with \(R > 0\) and \(0 < \alpha < \pi/2\). Hence (a) state the maximum and minimum values, (b) solve \(3\sin\theta + 4\cos\theta = 2\) for \(0 \leq \theta \leq 2\pi\).</p>
+<pre>
+<span class="ln">1.</span>  Match coefficients:
+<span class="ln">2.</span>     a = 3,  b = 4.
+<span class="ln">3.</span>     R = √(3² + 4²) = √25 = 5.
+<span class="ln">4.</span>     tan α = 4/3   ⇒   α = arctan(4/3) ≈ 0.9273 rad (≈ 53.13°).
+<span class="ln">5.</span>  ∴ 3 sin θ + 4 cos θ = 5 sin(θ + α) with α = arctan(4/3).
+
+<span class="ln">6.</span>  (a) Maximum = R = 5,   Minimum = −R = −5.
+<span class="ln">7.</span>      Max at θ + α = π/2, i.e. θ = π/2 − arctan(4/3) ≈ 0.6435 rad.
+
+<span class="ln">8.</span>  (b) Solve 5 sin(θ + α) = 2  ⇒  sin(θ + α) = 2/5 = 0.4.
+<span class="ln">9.</span>      Principal value:  θ + α = arcsin(0.4) ≈ 0.4115 rad.
+<span class="ln">10.</span>     Second value (sin positive in Q2):  θ + α = π − 0.4115 ≈ 2.7301 rad.
+<span class="ln">11.</span>     Add 2π to each for further solutions within shifted range.
+<span class="ln">12.</span>     Subtract α ≈ 0.9273:
+<span class="ln">13.</span>        θ₁ = 0.4115 − 0.9273 ≈ −0.5158     (out of range; add 2π)
+<span class="ln">14.</span>           → 2π − 0.5158 ≈ 5.7674 rad
+<span class="ln">15.</span>        θ₂ = 2.7301 − 0.9273 ≈ 1.8028 rad   (in [0, 2π]) ✓
+<span class="ln">16.</span>     ∴ θ ≈ 1.8028 rad   or   5.7674 rad    (to 4 d.p.).
+
+<span class="cm">// In degrees these are θ ≈ 103.28°  and  θ ≈ 330.42°.</span>
+</pre>
+</div>
+
+<h2>9. Solving Trigonometric Equations</h2>
+
+<p>Solving a trig equation means finding every angle that satisfies it — usually within a specified interval such as \([0, 2\pi]\) or \([0^\circ, 360^\circ]\), sometimes over all real numbers. The workflow is:</p>
+
+<ol>
+  <li>Manipulate the equation (using identities if necessary) until it has the form \(\sin(\text{stuff}) = k\), \(\cos(\text{stuff}) = k\) or \(\tan(\text{stuff}) = k\).</li>
+  <li>Find the <em>principal value</em> using \(\arcsin\), \(\arccos\) or \(\arctan\).</li>
+  <li>Use symmetry of the graph — or the CAST diagram — to list all other solutions in the range for the transformed argument.</li>
+  <li>Undo any substitution and check every candidate is in the stated interval.</li>
+</ol>
+
+<h3>The CAST Diagram</h3>
+
+<p>The CAST diagram summarises in which of the four quadrants each trig function is positive. Starting in the fourth quadrant (\(0\) to \(\pi/2\) reversed) and moving anticlockwise:</p>
+
+<table>
+<tr><th>Quadrant</th><th>Angle range</th><th>Functions positive</th><th>Label</th></tr>
+<tr><td>I</td><td>\(0 \leq \theta < \pi/2\)</td><td>\(\sin, \cos, \tan\)</td><td>A (All)</td></tr>
+<tr><td>II</td><td>\(\pi/2 \leq \theta < \pi\)</td><td>\(\sin\) only</td><td>S (Sine)</td></tr>
+<tr><td>III</td><td>\(\pi \leq \theta < 3\pi/2\)</td><td>\(\tan\) only</td><td>T (Tangent)</td></tr>
+<tr><td>IV</td><td>\(3\pi/2 \leq \theta < 2\pi\)</td><td>\(\cos\) only</td><td>C (Cosine)</td></tr>
+</table>
+
+<p>Rules of thumb for moving from the principal value \(\theta_0\) to the others:</p>
+
+<ul>
+  <li>If \(\sin\theta = k\) with \(k > 0\): solutions in Q1 and Q2, so \(\theta = \theta_0\) and \(\pi - \theta_0\).</li>
+  <li>If \(\cos\theta = k\) with \(k > 0\): solutions in Q1 and Q4, so \(\theta = \theta_0\) and \(2\pi - \theta_0\).</li>
+  <li>If \(\tan\theta = k\): period \(\pi\), so \(\theta = \theta_0\) and \(\theta_0 + \pi\).</li>
+  <li>If \(k\) is negative, mirror the positive-\(k\) rules to the quadrants where the function is negative.</li>
+</ul>
+
+<div class="exam-tip">
+<strong>Exam tip — always state the range.</strong> The phrase "in the interval \(0 \leq x \leq 2\pi\)" changes the answer. A solution outside the interval loses a mark, as does a missing solution inside. Sketch the graph or run through the CAST rule exhaustively, count solutions, and check your count matches what the graph predicts (e.g. \(\sin\) equation should have either \(2\) or \(0\) solutions per period, \(\tan\) exactly \(1\)).
+</div>
+
+<div class="example">
+<h3>Worked Example 9 — Linear argument</h3>
+<p>Solve \(\sin 2x = \tfrac{\sqrt{3}}{2}\) for \(0 \leq x \leq 2\pi\).</p>
+<pre>
+<span class="ln">1.</span>  Let u = 2x, so u runs over [0, 4π].
+<span class="ln">2.</span>  Principal value: arcsin(√3/2) = π/3.
+<span class="ln">3.</span>  All solutions in one period [0, 2π]:
+<span class="ln">4.</span>     u = π/3   (Q1)
+<span class="ln">5.</span>     u = π − π/3 = 2π/3   (Q2)
+<span class="ln">6.</span>  Add 2π for second period (within [0, 4π]):
+<span class="ln">7.</span>     u = 2π + π/3 = 7π/3
+<span class="ln">8.</span>     u = 2π + 2π/3 = 8π/3.
+<span class="ln">9.</span>  Back-substitute x = u/2:
+<span class="ln">10.</span>    x = π/6,  π/3,  7π/6,  4π/3.
+<span class="ln">11.</span> ∴ four solutions in [0, 2π]. ✓
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 10 — Reciprocal function</h3>
+<p>Solve \(\sec x = 2\) for \(0 \leq x \leq 2\pi\).</p>
+<pre>
+<span class="ln">1.</span>  sec x = 2  ⇔  cos x = 1/2.
+<span class="ln">2.</span>  Principal value:  arccos(1/2) = π/3.
+<span class="ln">3.</span>  Solutions (cos > 0 in Q1, Q4):
+<span class="ln">4.</span>     x = π/3       (Q1)
+<span class="ln">5.</span>     x = 2π − π/3 = 5π/3  (Q4).
+<span class="ln">6.</span>  ∴ x ∈ {π/3, 5π/3}.
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 11 — Quadratic in sin</h3>
+<p>Solve \(2\sin^2 x - 3\sin x + 1 = 0\) for \(0 \leq x \leq 2\pi\).</p>
+<pre>
+<span class="ln">1.</span>  Let s = sin x:   2s² − 3s + 1 = 0  ⇒  (2s − 1)(s − 1) = 0.
+<span class="ln">2.</span>  s = 1/2  or  s = 1.
+<span class="ln">3.</span>  sin x = 1/2:  x = π/6, 5π/6.
+<span class="ln">4.</span>  sin x = 1:    x = π/2.
+<span class="ln">5.</span>  ∴ x ∈ {π/6, π/2, 5π/6}.
+</pre>
+</div>
+
+<h2>10. Inverse Trigonometric Functions</h2>
+
+<p>Trig functions are not one-to-one (they repeat), so strictly they have no inverse. To define an inverse we restrict the domain to a single monotonic piece. This gives the three <em>principal</em> inverse trig functions.</p>
+
+<div class="definition">
+<strong>Inverse trig functions.</strong>
+<ul>
+  <li>\(y = \arcsin x\): domain \([-1, 1]\), range \([-\pi/2, \pi/2]\). Equivalent to \(\sin y = x\) with \(y\) in that range.</li>
+  <li>\(y = \arccos x\): domain \([-1, 1]\), range \([0, \pi]\). Equivalent to \(\cos y = x\).</li>
+  <li>\(y = \arctan x\): domain \(\mathbb{R}\), range \((-\pi/2, \pi/2)\). Equivalent to \(\tan y = x\).</li>
+</ul>
+(Alternative notations: \(\sin^{-1} x\), \(\cos^{-1} x\), \(\tan^{-1} x\). Note \(\sin^{-1} x \neq 1/\sin x\) — the superscript \(-1\) denotes function inverse, not reciprocal.)
+</div>
+
+<h3>Graphs</h3>
+
+<ul>
+  <li>\(\arcsin\) rises from \((-1, -\pi/2)\) through the origin to \((1, \pi/2)\) — the reflection of the restricted \(\sin\) in the line \(y = x\).</li>
+  <li>\(\arccos\) decreases from \((-1, \pi)\) through \((0, \pi/2)\) to \((1, 0)\).</li>
+  <li>\(\arctan\) increases from the horizontal asymptote \(y = -\pi/2\) through the origin to the asymptote \(y = \pi/2\).</li>
+</ul>
+
+<h3>Useful Identities</h3>
+
+<div class="equation">
+\( \arcsin x + \arccos x = \dfrac{\pi}{2} \quad \text{for all } x \in [-1, 1]. \)
+</div>
+
+<div class="equation">
+\( \arctan x + \arctan(1/x) = \begin{cases} \pi/2, & x > 0 \\ -\pi/2, & x < 0 \end{cases} \)
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — restricted domains matter.</strong> \(\arcsin(\sin\theta)\) equals \(\theta\) only if \(\theta \in [-\pi/2, \pi/2]\); otherwise you must reduce \(\theta\) to the principal range first. For instance, \(\arcsin(\sin(3\pi/4)) = \pi/4\), not \(3\pi/4\), because \(\sin(3\pi/4) = \sin(\pi/4)\) and \(\pi/4\) is in range. OCR examiners frequently probe this subtlety.
+</div>
+
+<div class="example">
+<h3>Worked Example 12 — Evaluating inverse trig</h3>
+<p>Evaluate (a) \(\arcsin(\sqrt{3}/2)\), (b) \(\arccos(-\tfrac{1}{2})\), (c) \(\arctan(-1)\).</p>
+<pre>
+<span class="ln">1.</span>  (a) arcsin(√3/2): need y ∈ [−π/2, π/2] with sin y = √3/2 ⇒ y = π/3.
+<span class="ln">2.</span>  (b) arccos(−1/2): need y ∈ [0, π] with cos y = −1/2.
+<span class="ln">3.</span>      cos is negative in Q2; reference angle is π/3 (since cos π/3 = 1/2).
+<span class="ln">4.</span>      y = π − π/3 = 2π/3.
+<span class="ln">5.</span>  (c) arctan(−1): need y ∈ (−π/2, π/2) with tan y = −1 ⇒ y = −π/4.
+</pre>
+</div>
+
+<h2>11. Further Equations and Mixed Techniques</h2>
+
+<div class="example">
+<h3>Worked Example 13 — Equation involving sec and tan</h3>
+<p>Solve \(\sec^2 x - 3\tan x - 1 = 0\) for \(0 \leq x \leq 2\pi\).</p>
+<pre>
+<span class="ln">1.</span>  Use sec²x = 1 + tan²x:
+<span class="ln">2.</span>     (1 + tan²x) − 3 tan x − 1 = 0
+<span class="ln">3.</span>     tan²x − 3 tan x = 0
+<span class="ln">4.</span>     tan x (tan x − 3) = 0.
+<span class="ln">5.</span>  tan x = 0:    x = 0, π, 2π.
+<span class="ln">6.</span>  tan x = 3:    principal value arctan 3 ≈ 1.2490 rad.
+<span class="ln">7.</span>     Period π, so x ≈ 1.2490   and   x ≈ 1.2490 + π ≈ 4.3906.
+<span class="ln">8.</span>  ∴ x ∈ {0, 1.2490, π, 4.3906, 2π}   (with endpoints 0 and 2π included
+<span class="ln">   </span>     if the interval is closed).
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 14 — a sin θ + b cos θ = c using R-form</h3>
+<p>Solve \(5\sin\theta - 12\cos\theta = 6\) for \(0 \leq \theta \leq 2\pi\).</p>
+<pre>
+<span class="ln">1.</span>  Choose the target form R sin(θ − α), with α acute, R > 0,
+<span class="ln">   </span>     so that R sin(θ − α) = R cos α sin θ − R sin α cos θ.
+<span class="ln">2.</span>  Matching:  R cos α = 5,  R sin α = 12.
+<span class="ln">3.</span>     R = √(5² + 12²) = √169 = 13.
+<span class="ln">4.</span>     tan α = 12/5 ⇒ α = arctan(12/5) ≈ 1.1760 rad.
+<span class="ln">5.</span>  Equation becomes:  13 sin(θ − α) = 6  ⇒  sin(θ − α) = 6/13.
+<span class="ln">6.</span>  Principal:  θ − α = arcsin(6/13) ≈ 0.4776 rad.
+<span class="ln">7.</span>  Second value:  θ − α = π − 0.4776 ≈ 2.6640 rad.
+<span class="ln">8.</span>  Add back α:
+<span class="ln">9.</span>     θ ≈ 0.4776 + 1.1760 = 1.6536 rad
+<span class="ln">10.</span>    θ ≈ 2.6640 + 1.1760 = 3.8400 rad.
+<span class="ln">11.</span> Both lie in [0, 2π], so there are exactly two solutions.
+<span class="ln">12.</span> ∴ θ ≈ 1.6536 rad  or  θ ≈ 3.8400 rad.
+
+<span class="cm">// Because |6/13| < 1 < |6|/√(5² + 12²)? Check: |6| ≤ R = 13 ✓, so solutions exist.</span>
+<span class="cm">// If the right-hand side exceeded R in absolute value, no solutions at all.</span>
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 15 — Identity proof</h3>
+<p>Prove that \(\dfrac{1 - \cos 2x}{\sin 2x} = \tan x\).</p>
+<pre>
+<span class="ln">1.</span>  Numerator:   1 − cos 2x = 1 − (1 − 2 sin²x) = 2 sin²x.
+<span class="ln">2.</span>  Denominator: sin 2x = 2 sin x cos x.
+<span class="ln">3.</span>  Ratio:
+<span class="ln">4.</span>     (2 sin²x)/(2 sin x cos x) = sin x / cos x = tan x.   ✓
+
+<span class="cm">// Valid wherever sin 2x ≠ 0 and cos x ≠ 0, i.e. x ≠ kπ/2.</span>
+</pre>
+</div>
+
+<h2>12. Consolidated Summary and Exam Strategy</h2>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Trigonometry.</strong>
+<ul>
+  <li><strong>Units first.</strong> Are angles in degrees or radians? Set calculator accordingly. Small-angle and arc-length formulae assume radians.</li>
+  <li><strong>Exact values at 0, 30°, 45°, 60°, 90°</strong> must be automatic — no calculator needed.</li>
+  <li><strong>Three Pythagorean identities</strong>: \(\sin^2+\cos^2=1\), \(\tan^2+1=\sec^2\), \(1+\cot^2=\csc^2\). Know which to deploy by looking at which functions already appear.</li>
+  <li><strong>Compound angle</strong> gives all other trig identities on the syllabus. If stuck, expand everything in \(\sin\) and \(\cos\) of single angles.</li>
+  <li><strong>Double angle</strong>: \(\sin 2A = 2\sin A \cos A\); \(\cos 2A\) has three equivalent forms — pick the one matching the rest of the equation.</li>
+  <li><strong>R sin(θ + α)</strong>: \(R = \sqrt{a^2 + b^2}\), \(\tan\alpha = b/a\). Useful for optimisation (max = \(R\), min = \(-R\)) and solving \(a\sin\theta + b\cos\theta = c\) — solvable iff \(|c| \leq R\).</li>
+  <li><strong>Solving trig equations</strong>: find principal value, use CAST / graph to list others in range, never divide by a quantity that could be zero (factor instead).</li>
+  <li><strong>Inverse trig</strong>: respect the restricted range; \(\arcsin(\sin\theta) = \theta\) only for \(\theta \in [-\pi/2, \pi/2]\).</li>
+  <li><strong>State the interval</strong> and list every solution within it; check by counting how many you expect from the period.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Calculator in the wrong mode — degrees vs radians confusion.</li>
+  <li>Dividing through by \(\cos x\) (or similar) without checking \(\cos x = 0\), losing half the solutions.</li>
+  <li>Missing the second solution in the interval when \(\sin\) or \(\cos\) has two symmetric values per period.</li>
+  <li>Using \(\sin x \approx x\) for \(x\) in degrees — wrong by a factor of \(\pi/180\).</li>
+  <li>Forgetting to factor out \(R\) or using \(\tan\alpha = a/b\) instead of \(b/a\).</li>
+  <li>Writing \(\cos(A + B) = \cos A \cos B + \sin A \sin B\) — sign error: it's a minus.</li>
+  <li>Giving \(\arcsin(\sin(3\pi/4)) = 3\pi/4\) instead of \(\pi/4\) — ignoring the principal range.</li>
+  <li>Leaving an interval as \([0^\circ, 360^\circ]\) and giving answers in radians, or vice-versa.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Formula snapshot (memorise).</strong>
+<ul>
+  <li>Radian/degree: \(180^\circ = \pi\) rad. Arc \(s = r\theta\). Sector \(A = \tfrac{1}{2}r^2\theta\). Segment area \(\tfrac{1}{2}r^2(\theta - \sin\theta)\).</li>
+  <li>Small-angle: \(\sin x \approx x\), \(\cos x \approx 1 - x^2/2\), \(\tan x \approx x\) (\(x\) in radians).</li>
+  <li>Pythagorean: \(\sin^2\theta + \cos^2\theta = 1\); \(\sec^2\theta = 1 + \tan^2\theta\); \(\csc^2\theta = 1 + \cot^2\theta\).</li>
+  <li>Compound: \(\sin(A\pm B) = \sin A \cos B \pm \cos A \sin B\); \(\cos(A\pm B) = \cos A \cos B \mp \sin A \sin B\); \(\tan(A\pm B) = (\tan A \pm \tan B)/(1 \mp \tan A \tan B)\).</li>
+  <li>Double: \(\sin 2A = 2\sin A \cos A\); \(\cos 2A = \cos^2 A - \sin^2 A = 1 - 2\sin^2 A = 2\cos^2 A - 1\); \(\tan 2A = 2\tan A/(1 - \tan^2 A)\).</li>
+  <li>Power-reducing: \(\sin^2 A = (1 - \cos 2A)/2\); \(\cos^2 A = (1 + \cos 2A)/2\).</li>
+  <li>R-form: \(a\sin\theta + b\cos\theta = R\sin(\theta + \alpha)\) with \(R = \sqrt{a^2 + b^2}\), \(\tan\alpha = b/a\); max \(R\), min \(-R\).</li>
+  <li>Inverse: \(\arcsin\) has range \([-\pi/2, \pi/2]\); \(\arccos\) has range \([0, \pi]\); \(\arctan\) has range \((-\pi/2, \pi/2)\); \(\arcsin x + \arccos x = \pi/2\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

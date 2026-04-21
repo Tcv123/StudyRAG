@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.7 &mdash; Computer Organisation & Architecture</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.7 Computer Organisation &amp; Architecture</h1>
+<p class="spec-ref">Computer Science &mdash; AQA A-Level (7517) &mdash; Paper 2: Written Theory</p>
+
+<p>Topic 4.7 is where the abstract machine of 4.5 and the silicon of 4.6 meet the flesh-and-blood computer sitting on your desk. This note walks every subsection of the spec in order: the internal hardware, von Neumann's stored-program insight, the processor's internal structure, the register set, the instruction set, the fetch-decode-execute cycle, the factors that govern CPU performance, secondary storage, virtual storage, the RISC/CISC divide, the parallel world of GPUs, input/output devices and a practical foothold in assembly language programming. The material is dense but each section connects to the next &mdash; follow the signal from instruction in RAM, through the bus, into the CPU, round the cycle, and back out again.</p>
+
+<h2>4.7.1 Internal Hardware Components of a Computer</h2>
+
+<p>A modern computer is assembled from a small number of functional blocks linked by shared electrical highways called <strong>buses</strong>. The same block diagram describes a smartwatch and a supercomputer &mdash; the differences are in scale, not structure.</p>
+
+<div class="definition">
+    <strong>Central Processing Unit (CPU)</strong> &mdash; the component that fetches instructions from memory, decodes them and executes them. Contains the ALU, control unit, registers and internal buses. The "brain" of the machine; everything else either feeds it or stores what it produces.
+</div>
+
+<ul>
+    <li><strong>Processor (CPU)</strong> &mdash; executes instructions. See 4.7.3 for internal structure.</li>
+    <li><strong>Main memory</strong> &mdash; volatile <strong>RAM</strong> (random-access memory) holds the programs and data currently in use; non-volatile <strong>ROM</strong> (read-only memory) holds firmware such as the BIOS/UEFI boot code.</li>
+    <li><strong>Input/output devices</strong> &mdash; keyboards, mice, monitors, printers, network cards. Anything that moves information across the boundary between the computer and the outside world.</li>
+    <li><strong>Secondary storage</strong> &mdash; HDDs, SSDs, optical discs, flash drives. Non-volatile, high-capacity, slower than RAM. See 4.7.8 &ndash; 4.7.9.</li>
+    <li><strong>Buses</strong> &mdash; parallel wires that carry signals between components. Three logical buses ride on one physical motherboard trace bundle:
+        <ul>
+            <li><strong>Address bus</strong> &mdash; unidirectional, CPU &rarr; memory/IO. Carries the address of the location to access.</li>
+            <li><strong>Data bus</strong> &mdash; bidirectional. Carries the data being read or written.</li>
+            <li><strong>Control bus</strong> &mdash; bidirectional. Carries timing and coordination signals (read, write, clock, interrupt request, bus grant).</li>
+        </ul>
+    </li>
+</ul>
+
+<h3>Block diagram of a typical computer</h3>
+
+<pre>              +----------------+                   +----------------+
+              |   INPUT        |                   |    OUTPUT      |
+              | keyboard,      |                   | monitor,       |
+              | mouse, scanner |                   | printer, audio |
+              +-------+--------+                   +--------+-------+
+                      |                                     ^
+                      v                                     |
+   +------------------+----------------- CONTROL BUS -------+------------------+
+   |                  |                                     |                  |
+   |     +------------v------------+             +----------+----------+       |
+   |     |         CPU             |             |    MAIN MEMORY      |       |
+   |     |  +-----+ +-----+ +---+  |             |   RAM  |   ROM      |       |
+   |     |  | CU  | | ALU | |Reg|  |             |  (code + data)      |       |
+   |     |  +-----+ +-----+ +---+  |             +----------+----------+       |
+   |     |     Clock, internal bus |                        ^                  |
+   |     +-----+-------------------+                        |                  |
+   |           |                                            |                  |
+   +-----------+-------- DATA BUS -----------+--------------+------------------+
+               |                             |
+               +--------- ADDRESS BUS -------+
+                                             |
+                                   +---------v---------+
+                                   | SECONDARY STORAGE |
+                                   |   HDD / SSD       |
+                                   +-------------------+</pre>
+
+<p>Every read from RAM follows the same choreography: the CPU places an address on the address bus, asserts "read" on the control bus, and the addressed memory chip drops the contents onto the data bus for the CPU to collect. A write reverses the data-bus direction and asserts "write" instead.</p>
+
+<h2>4.7.2 The Stored Program Concept</h2>
+
+<div class="definition">
+    <strong>Stored program concept</strong> &mdash; the foundational idea, articulated by John von Neumann in the 1945 <em>First Draft of a Report on the EDVAC</em>, that a computer's program instructions are held in the same addressable memory as its data, and that both are represented as binary patterns that the CPU treats interchangeably. The program is loaded into memory just like input data, and the CPU fetches each instruction in turn, executes it, and moves to the next.
+</div>
+
+<p>Before 1945, general-purpose computing machines (ENIAC, Colossus) were "programmed" by physically rewiring plugboards or flipping rows of switches. Changing the task could take days. Von Neumann's insight collapses the program and its data into a single, uniform representation in memory, which gives modern computing its decisive properties:</p>
+
+<ul>
+    <li><strong>Flexibility</strong> &mdash; loading a new program is just another memory write. No rewiring required.</li>
+    <li><strong>Self-modifying code</strong> &mdash; a program can treat instructions as data, which enables compilers, JIT, loaders, and assemblers. Every piece of software you use sits on this.</li>
+    <li><strong>Uniform hardware</strong> &mdash; the same CPU runs every task, so mass production is viable.</li>
+    <li><strong>Compilers and operating systems</strong> become possible &mdash; a compiler is just a program that emits another program into memory.</li>
+</ul>
+
+<p>The architecture bearing von Neumann's name places instructions and data on a shared bus to one memory; its rival, the <strong>Harvard architecture</strong>, uses separate instruction and data memories (and thus separate buses), allowing the CPU to fetch an instruction and a data word in the same cycle. Modern CPUs are von Neumann at the main-memory level but Harvard at the L1 cache (split I-cache and D-cache) &mdash; a hybrid that gives throughput without giving up flexibility.</p>
+
+<div class="exam-tip">Questions about the stored program concept want the phrase "<em>programs and data share the same memory and are represented in the same binary form</em>". Also state that the CPU fetches instructions <em>sequentially</em> from this memory unless a branch modifies the PC. Contrast with ENIAC-style plugboards for a comparison mark.</div>
+
+<h2>4.7.3 Structure and Role of the Processor</h2>
+
+<p>Inside the CPU package are four co-operating sub-systems, wired together by a set of short internal buses and paced by the processor clock.</p>
+
+<div class="definition">
+    <strong>Arithmetic Logic Unit (ALU)</strong> &mdash; the combinational circuit that performs arithmetic operations (add, subtract, sometimes multiply/divide), logical operations (AND, OR, NOT, XOR), comparisons, and bit shifts. It has two data inputs, one data output, a set of control lines selecting the operation, and outputs a few status flags (zero, negative, carry, overflow) which are latched in the status register.
+</div>
+
+<div class="definition">
+    <strong>Control Unit (CU)</strong> &mdash; generates the sequence of control signals that drive every other block in the CPU. On each clock tick it decodes the current instruction and asserts the right buses, register enables and ALU opcodes to carry it out. May be <em>hardwired</em> (RISC) or <em>microprogrammed</em> (CISC).
+</div>
+
+<h3>The register set</h3>
+
+<p>A small bank of very fast (single-cycle) storage locations inside the CPU. Some are <strong>special-purpose</strong> (PC, CIR, MAR, MBR, SR, ACC) &mdash; their role is fixed by the hardware. Others are <strong>general-purpose</strong> (R0&ndash;R15 on ARM, RAX&ndash;R15 on x86-64), used by the programmer as scratch locations. More registers means fewer trips to memory, so deeper register files improve performance. See 4.7.4 for a detailed summary.</p>
+
+<h3>The clock</h3>
+
+<p>A crystal oscillator emits a square-wave pulse at a fixed frequency (e.g. 3.2 GHz = 3.2&times;10<sup>9</sup> pulses per second). Every internal register update is synchronised to the rising or falling edge of this pulse, so all parts of the CPU advance in lock-step. Faster clock &rarr; more stages per second &rarr; more work done, up to the physical limit where signals can no longer propagate across the chip within one period (&asymp; 5 GHz in silicon).</p>
+
+<h3>Internal buses</h3>
+
+<ul>
+    <li><strong>Internal address bus</strong> &mdash; connects the MAR to on-chip cache and to the pad driving the external address bus.</li>
+    <li><strong>Internal data bus</strong> &mdash; ferries data between the register file, ALU and MBR.</li>
+    <li><strong>Internal control bus</strong> &mdash; CU's signal lines (register-enable, ALU-op, read/write).</li>
+</ul>
+
+<h3>Pipelining</h3>
+
+<div class="definition">
+    <strong>Pipelining</strong> &mdash; a hardware optimisation that overlaps the execution of several instructions in time. The fetch-decode-execute cycle is split into stages, and while one instruction is being executed, the next is being decoded and the one after that is being fetched. After the pipeline fills, one instruction <em>completes</em> every clock cycle even though each one still takes multiple cycles end-to-end.
+</div>
+
+<p>A simple <strong>3-stage pipeline</strong> has stages Fetch (F), Decode (D), Execute (E). A more aggressive <strong>5-stage pipeline</strong> (the classic RISC pipeline) is IF (instruction fetch), ID (instruction decode / register read), EX (execute / ALU), MEM (memory access), WB (write back).</p>
+
+<pre>3-stage pipeline timing (one stage per cycle):
+
+   Cycle:      1    2    3    4    5    6    7
+   Instr 1:   [F]  [D]  [E]
+   Instr 2:        [F]  [D]  [E]
+   Instr 3:             [F]  [D]  [E]
+   Instr 4:                  [F]  [D]  [E]
+   Instr 5:                       [F]  [D]  [E]
+
+Without pipelining, five instructions take 5 &times; 3 = 15 cycles.
+With pipelining, they complete in 3 + (5 - 1) = 7 cycles.
+
+5-stage pipeline (classic RISC):
+
+   Cycle:      1    2    3    4    5    6    7    8
+   Instr 1:  [IF] [ID] [EX] [MEM][WB]
+   Instr 2:       [IF] [ID] [EX] [MEM][WB]
+   Instr 3:            [IF] [ID] [EX] [MEM][WB]
+   Instr 4:                 [IF] [ID] [EX] [MEM][WB]</pre>
+
+<p>Once a pipeline is full, <strong>throughput</strong> is one instruction per cycle regardless of the number of stages. Deeper pipelines support higher clock speeds (each stage does less, so it finishes faster), but they suffer more on mis-speculation.</p>
+
+<h3>Pipeline hazards</h3>
+
+<table>
+    <tr><th>Hazard</th><th>Cause</th><th>Mitigation</th></tr>
+    <tr><td>Structural</td><td>Two stages need the same hardware in one cycle (e.g. both IF and MEM want memory).</td><td>Duplicate the unit; split I-cache and D-cache; stall one stage.</td></tr>
+    <tr><td>Data &mdash; RAW (read-after-write)</td><td>An instruction reads a register the previous one hasn't yet written.</td><td>Forwarding/bypassing; bubble/stall; compiler reorders instructions.</td></tr>
+    <tr><td>Data &mdash; WAR (write-after-read)</td><td>An instruction writes a register the previous one is still reading. Only in out-of-order machines.</td><td>Register renaming.</td></tr>
+    <tr><td>Data &mdash; WAW (write-after-write)</td><td>Two instructions write the same register in the wrong order. Only out-of-order.</td><td>Register renaming.</td></tr>
+    <tr><td>Control (branch)</td><td>A branch is decoded too late &mdash; the pipeline has already fetched the wrong path.</td><td>Branch prediction; delayed branches; flushing on misprediction.</td></tr>
+</table>
+
+<h3>Branch prediction</h3>
+
+<p>When the fetch stage meets a conditional branch, the actual direction isn't known until the execute stage resolves the comparison. Rather than stall the pipeline, the CPU <strong>predicts</strong> the direction and speculatively fetches along the guessed path. If the guess is right, no penalty; if wrong, the pipeline is <em>flushed</em> and refilled from the correct target &mdash; paying the full pipeline depth in lost cycles. Modern predictors combine <em>static</em> hints (backward branches taken, forward not taken) with <em>dynamic</em> two-bit saturating counters indexed by branch address, reaching 95%+ accuracy on typical code.</p>
+
+<div class="exam-tip">When asked why pipelining doesn't simply multiply speed by the number of stages, mention three things: (i) the pipeline takes n&minus;1 cycles to fill; (ii) hazards force stalls or flushes; (iii) stages must be balanced &mdash; the slowest stage sets the clock. Examiners love all three.</div>
+
+<h2>4.7.4 Processor Registers</h2>
+
+<p>Registers are the tiny, fast storage locations that hold the CPU's working state. Every fetch-decode-execute step reads or writes at least one of them.</p>
+
+<div class="definition">
+    <strong>Program Counter (PC)</strong> &mdash; holds the memory address of the <em>next</em> instruction to be fetched. Incremented during the fetch phase (PC &larr; PC + 1 for a one-word instruction) and overwritten wholesale by a branch.
+</div>
+
+<div class="definition">
+    <strong>Current Instruction Register (CIR)</strong> &mdash; holds the instruction currently being decoded and executed. Loaded from the MBR at the end of the fetch phase; read by the CU throughout decode and execute.
+</div>
+
+<div class="definition">
+    <strong>Memory Address Register (MAR)</strong> &mdash; holds the address of the memory location the CPU is about to read from or write to. Its output drives the external address bus.
+</div>
+
+<div class="definition">
+    <strong>Memory Buffer Register (MBR) / Memory Data Register (MDR)</strong> &mdash; holds the data word flowing between the CPU and memory. On a read, the addressed word lands in the MBR; on a write, the CPU loads the MBR and then asserts the write control line.
+</div>
+
+<div class="definition">
+    <strong>Status Register (SR)</strong> &mdash; a collection of 1-bit <em>flags</em> automatically set by the ALU after each operation. Read by conditional branches.
+</div>
+
+<ul>
+    <li><strong>Z (zero)</strong> &mdash; set iff the ALU result was zero.</li>
+    <li><strong>N (negative)</strong> &mdash; set iff the result's sign bit (MSB) was 1 (two's-complement negative).</li>
+    <li><strong>C (carry)</strong> &mdash; set iff an addition produced a carry out of the MSB (or a subtraction did not borrow). Used for unsigned overflow and multi-word arithmetic.</li>
+    <li><strong>V (overflow)</strong> &mdash; set iff a signed operation exceeded the representable range (e.g. positive + positive &rarr; negative).</li>
+</ul>
+
+<div class="definition">
+    <strong>Accumulator (ACC)</strong> &mdash; on single-accumulator architectures (classic 8-bit CPUs, LMC), the default destination of arithmetic results. Modern RISC CPUs dispense with a dedicated accumulator in favour of many equivalent general-purpose registers.
+</div>
+
+<h3>Register summary</h3>
+
+<table>
+    <tr><th>Register</th><th>Width</th><th>Holds</th><th>Updated during</th></tr>
+    <tr><td>PC</td><td>= address bus width</td><td>Address of next instruction</td><td>Fetch (increment) or execute (branch)</td></tr>
+    <tr><td>MAR</td><td>= address bus width</td><td>Address being accessed</td><td>Fetch (with PC); execute (with operand)</td></tr>
+    <tr><td>MBR / MDR</td><td>= data bus width</td><td>Data to/from memory</td><td>Every memory read or write</td></tr>
+    <tr><td>CIR</td><td>= instruction length</td><td>Instruction being executed</td><td>End of fetch</td></tr>
+    <tr><td>SR</td><td>typically 8 bits</td><td>Z, N, C, V flags</td><td>After each ALU operation</td></tr>
+    <tr><td>ACC</td><td>= data bus width</td><td>Default operand / result</td><td>Execute (arithmetic/logical)</td></tr>
+    <tr><td>R0&hellip;Rn (GPRs)</td><td>= data bus width</td><td>Programmer-controlled scratch</td><td>Any LDR/ADD/MOV etc.</td></tr>
+</table>
+
+<div class="exam-tip">"What does the MAR contain?" &mdash; answer "<em>the address of the memory location that is about to be read from or written to</em>", not "some address". Precision wins marks. The MBR "holds the data word being transferred between the CPU and memory" &mdash; again, be specific about direction and purpose.</div>
+
+<h2>4.7.5 The Processor's Instruction Set</h2>
+
+<p>An <strong>instruction set</strong> is the fixed vocabulary of operations the CPU understands. Each instruction is a bit pattern with two fields:</p>
+
+<pre>   +--------------------+------------------------------+
+   |     OPCODE         |         OPERAND(s)           |
+   +--------------------+------------------------------+
+       what to do               what to do it to
+
+   Example ARM-ish encoding (32 bits):
+   +------+---+---+---+---+---+-----------------------+
+   | 1101 | 00|Rd |Rs1|Rs2|fn |  (register operands)  |
+   +------+---+---+---+---+---+-----------------------+</pre>
+
+<h3>Addressing modes</h3>
+
+<p>The <strong>addressing mode</strong> says how the operand field should be interpreted. AQA examines four modes:</p>
+
+<table>
+    <tr><th>Mode</th><th>Meaning</th><th>Example (pseudocode)</th><th>Effect</th></tr>
+    <tr><td>Immediate</td><td>Operand is the literal value.</td><td><code>LDR R1, #42</code></td><td>R1 &larr; 42</td></tr>
+    <tr><td>Direct (absolute)</td><td>Operand is the address of the value.</td><td><code>LDR R1, 200</code></td><td>R1 &larr; contents of memory[200]</td></tr>
+    <tr><td>Indirect</td><td>Operand is the address of an address. Follow one level of indirection.</td><td><code>LDR R1, (200)</code></td><td>R1 &larr; memory[memory[200]]</td></tr>
+    <tr><td>Indexed</td><td>Operand is a base address; an index register is added to it.</td><td><code>LDR R1, 200(R2)</code></td><td>R1 &larr; memory[200 + R2]</td></tr>
+</table>
+
+<p>Worked example &mdash; suppose memory[200] = 300 and memory[300] = 99, and R2 = 4:</p>
+
+<pre>   LDR R1, #42         &rarr;  R1 = 42            (immediate)
+   LDR R1, 200         &rarr;  R1 = 300           (direct: fetch from 200)
+   LDR R1, (200)       &rarr;  R1 = 99            (indirect: 200&rarr;300&rarr;99)
+   LDR R1, 200(R2)     &rarr;  R1 = memory[204]   (indexed: base 200 + R2=4)</pre>
+
+<p><strong>Indexed addressing</strong> is how arrays are walked: the base address of the array stays put; the index register is simply incremented inside a loop.</p>
+
+<h2>4.7.6 The Fetch-Decode-Execute Cycle</h2>
+
+<p>Every instruction the CPU runs is carried out by the same three-phase cycle, driven by the control unit and expressed concisely in <strong>register transfer notation</strong> &mdash; <code>destination &larr; source</code>, with <code>[X]</code> meaning "the contents of X" and <code>[[X]]</code> meaning a double dereference.</p>
+
+<h3>The three phases in register-transfer notation</h3>
+
+<pre>FETCH
+   MAR  &larr; [PC]                  // copy the next-instruction address to the MAR
+   PC   &larr; [PC] + 1              // point PC at the instruction after this one
+   MBR  &larr; [memory[MAR]]         // read from RAM over the data bus
+   CIR  &larr; [MBR]                 // latch the fetched bits into the CIR
+
+DECODE
+   decode opcode in CIR           // CU splits opcode and operand fields
+                                  // and works out the addressing mode
+   (operand fetched if needed, e.g. MAR &larr; operand; MBR &larr; [memory[MAR]])
+
+EXECUTE
+   depending on the opcode:
+     arithmetic: ALU computes on registers &amp; operand; SR flags updated
+     memory:    read/write via MAR/MBR
+     branch:    PC &larr; target address (conditional on SR flags)</pre>
+
+<h3>Trace 1 &mdash; <code>LDR R1, 200</code> (direct load)</h3>
+
+<p>Assume PC = 50, memory[50] = "LDR R1, 200", memory[200] = 99, and R1 is initially 0.</p>
+
+<pre>Fetch:
+   MAR  &larr; [PC]                // MAR = 50
+   PC   &larr; [PC] + 1            // PC = 51
+   MBR  &larr; [memory[50]]        // MBR = "LDR R1, 200"
+   CIR  &larr; [MBR]               // CIR = "LDR R1, 200"
+
+Decode:
+   opcode = LDR, Rd = R1, addr = 200, mode = direct
+
+Execute:
+   MAR  &larr; 200                 // set up the read
+   MBR  &larr; [memory[200]]       // MBR = 99
+   R1   &larr; [MBR]               // R1 = 99
+
+After the cycle: R1 = 99, PC = 51.</pre>
+
+<h3>Trace 2 &mdash; <code>ADD R1, R2, R3</code> (register arithmetic)</h3>
+
+<p>Assume PC = 51, memory[51] = "ADD R1, R2, R3", R2 = 7, R3 = 5.</p>
+
+<pre>Fetch:
+   MAR  &larr; [PC]                // MAR = 51
+   PC   &larr; [PC] + 1            // PC = 52
+   MBR  &larr; [memory[51]]        // MBR = "ADD R1, R2, R3"
+   CIR  &larr; [MBR]
+
+Decode:
+   opcode = ADD, Rd = R1, Rs1 = R2, Rs2 = R3
+
+Execute:
+   ALU.A  &larr; [R2]              // 7
+   ALU.B  &larr; [R3]              // 5
+   ALU.op &larr; ADD
+   R1     &larr; ALU.out            // 12
+   SR: Z=0, N=0, C=0, V=0       // flags updated
+
+After the cycle: R1 = 12, PC = 52.</pre>
+
+<div class="exam-tip">Register-transfer notation is worth easy marks if you get the syntax right: use the left arrow <code>&larr;</code> (not <code>=</code>), wrap contents in square brackets (<code>[PC]</code> means "contents of PC") and double them for indirect fetches (<code>[[MAR]]</code>). Examiners deduct for <code>PC = PC + 1</code> when they want <code>PC &larr; [PC] + 1</code>.</div>
+
+<h2>4.7.7 Factors Affecting CPU Performance</h2>
+
+<p>Real-world CPU performance depends on several interacting parameters. A question asking "how could performance be improved?" expects at least three of the following, each with a mechanism.</p>
+
+<h3>Clock speed</h3>
+
+<p>Higher frequency &rarr; more FDE cycles per second &rarr; more instructions executed per second, <em>provided</em> the pipeline is kept full. The hard limit is <strong>power dissipation</strong>: dynamic power scales roughly with <code>f &times; V&sup2;</code>, so doubling the clock (and the voltage needed to switch reliably at that rate) roughly <em>octuples</em> the heat. This is why mainstream clocks have stalled near 5 GHz since 2005 &mdash; the industry moved sideways into multi-core instead.</p>
+
+<h3>Number of cores</h3>
+
+<p>A <strong>core</strong> is a complete CPU: its own ALU, CU, registers, L1 cache. A multi-core chip with N cores can in principle run N threads in parallel, multiplying throughput up to N&times;. Real speed-up is bounded by <strong>Amdahl's law</strong>: if a fraction <em>p</em> of the work is parallelisable and the rest is serial, maximum speed-up = <code>1 / ((1&minus;p) + p/N)</code>. Even with infinite cores, a 10%-serial workload can speed up at most 10&times;.</p>
+
+<h3>Cache</h3>
+
+<div class="definition">
+    <strong>Cache</strong> &mdash; a small, fast block of SRAM sitting between the CPU and main memory. It holds recently- and frequently-accessed addresses; a hit avoids the long trip to DRAM. Organised in levels L1, L2, L3 of increasing size and latency.
+</div>
+
+<table>
+    <tr><th>Level</th><th>Typical size</th><th>Latency (cycles)</th><th>Scope</th></tr>
+    <tr><td>L1</td><td>32&ndash;64 KiB per core (split I/D)</td><td>3&ndash;5</td><td>Private to core</td></tr>
+    <tr><td>L2</td><td>256 KiB &ndash; 1 MiB per core</td><td>10&ndash;20</td><td>Private to core</td></tr>
+    <tr><td>L3</td><td>4&ndash;64 MiB</td><td>30&ndash;60</td><td>Shared across all cores</td></tr>
+    <tr><td>Main RAM</td><td>8&ndash;128 GiB</td><td>200&ndash;400</td><td>Whole system</td></tr>
+</table>
+
+<p><strong>Worked hit/miss example.</strong> Suppose L1 has 2-cycle access with 95% hit rate, and a miss costs 100 cycles to fetch from RAM. Average memory access time (AMAT):</p>
+
+<pre>   AMAT = hit_time + miss_rate &times; miss_penalty
+        = 2 + 0.05 &times; 100
+        = 2 + 5
+        = 7 cycles
+
+If we improve hit rate to 99%:
+   AMAT = 2 + 0.01 &times; 100 = 3 cycles  (roughly 2.3&times; faster)</pre>
+
+<p>Cache performance exploits two principles: <strong>temporal locality</strong> (a location accessed once is likely to be accessed again soon) and <strong>spatial locality</strong> (its neighbours are likely to be accessed soon). Caches load whole <em>lines</em> (typically 64 bytes) to exploit both.</p>
+
+<h3>Word length</h3>
+
+<p>The <strong>word length</strong> is the number of bits the CPU processes in parallel &mdash; typically the width of the data bus, the registers and the ALU. A 64-bit CPU moves and operates on 64 bits at a time, so 64-bit arithmetic takes one cycle rather than many; it also addresses up to 2<sup>64</sup> bytes directly.</p>
+
+<h3>Address bus width</h3>
+
+<p>Each extra address line doubles the number of addressable memory locations. With an <em>n</em>-bit address bus you can address <code>2<sup>n</sup></code> distinct locations.</p>
+
+<pre>Worked example: a CPU has a 20-bit address bus.
+   Number of addressable locations = 2&sup2;&deg; = 1,048,576 = 1 MiB (of words).
+   If each word is 1 byte, maximum RAM = 1 MiB.
+   If each word is 4 bytes (32 bits), maximum RAM = 4 MiB.
+
+The infamous 640 KiB limit of early IBM PCs came from reserving part of
+the 1 MiB 20-bit address space for BIOS, video, and expansion ROMs.</pre>
+
+<div class="exam-tip">"Calculate the maximum addressable memory" &mdash; always 2<sup>address-bus-width</sup> locations. Multiply by the <em>word size in bytes</em> only when the question asks for bytes. Don't forget to state units (bytes, KiB, MiB).</div>
+
+<h2>4.7.8 The Need for Secondary Storage</h2>
+
+<p>Main memory (RAM) is volatile: cut the power and its contents vanish. It is also expensive per gigabyte. A working computer therefore needs <strong>secondary storage</strong>:</p>
+
+<ul>
+    <li><strong>Non-volatile persistence</strong> &mdash; files, programs, the OS itself must survive a shutdown. Secondary storage retains data indefinitely without power.</li>
+    <li><strong>Capacity</strong> &mdash; an SSD in a laptop is typically 50&ndash;100&times; the size of its RAM. Keeping media libraries, installed applications, OS images and user documents in RAM would be neither affordable nor necessary.</li>
+    <li><strong>Portability</strong> &mdash; removable devices (USB sticks, optical discs) let data be physically carried or archived.</li>
+    <li><strong>Cost per byte</strong> &mdash; &cent;/GB for magnetic disks is far below RAM's $/GB.</li>
+</ul>
+
+<h2>4.7.9 Types of Secondary Storage</h2>
+
+<h3>Magnetic &mdash; Hard Disk Drive (HDD)</h3>
+
+<p>A stack of rigid glass/aluminium <strong>platters</strong> coated in a ferromagnetic film, spinning at 5,400&ndash;15,000 rpm. <strong>Heads</strong> on a moving arm fly a few nanometres above each surface, detecting and reversing the magnetic polarity of microscopic regions &mdash; each region encodes one bit. The surface is organised into concentric <strong>tracks</strong>, each subdivided into <strong>sectors</strong> (typically 512 bytes or 4 KiB). Tracks at the same radius across different platters form a <strong>cylinder</strong>, which can be accessed without moving the head.</p>
+
+<p>Access time = seek time (head to track) + rotational latency (sector to arrive) + transfer. Typical 7,200 rpm drive: ~10 ms average seek. Strengths: huge capacity (multi-TB), cheap per GB. Weaknesses: mechanical, fragile under shock, slow, noisy, power-hungry.</p>
+
+<h3>Solid-state &mdash; SSD</h3>
+
+<p>No moving parts. Data is stored as trapped charge on floating-gate transistors arranged in a grid of <strong>NAND flash</strong> cells. A flash controller manages reads, writes and erases in <em>blocks</em>. Two important mechanisms:</p>
+
+<ul>
+    <li><strong>Wear levelling</strong> &mdash; each flash cell can only be erased a finite number of times (10<sup>3</sup>&ndash;10<sup>5</sup> cycles). The controller spreads writes uniformly across all cells so no single block fails early.</li>
+    <li><strong>TRIM</strong> &mdash; an OS command telling the SSD which blocks the file system has freed. The controller can then erase them ahead of time, keeping write speeds high.</li>
+</ul>
+
+<p>Strengths: very fast (sub-millisecond random reads, GB/s sequential), silent, shock-resistant, low power. Weaknesses: cost/GB higher than HDD, finite write endurance.</p>
+
+<h3>Optical &mdash; CD / DVD / Blu-ray</h3>
+
+<p>Data encoded as microscopic <strong>pits</strong> and <strong>lands</strong> on a spiral track in a reflective metal layer under transparent polycarbonate. A laser shines on the track; pits scatter light and lands reflect it, producing a binary signal. Pit size falls as wavelength shortens: CD uses 780 nm infrared (700 MB), DVD uses 650 nm red (4.7 GB), Blu-ray uses 405 nm blue-violet (25&ndash;50 GB). Strengths: cheap per disc, portable, good for archival and distribution. Weaknesses: slow, low capacity by modern standards, scratch-sensitive.</p>
+
+<h3>Comparison of secondary-storage technologies</h3>
+
+<table>
+    <tr><th></th><th>HDD (magnetic)</th><th>SSD (flash)</th><th>Optical (DVD/BD)</th></tr>
+    <tr><td>Speed (random)</td><td>~10 ms seek</td><td>&lt;0.1 ms</td><td>~100 ms (laser seek)</td></tr>
+    <tr><td>Speed (sequential)</td><td>100&ndash;200 MB/s</td><td>500 MB/s &ndash; 7 GB/s</td><td>~10&ndash;70 MB/s</td></tr>
+    <tr><td>Capacity (consumer)</td><td>1&ndash;22 TB</td><td>256 GB &ndash; 8 TB</td><td>4.7&ndash;50 GB per disc</td></tr>
+    <tr><td>Cost per GB</td><td>Lowest</td><td>Medium</td><td>Very low (bulk discs)</td></tr>
+    <tr><td>Durability</td><td>Sensitive to shock</td><td>Shock-proof, finite writes</td><td>Scratch/heat sensitive</td></tr>
+    <tr><td>Power draw</td><td>6&ndash;10 W</td><td>2&ndash;5 W</td><td>~5 W (active only)</td></tr>
+    <tr><td>Typical use</td><td>Bulk storage, servers</td><td>OS drive, laptops, phones</td><td>Install media, archival</td></tr>
+</table>
+
+<h2>4.7.10 Virtual Storage</h2>
+
+<div class="definition">
+    <strong>Virtual memory (virtual storage)</strong> &mdash; an OS mechanism that uses part of secondary storage as an overflow extension of RAM. When RAM fills up, inactive pages are <em>swapped out</em> to a disk file (page file / swap partition); when the CPU references a swapped-out page, a page fault triggers the OS to swap it back in, evicting another page if necessary.
+</div>
+
+<p>Virtual storage delivers the illusion of a huge address space and lets more (or larger) programs run than physical RAM would otherwise allow. The trade-off is stark:</p>
+
+<ul>
+    <li>An L1 cache access is ~1 ns.</li>
+    <li>A RAM access is ~100 ns.</li>
+    <li>An SSD access is ~100&nbsp;&mu;s (~1000&times; slower than RAM).</li>
+    <li>An HDD access is ~10 ms (~100,000&times; slower than RAM).</li>
+</ul>
+
+<p>Each page fault therefore costs thousands to millions of CPU cycles. If the working set is only marginally larger than RAM, the system spends most of its time paging rather than computing &mdash; this pathology is called <strong>thrashing</strong>. The fix is either to add RAM, reduce the workload, or have the OS's working-set model evict cold pages more aggressively.</p>
+
+<div class="exam-tip">Distinguish <em>virtual memory</em> (the OS abstraction presenting each process with its own address space, implemented by paging) from <em>virtual storage</em> in this topic's sense (using disk as extra RAM). AQA's wording often treats them interchangeably, but your answer should mention both: pages swapped to the paging file when RAM is exhausted, and the cost being disk latency versus RAM latency.</div>
+
+<h2>4.7.11 CISC and RISC</h2>
+
+<div class="definition">
+    <strong>RISC (Reduced Instruction Set Computer)</strong> &mdash; a design philosophy that keeps the instruction set small, the instructions fixed-length and simple, and the architecture register-rich. Complex tasks are built from sequences of simple instructions. Load/store architecture: memory is touched only by explicit <code>LDR</code>/<code>STR</code>, all other instructions operate on registers. Examples: ARM, RISC-V, MIPS, early SPARC, PowerPC.
+</div>
+
+<div class="definition">
+    <strong>CISC (Complex Instruction Set Computer)</strong> &mdash; a design philosophy that provides a rich, variable-length instruction set, where single instructions can perform multi-step operations (e.g. "add a memory operand to a register and store back to memory"). Historically motivated by small memories and slow compilers: the CPU did more per instruction, so the program was shorter. Examples: x86 / x86-64, VAX, IBM System/360, Motorola 68000.
+</div>
+
+<h3>RISC vs CISC &mdash; comparison</h3>
+
+<table>
+    <tr><th></th><th>RISC</th><th>CISC</th></tr>
+    <tr><td>Instruction length</td><td>Fixed (e.g. 32 bits)</td><td>Variable (1&ndash;15 bytes on x86)</td></tr>
+    <tr><td>Instruction count</td><td>Small (dozens)</td><td>Large (hundreds)</td></tr>
+    <tr><td>Cycles per instruction</td><td>Typically 1 (simple)</td><td>Variable, often many</td></tr>
+    <tr><td>Addressing modes</td><td>Few (load/store only)</td><td>Many, including memory operands</td></tr>
+    <tr><td>Register file</td><td>Large (16&ndash;32+)</td><td>Smaller (e.g. 8 on original x86)</td></tr>
+    <tr><td>Control unit</td><td>Hardwired</td><td>Microprogrammed</td></tr>
+    <tr><td>Pipelining</td><td>Easy &mdash; uniform instructions</td><td>Harder &mdash; decode complexity</td></tr>
+    <tr><td>Compiler burden</td><td>Heavy &mdash; must schedule & fuse</td><td>Lighter &mdash; CPU does more</td></tr>
+    <tr><td>Code density</td><td>Lower (more instructions)</td><td>Higher (complex ops in one op)</td></tr>
+    <tr><td>Power efficiency</td><td>High &mdash; mobile/embedded</td><td>Lower historically</td></tr>
+    <tr><td>Typical use</td><td>Phones, tablets, Macs, servers, IoT</td><td>Desktop/laptop PCs, x86 servers</td></tr>
+</table>
+
+<p>In practice the line has blurred: modern x86 CPUs decode CISC instructions into RISC-like <em>micro-ops</em> that a RISC-style back-end pipelines and executes out-of-order. ARM has gained complex SIMD and crypto instructions. The cultural and power-efficiency differences still matter, though: ARM chips dominate phones and increasingly laptops (Apple Silicon) because their simpler decoders draw less power.</p>
+
+<h2>4.7.12 GPUs</h2>
+
+<div class="definition">
+    <strong>GPU (Graphics Processing Unit)</strong> &mdash; a processor architected for massively data-parallel workloads. Where a CPU has a few (4&ndash;64) complex cores with deep pipelines and huge caches, a GPU has thousands of simpler cores grouped into <em>streaming multiprocessors (SMs)</em>, each executing the same instruction on many data items at once (SIMD / SIMT). Backed by a wide, high-bandwidth memory bus (e.g. 384&ndash;1024 bits, hundreds of GB/s&ndash;TB/s).
+</div>
+
+<h3>Why it matters</h3>
+
+<ul>
+    <li><strong>Graphics</strong> &mdash; rendering an HD frame applies the same shader to millions of pixels. Perfectly parallel; millions of GPU threads nail it.</li>
+    <li><strong>Machine learning</strong> &mdash; deep learning is dominated by dense matrix multiplications (<code>C = A &times; B</code>). Each output element is an independent dot product &mdash; exactly the kind of embarrassingly-parallel load a GPU was born for. Modern GPUs add <em>tensor cores</em> that do 4&times;4 matrix-multiply-accumulate in a single instruction.</li>
+    <li><strong>Cryptocurrency mining</strong> &mdash; hashing operations (SHA-256, Ethash) are independent arithmetic across trillions of inputs &mdash; again, parallel.</li>
+    <li><strong>Scientific computing</strong> &mdash; fluid dynamics, molecular dynamics, weather.</li>
+</ul>
+
+<h3>GPU vs CPU</h3>
+
+<table>
+    <tr><th></th><th>CPU</th><th>GPU</th></tr>
+    <tr><td>Cores</td><td>4&ndash;64, complex, out-of-order</td><td>1,000s, simple, in-order, SIMD</td></tr>
+    <tr><td>Optimised for</td><td>Low-latency serial code, branchy logic</td><td>High-throughput data-parallel code</td></tr>
+    <tr><td>Memory bandwidth</td><td>~50&ndash;100 GB/s</td><td>500 GB/s &ndash; 3 TB/s</td></tr>
+    <tr><td>Cache per thread</td><td>Large</td><td>Tiny &mdash; threads hide latency by switching</td></tr>
+    <tr><td>Flow control</td><td>Handles divergent branches cheaply</td><td>Divergent branches serialise warps</td></tr>
+</table>
+
+<p>When your problem has lots of independent data and little branching, a GPU can be 10&ndash;100&times; faster than a CPU on the same silicon budget. When it has complex control flow (e.g. a compiler), a CPU still wins.</p>
+
+<h2>4.7.13 Input-Output Devices</h2>
+
+<p>Input devices turn human-world signals into bits; output devices do the opposite. The OS mediates every transfer through a <em>device driver</em> (see 4.6 operating-system notes).</p>
+
+<h3>Input devices</h3>
+
+<ul>
+    <li><strong>Keyboard</strong> &mdash; a matrix of switches; each key press closes a row/column contact that the keyboard controller scans and reports as a scancode.</li>
+    <li><strong>Mouse</strong> &mdash; optical or laser sensor tracks surface texture at 1,000+ dpi, reporting dx/dy deltas and button events.</li>
+    <li><strong>Scanner</strong> &mdash; digitises paper into a bitmap, often followed by software recognition.
+        <ul>
+            <li><strong>OCR (optical character recognition)</strong> &mdash; turns the image of text into editable characters. Used for book digitisation, receipts, number-plate recognition.</li>
+            <li><strong>OMR (optical mark recognition)</strong> &mdash; detects filled-in bubbles on a pre-printed form. Used for multiple-choice exam papers and ballots.</li>
+            <li><strong>Barcode scanner</strong> &mdash; laser detects the pattern of thick/thin dark bars encoding a product ID. EAN-13 on groceries, QR codes on phones.</li>
+        </ul>
+    </li>
+    <li><strong>Microphone, webcam, touch screen, games controller</strong> &mdash; other common input transducers.</li>
+</ul>
+
+<h3>Output devices</h3>
+
+<ul>
+    <li><strong>Monitor</strong> &mdash; LCD or OLED panel with millions of addressable pixels. Image delivered by the GPU over HDMI/DisplayPort at 60&ndash;240 frames per second.</li>
+    <li><strong>Printer</strong>:
+        <ul>
+            <li><strong>Inkjet</strong> &mdash; sprays microscopic ink droplets; cheap, photo-quality, slow per page.</li>
+            <li><strong>Laser</strong> &mdash; laser charges a drum to attract toner; fast, sharp, ideal for office volume.</li>
+            <li><strong>3D printer</strong> &mdash; builds an object layer by layer by extruding plastic or fusing powder.</li>
+        </ul>
+    </li>
+    <li><strong>Speakers, actuators, haptic motors</strong> &mdash; convert electrical signals to physical output.</li>
+</ul>
+
+<h2>4.7.14 Secondary Storage Devices</h2>
+
+<p>Covered in detail under 4.7.9. In exam answers, remember the three families (magnetic, solid-state, optical), at least one physical mechanism per family, and the trade-offs of speed, capacity, cost and durability.</p>
+
+<h2>Assembly Language Programming</h2>
+
+<p>The AQA A-Level assembly language examined on paper 2 is a simplified ARM-like dialect. You will not be asked to invent a compiler, but you will be asked to read and write short programs using the following instructions.</p>
+
+<h3>Instruction reference</h3>
+
+<table>
+    <tr><th>Mnemonic</th><th>Meaning</th><th>Example</th><th>Effect</th></tr>
+    <tr><td>LDR Rd, addr</td><td>Load register from memory</td><td><code>LDR R1, 100</code></td><td>R1 &larr; memory[100]</td></tr>
+    <tr><td>STR Rs, addr</td><td>Store register to memory</td><td><code>STR R1, 100</code></td><td>memory[100] &larr; R1</td></tr>
+    <tr><td>ADD Rd, Rs, Op2</td><td>Add</td><td><code>ADD R1, R2, #3</code></td><td>R1 &larr; R2 + 3</td></tr>
+    <tr><td>SUB Rd, Rs, Op2</td><td>Subtract</td><td><code>SUB R1, R2, R3</code></td><td>R1 &larr; R2 &minus; R3</td></tr>
+    <tr><td>MOV Rd, Op2</td><td>Copy value into register</td><td><code>MOV R1, #0</code></td><td>R1 &larr; 0</td></tr>
+    <tr><td>CMP Rn, Op2</td><td>Compare (set flags from Rn &minus; Op2)</td><td><code>CMP R1, #10</code></td><td>update SR flags</td></tr>
+    <tr><td>B label</td><td>Unconditional branch</td><td><code>B loop</code></td><td>PC &larr; loop</td></tr>
+    <tr><td>BEQ label</td><td>Branch if equal (Z=1)</td><td><code>BEQ done</code></td><td>conditional jump</td></tr>
+    <tr><td>BNE label</td><td>Branch if not equal (Z=0)</td><td><code>BNE loop</code></td><td>conditional jump</td></tr>
+    <tr><td>BGT label</td><td>Branch if greater than (signed)</td><td><code>BGT big</code></td><td>conditional jump</td></tr>
+    <tr><td>BLT label</td><td>Branch if less than (signed)</td><td><code>BLT small</code></td><td>conditional jump</td></tr>
+    <tr><td>AND Rd, Rs, Op2</td><td>Bitwise AND</td><td><code>AND R1, R2, #1</code></td><td>isolate LSB</td></tr>
+    <tr><td>ORR Rd, Rs, Op2</td><td>Bitwise OR</td><td><code>ORR R1, R2, #4</code></td><td>set bit 2</td></tr>
+    <tr><td>EOR Rd, Rs, Op2</td><td>Bitwise XOR</td><td><code>EOR R1, R1, R1</code></td><td>clear R1</td></tr>
+    <tr><td>MVN Rd, Op2</td><td>Move NOT (bitwise complement)</td><td><code>MVN R1, R2</code></td><td>R1 &larr; ~R2</td></tr>
+    <tr><td>LSL Rd, Rs, #n</td><td>Logical shift left by n</td><td><code>LSL R1, R2, #3</code></td><td>R1 &larr; R2 &times; 8</td></tr>
+    <tr><td>LSR Rd, Rs, #n</td><td>Logical shift right by n</td><td><code>LSR R1, R2, #1</code></td><td>R1 &larr; R2 &divide; 2 (unsigned)</td></tr>
+    <tr><td>HALT</td><td>Stop execution</td><td><code>HALT</code></td><td>end of program</td></tr>
+</table>
+
+<div class="definition">
+    <strong>Assembly language</strong> &mdash; a low-level programming language whose mnemonics map one-to-one (approximately) onto a specific processor's machine-code instructions. An <em>assembler</em> translates it to machine code. Used when the programmer needs fine-grained control over registers, timing, or memory layout &mdash; device drivers, bootloaders, performance-critical inner loops.
+</div>
+
+<h3>Worked programme &mdash; sum the integers 1 to 10</h3>
+
+<p>We accumulate a running total in R1, use R2 as the loop counter, and compare against 10 in R3. At the end we store the total to memory address 100.</p>
+
+<pre>         MOV   R1, #0          ; total = 0       (accumulator)
+         MOV   R2, #1          ; counter = 1
+         MOV   R3, #10         ; upper bound
+
+loop:    ADD   R1, R1, R2      ; total = total + counter
+         ADD   R2, R2, #1      ; counter = counter + 1
+         CMP   R2, R3          ; compare counter with 10
+         BLE   loop            ; if counter <= 10, repeat
+                                ; (on an AQA paper, use CMP + BGT done; B loop)
+         STR   R1, 100         ; memory[100] = total   (= 55)
+         HALT
+
+Trace of the accumulator R1 across loop iterations:
+    Iter 1:  R1 = 0  + 1  = 1
+    Iter 2:  R1 = 1  + 2  = 3
+    Iter 3:  R1 = 3  + 3  = 6
+    Iter 4:  R1 = 6  + 4  = 10
+    Iter 5:  R1 = 10 + 5  = 15
+    Iter 6:  R1 = 15 + 6  = 21
+    Iter 7:  R1 = 21 + 7  = 28
+    Iter 8:  R1 = 28 + 8  = 36
+    Iter 9:  R1 = 36 + 9  = 45
+    Iter 10: R1 = 45 + 10 = 55   &larr; final total
+</pre>
+
+<p>If your exam dialect lacks <code>BLE</code>, rewrite the tail as:</p>
+
+<pre>         CMP   R2, R3
+         BGT   done      ; exit when counter > 10
+         B     loop
+done:    STR   R1, 100
+         HALT</pre>
+
+<h3>Worked programme &mdash; conditional absolute value</h3>
+
+<pre>         LDR   R1, 200         ; load x
+         CMP   R1, #0
+         BGT   positive        ; if x > 0, skip negation
+         BEQ   positive        ; if x = 0, also skip
+         MVN   R1, R1          ; R1 = NOT x
+         ADD   R1, R1, #1      ; R1 = -x (two's complement)
+positive: STR  R1, 201         ; store |x|
+          HALT</pre>
+
+<h2>Common Misconceptions</h2>
+
+<ul>
+    <li><strong>"The PC points to the current instruction."</strong> No &mdash; the PC points to the <em>next</em> instruction. During execute it has already been incremented.</li>
+    <li><strong>"Cache is a kind of RAM slower than main memory."</strong> The opposite &mdash; cache is faster, smaller, more expensive SRAM sitting between the CPU and DRAM.</li>
+    <li><strong>"Pipelining makes a single instruction faster."</strong> It does not; end-to-end latency of any one instruction is unchanged. It improves <em>throughput</em> by overlapping multiple instructions.</li>
+    <li><strong>"Virtual memory means the computer has more RAM."</strong> Virtual memory is an <em>abstraction</em> that uses secondary storage as overflow; performance drops by orders of magnitude when pages actually live on disk.</li>
+    <li><strong>"RISC is always faster than CISC."</strong> Not inherently; RISC simplifies the <em>hardware</em>, shifting complexity to the compiler. For a given silicon budget, RISC tends to be more power-efficient, which matters in phones but less in desktops.</li>
+    <li><strong>"GPUs are just faster CPUs."</strong> They are not. GPUs sacrifice branch handling and cache-per-thread for massive parallelism. On sequential, branchy code they can be <em>slower</em> than a CPU.</li>
+    <li><strong>"Machine code and assembly are the same."</strong> Assembly uses mnemonics; machine code is the binary after assembly. The CPU executes machine code only.</li>
+</ul>
+
+<h2>Exam-Ready Summary</h2>
+
+<ul>
+    <li>A computer is CPU + main memory (RAM/ROM) + I/O + secondary storage, linked by address, data and control buses.</li>
+    <li>The stored-program concept (von Neumann): programs and data share memory, both represented in binary, enabling flexible, general-purpose computing.</li>
+    <li>CPU internals: ALU, CU, register set, clock, internal buses. Pipelining (3- or 5-stage) overlaps instructions for near one-per-cycle throughput, limited by structural, data (RAW/WAR/WAW) and control hazards; branch prediction mitigates control hazards.</li>
+    <li>Key registers: PC (next instruction address), CIR (current instruction), MAR (address bus drive), MBR/MDR (data bus drive), SR (flags Z/N/C/V), ACC, GPRs.</li>
+    <li>Instructions = opcode + operand. Addressing modes: immediate, direct, indirect, indexed.</li>
+    <li>FDE cycle in register-transfer notation: MAR&larr;[PC]; PC&larr;[PC]+1; MBR&larr;[memory[MAR]]; CIR&larr;[MBR]; decode; execute.</li>
+    <li>Performance factors: clock speed (power/heat limited), number of cores (Amdahl's law), cache hierarchy (L1/L2/L3 sizes and latencies), word length, address bus width (2<sup>n</sup> locations).</li>
+    <li>Secondary storage needed for non-volatile persistence and capacity; HDDs (platters/heads/tracks/sectors), SSDs (NAND flash, wear-levelling, TRIM), optical (pits/lands, laser).</li>
+    <li>Virtual storage extends RAM onto disk via paging; thrashing is the pathological failure case.</li>
+    <li>RISC: simple fixed-length instructions, large register file, load/store, deep pipelines, mobile/embedded (ARM). CISC: complex variable-length instructions, memory operands, microcoded, desktop x86.</li>
+    <li>GPU: thousands of SIMD cores, wide memory bus, ideal for graphics, ML matrix multiplication, crypto mining. Wrong tool for branchy serial code.</li>
+    <li>I/O devices: keyboard, mouse, scanner (OCR/OMR/barcode) in; monitor, printer out.</li>
+    <li>Assembly mnemonics: LDR, STR, ADD, SUB, MOV, CMP, B/BEQ/BNE/BGT/BLT, AND, ORR, EOR, MVN, LSL, LSR, HALT. Know how to sum 1..10 in a loop.</li>
+</ul>
+
+</div>
+</body>
+</html>

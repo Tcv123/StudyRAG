@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.3 &mdash; Fundamentals of Algorithms</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.3 Fundamentals of Algorithms</h1>
+<p class="spec-ref">Computer Science &mdash; AQA A-Level (7517) &mdash; Paper 1: On-screen Programming</p>
+
+<p>Topic 4.3 builds directly on the data structures of 4.2: algorithms are the <em>procedures</em> that operate on those structures. Paper 1 examiners will ask you to <strong>trace</strong> an algorithm step-by-step, <strong>compare</strong> two algorithms for the same task, <strong>state</strong> the Big-O time and space complexity, and <strong>justify</strong> which algorithm best fits a given scenario. This note works through every named algorithm in the AQA specification &mdash; graph and tree traversals, Reverse Polish, searching, sorting, Dijkstra &mdash; with full worked traces and pseudocode suitable for exam answers.</p>
+
+<h2>4.3.1 Graph-Traversal Algorithms</h2>
+
+<p>A graph traversal visits every reachable vertex starting from a given source. The two standard strategies differ only in which auxiliary data structure holds the <em>frontier</em> of vertices to process next.</p>
+
+<div class="definition">
+    <strong>Depth-First Search (DFS)</strong> explores as far as possible along one branch before backtracking. The frontier is held in a <strong>stack</strong> (explicit or via recursion). DFS discovers a deep path quickly but may miss shorter routes.
+</div>
+
+<div class="definition">
+    <strong>Breadth-First Search (BFS)</strong> explores all neighbours of a vertex before moving on to their neighbours. The frontier is held in a <strong>queue</strong>. BFS discovers vertices in non-decreasing order of <em>number of edges from the source</em>, giving shortest paths in unweighted graphs.
+</div>
+
+<h3>Example Graph</h3>
+
+<p>All the traces below use this undirected, unweighted graph with six vertices. Adjacency lists are given in alphabetical order, which determines tie-breaking in both algorithms.</p>
+
+<pre>         A &mdash;&mdash; B &mdash;&mdash; D
+         |      |      |
+         C &mdash;&mdash;&mdash;+      E
+                       |
+                       F
+
+Adjacency lists:
+    A: [B, C]
+    B: [A, C, D]
+    C: [A, B]
+    D: [B, E]
+    E: [D, F]
+    F: [E]</pre>
+
+<h3>DFS Pseudocode (Recursive)</h3>
+
+<pre>PROCEDURE DFS(graph, v, visited)
+    ADD v TO visited
+    OUTPUT v
+    FOR EACH neighbour IN graph[v]
+        IF neighbour NOT IN visited THEN
+            DFS(graph, neighbour, visited)
+        ENDIF
+    ENDFOR
+ENDPROCEDURE</pre>
+
+<h3>DFS Pseudocode (Iterative, Explicit Stack)</h3>
+
+<pre>PROCEDURE DFS_iterative(graph, start)
+    DECLARE stack : Stack
+    DECLARE visited : Set
+    stack.push(start)
+    WHILE NOT stack.isEmpty() DO
+        v &larr; stack.pop()
+        IF v NOT IN visited THEN
+            ADD v TO visited
+            OUTPUT v
+            FOR EACH neighbour IN REVERSE(graph[v])
+                IF neighbour NOT IN visited THEN
+                    stack.push(neighbour)
+                ENDIF
+            ENDFOR
+        ENDIF
+    ENDWHILE
+ENDPROCEDURE</pre>
+
+<p>Reversing the neighbour list before pushing is a common trick: because the stack is LIFO, pushing in reverse makes the iterative version visit vertices in the same order as the recursive version.</p>
+
+<h3>DFS Worked Trace &mdash; Starting from A</h3>
+
+<p>The <em>stack</em> column shows contents with the top on the right. <em>Visited</em> shows the output order.</p>
+
+<table>
+    <tr><th>Step</th><th>Action</th><th>Stack</th><th>Visited (output)</th></tr>
+    <tr><td>0</td><td>push A</td><td>[A]</td><td>&ndash;</td></tr>
+    <tr><td>1</td><td>pop A; visit; push C, B</td><td>[C, B]</td><td>A</td></tr>
+    <tr><td>2</td><td>pop B; visit; push D, C, A (A skipped)</td><td>[C, D, C]</td><td>A, B</td></tr>
+    <tr><td>3</td><td>pop C; visit; push B, A (both skipped)</td><td>[C, D]</td><td>A, B, C</td></tr>
+    <tr><td>4</td><td>pop D; visit; push E, B (B skipped)</td><td>[C, E]</td><td>A, B, C, D</td></tr>
+    <tr><td>5</td><td>pop E; visit; push F, D (D skipped)</td><td>[C, F]</td><td>A, B, C, D, E</td></tr>
+    <tr><td>6</td><td>pop F; visit; push E (skipped)</td><td>[C]</td><td>A, B, C, D, E, F</td></tr>
+    <tr><td>7</td><td>pop C; already visited</td><td>[ ]</td><td>A, B, C, D, E, F</td></tr>
+</table>
+
+<p>DFS order: <strong>A, B, C, D, E, F</strong>. Notice DFS plunges deep (A &rarr; B &rarr; C, then A &rarr; B &rarr; D &rarr; E &rarr; F) before it finishes.</p>
+
+<h3>BFS Pseudocode</h3>
+
+<pre>PROCEDURE BFS(graph, start)
+    DECLARE queue : Queue
+    DECLARE visited : Set
+    queue.enQueue(start)
+    ADD start TO visited
+    WHILE NOT queue.isEmpty() DO
+        v &larr; queue.deQueue()
+        OUTPUT v
+        FOR EACH neighbour IN graph[v]
+            IF neighbour NOT IN visited THEN
+                ADD neighbour TO visited
+                queue.enQueue(neighbour)
+            ENDIF
+        ENDFOR
+    ENDWHILE
+ENDPROCEDURE</pre>
+
+<h3>BFS Worked Trace &mdash; Starting from A</h3>
+
+<table>
+    <tr><th>Step</th><th>Dequeue</th><th>Enqueue</th><th>Queue (front &rarr; rear)</th><th>Visited (output)</th></tr>
+    <tr><td>0</td><td>&ndash;</td><td>A</td><td>[A]</td><td>A</td></tr>
+    <tr><td>1</td><td>A</td><td>B, C</td><td>[B, C]</td><td>A, B, C</td></tr>
+    <tr><td>2</td><td>B</td><td>D</td><td>[C, D]</td><td>A, B, C, D</td></tr>
+    <tr><td>3</td><td>C</td><td>&ndash;</td><td>[D]</td><td>A, B, C, D</td></tr>
+    <tr><td>4</td><td>D</td><td>E</td><td>[E]</td><td>A, B, C, D, E</td></tr>
+    <tr><td>5</td><td>E</td><td>F</td><td>[F]</td><td>A, B, C, D, E, F</td></tr>
+    <tr><td>6</td><td>F</td><td>&ndash;</td><td>[ ]</td><td>A, B, C, D, E, F</td></tr>
+</table>
+
+<p>BFS order: <strong>A, B, C, D, E, F</strong>. Although the visit order looks the same here, the <em>distances</em> differ: BFS discovers B and C at distance 1, D at distance 2, E at 3, F at 4 &mdash; a shortest-path tree.</p>
+
+<h3>DFS vs BFS Comparison</h3>
+
+<table>
+    <tr><th>Aspect</th><th>DFS</th><th>BFS</th></tr>
+    <tr><td>Frontier data structure</td><td>Stack (or recursion)</td><td>Queue</td></tr>
+    <tr><td>Space complexity</td><td>O(h) where h is max recursion depth</td><td>O(w) where w is max graph width</td></tr>
+    <tr><td>Time complexity</td><td>O(V + E)</td><td>O(V + E)</td></tr>
+    <tr><td>Finds shortest path (unweighted)?</td><td>No &mdash; may return a longer path first.</td><td>Yes &mdash; the first path found is shortest.</td></tr>
+    <tr><td>Good for&hellip;</td><td>Topological sort, cycle detection, maze solving, connected-component labelling.</td><td>Shortest unweighted path, level-order traversal, web-crawl within n hops, broadcast trees.</td></tr>
+    <tr><td>Risk</td><td>Can recurse very deep &mdash; stack overflow on huge graphs.</td><td>Queue can balloon on wide graphs.</td></tr>
+</table>
+
+<div class="exam-tip">Examiners distinguish DFS from BFS by the data structure: <strong>stack = DFS, queue = BFS</strong>. Whenever you are asked to trace a traversal, always label which structure you are using and show its contents at each step.</div>
+
+<h3>Applications</h3>
+
+<ul>
+    <li><strong>DFS:</strong> topological sort of a DAG (schedule tasks with prerequisites), detecting cycles, finding strongly-connected components (Tarjan / Kosaraju), solving mazes, parsing language grammars.</li>
+    <li><strong>BFS:</strong> shortest-path in unweighted graphs, level-order traversal of trees, finding the minimum number of moves in puzzles (15-puzzle, Rubik's), web crawlers limited by depth, network-broadcast simulation, peer-to-peer search.</li>
+</ul>
+
+<h2>4.3.2 Tree-Traversal Algorithms</h2>
+
+<p>For a binary tree the three <em>depth-first</em> orders differ in <strong>when</strong> the current node is visited relative to its left and right subtrees. All three have the same asymptotic cost &mdash; O(n) time, O(h) auxiliary stack space &mdash; but produce different orderings.</p>
+
+<div class="definition">
+    <strong>Pre-order</strong>: visit <em>Node</em>, then Left subtree, then Right subtree (NLR).<br>
+    <strong>In-order</strong>: visit Left subtree, then <em>Node</em>, then Right subtree (LNR).<br>
+    <strong>Post-order</strong>: visit Left subtree, then Right subtree, then <em>Node</em> (LRN).
+</div>
+
+<h3>Example BST</h3>
+
+<pre>Insert 50, 30, 70, 20, 40, 60, 80:
+
+                 50
+               /    \
+             30      70
+            /  \    /  \
+          20   40  60   80</pre>
+
+<h3>Traversal Pseudocode</h3>
+
+<pre>PROCEDURE preOrder(node)
+    IF node &ne; NULL THEN
+        OUTPUT node.key
+        preOrder(node.left)
+        preOrder(node.right)
+    ENDIF
+ENDPROCEDURE
+
+PROCEDURE inOrder(node)
+    IF node &ne; NULL THEN
+        inOrder(node.left)
+        OUTPUT node.key
+        inOrder(node.right)
+    ENDIF
+ENDPROCEDURE
+
+PROCEDURE postOrder(node)
+    IF node &ne; NULL THEN
+        postOrder(node.left)
+        postOrder(node.right)
+        OUTPUT node.key
+    ENDIF
+ENDPROCEDURE</pre>
+
+<h3>Traversal Results</h3>
+
+<table>
+    <tr><th>Traversal</th><th>Order</th><th>Output on example tree</th><th>Typical application</th></tr>
+    <tr><td>Pre-order (NLR)</td><td>Node, Left, Right</td><td>50, 30, 20, 40, 70, 60, 80</td><td>Serialise a tree for reconstruction; prefix expression emission.</td></tr>
+    <tr><td>In-order (LNR)</td><td>Left, Node, Right</td><td>20, 30, 40, 50, 60, 70, 80</td><td>Emit BST contents in <em>sorted order</em>; infix expression.</td></tr>
+    <tr><td>Post-order (LRN)</td><td>Left, Right, Node</td><td>20, 40, 30, 60, 80, 70, 50</td><td>Free / delete a tree safely (children before parents); postfix (RPN).</td></tr>
+</table>
+
+<h3>Connection to Expression Trees</h3>
+
+<p>An <em>expression tree</em> stores operators at internal nodes and operands at the leaves. Take the infix expression <code>(3 + 4) * (5 &minus; 2)</code>:</p>
+
+<pre>                *
+              /   \
+            +       &minus;
+          /   \   /   \
+         3     4 5     2</pre>
+
+<table>
+    <tr><th>Traversal</th><th>Output</th><th>Notation</th></tr>
+    <tr><td>Pre-order</td><td>* + 3 4 &minus; 5 2</td><td>Prefix (Polish)</td></tr>
+    <tr><td>In-order</td><td>3 + 4 * 5 &minus; 2</td><td>Infix (but loses parentheses)</td></tr>
+    <tr><td>Post-order</td><td>3 4 + 5 2 &minus; *</td><td>Postfix (Reverse Polish)</td></tr>
+</table>
+
+<p>Notice that in-order drops the parentheses, so <code>3 + 4 * 5 &minus; 2</code> is ambiguous without them. Pre-order and post-order are <em>unambiguous</em> without parentheses, which is why compilers and calculators convert to RPN before evaluation.</p>
+
+<div class="exam-tip">A classic AQA question gives you a tree diagram and asks for one specific traversal. Circle each node in the correct order as you sweep through it; never try to read the answer off the tree diagram visually &mdash; always apply the recursive rule node-by-node.</div>
+
+<h2>4.3.3 Reverse Polish (Postfix) Notation</h2>
+
+<div class="definition">
+    <strong>Reverse Polish notation (RPN)</strong>, or <em>postfix</em>, writes each operator <em>after</em> its two operands: <code>3 4 +</code> means <code>3 + 4</code>. RPN requires no parentheses and no operator-precedence rules &mdash; the structure is implicit in the order.
+</div>
+
+<p>Advantages over infix: (1) <strong>no parentheses required</strong>, (2) <strong>no precedence rules</strong> required at evaluation time, (3) evaluation is a simple stack loop, (4) the ordering maps directly onto post-order traversal of an expression tree. RPN is used internally by compilers and by calculators such as the HP 48.</p>
+
+<h3>Evaluating RPN with a Stack</h3>
+
+<pre>FUNCTION evaluateRPN(tokens) RETURNS Real
+    DECLARE s : Stack
+    FOR EACH t IN tokens
+        IF isNumber(t) THEN
+            s.push(t)
+        ELSE                         // operator
+            b &larr; s.pop()
+            a &larr; s.pop()
+            s.push(apply(t, a, b))
+        ENDIF
+    ENDFOR
+    RETURN s.pop()
+ENDFUNCTION</pre>
+
+<h3>Worked Evaluation &mdash; <code>5 1 2 + 4 * + 3 &minus;</code></h3>
+
+<table>
+    <tr><th>Token</th><th>Action</th><th>Stack after (bottom &rarr; top)</th></tr>
+    <tr><td>5</td><td>push 5</td><td>[5]</td></tr>
+    <tr><td>1</td><td>push 1</td><td>[5, 1]</td></tr>
+    <tr><td>2</td><td>push 2</td><td>[5, 1, 2]</td></tr>
+    <tr><td>+</td><td>pop 2, pop 1; push 1+2 = 3</td><td>[5, 3]</td></tr>
+    <tr><td>4</td><td>push 4</td><td>[5, 3, 4]</td></tr>
+    <tr><td>*</td><td>pop 4, pop 3; push 3&times;4 = 12</td><td>[5, 12]</td></tr>
+    <tr><td>+</td><td>pop 12, pop 5; push 5+12 = 17</td><td>[17]</td></tr>
+    <tr><td>3</td><td>push 3</td><td>[17, 3]</td></tr>
+    <tr><td>&minus;</td><td>pop 3, pop 17; push 17&minus;3 = 14</td><td>[14]</td></tr>
+</table>
+
+<p>Final answer: <strong>14</strong>. Infix equivalent: <code>(5 + (1 + 2) &times; 4) &minus; 3</code>.</p>
+
+<h3>Infix &rarr; Postfix: the Shunting-Yard Algorithm</h3>
+
+<p>Edsger Dijkstra's <em>shunting-yard</em> algorithm converts infix to postfix in one pass. It uses a stack of operators and an output queue.</p>
+
+<pre>FOR EACH token t IN infixExpression
+    IF t is a number THEN
+        output.enQueue(t)
+    ELSE IF t is an operator o1 THEN
+        WHILE opStack is not empty AND
+              top(opStack) is an operator o2 AND
+              (precedence(o2) &gt; precedence(o1)
+               OR (precedence(o2) = precedence(o1) AND o1 is left-assoc)) DO
+            output.enQueue(opStack.pop())
+        ENDWHILE
+        opStack.push(o1)
+    ELSE IF t is '(' THEN
+        opStack.push(t)
+    ELSE IF t is ')' THEN
+        WHILE top(opStack) &ne; '(' DO
+            output.enQueue(opStack.pop())
+        ENDWHILE
+        opStack.pop()          // discard the '('
+    ENDIF
+ENDFOR
+WHILE opStack is not empty
+    output.enQueue(opStack.pop())
+ENDWHILE</pre>
+
+<h3>Shunting-Yard Trace &mdash; <code>3 + 4 * 2 / ( 1 &minus; 5 )</code></h3>
+
+<table>
+    <tr><th>Token</th><th>Action</th><th>Operator stack</th><th>Output queue</th></tr>
+    <tr><td>3</td><td>output</td><td>[ ]</td><td>3</td></tr>
+    <tr><td>+</td><td>push +</td><td>[+]</td><td>3</td></tr>
+    <tr><td>4</td><td>output</td><td>[+]</td><td>3 4</td></tr>
+    <tr><td>*</td><td>prec(*) &gt; prec(+): push *</td><td>[+, *]</td><td>3 4</td></tr>
+    <tr><td>2</td><td>output</td><td>[+, *]</td><td>3 4 2</td></tr>
+    <tr><td>/</td><td>prec(/) = prec(*), left-assoc: pop *; push /</td><td>[+, /]</td><td>3 4 2 *</td></tr>
+    <tr><td>(</td><td>push (</td><td>[+, /, (]</td><td>3 4 2 *</td></tr>
+    <tr><td>1</td><td>output</td><td>[+, /, (]</td><td>3 4 2 * 1</td></tr>
+    <tr><td>&minus;</td><td>top is (: push &minus;</td><td>[+, /, (, &minus;]</td><td>3 4 2 * 1</td></tr>
+    <tr><td>5</td><td>output</td><td>[+, /, (, &minus;]</td><td>3 4 2 * 1 5</td></tr>
+    <tr><td>)</td><td>pop until (: pop &minus;; discard (</td><td>[+, /]</td><td>3 4 2 * 1 5 &minus;</td></tr>
+    <tr><td>end</td><td>pop remaining: /, then +</td><td>[ ]</td><td>3 4 2 * 1 5 &minus; / +</td></tr>
+</table>
+
+<p>Postfix output: <strong>3 4 2 * 1 5 &minus; / +</strong>. Evaluating this with the stack loop above gives <code>3 + (4 * 2) / (1 &minus; 5) = 3 + 8 / &minus;4 = 3 + &minus;2 = 1</code>.</p>
+
+<div class="exam-tip">Two pitfalls AQA loves to test in RPN conversion: (1) the minus sign in <code>1 &minus; 5</code> gives a <em>negative</em> intermediate, so <code>8 / &minus;4 = &minus;2</code> &mdash; watch your signs; (2) operators of <em>equal</em> precedence are left-associative in AQA, so the earlier one pops off first. Always state your assumed precedence and associativity.</div>
+
+<h2>4.3.4 Searching Algorithms</h2>
+
+<h3>Linear Search</h3>
+
+<p>Scan the list from the first element to the last, comparing each to the target. Works on <em>any</em> list &mdash; sorted or unsorted, array or linked list.</p>
+
+<pre>FUNCTION linearSearch(list, target) RETURNS Integer
+    FOR i &larr; 0 TO LENGTH(list) - 1
+        IF list[i] = target THEN RETURN i ENDIF
+    ENDFOR
+    RETURN -1                 // not found
+ENDFUNCTION</pre>
+
+<p><strong>Time complexity:</strong> O(n) worst and average case; O(1) best case (target at index 0). <strong>Space:</strong> O(1). Use linear search whenever the list is small, unsorted, or changes constantly so sorting is not worthwhile.</p>
+
+<h3>Binary Search</h3>
+
+<div class="definition">
+    <strong>Binary search</strong> finds a target in a <em>sorted</em> list by repeatedly comparing it with the middle element and discarding the half of the list that cannot contain the target. Each iteration halves the search space, giving <strong>O(log n)</strong> time.
+</div>
+
+<pre>FUNCTION binarySearch(list, target) RETURNS Integer
+    low  &larr; 0
+    high &larr; LENGTH(list) - 1
+    WHILE low &le; high DO
+        mid &larr; (low + high) DIV 2
+        IF list[mid] = target THEN
+            RETURN mid
+        ELSE IF list[mid] &lt; target THEN
+            low  &larr; mid + 1
+        ELSE
+            high &larr; mid - 1
+        ENDIF
+    ENDWHILE
+    RETURN -1
+ENDFUNCTION</pre>
+
+<h3>Binary-Search Worked Trace</h3>
+
+<p>List: <code>[3, 7, 11, 15, 19, 24, 28, 33, 41, 47, 55, 62, 70, 81, 92]</code> (15 items, indices 0&ndash;14). Target: <strong>33</strong>.</p>
+
+<table>
+    <tr><th>Iteration</th><th>low</th><th>high</th><th>mid</th><th>list[mid]</th><th>Decision</th></tr>
+    <tr><td>1</td><td>0</td><td>14</td><td>7</td><td>33</td><td>Found &mdash; return 7</td></tr>
+</table>
+
+<p>Lucky first hit. Now search for <strong>19</strong>:</p>
+
+<table>
+    <tr><th>Iteration</th><th>low</th><th>high</th><th>mid</th><th>list[mid]</th><th>Decision</th></tr>
+    <tr><td>1</td><td>0</td><td>14</td><td>7</td><td>33</td><td>33 &gt; 19 &rarr; high &larr; 6</td></tr>
+    <tr><td>2</td><td>0</td><td>6</td><td>3</td><td>15</td><td>15 &lt; 19 &rarr; low &larr; 4</td></tr>
+    <tr><td>3</td><td>4</td><td>6</td><td>5</td><td>24</td><td>24 &gt; 19 &rarr; high &larr; 4</td></tr>
+    <tr><td>4</td><td>4</td><td>4</td><td>4</td><td>19</td><td>Found &mdash; return 4</td></tr>
+</table>
+
+<p>Now search for <strong>50</strong> (not present):</p>
+
+<table>
+    <tr><th>Iteration</th><th>low</th><th>high</th><th>mid</th><th>list[mid]</th><th>Decision</th></tr>
+    <tr><td>1</td><td>0</td><td>14</td><td>7</td><td>33</td><td>33 &lt; 50 &rarr; low &larr; 8</td></tr>
+    <tr><td>2</td><td>8</td><td>14</td><td>11</td><td>62</td><td>62 &gt; 50 &rarr; high &larr; 10</td></tr>
+    <tr><td>3</td><td>8</td><td>10</td><td>9</td><td>47</td><td>47 &lt; 50 &rarr; low &larr; 10</td></tr>
+    <tr><td>4</td><td>10</td><td>10</td><td>10</td><td>55</td><td>55 &gt; 50 &rarr; high &larr; 9</td></tr>
+    <tr><td>5</td><td>10</td><td>9</td><td colspan="3">low &gt; high &rarr; return &minus;1</td></tr>
+</table>
+
+<p>At most &lceil;log<sub>2</sub>15&rceil; = 4 comparisons are needed to decide presence. For a million items it is at most 20 comparisons &mdash; vastly better than a linear scan's million.</p>
+
+<div class="exam-tip">Binary search has <em>two</em> preconditions: the list must be <strong>sorted</strong>, and it must support <strong>random access</strong> (i.e. it's an array, not a linked list). State both in any justification answer &mdash; AQA awards the mark for naming <em>both</em> requirements.</div>
+
+<h3>Binary-Tree Search</h3>
+
+<p>Searching a BST follows the BST property: at each node compare the target to the key, go left if smaller, right if larger. See 4.2.8 for full pseudocode. Complexity is O(h): O(log n) for a balanced tree, O(n) if the tree is pathologically skewed.</p>
+
+<pre>FUNCTION search(node, target) RETURNS Boolean
+    IF node = NULL THEN RETURN False ENDIF
+    IF node.key = target THEN RETURN True ENDIF
+    IF target &lt; node.key THEN
+        RETURN search(node.left, target)
+    ELSE
+        RETURN search(node.right, target)
+    ENDIF
+ENDFUNCTION</pre>
+
+<h3>Search-Algorithm Comparison</h3>
+
+<table>
+    <tr><th>Algorithm</th><th>Data required</th><th>Best case</th><th>Average</th><th>Worst case</th><th>Space</th></tr>
+    <tr><td>Linear search</td><td>Any list</td><td>O(1)</td><td>O(n)</td><td>O(n)</td><td>O(1)</td></tr>
+    <tr><td>Binary search</td><td>Sorted array</td><td>O(1)</td><td>O(log n)</td><td>O(log n)</td><td>O(1) iter / O(log n) rec</td></tr>
+    <tr><td>Binary-tree search</td><td>BST</td><td>O(1)</td><td>O(log n)</td><td>O(n) unbalanced</td><td>O(h)</td></tr>
+</table>
+
+<h2>4.3.5 Sorting Algorithms</h2>
+
+<h3>Bubble Sort</h3>
+
+<p>Compare each adjacent pair from left to right; swap if the left is bigger than the right. Each full pass floats the largest remaining element to the end (like a bubble rising). Repeat until a complete pass performs no swaps.</p>
+
+<pre>PROCEDURE bubbleSort(a)
+    n &larr; LENGTH(a)
+    REPEAT
+        swapped &larr; False
+        FOR i &larr; 0 TO n - 2
+            IF a[i] &gt; a[i + 1] THEN
+                SWAP a[i], a[i + 1]
+                swapped &larr; True
+            ENDIF
+        ENDFOR
+        n &larr; n - 1           // last element is now in place
+    UNTIL swapped = False
+ENDPROCEDURE</pre>
+
+<h3>Bubble-Sort Worked Trace on <code>[5, 3, 8, 1, 4]</code></h3>
+
+<p>Pass 1 (compare indices 0&ndash;3):</p>
+
+<table>
+    <tr><th>Compare</th><th>Array before</th><th>Swap?</th><th>Array after</th></tr>
+    <tr><td>5 vs 3</td><td>[5, 3, 8, 1, 4]</td><td>yes</td><td>[3, 5, 8, 1, 4]</td></tr>
+    <tr><td>5 vs 8</td><td>[3, 5, 8, 1, 4]</td><td>no</td><td>[3, 5, 8, 1, 4]</td></tr>
+    <tr><td>8 vs 1</td><td>[3, 5, 8, 1, 4]</td><td>yes</td><td>[3, 5, 1, 8, 4]</td></tr>
+    <tr><td>8 vs 4</td><td>[3, 5, 1, 8, 4]</td><td>yes</td><td>[3, 5, 1, 4, 8]</td></tr>
+</table>
+
+<p>End of pass 1: <code>[3, 5, 1, 4, 8]</code>. Largest element 8 is in final position.</p>
+
+<p>Pass 2 (compare indices 0&ndash;2):</p>
+
+<table>
+    <tr><th>Compare</th><th>Array before</th><th>Swap?</th><th>Array after</th></tr>
+    <tr><td>3 vs 5</td><td>[3, 5, 1, 4, 8]</td><td>no</td><td>[3, 5, 1, 4, 8]</td></tr>
+    <tr><td>5 vs 1</td><td>[3, 5, 1, 4, 8]</td><td>yes</td><td>[3, 1, 5, 4, 8]</td></tr>
+    <tr><td>5 vs 4</td><td>[3, 1, 5, 4, 8]</td><td>yes</td><td>[3, 1, 4, 5, 8]</td></tr>
+</table>
+
+<p>End of pass 2: <code>[3, 1, 4, 5, 8]</code>.</p>
+
+<p>Pass 3 (compare indices 0&ndash;1):</p>
+
+<table>
+    <tr><th>Compare</th><th>Array before</th><th>Swap?</th><th>Array after</th></tr>
+    <tr><td>3 vs 1</td><td>[3, 1, 4, 5, 8]</td><td>yes</td><td>[1, 3, 4, 5, 8]</td></tr>
+    <tr><td>3 vs 4</td><td>[1, 3, 4, 5, 8]</td><td>no</td><td>[1, 3, 4, 5, 8]</td></tr>
+</table>
+
+<p>Pass 4 performs no swaps &mdash; done. Final array: <strong>[1, 3, 4, 5, 8]</strong>.</p>
+
+<p><strong>Complexity:</strong> O(n<sup>2</sup>) comparisons and swaps in the worst and average case; O(n) best case (already sorted, detected via the <code>swapped</code> flag). <strong>Space:</strong> O(1) &mdash; in-place. <strong>Stable:</strong> yes.</p>
+
+<h3>Merge Sort</h3>
+
+<div class="definition">
+    <strong>Merge sort</strong> is a <em>divide-and-conquer</em> algorithm: recursively divide the list in half until each sub-list has length 1, then <em>merge</em> adjacent sorted sub-lists back together. Runs in <strong>O(n log n)</strong> time with <strong>O(n) auxiliary memory</strong> in all cases, and is <em>stable</em>.
+</div>
+
+<pre>FUNCTION mergeSort(a) RETURNS List
+    IF LENGTH(a) &le; 1 THEN RETURN a ENDIF
+    mid   &larr; LENGTH(a) DIV 2
+    left  &larr; mergeSort(a[0 .. mid - 1])
+    right &larr; mergeSort(a[mid .. LENGTH(a) - 1])
+    RETURN merge(left, right)
+ENDFUNCTION
+
+FUNCTION merge(left, right) RETURNS List
+    DECLARE result : List
+    i &larr; 0 ; j &larr; 0
+    WHILE i &lt; LENGTH(left) AND j &lt; LENGTH(right) DO
+        IF left[i] &le; right[j] THEN
+            result.append(left[i]) ; i &larr; i + 1
+        ELSE
+            result.append(right[j]) ; j &larr; j + 1
+        ENDIF
+    ENDWHILE
+    WHILE i &lt; LENGTH(left)  DO result.append(left[i])  ; i &larr; i + 1 ENDWHILE
+    WHILE j &lt; LENGTH(right) DO result.append(right[j]) ; j &larr; j + 1 ENDWHILE
+    RETURN result
+ENDFUNCTION</pre>
+
+<h3>Merge-Sort Recursion Tree on <code>[5, 3, 8, 1, 4, 7, 2, 6]</code></h3>
+
+<pre>Divide phase (top-down):
+
+              [5, 3, 8, 1, 4, 7, 2, 6]
+             /                        \
+      [5, 3, 8, 1]                [4, 7, 2, 6]
+       /       \                   /       \
+    [5, 3]   [8, 1]             [4, 7]    [2, 6]
+    /   \    /   \              /   \     /   \
+  [5]  [3] [8]  [1]           [4]  [7]  [2]  [6]
+
+Merge phase (bottom-up):
+
+  [5] [3] &rarr; [3, 5]          [4] [7] &rarr; [4, 7]
+  [8] [1] &rarr; [1, 8]          [2] [6] &rarr; [2, 6]
+  [3, 5] [1, 8] &rarr; [1, 3, 5, 8]
+  [4, 7] [2, 6] &rarr; [2, 4, 6, 7]
+  [1, 3, 5, 8] [2, 4, 6, 7] &rarr; [1, 2, 3, 4, 5, 6, 7, 8]</pre>
+
+<p>The recursion tree has depth <code>log<sub>2</sub>n</code>; each level does O(n) work in total across all the merges, giving O(n log n) overall. The auxiliary list in <code>merge</code> uses O(n) additional memory.</p>
+
+<h3>Why Merge Sort is Stable</h3>
+
+<p>A sort is <em>stable</em> if equal elements retain their original relative order. In the <code>merge</code> function the test <code>left[i] &le; right[j]</code> uses &le; (not &lt;): when two keys are equal, the one from the <em>left</em> half is emitted first, preserving original order. A tiny change to <code>&lt;</code> would break stability.</p>
+
+<h3>Bubble Sort vs Merge Sort</h3>
+
+<table>
+    <tr><th>Property</th><th>Bubble sort</th><th>Merge sort</th></tr>
+    <tr><td>Time (best)</td><td>O(n)</td><td>O(n log n)</td></tr>
+    <tr><td>Time (average / worst)</td><td>O(n<sup>2</sup>)</td><td>O(n log n)</td></tr>
+    <tr><td>Extra memory</td><td>O(1) &mdash; in-place</td><td>O(n) &mdash; auxiliary array</td></tr>
+    <tr><td>Stable</td><td>Yes</td><td>Yes</td></tr>
+    <tr><td>Good for</td><td>Tiny inputs, teaching, almost-sorted data.</td><td>Large inputs; guaranteed n log n even on adversarial data; external sorting on disk.</td></tr>
+</table>
+
+<div class="exam-tip">When AQA asks you to compare bubble sort and merge sort, hit <em>three</em> axes: time (n<sup>2</sup> vs n log n), space (O(1) vs O(n)), and practicality (bubble is fine for tiny lists; merge scales). If the question mentions "very large dataset", always pick merge sort.</div>
+
+<h2>4.3.6 Optimisation Algorithms &mdash; Dijkstra's Shortest Path</h2>
+
+<div class="definition">
+    <strong>Dijkstra's algorithm</strong> finds the shortest path from a single <em>source</em> vertex to every other vertex in a weighted graph with <strong>non-negative</strong> edge weights. It is a greedy algorithm: at each step it commits to the unvisited vertex with the currently smallest known distance.
+</div>
+
+<h3>Pseudocode (with a Priority Queue)</h3>
+
+<pre>FUNCTION dijkstra(graph, source) RETURNS Dictionary
+    FOR EACH v IN graph.vertices
+        dist[v] &larr; &infin;
+        prev[v] &larr; NULL
+    ENDFOR
+    dist[source] &larr; 0
+    DECLARE pq : PriorityQueue          // ordered by dist
+    pq.insert(source, 0)
+
+    WHILE NOT pq.isEmpty() DO
+        u &larr; pq.extractMin()
+        FOR EACH (v, w) IN graph.adj[u]   // edge u&rarr;v with weight w
+            alt &larr; dist[u] + w
+            IF alt &lt; dist[v] THEN
+                dist[v] &larr; alt
+                prev[v] &larr; u
+                pq.insertOrDecrease(v, alt)
+            ENDIF
+        ENDFOR
+    ENDWHILE
+    RETURN dist, prev
+ENDFUNCTION</pre>
+
+<h3>Example Weighted Graph</h3>
+
+<pre>Vertices: A, B, C, D, E, F
+Edges (undirected, weighted):
+    A&mdash;B : 4      A&mdash;C : 2
+    B&mdash;C : 1      B&mdash;D : 5
+    C&mdash;D : 8      C&mdash;E : 10
+    D&mdash;E : 2      D&mdash;F : 6
+    E&mdash;F : 3
+
+            B ----5---- D ----6---- F
+           /|          /|          /
+         4 | 1       8 | 2       3
+          \|        /  |        /
+            A ----2---- C ---10--- E</pre>
+
+<h3>Dijkstra Trace from Source A</h3>
+
+<p><em>Table columns:</em> <code>V</code> = vertex just extracted from the priority queue; <code>PQ</code> = priority queue contents after processing (pairs of <code>vertex:distance</code>, sorted by distance); <code>dist</code> = current best distances; <code>prev</code> = predecessor on best-known path.</p>
+
+<table>
+    <tr><th>Step</th><th>V</th><th>Relaxed edges</th><th>PQ after</th><th>dist (A,B,C,D,E,F)</th></tr>
+    <tr><td>0</td><td>&ndash;</td><td>initialise</td><td>{A:0}</td><td>0, &infin;, &infin;, &infin;, &infin;, &infin;</td></tr>
+    <tr><td>1</td><td>A (0)</td><td>A&rarr;B = 4, A&rarr;C = 2</td><td>{C:2, B:4}</td><td>0, 4, 2, &infin;, &infin;, &infin;</td></tr>
+    <tr><td>2</td><td>C (2)</td><td>C&rarr;B = 2+1 = 3 (improves 4); C&rarr;D = 10; C&rarr;E = 12</td><td>{B:3, B:4, D:10, E:12}</td><td>0, 3, 2, 10, 12, &infin;</td></tr>
+    <tr><td>3</td><td>B (3)</td><td>B&rarr;D = 3+5 = 8 (improves 10); B&rarr;A, B&rarr;C already finalised</td><td>{B:4, D:8, D:10, E:12}</td><td>0, 3, 2, 8, 12, &infin;</td></tr>
+    <tr><td>4</td><td>B (4)</td><td>stale entry &mdash; B already finalised, skip</td><td>{D:8, D:10, E:12}</td><td>0, 3, 2, 8, 12, &infin;</td></tr>
+    <tr><td>5</td><td>D (8)</td><td>D&rarr;E = 8+2 = 10 (improves 12); D&rarr;F = 8+6 = 14</td><td>{D:10, E:10, E:12, F:14}</td><td>0, 3, 2, 8, 10, 14</td></tr>
+    <tr><td>6</td><td>D (10)</td><td>stale, skip</td><td>{E:10, E:12, F:14}</td><td>0, 3, 2, 8, 10, 14</td></tr>
+    <tr><td>7</td><td>E (10)</td><td>E&rarr;F = 10+3 = 13 (improves 14)</td><td>{E:12, F:13, F:14}</td><td>0, 3, 2, 8, 10, 13</td></tr>
+    <tr><td>8</td><td>E (12)</td><td>stale, skip</td><td>{F:13, F:14}</td><td>0, 3, 2, 8, 10, 13</td></tr>
+    <tr><td>9</td><td>F (13)</td><td>F&rarr;E already finalised, skip</td><td>{F:14}</td><td>0, 3, 2, 8, 10, 13</td></tr>
+    <tr><td>10</td><td>F (14)</td><td>stale, skip &mdash; PQ empty</td><td>{ }</td><td>0, 3, 2, 8, 10, 13</td></tr>
+</table>
+
+<p>Final distances from A: <strong>A = 0, B = 3, C = 2, D = 8, E = 10, F = 13</strong>. Predecessors reconstruct the shortest-path tree: e.g. shortest A &rarr; F is <code>A &rarr; C &rarr; B &rarr; D &rarr; E &rarr; F</code>, which sums to 2 + 1 + 5 + 2 + 3 = 13.</p>
+
+<h3>Time Complexity</h3>
+
+<table>
+    <tr><th>Priority-queue implementation</th><th>Overall time</th><th>Notes</th></tr>
+    <tr><td>Unsorted array</td><td>O(V<sup>2</sup>)</td><td>Good when the graph is dense (E &asymp; V<sup>2</sup>).</td></tr>
+    <tr><td>Binary heap</td><td>O((V + E) log V)</td><td>Standard choice for sparse graphs.</td></tr>
+    <tr><td>Fibonacci heap</td><td>O(E + V log V)</td><td>Best theoretical; rarely used in practice due to constants.</td></tr>
+</table>
+
+<h3>Why Dijkstra Fails on Negative Weights</h3>
+
+<p>Dijkstra's correctness relies on the invariant that once a vertex is extracted from the priority queue, its shortest distance is final &mdash; because any future path through yet-unvisited vertices can only get <em>longer</em> (edges add non-negative weight). A negative edge could later shorten an already-finalised distance, violating the invariant. Counter-example:</p>
+
+<pre>A --1--&gt; B --1--&gt; C
+  \______ &minus;5 ______/</pre>
+
+<p>Dijkstra from A finalises <code>dist[B] = 1</code>, then <code>dist[C] = 2</code>, and misses the <code>A &rarr; B</code> path through the negative edge (which would give <code>dist[C] = 1 + (&minus;5) + 1 = &minus;3</code>).</p>
+
+<p>When edges may be negative (but there are no negative cycles), use the <strong>Bellman&ndash;Ford</strong> algorithm. It relaxes every edge V &minus; 1 times and runs in O(VE); it also detects a negative cycle by checking if any edge can still be relaxed after V &minus; 1 rounds.</p>
+
+<h3>A* &mdash; Dijkstra with a Heuristic</h3>
+
+<div class="definition">
+    An <strong>admissible heuristic</strong> <em>h(n)</em> is a function that estimates the cost from node n to the goal and <strong>never overestimates</strong> the true remaining cost. Admissibility guarantees that A* returns an optimal path.
+</div>
+
+<p><strong>A* search</strong> extends Dijkstra by ordering the priority queue by <code>f(n) = g(n) + h(n)</code> rather than g(n) alone, where g(n) is the known cost from source to n and h(n) is the admissible heuristic estimate of the remaining cost to the goal. With <code>h &equiv; 0</code>, A* collapses back to Dijkstra. A typical admissible heuristic for geographic graphs is straight-line (Euclidean) distance &mdash; never an over-estimate because the true path along roads is at least as long.</p>
+
+<div class="exam-tip">To trace Dijkstra in an exam: draw a table with one row per step, always extract the vertex with the smallest distance, and update distances with <em>strict</em> inequality (<code>alt &lt; dist[v]</code>). Mark vertices as "settled" once extracted &mdash; examiners award marks for showing the settled set, not just the final distances.</div>
+
+<h2>Analysis and Design &mdash; Big-O Notation</h2>
+
+<div class="definition">
+    <strong>Big-O notation</strong> describes an <em>upper bound</em> on the growth rate of a function. Formally <code>f(n) = O(g(n))</code> means there exist constants c &gt; 0 and n<sub>0</sub> such that <code>0 &le; f(n) &le; c &middot; g(n)</code> for all n &ge; n<sub>0</sub>. In practice we use it to describe worst-case time or space complexity of an algorithm as a function of input size n.
+</div>
+
+<h3>Worst vs Average vs Best Case</h3>
+
+<ul>
+    <li><strong>Worst case</strong> &mdash; the maximum number of basic operations over <em>all</em> inputs of size n. This is the guarantee we can offer. Most AQA questions want worst case.</li>
+    <li><strong>Average case</strong> &mdash; the expected number of operations over inputs drawn from some probability distribution (usually uniform). Harder to derive; sometimes matches the worst case (merge sort), sometimes much better (quicksort: O(n log n) average but O(n<sup>2</sup>) worst).</li>
+    <li><strong>Best case</strong> &mdash; the minimum over all inputs. Rarely informative on its own but useful to report (e.g. bubble sort is O(n) best because an already-sorted array needs one clean pass).</li>
+</ul>
+
+<h3>Complexity Classes &mdash; Growth Ordering</h3>
+
+<p>From fastest-growing to slowest-growing (i.e. best-to-worst as n &rarr; &infin;):</p>
+
+<pre>O(1)  &lt;  O(log n)  &lt;  O(n)  &lt;  O(n log n)  &lt;  O(n&sup2;)  &lt;  O(n&sup3;)  &lt;  O(2&#x207F;)  &lt;  O(n!)</pre>
+
+<h3>Complexity Class Table with Examples</h3>
+
+<table>
+    <tr><th>Class</th><th>Name</th><th>n=10</th><th>n=10<sup>3</sup></th><th>Example algorithm</th></tr>
+    <tr><td>O(1)</td><td>Constant</td><td>1</td><td>1</td><td>Hash-table look-up (average); array index; stack push.</td></tr>
+    <tr><td>O(log n)</td><td>Logarithmic</td><td>3</td><td>10</td><td>Binary search; BST search (balanced); priority-queue operations on a heap.</td></tr>
+    <tr><td>O(n)</td><td>Linear</td><td>10</td><td>1 000</td><td>Linear search; sum of an array; BFS / DFS (counted per vertex).</td></tr>
+    <tr><td>O(n log n)</td><td>Linearithmic</td><td>33</td><td>9 966</td><td>Merge sort; heap sort; Dijkstra with binary heap on sparse graphs.</td></tr>
+    <tr><td>O(n<sup>2</sup>)</td><td>Quadratic</td><td>100</td><td>10<sup>6</sup></td><td>Bubble sort; insertion sort; naive matrix traversal; Dijkstra with array on dense graph.</td></tr>
+    <tr><td>O(n<sup>3</sup>)</td><td>Cubic</td><td>1 000</td><td>10<sup>9</sup></td><td>Schoolbook matrix multiply; Floyd&ndash;Warshall all-pairs shortest paths.</td></tr>
+    <tr><td>O(2<sup>n</sup>)</td><td>Exponential</td><td>1 024</td><td>&asymp; 10<sup>301</sup></td><td>Naive recursive Fibonacci; subset enumeration; exact TSP by brute force.</td></tr>
+    <tr><td>O(n!)</td><td>Factorial</td><td>3.6 M</td><td>intractable</td><td>Enumerating all permutations; brute-force travelling salesman.</td></tr>
+</table>
+
+<h3>Algorithm Selection Guide</h3>
+
+<table>
+    <tr><th>Scenario</th><th>Recommended algorithm</th><th>Why</th></tr>
+    <tr><td>Find an item in an unsorted list of 100 elements.</td><td>Linear search</td><td>Sorting first would cost O(n log n) just to enable a single O(log n) look-up.</td></tr>
+    <tr><td>Find an item repeatedly in a sorted list of 10<sup>6</sup> elements.</td><td>Binary search</td><td>O(log n) each = ~20 comparisons vs ~500 000 for linear.</td></tr>
+    <tr><td>Sort 1 000 000 records on a server.</td><td>Merge sort (or built-in Timsort)</td><td>Guaranteed O(n log n); stability preserved; parallelises well.</td></tr>
+    <tr><td>Teach sorting to beginners; sort 20 items.</td><td>Bubble sort</td><td>Trivial to explain; n is tiny so O(n<sup>2</sup>) is fine.</td></tr>
+    <tr><td>Shortest journey in a city road map with non-negative weights.</td><td>Dijkstra (A* with Euclidean heuristic)</td><td>Heuristic massively prunes explored area.</td></tr>
+    <tr><td>Shortest route when some edge weights may be negative (e.g. currency arbitrage).</td><td>Bellman&ndash;Ford</td><td>Dijkstra is incorrect on negative edges; Bellman&ndash;Ford also detects negative cycles.</td></tr>
+    <tr><td>Explore all reachable web pages within 3 hops of a seed URL.</td><td>BFS</td><td>Level-order exploration bounds depth naturally.</td></tr>
+    <tr><td>Schedule tasks with prerequisites (build system).</td><td>DFS + topological sort</td><td>Post-order of DFS on the DAG yields a valid ordering.</td></tr>
+</table>
+
+<h3>Space Complexity</h3>
+
+<p>Space complexity counts <em>auxiliary</em> memory beyond the input. Key numbers to remember:</p>
+
+<ul>
+    <li><strong>Bubble sort, linear search, iterative binary search:</strong> O(1) &mdash; in-place / no extra structure.</li>
+    <li><strong>Recursive binary search, BST search, recursive tree traversal:</strong> O(h) stack space where h is depth.</li>
+    <li><strong>Merge sort:</strong> O(n) auxiliary array (cannot do better with this algorithm).</li>
+    <li><strong>BFS:</strong> O(V) for the queue and visited set.</li>
+    <li><strong>DFS (recursive):</strong> O(V) worst case for the recursion stack.</li>
+    <li><strong>Dijkstra:</strong> O(V) for dist, prev, and priority queue.</li>
+</ul>
+
+<div class="exam-tip">When AQA asks for "time complexity of X", quote <em>Big-O worst case</em> unless the question asks for best or average. Always justify briefly: "O(log n) because each iteration halves the remaining search space" earns more marks than the symbol alone.</div>
+
+<h2>Algorithm Summary Table &mdash; All the Named Algorithms</h2>
+
+<table>
+    <tr><th>Algorithm</th><th>Time (best)</th><th>Time (avg)</th><th>Time (worst)</th><th>Space</th><th>Spec section</th></tr>
+    <tr><td>DFS</td><td>O(V + E)</td><td>O(V + E)</td><td>O(V + E)</td><td>O(V)</td><td>4.3.1</td></tr>
+    <tr><td>BFS</td><td>O(V + E)</td><td>O(V + E)</td><td>O(V + E)</td><td>O(V)</td><td>4.3.1</td></tr>
+    <tr><td>Pre/In/Post-order</td><td>O(n)</td><td>O(n)</td><td>O(n)</td><td>O(h)</td><td>4.3.2</td></tr>
+    <tr><td>RPN evaluation</td><td>O(n)</td><td>O(n)</td><td>O(n)</td><td>O(n)</td><td>4.3.3</td></tr>
+    <tr><td>Linear search</td><td>O(1)</td><td>O(n)</td><td>O(n)</td><td>O(1)</td><td>4.3.4</td></tr>
+    <tr><td>Binary search</td><td>O(1)</td><td>O(log n)</td><td>O(log n)</td><td>O(1)</td><td>4.3.4</td></tr>
+    <tr><td>Binary-tree search</td><td>O(1)</td><td>O(log n)</td><td>O(n)</td><td>O(h)</td><td>4.3.4</td></tr>
+    <tr><td>Bubble sort</td><td>O(n)</td><td>O(n<sup>2</sup>)</td><td>O(n<sup>2</sup>)</td><td>O(1)</td><td>4.3.5</td></tr>
+    <tr><td>Merge sort</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n log n)</td><td>O(n)</td><td>4.3.5</td></tr>
+    <tr><td>Dijkstra (bin. heap)</td><td>O((V+E) log V)</td><td>O((V+E) log V)</td><td>O((V+E) log V)</td><td>O(V)</td><td>4.3.6</td></tr>
+    <tr><td>Bellman&ndash;Ford</td><td>O(VE)</td><td>O(VE)</td><td>O(VE)</td><td>O(V)</td><td>4.3.6 (extension)</td></tr>
+    <tr><td>A*</td><td>depends on heuristic</td><td>O(b<sup>d</sup>) worst</td><td>O(b<sup>d</sup>)</td><td>O(b<sup>d</sup>)</td><td>4.3.6 (extension)</td></tr>
+</table>
+
+<h2>Summary Checklist</h2>
+
+<ul>
+    <li>Trace DFS (stack) and BFS (queue) on the same small graph, showing the frontier contents at every step.</li>
+    <li>Quote O(V + E) time for both traversals and state the defining data-structure difference (stack vs queue).</li>
+    <li>Give pre-order, in-order and post-order outputs for a given binary tree, connecting them to prefix / infix / postfix expression notation.</li>
+    <li>Convert an infix expression to Reverse Polish using the shunting-yard algorithm; evaluate RPN with a stack.</li>
+    <li>Implement and trace linear search (O(n)) and binary search (O(log n)); state binary search's preconditions (sorted, random-access).</li>
+    <li>Describe binary-tree search and its dependence on tree height.</li>
+    <li>Trace bubble sort pass-by-pass and merge sort as a recursion tree; state complexity classes and stability.</li>
+    <li>Trace Dijkstra's algorithm on a small weighted graph showing the priority queue and distance table at every step.</li>
+    <li>Explain why Dijkstra fails on negative edge weights and name Bellman&ndash;Ford as the replacement.</li>
+    <li>Define an admissible heuristic and describe how A* extends Dijkstra.</li>
+    <li>State the formal definition of Big-O and list complexity classes from O(1) to O(n!).</li>
+    <li>Pick the right algorithm for a given scenario and justify in terms of both time and space complexity.</li>
+</ul>
+
+</div>
+</body>
+</html>

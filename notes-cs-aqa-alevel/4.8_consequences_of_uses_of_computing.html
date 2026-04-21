@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.8 &mdash; Consequences of Uses of Computing</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .case-study { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .case-study::before { content: "Case Study: "; font-weight: 700; color: #5b21b6; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .case-study { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.8 Consequences of Uses of Computing</h1>
+<p class="spec-ref">Computer Science &mdash; AQA A-Level (7517) &mdash; Paper 2: Written Theory</p>
+
+<p>Topic 4.8 is the ethics topic. Unlike the rest of the specification, it is not tested by code-tracing or calculation &mdash; it is assessed almost entirely through extended-response questions worth 6, 8, 10 or even 12 marks, using a levels-based mark scheme. The examiner is not looking for a single right answer; they are looking for <strong>balanced, evidenced, structured argument</strong> that names specific legislation, cites real-world examples, and reaches a defensible conclusion. This note gives you the raw material &mdash; the laws, the frameworks, the case studies, the statistics &mdash; and then shows you how to assemble it into the kind of paragraph that scores top band.</p>
+
+<div class="exam-tip">
+    Every 4.8 question can be answered with the same four-move paragraph structure: <strong>Point &mdash; Evidence &mdash; Explanation &mdash; Counterpoint</strong>. Memorise the four moves now; you will reuse them in every single extended-response answer this topic can throw at you. A 10-mark answer is typically three such paragraphs plus a one-sentence conclusion that actually takes a position.
+</div>
+
+<h2>4.8.1 Moral and Ethical Issues &mdash; the Legal/Ethical Distinction</h2>
+
+<p>An action can be <strong>legal but unethical</strong>, <strong>illegal but ethical</strong>, both, or neither. The spec explicitly asks candidates to distinguish the two, and the distinction is the hinge on which most 4.8 questions turn.</p>
+
+<div class="definition">
+    <strong>Legal</strong> &mdash; permitted by the laws of the jurisdiction in which the act takes place. Breaches are punishable by the state through fines, imprisonment or civil damages.
+</div>
+
+<div class="definition">
+    <strong>Ethical</strong> &mdash; consistent with a set of moral principles about what is right or wrong. Ethics are enforced socially (reputation, professional censure) rather than by the state. Ethical standards typically exceed what the law requires.
+</div>
+
+<p>Examples of the mismatch are a reliable source of exam material:</p>
+<ul>
+    <li><strong>Legal but unethical:</strong> targeted advertising that exploits "dark patterns" to nudge users toward purchases they would not otherwise make; workplace keystroke logging where the employer has disclosed it in the contract; an insurance company raising premiums based on genomic data the customer voluntarily submitted; a social-media platform designing infinite-scroll mechanics that are engineered to maximise time-on-app at the cost of teenage mental health.</li>
+    <li><strong>Illegal but arguably ethical:</strong> Edward Snowden's disclosure of NSA mass-surveillance programmes (illegal under the US Espionage Act but widely defended as being in the public interest); a security researcher accessing a hospital's computer without authorisation to prove a life-threatening vulnerability exists before a malicious actor finds it (breaches the Computer Misuse Act 1990 regardless of intent).</li>
+    <li><strong>Both illegal and unethical:</strong> ransomware attacks on hospitals; stalkerware sold commercially to domestic abusers; non-consensual deepfake pornography.</li>
+</ul>
+
+<h2>4.8.2 Ethical Frameworks for Reasoning</h2>
+
+<p>When an exam question asks you to "discuss" or "evaluate" a practice, you earn higher marks by reaching for a recognised framework rather than arguing from gut feeling. There are three you should know.</p>
+
+<div class="definition">
+    <strong>Deontology</strong> (rule-based ethics) &mdash; an action is right or wrong in itself, irrespective of consequences. Associated with Kant. In computing, deontological reasoning underpins <strong>professional codes of conduct</strong> such as the BCS Code: "a member shall NOT disclose confidential information" is a rule that applies regardless of whether disclosure would produce good outcomes.
+</div>
+
+<div class="definition">
+    <strong>Consequentialism</strong> (including utilitarianism) &mdash; an action is right if it produces the best overall outcomes, typically measured as the greatest good for the greatest number. Associated with Bentham and Mill. In computing, consequentialist reasoning underpins arguments such as "mass surveillance is justified because it prevents terrorist attacks that would kill more people than the privacy loss harms."
+</div>
+
+<div class="definition">
+    <strong>Virtue ethics</strong> &mdash; focuses on the character of the moral agent rather than the rightness of specific acts. Asks "what would a person of good character do?" Associated with Aristotle. In computing, virtue ethics underpins the professional idea of being a <em>trustworthy</em> engineer &mdash; one who does not cut corners even when nobody is watching and nobody would be harmed.
+</div>
+
+<p><strong>When to deploy each framework in an exam answer:</strong></p>
+<ul>
+    <li>Use <strong>deontology</strong> when the question involves professional duty, data protection, or explicit rules (e.g. a BCS member leaking data).</li>
+    <li>Use <strong>consequentialism</strong> when the question asks you to weigh competing harms and benefits (e.g. surveillance vs. privacy, AI displacing workers vs. creating new jobs).</li>
+    <li>Use <strong>virtue ethics</strong> when the question concerns individual character &mdash; whistleblowing, responsible disclosure, honest reporting of bugs in safety-critical code.</li>
+</ul>
+
+<div class="exam-tip">
+    Examiners reward candidates who explicitly name a framework. Write "From a consequentialist perspective..." or "A deontologist would argue...". This signals engagement with the discipline and is nearly always the difference between a top-band and middle-band answer on an ethics question.
+</div>
+
+<h2>4.8.3 Relevant UK Legislation</h2>
+
+<p>You are expected to know <strong>four</strong> statutes in depth and be able to apply them to unseen scenarios: the Data Protection Act 2018 (which enacts the UK GDPR), the Computer Misuse Act 1990, the Copyright, Designs and Patents Act 1988, and the Regulation of Investigatory Powers Act 2000.</p>
+
+<h3>Data Protection Act 2018 / UK GDPR</h3>
+
+<p>The DPA 2018 implements the EU General Data Protection Regulation into UK law (and is retained post-Brexit as "UK GDPR"). It is the single most exam-relevant statute in the whole spec &mdash; almost every scenario involving personal data invokes it.</p>
+
+<div class="definition">
+    <strong>Personal data</strong> &mdash; any information relating to an identified or identifiable living individual. Includes obvious identifiers (name, address, NI number) and also IP addresses, cookie IDs, device fingerprints, and combinations of data that, taken together, could identify a person.
+</div>
+
+<div class="definition">
+    <strong>Data subject</strong> &mdash; the individual to whom the personal data relates. The data subject has legally enforceable rights over how their data is processed.
+</div>
+
+<p>The Act codifies <strong>seven principles</strong> that every data controller must observe:</p>
+
+<table>
+    <thead>
+        <tr><th>#</th><th>Principle</th><th>What it requires in practice</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>1</td><td>Lawfulness, fairness, transparency</td><td>Must have a lawful basis (consent, contract, legal obligation, vital interests, public task, legitimate interests). Must tell the subject what you are doing with their data (privacy notice).</td></tr>
+        <tr><td>2</td><td>Purpose limitation</td><td>Data collected for one purpose cannot be reused for an incompatible new purpose without a fresh basis.</td></tr>
+        <tr><td>3</td><td>Data minimisation</td><td>Collect only what is necessary. Do not hoover up "might be useful" data.</td></tr>
+        <tr><td>4</td><td>Accuracy</td><td>Keep data correct and up-to-date; correct or delete inaccurate data.</td></tr>
+        <tr><td>5</td><td>Storage limitation</td><td>Keep data no longer than necessary. Define and enforce retention periods.</td></tr>
+        <tr><td>6</td><td>Integrity and confidentiality</td><td>Protect with appropriate technical and organisational measures (encryption, access control, backups).</td></tr>
+        <tr><td>7</td><td>Accountability</td><td>The controller must be able to <em>demonstrate</em> compliance (records of processing, DPIAs, appointed DPO where required).</td></tr>
+    </tbody>
+</table>
+
+<p><strong>Rights of the data subject</strong> (often tested as a short-answer question):</p>
+<ul>
+    <li><strong>Right of access</strong> &mdash; the Subject Access Request (SAR); the controller must supply a copy of all personal data held, usually within one month and free of charge.</li>
+    <li><strong>Right to rectification</strong> &mdash; correct inaccurate data.</li>
+    <li><strong>Right to erasure</strong> ("right to be forgotten") &mdash; delete data where there is no overriding reason to keep it.</li>
+    <li><strong>Right to data portability</strong> &mdash; receive your data in a structured, machine-readable format so you can move to a competitor.</li>
+    <li><strong>Right to object</strong> &mdash; especially to direct marketing and to profiling.</li>
+    <li><strong>Rights related to automated decision-making</strong> &mdash; the subject may demand human review of a significant automated decision (e.g. a credit refusal).</li>
+</ul>
+
+<p>The <strong>Information Commissioner's Office (ICO)</strong> is the UK regulator. It can investigate breaches, issue enforcement notices, and levy fines up to <strong>&pound;17.5 million or 4% of global annual turnover, whichever is higher</strong>. Notable UK fines: British Airways (&pound;20m in 2020 for the 2018 Magecart breach); Marriott (&pound;18.4m for the Starwood breach); TikTok (&pound;12.7m in 2023 for unlawful processing of children's data).</p>
+
+<h3>Computer Misuse Act 1990 (as amended 2006 and 2015)</h3>
+
+<p>Passed in direct response to <em>R v Gold and Schifreen</em> (1988), in which two hackers accessed the Duke of Edinburgh's Prestel mailbox and were acquitted because no law existed to prosecute them. The Act creates three tiers of offence.</p>
+
+<div class="definition">
+    <strong>Unauthorised access</strong> &mdash; causing a computer to perform any function with intent to secure access to a program or data, knowing that access is unauthorised. The intent need not succeed; merely trying counts.
+</div>
+
+<table>
+    <thead>
+        <tr><th>Section</th><th>Offence</th><th>Maximum penalty</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>s.1</td><td>Unauthorised access to computer material (basic hacking, password guessing, snooping)</td><td>2 years' imprisonment and/or fine</td></tr>
+        <tr><td>s.2</td><td>Unauthorised access with intent to commit further offences (e.g. fraud, blackmail)</td><td>5 years' imprisonment and/or fine</td></tr>
+        <tr><td>s.3</td><td>Unauthorised acts with intent to impair operation (malware, denial-of-service, ransomware)</td><td>10 years' imprisonment and/or fine</td></tr>
+        <tr><td>s.3A (2006 amendment)</td><td>Making, supplying or obtaining articles for use in offences (hacking tools, malware kits)</td><td>2 years' imprisonment and/or fine</td></tr>
+        <tr><td>s.3ZA (2015 amendment)</td><td>Unauthorised acts causing serious damage (national security, economy, environment, human welfare)</td><td>Life imprisonment</td></tr>
+    </tbody>
+</table>
+
+<p>Critically, the Act is <strong>intent-based on the access, not on the harm</strong>. A security researcher who connects to a server they are not authorised to access &mdash; even with the benevolent aim of disclosing a vulnerability &mdash; technically commits a s.1 offence. This tension is the heart of the "responsible disclosure" debate (see 4.8.5).</p>
+
+<h3>Copyright, Designs and Patents Act 1988</h3>
+
+<div class="definition">
+    <strong>Copyright</strong> &mdash; an automatic intellectual-property right that arises the moment an original literary, dramatic, musical or artistic work is fixed in a permanent form. Software is treated in law as a <em>literary work</em>. No registration is required in the UK; the right exists from the moment the code is written.
+</div>
+
+<p>Protects source code, object code, preparatory design material, and some non-literal elements (structure, sequence, organisation). Does <em>not</em> protect ideas, algorithms in the abstract, or functionality &mdash; these fall under patent law, if at all.</p>
+
+<p><strong>Duration:</strong> for literary works authored by a human, life of the author plus 70 years. For computer-generated works where no human author exists, 50 years from creation. Employer-owned works (software written in the course of employment) vest in the employer.</p>
+
+<table>
+    <thead>
+        <tr><th>IP right</th><th>Protects</th><th>How granted</th><th>Typical duration</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Copyright</td><td>Expression of ideas: source code, documentation, artwork, music</td><td>Automatic on creation</td><td>Life + 70 years (50 for computer-generated)</td></tr>
+        <tr><td>Patent</td><td>Novel, non-obvious, industrially applicable inventions. In the UK/EU, pure software is <em>not</em> patentable &mdash; but software producing a "technical effect" may be.</td><td>Granted by UKIPO after examination; strict novelty requirement</td><td>20 years from filing</td></tr>
+        <tr><td>Trademark</td><td>Distinctive signs identifying goods/services (names, logos)</td><td>Registered with UKIPO</td><td>10 years, renewable indefinitely</td></tr>
+        <tr><td>Trade secret</td><td>Confidential commercial information (algorithms, customer lists)</td><td>Kept secret; enforced by NDA</td><td>Indefinite (while secret)</td></tr>
+    </tbody>
+</table>
+
+<h3>Open-source licensing &mdash; copyright used <em>against</em> itself</h3>
+
+<p>Open-source licences are not a rejection of copyright; they exploit it. Because the author owns copyright, they can dictate the terms on which others may copy, modify and redistribute. The three licences you should know:</p>
+
+<ul>
+    <li><strong>GPL (GNU General Public License)</strong> &mdash; "copyleft": any derivative work must also be released under the GPL. Designed by Richard Stallman to ensure software remains free. Used by the Linux kernel.</li>
+    <li><strong>MIT</strong> &mdash; permissive: do anything you like, including incorporate into proprietary software, as long as you include the copyright notice. Used by React, Rails, jQuery.</li>
+    <li><strong>Apache 2.0</strong> &mdash; permissive, with an explicit patent-grant clause protecting users from patent litigation by contributors. Used by Android, Kubernetes.</li>
+</ul>
+
+<h3>Regulation of Investigatory Powers Act 2000 (RIPA)</h3>
+
+<p>RIPA regulates the interception of communications by the state. It requires public authorities to obtain a warrant before intercepting communications, and specifies which bodies may do so (police, security services, HMRC, local authorities for narrow purposes). It has been heavily criticised for <strong>scope creep</strong>: local councils were found to have used RIPA powers to investigate trivial matters such as dog fouling and school catchment-area fraud.</p>
+
+<p>RIPA was partially superseded by the <strong>Investigatory Powers Act 2016</strong> ("Snoopers' Charter"), which mandates twelve-month retention of internet connection records by ISPs and authorises bulk collection of communications data. The 2016 Act was itself ruled partially incompatible with human-rights law by the Court of Appeal in 2018.</p>
+
+<table>
+    <thead>
+        <tr><th>Act</th><th>Year</th><th>Scope</th><th>Key exam hook</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Data Protection Act / UK GDPR</td><td>2018</td><td>Processing of personal data</td><td>Seven principles; ICO fines up to 4% global turnover</td></tr>
+        <tr><td>Computer Misuse Act</td><td>1990 (amd. 2006, 2015)</td><td>Unauthorised access and damage to computer systems</td><td>Three tiers of offence plus s.3A tools and s.3ZA serious damage</td></tr>
+        <tr><td>Copyright, Designs and Patents Act</td><td>1988</td><td>Intellectual property in creative works and software</td><td>Software as literary work; life + 70 years; basis for OSS licences</td></tr>
+        <tr><td>Regulation of Investigatory Powers Act</td><td>2000</td><td>Interception of communications by the state</td><td>Warrant requirement; scope-creep controversies</td></tr>
+        <tr><td>Investigatory Powers Act</td><td>2016</td><td>Bulk collection and retention of comms metadata</td><td>"Snoopers' Charter"; partially ruled unlawful</td></tr>
+        <tr><td>Online Safety Act</td><td>2023</td><td>Duty of care on platforms to remove illegal/harmful content</td><td>Ofcom as regulator; fines up to 10% global turnover</td></tr>
+    </tbody>
+</table>
+
+<div class="exam-tip">
+    When a scenario question gives you a fact pattern ("A nurse copies patient records onto a USB stick and sells them..."), work through the statutes in order: does the DPA apply? (almost always yes, if there is personal data). Does the CMA apply? (yes if there was unauthorised access or modification). Does the CDPA apply? (yes if there was copying of copyrighted software or data). Name every relevant section; marks are awarded for each correctly applied statute.
+</div>
+
+<h2>4.8.4 Privacy and Surveillance</h2>
+
+<h3>State surveillance</h3>
+
+<p>The modern debate was reframed by the 2013 Snowden disclosures. A former NSA contractor, Edward Snowden, leaked tens of thousands of classified documents to journalists at <em>The Guardian</em> and <em>The Washington Post</em>, revealing the scale of bulk collection by the NSA and its partners.</p>
+
+<div class="case-study">
+    <strong>Snowden / PRISM (2013).</strong> PRISM was a US National Security Agency programme under which major internet companies (Microsoft, Google, Facebook, Apple, Yahoo) were compelled to hand over user data to the NSA under FISA Section 702 orders. Snowden also revealed the UK GCHQ <em>Tempora</em> programme, which tapped transatlantic fibre-optic cables at landing stations to collect bulk internet traffic. The UK is part of the <strong>Five Eyes</strong> intelligence-sharing alliance (UK, US, Canada, Australia, New Zealand), which allows each agency to access data collected by the others &mdash; arguably side-stepping domestic legal limits on surveillance of one's own citizens. Exam use: illustrates the consequentialist-vs-deontological tension (security benefits vs. rule-of-law breach) and the chilling effect on free speech.
+</div>
+
+<h3>Corporate surveillance</h3>
+
+<p>The dominant business model of the consumer internet is <strong>behavioural profiling</strong>: free services in exchange for data used to target advertising. Mechanisms include third-party cookies, cross-site tracking pixels, device fingerprinting (canvas, WebGL, font-list fingerprints), and SDKs embedded in mobile apps that exfiltrate location, accelerometer, and contact-list data to ad-networks.</p>
+
+<div class="case-study">
+    <strong>Cambridge Analytica / Facebook (2018).</strong> The consultancy Cambridge Analytica harvested profile data of up to 87 million Facebook users via a personality-quiz app built by academic Aleksandr Kogan. At the time, the Facebook API allowed an app to collect data not only on its users but on their friends. CA used the data to build psychographic profiles and target political advertising during the 2016 US presidential election and the Brexit referendum. Facebook was fined &pound;500,000 by the ICO (the maximum under the old 1998 DPA &mdash; the UK GDPR would have exposed it to billions). The case illustrates purpose-limitation violation, inadequate platform controls, and the weaponisation of behavioural data against democratic processes.
+</div>
+
+<h3>Facial recognition in public space</h3>
+
+<p>UK police forces (notably the Met and South Wales Police) have trialled live facial recognition (LFR) at football matches, protests, and on public streets. In <em>R (Bridges) v Chief Constable of South Wales Police</em> (2020) the Court of Appeal ruled South Wales's use of LFR unlawful on DPA grounds &mdash; insufficient safeguards against arbitrary deployment.</p>
+
+<p><strong>Arguments for surveillance:</strong> deters and detects crime; helps locate missing persons and wanted suspects; consequentialist case for sacrificing some privacy to prevent greater harms; "nothing to hide, nothing to fear".</p>
+
+<p><strong>Arguments against surveillance:</strong> chilling effect on lawful speech and protest (people self-censor when watched); erosion of the presumption of innocence; false-positive rates fall disproportionately on ethnic minorities (see 4.8.7); <em>scope creep</em> &mdash; powers granted for terrorism get used for minor offences; "nothing to hide" is circular &mdash; it is the surveillance itself that defines what counts as suspicious.</p>
+
+<h2>4.8.5 Hacking, Malware and Cybersecurity Ethics</h2>
+
+<div class="definition">
+    <strong>White-hat hacker</strong> &mdash; a security researcher who attempts to break systems with the owner's permission, in order to identify and fix vulnerabilities. Operates legally (within the scope of an engagement) and ethically. <strong>Grey hat</strong> &mdash; finds vulnerabilities without permission but discloses them responsibly rather than exploiting them. <strong>Black hat</strong> &mdash; exploits vulnerabilities for personal gain or malicious ends.
+</div>
+
+<p><strong>Responsible disclosure</strong> is the grey/white-hat protocol: the researcher notifies the vendor privately, gives them a reasonable window (typically 90 days, following Google Project Zero's convention) to release a patch, and only then publishes technical details. Contrast with <strong>full disclosure</strong> (publish immediately, forcing the vendor to act) and <strong>non-disclosure</strong> (sit on the bug, usually to sell it on the grey market).</p>
+
+<p><strong>Bug bounty programmes</strong> (HackerOne, Bugcrowd, individual vendors such as Apple and Google) provide legal and financial incentives for responsible disclosure &mdash; Apple pays up to $2 million for a zero-click iOS remote exploit. Ethical questions: bounties concentrate research on whoever pays most, rather than whoever is most vulnerable (hospitals, charities, developing-world infrastructure go un-audited); and the bounty market competes against the <strong>grey-market vulnerability trade</strong> where state actors and brokers such as Zerodium pay more.</p>
+
+<div class="case-study">
+    <strong>Stuxnet (2010).</strong> A worm jointly developed by the US and Israel to sabotage Iran's Natanz uranium-enrichment facility. Stuxnet used four zero-day Windows exploits and stolen code-signing certificates to propagate via USB drives across air-gapped networks, then targeted Siemens S7 programmable logic controllers running uranium centrifuges, causing them to spin outside tolerance and destroy themselves while reporting normal readings to operators. It is widely regarded as the first nation-state cyber weapon that caused physical destruction. Ethical dimensions: arguably prevented war (consequentialist defence), but normalised offensive cyber operations as statecraft, leaked techniques that now appear in criminal malware, and the hoarding of four zero-days by the NSA meant those bugs were <em>not</em> patched for civilian users for the years during which Stuxnet was being prepared.
+</div>
+
+<h2>4.8.6 Impact of Computing on Society</h2>
+
+<h3>Changes to work</h3>
+
+<p>Automation has replaced many routine clerical and manufacturing roles and is now encroaching on cognitive work (customer service chatbots, copywriting, first-draft legal research, radiology image triage). Three countervailing forces are at play:</p>
+
+<ul>
+    <li><strong>Displacement:</strong> ONS data shows UK retail-cashier employment fell 25% between 2010 and 2020 as self-checkout spread. Large-language-model adoption since 2023 has correlated with declining entry-level software-engineering hiring.</li>
+    <li><strong>Creation:</strong> whole job categories that did not exist in 2000 (app developer, cloud engineer, prompt engineer, UX researcher, data-protection officer) are now mainstream.</li>
+    <li><strong>Transformation:</strong> remote work, normalised by the COVID-19 pandemic, has detached many knowledge-worker jobs from geography, with consequences for city-centre property markets, regional inequality, and mental health.</li>
+</ul>
+
+<p>The <strong>gig economy</strong> (Uber, Deliveroo, TaskRabbit) illustrates a second-order social effect: platform work offers flexibility but strips the worker of the employment-law protections (minimum wage, holiday pay, sick pay) that attach to "employee" status. In <em>Uber BV v Aslam</em> (2021) the UK Supreme Court ruled Uber drivers are workers, not self-employed contractors &mdash; a corrective, but limited to that specific platform.</p>
+
+<h3>Digital divide</h3>
+
+<p>The digital divide is the gap between those with effective access to digital technology and those without. It has three overlapping dimensions:</p>
+<ul>
+    <li><strong>Geographic:</strong> Ofcom reported in 2023 that 5% of UK premises still cannot receive a "decent" broadband connection (10 Mbps); the gap is concentrated in rural Wales, Cumbria, and the Scottish Highlands. Rural 4G/5G coverage lags urban coverage by an average of 8 years.</li>
+    <li><strong>Economic:</strong> affording a laptop and home broadband is non-trivial for households below the poverty line. During COVID school closures, an estimated 1.8 million UK children lacked a suitable device for remote learning.</li>
+    <li><strong>Generational / literacy:</strong> 4% of UK adults (about 2 million people) have never used the internet, concentrated in the over-75s. As public services migrate to digital-by-default, this group is progressively excluded from banking, healthcare booking, and benefits applications.</li>
+</ul>
+
+<h3>Democracy and misinformation</h3>
+
+<p>Computing has reshaped political discourse in ways that are hard to evaluate dispassionately. Social-media platforms optimise engagement, and emotionally charged or polarising content out-performs nuanced content &mdash; a recommender-system bias with political consequences. <strong>Deepfakes</strong> (generative-AI-produced synthetic audio and video) lower the cost of producing convincing political fabrications; the 2024 US election and 2024 UK general election both saw AI-generated audio clips of candidates circulated on TikTok and X. Foreign election interference (Russian Internet Research Agency troll farms; documented operations in 2016 US and 2017 French elections) exploits the same platforms.</p>
+
+<h2>4.8.7 Artificial Intelligence</h2>
+
+<div class="definition">
+    <strong>Algorithmic bias</strong> &mdash; the tendency of a machine-learning system to produce systematically prejudiced outputs due to bias in the training data, in the problem framing, or in the choice of objective function. Bias in, bias out.
+</div>
+
+<div class="case-study">
+    <strong>COMPAS algorithmic bias (2016).</strong> COMPAS is a risk-assessment tool used by US courts to predict the likelihood that a defendant will reoffend, feeding into bail and sentencing decisions. A 2016 ProPublica investigation found that Black defendants were almost twice as likely as white defendants to be incorrectly flagged as "high risk" (false positive), while white defendants were more likely to be incorrectly flagged as "low risk" (false negative). The cause: the model was trained on historical arrest data, which itself reflects decades of biased policing. This is the textbook example of an algorithm laundering historical human bias into a veneer of mathematical objectivity &mdash; and a defendant has no right to examine the closed-source proprietary model that has just helped send them to prison (Wisconsin v. Loomis 2016 upheld its use).
+</div>
+
+<p>A related, well-documented phenomenon: commercial facial-recognition systems have been shown (Buolamwini &amp; Gebru, 2018) to have error rates under 1% for light-skinned men and up to 35% for dark-skinned women, because training sets were overwhelmingly composed of light-skinned male faces. The Met Police's 2019 LFR trials reported false-positive rates as high as 96% on individuals from ethnic minorities.</p>
+
+<h3>Accountability</h3>
+
+<p>When an AI system causes harm, the classic accountability question is: <strong>who is responsible?</strong> The developer who wrote the model? The firm that deployed it? The user who chose to rely on it? The regulator who authorised it? UK law does not yet answer this cleanly; the EU's <strong>AI Act (2024)</strong> imposes tiered obligations based on risk (prohibited uses, high-risk systems with mandatory conformity assessment, limited-risk systems with transparency duties, minimal-risk). The UK's approach has been described as "pro-innovation" and is sector-by-sector rather than a single AI statute.</p>
+
+<h3>Autonomous vehicles and the trolley problem</h3>
+
+<p>An autonomous vehicle faced with an unavoidable collision must allocate harm &mdash; swerve into a wall and kill the occupant, or continue and kill three pedestrians. The classical philosophical "trolley problem" is no longer hypothetical; it is a software-design decision. MIT's Moral Machine experiment (2018) showed cross-cultural variation in people's stated preferences, undermining the idea that there is a single "correct" setting. In practice manufacturers avoid the framing: they design for collision <em>avoidance</em>, not collision <em>allocation</em>, and decline to publish explicit rules.</p>
+
+<h3>Employment and existential risk</h3>
+
+<p>Consequentialist debate: optimists (PwC, 2018) project AI will create as many jobs as it destroys, similar to previous waves of automation; pessimists (Frey &amp; Osborne, 2013) estimated 47% of US jobs were at "high risk" within two decades. Deontological concerns centre on <strong>dignity of work</strong> and the social role of employment beyond income. <strong>Existential-risk</strong> perspectives (Bostrom, Russell) argue that sufficiently powerful misaligned AI could pose risks qualitatively different from any prior technology &mdash; a minority view but one taken seriously enough that the UK hosted the 2023 AI Safety Summit at Bletchley Park.</p>
+
+<h2>4.8.8 Environmental Impact</h2>
+
+<h3>Data-centre energy consumption</h3>
+
+<p>The International Energy Agency estimated global data-centre electricity use at around 460 TWh in 2022 &mdash; comparable to the entire consumption of France &mdash; and projected it to reach 1,000 TWh by 2026, driven primarily by AI training workloads. Cooling accounts for 30&ndash;40% of a typical data centre's energy use. Google, Microsoft and AWS have all committed to 100% renewable-energy matching (not the same as 24/7 carbon-free; matching averages over a year while the grid is still carbon-intensive at night).</p>
+
+<h3>Cryptocurrency mining</h3>
+
+<p>Bitcoin's proof-of-work consensus consumes an estimated 140 TWh per year (Cambridge Centre for Alternative Finance, 2024) &mdash; more than Poland. A single Bitcoin transaction has a carbon footprint roughly 700,000 times that of a Visa transaction. Ethereum's 2022 "Merge" to proof-of-stake cut its energy use by more than 99%, demonstrating the footprint is a design choice not an inherent property of blockchain. Mining is also geographically mobile: Kazakhstan's share of global hashrate surged after China's 2021 ban, stressing a coal-heavy grid.</p>
+
+<h3>E-waste</h3>
+
+<div class="definition">
+    <strong>E-waste</strong> &mdash; discarded electrical and electronic equipment. Contains recoverable precious metals (gold, silver, palladium) but also toxic components: lead in solder, cadmium in batteries, mercury in backlights, brominated flame retardants in plastics. The UN's 2024 Global E-waste Monitor reported 62 million tonnes generated globally in 2022; only 22% was documented as formally collected and recycled.
+</div>
+
+<div class="case-study">
+    <strong>Agbogbloshie, Ghana.</strong> A district of Accra that became one of the world's largest informal e-waste processing sites, receiving containers of discarded electronics from Europe and North America (often illegally, mis-labelled as "second-hand goods" to evade the Basel Convention ban on hazardous-waste exports). Workers, many of them children, burn insulation off copper cables in open fires to recover the metal, inhaling dioxins and depositing heavy metals into soil and the Odaw river. Blood-lead levels in Agbogbloshie workers have been measured at many times WHO safety thresholds. The site was partially cleared by the Ghanaian government in 2021 but informal processing continues elsewhere. Illustrates the global externalisation of the environmental cost of Western consumer-electronics churn.
+</div>
+
+<div class="definition">
+    <strong>Right to repair</strong> &mdash; a consumer movement and emerging body of law requiring manufacturers to make spare parts, repair manuals, and diagnostic tools available to independent repairers and end users, so that products can be repaired rather than discarded. UK Right-to-Repair regulations took effect in 2021 for white goods and televisions; campaigners argue they are too narrow (no smartphones, no laptops) and too weak (two-year spare-parts guarantee vs. the ten-year lifespan of a fridge). The EU's 2024 Right-to-Repair Directive goes further.
+</div>
+
+<h3>Energy-efficient computing</h3>
+
+<p>Mitigations include: ARM architectures (per 4.7.10, RISC's lower power per instruction is now a climate argument as well as a mobile one); liquid immersion cooling; locating data centres in Iceland or northern Sweden for free cooling; algorithmic efficiency (a 10% improvement in a model's inference cost, multiplied by billions of queries, dwarfs hardware gains); and scheduling compute-heavy workloads for times when the grid is greenest.</p>
+
+<h2>4.8.9 Professional Codes of Conduct</h2>
+
+<p>A professional code of conduct is a deontological framework: a set of rules a member of the profession promises to abide by, independent of whether following them would produce the best outcomes in a given case.</p>
+
+<p>The <strong>British Computer Society (BCS) Code of Conduct</strong> has four pillars:</p>
+<ol>
+    <li><strong>Public interest</strong> &mdash; have due regard for public health, privacy, security, wellbeing and the environment; promote equal access; respect the rights of third parties.</li>
+    <li><strong>Professional competence and integrity</strong> &mdash; only undertake work you are competent to perform; keep your skills current (CPD); reject bribes; respect alternative viewpoints.</li>
+    <li><strong>Duty to the relevant authority</strong> &mdash; your employer or client. Avoid conflicts of interest; respect confidentiality.</li>
+    <li><strong>Duty to the profession</strong> &mdash; uphold the reputation of the profession; support fellow members in following the code.</li>
+</ol>
+
+<table>
+    <thead>
+        <tr><th>Element</th><th>BCS Code (UK)</th><th>ACM Code (international)</th></tr>
+    </thead>
+    <tbody>
+        <tr><td>Issuing body</td><td>British Computer Society, the Chartered Institute for IT</td><td>Association for Computing Machinery</td></tr>
+        <tr><td>Geographic reach</td><td>UK-focused; underpins CITP / Chartered Engineer status</td><td>International; the de facto global CS professional code</td></tr>
+        <tr><td>Structure</td><td>4 pillars (public interest, competence, authority, profession)</td><td>7 general principles + 9 professional responsibilities + leadership duties</td></tr>
+        <tr><td>Enforcement</td><td>Disciplinary committee; can expel members, which removes chartered status</td><td>Voluntary; public censure rather than legal consequences</td></tr>
+        <tr><td>Notable emphasis</td><td>Equality of access; environment; CPD</td><td>"Avoid harm"; explicit discussion of dual-use research and whistleblowing</td></tr>
+    </tbody>
+</table>
+
+<div class="definition">
+    <strong>Whistleblowing</strong> &mdash; the disclosure, by an employee or contractor, of wrongdoing within their organisation to a regulator, the media, or the public. Protected in the UK under the Public Interest Disclosure Act 1998. Professional codes oblige members to raise concerns through appropriate channels first &mdash; Snowden is debated precisely because he went to journalists before exhausting internal processes.
+</div>
+
+<h2>4.8.10 Social Media and Online Safety</h2>
+
+<div class="definition">
+    <strong>Filter bubble</strong> &mdash; the state of intellectual isolation that results when a personalisation algorithm selectively exposes a user to information that reinforces their existing views, filtering out challenging material. Term coined by Eli Pariser (2011). Compare with <strong>echo chamber</strong>, a social (rather than algorithmic) environment in which one's beliefs are amplified by repetition inside a closed group.
+</div>
+
+<p>The <strong>Online Safety Act 2023</strong> imposes a statutory "duty of care" on user-to-user services and search services to mitigate risks of illegal content and &mdash; for larger platforms designated as Category 1 &mdash; content that is legal-but-harmful to children. Ofcom is the regulator; fines may reach 10% of global turnover or &pound;18 million, whichever is higher. The Act has been controversial because its duty to scan messages for CSAM potentially conflicts with end-to-end encryption; Signal and WhatsApp publicly threatened to withdraw from the UK market.</p>
+
+<p><strong>Harassment, doxxing, cyberbullying.</strong> The Malicious Communications Act 1988 and the Communications Act 2003 s.127 criminalise grossly offensive or menacing electronic messages; the Protection from Harassment Act 1997 covers repeated conduct. Doxxing &mdash; publishing personally identifying information to enable harassment &mdash; may also breach the DPA if the perpetrator lacks a lawful basis for the disclosure.</p>
+
+<p><strong>Content moderation trade-offs.</strong> Aggressive moderation risks over-blocking (false positives that silence legitimate speech, and disproportionately affect marginalised dialects and non-English content); lenient moderation risks under-blocking (harassment, incitement, CSAM). Automation is necessary at scale (Facebook hosts millions of posts per minute) but is error-prone; human moderators suffer documented PTSD from exposure to the worst content and are often precariously outsourced.</p>
+
+<h2>4.8.11 Writing the Extended-Response Answer</h2>
+
+<p>The whole topic culminates in your ability to write a balanced, structured extended-response answer worth 6&ndash;12 marks. The mark schemes are level-based and reward: (1) <strong>breadth</strong> &mdash; arguments on both sides; (2) <strong>depth</strong> &mdash; specific evidence, not generalisations; (3) <strong>application</strong> &mdash; named legislation, named case studies; (4) <strong>judgement</strong> &mdash; a reasoned conclusion.</p>
+
+<h3>The PEEC paragraph</h3>
+
+<p>A single body paragraph follows a four-move structure:</p>
+
+<ul>
+    <li><strong>P &mdash; Point.</strong> State the claim in one sentence. "One significant ethical concern is the erosion of individual privacy."</li>
+    <li><strong>E &mdash; Evidence.</strong> Cite specific legislation, a named case study, or a statistic. "The Snowden disclosures of 2013 revealed that the NSA's PRISM programme was collecting bulk data from major tech firms, and that GCHQ's Tempora programme was tapping UK fibre landing stations under RIPA warrants of dubious specificity."</li>
+    <li><strong>E &mdash; Explanation.</strong> Explain why the evidence supports the point. Deploy a framework. "From a deontological standpoint, this violates the principle that citizens should be treated as ends in themselves, not as sources of data to be monitored without consent. It also chills legitimate political speech: people self-censor when they suspect they are being watched."</li>
+    <li><strong>C &mdash; Counterpoint.</strong> Acknowledge the opposing view and rebut or balance it. "However, a consequentialist could argue the surveillance is justified if it prevents terrorist attacks that would cause greater net harm. The difficulty is that the security services do not publish evidence that bulk collection actually achieves this &mdash; targeted warrants historically have a better track record."</li>
+</ul>
+
+<div class="exam-tip">
+    Top-band answers do three PEEC paragraphs (one for each of two or three angles on the question) and then write a genuine conclusion &mdash; one that takes a position rather than hedging. "On balance, I consider X outweighs Y because..." Examiners explicitly look for a <em>reasoned judgement</em> in the conclusion; sitting on the fence caps your level.
+</div>
+
+<h3>Sample 10-mark question with model-answer skeleton</h3>
+
+<p><strong>Question:</strong> "Discuss the moral, ethical, legal and social issues raised by a government's use of live facial-recognition technology in public spaces. [10 marks]"</p>
+
+<pre>INTRODUCTION (2 sentences max):
+  - Define LFR briefly.
+  - Signal the balance you will strike, e.g. "significant benefits in
+    crime detection, but serious concerns under the DPA 2018 and on
+    democratic grounds. This essay argues the latter outweighs the former
+    without stronger safeguards than the UK currently has."
+
+PARAGRAPH 1 &mdash; Legal (DPA 2018):
+  P: LFR processes biometric data, which is special-category personal data.
+  E: R (Bridges) v South Wales Police (2020) &mdash; Court of Appeal ruled
+     deployment unlawful; insufficient safeguards; DPA principle 1
+     (lawfulness) and principle 6 (integrity) both implicated.
+  E: Seven-principles analysis &mdash; data minimisation is violated when
+     every face in a crowd is scanned, not just suspects'.
+  C: LFR is not categorically unlawful &mdash; with an appropriate DPIA
+     and targeted deployment it can comply.
+
+PARAGRAPH 2 &mdash; Ethical/social (bias, chilling effect):
+  P: LFR systems have demographically unequal error rates.
+  E: Buolamwini &amp; Gebru (2018); Met Police 2019 trials false-positive
+     rate up to 96% for ethnic minorities.
+  E: Deontological objection &mdash; equal treatment; consequentialist
+     objection &mdash; false positives cause concrete harm (wrongful stops).
+     Chilling effect on lawful protest.
+  C: Accuracy is improving; supporters argue it need not be perfect,
+     only better than unaided human identification, which is also biased.
+
+PARAGRAPH 3 &mdash; Consequentialist case in favour:
+  P: Genuine public-safety benefits exist.
+  E: Met Police trials have located wanted suspects and missing persons
+     that would otherwise have been missed.
+  E: Utilitarian framing &mdash; aggregate harm prevented may exceed
+     aggregate privacy loss.
+  C: But this depends on transparent evaluation, which the UK has
+     not provided; and scope creep (RIPA-style) is a known risk.
+
+CONCLUSION (1-2 sentences, take a position):
+  "On balance, LFR's privacy and equality risks outweigh its current
+   demonstrated benefits. It should be permitted only under a statutory
+   framework with independent authorisation, published accuracy audits
+   broken down by demographic, and a hard prohibition on use at protests
+   &mdash; none of which the UK currently requires."</pre>
+
+<div class="exam-tip">
+    Notice what the skeleton does not do: it does not list every act of Parliament it knows. It picks the <em>relevant</em> act (DPA here, not CMA) and applies it specifically. In a 10-mark question you do not have time to be encyclopaedic; you have time to be <em>precise</em>. Name one or two pieces of legislation, one case study, one framework, per paragraph. That is enough.
+</div>
+
+<h3>Common mistakes that cost marks</h3>
+<ul>
+    <li><strong>One-sided answers.</strong> A list of reasons surveillance is bad, with no counter-argument, cannot exceed Level 2 on a levels-based mark scheme regardless of how many points it makes.</li>
+    <li><strong>Vague legislation.</strong> "There is a data law that stops this" earns no credit. "The Data Protection Act 2018, specifically the data-minimisation principle" earns credit.</li>
+    <li><strong>Hypothetical examples where a real one exists.</strong> Invoking Snowden, Cambridge Analytica, or COMPAS by name is always stronger than "imagine a company that..."</li>
+    <li><strong>No conclusion, or a fence-sitting conclusion.</strong> You must take a position; the examiner is assessing your ability to reason, not your political neutrality.</li>
+    <li><strong>Moralising.</strong> "This is just wrong" is not an argument. Name a framework (deontology, consequentialism, virtue ethics) and reason within it.</li>
+</ul>
+
+<h2>4.8.12 Summary &mdash; What to Memorise</h2>
+<ul>
+    <li>Four acts: <strong>DPA 2018, CMA 1990, CDPA 1988, RIPA 2000</strong>. Know one sentence of content for each and be ready to apply it.</li>
+    <li>DPA's seven principles (L/F/T, purpose limitation, minimisation, accuracy, storage limitation, integrity, accountability).</li>
+    <li>CMA's three tiers plus s.3A (tools) and s.3ZA (serious damage).</li>
+    <li>Three frameworks: deontology, consequentialism, virtue ethics. One sentence each.</li>
+    <li>Five case studies: <strong>Snowden / PRISM, Cambridge Analytica, COMPAS, Stuxnet, Agbogbloshie</strong>. Know one fact and one ethical implication of each.</li>
+    <li>BCS four pillars: public interest, competence, duty to authority, duty to profession.</li>
+    <li>PEEC paragraph structure and "take a position" conclusion.</li>
+</ul>
+
+<p>If you walk into Paper 2 with those seven items internalised, you can answer any extended-response 4.8 question the examiner can set. The material is finite; the frameworks are reusable; the technique is the only thing standing between you and top band.</p>
+
+</div>
+</body>
+</html>

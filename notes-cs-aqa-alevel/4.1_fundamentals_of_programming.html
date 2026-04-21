@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.1 &mdash; Fundamentals of Programming</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.1 Fundamentals of Programming</h1>
+<p class="spec-ref">Computer Science &mdash; AQA A-Level (7517) &mdash; Paper 1: On-screen Programming</p>
+
+<p>Topic 4.1 underpins <strong>everything</strong> in Paper 1 and is also the basis for the on-screen coding tasks. You must be able to <em>write, trace and explain</em> code using AQA pseudocode or your chosen high-level language (Python, VB.NET, C#, Java, Pascal). Expect questions that ask you to identify data types, predict output from a trace, explain scope, compare iteration with recursion, and justify design choices in object-oriented code.</p>
+
+<h2>4.1.1 Data Types</h2>
+
+<p>Every variable in a program is of some <strong>data type</strong>. The type determines what values can be stored, what operations are legal on the value, and how many bits it occupies in memory.</p>
+
+<div class="definition">
+    A <strong>data type</strong> is a classification that specifies the set of permitted values a variable may hold, the operations that may be performed on those values, and the way they are represented in memory.
+</div>
+
+<h3>Primitive (Built-in) Data Types</h3>
+
+<table>
+    <tr><th>Type</th><th>Description</th><th>Typical size</th><th>Example</th></tr>
+    <tr><td><code>integer</code></td><td>A whole number, positive or negative, with no fractional part. Usually stored in two's complement.</td><td>32 or 64 bits</td><td><code>age &larr; 17</code></td></tr>
+    <tr><td><code>real / float</code></td><td>A number with a fractional part, stored in IEEE 754 floating-point form (sign, exponent, mantissa).</td><td>32 bits (single) or 64 bits (double)</td><td><code>pi &larr; 3.14159</code></td></tr>
+    <tr><td><code>Boolean</code></td><td>A logical value: either <code>True</code> or <code>False</code>. Only 1 bit is required logically but a whole byte is usually allocated.</td><td>1 byte</td><td><code>isValid &larr; True</code></td></tr>
+    <tr><td><code>character</code></td><td>A single symbol from a character set (ASCII = 7 bits, extended ASCII = 8 bits, Unicode UTF-8 = 1&ndash;4 bytes).</td><td>1&ndash;4 bytes</td><td><code>grade &larr; 'A'</code></td></tr>
+    <tr><td><code>string</code></td><td>An ordered sequence of characters. Usually stored either as a length-prefixed array or a null-terminated array.</td><td>variable</td><td><code>name &larr; "Ada"</code></td></tr>
+    <tr><td><code>date/time</code></td><td>A composite of year, month, day (and optionally time). Often stored as a count of seconds since an epoch.</td><td>8 bytes typical</td><td><code>dob &larr; #01/05/2008#</code></td></tr>
+</table>
+
+<h3>How Each Type is Represented in Binary</h3>
+
+<ul>
+    <li><strong>Integer</strong> &mdash; stored using <strong>two's complement</strong>. In an 8-bit signed integer the range is &minus;128 to +127. The most significant bit is the sign bit; negative numbers have a '1' MSB.</li>
+    <li><strong>Real</strong> &mdash; stored in <strong>floating-point</strong> form: a sign bit, an exponent (normally biased), and a mantissa (normalised so the leading bit is implicit). Precision is finite, so many decimal fractions (e.g. 0.1) cannot be stored exactly.</li>
+    <li><strong>Boolean</strong> &mdash; a single bit (0 = False, 1 = True) padded to a byte for addressability.</li>
+    <li><strong>Character</strong> &mdash; mapped to an integer code using a character set such as <strong>ASCII</strong> (0&ndash;127) or <strong>Unicode</strong>. For example <code>'A'</code> = 65 = <code>01000001</code>.</li>
+    <li><strong>String</strong> &mdash; a contiguous array of character codes, usually preceded by a length word or terminated by a zero byte.</li>
+</ul>
+
+<div class="exam-tip">AQA frequently asks why <code>0.1 + 0.2</code> does not equal exactly <code>0.3</code>. The answer is that <code>0.1</code> and <code>0.2</code> are recurring fractions in binary, so they are stored with a small rounding error. Always mention <em>finite mantissa</em> for full marks.</div>
+
+<h3>Type Coercion vs Casting</h3>
+
+<div class="definition">
+    <strong>Type coercion</strong> (or <em>implicit conversion</em>) is when the compiler / interpreter <em>automatically</em> converts one data type to another, for instance promoting an integer to a real in the expression <code>3 + 2.5</code>. <strong>Casting</strong> (or <em>explicit conversion</em>) is when the programmer forces a conversion using syntax such as <code>int(x)</code> or <code>(float) n</code>.
+</div>
+
+<p>Coercion is convenient but can hide bugs (e.g. <code>"5" + 3</code> concatenates in some languages and errors in others). Explicit casting makes intent clear and is safer in production code.</p>
+
+<h3>User-Defined Data Types</h3>
+
+<p>Primitives can be combined or restricted to create new named types.</p>
+
+<ul>
+    <li><strong>Enumerated type</strong> &mdash; an ordered list of named values. The compiler substitutes integer codes behind the scenes. Useful for fixing a closed set of possibilities.
+        <pre>TYPE Day = (Mon, Tue, Wed, Thu, Fri, Sat, Sun)
+today : Day
+today &larr; Wed</pre>
+    </li>
+    <li><strong>Record / composite type</strong> &mdash; groups several named fields, each with its own type. Equivalent to a <code>struct</code> in C or a simple class without methods.
+        <pre>TYPE Student = RECORD
+    name    : String
+    year    : Integer
+    average : Real
+ENDRECORD
+
+s : Student
+s.name &larr; "Ada"
+s.year &larr; 13</pre>
+    </li>
+    <li><strong>Subrange / set type</strong> &mdash; a primitive constrained to a range, e.g. <code>mark : 0..100</code>.</li>
+    <li><strong>Pointer / reference types</strong> &mdash; hold the memory address of another value.</li>
+</ul>
+
+<div class="exam-tip">If a question asks you to design a data structure (e.g. for a library book or a bank account), use a <strong>record</strong> with clearly named, type-annotated fields. Examiners love to see <code>:</code> followed by a type.</div>
+
+<h2>4.1.2 Programming Concepts</h2>
+
+<h3>Variable and Constant Declaration</h3>
+
+<p>A <strong>variable</strong> is a named memory location whose value may change during execution. A <strong>constant</strong> is a named value that is fixed at declaration and cannot subsequently be altered.</p>
+
+<pre>CONSTANT VAT_RATE : Real = 0.20
+DECLARE price    : Real
+price &larr; 49.99
+total &larr; price * (1 + VAT_RATE)</pre>
+
+<h3>The Three Basic Constructs</h3>
+
+<p>All procedural programs can be built from just three building blocks &mdash; the <strong>structured programming theorem</strong> of B&ouml;hm and Jacopini (1966).</p>
+
+<ul>
+    <li><strong>Sequence</strong> &mdash; statements executed one after another, top-to-bottom.</li>
+    <li><strong>Selection</strong> &mdash; choosing between alternative paths using <code>IF / ELSE IF / ELSE</code> or <code>CASE SELECT</code>.</li>
+    <li><strong>Iteration</strong> &mdash; repeating a block of code.
+        <ul>
+            <li><strong>Definite</strong> &mdash; fixed number of repetitions, e.g. <code>FOR i &larr; 1 TO 10</code>.</li>
+            <li><strong>Indefinite</strong> &mdash; repetition controlled by a Boolean condition, e.g. <code>WHILE / REPEAT UNTIL</code>.</li>
+        </ul>
+    </li>
+</ul>
+
+<pre>// Selection
+IF mark &ge; 70 THEN
+    grade &larr; "A"
+ELSE IF mark &ge; 60 THEN
+    grade &larr; "B"
+ELSE
+    grade &larr; "C"
+ENDIF
+
+// Definite iteration
+FOR i &larr; 1 TO 5
+    OUTPUT i * i
+ENDFOR
+
+// Indefinite iteration
+WHILE NOT validInput DO
+    input &larr; USERINPUT
+    validInput &larr; (input &ge; 0)
+ENDWHILE</pre>
+
+<h3>Nested Constructs</h3>
+
+<p>Any of the three constructs may be nested inside any other. For example, a <code>WHILE</code> loop whose body contains an <code>IF</code> statement whose branch contains a <code>FOR</code> loop. Indentation is essential for readability &mdash; examiners deduct marks for unreadable nested code.</p>
+
+<h3>Meaningful Identifier Names</h3>
+
+<ul>
+    <li>Self-documenting: <code>numberOfStudents</code> is clearer than <code>n</code>.</li>
+    <li>Case convention: most languages use <em>camelCase</em> for variables, <em>PascalCase</em> for types, <em>SCREAMING_SNAKE_CASE</em> for constants.</li>
+    <li>Avoid reserved words, accents, or names that differ by one character only.</li>
+    <li>Scope-appropriate: short names (<code>i</code>, <code>j</code>) are fine as loop counters in a tight scope; long descriptive names belong to longer-lived variables.</li>
+</ul>
+
+<h2>4.1.3 Arithmetic Operations</h2>
+
+<p>Beyond the usual <code>+ &minus; * /</code>, AQA pseudocode defines:</p>
+
+<table>
+    <tr><th>Operator</th><th>Meaning</th><th>Example</th><th>Result</th></tr>
+    <tr><td><code>DIV</code></td><td>Integer division &mdash; discards remainder</td><td><code>17 DIV 5</code></td><td><code>3</code></td></tr>
+    <tr><td><code>MOD</code></td><td>Modulo &mdash; remainder after integer division</td><td><code>17 MOD 5</code></td><td><code>2</code></td></tr>
+    <tr><td><code>/</code> (real)</td><td>Real division</td><td><code>17 / 5</code></td><td><code>3.4</code></td></tr>
+    <tr><td><code>^</code> or <code>**</code></td><td>Exponentiation</td><td><code>2 ^ 10</code></td><td><code>1024</code></td></tr>
+    <tr><td><code>ROUND(x, d)</code></td><td>Round x to d decimal places (banker's rounding in some languages)</td><td><code>ROUND(3.14159, 2)</code></td><td><code>3.14</code></td></tr>
+    <tr><td><code>TRUNCATE(x)</code></td><td>Drop the fractional part (always towards zero)</td><td><code>TRUNCATE(3.9)</code></td><td><code>3</code></td></tr>
+</table>
+
+<p><strong>Classic use of MOD</strong> &mdash; testing divisibility: <code>IF n MOD 2 = 0 THEN "even"</code>.<br><strong>Classic use of DIV</strong> &mdash; extracting digits: <code>tens = (n DIV 10) MOD 10</code>.</p>
+
+<div class="exam-tip">Be careful with <em>negative</em> DIV and MOD: languages differ. Python defines <code>&minus;7 MOD 3</code> as <code>2</code> (result sign matches divisor), whereas C defines it as <code>&minus;1</code> (result sign matches dividend). In AQA questions, assume the Python convention unless told otherwise.</div>
+
+<h2>4.1.4 Relational Operations</h2>
+
+<p>Relational operators compare two values and return a Boolean.</p>
+
+<table>
+    <tr><th>AQA symbol</th><th>Most-language syntax</th><th>Meaning</th></tr>
+    <tr><td><code>=</code></td><td><code>==</code></td><td>Equal to</td></tr>
+    <tr><td><code>&ne;</code></td><td><code>!=</code> / <code>&lt;&gt;</code></td><td>Not equal to</td></tr>
+    <tr><td><code>&lt;</code></td><td><code>&lt;</code></td><td>Less than</td></tr>
+    <tr><td><code>&gt;</code></td><td><code>&gt;</code></td><td>Greater than</td></tr>
+    <tr><td><code>&le;</code></td><td><code>&lt;=</code></td><td>Less than or equal to</td></tr>
+    <tr><td><code>&ge;</code></td><td><code>&gt;=</code></td><td>Greater than or equal to</td></tr>
+</table>
+
+<p>Strings are typically compared <em>lexicographically</em>, comparing character codes position by position. <code>"apple" &lt; "banana"</code> is <code>True</code> because <code>'a' &lt; 'b'</code>.</p>
+
+<h2>4.1.5 Boolean Operations</h2>
+
+<p>Boolean operators combine or invert truth values.</p>
+
+<h3>Truth Tables</h3>
+
+<table>
+    <tr><th>A</th><th>B</th><th>A AND B</th><th>A OR B</th><th>A XOR B</th><th>NOT A</th></tr>
+    <tr><td>F</td><td>F</td><td>F</td><td>F</td><td>F</td><td>T</td></tr>
+    <tr><td>F</td><td>T</td><td>F</td><td>T</td><td>T</td><td>T</td></tr>
+    <tr><td>T</td><td>F</td><td>F</td><td>T</td><td>T</td><td>F</td></tr>
+    <tr><td>T</td><td>T</td><td>T</td><td>T</td><td>F</td><td>F</td></tr>
+</table>
+
+<p><strong>Short-circuit evaluation</strong> &mdash; most languages evaluate <code>A AND B</code> left-to-right and stop as soon as the answer is determined. If <code>A</code> is false, <code>B</code> is never evaluated. This is why <code>IF list &ne; NULL AND list.length &gt; 0</code> is safe: the right-hand side is skipped when the pointer is null.</p>
+
+<div class="definition">
+    <strong>XOR</strong> (exclusive OR) is true when <em>exactly one</em> of the inputs is true. It is equivalent to <code>(A OR B) AND NOT(A AND B)</code>, and also to <code>A &ne; B</code> for Boolean inputs. XOR is its own inverse: <code>(x XOR k) XOR k = x</code>, which underlies simple stream ciphers.
+</div>
+
+<p><strong>De Morgan's laws</strong> (useful for simplifying complex conditions):</p>
+<ul>
+    <li><code>NOT (A AND B) = (NOT A) OR (NOT B)</code></li>
+    <li><code>NOT (A OR B) = (NOT A) AND (NOT B)</code></li>
+</ul>
+
+<h2>4.1.6 Constants and Variables</h2>
+
+<p>Use a <strong>constant</strong> whenever a value:</p>
+<ul>
+    <li>has a known meaning at compile time (e.g. <code>PI</code>, <code>VAT_RATE</code>, <code>MAX_PLAYERS</code>);</li>
+    <li>must be the <em>same</em> everywhere it is used;</li>
+    <li>must not be altered even accidentally.</li>
+</ul>
+
+<table>
+    <tr><th>Advantage of constants</th><th>Why it matters</th></tr>
+    <tr><td>Readability</td><td><code>total = price * VAT_RATE</code> is clearer than <code>total = price * 0.20</code> &mdash; the reader doesn't need to guess what <code>0.20</code> means.</td></tr>
+    <tr><td>Single source of truth</td><td>If the VAT rate changes to 0.23, one edit changes every computation. Scattered magic numbers risk being updated inconsistently.</td></tr>
+    <tr><td>Prevents accidental modification</td><td>The compiler refuses any assignment to the constant after declaration, eliminating a whole class of bugs.</td></tr>
+    <tr><td>Enables optimisation</td><td>The compiler can inline constants and perform constant-folding, producing faster code.</td></tr>
+</table>
+
+<div class="exam-tip">"Give two advantages of using a constant" is a very common 2-mark question. Do <em>not</em> answer "it saves memory" &mdash; constants do not save memory. Use <em>readability</em> and <em>single point of change</em>.</div>
+
+<h2>4.1.7 Structured Programming</h2>
+
+<div class="definition">
+    <strong>Structured programming</strong> is a programming paradigm that encourages programs to be built from the three control constructs (sequence, selection, iteration), broken down (<em>decomposed</em>) into self-contained subroutines, avoiding unrestricted jumps such as <code>GOTO</code>.
+</div>
+
+<p>Its benefits include:</p>
+
+<ul>
+    <li><strong>Easier to read, debug and maintain</strong> &mdash; every subroutine has one entry and one exit point.</li>
+    <li><strong>Reusable</strong> &mdash; a well-scoped subroutine can be called from many places or reused in other programs.</li>
+    <li><strong>Testable in isolation</strong> &mdash; each module can be unit-tested independently.</li>
+    <li><strong>Parallel teamwork</strong> &mdash; different programmers can work on different modules concurrently once the interfaces are agreed.</li>
+</ul>
+
+<p><strong>Top-down (stepwise) design</strong> starts with a single high-level statement of the problem, then decomposes it into smaller sub-problems, repeating until each sub-problem is trivially codeable. The resulting hierarchy is often drawn as a <em>structure chart</em>.</p>
+
+<h2>4.1.8 Subroutines (Procedures and Functions)</h2>
+
+<div class="definition">
+    A <strong>subroutine</strong> is a named, self-contained block of code that performs a specific task and may be called (invoked) from elsewhere in the program. A <strong>procedure</strong> carries out an action but returns no value; a <strong>function</strong> returns a single value and is normally free of side effects.
+</div>
+
+<pre>PROCEDURE greet(name : String)
+    OUTPUT "Hello, " + name
+ENDPROCEDURE
+
+FUNCTION square(x : Integer) RETURNS Integer
+    RETURN x * x
+ENDFUNCTION
+
+greet("Ada")          // procedure call &mdash; no value expected
+y &larr; square(7)        // function call &mdash; y becomes 49</pre>
+
+<p>Benefits of subroutines echo the benefits of structured programming: <strong>abstraction</strong> (hide implementation), <strong>reuse</strong> (write once, call many), <strong>testability</strong>, and <strong>maintainability</strong>.</p>
+
+<h2>4.1.9 Parameters</h2>
+
+<p>A <strong>parameter</strong> is a variable listed in the subroutine's definition that receives a value when the subroutine is called.</p>
+
+<ul>
+    <li><strong>Formal parameter</strong> &mdash; the name used in the subroutine's header (e.g. <code>x</code> in <code>FUNCTION square(x)</code>).</li>
+    <li><strong>Actual parameter / argument</strong> &mdash; the value passed in by the caller (e.g. <code>7</code> in <code>square(7)</code>).</li>
+</ul>
+
+<h3>Passing Mechanisms</h3>
+
+<table>
+    <tr><th>Aspect</th><th>Pass by Value</th><th>Pass by Reference</th></tr>
+    <tr><td>What is copied</td><td>The <em>value</em> of the argument is copied into a new local parameter.</td><td>The <em>address</em> of the argument is passed; the parameter becomes an alias for the original.</td></tr>
+    <tr><td>Effect on caller</td><td>The original variable is unchanged, even if the parameter is reassigned inside the subroutine.</td><td>Assignments to the parameter inside the subroutine are visible to the caller.</td></tr>
+    <tr><td>Memory overhead</td><td>Copies the whole value &mdash; potentially expensive for large records.</td><td>Only an address is copied &mdash; cheap regardless of data size.</td></tr>
+    <tr><td>Side effects</td><td>None on the caller's data.</td><td>Possible &mdash; parameter changes <em>leak</em> back to the caller.</td></tr>
+    <tr><td>Typical use</td><td>Simple inputs: integers, small structs, values that the subroutine should not alter.</td><td>Large objects, arrays, or when the subroutine must modify its argument.</td></tr>
+</table>
+
+<pre>PROCEDURE addOne(BYVAL n : Integer)
+    n &larr; n + 1
+ENDPROCEDURE
+
+PROCEDURE addOneRef(BYREF n : Integer)
+    n &larr; n + 1
+ENDPROCEDURE
+
+x &larr; 5
+addOne(x)       // x is still 5
+addOneRef(x)    // x is now 6</pre>
+
+<div class="exam-tip">When asked to <em>compare</em> the two mechanisms, structure your answer as a table or as two bullet lists. Use the word <strong>alias</strong> when describing pass-by-reference and the word <strong>copy</strong> when describing pass-by-value &mdash; these are the exact words on AQA mark schemes.</div>
+
+<h3>Side Effects</h3>
+
+<div class="definition">
+    A <strong>side effect</strong> is any change a subroutine makes to state outside its own local variables &mdash; for example modifying a global variable, writing to a file, printing to the screen, or (via pass-by-reference) altering its caller's arguments.
+</div>
+
+<p>A <em>pure function</em> has no side effects and always returns the same output for the same input. Pure functions are easier to test, parallelise, and reason about. Procedures that perform I/O or mutate reference parameters are, by definition, not pure.</p>
+
+<h2>4.1.10 Returning Values</h2>
+
+<p>A function uses <code>RETURN value</code> to deliver a single result back to the caller; at that point the subroutine ends and control resumes at the caller site.</p>
+
+<pre>FUNCTION absolute(n : Integer) RETURNS Integer
+    IF n &lt; 0 THEN
+        RETURN -n
+    ELSE
+        RETURN n
+    ENDIF
+ENDFUNCTION
+
+d &larr; absolute(-7)   // d is 7</pre>
+
+<p>Languages differ in how they handle multiple return values:</p>
+
+<ul>
+    <li>Python &mdash; returns a tuple: <code>return a, b</code>.</li>
+    <li>C/C++ &mdash; returns one value; uses pointer / reference parameters for "out" values.</li>
+    <li>Java / C# &mdash; returns one value; use a record, object, or <code>out</code> parameters for more.</li>
+</ul>
+
+<h2>4.1.11 Local and Global Variables</h2>
+
+<div class="definition">
+    The <strong>scope</strong> of a variable is the region of a program in which that identifier is visible. A <strong>local variable</strong> is declared inside a subroutine and exists only for the lifetime of that call. A <strong>global variable</strong> is declared at module level and is visible to every subroutine.
+</div>
+
+<pre>total &larr; 0             // global
+
+PROCEDURE addItem(price : Real)
+    tax &larr; price * 0.2   // local
+    total &larr; total + price + tax
+ENDPROCEDURE</pre>
+
+<h3>Why Globals are Discouraged</h3>
+
+<ul>
+    <li><strong>Hidden dependencies</strong> &mdash; any subroutine could silently depend on a global, making reasoning difficult.</li>
+    <li><strong>Tight coupling</strong> &mdash; components can no longer be reused in isolation.</li>
+    <li><strong>Name clashes</strong> &mdash; a global can be shadowed accidentally by a local of the same name.</li>
+    <li><strong>Thread-unsafe</strong> &mdash; concurrent access to a shared global requires explicit locking.</li>
+    <li><strong>Harder to test</strong> &mdash; a unit test must set up (and tear down) global state.</li>
+</ul>
+
+<h3>Shadowing</h3>
+
+<p>If a local variable is declared with the <em>same name</em> as an outer variable, the local <em>shadows</em> the outer for the duration of the block. References to that name bind to the nearest enclosing declaration.</p>
+
+<pre>x &larr; 1            // global x
+
+PROCEDURE demo()
+    x &larr; 99       // new local x (in most languages); shadows global
+    OUTPUT x      // prints 99
+ENDPROCEDURE
+
+demo()
+OUTPUT x          // prints 1</pre>
+
+<div class="exam-tip">AQA routinely tests trace questions that hinge on scope. Always ask: "is this identifier declared inside the current subroutine?" If yes, it is local; if not, walk outwards to the next enclosing scope. Globals are the final fallback.</div>
+
+<h2>4.1.12 The Role of Stack Frames in Subroutine Calls</h2>
+
+<div class="definition">
+    A <strong>stack frame</strong> (or <em>activation record</em>) is a block of memory pushed onto the call stack for every subroutine invocation. It contains the parameters, local variables, saved registers, and the <strong>return address</strong> to which control should jump when the subroutine completes.
+</div>
+
+<p>Each call pushes a new frame; each <code>RETURN</code> pops the topmost frame. This explains both <strong>how recursion works</strong> and <strong>why it can overflow</strong>.</p>
+
+<p>A typical stack frame layout (growing downwards) contains:</p>
+
+<pre>|   caller's locals ...   |
+|-------------------------|
+|  return address (RA)    |   &larr; where to jump back to
+|-------------------------|
+|  saved frame pointer    |
+|-------------------------|
+|  parameters             |   &larr; value or reference data
+|-------------------------|
+|  local variables        |
+|-------------------------|
+|  (top of stack)         |</pre>
+
+<p><strong>Walkthrough</strong> &mdash; calling <code>square(7)</code> from main:</p>
+
+<ol>
+    <li>Main evaluates the argument <code>7</code> and pushes it.</li>
+    <li>The CPU executes a CALL instruction which pushes the <em>return address</em> (the next instruction after the call).</li>
+    <li><code>square</code> allocates space for its local variables by adjusting the stack pointer.</li>
+    <li><code>square</code> computes <code>7 * 7 = 49</code> and places the result in the return register.</li>
+    <li><code>RETURN</code> pops the local variables, then the return address, and jumps to it.</li>
+    <li>Main resumes with <code>49</code> available for assignment.</li>
+</ol>
+
+<h2>4.1.13 Recursion</h2>
+
+<div class="definition">
+    A subroutine is <strong>recursive</strong> if it calls itself (directly or indirectly). Every recursive subroutine must have at least one <strong>base case</strong> that stops the recursion and at least one <strong>recursive case</strong> that calls the subroutine with a simpler / smaller argument, making <em>progress</em> towards the base case.
+</div>
+
+<h3>Worked Example: Factorial</h3>
+
+<pre>FUNCTION factorial(n : Integer) RETURNS Integer
+    IF n = 0 THEN                   // base case
+        RETURN 1
+    ELSE                            // recursive case
+        RETURN n * factorial(n - 1)
+    ENDIF
+ENDFUNCTION</pre>
+
+<p><strong>Trace for <code>factorial(4)</code>:</strong></p>
+
+<table>
+    <tr><th>Call depth</th><th>Call</th><th>Waiting on</th><th>Returns</th></tr>
+    <tr><td>0</td><td>factorial(4)</td><td>4 &times; factorial(3)</td><td>24</td></tr>
+    <tr><td>1</td><td>factorial(3)</td><td>3 &times; factorial(2)</td><td>6</td></tr>
+    <tr><td>2</td><td>factorial(2)</td><td>2 &times; factorial(1)</td><td>2</td></tr>
+    <tr><td>3</td><td>factorial(1)</td><td>1 &times; factorial(0)</td><td>1</td></tr>
+    <tr><td>4</td><td>factorial(0)</td><td>&mdash; base case &mdash;</td><td>1</td></tr>
+</table>
+
+<p>At the deepest point, five stack frames are live simultaneously. As the base case returns <code>1</code>, each outer frame multiplies and returns, collapsing the stack.</p>
+
+<h3>Worked Example: Fibonacci Call Tree</h3>
+
+<pre>FUNCTION fib(n : Integer) RETURNS Integer
+    IF n &lt; 2 THEN
+        RETURN n
+    ELSE
+        RETURN fib(n - 1) + fib(n - 2)
+    ENDIF
+ENDFUNCTION</pre>
+
+<p><code>fib(4)</code> expands into the following (exponentially branching) call tree, demonstrating why naive recursion can be <em>catastrophically</em> slow:</p>
+
+<pre>                   fib(4)
+                 /         \
+             fib(3)         fib(2)
+            /      \        /     \
+         fib(2)  fib(1)  fib(1)  fib(0)
+         /   \
+      fib(1) fib(0)</pre>
+
+<p>Note that <code>fib(2)</code> is recomputed twice and <code>fib(1)</code> three times. Running time is <code>O(&phi;<sup>n</sup>) &asymp; O(1.618<sup>n</sup>)</code>, which is why this definition should be memoised or rewritten iteratively in practice.</p>
+
+<h3>Recursion vs Iteration</h3>
+
+<table>
+    <tr><th>Aspect</th><th>Recursion</th><th>Iteration</th></tr>
+    <tr><td>Code clarity</td><td>Often more natural for inherently recursive problems (trees, divide-and-conquer, fractals).</td><td>Often clearer for linear, step-by-step processes (counting loops).</td></tr>
+    <tr><td>Memory</td><td>Every call uses a stack frame; deep recursion may trigger a <strong>stack overflow</strong>.</td><td>Fixed memory &mdash; only the loop variables occupy space.</td></tr>
+    <tr><td>Speed</td><td>Function-call overhead (pushing / popping frames) costs extra time.</td><td>No call overhead &mdash; typically faster.</td></tr>
+    <tr><td>Termination</td><td>Base case needed; easy to forget, leading to infinite recursion.</td><td>Loop condition needed; easier to get right.</td></tr>
+    <tr><td>Data structures</td><td>Maps naturally onto recursive structures (trees, linked lists).</td><td>Requires an <em>explicit</em> stack to simulate traversal.</td></tr>
+</table>
+
+<div class="exam-tip">When asked "give one advantage of recursion over iteration", a safe answer is <em>"recursive code is often shorter and more readable for problems defined recursively, such as tree traversal"</em>. For the disadvantage, mention <em>stack overflow</em> for large inputs.</div>
+
+<h3>Tree Traversal Example</h3>
+
+<pre>PROCEDURE inorder(node)
+    IF node &ne; NULL THEN
+        inorder(node.left)
+        OUTPUT node.value
+        inorder(node.right)
+    ENDIF
+ENDPROCEDURE</pre>
+
+<p>This three-line recursive solution mirrors the recursive definition of a binary tree. An iterative equivalent requires an explicit stack and roughly twice the code.</p>
+
+<h2>4.1.14 Object-Oriented Programming</h2>
+
+<div class="definition">
+    <strong>Object-oriented programming (OOP)</strong> is a paradigm in which a program is organised as a set of <em>objects</em> &mdash; self-contained units that combine <strong>state</strong> (attributes) and <strong>behaviour</strong> (methods) &mdash; that interact by sending messages (calling methods) to one another.
+</div>
+
+<h3>Core Terminology</h3>
+
+<table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td><strong>Class</strong></td><td>A blueprint that defines the attributes and methods common to a category of objects.</td></tr>
+    <tr><td><strong>Object / instance</strong></td><td>A concrete value created from a class, with its own copy of the attribute values.</td></tr>
+    <tr><td><strong>Attribute (field)</strong></td><td>A named piece of state held by an object.</td></tr>
+    <tr><td><strong>Method</strong></td><td>A subroutine defined inside a class that operates on objects of that class.</td></tr>
+    <tr><td><strong>Constructor</strong></td><td>A special method that initialises a newly created object.</td></tr>
+    <tr><td><strong>Encapsulation</strong></td><td>Bundling state and behaviour together and hiding internal state behind a public interface (getters / setters). Attributes are usually <code>private</code>; methods are <code>public</code>.</td></tr>
+    <tr><td><strong>Inheritance</strong></td><td>Defining a new class (the <em>subclass / child</em>) by extending an existing one (the <em>superclass / parent</em>), automatically inheriting its attributes and methods.</td></tr>
+    <tr><td><strong>Polymorphism</strong></td><td>Calling the same method name on different classes and getting class-appropriate behaviour. Achieved by <em>overriding</em> (subclass redefines a method) or <em>overloading</em> (same name, different parameter list).</td></tr>
+    <tr><td><strong>Association</strong></td><td>A general "uses-a" relationship between independent classes.</td></tr>
+    <tr><td><strong>Aggregation</strong></td><td>A "has-a" relationship where the part can exist without the whole (e.g. a <em>Team</em> has <em>Players</em>; players still exist if the team is deleted).</td></tr>
+    <tr><td><strong>Composition</strong></td><td>A stronger "owns-a" relationship where the part cannot exist without the whole (e.g. a <em>Book</em> composed of <em>Pages</em>; delete the book and the pages go too).</td></tr>
+</table>
+
+<h3>Encapsulation Example</h3>
+
+<pre>CLASS BankAccount
+    PRIVATE balance : Real
+
+    PUBLIC PROCEDURE new(opening : Real)
+        balance &larr; opening
+    ENDPROCEDURE
+
+    PUBLIC PROCEDURE deposit(amount : Real)
+        IF amount &gt; 0 THEN
+            balance &larr; balance + amount
+        ENDIF
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION getBalance() RETURNS Real
+        RETURN balance
+    ENDFUNCTION
+ENDCLASS</pre>
+
+<p>External code can only modify <code>balance</code> via <code>deposit</code>, which validates the amount. The invariant "balance is never illegally changed" is enforced by the class itself &mdash; a huge advantage over plain records.</p>
+
+<h3>Inheritance and Polymorphism Example</h3>
+
+<pre>CLASS Shape
+    PROTECTED name : String
+
+    PUBLIC PROCEDURE new(n : String)
+        name &larr; n
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION area() RETURNS Real
+        RETURN 0
+    ENDFUNCTION
+
+    PUBLIC PROCEDURE describe()
+        OUTPUT name + " has area " + area()
+    ENDPROCEDURE
+ENDCLASS
+
+CLASS Circle INHERITS Shape
+    PRIVATE radius : Real
+
+    PUBLIC PROCEDURE new(r : Real)
+        SUPER.new("Circle")
+        radius &larr; r
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION area() RETURNS Real     // override
+        RETURN 3.14159 * radius * radius
+    ENDFUNCTION
+ENDCLASS
+
+CLASS Square INHERITS Shape
+    PRIVATE side : Real
+
+    PUBLIC PROCEDURE new(s : Real)
+        SUPER.new("Square")
+        side &larr; s
+    ENDPROCEDURE
+
+    PUBLIC FUNCTION area() RETURNS Real     // override
+        RETURN side * side
+    ENDFUNCTION
+ENDCLASS
+
+// Polymorphic usage
+shapes : ARRAY OF Shape
+shapes[1] &larr; NEW Circle(3)
+shapes[2] &larr; NEW Square(4)
+
+FOR EACH s IN shapes
+    s.describe()          // calls the correct area() automatically
+ENDFOR</pre>
+
+<p>The call <code>s.describe()</code> is identical for every element, yet it prints the right area for each shape. This is <strong>dynamic dispatch</strong> in action.</p>
+
+<h3>UML Class Diagram (simplified notation)</h3>
+
+<pre>+---------------------+
+|        Shape        |
++---------------------+
+| # name : String     |    # = protected
++---------------------+
+| + area() : Real     |    + = public
+| + describe()        |
++---------------------+
+          &uArr;
+   -----------------
+   |               |
++---------+   +-----------+
+| Circle  |   |  Square   |
++---------+   +-----------+
+| - radius|   | - side    |    &ndash; = private
++---------+   +-----------+
+| + area()|   | + area()  |
++---------+   +-----------+</pre>
+
+<h3>Overriding vs Overloading</h3>
+
+<table>
+    <tr><th></th><th>Overriding</th><th>Overloading</th></tr>
+    <tr><td>Where it happens</td><td>Across a class hierarchy &mdash; subclass re-implements a superclass method.</td><td>Within a single class &mdash; two methods share a name but differ in parameter list.</td></tr>
+    <tr><td>Signature</td><td>Must match the superclass method's signature exactly.</td><td>Must differ in number or type of parameters.</td></tr>
+    <tr><td>Resolved</td><td>At runtime (dynamic dispatch).</td><td>At compile time (static dispatch).</td></tr>
+    <tr><td>Purpose</td><td>Customise inherited behaviour.</td><td>Provide multiple ways to invoke a single conceptual operation.</td></tr>
+</table>
+
+<h3>OOP Design Principles</h3>
+
+<ul>
+    <li><strong>Encapsulation</strong> &mdash; hide internal state; expose a minimal, well-defined interface.</li>
+    <li><strong>DRY (Don't Repeat Yourself)</strong> &mdash; every piece of knowledge should have one authoritative representation in the code. Duplicated code is a bug magnet.</li>
+    <li><strong>SRP (Single Responsibility Principle)</strong> &mdash; a class should have one, and only one, reason to change.</li>
+    <li><strong>Liskov Substitution Principle</strong> &mdash; objects of a subclass should be usable wherever their superclass is expected, without surprising the caller.</li>
+    <li><strong>Open / Closed Principle</strong> &mdash; classes should be open for extension (via inheritance or composition) but closed for modification once in use.</li>
+    <li><strong>Favour composition over inheritance</strong> &mdash; deep inheritance hierarchies become brittle; composing smaller objects is often more flexible.</li>
+</ul>
+
+<div class="exam-tip">For "explain encapsulation" questions, always give two parts: (1) bundling data and methods together in one class, and (2) restricting direct access to the data via access modifiers. Top-mark answers also cite a benefit &mdash; easier maintenance or enforcement of invariants.</div>
+
+<h2>4.1.15 Exception Handling</h2>
+
+<div class="definition">
+    An <strong>exception</strong> is an abnormal event that disrupts the normal flow of a program, for example a division by zero, a file not found, or invalid user input. <strong>Exception handling</strong> is the language feature that lets a program detect such an event, respond to it cleanly, and (optionally) recover.
+</div>
+
+<h3>The try / except / finally Construct</h3>
+
+<pre>TRY
+    age &larr; INT(USERINPUT)
+    IF age &lt; 0 THEN
+        RAISE ValueError("age cannot be negative")
+    ENDIF
+    OUTPUT "In 10 years you'll be ", age + 10
+EXCEPT ValueError AS e
+    OUTPUT "Bad value: ", e
+EXCEPT DivideByZeroError
+    OUTPUT "Cannot divide by zero"
+FINALLY
+    OUTPUT "Thank you for using the age calculator."
+ENDTRY</pre>
+
+<ul>
+    <li><strong>TRY</strong> &mdash; the block of code that might raise an exception.</li>
+    <li><strong>EXCEPT</strong> (or <code>CATCH</code>) &mdash; a handler for a specific exception type. Multiple EXCEPT blocks may follow a single TRY, in order of specificity.</li>
+    <li><strong>FINALLY</strong> &mdash; an optional block that always executes, whether or not an exception occurred. Used for cleanup (closing files, releasing locks) that must happen in every case.</li>
+    <li><strong>RAISE</strong> (or <code>THROW</code>) &mdash; actively signals an exception, typically with an error message.</li>
+</ul>
+
+<h3>Common Exception Types</h3>
+
+<table>
+    <tr><th>Exception</th><th>Typical cause</th></tr>
+    <tr><td><code>ValueError</code> / <code>FormatException</code></td><td>Converting "abc" to Integer.</td></tr>
+    <tr><td><code>TypeError</code></td><td>Adding a Boolean to a String.</td></tr>
+    <tr><td><code>IndexOutOfRange</code></td><td>Accessing <code>arr[10]</code> when the array has only 5 elements.</td></tr>
+    <tr><td><code>KeyError</code> / <code>KeyNotFound</code></td><td>Looking up an absent dictionary key.</td></tr>
+    <tr><td><code>DivideByZeroError</code></td><td>Integer division or MOD where the divisor is zero.</td></tr>
+    <tr><td><code>FileNotFoundError</code></td><td>Opening a file path that does not exist.</td></tr>
+    <tr><td><code>NullReferenceException</code></td><td>Calling a method on a null / None object.</td></tr>
+    <tr><td><code>StackOverflowError</code></td><td>Recursion depth exceeds the call stack's limit.</td></tr>
+</table>
+
+<h3>Exceptions vs Return Codes</h3>
+
+<table>
+    <tr><th>Approach</th><th>Strengths</th><th>Weaknesses</th></tr>
+    <tr><td>Exceptions</td><td>Separate normal logic from error handling; propagate automatically up the call stack; force the programmer to acknowledge failures (in checked-exception languages).</td><td>Throwing / catching is slower than a conditional test; abused exceptions create "goto-like" flow that is hard to follow; finally / cleanup is easy to forget.</td></tr>
+    <tr><td>Return codes</td><td>Very fast (just an integer check); explicit &mdash; the reader sees every failure path.</td><td>Clutter normal logic with repeated <code>if result = ERROR</code> checks; a missed check silently continues with bad data.</td></tr>
+</table>
+
+<p><strong>Rule of thumb</strong>: use exceptions for <em>genuinely exceptional</em> conditions (file missing, network timeout, corrupt input) and use normal control flow for <em>expected</em> branches (e.g. "is the user a member?").</p>
+
+<div class="exam-tip">If a 6-mark question asks you to "explain how and why exception handling is used", award yourself marks for: (1) definition of an exception; (2) try / catch / finally mechanism; (3) separation of concerns (normal logic vs error handling); (4) an example; (5) a named common exception; (6) a comparison with old-fashioned return-code error handling.</div>
+
+<h2>Summary Checklist</h2>
+
+<ul>
+    <li>Name and describe all six primitive data types and at least two user-defined types.</li>
+    <li>Distinguish type coercion from casting with a concrete example.</li>
+    <li>Evaluate expressions using DIV, MOD, relational and Boolean operators.</li>
+    <li>Construct truth tables for AND, OR, NOT, XOR.</li>
+    <li>Justify the use of constants.</li>
+    <li>Write and trace subroutines with formal and actual parameters, using both pass-by-value and pass-by-reference.</li>
+    <li>Explain local vs global scope and shadowing.</li>
+    <li>Describe a stack frame's contents and how recursion uses the stack.</li>
+    <li>Write, trace and critique a recursive algorithm; compare it with an iterative equivalent.</li>
+    <li>Use class, object, attribute, method, constructor, encapsulation, inheritance, polymorphism, association, aggregation and composition correctly in a written answer.</li>
+    <li>Use try / except / finally to handle a named exception and explain why it is preferable to return codes in that situation.</li>
+</ul>
+
+</div>
+</body>
+</html>

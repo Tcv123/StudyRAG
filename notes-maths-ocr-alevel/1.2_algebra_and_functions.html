@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>OCR 1.2 — Algebra &amp; Functions</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.2 Algebra &amp; Functions</h1>
+<p class="spec-ref">Mathematics — OCR A-Level (H240) — Paper 1: Pure Mathematics</p>
+
+<h2>1. Indices and Surds</h2>
+
+<p>The rules of indices (exponents) underpin nearly every algebraic manipulation in the A-Level course. They hold for any real base \(a > 0\) and any real exponents \(m, n\); for integer exponents they hold for any non-zero base.</p>
+
+<h3>Laws of Indices</h3>
+
+<table>
+<tr><th>Law</th><th>Statement</th><th>Example</th></tr>
+<tr><td>Product</td><td>\(a^m \cdot a^n = a^{m+n}\)</td><td>\(x^3 \cdot x^5 = x^8\)</td></tr>
+<tr><td>Quotient</td><td>\(a^m / a^n = a^{m-n}\)</td><td>\(x^7 / x^2 = x^5\)</td></tr>
+<tr><td>Power of a power</td><td>\((a^m)^n = a^{mn}\)</td><td>\((x^4)^3 = x^{12}\)</td></tr>
+<tr><td>Power of a product</td><td>\((ab)^n = a^n b^n\)</td><td>\((2x)^3 = 8x^3\)</td></tr>
+<tr><td>Power of a quotient</td><td>\((a/b)^n = a^n / b^n\)</td><td>\((x/3)^2 = x^2/9\)</td></tr>
+<tr><td>Zero index</td><td>\(a^0 = 1\) (for \(a \neq 0\))</td><td>\(7^0 = 1\)</td></tr>
+<tr><td>Negative index</td><td>\(a^{-n} = 1 / a^n\)</td><td>\(x^{-3} = 1/x^3\)</td></tr>
+<tr><td>Fractional index</td><td>\(a^{1/n} = \sqrt[n]{a}\), \(a^{m/n} = \sqrt[n]{a^m}\)</td><td>\(8^{2/3} = (\sqrt[3]{8})^2 = 4\)</td></tr>
+</table>
+
+<div class="definition">
+<strong>Surd.</strong> An irrational number expressed in the form \(\sqrt[n]{a}\) where \(a\) is a positive integer and the \(n\)-th root is not itself a rational number. Common surds at A-level are \(\sqrt{2}, \sqrt{3}, \sqrt{5}, \sqrt{6}, \sqrt{7}, \sqrt{10}\).
+</div>
+
+<h3>Simplifying Surds</h3>
+<p>Key rules: \(\sqrt{ab} = \sqrt{a}\sqrt{b}\) and \(\sqrt{a/b} = \sqrt{a}/\sqrt{b}\), valid for \(a, b \geq 0\). To simplify \(\sqrt{N}\), factor out the largest perfect-square divisor of \(N\).</p>
+
+<div class="example">
+<h3>Worked Example 1 — Simplifying surds</h3>
+<p>Simplify (a) \(\sqrt{50}\), (b) \(\sqrt{72} - \sqrt{18}\), (c) \(\sqrt{12} \cdot \sqrt{27}\).</p>
+<pre>
+<span class="cm">// (a) factor out the largest square</span>
+<span class="ln">1.</span>  √50 = √(25 · 2) = √25 · √2 = 5√2.
+
+<span class="cm">// (b) simplify each surd then combine</span>
+<span class="ln">2.</span>  √72 = √(36 · 2) = 6√2
+<span class="ln">3.</span>  √18 = √(9 · 2)  = 3√2
+<span class="ln">4.</span>  √72 − √18 = 6√2 − 3√2 = 3√2.
+
+<span class="cm">// (c) combine under one radical</span>
+<span class="ln">5.</span>  √12 · √27 = √(12 · 27) = √324 = 18.
+</pre>
+</div>
+
+<h3>Rationalising the Denominator</h3>
+<p>A denominator containing a surd is "rationalised" by multiplying numerator and denominator by a convenient surd expression to remove the irrational part.</p>
+<ul>
+  <li>\(\dfrac{1}{\sqrt{a}} = \dfrac{\sqrt{a}}{a}\) — multiply top and bottom by \(\sqrt{a}\).</li>
+  <li>\(\dfrac{1}{a + \sqrt{b}} = \dfrac{a - \sqrt{b}}{a^2 - b}\) — multiply by the <em>conjugate</em> \(a - \sqrt{b}\).</li>
+  <li>\(\dfrac{1}{\sqrt{a} + \sqrt{b}} = \dfrac{\sqrt{a} - \sqrt{b}}{a - b}\).</li>
+</ul>
+
+<div class="example">
+<h3>Worked Example 2 — Rationalising</h3>
+<p>Express \(\dfrac{5}{3 - \sqrt{2}}\) in the form \(p + q\sqrt{2}\).</p>
+<pre>
+<span class="ln">1.</span> Multiply by conjugate (3 + √2)/(3 + √2):
+<span class="ln">2.</span>   5/(3 − √2) · (3 + √2)/(3 + √2)
+<span class="ln">3.</span> = 5(3 + √2) / (3² − (√2)²)
+<span class="ln">4.</span> = (15 + 5√2) / (9 − 2)
+<span class="ln">5.</span> = (15 + 5√2) / 7
+<span class="ln">6.</span> = 15/7 + (5/7)√2.    <span class="cm">// so p = 15/7, q = 5/7</span>
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip.</strong> OCR examiners routinely deduct marks when students leave a surd in the denominator. Always rationalise as the final step unless the question explicitly leaves an alternative form. If the denominator is \(a \pm \sqrt{b}\), multiply by \(a \mp \sqrt{b}\) — the difference of two squares does the work for you.
+</div>
+
+<h2>2. Quadratics</h2>
+
+<p>A quadratic has the form \(ax^2 + bx + c\) with \(a \neq 0\). Three standard techniques solve \(ax^2 + bx + c = 0\): factorising, completing the square, and the quadratic formula.</p>
+
+<div class="definition">
+<strong>Quadratic formula.</strong> The solutions of \(ax^2 + bx + c = 0\) (with \(a \neq 0\)) are
+\(x = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}\).
+</div>
+
+<div class="definition">
+<strong>Discriminant.</strong> The quantity \(\Delta = b^2 - 4ac\). Its sign determines the number and type of real roots and the way the parabola meets the \(x\)-axis.
+</div>
+
+<h3>Discriminant Cases</h3>
+
+<table>
+<tr><th>Sign of \(\Delta\)</th><th>Roots</th><th>Graph behaviour</th></tr>
+<tr><td>\(\Delta &gt; 0\)</td><td>Two distinct real roots</td><td>Parabola crosses \(x\)-axis at two points</td></tr>
+<tr><td>\(\Delta = 0\)</td><td>One repeated real root</td><td>Parabola touches \(x\)-axis (tangent) at vertex</td></tr>
+<tr><td>\(\Delta &lt; 0\)</td><td>No real roots (complex conjugate pair)</td><td>Parabola does not meet \(x\)-axis</td></tr>
+<tr><td>\(\Delta\) is a perfect square</td><td>Rational roots — factorises over \(\mathbb{Q}\)</td><td>Easiest case to factor by inspection</td></tr>
+</table>
+
+<h3>Completing the Square</h3>
+<p>Any quadratic \(ax^2 + bx + c\) can be written in <em>vertex form</em>:
+\(a(x - h)^2 + k\), where \(h = -\dfrac{b}{2a}\) and \(k = c - \dfrac{b^2}{4a}\).
+The vertex of \(y = ax^2 + bx + c\) sits at \((h, k)\); the minimum (if \(a&gt;0\)) or maximum (if \(a&lt;0\)) value is \(k\).</p>
+
+<div class="example">
+<h3>Worked Example 3 — Solve \(2x^2 - 5x + 3 = 0\) three ways</h3>
+<pre>
+<span class="cm">// Method A — factorising</span>
+<span class="ln"> 1.</span>  2x² − 5x + 3 = 0
+<span class="ln"> 2.</span>  Find two numbers that multiply to 2·3 = 6 and sum to −5:   −2 and −3.
+<span class="ln"> 3.</span>  Split middle term:   2x² − 2x − 3x + 3 = 0
+<span class="ln"> 4.</span>                        2x(x − 1) − 3(x − 1) = 0
+<span class="ln"> 5.</span>                        (2x − 3)(x − 1)     = 0
+<span class="ln"> 6.</span>  ⇒ x = 3/2  or  x = 1.
+
+<span class="cm">// Method B — quadratic formula</span>
+<span class="ln"> 7.</span>  a = 2, b = −5, c = 3, Δ = 25 − 24 = 1.
+<span class="ln"> 8.</span>  x = (5 ± √1) / 4  =  (5 ± 1)/4.
+<span class="ln"> 9.</span>  ⇒ x = 6/4 = 3/2,  or  x = 4/4 = 1.
+
+<span class="cm">// Method C — completing the square</span>
+<span class="ln">10.</span>  2x² − 5x + 3 = 2(x² − 5x/2) + 3
+<span class="ln">11.</span>              = 2[(x − 5/4)² − 25/16] + 3
+<span class="ln">12.</span>              = 2(x − 5/4)² − 25/8 + 3
+<span class="ln">13.</span>              = 2(x − 5/4)² − 1/8.
+<span class="ln">14.</span>  Set to 0:    2(x − 5/4)² = 1/8
+<span class="ln">15.</span>               (x − 5/4)²  = 1/16
+<span class="ln">16.</span>                x − 5/4    = ±1/4
+<span class="ln">17.</span>  ⇒ x = 5/4 + 1/4 = 3/2,  or  x = 5/4 − 1/4 = 1.
+</pre>
+<p>The vertex form also tells us the minimum value of the quadratic is \(-1/8\), attained at \(x = 5/4\).</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — when to use which method.</strong> Try factorising first: it is fastest when \(\Delta\) is a small perfect square. If factorising is not obvious in ~15 seconds, switch to the formula. Use completing the square when the question asks for the vertex, the minimum/maximum value, the range, or to prove that the quadratic is always positive/negative.
+</div>
+
+<h3>Sketching Quadratics</h3>
+<p>To sketch \(y = ax^2 + bx + c\): (i) direction of opening — up if \(a&gt;0\), down if \(a&lt;0\); (ii) \(y\)-intercept \((0,c)\); (iii) \(x\)-intercepts from the roots (if real); (iv) vertex from completing the square.</p>
+
+<!-- SVG: three discriminant cases -->
+<svg viewBox="0 0 700 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;display:block;margin:20px auto;">
+  <g transform="translate(30,20)">
+    <line x1="0" y1="140" x2="180" y2="140" stroke="#64748b" stroke-width="1"/>
+    <line x1="90" y1="10" x2="90" y2="180" stroke="#64748b" stroke-width="1"/>
+    <path d="M 10 30 Q 90 220 170 30" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="40" cy="140" r="3" fill="#dc2626"/>
+    <circle cx="140" cy="140" r="3" fill="#dc2626"/>
+    <text x="90" y="200" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">Δ &gt; 0</text>
+    <text x="90" y="215" text-anchor="middle" fill="#64748b" font-size="11">two real roots</text>
+  </g>
+  <g transform="translate(260,20)">
+    <line x1="0" y1="140" x2="180" y2="140" stroke="#64748b" stroke-width="1"/>
+    <line x1="90" y1="10" x2="90" y2="180" stroke="#64748b" stroke-width="1"/>
+    <path d="M 10 30 Q 90 250 170 30" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <circle cx="90" cy="140" r="3" fill="#dc2626"/>
+    <text x="90" y="200" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">Δ = 0</text>
+    <text x="90" y="215" text-anchor="middle" fill="#64748b" font-size="11">repeated root (tangent)</text>
+  </g>
+  <g transform="translate(490,20)">
+    <line x1="0" y1="140" x2="180" y2="140" stroke="#64748b" stroke-width="1"/>
+    <line x1="90" y1="10" x2="90" y2="180" stroke="#64748b" stroke-width="1"/>
+    <path d="M 10 30 Q 90 150 170 30" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <text x="90" y="200" text-anchor="middle" fill="#1e3a5f" font-size="13" font-weight="600">Δ &lt; 0</text>
+    <text x="90" y="215" text-anchor="middle" fill="#64748b" font-size="11">no real roots</text>
+  </g>
+</svg>
+
+<div class="example">
+<h3>Worked Example 4 — Quadratic word problem</h3>
+<p>A rectangular field is 5&nbsp;m longer than it is wide and has area 84 m². Find its dimensions.</p>
+<p>Let width = \(x\). Then length = \(x + 5\) and \(x(x+5) = 84\), i.e. \(x^2 + 5x - 84 = 0\).</p>
+<p>Discriminant \(= 25 + 336 = 361 = 19^2\). Roots: \(x = (-5 \pm 19)/2\), giving \(x = 7\) or \(x = -12\). Width must be positive, so \(x = 7\) m, length = 12 m.</p>
+</div>
+
+<h2>3. Simultaneous Equations</h2>
+
+<p>Simultaneous equations have a solution set consisting of every pair (or \(n\)-tuple) that satisfies both (all) equations. Geometrically each equation is a curve; solutions are intersection points.</p>
+
+<h3>Linear / Linear Systems</h3>
+<p>Two methods: <strong>substitution</strong> (solve one equation for a variable, substitute into the other) and <strong>elimination</strong> (scale the equations and add/subtract to cancel a variable). Exactly one solution iff the two lines are not parallel.</p>
+
+<div class="example">
+<h3>Worked Example 5 — Linear/linear</h3>
+<p>Solve \(3x + 2y = 16\) and \(x - y = 2\).</p>
+<pre>
+<span class="ln">1.</span>  From (2):  x = y + 2.
+<span class="ln">2.</span>  Substitute:  3(y + 2) + 2y = 16
+<span class="ln">3.</span>              3y + 6 + 2y   = 16
+<span class="ln">4.</span>              5y             = 10
+<span class="ln">5.</span>              y              = 2,  x = 4.
+<span class="ln">6.</span>  Check:  3(4) + 2(2) = 16 ✓   and   4 − 2 = 2 ✓.
+</pre>
+<p>Geometrically, the lines \(3x+2y = 16\) and \(x-y=2\) intersect at \((4,2)\).</p>
+</div>
+
+<h3>Linear / Quadratic Systems</h3>
+<p>Substitute the linear equation into the quadratic to reduce to a single quadratic in one variable. Possibilities: two solutions (line is a secant — cuts the curve), one solution (line is tangent), no solutions (line misses the curve). The discriminant of the resulting quadratic tells you which case you are in.</p>
+
+<div class="example">
+<h3>Worked Example 6 — Linear/quadratic</h3>
+<p>Solve \(y = x^2 - 2x - 3\) and \(y = x - 3\). Interpret the result geometrically.</p>
+<pre>
+<span class="ln">1.</span>  x² − 2x − 3 = x − 3
+<span class="ln">2.</span>  x² − 3x     = 0
+<span class="ln">3.</span>  x(x − 3)    = 0
+<span class="ln">4.</span>  x = 0  or  x = 3.
+<span class="ln">5.</span>  Corresponding y:  y = 0 − 3 = −3;  y = 3 − 3 = 0.
+<span class="ln">6.</span>  ∴ intersection points: (0, −3) and (3, 0).
+</pre>
+<p>The line \(y = x-3\) crosses the parabola \(y = x^2 - 2x - 3\) at exactly these two points (two real solutions ⇒ line is a secant).</p>
+</div>
+
+<h2>4. Inequalities</h2>
+
+<p>When manipulating inequalities, remember: multiplying or dividing both sides by a <em>negative</em> number <strong>reverses</strong> the inequality.</p>
+
+<h3>Linear Inequalities</h3>
+<p>Treat like a linear equation, but reverse the sign when multiplying/dividing by negatives.</p>
+<p>Example: \(3 - 2x &gt; 7\) ⇒ \(-2x &gt; 4\) ⇒ \(x &lt; -2\).</p>
+
+<h3>Quadratic Inequalities</h3>
+<p>Solve \(ax^2 + bx + c &gt; 0\) (or \(&lt;, \leq, \geq\)) in three steps:</p>
+<ol>
+  <li>Find the roots \(\alpha, \beta\) of \(ax^2 + bx + c = 0\).</li>
+  <li>Sketch the parabola (or draw a sign diagram) noting whether it opens up (\(a&gt;0\)) or down (\(a&lt;0\)).</li>
+  <li>Read off the \(x\)-values where the sketch lies above/below the \(x\)-axis as required.</li>
+</ol>
+
+<div class="example">
+<h3>Worked Example 7 — Quadratic inequality</h3>
+<p>Solve \(x^2 - x - 6 \leq 0\).</p>
+<pre>
+<span class="ln">1.</span>  Roots of x² − x − 6 = 0:  (x − 3)(x + 2) = 0  ⇒  x = −2, x = 3.
+<span class="ln">2.</span>  Parabola opens upwards (coefficient of x² is +1).
+<span class="ln">3.</span>  y ≤ 0 between the roots.
+<span class="ln">4.</span>  ∴ solution:  −2 ≤ x ≤ 3.
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — sign diagram for a quadratic inequality.</strong> Always sketch the parabola, even a rough one. A common error is to write \(x &lt; -2\) or \(x &gt; 3\) for \(x^2 - x - 6 \leq 0\) — that is the solution to the &gt; 0 version. The sketch prevents this inversion of the answer. Remember: <em>between the roots</em> for \(\leq 0\) (upward parabola), <em>outside the roots</em> for \(\geq 0\).
+</div>
+
+<h3>Modulus Inequalities</h3>
+<p>The modulus \(|x|\) means the non-negative value of \(x\). Useful equivalences:</p>
+<ul>
+  <li>\(|x| = a\) (\(a \geq 0\))  iff  \(x = a\) or \(x = -a\).</li>
+  <li>\(|x| \leq a\)  iff  \(-a \leq x \leq a\).</li>
+  <li>\(|x| \geq a\)  iff  \(x \leq -a\) or \(x \geq a\).</li>
+</ul>
+<p>Example: \(|2x - 1| &lt; 5\) ⇒ \(-5 &lt; 2x - 1 &lt; 5\) ⇒ \(-4 &lt; 2x &lt; 6\) ⇒ \(-2 &lt; x &lt; 3\).</p>
+
+<h2>5. Polynomials</h2>
+
+<div class="definition">
+<strong>Polynomial.</strong> An expression of the form \(a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0\), where \(a_0, a_1, \ldots, a_n\) are real constants with \(a_n \neq 0\). The <em>degree</em> is \(n\) and the <em>leading coefficient</em> is \(a_n\).
+</div>
+
+<h3>Polynomial Division</h3>
+<p>To divide polynomial \(f(x)\) by \(g(x)\) (\(\deg g \leq \deg f\)), use long division:</p>
+<ul>
+  <li>Divide leading term of \(f\) by leading term of \(g\) — this is the next term of the quotient.</li>
+  <li>Multiply \(g(x)\) by that term, subtract from \(f(x)\).</li>
+  <li>Repeat on the remainder until the remainder has degree \(&lt; \deg g\).</li>
+</ul>
+
+<div class="example">
+<h3>Worked Example 8 — Polynomial long division</h3>
+<p>Divide \(2x^3 - 3x^2 - 8x + 12\) by \(x - 2\).</p>
+<pre>
+                2x²  −  x  − 10          <span class="cm">// quotient</span>
+          ___________________________________
+  x − 2 )  2x³ − 3x² − 8x + 12
+           2x³ − 4x²                      <span class="cm">// subtract:  2x²·(x−2)</span>
+          ───────────
+                  x² − 8x
+                  x² − 2x                 <span class="cm">// subtract:  x·(x−2)</span>
+                ─────────
+                      −10x + 12
+                      −10x + 20           <span class="cm">// subtract:  −10·(x−2)</span>
+                    ─────────
+                           −8             <span class="cm">// remainder</span>
+</pre>
+<p>So \(2x^3 - 3x^2 - 8x + 12 = (x - 2)(2x^2 - x - 10) - 8\).</p>
+</div>
+
+<h3>Factor and Remainder Theorems</h3>
+
+<div class="definition">
+<strong>Factor theorem.</strong> For a polynomial \(f(x)\) and a constant \(a\): \((x - a)\) is a factor of \(f(x)\) if and only if \(f(a) = 0\).
+</div>
+
+<p><strong>Remainder theorem.</strong> When \(f(x)\) is divided by \((x - a)\), the remainder equals \(f(a)\). (The factor theorem is the special case where this remainder is 0.)</p>
+
+<div class="example">
+<h3>Worked Example 9 — Factor theorem applied</h3>
+<p>Factorise \(x^3 + 2x^2 - 5x - 6\) completely.</p>
+<pre>
+<span class="ln">1.</span>  Try small integers dividing the constant term −6:  ±1, ±2, ±3, ±6.
+<span class="ln">2.</span>  f(−1) = −1 + 2 + 5 − 6 = 0.                    <span class="cm">// so (x + 1) is a factor</span>
+<span class="ln">3.</span>  Divide x³ + 2x² − 5x − 6  by  (x + 1):
+<span class="ln">   </span>    quotient  =  x² + x − 6.
+<span class="ln">4.</span>  Factor the quadratic:  x² + x − 6 = (x + 3)(x − 2).
+<span class="ln">5.</span>  ∴ x³ + 2x² − 5x − 6 = (x + 1)(x + 3)(x − 2).
+<span class="ln">6.</span>  Roots:  x = −3, −1, 2.
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — searching for roots.</strong> For a polynomial with integer coefficients and leading coefficient 1, any rational root must be an integer dividing the constant term. For leading coefficient \(a_n\), any rational root \(p/q\) satisfies \(p \mid a_0\) and \(q \mid a_n\). Start with \(\pm 1\), then \(\pm 2\), before trying larger divisors.
+</div>
+
+<h3>Sketching Cubics and Quartics</h3>
+<p>Given a cubic in factorised form \(y = a(x - r_1)(x - r_2)(x - r_3)\):</p>
+<ul>
+  <li>Three distinct real roots — the curve crosses the \(x\)-axis three times.</li>
+  <li>A repeated root \((x-r)^2\) — the curve <em>touches</em> (is tangent to) the \(x\)-axis at \(x = r\).</li>
+  <li>A triple root \((x-r)^3\) — the curve has a point of inflection on the \(x\)-axis at \(x = r\).</li>
+  <li>As \(x \to +\infty\): \(y \to +\infty\) if \(a &gt; 0\); \(y \to -\infty\) if \(a &lt; 0\). Reverse for \(x \to -\infty\).</li>
+</ul>
+<p>Analogous rules apply to quartics: leading coefficient positive gives "up then up" end behaviour; leading coefficient negative gives "down then down".</p>
+
+<h2>6. Graphs of Functions — Transformations</h2>
+
+<p>Starting from the graph of \(y = f(x)\), a sequence of standard transformations produces related graphs. The four families are <em>translation</em>, <em>stretch</em>, <em>reflection</em>, and combinations thereof.</p>
+
+<h3>Transformation Summary</h3>
+
+<table>
+<tr><th>New function</th><th>Effect on graph of \(y = f(x)\)</th><th>Worded description</th></tr>
+<tr><td>\(f(x) + a\)</td><td>Translate vertically</td><td>Shift up by \(a\) (down if \(a&lt;0\))</td></tr>
+<tr><td>\(f(x - a)\)</td><td>Translate horizontally</td><td>Shift right by \(a\) (left if \(a&lt;0\))</td></tr>
+<tr><td>\(a \cdot f(x)\)</td><td>Vertical stretch</td><td>Scale \(y\)-coordinates by factor \(a\)</td></tr>
+<tr><td>\(f(ax)\)</td><td>Horizontal stretch</td><td>Scale \(x\)-coordinates by factor \(1/a\)</td></tr>
+<tr><td>\(-f(x)\)</td><td>Reflect in \(x\)-axis</td><td>Flip vertically</td></tr>
+<tr><td>\(f(-x)\)</td><td>Reflect in \(y\)-axis</td><td>Flip horizontally</td></tr>
+<tr><td>\(|f(x)|\)</td><td>Reflect negative parts upwards</td><td>Any part below the \(x\)-axis is flipped above</td></tr>
+<tr><td>\(f(|x|)\)</td><td>Right half mirrored to left</td><td>Keep \(x \geq 0\) part; reflect it in the \(y\)-axis</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Exam tip — direction of horizontal shifts.</strong> Horizontal transformations behave <em>opposite</em> to what the sign suggests. \(f(x - 3)\) shifts the graph <strong>right</strong> by 3 (because the \(x\)-value that used to give \(f(0)\) now needs \(x = 3\)). Similarly \(f(2x)\) <strong>compresses</strong> horizontally by factor 2; \(f(x/2)\) stretches by factor 2. Many students get the sign wrong under pressure — practice this until it's automatic.
+</div>
+
+<h3>Combining Transformations</h3>
+<p>Order matters. For \(y = a f(b(x - c)) + d\): the inside (\(b(x-c)\)) acts first on \(x\) — horizontal stretch by \(1/b\), then translation right by \(c\); the outside (\(a \cdot + d\)) acts next on \(y\) — vertical stretch by \(a\), then translation up by \(d\).</p>
+
+<h2>7. Rational Functions and Asymptotes</h2>
+
+<p>A rational function is a quotient of two polynomials, \(y = P(x)/Q(x)\). The standard A-level example is \(y = 1/x\).</p>
+
+<ul>
+  <li><strong>Vertical asymptote</strong>: \(x = a\) where \(Q(a) = 0\) but \(P(a) \neq 0\). The function tends to \(\pm\infty\) as \(x \to a\).</li>
+  <li><strong>Horizontal asymptote</strong>: behaviour as \(x \to \pm\infty\). If \(\deg P &lt; \deg Q\), the horizontal asymptote is \(y = 0\); if \(\deg P = \deg Q\), it is \(y\) = ratio of leading coefficients.</li>
+</ul>
+
+<!-- SVG: y = 1/x -->
+<svg viewBox="0 0 420 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block;margin:20px auto;">
+  <line x1="10" y1="130" x2="410" y2="130" stroke="#64748b" stroke-width="1"/>
+  <line x1="210" y1="10" x2="210" y2="250" stroke="#64748b" stroke-width="1"/>
+  <text x="400" y="145" fill="#64748b" font-size="12">x</text>
+  <text x="218" y="20" fill="#64748b" font-size="12">y</text>
+  <path d="M 220 20 Q 222 120 310 128 Q 400 130 405 130" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <path d="M 200 240 Q 198 140 110 132 Q 20 130 15 130" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="300" y="60" fill="#2563eb" font-size="13">y = 1/x</text>
+  <text x="130" y="210" fill="#64748b" font-size="11">asymptotes: x = 0 (vertical), y = 0 (horizontal)</text>
+</svg>
+
+<p>Translations apply as usual: \(y = 1/(x - 1)\) shifts the graph of \(y = 1/x\) right by 1, giving a vertical asymptote at \(x = 1\). \(y = 1/x + 2\) shifts it up by 2, giving a horizontal asymptote at \(y = 2\).</p>
+
+<h2>8. Partial Fractions</h2>
+
+<div class="definition">
+<strong>Partial fractions.</strong> A technique that decomposes a proper rational expression \(P(x)/Q(x)\) (with \(\deg P &lt; \deg Q\)) into a sum of simpler fractions whose denominators are the factors of \(Q(x)\).
+</div>
+
+<p>If \(\deg P \geq \deg Q\), first perform polynomial division to obtain a polynomial plus a proper rational remainder, then decompose the remainder.</p>
+
+<h3>Setup by Denominator Type</h3>
+
+<table>
+<tr><th>Factor in \(Q(x)\)</th><th>Corresponding partial fraction(s)</th></tr>
+<tr><td>Distinct linear \((x - a)\)</td><td>\(\dfrac{A}{x - a}\)</td></tr>
+<tr><td>Repeated linear \((x - a)^2\)</td><td>\(\dfrac{A}{x - a} + \dfrac{B}{(x - a)^2}\)</td></tr>
+<tr><td>Repeated linear \((x - a)^3\)</td><td>\(\dfrac{A}{x - a} + \dfrac{B}{(x - a)^2} + \dfrac{C}{(x - a)^3}\)</td></tr>
+<tr><td>Irreducible quadratic \((x^2 + bx + c)\), \(\Delta &lt; 0\)</td><td>\(\dfrac{Ax + B}{x^2 + bx + c}\)</td></tr>
+</table>
+
+<div class="example">
+<h3>Worked Example 10 — Distinct linear factors</h3>
+<p>Express \(\dfrac{3x}{(x - 1)(x + 2)}\) in partial fractions.</p>
+<pre>
+<span class="ln">1.</span>  Set up:   3x / [(x − 1)(x + 2)]  =  A/(x − 1) + B/(x + 2).
+<span class="ln">2.</span>  Multiply through by (x − 1)(x + 2):
+<span class="ln">3.</span>               3x = A(x + 2) + B(x − 1).
+<span class="ln">4.</span>  Substitute x = 1:   3(1)  = A(3) + B(0)   ⇒   A = 1.
+<span class="ln">5.</span>  Substitute x = −2:  3(−2) = A(0) + B(−3)  ⇒   B = 2.
+<span class="ln">6.</span>  ∴  3x / [(x − 1)(x + 2)]  =  1/(x − 1) + 2/(x + 2).
+<span class="ln">7.</span>  Check:  1/(x−1) + 2/(x+2) = [(x+2) + 2(x−1)] / [(x−1)(x+2)] = 3x / [(x−1)(x+2)] ✓
+</pre>
+</div>
+
+<div class="example">
+<h3>Worked Example 11 — Repeated linear factor</h3>
+<p>Express \(\dfrac{2x + 1}{(x - 1)(x + 2)^2}\) in partial fractions.</p>
+<pre>
+<span class="ln">1.</span>  Set up:  (2x + 1) / [(x − 1)(x + 2)²]
+<span class="ln">   </span>         = A/(x − 1) + B/(x + 2) + C/(x + 2)².
+<span class="ln">2.</span>  Multiply up:   2x + 1 = A(x + 2)² + B(x − 1)(x + 2) + C(x − 1).
+<span class="ln">3.</span>  x = 1:    3   = A(9) + 0 + 0            ⇒   A = 1/3.
+<span class="ln">4.</span>  x = −2:  −3   = 0 + 0 + C(−3)          ⇒   C = 1.
+<span class="ln">5.</span>  Compare x² coefficients: 0 = A + B       ⇒   B = −1/3.
+<span class="ln">6.</span>  ∴ (2x+1)/[(x−1)(x+2)²]
+<span class="ln">   </span>     = 1/[3(x − 1)] − 1/[3(x + 2)] + 1/(x + 2)².
+</pre>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — setting up partial fractions.</strong> The most common error is forgetting the repeated-factor rule. \((x - a)^2\) contributes <em>two</em> terms: \(A/(x-a)\) and \(B/(x-a)^2\). Missing the first of these produces a system with no solution — if you find your simultaneous equations are inconsistent, check the setup before hunting for arithmetic slips.
+</div>
+
+<h2>9. Functions</h2>
+
+<div class="definition">
+<strong>Function.</strong> A rule \(f: A \to B\) that assigns to each element \(x\) of a set \(A\) (the <em>domain</em>) exactly one element \(f(x)\) of \(B\). The set of actual output values \(\{f(x) : x \in A\}\) is the <em>range</em> (a subset of \(B\), the codomain).
+</div>
+
+<h3>Key Terminology</h3>
+<ul>
+  <li><strong>One-to-one (injective).</strong> Different inputs give different outputs: \(f(x_1) = f(x_2) \Rightarrow x_1 = x_2\). Graph passes the <em>horizontal line test</em> — every horizontal line meets the graph in at most one point.</li>
+  <li><strong>Many-to-one.</strong> Two or more inputs map to the same output. E.g. \(f(x) = x^2\) on \(\mathbb{R}\) is many-to-one since \(f(2) = f(-2) = 4\).</li>
+  <li><strong>Onto (surjective).</strong> Every element of the codomain is hit: range = codomain.</li>
+  <li><strong>Bijective.</strong> Both injective and surjective — there is a perfect pairing between domain and codomain. A function is invertible if and only if it is bijective (or, by restricting the codomain to the range, merely injective).</li>
+</ul>
+
+<div class="definition">
+<strong>Inverse function.</strong> If \(f: A \to B\) is one-to-one, its inverse \(f^{-1}: \text{Range}(f) \to A\) is defined by \(f^{-1}(y) = x\) iff \(f(x) = y\). The graph of \(y = f^{-1}(x)\) is the reflection of \(y = f(x)\) in the line \(y = x\). Domain of \(f^{-1}\) = Range of \(f\); Range of \(f^{-1}\) = Domain of \(f\).
+</div>
+
+<h3>Finding an Inverse Algebraically</h3>
+<ol>
+  <li>Write \(y = f(x)\).</li>
+  <li>Swap \(x\) and \(y\) (or rearrange to make \(x\) the subject, then relabel).</li>
+  <li>Solve for the new \(y\); this gives \(f^{-1}(x)\).</li>
+  <li>State the domain of \(f^{-1}\) — it is the range of \(f\).</li>
+</ol>
+
+<div class="example">
+<h3>Worked Example 12 — Inverse of a rational function</h3>
+<p>Let \(f(x) = \dfrac{2x + 3}{x - 1}\), defined for \(x \in \mathbb{R}\) with \(x \neq 1\). Find \(f^{-1}(x)\) and state its domain.</p>
+<pre>
+<span class="ln"> 1.</span>  Let y = (2x + 3)/(x − 1).
+<span class="ln"> 2.</span>  Multiply up:        y(x − 1) = 2x + 3
+<span class="ln"> 3.</span>                       yx − y   = 2x + 3
+<span class="ln"> 4.</span>                       yx − 2x  = y + 3
+<span class="ln"> 5.</span>                       x(y − 2) = y + 3
+<span class="ln"> 6.</span>                       x        = (y + 3)/(y − 2).
+<span class="ln"> 7.</span>  Swap variables:     f⁻¹(x)   = (x + 3)/(x − 2).
+<span class="ln"> 8.</span>  Domain of f⁻¹ = Range of f.
+<span class="ln"> 9.</span>    Since f(x) = 2 + 5/(x − 1), f takes every real value except 2.
+<span class="ln">10.</span>  ∴ Domain of f⁻¹ is  { x ∈ ℝ : x ≠ 2 }.
+</pre>
+<p>Note the domain of \(f^{-1}\) is <em>not</em> simply "all reals" — the value \(x = 2\) makes the denominator zero. Stating the domain is expected on every inverse-function question.</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — always state the domain.</strong> OCR mark schemes routinely allocate a dedicated mark for the domain of \(f^{-1}\). The domain of \(f^{-1}\) is the range of \(f\); find it by (i) sketching \(y = f(x)\), (ii) completing the square, or (iii) finding values \(f\) cannot attain. Forgetting this costs a mark almost every time.
+</div>
+
+<h3>Composition of Functions</h3>
+<p>The composition \((f \circ g)(x) = f(g(x))\) means: apply \(g\) first, then apply \(f\) to the result. In general \(f \circ g \neq g \circ f\). The domain of \(f \circ g\) is \(\{x \in \text{Domain}(g) : g(x) \in \text{Domain}(f)\}\).</p>
+
+<p>Example: if \(f(x) = x + 2\) and \(g(x) = x^2\), then \((f \circ g)(x) = x^2 + 2\) whereas \((g \circ f)(x) = (x + 2)^2 = x^2 + 4x + 4\).</p>
+
+<p><strong>Self-inverse property:</strong> \(f \circ f^{-1} (x) = x\) and \(f^{-1} \circ f(x) = x\) on the appropriate domains. This is often used as a verification step.</p>
+
+<h2>10. The Modulus Function</h2>
+
+<div class="definition">
+<strong>Modulus (absolute value).</strong> \(|x| = x\) if \(x \geq 0\), and \(|x| = -x\) if \(x &lt; 0\). Equivalently \(|x| = \sqrt{x^2}\). Geometrically, \(|x|\) is the distance from \(x\) to 0 on the number line; \(|x - a|\) is the distance from \(x\) to \(a\).
+</div>
+
+<h3>Graph of \(y = |f(x)|\)</h3>
+<p>Sketch \(y = f(x)\), then reflect any part below the \(x\)-axis in the \(x\)-axis.</p>
+
+<!-- SVG: y = |x - 1| -->
+<svg viewBox="0 0 420 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:420px;display:block;margin:20px auto;">
+  <line x1="10" y1="170" x2="410" y2="170" stroke="#64748b" stroke-width="1"/>
+  <line x1="120" y1="10" x2="120" y2="210" stroke="#64748b" stroke-width="1"/>
+  <text x="400" y="185" fill="#64748b" font-size="12">x</text>
+  <text x="128" y="20" fill="#64748b" font-size="12">y</text>
+  <line x1="40" y1="30" x2="200" y2="170" stroke="#2563eb" stroke-width="2"/>
+  <line x1="200" y1="170" x2="400" y2="30" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="200" cy="170" r="3" fill="#dc2626"/>
+  <text x="205" y="185" fill="#dc2626" font-size="12">(1, 0)</text>
+  <text x="300" y="100" fill="#2563eb" font-size="13">y = |x − 1|</text>
+</svg>
+
+<h3>Solving Modulus Equations</h3>
+<p>Two standard approaches to \(|f(x)| = g(x)\):</p>
+<ul>
+  <li><strong>Case method.</strong> \(|f(x)| = g(x)\) ⇔ \(f(x) = g(x)\) <em>or</em> \(f(x) = -g(x)\), with a final check that \(g(x) \geq 0\) at each candidate.</li>
+  <li><strong>Graphical method.</strong> Sketch both curves; intersection points are the solutions.</li>
+</ul>
+
+<div class="example">
+<h3>Worked Example 13 — Modulus equation</h3>
+<p>Solve \(|2x - 3| = x + 4\).</p>
+<pre>
+<span class="cm">// Case 1: 2x − 3 ≥ 0, i.e. x ≥ 3/2</span>
+<span class="ln">1.</span>   2x − 3 = x + 4  ⇒  x = 7.  Check x ≥ 3/2 ✓ and RHS = 11 > 0 ✓.
+
+<span class="cm">// Case 2: 2x − 3 < 0, i.e. x < 3/2</span>
+<span class="ln">2.</span>   −(2x − 3) = x + 4  ⇒  −2x + 3 = x + 4  ⇒  −3x = 1  ⇒  x = −1/3.
+<span class="ln">3.</span>   Check: x < 3/2 ✓, and RHS = −1/3 + 4 = 11/3 > 0 ✓.
+
+<span class="ln">4.</span>   ∴ solutions:  x = −1/3  or  x = 7.
+</pre>
+</div>
+
+<p>For inequalities \(|f(x)| \leq g(x)\) equivalent to \(-g(x) \leq f(x) \leq g(x)\) (when \(g(x) \geq 0\)). For \(|f(x)| \geq g(x)\), the solution is \(f(x) \leq -g(x)\) or \(f(x) \geq g(x)\).</p>
+
+<h2>11. Curve Sketching — Putting It All Together</h2>
+
+<p>A complete sketch of \(y = f(x)\) should show:</p>
+<ol>
+  <li><strong>Intercepts</strong> — values where \(x = 0\) (the \(y\)-intercept) and \(f(x) = 0\) (the \(x\)-intercepts).</li>
+  <li><strong>Stationary points</strong> — solve \(f'(x) = 0\); classify as max/min/inflection.</li>
+  <li><strong>Asymptotes</strong> — vertical where the function is undefined, horizontal from end behaviour.</li>
+  <li><strong>End behaviour</strong> — as \(x \to \pm\infty\), what does \(f(x)\) do?</li>
+  <li><strong>Symmetries</strong> — is \(f\) even (\(f(-x) = f(x)\)) or odd (\(f(-x) = -f(x)\))?</li>
+</ol>
+
+<div class="example">
+<h3>Worked Example 14 — Sketch \(y = x^3 - 3x\)</h3>
+<pre>
+<span class="ln">1.</span>  Intercepts: y(0) = 0. Roots of x³ − 3x = x(x² − 3) = 0 ⇒ x = 0, ±√3.
+<span class="ln">2.</span>  Stationary points: y' = 3x² − 3 = 0 ⇒ x = ±1.
+<span class="ln">3.</span>    At x = 1: y = 1 − 3 = −2 (local min, y'' = 6x = 6 > 0).
+<span class="ln">4.</span>    At x = −1: y = −1 + 3 = 2 (local max, y'' = −6 < 0).
+<span class="ln">5.</span>  End behaviour: x → +∞ ⇒ y → +∞;  x → −∞ ⇒ y → −∞.
+<span class="ln">6.</span>  Symmetry: f(−x) = −x³ + 3x = −f(x) — odd, rotationally symmetric about origin.
+</pre>
+</div>
+
+<h2>12. Binomial Expansion — Positive Integer Index</h2>
+
+<div class="definition">
+<strong>Binomial coefficient.</strong> For non-negative integers \(n \geq r\), \(\binom{n}{r} = {}^{n}C_r = \dfrac{n!}{r!(n-r)!}\). It counts the number of ways of choosing \(r\) objects from \(n\), and equals the coefficient of \(x^r\) in \((1+x)^n\).
+</div>
+
+<p>The <strong>Binomial Theorem</strong> (for \(n \in \mathbb{Z}^+\)):</p>
+<p>\((a + b)^n = \displaystyle\sum_{r=0}^{n} \binom{n}{r} a^{n-r} b^r = a^n + \binom{n}{1} a^{n-1} b + \binom{n}{2} a^{n-2} b^2 + \cdots + b^n\).</p>
+
+<h3>Pascal's Triangle</h3>
+<p>Row \(n\) of Pascal's triangle gives \(\binom{n}{0}, \binom{n}{1}, \ldots, \binom{n}{n}\). Each entry is the sum of the two entries above it.</p>
+
+<pre>
+n = 0:                    1
+n = 1:                  1   1
+n = 2:                1   2   1
+n = 3:              1   3   3   1
+n = 4:            1   4   6   4   1
+n = 5:          1   5   10  10   5   1
+n = 6:        1   6   15  20  15   6   1
+</pre>
+
+<div class="example">
+<h3>Worked Example 15 — Expand \((1 + 2x)^5\)</h3>
+<pre>
+<span class="ln">1.</span>  Use (a + b)^5 with a = 1, b = 2x. Coefficients from row 5: 1, 5, 10, 10, 5, 1.
+<span class="ln">2.</span>  (1 + 2x)^5
+<span class="ln">   </span>   = 1 + 5(2x) + 10(2x)² + 10(2x)³ + 5(2x)⁴ + (2x)^5
+<span class="ln">   </span>   = 1 + 10x + 40x² + 80x³ + 80x⁴ + 32x⁵.
+<span class="ln">3.</span>  Check constant term (x=0): 1 ✓.  Check sum of coefficients (x=1): 3⁵ = 243 = 1+10+40+80+80+32 ✓.
+</pre>
+</div>
+
+<p><strong>Use in approximation.</strong> If \(x\) is small, \((1 + 2x)^5 \approx 1 + 10x + 40x^2\), because higher powers of \(x\) are negligible. This lets you approximate numerical values such as \(1.02^5\) by setting \(x = 0.01\): \(1 + 10(0.01) + 40(0.01)^2 = 1 + 0.1 + 0.004 = 1.104\), compared with the exact \(1.1040808\ldots\).</p>
+
+<h2>13. Binomial Expansion — Rational or Negative Index</h2>
+
+<p>For index \(n\) <em>not</em> a non-negative integer, the expansion is an <em>infinite series</em>:</p>
+
+<div class="equation">
+\((1 + x)^n = 1 + nx + \dfrac{n(n-1)}{2!} x^2 + \dfrac{n(n-1)(n-2)}{3!} x^3 + \cdots\)
+</div>
+
+<p>The series converges (and equals \((1 + x)^n\)) only when \(|x| &lt; 1\). For \((a + x)^n\) with \(a \neq 1\), factor out \(a\) first:
+\((a + x)^n = a^n \left(1 + \dfrac{x}{a}\right)^n\), valid for \(|x/a| &lt; 1\), i.e. \(|x| &lt; |a|\).</p>
+
+<div class="example">
+<h3>Worked Example 16 — First four terms of \((1 + x)^{-2}\)</h3>
+<pre>
+<span class="ln">1.</span>  n = −2. Terms:
+<span class="ln">2.</span>   Term 0:  1
+<span class="ln">3.</span>   Term 1:  n · x               = (−2) x              = −2x
+<span class="ln">4.</span>   Term 2:  n(n−1)/2! · x²       = (−2)(−3)/2 · x²     = 3x²
+<span class="ln">5.</span>   Term 3:  n(n−1)(n−2)/3! · x³  = (−2)(−3)(−4)/6 · x³ = −4x³
+<span class="ln">6.</span>  ∴ (1 + x)^(−2) ≈ 1 − 2x + 3x² − 4x³ + … ,   valid for |x| < 1.
+</pre>
+<p>Cross-check: differentiate the geometric series \(1/(1-u) = 1 + u + u^2 + \cdots\) or recall \(1/(1+x)^2 = \sum_{k \geq 0} (-1)^k (k+1) x^k = 1 - 2x + 3x^2 - 4x^3 + \cdots\). ✓</p>
+</div>
+
+<div class="exam-tip">
+<strong>Exam tip — validity.</strong> When you write an expansion of \((1 + x)^n\) for non-integer \(n\), <em>always</em> state the range of validity (\(|x| &lt; 1\), or the appropriate scaled version). The "validity" mark is separate from the expansion marks on nearly every OCR paper.
+</div>
+
+<h2>14. Consolidated Summary and Exam Strategy</h2>
+
+<div class="exam-tip">
+<strong>Chapter-wide checklist for Algebra and Functions.</strong>
+<ul>
+  <li><strong>Indices:</strong> convert radicals to fractional powers before manipulating (e.g. \(\sqrt[3]{x^2} = x^{2/3}\)).</li>
+  <li><strong>Surds:</strong> always rationalise; keep surds simplified (\(\sqrt{50} = 5\sqrt{2}\)).</li>
+  <li><strong>Quadratics:</strong> factorise first, formula second, completing the square when you need the vertex/range/min-max.</li>
+  <li><strong>Inequalities:</strong> sketch or use a sign diagram; reverse the sign when multiplying/dividing by a negative.</li>
+  <li><strong>Polynomial division / factor theorem:</strong> test \(\pm 1, \pm 2, \pm 3\) before larger divisors of the constant term.</li>
+  <li><strong>Transformations:</strong> inside the bracket = horizontal and reversed; outside = vertical and in the obvious direction.</li>
+  <li><strong>Partial fractions:</strong> match the factor structure exactly — repeated factors need multiple terms; irreducible quadratics need a linear numerator.</li>
+  <li><strong>Functions:</strong> always state the domain of an inverse. Check one-to-one before asserting invertibility.</li>
+  <li><strong>Modulus:</strong> two cases, or the graphical method — always verify candidate solutions against the original equation.</li>
+  <li><strong>Binomial:</strong> for integer \(n\), finite expansion via Pascal's triangle; for rational/negative \(n\), infinite series convergent for \(|x| &lt; 1\) — state validity.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+<strong>Typical OCR examiner complaints (from mark reports).</strong>
+<ul>
+  <li>Leaving surds in denominators when a "simplified" answer is requested.</li>
+  <li>Not stating the domain of \(f^{-1}\).</li>
+  <li>Omitting the validity \(|x| &lt; 1\) after a binomial expansion for non-integer index.</li>
+  <li>Reversing the solution of a quadratic inequality (inside-vs-outside the roots confusion).</li>
+  <li>Forgetting the repeated-factor term \(B/(x-a)^2\) in a partial fraction setup.</li>
+  <li>Accepting an extraneous "solution" to a modulus equation without checking that both sides have the same sign.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

@@ -798,10 +798,19 @@ const EXAM_DATES = {
     { paper: 'Paper 1 — On-screen', date: '2026-06-10', time: 'PM', duration: '2h 30m' },
     { paper: 'Paper 2 — Written', date: '2026-06-17', time: 'AM', duration: '2h' },
   ],
+  'Computer Science_AQA|alevel': [
+    { paper: 'Paper 1 — On-screen Programming', date: '2026-06-11', time: 'AM', duration: '2h 30m' },
+    { paper: 'Paper 2 — Written Theory', date: '2026-06-18', time: 'PM', duration: '2h 30m' },
+  ],
   'Mathematics_OCR|gcse': [
     { paper: 'Paper 1 — Non-Calculator', date: '2026-06-04', time: 'AM', duration: '1h 30m' },
     { paper: 'Paper 2 — Calculator', date: '2026-06-09', time: 'PM', duration: '1h 30m' },
     { paper: 'Paper 3 — Calculator', date: '2026-06-18', time: 'AM', duration: '1h 30m' },
+  ],
+  'Mathematics_OCR|alevel': [
+    { paper: 'Paper 1 — Pure Mathematics', date: '2026-06-03', time: 'PM', duration: '2h' },
+    { paper: 'Paper 2 — Pure Mathematics & Statistics', date: '2026-06-11', time: 'PM', duration: '2h' },
+    { paper: 'Paper 3 — Pure Mathematics & Mechanics', date: '2026-06-18', time: 'PM', duration: '2h' },
   ],
   'Mathematics_AQA': [
     { paper: 'Paper 1 — Pure Mathematics', date: '2026-06-03', time: 'PM', duration: '2h' },
@@ -1269,6 +1278,7 @@ const SUBJECT_TOPIC_KEY = {
   'Computer Science_OCR': 'cs-ocr',
   'Computer Science_OCR|alevel': 'cs-ocr-alevel',
   'Computer Science_AQA|gcse': 'cs-aqa-gcse',
+  'Computer Science_AQA|alevel': 'cs-aqa-alevel',
   'Physics_Edexcel': 'physics-edexcel',
   'Physics_AQA': 'physics-aqa',
   'Physics_OCR A': 'physics-ocr-a',
@@ -1292,6 +1302,7 @@ const SUBJECT_TOPIC_KEY = {
   'Geography_Eduqas|gcse': 'geography-eduqas-gcse',
   'Mathematics_AQA': 'maths-aqa',
   'Mathematics_OCR|gcse': 'maths-ocr-gcse',
+  'Mathematics_OCR|alevel': 'maths-ocr-alevel',
   'Mathematics_Edexcel': 'maths-edexcel',
   'Further Mathematics_Edexcel': 'further-maths-edexcel',
   'Further Mathematics_AQA': 'further-maths-aqa',
@@ -1300,11 +1311,12 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_AQA': 'english-aqa',
   'English Language_Edexcel': 'english-edexcel',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-ocr-gcse-notes.html',
   'Computer Science_OCR|alevel': 'subject-notes/cs-ocr-alevel-notes.html',
   'Computer Science_AQA|gcse': 'subject-notes/cs-aqa-gcse-notes.html',
+  'Computer Science_AQA|alevel': 'subject-notes/cs-aqa-alevel-notes.html',
   'Physics_Edexcel': 'subject-notes/physics-edexcel-notes.html',
   'Physics_AQA': 'subject-notes/physics-aqa-notes.html',
   'Physics_OCR A': 'subject-notes/physics-ocr-a-notes.html',
@@ -1328,6 +1340,7 @@ const SUBJECT_NOTES_PAGE = {
   'Geography_Eduqas|gcse': 'subject-notes/geography-eduqas-gcse-notes.html',
   'Mathematics_AQA': 'subject-notes/maths-aqa-notes.html',
   'Mathematics_OCR|gcse': 'subject-notes/maths-ocr-gcse-notes.html',
+  'Mathematics_OCR|alevel': 'subject-notes/maths-ocr-alevel-notes.html',
   'Mathematics_Edexcel': 'subject-notes/maths-edexcel-notes.html',
   'Further Mathematics_Edexcel': 'subject-notes/further-maths-edexcel-notes.html',
   'Further Mathematics_AQA': 'subject-notes/further-maths-aqa-notes.html',
@@ -2050,6 +2063,23 @@ const DIAG_TOPICS = {
       { id: '2.3', name: 'Algorithms', sub: 'Big-O, Dijkstra, A*, analysis' },
     ]
   },
+  'Computer Science_AQA|alevel': {
+    label: 'Computer Science — AQA',
+    emoji: '💻',
+    page: 'diagnostics/cs-aqa-alevel-diagnostic.html',
+    topics: [
+      { id: '4.1', name: 'Fundamentals of Programming', sub: 'Data types, OOP, recursion, exception handling' },
+      { id: '4.2', name: 'Fundamentals of Data Structures', sub: 'Stacks, queues, trees, graphs, hash tables' },
+      { id: '4.3', name: 'Fundamentals of Algorithms', sub: 'Big-O, searching, sorting, graph traversal, Dijkstra, A*' },
+      { id: '4.4', name: 'Theory of Computation', sub: 'FSMs, regex, Turing machines, halting problem' },
+      { id: '4.5', name: 'Fundamentals of Data Representation', sub: 'Number systems, floating point, compression, encryption' },
+      { id: '4.6', name: 'Fundamentals of Computer Systems', sub: 'OS, Boolean algebra, logic gates, Karnaugh maps, flip-flops' },
+      { id: '4.7', name: 'Computer Organisation & Architecture', sub: 'Von Neumann, FDE cycle, CISC/RISC, pipelining, I/O' },
+      { id: '4.8', name: 'Consequences of Uses of Computing', sub: 'Ethics, legislation, environmental, AI, surveillance' },
+      { id: '4.9', name: 'Communication & Networking', sub: 'TCP/IP, topologies, encryption, protocols, routing' },
+      { id: '4.10', name: 'Fundamentals of Databases', sub: 'SQL, normalisation, ER modelling, ACID, transactions' },
+    ]
+  },
   'Computer Science_AQA|gcse': {
     label: 'Computer Science — AQA',
     emoji: '💻',
@@ -2374,6 +2404,25 @@ const DIAG_TOPICS = {
       { id: '3.2', name: 'Climate Change', sub: 'Causes, impacts, mitigation, adaptation' },
       { id: '3.3', name: 'Water Management', sub: 'Water demand, supply, management strategies' },
     ],
+  },
+  'Mathematics_OCR|alevel': {
+    label: 'Mathematics — OCR',
+    emoji: '🔢',
+    page: 'diagnostics/maths-ocr-alevel-diagnostic.html',
+    topics: [
+      { id: '1.1', name: 'Proof', sub: 'Deduction, exhaustion, contradiction, counter-example' },
+      { id: '1.2', name: 'Algebra & Functions', sub: 'Indices, surds, quadratics, polynomials, partial fractions' },
+      { id: '1.3', name: 'Coordinate Geometry', sub: 'Lines, circles, parametric equations' },
+      { id: '1.4', name: 'Sequences & Series', sub: 'AP, GP, sigma notation, binomial expansion' },
+      { id: '1.5', name: 'Trigonometry', sub: 'Identities, equations, sec/csc/cot' },
+      { id: '1.6', name: 'Exponentials & Logarithms', sub: 'e^x, ln, log laws, modelling' },
+      { id: '1.7', name: 'Differentiation', sub: 'Chain/product/quotient, implicit, parametric' },
+      { id: '1.8', name: 'Integration', sub: 'Substitution, by parts, areas, differential equations' },
+      { id: '1.9', name: 'Numerical Methods', sub: 'Iteration, Newton-Raphson, trapezium rule' },
+      { id: '1.10', name: 'Vectors', sub: '2D/3D vectors, scalar product, geometric problems' },
+      { id: '2.1', name: 'Statistics', sub: 'Sampling, distributions, hypothesis testing' },
+      { id: '2.2', name: 'Mechanics', sub: 'Kinematics, forces, moments, projectiles' },
+    ]
   },
   'Mathematics_OCR|gcse': {
     label: 'Mathematics — OCR',
