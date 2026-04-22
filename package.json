@@ -7,6 +7,8 @@
     "generate-pdfs": "node generate-pdfs.js"
   },
   "dependencies": {
-    "puppeteer": "^24.42.0"
+    "@supabase/supabase-js": "^2.45.0",
+    "puppeteer": "^24.42.0",
+    "stripe": "^17.0.0"
   }
 }

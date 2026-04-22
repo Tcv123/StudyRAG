@@ -7,6 +7,8 @@
   <title>Pricing — RAG Learning</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -116,6 +118,37 @@
     .pricing-grid {
       display: grid; grid-template-columns: 1fr 1fr; gap: 20px;
       max-width: 900px; margin: 0 auto;
+    }
+
+    /* Billing cycle toggle */
+    .billing-toggle-wrap { display: flex; justify-content: center; margin-bottom: 32px; }
+    .billing-toggle {
+      display: inline-flex; gap: 4px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 999px; padding: 5px;
+      box-shadow: 0 2px 10px rgba(91,173,207,0.06);
+    }
+    .cycle-btn {
+      background: transparent; border: none; cursor: pointer;
+      padding: 9px 18px; border-radius: 999px;
+      font-family: var(--font-body); font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.04em; color: var(--muted);
+      transition: all 0.15s;
+      display: inline-flex; align-items: center; gap: 7px;
+    }
+    .cycle-btn:hover { color: var(--text); }
+    .cycle-btn.active {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; box-shadow: 0 2px 10px var(--accent-glow);
+    }
+    .cycle-save {
+      font-size: 10.5px; padding: 2px 7px; border-radius: 999px;
+      background: var(--accent-dim); color: var(--accent-dark);
+      font-weight: 600; letter-spacing: 0.02em;
+    }
+    .cycle-btn.active .cycle-save { background: rgba(255,255,255,0.22); color: #fff; }
+    @media (max-width: 520px) {
+      .cycle-btn { padding: 8px 12px; font-size: 11.5px; }
     }
 
     .plan-card {
@@ -262,6 +295,20 @@
 <!-- Pricing cards -->
 <section class="pricing-section">
   <div class="wrap">
+
+    <!-- Billing cycle toggle -->
+    <div class="billing-toggle-wrap">
+      <div class="billing-toggle" role="tablist" aria-label="Billing cycle">
+        <button type="button" class="cycle-btn active" data-plan="monthly" role="tab" aria-selected="true">Monthly</button>
+        <button type="button" class="cycle-btn" data-plan="biannual" role="tab" aria-selected="false">
+          6 months <span class="cycle-save">–5%</span>
+        </button>
+        <button type="button" class="cycle-btn" data-plan="annual" role="tab" aria-selected="false">
+          Annual <span class="cycle-save">–20%</span>
+        </button>
+      </div>
+    </div>
+
     <div class="pricing-grid">
       <!-- Free plan -->
       <div class="plan-card">
@@ -289,10 +336,10 @@
         <span class="plan-badge pop">Most popular</span>
         <div class="plan-name">RAG <em>Pro</em></div>
         <div class="plan-price">
-          <span class="plan-price-amount">£9.99</span>
-          <span class="plan-price-period">/ month</span>
+          <span class="plan-price-amount" id="proPriceAmount">£14.99</span>
+          <span class="plan-price-period" id="proPricePeriod">/ month</span>
         </div>
-        <div class="plan-sub">7-day free trial · cancel any time</div>
+        <div class="plan-sub" id="proPriceSub">7-day free trial · cancel any time</div>
         <ul class="plan-features">
           <li><span class="plan-check">✓</span> Unlimited practice questions across every topic</li>
           <li><span class="plan-check">✓</span> AI tutor — instant explanations on any question</li>
@@ -302,12 +349,86 @@
           <li><span class="plan-check">✓</span> Downloadable PDF notes for offline revision</li>
           <li><span class="plan-check">✓</span> Priority support &amp; ad-free experience</li>
         </ul>
-        <a href="auth/register.html" class="btn btn-blue plan-btn">Start 7-day free trial</a>
+        <button type="button" class="btn btn-blue plan-btn" id="proCtaBtn" data-plan="monthly">
+          Start 7-day free trial
+        </button>
         <div class="plan-foot">Cancel any time · No card charged during trial</div>
       </div>
     </div>
   </div>
 </section>
+
+<script>
+  const PLAN_DETAILS = {
+    monthly:  { amount: '£14.99',  period: '/ month',     sub: '7-day free trial · cancel any time' },
+    biannual: { amount: '£85.44',  period: '/ 6 months',  sub: '7-day free trial · £14.24/mo effective · save 5%' },
+    annual:   { amount: '£143.88', period: '/ year',      sub: '7-day free trial · £11.99/mo effective · save 20%' },
+  };
+
+  const cycleBtns = document.querySelectorAll('.cycle-btn');
+  const proCtaBtn = document.getElementById('proCtaBtn');
+  const amountEl  = document.getElementById('proPriceAmount');
+  const periodEl  = document.getElementById('proPricePeriod');
+  const subEl     = document.getElementById('proPriceSub');
+
+  function setPlan(plan) {
+    const details = PLAN_DETAILS[plan];
+    if (!details) return;
+    amountEl.textContent = details.amount;
+    periodEl.textContent = details.period;
+    subEl.textContent    = details.sub;
+    proCtaBtn.dataset.plan = plan;
+    cycleBtns.forEach(b => {
+      const active = b.dataset.plan === plan;
+      b.classList.toggle('active', active);
+      b.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+
+  cycleBtns.forEach(b => b.addEventListener('click', () => setPlan(b.dataset.plan)));
+
+  // ?plan=annual / ?plan=biannual deep link support
+  const initialPlan = new URLSearchParams(location.search).get('plan');
+  if (initialPlan && PLAN_DETAILS[initialPlan]) setPlan(initialPlan);
+
+  proCtaBtn.addEventListener('click', async () => {
+    const plan = proCtaBtn.dataset.plan || 'monthly';
+    const originalLabel = proCtaBtn.textContent;
+    try {
+      proCtaBtn.disabled = true;
+      proCtaBtn.textContent = 'Loading…';
+
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (!session) {
+        window.location = `auth/register.html?plan=${plan}`;
+        return;
+      }
+
+      const resp = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ plan }),
+      });
+      const data = await resp.json();
+      if (!resp.ok) {
+        if (data.error === 'already_subscribed') {
+          window.location = 'settings.html';
+          return;
+        }
+        throw new Error(data.error || 'checkout_failed');
+      }
+      window.location = data.url;
+    } catch (err) {
+      console.error(err);
+      alert('Sorry, something went wrong starting checkout. Please try again.');
+      proCtaBtn.disabled = false;
+      proCtaBtn.textContent = originalLabel;
+    }
+  });
+</script>
 
 <!-- Medals -->
 <section class="section section-white">
