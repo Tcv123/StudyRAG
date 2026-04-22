@@ -1517,13 +1517,17 @@ function showSubjectCards() {
     return;
   }
 
+  const _level = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+
   cards.innerHTML = enrolledSubjects.map(s => {
     const key = `${s.subject}_${s.exam_board}`;
-    const config = _lvLookup(SUBJECT_TOPICS, key);
+    const comingSoon = window.SUBJECTS_CONFIG?.isComingSoonAlevel?.(s.subject, _level);
+    const config = comingSoon ? null : _lvLookup(SUBJECT_TOPICS, key);
     const emoji = s.emoji || SUBJECT_EMOJIS[s.subject] || '📚';
 
     // Graceful fallback when no topic config exists for this subject+board
-    // combo yet (e.g. new board added in setup before practice data shipped).
+    // combo yet (e.g. new board added in setup before practice data shipped),
+    // or when the subject is flagged "coming soon" at the user's study level.
     if (!config) {
       return `
         <div class="subj-pick" style="opacity:0.65;cursor:not-allowed;" title="Practice questions for this exam board are not available yet.">
