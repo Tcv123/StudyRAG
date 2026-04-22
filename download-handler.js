@@ -136,12 +136,6 @@ async function downloadCurrentAsPDF(evt) {
           for (let i = 1; i <= totalPages; i++) {
             pdf.setPage(i);
 
-            // DIAGONAL WATERMARK — drawn first so content sits on top
-            pdf.setTextColor(230, 230, 230);
-            pdf.setFont('helvetica', 'bold');
-            pdf.setFontSize(64);
-            pdf.text('RAG Learning', pageW / 2, pageH / 2 + 15, { align: 'center', angle: 30 });
-
             // HEADER BAR
             pdf.setFillColor(30, 64, 175);                  // RAG blue
             pdf.rect(0, 0, pageW, 15, 'F');
