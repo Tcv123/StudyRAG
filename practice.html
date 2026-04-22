@@ -415,6 +415,24 @@
     .result-chip.partial { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-border); }
     .result-actions { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
 
+    /* ── BREAKDOWN DETAIL ── */
+    .breakdown-detail { margin-top: 28px; text-align: left; display: none; }
+    .breakdown-detail.open { display: block; }
+    .breakdown-item {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 18px; margin-bottom: 12px;
+    }
+    .breakdown-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; flex-wrap: wrap; }
+    .breakdown-qnum { font-weight: 700; font-size: 13px; color: var(--accent-dark); }
+    .breakdown-score { font-size: 12px; font-weight: 700; padding: 3px 10px; border-radius: 12px; border: 1px solid; }
+    .breakdown-score.correct { background: var(--green-bg); color: var(--green); border-color: var(--green-border); }
+    .breakdown-score.wrong   { background: var(--red-bg);   color: var(--red);   border-color: var(--red-border); }
+    .breakdown-score.partial { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-border); }
+    .breakdown-section { margin-top: 10px; }
+    .breakdown-section-label { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 4px; }
+    .breakdown-section-body { font-size: 13px; line-height: 1.5; color: var(--text); white-space: pre-wrap; }
+    .breakdown-section-body.empty { color: var(--muted); font-style: italic; }
+
     /* ── SELF-MARK ── */
     .self-mark-row { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
     .self-mark-btn {
@@ -2161,6 +2179,29 @@ function renderResults(timedOut) {
     return `<span class="result-chip ${cls}">${label} Q${i+1} (${r.earned}/${r.marks})</span>`;
   }).join('');
 
+  const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+  const detailItems = results.map((r, i) => {
+    const cls = r.level === 'full' ? 'correct' : r.level === 'partial' ? 'partial' : 'wrong';
+    const scoreLabel = r.level === 'skip' ? 'Skipped' : `${r.earned} / ${r.marks} marks`;
+    const ua = (r.userAnswer || '').trim();
+    const ms = (r.markScheme || '').trim();
+    const qt = (r.question || '').trim();
+    return `
+      <div class="breakdown-item">
+        <div class="breakdown-head">
+          <span class="breakdown-qnum">Question ${i+1}</span>
+          <span class="breakdown-score ${cls}">${esc(scoreLabel)}</span>
+        </div>
+        ${qt ? `<div class="breakdown-section"><div class="breakdown-section-label">Question</div><div class="breakdown-section-body">${esc(qt)}</div></div>` : ''}
+        <div class="breakdown-section">
+          <div class="breakdown-section-label">Your answer</div>
+          <div class="breakdown-section-body ${ua ? '' : 'empty'}">${ua ? esc(ua) : 'No answer given'}</div>
+        </div>
+        ${ms ? `<div class="breakdown-section"><div class="breakdown-section-label">Mark scheme</div><div class="breakdown-section-body">${esc(ms)}</div></div>` : ''}
+      </div>
+    `;
+  }).join('');
+
   const color = pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--amber)' : 'var(--red)';
   const msg = timedOut ? 'Time\'s up!' : pct >= 70 ? 'Great work!' : pct >= 40 ? 'Getting there — keep practising' : 'Keep revising this topic';
 
@@ -2181,10 +2222,20 @@ function renderResults(timedOut) {
           <button class="btn-primary" onclick="startExam(${questionCount}, ${timeLimitSec/60})">Try Again</button>
           <button class="btn-outline" onclick="selectTopic('${activeTopic}', document.getElementById('topicBtn-${activeTopic}'))">Change Mode</button>
           <button class="btn-outline" onclick="resetToEmpty()">Choose Topic</button>
+          <button class="btn-outline" id="breakdownToggle" onclick="toggleBreakdown()">Show Breakdown</button>
         </div>
+        <div class="breakdown-detail" id="breakdownDetail">${detailItems}</div>
       </div>
     </div>
   `;
+}
+
+function toggleBreakdown() {
+  const panel = document.getElementById('breakdownDetail');
+  const btn = document.getElementById('breakdownToggle');
+  if (!panel || !btn) return;
+  const open = panel.classList.toggle('open');
+  btn.textContent = open ? 'Hide Breakdown' : 'Show Breakdown';
 }
 
 /* ═══════════════════════════════════════
