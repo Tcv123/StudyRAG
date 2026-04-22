@@ -220,6 +220,29 @@
       color: #fff;
     }
 
+    /* Subjects not yet ready at A-Level/AS — locked, dimmed, with badge */
+    .subj-card.coming-soon {
+      cursor: not-allowed;
+      opacity: 0.62;
+      background: var(--surface2);
+      border-color: var(--border);
+    }
+    .subj-card.coming-soon:hover {
+      border-color: var(--border);
+      background: var(--surface2);
+    }
+    .subj-card.coming-soon .subj-card-emoji { filter: grayscale(0.3); }
+    .subj-card.coming-soon .subj-check { display: none; }
+    .subj-coming-badge {
+      font-size: 10.5px; font-weight: 600;
+      color: #b45309;
+      background: rgba(245,158,11,0.12);
+      border: 1px solid rgba(245,158,11,0.32);
+      padding: 3px 8px; border-radius: 999px;
+      flex-shrink: 0; white-space: nowrap;
+      display: inline-flex; align-items: center; gap: 4px;
+    }
+
     /* ── SELECTED SUBJECTS BOARD PICKER ── */
     .selected-label {
       font-size: 12px; font-weight: 700; color: var(--accent-dark);
@@ -615,10 +638,12 @@ function selectLevel(val, el) {
     subjectTargetGrade = {};
     // Drop any selected subjects that aren't offered at the new level
     // (e.g. Further Maths / Economics aren't offered at GCSE).
+    // Also drop any subjects that are flagged "coming soon" at the new level.
     const allowedNames = window.SUBJECTS_CONFIG.getSubjectsFor(val).map(s => s.name);
-    selectedSubjects = selectedSubjects.filter(s => allowedNames.includes(s.name));
+    const isLocked = (name) => window.SUBJECTS_CONFIG.isComingSoonAlevel(name, val);
+    selectedSubjects = selectedSubjects.filter(s => allowedNames.includes(s.name) && !isLocked(s.name));
     Object.keys(subjectBoards).forEach(name => {
-      if (!allowedNames.includes(name)) delete subjectBoards[name];
+      if (!allowedNames.includes(name) || isLocked(name)) delete subjectBoards[name];
     });
     // Reset Edexcel for subjects that don't offer it at this level
     Object.keys(subjectBoards).forEach(name => {
@@ -686,6 +711,15 @@ function renderGrid() {
   const grid = document.getElementById('subjectsGrid');
   const list = getSubjectsForLevel();
   grid.innerHTML = list.map(s => {
+    const comingSoon = window.SUBJECTS_CONFIG.isComingSoonAlevel(s.name, selectedLevel);
+    if (comingSoon) {
+      return `
+        <div class="subj-card coming-soon" title="A-Level ${s.name} notes are coming soon">
+          <div class="subj-card-emoji">${window.SUBJECTS_CONFIG.iconHtml(s.name)}</div>
+          <div class="subj-card-name">${s.name}</div>
+          <span class="subj-coming-badge">🔒 Coming soon</span>
+        </div>`;
+    }
     const sel = selectedSubjects.some(x => x.name === s.name);
     return `
       <div class="subj-card ${sel ? 'selected' : ''}" onclick="toggleSubject('${s.name}','${s.emoji}',this)">
@@ -1091,6 +1125,9 @@ async function save() {
     // Pre-select subjects, boards, and grades
     existingSubjects.forEach(s => {
       const match = SUBJECTS.find(sub => sub.name === s.subject);
+      // Skip subjects that are flagged "coming soon" at the user's current
+      // study level — keeps stale selections from re-appearing as enabled.
+      if (match && window.SUBJECTS_CONFIG.isComingSoonAlevel(match.name, selectedLevel)) return;
       if (match) {
         selectedSubjects.push({ name: match.name, emoji: match.emoji });
         // Normalise against the shared config so a legacy row (e.g. a

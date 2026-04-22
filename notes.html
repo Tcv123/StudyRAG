@@ -946,9 +946,12 @@ async function load() {
     return;
   }
 
+  const _level = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+
   grid.innerHTML = list.map(s => {
     const key      = `${s.subject}|${s.exam_board}`;
-    const notes    = _lvLookup(NOTES_AVAILABLE, key);
+    const comingSoon = window.SUBJECTS_CONFIG?.isComingSoonAlevel?.(s.subject, _level);
+    const notes    = comingSoon ? null : _lvLookup(NOTES_AVAILABLE, key);
     const available = !!notes;
     const topics   = notes?.topics || [];
     const preview  = topics.slice(0, 3);

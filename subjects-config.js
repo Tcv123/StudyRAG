@@ -53,6 +53,21 @@
   // Subject names where Edexcel is not offered at A-Level / AS.
   const noEdexcelAlevel = ['Computer Science'];
 
+  // Subjects that are visible at A-Level / AS but not yet ready — render
+  // as locked "Coming soon" cards on the picker and on subject pages.
+  const comingSoonAlevel = [
+    'English Language',
+    'Psychology',
+    'Sociology',
+    'Business Studies',
+    'Politics',
+  ];
+
+  function isComingSoonAlevel(subjectName, level) {
+    if (level !== 'a-level' && level !== 'as') return false;
+    return comingSoonAlevel.includes(subjectName);
+  }
+
   // Subject set restricted to GCSE. Further Maths and Economics are not
   // offered at GCSE on this platform; English Literature, History and the
   // MFL subjects are GCSE-only for now (no A-Level content yet).
@@ -130,6 +145,8 @@
     noEdexcelAlevel,
     gcseSubjectNames,
     gcseOnlySubjectNames,
+    comingSoonAlevel,
+    isComingSoonAlevel,
     getSubjectsFor,
     getBoardsFor,
     emojiFor,
