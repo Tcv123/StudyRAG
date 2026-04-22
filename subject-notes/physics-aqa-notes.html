@@ -9,8 +9,6 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
   <script src="../study-tracker.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
-  <script src="../download-handler.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -388,7 +386,7 @@
           <div class="viewer-sub" id="viewerSub">AQA A-Level Physics</div>
         </div>
         <div class="viewer-actions">
-          <a id="downloadBtn" href="#" onclick="downloadCurrentAsPDF(event)" class="viewer-btn">⬇ Download PDF</a>
+          <a id="downloadBtn" href="#" download class="viewer-btn">⬇ Download PDF</a>
           <a id="openBtn" href="#" target="_blank" class="viewer-btn primary">↗ Open full screen</a>
         </div>
       </div>
@@ -443,6 +441,7 @@ function openTopic(btn, num, name, path) {
   document.getElementById('viewerSub').textContent   = 'AQA A-Level Physics';
 
   document.getElementById('pdfFrame').src     = path;
+  document.getElementById('downloadBtn').href = path.replace(/.html$/, '.pdf');
   document.getElementById('openBtn').href     = path;
 }
 </script>
