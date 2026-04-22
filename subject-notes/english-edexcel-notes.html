@@ -9,6 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
   <script src="../study-tracker.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2pdf.js@0.10.1/dist/html2pdf.bundle.min.js"></script>
+  <script src="../download-handler.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -250,6 +252,7 @@
           <div class="viewer-sub" id="viewerSub">Edexcel A-Level English Language (9EN0)</div>
         </div>
         <div class="viewer-actions">
+          <a id="downloadBtn" href="#" onclick="downloadCurrentAsPDF(event)" class="viewer-btn">⬇ Download PDF</a>
           <a id="openBtn" href="#" target="_blank" class="viewer-btn primary">↗ Open full screen</a>
         </div>
       </div>
