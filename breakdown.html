@@ -173,6 +173,44 @@
     .trend-chart {
       padding: 12px 4px 4px;
       margin-bottom: 12px;
+      position: relative;
+    }
+    .trend-tooltip {
+      position: absolute;
+      min-width: 180px;
+      max-width: 260px;
+      padding: 10px 14px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-left: 4px solid var(--accent);
+      border-radius: 10px;
+      box-shadow: 0 10px 28px rgba(11,30,63,0.16), 0 2px 6px rgba(11,30,63,0.08);
+      pointer-events: none;
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity 0.12s ease;
+      transform: translate(-50%, calc(-100% - 12px));
+      z-index: 20;
+      font-family: var(--font-body);
+    }
+    .trend-tooltip.visible { opacity: 1; visibility: visible; }
+    .trend-tooltip.green { border-left-color: var(--green); }
+    .trend-tooltip.amber { border-left-color: var(--amber); }
+    .trend-tooltip.red   { border-left-color: var(--red); }
+    .trend-tooltip .tt-head { font-size: 10px; font-weight: 700; color: var(--accent-dark); letter-spacing: 0.08em; text-transform: uppercase; }
+    .trend-tooltip .tt-name { font-size: 13px; font-weight: 600; color: var(--text); margin-top: 3px; line-height: 1.3; }
+    .trend-tooltip .tt-row { display: flex; align-items: baseline; justify-content: space-between; gap: 12px; margin-top: 8px; }
+    .trend-tooltip .tt-score { font-family: var(--font-display); font-size: 20px; color: var(--text); letter-spacing: -0.01em; }
+    .trend-tooltip .tt-pct { font-size: 13px; font-weight: 700; }
+    .trend-tooltip .tt-pct.green { color: var(--green); }
+    .trend-tooltip .tt-pct.amber { color: var(--amber); }
+    .trend-tooltip .tt-pct.red   { color: var(--red); }
+    .trend-tooltip .tt-date { font-size: 11px; color: var(--muted); margin-top: 6px; }
+    .trend-tooltip::after {
+      content: ""; position: absolute; left: 50%; bottom: -6px;
+      width: 10px; height: 10px; background: var(--surface);
+      border-right: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      transform: translateX(-50%) rotate(45deg);
     }
     .trend-title { font-size: 11px; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: baseline; }
     .trend-avg { font-family: var(--font-display); font-size: 18px; color: var(--text); letter-spacing: -0.01em; text-transform: none; display: inline-flex; flex-wrap: wrap; align-items: baseline; justify-content: flex-end; gap: 0 4px; }
@@ -1368,11 +1406,15 @@ function renderTrendChart(sorted, avgPct) {
     areaPath = `${linePath} L${pts[n-1].x.toFixed(1)},${padT + plotH} L${pts[0].x.toFixed(1)},${padT + plotH} Z`;
   }
 
+  const attrEsc = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
   const dots = pts.map(p => {
     const dt = new Date(p.date);
-    const ds = dt.toLocaleDateString(undefined, { month: 'short', day: 'numeric' });
-    const title = `${p.topic} — ${p.topicName}\n${p.earned}/${p.total} (${p.pct}%) · ${ds}`;
-    return `<circle class="trend-dot ${sparkClass(p.pct)}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4"><title>${title}</title></circle>`;
+    const ds = dt.toLocaleDateString(undefined, { weekday: 'short', month: 'short', day: 'numeric' });
+    const lvl = sparkClass(p.pct);
+    return `<circle class="trend-dot ${lvl}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4"`
+      + ` data-topic="${attrEsc(p.topic)}" data-name="${attrEsc(p.topicName)}"`
+      + ` data-pct="${p.pct}" data-earned="${p.earned}" data-total="${p.total}"`
+      + ` data-date="${attrEsc(ds)}" data-level="${lvl}"></circle>`;
   }).join('');
 
   const labelEvery = Math.max(1, Math.ceil(n / 6));
@@ -1394,7 +1436,59 @@ function renderTrendChart(sorted, avgPct) {
       ${dots}
       ${xLabels}
     </svg>
+    <div class="trend-tooltip" role="tooltip" aria-hidden="true"></div>
   </div>`;
+}
+
+function wireTrendChart(root) {
+  const chart = root && root.querySelector ? root.querySelector('.trend-chart') : null;
+  if (!chart) return;
+  const tip = chart.querySelector('.trend-tooltip');
+  const svg = chart.querySelector('.trend-svg');
+  if (!tip || !svg) return;
+
+  const show = (circle) => {
+    const level = circle.getAttribute('data-level') || '';
+    tip.className = 'trend-tooltip visible ' + level;
+    tip.innerHTML = '';
+    const head = document.createElement('div');
+    head.className = 'tt-head';
+    head.textContent = circle.getAttribute('data-topic') || '';
+    const name = document.createElement('div');
+    name.className = 'tt-name';
+    name.textContent = circle.getAttribute('data-name') || '';
+    const row = document.createElement('div');
+    row.className = 'tt-row';
+    const score = document.createElement('span');
+    score.className = 'tt-score';
+    score.textContent = `${circle.getAttribute('data-earned')} / ${circle.getAttribute('data-total')}`;
+    const pctEl = document.createElement('span');
+    pctEl.className = 'tt-pct ' + level;
+    pctEl.textContent = `${circle.getAttribute('data-pct')}%`;
+    row.appendChild(score);
+    row.appendChild(pctEl);
+    const date = document.createElement('div');
+    date.className = 'tt-date';
+    date.textContent = circle.getAttribute('data-date') || '';
+    tip.appendChild(head);
+    tip.appendChild(name);
+    tip.appendChild(row);
+    tip.appendChild(date);
+    const cb = chart.getBoundingClientRect();
+    const db = circle.getBoundingClientRect();
+    tip.style.left = `${db.left + db.width / 2 - cb.left}px`;
+    tip.style.top  = `${db.top - cb.top}px`;
+  };
+  const hide = () => { tip.className = 'trend-tooltip'; };
+
+  svg.addEventListener('mouseover', e => {
+    const t = e.target;
+    if (t && t.classList && t.classList.contains('trend-dot')) show(t);
+  });
+  svg.addEventListener('mouseout', e => {
+    const t = e.target;
+    if (t && t.classList && t.classList.contains('trend-dot')) hide();
+  });
 }
 
 function renderSummaryBar(green, amber, red, pending) {
@@ -1931,6 +2025,7 @@ function renderPracticeCarousel() {
       </div>
       ${renderTrendChart(sorted, avgPct)}
     `;
+    wireTrendChart(card);
   }
 
   const dotsEl = document.getElementById('practiceCarouselDots');
