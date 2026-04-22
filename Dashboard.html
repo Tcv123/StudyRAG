@@ -912,6 +912,10 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Advanced Physics II', date: '2026-06-01', time: 'AM', duration: '1h 45m' },
     { paper: 'Paper 3 — General & Practical', date: '2026-06-08', time: 'AM', duration: '2h 30m' },
   ],
+  'Physics_Edexcel|gcse': [
+    { paper: 'Paper 1 — Topics 1–7',  date: '2026-05-22', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Topics 1, 8–15', date: '2026-06-05', time: 'PM', duration: '1h 45m' },
+  ],
   'Physics_OCR A': [
     { paper: 'Paper 1 — Modelling Physics', date: '2026-05-20', time: 'PM', duration: '2h 15m' },
     { paper: 'Paper 2 — Exploring Physics', date: '2026-06-01', time: 'AM', duration: '2h 15m' },
@@ -1317,6 +1321,7 @@ const SUBJECT_TOPIC_KEY = {
   'Physics_Edexcel': 'physics-edexcel',
   'Physics_AQA': 'physics-aqa',
   'Physics_AQA|gcse': 'physics-aqa-gcse',
+  'Physics_Edexcel|gcse': 'physics-edexcel-gcse',
   'Physics_OCR A': 'physics-ocr-a',
   'Physics_OCR B': 'physics-ocr-b',
   'Economics_AQA': 'economics-aqa',
@@ -1348,7 +1353,7 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_AQA': 'english-aqa',
   'English Language_Edexcel': 'english-edexcel',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-ocr-gcse-notes.html',
   'Computer Science_OCR|alevel': 'subject-notes/cs-ocr-alevel-notes.html',
@@ -1357,6 +1362,7 @@ const SUBJECT_NOTES_PAGE = {
   'Physics_Edexcel': 'subject-notes/physics-edexcel-notes.html',
   'Physics_AQA': 'subject-notes/physics-aqa-notes.html',
   'Physics_AQA|gcse': 'subject-notes/physics-aqa-gcse-notes.html',
+  'Physics_Edexcel|gcse': 'subject-notes/physics-edexcel-gcse-notes.html',
   'Physics_OCR A': 'subject-notes/physics-ocr-a-notes.html',
   'Physics_OCR B': 'subject-notes/physics-ocr-b-notes.html',
   'Economics_AQA': 'subject-notes/economics-aqa-notes.html',
