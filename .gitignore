@@ -3,6 +3,7 @@ node_modules/
 .DS_Store
 Thumbs.db
 *.log
+.claude/worktrees/
 
 # Secrets — never commit
 .env
