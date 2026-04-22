@@ -206,7 +206,9 @@
     .trend-tooltip .tt-pct.amber { color: var(--amber); }
     .trend-tooltip .tt-pct.red   { color: var(--red); }
     .trend-tooltip .tt-date { font-size: 11px; color: var(--muted); margin-top: 6px; }
-    .trend-tooltip .tt-mode { font-size: 10px; font-weight: 600; color: var(--accent-dark); background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.15); padding: 2px 7px; border-radius: 999px; display: inline-block; margin-top: 6px; letter-spacing: 0.02em; }
+    .trend-tooltip .tt-meta { display: flex; flex-wrap: wrap; gap: 5px; margin-top: 6px; }
+    .trend-tooltip .tt-chip { font-size: 10px; font-weight: 600; color: var(--accent-dark); background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.15); padding: 2px 7px; border-radius: 999px; letter-spacing: 0.02em; }
+    .trend-tooltip .tt-chip.time { color: var(--muted); background: var(--surface2); border-color: var(--border); }
     .trend-tooltip::after {
       content: ""; position: absolute; left: 50%; bottom: -6px;
       width: 10px; height: 10px; background: var(--surface);
@@ -1400,7 +1402,14 @@ function renderTrendChart(sorted, avgPct) {
   }).join('');
 
   const modeLabel = n => n === 5 ? 'Quick · 5Q' : n === 10 ? 'Standard · 10Q' : n === 20 ? 'Full exam · 20Q' : (n ? `${n} questions` : '');
-  const pts = sorted.map((h, i) => ({ x: xFor(i), y: yFor(h.pct), pct: h.pct, date: h.dateISO, topic: h.topic, topicName: h.topicName, earned: h.earned, total: h.total, mode: modeLabel(h.questions) }));
+  const limitSec = n => n === 5 ? 600 : n === 10 ? 1200 : n === 20 ? 2700 : 0;
+  const fmtSec = s => { s = Math.max(0, s|0); return `${Math.floor(s/60)}:${String(s%60).padStart(2,'0')}`; };
+  const timeText = (used, qn) => {
+    const lim = limitSec(qn);
+    if (lim > 0) return `${fmtSec(used)} / ${fmtSec(lim)}`;
+    return used > 0 ? fmtSec(used) : '';
+  };
+  const pts = sorted.map((h, i) => ({ x: xFor(i), y: yFor(h.pct), pct: h.pct, date: h.dateISO, topic: h.topic, topicName: h.topicName, earned: h.earned, total: h.total, mode: modeLabel(h.questions), time: timeText(h.timeUsedSec, h.questions) }));
 
   let linePath = '', areaPath = '';
   if (n >= 2) {
@@ -1416,7 +1425,7 @@ function renderTrendChart(sorted, avgPct) {
     return `<circle class="trend-dot ${lvl}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4"`
       + ` data-topic="${attrEsc(p.topic)}" data-name="${attrEsc(p.topicName)}"`
       + ` data-pct="${p.pct}" data-earned="${p.earned}" data-total="${p.total}"`
-      + ` data-date="${attrEsc(ds)}" data-level="${lvl}" data-mode="${attrEsc(p.mode)}"></circle>`;
+      + ` data-date="${attrEsc(ds)}" data-level="${lvl}" data-mode="${attrEsc(p.mode)}" data-time="${attrEsc(p.time)}"></circle>`;
   }).join('');
 
   const labelEvery = Math.max(1, Math.ceil(n / 6));
@@ -1477,13 +1486,23 @@ function wireTrendChart(root) {
     tip.appendChild(row);
     tip.appendChild(date);
     const modeText = circle.getAttribute('data-mode') || '';
-    if (modeText) {
-      const mode = document.createElement('div');
-      const modeChip = document.createElement('span');
-      modeChip.className = 'tt-mode';
-      modeChip.textContent = modeText;
-      mode.appendChild(modeChip);
-      tip.appendChild(mode);
+    const timeText = circle.getAttribute('data-time') || '';
+    if (modeText || timeText) {
+      const meta = document.createElement('div');
+      meta.className = 'tt-meta';
+      if (modeText) {
+        const c = document.createElement('span');
+        c.className = 'tt-chip';
+        c.textContent = modeText;
+        meta.appendChild(c);
+      }
+      if (timeText) {
+        const c = document.createElement('span');
+        c.className = 'tt-chip time';
+        c.textContent = `⏱ ${timeText}`;
+        meta.appendChild(c);
+      }
+      tip.appendChild(meta);
     }
     const cb = chart.getBoundingClientRect();
     const db = circle.getBoundingClientRect();
