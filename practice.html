@@ -556,6 +556,7 @@ const BUNDLE_MAP = {
   'Computer Science_AQA|alevel':  ['questions/cs/cs-aqa-alevel-practice.js'],
   'Physics_Edexcel':              ['questions/physics/physics-edexcel-practice.js'],
   'Physics_AQA':                  ['questions/physics/physics-aqa-practice.js'],
+  'Physics_AQA|gcse':             ['questions/physics-aqa-gcse/physics-aqa-gcse-practice.js'],
   'Physics_OCR A':                ['questions/physics/physics-ocr-a-practice.js'],
   'Physics_OCR B':                ['questions/physics/physics-ocr-b-practice.js'],
   'Economics_AQA':                ['questions/economics-aqa/economics-aqa-practice.js'],
@@ -652,6 +653,7 @@ const PRACTICE_MAP = {
   'Computer Science_AQA|alevel': () => typeof CS_AQA_PRACTICE !== 'undefined' ? CS_AQA_PRACTICE : null,
   'Physics_Edexcel': () => typeof PHYSICS_EDEXCEL_PRACTICE !== 'undefined' ? PHYSICS_EDEXCEL_PRACTICE : null,
   'Physics_AQA': () => typeof PHYSICS_AQA_PRACTICE !== 'undefined' ? PHYSICS_AQA_PRACTICE : null,
+  'Physics_AQA|gcse': () => typeof PHYSICS_AQA_GCSE_PRACTICE !== 'undefined' ? PHYSICS_AQA_GCSE_PRACTICE : null,
   'Physics_OCR A': () => typeof PHYSICS_OCR_A_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_PRACTICE : null,
   'Physics_OCR B': () => typeof PHYSICS_OCR_B_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_PRACTICE : null,
   'Economics_AQA': () => typeof ECONOMICS_AQA_PRACTICE !== 'undefined' ? ECONOMICS_AQA_PRACTICE : null,
@@ -806,6 +808,22 @@ const SUBJECT_TOPICS = {
         { id: '3.6', name: 'Further Mechanics and Thermal Physics', sub: 'Circular motion, SHM, gas laws, kinetic theory' },
         { id: '3.7', name: 'Fields and Their Consequences', sub: 'Gravitational, electric, magnetic fields, capacitance' },
         { id: '3.8', name: 'Nuclear Physics', sub: 'Radioactivity, nuclear energy, binding energy' },
+      ]},
+    ]
+  },
+  'Physics_AQA|gcse': {
+    sections: [
+      { label: 'AQA GCSE — Paper 1', topics: [
+        { id: '4.1', name: 'Energy', sub: 'Stores, transfers, KE, GPE, specific heat, efficiency, resources' },
+        { id: '4.2', name: 'Electricity', sub: 'Current, PD, resistance, series/parallel, mains, power, static' },
+        { id: '4.3', name: 'Particle Model of Matter', sub: 'Density, states, internal energy, latent heat, gas pressure' },
+        { id: '4.4', name: 'Atomic Structure', sub: 'Models, isotopes, radioactivity, half-life, fission, fusion' },
+      ]},
+      { label: 'AQA GCSE — Paper 2', topics: [
+        { id: '4.5', name: 'Forces', sub: 'Scalars/vectors, moments, pressure, motion, Newton\'s laws, momentum' },
+        { id: '4.6', name: 'Waves', sub: 'Transverse/longitudinal, v=fλ, EM spectrum, reflection, refraction, lenses' },
+        { id: '4.7', name: 'Magnetism and Electromagnetism', sub: 'Fields, motor effect, generators, transformers' },
+        { id: '4.8', name: 'Space Physics', sub: 'Solar system, stars, orbits, red-shift, Big Bang' },
       ]},
     ]
   },
@@ -1434,6 +1452,7 @@ const DIAG_PAGE = {
   'Computer Science_AQA|alevel':  { url: 'diagnostics/cs-aqa-alevel-diagnostic.html',    total: 10, first: '4.1' },
   'Physics_Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13, first: 'T1'  },
   'Physics_AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8,  first: '3.1' },
+  'Physics_AQA|gcse':             { url: 'diagnostics/physics-aqa-gcse-diagnostic.html', total: 8,  first: '4.1' },
   'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
   'Physics_OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6,  first: 'B1'  },
   'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10, first: '3.1.1' },

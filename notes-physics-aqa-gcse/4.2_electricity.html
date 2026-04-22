@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.2 — Electricity</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.2 Electricity</h1>
+<p class="spec-ref">AQA GCSE Physics (8463) — Paper 1</p>
+
+<h2>4.2.1 Standard Circuit Symbols</h2>
+
+<p>You must be able to recognise, draw, and understand all of these circuit symbols. The exam often includes circuits you have not seen before &mdash; reading them correctly depends on knowing your symbols.</p>
+
+<!-- SVG 1: Circuit symbols grid -->
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+  <text x="400" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Standard circuit symbols (12 symbols)</text>
+
+  <!-- Grid lines: 4 cols × 3 rows -->
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+  </defs>
+
+  <!-- Row 1 -->
+  <!-- 1. Cell -->
+  <rect x="20" y="40" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <line x1="70" y1="70" x2="70" y2="110" stroke="#1e40af" stroke-width="3"/>
+  <line x1="80" y1="75" x2="80" y2="105" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="100" y="135" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Cell</text>
+
+  <!-- 2. Battery -->
+  <rect x="210" y="40" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <line x1="260" y1="70" x2="260" y2="110" stroke="#1e40af" stroke-width="3"/>
+  <line x1="270" y1="75" x2="270" y2="105" stroke="#1e40af" stroke-width="1.5"/>
+  <line x1="280" y1="70" x2="280" y2="110" stroke="#1e40af" stroke-width="3"/>
+  <line x1="290" y1="75" x2="290" y2="105" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="290" y="135" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Battery</text>
+
+  <!-- 3. Switch (open) -->
+  <rect x="400" y="40" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <line x1="460" y1="90" x2="520" y2="90" stroke="#1e40af" stroke-width="2"/>
+  <circle cx="520" cy="90" r="3" fill="#1e40af"/>
+  <text x="490" y="135" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Switch (open)</text>
+
+  <!-- 4. Switch (closed) -->
+  <rect x="590" y="40" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <line x1="650" y1="90" x2="720" y2="90" stroke="#1e40af" stroke-width="2"/>
+  <text x="680" y="135" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Switch (closed)</text>
+
+  <!-- Row 2 -->
+  <!-- 5. Filament lamp -->
+  <rect x="20" y="160" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <circle cx="100" cy="200" r="12" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <line x1="92" y1="192" x2="108" y2="208" stroke="#1e40af" stroke-width="2"/>
+  <line x1="108" y1="192" x2="92" y2="208" stroke="#1e40af" stroke-width="2"/>
+  <text x="100" y="235" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Filament lamp</text>
+
+  <!-- 6. LED -->
+  <rect x="210" y="160" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <circle cx="290" cy="200" r="10" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <line x1="283" y1="193" x2="297" y2="207" stroke="#1e40af" stroke-width="2"/>
+  <line x1="297" y1="193" x2="283" y2="207" stroke="#1e40af" stroke-width="2"/>
+  <line x1="285" y1="210" x2="278" y2="220" stroke="#1e40af" stroke-width="1.5"/>
+  <line x1="295" y1="210" x2="302" y2="220" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="290" y="235" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">LED</text>
+
+  <!-- 7. Ammeter -->
+  <rect x="400" y="160" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <circle cx="480" cy="200" r="12" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="480" y="207" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">A</text>
+  <text x="480" y="235" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Ammeter</text>
+
+  <!-- 8. Voltmeter -->
+  <rect x="590" y="160" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <circle cx="670" cy="200" r="12" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="670" y="207" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">V</text>
+  <text x="670" y="235" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Voltmeter</text>
+
+  <!-- Row 3 -->
+  <!-- 9. Resistor (fixed) -->
+  <rect x="20" y="280" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <rect x="75" y="190" width="50" height="20" fill="none" stroke="#1e40af" stroke-width="2" y="190"/>
+  <rect x="75" y="190" width="50" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="100" y="355" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Resistor</text>
+
+  <!-- SVG issue fix: proper resistor symbol -->
+  <rect x="20" y="280" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <rect x="60" y="310" width="80" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="100" y="355" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Resistor</text>
+
+  <!-- 10. Variable resistor -->
+  <rect x="210" y="280" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <rect x="250" y="310" width="60" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <line x1="310" y1="315" x2="330" y2="305" stroke="#1e40af" stroke-width="2"/>
+  <text x="290" y="355" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Variable resistor</text>
+
+  <!-- 11. Thermistor -->
+  <rect x="400" y="280" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <rect x="440" y="310" width="70" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="475" y="303" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">t°</text>
+  <text x="480" y="355" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Thermistor</text>
+
+  <!-- 12. Diode -->
+  <rect x="590" y="280" width="180" height="100" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <polygon points="660,310 680,320 660,330" fill="#1e40af"/>
+  <line x1="680" y1="310" x2="680" y2="330" stroke="#1e40af" stroke-width="2"/>
+  <text x="670" y="355" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Diode</text>
+</svg>
+
+<div class="definition">
+    A <strong>circuit symbol</strong> is a standardised graphical representation of a component. Using standard symbols allows circuits to be drawn, shared, and understood by anyone, anywhere, regardless of language. All symbols in the grid above are defined by British Standards (BS 3939) and used worldwide.
+</div>
+
+<h2>4.2.2 Electric Current</h2>
+
+<div class="definition">
+    <strong>Electric current</strong> is the rate of flow of electric charge. It is measured in <strong>amperes (A)</strong>.<br><br>
+    <code>I = Q / t</code><br><br>
+    where <code>I</code> = current in amperes (A), <code>Q</code> = charge in coulombs (C), <code>t</code> = time in seconds (s).
+</div>
+
+<p>One ampere means one coulomb of charge flowing past a point in the circuit every second. A smartphone charger delivers around 2 A; a kettle draws around 13 A; a small LED might use only 10 mA (milliamps = 0.01 A).</p>
+
+<div class="definition">
+    In a <strong>series circuit</strong>, there is only one path for the current. The same current flows through every component &mdash; charge flows out of one end of a battery, through all the components in sequence, and back into the other end.
+</div>
+
+<p>This is a key fact: in a series loop, <code>I</code> is identical at every point. If you measure the current through a lamp, then measure it again after the lamp, you will get the same value. Charge cannot accumulate anywhere &mdash; it must enter and leave every component at the same rate.</p>
+
+<h3>Worked Example 1 — Charge and Current</h3>
+
+<pre>
+Question: A 2 A current flows for 30 seconds. How much charge
+          has been transferred?
+
+Given:   I = 2 A,   t = 30 s
+Formula: I = Q / t   →   Q = I × t
+Working: Q = 2 × 30
+           = 60 C
+
+Answer:  60 coulombs (C)
+</pre>
+
+<div class="exam-tip">Remember that 1 coulomb is quite a large amount of charge. A typical AA battery contains about 2000 C (roughly 1 amp-hour, or 1 Ah). Always use seconds, not minutes or hours, in the formula <code>Q = I t</code> unless the question specifically gives time in other units.</div>
+
+<h2>4.2.3 Potential Difference and Resistance</h2>
+
+<div class="definition">
+    <strong>Potential difference (voltage)</strong> is the energy transferred per unit charge. Symbol: <code>V</code>, measured in <strong>volts (V)</strong>.<br><br>
+    <code>V = W / Q</code><br><br>
+    where <code>V</code> = potential difference in volts (V), <code>W</code> = energy transferred (or work done) in joules (J), <code>Q</code> = charge in coulombs (C). Note: <code>1 V = 1 J/C</code>.
+</div>
+
+<p>A 12 V battery transfers 12 joules of energy to every coulomb of charge that flows through it. A 230 V mains socket transfers 230 joules per coulomb. This is why high voltages are dangerous &mdash; they transfer large amounts of energy to charge carriers (and, if you touch them, to you).</p>
+
+<div class="definition">
+    <strong>Resistance</strong> is a measure of how much a component opposes the flow of current. Symbol: <code>R</code>, measured in <strong>ohms (Ω)</strong>.
+</div>
+
+<div class="definition">
+    <strong>Ohm's Law:</strong> For a component at constant temperature,<br>
+    <code>V = I R</code><br><br>
+    where <code>V</code> = potential difference (V), <code>I</code> = current (A), <code>R</code> = resistance (Ω).
+</div>
+
+<p>Ohm's Law is an experimental relationship, not a law of nature. It works for many materials (copper wire, a resistor) at constant temperature. But it fails for filament lamps (resistance increases as it heats), diodes (resistance depends on direction), and many other real devices.</p>
+
+<h3>Measuring Resistance in a Circuit</h3>
+
+<p>To measure the resistance of a component, we need to know both the voltage across it and the current through it. The standard circuit for this is:</p>
+
+<!-- SVG 2: Circuit to measure resistance -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Test circuit: finding resistance R = V / I</text>
+
+  <defs>
+    <marker id="arr2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+  </defs>
+
+  <!-- Wire 1: top -->
+  <line x1="100" y1="60" x2="200" y2="60" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Battery (left) -->
+  <line x1="100" y1="55" x2="100" y2="95" stroke="#1e40af" stroke-width="3"/>
+  <line x1="110" y1="60" x2="110" y2="90" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="75" y="85" font-size="10" fill="#1e40af" font-weight="bold">+12V</text>
+
+  <!-- Wire 2: to ammeter -->
+  <line x1="200" y1="60" x2="280" y2="60" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Ammeter (in series) -->
+  <circle cx="320" cy="60" r="18" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="320" y="66" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">A</text>
+
+  <!-- Wire 3 -->
+  <line x1="338" y1="60" x2="420" y2="60" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Test resistor (unknown) -->
+  <rect x="420" y="50" width="80" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="460" y="110" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">Unknown R</text>
+
+  <!-- Wire 4 -->
+  <line x1="500" y1="60" x2="580" y2="60" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Wire 5: down (right side) -->
+  <line x1="580" y1="60" x2="580" y2="180" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Ground (bottom) -->
+  <line x1="100" y1="180" x2="580" y2="180" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Wire 6: up (left side) -->
+  <line x1="100" y1="180" x2="100" y2="95" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Voltmeter (in parallel with R) -->
+  <circle cx="515" cy="115" r="16" fill="none" stroke="#16a34a" stroke-width="2"/>
+  <text x="515" y="121" font-size="11" font-weight="bold" fill="#16a34a" text-anchor="middle">V</text>
+  <line x1="435" y1="80" x2="435" y2="110" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="435" y1="110" x2="499" y2="110" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="530" y1="110" x2="565" y2="110" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <line x1="565" y1="110" x2="565" y2="80" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3,2"/>
+
+  <!-- Labels -->
+  <text x="350" y="230" text-anchor="middle" font-size="11" fill="#1e40af">
+    <tspan x="350" dy="0">Procedure: 1. Ammeter in SERIES with the component</tspan>
+    <tspan x="350" dy="16">2. Voltmeter in PARALLEL across the component</tspan>
+    <tspan x="350" dy="16">3. Note the readings: I (amps) and V (volts)</tspan>
+    <tspan x="350" dy="16">4. Calculate: R = V / I (ohms)</tspan>
+  </text>
+</svg>
+
+<h3>Worked Example 2 — Ohm's Law</h3>
+
+<pre>
+Question: A filament lamp is connected to a 12 V power supply.
+          The ammeter reads 0.5 A. Calculate its resistance.
+
+Given:   V = 12 V,   I = 0.5 A
+Formula: V = I R   →   R = V / I
+Working: R = 12 ÷ 0.5
+           = 24 Ω
+
+Answer:  24 ohms
+</pre>
+
+<h2>4.2.4 I-V Characteristics</h2>
+
+<p>An I-V characteristic graph plots current (I) on the vertical axis and voltage (V) on the horizontal axis. The shape of the graph reveals how the resistance of a component changes with voltage.</p>
+
+<!-- SVG 3: I-V curves for three components -->
+<svg viewBox="0 0 900 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;margin:20px auto;display:block;">
+  <text x="450" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">I-V characteristics: three components</text>
+
+  <!-- Graph 1: Fixed resistor -->
+  <g>
+    <!-- Axes -->
+    <line x1="80" y1="320" x2="80" y2="100" stroke="#374151" stroke-width="1.5"/>
+    <line x1="80" y1="320" x2="240" y2="320" stroke="#374151" stroke-width="1.5"/>
+
+    <!-- Labels -->
+    <text x="40" y="210" text-anchor="middle" font-size="10" fill="#374151" transform="rotate(-90 40 210)">Current (A)</text>
+    <text x="160" y="345" text-anchor="middle" font-size="10" fill="#374151">Voltage (V)</text>
+
+    <!-- Scale marks -->
+    <text x="77" y="330" text-anchor="end" font-size="9" fill="#374151">0</text>
+    <text x="77" y="275" text-anchor="end" font-size="9" fill="#374151">0.5</text>
+    <text x="77" y="220" text-anchor="end" font-size="9" fill="#374151">1.0</text>
+    <text x="85" y="330" text-anchor="start" font-size="9" fill="#374151">0</text>
+    <text x="160" y="330" text-anchor="middle" font-size="9" fill="#374151">10</text>
+
+    <!-- Grid -->
+    <line x1="80" y1="275" x2="240" y2="275" stroke="#e5e7eb" stroke-width="0.8"/>
+    <line x1="160" y1="100" x2="160" y2="320" stroke="#e5e7eb" stroke-width="0.8"/>
+
+    <!-- I-V curve: straight line through origin (ohmic) -->
+    <line x1="80" y1="320" x2="240" y2="100" stroke="#2563eb" stroke-width="2.5"/>
+
+    <!-- Title -->
+    <text x="160" y="380" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Fixed resistor (ohmic)</text>
+    <text x="160" y="395" text-anchor="middle" font-size="9" fill="#6b7280">R is constant; straight line</text>
+  </g>
+
+  <!-- Graph 2: Filament lamp -->
+  <g>
+    <!-- Axes -->
+    <line x1="330" y1="320" x2="330" y2="100" stroke="#374151" stroke-width="1.5"/>
+    <line x1="330" y1="320" x2="490" y2="320" stroke="#374151" stroke-width="1.5"/>
+
+    <!-- Labels -->
+    <text x="290" y="210" text-anchor="middle" font-size="10" fill="#374151" transform="rotate(-90 290 210)">Current (A)</text>
+    <text x="410" y="345" text-anchor="middle" font-size="10" fill="#374151">Voltage (V)</text>
+
+    <!-- Scale marks -->
+    <text x="327" y="330" text-anchor="end" font-size="9" fill="#374151">0</text>
+    <text x="327" y="275" text-anchor="end" font-size="9" fill="#374151">0.5</text>
+    <text x="327" y="220" text-anchor="end" font-size="9" fill="#374151">1.0</text>
+    <text x="335" y="330" text-anchor="start" font-size="9" fill="#374151">0</text>
+    <text x="410" y="330" text-anchor="middle" font-size="9" fill="#374151">10</text>
+
+    <!-- Grid -->
+    <line x1="330" y1="275" x2="490" y2="275" stroke="#e5e7eb" stroke-width="0.8"/>
+    <line x1="410" y1="100" x2="410" y2="320" stroke="#e5e7eb" stroke-width="0.8"/>
+
+    <!-- I-V curve: S-curve (resistance increases) -->
+    <path d="M 330 315 Q 370 295 410 200 Q 450 140 490 115" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+
+    <!-- Title -->
+    <text x="410" y="380" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Filament lamp (non-ohmic)</text>
+    <text x="410" y="395" text-anchor="middle" font-size="9" fill="#6b7280">Curves upward; R increases with T</text>
+  </g>
+
+  <!-- Graph 3: Diode (with symmetry note) -->
+  <g>
+    <!-- Axes -->
+    <line x1="600" y1="210" x2="600" y2="100" stroke="#374151" stroke-width="1.5"/>
+    <line x1="600" y1="210" x2="760" y2="210" stroke="#374151" stroke-width="1.5"/>
+    <!-- Negative side -->
+    <line x1="440" y1="210" x2="600" y2="210" stroke="#374151" stroke-width="1.5"/>
+    <line x1="600" y1="210" x2="600" y2="320" stroke="#374151" stroke-width="1.5"/>
+
+    <!-- Labels -->
+    <text x="400" y="215" text-anchor="middle" font-size="10" fill="#374151">Current (A)</text>
+    <text x="600" y="345" text-anchor="middle" font-size="10" fill="#374151">Voltage (V)</text>
+
+    <!-- Scale marks -->
+    <text x="597" y="215" text-anchor="end" font-size="9" fill="#374151">0</text>
+    <text x="597" y="165" text-anchor="end" font-size="9" fill="#374151">+0.5</text>
+    <text x="440" y="215" text-anchor="middle" font-size="9" fill="#374151">−5</text>
+    <text x="680" y="215" text-anchor="middle" font-size="9" fill="#374151">+5</text>
+
+    <!-- Grid -->
+    <line x1="440" y1="210" x2="760" y2="210" stroke="#e5e7eb" stroke-width="0.8"/>
+
+    <!-- I-V curve: forward biased (steep at +) and reverse biased (flat at −) -->
+    <!-- Reverse (left): flat along x-axis -->
+    <line x1="440" y1="210" x2="585" y2="210" stroke="#16a34a" stroke-width="2.5"/>
+    <!-- Forward (right): curved up -->
+    <path d="M 600 210 Q 620 205 640 180 Q 660 150 680 100" stroke="#16a34a" stroke-width="2.5" fill="none"/>
+
+    <!-- Title -->
+    <text x="600" y="380" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Diode (one-way valve)</text>
+    <text x="600" y="395" text-anchor="middle" font-size="9" fill="#6b7280">Current flows one direction only</text>
+  </g>
+</svg>
+
+<h3>Key Points on I-V Characteristics</h3>
+
+<div class="definition">
+    A <strong>fixed resistor</strong> is <strong>ohmic</strong> &mdash; its I-V graph is a straight line through the origin. Its resistance is constant and does not change with voltage or current (provided temperature is held constant).
+</div>
+
+<div class="definition">
+    A <strong>filament lamp</strong> is <strong>non-ohmic</strong> &mdash; its I-V graph curves upward (increasing gradient). As the lamp gets brighter, its filament heats up, its resistance increases, and more voltage is needed to drive the same current. At low voltages, the filament is cool and resistance is low; at high voltages, it is hot and resistance is high.
+</div>
+
+<div class="definition">
+    A <strong>diode</strong> is a one-way valve for current. When biased forward (positive end toward positive terminal), it conducts readily (low resistance, steep curve). When biased reverse (negative end toward positive terminal), it blocks current almost completely (very high resistance, flat curve at zero current). A diode turns on sharply at a threshold voltage (about 0.6 V for silicon).
+</div>
+
+<h3>Light-Dependent Resistor (LDR)</h3>
+
+<p>An LDR (or photoresistor) changes resistance depending on the light falling on it. In darkness, its resistance is very high (mega-ohms); in bright light, it drops to a few hundred ohms. This is used in automatic lighting systems, security lights, and camera light meters.</p>
+
+<!-- SVG 4: LDR resistance vs. light intensity -->
+<svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;margin:20px auto;display:block;">
+  <text x="250" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">LDR: resistance decreases with light</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="240" x2="80" y2="40" stroke="#374151" stroke-width="1.5"/>
+  <line x1="80" y1="240" x2="480" y2="240" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Labels -->
+  <text x="35" y="140" text-anchor="middle" font-size="10" fill="#374151" transform="rotate(-90 35 140)">Resistance (Ω)</text>
+  <text x="280" y="265" text-anchor="middle" font-size="10" fill="#374151">Light intensity</text>
+
+  <!-- Scale -->
+  <text x="75" y="245" text-anchor="end" font-size="9" fill="#374151">0</text>
+  <text x="75" y="190" text-anchor="end" font-size="9" fill="#374151">MΩ</text>
+  <text x="75" y="100" text-anchor="end" font-size="9" fill="#374151">kΩ</text>
+
+  <text x="80" y="255" text-anchor="start" font-size="9" fill="#374151">Dark</text>
+  <text x="450" y="255" text-anchor="end" font-size="9" fill="#374151">Bright</text>
+
+  <!-- Grid -->
+  <line x1="80" y1="140" x2="480" y2="140" stroke="#e5e7eb" stroke-width="0.8"/>
+
+  <!-- Curve: decreasing (inverse power law shape) -->
+  <path d="M 90 60 Q 150 70 250 120 Q 350 160 470 230" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+
+  <!-- Annotation arrows -->
+  <line x1="100" y1="50" x2="100" y2="30" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="100" y="25" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="bold">High R</text>
+
+  <line x1="460" y1="235" x2="460" y2="255" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr2)"/>
+  <text x="460" y="260" text-anchor="middle" font-size="9" fill="#16a34a" font-weight="bold">Low R</text>
+</svg>
+
+<h3>Thermistor</h3>
+
+<p>A thermistor is a resistor whose resistance changes with temperature. There are two types: NTC (negative temperature coefficient) thermistors have resistance that <em>decreases</em> with temperature (the common type); PTC thermistors increase resistance with temperature (rare, used in self-regulating heaters). For GCSE, assume NTC unless stated otherwise.</p>
+
+<!-- SVG 5: Thermistor resistance vs. temperature -->
+<svg viewBox="0 0 500 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;margin:20px auto;display:block;">
+  <text x="250" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">NTC thermistor: resistance decreases with temperature</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="240" x2="80" y2="40" stroke="#374151" stroke-width="1.5"/>
+  <line x1="80" y1="240" x2="480" y2="240" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Labels -->
+  <text x="35" y="140" text-anchor="middle" font-size="10" fill="#374151" transform="rotate(-90 35 140)">Resistance (Ω)</text>
+  <text x="280" y="265" text-anchor="middle" font-size="10" fill="#374151">Temperature (°C)</text>
+
+  <!-- Scale -->
+  <text x="75" y="245" text-anchor="end" font-size="9" fill="#374151">0</text>
+  <text x="75" y="140" text-anchor="end" font-size="9" fill="#374151">5k</text>
+  <text x="75" y="60" text-anchor="end" font-size="9" fill="#374151">10k</text>
+
+  <text x="80" y="255" text-anchor="start" font-size="9" fill="#374151">−20</text>
+  <text x="460" y="255" text-anchor="end" font-size="9" fill="#374151">+80</text>
+
+  <!-- Grid -->
+  <line x1="80" y1="140" x2="480" y2="140" stroke="#e5e7eb" stroke-width="0.8"/>
+
+  <!-- Curve: decreasing (inverse power law) -->
+  <path d="M 90 220 Q 150 180 250 120 Q 350 80 470 50" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+</svg>
+
+<h2>4.2.5 Series and Parallel Circuits</h2>
+
+<h3>Series Circuits</h3>
+
+<div class="definition">
+    In a <strong>series circuit</strong>, components are connected one after another in a single loop. There is only one path for the current.
+
+    <ul style="margin-top:10px;">
+        <li><strong>Current:</strong> The same current flows through every component. <code>I = I<sub>1</sub> = I<sub>2</sub> = I<sub>3</sub></code></li>
+        <li><strong>Voltage:</strong> The supply voltage is divided among the components. <code>V<sub>supply</sub> = V<sub>1</sub> + V<sub>2</sub> + V<sub>3</sub></code></li>
+        <li><strong>Resistance:</strong> Resistances add. <code>R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> + R<sub>3</sub> + …</code></li>
+    </ul>
+</div>
+
+<!-- SVG 6: Series circuit -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Series circuit: two resistors</text>
+
+  <!-- Top wire -->
+  <line x1="80" y1="60" x2="150" y2="60" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Battery -->
+  <line x1="80" y1="55" x2="80" y2="100" stroke="#1e40af" stroke-width="3"/>
+  <line x1="90" y1="62" x2="90" y2="93" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="50" y="85" font-size="10" fill="#1e40af" font-weight="bold">9V</text>
+
+  <!-- First resistor -->
+  <line x1="150" y1="60" x2="200" y2="60" stroke="#1e40af" stroke-width="2"/>
+  <rect x="200" y="50" width="80" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="240" y="45" font-size="10" fill="#1e40af" font-weight="bold">R₁=3Ω</text>
+
+  <!-- Second resistor -->
+  <line x1="280" y1="60" x2="330" y2="60" stroke="#1e40af" stroke-width="2"/>
+  <rect x="330" y="50" width="80" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="370" y="45" font-size="10" fill="#1e40af" font-weight="bold">R₂=6Ω</text>
+
+  <!-- Right side down -->
+  <line x1="410" y1="60" x2="450" y2="60" stroke="#1e40af" stroke-width="2"/>
+  <line x1="450" y1="60" x2="450" y2="150" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Bottom -->
+  <line x1="80" y1="150" x2="450" y2="150" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Left side down -->
+  <line x1="80" y1="100" x2="80" y2="150" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Annotations -->
+  <rect x="80" y="210" width="300" height="70" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+  <text x="230" y="228" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Solution (series)</text>
+  <text x="90" y="245" font-size="10" fill="#1e40af"><tspan>R<sub>total</sub> = R<sub>1</sub> + R<sub>2</sub> = 3 + 6 = 9 Ω</tspan></text>
+  <text x="90" y="262" font-size="10" fill="#1e40af"><tspan>I = V / R<sub>total</sub> = 9 / 9 = 1 A (same through both)</tspan></text>
+  <text x="90" y="279" font-size="10" fill="#1e40af"><tspan>V<sub>1</sub> = I × R<sub>1</sub> = 1 × 3 = 3 V;   V<sub>2</sub> = 1 × 6 = 6 V</tspan></text>
+</svg>
+
+<h3>Parallel Circuits</h3>
+
+<div class="definition">
+    In a <strong>parallel circuit</strong>, components are connected across each other so that there are multiple paths for the current.
+
+    <ul style="margin-top:10px;">
+        <li><strong>Voltage:</strong> The same voltage appears across each component. <code>V = V<sub>1</sub> = V<sub>2</sub> = V<sub>3</sub></code></li>
+        <li><strong>Current:</strong> The total current is divided among the branches. <code>I<sub>total</sub> = I<sub>1</sub> + I<sub>2</sub> + I<sub>3</sub> + …</code></li>
+        <li><strong>Resistance:</strong> The reciprocal of total resistance is the sum of reciprocals: <code>1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> + 1/R<sub>3</sub> + …</code>. This means <code>R<sub>total</sub></code> is <em>less than</em> the smallest branch resistor.</li>
+    </ul>
+</div>
+
+<!-- SVG 7: Parallel circuit -->
+<svg viewBox="0 0 700 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Parallel circuit: two resistors</text>
+
+  <!-- Left supply -->
+  <line x1="60" y1="80" x2="120" y2="80" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Battery -->
+  <line x1="60" y1="75" x2="60" y2="120" stroke="#1e40af" stroke-width="3"/>
+  <line x1="70" y1="82" x2="70" y2="113" stroke="#1e40af" stroke-width="1.5"/>
+  <text x="30" y="105" font-size="10" fill="#1e40af" font-weight="bold">12V</text>
+
+  <!-- Junction A (top) -->
+  <circle cx="120" cy="80" r="3" fill="#1e40af"/>
+
+  <!-- Branch 1 (top) -->
+  <line x1="120" y1="80" x2="180" y2="80" stroke="#1e40af" stroke-width="2"/>
+  <rect x="180" y="70" width="80" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="220" y="65" font-size="10" fill="#1e40af" font-weight="bold">R₁=4Ω</text>
+  <line x1="260" y1="80" x2="320" y2="80" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Branch 2 (bottom) -->
+  <line x1="120" y1="80" x2="180" y2="140" stroke="#1e40af" stroke-width="2"/>
+  <rect x="180" y="130" width="80" height="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+  <text x="220" y="125" font-size="10" fill="#1e40af" font-weight="bold">R₂=12Ω</text>
+  <line x1="260" y1="140" x2="320" y2="140" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Junction B (right, reconnect) -->
+  <circle cx="320" cy="110" r="3" fill="#1e40af"/>
+  <line x1="320" y1="80" x2="320" y2="110" stroke="#1e40af" stroke-width="2"/>
+  <line x1="320" y1="110" x2="320" y2="140" stroke="#1e40af" stroke-width="2"/>
+  <line x1="320" y1="110" x2="380" y2="110" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Right side down -->
+  <line x1="380" y1="110" x2="380" y2="180" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Bottom -->
+  <line x1="60" y1="180" x2="380" y2="180" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Left side down -->
+  <line x1="60" y1="120" x2="60" y2="180" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Annotations -->
+  <rect x="60" y="240" width="580" height="90" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+  <text x="350" y="258" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Solution (parallel)</text>
+  <text x="70" y="275" font-size="10" fill="#1e40af"><tspan>1/R<sub>total</sub> = 1/R<sub>1</sub> + 1/R<sub>2</sub> = 1/4 + 1/12 = 3/12 + 1/12 = 4/12 = 1/3</tspan></text>
+  <text x="70" y="292" font-size="10" fill="#1e40af"><tspan>R<sub>total</sub> = 3 Ω   (less than the smallest branch!)</tspan></text>
+  <text x="70" y="309" font-size="10" fill="#1e40af"><tspan>I<sub>total</sub> = V / R<sub>total</sub> = 12 / 3 = 4 A</tspan></text>
+  <text x="70" y="326" font-size="10" fill="#1e40af"><tspan>I<sub>1</sub> = 12 / 4 = 3 A;   I<sub>2</sub> = 12 / 12 = 1 A;   Check: 3 + 1 = 4 ✓</tspan></text>
+</svg>
+
+<h3>Worked Example 3 — Series Resistance</h3>
+
+<pre>
+Question: Three resistors of 5 Ω, 10 Ω, and 15 Ω are connected
+          in series to a 60 V supply. Calculate the total
+          resistance and the current.
+
+Given:   R₁ = 5 Ω,   R₂ = 10 Ω,   R₃ = 15 Ω,   V = 60 V
+Formula: R_total = R₁ + R₂ + R₃
+Working: R_total = 5 + 10 + 15
+                 = 30 Ω
+         I = V / R_total
+           = 60 / 30
+           = 2 A
+
+Answer:  R_total = 30 Ω,   I = 2 A (through all three)
+</pre>
+
+<h3>Worked Example 4 — Parallel Resistance and Current Division</h3>
+
+<pre>
+Question: Two resistors, 4 Ω and 12 Ω, are connected in parallel
+          to a 12 V supply. Find the total resistance and the
+          current through each branch.
+
+Given:   R₁ = 4 Ω,   R₂ = 12 Ω,   V = 12 V
+Formula: 1/R_total = 1/R₁ + 1/R₂
+Working: 1/R_total = 1/4 + 1/12
+                   = 3/12 + 1/12
+                   = 4/12
+                   = 1/3
+         R_total = 3 Ω
+
+         I₁ = V / R₁ = 12 / 4 = 3 A
+         I₂ = V / R₂ = 12 / 12 = 1 A
+         I_total = I₁ + I₂ = 3 + 1 = 4 A
+
+         Check: I_total = V / R_total = 12 / 3 = 4 A ✓
+
+Answer:  R_total = 3 Ω,   I₁ = 3 A,   I₂ = 1 A
+</pre>
+
+<div class="exam-tip">Common error: students forget that adding resistors in <em>parallel</em> gives a resistance <em>less</em> than any single branch. Intuition fails here because you might think "more wires = more resistance"; in fact, "more paths = easier flow = less resistance". Always check: after calculating R_total in parallel, verify it is smaller than the smallest branch resistor. If it is not, you have made an error.</div>
+
+<h2>4.2.6 Mains Electricity</h2>
+
+<h3>UK Mains Supply</h3>
+
+<div class="definition">
+    The UK mains electricity supply is <strong>alternating current (a.c.)</strong> at <strong>230 volts</strong> and <strong>50 Hz</strong> (fifty complete cycles per second).
+</div>
+
+<p>Alternating current means the voltage and current reverse direction 100 times per second (50 Hz cycle = 2 reversals per cycle). This is different from direct current (d.c.) from a battery, which flows only one way. A.c. is used for the mains because it is efficient to transmit over long distances via transformers (we will see this in section 4.2.8).</p>
+
+<h3>Three-Wire Plug and Cable</h3>
+
+<p>A mains cable has three separate conductors, each with a different purpose and colour (in the UK):</p>
+
+<table>
+    <tr><th>Wire</th><th>Colour</th><th>Voltage</th><th>Purpose</th></tr>
+    <tr><td><strong>Live</strong></td><td>Brown</td><td>Alternates between +230 V and −230 V (at 50 Hz)</td><td>Carries the current to the device. Always dangerous if touched.</td></tr>
+    <tr><td><strong>Neutral</strong></td><td>Blue</td><td>Approximately 0 V (ground reference)</td><td>Completes the circuit, carrying current back. Normally safe to touch (but not recommended).</td></tr>
+    <tr><td><strong>Earth</strong></td><td>Green + Yellow (striped)</td><td>Approximately 0 V (ground reference)</td><td>Safety wire. Normally carries no current. If the live wire touches the metal casing, earth provides a low-resistance path to ground, triggering a fuse or circuit breaker.</td></tr>
+</table>
+
+<!-- SVG 8: 3-pin plug cutaway -->
+<svg viewBox="0 0 500 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:500px;margin:20px auto;display:block;">
+  <text x="250" y="20" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">UK 3-pin mains plug (cutaway view)</text>
+
+  <!-- Plug body (rectangular, 3D effect) -->
+  <rect x="120" y="60" width="200" height="160" fill="#fef3c7" stroke="#92400e" stroke-width="2" rx="8"/>
+
+  <!-- Three pin holes -->
+  <!-- Left pin (earth - green/yellow) -->
+  <circle cx="155" cy="180" r="8" fill="#22c55e"/>
+  <rect x="150" y="190" width="10" height="40" fill="#22c55e"/>
+  <text x="140" y="245" text-anchor="end" font-size="10" fill="#16a34a" font-weight="bold">Earth</text>
+  <text x="140" y="260" text-anchor="end" font-size="9" fill="#16a34a">(green+yellow)</text>
+
+  <!-- Middle pin (neutral - blue) -->
+  <circle cx="250" cy="180" r="8" fill="#2563eb"/>
+  <rect x="245" y="190" width="10" height="40" fill="#2563eb"/>
+  <text x="250" y="245" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">Neutral</text>
+  <text x="250" y="260" text-anchor="middle" font-size="9" fill="#1e40af">(blue)</text>
+
+  <!-- Right pin (live - brown) -->
+  <circle cx="345" cy="180" r="8" fill="#92400e"/>
+  <rect x="340" y="190" width="10" height="40" fill="#92400e"/>
+  <text x="360" y="245" text-anchor="start" font-size="10" fill="#92400e" font-weight="bold">Live</text>
+  <text x="360" y="260" text-anchor="start" font-size="9" fill="#92400e">(brown)</text>
+
+  <!-- Safety shutter (optional, shown on some) -->
+  <rect x="180" y="140" width="25" height="8" fill="#999" opacity="0.5"/>
+  <text x="215" y="145" font-size="9" fill="#666">← safety shutter</text>
+
+  <!-- Key box -->
+  <rect x="80" y="280" width="300" height="30" fill="#fff9e6" stroke="#f59e0b" stroke-width="1" rx="3"/>
+  <text x="90" y="300" font-size="9" fill="#92400e"><tspan>The longest pin (earth) enters first, so it is connected to metal casing before live </tspan><tspan x="90" dy="12">wire is exposed. This ensures the casing is always at 0 V.</tspan></text>
+</svg>
+
+<h3>Electrical Safety: Fuses and Circuit Breakers</h3>
+
+<div class="definition">
+    A <strong>fuse</strong> is a safety device containing a thin wire that melts if the current exceeds a safe value. Common ratings in the UK are 3 A (for low-power devices), 13 A (for household appliances), and 32 A (for cookers). When the wire melts, the circuit is broken and current stops.
+</div>
+
+<p>A fuse protects against two main dangers:</p>
+
+<ol>
+    <li><strong>Overload:</strong> If a device draws too much current (e.g., a short circuit), the fuse melts and disconnects the device before wires overheat and catch fire.</li>
+    <li><strong>Earth fault:</strong> If the live wire touches the metal casing (due to damaged insulation), current flows directly to earth via the earth wire and metal casing. The resistance is very low, so current is enormous, and the fuse melts almost instantly. This disconnects the device, leaving the casing at 0 V and safe to touch.</li>
+</ol>
+
+<div class="definition">
+    A <strong>circuit breaker</strong> (or residual current device, RCD) is an automatic switch that cuts off the supply if current flows to earth (i.e. if the live and neutral currents become unequal). Modern homes increasingly use RCDs instead of fuses because they work faster and can be reset (no need to replace a wire each time).
+</div>
+
+<div class="definition">
+    <strong>Double insulation</strong> (shown by the symbol ⧠ on a device) means the casing is made of a non-conducting material (plastic, not metal). There is no risk of touching live metal, so an earth wire is not necessary. These devices typically have only two wires (live and neutral) in the plug.
+</div>
+
+<h2>4.2.7 Energy and Power in Electrical Circuits</h2>
+
+<p>Electrical energy is transferred whenever current flows through a potential difference. The rate at which energy is transferred is power.</p>
+
+<div class="definition">
+    <strong>Electrical power:</strong> <code>P = V I</code><br><br>
+    where <code>P</code> = power in watts (W), <code>V</code> = potential difference (V), <code>I</code> = current (A).
+</div>
+
+<p>A 230 V kettle drawing 13 A consumes <code>P = 230 × 13 = 2990 W</code> (about 3 kW). A USB phone charger at 5 V, 2 A uses <code>P = 5 × 2 = 10 W</code>.</p>
+
+<div class="definition">
+    Using Ohm's law, power can also be expressed as:<br><br>
+    <code>P = I² R</code> &nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp; <code>P = V² / R</code><br><br>
+    The first form shows why thicker wires are used for high currents (to reduce I² R heating losses). The second shows why high voltage is efficient for long-distance transmission (power loss ∝ 1/V²).
+</div>
+
+<div class="definition">
+    <strong>Electrical energy:</strong> <code>E = P t = V I t = Q V</code><br><br>
+    where <code>E</code> = energy in joules (J), <code>t</code> = time in seconds (s), <code>Q</code> = charge in coulombs (C).
+</div>
+
+<h3>Worked Example 5 — Mains Power Calculation</h3>
+
+<pre>
+Question: A kettle is rated 230 V, 13 A. Calculate its power
+          rating and the energy transferred in 30 seconds.
+
+Given:   V = 230 V,   I = 13 A,   t = 30 s
+Formula: P = V I
+         E = P t
+Working: P = 230 × 13
+           = 2990 W (≈ 3.0 kW)
+         E = 2990 × 30
+           = 89 700 J (≈ 90 kJ or 0.090 MJ)
+
+Answer:  Power = 2990 W (3.0 kW),   Energy = 89 700 J (90 kJ)
+</pre>
+
+<h3>Worked Example 6 — Energy Consumption and Cost</h3>
+
+<pre>
+Question: A 2 kW electric heater runs for 30 minutes. Calculate
+          the energy used in joules and in kilowatt-hours (kWh).
+          If electricity costs £0.24 per kWh, what is the cost
+          of running the heater?
+
+Given:   P = 2 kW = 2000 W,   t = 30 min = 1800 s
+
+(a) Energy in joules:
+    E = P t = 2000 × 1800 = 3 600 000 J = 3.6 MJ
+
+(b) Energy in kilowatt-hours:
+    t = 30 min = 0.5 hours
+    E = P t = 2 kW × 0.5 h = 1 kWh
+
+(c) Cost:
+    Cost = 1 kWh × £0.24/kWh = £0.24
+
+Answer:  E = 3.6 MJ (or 3 600 000 J)
+         E = 1 kWh
+         Cost = £0.24
+</pre>
+
+<div class="exam-tip">Examiners often test conversion between joules and kilowatt-hours. Remember: 1 kWh = 1000 W × 3600 s = 3 600 000 J. To convert MJ to kWh: 1 MJ = 1 000 000 J = 1 000 000 ÷ 3 600 000 = 0.278 kWh. Electricity bills use kWh; physics calculations usually use joules, so be ready to convert both ways.</div>
+
+<h2>4.2.8 The National Grid</h2>
+
+<p>Electrical power generated at power stations must be distributed to millions of homes and businesses across the country. The National Grid is a network of power lines and transformers that makes this possible.</p>
+
+<h3>Why High Voltage Transmission?</h3>
+
+<p>Electricity is transmitted at very high voltages (hundreds of thousands of volts) because this reduces energy loss:</p>
+
+<p>Power loss in a cable is <code>P_loss = I² R</code>. If power is fixed at <code>P = V I</code>, then transmitting at <em>high</em> voltage means <em>low</em> current. Since power loss depends on I², a small reduction in current gives a large reduction in losses. For example, doubling the voltage halves the current and quarters the power loss.</p>
+
+<!-- SVG 9: National Grid schematic -->
+<svg viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;margin:20px auto;display:block;">
+  <text x="450" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">National Grid: power generation to home</text>
+
+  <!-- Power station -->
+  <rect x="40" y="100" width="80" height="80" fill="#fef3c7" stroke="#92400e" stroke-width="2" rx="4"/>
+  <text x="80" y="145" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">Power</text>
+  <text x="80" y="160" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">Station</text>
+  <text x="80" y="200" text-anchor="middle" font-size="9" fill="#666">~25 kV</text>
+
+  <!-- Step-up transformer -->
+  <rect x="150" y="115" width="60" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="180" y="143" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">Step-up</text>
+  <text x="180" y="157" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">Trans.</text>
+  <text x="220" y="95" text-anchor="middle" font-size="9" fill="#2563eb" font-weight="bold">V ↑ 400 kV</text>
+  <text x="180" y="180" text-anchor="middle" font-size="9" fill="#666">I ↓ low</text>
+
+  <!-- High-voltage transmission lines -->
+  <line x1="210" y1="140" x2="340" y2="140" stroke="#dc2626" stroke-width="3" stroke-dasharray="5,5"/>
+  <text x="275" y="125" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="bold">Very high voltage</text>
+  <text x="275" y="165" text-anchor="middle" font-size="9" fill="#dc2626">Long-distance transmission</text>
+
+  <!-- Substation transformer (step-down 1) -->
+  <rect x="360" y="115" width="60" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="390" y="143" text-anchor="middle" font-size="9" font-weight="bold" fill="#1e40af">Step-down</text>
+  <text x="390" y="157" text-anchor="middle" font-size="9" font-weight="bold" fill="#1e40af">Trans.</text>
+  <text x="445" y="95" text-anchor="middle" font-size="9" fill="#2563eb" font-weight="bold">V ↓ 132 kV</text>
+  <text x="390" y="180" text-anchor="middle" font-size="9" fill="#666">I ↑ higher</text>
+
+  <!-- Distribution lines -->
+  <line x1="420" y1="140" x2="520" y2="140" stroke="#16a34a" stroke-width="2"/>
+  <text x="470" y="125" text-anchor="middle" font-size="9" fill="#16a34a" font-weight="bold">Regional distribution</text>
+
+  <!-- Local transformer (step-down 2) -->
+  <rect x="540" y="115" width="60" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="570" y="143" text-anchor="middle" font-size="9" font-weight="bold" fill="#1e40af">Step-down</text>
+  <text x="570" y="157" text-anchor="middle" font-size="9" font-weight="bold" fill="#1e40af">Trans.</text>
+  <text x="625" y="95" text-anchor="middle" font-size="9" fill="#2563eb" font-weight="bold">V ↓ 400 V</text>
+  <text x="570" y="180" text-anchor="middle" font-size="9" fill="#666">for businesses</text>
+
+  <!-- Step-down to homes -->
+  <line x1="600" y1="140" x2="680" y2="140" stroke="#1e40af" stroke-width="2"/>
+
+  <!-- Final transformer (to home) -->
+  <rect x="700" y="115" width="60" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+  <text x="730" y="143" text-anchor="middle" font-size="9" font-weight="bold" fill="#1e40af">Step-down</text>
+  <text x="730" y="157" text-anchor="middle" font-size="9" font-weight="bold" fill="#1e40af">Trans.</text>
+  <text x="795" y="95" text-anchor="middle" font-size="9" fill="#2563eb" font-weight="bold">V ↓ 230 V</text>
+  <text x="730" y="180" text-anchor="middle" font-size="9" fill="#666">for homes</text>
+
+  <!-- House -->
+  <line x1="760" y1="140" x2="820" y2="140" stroke="#1e40af" stroke-width="2"/>
+  <rect x="820" y="90" width="60" height="100" fill="#fef3c7" stroke="#92400e" stroke-width="2" rx="4"/>
+  <text x="850" y="145" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">Home</text>
+
+  <!-- Key -->
+  <rect x="40" y="250" width="820" height="40" fill="#fffbeb" stroke="#f59e0b" stroke-width="1" rx="4"/>
+  <text x="50" y="268" font-size="10" fill="#92400e" font-weight="bold">Key insight:</text>
+  <text x="200" y="268" font-size="10" fill="#1a1a2e">Voltage is stepped UP for long-distance transmission (low I → low losses), then stepped DOWN in stages for safety and use.</text>
+  <text x="50" y="283" font-size="9" fill="#6b7280">Transformers require alternating current (changing magnetic flux). This is why the mains is a.c., not d.c.</text>
+</svg>
+
+<div class="definition">
+    A <strong>transformer</strong> uses a changing magnetic field to transfer energy between two coils. It can only work with a.c. (if the current is constant d.c., the magnetic field doesn't change and no energy is transferred to the secondary coil).
+</div>
+
+<div class="definition">
+    <strong>Step-up transformer:</strong> increases voltage and decreases current (same power, <code>V₁ I₁ = V₂ I₂</code>).<br>
+    <strong>Step-down transformer:</strong> decreases voltage and increases current.
+</div>
+
+<h2>4.2.9 Static Electricity (Triple Only)</h2>
+
+<p>This section is for Triple Science (separate physics) students only. Foundation Science students are not examined on static electricity at GCSE.</p>
+
+<h3>How Charge is Generated by Friction</h3>
+
+<div class="definition">
+    <strong>Static electricity</strong> is the accumulation of electric charge that is at rest (not flowing). It is generated when two materials are rubbed together. Electrons transfer from one material to the other:
+    <ul style="margin-top: 10px;">
+        <li>The material that <strong>loses</strong> electrons becomes <strong>positively charged</strong>.</li>
+        <li>The material that <strong>gains</strong> electrons becomes <strong>negatively charged</strong>.</li>
+    </ul>
+</div>
+
+<p>Example: when you rub a balloon on your hair, electrons transfer from the hair to the balloon. The balloon becomes negatively charged and attracts the hair. Your hair also becomes positively charged and repels the balloon's negative charge — but the attraction to the balloon's negative charge (pulling) is stronger than the repulsion (pushing) because the balloon is closer, so the hair sticks.</p>
+
+<h3>Electric Forces: Attraction and Repulsion</h3>
+
+<div class="definition">
+    <strong>Coulomb's Law (concept only):</strong> Like charges repel each other; unlike charges attract. The force is proportional to the magnitude of the charges and inversely proportional to the square of the distance between them.
+</div>
+
+<h3>Electric Field</h3>
+
+<div class="definition">
+    An <strong>electric field</strong> is a region of space where a charged object experiences a force. Electrical potential energy is stored in the field.
+</div>
+
+<p>Electric field patterns are shown using <strong>field lines</strong>:</p>
+
+<ul>
+    <li>Field lines point <strong>away from</strong> a positive charge.</li>
+    <li>Field lines point <strong>toward</strong> a negative charge.</li>
+    <li>The <em>closer together</em> the field lines, the <em>stronger</em> the field.</li>
+    <li>The direction of the force on a positive charge is <em>along</em> the field line (in the direction of the arrow).</li>
+    <li>The direction of the force on a negative charge is <em>opposite</em> to the field line.</li>
+</ul>
+
+<!-- SVG 10: Electric field around point charges and parallel plates -->
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;margin:20px auto;display:block;">
+  <text x="450" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Electric field patterns</text>
+
+  <!-- Left: Radial field around positive charge -->
+  <g>
+    <text x="180" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Radial field: positive point charge</text>
+
+    <!-- Field lines radiating outward -->
+    <line x1="180" y1="80" x2="180" y2="120" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <line x1="210" y1="90" x2="240" y2="120" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <line x1="210" y1="190" x2="240" y2="220" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <line x1="180" y1="200" x2="180" y2="240" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <line x1="150" y1="190" x2="120" y2="220" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr3)"/>
+    <line x1="150" y1="90" x2="120" y2="120" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr3)"/>
+
+    <!-- Central charge -->
+    <circle cx="180" cy="155" r="12" fill="#dc2626"/>
+    <text x="180" y="160" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">+</text>
+
+    <!-- Annotation -->
+    <text x="180" y="290" text-anchor="middle" font-size="10" fill="#1a1a2e">Field lines point AWAY from +</text>
+  </g>
+
+  <defs>
+    <marker id="arr3" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+    <marker id="arr4" markerWidth="8" markerHeight="8" refX="0" refY="4" orient="auto"><polygon points="8 0, 0 4, 8 8" fill="#16a34a"/></marker>
+  </defs>
+
+  <!-- Right: Uniform field between parallel plates -->
+  <g>
+    <text x="650" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Uniform field: parallel plates</text>
+
+    <!-- Positive plate (left) -->
+    <rect x="520" y="80" width="15" height="180" fill="#dc2626"/>
+    <text x="515" y="180" text-anchor="end" font-size="10" font-weight="bold" fill="#dc2626">+</text>
+
+    <!-- Negative plate (right) -->
+    <rect x="765" y="80" width="15" height="180" fill="#16a34a"/>
+    <text x="785" y="180" text-anchor="start" font-size="10" font-weight="bold" fill="#16a34a">−</text>
+
+    <!-- Uniform field lines (parallel, evenly spaced) -->
+    <line x1="540" y1="110" x2="760" y2="110" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr2)"/>
+    <line x1="540" y1="140" x2="760" y2="140" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr2)"/>
+    <line x1="540" y1="170" x2="760" y2="170" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr2)"/>
+    <line x1="540" y1="200" x2="760" y2="200" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr2)"/>
+    <line x1="540" y1="230" x2="760" y2="230" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr2)"/>
+
+    <!-- Annotation -->
+    <text x="650" y="290" text-anchor="middle" font-size="10" fill="#1a1a2e">Field lines are parallel and</text>
+    <text x="650" y="305" text-anchor="middle" font-size="10" fill="#1a1a2e">evenly spaced (uniform field)</text>
+  </g>
+</svg>
+
+<h3>Sparks and Electrical Discharge</h3>
+
+<p>If two charged objects are brought close together, the electric field becomes very strong near the gap. When the field strength exceeds about 3 million volts per metre, the air is ionised (electrons are knocked loose from atoms), and a spark forms. Charge jumps across the gap in a thin plasma channel.</p>
+
+<p>A lightning strike is a giant spark: clouds become charged by friction with ice particles during storms, and when the potential difference exceeds millions of volts, a spark bridges the gap to the ground or another cloud.</p>
+
+<div class="exam-tip">For the final section on static electricity, expect questions on: (i) how friction transfers electrons and generates charge; (ii) forces between charges (like repel, unlike attract); (iii) field line diagrams (radial around point charges, uniform between plates); (iv) why sparks form (field strength ionises air). Know the direction of field lines (out of +, into −) and always draw them with arrows.</div>
+
+<h2>Summary Checklist for 4.2 Electricity</h2>
+
+<ul>
+    <li>Know all 12 standard circuit symbols and be able to draw them.</li>
+    <li>Define current as rate of flow of charge: <code>I = Q / t</code>.</li>
+    <li>Define potential difference as energy per unit charge: <code>V = W / Q</code>.</li>
+    <li>State and apply Ohm's Law: <code>V = I R</code> (at constant temperature).</li>
+    <li>Measure resistance using ammeter (series) and voltmeter (parallel).</li>
+    <li>Sketch and interpret I-V characteristics for fixed resistor (linear), filament lamp (curve, non-ohmic), and diode (one-way).</li>
+    <li>Understand how LDR resistance decreases with light and thermistor (NTC) resistance decreases with temperature.</li>
+    <li>Apply series circuit rules: same I, V shared, <code>R_total = R₁ + R₂ + …</code>.</li>
+    <li>Apply parallel circuit rules: same V, I shared, <code>1/R_total = 1/R₁ + 1/R₂ + …</code>.</li>
+    <li>State UK mains: 230 V, 50 Hz, a.c.</li>
+    <li>Identify three wires in a plug: live (brown, dangerous), neutral (blue, safe), earth (green+yellow, safety).</li>
+    <li>Explain how fuses protect against overload and earth faults.</li>
+    <li>Define double insulation and why earth wire is not needed.</li>
+    <li>Calculate electrical power: <code>P = V I</code>, <code>P = I² R</code>, <code>P = V² / R</code>.</li>
+    <li>Calculate electrical energy: <code>E = P t = V I t = Q V</code>.</li>
+    <li>Understand the National Grid: step-up transformer (high V for transmission), step-down transformers (to safe voltages for use).</li>
+    <li>Explain why transformers need a.c. (changing magnetic flux).</li>
+    <li>(Triple) Describe friction-generated charge, like/unlike charges, and electric field patterns (radial from point, uniform between plates).</li>
+    <li>(Triple) Explain how sparks form when field strength ionises air.</li>
+</ul>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.8 — Space Physics</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        sub { font-size: 0.8em; }
+        sup { font-size: 0.8em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.8 Space Physics</h1>
+<p class="spec-ref">AQA GCSE Physics (8463) — Paper 2 (Triple / Separate Physics)</p>
+
+<h2>4.8.1 Our Solar System</h2>
+
+<div class="definition">
+    The <strong>Solar System</strong> consists of the Sun (a star at the centre), eight planets orbiting the Sun, moons orbiting the planets, dwarf planets, asteroids, and comets. Everything orbits due to the Sun's gravitational attraction.
+</div>
+
+<h3>The Eight Planets</h3>
+
+<p>The eight planets, in order from the Sun, are:</p>
+<ol>
+    <li><strong>Mercury</strong></li>
+    <li><strong>Venus</strong></li>
+    <li><strong>Earth</strong></li>
+    <li><strong>Mars</strong></li>
+    <li><strong>Jupiter</strong></li>
+    <li><strong>Saturn</strong></li>
+    <li><strong>Uranus</strong></li>
+    <li><strong>Neptune</strong></li>
+</ol>
+
+<p><strong>Mnemonic:</strong> "My Very Educated Mother Just Served Us Noodles"</p>
+
+<h3>Two Categories of Planets</h3>
+
+<table>
+    <tr>
+        <th>Terrestrial (Rocky) Planets</th>
+        <th>Gas Giants</th>
+    </tr>
+    <tr>
+        <td>Mercury, Venus, Earth, Mars</td>
+        <td>Jupiter, Saturn, Uranus, Neptune</td>
+    </tr>
+    <tr>
+        <td>Small to medium size</td>
+        <td>Very large size</td>
+    </tr>
+    <tr>
+        <td>High density (solid surface)</td>
+        <td>Low density (gaseous)</td>
+    </tr>
+    <tr>
+        <td>Located in inner solar system</td>
+        <td>Located in outer solar system</td>
+    </tr>
+    <tr>
+        <td>Few or no moons</td>
+        <td>Many moons (Jupiter has 95+, Saturn has 146+)</td>
+    </tr>
+</table>
+
+<div class="definition">
+    A <strong>dwarf planet</strong> is a celestial body that orbits the Sun and is massive enough to be round, but has not cleared its orbital path of other objects. Examples: Pluto, Ceres, Eris.
+</div>
+
+<div class="definition">
+    <strong>Natural satellites (moons)</strong> are large objects that orbit planets (e.g. Earth's Moon). <strong>Artificial satellites</strong> are human-made objects that orbit planets or stars (e.g. GPS satellites, the International Space Station, communication satellites).
+</div>
+
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <defs>
+        <style>
+            .planet-label { font-size: 10px; font-weight: 600; fill: #1e3a5f; text-anchor: middle; }
+            .planet-name { font-size: 11px; font-weight: 700; fill: #1e40af; text-anchor: middle; }
+        </style>
+    </defs>
+    <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">The Solar System (Not to Scale)</text>
+
+    <!-- Sun -->
+    <circle cx="100" cy="200" r="20" fill="#f59e0b"/>
+    <text x="100" y="240" class="planet-name">Sun</text>
+
+    <!-- Orbital paths -->
+    <circle cx="100" cy="200" r="50" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="100" cy="200" r="90" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="100" cy="200" r="130" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="100" cy="200" r="170" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="100" cy="200" r="210" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="100" cy="200" r="250" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="100" cy="200" r="290" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="2,2"/>
+    <circle cx="100" cy="200" r="320" fill="none" stroke="#d1d5db" stroke-width="1" stroke-dasharray="2,2"/>
+
+    <!-- Mercury -->
+    <circle cx="150" cy="200" r="4" fill="#8b7355"/>
+    <text x="150" y="217" class="planet-label">Mercury</text>
+
+    <!-- Venus -->
+    <circle cx="190" cy="200" r="7" fill="#fcd34d"/>
+    <text x="190" y="222" class="planet-label">Venus</text>
+
+    <!-- Earth -->
+    <circle cx="230" cy="200" r="7" fill="#3b82f6"/>
+    <text x="230" y="222" class="planet-label">Earth</text>
+
+    <!-- Mars -->
+    <circle cx="270" cy="200" r="5" fill="#dc2626"/>
+    <text x="270" y="219" class="planet-label">Mars</text>
+
+    <!-- Asteroid belt -->
+    <circle cx="300" cy="180" r="2" fill="#9ca3af"/>
+    <circle cx="310" cy="185" r="2" fill="#9ca3af"/>
+    <circle cx="305" cy="215" r="2" fill="#9ca3af"/>
+    <circle cx="315" cy="210" r="2" fill="#9ca3af"/>
+    <circle cx="320" cy="195" r="2" fill="#9ca3af"/>
+    <text x="320" y="235" class="planet-label">Asteroid Belt</text>
+
+    <!-- Jupiter -->
+    <circle cx="350" cy="200" r="12" fill="#c88b3a"/>
+    <ellipse cx="350" cy="200" rx="12" ry="11" fill="none" stroke="#a0522d" stroke-width="1" opacity="0.5"/>
+    <text x="350" y="227" class="planet-label">Jupiter</text>
+
+    <!-- Saturn -->
+    <circle cx="410" cy="200" r="11" fill="#fad34d"/>
+    <!-- Saturn's rings -->
+    <ellipse cx="410" cy="200" rx="20" ry="5" fill="none" stroke="#a16207" stroke-width="2"/>
+    <text x="410" y="228" class="planet-label">Saturn</text>
+
+    <!-- Uranus -->
+    <circle cx="460" cy="200" r="9" fill="#06b6d4"/>
+    <text x="460" y="223" class="planet-label">Uranus</text>
+
+    <!-- Neptune -->
+    <circle cx="505" cy="200" r="9" fill="#1e40af"/>
+    <text x="505" y="223" class="planet-label">Neptune</text>
+
+    <!-- Legend -->
+    <rect x="550" y="80" width="220" height="220" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="560" y="100" font-size="11" font-weight="600" fill="#1e40af">Key Features:</text>
+    <text x="560" y="120" font-size="10" fill="#1a1a2e">• Terrestrial: Mercury–Mars</text>
+    <text x="560" y="135" font-size="10" fill="#1a1a2e">• Gas giants: Jupiter–Neptune</text>
+    <text x="560" y="150" font-size="10" fill="#1a1a2e">• Asteroid belt between</text>
+    <text x="565" y="165" font-size="10" fill="#1a1a2e">Mars and Jupiter</text>
+    <text x="560" y="180" font-size="10" fill="#1a1a2e">• All orbits in same plane</text>
+    <text x="560" y="195" font-size="10" fill="#1a1a2e">• Sun at the centre</text>
+    <text x="560" y="210" font-size="10" fill="#1a1a2e">• Gravity holds all orbits</text>
+    <text x="560" y="225" font-size="10" fill="#1a1a2e">• Not drawn to scale</text>
+</svg>
+
+<h3>Other Solar System Objects</h3>
+
+<p><strong>Asteroid Belt:</strong> Located between Mars and Jupiter, contains thousands of rocky fragments (leftover from solar system formation).</p>
+
+<p><strong>Comets:</strong> Icy bodies with very elongated elliptical orbits. When near the Sun, solar radiation vaporizes ice, forming a bright tail that always points away from the Sun.</p>
+
+<div class="exam-tip">Learn the planet order using the mnemonic. Know that terrestrial planets are inner and small, while gas giants are outer and large. Be able to identify the asteroid belt location and explain dwarf planets (not clearing their orbit).</div>
+
+<h3>Our Place in the Universe</h3>
+
+<div class="definition">
+    The <strong>Milky Way</strong> is a galaxy containing approximately 100 to 200 billion stars, including our Sun. Our Solar System is located in one of the spiral arms. The universe contains hundreds of billions of galaxies.
+</div>
+
+<h2>4.8.2 Formation of the Sun and Solar System</h2>
+
+<div class="definition">
+    The solar system formed approximately <strong>4.6 billion years ago</strong> from a giant cloud of dust and gas (a <strong>nebula</strong>).
+</div>
+
+<h3>How the Solar System Formed</h3>
+
+<p><strong>The process:</strong></p>
+<ol>
+    <li><strong>Gravitational collapse:</strong> The nebula began to collapse under its own gravity, pulling all material inward.</li>
+    <li><strong>Formation of the Sun:</strong> Most of the mass accumulated at the centre, forming a hot, dense ball. Temperature and pressure increased until hydrogen fusion began, igniting the Sun.</li>
+    <li><strong>Formation of planets:</strong> Surrounding the new Sun, dust and gas particles collided and stuck together (accretion), gradually building up into planets.</li>
+    <li><strong>Planetary clearing:</strong> As planets formed, they cleared their orbital zones of other debris (through collisions and gravitational interactions).</li>
+</ol>
+
+<div class="definition">
+    The Sun is now in its <strong>main sequence</strong> phase — a stable period lasting approximately 10 billion years where the Sun fuses hydrogen into helium in its core. About 4.6 billion years have elapsed; approximately 5.4 billion years remain.
+</div>
+
+<div class="exam-tip">Remember: nebula → collapse → Sun ignites → planets form via accretion. The Sun's age (4.6 Ga) and the solar system's formation can be dated using radioactive decay of isotopes in meteorites.</div>
+
+<h2>4.8.3 Life Cycle of a Star</h2>
+
+<div class="definition">
+    All stars begin their lives as a <strong>nebula</strong> — a cloud of dust and gas in space. Over millions of years, gravity pulls this cloud together, eventually forming a star.
+</div>
+
+<h3>Stages of Star Evolution</h3>
+
+<p><strong>Stage 1: Nebula and Protostar</strong></p>
+<ul>
+    <li>A giant cloud of dust and gas collapses under gravity.</li>
+    <li>As it collapses, gravitational potential energy converts to heat.</li>
+    <li>A hot, dense centre forms — the <strong>protostar</strong>.</li>
+    <li>Temperature rises until the core reaches ~10 million K.</li>
+</ul>
+
+<p><strong>Stage 2: Main Sequence</strong></p>
+<ul>
+    <li>Hydrogen fusion begins when core temperature exceeds 10 million K.</li>
+    <li>Gravity (pulling inward) balances thermal pressure (pushing outward) — <strong>hydrostatic equilibrium</strong>.</li>
+    <li>The star is stable and shines by converting hydrogen to helium.</li>
+    <li>This phase lasts the majority of the star's lifetime (for Sun: ~10 billion years total, 4.6 Ga so far).</li>
+</ul>
+
+<p><strong>Stage 3: End of Life — Two Paths Depending on Mass</strong></p>
+
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <defs>
+        <marker id="arrowBlack" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+            <polygon points="0 0, 8 4, 0 8" fill="#1a1a2e"/>
+        </marker>
+    </defs>
+    <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Life Cycle of a Star: Two Paths</text>
+
+    <!-- Low-mass star path (left) -->
+    <g id="low-mass">
+        <text x="200" y="60" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">Low/Medium Mass Star (like the Sun)</text>
+
+        <!-- Nebula -->
+        <circle cx="60" cy="120" r="25" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+        <text x="60" y="125" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Nebula</text>
+
+        <!-- Arrow -->
+        <path d="M 95 120 L 135 120" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- Protostar -->
+        <circle cx="180" cy="120" r="15" fill="#fcd34d" stroke="#f59e0b" stroke-width="2"/>
+        <text x="180" y="125" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">Protostar</text>
+
+        <!-- Arrow -->
+        <path d="M 205 120 L 245 120" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- Main Sequence -->
+        <circle cx="290" cy="120" r="18" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+        <text x="290" y="120" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">Main</text>
+        <text x="290" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">Seq.</text>
+
+        <!-- Arrow downward -->
+        <path d="M 290 145 L 290 185" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- Red Giant -->
+        <circle cx="290" cy="240" r="35" fill="#ef4444" stroke="#dc2626" stroke-width="2" opacity="0.8"/>
+        <text x="290" y="245" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Red Giant</text>
+
+        <!-- Arrow downward -->
+        <path d="M 290 280 L 290 320" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- Planetary Nebula -->
+        <circle cx="290" cy="375" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2" opacity="0.8"/>
+        <circle cx="290" cy="375" r="18" fill="none" stroke="#2563eb" stroke-width="1" opacity="0.6"/>
+        <text x="290" y="380" text-anchor="middle" font-size="8" font-weight="600" fill="#1e40af">Planetary</text>
+        <text x="290" y="389" text-anchor="middle" font-size="8" font-weight="600" fill="#1e40af">Nebula</text>
+
+        <!-- Arrow downward -->
+        <path d="M 290 405 L 290 430" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- White Dwarf -->
+        <circle cx="290" cy="455" r="8" fill="#e0e7ff" stroke="#2563eb" stroke-width="2"/>
+        <text x="290" y="480" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">White Dwarf</text>
+        <text x="290" y="493" text-anchor="middle" font-size="8" fill="#6b7280">(cools over ~10 Ga)</text>
+    </g>
+
+    <!-- High-mass star path (right) -->
+    <g id="high-mass">
+        <text x="600" y="60" text-anchor="middle" font-size="12" font-weight="600" fill="#1e40af">High Mass Star (20+ solar masses)</text>
+
+        <!-- Nebula -->
+        <circle cx="460" cy="120" r="25" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+        <text x="460" y="125" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Nebula</text>
+
+        <!-- Arrow -->
+        <path d="M 495 120 L 535 120" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- Protostar -->
+        <circle cx="580" cy="120" r="15" fill="#fcd34d" stroke="#f59e0b" stroke-width="2"/>
+        <text x="580" y="125" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">Protostar</text>
+
+        <!-- Arrow -->
+        <path d="M 605 120 L 645 120" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- Main Sequence -->
+        <circle cx="690" cy="120" r="18" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+        <text x="690" y="120" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">Main</text>
+        <text x="690" y="131" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">Seq.</text>
+
+        <!-- Arrow downward -->
+        <path d="M 690 145 L 690 185" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- Red Supergiant -->
+        <circle cx="690" cy="250" r="45" fill="#dc2626" stroke="#7f1d1d" stroke-width="2" opacity="0.8"/>
+        <text x="690" y="250" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">Red Super-</text>
+        <text x="690" y="263" text-anchor="middle" font-size="9" font-weight="600" fill="#fff">giant</text>
+
+        <!-- Arrow downward -->
+        <path d="M 690 305 L 690 335" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+        <!-- Supernova (branching) -->
+        <circle cx="690" cy="385" r="28" fill="#fbbf24" stroke="#f59e0b" stroke-width="2.5" opacity="0.9"/>
+        <circle cx="690" cy="385" r="23" fill="none" stroke="#f59e0b" stroke-width="1" opacity="0.7"/>
+        <text x="690" y="390" text-anchor="middle" font-size="9" font-weight="600" fill="#1a1a2e">Supernova</text>
+
+        <!-- Branch 1: Neutron Star -->
+        <path d="M 660 410 L 620 450" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+        <circle cx="590" cy="470" r="6" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+        <text x="590" y="495" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Neutron Star</text>
+
+        <!-- Branch 2: Black Hole -->
+        <path d="M 720 410 L 760 450" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arrowBlack)"/>
+        <circle cx="790" cy="470" r="6" fill="#000" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="790" y="495" text-anchor="middle" font-size="9" font-weight="600" fill="#1a1a2e">Black Hole</text>
+    </g>
+</svg>
+
+<h3>Low/Medium-Mass Stars (Like Our Sun)</h3>
+
+<p><strong>1. Red Giant:</strong> When hydrogen in the core is exhausted, the star expands dramatically and cools (surface temperature drops). The core, now hotter, fuses helium into carbon and oxygen. The star glows red.</p>
+
+<p><strong>2. Planetary Nebula:</strong> The star sheds its outer layers into space, creating a beautiful nebula of ejected gas.</p>
+
+<p><strong>3. White Dwarf:</strong> The remaining core, about the size of Earth, is incredibly dense. It slowly cools over billions of years.</p>
+
+<p><strong>4. Black Dwarf:</strong> Theoretical end state — a white dwarf that has cooled completely. The universe is not yet old enough for this to occur (universe is 13.8 Ga old).</p>
+
+<h3>High-Mass Stars (More Than ~20 Solar Masses)</h3>
+
+<p><strong>1. Red Supergiant:</strong> Similar to red giant but much larger and more luminous. The core fuses heavier elements: helium → carbon, carbon → neon, neon → magnesium, etc., up to iron.</p>
+
+<p><strong>2. Supernova:</strong> Iron fusion absorbs energy rather than releasing it. The core can no longer support itself and collapses catastrophically, then rebounds in a violent explosion — a supernova. For a brief moment, a supernova can outshine an entire galaxy.</p>
+
+<p><strong>3. Remnant — Two Possibilities:</strong></p>
+<ul>
+    <li><strong>Neutron star:</strong> The crushed core (neutrons packed together) about 20 km across, incredibly dense, and often rotating rapidly (pulsar).</li>
+    <li><strong>Black hole:</strong> For the most massive stars, gravity is so strong that nothing — not even light — can escape once it crosses the event horizon.</li>
+</ul>
+
+<div class="definition">
+    <strong>Nucleosynthesis:</strong> Heavy elements (metals) are created through nuclear fusion in stars. Fusion inside stars creates all elements up to iron (Fe). Elements heavier than iron (gold, silver, uranium, etc.) are created only during supernova explosions. The supernova scatters these heavy elements across space, which eventually become part of new solar systems and planets.
+</div>
+
+<table>
+    <tr>
+        <th>Star Type</th>
+        <th>Main Sequence</th>
+        <th>End of Life</th>
+        <th>Final Remnant</th>
+    </tr>
+    <tr>
+        <td>Low/medium mass (like Sun)</td>
+        <td>~10 billion years</td>
+        <td>Red giant → Planetary nebula</td>
+        <td>White dwarf → Black dwarf</td>
+    </tr>
+    <tr>
+        <td>High mass (>20 M_sun)</td>
+        <td>~10 million years</td>
+        <td>Red supergiant → Supernova</td>
+        <td>Neutron star or Black hole</td>
+    </tr>
+</table>
+
+<div class="exam-tip">You are made of stardust! Carbon, oxygen, nitrogen, iron, and other atoms in your body were formed in stars or supernovae billions of years ago. High-mass stars produce elements heavier than iron only during supernovae, which is why these elements are rare on Earth.</div>
+
+<h2>4.8.4 Orbital Motion, Satellites, and Resonance</h2>
+
+<div class="definition">
+    <strong>Orbital motion</strong> occurs when an object moves in a closed path (orbit) around another object due to gravitational force. The gravitational force is always directed toward the centre of the orbit and provides the <strong>centripetal force</strong> needed to keep the object moving in a circle (or ellipse).
+</div>
+
+<h3>Key Principles of Orbits</h3>
+
+<p><strong>Gravitational Force as Centripetal Force:</strong></p>
+<ul>
+    <li>The Sun's gravity pulls planets toward the Sun (centripetal direction).</li>
+    <li>This constant inward force causes the planet's velocity direction to change continuously → the planet orbits rather than flying off in a straight line.</li>
+    <li>The planet is constantly accelerating (direction changes), but speed may be constant for a circular orbit.</li>
+</ul>
+
+<p><strong>Orbital Speed and Altitude:</strong></p>
+<ul>
+    <li><strong>Lower orbits (closer to Earth):</strong> Stronger gravitational pull → need higher orbital speed to stay in orbit.</li>
+    <li><strong>Higher orbits (farther from Earth):</strong> Weaker gravitational pull → need lower orbital speed.</li>
+    <li>At any given orbital radius, there is only one orbital speed that maintains a stable circular orbit.</li>
+</ul>
+
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <defs>
+        <marker id="arrowVelocity" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+            <polygon points="0 0, 8 4, 0 8" fill="#16a34a"/>
+        </marker>
+        <marker id="arrowForceCenter" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+            <polygon points="0 0, 8 4, 0 8" fill="#dc2626"/>
+        </marker>
+    </defs>
+
+    <text x="350" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Orbital Motion: Velocity and Gravitational Force</text>
+
+    <!-- Earth -->
+    <circle cx="100" cy="200" r="35" fill="#3b82f6" stroke="#1e40af" stroke-width="2"/>
+    <text x="100" y="205" text-anchor="middle" font-size="11" font-weight="600" fill="#fff">Earth</text>
+
+    <!-- Orbital path -->
+    <circle cx="100" cy="200" r="140" fill="none" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+    <!-- Satellite position 1 (top of orbit) -->
+    <circle cx="240" cy="200" r="8" fill="#6b7280" stroke="#1a1a2e" stroke-width="1.5"/>
+
+    <!-- Velocity vector (tangent to orbit) -->
+    <line x1="248" y1="200" x2="300" y2="200" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowVelocity)"/>
+    <text x="310" y="205" font-size="10" fill="#16a34a" font-weight="600">v (tangent)</text>
+
+    <!-- Gravitational force vector (toward Earth) -->
+    <line x1="240" y1="200" x2="180" y2="200" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowForceCenter)"/>
+    <text x="190" y="220" font-size="10" fill="#dc2626" font-weight="600">F (toward centre)</text>
+
+    <!-- Satellite position 2 (right side) -->
+    <circle cx="100" cy="340" r="8" fill="#6b7280" stroke="#1a1a2e" stroke-width="1.5"/>
+
+    <!-- Velocity vector (pointing downward) -->
+    <line x1="100" y1="348" x2="100" y2="400" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowVelocity)"/>
+    <text x="120" y="375" font-size="10" fill="#16a34a" font-weight="600">v</text>
+
+    <!-- Gravitational force vector (toward Earth, pointing upward) -->
+    <line x1="100" y1="340" x2="100" y2="270" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowForceCenter)"/>
+    <text x="125" y="305" font-size="10" fill="#dc2626" font-weight="600">F</text>
+
+    <!-- Explanation box -->
+    <rect x="450" y="120" width="230" height="240" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="460" y="140" font-size="11" font-weight="600" fill="#1e40af">Key Points:</text>
+    <text x="460" y="160" font-size="9.5" fill="#1a1a2e">• Satellite always moves</text>
+    <text x="468" y="173" font-size="9.5" fill="#1a1a2e">tangent to its orbit</text>
+
+    <text x="460" y="193" font-size="9.5" fill="#1a1a2e">• Gravitational force</text>
+    <text x="468" y="206" font-size="9.5" fill="#1a1a2e">always points toward</text>
+    <text x="468" y="219" font-size="9.5" fill="#1a1a2e">Earth's centre</text>
+
+    <text x="460" y="239" font-size="9.5" fill="#1a1a2e">• This inward force</text>
+    <text x="468" y="252" font-size="9.5" fill="#1a1a2e">continuously changes</text>
+    <text x="468" y="265" font-size="9.5" fill="#1a1a2e">the velocity direction</text>
+
+    <text x="460" y="285" font-size="9.5" fill="#1a1a2e">• Lower orbit → faster</text>
+    <text x="460" y="298" font-size="9.5" fill="#1a1a2e">Higher orbit → slower</text>
+
+    <text x="460" y="318" font-size="9.5" fill="#1a1a2e">• Constant acceleration</text>
+    <text x="468" y="331" font-size="9.5" fill="#1a1a2e">even at constant speed</text>
+    <text x="468" y="344" font-size="9.5" fill="#1a1a2e">(direction always changes)</text>
+</svg>
+
+<h3>Types of Satellites</h3>
+
+<p><strong>Geostationary Satellites:</strong></p>
+<ul>
+    <li>Orbital altitude: approximately 36,000 km above Earth's surface.</li>
+    <li>Orbital period: exactly 24 hours (same as Earth's rotation).</li>
+    <li>Remains stationary above a fixed point on Earth's equator.</li>
+    <li>Uses: TV and communication broadcasts, weather monitoring.</li>
+</ul>
+
+<p><strong>Low Earth Orbit (LEO) Satellites:</strong></p>
+<ul>
+    <li>Orbital altitude: typically 400–2000 km above Earth's surface.</li>
+    <li>Orbital period: 90 minutes to a few hours (fast orbit).</li>
+    <li>Moves relative to Earth; passes over different locations.</li>
+    <li>Examples: International Space Station, Earth observation satellites, GPS satellites.</li>
+    <li>Uses: Earth imaging, climate monitoring, communications (polar regions).</li>
+</ul>
+
+<div class="definition">
+    A <strong>geostationary satellite</strong> has an orbital period equal to Earth's rotational period (24 hours), keeping it stationary above one point on the equator. <strong>Low Earth Orbit (LEO) satellites</strong> orbit much closer and faster, completing an orbit in ~90 minutes.
+</div>
+
+<div class="exam-tip">Geostationary satellites stay in the same spot in the sky. LEO satellites move quickly across the sky. Higher orbits have lower speeds; lower orbits have higher speeds. Remember: orbital period increases with orbital radius.</div>
+
+<h2>4.8.5 Red-Shift and the Doppler Effect</h2>
+
+<div class="definition">
+    <strong>Red-shift:</strong> When a source of light moves away from an observer, the observed wavelength increases (shifts toward the red, longer-wavelength end of the spectrum). When moving toward the observer, wavelength decreases (blue-shift).
+</div>
+
+<h3>The Doppler Effect for Light</h3>
+
+<p><strong>Source moving away:</strong> Light waves are stretched to longer wavelengths → red-shift (lower frequency, lower energy).</p>
+
+<p><strong>Source moving toward:</strong> Light waves are compressed to shorter wavelengths → blue-shift (higher frequency, higher energy).</p>
+
+<p><strong>Source stationary:</strong> No shift in wavelength.</p>
+
+<h3>Observing Red-Shift from Galaxies</h3>
+
+<p><strong>Key observation:</strong> Spectral absorption lines from distant galaxies are shifted toward the red end of the spectrum compared to their laboratory wavelengths.</p>
+
+<ul>
+    <li>Nearly all distant galaxies show red-shift.</li>
+    <li>More distant galaxies have larger red-shifts.</li>
+    <li>This indicates galaxies are moving away from us.</li>
+    <li>More distant = faster recession speed.</li>
+</ul>
+
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Red-Shift in Distant Galaxies</text>
+
+    <!-- Spectrum bar (rest wavelength) -->
+    <text x="80" y="70" font-size="10" font-weight="600" fill="#1e3a5f">Nearby Galaxy (Rest)</text>
+    <rect x="100" y="80" width="250" height="20" fill="url(#spectrumGradient)" stroke="#1a1a2e" stroke-width="1"/>
+    <line x1="180" y1="75" x2="180" y2="110" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="180" y="125" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="600">Absorption line</text>
+
+    <!-- Spectrum bar (red-shifted) -->
+    <text x="80" y="170" font-size="10" font-weight="600" fill="#1e3a5f">Distant Galaxy (Red-Shifted)</text>
+    <rect x="100" y="180" width="250" height="20" fill="url(#spectrumGradient)" stroke="#1a1a2e" stroke-width="1"/>
+    <line x1="220" y1="175" x2="220" y2="210" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="220" y="225" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="600">Same line (shifted right)</text>
+
+    <!-- Arrow showing shift -->
+    <path d="M 200 140 L 220 160" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowShift)"/>
+    <text x="190" y="145" font-size="10" fill="#f59e0b" font-weight="600">Shift to red</text>
+
+    <!-- Legend -->
+    <rect x="450" y="60" width="230" height="190" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="460" y="80" font-size="11" font-weight="600" fill="#1e40af">What Red-Shift Tells Us:</text>
+    <text x="460" y="100" font-size="9.5" fill="#1a1a2e">• Wavelength longer than</text>
+    <text x="468" y="113" font-size="9.5" fill="#1a1a2e">laboratory value</text>
+
+    <text x="460" y="133" font-size="9.5" fill="#1a1a2e">• Galaxy is moving away</text>
+    <text x="468" y="146" font-size="9.5" fill="#1a1a2e">from us (Doppler effect)</text>
+
+    <text x="460" y="166" font-size="9.5" fill="#1a1a2e">• Larger red-shift =</text>
+    <text x="468" y="179" font-size="9.5" fill="#1a1a2e">faster recession speed</text>
+
+    <text x="460" y="199" font-size="9.5" fill="#1a1a2e">• More distant galaxies</text>
+    <text x="468" y="212" font-size="9.5" fill="#1a1a2e">recede faster</text>
+
+    <text x="460" y="232" font-size="9.5" fill="#1a1a2e">• Evidence: Universe</text>
+    <text x="468" y="245" font-size="9.5" fill="#1a1a2e">is expanding</text>
+
+    <defs>
+        <linearGradient id="spectrumGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#7f1d1d;stop-opacity:1" />
+            <stop offset="25%" style="stop-color:#dc2626;stop-opacity:1" />
+            <stop offset="50%" style="stop-color:#fbbf24;stop-opacity:1" />
+            <stop offset="75%" style="stop-color:#2563eb;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+        </linearGradient>
+        <marker id="arrowShift" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+            <polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/>
+        </marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">Red-shift = galaxy moving away. Blue-shift = approaching (rare for galaxies). The Doppler effect applies to light waves just as it does to sound (ambulance siren). Measuring red-shift allows us to determine recession speeds of distant galaxies.</div>
+
+<h2>4.8.6 The Big Bang Theory and the Expanding Universe</h2>
+
+<div class="definition">
+    The <strong>Big Bang theory</strong> states that the universe began as an extremely hot, dense point (a singularity) approximately <strong>13.8 billion years ago</strong> and has been expanding ever since.
+</div>
+
+<h3>Evidence for the Big Bang Theory</h3>
+
+<p><strong>Evidence 1: Red-Shift (Hubble Expansion)</strong></p>
+<ul>
+    <li>All distant galaxies are red-shifted, indicating they move away from us.</li>
+    <li>More distant galaxies have larger red-shifts (faster recession).</li>
+    <li>This pattern is consistent with an expanding universe originating from a single point.</li>
+    <li>If we "reverse time," all galaxies converge to a common origin point — the Big Bang.</li>
+</ul>
+
+<p><strong>Evidence 2: Cosmic Microwave Background Radiation (CMBR)</strong></p>
+<ul>
+    <li>Astronomers detect a uniform microwave radiation filling the entire universe.</li>
+    <li>This is the "leftover" radiation from the extremely hot early universe, now cooled to about 2.7 K.</li>
+    <li>Predicted by Big Bang theory; discovered in 1964.</li>
+    <li>The uniformity and temperature of CMBR match Big Bang predictions remarkably well.</li>
+</ul>
+
+<div class="definition">
+    The <strong>Cosmic Microwave Background Radiation (CMBR)</strong> is the thermal radiation left over from the early, hot universe. It fills all of space uniformly and is evidence that the universe was once in an extremely hot, dense state.
+</div>
+
+<h3>Dark Matter and Dark Energy</h3>
+
+<p><strong>Dark Matter:</strong> Observations show that galaxies rotate too fast to be held together by visible matter alone. Calculations indicate that approximately 85% of matter is "dark" (non-luminous). Its gravitational effects are observed, but its composition remains unknown.</p>
+
+<p><strong>Dark Energy:</strong> Since the 1990s, astronomers have observed that the expansion of the universe is accelerating (not decelerating as gravity would suggest). An unknown form of "dark energy" (about 68% of the universe's total energy density) appears to be driving this acceleration. Its nature remains one of cosmology's greatest mysteries.</p>
+
+<div class="definition">
+    <strong>Dark matter</strong> (~27% of universe) — detected by gravitational effects but not visible. <strong>Dark energy</strong> (~68% of universe) — causes accelerating expansion; nature unknown. Ordinary visible matter comprises only ~5% of the universe.
+</div>
+
+<h3>Timeline of the Universe</h3>
+
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Timeline of the Universe</text>
+
+    <!-- Timeline arrow -->
+    <line x1="50" y1="80" x2="750" y2="80" stroke="#1e40af" stroke-width="3" marker-end="url(#arrowTime)"/>
+
+    <!-- Big Bang -->
+    <circle cx="60" cy="80" r="5" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <line x1="60" y1="85" x2="60" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="60" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Big Bang</text>
+    <text x="60" y="152" text-anchor="middle" font-size="8" fill="#6b7280">13.8 Ga</text>
+
+    <!-- Cosmic Inflation (first fractions of second) -->
+    <circle cx="120" cy="80" r="4" fill="#ef4444" stroke="#dc2626" stroke-width="2"/>
+    <line x1="120" y1="84" x2="120" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="120" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Inflation</text>
+    <text x="120" y="152" text-anchor="middle" font-size="8" fill="#6b7280">10⁻³⁶ s</text>
+
+    <!-- First atoms -->
+    <circle cx="190" cy="80" r="4" fill="#3b82f6" stroke="#2563eb" stroke-width="2"/>
+    <line x1="190" y1="84" x2="190" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="190" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">First atoms</text>
+    <text x="190" y="152" text-anchor="middle" font-size="8" fill="#6b7280">380,000 y</text>
+
+    <!-- First stars -->
+    <circle cx="300" cy="80" r="4" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <line x1="300" y1="84" x2="300" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="300" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">First stars</text>
+    <text x="300" y="152" text-anchor="middle" font-size="8" fill="#6b7280">100 Ma</text>
+
+    <!-- First galaxies -->
+    <circle cx="400" cy="80" r="4" fill="#06b6d4" stroke="#0891b2" stroke-width="2"/>
+    <line x1="400" y1="84" x2="400" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="400" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Galaxies form</text>
+    <text x="400" y="152" text-anchor="middle" font-size="8" fill="#6b7280">100 Ma</text>
+
+    <!-- Milky Way forms -->
+    <circle cx="520" cy="80" r="4" fill="#8b5cf6" stroke="#7c3aed" stroke-width="2"/>
+    <line x1="520" y1="84" x2="520" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="520" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Milky Way</text>
+    <text x="520" y="152" text-anchor="middle" font-size="8" fill="#6b7280">13.6 Ga</text>
+
+    <!-- Solar System -->
+    <circle cx="640" cy="80" r="4" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+    <line x1="640" y1="84" x2="640" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="640" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Solar System</text>
+    <text x="640" y="152" text-anchor="middle" font-size="8" fill="#6b7280">4.6 Ga</text>
+
+    <!-- Present day -->
+    <circle cx="740" cy="80" r="5" fill="#dc2626" stroke="#7f1d1d" stroke-width="2"/>
+    <line x1="740" y1="85" x2="740" y2="120" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="740" y="140" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Today</text>
+    <text x="740" y="152" text-anchor="middle" font-size="8" fill="#6b7280">0 Ga</text>
+
+    <!-- Key events box -->
+    <rect x="50" y="200" width="700" height="100" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="60" y="220" font-size="10" font-weight="600" fill="#1e40af">Key Events:</text>
+    <text x="60" y="238" font-size="9" fill="#1a1a2e">• Big Bang: Universe began at a singularity with infinite density and temperature.</text>
+    <text x="60" y="254" font-size="9" fill="#1a1a2e">• Cosmic inflation: Universe expanded exponentially in first fractions of a second.</text>
+    <text x="60" y="270" font-size="9" fill="#1a1a2e">• First atoms: Protons and electrons combined when universe cooled to ~3000 K (380,000 years after Big Bang).</text>
+    <text x="60" y="286" font-size="9" fill="#1a1a2e">• Star and galaxy formation: Gravity pulled together hydrogen gas to form first stars and galaxies (100 million years onward).</text>
+
+    <defs>
+        <marker id="arrowTime" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+            <polygon points="0 0, 8 4, 0 8" fill="#1e40af"/>
+        </marker>
+    </defs>
+</svg>
+
+<h3>Open Questions</h3>
+
+<p><strong>What caused the Big Bang?</strong> We do not know. Physics breaks down at the singularity; quantum gravity is not yet understood.</p>
+
+<p><strong>What is dark matter?</strong> Candidates include WIMPs (Weakly Interacting Massive Particles), axions, and primordial black holes, but no detection has been confirmed.</p>
+
+<p><strong>What is dark energy?</strong> Possibly a cosmological constant (Einstein's "lambda"), vacuum energy, or a new field. Its nature remains a profound mystery.</p>
+
+<p><strong>What is the fate of the universe?</strong> If dark energy continues to dominate, the universe will expand forever, cooling toward absolute zero — a "heat death." But we cannot rule out surprises.</p>
+
+<div class="exam-tip">Big Bang evidence: (1) red-shift (galaxies receding), (2) CMBR (leftover heat from early universe). Be able to explain why these support Big Bang. Know the timeline: Big Bang 13.8 Ga → first atoms → first stars → galaxies → today. Dark matter and energy are real observations, not fictional.</div>
+
+<h2>Summary Table: Evidence for Big Bang Theory</h2>
+
+<table>
+    <tr>
+        <th>Evidence</th>
+        <th>Observation</th>
+        <th>What It Tells Us</th>
+    </tr>
+    <tr>
+        <td>Red-Shift of distant galaxies</td>
+        <td>All distant galaxies show red-shift; more distant = larger red-shift</td>
+        <td>Galaxies recede; universe expands from a single point</td>
+    </tr>
+    <tr>
+        <td>Cosmic Microwave Background Radiation</td>
+        <td>Uniform microwave radiation at ~2.7 K throughout space</td>
+        <td>Leftover radiation from hot early universe; cooled as universe expanded</td>
+    </tr>
+    <tr>
+        <td>Abundance of light elements</td>
+        <td>Universe contains ~75% hydrogen, ~25% helium, trace heavier elements</td>
+        <td>Consistent with nuclear synthesis in first 3 minutes after Big Bang</td>
+    </tr>
+    <tr>
+        <td>Galaxy formation</td>
+        <td>First galaxies appeared ~100 million years after Big Bang</td>
+        <td>Gravity pulled together hydrogen to form galaxies from density fluctuations</td>
+    </tr>
+</table>
+
+<h2>Summary Table: Star Formation and Evolution</h2>
+
+<table>
+    <tr>
+        <th>Stage</th>
+        <th>Low/Medium Mass Star</th>
+        <th>High Mass Star</th>
+    </tr>
+    <tr>
+        <td>1. Nebula</td>
+        <td colspan="2">Giant cloud of gas and dust; collapses under gravity</td>
+    </tr>
+    <tr>
+        <td>2. Protostar</td>
+        <td colspan="2">Hot, dense centre forms; temperature rises</td>
+    </tr>
+    <tr>
+        <td>3. Main Sequence</td>
+        <td>Hydrogen fuses to helium (~10 Ga)</td>
+        <td>Hydrogen fuses to helium (~10 Ma)</td>
+    </tr>
+    <tr>
+        <td>4. Post-Main Sequence</td>
+        <td>Red giant; helium fuses to C, O</td>
+        <td>Red supergiant; fuses up to iron</td>
+    </tr>
+    <tr>
+        <td>5. Ejection</td>
+        <td>Planetary nebula (gentle)</td>
+        <td>Supernova (violent explosion)</td>
+    </tr>
+    <tr>
+        <td>6. Remnant</td>
+        <td>White dwarf → Black dwarf (after 10+ Ga)</td>
+        <td>Neutron star or Black hole</td>
+    </tr>
+</table>
+
+<h2>Summary Table: Satellites and Orbits</h2>
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Geostationary Satellite</th>
+        <th>Low Earth Orbit (LEO)</th>
+    </tr>
+    <tr>
+        <td>Altitude</td>
+        <td>~36,000 km</td>
+        <td>400–2,000 km</td>
+    </tr>
+    <tr>
+        <td>Orbital Period</td>
+        <td>24 hours (1 day)</td>
+        <td>~90 minutes</td>
+    </tr>
+    <tr>
+        <td>Orbital Speed</td>
+        <td>~3.1 km/s (slow)</td>
+        <td>~7.8 km/s (fast)</td>
+    </tr>
+    <tr>
+        <td>Position Relative to Earth</td>
+        <td>Stationary above one point on equator</td>
+        <td>Moves rapidly; passes over different locations</td>
+    </tr>
+    <tr>
+        <td>Uses</td>
+        <td>TV broadcasts, communications, weather</td>
+        <td>Earth observation, ISS, GPS, climate monitoring</td>
+    </tr>
+</table>
+
+</div>
+</body>
+</html>

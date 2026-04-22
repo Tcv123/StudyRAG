@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.3 — Particle Model of Matter</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.3 Particle Model of Matter</h1>
+<p class="spec-ref">AQA GCSE Physics (8463) — Paper 1</p>
+
+<h2>4.3.1 Density</h2>
+
+<div class="definition">
+    <strong>Density</strong> is the mass of a substance per unit volume. Symbol: <code>ρ</code> (rho).<br><br>
+    <code>ρ = m / V</code><br><br>
+    where <code>ρ</code> = density (kg/m³ or g/cm³), <code>m</code> = mass (kg or g), <code>V</code> = volume (m³ or cm³).
+</div>
+
+<p>Density tells us how tightly packed the particles of a substance are. A denser material has more mass squeezed into the same volume. Water has a density of 1000 kg/m³; iron is about 8 times denser at 7874 kg/m³, which is why iron sinks in water. Air at sea level has a density of only 1.2 kg/m³, which is why balloons filled with helium (0.18 kg/m³) float upward.</p>
+
+<h3>Unit Conversion</h3>
+
+<p>Density is commonly expressed in two units:</p>
+<ul>
+    <li><strong>kg/m³</strong> — SI unit (used for most calculations)</li>
+    <li><strong>g/cm³</strong — metric unit (often used in labs for smaller objects)</li>
+</ul>
+
+<p>Conversion: <code>1 g/cm³ = 1000 kg/m³</code></p>
+
+<p>Example: The density of water is 1.0 g/cm³, which equals 1000 kg/m³. Aluminium is 2.7 g/cm³, which equals 2700 kg/m³.</p>
+
+<h3>Why Objects Float or Sink</h3>
+
+<p>An object floats in a fluid if its density is less than the density of that fluid. An object sinks if its density is greater than the fluid's density. This is why oil (density ≈ 900 kg/m³) floats on water (1000 kg/m³), but iron (7874 kg/m³) sinks. Even though iron is much denser, a steel ship with many air-filled chambers has an average density less than water, so it floats.</p>
+
+<!-- SVG 1: Density comparison blocks -->
+<svg viewBox="0 0 800 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Density: Same volume, different masses (and therefore different densities)</text>
+
+    <!-- Aluminium block -->
+    <rect x="80" y="80" width="120" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="140" y="145" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Volume:</text>
+    <text x="140" y="165" text-anchor="middle" font-size="12" fill="#1e40af">0.001 m³</text>
+
+    <text x="140" y="220" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Aluminium</text>
+    <text x="140" y="240" text-anchor="middle" font-size="11" fill="#1e3a5f">m = 2.7 kg</text>
+    <text x="140" y="258" text-anchor="middle" font-size="11" fill="#1e3a5f">ρ = 2700 kg/m³</text>
+
+    <!-- Water block -->
+    <rect x="340" y="80" width="120" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="400" y="145" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Volume:</text>
+    <text x="400" y="165" text-anchor="middle" font-size="12" fill="#1e40af">0.001 m³</text>
+
+    <text x="400" y="220" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Water</text>
+    <text x="400" y="240" text-anchor="middle" font-size="11" fill="#1e3a5f">m = 1.0 kg</text>
+    <text x="400" y="258" text-anchor="middle" font-size="11" fill="#1e3a5f">ρ = 1000 kg/m³</text>
+
+    <!-- Lead block -->
+    <rect x="600" y="80" width="120" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="660" y="145" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Volume:</text>
+    <text x="660" y="165" text-anchor="middle" font-size="12" fill="#1e40af">0.001 m³</text>
+
+    <text x="660" y="220" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Lead</text>
+    <text x="660" y="240" text-anchor="middle" font-size="11" fill="#1e3a5f">m = 11.3 kg</text>
+    <text x="660" y="258" text-anchor="middle" font-size="11" fill="#1e3a5f">ρ = 11300 kg/m³</text>
+</svg>
+
+<h3>Common Densities (at room temperature and 1 atm pressure)</h3>
+
+<table>
+    <tr>
+        <th>Material</th>
+        <th>Density (kg/m³)</th>
+        <th>Density (g/cm³)</th>
+    </tr>
+    <tr>
+        <td>Air</td>
+        <td>1.2</td>
+        <td>0.0012</td>
+    </tr>
+    <tr>
+        <td>Wood (pine)</td>
+        <td>~700</td>
+        <td>~0.7</td>
+    </tr>
+    <tr>
+        <td>Water</td>
+        <td>1000</td>
+        <td>1.0</td>
+    </tr>
+    <tr>
+        <td>Aluminium</td>
+        <td>2710</td>
+        <td>2.71</td>
+    </tr>
+    <tr>
+        <td>Iron</td>
+        <td>7874</td>
+        <td>7.87</td>
+    </tr>
+    <tr>
+        <td>Lead</td>
+        <td>11340</td>
+        <td>11.34</td>
+    </tr>
+</table>
+
+<h3>Worked Example 1 — Calculating Density</h3>
+
+<pre>
+Question: A solid metal block has a mass of 2 kg and a volume of 0.005 m³.
+          Calculate its density.
+
+Given:   m = 2 kg,   V = 0.005 m³
+Formula: ρ = m / V
+Working: ρ = 2 / 0.005
+         = 400 kg/m³
+
+Answer:  The density is 400 kg/m³ (or 0.4 g/cm³)
+
+Interpretation: This material is less dense than water (1000 kg/m³),
+                so a block of it would float in water.
+</pre>
+
+<div class="exam-tip">When calculating density, always check your units. If mass is in grams and volume in cm³, you get g/cm³. If mass is in kg and volume in m³, you get kg/m³. Examiners often ask you to convert between these units.</div>
+
+<h3>Required Practical 5: Measuring Density of Regular and Irregular Solids, and Liquids</h3>
+
+<p><strong>Regular solids (e.g., rectangular block):</strong></p>
+<ul>
+    <li>Measure mass using a balance (in grams or kg)</li>
+    <li>Measure dimensions (length, width, height) with a ruler or callipers</li>
+    <li>Calculate volume: V = length × width × height</li>
+    <li>Calculate density: ρ = m / V</li>
+</ul>
+
+<p><strong>Irregular solids (e.g., stone, key):</strong></p>
+<ul>
+    <li>Measure mass using a balance</li>
+    <li>Use water displacement to find volume: place object in a measuring cylinder of water, measure the rise in water level</li>
+    <li>Volume of object = final water level − initial water level</li>
+    <li>Calculate density: ρ = m / V</li>
+</ul>
+
+<p><strong>Liquids:</strong></p>
+<ul>
+    <li>Measure mass of a known volume using a measuring cylinder and balance</li>
+    <li>Calculate density: ρ = m / V</li>
+    <li>Alternatively, use a hydrometer (a float that sinks to different depths depending on liquid density)</li>
+</ul>
+
+<div class="exam-tip">In water displacement experiments, make sure the object is fully submerged. Also, wait for air bubbles to rise before reading the final water level—they would artificially increase the measured volume.</div>
+
+<h2>4.3.2 Changes of State and Internal Energy</h2>
+
+<div class="definition">
+    Matter exists in three <strong>states of matter</strong>: solid, liquid, and gas. These states differ in the arrangement and motion of their particles.
+</div>
+
+<!-- SVG 2: Particle arrangement in three states -->
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Particle arrangement in the three states of matter</text>
+
+    <!-- SOLID -->
+    <rect x="40" y="60" width="220" height="200" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="150" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">SOLID</text>
+
+    <!-- Solid particles: regular lattice -->
+    <circle cx="80" cy="110" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="120" cy="110" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="160" cy="110" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="200" cy="110" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+
+    <circle cx="80" cy="150" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="120" cy="150" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="160" cy="150" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="200" cy="150" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+
+    <circle cx="80" cy="190" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="120" cy="190" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="160" cy="190" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="200" cy="190" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+
+    <!-- Springs between particles (regular pattern) -->
+    <line x1="80" y1="110" x2="120" y2="110" stroke="#1e40af" stroke-width="1" opacity="0.5"/>
+    <line x1="120" y1="110" x2="160" y2="110" stroke="#1e40af" stroke-width="1" opacity="0.5"/>
+    <line x1="160" y1="110" x2="200" y2="110" stroke="#1e40af" stroke-width="1" opacity="0.5"/>
+
+    <text x="150" y="220" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Particles:</strong> vibrate in fixed positions</text>
+    <text x="150" y="235" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Forces:</strong> very strong</text>
+    <text x="150" y="250" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Spacing:</strong> close, regular lattice</text>
+
+    <!-- LIQUID -->
+    <rect x="290" y="60" width="220" height="200" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="400" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">LIQUID</text>
+
+    <!-- Liquid particles: close but random -->
+    <circle cx="330" cy="110" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="365" cy="125" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="400" cy="115" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="430" cy="135" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="340" cy="160" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="375" cy="170" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="410" cy="155" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="440" cy="180" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="360" cy="200" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="400" cy="195" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+
+    <!-- Arrows showing motion -->
+    <path d="M 330 110 L 335 105 M 335 105 L 330 110" stroke="#16a34a" stroke-width="1.5" fill="none" marker-end="url(#arrowGreen)"/>
+    <path d="M 400 115 L 405 120 M 405 120 L 400 115" stroke="#16a34a" stroke-width="1.5" fill="none"/>
+
+    <text x="400" y="220" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Particles:</strong> slide past each other</text>
+    <text x="400" y="235" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Forces:</strong> weaker than solids</text>
+    <text x="400" y="250" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Spacing:</strong> close, but random</text>
+
+    <!-- GAS -->
+    <rect x="540" y="60" width="220" height="200" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="650" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">GAS</text>
+
+    <!-- Gas particles: widely spaced, random -->
+    <circle cx="570" cy="100" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="620" cy="85" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="680" cy="120" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="600" cy="160" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="650" cy="175" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="710" cy="150" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+    <circle cx="580" cy="210" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1"/>
+
+    <!-- Arrows showing rapid motion -->
+    <path d="M 570 100 L 575 95" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 620 85 L 635 75" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 680 120 L 700 135" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 650 175 L 665 190" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+
+    <text x="650" y="220" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Particles:</strong> fly apart rapidly</text>
+    <text x="650" y="235" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Forces:</strong> almost none</text>
+    <text x="650" y="250" text-anchor="middle" font-size="10" fill="#1e3a5f"><strong>Spacing:</strong> far apart, random</text>
+
+    <defs>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+    </defs>
+</svg>
+
+<h3>Changes of State</h3>
+
+<div class="definition">
+    A <strong>change of state</strong> occurs when matter converts between solid, liquid, and gas. The six main changes are:
+</div>
+
+<!-- SVG 3: State change diagram -->
+<svg viewBox="0 0 800 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Changes of state (with energy transfer)</text>
+
+    <!-- Boxes for states -->
+    <rect x="50" y="80" width="120" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="110" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">SOLID</text>
+
+    <rect x="340" y="80" width="120" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="400" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">LIQUID</text>
+
+    <rect x="630" y="80" width="120" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="690" y="115" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">GAS</text>
+
+    <!-- Arrows and labels -->
+    <!-- Solid to Liquid: Melting -->
+    <path d="M 170 110 L 340 110" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+    <text x="255" y="95" text-anchor="middle" font-size="11" font-weight="bold" fill="#16a34a">MELTING</text>
+    <text x="255" y="145" text-anchor="middle" font-size="10" fill="#666">heat absorbed</text>
+
+    <!-- Liquid to Solid: Freezing -->
+    <path d="M 340 130 L 170 130" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+    <text x="255" y="175" text-anchor="middle" font-size="11" font-weight="bold" fill="#dc2626">FREEZING</text>
+    <text x="255" y="205" text-anchor="middle" font-size="10" fill="#666">heat released</text>
+
+    <!-- Liquid to Gas: Boiling/Evaporation -->
+    <path d="M 460 110 L 630 110" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+    <text x="545" y="95" text-anchor="middle" font-size="11" font-weight="bold" fill="#16a34a">BOILING</text>
+    <text x="545" y="145" text-anchor="middle" font-size="10" fill="#666">heat absorbed</text>
+
+    <!-- Gas to Liquid: Condensation -->
+    <path d="M 630 130 L 460 130" stroke="#2563eb" stroke-width="2" fill="none" marker-end="url(#arrowBlue)"/>
+    <text x="545" y="175" text-anchor="middle" font-size="11" font-weight="bold" fill="#dc2626">CONDENSATION</text>
+    <text x="545" y="205" text-anchor="middle" font-size="10" fill="#666">heat released</text>
+
+    <!-- Solid to Gas: Sublimation (curved arrow) -->
+    <path d="M 110 80 Q 110 20, 690 80" stroke="#f59e0b" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowAmber)"/>
+    <text x="400" y="40" text-anchor="middle" font-size="11" font-weight="bold" fill="#f59e0b">SUBLIMATION (rare)</text>
+
+    <!-- Gas to Solid: Deposition (curved arrow) -->
+    <path d="M 690 80 Q 690 240, 110 160" stroke="#f59e0b" stroke-width="2" fill="none" stroke-dasharray="5,5" marker-end="url(#arrowAmber)"/>
+    <text x="400" y="230" text-anchor="middle" font-size="11" font-weight="bold" fill="#f59e0b">DEPOSITION (rare)</text>
+
+    <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+    </defs>
+</svg>
+
+<p><strong>Melting:</strong> solid → liquid. Heat is absorbed; particles gain kinetic energy and break free from fixed positions. Temperature rises until melting point, then stays constant during melting.</p>
+
+<p><strong>Freezing:</strong> liquid → solid. Heat is released; particles slow down and lock into a regular lattice. Temperature falls until freezing point, then stays constant during freezing.</p>
+
+<p><strong>Boiling/Evaporation:</strong> liquid → gas. Heat is absorbed; particles escape into gas phase. Temperature stays constant during boiling until all liquid has turned to gas.</p>
+
+<p><strong>Condensation:</strong> gas → liquid. Heat is released; gas particles slow down and cluster together. Temperature stays constant during condensation.</p>
+
+<p><strong>Sublimation:</strong> solid → gas (without melting first). Occurs in a few substances, e.g., dry ice (solid CO₂) sublimates at −78 °C at normal atmospheric pressure.</p>
+
+<p><strong>Deposition:</strong> gas → solid. Occurs when a gas is cooled directly to a solid, e.g., frost forming from water vapour in air.</p>
+
+<h3>Key Facts About State Changes</h3>
+
+<div class="definition">
+    <strong>Mass is conserved during a change of state.</strong> If 100 g of ice melts to form water, the water still has a mass of 100 g. No mass is gained or lost during melting, freezing, boiling, or condensation.
+</div>
+
+<div class="definition">
+    <strong>A change of state is a physical change, not a chemical change.</strong> The substance's identity does not change. Water (H₂O) remains water whether it is ice, liquid, or steam. No new substances are formed. The change is <strong>reversible</strong>—you can melt ice back to liquid water, then freeze it again to ice.
+</div>
+
+<div class="exam-tip">Do not confuse changes of state with chemical reactions. Melting ice is physical; burning wood is chemical. In exams, always be clear: "This is a physical change because the substance's identity (e.g., H₂O) has not changed."</div>
+
+<h3>Internal Energy</h3>
+
+<div class="definition">
+    <strong>Internal energy</strong> is the total energy stored in a substance due to the motion and arrangement of its particles. It is the sum of:
+    <ul style="margin: 10px 0;">
+        <li><strong>Kinetic energy:</strong> energy due to the motion (vibration, sliding, flying) of particles</li>
+        <li><strong>Potential energy:</strong> energy stored in the bonds between particles (due to their separation and the forces between them)</li>
+    </ul>
+</div>
+
+<p><strong>How internal energy changes with temperature:</strong> Heating a substance increases the average kinetic energy of its particles, so they move faster (or vibrate more vigorously). This raises the internal energy and the temperature. Cooling decreases it.</p>
+
+<p><strong>How internal energy changes during a state change:</strong> During melting, boiling, or sublimation, the temperature stays constant, so the average kinetic energy does not change. However, the absorbed heat energy goes into breaking bonds between particles (increasing potential energy). After the state change, further heating again raises kinetic energy and temperature.</p>
+
+<div class="exam-tip">A key exam concept: energy input during a state change does NOT raise temperature; it breaks bonds. Think of it as "energy being stored in the new arrangement of particles" rather than "making them move faster."</div>
+
+<h2>4.3.3 Temperature Changes and Specific Heat Capacity</h2>
+
+<div class="definition">
+    <strong>Specific heat capacity</strong> is the amount of energy required to raise the temperature of 1 kg of a substance by 1 °C (or equivalently, 1 K).<br><br>
+    Symbol: <code>c</code>, measured in <strong>J/(kg°C)</strong> or <strong>J/(kg·K)</strong>
+</div>
+
+<div class="definition">
+    The relationship between energy, mass, temperature change, and specific heat capacity is:<br><br>
+    <code>ΔE = m c Δθ</code><br><br>
+    where <code>ΔE</code> = energy transferred (J), <code>m</code> = mass (kg), <code>c</code> = specific heat capacity (J/(kg°C)), <code>Δθ</code> = temperature change (°C or K).
+</div>
+
+<p>Rearranged forms:</p>
+<ul>
+    <li><code>m = ΔE / (c Δθ)</code> — find mass if you know energy and temperature change</li>
+    <li><code>c = ΔE / (m Δθ)</code> — find specific heat capacity</li>
+    <li><code>Δθ = ΔE / (m c)</code> — find temperature change</li>
+</ul>
+
+<h3>Why Water Has a High Specific Heat Capacity</h3>
+
+<p>Water has a specific heat capacity of 4200 J/(kg°C), which is much higher than most other substances. This is because:</p>
+
+<ul>
+    <li>Water molecules form strong hydrogen bonds with each other</li>
+    <li>Breaking and reforming these bonds requires significant energy input when temperature changes</li>
+    <li>A given amount of heat energy therefore produces a smaller temperature change in water than in other liquids</li>
+</ul>
+
+<p><strong>Practical consequences:</strong></p>
+<ul>
+    <li>Water is an excellent coolant (e.g., car radiators use water to absorb heat from the engine)</li>
+    <li>Water heats up and cools down slowly—coastal regions have milder climates because the ocean absorbs summer heat and releases it in winter, moderating temperature extremes</li>
+    <li>A cup of water takes much longer to heat than, say, a cup of oil</li>
+</ul>
+
+<h3>Specific Heat Capacity Values (Common Substances)</h3>
+
+<table>
+    <tr>
+        <th>Substance</th>
+        <th>Specific Heat Capacity (J/(kg°C))</th>
+    </tr>
+    <tr>
+        <td>Water</td>
+        <td>4200</td>
+    </tr>
+    <tr>
+        <td>Concrete</td>
+        <td>800</td>
+    </tr>
+    <tr>
+        <td>Aluminium</td>
+        <td>900</td>
+    </tr>
+    <tr>
+        <td>Iron</td>
+        <td>450</td>
+    </tr>
+    <tr>
+        <td>Copper</td>
+        <td>385</td>
+    </tr>
+</table>
+
+<h3>Worked Example 1 — Specific Heat Capacity Calculation</h3>
+
+<pre>
+Question: Calculate the energy needed to raise the temperature of 0.5 kg
+          of water from 20 °C to 100 °C.
+
+Given:   m = 0.5 kg,   Δθ = 100 − 20 = 80 °C,   c = 4200 J/(kg°C)
+Formula: ΔE = m c Δθ
+Working: ΔE = 0.5 × 4200 × 80
+         = 168 000 J
+         = 168 kJ
+
+Answer:  168 kJ (or 1.68 × 10⁵ J)
+
+Interpretation: It takes 168 kilojoules of energy to heat half a litre
+                of water from room temperature to boiling point.
+</pre>
+
+<h3>Required Practical 1: Measuring Specific Heat Capacity of a Solid (or Liquid)</h3>
+
+<p><strong>Typical procedure (using an electric heater):</strong></p>
+
+<ol>
+    <li>Measure the mass of the solid (e.g., aluminium block) using a balance</li>
+    <li>Record the initial temperature of the solid with a thermometer</li>
+    <li>Pass a known current through a heater immersed in (or in contact with) the solid for a measured time</li>
+    <li>Record the temperature at regular intervals (e.g., every 30 seconds)</li>
+    <li>Repeat the heating and temperature measurement until a substantial temperature rise is achieved</li>
+    <li>Calculate the electrical energy supplied: <code>E = I² R t</code> or <code>E = V I t</code></li>
+    <li>Calculate the temperature change: <code>Δθ = final temperature − initial temperature</code></li>
+    <li>Rearrange the specific heat equation: <code>c = ΔE / (m Δθ)</code></li>
+</ol>
+
+<p><strong>Sources of error:</strong> Heat loss to the surroundings (the block is cooling while being heated), inaccurate thermometer readings, and uncertainty in measuring time or current.</p>
+
+<div class="exam-tip">In an exam, if asked about sources of error in a calorimetry experiment, always mention heat loss to the surroundings. This is the largest source of systematic error and would cause your calculated value of <code>c</code> to be too high (because some of the electrical energy went into heating the air, not the substance).</div>
+
+<h2>4.3.4 Changes of State and Specific Latent Heat</h2>
+
+<div class="definition">
+    <strong>Specific latent heat</strong> is the energy required to change the state of 1 kg of a substance without a change in temperature.<br><br>
+    Symbol: <code>L</code>, measured in <strong>J/kg</strong><br><br>
+    Formula: <code>E = m L</code><br><br>
+    where <code>E</code> = energy transferred (J), <code>m</code> = mass (kg), <code>L</code> = specific latent heat (J/kg).
+</div>
+
+<h3>Two Types of Latent Heat</h3>
+
+<div class="definition">
+    <strong>Specific latent heat of fusion (L<sub>f</sub>):</strong> Energy needed to convert solid to liquid (or vice versa) at constant temperature. For water at 0 °C: L<sub>f</sub> = 334 000 J/kg.
+</div>
+
+<div class="definition">
+    <strong>Specific latent heat of vaporisation (L<sub>v</sub>):</strong> Energy needed to convert liquid to gas (or vice versa) at constant temperature. For water at 100 °C: L<sub>v</sub> = 2 260 000 J/kg.
+</div>
+
+<p><strong>Why is L<sub>v</sub> > L<sub>f</sub>?</strong> During melting, particles need enough energy to escape their rigid lattice and slide past each other—bonds are partially broken. During boiling, particles must escape completely from the liquid and become widely spaced in the gas phase—bonds are almost entirely broken. Breaking more bonds requires more energy, so L<sub>v</sub> is typically 5–10 times larger than L<sub>f</sub>.</p>
+
+<h3>The Heating Curve: Temperature vs Energy Input</h3>
+
+<!-- SVG 4: Heating curve with plateaus -->
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="22" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Heating curve: ice to steam (heating at constant rate)</text>
+
+    <!-- Axes -->
+    <line x1="60" y1="320" x2="750" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="60" y1="40" x2="60" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+
+    <!-- Axis labels -->
+    <text x="400" y="360" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">Energy input (time or energy, arbitrary units)</text>
+    <text x="30" y="180" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 30 180)">Temperature (°C)</text>
+
+    <!-- Axis ticks and labels -->
+    <text x="50" y="335" text-anchor="end" font-size="10" fill="#666">−20</text>
+    <text x="50" y="335" text-anchor="end" font-size="10" fill="#666">0</text>
+    <text x="50" y="335" text-anchor="end" font-size="10" fill="#666">100</text>
+
+    <!-- The heating curve itself -->
+    <!-- Phase 1: Solid ice warming (slope up) -->
+    <path d="M 80 280 L 160 200" stroke="#2563eb" stroke-width="3" fill="none"/>
+    <text x="120" y="260" font-size="10" fill="#1e40af" font-weight="bold">Ice warming</text>
+    <text x="120" y="275" font-size="9" fill="#666">(0 to 0 °C)</text>
+
+    <!-- Phase 2: Melting (plateau) -->
+    <line x1="160" y1="200" x2="240" y2="200" stroke="#16a34a" stroke-width="3"/>
+    <text x="200" y="185" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="bold">MELTING</text>
+    <text x="200" y="198" text-anchor="middle" font-size="9" fill="#666">T constant</text>
+
+    <!-- Phase 3: Liquid water warming (slope up) -->
+    <path d="M 240 200 L 400 80" stroke="#2563eb" stroke-width="3" fill="none"/>
+    <text x="320" y="120" font-size="10" fill="#1e40af" font-weight="bold">Water warming</text>
+    <text x="320" y="135" font-size="9" fill="#666">(0 to 100 °C)</text>
+
+    <!-- Phase 4: Boiling (plateau) -->
+    <line x1="400" y1="80" x2="550" y2="80" stroke="#dc2626" stroke-width="3"/>
+    <text x="475" y="65" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">BOILING</text>
+    <text x="475" y="78" text-anchor="middle" font-size="9" fill="#666">T constant</text>
+
+    <!-- Phase 5: Steam warming (slope up, shallow) -->
+    <path d="M 550 80 L 700 40" stroke="#2563eb" stroke-width="3" fill="none"/>
+    <text x="625" y="70" font-size="10" fill="#1e40af" font-weight="bold">Steam warming</text>
+    <text x="625" y="85" font-size="9" fill="#666">(100+ °C)</text>
+
+    <!-- Annotations with arrows -->
+    <path d="M 200 150 L 200 195" stroke="#16a34a" stroke-width="1.5" fill="none" marker-end="url(#arrowGreen)"/>
+    <text x="215" y="173" font-size="9" fill="#16a34a">Energy breaks</text>
+    <text x="215" y="183" font-size="9" fill="#16a34a">solid bonds</text>
+
+    <path d="M 475 50 L 475 75" stroke="#dc2626" stroke-width="1.5" fill="none" marker-end="url(#arrowRed)"/>
+    <text x="490" y="63" font-size="9" fill="#dc2626">Energy breaks</text>
+    <text x="490" y="73" font-size="9" fill="#dc2626">liquid bonds</text>
+
+    <!-- State labels on right -->
+    <text x="760" y="285" font-size="10" font-weight="bold" fill="#1e40af">SOLID</text>
+    <text x="760" y="200" font-size="10" font-weight="bold" fill="#1e40af">LIQUID</text>
+    <text x="760" y="85" font-size="10" font-weight="bold" fill="#1e40af">GAS</text>
+
+    <defs>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+    </defs>
+</svg>
+
+<p><strong>Key observations from the heating curve:</strong></p>
+
+<ul>
+    <li><strong>Sloped sections (ice warming, water warming, steam warming):</strong> Temperature rises as energy is added. Slope shows the relationship: steep slope = low specific heat capacity (temperature rises quickly); shallow slope = high specific heat capacity (temperature rises slowly). Water's section has the steepest slope because water has the highest specific heat capacity.</li>
+    <li><strong>Flat sections (melting plateau, boiling plateau):</strong> Temperature stays constant even though energy is being supplied. All the energy goes into breaking bonds and changing the state, not into raising kinetic energy.</li>
+    <li><strong>Length of plateaus:</strong> The boiling plateau is much longer than the melting plateau because L<sub>v</sub> >> L<sub>f</sub>—it takes far more energy to boil all the water than to melt all the ice.</li>
+</ul>
+
+<h3>Worked Example 1 — Melting Ice</h3>
+
+<pre>
+Question: How much energy is required to melt 0.2 kg of ice at 0 °C?
+
+Given:   m = 0.2 kg,   L_f = 334 000 J/kg
+Formula: E = m L_f
+Working: E = 0.2 × 334 000
+         = 66 800 J
+         = 66.8 kJ
+
+Answer:  66.8 kJ (or approximately 67 kJ)
+
+Note:    This energy converts ice to liquid water at 0 °C. The
+         temperature does NOT rise during melting.
+</pre>
+
+<h3>Worked Example 2 — Boiling Water</h3>
+
+<pre>
+Question: How much energy is needed to boil away 0.5 kg of water
+          at 100 °C?
+
+Given:   m = 0.5 kg,   L_v = 2 260 000 J/kg
+Formula: E = m L_v
+Working: E = 0.5 × 2 260 000
+         = 1 130 000 J
+         = 1.13 MJ
+
+Answer:  1.13 MJ (or 1 130 kJ, or 1.13 × 10⁶ J)
+
+Note:    Compare to the melting example: boiling half a kilogram of
+         water requires about 17 times more energy than melting 0.2 kg
+         of ice. This is because L_v >> L_f.
+</pre>
+
+<div class="exam-tip">In exam questions, watch out for the difference between heating a substance and changing its state. Heating raises temperature (use <code>ΔE = m c Δθ</code>); changing state keeps temperature constant (use <code>E = m L</code>). Read carefully to identify which process is happening.</div>
+
+<h2>4.3.5 Particle Motion in Gases</h2>
+
+<div class="definition">
+    In a gas, particles are widely spaced and move rapidly in random directions. They collide with each other and with container walls. The temperature of a gas is directly related to the average kinetic energy of its particles.
+</div>
+
+<p><strong>Relationship between temperature and particle motion:</strong></p>
+<ul>
+    <li><strong>Higher temperature:</strong> Particles move faster; average kinetic energy is higher</li>
+    <li><strong>Lower temperature:</strong> Particles move slower; average kinetic energy is lower</li>
+    <li><strong>Absolute zero (−273 °C or 0 K):</strong> (Theoretical) particles would stop moving entirely; in reality, absolute zero cannot be reached</li>
+</ul>
+
+<h3>Gas Pressure</h3>
+
+<div class="definition">
+    <strong>Pressure</strong> in a gas is caused by particles colliding with the container walls and exerting a force on them. Higher frequency and harder collisions = higher pressure.
+</div>
+
+<!-- SVG 5: Gas pressure (particles hitting walls) -->
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Gas pressure: particles colliding with container walls</text>
+
+    <!-- Container (box) -->
+    <rect x="100" y="60" width="600" height="280" fill="none" stroke="#1a1a2e" stroke-width="3"/>
+
+    <!-- Particles (circles) with random positions -->
+    <circle cx="180" cy="100" r="5" fill="#2563eb"/>
+    <circle cx="350" cy="80" r="5" fill="#2563eb"/>
+    <circle cx="620" cy="110" r="5" fill="#2563eb"/>
+    <circle cx="150" cy="200" r="5" fill="#2563eb"/>
+    <circle cx="400" cy="180" r="5" fill="#2563eb"/>
+    <circle cx="680" cy="220" r="5" fill="#2563eb"/>
+    <circle cx="250" cy="280" r="5" fill="#2563eb"/>
+    <circle cx="500" cy="300" r="5" fill="#2563eb"/>
+    <circle cx="120" cy="320" r="5" fill="#2563eb"/>
+    <circle cx="700" cy="280" r="5" fill="#2563eb"/>
+
+    <!-- Velocity vectors (arrows showing motion) -->
+    <path d="M 180 100 L 200 90" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 350 80 L 380 95" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 620 110 L 640 125" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 150 200 L 130 210" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 400 180 L 420 160" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 680 220 L 695 245" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 250 280 L 235 300" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 500 300 L 525 315" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 120 320 L 105 335" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+    <path d="M 700 280 L 715 265" stroke="#dc2626" stroke-width="2" fill="none" marker-end="url(#arrowRed)"/>
+
+    <!-- Collision indicators (on walls) -->
+    <!-- Left wall collisions -->
+    <circle cx="100" cy="140" r="6" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="90" y="145" text-anchor="end" font-size="10" fill="#f59e0b" font-weight="bold">Collision</text>
+
+    <circle cx="100" cy="240" r="6" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="75" y="245" text-anchor="end" font-size="10" fill="#f59e0b" font-weight="bold">Force on wall</text>
+
+    <!-- Right wall collision -->
+    <circle cx="700" cy="150" r="6" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="720" y="155" text-anchor="start" font-size="10" fill="#f59e0b" font-weight="bold">Collision</text>
+
+    <!-- Top wall collision -->
+    <circle cx="350" cy="60" r="6" fill="none" stroke="#f59e0b" stroke-width="2"/>
+    <text x="350" y="45" text-anchor="middle" font-size="10" fill="#f59e0b" font-weight="bold">Force</text>
+
+    <!-- Labels -->
+    <text x="400" y="365" text-anchor="middle" font-size="11" fill="#1e3a5f">Pressure = total force / area = effect of particle collisions</text>
+    <text x="400" y="385" text-anchor="middle" font-size="10" fill="#666">More collisions (higher T or lower V) → higher pressure</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+    </defs>
+</svg>
+
+<h3>Effect of Temperature on Pressure (at Constant Volume)</h3>
+
+<p>If you heat a gas in a rigid container (constant volume):</p>
+
+<ul>
+    <li><strong>Temperature increases:</strong> Particles move faster</li>
+    <li><strong>More frequent collisions:</strong> Each particle hits the walls more often</li>
+    <li><strong>Harder collisions:</strong> Each impact transfers more momentum to the walls</li>
+    <li><strong>Result:</strong> Pressure increases</li>
+</ul>
+
+<div class="definition">
+    At constant volume, <strong>pressure is proportional to absolute temperature</strong> (Gay-Lussac's Law in principle):
+    <br><br>
+    <code>P ∝ T</code> (at constant V)<br>
+    or <code>P / T = constant</code>
+</div>
+
+<!-- SVG 6: P vs T graph (constant volume) -->
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Pressure vs temperature (at constant volume)</text>
+
+    <!-- Axes -->
+    <line x1="70" y1="300" x2="650" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="70" y1="50" x2="70" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+
+    <!-- Axis labels -->
+    <text x="350" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">Temperature (K, absolute)</text>
+    <text x="25" y="175" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 25 175)">Pressure (Pa or atm)</text>
+
+    <!-- Data points and line -->
+    <circle cx="100" cy="270" r="4" fill="#2563eb"/>
+    <circle cx="200" cy="210" r="4" fill="#2563eb"/>
+    <circle cx="300" cy="150" r="4" fill="#2563eb"/>
+    <circle cx="400" cy="90" r="4" fill="#2563eb"/>
+
+    <!-- Best-fit line through origin -->
+    <line x1="70" y1="300" x2="500" y2="20" stroke="#2563eb" stroke-width="2.5"/>
+
+    <!-- Tick marks and labels -->
+    <line x1="100" y1="300" x2="100" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="100" y="320" text-anchor="middle" font-size="10" fill="#666">100 K</text>
+
+    <line x1="200" y1="300" x2="200" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="200" y="320" text-anchor="middle" font-size="10" fill="#666">200 K</text>
+
+    <line x1="300" y1="300" x2="300" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="300" y="320" text-anchor="middle" font-size="10" fill="#666">300 K</text>
+
+    <line x1="400" y1="300" x2="400" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="400" y="320" text-anchor="middle" font-size="10" fill="#666">400 K</text>
+
+    <line x1="500" y1="300" x2="500" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="500" y="320" text-anchor="middle" font-size="10" fill="#666">500 K</text>
+
+    <!-- Pressure axis labels -->
+    <line x1="65" y1="270" x2="70" y2="270" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="60" y="275" text-anchor="end" font-size="10" fill="#666">P₁</text>
+
+    <line x1="65" y1="210" x2="70" y2="210" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="60" y="215" text-anchor="end" font-size="10" fill="#666">2P₁</text>
+
+    <line x1="65" y1="150" x2="70" y2="150" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="60" y="155" text-anchor="end" font-size="10" fill="#666">3P₁</text>
+
+    <line x1="65" y1="90" x2="70" y2="90" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="60" y="95" text-anchor="end" font-size="10" fill="#666">4P₁</text>
+
+    <!-- Annotations -->
+    <text x="350" y="360" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">Straight line through origin: P and T are directly proportional</text>
+    <text x="350" y="375" text-anchor="middle" font-size="10" fill="#666">If T doubles, P doubles (at constant volume)</text>
+</svg>
+
+<p><strong>Why does pressure increase with temperature?</strong> At a molecular level, higher temperature means faster particle motion. Faster particles hit the walls more frequently and with greater force, producing a higher pressure. This relationship only works if volume is held constant—if the container can expand, the volume change also affects pressure.</p>
+
+<div class="exam-tip">Use Kelvin (K), not Celsius, when working with gas laws. At 0 °C = 273 K. The proportionality P ∝ T only holds for absolute temperature. If you use Celsius, the relationship breaks down.</div>
+
+<h2>4.3.6 Increasing the Pressure of a Gas (Higher / Triple Science)</h2>
+
+<h3>Compression at Constant Temperature</h3>
+
+<p>When you compress a gas by reducing its volume (e.g., pushing a piston into a syringe):</p>
+
+<ul>
+    <li><strong>Volume decreases:</strong> Particles are squeezed into a smaller space</li>
+    <li><strong>Particle density increases:</strong> Same number of particles in less volume</li>
+    <li><strong>More frequent collisions:</strong> Particles hit the walls more often (per unit area per unit time)</li>
+    <li><strong>Result:</strong> Pressure increases</li>
+</ul>
+
+<div class="definition">
+    <strong>Boyle's Law (stated in principle):</strong> At constant temperature, pressure is inversely proportional to volume:
+    <br><br>
+    <code>P ∝ 1/V</code> (at constant T)<br>
+    or <code>P V = constant</code>
+</div>
+
+<!-- SVG 7: Piston compressing gas -->
+<svg viewBox="0 0 800 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Compressing a gas increases pressure (at constant temperature)</text>
+
+    <!-- LEFT: Initial state -->
+    <text x="150" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Initial state (volume V)</text>
+
+    <!-- Cylinder on left -->
+    <rect x="50" y="80" width="200" height="120" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+
+    <!-- Piston on left (not compressed) -->
+    <rect x="240" y="80" width="20" height="120" fill="#888" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="250" y="190" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">P</text>
+
+    <!-- Particles on left -->
+    <circle cx="80" cy="100" r="4" fill="#2563eb"/>
+    <circle cx="140" cy="95" r="4" fill="#2563eb"/>
+    <circle cx="180" cy="110" r="4" fill="#2563eb"/>
+    <circle cx="100" cy="150" r="4" fill="#2563eb"/>
+    <circle cx="160" cy="160" r="4" fill="#2563eb"/>
+    <circle cx="120" cy="180" r="4" fill="#2563eb"/>
+
+    <!-- Collision indicators left -->
+    <circle cx="50" cy="110" r="5" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="50" cy="170" r="5" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+
+    <text x="35" y="145" text-anchor="end" font-size="10" fill="#1e3a5f">P₁</text>
+
+    <!-- RIGHT: Compressed state -->
+    <text x="650" y="55" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e3a5f">Compressed (volume ½V)</text>
+
+    <!-- Cylinder on right -->
+    <rect x="550" y="80" width="100" height="120" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+
+    <!-- Piston on right (compressed) -->
+    <rect x="640" y="80" width="20" height="120" fill="#888" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="650" y="190" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">P</text>
+
+    <!-- Piston movement arrow -->
+    <path d="M 270 140 L 610 140" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#arrowRed)"/>
+    <text x="440" y="130" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">Work done on gas</text>
+
+    <!-- Particles on right (tighter packing) -->
+    <circle cx="570" cy="105" r="4" fill="#2563eb"/>
+    <circle cx="590" cy="100" r="4" fill="#2563eb"/>
+    <circle cx="610" cy="115" r="4" fill="#2563eb"/>
+    <circle cx="575" cy="145" r="4" fill="#2563eb"/>
+    <circle cx="605" cy="150" r="4" fill="#2563eb"/>
+    <circle cx="590" cy="170" r="4" fill="#2563eb"/>
+
+    <!-- Collision indicators right -->
+    <circle cx="550" cy="110" r="5" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="550" cy="160" r="5" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+    <circle cx="550" cy="130" r="5" fill="none" stroke="#f59e0b" stroke-width="1.5"/>
+
+    <text x="535" y="130" text-anchor="end" font-size="10" fill="#1e3a5f" font-weight="bold">2P₁</text>
+
+    <!-- Bottom annotation -->
+    <text x="400" y="240" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">Same number of particles in half the volume</text>
+    <text x="400" y="258" text-anchor="middle" font-size="10" fill="#666">→ twice as many collisions per unit area per unit time</text>
+    <text x="400" y="273" text-anchor="middle" font-size="10" fill="#666">→ pressure doubles (at constant T)</text>
+
+    <!-- Why it heats up -->
+    <rect x="250" y="240" width="300" height="80" fill="#fffbeb" stroke="#f59e0b" stroke-width="1" rx="4"/>
+    <text x="400" y="262" text-anchor="middle" font-size="11" font-weight="bold" fill="#b45309">Why does the piston get hot?</text>
+    <text x="400" y="280" text-anchor="middle" font-size="10" fill="#b45309">When you push the piston down, you do work on the gas.</text>
+    <text x="400" y="295" text-anchor="middle" font-size="10" fill="#b45309">This work is converted into internal energy, heating the gas.</text>
+    <text x="400" y="310" text-anchor="middle" font-size="10" fill="#b45309">Example: a bicycle pump gets warm when you pump air in.</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+    </defs>
+</svg>
+
+<h3>Practical Example: The Bicycle Pump</h3>
+
+<p>When you push down on a bicycle pump handle:</p>
+
+<ol>
+    <li><strong>Volume decreases:</strong> The air chamber shrinks as the piston moves down</li>
+    <li><strong>Pressure increases:</strong> The same number of air molecules are squeezed into a smaller space, creating more collisions and higher pressure</li>
+    <li><strong>Work is done on the gas:</strong> Your muscles transfer energy as you push the piston</li>
+    <li><strong>Internal energy increases:</strong> This energy goes into increasing the kinetic energy of the gas molecules, raising its temperature</li>
+    <li><strong>The pump gets warm:</strong> You can feel this heat—the barrel of the pump becomes noticeably warmer after several strokes</li>
+</ol>
+
+<div class="definition">
+    <strong>Work done on a gas during compression:</strong> When you compress a gas, you transfer energy to it by doing work. This energy becomes internal energy (kinetic and potential energy of particles). If no heat is lost to the surroundings, the temperature of the gas rises.
+</div>
+
+<div class="exam-tip">Examiners love the bicycle pump example because it links three concepts: (1) volume decrease → pressure increase, (2) work is transferred as energy, (3) internal energy increases → temperature increases. If asked "why does a bicycle pump get warm?" you should mention all three.</div>
+
+<!-- SVG 8: P vs V graph (constant temperature) -->
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Pressure vs volume (at constant temperature) — Boyle's Law</text>
+
+    <!-- Axes -->
+    <line x1="80" y1="300" x2="650" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="80" y1="50" x2="80" y2="300" stroke="#1a1a2e" stroke-width="2"/>
+
+    <!-- Axis labels -->
+    <text x="350" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">Volume (arbitrary units)</text>
+    <text x="30" y="175" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 30 175)">Pressure (Pa or atm)</text>
+
+    <!-- Hyperbolic curve (P ∝ 1/V) -->
+    <path d="M 100 60 Q 150 95 200 145 Q 250 185 300 220 Q 350 245 400 262 Q 450 275 500 285 Q 550 292 600 297" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+
+    <!-- Data points -->
+    <circle cx="100" cy="60" r="4" fill="#2563eb"/>
+    <circle cx="200" cy="145" r="4" fill="#2563eb"/>
+    <circle cx="300" cy="220" r="4" fill="#2563eb"/>
+    <circle cx="400" cy="262" r="4" fill="#2563eb"/>
+
+    <!-- Tick marks and labels (Volume) -->
+    <line x1="100" y1="300" x2="100" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="100" y="320" text-anchor="middle" font-size="10" fill="#666">1</text>
+
+    <line x1="200" y1="300" x2="200" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="200" y="320" text-anchor="middle" font-size="10" fill="#666">2</text>
+
+    <line x1="300" y1="300" x2="300" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="300" y="320" text-anchor="middle" font-size="10" fill="#666">3</text>
+
+    <line x1="400" y1="300" x2="400" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="400" y="320" text-anchor="middle" font-size="10" fill="#666">4</text>
+
+    <!-- Tick marks and labels (Pressure) -->
+    <line x1="75" y1="60" x2="80" y2="60" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="65" text-anchor="end" font-size="10" fill="#666">4P</text>
+
+    <line x1="75" y1="145" x2="80" y2="145" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="150" text-anchor="end" font-size="10" fill="#666">2P</text>
+
+    <line x1="75" y1="220" x2="80" y2="220" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="225" text-anchor="end" font-size="10" fill="#666">1.3P</text>
+
+    <line x1="75" y1="262" x2="80" y2="262" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="267" text-anchor="end" font-size="10" fill="#666">P</text>
+
+    <!-- Annotations -->
+    <text x="350" y="360" text-anchor="middle" font-size="11" fill="#1e3a5f" font-weight="bold">Hyperbolic curve: P and V are inversely proportional</text>
+    <text x="350" y="375" text-anchor="middle" font-size="10" fill="#666">If V is halved, P doubles (at constant temperature)</text>
+</svg>
+
+<p><strong>Reading the graph:</strong> The curve is hyperbolic (not straight). When volume is halved, pressure doubles. When volume is tripled, pressure becomes one-third. This inverse relationship—PV = constant—is Boyle's Law.</p>
+
+<div class="exam-tip">Boyle's Law graph is curved, not straight. The curve shows that as volume increases, pressure decreases, but the relationship is not linear. At very large volumes, pressure changes are smaller. This is an important distinction from the P-T graph (which is linear).</div>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,1188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.6 — Waves</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        sub { font-size: 0.8em; }
+        sup { font-size: 0.8em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.6 Waves</h1>
+<p class="spec-ref">AQA GCSE Physics (8463) — Paper 2</p>
+
+<h2>4.6.1 Transverse and Longitudinal Waves</h2>
+
+<div class="definition">
+    A <strong>wave</strong> is a repeating oscillation (vibration) that transfers energy from one place to another without permanently moving the matter itself. Only the energy travels; particles oscillate about fixed positions and return to equilibrium.
+</div>
+
+<h3>Transverse Waves</h3>
+
+<p>In a <strong>transverse wave</strong>, particles of the medium oscillate <strong>perpendicular (at right angles) to the direction of energy transfer</strong>. As the wave moves forward, particles move up and down (or side to side).</p>
+
+<p><strong>Examples of transverse waves:</strong></p>
+<ul>
+    <li>Water ripples and ocean waves (water particles bob up and down)</li>
+    <li>Waves on a rope or string (particles move side to side)</li>
+    <li><strong>All electromagnetic (EM) waves:</strong> light, radio waves, X-rays, etc. (electric and magnetic fields oscillate perpendicular to direction of travel)</li>
+</ul>
+
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Transverse Wave (e.g. rope wave)</text>
+
+    <!-- Sine wave -->
+    <path d="M 80 100 Q 130 60, 180 100 T 280 100 T 380 100 T 480 100 T 580 100 T 680 100" stroke="#2563eb" stroke-width="3" fill="none"/>
+
+    <!-- Direction of energy transfer arrow -->
+    <line x1="50" y1="130" x2="150" y2="130" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+    <text x="100" y="155" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="bold">Energy transfer →</text>
+
+    <!-- Particle oscillation arrows (perpendicular) -->
+    <line x1="180" y1="70" x2="180" y2="130" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowRed)" stroke-dasharray="4"/>
+    <text x="155" y="105" font-size="9" fill="#dc2626">oscillation</text>
+
+    <!-- Amplitude marking -->
+    <line x1="70" y1="60" x2="70" y2="100" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="2"/>
+    <line x1="65" y1="60" x2="75" y2="60" stroke="#f59e0b" stroke-width="1.5"/>
+    <line x1="65" y1="100" x2="75" y2="100" stroke="#f59e0b" stroke-width="1.5"/>
+    <text x="50" y="82" font-size="9" fill="#f59e0b" font-weight="bold">A</text>
+
+    <!-- Wavelength marking -->
+    <line x1="80" y1="145" x2="280" y2="145" stroke="#1e40af" stroke-width="1.5"/>
+    <line x1="80" y1="140" x2="80" y2="150" stroke="#1e40af" stroke-width="1.5"/>
+    <line x1="280" y1="140" x2="280" y2="150" stroke="#1e40af" stroke-width="1.5"/>
+    <text x="180" y="170" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">λ (wavelength)</text>
+
+    <defs>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+    </defs>
+</svg>
+
+<h3>Longitudinal Waves</h3>
+
+<p>In a <strong>longitudinal wave</strong>, particles of the medium oscillate <strong>parallel (in the same direction) to the direction of energy transfer</strong>. The wave consists of alternating regions of compression (particles pushed together) and rarefaction (particles spread apart).</p>
+
+<p><strong>Examples of longitudinal waves:</strong></p>
+<ul>
+    <li>Sound waves in air, water, and solids (compressions and rarefactions of air molecules)</li>
+    <li>P-waves (primary seismic waves) from earthquakes (compressions of rock layers)</li>
+</ul>
+
+<svg viewBox="0 0 700 200" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Longitudinal Wave (e.g. sound wave)</text>
+
+    <!-- Direction arrow -->
+    <line x1="50" y1="100" x2="150" y2="100" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen2)"/>
+    <text x="100" y="125" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="bold">Energy transfer →</text>
+
+    <!-- Compression region 1 (tight dots) -->
+    <circle cx="200" cy="90" r="4" fill="#2563eb"/>
+    <circle cx="210" cy="90" r="4" fill="#2563eb"/>
+    <circle cx="220" cy="90" r="4" fill="#2563eb"/>
+    <text x="210" y="145" text-anchor="middle" font-size="9" fill="#2563eb" font-weight="bold">Compression</text>
+
+    <!-- Rarefaction region 1 (loose dots) -->
+    <circle cx="280" cy="75" r="4" fill="#f59e0b"/>
+    <circle cx="300" cy="85" r="4" fill="#f59e0b"/>
+    <circle cx="320" cy="75" r="4" fill="#f59e0b"/>
+    <text x="300" y="145" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="bold">Rarefaction</text>
+
+    <!-- Compression region 2 -->
+    <circle cx="370" cy="90" r="4" fill="#2563eb"/>
+    <circle cx="380" cy="90" r="4" fill="#2563eb"/>
+    <circle cx="390" cy="90" r="4" fill="#2563eb"/>
+
+    <!-- Rarefaction region 2 -->
+    <circle cx="460" cy="75" r="4" fill="#f59e0b"/>
+    <circle cx="480" cy="85" r="4" fill="#f59e0b"/>
+    <circle cx="500" cy="75" r="4" fill="#f59e0b"/>
+
+    <!-- Compression region 3 -->
+    <circle cx="540" cy="90" r="4" fill="#2563eb"/>
+    <circle cx="550" cy="90" r="4" fill="#2563eb"/>
+    <circle cx="560" cy="90" r="4" fill="#2563eb"/>
+
+    <!-- Wavelength (compression to compression) -->
+    <line x1="200" y1="160" x2="370" y2="160" stroke="#1e40af" stroke-width="1.5"/>
+    <line x1="200" y1="155" x2="200" y2="165" stroke="#1e40af" stroke-width="1.5"/>
+    <line x1="370" y1="155" x2="370" y2="165" stroke="#1e40af" stroke-width="1.5"/>
+    <text x="285" y="180" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">λ (one wavelength)</text>
+
+    <defs>
+        <marker id="arrowGreen2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">The key difference: transverse = particles move PERPENDICULAR to wave travel; longitudinal = particles move PARALLEL to wave travel. Remember: light and string waves are transverse; sound waves are longitudinal. These cannot be confused in exam questions.</div>
+
+<h2>4.6.2 Properties of Waves</h2>
+
+<h3>Amplitude, Wavelength, Frequency, and Period</h3>
+
+<div class="definition">
+    <strong>Amplitude (A)</strong> is the maximum displacement of a particle from its equilibrium position. It is the height of a peak (or depth of a trough) from the centre line. Measured in metres (m).
+</div>
+
+<div class="definition">
+    <strong>Wavelength (λ, lambda)</strong> is the distance from one point on a wave to the next equivalent point — typically measured from peak to peak, or trough to trough, or compression to compression. Measured in metres (m).
+</div>
+
+<div class="definition">
+    <strong>Frequency (f)</strong> is the number of complete waves (oscillations) produced in one second. Measured in hertz (Hz). 1 Hz = 1 wave per second.
+</div>
+
+<div class="definition">
+    <strong>Period (T)</strong> is the time taken for one complete oscillation or one complete wave to pass a point. Measured in seconds (s). Relationship: <code>T = 1 / f</code>
+</div>
+
+<h3>The Wave Equation</h3>
+
+<div class="definition">
+    The <strong>wave speed (v)</strong> is related to frequency and wavelength by:
+    <p style="margin: 10px 0;"><code>v = f × λ</code></p>
+    where <strong>v</strong> is wave speed (m/s), <strong>f</strong> is frequency (Hz), and <strong>λ</strong> is wavelength (m).
+</div>
+
+<h3>Worked Examples</h3>
+
+<p><strong>Example 1:</strong> A wave on a string has a wavelength of 2 m and a frequency of 50 Hz. Calculate the wave speed.</p>
+<pre>v = f × λ = 50 × 2 = 100 m/s</pre>
+
+<p><strong>Example 2:</strong> A sound wave in air travels at 340 m/s with a frequency of 680 Hz. Calculate the wavelength.</p>
+<pre>v = f × λ
+340 = 680 × λ
+λ = 340 / 680 = 0.5 m</pre>
+
+<p><strong>Example 3:</strong> A ripple tank generates waves with a period of 0.2 s and wavelength of 4 m. Find the wave speed.</p>
+<pre>First find frequency: f = 1 / T = 1 / 0.2 = 5 Hz
+Then: v = f × λ = 5 × 4 = 20 m/s</pre>
+
+<svg viewBox="0 0 700 250" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Wave Properties</text>
+
+    <!-- Sine wave -->
+    <path d="M 80 130 Q 120 90, 160 130 T 240 130 T 320 130 T 400 130 T 480 130 T 560 130 T 640 130" stroke="#2563eb" stroke-width="3" fill="none"/>
+
+    <!-- Amplitude arrows -->
+    <line x1="50" y1="90" x2="50" y2="130" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowAmber)" marker-start="url(#arrowAmberUp)"/>
+    <text x="25" y="110" font-size="9" fill="#f59e0b" font-weight="bold">A</text>
+
+    <!-- Wavelength double arrow -->
+    <line x1="80" y1="180" x2="240" y2="180" stroke="#1e40af" stroke-width="2"/>
+    <line x1="80" y1="175" x2="80" y2="185" stroke="#1e40af" stroke-width="2"/>
+    <line x1="240" y1="175" x2="240" y2="185" stroke="#1e40af" stroke-width="2"/>
+    <text x="160" y="205" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">λ = one wavelength</text>
+
+    <!-- One complete wave cycle time -->
+    <text x="350" y="235" text-anchor="middle" font-size="9" fill="#666">Period T = time for one complete wave to pass = time from one peak to the next peak</text>
+
+    <defs>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+        <marker id="arrowAmberUp" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="8 0, 0 4, 8 8" fill="#f59e0b"/></marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">In calculations, always ensure units match: if wavelength is in metres, frequency in Hz, then speed comes out in m/s. If you're given wavelength in cm, convert to m first. Period T and frequency f are reciprocals: T = 1/f and f = 1/T — never mix them up.</div>
+
+<h3>Required Practical 8: Measuring Wave Speed</h3>
+
+<p>Students measure the frequency, wavelength, and speed of waves using:</p>
+<ul>
+    <li><strong>String/rope vibration:</strong> Use a vibration generator and measure wavelength with a ruler; frequency from the generator</li>
+    <li><strong>Ripple tank:</strong> Create waves in shallow water, measure wavelength using a ruler or grid, frequency from the vibrator</li>
+    <li><strong>Ultrasound pulses:</strong> Use ultrasound transmitter and receiver to measure distance and time of travel</li>
+</ul>
+
+<h2>4.6.3 Sound Waves (Triple)</h2>
+
+<div class="definition">
+    <strong>Sound</strong> is a longitudinal wave produced by vibrating objects. Sound waves are compressions and rarefactions of the medium (air, water, solids) and travel outward from the source.
+</div>
+
+<h3>The Range of Human Hearing</h3>
+
+<p>The human ear can detect sound frequencies from approximately <strong>20 Hz to 20 000 Hz (20 kHz)</strong>. Sound outside this range is inaudible to humans:</p>
+<ul>
+    <li><strong>Infrasound:</strong> frequencies below 20 Hz (elephant calls, earthquakes)</li>
+    <li><strong>Audible range:</strong> 20 Hz to 20 kHz</li>
+    <li><strong>Ultrasound:</strong> frequencies above 20 kHz (bat echolocation, medical imaging)</li>
+</ul>
+
+<h3>Pitch and Loudness</h3>
+
+<p><strong>Pitch</strong> is determined by frequency:</p>
+<ul>
+    <li>Higher frequency → higher pitch (treble, squeaky sounds)</li>
+    <li>Lower frequency → lower pitch (bass, deep sounds)</li>
+</ul>
+
+<p><strong>Loudness</strong> is determined by amplitude:</p>
+<ul>
+    <li>Larger amplitude → louder sound (more energy)</li>
+    <li>Smaller amplitude → quieter sound (less energy)</li>
+</ul>
+
+<h3>The Human Ear</h3>
+
+<p>Sound waves enter the ear and set the <strong>eardrum (tympanum)</strong> vibrating. The vibrations are transferred through three tiny bones called <strong>ossicles</strong> (hammer, anvil, stirrup) to the <strong>cochlea</strong> — a fluid-filled spiral structure. The cochlea contains hair cells that convert mechanical vibrations into electrical nerve signals, which travel to the brain for perception.</p>
+
+<h3>Speed of Sound in Different Media</h3>
+
+<table>
+    <tr>
+        <th>Medium</th>
+        <th>Speed of Sound</th>
+        <th>Why?</th>
+    </tr>
+    <tr>
+        <td><strong>Solids</strong> (e.g. steel, wood)</td>
+        <td>~5000 m/s</td>
+        <td>Particles tightly packed; vibrations transfer quickly through strong bonds</td>
+    </tr>
+    <tr>
+        <td><strong>Liquids</strong> (e.g. water)</td>
+        <td>~1500 m/s</td>
+        <td>Particles more loosely packed than solids but closer than gases</td>
+    </tr>
+    <tr>
+        <td><strong>Gases</strong> (air at 20°C)</td>
+        <td>~340 m/s</td>
+        <td>Particles far apart; vibrations travel more slowly through empty space</td>
+    </tr>
+</table>
+
+<div class="exam-tip">Sound travels FASTEST in solids and SLOWEST in gases. This is the opposite of light — light travels fastest in vacuum and slows in denser media. In exam questions, never say sound travels at "the speed of sound" without specifying the medium.</div>
+
+<h2>4.6.4 Ultrasound (Triple)</h2>
+
+<div class="definition">
+    <strong>Ultrasound</strong> is sound with a frequency greater than 20 000 Hz (20 kHz) — beyond the upper limit of human hearing. Ultrasound can be produced by transducers and has many practical applications.
+</div>
+
+<h3>Partial Reflection at Boundaries</h3>
+
+<p>When an ultrasound wave encounters a boundary between two media with <strong>different densities</strong> (or different acoustic impedances), part of the wave is reflected back and part is transmitted through. The amount of reflection depends on the density difference between the media. This property is exploited in medical and industrial applications.</p>
+
+<h3>Time of Flight and Distance Calculation</h3>
+
+<p>Ultrasound pulses are sent into a medium; the echo (reflected pulse) returns to a receiver. By measuring the <strong>time of flight</strong> (total time for the pulse to travel down and back), the distance can be calculated:</p>
+
+<div class="definition">
+    <strong>Distance to object (one way):</strong>
+    <p style="margin: 10px 0;"><code>s = v × t</code></p>
+    where <strong>s</strong> is distance (m), <strong>v</strong> is wave speed (m/s), and <strong>t</strong> is time.
+    <p style="margin: 10px 0;">If measuring round-trip time, divide by 2: <code>distance = (v × t) / 2</code></p>
+</div>
+
+<h3>Worked Example: Ultrasound Depth Measurement</h3>
+
+<p>An ultrasound pulse is sent into water. The echo returns to the transducer after 0.01 s. The speed of ultrasound in water is 1500 m/s. Calculate the depth of the object (distance to the reflecting surface).</p>
+
+<pre>Total distance (down and back) = v × t = 1500 × 0.01 = 15 m
+Distance to object (one way) = 15 / 2 = 7.5 m</pre>
+
+<h3>Medical Applications (Foetal Imaging)</h3>
+
+<p><strong>Ultrasound scanning in pregnancy:</strong></p>
+<ul>
+    <li>A transducer sends short pulses of ultrasound into the womb</li>
+    <li>Echoes reflect off the foetus and surrounding tissues</li>
+    <li>A computer calculates distances and builds a real-time image</li>
+    <li>No ionising radiation → safer than X-rays (no risk of cell damage or mutation)</li>
+    <li>Can measure foetal size, detect abnormalities, confirm due date</li>
+</ul>
+
+<h3>Other Applications</h3>
+
+<ul>
+    <li><strong>Industrial flaw detection:</strong> Detect cracks or voids in metal structures, pipes, welds</li>
+    <li><strong>Sonar/echo location:</strong> Submarines and ships map the seafloor; bats locate prey in flight</li>
+    <li><strong>Cleaning:</strong> Ultrasonic cleaning tanks shake jewellery, dentures, and precision instruments to remove dirt</li>
+    <li><strong>Therapeutic ultrasound:</strong> Physiotherapy and pain relief</li>
+</ul>
+
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Ultrasound Pulse and Echo</text>
+
+    <!-- Transducer -->
+    <rect x="50" y="80" width="30" height="60" fill="#2563eb" stroke="#1e40af" stroke-width="2" rx="2"/>
+    <text x="65" y="115" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">Transducer</text>
+
+    <!-- Transmitted wave -->
+    <path d="M 85 105 L 120 105 L 130 90 L 140 105 L 150 90 L 160 105 L 170 90 L 180 105 L 190 90 L 200 105" stroke="#2563eb" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="140" y="130" font-size="9" fill="#2563eb" font-weight="bold">Sent →</text>
+
+    <!-- Object/surface -->
+    <rect x="250" y="70" width="60" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="280" y="115" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">Object</text>
+
+    <!-- Reflected wave (echo) -->
+    <path d="M 310 105 L 275 105 L 265 90 L 255 105 L 245 90 L 235 105 L 225 90 L 215 105 L 205 90 L 195 105" stroke="#16a34a" stroke-width="2" fill="none" stroke-linecap="round" stroke-linejoin="round"/>
+    <text x="240" y="130" font-size="9" fill="#16a34a" font-weight="bold">← Echo</text>
+
+    <!-- Distance marking -->
+    <line x1="80" y1="160" x2="250" y2="160" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3"/>
+    <text x="165" y="180" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="bold">Distance (s) = v × t / 2</text>
+
+    <!-- Time scale -->
+    <text x="350" y="210" text-anchor="middle" font-size="8" fill="#666">Sent at t=0, echo received at t = total time</text>
+
+</svg>
+
+<div class="exam-tip">Always remember to divide by 2 when calculating distance from round-trip time — the pulse travels down to the object and back up. A common mistake is forgetting this division, doubling your answer incorrectly.</div>
+
+<h2>4.6.5 Seismic Waves (Triple)</h2>
+
+<div class="definition">
+    <strong>Seismic waves</strong> are vibrations generated by earthquakes deep inside the Earth. They travel outward through rock layers and are detected by seismographs around the world. There are two main types: P-waves and S-waves.
+</div>
+
+<h3>P-waves (Primary Waves)</h3>
+
+<ul>
+    <li><strong>Type:</strong> Longitudinal (compressions and rarefactions)</li>
+    <li><strong>Speed:</strong> Faster (~6 km/s in the crust)</li>
+    <li><strong>Travel through:</strong> Both solids AND liquids</li>
+    <li><strong>Arrival:</strong> Arrive first at distant seismic stations</li>
+    <li><strong>Nature:</strong> Push-pull motion, less destructive</li>
+</ul>
+
+<h3>S-waves (Secondary Waves)</h3>
+
+<ul>
+    <li><strong>Type:</strong> Transverse (up-down, side-to-side motion)</li>
+    <li><strong>Speed:</strong> Slower (~3.5 km/s in the crust)</li>
+    <li><strong>Travel through:</strong> Solids ONLY — cannot travel through liquids</li>
+    <li><strong>Arrival:</strong> Arrive second at distant seismic stations</li>
+    <li><strong>Nature:</strong> Shearing motion, more destructive</li>
+</ul>
+
+<h3>Evidence for Earth's Structure</h3>
+
+<p>The pattern of P and S wave arrivals around the Earth provides evidence for Earth's internal structure:</p>
+<ul>
+    <li><strong>P-waves reach the other side of Earth:</strong> They travel through the liquid outer core</li>
+    <li><strong>S-waves never reach the other side of Earth:</strong> They cannot travel through liquids, so they are absorbed by the outer core. A "shadow zone" exists on the opposite side where no S-waves are detected.</li>
+    <li><strong>This proves the outer core is liquid:</strong> If the outer core were solid, S-waves would pass through it</li>
+</ul>
+
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">P-waves and S-waves through Earth</text>
+
+    <!-- Earth circle (cross-section) -->
+    <circle cx="280" cy="160" r="100" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+
+    <!-- Inner core (solid) -->
+    <circle cx="280" cy="160" r="30" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <text x="280" y="165" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">Inner core (solid)</text>
+
+    <!-- Outer core (liquid, slightly different shade) -->
+    <circle cx="280" cy="160" r="60" fill="#90caf9" stroke="#2563eb" stroke-width="1.5"/>
+    <text x="280" y="195" text-anchor="middle" font-size="9" fill="#1e40af">Outer core (liquid)</text>
+
+    <!-- Crust/mantle outer ring -->
+    <text x="280" y="72" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">Crust + Mantle (solid)</text>
+
+    <!-- Earthquake epicentre -->
+    <circle cx="170" cy="160" r="3" fill="#dc2626"/>
+    <text x="170" y="185" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="bold">Earthquake</text>
+
+    <!-- P-wave path (straight through) -->
+    <path d="M 173 160 Q 230 140, 280 130 Q 330 140, 385 160" stroke="#2563eb" stroke-width="2.5" fill="none" stroke-dasharray="5"/>
+    <text x="430" y="150" font-size="10" fill="#2563eb" font-weight="bold">P-wave reaches here</text>
+
+    <!-- P-wave continues around -->
+    <path d="M 390 160 Q 360 200, 330 240" stroke="#2563eb" stroke-width="2.5" fill="none" stroke-dasharray="5"/>
+
+    <!-- S-wave path (blocked by outer core) -->
+    <path d="M 173 160 L 230 160 L 250 160" stroke="#16a34a" stroke-width="2.5" fill="none"/>
+    <text x="220" y="140" font-size="9" fill="#16a34a" font-weight="bold">S-wave blocked</text>
+
+    <!-- Shadow zone (no waves) -->
+    <path d="M 400 160 A 100 100 0 0 1 280 260 A 100 100 0 0 1 280 60" fill="#ffebee" stroke="none" opacity="0.6"/>
+    <text x="520" y="160" font-size="10" fill="#dc2626" font-weight="bold">Shadow zone</text>
+    <text x="520" y="175" font-size="8" fill="#dc2626">(no S-waves)</text>
+
+</svg>
+
+<div class="exam-tip">In exam questions about seismic waves, remember: P = Primary (fast, first to arrive, through liquids), S = Secondary (slow, later arrival, solid only, no liquid). The shadow zone is a key piece of evidence for the liquid outer core — S-waves cannot reach the opposite side because they cannot travel through liquid.</div>
+
+<h2>4.6.6 Electromagnetic Spectrum</h2>
+
+<div class="definition">
+    The <strong>electromagnetic (EM) spectrum</strong> is the entire range of electromagnetic waves, ordered by wavelength or frequency. All EM waves are transverse, are produced by oscillating electric and magnetic fields, and travel at the speed of light in vacuum (<strong>3 × 10⁸ m/s</strong>).
+</div>
+
+<h3>Order of the EM Spectrum (Long to Short Wavelength)</h3>
+
+<p>From longest wavelength to shortest (or lowest to highest frequency):</p>
+
+<ol>
+    <li><strong>Radio waves</strong> — lowest frequency, longest wavelength</li>
+    <li><strong>Microwaves</strong></li>
+    <li><strong>Infrared (heat) radiation</strong></li>
+    <li><strong>Visible light</strong> (narrow band: red → orange → yellow → green → blue → indigo → violet)</li>
+    <li><strong>Ultraviolet (UV)</strong></li>
+    <li><strong>X-rays</strong></li>
+    <li><strong>Gamma (γ) rays</strong> — highest frequency, shortest wavelength</li>
+</ol>
+
+<h3>Key Property: Constant Speed</h3>
+
+<p>All EM waves travel at the same speed in vacuum: <strong>c = 3 × 10⁸ m/s</strong>. Since <code>v = f × λ</code>, waves with higher frequency have shorter wavelength, and vice versa.</p>
+
+<h3>Uses of the EM Spectrum</h3>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Wavelength (approx)</th>
+        <th>Uses</th>
+    </tr>
+    <tr>
+        <td><strong>Radio waves</strong></td>
+        <td>1 mm – 1 km</td>
+        <td>TV broadcasting, FM/AM radio, WiFi communication</td>
+    </tr>
+    <tr>
+        <td><strong>Microwaves</strong></td>
+        <td>1 mm – 1 m</td>
+        <td>Satellite communication (TV, phones), microwave ovens (heat water molecules), radar</td>
+    </tr>
+    <tr>
+        <td><strong>Infrared (IR)</strong></td>
+        <td>700 nm – 1 mm</td>
+        <td>Heating (radiant heaters), remote control signals, thermal imaging cameras, optical fibre communication</td>
+    </tr>
+    <tr>
+        <td><strong>Visible light</strong></td>
+        <td>380 – 700 nm</td>
+        <td>Human vision, photography, displays, illumination</td>
+    </tr>
+    <tr>
+        <td><strong>Ultraviolet (UV)</strong></td>
+        <td>10 – 380 nm</td>
+        <td>Fluorescent lamps, sunbeds, sterilisation (kill bacteria), security marks (invisible inks), tanning</td>
+    </tr>
+    <tr>
+        <td><strong>X-rays</strong></td>
+        <td>0.01 – 10 nm</td>
+        <td>Medical imaging (X-ray photographs of bones/lungs), airport security scanners, industrial inspection</td>
+    </tr>
+    <tr>
+        <td><strong>Gamma rays</strong></td>
+        <td>&lt; 0.01 nm</td>
+        <td>Cancer treatment (radiotherapy), sterilising medical equipment, medical tracers, nuclear research</td>
+    </tr>
+</table>
+
+<h3>Dangers of EM Radiation (Higher Frequency = More Dangerous)</h3>
+
+<div class="definition">
+    <strong>Ionising radiation</strong> (UV, X-rays, gamma rays) has enough energy per photon to remove electrons from atoms, creating ions. This causes DNA damage, mutations, and cellular death. Longer-wavelength radiation (radio, microwave, IR) is non-ionising — it transfers energy as heat but does not create ions.
+</div>
+
+<table>
+    <tr>
+        <th>Type</th>
+        <th>Danger</th>
+    </tr>
+    <tr>
+        <td><strong>Ultraviolet</strong></td>
+        <td>Skin cancer and melanoma (damage to skin cells), cataracts (eye damage), immune system suppression</td>
+    </tr>
+    <tr>
+        <td><strong>X-rays and Gamma rays</strong></td>
+        <td>Ionising radiation causes DNA damage → mutations → cancer. Acute exposure causes radiation sickness. Can damage bone marrow and reproductive organs.</td>
+    </tr>
+</table>
+
+<h3>Radiation Dose and Background Radiation</h3>
+
+<p>Radiation dose is measured in <strong>sieverts (Sv)</strong>. One sievert is a large dose; most measurements are in millisieverts (mSv) or microsieverts (μSv).</p>
+
+<ul>
+    <li><strong>Background radiation:</strong> ~2.5 mSv per year on average (natural background from cosmic rays, radon gas, radioactive minerals in Earth)</li>
+    <li><strong>Safe limit:</strong> Occupational exposure ≤ 20 mSv/year; public exposure ≤ 1 mSv/year</li>
+    <li><strong>Single high dose:</strong> 6 Sv or more is likely fatal</li>
+</ul>
+
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Electromagnetic Spectrum</text>
+
+    <!-- Spectrum bar -->
+    <rect x="50" y="50" width="600" height="40" fill="url(#spectrumGrad)" stroke="#1e40af" stroke-width="2"/>
+
+    <!-- Labels below bar -->
+    <text x="70" y="110" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">Radio</text>
+    <text x="130" y="110" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">Micro</text>
+    <text x="190" y="110" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">IR</text>
+    <text x="280" y="110" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">Visible</text>
+    <text x="380" y="110" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">UV</text>
+    <text x="460" y="110" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">X-ray</text>
+    <text x="580" y="110" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">Gamma</text>
+
+    <!-- Wavelength direction -->
+    <text x="40" y="145" text-anchor="end" font-size="8" fill="#666">Longer λ</text>
+    <text x="650" y="145" font-size="8" fill="#666">Shorter λ</text>
+
+    <!-- Frequency direction -->
+    <text x="40" y="175" text-anchor="end" font-size="8" fill="#666">Lower f</text>
+    <text x="650" y="175" font-size="8" fill="#666">Higher f</text>
+
+    <!-- Energy and danger -->
+    <text x="40" y="205" text-anchor="end" font-size="8" fill="#666">Less energy</text>
+    <text x="650" y="205" font-size="8" fill="#666">More energy</text>
+
+    <!-- Danger zones -->
+    <rect x="50" y="220" width="200" height="15" fill="#dbeafe" stroke="#2563eb" stroke-width="1" rx="2"/>
+    <text x="150" y="231" text-anchor="middle" font-size="8" fill="#1e40af" font-weight="bold">Non-ionising (safe)</text>
+
+    <rect x="450" y="220" width="200" height="15" fill="#ffebee" stroke="#dc2626" stroke-width="1" rx="2"/>
+    <text x="550" y="231" text-anchor="middle" font-size="8" fill="#dc2626" font-weight="bold">Ionising (dangerous)</text>
+
+    <!-- Speed note -->
+    <text x="350" y="270" text-anchor="middle" font-size="9" fill="#666">All travel at c = 3 × 10⁸ m/s in vacuum</text>
+
+    <defs>
+        <linearGradient id="spectrumGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+            <stop offset="0%" style="stop-color:#ff0000;stop-opacity:1"/>
+            <stop offset="20%" style="stop-color:#ff7700;stop-opacity:1"/>
+            <stop offset="40%" style="stop-color:#ffff00;stop-opacity:1"/>
+            <stop offset="60%" style="stop-color:#00ff00;stop-opacity:1"/>
+            <stop offset="75%" style="stop-color:#0000ff;stop-opacity:1"/>
+            <stop offset="90%" style="stop-color:#7700ff;stop-opacity:1"/>
+            <stop offset="100%" style="stop-color:#330033;stop-opacity:1"/>
+        </linearGradient>
+    </defs>
+</svg>
+
+<div class="exam-tip">Higher frequency EM waves are more dangerous because each photon carries more energy. Frequency and wavelength are inversely related: as frequency increases, wavelength decreases. The visible light spectrum is only a tiny portion of the entire EM spectrum — most EM radiation is invisible to the human eye.</div>
+
+<h2>4.6.7 Reflection and Refraction</h2>
+
+<h3>Reflection</h3>
+
+<div class="definition">
+    <strong>Reflection</strong> is when a wave bounces off a surface and returns. The angle of incidence equals the angle of reflection, both measured from the <strong>normal</strong> (an imaginary perpendicular line to the surface).
+    <p style="margin: 10px 0;"><strong>Law of Reflection:</strong> Angle of incidence = Angle of reflection</p>
+</div>
+
+<h3>Types of Reflection</h3>
+
+<p><strong>Specular reflection (smooth surface):</strong> A smooth, mirror-like surface reflects all parallel incident rays in the same direction. The reflected rays remain parallel. Example: a mirror or still water surface.</p>
+
+<p><strong>Diffuse reflection (rough surface):</strong> A rough, bumpy surface reflects incident rays in all different directions (each ray obeys the law of reflection, but normal varies). Parallel light becomes scattered. Example: paper, rough walls, skin. This is how we see non-shiny objects.</p>
+
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Law of Reflection</text>
+
+    <!-- Mirror/surface -->
+    <line x1="80" y1="200" x2="620" y2="200" stroke="#4b5563" stroke-width="4"/>
+    <text x="650" y="205" font-size="9" fill="#666">Mirror surface</text>
+
+    <!-- Normal (perpendicular dashed line) -->
+    <line x1="300" y1="50" x2="300" y2="200" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="4"/>
+    <text x="320" y="70" font-size="9" fill="#1e40af" font-weight="bold">Normal</text>
+
+    <!-- Incident ray -->
+    <line x1="200" y1="80" x2="300" y2="200" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue2)"/>
+    <text x="220" y="130" font-size="9" fill="#2563eb" font-weight="bold">Incident ray</text>
+
+    <!-- Reflected ray -->
+    <line x1="300" y1="200" x2="400" y2="80" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed2)"/>
+    <text x="380" y="130" font-size="9" fill="#dc2626" font-weight="bold">Reflected ray</text>
+
+    <!-- Angle of incidence -->
+    <path d="M 300 190 A 20 20 0 0 0 280 170" stroke="#f59e0b" stroke-width="2" fill="none"/>
+    <text x="265" y="185" font-size="9" fill="#f59e0b" font-weight="bold">θᵢ</text>
+
+    <!-- Angle of reflection -->
+    <path d="M 300 190 A 20 20 0 0 1 320 170" stroke="#f59e0b" stroke-width="2" fill="none"/>
+    <text x="335" y="185" font-size="9" fill="#f59e0b" font-weight="bold">θᵣ</text>
+
+    <!-- Note -->
+    <text x="350" y="260" text-anchor="middle" font-size="9" fill="#666">θᵢ = θᵣ (angles measured from the NORMAL, not the surface)</text>
+
+    <defs>
+        <marker id="arrowBlue2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+        <marker id="arrowRed2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+    </defs>
+</svg>
+
+<h3>Refraction</h3>
+
+<div class="definition">
+    <strong>Refraction</strong> is the bending of a wave as it enters a different medium. The wave changes direction because its speed changes in the new medium. Frequency stays the same, but wavelength and speed change. Hence: <code>v = f × λ</code> → if v decreases, λ must decrease (for constant f).
+</div>
+
+<h3>Rules for Refraction</h3>
+
+<p><strong>Entering a denser medium (slower):</strong> e.g. air → glass, air → water</p>
+<ul>
+    <li>Wave speed DECREASES</li>
+    <li>Wavelength DECREASES</li>
+    <li>Wave bends TOWARDS the normal</li>
+</ul>
+
+<p><strong>Entering a less dense medium (faster):</strong> e.g. glass → air, water → air</p>
+<ul>
+    <li>Wave speed INCREASES</li>
+    <li>Wavelength INCREASES</li>
+    <li>Wave bends AWAY FROM the normal</li>
+</ul>
+
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Refraction: Ray Diagram through Glass Block</text>
+
+    <!-- Air medium 1 -->
+    <text x="100" y="50" font-size="9" fill="#1e40af" font-weight="bold">Air (less dense)</text>
+
+    <!-- Glass block -->
+    <rect x="200" y="80" width="300" height="120" fill="#e8f4f8" stroke="#2563eb" stroke-width="3" rx="2"/>
+    <text x="350" y="140" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">Glass</text>
+
+    <!-- Air medium 2 -->
+    <text x="100" y="240" font-size="9" fill="#1e40af" font-weight="bold">Air (less dense)</text>
+
+    <!-- Normal line through block -->
+    <line x1="350" y1="40" x2="350" y2="220" stroke="#1e40af" stroke-width="1.5" stroke-dasharray="4"/>
+
+    <!-- Incident ray (air to glass) -->
+    <line x1="250" y1="40" x2="200" y2="80" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue3)"/>
+    <text x="240" y="50" font-size="9" fill="#2563eb" font-weight="bold">Incident</text>
+
+    <!-- Refracted ray in glass (bends towards normal) -->
+    <line x1="200" y1="80" x2="350" y2="140" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed3)"/>
+    <text x="260" y="110" font-size="9" fill="#dc2626" font-weight="bold">Refracted</text>
+
+    <!-- Exit ray (glass to air, bends away from normal) -->
+    <line x1="350" y1="200" x2="450" y2="240" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen3)"/>
+    <text x="410" y="210" font-size="9" fill="#16a34a" font-weight="bold">Emergent</text>
+
+    <!-- Angle labels -->
+    <text x="340" y="95" font-size="8" fill="#f59e0b" font-weight="bold">θ₁</text>
+    <text x="360" y="120" font-size="8" fill="#f59e0b" font-weight="bold">θ₂</text>
+    <text x="370" y="195" font-size="8" fill="#f59e0b" font-weight="bold">θ₃</text>
+
+    <!-- Note -->
+    <text x="350" y="280" text-anchor="middle" font-size="9" fill="#666">Light bends towards normal (denser) then away (less dense). Emergent ray is parallel to incident ray.</text>
+
+    <defs>
+        <marker id="arrowBlue3" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+        <marker id="arrowRed3" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowGreen3" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+    </defs>
+</svg>
+
+<h3>Wavefronts and Refraction</h3>
+
+<p>A wavefront is a line (or surface) perpendicular to the direction of wave travel, connecting all points oscillating in phase. When a wavefront crosses a boundary at an angle, one side enters the new medium first and slows down, causing the wavefront to bend. This geometric picture explains why rays also bend.</p>
+
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Wavefronts Bending at a Boundary</text>
+
+    <!-- Medium 1 (fast) -->
+    <rect x="50" y="40" width="300" height="160" fill="#e0f2ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="150" y="55" font-size="9" fill="#1e40af" font-weight="bold">Fast medium (air)</text>
+
+    <!-- Medium 2 (slow) -->
+    <rect x="350" y="40" width="300" height="160" fill="#d1e8f5" stroke="#2563eb" stroke-width="2"/>
+    <text x="450" y="55" font-size="9" fill="#1e40af" font-weight="bold">Slow medium (glass)</text>
+
+    <!-- Boundary line -->
+    <line x1="350" y1="40" x2="350" y2="200" stroke="#f59e0b" stroke-width="2.5"/>
+
+    <!-- Wavefronts in medium 1 (spaced further apart) -->
+    <line x1="80" y1="80" x2="340" y2="130" stroke="#2563eb" stroke-width="2"/>
+    <line x1="80" y1="110" x2="340" y2="160" stroke="#2563eb" stroke-width="2"/>
+    <line x1="80" y1="140" x2="340" y2="190" stroke="#2563eb" stroke-width="2"/>
+
+    <!-- Wavefronts in medium 2 (spaced closer together) -->
+    <line x1="350" y1="130" x2="630" y2="130" stroke="#dc2626" stroke-width="2"/>
+    <line x1="350" y1="155" x2="630" y2="155" stroke="#dc2626" stroke-width="2"/>
+    <line x1="350" y1="180" x2="630" y2="180" stroke="#dc2626" stroke-width="2"/>
+
+    <!-- Ray direction arrows -->
+    <path d="M 200 100 Q 280 115, 350 130" stroke="#16a34a" stroke-width="1.5" fill="none" marker-end="url(#arrowGreen4)"/>
+    <text x="270" y="85" font-size="9" fill="#16a34a" font-weight="bold">Ray direction</text>
+
+    <!-- Note -->
+    <text x="350" y="225" text-anchor="middle" font-size="9" fill="#666">Wavefronts space closer in slower medium. Wave bends towards normal (less distance per time = reduced speed).</text>
+
+    <defs>
+        <marker id="arrowGreen4" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+    </defs>
+</svg>
+
+<h3>Required Practical 9: Reflection and Refraction</h3>
+
+<p>Students use ray boxes to observe:</p>
+<ul>
+    <li>Reflection from plane mirrors (verify law of reflection with angles)</li>
+    <li>Refraction through glass blocks (observe bending of light at boundaries)</li>
+    <li>Refraction through prisms (light bends twice)</li>
+    <li>Total internal reflection (when light travels from dense to less dense medium at steep angle, all light reflects back)</li>
+</ul>
+
+<div class="exam-tip">In refraction, the normal is perpendicular to the surface, NOT parallel to it. Angles of incidence and refraction are measured from the normal. A common mistake is measuring from the surface — this gives wrong angles. Always draw the normal as a dashed perpendicular line.</div>
+
+<h2>4.6.8 Lenses (Triple)</h2>
+
+<div class="definition">
+    A <strong>lens</strong> is a curved, transparent optical element that uses refraction to bend light rays. Lenses are used in cameras, projectors, microscopes, and the human eye to focus or spread light.
+</div>
+
+<h3>Converging Lens (Convex)</h3>
+
+<p>A <strong>converging lens</strong> is thicker in the middle and thinner at the edges. It bends parallel light rays towards the optical axis, and all rays meet at a point called the <strong>focal point (F)</strong>.</p>
+
+<div class="definition">
+    <strong>Focal length (f)</strong> is the distance from the centre of the lens to the focal point. For a converging lens, the focal length is the distance at which parallel rays converge. Measured in metres (m) or centimetres (cm).
+</div>
+
+<h3>Diverging Lens (Concave)</h3>
+
+<p>A <strong>diverging lens</strong> is thinner in the middle and thicker at the edges. It bends parallel light rays away from the optical axis. The rays appear to come from a virtual focal point behind the lens.</p>
+
+<h3>Real and Virtual Images</h3>
+
+<div class="definition">
+    A <strong>real image</strong> is formed when light rays actually converge at a point. It can be projected onto a screen. Real images are formed by converging lenses when the object is placed beyond the focal length.
+</div>
+
+<div class="definition">
+    A <strong>virtual image</strong> is formed when light rays appear to come from a point, but do not actually meet there. It cannot be projected onto a screen. Virtual images are formed by diverging lenses and by converging lenses when the object is inside the focal length (magnifying glass effect).
+</div>
+
+<h3>Magnification</h3>
+
+<div class="definition">
+    <strong>Magnification (M)</strong> is the ratio of image height to object height:
+    <p style="margin: 10px 0;"><code>M = h<sub>image</sub> / h<sub>object</sub> = v / u</code></p>
+    where h is height, v is image distance, and u is object distance (all in same units). If M > 1, image is enlarged; if M < 1, image is diminished. Negative M means inverted image.
+</div>
+
+<h3>Ray Diagram Rules for Converging Lens</h3>
+
+<p>To draw a ray diagram for a converging lens, use three standard rays from the top of the object:</p>
+
+<ol>
+    <li><strong>Ray 1 (parallel):</strong> Draw a ray parallel to the optical axis from the top of the object. It refracts through the lens and passes through the focal point F on the far side.</li>
+    <li><strong>Ray 2 (central):</strong> Draw a ray from the top of the object straight through the centre of the lens. It goes straight through (no bending at the lens centre).</li>
+    <li><strong>Ray 3 (focal):</strong> Draw a ray from the top of the object through the focal point F on the near side. It refracts through the lens and emerges parallel to the optical axis.</li>
+</ol>
+
+<p>The image is located where rays 1, 2, and 3 intersect on the far side of the lens.</p>
+
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Converging Lens: Real Image (object beyond f)</text>
+
+    <!-- Optical axis -->
+    <line x1="50" y1="190" x2="650" y2="190" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3"/>
+
+    <!-- Lens -->
+    <ellipse cx="350" cy="190" rx="15" ry="80" fill="none" stroke="#2563eb" stroke-width="3"/>
+    <text x="350" y="210" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">Lens</text>
+
+    <!-- Focal points -->
+    <circle cx="280" cy="190" r="3" fill="#f59e0b"/>
+    <text x="280" y="175" text-anchor="middle" font-size="8" fill="#f59e0b" font-weight="bold">F</text>
+
+    <circle cx="420" cy="190" r="3" fill="#f59e0b"/>
+    <text x="420" y="175" text-anchor="middle" font-size="8" fill="#f59e0b" font-weight="bold">F</text>
+
+    <!-- Object -->
+    <line x1="150" y1="190" x2="150" y2="120" stroke="#2563eb" stroke-width="3"/>
+    <circle cx="150" cy="190" r="4" fill="#2563eb"/>
+    <text x="150" y="210" text-anchor="middle" font-size="8" fill="#2563eb" font-weight="bold">Object</text>
+
+    <!-- Ray 1: parallel → through F -->
+    <line x1="150" y1="120" x2="350" y2="120" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3"/>
+    <line x1="350" y1="120" x2="420" y2="190" stroke="#16a34a" stroke-width="2"/>
+
+    <!-- Ray 2: through centre (straight) -->
+    <line x1="150" y1="120" x2="350" y2="190" stroke="#dc2626" stroke-width="2"/>
+    <line x1="350" y1="190" x2="500" y2="122" stroke="#dc2626" stroke-width="2"/>
+
+    <!-- Ray 3: through F → parallel -->
+    <line x1="150" y1="120" x2="280" y2="190" stroke="#f59e0b" stroke-width="2"/>
+    <line x1="280" y1="190" x2="350" y2="120" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="3"/>
+    <line x1="350" y1="120" x2="550" y2="120" stroke="#f59e0b" stroke-width="2"/>
+
+    <!-- Image -->
+    <line x1="500" y1="190" x2="500" y2="122" stroke="#dc2626" stroke-width="3"/>
+    <circle cx="500" cy="190" r="4" fill="#dc2626"/>
+    <text x="500" y="210" text-anchor="middle" font-size="8" fill="#dc2626" font-weight="bold">Image (real, inverted)</text>
+
+    <!-- Distances -->
+    <text x="250" y="155" text-anchor="middle" font-size="8" fill="#666">u (object distance)</text>
+    <text x="480" y="155" text-anchor="middle" font-size="8" fill="#666">v (image distance)</text>
+
+</svg>
+
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Converging Lens: Virtual Image (object inside f, magnifying glass)</text>
+
+    <!-- Optical axis -->
+    <line x1="50" y1="150" x2="650" y2="150" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3"/>
+
+    <!-- Lens -->
+    <ellipse cx="350" cy="150" rx="15" ry="70" fill="none" stroke="#2563eb" stroke-width="3"/>
+
+    <!-- Focal points -->
+    <circle cx="280" cy="150" r="3" fill="#f59e0b"/>
+    <text x="280" y="135" text-anchor="middle" font-size="8" fill="#f59e0b">F</text>
+
+    <circle cx="420" cy="150" r="3" fill="#f59e0b"/>
+    <text x="420" y="135" text-anchor="middle" font-size="8" fill="#f59e0b">F</text>
+
+    <!-- Object (between lens and F) -->
+    <line x1="300" y1="150" x2="300" y2="80" stroke="#2563eb" stroke-width="3"/>
+    <circle cx="300" cy="150" r="4" fill="#2563eb"/>
+    <text x="300" y="170" text-anchor="middle" font-size="8" fill="#2563eb">Object</text>
+
+    <!-- Ray 1: parallel → through F (diverges) -->
+    <line x1="300" y1="80" x2="350" y2="80" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3"/>
+    <line x1="350" y1="80" x2="420" y2="150" stroke="#16a34a" stroke-width="2"/>
+    <!-- Virtual continuation behind lens -->
+    <line x1="350" y1="80" x2="200" y2="30" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3"/>
+
+    <!-- Ray 2: through centre (straight) -->
+    <line x1="300" y1="80" x2="350" y2="150" stroke="#dc2626" stroke-width="2"/>
+    <!-- Virtual continuation -->
+    <line x1="350" y1="150" x2="200" y2="60" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3"/>
+
+    <!-- Virtual image (behind lens) -->
+    <line x1="200" y1="150" x2="200" y2="40" stroke="#dc2626" stroke-width="3"/>
+    <circle cx="200" cy="150" r="4" fill="#dc2626"/>
+    <text x="200" y="170" text-anchor="middle" font-size="8" fill="#dc2626">Virtual image</text>
+
+    <!-- Dashed lines to show virtual -->
+    <line x1="200" y1="40" x2="300" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4"/>
+    <line x1="200" y1="60" x2="300" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4"/>
+
+    <!-- Note -->
+    <text x="350" y="280" text-anchor="middle" font-size="9" fill="#666">Virtual image is upright, magnified, behind lens. Cannot be projected.</text>
+
+</svg>
+
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Diverging Lens</text>
+
+    <!-- Optical axis -->
+    <line x1="50" y1="140" x2="650" y2="140" stroke="#d1d5db" stroke-width="1" stroke-dasharray="3"/>
+
+    <!-- Diverging lens -->
+    <path d="M 350 70 Q 365 140, 350 210" stroke="#2563eb" stroke-width="3" fill="none"/>
+    <path d="M 350 70 Q 335 140, 350 210" stroke="#2563eb" stroke-width="3" fill="none"/>
+    <text x="350" y="160" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">Lens</text>
+
+    <!-- Virtual focal points (behind lens) -->
+    <circle cx="280" cy="140" r="3" fill="#f59e0b"/>
+    <text x="280" y="125" text-anchor="middle" font-size="8" fill="#f59e0b">F</text>
+
+    <!-- Object -->
+    <line x1="200" y1="140" x2="200" y2="60" stroke="#2563eb" stroke-width="3"/>
+    <circle cx="200" cy="140" r="4" fill="#2563eb"/>
+    <text x="200" y="160" text-anchor="middle" font-size="8" fill="#2563eb">Object</text>
+
+    <!-- Ray 1: parallel → appears from F -->
+    <line x1="200" y1="60" x2="350" y2="60" stroke="#16a34a" stroke-width="2"/>
+    <line x1="350" y1="60" x2="500" y2="120" stroke="#16a34a" stroke-width="2"/>
+    <!-- Virtual continuation -->
+    <line x1="350" y1="60" x2="280" y2="140" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="3"/>
+
+    <!-- Ray 2: through centre (straight) -->
+    <line x1="200" y1="60" x2="350" y2="140" stroke="#dc2626" stroke-width="2"/>
+    <line x1="350" y1="140" x2="500" y2="180" stroke="#dc2626" stroke-width="2"/>
+
+    <!-- Virtual image (behind lens) -->
+    <line x1="120" y1="140" x2="120" y2="70" stroke="#dc2626" stroke-width="3"/>
+    <circle cx="120" cy="140" r="4" fill="#dc2626"/>
+    <text x="120" y="160" text-anchor="middle" font-size="8" fill="#dc2626">Virtual image</text>
+
+    <!-- Dashed lines showing virtual -->
+    <line x1="120" y1="70" x2="200" y2="60" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4"/>
+    <line x1="120" y1="70" x2="280" y2="140" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4"/>
+
+    <!-- Note -->
+    <text x="350" y="260" text-anchor="middle" font-size="9" fill="#666">Diverging lens always produces virtual, upright, diminished image.</text>
+
+</svg>
+
+<div class="exam-tip">For converging lenses, remember: object BEYOND f → real, inverted image; object INSIDE f → virtual, upright, magnified image. For diverging lenses, always virtual, upright, and smaller. Ray diagrams must show all three rays meeting (or appearing to meet for virtual images).</div>
+
+<h2>4.6.9 Visible Light and Colour (Triple)</h2>
+
+<div class="definition">
+    <strong>White light</strong> is a mixture of all visible colours (wavelengths from ~380 nm to ~700 nm). It can be split into a spectrum using a prism or diffraction grating. The colours, in order of increasing wavelength, are: red, orange, yellow, green, blue, indigo, violet (ROYGBIV).
+</div>
+
+<h3>Additive Colour Mixing (Light)</h3>
+
+<p>When lights of different colours are mixed, their colours <strong>add</strong>. The primary colours of light are <strong>red (R), green (G), and blue (B)</strong>:</p>
+
+<ul>
+    <li><strong>Red + Green = Yellow</strong></li>
+    <li><strong>Green + Blue = Cyan</strong> (light blue)</li>
+    <li><strong>Red + Blue = Magenta</strong> (purple)</li>
+    <li><strong>Red + Green + Blue = White</strong></li>
+    <li><strong>No light = Black</strong></li>
+</ul>
+
+<p>This is how computer monitors and TVs create all colours using three colours of pixels.</p>
+
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Additive Colour Mixing (Light)</text>
+
+    <!-- Red circle -->
+    <circle cx="180" cy="150" r="60" fill="#ff0000" opacity="0.6"/>
+    <text x="140" y="160" font-size="10" fill="#fff" font-weight="bold">Red</text>
+
+    <!-- Green circle -->
+    <circle cx="350" cy="150" r="60" fill="#00ff00" opacity="0.6"/>
+    <text x="330" y="160" font-size="10" fill="#000" font-weight="bold">Green</text>
+
+    <!-- Blue circle -->
+    <circle cx="520" cy="150" r="60" fill="#0000ff" opacity="0.6"/>
+    <text x="500" y="160" font-size="10" fill="#fff" font-weight="bold">Blue</text>
+
+    <!-- Overlap labels -->
+    <text x="265" y="125" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">Yellow</text>
+    <text x="435" y="125" text-anchor="middle" font-size="8" fill="#000" font-weight="bold">Cyan</text>
+    <text x="350" y="225" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">Magenta</text>
+    <text x="350" y="155" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">White</text>
+
+</svg>
+
+<h3>Opaque Objects and Colour</h3>
+
+<div class="definition">
+    An <strong>opaque object</strong> reflects certain colours (wavelengths) and absorbs others. The colour we see is the colour it reflects. For example, a red apple appears red because it reflects red light and absorbs blue, green, and other colours.
+</div>
+
+<p><strong>Examples:</strong></p>
+<ul>
+    <li>A <strong>blue book</strong> reflects blue light, absorbs red and yellow</li>
+    <li>A <strong>black object</strong> absorbs all colours (no visible light reflected)</li>
+    <li>A <strong>white object</strong> reflects all colours roughly equally</li>
+</ul>
+
+<h3>Colour Filters</h3>
+
+<p>A <strong>colour filter</strong> is a transparent or translucent material that transmits (lets through) certain colours and absorbs others.</p>
+
+<ul>
+    <li>A <strong>red filter</strong> transmits red light, absorbs blue and green</li>
+    <li>A <strong>green filter</strong> transmits green light, absorbs red and blue</li>
+</ul>
+
+<h3>Colour Under Different Lights</h3>
+
+<p><strong>Important principle:</strong> An object can only reflect colours that are present in the incident light. If a colour is not in the incoming light, it cannot be reflected, even if the object normally reflects that colour.</p>
+
+<p><strong>Example:</strong> A red apple under green light:</p>
+<ul>
+    <li>Green light is shining on it</li>
+    <li>The apple does not reflect green (it absorbs green in normal white light)</li>
+    <li>No other colours are present in the green light</li>
+    <li>Result: The apple appears <strong>black</strong> (no visible light is reflected)</li>
+</ul>
+
+<p><strong>Another example:</strong> A blue object under red light → appears black (no red to reflect).</p>
+
+<h3>Transparency, Translucency, Opacity</h3>
+
+<ul>
+    <li><strong>Transparent:</strong> Light passes straight through; you can see clearly through it (glass, clear water, air)</li>
+    <li><strong>Translucent:</strong> Light passes through but is scattered; you can see light but not clear detail (frosted glass, wax paper)</li>
+    <li><strong>Opaque:</strong> Light does not pass through; no light emerges (wood, metal, brick)</li>
+</ul>
+
+<h2>4.6.10 Black Body Radiation (Triple)</h2>
+
+<div class="definition">
+    A <strong>black body</strong> is an ideal object that absorbs all electromagnetic radiation incident on it (no reflection). A black body is also a perfect emitter — it radiates energy as effectively as any object at the same temperature. All real objects absorb some radiation and reflect some, but many objects approximate black body behaviour.
+</div>
+
+<h3>Emission of Radiation by All Objects</h3>
+
+<p>All objects with a temperature above absolute zero (-273°C or 0 K) emit electromagnetic radiation continuously. The dominant wavelength and intensity depend on temperature:</p>
+
+<ul>
+    <li>Cool objects (room temperature, ~20°C): emit mostly <strong>infrared (heat) radiation</strong> — invisible to the human eye</li>
+    <li>Hot objects (~1000°C): emit visible light (red/orange glow) plus infrared</li>
+    <li>Very hot objects (Sun's surface, ~6000°C): emit peak intensity in visible white light, plus UV and IR</li>
+</ul>
+
+<h3>Wien's Displacement Law (Qualitative)</h3>
+
+<p>As an object heats up:</p>
+<ul>
+    <li><strong>Total intensity (area under curve) increases:</strong> The object radiates more total energy</li>
+    <li><strong>Peak wavelength shifts to shorter wavelengths:</strong> The curve "moves left" on the spectrum, from infrared → red → white → blue/UV</li>
+</ul>
+
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Black Body Radiation at Different Temperatures</text>
+
+    <!-- Axes -->
+    <line x1="80" y1="280" x2="80" y2="40" stroke="#1e40af" stroke-width="2"/>
+    <line x1="80" y1="280" x2="650" y2="280" stroke="#1e40af" stroke-width="2"/>
+    <text x="40" y="160" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold" transform="rotate(-90 40 160)">Intensity</text>
+    <text x="365" y="305" text-anchor="middle" font-size="9" fill="#1e40af" font-weight="bold">Wavelength</text>
+
+    <!-- Cool object curve (IR peak, far right) -->
+    <path d="M 100 270 Q 150 250, 200 200 Q 250 120, 300 60 Q 350 30, 400 80 Q 450 180, 500 270" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
+    <text x="320" y="300" font-size="9" fill="#f59e0b" font-weight="bold">Cool (IR peak)</text>
+
+    <!-- Medium temp curve (red peak, middle) -->
+    <path d="M 100 280 Q 150 260, 250 180 Q 300 80, 350 40 Q 400 80, 450 180 Q 500 240, 550 280" stroke="#dc2626" stroke-width="2.5" fill="none"/>
+    <text x="350" y="300" font-size="9" fill="#dc2626" font-weight="bold">Medium (~1500K)</text>
+
+    <!-- Hot object curve (white peak, left) -->
+    <path d="M 100 280 Q 150 270, 250 200 Q 300 100, 330 30 Q 360 100, 400 200 Q 450 250, 550 280" stroke="#2563eb" stroke-width="2.5" fill="none"/>
+    <text x="350" y="320" font-size="9" fill="#2563eb" font-weight="bold">Hot (~6000K, like Sun)</text>
+
+</svg>
+
+<h3>Earth's Energy Balance and the Greenhouse Effect</h3>
+
+<p><strong>Solar energy input:</strong> The Sun emits radiation across the spectrum. Earth intercepts short-wavelength visible light and ultraviolet radiation. Some is reflected back to space by clouds, ice, and the atmosphere (albedo).</p>
+
+<p><strong>Earth's radiation output:</strong> Earth's surface is heated by the absorbed solar energy and radiates energy back outward. Because Earth is much cooler than the Sun (~15°C at surface, ~6000°C at Sun's surface), Earth's radiation is long-wavelength <strong>infrared (heat)</strong>.</p>
+
+<p><strong>The Greenhouse Effect:</strong> Gases in the atmosphere (CO₂, CH₄, H₂O) are relatively transparent to incoming short-wavelength visible light from the Sun but absorb outgoing long-wavelength infrared radiation from Earth. This traps heat in the atmosphere:</p>
+
+<ol>
+    <li>Solar energy enters and heats Earth</li>
+    <li>Earth radiates infrared back outward</li>
+    <li>Greenhouse gases absorb ~50% of this infrared and re-radiate it downward</li>
+    <li>This warms the atmosphere and surface further (enhanced greenhouse effect)</li>
+</ol>
+
+<svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="20" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Earth's Energy Balance and Greenhouse Effect</text>
+
+    <!-- Space background -->
+    <rect x="0" y="0" width="700" height="200" fill="#000080" opacity="0.1"/>
+
+    <!-- Sun -->
+    <circle cx="80" cy="60" r="25" fill="#ffff00" stroke="#f59e0b" stroke-width="2"/>
+    <text x="80" y="65" text-anchor="middle" font-size="10" fill="#000" font-weight="bold">Sun</text>
+
+    <!-- Solar rays (incoming) -->
+    <line x1="105" y1="50" x2="200" y2="150" stroke="#ffff00" stroke-width="2" marker-end="url(#arrowYellow)"/>
+    <line x1="105" y1="60" x2="250" y2="180" stroke="#ffff00" stroke-width="2" marker-end="url(#arrowYellow)"/>
+    <line x1="105" y1="70" x2="300" y2="200" stroke="#ffff00" stroke-width="2" marker-end="url(#arrowYellow)"/>
+
+    <!-- Some reflected back -->
+    <line x1="200" y1="150" x2="120" y2="80" stroke="#ffff00" stroke-width="1.5" stroke-dasharray="3" marker-end="url(#arrowYellowDim)"/>
+    <text x="130" y="110" font-size="8" fill="#f59e0b">Some reflected</text>
+
+    <!-- Atmosphere layer -->
+    <rect x="0" y="180" width="700" height="60" fill="#90caf9" opacity="0.3" stroke="#2563eb" stroke-width="2" stroke-dasharray="4"/>
+    <text x="350" y="215" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">Atmosphere (CO₂, CH₄, H₂O)</text>
+
+    <!-- Earth surface -->
+    <ellipse cx="350" cy="320" rx="280" ry="40" fill="#16a34a" stroke="#0b5e08" stroke-width="2"/>
+    <text x="350" y="330" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">Earth's Surface</text>
+
+    <!-- Solar energy absorbed by Earth -->
+    <line x1="250" y1="180" x2="280" y2="280" stroke="#ffff00" stroke-width="2.5" marker-end="url(#arrowYellow2)"/>
+    <text x="260" y="235" font-size="8" fill="#f59e0b" font-weight="bold">Absorbed solar</text>
+
+    <!-- Earth's infrared radiation (outgoing) -->
+    <line x1="350" y1="280" x2="350" y2="210" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed4)"/>
+    <text x="375" y="240" font-size="8" fill="#dc2626" font-weight="bold">IR radiated</text>
+
+    <!-- Greenhouse gas absorption -->
+    <line x1="350" y1="210" x2="380" y2="210" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowRed4)"/>
+    <line x1="380" y1="210" x2="400" y2="230" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowRed4)"/>
+    <text x="410" y="220" font-size="8" fill="#dc2626">Trapped & re-radiated</text>
+
+    <!-- Re-radiated heat -->
+    <line x1="320" y1="230" x2="320" y2="280" stroke="#dc2626" stroke-width="2" stroke-dasharray="3" marker-end="url(#arrowRedDim)"/>
+
+    <!-- Escape to space -->
+    <line x1="350" y1="210" x2="350" y2="80" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3" marker-end="url(#arrowRedDim)"/>
+    <text x="365" y="140" font-size="8" fill="#dc2626">Escapes to space</text>
+
+    <defs>
+        <marker id="arrowYellow" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#ffff00"/></marker>
+        <marker id="arrowYellowDim" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#ffff00" opacity="0.5"/></marker>
+        <marker id="arrowYellow2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#ffff00"/></marker>
+        <marker id="arrowRed4" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowRedDim" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626" opacity="0.5"/></marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">Remember: the greenhouse effect is enhanced because humans burn fossil fuels, adding more CO₂ and other greenhouse gases to the atmosphere. This increases the proportion of Earth's infrared radiation that is trapped, leading to global warming. It is NOT a new effect — the natural greenhouse effect has always existed and keeps Earth warm enough for life. The concern is the ENHANCED effect from increased gas concentrations.</div>
+
+<div class="definition">
+    <strong>Albedo</strong> is the fraction (or percentage) of incident solar radiation reflected by a surface. Bright surfaces (ice, snow, clouds) have high albedo (~0.8–0.9); dark surfaces (soil, ocean, forests) have low albedo (~0.1–0.3). Ice melting reduces Earth's albedo, increasing warming (positive feedback).
+</div>
+
+<h2>Summary Table: Wave Types and Properties</h2>
+
+<table>
+    <tr>
+        <th>Wave Type</th>
+        <th>Direction of Oscillation</th>
+        <th>Media</th>
+        <th>Speed (approx)</th>
+        <th>Examples</th>
+    </tr>
+    <tr>
+        <td><strong>Transverse</strong></td>
+        <td>Perpendicular to travel</td>
+        <td>Solids, liquids, vacuum</td>
+        <td>Varies (light: 3×10⁸ m/s)</td>
+        <td>Water waves, EM waves, string waves</td>
+    </tr>
+    <tr>
+        <td><strong>Longitudinal</strong></td>
+        <td>Parallel to travel</td>
+        <td>Solids, liquids, gases</td>
+        <td>Air: ~340 m/s; water: ~1500 m/s; steel: ~5000 m/s</td>
+        <td>Sound, P-waves, compressions</td>
+    </tr>
+</table>
+
+<div class="definition">
+    <strong>Intensity</strong> is the power per unit area carried by a wave. It is related to amplitude: doubling amplitude quadruples the intensity (I ∝ A²). Louder sounds have greater intensity; brighter lights have greater intensity.
+</div>
+
+<div class="exam-tip">Always check the units in calculations: wavelength in m, frequency in Hz, speed in m/s. For ultrasound and seismic waves, remember to divide the distance by 2 if using round-trip time. For lenses, object distance u and image distance v are measured from the lens centre, along the optical axis.</div>
+
+</div>
+</body>
+</html>

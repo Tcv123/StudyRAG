@@ -1,0 +1,1268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.4 — Atomic Structure</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        sub { font-size: 0.8em; }
+        sup { font-size: 0.8em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.4 Atomic Structure</h1>
+<p class="spec-ref">AQA GCSE Physics (8463) — Paper 1</p>
+
+<h2>4.4.1 The Structure of the Atom</h2>
+
+<div class="definition">
+    <strong>Atoms</strong> are the smallest indivisible units of matter and consist of a nucleus (containing protons and neutrons) surrounded by electrons in electron shells. Atoms are electrically neutral overall—the positive charge of the nucleus is balanced by the negative charge of the electrons.
+</div>
+
+<p>Every atom has three main types of subatomic particles:</p>
+
+<ul>
+    <li><strong>Protons</strong> — located in the nucleus, charge +1 (relative), mass ≈ 1 u (atomic mass unit)</li>
+    <li><strong>Neutrons</strong> — located in the nucleus, charge 0 (neutral), mass ≈ 1 u</li>
+    <li><strong>Electrons</strong> — orbiting the nucleus in shells, charge −1 (relative), mass ≈ 1/1836 u (negligible)</li>
+</ul>
+
+<h3>Size of the Atom and Nucleus</h3>
+
+<div class="definition">
+    <strong>Nuclear radius:</strong> ~10<sup>−15</sup> m (1 femtometre, fm). <br>
+    <strong>Atomic radius:</strong> ~10<sup>−10</sup> m (1 ångström, Å). <br>
+    The nucleus occupies only about 1/10 000 of the atom's radius, yet contains almost all the atom's mass.
+</div>
+
+<p>To visualize this scale: if the nucleus were the size of a marble (1 cm diameter), the atom would be a sphere about 100 metres in diameter. The atom is mostly empty space.</p>
+
+<!-- SVG 1: Labelled atom showing nucleus and shells -->
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Atomic structure: nucleus and electron shells</text>
+
+    <!-- Outer shells -->
+    <circle cx="350" cy="200" r="160" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <circle cx="350" cy="200" r="110" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+    <circle cx="350" cy="200" r="60" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+    <!-- Shell labels -->
+    <text x="380" y="75" font-size="10" fill="#1e40af" font-weight="bold">K shell (n=1)</text>
+    <text x="520" y="135" font-size="10" fill="#1e40af" font-weight="bold">L shell (n=2)</text>
+    <text x="540" y="210" font-size="10" fill="#1e40af" font-weight="bold">M shell (n=3)</text>
+
+    <!-- Nucleus -->
+    <circle cx="350" cy="200" r="20" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+    <text x="350" y="208" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">Nucleus</text>
+
+    <!-- Protons in nucleus (red circles inside) -->
+    <circle cx="340" cy="190" r="3" fill="#fff" stroke="none"/>
+    <circle cx="355" cy="190" r="3" fill="#fff" stroke="none"/>
+    <circle cx="345" cy="210" r="3" fill="#fff" stroke="none"/>
+    <text x="320" y="230" font-size="9" fill="#1e3a5f">protons + neutrons</text>
+
+    <!-- Electrons on shells -->
+    <!-- K shell electrons -->
+    <circle cx="350" cy="140" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <circle cx="380" cy="152" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+    <!-- L shell electrons -->
+    <circle cx="320" cy="220" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <circle cx="350" cy="330" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <circle cx="430" cy="250" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <circle cx="440" cy="150" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+    <!-- M shell electrons -->
+    <circle cx="280" cy="320" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <circle cx="500" cy="300" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <circle cx="490" cy="80" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+    <!-- Electron labels -->
+    <text x="350" y="360" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Electrons (negative charge)</text>
+
+    <!-- Size annotation -->
+    <line x1="350" y1="390" x2="510" y2="390" stroke="#666" stroke-width="1" marker-end="url(#arrowGray)"/>
+    <text x="430" y="410" text-anchor="middle" font-size="9" fill="#666">~10<sup>−10</sup> m (atomic radius)</text>
+
+    <!-- Nucleus size annotation -->
+    <line x1="330" y1="210" x2="370" y2="210" stroke="#b91c1c" stroke-width="1"/>
+    <text x="350" y="225" text-anchor="middle" font-size="8" fill="#b91c1c">~10<sup>−15</sup> m</text>
+
+    <defs>
+        <marker id="arrowGray" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#666"/></marker>
+    </defs>
+</svg>
+
+<h3>Electrical Charge and Neutrality</h3>
+
+<div class="definition">
+    Each <strong>proton</strong> carries a charge of +1 (in relative units). Each <strong>electron</strong> carries a charge of −1. <strong>Neutrons are electrically neutral</strong> (charge = 0). In a neutral atom, the number of protons equals the number of electrons, so the total charge is zero.
+</div>
+
+<p><strong>Ions:</strong> An atom becomes an ion when it loses or gains electrons:</p>
+<ul>
+    <li><strong>Positive ion (cation):</strong> the atom has lost one or more electrons. Example: Na<sup>+</sup> has 11 protons but only 10 electrons.</li>
+    <li><strong>Negative ion (anion):</strong> the atom has gained one or more electrons. Example: Cl<sup>−</sup> has 17 protons but 18 electrons.</li>
+</ul>
+
+<div class="exam-tip">When counting charge, remember: protons are in the nucleus and don't change during ionisation. Only electrons are added or removed. If an atom loses electrons, it becomes positively charged (cation). If it gains electrons, it becomes negatively charged (anion).</div>
+
+<h2>4.4.2 Mass Number, Atomic Number and Isotopes</h2>
+
+<div class="definition">
+    <strong>Atomic number (Z):</strong> the number of protons in the nucleus. This number defines which element the atom is. Every atom of carbon has 6 protons (Z = 6); every atom of oxygen has 8 protons (Z = 8).
+</div>
+
+<div class="definition">
+    <strong>Mass number (A):</strong> the total number of protons plus neutrons in the nucleus. Since protons and neutrons each have a mass of approximately 1 u, the mass number is approximately the relative atomic mass of the atom.
+</div>
+
+<p><strong>Notation:</strong> An atom is represented as <sup>A</sup>ZX, where X is the chemical symbol.</p>
+<ul>
+    <li>Example: <sup>14</sup>₆C (Carbon-14) has A = 14, Z = 6. It contains 6 protons and 14 − 6 = 8 neutrons.</li>
+    <li>Example: <sup>16</sup>₈O (Oxygen-16) has A = 16, Z = 8. It contains 8 protons and 16 − 8 = 8 neutrons.</li>
+</ul>
+
+<h3>Isotopes</h3>
+
+<div class="definition">
+    <strong>Isotopes</strong> are atoms of the same element (same Z, same number of protons) that have different numbers of neutrons (different A, different mass numbers). They have the same chemical properties but different physical properties (especially mass and nuclear stability).
+</div>
+
+<p><strong>Example:</strong> Carbon has two stable isotopes:</p>
+<ul>
+    <li><strong>Carbon-12:</strong> <sup>12</sup>₆C — 6 protons, 6 neutrons, mass ≈ 12 u (used as the standard for atomic mass)</li>
+    <li><strong>Carbon-14:</strong> <sup>14</sup>₆C — 6 protons, 8 neutrons, mass ≈ 14 u (radioactive; used for radiocarbon dating)</li>
+</ul>
+
+<!-- SVG 2: Three isotopes of hydrogen -->
+<svg viewBox="0 0 750 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:750px;margin:20px auto;display:block;">
+    <text x="375" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Isotopes of hydrogen: same protons, different neutrons</text>
+
+    <!-- Protium (H-1) -->
+    <g>
+        <rect x="30" y="60" width="200" height="240" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+        <text x="130" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Protium (H-1)</text>
+
+        <!-- Nucleus with proton -->
+        <circle cx="130" cy="150" r="18" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+        <circle cx="130" cy="150" r="4" fill="#fff" stroke="none"/>
+        <text x="130" y="155" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">p</text>
+
+        <!-- Electron shell -->
+        <circle cx="130" cy="150" r="50" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+        <!-- Electron -->
+        <circle cx="130" cy="100" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+        <!-- Labels -->
+        <text x="130" y="230" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">1 proton, 0 neutrons</text>
+        <text x="130" y="248" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Mass number A = 1</text>
+        <text x="130" y="266" text-anchor="middle" font-size="9" fill="#666">Most common hydrogen</text>
+        <text x="130" y="282" text-anchor="middle" font-size="9" fill="#666">(99.9%)</text>
+    </g>
+
+    <!-- Deuterium (H-2) -->
+    <g>
+        <rect x="275" y="60" width="200" height="240" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+        <text x="375" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Deuterium (H-2)</text>
+
+        <!-- Nucleus with proton + neutron -->
+        <circle cx="375" cy="150" r="18" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+        <circle cx="368" cy="145" r="4" fill="#fff" stroke="none"/>
+        <circle cx="382" cy="155" r="4" fill="#f3f4f6" stroke="none"/>
+        <text x="368" y="149" text-anchor="middle" font-size="7" fill="#333" font-weight="bold">p</text>
+        <text x="382" y="159" text-anchor="middle" font-size="7" fill="#333" font-weight="bold">n</text>
+
+        <!-- Electron shell -->
+        <circle cx="375" cy="150" r="50" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+        <!-- Electron -->
+        <circle cx="375" cy="100" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+        <!-- Labels -->
+        <text x="375" y="230" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">1 proton, 1 neutron</text>
+        <text x="375" y="248" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Mass number A = 2</text>
+        <text x="375" y="266" text-anchor="middle" font-size="9" fill="#666">Stable isotope</text>
+        <text x="375" y="282" text-anchor="middle" font-size="9" fill="#666">(Heavy hydrogen)</text>
+    </g>
+
+    <!-- Tritium (H-3) -->
+    <g>
+        <rect x="520" y="60" width="200" height="240" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+        <text x="620" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Tritium (H-3)</text>
+
+        <!-- Nucleus with proton + 2 neutrons -->
+        <circle cx="620" cy="150" r="18" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+        <circle cx="610" cy="145" r="3.5" fill="#fff" stroke="none"/>
+        <circle cx="625" cy="145" r="3.5" fill="#f3f4f6" stroke="none"/>
+        <circle cx="617" cy="160" r="3.5" fill="#f3f4f6" stroke="none"/>
+        <text x="610" y="148" text-anchor="middle" font-size="6" fill="#333" font-weight="bold">p</text>
+        <text x="625" y="148" text-anchor="middle" font-size="6" fill="#333" font-weight="bold">n</text>
+        <text x="617" y="163" text-anchor="middle" font-size="6" fill="#333" font-weight="bold">n</text>
+
+        <!-- Electron shell -->
+        <circle cx="620" cy="150" r="50" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+        <!-- Electron -->
+        <circle cx="620" cy="100" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+        <!-- Labels -->
+        <text x="620" y="230" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">1 proton, 2 neutrons</text>
+        <text x="620" y="248" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e3a5f">Mass number A = 3</text>
+        <text x="620" y="266" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="bold">Radioactive isotope</text>
+        <text x="620" y="282" text-anchor="middle" font-size="9" fill="#666">(Beta emitter)</text>
+    </g>
+</svg>
+
+<h2>4.4.3 Development of the Model of the Atom (Historical)</h2>
+
+<p>Our understanding of atomic structure has evolved through centuries of experimental evidence and theoretical progress:</p>
+
+<h3>Ancient Greeks (~440 BCE)</h3>
+<p><strong>Democritus</strong> proposed that all matter consists of tiny, indivisible particles called atoms. This was pure philosophy—no experimental evidence.</p>
+
+<h3>Dalton's Atomic Theory (~1808)</h3>
+<p><strong>John Dalton</strong> revived atomism and proposed that atoms are solid, indivisible spheres. Different elements have atoms of different masses. His theory explained the law of conservation of mass and the law of definite proportions in chemical reactions.</p>
+
+<h3>Thomson's "Plum Pudding" Model (1897)</h3>
+
+<p><strong>J.J. Thomson</strong> discovered the electron using cathode ray tubes. He showed that atoms are not indivisible but contain negatively charged particles. His "plum pudding" model pictured a positively charged sphere with electrons embedded in it like plums in pudding.</p>
+
+<h3>Rutherford's Nuclear Model (1909)</h3>
+
+<div class="definition">
+    <strong>Ernest Rutherford</strong> conducted the gold-foil scattering experiment. He bombarded thin gold foil with alpha particles (helium nuclei) and observed their deflection:
+    <ul style="margin: 10px 0;">
+        <li>Most alpha particles passed straight through the foil</li>
+        <li>Some particles were deflected at large angles</li>
+        <li>A few particles bounced backward</li>
+    </ul>
+    This proved that the atom is mostly empty space with a small, dense, positively charged nucleus at the centre.
+</div>
+
+<h3>Bohr's Model (1913)</h3>
+
+<p><strong>Niels Bohr</strong> proposed that electrons orbit the nucleus in fixed shells or energy levels, each with a specific energy. Electrons can jump between shells by absorbing or emitting electromagnetic radiation. This model explained the discrete spectral lines of hydrogen.</p>
+
+<h3>Chadwick's Neutron (1932)</h3>
+
+<p><strong>James Chadwick</strong> discovered the neutron—a neutral particle in the nucleus. This completed the basic picture: atoms consist of protons and neutrons in a nucleus, surrounded by electrons in shells.</p>
+
+<!-- SVG 3: Three atomic models side by side -->
+<svg viewBox="0 0 900 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:900px;margin:20px auto;display:block;">
+    <text x="450" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Evolution of atomic models</text>
+
+    <!-- PLUM PUDDING MODEL -->
+    <g>
+        <rect x="30" y="60" width="250" height="320" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+        <text x="155" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Thomson's</text>
+        <text x="155" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Plum Pudding (1897)</text>
+
+        <!-- Positive sphere -->
+        <circle cx="155" cy="180" r="70" fill="#fce7f3" stroke="#ec4899" stroke-width="2"/>
+        <text x="155" y="180" text-anchor="middle" font-size="10" fill="#be185d" font-weight="bold">+</text>
+        <text x="155" y="195" text-anchor="middle" font-size="9" fill="#be185d">positive</text>
+        <text x="155" y="208" text-anchor="middle" font-size="9" fill="#be185d">pudding</text>
+
+        <!-- Electrons embedded -->
+        <circle cx="115" cy="145" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="155" cy="125" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="195" cy="145" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="130" cy="210" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="180" cy="210" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+        <!-- Description -->
+        <text x="155" y="280" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">Electrons scattered</text>
+        <text x="155" y="295" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">in a positive sphere</text>
+        <text x="155" y="315" text-anchor="middle" font-size="8" fill="#666">Disproved by Rutherford:</text>
+        <text x="155" y="328" text-anchor="middle" font-size="8" fill="#666">alpha particles</text>
+        <text x="155" y="341" text-anchor="middle" font-size="8" fill="#666">bounced back from nucleus</text>
+    </g>
+
+    <!-- RUTHERFORD NUCLEAR MODEL -->
+    <g>
+        <rect x="325" y="60" width="250" height="320" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+        <text x="450" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Rutherford's</text>
+        <text x="450" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Nuclear (1909)</text>
+
+        <!-- Nucleus -->
+        <circle cx="450" cy="180" r="18" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+        <text x="450" y="186" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">Nucleus</text>
+
+        <!-- Electron shells (mostly empty space) -->
+        <circle cx="450" cy="180" r="60" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <circle cx="450" cy="180" r="85" fill="none" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,3"/>
+
+        <!-- Electrons on orbits -->
+        <circle cx="450" cy="95" r="4" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="520" cy="145" r="4" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="490" cy="250" r="4" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="380" cy="200" r="4" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+        <!-- Description -->
+        <text x="450" y="280" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">Nucleus surrounded</text>
+        <text x="450" y="295" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">by mostly empty space</text>
+        <text x="450" y="315" text-anchor="middle" font-size="8" fill="#666">Explained: most</text>
+        <text x="450" y="328" text-anchor="middle" font-size="8" fill="#666">alpha particles pass through;</text>
+        <text x="450" y="341" text-anchor="middle" font-size="8" fill="#666">few deflect or bounce back</text>
+    </g>
+
+    <!-- BOHR MODEL -->
+    <g>
+        <rect x="620" y="60" width="250" height="320" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+        <text x="745" y="85" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Bohr's</text>
+        <text x="745" y="100" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">Electron Shells (1913)</text>
+
+        <!-- Nucleus -->
+        <circle cx="745" cy="180" r="18" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+        <text x="745" y="186" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">Nucleus</text>
+
+        <!-- Fixed electron shells with fixed energies -->
+        <circle cx="745" cy="180" r="35" fill="none" stroke="#2563eb" stroke-width="2"/>
+        <circle cx="745" cy="180" r="65" fill="none" stroke="#2563eb" stroke-width="2"/>
+        <circle cx="745" cy="180" r="90" fill="none" stroke="#2563eb" stroke-width="2"/>
+
+        <!-- Electrons on shells -->
+        <circle cx="780" cy="180" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="810" cy="180" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="745" cy="90" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="655" cy="180" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="745" cy="270" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+        <!-- Shell labels -->
+        <text x="710" y="185" font-size="8" fill="#1e40af" font-weight="bold">K</text>
+        <text x="680" y="185" font-size="8" fill="#1e40af" font-weight="bold">L</text>
+        <text x="655" y="185" font-size="8" fill="#1e40af" font-weight="bold">M</text>
+
+        <!-- Description -->
+        <text x="745" y="280" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">Electrons in fixed</text>
+        <text x="745" y="295" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">energy levels (shells)</text>
+        <text x="745" y="315" text-anchor="middle" font-size="8" fill="#666">Still used today;</text>
+        <text x="745" y="328" text-anchor="middle" font-size="8" fill="#666">explains spectral lines</text>
+        <text x="745" y="341" text-anchor="middle" font-size="8" fill="#666">and chemical bonding</text>
+    </g>
+</svg>
+
+<!-- SVG 4: Rutherford's scattering experiment -->
+<svg viewBox="0 0 800 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Rutherford's gold-foil scattering experiment (1909)</text>
+
+    <!-- Alpha particle source -->
+    <rect x="40" y="140" width="50" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
+    <text x="65" y="165" text-anchor="middle" font-size="9" font-weight="bold" fill="#15803d">Alpha</text>
+    <text x="65" y="178" text-anchor="middle" font-size="9" font-weight="bold" fill="#15803d">source</text>
+
+    <!-- Gold foil -->
+    <rect x="350" y="130" width="8" height="70" fill="#fbbf24" stroke="#f59e0b" stroke-width="2"/>
+    <text x="354" y="220" text-anchor="middle" font-size="9" font-weight="bold" fill="#d97706">Gold foil</text>
+    <text x="354" y="232" text-anchor="middle" font-size="8" fill="#d97706">(thin)</text>
+
+    <!-- Detector screen -->
+    <rect x="750" y="80" width="20" height="180" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="735" y="165" text-anchor="end" font-size="9" font-weight="bold" fill="#1e40af">Detector</text>
+
+    <!-- Alpha particles: straight through (most) -->
+    <line x1="90" y1="165" x2="350" y2="165" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowRed)"/>
+    <circle cx="770" cy="165" r="6" fill="#dc2626" opacity="0.7"/>
+    <text x="700" y="160" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="bold">Most pass</text>
+    <text x="700" y="172" text-anchor="middle" font-size="9" fill="#dc2626" font-weight="bold">straight through</text>
+
+    <!-- Alpha particles: slight deflection -->
+    <path d="M 90 120 L 350 130" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrowAmber)"/>
+    <path d="M 358 135 L 770 100" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrowAmber)"/>
+    <circle cx="770" cy="100" r="6" fill="#f59e0b" opacity="0.7"/>
+    <text x="690" y="75" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="bold">Some deflected</text>
+
+    <!-- Alpha particles: large deflection / bounce back -->
+    <path d="M 90 210 L 350 160" stroke="#b91c1c" stroke-width="2" fill="none" marker-end="url(#arrowDarkRed)"/>
+    <path d="M 350 160 L 100 210" stroke="#b91c1c" stroke-width="2" fill="none" marker-end="url(#arrowDarkRed)"/>
+    <circle cx="100" cy="210" r="6" fill="#b91c1c" opacity="0.7"/>
+    <text x="200" y="260" text-anchor="middle" font-size="9" fill="#b91c1c" font-weight="bold">A few bounce back</text>
+    <text x="200" y="272" text-anchor="middle" font-size="9" fill="#b91c1c" font-weight="bold">(dense nucleus)</text>
+
+    <!-- Conclusions -->
+    <rect x="40" y="290" width="720" height="50" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+    <text x="400" y="310" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">Conclusions: Atom is mostly empty space; nucleus is small, dense, positively charged</text>
+    <text x="400" y="328" text-anchor="middle" font-size="9" fill="#1e3a5f">Most alpha particles pass straight through (empty space); some deflect (near nucleus); few bounce back (direct hit on nucleus)</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+        <marker id="arrowDarkRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#b91c1c"/></marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">Examiners often ask why Rutherford's results disproved the plum pudding model. The answer is: if electrons were embedded in a positive pudding, alpha particles would be deflected gradually as they passed through. Instead, most passed straight (empty space) and some deflected sharply (dense nucleus). This proved a concentrated nucleus, not a diffuse positive sphere.</div>
+
+<h2>4.4.4 Electron Energy Levels</h2>
+
+<div class="definition">
+    Electrons in an atom occupy <strong>discrete energy levels</strong> (or shells, K, L, M, N, etc.). An electron in a lower level has less energy; in a higher level, more energy. Electrons cannot exist between levels—they can only jump between specific energy levels by absorbing or emitting precise amounts of energy.
+</div>
+
+<h3>Excitation and Ionisation</h3>
+
+<p><strong>Excitation:</strong> When an electron absorbs energy (e.g., from an electromagnetic photon), it jumps to a higher energy level. The atom is now in an "excited state."</p>
+
+<p><strong>De-excitation:</strong> An excited electron quickly drops back to a lower level, emitting energy as a photon. The energy of the photon equals the energy difference between the two levels.</p>
+
+<p><strong>Ionisation:</strong> If an electron absorbs enough energy, it can escape the atom entirely (goes to energy level infinity). The atom becomes positively charged (cation). The minimum energy needed is called the ionisation energy.</p>
+
+<!-- SVG 5: Electron energy level diagram with photon absorption/emission -->
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Electron energy levels and photon transitions</text>
+
+    <!-- Energy axis -->
+    <line x1="80" y1="50" x2="80" y2="380" stroke="#1a1a2e" stroke-width="2"/>
+    <text x="50" y="220" text-anchor="middle" font-size="11" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 50 220)">Energy (eV)</text>
+
+    <!-- Ionisation line at top -->
+    <line x1="75" y1="50" x2="750" y2="50" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="770" y="55" font-size="10" fill="#dc2626" font-weight="bold">Ionisation (E = 0)</text>
+
+    <!-- Energy levels -->
+    <!-- Level n=4 -->
+    <line x1="80" y1="110" x2="750" y2="110" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="65" y="115" text-anchor="end" font-size="10" fill="#1e40af" font-weight="bold">n = 4</text>
+    <text x="770" y="115" font-size="9" fill="#1e40af">−0.85 eV</text>
+
+    <!-- Level n=3 -->
+    <line x1="80" y1="170" x2="750" y2="170" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="65" y="175" text-anchor="end" font-size="10" fill="#1e40af" font-weight="bold">n = 3</text>
+    <text x="770" y="175" font-size="9" fill="#1e40af">−1.51 eV</text>
+
+    <!-- Level n=2 (excited state) -->
+    <line x1="80" y1="250" x2="750" y2="250" stroke="#f59e0b" stroke-width="2.5"/>
+    <text x="65" y="255" text-anchor="end" font-size="10" fill="#d97706" font-weight="bold">n = 2</text>
+    <text x="770" y="255" font-size="9" fill="#d97706">−3.40 eV</text>
+    <circle cx="100" cy="250" r="5" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+    <text x="120" y="255" font-size="9" fill="#d97706">electron</text>
+    <text x="120" y="268" font-size="9" fill="#d97706">(excited)</text>
+
+    <!-- Level n=1 (ground state) -->
+    <line x1="80" y1="350" x2="750" y2="350" stroke="#16a34a" stroke-width="2.5"/>
+    <text x="65" y="355" text-anchor="end" font-size="10" fill="#15803d" font-weight="bold">n = 1</text>
+    <text x="770" y="355" font-size="9" fill="#15803d">−13.6 eV</text>
+    <circle cx="100" cy="350" r="5" fill="#16a34a" stroke="#15803d" stroke-width="1.5"/>
+    <text x="120" y="355" font-size="9" fill="#15803d">electron</text>
+    <text x="120" y="368" font-size="9" fill="#15803d">(ground state)</text>
+
+    <!-- Photon absorption arrow (n=1 to n=2) -->
+    <path d="M 150 350 L 150 250" stroke="#16a34a" stroke-width="3" fill="none" marker-end="url(#arrowGreen)"/>
+    <text x="165" y="300" font-size="10" fill="#16a34a" font-weight="bold">Absorption</text>
+    <text x="165" y="315" font-size="9" fill="#16a34a">(photon in)</text>
+    <text x="165" y="327" font-size="8" fill="#666">E_photon = 10.2 eV</text>
+
+    <!-- Photon emission arrow (n=2 to n=1) -->
+    <path d="M 250 250 L 250 350" stroke="#dc2626" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+    <text x="265" y="300" font-size="10" fill="#dc2626" font-weight="bold">Emission</text>
+    <text x="265" y="315" font-size="9" fill="#dc2626">(photon out)</text>
+    <text x="265" y="327" font-size="8" fill="#666">E_photon = 10.2 eV</text>
+
+    <!-- Multi-step transition -->
+    <path d="M 350 350 L 350 170 L 350 110" stroke="#f59e0b" stroke-width="2" fill="none" marker-end="url(#arrowAmber)"/>
+    <text x="385" y="230" font-size="10" fill="#f59e0b" font-weight="bold">Multi-step</text>
+    <text x="385" y="243" font-size="9" fill="#f59e0b">transition</text>
+    <text x="385" y="256" font-size="8" fill="#f59e0b">(n=1 → n=3 → n=4)</text>
+
+    <!-- Ionisation arrow -->
+    <path d="M 450 350 L 450 55" stroke="#b91c1c" stroke-width="3" fill="none" marker-end="url(#arrowDarkRed)"/>
+    <text x="475" y="200" font-size="10" fill="#b91c1c" font-weight="bold">Ionisation</text>
+    <text x="475" y="215" font-size="9" fill="#b91c1c">(electron escapes)</text>
+    <text x="475" y="230" font-size="8" fill="#666">E_needed = 13.6 eV</text>
+
+    <defs>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+        <marker id="arrowDarkRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#b91c1c"/></marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">A key exam concept: the energy of an emitted photon equals the energy difference between two levels. If an electron drops from level 3 to level 1, the photon energy is E₃ − E₁. This is why different atoms emit different colours of light—each element's energy levels are unique.</div>
+
+<h2>4.4.5 Radioactive Decay and Nuclear Radiation</h2>
+
+<div class="definition">
+    <strong>Radioactivity</strong> is the spontaneous, random decay of unstable (radioactive) atomic nuclei. The decay process is random—you cannot predict which atom will decay or when. Radioactive nuclei emit one or more types of nuclear radiation.
+</div>
+
+<h3>Types of Nuclear Radiation</h3>
+
+<div class="definition">
+    <strong>Alpha (α) particles:</strong> Helium-4 nuclei (²He or ⁴₂He). Composition: 2 protons + 2 neutrons. Charge: +2 (relative). Mass: ~4 u. <br><br>
+    <strong>Penetration:</strong> Stopped by a few centimetres of air or thin paper. <br>
+    <strong>Ionisation:</strong> Highly ionising (strips electrons from many atoms).
+</div>
+
+<div class="definition">
+    <strong>Beta-minus (β⁻) particles:</strong> Fast-moving electrons emitted when a neutron converts to a proton (and an antineutrino). Charge: −1. Mass: ~0 (1/1836 u). <br><br>
+    <strong>Penetration:</strong> Stopped by a few millimetres of aluminium. <br>
+    <strong>Ionisation:</strong> Moderately ionising.
+</div>
+
+<div class="definition">
+    <strong>Gamma (γ) rays:</strong> High-energy electromagnetic radiation (photons) emitted from the nucleus. No mass, no charge. <br><br>
+    <strong>Penetration:</strong> Very penetrating; needs several centimetres of lead or metres of concrete. <br>
+    <strong>Ionisation:</strong> Weakly ionising (but very penetrating, so still dangerous).
+</div>
+
+<!-- SVG 6: Radiation penetration through different materials -->
+<svg viewBox="0 0 850 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:850px;margin:20px auto;display:block;">
+    <text x="425" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Penetration of nuclear radiation through different materials</text>
+
+    <!-- ALPHA PARTICLES -->
+    <g>
+        <text x="100" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Alpha (α) particles</text>
+        <text x="100" y="75" font-size="9" fill="#1e3a5f">(He nuclei, ⁴₂He)</text>
+
+        <!-- Source -->
+        <circle cx="50" cy="120" r="8" fill="#dc2626" stroke="#b91c1c" stroke-width="1.5"/>
+        <text x="50" y="125" text-anchor="middle" font-size="7" fill="#fff" font-weight="bold">α</text>
+
+        <!-- Arrows going toward materials -->
+        <path d="M 58 120 L 95 120" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#arrowRed)"/>
+        <path d="M 58 120 L 95 140" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#arrowRed)"/>
+        <path d="M 58 120 L 95 160" stroke="#dc2626" stroke-width="2.5" fill="none" marker-end="url(#arrowRed)"/>
+
+        <!-- Paper (blocks alpha) -->
+        <rect x="95" y="105" width="15" height="70" fill="#e5e7eb" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="102" y="153" text-anchor="middle" font-size="8" fill="#1a1a2e" font-weight="bold">Paper</text>
+        <text x="102" y="163" text-anchor="middle" font-size="7" fill="#666">~0.1 mm</text>
+
+        <!-- Blocked indicator -->
+        <text x="150" y="125" font-size="9" fill="#16a34a" font-weight="bold">BLOCKED</text>
+
+        <!-- Distance/Info -->
+        <text x="100" y="195" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">Stopped by: paper, skin</text>
+        <text x="100" y="208" text-anchor="middle" font-size="8" fill="#666">Range: ~5 cm in air</text>
+        <text x="100" y="220" text-anchor="middle" font-size="8" fill="#1e3a5f">Highly ionising (dangerous</text>
+        <text x="100" y="230" text-anchor="middle" font-size="8" fill="#1e3a5f">if ingested/inhaled)</text>
+    </g>
+
+    <!-- BETA PARTICLES -->
+    <g>
+        <text x="425" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Beta-minus (β⁻) particles</text>
+        <text x="425" y="75" font-size="9" fill="#1e3a5f">(electrons, ⁰₋₁e)</text>
+
+        <!-- Source -->
+        <circle cx="375" cy="120" r="8" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+        <text x="375" y="125" text-anchor="middle" font-size="7" fill="#fff" font-weight="bold">β</text>
+
+        <!-- Arrows toward materials -->
+        <path d="M 383 120 L 420 120" stroke="#f59e0b" stroke-width="2.5" fill="none" marker-end="url(#arrowAmber)"/>
+        <path d="M 383 120 L 420 140" stroke="#f59e0b" stroke-width="2.5" fill="none" marker-end="url(#arrowAmber)"/>
+        <path d="M 383 120 L 420 160" stroke="#f59e0b" stroke-width="2.5" fill="none" marker-end="url(#arrowAmber)"/>
+
+        <!-- Paper -->
+        <rect x="420" y="105" width="15" height="25" fill="#e5e7eb" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="427" y="125" text-anchor="middle" font-size="7" fill="#666">Paper</text>
+
+        <!-- Aluminium (blocks beta) -->
+        <rect x="420" y="135" width="15" height="55" fill="#cffafe" stroke="#0369a1" stroke-width="1.5"/>
+        <text x="427" y="168" text-anchor="middle" font-size="8" fill="#0369a1" font-weight="bold">Al</text>
+        <text x="427" y="180" text-anchor="middle" font-size="7" fill="#666">~3 mm</text>
+
+        <!-- Partly blocked indicator -->
+        <text x="475" y="125" font-size="8" fill="#f59e0b" font-weight="bold">BLOCKED</text>
+
+        <!-- Distance/Info -->
+        <text x="425" y="195" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">Stopped by: thin aluminium</text>
+        <text x="425" y="208" text-anchor="middle" font-size="8" fill="#666">Range: ~1 m in air</text>
+        <text x="425" y="220" text-anchor="middle" font-size="8" fill="#1e3a5f">Moderately ionising</text>
+        <text x="425" y="230" text-anchor="middle" font-size="8" fill="#1e3a5f">(external hazard, skin risk)</text>
+    </g>
+
+    <!-- GAMMA RAYS -->
+    <g>
+        <text x="750" y="60" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Gamma (γ) rays</text>
+        <text x="750" y="75" font-size="9" fill="#1e3a5f">(photons, high-energy)</text>
+
+        <!-- Source -->
+        <circle cx="700" cy="120" r="8" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <text x="700" y="125" text-anchor="middle" font-size="7" fill="#fff" font-weight="bold">γ</text>
+
+        <!-- Arrows toward materials -->
+        <path d="M 708 120 L 745 120" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#arrowBlue)"/>
+        <path d="M 708 120 L 745 140" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#arrowBlue)"/>
+        <path d="M 708 120 L 745 160" stroke="#2563eb" stroke-width="2.5" fill="none" marker-end="url(#arrowBlue)"/>
+
+        <!-- Paper & Aluminium (doesn't block much) -->
+        <rect x="745" y="105" width="15" height="25" fill="#e5e7eb" stroke="#1a1a2e" stroke-width="1.5"/>
+        <rect x="745" y="135" width="15" height="40" fill="#cffafe" stroke="#0369a1" stroke-width="1.5"/>
+        <text x="752" y="125" text-anchor="middle" font-size="7" fill="#666">Paper</text>
+        <text x="752" y="168" text-anchor="middle" font-size="7" fill="#0369a1">Al</text>
+
+        <!-- Lead (absorbs some) -->
+        <rect x="745" y="175" width="15" height="40" fill="#d4d4d8" stroke="#52525b" stroke-width="1.5"/>
+        <text x="752" y="200" text-anchor="middle" font-size="8" fill="#52525b" font-weight="bold">Pb</text>
+        <text x="752" y="212" text-anchor="middle" font-size="7" fill="#666">~5 cm</text>
+
+        <!-- Some get through -->
+        <path d="M 760 120 L 800 120" stroke="#2563eb" stroke-width="1" opacity="0.5" fill="none" marker-end="url(#arrowBlueFaint)"/>
+        <text x="820" y="125" font-size="8" fill="#2563eb">Some penetrate</text>
+
+        <!-- Distance/Info -->
+        <text x="750" y="235" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">Stopped by: thick lead or</text>
+        <text x="750" y="248" text-anchor="middle" font-size="9" fill="#1e3a5f" font-weight="bold">metres of concrete</text>
+        <text x="750" y="261" text-anchor="middle" font-size="8" fill="#666">Very penetrating radiation</text>
+        <text x="750" y="273" text-anchor="middle" font-size="8" fill="#1e3a5f">Weakly ionising but most</text>
+        <text x="750" y="283" text-anchor="middle" font-size="8" fill="#1e3a5f">dangerous due to penetration</text>
+    </g>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+        <marker id="arrowBlueFaint" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb" opacity="0.5"/></marker>
+    </defs>
+</svg>
+
+<h3>Table: Properties of Nuclear Radiation</h3>
+
+<table>
+    <tr>
+        <th>Radiation</th>
+        <th>Composition</th>
+        <th>Mass (u)</th>
+        <th>Charge</th>
+        <th>Ionisation</th>
+        <th>Penetration</th>
+        <th>Deflection by E/M field</th>
+    </tr>
+    <tr>
+        <td><strong>Alpha (α)</strong></td>
+        <td>²He nucleus (2p + 2n)</td>
+        <td>4</td>
+        <td>+2</td>
+        <td>Highly ionising</td>
+        <td>Stopped by paper or 5 cm air</td>
+        <td>Deflected toward cathode (−)</td>
+    </tr>
+    <tr>
+        <td><strong>Beta-minus (β⁻)</strong></td>
+        <td>Electron (⁰₋₁e)</td>
+        <td>~0 (1/1836)</td>
+        <td>−1</td>
+        <td>Moderately ionising</td>
+        <td>Stopped by 3 mm Al</td>
+        <td>Deflected toward anode (+)</td>
+    </tr>
+    <tr>
+        <td><strong>Gamma (γ)</strong></td>
+        <td>Photon (EM radiation)</td>
+        <td>0</td>
+        <td>0</td>
+        <td>Weakly ionising</td>
+        <td>Stopped by 5 cm Pb or metres of concrete</td>
+        <td>No deflection (uncharged)</td>
+    </tr>
+</table>
+
+<div class="exam-tip">A key exam question: "Name and describe three types of nuclear radiation." Always give the name, the composition (what it is), its charge, and its penetrating power. Alpha = helium nucleus, large and slow, stopped by paper. Beta = electron, fast, needs aluminium. Gamma = light/photons, very fast, needs lead.</div>
+
+<h2>4.4.6 Nuclear Equations</h2>
+
+<div class="definition">
+    In radioactive decay, the <strong>mass number A</strong> and <strong>atomic number Z</strong> are conserved (they stay the same before and after). These conservation laws allow us to predict the products of nuclear decay.
+</div>
+
+<h3>Alpha Decay</h3>
+
+<p>An alpha particle (helium nucleus) is emitted. The parent nucleus loses 2 protons and 2 neutrons:</p>
+
+<pre>
+General form:  ᴬZX → ᴬ⁻⁴Z⁻₂Y + ⁴₂He (or α)
+
+Example:       ²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He
+               Uranium-238 → Thorium-234 + Alpha particle
+
+Check mass numbers:   238 = 234 + 4 ✓
+Check atomic numbers: 92 = 90 + 2 ✓
+</pre>
+
+<h3>Beta-minus Decay</h3>
+
+<p>A neutron converts into a proton and an electron (beta particle). The nucleus gains 1 proton but mass number stays the same:</p>
+
+<pre>
+General form:  ᴬZX → ᴬZ₊₁Y + ⁰₋₁e (or β⁻)
+
+Example:       ¹⁴₆C → ¹⁴₇N + ⁰₋₁e
+               Carbon-14 → Nitrogen-14 + Beta particle
+
+Check mass numbers:   14 = 14 + 0 ✓
+Check atomic numbers: 6 = 7 + (−1) ✓
+</pre>
+
+<div class="exam-tip">In beta decay, the mass number doesn't change (the emitted electron has negligible mass, mass ~0). The atomic number increases by 1 (one more proton). This changes the element—Carbon becomes Nitrogen.</div>
+
+<h3>Gamma Emission</h3>
+
+<p>A nucleus in an excited state emits a high-energy photon and drops to a lower energy state. No particles are emitted; mass and atomic numbers stay the same:</p>
+
+<pre>
+General form:  ᴬZX* → ᴬZX + γ
+               (excited nucleus) → (nucleus in lower state) + photon
+
+Example:       ⁶⁰₂₇Co* → ⁶⁰₂₇Co + γ
+               Cobalt-60 (excited) → Cobalt-60 (ground state) + gamma ray
+
+Check mass numbers:   60 = 60 ✓
+Check atomic numbers: 27 = 27 ✓
+</pre>
+
+<h3>Neutron Emission</h3>
+
+<p>In some very heavy nuclei, a free neutron is emitted. Mass number decreases by 1; atomic number stays the same:</p>
+
+<pre>
+General form:  ᴬZX → ᴬ⁻¹ZX + ¹₀n
+
+Check mass numbers:   A = (A−1) + 1 ✓
+Check atomic numbers: Z = Z + 0 ✓
+</pre>
+
+<h2>4.4.7 Half-Life and Radioactive Decay</h2>
+
+<div class="definition">
+    <strong>Half-life (t₁/₂):</strong> the time taken for half of the radioactive nuclei in a sample to decay (or equivalently, for the activity/count-rate to halve). Different isotopes have vastly different half-lives—from fractions of a second to billions of years.
+</div>
+
+<div class="definition">
+    <strong>Activity:</strong> the number of decays per second. Symbol: A, unit: becquerel (Bq). 1 Bq = 1 decay per second. <br><br>
+    <strong>Count-rate:</strong> the number of decays detected per second by a detector (e.g., Geiger-Müller tube). It is proportional to activity but depends on detector efficiency.
+</div>
+
+<h3>Half-Life Calculations</h3>
+
+<p>After n half-lives, the fraction of nuclei remaining is:</p>
+
+<pre>
+Fraction remaining = (1/2)ⁿ = (0.5)ⁿ
+
+After 1 half-life:  1/2 of the original remains
+After 2 half-lives: 1/4 remains
+After 3 half-lives: 1/8 remains
+After 4 half-lives: 1/16 remains
+</pre>
+
+<p><strong>Example:</strong> Iodine-131 has a half-life of 8 days. A sample has 10 000 Bq of I-131.</p>
+
+<pre>
+After 8 days (1 half-life):     5 000 Bq
+After 16 days (2 half-lives):   2 500 Bq
+After 24 days (3 half-lives):   1 250 Bq
+After 40 days (5 half-lives):   312.5 Bq
+</pre>
+
+<!-- SVG 7: Half-life decay curve -->
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Half-life decay curve: activity vs time</text>
+
+    <!-- Axes -->
+    <line x1="80" y1="320" x2="750" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+    <line x1="80" y1="40" x2="80" y2="320" stroke="#1a1a2e" stroke-width="2"/>
+
+    <!-- Axis labels -->
+    <text x="400" y="360" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e">Time (in half-lives)</text>
+    <text x="30" y="180" text-anchor="middle" font-size="12" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 30 180)">Activity (Bq)</text>
+
+    <!-- Tick marks and labels (time) -->
+    <line x1="80" y1="320" x2="80" y2="325" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="80" y="342" text-anchor="middle" font-size="10" fill="#666">0</text>
+
+    <line x1="188" y1="320" x2="188" y2="325" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="188" y="342" text-anchor="middle" font-size="10" fill="#666">1 t₁/₂</text>
+
+    <line x1="296" y1="320" x2="296" y2="325" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="296" y="342" text-anchor="middle" font-size="10" fill="#666">2 t₁/₂</text>
+
+    <line x1="404" y1="320" x2="404" y2="325" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="404" y="342" text-anchor="middle" font-size="10" fill="#666">3 t₁/₂</text>
+
+    <line x1="512" y1="320" x2="512" y2="325" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="512" y="342" text-anchor="middle" font-size="10" fill="#666">4 t₁/₂</text>
+
+    <line x1="620" y1="320" x2="620" y2="325" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="620" y="342" text-anchor="middle" font-size="10" fill="#666">5 t₁/₂</text>
+
+    <!-- Activity axis labels -->
+    <line x1="75" y1="60" x2="80" y2="60" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="65" text-anchor="end" font-size="10" fill="#666">A₀</text>
+
+    <line x1="75" y1="140" x2="80" y2="140" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="145" text-anchor="end" font-size="10" fill="#666">A₀/2</text>
+
+    <line x1="75" y1="180" x2="80" y2="180" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="185" text-anchor="end" font-size="10" fill="#666">A₀/4</text>
+
+    <line x1="75" y1="220" x2="80" y2="220" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="225" text-anchor="end" font-size="10" fill="#666">A₀/8</text>
+
+    <line x1="75" y1="250" x2="80" y2="250" stroke="#1a1a2e" stroke-width="1"/>
+    <text x="70" y="255" text-anchor="end" font-size="10" fill="#666">A₀/16</text>
+
+    <!-- Exponential decay curve -->
+    <path d="M 80 60 Q 188 100 296 180 Q 404 220 512 250 Q 620 270 750 305" stroke="#2563eb" stroke-width="3" fill="none"/>
+
+    <!-- Data points -->
+    <circle cx="80" cy="60" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+    <circle cx="188" cy="140" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+    <circle cx="296" cy="180" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+    <circle cx="404" cy="220" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+    <circle cx="512" cy="250" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+    <circle cx="620" cy="270" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+
+    <!-- Vertical dashed lines showing half-life intervals -->
+    <line x1="188" y1="140" x2="188" y2="320" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="296" y1="180" x2="296" y2="320" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="404" y1="220" x2="404" y2="320" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <!-- Horizontal dashed lines showing activity halving -->
+    <line x1="80" y1="100" x2="188" y2="100" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="80" y1="140" x2="188" y2="140" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="80" y1="180" x2="296" y2="180" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
+    <line x1="80" y1="220" x2="404" y2="220" stroke="#f59e0b" stroke-width="1" stroke-dasharray="3,3"/>
+
+    <!-- Annotations -->
+    <text x="188" y="115" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="bold">Half!</text>
+    <text x="296" y="165" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="bold">Quarter</text>
+    <text x="404" y="205" text-anchor="middle" font-size="9" fill="#f59e0b" font-weight="bold">Eighth</text>
+
+    <!-- Key label -->
+    <rect x="40" y="260" width="220" height="45" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+    <text x="150" y="278" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">Curve shows exponential decay</text>
+    <text x="150" y="295" text-anchor="middle" font-size="9" fill="#1e3a5f">Activity halves every half-life</text>
+</svg>
+
+<h3>Half-Life Values for Common Isotopes</h3>
+
+<table>
+    <tr>
+        <th>Isotope</th>
+        <th>Half-life</th>
+        <th>Decay type</th>
+        <th>Use</th>
+    </tr>
+    <tr>
+        <td>Carbon-14</td>
+        <td>5 730 years</td>
+        <td>Beta-minus</td>
+        <td>Radiocarbon dating of archaeological samples</td>
+    </tr>
+    <tr>
+        <td>Uranium-235</td>
+        <td>704 million years</td>
+        <td>Alpha</td>
+        <td>Nuclear reactor fuel, bomb material (fissile)</td>
+    </tr>
+    <tr>
+        <td>Iodine-131</td>
+        <td>8.02 days</td>
+        <td>Beta-minus</td>
+        <td>Medical tracer, produced in nuclear reactors</td>
+    </tr>
+    <tr>
+        <td>Cobalt-60</td>
+        <td>5.27 years</td>
+        <td>Beta-minus + gamma</td>
+        <td>Medical (radiotherapy), sterilisation of instruments</td>
+    </tr>
+    <tr>
+        <td>Polonium-210</td>
+        <td>138 days</td>
+        <td>Alpha</td>
+        <td>Smoke detectors, research</td>
+    </tr>
+</table>
+
+<h2>4.4.8 Radioactive Contamination vs Irradiation</h2>
+
+<div class="definition">
+    <strong>Irradiation:</strong> being exposed to radiation from an external source. Once you move away from the source, you are no longer irradiated. You yourself are not radioactive. <br><br>
+    Example: standing near a radioactive material, or being treated with a gamma beam in a hospital.
+</div>
+
+<div class="definition">
+    <strong>Contamination:</strong> having radioactive atoms on your body, on surfaces, or inside you. The contaminating atoms continue to decay, emitting radiation into or from you. Contamination is removed by decontamination (washing, removing clothes).
+</div>
+
+<h3>Safety Measures</h3>
+
+<ul>
+    <li><strong>Distance:</strong> Use tongs or remote-handling equipment. Radiation intensity falls with distance squared.</li>
+    <li><strong>Shielding:</strong> Lead-lined boxes for storage. Lead aprons for medical staff. Concrete walls in laboratories.</li>
+    <li><strong>Time:</strong> Minimize exposure time. People working with radioactive materials wear dosimeters to monitor cumulative dose.</li>
+    <li><strong>Protective clothing:</strong> Gloves, lab coats, sometimes full-body suits to prevent contamination.</li>
+</ul>
+
+<h3>Uses of Nuclear Radiation</h3>
+
+<ul>
+    <li><strong>Medical imaging:</strong> Gamma-emitting tracers (e.g., Tc-99m) injected into patients. A gamma camera detects emissions and builds an image of internal organs (PET scans, SPECT scans).</li>
+    <li><strong>Cancer treatment (radiotherapy):</strong> Cobalt-60 or linear accelerators deliver targeted gamma or high-energy X-ray beams to tumours, destroying cancer cells.</li>
+    <li><strong>Smoke detectors:</strong> Contain Americium-241 (alpha emitter). Alpha particles ionise air molecules, creating a small current. Smoke particles block the current, triggering the alarm.</li>
+    <li><strong>Sterilisation:</strong> Cobalt-60 gamma rays kill bacteria and viruses on medical instruments (surgical tools, implants, dressings) without damaging them.</li>
+    <li><strong>Industrial gauges:</strong> Beta or gamma sources measure the thickness of paper, metal sheets, or coatings in manufacturing.</li>
+</ul>
+
+<h3>Background Radiation</h3>
+
+<p>We are all exposed to a low level of radiation from natural sources:</p>
+
+<ul>
+    <li><strong>Radon gas (~46%):</strong> Radon-222 seeps from rocks and soil into buildings. This is the largest contributor to background radiation in most regions.</li>
+    <li><strong>Rocks and soil (~18%):</strong> Uranium, thorium, and potassium-40 in granite, limestone, and other minerals.</li>
+    <li><strong>Cosmic rays (~10%):</strong> High-energy particles from space; exposure is higher at higher altitudes and latitudes.</li>
+    <li><strong>Medical procedures (~11%):</strong> X-rays, CT scans, nuclear medicine scans.</li>
+    <li><strong>Nuclear weapons testing (~4%):</strong> (historical, declining).</li>
+    <li><strong>Nuclear accidents and industry (~1%):</strong> (usually very small).</li>
+</ul>
+
+<div class="exam-tip">Examiners often ask about the difference between contamination and irradiation. Key points: Irradiation = exposure to external radiation (stops when source is removed). Contamination = radioactive material on/in you (continues emitting until it decays or is removed). A patient receiving radiotherapy is irradiated. If a worker spills radioactive solution on their skin, they are contaminated.</div>
+
+<h2>4.4.9 Nuclear Fission (Triple Science)</h2>
+
+<div class="definition">
+    <strong>Nuclear fission:</strong> the splitting of a large unstable nucleus into two smaller daughter nuclei, releasing energy and neutrons. The process is initiated by the absorption of a neutron (usually a slow neutron) and leads to a chain reaction if conditions are right.
+</div>
+
+<h3>The Fission Process</h3>
+
+<ol>
+    <li><strong>Slow neutron absorbed:</strong> A slow (thermal) neutron collides with a heavy nucleus (e.g., U-235), making it unstable.</li>
+    <li><strong>Nucleus becomes excited:</strong> The nucleus splits into two daughter nuclei and releases 2–3 additional neutrons plus energy (~200 MeV).</li>
+    <li><strong>Chain reaction:</strong> The released neutrons can trigger further fissions. If one neutron per fission causes another fission, the reaction is self-sustaining (critical). If more than one neutron causes a fission, the reaction accelerates (supercritical).</li>
+</ol>
+
+<pre>
+Typical fission reaction:
+²³⁵₉₂U + ¹₀n → ¹⁴⁶₅₆Ba + ⁸⁹₃₆Kr + 3¹₀n + ~200 MeV
+
+Note: Different daughter nuclei are produced in each fission.
+Mass number: 235 + 1 = 146 + 89 + 3(1) = 238 ✓
+Atomic number: 92 + 0 = 56 + 36 + 0 = 92 ✓
+</pre>
+
+<!-- SVG 8: Fission chain reaction -->
+<svg viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Nuclear fission chain reaction</text>
+
+    <!-- Generation 0: One U-235 nucleus -->
+    <circle cx="100" cy="80" r="20" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+    <text x="100" y="85" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">U-235</text>
+
+    <!-- Incoming neutron -->
+    <circle cx="55" cy="80" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <text x="55" y="85" text-anchor="middle" font-size="8" fill="#fff">n</text>
+    <path d="M 61 80 L 80 80" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+
+    <!-- Fission products from first generation -->
+    <circle cx="140" cy="120" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+    <text x="140" y="125" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">Ba</text>
+
+    <circle cx="140" cy="40" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+    <text x="140" y="45" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">Kr</text>
+
+    <!-- Three neutrons from first fission -->
+    <circle cx="170" cy="65" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <circle cx="170" cy="95" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <circle cx="170" cy="80" r="6" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    <text x="170" y="63" text-anchor="middle" font-size="7" fill="#fff" font-weight="bold">n</text>
+    <text x="170" y="93" text-anchor="middle" font-size="7" fill="#fff" font-weight="bold">n</text>
+    <text x="170" y="78" text-anchor="middle" font-size="7" fill="#fff" font-weight="bold">n</text>
+
+    <!-- Arrows showing neutron paths -->
+    <path d="M 176 65 L 240 180" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+    <path d="M 176 95 L 240 220" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+    <path d="M 176 80 L 240 140" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+
+    <!-- Generation 1: Three more fissions -->
+    <g>
+        <!-- Fission 2 -->
+        <circle cx="270" cy="180" r="20" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+        <text x="270" y="185" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">U-235</text>
+
+        <circle cx="310" cy="200" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+        <circle cx="310" cy="160" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+
+        <!-- Three neutrons from fission 2 -->
+        <circle cx="330" cy="172" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="340" cy="190" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="335" cy="208" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+
+        <path d="M 335 172 L 390 140" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+        <path d="M 343 193 L 390 200" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+        <path d="M 338 215 L 390 260" stroke="#2563eb" stroke-width="1.5" fill="none" marker-end="url(#arrowBlue)"/>
+    </g>
+
+    <g>
+        <!-- Fission 3 -->
+        <circle cx="270" cy="220" r="20" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+        <text x="270" y="225" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">U-235</text>
+
+        <circle cx="310" cy="240" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+        <circle cx="310" cy="200" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+
+        <!-- Three neutrons -->
+        <circle cx="330" cy="210" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="340" cy="230" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="335" cy="250" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    </g>
+
+    <g>
+        <!-- Fission 4 -->
+        <circle cx="270" cy="140" r="20" fill="#dc2626" stroke="#b91c1c" stroke-width="2"/>
+        <text x="270" y="145" text-anchor="middle" font-size="10" fill="#fff" font-weight="bold">U-235</text>
+
+        <circle cx="310" cy="160" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+        <circle cx="310" cy="120" r="12" fill="#f59e0b" stroke="#d97706" stroke-width="1.5"/>
+
+        <!-- Three neutrons -->
+        <circle cx="330" cy="130" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="340" cy="150" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+        <circle cx="335" cy="170" r="5" fill="#2563eb" stroke="#1e40af" stroke-width="1.5"/>
+    </g>
+
+    <!-- Generation 2: Many more fissions (~9) -->
+    <text x="520" y="100" text-anchor="middle" font-size="11" font-weight="bold" fill="#dc2626">Generation 2: ~9 fissions</text>
+
+    <circle cx="450" cy="80" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+    <circle cx="490" cy="70" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+    <circle cx="530" cy="90" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+    <circle cx="470" cy="140" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+    <circle cx="510" cy="150" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+    <circle cx="550" cy="120" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+    <circle cx="450" cy="200" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+    <circle cx="490" cy="220" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+    <circle cx="530" cy="180" r="15" fill="#dc2626" stroke="#b91c1c" stroke-width="2" opacity="0.8"/>
+
+    <!-- Explosion indicator -->
+    <text x="550" y="280" text-anchor="middle" font-size="13" font-weight="bold" fill="#dc2626">EXPONENTIAL GROWTH</text>
+    <text x="550" y="300" text-anchor="middle" font-size="11" fill="#1e3a5f">Each generation: 3× more fissions</text>
+    <text x="550" y="318" text-anchor="middle" font-size="11" fill="#1e3a5f">Generation 0: 1 fission</text>
+    <text x="550" y="335" text-anchor="middle" font-size="11" fill="#1e3a5f">Generation 1: 3 fissions</text>
+    <text x="550" y="352" text-anchor="middle" font-size="11" fill="#1e3a5f">Generation 2: 9 fissions</text>
+    <text x="550" y="369" text-anchor="middle" font-size="11" fill="#1e3a5f">Generation 3: 27 fissions</text>
+    <text x="550" y="386" text-anchor="middle" font-size="10" fill="#666">(Uncontrolled fission: nuclear bomb)</text>
+
+    <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+    </defs>
+</svg>
+
+<h3>Nuclear Reactor Operation</h3>
+
+<ul>
+    <li><strong>Fuel:</strong> Enriched uranium (U-235, typically 3–5% enrichment) or natural uranium in some reactor types.</li>
+    <li><strong>Moderator:</strong> Graphite or water slows neutrons to thermal speeds so they are more likely to cause fission (U-235 has a much higher fission cross-section for slow neutrons).</li>
+    <li><strong>Control rods:</strong> Made of boron or cadmium, which absorb neutrons. Inserting rods reduces the neutron population, slowing the reaction. Withdrawing rods increases the reaction rate. This maintains criticality (exactly one new fission per fission).</li>
+    <li><strong>Cooling fluid:</strong> Water or liquid sodium circulates through the reactor core, removing the heat generated by fission. The heat is used to raise steam, which drives turbines to generate electricity.</li>
+    <li><strong>Safety:</strong> Emergency shutdown systems insert all control rods if the reactor overheats or malfunctions.</li>
+</ul>
+
+<h3>Advantages and Disadvantages of Nuclear Fission</h3>
+
+<table>
+    <tr>
+        <th>Advantages</th>
+        <th>Disadvantages</th>
+    </tr>
+    <tr>
+        <td>Very high energy output per fission (~200 MeV)</td>
+        <td>Radioactive waste produced (long-lived fission products, actinides)</td>
+    </tr>
+    <tr>
+        <td>No CO₂ emissions (zero-carbon energy)</td>
+        <td>Long-term waste storage problem (1000s of years of containment required)</td>
+    </tr>
+    <tr>
+        <td>High power density (small reactor, large output)</td>
+        <td>Risk of catastrophic accidents (meltdown)</td>
+    </tr>
+    <tr>
+        <td>Reliable (not weather-dependent like wind/solar)</td>
+        <td>High decommissioning costs</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td>Weapons proliferation risk (enriched uranium)</td>
+    </tr>
+</table>
+
+<h2>4.4.10 Nuclear Fusion (Triple Science)</h2>
+
+<div class="definition">
+    <strong>Nuclear fusion:</strong> the combining of two light nuclei to form a heavier nucleus, with release of energy. Fusion requires very high temperature and pressure to overcome the electrostatic repulsion between the two positively charged nuclei.
+</div>
+
+<h3>Fusion Reaction Example</h3>
+
+<pre>
+Hydrogen isotope fusion:
+²₁H + ³₁H → ⁴₂He + ¹₀n + 17.6 MeV
+
+(Deuterium + Tritium → Helium-4 + Neutron)
+
+This is the reaction proposed for ITER (International Thermonuclear Experimental Reactor).
+</pre>
+
+<h3>Fusion in Stars</h3>
+
+<p>The core temperature of the Sun is ~15 million K. Hydrogen nuclei (protons) fuse to form helium in the proton-proton chain:</p>
+
+<pre>
+Simplified: 4¹₁H → ⁴₂He + 2⁰₊₁e (positrons) + 2νₑ (neutrinos) + ~26.7 MeV
+</pre>
+
+<p>This reaction has powered the Sun for ~4.6 billion years and will continue for another ~5 billion years.</p>
+
+<!-- SVG 9: Nuclear fusion reaction -->
+<svg viewBox="0 0 800 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Nuclear fusion: light nuclei combine to form heavier nucleus</text>
+
+    <!-- Title of specific reaction -->
+    <text x="400" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Example: Deuterium + Tritium → Helium-4 + Neutron</text>
+
+    <!-- Left: Deuterium nucleus -->
+    <circle cx="150" cy="150" r="25" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+    <text x="140" y="150" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">p</text>
+    <text x="160" y="150" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">n</text>
+    <text x="150" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Deuterium</text>
+    <text x="150" y="218" text-anchor="middle" font-size="10" fill="#666">²₁H</text>
+
+    <!-- Arrow showing approach -->
+    <path d="M 175 150 L 300 150" stroke="#dc2626" stroke-width="3" fill="none" marker-end="url(#arrowRed)"/>
+    <text x="237" y="138" text-anchor="middle" font-size="10" fill="#dc2626" font-weight="bold">~15 million K</text>
+    <text x="237" y="152" text-anchor="middle" font-size="9" fill="#666">High pressure</text>
+    <text x="237" y="166" text-anchor="middle" font-size="9" fill="#666">nuclei approach</text>
+
+    <!-- Right: Tritium nucleus -->
+    <circle cx="650" cy="150" r="25" fill="#16a34a" stroke="#15803d" stroke-width="2"/>
+    <text x="635" cy="140" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">p</text>
+    <text x="650" cy="155" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">n</text>
+    <text x="665" cy="140" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">n</text>
+    <text x="650" y="200" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Tritium</text>
+    <text x="650" y="218" text-anchor="middle" font-size="10" fill="#666">³₁H</text>
+
+    <!-- Down arrow to products -->
+    <path d="M 400 180 L 400 260" stroke="#16a34a" stroke-width="2.5" fill="none" marker-end="url(#arrowGreen)"/>
+    <text x="430" y="220" text-anchor="middle" font-size="10" fill="#16a34a" font-weight="bold">Fusion!</text>
+    <text x="430" y="235" text-anchor="middle" font-size="9" fill="#16a34a">Energy released</text>
+
+    <!-- Products: Helium-4 and neutron -->
+    <circle cx="300" cy="310" r="28" fill="#2563eb" stroke="#1e40af" stroke-width="2"/>
+    <text x="282" cy="300" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">p</text>
+    <text x="296" cy="310" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">n</text>
+    <text x="310" cy="305" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">p</text>
+    <text x="318" cy="325" text-anchor="middle" font-size="8" fill="#fff" font-weight="bold">n</text>
+    <text x="300" y="360" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Helium-4</text>
+    <text x="300" y="378" text-anchor="middle" font-size="10" fill="#666">⁴₂He</text>
+
+    <!-- Neutron -->
+    <circle cx="500" cy="310" r="18" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="500" y="316" text-anchor="middle" font-size="9" fill="#fff" font-weight="bold">n</text>
+    <text x="500" y="360" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e3a5f">Neutron</text>
+    <text x="500" y="378" text-anchor="middle" font-size="10" fill="#666">¹₀n</text>
+
+    <!-- Energy released annotation -->
+    <rect x="550" y="280" width="220" height="80" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+    <text x="660" y="300" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Energy released: 17.6 MeV</text>
+    <text x="660" y="318" text-anchor="middle" font-size="9" fill="#1e3a5f">per fusion reaction</text>
+    <text x="660" y="335" text-anchor="middle" font-size="9" fill="#1e3a5f">This comes from mass defect:</text>
+    <text x="660" y="350" text-anchor="middle" font-size="9" fill="#1e3a5f">E = Δm × c²</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+    </defs>
+</svg>
+
+<h3>Why Fusion Releases Energy: Mass-Energy Equivalence</h3>
+
+<div class="definition">
+    Einstein's famous equation: <code>E = mc²</code> <br><br>
+    In a fusion reaction, the total mass of the products is slightly less than the total mass of the reactants. This "missing" mass is converted into energy according to E = mc². Even a tiny mass difference produces enormous energy because c is so large (3×10⁸ m/s).
+</div>
+
+<p><strong>Example:</strong> In D-T fusion (deuterium + tritium), ~3.5 MeV comes from the mass defect. The rest of the 17.6 MeV comes from the kinetic energy of the nuclei and the release of binding energy stored in the nuclear bonds.</p>
+
+<h3>Fusion vs Fission</h3>
+
+<table>
+    <tr>
+        <th>Property</th>
+        <th>Fission</th>
+        <th>Fusion</th>
+    </tr>
+    <tr>
+        <td><strong>Process</strong></td>
+        <td>Heavy nucleus splits</td>
+        <td>Light nuclei combine</td>
+    </tr>
+    <tr>
+        <td><strong>Temperature required</strong></td>
+        <td>Room temperature (neutron trigger)</td>
+        <td>~100 million K</td>
+    </tr>
+    <tr>
+        <td><strong>Control</strong></td>
+        <td>Can be controlled (rods, moderator)</td>
+        <td>Very difficult to control; no commercial reactors yet</td>
+    </tr>
+    <tr>
+        <td><strong>Radioactive waste</strong></td>
+        <td>Long-lived fission products (1000s of years)</td>
+        <td>Minimal waste (neutron activation of reactor walls)</td>
+    </tr>
+    <tr>
+        <td><strong>Fuel availability</strong></td>
+        <td>Uranium-235 is limited (~100 years at current rates)</td>
+        <td>Deuterium and tritium from seawater; abundant</td>
+    </tr>
+    <tr>
+        <td><strong>Current use</strong></td>
+        <td>~430 commercial power reactors worldwide</td>
+        <td>Only in stars and thermonuclear weapons; experimental research (ITER)</td>
+    </tr>
+</table>
+
+<h3>Challenges in Achieving Fusion Power</h3>
+
+<ul>
+    <li><strong>Temperature:</strong> Nuclei must be heated to ~100 million K to overcome electrostatic repulsion. This is roughly 7× the core temperature of the Sun.</li>
+    <li><strong>Confinement:</strong> At such high temperatures, matter becomes a plasma (ionised gas). The plasma must be confined using magnetic fields (tokamaks) or laser compression (inertial confinement fusion).</li>
+    <li><strong>Energy gain:</strong> The energy needed to heat and confine the plasma must be less than the energy released by fusion. This is the "break-even" condition; no one has achieved this yet (though ITER aims to).</li>
+    <li><strong>Sustained reaction:</strong> A fusion power plant must run continuously, not just produce one pulse.</li>
+</ul>
+
+<div class="exam-tip">Common exam question: "Compare nuclear fission and fusion." Key differences: Fission splits heavy nuclei (easy to trigger, but produces long-lived waste). Fusion combines light nuclei (produces little waste, but requires extreme conditions). Both release energy from mass defect (E = mc²). Fusion powers the Sun; fission powers nuclear power plants.</div>
+
+</div>
+</body>
+</html>

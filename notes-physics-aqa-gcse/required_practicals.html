@@ -1,0 +1,1316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA GCSE Physics — Required Practicals</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        sub { font-size: 0.8em; }
+        sup { font-size: 0.8em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>Required Practicals (RP1–RP10)</h1>
+<p class="spec-ref">AQA GCSE Physics (8463) — separate Physics</p>
+
+<h2>RP1 — Specific Heat Capacity</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Determine the specific heat capacity of a metal block or liquid (e.g. water) using an electrical heater. Specific heat capacity (<em>c</em>) is the energy required to raise the temperature of 1 kg of a substance by 1 °C.
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Metal block (or insulated beaker for liquid) with two holes: one for immersion heater, one for thermometer</li>
+    <li>12 V immersion heater (electric heater)</li>
+    <li>Joulemeter (or ammeter + voltmeter + stopwatch)</li>
+    <li>Thermometer (0–110 °C)</li>
+    <li>Lagging (thermal insulation, e.g. cotton wool, fibreglass, or foam)</li>
+    <li>Balance (±0.01 g)</li>
+    <li>Power supply (12 V AC or DC)</li>
+</ul>
+
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;margin:20px auto;display:block;">
+    <defs>
+        <marker id="arrowHeat" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+            <polygon points="0 0, 8 4, 0 8" fill="#dc2626"/>
+        </marker>
+    </defs>
+    <text x="300" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP1: Specific Heat Capacity Apparatus</text>
+
+    <!-- Metal block (cylinder) -->
+    <rect x="150" y="100" width="120" height="160" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="8"/>
+    <text x="210" y="190" text-anchor="middle" font-size="10" font-weight="600" fill="#1e40af">Metal Block</text>
+
+    <!-- Heater hole and heater -->
+    <circle cx="180" cy="130" r="6" fill="none" stroke="#dc2626" stroke-width="2"/>
+    <rect x="170" y="130" width="20" height="80" fill="#f97316" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="165" y="180" font-size="9" fill="#dc2626" font-weight="600">Heater</text>
+
+    <!-- Thermometer hole and thermometer -->
+    <circle cx="240" cy="130" r="5" fill="none" stroke="#2563eb" stroke-width="2"/>
+    <rect x="233" y="130" width="14" height="100" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5" rx="2"/>
+    <line x1="237" y1="150" x2="239" y2="150" stroke="#dc2626" stroke-width="1"/>
+    <line x1="237" y1="170" x2="239" y2="170" stroke="#dc2626" stroke-width="1"/>
+    <line x1="237" y1="190" x2="239" y2="190" stroke="#dc2626" stroke-width="1"/>
+    <text x="252" y="175" font-size="9" fill="#1e40af" font-weight="600">Thermometer</text>
+
+    <!-- Insulation (lagging) layers -->
+    <rect x="140" y="90" width="140" height="180" fill="none" stroke="#f59e0b" stroke-width="3" stroke-dasharray="5,5" rx="10"/>
+    <text x="320" y="185" font-size="9" fill="#f59e0b" font-weight="600">Lagging</text>
+
+    <!-- Joulemeter connection -->
+    <g>
+        <line x1="210" y1="100" x2="210" y2="60" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="190" y="45" font-size="9" font-weight="600" fill="#1e40af">to Joulemeter</text>
+    </g>
+
+    <!-- Power supply -->
+    <rect x="370" y="120" width="80" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="410" y="152" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">12V Power</text>
+
+    <!-- Wires from power to apparatus -->
+    <line x1="370" y1="140" x2="280" y2="140" stroke="#1a1a2e" stroke-width="1.5"/>
+    <line x1="370" y1="160" x2="280" y2="160" stroke="#1a1a2e" stroke-width="1.5"/>
+
+    <!-- Key label -->
+    <rect x="370" y="240" width="200" height="120" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="380" y="260" font-size="10" font-weight="600" fill="#1e40af">Key Points:</text>
+    <text x="380" y="278" font-size="9" fill="#1a1a2e">• Lagging reduces heat loss</text>
+    <text x="380" y="294" font-size="9" fill="#1a1a2e">• Heater transfers electrical</text>
+    <text x="388" y="307" font-size="9" fill="#1a1a2e">energy to thermal energy</text>
+    <text x="380" y="323" font-size="9" fill="#1a1a2e">• Joulemeter measures total</text>
+    <text x="388" y="336" font-size="9" fill="#1a1a2e">electrical energy supplied</text>
+</svg>
+
+<h3>Method</h3>
+<ol>
+    <li>Measure and record the <strong>mass</strong> of the metal block (or liquid in beaker) using the balance.</li>
+    <li>Record the <strong>initial temperature</strong> θ₁ (thermometer reading).</li>
+    <li>Switch on the power supply, starting the heater and noting the <strong>initial reading on the joulemeter</strong> (or start the stopwatch and note ammeter/voltmeter readings).</li>
+    <li>Allow the block to heat up, recording the thermometer reading at regular intervals (e.g. every 2–3 minutes).</li>
+    <li>When the temperature has risen by a suitable amount (e.g. Δθ = 10–20 °C), record the <strong>final temperature</strong> θ₂ and the <strong>final joulemeter reading</strong> (or stop the stopwatch and note the final meter readings).</li>
+    <li>Switch off the power supply and allow the block to cool.</li>
+    <li>Calculate the energy supplied by the heater:
+        <br/><code>E = Joulemeter reading (in joules)</code>
+        <br/>or <code>E = I × V × t</code> (amperes × volts × seconds)
+    </li>
+    <li>Calculate the temperature rise: <code>Δθ = θ₂ − θ₁</code></li>
+    <li>Use the formula: <code>c = E / (m × Δθ)</code> to find specific heat capacity.</li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Mass (m):</strong> in kg (convert from grams if necessary)</li>
+    <li><strong>Initial and final temperatures:</strong> in °C (or K, since Δθ is the same in both)</li>
+    <li><strong>Energy supplied (E):</strong> in joules (J)</li>
+    <li><strong>Specific heat capacity formula:</strong> <code>c = E / (m × Δθ)</code></li>
+    <li><strong>Units:</strong> J/(kg·°C) or J/(kg·K)</li>
+    <li><strong>Typical values:</strong> water ~4200 J/(kg·K); aluminum ~900 J/(kg·K); iron ~450 J/(kg·K)</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Heat loss to surroundings:</strong> Use lagging (thermal insulation) around the block to reduce cooling. Measure the final temperature a minute after switching off to account for any heat still being transferred.</li>
+    <li><strong>Thermometer calibration error:</strong> Use a thermometer with small scale divisions (0.5 °C or finer). Record readings at eye level to avoid parallax error.</li>
+    <li><strong>Uneven heating of block:</strong> Allow time for temperature equilibrium within the block; stir liquid samples if used.</li>
+    <li><strong>Electrical measurement error:</strong> Ensure ammeter and voltmeter are correctly calibrated. Use a joulemeter for direct energy measurement if available (more accurate than V × I × t).</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Hot apparatus:</strong> The block and heater will reach high temperatures (>80 °C). Use insulated tongs or gloves when handling; allow to cool before moving.</li>
+    <li><strong>Electrical safety:</strong> Check the power lead for damage; do not use if wet. Keep water away from electrical connections.</li>
+    <li><strong>Thermometer:</strong> If glass, handle carefully to avoid breakage and mercury spillage (if mercury thermometer used).</li>
+</ul>
+
+<h2>RP2 — Thermal Insulation</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Investigate which material is the best thermal insulator by comparing the cooling curves of containers wrapped in different insulating materials.
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Glass beaker or metal can (e.g. 500 mL)</li>
+    <li>Lid (with hole for thermometer)</li>
+    <li>Insulating materials: bubble wrap, cotton wool, felt, newspaper, foam, etc.</li>
+    <li>Thermometer (0–110 °C)</li>
+    <li>Measuring cylinder (to measure volume of hot water)</li>
+    <li>Stopwatch</li>
+    <li>Access to boiling water (kettle or Bunsen burner)</li>
+    <li>Data logger with temperature sensor (optional, for continuous recording)</li>
+</ul>
+
+<svg viewBox="0 0 600 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;margin:20px auto;display:block;">
+    <text x="300" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP2: Thermal Insulation Apparatus (Cross-section View)</text>
+
+    <!-- Insulation material (outer layer) -->
+    <rect x="100" y="60" width="180" height="200" fill="#f5d4a8" stroke="#d97706" stroke-width="2" rx="10"/>
+    <text x="118" y="85" font-size="8" fill="#7c2d12" font-weight="600">Insulation</text>
+    <text x="125" y="97" font-size="8" fill="#7c2d12">(e.g. bubble wrap)</text>
+
+    <!-- Glass beaker -->
+    <path d="M 140 80 L 135 260 Q 140 270 150 270 L 230 270 Q 240 270 245 260 L 240 80 Z" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <path d="M 140 80 L 240 80 Q 240 75 235 75 L 145 75 Z" fill="#e0f2fe" stroke="#2563eb" stroke-width="1"/>
+    <text x="188" y="180" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Hot water</text>
+
+    <!-- Thermometer through lid -->
+    <circle cx="190" cy="50" r="4" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+    <rect x="183" y="50" width="14" height="140" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5" rx="2"/>
+    <line x1="187" y1="80" x2="189" y2="80" stroke="#dc2626" stroke-width="0.5"/>
+    <line x1="187" y1="110" x2="189" y2="110" stroke="#dc2626" stroke-width="0.5"/>
+    <line x1="187" y1="140" x2="189" y2="140" stroke="#dc2626" stroke-width="0.5"/>
+    <text x="210" y="110" font-size="9" fill="#1e40af" font-weight="600">Thermometer</text>
+
+    <!-- Lid -->
+    <ellipse cx="190" cy="75" rx="58" ry="12" fill="#e5e7eb" stroke="#6b7280" stroke-width="2"/>
+
+    <!-- Time labels and temperature readings -->
+    <g>
+        <text x="350" y="100" font-size="10" font-weight="600" fill="#1e40af">Measurements:</text>
+        <text x="350" y="120" font-size="9" fill="#1a1a2e">t = 0 min: θ = 70 °C</text>
+        <text x="350" y="135" font-size="9" fill="#1a1a2e">t = 1 min: θ = 68 °C</text>
+        <text x="350" y="150" font-size="9" fill="#1a1a2e">t = 2 min: θ = 66 °C</text>
+        <text x="350" y="165" font-size="9" fill="#1a1a2e">... (every 1 min)</text>
+        <text x="350" y="180" font-size="9" fill="#1a1a2e">t = 10 min: θ = 45 °C</text>
+    </g>
+
+    <!-- Comparison materials (bottom) -->
+    <rect x="100" y="310" width="400" height="50" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="110" y="330" font-size="9" font-weight="600" fill="#1e40af">Test different materials:</text>
+    <text x="110" y="350" font-size="8" fill="#1a1a2e">Bubble wrap | Cotton wool | Felt | Newspaper | Foam | Polystyrene chips</text>
+</svg>
+
+<h3>Method</h3>
+<ol>
+    <li>Measure a fixed volume of boiling water (e.g. 300 mL) using a measuring cylinder.</li>
+    <li>Pour the hot water into the beaker and immediately place the thermometer through the lid.</li>
+    <li>Record the <strong>initial temperature</strong> (θ₀) and the <strong>time</strong> (t = 0).</li>
+    <li>Wrap the beaker completely with the first insulating material (e.g. bubble wrap, 2–3 cm thickness).</li>
+    <li>Record the temperature at regular intervals (e.g. every 1 minute) for 10 minutes.</li>
+    <li>Allow the beaker to cool to room temperature.</li>
+    <li>Repeat steps 1–6 with each of the other insulating materials, ensuring the same initial temperature and volume of water each time.</li>
+    <li>Plot cooling curves (temperature vs. time) for each material on the same graph.</li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Volume of water:</strong> must be the same for all tests (e.g. 300 mL)</li>
+    <li><strong>Initial temperature:</strong> should be approximately the same (~70 °C) for each test</li>
+    <li><strong>Temperature readings:</strong> recorded at fixed time intervals</li>
+    <li><strong>Cooling rate:</strong> gradient of cooling curve = ΔT / Δt (°C/min)</li>
+    <li><strong>Best insulator:</strong> lowest cooling rate (flattest gradient) or highest final temperature after 10 minutes</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Variation in initial temperature:</strong> Use boiling water each time (though it cools slightly in the journey from kettle to beaker). Record the initial reading immediately.</li>
+    <li><strong>Variation in room temperature:</strong> Conduct all tests in the same location at the same time of day if possible.</li>
+    <li><strong>Variation in water volume:</strong> Use a measuring cylinder to ensure each test uses exactly the same volume (e.g. 300 mL).</li>
+    <li><strong>Inconsistent insulation thickness:</strong> Wrap each material to the same thickness (e.g. measure with ruler).</li>
+    <li><strong>Temperature measurement error:</strong> Read thermometer at eye level; use data logger for continuous, precise readings if available.</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Boiling water:</strong> Wear appropriate eye protection and heat-resistant gloves. Be careful when pouring hot water.</li>
+    <li><strong>Hot apparatus:</strong> Do not touch the beaker or insulation for several minutes after setup.</li>
+</ul>
+
+<h2>RP3 — Resistance of a Wire</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Investigate how electrical resistance varies with the length of a wire (at constant cross-sectional area and material). Expect: Resistance ∝ Length.
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Resistance wire (constantan or nichrome, e.g. 0.5 mm diameter)</li>
+    <li>Metre ruler (calibrated to mm)</li>
+    <li>Crocodile clips (two)</li>
+    <li>Ammeter (0–1 A or 0–2 A, digital or analogue)</li>
+    <li>Voltmeter (0–5 V, digital or analogue)</li>
+    <li>6 V power supply (low voltage for safety)</li>
+    <li>Switch</li>
+    <li>Leads and connecting wire</li>
+</ul>
+
+<svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP3: Resistance of a Wire — Circuit Diagram</text>
+
+    <!-- Power supply -->
+    <g id="cell">
+        <rect x="80" y="140" width="40" height="80" fill="#fff" stroke="#1a1a2e" stroke-width="2" rx="4"/>
+        <line x1="95" y1="140" x2="95" y2="120" stroke="#1a1a2e" stroke-width="2"/>
+        <line x1="105" y1="140" x2="105" y2="120" stroke="#1a1a2e" stroke-width="2"/>
+        <line x1="95" y1="120" x2="105" y2="120" stroke="#1a1a2e" stroke-width="3"/>
+        <line x1="100" y1="110" x2="100" y2="95" stroke="#1a1a2e" stroke-width="1"/>
+        <text x="60" y="210" font-size="9" font-weight="600" fill="#1e40af">6V Cell</text>
+    </g>
+
+    <!-- Switch -->
+    <g id="switch">
+        <circle cx="140" cy="155" r="6" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+        <line x1="146" y1="155" x2="170" y2="155" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="145" y="175" font-size="9" font-weight="600" fill="#1a1a2e">Switch</text>
+    </g>
+
+    <!-- Ammeter -->
+    <g id="ammeter">
+        <circle cx="220" cy="155" r="12" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="220" y="160" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">A</text>
+        <text x="220" y="180" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Ammeter</text>
+    </g>
+
+    <!-- Metre ruler with crocodile clips -->
+    <g id="wire-setup">
+        <!-- Ruler scale -->
+        <line x1="300" y1="130" x2="620" y2="130" stroke="#6b7280" stroke-width="2"/>
+        <text x="290" y="125" font-size="8" fill="#6b7280">0</text>
+        <text x="400" y="125" font-size="8" fill="#6b7280">50</text>
+        <text x="610" y="125" font-size="8" fill="#6b7280">100 cm</text>
+        <text x="420" y="110" font-size="9" font-weight="600" fill="#1e40af">Resistance wire on metre ruler</text>
+
+        <!-- Resistance wire -->
+        <line x1="300" y1="155" x2="620" y2="155" stroke="#d97706" stroke-width="3"/>
+        <text x="460" y="170" text-anchor="middle" font-size="8" fill="#d97706" font-weight="600">Wire (constantan/nichrome)</text>
+
+        <!-- Left crocodile clip (fixed) -->
+        <circle cx="300" cy="155" r="5" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="300" y="195" text-anchor="middle" font-size="8" fill="#1a1a2e">Fixed</text>
+
+        <!-- Right crocodile clip (sliding) -->
+        <circle cx="480" cy="155" r="5" fill="none" stroke="#f59e0b" stroke-width="2"/>
+        <text x="480" y="195" text-anchor="middle" font-size="8" fill="#f59e0b" font-weight="600">Slides</text>
+    </g>
+
+    <!-- Voltmeter (parallel across wire) -->
+    <g id="voltmeter">
+        <line x1="300" y1="140" x2="480" y2="140" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <line x1="300" y1="170" x2="480" y2="170" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <circle cx="390" cy="155" r="11" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="390" y="160" text-anchor="middle" font-size="8" font-weight="600" fill="#2563eb">V</text>
+        <text x="390" y="215" text-anchor="middle" font-size="9" font-weight="600" fill="#2563eb">Voltmeter (parallel across wire)</text>
+    </g>
+
+    <!-- Wire connections (simplified) -->
+    <line x1="100" y1="220" x2="100" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
+
+    <!-- Data box -->
+    <rect x="50" y="260" width="600" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="60" y="280" font-size="10" font-weight="600" fill="#1e40af">Procedure:</text>
+    <text x="60" y="298" font-size="9" fill="#1a1a2e">1. Set crocodile clip at length L = 10 cm. 2. Close switch briefly. 3. Record ammeter (I) and voltmeter (V) readings. 4. Calculate R = V/I. 5. Repeat at L = 20, 30, …, 100 cm. 6. Plot R vs L graph.</text>
+</svg>
+
+<h3>Method</h3>
+<ol>
+    <li>Set up the circuit: 6V cell → Switch → Ammeter → Resistance wire (between crocodile clips) → back to cell.</li>
+    <li>Connect the voltmeter in parallel across the resistance wire (between the two crocodile clips).</li>
+    <li>Tape the resistance wire to the metre ruler, with one crocodile clip at the 0 cm mark (fixed).</li>
+    <li>Position the sliding crocodile clip at <strong>L = 10 cm</strong>.</li>
+    <li>Close the switch briefly and record the ammeter reading (I) and voltmeter reading (V). Open the switch immediately to avoid overheating the wire.</li>
+    <li>Calculate resistance: <code>R = V / I</code> (in ohms, Ω).</li>
+    <li>Move the sliding clip to <strong>L = 20 cm</strong> and repeat steps 5–6.</li>
+    <li>Continue at L = 30, 40, 50, 60, 70, 80, 90, 100 cm.</li>
+    <li>Tabulate the results (L, I, V, R).</li>
+    <li>Plot a graph of Resistance (y-axis) vs. Length (x-axis). Expect a straight line through (or very close to) the origin.</li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Length (L):</strong> distance between the two crocodile clips, in cm or m</li>
+    <li><strong>Current (I):</strong> ammeter reading, in amperes (A)</li>
+    <li><strong>Voltage (V):</strong> voltmeter reading, in volts (V)</li>
+    <li><strong>Resistance (R):</strong> R = V / I (ohms, Ω)</li>
+    <li><strong>Relationship:</strong> R ∝ L (resistance is directly proportional to length)</li>
+    <li><strong>Gradient of graph:</strong> ρ / A (resistivity divided by cross-sectional area)</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Wire heating during measurement:</strong> Close the switch for only a few seconds to take readings; do not leave it on. Use low currents (<0.5 A) to minimize heating. Allow wire to cool between readings.</li>
+    <li><strong>Non-uniform wire cross-section:</strong> Use a high-quality resistance wire with consistent diameter. If diameter varies, results will scatter.</li>
+    <li><strong>Meter calibration error:</strong> Check that meters read zero when not in use. Use calibrated digital meters if available for greater accuracy.</li>
+    <li><strong>Poor electrical contact at crocodile clips:</strong> Ensure clips bite firmly into the wire; clean wire with emery paper if needed.</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Wire heating:</strong> The wire may become hot if left on for prolonged periods. Do not touch without allowing time to cool.</li>
+    <li><strong>Low voltage used:</strong> 6 V is safe, but avoid touching the circuit with wet hands.</li>
+</ul>
+
+<h2>RP4 — I-V Characteristics</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Investigate the current-voltage (I-V) characteristics of a fixed resistor, filament lamp, and diode by varying voltage and measuring current. Components exhibit different I-V relationships: ohmic, non-linear, and one-way conduction.
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Variable resistor (rheostat, e.g. 10 Ω or 50 Ω)</li>
+    <li>Ammeter (0–2 A or 0–5 A)</li>
+    <li>Voltmeter (0–10 V)</li>
+    <li>Power supply (12 V AC or DC, or dual voltage supply)</li>
+    <li>Switch</li>
+    <li>Test components: fixed resistor (e.g. 10 Ω), filament lamp (e.g. 12 V 0.5 A), diode (e.g. 1N4007)</li>
+    <li>Connecting leads and wires</li>
+</ul>
+
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP4: I-V Characteristics — Circuit Diagram</text>
+
+    <!-- Power supply -->
+    <g id="supply">
+        <rect x="60" y="140" width="40" height="80" fill="#fff" stroke="#1a1a2e" stroke-width="2" rx="4"/>
+        <line x1="70" y1="140" x2="70" y2="120" stroke="#1a1a2e" stroke-width="2"/>
+        <line x1="90" y1="140" x2="90" y2="120" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="50" y="210" font-size="9" font-weight="600" fill="#1e40af">12V Supply</text>
+    </g>
+
+    <!-- Switch -->
+    <g id="switch2">
+        <circle cx="130" cy="155" r="6" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+        <line x1="136" y1="155" x2="160" y2="155" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="140" y="175" font-size="9" font-weight="600" fill="#1a1a2e">S</text>
+    </g>
+
+    <!-- Rheostat (variable resistor) -->
+    <g id="rheostat">
+        <rect x="180" y="130" width="50" height="50" fill="#e5e7eb" stroke="#1a1a2e" stroke-width="2" rx="2"/>
+        <circle cx="205" cy="205" r="15" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+        <line x1="205" y1="205" x2="215" y2="190" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="200" y="240" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Rheostat</text>
+    </g>
+
+    <!-- Ammeter -->
+    <g id="ammeter2">
+        <circle cx="280" cy="155" r="12" fill="#fff" stroke="#1a1a2e" stroke-width="1.5"/>
+        <text x="280" y="160" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">A</text>
+        <text x="280" y="180" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Ammeter</text>
+    </g>
+
+    <!-- Test component (switchable) -->
+    <g id="component">
+        <rect x="380" y="140" width="50" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+        <text x="405" y="165" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Test</text>
+        <text x="460" y="165" font-size="9" fill="#1a1a2e">(Resistor,</text>
+        <text x="470" y="177" font-size="9" fill="#1a1a2e">Lamp, or Diode)</text>
+    </g>
+
+    <!-- Voltmeter (parallel across test component) -->
+    <g id="voltmeter2">
+        <line x1="380" y1="135" x2="430" y2="135" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <line x1="380" y1="190" x2="430" y2="190" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+        <circle cx="405" cy="162" r="10" fill="#fff" stroke="#2563eb" stroke-width="1.5"/>
+        <text x="405" y="167" text-anchor="middle" font-size="8" font-weight="600" fill="#2563eb">V</text>
+        <text x="405" y="215" text-anchor="middle" font-size="9" font-weight="600" fill="#2563eb">Voltmeter</text>
+    </g>
+
+    <!-- Return line -->
+    <line x1="430" y1="185" x2="430" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
+    <line x1="430" y1="220" x2="80" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
+    <line x1="80" y1="220" x2="80" y2="220" stroke="#1a1a2e" stroke-width="1.5"/>
+
+    <!-- Expected I-V Graphs -->
+    <g id="graphs">
+        <!-- Graph 1: Fixed Resistor (Ohmic) -->
+        <g id="resistor-graph">
+            <text x="100" y="280" font-size="10" font-weight="600" fill="#1e40af">Fixed Resistor (Ohmic)</text>
+            <rect x="50" y="295" width="120" height="100" fill="#f9fafb" stroke="#d1d5db" stroke-width="1"/>
+            <line x1="60" y1="385" x2="160" y2="385" stroke="#1a1a2e" stroke-width="1"/>
+            <line x1="60" y1="385" x2="60" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+            <line x1="60" y1="315" x2="160" y2="335" stroke="#1e40af" stroke-width="2"/>
+            <text x="100" y="405" font-size="8" fill="#6b7280">Voltage (V)</text>
+            <text x="35" y="350" font-size="8" fill="#6b7280">I (A)</text>
+        </g>
+
+        <!-- Graph 2: Filament Lamp (Non-linear) -->
+        <g id="lamp-graph">
+            <text x="290" y="280" font-size="10" font-weight="600" fill="#1e40af">Filament Lamp (Non-linear)</text>
+            <rect x="240" y="295" width="120" height="100" fill="#f9fafb" stroke="#d1d5db" stroke-width="1"/>
+            <line x1="250" y1="385" x2="350" y2="385" stroke="#1a1a2e" stroke-width="1"/>
+            <line x1="250" y1="385" x2="250" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+            <!-- Curved line (non-linear) -->
+            <path d="M 250 380 Q 280 350 350 320" stroke="#1e40af" stroke-width="2" fill="none"/>
+            <text x="290" y="405" font-size="8" fill="#6b7280">Voltage (V)</text>
+            <text x="225" y="350" font-size="8" fill="#6b7280">I (A)</text>
+        </g>
+
+        <!-- Graph 3: Diode (One-way) -->
+        <g id="diode-graph">
+            <text x="480" y="280" font-size="10" font-weight="600" fill="#1e40af">Diode (One-way)</text>
+            <rect x="430" y="295" width="120" height="100" fill="#f9fafb" stroke="#d1d5db" stroke-width="1"/>
+            <line x1="440" y1="385" x2="540" y2="385" stroke="#1a1a2e" stroke-width="1"/>
+            <line x1="440" y1="385" x2="440" y2="305" stroke="#1a1a2e" stroke-width="1"/>
+            <!-- Flat line (reverse), sharp rise (forward) -->
+            <line x1="440" y1="380" x2="485" y2="380" stroke="#1e40af" stroke-width="2"/>
+            <path d="M 485 380 Q 500 360 540 320" stroke="#dc2626" stroke-width="2" fill="none"/>
+            <text x="480" y="405" font-size="8" fill="#6b7280">Voltage (V)</text>
+            <text x="415" y="350" font-size="8" fill="#6b7280">I (A)</text>
+        </g>
+    </g>
+</svg>
+
+<h3>Method</h3>
+<ol>
+    <li>Set up the circuit: 12V supply → Switch → Rheostat (variable resistor) → Ammeter → Test component → back to supply. Connect Voltmeter in parallel across the test component.</li>
+    <li>Begin with the test component being a <strong>fixed resistor</strong>.</li>
+    <li>Adjust the rheostat to the maximum resistance (minimum current). Close the switch.</li>
+    <li>Gradually decrease the rheostat resistance, taking ammeter and voltmeter readings at 10–12 different voltage levels (e.g. 0 V, 1 V, 2 V, … 10 V).</li>
+    <li>Record all (V, I) pairs in a table.</li>
+    <li>Reverse the polarity of the power supply (swap the leads) and repeat the measurement, recording the negative voltage and current values.</li>
+    <li>Plot a graph of I (y-axis) vs. V (x-axis) for the fixed resistor. Expect a straight line through the origin (ohmic behavior).</li>
+    <li>Repeat steps 2–7 with the <strong>filament lamp</strong>. Expect an S-shaped or curved line (non-ohmic; resistance increases with temperature and current).</li>
+    <li>Repeat steps 2–7 with the <strong>diode</strong>. Expect zero current in reverse bias; sharp rise in current when forward-biased (typically above ~0.6–0.7 V for silicon diodes).</li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Voltage (V):</strong> voltmeter readings, in volts</li>
+    <li><strong>Current (I):</strong> ammeter readings, in amperes</li>
+    <li><strong>Resistance (R):</strong> R = V / I for any data point</li>
+    <li><strong>Fixed resistor:</strong> R is constant (ohmic); graph is a straight line through origin.</li>
+    <li><strong>Filament lamp:</strong> R increases with temperature (and current); graph curves upward (non-linear).</li>
+    <li><strong>Diode:</strong> R is very high in reverse bias (≈∞); R drops sharply once forward-biased (≈0.6–0.7 V for Si).</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Component heating:</strong> For filament lamp and diode, heating can change resistance. Take measurements quickly and allow cooling time between readings.</li>
+    <li><strong>Meter calibration error:</strong> Use calibrated digital meters. Check that meters read zero when off.</li>
+    <li><strong>Temperature variation in filament lamp:</strong> Record measurements in the same order (forward and reverse) each time. Note that filament resistance varies significantly with temperature.</li>
+    <li><strong>Polarity confusion with diode:</strong> Mark the diode legs clearly (anode vs. cathode) to avoid repeated reversals.</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Filament lamp heating:</strong> The bulb becomes very hot; do not touch. Allow to cool before handling.</li>
+    <li><strong>12 V supply:</strong> Generally safe, but avoid touching live connections with wet hands.</li>
+</ul>
+
+<h2>RP5 — Density</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Determine the density of regular solids, irregular solids, and liquids using mass and volume measurements. Density (ρ) = mass / volume.
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Balance (±0.01 g or better)</li>
+    <li>Ruler or vernier caliper (for measuring regular solid dimensions)</li>
+    <li>Measuring cylinder (e.g. 100 mL or 250 mL, graduated to 1 mL)</li>
+    <li>Displacement can (Eureka can) or overflow can (for irregular solids)</li>
+    <li>Beaker (for collecting displaced water)</li>
+    <li>Regular solids to measure: metal cuboid, cylinder, etc.</li>
+    <li>Irregular solids to measure: rock, metal piece, etc.</li>
+    <li>Liquids to measure: water, oil, salt solution, etc.</li>
+</ul>
+
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP5: Density — Apparatus for Regular and Irregular Solids</text>
+
+    <!-- Regular solid (cuboid) with ruler -->
+    <g id="regular">
+        <text x="150" y="50" font-size="10" font-weight="600" fill="#1e40af">Regular Solid (Cuboid)</text>
+        <rect x="80" y="80" width="60" height="40" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+        <text x="110" y="108" text-anchor="middle" font-size="7" font-weight="600" fill="#1e40af">l × w × h</text>
+        <line x1="70" y1="75" x2="150" y2="75" stroke="#6b7280" stroke-width="1"/>
+        <text x="75" y="70" font-size="7" fill="#6b7280">Ruler</text>
+    </g>
+
+    <!-- Displacement can setup -->
+    <g id="displacement">
+        <text x="480" y="50" font-size="10" font-weight="600" fill="#1e40af">Irregular Solid (Displacement)</text>
+        <!-- Can -->
+        <path d="M 420 120 L 420 160 Q 420 170 430 170 L 510 170 Q 520 170 520 160 L 520 120 Z" fill="#e0f2fe" stroke="#2563eb" stroke-width="2"/>
+        <path d="M 420 120 L 430 120 L 430 110 L 510 110 L 510 120 L 520 120" fill="#e0f2fe" stroke="#2563eb" stroke-width="2"/>
+        <!-- Water inside -->
+        <path d="M 425 160 L 515 160" stroke="#3b82f6" stroke-width="8" opacity="0.6"/>
+        <!-- Overflow spout -->
+        <path d="M 530 155 L 560 155" stroke="#3b82f6" stroke-width="2"/>
+        <text x="480" y="185" text-anchor="middle" font-size="8" fill="#1e40af">Overflow water</text>
+        <!-- Rock/solid in water -->
+        <circle cx="470" cy="145" r="12" fill="#8b7355" stroke="#6b7280" stroke-width="1.5"/>
+        <text x="470" y="200" text-anchor="middle" font-size="8" fill="#6b7280">Irregular solid</text>
+    </g>
+
+    <!-- Measuring cylinder for liquid -->
+    <g id="liquid">
+        <text x="150" y="270" font-size="10" font-weight="600" fill="#1e40af">Liquid Density</text>
+        <!-- Cylinder outline -->
+        <path d="M 90 310 L 90 350 Q 90 360 100 360 L 130 360 Q 140 360 140 350 L 140 310 Z" fill="none" stroke="#2563eb" stroke-width="2"/>
+        <path d="M 90 310 L 100 310 L 100 300 L 130 300 L 130 310 L 140 310" fill="none" stroke="#2563eb" stroke-width="2"/>
+        <!-- Water level -->
+        <line x1="85" y1="335" x2="145" y2="335" stroke="#3b82f6" stroke-width="8" opacity="0.5"/>
+        <!-- Scale markings -->
+        <line x1="85" y1="320" x2="90" y2="320" stroke="#6b7280" stroke-width="0.5"/>
+        <line x1="85" y1="330" x2="90" y2="330" stroke="#6b7280" stroke-width="0.5"/>
+        <line x1="85" y1="340" x2="90" y2="340" stroke="#6b7280" stroke-width="0.5"/>
+        <line x1="85" y1="350" x2="90" y2="350" stroke="#6b7280" stroke-width="0.5"/>
+        <text x="75" y="335" font-size="8" fill="#6b7280" text-anchor="end">V</text>
+        <!-- Balance showing mass -->
+        <text x="115" y="385" text-anchor="middle" font-size="8" font-weight="600" fill="#1e40af">Measure m on balance</text>
+        <text x="115" y="397" text-anchor="middle" font-size="8" font-weight="600" fill="#1e40af">Read V from cylinder</text>
+    </g>
+
+    <!-- Formulas -->
+    <rect x="80" y="310" width="520" height="60" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="90" y="330" font-size="10" font-weight="600" fill="#1e40af">Formulas:</text>
+    <text x="90" y="350" font-size="9" fill="#1a1a2e">Regular solid: V = length × width × height | ρ = m / V</text>
+    <text x="90" y="365" font-size="9" fill="#1a1a2e">Irregular solid: V = volume displaced (read from measuring cylinder) | ρ = m / V</text>
+</svg>
+
+<h3>Method — Regular Solids</h3>
+<ol>
+    <li>Measure the <strong>mass</strong> of the solid using the balance. Record to nearest 0.01 g.</li>
+    <li>Using a ruler or vernier caliper, measure the <strong>dimensions</strong> of the solid:
+        <ul>
+            <li><strong>Cuboid:</strong> length, width, height (in cm or m)</li>
+            <li><strong>Cylinder:</strong> diameter (or radius) and height</li>
+        </ul>
+    </li>
+    <li>Calculate the <strong>volume</strong>:
+        <br/><code>V = l × w × h</code> (cuboid, in cm³)
+        <br/><code>V = π × r² × h</code> (cylinder, in cm³)
+    </li>
+    <li>Calculate the <strong>density</strong>:
+        <br/><code>ρ = m / V</code> (g/cm³ or kg/m³)
+    </li>
+</ol>
+
+<h3>Method — Irregular Solids</h3>
+<ol>
+    <li>Measure the <strong>mass</strong> of the solid using the balance.</li>
+    <li>Fill a displacement can (Eureka can) with water until it flows out of the spout into a beaker.</li>
+    <li>When water stops flowing, carefully lower the irregular solid into the can using a string or holder.</li>
+    <li>Collect all the water that overflows into the beaker.</li>
+    <li>Pour the displaced water into a measuring cylinder and record the <strong>volume</strong> (in mL or cm³).</li>
+    <li>Calculate the <strong>density</strong>:
+        <br/><code>ρ = m / V</code>
+    </li>
+</ol>
+
+<h3>Method — Liquids</h3>
+<ol>
+    <li>Measure the mass of an <strong>empty measuring cylinder</strong> using the balance. Record as m₁.</li>
+    <li>Pour the liquid into the measuring cylinder to a convenient mark (e.g. 50 mL or 100 mL) and record the <strong>volume</strong> (V) at eye level (meniscus at bottom).</li>
+    <li>Measure the mass of the cylinder <strong>with liquid</strong>. Record as m₂.</li>
+    <li>Calculate the mass of the liquid: <code>m = m₂ − m₁</code></li>
+    <li>Calculate the <strong>density</strong>:
+        <br/><code>ρ = m / V</code>
+    </li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Mass (m):</strong> in grams (g) or kilograms (kg)</li>
+    <li><strong>Volume (V):</strong> in cm³ (or mL) or m³</li>
+    <li><strong>Density (ρ):</strong> ρ = m / V, in g/cm³ or kg/m³</li>
+    <li><strong>Typical values:</strong> water ~1.0 g/cm³; aluminum ~2.7 g/cm³; iron ~7.9 g/cm³; lead ~11.3 g/cm³</li>
+    <li><strong>Conversion:</strong> 1 g/cm³ = 1000 kg/m³</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Parallax error (reading measuring cylinder):</strong> Always read the meniscus at eye level. For water, read from the bottom of the meniscus curve.</li>
+    <li><strong>Incomplete submersion (irregular solids):</strong> Ensure the solid is fully submerged in the displacement can; if it floats, use a holder or weight to keep it under.</li>
+    <li><strong>Water spillage in displacement method:</strong> Use a tray to catch spilled water. Ensure the overflow spout is at the correct height before the solid is inserted.</li>
+    <li><strong>Air bubbles on solid surface:</strong> Pat the solid dry with tissue before weighing; ensure no air bubbles are attached when submerging.</li>
+    <li><strong>Balance error:</strong> Check that the balance reads zero when empty. Use a consistent balance for all measurements.</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Water spillage:</strong> Keep area dry to avoid slipping.</li>
+    <li><strong>Heavy solids:</strong> Use care when handling dense objects (lead, iron); avoid dropping on feet.</li>
+</ul>
+
+<h2>RP6 — Force and Extension (Hooke's Law)</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Investigate the extension of a spring as force is increased, demonstrating Hooke's law: F = ke, where F is force, k is the spring constant, and e is extension.
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Spring (low stiffness, e.g. 100 g/cm or 200 g/cm)</li>
+    <li>Retort stand, boss, and clamp (to hang spring vertically)</li>
+    <li>Metre ruler (or 30 cm ruler, fixed vertically beside spring)</li>
+    <li>Mass hanger (e.g. 50 g)</li>
+    <li>Slotted masses (100 g each, or 50 g increments)</li>
+    <li>Pointer (optional, card strip to help with ruler reading)</li>
+    <li>Safety tray (to catch falling masses)</li>
+</ul>
+
+<svg viewBox="0 0 600 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;margin:20px auto;display:block;">
+    <text x="300" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP6: Hooke's Law — Apparatus</text>
+
+    <!-- Retort stand -->
+    <rect x="80" y="40" width="10" height="350" fill="#a0a0a0" stroke="#1a1a2e" stroke-width="1"/>
+    <rect x="60" y="380" width="50" height="10" fill="#a0a0a0" stroke="#1a1a2e" stroke-width="1"/>
+
+    <!-- Boss and clamp -->
+    <circle cx="85" cy="80" r="8" fill="#c0c0c0" stroke="#1a1a2e" stroke-width="1.5"/>
+    <rect x="80" y="75" width="10" height="15" fill="#c0c0c0"/>
+
+    <!-- Spring (coiled) -->
+    <path d="M 85 95 Q 75 105 85 115 Q 95 125 85 135 Q 75 145 85 155 Q 95 165 85 175 Q 75 185 85 195 Q 95 205 85 215" stroke="#2563eb" stroke-width="3" fill="none"/>
+    <text x="50" y="140" font-size="9" font-weight="600" fill="#2563eb">Spring</text>
+
+    <!-- Metre ruler (vertical) -->
+    <line x1="160" y1="50" x2="160" y2="380" stroke="#6b7280" stroke-width="2"/>
+    <line x1="155" y1="60" x2="165" y2="60" stroke="#6b7280" stroke-width="1"/>
+    <text x="170" y="65" font-size="8" fill="#6b7280">0 cm</text>
+    <line x1="155" y1="140" x2="165" y2="140" stroke="#6b7280" stroke-width="1"/>
+    <text x="170" y="145" font-size="8" fill="#6b7280">10 cm</text>
+    <line x1="155" y1="220" x2="165" y2="220" stroke="#6b7280" stroke-width="1"/>
+    <text x="170" y="225" font-size="8" fill="#6b7280">20 cm</text>
+    <line x1="155" y1="300" x2="165" y2="300" stroke="#6b7280" stroke-width="1"/>
+    <text x="170" y="305" font-size="8" fill="#6b7280">30 cm</text>
+    <text x="180" y="210" font-size="9" font-weight="600" fill="#1e40af">Ruler</text>
+
+    <!-- Mass hanger (light) at L0 -->
+    <circle cx="85" cy="220" r="6" fill="#d97706" stroke="#1a1a2e" stroke-width="1.5"/>
+    <text x="105" y="225" font-size="8" fill="#d97706">L₀ (no load)</text>
+
+    <!-- Loads added -->
+    <g id="mass1">
+        <rect x="75" y="235" width="20" height="25" fill="#d97706" stroke="#1a1a2e" stroke-width="1.5" rx="2"/>
+        <text x="85" y="252" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">100g</text>
+        <text x="105" y="250" font-size="8" fill="#d97706">e₁</text>
+    </g>
+
+    <g id="mass2">
+        <rect x="75" y="268" width="20" height="25" fill="#d97706" stroke="#1a1a2e" stroke-width="1.5" rx="2"/>
+        <text x="85" y="285" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">100g</text>
+        <text x="105" y="285" font-size="8" fill="#d97706">e₂</text>
+    </g>
+
+    <g id="mass3">
+        <rect x="75" y="300" width="20" height="25" fill="#d97706" stroke="#1a1a2e" stroke-width="1.5" rx="2"/>
+        <text x="85" y="317" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">100g</text>
+        <text x="105" y="315" font-size="8" fill="#d97706">e₃</text>
+    </g>
+
+    <!-- Safety tray at bottom -->
+    <rect x="50" y="385" width="70" height="15" fill="#fca5a5" stroke="#dc2626" stroke-width="2" rx="2"/>
+    <text x="85" y="396" text-anchor="middle" font-size="8" font-weight="600" fill="#dc2626">Safety tray</text>
+
+    <!-- Data table -->
+    <rect x="340" y="80" width="230" height="300" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="350" y="100" font-size="10" font-weight="600" fill="#1e40af">Procedure:</text>
+    <text x="350" y="120" font-size="9" fill="#1a1a2e">1. Set up stand, clamp spring vertically.</text>
+    <text x="350" y="135" font-size="9" fill="#1a1a2e">2. Attach hanger (unloaded); note position on ruler (L₀).</text>
+    <text x="350" y="150" font-size="9" fill="#1a1a2e">3. Add 100 g mass; record new length L₁.</text>
+    <text x="350" y="165" font-size="9" fill="#1a1a2e">Calculate: e = L − L₀</text>
+    <text x="350" y="180" font-size="9" fill="#1a1a2e">Calculate: F = mg (in N)</text>
+    <text x="350" y="195" font-size="9" fill="#1a1a2e">4. Repeat with 200 g, 300 g, 400 g, 500 g.</text>
+    <text x="350" y="210" font-size="9" fill="#1a1a2e">5. Plot F vs. e graph.</text>
+    <text x="350" y="225" font-size="9" fill="#1a1a2e">Expect: straight line through origin (within elastic limit)</text>
+    <text x="350" y="240" font-size="9" fill="#1a1a2e">Gradient = k (spring constant)</text>
+    <text x="350" y="255" font-size="9" fill="#1a1a2e">Beyond limit: curve bends (permanent deformation)</text>
+</svg>
+
+<h3>Method</h3>
+<ol>
+    <li>Set up the retort stand with the clamp at the top. Hang the spring from the clamp.</li>
+    <li>Position a vertical metre ruler beside the spring so you can read the position easily.</li>
+    <li>Attach the mass hanger (empty) to the spring's lower end. Record the <strong>unstretched length</strong> L₀ (or initial pointer position on the ruler).</li>
+    <li>Add a <strong>100 g mass</strong> to the hanger. Wait for equilibrium and record the new length L₁.</li>
+    <li>Calculate the extension: <code>e = L − L₀</code> (in cm)</li>
+    <li>Calculate the force: <code>F = mg = 0.1 × 10 = 1 N</code> (use g = 10 m/s² for simplicity)</li>
+    <li>Repeat steps 4–6 by adding more masses: 200 g, 300 g, 400 g, 500 g (or until spring is noticeably stretched).</li>
+    <li>Tabulate all results (mass in g, F in N, L in cm, e in cm).</li>
+    <li>Plot a graph of <strong>Force (N) vs. Extension (cm)</strong>. Use the first few data points (within elastic limit).</li>
+    <li>Measure the gradient of the straight section: gradient = k (spring constant, in N/cm or N/m).</li>
+    <li>Verify Hooke's law: <code>F = ke</code></li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Unstretched length (L₀):</strong> initial position on ruler, in cm</li>
+    <li><strong>Loaded length (L):</strong> position on ruler with masses, in cm</li>
+    <li><strong>Extension (e):</strong> e = L − L₀, in cm or m</li>
+    <li><strong>Force (F):</strong> F = mg, in newtons (N). Use g = 10 m/s² or 9.8 m/s²</li>
+    <li><strong>Spring constant (k):</strong> k = F / e (N/cm or N/m)</li>
+    <li><strong>Hooke's law:</strong> F = ke (within elastic limit)</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Parallax error (reading ruler):</strong> Always read the ruler at eye level, with the pointer aligned with the ruler mark.</li>
+    <li><strong>Exceeding elastic limit:</strong> Spring may not return to original length if stretched too far. Add masses carefully and stop if permanent deformation occurs (spring doesn't return when unloaded).</li>
+    <li><strong>Spring vibration:</strong> Allow spring to settle before recording each reading (wait ~10 seconds after adding a mass).</li>
+    <li><strong>Friction in clamp:</strong> Ensure clamp is tight enough to prevent slipping but not so tight that it damages the spring.</li>
+    <li><strong>Initial loading:</strong> The mass hanger itself stretches the spring slightly; account for this by measuring L₀ with the hanger already attached (no additional masses).</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Falling masses:</strong> Use a safety tray beneath the apparatus. Do not work below the spring when masses are loaded.</li>
+    <li><strong>Eye protection:</strong> Wear safety glasses in case a mass slips and falls.</li>
+    <li><strong>Spring breakage:</strong> Do not exceed the elastic limit; do not exceed the safe loading given by the manufacturer.</li>
+</ul>
+
+<h2>RP7 — Acceleration</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Investigate how acceleration depends on (a) the resultant force for a fixed total mass, and (b) the mass for a fixed resultant force. Demonstrates Newton's second law: F = ma.
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Trolley (low-friction, ~500 g)</li>
+    <li>Air track or friction-compensated runway (low-friction surface)</li>
+    <li>Light gates (two) or ticker timer with paper tape</li>
+    <li>Data logger (for light gates)</li>
+    <li>String and pulley</li>
+    <li>Slotted masses (e.g. 100 g each)</li>
+    <li>Mass hanger (e.g. 10 g)</li>
+    <li>Ruler (for measuring distances between light gates or tape marks)</li>
+</ul>
+
+<svg viewBox="0 0 750 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:750px;margin:20px auto;display:block;">
+    <text x="375" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP7: Acceleration — Apparatus (Light Gates Method)</text>
+
+    <!-- Track/runway -->
+    <line x1="80" y1="150" x2="720" y2="150" stroke="#8b7355" stroke-width="6"/>
+    <text x="400" y="170" text-anchor="middle" font-size="9" fill="#6b7280">Low-friction air track or runway (slightly tilted to compensate friction)</text>
+
+    <!-- Trolley (starting position) -->
+    <rect x="100" y="130" width="50" height="40" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="2"/>
+    <text x="125" y="155" text-anchor="middle" font-size="8" font-weight="600" fill="#1e40af">Trolley</text>
+
+    <!-- String over pulley -->
+    <path d="M 150 150 L 700 150" stroke="#d97706" stroke-width="2"/>
+    <circle cx="710" cy="100" r="8" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+    <text x="715" y="85" font-size="8" fill="#1a1a2e">Pulley</text>
+
+    <!-- Hanging mass (force) -->
+    <g id="hanging-mass">
+        <rect x="695" y="165" width="30" height="60" fill="#f59e0b" stroke="#1a1a2e" stroke-width="1.5" rx="2"/>
+        <text x="710" y="198" text-anchor="middle" font-size="8" font-weight="600" fill="#fff">m</text>
+        <text x="738" y="205" font-size="9" fill="#1e40af">Hanging mass</text>
+    </g>
+
+    <!-- Light gate 1 -->
+    <g id="gate1">
+        <line x1="280" y1="100" x2="280" y2="160" stroke="#16a34a" stroke-width="3"/>
+        <circle cx="280" cy="130" r="8" fill="#dbeafe" stroke="#16a34a" stroke-width="2"/>
+        <text x="285" y="135" text-anchor="start" font-size="7" fill="#16a34a" font-weight="600">G1</text>
+        <text x="280" y="180" text-anchor="middle" font-size="8" fill="#16a34a" font-weight="600">Gate 1</text>
+    </g>
+
+    <!-- Light gate 2 -->
+    <g id="gate2">
+        <line x1="520" y1="100" x2="520" y2="160" stroke="#16a34a" stroke-width="3"/>
+        <circle cx="520" cy="130" r="8" fill="#dbeafe" stroke="#16a34a" stroke-width="2"/>
+        <text x="525" y="135" text-anchor="start" font-size="7" fill="#16a34a" font-weight="600">G2</text>
+        <text x="520" y="180" text-anchor="middle" font-size="8" fill="#16a34a" font-weight="600">Gate 2</text>
+    </g>
+
+    <!-- Distance between gates -->
+    <path d="M 280 125 L 520 125" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="400" y="115" text-anchor="middle" font-size="8" fill="#dc2626" font-weight="600">Distance d</text>
+
+    <!-- Data logger -->
+    <g id="logger">
+        <rect x="590" y="240" width="100" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+        <text x="640" y="265" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Data Logger</text>
+        <text x="640" y="288" text-anchor="middle" font-size="8" fill="#6b7280">(records times)</text>
+    </g>
+
+    <!-- Cables from gates to logger -->
+    <line x1="280" y1="160" x2="280" y2="210" stroke="#6b7280" stroke-width="1"/>
+    <line x1="280" y1="210" x2="610" y2="210" stroke="#6b7280" stroke-width="1"/>
+    <line x1="520" y1="160" x2="520" y2="210" stroke="#6b7280" stroke-width="1"/>
+    <line x1="520" y1="210" x2="670" y2="210" stroke="#6b7280" stroke-width="1"/>
+    <line x1="610" y1="210" x2="610" y2="240" stroke="#6b7280" stroke-width="1"/>
+    <line x1="670" y1="210" x2="670" y2="240" stroke="#6b7280" stroke-width="1"/>
+
+    <!-- Notes box -->
+    <rect x="80" y="250" width="480" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="90" y="270" font-size="10" font-weight="600" fill="#1e40af">Procedure:</text>
+    <text x="90" y="288" font-size="9" fill="#1a1a2e">Part (a): Vary force (add masses to hanger) while keeping total mass constant (move masses from trolley to hanger).</text>
+    <text x="90" y="303" font-size="9" fill="#1a1a2e">Part (b): Vary total mass (add slotted masses to trolley) while keeping force constant (same hanging mass).</text>
+    <text x="90" y="318" font-size="9" fill="#1a1a2e">Calculate acceleration from: a = (v₂ − v₁) / t, where v = d / Δt (light gate times the distance)</text>
+</svg>
+
+<h3>Method</h3>
+<ol>
+    <li>Set up the air track or runway slightly tilted to compensate for friction (nearly horizontal).</li>
+    <li>Place the trolley on the track and attach a string that runs over a pulley to a hanging mass hanger.</li>
+    <li>Position two light gates along the track at a known distance apart (e.g. 50 cm). Connect to a data logger to measure transit times.</li>
+    <li>Start with a fixed setup:
+        <ul>
+            <li><strong>Trolley mass (m_t):</strong> trolley + some slotted masses</li>
+            <li><strong>Hanging mass (m_h):</strong> small mass on hanger (e.g. 10 g)</li>
+            <li><strong>Total system mass:</strong> m_total = m_t + m_h</li>
+        </ul>
+    </li>
+    <li><strong>Part (a) — Vary force, constant total mass:</strong>
+        <ul>
+            <li>Release the trolley and record the time taken to pass through each gate (Δt₁ and Δt₂).</li>
+            <li>Calculate velocities: v₁ = d / Δt₁ and v₂ = d / Δt₂ (where d is the gate separation).</li>
+            <li>Calculate acceleration: a = (v₂ − v₁) / Δt_between (or use data logger analysis).</li>
+            <li>Add another mass to the hanger (move one from the trolley to the hanger, keeping total constant).</li>
+            <li>Repeat the measurement. Record new force F = m_h × g and acceleration a.</li>
+            <li>Repeat for 3–4 different hanging masses (and corresponding trolley mass reductions).</li>
+            <li>Plot a graph of <strong>a vs. F</strong>; expect a straight line through origin (a ∝ F).</li>
+        </ul>
+    </li>
+    <li><strong>Part (b) — Vary mass, constant force:</strong>
+        <ul>
+            <li>Return to original setup. Keep hanging mass constant (e.g. 10 g).</li>
+            <li>Measure acceleration.</li>
+            <li>Add a slotted mass (100 g) to the trolley, keeping hanging mass the same.</li>
+            <li>Repeat measurements for 4–5 different trolley masses.</li>
+            <li>Plot a graph of <strong>a vs. 1/m_total</strong> (or a vs. m_total); expect a straight line or inverse relationship (a ∝ 1/m).</li>
+        </ul>
+    </li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Distance between gates (d):</strong> in metres, e.g. 0.5 m</li>
+    <li><strong>Transit times:</strong> Δt₁ and Δt₂ (through each gate), in seconds</li>
+    <li><strong>Velocities:</strong> v = d / Δt (m/s)</li>
+    <li><strong>Acceleration:</strong> a = (v₂ − v₁) / t_between (m/s²)</li>
+    <li><strong>Force:</strong> F = m_h × g (newtons, where m_h is in kg)</li>
+    <li><strong>Newton's second law:</strong> F = m_total × a</li>
+    <li><strong>Part (a) gradient:</strong> F vs. a should give k = m_total (mass, in kg)</li>
+    <li><strong>Part (b) gradient:</strong> a vs. F should be constant; 1/a vs. m_total should be linear</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Friction on track:</strong> Tilt the track slightly to compensate for friction. The trolley should move at constant velocity when released without the hanging mass pulling it.</li>
+    <li><strong>Air resistance:</strong> Negligible at low speeds but becomes noticeable at high speeds. Keep experiments at reasonable speeds.</li>
+    <li><strong>Light gate inaccuracy:</strong> Ensure gates are aligned perpendicular to the trolley's path. Use identical gates for both measurements.</li>
+    <li><strong>Timing errors:</strong> Use a data logger for automatic timing rather than manual stopwatch timing (much more accurate).</li>
+    <li><strong>String slipping on pulley:</strong> Ensure pulley is smooth and string is taut throughout the experiment.</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Trolley motion:</strong> Keep fingers and loose clothing clear of the moving trolley and pulley.</li>
+    <li><strong>Falling masses:</strong> Ensure the hanging mass falls into a container (beaker) at the end of the track.</li>
+</ul>
+
+<h2>RP8 — Waves (Ripple Tank or String)</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Measure the frequency, wavelength, and speed of waves using a ripple tank (water waves) or oscillator on a stretched string. Wave speed v = f × λ.
+</div>
+
+<h3>Apparatus — Ripple Tank Method</h3>
+<ul>
+    <li>Ripple tank (clear plastic or glass tank with shallow water)</li>
+    <li>Vibrator (mechanical or electromagnetic) attached to signal generator</li>
+    <li>Signal generator (1–50 Hz range typical)</li>
+    <li>Strobe lamp or frequency-matched illumination (optional, for freezing waves)</li>
+    <li>Screen or white card beneath tank (for shadow visualization)</li>
+    <li>Ruler (for measuring wavelength)</li>
+    <li>Water (distilled or tap water)</li>
+</ul>
+
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP8: Ripple Tank Apparatus (Top View)</text>
+
+    <!-- Tank -->
+    <rect x="100" y="80" width="400" height="200" fill="#e0f2fe" stroke="#2563eb" stroke-width="3" rx="8"/>
+    <text x="300" y="185" text-anchor="middle" font-size="10" fill="#3b82f6" font-weight="600">Water surface (shallow)</text>
+
+    <!-- Vibrator at one end -->
+    <circle cx="150" cy="120" r="12" fill="#f59e0b" stroke="#1a1a2e" stroke-width="2"/>
+    <text x="150" y="125" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">V</text>
+    <text x="130" y="70" font-size="9" font-weight="600" fill="#1e40af">Vibrator</text>
+    <path d="M 150 107 L 150 120 M 160 107 L 160 120 M 140 107 L 140 120" stroke="#f59e0b" stroke-width="2"/>
+
+    <!-- Wavefronts (circular ripples) -->
+    <circle cx="150" cy="180" r="20" fill="none" stroke="#1e40af" stroke-width="2"/>
+    <circle cx="150" cy="180" r="40" fill="none" stroke="#1e40af" stroke-width="1.5" opacity="0.7"/>
+    <circle cx="150" cy="180" r="60" fill="none" stroke="#1e40af" stroke-width="1" opacity="0.5"/>
+
+    <!-- Wavelength measurement -->
+    <path d="M 170 180 L 210 180" stroke="#dc2626" stroke-width="2"/>
+    <line x1="170" y1="175" x2="170" y2="185" stroke="#dc2626" stroke-width="1.5"/>
+    <line x1="210" y1="175" x2="210" y2="185" stroke="#dc2626" stroke-width="1.5"/>
+    <text x="190" y="205" text-anchor="middle" font-size="8" font-weight="600" fill="#dc2626">λ (wavelength)</text>
+
+    <!-- Ruler (shown) -->
+    <line x1="520" y1="80" x2="520" y2="280" stroke="#6b7280" stroke-width="2"/>
+    <text x="545" y="180" font-size="9" font-weight="600" fill="#1e40af">Ruler</text>
+
+    <!-- Signal generator -->
+    <rect x="100" y="330" width="100" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="150" y="355" text-anchor="middle" font-size="9" font-weight="600" fill="#1e40af">Signal Gen.</text>
+    <text x="150" y="370" text-anchor="middle" font-size="8" fill="#6b7280">(frequency f)</text>
+
+    <!-- Connection to vibrator -->
+    <line x1="150" y1="330" x2="150" y2="132" stroke="#1a1a2e" stroke-width="1.5" stroke-dasharray="3,3"/>
+
+    <!-- Strobe lamp (optional) -->
+    <rect x="280" y="20" width="70" height="40" fill="#fbbf24" stroke="#f59e0b" stroke-width="2" rx="4"/>
+    <text x="315" y="45" text-anchor="middle" font-size="8" font-weight="600" fill="#1a1a2e">Strobe Lamp</text>
+
+    <!-- Method box -->
+    <rect x="100" y="310" width="500" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6" y="310"/>
+    <text x="110" y="330" font-size="10" font-weight="600" fill="#1e40af">Method:</text>
+    <text x="110" y="348" font-size="9" fill="#1a1a2e">1. Fill tank with ~1 cm of water. 2. Set signal generator to frequency f (e.g. 5 Hz). 3. Turn on vibrator. 4. Measure distance between wavefronts (λ) using ruler. 5. Calculate v = f × λ.</text>
+    <text x="110" y="363" font-size="9" fill="#1a1a2e">Strobe lamp: Flash at same frequency as vibrator to "freeze" waves for easier measurement.</text>
+</svg>
+
+<h3>Method — Ripple Tank</h3>
+<ol>
+    <li>Fill the ripple tank with water to a shallow depth (approximately 1–2 cm).</li>
+    <li>Attach the vibrator to the signal generator. Set the frequency to a starting value (e.g. 5 Hz).</li>
+    <li>Turn on the vibrator and observe waves spreading across the tank surface.</li>
+    <li>Using a ruler placed across the tank (or a strobe lamp synchronized to the frequency), measure the distance between successive wavefronts (the <strong>wavelength λ</strong>).</li>
+    <li>Record the frequency f from the signal generator.</li>
+    <li>Calculate the wave speed: <code>v = f × λ</code></li>
+    <li>Vary the frequency (e.g. 5, 8, 10, 12 Hz) and repeat measurements to show how wavelength changes while wave speed remains approximately constant (in the same medium).</li>
+</ol>
+
+<h3>Apparatus — Stretched String Method</h3>
+<ul>
+    <li>String (length ~1–2 m, low tension)</li>
+    <li>Oscillator (vibrator attached to signal generator, ~10–50 Hz)</li>
+    <li>Fixed support (retort stand or clamp)</li>
+    <li>String support/fixed end</li>
+    <li>Ruler (for measuring wavelength)</li>
+    <li>Signal generator</li>
+</ul>
+
+<h3>Method — Stretched String</h3>
+<ol>
+    <li>Set up the string: one end attached to the oscillator, the other end fixed to a support (or held lightly to allow reflection).</li>
+    <li>Adjust the tension in the string (by raising/lowering the fixed support) until standing waves form at a convenient frequency (e.g. 20–30 Hz).</li>
+    <li>Observe <strong>standing wave patterns</strong> (nodes and antinodes) along the string's length.</li>
+    <li>Count the number of half-wavelengths along the string. If there are n half-wavelengths, then the full wavelength λ = 2 × (string length) / n.</li>
+    <li>Alternatively, measure the distance between adjacent nodes (or antinodes) directly; this distance = λ / 2.</li>
+    <li>Record the frequency f from the signal generator.</li>
+    <li>Calculate the wave speed: <code>v = f × λ</code></li>
+    <li>Vary the frequency and observe how the standing wave pattern changes (more nodes at higher frequency).</li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Frequency (f):</strong> from signal generator, in hertz (Hz)</li>
+    <li><strong>Wavelength (λ):</strong> distance between successive wavefronts (ripples) or twice the distance between nodes, in metres (m) or centimetres (cm)</li>
+    <li><strong>Wave speed (v):</strong> v = f × λ (m/s)</li>
+    <li><strong>Period (T):</strong> T = 1 / f (seconds)</li>
+    <li><strong>Expected behaviour:</strong> In a ripple tank with fixed water depth, v remains constant; as f increases, λ decreases proportionally.</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Measuring wavelength (ripple tank):</strong> Water movements and reflections from tank edges can distort the wave pattern. Use a strobe lamp synchronized to the vibrator frequency to "freeze" the waves, making measurement easier and more accurate.</li>
+    <li><strong>Vibrator alignment (ripple tank):</strong> Ensure the vibrator just touches the water surface without splashing or submerging. Adjust height if needed.</li>
+    <li><strong>Tank reflections:</strong> Waves reflect from the tank edges and create interference patterns. Measure wavelength away from edges and early in the experiment before reflections become prominent.</li>
+    <li><strong>String tension (oscillator method):</strong> Inconsistent tension changes wave speed. Keep tension fixed during measurements.</li>
+    <li><strong>Frequency calibration:</strong> Check the signal generator against an independent frequency counter if high accuracy is needed.</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Electrical safety (signal generator):</strong> Use a low-voltage supply. Avoid contact with water and electrical connections simultaneously.</li>
+    <li><strong>Strobe lamp (if used):</strong> Flashing lights can induce discomfort. Keep exposure time short and take breaks between observations.</li>
+</ul>
+
+<h2>RP9 — Light (Reflection and Refraction)</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Investigate the law of reflection (angle of incidence = angle of reflection) and refraction through a glass block (angle changes when light passes between media of different optical densities).
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Ray box or laser pointer (low-power, e.g. &lt;5 mW)</li>
+    <li>Rectangular glass block (or semicircular glass block for refraction)</li>
+    <li>Protractor (for measuring angles)</li>
+    <li>Plain white paper</li>
+    <li>Pencil (sharp, for drawing rays)</li>
+    <li>Mirror (plane, flat) for reflection experiments</li>
+    <li>Ruler</li>
+    <li>Dark room or screen (to improve ray visibility)</li>
+</ul>
+
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <defs>
+        <marker id="arrowRay" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto">
+            <polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/>
+        </marker>
+    </defs>
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP9: Light — Refraction Diagram</text>
+
+    <!-- Glass block -->
+    <rect x="150" y="100" width="140" height="200" fill="#e0f2fe" stroke="#2563eb" stroke-width="2"/>
+    <text x="220" y="210" text-anchor="middle" font-size="9" font-weight="600" fill="#2563eb" opacity="0.6">Glass block</text>
+
+    <!-- Normal at first surface (incident) -->
+    <line x1="220" y1="80" x2="220" y2="330" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>
+    <text x="235" y="105" font-size="8" fill="#dc2626" font-weight="600">Normal</text>
+
+    <!-- Incident ray -->
+    <line x1="140" y1="140" x2="220" y2="100" stroke="#f59e0b" stroke-width="2"/>
+    <text x="155" y="115" font-size="8" fill="#f59e0b" font-weight="600">Incident</text>
+
+    <!-- Angle of incidence label -->
+    <path d="M 220 105 Q 200 108 200 125" stroke="#dc2626" stroke-width="1" fill="none"/>
+    <text x="185" y="125" font-size="8" fill="#dc2626" font-weight="600">i</text>
+
+    <!-- Refracted ray inside glass -->
+    <line x1="220" y1="100" x2="240" y2="250" stroke="#16a34a" stroke-width="2"/>
+    <text x="255" y="170" font-size="8" fill="#16a34a" font-weight="600">Refracted</text>
+
+    <!-- Angle of refraction label -->
+    <path d="M 220 115 Q 210 125 215 140" stroke="#16a34a" stroke-width="1" fill="none"/>
+    <text x="215" y="145" font-size="8" fill="#16a34a" font-weight="600">r</text>
+
+    <!-- Normal at exit surface -->
+    <line x1="290" y1="60" x2="290" y2="320" stroke="#dc2626" stroke-width="1" stroke-dasharray="2,2"/>
+
+    <!-- Emergent ray -->
+    <line x1="240" y1="250" x2="340" y2="310" stroke="#f59e0b" stroke-width="2"/>
+    <text x="290" y="290" font-size="8" fill="#f59e0b" font-weight="600">Emergent</text>
+
+    <!-- Key observations -->
+    <rect x="420" y="80" width="260" height="280" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="430" y="100" font-size="10" font-weight="600" fill="#1e40af">Key Observations:</text>
+
+    <text x="430" y="120" font-size="9" font-weight="600" fill="#1e3a5f">Refraction:</text>
+    <text x="430" y="138" font-size="8.5" fill="#1a1a2e">• Entering glass (denser</text>
+    <text x="440" y="150" font-size="8.5" fill="#1a1a2e">medium): ray bends</text>
+    <text x="440" y="162" font-size="8.5" fill="#1a1a2e">toward the normal</text>
+
+    <text x="430" y="180" font-size="8.5" fill="#1a1a2e">• Leaving glass (less</text>
+    <text x="440" y="192" font-size="8.5" fill="#1a1a2e">dense): ray bends</text>
+    <text x="440" y="204" font-size="8.5" fill="#1a1a2e">away from normal</text>
+
+    <text x="430" y="222" font-size="8.5" fill="#1a1a2e">• Angle inside glass (r)</text>
+    <text x="440" y="234" font-size="8.5" fill="#1a1a2e">is smaller than angle</text>
+    <text x="440" y="246" font-size="8.5" fill="#1a1a2e">in air (i)</text>
+
+    <text x="430" y="264" font-size="8.5" fill="#1a1a2e">• Emergent ray parallel</text>
+    <text x="440" y="276" font-size="8.5" fill="#1a1a2e">to incident ray (laterally</text>
+    <text x="440" y="288" font-size="8.5" fill="#1a1a2e">displaced)</text>
+
+    <text x="430" y="310" font-size="9" font-weight="600" fill="#1e3a5f">Snell's Law:</text>
+    <text x="430" y="328" font-size="8.5" fill="#1a1a2e">n₁ sin i = n₂ sin r</text>
+    <text x="430" y="345" font-size="8" fill="#6b7280">(where n = refractive index)</text>
+</svg>
+
+<h3>Method — Reflection</h3>
+<ol>
+    <li>Place a plane mirror on a sheet of white paper.</li>
+    <li>Draw a line perpendicular to the mirror surface (the <strong>normal</strong>).</li>
+    <li>Using the ray box, shine a light ray at the mirror at a shallow angle (e.g. 30° from the normal).</li>
+    <li>Trace the incident ray and the reflected ray on the paper.</li>
+    <li>Using a protractor, measure the <strong>angle of incidence</strong> (i) and the <strong>angle of reflection</strong> (r) from the normal.</li>
+    <li>Verify: <strong>angle of incidence = angle of reflection</strong> (law of reflection)</li>
+    <li>Repeat at different angles (e.g. 20°, 40°, 50°, 60°).</li>
+</ol>
+
+<h3>Method — Refraction</h3>
+<ol>
+    <li>Place a rectangular glass block on a sheet of white paper and draw around its outline with a pencil.</li>
+    <li>Remove the glass block. Draw a normal line perpendicular to one side of the outline (the point of incidence).</li>
+    <li>Place the glass block back on the outline.</li>
+    <li>Using the ray box, shine a light ray toward the glass block at an angle (e.g. 40° from the normal).</li>
+    <li>Look at the emergent ray on the opposite side and trace it on the paper.</li>
+    <li>Remove the glass block and draw:
+        <ul>
+            <li>The incident ray (from ray box to block)</li>
+            <li>The refracted ray (inside the block, based on the light path you observed)</li>
+            <li>The emergent ray (from block exit to where it hits the paper)</li>
+        </ul>
+    </li>
+    <li>Measure:
+        <ul>
+            <li><strong>Angle of incidence (i):</strong> between incident ray and normal</li>
+            <li><strong>Angle of refraction (r):</strong> between refracted ray and normal inside the block</li>
+        </ul>
+    </li>
+    <li>Verify: <strong>r &lt; i</strong> (ray bends toward normal entering denser medium)</li>
+    <li>Calculate the <strong>refractive index</strong>: <code>n = sin i / sin r</code> (for glass, typically ~1.5)</li>
+    <li>Note: The emergent ray is parallel to the incident ray but laterally displaced.</li>
+    <li>Repeat at different angles (e.g. 30°, 50°, 60°) to gather more data.</li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Angle of incidence (i):</strong> angle between incident ray and normal, in degrees</li>
+    <li><strong>Angle of reflection (r):</strong> angle between reflected ray and normal, in degrees</li>
+    <li><strong>Law of reflection:</strong> i = r (for reflection)</li>
+    <li><strong>Angle of refraction (θ):</strong> angle between refracted ray and normal inside the block, in degrees</li>
+    <li><strong>Snell's Law:</strong> n₁ sin i = n₂ sin θ (where n₁ = 1.0 for air, n₂ ≈ 1.5 for glass)</li>
+    <li><strong>Refractive index of glass:</strong> n = sin i / sin θ ≈ 1.5 (typical value)</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Accuracy of angle measurement:</strong> Use a sharp pencil and a clear protractor. Ensure the normal is drawn perpendicular to the surface (use a set square or ruler).</li>
+    <li><strong>Ray box alignment:</strong> Ensure the ray is narrow and clearly defined. Use a slit if necessary.</li>
+    <li><strong>Light scattering in glass:</strong> Minor light scattering can make the ray path less distinct. Use a dark room and keep the glass block clean.</li>
+    <li><strong>Lateral displacement:</strong> The emergent ray's position depends on the glass block thickness. Keep thickness constant when repeating measurements.</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Laser safety:</strong> If using a laser pointer, avoid looking directly into the beam. Do not shine it at reflective surfaces where it could reflect into eyes.</li>
+    <li><strong>Glass block:</strong> Glass blocks are fragile; handle carefully to avoid breakage and sharp edges.</li>
+</ul>
+
+<h2>RP10 — Infrared Radiation (Leslie Cube)</h2>
+
+<div class="definition">
+    <strong>Aim:</strong> Investigate how the rate of infrared radiation emission depends on the surface properties (color and texture). Demonstrate that matte black surfaces are the best emitters of infrared radiation; shiny surfaces are poor emitters.
+</div>
+
+<h3>Apparatus</h3>
+<ul>
+    <li>Leslie cube (a hollow metal cube with four different surfaces):
+        <ul>
+            <li>Shiny black (matt black paint)</li>
+            <li>Matte black (dull black paint)</li>
+            <li>Shiny silver (polished or silvered surface)</li>
+            <li>Matte white (white paint)</li>
+        </ul>
+    </li>
+    <li>Boiling water (or hot water from a kettle or Bunsen burner)</li>
+    <li>Infrared detector (thermopile or IR sensor) or infrared thermometer</li>
+    <li>Data logger with temperature sensor (optional)</li>
+    <li>Ruler (for measuring distance from cube to detector)</li>
+    <li>Thermometer (to confirm water temperature)</li>
+    <li>Stand or support for IR detector (to position at fixed distance)</li>
+</ul>
+
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">RP10: Infrared Radiation (Leslie Cube) — Apparatus</text>
+
+    <!-- Leslie Cube (square from front view) -->
+    <g id="cube">
+        <text x="200" y="70" font-size="10" font-weight="600" fill="#1e40af">Leslie Cube (four surfaces)</text>
+        <!-- Face 1: Shiny black (dark grey) -->
+        <rect x="80" y="100" width="60" height="120" fill="#2a2a2a" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="110" y="165" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">Shiny</text>
+        <text x="110" y="175" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">Black</text>
+
+        <!-- Face 2: Matte black (black) -->
+        <rect x="145" y="100" width="60" height="120" fill="#000" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="175" y="165" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">Matte</text>
+        <text x="175" y="175" text-anchor="middle" font-size="7" fill="#fff" font-weight="600">Black</text>
+
+        <!-- Face 3: Matte white -->
+        <rect x="210" y="100" width="60" height="120" fill="#f5f5f5" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="240" y="165" text-anchor="middle" font-size="7" fill="#1a1a2e" font-weight="600">Matte</text>
+        <text x="240" y="175" text-anchor="middle" font-size="7" fill="#1a1a2e" font-weight="600">White</text>
+
+        <!-- Face 4: Shiny silver (light grey) -->
+        <rect x="275" y="100" width="60" height="120" fill="#d0d0d0" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="305" y="165" text-anchor="middle" font-size="7" fill="#1a1a2e" font-weight="600">Shiny</text>
+        <text x="305" y="175" text-anchor="middle" font-size="7" fill="#1a1a2e" font-weight="600">Silver</text>
+    </g>
+
+    <!-- Boiling water inside (shown with heat waves) -->
+    <g id="heat-source">
+        <text x="175" y="240" text-anchor="middle" font-size="9" font-weight="600" fill="#dc2626">Hot water inside (~100°C)</text>
+        <path d="M 150 250 Q 155 245 160 250 Q 165 245 170 250" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+        <path d="M 200 250 Q 205 245 210 250 Q 215 245 220 250" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+        <path d="M 250 250 Q 255 245 260 250 Q 265 245 270 250" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+    </g>
+
+    <!-- IR Detector setup -->
+    <g id="detector">
+        <text x="450" y="140" font-size="10" font-weight="600" fill="#1e40af">IR Detector</text>
+        <circle cx="520" cy="160" r="15" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+        <text x="520" y="165" text-anchor="middle" font-size="8" font-weight="600" fill="#1e40af">IR</text>
+        <line x1="520" y1="175" x2="520" y2="200" stroke="#1a1a2e" stroke-width="2"/>
+        <text x="520" y="220" text-anchor="middle" font-size="8" fill="#1a1a2e" font-weight="600">Stand</text>
+    </g>
+
+    <!-- Distance marker -->
+    <path d="M 350 150 L 490 150" stroke="#f59e0b" stroke-width="2" stroke-dasharray="3,3"/>
+    <text x="420" y="140" text-anchor="middle" font-size="8" fill="#f59e0b" font-weight="600">~10 cm distance</text>
+
+    <!-- Data table -->
+    <rect x="80" y="290" width="550" height="100" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="6"/>
+    <text x="90" y="310" font-size="10" font-weight="600" fill="#1e40af">Procedure:</text>
+    <text x="90" y="330" font-size="9" fill="#1a1a2e">1. Fill Leslie cube with boiling water (~100°C). 2. Position IR detector at fixed distance (~10 cm) perpendicular to each face. 3. Record IR reading for each surface (same time interval, e.g. 30–60 seconds).</text>
+    <text x="90" y="350" font-size="9" fill="#1a1a2e">4. Compare readings: Matte black &gt; Matte white &gt; Shiny surfaces. 5. Repeat as cube cools to show relative emission rates remain constant.</text>
+    <text x="90" y="370" font-size="9" fill="#1a1a2e">Conclusions: Matte black = best emitter (absorber) of IR. Shiny/light surfaces = poor emitters (reflectors). Dark, rough surfaces absorb and emit more IR than bright, smooth surfaces.</text>
+</svg>
+
+<h3>Method</h3>
+<ol>
+    <li>Fill the Leslie cube with boiling water (approximately 100°C). Allow water to heat all four surfaces uniformly for a minute.</li>
+    <li>Check that the temperature inside is stable using a thermometer inserted into the cube.</li>
+    <li>Position the infrared detector (thermopile or IR sensor) at a fixed distance from the cube (e.g. 10 cm perpendicular to the surface). Use a ruler to ensure consistency.</li>
+    <li>Point the detector at the <strong>shiny black surface</strong> and record the IR reading (or data logger output) after waiting ~10–15 seconds for stabilization. Record the reading.</li>
+    <li>Reposition the detector to face the <strong>matte black surface</strong> (at the same distance) and record the reading.</li>
+    <li>Repeat for the <strong>matte white surface</strong> and <strong>shiny silver surface</strong>.</li>
+    <li>Tabulate the results for each surface at the same water temperature.</li>
+    <li>Repeat the measurements as the cube cools (e.g. every 5 minutes for 20 minutes) to observe how emission rates change with temperature. The relative order should remain the same (matte black highest, shiny lowest).</li>
+    <li>Plot a graph of IR reading vs. surface type (bar chart) and vs. temperature (line graph) for each surface.</li>
+</ol>
+
+<h3>Key Measurements and Calculations</h3>
+<ul>
+    <li><strong>Temperature of cube:</strong> measured with thermometer, in °C or K</li>
+    <li><strong>IR detector reading:</strong> voltage (mV) or relative units proportional to radiated power</li>
+    <li><strong>Surface comparison:</strong> Relative IR readings show which surfaces emit most:
+        <ul>
+            <li>Matte black: highest reading (best emitter)</li>
+            <li>Matte white: medium reading</li>
+            <li>Shiny black: lower reading (some reflection)</li>
+            <li>Shiny silver: lowest reading (poor emitter, good reflector)</li>
+        </ul>
+    </li>
+    <li><strong>Temperature effect:</strong> As cube cools, all IR readings decrease, but relative order remains the same.</li>
+</ul>
+
+<h3>Sources of Error & Minimisation</h3>
+<ul>
+    <li><strong>Detector distance:</strong> Always position the detector at the same distance from each surface (~10 cm). Measure with a ruler to ensure consistency. IR intensity decreases with the square of distance (inverse square law).</li>
+    <li><strong>Detector alignment:</strong> Point the detector perpendicular to each surface; angled approaches reduce the effective radiation received.</li>
+    <li><strong>Temperature variation:</strong> Measure the water temperature before and after each set of readings. Ideally, take all four readings in quick succession to minimize cooling.</li>
+    <li><strong>Ambient IR radiation:</strong> Reflections from the environment (other hot objects, walls, sun) can affect readings. Conduct experiment in a thermally controlled room if possible, and shield detector from other heat sources.</li>
+    <li><strong>Detector calibration:</strong> Check that the IR detector is working correctly by comparing readings with a known heat source.</li>
+</ul>
+
+<h3>Safety Considerations</h3>
+<ul>
+    <li><strong>Boiling water:</strong> Handle with care; use heat-resistant gloves or tongs. Avoid splashing.</li>
+    <li><strong>Hot cube:</strong> The Leslie cube becomes very hot; do not touch directly. Allow to cool before handling.</li>
+    <li><strong>Water spillage:</strong> Keep the work area dry to prevent slipping.</li>
+</ul>
+
+</div>
+</body>
+</html>

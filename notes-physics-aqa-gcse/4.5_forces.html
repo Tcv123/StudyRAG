@@ -1,0 +1,1246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.5 — Forces</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        sub { font-size: 0.8em; }
+        sup { font-size: 0.8em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.5 Forces</h1>
+<p class="spec-ref">AQA GCSE Physics (8463) — Paper 2</p>
+
+<h2>4.5.1 Forces and Their Interactions</h2>
+
+<div class="definition">
+    A <strong>force</strong> is a push, pull, or twist that can change the motion, shape, or direction of an object. Forces are <strong>vector quantities</strong> — they have both magnitude (size) and direction. They are represented by arrows: the length of the arrow shows the size of the force, and the direction of the arrow shows the direction of the force.
+</div>
+
+<h3>Scalars and Vectors</h3>
+
+<p>In physics, quantities are divided into two categories:</p>
+
+<table>
+    <tr>
+        <th>Scalars (magnitude only)</th>
+        <th>Vectors (magnitude + direction)</th>
+    </tr>
+    <tr>
+        <td>Mass, distance, speed, energy, time, temperature, volume, density, power</td>
+        <td>Displacement, velocity, acceleration, force, momentum, weight</td>
+    </tr>
+    <tr>
+        <td>Fully described by a number and unit alone. Example: 5 kg, 20 m, 60 m/s</td>
+        <td>Require both a number/unit AND a direction. Example: 20 m north, 30 N upward, 5 m/s² to the right</td>
+    </tr>
+</table>
+
+<div class="exam-tip">When you see "50 m" without a direction, it is a scalar distance. When you see "50 m north," it is a vector displacement. The same applies to speed vs velocity, and mass vs weight.</div>
+
+<h3>Types of Forces</h3>
+
+<p><strong>Contact forces:</strong> arise from direct contact between objects.</p>
+<ul>
+    <li><strong>Friction:</strong> opposes relative motion between surfaces in contact</li>
+    <li><strong>Air resistance (drag):</strong> opposes motion through air</li>
+    <li><strong>Tension:</strong> pulling force exerted by a rope, string, or cable</li>
+    <li><strong>Normal contact force:</strong> perpendicular push from a surface supporting an object</li>
+</ul>
+
+<p><strong>Non-contact forces:</strong> act across empty space; no direct contact needed.</p>
+<ul>
+    <li><strong>Gravitational force:</strong> attraction between all objects with mass; strongest between Earth and nearby objects</li>
+    <li><strong>Electrostatic force:</strong> attraction or repulsion between charged particles</li>
+    <li><strong>Magnetic force:</strong> attraction or repulsion involving magnetic poles or currents</li>
+</ul>
+
+<svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Forces acting on a sliding block</text>
+
+    <!-- Block -->
+    <rect x="250" y="220" width="100" height="80" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="300" y="265" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Block</text>
+
+    <!-- Surface -->
+    <rect x="150" y="300" width="400" height="8" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+
+    <!-- Weight (non-contact, gravity) - arrow down from centre -->
+    <line x1="300" y1="300" x2="300" y2="380" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+    <text x="315" y="340" font-size="10" fill="#dc2626" font-weight="bold">Weight W</text>
+    <text x="315" y="355" font-size="9" fill="#666">(gravity)</text>
+
+    <!-- Normal contact force (contact, perpendicular) - arrow up -->
+    <line x1="300" y1="220" x2="300" y2="140" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+    <text x="315" y="180" font-size="10" fill="#16a34a" font-weight="bold">Normal N</text>
+    <text x="315" y="195" font-size="9" fill="#666">(contact)</text>
+
+    <!-- Applied force (contact, rightward) -->
+    <line x1="350" y1="260" x2="450" y2="260" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+    <text x="400" y="250" font-size="10" fill="#2563eb" font-weight="bold">Applied force F</text>
+
+    <!-- Friction (contact, leftward) -->
+    <line x1="250" y1="260" x2="170" y2="260" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+    <text x="180" y="250" font-size="10" fill="#f59e0b" font-weight="bold">Friction f</text>
+    <text x="180" y="265" font-size="9" fill="#666">(contact)</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+    </defs>
+</svg>
+
+<h2>4.5.2 Gravity and Weight</h2>
+
+<div class="definition">
+    <strong>Weight (W)</strong> is the gravitational force exerted on an object by Earth (or another planet). It is calculated using:
+    <p style="margin: 10px 0;"><code>W = m × g</code></p>
+    where <strong>m</strong> is mass (kg) and <strong>g</strong> is the gravitational field strength (N/kg). On Earth, g ≈ 9.8 N/kg. Weight is measured in newtons (N).
+</div>
+
+<div class="definition">
+    <strong>Mass</strong> is an intrinsic property of matter — it is the amount of substance and remains constant wherever the object is located. <strong>Weight</strong> is the gravitational force on that mass and depends on the local gravitational field strength g.
+</div>
+
+<h3>Weight on Different Planets</h3>
+
+<p>The value of g varies across the universe:</p>
+<ul>
+    <li><strong>Earth:</strong> g = 9.8 N/kg (often rounded to 10 N/kg for calculations)</li>
+    <li><strong>Moon:</strong> g ≈ 1.6 N/kg (one-sixth of Earth's)</li>
+    <li><strong>Mars:</strong> g ≈ 3.7 N/kg</li>
+</ul>
+
+<p><strong>Worked example:</strong> A person has a mass of 70 kg.</p>
+<ul>
+    <li>On <strong>Earth:</strong> W = 70 × 9.8 = 686 N (or 700 N using g = 10)</li>
+    <li>On the <strong>Moon:</strong> W = 70 × 1.6 = 112 N (same mass, much lighter)</li>
+    <li>On <strong>Mars:</strong> W = 70 × 3.7 = 259 N</li>
+</ul>
+
+<div class="exam-tip">Do not confuse mass and weight. A 10 kg object has the same mass on Earth and on the Moon, but it weighs much more on Earth (98 N vs 16 N). In exam questions, if you are asked for weight, use W = m × g. If asked for mass, it will be given or you must find it from weight using m = W / g.</div>
+
+<h3>Centre of Mass</h3>
+
+<div class="definition">
+    The <strong>centre of mass</strong> (or centre of gravity) is the point at which the entire mass of an object can be considered to act for the purposes of calculating effects. For a uniform, symmetrical object, the centre of mass is at the geometric centre. For irregular shapes, it may be off-centre.
+</div>
+
+<p>The weight force acts downward from the centre of mass. This is important when calculating moments and predicting whether an object will topple.</p>
+
+<h2>4.5.3 Resultant Forces</h2>
+
+<div class="definition">
+    The <strong>resultant force</strong> (or net force) is a single force that has the same effect as all the forces acting on an object combined. It is found by vector addition — taking direction into account.
+</div>
+
+<h3>Parallel Forces</h3>
+
+<p>When forces act along the same line (e.g., horizontal or vertical), they are combined algebraically:</p>
+<ul>
+    <li>Forces in the same direction: <strong>add</strong> them. Example: 5 N right + 3 N right = 8 N right</li>
+    <li>Forces in opposite directions: <strong>subtract</strong> them. Example: 10 N right + 3 N left = 7 N right</li>
+</ul>
+
+<h3>Perpendicular Forces (Higher)</h3>
+
+<p>When forces act at right angles to each other, use the Pythagorean theorem to find the magnitude of the resultant, and trigonometry to find its direction.</p>
+
+<p><strong>Magnitude:</strong> R² = F₁² + F₂²  (where R is the resultant force)</p>
+
+<p><strong>Direction:</strong> tan(θ) = opposite / adjacent</p>
+
+<svg viewBox="0 0 700 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Vector triangle: perpendicular forces and resultant</text>
+
+    <!-- Point of origin -->
+    <circle cx="250" cy="280" r="4" fill="#1e40af" stroke="none"/>
+
+    <!-- Horizontal force (3 N) -->
+    <line x1="250" y1="280" x2="370" y2="280" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+    <text x="310" y="265" font-size="11" font-weight="bold" fill="#2563eb">F₁ = 3 N</text>
+
+    <!-- Vertical force (4 N) -->
+    <line x1="370" y1="280" x2="370" y2="160" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+    <text x="385" y="220" font-size="11" font-weight="bold" fill="#16a34a">F₂ = 4 N</text>
+
+    <!-- Resultant (5 N) from origin to top-right -->
+    <line x1="250" y1="280" x2="370" y2="160" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="295" y="215" font-size="12" font-weight="bold" fill="#dc2626">R = 5 N</text>
+
+    <!-- Right angle indicator -->
+    <rect x="360" y="270" width="10" height="10" fill="none" stroke="#666" stroke-width="1"/>
+
+    <!-- Angle label -->
+    <path d="M 280 280 Q 300 265 310 245" fill="none" stroke="#f59e0b" stroke-width="1.5" stroke-dasharray="2,2"/>
+    <text x="285" y="245" font-size="10" fill="#f59e0b" font-weight="bold">θ ≈ 53°</text>
+
+    <!-- Working shown -->
+    <rect x="30" y="320" width="340" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+    <text x="40" y="340" font-size="10" font-weight="bold" fill="#1e40af">Calculation:</text>
+    <text x="40" y="358" font-size="10" fill="#1a1a2e">R² = 3² + 4² = 9 + 16 = 25</text>
+    <text x="40" y="375" font-size="10" fill="#1a1a2e">R = √25 = 5 N</text>
+    <text x="40" y="392" font-size="10" fill="#1a1a2e">tan(θ) = 4/3  →  θ = 53.1° from horizontal</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+    </defs>
+</svg>
+
+<h3>Free-Body Diagrams</h3>
+
+<div class="definition">
+    A <strong>free-body diagram</strong> shows all the forces acting on a single object as arrows pointing away from a dot (representing the object). It helps identify the resultant force and predict motion.
+</div>
+
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Free-body diagrams: flat surface and inclined plane</text>
+
+    <!-- LEFT: Block on flat surface -->
+    <g>
+        <text x="150" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">On a flat surface</text>
+
+        <!-- Surface -->
+        <rect x="50" y="200" width="200" height="8" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+
+        <!-- Block -->
+        <rect x="100" y="140" width="100" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+
+        <!-- Free-body diagram (dot at top) -->
+        <circle cx="260" cy="120" r="6" fill="#1e40af" stroke="#1e40af" stroke-width="2"/>
+
+        <!-- Weight down -->
+        <line x1="260" y1="126" x2="260" y2="200" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+        <text x="275" y="160" font-size="10" fill="#dc2626" font-weight="bold">W = mg</text>
+
+        <!-- Normal up -->
+        <line x1="260" y1="114" x2="260" y2="40" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+        <text x="275" y="75" font-size="10" fill="#16a34a" font-weight="bold">N</text>
+
+        <text x="150" y="300" text-anchor="middle" font-size="9" fill="#666">W = N (balanced)</text>
+    </g>
+
+    <!-- RIGHT: Block on inclined plane -->
+    <g>
+        <text x="600" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">On an inclined plane</text>
+
+        <!-- Inclined surface (30° angle) -->
+        <line x1="500" y1="250" x2="700" y2="250" stroke="#4b5563" stroke-width="2"/>
+        <polygon points="700,250 680,210 720,210" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+
+        <!-- Block on slope -->
+        <rect x="580" y="200" width="60" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4" transform="rotate(-30 610 225)"/>
+
+        <!-- Free-body diagram -->
+        <circle cx="710" cy="140" r="6" fill="#1e40af" stroke="#1e40af" stroke-width="2"/>
+
+        <!-- Weight straight down -->
+        <line x1="710" y1="146" x2="710" y2="220" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+        <text x="725" y="180" font-size="10" fill="#dc2626" font-weight="bold">W = mg</text>
+
+        <!-- Normal perpendicular to slope (up-left at 60°) -->
+        <line x1="710" y1="140" x2="650" y2="80" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+        <text x="640" y="105" font-size="10" fill="#16a34a" font-weight="bold">N</text>
+
+        <!-- Friction along slope (up-left at 30°) -->
+        <line x1="710" y1="140" x2="670" y2="120" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+        <text x="680" y="135" font-size="10" fill="#f59e0b" font-weight="bold">f</text>
+
+        <text x="600" y="300" text-anchor="middle" font-size="9" fill="#666">W is resolved; N ⊥ slope; f || slope</text>
+    </g>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+    </defs>
+</svg>
+
+<h2>4.5.4 Work Done and Energy Transfer</h2>
+
+<div class="definition">
+    <strong>Work (W)</strong> is done when a force causes an object to move in the direction of that force. It is calculated as:
+    <p style="margin: 10px 0;"><code>W = F × d × cos(θ)</code></p>
+    where <strong>F</strong> is the force (N), <strong>d</strong> is the distance moved (m), and <strong>θ</strong> is the angle between force and displacement. If the force is in the direction of motion, cos(θ) = 1, so:
+    <p style="margin: 10px 0;"><code>W = F × d</code></p>
+    Work is measured in joules (J). 1 joule = 1 newton metre (1 N·m).
+</div>
+
+<p><strong>Key points:</strong></p>
+<ul>
+    <li>Work is a scalar — it has magnitude but no direction</li>
+    <li>Work is <strong>only</strong> done by the component of force in the direction of motion</li>
+    <li>If force and displacement are perpendicular (θ = 90°), no work is done</li>
+    <li>Work done can increase kinetic energy, potential energy, or thermal energy</li>
+</ul>
+
+<p><strong>Worked example:</strong> A person pushes a box 5 metres along a horizontal surface with a horizontal force of 20 N. Calculate the work done.</p>
+<pre>W = F × d = 20 × 5 = 100 J</pre>
+
+<p><strong>Energy transfer via work:</strong> When friction acts on a moving object, work is done against friction, and the mechanical energy is converted to thermal energy (heat). This is why brakes get hot and why it takes effort to drag objects across rough surfaces.</p>
+
+<div class="exam-tip">Remember: work is done BY a force, not ON a force. The work done by friction opposes motion and converts kinetic energy into heat. The work done by an applied force in the direction of motion increases kinetic energy or potential energy.</div>
+
+<h2>4.5.5 Forces and Elasticity</h2>
+
+<h3>Elastic vs Plastic Deformation</h3>
+
+<div class="definition">
+    <strong>Elastic deformation:</strong> the material returns to its original shape and size when the force is removed (e.g., a stretched spring, a bent ruler). No permanent change occurs.
+    <br><br>
+    <strong>Plastic (inelastic) deformation:</strong> the material does not return to its original shape after the force is removed (e.g., a bent paperclip, putty). Some permanent change occurs.
+</div>
+
+<h3>Hooke's Law</h3>
+
+<div class="definition">
+    <strong>Hooke's law</strong> states that, for small extensions, the extension of a spring is directly proportional to the force applied:
+    <p style="margin: 10px 0;"><code>F = k × e</code></p>
+    where <strong>F</strong> is the applied force (N), <strong>k</strong> is the spring constant (N/m), and <strong>e</strong> is the extension (m). This is only valid up to the <strong>limit of proportionality</strong>.
+</div>
+
+<h3>Limit of Proportionality</h3>
+
+<p>Beyond the limit of proportionality, the force-extension graph is no longer linear. The material enters the plastic region and may not return to its original length even if the force is removed. The spring constant becomes undefined.</p>
+
+<svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Force-extension graph: linear region and limit of proportionality</text>
+
+    <!-- Axes -->
+    <line x1="80" y1="380" x2="680" y2="380" stroke="#333" stroke-width="2" marker-end="url(#arrowBlack)"/>
+    <line x1="80" y1="380" x2="80" y2="60" stroke="#333" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+    <!-- Axis labels -->
+    <text x="680" y="400" font-size="11" font-weight="bold" fill="#1a1a2e">Extension e (m)</text>
+    <text x="20" y="220" font-size="11" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 20 220)">Force F (N)</text>
+
+    <!-- Grid lines -->
+    <line x1="180" y1="380" x2="180" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="180" y="395" text-anchor="middle" font-size="9" fill="#666">0.05</text>
+
+    <line x1="280" y1="380" x2="280" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="280" y="395" text-anchor="middle" font-size="9" fill="#666">0.10</text>
+
+    <line x1="380" y1="380" x2="380" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="380" y="395" text-anchor="middle" font-size="9" fill="#666">0.15</text>
+
+    <line x1="480" y1="380" x2="480" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="480" y="395" text-anchor="middle" font-size="9" fill="#666">0.20</text>
+
+    <line x1="580" y1="380" x2="580" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="580" y="395" text-anchor="middle" font-size="9" fill="#666">0.25</text>
+
+    <!-- Y-axis grid -->
+    <line x1="80" y1="320" x2="85" y2="320" stroke="#999" stroke-width="1"/>
+    <text x="65" y="325" text-anchor="end" font-size="9" fill="#666">50</text>
+
+    <line x1="80" y1="260" x2="85" y2="260" stroke="#999" stroke-width="1"/>
+    <text x="65" y="265" text-anchor="end" font-size="9" fill="#666">100</text>
+
+    <line x1="80" y1="200" x2="85" y2="200" stroke="#999" stroke-width="1"/>
+    <text x="65" y="205" text-anchor="end" font-size="9" fill="#666">150</text>
+
+    <line x1="80" y1="140" x2="85" y2="140" stroke="#999" stroke-width="1"/>
+    <text x="65" y="145" text-anchor="end" font-size="9" fill="#666">200</text>
+
+    <!-- Straight line region (Hooke's law, up to limit) -->
+    <line x1="80" y1="380" x2="420" y2="80" stroke="#2563eb" stroke-width="3"/>
+
+    <!-- Curved region (plastic, non-linear) -->
+    <path d="M 420 80 Q 500 60 580 120 T 680 300" fill="none" stroke="#2563eb" stroke-width="3"/>
+
+    <!-- Limit of proportionality point -->
+    <circle cx="420" cy="80" r="5" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="440" y="70" font-size="10" font-weight="bold" fill="#f59e0b">Limit of</text>
+    <text x="440" y="85" font-size="10" font-weight="bold" fill="#f59e0b">proportionality</text>
+
+    <!-- Labels -->
+    <text x="250" y="250" font-size="10" font-weight="bold" fill="#2563eb">Linear region</text>
+    <text x="250" y="265" font-size="10" font-weight="bold" fill="#2563eb">(F = ke)</text>
+
+    <text x="520" y="160" font-size="10" font-weight="bold" fill="#2563eb">Plastic region</text>
+    <text x="520" y="175" font-size="10" font-weight="bold" fill="#2563eb">(non-linear)</text>
+
+    <defs>
+        <marker id="arrowBlack" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#333"/></marker>
+    </defs>
+</svg>
+
+<h3>Elastic Potential Energy</h3>
+
+<div class="definition">
+    The <strong>elastic potential energy (EPE)</strong> stored in a stretched or compressed spring is:
+    <p style="margin: 10px 0;"><code>EPE = ½ × k × e²</code></p>
+    Alternatively, since W = F × e and the average force is F/2, we can also write:
+    <p style="margin: 10px 0;"><code>EPE = ½ × F × e</code></p>
+    This is the area under the force-extension graph up to the extension point.
+</div>
+
+<p><strong>Worked example:</strong> A spring with spring constant k = 50 N/m is stretched by 0.1 m. Calculate the elastic potential energy stored.</p>
+<pre>EPE = ½ × k × e²
+EPE = ½ × 50 × (0.1)²
+EPE = ½ × 50 × 0.01
+EPE = 0.25 J</pre>
+
+<p>Also, the force at this extension is F = 50 × 0.1 = 5 N, so EPE = ½ × 5 × 0.1 = 0.25 J (consistent).</p>
+
+<div class="exam-tip">The elastic potential energy depends on extension squared (e²), so doubling the extension quadruples the stored energy. Remember to use the extension (or compression), not the new length of the spring.</div>
+
+<div class="exam-tip">Required Practical 6 links here: investigating how the extension of a spring varies with the force applied. Plot a graph of force vs extension, measure the gradient to find k, and note where the limit of proportionality occurs.</div>
+
+<h2>4.5.6 Moments, Levers and Gears (Higher/Triple)</h2>
+
+<h3>Moments and Turning Forces</h3>
+
+<div class="definition">
+    A <strong>moment (or torque)</strong> is the turning effect of a force about a pivot. It is calculated as:
+    <p style="margin: 10px 0;"><code>M = F × d</code></p>
+    where <strong>F</strong> is the force (N) and <strong>d</strong> is the perpendicular distance from the pivot to the line of action of the force (m). Moment is measured in newton metres (Nm).
+</div>
+
+<h3>Principle of Moments</h3>
+
+<div class="definition">
+    For an object to be in equilibrium (not turning), the sum of clockwise moments about a pivot must equal the sum of anticlockwise moments:
+    <p style="margin: 10px 0;"><code>Total clockwise moment = Total anticlockwise moment</code></p>
+</div>
+
+<p><strong>Worked example:</strong> A seesaw has a 400 N child sitting 1.5 m to the left of the pivot. A 600 N child sits to the right. How far must the heavier child sit for balance?</p>
+<pre>Clockwise moment = Anticlockwise moment
+400 × 1.5 = 600 × d
+600 = 600 × d
+d = 1.0 m
+
+The 600 N child must sit 1.0 m from the pivot.</pre>
+
+<svg viewBox="0 0 800 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Seesaw in equilibrium: clockwise and anticlockwise moments</text>
+
+    <!-- Seesaw plank -->
+    <rect x="200" y="180" width="400" height="20" fill="#a78bfa" stroke="#7c3aed" stroke-width="2" rx="4"/>
+
+    <!-- Pivot (fulcrum) -->
+    <polygon points="400,200 380,230 420,230" fill="#6b7280" stroke="#4b5563" stroke-width="2"/>
+    <text x="400" y="270" text-anchor="middle" font-size="9" fill="#666">Pivot</text>
+
+    <!-- Left child (400 N) -->
+    <circle cx="300" cy="150" r="20" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="300" y="158" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">400 N</text>
+
+    <!-- Weight arrow left child -->
+    <line x1="300" y1="170" x2="300" y2="200" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+    <!-- Distance left from pivot -->
+    <line x1="300" y1="215" x2="400" y2="215" stroke="#f59e0b" stroke-width="2" marker-end="url(#arrowAmber)" marker-start="url(#arrowAmber)"/>
+    <text x="350" y="235" text-anchor="middle" font-size="10" font-weight="bold" fill="#f59e0b">d = 1.5 m</text>
+
+    <!-- Right child (600 N) -->
+    <circle cx="500" cy="150" r="20" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="500" y="158" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">600 N</text>
+
+    <!-- Weight arrow right child -->
+    <line x1="500" y1="170" x2="500" y2="200" stroke="#dc2626" stroke-width="2" marker-end="url(#arrowRed)"/>
+
+    <!-- Distance right from pivot -->
+    <line x1="400" y1="215" x2="500" y2="215" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowGreen)" marker-start="url(#arrowGreen)"/>
+    <text x="450" y="235" text-anchor="middle" font-size="10" font-weight="bold" fill="#16a34a">d = 1.0 m</text>
+
+    <!-- Moment labels -->
+    <text x="300" y="310" text-anchor="middle" font-size="11" font-weight="bold" fill="#f59e0b">M = 400 × 1.5 = 600 Nm (clockwise)</text>
+    <text x="500" y="310" text-anchor="middle" font-size="11" font-weight="bold" fill="#16a34a">M = 600 × 1.0 = 600 Nm (anticlockwise)</text>
+    <text x="400" y="330" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">Moments are equal → In equilibrium</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+    </defs>
+</svg>
+
+<h3>Levers</h3>
+
+<div class="definition">
+    A <strong>lever</strong> is a simple machine that uses moments to magnify force. It consists of a rigid bar (the lever) rotating about a pivot (fulcrum). The <strong>load</strong> is the force resisting motion; the <strong>effort</strong> is the applied force.
+    <br><br>
+    <strong>Mechanical advantage</strong> = Load / Effort. A mechanical advantage greater than 1 means the lever multiplies force (force multiplier).
+</div>
+
+<p><strong>Class 1 lever:</strong> Pivot is between effort and load. Example: crowbar, seesaw, scissors. The effort arm and load arm can be different lengths, creating a force multiplier.</p>
+
+<svg viewBox="0 0 750 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:750px;margin:20px auto;display:block;">
+    <text x="375" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Class 1 lever: crowbar (effort multiplies force to lift load)</text>
+
+    <!-- Crowbar (lever) -->
+    <rect x="100" y="180" width="600" height="12" fill="#a78bfa" stroke="#7c3aed" stroke-width="2" rx="4"/>
+
+    <!-- Pivot (fulcrum) under crowbar -->
+    <polygon points="300,192 280,220 320,220" fill="#6b7280" stroke="#4b5563" stroke-width="2"/>
+    <text x="300" y="240" text-anchor="middle" font-size="9" fill="#666">Pivot</text>
+
+    <!-- Load (rock) on right end -->
+    <rect x="680" y="160" width="40" height="40" fill="#9ca3af" stroke="#4b5563" stroke-width="2" rx="4"/>
+    <text x="700" y="185" text-anchor="middle" font-size="10" font-weight="bold" fill="#fff">Load</text>
+
+    <!-- Load force (upward) -->
+    <line x1="700" y1="160" x2="700" y2="100" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+    <text x="715" y="125" font-size="10" fill="#16a34a" font-weight="bold">Load L</text>
+
+    <!-- Effort (hand pushing down on left end) -->
+    <circle cx="120" cy="130" r="15" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="120" y="138" text-anchor="middle" font-size="8" fill="#1e40af">Hand</text>
+
+    <!-- Effort force (downward) -->
+    <line x1="120" y1="145" x2="120" y2="195" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+    <text x="105" y="170" font-size="10" fill="#dc2626" font-weight="bold">Effort E</text>
+
+    <!-- Distance labels -->
+    <line x1="120" y1="210" x2="300" y2="210" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arrowRed2)" marker-start="url(#arrowRed2)"/>
+    <text x="210" y="225" text-anchor="middle" font-size="9" font-weight="bold" fill="#dc2626">Effort arm</text>
+    <text x="210" y="240" text-anchor="middle" font-size="8" fill="#666">(long)</text>
+
+    <line x1="300" y1="210" x2="700" y2="210" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arrowGreen2)" marker-start="url(#arrowGreen2)"/>
+    <text x="500" y="225" text-anchor="middle" font-size="9" font-weight="bold" fill="#16a34a">Load arm (short)</text>
+
+    <!-- Info box -->
+    <rect x="50" y="260" width="700" height="35" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+    <text x="60" y="280" font-size="10" fill="#1a1a2e">Long effort arm × small effort force can balance short load arm × large load. Crowbar multiplies force!</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+        <marker id="arrowRed2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowGreen2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+    </defs>
+</svg>
+
+<h3>Gears</h3>
+
+<p><strong>Gears</strong> are rotating wheels with teeth that transfer rotation and force. When a small gear drives a large gear:</p>
+<ul>
+    <li>The large gear rotates more slowly</li>
+    <li>The torque (turning effect) on the large gear is increased</li>
+    <li>This is useful in machines that need high torque at low speed (e.g., car gearboxes)</li>
+</ul>
+
+<p>The <strong>gear ratio</strong> = (teeth on driven gear) / (teeth on driving gear). A ratio > 1 increases torque but decreases speed.</p>
+
+<div class="exam-tip">Gears are a practical application of the principle of moments. A smaller gear applying force at a larger radius (larger driven gear) creates a larger moment. Remember: all the power input equals power output, but work and distance trade off with force and torque.</div>
+
+<h2>4.5.7 Pressure and Pressure in Fluids (Higher/Triple)</h2>
+
+<h3>Pressure Definition</h3>
+
+<div class="definition">
+    <strong>Pressure (P)</strong> is the force per unit area. It is calculated as:
+    <p style="margin: 10px 0;"><code>P = F / A</code></p>
+    where <strong>F</strong> is the perpendicular force (N) and <strong>A</strong> is the area (m²). Pressure is measured in pascals (Pa), where 1 Pa = 1 N/m². Other units include kPa (kilopascals), MPa (megapascals), and atm (atmospheres).
+</div>
+
+<h3>Pressure and Area</h3>
+
+<p>High pressure arises from large force on a small area; low pressure arises from a force distributed over a large area.</p>
+
+<p><strong>Examples:</strong></p>
+<ul>
+    <li><strong>Stiletto heels:</strong> narrow heel area → very high pressure → can damage floors</li>
+    <li><strong>Knife blade:</strong> thin, sharp edge → high pressure → cuts easily</li>
+    <li><strong>Snowshoes:</strong> large area → low pressure → do not sink into snow</li>
+    <li><strong>Flat shoes:</strong> large contact area → low pressure → comfortable</li>
+</ul>
+
+<p><strong>Worked example:</strong> A person with weight 600 N stands on a floor. The contact area is 0.003 m² (about the area of two footprints). Calculate the pressure.</p>
+<pre>P = F / A = 600 / 0.003 = 200,000 Pa = 200 kPa</pre>
+
+<h3>Pressure in Fluids (Higher/Triple)</h3>
+
+<div class="definition">
+    The pressure at a depth in a fluid (liquid or gas) is determined by the weight of fluid above:
+    <p style="margin: 10px 0;"><code>P = h × ρ × g</code></p>
+    where <strong>h</strong> is the depth (m), <strong>ρ</strong> is the density of the fluid (kg/m³), and <strong>g</strong> is gravitational field strength (9.8 N/kg). This assumes incompressible fluid and neglects the pressure of air above.
+</div>
+
+<p>Key observations:</p>
+<ul>
+    <li>Pressure increases with depth (linearly)</li>
+    <li>Pressure is the same at all points at the same depth (for a uniform fluid)</li>
+    <li>Pressure acts in all directions (not just downward)</li>
+</ul>
+
+<h3>Atmospheric Pressure</h3>
+
+<p><strong>Atmospheric pressure</strong> is caused by the weight of air above pressing down on the surface. At sea level, it is about 101,325 Pa (≈ 100 kPa or 1 atm). Pressure decreases with altitude as there is less air above.</p>
+
+<h3>Upthrust and Buoyancy</h3>
+
+<div class="definition">
+    <strong>Upthrust (or buoyant force)</strong> is the upward force exerted on an object immersed in (or floating on) a fluid. By Archimedes' principle:
+    <p style="margin: 10px 0;"><code>Upthrust = Weight of fluid displaced</code></p>
+    Upthrust arises because pressure increases with depth, so the upward forces on the bottom of the object exceed the downward forces on the top.
+</div>
+
+<p><strong>Floating and sinking:</strong></p>
+<ul>
+    <li>If <strong>upthrust ≥ weight</strong> → object floats or rises</li>
+    <li>If <strong>upthrust < weight</strong> → object sinks</li>
+    <li>If <strong>upthrust = weight</strong> → object is in equilibrium (can float at any depth)</li>
+</ul>
+
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Submerged object: upthrust equals weight of water displaced</text>
+
+    <!-- Water container -->
+    <rect x="100" y="150" width="600" height="220" fill="#cce5ff" stroke="#2563eb" stroke-width="2" rx="4"/>
+
+    <!-- Object (cube) submerged -->
+    <rect x="300" y="220" width="100" height="100" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <text x="350" y="272" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Object</text>
+
+    <!-- Weight (downward) -->
+    <line x1="350" y1="320" x2="350" y2="380" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrowRed)"/>
+    <text x="365" y="350" font-size="10" fill="#dc2626" font-weight="bold">Weight W</text>
+
+    <!-- Upthrust (upward) -->
+    <line x1="350" y1="220" x2="350" y2="140" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+    <text x="365" y="175" font-size="10" fill="#16a34a" font-weight="bold">Upthrust U</text>
+
+    <!-- Displaced water volume (shown as a ghost cube outline) -->
+    <rect x="300" y="220" width="100" height="100" fill="none" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,4" rx="4"/>
+    <text x="420" y="272" font-size="10" fill="#f59e0b" font-weight="bold">= volume</text>
+    <text x="420" y="288" font-size="10" fill="#f59e0b" font-weight="bold">of water</text>
+    <text x="420" y="304" font-size="10" fill="#f59e0b" font-weight="bold">displaced</text>
+
+    <!-- Info labels -->
+    <rect x="80" y="300" width="200" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+    <text x="95" y="318" font-size="9" font-weight="bold" fill="#1e40af">Upthrust =</text>
+    <text x="95" y="333" font-size="9" font-weight="bold" fill="#1e40af">weight of water</text>
+    <text x="95" y="348" font-size="9" font-weight="bold" fill="#1e40af">displaced</text>
+    <text x="95" y="366" font-size="8" fill="#666">(Archimedes)</text>
+
+    <rect x="480" y="300" width="200" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+    <text x="495" y="318" font-size="9" font-weight="bold" fill="#1e40af">If U > W:</text>
+    <text x="495" y="333" font-size="9" fill="#666">Object rises</text>
+    <text x="495" y="348" font-size="9" font-weight="bold" fill="#1e40af">If U < W:</text>
+    <text x="495" y="363" font-size="9" fill="#666">Object sinks</text>
+
+    <defs>
+        <marker id="arrowRed" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#dc2626"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+    </defs>
+</svg>
+
+<h2>4.5.8 Distance, Displacement, Speed and Velocity</h2>
+
+<h3>Distance vs Displacement</h3>
+
+<div class="definition">
+    <strong>Distance</strong> is a scalar quantity — it is the total path length traveled, regardless of direction. It is always positive.
+    <br><br>
+    <strong>Displacement</strong> is a vector quantity — it is the straight-line distance and direction from the starting point to the ending point. It can be positive, negative, or zero.
+</div>
+
+<p><strong>Example:</strong> A runner completes a 400 m lap of a track, returning to the start. The distance is 400 m, but the displacement is 0 m (they are back where they started).</p>
+
+<h3>Speed vs Velocity</h3>
+
+<div class="definition">
+    <strong>Speed</strong> is the distance traveled per unit time. It is a scalar (no direction).
+    <br><br>
+    <strong>Velocity</strong> is the displacement per unit time. It is a vector (includes direction). For constant speed/velocity:
+    <p style="margin: 10px 0;"><code>v = d / t   or   v = s / t</code></p>
+    where d (or s) is distance (or displacement) and t is time.
+</div>
+
+<h3>Typical Speeds</h3>
+
+<table>
+    <tr>
+        <th>Motion</th>
+        <th>Speed (m/s)</th>
+        <th>Speed (km/h)</th>
+    </tr>
+    <tr>
+        <td>Walking (person)</td>
+        <td>~1.5</td>
+        <td>~5</td>
+    </tr>
+    <tr>
+        <td>Running (person)</td>
+        <td>~3</td>
+        <td>~11</td>
+    </tr>
+    <tr>
+        <td>Cycling</td>
+        <td>~6</td>
+        <td>~22</td>
+    </tr>
+    <tr>
+        <td>Car (typical driving)</td>
+        <td>~25</td>
+        <td>~90</td>
+    </tr>
+    <tr>
+        <td>Train</td>
+        <td>~55</td>
+        <td>~200</td>
+    </tr>
+    <tr>
+        <td>Commercial aircraft</td>
+        <td>~250</td>
+        <td>~900</td>
+    </tr>
+    <tr>
+        <td>Speed of sound (air, 20°C)</td>
+        <td>~340</td>
+        <td>~1224</td>
+    </tr>
+</table>
+
+<h3>Distance-Time Graphs</h3>
+
+<p>A distance-time graph plots distance (y-axis) against time (x-axis). The gradient (slope) of the line gives the speed.</p>
+
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Distance-time graph: stationary, constant speed, accelerating</text>
+
+    <!-- Axes -->
+    <line x1="80" y1="360" x2="780" y2="360" stroke="#333" stroke-width="2" marker-end="url(#arrowBlack)"/>
+    <line x1="80" y1="360" x2="80" y2="60" stroke="#333" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+    <!-- Axis labels -->
+    <text x="780" y="380" font-size="11" font-weight="bold" fill="#1a1a2e">Time (s)</text>
+    <text x="20" y="210" font-size="11" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 20 210)">Distance (m)</text>
+
+    <!-- Grid lines and labels -->
+    <line x1="150" y1="360" x2="150" y2="355" stroke="#999" stroke-width="1"/>
+    <text x="150" y="375" text-anchor="middle" font-size="9" fill="#666">10</text>
+    <line x1="220" y1="360" x2="220" y2="355" stroke="#999" stroke-width="1"/>
+    <text x="220" y="375" text-anchor="middle" font-size="9" fill="#666">20</text>
+    <line x1="290" y1="360" x2="290" y2="355" stroke="#999" stroke-width="1"/>
+    <text x="290" y="375" text-anchor="middle" font-size="9" fill="#666">30</text>
+    <line x1="360" y1="360" x2="360" y2="355" stroke="#999" stroke-width="1"/>
+    <text x="360" y="375" text-anchor="middle" font-size="9" fill="#666">40</text>
+    <line x1="430" y1="360" x2="430" y2="355" stroke="#999" stroke-width="1"/>
+    <text x="430" y="375" text-anchor="middle" font-size="9" fill="#666">50</text>
+
+    <line x1="80" y1="310" x2="85" y2="310" stroke="#999" stroke-width="1"/>
+    <text x="70" y="315" text-anchor="end" font-size="9" fill="#666">100</text>
+    <line x1="80" y1="260" x2="85" y2="260" stroke="#999" stroke-width="1"/>
+    <text x="70" y="265" text-anchor="end" font-size="9" fill="#666">200</text>
+    <line x1="80" y1="210" x2="85" y2="210" stroke="#999" stroke-width="1"/>
+    <text x="70" y="215" text-anchor="end" font-size="9" fill="#666">300</text>
+    <line x1="80" y1="160" x2="85" y2="160" stroke="#999" stroke-width="1"/>
+    <text x="70" y="165" text-anchor="end" font-size="9" fill="#666">400</text>
+
+    <!-- Section 1: Stationary (0–10 s) — horizontal line -->
+    <line x1="80" y1="310" x2="150" y2="310" stroke="#2563eb" stroke-width="3"/>
+    <text x="115" y="330" text-anchor="middle" font-size="9" font-weight="bold" fill="#2563eb">Stationary</text>
+
+    <!-- Section 2: Constant speed (10–30 s) — straight slope -->
+    <line x1="150" y1="310" x2="290" y2="160" stroke="#16a34a" stroke-width="3"/>
+    <text x="210" y="220" text-anchor="middle" font-size="9" font-weight="bold" fill="#16a34a">Constant speed</text>
+    <text x="210" y="233" text-anchor="middle" font-size="8" fill="#666">(gradient = speed)</text>
+
+    <!-- Section 3: Accelerating (30–50 s) — curved line -->
+    <path d="M 290 160 Q 370 110 430 70" fill="none" stroke="#f59e0b" stroke-width="3"/>
+    <text x="360" y="90" text-anchor="middle" font-size="9" font-weight="bold" fill="#f59e0b">Accelerating</text>
+    <text x="360" y="103" text-anchor="middle" font-size="8" fill="#666">(gradient increases)</text>
+
+    <!-- Add a break/stop at 50 s -->
+    <circle cx="430" cy="70" r="4" fill="#1e40af" stroke="#1e40af" stroke-width="2"/>
+
+    <defs>
+        <marker id="arrowBlack" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#333"/></marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">The gradient of a distance-time graph equals speed (distance / time). A horizontal line means stationary (speed = 0). A straight sloped line means constant speed. A curve means the speed is changing (acceleration).</div>
+
+<h2>4.5.9 Acceleration</h2>
+
+<div class="definition">
+    <strong>Acceleration</strong> is the change in velocity per unit time. It is calculated as:
+    <p style="margin: 10px 0;"><code>a = Δv / t = (v − u) / t</code></p>
+    where <strong>v</strong> is final velocity (m/s), <strong>u</strong> is initial velocity (m/s), and <strong>t</strong> is time (s). Acceleration is measured in m/s². It is a vector.
+</div>
+
+<p><strong>Deceleration (or negative acceleration):</strong> when an object slows down, acceleration is negative.</p>
+
+<p><strong>Worked example:</strong> A car accelerates from rest (0 m/s) to 20 m/s in 5 seconds. Calculate the acceleration.</p>
+<pre>a = (v − u) / t = (20 − 0) / 5 = 4 m/s²</pre>
+
+<h3>Velocity-Time Graphs</h3>
+
+<p>A velocity-time graph plots velocity (y-axis) against time (x-axis). The <strong>gradient</strong> gives acceleration, and the <strong>area under the curve</strong> gives the distance traveled.</p>
+
+<svg viewBox="0 0 850 480" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:850px;margin:20px auto;display:block;">
+    <text x="425" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Velocity-time graph: area under curve = distance travelled</text>
+
+    <!-- Axes -->
+    <line x1="100" y1="400" x2="800" y2="400" stroke="#333" stroke-width="2" marker-end="url(#arrowBlack)"/>
+    <line x1="100" y1="400" x2="100" y2="60" stroke="#333" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+    <!-- Axis labels -->
+    <text x="800" y="420" font-size="11" font-weight="bold" fill="#1a1a2e">Time (s)</text>
+    <text x="20" y="230" font-size="11" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 20 230)">Velocity (m/s)</text>
+
+    <!-- Grid -->
+    <line x1="200" y1="400" x2="200" y2="395" stroke="#999" stroke-width="1"/>
+    <text x="200" y="415" text-anchor="middle" font-size="9" fill="#666">10</text>
+    <line x1="300" y1="400" x2="300" y2="395" stroke="#999" stroke-width="1"/>
+    <text x="300" y="415" text-anchor="middle" font-size="9" fill="#666">20</text>
+    <line x1="400" y1="400" x2="400" y2="395" stroke="#999" stroke-width="1"/>
+    <text x="400" y="415" text-anchor="middle" font-size="9" fill="#666">30</text>
+    <line x1="500" y1="400" x2="500" y2="395" stroke="#999" stroke-width="1"/>
+    <text x="500" y="415" text-anchor="middle" font-size="9" fill="#666">40</text>
+
+    <line x1="100" y1="350" x2="105" y2="350" stroke="#999" stroke-width="1"/>
+    <text x="85" y="355" text-anchor="end" font-size="9" fill="#666">10</text>
+    <line x1="100" y1="300" x2="105" y2="300" stroke="#999" stroke-width="1"/>
+    <text x="85" y="305" text-anchor="end" font-size="9" fill="#666">20</text>
+    <line x1="100" y1="250" x2="105" y2="250" stroke="#999" stroke-width="1"/>
+    <text x="85" y="255" text-anchor="end" font-size="9" fill="#666">30</text>
+    <line x1="100" y1="200" x2="105" y2="200" stroke="#999" stroke-width="1"/>
+    <text x="85" y="205" text-anchor="end" font-size="9" fill="#666">40</text>
+
+    <!-- Section 1: Constant velocity (0–10 s) — horizontal line at v = 20 m/s -->
+    <line x1="100" y1="300" x2="200" y2="300" stroke="#2563eb" stroke-width="3"/>
+    <rect x="100" y="300" width="100" height="100" fill="#dbeafe" opacity="0.5"/>
+    <text x="150" y="330" text-anchor="middle" font-size="9" font-weight="bold" fill="#2563eb">Area = 20×10 = 200 m</text>
+
+    <!-- Section 2: Accelerating (10–30 s) — straight slope from 20 to 40 m/s -->
+    <line x1="200" y1="300" x2="400" y2="100" stroke="#16a34a" stroke-width="3"/>
+    <!-- Trapezium area shading -->
+    <polygon points="200,300 400,100 400,400 200,400" fill="#c7f4c1" opacity="0.6"/>
+    <text x="300" y="240" text-anchor="middle" font-size="9" font-weight="bold" fill="#16a34a">Accelerating</text>
+    <text x="300" y="380" text-anchor="middle" font-size="8" fill="#666">Area = ½(20+40)×20 = 600 m</text>
+
+    <!-- Section 3: Decelerate (30–45 s) — slope from 40 to 10 m/s -->
+    <line x1="400" y1="100" x2="550" y2="325" stroke="#f59e0b" stroke-width="3"/>
+    <polygon points="400,100 550,325 550,400 400,400" fill="#fef3c7" opacity="0.6"/>
+    <text x="475" y="240" text-anchor="middle" font-size="9" font-weight="bold" fill="#f59e0b">Decelerating</text>
+    <text x="475" y="380" text-anchor="middle" font-size="8" fill="#666">Area = ½(40+10)×15 = 375 m</text>
+
+    <!-- Legend -->
+    <rect x="600" y="80" width="220" height="120" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+    <text x="615" y="100" font-size="10" font-weight="bold" fill="#1e40af">Key:</text>
+    <text x="615" y="118" font-size="9" fill="#1a1a2e">• Gradient = acceleration</text>
+    <text x="615" y="136" font-size="9" fill="#1a1a2e">• Horizontal = constant v</text>
+    <text x="615" y="154" font-size="9" fill="#1a1a2e">• Area under = distance</text>
+    <text x="615" y="172" font-size="9" fill="#1a1a2e">• Steep slope = large a</text>
+
+    <!-- Total info -->
+    <rect x="600" y="210" width="220" height="80" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+    <text x="615" y="230" font-size="9" font-weight="bold" fill="#1e40af">Total distance:</text>
+    <text x="615" y="248" font-size="9" fill="#1a1a2e">200 + 600 + 375 = 1175 m</text>
+
+    <defs>
+        <marker id="arrowBlack" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#333"/></marker>
+    </defs>
+</svg>
+
+<h3>Equations of Motion (SUVAT) — Higher</h3>
+
+<p>For uniform acceleration, use the kinematic equations:</p>
+
+<p><code>v = u + at</code></p>
+<p><code>s = ut + ½at²</code></p>
+<p><code>v² − u² = 2as</code></p>
+
+<p>where <strong>s</strong> = displacement, <strong>u</strong> = initial velocity, <strong>v</strong> = final velocity, <strong>a</strong> = acceleration, <strong>t</strong> = time.</p>
+
+<p><strong>Worked example (SUVAT):</strong> An object accelerates from 5 m/s at 2 m/s² over a distance of 20 m. Find the final velocity.</p>
+<pre>Given: u = 5 m/s, a = 2 m/s², s = 20 m. Find v.
+v² − u² = 2as
+v² − 25 = 2 × 2 × 20
+v² − 25 = 80
+v² = 105
+v = √105 ≈ 10.2 m/s</pre>
+
+<h3>Terminal Velocity</h3>
+
+<div class="definition">
+    <strong>Terminal velocity</strong> is the maximum velocity reached by a falling object when air resistance equals its weight. At this point, the net force is zero, so acceleration stops and the object falls at constant velocity.
+</div>
+
+<p><strong>How it develops:</strong></p>
+<ol>
+    <li>Initially, weight > air resistance → net force downward → accelerates downward</li>
+    <li>As speed increases, air resistance increases (roughly proportional to v or v²)</li>
+    <li>Eventually, air resistance = weight → net force = 0 → constant velocity</li>
+    <li>Terminal velocity depends on mass, shape, and air density</li>
+</ol>
+
+<svg viewBox="0 0 700 450" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Terminal velocity: parachutist falling then deploying chute</text>
+
+    <!-- Axes -->
+    <line x1="80" y1="380" x2="680" y2="380" stroke="#333" stroke-width="2" marker-end="url(#arrowBlack)"/>
+    <line x1="80" y1="380" x2="80" y2="60" stroke="#333" stroke-width="2" marker-end="url(#arrowBlack)"/>
+
+    <!-- Axis labels -->
+    <text x="680" y="400" font-size="11" font-weight="bold" fill="#1a1a2e">Time (s)</text>
+    <text x="20" y="220" font-size="11" font-weight="bold" fill="#1a1a2e" transform="rotate(-90 20 220)">Velocity (m/s)</text>
+
+    <!-- Grid -->
+    <line x1="150" y1="380" x2="150" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="150" y="395" text-anchor="middle" font-size="9" fill="#666">10</text>
+    <line x1="220" y1="380" x2="220" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="220" y="395" text-anchor="middle" font-size="9" fill="#666">20</text>
+    <line x1="290" y1="380" x2="290" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="290" y="395" text-anchor="middle" font-size="9" fill="#666">30</text>
+    <line x1="360" y1="380" x2="360" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="360" y="395" text-anchor="middle" font-size="9" fill="#666">40</text>
+    <line x1="430" y1="380" x2="430" y2="375" stroke="#999" stroke-width="1"/>
+    <text x="430" y="395" text-anchor="middle" font-size="9" fill="#666">50</text>
+
+    <line x1="80" y1="320" x2="85" y2="320" stroke="#999" stroke-width="1"/>
+    <text x="70" y="325" text-anchor="end" font-size="9" fill="#666">20</text>
+    <line x1="80" y1="260" x2="85" y2="260" stroke="#999" stroke-width="1"/>
+    <text x="70" y="265" text-anchor="end" font-size="9" fill="#666">40</text>
+    <line x1="80" y1="200" x2="85" y2="200" stroke="#999" stroke-width="1"/>
+    <text x="70" y="205" text-anchor="end" font-size="9" fill="#666">60</text>
+    <line x1="80" y1="140" x2="85" y2="140" stroke="#999" stroke-width="1"/>
+    <text x="70" y="145" text-anchor="end" font-size="9" fill="#666">80</text>
+
+    <!-- Phase 1: Accelerating (free fall, 0–25 s) — steep curve -->
+    <path d="M 80 380 Q 150 300 220 200 T 290 140" fill="none" stroke="#dc2626" stroke-width="3"/>
+    <text x="180" y="250" font-size="10" font-weight="bold" fill="#dc2626">Free fall</text>
+    <text x="180" y="265" font-size="9" fill="#666">(accelerating)</text>
+
+    <!-- Horizontal dashed line at terminal velocity -->
+    <line x1="290" y1="140" x2="360" y2="140" stroke="#2563eb" stroke-width="3" stroke-dasharray="5,5"/>
+    <text x="325" y="125" text-anchor="middle" font-size="10" font-weight="bold" fill="#2563eb">Terminal velocity (v = constant)</text>
+
+    <!-- Phase 2: Chute deployed (t = 35 s) — sharp drop -->
+    <path d="M 360 140 Q 390 240 420 300 L 430 310" fill="none" stroke="#16a34a" stroke-width="3"/>
+    <text x="385" y="210" font-size="10" font-weight="bold" fill="#16a34a">Chute opens!</text>
+    <text x="385" y="225" font-size="9" fill="#666">(deceleration)</text>
+
+    <!-- New lower terminal velocity -->
+    <line x1="420" y1="310" x2="650" y2="310" stroke="#16a34a" stroke-width="3" stroke-dasharray="5,5"/>
+    <text x="535" y="295" text-anchor="middle" font-size="10" font-weight="bold" fill="#16a34a">New terminal velocity (slower)</text>
+
+    <!-- Annotations -->
+    <circle cx="360" cy="140" r="5" fill="#f59e0b" stroke="#d97706" stroke-width="2"/>
+    <text x="370" y="145" font-size="9" fill="#f59e0b" font-weight="bold">Chute deployed</text>
+
+    <defs>
+        <marker id="arrowBlack" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#333"/></marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">At terminal velocity, acceleration = 0 (forces balanced). The v-t graph becomes horizontal. When a parachute opens, upward air resistance suddenly increases, becoming larger than weight. This creates a net upward force, causing deceleration (negative acceleration) until a new, lower terminal velocity is reached.</div>
+
+<h2>4.5.10 Newton's Laws of Motion</h2>
+
+<h3>Newton's First Law</h3>
+
+<div class="definition">
+    <strong>Newton's First Law:</strong> An object at rest stays at rest, and an object moving at constant velocity continues at constant velocity, unless a resultant (net) force acts on it.
+    <br><br>
+    In other words: if the resultant force is zero, the object is in equilibrium and there is no acceleration.
+</div>
+
+<p><strong>Inertia:</strong> The tendency of an object to resist changes to its motion. Objects with larger mass have larger inertia.</p>
+
+<svg viewBox="0 0 700 280" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+    <text x="350" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Newton's First Law: no resultant force → constant velocity</text>
+
+    <!-- Car moving at constant velocity (no acceleration) -->
+    <!-- Road -->
+    <rect x="50" y="200" width="600" height="8" fill="#9ca3af" stroke="#4b5563" stroke-width="2"/>
+
+    <!-- Car (simplified) -->
+    <rect x="200" y="140" width="100" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+    <circle cx="230" cy="200" r="10" fill="#333" stroke="#000" stroke-width="1"/>
+    <circle cx="270" cy="200" r="10" fill="#333" stroke="#000" stroke-width="1"/>
+    <text x="250" y="172" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">Car</text>
+
+    <!-- Applied force (engine) -->
+    <line x1="300" y1="170" x2="380" y2="170" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+    <text x="340" y="155" font-size="10" fill="#2563eb" font-weight="bold">Engine force</text>
+
+    <!-- Resistance (friction, air) -->
+    <line x1="200" y1="170" x2="120" y2="170" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+    <text x="145" y="155" font-size="10" fill="#f59e0b" font-weight="bold">Resistance</text>
+
+    <!-- Info box -->
+    <rect x="50" y="230" width="600" height="45" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+    <text x="65" y="250" font-size="10" fill="#1a1a2e">If engine force = resistance force → resultant force = 0</text>
+    <text x="65" y="268" font-size="10" fill="#1a1a2e">→ No acceleration; car moves at constant velocity (or stays at rest)</text>
+
+    <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+        <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#f59e0b"/></marker>
+    </defs>
+</svg>
+
+<h3>Newton's Second Law</h3>
+
+<div class="definition">
+    <strong>Newton's Second Law:</strong> The resultant force acting on an object is equal to the mass of the object multiplied by its acceleration:
+    <p style="margin: 10px 0;"><code>F = m × a</code></p>
+    where <strong>F</strong> is the resultant (net) force (N), <strong>m</strong> is mass (kg), and <strong>a</strong> is acceleration (m/s²).
+</div>
+
+<p>Rearranged: <code>a = F / m</code>  or  <code>m = F / a</code></p>
+
+<p><strong>Inertial mass:</strong> The mass of an object can be defined as m = F / a, which is a measure of how difficult it is to change an object's velocity. A larger mass requires a larger force to produce the same acceleration.</p>
+
+<p><strong>Worked example:</strong> A 1500 kg car experiences a resultant force of 3000 N. Find its acceleration.</p>
+<pre>F = m × a
+3000 = 1500 × a
+a = 3000 / 1500 = 2 m/s²</pre>
+
+<div class="exam-tip">Newton's Second Law is the most important equation in mechanics. If you're asked "What happens to acceleration if force doubles?", use F = ma: if F doubles and m stays constant, a doubles. If mass doubles and force stays constant, a halves.</div>
+
+<h3>Newton's Third Law</h3>
+
+<div class="definition">
+    <strong>Newton's Third Law:</strong> If object A exerts a force on object B, then object B exerts an equal and opposite force on object A. These are called <strong>action-reaction pairs</strong>.
+    <br><br>
+    Key point: action-reaction pairs act on <strong>different objects</strong> and are always the same type of force.
+</div>
+
+<p><strong>Examples:</strong></p>
+<ul>
+    <li><strong>Walking:</strong> You push backward on the ground (action); the ground pushes forward on you (reaction). The forward reaction propels you.</li>
+    <li><strong>Swimming:</strong> You push backward on the water (action); the water pushes forward on you (reaction).</li>
+    <li><strong>Rockets:</strong> The rocket pushes hot gases downward (action); the gases push the rocket upward (reaction).</li>
+    <li><strong>Falling:</strong> Earth pulls on you downward (action, your weight); you pull on Earth upward (reaction). But Earth's mass is so large that its acceleration is negligible.</li>
+</ul>
+
+<div class="exam-tip">Do not confuse Newton's Third Law with equilibrium. Action-reaction pairs are equal and opposite, but they act on different objects, so they don't cancel out. The forces that balance and cause equilibrium are different pairs acting on the same object.</div>
+
+<h2>4.5.11 Stopping Distance</h2>
+
+<div class="definition">
+    <strong>Stopping distance</strong> is the total distance a vehicle travels from when a hazard is spotted until the vehicle comes to a complete stop. It has two parts:
+    <ul style="margin: 10px 0;">
+        <li><strong>Thinking distance:</strong> distance travelled during the driver's reaction time (before brakes are applied)</li>
+        <li><strong>Braking distance:</strong> distance travelled after the brakes are applied until the vehicle stops</li>
+    </ul>
+    <code>Stopping distance = Thinking distance + Braking distance</code>
+</div>
+
+<h3>Thinking Distance</h3>
+
+<p>Thinking distance depends on <strong>driver reaction time</strong>, which is typically 0.2–0.9 seconds. It is proportional to speed.</p>
+
+<p>Factors that increase thinking distance (slow reaction):</p>
+<ul>
+    <li>Tiredness / fatigue</li>
+    <li>Alcohol or drug use</li>
+    <li>Distractions (e.g., mobile phone, passenger)</li>
+    <li>Age (very young or very old drivers)</li>
+</ul>
+
+<h3>Braking Distance</h3>
+
+<p>Braking distance is the distance needed to decelerate from speed to zero under maximum braking. It depends on:</p>
+
+<ul>
+    <li><strong>Speed (non-linear):</strong> The kinetic energy is ½mv². If speed doubles, KE quadruples, so braking distance roughly quadruples (roughly proportional to v²)</li>
+    <li><strong>Road conditions:</strong> Wet or icy roads reduce friction, increasing braking distance</li>
+    <li><strong>Tyre condition:</strong> Worn tyres with poor tread reduce grip and increase braking distance</li>
+    <li><strong>Brake condition:</strong> Worn or faulty brakes are less effective. Repeated heavy braking can overheat brakes (brake fade)</li>
+</ul>
+
+<p><strong>Energy approach:</strong> The kinetic energy of the vehicle is converted to heat (thermal energy) in the brakes via friction. Larger kinetic energy requires more work from friction, hence longer braking distance.</p>
+
+<svg viewBox="0 0 750 350" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:750px;margin:20px auto;display:block;">
+    <text x="375" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Stopping distance at different speeds (typical values)</text>
+
+    <!-- Bar chart -->
+    <!-- 30 mph -->
+    <g>
+        <text x="80" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">30 mph (13 m/s)</text>
+        <line x1="30" y1="70" x2="130" y2="70" stroke="#f59e0b" stroke-width="10" stroke-linecap="round"/>
+        <text x="140" y="75" font-size="10" fill="#f59e0b" font-weight="bold">23 m</text>
+        <line x1="130" y1="70" x2="180" y2="70" stroke="#dc2626" stroke-width="10" stroke-linecap="round"/>
+        <text x="190" y="75" font-size="10" fill="#dc2626" font-weight="bold">14 m</text>
+        <text x="80" y="95" text-anchor="middle" font-size="9" fill="#666">Thinking (9m) + Braking (14m) = 23m total</text>
+    </g>
+
+    <!-- 50 mph -->
+    <g>
+        <text x="80" y="130" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">50 mph (22 m/s)</text>
+        <line x1="30" y1="150" x2="130" y2="150" stroke="#f59e0b" stroke-width="10" stroke-linecap="round"/>
+        <text x="140" y="155" font-size="10" fill="#f59e0b" font-weight="bold">18 m</text>
+        <line x1="130" y1="150" x2="250" y2="150" stroke="#dc2626" stroke-width="10" stroke-linecap="round"/>
+        <text x="260" y="155" font-size="10" fill="#dc2626" font-weight="bold">40 m</text>
+        <text x="80" y="175" text-anchor="middle" font-size="9" fill="#666">Thinking (18m) + Braking (40m) = 58m total</text>
+    </g>
+
+    <!-- 70 mph -->
+    <g>
+        <text x="80" y="210" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">70 mph (31 m/s)</text>
+        <line x1="30" y1="230" x2="155" y2="230" stroke="#f59e0b" stroke-width="10" stroke-linecap="round"/>
+        <text x="170" y="235" font-size="10" fill="#f59e0b" font-weight="bold">25 m</text>
+        <line x1="155" y1="230" x2="335" y2="230" stroke="#dc2626" stroke-width="10" stroke-linecap="round"/>
+        <text x="345" y="235" font-size="10" fill="#dc2626" font-weight="bold">75 m</text>
+        <text x="80" y="255" text-anchor="middle" font-size="9" fill="#666">Thinking (25m) + Braking (75m) = 100m total</text>
+    </g>
+
+    <!-- Legend -->
+    <rect x="420" y="70" width="300" height="120" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+    <text x="435" y="90" font-size="11" font-weight="bold" fill="#1e40af">Stopping distance breakdown:</text>
+    <line x1="435" y1="100" x2="455" y2="100" stroke="#f59e0b" stroke-width="6"/>
+    <text x="465" y="105" font-size="10" fill="#1a1a2e">Thinking distance</text>
+    <line x1="435" y1="120" x2="455" y2="120" stroke="#dc2626" stroke-width="6"/>
+    <text x="465" y="125" font-size="10" fill="#1a1a2e">Braking distance</text>
+    <text x="435" y="155" font-size="9" fill="#666">Note: Braking distance ∝ v²</text>
+    <text x="435" y="170" font-size="9" fill="#666">Doubling speed quadruples</text>
+    <text x="435" y="185" font-size="9" fill="#666">braking distance!</text>
+</svg>
+
+<div class="exam-tip">Stopping distance quadruples when speed doubles (because KE ∝ v²). A car at 60 mph stopping from rest travels much further than twice the distance of a 30 mph car. Wet roads, worn tyres, and poor brakes all increase stopping distance — they reduce the friction force available for deceleration.</div>
+
+<h2>4.5.12 Momentum (Higher/Triple)</h2>
+
+<div class="definition">
+    <strong>Momentum (p)</strong> is the mass of an object multiplied by its velocity. It is a vector quantity:
+    <p style="margin: 10px 0;"><code>p = m × v</code></p>
+    where <strong>m</strong> is mass (kg) and <strong>v</strong> is velocity (m/s). Momentum is measured in kg m/s.
+</div>
+
+<h3>Conservation of Momentum</h3>
+
+<div class="definition">
+    <strong>Conservation of momentum:</strong> In a closed system (no external forces), the total momentum before an event (collision, explosion) equals the total momentum after the event.
+    <p style="margin: 10px 0;"><code>Total momentum before = Total momentum after</code></p>
+</div>
+
+<p><strong>Worked example (collision):</strong> A 2 kg object moving at 3 m/s collides with a stationary 1 kg object. They stick together. Find the final velocity.</p>
+<pre>Momentum before = Momentum after
+m₁u₁ + m₂u₂ = (m₁ + m₂)v
+2(3) + 1(0) = (2 + 1)v
+6 = 3v
+v = 2 m/s
+
+The stuck-together objects move at 2 m/s after collision.</pre>
+
+<p><strong>Worked example (explosion):</strong> A 5 kg trolley at rest splits into two parts: a 2 kg piece moving right at 6 m/s, and a 3 kg piece. Find the velocity of the 3 kg piece.</p>
+<pre>Momentum before = Momentum after
+0 = m₁v₁ + m₂v₂
+0 = 2(6) + 3(v₂)
+0 = 12 + 3v₂
+v₂ = -4 m/s
+
+The 3 kg piece moves left at 4 m/s (negative means opposite direction).</pre>
+
+<h3>Force and Momentum</h3>
+
+<div class="definition">
+    <strong>Newton's Second Law in terms of momentum:</strong>
+    <p style="margin: 10px 0;"><code>F = Δp / Δt = (change in momentum) / (time)</code></p>
+    This shows that force is the rate of change of momentum. A large force for a short time can produce the same change in momentum as a small force for a long time.
+</div>
+
+<p>This principle is used in <strong>safety features</strong> to reduce injury in collisions:</p>
+<ul>
+    <li><strong>Crumple zones:</strong> deform during collision, lengthening the collision time Δt. Larger Δt → smaller F for same Δp → less injury</li>
+    <li><strong>Airbags:</strong> inflate to cushion impact, increasing collision time</li>
+    <li><strong>Seatbelts:</strong> spread force over a larger area and increase collision time</li>
+    <li><strong>Helmet padding:</strong> increases collision time, reducing peak force to the head</li>
+</ul>
+
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:800px;margin:20px auto;display:block;">
+    <text x="400" y="25" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Collision: before and after (momentum conservation)</text>
+
+    <!-- BEFORE COLLISION -->
+    <g>
+        <text x="200" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Before collision</text>
+
+        <!-- Car 1 (moving) -->
+        <rect x="50" y="100" width="80" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+        <circle cx="70" cy="155" r="8" fill="#333" stroke="#000" stroke-width="1"/>
+        <circle cx="110" cy="155" r="8" fill="#333" stroke="#000" stroke-width="1"/>
+        <text x="90" y="130" text-anchor="middle" font-size="9" fill="#1e40af">m₁=2kg</text>
+        <text x="90" y="145" text-anchor="middle" font-size="9" fill="#1e40af">v₁=3 m/s</text>
+
+        <!-- Arrow -->
+        <line x1="130" y1="125" x2="180" y2="125" stroke="#2563eb" stroke-width="2" marker-end="url(#arrowBlue)"/>
+
+        <!-- Car 2 (stationary) -->
+        <rect x="190" y="100" width="80" height="50" fill="#f3f4f6" stroke="#999" stroke-width="2" rx="4"/>
+        <circle cx="210" cy="155" r="8" fill="#333" stroke="#000" stroke-width="1"/>
+        <circle cx="250" cy="155" r="8" fill="#333" stroke="#000" stroke-width="1"/>
+        <text x="230" y="130" text-anchor="middle" font-size="9" fill="#666">m₂=1kg</text>
+        <text x="230" y="145" text-anchor="middle" font-size="9" fill="#666">v₂=0 m/s</text>
+
+        <!-- Momentum calculation -->
+        <rect x="50" y="180" width="220" height="60" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+        <text x="65" y="200" font-size="10" font-weight="bold" fill="#1e40af">Total momentum before:</text>
+        <text x="65" y="218" font-size="9" fill="#1a1a2e">p = m₁v₁ + m₂v₂ = 2(3) + 1(0) = 6 kg m/s</text>
+    </g>
+
+    <!-- AFTER COLLISION -->
+    <g>
+        <text x="600" y="50" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">After collision (stuck together)</text>
+
+        <!-- Combined object (moving slower) -->
+        <rect x="480" y="100" width="160" height="50" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="4"/>
+        <circle cx="510" cy="155" r="8" fill="#333" stroke="#000" stroke-width="1"/>
+        <circle cx="620" cy="155" r="8" fill="#333" stroke="#000" stroke-width="1"/>
+        <text x="560" y="130" text-anchor="middle" font-size="9" fill="#1e40af">m=(2+1)=3kg</text>
+        <text x="560" y="145" text-anchor="middle" font-size="9" fill="#1e40af">v=2 m/s</text>
+
+        <!-- Arrow (slower) -->
+        <line x1="640" y1="125" x2="700" y2="125" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+        <!-- Momentum calculation -->
+        <rect x="480" y="180" width="220" height="60" fill="#f9fafb" stroke="#d1d5db" stroke-width="1" rx="4"/>
+        <text x="495" y="200" font-size="10" font-weight="bold" fill="#1e40af">Total momentum after:</text>
+        <text x="495" y="218" font-size="9" fill="#1a1a2e">p = (m₁+m₂)v = 3(2) = 6 kg m/s ✓</text>
+    </g>
+
+    <!-- CRUMPLE ZONE BENEFIT -->
+    <g>
+        <rect x="50" y="300" width="700" height="80" fill="#eff6ff" stroke="#2563eb" stroke-width="1" rx="4"/>
+        <text x="70" y="320" font-size="10" font-weight="bold" fill="#1e40af">Crumple zone benefit:</text>
+        <text x="70" y="338" font-size="9" fill="#1a1a2e">Without crumple: collision time = 0.1 s  →  F = Δp/Δt = 6/0.1 = 60 N (injury)</text>
+        <text x="70" y="356" font-size="9" fill="#1a1a2e">With crumple: collision time = 0.5 s  →  F = Δp/Δt = 6/0.5 = 12 N (safer)</text>
+        <text x="70" y="374" font-size="9" fill="#666">Longer collision time → smaller force → less injury</text>
+    </g>
+
+    <defs>
+        <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#2563eb"/></marker>
+        <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><polygon points="0 0, 8 4, 0 8" fill="#16a34a"/></marker>
+    </defs>
+</svg>
+
+<div class="exam-tip">In momentum problems, define a positive direction (e.g., right is positive, left is negative). Use conservation of momentum: total p before = total p after. Don't forget to include all objects, even if they're stationary (their momentum is 0).</div>
+
+</div>
+</body>
+</html>

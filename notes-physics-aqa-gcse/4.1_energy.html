@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.1 — Energy</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>4.1 Energy</h1>
+<p class="spec-ref">AQA GCSE Physics (8463) &mdash; Paper 1</p>
+
+<h2>4.1.1 Energy Changes in a System</h2>
+
+<div class="definition">
+    <strong>Energy</strong> is a property of an object or system. It is <em>not</em> a substance &mdash; it is a quantity (measured in <strong>joules, J</strong>) that allows us to predict what changes can happen in a system. Energy can be <strong>stored</strong> in various ways and <strong>transferred</strong> between stores. The total amount of energy in a closed system never changes &mdash; this is the <strong>principle of conservation of energy</strong>.
+</div>
+
+<p>AQA GCSE Physics uses the modern "<strong>stores and pathways</strong>" model. Rather than saying energy is "converted" from one type to another, we say energy is <strong>transferred</strong> from one store to another via a pathway. This language may feel unusual, but it is the language examiners expect &mdash; answers using it score more marks than older "kinetic energy becomes heat energy" phrasings.</p>
+
+<h3>The Eight Energy Stores</h3>
+
+<p>All the energy in the universe is held in one of these eight <strong>stores</strong>. You must be able to identify the store(s) involved in any situation.</p>
+
+<table>
+    <tr><th>Store</th><th>What is it?</th><th>Example</th></tr>
+    <tr><td><strong>Kinetic</strong></td><td>Energy stored in a moving object. Depends on mass and speed.</td><td>A car driving, a falling book, a runner, a bullet in flight.</td></tr>
+    <tr><td><strong>Chemical</strong></td><td>Energy stored in the bonds between atoms and molecules. Released in chemical reactions.</td><td>Food, fuels (petrol, coal, wood), batteries, explosives.</td></tr>
+    <tr><td><strong>Gravitational Potential</strong></td><td>Energy stored in an object raised up in a gravitational field.</td><td>A book on a high shelf, water in a reservoir, a skier at the top of a slope.</td></tr>
+    <tr><td><strong>Elastic Potential</strong></td><td>Energy stored in a stretched or compressed elastic object.</td><td>A stretched spring, a drawn bow, a squashed rubber ball, a wound clockwork toy.</td></tr>
+    <tr><td><strong>Thermal (Internal)</strong></td><td>Energy stored in the random movement of the particles making up an object. Hotter object = greater thermal store.</td><td>A hot drink, a warm radiator, the inside of an oven.</td></tr>
+    <tr><td><strong>Nuclear</strong></td><td>Energy stored in the nucleus of an atom. Released in fission, fusion or radioactive decay.</td><td>Uranium fuel rods in a reactor, the Sun's core, radioactive isotopes.</td></tr>
+    <tr><td><strong>Electrostatic</strong></td><td>Energy stored between two electric charges that attract or repel.</td><td>Charged thunder clouds, a charged balloon sticking to a wall, two charged spheres.</td></tr>
+    <tr><td><strong>Magnetic</strong></td><td>Energy stored between two magnetic poles that attract or repel.</td><td>Two bar magnets held apart, a fridge magnet pulled off the door.</td></tr>
+</table>
+
+<div class="exam-tip">Examiners often mark down answers that use old-fashioned terms such as "heat energy", "sound energy", "light energy", "movement energy" or "electrical energy". These are not energy stores &mdash; they are <strong>pathways</strong> (ways energy is transferred). Always use one of the eight store names above when describing <em>where</em> energy is held.</div>
+
+<h3>The Four Energy Pathways (Transfers)</h3>
+
+<p>Energy moves between stores via one of these four pathways:</p>
+
+<table>
+    <tr><th>Pathway</th><th>Description</th><th>Example</th></tr>
+    <tr><td><strong>Mechanically</strong></td><td>A force does <strong>work</strong> on an object over a distance.</td><td>Pushing a box along the floor (chemical &rarr; kinetic + thermal).</td></tr>
+    <tr><td><strong>Electrically</strong></td><td>A current flows through a circuit &mdash; charges do work.</td><td>A kettle heating water (chemical at power station &rarr; thermal of water).</td></tr>
+    <tr><td><strong>By heating</strong></td><td>Energy flows from a hotter to a colder region by conduction, convection, or radiation.</td><td>Hot coffee cooling down in a cold room (thermal of coffee &rarr; thermal of surroundings).</td></tr>
+    <tr><td><strong>By radiation</strong></td><td>Energy carried by waves &mdash; light, sound, infrared, other EM waves.</td><td>Sunlight warming the ground (nuclear in Sun &rarr; thermal of ground).</td></tr>
+</table>
+
+<h3>Principle of Conservation of Energy</h3>
+
+<div class="definition">
+    <strong>Energy cannot be created or destroyed. It can only be transferred usefully, stored, or dissipated.</strong> In a <strong>closed system</strong>, the total energy before any event is equal to the total energy after the event &mdash; the energy has simply moved between stores.
+</div>
+
+<p>A <strong>closed system</strong> is one in which no energy (and no matter) enters or leaves the boundary of the system. In practice, truly closed systems are rare &mdash; almost every real process loses some energy to the surroundings as thermal energy &mdash; but we treat systems as closed when the boundary is carefully chosen (e.g., a sealed, insulated flask).</p>
+
+<!-- Diagram 1: Energy stores and transfers — book on shelf falling -->
+<svg viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:760px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrA" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker>
+    <marker id="arrAred" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  </defs>
+  <text x="380" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Energy stores and transfers &mdash; a falling book</text>
+
+  <!-- Stage 1: Book on shelf -->
+  <rect x="20" y="50" width="220" height="220" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="72" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">1. On the shelf</text>
+  <!-- shelf -->
+  <rect x="55" y="110" width="150" height="6" fill="#92400e"/>
+  <!-- book -->
+  <rect x="100" y="90" width="60" height="20" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+  <text x="130" y="104" text-anchor="middle" font-size="9" fill="#000">BOOK</text>
+  <!-- floor -->
+  <line x1="30" y1="240" x2="230" y2="240" stroke="#374151" stroke-width="2"/>
+  <!-- height dashed -->
+  <line x1="215" y1="116" x2="215" y2="240" stroke="#6b7280" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="225" y="180" font-size="10" fill="#6b7280">h</text>
+  <!-- label -->
+  <rect x="45" y="250" width="170" height="14" fill="#dbeafe" stroke="#2563eb" stroke-width="0.5"/>
+  <text x="130" y="261" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">Store: Gravitational PE</text>
+
+  <!-- Arrow 1 -->
+  <line x1="245" y1="160" x2="280" y2="160" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrA)"/>
+  <text x="262" y="150" text-anchor="middle" font-size="9" fill="#2563eb" font-weight="bold">falls</text>
+
+  <!-- Stage 2: Falling book -->
+  <rect x="285" y="50" width="220" height="220" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="395" y="72" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">2. Falling</text>
+  <!-- shelf -->
+  <rect x="320" y="90" width="60" height="4" fill="#92400e"/>
+  <!-- book mid-fall -->
+  <rect x="395" y="160" width="55" height="18" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+  <text x="422" y="173" text-anchor="middle" font-size="9" fill="#000">BOOK</text>
+  <!-- motion arrow -->
+  <line x1="422" y1="145" x2="422" y2="158" stroke="#dc2626" stroke-width="2" marker-end="url(#arrAred)"/>
+  <text x="445" y="155" font-size="10" fill="#dc2626" font-weight="bold">v</text>
+  <!-- floor -->
+  <line x1="295" y1="240" x2="495" y2="240" stroke="#374151" stroke-width="2"/>
+  <!-- label -->
+  <rect x="310" y="250" width="170" height="14" fill="#dbeafe" stroke="#2563eb" stroke-width="0.5"/>
+  <text x="395" y="261" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">GPE &rarr; Kinetic (mechanical)</text>
+
+  <!-- Arrow 2 -->
+  <line x1="510" y1="160" x2="545" y2="160" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrA)"/>
+  <text x="527" y="150" text-anchor="middle" font-size="9" fill="#2563eb" font-weight="bold">impact</text>
+
+  <!-- Stage 3: Book hits floor -->
+  <rect x="550" y="50" width="195" height="220" rx="10" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+  <text x="647" y="72" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">3. Hits the floor</text>
+  <!-- floor -->
+  <line x1="560" y1="200" x2="735" y2="200" stroke="#374151" stroke-width="2"/>
+  <!-- book squashed -->
+  <rect x="625" y="185" width="50" height="15" fill="#f59e0b" stroke="#b45309" stroke-width="1.5"/>
+  <text x="650" y="196" text-anchor="middle" font-size="8" fill="#000">BOOK</text>
+  <!-- radiating waves (sound) -->
+  <path d="M 615 190 Q 605 175 615 160" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+  <path d="M 605 190 Q 590 175 605 155" stroke="#dc2626" stroke-width="1.2" fill="none"/>
+  <path d="M 685 190 Q 695 175 685 160" stroke="#dc2626" stroke-width="1.5" fill="none"/>
+  <path d="M 695 190 Q 710 175 695 155" stroke="#dc2626" stroke-width="1.2" fill="none"/>
+  <text x="595" y="150" font-size="8" fill="#dc2626">sound</text>
+  <text x="700" y="150" font-size="8" fill="#dc2626">sound</text>
+  <!-- thermal wiggles -->
+  <path d="M 625 210 q 5 5 10 0 q 5 -5 10 0 q 5 5 10 0" stroke="#dc2626" stroke-width="1.2" fill="none"/>
+  <text x="650" y="225" text-anchor="middle" font-size="8" fill="#dc2626">heat</text>
+  <!-- label -->
+  <rect x="560" y="250" width="175" height="14" fill="#fee2e2" stroke="#dc2626" stroke-width="0.5"/>
+  <text x="647" y="261" text-anchor="middle" font-size="10" fill="#991b1b" font-weight="bold">KE &rarr; Thermal + sound (wasted)</text>
+</svg>
+
+<p>Throughout the whole event, the <strong>total energy stays the same</strong>. At the start, all the energy is in the gravitational potential store. In mid-fall, some is GPE and some is kinetic. At the moment of impact, virtually all of it has been transferred to the thermal stores of the floor, the book, and the surrounding air, plus a little carried away as a sound wave. Add it all up &mdash; you get back the original GPE.</p>
+
+<h3>Key Equations in 4.1.1</h3>
+
+<p>You must know and be able to apply all of these. AQA provides them in the equation sheet except where noted &mdash; but memorising them saves time in the exam.</p>
+
+<div class="definition">
+    <strong>Kinetic energy:</strong> <code>E<sub>k</sub> = &frac12; m v<sup>2</sup></code><br>
+    where <code>E<sub>k</sub></code> = kinetic energy in joules (J), <code>m</code> = mass in kilograms (kg), <code>v</code> = speed in metres per second (m/s).
+</div>
+
+<div class="definition">
+    <strong>Gravitational potential energy:</strong> <code>&Delta;E<sub>p</sub> = m g h</code><br>
+    where <code>&Delta;E<sub>p</sub></code> = change in GPE in joules (J), <code>m</code> = mass in kg, <code>g</code> = gravitational field strength (9.8 N/kg on Earth), <code>h</code> = change in height in metres (m).
+</div>
+
+<div class="definition">
+    <strong>Elastic potential energy:</strong> <code>E<sub>e</sub> = &frac12; k e<sup>2</sup></code><br>
+    where <code>E<sub>e</sub></code> = elastic potential energy in joules (J), <code>k</code> = spring constant in newtons per metre (N/m), <code>e</code> = extension in metres (m). Assumes the spring has not been stretched beyond its limit of proportionality.
+</div>
+
+<div class="definition">
+    <strong>Work done:</strong> <code>W = F d</code><br>
+    where <code>W</code> = work done in joules (J), <code>F</code> = force in newtons (N), <code>d</code> = distance moved in the direction of the force in metres (m). 1 joule = 1 newton-metre.
+</div>
+
+<div class="definition">
+    <strong>Thermal energy (specific heat capacity):</strong> <code>&Delta;E = m c &Delta;&theta;</code><br>
+    where <code>&Delta;E</code> = energy transferred in joules (J), <code>m</code> = mass in kg, <code>c</code> = specific heat capacity in J/kg&thinsp;&deg;C, <code>&Delta;&theta;</code> = temperature change in &deg;C (or K &mdash; it is the same size of interval).
+</div>
+
+<h3>Worked Example 1 &mdash; Kinetic Energy</h3>
+
+<pre>
+Question: A 1500 kg car is driving at 15 m/s. Calculate its kinetic energy.
+
+Given:   m = 1500 kg,   v = 15 m/s
+Formula: E_k = ½ m v²
+Working: E_k = 0.5 × 1500 × 15²
+         E_k = 0.5 × 1500 × 225
+         E_k = 750 × 225
+         E_k = 168 750 J   (or 168.75 kJ)
+
+Answer:  168 750 J (to 5 s.f.)
+</pre>
+
+<p>Notice that because speed is <strong>squared</strong>, doubling the speed gives <em>four</em> times the kinetic energy. This is why braking distances grow so rapidly at high speed.</p>
+
+<h3>Worked Example 2 &mdash; Gravitational Potential Energy</h3>
+
+<pre>
+Question: A 70 kg person climbs a 2 m ladder. How much
+          gravitational potential energy do they gain?
+
+Given:   m = 70 kg,   g = 9.8 N/kg,   h = 2 m
+Formula: ΔE_p = m g h
+Working: ΔE_p = 70 × 9.8 × 2
+         ΔE_p = 1372 J
+
+Answer:  1372 J
+</pre>
+
+<h3>Worked Example 3 &mdash; Energy Conservation (Falling Object)</h3>
+
+<pre>
+Question: A 0.5 kg ball is dropped from a height of 1.8 m.
+          Assuming no air resistance, what is its speed just
+          before it hits the ground?
+
+Strategy: All GPE is transferred to KE (closed system, no losses).
+         ΔE_p = E_k  →  mgh = ½mv²
+         v² = 2gh
+         v  = √(2 × 9.8 × 1.8)
+         v  = √35.28
+         v  = 5.94 m/s
+
+Answer:  5.94 m/s (to 3 s.f.)
+</pre>
+
+<div class="exam-tip">Always check your <strong>units</strong>. Mass must be in kg (not g), speed in m/s (not km/h or mph), and height in metres (not cm). A common error is forgetting to square <code>v</code> in the kinetic energy formula. Another is using <code>g = 10 N/kg</code> when AQA specifically states <strong>9.8 N/kg</strong> for GCSE Physics (separate science). Show your working line-by-line &mdash; method marks are awarded even if the final answer is wrong.</div>
+
+<h2>4.1.2 Conservation and Dissipation of Energy</h2>
+
+<p>In reality, no energy transfer is 100% efficient &mdash; some energy is always <strong>dissipated</strong> (spread out) to the surroundings, usually as <strong>thermal energy</strong>. This wasted energy is still there &mdash; it has not been destroyed &mdash; but it is no longer useful for the purpose we wanted.</p>
+
+<div class="definition">
+    <strong>Useful energy:</strong> the energy transferred to the store(s) we want.<br>
+    <strong>Wasted (dissipated) energy:</strong> energy transferred to stores we did not want &mdash; usually the thermal stores of the surroundings, and often some sound.
+</div>
+
+<p>Examples of useful vs wasted energy transfers:</p>
+
+<ul>
+    <li><strong>Electric kettle:</strong> useful = thermal store of water. Wasted = thermal store of the kettle body, sound of bubbling.</li>
+    <li><strong>Car engine:</strong> useful = kinetic store of the car. Wasted = thermal (hot engine, exhaust gases) and sound.</li>
+    <li><strong>Filament light bulb:</strong> useful = light (radiation). Wasted = thermal &mdash; around 95% of the input electrical energy is dissipated as heat, which is why filament bulbs have largely been replaced by LEDs.</li>
+    <li><strong>Loudspeaker:</strong> useful = sound (radiation). Wasted = thermal from the coil and magnet.</li>
+</ul>
+
+<h3>Efficiency</h3>
+
+<div class="definition">
+    <strong>Efficiency</strong> is the proportion of input energy that is transferred usefully.<br><br>
+    <code>efficiency = useful output energy transfer &divide; total input energy transfer</code><br><br>
+    It can also be calculated using power:<br>
+    <code>efficiency = useful output power &divide; total input power</code><br><br>
+    Efficiency is a ratio, so it has no units. It is expressed as a decimal (0 to 1) or multiplied by 100 to give a percentage (0% to 100%).
+</div>
+
+<h3>Worked Example 4 &mdash; Efficiency</h3>
+
+<pre>
+Question: An electric motor is supplied with 100 J of electrical
+          energy. It transfers 60 J usefully as kinetic energy.
+          Calculate its efficiency.
+
+Given:   Useful output = 60 J,   Total input = 100 J
+Formula: efficiency = useful output ÷ total input
+Working: efficiency = 60 ÷ 100
+                    = 0.6
+                    = 60%
+
+Where did the other 40 J go?
+  → 40 J dissipated as thermal energy (friction in bearings,
+     heating of coils) and some as sound.
+</pre>
+
+<h3>Sankey Diagrams</h3>
+
+<p>A <strong>Sankey diagram</strong> shows energy transfers visually. The width of each arrow is proportional to the amount of energy it represents. Wasted branches peel off to the side (usually downwards) &mdash; the remaining useful energy continues to the right. Sankey diagrams make it easy to see at a glance how efficient a device is.</p>
+
+<!-- Diagram 2: Sankey — 100 J in, 60 useful, 40 wasted -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arrS" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/></marker>
+    <marker id="arrSred" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/></marker>
+  </defs>
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Sankey diagram &mdash; 60% efficient motor</text>
+
+  <!-- Input arrow (100 J wide = 100 px tall) -->
+  <!-- Block shape: rect from x=40 to x=320 for input region at full height 100 -->
+  <path d="M 40 80 L 320 80 L 320 120 L 560 120 L 560 160 L 320 160 L 320 180 L 40 180 Z"
+        fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- The useful part (60 J) continuing to right -->
+  <path d="M 320 120 L 580 120 L 600 140 L 580 160 L 320 160 Z" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <!-- Wasted branch (40 J) going down -->
+  <path d="M 320 80 L 400 80 L 400 250 L 320 250 L 320 180 Z" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <!-- Arrow heads on branches -->
+  <polygon points="600,140 580,125 580,155" fill="#16a34a"/>
+  <polygon points="360,265 345,245 375,245" fill="#dc2626"/>
+
+  <!-- Labels -->
+  <text x="180" y="135" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">INPUT</text>
+  <text x="180" y="155" text-anchor="middle" font-size="11" fill="#1e40af">Electrical: 100 J</text>
+
+  <text x="490" y="135" text-anchor="middle" font-size="12" font-weight="bold" fill="#166534">USEFUL</text>
+  <text x="490" y="152" text-anchor="middle" font-size="10" fill="#166534">Kinetic: 60 J</text>
+
+  <text x="440" y="170" font-size="11" font-weight="bold" fill="#991b1b">WASTED</text>
+  <text x="440" y="187" font-size="10" fill="#991b1b">Thermal + sound: 40 J</text>
+
+  <text x="350" y="290" text-anchor="middle" font-size="10" fill="#6b7280">Arrow widths are proportional to energy &mdash; 40 J wasted is 40% of the input width, 60 J useful is 60%.</text>
+</svg>
+
+<h3>Reducing Unwanted Energy Transfers</h3>
+
+<p>Because dissipated energy is wasted, engineers go to great lengths to reduce it. You must know at least the following methods:</p>
+
+<table>
+    <tr><th>Problem</th><th>Solution</th><th>How it works</th></tr>
+    <tr><td>Friction between moving parts</td><td><strong>Lubrication</strong> (e.g., engine oil, grease, graphite)</td><td>A thin film of oil between surfaces reduces the force of friction, so less work is done against friction and less energy is dissipated as thermal energy. Also reduces wear on the parts.</td></tr>
+    <tr><td>Air resistance / drag on vehicles</td><td><strong>Streamlined / aerodynamic shape</strong></td><td>Smooth, curved shapes let air flow around the object with less turbulence. Less force needed to push through the air &mdash; less energy wasted as thermal energy of the air.</td></tr>
+    <tr><td>Heat loss from a house through walls</td><td><strong>Cavity wall insulation</strong> &mdash; filling the gap between two brick walls with foam or mineral wool</td><td>The trapped air in the insulation has a very low thermal conductivity. Heat escapes much more slowly by conduction.</td></tr>
+    <tr><td>Heat loss through the roof</td><td><strong>Loft insulation</strong> (glass wool / mineral wool laid between joists)</td><td>Traps pockets of air (low thermal conductivity) above the ceiling. Reduces conduction and convection losses &mdash; hot air rises, so lofts are the biggest single source of heat loss in a poorly insulated house.</td></tr>
+    <tr><td>Heat loss through windows</td><td><strong>Double glazing</strong> &mdash; two panes of glass with a gap filled with a low-conductivity gas (argon) or vacuum</td><td>The gas has a much lower thermal conductivity than glass alone &mdash; heat conducts through far more slowly. A vacuum is even better because there are no particles to conduct at all.</td></tr>
+    <tr><td>Heat loss through gaps around doors/windows</td><td><strong>Draught excluders</strong></td><td>Seal the gaps so warm air cannot leave by convection and cold air cannot enter.</td></tr>
+</table>
+
+<div class="definition">
+    <strong>Thermal conductivity</strong> is a measure of how quickly a material conducts thermal energy. A material with <strong>low</strong> thermal conductivity (e.g., mineral wool, foam, air) is a good <strong>insulator</strong> &mdash; it transfers heat slowly. A material with <strong>high</strong> thermal conductivity (e.g., copper, aluminium) is a good <strong>conductor</strong>.
+</div>
+
+<p>The rate of cooling of a building is affected by the <strong>thickness</strong> and <strong>thermal conductivity</strong> of its walls. Thicker walls with lower-conductivity materials lose heat more slowly &mdash; the building stays warm for longer once heated.</p>
+
+<!-- Diagram 3: Insulated house cross-section -->
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Thermal insulation in a house &mdash; cross-section</text>
+
+  <!-- Ground -->
+  <rect x="20" y="340" width="660" height="50" fill="#78350f"/>
+  <text x="350" y="378" text-anchor="middle" font-size="10" fill="#fff">Ground</text>
+
+  <!-- House outline -->
+  <!-- Walls -->
+  <rect x="100" y="180" width="500" height="160" fill="#fef3c7" stroke="#92400e" stroke-width="2"/>
+  <!-- Roof -->
+  <polygon points="80,180 350,60 620,180" fill="#b45309" stroke="#78350f" stroke-width="2"/>
+
+  <!-- Loft insulation layer (yellow fibrous texture) -->
+  <rect x="100" y="170" width="500" height="25" fill="#fde68a" stroke="#f59e0b" stroke-width="1"/>
+  <text x="350" y="188" text-anchor="middle" font-size="10" font-weight="bold" fill="#78350f">Loft insulation (mineral wool)</text>
+
+  <!-- Cavity wall detail (left wall, zoomed visual) -->
+  <rect x="100" y="195" width="12" height="145" fill="#991b1b"/>
+  <rect x="112" y="195" width="14" height="145" fill="#dbeafe"/>
+  <rect x="126" y="195" width="12" height="145" fill="#991b1b"/>
+  <text x="90" y="270" text-anchor="end" font-size="10" fill="#1e40af">Cavity wall</text>
+  <line x1="92" y1="268" x2="112" y2="268" stroke="#1e40af" stroke-width="0.8"/>
+  <text x="90" y="283" text-anchor="end" font-size="9" fill="#1e40af">(foam fill)</text>
+
+  <!-- Right wall -->
+  <rect x="562" y="195" width="12" height="145" fill="#991b1b"/>
+  <rect x="574" y="195" width="14" height="145" fill="#dbeafe"/>
+  <rect x="588" y="195" width="12" height="145" fill="#991b1b"/>
+
+  <!-- Windows (double glazed) -->
+  <rect x="200" y="230" width="80" height="60" fill="#bfdbfe" stroke="#1e40af" stroke-width="1.5"/>
+  <line x1="240" y1="230" x2="240" y2="290" stroke="#1e40af" stroke-width="1"/>
+  <rect x="204" y="234" width="72" height="52" fill="none" stroke="#1e40af" stroke-width="0.6" stroke-dasharray="2,2"/>
+  <text x="240" y="310" text-anchor="middle" font-size="10" fill="#1e40af" font-weight="bold">Double glazing</text>
+  <text x="240" y="323" text-anchor="middle" font-size="8" fill="#1e40af">(two panes + argon gap)</text>
+
+  <rect x="420" y="230" width="80" height="60" fill="#bfdbfe" stroke="#1e40af" stroke-width="1.5"/>
+  <line x1="460" y1="230" x2="460" y2="290" stroke="#1e40af" stroke-width="1"/>
+  <rect x="424" y="234" width="72" height="52" fill="none" stroke="#1e40af" stroke-width="0.6" stroke-dasharray="2,2"/>
+
+  <!-- Door + draught excluder -->
+  <rect x="325" y="260" width="50" height="80" fill="#92400e" stroke="#78350f" stroke-width="1.5"/>
+  <circle cx="367" cy="300" r="2" fill="#fcd34d"/>
+  <rect x="325" y="336" width="50" height="4" fill="#16a34a"/>
+  <text x="395" y="340" font-size="9" fill="#16a34a" font-weight="bold">&larr; draught excluder</text>
+
+  <!-- Heat loss arrows (without insulation would be big) - shown as small with insulation -->
+  <g stroke="#dc2626" stroke-width="1.5" fill="none">
+    <path d="M 350 170 L 350 140" marker-end="url(#arrAred)"/>
+  </g>
+  <text x="355" y="130" font-size="9" fill="#dc2626">small heat loss (roof)</text>
+
+  <!-- Key -->
+  <rect x="30" y="60" width="210" height="95" rx="6" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+  <text x="135" y="78" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Insulation features</text>
+  <rect x="40" y="85" width="10" height="10" fill="#fde68a" stroke="#f59e0b"/>
+  <text x="55" y="94" font-size="9" fill="#111">Loft insulation</text>
+  <rect x="40" y="100" width="10" height="10" fill="#dbeafe" stroke="#2563eb"/>
+  <text x="55" y="109" font-size="9" fill="#111">Cavity wall (foam)</text>
+  <rect x="40" y="115" width="10" height="10" fill="#bfdbfe" stroke="#1e40af"/>
+  <text x="55" y="124" font-size="9" fill="#111">Double glazing</text>
+  <rect x="40" y="130" width="10" height="10" fill="#16a34a"/>
+  <text x="55" y="139" font-size="9" fill="#111">Draught excluder</text>
+</svg>
+
+<div class="exam-tip">When asked about reducing heat loss, state <em>both</em> the method <strong>and</strong> the physics. For example: "Cavity wall insulation fills the gap between the two walls with foam. The foam has a low thermal conductivity, so energy is transferred by conduction more slowly, reducing heat loss." Just saying "cavity wall insulation" on its own will score only 1 mark instead of 2.</div>
+
+<h2>4.1.3 Specific Heat Capacity</h2>
+
+<p>Different substances need different amounts of energy to warm them up by the same amount. Water, for instance, needs a great deal of energy to heat &mdash; this is why oceans moderate climate so effectively.</p>
+
+<div class="definition">
+    The <strong>specific heat capacity</strong> of a substance is the amount of energy required to raise the temperature of <strong>1 kg</strong> of the substance by <strong>1 &deg;C</strong>.<br><br>
+    Symbol: <code>c</code>. Units: <code>J/kg&thinsp;&deg;C</code> (joules per kilogram per degree Celsius).
+</div>
+
+<div class="definition">
+    <strong>Equation:</strong> <code>&Delta;E = m c &Delta;&theta;</code><br><br>
+    where <code>&Delta;E</code> = change in thermal energy (J), <code>m</code> = mass (kg), <code>c</code> = specific heat capacity (J/kg&thinsp;&deg;C), <code>&Delta;&theta;</code> = change in temperature (&deg;C).
+</div>
+
+<p>The Greek letter <code>&theta;</code> (theta) is used to represent temperature in AQA Physics, and <code>&Delta;</code> (delta) means "change in". So <code>&Delta;&theta;</code> means "change in temperature" &mdash; final temperature minus initial temperature.</p>
+
+<h3>Typical Specific Heat Capacities</h3>
+
+<table>
+    <tr><th>Substance</th><th>c (J/kg&thinsp;&deg;C)</th><th>Notes</th></tr>
+    <tr><td>Water</td><td>4200</td><td>Unusually high &mdash; why oceans take a long time to warm up and cool down.</td></tr>
+    <tr><td>Ice</td><td>2100</td><td>Solid water has half the heat capacity of liquid water.</td></tr>
+    <tr><td>Oil (cooking)</td><td>2000</td><td>Heats up faster than water &mdash; useful in frying.</td></tr>
+    <tr><td>Concrete</td><td>880</td><td>Used in night-storage heaters.</td></tr>
+    <tr><td>Aluminium</td><td>900</td><td>Pans made of aluminium heat up quickly.</td></tr>
+    <tr><td>Iron</td><td>450</td><td>Heats up about 9&times; faster than the same mass of water.</td></tr>
+    <tr><td>Copper</td><td>385</td><td>Common material for heating pipes &mdash; heats quickly, conducts well.</td></tr>
+    <tr><td>Lead</td><td>130</td><td>Very low heat capacity &mdash; warms very quickly for its mass.</td></tr>
+</table>
+
+<h3>Worked Example 5 &mdash; Heating Water</h3>
+
+<pre>
+Question: How much energy is needed to heat 2 kg of water from
+          20 °C to 80 °C? (c_water = 4200 J/kg °C)
+
+Given:   m = 2 kg,   c = 4200 J/kg °C,   Δθ = 80 − 20 = 60 °C
+Formula: ΔE = m c Δθ
+Working: ΔE = 2 × 4200 × 60
+            = 504 000 J
+            = 504 kJ
+
+Answer:  504 000 J  (504 kJ)
+</pre>
+
+<h3>Worked Example 6 &mdash; Rearranging for Temperature Change</h3>
+
+<pre>
+Question: A 0.5 kg block of aluminium is given 9000 J of thermal
+          energy. What is its temperature rise? (c = 900 J/kg °C)
+
+Given:   m = 0.5 kg,   c = 900 J/kg °C,   ΔE = 9000 J
+Formula: ΔE = m c Δθ    →    Δθ = ΔE ÷ (m c)
+Working: Δθ = 9000 ÷ (0.5 × 900)
+            = 9000 ÷ 450
+            = 20 °C
+
+Answer:  Temperature rises by 20 °C.
+</pre>
+
+<h3>Why Water's High Specific Heat Capacity Matters</h3>
+
+<p>Water has a very high specific heat capacity (4200 J/kg&thinsp;&deg;C) compared with most other common substances. Practical consequences include:</p>
+
+<ul>
+    <li><strong>Climate:</strong> oceans absorb huge amounts of energy from the Sun without warming much. Coastal climates are therefore milder &mdash; summers are cooler and winters are warmer than inland.</li>
+    <li><strong>Storage heaters:</strong> night-storage heaters are filled with concrete or water to store lots of thermal energy overnight (using cheap off-peak electricity) and release it slowly during the day.</li>
+    <li><strong>Central heating:</strong> water is pumped through radiators because it carries a lot of energy per kilogram.</li>
+    <li><strong>Cooling systems:</strong> car engines use water-based coolant because it can absorb a great deal of thermal energy before boiling.</li>
+    <li><strong>Living organisms:</strong> because our bodies are mostly water, we resist rapid temperature changes &mdash; this is vital for homeostasis.</li>
+</ul>
+
+<div class="exam-tip">A common exam mistake is confusing <strong>specific heat capacity</strong> (energy to warm 1 kg of a substance by 1 &deg;C) with <strong>specific latent heat</strong> (energy to change the state of 1 kg without temperature change). They are <em>different</em>. For GCSE separate physics, <code>c</code> only applies while the substance stays in the same state &mdash; during melting or boiling, temperature is constant and you need the latent-heat equation instead.</div>
+
+<h2>4.1.4 Power</h2>
+
+<div class="definition">
+    <strong>Power</strong> is the rate at which energy is transferred, or equivalently the rate at which work is done.<br><br>
+    <code>P = E / t</code> &nbsp;&nbsp;&nbsp; or &nbsp;&nbsp;&nbsp; <code>P = W / t</code><br><br>
+    where <code>P</code> = power in <strong>watts (W)</strong>, <code>E</code> or <code>W</code> = energy transferred / work done in joules (J), <code>t</code> = time in seconds (s).
+</div>
+
+<p>The <strong>watt</strong> is named after James Watt, the 18th-century Scottish engineer who improved the steam engine. <strong>1 watt = 1 joule per second.</strong> A 100 W light bulb transfers 100 joules of energy every second.</p>
+
+<p>Useful multiples:</p>
+<ul>
+    <li><strong>1 kilowatt (kW) = 1000 W</strong> &mdash; a typical electric kettle is around 2&ndash;3 kW.</li>
+    <li><strong>1 megawatt (MW) = 1 000 000 W</strong> &mdash; a single wind turbine is typically 2&ndash;5 MW.</li>
+    <li><strong>1 gigawatt (GW) = 10<sup>9</sup> W</strong> &mdash; large nuclear power stations output 1&ndash;3 GW.</li>
+</ul>
+
+<h3>Worked Example 7 &mdash; Energy Transferred by a Light Bulb</h3>
+
+<pre>
+Question: A 60 W light bulb is left on for 5 minutes. How much
+          energy is transferred?
+
+Given:   P = 60 W,   t = 5 min = 300 s
+Formula: P = E / t   →   E = P × t
+Working: E = 60 × 300
+           = 18 000 J
+           = 18 kJ
+
+Answer:  18 000 J  (18 kJ)
+</pre>
+
+<h3>Worked Example 8 &mdash; Power of a Person Climbing Stairs</h3>
+
+<pre>
+Question: A person of mass 60 kg climbs 30 steps, each 0.2 m high,
+          in 10 seconds. Calculate (a) the work done against gravity,
+          and (b) their average power.
+
+Given:   m = 60 kg,   number of steps × height = 30 × 0.2 = 6 m
+         g = 9.8 N/kg,   t = 10 s
+
+(a) Work done = force × distance = weight × height gained
+    Weight = m × g = 60 × 9.8 = 588 N
+    W = F × d = 588 × 6 = 3528 J
+
+(b) Power   = energy / time
+    P = 3528 ÷ 10
+      = 352.8 W
+
+Answer:  (a) 3528 J    (b) 352.8 W (≈ 350 W)
+
+For comparison: a professional cyclist sustains ~400 W for
+an hour; an elite sprinter peaks briefly above 2000 W.
+</pre>
+
+<div class="exam-tip">If a question asks for the <strong>useful</strong> power output, make sure you use the useful energy output &mdash; not the total energy input. If the device is 60% efficient and uses 100 W from the mains, its useful power output is only 60 W. Units: always convert minutes and hours to seconds before substituting into <code>P = E / t</code>. Forgetting this is a very common source of lost marks.</div>
+
+<h2>4.1.5 National and Global Energy Resources</h2>
+
+<p>Energy resources are used to generate electricity, for transport, and for heating. They fall into two broad categories:</p>
+
+<div class="definition">
+    <strong>Renewable resources</strong> are replenished at the same rate (or faster) than they are used. They will not run out on any human timescale.<br><br>
+    <strong>Non-renewable resources</strong> have finite supplies that will eventually be exhausted because they are used far faster than they form.
+</div>
+
+<h3>Non-Renewable Resources</h3>
+
+<table>
+    <tr><th>Resource</th><th>Main uses</th><th>How it works</th><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><strong>Coal</strong></td><td>Electricity, (historically) heating</td><td>Burned in a boiler to heat water into steam, which turns turbines coupled to generators.</td><td>High energy density; available in many countries; cheap; reliable &mdash; can be burned on demand.</td><td>Releases large quantities of CO<sub>2</sub> (greenhouse gas) and SO<sub>2</sub> (causes acid rain); mining damages landscape; finite resource.</td></tr>
+    <tr><td><strong>Oil</strong></td><td>Transport (petrol, diesel), heating, plastics</td><td>Refined into fuels burned in engines and boilers; also a feedstock for plastics and chemicals.</td><td>Extremely high energy density; easy to transport (liquid); the backbone of most modern transport.</td><td>Releases CO<sub>2</sub>; oil spills damage ecosystems; finite; geopolitical supply risks.</td></tr>
+    <tr><td><strong>Natural gas</strong></td><td>Electricity, domestic heating, cooking</td><td>Burned in a boiler (like coal) or in a combined-cycle gas turbine (CCGT), which is more efficient.</td><td>Cleaner than coal (~half the CO<sub>2</sub> per kWh); flexible &mdash; can ramp up and down quickly to match demand; widely available via pipelines.</td><td>Still releases CO<sub>2</sub>; methane leaks are a very potent greenhouse gas; finite.</td></tr>
+    <tr><td><strong>Nuclear</strong></td><td>Electricity</td><td>Fission of uranium-235 releases energy as thermal energy; the heat boils water and drives steam turbines.</td><td>No CO<sub>2</sub> during generation; very high energy density (1 kg of U-235 &asymp; 2.5 million kg of coal); reliable baseload.</td><td>Radioactive waste must be stored safely for thousands of years; high decommissioning costs; risk of accidents (Chernobyl, Fukushima); very high build cost.</td></tr>
+</table>
+
+<h3>Renewable Resources</h3>
+
+<table>
+    <tr><th>Resource</th><th>Main uses</th><th>How it works</th><th>Advantages</th><th>Disadvantages</th></tr>
+    <tr><td><strong>Wind</strong></td><td>Electricity</td><td>Wind turns the blades of a turbine, driving a generator.</td><td>No CO<sub>2</sub> during generation; low running costs; plentiful in UK.</td><td>Unreliable &mdash; no output when the wind is not blowing; visual/noise impact; hazard to birds; high capital cost.</td></tr>
+    <tr><td><strong>Solar</strong></td><td>Electricity (photovoltaic), hot water (solar thermal)</td><td>PV panels convert sunlight directly into electricity via the photoelectric effect in semiconductor cells.</td><td>No CO<sub>2</sub> in use; very low maintenance; ideal for remote locations; abundant.</td><td>No output at night or when heavily overcast; low power density (big area needed); manufacture requires rare materials.</td></tr>
+    <tr><td><strong>Hydroelectric</strong></td><td>Electricity</td><td>Water stored behind a dam falls through turbines (GPE &rarr; KE &rarr; electrical).</td><td>Reliable in rainy regions; can quickly respond to demand; pumped storage can store surplus energy.</td><td>Flooding valleys destroys habitats and displaces people; only viable in certain geography; dam failure risk.</td></tr>
+    <tr><td><strong>Tidal</strong></td><td>Electricity</td><td>Water is trapped behind a tidal barrage at high tide; released through turbines as the tide falls.</td><td>Tides are extremely predictable &mdash; perfectly reliable; no fuel cost; long-lived infrastructure.</td><td>Very limited number of suitable sites; disrupts estuarine ecosystems; high build cost; generates only at tide changes.</td></tr>
+    <tr><td><strong>Wave</strong></td><td>Electricity</td><td>The up-and-down motion of ocean waves drives mechanisms that turn generators.</td><td>No CO<sub>2</sub>; UK has extensive coastline; waves are a concentrated form of solar/wind energy.</td><td>Output depends on sea state; harsh marine environment erodes equipment; still an emerging technology; visual impact.</td></tr>
+    <tr><td><strong>Geothermal</strong></td><td>Electricity, domestic heating</td><td>Heat from radioactive decay deep within the Earth boils water into steam to drive turbines.</td><td>Very reliable &mdash; runs 24/7 regardless of weather; small land footprint; low CO<sub>2</sub>.</td><td>Only viable where hot rocks are close to the surface (Iceland, NZ, parts of US); can release small amounts of gas from deep rocks; drilling is expensive.</td></tr>
+    <tr><td><strong>Biofuel</strong></td><td>Transport, heating, electricity</td><td>Crops (e.g., sugar cane, corn, wood) are burned or fermented. CO<sub>2</sub> released was recently absorbed from the atmosphere.</td><td>"Carbon neutral" in principle; fuel can be stored and burned on demand; supports farming economies.</td><td>Competes with food crops for land; deforestation to grow biofuels; intensive farming requires fertiliser; still emits some CO<sub>2</sub> when burned.</td></tr>
+</table>
+
+<h3>Summary Comparison</h3>
+
+<table>
+    <tr><th>Resource</th><th>Type</th><th>Reliability</th><th>CO<sub>2</sub>?</th><th>Cost</th><th>Typical uses</th></tr>
+    <tr><td>Coal</td><td>Non-renewable</td><td>High</td><td>Very high</td><td>Low</td><td>Electricity</td></tr>
+    <tr><td>Oil</td><td>Non-renewable</td><td>High</td><td>High</td><td>Medium</td><td>Transport</td></tr>
+    <tr><td>Gas</td><td>Non-renewable</td><td>High</td><td>Medium</td><td>Medium</td><td>Electricity, heating</td></tr>
+    <tr><td>Nuclear</td><td>Non-renewable</td><td>Very high (baseload)</td><td>None in use</td><td>High build, low fuel</td><td>Electricity</td></tr>
+    <tr><td>Wind</td><td>Renewable</td><td>Low (intermittent)</td><td>None</td><td>Medium</td><td>Electricity</td></tr>
+    <tr><td>Solar</td><td>Renewable</td><td>Low (daytime only)</td><td>None</td><td>Medium/falling</td><td>Electricity, hot water</td></tr>
+    <tr><td>Hydro</td><td>Renewable</td><td>High</td><td>None</td><td>High build</td><td>Electricity</td></tr>
+    <tr><td>Tidal</td><td>Renewable</td><td>Very high (predictable)</td><td>None</td><td>Very high</td><td>Electricity</td></tr>
+    <tr><td>Wave</td><td>Renewable</td><td>Medium</td><td>None</td><td>High</td><td>Electricity</td></tr>
+    <tr><td>Geothermal</td><td>Renewable</td><td>Very high</td><td>Low</td><td>High</td><td>Electricity, heating</td></tr>
+    <tr><td>Biofuel</td><td>Renewable</td><td>High</td><td>"Neutral"</td><td>Medium</td><td>Transport, heating</td></tr>
+</table>
+
+<h3>UK Electricity Generation Mix &mdash; Changing Over Time</h3>
+
+<p>The UK's electricity mix has changed dramatically since 1990. Coal used to supply about 65% of the UK's electricity; today it is below 2% and due to be phased out altogether. Gas and renewables (especially wind) have replaced it. The UK generated its last tonne of coal-fired electricity in October 2024 &mdash; the first G7 country to phase out coal entirely.</p>
+
+<!-- Diagram 4: UK electricity mix — simple bar chart -->
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Approximate UK electricity generation mix (recent)</text>
+
+  <!-- Axes -->
+  <line x1="100" y1="60" x2="100" y2="340" stroke="#374151" stroke-width="1.5"/>
+  <line x1="100" y1="340" x2="660" y2="340" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Y-axis labels (percent) -->
+  <text x="95" y="343" text-anchor="end" font-size="10" fill="#374151">0</text>
+  <text x="95" y="287" text-anchor="end" font-size="10" fill="#374151">10</text>
+  <text x="95" y="231" text-anchor="end" font-size="10" fill="#374151">20</text>
+  <text x="95" y="175" text-anchor="end" font-size="10" fill="#374151">30</text>
+  <text x="95" y="119" text-anchor="end" font-size="10" fill="#374151">40</text>
+  <text x="95" y="63" text-anchor="end" font-size="10" fill="#374151">50</text>
+  <!-- gridlines -->
+  <line x1="100" y1="284" x2="660" y2="284" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="100" y1="228" x2="660" y2="228" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="100" y1="172" x2="660" y2="172" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="100" y1="116" x2="660" y2="116" stroke="#e5e7eb" stroke-width="0.8"/>
+  <line x1="100" y1="60" x2="660" y2="60" stroke="#e5e7eb" stroke-width="0.8"/>
+
+  <!-- Y-axis title -->
+  <text x="40" y="200" text-anchor="middle" font-size="11" fill="#1e40af" font-weight="bold" transform="rotate(-90 40 200)">% of electricity generated</text>
+
+  <!-- Bars — heights: 10% = 56 px; 0% = y=340, 50% = y=60 -->
+  <!-- Gas 40% → y = 340 - 40*5.6 = 340-224 = 116 -->
+  <rect x="125" y="116" width="55" height="224" fill="#dc2626"/>
+  <text x="152" y="110" text-anchor="middle" font-size="10" font-weight="bold" fill="#991b1b">40%</text>
+  <text x="152" y="355" text-anchor="middle" font-size="10" fill="#374151">Gas</text>
+
+  <!-- Wind 28% → y = 340 - 28*5.6 = 340-156.8 = 183.2 -->
+  <rect x="195" y="183" width="55" height="157" fill="#16a34a"/>
+  <text x="222" y="177" text-anchor="middle" font-size="10" font-weight="bold" fill="#166534">28%</text>
+  <text x="222" y="355" text-anchor="middle" font-size="10" fill="#374151">Wind</text>
+
+  <!-- Nuclear 15% → y = 340 - 84 = 256 -->
+  <rect x="265" y="256" width="55" height="84" fill="#f59e0b"/>
+  <text x="292" y="250" text-anchor="middle" font-size="10" font-weight="bold" fill="#92400e">15%</text>
+  <text x="292" y="355" text-anchor="middle" font-size="10" fill="#374151">Nuclear</text>
+
+  <!-- Solar 5% → y = 340 - 28 = 312 -->
+  <rect x="335" y="312" width="55" height="28" fill="#fbbf24"/>
+  <text x="362" y="306" text-anchor="middle" font-size="10" font-weight="bold" fill="#92400e">5%</text>
+  <text x="362" y="355" text-anchor="middle" font-size="10" fill="#374151">Solar</text>
+
+  <!-- Biomass 5% → y = 312 -->
+  <rect x="405" y="312" width="55" height="28" fill="#84cc16"/>
+  <text x="432" y="306" text-anchor="middle" font-size="10" font-weight="bold" fill="#365314">5%</text>
+  <text x="432" y="355" text-anchor="middle" font-size="10" fill="#374151">Biomass</text>
+
+  <!-- Hydro 2% → y = 340 - 11.2 = 328.8 -->
+  <rect x="475" y="329" width="55" height="11" fill="#2563eb"/>
+  <text x="502" y="323" text-anchor="middle" font-size="10" font-weight="bold" fill="#1e40af">2%</text>
+  <text x="502" y="355" text-anchor="middle" font-size="10" fill="#374151">Hydro</text>
+
+  <!-- Imports 5% → y = 312 -->
+  <rect x="545" y="312" width="55" height="28" fill="#6b7280"/>
+  <text x="572" y="306" text-anchor="middle" font-size="10" font-weight="bold" fill="#374151">5%</text>
+  <text x="572" y="355" text-anchor="middle" font-size="10" fill="#374151">Imports</text>
+
+  <!-- Renewable / non-renewable key -->
+  <rect x="500" y="60" width="150" height="70" rx="4" fill="#fff" stroke="#d1d5db" stroke-width="1"/>
+  <rect x="510" y="70" width="12" height="10" fill="#16a34a"/>
+  <text x="527" y="79" font-size="9" fill="#111">Renewable (&asymp; 40%)</text>
+  <rect x="510" y="85" width="12" height="10" fill="#dc2626"/>
+  <text x="527" y="94" font-size="9" fill="#111">Fossil fuel (&asymp; 40%)</text>
+  <rect x="510" y="100" width="12" height="10" fill="#f59e0b"/>
+  <text x="527" y="109" font-size="9" fill="#111">Nuclear (&asymp; 15%)</text>
+  <rect x="510" y="115" width="12" height="10" fill="#6b7280"/>
+  <text x="527" y="124" font-size="9" fill="#111">Imports (&asymp; 5%)</text>
+
+  <text x="350" y="386" text-anchor="middle" font-size="9" fill="#6b7280" font-style="italic">Figures are approximate &mdash; proportions change year to year. Coal has been phased out (2024).</text>
+</svg>
+
+<h3>Environmental Issues</h3>
+
+<p>Different energy sources cause different environmental problems:</p>
+
+<ul>
+    <li><strong>Burning fossil fuels (coal, oil, gas)</strong> releases <strong>carbon dioxide (CO<sub>2</sub>)</strong>, a greenhouse gas that traps thermal energy radiated from Earth's surface, causing <strong>global warming</strong> and <strong>climate change</strong>.</li>
+    <li><strong>Burning coal</strong> (and to a lesser extent oil) releases <strong>sulfur dioxide (SO<sub>2</sub>)</strong>, which dissolves in rain to form <strong>acid rain</strong>, damaging forests, lakes, and stonework.</li>
+    <li><strong>Oil spills</strong> from tankers or rigs devastate marine and coastal wildlife and take decades to clean up.</li>
+    <li><strong>Nuclear power</strong> produces <strong>radioactive waste</strong> that remains dangerous for thousands of years and must be stored safely. Accidents (Chernobyl 1986, Fukushima 2011) can contaminate large areas.</li>
+    <li><strong>Hydroelectric dams</strong> flood valleys, destroying habitats and displacing communities; they can also release methane from decaying vegetation.</li>
+    <li><strong>Wind farms</strong> have visual and noise impacts and can kill birds and bats, though the toll is small compared with cats or buildings.</li>
+    <li><strong>Biofuels</strong> compete with food crops and may drive deforestation if rainforests are cleared for plantations.</li>
+    <li><strong>Solar panel manufacture</strong> uses energy and rare materials; end-of-life recycling is still developing.</li>
+</ul>
+
+<h3>Reliability vs Environmental Impact &mdash; the Energy Trilemma</h3>
+
+<p>Policymakers must balance three competing demands, often called the <strong>energy trilemma</strong>:</p>
+
+<ol>
+    <li><strong>Security &amp; reliability</strong> &mdash; the lights must stay on even when there is no wind and no sun.</li>
+    <li><strong>Affordability</strong> &mdash; electricity must not be so expensive that consumers or industry suffer.</li>
+    <li><strong>Sustainability</strong> &mdash; reducing CO<sub>2</sub> emissions to meet climate targets.</li>
+</ol>
+
+<p>No single resource satisfies all three perfectly. A realistic low-carbon electricity system uses a <strong>mix</strong> of resources: renewables for most generation, nuclear for reliable low-carbon baseload, gas for flexible backup during calm/dark periods, and increasingly large-scale storage (batteries, pumped hydro) to shift energy from times of surplus to times of shortage.</p>
+
+<div class="exam-tip">Long-answer ("6-mark") questions about energy resources almost always reward a <strong>balanced</strong> answer &mdash; you must discuss both advantages and disadvantages, consider environmental <em>and</em> economic impact, and reach a justified conclusion. A one-sided answer ("renewables are better, end of story") will cap at a middling grade. Always write: "advantage&hellip; however, disadvantage&hellip; overall&hellip;" with specific physics reasoning.</div>
+
+<div class="exam-tip">Know the difference between <strong>energy resource</strong> (the raw source, e.g. coal, uranium, wind) and the <strong>generation method</strong> (how electricity is produced, e.g. boiler + steam turbine, PV panel). Also know that <em>all</em> generation methods except PV and fuel cells involve turning a turbine connected to a generator &mdash; the only real difference between a coal, nuclear, gas, wind, tidal, and geothermal power station is <em>what</em> turns the turbine.</div>
+
+<h2>Summary Checklist for 4.1 Energy</h2>
+
+<ul>
+    <li>Name the 8 energy <strong>stores</strong> and give an example of each.</li>
+    <li>Name the 4 energy <strong>pathways</strong> (transfers) and give an example of each.</li>
+    <li>State and apply the principle of conservation of energy in a closed system.</li>
+    <li>Calculate kinetic energy using <code>E<sub>k</sub> = &frac12; m v<sup>2</sup></code>.</li>
+    <li>Calculate gravitational PE using <code>&Delta;E<sub>p</sub> = m g h</code> with g = 9.8 N/kg.</li>
+    <li>Calculate elastic PE using <code>E<sub>e</sub> = &frac12; k e<sup>2</sup></code>.</li>
+    <li>Calculate work done using <code>W = F d</code>.</li>
+    <li>Calculate thermal energy changes using <code>&Delta;E = m c &Delta;&theta;</code>.</li>
+    <li>Define useful and wasted energy, calculate efficiency, and read/draw a Sankey diagram.</li>
+    <li>Describe ways of reducing unwanted energy transfer: lubrication, streamlining, loft insulation, cavity walls, double glazing, draught excluders &mdash; and explain the physics of each.</li>
+    <li>Define specific heat capacity and use the data in calculations.</li>
+    <li>Define power and calculate it using <code>P = E / t</code>.</li>
+    <li>Compare renewable and non-renewable resources, their advantages, disadvantages, and environmental impacts.</li>
+    <li>Discuss the changing UK energy mix and the energy trilemma in 6-mark extended-answer questions.</li>
+</ul>
+
+</div>
+</body>
+</html>
