@@ -1,8 +1,8 @@
 // Shared PDF download handler for subject-notes pages.
-// Renders the currently loaded note into a branded PDF with:
+// Renders the currently loaded note (inside #pdfFrame) into a branded PDF with:
 //   - a blue "RAG Learning" header bar on every page
-//   - a footer with copyright, site URL (raglearning.uk), and page numbers
-//   - a faint diagonal "RAG Learning" watermark across every page (anti-theft)
+//   - a two-line footer: topic title above the divider, and
+//     "© RAG Learning · Not for redistribution" | "raglearning.uk" | "Page X of Y" below
 // Requires html2pdf.js to be loaded on the page before this script.
 
 async function downloadCurrentAsPDF(evt) {
@@ -13,8 +13,7 @@ async function downloadCurrentAsPDF(evt) {
   const subEl   = document.getElementById('viewerSub');
   const btn     = document.getElementById('downloadBtn');
 
-  const src = iframe && iframe.getAttribute('src');
-  if (!src) {
+  if (!iframe || !iframe.getAttribute('src')) {
     alert('Please select a topic first.');
     return;
   }
@@ -24,8 +23,21 @@ async function downloadCurrentAsPDF(evt) {
     return;
   }
 
+  let doc;
+  try {
+    doc = iframe.contentDocument || (iframe.contentWindow && iframe.contentWindow.document);
+  } catch (err) {
+    alert('Could not read the note. Please try again.');
+    return;
+  }
+
+  if (!doc || !doc.body || doc.readyState !== 'complete') {
+    alert('The note is still loading — please wait a moment and try again.');
+    return;
+  }
+
   const rawTitle = (titleEl ? titleEl.textContent : 'note').trim();
-  const subTitle = (subEl ? subEl.textContent : '').trim();
+  const subTitle = (subEl   ? subEl.textContent   : '').trim();
   const safeName = rawTitle.replace(/[\\/:*?"<>|]+/g, '-').replace(/\s+/g, ' ').trim();
   const filename = (safeName || 'note') + '.pdf';
 
@@ -43,78 +55,38 @@ async function downloadCurrentAsPDF(evt) {
     btn.style.opacity = '0.7';
   }
 
-  let stage;
+  // Inject print-friendly styles into the iframe's <head> so the note lays out
+  // cleanly at A4 width. We remove this style element when we're done.
+  let injected = null;
   try {
-    // Fetch the note HTML so we can re-render it in the parent document
-    // with all styles correctly applied (avoids iframe style-scoping issues).
-    const resp = await fetch(src, { credentials: 'same-origin' });
-    if (!resp.ok) throw new Error('Failed to load note (' + resp.status + ')');
-    const html = await resp.text();
+    injected = doc.getElementById('rag-pdf-print-style');
+    if (!injected) {
+      injected = doc.createElement('style');
+      injected.id = 'rag-pdf-print-style';
+      injected.textContent =
+        'html, body { background:#ffffff !important; color:#111 !important; margin:0 !important; }' +
+        'body { padding: 20px 28px !important; line-height: 1.55 !important; font-size: 14px !important; font-family: system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif !important; }' +
+        'body * { max-width: 100% !important; box-sizing: border-box !important; }' +
+        'img, svg, canvas, video { max-width:100% !important; height:auto !important; }' +
+        'img, svg, table, pre, blockquote, figure, .avoid-break { page-break-inside: avoid; break-inside: avoid; }' +
+        'h1, h2, h3, h4 { page-break-after: avoid; break-after: avoid; }' +
+        'table { border-collapse: collapse; width:100%; }' +
+        'th, td { border:1px solid #ccc; padding:6px 8px; text-align:left; vertical-align:top; }' +
+        'pre, code { white-space: pre-wrap; word-wrap: break-word; font-family: "Consolas","Menlo",monospace; }' +
+        'a { color:#1e40af; text-decoration:none; }';
+      doc.head.appendChild(injected);
+    }
+  } catch (e) {
+    // If we can't inject (cross-origin), proceed without custom print styles.
+    injected = null;
+  }
 
-    const parsed = new DOMParser().parseFromString(html, 'text/html');
-    const baseHref = new URL(src, window.location.href).href.replace(/[^/]*$/, '');
-
-    stage = document.createElement('div');
-    stage.id = 'rag-pdf-stage';
-    stage.style.cssText =
-      'position:fixed;left:-99999px;top:0;width:794px;background:#ffffff;color:#111;' +
-      'font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;';
-
-    // Copy stylesheets and inline styles from the note's <head>.
-    parsed.head.querySelectorAll('link[rel="stylesheet"], style').forEach(function (node) {
-      if (node.tagName === 'LINK') {
-        const hrefAttr = node.getAttribute('href');
-        if (!hrefAttr) return;
-        const abs = new URL(hrefAttr, baseHref).href;
-        const link = document.createElement('link');
-        link.rel = 'stylesheet';
-        link.href = abs;
-        stage.appendChild(link);
-      } else {
-        stage.appendChild(node.cloneNode(true));
-      }
-    });
-
-    // Rewrite relative URLs on images and anchors so they resolve correctly.
-    const bodyClone = parsed.body.cloneNode(true);
-    bodyClone.querySelectorAll('img[src], source[src]').forEach(function (el) {
-      const s = el.getAttribute('src');
-      if (s && !/^(?:https?:|data:|\/\/)/.test(s)) {
-        el.src = new URL(s, baseHref).href;
-      }
-    });
-    bodyClone.querySelectorAll('a[href]').forEach(function (el) {
-      const s = el.getAttribute('href');
-      if (s && !/^(?:https?:|mailto:|#|data:|\/\/)/.test(s)) {
-        el.setAttribute('href', new URL(s, baseHref).href);
-      }
-    });
-
-    // Print-friendly overrides.
-    const printStyle = document.createElement('style');
-    printStyle.textContent =
-      '#rag-pdf-stage { padding: 28px 36px; line-height: 1.55; font-size: 14px; }' +
-      '#rag-pdf-stage * { max-width: 100% !important; box-sizing: border-box; }' +
-      '#rag-pdf-stage img, #rag-pdf-stage svg, #rag-pdf-stage table, #rag-pdf-stage pre, #rag-pdf-stage blockquote, #rag-pdf-stage figure { page-break-inside: avoid; }' +
-      '#rag-pdf-stage h1, #rag-pdf-stage h2, #rag-pdf-stage h3, #rag-pdf-stage h4 { page-break-after: avoid; }' +
-      '#rag-pdf-stage table { border-collapse: collapse; width: 100%; }' +
-      '#rag-pdf-stage th, #rag-pdf-stage td { border: 1px solid #ccc; padding: 6px 8px; text-align: left; }';
-    stage.appendChild(printStyle);
-
-    const content = document.createElement('div');
-    content.innerHTML = bodyClone.innerHTML;
-    stage.appendChild(content);
-
-    document.body.appendChild(stage);
-
-    // Let any external stylesheets / fonts settle before rendering.
-    await new Promise(function (r) { setTimeout(r, 400); });
-
+  try {
     const opts = {
-      margin:      [24, 12, 22, 12],     // top, right, bottom, left (mm) — leaves room for header/footer
+      margin:      [22, 12, 24, 12],     // top, right, bottom, left (mm)
       filename:    filename,
       image:       { type: 'jpeg', quality: 0.95 },
-      html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff', logging: false, letterRendering: true },
+      html2canvas: { scale: 2, useCORS: true, backgroundColor: '#ffffff', logging: false, letterRendering: true, windowWidth: doc.documentElement.scrollWidth },
       jsPDF:       { unit: 'mm', format: 'a4', orientation: 'portrait', compress: true },
       pagebreak:   { mode: ['avoid-all', 'css', 'legacy'] }
     };
@@ -122,7 +94,7 @@ async function downloadCurrentAsPDF(evt) {
     await new Promise(function (resolve, reject) {
       html2pdf()
         .set(opts)
-        .from(stage)
+        .from(doc.body)
         .toPdf()
         .get('pdf')
         .then(function (pdf) {
@@ -131,40 +103,49 @@ async function downloadCurrentAsPDF(evt) {
           const pageH = pdf.internal.pageSize.getHeight();
 
           const shortSub   = subTitle.length  > 55 ? subTitle.slice(0, 52) + '…' : subTitle;
-          const shortTitle = rawTitle.length  > 70 ? rawTitle.slice(0, 67) + '…' : rawTitle;
+          const shortTitle = rawTitle.length  > 80 ? rawTitle.slice(0, 77) + '…' : rawTitle;
 
           for (let i = 1; i <= totalPages; i++) {
             pdf.setPage(i);
 
-            // HEADER BAR
-            pdf.setFillColor(30, 64, 175);                  // RAG blue
-            pdf.rect(0, 0, pageW, 15, 'F');
+            // ── HEADER BAR ────────────────────────────────────────────────
+            pdf.setFillColor(30, 64, 175);          // RAG blue
+            pdf.rect(0, 0, pageW, 14, 'F');
             pdf.setTextColor(255, 255, 255);
             pdf.setFont('helvetica', 'bold');
             pdf.setFontSize(12);
-            pdf.text('RAG Learning', 12, 9.5);
+            pdf.text('RAG Learning', 12, 9);
             if (shortSub) {
               pdf.setFont('helvetica', 'normal');
               pdf.setFontSize(9);
-              pdf.text(shortSub, pageW - 12, 9.5, { align: 'right' });
+              pdf.text(shortSub, pageW - 12, 9, { align: 'right' });
             }
 
-            // FOOTER DIVIDER
-            pdf.setDrawColor(200, 200, 200);
-            pdf.setLineWidth(0.2);
-            pdf.line(12, pageH - 15, pageW - 12, pageH - 15);
+            // ── FOOTER ─────────────────────────────────────────────────────
+            // Line 1: topic title, centered, italic, above divider
+            if (shortTitle) {
+              pdf.setTextColor(70, 70, 70);
+              pdf.setFont('helvetica', 'bolditalic');
+              pdf.setFontSize(9);
+              pdf.text(shortTitle, pageW / 2, pageH - 13.5, { align: 'center' });
+            }
 
-            // FOOTER TEXT
-            pdf.setTextColor(90, 90, 90);
+            // Divider
+            pdf.setDrawColor(210, 210, 210);
+            pdf.setLineWidth(0.2);
+            pdf.line(12, pageH - 11, pageW - 12, pageH - 11);
+
+            // Line 2: copyright · site · page numbers
+            pdf.setTextColor(100, 100, 100);
             pdf.setFont('helvetica', 'normal');
             pdf.setFontSize(8);
-            pdf.text('© RAG Learning — Not for redistribution', 12, pageH - 9);
-            pdf.text('raglearning.uk', 12, pageH - 4.5);
-            pdf.text('Page ' + i + ' of ' + totalPages, pageW - 12, pageH - 9, { align: 'right' });
-            if (shortTitle) {
-              pdf.setFont('helvetica', 'bold');
-              pdf.text(shortTitle, pageW / 2, pageH - 6.5, { align: 'center' });
-            }
+            pdf.text('© RAG Learning · Not for redistribution', 12, pageH - 6);
+            pdf.text('Page ' + i + ' of ' + totalPages, pageW - 12, pageH - 6, { align: 'right' });
+
+            pdf.setTextColor(30, 64, 175);
+            pdf.setFont('helvetica', 'bold');
+            pdf.setFontSize(8);
+            pdf.text('raglearning.uk', pageW / 2, pageH - 6, { align: 'center' });
           }
         })
         .save()
@@ -175,7 +156,9 @@ async function downloadCurrentAsPDF(evt) {
     console.error('PDF generation failed:', err);
     alert('Could not generate PDF: ' + (err && err.message ? err.message : 'unknown error'));
   } finally {
-    if (stage && stage.parentNode) stage.parentNode.removeChild(stage);
+    if (injected && injected.parentNode) {
+      try { injected.parentNode.removeChild(injected); } catch (e) {}
+    }
     resetButton();
   }
 }
