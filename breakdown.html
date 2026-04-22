@@ -206,6 +206,7 @@
     .trend-tooltip .tt-pct.amber { color: var(--amber); }
     .trend-tooltip .tt-pct.red   { color: var(--red); }
     .trend-tooltip .tt-date { font-size: 11px; color: var(--muted); margin-top: 6px; }
+    .trend-tooltip .tt-mode { font-size: 10px; font-weight: 600; color: var(--accent-dark); background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.15); padding: 2px 7px; border-radius: 999px; display: inline-block; margin-top: 6px; letter-spacing: 0.02em; }
     .trend-tooltip::after {
       content: ""; position: absolute; left: 50%; bottom: -6px;
       width: 10px; height: 10px; background: var(--surface);
@@ -1398,7 +1399,8 @@ function renderTrendChart(sorted, avgPct) {
             <text class="grid-label" x="${padL - 6}" y="${y + 3}" text-anchor="end">${v}%</text>`;
   }).join('');
 
-  const pts = sorted.map((h, i) => ({ x: xFor(i), y: yFor(h.pct), pct: h.pct, date: h.dateISO, topic: h.topic, topicName: h.topicName, earned: h.earned, total: h.total }));
+  const modeLabel = n => n === 5 ? 'Quick · 5Q' : n === 10 ? 'Standard · 10Q' : n === 20 ? 'Full exam · 20Q' : (n ? `${n} questions` : '');
+  const pts = sorted.map((h, i) => ({ x: xFor(i), y: yFor(h.pct), pct: h.pct, date: h.dateISO, topic: h.topic, topicName: h.topicName, earned: h.earned, total: h.total, mode: modeLabel(h.questions) }));
 
   let linePath = '', areaPath = '';
   if (n >= 2) {
@@ -1414,7 +1416,7 @@ function renderTrendChart(sorted, avgPct) {
     return `<circle class="trend-dot ${lvl}" cx="${p.x.toFixed(1)}" cy="${p.y.toFixed(1)}" r="4"`
       + ` data-topic="${attrEsc(p.topic)}" data-name="${attrEsc(p.topicName)}"`
       + ` data-pct="${p.pct}" data-earned="${p.earned}" data-total="${p.total}"`
-      + ` data-date="${attrEsc(ds)}" data-level="${lvl}"></circle>`;
+      + ` data-date="${attrEsc(ds)}" data-level="${lvl}" data-mode="${attrEsc(p.mode)}"></circle>`;
   }).join('');
 
   const labelEvery = Math.max(1, Math.ceil(n / 6));
@@ -1474,6 +1476,15 @@ function wireTrendChart(root) {
     tip.appendChild(name);
     tip.appendChild(row);
     tip.appendChild(date);
+    const modeText = circle.getAttribute('data-mode') || '';
+    if (modeText) {
+      const mode = document.createElement('div');
+      const modeChip = document.createElement('span');
+      modeChip.className = 'tt-mode';
+      modeChip.textContent = modeText;
+      mode.appendChild(modeChip);
+      tip.appendChild(mode);
+    }
     const cb = chart.getBoundingClientRect();
     const db = circle.getBoundingClientRect();
     tip.style.left = `${db.left + db.width / 2 - cb.left}px`;
