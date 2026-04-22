@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edexcel GCSE Physics — Topic 9: Forces and Their Effects</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 9 — Forces and Their Effects</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Physics (1PH0) &mdash; Paper 2</p>
+
+<h2>9.1 Vectors and Resultant Forces</h2>
+<p>Forces are <strong>vectors</strong> — they have magnitude and direction. When adding, take direction into account.</p>
+
+<!-- Resultant force diagram -->
+<svg viewBox="0 0 720 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs><marker id="a" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/></marker></defs>
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Resultant force</text>
+  <rect x="120" y="70" width="40" height="40" fill="#e5e7eb" stroke="#334155"/>
+  <line x1="160" y1="90" x2="260" y2="90" stroke="#16a34a" stroke-width="3" marker-end="url(#a)"/>
+  <text x="210" y="82" text-anchor="middle" font-size="12" fill="#16a34a">8 N right</text>
+  <line x1="120" y1="90" x2="80"  y2="90" stroke="#dc2626" stroke-width="3" marker-end="url(#a)"/>
+  <text x="80" y="82" text-anchor="middle" font-size="12" fill="#dc2626">3 N left</text>
+  <text x="180" y="140" text-anchor="middle" font-size="13" fill="#334155">Resultant = 8 − 3 = <strong>5 N right</strong></text>
+  <!-- perpendicular example -->
+  <line x1="460" y1="130" x2="540" y2="130" stroke="#16a34a" stroke-width="3" marker-end="url(#a)"/>
+  <text x="500" y="150" text-anchor="middle" font-size="12" fill="#16a34a">4 N</text>
+  <line x1="460" y1="130" x2="460" y2="70"  stroke="#dc2626" stroke-width="3" marker-end="url(#a)"/>
+  <text x="440" y="100" text-anchor="end" font-size="12" fill="#dc2626">3 N</text>
+  <line x1="460" y1="130" x2="540" y2="70"  stroke="#2563eb" stroke-width="3" stroke-dasharray="4 4" marker-end="url(#a)"/>
+  <text x="560" y="80" font-size="12" fill="#2563eb">Resultant = √(3²+4²) = 5 N</text>
+</svg>
+
+<h2>9.2 Moments, Levers and Gears</h2>
+<div class="definition">
+  Moment of a force = <strong>F × perpendicular distance from the pivot</strong>. Unit: newton-metre (N·m).
+</div>
+<span class="eq">Principle of moments: sum of clockwise = sum of anticlockwise (for equilibrium)</span>
+
+<!-- See-saw -->
+<svg viewBox="0 0 720 220" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">See-saw / Lever</text>
+  <polygon points="350,180 380,180 365,210" fill="#64748b"/>
+  <rect x="90" y="130" width="560" height="12" fill="#d1d5db" stroke="#334155"/>
+  <rect x="140" y="90" width="30" height="40" fill="#f97316" stroke="#7c2d12"/>
+  <text x="155" y="85" text-anchor="middle" font-size="11" font-weight="bold">300 N</text>
+  <line x1="155" y1="142" x2="365" y2="142" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="260" y="162" text-anchor="middle" font-size="11" fill="#2563eb">2.0 m</text>
+  <rect x="540" y="70" width="40" height="60" fill="#f97316" stroke="#7c2d12"/>
+  <text x="560" y="60" text-anchor="middle" font-size="11" font-weight="bold">500 N</text>
+  <line x1="365" y1="142" x2="560" y2="142" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="462" y="162" text-anchor="middle" font-size="11" fill="#16a34a">1.2 m</text>
+  <text x="360" y="200" text-anchor="middle" font-size="12" fill="#334155">300 × 2.0 = 500 × 1.2 = 600 N·m  →  balanced</text>
+</svg>
+
+<h3>Gears</h3>
+<ul>
+  <li>Small gear driving a large gear: speed decreases, <strong>torque increases</strong>.</li>
+  <li>Used in bikes (low gear = high torque for hills) and in cars (gearboxes).</li>
+</ul>
+
+<h2>9.3 Centre of Mass</h2>
+<p>The single point where we consider an object\'s weight to act. Found experimentally for flat shapes using a plumb line (hang from two points; centre of mass is at the intersection of the two drawn lines).</p>
+
+<h2>9.4 Hooke\'s Law</h2>
+<span class="eq">F = k × x &nbsp; (k = spring constant, N/m)</span>
+<p>Valid up to the <strong>limit of proportionality</strong>. Beyond the <strong>elastic limit</strong>, the spring is permanently deformed (inelastic deformation).</p>
+
+<!-- Force-extension graph -->
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Force–Extension Graph</text>
+  <line x1="80" y1="220" x2="660" y2="220" stroke="#1f2937" stroke-width="2"/>
+  <line x1="80" y1="40"  x2="80"  y2="220" stroke="#1f2937" stroke-width="2"/>
+  <text x="660" y="240" font-size="12" fill="#334155">extension x</text>
+  <text x="40"  y="60"  font-size="12" fill="#334155">force F</text>
+  <line x1="80" y1="220" x2="360" y2="80" stroke="#2563eb" stroke-width="3"/>
+  <text x="180" y="135" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="bold">linear: F = kx</text>
+  <path d="M 360 80 Q 460 75 540 65" stroke="#dc2626" stroke-width="3" fill="none"/>
+  <text x="470" y="55" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">past limit of proportionality</text>
+  <line x1="360" y1="80" x2="360" y2="220" stroke="#64748b" stroke-width="1" stroke-dasharray="4 4"/>
+  <text x="360" y="240" text-anchor="middle" font-size="11" fill="#334155">limit of proportionality</text>
+</svg>
+
+<span class="eq">Elastic PE = ½ × k × x²</span>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li>Forces are vectors; combine by considering direction.</li>
+  <li>Moment = F × perpendicular d; balanced when CW = ACW moments.</li>
+  <li>Gears trade speed for torque — used in cars and bikes.</li>
+  <li>Hooke\'s law: F = kx up to limit of proportionality; elastic PE = ½kx².</li>
+</ul>
+
+</div>
+</body>
+</html>

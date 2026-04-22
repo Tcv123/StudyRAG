@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edexcel GCSE Physics — Topic 15: Forces and Matter</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 15 — Forces and Matter</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Physics (1PH0) &mdash; Paper 2</p>
+
+<h2>15.1 Elastic Behaviour and Hooke\'s Law</h2>
+<span class="eq">F = k × x</span>
+<p>Valid only up to the <strong>limit of proportionality</strong>. Up to the <strong>elastic limit</strong>, deformation is elastic (object returns to original shape); beyond it, deformation is inelastic/plastic (permanent).</p>
+
+<span class="eq">Elastic PE = ½ k x²</span>
+
+<div class="worked">
+Spring of k = 250 N/m stretched by 0.10 m.<br>
+F = 250 × 0.10 = <strong>25 N</strong>; E = ½ × 250 × 0.01 = <strong>1.25 J</strong>.
+</div>
+
+<h2>15.2 Pressure in Fluids</h2>
+<span class="eq">p = F / A &nbsp; (pascal = N/m²)</span>
+<span class="eq">p = ρ × g × h &nbsp; (pressure at depth h in a fluid)</span>
+
+<!-- Pressure in fluid -->
+<svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Pressure Increases with Depth</text>
+  <rect x="200" y="40" width="320" height="180" fill="#bfdbfe" stroke="#1e40af"/>
+  <defs><marker id="p1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#dc2626"/></marker></defs>
+  <line x1="200" y1="70"  x2="250" y2="70"  stroke="#dc2626" stroke-width="2" marker-end="url(#p1)"/>
+  <line x1="520" y1="70"  x2="470" y2="70"  stroke="#dc2626" stroke-width="2" marker-end="url(#p1)"/>
+  <line x1="200" y1="130" x2="270" y2="130" stroke="#dc2626" stroke-width="3" marker-end="url(#p1)"/>
+  <line x1="520" y1="130" x2="450" y2="130" stroke="#dc2626" stroke-width="3" marker-end="url(#p1)"/>
+  <line x1="200" y1="190" x2="290" y2="190" stroke="#dc2626" stroke-width="5" marker-end="url(#p1)"/>
+  <line x1="520" y1="190" x2="430" y2="190" stroke="#dc2626" stroke-width="5" marker-end="url(#p1)"/>
+  <text x="360" y="65" text-anchor="middle" font-size="11" fill="#dc2626">small pressure</text>
+  <text x="360" y="125" text-anchor="middle" font-size="11" fill="#dc2626">medium</text>
+  <text x="360" y="185" text-anchor="middle" font-size="11" fill="#dc2626">greatest pressure at depth</text>
+</svg>
+
+<div class="worked">
+Water density 1 000 kg/m³, g = 10. Pressure at 15 m depth = 1 000 × 10 × 15 = <strong>150 000 Pa</strong> (= 1.5 × 10⁵ Pa).
+</div>
+
+<h2>15.3 Upthrust and Floating</h2>
+<p>Upthrust arises because pressure on the <em>bottom</em> of a submerged object is greater than on the <em>top</em>. An object floats when upthrust = weight.</p>
+<p>A steel ship floats because the hull shape displaces enough water that the average density of the ship is less than water.</p>
+
+<h2>15.4 Atmospheric Pressure</h2>
+<p>Air has weight. Atmospheric pressure at sea level ≈ 10⁵ Pa. Pressure <strong>decreases</strong> with altitude because there is less air above.</p>
+
+<h2>15.5 Hydraulic Systems</h2>
+<p>Pressure is transmitted equally in an incompressible fluid. A small force on a small piston produces a larger force on a bigger piston (same pressure × greater area). Used in car brakes and lifts.</p>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li>Hooke\'s law: F = kx up to limit of proportionality; elastic PE = ½kx².</li>
+  <li>Pressure p = F/A (Pa = N/m²); in fluids p = ρgh.</li>
+  <li>Upthrust arises from pressure difference; floats when upthrust = weight.</li>
+  <li>Atmospheric pressure ≈ 10⁵ Pa, decreases with altitude.</li>
+  <li>Hydraulics multiply forces using equal pressure across areas.</li>
+</ul>
+
+</div>
+</body>
+</html>

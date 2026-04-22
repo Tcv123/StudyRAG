@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edexcel GCSE Physics — Topic 2: Motion and Forces</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+    .container { max-width: 820px; margin: 0 auto; }
+    h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+    .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+    h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+    h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+    p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+    strong { color: #1a1a2e; }
+    table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 0.95rem; }
+    th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+    th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+    tr:nth-child(even) { background: #f9fafb; }
+    .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+    .worked { background: #ecfdf5; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+    .worked::before { content: "Worked Example: "; font-weight: 700; color: #0f5132; }
+    .eq { display: block; text-align: center; font-size: 1.1rem; padding: 10px 16px; margin: 10px 0; background: #f0f4ff; border-radius: 6px; border: 1px solid #cfd9ff; }
+    @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .worked { break-inside: avoid; } h2 { break-after: avoid; } }
+  </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;">
+  <a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;">
+    <span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning
+  </a>
+</div>
+
+<h1>Topic 2 — Motion and Forces</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Physics (1PH0) &mdash; Paper 1</p>
+
+<h2>2.1 Describing Motion</h2>
+<p><strong>Distance</strong> (scalar) is how far an object has moved. <strong>Displacement</strong> (vector) is the straight-line distance from start to finish, with direction.</p>
+<p><strong>Speed</strong> is a scalar (distance/time). <strong>Velocity</strong> is a vector (displacement/time).</p>
+<span class="eq">speed = distance ÷ time &nbsp; ↔ &nbsp; v = s / t</span>
+
+<div class="definition">
+  Typical speeds to remember: walking ≈ 1.5 m/s, running ≈ 3 m/s, cycling ≈ 6 m/s, car ≈ 25–30 m/s, sound in air ≈ 340 m/s, light ≈ 3 × 10⁸ m/s.
+</div>
+
+<h2>2.2 Acceleration</h2>
+<span class="eq">a = (v − u) / t</span>
+<p>Where <em>u</em> = initial velocity, <em>v</em> = final velocity, <em>t</em> = time taken. Unit: m/s².</p>
+
+<span class="eq">v² = u² + 2as</span>
+
+<div class="worked">
+A car speeds up from 5 m/s to 15 m/s in 4 s. Acceleration a = (15 − 5)/4 = <strong>2.5 m/s²</strong>.
+</div>
+
+<h2>2.3 Distance-Time and Velocity-Time Graphs</h2>
+
+<!-- Distance-time graph -->
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Distance–Time Graph</text>
+  <line x1="60" y1="220" x2="680" y2="220" stroke="#1f2937" stroke-width="2"/>
+  <line x1="60" y1="40" x2="60" y2="220" stroke="#1f2937" stroke-width="2"/>
+  <text x="680" y="240" font-size="12" fill="#334155">time</text>
+  <text x="35" y="60" font-size="12" fill="#334155">distance</text>
+  <!-- stationary -->
+  <line x1="80" y1="200" x2="200" y2="200" stroke="#dc2626" stroke-width="3"/>
+  <text x="140" y="195" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">stationary</text>
+  <!-- constant speed -->
+  <line x1="200" y1="200" x2="380" y2="100" stroke="#16a34a" stroke-width="3"/>
+  <text x="290" y="145" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="bold">constant speed</text>
+  <!-- accelerating -->
+  <path d="M 380 100 Q 500 95 580 55" stroke="#2563eb" stroke-width="3" fill="none"/>
+  <text x="490" y="80" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="bold">accelerating (speed increasing)</text>
+  <text x="360" y="248" text-anchor="middle" font-size="11" fill="#64748b">Gradient of a distance–time graph = speed</text>
+</svg>
+
+<!-- Velocity-time graph -->
+<svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Velocity–Time Graph</text>
+  <line x1="60" y1="220" x2="680" y2="220" stroke="#1f2937" stroke-width="2"/>
+  <line x1="60" y1="40" x2="60" y2="220" stroke="#1f2937" stroke-width="2"/>
+  <text x="680" y="240" font-size="12" fill="#334155">time</text>
+  <text x="35" y="60" font-size="12" fill="#334155">velocity</text>
+  <!-- increasing accelerating -->
+  <line x1="80" y1="200" x2="280" y2="80" stroke="#2563eb" stroke-width="3"/>
+  <text x="190" y="140" text-anchor="middle" font-size="11" fill="#2563eb" font-weight="bold">constant acceleration</text>
+  <!-- constant velocity -->
+  <line x1="280" y1="80" x2="460" y2="80" stroke="#16a34a" stroke-width="3"/>
+  <text x="370" y="75" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="bold">constant velocity</text>
+  <!-- decelerating -->
+  <line x1="460" y1="80" x2="600" y2="200" stroke="#dc2626" stroke-width="3"/>
+  <text x="540" y="130" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">deceleration</text>
+  <!-- shade area -->
+  <polygon points="80,200 280,80 460,80 460,220 80,220" fill="#dbeafe" fill-opacity="0.4"/>
+  <text x="260" y="250" text-anchor="middle" font-size="11" fill="#64748b">Area under a v–t graph = distance travelled. Gradient = acceleration.</text>
+</svg>
+
+<h2>2.4 Newton's Laws of Motion</h2>
+<ol>
+  <li><strong>First law:</strong> an object remains at rest or moves at constant velocity unless a <em>resultant</em> force acts on it.</li>
+  <li><strong>Second law:</strong> <em>F = m × a</em> — resultant force = mass × acceleration.</li>
+  <li><strong>Third law:</strong> when two objects interact, the forces they exert on each other are equal in magnitude and opposite in direction.</li>
+</ol>
+
+<div class="exam-tip">"Resultant force" means the single force that has the same effect as all the forces combined. Identify <em>all</em> forces on a diagram, then subtract opposing ones.</div>
+
+<h2>2.5 Weight and Mass</h2>
+<p><strong>Mass</strong> (kg) — the amount of matter in a body; the same everywhere.</p>
+<p><strong>Weight</strong> (N) — the gravitational force on a body; changes with g.</p>
+<span class="eq">W = m × g &nbsp; (g ≈ 10 N/kg on Earth)</span>
+
+<h2>2.6 Stopping Distances</h2>
+<p><strong>Stopping distance = thinking distance + braking distance</strong>.</p>
+<ul>
+  <li><strong>Thinking distance</strong>: the distance covered during the driver's reaction time. Depends on <em>speed</em> and <em>reaction time</em> (increased by tiredness, alcohol, distractions).</li>
+  <li><strong>Braking distance</strong>: the distance while decelerating. Depends on <em>speed</em>² (KE ∝ v²), mass of vehicle, condition of tyres/brakes, road surface.</li>
+</ul>
+
+<!-- Stopping distance diagram -->
+<svg viewBox="0 0 720 160" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <rect x="40" y="60" width="180" height="40" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="85" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="bold">Thinking distance</text>
+  <text x="130" y="115" text-anchor="middle" font-size="11" fill="#334155">(reaction time × speed)</text>
+  <rect x="220" y="60" width="400" height="40" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+  <text x="420" y="85" text-anchor="middle" font-size="13" fill="#991b1b" font-weight="bold">Braking distance</text>
+  <text x="420" y="115" text-anchor="middle" font-size="11" fill="#334155">(depends on v² — quadruples when speed doubles)</text>
+  <text x="330" y="35" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">Stopping distance = thinking + braking</text>
+</svg>
+
+<h2>2.7 Terminal Velocity</h2>
+<p>As a falling object speeds up, <strong>air resistance</strong> increases. When air resistance equals weight, the resultant force becomes zero and the object falls at constant (terminal) velocity.</p>
+
+<!-- Skydiver diagram -->
+<svg viewBox="0 0 720 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <defs>
+    <marker id="arwT" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#dc2626"/></marker>
+    <marker id="arwB" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#2563eb"/></marker>
+  </defs>
+  <text x="120" y="25" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="bold">Just after jump</text>
+  <circle cx="120" cy="110" r="10" fill="#334155"/>
+  <line x1="120" y1="80" x2="120" y2="45" stroke="#dc2626" stroke-width="2" marker-end="url(#arwT)"/>
+  <text x="80" y="65" font-size="11" fill="#dc2626">small air res.</text>
+  <line x1="120" y1="135" x2="120" y2="175" stroke="#2563eb" stroke-width="3" marker-end="url(#arwB)"/>
+  <text x="150" y="160" font-size="11" fill="#2563eb">weight</text>
+  <text x="120" y="205" text-anchor="middle" font-size="11" fill="#334155">accelerating</text>
+
+  <text x="360" y="25" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="bold">Terminal velocity</text>
+  <circle cx="360" cy="110" r="10" fill="#334155"/>
+  <line x1="360" y1="80" x2="360" y2="45" stroke="#dc2626" stroke-width="3" marker-end="url(#arwT)"/>
+  <text x="320" y="65" font-size="11" fill="#dc2626">air res. = weight</text>
+  <line x1="360" y1="135" x2="360" y2="175" stroke="#2563eb" stroke-width="3" marker-end="url(#arwB)"/>
+  <text x="390" y="160" font-size="11" fill="#2563eb">weight</text>
+  <text x="360" y="205" text-anchor="middle" font-size="11" fill="#334155">constant v (no net force)</text>
+
+  <text x="600" y="25" text-anchor="middle" font-size="13" fill="#1e40af" font-weight="bold">Parachute open</text>
+  <path d="M 570 75 Q 600 55 630 75" stroke="#16a34a" stroke-width="3" fill="none"/>
+  <circle cx="600" cy="110" r="10" fill="#334155"/>
+  <line x1="600" y1="80" x2="600" y2="40" stroke="#dc2626" stroke-width="5" marker-end="url(#arwT)"/>
+  <text x="555" y="55" font-size="11" fill="#dc2626">huge air res.</text>
+  <line x1="600" y1="135" x2="600" y2="175" stroke="#2563eb" stroke-width="3" marker-end="url(#arwB)"/>
+  <text x="630" y="160" font-size="11" fill="#2563eb">weight</text>
+  <text x="600" y="205" text-anchor="middle" font-size="11" fill="#334155">decelerating to new lower v</text>
+</svg>
+
+<h2>2.8 Momentum and Collisions</h2>
+<span class="eq">p = m × v &nbsp; (kg m/s)</span>
+<p><strong>Conservation of momentum</strong>: total momentum before = total momentum after a collision, provided no external resultant forces act.</p>
+
+<div class="worked">
+A 2 kg trolley at 4 m/s hits a stationary 3 kg trolley and they stick together.<br>
+Before: p = 2 × 4 + 3 × 0 = 8 kg m/s.<br>
+After: (2 + 3) × v = 8 → v = <strong>1.6 m/s</strong>.
+</div>
+
+<h3>Force and Change in Momentum</h3>
+<span class="eq">F = Δp / Δt</span>
+<p>Crumple zones, air bags and seat belts all <em>increase Δt</em> — this reduces the average force on the occupants, saving lives.</p>
+
+<h2>Key Points Summary</h2>
+<ul>
+  <li>Vectors (velocity, acceleration, force) must be given with direction.</li>
+  <li>Newton's laws relate forces to motion: F = ma is the key equation.</li>
+  <li>Distance-time gradient = speed; velocity-time area = distance; v-t gradient = acceleration.</li>
+  <li>Stopping distance = thinking + braking; braking distance ∝ v².</li>
+  <li>Terminal velocity: air resistance = weight; no net force, constant v.</li>
+  <li>Momentum is conserved; increasing Δt reduces collision force.</li>
+</ul>
+
+</div>
+</body>
+</html>
