@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Exam Calendar — Preview</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg:#EAF2FC; --surface:#FFFFFF; --surface2:#F0F6FD; --border:#B8D0E8;
+    --text:#0B1E3F; --muted:#445F85; --muted2:#7891B0;
+    --accent:#2563EB; --accent-dark:#1D4ED8; --accent-dim:rgba(37,99,235,0.1);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: var(--bg); color: var(--text); font-family: 'DM Sans', sans-serif; padding: 24px; }
+  .wrap { max-width: 1400px; margin: 0 auto; }
+  h1 { font-family: 'DM Serif Display', serif; font-size: 28px; margin-bottom: 6px; }
+  .sub { color: var(--muted); font-size: 14px; margin-bottom: 20px; }
+  .banner { background:#fff; border:1px solid var(--border); border-left:4px solid var(--accent); border-radius:8px; padding:12px 16px; margin-bottom:20px; font-size:13.5px; color:var(--muted); line-height:1.5; }
+  .banner b { color: var(--text); }
+  .legend { display:flex; gap:10px; flex-wrap:wrap; margin-bottom:16px; align-items:center; }
+  .legend-pill { display:inline-flex; align-items:center; gap:6px; background:#fff; border:1px solid var(--border); padding:5px 10px; border-radius:20px; font-size:12px; font-weight:600; color:var(--text); }
+  .legend-swatch { width:14px; height:14px; border-radius:3px; }
+  .card { background:var(--surface); border:1px solid var(--border); border-radius:12px; overflow:hidden; }
+  .cal-header { padding:14px 18px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; }
+  .cal-title { font-weight:700; font-size:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Exam Calendar — Preview</h1>
+  <div class="sub">Preview of per-paper colors + "Completed" state for past exam days</div>
+
+  <div class="banner">
+    <b>Simulated date: 14 June 2026.</b> In this preview, today is mid-June so you can see how days <b>1st, 8th and 10th</b> look once completed (✓ Done badge, faded, strikethrough), while <b>17th</b> still shows upcoming. On your real dashboard, today is still 23 Apr 2026 so all exams show as upcoming — but they'll automatically turn into the "Done" state as each exam day passes.
+  </div>
+
+  <div class="legend">
+    <span class="legend-pill"><span class="legend-swatch" style="background:#3B82F6"></span> Paper 1</span>
+    <span class="legend-pill"><span class="legend-swatch" style="background:#8B5CF6"></span> Paper 2</span>
+    <span class="legend-pill"><span class="legend-swatch" style="background:#EC4899"></span> Paper 3</span>
+    <span class="legend-pill"><span class="legend-swatch" style="background:#F59E0B"></span> Paper 4</span>
+    <span class="legend-pill"><span class="legend-swatch" style="background:#14B8A6"></span> Paper 5</span>
+    <span class="legend-pill" style="margin-left:auto;"><span style="color:#059669;font-weight:700;">✓ Done</span> = exam day passed</span>
+  </div>
+
+  <div class="card">
+    <div class="cal-header"><div class="cal-title" id="examCalMonthLabel">June 2026</div><div style="color:var(--muted);font-size:12px;">Exam timetable</div></div>
+    <div id="examDatesGrid"></div>
+  </div>
+</div>
+
+<script>
+const EXAM_DATES = {
+  'Physics_Edexcel': [
+    { paper: 'Paper 2 — Advanced Physics II',   date: '2026-06-01', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 3 — General & Practical',   date: '2026-06-08', time: 'AM', duration: '2h 30m' },
+  ],
+  'Computer Science_OCR': [
+    { paper: 'Paper 1 — Computer Systems',      date: '2026-06-10', time: 'PM', duration: '2h 30m' },
+    { paper: 'Paper 2 — Algorithms & Programming', date: '2026-06-17', time: 'AM', duration: '2h 30m' },
+  ],
+};
+const SUBJECTS = [
+  { subject: 'Physics',          exam_board: 'Edexcel' },
+  { subject: 'Computer Science', exam_board: 'OCR' },
+];
+
+const DASH_SUBJ_COLOR  = {'Computer Science':'#6366F1','Physics':'#3B82F6'};
+const DASH_BOARD_COLOR = {'OCR':'#0369A1','Edexcel':'#B45309'};
+const DASH_BOARD_BG    = {'OCR':'rgba(3,105,161,0.1)','Edexcel':'rgba(180,83,9,0.1)'};
+const DASH_SUBJ_EMOJI  = {'Computer Science':'💻','Physics':'⚡'};
+const DASH_PAPER_COLOR = {1:'#3B82F6',2:'#8B5CF6',3:'#EC4899',4:'#F59E0B',5:'#14B8A6',6:'#EF4444'};
+const DASH_PAPER_LABEL = {1:'P1',2:'P2',3:'P3',4:'P4',5:'P5',6:'P6'};
+
+const SIMULATED_TODAY = new Date('2026-06-14T08:00:00');
+
+const exams = [];
+SUBJECTS.forEach(s => {
+  const dates = EXAM_DATES[`${s.subject}_${s.exam_board}`];
+  dates.forEach(d => {
+    const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
+    const diffDays = Math.ceil((examDate - SIMULATED_TODAY) / 86400000);
+    exams.push({ ...d, subject: s.subject, board: s.exam_board, emoji: DASH_SUBJ_EMOJI[s.subject] || '📚', examDate, diffDays });
+  });
+});
+exams.sort((a,b) => a.examDate - b.examDate);
+
+function render() {
+  const grid = document.getElementById('examDatesGrid');
+  const year = 2026, month = 5;
+  const examMap = {};
+  exams.forEach(e => {
+    const key = `${e.examDate.getFullYear()}-${e.examDate.getMonth()}-${e.examDate.getDate()}`;
+    (examMap[key] = examMap[key] || []).push(e);
+  });
+
+  const today = new Date(SIMULATED_TODAY); today.setHours(0,0,0,0);
+  const firstDay = new Date(year, month, 1);
+  const lastDay = new Date(year, month + 1, 0);
+  const startDow = (firstDay.getDay() + 6) % 7;
+  const totalDays = lastDay.getDate();
+
+  const DAY_LABELS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+  let html = `<div style="display:grid;grid-template-columns:repeat(7,1fr);border-bottom:1px solid var(--border);">`;
+  DAY_LABELS.forEach(d => html += `<div style="text-align:center;font-size:11px;font-weight:600;color:var(--muted2);padding:10px 0;text-transform:uppercase;letter-spacing:0.05em;">${d}</div>`);
+  html += `</div><div style="display:grid;grid-template-columns:repeat(7,1fr);">`;
+
+  for (let i = 0; i < startDow; i++)
+    html += `<div style="min-height:70px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface2);"></div>`;
+
+  for (let day = 1; day <= totalDays; day++) {
+    const key = `${year}-${month}-${day}`;
+    const dayDate = new Date(year, month, day);
+    const isToday = dayDate.toDateString() === today.toDateString();
+    const isPast = dayDate < today;
+    const examsOnDay = examMap[key] || [];
+    const dow = (dayDate.getDay() + 6) % 7;
+    const isWeekend = dow >= 5;
+    const isLast = (startDow + day - 1) % 7 === 6;
+
+    const inlineEvents = examsOnDay.map(e => {
+      const sc = DASH_SUBJ_COLOR[e.subject] || '#2563EB';
+      const bc = DASH_BOARD_COLOR[e.board] || '#374151';
+      const bb = DASH_BOARD_BG[e.board] || 'rgba(55,65,81,0.1)';
+      const pNum = parseInt((e.paper.match(/Paper\s+(\d+)/) || [])[1], 10) || 1;
+      const pc = DASH_PAPER_COLOR[pNum] || sc;
+      const pLabel = DASH_PAPER_LABEL[pNum] || ('P' + pNum);
+      const timeStr = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
+      const done = e.diffDays < 0;
+      const urgency = done ? '#059669' : e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : '#059669';
+      const urgBg = done ? 'rgba(5,150,105,0.15)' : e.diffDays <= 7 ? 'rgba(239,68,68,0.1)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.1)' : 'rgba(5,150,105,0.1)';
+      const badge = done ? '✓ Done' : `${e.diffDays}d`;
+      const cardOpacity = done ? '0.55' : '1';
+      const strike = done ? 'text-decoration:line-through;' : '';
+      return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:4px solid ${pc};border-radius:8px;padding:8px 10px;margin-top:5px;opacity:${cardOpacity};${done ? 'filter:grayscale(0.3);' : ''}">
+        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">
+          <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.2;${strike}">${e.emoji} ${e.subject}</div>
+          <span style="font-size:11.5px;font-weight:700;color:${urgency};background:${urgBg};padding:2px 8px;border-radius:10px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${badge}</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px;flex-wrap:wrap;">
+          <span style="color:#fff;font-size:10.5px;font-weight:800;background:${pc};padding:2px 7px;border-radius:6px;letter-spacing:0.02em;">${pLabel}</span>
+          <span style="color:${bc};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:6px;">${e.board}</span>
+        </div>
+        <div style="font-size:12px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.3;${strike}">${e.paper}</div>
+        <div style="font-size:11px;color:var(--muted);margin-top:3px;">🕐 ${timeStr}${e.duration ? ' &nbsp;·&nbsp; ⏱ ' + e.duration : ''}</div>
+      </div>`;
+    }).join('');
+
+    const hasExams = examsOnDay.length > 0;
+    html += `<div style="min-height:${hasExams ? '120' : '70'}px;padding:8px 7px;border-right:${isLast ? 'none' : '1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday ? 'var(--accent-dim)' : isPast ? 'var(--surface2)' : isWeekend ? 'rgba(248,251,254,0.6)' : 'var(--surface)'};">
+      <div style="font-size:${isToday ? '14' : '13'}px;font-weight:${isToday ? '800' : '500'};color:${isToday ? 'var(--accent-dark)' : isPast ? 'var(--muted2)' : 'var(--text)'};${isToday ? 'background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;' : ''}">${day}</div>
+      ${inlineEvents}
+    </div>`;
+  }
+
+  const totalCells = startDow + totalDays;
+  const remainder = totalCells % 7;
+  if (remainder !== 0) {
+    for (let i = 0; i < 7 - remainder; i++) {
+      const isLast = i === (7 - remainder - 1);
+      html += `<div style="min-height:70px;border-right:${isLast ? 'none' : '1px solid var(--border)'};background:var(--surface2);"></div>`;
+    }
+  }
+  html += `</div>`;
+  grid.innerHTML = html;
+}
+render();
+</script>
+</body>
+</html>

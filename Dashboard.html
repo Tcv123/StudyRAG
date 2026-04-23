@@ -986,6 +986,8 @@ const DASH_SUBJ_COLOR  = {'Computer Science':'#6366F1','Mathematics':'#8B5CF6','
 const DASH_BOARD_COLOR = {'AQA':'#7C3AED','OCR':'#0369A1','Edexcel':'#B45309','Edexcel A':'#B45309','Edexcel B':'#92400E','OCR A':'#0E7490','OCR B':'#0F766E','Eduqas':'#047857'};
 const DASH_BOARD_BG    = {'AQA':'rgba(124,58,237,0.1)','OCR':'rgba(3,105,161,0.1)','Edexcel':'rgba(180,83,9,0.1)','Edexcel A':'rgba(180,83,9,0.1)','Edexcel B':'rgba(146,64,14,0.1)','OCR A':'rgba(14,116,144,0.1)','OCR B':'rgba(15,118,110,0.1)','Eduqas':'rgba(4,120,87,0.1)'};
 const DASH_SUBJ_EMOJI  = {'Computer Science':'💻','Mathematics':'🔢','Further Mathematics':'∑','Biology':'🧬','Chemistry':'🧪','Physics':'⚡','Economics':'📈','Geography':'🌍','English Language':'📝'};
+const DASH_PAPER_COLOR = {1:'#3B82F6',2:'#8B5CF6',3:'#EC4899',4:'#F59E0B',5:'#14B8A6',6:'#EF4444'};
+const DASH_PAPER_LABEL = {1:'P1',2:'P2',3:'P3',4:'P4',5:'P5',6:'P6'};
 
 let _dashCalExams  = [];
 let _dashCalMonths = [];
@@ -1007,7 +1009,7 @@ function renderExamDates(subjects) {
     dates.forEach(d => {
       const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
       const diffDays = Math.ceil((examDate - now) / 86400000);
-      if (diffDays >= 0) _dashCalExams.push({ ...d, subject: s.subject, board: s.exam_board, emoji: DASH_SUBJ_EMOJI[s.subject] || '📚', examDate, diffDays });
+      _dashCalExams.push({ ...d, subject: s.subject, board: s.exam_board, emoji: DASH_SUBJ_EMOJI[s.subject] || '📚', examDate, diffDays });
     });
   });
 
@@ -1089,16 +1091,26 @@ function renderExamCalendar() {
       const sc      = DASH_SUBJ_COLOR[e.subject] || 'var(--accent)';
       const bc      = DASH_BOARD_COLOR[e.board]  || '#374151';
       const bb      = DASH_BOARD_BG[e.board]     || 'rgba(55,65,81,0.1)';
+      const pNum    = parseInt((e.paper.match(/Paper\s+(\d+)/) || [])[1], 10) || 1;
+      const pc      = DASH_PAPER_COLOR[pNum] || sc;
+      const pLabel  = DASH_PAPER_LABEL[pNum] || ('P' + pNum);
       const timeStr = e.time === 'AM' ? '9:00 AM' : '1:30 PM';
-      const urgency = e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : '#059669';
-      const urgBg   = e.diffDays <= 7 ? 'rgba(239,68,68,0.1)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.1)' : 'rgba(5,150,105,0.1)';
-      return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:4px solid ${sc};border-radius:8px;padding:8px 10px;margin-top:5px;">
+      const done    = e.diffDays < 0;
+      const urgency = done ? '#059669' : e.diffDays <= 7 ? '#EF4444' : e.diffDays <= 21 ? '#F59E0B' : '#059669';
+      const urgBg   = done ? 'rgba(5,150,105,0.15)' : e.diffDays <= 7 ? 'rgba(239,68,68,0.1)' : e.diffDays <= 21 ? 'rgba(245,158,11,0.1)' : 'rgba(5,150,105,0.1)';
+      const badge   = done ? '✓ Done' : `${e.diffDays}d`;
+      const cardOpacity = done ? '0.55' : '1';
+      const strike  = done ? 'text-decoration:line-through;' : '';
+      return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:4px solid ${pc};border-radius:8px;padding:8px 10px;margin-top:5px;opacity:${cardOpacity};${done ? 'filter:grayscale(0.3);' : ''}">
         <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">
-          <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.2;">${e.emoji} ${e.subject}</div>
-          <span style="font-size:11.5px;font-weight:700;color:${urgency};background:${urgBg};padding:2px 8px;border-radius:10px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${e.diffDays}d</span>
+          <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.2;${strike}">${e.emoji} ${e.subject}</div>
+          <span style="font-size:11.5px;font-weight:700;color:${urgency};background:${urgBg};padding:2px 8px;border-radius:10px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${badge}</span>
         </div>
-        <div style="margin-bottom:3px;"><span style="color:${bc};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:6px;">${e.board}</span></div>
-        <div style="font-size:12px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.3;">${e.paper}</div>
+        <div style="display:flex;align-items:center;gap:5px;margin-bottom:3px;flex-wrap:wrap;">
+          <span style="color:#fff;font-size:10.5px;font-weight:800;background:${pc};padding:2px 7px;border-radius:6px;letter-spacing:0.02em;">${pLabel}</span>
+          <span style="color:${bc};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:6px;">${e.board}</span>
+        </div>
+        <div style="font-size:12px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.3;${strike}">${e.paper}</div>
         <div style="font-size:11px;color:var(--muted);margin-top:3px;">🕐 ${timeStr}${e.duration ? ' &nbsp;·&nbsp; ⏱ ' + e.duration : ''}</div>
       </div>`;
     }).join('');
