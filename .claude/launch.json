@@ -4,14 +4,16 @@
     {
       "name": "npx serve (static)",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", ".", "--listen", "3000", "--no-clipboard"],
-      "port": 3000
+      "runtimeArgs": ["serve", ".", "--no-clipboard"],
+      "port": 3000,
+      "autoPort": true
     },
     {
       "name": "Python HTTP server",
       "runtimeExecutable": "python",
-      "runtimeArgs": ["-m", "http.server", "8000"],
-      "port": 8000
+      "runtimeArgs": ["-m", "http.server"],
+      "port": 8000,
+      "autoPort": true
     }
   ]
 }
