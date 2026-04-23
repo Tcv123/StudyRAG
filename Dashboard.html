@@ -858,6 +858,10 @@ const EXAM_DATES = {
     { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
     { paper: 'Paper 3', date: '2026-06-16', time: 'AM', duration: '2h' },
   ],
+  'Biology_AQA|gcse': [
+    { paper: 'Paper 1 — Topics 4.1–4.4', date: '2026-05-19', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Topics 4.5–4.7', date: '2026-06-10', time: 'PM', duration: '1h 45m' },
+  ],
   'Biology_Edexcel A': [
     { paper: 'Paper 1', date: '2026-06-04', time: 'PM', duration: '2h' },
     { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
@@ -929,6 +933,10 @@ const EXAM_DATES = {
     { paper: 'Paper 1 — Fundamentals', date: '2026-05-20', time: 'PM', duration: '2h 15m' },
     { paper: 'Paper 2 — Scientific Literacy', date: '2026-06-01', time: 'AM', duration: '2h 15m' },
     { paper: 'Paper 3 — Practical Skills', date: '2026-06-08', time: 'AM', duration: '1h 30m' },
+  ],
+  'Physics_OCR B|gcse': [
+    { paper: 'Paper 1 — Breadth in Physics (P1, P2, P3)', date: '2026-05-22', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Depth in Physics (P4, P5, P6)',   date: '2026-06-05', time: 'PM', duration: '1h 45m' },
   ],
   'Economics_AQA': [
     { paper: 'Paper 1 — Markets & Market Failure', date: '2026-05-11', time: 'AM', duration: '2h' },
@@ -1329,6 +1337,7 @@ const SUBJECT_TOPIC_KEY = {
   'Physics_OCR A|gcse': 'physics-ocr-a-gcse',
   'Physics_OCR A': 'physics-ocr-a',
   'Physics_OCR B': 'physics-ocr-b',
+  'Physics_OCR B|gcse': 'physics-ocr-b-gcse',
   'Economics_AQA': 'economics-aqa',
   'Economics_Edexcel A': 'economics-edexcel-a',
   'Economics_OCR': 'economics-ocr',
@@ -1338,6 +1347,7 @@ const SUBJECT_TOPIC_KEY = {
   'Chemistry_OCR A': 'chemistry-ocr-a',
   'Chemistry_OCR B': 'chemistry-ocr-b',
   'Biology_AQA': 'biology-aqa',
+  'Biology_AQA|gcse': 'biology-aqa-gcse',
   'Biology_Edexcel A': 'biology-edexcel-a',
   'Biology_Edexcel B': 'biology-edexcel-b',
   'Biology_OCR A': 'biology-ocr-a',
@@ -1358,7 +1368,7 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_AQA': 'english-aqa',
   'English Language_Edexcel': 'english-edexcel',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-a-gcse': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-a-gcse': 6, 'physics-ocr-b': 6, 'physics-ocr-b-gcse': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-aqa-gcse': 7, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-ocr-gcse-notes.html',
   'Computer Science_OCR|alevel': 'subject-notes/cs-ocr-alevel-notes.html',
@@ -1371,6 +1381,7 @@ const SUBJECT_NOTES_PAGE = {
   'Physics_OCR A|gcse': 'subject-notes/physics-ocr-a-gcse-notes.html',
   'Physics_OCR A': 'subject-notes/physics-ocr-a-notes.html',
   'Physics_OCR B': 'subject-notes/physics-ocr-b-notes.html',
+  'Physics_OCR B|gcse': 'subject-notes/physics-ocr-b-gcse-notes.html',
   'Economics_AQA': 'subject-notes/economics-aqa-notes.html',
   'Economics_Edexcel A': 'subject-notes/economics-edexcel-a-notes.html',
   'Economics_OCR': 'subject-notes/economics-ocr-notes.html',
@@ -1380,6 +1391,7 @@ const SUBJECT_NOTES_PAGE = {
   'Chemistry_OCR A': 'subject-notes/chemistry-ocr-a-notes.html',
   'Chemistry_OCR B': 'subject-notes/chemistry-ocr-b-notes.html',
   'Biology_AQA': 'subject-notes/biology-aqa-notes.html',
+  'Biology_AQA|gcse': 'subject-notes/biology-aqa-gcse-notes.html',
   'Biology_Edexcel A': 'subject-notes/biology-edexcel-a-notes.html',
   'Biology_Edexcel B': 'subject-notes/biology-edexcel-b-notes.html',
   'Biology_OCR A': 'subject-notes/biology-ocr-a-notes.html',
@@ -2284,6 +2296,19 @@ const DIAG_TOPICS = {
       { id: 'B6', name: 'Field and Particle Physics', sub: 'EM fields, capacitors, induction, particles, nuclear' },
     ]
   },
+  'Physics_OCR B|gcse': {
+    label: 'Physics — OCR B (GCSE J259 21st Century)',
+    emoji: '⚡',
+    page: 'diagnostics/physics-ocr-b-gcse-diagnostic.html',
+    topics: [
+      { id: 'P1', name: 'Radiation and Waves',         sub: 'EM spectrum, v=fλ, reflection/refraction, ionising radiation' },
+      { id: 'P2', name: 'Sustainable Energy',          sub: 'Energy stores, transfers, efficiency, power, resources' },
+      { id: 'P3', name: 'Electric Circuits',           sub: 'Charge, current, p.d., Ohm\'s law, series/parallel, mains' },
+      { id: 'P4', name: 'Explaining Motion',           sub: 'Newton\'s laws, momentum, moments, stopping distance, Hooke' },
+      { id: 'P5', name: 'Radioactive Materials',       sub: 'Atomic model, α/β/γ, half-life, nuclear equations, fission/fusion' },
+      { id: 'P6', name: 'Matter — Models and Explanations', sub: 'Particle model, density, SHC/SLH, pressure, gas laws' },
+    ]
+  },
   'Economics_AQA': {
     label: 'Economics — AQA',
     emoji: '📈',
@@ -2411,6 +2436,20 @@ const DIAG_TOPICS = {
       { id: 'T6', name: 'Organisms Respond to Changes', sub: 'Nervous system, muscles, homeostasis' },
       { id: 'T7', name: 'Genetics, Populations & Evolution', sub: 'Inheritance, populations, evolution, speciation' },
       { id: 'T8', name: 'Control of Gene Expression', sub: 'Gene technology, epigenetics, biotechnology' },
+    ]
+  },
+  'Biology_AQA|gcse': {
+    label: 'Biology — AQA (GCSE)',
+    emoji: '🧬',
+    page: 'diagnostics/biology-aqa-gcse-diagnostic.html',
+    topics: [
+      { id: '4.1', name: 'Cell Biology', sub: 'Prokaryote/eukaryote, microscopy, transport, mitosis, stem cells' },
+      { id: '4.2', name: 'Organisation', sub: 'Enzymes, digestion, heart & blood vessels, plant transport' },
+      { id: '4.3', name: 'Infection and Response', sub: 'Pathogens, immunity, vaccines, antibiotics, monoclonal antibodies' },
+      { id: '4.4', name: 'Bioenergetics', sub: 'Photosynthesis, respiration, anaerobic respiration, metabolism' },
+      { id: '4.5', name: 'Homeostasis and Response', sub: 'Nervous system, hormones, blood glucose, reproduction, kidneys, plant hormones' },
+      { id: '4.6', name: 'Inheritance, Variation and Evolution', sub: 'DNA, genetics, mutation, natural selection, classification' },
+      { id: '4.7', name: 'Ecology', sub: 'Ecosystems, biodiversity, carbon/water/nitrogen cycles, human impacts' },
     ]
   },
   'Biology_Edexcel A': {

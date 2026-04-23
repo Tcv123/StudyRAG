@@ -579,6 +579,7 @@ const BUNDLE_MAP = {
   'Physics_OCR A|gcse':           ['questions/physics-ocr-a-gcse/physics-ocr-a-gcse-practice.js'],
   'Physics_OCR A':                ['questions/physics/physics-ocr-a-practice.js'],
   'Physics_OCR B':                ['questions/physics/physics-ocr-b-practice.js'],
+  'Physics_OCR B|gcse':           ['questions/physics-ocr-b-gcse/physics-ocr-b-gcse-practice.js'],
   'Economics_AQA':                ['questions/economics-aqa/economics-aqa-practice.js'],
   'Economics_Edexcel A':          ['questions/economics-edexcel-a/economics-edexcel-a-practice.js'],
   'Economics_OCR':                ['questions/economics-ocr/economics-ocr-practice.js'],
@@ -588,6 +589,7 @@ const BUNDLE_MAP = {
   'Chemistry_OCR A':              ['questions/chemistry/chemistry-ocr-a-practice.js'],
   'Chemistry_OCR B':              ['questions/chemistry/chemistry-ocr-b-practice.js'],
   'Biology_AQA':                  ['questions/biology/biology-aqa-practice.js'],
+  'Biology_AQA|gcse':             ['questions/biology/biology-aqa-gcse-practice.js'],
   'Biology_Edexcel A':            ['questions/biology/biology-edexcel-a-practice.js'],
   'Biology_Edexcel B':            ['questions/biology/biology-edexcel-b-practice.js'],
   'Biology_OCR A':                ['questions/biology/biology-ocr-a-practice.js'],
@@ -678,6 +680,7 @@ const PRACTICE_MAP = {
   'Physics_OCR A|gcse': () => typeof PHYSICS_OCR_A_GCSE_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_GCSE_PRACTICE : null,
   'Physics_OCR A': () => typeof PHYSICS_OCR_A_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_PRACTICE : null,
   'Physics_OCR B': () => typeof PHYSICS_OCR_B_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_PRACTICE : null,
+  'Physics_OCR B|gcse': () => typeof PHYSICS_OCR_B_GCSE_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_GCSE_PRACTICE : null,
   'Economics_AQA': () => typeof ECONOMICS_AQA_PRACTICE !== 'undefined' ? ECONOMICS_AQA_PRACTICE : null,
   'Economics_Edexcel A': () => typeof ECONOMICS_EDEXCEL_A_PRACTICE !== 'undefined' ? ECONOMICS_EDEXCEL_A_PRACTICE : null,
   'Economics_OCR': () => typeof ECONOMICS_OCR_PRACTICE !== 'undefined' ? ECONOMICS_OCR_PRACTICE : null,
@@ -687,6 +690,7 @@ const PRACTICE_MAP = {
   'Chemistry_OCR A': () => typeof CHEMISTRY_OCR_A_PRACTICE !== 'undefined' ? CHEMISTRY_OCR_A_PRACTICE : null,
   'Chemistry_OCR B': () => typeof CHEMISTRY_OCR_B_PRACTICE !== 'undefined' ? CHEMISTRY_OCR_B_PRACTICE : null,
   'Biology_AQA': () => typeof BIOLOGY_AQA_PRACTICE !== 'undefined' ? BIOLOGY_AQA_PRACTICE : null,
+  'Biology_AQA|gcse': () => typeof BIOLOGY_AQA_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_AQA_GCSE_PRACTICE : null,
   'Biology_Edexcel A': () => typeof BIOLOGY_EDEXCEL_A_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_A_PRACTICE : null,
   'Biology_Edexcel B': () => typeof BIOLOGY_EDEXCEL_B_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_B_PRACTICE : null,
   'Biology_OCR A': () => typeof BIOLOGY_OCR_A_PRACTICE !== 'undefined' ? BIOLOGY_OCR_A_PRACTICE : null,
@@ -918,6 +922,20 @@ const SUBJECT_TOPICS = {
       ]},
     ]
   },
+  'Physics_OCR B|gcse': {
+    sections: [
+      { label: 'OCR B GCSE (J259) — Paper 1: Breadth in Physics', topics: [
+        { id: 'P1', name: 'Radiation and Waves',         sub: 'EM spectrum, v=fλ, reflection/refraction, ionising radiation' },
+        { id: 'P2', name: 'Sustainable Energy',          sub: 'Energy stores, transfers, efficiency, power, resources' },
+        { id: 'P3', name: 'Electric Circuits',           sub: 'Charge, current, p.d., Ohm\'s law, series/parallel, mains' },
+      ]},
+      { label: 'OCR B GCSE (J259) — Paper 2: Depth in Physics', topics: [
+        { id: 'P4', name: 'Explaining Motion',           sub: 'Newton\'s laws, momentum, moments, stopping distance, Hooke' },
+        { id: 'P5', name: 'Radioactive Materials',       sub: 'Atomic model, α/β/γ, half-life, nuclear equations, fission/fusion' },
+        { id: 'P6', name: 'Matter — Models & Explanations', sub: 'Particle model, density, SHC/SLH, pressure, gas laws' },
+      ]},
+    ]
+  },
   'Economics_AQA': {
     sections: [
       { label: 'AQA — Microeconomics (Paper 1)', topics: [
@@ -1069,6 +1087,21 @@ const SUBJECT_TOPICS = {
         { id: 'T6', name: 'Organisms Respond to Changes', sub: 'Nervous system, muscles, homeostasis' },
         { id: 'T7', name: 'Genetics, Populations & Evolution', sub: 'Inheritance, populations, evolution, speciation' },
         { id: 'T8', name: 'Control of Gene Expression', sub: 'Gene technology, epigenetics, biotechnology' },
+      ]},
+    ]
+  },
+  'Biology_AQA|gcse': {
+    sections: [
+      { label: 'AQA GCSE — Paper 1', topics: [
+        { id: '4.1', name: 'Cell Biology', sub: 'Prokaryote/eukaryote, microscopy, transport, mitosis, stem cells' },
+        { id: '4.2', name: 'Organisation', sub: 'Enzymes, digestion, heart & blood vessels, plant transport' },
+        { id: '4.3', name: 'Infection and Response', sub: 'Pathogens, immunity, vaccines, antibiotics, monoclonal antibodies' },
+        { id: '4.4', name: 'Bioenergetics', sub: 'Photosynthesis, respiration, anaerobic respiration, metabolism' },
+      ]},
+      { label: 'AQA GCSE — Paper 2', topics: [
+        { id: '4.5', name: 'Homeostasis and Response', sub: 'Nervous system, hormones, blood glucose, reproduction, kidneys, plant hormones' },
+        { id: '4.6', name: 'Inheritance, Variation and Evolution', sub: 'DNA, genetics, mutation, natural selection, classification' },
+        { id: '4.7', name: 'Ecology', sub: 'Ecosystems, biodiversity, carbon/water/nitrogen cycles, human impacts' },
       ]},
     ]
   },
@@ -1516,6 +1549,7 @@ const DIAG_PAGE = {
   'Physics_OCR A|gcse':           { url: 'diagnostics/physics-ocr-a-gcse-diagnostic.html',    total: 6,  first: 'P1'  },
   'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
   'Physics_OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6,  first: 'B1'  },
+  'Physics_OCR B|gcse':           { url: 'diagnostics/physics-ocr-b-gcse-diagnostic.html', total: 6,  first: 'P1'  },
   'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10, first: '3.1.1' },
   'Economics_Edexcel A':          { url: 'diagnostics/economics-edexcel-a-diagnostic.html',   total: 8,  first: '1.1' },
   'Economics_Edexcel B':          { url: 'diagnostics/economics-edexcel-b-diagnostic.html',   total: 8,  first: '1.1' },
@@ -1525,6 +1559,7 @@ const DIAG_PAGE = {
   'Chemistry_OCR A':              { url: 'diagnostics/chemistry-ocr-a-diagnostic.html',       total: 6,  first: 'M1'  },
   'Chemistry_OCR B':              { url: 'diagnostics/chemistry-ocr-b-diagnostic.html',       total: 6,  first: 'S1'  },
   'Biology_AQA':                  { url: 'diagnostics/biology-aqa-diagnostic.html',           total: 8,  first: 'T1'  },
+  'Biology_AQA|gcse':             { url: 'diagnostics/biology-aqa-gcse-diagnostic.html',      total: 7,  first: '4.1' },
   'Biology_Edexcel A':            { url: 'diagnostics/biology-edexcel-a-diagnostic.html',     total: 8,  first: 'T1'  },
   'Biology_Edexcel B':            { url: 'diagnostics/biology-edexcel-b-diagnostic.html',     total: 8,  first: 'S1'  },
   'Biology_OCR A':                { url: 'diagnostics/biology-ocr-a-diagnostic.html',         total: 6,  first: 'M1'  },

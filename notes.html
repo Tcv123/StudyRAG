@@ -312,6 +312,7 @@ const DIAG_PAGE = {
   'Physics|OCR A|gcse':           { url: 'diagnostics/physics-ocr-a-gcse-diagnostic.html', total: 6,  first: 'P1'  },
   'Physics|OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
   'Physics|OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6,  first: 'B1'  },
+  'Physics|OCR B|gcse':           { url: 'diagnostics/physics-ocr-b-gcse-diagnostic.html', total: 6,  first: 'P1'  },
   'Economics|AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10, first: '3.1.1' },
   'Economics|Edexcel A':          { url: 'diagnostics/economics-edexcel-a-diagnostic.html',   total: 8,  first: '1.1' },
   'Economics|Edexcel B':          { url: 'diagnostics/economics-edexcel-b-diagnostic.html',   total: 8,  first: '1.1' },
@@ -321,6 +322,7 @@ const DIAG_PAGE = {
   'Chemistry|OCR A':              { url: 'diagnostics/chemistry-ocr-a-diagnostic.html',       total: 6,  first: 'M1'  },
   'Chemistry|OCR B':              { url: 'diagnostics/chemistry-ocr-b-diagnostic.html',       total: 6,  first: 'S1'  },
   'Biology|AQA':                  { url: 'diagnostics/biology-aqa-diagnostic.html',           total: 8,  first: 'T1'  },
+  'Biology|AQA|gcse':             { url: 'diagnostics/biology-aqa-gcse-diagnostic.html',      total: 7,  first: '4.1' },
   'Biology|Edexcel A':            { url: 'diagnostics/biology-edexcel-a-diagnostic.html',     total: 8,  first: 'T1'  },
   'Biology|Edexcel B':            { url: 'diagnostics/biology-edexcel-b-diagnostic.html',     total: 8,  first: 'S1'  },
   'Biology|OCR A':                { url: 'diagnostics/biology-ocr-a-diagnostic.html',         total: 6,  first: 'M1'  },
@@ -477,6 +479,17 @@ const NOTES_AVAILABLE = {
       { num: 'B6', name: 'Field and Particle Physics' },
     ]
   },
+  'Physics|OCR B|gcse': {
+    url: 'subject-notes/physics-ocr-b-gcse-notes.html',
+    topics: [
+      { num: 'P1', name: 'Radiation and Waves' },
+      { num: 'P2', name: 'Sustainable Energy' },
+      { num: 'P3', name: 'Electric Circuits' },
+      { num: 'P4', name: 'Explaining Motion' },
+      { num: 'P5', name: 'Radioactive Materials' },
+      { num: 'P6', name: 'Matter — Models and Explanations' },
+    ]
+  },
   'Economics|AQA': {
     url: 'subject-notes/economics-aqa-notes.html',
     topics: [
@@ -586,6 +599,19 @@ const NOTES_AVAILABLE = {
       { num: 'T6', name: 'Organisms Respond to Changes' },
       { num: 'T7', name: 'Genetics, Populations & Evolution' },
       { num: 'T8', name: 'Control of Gene Expression' },
+    ]
+  },
+  'Biology|AQA|gcse': {
+    url: 'subject-notes/biology-aqa-gcse-notes.html',
+    topics: [
+      { num: '4.1', name: 'Cell Biology' },
+      { num: '4.2', name: 'Organisation' },
+      { num: '4.3', name: 'Infection and Response' },
+      { num: '4.4', name: 'Bioenergetics' },
+      { num: '4.5', name: 'Homeostasis and Response' },
+      { num: '4.6', name: 'Inheritance, Variation and Evolution' },
+      { num: '4.7', name: 'Ecology' },
+      { num: 'RP', name: 'Required Practicals' },
     ]
   },
   'Biology|Edexcel A': {

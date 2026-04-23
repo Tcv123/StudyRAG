@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AQA 4.4 — Bioenergetics</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 820px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #16a34a; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #166534; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dcfce7; }
+        h3 { font-size: 1.15rem; color: #14532d; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0fdf4; color: #166534; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .equation { background: #eef2ff; border-left: 4px solid #4f46e5; padding: 14px 18px; margin: 12px 0; border-radius: 0 8px 8px 0; font-family: 'Consolas', monospace; font-size: 0.95em; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        figure { margin: 20px auto; text-align: center; }
+        figcaption { font-size: 0.85rem; color: #6b7280; margin-top: 6px; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, figure, .equation { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#16A34A;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>4.4 Bioenergetics</h1>
+<p class="spec-ref">AQA GCSE Biology (8461) &mdash; Paper 1</p>
+
+<h2>4.4.1 Photosynthesis</h2>
+
+<div class="definition">
+    <strong>Photosynthesis</strong> is the process used by plants, algae and some bacteria to make glucose from carbon dioxide and water. Light energy is transferred to chemical energy in glucose.
+</div>
+
+<div class="equation">
+<strong>Word equation:</strong><br>
+carbon dioxide + water → glucose + oxygen (light energy)<br><br>
+<strong>Balanced symbol equation:</strong><br>
+6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂
+</div>
+
+<p>Photosynthesis is <strong>endothermic</strong> — energy is taken in from the light. It happens in <strong>chloroplasts</strong> (containing chlorophyll), mostly in palisade mesophyll cells of leaves.</p>
+
+<h3>Limiting Factors</h3>
+
+<div class="definition">
+    A <strong>limiting factor</strong> is the factor (in shortest supply) that controls the rate of photosynthesis at a given moment. The three main limiting factors are <strong>light intensity, CO₂ concentration and temperature</strong>. Chlorophyll amount can also limit rate.
+</div>
+
+<figure>
+    <svg viewBox="0 0 720 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;">
+        <line x1="60" y1="220" x2="680" y2="220" stroke="#111" stroke-width="1.5"/>
+        <line x1="60" y1="220" x2="60" y2="30" stroke="#111" stroke-width="1.5"/>
+        <text x="370" y="245" text-anchor="middle" font-size="11">Light intensity →</text>
+        <text x="20" y="130" font-size="11" transform="rotate(-90 20 130)">Rate of photosynthesis</text>
+        <!-- low temp low CO2 -->
+        <path d="M 60 220 L 180 170 L 260 140 L 400 135 L 680 135" fill="none" stroke="#60a5fa" stroke-width="2.5"/>
+        <text x="500" y="125" font-size="10" fill="#1e40af">Low T, low CO₂</text>
+        <!-- high CO2 -->
+        <path d="M 60 220 L 180 150 L 280 90 L 500 80 L 680 80" fill="none" stroke="#16a34a" stroke-width="2.5"/>
+        <text x="500" y="70" font-size="10" fill="#166534">High CO₂, optimum T</text>
+        <!-- Limiting transitions -->
+        <text x="130" y="200" font-size="9" fill="#6b7280">Light limiting</text>
+        <text x="530" y="60" font-size="9" fill="#6b7280">Other factor limiting (plateau)</text>
+    </svg>
+    <figcaption>Fig 1: Rate of photosynthesis against light intensity. The plateau shows where another factor (CO₂ or temperature) is limiting.</figcaption>
+</figure>
+
+<h3>Temperature</h3>
+<p>Enzymes control photosynthesis, so rate rises with temperature to an optimum (~25–30 °C) then falls sharply as enzymes denature above ~40–45 °C.</p>
+
+<h3>Inverse Square Law for Light</h3>
+
+<div class="equation">
+Light intensity ∝ 1 / d²<br><br>
+Doubling the distance from a lamp reduces intensity to 1/4.<br>
+Example: at 10 cm → 100 bubbles/min. At 20 cm → 100 ÷ 4 = <strong>25 bubbles/min</strong>.
+</div>
+
+<h3>Use of Photosynthesis in Agriculture</h3>
+<p>Greenhouses control limiting factors to increase crop yield:</p>
+<ul>
+    <li><strong>Lamps</strong> extend day length and raise light intensity.</li>
+    <li><strong>Heaters</strong> raise temperature; <em>paraffin heaters</em> also release CO₂ from combustion.</li>
+    <li><strong>CO₂ generators</strong> increase CO₂ concentration.</li>
+</ul>
+<p>The farmer must weigh the cost of each measure against extra yield/profit.</p>
+
+<h3>Uses of Glucose in Plants</h3>
+
+<table>
+    <tr><th>Use</th><th>Notes</th></tr>
+    <tr><td>Respiration</td><td>Releases energy for all processes</td></tr>
+    <tr><td>Converted to starch</td><td>Insoluble storage (does not affect water potential)</td></tr>
+    <tr><td>Used to make cellulose</td><td>Strengthens cell walls</td></tr>
+    <tr><td>Used to make amino acids</td><td>Combined with nitrate ions — for proteins</td></tr>
+    <tr><td>Stored as fats/oils</td><td>Energy dense store (especially in seeds)</td></tr>
+</table>
+
+<h2>4.4.2 Respiration</h2>
+
+<div class="definition">
+    <strong>Respiration</strong> is the process that transfers energy from glucose to cells. It is <strong>exothermic</strong> — energy is released. Respiration occurs <em>continuously in all living cells</em>.
+</div>
+
+<p>Energy released by respiration is used for:</p>
+<ul>
+    <li>Muscle contraction (movement).</li>
+    <li>Building larger molecules (protein synthesis).</li>
+    <li>Active transport (e.g. mineral uptake in roots).</li>
+    <li>Maintaining body temperature in mammals and birds.</li>
+</ul>
+
+<h3>Aerobic Respiration</h3>
+
+<div class="equation">
+glucose + oxygen → carbon dioxide + water (energy released)<br>
+C₆H₁₂O₆ + 6O₂ → 6CO₂ + 6H₂O
+</div>
+
+<p>Takes place mostly in <strong>mitochondria</strong>. Releases much more energy per glucose molecule than anaerobic respiration.</p>
+
+<h3>Anaerobic Respiration in Muscles</h3>
+
+<div class="equation">
+glucose → lactic acid
+</div>
+
+<p>Occurs when oxygen cannot be delivered fast enough during intense exercise. Lactic acid builds up in muscles, contributing to fatigue.</p>
+
+<h3>Anaerobic Respiration in Plants and Yeast (Fermentation)</h3>
+
+<div class="equation">
+glucose → ethanol + carbon dioxide
+</div>
+
+<p>Used in brewing (ethanol) and baking (CO₂ makes dough rise; ethanol evaporates during cooking).</p>
+
+<h3>Comparing Respiration</h3>
+
+<table>
+    <tr><th>Feature</th><th>Aerobic</th><th>Anaerobic (muscle)</th><th>Anaerobic (yeast)</th></tr>
+    <tr><td>Oxygen required?</td><td>Yes</td><td>No</td><td>No</td></tr>
+    <tr><td>Products</td><td>CO₂ + water</td><td>Lactic acid</td><td>Ethanol + CO₂</td></tr>
+    <tr><td>Energy per glucose</td><td>Much (≈ 38 ATP)</td><td>Little (≈ 2 ATP)</td><td>Little (≈ 2 ATP)</td></tr>
+</table>
+
+<h2>4.4.3 Response to Exercise</h2>
+
+<p>During exercise, muscles respire more quickly:</p>
+<ul>
+    <li><strong>Heart rate ↑</strong> — delivers O₂ and glucose faster; removes CO₂.</li>
+    <li><strong>Breathing rate ↑</strong> and depth increase — more O₂ taken in, more CO₂ breathed out.</li>
+    <li>When demand exceeds supply, muscles respire <strong>anaerobically</strong> → lactic acid.</li>
+</ul>
+
+<h3>Oxygen Debt</h3>
+<div class="definition">
+    <strong>Oxygen debt</strong> — the amount of extra oxygen needed after exercise to oxidise the accumulated lactic acid to CO₂ and water. This is why breathing and heart rate remain elevated after hard exercise.
+</div>
+
+<p>Lactic acid is transported in the blood to the <strong>liver</strong>, where it is converted back to glucose using oxygen.</p>
+
+<h2>4.4.4 Metabolism</h2>
+
+<div class="definition">
+    <strong>Metabolism</strong> is the sum of all the chemical reactions taking place in a cell or organism. Metabolism includes reactions that build large molecules from smaller ones and reactions that break down larger molecules.
+</div>
+
+<table>
+    <tr><th>Process</th><th>Example</th></tr>
+    <tr><td>Converting glucose → starch/glycogen/cellulose</td><td>Energy storage or cell wall formation</td></tr>
+    <tr><td>Combining glucose + nitrate → amino acids → proteins</td><td>Growth and repair</td></tr>
+    <tr><td>Converting glucose + fatty acids → lipids</td><td>Stored in seeds/animal fat</td></tr>
+    <tr><td>Respiration (glucose → CO₂ + H₂O)</td><td>Releases energy</td></tr>
+    <tr><td>Breakdown of excess proteins</td><td>Forms urea for excretion (deamination in liver)</td></tr>
+</table>
+
+<div class="exam-tip">Remember: photosynthesis is <em>endothermic</em>; respiration is <em>exothermic</em>. Plants both photosynthesise <em>and</em> respire — at high light intensity they produce more O₂ than they use, giving a net release of O₂.</div>
+
+<h2>Summary — 4.4</h2>
+<ul>
+    <li>Photosynthesis: 6CO₂ + 6H₂O → C₆H₁₂O₆ + 6O₂ (endothermic).</li>
+    <li>Limiting factors: light, CO₂, temperature (chlorophyll too).</li>
+    <li>Light intensity follows inverse square law (I ∝ 1/d²).</li>
+    <li>Uses of glucose: respiration, starch, cellulose, amino acids, fats.</li>
+    <li>Aerobic respiration: much energy; anaerobic (muscle): lactic acid, little energy.</li>
+    <li>Yeast fermentation: glucose → ethanol + CO₂.</li>
+    <li>Exercise: heart rate, breathing rate, and depth increase; oxygen debt repaid afterwards.</li>
+    <li>Metabolism: all chemical reactions in a cell/organism.</li>
+</ul>
+
+</div>
+</body>
+</html>
