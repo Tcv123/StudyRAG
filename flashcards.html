@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>RAG Learning — Flashcards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="subjects-config.js"></script>
+  <script src="flashcards-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD;
+      --border: #B8D0E8; --border-hover: #2563EB;
+      --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+      --accent: #2563EB; --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; transition: all 0.15s; text-decoration: none; border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body); }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-item.locked { opacity: 0.5; cursor: default; pointer-events: none; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* Sign-out modal */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); text-align: center; }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(220,38,38,0.07); border: 1px solid rgba(220,38,38,0.18); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #B91C1C; margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; border: 1px solid transparent; font-family: var(--font-body); }
+    .signout-btn.cancel { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .signout-btn.confirm { background: #DC2626; color: #fff; }
+
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
+    .topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; }
+    .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-top: 3px; }
+
+    /* Pro-lock overlay for free users */
+    .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #B45309; margin-bottom: 20px; }
+    .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
+    .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
+    .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; box-shadow: 0 4px 14px rgba(217,119,6,0.25); }
+    .lock-btn:hover { transform: translateY(-1px); }
+
+    /* Subject grid — same visual as notes.html */
+    .subjects-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .subject-card { background: var(--surface); border: 1px solid var(--border); border-radius: 18px; padding: 24px; transition: border-color 0.15s, box-shadow 0.15s, transform 0.15s; text-decoration: none; color: inherit; display: flex; flex-direction: column; gap: 16px; position: relative; overflow: hidden; }
+    .subject-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-dark)); opacity: 0; transition: opacity 0.15s; }
+    .subject-card.available:hover { border-color: var(--border-hover); box-shadow: 0 6px 24px rgba(37,99,235,0.14); transform: translateY(-2px); }
+    .subject-card.available:hover::before { opacity: 1; }
+    .subject-card.locked { opacity: 0.6; cursor: default; }
+    .card-top { display: flex; align-items: center; gap: 14px; }
+    .card-emoji { width: 52px; height: 52px; border-radius: 14px; flex-shrink: 0; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center; font-size: 24px; }
+    .card-info { flex: 1; min-width: 0; }
+    .card-name { font-size: 17px; font-weight: 600; font-family: var(--font-display); letter-spacing: -0.01em; }
+    .card-board { font-size: 12px; color: var(--muted); margin-top: 3px; }
+    .card-status { display: inline-flex; align-items: center; gap: 5px; padding: 4px 10px; border-radius: 20px; font-size: 12px; font-weight: 600; }
+    .status-available { background: rgba(22,163,74,0.08); border: 1px solid rgba(22,163,74,0.2); color: #15803D; }
+    .status-empty { background: rgba(148,163,184,0.1); border: 1px solid rgba(148,163,184,0.25); color: var(--muted); }
+    .status-soon { background: var(--surface2); border: 1px solid var(--border); color: var(--muted); }
+    .card-topics { display: flex; flex-direction: column; gap: 5px; }
+    .card-topic-row { display: flex; align-items: center; gap: 8px; font-size: 12px; color: var(--muted); padding: 4px 0; border-bottom: 1px solid var(--bg); }
+    .card-topic-row:last-child { border-bottom: none; }
+    .card-topic-num { font-size: 10px; font-weight: 700; color: var(--accent-dark); background: var(--accent-dim); padding: 1px 6px; border-radius: 4px; flex-shrink: 0; }
+    .card-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 12px; border-top: 1px solid var(--border); gap: 8px; flex-wrap: wrap; }
+    .card-count { font-size: 12px; color: var(--muted); }
+    .card-arrow { font-size: 16px; color: var(--accent); }
+    .subject-card.locked .card-arrow { color: var(--muted2); }
+
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+    .subjects-grid > * { animation: fadeUp 0.4s ease both; }
+    .subjects-grid > *:nth-child(2) { animation-delay: 0.05s; }
+    .subjects-grid > *:nth-child(3) { animation-delay: 0.1s; }
+    .subjects-grid > *:nth-child(4) { animation-delay: 0.15s; }
+    .subjects-grid > *:nth-child(5) { animation-delay: 0.2s; }
+    .subjects-grid > *:nth-child(6) { animation-delay: 0.25s; }
+
+    .mobile-menu-btn { display: none; width: 36px; height: 36px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); align-items: center; justify-content: center; cursor: pointer; font-size: 18px; box-shadow: 0 1px 4px rgba(37,99,235,0.1); }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+    .mobile-overlay.active { display: block; }
+    @media (max-width: 768px) {
+      .subjects-grid { grid-template-columns: 1fr !important; }
+      .mobile-menu-btn { display: flex; }
+      .sidebar { transform: translateX(-100%); transition: transform 0.3s; z-index: 100; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 16px 14px; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <div class="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo" style="text-decoration:none;color:inherit;">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item active" href="flashcards.html"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer">?</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
+        <div class="page-title">🃏 Flashcards</div>
+        <div class="page-sub" id="pageSubTitle">Loading…</div>
+      </div>
+    </div>
+    <div id="pageBody">
+      <div class="subjects-grid" id="subjectsGrid"></div>
+    </div>
+  </main>
+</div>
+
+<script>
+async function load() {
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { window.location = 'auth/login.html'; return; }
+
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('*').eq('id', user.id).single();
+
+  const firstName = profile?.first_name || '';
+  const lastName  = profile?.last_name  || '';
+  document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim();
+  document.getElementById('avatarInitials').textContent =
+    ((firstName[0]||'')+(lastName[0]||'')).toUpperCase() || '?';
+  if (profile?.avatar_url) {
+    const av = document.getElementById('avatarInitials');
+    const img = document.createElement('img');
+    img.src = profile.avatar_url;
+    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+    av.replaceChildren(img);
+  }
+
+  // Pro gate — free users see lock screen, not the subject grid.
+  const tier = profile?.subscription_tier || 'free';
+  const status = profile?.subscription_status || 'active';
+  const expires = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+  const isPro = tier !== 'free'
+    && ['active','trialing'].includes(status)
+    && (!expires || expires > new Date());
+
+  if (!isPro) {
+    document.getElementById('pageSubTitle').textContent = 'Upgrade to Pro to unlock spaced-repetition flashcards.';
+    document.getElementById('pageBody').innerHTML = `
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-title">Flashcards are a Pro feature</div>
+        <div class="lock-msg">
+          Unlock exam-board-specific flashcards with Anki-style spaced repetition,
+          custom decks you can build yourself, and a 4-colour card palette so you
+          can style study to your liking.
+        </div>
+        <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
+      </div>`;
+    return;
+  }
+
+  // Pro user — render subject+board grid.
+  const { data: subjects } = await supabaseClient
+    .from('user_subjects').select('*').eq('user_id', user.id).order('created_at');
+
+  const list = subjects || [];
+  document.getElementById('pageSubTitle').textContent =
+    `${list.length} subject${list.length !== 1 ? 's' : ''} — click one to open its flashcards`;
+
+  const grid = document.getElementById('subjectsGrid');
+
+  if (!list.length) {
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);">
+      <div style="font-size:40px;margin-bottom:12px;">🃏</div>
+      <div style="font-family:var(--font-display);font-size:20px;margin-bottom:8px;">No subjects yet</div>
+      <div style="font-size:14px;">Go to <a href="auth/setup.html" style="color:var(--accent-dark);">setup</a> to add your subjects.</div>
+    </div>`;
+    return;
+  }
+
+  // Fetch card counts per subject+board so each card can show "N flashcards" instead
+  // of a bare "available" chip.
+  const counts = {};
+  const { data: cardRows } = await supabaseClient
+    .from('flashcards')
+    .select('subject, exam_board');
+  (cardRows || []).forEach(r => {
+    const k = `${r.subject}|${r.exam_board}`;
+    counts[k] = (counts[k] || 0) + 1;
+  });
+
+  grid.innerHTML = list.map(s => {
+    const key = `${s.subject}|${s.exam_board}`;
+    const topics = window.FLASHCARDS_TOPICS_FOR?.(s.subject, s.exam_board) || null;
+    const available = !!topics;
+    const preview = (topics || []).slice(0, 3);
+    const cardCount = counts[key] || 0;
+
+    if (!available) {
+      return `<div class="subject-card locked">
+        <div class="card-top">
+          <div class="card-emoji">${s.emoji || '📚'}</div>
+          <div class="card-info">
+            <div class="card-name">${s.subject}</div>
+            <div class="card-board">${s.exam_board}</div>
+          </div>
+        </div>
+        <div class="card-footer">
+          <span class="card-status status-soon">🔒 Coming soon</span>
+          <span class="card-arrow">—</span>
+        </div>
+      </div>`;
+    }
+
+    const href = `flashcards/subject.html?subject=${encodeURIComponent(s.subject)}&board=${encodeURIComponent(s.exam_board)}`;
+    const statusChip = cardCount > 0
+      ? `<span class="card-status status-available">✓ ${cardCount} flashcard${cardCount !== 1 ? 's' : ''}</span>`
+      : `<span class="card-status status-empty">Build your own deck</span>`;
+
+    return `<a href="${href}" class="subject-card available">
+      <div class="card-top">
+        <div class="card-emoji">${s.emoji || '📚'}</div>
+        <div class="card-info">
+          <div class="card-name">${s.subject}</div>
+          <div class="card-board">${s.exam_board}</div>
+        </div>
+      </div>
+      <div class="card-topics">
+        ${preview.map(t => `
+          <div class="card-topic-row">
+            <span class="card-topic-num">${t.num}</span>
+            <span>${t.name}</span>
+          </div>`).join('')}
+        ${topics.length > 3 ? `<div class="card-topic-row" style="color:var(--accent-dark);font-weight:500;">+ ${topics.length - 3} more topics</div>` : ''}
+      </div>
+      <div class="card-footer">
+        ${statusChip}
+        <span class="card-arrow">→</span>
+      </div>
+    </a>`;
+  }).join('');
+}
+
+function confirmSignOut(){document.getElementById('signoutOverlay').classList.add('active');}
+function cancelSignOut(){document.getElementById('signoutOverlay').classList.remove('active');}
+async function logout(){ await supabaseClient.auth.signOut(); window.location='auth/login.html'; }
+
+load();
+</script>
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
+
+<div class="signout-overlay" id="signoutOverlay" onclick="if(event.target===this)cancelSignOut()">
+  <div class="signout-modal">
+    <div class="signout-icon">⏻</div>
+    <div class="signout-title">Sign out?</div>
+    <div class="signout-msg">Are you sure? You'll need to log back in.</div>
+    <div class="signout-actions">
+      <button class="signout-btn cancel" onclick="cancelSignOut()">Cancel</button>
+      <button class="signout-btn confirm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
