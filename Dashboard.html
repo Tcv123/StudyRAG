@@ -916,6 +916,10 @@ const EXAM_DATES = {
     { paper: 'Paper 1 — Topics 1–7',  date: '2026-05-22', time: 'AM', duration: '1h 45m' },
     { paper: 'Paper 2 — Topics 1, 8–15', date: '2026-06-05', time: 'PM', duration: '1h 45m' },
   ],
+  'Physics_OCR A|gcse': [
+    { paper: 'Paper 1 — Physics Topics P1, P3, P4', date: '2026-05-22', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Physics Topics P2, P5, P6', date: '2026-06-05', time: 'PM', duration: '1h 45m' },
+  ],
   'Physics_OCR A': [
     { paper: 'Paper 1 — Modelling Physics', date: '2026-05-20', time: 'PM', duration: '2h 15m' },
     { paper: 'Paper 2 — Exploring Physics', date: '2026-06-01', time: 'AM', duration: '2h 15m' },
@@ -1322,6 +1326,7 @@ const SUBJECT_TOPIC_KEY = {
   'Physics_AQA': 'physics-aqa',
   'Physics_AQA|gcse': 'physics-aqa-gcse',
   'Physics_Edexcel|gcse': 'physics-edexcel-gcse',
+  'Physics_OCR A|gcse': 'physics-ocr-a-gcse',
   'Physics_OCR A': 'physics-ocr-a',
   'Physics_OCR B': 'physics-ocr-b',
   'Economics_AQA': 'economics-aqa',
@@ -1353,7 +1358,7 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_AQA': 'english-aqa',
   'English Language_Edexcel': 'english-edexcel',
 };
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-a-gcse': 6, 'physics-ocr-b': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-b': 6, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
 const SUBJECT_NOTES_PAGE = {
   'Computer Science_OCR': 'subject-notes/cs-ocr-gcse-notes.html',
   'Computer Science_OCR|alevel': 'subject-notes/cs-ocr-alevel-notes.html',
@@ -1363,6 +1368,7 @@ const SUBJECT_NOTES_PAGE = {
   'Physics_AQA': 'subject-notes/physics-aqa-notes.html',
   'Physics_AQA|gcse': 'subject-notes/physics-aqa-gcse-notes.html',
   'Physics_Edexcel|gcse': 'subject-notes/physics-edexcel-gcse-notes.html',
+  'Physics_OCR A|gcse': 'subject-notes/physics-ocr-a-gcse-notes.html',
   'Physics_OCR A': 'subject-notes/physics-ocr-a-notes.html',
   'Physics_OCR B': 'subject-notes/physics-ocr-b-notes.html',
   'Economics_AQA': 'subject-notes/economics-aqa-notes.html',
@@ -2215,6 +2221,19 @@ const DIAG_TOPICS = {
       { id: '4.6', name: 'Waves', sub: 'Transverse/longitudinal, v=f\u03bb, EM spectrum, reflection, refraction, lenses' },
       { id: '4.7', name: 'Magnetism and Electromagnetism', sub: 'Fields, motor effect, generators, transformers' },
       { id: '4.8', name: 'Space Physics', sub: 'Solar system, stars, orbits, red-shift, Big Bang' },
+    ]
+  },
+  'Physics_OCR A|gcse': {
+    label: 'Physics — OCR A (GCSE J249 Gateway)',
+    emoji: '⚡',
+    page: 'diagnostics/physics-ocr-a-gcse-diagnostic.html',
+    topics: [
+      { id: 'P1', name: 'Matter',                      sub: 'Particle model, density, changes of state, pressure' },
+      { id: 'P2', name: 'Forces',                      sub: 'Newton\'s laws, motion, momentum, moments, stopping distance' },
+      { id: 'P3', name: 'Electricity and Magnetism',   sub: 'Static, circuits, mains, power, electromagnets, motor effect' },
+      { id: 'P4', name: 'Waves and Radioactivity',     sub: 'Transverse/longitudinal, EM spectrum, atomic model, decay, half-life' },
+      { id: 'P5', name: 'Energy',                      sub: 'Stores, transfers, efficiency, power, resources, Hooke\'s law' },
+      { id: 'P6', name: 'Global Challenges',           sub: 'Induction, generators, transformers, Solar System, stars, red-shift' },
     ]
   },
   'Physics_Edexcel|gcse': {

@@ -576,6 +576,7 @@ const BUNDLE_MAP = {
   'Physics_AQA':                  ['questions/physics/physics-aqa-practice.js'],
   'Physics_AQA|gcse':             ['questions/physics-aqa-gcse/physics-aqa-gcse-practice.js'],
   'Physics_Edexcel|gcse':         ['questions/physics-edexcel-gcse/physics-edexcel-gcse-practice.js'],
+  'Physics_OCR A|gcse':           ['questions/physics-ocr-a-gcse/physics-ocr-a-gcse-practice.js'],
   'Physics_OCR A':                ['questions/physics/physics-ocr-a-practice.js'],
   'Physics_OCR B':                ['questions/physics/physics-ocr-b-practice.js'],
   'Economics_AQA':                ['questions/economics-aqa/economics-aqa-practice.js'],
@@ -674,6 +675,7 @@ const PRACTICE_MAP = {
   'Physics_AQA': () => typeof PHYSICS_AQA_PRACTICE !== 'undefined' ? PHYSICS_AQA_PRACTICE : null,
   'Physics_AQA|gcse': () => typeof PHYSICS_AQA_GCSE_PRACTICE !== 'undefined' ? PHYSICS_AQA_GCSE_PRACTICE : null,
   'Physics_Edexcel|gcse': () => typeof PHYSICS_EDEXCEL_GCSE_PRACTICE !== 'undefined' ? PHYSICS_EDEXCEL_GCSE_PRACTICE : null,
+  'Physics_OCR A|gcse': () => typeof PHYSICS_OCR_A_GCSE_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_GCSE_PRACTICE : null,
   'Physics_OCR A': () => typeof PHYSICS_OCR_A_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_PRACTICE : null,
   'Physics_OCR B': () => typeof PHYSICS_OCR_B_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_PRACTICE : null,
   'Economics_AQA': () => typeof ECONOMICS_AQA_PRACTICE !== 'undefined' ? ECONOMICS_AQA_PRACTICE : null,
@@ -844,6 +846,20 @@ const SUBJECT_TOPICS = {
         { id: '4.6', name: 'Waves', sub: 'Transverse/longitudinal, v=fλ, EM spectrum, reflection, refraction, lenses' },
         { id: '4.7', name: 'Magnetism and Electromagnetism', sub: 'Fields, motor effect, generators, transformers' },
         { id: '4.8', name: 'Space Physics', sub: 'Solar system, stars, orbits, red-shift, Big Bang' },
+      ]},
+    ]
+  },
+  'Physics_OCR A|gcse': {
+    sections: [
+      { label: 'OCR A GCSE (J249) — Paper 1', topics: [
+        { id: 'P1', name: 'Matter',                      sub: 'Particle model, density, changes of state, pressure' },
+        { id: 'P3', name: 'Electricity and Magnetism',   sub: 'Static, circuits, mains, power, electromagnets, motor effect' },
+        { id: 'P4', name: 'Waves and Radioactivity',     sub: 'Transverse/longitudinal, EM spectrum, atomic model, decay, half-life' },
+      ]},
+      { label: 'OCR A GCSE (J249) — Paper 2', topics: [
+        { id: 'P2', name: 'Forces',                      sub: 'Newton\'s laws, motion, momentum, moments, stopping distance' },
+        { id: 'P5', name: 'Energy',                      sub: 'Stores, transfers, efficiency, power, resources, Hooke\'s law' },
+        { id: 'P6', name: 'Global Challenges',           sub: 'Induction, generators, transformers, Solar System, stars, red-shift' },
       ]},
     ]
   },
@@ -1497,6 +1513,7 @@ const DIAG_PAGE = {
   'Physics_Edexcel|gcse':         { url: 'diagnostics/physics-edexcel-gcse-diagnostic.html',  total: 15, first: '1'  },
   'Physics_AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',           total: 8,  first: '3.1' },
   'Physics_AQA|gcse':             { url: 'diagnostics/physics-aqa-gcse-diagnostic.html',      total: 8,  first: '4.1' },
+  'Physics_OCR A|gcse':           { url: 'diagnostics/physics-ocr-a-gcse-diagnostic.html',    total: 6,  first: 'P1'  },
   'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
   'Physics_OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6,  first: 'B1'  },
   'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10, first: '3.1.1' },

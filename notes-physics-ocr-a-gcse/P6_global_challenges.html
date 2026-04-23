@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OCR A GCSE P6 — Global Challenges</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 820px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .equation { background: #f0fdf4; border: 1px solid #86efac; padding: 14px 18px; margin: 14px 0; border-radius: 8px; font-family: 'Times New Roman', serif; font-size: 1.05rem; text-align: center; }
+        .case-study { background: #fef2f2; border-left: 4px solid #dc2626; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .case-study::before { content: "Worked Example: "; font-weight: 700; color: #b91c1c; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .case-study, .equation { break-inside: avoid; } h2 { break-after: avoid; } svg { break-inside: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>P6 — Global Challenges</h1>
+<p class="spec-ref">OCR GCSE Physics A (J249) &mdash; Gateway Science · Paper 2</p>
+
+<h2>P6.1 Physics on the Move &mdash; Vehicles, Stopping, Safety</h2>
+
+<p>This section draws heavily on material from P2 (Forces). You should be able to apply Newton's laws and momentum to real-world transport situations, including safety features and stopping distances.</p>
+
+<h3>Electromagnetic Induction</h3>
+
+<div class="definition">
+    When a <strong>conductor moves through a magnetic field</strong>, or a <strong>magnetic field changes around a conductor</strong>, a potential difference is <strong>induced</strong> across the conductor. If the conductor is part of a complete circuit, a current flows. This is <strong>electromagnetic induction</strong> — the basis of <em>all</em> modern generation of electricity.
+</div>
+
+<!-- Induction diagram -->
+<svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Induction — Magnet Moves into a Coil</text>
+  <!-- Coil -->
+  <g fill="none" stroke="#92400e" stroke-width="2">
+    <ellipse cx="400" cy="120" rx="15" ry="45"/>
+    <ellipse cx="430" cy="120" rx="15" ry="45"/>
+    <ellipse cx="460" cy="120" rx="15" ry="45"/>
+    <ellipse cx="490" cy="120" rx="15" ry="45"/>
+    <ellipse cx="520" cy="120" rx="15" ry="45"/>
+  </g>
+  <!-- Wires to meter -->
+  <line x1="390" y1="80" x2="390" y2="55" stroke="#92400e" stroke-width="2"/>
+  <line x1="530" y1="80" x2="530" y2="55" stroke="#92400e" stroke-width="2"/>
+  <line x1="390" y1="55" x2="430" y2="55" stroke="#92400e" stroke-width="2"/>
+  <line x1="530" y1="55" x2="490" y2="55" stroke="#92400e" stroke-width="2"/>
+  <!-- Galvanometer -->
+  <circle cx="460" cy="55" r="30" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="460" y="52" text-anchor="middle" font-size="10" fill="#1f2937">G</text>
+  <line x1="460" y1="55" x2="472" y2="40" stroke="#dc2626" stroke-width="2"/>
+  <text x="460" y="73" text-anchor="middle" font-size="8" fill="#374151">Galvanometer</text>
+  <!-- Magnet moving into coil -->
+  <rect x="200" y="105" width="90" height="30" fill="#dc2626"/>
+  <rect x="200" y="105" width="45" height="30" fill="#1e40af"/>
+  <text x="222" y="125" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">S</text>
+  <text x="267" y="125" text-anchor="middle" font-size="11" font-weight="bold" fill="#fff">N</text>
+  <line x1="290" y1="120" x2="380" y2="120" stroke="#2563eb" stroke-width="2" marker-end="url(#ai)"/>
+  <defs><marker id="ai" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#2563eb"/></marker></defs>
+  <text x="330" y="145" text-anchor="middle" font-size="10" fill="#2563eb">motion</text>
+  <text x="60" y="210" font-size="10" fill="#374151">As magnet moves: flux through coil changes → pd induced → current → meter deflects.</text>
+  <text x="60" y="223" font-size="10" fill="#374151">Stop moving the magnet → no change of flux → no induced pd → no current.</text>
+</svg>
+
+<h3>How Generators Work</h3>
+
+<p>A <strong>generator</strong> is essentially a motor run in reverse. A coil is rotated in a magnetic field — the flux through the coil constantly changes, inducing an alternating pd that produces an <strong>alternating current</strong>. Power stations all use generators; what differs is how the coil is turned (steam from a boiler, water from a dam, wind, etc.).</p>
+
+<!-- AC generator diagram -->
+<svg viewBox="0 0 700 230" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Simple AC Generator</text>
+  <!-- Magnets -->
+  <rect x="100" y="90" width="50" height="70" fill="#dc2626"/>
+  <text x="125" y="130" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">N</text>
+  <rect x="550" y="90" width="50" height="70" fill="#1e40af"/>
+  <text x="575" y="130" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">S</text>
+  <!-- Coil -->
+  <rect x="250" y="105" width="200" height="40" fill="none" stroke="#92400e" stroke-width="2.5"/>
+  <!-- Slip rings -->
+  <circle cx="350" cy="170" r="12" fill="#9ca3af" stroke="#374151"/>
+  <circle cx="350" cy="200" r="12" fill="#9ca3af" stroke="#374151"/>
+  <!-- Brushes -->
+  <line x1="335" y1="170" x2="310" y2="170" stroke="#374151" stroke-width="2"/>
+  <line x1="335" y1="200" x2="310" y2="200" stroke="#374151" stroke-width="2"/>
+  <!-- External circuit / bulb -->
+  <circle cx="210" cy="185" r="12" fill="none" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="200" y1="175" x2="220" y2="195" stroke="#1f2937"/>
+  <line x1="200" y1="195" x2="220" y2="175" stroke="#1f2937"/>
+  <line x1="235" y1="185" x2="305" y2="170" stroke="#1f2937" stroke-width="1.5"/>
+  <line x1="235" y1="185" x2="305" y2="200" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="200" y="215" font-size="9" fill="#374151">Lamp (load)</text>
+  <text x="600" y="195" text-anchor="end" font-size="9" fill="#374151">Continuous slip rings → AC output</text>
+</svg>
+
+<h3>Transformers &amp; National Grid Recap</h3>
+
+<p>A <strong>transformer</strong> uses two coils on an iron core. Alternating current in the primary coil creates a changing magnetic field in the core, which induces an alternating pd in the secondary coil.</p>
+
+<div class="equation">
+    <strong>V<sub>p</sub> / V<sub>s</sub> = N<sub>p</sub> / N<sub>s</sub></strong> &nbsp; (ratio of primary/secondary voltages = ratio of turns)<br>
+    For an ideal transformer: <strong>V<sub>p</sub> I<sub>p</sub> = V<sub>s</sub> I<sub>s</sub></strong> (power in = power out).
+</div>
+
+<div class="case-study">
+    A transformer has 2 000 turns on the primary and 100 on the secondary. 230 V ac is applied to the primary. Secondary voltage?<br>
+    V<sub>s</sub> = V<sub>p</sub> × N<sub>s</sub> / N<sub>p</sub> = 230 × 100 / 2000 = <strong>11.5 V</strong>.<br>
+    It's a <strong>step-down</strong> transformer (fewer turns on secondary).
+</div>
+
+<p>Uses: step-up at power stations (e.g. 25 kV → 400 kV) for efficient long-distance transmission; step-down near homes (400 kV → 11 kV → 230 V) for safe use.</p>
+
+<h2>P6.2 The Solar System</h2>
+
+<div class="definition">
+    Our <strong>Solar System</strong> has one star (the Sun) and eight planets orbiting it, along with dwarf planets (e.g. Pluto), moons, asteroids and comets. It formed about 4.6 billion years ago from a cloud of gas and dust (a <strong>nebula</strong>).
+</div>
+
+<!-- Solar System -->
+<svg viewBox="0 0 700 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:20px auto;display:block;">
+  <text x="350" y="18" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">The Solar System (not to scale)</text>
+  <!-- Sun -->
+  <circle cx="40" cy="110" r="25" fill="#fbbf24"/>
+  <text x="40" y="150" text-anchor="middle" font-size="9" fill="#b45309">Sun</text>
+  <!-- Planets -->
+  <circle cx="105" cy="110" r="3" fill="#9ca3af"/><text x="105" y="132" text-anchor="middle" font-size="9">Mer</text>
+  <circle cx="140" cy="110" r="5" fill="#fcd34d"/><text x="140" y="132" text-anchor="middle" font-size="9">Ven</text>
+  <circle cx="180" cy="110" r="5.5" fill="#2563eb"/><text x="180" y="132" text-anchor="middle" font-size="9">Earth</text>
+  <circle cx="220" cy="110" r="4.5" fill="#b91c1c"/><text x="220" y="132" text-anchor="middle" font-size="9">Mars</text>
+  <!-- Asteroid belt -->
+  <g fill="#6b7280">
+    <circle cx="260" cy="108" r="1"/><circle cx="266" cy="112" r="1"/><circle cx="270" cy="105" r="1"/>
+    <circle cx="275" cy="112" r="1"/><circle cx="280" cy="107" r="1"/><circle cx="285" cy="113" r="1"/>
+  </g>
+  <text x="272" y="132" text-anchor="middle" font-size="8" fill="#6b7280">asteroid belt</text>
+  <!-- Outer -->
+  <circle cx="340" cy="110" r="14" fill="#d97706"/><text x="340" y="145" text-anchor="middle" font-size="9">Jupiter</text>
+  <circle cx="410" cy="110" r="11" fill="#ca8a04"/>
+  <ellipse cx="410" cy="110" rx="18" ry="3" fill="none" stroke="#a16207" stroke-width="1"/>
+  <text x="410" y="145" text-anchor="middle" font-size="9">Saturn</text>
+  <circle cx="480" cy="110" r="8" fill="#67e8f9"/><text x="480" y="145" text-anchor="middle" font-size="9">Uranus</text>
+  <circle cx="550" cy="110" r="8" fill="#1e40af"/><text x="550" y="145" text-anchor="middle" font-size="9">Neptune</text>
+  <!-- Kuiper -->
+  <text x="625" y="112" font-size="9" fill="#6b7280">Kuiper belt →</text>
+</svg>
+
+<table>
+    <tr><th>Type</th><th>Examples</th><th>Orbit</th></tr>
+    <tr><td><strong>Star</strong></td><td>The Sun</td><td>Centre of Solar System</td></tr>
+    <tr><td><strong>Planets</strong></td><td>Mercury → Neptune (8)</td><td>Orbit the Sun in near-circular ellipses</td></tr>
+    <tr><td><strong>Dwarf planets</strong></td><td>Pluto, Ceres, Eris</td><td>Orbit Sun, but not cleared their orbital path</td></tr>
+    <tr><td><strong>Moons / natural satellites</strong></td><td>Earth's Moon, Jupiter's Galilean moons</td><td>Orbit planets</td></tr>
+    <tr><td><strong>Asteroids</strong></td><td>In the asteroid belt (Mars–Jupiter)</td><td>Orbit the Sun; rocky</td></tr>
+    <tr><td><strong>Comets</strong></td><td>Halley's, Hale–Bopp</td><td>Very elliptical orbits; ice + dust</td></tr>
+    <tr><td><strong>Artificial satellites</strong></td><td>ISS, GPS, communications</td><td>Orbit Earth or other bodies</td></tr>
+</table>
+
+<h2>P6.3 The Life Cycle of Stars</h2>
+
+<!-- Star life cycle -->
+<svg viewBox="0 0 700 320" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:20px auto;display:block;">
+  <defs><marker id="als" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#374151"/></marker></defs>
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Life Cycle of Stars</text>
+  <!-- Nebula -->
+  <ellipse cx="80" cy="110" rx="40" ry="30" fill="#a78bfa" opacity="0.5"/>
+  <text x="80" y="115" text-anchor="middle" font-size="10" fill="#4c1d95">Nebula</text>
+  <text x="80" y="155" text-anchor="middle" font-size="9" fill="#374151">Dust + gas</text>
+  <line x1="120" y1="110" x2="155" y2="110" stroke="#374151" stroke-width="1.5" marker-end="url(#als)"/>
+  <!-- Protostar -->
+  <circle cx="180" cy="110" r="15" fill="#fb923c"/>
+  <text x="180" y="115" text-anchor="middle" font-size="9" fill="#fff">Proto-</text>
+  <text x="180" y="155" text-anchor="middle" font-size="9" fill="#374151">Gravity pulls in</text>
+  <line x1="200" y1="110" x2="240" y2="110" stroke="#374151" stroke-width="1.5" marker-end="url(#als)"/>
+  <!-- Main sequence -->
+  <circle cx="270" cy="110" r="18" fill="#fde047"/>
+  <text x="270" y="115" text-anchor="middle" font-size="9" fill="#000">Main</text>
+  <text x="270" y="155" text-anchor="middle" font-size="9" fill="#374151">Fusion H→He</text>
+  <line x1="295" y1="110" x2="340" y2="110" stroke="#374151" stroke-width="1.5" marker-end="url(#als)"/>
+  <!-- Red giant / supergiant -->
+  <circle cx="380" cy="110" r="28" fill="#dc2626"/>
+  <text x="380" y="114" text-anchor="middle" font-size="10" fill="#fff">Red giant</text>
+  <text x="380" y="155" text-anchor="middle" font-size="9" fill="#374151">(or supergiant)</text>
+  <!-- Branch into small / large -->
+  <line x1="405" y1="100" x2="450" y2="60" stroke="#374151" stroke-width="1.5" marker-end="url(#als)"/>
+  <line x1="410" y1="125" x2="450" y2="180" stroke="#374151" stroke-width="1.5" marker-end="url(#als)"/>
+  <!-- Small star path -->
+  <circle cx="485" cy="55" r="10" fill="#f3f4f6" stroke="#374151"/>
+  <text x="485" y="59" text-anchor="middle" font-size="9" fill="#374151">WD</text>
+  <text x="485" y="30" text-anchor="middle" font-size="9" fill="#374151">White dwarf</text>
+  <line x1="500" y1="55" x2="540" y2="55" stroke="#374151" stroke-width="1.5" marker-end="url(#als)"/>
+  <circle cx="570" cy="55" r="8" fill="#111827"/>
+  <text x="570" y="30" text-anchor="middle" font-size="9" fill="#374151">Black dwarf</text>
+  <text x="625" y="58" font-size="9" fill="#374151">(hypothetical)</text>
+  <!-- Large star path -->
+  <text x="485" y="175" font-size="10" fill="#dc2626">SUPERNOVA 💥</text>
+  <text x="485" y="192" font-size="9" fill="#374151">(heavy elements scattered)</text>
+  <line x1="530" y1="180" x2="560" y2="180" stroke="#374151" stroke-width="1.5" marker-end="url(#als)"/>
+  <!-- Branch to NS or BH -->
+  <circle cx="600" cy="165" r="6" fill="#a78bfa"/>
+  <text x="610" y="165" font-size="9" fill="#374151">Neutron star</text>
+  <circle cx="600" cy="195" r="9" fill="#000"/>
+  <text x="613" y="200" font-size="9" fill="#374151">Black hole (very massive)</text>
+
+  <text x="350" y="280" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e40af">Heavier elements (beyond iron) are forged in supernovae — we are "star dust".</text>
+</svg>
+
+<ol>
+    <li><strong>Nebula</strong> — cloud of gas (mostly H) and dust collapses under gravity.</li>
+    <li><strong>Protostar</strong> — density and temperature rise as matter falls in.</li>
+    <li><strong>Main sequence star</strong> — temperature high enough for hydrogen fusion (H → He). This releases energy that balances gravitational collapse. Stars spend most of their lives here; the Sun is currently in this stage and has been for ~4.6 Gyr.</li>
+    <li><strong>Red giant (small/medium star) OR red supergiant (massive star)</strong> — hydrogen runs out, core contracts, outer layers expand and cool. Heavier elements (up to iron) fused.</li>
+    <li>Small/medium star → planetary nebula → <strong>white dwarf</strong> → eventually (if cooled) black dwarf.</li>
+    <li>Massive star → <strong>supernova</strong> explosion → either <strong>neutron star</strong> or (if very massive) <strong>black hole</strong>. Supernovae create elements heavier than iron and scatter them across space.</li>
+</ol>
+
+<h3>Our Galaxy and Beyond</h3>
+<ul>
+    <li>Our Sun is one star in the <strong>Milky Way</strong> galaxy, which contains ~200 billion stars.</li>
+    <li>The Milky Way is one of billions of galaxies in the <strong>observable universe</strong>.</li>
+    <li>Light travels at 3 × 10⁸ m/s. A <strong>light-year</strong> is the distance light travels in one year (~9.5 × 10¹⁵ m). Astronomical distances are huge.</li>
+</ul>
+
+<h2>P6.4 Orbital Motion</h2>
+
+<p>An object moving in a circular orbit has a velocity that is <strong>constantly changing direction</strong>. A change in velocity means acceleration, which requires a resultant force: <strong>gravity</strong> provides this force, pulling the orbiting body towards the centre.</p>
+
+<!-- Orbital motion -->
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Orbital Motion — Gravity = Centripetal Force</text>
+  <!-- Central body -->
+  <circle cx="350" cy="130" r="25" fill="#fbbf24"/>
+  <text x="350" y="135" text-anchor="middle" font-size="10" fill="#b45309">Sun</text>
+  <!-- Orbit -->
+  <ellipse cx="350" cy="130" rx="130" ry="80" fill="none" stroke="#9ca3af" stroke-dasharray="4,4"/>
+  <!-- Planet -->
+  <circle cx="480" cy="130" r="9" fill="#2563eb"/>
+  <!-- velocity arrow -->
+  <line x1="480" y1="130" x2="480" y2="75" stroke="#16a34a" stroke-width="2" marker-end="url(#av)"/>
+  <defs><marker id="av" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#16a34a"/></marker></defs>
+  <text x="495" y="80" font-size="10" fill="#16a34a">v (tangent)</text>
+  <!-- gravity arrow -->
+  <line x1="480" y1="130" x2="390" y2="130" stroke="#dc2626" stroke-width="2" marker-end="url(#av2)"/>
+  <defs><marker id="av2" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker></defs>
+  <text x="410" y="120" font-size="10" fill="#dc2626">Fg (towards centre)</text>
+  <text x="350" y="225" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7280">Speed is constant, but velocity (direction) changes. Gravity gives the required centripetal force.</text>
+</svg>
+
+<ul>
+    <li>For a <strong>stable orbit</strong> at a given distance, there is only one specific orbital speed — too fast and the orbit spirals outwards; too slow and it spirals inwards.</li>
+    <li>A planet closer to the Sun needs a <strong>higher orbital speed</strong> to balance the stronger gravitational force.</li>
+    <li>Satellites in <strong>low Earth orbit</strong> (ISS at ~400 km) travel at ~7.7 km/s; <strong>geostationary satellites</strong> (~36 000 km) at ~3 km/s.</li>
+</ul>
+
+<h2>P6.5 Red-Shift and the Big Bang</h2>
+
+<div class="definition">
+    <strong>Red-shift</strong> is the observation that light from distant galaxies has a <strong>longer wavelength</strong> than expected (shifted toward the red end of the spectrum). The further away a galaxy is, the greater its red-shift — so it is moving away faster.
+</div>
+
+<!-- Red-shift -->
+<svg viewBox="0 0 700 240" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:680px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e40af">Red-Shift — Light from Distant Galaxies Stretched</text>
+  <!-- Lab spectrum -->
+  <text x="100" y="60" font-size="11" font-weight="bold" fill="#374151">Lab reference</text>
+  <rect x="50" y="70" width="600" height="30" fill="url(#sp1)"/>
+  <defs>
+    <linearGradient id="sp1" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="20%" stop-color="#2563eb"/>
+      <stop offset="40%" stop-color="#10b981"/>
+      <stop offset="60%" stop-color="#fde047"/>
+      <stop offset="80%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+    <linearGradient id="sp2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#7c3aed"/>
+      <stop offset="20%" stop-color="#2563eb"/>
+      <stop offset="40%" stop-color="#10b981"/>
+      <stop offset="60%" stop-color="#fde047"/>
+      <stop offset="80%" stop-color="#f97316"/>
+      <stop offset="100%" stop-color="#dc2626"/>
+    </linearGradient>
+  </defs>
+  <!-- Dark absorption lines in lab -->
+  <line x1="150" y1="70" x2="150" y2="100" stroke="#000" stroke-width="2"/>
+  <line x1="310" y1="70" x2="310" y2="100" stroke="#000" stroke-width="2"/>
+  <line x1="470" y1="70" x2="470" y2="100" stroke="#000" stroke-width="2"/>
+  <!-- Distant galaxy spectrum -->
+  <text x="100" y="150" font-size="11" font-weight="bold" fill="#374151">Distant galaxy</text>
+  <rect x="50" y="160" width="600" height="30" fill="url(#sp2)"/>
+  <line x1="210" y1="160" x2="210" y2="190" stroke="#000" stroke-width="2"/>
+  <line x1="370" y1="160" x2="370" y2="190" stroke="#000" stroke-width="2"/>
+  <line x1="530" y1="160" x2="530" y2="190" stroke="#000" stroke-width="2"/>
+  <!-- Shift arrows -->
+  <line x1="150" y1="120" x2="210" y2="150" stroke="#dc2626" stroke-width="1.5" marker-end="url(#avr)"/>
+  <line x1="310" y1="120" x2="370" y2="150" stroke="#dc2626" stroke-width="1.5" marker-end="url(#avr)"/>
+  <line x1="470" y1="120" x2="530" y2="150" stroke="#dc2626" stroke-width="1.5" marker-end="url(#avr)"/>
+  <defs><marker id="avr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0,10 3.5,0 7" fill="#dc2626"/></marker></defs>
+  <text x="350" y="220" text-anchor="middle" font-size="10" font-style="italic" fill="#6b7280">Dark absorption lines shifted to longer (redder) wavelengths → galaxy moving away from us.</text>
+</svg>
+
+<p>The interpretation: space itself is expanding, carrying galaxies along with it. The universe started very small, hot and dense and has been expanding ever since. This is the <strong>Big Bang</strong> theory (~13.8 billion years ago).</p>
+
+<h3>Evidence for the Big Bang</h3>
+<ul>
+    <li><strong>Red-shift</strong> of distant galaxies &mdash; universe is expanding.</li>
+    <li><strong>Cosmic microwave background radiation (CMB)</strong> &mdash; cold microwave glow filling the sky in all directions; the "afterglow" of the hot early universe, redshifted to microwaves by 13.8 Gyr of expansion.</li>
+    <li><strong>Abundance of light elements</strong> (hydrogen, helium) matches Big Bang nucleosynthesis predictions.</li>
+</ul>
+
+<h3>Dark Matter and Dark Energy</h3>
+
+<p>Observations of galaxy rotation and cosmic expansion cannot be explained by the ordinary matter we can see:</p>
+<ul>
+    <li><strong>Dark matter</strong> — matter that doesn't emit or absorb light but has mass. Its gravitational effect is needed to explain how fast galaxies rotate.</li>
+    <li><strong>Dark energy</strong> — mysterious form of energy driving the <strong>accelerating</strong> expansion of the universe discovered in 1998.</li>
+    <li>Current best estimate: ~5% ordinary matter, ~27% dark matter, ~68% dark energy. Physicists do not yet know what either of the "dark" components actually is — an active research area.</li>
+</ul>
+
+<h2>P6.6 Remote Sensing &amp; Communications</h2>
+
+<p>Artificial satellites are used for:</p>
+<ul>
+    <li><strong>Communications</strong> (TV, phone, internet) — geostationary satellites stay above one point on Earth.</li>
+    <li><strong>Navigation</strong> — GPS uses timing signals from ≥4 satellites to triangulate position.</li>
+    <li><strong>Weather</strong> — monitor cloud movements and ocean temperatures.</li>
+    <li><strong>Earth observation</strong> — deforestation, ice-cap monitoring, climate data.</li>
+    <li><strong>Astronomy</strong> — telescopes above the atmosphere (Hubble, JWST) see wavelengths blocked by air and escape distortion.</li>
+</ul>
+
+<h3>Absorption by the Atmosphere</h3>
+
+<p>Different wavelengths of the EM spectrum are absorbed by different parts of the atmosphere:</p>
+<ul>
+    <li>Most UV is absorbed by the ozone layer.</li>
+    <li>Most IR is absorbed by water vapour and CO₂ (greenhouse effect).</li>
+    <li>Radio and visible wavelengths pass through the atmosphere easily — "windows" used for ground-based astronomy.</li>
+</ul>
+
+<div class="exam-tip">Why does the JWST orbit far from Earth (L2 Lagrange point)? Because it observes infrared — sitting 1.5 million km away lets it cool to ~40 K, away from the warm Earth and Sun, so its own heat does not overwhelm faint astronomical IR signals.</div>
+
+<h2>P6.7 The Future — Global Challenges in Physics</h2>
+
+<table>
+    <tr><th>Challenge</th><th>Physics role</th></tr>
+    <tr><td>Climate change</td><td>Clean energy (renewables, fusion, nuclear), efficient grid storage, carbon capture</td></tr>
+    <tr><td>Energy security</td><td>Diversify mix; domestic renewables; fusion in the medium-term</td></tr>
+    <tr><td>Medical imaging</td><td>MRI, CT, PET, ultrasound — safer &amp; higher resolution diagnostics</td></tr>
+    <tr><td>Communications</td><td>5G / 6G networks, satellite internet, optical-fibre bandwidth</td></tr>
+    <tr><td>Transport</td><td>EV batteries, hydrogen fuel cells, maglev, electric aircraft</td></tr>
+    <tr><td>Space exploration</td><td>Planetary science, asteroid defence, space-based solar power</td></tr>
+</table>
+
+<h2>Quick Summary — Key Equations &amp; Ideas for P6</h2>
+<table>
+    <tr><th>Quantity</th><th>Equation / idea</th><th>Units</th></tr>
+    <tr><td>Transformer (voltage)</td><td>V<sub>p</sub>/V<sub>s</sub> = N<sub>p</sub>/N<sub>s</sub></td><td>—</td></tr>
+    <tr><td>Ideal transformer power</td><td>V<sub>p</sub>I<sub>p</sub> = V<sub>s</sub>I<sub>s</sub></td><td>W</td></tr>
+    <tr><td>Orbital motion</td><td>Gravity acts as centripetal force</td><td>—</td></tr>
+    <tr><td>Speed of light in vacuum</td><td>c = 3 × 10⁸ m/s</td><td>m/s</td></tr>
+    <tr><td>Red-shift → expansion</td><td>Longer λ from distant galaxies</td><td>—</td></tr>
+    <tr><td>Age of universe</td><td>≈ 13.8 × 10⁹ years</td><td>—</td></tr>
+</table>
+
+</div>
+</body>
+</html>
