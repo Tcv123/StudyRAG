@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<title>Flashcard Interactivity Demo</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    background: #f0f4ff;
+    padding: 32px;
+    color: #1a2540;
+  }
+  h1 { margin-bottom: 8px; }
+  .subtitle { color: #64748b; margin-bottom: 32px; }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 32px;
+    max-width: 1400px;
+    margin: 0 auto;
+  }
+  .panel {
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(30, 50, 120, 0.08);
+  }
+  .panel h2 { font-size: 20px; margin-bottom: 4px; }
+  .panel .tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 3px 8px;
+    border-radius: 6px;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .tag.simple { background: #dcfce7; color: #166534; }
+  .tag.sr { background: #fef3c7; color: #92400e; }
+  .panel p.desc { color: #475569; font-size: 14px; margin-bottom: 20px; line-height: 1.5; }
+
+  /* Flashcard */
+  .card-stage {
+    perspective: 1200px;
+    margin-bottom: 20px;
+  }
+  .card {
+    position: relative;
+    width: 100%;
+    height: 240px;
+    transform-style: preserve-3d;
+    transition: transform 0.5s;
+    cursor: pointer;
+  }
+  .card.flipped { transform: rotateY(180deg); }
+  .face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+  }
+  .front {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+  }
+  .back {
+    background: linear-gradient(135deg, #f093fb, #f5576c);
+    color: white;
+    transform: rotateY(180deg);
+  }
+  .hint {
+    text-align: center;
+    color: #94a3b8;
+    font-size: 12px;
+    margin-bottom: 16px;
+  }
+
+  /* Simple buttons */
+  .btn-row {
+    display: flex;
+    gap: 10px;
+  }
+  .btn {
+    flex: 1;
+    padding: 12px;
+    border: none;
+    border-radius: 10px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.1s;
+  }
+  .btn:hover { transform: translateY(-1px); }
+  .btn-known { background: #10b981; color: white; }
+  .btn-unknown { background: #ef4444; color: white; }
+
+  /* SR grades */
+  .grade-row {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+  }
+  .grade {
+    padding: 10px 4px;
+    border: none;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+  }
+  .grade span.interval {
+    font-size: 10px;
+    opacity: 0.85;
+    font-weight: 400;
+  }
+  .grade.again { background: #ef4444; }
+  .grade.hard { background: #f59e0b; }
+  .grade.good { background: #10b981; }
+  .grade.easy { background: #3b82f6; }
+
+  .stats {
+    margin-top: 16px;
+    padding: 12px;
+    background: #f8fafc;
+    border-radius: 8px;
+    font-size: 13px;
+    color: #475569;
+    line-height: 1.7;
+  }
+  .stats strong { color: #1a2540; }
+  .stats .row {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .log {
+    margin-top: 12px;
+    font-size: 12px;
+    color: #64748b;
+    max-height: 80px;
+    overflow-y: auto;
+    padding: 8px;
+    background: #f8fafc;
+    border-radius: 6px;
+    font-family: 'Courier New', monospace;
+  }
+  .log-entry { padding: 2px 0; }
+
+  .compare {
+    max-width: 1400px;
+    margin: 32px auto 0;
+    background: white;
+    border-radius: 16px;
+    padding: 24px;
+    box-shadow: 0 4px 20px rgba(30, 50, 120, 0.08);
+  }
+  .compare h3 { margin-bottom: 12px; }
+  .compare table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  .compare th, .compare td {
+    padding: 10px 12px;
+    text-align: left;
+    border-bottom: 1px solid #e2e8f0;
+  }
+  .compare th { background: #f8fafc; font-weight: 600; }
+  .compare td.yes { color: #059669; font-weight: 600; }
+  .compare td.no { color: #dc2626; }
+</style>
+</head>
+<body>
+<h1>Flashcard Interactivity — Option A vs Option B</h1>
+<p class="subtitle">Click the cards to flip. Try both — the difference is what happens <em>after</em> you answer.</p>
+
+<div class="wrapper">
+  <!-- SIMPLE -->
+  <div class="panel">
+    <h2>Option A — Flip + Known/Unknown</h2>
+    <span class="tag simple">Simple · Start here</span>
+    <p class="desc">
+      Card flips. You mark it "Knew it" or "Didn't know." Unknown cards come back
+      later in the same session. That's the whole algorithm.
+    </p>
+
+    <div class="card-stage">
+      <div class="card" id="simpleCard" onclick="this.classList.toggle('flipped')">
+        <div class="face front" id="simpleFront">What is the law of demand?</div>
+        <div class="face back">As price rises, quantity demanded falls, ceteris paribus.</div>
+      </div>
+    </div>
+    <div class="hint">Click card to flip</div>
+
+    <div class="btn-row">
+      <button class="btn btn-unknown" onclick="simpleAnswer('unknown')">Didn't know</button>
+      <button class="btn btn-known" onclick="simpleAnswer('known')">Knew it</button>
+    </div>
+
+    <div class="stats">
+      <div class="row"><span>Session progress</span><strong id="simpleProg">0 / 5</strong></div>
+      <div class="row"><span>Remaining</span><strong id="simpleQueue">5</strong></div>
+      <div class="row"><span>Next review</span><strong>End of session</strong></div>
+    </div>
+    <div class="log" id="simpleLog"></div>
+  </div>
+
+  <!-- SPACED REPETITION -->
+  <div class="panel">
+    <h2>Option B — Spaced Repetition (SM-2)</h2>
+    <span class="tag sr">Advanced · Anki-style</span>
+    <p class="desc">
+      You grade how well you knew it. The app schedules the card for a future date —
+      tomorrow, 3 days, 2 weeks, 6 months — based on your grade and history. Cards
+      you know well come back rarely; ones you struggle with come back soon.
+    </p>
+
+    <div class="card-stage">
+      <div class="card" id="srCard" onclick="this.classList.toggle('flipped')">
+        <div class="face front" id="srFront">What is the law of demand?</div>
+        <div class="face back">As price rises, quantity demanded falls, ceteris paribus.</div>
+      </div>
+    </div>
+    <div class="hint">Click card to flip, then grade</div>
+
+    <div class="grade-row">
+      <button class="grade again" onclick="srGrade(0)">Again<span class="interval">&lt;10m</span></button>
+      <button class="grade hard" onclick="srGrade(3)">Hard<span class="interval" id="hardInt">1d</span></button>
+      <button class="grade good" onclick="srGrade(4)">Good<span class="interval" id="goodInt">3d</span></button>
+      <button class="grade easy" onclick="srGrade(5)">Easy<span class="interval" id="easyInt">7d</span></button>
+    </div>
+
+    <div class="stats">
+      <div class="row"><span>Card interval</span><strong id="srInterval">New card</strong></div>
+      <div class="row"><span>Ease factor</span><strong id="srEase">2.5</strong></div>
+      <div class="row"><span>Repetitions</span><strong id="srReps">0</strong></div>
+      <div class="row"><span>Next review</span><strong id="srDue">Today</strong></div>
+    </div>
+    <div class="log" id="srLog"></div>
+  </div>
+</div>
+
+<div class="compare">
+  <h3>At a glance</h3>
+  <table>
+    <tr><th>Feature</th><th>Option A (Simple)</th><th>Option B (SM-2)</th></tr>
+    <tr><td>Card flip animation</td><td class="yes">Yes</td><td class="yes">Yes</td></tr>
+    <tr><td>Mark known / unknown</td><td class="yes">Yes</td><td class="yes">4 grades</td></tr>
+    <tr><td>Remembers per-card state across sessions</td><td class="no">No</td><td class="yes">Yes</td></tr>
+    <tr><td>Schedules future reviews</td><td class="no">No</td><td class="yes">Yes</td></tr>
+    <tr><td>"Cards due today" queue</td><td class="no">No</td><td class="yes">Yes</td></tr>
+    <tr><td>DB tables needed</td><td>1 (user_cards)</td><td>2 (user_cards + review_log)</td></tr>
+    <tr><td>Build time</td><td>~1 day</td><td>~4–5 days</td></tr>
+    <tr><td>User value</td><td>Good</td><td>Excellent (proven to boost retention)</td></tr>
+  </table>
+</div>
+
+<script>
+  // Simple mode state
+  let simpleQueue = 5;
+  let simpleDone = 0;
+  function simpleAnswer(type) {
+    const log = document.getElementById('simpleLog');
+    const entry = document.createElement('div');
+    entry.className = 'log-entry';
+    if (type === 'known') {
+      simpleDone++;
+      simpleQueue--;
+      entry.textContent = '✓ Knew it — removed from session';
+    } else {
+      entry.textContent = '✗ Didn\'t know — will show again in this session';
+    }
+    log.prepend(entry);
+    document.getElementById('simpleProg').textContent = simpleDone + ' / 5';
+    document.getElementById('simpleQueue').textContent = Math.max(simpleQueue, 0);
+    document.getElementById('simpleCard').classList.remove('flipped');
+  }
+
+  // SM-2 state
+  let sr = { interval: 0, ease: 2.5, reps: 0 };
+  function srGrade(quality) {
+    // Simplified SM-2
+    if (quality < 3) {
+      sr.reps = 0;
+      sr.interval = 0; // show again soon
+    } else {
+      if (sr.reps === 0) sr.interval = 1;
+      else if (sr.reps === 1) sr.interval = 6;
+      else sr.interval = Math.round(sr.interval * sr.ease);
+      sr.reps++;
+      sr.ease = Math.max(1.3, sr.ease + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02)));
+    }
+    document.getElementById('srInterval').textContent =
+      sr.interval === 0 ? '<10 min' : sr.interval + ' day' + (sr.interval > 1 ? 's' : '');
+    document.getElementById('srEase').textContent = sr.ease.toFixed(2);
+    document.getElementById('srReps').textContent = sr.reps;
+
+    const due = new Date();
+    due.setDate(due.getDate() + sr.interval);
+    document.getElementById('srDue').textContent =
+      sr.interval === 0 ? 'In 10 minutes' : due.toLocaleDateString();
+
+    // update next interval previews
+    document.getElementById('hardInt').textContent = Math.max(1, Math.round(sr.interval * 1.2)) + 'd';
+    document.getElementById('goodInt').textContent = Math.max(1, Math.round(sr.interval * sr.ease || 3)) + 'd';
+    document.getElementById('easyInt').textContent = Math.max(1, Math.round(sr.interval * sr.ease * 1.3 || 7)) + 'd';
+
+    const labels = ['Again', 'Again', 'Again', 'Hard', 'Good', 'Easy'];
+    const log = document.getElementById('srLog');
+    const entry = document.createElement('div');
+    entry.className = 'log-entry';
+    entry.textContent = `[${labels[quality]}] next in ${sr.interval || '<1'}d · ease ${sr.ease.toFixed(2)}`;
+    log.prepend(entry);
+    document.getElementById('srCard').classList.remove('flipped');
+  }
+</script>
+</body>
+</html>
