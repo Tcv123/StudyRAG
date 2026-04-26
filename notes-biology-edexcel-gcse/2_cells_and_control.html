@@ -1,0 +1,856 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edexcel Biology — Topic 2: Cells and Control</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #16a34a; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: #166534; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dcfce7; }
+        h3 { font-size: 1.15rem; color: #14532d; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0fdf4; color: #166534; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#16a34a;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>Topic 2: Cells and Control</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Biology (1BI0) &mdash; Paper 1</p>
+
+<h2>2.1 The Cell Cycle</h2>
+
+<div class="definition">
+    The <strong>cell cycle</strong> is the series of stages that a cell passes through each time it divides. It consists of a long growth stage called <strong>interphase</strong>, followed by a short division stage: <strong>mitosis</strong> (nuclear division) and <strong>cytokinesis</strong> (division of the cytoplasm).
+</div>
+
+<p>All body (somatic) cells of multicellular organisms divide by mitosis to produce two genetically identical daughter cells. Before a cell can divide, it must grow, copy all of its DNA, and duplicate its organelles. This preparation happens during interphase, which is much longer than the actual division stages &mdash; a typical human cell spends 90% or more of its life in interphase.</p>
+
+<h3>Stages of the Cell Cycle</h3>
+
+<table>
+    <tr><th>Stage</th><th>What happens</th></tr>
+    <tr><td><strong>G1</strong> (Gap 1)</td><td>The cell grows larger. Organelles such as mitochondria and ribosomes are produced in large numbers. Proteins required for DNA synthesis are made.</td></tr>
+    <tr><td><strong>S</strong> (Synthesis)</td><td>DNA is replicated: each chromosome is copied so that it now consists of two identical strands joined at the centromere (sister chromatids).</td></tr>
+    <tr><td><strong>G2</strong> (Gap 2)</td><td>The cell continues to grow. More organelles are made and proteins needed for cell division (e.g. spindle fibres) are synthesised. The cell checks the DNA for errors.</td></tr>
+    <tr><td><strong>Mitosis</strong></td><td>The nucleus divides. The duplicated chromosomes separate into two identical sets.</td></tr>
+    <tr><td><strong>Cytokinesis</strong></td><td>The cytoplasm splits, forming two new daughter cells, each with a full set of chromosomes and organelles.</td></tr>
+</table>
+
+<!-- Cell cycle diagram -->
+<svg viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;margin:20px auto;display:block;">
+  <text x="300" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">The Cell Cycle</text>
+  <!-- Outer circle -->
+  <circle cx="300" cy="210" r="150" fill="none" stroke="#374151" stroke-width="2"/>
+  <!-- Arcs for each stage -->
+  <!-- G1: top-right quarter (0 to 90 deg from top) — large -->
+  <path d="M 300 60 A 150 150 0 0 1 450 210" stroke="#60a5fa" stroke-width="28" fill="none"/>
+  <!-- S: right-bottom -->
+  <path d="M 450 210 A 150 150 0 0 1 355 348" stroke="#fbbf24" stroke-width="28" fill="none"/>
+  <!-- G2: bottom -->
+  <path d="M 355 348 A 150 150 0 0 1 245 348" stroke="#34d399" stroke-width="28" fill="none"/>
+  <!-- Mitosis + cytokinesis: left -->
+  <path d="M 245 348 A 150 150 0 0 1 300 60" stroke="#f87171" stroke-width="28" fill="none"/>
+  <!-- Labels -->
+  <text x="400" y="120" font-size="12" fill="#1e3a8a" font-weight="bold">G1 (growth)</text>
+  <text x="405" y="138" font-size="10" fill="#1f2937">cell grows, organelles made</text>
+  <text x="470" y="230" font-size="12" fill="#92400e" font-weight="bold">S phase</text>
+  <text x="470" y="246" font-size="10" fill="#1f2937">DNA replicated</text>
+  <text x="300" y="390" text-anchor="middle" font-size="12" fill="#065f46" font-weight="bold">G2 (growth)</text>
+  <text x="300" y="405" text-anchor="middle" font-size="10" fill="#1f2937">check DNA, more organelles</text>
+  <text x="100" y="230" font-size="12" fill="#991b1b" font-weight="bold">Mitosis + Cytokinesis</text>
+  <text x="100" y="246" font-size="10" fill="#1f2937">nucleus &amp; cell divide</text>
+  <!-- Central label -->
+  <text x="300" y="205" text-anchor="middle" font-size="12" fill="#374151" font-weight="bold">INTERPHASE</text>
+  <text x="300" y="222" text-anchor="middle" font-size="10" fill="#374151">(G1 + S + G2)</text>
+  <!-- Arrows -->
+  <polygon points="300,58 306,70 294,70" fill="#1e3a8a"/>
+</svg>
+
+<div class="exam-tip">Interphase is NOT "resting". It is the most active part of the cycle &mdash; the cell is growing, copying DNA and making organelles. Don't write that cells "rest" between divisions. Use the word <strong>interphase</strong>.</div>
+
+<h2>2.2 Mitosis</h2>
+
+<div class="definition">
+    <strong>Mitosis</strong> is a type of cell division in which a parent cell divides to produce <strong>two genetically identical daughter cells</strong>, each with the same number of chromosomes as the parent (diploid in humans &mdash; 46 chromosomes).
+</div>
+
+<p>Mitosis itself has four stages, remembered by the mnemonic <strong>PMAT</strong>: <strong>P</strong>rophase, <strong>M</strong>etaphase, <strong>A</strong>naphase, <strong>T</strong>elophase. After telophase the cytoplasm divides (cytokinesis) to produce the two daughter cells.</p>
+
+<h3>Stages of Mitosis</h3>
+
+<table>
+    <tr><th>Stage</th><th>What happens</th></tr>
+    <tr><td><strong>Prophase</strong></td><td>Chromosomes (already replicated in S phase) condense and become visible as X-shaped structures, each made of two sister chromatids joined at the centromere. The nuclear membrane breaks down. Spindle fibres form from the centrioles at opposite poles of the cell.</td></tr>
+    <tr><td><strong>Metaphase</strong></td><td>Chromosomes line up single file across the centre (equator) of the cell. Spindle fibres attach to each centromere.</td></tr>
+    <tr><td><strong>Anaphase</strong></td><td>Spindle fibres contract, pulling sister chromatids apart. One chromatid from each pair is pulled to each pole of the cell.</td></tr>
+    <tr><td><strong>Telophase</strong></td><td>Chromatids reach the poles and uncoil back into chromatin. A new nuclear membrane forms around each set. The cell now has two identical nuclei.</td></tr>
+    <tr><td><strong>Cytokinesis</strong></td><td>The cytoplasm splits in two. In animal cells the membrane pinches inwards (cleavage furrow); in plant cells a new cell wall forms across the middle (cell plate).</td></tr>
+</table>
+
+<!-- Mitosis stages SVG -->
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Stages of Mitosis</text>
+  <!-- Prophase -->
+  <circle cx="80" cy="140" r="55" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <path d="M 65 120 L 70 140 L 60 160 L 65 120 M 95 115 L 100 135 L 90 155 L 95 115 M 55 100 L 60 120 L 50 140 L 55 100" stroke="#7f1d1d" stroke-width="2" fill="#7f1d1d"/>
+  <text x="80" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Prophase</text>
+  <text x="80" y="232" text-anchor="middle" font-size="9" fill="#374151">chromosomes condense</text>
+  <!-- Metaphase -->
+  <circle cx="220" cy="140" r="55" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <line x1="220" y1="90" x2="220" y2="190" stroke="#6b7280" stroke-width="1" stroke-dasharray="3,3"/>
+  <rect x="212" y="115" width="16" height="6" fill="#7f1d1d"/>
+  <rect x="212" y="135" width="16" height="6" fill="#7f1d1d"/>
+  <rect x="212" y="155" width="16" height="6" fill="#7f1d1d"/>
+  <!-- spindle fibres -->
+  <line x1="170" y1="140" x2="212" y2="118" stroke="#065f46" stroke-width="1"/>
+  <line x1="170" y1="140" x2="212" y2="138" stroke="#065f46" stroke-width="1"/>
+  <line x1="170" y1="140" x2="212" y2="158" stroke="#065f46" stroke-width="1"/>
+  <line x1="270" y1="140" x2="228" y2="118" stroke="#065f46" stroke-width="1"/>
+  <line x1="270" y1="140" x2="228" y2="138" stroke="#065f46" stroke-width="1"/>
+  <line x1="270" y1="140" x2="228" y2="158" stroke="#065f46" stroke-width="1"/>
+  <text x="220" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Metaphase</text>
+  <text x="220" y="232" text-anchor="middle" font-size="9" fill="#374151">line up at equator</text>
+  <!-- Anaphase -->
+  <circle cx="360" cy="140" r="55" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <rect x="318" y="118" width="12" height="6" fill="#7f1d1d"/>
+  <rect x="390" y="118" width="12" height="6" fill="#7f1d1d"/>
+  <rect x="318" y="138" width="12" height="6" fill="#7f1d1d"/>
+  <rect x="390" y="138" width="12" height="6" fill="#7f1d1d"/>
+  <rect x="318" y="158" width="12" height="6" fill="#7f1d1d"/>
+  <rect x="390" y="158" width="12" height="6" fill="#7f1d1d"/>
+  <path d="M 340 120 L 325 120 M 380 120 L 395 120" stroke="#374151" stroke-width="1" marker-end="url(#arrA)"/>
+  <defs><marker id="arrA" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#374151"/></marker></defs>
+  <text x="360" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Anaphase</text>
+  <text x="360" y="232" text-anchor="middle" font-size="9" fill="#374151">chromatids pulled apart</text>
+  <!-- Telophase -->
+  <circle cx="500" cy="140" r="55" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <circle cx="475" cy="140" r="18" fill="none" stroke="#991b1b" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="525" cy="140" r="18" fill="none" stroke="#991b1b" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <circle cx="470" cy="140" r="3" fill="#7f1d1d"/>
+  <circle cx="480" cy="135" r="3" fill="#7f1d1d"/>
+  <circle cx="475" cy="145" r="3" fill="#7f1d1d"/>
+  <circle cx="520" cy="140" r="3" fill="#7f1d1d"/>
+  <circle cx="530" cy="135" r="3" fill="#7f1d1d"/>
+  <circle cx="525" cy="145" r="3" fill="#7f1d1d"/>
+  <text x="500" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Telophase</text>
+  <text x="500" y="232" text-anchor="middle" font-size="9" fill="#374151">new nuclei form</text>
+  <!-- Cytokinesis -->
+  <ellipse cx="640" cy="140" rx="35" ry="25" fill="#fef3c7" stroke="#b45309" stroke-width="2"/>
+  <ellipse cx="640" cy="140" rx="8" ry="25" fill="#fef3c7" stroke="#fef3c7" stroke-width="0"/>
+  <circle cx="618" cy="140" r="10" fill="none" stroke="#991b1b" stroke-width="1.5"/>
+  <circle cx="662" cy="140" r="10" fill="none" stroke="#991b1b" stroke-width="1.5"/>
+  <text x="640" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Cytokinesis</text>
+  <text x="640" y="232" text-anchor="middle" font-size="9" fill="#374151">cytoplasm divides</text>
+</svg>
+
+<div class="exam-tip">A common exam question is to identify a mitosis stage from a diagram. Key clues: chromosomes lined up in the <strong>middle</strong> = metaphase. Chromatids being pulled to opposite <strong>poles</strong> = anaphase. Two nuclei forming = telophase. Learn these visual markers.</div>
+
+<h2>2.3 Purposes of Mitosis</h2>
+
+<p>Mitosis produces genetically identical diploid cells. Multicellular organisms rely on mitosis for three main purposes:</p>
+
+<ul>
+    <li><strong>Growth</strong>: an organism grows by producing more cells. A baby is made up of far more cells than a fertilised egg.</li>
+    <li><strong>Repair</strong>: damaged tissues are replaced by new identical cells (e.g. skin cells dividing to close a wound).</li>
+    <li><strong>Asexual reproduction</strong>: some organisms (e.g. bacteria, strawberry runners, hydra) produce offspring from a single parent using mitosis. The offspring are clones &mdash; genetically identical to the parent.</li>
+</ul>
+
+<p>Because mitosis produces genetically identical cells, all the cells in your body (apart from gametes) have the same DNA as the fertilised egg you developed from. Differences between cell types come from which genes are switched on or off &mdash; not from the cells having different DNA.</p>
+
+<h2>2.4 Cancer &mdash; Uncontrolled Mitosis</h2>
+
+<div class="definition">
+    <strong>Cancer</strong> is a disease caused by <strong>uncontrolled mitosis</strong>. Changes (mutations) to genes that normally control the cell cycle cause cells to divide repeatedly, producing a mass of cells called a <strong>tumour</strong>.
+</div>
+
+<p>Under normal conditions, cells divide only when more cells are needed, and the cell cycle has many checkpoints that stop division if DNA is damaged. In cancer, these checks fail &mdash; cells divide when they shouldn't, and may ignore signals telling them to die. A tumour is the result.</p>
+
+<table>
+    <tr><th>Type of tumour</th><th>Features</th></tr>
+    <tr><td><strong>Benign</strong></td><td>Grows in one place; does not invade other tissues. Usually harmless unless it presses on an organ. Can often be removed by surgery.</td></tr>
+    <tr><td><strong>Malignant</strong></td><td>Invades surrounding tissue. Cells can break off, travel in the blood/lymph and start secondary tumours elsewhere &mdash; a process called <strong>metastasis</strong>. This is what we mean by cancer.</td></tr>
+</table>
+
+<p>Risk factors for cancer include: smoking (lung cancer), UV radiation (skin cancer), ionising radiation, viruses (e.g. HPV causes cervical cancer), diet, alcohol and inherited genetic factors. Treatments include surgery, chemotherapy and radiotherapy &mdash; all of which target rapidly dividing cells.</p>
+
+<h2>2.5 Growth in Animals and Plants</h2>
+
+<p>Animals and plants both grow &mdash; but the way they grow is very different.</p>
+
+<h3>Growth in Animals</h3>
+
+<ul>
+    <li>Animals grow mainly by <strong>cell division (mitosis)</strong>, especially during embryonic development and childhood.</li>
+    <li>Once an adult size is reached, most cell division is for <strong>repair and replacement</strong> of worn-out cells, not for further growth.</li>
+    <li>Animals have <strong>determinate growth</strong>: they stop growing at maturity.</li>
+    <li>Cells differentiate early in development. Most adult animal cells are specialised and cannot change into another cell type.</li>
+</ul>
+
+<h3>Growth in Plants</h3>
+
+<ul>
+    <li>Plants grow throughout their lives (<strong>indeterminate growth</strong>).</li>
+    <li>Growth happens by three processes at regions called <strong>meristems</strong>:
+        <ul>
+            <li><strong>Cell division</strong> &mdash; mitosis at the meristem produces new cells.</li>
+            <li><strong>Cell elongation</strong> &mdash; the new cells absorb water into the vacuole and grow much longer. This is how roots push into soil and shoots grow upwards.</li>
+            <li><strong>Cell differentiation</strong> &mdash; cells then differentiate into specialised cells (xylem, phloem, root hair cells, etc.).</li>
+        </ul>
+    </li>
+    <li>Meristems are found at the tips of roots and shoots (apical meristems) and in the cambium of stems.</li>
+</ul>
+
+<div class="exam-tip">Compare and contrast questions: animals grow by <strong>division</strong> only; plants grow by <strong>division, elongation and differentiation</strong>. Animals grow everywhere; plants grow only at meristems. Animals have determinate growth; plants are indeterminate.</div>
+
+<h2>2.6 Measuring Growth in Humans &mdash; Percentile Charts</h2>
+
+<p>A baby's growth is monitored using <strong>percentile charts</strong>. Mass, length (or height) and head circumference are measured regularly and plotted against age.</p>
+
+<ul>
+    <li>A percentile curve shows the typical range for a population. For example, the 50th percentile is the median &mdash; half of babies are above this line and half below.</li>
+    <li>A baby who consistently plots along the 25th percentile is smaller than most, but still healthy &mdash; what matters is whether they <strong>follow</strong> a percentile.</li>
+    <li>A sudden jump <strong>across</strong> percentile lines (up or down) may indicate a problem: poor feeding, illness, or overfeeding.</li>
+</ul>
+
+<!-- Percentile chart SVG -->
+<svg viewBox="0 0 600 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:600px;margin:20px auto;display:block;">
+  <text x="300" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Infant Growth Percentile Chart (mass)</text>
+  <!-- Axes -->
+  <line x1="80" y1="50" x2="80" y2="300" stroke="#374151" stroke-width="2"/>
+  <line x1="80" y1="300" x2="540" y2="300" stroke="#374151" stroke-width="2"/>
+  <text x="35" y="180" transform="rotate(-90 35 180)" font-size="12" fill="#1f2937">Mass (kg)</text>
+  <text x="310" y="335" text-anchor="middle" font-size="12" fill="#1f2937">Age (months)</text>
+  <!-- y axis ticks -->
+  <text x="70" y="303" text-anchor="end" font-size="10">0</text>
+  <text x="70" y="253" text-anchor="end" font-size="10">2</text>
+  <text x="70" y="203" text-anchor="end" font-size="10">4</text>
+  <text x="70" y="153" text-anchor="end" font-size="10">6</text>
+  <text x="70" y="103" text-anchor="end" font-size="10">8</text>
+  <text x="70" y="53" text-anchor="end" font-size="10">10</text>
+  <!-- x axis ticks -->
+  <text x="80" y="317" text-anchor="middle" font-size="10">0</text>
+  <text x="157" y="317" text-anchor="middle" font-size="10">2</text>
+  <text x="234" y="317" text-anchor="middle" font-size="10">4</text>
+  <text x="311" y="317" text-anchor="middle" font-size="10">6</text>
+  <text x="388" y="317" text-anchor="middle" font-size="10">8</text>
+  <text x="465" y="317" text-anchor="middle" font-size="10">10</text>
+  <!-- 97th percentile -->
+  <path d="M 80 230 Q 160 170 240 130 Q 320 100 400 80 Q 460 68 540 60" stroke="#dc2626" stroke-width="2" fill="none"/>
+  <text x="545" y="62" font-size="10" fill="#dc2626">97th</text>
+  <!-- 50th percentile -->
+  <path d="M 80 250 Q 160 200 240 170 Q 320 145 400 128 Q 460 118 540 108" stroke="#2563eb" stroke-width="2" fill="none"/>
+  <text x="545" y="110" font-size="10" fill="#2563eb">50th</text>
+  <!-- 3rd percentile -->
+  <path d="M 80 270 Q 160 230 240 210 Q 320 195 400 185 Q 460 178 540 170" stroke="#16a34a" stroke-width="2" fill="none"/>
+  <text x="545" y="172" font-size="10" fill="#16a34a">3rd</text>
+  <!-- Example baby's plotted points -->
+  <circle cx="80" cy="255" r="3" fill="#1f2937"/>
+  <circle cx="157" cy="205" r="3" fill="#1f2937"/>
+  <circle cx="234" cy="175" r="3" fill="#1f2937"/>
+  <circle cx="311" cy="150" r="3" fill="#1f2937"/>
+  <circle cx="388" cy="132" r="3" fill="#1f2937"/>
+  <text x="400" y="155" font-size="10" fill="#1f2937">baby A (~50th)</text>
+</svg>
+
+<h2>2.7 Stem Cells</h2>
+
+<div class="definition">
+    A <strong>stem cell</strong> is an undifferentiated cell that can divide repeatedly by mitosis to produce more stem cells, and can <strong>differentiate</strong> (become specialised) into various types of cell.
+</div>
+
+<h3>Types of Stem Cell</h3>
+
+<table>
+    <tr><th>Type</th><th>Source</th><th>Potential</th></tr>
+    <tr><td><strong>Embryonic stem cells</strong></td><td>Early human embryo (5&ndash;7 days old); obtained from spare embryos from IVF</td><td>Can differentiate into <strong>any</strong> type of cell in the body (pluripotent); very versatile</td></tr>
+    <tr><td><strong>Adult stem cells</strong></td><td>Adult tissues, especially <strong>bone marrow</strong></td><td>Can only become a limited number of cell types (e.g. blood cells)</td></tr>
+    <tr><td><strong>Plant meristem cells</strong></td><td>Meristems at tips of roots, shoots and in cambium</td><td>Can differentiate into any type of plant cell (xylem, phloem, root hair cells, etc.) throughout life</td></tr>
+</table>
+
+<p>Embryonic stem cells are described as <strong>pluripotent</strong> &mdash; they can become almost any body cell. Very early embryonic cells (first few divisions) are <strong>totipotent</strong> and can become any cell, including the placenta. Adult stem cells are <strong>multipotent</strong> &mdash; they can only form a few cell types, those related to the tissue they were taken from.</p>
+
+<h2>2.8 Uses, Risks and Ethics of Stem Cells</h2>
+
+<h3>Medical Uses</h3>
+
+<ul>
+    <li><strong>Type 1 diabetes</strong>: stem cells could be used to grow new insulin-producing beta cells for the pancreas.</li>
+    <li><strong>Paralysis</strong> caused by spinal cord damage: stem cells may be used to grow new nerve cells to reconnect severed nerves.</li>
+    <li><strong>Leukaemia</strong> (blood cancer): bone marrow transplants replace the patient's faulty bone marrow stem cells with healthy donor stem cells that produce healthy blood cells.</li>
+    <li><strong>Burns</strong>: stem cells can grow new skin.</li>
+    <li><strong>Macular degeneration</strong>: new retinal cells could be grown to restore sight.</li>
+</ul>
+
+<h3>Risks</h3>
+
+<ul>
+    <li><strong>Rejection</strong>: if the stem cells come from another person, the patient's immune system may attack them. Patients often need immunosuppressant drugs.</li>
+    <li><strong>Tumour formation</strong>: if the stem cells continue to divide uncontrollably, they may form a tumour.</li>
+    <li><strong>Infection</strong>: during the procedure, viruses might be transferred with the stem cells.</li>
+</ul>
+
+<h3>Ethical Issues</h3>
+
+<p>Using embryonic stem cells is controversial because it involves destroying a human embryo. Many people believe an embryo has the same right to life as a person. Others argue that the embryos used are spare embryos from IVF that would otherwise be destroyed, and that saving lives justifies their use. Adult stem cells and stem cells from umbilical cord blood are less controversial because they do not involve destroying an embryo.</p>
+
+<div class="exam-tip">"Evaluate the use of stem cells" questions expect balanced answers: one or two benefits (e.g. could treat paralysis, could produce insulin for diabetics) plus one or two issues (rejection, tumour formation, ethics of embryo destruction) and a supported conclusion.</div>
+
+<h2>2.9 The Nervous System &mdash; Overview</h2>
+
+<p>The nervous system allows organisms to respond quickly to changes in their environment. It consists of two parts:</p>
+
+<table>
+    <tr><th>System</th><th>Includes</th><th>Role</th></tr>
+    <tr><td><strong>Central nervous system (CNS)</strong></td><td>Brain &amp; spinal cord</td><td>Processes information from receptors and coordinates a response via motor neurones</td></tr>
+    <tr><td><strong>Peripheral nervous system (PNS)</strong></td><td>All other nerves (sensory and motor neurones) that connect the CNS to the rest of the body</td><td>Carries signals between receptors, the CNS, and effectors (muscles/glands)</td></tr>
+</table>
+
+<p>A typical nervous response follows this pathway: <strong>stimulus &rarr; receptor &rarr; sensory neurone &rarr; CNS (relay neurone) &rarr; motor neurone &rarr; effector &rarr; response</strong>. The CNS makes sense of the information and decides what to do.</p>
+
+<h2>2.10 Neurones</h2>
+
+<div class="definition">
+    A <strong>neurone</strong> is a specialised nerve cell that carries electrical impulses. Neurones have a cell body, dendrites (receive impulses) and an axon (transmits impulses away).
+</div>
+
+<h3>Three Types of Neurone</h3>
+
+<table>
+    <tr><th>Neurone</th><th>Role</th><th>Structure</th></tr>
+    <tr><td><strong>Sensory neurone</strong></td><td>Carries impulses from receptors (skin, eyes, etc.) to the CNS</td><td>Long <strong>dendron</strong> and short axon; cell body sticks out on a branch</td></tr>
+    <tr><td><strong>Relay (interneurone)</strong></td><td>Connects sensory and motor neurones inside the CNS</td><td>Short; found in brain and spinal cord</td></tr>
+    <tr><td><strong>Motor neurone</strong></td><td>Carries impulses from CNS to an effector (muscle or gland)</td><td>Short dendrites and a <strong>long axon</strong> ending in motor end plates on the muscle</td></tr>
+</table>
+
+<h3>Adaptations of Neurones</h3>
+
+<ul>
+    <li><strong>Long</strong>: to carry messages over long distances (up to 1 m in humans).</li>
+    <li><strong>Myelin sheath</strong>: a layer of fatty material (made by Schwann cells) that insulates the axon and greatly speeds up the impulse.</li>
+    <li><strong>Nodes of Ranvier</strong>: gaps in the myelin sheath where the impulse "jumps" from node to node (saltatory conduction), making transmission even faster.</li>
+    <li><strong>Axon terminals (synaptic knobs)</strong>: branches at the end of the axon that connect to many other cells, allowing the impulse to influence multiple targets.</li>
+    <li><strong>Many mitochondria</strong>: provide ATP for active transport of ions to reset the neurone after an impulse.</li>
+</ul>
+
+<!-- Motor neurone SVG -->
+<svg viewBox="0 0 700 260" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Motor Neurone (labelled)</text>
+  <!-- Cell body -->
+  <circle cx="120" cy="140" r="38" fill="#fde68a" stroke="#92400e" stroke-width="2"/>
+  <circle cx="115" cy="135" r="14" fill="#fca5a5" stroke="#991b1b" stroke-width="1.5"/>
+  <!-- Dendrites -->
+  <path d="M 95 115 L 70 85 M 95 115 L 55 105 M 95 115 L 60 130" stroke="#92400e" stroke-width="2" fill="none"/>
+  <path d="M 100 170 L 70 195 M 100 170 L 55 180 M 100 170 L 65 160" stroke="#92400e" stroke-width="2" fill="none"/>
+  <!-- Axon -->
+  <line x1="158" y1="140" x2="580" y2="140" stroke="#92400e" stroke-width="6"/>
+  <!-- Myelin sheath segments -->
+  <ellipse cx="210" cy="140" rx="32" ry="12" fill="#e9d5ff" stroke="#6b21a8" stroke-width="1.5"/>
+  <ellipse cx="290" cy="140" rx="32" ry="12" fill="#e9d5ff" stroke="#6b21a8" stroke-width="1.5"/>
+  <ellipse cx="370" cy="140" rx="32" ry="12" fill="#e9d5ff" stroke="#6b21a8" stroke-width="1.5"/>
+  <ellipse cx="450" cy="140" rx="32" ry="12" fill="#e9d5ff" stroke="#6b21a8" stroke-width="1.5"/>
+  <ellipse cx="530" cy="140" rx="32" ry="12" fill="#e9d5ff" stroke="#6b21a8" stroke-width="1.5"/>
+  <!-- Axon terminals -->
+  <line x1="580" y1="140" x2="620" y2="110" stroke="#92400e" stroke-width="2"/>
+  <line x1="580" y1="140" x2="630" y2="140" stroke="#92400e" stroke-width="2"/>
+  <line x1="580" y1="140" x2="620" y2="170" stroke="#92400e" stroke-width="2"/>
+  <circle cx="625" cy="108" r="5" fill="#14532d"/>
+  <circle cx="635" cy="140" r="5" fill="#14532d"/>
+  <circle cx="625" cy="172" r="5" fill="#14532d"/>
+  <!-- Muscle (effector) -->
+  <rect x="620" y="95" width="60" height="80" rx="6" fill="#fee2e2" stroke="#991b1b" stroke-width="1.5"/>
+  <text x="650" y="140" text-anchor="middle" font-size="9" fill="#991b1b">muscle</text>
+  <!-- Labels -->
+  <line x1="60" y1="95" x2="40" y2="65" stroke="#374151" stroke-width="1"/>
+  <text x="40" y="58" text-anchor="end" font-size="10" fill="#1f2937">dendrites</text>
+  <line x1="120" y1="140" x2="120" y2="220" stroke="#374151" stroke-width="1"/>
+  <text x="120" y="235" text-anchor="middle" font-size="10" fill="#1f2937">cell body (with nucleus)</text>
+  <line x1="210" y1="128" x2="210" y2="80" stroke="#374151" stroke-width="1"/>
+  <text x="210" y="72" text-anchor="middle" font-size="10" fill="#1f2937">myelin sheath</text>
+  <line x1="250" y1="140" x2="250" y2="210" stroke="#374151" stroke-width="1"/>
+  <text x="250" y="225" text-anchor="middle" font-size="10" fill="#1f2937">axon</text>
+  <line x1="330" y1="128" x2="330" y2="80" stroke="#374151" stroke-width="1"/>
+  <text x="330" y="72" text-anchor="middle" font-size="10" fill="#1f2937">node of Ranvier</text>
+  <line x1="625" y1="110" x2="625" y2="70" stroke="#374151" stroke-width="1"/>
+  <text x="625" y="62" text-anchor="middle" font-size="10" fill="#1f2937">axon terminals</text>
+</svg>
+
+<h2>2.11 Synapses</h2>
+
+<div class="definition">
+    A <strong>synapse</strong> is a junction between two neurones (or between a neurone and an effector). The two cells are separated by a small gap called the <strong>synaptic cleft</strong>.
+</div>
+
+<p>Electrical impulses cannot cross the synaptic cleft directly. Instead, the signal is carried across by chemicals called <strong>neurotransmitters</strong>:</p>
+
+<ol>
+    <li>An impulse arrives at the end of the first neurone (the pre-synaptic neurone).</li>
+    <li>This triggers <strong>vesicles</strong> in the axon terminal to fuse with the membrane and release neurotransmitter molecules into the synaptic cleft.</li>
+    <li>The neurotransmitters <strong>diffuse</strong> across the cleft.</li>
+    <li>They bind to <strong>specific receptors</strong> on the next (post-synaptic) neurone. Only neurotransmitters with the right shape can fit the receptors.</li>
+    <li>This triggers a new electrical impulse in the next neurone.</li>
+    <li>The neurotransmitter is then broken down or reabsorbed, so the signal stops.</li>
+</ol>
+
+<!-- Synapse SVG -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">A Synapse</text>
+  <!-- Pre-synaptic neurone -->
+  <path d="M 50 140 L 280 140 L 310 100 L 310 200 L 280 160 L 50 160 Z" fill="#fde68a" stroke="#92400e" stroke-width="2"/>
+  <text x="150" y="135" font-size="10" fill="#7c2d12">pre-synaptic neurone (axon)</text>
+  <!-- Vesicles -->
+  <circle cx="250" cy="125" r="7" fill="#60a5fa" stroke="#1e40af" stroke-width="1"/>
+  <circle cx="275" cy="145" r="7" fill="#60a5fa" stroke="#1e40af" stroke-width="1"/>
+  <circle cx="255" cy="175" r="7" fill="#60a5fa" stroke="#1e40af" stroke-width="1"/>
+  <!-- neurotransmitter dots inside vesicles -->
+  <circle cx="250" cy="125" r="2" fill="#1e40af"/>
+  <circle cx="275" cy="145" r="2" fill="#1e40af"/>
+  <circle cx="255" cy="175" r="2" fill="#1e40af"/>
+  <!-- Synaptic cleft -->
+  <rect x="310" y="100" width="40" height="100" fill="#e0e7ff" stroke="none"/>
+  <!-- Neurotransmitter molecules in cleft -->
+  <circle cx="320" cy="130" r="3" fill="#1e40af"/>
+  <circle cx="330" cy="150" r="3" fill="#1e40af"/>
+  <circle cx="325" cy="170" r="3" fill="#1e40af"/>
+  <circle cx="340" cy="140" r="3" fill="#1e40af"/>
+  <!-- Post-synaptic neurone -->
+  <path d="M 650 140 L 420 140 L 390 100 L 390 200 L 420 160 L 650 160 Z" fill="#fecaca" stroke="#991b1b" stroke-width="2"/>
+  <text x="500" y="135" font-size="10" fill="#7f1d1d">post-synaptic neurone</text>
+  <!-- Receptors -->
+  <path d="M 390 115 L 400 110 L 410 115" stroke="#7f1d1d" stroke-width="1.5" fill="#fee2e2"/>
+  <path d="M 390 140 L 400 135 L 410 140" stroke="#7f1d1d" stroke-width="1.5" fill="#fee2e2"/>
+  <path d="M 390 165 L 400 160 L 410 165" stroke="#7f1d1d" stroke-width="1.5" fill="#fee2e2"/>
+  <path d="M 390 185 L 400 180 L 410 185" stroke="#7f1d1d" stroke-width="1.5" fill="#fee2e2"/>
+  <!-- Labels -->
+  <line x1="330" y1="200" x2="330" y2="230" stroke="#374151" stroke-width="1"/>
+  <text x="330" y="245" text-anchor="middle" font-size="10" fill="#1f2937">synaptic cleft</text>
+  <line x1="260" y1="125" x2="260" y2="70" stroke="#374151" stroke-width="1"/>
+  <text x="260" y="62" text-anchor="middle" font-size="10" fill="#1f2937">vesicles of neurotransmitter</text>
+  <line x1="400" y1="110" x2="470" y2="65" stroke="#374151" stroke-width="1"/>
+  <text x="475" y="62" font-size="10" fill="#1f2937">receptors (complementary shape)</text>
+  <!-- Impulse arrow -->
+  <path d="M 100 180 L 250 180" stroke="#166534" stroke-width="2" marker-end="url(#arrSn)"/>
+  <defs><marker id="arrSn" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto"><polygon points="0 0, 10 3.5, 0 7" fill="#166534"/></marker></defs>
+  <text x="175" y="175" text-anchor="middle" font-size="9" fill="#166534">impulse</text>
+</svg>
+
+<div class="exam-tip">Why is the synapse one-way only? Because vesicles containing neurotransmitters are only on the pre-synaptic side and receptors are only on the post-synaptic side. The signal cannot travel backwards.</div>
+
+<h2>2.12 The Reflex Arc</h2>
+
+<div class="definition">
+    A <strong>reflex action</strong> is an automatic, rapid response to a stimulus that does not involve conscious thought. The pathway is called a <strong>reflex arc</strong>.
+</div>
+
+<p>Reflex actions protect the body from harm &mdash; e.g. pulling your hand away from a hot plate, blinking when something comes near your eye, the knee-jerk reflex. Because the impulse goes to the spinal cord (not the brain), the response is much faster than a conscious reaction.</p>
+
+<h3>The Reflex Arc Pathway</h3>
+
+<p><strong>stimulus &rarr; receptor &rarr; sensory neurone &rarr; relay neurone (in spinal cord) &rarr; motor neurone &rarr; effector &rarr; response</strong></p>
+
+<ol>
+    <li><strong>Stimulus</strong> (e.g. hot plate) is detected by a <strong>receptor</strong> in the skin (temperature/pain receptor).</li>
+    <li>A <strong>sensory neurone</strong> carries the impulse along a nerve to the spinal cord.</li>
+    <li>In the spinal cord, a <strong>relay neurone</strong> passes the impulse across to a motor neurone (via synapses).</li>
+    <li>The <strong>motor neurone</strong> carries the impulse to a muscle in the arm.</li>
+    <li>The muscle (<strong>effector</strong>) contracts and pulls the hand away &mdash; the <strong>response</strong>.</li>
+</ol>
+
+<!-- Reflex arc SVG -->
+<svg viewBox="0 0 700 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Reflex Arc (hand on hot plate)</text>
+  <!-- Spinal cord -->
+  <rect x="285" y="50" width="130" height="260" rx="20" fill="#e5e7eb" stroke="#374151" stroke-width="2"/>
+  <ellipse cx="350" cy="180" rx="30" ry="60" fill="#f3f4f6" stroke="#6b7280" stroke-width="1"/>
+  <text x="350" y="40" text-anchor="middle" font-size="11" fill="#374151">spinal cord (cross-section)</text>
+  <!-- Relay neurone (inside cord) -->
+  <circle cx="350" cy="180" r="6" fill="#fecaca" stroke="#991b1b" stroke-width="1.5"/>
+  <path d="M 320 190 Q 340 180 350 180 Q 360 180 380 170" stroke="#991b1b" stroke-width="1.5" fill="none"/>
+  <text x="395" y="185" font-size="9" fill="#991b1b">relay neurone</text>
+  <!-- Receptor (hand) -->
+  <path d="M 40 200 Q 50 180 80 180 L 100 180 L 100 220 L 80 220 Q 50 220 40 200 Z" fill="#fef3c7" stroke="#b45309" stroke-width="1.5"/>
+  <text x="70" y="250" text-anchor="middle" font-size="9" fill="#7c2d12">skin (receptor)</text>
+  <!-- Hot plate (stimulus) -->
+  <rect x="20" y="170" width="20" height="60" fill="#dc2626" stroke="#7f1d1d" stroke-width="1.5"/>
+  <text x="30" y="160" text-anchor="middle" font-size="9" fill="#7f1d1d">stimulus</text>
+  <text x="30" y="250" text-anchor="middle" font-size="9" fill="#7f1d1d">(hot plate)</text>
+  <!-- Sensory neurone -->
+  <line x1="100" y1="200" x2="285" y2="195" stroke="#92400e" stroke-width="3"/>
+  <circle cx="180" cy="200" r="4" fill="#fde68a" stroke="#92400e" stroke-width="1"/>
+  <text x="180" y="225" text-anchor="middle" font-size="9" fill="#7c2d12">sensory neurone</text>
+  <!-- arrow along sensory -->
+  <polygon points="280,195 270,190 270,200" fill="#92400e"/>
+  <!-- Motor neurone -->
+  <line x1="415" y1="190" x2="600" y2="270" stroke="#065f46" stroke-width="3"/>
+  <circle cx="510" cy="230" r="4" fill="#a7f3d0" stroke="#065f46" stroke-width="1"/>
+  <text x="510" y="255" text-anchor="middle" font-size="9" fill="#065f46">motor neurone</text>
+  <polygon points="600,270 590,260 585,272" fill="#065f46"/>
+  <!-- Muscle (effector) -->
+  <rect x="595" y="255" width="55" height="60" rx="6" fill="#fee2e2" stroke="#991b1b" stroke-width="1.5"/>
+  <text x="622" y="290" text-anchor="middle" font-size="9" fill="#991b1b">muscle</text>
+  <text x="622" y="335" text-anchor="middle" font-size="9" fill="#1f2937">(effector)</text>
+  <!-- Direction label -->
+  <text x="150" y="175" font-size="9" fill="#7c2d12" font-style="italic">impulse &rarr;</text>
+  <text x="510" y="175" font-size="9" fill="#065f46" font-style="italic">impulse &rarr;</text>
+  <!-- Response -->
+  <path d="M 650 270 Q 680 240 660 210" stroke="#991b1b" stroke-width="1.5" fill="none" marker-end="url(#arrSn2)"/>
+  <defs><marker id="arrSn2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#991b1b"/></marker></defs>
+  <text x="675" y="205" font-size="9" fill="#991b1b">response</text>
+</svg>
+
+<div class="exam-tip">Why are reflexes fast? Two reasons: (1) The impulse does NOT go to the brain &mdash; it takes the shortcut through the spinal cord. (2) Only two synapses are involved (sensory &rarr; relay, relay &rarr; motor), and synapses are the slow step. Don't just write "fast" &mdash; explain <strong>why</strong>.</div>
+
+<h2>2.13 The Brain (Higher Tier)</h2>
+
+<p>The brain is the control centre of the nervous system. It is made of billions of interconnected neurones. Different regions carry out different functions.</p>
+
+<table>
+    <tr><th>Region</th><th>Function</th></tr>
+    <tr><td><strong>Cerebrum</strong> (cerebral hemispheres)</td><td>The largest part of the brain. Controls conscious thought, memory, language, intelligence, reasoning, and voluntary movement. Divided into left and right hemispheres.</td></tr>
+    <tr><td><strong>Cerebellum</strong></td><td>Found at the back of the brain, under the cerebrum. Coordinates balance, posture and fine muscle movements.</td></tr>
+    <tr><td><strong>Medulla (oblongata)</strong></td><td>At the base of the brain, connected to the spinal cord. Controls unconscious activities such as heart rate and breathing rate.</td></tr>
+    <tr><td><strong>Hypothalamus</strong></td><td>Regulates body temperature and water balance; controls the pituitary gland which releases hormones.</td></tr>
+    <tr><td><strong>Pituitary gland</strong></td><td>"Master gland" &mdash; releases many hormones that control other glands in the body.</td></tr>
+</table>
+
+<!-- Brain SVG -->
+<svg viewBox="0 0 700 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Regions of the Human Brain</text>
+  <!-- Cerebrum -->
+  <path d="M 130 180 Q 120 80 260 60 Q 420 50 480 110 Q 520 160 470 220 Q 400 250 330 240 Q 200 240 140 220 Z" fill="#fecaca" stroke="#991b1b" stroke-width="2"/>
+  <!-- Groove -->
+  <path d="M 200 100 Q 250 130 260 90 M 300 80 Q 340 120 350 90 M 380 90 Q 420 130 440 100" stroke="#991b1b" stroke-width="1" fill="none"/>
+  <!-- Cerebellum -->
+  <ellipse cx="490" cy="220" rx="60" ry="40" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+  <path d="M 445 215 L 535 215 M 450 230 L 530 230 M 455 205 L 525 205" stroke="#1e40af" stroke-width="1" fill="none"/>
+  <!-- Medulla -->
+  <rect x="355" y="240" width="40" height="60" rx="8" fill="#fde68a" stroke="#92400e" stroke-width="2"/>
+  <!-- Spinal cord extension -->
+  <rect x="360" y="295" width="30" height="30" fill="#e5e7eb" stroke="#374151" stroke-width="1.5"/>
+  <!-- Hypothalamus -->
+  <ellipse cx="310" cy="200" rx="18" ry="10" fill="#d8b4fe" stroke="#6b21a8" stroke-width="1.5"/>
+  <!-- Pituitary -->
+  <circle cx="310" cy="225" r="8" fill="#c4b5fd" stroke="#6b21a8" stroke-width="1.5"/>
+  <!-- Labels -->
+  <line x1="280" y1="120" x2="180" y2="50" stroke="#374151" stroke-width="1"/>
+  <text x="180" y="42" text-anchor="middle" font-size="11" fill="#1f2937" font-weight="bold">Cerebrum</text>
+  <text x="180" y="56" text-anchor="middle" font-size="9" fill="#374151">(thinking, memory, movement)</text>
+  <line x1="490" y1="220" x2="620" y2="190" stroke="#374151" stroke-width="1"/>
+  <text x="625" y="190" font-size="11" fill="#1f2937" font-weight="bold">Cerebellum</text>
+  <text x="625" y="205" font-size="9" fill="#374151">(balance, coordination)</text>
+  <line x1="375" y1="280" x2="475" y2="310" stroke="#374151" stroke-width="1"/>
+  <text x="480" y="313" font-size="11" fill="#1f2937" font-weight="bold">Medulla</text>
+  <text x="480" y="328" font-size="9" fill="#374151">(heart rate, breathing)</text>
+  <line x1="310" y1="200" x2="160" y2="200" stroke="#374151" stroke-width="1"/>
+  <text x="155" y="198" text-anchor="end" font-size="11" fill="#1f2937" font-weight="bold">Hypothalamus</text>
+  <text x="155" y="213" text-anchor="end" font-size="9" fill="#374151">(temp, hormones)</text>
+  <line x1="310" y1="233" x2="160" y2="260" stroke="#374151" stroke-width="1"/>
+  <text x="155" y="258" text-anchor="end" font-size="11" fill="#1f2937" font-weight="bold">Pituitary gland</text>
+  <line x1="375" y1="325" x2="470" y2="335" stroke="#374151" stroke-width="1"/>
+  <text x="475" y="335" font-size="10" fill="#1f2937">spinal cord</text>
+</svg>
+
+<h2>2.14 Investigating Brain Function</h2>
+
+<p>The brain is delicate, encased in the skull and protected by the blood-brain barrier. Three main methods are used to study it:</p>
+
+<table>
+    <tr><th>Method</th><th>How it works</th><th>What it shows</th></tr>
+    <tr><td><strong>Studying patients with brain damage</strong></td><td>If an area is damaged (by stroke, tumour, injury) and the patient loses an ability, scientists infer that the area controls that ability</td><td>The function of brain regions (e.g. damage to cerebellum &rarr; loss of balance)</td></tr>
+    <tr><td><strong>CT scan</strong> (Computed Tomography)</td><td>X-rays from many angles build a 3D image of the brain's structure</td><td>Physical structure &mdash; tumours, bleeding, damaged areas</td></tr>
+    <tr><td><strong>PET scan</strong> (Positron Emission Tomography)</td><td>A radioactive tracer (e.g. radioactive glucose) is injected; active brain cells take it up. Emitted radiation is detected to show which regions are active</td><td>Which regions are <strong>active</strong> during different activities (thinking, moving, listening)</td></tr>
+    <tr><td><strong>MRI</strong></td><td>Uses strong magnetic fields and radio waves to produce detailed images of soft tissue</td><td>High-detail structural images; can show activity (fMRI)</td></tr>
+</table>
+
+<h3>Why Brain Disorders are Difficult to Treat</h3>
+
+<ul>
+    <li><strong>Delicate tissue</strong>: brain tissue is easily damaged by surgery. Damaged neurones do not easily regrow.</li>
+    <li><strong>Complex structure</strong>: each region has different functions and is densely interconnected. Damage to a small area can affect many processes.</li>
+    <li><strong>Blood-brain barrier</strong>: the walls of the capillaries in the brain are very selective about which substances enter. Many drugs cannot cross it, so treating conditions with drugs is difficult.</li>
+    <li><strong>Access</strong>: the brain is surrounded by the skull, making it hard to reach without major surgery.</li>
+</ul>
+
+<h2>2.15 The Eye</h2>
+
+<p>The eye is a sense organ that detects light. Light entering the eye is focused onto the <strong>retina</strong>, which contains <strong>photoreceptor</strong> cells that send impulses to the brain via the <strong>optic nerve</strong>.</p>
+
+<h3>Parts of the Eye</h3>
+
+<table>
+    <tr><th>Part</th><th>Function</th></tr>
+    <tr><td><strong>Cornea</strong></td><td>Transparent front of the eye. Refracts (bends) most of the light entering the eye.</td></tr>
+    <tr><td><strong>Pupil</strong></td><td>Hole in the centre of the iris that lets light through.</td></tr>
+    <tr><td><strong>Iris</strong></td><td>Coloured ring of muscle around the pupil. Controls pupil size to regulate how much light enters (bright: circular muscles contract &rarr; pupil small; dim: radial muscles contract &rarr; pupil large).</td></tr>
+    <tr><td><strong>Lens</strong></td><td>Transparent, flexible structure that fine-focuses light onto the retina. Changes shape (accommodation).</td></tr>
+    <tr><td><strong>Ciliary muscles</strong></td><td>Ring of muscles that change the shape of the lens.</td></tr>
+    <tr><td><strong>Suspensory ligaments</strong></td><td>Connect the ciliary muscles to the lens; transmit tension to flatten the lens.</td></tr>
+    <tr><td><strong>Retina</strong></td><td>Light-sensitive layer at the back of the eye. Contains <strong>rods</strong> (sensitive to dim light, no colour) and <strong>cones</strong> (colour, need bright light; three types: red, green, blue).</td></tr>
+    <tr><td><strong>Fovea</strong></td><td>Central region of the retina packed with cones; gives sharpest colour vision.</td></tr>
+    <tr><td><strong>Optic nerve</strong></td><td>Carries impulses from the retina to the brain.</td></tr>
+    <tr><td><strong>Sclera</strong></td><td>Tough white outer layer that protects the eye and keeps its shape.</td></tr>
+    <tr><td><strong>Blind spot</strong></td><td>Point where the optic nerve leaves the eye &mdash; no photoreceptors here.</td></tr>
+</table>
+
+<!-- Eye cross-section SVG -->
+<svg viewBox="0 0 700 380" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Cross-section of the Eye</text>
+  <!-- Sclera (outer white) -->
+  <path d="M 170 200 A 170 170 0 1 1 510 200 Q 510 210 505 215 L 330 215 Q 190 210 170 200 Z" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <!-- Cornea (bulge at front) -->
+  <path d="M 170 180 Q 140 200 170 220" fill="#bfdbfe" stroke="#1e40af" stroke-width="2"/>
+  <!-- Iris -->
+  <rect x="185" y="165" width="18" height="20" fill="#16a34a"/>
+  <rect x="185" y="215" width="18" height="20" fill="#16a34a"/>
+  <!-- Pupil (gap) -->
+  <line x1="185" y1="200" x2="203" y2="200" stroke="#1f2937" stroke-width="3"/>
+  <!-- Lens -->
+  <ellipse cx="230" cy="200" rx="15" ry="35" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <!-- Ciliary muscles -->
+  <rect x="215" y="155" width="15" height="12" fill="#fca5a5" stroke="#991b1b" stroke-width="1"/>
+  <rect x="215" y="233" width="15" height="12" fill="#fca5a5" stroke="#991b1b" stroke-width="1"/>
+  <!-- Suspensory ligaments -->
+  <line x1="230" y1="167" x2="240" y2="175" stroke="#374151" stroke-width="1"/>
+  <line x1="230" y1="233" x2="240" y2="225" stroke="#374151" stroke-width="1"/>
+  <!-- Retina (back inner layer) -->
+  <path d="M 185 200 A 150 150 0 0 1 480 200 Q 480 208 478 212 L 230 212 Q 190 208 185 200 Z" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <!-- Fovea -->
+  <circle cx="478" cy="200" r="5" fill="#991b1b"/>
+  <!-- Optic nerve -->
+  <rect x="478" y="215" width="50" height="28" rx="6" fill="#fde68a" stroke="#92400e" stroke-width="2"/>
+  <path d="M 528 215 Q 560 200 600 220" stroke="#92400e" stroke-width="8" fill="none"/>
+  <!-- Aqueous humour (front) -->
+  <text x="210" y="260" font-size="9" fill="#1f2937" font-style="italic">aqueous humour</text>
+  <!-- Vitreous humour (back) -->
+  <text x="370" y="200" font-size="9" fill="#1f2937" font-style="italic">vitreous humour</text>
+  <!-- Light ray -->
+  <line x1="30" y1="200" x2="170" y2="200" stroke="#f59e0b" stroke-width="1.5"/>
+  <polygon points="170,200 160,196 160,204" fill="#f59e0b"/>
+  <text x="60" y="195" font-size="9" fill="#92400e">light</text>
+  <!-- Labels -->
+  <line x1="150" y1="200" x2="80" y2="130" stroke="#374151" stroke-width="1"/>
+  <text x="80" y="122" text-anchor="middle" font-size="10" fill="#1f2937">Cornea</text>
+  <line x1="195" y1="175" x2="130" y2="80" stroke="#374151" stroke-width="1"/>
+  <text x="130" y="72" text-anchor="middle" font-size="10" fill="#1f2937">Iris</text>
+  <line x1="193" y1="200" x2="200" y2="70" stroke="#374151" stroke-width="1"/>
+  <text x="200" y="62" text-anchor="middle" font-size="10" fill="#1f2937">Pupil</text>
+  <line x1="230" y1="170" x2="280" y2="65" stroke="#374151" stroke-width="1"/>
+  <text x="280" y="58" text-anchor="middle" font-size="10" fill="#1f2937">Lens</text>
+  <line x1="222" y1="160" x2="355" y2="65" stroke="#374151" stroke-width="1"/>
+  <text x="360" y="58" font-size="10" fill="#1f2937">Ciliary muscle</text>
+  <line x1="237" y1="175" x2="450" y2="65" stroke="#374151" stroke-width="1"/>
+  <text x="455" y="58" font-size="10" fill="#1f2937">Suspensory ligament</text>
+  <line x1="420" y1="135" x2="520" y2="80" stroke="#374151" stroke-width="1"/>
+  <text x="525" y="78" font-size="10" fill="#1f2937">Retina</text>
+  <line x1="478" y1="200" x2="610" y2="130" stroke="#374151" stroke-width="1"/>
+  <text x="615" y="130" font-size="10" fill="#1f2937">Fovea</text>
+  <line x1="565" y1="220" x2="620" y2="260" stroke="#374151" stroke-width="1"/>
+  <text x="625" y="265" font-size="10" fill="#1f2937">Optic nerve</text>
+  <line x1="340" y1="300" x2="340" y2="330" stroke="#374151" stroke-width="1"/>
+  <text x="340" y="345" text-anchor="middle" font-size="10" fill="#1f2937">Sclera (tough white layer)</text>
+</svg>
+
+<h2>2.16 How the Eye Focuses &mdash; Accommodation</h2>
+
+<div class="definition">
+    <strong>Accommodation</strong> is the process by which the eye changes the shape of the lens to focus on objects at different distances.
+</div>
+
+<p>When you switch your gaze between a distant tree and a book in your hand, your eye must change how much it bends the light. The cornea does most of the bending, but the <strong>lens</strong> provides the fine focus by changing shape.</p>
+
+<table>
+    <tr><th></th><th>Distant object (far)</th><th>Near object (close)</th></tr>
+    <tr><td>Ciliary muscles</td><td>Relax</td><td>Contract</td></tr>
+    <tr><td>Suspensory ligaments</td><td>Pulled tight</td><td>Slacken</td></tr>
+    <tr><td>Lens</td><td>Pulled thin and flat</td><td>Becomes thick and rounded</td></tr>
+    <tr><td>Light refraction by lens</td><td>Less bending (light already nearly parallel)</td><td>More bending (light rays diverging strongly)</td></tr>
+</table>
+
+<!-- Accommodation SVG -->
+<svg viewBox="0 0 700 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Accommodation: Focusing on Near vs Far</text>
+  <!-- Far -->
+  <text x="175" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#1f2937">Far object</text>
+  <text x="175" y="65" text-anchor="middle" font-size="9" fill="#374151">ciliary muscles relax, lens thin</text>
+  <ellipse cx="175" cy="170" rx="70" ry="80" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <ellipse cx="145" cy="170" rx="5" ry="30" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <!-- Ciliary muscles (relaxed = further apart) -->
+  <rect x="135" y="130" width="10" height="8" fill="#fca5a5" stroke="#991b1b" stroke-width="1"/>
+  <rect x="135" y="202" width="10" height="8" fill="#fca5a5" stroke="#991b1b" stroke-width="1"/>
+  <!-- Suspensory ligaments (tight) -->
+  <line x1="145" y1="138" x2="150" y2="147" stroke="#374151" stroke-width="1"/>
+  <line x1="145" y1="202" x2="150" y2="193" stroke="#374151" stroke-width="1"/>
+  <!-- Light rays (parallel for far) -->
+  <line x1="50" y1="150" x2="140" y2="150" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="50" y1="170" x2="140" y2="170" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="50" y1="190" x2="140" y2="190" stroke="#f59e0b" stroke-width="1"/>
+  <!-- Refracted to retina -->
+  <line x1="150" y1="150" x2="235" y2="170" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="150" y1="170" x2="235" y2="170" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="150" y1="190" x2="235" y2="170" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="237" cy="170" r="3" fill="#dc2626"/>
+  <text x="175" y="265" text-anchor="middle" font-size="9" fill="#1f2937">focused on retina</text>
+  <!-- Near -->
+  <text x="525" y="50" text-anchor="middle" font-size="12" font-weight="bold" fill="#1f2937">Near object</text>
+  <text x="525" y="65" text-anchor="middle" font-size="9" fill="#374151">ciliary muscles contract, lens fat</text>
+  <ellipse cx="525" cy="170" rx="70" ry="80" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <ellipse cx="495" cy="170" rx="13" ry="28" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <!-- Ciliary muscles (contracted = closer) -->
+  <rect x="480" y="140" width="14" height="10" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
+  <rect x="480" y="192" width="14" height="10" fill="#991b1b" stroke="#7f1d1d" stroke-width="1"/>
+  <!-- Suspensory ligaments (slack) -->
+  <path d="M 494 150 Q 488 155 495 160" stroke="#374151" stroke-width="1" fill="none"/>
+  <path d="M 494 192 Q 488 188 495 182" stroke="#374151" stroke-width="1" fill="none"/>
+  <!-- Light rays diverging from near object -->
+  <line x1="400" y1="170" x2="480" y2="145" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="400" y1="170" x2="480" y2="170" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="400" y1="170" x2="480" y2="195" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="400" cy="170" r="3" fill="#f59e0b"/>
+  <!-- Refracted to retina -->
+  <line x1="510" y1="145" x2="585" y2="170" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="510" y1="170" x2="585" y2="170" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="510" y1="195" x2="585" y2="170" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="587" cy="170" r="3" fill="#dc2626"/>
+  <text x="525" y="265" text-anchor="middle" font-size="9" fill="#1f2937">focused on retina</text>
+</svg>
+
+<div class="exam-tip">Common mistake: students say "the lens contracts" &mdash; the lens doesn't contract, only muscles do. Be precise: "ciliary muscles contract, suspensory ligaments slacken, lens becomes thicker/fatter."</div>
+
+<h2>2.17 Eye Defects and Correction</h2>
+
+<p>Eye defects happen when light does not focus properly onto the retina. The commonest are long-sightedness, short-sightedness, cataracts and colour blindness.</p>
+
+<h3>Long-Sightedness (Hyperopia)</h3>
+
+<ul>
+    <li><strong>Problem</strong>: distant objects are clear, but near objects look blurred.</li>
+    <li><strong>Cause</strong>: the eyeball is too short, or the lens is too thin/cannot become fat enough. Light from near objects is focused <strong>behind</strong> the retina.</li>
+    <li><strong>Correction</strong>: wear glasses with a <strong>convex (converging)</strong> lens, which bends light rays inward before they enter the eye so they focus on the retina.</li>
+</ul>
+
+<h3>Short-Sightedness (Myopia)</h3>
+
+<ul>
+    <li><strong>Problem</strong>: near objects are clear, but distant objects look blurred.</li>
+    <li><strong>Cause</strong>: the eyeball is too long, or the lens is too thick/cannot become thin enough. Light from distant objects is focused <strong>in front of</strong> the retina.</li>
+    <li><strong>Correction</strong>: wear glasses with a <strong>concave (diverging)</strong> lens, which spreads light rays outward before they enter the eye so they focus on the retina.</li>
+</ul>
+
+<!-- Eye defects SVG -->
+<svg viewBox="0 0 700 400" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:700px;margin:20px auto;display:block;">
+  <text x="350" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Long-sightedness (top) &amp; Short-sightedness (bottom)</text>
+  <!-- LONG-SIGHTED (uncorrected) -->
+  <text x="110" y="55" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Hyperopia (uncorrected)</text>
+  <ellipse cx="150" cy="120" rx="60" ry="45" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <ellipse cx="115" cy="120" rx="5" ry="18" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <line x1="60" y1="105" x2="115" y2="105" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="60" y1="135" x2="115" y2="135" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="115" y1="105" x2="240" y2="120" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="115" y1="135" x2="240" y2="120" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="240" cy="120" r="3" fill="#dc2626"/>
+  <text x="245" y="138" font-size="9" fill="#dc2626">focus BEHIND retina</text>
+  <!-- Arrow to corrected -->
+  <text x="305" y="125" font-size="14" fill="#374151">&rarr;</text>
+  <!-- LONG-SIGHTED (corrected with convex) -->
+  <text x="470" y="55" text-anchor="middle" font-size="11" font-weight="bold" fill="#166534">Corrected with convex lens</text>
+  <ellipse cx="510" cy="120" rx="60" ry="45" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <ellipse cx="475" cy="120" rx="5" ry="18" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <!-- Convex lens -->
+  <ellipse cx="400" cy="120" rx="12" ry="25" fill="#dcfce7" stroke="#166534" stroke-width="1.5"/>
+  <line x1="350" y1="105" x2="400" y2="107" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="350" y1="135" x2="400" y2="133" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="400" y1="107" x2="475" y2="118" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="400" y1="133" x2="475" y2="122" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="475" y1="118" x2="565" y2="120" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="475" y1="122" x2="565" y2="120" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="565" cy="120" r="3" fill="#166534"/>
+  <text x="570" y="138" font-size="9" fill="#166534">focus on retina</text>
+
+  <!-- SHORT-SIGHTED (uncorrected) -->
+  <text x="110" y="240" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Myopia (uncorrected)</text>
+  <ellipse cx="150" cy="305" rx="70" ry="45" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <ellipse cx="105" cy="305" rx="5" ry="18" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <line x1="40" y1="290" x2="105" y2="290" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="40" y1="320" x2="105" y2="320" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="105" y1="290" x2="165" y2="305" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="105" y1="320" x2="165" y2="305" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="165" cy="305" r="3" fill="#dc2626"/>
+  <text x="170" y="325" font-size="9" fill="#dc2626">focus IN FRONT of retina</text>
+  <text x="305" y="310" font-size="14" fill="#374151">&rarr;</text>
+  <!-- SHORT-SIGHTED (corrected with concave) -->
+  <text x="470" y="240" text-anchor="middle" font-size="11" font-weight="bold" fill="#166534">Corrected with concave lens</text>
+  <ellipse cx="510" cy="305" rx="70" ry="45" fill="#f9fafb" stroke="#374151" stroke-width="2"/>
+  <ellipse cx="465" cy="305" rx="5" ry="18" fill="#dbeafe" stroke="#1e40af" stroke-width="1.5"/>
+  <!-- Concave lens -->
+  <path d="M 395 280 Q 405 305 395 330 Q 408 330 408 280 Z" fill="#dcfce7" stroke="#166534" stroke-width="1.5"/>
+  <line x1="345" y1="290" x2="400" y2="293" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="345" y1="320" x2="400" y2="317" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="400" y1="293" x2="465" y2="300" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="400" y1="317" x2="465" y2="310" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="465" y1="300" x2="575" y2="305" stroke="#f59e0b" stroke-width="1"/>
+  <line x1="465" y1="310" x2="575" y2="305" stroke="#f59e0b" stroke-width="1"/>
+  <circle cx="575" cy="305" r="3" fill="#166534"/>
+  <text x="580" y="325" font-size="9" fill="#166534">focus on retina</text>
+</svg>
+
+<h3>Cataracts</h3>
+
+<ul>
+    <li><strong>Problem</strong>: the lens becomes cloudy. Vision is blurred, colours fade, and bright lights cause glare.</li>
+    <li><strong>Cause</strong>: proteins in the lens clump together, often due to ageing or UV damage.</li>
+    <li><strong>Correction</strong>: the cloudy lens is surgically removed and replaced with an artificial lens.</li>
+</ul>
+
+<h3>Colour Blindness</h3>
+
+<ul>
+    <li><strong>Problem</strong>: the person cannot distinguish certain colours &mdash; most commonly red and green.</li>
+    <li><strong>Cause</strong>: one or more types of cone cell in the retina are missing or not working. Usually inherited (more common in males as it is linked to the X chromosome).</li>
+    <li><strong>Correction</strong>: no cure. Special tinted lenses can help some people distinguish colours more easily.</li>
+</ul>
+
+<div class="exam-tip">Mnemonic: <strong>MY</strong>opia = <strong>MY</strong> eye is too long (light meets short of retina). Hyperopia = eyeball short (light overshoots). Remember <strong>concave = myopia, convex = hyperopia</strong>.</div>
+
+<h2>Key Definitions &mdash; Glossary</h2>
+
+<table>
+    <tr><th>Term</th><th>Definition</th></tr>
+    <tr><td><strong>Mitosis</strong></td><td>Cell division producing two genetically identical diploid daughter cells for growth, repair and asexual reproduction.</td></tr>
+    <tr><td><strong>Interphase</strong></td><td>Growth phase of the cell cycle (G1, S, G2) during which the cell grows, replicates DNA and duplicates organelles.</td></tr>
+    <tr><td><strong>Cytokinesis</strong></td><td>Division of the cytoplasm after mitosis to produce two daughter cells.</td></tr>
+    <tr><td><strong>Cancer</strong></td><td>A disease caused by uncontrolled cell division producing a tumour.</td></tr>
+    <tr><td><strong>Metastasis</strong></td><td>Spread of malignant tumour cells through blood/lymph to form secondary tumours.</td></tr>
+    <tr><td><strong>Meristem</strong></td><td>A region of plant tissue containing stem cells where cells divide, elongate and differentiate.</td></tr>
+    <tr><td><strong>Stem cell</strong></td><td>An undifferentiated cell able to divide and differentiate into other cell types.</td></tr>
+    <tr><td><strong>CNS</strong></td><td>Central nervous system: brain and spinal cord.</td></tr>
+    <tr><td><strong>Neurone</strong></td><td>A specialised nerve cell that carries electrical impulses.</td></tr>
+    <tr><td><strong>Synapse</strong></td><td>Junction between two neurones; signal crosses via neurotransmitters.</td></tr>
+    <tr><td><strong>Reflex arc</strong></td><td>Pathway of a reflex: stimulus &rarr; receptor &rarr; sensory &rarr; relay &rarr; motor &rarr; effector &rarr; response.</td></tr>
+    <tr><td><strong>Accommodation</strong></td><td>Process by which the eye changes lens shape to focus on near or far objects.</td></tr>
+    <tr><td><strong>Myopia</strong></td><td>Short-sightedness; light focuses in front of retina; corrected with a concave lens.</td></tr>
+    <tr><td><strong>Hyperopia</strong></td><td>Long-sightedness; light focuses behind retina; corrected with a convex lens.</td></tr>
+</table>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,823 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edexcel Biology — Topic 3: Genetics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-family: 'DM Serif Display', serif; font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #16a34a; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-family: 'DM Serif Display', serif; font-size: 1.45rem; color: #166534; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dcfce7; }
+        h3 { font-size: 1.15rem; color: #14532d; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0fdf4; color: #166534; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        pre { background: #f3f4f6; padding: 16px 20px; border-radius: 8px; overflow-x: auto; margin-bottom: 16px; font-family: 'Consolas', monospace; font-size: 0.9em; line-height: 1.5; }
+        .punnett { width: auto; margin: 16px auto; border-collapse: collapse; }
+        .punnett th, .punnett td { border: 2px solid #374151; padding: 14px 20px; text-align: center; font-size: 1.1rem; font-weight: 600; min-width: 60px; }
+        .punnett th { background: #1f2937; color: #fff; }
+        .punnett td.parent { background: #fef3c7; color: #92400e; }
+        .punnett td.offspring { background: #fff; color: #1a1a2e; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#16a34a;display:inline-block;"></span> RAG Learning</a></div>
+
+
+<h1>Topic 3: Genetics</h1>
+<p class="spec-ref">Edexcel GCSE (9-1) Biology (1BI0) &mdash; Paper 1</p>
+
+<h2>3.1 Sexual vs Asexual Reproduction</h2>
+
+<div class="definition">
+    <strong>Sexual reproduction</strong> involves the fusion of male and female gametes (sex cells). Each parent contributes half of the offspring's genetic material, producing offspring that are <em>genetically different</em> from both parents and from one another.<br><br>
+    <strong>Asexual reproduction</strong> involves only one parent and no gametes. The offspring are produced by mitosis and are <em>genetically identical clones</em> of the parent.
+</div>
+
+<p>Reproduction is the production of new individuals of the same species. Organisms have evolved two very different strategies for doing this. Sexual reproduction mixes the genetic material of two parents, producing variation that is vital for evolution and adaptation. Asexual reproduction produces identical copies quickly without needing a mate &mdash; efficient when conditions are stable and favourable.</p>
+
+<h3>Gametes and Fertilisation</h3>
+
+<p>In animals, the male gamete is the <strong>sperm</strong> and the female gamete is the <strong>egg (ovum)</strong>. In flowering plants, pollen nuclei fertilise the egg cell inside the ovule. Gametes are <strong>haploid</strong> &mdash; they contain only one copy of each chromosome. When a sperm fuses with an egg at <strong>fertilisation</strong>, the resulting <strong>zygote</strong> is <strong>diploid</strong>: it has two copies of each chromosome, one from each parent. In humans this means 23 chromosomes from each gamete combine to give the normal body-cell count of 46.</p>
+
+<div class="exam-tip">Know the numbers: human body cells have <strong>46 chromosomes</strong> (23 pairs &mdash; diploid, <em>2n</em>). Human gametes have <strong>23 chromosomes</strong> (haploid, <em>n</em>). After fertilisation 23 + 23 = 46 restores the diploid number.</div>
+
+<h3>Comparison Table</h3>
+
+<table>
+    <tr><th>Feature</th><th>Sexual reproduction</th><th>Asexual reproduction</th></tr>
+    <tr><td>Number of parents</td><td>Two</td><td>One</td></tr>
+    <tr><td>Gametes?</td><td>Yes (sperm + egg / pollen + ovule)</td><td>No gametes</td></tr>
+    <tr><td>Type of cell division</td><td>Meiosis to make gametes, then mitosis for growth</td><td>Mitosis only</td></tr>
+    <tr><td>Genetic variation in offspring</td><td>Yes &mdash; all offspring genetically different</td><td>No &mdash; offspring are clones (genetically identical)</td></tr>
+    <tr><td>Speed of reproduction</td><td>Slow &mdash; needs a mate and fertilisation</td><td>Fast &mdash; a single organism can reproduce alone</td></tr>
+    <tr><td>Evolutionary advantage</td><td>Variation allows adaptation to changing environments</td><td>Well-adapted organisms spread quickly in stable environments</td></tr>
+    <tr><td>Examples</td><td>Humans, mammals, most plants (by flowers), fish</td><td>Bacteria (binary fission), strawberry runners, potato tubers, Hydra budding, some fungi</td></tr>
+</table>
+
+<h3>Organisms That Use Both</h3>
+
+<p>Some organisms can switch between sexual and asexual reproduction depending on conditions.</p>
+<ul>
+    <li><strong>Malaria parasite (<em>Plasmodium</em>)</strong> &mdash; reproduces asexually inside a human host (fast multiplication), then sexually inside a mosquito.</li>
+    <li><strong>Fungi</strong> &mdash; spread by asexual spores when food is plentiful, but reproduce sexually to create variation under stress.</li>
+    <li><strong>Strawberry plants</strong> &mdash; produce flowers (sexual) <em>and</em> runners (asexual clones).</li>
+    <li><strong>Daphnia (water fleas)</strong> &mdash; reproduce asexually in good conditions, sexually when conditions deteriorate.</li>
+</ul>
+
+<div class="exam-tip">If a question asks for the <strong>advantage of using both</strong>: asexual reproduction produces many offspring rapidly when the environment is favourable; sexual reproduction produces variation to survive when conditions change.</div>
+
+<h2>3.2 Meiosis</h2>
+
+<div class="definition">
+    <strong>Meiosis</strong> is a type of cell division that produces <strong>four genetically different haploid gametes</strong> from one diploid parent cell. It involves <strong>two rounds of division</strong> following a single round of DNA replication.
+</div>
+
+<p>Meiosis only happens in the reproductive organs (testes, ovaries, anthers, ovaries of a plant). It is essential for sexual reproduction because it halves the chromosome number and shuffles the genetic material, so that fertilisation can restore the diploid number and produce a unique individual.</p>
+
+<h3>Overview of the Stages</h3>
+
+<p>Before meiosis begins, the DNA is replicated during interphase, so every chromosome is copied into two identical sister chromatids (as in mitosis). Then two divisions follow:</p>
+
+<ol>
+    <li><strong>Meiosis I</strong> &mdash; homologous chromosomes (one from mum, one from dad) pair up and then separate. This halves the chromosome number (diploid &rarr; haploid). Crossing over occurs between pairs, swapping sections of DNA.</li>
+    <li><strong>Meiosis II</strong> &mdash; the sister chromatids are separated (like mitosis). This produces four haploid daughter cells.</li>
+</ol>
+
+<h3>Why Meiosis Creates Genetic Variation</h3>
+
+<ul>
+    <li><strong>Independent assortment</strong> &mdash; homologous pairs line up randomly, so each gamete gets a random mixture of maternal and paternal chromosomes.</li>
+    <li><strong>Crossing over</strong> &mdash; at the start of meiosis I, chromatids of homologous pairs swap sections of DNA, creating new combinations of alleles.</li>
+    <li><strong>Random fertilisation</strong> &mdash; any sperm can fertilise any egg, adding a further layer of variation.</li>
+</ul>
+
+<!-- Mitosis vs Meiosis SVG -->
+<svg viewBox="0 0 720 520" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="16" font-weight="bold" fill="#166534">Mitosis vs Meiosis</text>
+
+  <!-- Titles -->
+  <text x="180" y="50" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">MITOSIS</text>
+  <text x="540" y="50" text-anchor="middle" font-size="14" font-weight="bold" fill="#1f2937">MEIOSIS</text>
+
+  <!-- Parent cell (mitosis) -->
+  <circle cx="180" cy="100" r="32" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+  <line x1="170" y1="92" x2="170" y2="108" stroke="#dc2626" stroke-width="3"/>
+  <line x1="190" y1="92" x2="190" y2="108" stroke="#2563eb" stroke-width="3"/>
+  <text x="180" y="150" text-anchor="middle" font-size="11" fill="#1f2937">Diploid parent (2n)</text>
+
+  <!-- Arrow -->
+  <path d="M 180 160 L 180 195" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="195" y="180" font-size="10" fill="#6b7280">1 division</text>
+
+  <!-- Daughter cells (mitosis) -->
+  <circle cx="140" cy="230" r="22" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+  <line x1="134" y1="225" x2="134" y2="235" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="146" y1="225" x2="146" y2="235" stroke="#2563eb" stroke-width="2.5"/>
+  <circle cx="220" cy="230" r="22" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+  <line x1="214" y1="225" x2="214" y2="235" stroke="#dc2626" stroke-width="2.5"/>
+  <line x1="226" y1="225" x2="226" y2="235" stroke="#2563eb" stroke-width="2.5"/>
+
+  <text x="180" y="275" text-anchor="middle" font-size="11" fill="#1f2937">2 identical diploid cells (2n)</text>
+  <text x="180" y="292" text-anchor="middle" font-size="10" fill="#6b7280">(growth / repair)</text>
+
+  <!-- Parent cell (meiosis) -->
+  <circle cx="540" cy="100" r="32" fill="#e0f2fe" stroke="#0369a1" stroke-width="1.5"/>
+  <line x1="530" y1="92" x2="530" y2="108" stroke="#dc2626" stroke-width="3"/>
+  <line x1="550" y1="92" x2="550" y2="108" stroke="#2563eb" stroke-width="3"/>
+  <text x="540" y="150" text-anchor="middle" font-size="11" fill="#1f2937">Diploid parent (2n)</text>
+
+  <!-- Arrow to meiosis I -->
+  <path d="M 540 160 L 540 185" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="555" y="178" font-size="10" fill="#6b7280">Meiosis I</text>
+
+  <!-- After meiosis I -->
+  <circle cx="490" cy="215" r="22" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+  <line x1="485" y1="210" x2="485" y2="220" stroke="#dc2626" stroke-width="2.5"/>
+  <circle cx="590" cy="215" r="22" fill="#fef3c7" stroke="#92400e" stroke-width="1.5"/>
+  <line x1="587" y1="210" x2="587" y2="220" stroke="#2563eb" stroke-width="2.5"/>
+
+  <!-- Arrow to meiosis II -->
+  <path d="M 490 240 L 470 275" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <path d="M 590 240 L 610 275" stroke="#374151" stroke-width="1.5" marker-end="url(#arrow)"/>
+  <text x="540" y="265" text-anchor="middle" font-size="10" fill="#6b7280">Meiosis II</text>
+
+  <!-- Four gametes -->
+  <circle cx="450" cy="300" r="18" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <line x1="446" y1="297" x2="446" y2="304" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="500" cy="300" r="18" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <line x1="496" y1="297" x2="496" y2="304" stroke="#dc2626" stroke-width="2"/>
+  <circle cx="580" cy="300" r="18" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <line x1="576" y1="297" x2="576" y2="304" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="630" cy="300" r="18" fill="#dcfce7" stroke="#15803d" stroke-width="1.5"/>
+  <line x1="626" y1="297" x2="626" y2="304" stroke="#2563eb" stroke-width="2"/>
+
+  <text x="540" y="345" text-anchor="middle" font-size="11" fill="#1f2937">4 haploid gametes (n)</text>
+  <text x="540" y="362" text-anchor="middle" font-size="10" fill="#6b7280">(all genetically different)</text>
+
+  <!-- Comparison table -->
+  <rect x="60" y="395" width="600" height="105" fill="#f9fafb" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="280" y1="395" x2="280" y2="500" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="470" y1="395" x2="470" y2="500" stroke="#d1d5db" stroke-width="1"/>
+  <line x1="60" y1="420" x2="660" y2="420" stroke="#d1d5db" stroke-width="1"/>
+
+  <text x="170" y="413" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Feature</text>
+  <text x="375" y="413" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Mitosis</text>
+  <text x="565" y="413" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2937">Meiosis</text>
+
+  <text x="70" y="440" font-size="11" fill="#1f2937">Divisions</text>
+  <text x="290" y="440" font-size="11" fill="#1f2937">1</text>
+  <text x="480" y="440" font-size="11" fill="#1f2937">2</text>
+  <text x="70" y="458" font-size="11" fill="#1f2937">Daughter cells</text>
+  <text x="290" y="458" font-size="11" fill="#1f2937">2 (diploid)</text>
+  <text x="480" y="458" font-size="11" fill="#1f2937">4 (haploid)</text>
+  <text x="70" y="476" font-size="11" fill="#1f2937">Genetic variation</text>
+  <text x="290" y="476" font-size="11" fill="#1f2937">None (identical)</text>
+  <text x="480" y="476" font-size="11" fill="#1f2937">Yes (all different)</text>
+  <text x="70" y="494" font-size="11" fill="#1f2937">Purpose</text>
+  <text x="290" y="494" font-size="11" fill="#1f2937">Growth, repair</text>
+  <text x="480" y="494" font-size="11" fill="#1f2937">Gamete formation</text>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#374151"/>
+    </marker>
+  </defs>
+</svg>
+
+<div class="exam-tip">Remember: meiosis = <strong>m</strong>any cells, <strong>m</strong>ore different. Mitosis = two identical cells. You do NOT need to learn the detailed stages of meiosis (prophase I, metaphase I, etc.) at GCSE &mdash; just the outcome: one diploid cell &rarr; four haploid, genetically different gametes.</div>
+
+<h2>3.3 DNA Structure</h2>
+
+<div class="definition">
+    <strong>DNA (deoxyribonucleic acid)</strong> is the chemical that stores genetic information. It is made of two strands wound around each other to form a <strong>double helix</strong>. Each strand is a polymer of smaller units called <strong>nucleotides</strong>.
+</div>
+
+<p>DNA is found in the nucleus of every eukaryotic cell, organised into chromosomes. Every living organism uses DNA (with the exception of some viruses that use RNA). The molecular structure of DNA was worked out in 1953 by James Watson and Francis Crick, using X-ray diffraction images produced by Rosalind Franklin and Maurice Wilkins.</p>
+
+<h3>Nucleotides</h3>
+
+<p>Each nucleotide has three parts:</p>
+<ul>
+    <li>A <strong>sugar</strong> (deoxyribose)</li>
+    <li>A <strong>phosphate group</strong></li>
+    <li>A <strong>base</strong> &mdash; one of four: Adenine (A), Thymine (T), Cytosine (C), Guanine (G)</li>
+</ul>
+
+<p>The sugars and phosphates link alternately to form the <strong>backbone</strong> of each strand. The bases stick out sideways from the backbone and pair up with bases on the opposite strand.</p>
+
+<h3>Complementary Base Pairing</h3>
+
+<p>The two strands are held together by <strong>hydrogen bonds</strong> between specific base pairs:</p>
+
+<table>
+    <tr><th>Base</th><th>Pairs with</th></tr>
+    <tr><td>Adenine (A)</td><td>Thymine (T)</td></tr>
+    <tr><td>Cytosine (C)</td><td>Guanine (G)</td></tr>
+</table>
+
+<p>A pairs only with T; C pairs only with G. This means if you know the sequence of one strand, you automatically know the other. For example, if one strand reads <code>ATTGCA</code>, the complementary strand must read <code>TAACGT</code>.</p>
+
+<div class="exam-tip">Remember the pairing with <strong>"Apples in the Tree, Cars in the Garage"</strong> &mdash; A-T and C-G. The pairs are <em>complementary</em>, not identical.</div>
+
+<!-- DNA Structure SVG -->
+<svg viewBox="0 0 640 460" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;">
+  <text x="320" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">DNA Structure &mdash; Double Helix</text>
+
+  <!-- Left helix backbone -->
+  <path d="M 180 55 Q 120 95, 180 135 Q 240 175, 180 215 Q 120 255, 180 295 Q 240 335, 180 375 Q 220 395, 180 415"
+        fill="none" stroke="#2563eb" stroke-width="5"/>
+
+  <!-- Right helix backbone -->
+  <path d="M 280 55 Q 340 95, 280 135 Q 220 175, 280 215 Q 340 255, 280 295 Q 220 335, 280 375 Q 240 395, 280 415"
+        fill="none" stroke="#dc2626" stroke-width="5"/>
+
+  <!-- Rungs (base pairs) -->
+  <g font-size="11" font-weight="bold" text-anchor="middle">
+    <!-- A-T pair -->
+    <rect x="200" y="78" width="30" height="14" fill="#16a34a"/>
+    <rect x="230" y="78" width="30" height="14" fill="#f59e0b"/>
+    <text x="215" y="89" fill="#fff">A</text>
+    <text x="245" y="89" fill="#fff">T</text>
+
+    <!-- T-A pair -->
+    <rect x="200" y="128" width="30" height="14" fill="#f59e0b"/>
+    <rect x="230" y="128" width="30" height="14" fill="#16a34a"/>
+    <text x="215" y="139" fill="#fff">T</text>
+    <text x="245" y="139" fill="#fff">A</text>
+
+    <!-- C-G pair -->
+    <rect x="200" y="178" width="30" height="14" fill="#7c3aed"/>
+    <rect x="230" y="178" width="30" height="14" fill="#db2777"/>
+    <text x="215" y="189" fill="#fff">C</text>
+    <text x="245" y="189" fill="#fff">G</text>
+
+    <!-- G-C pair -->
+    <rect x="200" y="228" width="30" height="14" fill="#db2777"/>
+    <rect x="230" y="228" width="30" height="14" fill="#7c3aed"/>
+    <text x="215" y="239" fill="#fff">G</text>
+    <text x="245" y="239" fill="#fff">C</text>
+
+    <!-- A-T pair -->
+    <rect x="200" y="278" width="30" height="14" fill="#16a34a"/>
+    <rect x="230" y="278" width="30" height="14" fill="#f59e0b"/>
+    <text x="215" y="289" fill="#fff">A</text>
+    <text x="245" y="289" fill="#fff">T</text>
+
+    <!-- C-G pair -->
+    <rect x="200" y="328" width="30" height="14" fill="#7c3aed"/>
+    <rect x="230" y="328" width="30" height="14" fill="#db2777"/>
+    <text x="215" y="339" fill="#fff">C</text>
+    <text x="245" y="339" fill="#fff">G</text>
+
+    <!-- T-A pair -->
+    <rect x="200" y="378" width="30" height="14" fill="#f59e0b"/>
+    <rect x="230" y="378" width="30" height="14" fill="#16a34a"/>
+    <text x="215" y="389" fill="#fff">T</text>
+    <text x="245" y="389" fill="#fff">A</text>
+  </g>
+
+  <!-- Labels -->
+  <line x1="175" y1="55" x2="80" y2="55" stroke="#374151" stroke-width="1"/>
+  <text x="15" y="60" font-size="11" fill="#1f2937">Sugar-phosphate</text>
+  <text x="15" y="73" font-size="11" fill="#1f2937">backbone (strand 1)</text>
+
+  <line x1="285" y1="55" x2="430" y2="55" stroke="#374151" stroke-width="1"/>
+  <text x="438" y="60" font-size="11" fill="#1f2937">Sugar-phosphate</text>
+  <text x="438" y="73" font-size="11" fill="#1f2937">backbone (strand 2)</text>
+
+  <line x1="260" y1="185" x2="430" y2="215" stroke="#374151" stroke-width="1"/>
+  <text x="438" y="215" font-size="11" fill="#1f2937">Base pair</text>
+  <text x="438" y="228" font-size="11" fill="#1f2937">(held by H-bonds)</text>
+
+  <line x1="260" y1="335" x2="430" y2="360" stroke="#374151" stroke-width="1"/>
+  <text x="438" y="360" font-size="11" fill="#1f2937">C always pairs with G</text>
+
+  <line x1="200" y1="85" x2="60" y2="120" stroke="#374151" stroke-width="1"/>
+  <text x="15" y="125" font-size="11" fill="#1f2937">A always pairs with T</text>
+
+  <!-- Bottom key -->
+  <text x="320" y="440" text-anchor="middle" font-size="11" fill="#6b7280">Bases: A = Adenine &nbsp; T = Thymine &nbsp; C = Cytosine &nbsp; G = Guanine</text>
+</svg>
+
+<h3>Chromosomes, Genes and DNA</h3>
+
+<p>DNA is very long &mdash; if unwound, one human cell contains about 2 metres of DNA. It is coiled up tightly around proteins (histones) to form <strong>chromosomes</strong>.</p>
+
+<ul>
+    <li>A <strong>chromosome</strong> is a single long molecule of DNA wrapped around proteins.</li>
+    <li>A <strong>gene</strong> is a section of DNA on a chromosome that codes for a particular protein.</li>
+    <li>An <strong>allele</strong> is a different version of the same gene (e.g. the gene for eye colour has alleles for brown, blue, green).</li>
+</ul>
+
+<h2>3.4 The Genome</h2>
+
+<div class="definition">
+    The <strong>genome</strong> of an organism is the entire set of its genetic material &mdash; all of its DNA.<br>
+    A <strong>gene</strong> is a section of DNA that codes for a specific protein (or sequence of amino acids).
+</div>
+
+<p>The human genome is about <strong>3.2 billion base pairs</strong> long, organised onto 23 pairs of chromosomes, and contains roughly <strong>20,000 genes</strong>. Most of the DNA does not code for proteins &mdash; these non-coding regions regulate when genes are switched on or off.</p>
+
+<h3>The Human Genome Project</h3>
+
+<p>The Human Genome Project (1990&ndash;2003) was an international research project that sequenced all 3.2 billion base pairs of the human genome. It has had far-reaching consequences for medicine and biology.</p>
+
+<h3>Benefits of Understanding the Human Genome</h3>
+
+<table>
+    <tr><th>Benefit</th><th>Description</th></tr>
+    <tr><td>Searching for genes linked to disease</td><td>Scientists can identify genes that increase the risk of conditions like breast cancer (BRCA1/BRCA2), cystic fibrosis, sickle-cell anaemia.</td></tr>
+    <tr><td>Understanding inherited disorders</td><td>Knowing which mutations cause a disorder makes it easier to diagnose, predict and potentially treat it.</td></tr>
+    <tr><td>Tracing human migration patterns</td><td>Comparing genomes reveals how populations have moved and mixed across the world over thousands of years.</td></tr>
+    <tr><td>Personalised medicine</td><td>Drugs and doses can be tailored to a patient's genotype for better effectiveness and fewer side effects.</td></tr>
+    <tr><td>Developing new treatments</td><td>Targeted drugs (e.g. for specific cancers) and gene therapy are based on detailed knowledge of gene function.</td></tr>
+</table>
+
+<div class="exam-tip">Be able to state BOTH that the genome is the complete set of DNA AND that a gene is a section of DNA coding for a protein. Questions often mix the two definitions.</div>
+
+<h2>3.5 Genotype and Phenotype</h2>
+
+<div class="definition">
+    <strong>Genotype</strong> = the combination of alleles an organism has for a gene (e.g. BB, Bb, bb).<br>
+    <strong>Phenotype</strong> = the observable physical characteristic produced by the genotype (e.g. brown eyes, blue eyes).
+</div>
+
+<h3>Key Vocabulary</h3>
+
+<table>
+    <tr><th>Term</th><th>Meaning</th></tr>
+    <tr><td><strong>Allele</strong></td><td>A version of a gene. Humans have two alleles for each gene &mdash; one on each chromosome of a pair.</td></tr>
+    <tr><td><strong>Homozygous</strong></td><td>The two alleles are <em>the same</em>, e.g. BB or bb.</td></tr>
+    <tr><td><strong>Heterozygous</strong></td><td>The two alleles are <em>different</em>, e.g. Bb.</td></tr>
+    <tr><td><strong>Dominant</strong></td><td>An allele that is always expressed if present. Shown with a <strong>capital letter</strong> (B).</td></tr>
+    <tr><td><strong>Recessive</strong></td><td>An allele that is only expressed if the organism has two copies of it (homozygous). Shown with a <strong>lowercase letter</strong> (b).</td></tr>
+</table>
+
+<p>For a gene with a dominant allele B and a recessive allele b:</p>
+<ul>
+    <li><code>BB</code> &mdash; homozygous dominant &mdash; phenotype: dominant trait</li>
+    <li><code>Bb</code> &mdash; heterozygous &mdash; phenotype: dominant trait (the B masks the b)</li>
+    <li><code>bb</code> &mdash; homozygous recessive &mdash; phenotype: recessive trait</li>
+</ul>
+
+<div class="exam-tip">Always use the <em>same letter</em> for both alleles of a gene, with capital = dominant and lowercase = recessive. Using B and b (not B and n) makes it clear they are two alleles of the same gene.</div>
+
+<h2>3.6 Monohybrid Inheritance and Punnett Squares</h2>
+
+<div class="definition">
+    <strong>Monohybrid inheritance</strong> is the inheritance of a single characteristic controlled by one gene.<br>
+    A <strong>Punnett square</strong> is a diagram used to predict the possible offspring of a genetic cross.
+</div>
+
+<p>To build a Punnett square:</p>
+<ol>
+    <li>Write the possible gametes of one parent along the top.</li>
+    <li>Write the possible gametes of the other parent down the side.</li>
+    <li>Combine the row and column alleles in each box to give the possible offspring genotypes.</li>
+    <li>Work out the phenotype ratio from the offspring.</li>
+</ol>
+
+<h3>Example 1: BB &times; bb (Homozygous Dominant &times; Homozygous Recessive)</h3>
+
+<p>A homozygous brown-eyed parent (BB) crosses with a homozygous blue-eyed parent (bb). B = brown (dominant), b = blue (recessive).</p>
+
+<table class="punnett">
+    <tr><th></th><th class="parent">B</th><th class="parent">B</th></tr>
+    <tr><th class="parent">b</th><td class="offspring">Bb</td><td class="offspring">Bb</td></tr>
+    <tr><th class="parent">b</th><td class="offspring">Bb</td><td class="offspring">Bb</td></tr>
+</table>
+
+<p><strong>Results:</strong> 100% Bb (heterozygous). All offspring have brown eyes but carry the blue allele. Phenotype ratio: <strong>all brown eyes (4:0)</strong>.</p>
+
+<h3>Example 2: Bb &times; Bb (Heterozygous &times; Heterozygous)</h3>
+
+<p>Two brown-eyed parents who both carry the blue allele.</p>
+
+<table class="punnett">
+    <tr><th></th><th class="parent">B</th><th class="parent">b</th></tr>
+    <tr><th class="parent">B</th><td class="offspring">BB</td><td class="offspring">Bb</td></tr>
+    <tr><th class="parent">b</th><td class="offspring">Bb</td><td class="offspring">bb</td></tr>
+</table>
+
+<p><strong>Results:</strong> 1 BB : 2 Bb : 1 bb. Phenotype ratio: <strong>3 brown : 1 blue</strong>. There is a 25% (1 in 4) chance of a blue-eyed child.</p>
+
+<h3>Example 3: Bb &times; bb (Heterozygous &times; Homozygous Recessive &mdash; "Test Cross")</h3>
+
+<p>A brown-eyed carrier parent crosses with a blue-eyed parent.</p>
+
+<table class="punnett">
+    <tr><th></th><th class="parent">B</th><th class="parent">b</th></tr>
+    <tr><th class="parent">b</th><td class="offspring">Bb</td><td class="offspring">bb</td></tr>
+    <tr><th class="parent">b</th><td class="offspring">Bb</td><td class="offspring">bb</td></tr>
+</table>
+
+<p><strong>Results:</strong> 2 Bb : 2 bb. Phenotype ratio: <strong>1 brown : 1 blue</strong>. There is a 50% chance of a blue-eyed child.</p>
+
+<h3>Example 4: BB &times; Bb</h3>
+
+<table class="punnett">
+    <tr><th></th><th class="parent">B</th><th class="parent">B</th></tr>
+    <tr><th class="parent">B</th><td class="offspring">BB</td><td class="offspring">BB</td></tr>
+    <tr><th class="parent">b</th><td class="offspring">Bb</td><td class="offspring">Bb</td></tr>
+</table>
+
+<p><strong>Results:</strong> 2 BB : 2 Bb. Phenotype ratio: <strong>all brown eyes</strong>. No blue-eyed offspring possible.</p>
+
+<div class="exam-tip">Always <strong>state the phenotype ratio</strong> after doing the Punnett square &mdash; a common mistake is just listing genotypes. If the question asks for probability, express it as a percentage or fraction (e.g. 25%, 1/4).</div>
+
+<h2>3.7 Pedigree Diagrams</h2>
+
+<div class="definition">
+    A <strong>pedigree diagram</strong> is a family tree that shows how a genetic trait is inherited across generations.
+</div>
+
+<h3>Conventions</h3>
+
+<ul>
+    <li><strong>Circles</strong> = female; <strong>squares</strong> = male</li>
+    <li><strong>Shaded</strong> = affected (has the trait/disorder); <strong>unshaded</strong> = unaffected</li>
+    <li>A horizontal line between two people = a mating/couple</li>
+    <li>A vertical line going down = children of that couple</li>
+    <li>Half-shaded = known carrier (heterozygous for a recessive disorder)</li>
+</ul>
+
+<!-- Pedigree SVG -->
+<svg viewBox="0 0 640 360" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;">
+  <text x="320" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Pedigree Diagram &mdash; Cystic Fibrosis (Recessive Inheritance)</text>
+
+  <!-- Generation I -->
+  <text x="30" y="70" font-size="12" font-weight="bold" fill="#1f2937">I</text>
+  <rect x="200" y="55" width="30" height="30" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="215" y="100" text-anchor="middle" font-size="10" fill="#1f2937">Ff</text>
+  <line x1="230" y1="70" x2="310" y2="70" stroke="#1f2937" stroke-width="2"/>
+  <circle cx="325" cy="70" r="15" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="325" y="100" text-anchor="middle" font-size="10" fill="#1f2937">Ff</text>
+
+  <!-- Drop to generation II -->
+  <line x1="270" y1="70" x2="270" y2="115" stroke="#1f2937" stroke-width="2"/>
+  <line x1="160" y1="115" x2="430" y2="115" stroke="#1f2937" stroke-width="2"/>
+
+  <!-- Generation II (four children) -->
+  <text x="30" y="160" font-size="12" font-weight="bold" fill="#1f2937">II</text>
+
+  <line x1="160" y1="115" x2="160" y2="145" stroke="#1f2937" stroke-width="2"/>
+  <circle cx="160" cy="160" r="15" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="160" y="190" text-anchor="middle" font-size="10" fill="#1f2937">FF or Ff</text>
+
+  <line x1="250" y1="115" x2="250" y2="145" stroke="#1f2937" stroke-width="2"/>
+  <rect x="235" y="145" width="30" height="30" fill="#1f2937" stroke="#1f2937" stroke-width="2"/>
+  <text x="250" y="190" text-anchor="middle" font-size="10" fill="#1f2937">ff (affected)</text>
+
+  <line x1="340" y1="115" x2="340" y2="145" stroke="#1f2937" stroke-width="2"/>
+  <rect x="325" y="145" width="30" height="30" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="340" y="190" text-anchor="middle" font-size="10" fill="#1f2937">Ff (carrier)</text>
+
+  <line x1="430" y1="115" x2="430" y2="145" stroke="#1f2937" stroke-width="2"/>
+  <circle cx="430" cy="160" r="15" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="430" y="190" text-anchor="middle" font-size="10" fill="#1f2937">Ff</text>
+
+  <!-- II-3 partners with someone outside family -->
+  <line x1="355" y1="160" x2="420" y2="160" stroke="#1f2937" stroke-width="0"/>
+  <line x1="445" y1="160" x2="510" y2="160" stroke="#1f2937" stroke-width="2"/>
+  <rect x="510" y="145" width="30" height="30" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="525" y="190" text-anchor="middle" font-size="10" fill="#1f2937">FF (unaffected)</text>
+
+  <!-- Drop to gen III -->
+  <line x1="480" y1="160" x2="480" y2="215" stroke="#1f2937" stroke-width="2"/>
+  <line x1="430" y1="215" x2="530" y2="215" stroke="#1f2937" stroke-width="2"/>
+
+  <!-- Gen III -->
+  <text x="30" y="260" font-size="12" font-weight="bold" fill="#1f2937">III</text>
+  <line x1="430" y1="215" x2="430" y2="245" stroke="#1f2937" stroke-width="2"/>
+  <rect x="415" y="245" width="30" height="30" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="430" y="290" text-anchor="middle" font-size="10" fill="#1f2937">FF or Ff</text>
+
+  <line x1="530" y1="215" x2="530" y2="245" stroke="#1f2937" stroke-width="2"/>
+  <circle cx="530" cy="260" r="15" fill="#fff" stroke="#1f2937" stroke-width="2"/>
+  <text x="530" y="290" text-anchor="middle" font-size="10" fill="#1f2937">FF or Ff</text>
+
+  <!-- Key -->
+  <rect x="40" y="310" width="18" height="18" fill="#fff" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="65" y="324" font-size="11" fill="#1f2937">Male unaffected</text>
+
+  <rect x="180" y="310" width="18" height="18" fill="#1f2937" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="205" y="324" font-size="11" fill="#1f2937">Male affected</text>
+
+  <circle cx="325" cy="319" r="9" fill="#fff" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="340" y="324" font-size="11" fill="#1f2937">Female unaffected</text>
+
+  <circle cx="475" cy="319" r="9" fill="#1f2937" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="490" y="324" font-size="11" fill="#1f2937">Female affected</text>
+</svg>
+
+<h3>Interpreting a Pedigree</h3>
+
+<p>Key things to check when deducing the inheritance pattern of a trait:</p>
+<ul>
+    <li><strong>Does it skip generations?</strong> If yes, it is likely <strong>recessive</strong> (carriers pass it on invisibly).</li>
+    <li><strong>Do two unaffected parents have an affected child?</strong> The trait must be <strong>recessive</strong> (both parents are heterozygous carriers).</li>
+    <li><strong>Does every affected person have an affected parent?</strong> Likely <strong>dominant</strong>.</li>
+    <li><strong>Is it mostly males?</strong> Might be <strong>X-linked</strong> recessive (e.g. red-green colour blindness, haemophilia).</li>
+</ul>
+
+<div class="exam-tip">If two unaffected parents produce an affected child, the disorder must be <strong>recessive</strong>. Both parents must be heterozygous carriers (Aa &times; Aa).</div>
+
+<h2>3.8 Probability of Inheritance</h2>
+
+<p>Punnett squares give the <em>probability</em> of each genotype and phenotype occurring in the offspring. They do not guarantee exact numbers &mdash; these are predictions.</p>
+
+<h3>Common Ratios</h3>
+
+<table>
+    <tr><th>Cross</th><th>Genotype ratio</th><th>Phenotype ratio</th><th>Probability of recessive</th></tr>
+    <tr><td>BB &times; bb</td><td>All Bb</td><td>All dominant</td><td>0%</td></tr>
+    <tr><td>Bb &times; Bb</td><td>1 BB : 2 Bb : 1 bb</td><td>3 : 1 (dominant : recessive)</td><td>25% (1 in 4)</td></tr>
+    <tr><td>Bb &times; bb</td><td>1 Bb : 1 bb</td><td>1 : 1</td><td>50% (1 in 2)</td></tr>
+    <tr><td>BB &times; BB</td><td>All BB</td><td>All dominant</td><td>0%</td></tr>
+    <tr><td>bb &times; bb</td><td>All bb</td><td>All recessive</td><td>100%</td></tr>
+</table>
+
+<h3>Worked Example: Cystic Fibrosis</h3>
+
+<p>Cystic fibrosis is caused by a recessive allele (f). Both parents are heterozygous carriers (Ff). What is the probability that their child will have cystic fibrosis?</p>
+
+<table class="punnett">
+    <tr><th></th><th class="parent">F</th><th class="parent">f</th></tr>
+    <tr><th class="parent">F</th><td class="offspring">FF</td><td class="offspring">Ff</td></tr>
+    <tr><th class="parent">f</th><td class="offspring">Ff</td><td class="offspring">ff</td></tr>
+</table>
+
+<p>Genotypes: 1 FF : 2 Ff : 1 ff. Only ff individuals have CF.</p>
+<ul>
+    <li>Probability of unaffected (FF or Ff): <strong>3/4 = 75%</strong></li>
+    <li>Probability of carrier (Ff): <strong>2/4 = 50%</strong></li>
+    <li>Probability of having CF (ff): <strong>1/4 = 25%</strong></li>
+</ul>
+
+<h3>Worked Example: Polydactyly</h3>
+
+<p>Polydactyly (extra fingers/toes) is caused by a dominant allele (P). If one parent is heterozygous (Pp) and the other is unaffected (pp), what is the probability their child has polydactyly?</p>
+
+<table class="punnett">
+    <tr><th></th><th class="parent">P</th><th class="parent">p</th></tr>
+    <tr><th class="parent">p</th><td class="offspring">Pp</td><td class="offspring">pp</td></tr>
+    <tr><th class="parent">p</th><td class="offspring">Pp</td><td class="offspring">pp</td></tr>
+</table>
+
+<p>Phenotype ratio: 1 polydactyly : 1 unaffected &mdash; <strong>50%</strong> chance of polydactyly.</p>
+
+<div class="exam-tip">Probabilities do NOT guarantee numbers. "25% chance" means <em>each</em> child has a 1 in 4 chance; it does NOT mean exactly 1 in every 4 children will have the disorder. Small families may not match the predicted ratio at all.</div>
+
+<h2>3.9 Sex Determination in Humans</h2>
+
+<div class="definition">
+    In humans, sex is determined by the 23rd pair of chromosomes, called the <strong>sex chromosomes</strong>.<br>
+    <strong>XX = female</strong><br>
+    <strong>XY = male</strong>
+</div>
+
+<p>The Y chromosome carries a gene (SRY) that triggers the development of male sex characteristics in the embryo. Without a Y, the default pathway is female. All the other 22 pairs are called <strong>autosomes</strong> and are the same in males and females.</p>
+
+<h3>Sex Inheritance Punnett Square</h3>
+
+<p>Females (XX) can only produce eggs containing X. Males (XY) produce sperm containing <em>either</em> X <em>or</em> Y in roughly equal numbers. The sex of the baby is therefore determined by the father's sperm.</p>
+
+<table class="punnett">
+    <tr><th></th><th class="parent">X</th><th class="parent">Y</th></tr>
+    <tr><th class="parent">X</th><td class="offspring">XX (&female;)</td><td class="offspring">XY (&male;)</td></tr>
+    <tr><th class="parent">X</th><td class="offspring">XX (&female;)</td><td class="offspring">XY (&male;)</td></tr>
+</table>
+
+<p><strong>Results:</strong> 2 XX : 2 XY = <strong>1 female : 1 male</strong>. So there is a 50% chance of a boy and a 50% chance of a girl at each pregnancy.</p>
+
+<div class="exam-tip">The <strong>father determines the sex</strong> of the baby, not the mother &mdash; because he provides either X or Y, while the mother always provides X. Historically this was often misunderstood, sometimes with tragic consequences for women.</div>
+
+<h2>3.10 Genetic Disorders</h2>
+
+<div class="definition">
+    A <strong>genetic disorder</strong> is a condition caused by a faulty allele inherited from one or both parents.
+</div>
+
+<h3>Cystic Fibrosis (Recessive)</h3>
+
+<ul>
+    <li>Caused by a <strong>recessive</strong> allele of the <strong>CFTR</strong> gene on chromosome 7.</li>
+    <li>The faulty CFTR protein normally moves chloride ions across cell membranes. When it fails, the mucus lining airways, the pancreas and the reproductive tract becomes thick and sticky.</li>
+    <li><strong>Symptoms:</strong> chest infections (mucus traps bacteria in lungs); breathing difficulty; poor digestion (mucus blocks pancreatic ducts so enzymes can't reach the gut); reduced fertility.</li>
+    <li><strong>Inheritance:</strong> must have two faulty copies (ff) to show the disorder. Carriers (Ff) are unaffected but can pass it on.</li>
+    <li>In the UK, about 1 in 25 people are carriers.</li>
+</ul>
+
+<h3>Polydactyly (Dominant)</h3>
+
+<ul>
+    <li>Caused by a <strong>dominant</strong> allele &mdash; only one copy needed to show the condition.</li>
+    <li>Causes extra fingers or toes (usually harmless, often removed in infancy if inconvenient).</li>
+    <li>An affected parent has a <strong>50% chance</strong> of passing it on to each child (if heterozygous).</li>
+    <li>Because it's dominant, the disorder does <em>not</em> skip generations in a family tree.</li>
+</ul>
+
+<h3>Summary Table</h3>
+
+<table>
+    <tr><th>Feature</th><th>Cystic fibrosis</th><th>Polydactyly</th></tr>
+    <tr><td>Type of allele</td><td>Recessive (f)</td><td>Dominant (P)</td></tr>
+    <tr><td>Number of faulty alleles needed</td><td>2 (ff)</td><td>1 (Pp or PP)</td></tr>
+    <tr><td>Can carriers exist?</td><td>Yes (Ff carriers are unaffected)</td><td>No &mdash; if you have the allele, you show it</td></tr>
+    <tr><td>Can it skip generations?</td><td>Yes</td><td>No</td></tr>
+    <tr><td>Gene affected</td><td>CFTR (chromosome 7)</td><td>Various, including GLI3</td></tr>
+    <tr><td>Severity</td><td>Serious; reduces life expectancy</td><td>Usually harmless</td></tr>
+</table>
+
+<h3>Embryo Screening (Pre-implantation Genetic Diagnosis)</h3>
+
+<p>During IVF, embryos can be tested for genetic disorders before being implanted. One cell is removed from a 2&ndash;3 day old embryo and its DNA is analysed. Only embryos free of the tested disorders are implanted.</p>
+
+<h3>Benefits of Embryo Screening</h3>
+
+<ul>
+    <li>Prevents the birth of children with serious, life-shortening disorders.</li>
+    <li>Reduces suffering of the child and stress on the family.</li>
+    <li>Saves the NHS money in the long term.</li>
+    <li>Laws stop it being abused (in the UK, screening is only allowed for specific serious conditions).</li>
+</ul>
+
+<h3>Ethical Objections</h3>
+
+<ul>
+    <li>Some view it as a step towards <strong>"designer babies"</strong> &mdash; choosing traits like eye colour, intelligence or gender.</li>
+    <li>It implies that people living with these conditions are less valued; they would never have been born under this system.</li>
+    <li>Embryos that are not selected are destroyed &mdash; some religious and ethical traditions view this as destroying a human life.</li>
+    <li>The procedure is expensive and not available to everyone equally.</li>
+    <li>Screening is never 100% accurate &mdash; errors could reject healthy embryos or allow disorders through.</li>
+</ul>
+
+<div class="exam-tip">In an <strong>evaluate</strong> question about embryo screening, always give BOTH benefits and ethical objections, and finish with a reasoned conclusion that states your view and why.</div>
+
+<h2>3.11 Variation</h2>
+
+<div class="definition">
+    <strong>Variation</strong> is the differences between individuals of the same species. It can be caused by genes, the environment, or a combination of both.
+</div>
+
+<h3>Genetic Variation</h3>
+
+<p>Inherited differences in DNA. Caused by:</p>
+<ul>
+    <li><strong>Mutations</strong> &mdash; random changes in DNA that introduce new alleles.</li>
+    <li><strong>Meiosis</strong> &mdash; independent assortment and crossing over.</li>
+    <li><strong>Sexual reproduction</strong> &mdash; random fertilisation combines alleles from two parents.</li>
+</ul>
+
+<p>Examples of purely genetic characteristics: ABO blood group, earlobe shape (attached or free), natural hair colour, sex.</p>
+
+<h3>Environmental Variation</h3>
+
+<p>Differences caused by the environment &mdash; <strong>not</strong> inherited (usually). Includes:</p>
+<ul>
+    <li>Diet and nutrition (affects growth, body mass)</li>
+    <li>Climate (skin darkens with sun exposure)</li>
+    <li>Lifestyle (exercise, smoking)</li>
+    <li>Disease or accident (scars, amputation)</li>
+    <li>Language spoken / culture / accent</li>
+</ul>
+
+<h3>Both Genetic and Environmental</h3>
+
+<p>Most human characteristics are controlled by a combination of genes AND environment. Examples:</p>
+<ul>
+    <li><strong>Height:</strong> determined by many genes, but also affected by childhood nutrition.</li>
+    <li><strong>Body mass:</strong> genes set a tendency; diet and exercise determine the actual weight.</li>
+    <li><strong>Skin colour:</strong> genes determine base tone; UV exposure affects darkness.</li>
+    <li><strong>Intelligence test scores:</strong> genes and upbringing/education both contribute.</li>
+</ul>
+
+<h3>Continuous vs Discontinuous Variation</h3>
+
+<table>
+    <tr><th>Feature</th><th>Continuous variation</th><th>Discontinuous variation</th></tr>
+    <tr><td>Definition</td><td>Values can take any value in a range</td><td>Values fall into distinct categories</td></tr>
+    <tr><td>Controlled by</td><td>Many genes (polygenic) + environment</td><td>Usually one gene (monogenic), little environmental effect</td></tr>
+    <tr><td>Graph</td><td>Normal distribution curve (bell-shaped)</td><td>Bar chart</td></tr>
+    <tr><td>Examples</td><td>Height, body mass, leaf length, hand span</td><td>Blood group (A, B, AB, O); gender; tongue rolling; earlobes</td></tr>
+</table>
+
+<!-- Normal distribution SVG -->
+<svg viewBox="0 0 640 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:640px;margin:20px auto;display:block;">
+  <text x="320" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#166534">Continuous Variation &mdash; Normal Distribution (Student Heights)</text>
+
+  <!-- Axes -->
+  <line x1="80" y1="280" x2="600" y2="280" stroke="#1f2937" stroke-width="2"/>
+  <line x1="80" y1="280" x2="80" y2="60" stroke="#1f2937" stroke-width="2"/>
+
+  <!-- Bars -->
+  <rect x="110" y="265" width="40" height="15" fill="#86efac" stroke="#166534" stroke-width="1"/>
+  <rect x="150" y="240" width="40" height="40" fill="#86efac" stroke="#166534" stroke-width="1"/>
+  <rect x="190" y="200" width="40" height="80" fill="#86efac" stroke="#166534" stroke-width="1"/>
+  <rect x="230" y="140" width="40" height="140" fill="#86efac" stroke="#166534" stroke-width="1"/>
+  <rect x="270" y="85" width="40" height="195" fill="#4ade80" stroke="#166534" stroke-width="1"/>
+  <rect x="310" y="85" width="40" height="195" fill="#4ade80" stroke="#166534" stroke-width="1"/>
+  <rect x="350" y="140" width="40" height="140" fill="#86efac" stroke="#166534" stroke-width="1"/>
+  <rect x="390" y="200" width="40" height="80" fill="#86efac" stroke="#166534" stroke-width="1"/>
+  <rect x="430" y="240" width="40" height="40" fill="#86efac" stroke="#166534" stroke-width="1"/>
+  <rect x="470" y="265" width="40" height="15" fill="#86efac" stroke="#166534" stroke-width="1"/>
+
+  <!-- Bell curve overlay -->
+  <path d="M 110 272 Q 140 265, 170 245 Q 200 215, 230 165 Q 260 100, 290 90 Q 320 88, 330 88 Q 360 95, 390 165 Q 420 215, 450 245 Q 480 265, 510 272"
+        fill="none" stroke="#dc2626" stroke-width="2.5" stroke-dasharray="4,2"/>
+
+  <!-- X-axis labels -->
+  <text x="130" y="300" text-anchor="middle" font-size="10" fill="#1f2937">140</text>
+  <text x="170" y="300" text-anchor="middle" font-size="10" fill="#1f2937">145</text>
+  <text x="210" y="300" text-anchor="middle" font-size="10" fill="#1f2937">150</text>
+  <text x="250" y="300" text-anchor="middle" font-size="10" fill="#1f2937">155</text>
+  <text x="290" y="300" text-anchor="middle" font-size="10" fill="#1f2937">160</text>
+  <text x="330" y="300" text-anchor="middle" font-size="10" fill="#1f2937">165</text>
+  <text x="370" y="300" text-anchor="middle" font-size="10" fill="#1f2937">170</text>
+  <text x="410" y="300" text-anchor="middle" font-size="10" fill="#1f2937">175</text>
+  <text x="450" y="300" text-anchor="middle" font-size="10" fill="#1f2937">180</text>
+  <text x="490" y="300" text-anchor="middle" font-size="10" fill="#1f2937">185</text>
+
+  <text x="340" y="324" text-anchor="middle" font-size="12" fill="#1f2937">Height (cm)</text>
+
+  <!-- Y-axis label -->
+  <text x="40" y="170" text-anchor="middle" font-size="12" fill="#1f2937" transform="rotate(-90, 40, 170)">Number of students</text>
+
+  <!-- Labels -->
+  <text x="310" y="75" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">Mean / mode</text>
+
+  <line x1="520" y1="155" x2="560" y2="130" stroke="#6b7280" stroke-width="1"/>
+  <text x="560" y="125" font-size="11" fill="#6b7280">Normal distribution</text>
+  <text x="560" y="139" font-size="11" fill="#6b7280">(bell curve)</text>
+</svg>
+
+<div class="exam-tip">If you see a <strong>bell-shaped graph</strong> or data that can take any value in a range, it's continuous variation &mdash; controlled by <em>many</em> genes and affected by environment. If it falls into clear <strong>categories</strong>, it's discontinuous &mdash; usually one gene.</div>
+
+<h2>3.12 Mutations</h2>
+
+<div class="definition">
+    A <strong>mutation</strong> is a random change in the base sequence of DNA. Mutations occur continuously in every cell, and they are the ultimate source of all new genetic variation.
+</div>
+
+<h3>Effects of Mutations</h3>
+
+<p>Most mutations have no effect on the phenotype. Some are harmful; a few are beneficial.</p>
+
+<table>
+    <tr><th>Type of effect</th><th>Explanation</th><th>Example</th></tr>
+    <tr><td><strong>Neutral</strong> (most)</td><td>The change is in non-coding DNA or does not alter the protein (silent mutation); phenotype unchanged.</td><td>A base change that codes for the same amino acid (the genetic code is degenerate).</td></tr>
+    <tr><td><strong>Harmful</strong></td><td>The protein produced is faulty or missing; the organism's function is impaired.</td><td>CFTR mutation &rarr; cystic fibrosis; mutation in a proto-oncogene &rarr; cancer.</td></tr>
+    <tr><td><strong>Beneficial</strong> (rare)</td><td>The new protein has an improved function or gives some advantage.</td><td>Lactase persistence in adults; sickle-cell allele confers malaria resistance in heterozygotes.</td></tr>
+</table>
+
+<h3>How Mutations Cause Variation</h3>
+
+<p>A mutation in a gamete can be passed on to offspring, introducing a <strong>new allele</strong> into the population. Natural selection then acts on this new allele: if it improves survival or reproduction, it will become more common over generations. If it is harmful, it will usually be eliminated.</p>
+
+<h3>Causes of Mutations</h3>
+
+<ul>
+    <li>Errors during DNA replication (copying mistakes).</li>
+    <li><strong>Mutagens</strong> &mdash; agents that increase mutation rate, e.g. UV light, X-rays, tobacco smoke, some chemicals.</li>
+</ul>
+
+<h3>Effects on the Phenotype</h3>
+
+<p>A mutation in a gene may:</p>
+<ul>
+    <li>Change a single amino acid in the protein &mdash; may affect protein shape and function.</li>
+    <li>Introduce a stop signal early &mdash; the protein is truncated and non-functional.</li>
+    <li>Shift the reading frame (insertion or deletion) &mdash; most of the protein becomes nonsense.</li>
+    <li>Have no effect (silent mutation or in a non-coding region).</li>
+</ul>
+
+<div class="exam-tip">Key examination phrase: most mutations are <strong>neutral</strong>. A common mistake is to say most mutations are harmful. Only a small proportion have any phenotypic effect at all, and of those, most are harmful but a few are beneficial.</div>
+
+<h3>Mutations in Non-Coding DNA</h3>
+
+<p>Not all DNA codes for proteins. Some non-coding regions control <em>when</em> and <em>how much</em> a gene is expressed. A mutation here can affect the amount of protein made, which can still alter the phenotype &mdash; even without changing the protein itself.</p>
+
+<div class="definition">
+    <strong>Summary of Topic 3:</strong> Sexual reproduction uses meiosis to produce genetically varied haploid gametes. DNA stores information in a double helix; genes code for proteins; the full set is the genome. Alleles determine traits; Punnett squares predict offspring ratios. Sex is determined by X and Y chromosomes. Genetic disorders like cystic fibrosis (recessive) and polydactyly (dominant) can be screened for in embryos &mdash; a technology with both medical benefits and ethical concerns. Variation is continuous or discontinuous, caused by genes, environment, or both. Mutations &mdash; random changes in DNA &mdash; are the source of all new alleles.
+</div>
+
+</div>
+</body>
+</html>
