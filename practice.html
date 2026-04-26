@@ -580,6 +580,7 @@ const BUNDLE_MAP = {
   'Physics_OCR A|gcse':           ['questions/physics-ocr-a-gcse/physics-ocr-a-gcse-practice.js'],
   'Physics_OCR A':                ['questions/physics/physics-ocr-a-practice.js'],
   'Physics_OCR B':                ['questions/physics/physics-ocr-b-practice.js'],
+  'Physics_OCR B|gcse':           ['questions/physics-ocr-b-gcse/physics-ocr-b-gcse-practice.js'],
   'Economics_AQA':                ['questions/economics-aqa/economics-aqa-practice.js'],
   'Economics_Edexcel A':          ['questions/economics-edexcel-a/economics-edexcel-a-practice.js'],
   'Economics_OCR':                ['questions/economics-ocr/economics-ocr-practice.js'],
@@ -589,10 +590,15 @@ const BUNDLE_MAP = {
   'Chemistry_OCR A':              ['questions/chemistry/chemistry-ocr-a-practice.js'],
   'Chemistry_OCR B':              ['questions/chemistry/chemistry-ocr-b-practice.js'],
   'Biology_AQA':                  ['questions/biology/biology-aqa-practice.js'],
+  'Biology_AQA|gcse':             ['questions/biology/biology-aqa-gcse-practice.js'],
+  'Biology_Edexcel|gcse':         ['questions/biology-edexcel-gcse/biology-edexcel-gcse-practice.js'],
+  'Biology_Edexcel IGCSE|gcse':   ['questions/biology-edexcel-igcse/biology-edexcel-igcse-practice.js'],
   'Biology_Edexcel A':            ['questions/biology/biology-edexcel-a-practice.js'],
   'Biology_Edexcel B':            ['questions/biology/biology-edexcel-b-practice.js'],
   'Biology_OCR A':                ['questions/biology/biology-ocr-a-practice.js'],
+  'Biology_OCR A|gcse':           ['questions/biology/biology-ocr-a-gcse-practice.js'],
   'Biology_OCR B':                ['questions/biology/biology-ocr-b-practice.js'],
+  'Biology_OCR B|gcse':           ['questions/biology/biology-ocr-b-gcse-practice.js'],
   'Geography_AQA':                ['questions/geography-aqa/geography-aqa-practice.js'],
   'Geography_Edexcel':            ['questions/geography-edexcel/geography-edexcel-practice.js'],
   'Geography_Eduqas|gcse':        ['questions/geography-eduqas-gcse/geography-eduqas-gcse-practice.js'],
@@ -679,6 +685,7 @@ const PRACTICE_MAP = {
   'Physics_OCR A|gcse': () => typeof PHYSICS_OCR_A_GCSE_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_GCSE_PRACTICE : null,
   'Physics_OCR A': () => typeof PHYSICS_OCR_A_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_PRACTICE : null,
   'Physics_OCR B': () => typeof PHYSICS_OCR_B_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_PRACTICE : null,
+  'Physics_OCR B|gcse': () => typeof PHYSICS_OCR_B_GCSE_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_GCSE_PRACTICE : null,
   'Economics_AQA': () => typeof ECONOMICS_AQA_PRACTICE !== 'undefined' ? ECONOMICS_AQA_PRACTICE : null,
   'Economics_Edexcel A': () => typeof ECONOMICS_EDEXCEL_A_PRACTICE !== 'undefined' ? ECONOMICS_EDEXCEL_A_PRACTICE : null,
   'Economics_OCR': () => typeof ECONOMICS_OCR_PRACTICE !== 'undefined' ? ECONOMICS_OCR_PRACTICE : null,
@@ -688,10 +695,15 @@ const PRACTICE_MAP = {
   'Chemistry_OCR A': () => typeof CHEMISTRY_OCR_A_PRACTICE !== 'undefined' ? CHEMISTRY_OCR_A_PRACTICE : null,
   'Chemistry_OCR B': () => typeof CHEMISTRY_OCR_B_PRACTICE !== 'undefined' ? CHEMISTRY_OCR_B_PRACTICE : null,
   'Biology_AQA': () => typeof BIOLOGY_AQA_PRACTICE !== 'undefined' ? BIOLOGY_AQA_PRACTICE : null,
+  'Biology_AQA|gcse': () => typeof BIOLOGY_AQA_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_AQA_GCSE_PRACTICE : null,
+  'Biology_Edexcel|gcse': () => typeof BIOLOGY_EDEXCEL_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_GCSE_PRACTICE : null,
+  'Biology_Edexcel IGCSE|gcse': () => typeof BIOLOGY_EDEXCEL_IGCSE_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_IGCSE_PRACTICE : null,
   'Biology_Edexcel A': () => typeof BIOLOGY_EDEXCEL_A_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_A_PRACTICE : null,
   'Biology_Edexcel B': () => typeof BIOLOGY_EDEXCEL_B_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_B_PRACTICE : null,
   'Biology_OCR A': () => typeof BIOLOGY_OCR_A_PRACTICE !== 'undefined' ? BIOLOGY_OCR_A_PRACTICE : null,
+  'Biology_OCR A|gcse': () => typeof BIOLOGY_OCR_A_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_OCR_A_GCSE_PRACTICE : null,
   'Biology_OCR B': () => typeof BIOLOGY_OCR_B_PRACTICE !== 'undefined' ? BIOLOGY_OCR_B_PRACTICE : null,
+  'Biology_OCR B|gcse': () => typeof BIOLOGY_OCR_B_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_OCR_B_GCSE_PRACTICE : null,
   'Geography_AQA': () => typeof GEOGRAPHY_AQA_PRACTICE !== 'undefined' ? GEOGRAPHY_AQA_PRACTICE : null,
   'Geography_Edexcel': () => typeof GEOGRAPHY_EDEXCEL_PRACTICE !== 'undefined' ? GEOGRAPHY_EDEXCEL_PRACTICE : null,
   'Geography_Eduqas|gcse': () => typeof GEOGRAPHY_EDUQAS_PRACTICE !== 'undefined' ? GEOGRAPHY_EDUQAS_PRACTICE : null,
@@ -919,6 +931,20 @@ const SUBJECT_TOPICS = {
       ]},
     ]
   },
+  'Physics_OCR B|gcse': {
+    sections: [
+      { label: 'OCR B GCSE (J259) — Paper 1: Breadth in Physics', topics: [
+        { id: 'P1', name: 'Radiation and Waves',         sub: 'EM spectrum, v=fλ, reflection/refraction, ionising radiation' },
+        { id: 'P2', name: 'Sustainable Energy',          sub: 'Energy stores, transfers, efficiency, power, resources' },
+        { id: 'P3', name: 'Electric Circuits',           sub: 'Charge, current, p.d., Ohm\'s law, series/parallel, mains' },
+      ]},
+      { label: 'OCR B GCSE (J259) — Paper 2: Depth in Physics', topics: [
+        { id: 'P4', name: 'Explaining Motion',           sub: 'Newton\'s laws, momentum, moments, stopping distance, Hooke' },
+        { id: 'P5', name: 'Radioactive Materials',       sub: 'Atomic model, α/β/γ, half-life, nuclear equations, fission/fusion' },
+        { id: 'P6', name: 'Matter — Models & Explanations', sub: 'Particle model, density, SHC/SLH, pressure, gas laws' },
+      ]},
+    ]
+  },
   'Economics_AQA': {
     sections: [
       { label: 'AQA — Microeconomics (Paper 1)', topics: [
@@ -1070,6 +1096,123 @@ const SUBJECT_TOPICS = {
         { id: 'T6', name: 'Organisms Respond to Changes', sub: 'Nervous system, muscles, homeostasis' },
         { id: 'T7', name: 'Genetics, Populations & Evolution', sub: 'Inheritance, populations, evolution, speciation' },
         { id: 'T8', name: 'Control of Gene Expression', sub: 'Gene technology, epigenetics, biotechnology' },
+      ]},
+    ]
+  },
+  'Biology_OCR A|gcse': {
+    sections: [
+      { label: 'OCR A GCSE J247 (Gateway) — Paper 1: Topics B1–B3', topics: [
+        { id: 'B1.1', name: 'Cell Structures',                          sub: 'Animal/plant/prokaryote cells, microscopy, magnification, specialised cells' },
+        { id: 'B1.2', name: 'What Happens in Cells',                    sub: 'DNA structure, transcription/translation, enzymes, lock-and-key, factors affecting enzymes' },
+        { id: 'B1.3', name: 'Respiration',                              sub: 'Aerobic/anaerobic respiration, ATP, lactic acid, fermentation, metabolic rate' },
+        { id: 'B1.4', name: 'Photosynthesis',                           sub: 'Word/symbol equation, limiting factors, leaf adaptations, inverse square law' },
+        { id: 'B2.1', name: 'Supplying the Cell',                       sub: 'Diffusion, osmosis, active transport, mitosis, cell cycle, stem cells, differentiation' },
+        { id: 'B2.2', name: 'The Challenges of Size',                   sub: 'Exchange surfaces, circulatory system, blood, heart, lungs, plant transport, transpiration' },
+        { id: 'B3.1', name: 'Coordination — Nervous System',            sub: 'CNS, neurones, synapses, reflex arc, eye, brain' },
+        { id: 'B3.2', name: 'Coordination — Endocrine System',          sub: 'Glands, hormones, blood glucose, diabetes, menstrual cycle, contraception' },
+        { id: 'B3.3', name: 'Maintaining Internal Environments',        sub: 'Homeostasis, thermoregulation, kidney, ADH, plant hormones, tropisms' },
+      ]},
+      { label: 'OCR A GCSE J247 (Gateway) — Paper 2: Topics B4–B6', topics: [
+        { id: 'B4.1', name: 'Ecosystems',                               sub: 'Communities, abiotic/biotic factors, food chains/webs, decomposers, water/carbon/nitrogen cycles' },
+        { id: 'B5.1', name: 'Inheritance',                              sub: 'DNA → genes, meiosis, monohybrid crosses, sex inheritance, genetic disorders' },
+        { id: 'B5.2', name: 'Natural Selection & Evolution',            sub: 'Variation, evolution, antibiotic resistance, evidence for evolution, classification' },
+        { id: 'B6.1', name: 'Monitoring & Maintaining the Environment', sub: 'Sampling techniques, biodiversity, human impact, conservation, indicator species' },
+        { id: 'B6.2', name: 'Feeding the Human Race',                   sub: 'Food security, selective breeding, GM crops, biotechnology, fertilisers' },
+        { id: 'B6.3', name: 'Monitoring & Maintaining Health',          sub: 'Communicable & non-communicable disease, immunity, vaccines, antibiotics, monoclonal antibodies' },
+      ]},
+    ]
+  },
+  'Biology_OCR B|gcse': {
+    sections: [
+      { label: 'OCR B GCSE J257 (Twenty First Century) — Paper 1', topics: [
+        { id: 'B1.1', name: 'The genome and what it does',     sub: 'DNA structure, genes, chromosomes, mutations, the human genome' },
+        { id: 'B1.2', name: 'How genetic information is inherited', sub: 'Punnett squares, sex inheritance, dominant/recessive, genetic disorders' },
+        { id: 'B1.3', name: 'Gene technology',                  sub: 'Genetic engineering, GM crops, cloning, gene therapy, ethical issues' },
+        { id: 'B2.1', name: 'Causes of disease',                sub: 'Communicable vs non-communicable, pathogens, transmission' },
+        { id: 'B2.2', name: 'Defending against pathogens',      sub: 'Physical/chemical barriers, white blood cells, antibodies' },
+        { id: 'B2.3', name: 'Preventing the spread of infections', sub: 'Vaccines, hygiene, antibiotics, public health' },
+        { id: 'B2.4', name: 'Identifying the cause of an infection', sub: 'Diagnosis, monoclonal antibodies, drug development' },
+        { id: 'B2.5', name: 'Lifestyle, genes and the environment', sub: 'Risk factors for disease, diet, smoking, alcohol, exercise' },
+        { id: 'B2.6', name: 'Treating non-communicable disease', sub: 'Drugs, surgery, stents, statins, transplants' },
+        { id: 'B3.1', name: 'Photosynthesis',                   sub: 'Word/symbol equations, leaf structure, limiting factors' },
+        { id: 'B3.2', name: 'How producers get the substances they need', sub: 'Mineral ions, transpiration, root hair cells, water uptake' },
+        { id: 'B3.3', name: 'Interdependence in ecosystems',     sub: 'Food webs, decomposition, nutrient cycles, microorganisms' },
+        { id: 'B3.4', name: 'Populations in ecosystems',         sub: 'Sampling techniques, abiotic & biotic factors, pollution' },
+      ]},
+      { label: 'OCR B GCSE J257 (Twenty First Century) — Paper 2', topics: [
+        { id: 'B4.1', name: 'Cellular respiration',              sub: 'Aerobic & anaerobic, ATP, exercise, oxygen debt' },
+        { id: 'B4.2', name: 'Cell structures and mitochondria',  sub: 'Eukaryotic vs prokaryotic, organelles, microscopy' },
+        { id: 'B4.3', name: 'Growth and development',            sub: 'Mitosis, stem cells, differentiation, percentile charts' },
+        { id: 'B5.1', name: 'Substances in, out and around the body', sub: 'Heart, blood vessels, gas exchange, digestion' },
+        { id: 'B5.2', name: 'The nervous system',                sub: 'Neurones, reflex arc, brain, eye' },
+        { id: 'B5.3', name: 'Hormonal control',                  sub: 'Endocrine glands, blood glucose, menstrual cycle' },
+        { id: 'B5.4', name: 'Maintaining a constant internal environment', sub: 'Homeostasis, temperature, water balance, kidney function' },
+        { id: 'B6.1', name: 'How the theory of evolution was developed', sub: 'Darwin, Wallace, fossils, the case for evolution' },
+        { id: 'B6.2', name: 'How evolution takes place',         sub: 'Variation, mutation, natural selection, antibiotic resistance, speciation' },
+        { id: 'B6.3', name: 'How biodiversity is affected',      sub: 'Human impact, conservation, indicator species, extinction' },
+      ]},
+    ]
+  },
+  'Biology_AQA|gcse': {
+    sections: [
+      { label: 'AQA GCSE — Paper 1', topics: [
+        { id: '4.1', name: 'Cell Biology', sub: 'Prokaryote/eukaryote, microscopy, transport, mitosis, stem cells' },
+        { id: '4.2', name: 'Organisation', sub: 'Enzymes, digestion, heart & blood vessels, plant transport' },
+        { id: '4.3', name: 'Infection and Response', sub: 'Pathogens, immunity, vaccines, antibiotics, monoclonal antibodies' },
+        { id: '4.4', name: 'Bioenergetics', sub: 'Photosynthesis, respiration, anaerobic respiration, metabolism' },
+      ]},
+      { label: 'AQA GCSE — Paper 2', topics: [
+        { id: '4.5', name: 'Homeostasis and Response', sub: 'Nervous system, hormones, blood glucose, reproduction, kidneys, plant hormones' },
+        { id: '4.6', name: 'Inheritance, Variation and Evolution', sub: 'DNA, genetics, mutation, natural selection, classification' },
+        { id: '4.7', name: 'Ecology', sub: 'Ecosystems, biodiversity, carbon/water/nitrogen cycles, human impacts' },
+      ]},
+    ]
+  },
+  'Biology_Edexcel|gcse': {
+    sections: [
+      { label: 'Edexcel GCSE (1BI0) — Paper 1', topics: [
+        { id: '1', name: 'Key Concepts in Biology',                     sub: 'Cells, enzymes, microscopy, transport across membranes' },
+        { id: '2', name: 'Cells and Control',                           sub: 'Mitosis, growth, stem cells, nervous system, brain, eye' },
+        { id: '3', name: 'Genetics',                                    sub: 'Reproduction, meiosis, DNA, inheritance, variation' },
+        { id: '4', name: 'Natural Selection & Genetic Modification',    sub: 'Evolution, classification, selective breeding, GM, tissue culture' },
+        { id: '5', name: 'Health, Disease & Development of Medicines',  sub: 'Pathogens, immunity, antibiotics, non-communicable disease, cancer' },
+      ]},
+      { label: 'Edexcel GCSE (1BI0) — Paper 2', topics: [
+        { id: '6', name: 'Plant Structures and Their Functions',         sub: 'Photosynthesis, plant transport, plant hormones, agriculture' },
+        { id: '7', name: 'Animal Coordination, Control & Homeostasis',   sub: 'Hormones, blood glucose, thermoregulation, osmoregulation' },
+        { id: '8', name: 'Exchange & Transport in Animals',              sub: 'Surface area, diffusion, blood, circulatory system, lungs' },
+        { id: '9', name: 'Ecosystems & Material Cycles',                 sub: 'Abiotic/biotic factors, water/carbon/nitrogen cycles, human impacts' },
+      ]},
+    ]
+  },
+  'Biology_Edexcel IGCSE|gcse': {
+    sections: [
+      { label: 'Edexcel IGCSE (4BI1) — Paper 1B/1BR', topics: [
+        { id: '1.1', name: 'Characteristics & Variety of Living Organisms',  sub: 'Eight life processes, five kingdoms, viruses, pathogens' },
+        { id: '2.1', name: 'Levels of Organisation & Cell Structure',       sub: 'Cell → tissue → organ → system; plant & animal cells, microscopy' },
+        { id: '2.2', name: 'Biological Molecules',                          sub: 'Carbohydrates, lipids, proteins, enzymes, food tests' },
+        { id: '2.3', name: 'Movement of Substances',                        sub: 'Diffusion, osmosis, active transport, surface area' },
+        { id: '2.4', name: 'Nutrition',                                     sub: 'Photosynthesis, leaf structure, human digestion, balanced diet' },
+        { id: '2.5', name: 'Respiration',                                   sub: 'Aerobic, anaerobic, word & symbol equations, investigations' },
+        { id: '2.6', name: 'Gas Exchange',                                  sub: 'Leaves, stomata, human lungs, breathing, smoking effects' },
+        { id: '2.7', name: 'Transport',                                     sub: 'Xylem, phloem, transpiration, blood, heart, circulation' },
+        { id: '2.8', name: 'Excretion',                                     sub: 'Leaves, kidneys, nephron, ADH, dialysis, transplant' },
+        { id: '2.9', name: 'Coordination & Response',                       sub: 'Tropisms, auxins, nervous system, reflex arc, eye, hormones, homeostasis' },
+      ]},
+      { label: 'Edexcel IGCSE (4BI1) — Paper 2B/2BR', topics: [
+        { id: '3.1', name: 'Reproduction',                                  sub: 'Asexual vs sexual, plants, humans, pregnancy, STIs' },
+        { id: '3.2', name: 'Inheritance',                                   sub: 'DNA, meiosis, monohybrid, sex determination, mutation, evolution' },
+        { id: '4.1', name: 'The Organism in its Environment',               sub: 'Ecosystems, quadrats, pooters, abiotic & biotic factors' },
+        { id: '4.2', name: 'Feeding Relationships',                         sub: 'Food chains, pyramids of biomass, energy flow, trophic levels' },
+        { id: '4.3', name: 'Cycles within Ecosystems',                      sub: 'Carbon cycle, water cycle, nitrogen cycle, decomposers' },
+        { id: '4.4', name: 'Human Influences on the Environment',           sub: 'Pollution, eutrophication, greenhouse effect, deforestation, conservation' },
+        { id: '5.1', name: 'Food Production',                               sub: 'Glasshouses, fertilisers, pest control, fish farming, yeast, bread, yoghurt' },
+        { id: '5.2', name: 'Selective Breeding',                            sub: 'Artificial selection in plants & animals' },
+        { id: '5.3', name: 'Genetic Modification',                          sub: 'GM crops, insulin production, restriction enzymes, ligase, vectors' },
+        { id: '5.4', name: 'Cloning',                                       sub: 'Plant cloning, micropropagation, nuclear transfer, ethics' },
+      ]},
+      { label: 'Required Practicals', topics: [
+        { id: 'RP', name: 'Required Practicals',                            sub: 'All prescribed practicals — methods, results, analysis' },
       ]},
     ]
   },
@@ -1517,6 +1660,7 @@ const DIAG_PAGE = {
   'Physics_OCR A|gcse':           { url: 'diagnostics/physics-ocr-a-gcse-diagnostic.html',    total: 6,  first: 'P1'  },
   'Physics_OCR A':                { url: 'diagnostics/physics-ocr-a-diagnostic.html',    total: 6,  first: 'M1'  },
   'Physics_OCR B':                { url: 'diagnostics/physics-ocr-b-diagnostic.html',    total: 6,  first: 'B1'  },
+  'Physics_OCR B|gcse':           { url: 'diagnostics/physics-ocr-b-gcse-diagnostic.html', total: 6,  first: 'P1'  },
   'Economics_AQA':                { url: 'diagnostics/economics-aqa-diagnostic.html',         total: 10, first: '3.1.1' },
   'Economics_Edexcel A':          { url: 'diagnostics/economics-edexcel-a-diagnostic.html',   total: 8,  first: '1.1' },
   'Economics_Edexcel B':          { url: 'diagnostics/economics-edexcel-b-diagnostic.html',   total: 8,  first: '1.1' },
@@ -1526,10 +1670,15 @@ const DIAG_PAGE = {
   'Chemistry_OCR A':              { url: 'diagnostics/chemistry-ocr-a-diagnostic.html',       total: 6,  first: 'M1'  },
   'Chemistry_OCR B':              { url: 'diagnostics/chemistry-ocr-b-diagnostic.html',       total: 6,  first: 'S1'  },
   'Biology_AQA':                  { url: 'diagnostics/biology-aqa-diagnostic.html',           total: 8,  first: 'T1'  },
+  'Biology_AQA|gcse':             { url: 'diagnostics/biology-aqa-gcse-diagnostic.html',      total: 7,  first: '4.1' },
+  'Biology_Edexcel|gcse':         { url: 'diagnostics/biology-edexcel-gcse-diagnostic.html',  total: 9,  first: '1'   },
+  'Biology_Edexcel IGCSE|gcse':   { url: 'diagnostics/biology-edexcel-igcse-diagnostic.html', total: 21, first: '1.1' },
   'Biology_Edexcel A':            { url: 'diagnostics/biology-edexcel-a-diagnostic.html',     total: 8,  first: 'T1'  },
   'Biology_Edexcel B':            { url: 'diagnostics/biology-edexcel-b-diagnostic.html',     total: 8,  first: 'S1'  },
   'Biology_OCR A':                { url: 'diagnostics/biology-ocr-a-diagnostic.html',         total: 6,  first: 'M1'  },
+  'Biology_OCR A|gcse':           { url: 'diagnostics/biology-ocr-a-gcse-diagnostic.html',    total: 15, first: 'B1.1' },
   'Biology_OCR B':                { url: 'diagnostics/biology-ocr-b-diagnostic.html',         total: 6,  first: 'B1'  },
+  'Biology_OCR B|gcse':           { url: 'diagnostics/biology-ocr-b-gcse-diagnostic.html',    total: 22, first: 'B1.1' },
   'Geography_AQA':                { url: 'diagnostics/geography-aqa-diagnostic.html',         total: 8,  first: '1.1' },
   'Geography_Edexcel':            { url: 'diagnostics/geography-edexcel-diagnostic.html',     total: 8,  first: 'T1'  },
   'Geography_OCR':                { url: 'diagnostics/geography-ocr-diagnostic.html',         total: 8,  first: '1.1' },

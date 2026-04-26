@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Diagnostic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="../study-tracker.js"></script>
+  <script src="../questions/biology/biology-ocr-b-gcse.js"></script>
+  <script src="../questions/biology/biology-ocr-b-gcse-written.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EAF2FC;
+      --surface: #FFFFFF;
+      --surface2: #F0F6FD;
+      --border: #B8D0E8;
+      --border-hover: #2563EB;
+      --text: #0B1E3F;
+      --muted: #445F85;
+      --muted2: #7891B0;
+      --accent: #2563EB;
+      --accent-dark: #1D4ED8;
+      --green: #16A34A;
+      --green-bg: rgba(22,163,74,0.07);
+      --green-border: rgba(22,163,74,0.18);
+      --amber: #D97706;
+      --amber-bg: rgba(217,119,6,0.07);
+      --amber-border: rgba(217,119,6,0.18);
+      --red: #DC2626;
+      --red-bg: rgba(220,38,38,0.07);
+      --red-border: rgba(220,38,38,0.18);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html, body {
+      min-height: 100vh;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── TOP BAR ── */
+    .topbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      height: 60px;
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 0 28px;
+    }
+    .topbar-left { display: flex; align-items: center; gap: 12px; }
+    .logo-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 10px rgba(37,99,235,0.6); }
+    .logo-text { font-family: var(--font-display); font-size: 19px; color: var(--text); }
+    .topbar-right { display: flex; align-items: center; gap: 10px; }
+    .topic-badge {
+      font-size: 13px; font-weight: 700; letter-spacing: 0.04em;
+      background: rgba(37,99,235,0.15); color: var(--accent);
+      padding: 5px 12px; border-radius: 20px;
+      border: 1px solid rgba(37,99,235,0.25);
+    }
+    .topbar-back {
+      display: flex; align-items: center; gap: 6px;
+      font-size: 13px; font-weight: 500; color: var(--muted);
+      text-decoration: none; padding: 7px 12px; border-radius: 8px;
+      border: 1px solid var(--border); transition: all 0.15s;
+    }
+    .topbar-back:hover { color: var(--text); border-color: var(--muted2); }
+
+    /* ── PAGE ── */
+    .page {
+      min-height: 100vh;
+      display: flex; align-items: flex-start; justify-content: center;
+      padding: 88px 20px 60px;
+    }
+    .card-wrapper { width: 100%; max-width: 700px; }
+
+    /* ── PROGRESS ── */
+    .progress-row {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 28px;
+    }
+    .progress-track {
+      flex: 1; height: 8px; background: var(--surface2); border-radius: 99px; overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%; border-radius: 99px;
+      background: linear-gradient(90deg, var(--accent), #4FC3F7);
+      transition: width 0.5s ease;
+    }
+    .progress-label {
+      font-size: 14px; font-weight: 600; color: var(--muted); white-space: nowrap;
+    }
+    .progress-dots { display: flex; gap: 6px; }
+    .progress-pip {
+      width: 10px; height: 10px; border-radius: 50%;
+      background: var(--surface2); border: 1px solid var(--border); transition: all 0.3s;
+    }
+    .progress-pip.done-green  { background: var(--green); border-color: var(--green); }
+    .progress-pip.done-amber  { background: var(--amber); border-color: var(--amber); }
+    .progress-pip.done-red    { background: var(--red);   border-color: var(--red); }
+    .progress-pip.done-miss   { background: var(--muted2); border-color: var(--muted2); }
+    .progress-pip.current     { background: var(--accent); border-color: var(--accent); box-shadow: 0 0 8px rgba(37,99,235,0.6); }
+
+    /* ── QUESTION CARD ── */
+    .q-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 40px;
+      box-shadow: 0 8px 40px rgba(37,99,235,0.15);
+    }
+
+    .q-header {
+      display: flex; align-items: center; justify-content: space-between;
+      margin-bottom: 28px;
+    }
+    .q-type-badge {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; padding: 5px 12px; border-radius: 20px;
+      border: 1px solid;
+    }
+    .q-type-badge.mcq     { background: rgba(37,99,235,0.12); color: var(--accent); border-color: rgba(37,99,235,0.3); }
+    .q-type-badge.written { background: rgba(245,158,11,0.12); color: var(--amber); border-color: rgba(245,158,11,0.3); }
+    .q-marks {
+      font-size: 13px; font-weight: 600; color: var(--muted);
+    }
+
+    .q-text {
+      font-size: 22px; font-weight: 700; line-height: 1.5;
+      color: var(--text); margin-bottom: 32px;
+    }
+
+    /* ── MCQ OPTIONS ── */
+    .options { display: flex; flex-direction: column; gap: 14px; }
+
+    .option-btn {
+      display: flex; align-items: flex-start; gap: 16px;
+      padding: 18px 20px;
+      background: var(--surface2);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      cursor: pointer; text-align: left;
+      font-family: var(--font-body); font-size: 16px; font-weight: 500;
+      color: var(--text); line-height: 1.5;
+      transition: all 0.15s;
+    }
+    .option-btn:hover:not(:disabled):not(.selected) {
+      border-color: var(--accent);
+      background: rgba(37,99,235,0.08);
+    }
+    .option-btn.selected {
+      border-color: var(--accent);
+      background: rgba(37,99,235,0.15);
+    }
+    .option-btn.correct {
+      border-color: var(--green);
+      background: var(--green-bg);
+    }
+    .option-btn.wrong {
+      border-color: var(--red);
+      background: var(--red-bg);
+    }
+    .option-btn.reveal {
+      border-color: var(--green);
+      background: var(--green-bg);
+      opacity: 0.6;
+    }
+    .option-btn:disabled { cursor: default; }
+
+    .option-letter {
+      flex-shrink: 0; width: 32px; height: 32px; border-radius: 10px;
+      background: var(--border); color: var(--muted);
+      font-size: 13px; font-weight: 800;
+      display: flex; align-items: center; justify-content: center;
+      transition: all 0.15s;
+    }
+    .option-btn.selected .option-letter { background: var(--accent); color: #fff; }
+    .option-btn.correct  .option-letter { background: var(--green); color: #fff; }
+    .option-btn.wrong    .option-letter { background: var(--red);   color: #fff; }
+    .option-btn.reveal   .option-letter { background: var(--green); color: #fff; }
+
+    /* ── WRITTEN ANSWER ── */
+    .written-area {
+      width: 100%;
+      min-height: 160px;
+      padding: 18px 20px;
+      background: var(--surface2);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px; font-weight: 500;
+      line-height: 1.6;
+      resize: vertical; outline: none;
+      transition: border-color 0.15s;
+    }
+    .written-area::placeholder { color: var(--muted2); }
+    .written-area:focus { border-color: var(--accent); }
+    .written-hint {
+      font-size: 13px; color: var(--muted); margin-top: 10px;
+    }
+
+    /* ── MODEL ANSWER ── */
+    .model-answer-wrap {
+      margin-top: 20px;
+      background: rgba(245,158,11,0.07);
+      border: 1px solid var(--amber-border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .model-answer-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 0.06em;
+      text-transform: uppercase; color: var(--amber);
+      padding: 12px 20px; border-bottom: 1px solid var(--amber-border);
+      background: rgba(245,158,11,0.05);
+    }
+    .model-answer-text {
+      padding: 18px 20px;
+      font-size: 15px; font-weight: 400; color: var(--text);
+      line-height: 1.75; white-space: pre-line;
+    }
+
+    /* ── SELF-MARK BUTTONS ── */
+    .self-mark-row {
+      display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap;
+    }
+    .self-mark-btn {
+      flex: 1; min-width: 140px;
+      padding: 14px 16px;
+      border-radius: 12px; border: 2px solid;
+      font-family: var(--font-body); font-size: 15px; font-weight: 700;
+      cursor: pointer; transition: all 0.15s;
+    }
+    .self-mark-btn.full    { background: var(--green-bg); border-color: var(--green-border); color: var(--green); }
+    .self-mark-btn.partial { background: var(--amber-bg); border-color: var(--amber-border); color: var(--amber); }
+    .self-mark-btn.miss    { background: var(--red-bg);   border-color: var(--red-border);   color: var(--red);   }
+    .self-mark-btn:hover   { filter: brightness(1.15); transform: translateY(-1px); }
+
+    /* ── FEEDBACK BAR ── */
+    .feedback-bar {
+      margin-top: 20px; padding: 14px 18px;
+      border-radius: 12px; font-size: 15px; font-weight: 600;
+      display: none; line-height: 1.5;
+    }
+    .feedback-bar.show { display: block; }
+    .feedback-bar.correct-fb { background: var(--green-bg); color: var(--green); border: 1px solid var(--green-border); }
+    .feedback-bar.wrong-fb   { background: var(--red-bg);   color: var(--red);   border: 1px solid var(--red-border); }
+
+    /* ── BUTTONS ── */
+    .btn-confirm {
+      margin-top: 24px; width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; font-family: var(--font-body); font-size: 17px; font-weight: 700;
+      border: none; border-radius: 14px; cursor: pointer;
+      transition: all 0.15s; display: none;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+    }
+    .btn-confirm.show { display: block; }
+    .btn-confirm:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,99,235,0.4); }
+
+    .btn-reveal {
+      margin-top: 20px; width: 100%;
+      padding: 16px;
+      background: rgba(245,158,11,0.1);
+      color: var(--amber); font-family: var(--font-body); font-size: 16px; font-weight: 700;
+      border: 2px solid var(--amber-border); border-radius: 14px; cursor: pointer;
+      transition: all 0.15s;
+    }
+    .btn-reveal:hover { background: rgba(245,158,11,0.18); }
+
+    .btn-next {
+      margin-top: 24px; width: 100%;
+      padding: 18px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; font-family: var(--font-body); font-size: 17px; font-weight: 700;
+      border: none; border-radius: 14px; cursor: pointer;
+      transition: all 0.15s; display: none;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+    }
+    .btn-next.show { display: block; }
+    .btn-next:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,99,235,0.4); }
+
+    /* ── RESULT ── */
+    .result-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 56px 44px;
+      text-align: center;
+      box-shadow: 0 8px 40px rgba(37,99,235,0.15);
+    }
+    .result-glow {
+      width: 120px; height: 120px; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 56px; margin: 0 auto 28px;
+      border: 3px solid;
+    }
+    .result-glow.green { background: var(--green-bg); border-color: var(--green-border); box-shadow: 0 0 40px rgba(34,197,94,0.25); }
+    .result-glow.amber { background: var(--amber-bg); border-color: var(--amber-border); box-shadow: 0 0 40px rgba(245,158,11,0.25); }
+    .result-glow.red   { background: var(--red-bg);   border-color: var(--red-border);   box-shadow: 0 0 40px rgba(239,68,68,0.25); }
+
+    .result-rag-label {
+      font-size: 14px; font-weight: 800; letter-spacing: 0.1em;
+      text-transform: uppercase; margin-bottom: 10px;
+    }
+    .result-rag-label.green { color: var(--green); }
+    .result-rag-label.amber { color: var(--amber); }
+    .result-rag-label.red   { color: var(--red); }
+
+    .result-topic {
+      font-family: var(--font-display); font-size: 30px;
+      color: var(--text); margin-bottom: 14px; letter-spacing: -0.01em;
+    }
+    .result-desc {
+      font-size: 16px; font-weight: 400; color: var(--muted);
+      line-height: 1.7; max-width: 440px; margin: 0 auto 36px;
+    }
+
+    .result-breakdown {
+      display: flex; gap: 10px; justify-content: center; margin-bottom: 36px; flex-wrap: wrap;
+    }
+    .breakdown-chip {
+      padding: 8px 16px; border-radius: 20px;
+      font-size: 13px; font-weight: 700; border: 1px solid;
+    }
+    .breakdown-chip.hit-green  { background: var(--green-bg); color: var(--green); border-color: var(--green-border); }
+    .breakdown-chip.hit-amber  { background: var(--amber-bg); color: var(--amber); border-color: var(--amber-border); }
+    .breakdown-chip.hit-red    { background: var(--red-bg);   color: var(--red);   border-color: var(--red-border); }
+    .breakdown-chip.miss       { background: var(--surface2); color: var(--muted); border-color: var(--border); }
+
+    .result-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+    .btn-primary {
+      padding: 15px 32px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; font-family: var(--font-body); font-size: 16px; font-weight: 700;
+      border: none; border-radius: 14px; cursor: pointer;
+      transition: all 0.15s; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.3);
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(37,99,235,0.4); }
+    .btn-outline {
+      padding: 15px 32px;
+      background: transparent; color: var(--muted);
+      font-family: var(--font-body); font-size: 16px; font-weight: 600;
+      border: 2px solid var(--border); border-radius: 14px; cursor: pointer;
+      transition: all 0.15s; text-decoration: none;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .btn-outline:hover { border-color: var(--muted2); color: var(--text); }
+
+    /* ── SAVING ── */
+    .saving-row {
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      font-size: 14px; color: var(--muted); margin-bottom: 28px;
+    }
+    .spinner {
+      width: 18px; height: 18px; border: 2px solid var(--border);
+      border-top-color: var(--accent); border-radius: 50%;
+      animation: spin 0.6s linear infinite;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ── ERROR / LOADING ── */
+    .screen-center { text-align: center; padding: 64px 24px; }
+    .screen-icon { font-size: 52px; margin-bottom: 16px; }
+    .screen-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; }
+    .screen-sub { font-size: 15px; color: var(--muted); }
+  </style>
+</head>
+<body>
+
+  <div class="topbar">
+    <div class="topbar-left">
+      <div class="logo-dot"></div>
+      <span class="logo-text">RAG Learning</span>
+    </div>
+    <div class="topbar-right">
+      <span class="topic-badge" id="topicBadge">—</span>
+      <a href="../Dashboard.html" class="topbar-back">← Dashboard</a>
+    </div>
+  </div>
+
+  <div class="page">
+    <div class="card-wrapper" id="cardWrapper">
+      <div class="screen-center">
+        <div class="screen-icon">⏳</div>
+        <div class="screen-title">Loading diagnostic…</div>
+      </div>
+    </div>
+  </div>
+
+<script>
+/* ═══════════════════════════════════════
+   SCORING ENGINE (not exposed in UI)
+═══════════════════════════════════════ */
+const W = { green: 1, amber: 2, red: 3, written_full: 3, written_partial: 1.5 };
+const THRESHOLD = { green: 8, amber: 4 };
+
+/*  Build 5 questions: 2 Green + 2 Amber + 1 Red
+    At least 1 MUST be written; the rest are MCQ.
+    The written slot is assigned to a random tier. */
+function buildQuestionSet(mcq, written) {
+  const w = written || { green: [], amber: [], red: [] };
+
+  // Decide which tier gets the written question (random)
+  const tiers = ['green', 'amber', 'red'];
+  const writtenTier = tiers[Math.floor(Math.random() * tiers.length)];
+
+  // How many of each tier we need: 2G, 2A, 1R
+  const need = { green: 2, amber: 2, red: 1 };
+
+  const selected = [];
+
+  for (const tier of tiers) {
+    const count = need[tier];
+    // One written question goes into this tier
+    if (tier === writtenTier && w[tier] && w[tier].length > 0) {
+      const wq = pick(w[tier], 1).map(q => ({ ...q, type: 'written', tier }));
+      selected.push(...wq);
+      // Fill the rest of this tier with MCQ
+      if (count > 1 && mcq[tier]) {
+        selected.push(...pick(mcq[tier], count - 1).map(q => ({ ...q, type: 'mcq', tier })));
+      }
+    } else {
+      // All MCQ for this tier
+      if (mcq[tier]) {
+        selected.push(...pick(mcq[tier], count).map(q => ({ ...q, type: 'mcq', tier })));
+      }
+    }
+  }
+
+  // Safety: if no written ended up selected (missing data), force one
+  if (!selected.some(q => q.type === 'written')) {
+    for (const tier of tiers) {
+      if (w[tier] && w[tier].length > 0) {
+        const wq = pick(w[tier], 1).map(q => ({ ...q, type: 'written', tier }))[0];
+        // Replace the last MCQ of the same tier
+        const idx = selected.findIndex(q => q.type === 'mcq' && q.tier === tier);
+        if (idx !== -1) { selected[idx] = wq; break; }
+      }
+    }
+  }
+
+  return shuffle(selected);
+}
+
+function computeRag(results) {
+  const score = results.reduce((s, r) => s + (r.pts || 0), 0);
+  if (score >= THRESHOLD.green) return 'green';
+  if (score >= THRESHOLD.amber) return 'amber';
+  return 'red';
+}
+
+/* ═══════════════════════════════════════
+   UTILS
+═══════════════════════════════════════ */
+function pick(arr, n) {
+  const a = [...arr], out = [];
+  while (out.length < n && a.length) {
+    const i = Math.floor(Math.random() * a.length);
+    out.push(a.splice(i, 1)[0]);
+  }
+  return out;
+}
+function shuffle(arr) {
+  const a = [...arr];
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [a[i], a[j]] = [a[j], a[i]];
+  }
+  return a;
+}
+const LETTERS = ['A','B','C','D'];
+
+/* ═══════════════════════════════════════
+   RESULT COPY
+═══════════════════════════════════════ */
+const RAG = {
+  green: { emoji:'🟢', label:'Green — Strong Understanding', desc:'Excellent work. You handled both the recall and the harder questions well. Keep revisiting this topic periodically to stay sharp.' },
+  amber: { emoji:'🟡', label:'Amber — Developing', desc:'You have the foundations but the trickier questions need more work. Go back through the notes, focus on the areas you missed, then re-test.' },
+  red:   { emoji:'🔴', label:'Red — Needs Revision', desc:'This topic needs dedicated revision. Work carefully through the notes and make sure you understand the key concepts before testing again.' },
+};
+
+/* ═══════════════════════════════════════
+   STATE
+═══════════════════════════════════════ */
+const params   = new URLSearchParams(location.search);
+const topicKey = params.get('topic') || '';
+const wrapper  = document.getElementById('cardWrapper');
+
+let user      = null;
+let questions = [];   // mixed MCQ + written
+let qIndex    = 0;
+let results   = [];
+let selectedI = null; // index of currently selected MCQ option
+
+/* ═══════════════════════════════════════
+   INIT
+═══════════════════════════════════════ */
+async function init() {
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session) { location.href = '../auth/login.html'; return; }
+  user = session.user;
+
+  const mcqData     = BIOLOGY_OCR_B_GCSE_QUESTIONS[topicKey];
+  const writtenData = BIOLOGY_OCR_B_GCSE_WRITTEN?.[topicKey];
+
+  if (!mcqData) { showError(`Topic "${topicKey}" not found.`); return; }
+
+  document.title = `RAG Learning — Diagnostic ${topicKey}`;
+  document.getElementById('topicBadge').textContent = `${topicKey} — ${mcqData.name}`;
+
+  // Persist questions across refresh so the same set reappears
+  const storeKey = `diag_${topicKey}`;
+  const saved = sessionStorage.getItem(storeKey);
+  if (saved) {
+    try { questions = JSON.parse(saved); } catch(e) { questions = null; }
+  }
+  if (!questions || !questions.length) {
+    questions = buildQuestionSet(mcqData, writtenData);
+    sessionStorage.setItem(storeKey, JSON.stringify(questions));
+  }
+  if (!questions || !questions.length) {
+    showError(`Questions for "${topicKey} — ${mcqData.name}" aren't available yet. Try another topic or come back later.`);
+    return;
+  }
+  renderIntro(mcqData.name);
+}
+
+function renderIntro(topicName) {
+  wrapper.innerHTML = `
+    <div class="question-card" style="text-align:center;padding:48px 40px;">
+      <div style="font-size:48px;margin-bottom:20px;">◎</div>
+      <div style="font-family:var(--font-display);font-size:24px;margin-bottom:8px;">${topicKey} — ${topicName}</div>
+      <p style="color:var(--muted);font-size:15px;line-height:1.7;max-width:440px;margin:0 auto 28px;">
+        This diagnostic has <strong>5 questions</strong> to test your understanding of this topic.
+      </p>
+      <div style="display:flex;flex-direction:column;gap:10px;max-width:360px;margin:0 auto 32px;text-align:left;">
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
+          <span style="font-size:18px;">◎</span>
+          <span style="font-size:14px;"><strong>4 multiple choice</strong> — pick the correct answer</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
+          <span style="font-size:18px;">✏️</span>
+          <span style="font-size:14px;"><strong>1 written question</strong> — write your answer, then compare with the model answer</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:12px;padding:10px 14px;background:var(--surface2);border:1px solid var(--border);border-radius:10px;">
+          <span style="font-size:18px;">🎯</span>
+          <span style="font-size:14px;">Your <strong>RAG colour</strong> will update based on your score</span>
+        </div>
+      </div>
+      <button class="btn-confirm show" onclick="startDiagnostic()" style="display:inline-block;width:auto;padding:16px 48px;">Start Diagnostic →</button>
+    </div>
+  `;
+}
+
+function startDiagnostic() {
+  renderQuestion();
+}
+
+/* ═══════════════════════════════════════
+   PROGRESS PIPS
+═══════════════════════════════════════ */
+function buildPips() {
+  return questions.map((_, i) => {
+    let cls = 'progress-pip';
+    if (i < qIndex) {
+      const r = results[i];
+      if (r) {
+        if (r.pts >= W.green || r.pts >= W.amber) cls += ' done-green';
+        else cls += ' done-miss';
+      }
+    } else if (i === qIndex) {
+      cls += ' current';
+    }
+    return `<div class="${cls}"></div>`;
+  }).join('');
+}
+
+/* ═══════════════════════════════════════
+   RENDER QUESTION
+═══════════════════════════════════════ */
+function renderQuestion() {
+  selectedI = null;
+  const q     = questions[qIndex];
+  const total = questions.length;
+  const pct   = (qIndex / total) * 100;
+
+  const typeBadge = q.type === 'written'
+    ? `<span class="q-type-badge written">✏️ Written</span>`
+    : `<span class="q-type-badge mcq">◎ Multiple Choice</span>`;
+
+  const marks = q.marks ? `<span class="q-marks">[${q.marks} marks]</span>` : '';
+
+  wrapper.innerHTML = `
+    <div class="progress-row">
+      <div class="progress-track">
+        <div class="progress-fill" style="width:${pct}%"></div>
+      </div>
+      <div class="progress-dots">${buildPips()}</div>
+      <span class="progress-label">${qIndex + 1} / ${total}</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-header">
+        ${typeBadge}
+        ${marks}
+      </div>
+      <div class="q-text">${q.q}</div>
+      ${q.type === 'written' ? renderWritten(q) : renderMCQ(q)}
+    </div>
+  `;
+}
+
+/* ── MCQ ── */
+function renderMCQ(q) {
+  return `
+    <div class="options" id="options">
+      ${q.options.map((opt, i) => `
+        <button class="option-btn" id="opt${i}" onclick="selectOption(${i})" data-idx="${i}">
+          <span class="option-letter">${LETTERS[i]}</span>
+          <span>${opt}</span>
+        </button>
+      `).join('')}
+    </div>
+    <div class="feedback-bar" id="feedbackBar"></div>
+    <button class="btn-confirm" id="btnConfirm" onclick="confirmMCQ()">
+      Confirm Answer
+    </button>
+    <button class="btn-next" id="btnNext" onclick="nextQuestion()">
+      ${qIndex + 1 < questions.length ? 'Next Question →' : 'See My Results →'}
+    </button>
+  `;
+}
+
+/* ── Written ── */
+function renderWritten(q) {
+  return `
+    <textarea class="written-area" id="writtenInput" placeholder="Write your answer here…"></textarea>
+    <p class="written-hint">Write your answer above, then reveal the model answer to compare.</p>
+    <button class="btn-reveal" id="btnReveal" onclick="revealModel()">Reveal Model Answer</button>
+    <div id="modelAnswerWrap" style="display:none">
+      <div class="model-answer-wrap">
+        <div class="model-answer-label">📋 Model Answer</div>
+        <div class="model-answer-text">${q.modelAnswer}</div>
+      </div>
+      <div class="self-mark-row">
+        <button class="self-mark-btn full"    onclick="selfMark('full')">✓ Full marks</button>
+        <button class="self-mark-btn partial" onclick="selfMark('partial')">~ Partially right</button>
+        <button class="self-mark-btn miss"    onclick="selfMark('miss')">✗ Missed it</button>
+      </div>
+    </div>
+    <button class="btn-next" id="btnNext" onclick="nextQuestion()">
+      ${qIndex + 1 < questions.length ? 'Next Question →' : 'See My Results →'}
+    </button>
+  `;
+}
+
+/* ═══════════════════════════════════════
+   MCQ INTERACTION
+═══════════════════════════════════════ */
+function selectOption(i) {
+  if (document.getElementById('btnNext').classList.contains('show')) return;
+
+  // Clear previous selection
+  document.querySelectorAll('.option-btn').forEach(b => b.classList.remove('selected'));
+  document.getElementById(`opt${i}`).classList.add('selected');
+  selectedI = i;
+
+  // Show confirm button
+  document.getElementById('btnConfirm').classList.add('show');
+}
+
+function confirmMCQ() {
+  if (selectedI === null) return;
+  const q       = questions[qIndex];
+  const correct = selectedI === q.answer;
+
+  // Lock all buttons
+  document.querySelectorAll('.option-btn').forEach(b => b.disabled = true);
+  document.getElementById('btnConfirm').style.display = 'none';
+
+  // Style result
+  document.getElementById(`opt${selectedI}`).classList.remove('selected');
+  if (correct) {
+    document.getElementById(`opt${selectedI}`).classList.add('correct');
+  } else {
+    document.getElementById(`opt${selectedI}`).classList.add('wrong');
+    document.getElementById(`opt${q.answer}`).classList.add('reveal');
+  }
+
+  // Feedback
+  const fb = document.getElementById('feedbackBar');
+  fb.classList.add('show');
+  if (correct) {
+    fb.classList.add('correct-fb');
+    fb.textContent = '✓ Correct!';
+  } else {
+    fb.classList.add('wrong-fb');
+    fb.innerHTML = `✗ Incorrect — correct answer: <strong>${q.options[q.answer]}</strong>${q.explanation ? `<div style="margin-top:8px;font-size:13px;line-height:1.6;opacity:0.95;border-top:1px solid rgba(255,255,255,0.2);padding-top:8px"><strong>Working:</strong> ${q.explanation}</div>` : ""}`;
+  }
+
+  // Record
+  results.push({ type: 'mcq', tier: q.tier, pts: correct ? W[q.tier] : 0, correct });
+
+  document.getElementById('btnNext').classList.add('show');
+}
+
+/* ═══════════════════════════════════════
+   WRITTEN INTERACTION
+═══════════════════════════════════════ */
+function revealModel() {
+  document.getElementById('btnReveal').style.display = 'none';
+  document.getElementById('modelAnswerWrap').style.display = 'block';
+
+  const input = document.getElementById('writtenInput');
+  const answerEmpty = !input || !input.value.trim();
+
+  if (answerEmpty) {
+    const q = questions[qIndex];
+    results.push({ type: 'written', tier: q.tier, pts: 0, level: 'miss' });
+    document.querySelectorAll('.self-mark-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
+    const row = document.querySelector('.self-mark-row');
+    if (row) {
+      const note = document.createElement('p');
+      note.style.cssText = 'font-size:13px;color:var(--red);margin-top:12px;text-align:center;width:100%;';
+      note.textContent = 'No answer written — auto-marked 0. Review the model answer above.';
+      row.parentNode.insertBefore(note, row.nextSibling);
+    }
+    document.getElementById('btnNext').classList.add('show');
+  }
+}
+
+function selfMark(level) {
+  const q = questions[qIndex];
+  const pts = level === 'full' ? W.written_full : level === 'partial' ? W.written_partial : 0;
+  results.push({ type: 'written', tier: q.tier, pts, level });
+
+  // Disable self-mark buttons
+  document.querySelectorAll('.self-mark-btn').forEach(b => { b.disabled = true; b.style.opacity = '0.5'; });
+
+  document.getElementById('btnNext').classList.add('show');
+}
+
+/* ═══════════════════════════════════════
+   NAVIGATION
+═══════════════════════════════════════ */
+function nextQuestion() {
+  qIndex++;
+  if (qIndex < questions.length) {
+    renderQuestion();
+  } else {
+    renderResult();
+  }
+}
+
+/* ═══════════════════════════════════════
+   RESULT
+═══════════════════════════════════════ */
+async function renderResult() {
+  const rag     = computeRag(results);
+  const content = RAG[rag];
+  const topicData = BIOLOGY_OCR_B_GCSE_QUESTIONS[topicKey];
+
+  const chips = results.map((r, i) => {
+    const label = r.type === 'written'
+      ? (r.level === 'full' ? '✓ Written' : r.level === 'partial' ? '~ Written' : '✗ Written')
+      : (r.correct ? `✓ Q${i+1}` : `✗ Q${i+1}`);
+    const cls = r.pts > 0 ? (r.pts >= W.green && r.type !== 'written' ? 'hit-green' : 'hit-amber') : 'miss';
+    return `<span class="breakdown-chip ${cls}">${label}</span>`;
+  }).join('');
+
+  wrapper.innerHTML = `
+    <div class="result-card">
+      <div class="result-glow ${rag}">${content.emoji}</div>
+      <div class="result-rag-label ${rag}">${content.label}</div>
+      <div class="result-topic">${topicKey} — ${topicData.name}</div>
+      <p class="result-desc">${content.desc}</p>
+      <div class="result-breakdown">${chips}</div>
+      <div class="saving-row" id="savingRow">
+        <div class="spinner"></div> Saving result…
+      </div>
+      <div class="result-actions" id="resultActions" style="display:none">
+        <a class="btn-primary" href="../Dashboard.html#diagnostic=Biology_OCR%20B">← Back to diagnostics</a>
+        <a class="btn-outline" href="../Dashboard.html">Back to Dashboard</a>
+      </div>
+    </div>
+  `;
+
+  await saveResult(rag, results);
+  sessionStorage.removeItem(`diag_${topicKey}`);
+  document.getElementById('savingRow').style.display = 'none';
+  document.getElementById('resultActions').style.display = 'flex';
+}
+
+/* ═══════════════════════════════════════
+   SAVE
+═══════════════════════════════════════ */
+async function saveResult(rag, results) {
+  if (!user) { console.error('SAVE: no user'); return; }
+  const now = new Date().toISOString();
+
+  // Check if a row already exists
+  const { data: existing } = await supabaseClient
+    .from('topic_progress')
+    .select('id')
+    .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'OCR B').eq('topic', topicKey)
+    .maybeSingle();
+
+  if (existing) {
+    await supabaseClient.from('topic_progress')
+      .update({ rag_status: rag, updated_at: now })
+      .eq('id', existing.id);
+  } else {
+    await supabaseClient.from('topic_progress')
+      .insert({ user_id: user.id, subject: 'Biology', exam_board: 'OCR B', topic: topicKey, rag_status: rag, updated_at: now });
+  }
+
+  // Recalculate subject-level RAG
+  const { data: allTopics } = await supabaseClient
+    .from('topic_progress').select('rag_status')
+    .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'OCR B');
+
+  if (allTopics && allTopics.length > 0) {
+    const total = allTopics.length;
+    const green = allTopics.filter(t => t.rag_status === 'green').length;
+    const red   = allTopics.filter(t => t.rag_status === 'red').length;
+    const subjRag = (green / total) >= 0.7 ? 'green' : (red / total) >= 0.4 ? 'red' : 'amber';
+    await supabaseClient.from('user_subjects').update({ rag_status: subjRag })
+      .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'OCR B');
+  }
+
+  // Check perfect_score medal — all questions answered correctly
+  if (rag === 'green' && results.every(r => r.pts > 0)) {
+    const { data: existing } = await supabaseClient.from('user_medals')
+      .select('id').eq('user_id', user.id).eq('medal_id', 'perfect_score').maybeSingle();
+    if (!existing) {
+      await supabaseClient.from('user_medals').insert({ user_id: user.id, medal_id: 'perfect_score' });
+    }
+  }
+}
+
+/* ═══════════════════════════════════════
+   ERROR
+═══════════════════════════════════════ */
+function showError(msg) {
+  wrapper.innerHTML = `
+    <div class="screen-center">
+      <div class="screen-icon">⚠️</div>
+      <div class="screen-title">Something went wrong</div>
+      <p class="screen-sub" style="margin:8px 0 24px">${msg}</p>
+      <a class="btn-primary" href="../Dashboard.html">← Back to Dashboard</a>
+    </div>
+  `;
+}
+
+init();
+</script>
+</body>
+</html>

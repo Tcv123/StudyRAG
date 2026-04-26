@@ -761,6 +761,20 @@ const DIAG_TOPICS = {
       { id: 'T8', name: 'Control of Gene Expression', sub: 'Gene technology, epigenetics, biotechnology' },
     ]
   },
+  'Biology_Edexcel|gcse': {
+    label: 'Biology — Edexcel (GCSE)', emoji: '🧬', page: 'diagnostics/biology-edexcel-gcse-diagnostic.html',
+    topics: [
+      { id: '1', name: 'Key Concepts in Biology', sub: 'Cells, enzymes, microscopy, transport across membranes' },
+      { id: '2', name: 'Cells and Control', sub: 'Mitosis, growth, stem cells, nervous system, brain, eye' },
+      { id: '3', name: 'Genetics', sub: 'Reproduction, meiosis, DNA, inheritance, variation' },
+      { id: '4', name: 'Natural Selection & Genetic Modification', sub: 'Evolution, classification, selective breeding, GM, tissue culture' },
+      { id: '5', name: 'Health, Disease & Development of Medicines', sub: 'Pathogens, immunity, antibiotics, non-communicable disease, cancer' },
+      { id: '6', name: 'Plant Structures and Their Functions', sub: 'Photosynthesis, plant transport, plant hormones, agriculture' },
+      { id: '7', name: 'Animal Coordination, Control & Homeostasis', sub: 'Hormones, blood glucose, thermoregulation, osmoregulation' },
+      { id: '8', name: 'Exchange & Transport in Animals', sub: 'Surface area, diffusion, blood, circulatory system, lungs' },
+      { id: '9', name: 'Ecosystems & Material Cycles', sub: 'Abiotic/biotic factors, water/carbon/nitrogen cycles, human impacts' },
+    ]
+  },
   'Biology_Edexcel A': {
     label: 'Biology — Edexcel A', emoji: '🧬', page: 'diagnostics/biology-edexcel-a-diagnostic.html',
     topics: [
@@ -796,6 +810,54 @@ const DIAG_TOPICS = {
       { id: 'M4', name: 'Biodiversity, Evolution and Disease', sub: 'Pathogens, immunity, classification, evolution' },
       { id: 'M5', name: 'Communication, Homeostasis and Energy', sub: 'Nervous/hormonal, homeostasis, photosynthesis, respiration' },
       { id: 'M6', name: 'Genetics, Evolution and Ecosystems', sub: 'Inheritance, gene technology, ecosystems' },
+    ]
+  },
+  'Biology_OCR A|gcse': {
+    label: 'Biology — OCR A (GCSE J247 Gateway)', emoji: '🧬', page: 'diagnostics/biology-ocr-a-gcse-diagnostic.html',
+    topics: [
+      { id: 'B1.1', name: 'Cell Structures',                          sub: 'Animal/plant/prokaryote cells, microscopy, magnification, specialised cells' },
+      { id: 'B1.2', name: 'What Happens in Cells',                    sub: 'DNA structure, transcription/translation, enzymes, lock-and-key, factors affecting enzymes' },
+      { id: 'B1.3', name: 'Respiration',                              sub: 'Aerobic/anaerobic respiration, ATP, lactic acid, fermentation, metabolic rate' },
+      { id: 'B1.4', name: 'Photosynthesis',                           sub: 'Word/symbol equation, limiting factors, leaf adaptations, inverse square law' },
+      { id: 'B2.1', name: 'Supplying the Cell',                       sub: 'Diffusion, osmosis, active transport, mitosis, cell cycle, stem cells, differentiation' },
+      { id: 'B2.2', name: 'The Challenges of Size',                   sub: 'Exchange surfaces, circulatory system, blood, heart, lungs, plant transport, transpiration' },
+      { id: 'B3.1', name: 'Coordination — Nervous System',            sub: 'CNS, neurones, synapses, reflex arc, eye, brain' },
+      { id: 'B3.2', name: 'Coordination — Endocrine System',          sub: 'Glands, hormones, blood glucose, diabetes, menstrual cycle, contraception' },
+      { id: 'B3.3', name: 'Maintaining Internal Environments',        sub: 'Homeostasis, thermoregulation, kidney, ADH, plant hormones, tropisms' },
+      { id: 'B4.1', name: 'Ecosystems',                               sub: 'Communities, abiotic/biotic factors, food chains/webs, decomposers, water/carbon/nitrogen cycles' },
+      { id: 'B5.1', name: 'Inheritance',                              sub: 'DNA → genes, meiosis, monohybrid crosses, sex inheritance, genetic disorders' },
+      { id: 'B5.2', name: 'Natural Selection & Evolution',            sub: 'Variation, evolution, antibiotic resistance, evidence for evolution, classification' },
+      { id: 'B6.1', name: 'Monitoring & Maintaining the Environment', sub: 'Sampling techniques, biodiversity, human impact, conservation, indicator species' },
+      { id: 'B6.2', name: 'Feeding the Human Race',                   sub: 'Food security, selective breeding, GM crops, biotechnology, fertilisers' },
+      { id: 'B6.3', name: 'Monitoring & Maintaining Health',          sub: 'Communicable & non-communicable disease, immunity, vaccines, antibiotics, monoclonal antibodies' },
+    ]
+  },
+  'Biology_OCR B|gcse': {
+    label: 'Biology — OCR B (GCSE J257 Twenty First Century)', emoji: '🧬', page: 'diagnostics/biology-ocr-b-gcse-diagnostic.html',
+    topics: [
+      { id: 'B1.1', name: 'The genome and what it does',            sub: 'DNA structure, genes, chromosomes, mutations, the human genome' },
+      { id: 'B1.2', name: 'How genetic information is inherited',   sub: 'Punnett squares, sex inheritance, dominant/recessive, genetic disorders' },
+      { id: 'B1.3', name: 'Gene technology',                        sub: 'Genetic engineering, GM crops, cloning, gene therapy, ethical issues' },
+      { id: 'B2.1', name: 'Causes of disease',                      sub: 'Communicable vs non-communicable, pathogens, transmission' },
+      { id: 'B2.2', name: 'Defending against pathogens',            sub: 'Physical/chemical barriers, white blood cells, antibodies' },
+      { id: 'B2.3', name: 'Preventing the spread of infections',    sub: 'Vaccines, hygiene, antibiotics, public health' },
+      { id: 'B2.4', name: 'Identifying the cause of an infection',  sub: 'Diagnosis, monoclonal antibodies, drug development' },
+      { id: 'B2.5', name: 'Lifestyle, genes and the environment',   sub: 'Risk factors for disease, diet, smoking, alcohol, exercise' },
+      { id: 'B2.6', name: 'Treating non-communicable disease',      sub: 'Drugs, surgery, stents, statins, transplants' },
+      { id: 'B3.1', name: 'Photosynthesis',                         sub: 'Word/symbol equations, leaf structure, limiting factors' },
+      { id: 'B3.2', name: 'Producer substances',                    sub: 'Mineral ions, transpiration, root hair cells, water uptake' },
+      { id: 'B3.3', name: 'Interdependence',                        sub: 'Food webs, decomposition, nutrient cycles, microorganisms' },
+      { id: 'B3.4', name: 'Populations',                            sub: 'Sampling techniques, abiotic & biotic factors, pollution' },
+      { id: 'B4.1', name: 'Cellular respiration',                   sub: 'Aerobic & anaerobic, ATP, exercise, oxygen debt' },
+      { id: 'B4.2', name: 'Cell structures and mitochondria',       sub: 'Eukaryotic vs prokaryotic, organelles, microscopy' },
+      { id: 'B4.3', name: 'Growth and development',                 sub: 'Mitosis, stem cells, differentiation, percentile charts' },
+      { id: 'B5.1', name: 'Substances in, out and around the body', sub: 'Heart, blood vessels, gas exchange, digestion' },
+      { id: 'B5.2', name: 'The nervous system',                     sub: 'Neurones, reflex arc, brain, eye' },
+      { id: 'B5.3', name: 'Hormonal control',                       sub: 'Endocrine glands, blood glucose, menstrual cycle' },
+      { id: 'B5.4', name: 'Maintaining a constant internal environment', sub: 'Homeostasis, temperature, water balance, kidney function' },
+      { id: 'B6.1', name: 'How the theory of evolution was developed', sub: 'Darwin, Wallace, fossils, the case for evolution' },
+      { id: 'B6.2', name: 'How evolution takes place',              sub: 'Variation, mutation, natural selection, antibiotic resistance, speciation' },
+      { id: 'B6.3', name: 'How biodiversity is affected',           sub: 'Human impact, conservation, indicator species, extinction' },
     ]
   },
   'Biology_OCR B': {
@@ -1593,6 +1655,10 @@ const EXAM_DATES = {
     { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
     { paper: 'Paper 3', date: '2026-06-16', time: 'AM', duration: '2h' },
   ],
+  'Biology_Edexcel|gcse': [
+    { paper: 'Paper 1 — Topics 1–5', date: '2026-05-14', time: 'PM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Topics 1, 6–9', date: '2026-06-09', time: 'AM', duration: '1h 45m' },
+  ],
   'Biology_Edexcel A': [
     { paper: 'Paper 1', date: '2026-06-04', time: 'PM', duration: '2h' },
     { paper: 'Paper 2', date: '2026-06-12', time: 'AM', duration: '2h' },
@@ -1607,6 +1673,10 @@ const EXAM_DATES = {
     { paper: 'Paper 1 — Biological Processes', date: '2026-06-05', time: 'PM', duration: '2h 15m' },
     { paper: 'Paper 2 — Biological Diversity', date: '2026-06-13', time: 'AM', duration: '2h 15m' },
     { paper: 'Paper 3 — Unified Biology', date: '2026-06-18', time: 'AM', duration: '1h 30m' },
+  ],
+  'Biology_OCR A|gcse': [
+    { paper: 'Paper 1 — Topics B1, B2, B3 + PAGs', date: '2026-05-19', time: 'AM', duration: '1h 45m' },
+    { paper: 'Paper 2 — Topics B4, B5, B6 + PAGs', date: '2026-06-10', time: 'PM', duration: '1h 45m' },
   ],
   'Biology_OCR B': [
     { paper: 'Paper 1', date: '2026-06-05', time: 'PM', duration: '2h 15m' },

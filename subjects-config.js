@@ -33,7 +33,7 @@
     'Mathematics':         ['AQA', 'OCR', 'Edexcel'],
     'Further Mathematics': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
     'Chemistry':           ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
-    'Biology':             ['AQA', 'Edexcel A', 'Edexcel B', 'OCR A', 'OCR B'],
+    'Biology':             ['AQA', 'Edexcel', 'Edexcel IGCSE', 'Edexcel A', 'Edexcel B', 'OCR A', 'OCR B'],
     'Computer Science':    ['AQA', 'OCR'],
     'Physics':             ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
     'Economics':           ['AQA', 'Edexcel A', 'Edexcel B', 'OCR'],
@@ -50,8 +50,16 @@
     'Spanish':             ['AQA', 'Edexcel', 'Eduqas'],
   };
 
-  // Subject names where Edexcel is not offered at A-Level / AS.
-  const noEdexcelAlevel = ['Computer Science'];
+  // Subject names where the plain "Edexcel" board entry is not offered at
+  // A-Level / AS. Biology A-Level uses "Edexcel A" and "Edexcel B" instead,
+  // so plain "Edexcel" is GCSE-only for Biology.
+  const noEdexcelAlevel = ['Computer Science', 'Biology'];
+
+  // Boards that are GCSE-only for a given subject (hidden at A-Level / AS).
+  // "Edexcel IGCSE" is the International GCSE Biology (4BI1) spec — GCSE-level only.
+  const gcseOnlyBoards = {
+    'Biology': ['Edexcel IGCSE'],
+  };
 
   // Subjects that are visible at A-Level / AS but not yet ready — render
   // as locked "Coming soon" cards on the picker and on subject pages.
@@ -106,9 +114,13 @@
   }
 
   function getBoardsFor(subjectName, level) {
-    const list = boards[subjectName] || [];
+    let list = boards[subjectName] || [];
     if ((level === 'a-level' || level === 'as') && noEdexcelAlevel.includes(subjectName)) {
-      return list.filter(b => b !== 'Edexcel');
+      list = list.filter(b => b !== 'Edexcel');
+    }
+    if (level === 'a-level' || level === 'as') {
+      const banned = gcseOnlyBoards[subjectName] || [];
+      if (banned.length) list = list.filter(b => !banned.includes(b));
     }
     return list;
   }
