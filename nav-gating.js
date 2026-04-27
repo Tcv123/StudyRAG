@@ -109,13 +109,23 @@
     const depth = computeDepthFromRoot();
     const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
+    // Detect the current page so we can mark the matching Pro link active.
+    const currentFile = (window.location.pathname.split('/').pop() || '').toLowerCase();
+
     document.querySelectorAll('.nav-item').forEach(el => {
       const text = (el.textContent || '').trim().toLowerCase();
       const matchKey = Object.keys(PRO_LINKS).find(k => text.includes(k));
       if (!matchKey) return;
 
-      el.setAttribute('href', `${prefix}${PRO_LINKS[matchKey]}`);
+      const targetPage = PRO_LINKS[matchKey];
+      el.setAttribute('href', `${prefix}${targetPage}`);
       el.classList.remove('locked');
+
+      // Mark this item as the active page if its target matches the
+      // current URL — gives the same blue highlight as the Menu items.
+      if (currentFile === targetPage.toLowerCase()) {
+        el.classList.add('active');
+      }
 
       // Strip any inline opacity:0.5 too — without this, the inline
       // style would still win once the .locked class is removed and
