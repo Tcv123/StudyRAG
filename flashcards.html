@@ -241,10 +241,14 @@ async function load() {
   const cachedLevel = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
   const dbLevel = (cachedLevel === 'a-level' || cachedLevel === 'alevel' || cachedLevel === 'as') ? 'alevel' : 'gcse';
   const counts = {};
+  // Override Supabase's default 1000-row cap — A-level flashcards across all
+  // subjects/boards already exceed that, which silently zeroes out counts for
+  // whichever subject's rows fall off the end (most recently, Biology).
   const { data: cardRows } = await supabaseClient
     .from('flashcards')
     .select('subject, exam_board')
-    .eq('level', dbLevel);
+    .eq('level', dbLevel)
+    .range(0, 49999);
   (cardRows || []).forEach(r => {
     const k = `${r.subject}|${r.exam_board}`;
     counts[k] = (counts[k] || 0) + 1;
