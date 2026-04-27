@@ -78,6 +78,15 @@
     .face .hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
     .face .topic-num { font-size: 11px; color: var(--accent-dark); background: var(--accent-dim); padding: 3px 10px; border-radius: 6px; font-weight: 600; }
 
+    /* Read-aloud speaker button (top-right of each card face) */
+    .speaker-btn { position: absolute; top: 14px; right: 14px; width: 38px; height: 38px; border-radius: 50%; border: 1px solid var(--border); background: var(--surface); color: var(--text); cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; transition: background 0.15s, transform 0.1s, color 0.15s; z-index: 2; padding: 0; }
+    .speaker-btn:hover { background: var(--surface2); transform: scale(1.06); }
+    .speaker-btn.speaking { background: var(--accent-dim); color: var(--accent-dark); animation: speakerPulse 1.2s infinite; }
+    @keyframes speakerPulse {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(37,99,235,0.4); }
+      50%      { box-shadow: 0 0 0 10px rgba(37,99,235,0);  }
+    }
+
     /* Action row */
     .actions { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
     .grade-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; flex: 1; }
@@ -235,6 +244,9 @@ const BOARD    = params.get('board');
 const TOPIC_ID = params.get('topic');
 const DECK_ID  = params.get('deck');
 const MODE = DECK_ID ? 'deck' : 'topic';
+
+// Browser TTS support — drives whether the 🔊 button is rendered.
+const SPEECH_SUPPORTED = typeof window !== 'undefined' && 'speechSynthesis' in window;
 
 // ── State ──────────────────────────────────────────────────────
 let CURRENT_USER = null;
@@ -535,6 +547,9 @@ function renderCard() {
     <div class="stage">
       <div class="card" id="card" onclick="flip()">
         <div class="face front" style="background:${cardColor};">
+          ${SPEECH_SUPPORTED
+            ? `<button class="speaker-btn" id="speakerFront" onclick="event.stopPropagation();speak('front')" title="Read aloud (R)" aria-label="Read question aloud">🔊</button>`
+            : ''}
           ${currentCard.topic_id && MODE !== 'deck'
             ? `<span class="topic-num">${escapeHtml(currentCard.topic_id)}</span>`
             : ''}
@@ -543,6 +558,9 @@ function renderCard() {
           <div class="hint">Click card to reveal answer · Press space</div>
         </div>
         <div class="face back" style="background:${cardColor};">
+          ${SPEECH_SUPPORTED
+            ? `<button class="speaker-btn" id="speakerBack" onclick="event.stopPropagation();speak('back')" title="Read aloud (R)" aria-label="Read answer aloud">🔊</button>`
+            : ''}
           <span class="label">Answer</span>
           <div class="content">${escapeHtml(currentCard.back)}</div>
           <div class="hint">Grade how well you knew it ↓</div>
@@ -571,6 +589,9 @@ function renderCard() {
 function flip() {
   const card = document.getElementById('card');
   if (!card) return;
+  // Stop any in-progress speech when the card is flipped — otherwise the
+  // user keeps hearing the front while reading the back.
+  if (SPEECH_SUPPORTED) window.speechSynthesis.cancel();
   card.classList.toggle('flipped');
   // Enable grading once the back has been seen at least once
   const flipped = card.classList.contains('flipped');
@@ -580,16 +601,47 @@ function flip() {
   });
 }
 
-// Spacebar to flip
+// ── Read-aloud (Web Speech API) ────────────────────────────────
+// Speaks the front or back of the current card. Cancels any previous
+// utterance so a quick double-click doesn't queue them up.
+function speak(side) {
+  if (!SPEECH_SUPPORTED || !currentCard) return;
+  window.speechSynthesis.cancel();
+
+  const text = side === 'back' ? currentCard.back : currentCard.front;
+  const utt = new SpeechSynthesisUtterance(text);
+  utt.lang = 'en-GB';
+  utt.rate = 1.0;
+  utt.pitch = 1.0;
+
+  const btn = document.getElementById(side === 'back' ? 'speakerBack' : 'speakerFront');
+  if (btn) btn.classList.add('speaking');
+  utt.onend = () => { if (btn) btn.classList.remove('speaking'); };
+  utt.onerror = () => { if (btn) btn.classList.remove('speaking'); };
+
+  window.speechSynthesis.speak(utt);
+}
+
+// Keyboard shortcuts: Space = flip card, R = read current side aloud.
 document.addEventListener('keydown', e => {
+  // Ignore when the user is typing in a text field (e.g. Add card modal)
+  const tag = (e.target?.tagName || '').toLowerCase();
+  if (tag === 'input' || tag === 'textarea') return;
+
   if (e.code === 'Space' && document.getElementById('card')) {
     e.preventDefault();
     flip();
+  } else if ((e.key === 'r' || e.key === 'R') && document.getElementById('card')) {
+    e.preventDefault();
+    const flipped = document.getElementById('card')?.classList.contains('flipped');
+    speak(flipped ? 'back' : 'front');
   }
 });
 
 async function grade(quality) {
   if (!currentCard) return;
+  // Cancel any in-progress speech when moving to the next card.
+  if (SPEECH_SUPPORTED) window.speechSynthesis.cancel();
   const newState = sm2Step(currentState, quality);
   // Persist to user_card_state (UPSERT on (user_id, card_id, card_source))
   const row = {
