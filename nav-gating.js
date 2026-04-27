@@ -3,19 +3,20 @@
 
    Drop <script src="nav-gating.js"></script> (or "../nav-gating.js" for
    pages inside subfolders) AFTER supabase-config.js on any page that has
-   the standard left sidebar. The script:
+   the standard left sidebar.
 
-   1. Reads the user's profile (subscription_tier, subscription_status,
-      subscription_expires_at).
-   2. If they're an active Pro user, finds each "PRO" sidebar item by
-      its text content and rewrites it to be clickable.
+   Two-phase flow to avoid the "flash of locked items":
 
-   No-op for free users — links stay grayed-out + non-clickable.
+   1. SYNCHRONOUS (runs before DOM paints): if localStorage flag
+      `rag_is_pro` is true, inject a tiny stylesheet that overrides
+      .nav-item.locked styling so the items render unlocked from the
+      first paint.
+
+   2. ASYNC (after DOMContentLoaded): fetch profile from Supabase to
+      verify, refresh the cache, and patch each link's href + class
+      so clicks navigate properly.
 ═══════════════════════════════════════════════════════════════════ */
 (function () {
-  // Pro items keyed by the lowercased start of their text content.
-  // Each value is the page (relative to site root) the link should
-  // navigate to when unlocked.
   const PRO_LINKS = {
     'test history':       'test-history.html',
     'past papers':        'past-papers.html',
@@ -25,6 +26,45 @@
     'revision timetable': 'revision-timetable.html',
   };
 
+  // ── PHASE 1: synchronous CSS override (no flash) ────────────────
+  try {
+    if (localStorage.getItem('rag_is_pro') === 'true') {
+      injectOverrideStyle();
+    }
+  } catch (e) { /* localStorage blocked — fall through to async path */ }
+
+  function injectOverrideStyle() {
+    if (document.getElementById('nav-gating-pro-override')) return;
+    const style = document.createElement('style');
+    style.id = 'nav-gating-pro-override';
+    // !important beats both the .locked class rules and any inline
+    // style="opacity:0.5" on individual <a> tags. Pointer-events make
+    // the link clickable even before the async pass patches the href.
+    style.textContent = `
+      .nav-item.locked,
+      .nav-item[style*="opacity"] {
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        cursor: pointer !important;
+      }
+    `;
+    if (document.head) {
+      document.head.appendChild(style);
+    } else {
+      // Defensive — shouldn't happen because the script tag sits inside
+      // <head> after the supabase-config script, but just in case.
+      document.addEventListener('DOMContentLoaded', () => {
+        document.head.appendChild(style);
+      }, { once: true });
+    }
+  }
+
+  function removeOverrideStyle() {
+    const el = document.getElementById('nav-gating-pro-override');
+    if (el) el.remove();
+  }
+
+  // ── PHASE 2: async unlock + cache refresh ───────────────────────
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
   } else {
@@ -47,15 +87,29 @@
       .eq('id', user.id)
       .single();
 
-    if (!isPro(profile)) return;
+    const pro = isPro(profile);
 
+    // Refresh cache for next page load (and across-tab navigation in
+    // the same browser).
+    try {
+      localStorage.setItem('rag_is_pro', pro ? 'true' : 'false');
+    } catch (e) {}
+
+    if (!pro) {
+      // Cache may have been stale — undo any optimistic override.
+      removeOverrideStyle();
+      return;
+    }
+
+    // Make sure the override is in place (covers the cold-cache case
+    // where Phase 1 didn't run because rag_is_pro wasn't set yet).
+    injectOverrideStyle();
+
+    // Patch each Pro sidebar item: real href, drop locked class.
     const depth = computeDepthFromRoot();
     const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
     document.querySelectorAll('.nav-item').forEach(el => {
-      // Use includes(), not startsWith() — the link text begins with an
-      // emoji icon (e.g. "🃏 Flashcards PRO") so we have to look anywhere
-      // in the string for the label keyword.
       const text = (el.textContent || '').trim().toLowerCase();
       const matchKey = Object.keys(PRO_LINKS).find(k => text.includes(k));
       if (!matchKey) return;
@@ -63,7 +117,9 @@
       el.setAttribute('href', `${prefix}${PRO_LINKS[matchKey]}`);
       el.classList.remove('locked');
 
-      // Some pages use inline opacity instead of the .locked class.
+      // Strip any inline opacity:0.5 too — without this, the inline
+      // style would still win once the .locked class is removed and
+      // the !important override stops applying. Belt + braces.
       const style = el.getAttribute('style') || '';
       el.setAttribute(
         'style',
