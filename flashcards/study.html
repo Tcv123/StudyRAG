@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>RAG Learning — Study Flashcards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="../subjects-config.js"></script>
+  <script src="../flashcards-config.js"></script>
+  <script src="../nav-gating.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD;
+      --border: #B8D0E8; --border-hover: #2563EB;
+      --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+      --accent: #2563EB; --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; text-decoration: none; }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-item.locked { opacity: 0.5; cursor: default; pointer-events: none; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
+    .logout-btn:hover { color: #DC2626; }
+
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 32px 36px 60px; max-width: 980px; }
+
+    .crumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin-bottom: 14px; flex-wrap: wrap; }
+    .crumb a { color: var(--accent-dark); text-decoration: none; font-weight: 500; }
+    .crumb a:hover { text-decoration: underline; }
+
+    .study-head { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-bottom: 20px; }
+    .study-head-left { display: flex; flex-direction: column; gap: 4px; }
+    .study-tag { font-size: 11px; font-weight: 700; color: var(--accent); text-transform: uppercase; letter-spacing: 0.1em; }
+    .study-title { font-family: var(--font-display); font-size: 24px; letter-spacing: -0.01em; }
+    .study-counter { font-size: 13px; color: var(--muted); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .study-counter .badge { background: var(--surface); padding: 4px 10px; border-radius: 14px; border: 1px solid var(--border); font-weight: 500; }
+    .study-counter .badge.due { background: rgba(245,158,11,0.1); border-color: rgba(245,158,11,0.3); color: #92400E; }
+
+    /* Color palette */
+    .palette { display: flex; align-items: center; gap: 6px; }
+    .palette-label { font-size: 11px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.05em; margin-right: 4px; }
+    .swatch { width: 26px; height: 26px; border-radius: 7px; border: 2px solid var(--border); cursor: pointer; transition: transform 0.1s; }
+    .swatch:hover { transform: scale(1.08); }
+    .swatch.selected { border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-dim); }
+
+    /* Card stage */
+    .stage { perspective: 1500px; margin: 22px 0 18px; }
+    .card { position: relative; width: 100%; min-height: 320px; transform-style: preserve-3d; transition: transform 0.55s cubic-bezier(0.16,1,0.3,1); cursor: pointer; }
+    .card.flipped { transform: rotateY(180deg); }
+    .face { position: absolute; inset: 0; backface-visibility: hidden; border-radius: 20px; border: 1px solid var(--border); padding: 36px 44px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 18px; box-shadow: 0 4px 24px rgba(11,30,63,0.06); text-align: center; }
+    .face.back { transform: rotateY(180deg); }
+    .face .label { font-size: 11px; font-weight: 700; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.15em; }
+    .face .content { font-size: 22px; font-weight: 500; line-height: 1.45; color: var(--text); }
+    .face .hint { font-size: 12px; color: var(--muted); margin-top: 8px; }
+    .face .topic-num { font-size: 11px; color: var(--accent-dark); background: var(--accent-dim); padding: 3px 10px; border-radius: 6px; font-weight: 600; }
+
+    /* Action row */
+    .actions { margin-top: 18px; display: flex; gap: 12px; flex-wrap: wrap; }
+    .grade-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; flex: 1; }
+    .grade { padding: 14px 8px; border: none; border-radius: 12px; font-family: var(--font-body); font-size: 14px; font-weight: 700; color: #fff; cursor: pointer; transition: transform 0.1s, box-shadow 0.1s; display: flex; flex-direction: column; align-items: center; gap: 4px; box-shadow: 0 2px 6px rgba(11,30,63,0.1); }
+    .grade:hover { transform: translateY(-1px); box-shadow: 0 4px 14px rgba(11,30,63,0.15); }
+    .grade .interval-pred { font-size: 10.5px; font-weight: 500; opacity: 0.95; }
+    .grade.again { background: linear-gradient(135deg, #EF4444, #DC2626); }
+    .grade.hard  { background: linear-gradient(135deg, #F59E0B, #D97706); }
+    .grade.good  { background: linear-gradient(135deg, #10B981, #059669); }
+    .grade.easy  { background: linear-gradient(135deg, #3B82F6, #2563EB); }
+    .grade:disabled { opacity: 0.45; cursor: not-allowed; }
+
+    .quick-actions { display: flex; gap: 8px; margin-top: 12px; }
+    .btn-ghost { display: inline-flex; align-items: center; gap: 6px; padding: 10px 14px; background: var(--surface); color: var(--accent-dark); border-radius: 10px; font-size: 13px; font-weight: 600; border: 1px solid var(--border); cursor: pointer; font-family: var(--font-body); text-decoration: none; }
+    .btn-ghost:hover { background: var(--surface2); border-color: var(--border-hover); }
+
+    /* Done / Empty / Lock states */
+    .state { padding: 60px 28px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; margin-top: 12px; }
+    .state-icon { font-size: 48px; margin-bottom: 14px; }
+    .state-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
+    .state-msg { font-size: 14.5px; color: var(--muted); max-width: 440px; margin: 0 auto 20px; line-height: 1.55; }
+
+    .lock-icon { color: #B45309; }
+
+    /* Modal */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+    .modal-overlay.active { display: flex; }
+    .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 100%; max-width: 460px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); }
+    .modal-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 18px; }
+    .form-row { margin-bottom: 14px; }
+    .form-row label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-row textarea { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; font-family: var(--font-body); font-size: 14px; background: var(--surface); color: var(--text); min-height: 64px; resize: vertical; }
+    .form-row textarea:focus { outline: none; border-color: var(--accent); }
+    .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+    .btn-primary { padding: 10px 18px; background: var(--accent); color: #fff; border: 1px solid transparent; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font-body); }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-cancel { padding: 10px 18px; background: var(--surface2); color: var(--text); border: 1px solid var(--border); border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; font-family: var(--font-body); }
+
+    /* Sign-out modal */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; text-align: center; }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(220,38,38,0.07); border: 1px solid rgba(220,38,38,0.18); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #B91C1C; margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; border: 1px solid transparent; font-family: var(--font-body); }
+    .signout-btn.cancel { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .signout-btn.confirm { background: #DC2626; color: #fff; }
+
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); transition: transform 0.3s; z-index: 100; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 16px 14px 60px; }
+      .grade-row { grid-template-columns: repeat(2, 1fr); }
+      .face { padding: 24px; }
+      .face .content { font-size: 18px; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <div class="sidebar">
+    <a href="../Dashboard.html" class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="../Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="../breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="../notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="../Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="../medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="../practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item active" href="../flashcards.html"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="../auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="../settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='../settings.html'" style="cursor:pointer">?</div>
+        <div class="user-info" onclick="location.href='../settings.html'" style="cursor:pointer">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="crumb" id="crumb"><a href="../flashcards.html">← All flashcards</a></div>
+    <div id="content">
+      <div class="state">
+        <div class="state-icon">⏳</div>
+        <div class="state-title">Loading…</div>
+      </div>
+    </div>
+  </main>
+
+</div>
+
+<!-- Add card modal (system-topic mode only) -->
+<div class="modal-overlay" id="addCardModal" onclick="if(event.target===this)closeAddCard()">
+  <div class="modal">
+    <div class="modal-title">Add a card</div>
+    <div style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.5;">
+      This card will be saved to your auto-deck for this topic so you can study it alongside the system cards.
+    </div>
+    <div class="form-row">
+      <label for="addFront">Front (question / term)</label>
+      <textarea id="addFront" maxlength="500" placeholder="What is the Von Neumann bottleneck?"></textarea>
+    </div>
+    <div class="form-row">
+      <label for="addBack">Back (answer)</label>
+      <textarea id="addBack" maxlength="1000" placeholder="A shared memory bus for instructions and data limits CPU throughput."></textarea>
+    </div>
+    <div class="modal-actions">
+      <button class="btn-cancel" onclick="closeAddCard()">Cancel</button>
+      <button class="btn-primary" id="addCardSave" onclick="saveAddCard()">Add card</button>
+    </div>
+  </div>
+</div>
+
+<!-- Sign-out -->
+<div class="signout-overlay" id="signoutOverlay" onclick="if(event.target===this)cancelSignOut()">
+  <div class="signout-modal">
+    <div class="signout-icon">⏻</div>
+    <div class="signout-title">Sign out?</div>
+    <div class="signout-msg">You'll need to log back in.</div>
+    <div class="signout-actions">
+      <button class="signout-btn cancel" onclick="cancelSignOut()">Cancel</button>
+      <button class="signout-btn confirm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── URL params ─────────────────────────────────────────────────
+const params = new URLSearchParams(location.search);
+const SUBJECT  = params.get('subject');
+const BOARD    = params.get('board');
+const TOPIC_ID = params.get('topic');
+const DECK_ID  = params.get('deck');
+const MODE = DECK_ID ? 'deck' : 'topic';
+
+// ── State ──────────────────────────────────────────────────────
+let CURRENT_USER = null;
+let queue = [];           // remaining cards (front-of-queue is current)
+let currentCard = null;
+let currentState = null;  // existing user_card_state row (or null = new)
+let totalCount = 0;
+let dueCount = 0;
+let cardSource = 'system'; // 'system' | 'user'
+let topicLabel = '';       // for header
+let autoDeckId = null;     // cached id of "My [Topic]" auto-deck
+let cardColor = '#FFFFFF';
+
+// ── Helpers ────────────────────────────────────────────────────
+function isProProfile(p) {
+  if (!p) return false;
+  const tier = p.subscription_tier || 'free';
+  const status = p.subscription_status || 'active';
+  const expires = p.subscription_expires_at ? new Date(p.subscription_expires_at) : null;
+  return tier !== 'free'
+    && ['active','trialing'].includes(status)
+    && (!expires || expires > new Date());
+}
+function levelFromCache() {
+  const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  return (l === 'a-level' || l === 'alevel' || l === 'as') ? 'alevel' : 'gcse';
+}
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function todayISO() { return new Date().toISOString().slice(0, 10); }
+
+// SM-2 — returns updated state given current state + quality 0..5
+function sm2Step(state, quality) {
+  let { interval_days = 0, ease_factor = 2.5, repetitions = 0 } = state || {};
+  ease_factor = parseFloat(ease_factor);
+  if (isNaN(ease_factor)) ease_factor = 2.5;
+
+  if (quality < 3) {
+    repetitions = 0;
+    interval_days = 0; // show again in same session via "Again" branch
+  } else {
+    if (repetitions === 0) interval_days = 1;
+    else if (repetitions === 1) interval_days = 6;
+    else interval_days = Math.round(interval_days * ease_factor);
+    repetitions += 1;
+  }
+  // Ease factor adjustment (SM-2 formula)
+  ease_factor = Math.max(1.3,
+    ease_factor + (0.1 - (5 - quality) * (0.08 + (5 - quality) * 0.02))
+  );
+  ease_factor = Math.round(ease_factor * 100) / 100;
+
+  const due = new Date();
+  due.setDate(due.getDate() + Math.max(0, interval_days));
+  return {
+    interval_days,
+    ease_factor,
+    repetitions,
+    due_date: due.toISOString().slice(0, 10),
+    last_reviewed: new Date().toISOString(),
+  };
+}
+
+function previewInterval(state, quality) {
+  return sm2Step(state, quality).interval_days;
+}
+
+// ── Boot ───────────────────────────────────────────────────────
+async function load() {
+  // Need at least one of: deck_id, OR (subject + board + topic)
+  if (!DECK_ID && (!SUBJECT || !BOARD || !TOPIC_ID)) {
+    location = '../flashcards.html';
+    return;
+  }
+
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { location = '../auth/login.html'; return; }
+  CURRENT_USER = user;
+
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('*').eq('id', user.id).single();
+
+  // Sidebar identity
+  const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
+  document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
+  document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
+  if (profile?.avatar_url) {
+    const av = document.getElementById('avatarInitials');
+    const img = document.createElement('img');
+    img.src = profile.avatar_url;
+    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+    av.replaceChildren(img);
+  }
+
+  // Pro gate
+  if (!isProProfile(profile)) {
+    document.getElementById('content').innerHTML = `
+      <div class="state">
+        <div class="state-icon lock-icon">🔒</div>
+        <div class="state-title">Pro feature</div>
+        <div class="state-msg">Studying flashcards is part of the Pro plan.</div>
+        <a class="btn-ghost" href="../pricing.html">✦ Upgrade to Pro</a>
+      </div>`;
+    return;
+  }
+
+  // Initial card colour from profile, fall back to white
+  cardColor = profile?.card_bg_color || '#FFFFFF';
+
+  if (MODE === 'deck') {
+    await loadDeck();
+  } else {
+    await loadTopic();
+  }
+}
+
+async function loadTopic() {
+  cardSource = 'system';
+  const lvl = levelFromCache();
+  const topics = window.FLASHCARDS_TOPICS_FOR?.(SUBJECT, BOARD) || [];
+  const found = topics.find(t => t.num === TOPIC_ID);
+  topicLabel = found ? `${found.num} — ${found.name}` : TOPIC_ID;
+
+  // Load all system cards for this topic
+  const { data: cards, error } = await supabaseClient
+    .from('flashcards')
+    .select('id, front, back, card_order, topic_id, topic_name')
+    .eq('subject', SUBJECT).eq('exam_board', BOARD)
+    .eq('level', lvl).eq('topic_id', TOPIC_ID)
+    .order('card_order');
+  if (error) { console.error(error); }
+
+  if (!cards || cards.length === 0) {
+    renderEmpty(`<a class="btn-ghost" href="subject.html?subject=${encodeURIComponent(SUBJECT)}&board=${encodeURIComponent(BOARD)}">← Back to ${escapeHtml(SUBJECT)}</a>
+       <button class="btn-primary" style="margin-left:10px;" onclick="openAddCard()">+ Add your own card</button>`);
+    document.getElementById('crumb').innerHTML =
+      `<a href="../flashcards.html">All flashcards</a> › <a href="subject.html?subject=${encodeURIComponent(SUBJECT)}&board=${encodeURIComponent(BOARD)}">${escapeHtml(SUBJECT)} ${escapeHtml(BOARD)}</a> › ${escapeHtml(topicLabel)}`;
+    return;
+  }
+
+  // Load existing SM-2 state for these cards
+  const ids = cards.map(c => c.id);
+  const { data: states } = await supabaseClient
+    .from('user_card_state')
+    .select('*')
+    .eq('user_id', CURRENT_USER.id).eq('card_source', 'system')
+    .in('card_id', ids);
+  const stateById = {};
+  (states || []).forEach(s => { stateById[s.card_id] = s; });
+
+  // Build queue: due cards (state with due_date <= today) + new cards (no state)
+  // Order: due first (oldest due_date), then new cards by card_order.
+  const today = todayISO();
+  const due = [];
+  const news = [];
+  for (const c of cards) {
+    const s = stateById[c.id];
+    if (!s) {
+      news.push({ card: c, state: null });
+    } else if (s.due_date <= today) {
+      due.push({ card: c, state: s });
+    }
+  }
+  due.sort((a, b) => (a.state.due_date || '').localeCompare(b.state.due_date || ''));
+  queue = [...due, ...news];
+
+  totalCount = cards.length;
+  dueCount = queue.length;
+
+  document.getElementById('crumb').innerHTML =
+    `<a href="../flashcards.html">All flashcards</a> › <a href="subject.html?subject=${encodeURIComponent(SUBJECT)}&board=${encodeURIComponent(BOARD)}">${escapeHtml(SUBJECT)} ${escapeHtml(BOARD)}</a> › ${escapeHtml(topicLabel)}`;
+
+  if (queue.length === 0) {
+    renderDone();
+    return;
+  }
+  renderCard();
+}
+
+async function loadDeck() {
+  cardSource = 'user';
+  // Load deck (verify ownership via RLS)
+  const { data: deck, error: dErr } = await supabaseClient
+    .from('user_decks').select('*').eq('id', DECK_ID).single();
+  if (dErr || !deck) {
+    location = '../flashcards.html';
+    return;
+  }
+  topicLabel = deck.name;
+  cardColor = deck.card_color || cardColor;
+
+  const { data: cards } = await supabaseClient
+    .from('user_flashcards').select('id, front, back, card_order')
+    .eq('deck_id', DECK_ID)
+    .order('card_order');
+
+  if (!cards || cards.length === 0) {
+    renderEmpty(`<a class="btn-ghost" href="${deck.subject ? `subject.html?subject=${encodeURIComponent(deck.subject)}&board=${encodeURIComponent(deck.exam_board || '')}` : '../flashcards.html'}">← Back</a>`);
+    document.getElementById('crumb').innerHTML =
+      `<a href="../flashcards.html">All flashcards</a> › ${escapeHtml(deck.name)}`;
+    return;
+  }
+
+  const ids = cards.map(c => c.id);
+  const { data: states } = await supabaseClient
+    .from('user_card_state')
+    .select('*')
+    .eq('user_id', CURRENT_USER.id).eq('card_source', 'user')
+    .in('card_id', ids);
+  const stateById = {};
+  (states || []).forEach(s => { stateById[s.card_id] = s; });
+
+  const today = todayISO();
+  const due = [], news = [];
+  for (const c of cards) {
+    const s = stateById[c.id];
+    if (!s) news.push({ card: { ...c, topic_id: deck.topic_id, topic_name: deck.name }, state: null });
+    else if (s.due_date <= today) due.push({ card: { ...c, topic_id: deck.topic_id, topic_name: deck.name }, state: s });
+  }
+  due.sort((a, b) => (a.state.due_date || '').localeCompare(b.state.due_date || ''));
+  queue = [...due, ...news];
+
+  totalCount = cards.length;
+  dueCount = queue.length;
+
+  document.getElementById('crumb').innerHTML =
+    `<a href="../flashcards.html">All flashcards</a> › ${escapeHtml(deck.name)}`;
+
+  if (queue.length === 0) { renderDone(); return; }
+  renderCard();
+}
+
+// ── Render ─────────────────────────────────────────────────────
+function renderEmpty(buttonHtml) {
+  document.getElementById('content').innerHTML = `
+    <div class="state">
+      <div class="state-icon">🃏</div>
+      <div class="state-title">No cards yet</div>
+      <div class="state-msg">${MODE === 'deck' ? 'This deck is empty — add cards to it from the subject page.' : 'No system cards have been added for this topic yet.'}</div>
+      ${buttonHtml || ''}
+    </div>`;
+}
+
+function renderDone() {
+  document.getElementById('content').innerHTML = `
+    <div class="study-head">
+      <div class="study-head-left">
+        <div class="study-tag">${MODE === 'deck' ? 'Custom deck' : 'System cards'}</div>
+        <div class="study-title">${escapeHtml(topicLabel)}</div>
+      </div>
+    </div>
+    <div class="state">
+      <div class="state-icon">✓</div>
+      <div class="state-title">All caught up</div>
+      <div class="state-msg">No cards are due in this set right now. Come back tomorrow — spaced repetition only works if you take your scheduled breaks.</div>
+      <a class="btn-ghost" href="${MODE === 'deck' ? '../flashcards.html' : `subject.html?subject=${encodeURIComponent(SUBJECT)}&board=${encodeURIComponent(BOARD)}`}">← Back</a>
+    </div>`;
+}
+
+function renderCard() {
+  const item = queue[0];
+  if (!item) { renderDone(); return; }
+  currentCard = item.card;
+  currentState = item.state;
+
+  // Predicted intervals for the four buttons (so users know what each click will do)
+  const pAgain = previewInterval(currentState, 0);
+  const pHard  = previewInterval(currentState, 3);
+  const pGood  = previewInterval(currentState, 4);
+  const pEasy  = previewInterval(currentState, 5);
+  const fmt = d => d <= 0 ? '<10m' : (d === 1 ? '1d' : d + 'd');
+
+  const palette = window.FLASHCARDS_PALETTE || [{ name:'White', hex:'#FFFFFF' }];
+  const swatchesHTML = palette.map(p => `
+    <div class="swatch ${p.hex.toUpperCase() === cardColor.toUpperCase() ? 'selected' : ''}"
+         data-hex="${p.hex}" title="${p.name}"
+         style="background:${p.hex}"
+         onclick="setCardColor('${p.hex}')"></div>`).join('');
+
+  const remaining = queue.length;
+  document.getElementById('content').innerHTML = `
+    <div class="study-head">
+      <div class="study-head-left">
+        <div class="study-tag">${MODE === 'deck' ? 'Custom deck' : 'System cards'}</div>
+        <div class="study-title">${escapeHtml(topicLabel)}</div>
+        <div class="study-counter">
+          <span class="badge">${dueCount - remaining + 1} of ${dueCount}</span>
+          <span class="badge">${totalCount} total in ${MODE === 'deck' ? 'deck' : 'topic'}</span>
+        </div>
+      </div>
+      <div class="palette">
+        <span class="palette-label">Card colour</span>
+        ${swatchesHTML}
+      </div>
+    </div>
+
+    <div class="stage">
+      <div class="card" id="card" onclick="flip()">
+        <div class="face front" style="background:${cardColor};">
+          ${currentCard.topic_id && MODE !== 'deck'
+            ? `<span class="topic-num">${escapeHtml(currentCard.topic_id)}</span>`
+            : ''}
+          <span class="label">Question</span>
+          <div class="content">${escapeHtml(currentCard.front)}</div>
+          <div class="hint">Click card to reveal answer · Press space</div>
+        </div>
+        <div class="face back" style="background:${cardColor};">
+          <span class="label">Answer</span>
+          <div class="content">${escapeHtml(currentCard.back)}</div>
+          <div class="hint">Grade how well you knew it ↓</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="actions">
+      <div class="grade-row" id="gradeRow">
+        <button class="grade again" id="gAgain" disabled onclick="grade(0)">Again<span class="interval-pred">${fmt(pAgain)}</span></button>
+        <button class="grade hard"  id="gHard"  disabled onclick="grade(3)">Hard<span class="interval-pred">${fmt(pHard)}</span></button>
+        <button class="grade good"  id="gGood"  disabled onclick="grade(4)">Good<span class="interval-pred">${fmt(pGood)}</span></button>
+        <button class="grade easy"  id="gEasy"  disabled onclick="grade(5)">Easy<span class="interval-pred">${fmt(pEasy)}</span></button>
+      </div>
+    </div>
+
+    <div class="quick-actions">
+      ${MODE === 'topic'
+        ? `<button class="btn-ghost" onclick="openAddCard()">+ Add your own card</button>`
+        : ''}
+      <a class="btn-ghost" href="${MODE === 'deck' ? '../flashcards.html' : `subject.html?subject=${encodeURIComponent(SUBJECT)}&board=${encodeURIComponent(BOARD)}`}">End session</a>
+    </div>
+  `;
+}
+
+function flip() {
+  const card = document.getElementById('card');
+  if (!card) return;
+  card.classList.toggle('flipped');
+  // Enable grading once the back has been seen at least once
+  const flipped = card.classList.contains('flipped');
+  ['gAgain','gHard','gGood','gEasy'].forEach(id => {
+    const b = document.getElementById(id);
+    if (b) b.disabled = !flipped;
+  });
+}
+
+// Spacebar to flip
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space' && document.getElementById('card')) {
+    e.preventDefault();
+    flip();
+  }
+});
+
+async function grade(quality) {
+  if (!currentCard) return;
+  const newState = sm2Step(currentState, quality);
+  // Persist to user_card_state (UPSERT on (user_id, card_id, card_source))
+  const row = {
+    user_id: CURRENT_USER.id,
+    card_id: currentCard.id,
+    card_source: cardSource,
+    interval_days: newState.interval_days,
+    ease_factor: newState.ease_factor,
+    repetitions: newState.repetitions,
+    due_date: newState.due_date,
+    last_reviewed: newState.last_reviewed,
+  };
+  const { error } = await supabaseClient
+    .from('user_card_state')
+    .upsert(row, { onConflict: 'user_id,card_id,card_source' });
+  if (error) {
+    console.error('Failed to save SM-2 state:', error);
+    alert('Could not save your progress. Try again — see console for details.');
+    return;
+  }
+
+  // Pop the front of the queue. If quality < 3 (Again), re-insert later in the queue.
+  queue.shift();
+  if (quality < 3) {
+    // Show again ~5 cards later, never beyond end of queue
+    const insertAt = Math.min(queue.length, 4);
+    queue.splice(insertAt, 0, { card: currentCard, state: newState });
+  }
+
+  if (queue.length === 0) {
+    renderDone();
+  } else {
+    renderCard();
+  }
+}
+
+async function setCardColor(hex) {
+  cardColor = hex;
+  // If studying a deck, save to that deck. Otherwise save to profile preference.
+  if (MODE === 'deck' && DECK_ID) {
+    await supabaseClient.from('user_decks').update({ card_color: hex }).eq('id', DECK_ID);
+  } else {
+    await supabaseClient.from('profiles').update({ card_bg_color: hex }).eq('id', CURRENT_USER.id);
+  }
+  // Apply to current card faces without re-rendering everything
+  document.querySelectorAll('.face').forEach(el => { el.style.background = hex; });
+  document.querySelectorAll('.swatch').forEach(el => {
+    el.classList.toggle('selected', el.dataset.hex.toUpperCase() === hex.toUpperCase());
+  });
+}
+
+// ── Add card (system-topic mode only) ──────────────────────────
+function openAddCard() {
+  document.getElementById('addFront').value = '';
+  document.getElementById('addBack').value = '';
+  document.getElementById('addCardModal').classList.add('active');
+  setTimeout(() => document.getElementById('addFront').focus(), 50);
+}
+function closeAddCard() {
+  document.getElementById('addCardModal').classList.remove('active');
+}
+
+async function findOrCreateAutoDeck() {
+  if (autoDeckId) return autoDeckId;
+  // Look for an existing auto-deck for this topic
+  const { data: existing } = await supabaseClient
+    .from('user_decks').select('id')
+    .eq('user_id', CURRENT_USER.id).eq('subject', SUBJECT).eq('exam_board', BOARD)
+    .eq('topic_id', TOPIC_ID).eq('is_auto', true).maybeSingle();
+  if (existing?.id) {
+    autoDeckId = existing.id;
+    return autoDeckId;
+  }
+  const topics = window.FLASHCARDS_TOPICS_FOR?.(SUBJECT, BOARD) || [];
+  const t = topics.find(x => x.num === TOPIC_ID);
+  const { data: created, error } = await supabaseClient
+    .from('user_decks').insert({
+      user_id: CURRENT_USER.id,
+      name: `My ${t ? t.name : TOPIC_ID}`,
+      description: `Auto-deck from ${SUBJECT} ${BOARD} ${TOPIC_ID}`,
+      subject: SUBJECT, exam_board: BOARD, topic_id: TOPIC_ID,
+      is_auto: true,
+    }).select('id').single();
+  if (error) throw error;
+  autoDeckId = created.id;
+  return autoDeckId;
+}
+
+async function saveAddCard() {
+  const front = document.getElementById('addFront').value.trim();
+  const back  = document.getElementById('addBack').value.trim();
+  if (!front || !back) { alert('Both Front and Back are required.'); return; }
+  const btn = document.getElementById('addCardSave');
+  btn.disabled = true; btn.textContent = 'Saving…';
+  try {
+    const deckId = await findOrCreateAutoDeck();
+    // Card order = current count + 1
+    const { data: existing } = await supabaseClient
+      .from('user_flashcards').select('id').eq('deck_id', deckId);
+    const order = (existing?.length || 0) + 1;
+    const { error } = await supabaseClient.from('user_flashcards').insert({
+      deck_id: deckId, front, back, card_order: order,
+    });
+    if (error) throw error;
+    closeAddCard();
+    btn.disabled = false; btn.textContent = 'Add card';
+    // Briefly notify (kept simple — no toast lib)
+    alert('Card added to your "My ' + (window.FLASHCARDS_TOPICS_FOR?.(SUBJECT, BOARD)?.find(t => t.num === TOPIC_ID)?.name || TOPIC_ID) + '" deck.');
+  } catch (e) {
+    console.error(e);
+    alert('Could not add card: ' + (e.message || 'unknown error'));
+    btn.disabled = false; btn.textContent = 'Add card';
+  }
+}
+
+// ── Sign-out wiring ────────────────────────────────────────────
+function confirmSignOut(){document.getElementById('signoutOverlay').classList.add('active');}
+function cancelSignOut(){document.getElementById('signoutOverlay').classList.remove('active');}
+async function logout(){ await supabaseClient.auth.signOut(); window.location='../auth/login.html'; }
+
+load();
+</script>
+</body>
+</html>
