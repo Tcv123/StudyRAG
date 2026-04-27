@@ -71,7 +71,15 @@
     'Politics',
   ];
 
+  // Subjects visible at GCSE but not yet ready — locked as "Coming soon".
+  const comingSoonGcse = [
+    'French',
+    'German',
+    'Spanish',
+  ];
+
   function isComingSoonAlevel(subjectName, level) {
+    if (level === 'gcse') return comingSoonGcse.includes(subjectName);
     if (level !== 'a-level' && level !== 'as') return false;
     return comingSoonAlevel.includes(subjectName);
   }
@@ -158,6 +166,7 @@
     gcseSubjectNames,
     gcseOnlySubjectNames,
     comingSoonAlevel,
+    comingSoonGcse,
     isComingSoonAlevel,
     getSubjectsFor,
     getBoardsFor,

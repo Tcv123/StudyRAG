@@ -707,8 +707,9 @@ function renderGrid() {
   grid.innerHTML = list.map(s => {
     const comingSoon = window.SUBJECTS_CONFIG.isComingSoonAlevel(s.name, selectedLevel);
     if (comingSoon) {
+      const levelLabel = selectedLevel === 'gcse' ? 'GCSE' : 'A-Level';
       return `
-        <div class="subj-card coming-soon" title="A-Level ${s.name} notes are coming soon">
+        <div class="subj-card coming-soon" title="${levelLabel} ${s.name} notes are coming soon">
           <div class="subj-card-emoji">${window.SUBJECTS_CONFIG.iconHtml(s.name)}</div>
           <div class="subj-card-name">${s.name}</div>
           <span class="subj-coming-badge">🔒 Coming soon</span>
