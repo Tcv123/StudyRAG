@@ -61,6 +61,14 @@
     'Biology': ['Edexcel IGCSE'],
   };
 
+  // Boards that are A-Level-only for a given subject (hidden at GCSE).
+  // Biology "Edexcel A" (Salters-Nuffield 9BN0) and "Edexcel B" (9BI0) are
+  // A-Level specs — at GCSE the Edexcel offering is "Edexcel" (1BI0) and
+  // "Edexcel IGCSE" (4BI1) instead.
+  const alevelOnlyBoards = {
+    'Biology': ['Edexcel A', 'Edexcel B'],
+  };
+
   // Subjects that are visible at A-Level / AS but not yet ready — render
   // as locked "Coming soon" cards on the picker and on subject pages.
   const comingSoonAlevel = [
@@ -122,6 +130,10 @@
       const banned = gcseOnlyBoards[subjectName] || [];
       if (banned.length) list = list.filter(b => !banned.includes(b));
     }
+    if (level === 'gcse') {
+      const banned = alevelOnlyBoards[subjectName] || [];
+      if (banned.length) list = list.filter(b => !banned.includes(b));
+    }
     return list;
   }
 
@@ -155,6 +167,8 @@
     subjects,
     boards,
     noEdexcelAlevel,
+    gcseOnlyBoards,
+    alevelOnlyBoards,
     gcseSubjectNames,
     gcseOnlySubjectNames,
     comingSoonAlevel,
