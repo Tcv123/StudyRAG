@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>RAG Learning — AI Feedback</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="nav-gating.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD;
+      --border: #B8D0E8; --border-hover: #2563EB;
+      --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+      --accent: #2563EB; --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+    .app { display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; text-decoration: none; }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-item.locked { opacity: 0.5; cursor: default; pointer-events: none; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
+    .logout-btn:hover { color: #DC2626; }
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
+    .topbar { margin-bottom: 32px; }
+    .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-top: 3px; }
+    .placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .placeholder-icon { width: 80px; height: 80px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 22px; }
+    .placeholder-title { font-family: var(--font-display); font-size: 26px; margin-bottom: 10px; }
+    .placeholder-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; }
+    .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #B45309; margin-bottom: 20px; }
+    .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
+    .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
+    .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item active" href="ai-feedback.html"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer">?</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="supabaseClient.auth.signOut().then(()=>location='auth/login.html')">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="page-title">🤖 AI Feedback</div>
+      <div class="page-sub">Get instant examiner-style feedback on your written answers.</div>
+    </div>
+    <div id="pageBody">
+      <div class="placeholder">
+        <div class="placeholder-icon">🚧</div>
+        <div class="placeholder-title">Coming soon</div>
+        <div class="placeholder-msg">Submit a written answer and AI will mark it against the official mark scheme — pointing out what's missing, what scored, and how to push it to the top band.</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+(async function () {
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { location = 'auth/login.html'; return; }
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('*').eq('id', user.id).single();
+  const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
+  document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
+  document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
+  if (profile?.avatar_url) {
+    const av = document.getElementById('avatarInitials');
+    const img = document.createElement('img');
+    img.src = profile.avatar_url;
+    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+    av.replaceChildren(img);
+  }
+  const tier = profile?.subscription_tier || 'free';
+  const status = profile?.subscription_status || 'active';
+  const exp = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+  const isPro = tier !== 'free' && ['active','trialing'].includes(status) && (!exp || exp > new Date());
+  if (!isPro) {
+    document.getElementById('pageBody').innerHTML = `
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-title">Pro feature</div>
+        <div class="lock-msg">AI feedback is available with a Pro subscription.</div>
+        <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
+      </div>`;
+  }
+})();
+</script>
+</body>
+</html>
