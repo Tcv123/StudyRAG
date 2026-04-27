@@ -110,7 +110,10 @@
     const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
     // Detect the current page so we can mark the matching Pro link active.
-    const currentFile = (window.location.pathname.split('/').pop() || '').toLowerCase();
+    // Vercel cleanUrls strips ".html" from URLs (e.g. /test-history not
+    // /test-history.html), so normalise both sides before comparing.
+    const stripExt = s => s.toLowerCase().replace(/\.html$/, '');
+    const currentFile = stripExt(window.location.pathname.split('/').pop() || '');
 
     document.querySelectorAll('.nav-item').forEach(el => {
       const text = (el.textContent || '').trim().toLowerCase();
@@ -123,7 +126,7 @@
 
       // Mark this item as the active page if its target matches the
       // current URL — gives the same blue highlight as the Menu items.
-      if (currentFile === targetPage.toLowerCase()) {
+      if (currentFile === stripExt(targetPage)) {
         el.classList.add('active');
       }
 
