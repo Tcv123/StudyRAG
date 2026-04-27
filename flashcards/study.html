@@ -45,7 +45,8 @@
     .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
     .logout-btn:hover { color: #DC2626; }
 
-    .main { margin-left: var(--sidebar-w); flex: 1; padding: 32px 36px 60px; max-width: 980px; }
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 32px 36px 60px; display: flex; flex-direction: column; align-items: center; }
+    .main > * { width: 100%; max-width: 980px; }
 
     .crumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin-bottom: 14px; flex-wrap: wrap; }
     .crumb a { color: var(--accent-dark); text-decoration: none; font-weight: 500; }
