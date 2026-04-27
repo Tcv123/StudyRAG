@@ -53,8 +53,11 @@
     const prefix = depth > 0 ? '../'.repeat(depth) : '';
 
     document.querySelectorAll('.nav-item').forEach(el => {
+      // Use includes(), not startsWith() — the link text begins with an
+      // emoji icon (e.g. "🃏 Flashcards PRO") so we have to look anywhere
+      // in the string for the label keyword.
       const text = (el.textContent || '').trim().toLowerCase();
-      const matchKey = Object.keys(PRO_LINKS).find(k => text.startsWith(k));
+      const matchKey = Object.keys(PRO_LINKS).find(k => text.includes(k));
       if (!matchKey) return;
 
       el.setAttribute('href', `${prefix}${PRO_LINKS[matchKey]}`);
