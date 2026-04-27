@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>RAG Learning — Flashcards</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="../subjects-config.js"></script>
+  <script src="../flashcards-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD;
+      --border: #B8D0E8; --border-hover: #2563EB;
+      --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+      --accent: #2563EB; --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; text-decoration: none; }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-item.locked { opacity: 0.5; cursor: default; pointer-events: none; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
+    .logout-btn:hover { color: #DC2626; }
+
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
+
+    .crumb { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--muted); margin-bottom: 14px; }
+    .crumb a { color: var(--accent-dark); text-decoration: none; font-weight: 500; }
+    .crumb a:hover { text-decoration: underline; }
+
+    .page-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 28px; gap: 16px; flex-wrap: wrap; }
+    .page-head-left { display: flex; align-items: center; gap: 16px; }
+    .head-emoji { width: 56px; height: 56px; border-radius: 14px; flex-shrink: 0; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center; font-size: 26px; }
+    .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
+    .page-board { display: inline-flex; align-items: center; padding: 4px 12px; border-radius: 20px; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.25); font-size: 11px; font-weight: 600; color: var(--accent-dark); margin-top: 6px; }
+
+    .section-head { display: flex; align-items: center; justify-content: space-between; margin: 32px 0 14px; gap: 12px; }
+    .section-title { font-family: var(--font-display); font-size: 19px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; border-radius: 10px; font-size: 13px; font-weight: 600; cursor: pointer; border: 1px solid transparent; font-family: var(--font-body); text-decoration: none; }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-ghost { background: transparent; color: var(--accent-dark); border-color: var(--border); }
+    .btn-ghost:hover { background: var(--surface2); }
+
+    /* Topic grid */
+    .topics-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 14px; }
+    .topic-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px; display: flex; flex-direction: column; gap: 12px; transition: all 0.15s; text-decoration: none; color: inherit; }
+    .topic-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 14px rgba(37,99,235,0.1); transform: translateY(-1px); }
+    .topic-card-top { display: flex; align-items: center; gap: 10px; }
+    .topic-num { font-size: 11px; font-weight: 700; color: var(--accent-dark); background: var(--accent-dim); padding: 3px 8px; border-radius: 6px; flex-shrink: 0; }
+    .topic-name { font-size: 14px; font-weight: 600; line-height: 1.3; flex: 1; }
+    .topic-meta { font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    .topic-meta .pill { background: var(--surface2); padding: 3px 8px; border-radius: 6px; font-weight: 500; }
+    .topic-meta .pill.empty { color: var(--muted2); }
+    .topic-meta .pill.due { background: rgba(245,158,11,0.1); color: #92400E; }
+    .topic-card-foot { display: flex; align-items: center; justify-content: flex-end; gap: 8px; }
+
+    /* Decks */
+    .decks-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 14px; }
+    .deck-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px; display: flex; flex-direction: column; gap: 10px; }
+    .deck-card-top { display: flex; align-items: flex-start; justify-content: space-between; gap: 8px; }
+    .deck-color-swatch { width: 14px; height: 14px; border-radius: 4px; border: 1px solid var(--border); flex-shrink: 0; }
+    .deck-name { font-size: 14px; font-weight: 600; line-height: 1.3; flex: 1; word-break: break-word; }
+    .deck-desc { font-size: 12px; color: var(--muted); line-height: 1.4; min-height: 17px; }
+    .deck-foot { display: flex; align-items: center; justify-content: space-between; padding-top: 10px; border-top: 1px solid var(--bg); margin-top: auto; }
+    .deck-meta { font-size: 11.5px; color: var(--muted); }
+    .deck-actions { display: flex; gap: 6px; }
+    .icon-btn { background: none; border: 1px solid transparent; padding: 4px 7px; border-radius: 6px; font-size: 13px; color: var(--muted); cursor: pointer; }
+    .icon-btn:hover { background: var(--surface2); color: var(--text); }
+    .icon-btn.danger:hover { color: #DC2626; }
+
+    .empty-state { padding: 32px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--border); border-radius: 14px; }
+    .empty-state .em { font-size: 32px; margin-bottom: 8px; }
+
+    /* Lock overlay (free user) */
+    .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #B45309; margin-bottom: 20px; }
+    .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
+    .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
+    .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+
+    /* Modal */
+    .modal-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; padding: 20px; }
+    .modal-overlay.active { display: flex; }
+    .modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 100%; max-width: 460px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); }
+    .modal-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 18px; }
+    .form-row { margin-bottom: 14px; }
+    .form-row label { display: block; font-size: 12px; font-weight: 600; color: var(--muted); margin-bottom: 5px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .form-row input, .form-row textarea, .form-row select { width: 100%; padding: 10px 12px; border: 1px solid var(--border); border-radius: 10px; font-family: var(--font-body); font-size: 14px; background: var(--surface); color: var(--text); }
+    .form-row input:focus, .form-row textarea:focus, .form-row select:focus { outline: none; border-color: var(--accent); }
+    .form-row textarea { min-height: 70px; resize: vertical; }
+    .palette-row { display: flex; gap: 8px; margin-top: 4px; flex-wrap: wrap; }
+    .palette-swatch { width: 36px; height: 36px; border-radius: 8px; border: 2px solid var(--border); cursor: pointer; transition: transform 0.1s; }
+    .palette-swatch:hover { transform: scale(1.05); }
+    .palette-swatch.selected { border-color: var(--accent); transform: scale(1.05); box-shadow: 0 0 0 2px var(--accent-dim); }
+    .modal-actions { display: flex; gap: 10px; justify-content: flex-end; margin-top: 22px; }
+
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; text-align: center; }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: rgba(220,38,38,0.07); border: 1px solid rgba(220,38,38,0.18); display: flex; align-items: center; justify-content: center; font-size: 24px; color: #B91C1C; margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; cursor: pointer; border: 1px solid transparent; font-family: var(--font-body); }
+    .signout-btn.cancel { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .signout-btn.confirm { background: #DC2626; color: #fff; }
+
+    .mobile-menu-btn { display: none; }
+    @media (max-width: 768px) {
+      .sidebar { transform: translateX(-100%); transition: transform 0.3s; z-index: 100; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 16px 14px; }
+      .topics-grid, .decks-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <div class="sidebar">
+    <a href="../Dashboard.html" class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="../Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="../breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="../notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="../Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="../medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="../practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item active" href="../flashcards.html"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="../auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="../settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='../settings.html'" style="cursor:pointer">?</div>
+        <div class="user-info" onclick="location.href='../settings.html'" style="cursor:pointer">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="crumb">
+      <a href="../flashcards.html">← All flashcards</a>
+    </div>
+
+    <div class="page-head">
+      <div class="page-head-left">
+        <div class="head-emoji" id="headEmoji">📚</div>
+        <div>
+          <div class="page-title" id="pageTitle">Loading…</div>
+          <div class="page-board" id="pageBoard"></div>
+        </div>
+      </div>
+    </div>
+
+    <div id="pageBody"></div>
+  </main>
+</div>
+
+<!-- New deck modal -->
+<div class="modal-overlay" id="deckModal" onclick="if(event.target===this)closeDeckModal()">
+  <div class="modal">
+    <div class="modal-title" id="deckModalTitle">Create new deck</div>
+    <div class="form-row">
+      <label for="deckName">Deck name</label>
+      <input id="deckName" type="text" maxlength="80" placeholder="e.g. Weak spots, Paper 2 cram">
+    </div>
+    <div class="form-row">
+      <label for="deckDesc">Description (optional)</label>
+      <textarea id="deckDesc" maxlength="240" placeholder="What's in this deck?"></textarea>
+    </div>
+    <div class="form-row">
+      <label for="deckTopic">Tag to a topic (optional)</label>
+      <select id="deckTopic"><option value="">— spans the whole subject —</option></select>
+    </div>
+    <div class="form-row">
+      <label>Card colour</label>
+      <div class="palette-row" id="paletteRow"></div>
+    </div>
+    <div class="modal-actions">
+      <button class="btn btn-ghost" onclick="closeDeckModal()">Cancel</button>
+      <button class="btn btn-primary" id="deckSaveBtn" onclick="saveDeck()">Create deck</button>
+    </div>
+  </div>
+</div>
+
+<div class="signout-overlay" id="signoutOverlay" onclick="if(event.target===this)cancelSignOut()">
+  <div class="signout-modal">
+    <div class="signout-icon">⏻</div>
+    <div class="signout-title">Sign out?</div>
+    <div class="signout-msg">You'll need to log back in.</div>
+    <div class="signout-actions">
+      <button class="signout-btn cancel" onclick="cancelSignOut()">Cancel</button>
+      <button class="signout-btn confirm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+</div>
+
+<script>
+const params = new URLSearchParams(location.search);
+const SUBJECT = params.get('subject');
+const BOARD   = params.get('board');
+let CURRENT_USER = null;
+let SELECTED_COLOR = '#FFFFFF';
+let EDIT_DECK_ID = null;
+
+function isProProfile(p) {
+  if (!p) return false;
+  const tier = p.subscription_tier || 'free';
+  const status = p.subscription_status || 'active';
+  const expires = p.subscription_expires_at ? new Date(p.subscription_expires_at) : null;
+  return tier !== 'free'
+    && ['active','trialing'].includes(status)
+    && (!expires || expires > new Date());
+}
+
+async function load() {
+  if (!SUBJECT || !BOARD) { window.location = '../flashcards.html'; return; }
+
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (!user) { window.location = '../auth/login.html'; return; }
+  CURRENT_USER = user;
+
+  const { data: profile } = await supabaseClient
+    .from('profiles').select('*').eq('id', user.id).single();
+
+  const firstName = profile?.first_name || '';
+  const lastName  = profile?.last_name  || '';
+  document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim();
+  document.getElementById('avatarInitials').textContent =
+    ((firstName[0]||'')+(lastName[0]||'')).toUpperCase() || '?';
+  if (profile?.avatar_url) {
+    const av = document.getElementById('avatarInitials');
+    const img = document.createElement('img');
+    img.src = profile.avatar_url;
+    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+    av.replaceChildren(img);
+  }
+
+  document.getElementById('pageTitle').textContent = SUBJECT;
+  document.getElementById('pageBoard').textContent = BOARD;
+
+  // Pull this subject's emoji from user_subjects (if it's one of theirs)
+  const { data: userSubject } = await supabaseClient
+    .from('user_subjects').select('emoji')
+    .eq('user_id', user.id).eq('subject', SUBJECT).eq('exam_board', BOARD).maybeSingle();
+  if (userSubject?.emoji) document.getElementById('headEmoji').textContent = userSubject.emoji;
+
+  if (!isProProfile(profile)) {
+    document.getElementById('pageBody').innerHTML = `
+      <div class="lock-overlay">
+        <div class="lock-icon">🔒</div>
+        <div class="lock-title">Pro feature</div>
+        <div class="lock-msg">Upgrade to unlock spaced-repetition flashcards for ${SUBJECT} ${BOARD}.</div>
+        <a class="lock-btn" href="../pricing.html">✦ Upgrade to Pro</a>
+      </div>`;
+    return;
+  }
+
+  const topics = window.FLASHCARDS_TOPICS_FOR?.(SUBJECT, BOARD);
+  if (!topics) {
+    document.getElementById('pageBody').innerHTML = `
+      <div class="empty-state">
+        <div class="em">🚧</div>
+        <div style="font-family:var(--font-display);font-size:18px;margin-bottom:6px;color:var(--text);">Coming soon</div>
+        <div>Flashcards for ${SUBJECT} ${BOARD} aren't ready yet.</div>
+      </div>`;
+    return;
+  }
+
+  // System card counts per topic
+  const cardCounts = {};
+  const { data: rows } = await supabaseClient
+    .from('flashcards').select('topic_id')
+    .eq('subject', SUBJECT).eq('exam_board', BOARD);
+  (rows || []).forEach(r => { cardCounts[r.topic_id] = (cardCounts[r.topic_id] || 0) + 1; });
+
+  // Due today counts per topic (system cards only — user decks shown separately)
+  const today = new Date().toISOString().slice(0, 10);
+  const { data: dueRows } = await supabaseClient
+    .from('user_card_state')
+    .select('card_id')
+    .eq('user_id', user.id)
+    .eq('card_source', 'system')
+    .lte('due_date', today);
+  const dueIdSet = new Set((dueRows || []).map(r => r.card_id));
+  let dueByTopic = {};
+  if (dueIdSet.size > 0) {
+    const { data: dueCards } = await supabaseClient
+      .from('flashcards').select('id, topic_id')
+      .eq('subject', SUBJECT).eq('exam_board', BOARD)
+      .in('id', Array.from(dueIdSet));
+    (dueCards || []).forEach(c => { dueByTopic[c.topic_id] = (dueByTopic[c.topic_id] || 0) + 1; });
+  }
+
+  // User decks scoped to this subject+board
+  const { data: decks } = await supabaseClient
+    .from('user_decks').select('*')
+    .eq('user_id', user.id).eq('subject', SUBJECT).eq('exam_board', BOARD)
+    .order('created_at', { ascending: false });
+
+  const deckCardCounts = {};
+  if (decks && decks.length > 0) {
+    const { data: ufRows } = await supabaseClient
+      .from('user_flashcards').select('deck_id')
+      .in('deck_id', decks.map(d => d.id));
+    (ufRows || []).forEach(r => { deckCardCounts[r.deck_id] = (deckCardCounts[r.deck_id] || 0) + 1; });
+  }
+
+  // ── Render ──
+  const topicsHTML = topics.map(t => {
+    const cnt = cardCounts[t.num] || 0;
+    const due = dueByTopic[t.num] || 0;
+    const href = `study.html?subject=${encodeURIComponent(SUBJECT)}&board=${encodeURIComponent(BOARD)}&topic=${encodeURIComponent(t.num)}`;
+    return `<a class="topic-card" href="${href}">
+      <div class="topic-card-top">
+        <span class="topic-num">${t.num}</span>
+        <span class="topic-name">${t.name}</span>
+      </div>
+      <div class="topic-meta">
+        ${cnt > 0
+          ? `<span class="pill">${cnt} card${cnt !== 1 ? 's' : ''}</span>`
+          : `<span class="pill empty">No cards yet</span>`}
+        ${due > 0 ? `<span class="pill due">⏰ ${due} due today</span>` : ''}
+      </div>
+      <div class="topic-card-foot">
+        <span style="font-size:13px;color:var(--accent-dark);font-weight:600;">Study →</span>
+      </div>
+    </a>`;
+  }).join('');
+
+  const decksHTML = (decks && decks.length)
+    ? decks.map(d => {
+        const cnt = deckCardCounts[d.id] || 0;
+        const tName = d.topic_id
+          ? (topics.find(t => t.num === d.topic_id)?.name || d.topic_id)
+          : null;
+        const studyHref = `study.html?deck=${encodeURIComponent(d.id)}`;
+        return `<div class="deck-card">
+          <div class="deck-card-top">
+            <span class="deck-color-swatch" style="background:${d.card_color || '#FFFFFF'}"></span>
+            <span class="deck-name">${escapeHtml(d.name)}</span>
+          </div>
+          <div class="deck-desc">${escapeHtml(d.description || '')}${tName ? ` <span style="color:var(--accent-dark);">· ${tName}</span>` : ''}</div>
+          <div class="deck-foot">
+            <span class="deck-meta">${cnt} card${cnt !== 1 ? 's' : ''}</span>
+            <div class="deck-actions">
+              <button class="icon-btn" title="Edit" onclick="openEditDeck('${d.id}')">✎</button>
+              <button class="icon-btn danger" title="Delete" onclick="deleteDeck('${d.id}','${escapeAttr(d.name)}')">🗑</button>
+              <a class="btn btn-primary" href="${studyHref}" style="padding:6px 12px;font-size:12px;">Study →</a>
+            </div>
+          </div>
+        </div>`;
+      }).join('')
+    : `<div class="empty-state">
+        <div class="em">🃏</div>
+        <div style="font-family:var(--font-display);font-size:17px;margin-bottom:6px;color:var(--text);">No decks yet</div>
+        <div>Create your first deck for ${SUBJECT} ${BOARD}.</div>
+      </div>`;
+
+  document.getElementById('pageBody').innerHTML = `
+    <div class="section-head">
+      <div class="section-title">Topics</div>
+    </div>
+    <div class="topics-grid">${topicsHTML}</div>
+
+    <div class="section-head">
+      <div class="section-title">My decks for ${SUBJECT} ${BOARD}</div>
+      <button class="btn btn-primary" onclick="openNewDeck()">+ New deck</button>
+    </div>
+    <div class="decks-grid">${decksHTML}</div>
+  `;
+
+  // Populate topic dropdown for the deck modal
+  const sel = document.getElementById('deckTopic');
+  sel.innerHTML = `<option value="">— spans the whole subject —</option>` +
+    topics.map(t => `<option value="${t.num}">${t.num} · ${escapeHtml(t.name)}</option>`).join('');
+
+  // Render palette
+  const palette = window.FLASHCARDS_PALETTE || [{ name: 'White', hex: '#FFFFFF' }];
+  document.getElementById('paletteRow').innerHTML = palette.map(p => `
+    <div class="palette-swatch ${p.hex === SELECTED_COLOR ? 'selected' : ''}"
+         data-hex="${p.hex}" title="${p.name}" style="background:${p.hex}"
+         onclick="selectColor('${p.hex}')"></div>
+  `).join('');
+}
+
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+function escapeAttr(s){ return escapeHtml(s).replace(/"/g, '&quot;').replace(/'/g, '&#39;'); }
+
+function selectColor(hex) {
+  SELECTED_COLOR = hex;
+  document.querySelectorAll('.palette-swatch').forEach(el => {
+    el.classList.toggle('selected', el.dataset.hex === hex);
+  });
+}
+
+function openNewDeck() {
+  EDIT_DECK_ID = null;
+  document.getElementById('deckModalTitle').textContent = 'Create new deck';
+  document.getElementById('deckSaveBtn').textContent = 'Create deck';
+  document.getElementById('deckName').value = '';
+  document.getElementById('deckDesc').value = '';
+  document.getElementById('deckTopic').value = '';
+  selectColor('#FFFFFF');
+  document.getElementById('deckModal').classList.add('active');
+  setTimeout(() => document.getElementById('deckName').focus(), 50);
+}
+
+async function openEditDeck(deckId) {
+  const { data: deck } = await supabaseClient
+    .from('user_decks').select('*').eq('id', deckId).single();
+  if (!deck) return;
+  EDIT_DECK_ID = deckId;
+  document.getElementById('deckModalTitle').textContent = 'Edit deck';
+  document.getElementById('deckSaveBtn').textContent = 'Save changes';
+  document.getElementById('deckName').value = deck.name || '';
+  document.getElementById('deckDesc').value = deck.description || '';
+  document.getElementById('deckTopic').value = deck.topic_id || '';
+  selectColor(deck.card_color || '#FFFFFF');
+  document.getElementById('deckModal').classList.add('active');
+}
+
+function closeDeckModal() {
+  document.getElementById('deckModal').classList.remove('active');
+}
+
+async function saveDeck() {
+  const name = document.getElementById('deckName').value.trim();
+  if (!name) { alert('Give your deck a name.'); return; }
+  const description = document.getElementById('deckDesc').value.trim() || null;
+  const topic_id = document.getElementById('deckTopic').value || null;
+  const card_color = SELECTED_COLOR;
+
+  const btn = document.getElementById('deckSaveBtn');
+  btn.disabled = true; btn.textContent = 'Saving…';
+
+  if (EDIT_DECK_ID) {
+    const { error } = await supabaseClient
+      .from('user_decks')
+      .update({ name, description, topic_id, card_color })
+      .eq('id', EDIT_DECK_ID);
+    if (error) { alert(error.message); btn.disabled = false; btn.textContent = 'Save changes'; return; }
+  } else {
+    const { error } = await supabaseClient.from('user_decks').insert({
+      user_id: CURRENT_USER.id,
+      name, description, subject: SUBJECT, exam_board: BOARD, topic_id, card_color,
+    });
+    if (error) { alert(error.message); btn.disabled = false; btn.textContent = 'Create deck'; return; }
+  }
+
+  closeDeckModal();
+  load();
+}
+
+async function deleteDeck(deckId, name) {
+  if (!confirm(`Delete deck "${name}"? Cards inside will be removed too.`)) return;
+  const { error } = await supabaseClient.from('user_decks').delete().eq('id', deckId);
+  if (error) { alert(error.message); return; }
+  load();
+}
+
+function confirmSignOut(){document.getElementById('signoutOverlay').classList.add('active');}
+function cancelSignOut(){document.getElementById('signoutOverlay').classList.remove('active');}
+async function logout(){ await supabaseClient.auth.signOut(); window.location='../auth/login.html'; }
+
+load();
+</script>
+</body>
+</html>
