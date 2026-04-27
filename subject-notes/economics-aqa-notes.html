@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>RAG Learning — AQA Economics Notes</title>
@@ -25,7 +27,7 @@
     .app { display: flex; height: 100vh; overflow: hidden; }
     .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; flex-shrink: 0; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
     .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
-    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-img { width: 24px; height: 24px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
     .logo-text { font-family: var(--font-display); font-size: 18px; }
     .nav-section { padding: 0 12px; margin-bottom: 8px; }
     .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
@@ -117,7 +119,7 @@
   <!-- Sidebar -->
   <div class="sidebar">
     <a href="../Dashboard.html" class="sidebar-logo" style="text-decoration:none;color:inherit;cursor:pointer;">
-      <div class="logo-dot"></div>
+      <img src="../favicon.svg" alt="RAG Learning" class="logo-img" />
       <div class="logo-text">RAG Learning</div>
     </a>
     <div class="nav-section">
