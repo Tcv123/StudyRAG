@@ -310,11 +310,17 @@ async function load() {
     return;
   }
 
+  // Map cached level (gcse | a-level | alevel | as) to the DB level value
+  // ('gcse' or 'alevel') so GCSE / A-level cards don't bleed into each other
+  // when their topic IDs collide (e.g. CS OCR has "1.1" at both levels).
+  const cachedLevel = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  const dbLevel = (cachedLevel === 'a-level' || cachedLevel === 'alevel' || cachedLevel === 'as') ? 'alevel' : 'gcse';
+
   // System card counts per topic
   const cardCounts = {};
   const { data: rows } = await supabaseClient
     .from('flashcards').select('topic_id')
-    .eq('subject', SUBJECT).eq('exam_board', BOARD);
+    .eq('subject', SUBJECT).eq('exam_board', BOARD).eq('level', dbLevel);
   (rows || []).forEach(r => { cardCounts[r.topic_id] = (cardCounts[r.topic_id] || 0) + 1; });
 
   // Due today counts per topic (system cards only — user decks shown separately)
@@ -330,7 +336,7 @@ async function load() {
   if (dueIdSet.size > 0) {
     const { data: dueCards } = await supabaseClient
       .from('flashcards').select('id, topic_id')
-      .eq('subject', SUBJECT).eq('exam_board', BOARD)
+      .eq('subject', SUBJECT).eq('exam_board', BOARD).eq('level', dbLevel)
       .in('id', Array.from(dueIdSet));
     (dueCards || []).forEach(c => { dueByTopic[c.topic_id] = (dueByTopic[c.topic_id] || 0) + 1; });
   }

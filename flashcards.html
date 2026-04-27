@@ -236,11 +236,15 @@ async function load() {
   }
 
   // Fetch card counts per subject+board so each card can show "N flashcards" instead
-  // of a bare "available" chip.
+  // of a bare "available" chip. Filter by level so GCSE / A-level / AS cards
+  // don't bleed into each other when topic IDs collide.
+  const cachedLevel = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  const dbLevel = (cachedLevel === 'a-level' || cachedLevel === 'alevel' || cachedLevel === 'as') ? 'alevel' : 'gcse';
   const counts = {};
   const { data: cardRows } = await supabaseClient
     .from('flashcards')
-    .select('subject, exam_board');
+    .select('subject, exam_board')
+    .eq('level', dbLevel);
   (cardRows || []).forEach(r => {
     const k = `${r.subject}|${r.exam_board}`;
     counts[k] = (counts[k] || 0) + 1;
