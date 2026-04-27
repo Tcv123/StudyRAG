@@ -366,9 +366,10 @@ async function load() {
   const { data: { user }, error: authErr } = await supabaseClient.auth.getUser();
   if (authErr || !user) { window.location = 'auth/login.html'; return; }
 
-  const [{ data: profile }, { data: attempts, error: attErr }] = await Promise.all([
+  const [{ data: profile }, { data: attempts, error: attErr }, { data: userSubjects }] = await Promise.all([
     supabaseClient.from('profiles').select('first_name, last_name, avatar_url').eq('id', user.id).single(),
-    supabaseClient.from('practice_attempts').select('id, subject, exam_board, topic, topic_name, earned, total_marks, pct, questions, answered, time_used_sec, timed_out, details, taken_at').eq('user_id', user.id).order('taken_at', { ascending: false })
+    supabaseClient.from('practice_attempts').select('id, subject, exam_board, topic, topic_name, earned, total_marks, pct, questions, answered, time_used_sec, timed_out, details, taken_at').eq('user_id', user.id).order('taken_at', { ascending: false }),
+    supabaseClient.from('user_subjects').select('subject, exam_board').eq('user_id', user.id)
   ]);
 
   const firstName = profile?.first_name || '';
@@ -395,7 +396,8 @@ async function load() {
     return;
   }
 
-  allAttempts = (attempts || []);
+  const selectedKeys = new Set((userSubjects || []).map(s => `${s.subject}|${s.exam_board}`));
+  allAttempts = (attempts || []).filter(a => selectedKeys.has(`${a.subject}|${a.exam_board}`));
   renderStats();
   populateSubjectFilter();
   renderList();
