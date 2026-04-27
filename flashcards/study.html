@@ -281,6 +281,24 @@ function levelFromCache() {
 function escapeHtml(s) {
   return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
+
+// System cards (from the flashcards table populated via SQL) are author-
+// trusted and may contain inline SVG / simple HTML for chemistry diagrams,
+// energy profiles, etc. User-generated cards (user_flashcards) are NEVER
+// trusted — always escape them.
+function renderCardText(text) {
+  if (cardSource === 'system') {
+    // Strip <script>/<iframe>/event-handler attributes as a defence-in-depth
+    // belt — even though we control the inserts, RLS could be misconfigured.
+    return String(text || '')
+      .replace(/<\s*script[\s\S]*?<\/\s*script\s*>/gi, '')
+      .replace(/<\s*iframe[\s\S]*?<\/\s*iframe\s*>/gi, '')
+      .replace(/\son\w+\s*=\s*"[^"]*"/gi, '')
+      .replace(/\son\w+\s*=\s*'[^']*'/gi, '')
+      .replace(/javascript\s*:/gi, '');
+  }
+  return escapeHtml(text);
+}
 function todayISO() { return new Date().toISOString().slice(0, 10); }
 
 // SM-2 — returns updated state given current state + quality 0..5
@@ -558,7 +576,7 @@ function renderCard() {
             ? `<span class="topic-num">${escapeHtml(currentCard.topic_id)}</span>`
             : ''}
           <span class="label">Question</span>
-          <div class="content">${escapeHtml(currentCard.front)}</div>
+          <div class="content">${renderCardText(currentCard.front)}</div>
           <div class="hint">Click card to reveal answer · Press space</div>
         </div>
         <div class="face back" style="background:${cardColor};">
@@ -566,7 +584,7 @@ function renderCard() {
             ? `<button class="speaker-btn" id="speakerBack" onclick="event.stopPropagation();speak('back')" title="Read aloud (R)" aria-label="Read answer aloud">🔊</button>`
             : ''}
           <span class="label">Answer</span>
-          <div class="content">${escapeHtml(currentCard.back)}</div>
+          <div class="content">${renderCardText(currentCard.back)}</div>
           <div class="hint">Grade how well you knew it ↓</div>
         </div>
       </div>
