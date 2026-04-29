@@ -365,6 +365,53 @@
     .summary-seg.red { background: var(--red); }
     .summary-seg.pending { background: var(--muted2); }
 
+    /* ── PER-SUBJECT OVERVIEW (Summary tab) ── */
+    .subj-overview-head {
+      font-family: var(--font-display); font-size: 16px; margin: 8px 0 12px;
+    }
+    .subj-list { display: flex; flex-direction: column; gap: 10px; }
+    .subj-row {
+      display: grid;
+      grid-template-columns: minmax(180px, 1.2fr) 2fr auto;
+      align-items: center; gap: 16px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 12px 16px;
+      text-decoration: none; color: inherit; cursor: pointer;
+      transition: border-color 0.15s, transform 0.15s, box-shadow 0.15s;
+    }
+    .subj-row:hover { border-color: var(--border-hover); transform: translateY(-1px); box-shadow: 0 3px 10px rgba(37,99,235,0.1); }
+    .subj-row-left { display: flex; align-items: center; gap: 12px; min-width: 0; }
+    .subj-emoji {
+      width: 36px; height: 36px; border-radius: 10px; flex-shrink: 0;
+      background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2);
+      display: flex; align-items: center; justify-content: center; font-size: 18px;
+    }
+    .subj-row-name { font-family: var(--font-display); font-size: 15px; line-height: 1.2; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .subj-row-board { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .subj-row-bar {
+      display: flex; height: 8px; border-radius: 99px; overflow: hidden;
+      background: var(--surface2); border: 1px solid var(--border);
+    }
+    .subj-row-pills { display: flex; gap: 6px; flex-wrap: wrap; justify-content: flex-end; }
+    .subj-pill {
+      display: inline-flex; align-items: center; gap: 4px;
+      padding: 3px 8px; border-radius: 99px;
+      font-size: 11px; font-weight: 600; line-height: 1;
+    }
+    .subj-pill .dot { width: 7px; height: 7px; border-radius: 50%; }
+    .subj-pill.green   { background: var(--green-bg);  color: #166534; border: 1px solid var(--green-border); }
+    .subj-pill.amber   { background: var(--amber-bg);  color: #92400E; border: 1px solid var(--amber-border); }
+    .subj-pill.red     { background: var(--red-bg);    color: #991B1B; border: 1px solid var(--red-border); }
+    .subj-pill.pending { background: var(--surface2);  color: var(--muted); border: 1px solid var(--border); }
+    .subj-pill.green   .dot { background: var(--green); }
+    .subj-pill.amber   .dot { background: var(--amber); }
+    .subj-pill.red     .dot { background: var(--red); }
+    .subj-pill.pending .dot { background: var(--muted2); }
+    @media (max-width: 720px) {
+      .subj-row { grid-template-columns: 1fr; gap: 10px; }
+      .subj-row-pills { justify-content: flex-start; }
+    }
+
     @media (max-width: 768px) {
       .sidebar { transform: translateX(-100%); position: fixed; z-index: 50; height: 100vh; }
       .main { margin-left: 0; padding: 24px 20px; }
@@ -486,6 +533,10 @@
 
       <!-- Summary bar -->
       <div class="summary-bar" id="summaryBar"></div>
+
+      <!-- Per-subject overview -->
+      <div class="subj-overview-head">By subject</div>
+      <div class="subj-list" id="subjectOverview"></div>
     </div>
 
     <!-- ─── Topics panel ─── -->
@@ -2127,10 +2178,58 @@ async function load() {
   document.getElementById('statPending').textContent = pending;
 
   renderSummaryBar(green, amber, red, pending);
+  renderSubjectOverview();
   renderBreakdownExams(subjects || []);
   renderTopics();
   renderPracticeCarousel();
   renderFlashcardsBreakdown(user, profile, subjects || []);
+}
+
+function renderSubjectOverview() {
+  const wrap = document.getElementById('subjectOverview');
+  if (!wrap) return;
+
+  if (!allSubjectData.length) {
+    wrap.innerHTML = `<div class="fc-empty">
+      <div class="fc-empty-icon">📚</div>
+      <div style="font-family:var(--font-display);font-size:17px;color:var(--text);margin-bottom:4px;">No subjects yet</div>
+      <div style="font-size:13px;">Add subjects in setup to see a per-subject breakdown.</div>
+    </div>`;
+    return;
+  }
+
+  wrap.innerHTML = allSubjectData.map(s => {
+    const topics = allTopicData.filter(t => t.subject === s.subject && t.board === s.board);
+    const total = topics.length;
+    const g = topics.filter(t => t.rag === 'green').length;
+    const a = topics.filter(t => t.rag === 'amber').length;
+    const r = topics.filter(t => t.rag === 'red').length;
+    const p = topics.filter(t => t.rag === 'pending').length;
+
+    const pct = v => total ? ((v / total) * 100).toFixed(1) : 0;
+    const segs = total ? `
+      <div class="summary-seg green"   style="width:${pct(g)}%"></div>
+      <div class="summary-seg amber"   style="width:${pct(a)}%"></div>
+      <div class="summary-seg red"     style="width:${pct(r)}%"></div>
+      <div class="summary-seg pending" style="width:${pct(p)}%"></div>` : '';
+
+    return `<a class="subj-row" href="javascript:void(0)" onclick="setTab('topics')">
+      <div class="subj-row-left">
+        <div class="subj-emoji">${s.emoji || '📚'}</div>
+        <div style="min-width:0;">
+          <div class="subj-row-name">${escapeHtml(s.subject)}</div>
+          <div class="subj-row-board">${escapeHtml(s.board)} · ${total} topic${total !== 1 ? 's' : ''}</div>
+        </div>
+      </div>
+      <div class="subj-row-bar">${segs}</div>
+      <div class="subj-row-pills">
+        <span class="subj-pill green"   title="Green"><span class="dot"></span>${g}</span>
+        <span class="subj-pill amber"   title="Amber"><span class="dot"></span>${a}</span>
+        <span class="subj-pill red"     title="Red"><span class="dot"></span>${r}</span>
+        <span class="subj-pill pending" title="Not tested"><span class="dot"></span>${p}</span>
+      </div>
+    </a>`;
+  }).join('');
 }
 
 function isProProfile(p) {
