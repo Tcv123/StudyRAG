@@ -11,6 +11,7 @@
   <script src="supabase-config.js"></script>
   <script src="nav-gating.js"></script>
   <script src="flashcards-config.js"></script>
+  <script src="practice-bank-config.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -68,8 +69,9 @@
     .pill .chev { color: var(--muted2); font-size: 10px; }
     .pill.locked { background: var(--surface); border-color: var(--border); color: var(--muted); cursor: not-allowed; opacity: 0.92; }
     .pill.locked .lock { font-size: 11px; color: var(--muted2); }
-    .qbox { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; font-size: 15px; line-height: 1.6; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
-    .qbox .qtext { flex: 1; min-width: 0; }
+    .qbox { background: var(--surface); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 22px 26px; line-height: 1.65; margin-bottom: 14px; display: flex; justify-content: space-between; align-items: flex-start; gap: 18px; }
+    .qbox .qtext { flex: 1; min-width: 0; font-family: 'Georgia', 'DM Serif Display', serif; font-size: 17px; color: var(--text); font-style: italic; }
+    .qbox .qtext .q-prefix { font-family: var(--font-display); font-size: 22px; color: var(--accent); margin-right: 12px; font-style: normal; vertical-align: -2px; }
     .marks-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: var(--accent-dim); color: var(--accent-dark); border: 1px solid var(--accent); border-radius: 999px; font-size: 12.5px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
     .pill-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; font-size: 12.5px; color: var(--muted); cursor: pointer; font-family: var(--font-body); transition: all 0.15s; }
     .pill-btn:hover { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-dark); }
@@ -169,7 +171,7 @@
       <!-- Panel 1 — Choose a question -->
       <div class="panel">
         <div class="panel-head">
-          <div class="panel-title">1. Choose a question</div>
+          <div class="panel-title">Choose a question</div>
         </div>
         <div class="row">
           <div class="dropdown" data-key="subject">
@@ -187,8 +189,8 @@
           <span style="margin-left:auto;font-size:12px;color:var(--muted2);">📚 Question bank</span>
         </div>
         <div class="qbox" id="questionBox">
-          <div class="qtext"><strong>Q.</strong> <span id="questionText">Loading question…</span></div>
-          <span class="marks-badge" id="marksBadge">12 marks</span>
+          <div class="qtext"><span class="q-prefix">Q</span><span id="questionText">Loading question…</span></div>
+          <span class="marks-badge" id="marksBadge">— marks</span>
         </div>
         <div class="row" style="margin-bottom:0;">
           <button id="generateAnother" class="pill-btn">🔄 Generate another question</button>
@@ -198,7 +200,7 @@
       <!-- Panel 2 — Your answer -->
       <div class="panel">
         <div class="panel-head">
-          <div class="panel-title">2. Your answer</div>
+          <div class="panel-title">Your answer</div>
           <div class="panel-meta" id="answerMeta">0 words</div>
         </div>
         <textarea class="answer-textarea" id="answerInput" placeholder="Write your answer here…"></textarea>
@@ -211,7 +213,7 @@
       <!-- Panel 3 — Feedback (hidden until Mark is clicked) -->
       <div class="panel" id="feedbackPanel" style="display:none;">
         <div class="panel-head">
-          <div class="panel-title">3. Examiner feedback</div>
+          <div class="panel-title">Examiner feedback</div>
           <div class="panel-meta">Estimated grade · not an official mark</div>
         </div>
         <div id="feedbackBody"></div>
@@ -293,164 +295,9 @@
     return topics.map(t => typeof t === 'string' ? { id: t, name: t } : { id: t.id || t.name, name: t.name || t.id });
   }
 
-  // ---------- Practice question bank loader (mirrors practice.html) ----------
-  // KEEP IN SYNC with practice.html — these maps point to the same per-subject
-  // practice.js files, which export a global like GEOGRAPHY_AQA_PRACTICE keyed
-  // by topic id with { name, questions: [{ q, marks, markScheme }] }.
-  const BUNDLE_MAP = {
-    'Computer Science_OCR':         ['questions/cs/cs-ocr-gcse-practice.js'],
-    'Computer Science_OCR|alevel':  ['questions/cs/cs-ocr-alevel-practice.js'],
-    'Computer Science_AQA|gcse':    ['questions/cs/cs-aqa-gcse-practice.js'],
-    'Computer Science_AQA|alevel':  ['questions/cs/cs-aqa-alevel-practice.js'],
-    'Physics_Edexcel':              ['questions/physics/physics-edexcel-practice.js'],
-    'Physics_AQA':                  ['questions/physics/physics-aqa-practice.js'],
-    'Physics_AQA|gcse':             ['questions/physics-aqa-gcse/physics-aqa-gcse-practice.js'],
-    'Physics_Edexcel|gcse':         ['questions/physics-edexcel-gcse/physics-edexcel-gcse-practice.js'],
-    'Physics_OCR A|gcse':           ['questions/physics-ocr-a-gcse/physics-ocr-a-gcse-practice.js'],
-    'Physics_OCR A':                ['questions/physics/physics-ocr-a-practice.js'],
-    'Physics_OCR B':                ['questions/physics/physics-ocr-b-practice.js'],
-    'Physics_OCR B|gcse':           ['questions/physics-ocr-b-gcse/physics-ocr-b-gcse-practice.js'],
-    'Economics_AQA':                ['questions/economics-aqa/economics-aqa-practice.js'],
-    'Economics_Edexcel A':          ['questions/economics-edexcel-a/economics-edexcel-a-practice.js'],
-    'Economics_OCR':                ['questions/economics-ocr/economics-ocr-practice.js'],
-    'Economics_Edexcel B':          ['questions/economics-edexcel-b/economics-edexcel-b-practice.js'],
-    'Chemistry_AQA':                ['questions/chemistry/chemistry-aqa-practice.js'],
-    'Chemistry_Edexcel':            ['questions/chemistry/chemistry-edexcel-practice.js'],
-    'Chemistry_OCR A':              ['questions/chemistry/chemistry-ocr-a-practice.js'],
-    'Chemistry_OCR B':              ['questions/chemistry/chemistry-ocr-b-practice.js'],
-    'Biology_AQA':                  ['questions/biology/biology-aqa-practice.js'],
-    'Biology_AQA|gcse':             ['questions/biology/biology-aqa-gcse-practice.js'],
-    'Biology_Edexcel|gcse':         ['questions/biology-edexcel-gcse/biology-edexcel-gcse-practice.js'],
-    'Biology_Edexcel IGCSE|gcse':   ['questions/biology-edexcel-igcse/biology-edexcel-igcse-practice.js'],
-    'Biology_Edexcel A':            ['questions/biology/biology-edexcel-a-practice.js'],
-    'Biology_Edexcel B':            ['questions/biology/biology-edexcel-b-practice.js'],
-    'Biology_OCR A':                ['questions/biology/biology-ocr-a-practice.js'],
-    'Biology_OCR A|gcse':           ['questions/biology/biology-ocr-a-gcse-practice.js'],
-    'Biology_OCR B':                ['questions/biology/biology-ocr-b-practice.js'],
-    'Biology_OCR B|gcse':           ['questions/biology/biology-ocr-b-gcse-practice.js'],
-    'Geography_AQA':                ['questions/geography-aqa/geography-aqa-practice.js'],
-    'Geography_Edexcel':            ['questions/geography-edexcel/geography-edexcel-practice.js'],
-    'Geography_Eduqas|gcse':        ['questions/geography-eduqas-gcse/geography-eduqas-gcse-practice.js'],
-    'Geography_Eduqas|alevel':      ['questions/geography-eduqas-alevel/geography-eduqas-alevel-practice.js'],
-    'Geography_OCR':                ['questions/geography-ocr/geography-ocr-practice.js'],
-    'Mathematics_AQA':              ['questions/maths-aqa/maths-aqa-practice.js'],
-    'Mathematics_OCR|gcse':         ['questions/maths-ocr-gcse/maths-ocr-gcse-practice.js'],
-    'Mathematics_OCR|alevel':       ['questions/maths-ocr-alevel/maths-ocr-alevel-practice.js'],
-    'Mathematics_Edexcel': [
-      'questions/maths-edexcel/w-P1-P11.js',
-      'questions/maths-edexcel/w-P12-P21.js',
-      'questions/maths-edexcel/w-S1-S8.js',
-      'questions/maths-edexcel/w-M1-M2.js',
-      'questions/maths-edexcel/w-M3-M4.js',
-      'questions/maths-edexcel/w-M5-M7.js',
-      'questions/maths-edexcel/maths-edexcel-practice.js',
-    ],
-    'Further Mathematics_Edexcel': [
-      'questions/further-maths-edexcel/fm-edexcel-written-cp1a.js',
-      'questions/further-maths-edexcel/fm-edexcel-written-cp1b.js',
-      'questions/further-maths-edexcel/fm-edexcel-written-cp2a.js',
-      'questions/further-maths-edexcel/fm-edexcel-written-cp2b.js',
-      'questions/further-maths-edexcel/fm-edexcel-written.js',
-      'questions/further-maths-edexcel/fm-edexcel-practice.js',
-    ],
-    'Further Mathematics_AQA':      ['questions/further-maths-aqa/fm-aqa-practice.js'],
-    'Further Mathematics_OCR A':    ['questions/further-maths-ocr/fm-ocr-practice.js'],
-    'Further Mathematics_OCR B': [
-      'questions/further-maths-ocr-b/fm-ocr-b-written-cp1.js',
-      'questions/further-maths-ocr-b/fm-ocr-b-written-cp2.js',
-      'questions/further-maths-ocr-b/fm-ocr-b-written-m.js',
-      'questions/further-maths-ocr-b/fm-ocr-b-written-s.js',
-      'questions/further-maths-ocr-b/fm-ocr-b-written-a.js',
-      'questions/further-maths-ocr-b/fm-ocr-b-written.js',
-      'questions/further-maths-ocr-b/fm-ocr-b-practice.js',
-    ],
-    'English Language_AQA':         ['questions/english-aqa/english-aqa-practice.js'],
-    'English Language_Edexcel':     ['questions/english-edexcel/english-edexcel-practice.js'],
-  };
-
-  const PRACTICE_MAP = {
-    'Computer Science_OCR': () => typeof CS_OCR_PRACTICE !== 'undefined' ? CS_OCR_PRACTICE : null,
-    'Computer Science_OCR|alevel': () => typeof CS_OCR_PRACTICE !== 'undefined' ? CS_OCR_PRACTICE : null,
-    'Computer Science_AQA|gcse': () => typeof CS_AQA_PRACTICE !== 'undefined' ? CS_AQA_PRACTICE : null,
-    'Computer Science_AQA|alevel': () => typeof CS_AQA_PRACTICE !== 'undefined' ? CS_AQA_PRACTICE : null,
-    'Physics_Edexcel': () => typeof PHYSICS_EDEXCEL_PRACTICE !== 'undefined' ? PHYSICS_EDEXCEL_PRACTICE : null,
-    'Physics_AQA': () => typeof PHYSICS_AQA_PRACTICE !== 'undefined' ? PHYSICS_AQA_PRACTICE : null,
-    'Physics_AQA|gcse': () => typeof PHYSICS_AQA_GCSE_PRACTICE !== 'undefined' ? PHYSICS_AQA_GCSE_PRACTICE : null,
-    'Physics_Edexcel|gcse': () => typeof PHYSICS_EDEXCEL_GCSE_PRACTICE !== 'undefined' ? PHYSICS_EDEXCEL_GCSE_PRACTICE : null,
-    'Physics_OCR A|gcse': () => typeof PHYSICS_OCR_A_GCSE_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_GCSE_PRACTICE : null,
-    'Physics_OCR A': () => typeof PHYSICS_OCR_A_PRACTICE !== 'undefined' ? PHYSICS_OCR_A_PRACTICE : null,
-    'Physics_OCR B': () => typeof PHYSICS_OCR_B_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_PRACTICE : null,
-    'Physics_OCR B|gcse': () => typeof PHYSICS_OCR_B_GCSE_PRACTICE !== 'undefined' ? PHYSICS_OCR_B_GCSE_PRACTICE : null,
-    'Economics_AQA': () => typeof ECONOMICS_AQA_PRACTICE !== 'undefined' ? ECONOMICS_AQA_PRACTICE : null,
-    'Economics_Edexcel A': () => typeof ECONOMICS_EDEXCEL_A_PRACTICE !== 'undefined' ? ECONOMICS_EDEXCEL_A_PRACTICE : null,
-    'Economics_OCR': () => typeof ECONOMICS_OCR_PRACTICE !== 'undefined' ? ECONOMICS_OCR_PRACTICE : null,
-    'Economics_Edexcel B': () => typeof ECONOMICS_EDEXCEL_B_PRACTICE !== 'undefined' ? ECONOMICS_EDEXCEL_B_PRACTICE : null,
-    'Chemistry_AQA': () => typeof CHEMISTRY_AQA_PRACTICE !== 'undefined' ? CHEMISTRY_AQA_PRACTICE : null,
-    'Chemistry_Edexcel': () => typeof CHEMISTRY_EDEXCEL_PRACTICE !== 'undefined' ? CHEMISTRY_EDEXCEL_PRACTICE : null,
-    'Chemistry_OCR A': () => typeof CHEMISTRY_OCR_A_PRACTICE !== 'undefined' ? CHEMISTRY_OCR_A_PRACTICE : null,
-    'Chemistry_OCR B': () => typeof CHEMISTRY_OCR_B_PRACTICE !== 'undefined' ? CHEMISTRY_OCR_B_PRACTICE : null,
-    'Biology_AQA': () => typeof BIOLOGY_AQA_PRACTICE !== 'undefined' ? BIOLOGY_AQA_PRACTICE : null,
-    'Biology_AQA|gcse': () => typeof BIOLOGY_AQA_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_AQA_GCSE_PRACTICE : null,
-    'Biology_Edexcel|gcse': () => typeof BIOLOGY_EDEXCEL_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_GCSE_PRACTICE : null,
-    'Biology_Edexcel IGCSE|gcse': () => typeof BIOLOGY_EDEXCEL_IGCSE_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_IGCSE_PRACTICE : null,
-    'Biology_Edexcel A': () => typeof BIOLOGY_EDEXCEL_A_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_A_PRACTICE : null,
-    'Biology_Edexcel B': () => typeof BIOLOGY_EDEXCEL_B_PRACTICE !== 'undefined' ? BIOLOGY_EDEXCEL_B_PRACTICE : null,
-    'Biology_OCR A': () => typeof BIOLOGY_OCR_A_PRACTICE !== 'undefined' ? BIOLOGY_OCR_A_PRACTICE : null,
-    'Biology_OCR A|gcse': () => typeof BIOLOGY_OCR_A_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_OCR_A_GCSE_PRACTICE : null,
-    'Biology_OCR B': () => typeof BIOLOGY_OCR_B_PRACTICE !== 'undefined' ? BIOLOGY_OCR_B_PRACTICE : null,
-    'Biology_OCR B|gcse': () => typeof BIOLOGY_OCR_B_GCSE_PRACTICE !== 'undefined' ? BIOLOGY_OCR_B_GCSE_PRACTICE : null,
-    'Geography_AQA': () => typeof GEOGRAPHY_AQA_PRACTICE !== 'undefined' ? GEOGRAPHY_AQA_PRACTICE : null,
-    'Geography_Edexcel': () => typeof GEOGRAPHY_EDEXCEL_PRACTICE !== 'undefined' ? GEOGRAPHY_EDEXCEL_PRACTICE : null,
-    'Geography_Eduqas|gcse': () => typeof GEOGRAPHY_EDUQAS_PRACTICE !== 'undefined' ? GEOGRAPHY_EDUQAS_PRACTICE : null,
-    'Geography_Eduqas|alevel': () => typeof GEOGRAPHY_EDUQAS_ALEVEL_PRACTICE !== 'undefined' ? GEOGRAPHY_EDUQAS_ALEVEL_PRACTICE : null,
-    'Geography_OCR': () => typeof GEOGRAPHY_OCR_PRACTICE !== 'undefined' ? GEOGRAPHY_OCR_PRACTICE : null,
-    'Mathematics_AQA': () => typeof MATHS_AQA_PRACTICE !== 'undefined' ? MATHS_AQA_PRACTICE : null,
-    'Mathematics_OCR|gcse': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
-    'Mathematics_OCR|alevel': () => typeof MATHS_OCR_ALEVEL_PRACTICE !== 'undefined' ? MATHS_OCR_ALEVEL_PRACTICE : null,
-    'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
-    'Further Mathematics_Edexcel': () => typeof FM_EDEXCEL_PRACTICE !== 'undefined' ? FM_EDEXCEL_PRACTICE : null,
-    'Further Mathematics_AQA': () => typeof FM_AQA_PRACTICE !== 'undefined' ? FM_AQA_PRACTICE : null,
-    'Further Mathematics_OCR A': () => typeof FM_OCR_PRACTICE !== 'undefined' ? FM_OCR_PRACTICE : null,
-    'Further Mathematics_OCR B': () => typeof FM_OCR_B_PRACTICE !== 'undefined' ? FM_OCR_B_PRACTICE : null,
-    'English Language_AQA': () => typeof ENGLISH_AQA_PRACTICE !== 'undefined' ? ENGLISH_AQA_PRACTICE : null,
-    'English Language_Edexcel': () => typeof ENGLISH_EDEXCEL_PRACTICE !== 'undefined' ? ENGLISH_EDEXCEL_PRACTICE : null,
-  };
-
-  const _loadedScripts = new Set();
-  const _bundlePromises = {};
-  function loadScriptOnce(src) {
-    if (_loadedScripts.has(src)) return Promise.resolve();
-    return new Promise((resolve, reject) => {
-      const s = document.createElement('script');
-      s.src = src;
-      s.onload  = () => { _loadedScripts.add(src); resolve(); };
-      s.onerror = () => reject(new Error('Failed to load ' + src));
-      document.head.appendChild(s);
-    });
-  }
-  function _lvSuffix() {
-    const l = (localStorage.getItem('cached_level') || 'alevel').toLowerCase();
-    return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
-  }
-  function _lvLookup(map, base) {
-    const keyed = map[`${base}|${_lvSuffix()}`];
-    return keyed !== undefined ? keyed : map[base];
-  }
-  function loadBundle(subjectKey) {
-    if (_bundlePromises[subjectKey]) return _bundlePromises[subjectKey];
-    const files = _lvLookup(BUNDLE_MAP, subjectKey);
-    if (!files) return Promise.resolve();
-    _bundlePromises[subjectKey] = files.reduce(
-      (chain, src) => chain.then(() => loadScriptOnce(src)),
-      Promise.resolve()
-    );
-    return _bundlePromises[subjectKey];
-  }
-  function getPracticeBank(subjectKey) {
-    const getter = _lvLookup(PRACTICE_MAP, subjectKey);
-    if (!getter) return null;
-    return getter();
-  }
+  // ---------- Practice question bank ----------
+  // All BUNDLE_MAP / PRACTICE_MAP entries live in practice-bank-config.js.
+  // Add a new subject there once and both pages pick it up.
 
   let topicQuestions = [];
   let questionIndex = 0;
@@ -459,15 +306,11 @@
     questionIndex = 0;
     topicQuestions = [];
     const subjectKey = `${state.subject}_${state.board}`;
-    try { await loadBundle(subjectKey); } catch (e) { console.warn('Bundle load failed:', e); }
-    const bank = getPracticeBank(subjectKey);
+    try { await window.loadPracticeBundle(subjectKey); } catch (e) { console.warn('Bundle load failed:', e); }
     const topics = topicsForSelected() || [];
     const topic = topics.find(t => t.name === state.topic);
     const topicId = topic?.id;
-    if (!bank || !topicId) return;
-    const data = bank[topicId];
-    if (!data) return;
-    topicQuestions = (data.questions || []).filter(q => q && q.q);
+    topicQuestions = window.getPracticeTopicQuestions(subjectKey, topicId);
   }
 
   function rerenderQuestion() {
