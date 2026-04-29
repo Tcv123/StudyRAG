@@ -138,6 +138,20 @@
     .fc-stat-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
     .fc-stat-val { font-family: var(--font-display); font-size: 18px; color: var(--text); }
     .fc-stat-val.due { color: var(--amber); }
+    .fc-progress-row { display: flex; flex-direction: column; gap: 6px; }
+    .fc-progress-label { font-size: 12px; color: var(--muted); font-weight: 500; }
+    .fc-progress-label strong { color: var(--text); font-weight: 600; }
+    .fc-progress-bar { height: 6px; background: var(--surface2); border: 1px solid var(--border); border-radius: 99px; overflow: hidden; }
+    .fc-progress-fill { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent-dark)); transition: width 0.4s ease; }
+    .fc-due-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      padding: 4px 10px; border-radius: 99px;
+      background: var(--amber-bg); border: 1px solid var(--amber-border);
+      color: #92400E; font-size: 12px; font-weight: 600; align-self: flex-start;
+    }
+    .fc-decks-line { font-size: 12px; color: var(--muted); }
+    .fc-decks-line strong { color: var(--text); font-weight: 600; }
+    .fc-no-cards { font-size: 12px; color: var(--muted2); font-style: italic; }
     .fc-empty { padding: 40px 20px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--border); border-radius: 14px; }
     .fc-empty-icon { font-size: 36px; margin-bottom: 8px; opacity: 0.6; }
     .fc-lock { padding: 60px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
@@ -2297,12 +2311,47 @@ async function renderFlashcardsBreakdown(user, profile, subjects) {
     deckCounts[key] = (deckCounts[key] || 0) + 1;
   });
 
-  // Aggregate state counts (across all subjects — used in the top stats).
+  // Pull every state row for this user once so we can break studied/due
+  // counts down per subject. For typical users this is small (a few hundred
+  // rows at most) — well under Supabase's 1k cap.
   const today = new Date().toISOString().slice(0, 10);
-  const [{ count: studiedTotal }, { count: dueTotal }] = await Promise.all([
-    supabaseClient.from('user_card_state').select('*', { count: 'exact', head: true }).eq('user_id', user.id),
-    supabaseClient.from('user_card_state').select('*', { count: 'exact', head: true }).eq('user_id', user.id).lte('due_date', today),
-  ]);
+  const { data: states } = await supabaseClient
+    .from('user_card_state')
+    .select('card_id, due_date, card_source')
+    .eq('user_id', user.id);
+
+  // Resolve each state row to a "Subject|Board" key.
+  // - system source: card_id → flashcards.subject/exam_board
+  // - user source:   card_id → user_flashcards.deck_id → user_decks.subject
+  const cardKeyById = {};
+  const sysIds = (states || []).filter(s => s.card_source === 'system').map(s => s.card_id);
+  const usrIds = (states || []).filter(s => s.card_source === 'user').map(s => s.card_id);
+  if (sysIds.length) {
+    const { data: rows } = await supabaseClient
+      .from('flashcards').select('id, subject, exam_board')
+      .in('id', sysIds);
+    (rows || []).forEach(r => { cardKeyById[`s:${r.id}`] = `${r.subject}|${r.exam_board}`; });
+  }
+  if (usrIds.length) {
+    const deckById = {};
+    (userDecks || []).forEach(d => { deckById[d.id] = `${d.subject}|${d.exam_board}`; });
+    const { data: rows } = await supabaseClient
+      .from('user_flashcards').select('id, deck_id')
+      .in('id', usrIds);
+    (rows || []).forEach(r => { cardKeyById[`u:${r.id}`] = deckById[r.deck_id]; });
+  }
+
+  const studiedBySubject = {};
+  const dueBySubject = {};
+  let studiedTotal = 0, dueTotal = 0;
+  (states || []).forEach(s => {
+    const key = cardKeyById[`${s.card_source === 'system' ? 's' : 'u'}:${s.card_id}`];
+    studiedTotal++;
+    if (s.due_date <= today) dueTotal++;
+    if (!key) return;
+    studiedBySubject[key] = (studiedBySubject[key] || 0) + 1;
+    if (s.due_date <= today) dueBySubject[key] = (dueBySubject[key] || 0) + 1;
+  });
 
   const totalCards = Object.values(systemCounts).reduce((a, b) => a + b, 0);
   const totalDecks = (userDecks || []).length;
@@ -2311,11 +2360,27 @@ async function renderFlashcardsBreakdown(user, profile, subjects) {
     const key = `${s.subject}|${s.exam_board}`;
     const cards = systemCounts[key] || 0;
     const decks = deckCounts[key] || 0;
+    const studied = studiedBySubject[key] || 0;
+    const due = dueBySubject[key] || 0;
+    const pct = cards > 0 ? Math.min(100, Math.round((studied / cards) * 100)) : 0;
+
     const href = cards > 0 || decks > 0
       ? `flashcards/subject.html?subject=${encodeURIComponent(s.subject)}&board=${encodeURIComponent(s.exam_board)}`
       : null;
     const tag = href ? 'a' : 'div';
     const hrefAttr = href ? ` href="${href}"` : '';
+
+    const progressBlock = cards > 0
+      ? `<div class="fc-progress-row">
+          <div class="fc-progress-label"><strong>${studied}</strong> / ${cards} cards studied · ${pct}%</div>
+          <div class="fc-progress-bar"><div class="fc-progress-fill" style="width:${pct}%"></div></div>
+        </div>`
+      : `<div class="fc-no-cards">No cards available yet</div>`;
+    const dueBlock = due > 0
+      ? `<div class="fc-due-badge">⏰ ${due} due today</div>` : '';
+    const decksBlock = decks > 0
+      ? `<div class="fc-decks-line"><strong>${decks}</strong> custom deck${decks !== 1 ? 's' : ''}</div>` : '';
+
     return `<${tag} class="fc-card"${hrefAttr}>
       <div class="fc-card-top">
         <div class="fc-emoji">${s.emoji || '📚'}</div>
@@ -2324,16 +2389,9 @@ async function renderFlashcardsBreakdown(user, profile, subjects) {
           <div class="fc-board">${escapeHtml(s.exam_board)}</div>
         </div>
       </div>
-      <div class="fc-stats">
-        <div class="fc-stat">
-          <div class="fc-stat-label">System cards</div>
-          <div class="fc-stat-val">${cards}</div>
-        </div>
-        <div class="fc-stat">
-          <div class="fc-stat-label">My decks</div>
-          <div class="fc-stat-val">${decks}</div>
-        </div>
-      </div>
+      ${progressBlock}
+      ${dueBlock}
+      ${decksBlock}
     </${tag}>`;
   }).join('');
 
