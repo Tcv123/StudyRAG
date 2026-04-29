@@ -460,6 +460,69 @@
   };
   answerInput.addEventListener('input', updateWordCount);
 
+  // ---------- Adaptive feedback content (no AI yet — driven by dropdowns) ----------
+  function structureTipsFor(command) {
+    const tips = {
+      'Describe': [
+        'Open with a clear, factual definition or summary of the topic.',
+        'Each paragraph: name a feature → describe with detailed specifics → next feature.',
+        'Use precise terminology and named examples — avoid vague descriptors like <em>"good"</em> or <em>"bad"</em>.',
+        'Close by linking the description back to the question — don\'t drift into evaluation or causes.'
+      ],
+      'Explain': [
+        'Open with a clear cause-and-effect statement.',
+        'For each point: state the cause → trace the mechanism step by step → name the consequence with a specific example.',
+        'Use linking phrases: <em>"this leads to…"</em>, <em>"as a result…"</em>, <em>"because of this…"</em>.',
+        'Close by summarising the chain of reasoning — not just listing causes side by side.'
+      ],
+      'Compare': [
+        'Open by identifying both subjects and the criteria you will compare on.',
+        'Each paragraph: ONE criterion at a time, discussing BOTH subjects in turn — never write two separate sections.',
+        'Use comparative connectives: <em>"whereas"</em>, <em>"in contrast"</em>, <em>"similarly"</em>, <em>"unlike"</em>.',
+        'Close with a clear judgement on which is more effective / important / successful overall.'
+      ],
+      'Discuss': [
+        'Open with a balanced overview that acknowledges the complexity of the issue.',
+        'Each paragraph: present one viewpoint → support with evidence → present the counterargument.',
+        'Use connectives: <em>"on one hand"</em>, <em>"however"</em>, <em>"on the other hand"</em>, <em>"arguably"</em>.',
+        'Close with a balanced judgement that weighs both sides — don\'t sit on the fence, but show your reasoning.'
+      ],
+      'Assess': [
+        'Open with a one-sentence judgement that directly addresses the command word.',
+        'Each paragraph: point → specific named example with data → process explanation → mini-evaluation. Pair contrasting examples rather than putting them in separate paragraphs.',
+        'Use evaluative connectives: <em>"however"</em>, <em>"on balance"</em>, <em>"the more decisive factor is…"</em>, <em>"to a greater extent…"</em>.',
+        'Close with a clear judgement that <strong>repeats and reinforces</strong> your opening — show the marker you\'ve stuck to a line of argument.'
+      ],
+      'Evaluate': [
+        'Open with your overall judgement on success / effectiveness.',
+        'Each paragraph: identify a strength, then a limitation — never ignore the counterargument.',
+        'Use evaluative connectives: <em>"effectively"</em>, <em>"partially successful"</em>, <em>"limited by"</em>, <em>"undermined by"</em>.',
+        'Close with a final ranked judgement supported by your strongest evidence.'
+      ],
+      'To what extent': [
+        'Open with a clear answer to the extent question — large / moderate / small — with brief justification.',
+        'Each paragraph: present evidence for a degree → counter-evidence → mini-judgement on the strength of each.',
+        'Use scalar language: <em>"largely"</em>, <em>"partly"</em>, <em>"minimally"</em>, <em>"overwhelmingly"</em>.',
+        'Close with a final extent judgement supported by your strongest evidence.'
+      ]
+    };
+    return tips[command] || tips['Assess'];
+  }
+  function structureTipsHtml() {
+    return structureTipsFor(state.command)
+      .map((tip, i) => `<li><span class="icon">${i+1}.</span><span>${tip}</span></li>`).join('');
+  }
+
+  function modelParagraphFor(subject, topic, command) {
+    const key = `${subject}|${topic}|${command}`;
+    const library = {
+      'Geography|Hazards|Assess': 'While extreme rainfall is the proximate trigger of flooding, human land-use change determines the scale of the loss. In Cumbria 2015, 341mm of rain fell in 24 hours — but the £500 million damage in Carlisle reflected decades of floodplain development and channel constriction. By contrast, a comparable rainfall event in a forested catchment such as the upper Eden would have produced a far smaller flood. On balance, therefore, human factors are the more decisive influence on flood <em>risk</em>, since they translate hazard into disaster.'
+      // More curated samples can be added here as the bank grows.
+    };
+    if (library[key]) return library[key];
+    return `<em style="color:var(--muted2);">A top-band sample paragraph for <strong>"${command}"</strong> questions on <strong>${topic || 'this topic'}</strong> (${subject}) isn't in the library yet. Once the AI marker is connected, model paragraphs will be generated dynamically for every subject / topic / command combination — for now, follow the structure tips above and have a go yourself.</em>`;
+  }
+
   // Mark button — simulated marking (replace with Claude API call later)
   markBtn.addEventListener('click', async () => {
     const text = answerInput.value.trim();
@@ -510,17 +573,15 @@
         </ul>
       </div>
       <div class="feedback-section up">
-        <h4>↑ Push to top band (Level 4)</h4>
+        <h4>↑ Push to top band — ${state.command} structure</h4>
         <ul class="fb-list">
-          <li><span class="icon">1.</span><span>Open <em>and</em> close with a one-sentence judgement — e.g. <em>"Physical factors trigger floods, but human factors determine the scale of the disaster."</em></span></li>
-          <li><span class="icon">2.</span><span>Pair every physical example with a human one — comparative paragraphs score higher than parallel paragraphs.</span></li>
-          <li><span class="icon">3.</span><span>Use evaluative connectives: <em>"however"</em>, <em>"on balance"</em>, <em>"the more decisive factor is…"</em></span></li>
+          ${structureTipsHtml()}
         </ul>
       </div>
       <div class="feedback-section model">
-        <h4>✦ Model paragraph (top band)</h4>
+        <h4>✦ Model paragraph for ${state.command} questions</h4>
         <div class="model-paragraph">
-          While extreme rainfall is the proximate trigger of flooding, human land-use change determines the scale of the loss. In Cumbria 2015, 341mm of rain fell in 24 hours — but the £500 million damage in Carlisle reflected decades of floodplain development and channel constriction. By contrast, a comparable rainfall event in a forested catchment such as the upper Eden would have produced a far smaller flood. On balance, therefore, human factors are the more decisive influence on flood <em>risk</em>, since they translate hazard into disaster.
+          ${modelParagraphFor(state.subject, state.topic, state.command)}
         </div>
       </div>
       <div class="toolbar" style="margin-top:24px;">
@@ -562,19 +623,16 @@
       </div>
 
       <div class="feedback-section up">
-        <h4>↑ How a top-band answer is structured</h4>
+        <h4>↑ How a top-band ${state.command} answer is structured</h4>
         <ul class="fb-list">
-          <li><span class="icon">1.</span><span>Open with a one-sentence judgement that directly addresses the command word — e.g. <em>"Physical factors trigger floods, but human factors determine the scale of the disaster."</em></span></li>
-          <li><span class="icon">2.</span><span>Each paragraph: point → specific named example with data → process explanation → mini-evaluation. Pair physical examples with human ones rather than putting them in separate paragraphs.</span></li>
-          <li><span class="icon">3.</span><span>Use evaluative connectives: <em>"however"</em>, <em>"on balance"</em>, <em>"the more decisive factor is…"</em>, <em>"to a greater extent…"</em></span></li>
-          <li><span class="icon">4.</span><span>Close with a clear judgement that <strong>repeats and reinforces</strong> your opening — show the marker you've stuck to a line of argument.</span></li>
+          ${structureTipsHtml()}
         </ul>
       </div>
 
       <div class="feedback-section model">
-        <h4>✦ Model paragraph (top band)</h4>
+        <h4>✦ Model paragraph for ${state.command} questions</h4>
         <div class="model-paragraph">
-          While extreme rainfall is the proximate trigger of flooding, human land-use change determines the scale of the loss. In Cumbria 2015, 341mm of rain fell in 24 hours — but the £500 million damage in Carlisle reflected decades of floodplain development and channel constriction. By contrast, a comparable rainfall event in a forested catchment such as the upper Eden would have produced a far smaller flood. On balance, therefore, human factors are the more decisive influence on flood <em>risk</em>, since they translate hazard into disaster.
+          ${modelParagraphFor(state.subject, state.topic, state.command)}
         </div>
       </div>
 
