@@ -97,7 +97,7 @@
     .page-title { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.01em; margin-bottom: 4px; }
     .page-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; }
 
-    /* ── SECTION JUMP NAV ── */
+    /* ── SECTION TABS ── */
     .section-nav { display: flex; gap: 8px; margin-bottom: 28px; flex-wrap: wrap; }
     .section-nav-btn {
       display: inline-flex; align-items: center; gap: 8px;
@@ -111,7 +111,40 @@
       color: var(--accent-dark); transform: translateY(-1px);
       box-shadow: 0 3px 10px rgba(37,99,235,0.15);
     }
+    .section-nav-btn.active {
+      border-color: var(--accent); background: var(--accent-dim);
+      color: var(--accent-dark); font-weight: 600;
+      box-shadow: 0 3px 10px rgba(37,99,235,0.18);
+    }
     .section-nav-btn span { font-size: 14px; }
+
+    .tab-panel { display: none; }
+    .tab-panel.active { display: block; }
+
+    /* ── FLASHCARDS BREAKDOWN ── */
+    .fc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+    .fc-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 14px;
+      padding: 16px; display: flex; flex-direction: column; gap: 10px;
+      text-decoration: none; color: inherit; transition: all 0.15s;
+    }
+    .fc-card:hover { border-color: var(--border-hover); transform: translateY(-1px); box-shadow: 0 4px 14px rgba(37,99,235,0.1); }
+    .fc-card-top { display: flex; align-items: center; gap: 12px; }
+    .fc-emoji { width: 40px; height: 40px; border-radius: 10px; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center; font-size: 20px; flex-shrink: 0; }
+    .fc-name { font-family: var(--font-display); font-size: 16px; line-height: 1.2; }
+    .fc-board { font-size: 11px; color: var(--muted); margin-top: 2px; }
+    .fc-stats { display: grid; grid-template-columns: repeat(2, 1fr); gap: 8px; margin-top: 4px; }
+    .fc-stat { background: var(--surface2); border-radius: 8px; padding: 8px 10px; }
+    .fc-stat-label { font-size: 10px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.05em; }
+    .fc-stat-val { font-family: var(--font-display); font-size: 18px; color: var(--text); }
+    .fc-stat-val.due { color: var(--amber); }
+    .fc-empty { padding: 40px 20px; text-align: center; color: var(--muted); background: var(--surface); border: 1px dashed var(--border); border-radius: 14px; }
+    .fc-empty-icon { font-size: 36px; margin-bottom: 8px; opacity: 0.6; }
+    .fc-lock { padding: 60px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .fc-lock-icon { width: 64px; height: 64px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 28px; color: #B45309; margin: 0 auto 16px; }
+    .fc-lock-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
+    .fc-lock-msg { font-size: 14px; color: var(--muted); max-width: 460px; margin: 0 auto 20px; line-height: 1.5; }
+    .fc-lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
 
     /* ── CAROUSEL DOTS ── */
     .carousel-dot {
@@ -411,85 +444,109 @@
     <div class="page-title">Breakdown</div>
     <div class="page-sub">See how you're doing across every topic. Each one is colour-coded — green means you're confident, amber means you're getting there, and red means it needs more work. Use this to decide what to revise next.</div>
 
-    <!-- Section jump nav -->
-    <div class="section-nav">
-      <button class="section-nav-btn" onclick="jumpTo('sec-summary')"><span>📊</span> Summary</button>
-      <button class="section-nav-btn" onclick="jumpTo('sec-topics')"><span>📚</span> Topics</button>
-      <button class="section-nav-btn" onclick="jumpTo('practiceCarousel')"><span>✦</span> Practice progress</button>
-      <button class="section-nav-btn" onclick="jumpTo('breakdownExamRow')"><span>📅</span> Upcoming exams</button>
+    <!-- Section tab nav -->
+    <div class="section-nav" role="tablist">
+      <button class="section-nav-btn active" data-tab="summary"    onclick="setTab('summary')"><span>📊</span> Summary</button>
+      <button class="section-nav-btn"        data-tab="topics"     onclick="setTab('topics')"><span>📚</span> Topics</button>
+      <button class="section-nav-btn"        data-tab="practice"   onclick="setTab('practice')"><span>✦</span> Practice progress</button>
+      <button class="section-nav-btn"        data-tab="exams"      onclick="setTab('exams')"><span>📅</span> Upcoming exams</button>
+      <button class="section-nav-btn"        data-tab="flashcards" onclick="setTab('flashcards')" id="tabFlashcards" style="display:none;"><span>🃏</span> Flashcards</button>
     </div>
 
-    <!-- Summary stats -->
-    <div id="sec-summary" style="font-family:var(--font-display);font-size:18px;margin-bottom:14px;scroll-margin-top:20px;">Summary</div>
-    <div class="stats-row">
-      <div class="stat-card">
-        <div class="stat-label">Topics covered</div>
-        <div class="stat-value" id="statTotal">–</div>
-        <div class="stat-sub" id="statTotalSub">loading…</div>
+    <!-- ─── Summary panel (default) ─── -->
+    <div class="tab-panel active" id="panel-summary">
+      <div id="sec-summary" style="font-family:var(--font-display);font-size:18px;margin-bottom:14px;">Summary</div>
+      <div class="stats-row">
+        <div class="stat-card">
+          <div class="stat-label">Topics covered</div>
+          <div class="stat-value" id="statTotal">–</div>
+          <div class="stat-sub" id="statTotalSub">loading…</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Green topics</div>
+          <div class="stat-value" id="statGreen" style="color:var(--green);">–</div>
+          <div class="stat-sub">confident & ready</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Amber topics</div>
+          <div class="stat-value" id="statAmber" style="color:var(--amber);">–</div>
+          <div class="stat-sub">almost there</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Red topics</div>
+          <div class="stat-value" id="statRed" style="color:var(--red);">–</div>
+          <div class="stat-sub">need attention</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-label">Not tested</div>
+          <div class="stat-value" id="statPending" style="color:var(--muted2);">–</div>
+          <div class="stat-sub">not yet diagnosed</div>
+        </div>
       </div>
-      <div class="stat-card">
-        <div class="stat-label">Green topics</div>
-        <div class="stat-value" id="statGreen" style="color:var(--green);">–</div>
-        <div class="stat-sub">confident & ready</div>
+
+      <!-- Summary bar -->
+      <div class="summary-bar" id="summaryBar"></div>
+    </div>
+
+    <!-- ─── Topics panel ─── -->
+    <div class="tab-panel" id="panel-topics">
+      <div class="filter-tabs">
+        <button class="filter-tab active" onclick="setFilter('all', this)">All topics</button>
+        <button class="filter-tab" onclick="setFilter('green', this)"><span class="filter-dot green"></span>Green</button>
+        <button class="filter-tab" onclick="setFilter('amber', this)"><span class="filter-dot amber"></span>Amber</button>
+        <button class="filter-tab" onclick="setFilter('red', this)"><span class="filter-dot red"></span>Red</button>
+        <button class="filter-tab" onclick="setFilter('pending', this)"><span class="filter-dot" style="background:var(--muted2);"></span>Not tested</button>
       </div>
-      <div class="stat-card">
-        <div class="stat-label">Amber topics</div>
-        <div class="stat-value" id="statAmber" style="color:var(--amber);">–</div>
-        <div class="stat-sub">almost there</div>
+      <div id="sec-topics"></div>
+      <div id="topicList"></div>
+    </div>
+
+    <!-- ─── Practice progress panel ─── -->
+    <div class="tab-panel" id="panel-practice">
+      <div id="practiceCarousel" style="display:none;">
+        <div style="font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">✦ Practice progress</div>
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <button id="practicePrev" onclick="shiftPracticeSubject(-1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(37,99,235,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">‹</button>
+          <div id="practiceSubjectLabel" style="font-family:var(--font-display);font-size:20px;flex:1;text-align:center;letter-spacing:-0.01em;color:var(--text);"></div>
+          <button id="practiceNext" onclick="shiftPracticeSubject(1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(37,99,235,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">›</button>
+        </div>
+        <div id="practiceCarouselCard" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;"></div>
+        <div id="practiceCarouselDots" style="display:flex;justify-content:center;gap:6px;margin-top:12px;"></div>
       </div>
-      <div class="stat-card">
-        <div class="stat-label">Red topics</div>
-        <div class="stat-value" id="statRed" style="color:var(--red);">–</div>
-        <div class="stat-sub">need attention</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Not tested</div>
-        <div class="stat-value" id="statPending" style="color:var(--muted2);">–</div>
-        <div class="stat-sub">not yet diagnosed</div>
+      <div id="practiceEmpty" class="fc-empty" style="display:none;">
+        <div class="fc-empty-icon">✦</div>
+        <div style="font-family:var(--font-display);font-size:17px;color:var(--text);margin-bottom:4px;">No practice tests yet</div>
+        <div style="font-size:13px;margin-bottom:14px;">Take a practice test to start tracking your progress.</div>
+        <a href="practice.html" style="display:inline-block;padding:8px 18px;border-radius:10px;background:var(--accent-dim);color:var(--accent-dark);font-size:13px;font-weight:500;text-decoration:none;border:1px solid var(--accent);">Start practising →</a>
       </div>
     </div>
 
-    <!-- Summary bar -->
-    <div class="summary-bar" id="summaryBar"></div>
-
-    <!-- Filter tabs -->
-    <div class="filter-tabs">
-      <button class="filter-tab active" onclick="setFilter('all', this)">All topics</button>
-      <button class="filter-tab" onclick="setFilter('green', this)"><span class="filter-dot green"></span>Green</button>
-      <button class="filter-tab" onclick="setFilter('amber', this)"><span class="filter-dot amber"></span>Amber</button>
-      <button class="filter-tab" onclick="setFilter('red', this)"><span class="filter-dot red"></span>Red</button>
-      <button class="filter-tab" onclick="setFilter('pending', this)"><span class="filter-dot" style="background:var(--muted2);"></span>Not tested</button>
+    <!-- ─── Upcoming exams panel ─── -->
+    <div class="tab-panel" id="panel-exams">
+      <div id="breakdownExamRow" style="display:none;">
+        <div style="font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">📅 Upcoming exams</div>
+        <!-- Month nav -->
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
+          <button id="calPrev" onclick="shiftCalMonth(-1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(37,99,235,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">‹</button>
+          <div id="calMonthLabel" style="font-family:var(--font-display);font-size:20px;flex:1;text-align:center;letter-spacing:-0.01em;color:var(--text);"></div>
+          <button id="calNext" onclick="shiftCalMonth(1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(37,99,235,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">›</button>
+        </div>
+        <!-- Calendar grid -->
+        <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
+          <div id="calGrid"></div>
+        </div>
+      </div>
+      <div id="examsEmpty" class="fc-empty" style="display:none;">
+        <div class="fc-empty-icon">📅</div>
+        <div style="font-family:var(--font-display);font-size:17px;color:var(--text);margin-bottom:4px;">No upcoming exams</div>
+        <div style="font-size:13px;">Add subjects in setup to see exam dates here.</div>
+      </div>
     </div>
 
-    <!-- Topic list -->
-    <div id="sec-topics" style="scroll-margin-top:20px;"></div>
-    <div id="topicList"></div>
-
-    <!-- Practice progress carousel -->
-    <div id="practiceCarousel" style="margin-top:28px;display:none;scroll-margin-top:20px;">
-      <div style="font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">✦ Practice progress</div>
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-        <button id="practicePrev" onclick="shiftPracticeSubject(-1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(37,99,235,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">‹</button>
-        <div id="practiceSubjectLabel" style="font-family:var(--font-display);font-size:20px;flex:1;text-align:center;letter-spacing:-0.01em;color:var(--text);"></div>
-        <button id="practiceNext" onclick="shiftPracticeSubject(1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(37,99,235,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">›</button>
-      </div>
-      <div id="practiceCarouselCard" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:18px;"></div>
-      <div id="practiceCarouselDots" style="display:flex;justify-content:center;gap:6px;margin-top:12px;"></div>
-    </div>
-
-    <!-- Exam calendar -->
-    <div id="sec-exams"></div>
-    <div id="breakdownExamRow" style="margin-top:28px;display:none;scroll-margin-top:20px;">
-      <div style="font-size:11px;font-weight:700;color:var(--muted2);text-transform:uppercase;letter-spacing:0.1em;margin-bottom:12px;">📅 Upcoming exams</div>
-      <!-- Month nav -->
-      <div style="display:flex;align-items:center;gap:12px;margin-bottom:14px;">
-        <button id="calPrev" onclick="shiftCalMonth(-1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(37,99,235,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">‹</button>
-        <div id="calMonthLabel" style="font-family:var(--font-display);font-size:20px;flex:1;text-align:center;letter-spacing:-0.01em;color:var(--text);"></div>
-        <button id="calNext" onclick="shiftCalMonth(1)" style="width:36px;height:36px;border-radius:10px;border:1px solid var(--border-hover);background:var(--surface);cursor:pointer;font-size:20px;font-weight:700;color:var(--accent-dark);display:flex;align-items:center;justify-content:center;box-shadow:0 1px 4px rgba(37,99,235,0.15);transition:all 0.15s;" onmouseover="this.style.background='var(--accent-dim)'" onmouseout="this.style.background='var(--surface)'">›</button>
-      </div>
-      <!-- Calendar grid -->
-      <div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;">
-        <div id="calGrid"></div>
+    <!-- ─── Flashcards panel (Pro) ─── -->
+    <div class="tab-panel" id="panel-flashcards">
+      <div id="flashcardsBody">
+        <div style="padding:40px 20px;text-align:center;color:var(--muted);font-size:14px;">Loading flashcards…</div>
       </div>
     </div>
   </main>
@@ -1810,8 +1867,14 @@ function renderBreakdownExams(subjects) {
     });
   });
 
-  if (!_calExams.length) { row.style.display = 'none'; return; }
+  const empty = document.getElementById('examsEmpty');
+  if (!_calExams.length) {
+    row.style.display = 'none';
+    if (empty) empty.style.display = 'block';
+    return;
+  }
   row.style.display = '';
+  if (empty) empty.style.display = 'none';
 
   _calExams.sort((a,b) => a.examDate - b.examDate);
 
@@ -2067,11 +2130,159 @@ async function load() {
   renderBreakdownExams(subjects || []);
   renderTopics();
   renderPracticeCarousel();
+  renderFlashcardsBreakdown(user, profile, subjects || []);
 }
 
-function jumpTo(id) {
-  const el = document.getElementById(id);
-  if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+function isProProfile(p) {
+  if (!p) return false;
+  const tier = p.subscription_tier || 'free';
+  const status = p.subscription_status || 'active';
+  const expires = p.subscription_expires_at ? new Date(p.subscription_expires_at) : null;
+  return tier !== 'free'
+    && ['active','trialing'].includes(status)
+    && (!expires || expires > new Date());
+}
+
+async function renderFlashcardsBreakdown(user, profile, subjects) {
+  const tabBtn = document.getElementById('tabFlashcards');
+  const body = document.getElementById('flashcardsBody');
+  if (!tabBtn || !body) return;
+
+  // Show the tab for everyone — Pro users see the breakdown, free users
+  // see a soft Pro upsell so they know flashcards exist.
+  tabBtn.style.display = '';
+
+  if (!isProProfile(profile)) {
+    body.innerHTML = `
+      <div class="fc-lock">
+        <div class="fc-lock-icon">🔒</div>
+        <div class="fc-lock-title">Flashcards are a Pro feature</div>
+        <div class="fc-lock-msg">Upgrade to unlock spaced-repetition flashcards across every subject, with a per-subject progress breakdown right here.</div>
+        <a class="fc-lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
+      </div>`;
+    return;
+  }
+
+  if (!subjects.length) {
+    body.innerHTML = `
+      <div class="fc-empty">
+        <div class="fc-empty-icon">🃏</div>
+        <div style="font-family:var(--font-display);font-size:17px;color:var(--text);margin-bottom:4px;">No subjects yet</div>
+        <div style="font-size:13px;">Add subjects in setup to see a flashcards breakdown.</div>
+      </div>`;
+    return;
+  }
+
+  // Map cached level → DB level the same way flashcards.html does, so GCSE
+  // and A-level cards don't bleed into each other when topic IDs collide.
+  const cachedLevel = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+  const dbLevel = (cachedLevel === 'a-level' || cachedLevel === 'alevel' || cachedLevel === 'as') ? 'alevel' : 'gcse';
+
+  // System-card counts per subject+board (head:true to avoid 1k row cap).
+  const systemCounts = {};
+  await Promise.all(subjects.map(async s => {
+    const { count } = await supabaseClient
+      .from('flashcards')
+      .select('*', { count: 'exact', head: true })
+      .eq('subject', s.subject)
+      .eq('exam_board', s.exam_board)
+      .eq('level', dbLevel);
+    systemCounts[`${s.subject}|${s.exam_board}`] = count || 0;
+  }));
+
+  // User decks — group by subject+board.
+  const { data: userDecks } = await supabaseClient
+    .from('user_decks').select('id, subject, exam_board')
+    .eq('user_id', user.id);
+  const deckCounts = {};
+  (userDecks || []).forEach(d => {
+    const key = `${d.subject}|${d.exam_board}`;
+    deckCounts[key] = (deckCounts[key] || 0) + 1;
+  });
+
+  // Aggregate state counts (across all subjects — used in the top stats).
+  const today = new Date().toISOString().slice(0, 10);
+  const [{ count: studiedTotal }, { count: dueTotal }] = await Promise.all([
+    supabaseClient.from('user_card_state').select('*', { count: 'exact', head: true }).eq('user_id', user.id),
+    supabaseClient.from('user_card_state').select('*', { count: 'exact', head: true }).eq('user_id', user.id).lte('due_date', today),
+  ]);
+
+  const totalCards = Object.values(systemCounts).reduce((a, b) => a + b, 0);
+  const totalDecks = (userDecks || []).length;
+
+  const subjectCards = subjects.map(s => {
+    const key = `${s.subject}|${s.exam_board}`;
+    const cards = systemCounts[key] || 0;
+    const decks = deckCounts[key] || 0;
+    const href = cards > 0 || decks > 0
+      ? `flashcards/subject.html?subject=${encodeURIComponent(s.subject)}&board=${encodeURIComponent(s.exam_board)}`
+      : null;
+    const tag = href ? 'a' : 'div';
+    const hrefAttr = href ? ` href="${href}"` : '';
+    return `<${tag} class="fc-card"${hrefAttr}>
+      <div class="fc-card-top">
+        <div class="fc-emoji">${s.emoji || '📚'}</div>
+        <div>
+          <div class="fc-name">${escapeHtml(s.subject)}</div>
+          <div class="fc-board">${escapeHtml(s.exam_board)}</div>
+        </div>
+      </div>
+      <div class="fc-stats">
+        <div class="fc-stat">
+          <div class="fc-stat-label">System cards</div>
+          <div class="fc-stat-val">${cards}</div>
+        </div>
+        <div class="fc-stat">
+          <div class="fc-stat-label">My decks</div>
+          <div class="fc-stat-val">${decks}</div>
+        </div>
+      </div>
+    </${tag}>`;
+  }).join('');
+
+  body.innerHTML = `
+    <div id="sec-flashcards" style="font-family:var(--font-display);font-size:18px;margin-bottom:14px;">Flashcards</div>
+    <div class="stats-row">
+      <div class="stat-card">
+        <div class="stat-label">Cards available</div>
+        <div class="stat-value">${totalCards}</div>
+        <div class="stat-sub">across your subjects</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Cards studied</div>
+        <div class="stat-value" style="color:var(--green);">${studiedTotal || 0}</div>
+        <div class="stat-sub">graded at least once</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">Due today</div>
+        <div class="stat-value" style="color:var(--amber);">${dueTotal || 0}</div>
+        <div class="stat-sub">cards to review</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-label">My decks</div>
+        <div class="stat-value">${totalDecks}</div>
+        <div class="stat-sub">custom decks created</div>
+      </div>
+    </div>
+    <div style="font-family:var(--font-display);font-size:16px;margin:24px 0 12px;">By subject</div>
+    <div class="fc-grid">${subjectCards}</div>
+  `;
+}
+
+function escapeHtml(s) {
+  return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+}
+
+function setTab(name) {
+  document.querySelectorAll('.section-nav-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.tab === name);
+  });
+  document.querySelectorAll('.tab-panel').forEach(p => {
+    p.classList.toggle('active', p.id === `panel-${name}`);
+  });
+  // Scroll the main pane to the top so the panel starts at its natural position.
+  const main = document.querySelector('.main');
+  if (main) main.scrollTo({ top: 0, behavior: 'smooth' });
 }
 
 let practiceCarouselIdx = 0;
@@ -2089,9 +2300,15 @@ function jumpPracticeSubject(idx) {
 
 function renderPracticeCarousel() {
   const wrap = document.getElementById('practiceCarousel');
+  const empty = document.getElementById('practiceEmpty');
   if (!wrap) return;
-  if (!allSubjectData.length) { wrap.style.display = 'none'; return; }
+  if (!allSubjectData.length) {
+    wrap.style.display = 'none';
+    if (empty) empty.style.display = 'block';
+    return;
+  }
   wrap.style.display = 'block';
+  if (empty) empty.style.display = 'none';
 
   practiceCarouselIdx = ((practiceCarouselIdx % allSubjectData.length) + allSubjectData.length) % allSubjectData.length;
   const subj = allSubjectData[practiceCarouselIdx];
