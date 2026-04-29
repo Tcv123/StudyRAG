@@ -91,6 +91,23 @@
       { num: '4.7', name: 'Magnetism and Electromagnetism' },
       { num: '4.8', name: 'Space Physics' },
     ],
+    'Physics|Edexcel|gcse': [
+      { num: '1', name: 'Key Concepts of Physics' },
+      { num: '2', name: 'Motion and Forces' },
+      { num: '3', name: 'Conservation of Energy' },
+      { num: '4', name: 'Waves' },
+      { num: '5', name: 'Light and the Electromagnetic Spectrum' },
+      { num: '6', name: 'Radioactivity' },
+      { num: '7', name: 'Astronomy' },
+      { num: '8', name: 'Energy — Forces Doing Work' },
+      { num: '9', name: 'Forces and Their Effects' },
+      { num: '10', name: 'Electricity and Circuits' },
+      { num: '11', name: 'Static Electricity' },
+      { num: '12', name: 'Magnetism and the Motor Effect' },
+      { num: '13', name: 'Electromagnetic Induction' },
+      { num: '14', name: 'Particle Model' },
+      { num: '15', name: 'Forces and Matter' },
+    ],
     'Physics|OCR A': [
       { num: 'M1', name: 'Development of Practical Skills' },
       { num: 'M2', name: 'Foundations of Physics' },
@@ -114,6 +131,14 @@
       { num: 'B4', name: 'Understanding Processes' },
       { num: 'B5', name: 'Rise and Fall of the Clockwork Universe' },
       { num: 'B6', name: 'Field and Particle Physics' },
+    ],
+    'Physics|OCR B|gcse': [
+      { num: 'P1', name: 'Radiation and Waves' },
+      { num: 'P2', name: 'Sustainable Energy' },
+      { num: 'P3', name: 'Electric Circuits' },
+      { num: 'P4', name: 'Explaining Motion' },
+      { num: 'P5', name: 'Radioactive Materials' },
+      { num: 'P6', name: 'Matter — Models and Explanations' },
     ],
 
     // ── Economics ───────────────────────────────────────────────────

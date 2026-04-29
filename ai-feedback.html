@@ -311,11 +311,20 @@
     questionIndex = 0;
     topicQuestions = [];
     const subjectKey = `${state.subject}_${state.board}`;
-    try { await window.loadPracticeBundle(subjectKey); } catch (e) { console.warn('Bundle load failed:', e); }
+    // Prefer the dedicated AI feedback bank (essay-style worded questions).
+    // Fall back to the practice bank if no AI feedback bank is wired up yet.
+    try { await window.loadAiFeedbackBundle?.(subjectKey); } catch (e) { console.warn('AI feedback bundle load failed:', e); }
     const topics = topicsForSelected() || [];
     const topic = topics.find(t => t.name === state.topic);
     const topicId = topic?.id;
-    topicQuestions = window.getPracticeTopicQuestions(subjectKey, topicId);
+    let aiQs = window.getAiFeedbackTopicQuestions
+      ? window.getAiFeedbackTopicQuestions(subjectKey, topicId)
+      : [];
+    if (!aiQs.length) {
+      try { await window.loadPracticeBundle(subjectKey); } catch (e) { console.warn('Practice bundle load failed:', e); }
+      aiQs = window.getPracticeTopicQuestions(subjectKey, topicId);
+    }
+    topicQuestions = aiQs;
   }
 
   function rerenderQuestion() {

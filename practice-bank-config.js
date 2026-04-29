@@ -138,8 +138,34 @@
     'English Language_Edexcel': () => typeof ENGLISH_EDEXCEL_PRACTICE !== 'undefined' ? ENGLISH_EDEXCEL_PRACTICE : null,
   };
 
+  // ── AI feedback question banks ───────────────────────────────────
+  // Parallel maps to BUNDLE_MAP / PRACTICE_MAP. Used only by ai-feedback.html.
+  // Files export globals like PHYSICS_AQA_AI_FEEDBACK with the same topic-id keys.
+  const AI_FEEDBACK_BUNDLE_MAP = {
+    'Physics_AQA':              ['questions/physics/physics-aqa-ai-feedback.js'],
+    'Physics_Edexcel':          ['questions/physics/physics-edexcel-ai-feedback.js'],
+    'Physics_OCR A':            ['questions/physics/physics-ocr-a-ai-feedback.js'],
+    'Physics_OCR B':            ['questions/physics/physics-ocr-b-ai-feedback.js'],
+    'Physics_AQA|gcse':         ['questions/physics-aqa-gcse/physics-aqa-gcse-ai-feedback.js'],
+    'Physics_Edexcel|gcse':     ['questions/physics-edexcel-gcse/physics-edexcel-gcse-ai-feedback.js'],
+    'Physics_OCR A|gcse':       ['questions/physics-ocr-a-gcse/physics-ocr-a-gcse-ai-feedback.js'],
+    'Physics_OCR B|gcse':       ['questions/physics-ocr-b-gcse/physics-ocr-b-gcse-ai-feedback.js'],
+  };
+
+  const AI_FEEDBACK_MAP = {
+    'Physics_AQA':           () => typeof PHYSICS_AQA_AI_FEEDBACK !== 'undefined' ? PHYSICS_AQA_AI_FEEDBACK : null,
+    'Physics_Edexcel':       () => typeof PHYSICS_EDEXCEL_AI_FEEDBACK !== 'undefined' ? PHYSICS_EDEXCEL_AI_FEEDBACK : null,
+    'Physics_OCR A':         () => typeof PHYSICS_OCR_A_AI_FEEDBACK !== 'undefined' ? PHYSICS_OCR_A_AI_FEEDBACK : null,
+    'Physics_OCR B':         () => typeof PHYSICS_OCR_B_AI_FEEDBACK !== 'undefined' ? PHYSICS_OCR_B_AI_FEEDBACK : null,
+    'Physics_AQA|gcse':      () => typeof PHYSICS_AQA_GCSE_AI_FEEDBACK !== 'undefined' ? PHYSICS_AQA_GCSE_AI_FEEDBACK : null,
+    'Physics_Edexcel|gcse':  () => typeof PHYSICS_EDEXCEL_GCSE_AI_FEEDBACK !== 'undefined' ? PHYSICS_EDEXCEL_GCSE_AI_FEEDBACK : null,
+    'Physics_OCR A|gcse':    () => typeof PHYSICS_OCR_A_GCSE_AI_FEEDBACK !== 'undefined' ? PHYSICS_OCR_A_GCSE_AI_FEEDBACK : null,
+    'Physics_OCR B|gcse':    () => typeof PHYSICS_OCR_B_GCSE_AI_FEEDBACK !== 'undefined' ? PHYSICS_OCR_B_GCSE_AI_FEEDBACK : null,
+  };
+
   const _loadedScripts = new Set();
   const _bundlePromises = {};
+  const _aiBundlePromises = {};
 
   function loadScriptOnce(src) {
     if (_loadedScripts.has(src)) return Promise.resolve();
@@ -191,10 +217,43 @@
     return questions.filter(q => q && q.q);
   }
 
+  // ── AI feedback loaders (mirror practice loaders) ────────────────
+  function loadAiFeedbackBundle(subjectKey) {
+    if (_aiBundlePromises[subjectKey]) return _aiBundlePromises[subjectKey];
+    const files = lvLookup(AI_FEEDBACK_BUNDLE_MAP, subjectKey);
+    if (!files) return Promise.resolve();
+    _aiBundlePromises[subjectKey] = files.reduce(
+      (chain, src) => chain.then(() => loadScriptOnce(src)),
+      Promise.resolve()
+    );
+    return _aiBundlePromises[subjectKey];
+  }
+
+  function getAiFeedbackBank(subjectKey) {
+    const getter = lvLookup(AI_FEEDBACK_MAP, subjectKey);
+    if (!getter) return null;
+    return getter();
+  }
+
+  function getAiFeedbackTopicQuestions(subjectKey, topicId) {
+    const bank = getAiFeedbackBank(subjectKey);
+    if (!bank || !topicId) return [];
+    const data = bank[topicId];
+    if (!data) return [];
+    const questions = Array.isArray(data) ? data : (data.questions || []);
+    return questions.filter(q => q && q.q);
+  }
+
   // Expose
   window.PRACTICE_BUNDLE_MAP    = BUNDLE_MAP;
   window.PRACTICE_GLOBAL_MAP    = PRACTICE_MAP;
   window.loadPracticeBundle     = loadPracticeBundle;
   window.getPracticeBank        = getPracticeBank;
   window.getPracticeTopicQuestions = getPracticeTopicQuestions;
+
+  window.AI_FEEDBACK_BUNDLE_MAP = AI_FEEDBACK_BUNDLE_MAP;
+  window.AI_FEEDBACK_GLOBAL_MAP = AI_FEEDBACK_MAP;
+  window.loadAiFeedbackBundle   = loadAiFeedbackBundle;
+  window.getAiFeedbackBank      = getAiFeedbackBank;
+  window.getAiFeedbackTopicQuestions = getAiFeedbackTopicQuestions;
 })();
