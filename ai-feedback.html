@@ -213,8 +213,8 @@
         </div>
         <textarea class="answer-textarea" id="answerInput" placeholder="Write your answer here…"></textarea>
         <div class="toolbar">
-          <button class="btn">📷 Upload photo</button>
           <button class="btn primary" id="markBtn">✦ Mark my answer</button>
+          <button class="btn" id="showModelBtn">🤔 I don't know — show me a model answer</button>
         </div>
       </div>
 
@@ -437,11 +437,10 @@
   });
   marksDd.setLabel(String(state.marks));
 
-  // Command word dropdown
+  // Command word dropdown — does NOT regenerate the question
   const cmdDd = setupDropdown('command', COMMAND_WORDS.map(c => ({ value: c, label: c })), (opt) => {
     state.command = opt.value;
     cmdDd.setLabel(opt.label);
-    rerenderQuestion();
   });
   cmdDd.setLabel(state.command);
 
@@ -532,6 +531,60 @@
 
     markBtn.disabled = false;
     markBtn.innerHTML = '✦ Mark my answer';
+  });
+
+  // "I don't know" button — shows tips + model answer with no scoring
+  const showModelBtn = document.getElementById('showModelBtn');
+  showModelBtn.addEventListener('click', async () => {
+    showModelBtn.disabled = true;
+    showModelBtn.textContent = '🤔 Loading model…';
+    feedbackPanel.style.display = 'block';
+    feedbackBody.innerHTML = `
+      <div class="feedback-loading">
+        <div class="spinner"></div>
+        <div>Finding a top-band model answer for this question…</div>
+      </div>`;
+    feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    await new Promise(r => setTimeout(r, 1100));
+
+    feedbackBody.innerHTML = `
+      <div class="grade-card" style="background: linear-gradient(135deg, var(--accent-dim), rgba(124,58,237,0.06));">
+        <div>
+          <div class="grade-label">Model breakdown</div>
+          <div class="grade-band" style="font-size:24px;">No answer marked</div>
+          <div class="grade-label" style="margin-top:6px;">Have a go yourself once you've read this</div>
+        </div>
+        <div class="grade-score">
+          <div class="grade-score-num" style="font-size:22px;color:var(--accent-dark);">Top-band guide</div>
+          <div class="grade-score-sub">What examiners reward</div>
+        </div>
+      </div>
+
+      <div class="feedback-section up">
+        <h4>↑ How a top-band answer is structured</h4>
+        <ul class="fb-list">
+          <li><span class="icon">1.</span><span>Open with a one-sentence judgement that directly addresses the command word — e.g. <em>"Physical factors trigger floods, but human factors determine the scale of the disaster."</em></span></li>
+          <li><span class="icon">2.</span><span>Each paragraph: point → specific named example with data → process explanation → mini-evaluation. Pair physical examples with human ones rather than putting them in separate paragraphs.</span></li>
+          <li><span class="icon">3.</span><span>Use evaluative connectives: <em>"however"</em>, <em>"on balance"</em>, <em>"the more decisive factor is…"</em>, <em>"to a greater extent…"</em></span></li>
+          <li><span class="icon">4.</span><span>Close with a clear judgement that <strong>repeats and reinforces</strong> your opening — show the marker you've stuck to a line of argument.</span></li>
+        </ul>
+      </div>
+
+      <div class="feedback-section model">
+        <h4>✦ Model paragraph (top band)</h4>
+        <div class="model-paragraph">
+          While extreme rainfall is the proximate trigger of flooding, human land-use change determines the scale of the loss. In Cumbria 2015, 341mm of rain fell in 24 hours — but the £500 million damage in Carlisle reflected decades of floodplain development and channel constriction. By contrast, a comparable rainfall event in a forested catchment such as the upper Eden would have produced a far smaller flood. On balance, therefore, human factors are the more decisive influence on flood <em>risk</em>, since they translate hazard into disaster.
+        </div>
+      </div>
+
+      <div class="toolbar" style="margin-top:24px;">
+        <button class="btn primary" onclick="document.getElementById('feedbackPanel').style.display='none'; document.getElementById('answerInput').focus(); window.scrollTo({top:document.getElementById('answerInput').offsetTop-80,behavior:'smooth'});">📝 OK, I'll try writing it now</button>
+        <button class="btn" disabled title="Save to history — coming soon">💾 Save to history</button>
+      </div>`;
+
+    showModelBtn.disabled = false;
+    showModelBtn.textContent = "🤔 I don't know — show me a model answer";
   });
 })();
 </script>
