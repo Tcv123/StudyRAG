@@ -164,11 +164,6 @@
       <div class="page-sub">Get instant examiner-style feedback on your written answers.</div>
     </div>
     <div id="pageBody">
-      <div class="demo-notice">
-        <span>⚠️</span>
-        <span><strong>Demo mode:</strong> AI marking is simulated for now — the same example feedback shows for every answer. Real AI scoring will be wired in when the backend is connected.</span>
-      </div>
-
       <!-- Panel 1 — Choose a question -->
       <div class="panel">
         <div class="panel-head">
@@ -440,70 +435,121 @@
   };
   answerInput.addEventListener('input', updateWordCount);
 
-  // ---------- Adaptive feedback content (no AI yet — driven by dropdowns) ----------
-  function structureTipsFor(command) {
-    const tips = {
-      'Describe': [
-        'Open with a clear, factual definition or summary of the topic.',
-        'Each paragraph: name a feature → describe with detailed specifics → next feature.',
-        'Use precise terminology and named examples — avoid vague descriptors like <em>"good"</em> or <em>"bad"</em>.',
-        'Close by linking the description back to the question — don\'t drift into evaluation or causes.'
-      ],
-      'Explain': [
-        'Open with a clear cause-and-effect statement.',
-        'For each point: state the cause → trace the mechanism step by step → name the consequence with a specific example.',
-        'Use linking phrases: <em>"this leads to…"</em>, <em>"as a result…"</em>, <em>"because of this…"</em>.',
-        'Close by summarising the chain of reasoning — not just listing causes side by side.'
-      ],
-      'Compare': [
-        'Open by identifying both subjects and the criteria you will compare on.',
-        'Each paragraph: ONE criterion at a time, discussing BOTH subjects in turn — never write two separate sections.',
-        'Use comparative connectives: <em>"whereas"</em>, <em>"in contrast"</em>, <em>"similarly"</em>, <em>"unlike"</em>.',
-        'Close with a clear judgement on which is more effective / important / successful overall.'
-      ],
-      'Discuss': [
-        'Open with a balanced overview that acknowledges the complexity of the issue.',
-        'Each paragraph: present one viewpoint → support with evidence → present the counterargument.',
-        'Use connectives: <em>"on one hand"</em>, <em>"however"</em>, <em>"on the other hand"</em>, <em>"arguably"</em>.',
-        'Close with a balanced judgement that weighs both sides — don\'t sit on the fence, but show your reasoning.'
-      ],
-      'Assess': [
-        'Open with a one-sentence judgement that directly addresses the command word.',
-        'Each paragraph: point → specific named example with data → process explanation → mini-evaluation. Pair contrasting examples rather than putting them in separate paragraphs.',
-        'Use evaluative connectives: <em>"however"</em>, <em>"on balance"</em>, <em>"the more decisive factor is…"</em>, <em>"to a greater extent…"</em>.',
-        'Close with a clear judgement that <strong>repeats and reinforces</strong> your opening — show the marker you\'ve stuck to a line of argument.'
-      ],
-      'Evaluate': [
-        'Open with your overall judgement on success / effectiveness.',
-        'Each paragraph: identify a strength, then a limitation — never ignore the counterargument.',
-        'Use evaluative connectives: <em>"effectively"</em>, <em>"partially successful"</em>, <em>"limited by"</em>, <em>"undermined by"</em>.',
-        'Close with a final ranked judgement supported by your strongest evidence.'
-      ],
-      'To what extent': [
-        'Open with a clear answer to the extent question — large / moderate / small — with brief justification.',
-        'Each paragraph: present evidence for a degree → counter-evidence → mini-judgement on the strength of each.',
-        'Use scalar language: <em>"largely"</em>, <em>"partly"</em>, <em>"minimally"</em>, <em>"overwhelmingly"</em>.',
-        'Close with a final extent judgement supported by your strongest evidence.'
-      ]
-    };
-    return tips[command] || tips['Assess'];
-  }
-  function structureTipsHtml() {
-    return structureTipsFor(state.command)
-      .map((tip, i) => `<li><span class="icon">${i+1}.</span><span>${tip}</span></li>`).join('');
+  // ---------- Real Claude API call ----------
+  async function callMarkApi(mode) {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session) throw new Error('Not signed in');
+
+    const res = await fetch('/api/mark', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.access_token}`
+      },
+      body: JSON.stringify({
+        mode,
+        question: questionText.textContent,
+        answer: mode === 'mark' ? answerInput.value.trim() : undefined,
+        subject: state.subject,
+        board: state.board,
+        topic: state.topic,
+        marks: state.marks,
+        command: state.command,
+        level: 'alevel'
+      })
+    });
+    const json = await res.json().catch(() => ({}));
+    if (!res.ok) {
+      const msg = json.message || json.error || `Server error ${res.status}`;
+      throw new Error(msg);
+    }
+    return json;
   }
 
-  function modelParagraphFor(subject, topic, command) {
-    const key = `${subject}|${topic}|${command}`;
-    const library = {
-      'Geography|Hazards|Assess': 'While extreme rainfall is the proximate trigger of flooding, human land-use change determines the scale of the loss. In Cumbria 2015, 341mm of rain fell in 24 hours — but the £500 million damage in Carlisle reflected decades of floodplain development and channel constriction. By contrast, a comparable rainfall event in a forested catchment such as the upper Eden would have produced a far smaller flood. On balance, therefore, human factors are the more decisive influence on flood <em>risk</em>, since they translate hazard into disaster.'
-      // More curated samples can be added here as the bank grows.
-    };
-    if (library[key]) return library[key];
-    return `<em style="color:var(--muted2);">A top-band sample paragraph for <strong>"${command}"</strong> questions on <strong>${topic || 'this topic'}</strong> (${subject}) isn't in the library yet. Once the AI marker is connected, model paragraphs will be generated dynamically for every subject / topic / command combination — for now, follow the structure tips above and have a go yourself.</em>`;
+  function renderMarkFeedback(fb) {
+    const escapedAnswerCleared = "document.getElementById('answerInput').value=''; document.getElementById('feedbackPanel').style.display='none'; document.getElementById('answerMeta').textContent='0 words'; document.getElementById('answerInput').focus(); window.scrollTo({top:0,behavior:'smooth'});";
+    feedbackBody.innerHTML = `
+      <div class="grade-card">
+        <div>
+          <div class="grade-label">Estimated band</div>
+          <div class="grade-band">${fb.estimatedBand || '—'}</div>
+          <div class="grade-label" style="margin-top:6px;">${fb.bandDescriptor || ''}</div>
+        </div>
+        <div class="grade-score">
+          <div class="grade-score-num">${fb.estimatedScore ?? '—'} / ${fb.totalMarks ?? state.marks}</div>
+          <div class="grade-score-sub">${fb.scoreNote || ''}</div>
+        </div>
+      </div>
+      <div class="feedback-section good">
+        <h4>✓ What scored</h4>
+        <ul class="fb-list">
+          ${(fb.whatScored || []).map(s => `<li><span class="icon">✓</span><span>${s}</span></li>`).join('')}
+        </ul>
+      </div>
+      <div class="feedback-section bad">
+        <h4>✗ What's holding you back</h4>
+        <ul class="fb-list">
+          ${(fb.whatsHoldingBack || []).map(s => `<li><span class="icon">✗</span><span>${s}</span></li>`).join('')}
+        </ul>
+      </div>
+      <div class="feedback-section up">
+        <h4>↑ How to push to top band</h4>
+        <ul class="fb-list">
+          ${(fb.pushToTopBand || []).map((s, i) => `<li><span class="icon">${i+1}.</span><span>${s}</span></li>`).join('')}
+        </ul>
+      </div>
+      <div class="feedback-section model">
+        <h4>✦ Model paragraph (top band)</h4>
+        <div class="model-paragraph">${fb.modelParagraph || ''}</div>
+      </div>
+      <div class="toolbar" style="margin-top:24px;">
+        <button class="btn" disabled title="Save to test history — coming soon">💾 Save to history</button>
+        <button class="btn" disabled title="Export — coming soon">📤 Export PDF</button>
+        <button class="btn primary" onclick="${escapedAnswerCleared}">🔁 Mark another answer</button>
+      </div>`;
   }
 
-  // Mark button — simulated marking (replace with Claude API call later)
+  function renderModelOnly(fb) {
+    feedbackBody.innerHTML = `
+      <div class="grade-card" style="background: linear-gradient(135deg, var(--accent-dim), rgba(124,58,237,0.06));">
+        <div>
+          <div class="grade-label">Model breakdown</div>
+          <div class="grade-band" style="font-size:24px;">No answer marked</div>
+          <div class="grade-label" style="margin-top:6px;">Have a go yourself once you've read this</div>
+        </div>
+        <div class="grade-score">
+          <div class="grade-score-num" style="font-size:22px;color:var(--accent-dark);">Top-band guide</div>
+          <div class="grade-score-sub">What examiners reward</div>
+        </div>
+      </div>
+      <div class="feedback-section up">
+        <h4>↑ How a top-band answer is structured</h4>
+        <ul class="fb-list">
+          ${(fb.structureTips || []).map((tip, i) => `<li><span class="icon">${i+1}.</span><span>${tip}</span></li>`).join('')}
+        </ul>
+      </div>
+      <div class="feedback-section model">
+        <h4>✦ Model paragraph (top band)</h4>
+        <div class="model-paragraph">${fb.modelParagraph || ''}</div>
+      </div>
+      <div class="toolbar" style="margin-top:24px;">
+        <button class="btn primary" onclick="document.getElementById('feedbackPanel').style.display='none'; document.getElementById('answerInput').focus(); window.scrollTo({top:document.getElementById('answerInput').offsetTop-80,behavior:'smooth'});">📝 OK, I'll try writing it now</button>
+        <button class="btn" disabled title="Save to history — coming soon">💾 Save to history</button>
+      </div>`;
+  }
+
+  function renderApiError(err) {
+    feedbackBody.innerHTML = `
+      <div style="padding: 28px 24px; text-align: center; color: #DC2626;">
+        <div style="font-size: 22px; margin-bottom: 10px;">⚠️ Marking failed</div>
+        <div style="font-size: 14px; color: var(--text); margin-bottom: 14px;">${err.message || err}</div>
+        <div style="font-size: 12.5px; color: var(--muted); max-width: 480px; margin: 0 auto;">
+          If this is the first time you're seeing this, the most likely cause is that <code>ANTHROPIC_API_KEY</code> hasn't been set in your Vercel project's environment variables. Add it under <strong>Settings → Environment Variables</strong> and redeploy.
+        </div>
+      </div>`;
+  }
+
+  // Mark button — calls /api/mark with the student's answer
   markBtn.addEventListener('click', async () => {
     const text = answerInput.value.trim();
     if (text.length < 30) {
@@ -520,58 +566,16 @@
       </div>`;
     feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    // Simulated delay — replace with real fetch() to your /api/mark endpoint
-    await new Promise(r => setTimeout(r, 1600));
-
-    // Hardcoded sample feedback (matches mockup exactly)
-    feedbackBody.innerHTML = `
-      <div class="grade-card">
-        <div>
-          <div class="grade-label">Estimated band</div>
-          <div class="grade-band">Level 3</div>
-          <div class="grade-label" style="margin-top:6px;">Clear and detailed</div>
-        </div>
-        <div class="grade-score">
-          <div class="grade-score-num">8 / 12</div>
-          <div class="grade-score-sub">↑ One band off the top</div>
-        </div>
-      </div>
-      <div class="feedback-section good">
-        <h4>✓ What scored</h4>
-        <ul class="fb-list">
-          <li><span class="icon">✓</span><span>Strong physical case study with specific data — "Storm Desmond brought 341mm in 24 hours" (AO1).</span></li>
-          <li><span class="icon">✓</span><span>Addressed both physical AND human factors — answered the question in scope.</span></li>
-          <li><span class="icon">✓</span><span>Linked impermeable surfaces to faster runoff with clear process explanation (AO2).</span></li>
-        </ul>
-      </div>
-      <div class="feedback-section bad">
-        <h4>✗ What's holding you back</h4>
-        <ul class="fb-list">
-          <li><span class="icon">✗</span><span>The command word was <em>"Assess"</em> — you described both factors but didn't weigh which is <strong>more important</strong>. No clear judgement (AO3 missed).</span></li>
-          <li><span class="icon">✗</span><span>The human-factors paragraph lacks a named case study (e.g. Boscastle 2004 surface runoff, or Bangladesh urbanisation).</span></li>
-          <li><span class="icon">✗</span><span>No counter-argument or "however" turn anywhere — top-band answers always include a balanced critique.</span></li>
-        </ul>
-      </div>
-      <div class="feedback-section up">
-        <h4>↑ How to push to top band</h4>
-        <ul class="fb-list">
-          ${structureTipsHtml()}
-        </ul>
-      </div>
-      <div class="feedback-section model">
-        <h4>✦ Model paragraph (top band)</h4>
-        <div class="model-paragraph">
-          ${modelParagraphFor(state.subject, state.topic, state.command)}
-        </div>
-      </div>
-      <div class="toolbar" style="margin-top:24px;">
-        <button class="btn" disabled title="Save to test history — coming soon">💾 Save to history</button>
-        <button class="btn" disabled title="Export — coming soon">📤 Export PDF</button>
-        <button class="btn primary" onclick="document.getElementById('answerInput').value=''; document.getElementById('feedbackPanel').style.display='none'; document.getElementById('answerMeta').textContent='0 words'; document.getElementById('answerInput').focus(); window.scrollTo({top:0,behavior:'smooth'});">🔁 Mark another answer</button>
-      </div>`;
-
-    markBtn.disabled = false;
-    markBtn.innerHTML = '✦ Mark my answer';
+    try {
+      const result = await callMarkApi('mark');
+      renderMarkFeedback(result.feedback || {});
+    } catch (err) {
+      console.error(err);
+      renderApiError(err);
+    } finally {
+      markBtn.disabled = false;
+      markBtn.innerHTML = '✦ Mark my answer';
+    }
   });
 
   // "I don't know" button — shows tips + model answer with no scoring
@@ -587,42 +591,16 @@
       </div>`;
     feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-    await new Promise(r => setTimeout(r, 1100));
-
-    feedbackBody.innerHTML = `
-      <div class="grade-card" style="background: linear-gradient(135deg, var(--accent-dim), rgba(124,58,237,0.06));">
-        <div>
-          <div class="grade-label">Model breakdown</div>
-          <div class="grade-band" style="font-size:24px;">No answer marked</div>
-          <div class="grade-label" style="margin-top:6px;">Have a go yourself once you've read this</div>
-        </div>
-        <div class="grade-score">
-          <div class="grade-score-num" style="font-size:22px;color:var(--accent-dark);">Top-band guide</div>
-          <div class="grade-score-sub">What examiners reward</div>
-        </div>
-      </div>
-
-      <div class="feedback-section up">
-        <h4>↑ How a top-band answer is structured</h4>
-        <ul class="fb-list">
-          ${structureTipsHtml()}
-        </ul>
-      </div>
-
-      <div class="feedback-section model">
-        <h4>✦ Model paragraph (top band)</h4>
-        <div class="model-paragraph">
-          ${modelParagraphFor(state.subject, state.topic, state.command)}
-        </div>
-      </div>
-
-      <div class="toolbar" style="margin-top:24px;">
-        <button class="btn primary" onclick="document.getElementById('feedbackPanel').style.display='none'; document.getElementById('answerInput').focus(); window.scrollTo({top:document.getElementById('answerInput').offsetTop-80,behavior:'smooth'});">📝 OK, I'll try writing it now</button>
-        <button class="btn" disabled title="Save to history — coming soon">💾 Save to history</button>
-      </div>`;
-
-    showModelBtn.disabled = false;
-    showModelBtn.textContent = "🤔 I don't know — show me a model answer";
+    try {
+      const result = await callMarkApi('model');
+      renderModelOnly(result.feedback || {});
+    } catch (err) {
+      console.error(err);
+      renderApiError(err);
+    } finally {
+      showModelBtn.disabled = false;
+      showModelBtn.textContent = "🤔 I don't know — show me a model answer";
+    }
   });
   } catch (err) {
     console.error('AI feedback init failed:', err);
