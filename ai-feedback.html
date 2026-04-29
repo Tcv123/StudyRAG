@@ -232,6 +232,7 @@
 
 <script>
 (async function () {
+  try {
   const { data: { user } } = await supabaseClient.auth.getUser();
   if (!user) { location = 'auth/login.html'; return; }
   const { data: profile } = await supabaseClient
@@ -644,6 +645,11 @@
     showModelBtn.disabled = false;
     showModelBtn.textContent = "🤔 I don't know — show me a model answer";
   });
+  } catch (err) {
+    console.error('AI feedback init failed:', err);
+    const qt = document.getElementById('questionText');
+    if (qt) qt.innerHTML = `<span style="color:#DC2626;">Page failed to initialise: ${err.message || err}. Check browser console for details.</span>`;
+  }
 })();
 </script>
 </body>
