@@ -292,38 +292,48 @@
   }
 
   // Sample question generator — template-based until a real bank is wired
+  // Each command has multiple templates so "Generate another" cycles through them.
   const QUESTION_TEMPLATES = {
-    'Describe':       (t) => `Describe the main characteristics of ${t}.`,
-    'Explain':        (t) => `Explain the factors that influence ${t}.`,
-    'Compare':        (t) => `Compare the relative importance of two factors influencing ${t}.`,
-    'Discuss':        (t) => `Discuss the view that ${t} is shaped more by physical than by human factors.`,
-    'Assess':         (t) => `Assess the relative importance of physical and human factors in ${t}.`,
-    'Evaluate':       (t) => `Evaluate the success of strategies used to manage ${t}.`,
-    'To what extent': (t) => `To what extent has ${t} been shaped by human activity?`,
+    'Describe': [
+      (t) => `Describe the main characteristics of ${t}.`,
+      (t) => `Describe the key processes involved in ${t}.`,
+      (t) => `Describe how ${t} varies between contrasting contexts.`,
+    ],
+    'Explain': [
+      (t) => `Explain the factors that influence ${t}.`,
+      (t) => `Explain the causes and consequences of ${t}.`,
+      (t) => `Explain how ${t} can be managed effectively.`,
+    ],
+    'Compare': [
+      (t) => `Compare the relative importance of two factors influencing ${t}.`,
+      (t) => `Compare ${t} in two contrasting locations or examples you have studied.`,
+    ],
+    'Discuss': [
+      (t) => `Discuss the view that ${t} is shaped more by physical than by human factors.`,
+      (t) => `Discuss the costs and benefits of strategies used to manage ${t}.`,
+    ],
+    'Assess': [
+      (t) => `Assess the relative importance of physical and human factors in ${t}.`,
+      (t) => `Assess the extent to which ${t} can be effectively managed.`,
+      (t) => `Assess the view that human activity has had a greater impact on ${t} than physical processes.`,
+      (t) => `Assess the success of strategies used to address ${t}.`,
+    ],
+    'Evaluate': [
+      (t) => `Evaluate the success of strategies used to manage ${t}.`,
+      (t) => `Evaluate the impact of ${t} on people and the environment.`,
+    ],
+    'To what extent': [
+      (t) => `To what extent has ${t} been shaped by human activity?`,
+      (t) => `To what extent are management strategies for ${t} effective?`,
+    ],
   };
 
-  // Curated samples for the most common combos — fall back to templates otherwise
-  const QUESTION_BANK = {
-    'Hazards|12|Assess': 'Assess the relative importance of physical and human factors in increasing flood risk.',
-    'Hazards|16|Discuss': 'Discuss the view that vulnerability is more important than hazard magnitude in determining the impact of natural disasters.',
-    'Hazards|20|Evaluate': 'Evaluate the effectiveness of strategies to mitigate the effects of tropical storms.',
-    'Coastal Systems and Landscapes|12|Assess': 'Assess the role of physical processes in shaping coastal landscapes.',
-    'Water and Carbon Cycles|12|Assess': 'Assess the impact of human activity on the water cycle.',
-    'Changing Places|12|Assess': 'Assess the role of exogenous factors in shaping the character of one place you have studied.',
-    'Contemporary Urban Environments|16|Discuss': 'Discuss the view that the only way to make cities sustainable is to redesign their transport systems.',
-    'Population and the Environment|20|Evaluate': 'Evaluate the success of strategies used to manage population change in one country you have studied.',
-  };
-
-  // Allow Generate-another to cycle if multiple bank entries exist
   let alternativeIndex = 0;
 
   function buildQuestion() {
     const topic = state.topic || 'this topic';
-    const key = `${topic}|${state.marks}|${state.command}`;
-    if (QUESTION_BANK[key]) return QUESTION_BANK[key];
-    const template = QUESTION_TEMPLATES[state.command];
-    if (template) return template(topic);
-    return `${state.command} ${topic}.`;
+    const templates = QUESTION_TEMPLATES[state.command] || QUESTION_TEMPLATES['Assess'];
+    return templates[alternativeIndex % templates.length](topic);
   }
 
   function rerenderQuestion() {
@@ -435,172 +445,32 @@
   };
   answerInput.addEventListener('input', updateWordCount);
 
-  // ---------- Real Claude API call ----------
-  async function callMarkApi(mode) {
-    const { data: { session } } = await supabaseClient.auth.getSession();
-    if (!session) throw new Error('Not signed in');
-
-    const res = await fetch('/api/mark', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${session.access_token}`
-      },
-      body: JSON.stringify({
-        mode,
-        question: questionText.textContent,
-        answer: mode === 'mark' ? answerInput.value.trim() : undefined,
-        subject: state.subject,
-        board: state.board,
-        topic: state.topic,
-        marks: state.marks,
-        command: state.command,
-        level: 'alevel'
-      })
-    });
-    const json = await res.json().catch(() => ({}));
-    if (!res.ok) {
-      const msg = json.message || json.error || `Server error ${res.status}`;
-      throw new Error(msg);
-    }
-    return json;
-  }
-
-  function renderMarkFeedback(fb) {
-    const escapedAnswerCleared = "document.getElementById('answerInput').value=''; document.getElementById('feedbackPanel').style.display='none'; document.getElementById('answerMeta').textContent='0 words'; document.getElementById('answerInput').focus(); window.scrollTo({top:0,behavior:'smooth'});";
+  // ---------- AI marking — Coming soon ----------
+  function showComingSoon() {
+    feedbackPanel.style.display = 'block';
     feedbackBody.innerHTML = `
-      <div class="grade-card">
-        <div>
-          <div class="grade-label">Estimated band</div>
-          <div class="grade-band">${fb.estimatedBand || '—'}</div>
-          <div class="grade-label" style="margin-top:6px;">${fb.bandDescriptor || ''}</div>
-        </div>
-        <div class="grade-score">
-          <div class="grade-score-num">${fb.estimatedScore ?? '—'} / ${fb.totalMarks ?? state.marks}</div>
-          <div class="grade-score-sub">${fb.scoreNote || ''}</div>
-        </div>
-      </div>
-      <div class="feedback-section good">
-        <h4>✓ What scored</h4>
-        <ul class="fb-list">
-          ${(fb.whatScored || []).map(s => `<li><span class="icon">✓</span><span>${s}</span></li>`).join('')}
-        </ul>
-      </div>
-      <div class="feedback-section bad">
-        <h4>✗ What's holding you back</h4>
-        <ul class="fb-list">
-          ${(fb.whatsHoldingBack || []).map(s => `<li><span class="icon">✗</span><span>${s}</span></li>`).join('')}
-        </ul>
-      </div>
-      <div class="feedback-section up">
-        <h4>↑ How to push to top band</h4>
-        <ul class="fb-list">
-          ${(fb.pushToTopBand || []).map((s, i) => `<li><span class="icon">${i+1}.</span><span>${s}</span></li>`).join('')}
-        </ul>
-      </div>
-      <div class="feedback-section model">
-        <h4>✦ Model paragraph (top band)</h4>
-        <div class="model-paragraph">${fb.modelParagraph || ''}</div>
-      </div>
-      <div class="toolbar" style="margin-top:24px;">
-        <button class="btn" disabled title="Save to test history — coming soon">💾 Save to history</button>
-        <button class="btn" disabled title="Export — coming soon">📤 Export PDF</button>
-        <button class="btn primary" onclick="${escapedAnswerCleared}">🔁 Mark another answer</button>
-      </div>`;
-  }
-
-  function renderModelOnly(fb) {
-    feedbackBody.innerHTML = `
-      <div class="grade-card" style="background: linear-gradient(135deg, var(--accent-dim), rgba(124,58,237,0.06));">
-        <div>
-          <div class="grade-label">Model breakdown</div>
-          <div class="grade-band" style="font-size:24px;">No answer marked</div>
-          <div class="grade-label" style="margin-top:6px;">Have a go yourself once you've read this</div>
-        </div>
-        <div class="grade-score">
-          <div class="grade-score-num" style="font-size:22px;color:var(--accent-dark);">Top-band guide</div>
-          <div class="grade-score-sub">What examiners reward</div>
-        </div>
-      </div>
-      <div class="feedback-section up">
-        <h4>↑ How a top-band answer is structured</h4>
-        <ul class="fb-list">
-          ${(fb.structureTips || []).map((tip, i) => `<li><span class="icon">${i+1}.</span><span>${tip}</span></li>`).join('')}
-        </ul>
-      </div>
-      <div class="feedback-section model">
-        <h4>✦ Model paragraph (top band)</h4>
-        <div class="model-paragraph">${fb.modelParagraph || ''}</div>
-      </div>
-      <div class="toolbar" style="margin-top:24px;">
-        <button class="btn primary" onclick="document.getElementById('feedbackPanel').style.display='none'; document.getElementById('answerInput').focus(); window.scrollTo({top:document.getElementById('answerInput').offsetTop-80,behavior:'smooth'});">📝 OK, I'll try writing it now</button>
-        <button class="btn" disabled title="Save to history — coming soon">💾 Save to history</button>
-      </div>`;
-  }
-
-  function renderApiError(err) {
-    feedbackBody.innerHTML = `
-      <div style="padding: 28px 24px; text-align: center; color: #DC2626;">
-        <div style="font-size: 22px; margin-bottom: 10px;">⚠️ Marking failed</div>
-        <div style="font-size: 14px; color: var(--text); margin-bottom: 14px;">${err.message || err}</div>
-        <div style="font-size: 12.5px; color: var(--muted); max-width: 480px; margin: 0 auto;">
-          If this is the first time you're seeing this, the most likely cause is that <code>GEMINI_API_KEY</code> hasn't been set in your Vercel project's environment variables. Add it under <strong>Settings → Environment Variables</strong> and redeploy.
+      <div style="padding: 60px 24px; text-align: center;">
+        <div style="font-size: 56px; margin-bottom: 14px;">🚧</div>
+        <div style="font-family: var(--font-display); font-size: 26px; margin-bottom: 10px;">AI marking — coming soon</div>
+        <div style="font-size: 14.5px; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.6;">
+          The questions and answer box are ready to go. AI grading against the mark scheme is being wired up — it'll show your estimated band, what you scored, what's holding you back, and a top-band model paragraph for every answer you submit.
         </div>
       </div>`;
+    feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  // Mark button — calls /api/mark with the student's answer
-  markBtn.addEventListener('click', async () => {
+  markBtn.addEventListener('click', () => {
     const text = answerInput.value.trim();
     if (text.length < 30) {
       alert('Write at least a paragraph before requesting feedback.');
       return;
     }
-    markBtn.disabled = true;
-    markBtn.textContent = '✦ Marking…';
-    feedbackPanel.style.display = 'block';
-    feedbackBody.innerHTML = `
-      <div class="feedback-loading">
-        <div class="spinner"></div>
-        <div>Reading your answer and matching it to the mark scheme…</div>
-      </div>`;
-    feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    try {
-      const result = await callMarkApi('mark');
-      renderMarkFeedback(result.feedback || {});
-    } catch (err) {
-      console.error(err);
-      renderApiError(err);
-    } finally {
-      markBtn.disabled = false;
-      markBtn.innerHTML = '✦ Mark my answer';
-    }
+    showComingSoon();
   });
 
-  // "I don't know" button — shows tips + model answer with no scoring
   const showModelBtn = document.getElementById('showModelBtn');
-  showModelBtn.addEventListener('click', async () => {
-    showModelBtn.disabled = true;
-    showModelBtn.textContent = '🤔 Loading model…';
-    feedbackPanel.style.display = 'block';
-    feedbackBody.innerHTML = `
-      <div class="feedback-loading">
-        <div class="spinner"></div>
-        <div>Finding a top-band model answer for this question…</div>
-      </div>`;
-    feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
-    try {
-      const result = await callMarkApi('model');
-      renderModelOnly(result.feedback || {});
-    } catch (err) {
-      console.error(err);
-      renderApiError(err);
-    } finally {
-      showModelBtn.disabled = false;
-      showModelBtn.textContent = "🤔 I don't know — show me a model answer";
-    }
+  showModelBtn.addEventListener('click', () => {
+    showComingSoon();
   });
   } catch (err) {
     console.error('AI feedback init failed:', err);
