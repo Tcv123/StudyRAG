@@ -205,11 +205,11 @@
 
 </div>
 
-<!-- Add card modal (system-topic mode only) -->
+<!-- Add card modal (works for both topic auto-deck and custom deck mode) -->
 <div class="modal-overlay" id="addCardModal" onclick="if(event.target===this)closeAddCard()">
   <div class="modal">
     <div class="modal-title">Add a card</div>
-    <div style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.5;">
+    <div id="addCardHint" style="font-size:13px;color:var(--muted);margin-bottom:14px;line-height:1.5;">
       This card will be saved to your auto-deck for this topic so you can study it alongside the system cards.
     </div>
     <div class="form-row">
@@ -467,7 +467,11 @@ async function loadDeck() {
     .order('card_order');
 
   if (!cards || cards.length === 0) {
-    renderEmpty(`<a class="btn-ghost" href="${deck.subject ? `subject.html?subject=${encodeURIComponent(deck.subject)}&board=${encodeURIComponent(deck.exam_board || '')}` : '../flashcards.html'}">← Back</a>`);
+    const backHref = deck.subject
+      ? `subject.html?subject=${encodeURIComponent(deck.subject)}&board=${encodeURIComponent(deck.exam_board || '')}`
+      : '../flashcards.html';
+    renderEmpty(`<button class="btn-primary" onclick="openAddCard()">+ Add your first card</button>
+       <a class="btn-ghost" href="${backHref}" style="margin-left:10px;">← Back</a>`);
     document.getElementById('crumb').innerHTML =
       `<a href="../flashcards.html">All flashcards</a> › ${escapeHtml(deck.name)}`;
     return;
@@ -508,7 +512,7 @@ function renderEmpty(buttonHtml) {
     <div class="state">
       <div class="state-icon">🃏</div>
       <div class="state-title">No cards yet</div>
-      <div class="state-msg">${MODE === 'deck' ? 'This deck is empty — add cards to it from the subject page.' : 'No system cards have been added for this topic yet.'}</div>
+      <div class="state-msg">${MODE === 'deck' ? 'This deck is empty — add your first card to start studying.' : 'No system cards have been added for this topic yet.'}</div>
       ${buttonHtml || ''}
     </div>`;
 }
@@ -600,9 +604,7 @@ function renderCard() {
     </div>
 
     <div class="quick-actions">
-      ${MODE === 'topic'
-        ? `<button class="btn-ghost" onclick="openAddCard()">+ Add your own card</button>`
-        : ''}
+      <button class="btn-ghost" onclick="openAddCard()">+ Add ${MODE === 'deck' ? 'card to deck' : 'your own card'}</button>
       <a class="btn-ghost" href="${MODE === 'deck' ? '../flashcards.html' : `subject.html?subject=${encodeURIComponent(SUBJECT)}&board=${encodeURIComponent(BOARD)}`}">End session</a>
     </div>
   `;
@@ -715,10 +717,16 @@ async function setCardColor(hex) {
   });
 }
 
-// ── Add card (system-topic mode only) ──────────────────────────
+// ── Add card (works for both topic auto-deck and custom deck) ──
 function openAddCard() {
   document.getElementById('addFront').value = '';
   document.getElementById('addBack').value = '';
+  const hint = document.getElementById('addCardHint');
+  if (hint) {
+    hint.textContent = MODE === 'deck'
+      ? `This card will be saved to "${topicLabel}".`
+      : 'This card will be saved to your auto-deck for this topic so you can study it alongside the system cards.';
+  }
   document.getElementById('addCardModal').classList.add('active');
   setTimeout(() => document.getElementById('addFront').focus(), 50);
 }
@@ -759,8 +767,7 @@ async function saveAddCard() {
   const btn = document.getElementById('addCardSave');
   btn.disabled = true; btn.textContent = 'Saving…';
   try {
-    const deckId = await findOrCreateAutoDeck();
-    // Card order = current count + 1
+    const deckId = MODE === 'deck' ? DECK_ID : await findOrCreateAutoDeck();
     const { data: existing } = await supabaseClient
       .from('user_flashcards').select('id').eq('deck_id', deckId);
     const order = (existing?.length || 0) + 1;
@@ -770,8 +777,13 @@ async function saveAddCard() {
     if (error) throw error;
     closeAddCard();
     btn.disabled = false; btn.textContent = 'Add card';
-    // Briefly notify (kept simple — no toast lib)
-    alert('Card added to your "My ' + (window.FLASHCARDS_TOPICS_FOR?.(SUBJECT, BOARD)?.find(t => t.num === TOPIC_ID)?.name || TOPIC_ID) + '" deck.');
+    if (MODE === 'deck') {
+      // Reload the deck so the new card appears in the queue (and we exit
+      // the empty state if this was the first card).
+      await loadDeck();
+    } else {
+      alert('Card added to your "My ' + (window.FLASHCARDS_TOPICS_FOR?.(SUBJECT, BOARD)?.find(t => t.num === TOPIC_ID)?.name || TOPIC_ID) + '" deck.');
+    }
   } catch (e) {
     console.error(e);
     alert('Could not add card: ' + (e.message || 'unknown error'));
