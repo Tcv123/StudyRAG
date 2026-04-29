@@ -291,8 +291,13 @@
     if (!fn) return null;
     const topics = fn(state.subject, state.board);
     if (!topics) return null;
-    // FLASHCARDS_TOPICS values are arrays of {id, name} or strings
-    return topics.map(t => typeof t === 'string' ? { id: t, name: t } : { id: t.id || t.name, name: t.name || t.id });
+    // FLASHCARDS_TOPICS entries can use 'num' or 'id' for the topic key
+    return topics.map(t => {
+      if (typeof t === 'string') return { id: t, name: t };
+      const id = t.num || t.id || t.name;
+      const name = t.name || t.id || t.num;
+      return { id, name };
+    });
   }
 
   // ---------- Practice question bank ----------
