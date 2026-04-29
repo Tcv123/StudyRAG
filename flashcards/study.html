@@ -264,6 +264,31 @@ let cardSource = 'system'; // 'system' | 'user'
 let topicLabel = '';       // for header
 let autoDeckId = null;     // cached id of "My [Topic]" auto-deck
 let cardColor = '#FFFFFF';
+let currentSubject = SUBJECT || null; // populated from deck.subject in deck mode
+
+// Subject-specific placeholder examples shown in the "Add a card" modal so
+// the prompt feels relevant instead of always showing a CS example.
+const SUBJECT_EXAMPLES = {
+  'Mathematics':         { front: 'Differentiate y = sin(2x)',                     back: 'dy/dx = 2cos(2x)' },
+  'Further Mathematics': { front: 'What is the modulus of 3 + 4i?',                back: '|z| = √(3² + 4²) = 5' },
+  'Chemistry':           { front: 'What is the formula of sulfuric acid?',         back: 'H₂SO₄' },
+  'Biology':             { front: 'What is the function of mitochondria?',         back: 'Site of aerobic respiration — produce ATP for cellular energy.' },
+  'Computer Science':    { front: 'What is the Von Neumann bottleneck?',           back: 'A shared memory bus for instructions and data limits CPU throughput.' },
+  'Physics':             { front: "State Newton's second law of motion.",          back: 'F = ma — net force equals mass times acceleration.' },
+  'Economics':           { front: 'What is the law of demand?',                    back: 'As price rises, quantity demanded falls, ceteris paribus.' },
+  'Geography':           { front: 'What is a destructive plate boundary?',         back: 'Where two tectonic plates collide and one subducts beneath the other, forming volcanoes and mountain ranges.' },
+  'English Language':    { front: 'What is a metaphor?',                           back: "A direct comparison between two unlike things, e.g. 'Time is a thief.'" },
+  'English Literature':  { front: "Who wrote 'Of Mice and Men'?",                  back: 'John Steinbeck (1937).' },
+  'History':             { front: 'When was the Treaty of Versailles signed?',     back: '28 June 1919, formally ending World War I.' },
+  'Psychology':          { front: 'What is operant conditioning?',                 back: 'Learning shaped by consequences — reinforcement strengthens behaviour, punishment weakens it (Skinner).' },
+  'Sociology':           { front: 'What is socialisation?',                        back: "The lifelong process of internalising the norms and values of one's society." },
+  'Business Studies':    { front: 'What is gross profit margin?',                  back: '(Gross profit ÷ Revenue) × 100 — profitability before overheads.' },
+  'Politics':            { front: 'What is parliamentary sovereignty?',            back: 'Parliament is the supreme legal authority — it can make or unmake any law.' },
+  'French':              { front: "Translate: 'I would like a coffee.'",           back: 'Je voudrais un café.' },
+  'German':              { front: "Translate: 'I would like a coffee.'",           back: 'Ich möchte einen Kaffee.' },
+  'Spanish':             { front: "Translate: 'I would like a coffee.'",           back: 'Quisiera un café.' },
+};
+const DEFAULT_EXAMPLE = SUBJECT_EXAMPLES['Computer Science'];
 
 // ── Helpers ────────────────────────────────────────────────────
 function isProProfile(p) {
@@ -461,6 +486,7 @@ async function loadDeck() {
   }
   topicLabel = deck.name;
   cardColor = deck.card_color || cardColor;
+  currentSubject = deck.subject || currentSubject;
 
   const { data: cards } = await supabaseClient
     .from('user_flashcards').select('id, front, back, card_order')
@@ -724,6 +750,9 @@ async function setCardColor(hex) {
 function openAddCard() {
   document.getElementById('addFront').value = '';
   document.getElementById('addBack').value = '';
+  const example = SUBJECT_EXAMPLES[currentSubject] || DEFAULT_EXAMPLE;
+  document.getElementById('addFront').placeholder = example.front;
+  document.getElementById('addBack').placeholder = example.back;
   const hint = document.getElementById('addCardHint');
   if (hint) {
     hint.textContent = MODE === 'deck'
