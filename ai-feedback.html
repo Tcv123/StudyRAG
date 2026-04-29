@@ -54,6 +54,54 @@
     .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
     .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
     .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+
+    /* AI feedback panels */
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; margin-bottom: 18px; box-shadow: 0 1px 0 rgba(11,30,63,0.02); }
+    .panel-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .panel-title { font-family: var(--font-display); font-size: 18px; }
+    .panel-meta { font-size: 12.5px; color: var(--muted); }
+    .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+    .field-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-right: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; font-size: 13.5px; cursor: pointer; user-select: none; }
+    .pill.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-dark); font-weight: 500; }
+    .pill .chev { color: var(--muted2); font-size: 10px; }
+    .pill.locked { background: var(--surface); border-color: var(--border); color: var(--muted); cursor: not-allowed; opacity: 0.92; }
+    .pill.locked .lock { font-size: 11px; color: var(--muted2); }
+    .qbox { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
+    .answer-textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; font-size: 14.5px; line-height: 1.75; min-height: 220px; font-family: var(--font-body); color: var(--text); resize: vertical; }
+    .answer-textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .toolbar { display: flex; gap: 10px; margin-top: 12px; align-items: center; flex-wrap: wrap; }
+    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; border-radius: 10px; font-weight: 500; font-size: 14px; border: 1px solid var(--border); background: var(--surface); cursor: pointer; color: var(--text); font-family: var(--font-body); }
+    .btn:hover { border-color: var(--accent); }
+    .btn.primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .btn.primary:hover { background: var(--accent-dark); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .word-count { margin-left: auto; font-size: 12px; color: var(--muted2); }
+    .grade-card { display: flex; gap: 24px; align-items: center; padding: 18px 22px; background: linear-gradient(135deg, var(--accent-dim), rgba(22,163,74,0.06)); border: 1px solid var(--accent); border-radius: 14px; margin-bottom: 18px; }
+    .grade-band { font-family: var(--font-display); font-size: 32px; color: var(--accent-dark); line-height: 1; }
+    .grade-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .grade-score { margin-left: auto; text-align: right; }
+    .grade-score-num { font-family: var(--font-display); font-size: 28px; color: var(--text); }
+    .grade-score-sub { font-size: 12.5px; color: var(--muted); }
+    .feedback-section { margin-bottom: 18px; }
+    .feedback-section h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .feedback-section.good h4 { color: #16A34A; }
+    .feedback-section.bad h4 { color: #DC2626; }
+    .feedback-section.up h4 { color: var(--accent-dark); }
+    .feedback-section.model h4 { color: #7C3AED; }
+    .fb-list { list-style: none; padding: 0; margin: 0; }
+    .fb-list li { padding: 10px 14px; margin-bottom: 6px; border-radius: 8px; font-size: 14px; line-height: 1.55; display: flex; gap: 10px; }
+    .fb-list .icon { flex-shrink: 0; font-size: 13px; font-weight: 700; }
+    .feedback-section.good .fb-list li { background: rgba(22,163,74,0.1); border-left: 3px solid #16A34A; }
+    .feedback-section.bad .fb-list li { background: rgba(220,38,38,0.08); border-left: 3px solid #DC2626; }
+    .feedback-section.up .fb-list li { background: var(--accent-dim); border-left: 3px solid var(--accent); }
+    .model-paragraph { background: linear-gradient(135deg, rgba(124,58,237,0.05), rgba(37,99,235,0.04)); border: 1px solid rgba(124,58,237,0.25); border-radius: 12px; padding: 18px 22px; font-size: 14.5px; line-height: 1.75; font-style: italic; color: var(--text); }
+    .model-paragraph::before { content: '"'; font-family: var(--font-display); font-size: 36px; color: rgba(124,58,237,0.4); line-height: 0.5; margin-right: 6px; vertical-align: -10px; }
+    .feedback-loading { text-align: center; padding: 40px 20px; color: var(--muted); }
+    .feedback-loading .spinner { display: inline-block; width: 32px; height: 32px; border: 3px solid var(--border); border-top-color: var(--accent); border-radius: 50%; animation: ai-spin 0.8s linear infinite; margin-bottom: 12px; }
+    @keyframes ai-spin { to { transform: rotate(360deg); } }
+    .demo-notice { background: rgba(217,119,6,0.1); border: 1px solid rgba(217,119,6,0.4); border-radius: 10px; padding: 11px 16px; margin-bottom: 22px; font-size: 13px; color: #92400E; display: flex; align-items: flex-start; gap: 10px; }
+    .demo-notice strong { color: #92400E; }
   </style>
 </head>
 <body>
@@ -103,10 +151,57 @@
       <div class="page-sub">Get instant examiner-style feedback on your written answers.</div>
     </div>
     <div id="pageBody">
-      <div class="placeholder">
-        <div class="placeholder-icon">🚧</div>
-        <div class="placeholder-title">Coming soon</div>
-        <div class="placeholder-msg">Submit a written answer and AI will mark it against the official mark scheme — pointing out what's missing, what scored, and how to push it to the top band.</div>
+      <div class="demo-notice">
+        <span>⚠️</span>
+        <span><strong>Demo mode:</strong> AI marking is simulated for now — the same example feedback shows for every answer. Real AI scoring will be wired in when the backend is connected.</span>
+      </div>
+
+      <!-- Panel 1 — Choose a question -->
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">1. Choose a question</div>
+        </div>
+        <div class="row">
+          <span class="pill active" id="subjectPill" title="Pick any of your subjects">Geography <span class="chev">▼</span></span>
+          <span class="pill locked" id="boardPill" title="Set in account — your exam board can't change here">AQA <span class="lock">🔒</span></span>
+        </div>
+        <div class="row">
+          <span class="field-label">Topic</span>
+          <span class="pill active">Hazards <span class="chev">▼</span></span>
+          <span class="field-label" style="margin-left:8px;">Marks</span>
+          <span class="pill active">12 <span class="chev">▼</span></span>
+          <span class="field-label" style="margin-left:8px;">Command</span>
+          <span class="pill active">Assess <span class="chev">▼</span></span>
+          <span style="margin-left:auto;font-size:12px;color:var(--muted2);">📚 Question bank</span>
+        </div>
+        <div class="qbox">
+          <strong>Q.</strong> Assess the relative importance of physical and human factors in increasing flood risk.
+        </div>
+        <div class="row" style="margin-bottom:0;">
+          <span style="font-size:12.5px;color:var(--muted);">Don't like this question? <a style="color:var(--accent);cursor:pointer;text-decoration:underline;">Generate another</a> · <a style="color:var(--accent);cursor:pointer;text-decoration:underline;">Browse all 12-mark Hazards questions</a></span>
+        </div>
+      </div>
+
+      <!-- Panel 2 — Your answer -->
+      <div class="panel">
+        <div class="panel-head">
+          <div class="panel-title">2. Your answer</div>
+          <div class="panel-meta" id="answerMeta">0 words</div>
+        </div>
+        <textarea class="answer-textarea" id="answerInput" placeholder="Write your answer here…"></textarea>
+        <div class="toolbar">
+          <button class="btn">📷 Upload photo</button>
+          <button class="btn primary" id="markBtn">✦ Mark my answer</button>
+        </div>
+      </div>
+
+      <!-- Panel 3 — Feedback (hidden until Mark is clicked) -->
+      <div class="panel" id="feedbackPanel" style="display:none;">
+        <div class="panel-head">
+          <div class="panel-title">3. Examiner feedback</div>
+          <div class="panel-meta">Estimated grade · not an official mark</div>
+        </div>
+        <div id="feedbackBody"></div>
       </div>
     </div>
   </main>
@@ -140,7 +235,96 @@
         <div class="lock-msg">AI feedback is available with a Pro subscription.</div>
         <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
       </div>`;
+    return;
   }
+
+  // Pro user — wire up the AI feedback UI
+  const answerInput = document.getElementById('answerInput');
+  const answerMeta = document.getElementById('answerMeta');
+  const markBtn = document.getElementById('markBtn');
+  const feedbackPanel = document.getElementById('feedbackPanel');
+  const feedbackBody = document.getElementById('feedbackBody');
+
+  // Live word count
+  const updateWordCount = () => {
+    const text = answerInput.value.trim();
+    const words = text ? text.split(/\s+/).length : 0;
+    answerMeta.textContent = `${words} word${words === 1 ? '' : 's'}`;
+  };
+  answerInput.addEventListener('input', updateWordCount);
+
+  // Mark button — simulated marking (replace with Claude API call later)
+  markBtn.addEventListener('click', async () => {
+    const text = answerInput.value.trim();
+    if (text.length < 30) {
+      alert('Write at least a paragraph before requesting feedback.');
+      return;
+    }
+    markBtn.disabled = true;
+    markBtn.textContent = '✦ Marking…';
+    feedbackPanel.style.display = 'block';
+    feedbackBody.innerHTML = `
+      <div class="feedback-loading">
+        <div class="spinner"></div>
+        <div>Reading your answer and matching it to the mark scheme…</div>
+      </div>`;
+    feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+
+    // Simulated delay — replace with real fetch() to your /api/mark endpoint
+    await new Promise(r => setTimeout(r, 1600));
+
+    // Hardcoded sample feedback (matches mockup exactly)
+    feedbackBody.innerHTML = `
+      <div class="grade-card">
+        <div>
+          <div class="grade-label">Estimated band</div>
+          <div class="grade-band">Level 3</div>
+          <div class="grade-label" style="margin-top:6px;">Clear and detailed</div>
+        </div>
+        <div class="grade-score">
+          <div class="grade-score-num">8 / 12</div>
+          <div class="grade-score-sub">↑ One band off the top</div>
+        </div>
+      </div>
+      <div class="feedback-section good">
+        <h4>✓ What scored</h4>
+        <ul class="fb-list">
+          <li><span class="icon">✓</span><span>Strong physical case study with specific data — "Storm Desmond brought 341mm in 24 hours" (AO1).</span></li>
+          <li><span class="icon">✓</span><span>Addressed both physical AND human factors — answered the question in scope.</span></li>
+          <li><span class="icon">✓</span><span>Linked impermeable surfaces to faster runoff with clear process explanation (AO2).</span></li>
+        </ul>
+      </div>
+      <div class="feedback-section bad">
+        <h4>✗ What's holding you back</h4>
+        <ul class="fb-list">
+          <li><span class="icon">✗</span><span>The command word was <em>"Assess"</em> — you described both factors but didn't weigh which is <strong>more important</strong>. No clear judgement (AO3 missed).</span></li>
+          <li><span class="icon">✗</span><span>The human-factors paragraph lacks a named case study (e.g. Boscastle 2004 surface runoff, or Bangladesh urbanisation).</span></li>
+          <li><span class="icon">✗</span><span>No counter-argument or "however" turn anywhere — top-band answers always include a balanced critique.</span></li>
+        </ul>
+      </div>
+      <div class="feedback-section up">
+        <h4>↑ Push to top band (Level 4)</h4>
+        <ul class="fb-list">
+          <li><span class="icon">1.</span><span>Open <em>and</em> close with a one-sentence judgement — e.g. <em>"Physical factors trigger floods, but human factors determine the scale of the disaster."</em></span></li>
+          <li><span class="icon">2.</span><span>Pair every physical example with a human one — comparative paragraphs score higher than parallel paragraphs.</span></li>
+          <li><span class="icon">3.</span><span>Use evaluative connectives: <em>"however"</em>, <em>"on balance"</em>, <em>"the more decisive factor is…"</em></span></li>
+        </ul>
+      </div>
+      <div class="feedback-section model">
+        <h4>✦ Model paragraph (top band)</h4>
+        <div class="model-paragraph">
+          While extreme rainfall is the proximate trigger of flooding, human land-use change determines the scale of the loss. In Cumbria 2015, 341mm of rain fell in 24 hours — but the £500 million damage in Carlisle reflected decades of floodplain development and channel constriction. By contrast, a comparable rainfall event in a forested catchment such as the upper Eden would have produced a far smaller flood. On balance, therefore, human factors are the more decisive influence on flood <em>risk</em>, since they translate hazard into disaster.
+        </div>
+      </div>
+      <div class="toolbar" style="margin-top:24px;">
+        <button class="btn" disabled title="Save to test history — coming soon">💾 Save to history</button>
+        <button class="btn" disabled title="Export — coming soon">📤 Export PDF</button>
+        <button class="btn primary" onclick="document.getElementById('answerInput').value=''; document.getElementById('feedbackPanel').style.display='none'; document.getElementById('answerMeta').textContent='0 words'; document.getElementById('answerInput').focus(); window.scrollTo({top:0,behavior:'smooth'});">🔁 Mark another answer</button>
+      </div>`;
+
+    markBtn.disabled = false;
+    markBtn.innerHTML = '✦ Mark my answer';
+  });
 })();
 </script>
 </body>
