@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Feedback — Preview Mockup</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD;
+      --border: #B8D0E8; --border-hover: #2563EB;
+      --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+      --accent: #2563EB; --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --good: #16A34A; --good-dim: rgba(22,163,74,0.1);
+      --bad: #DC2626; --bad-dim: rgba(220,38,38,0.08);
+      --warn: #D97706; --warn-dim: rgba(217,119,6,0.1);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+    .app { display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; text-decoration: none; }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .pro-tag { margin-left: auto; font-size: 10px; color: var(--warn); font-weight: 600; }
+
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 36px 44px 60px; max-width: 1100px; }
+    .topbar { margin-bottom: 28px; }
+    .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-top: 4px; }
+
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; margin-bottom: 18px; box-shadow: 0 1px 0 rgba(11,30,63,0.02); }
+    .panel-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 16px; }
+    .panel-title { font-family: var(--font-display); font-size: 18px; }
+    .panel-meta { font-size: 12.5px; color: var(--muted); }
+
+    .row { display: flex; gap: 16px; flex-wrap: wrap; align-items: center; margin-bottom: 12px; }
+    .field-label { font-size: 12px; font-weight: 600; color: var(--muted); margin-right: 8px; text-transform: uppercase; letter-spacing: 0.05em; }
+    .pill { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; font-size: 13.5px; cursor: pointer; }
+    .pill.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-dark); font-weight: 500; }
+    .pill .chev { color: var(--muted2); font-size: 10px; }
+
+    .qbox { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
+
+    .answerbox { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; font-size: 14.5px; line-height: 1.75; min-height: 180px; position: relative; }
+    .answerbox p { margin-bottom: 12px; }
+    .ann-good { background: rgba(22,163,74,0.18); border-bottom: 2px solid var(--good); padding: 1px 2px; cursor: help; }
+    .ann-bad { background: rgba(220,38,38,0.12); border-bottom: 2px solid var(--bad); padding: 1px 2px; cursor: help; }
+
+    .toolbar { display: flex; gap: 10px; margin-top: 12px; align-items: center; }
+    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; border-radius: 10px; font-weight: 500; font-size: 14px; border: 1px solid var(--border); background: var(--surface); cursor: pointer; color: var(--text); }
+    .btn:hover { border-color: var(--accent); }
+    .btn.primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .btn.primary:hover { background: var(--accent-dark); }
+    .word-count { margin-left: auto; font-size: 12px; color: var(--muted2); }
+
+    .grade-card { display: flex; gap: 24px; align-items: center; padding: 18px 22px; background: linear-gradient(135deg, var(--accent-dim), rgba(22,163,74,0.06)); border: 1px solid var(--accent); border-radius: 14px; margin-bottom: 18px; }
+    .grade-band { font-family: var(--font-display); font-size: 32px; color: var(--accent-dark); line-height: 1; }
+    .grade-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .grade-score { margin-left: auto; text-align: right; }
+    .grade-score-num { font-family: var(--font-display); font-size: 28px; color: var(--text); }
+    .grade-score-sub { font-size: 12.5px; color: var(--muted); }
+
+    .feedback-section { margin-bottom: 18px; }
+    .feedback-section h4 { font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .feedback-section.good h4 { color: var(--good); }
+    .feedback-section.bad h4 { color: var(--bad); }
+    .feedback-section.up h4 { color: var(--accent-dark); }
+    .feedback-section.model h4 { color: #7C3AED; }
+
+    .fb-list { list-style: none; }
+    .fb-list li { padding: 10px 14px; margin-bottom: 6px; border-radius: 8px; font-size: 14px; line-height: 1.55; display: flex; gap: 10px; }
+    .fb-list .icon { flex-shrink: 0; font-size: 13px; }
+    .feedback-section.good .fb-list li { background: var(--good-dim); border-left: 3px solid var(--good); }
+    .feedback-section.bad .fb-list li { background: var(--bad-dim); border-left: 3px solid var(--bad); }
+    .feedback-section.up .fb-list li { background: var(--accent-dim); border-left: 3px solid var(--accent); }
+
+    .model-paragraph { background: linear-gradient(135deg, rgba(124,58,237,0.05), rgba(37,99,235,0.04)); border: 1px solid rgba(124,58,237,0.25); border-radius: 12px; padding: 18px 22px; font-size: 14.5px; line-height: 1.75; font-style: italic; color: var(--text); }
+    .model-paragraph::before { content: '"'; font-family: var(--font-display); font-size: 36px; color: rgba(124,58,237,0.4); line-height: 0.5; margin-right: 6px; vertical-align: -10px; }
+
+    .footer-note { text-align: center; font-size: 12px; color: var(--muted2); padding: 20px 0 0; font-style: italic; }
+    .preview-banner { background: var(--warn-dim); border: 1px solid var(--warn); border-radius: 10px; padding: 12px 18px; margin-bottom: 22px; font-size: 13px; color: #92400E; display: flex; align-items: center; gap: 10px; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <div class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </div>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item"><span class="nav-icon">📆</span> Revision timetable <span class="pro-tag">PRO</span></a>
+      <a class="nav-item"><span class="nav-icon">🃏</span> Flashcards <span class="pro-tag">PRO</span></a>
+      <a class="nav-item"><span class="nav-icon">📜</span> Test history <span class="pro-tag">PRO</span></a>
+      <a class="nav-item active"><span class="nav-icon">🤖</span> AI feedback <span class="pro-tag">PRO</span></a>
+      <a class="nav-item"><span class="nav-icon">📄</span> Past papers <span class="pro-tag">PRO</span></a>
+      <a class="nav-item"><span class="nav-icon">📋</span> Mark schemes <span class="pro-tag">PRO</span></a>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="page-title">🤖 AI Feedback</div>
+      <div class="page-sub">Get instant examiner-style feedback on your written answers.</div>
+    </div>
+
+    <div class="preview-banner">
+      <span>👁️</span>
+      <span><strong>Preview only.</strong> This is a static mockup with hardcoded example content — nothing here is connected to the live app.</span>
+    </div>
+
+    <!-- Panel 1 — Question setup -->
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">1. Choose a question</div>
+      </div>
+      <div class="row">
+        <span class="pill active">Geography <span class="chev">▼</span></span>
+        <span class="pill">AQA <span class="chev">▼</span></span>
+        <span class="pill active">📝 Past-paper question</span>
+        <span class="pill">📚 From library</span>
+      </div>
+      <div class="qbox">
+        <strong>Q.</strong> Assess the relative importance of physical and human factors in increasing flood risk.
+      </div>
+      <div class="row" style="margin-bottom:0;">
+        <span class="field-label">Marks</span>
+        <span class="pill active">12</span>
+        <span class="field-label" style="margin-left:8px;">Command</span>
+        <span class="pill active">Assess</span>
+        <span class="field-label" style="margin-left:8px;">AOs</span>
+        <span class="pill">AO1 · AO2 · AO3</span>
+      </div>
+    </div>
+
+    <!-- Panel 2 — Student's answer -->
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">2. Your answer</div>
+        <div class="panel-meta">347 words · 2 min 14 sec</div>
+      </div>
+      <div class="answerbox">
+        <p>Flood risk is increased by both <span class="ann-good" title="✓ Addresses both sides — AO1">physical and human factors</span>. Physical factors include heavy rainfall, impermeable rock and steep relief. For example, in Cumbria 2015, <span class="ann-good" title="✓ Specific data, named case study">Storm Desmond brought 341mm of rain in 24 hours</span>, which led to widespread flooding in Carlisle and Keswick. Saturated ground meant that infiltration was minimal, causing rapid surface runoff.</p>
+        <p><span class="ann-bad" title="❗ No specific case study or data">Human factors are also important.</span> Urbanisation creates impermeable surfaces and storm drains that <span class="ann-good" title="✓ Process clearly linked">speed up runoff and shorten lag times</span>. Deforestation reduces interception and evapotranspiration. Channel modification can transfer flood risk downstream.</p>
+        <p>In conclusion, <span class="ann-bad" title="❗ Command word was 'Assess' — needs a clear judgement, not a summary">both physical and human factors are important in increasing flood risk and they often work together</span>.</p>
+      </div>
+      <div class="toolbar">
+        <button class="btn">📷 Upload photo</button>
+        <button class="btn primary">✦ Mark my answer</button>
+        <span class="word-count">347 words</span>
+      </div>
+    </div>
+
+    <!-- Panel 3 — Feedback -->
+    <div class="panel">
+      <div class="panel-head">
+        <div class="panel-title">3. Examiner feedback</div>
+        <div class="panel-meta">Estimated grade · not an official mark</div>
+      </div>
+
+      <div class="grade-card">
+        <div>
+          <div class="grade-label">Estimated band</div>
+          <div class="grade-band">Level 3</div>
+          <div class="grade-label" style="margin-top:6px;">Clear and detailed</div>
+        </div>
+        <div class="grade-score">
+          <div class="grade-score-num">8 / 12</div>
+          <div class="grade-score-sub">↑ One band off the top</div>
+        </div>
+      </div>
+
+      <div class="feedback-section good">
+        <h4>✓ What scored</h4>
+        <ul class="fb-list">
+          <li><span class="icon">✓</span><span>Strong physical case study with specific data — "Storm Desmond brought 341mm in 24 hours" (AO1).</span></li>
+          <li><span class="icon">✓</span><span>Addressed both physical AND human factors — answered the question in scope.</span></li>
+          <li><span class="icon">✓</span><span>Linked impermeable surfaces to faster runoff with clear process explanation (AO2).</span></li>
+        </ul>
+      </div>
+
+      <div class="feedback-section bad">
+        <h4>✗ What's holding you back</h4>
+        <ul class="fb-list">
+          <li><span class="icon">✗</span><span>The command word was <em>"Assess"</em> — you described both factors but didn't weigh which is <strong>more important</strong>. No clear judgement (AO3 missed).</span></li>
+          <li><span class="icon">✗</span><span>The human-factors paragraph lacks a named case study (e.g. Boscastle 2004 surface runoff, or Bangladesh urbanisation).</span></li>
+          <li><span class="icon">✗</span><span>No counter-argument or "however" turn anywhere — top-band answers always include a balanced critique.</span></li>
+        </ul>
+      </div>
+
+      <div class="feedback-section up">
+        <h4>↑ Push to top band (Level 4)</h4>
+        <ul class="fb-list">
+          <li><span class="icon">1.</span><span>Open <em>and</em> close with a one-sentence judgement — e.g. <em>"Physical factors trigger floods, but human factors determine the scale of the disaster."</em></span></li>
+          <li><span class="icon">2.</span><span>Pair every physical example with a human one — comparative paragraphs score higher than parallel paragraphs.</span></li>
+          <li><span class="icon">3.</span><span>Use evaluative connectives: <em>"however"</em>, <em>"on balance"</em>, <em>"the more decisive factor is…"</em></span></li>
+        </ul>
+      </div>
+
+      <div class="feedback-section model">
+        <h4>✦ Model paragraph (top band)</h4>
+        <div class="model-paragraph">
+          While extreme rainfall is the proximate trigger of flooding, human land-use change determines the scale of the loss. In Cumbria 2015, 341mm of rain fell in 24 hours — but the £500 million damage in Carlisle reflected decades of floodplain development and channel constriction. By contrast, a comparable rainfall event in a forested catchment such as the upper Eden would have produced a far smaller flood. On balance, therefore, human factors are the more decisive influence on flood <em>risk</em>, since they translate hazard into disaster.
+        </div>
+      </div>
+
+      <div class="toolbar" style="margin-top:24px;">
+        <button class="btn">💾 Save to history</button>
+        <button class="btn">📤 Export PDF</button>
+        <button class="btn primary">🔁 Mark another answer</button>
+      </div>
+    </div>
+
+    <div class="footer-note">
+      Mockup preview · No data is being sent or stored.
+    </div>
+  </main>
+</div>
+</body>
+</html>
