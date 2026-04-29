@@ -49,6 +49,8 @@
     .pill { display: inline-flex; align-items: center; gap: 6px; padding: 7px 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; font-size: 13.5px; cursor: pointer; }
     .pill.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-dark); font-weight: 500; }
     .pill .chev { color: var(--muted2); font-size: 10px; }
+    .pill.locked { background: var(--surface); border-color: var(--border); color: var(--muted); cursor: not-allowed; opacity: 0.92; }
+    .pill.locked .lock { font-size: 11px; color: var(--muted2); }
 
     .qbox { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; font-size: 15px; line-height: 1.6; margin-bottom: 12px; }
 
@@ -136,10 +138,10 @@
         <div class="panel-title">1. Choose a question</div>
       </div>
       <div class="row">
-        <span class="pill active">Geography <span class="chev">▼</span></span>
-        <span class="pill">AQA <span class="chev">▼</span></span>
+        <span class="pill active" title="Pick any of your subjects">Geography <span class="chev">▼</span></span>
+        <span class="pill locked" title="Set in account — your exam board can't change here">AQA <span class="lock">🔒</span></span>
         <span class="pill active">📝 Past-paper question</span>
-        <span class="pill">📚 From library</span>
+        <span class="pill">📚 From question bank</span>
       </div>
       <div class="qbox">
         <strong>Q.</strong> Assess the relative importance of physical and human factors in increasing flood risk.
