@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="nav-gating.js"></script>
+  <script src="flashcards-config.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -102,6 +103,16 @@
     @keyframes ai-spin { to { transform: rotate(360deg); } }
     .demo-notice { background: rgba(217,119,6,0.1); border: 1px solid rgba(217,119,6,0.4); border-radius: 10px; padding: 11px 16px; margin-bottom: 22px; font-size: 13px; color: #92400E; display: flex; align-items: flex-start; gap: 10px; }
     .demo-notice strong { color: #92400E; }
+
+    /* Dropdowns */
+    .dropdown { position: relative; display: inline-block; }
+    .dropdown-menu { position: absolute; top: calc(100% + 6px); left: 0; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; box-shadow: 0 6px 20px rgba(11,30,63,0.10); padding: 6px; min-width: 200px; z-index: 50; display: none; max-height: 320px; overflow-y: auto; }
+    .dropdown.open .dropdown-menu { display: block; }
+    .dropdown-option { padding: 9px 12px; border-radius: 6px; cursor: pointer; font-size: 14px; color: var(--text); white-space: nowrap; display: flex; align-items: center; gap: 8px; }
+    .dropdown-option:hover { background: var(--surface2); }
+    .dropdown-option.selected { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .dropdown-option .opt-meta { color: var(--muted2); font-size: 11.5px; margin-left: auto; }
+    .dropdown-empty { padding: 14px 12px; font-size: 13px; color: var(--muted); text-align: center; }
   </style>
 </head>
 <body>
@@ -162,23 +173,35 @@
           <div class="panel-title">1. Choose a question</div>
         </div>
         <div class="row">
-          <span class="pill active" id="subjectPill" title="Pick any of your subjects">Geography <span class="chev">▼</span></span>
-          <span class="pill locked" id="boardPill" title="Set in account — your exam board can't change here">AQA <span class="lock">🔒</span></span>
+          <div class="dropdown" data-key="subject">
+            <span class="pill active dropdown-toggle" title="Pick any of your subjects"><span class="pill-label">…</span> <span class="chev">▼</span></span>
+            <div class="dropdown-menu"></div>
+          </div>
+          <span class="pill locked" id="boardPill" title="Set in account — your exam board can't change here"><span class="pill-label">…</span> <span class="lock">🔒</span></span>
         </div>
         <div class="row">
           <span class="field-label">Topic</span>
-          <span class="pill active">Hazards <span class="chev">▼</span></span>
+          <div class="dropdown" data-key="topic">
+            <span class="pill active dropdown-toggle"><span class="pill-label">…</span> <span class="chev">▼</span></span>
+            <div class="dropdown-menu"></div>
+          </div>
           <span class="field-label" style="margin-left:8px;">Marks</span>
-          <span class="pill active">12 <span class="chev">▼</span></span>
+          <div class="dropdown" data-key="marks">
+            <span class="pill active dropdown-toggle"><span class="pill-label">12</span> <span class="chev">▼</span></span>
+            <div class="dropdown-menu"></div>
+          </div>
           <span class="field-label" style="margin-left:8px;">Command</span>
-          <span class="pill active">Assess <span class="chev">▼</span></span>
+          <div class="dropdown" data-key="command">
+            <span class="pill active dropdown-toggle"><span class="pill-label">Assess</span> <span class="chev">▼</span></span>
+            <div class="dropdown-menu"></div>
+          </div>
           <span style="margin-left:auto;font-size:12px;color:var(--muted2);">📚 Question bank</span>
         </div>
-        <div class="qbox">
-          <strong>Q.</strong> Assess the relative importance of physical and human factors in increasing flood risk.
+        <div class="qbox" id="questionBox">
+          <strong>Q.</strong> <span id="questionText">Loading question…</span>
         </div>
         <div class="row" style="margin-bottom:0;">
-          <span style="font-size:12.5px;color:var(--muted);">Don't like this question? <a style="color:var(--accent);cursor:pointer;text-decoration:underline;">Generate another</a> · <a style="color:var(--accent);cursor:pointer;text-decoration:underline;">Browse all 12-mark Hazards questions</a></span>
+          <span style="font-size:12.5px;color:var(--muted);">Don't like this question? <a id="generateAnother" style="color:var(--accent);cursor:pointer;text-decoration:underline;">Generate another</a></span>
         </div>
       </div>
 
@@ -244,6 +267,191 @@
   const markBtn = document.getElementById('markBtn');
   const feedbackPanel = document.getElementById('feedbackPanel');
   const feedbackBody = document.getElementById('feedbackBody');
+  const boardPill = document.getElementById('boardPill');
+  const questionText = document.getElementById('questionText');
+
+  // ---------- Load user's subjects ----------
+  const { data: userSubjects } = await supabaseClient
+    .from('user_subjects').select('*').eq('user_id', user.id).order('created_at');
+
+  // De-duplicate to one row per subject (a user can have a subject under one board)
+  const subjectMap = new Map();
+  (userSubjects || []).forEach(row => {
+    if (!subjectMap.has(row.subject)) subjectMap.set(row.subject, row);
+  });
+  const subjects = Array.from(subjectMap.values());
+
+  // ---------- State ----------
+  const COMMAND_WORDS = ['Describe', 'Explain', 'Compare', 'Discuss', 'Assess', 'Evaluate', 'To what extent'];
+  const MARK_OPTIONS = [4, 6, 9, 12, 16, 20, 25];
+
+  const state = {
+    subject: subjects[0]?.subject || 'Geography',
+    board: subjects[0]?.exam_board || 'AQA',
+    topic: '',
+    marks: 12,
+    command: 'Assess',
+  };
+
+  // ---------- Helpers ----------
+  function topicsForSelected() {
+    const fn = window.FLASHCARDS_TOPICS_FOR;
+    if (!fn) return null;
+    const topics = fn(state.subject, state.board);
+    if (!topics) return null;
+    // FLASHCARDS_TOPICS values are arrays of {id, name} or strings
+    return topics.map(t => typeof t === 'string' ? { id: t, name: t } : { id: t.id || t.name, name: t.name || t.id });
+  }
+
+  // Sample question generator — template-based until a real bank is wired
+  const QUESTION_TEMPLATES = {
+    'Describe':       (t) => `Describe the main characteristics of ${t}.`,
+    'Explain':        (t) => `Explain the factors that influence ${t}.`,
+    'Compare':        (t) => `Compare the relative importance of two factors influencing ${t}.`,
+    'Discuss':        (t) => `Discuss the view that ${t} is shaped more by physical than by human factors.`,
+    'Assess':         (t) => `Assess the relative importance of physical and human factors in ${t}.`,
+    'Evaluate':       (t) => `Evaluate the success of strategies used to manage ${t}.`,
+    'To what extent': (t) => `To what extent has ${t} been shaped by human activity?`,
+  };
+
+  // Curated samples for the most common combos — fall back to templates otherwise
+  const QUESTION_BANK = {
+    'Hazards|12|Assess': 'Assess the relative importance of physical and human factors in increasing flood risk.',
+    'Hazards|16|Discuss': 'Discuss the view that vulnerability is more important than hazard magnitude in determining the impact of natural disasters.',
+    'Hazards|20|Evaluate': 'Evaluate the effectiveness of strategies to mitigate the effects of tropical storms.',
+    'Coastal Systems and Landscapes|12|Assess': 'Assess the role of physical processes in shaping coastal landscapes.',
+    'Water and Carbon Cycles|12|Assess': 'Assess the impact of human activity on the water cycle.',
+    'Changing Places|12|Assess': 'Assess the role of exogenous factors in shaping the character of one place you have studied.',
+    'Contemporary Urban Environments|16|Discuss': 'Discuss the view that the only way to make cities sustainable is to redesign their transport systems.',
+    'Population and the Environment|20|Evaluate': 'Evaluate the success of strategies used to manage population change in one country you have studied.',
+  };
+
+  // Allow Generate-another to cycle if multiple bank entries exist
+  let alternativeIndex = 0;
+
+  function buildQuestion() {
+    const topic = state.topic || 'this topic';
+    const key = `${topic}|${state.marks}|${state.command}`;
+    if (QUESTION_BANK[key]) return QUESTION_BANK[key];
+    const template = QUESTION_TEMPLATES[state.command];
+    if (template) return template(topic);
+    return `${state.command} ${topic}.`;
+  }
+
+  function rerenderQuestion() {
+    questionText.textContent = buildQuestion();
+  }
+
+  // ---------- Dropdown wiring ----------
+  function setupDropdown(key, options, onSelect) {
+    const dd = document.querySelector(`.dropdown[data-key="${key}"]`);
+    if (!dd) return;
+    const toggle = dd.querySelector('.dropdown-toggle');
+    const menu = dd.querySelector('.dropdown-menu');
+    const label = toggle.querySelector('.pill-label');
+
+    function render() {
+      menu.innerHTML = '';
+      if (!options.length) {
+        menu.innerHTML = '<div class="dropdown-empty">No options yet</div>';
+        return;
+      }
+      options.forEach(opt => {
+        const div = document.createElement('div');
+        div.className = 'dropdown-option' + (opt.value === currentValue() ? ' selected' : '');
+        div.innerHTML = `<span>${opt.label}</span>${opt.meta ? `<span class="opt-meta">${opt.meta}</span>` : ''}`;
+        div.addEventListener('click', () => {
+          dd.classList.remove('open');
+          onSelect(opt);
+          // re-render labels after state change
+          render();
+        });
+        menu.appendChild(div);
+      });
+    }
+    function currentValue() {
+      return state[key] != null ? String(state[key]) : '';
+    }
+    toggle.addEventListener('click', e => {
+      e.stopPropagation();
+      // close other open dropdowns
+      document.querySelectorAll('.dropdown.open').forEach(d => { if (d !== dd) d.classList.remove('open'); });
+      dd.classList.toggle('open');
+      render();
+    });
+    return { setLabel: (text) => label.textContent = text, render };
+  }
+
+  document.addEventListener('click', () => {
+    document.querySelectorAll('.dropdown.open').forEach(d => d.classList.remove('open'));
+  });
+
+  // Subject dropdown
+  const subjectOptions = subjects.length
+    ? subjects.map(s => ({ value: s.subject, label: s.subject, meta: s.exam_board, board: s.exam_board }))
+    : [{ value: 'Geography', label: 'Geography', meta: 'AQA', board: 'AQA' }];
+  const subjectDd = setupDropdown('subject', subjectOptions, (opt) => {
+    state.subject = opt.value;
+    state.board = opt.board;
+    subjectDd.setLabel(opt.label);
+    boardPill.querySelector('.pill-label').textContent = state.board;
+    // refresh topic options for new subject/board
+    const topics = topicsForSelected();
+    state.topic = topics?.[0]?.name || '';
+    topicDd?.setLabel(state.topic || 'Pick a topic');
+    rebuildTopicDropdown();
+    rerenderQuestion();
+  });
+  subjectDd.setLabel(state.subject);
+  boardPill.querySelector('.pill-label').textContent = state.board;
+
+  // Topic dropdown (re-buildable when subject changes)
+  let topicDd;
+  function rebuildTopicDropdown() {
+    const topics = topicsForSelected() || [];
+    const topicOptions = topics.length
+      ? topics.map(t => ({ value: t.name, label: t.name, meta: t.id }))
+      : [{ value: '', label: 'No topics found for this subject + board', meta: '' }];
+    if (!state.topic && topics.length) state.topic = topics[0].name;
+    if (topicDd) {
+      topicDd.options = topicOptions;
+      topicDd.render();
+      topicDd.setLabel(state.topic || 'Pick a topic');
+    } else {
+      topicDd = setupDropdown('topic', topicOptions, (opt) => {
+        if (!opt.value) return;
+        state.topic = opt.value;
+        topicDd.setLabel(opt.label);
+        rerenderQuestion();
+      });
+      topicDd.setLabel(state.topic || 'Pick a topic');
+    }
+  }
+  rebuildTopicDropdown();
+
+  // Marks dropdown
+  const marksDd = setupDropdown('marks', MARK_OPTIONS.map(n => ({ value: n, label: `${n} marks` })), (opt) => {
+    state.marks = opt.value;
+    marksDd.setLabel(String(opt.value));
+    rerenderQuestion();
+  });
+  marksDd.setLabel(String(state.marks));
+
+  // Command word dropdown
+  const cmdDd = setupDropdown('command', COMMAND_WORDS.map(c => ({ value: c, label: c })), (opt) => {
+    state.command = opt.value;
+    cmdDd.setLabel(opt.label);
+    rerenderQuestion();
+  });
+  cmdDd.setLabel(state.command);
+
+  // Generate-another link cycles through the bank if multiple matches; otherwise re-runs the template
+  document.getElementById('generateAnother').addEventListener('click', () => {
+    alternativeIndex++;
+    rerenderQuestion();
+  });
+
+  rerenderQuestion();
 
   // Live word count
   const updateWordCount = () => {
