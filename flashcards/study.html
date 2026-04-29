@@ -247,6 +247,7 @@ const SUBJECT  = params.get('subject');
 const BOARD    = params.get('board');
 const TOPIC_ID = params.get('topic');
 const DECK_ID  = params.get('deck');
+const AUTO_ADD = params.get('add') === '1';
 const MODE = DECK_ID ? 'deck' : 'topic';
 
 // Browser TTS support — drives whether the 🔊 button is rendered.
@@ -474,6 +475,7 @@ async function loadDeck() {
        <a class="btn-ghost" href="${backHref}" style="margin-left:10px;">← Back</a>`);
     document.getElementById('crumb').innerHTML =
       `<a href="../flashcards.html">All flashcards</a> › ${escapeHtml(deck.name)}`;
+    if (AUTO_ADD) openAddCard();
     return;
   }
 
@@ -502,8 +504,9 @@ async function loadDeck() {
   document.getElementById('crumb').innerHTML =
     `<a href="../flashcards.html">All flashcards</a> › ${escapeHtml(deck.name)}`;
 
-  if (queue.length === 0) { renderDone(); return; }
-  renderCard();
+  if (queue.length === 0) { renderDone(); }
+  else { renderCard(); }
+  if (AUTO_ADD) openAddCard();
 }
 
 // ── Render ─────────────────────────────────────────────────────
