@@ -6,9 +6,8 @@ const supabaseAdmin = createClient(
   { auth: { persistSession: false, autoRefreshToken: false } }
 );
 
-const ANTHROPIC_API_KEY = process.env.ANTHROPIC_API_KEY;
-const ANTHROPIC_VERSION = '2023-06-01';
-const MODEL = process.env.ANTHROPIC_MODEL || 'claude-sonnet-4-6';
+const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
+const MODEL = process.env.GEMINI_MODEL || 'gemini-2.5-flash';
 
 module.exports = async function handler(req, res) {
   if (req.method !== 'POST') {
@@ -40,10 +39,10 @@ module.exports = async function handler(req, res) {
     if (!isPro) return res.status(403).json({ error: 'pro_required' });
 
     // ---- API key present? ----
-    if (!ANTHROPIC_API_KEY) {
+    if (!GEMINI_API_KEY) {
       return res.status(500).json({
         error: 'api_key_missing',
-        message: 'ANTHROPIC_API_KEY is not set in Vercel environment variables.'
+        message: 'GEMINI_API_KEY is not set in Vercel environment variables.'
       });
     }
 
@@ -60,44 +59,56 @@ module.exports = async function handler(req, res) {
       ? buildMarkPrompt({ question, answer, marks, command, topic })
       : buildModelPrompt({ question, marks, command, topic });
 
-    // ---- Call Claude (assistant prefilled with `{` to force JSON output) ----
-    const claudeRes = await fetch('https://api.anthropic.com/v1/messages', {
+    const responseSchema = mode === 'mark' ? MARK_SCHEMA : MODEL_SCHEMA;
+
+    // ---- Call Gemini ----
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${encodeURIComponent(MODEL)}:generateContent`;
+    const geminiRes = await fetch(url, {
       method: 'POST',
       headers: {
-        'x-api-key': ANTHROPIC_API_KEY,
-        'anthropic-version': ANTHROPIC_VERSION,
-        'content-type': 'application/json'
+        'content-type': 'application/json',
+        'x-goog-api-key': GEMINI_API_KEY
       },
       body: JSON.stringify({
-        model: MODEL,
-        max_tokens: 2500,
-        system: systemPrompt,
-        messages: [
-          { role: 'user', content: userPrompt },
-          { role: 'assistant', content: '{' }
-        ]
+        systemInstruction: { parts: [{ text: systemPrompt }] },
+        contents: [
+          { role: 'user', parts: [{ text: userPrompt }] }
+        ],
+        generationConfig: {
+          temperature: 0.3,
+          maxOutputTokens: 2500,
+          responseMimeType: 'application/json',
+          responseSchema
+        }
       })
     });
 
-    if (!claudeRes.ok) {
-      const errText = await claudeRes.text().catch(() => '');
-      console.error('Claude API error', claudeRes.status, errText);
+    if (!geminiRes.ok) {
+      const errText = await geminiRes.text().catch(() => '');
+      console.error('Gemini API error', geminiRes.status, errText);
       return res.status(502).json({
-        error: 'claude_error',
-        status: claudeRes.status,
-        message: `Claude API returned ${claudeRes.status}. ${errText.slice(0, 200)}`
+        error: 'gemini_error',
+        status: geminiRes.status,
+        message: `Gemini API returned ${geminiRes.status}. ${errText.slice(0, 300)}`
       });
     }
 
-    const claudeData = await claudeRes.json();
-    const rawText = '{' + (claudeData.content?.[0]?.text || '');
+    const data = await geminiRes.json();
+    const text = data.candidates?.[0]?.content?.parts?.[0]?.text || '';
+
+    if (!text) {
+      const finishReason = data.candidates?.[0]?.finishReason || 'unknown';
+      return res.status(502).json({
+        error: 'empty_response',
+        message: `Gemini returned no text (finishReason: ${finishReason}).`
+      });
+    }
 
     let parsed;
     try {
-      parsed = JSON.parse(rawText);
+      parsed = JSON.parse(text);
     } catch (e) {
-      // Try to extract JSON if Claude wrapped it in extra prose
-      const match = rawText.match(/\{[\s\S]*\}/);
+      const match = text.match(/\{[\s\S]*\}/);
       if (match) {
         try { parsed = JSON.parse(match[0]); } catch (_) {}
       }
@@ -105,7 +116,7 @@ module.exports = async function handler(req, res) {
         return res.status(502).json({
           error: 'parse_error',
           message: 'AI returned malformed JSON',
-          raw: rawText.slice(0, 500)
+          raw: text.slice(0, 500)
         });
       }
     }
@@ -114,7 +125,7 @@ module.exports = async function handler(req, res) {
       ok: true,
       mode,
       feedback: parsed,
-      usage: claudeData.usage
+      usage: data.usageMetadata
     });
   } catch (err) {
     console.error('Mark handler error:', err);
@@ -127,7 +138,7 @@ function buildSystemPrompt({ subject, board, level }) {
   return `You are a UK ${levelLabel} examiner for ${subject || 'this subject'} (${board || 'this board'}).
 You mark answers strictly against the published mark scheme conventions, awarding marks for AO1 (knowledge), AO2 (application) and AO3 (analysis / evaluation) where applicable.
 You are precise, fair and constructive — your job is to help the student push to the top band.
-Respond with VALID JSON ONLY. No prose outside the JSON. No markdown code fences. No explanatory text. The response must start with { and end with }.`;
+Respond with VALID JSON ONLY that matches the supplied schema. Use HTML <em> and <strong> tags inside string values for emphasis where helpful.`;
 }
 
 function buildMarkPrompt({ question, answer, marks, command, topic }) {
@@ -143,20 +154,16 @@ STUDENT'S ANSWER:
 ${answer}
 """
 
-Return JSON in EXACTLY this shape:
-{
-  "estimatedBand": "Level 3 / 4",
-  "estimatedScore": 8,
-  "totalMarks": ${marks},
-  "bandDescriptor": "Clear and detailed (one short phrase)",
-  "scoreNote": "↑ One band off the top (or similar one-line note)",
-  "whatScored": ["3 to 5 specific things the student did well — quote phrases from their answer where possible"],
-  "whatsHoldingBack": ["3 to 5 specific things missing or weak — be concrete, not generic"],
-  "pushToTopBand": ["3 to 4 actionable bullet points to reach the top band"],
-  "modelParagraph": "A single top-band paragraph (60-100 words) directly answering the question, with named examples and data, and a clear judgement that addresses the command word \\"${command}\\"."
-}
-
-Use HTML <em> and <strong> tags inside string values for emphasis where helpful. Do not use markdown.`;
+Provide:
+- estimatedBand (e.g. "Level 3 / 4"),
+- estimatedScore (integer out of ${marks}),
+- totalMarks: ${marks},
+- bandDescriptor (one short phrase, e.g. "Clear and detailed"),
+- scoreNote (one-line note like "↑ One band off the top"),
+- whatScored: 3-5 specific things the student did well, quoting phrases from their answer where possible,
+- whatsHoldingBack: 3-5 specific things missing or weak — be concrete, not generic,
+- pushToTopBand: 3-4 actionable bullet points to reach the top band,
+- modelParagraph: a single top-band paragraph (60-100 words) directly answering the question, with named examples and data, and a clear judgement that addresses the command word "${command}".`;
 }
 
 function buildModelPrompt({ question, marks, command, topic }) {
@@ -167,13 +174,34 @@ TOTAL MARKS: ${marks}
 COMMAND WORD: ${command}
 TOPIC: ${topic || 'unspecified'}
 
-Return JSON in EXACTLY this shape:
-{
-  "structureTips": [
-    "4 bullet points on how a top-band ${command} answer is structured for this specific question. Each bullet should be one clear sentence."
-  ],
-  "modelParagraph": "A single top-band paragraph (60-100 words) directly answering the question, with named examples and data, and a clear judgement that addresses the command word \\"${command}\\"."
+Provide:
+- structureTips: 4 bullet points on how a top-band ${command} answer is structured for this specific question. Each bullet one clear sentence.
+- modelParagraph: a single top-band paragraph (60-100 words) directly answering the question, with named examples and data, and a clear judgement that addresses the command word "${command}".`;
 }
 
-Use HTML <em> and <strong> tags inside string values for emphasis where helpful. Do not use markdown.`;
-}
+const MARK_SCHEMA = {
+  type: 'object',
+  properties: {
+    estimatedBand: { type: 'string' },
+    estimatedScore: { type: 'integer' },
+    totalMarks: { type: 'integer' },
+    bandDescriptor: { type: 'string' },
+    scoreNote: { type: 'string' },
+    whatScored: { type: 'array', items: { type: 'string' } },
+    whatsHoldingBack: { type: 'array', items: { type: 'string' } },
+    pushToTopBand: { type: 'array', items: { type: 'string' } },
+    modelParagraph: { type: 'string' }
+  },
+  required: ['estimatedBand', 'estimatedScore', 'totalMarks', 'bandDescriptor', 'scoreNote', 'whatScored', 'whatsHoldingBack', 'pushToTopBand', 'modelParagraph'],
+  propertyOrdering: ['estimatedBand', 'estimatedScore', 'totalMarks', 'bandDescriptor', 'scoreNote', 'whatScored', 'whatsHoldingBack', 'pushToTopBand', 'modelParagraph']
+};
+
+const MODEL_SCHEMA = {
+  type: 'object',
+  properties: {
+    structureTips: { type: 'array', items: { type: 'string' } },
+    modelParagraph: { type: 'string' }
+  },
+  required: ['structureTips', 'modelParagraph'],
+  propertyOrdering: ['structureTips', 'modelParagraph']
+};
