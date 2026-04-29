@@ -71,6 +71,8 @@
     .qbox { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; font-size: 15px; line-height: 1.6; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-start; gap: 16px; }
     .qbox .qtext { flex: 1; min-width: 0; }
     .marks-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: var(--accent-dim); color: var(--accent-dark); border: 1px solid var(--accent); border-radius: 999px; font-size: 12.5px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
+    .pill-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; font-size: 12.5px; color: var(--muted); cursor: pointer; font-family: var(--font-body); transition: all 0.15s; }
+    .pill-btn:hover { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-dark); }
     .answer-textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 16px 18px; font-size: 14.5px; line-height: 1.75; min-height: 220px; font-family: var(--font-body); color: var(--text); resize: vertical; }
     .answer-textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
     .toolbar { display: flex; gap: 10px; margin-top: 12px; align-items: center; flex-wrap: wrap; }
@@ -189,7 +191,7 @@
           <span class="marks-badge" id="marksBadge">12 marks</span>
         </div>
         <div class="row" style="margin-bottom:0;">
-          <span style="font-size:12.5px;color:var(--muted);">Don't like this question? <a id="generateAnother" style="color:var(--accent);cursor:pointer;text-decoration:underline;">Generate another</a></span>
+          <button id="generateAnother" class="pill-btn">🔄 Generate another question</button>
         </div>
       </div>
 
