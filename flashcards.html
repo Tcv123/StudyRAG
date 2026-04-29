@@ -238,21 +238,20 @@ async function load() {
   // Fetch card counts per subject+board so each card can show "N flashcards" instead
   // of a bare "available" chip. Filter by level so GCSE / A-level / AS cards
   // don't bleed into each other when topic IDs collide.
+  // Use head:true count queries (one per subject) — fetching all rows hit
+  // Supabase's 1000-row cap and silently zeroed out subjects beyond it.
   const cachedLevel = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
   const dbLevel = (cachedLevel === 'a-level' || cachedLevel === 'alevel' || cachedLevel === 'as') ? 'alevel' : 'gcse';
   const counts = {};
-  // Override Supabase's default 1000-row cap — A-level flashcards across all
-  // subjects/boards already exceed that, which silently zeroes out counts for
-  // whichever subject's rows fall off the end (most recently, Biology).
-  const { data: cardRows } = await supabaseClient
-    .from('flashcards')
-    .select('subject, exam_board')
-    .eq('level', dbLevel)
-    .range(0, 49999);
-  (cardRows || []).forEach(r => {
-    const k = `${r.subject}|${r.exam_board}`;
-    counts[k] = (counts[k] || 0) + 1;
-  });
+  await Promise.all(list.map(async s => {
+    const { count } = await supabaseClient
+      .from('flashcards')
+      .select('*', { count: 'exact', head: true })
+      .eq('subject', s.subject)
+      .eq('exam_board', s.exam_board)
+      .eq('level', dbLevel);
+    counts[`${s.subject}|${s.exam_board}`] = count || 0;
+  }));
 
   grid.innerHTML = list.map(s => {
     const key = `${s.subject}|${s.exam_board}`;
