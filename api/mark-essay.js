@@ -1,21 +1,22 @@
 /**
  * AI essay marking — backend for ai-feedback.html.
  *
- * Why a serverless function? The Anthropic API key MUST stay server-side; if it
- * shipped in the browser, anyone could extract it and burn through the quota.
- * Vercel automatically deploys files in /api/ as Node.js serverless functions.
+ * Powered by Google Gemini (free tier on Google AI Studio). The API key MUST
+ * stay server-side; if it shipped in the browser, anyone could extract it and
+ * burn through the daily quota. Vercel automatically deploys files in /api/ as
+ * Node.js serverless functions.
  *
  * Required Vercel environment variables:
- *   ANTHROPIC_API_KEY        — secret key from console.anthropic.com
- *   SUPABASE_URL             — already set (used by other functions)
+ *   GEMINI_API_KEY            — from https://aistudio.google.com/apikey (free)
+ *   SUPABASE_URL              — already set (used by other functions)
  *   SUPABASE_SERVICE_ROLE_KEY — already set
  *
  * Pro-gated: the same auth pattern as create-checkout-session.js.
  */
-const Anthropic = require('@anthropic-ai/sdk');
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { createClient } = require('@supabase/supabase-js');
 
-const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY });
+const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
 const supabaseAdmin = createClient(
   process.env.SUPABASE_URL,
@@ -23,20 +24,20 @@ const supabaseAdmin = createClient(
   { auth: { persistSession: false, autoRefreshToken: false } }
 );
 
-// JSON schema for structured grading output. Keeps the front-end render path
-// trivial — no string-matching, no regex parsing of free-form prose.
+// JSON schema for structured grading output. Gemini supports a JSON-Schema-like
+// `responseSchema` so the model returns a parseable object directly — no regex
+// scraping of free-form prose.
 const FEEDBACK_SCHEMA = {
   type: 'object',
   properties: {
     awarded:      { type: 'integer', description: 'Marks awarded out of total.' },
-    total:        { type: 'integer', description: 'Total marks available for the question (mirrors the marks input).' },
+    total:        { type: 'integer', description: 'Total marks available for the question.' },
     band:         { type: 'string',  description: 'Short band/grade descriptor — e.g. "Top band (Level 4)", "Mid band (Level 2)", or for GCSE "Grade 6-7 equivalent".' },
     strengths:    { type: 'array', items: { type: 'string' }, description: '2-4 specific, evidenced points the student did well. Quote phrases from the answer where useful.' },
     improvements: { type: 'array', items: { type: 'string' }, description: '2-4 concrete, actionable improvements that would raise the mark next time. Reference what the model answer does that this answer does not.' },
     summary:      { type: 'string',  description: 'One or two sentences explaining why the awarded mark is what it is.' },
   },
   required: ['awarded', 'total', 'band', 'strengths', 'improvements', 'summary'],
-  additionalProperties: false,
 };
 
 function buildSystemPrompt({ subject, board, level }) {
@@ -124,38 +125,36 @@ module.exports = async function handler(req, res) {
     if (studentAnswer.length > 12000) return res.status(413).json({ error: 'answer_too_long' });
     if (question.length > 4000) return res.status(413).json({ error: 'question_too_long' });
 
-    // ---- Call Claude ----
-    const response = await anthropic.messages.create({
-      model: 'claude-opus-4-7',
-      max_tokens: 4096,
-      thinking: { type: 'adaptive' },
-      output_config: {
-        format: {
-          type: 'json_schema',
-          schema: FEEDBACK_SCHEMA,
-        },
+    // ---- Call Gemini ----
+    const model = genAI.getGenerativeModel({
+      model: 'gemini-2.5-flash',
+      systemInstruction: buildSystemPrompt({
+        subject: subject || 'this subject',
+        board: board || 'this board',
+        level,
+      }),
+      generationConfig: {
+        responseMimeType: 'application/json',
+        responseSchema: FEEDBACK_SCHEMA,
+        temperature: 0.3, // lower for consistent grading
+        maxOutputTokens: 2048,
       },
-      system: buildSystemPrompt({ subject: subject || 'this subject', board: board || 'this board', level }),
-      messages: [
-        {
-          role: 'user',
-          content: buildUserPrompt({ question, marks, command, modelAnswer, studentAnswer, topicName }),
-        },
-      ],
     });
 
-    // Extract the JSON output. With output_config.format=json_schema the model
-    // returns a single text block whose content is valid JSON.
-    const textBlock = (response.content || []).find(b => b.type === 'text');
-    if (!textBlock?.text) {
-      return res.status(502).json({ error: 'no_output', stop_reason: response.stop_reason });
+    const result = await model.generateContent(
+      buildUserPrompt({ question, marks, command, modelAnswer, studentAnswer, topicName })
+    );
+
+    const text = result.response.text();
+    if (!text) {
+      return res.status(502).json({ error: 'no_output' });
     }
 
     let feedback;
     try {
-      feedback = JSON.parse(textBlock.text);
+      feedback = JSON.parse(text);
     } catch (e) {
-      console.error('mark-essay: failed to parse model JSON', textBlock.text.slice(0, 500));
+      console.error('mark-essay: failed to parse Gemini JSON', text.slice(0, 500));
       return res.status(502).json({ error: 'parse_failed' });
     }
 
@@ -165,13 +164,23 @@ module.exports = async function handler(req, res) {
     }
     feedback.total = marks;
 
-    return res.status(200).json({ feedback, usage: response.usage });
+    // Token usage — Gemini exposes usageMetadata on the response.
+    const usage = result.response.usageMetadata
+      ? {
+          input_tokens:  result.response.usageMetadata.promptTokenCount,
+          output_tokens: result.response.usageMetadata.candidatesTokenCount,
+          total_tokens:  result.response.usageMetadata.totalTokenCount,
+        }
+      : undefined;
+
+    return res.status(200).json({ feedback, usage });
   } catch (err) {
     console.error('mark-essay error:', err);
-    if (err instanceof Anthropic.RateLimitError) return res.status(429).json({ error: 'rate_limited' });
-    if (err instanceof Anthropic.APIError) {
-      return res.status(502).json({ error: 'upstream_error', status: err.status, message: err.message });
-    }
-    return res.status(500).json({ error: 'internal_error', message: err.message });
+    // Gemini SDK throws plain Errors; the message tends to include the HTTP
+    // status. Map the common ones to friendly responses.
+    const msg = String(err?.message || err);
+    if (/429|rate.?limit|quota/i.test(msg)) return res.status(429).json({ error: 'rate_limited' });
+    if (/401|API key|invalid.*key/i.test(msg)) return res.status(502).json({ error: 'api_key_invalid' });
+    return res.status(500).json({ error: 'internal_error', message: msg });
   }
 };
