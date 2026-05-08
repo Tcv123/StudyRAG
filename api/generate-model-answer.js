@@ -12,6 +12,7 @@
  */
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { createClient } = require('@supabase/supabase-js');
+const crypto = require('crypto');
 
 const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
 
@@ -20,6 +21,13 @@ const supabaseAdmin = createClient(
   process.env.SUPABASE_SERVICE_ROLE_KEY,
   { auth: { persistSession: false, autoRefreshToken: false } }
 );
+
+// Stable identity for a question: sha256(trimmed text). Same wording → same
+// hash regardless of where it appears, so two boards using the identical
+// question still get one cached answer per board (key includes subject+board+level).
+function questionHash(text) {
+  return crypto.createHash('sha256').update(String(text).trim()).digest('hex');
+}
 
 function buildSystemPrompt({ subject, board, level }) {
   const examLevel = level === 'alevel' ? 'A-level' : 'GCSE';
@@ -92,7 +100,45 @@ module.exports = async function handler(req, res) {
     if (typeof marks !== 'number' || marks < 1) return res.status(400).json({ error: 'invalid_marks' });
     if (question.length > 4000) return res.status(413).json({ error: 'question_too_long' });
 
-    // ---- Call Gemini ----
+    // Normalise key fields so cache hits work consistently.
+    const subjectKey = subject || 'Unknown';
+    const boardKey   = board   || 'Unknown';
+    const levelKey   = level   || 'gcse';
+    const hash       = questionHash(question);
+
+    // ---- Cache lookup ----
+    // If the table doesn't exist yet (migration not run), the call errors and
+    // we silently fall through to generation. Lookup never blocks the request
+    // path — at worst we regenerate.
+    try {
+      const { data: cached } = await supabaseAdmin
+        .from('ai_model_answers')
+        .select('model_answer, view_count')
+        .eq('subject', subjectKey)
+        .eq('board', boardKey)
+        .eq('level', levelKey)
+        .eq('question_hash', hash)
+        .maybeSingle();
+
+      if (cached?.model_answer) {
+        // Best-effort view-count increment (don't await — fire and forget).
+        // Race conditions can lose a tick; that's fine, it's only for analytics.
+        supabaseAdmin
+          .from('ai_model_answers')
+          .update({ view_count: (cached.view_count || 0) + 1 })
+          .eq('subject', subjectKey)
+          .eq('board', boardKey)
+          .eq('level', levelKey)
+          .eq('question_hash', hash)
+          .then(() => {}, () => {});
+
+        return res.status(200).json({ modelAnswer: cached.model_answer, cached: true });
+      }
+    } catch (e) {
+      console.warn('ai_model_answers cache lookup failed (table may not exist yet):', e?.message || e);
+    }
+
+    // ---- Cache miss — call Gemini ----
     const model = genAI.getGenerativeModel({
       model: 'gemini-2.5-flash',
       systemInstruction: buildSystemPrompt({
@@ -123,7 +169,32 @@ module.exports = async function handler(req, res) {
         }
       : undefined;
 
-    return res.status(200).json({ modelAnswer: text, usage });
+    // ---- Store in cache (best-effort) ----
+    // Upsert with ignoreDuplicates handles the rare race where two users miss
+    // the cache at the same time — first write wins, second is a no-op.
+    try {
+      await supabaseAdmin
+        .from('ai_model_answers')
+        .upsert(
+          {
+            subject:       subjectKey,
+            board:         boardKey,
+            level:         levelKey,
+            topic:         topicName || null,
+            question_hash: hash,
+            question_text: question,
+            marks,
+            command:       command || null,
+            model_answer:  text,
+            generated_by:  user.id,
+          },
+          { onConflict: 'subject,board,level,question_hash', ignoreDuplicates: true }
+        );
+    } catch (e) {
+      console.warn('ai_model_answers cache write failed (table may not exist yet):', e?.message || e);
+    }
+
+    return res.status(200).json({ modelAnswer: text, cached: false, usage });
   } catch (err) {
     console.error('generate-model-answer error:', err);
     const msg = String(err?.message || err);
