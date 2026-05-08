@@ -1,28 +1,28 @@
 /**
  * AI-generated model answer — backend for ai-feedback.html.
  *
- * Asks Gemini for a top-band model answer scaled to the mark allocation
- * (so a 6-mark question gets a focused paragraph, a 25-mark question gets a
- * full essay). Pro-gated; Gemini API key stays server-side.
+ * Powered by Groq (Llama 3.3 70B). Free tier on https://console.groq.com.
  *
  * Required Vercel environment variables:
- *   GEMINI_API_KEY            — from https://aistudio.google.com/apikey
- *   SUPABASE_URL              — already set
- *   SUPABASE_SERVICE_ROLE_KEY — already set
+ *   GROQ_API_KEY              — from https://console.groq.com/keys
+ *   SUPABASE_URL              — your project's API URL
+ *   SUPABASE_SERVICE_ROLE_KEY — service role secret
+ *
+ * First user to click Show-model on a question pays the generation cost;
+ * everyone after them gets the cached copy from Supabase. See
+ * db/migrations/2026-04-29-ai-model-answers.sql for the table schema.
  */
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+const Groq = require('groq-sdk');
 const { createClient } = require('@supabase/supabase-js');
 const crypto = require('crypto');
 
-// Lazy client init — keeps env-var/SDK errors *inside* the handler so we get a
-// proper JSON error instead of FUNCTION_INVOCATION_FAILED.
-let genAI = null;
+let groq = null;
 let supabaseAdmin = null;
 function initClients() {
-  if (!process.env.GEMINI_API_KEY)            return { code: 502, body: { error: 'gemini_api_key_missing',  message: 'GEMINI_API_KEY env var is not set on Vercel.' } };
+  if (!process.env.GROQ_API_KEY)              return { code: 502, body: { error: 'groq_api_key_missing',  message: 'GROQ_API_KEY env var is not set on Vercel.' } };
   if (!process.env.SUPABASE_URL)              return { code: 502, body: { error: 'supabase_url_missing',    message: 'SUPABASE_URL env var is not set on Vercel.' } };
   if (!process.env.SUPABASE_SERVICE_ROLE_KEY) return { code: 502, body: { error: 'supabase_key_missing',    message: 'SUPABASE_SERVICE_ROLE_KEY env var is not set on Vercel.' } };
-  if (!genAI) genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  if (!groq) groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
   if (!supabaseAdmin) {
     supabaseAdmin = createClient(
       process.env.SUPABASE_URL,
@@ -33,9 +33,6 @@ function initClients() {
   return null;
 }
 
-// Stable identity for a question: sha256(trimmed text). Same wording → same
-// hash regardless of where it appears, so two boards using the identical
-// question still get one cached answer per board (key includes subject+board+level).
 function questionHash(text) {
   return crypto.createHash('sha256').update(String(text).trim()).digest('hex');
 }
@@ -50,7 +47,7 @@ Scale the length and depth of your answer to the mark allocation:
 - 10-12 marks: three paragraphs (~350-450 words). Introduce, develop with balanced analysis, conclude with a judgement.
 - 14-16 marks: four paragraphs (~500-650 words). Sustained argument with developed analysis and a justified conclusion.
 - 18-20 marks: full essay (~650-800 words). Clear thesis, structured paragraphs, balanced evaluation, judged conclusion.
-- 22-25 marks: extended essay (~800-1000 words). Sophisticated argument, multiple perspectives, weighted evaluation, and a justified judgement.
+- 22-25 marks: extended essay (~800-1000 words). Sophisticated argument, multiple perspectives, weighted evaluation, justified judgement.
 
 Quality requirements:
 - Demonstrate the level of knowledge, application, analysis and evaluation appropriate to the command word.
@@ -127,16 +124,12 @@ module.exports = async function handler(req, res) {
     if (typeof marks !== 'number' || marks < 1) return res.status(400).json({ error: 'invalid_marks' });
     if (question.length > 4000) return res.status(413).json({ error: 'question_too_long' });
 
-    // Normalise key fields so cache hits work consistently.
     const subjectKey = subject || 'Unknown';
     const boardKey   = board   || 'Unknown';
     const levelKey   = level   || 'gcse';
     const hash       = questionHash(question);
 
     // ---- Cache lookup ----
-    // If the table doesn't exist yet (migration not run), the call errors and
-    // we silently fall through to generation. Lookup never blocks the request
-    // path — at worst we regenerate.
     try {
       const { data: cached } = await supabaseAdmin
         .from('ai_model_answers')
@@ -148,8 +141,7 @@ module.exports = async function handler(req, res) {
         .maybeSingle();
 
       if (cached?.model_answer) {
-        // Best-effort view-count increment (don't await — fire and forget).
-        // Race conditions can lose a tick; that's fine, it's only for analytics.
+        // Best-effort view-count increment.
         supabaseAdmin
           .from('ai_model_answers')
           .update({ view_count: (cached.view_count || 0) + 1 })
@@ -165,53 +157,24 @@ module.exports = async function handler(req, res) {
       console.warn('ai_model_answers cache lookup failed (table may not exist yet):', e?.message || e);
     }
 
-    // ---- Cache miss — call Gemini ----
-    const model = genAI.getGenerativeModel({
-      model: 'gemini-2.0-flash',
-      systemInstruction: buildSystemPrompt({
-        subject: subject || 'this subject',
-        board: board || 'this board',
-        level,
-      }),
-      generationConfig: {
-        temperature: 0.4, // a touch of variation so repeated clicks give slightly different model answers
-        maxOutputTokens: 2048,
-      },
+    // ---- Cache miss — call Groq ----
+    const completion = await groq.chat.completions.create({
+      model: 'llama-3.3-70b-versatile',
+      messages: [
+        { role: 'system', content: buildSystemPrompt({ subject: subjectKey, board: boardKey, level: levelKey }) },
+        { role: 'user',   content: buildUserPrompt({ question, marks, command, topicName }) },
+      ],
+      temperature: 0.4,
+      max_tokens: 2048,
     });
 
-    const result = await model.generateContent(
-      buildUserPrompt({ question, marks, command, topicName })
-    );
-
-    // .text() throws if the response was filtered or has no candidates.
-    let rawText = '';
-    try {
-      rawText = result.response.text() || '';
-    } catch (e) {
-      const finishReason = result.response?.candidates?.[0]?.finishReason || 'unknown';
-      console.error('generate-model-answer: text() threw —', finishReason, e?.message || e);
-      return res.status(502).json({
-        error: 'no_output',
-        message: `Gemini returned no content (finishReason: ${finishReason}).`,
-      });
-    }
-
+    const rawText = completion.choices?.[0]?.message?.content || '';
     const text = rawText.trim();
     if (!text) {
-      return res.status(502).json({ error: 'no_output', message: 'Gemini returned an empty response.' });
+      return res.status(502).json({ error: 'no_output', message: 'Groq returned an empty response.' });
     }
 
-    const usage = result.response.usageMetadata
-      ? {
-          input_tokens:  result.response.usageMetadata.promptTokenCount,
-          output_tokens: result.response.usageMetadata.candidatesTokenCount,
-          total_tokens:  result.response.usageMetadata.totalTokenCount,
-        }
-      : undefined;
-
     // ---- Store in cache (best-effort) ----
-    // Upsert with ignoreDuplicates handles the rare race where two users miss
-    // the cache at the same time — first write wins, second is a no-op.
     try {
       await supabaseAdmin
         .from('ai_model_answers')
@@ -234,7 +197,7 @@ module.exports = async function handler(req, res) {
       console.warn('ai_model_answers cache write failed (table may not exist yet):', e?.message || e);
     }
 
-    return res.status(200).json({ modelAnswer: text, cached: false, usage });
+    return res.status(200).json({ modelAnswer: text, cached: false, usage: completion.usage });
   } catch (err) {
     console.error('generate-model-answer error:', err);
     const msg = String(err?.message || err);
