@@ -16,13 +16,24 @@
 const { GoogleGenerativeAI } = require('@google/generative-ai');
 const { createClient } = require('@supabase/supabase-js');
 
-const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-
-const supabaseAdmin = createClient(
-  process.env.SUPABASE_URL,
-  process.env.SUPABASE_SERVICE_ROLE_KEY,
-  { auth: { persistSession: false, autoRefreshToken: false } }
-);
+// Lazy client init — keeps any env-var/SDK init issue *inside* the handler so
+// it returns a proper JSON error instead of FUNCTION_INVOCATION_FAILED.
+let genAI = null;
+let supabaseAdmin = null;
+function initClients() {
+  if (!process.env.GEMINI_API_KEY)            return { code: 502, body: { error: 'gemini_api_key_missing',  message: 'GEMINI_API_KEY env var is not set on Vercel.' } };
+  if (!process.env.SUPABASE_URL)              return { code: 502, body: { error: 'supabase_url_missing',    message: 'SUPABASE_URL env var is not set on Vercel.' } };
+  if (!process.env.SUPABASE_SERVICE_ROLE_KEY) return { code: 502, body: { error: 'supabase_key_missing',    message: 'SUPABASE_SERVICE_ROLE_KEY env var is not set on Vercel.' } };
+  if (!genAI) genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
+  if (!supabaseAdmin) {
+    supabaseAdmin = createClient(
+      process.env.SUPABASE_URL,
+      process.env.SUPABASE_SERVICE_ROLE_KEY,
+      { auth: { persistSession: false, autoRefreshToken: false } }
+    );
+  }
+  return null;
+}
 
 // JSON schema for structured grading output. Gemini supports a JSON-Schema-like
 // `responseSchema` so the model returns a parseable object directly — no regex
@@ -78,6 +89,10 @@ module.exports = async function handler(req, res) {
     res.setHeader('Allow', 'POST');
     return res.status(405).json({ error: 'method_not_allowed' });
   }
+
+  // Initialise clients (returns a typed error if any env var is missing).
+  const initErr = initClients();
+  if (initErr) return res.status(initErr.code).json(initErr.body);
 
   try {
     // ---- Auth: validate the Supabase session token ----
