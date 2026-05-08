@@ -160,6 +160,10 @@
     'Biology_Edexcel IGCSE|gcse': ['questions/biology-edexcel-igcse/biology-edexcel-igcse-ai-feedback.js'],
     'Biology_OCR A|gcse':         ['questions/biology/biology-ocr-a-gcse-ai-feedback.js'],
     'Biology_OCR B|gcse':         ['questions/biology/biology-ocr-b-gcse-ai-feedback.js'],
+    'Chemistry_AQA':              ['questions/chemistry/chemistry-aqa-ai-feedback.js'],
+    'Chemistry_Edexcel':          ['questions/chemistry/chemistry-edexcel-ai-feedback.js'],
+    'Chemistry_OCR A':            ['questions/chemistry/chemistry-ocr-a-ai-feedback.js'],
+    'Chemistry_OCR B':            ['questions/chemistry/chemistry-ocr-b-ai-feedback.js'],
   };
 
   const AI_FEEDBACK_MAP = {
@@ -181,6 +185,10 @@
     'Biology_Edexcel IGCSE|gcse': () => typeof BIOLOGY_EDEXCEL_IGCSE_AI_FEEDBACK !== 'undefined' ? BIOLOGY_EDEXCEL_IGCSE_AI_FEEDBACK : null,
     'Biology_OCR A|gcse':       () => typeof BIOLOGY_OCR_A_GCSE_AI_FEEDBACK !== 'undefined' ? BIOLOGY_OCR_A_GCSE_AI_FEEDBACK : null,
     'Biology_OCR B|gcse':       () => typeof BIOLOGY_OCR_B_GCSE_AI_FEEDBACK !== 'undefined' ? BIOLOGY_OCR_B_GCSE_AI_FEEDBACK : null,
+    'Chemistry_AQA':            () => typeof CHEMISTRY_AQA_AI_FEEDBACK !== 'undefined' ? CHEMISTRY_AQA_AI_FEEDBACK : null,
+    'Chemistry_Edexcel':        () => typeof CHEMISTRY_EDEXCEL_AI_FEEDBACK !== 'undefined' ? CHEMISTRY_EDEXCEL_AI_FEEDBACK : null,
+    'Chemistry_OCR A':          () => typeof CHEMISTRY_OCR_A_AI_FEEDBACK !== 'undefined' ? CHEMISTRY_OCR_A_AI_FEEDBACK : null,
+    'Chemistry_OCR B':          () => typeof CHEMISTRY_OCR_B_AI_FEEDBACK !== 'undefined' ? CHEMISTRY_OCR_B_AI_FEEDBACK : null,
   };
 
   const _loadedScripts = new Set();
