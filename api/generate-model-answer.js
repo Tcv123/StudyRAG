@@ -140,7 +140,7 @@ module.exports = async function handler(req, res) {
 
     // ---- Cache miss — call Gemini ----
     const model = genAI.getGenerativeModel({
-      model: 'gemini-2.5-flash',
+      model: 'gemini-2.0-flash',
       systemInstruction: buildSystemPrompt({
         subject: subject || 'this subject',
         board: board || 'this board',
@@ -156,9 +156,22 @@ module.exports = async function handler(req, res) {
       buildUserPrompt({ question, marks, command, topicName })
     );
 
-    const text = (result.response.text() || '').trim();
+    // .text() throws if the response was filtered or has no candidates.
+    let rawText = '';
+    try {
+      rawText = result.response.text() || '';
+    } catch (e) {
+      const finishReason = result.response?.candidates?.[0]?.finishReason || 'unknown';
+      console.error('generate-model-answer: text() threw —', finishReason, e?.message || e);
+      return res.status(502).json({
+        error: 'no_output',
+        message: `Gemini returned no content (finishReason: ${finishReason}).`,
+      });
+    }
+
+    const text = rawText.trim();
     if (!text) {
-      return res.status(502).json({ error: 'no_output' });
+      return res.status(502).json({ error: 'no_output', message: 'Gemini returned an empty response.' });
     }
 
     const usage = result.response.usageMetadata

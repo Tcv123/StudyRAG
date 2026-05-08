@@ -578,13 +578,25 @@
 
       if (!resp.ok) {
         let msg = `Server returned ${resp.status}.`;
+        // Try parsing as JSON first; if it isn't JSON (Vercel's HTML error
+        // page, e.g. on function timeout), grab a snippet of the raw body so
+        // we can see what actually went wrong.
+        const raw = await resp.text();
         try {
-          const errBody = await resp.json();
+          const errBody = JSON.parse(raw);
           if (errBody?.error === 'pro_required') msg = 'AI marking is a Pro feature. Please upgrade.';
           else if (errBody?.error === 'rate_limited') msg = 'Too many requests right now — wait a moment and try again.';
           else if (errBody?.error === 'answer_too_long') msg = 'Your answer is too long — please trim it under 12,000 characters.';
+          else if (errBody?.error === 'no_output') msg = errBody.message || 'Gemini returned no output. Try a longer or more specific answer.';
           else if (errBody?.error) msg = `Error: ${errBody.error}${errBody.message ? ` — ${errBody.message}` : ''}.`;
-        } catch (_) {}
+        } catch (_) {
+          // Non-JSON body — likely an HTML error page from Vercel.
+          if (resp.status === 504 || /timeout|timed out/i.test(raw)) {
+            msg = 'The grading request timed out. This usually means the function ran past Vercel’s limit — try again, or check your Vercel function timeout (vercel.json).';
+          } else if (raw && raw.length < 500) {
+            msg = `Server returned ${resp.status}: ${raw.slice(0, 300)}`;
+          }
+        }
         throw new Error(msg);
       }
 
@@ -663,12 +675,19 @@
 
       if (!resp.ok) {
         let msg = `Server returned ${resp.status}.`;
+        const raw = await resp.text();
         try {
-          const errBody = await resp.json();
+          const errBody = JSON.parse(raw);
           if (errBody?.error === 'pro_required') msg = 'AI model answers are a Pro feature. Please upgrade.';
           else if (errBody?.error === 'rate_limited') msg = 'Too many requests right now — wait a moment and try again.';
           else if (errBody?.error) msg = `Error: ${errBody.error}${errBody.message ? ` — ${errBody.message}` : ''}.`;
-        } catch (_) {}
+        } catch (_) {
+          if (resp.status === 504 || /timeout|timed out/i.test(raw)) {
+            msg = 'The model-answer request timed out. Try again, or check your Vercel function timeout.';
+          } else if (raw && raw.length < 500) {
+            msg = `Server returned ${resp.status}: ${raw.slice(0, 300)}`;
+          }
+        }
         throw new Error(msg);
       }
 
