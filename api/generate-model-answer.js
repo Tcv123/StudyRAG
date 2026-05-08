@@ -91,7 +91,20 @@ module.exports = async function handler(req, res) {
 
     const { data: userData, error: userErr } = await supabaseAdmin.auth.getUser(token);
     const user = userData?.user;
-    if (userErr || !user) return res.status(401).json({ error: 'invalid_token' });
+    if (userErr || !user) {
+      console.error('generate-model-answer auth failed:', {
+        message: userErr?.message,
+        status:  userErr?.status,
+        name:    userErr?.name,
+        token_prefix: token.slice(0, 30),
+        token_length: token.length,
+      });
+      return res.status(401).json({
+        error: 'invalid_token',
+        message: userErr?.message || 'No user returned for this token.',
+        detail:  userErr?.name || userErr?.status || 'no_user_returned',
+      });
+    }
 
     // ---- Pro gate ----
     const { data: profile } = await supabaseAdmin
