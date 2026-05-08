@@ -618,7 +618,7 @@
         try {
           const errBody = JSON.parse(raw);
           if (errBody?.error === 'pro_required') msg = 'AI marking is a Pro feature. Please upgrade.';
-          else if (errBody?.error === 'rate_limited') msg = 'Too many requests right now — wait a moment and try again.';
+          else if (errBody?.error === 'rate_limited') msg = `Rate-limited by Gemini${errBody.message ? `: ${errBody.message}` : ''}. Wait a moment and try again, or check your daily quota at aistudio.google.com.`;
           else if (errBody?.error === 'answer_too_long') msg = 'Your answer is too long — please trim it under 12,000 characters.';
           else if (errBody?.error === 'no_output') msg = errBody.message || 'Gemini returned no output. Try a longer or more specific answer.';
           else if (errBody?.error) msg = `Error: ${errBody.error}${errBody.message ? ` — ${errBody.message}` : ''}.`;

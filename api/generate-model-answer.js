@@ -238,8 +238,8 @@ module.exports = async function handler(req, res) {
   } catch (err) {
     console.error('generate-model-answer error:', err);
     const msg = String(err?.message || err);
-    if (/429|rate.?limit|quota/i.test(msg)) return res.status(429).json({ error: 'rate_limited' });
-    if (/401|API key|invalid.*key/i.test(msg)) return res.status(502).json({ error: 'api_key_invalid' });
+    if (/429|rate.?limit|quota/i.test(msg))    return res.status(429).json({ error: 'rate_limited',    message: msg });
+    if (/401|API key|invalid.*key/i.test(msg)) return res.status(502).json({ error: 'api_key_invalid', message: msg });
     return res.status(500).json({ error: 'internal_error', message: msg });
   }
 };
