@@ -164,6 +164,11 @@
     'Chemistry_Edexcel':          ['questions/chemistry/chemistry-edexcel-ai-feedback.js'],
     'Chemistry_OCR A':            ['questions/chemistry/chemistry-ocr-a-ai-feedback.js'],
     'Chemistry_OCR B':            ['questions/chemistry/chemistry-ocr-b-ai-feedback.js'],
+    'Computer Science_AQA|alevel': ['questions/cs/cs-aqa-alevel-ai-feedback.js'],
+    'Computer Science_AQA|gcse':   ['questions/cs/cs-aqa-gcse-ai-feedback.js'],
+    'Computer Science_OCR|alevel': ['questions/cs/cs-ocr-alevel-ai-feedback.js'],
+    'Computer Science_OCR|gcse':   ['questions/cs/cs-ocr-gcse-ai-feedback.js'],
+    'Computer Science_OCR':        ['questions/cs/cs-ocr-gcse-ai-feedback.js'],
   };
 
   const AI_FEEDBACK_MAP = {
@@ -189,6 +194,11 @@
     'Chemistry_Edexcel':        () => typeof CHEMISTRY_EDEXCEL_AI_FEEDBACK !== 'undefined' ? CHEMISTRY_EDEXCEL_AI_FEEDBACK : null,
     'Chemistry_OCR A':          () => typeof CHEMISTRY_OCR_A_AI_FEEDBACK !== 'undefined' ? CHEMISTRY_OCR_A_AI_FEEDBACK : null,
     'Chemistry_OCR B':          () => typeof CHEMISTRY_OCR_B_AI_FEEDBACK !== 'undefined' ? CHEMISTRY_OCR_B_AI_FEEDBACK : null,
+    'Computer Science_AQA|alevel': () => typeof CS_AQA_AI_FEEDBACK !== 'undefined' ? CS_AQA_AI_FEEDBACK : null,
+    'Computer Science_AQA|gcse':   () => typeof CS_AQA_GCSE_AI_FEEDBACK !== 'undefined' ? CS_AQA_GCSE_AI_FEEDBACK : null,
+    'Computer Science_OCR|alevel': () => typeof CS_OCR_AI_FEEDBACK !== 'undefined' ? CS_OCR_AI_FEEDBACK : null,
+    'Computer Science_OCR|gcse':   () => typeof CS_OCR_GCSE_AI_FEEDBACK !== 'undefined' ? CS_OCR_GCSE_AI_FEEDBACK : null,
+    'Computer Science_OCR':        () => typeof CS_OCR_GCSE_AI_FEEDBACK !== 'undefined' ? CS_OCR_GCSE_AI_FEEDBACK : null,
   };
 
   const _loadedScripts = new Set();
