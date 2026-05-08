@@ -277,10 +277,36 @@
   // ---------- State ----------
   // Marks/command dropdowns were removed — defaults retained as metadata for the
   // future AI marker integration, which can override them per question.
+
+  // Persist subject/board/topic across reloads so the user doesn't have to
+  // re-pick every time. Stored under one localStorage key, validated against
+  // the user's current subjects on load (in case they changed accounts).
+  const STORAGE_KEY = 'aiFeedback.selection';
+  function loadSavedSelection() {
+    try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); }
+    catch (_) { return null; }
+  }
+  function saveSelection() {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({
+        subject: state.subject,
+        board:   state.board,
+        topic:   state.topic,
+      }));
+    } catch (_) {}
+  }
+
+  const saved = loadSavedSelection();
+  // Only restore the saved subject/board if it still matches one of the user's
+  // current user_subjects rows — otherwise fall back to the first subject.
+  const savedMatch = saved && subjects.find(s =>
+    s.subject === saved.subject && s.exam_board === saved.board
+  );
+
   const state = {
-    subject: subjects[0]?.subject || 'Geography',
-    board: subjects[0]?.exam_board || 'AQA',
-    topic: '',
+    subject: savedMatch ? saved.subject : (subjects[0]?.subject || 'Geography'),
+    board:   savedMatch ? saved.board   : (subjects[0]?.exam_board || 'AQA'),
+    topic:   savedMatch ? (saved.topic || '') : '',
     marks: 12,
     command: 'Assess',
   };
@@ -412,6 +438,7 @@
     topicDd?.setLabel(state.topic || 'Pick a topic');
     rebuildTopicDropdown();
     refreshTopicAndRender();
+    saveSelection();
   });
   subjectDd.setLabel(state.subject);
   boardPill.querySelector('.pill-label').textContent = state.board;
@@ -423,6 +450,11 @@
     const topicOptions = topics.length
       ? topics.map(t => ({ value: t.name, label: t.name, meta: t.id }))
       : [{ value: '', label: 'No topics found for this subject + board', meta: '' }];
+    // If the saved topic no longer exists for this subject+board, drop it so
+    // we fall through to the first topic instead of showing a stale label.
+    if (state.topic && topics.length && !topics.some(t => t.name === state.topic)) {
+      state.topic = '';
+    }
     if (!state.topic && topics.length) state.topic = topics[0].name;
     if (topicDd) {
       topicDd.options = topicOptions;
@@ -434,6 +466,7 @@
         state.topic = opt.value;
         topicDd.setLabel(opt.label);
         refreshTopicAndRender();
+        saveSelection();
       });
       topicDd.setLabel(state.topic || 'Pick a topic');
     }
