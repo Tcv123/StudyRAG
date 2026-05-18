@@ -169,6 +169,10 @@
     'Computer Science_OCR|alevel': ['questions/cs/cs-ocr-alevel-ai-feedback.js'],
     'Computer Science_OCR|gcse':   ['questions/cs/cs-ocr-gcse-ai-feedback.js'],
     'Computer Science_OCR':        ['questions/cs/cs-ocr-gcse-ai-feedback.js'],
+    'Economics_AQA':               ['questions/economics-aqa/economics-aqa-ai-feedback.js'],
+    'Economics_Edexcel A':         ['questions/economics-edexcel-a/economics-edexcel-a-ai-feedback.js'],
+    'Economics_Edexcel B':         ['questions/economics-edexcel-b/economics-edexcel-b-ai-feedback.js'],
+    'Economics_OCR':               ['questions/economics-ocr/economics-ocr-ai-feedback.js'],
   };
 
   const AI_FEEDBACK_MAP = {
@@ -199,6 +203,10 @@
     'Computer Science_OCR|alevel': () => typeof CS_OCR_AI_FEEDBACK !== 'undefined' ? CS_OCR_AI_FEEDBACK : null,
     'Computer Science_OCR|gcse':   () => typeof CS_OCR_GCSE_AI_FEEDBACK !== 'undefined' ? CS_OCR_GCSE_AI_FEEDBACK : null,
     'Computer Science_OCR':        () => typeof CS_OCR_GCSE_AI_FEEDBACK !== 'undefined' ? CS_OCR_GCSE_AI_FEEDBACK : null,
+    'Economics_AQA':               () => typeof ECONOMICS_AQA_AI_FEEDBACK !== 'undefined' ? ECONOMICS_AQA_AI_FEEDBACK : null,
+    'Economics_Edexcel A':         () => typeof ECONOMICS_EDEXCEL_A_AI_FEEDBACK !== 'undefined' ? ECONOMICS_EDEXCEL_A_AI_FEEDBACK : null,
+    'Economics_Edexcel B':         () => typeof ECONOMICS_EDEXCEL_B_AI_FEEDBACK !== 'undefined' ? ECONOMICS_EDEXCEL_B_AI_FEEDBACK : null,
+    'Economics_OCR':               () => typeof ECONOMICS_OCR_AI_FEEDBACK !== 'undefined' ? ECONOMICS_OCR_AI_FEEDBACK : null,
   };
 
   const _loadedScripts = new Set();
