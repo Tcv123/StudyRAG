@@ -123,16 +123,33 @@
       background: var(--surface);
       border: 1px solid var(--border);
       border-radius: 16px;
-      overflow: hidden;
       box-shadow: 0 4px 20px rgba(37,99,235,0.06);
+      position: relative;             /* anchor for the now-line */
+      /* overflow: hidden removed so the now-line dot can sit at the column edge */
     }
     /* Full lines between hours (the :00 rows). Half-hour rows use a fainter
        line so the eye groups the two half-hours of each hour together. */
     .cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); min-height: 54px; }
     .cell.half-row { border-bottom-color: rgba(184,208,232,0.35); }
     .cell:nth-child(8n) { border-right: none; }
-    .cell.head { background: var(--surface2); font-size: 13px; font-weight: 600; color: var(--muted); padding: 18px 0; text-align: center; letter-spacing: 0.1em; text-transform: uppercase; min-height: 58px; }
+    .cell.head {
+      background: var(--surface2);
+      font-size: 13px; font-weight: 600; color: var(--muted);
+      padding: 18px 0; text-align: center;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      min-height: 58px;
+      position: sticky; top: 0; z-index: 4;   /* keeps header visible while scrolling */
+    }
     .cell.head.corner { background: var(--surface2); }
+    /* Today's header column: bolder colour + an accent underline. */
+    .cell.head.today {
+      color: var(--red);
+      box-shadow: inset 0 -3px 0 var(--red);
+    }
+    /* Today's column slots get a subtle warm tint so the whole column reads. */
+    .cell.slot.today           { background: rgba(220, 38, 38, 0.025); }
+    .cell.slot.today:hover     { background: var(--accent-dim); }
+    .cell.slot.today.weekend   { background: rgba(220, 38, 38, 0.025); }
     .cell.time {
       background: var(--surface2);
       font-size: 12.5px;
@@ -279,6 +296,24 @@
     }
     .busy-card .bc-label { font-weight: 600; color: var(--text); opacity: 0.75; }
     .busy-card .bc-time  { font-size: 11px; margin-top: 2px; opacity: 0.85; }
+
+    /* ── "now" indicator (Google Calendar style) ──────────── */
+    .now-line {
+      position: absolute;
+      height: 2px;
+      background: var(--red);
+      z-index: 6;
+      pointer-events: none;
+      box-shadow: 0 0 6px rgba(220,38,38,0.35);
+    }
+    .now-dot {
+      position: absolute;
+      left: -6px; top: -5px;
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      background: var(--red);
+      box-shadow: 0 0 0 2px var(--surface);
+    }
   </style>
 </head>
 <body>
@@ -603,8 +638,12 @@ function renderPage() {
 
 function buildGrid() {
   const grid = document.getElementById('weekGrid');
+  const todayIdx = todayDayIndex();
   let html = '<div class="cell head corner"></div>';
-  for (let d = 0; d < 7; d++) html += `<div class="cell head">${DAYS[d]}</div>`;
+  for (let d = 0; d < 7; d++) {
+    const todayCls = d === todayIdx ? ' today' : '';
+    html += `<div class="cell head day-${d}${todayCls}">${DAYS[d]}</div>`;
+  }
   for (let s = 0; s < SLOTS; s++) {
     const hr = SLOT_START_HOUR + Math.floor(s / 2);
     const half = s % 2 === 1;
@@ -618,8 +657,9 @@ function buildGrid() {
     for (let d = 0; d < 7; d++) {
       const wk = (d >= 5) ? ' weekend' : '';
       const busy = isBusy(d, min, 30) ? ' busy' : '';
+      const today = d === todayIdx ? ' today' : '';
       const title = busy ? ' title="Blocked by your preferences"' : '';
-      html += `<div class="cell slot${wk}${busy}${rowClass}" data-day="${d}" data-min="${min}"${title}></div>`;
+      html += `<div class="cell slot${wk}${busy}${today}${rowClass}" data-day="${d}" data-min="${min}"${title}></div>`;
     }
   }
   grid.innerHTML = html;
@@ -632,6 +672,62 @@ function buildGrid() {
     });
   });
   renderSessions();
+  updateNowLine();
+}
+
+// Returns 0..6 for Mon..Sun based on the user's local time.
+function todayDayIndex() {
+  // JS Date getDay: 0=Sun..6=Sat. Map to 0=Mon..6=Sun.
+  return (new Date().getDay() + 6) % 7;
+}
+
+// Red horizontal line spanning today's column, anchored at the current
+// wall-clock time. Re-run every 60s and on window resize. Hidden outside
+// the grid's hour window (e.g. 3am) so it doesn't clip past the bottom.
+let _nowTimer = null;
+function updateNowLine() {
+  const grid = document.querySelector('.grid');
+  if (!grid) return;
+  let line = grid.querySelector('.now-line');
+
+  const now = new Date();
+  const todayIdx = todayDayIndex();
+  const minPastMidnight = now.getHours() * 60 + now.getMinutes();
+  const gridStartMin = SLOT_START_HOUR * 60;
+  const gridEndMin   = SLOT_END_HOUR   * 60;
+
+  if (minPastMidnight < gridStartMin || minPastMidnight > gridEndMin) {
+    if (line) line.style.display = 'none';
+    return;
+  }
+  if (!line) {
+    line = document.createElement('div');
+    line.className = 'now-line';
+    line.innerHTML = '<div class="now-dot"></div>';
+    grid.appendChild(line);
+  }
+  line.style.display = 'block';
+
+  // Anchor: top-left of the first slot cell of today's column gives us the
+  // exact (x, y) where the grid body content begins for that day. Adding
+  // (minOffset / 30) * slotHeight walks down to the right minute.
+  const firstSlot = grid.querySelector(`.slot[data-day="${todayIdx}"]`);
+  if (!firstSlot) { line.style.display = 'none'; return; }
+  const gridRect = grid.getBoundingClientRect();
+  const slotRect = firstSlot.getBoundingClientRect();
+  const slotH    = slotRect.height;
+  const minOffset = minPastMidnight - gridStartMin;
+  const y = (minOffset / 30) * slotH;
+
+  line.style.top   = `${slotRect.top - gridRect.top + y}px`;
+  line.style.left  = `${slotRect.left - gridRect.left}px`;
+  line.style.width = `${slotRect.width}px`;
+
+  // Re-schedule for next minute.
+  if (!_nowTimer) {
+    _nowTimer = setInterval(updateNowLine, 60_000);
+    window.addEventListener('resize', updateNowLine);
+  }
 }
 
 function renderSessions() {
