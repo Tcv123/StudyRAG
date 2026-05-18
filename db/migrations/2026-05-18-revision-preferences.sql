@@ -24,7 +24,13 @@ alter table public.profiles
   -- Default session length the auto-fill engine uses when placing sessions.
   -- Users can still manually create sessions of any duration via the modal.
   add column if not exists rt_session_minutes smallint default 60
-    check (rt_session_minutes in (30, 60, 90, 120));
+    check (rt_session_minutes in (30, 60, 90, 120)),
+  -- Separate study window for weekends. Null = no weekend window set yet
+  -- (either user hasn't picked weekend days, or it's a legacy row from
+  -- before this column existed). Falls back to weekday window if null.
+  -- Supersedes the older rt_weekend_mode field — kept for back-compat.
+  add column if not exists rt_weekend_start   smallint check (rt_weekend_start between 0 and 23),
+  add column if not exists rt_weekend_end     smallint check (rt_weekend_end   between 0 and 23);
 
 -- (No new policies needed — the existing "own profile" policy on profiles
 -- already covers reads and writes against auth.uid().)

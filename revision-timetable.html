@@ -179,6 +179,17 @@
     /* ── setup wizard ─────────────────────────────────────── */
     .wizard-card { max-width: 560px; max-height: 90vh; overflow-y: auto; }
     .wizard-intro { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.55; }
+    .wizard-progress { display: flex; gap: 6px; margin-bottom: 18px; }
+    .wizard-progress-dot {
+      flex: 1; height: 4px; border-radius: 2px;
+      background: var(--border); transition: background 0.18s;
+    }
+    .wizard-progress-dot.done { background: var(--accent); }
+    .wizard-progress-dot.current { background: var(--accent); }
+    .wizard-step-label { font-size: 11px; font-weight: 600; color: var(--muted2); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 6px; }
+    .wizard-question { font-family: var(--font-display); font-size: 22px; margin-bottom: 4px; line-height: 1.25; }
+    .wizard-help { font-size: 13.5px; color: var(--muted); margin-bottom: 18px; line-height: 1.5; }
+    .wizard-error { font-size: 12.5px; color: var(--red); margin-top: 8px; min-height: 16px; }
     .day-row { display: flex; gap: 6px; flex-wrap: wrap; }
     .day-chip {
       flex: 1; min-width: 52px; padding: 9px 4px; text-align: center;
@@ -342,7 +353,11 @@ function colorForSubject(name) {
 // Preference keys on profiles row. NULL on any of these = "wizard not done yet".
 // rt_busy_windows is excluded: it has a default of '{}' so it's never NULL,
 // and it's optional anyway (people without commitments leave it blank).
-const PREF_KEYS = ['rt_study_days','rt_earliest_start','rt_latest_end','rt_weekend_mode','rt_weekly_hours'];
+// Keys that must all be present for hasPrefs() to return true. rt_weekend_mode
+// is intentionally NOT here — the new wizard writes rt_weekend_start/end
+// instead and skips the weekend step entirely if no weekend days are selected,
+// so requiring rt_weekend_mode would force every user back through the wizard.
+const PREF_KEYS = ['rt_study_days','rt_earliest_start','rt_latest_end','rt_weekly_hours'];
 
 // Busy-windows map: { dayIdx: [{ s: startMin, e: endMin, n: name? }, ...] }.
 // Tolerates the legacy [start, end] tuple shape too — older rows in the DB
@@ -413,7 +428,9 @@ function initDemo() {
     rt_study_days:     havePrefs ? [0,1,2,3,4,5,6] : null,
     rt_earliest_start: havePrefs ? 17 : null,
     rt_latest_end:     havePrefs ? 22 : null,
-    rt_weekend_mode:   havePrefs ? 'more' : null,
+    rt_weekend_mode:   havePrefs ? 'more' : null,  // legacy field; new flow uses rt_weekend_start/end
+    rt_weekend_start:  havePrefs ? 10 : null,
+    rt_weekend_end:    havePrefs ? 18 : null,
     rt_weekly_hours:   havePrefs ? 12 : null,
     rt_session_minutes: havePrefs ? 60 : null,
     // Example busy windows so the demo shows the feature.
@@ -730,9 +747,12 @@ function openModal(sess) {
 // target (or run out of slots).
 function buildPreferredSlots(prefs) {
   const days        = (prefs.rt_study_days || []).map(Number);
-  const startHour   = prefs.rt_earliest_start;
-  const endHour     = prefs.rt_latest_end;
-  const weekendMode = prefs.rt_weekend_mode;
+  const wdStart     = prefs.rt_earliest_start;
+  const wdEnd       = prefs.rt_latest_end;
+  // Separate weekend window — only used for Sat/Sun. Falls back to the
+  // weekday window for old rows that haven't been migrated yet.
+  const wkStart     = prefs.rt_weekend_start ?? wdStart;
+  const wkEnd       = prefs.rt_weekend_end   ?? wdEnd;
   const duration    = prefs.rt_session_minutes || 60;
 
   // First pass: each day's allowed half-hour start times, filtered so a
@@ -740,12 +760,9 @@ function buildPreferredSlots(prefs) {
   const dayStarts = {};
   for (const day of days) {
     const isWeekend = day >= 5;
-    if (isWeekend && weekendMode === 'none') { dayStarts[day] = []; continue; }
-    let dayStart = startHour;
-    let dayEnd   = endHour;
-    if (isWeekend && weekendMode === 'more') dayStart = Math.min(dayStart, 10);   // weekends can start at 10am
-    if (isWeekend && weekendMode === 'less') dayEnd   = Math.min(dayEnd, startHour + 2); // shorter window on weekends
-    const lastStart = dayEnd * 60 - duration;   // session must finish by dayEnd
+    const dayStart = isWeekend ? wkStart : wdStart;
+    const dayEnd   = isWeekend ? wkEnd   : wdEnd;
+    const lastStart = dayEnd * 60 - duration;
     const starts = [];
     for (let m = dayStart * 60; m <= lastStart; m += 30) starts.push(m);
     dayStarts[day] = starts;
@@ -878,112 +895,110 @@ function renderIntro() {
         </div>
       </div>
       <button class="intro-cta" id="introCta">Get started →</button>
-      <div class="intro-note">Takes about 30 seconds. We'll ask 7 quick questions.</div>
+      <div class="intro-note">Takes about 30 seconds. We'll walk through 5–6 quick steps.</div>
     </div>
   `;
   document.getElementById('introCta').onclick = () => openWizard({ firstTime: true });
 }
 
-// ── setup wizard ───────────────────────────────────────────────
+// ── setup wizard (sequential, one question per step) ──────────
 function openWizard({ firstTime }) {
+  // Lazy-migrate legacy rt_weekend_mode → rt_weekend_start/end so existing
+  // users don't get re-asked questions whose answers were already implied
+  // by their old "same/more/less/none" pick.
+  const legacy = profile.rt_weekend_mode;
+  const wkStartFallback = (() => {
+    if (profile.rt_weekend_start != null) return profile.rt_weekend_start;
+    if (legacy === 'more') return Math.min(10, profile.rt_earliest_start ?? 17);
+    return profile.rt_earliest_start ?? 17;
+  })();
+  const wkEndFallback = (() => {
+    if (profile.rt_weekend_end != null) return profile.rt_weekend_end;
+    if (legacy === 'less') return Math.min((profile.rt_earliest_start ?? 17) + 2, profile.rt_latest_end ?? 21);
+    return profile.rt_latest_end ?? 21;
+  })();
 
-  const cur = {
-    days:    profile.rt_study_days     ?? [0,1,2,3,4],
-    start:   profile.rt_earliest_start ?? 17,
-    end:     profile.rt_latest_end     ?? 21,
-    weekend: profile.rt_weekend_mode   ?? 'same',
-    hours:   profile.rt_weekly_hours   ?? 10,
+  // Working state — flows back to profile only on the final Save.
+  const state = {
+    days:     [...(profile.rt_study_days ?? [0,1,2,3,4])].filter(d => legacy !== 'none' || d < 5),
+    wdStart:  profile.rt_earliest_start  ?? 17,
+    wdEnd:    profile.rt_latest_end      ?? 21,
+    wkStart:  wkStartFallback,
+    wkEnd:    wkEndFallback,
+    hours:    profile.rt_weekly_hours    ?? 10,
     duration: profile.rt_session_minutes ?? 60,
+    busy:     JSON.parse(JSON.stringify(profile.rt_busy_windows || {})),
   };
-  // Working copy of busy windows: shallow-clone so cancel discards edits.
-  const busyDraft = JSON.parse(JSON.stringify(profile.rt_busy_windows || {}));
 
-  const dayChips = DAYS.map((label, idx) =>
-    `<div class="day-chip${cur.days.includes(idx) ? ' on' : ''}" data-day="${idx}">${label}</div>`
-  ).join('');
+  const backdrop = document.createElement('div');
+  backdrop.className = 'modal-backdrop';
+  document.body.appendChild(backdrop);
+  if (!firstTime) {
+    backdrop.addEventListener('click', e => { if (e.target === backdrop) backdrop.remove(); });
+  }
 
-  const hourOpts = (from, to, sel) => {
+  function activeSteps() {
+    const hasWeekend = state.days.some(d => d >= 5);
+    return [
+      'days',
+      'weekday',
+      ...(hasWeekend ? ['weekend'] : []),
+      'hours',
+      'duration',
+      'busy',
+    ];
+  }
+
+  let stepIdx = 0;
+
+  function render() {
+    const steps = activeSteps();
+    if (stepIdx >= steps.length) stepIdx = steps.length - 1;
+    const step  = steps[stepIdx];
+    const total = steps.length;
+    const isLast = stepIdx === total - 1;
+
+    const progress = steps.map((_, i) =>
+      `<div class="wizard-progress-dot ${i < stepIdx ? 'done' : i === stepIdx ? 'current' : ''}"></div>`
+    ).join('');
+
+    backdrop.innerHTML = `
+      <div class="modal-card wizard-card">
+        <div class="wizard-progress">${progress}</div>
+        <div class="wizard-step-label">Step ${stepIdx + 1} of ${total}</div>
+        ${renderStep(step)}
+        <div class="wizard-error" id="wErr"></div>
+        <div class="modal-actions">
+          ${stepIdx > 0
+            ? '<button class="btn btn-ghost" id="wBack">← Back</button>'
+            : (firstTime ? '' : '<button class="btn btn-ghost" id="wCancel">Cancel</button>')}
+          <span class="spacer"></span>
+          <button class="btn btn-primary" id="wNext">${isLast ? (firstTime ? 'Build my timetable' : 'Save') : 'Next →'}</button>
+        </div>
+      </div>
+    `;
+
+    wireStep(step);
+    const backBtn = document.getElementById('wBack');
+    if (backBtn) backBtn.onclick = () => { stepIdx--; render(); };
+    const cancelBtn = document.getElementById('wCancel');
+    if (cancelBtn) cancelBtn.onclick = () => backdrop.remove();
+    document.getElementById('wNext').onclick = onNext;
+  }
+
+  function hourOpts(from, to, sel) {
     let out = '';
     for (let h = from; h <= to; h++) {
       const lab = `${h.toString().padStart(2,'0')}:00`;
       out += `<option value="${h}"${h === sel ? ' selected' : ''}>${lab}</option>`;
     }
     return out;
-  };
+  }
 
-  const backdrop = document.createElement('div');
-  backdrop.className = 'modal-backdrop';
-  backdrop.innerHTML = `
-    <div class="modal-card wizard-card">
-      <div class="modal-title">${firstTime ? 'Set up your revision timetable' : 'Edit preferences'}</div>
-      <div class="wizard-intro">School, sleep, sport, family time — pick the windows that fit around your actual life so Auto-fill can plan realistically.</div>
-
-      <label class="field">
-        <span class="field-label">1. Which days can you study?</span>
-        <div class="day-row" id="dayRow">${dayChips}</div>
-      </label>
-
-      <div class="pair-row">
-        <label class="field">
-          <span class="field-label">2. Earliest you can start</span>
-          <select id="wStart">${hourOpts(15, 21, cur.start)}</select>
-        </label>
-        <label class="field">
-          <span class="field-label">3. Latest you'd study till</span>
-          <select id="wEnd">${hourOpts(18, 23, cur.end)}</select>
-        </label>
-      </div>
-
-      <label class="field">
-        <span class="field-label">4. How are weekends different?</span>
-        <select id="wWeekend">
-          <option value="same" ${cur.weekend==='same'?'selected':''}>Same as weekdays</option>
-          <option value="more" ${cur.weekend==='more'?'selected':''}>More time — mornings free too</option>
-          <option value="less" ${cur.weekend==='less'?'selected':''}>Less time — busy with activities</option>
-          <option value="none" ${cur.weekend==='none'?'selected':''}>No study at weekends</option>
-        </select>
-      </label>
-
-      <label class="field">
-        <span class="field-label">5. Hours per week you can commit</span>
-        <select id="wHours">
-          ${[5,8,10,12,15,18,20,25].map(n =>
-            `<option value="${n}" ${n===cur.hours?'selected':''}>${n} hours</option>`
-          ).join('')}
-        </select>
-      </label>
-
-      <label class="field">
-        <span class="field-label">6. How long do you like each study session?</span>
-        <select id="wDuration">
-          <option value="30"  ${cur.duration===30 ?'selected':''}>30 minutes</option>
-          <option value="60"  ${cur.duration===60 ?'selected':''}>1 hour</option>
-          <option value="90"  ${cur.duration===90 ?'selected':''}>1.5 hours</option>
-          <option value="120" ${cur.duration===120?'selected':''}>2 hours</option>
-        </select>
-      </label>
-
-      <div class="field">
-        <span class="field-label">7. When are you busy each day? (sport, tutoring, family time)</span>
-        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.4;">
-          Optional — if you don't have other commitments, just leave this empty.
-        </div>
-        <div class="busy-list" id="busyList"></div>
-      </div>
-
-      <div class="modal-actions">
-        <span class="spacer"></span>
-        ${firstTime ? '' : '<button class="btn btn-ghost" id="wCancel">Cancel</button>'}
-        <button class="btn btn-primary" id="wSave">${firstTime ? 'Build my timetable' : 'Save'}</button>
-      </div>
-    </div>
-  `;
-  document.body.appendChild(backdrop);
-
-  // Render half-hour options for busy-time selects, scoped to the day's window.
-  function halfHourOpts(selectedMin) {
-    const sH = +document.getElementById('wStart').value;
-    const eH = +document.getElementById('wEnd').value;
+  function halfHourOpts(selectedMin, dayIdx) {
+    const isWeekend = dayIdx >= 5;
+    const sH = isWeekend ? state.wkStart : state.wdStart;
+    const eH = isWeekend ? state.wkEnd   : state.wdEnd;
     let out = '';
     for (let m = sH * 60; m <= eH * 60; m += 30) {
       const hh = Math.floor(m / 60), mm = m % 60;
@@ -993,26 +1008,115 @@ function openWizard({ firstTime }) {
     return out;
   }
 
+  function renderStep(step) {
+    if (step === 'days') {
+      const chips = DAYS.map((label, idx) =>
+        `<div class="day-chip${state.days.includes(idx) ? ' on' : ''}" data-day="${idx}">${label}</div>`
+      ).join('');
+      return `
+        <div class="wizard-question">Which days can you study?</div>
+        <div class="wizard-help">Tap each day you'd like to include. You can change this any time.</div>
+        <div class="day-row">${chips}</div>`;
+    }
+    if (step === 'weekday') {
+      return `
+        <div class="wizard-question">What are your usual weekday study hours?</div>
+        <div class="wizard-help">School, sleep, dinner — pick the window when you're actually free to study Monday to Friday.</div>
+        <div class="pair-row">
+          <label class="field">
+            <span class="field-label">Earliest you can start</span>
+            <select id="wWdStart">${hourOpts(14, 22, state.wdStart)}</select>
+          </label>
+          <label class="field">
+            <span class="field-label">Latest you'd study till</span>
+            <select id="wWdEnd">${hourOpts(16, 23, state.wdEnd)}</select>
+          </label>
+        </div>`;
+    }
+    if (step === 'weekend') {
+      return `
+        <div class="wizard-question">And your weekend hours?</div>
+        <div class="wizard-help">Weekends usually look different — maybe you're free from the morning, or only after a sport practice. Set the window you'll actually use on Saturday and Sunday.</div>
+        <div class="pair-row">
+          <label class="field">
+            <span class="field-label">Earliest you can start</span>
+            <select id="wWkStart">${hourOpts(7, 22, state.wkStart)}</select>
+          </label>
+          <label class="field">
+            <span class="field-label">Latest you'd study till</span>
+            <select id="wWkEnd">${hourOpts(9, 23, state.wkEnd)}</select>
+          </label>
+        </div>`;
+    }
+    if (step === 'hours') {
+      return `
+        <div class="wizard-question">How many hours per week can you commit?</div>
+        <div class="wizard-help">A realistic target you can hit most weeks. Auto-fill spreads this across your study days.</div>
+        <label class="field">
+          <span class="field-label">Weekly target</span>
+          <select id="wHours">
+            ${[5,8,10,12,15,18,20,25].map(n =>
+              `<option value="${n}" ${n===state.hours?'selected':''}>${n} hours</option>`
+            ).join('')}
+          </select>
+        </label>`;
+    }
+    if (step === 'duration') {
+      return `
+        <div class="wizard-question">How long do you like each study session?</div>
+        <div class="wizard-help">Shorter blocks (30 min) feel less daunting; longer blocks (90+ min) suit deep practice papers.</div>
+        <label class="field">
+          <span class="field-label">Session length</span>
+          <select id="wDuration">
+            <option value="30"  ${state.duration===30 ?'selected':''}>30 minutes</option>
+            <option value="60"  ${state.duration===60 ?'selected':''}>1 hour</option>
+            <option value="90"  ${state.duration===90 ?'selected':''}>1.5 hours</option>
+            <option value="120" ${state.duration===120?'selected':''}>2 hours</option>
+          </select>
+        </label>`;
+    }
+    if (step === 'busy') {
+      return `
+        <div class="wizard-question">When are you busy each day?</div>
+        <div class="wizard-help">Block out sport, tutoring, family time — anything that stops you studying. Optional: if you don't have any commitments, just hit ${firstTime ? 'Build my timetable' : 'Save'}.</div>
+        <div class="busy-list" id="busyList"></div>`;
+    }
+    return '';
+  }
+
+  function wireStep(step) {
+    if (step === 'days') {
+      backdrop.querySelectorAll('.day-chip').forEach(el => {
+        el.onclick = () => {
+          el.classList.toggle('on');
+          const d = +el.dataset.day;
+          if (el.classList.contains('on')) state.days = [...new Set([...state.days, d])].sort();
+          else state.days = state.days.filter(x => x !== d);
+        };
+      });
+    }
+    if (step === 'busy') renderBusyList();
+  }
+
   function renderBusyList() {
-    const selectedDays = Array.from(backdrop.querySelectorAll('.day-chip.on'))
-      .map(el => +el.dataset.day).sort();
+    const days = [...state.days].sort();
     const wrap = document.getElementById('busyList');
-    if (!selectedDays.length) {
-      wrap.innerHTML = '<div class="busy-empty">Pick study days above first.</div>';
+    if (!days.length) {
+      wrap.innerHTML = '<div class="busy-empty">No study days picked.</div>';
       return;
     }
-    wrap.innerHTML = selectedDays.map(d => {
-      const wins = busyDraft[String(d)] || [];
+    wrap.innerHTML = days.map(d => {
+      const wins = state.busy[String(d)] || [];
       const rows = wins.map((win, i) => {
         const { s, e, n } = busyBounds(win);
         return `
-        <div class="busy-row" data-day="${d}" data-i="${i}">
-          <input class="busy-name" type="text" maxlength="40" placeholder="Activity" value="${escapeHtml(n)}">
-          <select class="busy-start">${halfHourOpts(s)}</select>
-          <span class="arrow">→</span>
-          <select class="busy-end">${halfHourOpts(e)}</select>
-          <button class="busy-remove" type="button" title="Remove">×</button>
-        </div>`;
+          <div class="busy-row" data-day="${d}" data-i="${i}">
+            <input class="busy-name" type="text" maxlength="40" placeholder="Activity" value="${escapeHtml(n)}">
+            <select class="busy-start">${halfHourOpts(s, d)}</select>
+            <span class="arrow">→</span>
+            <select class="busy-end">${halfHourOpts(e, d)}</select>
+            <button class="busy-remove" type="button" title="Remove">×</button>
+          </div>`;
       }).join('');
       const empty = wins.length ? '' : '<div class="busy-empty">No commitments — free all day.</div>';
       return `
@@ -1025,15 +1129,14 @@ function openWizard({ firstTime }) {
         </div>`;
     }).join('');
 
-    // Wire up controls
     wrap.querySelectorAll('.busy-add').forEach(btn => {
       btn.onclick = () => {
         const d = +btn.dataset.day;
-        const sH = +document.getElementById('wStart').value;
-        // Default new window: 1 hour starting at the earliest-start hour.
+        const isWeekend = d >= 5;
+        const sH = isWeekend ? state.wkStart : state.wdStart;
         const defStart = sH * 60;
         const defEnd   = defStart + 60;
-        (busyDraft[String(d)] ||= []).push([defStart, defEnd]);
+        (state.busy[String(d)] ||= []).push({ s: defStart, e: defEnd, n: '' });
         renderBusyList();
       };
     });
@@ -1041,8 +1144,8 @@ function openWizard({ firstTime }) {
       btn.onclick = () => {
         const row = btn.closest('.busy-row');
         const d = +row.dataset.day, i = +row.dataset.i;
-        busyDraft[String(d)].splice(i, 1);
-        if (!busyDraft[String(d)].length) delete busyDraft[String(d)];
+        state.busy[String(d)].splice(i, 1);
+        if (!state.busy[String(d)].length) delete state.busy[String(d)];
         renderBusyList();
       };
     });
@@ -1054,64 +1157,71 @@ function openWizard({ firstTime }) {
       const sync = () => {
         let s = +sEl.value, e = +eEl.value;
         if (e <= s) { e = s + 30; eEl.value = String(e); }
-        busyDraft[String(d)][i] = { s, e, n: nEl.value.trim() };
+        state.busy[String(d)][i] = { s, e, n: nEl.value.trim() };
       };
       sEl.onchange = sync; eEl.onchange = sync;
       nEl.oninput = sync;
     });
   }
 
-  // Day-chip toggle — re-render busy list so removed days drop their section.
-  backdrop.querySelectorAll('.day-chip').forEach(el => {
-    el.onclick = () => { el.classList.toggle('on'); renderBusyList(); };
-  });
-  document.getElementById('wStart').onchange = renderBusyList;
-  document.getElementById('wEnd').onchange   = renderBusyList;
-  renderBusyList();
-
-  if (!firstTime) {
-    document.getElementById('wCancel').onclick = () => backdrop.remove();
-    backdrop.addEventListener('click', e => { if (e.target === backdrop) backdrop.remove(); });
+  function captureAndValidate(step) {
+    if (step === 'days') {
+      if (!state.days.length) return 'Pick at least one study day.';
+    }
+    if (step === 'weekday') {
+      state.wdStart = +document.getElementById('wWdStart').value;
+      state.wdEnd   = +document.getElementById('wWdEnd').value;
+      if (state.wdEnd <= state.wdStart) return 'Your latest end time must be after your earliest start.';
+    }
+    if (step === 'weekend') {
+      state.wkStart = +document.getElementById('wWkStart').value;
+      state.wkEnd   = +document.getElementById('wWkEnd').value;
+      if (state.wkEnd <= state.wkStart) return 'Your latest end time must be after your earliest start.';
+    }
+    if (step === 'hours')    state.hours    = +document.getElementById('wHours').value;
+    if (step === 'duration') state.duration = +document.getElementById('wDuration').value;
+    return null;
   }
 
-  document.getElementById('wSave').onclick = async () => {
-    const days = Array.from(backdrop.querySelectorAll('.day-chip.on'))
-      .map(el => +el.dataset.day).sort();
-    if (!days.length) { alert('Pick at least one study day.'); return; }
-    const start = +document.getElementById('wStart').value;
-    const end   = +document.getElementById('wEnd').value;
-    if (end <= start) { alert('Your latest end time must be after your earliest start.'); return; }
-    const weekend = document.getElementById('wWeekend').value;
-    const hours   = +document.getElementById('wHours').value;
-    const duration = +document.getElementById('wDuration').value;
+  async function onNext() {
+    const steps = activeSteps();
+    const step  = steps[stepIdx];
+    const err = captureAndValidate(step);
+    const errBox = document.getElementById('wErr');
+    if (err) { if (errBox) errBox.textContent = err; return; }
+    if (errBox) errBox.textContent = '';
 
-    // Drop any busy windows attached to days they un-checked, then sort each
-    // day's windows so the grid renders deterministically.
+    if (stepIdx < steps.length - 1) { stepIdx++; render(); return; }
+
+    // Final step — persist.
     const cleaned = {};
-    for (const d of days) {
-      const arr = (busyDraft[String(d)] || [])
+    for (const d of state.days) {
+      const arr = (state.busy[String(d)] || [])
         .map(w => { const b = busyBounds(w); return { s: b.s, e: b.e, n: b.n }; })
         .filter(w => w.e > w.s);
-      arr.sort((a,b) => a.s - b.s);
+      arr.sort((a, b) => a.s - b.s);
       if (arr.length) cleaned[String(d)] = arr;
     }
-
+    const hasWeekend = state.days.some(d => d >= 5);
     const update = {
-      rt_study_days:      days,
-      rt_earliest_start:  start,
-      rt_latest_end:      end,
-      rt_weekend_mode:    weekend,
-      rt_weekly_hours:    hours,
-      rt_session_minutes: duration,
+      rt_study_days:      state.days,
+      rt_earliest_start:  state.wdStart,
+      rt_latest_end:      state.wdEnd,
+      rt_weekend_start:   hasWeekend ? state.wkStart : null,
+      rt_weekend_end:     hasWeekend ? state.wkEnd   : null,
+      rt_weekly_hours:    state.hours,
+      rt_session_minutes: state.duration,
       rt_busy_windows:    cleaned,
     };
     const { error } = await supabaseClient
       .from('profiles').update(update).eq('id', user.id);
-    if (error) { alert('Save failed: ' + error.message); return; }
+    if (error) { if (errBox) errBox.textContent = 'Save failed: ' + error.message; return; }
     Object.assign(profile, update);
     backdrop.remove();
     renderPage();
-  };
+  }
+
+  render();
 }
 
 async function onClearWeek() {
