@@ -91,6 +91,17 @@
     }
     .intro-cta:hover { background: var(--accent-dark); }
     .intro-note { margin-top: 14px; font-size: 12.5px; color: var(--muted2); }
+    .intro-tip {
+      display: flex; gap: 12px; align-items: flex-start;
+      padding: 14px 16px; margin: 0 auto 24px; max-width: 600px;
+      background: var(--amber-dim); border: 1px solid rgba(217,119,6,0.2);
+      border-radius: 12px; text-align: left;
+    }
+    .intro-tip-icon { flex-shrink: 0; font-size: 18px; line-height: 1.3; }
+    .intro-tip-text { font-size: 13.5px; color: var(--text); line-height: 1.5; }
+    .intro-tip-text strong { color: var(--amber); }
+    .intro-tip-text a { color: var(--accent); text-decoration: none; font-weight: 500; }
+    .intro-tip-text a:hover { text-decoration: underline; }
 
     /* ── toolbar ──────────────────────────────────────────── */
     .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
@@ -140,9 +151,6 @@
     }
     .session-card .ss-subj { font-weight: 600; }
     .session-card .ss-topic { opacity: 0.85; font-size: 10px; margin-top: 1px; }
-    .session-card.rag-red    { background: var(--red); }
-    .session-card.rag-amber  { background: var(--amber); }
-    .session-card.rag-green  { background: var(--green); }
 
     /* ── modal ────────────────────────────────────────────── */
     .modal-backdrop {
@@ -304,6 +312,32 @@ const SLOT_START_HOUR = 7;
 const SLOT_END_HOUR = 23;                                  // exclusive
 const SLOTS = (SLOT_END_HOUR - SLOT_START_HOUR) * 2;       // 32 half-hour rows
 const RAG_WEIGHT = { red: 3, amber: 2, green: 1 };
+
+// Stable, readable palette. Hashing the subject name into this list means the
+// same subject is always rendered in the same colour regardless of RAG status.
+// RAG still drives *scheduling priority* via RAG_WEIGHT — it just no longer
+// drives card colour, which made everything look identical when subjects
+// hadn't been diagnosed yet.
+const SUBJECT_PALETTE = [
+  '#2563EB', // blue
+  '#059669', // emerald
+  '#D97706', // amber
+  '#DC2626', // red
+  '#7C3AED', // violet
+  '#0891B2', // cyan
+  '#DB2777', // pink
+  '#0D9488', // teal
+  '#9333EA', // purple
+  '#65A30D', // lime
+  '#EA580C', // orange
+  '#CA8A04', // gold
+];
+function colorForSubject(name) {
+  let h = 5381;
+  const s = String(name || '');
+  for (let i = 0; i < s.length; i++) h = ((h << 5) + h + s.charCodeAt(i)) | 0;
+  return SUBJECT_PALETTE[Math.abs(h) % SUBJECT_PALETTE.length];
+}
 
 // Preference keys on profiles row. NULL on any of these = "wizard not done yet".
 // rt_busy_windows is excluded: it has a default of '{}' so it's never NULL,
@@ -553,8 +587,9 @@ function renderSessions() {
     if (!slot) continue;
     const rows = Math.max(1, Math.round(sess.duration_min / 30));
     const card = document.createElement('div');
-    card.className = `session-card rag-${getSubjectRag(sess.subject)}`;
+    card.className = 'session-card';
     card.style.height = `calc(${rows * 100}% + ${(rows - 1) * 1}px - 4px)`;
+    card.style.background = colorForSubject(sess.subject);
     card.innerHTML =
       `<div class="ss-subj">${escapeHtml(sess.subject)}</div>` +
       (sess.topic ? `<div class="ss-topic">${escapeHtml(sess.topic)}</div>` : '');
@@ -593,12 +628,6 @@ function updateWeekTotal() {
   if (pill) {
     pill.innerHTML = `<strong>${hrs}h${mins ? ' '+mins+'m' : ''}</strong> · ${sessions.length} session${sessions.length===1?'':'s'} this week`;
   }
-}
-
-function getSubjectRag(subjectName) {
-  const s = subjects.find(x => x.subject === subjectName);
-  const r = s?.rag_status || 'pending';
-  return ['red','amber','green'].includes(r) ? r : 'amber';
 }
 
 // ── modal ──────────────────────────────────────────────────────
@@ -802,18 +831,27 @@ function renderIntro() {
         weekly grid. Click any slot to plan a session — or hit Auto-fill and the
         planner will spread your weakest subjects across the week for you.
       </div>
+      <div class="intro-tip">
+        <div class="intro-tip-icon">💡</div>
+        <div class="intro-tip-text">
+          <strong>Pro tip:</strong> the more <a href="Dashboard.html#diagnostic">diagnostics</a> you've finished,
+          the smarter your timetable will be. Auto-fill uses your RAG ratings to give
+          weak topics more time than ones you've already mastered — so finishing the diagnostics
+          significantly improves the result.
+        </div>
+      </div>
       <div class="intro-features">
         <div class="intro-feat">
           <div class="intro-feat-dot">✦</div>
-          <div class="intro-feat-text"><strong>Auto-balanced.</strong> Weaker topics (red) get more time than ones you've nailed (green).</div>
+          <div class="intro-feat-text"><strong>Auto-balanced.</strong> Weak topics get more time than ones you've already nailed.</div>
+        </div>
+        <div class="intro-feat">
+          <div class="intro-feat-dot">🎨</div>
+          <div class="intro-feat-text"><strong>Colour-coded by subject.</strong> Each subject gets its own colour so you can spot patterns at a glance.</div>
         </div>
         <div class="intro-feat">
           <div class="intro-feat-dot">⏰</div>
-          <div class="intro-feat-text"><strong>Fits your life.</strong> Tell it when you're at football, tutoring or family time — it'll plan around them.</div>
-        </div>
-        <div class="intro-feat">
-          <div class="intro-feat-dot">📚</div>
-          <div class="intro-feat-text"><strong>Uses your subjects.</strong> Sessions are pulled from your RAG ratings, not invented.</div>
+          <div class="intro-feat-text"><strong>Fits your life.</strong> Block out football, tutoring or family time — or leave it empty if you have no commitments.</div>
         </div>
         <div class="intro-feat">
           <div class="intro-feat-dot">⚙</div>
@@ -897,6 +935,9 @@ function openWizard({ firstTime }) {
 
       <div class="field">
         <span class="field-label">6. When are you busy each day? (sport, tutoring, family time)</span>
+        <div style="font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.4;">
+          Optional — if you don't have other commitments, just leave this empty.
+        </div>
         <div class="busy-list" id="busyList"></div>
       </div>
 
