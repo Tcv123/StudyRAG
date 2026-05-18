@@ -92,6 +92,8 @@
 
     /* ── PAGE HEADER ── */
     .page-header { position: relative; z-index: 1; padding: 140px 0 56px; animation: fadeUp 0.6s ease both; text-align: center; }
+    @media (max-height: 800px) { .page-header { padding: 104px 0 40px; } }
+    @media (max-height: 680px) { .page-header { padding: 88px 0 32px; } .page-header h1 { font-size: clamp(26px, 3.4vw, 38px); margin-bottom: 12px; } .page-sub { font-size: 14px; } }
     .page-header .wrap { max-width: 720px; }
     .pill {
       display: inline-flex; align-items: center; gap: 7px;
