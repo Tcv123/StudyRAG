@@ -48,7 +48,11 @@
     .logout-btn:hover { color: #DC2626; }
 
     /* ── main ─────────────────────────────────────────────── */
-    .main { margin-left: var(--sidebar-w); flex: 1; padding: 44px 56px; }
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 28px 48px; min-height: 100vh; display: flex; flex-direction: column; }
+    /* Total height taken by everything that isn't the grid body rows. Used
+       by the row-height calc so the grid fills the viewport on whatever
+       screen you're on. Tweak this number if the topbar/toolbar gets taller. */
+    :root { --grid-chrome: 240px; }
     .topbar { margin-bottom: 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
     .page-sub { font-size: 14px; color: var(--muted); margin-top: 3px; }
@@ -124,12 +128,29 @@
       border: 1px solid var(--border);
       border-radius: 16px;
       box-shadow: 0 4px 20px rgba(37,99,235,0.06);
-      position: relative;             /* anchor for the now-line */
-      /* overflow: hidden removed so the now-line dot can sit at the column edge */
+      position: relative;
+      /* Fill remaining viewport; scroll internally if rows don't fit. The
+         sticky header stays pinned to the top of THIS container thanks to
+         position:sticky on .cell.head, so day labels stay visible while
+         scrolling the body. */
+      max-height: calc(100vh - var(--grid-chrome));
+      overflow-y: auto;
+      overflow-x: hidden;
     }
+    /* Nice scrollbar that doesn't intrude on small screens. */
+    .grid::-webkit-scrollbar { width: 8px; }
+    .grid::-webkit-scrollbar-thumb { background: rgba(120,145,176,0.3); border-radius: 4px; }
+    .grid::-webkit-scrollbar-thumb:hover { background: rgba(120,145,176,0.5); }
     /* Full lines between hours (the :00 rows). Half-hour rows use a fainter
        line so the eye groups the two half-hours of each hour together. */
-    .cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); min-height: 54px; }
+    .cell {
+      border-right: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      /* Body rows scale to fill the viewport. var(--rows) is set inline on
+         the .grid container based on the user's hour-range count. Floor of
+         30px keeps it readable on short viewports. */
+      min-height: max(30px, calc((100vh - var(--grid-chrome)) / var(--rows, 32)));
+    }
     .cell.half-row { border-bottom-color: rgba(184,208,232,0.35); }
     .cell:nth-child(8n) { border-right: none; }
     .cell.head {
@@ -388,9 +409,31 @@
 ═════════════════════════════════════════════════════════════════ */
 
 const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
-const SLOT_START_HOUR = 7;
-const SLOT_END_HOUR = 23;                                  // exclusive
-const SLOTS = (SLOT_END_HOUR - SLOT_START_HOUR) * 2;       // 32 half-hour rows
+// Default fallback range (7am–11pm) used before the user has set preferences.
+// updateGridHourRange() narrows this to (earliest_start − 1h)..(latest_end + 1h)
+// once prefs are loaded, so the grid fits the screen without scrolling.
+let GRID_START_HOUR = 7;
+let GRID_END_HOUR   = 23;
+let GRID_SLOTS      = (GRID_END_HOUR - GRID_START_HOUR) * 2;
+
+// Interval handle for the now-line tick. Declared up here (not inline next to
+// updateNowLine) because the init IIFE runs before the lower part of this
+// script — putting the `let` next to the function would leave it in the TDZ
+// when updateNowLine is first called from buildGrid, throwing a silent
+// ReferenceError that's swallowed by the async IIFE's unhandled rejection.
+let _nowTimer = null;
+
+function updateGridHourRange() {
+  const wdS = profile?.rt_earliest_start ?? 7;
+  const wdE = profile?.rt_latest_end     ?? 23;
+  const wkS = profile?.rt_weekend_start  ?? wdS;
+  const wkE = profile?.rt_weekend_end    ?? wdE;
+  // Exactly the user's hour range (no padding) so the grid stays as compact
+  // as possible. The grid itself scrolls internally if it can't fit.
+  GRID_START_HOUR = Math.min(wdS, wkS);
+  GRID_END_HOUR   = Math.max(wdE, wkE);
+  GRID_SLOTS      = (GRID_END_HOUR - GRID_START_HOUR) * 2;
+}
 const RAG_WEIGHT = { red: 3, amber: 2, green: 1 };
 
 // Stable, readable palette. Hashing the subject name into this list means the
@@ -619,6 +662,7 @@ function renderPage() {
     return;
   }
 
+  updateGridHourRange();
   document.getElementById('pageBody').innerHTML = `
     <div class="toolbar">
       <button class="btn btn-primary" id="autoFillBtn">✦ Auto-fill week</button>
@@ -627,7 +671,7 @@ function renderPage() {
       <span class="hint">Click any empty slot to add a session.</span>
       <span class="stat-pill" id="weekTotal"></span>
     </div>
-    <div class="grid" id="weekGrid"></div>
+    <div class="grid" id="weekGrid" style="--rows: ${GRID_SLOTS};"></div>
   `;
   buildGrid();
   document.getElementById('autoFillBtn').onclick = onAutoFill;
@@ -644,11 +688,11 @@ function buildGrid() {
     const todayCls = d === todayIdx ? ' today' : '';
     html += `<div class="cell head day-${d}${todayCls}">${DAYS[d]}</div>`;
   }
-  for (let s = 0; s < SLOTS; s++) {
-    const hr = SLOT_START_HOUR + Math.floor(s / 2);
+  for (let s = 0; s < GRID_SLOTS; s++) {
+    const hr = GRID_START_HOUR + Math.floor(s / 2);
     const half = s % 2 === 1;
     const label = half ? '' : `${hr}:00`;
-    const min = SLOT_START_HOUR * 60 + s * 30;
+    const min = GRID_START_HOUR * 60 + s * 30;
     // Tag :00 rows so the CSS can draw a stronger top border (hour grouping).
     // Tag :30 rows so their bottom border can be softened (eye groups the two
     // half-hours of each hour together).
@@ -673,6 +717,28 @@ function buildGrid() {
   });
   renderSessions();
   updateNowLine();
+  // Defer one tick so the grid's max-height calc + content layout settle
+  // before we measure. (setTimeout instead of rAF — background tabs throttle
+  // rAF, which would leave the grid stuck at scrollTop=0.)
+  setTimeout(scrollGridToNow, 0);
+}
+
+// Scroll the internal grid so the current time sits roughly in the top
+// third of the visible area. Skipped if the grid isn't actually scrollable
+// (i.e. all rows already fit) or if now is outside the visible hour range.
+function scrollGridToNow() {
+  const grid = document.querySelector('.grid');
+  if (!grid) return;
+  if (grid.scrollHeight <= grid.clientHeight) return;
+  const now = new Date();
+  const minPastMidnight = now.getHours() * 60 + now.getMinutes();
+  const gridStartMin = GRID_START_HOUR * 60;
+  const gridEndMin   = GRID_END_HOUR   * 60;
+  if (minPastMidnight < gridStartMin || minPastMidnight > gridEndMin) return;
+  const firstSlot = grid.querySelector('.cell.slot');
+  if (!firstSlot) return;
+  const y = ((minPastMidnight - gridStartMin) / 30) * firstSlot.offsetHeight;
+  grid.scrollTop = Math.max(0, firstSlot.offsetTop + y - grid.clientHeight / 3);
 }
 
 // Returns 0..6 for Mon..Sun based on the user's local time.
@@ -684,7 +750,6 @@ function todayDayIndex() {
 // Red horizontal line spanning today's column, anchored at the current
 // wall-clock time. Re-run every 60s and on window resize. Hidden outside
 // the grid's hour window (e.g. 3am) so it doesn't clip past the bottom.
-let _nowTimer = null;
 function updateNowLine() {
   const grid = document.querySelector('.grid');
   if (!grid) return;
@@ -693,8 +758,8 @@ function updateNowLine() {
   const now = new Date();
   const todayIdx = todayDayIndex();
   const minPastMidnight = now.getHours() * 60 + now.getMinutes();
-  const gridStartMin = SLOT_START_HOUR * 60;
-  const gridEndMin   = SLOT_END_HOUR   * 60;
+  const gridStartMin = GRID_START_HOUR * 60;
+  const gridEndMin   = GRID_END_HOUR   * 60;
 
   if (minPastMidnight < gridStartMin || minPastMidnight > gridEndMin) {
     if (line) line.style.display = 'none';
@@ -708,22 +773,19 @@ function updateNowLine() {
   }
   line.style.display = 'block';
 
-  // Anchor: top-left of the first slot cell of today's column gives us the
-  // exact (x, y) where the grid body content begins for that day. Adding
-  // (minOffset / 30) * slotHeight walks down to the right minute.
+  // Anchor: first slot of today's column. Using offsetTop/Left (not
+  // getBoundingClientRect) so the result is relative to the grid's content
+  // origin — that way scrolling the grid doesn't push the line off-position.
   const firstSlot = grid.querySelector(`.slot[data-day="${todayIdx}"]`);
   if (!firstSlot) { line.style.display = 'none'; return; }
-  const gridRect = grid.getBoundingClientRect();
-  const slotRect = firstSlot.getBoundingClientRect();
-  const slotH    = slotRect.height;
+  const slotH = firstSlot.offsetHeight;
   const minOffset = minPastMidnight - gridStartMin;
   const y = (minOffset / 30) * slotH;
 
-  line.style.top   = `${slotRect.top - gridRect.top + y}px`;
-  line.style.left  = `${slotRect.left - gridRect.left}px`;
-  line.style.width = `${slotRect.width}px`;
+  line.style.top   = `${firstSlot.offsetTop + y}px`;
+  line.style.left  = `${firstSlot.offsetLeft}px`;
+  line.style.width = `${firstSlot.offsetWidth}px`;
 
-  // Re-schedule for next minute.
   if (!_nowTimer) {
     _nowTimer = setInterval(updateNowLine, 60_000);
     window.addEventListener('resize', updateNowLine);
