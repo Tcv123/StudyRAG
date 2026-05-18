@@ -20,7 +20,11 @@ alter table public.profiles
   --   key   = day_of_week (0..6, 0=Mon) as a string
   --   value = array of [start_min, end_min] pairs, minutes past midnight.
   -- Auto-fill skips any candidate slot that overlaps one of these windows.
-  add column if not exists rt_busy_windows   jsonb default '{}'::jsonb;
+  add column if not exists rt_busy_windows   jsonb default '{}'::jsonb,
+  -- Default session length the auto-fill engine uses when placing sessions.
+  -- Users can still manually create sessions of any duration via the modal.
+  add column if not exists rt_session_minutes smallint default 60
+    check (rt_session_minutes in (30, 60, 90, 120));
 
 -- (No new policies needed — the existing "own profile" policy on profiles
 -- already covers reads and writes against auth.uid().)

@@ -415,6 +415,7 @@ function initDemo() {
     rt_latest_end:     havePrefs ? 22 : null,
     rt_weekend_mode:   havePrefs ? 'more' : null,
     rt_weekly_hours:   havePrefs ? 12 : null,
+    rt_session_minutes: havePrefs ? 60 : null,
     // Example busy windows so the demo shows the feature.
     rt_busy_windows:   havePrefs ? {
       '0': [{ s: 1080, e: 1170, n: 'Football' }],         // Mon 18:00–19:30
@@ -572,7 +573,7 @@ function buildGrid() {
     el.onclick = () => openModal({
       day_of_week: +el.dataset.day,
       start_min:   +el.dataset.min,
-      duration_min: 60,
+      duration_min: profile.rt_session_minutes || 60,
     });
   });
   renderSessions();
@@ -728,34 +729,37 @@ function openModal(sess) {
 // places one-hour sessions in priority order until we hit their weekly hour
 // target (or run out of slots).
 function buildPreferredSlots(prefs) {
-  const days       = (prefs.rt_study_days || []).map(Number);
-  const startHour  = prefs.rt_earliest_start;
-  const endHour    = prefs.rt_latest_end;
+  const days        = (prefs.rt_study_days || []).map(Number);
+  const startHour   = prefs.rt_earliest_start;
+  const endHour     = prefs.rt_latest_end;
   const weekendMode = prefs.rt_weekend_mode;
+  const duration    = prefs.rt_session_minutes || 60;
 
-  // First pass: figure out each day's available hours (weekends may differ).
-  const dayHours = {};
+  // First pass: each day's allowed half-hour start times, filtered so a
+  // session of `duration` minutes fits before the day's window ends.
+  const dayStarts = {};
   for (const day of days) {
     const isWeekend = day >= 5;
-    if (isWeekend && weekendMode === 'none') { dayHours[day] = []; continue; }
+    if (isWeekend && weekendMode === 'none') { dayStarts[day] = []; continue; }
     let dayStart = startHour;
     let dayEnd   = endHour;
     if (isWeekend && weekendMode === 'more') dayStart = Math.min(dayStart, 10);   // weekends can start at 10am
     if (isWeekend && weekendMode === 'less') dayEnd   = Math.min(dayEnd, startHour + 2); // shorter window on weekends
-    const hours = [];
-    for (let h = dayStart; h < dayEnd; h++) hours.push(h);
-    dayHours[day] = hours;
+    const lastStart = dayEnd * 60 - duration;   // session must finish by dayEnd
+    const starts = [];
+    for (let m = dayStart * 60; m <= lastStart; m += 30) starts.push(m);
+    dayStarts[day] = starts;
   }
 
-  // Second pass: round-robin by hour-slot index so the first N sessions hit
-  // N different days before doubling up. Without this, Mon-Tue fill completely
+  // Second pass: round-robin by slot index so the first N sessions land on
+  // N different days before doubling up. Without this, Mon-Wed fill completely
   // and Thu-Sun stay empty when target hours < days * window-size.
-  const maxLen = Math.max(0, ...days.map(d => dayHours[d].length));
+  const maxLen = Math.max(0, ...days.map(d => dayStarts[d].length));
   const slots = [];
-  for (let hi = 0; hi < maxLen; hi++) {
+  for (let i = 0; i < maxLen; i++) {
     for (const day of days) {
-      const h = dayHours[day][hi];
-      if (h !== undefined) slots.push([day, h]);
+      const m = dayStarts[day][i];
+      if (m !== undefined) slots.push([day, m]);
     }
   }
   return slots;
@@ -787,6 +791,8 @@ async function onAutoFill() {
 
   const allowedSlots = buildPreferredSlots(profile);
   const targetMin = (profile.rt_weekly_hours || 10) * 60;
+  const dur       = profile.rt_session_minutes || 60;
+  const halfRows  = dur / 30;
   let plannedMin = sessions.reduce((s, x) => s + x.duration_min, 0);
 
   const queue = ranked.slice();
@@ -794,11 +800,15 @@ async function onAutoFill() {
   let lastSubject = null;
   const toInsert = [];
 
-  for (const [day, hr] of allowedSlots) {
+  for (const [day, startMin] of allowedSlots) {
     if (plannedMin >= targetMin) break;
-    const startMin = hr * 60;
-    const dur = 60;
-    if (busy.has(`${day}:${startMin}`) || busy.has(`${day}:${startMin + 30}`)) continue;
+
+    // Collision check spans every half-hour cell the new session would occupy.
+    let collides = false;
+    for (let i = 0; i < halfRows; i++) {
+      if (busy.has(`${day}:${startMin + i*30}`)) { collides = true; break; }
+    }
+    if (collides) continue;
     if (isBusy(day, startMin, dur)) continue;     // blackout from preferences
 
     let pick = null;
@@ -812,7 +822,7 @@ async function onAutoFill() {
       user_id: user.id, day_of_week: day, start_min: startMin,
       duration_min: dur, subject: pick.subject, topic: pick.topic,
     });
-    busy.add(`${day}:${startMin}`); busy.add(`${day}:${startMin + 30}`);
+    for (let i = 0; i < halfRows; i++) busy.add(`${day}:${startMin + i*30}`);
     plannedMin += dur;
     lastSubject = pick.subject;
   }
@@ -868,7 +878,7 @@ function renderIntro() {
         </div>
       </div>
       <button class="intro-cta" id="introCta">Get started →</button>
-      <div class="intro-note">Takes about 30 seconds. We'll ask 6 quick questions.</div>
+      <div class="intro-note">Takes about 30 seconds. We'll ask 7 quick questions.</div>
     </div>
   `;
   document.getElementById('introCta').onclick = () => openWizard({ firstTime: true });
@@ -883,6 +893,7 @@ function openWizard({ firstTime }) {
     end:     profile.rt_latest_end     ?? 21,
     weekend: profile.rt_weekend_mode   ?? 'same',
     hours:   profile.rt_weekly_hours   ?? 10,
+    duration: profile.rt_session_minutes ?? 60,
   };
   // Working copy of busy windows: shallow-clone so cancel discards edits.
   const busyDraft = JSON.parse(JSON.stringify(profile.rt_busy_windows || {}));
@@ -942,8 +953,18 @@ function openWizard({ firstTime }) {
         </select>
       </label>
 
+      <label class="field">
+        <span class="field-label">6. How long do you like each study session?</span>
+        <select id="wDuration">
+          <option value="30"  ${cur.duration===30 ?'selected':''}>30 minutes</option>
+          <option value="60"  ${cur.duration===60 ?'selected':''}>1 hour</option>
+          <option value="90"  ${cur.duration===90 ?'selected':''}>1.5 hours</option>
+          <option value="120" ${cur.duration===120?'selected':''}>2 hours</option>
+        </select>
+      </label>
+
       <div class="field">
-        <span class="field-label">6. When are you busy each day? (sport, tutoring, family time)</span>
+        <span class="field-label">7. When are you busy each day? (sport, tutoring, family time)</span>
         <div style="font-size:12px;color:var(--muted);margin-bottom:8px;line-height:1.4;">
           Optional — if you don't have other commitments, just leave this empty.
         </div>
@@ -1062,6 +1083,7 @@ function openWizard({ firstTime }) {
     if (end <= start) { alert('Your latest end time must be after your earliest start.'); return; }
     const weekend = document.getElementById('wWeekend').value;
     const hours   = +document.getElementById('wHours').value;
+    const duration = +document.getElementById('wDuration').value;
 
     // Drop any busy windows attached to days they un-checked, then sort each
     // day's windows so the grid renders deterministically.
@@ -1075,12 +1097,13 @@ function openWizard({ firstTime }) {
     }
 
     const update = {
-      rt_study_days:     days,
-      rt_earliest_start: start,
-      rt_latest_end:     end,
-      rt_weekend_mode:   weekend,
-      rt_weekly_hours:   hours,
-      rt_busy_windows:   cleaned,
+      rt_study_days:      days,
+      rt_earliest_start:  start,
+      rt_latest_end:      end,
+      rt_weekend_mode:    weekend,
+      rt_weekly_hours:    hours,
+      rt_session_minutes: duration,
+      rt_busy_windows:    cleaned,
     };
     const { error } = await supabaseClient
       .from('profiles').update(update).eq('id', user.id);
