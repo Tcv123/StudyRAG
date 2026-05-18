@@ -18,11 +18,16 @@
       --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
       --accent: #2563EB; --accent-dark: #1D4ED8;
       --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --red: #DC2626; --red-dim: rgba(220,38,38,0.12);
+      --amber: #D97706; --amber-dim: rgba(217,119,6,0.12);
+      --green: #059669; --green-dim: rgba(5,150,105,0.12);
       --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
       --sidebar-w: 240px;
     }
     html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
     .app { display: flex; min-height: 100vh; }
+
+    /* ── sidebar (identical to live page) ───────────────────── */
     .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
     .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
     .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
@@ -41,19 +46,153 @@
     .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
     .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
     .logout-btn:hover { color: #DC2626; }
+
+    /* ── main ─────────────────────────────────────────────── */
     .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
-    .topbar { margin-bottom: 32px; }
+    .topbar { margin-bottom: 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
     .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
     .page-sub { font-size: 14px; color: var(--muted); margin-top: 3px; }
-    .placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
-    .placeholder-icon { width: 80px; height: 80px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 22px; }
-    .placeholder-title { font-family: var(--font-display); font-size: 26px; margin-bottom: 10px; }
-    .placeholder-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; }
-    .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
-    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #B45309; margin-bottom: 20px; }
+
+    .lock-overlay, .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--amber); margin-bottom: 20px; }
     .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
     .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
-    .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+    .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, var(--amber), #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+
+    /* ── toolbar ──────────────────────────────────────────── */
+    .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 9px; font-size: 13.5px; font-weight: 500; cursor: pointer; border: 1px solid transparent; font-family: var(--font-body); transition: all 0.15s; }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent-dark); }
+    .btn-danger { background: var(--red); color: #fff; border-color: var(--red); }
+    .btn-danger:hover { filter: brightness(0.92); }
+    .hint { font-size: 13px; color: var(--muted); margin-left: 6px; }
+    .stat-pill { padding: 7px 13px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); font-size: 12.5px; color: var(--muted); margin-left: auto; }
+    .stat-pill strong { color: var(--text); font-weight: 600; }
+
+    /* ── grid ─────────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: 60px repeat(7, 1fr);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); min-height: 28px; }
+    .cell:nth-child(8n) { border-right: none; }
+    .cell.head { background: var(--surface2); font-size: 12px; font-weight: 600; color: var(--muted); padding: 10px 0; text-align: center; letter-spacing: 0.04em; text-transform: uppercase; }
+    .cell.head.corner { background: var(--surface2); }
+    .cell.time { background: var(--surface2); font-size: 11px; color: var(--muted2); text-align: right; padding: 2px 8px 0 0; line-height: 1; }
+    .cell.slot { position: relative; cursor: pointer; transition: background 0.1s; }
+    .cell.slot:hover { background: var(--accent-dim); }
+    .cell.slot.weekend { background: rgba(37,99,235,0.03); }
+    .cell.slot.weekend:hover { background: var(--accent-dim); }
+
+    .session-card {
+      position: absolute;
+      left: 2px; right: 2px; top: 2px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      padding: 4px 6px;
+      font-size: 11px;
+      line-height: 1.2;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 2;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    }
+    .session-card .ss-subj { font-weight: 600; }
+    .session-card .ss-topic { opacity: 0.85; font-size: 10px; margin-top: 1px; }
+    .session-card.rag-red    { background: var(--red); }
+    .session-card.rag-amber  { background: var(--amber); }
+    .session-card.rag-green  { background: var(--green); }
+
+    /* ── modal ────────────────────────────────────────────── */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(11,30,63,0.4);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 100; padding: 20px;
+    }
+    .modal-card {
+      background: var(--surface); border-radius: 14px; padding: 24px;
+      width: 100%; max-width: 420px; box-shadow: 0 20px 50px rgba(11,30,63,0.18);
+    }
+    .modal-title { font-family: var(--font-display); font-size: 20px; margin-bottom: 4px; }
+    .modal-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 18px; }
+    .field { display: block; margin-bottom: 12px; }
+    .field-label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 5px; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 9px 11px; font-size: 14px; font-family: var(--font-body);
+      border: 1px solid var(--border); border-radius: 8px; background: var(--surface);
+      color: var(--text);
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .field textarea { resize: vertical; min-height: 60px; }
+    .modal-actions { display: flex; gap: 8px; margin-top: 18px; }
+    .modal-actions .spacer { flex: 1; }
+
+    /* ── setup wizard ─────────────────────────────────────── */
+    .wizard-card { max-width: 560px; max-height: 90vh; overflow-y: auto; }
+    .wizard-intro { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.55; }
+    .day-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .day-chip {
+      flex: 1; min-width: 52px; padding: 9px 4px; text-align: center;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      cursor: pointer; user-select: none; background: var(--surface);
+      transition: all 0.12s;
+    }
+    .day-chip:hover { border-color: var(--accent); color: var(--accent-dark); }
+    .day-chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .pair-row { display: flex; gap: 10px; }
+    .pair-row > * { flex: 1; }
+    .field input[type="hidden"] { display: none; }
+
+    /* ── busy-windows section in the wizard ───────────────── */
+    .busy-list { display: flex; flex-direction: column; gap: 8px; }
+    .busy-day {
+      border: 1px solid var(--border); border-radius: 8px; padding: 8px 10px;
+      background: var(--surface);
+    }
+    .busy-day-head { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
+    .busy-day-name { font-size: 13px; font-weight: 500; color: var(--text); }
+    .busy-add { background: none; border: none; color: var(--accent); font-size: 12px; font-weight: 500; cursor: pointer; padding: 2px 6px; border-radius: 6px; }
+    .busy-add:hover { background: var(--accent-dim); }
+    .busy-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 13px; }
+    .busy-row select,
+    .busy-row input.busy-name { padding: 5px 8px; font-size: 13px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); font-family: var(--font-body); color: var(--text); }
+    .busy-row input.busy-name { flex: 1; min-width: 80px; }
+    .busy-row select:focus,
+    .busy-row input.busy-name:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-dim); }
+    .busy-row .arrow { color: var(--muted2); }
+    .busy-remove { background: none; border: none; color: var(--muted2); cursor: pointer; font-size: 16px; padding: 0 4px; line-height: 1; }
+    .busy-remove:hover { color: var(--red); }
+    .busy-empty { font-size: 12px; color: var(--muted2); font-style: italic; }
+
+    /* ── busy cells on the grid ───────────────────────────── */
+    .cell.slot.busy { cursor: not-allowed; }
+    .busy-card {
+      position: absolute;
+      left: 2px; right: 2px; top: 2px;
+      background: repeating-linear-gradient(
+        45deg, rgba(120,145,176,0.18) 0 6px, rgba(234,242,252,0.85) 6px 12px
+      );
+      border: 1px dashed rgba(120,145,176,0.55);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 4px 6px;
+      font-size: 11px;
+      line-height: 1.2;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;     /* click should pass through (cells are non-clickable anyway) */
+    }
+    .busy-card .bc-label { font-weight: 600; color: var(--text); opacity: 0.7; }
+    .busy-card .bc-time  { font-size: 10px; margin-top: 1px; opacity: 0.85; }
   </style>
 </head>
 <body>
@@ -99,26 +238,174 @@
 
   <main class="main">
     <div class="topbar">
-      <div class="page-title">📆 Revision Timetable</div>
-      <div class="page-sub">Plan your week. Auto-balance subjects against your weak topics.</div>
+      <div>
+        <div class="page-title">📆 Revision Timetable</div>
+        <div class="page-sub">Plan your week. Auto-balance subjects against your weak topics.</div>
+      </div>
     </div>
     <div id="pageBody">
-      <div class="placeholder">
-        <div class="placeholder-icon">🚧</div>
-        <div class="placeholder-title">Coming soon</div>
-        <div class="placeholder-msg">A drag-and-drop weekly planner that auto-suggests slots based on your RAG ratings, exam dates, and study-streak goals.</div>
+      <div class="empty-state">
+        <div class="placeholder-icon" style="width:60px;height:60px;border-radius:50%;background:var(--accent-dim);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px;">⏳</div>
+        <div class="lock-title">Loading…</div>
       </div>
     </div>
   </main>
 </div>
 
 <script>
-(async function () {
-  const { data: { user } } = await supabaseClient.auth.getUser();
-  if (!user) { location = 'auth/login.html'; return; }
-  const { data: profile } = await supabaseClient
+/* ════════════════════════════════════════════════════════════════
+   REVISION TIMETABLE — draft implementation.
+
+   Data shape (Supabase table: revision_sessions, see migration):
+     { id, day_of_week (0=Mon..6=Sun), start_min (mins past midnight, 30-min grid),
+       duration_min (30/60/90/120), subject, topic?, notes? }
+
+   Grid: 7 days × half-hour rows from 7:00 to 22:30 (32 slots).
+   Click a slot → modal to add. Click a card → modal to edit/delete.
+   Auto-fill: ranks topics by RAG (red=3, amber=2, green=1), packs into
+     a preferred-slot pattern, round-robins subjects to avoid clumps.
+═════════════════════════════════════════════════════════════════ */
+
+const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const SLOT_START_HOUR = 7;
+const SLOT_END_HOUR = 23;                                  // exclusive
+const SLOTS = (SLOT_END_HOUR - SLOT_START_HOUR) * 2;       // 32 half-hour rows
+const RAG_WEIGHT = { red: 3, amber: 2, green: 1 };
+
+// Preference keys on profiles row. NULL on any of these = "wizard not done yet".
+// rt_busy_windows is excluded: it has a default of '{}' so it's never NULL,
+// and it's optional anyway (people without commitments leave it blank).
+const PREF_KEYS = ['rt_study_days','rt_earliest_start','rt_latest_end','rt_weekend_mode','rt_weekly_hours'];
+
+// Busy-windows map: { dayIdx: [{ s: startMin, e: endMin, n: name? }, ...] }.
+// Tolerates the legacy [start, end] tuple shape too — older rows in the DB
+// will still work after we shipped the object form.
+function getBusyWindows() {
+  return profile?.rt_busy_windows || {};
+}
+function busyBounds(w) {
+  if (Array.isArray(w)) return { s: w[0], e: w[1], n: '' };
+  return { s: w.s, e: w.e, n: w.n || '' };
+}
+
+// True if [startMin, startMin + dur) on `day` overlaps any blackout window.
+function isBusy(day, startMin, dur) {
+  const wins = getBusyWindows()[String(day)] || [];
+  const end = startMin + dur;
+  return wins.some(w => {
+    const { s, e } = busyBounds(w);
+    return startMin < e && s < end;
+  });
+}
+
+let user = null;
+let profile = null;
+let subjects = [];     // [{ subject, exam_board, emoji, rag_status }]
+let progress = [];     // [{ subject, topic, rag_status }]
+let sessions = [];     // [{ id, day_of_week, start_min, duration_min, subject, topic, notes }]
+
+// ── boot ───────────────────────────────────────────────────────
+const DEMO = new URLSearchParams(location.search).get('demo') === '1';
+
+(async function init() {
+  if (DEMO) { initDemo(); return; }
+
+  const { data: { user: u } } = await supabaseClient.auth.getUser();
+  if (!u) { location = 'auth/login.html'; return; }
+  user = u;
+
+  const { data: p } = await supabaseClient
     .from('profiles').select('*').eq('id', user.id).single();
-  const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
+  profile = p;
+  paintSidebarUser();
+
+  if (!isPro(profile)) { renderLock(); return; }
+
+  await loadData();
+
+  if (!hasPrefs(profile)) {
+    openWizard({ firstTime: true });
+  } else {
+    renderPage();
+  }
+})();
+
+function hasPrefs(p) {
+  if (!p) return false;
+  return PREF_KEYS.every(k => p[k] !== null && p[k] !== undefined);
+}
+
+// Demo mode: ?demo=1 — render the UI with mock data, no Supabase calls.
+// ?demo=1&prefs=1 to skip the wizard and jump straight to a populated grid.
+function initDemo() {
+  user    = { id: 'demo-user' };
+  const havePrefs = new URLSearchParams(location.search).get('prefs') === '1';
+  profile = {
+    first_name: 'Demo', last_name: 'User',
+    subscription_tier: 'pro', subscription_status: 'active',
+    rt_study_days:     havePrefs ? [0,1,2,3,4,5,6] : null,
+    rt_earliest_start: havePrefs ? 17 : null,
+    rt_latest_end:     havePrefs ? 22 : null,
+    rt_weekend_mode:   havePrefs ? 'more' : null,
+    rt_weekly_hours:   havePrefs ? 12 : null,
+    // Example busy windows so the demo shows the feature.
+    rt_busy_windows:   havePrefs ? {
+      '0': [{ s: 1080, e: 1170, n: 'Football' }],         // Mon 18:00–19:30
+      '2': [{ s: 1140, e: 1200, n: 'Tutoring' }],         // Wed 19:00–20:00
+      '5': [{ s: 720,  e: 840,  n: 'Family lunch' }],     // Sat 12:00–14:00
+    } : {},
+  };
+  subjects = [
+    { subject: 'Chemistry',        exam_board: 'AQA',     emoji: '⚗️', rag_status: 'red'   },
+    { subject: 'Biology',          exam_board: 'AQA',     emoji: '🧬', rag_status: 'amber' },
+    { subject: 'Physics',          exam_board: 'OCR A',   emoji: '⚡', rag_status: 'green' },
+    { subject: 'Mathematics',      exam_board: 'Edexcel', emoji: '➗', rag_status: 'amber' },
+  ];
+  progress = [
+    { subject: 'Chemistry',   topic: 'Organic mechanisms',  rag_status: 'red'   },
+    { subject: 'Chemistry',   topic: 'Equilibria',          rag_status: 'red'   },
+    { subject: 'Biology',     topic: 'Photosynthesis',      rag_status: 'amber' },
+    { subject: 'Biology',     topic: 'Gene expression',     rag_status: 'red'   },
+    { subject: 'Physics',     topic: 'Capacitors',          rag_status: 'green' },
+    { subject: 'Mathematics', topic: 'Integration',         rag_status: 'amber' },
+  ];
+  sessions = havePrefs ? [
+    { id: 'd1', day_of_week: 0, start_min: 17*60, duration_min: 60,  subject: 'Chemistry',   topic: 'Organic mechanisms', notes: null },
+    { id: 'd2', day_of_week: 2, start_min: 18*60, duration_min: 90,  subject: 'Biology',     topic: 'Gene expression',    notes: null },
+    { id: 'd3', day_of_week: 5, start_min: 10*60, duration_min: 120, subject: 'Mathematics', topic: 'Integration',        notes: null },
+  ] : [];
+  paintSidebarUser();
+  patchSupabaseForDemo();
+  if (!hasPrefs(profile)) openWizard({ firstTime: true });
+  else renderPage();
+}
+
+// In demo mode, intercept the Supabase calls used by save/delete/auto-fill so
+// nothing hits the network and a fake id is generated locally. The rest of the
+// page code is identical to production.
+function patchSupabaseForDemo() {
+  let nextId = 100;
+  const fakeChain = (rows) => ({
+    select: () => fakeChain(rows),
+    eq: () => fakeChain(rows),
+    single: () => Promise.resolve({ data: rows[0] || null, error: null }),
+    then: (cb) => cb({ data: rows, error: null }),
+  });
+  supabaseClient.from = () => ({
+    insert: (payload) => {
+      const arr = Array.isArray(payload) ? payload : [payload];
+      const withIds = arr.map(r => ({ ...r, id: 'demo-' + (nextId++) }));
+      return fakeChain(withIds);
+    },
+    update: () => fakeChain([{ ok: true }]),
+    delete: () => fakeChain([{ ok: true }]),
+    select: () => fakeChain([]),
+    eq: () => fakeChain([]),
+  });
+}
+
+function paintSidebarUser() {
+  const fn = profile?.first_name || '', ln = profile?.last_name || '';
   document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
   document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
   if (profile?.avatar_url) {
@@ -128,20 +415,588 @@
     img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
     av.replaceChildren(img);
   }
-  const tier = profile?.subscription_tier || 'free';
-  const status = profile?.subscription_status || 'active';
-  const exp = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
-  const isPro = tier !== 'free' && ['active','trialing'].includes(status) && (!exp || exp > new Date());
-  if (!isPro) {
+}
+
+function isPro(p) {
+  if (!p) return false;
+  const tier = p.subscription_tier || 'free';
+  const status = p.subscription_status || 'active';
+  const exp = p.subscription_expires_at ? new Date(p.subscription_expires_at) : null;
+  return tier !== 'free' && ['active','trialing'].includes(status) && (!exp || exp > new Date());
+}
+
+function renderLock() {
+  document.getElementById('pageBody').innerHTML = `
+    <div class="lock-overlay">
+      <div class="lock-icon">🔒</div>
+      <div class="lock-title">Pro feature</div>
+      <div class="lock-msg">Revision timetable is available with a Pro subscription.</div>
+      <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
+    </div>`;
+}
+
+async function loadData() {
+  const [subjRes, progRes, sessRes] = await Promise.all([
+    supabaseClient.from('user_subjects')
+      .select('subject,exam_board,emoji,rag_status')
+      .eq('user_id', user.id),
+    supabaseClient.from('topic_progress')
+      .select('subject,topic,rag_status')
+      .eq('user_id', user.id),
+    supabaseClient.from('revision_sessions')
+      .select('*')
+      .eq('user_id', user.id),
+  ]);
+  subjects = subjRes.data || [];
+  progress = progRes.data || [];
+  sessions = sessRes.data || [];
+}
+
+// ── render ─────────────────────────────────────────────────────
+function renderPage() {
+  if (!subjects.length) {
     document.getElementById('pageBody').innerHTML = `
-      <div class="lock-overlay">
-        <div class="lock-icon">🔒</div>
-        <div class="lock-title">Pro feature</div>
-        <div class="lock-msg">Revision timetable is available with a Pro subscription.</div>
-        <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
+      <div class="empty-state">
+        <div class="lock-icon" style="background:var(--accent-dim);border-color:var(--accent);color:var(--accent-dark);">📚</div>
+        <div class="lock-title">No subjects yet</div>
+        <div class="lock-msg">Add subjects on your dashboard so the planner has something to schedule.</div>
+        <a class="lock-btn" href="auth/setup.html" style="background:linear-gradient(135deg,var(--accent),var(--accent-dark));">Add subjects</a>
+      </div>`;
+    return;
+  }
+
+  document.getElementById('pageBody').innerHTML = `
+    <div class="toolbar">
+      <button class="btn btn-primary" id="autoFillBtn">✦ Auto-fill week</button>
+      <button class="btn btn-ghost" id="prefsBtn">⚙ Preferences</button>
+      <button class="btn btn-ghost" id="clearBtn">Clear week</button>
+      <span class="hint">Click any empty slot to add a session.</span>
+      <span class="stat-pill" id="weekTotal"></span>
+    </div>
+    <div class="grid" id="weekGrid"></div>
+  `;
+  buildGrid();
+  document.getElementById('autoFillBtn').onclick = onAutoFill;
+  document.getElementById('prefsBtn').onclick = () => openWizard({ firstTime: false });
+  document.getElementById('clearBtn').onclick = onClearWeek;
+  updateWeekTotal();
+}
+
+function buildGrid() {
+  const grid = document.getElementById('weekGrid');
+  let html = '<div class="cell head corner"></div>';
+  for (let d = 0; d < 7; d++) html += `<div class="cell head">${DAYS[d]}</div>`;
+  for (let s = 0; s < SLOTS; s++) {
+    const hr = SLOT_START_HOUR + Math.floor(s / 2);
+    const half = s % 2 === 1;
+    const label = half ? '' : `${hr}:00`;
+    const min = SLOT_START_HOUR * 60 + s * 30;
+    html += `<div class="cell time">${label}</div>`;
+    for (let d = 0; d < 7; d++) {
+      const wk = (d >= 5) ? ' weekend' : '';
+      const busy = isBusy(d, min, 30) ? ' busy' : '';
+      const title = busy ? ' title="Blocked by your preferences"' : '';
+      html += `<div class="cell slot${wk}${busy}" data-day="${d}" data-min="${min}"${title}></div>`;
+    }
+  }
+  grid.innerHTML = html;
+  grid.querySelectorAll('.slot').forEach(el => {
+    if (el.classList.contains('busy')) return;
+    el.onclick = () => openModal({
+      day_of_week: +el.dataset.day,
+      start_min:   +el.dataset.min,
+      duration_min: 60,
+    });
+  });
+  renderSessions();
+}
+
+function renderSessions() {
+  document.querySelectorAll('.session-card').forEach(el => el.remove());
+  for (const sess of sessions) {
+    const slot = document.querySelector(
+      `.slot[data-day="${sess.day_of_week}"][data-min="${sess.start_min}"]`
+    );
+    if (!slot) continue;
+    const rows = Math.max(1, Math.round(sess.duration_min / 30));
+    const card = document.createElement('div');
+    card.className = `session-card rag-${getSubjectRag(sess.subject)}`;
+    card.style.height = `calc(${rows * 100}% + ${(rows - 1) * 1}px - 4px)`;
+    card.innerHTML =
+      `<div class="ss-subj">${escapeHtml(sess.subject)}</div>` +
+      (sess.topic ? `<div class="ss-topic">${escapeHtml(sess.topic)}</div>` : '');
+    card.onclick = (e) => { e.stopPropagation(); openModal(sess); };
+    slot.appendChild(card);
+  }
+  renderBusyCards();
+}
+
+function renderBusyCards() {
+  document.querySelectorAll('.busy-card').forEach(el => el.remove());
+  const bw = getBusyWindows();
+  const fmt = m => `${Math.floor(m/60).toString().padStart(2,'0')}:${(m%60).toString().padStart(2,'0')}`;
+  for (const dStr of Object.keys(bw)) {
+    const d = +dStr;
+    for (const w of (bw[dStr] || [])) {
+      const { s, e, n } = busyBounds(w);
+      const slot = document.querySelector(`.slot[data-day="${d}"][data-min="${s}"]`);
+      if (!slot) continue;
+      const rows = Math.max(1, Math.round((e - s) / 30));
+      const card = document.createElement('div');
+      card.className = 'busy-card';
+      card.style.height = `calc(${rows * 100}% + ${(rows - 1) * 1}px - 4px)`;
+      card.innerHTML =
+        `<div class="bc-label">${escapeHtml(n || 'Busy')}</div>` +
+        `<div class="bc-time">${fmt(s)}–${fmt(e)}</div>`;
+      slot.appendChild(card);
+    }
+  }
+}
+
+function updateWeekTotal() {
+  const total = sessions.reduce((sum, s) => sum + s.duration_min, 0);
+  const hrs = Math.floor(total / 60), mins = total % 60;
+  const pill = document.getElementById('weekTotal');
+  if (pill) {
+    pill.innerHTML = `<strong>${hrs}h${mins ? ' '+mins+'m' : ''}</strong> · ${sessions.length} session${sessions.length===1?'':'s'} this week`;
+  }
+}
+
+function getSubjectRag(subjectName) {
+  const s = subjects.find(x => x.subject === subjectName);
+  const r = s?.rag_status || 'pending';
+  return ['red','amber','green'].includes(r) ? r : 'amber';
+}
+
+// ── modal ──────────────────────────────────────────────────────
+function openModal(sess) {
+  const isEdit = !!sess.id;
+  const backdrop = document.createElement('div');
+  backdrop.className = 'modal-backdrop';
+
+  const subjOptions = subjects.map(s =>
+    `<option value="${escapeHtml(s.subject)}">${escapeHtml(s.subject)}</option>`
+  ).join('');
+
+  const hr = Math.floor(sess.start_min / 60);
+  const mn = sess.start_min % 60;
+  const slotLabel = `${DAYS[sess.day_of_week]} ${hr}:${mn.toString().padStart(2,'0')}`;
+
+  backdrop.innerHTML = `
+    <div class="modal-card">
+      <div class="modal-title">${isEdit ? 'Edit session' : 'New session'}</div>
+      <div class="modal-sub">${slotLabel}</div>
+      <label class="field">
+        <span class="field-label">Subject</span>
+        <select id="mSubject">${subjOptions}</select>
+      </label>
+      <label class="field">
+        <span class="field-label">Topic (optional)</span>
+        <input type="text" id="mTopic" placeholder="e.g. Photosynthesis" maxlength="120">
+      </label>
+      <label class="field">
+        <span class="field-label">Duration</span>
+        <select id="mDur">
+          <option value="30">30 min</option>
+          <option value="60" selected>1 hour</option>
+          <option value="90">1.5 hours</option>
+          <option value="120">2 hours</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="field-label">Notes (optional)</span>
+        <textarea id="mNotes" maxlength="280" placeholder="Anything you want to remember about this slot"></textarea>
+      </label>
+      <div class="modal-actions">
+        ${isEdit ? '<button class="btn btn-danger" id="mDelete">Delete</button>' : ''}
+        <span class="spacer"></span>
+        <button class="btn btn-ghost" id="mCancel">Cancel</button>
+        <button class="btn btn-primary" id="mSave">${isEdit ? 'Save' : 'Add'}</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(backdrop);
+
+  // Pre-fill
+  document.getElementById('mSubject').value = sess.subject || subjects[0].subject;
+  document.getElementById('mTopic').value   = sess.topic || '';
+  document.getElementById('mDur').value     = String(sess.duration_min || 60);
+  document.getElementById('mNotes').value   = sess.notes || '';
+
+  const close = () => backdrop.remove();
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) close(); });
+  document.getElementById('mCancel').onclick = close;
+  document.getElementById('mSave').onclick = async () => {
+    const row = {
+      user_id:      user.id,
+      day_of_week:  sess.day_of_week,
+      start_min:    sess.start_min,
+      duration_min: +document.getElementById('mDur').value,
+      subject:      document.getElementById('mSubject').value,
+      topic:        document.getElementById('mTopic').value.trim() || null,
+      notes:        document.getElementById('mNotes').value.trim() || null,
+    };
+    if (isEdit) {
+      const { error } = await supabaseClient
+        .from('revision_sessions').update(row).eq('id', sess.id);
+      if (error) { alert('Save failed: ' + error.message); return; }
+      Object.assign(sessions.find(s => s.id === sess.id), row);
+    } else {
+      const { data, error } = await supabaseClient
+        .from('revision_sessions').insert(row).select().single();
+      if (error) { alert('Save failed: ' + error.message); return; }
+      sessions.push(data);
+    }
+    renderSessions(); updateWeekTotal(); close();
+  };
+  if (isEdit) {
+    document.getElementById('mDelete').onclick = async () => {
+      if (!confirm('Delete this session?')) return;
+      const { error } = await supabaseClient
+        .from('revision_sessions').delete().eq('id', sess.id);
+      if (error) { alert('Delete failed: ' + error.message); return; }
+      sessions = sessions.filter(s => s.id !== sess.id);
+      renderSessions(); updateWeekTotal(); close();
+    };
+  }
+}
+
+// ── auto-fill ──────────────────────────────────────────────────
+// Builds the candidate slot list from the user's preferences, then greedily
+// places one-hour sessions in priority order until we hit their weekly hour
+// target (or run out of slots).
+function buildPreferredSlots(prefs) {
+  const days       = (prefs.rt_study_days || []).map(Number);
+  const startHour  = prefs.rt_earliest_start;
+  const endHour    = prefs.rt_latest_end;
+  const weekendMode = prefs.rt_weekend_mode;
+
+  const slots = [];
+  for (const day of days) {
+    const isWeekend = day >= 5;
+    if (isWeekend && weekendMode === 'none') continue;
+
+    let dayStart = startHour;
+    let dayEnd   = endHour;
+    if (isWeekend && weekendMode === 'more') dayStart = Math.min(dayStart, 10);   // weekends can start at 10am
+    if (isWeekend && weekendMode === 'less') dayEnd   = Math.min(dayEnd, startHour + 2); // shorter window on weekends
+
+    // Walk evenings first so weekday "study time" is prioritised. For weekends
+    // when mode='more', we also include the morning block.
+    const hours = [];
+    for (let h = dayStart; h < dayEnd; h++) hours.push(h);
+    for (const h of hours) slots.push([day, h]);
+  }
+  return slots;
+}
+
+async function onAutoFill() {
+  if (!hasPrefs(profile)) { openWizard({ firstTime: true }); return; }
+  if (sessions.length && !confirm('Auto-fill will add sessions to empty slots only. Continue?')) return;
+
+  // Rank topics by RAG weight (red highest). Fall back to subjects if a user
+  // has no topic_progress rows yet.
+  const ranked = [];
+  for (const p of progress) {
+    if (!p.rag_status) continue;
+    ranked.push({ subject: p.subject, topic: p.topic, w: RAG_WEIGHT[p.rag_status] || 1 });
+  }
+  for (const s of subjects) {
+    ranked.push({ subject: s.subject, topic: null, w: RAG_WEIGHT[s.rag_status] || 1 });
+  }
+  ranked.sort((a, b) => b.w - a.w);
+  if (!ranked.length) { alert('Add subjects first.'); return; }
+
+  // Busy cells from existing sessions — don't double-book.
+  const busy = new Set();
+  for (const s of sessions) {
+    const rows = Math.round(s.duration_min / 30);
+    for (let i = 0; i < rows; i++) busy.add(`${s.day_of_week}:${s.start_min + i*30}`);
+  }
+
+  const allowedSlots = buildPreferredSlots(profile);
+  const targetMin = (profile.rt_weekly_hours || 10) * 60;
+  let plannedMin = sessions.reduce((s, x) => s + x.duration_min, 0);
+
+  const queue = ranked.slice();
+  let qi = 0;
+  let lastSubject = null;
+  const toInsert = [];
+
+  for (const [day, hr] of allowedSlots) {
+    if (plannedMin >= targetMin) break;
+    const startMin = hr * 60;
+    const dur = 60;
+    if (busy.has(`${day}:${startMin}`) || busy.has(`${day}:${startMin + 30}`)) continue;
+    if (isBusy(day, startMin, dur)) continue;     // blackout from preferences
+
+    let pick = null;
+    for (let i = 0; i < queue.length; i++) {
+      const cand = queue[qi++ % queue.length];
+      if (cand.subject !== lastSubject) { pick = cand; break; }
+    }
+    if (!pick) pick = queue[0];
+
+    toInsert.push({
+      user_id: user.id, day_of_week: day, start_min: startMin,
+      duration_min: dur, subject: pick.subject, topic: pick.topic,
+    });
+    busy.add(`${day}:${startMin}`); busy.add(`${day}:${startMin + 30}`);
+    plannedMin += dur;
+    lastSubject = pick.subject;
+  }
+
+  if (!toInsert.length) {
+    alert('No empty slots inside your preferred window — clear the week or widen your preferences.');
+    return;
+  }
+
+  const { data, error } = await supabaseClient
+    .from('revision_sessions').insert(toInsert).select();
+  if (error) { alert('Auto-fill failed: ' + error.message); return; }
+  sessions.push(...data);
+  renderSessions(); updateWeekTotal();
+}
+
+// ── setup wizard ───────────────────────────────────────────────
+function openWizard({ firstTime }) {
+  // Hide grid behind wizard on first run so they don't see an empty page.
+  if (firstTime) {
+    document.getElementById('pageBody').innerHTML = `
+      <div class="empty-state">
+        <div class="lock-icon" style="background:var(--accent-dim);border-color:var(--accent);color:var(--accent-dark);">📆</div>
+        <div class="lock-title">Let's set up your timetable</div>
+        <div class="lock-msg">A few quick questions so Auto-fill knows your schedule.</div>
       </div>`;
   }
-})();
+
+  const cur = {
+    days:    profile.rt_study_days     ?? [0,1,2,3,4],
+    start:   profile.rt_earliest_start ?? 17,
+    end:     profile.rt_latest_end     ?? 21,
+    weekend: profile.rt_weekend_mode   ?? 'same',
+    hours:   profile.rt_weekly_hours   ?? 10,
+  };
+  // Working copy of busy windows: shallow-clone so cancel discards edits.
+  const busyDraft = JSON.parse(JSON.stringify(profile.rt_busy_windows || {}));
+
+  const dayChips = DAYS.map((label, idx) =>
+    `<div class="day-chip${cur.days.includes(idx) ? ' on' : ''}" data-day="${idx}">${label}</div>`
+  ).join('');
+
+  const hourOpts = (from, to, sel) => {
+    let out = '';
+    for (let h = from; h <= to; h++) {
+      const lab = `${h.toString().padStart(2,'0')}:00`;
+      out += `<option value="${h}"${h === sel ? ' selected' : ''}>${lab}</option>`;
+    }
+    return out;
+  };
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'modal-backdrop';
+  backdrop.innerHTML = `
+    <div class="modal-card wizard-card">
+      <div class="modal-title">${firstTime ? 'Set up your revision timetable' : 'Edit preferences'}</div>
+      <div class="wizard-intro">School, sleep, sport, family time — pick the windows that fit around your actual life so Auto-fill can plan realistically.</div>
+
+      <label class="field">
+        <span class="field-label">1. Which days can you study?</span>
+        <div class="day-row" id="dayRow">${dayChips}</div>
+      </label>
+
+      <div class="pair-row">
+        <label class="field">
+          <span class="field-label">2. Earliest you can start</span>
+          <select id="wStart">${hourOpts(15, 21, cur.start)}</select>
+        </label>
+        <label class="field">
+          <span class="field-label">3. Latest you'd study till</span>
+          <select id="wEnd">${hourOpts(18, 23, cur.end)}</select>
+        </label>
+      </div>
+
+      <label class="field">
+        <span class="field-label">4. How are weekends different?</span>
+        <select id="wWeekend">
+          <option value="same" ${cur.weekend==='same'?'selected':''}>Same as weekdays</option>
+          <option value="more" ${cur.weekend==='more'?'selected':''}>More time — mornings free too</option>
+          <option value="less" ${cur.weekend==='less'?'selected':''}>Less time — busy with activities</option>
+          <option value="none" ${cur.weekend==='none'?'selected':''}>No study at weekends</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">5. Hours per week you can commit</span>
+        <select id="wHours">
+          ${[5,8,10,12,15,18,20,25].map(n =>
+            `<option value="${n}" ${n===cur.hours?'selected':''}>${n} hours</option>`
+          ).join('')}
+        </select>
+      </label>
+
+      <div class="field">
+        <span class="field-label">6. When are you busy each day? (sport, tutoring, family time)</span>
+        <div class="busy-list" id="busyList"></div>
+      </div>
+
+      <div class="modal-actions">
+        <span class="spacer"></span>
+        ${firstTime ? '' : '<button class="btn btn-ghost" id="wCancel">Cancel</button>'}
+        <button class="btn btn-primary" id="wSave">${firstTime ? 'Build my timetable' : 'Save'}</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(backdrop);
+
+  // Render half-hour options for busy-time selects, scoped to the day's window.
+  function halfHourOpts(selectedMin) {
+    const sH = +document.getElementById('wStart').value;
+    const eH = +document.getElementById('wEnd').value;
+    let out = '';
+    for (let m = sH * 60; m <= eH * 60; m += 30) {
+      const hh = Math.floor(m / 60), mm = m % 60;
+      const lab = `${hh.toString().padStart(2,'0')}:${mm.toString().padStart(2,'0')}`;
+      out += `<option value="${m}"${m === selectedMin ? ' selected' : ''}>${lab}</option>`;
+    }
+    return out;
+  }
+
+  function renderBusyList() {
+    const selectedDays = Array.from(backdrop.querySelectorAll('.day-chip.on'))
+      .map(el => +el.dataset.day).sort();
+    const wrap = document.getElementById('busyList');
+    if (!selectedDays.length) {
+      wrap.innerHTML = '<div class="busy-empty">Pick study days above first.</div>';
+      return;
+    }
+    wrap.innerHTML = selectedDays.map(d => {
+      const wins = busyDraft[String(d)] || [];
+      const rows = wins.map((win, i) => {
+        const { s, e, n } = busyBounds(win);
+        return `
+        <div class="busy-row" data-day="${d}" data-i="${i}">
+          <input class="busy-name" type="text" maxlength="40" placeholder="Activity" value="${escapeHtml(n)}">
+          <select class="busy-start">${halfHourOpts(s)}</select>
+          <span class="arrow">→</span>
+          <select class="busy-end">${halfHourOpts(e)}</select>
+          <button class="busy-remove" type="button" title="Remove">×</button>
+        </div>`;
+      }).join('');
+      const empty = wins.length ? '' : '<div class="busy-empty">No commitments — free all day.</div>';
+      return `
+        <div class="busy-day" data-day="${d}">
+          <div class="busy-day-head">
+            <div class="busy-day-name">${DAYS[d]}</div>
+            <button class="busy-add" type="button" data-day="${d}">+ Add busy time</button>
+          </div>
+          ${rows || empty}
+        </div>`;
+    }).join('');
+
+    // Wire up controls
+    wrap.querySelectorAll('.busy-add').forEach(btn => {
+      btn.onclick = () => {
+        const d = +btn.dataset.day;
+        const sH = +document.getElementById('wStart').value;
+        // Default new window: 1 hour starting at the earliest-start hour.
+        const defStart = sH * 60;
+        const defEnd   = defStart + 60;
+        (busyDraft[String(d)] ||= []).push([defStart, defEnd]);
+        renderBusyList();
+      };
+    });
+    wrap.querySelectorAll('.busy-remove').forEach(btn => {
+      btn.onclick = () => {
+        const row = btn.closest('.busy-row');
+        const d = +row.dataset.day, i = +row.dataset.i;
+        busyDraft[String(d)].splice(i, 1);
+        if (!busyDraft[String(d)].length) delete busyDraft[String(d)];
+        renderBusyList();
+      };
+    });
+    wrap.querySelectorAll('.busy-row').forEach(row => {
+      const d = +row.dataset.day, i = +row.dataset.i;
+      const sEl = row.querySelector('.busy-start');
+      const eEl = row.querySelector('.busy-end');
+      const nEl = row.querySelector('.busy-name');
+      const sync = () => {
+        let s = +sEl.value, e = +eEl.value;
+        if (e <= s) { e = s + 30; eEl.value = String(e); }
+        busyDraft[String(d)][i] = { s, e, n: nEl.value.trim() };
+      };
+      sEl.onchange = sync; eEl.onchange = sync;
+      nEl.oninput = sync;
+    });
+  }
+
+  // Day-chip toggle — re-render busy list so removed days drop their section.
+  backdrop.querySelectorAll('.day-chip').forEach(el => {
+    el.onclick = () => { el.classList.toggle('on'); renderBusyList(); };
+  });
+  document.getElementById('wStart').onchange = renderBusyList;
+  document.getElementById('wEnd').onchange   = renderBusyList;
+  renderBusyList();
+
+  if (!firstTime) {
+    document.getElementById('wCancel').onclick = () => backdrop.remove();
+    backdrop.addEventListener('click', e => { if (e.target === backdrop) backdrop.remove(); });
+  }
+
+  document.getElementById('wSave').onclick = async () => {
+    const days = Array.from(backdrop.querySelectorAll('.day-chip.on'))
+      .map(el => +el.dataset.day).sort();
+    if (!days.length) { alert('Pick at least one study day.'); return; }
+    const start = +document.getElementById('wStart').value;
+    const end   = +document.getElementById('wEnd').value;
+    if (end <= start) { alert('Your latest end time must be after your earliest start.'); return; }
+    const weekend = document.getElementById('wWeekend').value;
+    const hours   = +document.getElementById('wHours').value;
+
+    // Drop any busy windows attached to days they un-checked, then sort each
+    // day's windows so the grid renders deterministically.
+    const cleaned = {};
+    for (const d of days) {
+      const arr = (busyDraft[String(d)] || [])
+        .map(w => { const b = busyBounds(w); return { s: b.s, e: b.e, n: b.n }; })
+        .filter(w => w.e > w.s);
+      arr.sort((a,b) => a.s - b.s);
+      if (arr.length) cleaned[String(d)] = arr;
+    }
+
+    const update = {
+      rt_study_days:     days,
+      rt_earliest_start: start,
+      rt_latest_end:     end,
+      rt_weekend_mode:   weekend,
+      rt_weekly_hours:   hours,
+      rt_busy_windows:   cleaned,
+    };
+    const { error } = await supabaseClient
+      .from('profiles').update(update).eq('id', user.id);
+    if (error) { alert('Save failed: ' + error.message); return; }
+    Object.assign(profile, update);
+    backdrop.remove();
+    renderPage();
+  };
+}
+
+async function onClearWeek() {
+  if (!sessions.length) return;
+  if (!confirm(`Delete all ${sessions.length} sessions this week?`)) return;
+  const { error } = await supabaseClient
+    .from('revision_sessions').delete().eq('user_id', user.id);
+  if (error) { alert('Clear failed: ' + error.message); return; }
+  sessions = [];
+  renderSessions(); updateWeekTotal();
+}
+
+// ── util ───────────────────────────────────────────────────────
+function escapeHtml(s) {
+  return String(s ?? '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
 </script>
 </body>
 </html>
