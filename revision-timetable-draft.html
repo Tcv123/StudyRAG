@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>RAG Learning — Revision Timetable (Draft)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="nav-gating.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD;
+      --border: #B8D0E8; --border-hover: #2563EB;
+      --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+      --accent: #2563EB; --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --red: #DC2626; --red-dim: rgba(220,38,38,0.12);
+      --amber: #D97706; --amber-dim: rgba(217,119,6,0.12);
+      --green: #059669; --green-dim: rgba(5,150,105,0.12);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+    .app { display: flex; min-height: 100vh; }
+
+    /* ── sidebar (identical to live page) ───────────────────── */
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; text-decoration: none; }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-item.locked { opacity: 0.5; cursor: default; pointer-events: none; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* ── main ─────────────────────────────────────────────── */
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
+    .topbar { margin-bottom: 24px; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+    .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-top: 3px; }
+    .draft-pill { display: inline-block; margin-left: 10px; padding: 3px 9px; font-size: 11px; font-weight: 600; background: var(--amber-dim); color: var(--amber); border-radius: 999px; vertical-align: middle; }
+
+    .lock-overlay, .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: var(--amber-dim); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: var(--amber); margin-bottom: 20px; }
+    .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
+    .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
+    .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, var(--amber), #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+
+    /* ── toolbar ──────────────────────────────────────────── */
+    .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 9px; font-size: 13.5px; font-weight: 500; cursor: pointer; border: 1px solid transparent; font-family: var(--font-body); transition: all 0.15s; }
+    .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn-primary:hover { background: var(--accent-dark); }
+    .btn-ghost { background: var(--surface); color: var(--text); border-color: var(--border); }
+    .btn-ghost:hover { border-color: var(--accent); color: var(--accent-dark); }
+    .btn-danger { background: var(--red); color: #fff; border-color: var(--red); }
+    .btn-danger:hover { filter: brightness(0.92); }
+    .hint { font-size: 13px; color: var(--muted); margin-left: 6px; }
+    .stat-pill { padding: 7px 13px; border-radius: 999px; background: var(--surface); border: 1px solid var(--border); font-size: 12.5px; color: var(--muted); margin-left: auto; }
+    .stat-pill strong { color: var(--text); font-weight: 600; }
+
+    /* ── grid ─────────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: 60px repeat(7, 1fr);
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+    .cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); min-height: 28px; }
+    .cell:nth-child(8n) { border-right: none; }
+    .cell.head { background: var(--surface2); font-size: 12px; font-weight: 600; color: var(--muted); padding: 10px 0; text-align: center; letter-spacing: 0.04em; text-transform: uppercase; }
+    .cell.head.corner { background: var(--surface2); }
+    .cell.time { background: var(--surface2); font-size: 11px; color: var(--muted2); text-align: right; padding: 2px 8px 0 0; line-height: 1; }
+    .cell.slot { position: relative; cursor: pointer; transition: background 0.1s; }
+    .cell.slot:hover { background: var(--accent-dim); }
+    .cell.slot.weekend { background: rgba(37,99,235,0.03); }
+    .cell.slot.weekend:hover { background: var(--accent-dim); }
+
+    .session-card {
+      position: absolute;
+      left: 2px; right: 2px; top: 2px;
+      background: var(--accent);
+      color: #fff;
+      border-radius: 6px;
+      padding: 4px 6px;
+      font-size: 11px;
+      line-height: 1.2;
+      cursor: pointer;
+      overflow: hidden;
+      z-index: 2;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+    }
+    .session-card .ss-subj { font-weight: 600; }
+    .session-card .ss-topic { opacity: 0.85; font-size: 10px; margin-top: 1px; }
+    .session-card.rag-red    { background: var(--red); }
+    .session-card.rag-amber  { background: var(--amber); }
+    .session-card.rag-green  { background: var(--green); }
+
+    /* ── modal ────────────────────────────────────────────── */
+    .modal-backdrop {
+      position: fixed; inset: 0; background: rgba(11,30,63,0.4);
+      display: flex; align-items: center; justify-content: center;
+      z-index: 100; padding: 20px;
+    }
+    .modal-card {
+      background: var(--surface); border-radius: 14px; padding: 24px;
+      width: 100%; max-width: 420px; box-shadow: 0 20px 50px rgba(11,30,63,0.18);
+    }
+    .modal-title { font-family: var(--font-display); font-size: 20px; margin-bottom: 4px; }
+    .modal-sub { font-size: 12.5px; color: var(--muted); margin-bottom: 18px; }
+    .field { display: block; margin-bottom: 12px; }
+    .field-label { display: block; font-size: 12px; font-weight: 500; color: var(--muted); margin-bottom: 5px; }
+    .field input, .field select, .field textarea {
+      width: 100%; padding: 9px 11px; font-size: 14px; font-family: var(--font-body);
+      border: 1px solid var(--border); border-radius: 8px; background: var(--surface);
+      color: var(--text);
+    }
+    .field input:focus, .field select:focus, .field textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .field textarea { resize: vertical; min-height: 60px; }
+    .modal-actions { display: flex; gap: 8px; margin-top: 18px; }
+    .modal-actions .spacer { flex: 1; }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item active" href="revision-timetable.html"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer">?</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="supabaseClient.auth.signOut().then(()=>location='auth/login.html')">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="topbar">
+      <div>
+        <div class="page-title">📆 Revision Timetable <span class="draft-pill">DRAFT</span></div>
+        <div class="page-sub">Plan your week. Auto-balance subjects against your weak topics.</div>
+      </div>
+    </div>
+    <div id="pageBody">
+      <div class="empty-state">
+        <div class="placeholder-icon" style="width:60px;height:60px;border-radius:50%;background:var(--accent-dim);display:flex;align-items:center;justify-content:center;font-size:28px;margin-bottom:16px;">⏳</div>
+        <div class="lock-title">Loading…</div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<script>
+/* ════════════════════════════════════════════════════════════════
+   REVISION TIMETABLE — draft implementation.
+
+   Data shape (Supabase table: revision_sessions, see migration):
+     { id, day_of_week (0=Mon..6=Sun), start_min (mins past midnight, 30-min grid),
+       duration_min (30/60/90/120), subject, topic?, notes? }
+
+   Grid: 7 days × half-hour rows from 7:00 to 22:30 (32 slots).
+   Click a slot → modal to add. Click a card → modal to edit/delete.
+   Auto-fill: ranks topics by RAG (red=3, amber=2, green=1), packs into
+     a preferred-slot pattern, round-robins subjects to avoid clumps.
+═════════════════════════════════════════════════════════════════ */
+
+const DAYS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
+const SLOT_START_HOUR = 7;
+const SLOT_END_HOUR = 23;                                  // exclusive
+const SLOTS = (SLOT_END_HOUR - SLOT_START_HOUR) * 2;       // 32 half-hour rows
+const RAG_WEIGHT = { red: 3, amber: 2, green: 1 };
+const RAG_RANK   = { red: 0, amber: 1, green: 2, pending: 3 };
+
+// Preferred slots for auto-fill: weekday evenings + weekend midday/afternoon.
+// Each entry is [day_of_week, start_hour]. Order = priority order.
+const PREFERRED_SLOTS = [
+  // Weekday evenings 17:00, 18:00, 19:00, 20:00 (Mon..Fri)
+  ...[0,1,2,3,4].flatMap(d => [17,18,19,20].map(h => [d, h])),
+  // Weekend mornings + afternoons
+  ...[5,6].flatMap(d => [10, 11, 14, 15, 16, 17].map(h => [d, h])),
+];
+
+let user = null;
+let profile = null;
+let subjects = [];     // [{ subject, exam_board, emoji, rag_status }]
+let progress = [];     // [{ subject, topic, rag_status }]
+let sessions = [];     // [{ id, day_of_week, start_min, duration_min, subject, topic, notes }]
+
+// ── boot ───────────────────────────────────────────────────────
+(async function init() {
+  const { data: { user: u } } = await supabaseClient.auth.getUser();
+  if (!u) { location = 'auth/login.html'; return; }
+  user = u;
+
+  const { data: p } = await supabaseClient
+    .from('profiles').select('*').eq('id', user.id).single();
+  profile = p;
+  paintSidebarUser();
+
+  if (!isPro(profile)) { renderLock(); return; }
+
+  await loadData();
+  renderPage();
+})();
+
+function paintSidebarUser() {
+  const fn = profile?.first_name || '', ln = profile?.last_name || '';
+  document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
+  document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
+  if (profile?.avatar_url) {
+    const av = document.getElementById('avatarInitials');
+    const img = document.createElement('img');
+    img.src = profile.avatar_url;
+    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+    av.replaceChildren(img);
+  }
+}
+
+function isPro(p) {
+  if (!p) return false;
+  const tier = p.subscription_tier || 'free';
+  const status = p.subscription_status || 'active';
+  const exp = p.subscription_expires_at ? new Date(p.subscription_expires_at) : null;
+  return tier !== 'free' && ['active','trialing'].includes(status) && (!exp || exp > new Date());
+}
+
+function renderLock() {
+  document.getElementById('pageBody').innerHTML = `
+    <div class="lock-overlay">
+      <div class="lock-icon">🔒</div>
+      <div class="lock-title">Pro feature</div>
+      <div class="lock-msg">Revision timetable is available with a Pro subscription.</div>
+      <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
+    </div>`;
+}
+
+async function loadData() {
+  const [subjRes, progRes, sessRes] = await Promise.all([
+    supabaseClient.from('user_subjects')
+      .select('subject,exam_board,emoji,rag_status')
+      .eq('user_id', user.id),
+    supabaseClient.from('topic_progress')
+      .select('subject,topic,rag_status')
+      .eq('user_id', user.id),
+    supabaseClient.from('revision_sessions')
+      .select('*')
+      .eq('user_id', user.id),
+  ]);
+  subjects = subjRes.data || [];
+  progress = progRes.data || [];
+  sessions = sessRes.data || [];
+}
+
+// ── render ─────────────────────────────────────────────────────
+function renderPage() {
+  if (!subjects.length) {
+    document.getElementById('pageBody').innerHTML = `
+      <div class="empty-state">
+        <div class="lock-icon" style="background:var(--accent-dim);border-color:var(--accent);color:var(--accent-dark);">📚</div>
+        <div class="lock-title">No subjects yet</div>
+        <div class="lock-msg">Add subjects on your dashboard so the planner has something to schedule.</div>
+        <a class="lock-btn" href="auth/setup.html" style="background:linear-gradient(135deg,var(--accent),var(--accent-dark));">Add subjects</a>
+      </div>`;
+    return;
+  }
+
+  document.getElementById('pageBody').innerHTML = `
+    <div class="toolbar">
+      <button class="btn btn-primary" id="autoFillBtn">✦ Auto-fill week</button>
+      <button class="btn btn-ghost" id="clearBtn">Clear week</button>
+      <span class="hint">Click any empty slot to add a session.</span>
+      <span class="stat-pill" id="weekTotal"></span>
+    </div>
+    <div class="grid" id="weekGrid"></div>
+  `;
+  buildGrid();
+  document.getElementById('autoFillBtn').onclick = onAutoFill;
+  document.getElementById('clearBtn').onclick = onClearWeek;
+  updateWeekTotal();
+}
+
+function buildGrid() {
+  const grid = document.getElementById('weekGrid');
+  let html = '<div class="cell head corner"></div>';
+  for (let d = 0; d < 7; d++) html += `<div class="cell head">${DAYS[d]}</div>`;
+  for (let s = 0; s < SLOTS; s++) {
+    const hr = SLOT_START_HOUR + Math.floor(s / 2);
+    const half = s % 2 === 1;
+    const label = half ? '' : `${hr}:00`;
+    const min = SLOT_START_HOUR * 60 + s * 30;
+    html += `<div class="cell time">${label}</div>`;
+    for (let d = 0; d < 7; d++) {
+      const wk = (d >= 5) ? ' weekend' : '';
+      html += `<div class="cell slot${wk}" data-day="${d}" data-min="${min}"></div>`;
+    }
+  }
+  grid.innerHTML = html;
+  grid.querySelectorAll('.slot').forEach(el => {
+    el.onclick = () => openModal({
+      day_of_week: +el.dataset.day,
+      start_min:   +el.dataset.min,
+      duration_min: 60,
+    });
+  });
+  renderSessions();
+}
+
+function renderSessions() {
+  document.querySelectorAll('.session-card').forEach(el => el.remove());
+  for (const sess of sessions) {
+    const slot = document.querySelector(
+      `.slot[data-day="${sess.day_of_week}"][data-min="${sess.start_min}"]`
+    );
+    if (!slot) continue;
+    const rows = Math.max(1, Math.round(sess.duration_min / 30));
+    const card = document.createElement('div');
+    card.className = `session-card rag-${getSubjectRag(sess.subject)}`;
+    card.style.height = `calc(${rows * 100}% + ${(rows - 1) * 1}px - 4px)`;
+    card.innerHTML =
+      `<div class="ss-subj">${escapeHtml(sess.subject)}</div>` +
+      (sess.topic ? `<div class="ss-topic">${escapeHtml(sess.topic)}</div>` : '');
+    card.onclick = (e) => { e.stopPropagation(); openModal(sess); };
+    slot.appendChild(card);
+  }
+}
+
+function updateWeekTotal() {
+  const total = sessions.reduce((sum, s) => sum + s.duration_min, 0);
+  const hrs = Math.floor(total / 60), mins = total % 60;
+  const pill = document.getElementById('weekTotal');
+  if (pill) {
+    pill.innerHTML = `<strong>${hrs}h${mins ? ' '+mins+'m' : ''}</strong> · ${sessions.length} session${sessions.length===1?'':'s'} this week`;
+  }
+}
+
+function getSubjectRag(subjectName) {
+  const s = subjects.find(x => x.subject === subjectName);
+  const r = s?.rag_status || 'pending';
+  return ['red','amber','green'].includes(r) ? r : 'amber';
+}
+
+// ── modal ──────────────────────────────────────────────────────
+function openModal(sess) {
+  const isEdit = !!sess.id;
+  const backdrop = document.createElement('div');
+  backdrop.className = 'modal-backdrop';
+
+  const subjOptions = subjects.map(s =>
+    `<option value="${escapeHtml(s.subject)}">${escapeHtml(s.subject)}</option>`
+  ).join('');
+
+  const hr = Math.floor(sess.start_min / 60);
+  const mn = sess.start_min % 60;
+  const slotLabel = `${DAYS[sess.day_of_week]} ${hr}:${mn.toString().padStart(2,'0')}`;
+
+  backdrop.innerHTML = `
+    <div class="modal-card">
+      <div class="modal-title">${isEdit ? 'Edit session' : 'New session'}</div>
+      <div class="modal-sub">${slotLabel}</div>
+      <label class="field">
+        <span class="field-label">Subject</span>
+        <select id="mSubject">${subjOptions}</select>
+      </label>
+      <label class="field">
+        <span class="field-label">Topic (optional)</span>
+        <input type="text" id="mTopic" placeholder="e.g. Photosynthesis" maxlength="120">
+      </label>
+      <label class="field">
+        <span class="field-label">Duration</span>
+        <select id="mDur">
+          <option value="30">30 min</option>
+          <option value="60" selected>1 hour</option>
+          <option value="90">1.5 hours</option>
+          <option value="120">2 hours</option>
+        </select>
+      </label>
+      <label class="field">
+        <span class="field-label">Notes (optional)</span>
+        <textarea id="mNotes" maxlength="280" placeholder="Anything you want to remember about this slot"></textarea>
+      </label>
+      <div class="modal-actions">
+        ${isEdit ? '<button class="btn btn-danger" id="mDelete">Delete</button>' : ''}
+        <span class="spacer"></span>
+        <button class="btn btn-ghost" id="mCancel">Cancel</button>
+        <button class="btn btn-primary" id="mSave">${isEdit ? 'Save' : 'Add'}</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(backdrop);
+
+  // Pre-fill
+  document.getElementById('mSubject').value = sess.subject || subjects[0].subject;
+  document.getElementById('mTopic').value   = sess.topic || '';
+  document.getElementById('mDur').value     = String(sess.duration_min || 60);
+  document.getElementById('mNotes').value   = sess.notes || '';
+
+  const close = () => backdrop.remove();
+  backdrop.addEventListener('click', e => { if (e.target === backdrop) close(); });
+  document.getElementById('mCancel').onclick = close;
+  document.getElementById('mSave').onclick = async () => {
+    const row = {
+      user_id:      user.id,
+      day_of_week:  sess.day_of_week,
+      start_min:    sess.start_min,
+      duration_min: +document.getElementById('mDur').value,
+      subject:      document.getElementById('mSubject').value,
+      topic:        document.getElementById('mTopic').value.trim() || null,
+      notes:        document.getElementById('mNotes').value.trim() || null,
+    };
+    if (isEdit) {
+      const { error } = await supabaseClient
+        .from('revision_sessions').update(row).eq('id', sess.id);
+      if (error) { alert('Save failed: ' + error.message); return; }
+      Object.assign(sessions.find(s => s.id === sess.id), row);
+    } else {
+      const { data, error } = await supabaseClient
+        .from('revision_sessions').insert(row).select().single();
+      if (error) { alert('Save failed: ' + error.message); return; }
+      sessions.push(data);
+    }
+    renderSessions(); updateWeekTotal(); close();
+  };
+  if (isEdit) {
+    document.getElementById('mDelete').onclick = async () => {
+      if (!confirm('Delete this session?')) return;
+      const { error } = await supabaseClient
+        .from('revision_sessions').delete().eq('id', sess.id);
+      if (error) { alert('Delete failed: ' + error.message); return; }
+      sessions = sessions.filter(s => s.id !== sess.id);
+      renderSessions(); updateWeekTotal(); close();
+    };
+  }
+}
+
+// ── auto-fill ──────────────────────────────────────────────────
+async function onAutoFill() {
+  if (sessions.length && !confirm('Auto-fill will add sessions to empty slots only. Continue?')) return;
+
+  // Rank topics by RAG weight (red highest). Fall back to subjects if a user
+  // has no topic_progress rows yet.
+  const ranked = [];
+  for (const p of progress) {
+    if (!p.rag_status) continue;
+    ranked.push({ subject: p.subject, topic: p.topic, w: RAG_WEIGHT[p.rag_status] || 1 });
+  }
+  for (const s of subjects) {
+    ranked.push({ subject: s.subject, topic: null, w: RAG_WEIGHT[s.rag_status] || 1 });
+  }
+  ranked.sort((a, b) => b.w - a.w);
+  if (!ranked.length) { alert('Add subjects first.'); return; }
+
+  // Build set of already-busy (day, min) cells so we don't double-book.
+  const busy = new Set();
+  for (const s of sessions) {
+    const rows = Math.round(s.duration_min / 30);
+    for (let i = 0; i < rows; i++) {
+      busy.add(`${s.day_of_week}:${s.start_min + i*30}`);
+    }
+  }
+
+  // Walk preferred slots in priority order. Round-robin subjects (top of the
+  // ranked list) so we don't pile three Chem sessions in a row.
+  const queue = ranked.slice(0, Math.max(12, ranked.length));
+  let qi = 0;
+  let lastSubject = null;
+  const toInsert = [];
+
+  for (const [day, hr] of PREFERRED_SLOTS) {
+    const startMin = hr * 60;
+    const dur = 60;
+    const rows = dur / 30;
+    let collides = false;
+    for (let i = 0; i < rows; i++) {
+      if (busy.has(`${day}:${startMin + i*30}`)) { collides = true; break; }
+    }
+    if (collides) continue;
+
+    // Pick next from queue, skipping the same subject as last placement.
+    let pick = null;
+    for (let attempts = 0; attempts < queue.length; attempts++) {
+      const cand = queue[qi % queue.length];
+      qi++;
+      if (cand.subject !== lastSubject) { pick = cand; break; }
+    }
+    if (!pick) pick = queue[0];
+
+    toInsert.push({
+      user_id: user.id, day_of_week: day, start_min: startMin,
+      duration_min: dur, subject: pick.subject, topic: pick.topic,
+    });
+    for (let i = 0; i < rows; i++) busy.add(`${day}:${startMin + i*30}`);
+    lastSubject = pick.subject;
+    if (toInsert.length >= 12) break;        // cap at 12h / week
+  }
+
+  if (!toInsert.length) { alert('No empty preferred slots — clear the week first or add sessions manually.'); return; }
+
+  const { data, error } = await supabaseClient
+    .from('revision_sessions').insert(toInsert).select();
+  if (error) { alert('Auto-fill failed: ' + error.message); return; }
+  sessions.push(...data);
+  renderSessions(); updateWeekTotal();
+}
+
+async function onClearWeek() {
+  if (!sessions.length) return;
+  if (!confirm(`Delete all ${sessions.length} sessions this week?`)) return;
+  const { error } = await supabaseClient
+    .from('revision_sessions').delete().eq('user_id', user.id);
+  if (error) { alert('Clear failed: ' + error.message); return; }
+  sessions = [];
+  renderSessions(); updateWeekTotal();
+}
+
+// ── util ───────────────────────────────────────────────────────
+function escapeHtml(s) {
+  return String(s ?? '')
+    .replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;')
+    .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
+}
+</script>
+</body>
+</html>
