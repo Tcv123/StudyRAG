@@ -2,6 +2,13 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "PowerShell static server",
+      "runtimeExecutable": "powershell",
+      "runtimeArgs": ["-NoProfile", "-ExecutionPolicy", "Bypass", "-File", ".claude/serve.ps1", "-Port", "8000"],
+      "port": 8000,
+      "autoPort": true
+    },
+    {
       "name": "Python3 HTTP server",
       "runtimeExecutable": "python3",
       "runtimeArgs": ["-m", "http.server"],

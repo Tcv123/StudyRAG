@@ -232,7 +232,11 @@ let progress = [];     // [{ subject, topic, rag_status }]
 let sessions = [];     // [{ id, day_of_week, start_min, duration_min, subject, topic, notes }]
 
 // ── boot ───────────────────────────────────────────────────────
+const DEMO = new URLSearchParams(location.search).get('demo') === '1';
+
 (async function init() {
+  if (DEMO) { initDemo(); return; }
+
   const { data: { user: u } } = await supabaseClient.auth.getUser();
   if (!u) { location = 'auth/login.html'; return; }
   user = u;
@@ -247,6 +251,62 @@ let sessions = [];     // [{ id, day_of_week, start_min, duration_min, subject, 
   await loadData();
   renderPage();
 })();
+
+// Demo mode: ?demo=1 — render the UI with mock data, no Supabase calls.
+// Save / Auto-fill / Delete all become no-ops that just update local state.
+function initDemo() {
+  user    = { id: 'demo-user' };
+  profile = {
+    first_name: 'Demo', last_name: 'User',
+    subscription_tier: 'pro', subscription_status: 'active',
+  };
+  subjects = [
+    { subject: 'Chemistry',        exam_board: 'AQA',     emoji: '⚗️', rag_status: 'red'   },
+    { subject: 'Biology',          exam_board: 'AQA',     emoji: '🧬', rag_status: 'amber' },
+    { subject: 'Physics',          exam_board: 'OCR A',   emoji: '⚡', rag_status: 'green' },
+    { subject: 'Mathematics',      exam_board: 'Edexcel', emoji: '➗', rag_status: 'amber' },
+  ];
+  progress = [
+    { subject: 'Chemistry',   topic: 'Organic mechanisms',  rag_status: 'red'   },
+    { subject: 'Chemistry',   topic: 'Equilibria',          rag_status: 'red'   },
+    { subject: 'Biology',     topic: 'Photosynthesis',      rag_status: 'amber' },
+    { subject: 'Biology',     topic: 'Gene expression',     rag_status: 'red'   },
+    { subject: 'Physics',     topic: 'Capacitors',          rag_status: 'green' },
+    { subject: 'Mathematics', topic: 'Integration',         rag_status: 'amber' },
+  ];
+  sessions = [
+    { id: 'd1', day_of_week: 0, start_min: 17*60, duration_min: 60, subject: 'Chemistry',   topic: 'Organic mechanisms', notes: null },
+    { id: 'd2', day_of_week: 2, start_min: 18*60, duration_min: 90, subject: 'Biology',     topic: 'Gene expression',    notes: null },
+    { id: 'd3', day_of_week: 5, start_min: 10*60, duration_min: 120, subject: 'Mathematics', topic: 'Integration',        notes: null },
+  ];
+  paintSidebarUser();
+  patchSupabaseForDemo();
+  renderPage();
+}
+
+// In demo mode, intercept the Supabase calls used by save/delete/auto-fill so
+// nothing hits the network and a fake id is generated locally. The rest of the
+// page code is identical to production.
+function patchSupabaseForDemo() {
+  let nextId = 100;
+  const fakeChain = (rows) => ({
+    select: () => fakeChain(rows),
+    eq: () => fakeChain(rows),
+    single: () => Promise.resolve({ data: rows[0] || null, error: null }),
+    then: (cb) => cb({ data: rows, error: null }),
+  });
+  supabaseClient.from = () => ({
+    insert: (payload) => {
+      const arr = Array.isArray(payload) ? payload : [payload];
+      const withIds = arr.map(r => ({ ...r, id: 'demo-' + (nextId++) }));
+      return fakeChain(withIds);
+    },
+    update: () => fakeChain([{ ok: true }]),
+    delete: () => fakeChain([{ ok: true }]),
+    select: () => fakeChain([]),
+    eq: () => fakeChain([]),
+  });
+}
 
 function paintSidebarUser() {
   const fn = profile?.first_name || '', ln = profile?.last_name || '';
