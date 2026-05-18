@@ -733,21 +733,30 @@ function buildPreferredSlots(prefs) {
   const endHour    = prefs.rt_latest_end;
   const weekendMode = prefs.rt_weekend_mode;
 
-  const slots = [];
+  // First pass: figure out each day's available hours (weekends may differ).
+  const dayHours = {};
   for (const day of days) {
     const isWeekend = day >= 5;
-    if (isWeekend && weekendMode === 'none') continue;
-
+    if (isWeekend && weekendMode === 'none') { dayHours[day] = []; continue; }
     let dayStart = startHour;
     let dayEnd   = endHour;
     if (isWeekend && weekendMode === 'more') dayStart = Math.min(dayStart, 10);   // weekends can start at 10am
     if (isWeekend && weekendMode === 'less') dayEnd   = Math.min(dayEnd, startHour + 2); // shorter window on weekends
-
-    // Walk evenings first so weekday "study time" is prioritised. For weekends
-    // when mode='more', we also include the morning block.
     const hours = [];
     for (let h = dayStart; h < dayEnd; h++) hours.push(h);
-    for (const h of hours) slots.push([day, h]);
+    dayHours[day] = hours;
+  }
+
+  // Second pass: round-robin by hour-slot index so the first N sessions hit
+  // N different days before doubling up. Without this, Mon-Tue fill completely
+  // and Thu-Sun stay empty when target hours < days * window-size.
+  const maxLen = Math.max(0, ...days.map(d => dayHours[d].length));
+  const slots = [];
+  for (let hi = 0; hi < maxLen; hi++) {
+    for (const day of days) {
+      const h = dayHours[day][hi];
+      if (h !== undefined) slots.push([day, h]);
+    }
   }
   return slots;
 }
