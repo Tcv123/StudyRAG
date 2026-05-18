@@ -59,6 +59,39 @@
     .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
     .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, var(--amber), #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
 
+    /* ── first-time intro ─────────────────────────────────── */
+    .intro-card {
+      background: var(--surface); border: 1px solid var(--border); border-radius: 18px;
+      padding: 50px 44px; max-width: 720px; margin: 0 auto;
+      text-align: center;
+    }
+    .intro-icon { width: 76px; height: 76px; border-radius: 50%; background: var(--accent-dim);
+      border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center;
+      font-size: 36px; margin: 0 auto 22px; }
+    .intro-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.01em; margin-bottom: 12px; }
+    .intro-lead  { font-size: 15px; color: var(--muted); line-height: 1.6; max-width: 540px; margin: 0 auto 28px; }
+    .intro-features {
+      display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 16px; text-align: left; margin: 0 auto 32px; max-width: 600px;
+    }
+    .intro-feat { display: flex; gap: 10px; align-items: flex-start; }
+    .intro-feat-dot {
+      flex-shrink: 0; width: 28px; height: 28px; border-radius: 8px;
+      background: var(--accent-dim); color: var(--accent-dark);
+      display: flex; align-items: center; justify-content: center; font-size: 14px;
+    }
+    .intro-feat-text { font-size: 13.5px; color: var(--text); line-height: 1.45; }
+    .intro-feat-text strong { font-weight: 600; }
+    .intro-cta {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 13px 28px; background: var(--accent); color: #fff;
+      border: none; border-radius: 10px; font-family: var(--font-body);
+      font-size: 14.5px; font-weight: 600; cursor: pointer;
+      transition: background 0.15s;
+    }
+    .intro-cta:hover { background: var(--accent-dark); }
+    .intro-note { margin-top: 14px; font-size: 12.5px; color: var(--muted2); }
+
     /* ── toolbar ──────────────────────────────────────────── */
     .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
     .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 9px; font-size: 13.5px; font-weight: 500; cursor: pointer; border: 1px solid transparent; font-family: var(--font-body); transition: all 0.15s; }
@@ -324,7 +357,7 @@ const DEMO = new URLSearchParams(location.search).get('demo') === '1';
   await loadData();
 
   if (!hasPrefs(profile)) {
-    openWizard({ firstTime: true });
+    renderIntro();
   } else {
     renderPage();
   }
@@ -376,7 +409,7 @@ function initDemo() {
   ] : [];
   paintSidebarUser();
   patchSupabaseForDemo();
-  if (!hasPrefs(profile)) openWizard({ firstTime: true });
+  if (!hasPrefs(profile)) renderIntro();
   else renderPage();
 }
 
@@ -758,17 +791,44 @@ async function onAutoFill() {
   renderSessions(); updateWeekTotal();
 }
 
+// ── first-time intro ───────────────────────────────────────────
+function renderIntro() {
+  document.getElementById('pageBody').innerHTML = `
+    <div class="intro-card">
+      <div class="intro-icon">📆</div>
+      <div class="intro-title">Plan your week, the smart way</div>
+      <div class="intro-lead">
+        Your revision timetable turns the time you actually have into a colour-coded
+        weekly grid. Click any slot to plan a session — or hit Auto-fill and the
+        planner will spread your weakest subjects across the week for you.
+      </div>
+      <div class="intro-features">
+        <div class="intro-feat">
+          <div class="intro-feat-dot">✦</div>
+          <div class="intro-feat-text"><strong>Auto-balanced.</strong> Weaker topics (red) get more time than ones you've nailed (green).</div>
+        </div>
+        <div class="intro-feat">
+          <div class="intro-feat-dot">⏰</div>
+          <div class="intro-feat-text"><strong>Fits your life.</strong> Tell it when you're at football, tutoring or family time — it'll plan around them.</div>
+        </div>
+        <div class="intro-feat">
+          <div class="intro-feat-dot">📚</div>
+          <div class="intro-feat-text"><strong>Uses your subjects.</strong> Sessions are pulled from your RAG ratings, not invented.</div>
+        </div>
+        <div class="intro-feat">
+          <div class="intro-feat-dot">⚙</div>
+          <div class="intro-feat-text"><strong>Yours to change.</strong> Edit preferences any time, or click slots to tweak by hand.</div>
+        </div>
+      </div>
+      <button class="intro-cta" id="introCta">Get started →</button>
+      <div class="intro-note">Takes about 30 seconds. We'll ask 6 quick questions.</div>
+    </div>
+  `;
+  document.getElementById('introCta').onclick = () => openWizard({ firstTime: true });
+}
+
 // ── setup wizard ───────────────────────────────────────────────
 function openWizard({ firstTime }) {
-  // Hide grid behind wizard on first run so they don't see an empty page.
-  if (firstTime) {
-    document.getElementById('pageBody').innerHTML = `
-      <div class="empty-state">
-        <div class="lock-icon" style="background:var(--accent-dim);border-color:var(--accent);color:var(--accent-dark);">📆</div>
-        <div class="lock-title">Let's set up your timetable</div>
-        <div class="lock-msg">A few quick questions so Auto-fill knows your schedule.</div>
-      </div>`;
-  }
 
   const cur = {
     days:    profile.rt_study_days     ?? [0,1,2,3,4],
