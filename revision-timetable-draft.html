@@ -138,7 +138,7 @@
     .modal-actions .spacer { flex: 1; }
 
     /* ── setup wizard ─────────────────────────────────────── */
-    .wizard-card { max-width: 520px; }
+    .wizard-card { max-width: 560px; max-height: 90vh; overflow-y: auto; }
     .wizard-intro { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.55; }
     .day-row { display: flex; gap: 6px; flex-wrap: wrap; }
     .day-chip {
@@ -165,22 +165,36 @@
     .busy-add { background: none; border: none; color: var(--accent); font-size: 12px; font-weight: 500; cursor: pointer; padding: 2px 6px; border-radius: 6px; }
     .busy-add:hover { background: var(--accent-dim); }
     .busy-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; font-size: 13px; }
-    .busy-row select { padding: 5px 8px; font-size: 13px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); font-family: var(--font-body); color: var(--text); }
+    .busy-row select,
+    .busy-row input.busy-name { padding: 5px 8px; font-size: 13px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); font-family: var(--font-body); color: var(--text); }
+    .busy-row input.busy-name { flex: 1; min-width: 80px; }
+    .busy-row select:focus,
+    .busy-row input.busy-name:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 2px var(--accent-dim); }
     .busy-row .arrow { color: var(--muted2); }
     .busy-remove { background: none; border: none; color: var(--muted2); cursor: pointer; font-size: 16px; padding: 0 4px; line-height: 1; }
     .busy-remove:hover { color: var(--red); }
     .busy-empty { font-size: 12px; color: var(--muted2); font-style: italic; }
 
     /* ── busy cells on the grid ───────────────────────────── */
-    .cell.slot.busy {
+    .cell.slot.busy { cursor: not-allowed; }
+    .busy-card {
+      position: absolute;
+      left: 2px; right: 2px; top: 2px;
       background: repeating-linear-gradient(
-        45deg, rgba(120,145,176,0.10) 0 6px, transparent 6px 12px
+        45deg, rgba(120,145,176,0.18) 0 6px, rgba(234,242,252,0.85) 6px 12px
       );
-      cursor: not-allowed;
+      border: 1px dashed rgba(120,145,176,0.55);
+      color: var(--muted);
+      border-radius: 6px;
+      padding: 4px 6px;
+      font-size: 11px;
+      line-height: 1.2;
+      overflow: hidden;
+      z-index: 1;
+      pointer-events: none;     /* click should pass through (cells are non-clickable anyway) */
     }
-    .cell.slot.busy:hover { background: repeating-linear-gradient(
-      45deg, rgba(220,38,38,0.10) 0 6px, transparent 6px 12px
-    ); }
+    .busy-card .bc-label { font-weight: 600; color: var(--text); opacity: 0.7; }
+    .busy-card .bc-time  { font-size: 10px; margin-top: 1px; opacity: 0.85; }
   </style>
 </head>
 <body>
@@ -265,16 +279,25 @@ const RAG_WEIGHT = { red: 3, amber: 2, green: 1 };
 // and it's optional anyway (people without commitments leave it blank).
 const PREF_KEYS = ['rt_study_days','rt_earliest_start','rt_latest_end','rt_weekend_mode','rt_weekly_hours'];
 
-// Returns the busy-windows map { dayIdx: [[startMin,endMin], ...] } as a plain object.
+// Busy-windows map: { dayIdx: [{ s: startMin, e: endMin, n: name? }, ...] }.
+// Tolerates the legacy [start, end] tuple shape too — older rows in the DB
+// will still work after we shipped the object form.
 function getBusyWindows() {
   return profile?.rt_busy_windows || {};
+}
+function busyBounds(w) {
+  if (Array.isArray(w)) return { s: w[0], e: w[1], n: '' };
+  return { s: w.s, e: w.e, n: w.n || '' };
 }
 
 // True if [startMin, startMin + dur) on `day` overlaps any blackout window.
 function isBusy(day, startMin, dur) {
   const wins = getBusyWindows()[String(day)] || [];
   const end = startMin + dur;
-  return wins.some(([ws, we]) => startMin < we && ws < end);
+  return wins.some(w => {
+    const { s, e } = busyBounds(w);
+    return startMin < e && s < end;
+  });
 }
 
 let user = null;
@@ -327,9 +350,12 @@ function initDemo() {
     rt_latest_end:     havePrefs ? 22 : null,
     rt_weekend_mode:   havePrefs ? 'more' : null,
     rt_weekly_hours:   havePrefs ? 12 : null,
-    // Example busy windows so the demo shows the feature: Mon football
-    // 18:00-19:30, Wed tutoring 19:00-20:00, Sat family lunch 12:00-14:00.
-    rt_busy_windows:   havePrefs ? { '0': [[1080, 1170]], '2': [[1140, 1200]], '5': [[720, 840]] } : {},
+    // Example busy windows so the demo shows the feature.
+    rt_busy_windows:   havePrefs ? {
+      '0': [{ s: 1080, e: 1170, n: 'Football' }],         // Mon 18:00–19:30
+      '2': [{ s: 1140, e: 1200, n: 'Tutoring' }],         // Wed 19:00–20:00
+      '5': [{ s: 720,  e: 840,  n: 'Family lunch' }],     // Sat 12:00–14:00
+    } : {},
   };
   subjects = [
     { subject: 'Chemistry',        exam_board: 'AQA',     emoji: '⚗️', rag_status: 'red'   },
@@ -503,6 +529,29 @@ function renderSessions() {
       (sess.topic ? `<div class="ss-topic">${escapeHtml(sess.topic)}</div>` : '');
     card.onclick = (e) => { e.stopPropagation(); openModal(sess); };
     slot.appendChild(card);
+  }
+  renderBusyCards();
+}
+
+function renderBusyCards() {
+  document.querySelectorAll('.busy-card').forEach(el => el.remove());
+  const bw = getBusyWindows();
+  const fmt = m => `${Math.floor(m/60).toString().padStart(2,'0')}:${(m%60).toString().padStart(2,'0')}`;
+  for (const dStr of Object.keys(bw)) {
+    const d = +dStr;
+    for (const w of (bw[dStr] || [])) {
+      const { s, e, n } = busyBounds(w);
+      const slot = document.querySelector(`.slot[data-day="${d}"][data-min="${s}"]`);
+      if (!slot) continue;
+      const rows = Math.max(1, Math.round((e - s) / 30));
+      const card = document.createElement('div');
+      card.className = 'busy-card';
+      card.style.height = `calc(${rows * 100}% + ${(rows - 1) * 1}px - 4px)`;
+      card.innerHTML =
+        `<div class="bc-label">${escapeHtml(n || 'Busy')}</div>` +
+        `<div class="bc-time">${fmt(s)}–${fmt(e)}</div>`;
+      slot.appendChild(card);
+    }
   }
 }
 
@@ -825,13 +874,17 @@ function openWizard({ firstTime }) {
     }
     wrap.innerHTML = selectedDays.map(d => {
       const wins = busyDraft[String(d)] || [];
-      const rows = wins.map((win, i) => `
+      const rows = wins.map((win, i) => {
+        const { s, e, n } = busyBounds(win);
+        return `
         <div class="busy-row" data-day="${d}" data-i="${i}">
-          <select class="busy-start">${halfHourOpts(win[0])}</select>
+          <input class="busy-name" type="text" maxlength="40" placeholder="Activity" value="${escapeHtml(n)}">
+          <select class="busy-start">${halfHourOpts(s)}</select>
           <span class="arrow">→</span>
-          <select class="busy-end">${halfHourOpts(win[1])}</select>
+          <select class="busy-end">${halfHourOpts(e)}</select>
           <button class="busy-remove" type="button" title="Remove">×</button>
-        </div>`).join('');
+        </div>`;
+      }).join('');
       const empty = wins.length ? '' : '<div class="busy-empty">No commitments — free all day.</div>';
       return `
         <div class="busy-day" data-day="${d}">
@@ -868,12 +921,14 @@ function openWizard({ firstTime }) {
       const d = +row.dataset.day, i = +row.dataset.i;
       const sEl = row.querySelector('.busy-start');
       const eEl = row.querySelector('.busy-end');
+      const nEl = row.querySelector('.busy-name');
       const sync = () => {
         let s = +sEl.value, e = +eEl.value;
         if (e <= s) { e = s + 30; eEl.value = String(e); }
-        busyDraft[String(d)][i] = [s, e];
+        busyDraft[String(d)][i] = { s, e, n: nEl.value.trim() };
       };
       sEl.onchange = sync; eEl.onchange = sync;
+      nEl.oninput = sync;
     });
   }
 
@@ -904,8 +959,10 @@ function openWizard({ firstTime }) {
     // day's windows so the grid renders deterministically.
     const cleaned = {};
     for (const d of days) {
-      const arr = (busyDraft[String(d)] || []).filter(w => w[1] > w[0]);
-      arr.sort((a,b) => a[0] - b[0]);
+      const arr = (busyDraft[String(d)] || [])
+        .map(w => { const b = busyBounds(w); return { s: b.s, e: b.e, n: b.n }; })
+        .filter(w => w.e > w.s);
+      arr.sort((a,b) => a.s - b.s);
       if (arr.length) cleaned[String(d)] = arr;
     }
 
