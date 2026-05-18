@@ -939,13 +939,15 @@ function openWizard({ firstTime }) {
 
   function activeSteps() {
     const hasWeekend = state.days.some(d => d >= 5);
+    // Order: shape the week first (days → windows → commitments), then dial
+    // in the intensity (hours/week → session length).
     return [
       'days',
       'weekday',
       ...(hasWeekend ? ['weekend'] : []),
+      'busy',
       'hours',
       'duration',
-      'busy',
     ];
   }
 
