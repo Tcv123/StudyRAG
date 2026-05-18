@@ -547,6 +547,53 @@ function showUpgrade() {
   el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
 
+// Reads subscription_tier / status / expires_at from the profile row and
+// renders the "Your plan" card accordingly. Matches is_pro_user() in
+// supabase-flashcards-migration.sql.
+function renderPlanCard(profile) {
+  const tier      = profile?.subscription_tier   || 'free';
+  const status    = profile?.subscription_status || 'active';
+  const expiresAt = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+
+  const isPro =
+    (tier === 'pro_monthly' || tier === 'pro_annual') &&
+    (status === 'active' || status === 'trialing') &&
+    (!expiresAt || expiresAt > new Date());
+
+  const nameEl     = document.getElementById('planName');
+  const descEl     = document.getElementById('planDesc');
+  const priceEl    = document.getElementById('planPrice');
+  const upgradeBtn = document.getElementById('upgradeBtn');
+  const cardEl     = document.getElementById('planCard');
+  const proFeats   = document.getElementById('proFeatures');
+
+  if (!isPro) {
+    nameEl.textContent  = 'Free';
+    descEl.textContent  = 'Basic access to notes, diagnostics, and practice questions.';
+    if (priceEl)    priceEl.textContent = '£9.99/month';
+    if (upgradeBtn) { upgradeBtn.style.display = 'inline-block'; upgradeBtn.textContent = 'Upgrade to Pro'; }
+    return;
+  }
+
+  // Pro user — show the active plan, hide the upgrade prompt
+  const planLabel = tier === 'pro_annual' ? 'RAG Pro (Annual)' : 'RAG Pro (Monthly)';
+  const planPrice = tier === 'pro_annual' ? '£95.90/year (£7.99/mo)' : '£9.99/month';
+  const trialing  = status === 'trialing';
+
+  nameEl.textContent = trialing ? `${planLabel} — Trial` : planLabel;
+  descEl.textContent = trialing
+    ? 'Full access during your 7-day free trial.'
+    : 'Full access to past papers, AI feedback, mark schemes, and ad-free experience.';
+
+  // Add a subtle pro accent to the card
+  cardEl.style.background   = 'linear-gradient(135deg, rgba(37,99,235,0.10), rgba(61,149,188,0.04))';
+  cardEl.style.borderColor  = 'rgba(37,99,235,0.35)';
+
+  if (priceEl)    priceEl.textContent = planPrice;
+  if (upgradeBtn) upgradeBtn.style.display = 'none';
+  if (proFeats)   proFeats.style.display = 'none';
+}
+
 async function load() {
   const { data: { user }, error } = await supabaseClient.auth.getUser();
   if (error || !user) { window.location = 'auth/login.html'; return; }
@@ -588,6 +635,9 @@ async function load() {
   const guessedStyle = AVATAR_STYLES.find(s => currentAvatarUrl?.includes(`/${s.id}/svg`));
   currentAvatarStyle = guessedStyle ? guessedStyle.id : 'fun-emoji';
   renderAvatarPicker(((firstName[0] || '') + (lastName[0] || '')).toUpperCase());
+
+  // Plan card — read subscription state from profiles
+  renderPlanCard(profile);
 
   // Study goal from localStorage
   studyGoal = parseInt(localStorage.getItem('study_goal') || '30');

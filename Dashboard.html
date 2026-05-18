@@ -735,10 +735,10 @@
 
       <!-- Right: panels -->
       <div>
-        <div class="cta-card">
-          <div class="cta-title">⚡ Unlock Pro</div>
-          <div class="cta-sub">Past papers, specialist topic packs, and AI-powered answer feedback.</div>
-          <button class="btn-small">Upgrade — £9.99/mo</button>
+        <div class="cta-card" id="planCtaCard">
+          <div class="cta-title" id="planCtaTitle">⚡ Unlock Pro</div>
+          <div class="cta-sub" id="planCtaSub">Past papers, specialist topic packs, and AI-powered answer feedback.</div>
+          <button class="btn-small" id="planCtaBtn" onclick="window.location='pricing.html'">Upgrade — £9.99/mo</button>
         </div>
 
         <div class="panel">
@@ -1209,8 +1209,32 @@ function renderLevel(level) {
   document.getElementById('levelDesc').textContent  = cfg.desc;
 }
 
+// Mirrors is_pro_user() in supabase-flashcards-migration.sql — swap the
+// "Unlock Pro" CTA card for a "You're on Pro" panel when the row says so.
+function renderPlanCta(profile) {
+  const tier      = profile?.subscription_tier   || 'free';
+  const status    = profile?.subscription_status || 'active';
+  const expiresAt = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+  const isPro =
+    (tier === 'pro_monthly' || tier === 'pro_annual') &&
+    (status === 'active' || status === 'trialing') &&
+    (!expiresAt || expiresAt > new Date());
 
+  if (!isPro) return; // leave the default "Unlock Pro" upgrade prompt in place
 
+  const titleEl = document.getElementById('planCtaTitle');
+  const subEl   = document.getElementById('planCtaSub');
+  const btnEl   = document.getElementById('planCtaBtn');
+
+  const planLabel = tier === 'pro_annual' ? 'RAG Pro · Annual' : 'RAG Pro · Monthly';
+  const trialing  = status === 'trialing';
+
+  if (titleEl) titleEl.textContent = trialing ? `✨ Free trial active` : `✨ You're on Pro`;
+  if (subEl)   subEl.textContent   = trialing
+    ? `${planLabel} — full access during your 7-day trial.`
+    : `${planLabel} — full access to past papers, AI feedback, and mark schemes.`;
+  if (btnEl)   { btnEl.textContent = 'Manage plan'; btnEl.onclick = () => { window.location = 'settings.html'; }; }
+}
 
 
 function renderSubjectsProgress(subjects, topicRows) {
@@ -1732,6 +1756,9 @@ async function load() {
   // Level banner (also cache for next visit so there's no default flash)
   renderLevel(level);
   try { localStorage.setItem('cached_level', level); } catch (e) {}
+
+  // Plan CTA — swap to "You're on Pro" for active subscribers
+  renderPlanCta(profile);
 
   // Build set of current subject keys to filter old data
   const currentSubjectKeys = new Set((subjects || []).map(s => `${s.subject}_${s.exam_board}`));
