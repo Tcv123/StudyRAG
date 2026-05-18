@@ -104,7 +104,7 @@
     .intro-tip-text a:hover { text-decoration: underline; }
 
     /* ── toolbar ──────────────────────────────────────────── */
-    .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 18px; }
+    .toolbar { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; margin-bottom: 22px; }
     .btn { display: inline-flex; align-items: center; gap: 6px; padding: 9px 16px; border-radius: 9px; font-size: 13.5px; font-weight: 500; cursor: pointer; border: 1px solid transparent; font-family: var(--font-body); transition: all 0.15s; }
     .btn-primary { background: var(--accent); color: #fff; border-color: var(--accent); }
     .btn-primary:hover { background: var(--accent-dark); }
@@ -119,38 +119,72 @@
     /* ── grid ─────────────────────────────────────────────── */
     .grid {
       display: grid;
-      grid-template-columns: 60px repeat(7, 1fr);
+      grid-template-columns: 70px repeat(7, 1fr);
       background: var(--surface);
       border: 1px solid var(--border);
-      border-radius: 14px;
+      border-radius: 16px;
       overflow: hidden;
+      box-shadow: 0 4px 20px rgba(37,99,235,0.06);
     }
-    .cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); min-height: 28px; }
+    /* Full lines between hours (the :00 rows). Half-hour rows use a fainter
+       line so the eye groups the two half-hours of each hour together. */
+    .cell { border-right: 1px solid var(--border); border-bottom: 1px solid var(--border); min-height: 38px; }
+    .cell.half-row { border-bottom-color: rgba(184,208,232,0.35); }
     .cell:nth-child(8n) { border-right: none; }
-    .cell.head { background: var(--surface2); font-size: 12px; font-weight: 600; color: var(--muted); padding: 10px 0; text-align: center; letter-spacing: 0.04em; text-transform: uppercase; }
+    .cell.head { background: var(--surface2); font-size: 12px; font-weight: 600; color: var(--muted); padding: 14px 0; text-align: center; letter-spacing: 0.08em; text-transform: uppercase; min-height: 44px; }
     .cell.head.corner { background: var(--surface2); }
-    .cell.time { background: var(--surface2); font-size: 11px; color: var(--muted2); text-align: right; padding: 2px 8px 0 0; line-height: 1; }
-    .cell.slot { position: relative; cursor: pointer; transition: background 0.1s; }
+    .cell.time {
+      background: var(--surface2);
+      font-size: 11.5px;
+      color: var(--muted);
+      font-weight: 500;
+      display: flex; align-items: flex-start; justify-content: flex-end;
+      padding: 7px 10px 0 0;
+      line-height: 1;
+      letter-spacing: 0.02em;
+    }
+    .cell.slot { position: relative; cursor: pointer; transition: background 0.12s; }
     .cell.slot:hover { background: var(--accent-dim); }
-    .cell.slot.weekend { background: rgba(37,99,235,0.03); }
+    .cell.slot.weekend { background: rgba(37,99,235,0.025); }
     .cell.slot.weekend:hover { background: var(--accent-dim); }
+    /* Stronger top border on each new hour so the eye reads the grid by hour. */
+    .cell.hour-top { border-top: 1px solid var(--border); }
+    .cell.hour-top:first-of-type { border-top: none; }     /* already covered by .grid border */
 
     .session-card {
       position: absolute;
-      left: 2px; right: 2px; top: 2px;
+      left: 3px; right: 3px; top: 3px;
       background: var(--accent);
       color: #fff;
-      border-radius: 6px;
-      padding: 4px 6px;
-      font-size: 11px;
-      line-height: 1.2;
+      border-radius: 8px;
+      padding: 6px 9px;
+      font-size: 12px;
+      line-height: 1.25;
       cursor: pointer;
       overflow: hidden;
       z-index: 2;
-      box-shadow: 0 1px 2px rgba(0,0,0,0.08);
+      box-shadow: 0 1px 3px rgba(11,30,63,0.12), 0 1px 1px rgba(11,30,63,0.06);
+      transition: transform 0.12s, box-shadow 0.12s;
     }
-    .session-card .ss-subj { font-weight: 600; }
-    .session-card .ss-topic { opacity: 0.85; font-size: 10px; margin-top: 1px; }
+    .session-card:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 10px rgba(11,30,63,0.15), 0 1px 2px rgba(11,30,63,0.08);
+    }
+    .session-card .ss-subj {
+      font-weight: 600;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+    }
+    .session-card .ss-topic {
+      opacity: 0.85;
+      font-size: 10.5px;
+      margin-top: 2px;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
 
     /* ── modal ────────────────────────────────────────────── */
     .modal-backdrop {
@@ -576,12 +610,16 @@ function buildGrid() {
     const half = s % 2 === 1;
     const label = half ? '' : `${hr}:00`;
     const min = SLOT_START_HOUR * 60 + s * 30;
-    html += `<div class="cell time">${label}</div>`;
+    // Tag :00 rows so the CSS can draw a stronger top border (hour grouping).
+    // Tag :30 rows so their bottom border can be softened (eye groups the two
+    // half-hours of each hour together).
+    const rowClass = half ? ' half-row' : ' hour-top';
+    html += `<div class="cell time${rowClass}">${label}</div>`;
     for (let d = 0; d < 7; d++) {
       const wk = (d >= 5) ? ' weekend' : '';
       const busy = isBusy(d, min, 30) ? ' busy' : '';
       const title = busy ? ' title="Blocked by your preferences"' : '';
-      html += `<div class="cell slot${wk}${busy}" data-day="${d}" data-min="${min}"${title}></div>`;
+      html += `<div class="cell slot${wk}${busy}${rowClass}" data-day="${d}" data-min="${min}"${title}></div>`;
     }
   }
   grid.innerHTML = html;
