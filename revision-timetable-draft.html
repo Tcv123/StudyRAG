@@ -136,6 +136,23 @@
     .field textarea { resize: vertical; min-height: 60px; }
     .modal-actions { display: flex; gap: 8px; margin-top: 18px; }
     .modal-actions .spacer { flex: 1; }
+
+    /* ── setup wizard ─────────────────────────────────────── */
+    .wizard-card { max-width: 520px; }
+    .wizard-intro { font-size: 14px; color: var(--muted); margin-bottom: 18px; line-height: 1.55; }
+    .day-row { display: flex; gap: 6px; flex-wrap: wrap; }
+    .day-chip {
+      flex: 1; min-width: 52px; padding: 9px 4px; text-align: center;
+      border: 1px solid var(--border); border-radius: 8px;
+      font-size: 12px; font-weight: 500; color: var(--muted);
+      cursor: pointer; user-select: none; background: var(--surface);
+      transition: all 0.12s;
+    }
+    .day-chip:hover { border-color: var(--accent); color: var(--accent-dark); }
+    .day-chip.on { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .pair-row { display: flex; gap: 10px; }
+    .pair-row > * { flex: 1; }
+    .field input[type="hidden"] { display: none; }
   </style>
 </head>
 <body>
@@ -214,16 +231,9 @@ const SLOT_START_HOUR = 7;
 const SLOT_END_HOUR = 23;                                  // exclusive
 const SLOTS = (SLOT_END_HOUR - SLOT_START_HOUR) * 2;       // 32 half-hour rows
 const RAG_WEIGHT = { red: 3, amber: 2, green: 1 };
-const RAG_RANK   = { red: 0, amber: 1, green: 2, pending: 3 };
 
-// Preferred slots for auto-fill: weekday evenings + weekend midday/afternoon.
-// Each entry is [day_of_week, start_hour]. Order = priority order.
-const PREFERRED_SLOTS = [
-  // Weekday evenings 17:00, 18:00, 19:00, 20:00 (Mon..Fri)
-  ...[0,1,2,3,4].flatMap(d => [17,18,19,20].map(h => [d, h])),
-  // Weekend mornings + afternoons
-  ...[5,6].flatMap(d => [10, 11, 14, 15, 16, 17].map(h => [d, h])),
-];
+// Preference keys on profiles row. NULL on any of these = "wizard not done yet".
+const PREF_KEYS = ['rt_study_days','rt_earliest_start','rt_latest_end','rt_weekend_mode','rt_weekly_hours'];
 
 let user = null;
 let profile = null;
@@ -249,16 +259,32 @@ const DEMO = new URLSearchParams(location.search).get('demo') === '1';
   if (!isPro(profile)) { renderLock(); return; }
 
   await loadData();
-  renderPage();
+
+  if (!hasPrefs(profile)) {
+    openWizard({ firstTime: true });
+  } else {
+    renderPage();
+  }
 })();
 
+function hasPrefs(p) {
+  if (!p) return false;
+  return PREF_KEYS.every(k => p[k] !== null && p[k] !== undefined);
+}
+
 // Demo mode: ?demo=1 — render the UI with mock data, no Supabase calls.
-// Save / Auto-fill / Delete all become no-ops that just update local state.
+// ?demo=1&prefs=1 to skip the wizard and jump straight to a populated grid.
 function initDemo() {
   user    = { id: 'demo-user' };
+  const havePrefs = new URLSearchParams(location.search).get('prefs') === '1';
   profile = {
     first_name: 'Demo', last_name: 'User',
     subscription_tier: 'pro', subscription_status: 'active',
+    rt_study_days:     havePrefs ? [0,1,2,3,4,5,6] : null,
+    rt_earliest_start: havePrefs ? 17 : null,
+    rt_latest_end:     havePrefs ? 22 : null,
+    rt_weekend_mode:   havePrefs ? 'more' : null,
+    rt_weekly_hours:   havePrefs ? 12 : null,
   };
   subjects = [
     { subject: 'Chemistry',        exam_board: 'AQA',     emoji: '⚗️', rag_status: 'red'   },
@@ -274,14 +300,15 @@ function initDemo() {
     { subject: 'Physics',     topic: 'Capacitors',          rag_status: 'green' },
     { subject: 'Mathematics', topic: 'Integration',         rag_status: 'amber' },
   ];
-  sessions = [
-    { id: 'd1', day_of_week: 0, start_min: 17*60, duration_min: 60, subject: 'Chemistry',   topic: 'Organic mechanisms', notes: null },
-    { id: 'd2', day_of_week: 2, start_min: 18*60, duration_min: 90, subject: 'Biology',     topic: 'Gene expression',    notes: null },
+  sessions = havePrefs ? [
+    { id: 'd1', day_of_week: 0, start_min: 17*60, duration_min: 60,  subject: 'Chemistry',   topic: 'Organic mechanisms', notes: null },
+    { id: 'd2', day_of_week: 2, start_min: 18*60, duration_min: 90,  subject: 'Biology',     topic: 'Gene expression',    notes: null },
     { id: 'd3', day_of_week: 5, start_min: 10*60, duration_min: 120, subject: 'Mathematics', topic: 'Integration',        notes: null },
-  ];
+  ] : [];
   paintSidebarUser();
   patchSupabaseForDemo();
-  renderPage();
+  if (!hasPrefs(profile)) openWizard({ firstTime: true });
+  else renderPage();
 }
 
 // In demo mode, intercept the Supabase calls used by save/delete/auto-fill so
@@ -372,6 +399,7 @@ function renderPage() {
   document.getElementById('pageBody').innerHTML = `
     <div class="toolbar">
       <button class="btn btn-primary" id="autoFillBtn">✦ Auto-fill week</button>
+      <button class="btn btn-ghost" id="prefsBtn">⚙ Preferences</button>
       <button class="btn btn-ghost" id="clearBtn">Clear week</button>
       <span class="hint">Click any empty slot to add a session.</span>
       <span class="stat-pill" id="weekTotal"></span>
@@ -380,6 +408,7 @@ function renderPage() {
   `;
   buildGrid();
   document.getElementById('autoFillBtn').onclick = onAutoFill;
+  document.getElementById('prefsBtn').onclick = () => openWizard({ firstTime: false });
   document.getElementById('clearBtn').onclick = onClearWeek;
   updateWeekTotal();
 }
@@ -538,7 +567,36 @@ function openModal(sess) {
 }
 
 // ── auto-fill ──────────────────────────────────────────────────
+// Builds the candidate slot list from the user's preferences, then greedily
+// places one-hour sessions in priority order until we hit their weekly hour
+// target (or run out of slots).
+function buildPreferredSlots(prefs) {
+  const days       = (prefs.rt_study_days || []).map(Number);
+  const startHour  = prefs.rt_earliest_start;
+  const endHour    = prefs.rt_latest_end;
+  const weekendMode = prefs.rt_weekend_mode;
+
+  const slots = [];
+  for (const day of days) {
+    const isWeekend = day >= 5;
+    if (isWeekend && weekendMode === 'none') continue;
+
+    let dayStart = startHour;
+    let dayEnd   = endHour;
+    if (isWeekend && weekendMode === 'more') dayStart = Math.min(dayStart, 10);   // weekends can start at 10am
+    if (isWeekend && weekendMode === 'less') dayEnd   = Math.min(dayEnd, startHour + 2); // shorter window on weekends
+
+    // Walk evenings first so weekday "study time" is prioritised. For weekends
+    // when mode='more', we also include the morning block.
+    const hours = [];
+    for (let h = dayStart; h < dayEnd; h++) hours.push(h);
+    for (const h of hours) slots.push([day, h]);
+  }
+  return slots;
+}
+
 async function onAutoFill() {
+  if (!hasPrefs(profile)) { openWizard({ firstTime: true }); return; }
   if (sessions.length && !confirm('Auto-fill will add sessions to empty slots only. Continue?')) return;
 
   // Rank topics by RAG weight (red highest). Fall back to subjects if a user
@@ -554,37 +612,31 @@ async function onAutoFill() {
   ranked.sort((a, b) => b.w - a.w);
   if (!ranked.length) { alert('Add subjects first.'); return; }
 
-  // Build set of already-busy (day, min) cells so we don't double-book.
+  // Busy cells from existing sessions — don't double-book.
   const busy = new Set();
   for (const s of sessions) {
     const rows = Math.round(s.duration_min / 30);
-    for (let i = 0; i < rows; i++) {
-      busy.add(`${s.day_of_week}:${s.start_min + i*30}`);
-    }
+    for (let i = 0; i < rows; i++) busy.add(`${s.day_of_week}:${s.start_min + i*30}`);
   }
 
-  // Walk preferred slots in priority order. Round-robin subjects (top of the
-  // ranked list) so we don't pile three Chem sessions in a row.
-  const queue = ranked.slice(0, Math.max(12, ranked.length));
+  const allowedSlots = buildPreferredSlots(profile);
+  const targetMin = (profile.rt_weekly_hours || 10) * 60;
+  let plannedMin = sessions.reduce((s, x) => s + x.duration_min, 0);
+
+  const queue = ranked.slice();
   let qi = 0;
   let lastSubject = null;
   const toInsert = [];
 
-  for (const [day, hr] of PREFERRED_SLOTS) {
+  for (const [day, hr] of allowedSlots) {
+    if (plannedMin >= targetMin) break;
     const startMin = hr * 60;
     const dur = 60;
-    const rows = dur / 30;
-    let collides = false;
-    for (let i = 0; i < rows; i++) {
-      if (busy.has(`${day}:${startMin + i*30}`)) { collides = true; break; }
-    }
-    if (collides) continue;
+    if (busy.has(`${day}:${startMin}`) || busy.has(`${day}:${startMin + 30}`)) continue;
 
-    // Pick next from queue, skipping the same subject as last placement.
     let pick = null;
-    for (let attempts = 0; attempts < queue.length; attempts++) {
-      const cand = queue[qi % queue.length];
-      qi++;
+    for (let i = 0; i < queue.length; i++) {
+      const cand = queue[qi++ % queue.length];
       if (cand.subject !== lastSubject) { pick = cand; break; }
     }
     if (!pick) pick = queue[0];
@@ -593,18 +645,141 @@ async function onAutoFill() {
       user_id: user.id, day_of_week: day, start_min: startMin,
       duration_min: dur, subject: pick.subject, topic: pick.topic,
     });
-    for (let i = 0; i < rows; i++) busy.add(`${day}:${startMin + i*30}`);
+    busy.add(`${day}:${startMin}`); busy.add(`${day}:${startMin + 30}`);
+    plannedMin += dur;
     lastSubject = pick.subject;
-    if (toInsert.length >= 12) break;        // cap at 12h / week
   }
 
-  if (!toInsert.length) { alert('No empty preferred slots — clear the week first or add sessions manually.'); return; }
+  if (!toInsert.length) {
+    alert('No empty slots inside your preferred window — clear the week or widen your preferences.');
+    return;
+  }
 
   const { data, error } = await supabaseClient
     .from('revision_sessions').insert(toInsert).select();
   if (error) { alert('Auto-fill failed: ' + error.message); return; }
   sessions.push(...data);
   renderSessions(); updateWeekTotal();
+}
+
+// ── setup wizard ───────────────────────────────────────────────
+function openWizard({ firstTime }) {
+  // Hide grid behind wizard on first run so they don't see an empty page.
+  if (firstTime) {
+    document.getElementById('pageBody').innerHTML = `
+      <div class="empty-state">
+        <div class="lock-icon" style="background:var(--accent-dim);border-color:var(--accent);color:var(--accent-dark);">📆</div>
+        <div class="lock-title">Let's set up your timetable</div>
+        <div class="lock-msg">A few quick questions so Auto-fill knows your schedule.</div>
+      </div>`;
+  }
+
+  const cur = {
+    days:    profile.rt_study_days     ?? [0,1,2,3,4],
+    start:   profile.rt_earliest_start ?? 17,
+    end:     profile.rt_latest_end     ?? 21,
+    weekend: profile.rt_weekend_mode   ?? 'same',
+    hours:   profile.rt_weekly_hours   ?? 10,
+  };
+
+  const dayChips = DAYS.map((label, idx) =>
+    `<div class="day-chip${cur.days.includes(idx) ? ' on' : ''}" data-day="${idx}">${label}</div>`
+  ).join('');
+
+  const hourOpts = (from, to, sel) => {
+    let out = '';
+    for (let h = from; h <= to; h++) {
+      const lab = `${h.toString().padStart(2,'0')}:00`;
+      out += `<option value="${h}"${h === sel ? ' selected' : ''}>${lab}</option>`;
+    }
+    return out;
+  };
+
+  const backdrop = document.createElement('div');
+  backdrop.className = 'modal-backdrop';
+  backdrop.innerHTML = `
+    <div class="modal-card wizard-card">
+      <div class="modal-title">${firstTime ? 'Set up your revision timetable' : 'Edit preferences'}</div>
+      <div class="wizard-intro">School, sleep, sport, family time — pick the windows that fit around your actual life so Auto-fill can plan realistically.</div>
+
+      <label class="field">
+        <span class="field-label">1. Which days can you study?</span>
+        <div class="day-row" id="dayRow">${dayChips}</div>
+      </label>
+
+      <div class="pair-row">
+        <label class="field">
+          <span class="field-label">2. Earliest you can start</span>
+          <select id="wStart">${hourOpts(15, 21, cur.start)}</select>
+        </label>
+        <label class="field">
+          <span class="field-label">3. Latest you'd study till</span>
+          <select id="wEnd">${hourOpts(18, 23, cur.end)}</select>
+        </label>
+      </div>
+
+      <label class="field">
+        <span class="field-label">4. How are weekends different?</span>
+        <select id="wWeekend">
+          <option value="same" ${cur.weekend==='same'?'selected':''}>Same as weekdays</option>
+          <option value="more" ${cur.weekend==='more'?'selected':''}>More time — mornings free too</option>
+          <option value="less" ${cur.weekend==='less'?'selected':''}>Less time — busy with activities</option>
+          <option value="none" ${cur.weekend==='none'?'selected':''}>No study at weekends</option>
+        </select>
+      </label>
+
+      <label class="field">
+        <span class="field-label">5. Hours per week you can commit</span>
+        <select id="wHours">
+          ${[5,8,10,12,15,18,20,25].map(n =>
+            `<option value="${n}" ${n===cur.hours?'selected':''}>${n} hours</option>`
+          ).join('')}
+        </select>
+      </label>
+
+      <div class="modal-actions">
+        <span class="spacer"></span>
+        ${firstTime ? '' : '<button class="btn btn-ghost" id="wCancel">Cancel</button>'}
+        <button class="btn btn-primary" id="wSave">${firstTime ? 'Build my timetable' : 'Save'}</button>
+      </div>
+    </div>
+  `;
+  document.body.appendChild(backdrop);
+
+  // Day-chip toggle
+  backdrop.querySelectorAll('.day-chip').forEach(el => {
+    el.onclick = () => el.classList.toggle('on');
+  });
+
+  if (!firstTime) {
+    document.getElementById('wCancel').onclick = () => backdrop.remove();
+    backdrop.addEventListener('click', e => { if (e.target === backdrop) backdrop.remove(); });
+  }
+
+  document.getElementById('wSave').onclick = async () => {
+    const days = Array.from(backdrop.querySelectorAll('.day-chip.on'))
+      .map(el => +el.dataset.day).sort();
+    if (!days.length) { alert('Pick at least one study day.'); return; }
+    const start = +document.getElementById('wStart').value;
+    const end   = +document.getElementById('wEnd').value;
+    if (end <= start) { alert('Your latest end time must be after your earliest start.'); return; }
+    const weekend = document.getElementById('wWeekend').value;
+    const hours   = +document.getElementById('wHours').value;
+
+    const update = {
+      rt_study_days:     days,
+      rt_earliest_start: start,
+      rt_latest_end:     end,
+      rt_weekend_mode:   weekend,
+      rt_weekly_hours:   hours,
+    };
+    const { error } = await supabaseClient
+      .from('profiles').update(update).eq('id', user.id);
+    if (error) { alert('Save failed: ' + error.message); return; }
+    Object.assign(profile, update);
+    backdrop.remove();
+    renderPage();
+  };
 }
 
 async function onClearWeek() {
