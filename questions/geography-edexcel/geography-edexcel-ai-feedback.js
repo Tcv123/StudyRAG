@@ -104,6 +104,25 @@ const GEOGRAPHY_EDEXCEL_AI_FEEDBACK = {
     { q: 'To what extent has globalisation reached a turning point as nation-states retreat into economic protectionism?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── T6 Diverse Places ─────────────────────── */
+  'T6': [
+    { q: 'Describe the main demographic indicators (age, ethnicity, occupation, deprivation) used to show the diversity of UK places.', marks: 6, command: 'Describe' },
+    { q: 'Explain the difference between internal and international migration as drivers of UK place change.', marks: 6, command: 'Explain' },
+    { q: 'Explain the formation and character of an ethnic enclave such as Whitechapel or Brick Lane in East London.', marks: 9, command: 'Explain' },
+    { q: 'Explain the process of gentrification, with reference to a named UK neighbourhood such as Brixton or Hackney.', marks: 9, command: 'Explain' },
+    { q: 'Describe the main demographic challenges facing remote rural areas of the UK such as rural Northumberland.', marks: 9, command: 'Describe' },
+    { q: 'Compare the character and recent change of a contrasting UK urban place with a UK rural place.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the role of government and local council policy in shaping diversity and change in UK places.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the tensions that can arise between insider and outsider perspectives on the change of a diverse place.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the significance of recent EU migration in transforming the character of UK places such as Boston in Lincolnshire.', marks: 16, command: 'Assess' },
+    { q: 'Assess the extent to which gentrification benefits established communities in inner-city neighbourhoods.', marks: 16, command: 'Assess' },
+    { q: 'Assess the role of media representation in shaping outsider perceptions of diverse places (such as Tower Hamlets or Sparkhill Birmingham).', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the effectiveness of post-Olympic regeneration in Stratford in delivering long-term, inclusive place change.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the usefulness of Detroit\'s urban shrinkage as a model for understanding post-industrial place change.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent has rising demographic diversity in UK places been a source of community cohesion rather than conflict?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent can declining rural communities be effectively revitalised through targeted policy intervention?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
