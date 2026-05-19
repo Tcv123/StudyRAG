@@ -303,20 +303,31 @@
       return 'U';
     }
 
+    function msButtonHtml(cls) {
+      if (paper.msUrl) {
+        return `<a class="${cls}" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Open mark scheme PDF</a>`;
+      }
+      const tip = paper.msNote || 'Mark scheme not publicly available.';
+      return `<span class="${cls}" style="opacity:0.55;cursor:not-allowed;" title="${esc(tip)}">📋 MS unavailable</span>`;
+    }
     function renderShell() {
       const body = document.getElementById('pageBody');
+      const msNoteBlock = (!paper.msUrl && paper.msNote)
+        ? `<div class="panel-sub" style="margin-top:8px;padding:10px 12px;background:var(--warn-dim);border-left:3px solid var(--warn);border-radius:8px;color:var(--text);">⚠ ${esc(paper.msNote)}</div>`
+        : '';
       body.innerHTML = `
         <div class="panel">
           <div class="meta-grid">
             <div class="meta-cell"><div class="meta-key">Spec code</div><div class="meta-val">${esc(paper.specCode)}</div></div>
             <div class="meta-cell"><div class="meta-key">Total marks</div><div class="meta-val">${paper.totalMarks}</div></div>
-            <div class="meta-cell"><div class="meta-key">Duration</div><div class="meta-val">${Math.floor(paper.durationMins/60)}h ${paper.durationMins%60}m</div></div>
+            <div class="meta-cell"><div class="meta-key">Duration</div><div class="meta-val">${Math.floor(paper.durationMins/60)}h ${paper.durationMins%60 ? paper.durationMins%60 + 'm' : ''}</div></div>
             <div class="meta-cell"><div class="meta-key">Level</div><div class="meta-val">${esc(paper.level)}</div></div>
           </div>
           <div class="btn-row" style="margin-top:16px;">
             <a class="btn" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">📄 Open question paper PDF</a>
-            <a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Open mark scheme PDF</a>
+            ${msButtonHtml('btn')}
           </div>
+          ${msNoteBlock}
           <div class="panel-sub" style="margin-top:12px;">${esc(paper.description)}</div>
         </div>
         <div id="modeArea"></div>`;
@@ -372,7 +383,7 @@
           </div>
           <div class="btn-row">
             <a class="btn primary" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">🖨️ Open paper to print</a>
-            <a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Open mark scheme</a>
+            ${msButtonHtml('btn')}
           </div>
           <div class="total-mark-row">
             <label for="totalMarksInput">Marks scored:</label>
@@ -623,7 +634,7 @@
         ${breakdownHtml}
         <div class="panel">
           <div class="btn-row">
-            <a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Review the mark scheme</a>
+            ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Review the mark scheme</a>` : ''}
             <a class="btn" href="past-papers.html">← Back to past papers</a>
             <button class="btn danger" id="retryBtn">↺ Retry this paper</button>
           </div>
