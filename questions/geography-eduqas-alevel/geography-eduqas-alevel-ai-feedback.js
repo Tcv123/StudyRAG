@@ -47,6 +47,25 @@ const GEOGRAPHY_EDUQAS_ALEVEL_AI_FEEDBACK = {
     { q: 'To what extent can glaciated landscapes be effectively protected from increasing human pressures such as tourism, energy development and infrastructure?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── 1.3 Changing Places ─────────────────────── */
+  '1.3': [
+    { q: 'Describe how endogenous and exogenous factors combine to shape the character of a place.', marks: 6, command: 'Describe' },
+    { q: 'Explain the difference between insider and outsider perspectives on place, with brief examples.', marks: 6, command: 'Explain' },
+    { q: 'Explain how shifting flows of people, money and ideas have transformed the character of a named post-industrial UK city.', marks: 9, command: 'Explain' },
+    { q: 'Explain the role of external agencies (government, transnational corporations and community organisations) in shaping the identity of a contemporary place.', marks: 9, command: 'Explain' },
+    { q: 'Describe how representations of place in media, art and photography can differ from the lived experience of residents.', marks: 9, command: 'Describe' },
+    { q: 'Compare the character and recent change of a near (local) place with that of a contrasting far place.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the extent to which globalisation has eroded distinctive local place identity in Welsh and English cities.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the value and limitations of qualitative sources (film, literature and art) in the geographical study of place.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which the regeneration of Cardiff Bay has benefited its established working-class communities.', marks: 16, command: 'Assess' },
+    { q: 'Assess the significance of rebranding in transforming the identity of a deindustrialised place such as Merthyr Tydfil or Detroit.', marks: 16, command: 'Assess' },
+    { q: 'Assess the role of place attachment in shaping community responses to controversial planning or development proposals.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the usefulness of statistical, photographic and digital representations of place in geographical investigation.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the effectiveness of community-led approaches to place regeneration compared with top-down state- or developer-led approaches.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent has digital media and the rise of online communities transformed the meaning of "place" in the 21st century?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent does place still matter for shaping personal identity in an increasingly mobile and globalised world?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
