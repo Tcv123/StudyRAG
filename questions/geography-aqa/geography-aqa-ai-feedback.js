@@ -66,6 +66,44 @@ const GEOGRAPHY_AQA_AI_FEEDBACK = {
     { q: 'To what extent can the impacts of tectonic and atmospheric hazards ever be eliminated through advances in technology, planning and preparation?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── 2.1 Changing Places ─────────────────────── */
+  '2.1': [
+    { q: 'Describe the difference between endogenous and exogenous factors in shaping the character of a place.', marks: 6, command: 'Describe' },
+    { q: 'Explain what is meant by insider and outsider perspectives on place, with brief examples.', marks: 6, command: 'Explain' },
+    { q: 'Explain how shifting flows of people, money and ideas have changed the character of a named urban place over time.', marks: 9, command: 'Explain' },
+    { q: 'Explain the role played by external agencies (government, corporations and community groups) in shaping the identity of a contemporary urban place.', marks: 9, command: 'Explain' },
+    { q: 'Describe how media representations of a place can differ from the lived experience of its residents, using a named example.', marks: 9, command: 'Describe' },
+    { q: 'Compare the character of a near (local) place with a contrasting far place at a distance, identifying key similarities and differences.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the extent to which globalisation has eroded distinctive local place identity in UK cities.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the value and limitations of qualitative sources (literature, art, film and photography) for the geographical study of place.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which the regeneration of a UK area (such as Cardiff Bay or Stratford) has benefited its established communities.', marks: 16, command: 'Assess' },
+    { q: 'Assess the significance of rebranding in transforming the identity of a deindustrialised place such as Detroit or Liverpool.', marks: 16, command: 'Assess' },
+    { q: 'Assess the role of place attachment in shaping community responses to controversial planning or development decisions.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the usefulness of representations of place (statistical, photographic, artistic and digital) in geographical investigation.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the effectiveness of community-led approaches to place regeneration compared with top-down, state- or developer-led approaches.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent has the meaning of "place" been transformed by digital media, the internet and online communities?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent does place still matter in shaping people\'s identities and life chances in an increasingly mobile and globalised world?', marks: 25, command: 'To what extent' },
+  ],
+
+  /* ─────────────────────── 2.2 Contemporary Urban Environments ─────────────────────── */
+  '2.2': [
+    { q: 'Describe the global pattern of urbanisation since 1950, with reference to differences between HICs and LICs.', marks: 6, command: 'Describe' },
+    { q: 'Explain how the urban heat island (UHI) effect is generated in a large city.', marks: 6, command: 'Explain' },
+    { q: 'Explain the main causes of suburbanisation in cities of high-income countries.', marks: 9, command: 'Explain' },
+    { q: 'Explain the defining characteristics of a megacity, with reference to a named example such as Mumbai or Lagos.', marks: 9, command: 'Explain' },
+    { q: 'Describe the main strategies used to manage municipal solid waste in a contemporary urban area.', marks: 9, command: 'Describe' },
+    { q: 'Compare the processes driving urban growth in cities of high-income countries with those driving growth in cities of low- and middle-income countries.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the relative effectiveness of different strategies used to reduce air pollution in major cities (such as London, Beijing or Los Angeles).', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the role of urban regeneration schemes in addressing socio-economic inequality within UK cities.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which megacities such as Mumbai represent an opportunity for sustainable development rather than a barrier to it.', marks: 16, command: 'Assess' },
+    { q: 'Assess the effectiveness of smart-city projects (such as Songdo or Masdar) in delivering genuinely sustainable urban environments.', marks: 16, command: 'Assess' },
+    { q: 'Assess the impacts of counter-urbanisation on both the destination rural communities and the source urban areas.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the success of Curitiba as a model of sustainable urban transport and planning that could be exported to other cities.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the significance of social segregation as a contemporary challenge in 21st-century cities.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent should world cities such as London, New York and Tokyo be considered drivers of global change rather than simply nodes within wider networks?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent can the contemporary city ever be made truly environmentally sustainable given current consumption patterns?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
