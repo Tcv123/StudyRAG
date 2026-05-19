@@ -28,6 +28,25 @@ const GEOGRAPHY_EDEXCEL_AI_FEEDBACK = {
     { q: 'To what extent can technological advances ever eliminate the risk posed by tectonic hazards to human populations?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── T2 Landscape Systems (Coasts / Glaciation) ─────────────────────── */
+  'T2': [
+    { q: 'Describe the concept of a coastal sediment cell and explain why it is the appropriate scale for coastal management.', marks: 6, command: 'Describe' },
+    { q: 'Explain the differences between constructive and destructive waves and their effects on a beach profile.', marks: 6, command: 'Explain' },
+    { q: 'Explain the formation of headlands and bays on a discordant coastline, using a named UK example.', marks: 9, command: 'Explain' },
+    { q: 'Explain the glacial erosion processes that combine to produce a U-shaped valley.', marks: 9, command: 'Explain' },
+    { q: 'Describe the formation of a spit, with reference to longshore drift, wave refraction and secondary wind direction.', marks: 9, command: 'Describe' },
+    { q: 'Compare the characteristic landforms produced by coastal erosion with those produced by glacial erosion.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the strengths and weaknesses of hard engineering compared with soft engineering for coastal protection.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the relative importance of physical and human factors in driving cliff retreat at a named UK coastline.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which rapid coastal retreat along the Holderness coast reflects underlying geology rather than management decisions.', marks: 16, command: 'Assess' },
+    { q: 'Assess the significance of post-glacial isostatic and eustatic sea-level change in shaping the contemporary UK coastline.', marks: 16, command: 'Assess' },
+    { q: 'Assess the role of periglacial processes (such as freeze-thaw, solifluction and patterned ground) in shaping high-latitude landscapes today.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the Medmerry managed realignment scheme as a sustainable response to accelerating sea-level rise.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the effectiveness of Integrated Coastal Zone Management (ICZM) in managing conflicting demands on a stretch of coastline.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent are UK coastal landscapes now human-dominated systems rather than natural ones?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent can the physical processes operating in coastal and glaciated landscapes be predicted with the precision needed for effective long-term management?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
