@@ -123,6 +123,25 @@ const GEOGRAPHY_AQA_AI_FEEDBACK = {
     { q: 'To what extent does the environment shape population characteristics, rather than population shaping the environment?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── 2.4 Resource Security ─────────────────────── */
+  '2.4': [
+    { q: 'Describe the concept of natural capital and distinguish between renewable, non-renewable and critical resources.', marks: 6, command: 'Describe' },
+    { q: 'Explain the main drivers of rising global demand for resources in the 21st century.', marks: 6, command: 'Explain' },
+    { q: 'Explain the meaning of "peak oil" and the reasons why it may already have been reached for some producers.', marks: 9, command: 'Explain' },
+    { q: 'Explain the difference between physical and economic water scarcity, using named regional examples.', marks: 9, command: 'Explain' },
+    { q: 'Describe the patterns and processes of lithium extraction in the Lithium Triangle of Bolivia, Chile and Argentina.', marks: 9, command: 'Describe' },
+    { q: 'Compare the water security challenges facing two contrasting transboundary river basins (such as the Nile and the Mekong).', marks: 12, command: 'Compare' },
+    { q: 'Discuss the geopolitical significance of oil reserves and major oil-producing states (with reference to Saudi Aramco and OPEC).', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the role of transnational corporations (TNCs) in shaping resource development in low- and middle-income countries.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which the Three Gorges Dam has met its stated water and energy security objectives.', marks: 16, command: 'Assess' },
+    { q: 'Assess the significance of conflict minerals (such as cobalt and rare earth elements) for global manufacturing supply chains.', marks: 16, command: 'Assess' },
+    { q: 'Assess the role of nuclear power in delivering long-term national energy security.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the effectiveness of fracking in the USA and the UK as a response to energy insecurity.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate desalination as a sustainable long-term solution to water scarcity in the Gulf region.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent can the transition to a circular economy deliver lasting resource security in global mineral supply chains?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent must wealthy nations restrict consumption, rather than rely on technological substitution, to achieve sustainable resource security?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
