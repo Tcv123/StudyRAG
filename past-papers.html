@@ -214,31 +214,6 @@
     catch (_) { return ''; }
   }
 
-  // Render a single board card. If the board has direct papers (e.g. OCR
-  // CS), the Attempt-paper feature is surfaced via a paper table below
-  // the card.
-  function boardCardHtml(board) {
-    const hasPapers = Array.isArray(board.papers) && board.papers.length > 0;
-    const attemptBadge = hasPapers
-      ? `<span class="badge attempt">▶ ${board.papers.length} attemptable</span>`
-      : '';
-    const noteHtml = board.note
-      ? `<div class="board-card-note">${esc(board.note)}</div>`
-      : '';
-    return `
-      <div class="board-card">
-        <div class="board-card-head">
-          <div class="board-card-name">${esc(board.board)} ${attemptBadge}</div>
-          <div class="board-card-spec">${esc(board.specCode)}</div>
-        </div>
-        <div class="board-card-host">${esc(hostOf(board.officialPageUrl) || 'official')}</div>
-        ${noteHtml}
-        <div class="board-card-actions">
-          <a class="pc-btn primary" href="${esc(board.officialPageUrl)}" target="_blank" rel="noopener">Open official page →</a>
-        </div>
-      </div>`;
-  }
-
   function papersTableHtml(board) {
     if (!Array.isArray(board.papers) || !board.papers.length) return '';
     const rows = board.papers.map(p => {
@@ -275,25 +250,31 @@
   let html = `
     <div class="intro-card">
       <span class="official-tag">Official only</span>
-      Every link below points to the exam board's own site — <strong>aqa.org.uk</strong>, <strong>qualifications.pearson.com</strong>, <strong>ocr.org.uk</strong>, or <strong>eduqas.co.uk</strong>. Most boards don't expose stable per-paper URLs, so the cards open the canonical assessment-resources page where you filter by series. <strong>OCR Computer Science (H446)</strong> publishes direct PDFs — June 2022 is fully extracted with the question-by-question stepper (walk the actual exam prompts and self-mark each part).
+      Past papers below come straight from the exam board's own filestore (<strong>ocr.org.uk</strong>). Pick a paper and walk it question by question — write your answer in the textarea, then self-mark against the mark scheme at the end.
     </div>`;
-  subjects.forEach(subj => {
-    const boardCount = subj.boards.length;
-    const directCount = subj.boards.reduce((n, b) => n + (b.papers?.length || 0), 0);
-    const metaBits = [`${boardCount} board${boardCount === 1 ? '' : 's'}`];
-    if (directCount) metaBits.push(`${directCount} attemptable papers`);
+  // Only render subjects that have at least one attemptable paper. Boards
+  // that only link to an official page are dropped — they add no value
+  // beyond the board's own search UI.
+  const attemptable = subjects
+    .map(s => ({ ...s, boards: s.boards.filter(b => Array.isArray(b.papers) && b.papers.length > 0) }))
+    .filter(s => s.boards.length > 0);
+  attemptable.forEach(subj => {
+    const directCount = subj.boards.reduce((n, b) => n + b.papers.length, 0);
     html += `
       <section class="subject-section">
         <div class="subject-head">
           <div class="subject-title">${subj.icon || ''} ${esc(subj.name)}</div>
-          <div class="subject-meta">${metaBits.join(' · ')}</div>
-        </div>
-        <div class="board-grid">
-          ${subj.boards.map(boardCardHtml).join('')}
+          <div class="subject-meta">${directCount} attemptable paper${directCount === 1 ? '' : 's'}</div>
         </div>
         ${subj.boards.map(papersTableHtml).join('')}
       </section>`;
   });
+  if (!attemptable.length) {
+    html += `
+      <div class="intro-card" style="text-align:center;">
+        No attemptable papers wired up yet. Check back soon.
+      </div>`;
+  }
   document.getElementById('pageBody').innerHTML = html;
 })();
 </script>

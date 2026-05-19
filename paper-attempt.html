@@ -116,6 +116,29 @@
     .qbq-mark-row input { width: 90px; padding: 10px 12px; font-size: 17px; font-family: var(--font-body); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-variant-numeric: tabular-nums; }
     .qbq-mark-row input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.2); }
     .qbq-mark-row .out-of { font-size: 14px; color: var(--muted); }
+
+    /* Phase chip on the step header */
+    .qbq-phase { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; border-radius: 999px; font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; }
+    .qbq-phase.attempt  { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+    .qbq-phase.marking  { background: rgba(217,119,6,0.12); color: #92400E; border: 1px solid rgba(217,119,6,0.3); }
+
+    /* Answer textarea (attempt phase) */
+    .qbq-answer-label { margin: 22px 22px 6px; font-size: 12.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+    .qbq-answer-area { margin: 0 22px; }
+    .qbq-answer { width: 100%; min-height: 140px; padding: 14px 16px; font-family: var(--font-body); font-size: 15px; line-height: 1.65; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text); resize: vertical; }
+    .qbq-answer.code-like { font-family: 'Consolas', 'Monaco', monospace; min-height: 220px; }
+    .qbq-answer:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .qbq-answer-meta { margin: 6px 22px 0; font-size: 12px; color: var(--muted2); display: flex; justify-content: space-between; gap: 10px; }
+
+    /* Marking phase — display the student's saved answer */
+    .qbq-answer-display { margin: 0 22px; padding: 14px 16px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; font-size: 14.5px; line-height: 1.65; color: var(--text); white-space: pre-wrap; min-height: 60px; }
+    .qbq-answer-display.empty { color: var(--muted2); font-style: italic; }
+
+    /* Phase intro / transition panel */
+    .qbq-intro { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; text-align: center; }
+    .qbq-intro-icon { font-size: 48px; margin-bottom: 12px; }
+    .qbq-intro-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 10px; }
+    .qbq-intro-body { font-size: 14.5px; color: var(--muted); line-height: 1.7; max-width: 520px; margin: 0 auto 18px; }
     .qbq-controls { padding: 18px 22px 22px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     .qbq-controls .spacer { flex: 1; }
     .qbq-controls .nav-hint { font-size: 12px; color: var(--muted2); }
@@ -466,14 +489,30 @@
         return;
       }
 
-      // Ensure attempt.responses exists and matches the part list shape.
+      // Ensure attempt.responses matches the part list shape and carries
+      // both an answer (filled in during the attempt phase) and a marks
+      // value (entered during the marking phase).
       if (!Array.isArray(attempt.responses) || attempt.responses.length !== parts.length) {
-        attempt.responses = parts.map(p => ({ code: p.code, maxMarks: p.marks, marks: null }));
+        attempt.responses = parts.map(p => ({ code: p.code, maxMarks: p.marks, answer: '', marks: null }));
+      } else {
+        // Back-fill missing fields for forwards compatibility.
+        attempt.responses.forEach(r => {
+          if (r.answer == null) r.answer = '';
+          if (!('marks' in r)) r.marks = null;
+        });
+      }
+      // Phase: 'attempt' (writing answers) → 'marking' (self-marking with MS).
+      if (attempt.phase !== 'attempt' && attempt.phase !== 'marking') {
+        attempt.phase = 'attempt';
       }
       if (typeof attempt.currentIndex !== 'number' || attempt.currentIndex < 0 || attempt.currentIndex >= parts.length) {
-        // Resume at the first unanswered part, else 0.
-        const firstBlank = attempt.responses.findIndex(r => r.marks == null);
-        attempt.currentIndex = firstBlank === -1 ? 0 : firstBlank;
+        if (attempt.phase === 'attempt') {
+          const firstBlank = attempt.responses.findIndex(r => !r.answer);
+          attempt.currentIndex = firstBlank === -1 ? 0 : firstBlank;
+        } else {
+          const firstUnmarked = attempt.responses.findIndex(r => r.marks == null);
+          attempt.currentIndex = firstUnmarked === -1 ? 0 : firstUnmarked;
+        }
       }
 
       // ---------- inline-code parsing for `prompt` text ----------
@@ -499,12 +538,25 @@
         return '';
       }
 
+      // Heuristic: parts where the answer is essentially code (LMC, OOP class,
+      // function) get a monospace textarea. Anything else uses prose mode.
+      function isCodeAnswer(part) {
+        const c = (part.code || '').toLowerCase();
+        const promptCheck = (part.prompt || '').toLowerCase();
+        return /lmc|pseudocode|program code|class|function/.test(promptCheck) || c.startsWith('5(e)(i)');
+      }
+
       function renderStep() {
         const idx = attempt.currentIndex;
         const part = parts[idx];
         const response = attempt.responses[idx];
-        const answered = attempt.responses.filter(r => r.marks != null).length;
         const totalParts = parts.length;
+        const phase = attempt.phase;
+
+        // Progress counter is phase-specific.
+        const completedCount = phase === 'attempt'
+          ? attempt.responses.filter(r => r.answer && r.answer.trim()).length
+          : attempt.responses.filter(r => r.marks != null).length;
         const pctProgress = Math.round((idx / totalParts) * 100);
 
         // Show the question scenario block only on the first part of a question.
@@ -522,23 +574,40 @@
           ? `<div class="qbq-preamble">${renderPromptText(part.preamble)}</div>`
           : '';
 
-        document.getElementById('modeArea').innerHTML = `
-          <div class="qbq-stepper">
-            <div class="qbq-stephead">
-              <div class="qbq-progressbar"><div style="width:${pctProgress}%"></div></div>
-              <div class="qbq-progress-text">Part ${idx + 1} of ${totalParts} · ${answered} marked</div>
+        // ----- Phase-specific bottom block (input area + actions) -----
+        let bottomHtml = '';
+        const phaseChip = phase === 'attempt'
+          ? `<span class="qbq-phase attempt">Attempt phase</span>`
+          : `<span class="qbq-phase marking">Self-marking phase</span>`;
+
+        if (phase === 'attempt') {
+          const codeLike = isCodeAnswer(part);
+          bottomHtml = `
+            <div class="qbq-answer-label">Your answer to ${esc(part.code)}</div>
+            <div class="qbq-answer-area">
+              <textarea id="qbqAnswerInput" class="qbq-answer${codeLike ? ' code-like' : ''}"
+                placeholder="Write your answer here…">${esc(response.answer || '')}</textarea>
             </div>
-            <div class="qbq-step-meta">
-              <span class="qbq-qcode">${esc(part.code)}</span>
-              <span class="qbq-marks-badge">${part.marks} mark${part.marks === 1 ? '' : 's'}</span>
-              ${part.extended ? `<span class="qbq-extended-badge">★ Extended response · quality of writing assessed</span>` : ''}
+            <div class="qbq-answer-meta">
+              <span id="qbqWordCount">0 words</span>
+              <span>Autosaves as you type. You'll self-mark at the end.</span>
             </div>
-            ${scenarioHtml}
-            ${preambleHtml}
-            ${figureHtml}
-            <div class="qbq-prompt">${renderPromptText(part.prompt)}</div>
+            <div class="qbq-controls">
+              <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
+              <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? 'Finish answering →' : 'Save & Next →'}</button>
+              <span class="spacer"></span>
+              <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
+              <button class="btn ghost" id="switchMode">↺ Switch mode</button>
+            </div>`;
+        } else {
+          const ans = (response.answer || '').trim();
+          bottomHtml = `
+            <div class="qbq-answer-label">Your answer to ${esc(part.code)} (from the attempt phase)</div>
+            <div class="qbq-answer-area">
+              <div class="qbq-answer-display${ans ? '' : ' empty'}">${ans ? esc(ans) : "You didn’t write an answer for this part."}</div>
+            </div>
             <div class="qbq-mark-row">
-              <label for="qbqMarksInput">Marks scored on ${esc(part.code)}:</label>
+              <label for="qbqMarksInput">Marks you award yourself:</label>
               <input id="qbqMarksInput" type="number" min="0" max="${part.marks}" step="1"
                      value="${response.marks == null ? '' : response.marks}" placeholder="0">
               <span class="out-of">out of ${part.marks}</span>
@@ -548,30 +617,82 @@
               <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
               <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? '✓ Finish & see result' : 'Save & Next →'}</button>
               <span class="spacer"></span>
-              <span class="nav-hint">${idx === totalParts - 1 ? 'Last part — finish to see your total.' : `Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select>`}</span>
+              <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
               <button class="btn ghost" id="switchMode">↺ Switch mode</button>
+            </div>`;
+        }
+
+        document.getElementById('modeArea').innerHTML = `
+          <div class="qbq-stepper">
+            <div class="qbq-stephead">
+              <div class="qbq-progressbar"><div style="width:${pctProgress}%"></div></div>
+              <div class="qbq-progress-text">Part ${idx + 1} of ${totalParts} · ${completedCount} ${phase === 'attempt' ? 'answered' : 'marked'}</div>
             </div>
+            <div class="qbq-step-meta">
+              <span class="qbq-qcode">${esc(part.code)}</span>
+              <span class="qbq-marks-badge">${part.marks} mark${part.marks === 1 ? '' : 's'}</span>
+              ${part.extended ? `<span class="qbq-extended-badge">★ Extended response · quality of writing assessed</span>` : ''}
+              ${phaseChip}
+            </div>
+            ${scenarioHtml}
+            ${preambleHtml}
+            ${figureHtml}
+            <div class="qbq-prompt">${renderPromptText(part.prompt)}</div>
+            ${bottomHtml}
           </div>`;
 
-        const input = document.getElementById('qbqMarksInput');
-        input.focus();
-        input.addEventListener('input', () => {
-          const v = parseInt(input.value, 10);
-          attempt.responses[idx].marks = Number.isFinite(v) ? Math.min(Math.max(v, 0), part.marks) : null;
-          saveAttempt(attempt);
-        });
-        input.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter') { e.preventDefault(); document.getElementById('nextBtn').click(); }
-        });
+        // ---------- Per-phase wiring ----------
+        const updateWordCount = () => {
+          const ta = document.getElementById('qbqAnswerInput');
+          const wc = document.getElementById('qbqWordCount');
+          if (!ta || !wc) return;
+          const t = ta.value.trim();
+          const w = t ? t.split(/\s+/).length : 0;
+          wc.textContent = `${w} word${w === 1 ? '' : 's'}`;
+        };
 
-        // Populate jump dropdown
+        if (phase === 'attempt') {
+          const ta = document.getElementById('qbqAnswerInput');
+          ta.focus();
+          // Move caret to end so resuming a part doesn't drop you at column 0.
+          const end = ta.value.length;
+          ta.setSelectionRange(end, end);
+          updateWordCount();
+          ta.addEventListener('input', () => {
+            attempt.responses[idx].answer = ta.value;
+            saveAttempt(attempt);
+            updateWordCount();
+          });
+          // Ctrl+Enter / Cmd+Enter advances; plain Enter inserts a newline.
+          ta.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+              e.preventDefault();
+              document.getElementById('nextBtn').click();
+            }
+          });
+        } else {
+          const input = document.getElementById('qbqMarksInput');
+          input.focus();
+          input.addEventListener('input', () => {
+            const v = parseInt(input.value, 10);
+            attempt.responses[idx].marks = Number.isFinite(v) ? Math.min(Math.max(v, 0), part.marks) : null;
+            saveAttempt(attempt);
+          });
+          input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') { e.preventDefault(); document.getElementById('nextBtn').click(); }
+          });
+        }
+
+        // Skip-to dropdown — phase-aware tick marks.
         const jump = document.getElementById('jumpTo');
         if (jump) {
           parts.forEach((p, i) => {
             const opt = document.createElement('option');
             opt.value = i;
-            const marked = attempt.responses[i].marks != null ? '✓' : '·';
-            opt.textContent = `${marked} ${p.code} (${p.marks}m)`;
+            let tick = '·';
+            if (phase === 'attempt' && attempt.responses[i].answer && attempt.responses[i].answer.trim()) tick = '✓';
+            if (phase === 'marking' && attempt.responses[i].marks != null) tick = '✓';
+            opt.textContent = `${tick} ${p.code} (${p.marks}m)`;
             if (i === idx) opt.selected = true;
             jump.appendChild(opt);
           });
@@ -590,40 +711,81 @@
           }
         });
         document.getElementById('nextBtn').addEventListener('click', () => {
-          const v = parseInt(input.value, 10);
-          if (!Number.isFinite(v)) {
-            if (!confirm(`No mark entered for ${part.code}. Skip and continue?`)) return;
-            attempt.responses[idx].marks = null;
+          if (phase === 'attempt') {
+            const ta = document.getElementById('qbqAnswerInput');
+            attempt.responses[idx].answer = ta.value;
+            if (idx === totalParts - 1) {
+              // End of attempt phase → show transition screen → marking.
+              attempt.phase = 'marking';
+              attempt.currentIndex = 0;
+              saveAttempt(attempt);
+              renderPhaseTransition();
+              return;
+            }
           } else {
-            attempt.responses[idx].marks = Math.min(Math.max(v, 0), part.marks);
+            const input = document.getElementById('qbqMarksInput');
+            const v = parseInt(input.value, 10);
+            if (!Number.isFinite(v)) {
+              if (!confirm(`No mark entered for ${part.code}. Treat as 0 and continue?`)) return;
+              attempt.responses[idx].marks = 0;
+            } else {
+              attempt.responses[idx].marks = Math.min(Math.max(v, 0), part.marks);
+            }
+            if (idx === totalParts - 1) {
+              const scored = attempt.responses.reduce((n, r) => n + (Number.isFinite(r.marks) ? r.marks : 0), 0);
+              const completed = {
+                ...attempt,
+                status: 'completed',
+                totalMarks: scored,
+                maxAttempted: paper.totalMarks,
+                completedAt: new Date().toISOString()
+              };
+              saveAttempt(completed);
+              renderResult(completed);
+              return;
+            }
           }
+          attempt.currentIndex++;
           saveAttempt(attempt);
-          if (idx === totalParts - 1) {
-            // Finish: compute totals
-            const scored = attempt.responses.reduce((n, r) => n + (Number.isFinite(r.marks) ? r.marks : 0), 0);
-            const completed = {
-              ...attempt,
-              status: 'completed',
-              totalMarks: scored,
-              maxAttempted: paper.totalMarks,
-              completedAt: new Date().toISOString()
-            };
-            saveAttempt(completed);
-            renderResult(completed);
-          } else {
-            attempt.currentIndex++;
-            saveAttempt(attempt);
-            renderStep();
-          }
+          renderStep();
         });
         document.getElementById('switchMode').addEventListener('click', () => {
-          if (!confirm('Switch back to the mode picker? Your per-question marks will be cleared.')) return;
+          if (!confirm('Switch back to the mode picker? Your answers and marks will be cleared.')) return;
           clearAttempt();
           renderModePicker();
         });
       }
 
-      renderStep();
+      // Between the attempt and marking phases — quick orientation screen so
+      // the user knows what's about to happen and can pull up the MS PDF.
+      function renderPhaseTransition() {
+        document.getElementById('modeArea').innerHTML = `
+          <div class="qbq-intro">
+            <div class="qbq-intro-icon">📋</div>
+            <div class="qbq-intro-title">Answering done — time to self-mark</div>
+            <div class="qbq-intro-body">
+              You've written answers for all ${parts.length} parts. Now walk through them again with the official OCR mark scheme open, and award yourself the marks you genuinely earned for each part. You'll see your final total at the end.
+            </div>
+            <div class="btn-row" style="justify-content:center;">
+              ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Open mark scheme PDF</a>` : ''}
+              <button class="btn primary" id="beginMarking">Begin marking →</button>
+            </div>
+          </div>`;
+        document.getElementById('beginMarking').addEventListener('click', () => {
+          attempt.phase = 'marking';
+          attempt.currentIndex = 0;
+          saveAttempt(attempt);
+          renderStep();
+        });
+      }
+
+      // If the user lands mid-attempt at the boundary, kick straight to
+      // the transition screen rather than a malformed step.
+      if (attempt.phase === 'marking' && attempt.responses.every(r => r.marks == null) && attempt.currentIndex === 0) {
+        renderPhaseTransition();
+      } else {
+        renderStep();
+      }
     }
 
     function renderResult(attempt) {
