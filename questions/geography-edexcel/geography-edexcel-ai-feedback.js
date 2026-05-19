@@ -47,6 +47,25 @@ const GEOGRAPHY_EDEXCEL_AI_FEEDBACK = {
     { q: 'To what extent can the physical processes operating in coastal and glaciated landscapes be predicted with the precision needed for effective long-term management?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── T3 Water Cycle & Water Insecurity ─────────────────────── */
+  'T3': [
+    { q: 'Describe the main global stores within the hydrological cycle, indicating their relative size and residence times.', marks: 6, command: 'Describe' },
+    { q: 'Explain the components of the drainage basin water budget, including inputs, outputs, stores and flows.', marks: 6, command: 'Explain' },
+    { q: 'Explain the differences between meteorological, agricultural and hydrological drought, and the causes of each.', marks: 9, command: 'Explain' },
+    { q: 'Explain the distinction between physical and economic water scarcity, with reference to the Falkenmark indicator.', marks: 9, command: 'Explain' },
+    { q: 'Describe the causes and consequences of the environmental degradation of the Aral Sea since the 1960s.', marks: 9, command: 'Describe' },
+    { q: 'Compare the water management challenges facing the Colorado River basin with those facing the Murray-Darling basin in Australia.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the role of virtual water trade as a potential solution to global water insecurity.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the geopolitical implications of the Grand Ethiopian Renaissance Dam (GERD) for water security in the Nile basin.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which climate change is intensifying global water insecurity in the 21st century.', marks: 16, command: 'Assess' },
+    { q: 'Assess the effectiveness of large dams (such as Three Gorges and Aswan) in delivering long-term water security.', marks: 16, command: 'Assess' },
+    { q: 'Assess what the Cape Town "Day Zero" crisis of 2018 reveals about the challenges of urban water management.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate desalination as a sustainable long-term response to water scarcity in arid regions such as the Gulf states, Israel and Singapore.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate large-scale inter-basin water transfers (such as China\'s South-North Project) as a means of achieving water security.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent must water be priced as an economic good rather than treated as a human right in order to achieve water security?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent can transboundary cooperation overcome rising water insecurity in the world\'s most contested river basins?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
