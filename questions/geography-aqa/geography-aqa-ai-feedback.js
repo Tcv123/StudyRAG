@@ -104,6 +104,25 @@ const GEOGRAPHY_AQA_AI_FEEDBACK = {
     { q: 'To what extent can the contemporary city ever be made truly environmentally sustainable given current consumption patterns?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── 2.3 Population & the Environment ─────────────────────── */
+  '2.3': [
+    { q: 'Describe the main stages of the Demographic Transition Model (DTM), referring to key demographic indicators at each stage.', marks: 6, command: 'Describe' },
+    { q: 'Explain why environmental factors such as climate, soils and water availability influence the global distribution of population.', marks: 6, command: 'Explain' },
+    { q: 'Explain how environmental factors influence the global distribution and incidence of malaria.', marks: 9, command: 'Explain' },
+    { q: 'Explain how changes in agricultural systems (intensification, mechanisation and the Green Revolution) have supported population growth.', marks: 9, command: 'Explain' },
+    { q: 'Describe how an age-sex pyramid for a country with an ageing population (such as Japan) differs from one with a youthful population (such as Niger).', marks: 9, command: 'Describe' },
+    { q: 'Compare the Malthusian and Boserupian views of the relationship between population growth and resources.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the environmental and lifestyle factors driving the rising global incidence of non-communicable diseases such as obesity and cardiovascular disease.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the extent to which the Green Revolution has been successful in addressing food insecurity in low- and middle-income countries.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the demographic and social outcomes of the Chinese one-child policy in the decades since its introduction.', marks: 16, command: 'Assess' },
+    { q: 'Assess the value of the Kerala model as an alternative to coercive population control in achieving demographic transition.', marks: 16, command: 'Assess' },
+    { q: 'Assess the significance of environmental migration and climate refugees (with reference to Tuvalu, the Maldives or Bangladesh) for 21st-century demographic geography.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the effectiveness of genetically modified crops and large-scale agribusiness as a response to global food insecurity.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the extent to which the Demographic Transition Model remains a useful framework for explaining 21st-century demographic change.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent does continued global population growth pose the most serious threat to environmental sustainability in the 21st century?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent does the environment shape population characteristics, rather than population shaping the environment?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
