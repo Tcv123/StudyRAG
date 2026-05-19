@@ -173,6 +173,10 @@
     'Economics_Edexcel A':         ['questions/economics-edexcel-a/economics-edexcel-a-written.js'],
     'Economics_Edexcel B':         ['questions/economics-edexcel-b/economics-edexcel-b-written.js'],
     'Economics_OCR':               ['questions/economics-ocr/economics-ocr-written.js'],
+    'Geography_AQA':               ['questions/geography-aqa/geography-aqa-ai-feedback.js'],
+    'Geography_Edexcel':           ['questions/geography-edexcel/geography-edexcel-ai-feedback.js'],
+    'Geography_Eduqas|alevel':     ['questions/geography-eduqas-alevel/geography-eduqas-alevel-ai-feedback.js'],
+    'Geography_OCR':               ['questions/geography-ocr/geography-ocr-ai-feedback.js'],
   };
 
   const AI_FEEDBACK_MAP = {
@@ -207,6 +211,10 @@
     'Economics_Edexcel A':      () => typeof ECONOMICS_EDEXCEL_A_WRITTEN !== 'undefined' ? ECONOMICS_EDEXCEL_A_WRITTEN : null,
     'Economics_Edexcel B':      () => typeof ECONOMICS_EDEXCEL_B_WRITTEN !== 'undefined' ? ECONOMICS_EDEXCEL_B_WRITTEN : null,
     'Economics_OCR':            () => typeof ECONOMICS_OCR_WRITTEN !== 'undefined' ? ECONOMICS_OCR_WRITTEN : null,
+    'Geography_AQA':            () => typeof GEOGRAPHY_AQA_AI_FEEDBACK !== 'undefined' ? GEOGRAPHY_AQA_AI_FEEDBACK : null,
+    'Geography_Edexcel':        () => typeof GEOGRAPHY_EDEXCEL_AI_FEEDBACK !== 'undefined' ? GEOGRAPHY_EDEXCEL_AI_FEEDBACK : null,
+    'Geography_Eduqas|alevel':  () => typeof GEOGRAPHY_EDUQAS_ALEVEL_AI_FEEDBACK !== 'undefined' ? GEOGRAPHY_EDUQAS_ALEVEL_AI_FEEDBACK : null,
+    'Geography_OCR':            () => typeof GEOGRAPHY_OCR_AI_FEEDBACK !== 'undefined' ? GEOGRAPHY_OCR_AI_FEEDBACK : null,
   };
 
   const _loadedScripts = new Set();
