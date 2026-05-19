@@ -169,6 +169,10 @@
     'Computer Science_OCR|alevel': ['questions/cs/cs-ocr-alevel-ai-feedback.js'],
     'Computer Science_OCR|gcse':   ['questions/cs/cs-ocr-gcse-ai-feedback.js'],
     'Computer Science_OCR':        ['questions/cs/cs-ocr-gcse-ai-feedback.js'],
+    'Economics_AQA':               ['questions/economics-aqa/economics-aqa-written.js'],
+    'Economics_Edexcel A':         ['questions/economics-edexcel-a/economics-edexcel-a-written.js'],
+    'Economics_Edexcel B':         ['questions/economics-edexcel-b/economics-edexcel-b-written.js'],
+    'Economics_OCR':               ['questions/economics-ocr/economics-ocr-written.js'],
   };
 
   const AI_FEEDBACK_MAP = {
@@ -199,6 +203,10 @@
     'Computer Science_OCR|alevel': () => typeof CS_OCR_AI_FEEDBACK !== 'undefined' ? CS_OCR_AI_FEEDBACK : null,
     'Computer Science_OCR|gcse':   () => typeof CS_OCR_GCSE_AI_FEEDBACK !== 'undefined' ? CS_OCR_GCSE_AI_FEEDBACK : null,
     'Computer Science_OCR':        () => typeof CS_OCR_GCSE_AI_FEEDBACK !== 'undefined' ? CS_OCR_GCSE_AI_FEEDBACK : null,
+    'Economics_AQA':            () => typeof ECONOMICS_AQA_WRITTEN !== 'undefined' ? ECONOMICS_AQA_WRITTEN : null,
+    'Economics_Edexcel A':      () => typeof ECONOMICS_EDEXCEL_A_WRITTEN !== 'undefined' ? ECONOMICS_EDEXCEL_A_WRITTEN : null,
+    'Economics_Edexcel B':      () => typeof ECONOMICS_EDEXCEL_B_WRITTEN !== 'undefined' ? ECONOMICS_EDEXCEL_B_WRITTEN : null,
+    'Economics_OCR':            () => typeof ECONOMICS_OCR_WRITTEN !== 'undefined' ? ECONOMICS_OCR_WRITTEN : null,
   };
 
   const _loadedScripts = new Set();
@@ -278,7 +286,15 @@
     if (!bank || !topicId) return [];
     const data = bank[topicId];
     if (!data) return [];
-    const questions = Array.isArray(data) ? data : (data.questions || []);
+    let questions;
+    if (Array.isArray(data)) {
+      questions = data;
+    } else if (Array.isArray(data.green) || Array.isArray(data.amber) || Array.isArray(data.red)) {
+      // Tiered shape (e.g. economics *-written.js): flatten green → amber → red.
+      questions = [...(data.green || []), ...(data.amber || []), ...(data.red || [])];
+    } else {
+      questions = data.questions || [];
+    }
     return questions.filter(q => q && q.q);
   }
 
