@@ -47,6 +47,25 @@ const GEOGRAPHY_AQA_AI_FEEDBACK = {
     { q: 'To what extent has human activity, rather than natural processes, become the dominant driver of coastal change along the UK coastline?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── 1.3 Hazards ─────────────────────── */
+  '1.3': [
+    { q: 'Describe the main stages of Park\'s disaster response curve and what each stage represents.', marks: 6, command: 'Describe' },
+    { q: 'Explain the relationship Risk = (Hazard × Vulnerability) ÷ Capacity to Cope, using a worked example.', marks: 6, command: 'Explain' },
+    { q: 'Explain the global distribution of earthquakes and volcanoes with reference to plate boundary types and hotspots.', marks: 9, command: 'Explain' },
+    { q: 'Explain the conditions required for the formation of a tropical storm, including latitude, sea-surface temperature and the Coriolis effect.', marks: 9, command: 'Explain' },
+    { q: 'Describe the primary and secondary hazards that can arise from an explosive volcanic eruption, with reference to a named event.', marks: 9, command: 'Describe' },
+    { q: 'Compare the impacts of the 2010 Haiti earthquake and the 2011 Tōhoku earthquake, despite Tōhoku being of greater magnitude.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the relative effectiveness of prediction strategies for volcanic hazards compared with seismic hazards.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the role of governance and level of development in determining the human impacts of a major tropical storm (for example Hurricane Katrina or Typhoon Haiyan).', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which the impacts of a tectonic hazard depend more on vulnerability than on the physical magnitude of the event.', marks: 16, command: 'Assess' },
+    { q: 'Assess how living in a multi-hazard environment (such as the Philippines or Iceland) shapes the way societies manage risk.', marks: 16, command: 'Assess' },
+    { q: 'Assess the usefulness of Park\'s disaster response model in explaining how a named country responded to a major seismic event.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the effectiveness of international aid in reducing the long-term impacts of major disasters, with reference to Haiti 2010 and Nepal 2015.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the significance of wildfires (including events in Australia and California) as an increasingly important global hazard.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent are so-called natural disasters in fact human-made disasters created by political, economic and social choices?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent can the impacts of tectonic and atmospheric hazards ever be eliminated through advances in technology, planning and preparation?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
