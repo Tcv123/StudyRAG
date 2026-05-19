@@ -88,27 +88,37 @@
     .total-mark-row input[type="number"]:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
     .total-mark-row .out-of { font-size: 14px; color: var(--muted); }
 
-    /* Question-by-question table */
-    .q-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 12px; }
-    .q-table th { text-align: left; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); padding: 6px 10px; border-bottom: 1px solid var(--border); }
-    .q-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-    .q-table tr:last-child td { border-bottom: none; }
-    .q-table input { font-family: var(--font-body); font-size: 14px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); width: 100%; }
-    .q-table input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
-    .q-table .col-label { width: 110px; }
-    .q-table .col-marks { width: 90px; }
-    .q-table .col-max { width: 90px; }
-    .q-table .col-pct { width: 60px; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 13px; }
-    .q-table .col-action { width: 40px; text-align: right; }
-    .q-table .row-remove { background: none; border: none; color: var(--muted2); cursor: pointer; font-size: 16px; padding: 2px 6px; border-radius: 6px; }
-    .q-table .row-remove:hover { background: var(--bad-dim); color: var(--bad); }
-
-    .qbq-controls { display: flex; gap: 12px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
-    .qbq-summary { display: flex; gap: 24px; padding: 14px 18px; background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
-    .qbq-summary .sum-key { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); font-weight: 600; }
-    .qbq-summary .sum-val { font-family: var(--font-display); font-size: 22px; color: var(--text); }
-    .qbq-summary .sum-val.warn { color: var(--warn); }
-    .qbq-summary .sum-pct { font-size: 13px; color: var(--muted); }
+    /* Question-by-question stepper */
+    .qbq-stepper { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 0; margin-bottom: 18px; box-shadow: 0 1px 0 rgba(11,30,63,0.02); overflow: hidden; }
+    .qbq-stephead { padding: 16px 22px 12px; border-bottom: 1px solid var(--border); display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+    .qbq-progressbar { flex: 1; min-width: 160px; height: 6px; background: var(--surface2); border-radius: 999px; overflow: hidden; }
+    .qbq-progressbar > div { height: 100%; background: var(--accent); transition: width 0.25s ease; }
+    .qbq-progress-text { font-size: 12.5px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .qbq-step-meta { display: flex; gap: 10px; align-items: baseline; padding: 12px 22px 0; flex-wrap: wrap; }
+    .qbq-qcode { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: var(--accent-dim); color: var(--accent-dark); border: 1px solid var(--accent); border-radius: 999px; font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; }
+    .qbq-marks-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: var(--surface2); color: var(--muted); border: 1px solid var(--border); border-radius: 999px; font-size: 12.5px; font-weight: 600; }
+    .qbq-extended-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: rgba(124,58,237,0.08); color: #6D28D9; border: 1px solid rgba(124,58,237,0.3); border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .qbq-scenario { margin: 12px 22px 0; padding: 14px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
+    .qbq-scenario-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); margin-bottom: 4px; }
+    .qbq-scenario p { margin-top: 4px; }
+    .qbq-preamble { margin: 12px 22px 0; padding: 0 4px; font-size: 14.5px; color: var(--muted); line-height: 1.65; font-style: italic; border-left: 3px solid var(--border); padding-left: 12px; }
+    .qbq-prompt { margin: 14px 22px 0; padding: 0; font-size: 16.5px; line-height: 1.7; color: var(--text); white-space: pre-line; }
+    .qbq-prompt code { background: var(--surface2); border: 1px solid var(--border); padding: 1px 6px; border-radius: 5px; font-family: 'Consolas', 'Monaco', monospace; font-size: 14px; color: var(--accent-dark); }
+    .qbq-prompt strong { font-weight: 700; color: var(--text); }
+    .figure-block { margin: 14px 22px 0; }
+    .figure-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); margin-bottom: 6px; }
+    .figure-code { background: #0B1E3F; color: #E8F0FB; border-radius: 10px; padding: 14px 18px; font-family: 'Consolas', 'Monaco', monospace; font-size: 13.5px; line-height: 1.6; white-space: pre; overflow-x: auto; }
+    .figure-table { width: auto; border-collapse: collapse; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; }
+    .figure-table th, .figure-table td { padding: 8px 14px; border: 1px solid var(--border); text-align: left; font-size: 13.5px; }
+    .figure-table th { background: var(--surface2); font-weight: 600; color: var(--text); font-size: 12.5px; }
+    .qbq-mark-row { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; margin: 22px 22px 0; padding: 14px 16px; background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 12px; }
+    .qbq-mark-row label { font-size: 14.5px; color: var(--text); font-weight: 500; }
+    .qbq-mark-row input { width: 90px; padding: 10px 12px; font-size: 17px; font-family: var(--font-body); background: var(--surface); border: 1px solid var(--border); border-radius: 10px; color: var(--text); font-variant-numeric: tabular-nums; }
+    .qbq-mark-row input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px rgba(37,99,235,0.2); }
+    .qbq-mark-row .out-of { font-size: 14px; color: var(--muted); }
+    .qbq-controls { padding: 18px 22px 22px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+    .qbq-controls .spacer { flex: 1; }
+    .qbq-controls .nav-hint { font-size: 12px; color: var(--muted2); }
 
     .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
     .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #B45309; margin-bottom: 20px; }
@@ -334,6 +344,20 @@
     }
 
     function renderModePicker() {
+      const parts = window.paperParts(paper);
+      const qbqAvailable = parts.length > 0;
+      const qbqCard = qbqAvailable ? `
+            <div class="mode-card" data-mode="qbq">
+              <div class="mode-icon">📝</div>
+              <div class="mode-title">Work through it question by question</div>
+              <div class="mode-desc">Step through each question on-screen. See the actual exam prompt, enter your marks, then move to the next. Totals and grade band update live. <strong>${parts.length} parts</strong> in this paper.</div>
+              <div><button class="btn primary" data-pick="qbq">Use this mode →</button></div>
+            </div>` : `
+            <div class="mode-card" style="opacity:0.6;cursor:not-allowed;">
+              <div class="mode-icon">📝</div>
+              <div class="mode-title">Work through it question by question</div>
+              <div class="mode-desc">Not available for this paper yet — questions haven't been extracted from the QP PDF. Coming soon.</div>
+            </div>`;
       document.getElementById('modeArea').innerHTML = `
         <div class="panel">
           <div class="panel-head">
@@ -347,12 +371,7 @@
               <div class="mode-desc">Print the PDF, sit the paper offline, mark it yourself against the mark scheme, then come back and enter your total score.</div>
               <div><button class="btn primary" data-pick="print">Use this mode →</button></div>
             </div>
-            <div class="mode-card" data-mode="qbq">
-              <div class="mode-icon">📝</div>
-              <div class="mode-title">Work through it question by question</div>
-              <div class="mode-desc">Step through each question on-screen. Enter the marks you scored as you mark each one. Totals and grade band update live.</div>
-              <div><button class="btn primary" data-pick="qbq">Use this mode →</button></div>
-            </div>
+            ${qbqCard}
           </div>
         </div>`;
       document.querySelectorAll('[data-pick]').forEach(b => {
@@ -360,11 +379,8 @@
           const mode = b.dataset.pick;
           const seed = { mode, paperId: paper.id, status: 'in_progress', startedAt: new Date().toISOString() };
           if (mode === 'qbq') {
-            seed.questions = Array.from({ length: paper.defaultQuestions || 10 }, (_, i) => ({
-              id: `Q${i + 1}`,
-              maxMarks: '',
-              marks: ''
-            }));
+            seed.responses = parts.map(p => ({ code: p.code, maxMarks: p.marks, marks: null }));
+            seed.currentIndex = 0;
           }
           saveAttempt(seed);
           if (mode === 'print') renderPrintMode(seed);
@@ -435,137 +451,179 @@
     }
 
     function renderQbqMode(attempt) {
-      const area = document.getElementById('modeArea');
-      const rowsHtml = attempt.questions.map((q, i) => qRow(q, i)).join('');
-      area.innerHTML = `
-        <div class="panel">
-          <div class="panel-head">
-            <div class="panel-title">📝 Question by question</div>
-            <div class="panel-sub">Enter the marks each question is worth and how many you scored. Open the PDFs above to follow along. Add or remove rows to match your paper.</div>
-          </div>
-          <table class="q-table">
-            <thead>
-              <tr>
-                <th class="col-label">Question</th>
-                <th class="col-marks">Scored</th>
-                <th class="col-max">Out of</th>
-                <th class="col-pct">%</th>
-                <th class="col-action"></th>
-              </tr>
-            </thead>
-            <tbody id="qBody">${rowsHtml}</tbody>
-          </table>
-          <div class="qbq-controls">
-            <button class="btn" id="addRow">+ Add question</button>
-            <span style="font-size:12.5px;color:var(--muted2);">Tip: open the mark scheme in a second tab to check each part.</span>
-          </div>
-          <div class="qbq-summary" id="qSummary"></div>
-          <div class="btn-row" style="margin-top:16px;">
-            <button class="btn primary" id="submitQbq">✓ Finish &amp; see result</button>
-            <button class="btn ghost" id="switchMode">↺ Switch mode</button>
-          </div>
-        </div>`;
-
-      const tbody = document.getElementById('qBody');
-      const summary = document.getElementById('qSummary');
-
-      function qRow(q, i) {
-        return `
-          <tr data-idx="${i}">
-            <td class="col-label"><input type="text" data-field="id" value="${esc(q.id)}" placeholder="Q${i+1}"></td>
-            <td class="col-marks"><input type="number" data-field="marks" min="0" step="1" value="${esc(q.marks ?? '')}" placeholder="0"></td>
-            <td class="col-max"><input type="number" data-field="maxMarks" min="0" step="1" value="${esc(q.maxMarks ?? '')}" placeholder="—"></td>
-            <td class="col-pct" data-cell="pct">—</td>
-            <td class="col-action"><button class="row-remove" type="button" title="Remove row">✕</button></td>
-          </tr>`;
+      const parts = window.paperParts(paper);
+      if (!parts.length) {
+        // Defensive: shouldn't normally hit since picker disables qbq.
+        document.getElementById('modeArea').innerHTML = `
+          <div class="panel">
+            <div class="panel-title">Question-by-question not available</div>
+            <div class="panel-sub" style="margin-top:6px;">This paper hasn't had its questions extracted yet. Use the print mode instead.</div>
+            <div class="btn-row" style="margin-top:14px;">
+              <button class="btn primary" id="backToPicker">← Back to mode picker</button>
+            </div>
+          </div>`;
+        document.getElementById('backToPicker').addEventListener('click', () => { clearAttempt(); renderModePicker(); });
+        return;
       }
 
-      function readRows() {
-        return [...tbody.querySelectorAll('tr')].map(tr => {
-          const get = f => tr.querySelector(`[data-field="${f}"]`).value;
-          return { id: get('id'), marks: get('marks'), maxMarks: get('maxMarks') };
-        });
+      // Ensure attempt.responses exists and matches the part list shape.
+      if (!Array.isArray(attempt.responses) || attempt.responses.length !== parts.length) {
+        attempt.responses = parts.map(p => ({ code: p.code, maxMarks: p.marks, marks: null }));
       }
-      function refreshSummary() {
-        const rows = readRows();
-        let scored = 0, max = 0, filled = 0;
-        rows.forEach((r, i) => {
-          const s = parseInt(r.marks, 10);
-          const m = parseInt(r.maxMarks, 10);
-          const pctCell = tbody.querySelector(`tr[data-idx="${i}"] [data-cell="pct"]`);
-          if (Number.isFinite(s) && Number.isFinite(m) && m > 0) {
-            scored += s; max += m; filled++;
-            pctCell.textContent = `${Math.round((s/m)*100)}%`;
-          } else if (Number.isFinite(m) && m > 0) {
-            max += m;
-            pctCell.textContent = '—';
-          } else {
-            pctCell.textContent = '—';
-          }
-        });
-        const pct = max > 0 ? Math.round((scored / max) * 100) : 0;
-        const matchesTotal = max === paper.totalMarks;
-        summary.innerHTML = `
-          <div><div class="sum-key">Scored</div><div class="sum-val">${scored}</div></div>
-          <div><div class="sum-key">Out of</div><div class="sum-val ${matchesTotal ? '' : 'warn'}">${max}<span class="sum-pct" style="margin-left:6px;">${matchesTotal ? '✓ matches paper' : `(paper total ${paper.totalMarks})`}</span></div></div>
-          <div><div class="sum-key">Percentage</div><div class="sum-val">${pct}%</div></div>
-          <div><div class="sum-key">Grade band</div><div class="sum-val">${max > 0 ? pctBand(pct) : '—'}</div></div>
-          <div><div class="sum-key">Questions filled</div><div class="sum-val">${filled} / ${rows.length}</div></div>`;
-      }
-      function persist() {
-        const a = { ...attempt, mode: 'qbq', questions: readRows(), status: 'in_progress' };
-        attempt = a;
-        saveAttempt(a);
-        refreshSummary();
+      if (typeof attempt.currentIndex !== 'number' || attempt.currentIndex < 0 || attempt.currentIndex >= parts.length) {
+        // Resume at the first unanswered part, else 0.
+        const firstBlank = attempt.responses.findIndex(r => r.marks == null);
+        attempt.currentIndex = firstBlank === -1 ? 0 : firstBlank;
       }
 
-      tbody.addEventListener('input', persist);
-      tbody.addEventListener('click', (e) => {
-        if (!e.target.classList.contains('row-remove')) return;
-        const tr = e.target.closest('tr');
-        tr.remove();
-        // Re-index remaining rows so data-idx stays sequential.
-        [...tbody.querySelectorAll('tr')].forEach((row, idx) => row.dataset.idx = idx);
-        persist();
-      });
-      document.getElementById('addRow').addEventListener('click', () => {
-        const idx = tbody.querySelectorAll('tr').length;
-        tbody.insertAdjacentHTML('beforeend', qRow({ id: `Q${idx+1}`, marks: '', maxMarks: '' }, idx));
-        persist();
-      });
-      document.getElementById('switchMode').addEventListener('click', () => {
-        if (!confirm('Switch back to the mode picker? Your per-question marks will be cleared.')) return;
-        clearAttempt();
-        renderModePicker();
-      });
-      document.getElementById('submitQbq').addEventListener('click', () => {
-        const rows = readRows();
-        let scored = 0, max = 0, anyFilled = false;
-        rows.forEach(r => {
-          const s = parseInt(r.marks, 10);
-          const m = parseInt(r.maxMarks, 10);
-          if (Number.isFinite(s) && Number.isFinite(m) && m > 0) {
-            scored += s; max += m; anyFilled = true;
-          }
-        });
-        if (!anyFilled) {
-          alert('Fill in at least one question (both marks scored and out-of) before finishing.');
-          return;
+      // ---------- inline-code parsing for `prompt` text ----------
+      function renderPromptText(text) {
+        let html = esc(text || '');
+        // **bold** → <strong>
+        html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        // `code` → <code> (apply after, on already-escaped text)
+        html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+        return html;
+      }
+      function renderFigure(fig) {
+        if (!fig) return '';
+        const label = fig.label ? `<div class="figure-label">${esc(fig.label)}</div>` : '';
+        if (fig.type === 'code') {
+          return `<div class="figure-block">${label}<pre class="figure-code">${esc(fig.content || '')}</pre></div>`;
         }
-        const completed = {
-          ...attempt,
-          mode: 'qbq',
-          questions: rows,
-          totalMarks: scored,
-          maxAttempted: max,
-          status: 'completed',
-          completedAt: new Date().toISOString()
-        };
-        saveAttempt(completed);
-        renderResult(completed);
-      });
+        if (fig.type === 'table') {
+          const head = (fig.headers || []).map(h => `<th>${esc(h)}</th>`).join('');
+          const rows = (fig.rows || []).map(r => `<tr>${r.map(c => `<td>${esc(c)}</td>`).join('')}</tr>`).join('');
+          return `<div class="figure-block">${label}<table class="figure-table"><thead><tr>${head}</tr></thead><tbody>${rows}</tbody></table></div>`;
+        }
+        return '';
+      }
 
-      refreshSummary();
+      function renderStep() {
+        const idx = attempt.currentIndex;
+        const part = parts[idx];
+        const response = attempt.responses[idx];
+        const answered = attempt.responses.filter(r => r.marks != null).length;
+        const totalParts = parts.length;
+        const pctProgress = Math.round((idx / totalParts) * 100);
+
+        // Show the question scenario block only on the first part of a question.
+        const prevPart = idx > 0 ? parts[idx - 1] : null;
+        const showScenario = !!part.scenario && (!prevPart || prevPart.questionNumber !== part.questionNumber);
+        const scenarioHtml = showScenario ? `
+          <div class="qbq-scenario">
+            <div class="qbq-scenario-label">Question ${part.questionNumber} — scenario</div>
+            <div>${renderPromptText(part.scenario)}</div>
+            ${(part.scenarioFigures || []).map(renderFigure).join('')}
+          </div>` : '';
+
+        const figureHtml = renderFigure(part.figure);
+        const preambleHtml = part.preamble
+          ? `<div class="qbq-preamble">${renderPromptText(part.preamble)}</div>`
+          : '';
+
+        document.getElementById('modeArea').innerHTML = `
+          <div class="qbq-stepper">
+            <div class="qbq-stephead">
+              <div class="qbq-progressbar"><div style="width:${pctProgress}%"></div></div>
+              <div class="qbq-progress-text">Part ${idx + 1} of ${totalParts} · ${answered} marked</div>
+            </div>
+            <div class="qbq-step-meta">
+              <span class="qbq-qcode">${esc(part.code)}</span>
+              <span class="qbq-marks-badge">${part.marks} mark${part.marks === 1 ? '' : 's'}</span>
+              ${part.extended ? `<span class="qbq-extended-badge">★ Extended response · quality of writing assessed</span>` : ''}
+            </div>
+            ${scenarioHtml}
+            ${preambleHtml}
+            ${figureHtml}
+            <div class="qbq-prompt">${renderPromptText(part.prompt)}</div>
+            <div class="qbq-mark-row">
+              <label for="qbqMarksInput">Marks scored on ${esc(part.code)}:</label>
+              <input id="qbqMarksInput" type="number" min="0" max="${part.marks}" step="1"
+                     value="${response.marks == null ? '' : response.marks}" placeholder="0">
+              <span class="out-of">out of ${part.marks}</span>
+              ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener" style="margin-left:auto;font-size:13px;padding:8px 14px;">📋 Open mark scheme</a>` : ''}
+            </div>
+            <div class="qbq-controls">
+              <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
+              <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? '✓ Finish & see result' : 'Save & Next →'}</button>
+              <span class="spacer"></span>
+              <span class="nav-hint">${idx === totalParts - 1 ? 'Last part — finish to see your total.' : `Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select>`}</span>
+              <button class="btn ghost" id="switchMode">↺ Switch mode</button>
+            </div>
+          </div>`;
+
+        const input = document.getElementById('qbqMarksInput');
+        input.focus();
+        input.addEventListener('input', () => {
+          const v = parseInt(input.value, 10);
+          attempt.responses[idx].marks = Number.isFinite(v) ? Math.min(Math.max(v, 0), part.marks) : null;
+          saveAttempt(attempt);
+        });
+        input.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter') { e.preventDefault(); document.getElementById('nextBtn').click(); }
+        });
+
+        // Populate jump dropdown
+        const jump = document.getElementById('jumpTo');
+        if (jump) {
+          parts.forEach((p, i) => {
+            const opt = document.createElement('option');
+            opt.value = i;
+            const marked = attempt.responses[i].marks != null ? '✓' : '·';
+            opt.textContent = `${marked} ${p.code} (${p.marks}m)`;
+            if (i === idx) opt.selected = true;
+            jump.appendChild(opt);
+          });
+          jump.addEventListener('change', () => {
+            attempt.currentIndex = parseInt(jump.value, 10);
+            saveAttempt(attempt);
+            renderStep();
+          });
+        }
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+          if (attempt.currentIndex > 0) {
+            attempt.currentIndex--;
+            saveAttempt(attempt);
+            renderStep();
+          }
+        });
+        document.getElementById('nextBtn').addEventListener('click', () => {
+          const v = parseInt(input.value, 10);
+          if (!Number.isFinite(v)) {
+            if (!confirm(`No mark entered for ${part.code}. Skip and continue?`)) return;
+            attempt.responses[idx].marks = null;
+          } else {
+            attempt.responses[idx].marks = Math.min(Math.max(v, 0), part.marks);
+          }
+          saveAttempt(attempt);
+          if (idx === totalParts - 1) {
+            // Finish: compute totals
+            const scored = attempt.responses.reduce((n, r) => n + (Number.isFinite(r.marks) ? r.marks : 0), 0);
+            const completed = {
+              ...attempt,
+              status: 'completed',
+              totalMarks: scored,
+              maxAttempted: paper.totalMarks,
+              completedAt: new Date().toISOString()
+            };
+            saveAttempt(completed);
+            renderResult(completed);
+          } else {
+            attempt.currentIndex++;
+            saveAttempt(attempt);
+            renderStep();
+          }
+        });
+        document.getElementById('switchMode').addEventListener('click', () => {
+          if (!confirm('Switch back to the mode picker? Your per-question marks will be cleared.')) return;
+          clearAttempt();
+          renderModePicker();
+        });
+      }
+
+      renderStep();
     }
 
     function renderResult(attempt) {
@@ -579,33 +637,41 @@
       const completedAt = attempt.completedAt ? new Date(attempt.completedAt) : new Date();
 
       let breakdownHtml = '';
-      if (attempt.mode === 'qbq' && Array.isArray(attempt.questions)) {
-        const rows = attempt.questions
-          .map(q => {
-            const s = parseInt(q.marks, 10);
-            const m = parseInt(q.maxMarks, 10);
-            if (!Number.isFinite(s) || !Number.isFinite(m) || m <= 0) return null;
+      if (attempt.mode === 'qbq' && Array.isArray(attempt.responses)) {
+        const rows = attempt.responses
+          .map(r => {
+            const s = Number.isFinite(r.marks) ? r.marks : null;
+            const m = r.maxMarks;
+            if (s == null) {
+              return `
+                <tr>
+                  <td>${esc(r.code || '')}</td>
+                  <td class="num" style="color:var(--muted2);">— / ${m}</td>
+                  <td><div class="bar"></div></td>
+                  <td class="num" style="color:var(--muted2);">skipped</td>
+                </tr>`;
+            }
             const p = Math.round((s / m) * 100);
-            const cls = p >= 70 ? 'high' : p >= 50 ? 'mid' : p >= 30 ? 'mid' : 'low';
+            const cls = p >= 70 ? 'high' : p >= 40 ? 'mid' : 'low';
             return `
               <tr>
-                <td>${esc(q.id || '')}</td>
+                <td>${esc(r.code || '')}</td>
                 <td class="num">${s} / ${m}</td>
                 <td><div class="bar"><div class="bar-fill ${cls}" style="width:${p}%"></div></div></td>
                 <td class="num">${p}%</td>
               </tr>`;
           })
-          .filter(Boolean)
           .join('');
         if (rows) {
           breakdownHtml = `
             <div class="panel">
               <div class="panel-head">
                 <div class="panel-title">Per-question breakdown</div>
+                <div class="panel-sub" style="margin-top:2px;">All ${attempt.responses.length} parts. Skipped parts count as 0 marks toward your total.</div>
               </div>
               <table class="breakdown-table">
                 <thead>
-                  <tr><th>Question</th><th class="num">Marks</th><th>Bar</th><th class="num">%</th></tr>
+                  <tr><th>Part</th><th class="num">Marks</th><th>Bar</th><th class="num">%</th></tr>
                 </thead>
                 <tbody>${rows}</tbody>
               </table>

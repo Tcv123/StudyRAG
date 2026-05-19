@@ -215,8 +215,8 @@
   }
 
   // Render a single board card. If the board has direct papers (e.g. OCR
-  // Maths), the Attempt-paper feature is surfaced via a year/component table
-  // below the card.
+  // CS), the Attempt-paper feature is surfaced via a paper table below
+  // the card.
   function boardCardHtml(board) {
     const hasPapers = Array.isArray(board.papers) && board.papers.length > 0;
     const attemptBadge = hasPapers
@@ -264,7 +264,7 @@
         </div>
         <table class="papers-table">
           <thead>
-            <tr><th>Series</th><th>Component</th><th style="text-align:right;">Actions</th></tr>
+            <tr><th>Series</th><th>Paper</th><th style="text-align:right;">Actions</th></tr>
           </thead>
           <tbody>${rows}</tbody>
         </table>
@@ -275,7 +275,7 @@
   let html = `
     <div class="intro-card">
       <span class="official-tag">Official only</span>
-      Every link below points to the exam board's own site — <strong>aqa.org.uk</strong>, <strong>qualifications.pearson.com</strong>, <strong>ocr.org.uk</strong>, or <strong>eduqas.co.uk</strong>. Most boards don't expose stable per-paper URLs, so the cards open the canonical assessment-resources page where you filter by series. <strong>OCR A-level Maths</strong> is the exception — it publishes direct PDFs, so each paper has an ▶ Attempt button that opens the marking flow.
+      Every link below points to the exam board's own site — <strong>aqa.org.uk</strong>, <strong>qualifications.pearson.com</strong>, <strong>ocr.org.uk</strong>, or <strong>eduqas.co.uk</strong>. Most boards don't expose stable per-paper URLs, so the cards open the canonical assessment-resources page where you filter by series. <strong>OCR Computer Science (H446)</strong> publishes direct PDFs — June 2022 is fully extracted with the question-by-question stepper (walk the actual exam prompts and self-mark each part).
     </div>`;
   subjects.forEach(subj => {
     const boardCount = subj.boards.length;
