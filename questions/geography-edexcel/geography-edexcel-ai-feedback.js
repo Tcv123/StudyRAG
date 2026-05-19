@@ -85,6 +85,25 @@ const GEOGRAPHY_EDEXCEL_AI_FEEDBACK = {
     { q: 'To what extent can natural processes still maintain a stable global carbon balance given current rates of anthropogenic emissions?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── T5 Globalisation ─────────────────────── */
+  'T5': [
+    { q: 'Describe the main economic, social, cultural and political dimensions of globalisation.', marks: 6, command: 'Describe' },
+    { q: 'Explain how containerisation and information and communication technology (ICT) have driven the acceleration of globalisation since the 1980s.', marks: 6, command: 'Explain' },
+    { q: 'Explain the causes and consequences of the global shift in manufacturing from Western economies to East and Southeast Asia.', marks: 9, command: 'Explain' },
+    { q: 'Explain the role of transnational corporations (TNCs) such as Apple and its supplier Foxconn in shaping the contemporary global economy.', marks: 9, command: 'Explain' },
+    { q: 'Describe the characteristics of "switched-off" places at the margins of globalisation, with reference to named examples.', marks: 9, command: 'Describe' },
+    { q: 'Compare the economic impacts of globalisation on Bangalore in India with those on Shenzhen in China.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the role of trade blocs (such as the EU, ASEAN and USMCA) in shaping the contemporary global economy.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the cultural impacts of globalisation, including processes of McDonaldisation and hybridisation.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which Maldives tourism illustrates both the opportunities and the vulnerabilities of globalisation.', marks: 16, command: 'Assess' },
+    { q: 'Assess the impacts of brain drain and brain gain on the development of source countries such as India and the Philippines.', marks: 16, command: 'Assess' },
+    { q: 'Assess the environmental costs of globalised supply chains, including air miles, food miles and e-waste.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the claim that globalisation has produced clear winners and losers since 1990.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the effectiveness of anti-globalisation movements in challenging the current global economic model.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent has globalisation produced cultural homogenisation rather than genuine hybridisation?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent has globalisation reached a turning point as nation-states retreat into economic protectionism?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
