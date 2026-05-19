@@ -66,6 +66,25 @@ const GEOGRAPHY_EDEXCEL_AI_FEEDBACK = {
     { q: 'To what extent can transboundary cooperation overcome rising water insecurity in the world\'s most contested river basins?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── T4 Carbon Cycle & Energy Security ─────────────────────── */
+  'T4': [
+    { q: 'Describe the main global stores of carbon, indicating their relative size and turnover times.', marks: 6, command: 'Describe' },
+    { q: 'Explain the distinction between the fast (biotic) and slow (geological) carbon cycles, with examples of each.', marks: 6, command: 'Explain' },
+    { q: 'Explain how the biological and carbonate pumps transfer carbon between the surface and deep oceans.', marks: 9, command: 'Explain' },
+    { q: 'Explain the concept of energy security and identify its key dimensions (availability, affordability, accessibility, acceptability).', marks: 9, command: 'Explain' },
+    { q: 'Describe how Norway has managed its oil wealth through Equinor and its sovereign wealth fund.', marks: 9, command: 'Describe' },
+    { q: 'Compare the development and impacts of the Athabasca tar sands in Canada with US shale gas exploitation as unconventional fossil fuel sources.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the geopolitical implications of European reliance on Russian natural gas supplies.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the role of OPEC in shaping global energy security since the 1970s oil shocks.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which Iceland\'s geothermal- and hydro-based energy mix offers a transferable model for other states.', marks: 16, command: 'Assess' },
+    { q: 'Assess the significance of climate tipping points (such as Amazon dieback and Arctic permafrost methane release) for the global carbon cycle.', marks: 16, command: 'Assess' },
+    { q: 'Assess the effectiveness of carbon trading schemes (such as the EU Emissions Trading System) as a tool of climate mitigation.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate Germany\'s Energiewende as a response to both climate change and energy insecurity.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate Carbon Capture and Storage (CCS) as a practical mitigation strategy for emissions from fossil fuel use.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent should wealthy nations commit to phasing out all fossil fuels within the next decade, despite the economic and social costs?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent can natural processes still maintain a stable global carbon balance given current rates of anthropogenic emissions?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
