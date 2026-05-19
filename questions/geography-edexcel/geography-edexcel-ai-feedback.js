@@ -142,6 +142,25 @@ const GEOGRAPHY_EDEXCEL_AI_FEEDBACK = {
     { q: 'To what extent must the continuing rise of China inevitably lead to direct conflict with the United States?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── T8 Health, Human Rights & Intervention ─────────────────────── */
+  'T8': [
+    { q: 'Describe the four main components used to calculate the Human Development Index (HDI).', marks: 6, command: 'Describe' },
+    { q: 'Explain the distinction between communicable and non-communicable diseases, with examples of each.', marks: 6, command: 'Explain' },
+    { q: 'Explain the origins and main provisions of the 1948 Universal Declaration of Human Rights (UDHR).', marks: 9, command: 'Explain' },
+    { q: 'Explain the geographical pattern and underlying causes of the HIV/AIDS pandemic across sub-Saharan Africa.', marks: 9, command: 'Explain' },
+    { q: 'Describe the principles of the Responsibility to Protect (R2P) doctrine adopted by the UN.', marks: 9, command: 'Describe' },
+    { q: 'Compare life expectancy and infant mortality rates in a high-income country with those in a low-income country, accounting for the differences.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the relative effectiveness of non-governmental organisations (such as Médecins Sans Frontières and Amnesty International) compared with the UN in defending human rights.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the extent to which Amartya Sen\'s capabilities approach offers a better measure of development than indices such as the HDI.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which the 2003 US-UK invasion of Iraq can be justified on human rights grounds.', marks: 16, command: 'Assess' },
+    { q: 'Assess the effectiveness of the International Criminal Court (ICC) in holding states and individuals to account for human rights violations.', marks: 16, command: 'Assess' },
+    { q: 'Assess the significance of women\'s rights as a battleground for human rights, with reference to Afghanistan, Saudi Arabia or Iran.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the international response to the 1994 Rwandan genocide and what it reveals about the limits of R2P.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the effectiveness of development aid as a driver of long-term improvements in health and human rights in low-income countries.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent are human rights genuinely universal rather than culturally and historically contingent?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent can military intervention ever genuinely promote, rather than undermine, the protection of human rights?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
