@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>RAG Learning — Past Paper Attempt</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="nav-gating.js"></script>
+  <script src="papers-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD;
+      --border: #B8D0E8; --border-hover: #2563EB;
+      --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+      --accent: #2563EB; --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --good: #16A34A; --good-dim: rgba(22,163,74,0.1);
+      --warn: #B45309; --warn-dim: rgba(217,119,6,0.1);
+      --bad: #DC2626; --bad-dim: rgba(220,38,38,0.08);
+      --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+    .app { display: flex; min-height: 100vh; }
+    .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
+    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item { display: flex; align-items: center; gap: 10px; padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted); cursor: pointer; text-decoration: none; }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-item.locked { opacity: 0.5; cursor: default; pointer-events: none; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
+    .logout-btn:hover { color: #DC2626; }
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
+    .topbar { margin-bottom: 24px; }
+    .breadcrumb { font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+    .breadcrumb a { color: var(--accent-dark); text-decoration: none; }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
+    .page-sub { font-size: 14px; color: var(--muted); margin-top: 3px; }
+
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; margin-bottom: 18px; box-shadow: 0 1px 0 rgba(11,30,63,0.02); }
+    .panel-head { margin-bottom: 14px; }
+    .panel-title { font-family: var(--font-display); font-size: 19px; }
+    .panel-sub { font-size: 13.5px; color: var(--muted); margin-top: 2px; }
+
+    .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 14px; }
+    .meta-cell { background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 10px 14px; }
+    .meta-key { font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); font-weight: 600; }
+    .meta-val { font-size: 15px; color: var(--text); margin-top: 2px; }
+
+    .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .mode-card { background: var(--surface); border: 2px solid var(--border); border-radius: 14px; padding: 22px; cursor: pointer; transition: all 0.15s; display: flex; flex-direction: column; gap: 12px; min-height: 200px; }
+    .mode-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(37,99,235,0.08); }
+    .mode-card.selected { border-color: var(--accent); background: var(--accent-dim); }
+    .mode-icon { font-size: 30px; }
+    .mode-title { font-family: var(--font-display); font-size: 18px; }
+    .mode-desc { font-size: 13.5px; color: var(--muted); line-height: 1.55; flex: 1; }
+
+    .btn { display: inline-flex; align-items: center; gap: 7px; padding: 10px 18px; border-radius: 10px; font-weight: 500; font-size: 14px; border: 1px solid var(--border); background: var(--surface); cursor: pointer; color: var(--text); font-family: var(--font-body); text-decoration: none; }
+    .btn:hover { border-color: var(--accent); }
+    .btn.primary { background: var(--accent); color: white; border-color: var(--accent); }
+    .btn.primary:hover { background: var(--accent-dark); }
+    .btn.ghost { background: transparent; }
+    .btn.danger { color: var(--bad); border-color: rgba(220,38,38,0.3); }
+    .btn.danger:hover { background: var(--bad-dim); }
+    .btn:disabled { opacity: 0.5; cursor: not-allowed; }
+    .btn-row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+
+    /* Print-mode result entry */
+    .total-mark-row { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin: 18px 0 6px; }
+    .total-mark-row label { font-size: 14px; color: var(--text); }
+    .total-mark-row input[type="number"] { width: 110px; padding: 10px 12px; font-size: 18px; font-family: var(--font-body); background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; color: var(--text); }
+    .total-mark-row input[type="number"]:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .total-mark-row .out-of { font-size: 14px; color: var(--muted); }
+
+    /* Question-by-question table */
+    .q-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 12px; }
+    .q-table th { text-align: left; font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); padding: 6px 10px; border-bottom: 1px solid var(--border); }
+    .q-table td { padding: 8px 10px; border-bottom: 1px solid var(--border); vertical-align: middle; }
+    .q-table tr:last-child td { border-bottom: none; }
+    .q-table input { font-family: var(--font-body); font-size: 14px; padding: 7px 10px; border: 1px solid var(--border); border-radius: 8px; background: var(--surface); color: var(--text); width: 100%; }
+    .q-table input:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .q-table .col-label { width: 110px; }
+    .q-table .col-marks { width: 90px; }
+    .q-table .col-max { width: 90px; }
+    .q-table .col-pct { width: 60px; text-align: right; color: var(--muted); font-variant-numeric: tabular-nums; font-size: 13px; }
+    .q-table .col-action { width: 40px; text-align: right; }
+    .q-table .row-remove { background: none; border: none; color: var(--muted2); cursor: pointer; font-size: 16px; padding: 2px 6px; border-radius: 6px; }
+    .q-table .row-remove:hover { background: var(--bad-dim); color: var(--bad); }
+
+    .qbq-controls { display: flex; gap: 12px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
+    .qbq-summary { display: flex; gap: 24px; padding: 14px 18px; background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; margin-top: 14px; align-items: center; flex-wrap: wrap; }
+    .qbq-summary .sum-key { font-size: 11.5px; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); font-weight: 600; }
+    .qbq-summary .sum-val { font-family: var(--font-display); font-size: 22px; color: var(--text); }
+    .qbq-summary .sum-val.warn { color: var(--warn); }
+    .qbq-summary .sum-pct { font-size: 13px; color: var(--muted); }
+
+    .lock-overlay { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
+    .lock-icon { width: 72px; height: 72px; border-radius: 50%; background: rgba(217,119,6,0.08); border: 1px solid rgba(217,119,6,0.2); display: flex; align-items: center; justify-content: center; font-size: 32px; color: #B45309; margin-bottom: 20px; }
+    .lock-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 8px; }
+    .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
+    .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
+
+    /* Result screen */
+    .result-hero { display: flex; gap: 28px; align-items: center; padding: 26px; background: linear-gradient(135deg, var(--accent-dim), rgba(22,163,74,0.05)); border: 1px solid var(--accent); border-radius: 14px; flex-wrap: wrap; }
+    .result-score { font-family: var(--font-display); font-size: 56px; line-height: 1; color: var(--accent-dark); }
+    .result-score .denom { font-size: 26px; color: var(--muted2); }
+    .result-pct { font-size: 18px; color: var(--muted); margin-top: 6px; }
+    .result-grade { margin-left: auto; text-align: right; }
+    .result-grade-band { font-family: var(--font-display); font-size: 36px; color: var(--text); }
+    .result-grade-sub { font-size: 12.5px; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    .breakdown-table { width: 100%; border-collapse: separate; border-spacing: 0; margin-top: 14px; font-size: 14px; }
+    .breakdown-table th, .breakdown-table td { padding: 9px 12px; border-bottom: 1px solid var(--border); text-align: left; }
+    .breakdown-table th { font-size: 11.5px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); }
+    .breakdown-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+    .breakdown-table .bar { height: 6px; background: var(--surface2); border-radius: 999px; overflow: hidden; min-width: 70px; }
+    .breakdown-table .bar-fill { height: 100%; background: var(--accent); }
+    .breakdown-table .bar-fill.low { background: var(--bad); }
+    .breakdown-table .bar-fill.mid { background: var(--warn); }
+    .breakdown-table .bar-fill.high { background: var(--good); }
+
+    @media (max-width: 720px) {
+      .mode-grid { grid-template-columns: 1fr; }
+      .main { padding: 28px 22px; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+  <div class="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo">
+      <div class="logo-dot"></div>
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item active" href="past-papers.html"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item locked" href="#"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer">?</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="supabaseClient.auth.signOut().then(()=>location='auth/login.html')">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="breadcrumb"><a href="past-papers.html">← All past papers</a></div>
+      <div class="page-title" id="paperTitle">Loading paper…</div>
+      <div class="page-sub" id="paperSub"></div>
+    </div>
+    <div id="pageBody"></div>
+  </main>
+</div>
+
+<script>
+(async function () {
+  try {
+    // ---------- Auth + Pro gate (mirrors past-papers.html) ----------
+    // ?demo=1 bypasses Supabase auth for local UI previews.
+    const DEMO = new URLSearchParams(location.search).get('demo') === '1';
+    let user = null, profile = null;
+    if (DEMO) {
+      user = { id: 'demo' };
+      profile = { first_name: 'Demo', last_name: 'User', subscription_tier: 'pro', subscription_status: 'active' };
+    } else {
+      const { data: { user: u } } = await supabaseClient.auth.getUser();
+      if (!u) { location = 'auth/login.html'; return; }
+      user = u;
+      const { data: p } = await supabaseClient.from('profiles').select('*').eq('id', user.id).single();
+      profile = p;
+    }
+    const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
+    document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
+    document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
+    if (profile?.avatar_url) {
+      const av = document.getElementById('avatarInitials');
+      const img = document.createElement('img');
+      img.src = profile.avatar_url;
+      img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+      av.replaceChildren(img);
+    }
+    const tier = profile?.subscription_tier || 'free';
+    const status = profile?.subscription_status || 'active';
+    const exp = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
+    const isPro = tier !== 'free' && ['active','trialing'].includes(status) && (!exp || exp > new Date());
+    if (!isPro) {
+      document.getElementById('pageBody').innerHTML = `
+        <div class="lock-overlay">
+          <div class="lock-icon">🔒</div>
+          <div class="lock-title">Pro feature</div>
+          <div class="lock-msg">Past papers are available with a Pro subscription.</div>
+          <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
+        </div>`;
+      return;
+    }
+
+    // ---------- Resolve paper from URL ?id=... ----------
+    const params = new URLSearchParams(location.search);
+    const id = params.get('id');
+    const paper = window.findPaper(id);
+    if (!paper) {
+      document.getElementById('paperTitle').textContent = 'Paper not found';
+      document.getElementById('paperSub').textContent = '';
+      document.getElementById('pageBody').innerHTML = `
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">No paper with id "${esc(id || '')}"</div>
+            <div class="panel-sub">Pick one from the past-papers index.</div>
+          </div>
+          <a class="btn primary" href="past-papers.html">← Back to past papers</a>
+        </div>`;
+      return;
+    }
+
+    document.getElementById('paperTitle').textContent =
+      `${paper.subject} · ${paper.board} · ${paper.year}`;
+    document.getElementById('paperSub').textContent = paper.paperName;
+
+    // ---------- Render: paper meta + mode selector ----------
+    const STORAGE_KEY = `paperAttempt.${paper.id}`;
+    const stored = loadAttempt();
+
+    renderShell();
+
+    // If there's a completed attempt already, default to showing the result;
+    // otherwise show the mode picker so the user chooses how to take the paper.
+    if (stored?.status === 'completed') {
+      renderResult(stored);
+    } else if (stored?.mode === 'print') {
+      renderPrintMode(stored);
+    } else if (stored?.mode === 'qbq') {
+      renderQbqMode(stored);
+    } else {
+      renderModePicker();
+    }
+
+    // ---------- helpers ----------
+    function esc(s) {
+      return String(s == null ? '' : s)
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;');
+    }
+    function loadAttempt() {
+      try { return JSON.parse(localStorage.getItem(STORAGE_KEY) || 'null'); }
+      catch (_) { return null; }
+    }
+    function saveAttempt(a) {
+      try { localStorage.setItem(STORAGE_KEY, JSON.stringify(a)); }
+      catch (_) {}
+    }
+    function clearAttempt() {
+      try { localStorage.removeItem(STORAGE_KEY); } catch (_) {}
+    }
+    function pctBand(pct) {
+      // Rough UCAS-style A-level bands — the user can recalibrate against the
+      // year's published grade boundaries. Not an official conversion.
+      if (pct >= 80) return 'A*';
+      if (pct >= 70) return 'A';
+      if (pct >= 60) return 'B';
+      if (pct >= 50) return 'C';
+      if (pct >= 40) return 'D';
+      if (pct >= 30) return 'E';
+      return 'U';
+    }
+
+    function renderShell() {
+      const body = document.getElementById('pageBody');
+      body.innerHTML = `
+        <div class="panel">
+          <div class="meta-grid">
+            <div class="meta-cell"><div class="meta-key">Spec code</div><div class="meta-val">${esc(paper.specCode)}</div></div>
+            <div class="meta-cell"><div class="meta-key">Total marks</div><div class="meta-val">${paper.totalMarks}</div></div>
+            <div class="meta-cell"><div class="meta-key">Duration</div><div class="meta-val">${Math.floor(paper.durationMins/60)}h ${paper.durationMins%60}m</div></div>
+            <div class="meta-cell"><div class="meta-key">Level</div><div class="meta-val">${esc(paper.level)}</div></div>
+          </div>
+          <div class="btn-row" style="margin-top:16px;">
+            <a class="btn" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">📄 Open question paper PDF</a>
+            <a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Open mark scheme PDF</a>
+          </div>
+          <div class="panel-sub" style="margin-top:12px;">${esc(paper.description)}</div>
+        </div>
+        <div id="modeArea"></div>`;
+    }
+
+    function renderModePicker() {
+      document.getElementById('modeArea').innerHTML = `
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">How do you want to take this paper?</div>
+            <div class="panel-sub">Pick one — you can switch later from the result screen.</div>
+          </div>
+          <div class="mode-grid">
+            <div class="mode-card" data-mode="print">
+              <div class="mode-icon">🖨️</div>
+              <div class="mode-title">Print &amp; enter results at the end</div>
+              <div class="mode-desc">Print the PDF, sit the paper offline, mark it yourself against the mark scheme, then come back and enter your total score.</div>
+              <div><button class="btn primary" data-pick="print">Use this mode →</button></div>
+            </div>
+            <div class="mode-card" data-mode="qbq">
+              <div class="mode-icon">📝</div>
+              <div class="mode-title">Work through it question by question</div>
+              <div class="mode-desc">Step through each question on-screen. Enter the marks you scored as you mark each one. Totals and grade band update live.</div>
+              <div><button class="btn primary" data-pick="qbq">Use this mode →</button></div>
+            </div>
+          </div>
+        </div>`;
+      document.querySelectorAll('[data-pick]').forEach(b => {
+        b.addEventListener('click', () => {
+          const mode = b.dataset.pick;
+          const seed = { mode, paperId: paper.id, status: 'in_progress', startedAt: new Date().toISOString() };
+          if (mode === 'qbq') {
+            seed.questions = Array.from({ length: paper.defaultQuestions || 10 }, (_, i) => ({
+              id: `Q${i + 1}`,
+              maxMarks: '',
+              marks: ''
+            }));
+          }
+          saveAttempt(seed);
+          if (mode === 'print') renderPrintMode(seed);
+          else renderQbqMode(seed);
+        });
+      });
+    }
+
+    function renderPrintMode(attempt) {
+      const area = document.getElementById('modeArea');
+      area.innerHTML = `
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">🖨️ Print &amp; enter results</div>
+            <div class="panel-sub">1) Open the question paper and print it. 2) Sit it offline (timed if you can). 3) Mark it against the mark scheme. 4) Enter your final total below.</div>
+          </div>
+          <div class="btn-row">
+            <a class="btn primary" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener">🖨️ Open paper to print</a>
+            <a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Open mark scheme</a>
+          </div>
+          <div class="total-mark-row">
+            <label for="totalMarksInput">Marks scored:</label>
+            <input id="totalMarksInput" type="number" min="0" max="${paper.totalMarks}" step="1"
+                   value="${attempt.totalMarks ?? ''}" placeholder="0">
+            <span class="out-of">out of ${paper.totalMarks}</span>
+          </div>
+          <div class="panel-sub" id="printPctPreview" style="margin-top:6px;">—</div>
+          <div class="btn-row" style="margin-top:18px;">
+            <button class="btn primary" id="submitPrint">✓ Submit result</button>
+            <button class="btn ghost" id="switchMode">↺ Switch mode</button>
+          </div>
+        </div>`;
+      const input = document.getElementById('totalMarksInput');
+      const pctEl = document.getElementById('printPctPreview');
+      function refreshPct() {
+        const v = parseInt(input.value, 10);
+        if (Number.isFinite(v) && v >= 0 && v <= paper.totalMarks) {
+          const pct = Math.round((v / paper.totalMarks) * 100);
+          pctEl.textContent = `${pct}% — grade band ${pctBand(pct)}`;
+        } else {
+          pctEl.textContent = '—';
+        }
+      }
+      input.addEventListener('input', refreshPct);
+      refreshPct();
+      document.getElementById('submitPrint').addEventListener('click', () => {
+        const v = parseInt(input.value, 10);
+        if (!Number.isFinite(v) || v < 0 || v > paper.totalMarks) {
+          alert(`Enter a number between 0 and ${paper.totalMarks}.`);
+          input.focus();
+          return;
+        }
+        const completed = {
+          ...attempt,
+          mode: 'print',
+          totalMarks: v,
+          status: 'completed',
+          completedAt: new Date().toISOString()
+        };
+        saveAttempt(completed);
+        renderResult(completed);
+      });
+      document.getElementById('switchMode').addEventListener('click', () => {
+        if (!confirm('Switch back to the mode picker? Your entered total will be cleared.')) return;
+        clearAttempt();
+        renderModePicker();
+      });
+    }
+
+    function renderQbqMode(attempt) {
+      const area = document.getElementById('modeArea');
+      const rowsHtml = attempt.questions.map((q, i) => qRow(q, i)).join('');
+      area.innerHTML = `
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">📝 Question by question</div>
+            <div class="panel-sub">Enter the marks each question is worth and how many you scored. Open the PDFs above to follow along. Add or remove rows to match your paper.</div>
+          </div>
+          <table class="q-table">
+            <thead>
+              <tr>
+                <th class="col-label">Question</th>
+                <th class="col-marks">Scored</th>
+                <th class="col-max">Out of</th>
+                <th class="col-pct">%</th>
+                <th class="col-action"></th>
+              </tr>
+            </thead>
+            <tbody id="qBody">${rowsHtml}</tbody>
+          </table>
+          <div class="qbq-controls">
+            <button class="btn" id="addRow">+ Add question</button>
+            <span style="font-size:12.5px;color:var(--muted2);">Tip: open the mark scheme in a second tab to check each part.</span>
+          </div>
+          <div class="qbq-summary" id="qSummary"></div>
+          <div class="btn-row" style="margin-top:16px;">
+            <button class="btn primary" id="submitQbq">✓ Finish &amp; see result</button>
+            <button class="btn ghost" id="switchMode">↺ Switch mode</button>
+          </div>
+        </div>`;
+
+      const tbody = document.getElementById('qBody');
+      const summary = document.getElementById('qSummary');
+
+      function qRow(q, i) {
+        return `
+          <tr data-idx="${i}">
+            <td class="col-label"><input type="text" data-field="id" value="${esc(q.id)}" placeholder="Q${i+1}"></td>
+            <td class="col-marks"><input type="number" data-field="marks" min="0" step="1" value="${esc(q.marks ?? '')}" placeholder="0"></td>
+            <td class="col-max"><input type="number" data-field="maxMarks" min="0" step="1" value="${esc(q.maxMarks ?? '')}" placeholder="—"></td>
+            <td class="col-pct" data-cell="pct">—</td>
+            <td class="col-action"><button class="row-remove" type="button" title="Remove row">✕</button></td>
+          </tr>`;
+      }
+
+      function readRows() {
+        return [...tbody.querySelectorAll('tr')].map(tr => {
+          const get = f => tr.querySelector(`[data-field="${f}"]`).value;
+          return { id: get('id'), marks: get('marks'), maxMarks: get('maxMarks') };
+        });
+      }
+      function refreshSummary() {
+        const rows = readRows();
+        let scored = 0, max = 0, filled = 0;
+        rows.forEach((r, i) => {
+          const s = parseInt(r.marks, 10);
+          const m = parseInt(r.maxMarks, 10);
+          const pctCell = tbody.querySelector(`tr[data-idx="${i}"] [data-cell="pct"]`);
+          if (Number.isFinite(s) && Number.isFinite(m) && m > 0) {
+            scored += s; max += m; filled++;
+            pctCell.textContent = `${Math.round((s/m)*100)}%`;
+          } else if (Number.isFinite(m) && m > 0) {
+            max += m;
+            pctCell.textContent = '—';
+          } else {
+            pctCell.textContent = '—';
+          }
+        });
+        const pct = max > 0 ? Math.round((scored / max) * 100) : 0;
+        const matchesTotal = max === paper.totalMarks;
+        summary.innerHTML = `
+          <div><div class="sum-key">Scored</div><div class="sum-val">${scored}</div></div>
+          <div><div class="sum-key">Out of</div><div class="sum-val ${matchesTotal ? '' : 'warn'}">${max}<span class="sum-pct" style="margin-left:6px;">${matchesTotal ? '✓ matches paper' : `(paper total ${paper.totalMarks})`}</span></div></div>
+          <div><div class="sum-key">Percentage</div><div class="sum-val">${pct}%</div></div>
+          <div><div class="sum-key">Grade band</div><div class="sum-val">${max > 0 ? pctBand(pct) : '—'}</div></div>
+          <div><div class="sum-key">Questions filled</div><div class="sum-val">${filled} / ${rows.length}</div></div>`;
+      }
+      function persist() {
+        const a = { ...attempt, mode: 'qbq', questions: readRows(), status: 'in_progress' };
+        attempt = a;
+        saveAttempt(a);
+        refreshSummary();
+      }
+
+      tbody.addEventListener('input', persist);
+      tbody.addEventListener('click', (e) => {
+        if (!e.target.classList.contains('row-remove')) return;
+        const tr = e.target.closest('tr');
+        tr.remove();
+        // Re-index remaining rows so data-idx stays sequential.
+        [...tbody.querySelectorAll('tr')].forEach((row, idx) => row.dataset.idx = idx);
+        persist();
+      });
+      document.getElementById('addRow').addEventListener('click', () => {
+        const idx = tbody.querySelectorAll('tr').length;
+        tbody.insertAdjacentHTML('beforeend', qRow({ id: `Q${idx+1}`, marks: '', maxMarks: '' }, idx));
+        persist();
+      });
+      document.getElementById('switchMode').addEventListener('click', () => {
+        if (!confirm('Switch back to the mode picker? Your per-question marks will be cleared.')) return;
+        clearAttempt();
+        renderModePicker();
+      });
+      document.getElementById('submitQbq').addEventListener('click', () => {
+        const rows = readRows();
+        let scored = 0, max = 0, anyFilled = false;
+        rows.forEach(r => {
+          const s = parseInt(r.marks, 10);
+          const m = parseInt(r.maxMarks, 10);
+          if (Number.isFinite(s) && Number.isFinite(m) && m > 0) {
+            scored += s; max += m; anyFilled = true;
+          }
+        });
+        if (!anyFilled) {
+          alert('Fill in at least one question (both marks scored and out-of) before finishing.');
+          return;
+        }
+        const completed = {
+          ...attempt,
+          mode: 'qbq',
+          questions: rows,
+          totalMarks: scored,
+          maxAttempted: max,
+          status: 'completed',
+          completedAt: new Date().toISOString()
+        };
+        saveAttempt(completed);
+        renderResult(completed);
+      });
+
+      refreshSummary();
+    }
+
+    function renderResult(attempt) {
+      const area = document.getElementById('modeArea');
+      const denom = attempt.mode === 'qbq'
+        ? (attempt.maxAttempted || paper.totalMarks)
+        : paper.totalMarks;
+      const scored = attempt.totalMarks ?? 0;
+      const pct = denom > 0 ? Math.round((scored / denom) * 100) : 0;
+      const band = pctBand(pct);
+      const completedAt = attempt.completedAt ? new Date(attempt.completedAt) : new Date();
+
+      let breakdownHtml = '';
+      if (attempt.mode === 'qbq' && Array.isArray(attempt.questions)) {
+        const rows = attempt.questions
+          .map(q => {
+            const s = parseInt(q.marks, 10);
+            const m = parseInt(q.maxMarks, 10);
+            if (!Number.isFinite(s) || !Number.isFinite(m) || m <= 0) return null;
+            const p = Math.round((s / m) * 100);
+            const cls = p >= 70 ? 'high' : p >= 50 ? 'mid' : p >= 30 ? 'mid' : 'low';
+            return `
+              <tr>
+                <td>${esc(q.id || '')}</td>
+                <td class="num">${s} / ${m}</td>
+                <td><div class="bar"><div class="bar-fill ${cls}" style="width:${p}%"></div></div></td>
+                <td class="num">${p}%</td>
+              </tr>`;
+          })
+          .filter(Boolean)
+          .join('');
+        if (rows) {
+          breakdownHtml = `
+            <div class="panel">
+              <div class="panel-head">
+                <div class="panel-title">Per-question breakdown</div>
+              </div>
+              <table class="breakdown-table">
+                <thead>
+                  <tr><th>Question</th><th class="num">Marks</th><th>Bar</th><th class="num">%</th></tr>
+                </thead>
+                <tbody>${rows}</tbody>
+              </table>
+            </div>`;
+        }
+      }
+
+      area.innerHTML = `
+        <div class="panel">
+          <div class="panel-head">
+            <div class="panel-title">Result</div>
+            <div class="panel-sub">Submitted ${completedAt.toLocaleString()} · ${attempt.mode === 'qbq' ? 'question-by-question' : 'print &amp; enter total'}</div>
+          </div>
+          <div class="result-hero">
+            <div>
+              <div class="result-score">${scored}<span class="denom"> / ${denom}</span></div>
+              <div class="result-pct">${pct}%</div>
+            </div>
+            <div class="result-grade">
+              <div class="result-grade-band">${band}</div>
+              <div class="result-grade-sub">Estimated band</div>
+            </div>
+          </div>
+          <div class="panel-sub" style="margin-top:14px;">Band estimates use generic A-level percentages — check the year's official grade boundaries before relying on them.</div>
+        </div>
+        ${breakdownHtml}
+        <div class="panel">
+          <div class="btn-row">
+            <a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Review the mark scheme</a>
+            <a class="btn" href="past-papers.html">← Back to past papers</a>
+            <button class="btn danger" id="retryBtn">↺ Retry this paper</button>
+          </div>
+        </div>`;
+      document.getElementById('retryBtn').addEventListener('click', () => {
+        if (!confirm('Clear this result and start fresh?')) return;
+        clearAttempt();
+        renderModePicker();
+      });
+    }
+  } catch (err) {
+    console.error('Paper attempt page failed:', err);
+    document.getElementById('pageBody').innerHTML = `
+      <div class="panel">
+        <div class="panel-title">Page failed to load</div>
+        <div class="panel-sub" style="margin-top:8px;">${String(err && err.message ? err.message : err)}</div>
+      </div>`;
+  }
+})();
+</script>
+</body>
+</html>
