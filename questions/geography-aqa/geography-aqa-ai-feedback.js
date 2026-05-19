@@ -142,6 +142,25 @@ const GEOGRAPHY_AQA_AI_FEEDBACK = {
     { q: 'To what extent must wealthy nations restrict consumption, rather than rely on technological substitution, to achieve sustainable resource security?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── 3.1 Fieldwork & Investigation ─────────────────────── */
+  '3.1': [
+    { q: 'Describe the characteristics of a strong, focused geographical research question suitable for the Non-Examined Assessment (NEA).', marks: 6, command: 'Describe' },
+    { q: 'Explain the differences between random, systematic and stratified sampling strategies in geographical fieldwork.', marks: 6, command: 'Explain' },
+    { q: 'Explain how Spearman\'s rank correlation can be used to test a relationship between two geographical variables, including how to interpret the result.', marks: 9, command: 'Explain' },
+    { q: 'Explain the role of risk assessment, ethics and informed consent in planning a human geography fieldwork investigation.', marks: 9, command: 'Explain' },
+    { q: 'Describe the main primary methods used to measure river discharge in the field, including the limitations of each.', marks: 9, command: 'Describe' },
+    { q: 'Compare the strengths and limitations of primary and secondary data sources for a geographical investigation.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the strengths and limitations of Geographical Information Systems (GIS) as a tool for analysing fieldwork data.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the value of qualitative methods (such as semi-structured interviews and photo-elicitation) in investigating human geography topics.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the effectiveness of inferential statistical testing in supporting the conclusions of a geographical investigation.', marks: 16, command: 'Assess' },
+    { q: 'Assess the extent to which student-led A-level fieldwork can generate findings that are valid and reliable.', marks: 16, command: 'Assess' },
+    { q: 'Assess the significance of positionality and reflexivity in human geography fieldwork.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the most appropriate combination of fieldwork methods to investigate a contemporary urban issue such as gentrification or air quality.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the fieldwork approaches that could be used to investigate rates of coastal change at a named UK location.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent can independent A-level fieldwork generate genuinely new geographical knowledge rather than simply confirm existing theory?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent are quantitative methods inherently more rigorous than qualitative methods in geographical research?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
