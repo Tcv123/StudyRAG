@@ -28,6 +28,25 @@ const GEOGRAPHY_AQA_AI_FEEDBACK = {
     { q: 'To what extent is large-scale carbon sequestration a credible long-term strategy for meeting Paris Agreement temperature targets?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── 1.2 Coastal Systems & Landscapes ─────────────────────── */
+  '1.2': [
+    { q: 'Describe how the coast operates as an open system in terms of energy and sediment inputs, stores, transfers and outputs.', marks: 6, command: 'Describe' },
+    { q: 'Explain the differences between constructive and destructive waves and the resulting impacts on a beach profile.', marks: 6, command: 'Explain' },
+    { q: 'Explain the formation of headlands and bays on a discordant coastline, using a named UK example.', marks: 9, command: 'Explain' },
+    { q: 'Explain the formation of a spit, with reference to longshore drift, wave refraction and secondary wind direction.', marks: 9, command: 'Explain' },
+    { q: 'Describe the concept of a sediment cell and explain why coastal managers operate at the scale of the cell rather than the individual beach.', marks: 9, command: 'Describe' },
+    { q: 'Compare the characteristics of emergent coastal landforms (such as raised beaches) with submergent coastal landforms (such as rias and fjords).', marks: 12, command: 'Compare' },
+    { q: 'Discuss the relative importance of marine, sub-aerial and biological processes in driving cliff retreat at a named UK coastline.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the strengths and weaknesses of hard engineering compared with soft engineering as approaches to managing coastal erosion.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which rapid coastal retreat along the Holderness coast can be explained by underlying geology rather than by management decisions.', marks: 16, command: 'Assess' },
+    { q: 'Assess the effectiveness of Integrated Coastal Zone Management (ICZM) as a strategy for managing conflicting demands on a stretch of coastline.', marks: 16, command: 'Assess' },
+    { q: 'Assess the role of post-glacial eustatic and isostatic sea-level change in shaping the contemporary UK coastline.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate managed retreat (for example, the Medmerry realignment scheme) as a sustainable response to accelerating sea-level rise.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the relative significance of physical and human factors in explaining the coastal vulnerability of low-lying nations such as the Maldives or Bangladesh.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent should decisions about coastal management prioritise the economic value of land and assets over its ecological and cultural value?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent has human activity, rather than natural processes, become the dominant driver of coastal change along the UK coastline?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
