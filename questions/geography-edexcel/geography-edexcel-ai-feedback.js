@@ -123,6 +123,25 @@ const GEOGRAPHY_EDEXCEL_AI_FEEDBACK = {
     { q: 'To what extent can declining rural communities be effectively revitalised through targeted policy intervention?', marks: 25, command: 'To what extent' },
   ],
 
+  /* ─────────────────────── T7 Superpowers ─────────────────────── */
+  'T7': [
+    { q: 'Describe the main characteristics of a superpower across economic, military, political and cultural dimensions.', marks: 6, command: 'Describe' },
+    { q: 'Explain Joseph Nye\'s distinction between hard power and soft power, with brief examples of each.', marks: 6, command: 'Explain' },
+    { q: 'Explain the main mechanisms through which the USA exerts global economic and political hegemony.', marks: 9, command: 'Explain' },
+    { q: 'Explain the role of the BRICS grouping (Brazil, Russia, India, China, South Africa) in challenging Western dominance.', marks: 9, command: 'Explain' },
+    { q: 'Describe Wallerstein\'s world systems theory and the core, semi-periphery and periphery model.', marks: 9, command: 'Describe' },
+    { q: 'Compare the economic and political power of the USA with that of China today.', marks: 12, command: 'Compare' },
+    { q: 'Discuss the significance of soft power (Hollywood, K-pop, the Premier League and US universities) in shaping global influence.', marks: 12, command: 'Discuss' },
+    { q: 'Discuss the geopolitical importance of disputes in the South China Sea for regional and global stability.', marks: 12, command: 'Discuss' },
+    { q: 'Assess the extent to which China\'s Belt and Road Initiative represents a new form of economic imperialism.', marks: 16, command: 'Assess' },
+    { q: 'Assess the usefulness of Wallerstein\'s world systems model for understanding the structure of power in the 21st century.', marks: 16, command: 'Assess' },
+    { q: 'Assess the role of transnational corporations as players in contemporary superpower geopolitics.', marks: 16, command: 'Assess' },
+    { q: 'Evaluate the extent to which the European Union functions as a superpower bloc in a multipolar world.', marks: 20, command: 'Evaluate' },
+    { q: 'Evaluate the impact of Russia\'s invasion of Ukraine on its long-term standing as a global superpower.', marks: 20, command: 'Evaluate' },
+    { q: 'To what extent is global power becoming more multipolar and less concentrated in a single superpower?', marks: 25, command: 'To what extent' },
+    { q: 'To what extent must the continuing rise of China inevitably lead to direct conflict with the United States?', marks: 25, command: 'To what extent' },
+  ],
+
 };
 
 if (typeof module !== 'undefined' && module.exports) {
