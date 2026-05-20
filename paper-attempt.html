@@ -164,6 +164,47 @@
     .qbq-intro-icon { font-size: 48px; margin-bottom: 12px; }
     .qbq-intro-title { font-family: var(--font-display); font-size: 24px; margin-bottom: 10px; }
     .qbq-intro-body { font-size: 14.5px; color: var(--muted); line-height: 1.7; max-width: 520px; margin: 0 auto 18px; }
+
+    /* Exam timer */
+    .timer-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; display: flex; align-items: center; gap: 22px; flex-wrap: wrap; transition: all 0.25s; }
+    .timer-card.running { border-color: var(--accent); box-shadow: 0 4px 18px rgba(37,99,235,0.10); }
+    .timer-card.paused { border-color: var(--warn); }
+    .timer-card.overtime { border-color: var(--bad); background: linear-gradient(135deg, rgba(220,38,38,0.05), var(--surface)); }
+    .timer-card.done { border-color: var(--bad); }
+    .timer-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); }
+    .timer-state { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px; border-radius: 999px; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 4px; }
+    .timer-state.idle    { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
+    .timer-state.running { background: var(--accent-dim); color: var(--accent-dark); border: 1px solid var(--accent); }
+    .timer-state.paused  { background: rgba(217,119,6,0.12); color: #92400E; border: 1px solid rgba(217,119,6,0.3); }
+    .timer-state.done    { background: rgba(220,38,38,0.08); color: var(--bad); border: 1px solid rgba(220,38,38,0.3); }
+    .timer-state .dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+    .timer-state.running .dot { animation: timer-pulse 1.4s ease-in-out infinite; }
+    @keyframes timer-pulse { 50% { opacity: 0.35; } }
+    .timer-time { font-family: var(--font-display); font-size: 44px; line-height: 1; color: var(--text); font-variant-numeric: tabular-nums; letter-spacing: -0.01em; }
+    .timer-card.running .timer-time { color: var(--accent-dark); }
+    .timer-card.overtime .timer-time, .timer-card.done .timer-time { color: var(--bad); }
+    .timer-progress { flex: 1; min-width: 160px; height: 8px; background: var(--surface2); border-radius: 999px; overflow: hidden; min-height: 8px; }
+    .timer-progress > div { height: 100%; background: var(--accent); transition: width 0.5s linear; }
+    .timer-card.paused .timer-progress > div { background: var(--warn); }
+    .timer-card.overtime .timer-progress > div, .timer-card.done .timer-progress > div { background: var(--bad); }
+    .timer-buttons { display: flex; gap: 8px; flex-wrap: wrap; }
+    .timer-buttons .btn { padding: 9px 16px; font-size: 13.5px; }
+    .timer-meta { font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 2px; min-width: 120px; }
+    .timer-meta .num { font-family: var(--font-display); font-size: 15px; color: var(--text); }
+
+    /* Sticky thin timer strip used at the top of the qbq attempt phase */
+    .timer-strip { position: sticky; top: 0; z-index: 5; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 16px; display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; box-shadow: 0 2px 12px rgba(11,30,63,0.04); }
+    .timer-strip.running { border-color: var(--accent); }
+    .timer-strip.paused  { border-color: var(--warn); }
+    .timer-strip.overtime, .timer-strip.done { border-color: var(--bad); }
+    .timer-strip .timer-time { font-size: 22px; }
+    .timer-strip .timer-state { margin-top: 0; }
+    .timer-strip .timer-progress { height: 5px; min-height: 5px; }
+    .timer-strip .timer-buttons .btn { padding: 6px 12px; font-size: 12.5px; }
+    @media (max-width: 640px) {
+      .timer-card { gap: 14px; padding: 16px 18px; }
+      .timer-time { font-size: 34px; }
+    }
     .qbq-controls { padding: 18px 22px 22px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     .qbq-controls .spacer { flex: 1; }
     .qbq-controls .nav-hint { font-size: 12px; color: var(--muted2); }
@@ -361,6 +402,172 @@
       return 'U';
     }
 
+    // ---------- Exam timer ----------
+    // Timer state lives on attempt.timer and persists in localStorage.
+    // Shape: { state: 'idle'|'running'|'paused'|'done', startedAt: number|null,
+    //          elapsedBeforePauseMs: number, durationMs: number }
+    const timerDurationMs = (paper.durationMins || 0) * 60 * 1000;
+    let timerInterval = null;
+
+    function ensureTimer(attempt) {
+      if (!attempt.timer) {
+        attempt.timer = {
+          state: 'idle',
+          startedAt: null,
+          elapsedBeforePauseMs: 0,
+          durationMs: timerDurationMs
+        };
+      }
+      return attempt.timer;
+    }
+    function currentElapsedMs(t) {
+      if (t.state === 'running' && t.startedAt) {
+        return t.elapsedBeforePauseMs + (Date.now() - t.startedAt);
+      }
+      return t.elapsedBeforePauseMs;
+    }
+    function formatHMS(ms) {
+      const total = Math.max(0, Math.floor(ms / 1000));
+      const h = Math.floor(total / 3600);
+      const m = Math.floor((total % 3600) / 60);
+      const s = total % 60;
+      const pad = n => String(n).padStart(2, '0');
+      return h > 0 ? `${h}:${pad(m)}:${pad(s)}` : `${pad(m)}:${pad(s)}`;
+    }
+    function startTimer(attempt) {
+      const t = ensureTimer(attempt);
+      if (t.state === 'running') return;
+      t.startedAt = Date.now();
+      t.state = 'running';
+      saveAttempt(attempt);
+      scheduleTimerTick();
+    }
+    function pauseTimer(attempt) {
+      const t = ensureTimer(attempt);
+      if (t.state !== 'running') return;
+      t.elapsedBeforePauseMs += Date.now() - t.startedAt;
+      t.startedAt = null;
+      t.state = 'paused';
+      saveAttempt(attempt);
+      refreshTimerUI(attempt);
+    }
+    function resetTimer(attempt) {
+      const t = ensureTimer(attempt);
+      t.state = 'idle';
+      t.startedAt = null;
+      t.elapsedBeforePauseMs = 0;
+      saveAttempt(attempt);
+      refreshTimerUI(attempt);
+    }
+    function markTimerDone(attempt) {
+      const t = ensureTimer(attempt);
+      if (t.state === 'running' && t.startedAt) {
+        t.elapsedBeforePauseMs += Date.now() - t.startedAt;
+        t.startedAt = null;
+      }
+      t.state = 'done';
+      saveAttempt(attempt);
+      refreshTimerUI(attempt);
+    }
+    function scheduleTimerTick() {
+      if (timerInterval) return;
+      timerInterval = setInterval(() => {
+        // The current attempt object is owned by whoever called startTimer
+        // — they pass it via closure into refreshTimerUI. So just re-render
+        // the on-page elements via the cached `_activeAttempt`.
+        if (window._activeAttempt) refreshTimerUI(window._activeAttempt);
+      }, 1000);
+    }
+    function stopTimerTick() {
+      if (timerInterval) { clearInterval(timerInterval); timerInterval = null; }
+    }
+    function refreshTimerUI(attempt) {
+      const t = ensureTimer(attempt);
+      const elapsed = currentElapsedMs(t);
+      const remaining = t.durationMs - elapsed;
+      const card = document.getElementById('examTimer');
+      if (!card) return; // Timer not rendered on current screen.
+      const overtime = remaining < 0 && t.state !== 'idle';
+      let cls = t.state;
+      if (overtime && t.state === 'running') cls = 'overtime';
+      card.className = (card.classList.contains('timer-strip') ? 'timer-strip ' : 'timer-card ') + cls;
+      // Time display
+      const timeEl = card.querySelector('.timer-time');
+      if (timeEl) {
+        timeEl.textContent = overtime
+          ? `+${formatHMS(-remaining)}`
+          : formatHMS(remaining);
+      }
+      // State pill
+      const stateEl = card.querySelector('.timer-state');
+      if (stateEl) {
+        const label = overtime && t.state === 'running' ? 'Overtime'
+                    : t.state === 'idle'    ? 'Ready'
+                    : t.state === 'running' ? 'Running'
+                    : t.state === 'paused'  ? 'Paused'
+                    :                          'Finished';
+        stateEl.className = 'timer-state ' + (overtime && t.state === 'running' ? 'done' : t.state);
+        stateEl.innerHTML = `<span class="dot"></span>${label}`;
+      }
+      // Progress bar
+      const bar = card.querySelector('.timer-progress > div');
+      if (bar) {
+        const pct = Math.min(100, (elapsed / t.durationMs) * 100);
+        bar.style.width = `${pct}%`;
+      }
+      // Buttons swap depending on state
+      const btnArea = card.querySelector('.timer-buttons');
+      if (btnArea) {
+        if (t.state === 'idle') {
+          btnArea.innerHTML = `<button class="btn primary" data-timer-act="start">▶ Start timer</button>`;
+        } else if (t.state === 'running') {
+          btnArea.innerHTML = `
+            <button class="btn" data-timer-act="pause">⏸ Pause</button>
+            <button class="btn" data-timer-act="done">⏹ Finish</button>`;
+        } else if (t.state === 'paused') {
+          btnArea.innerHTML = `
+            <button class="btn primary" data-timer-act="start">▶ Resume</button>
+            <button class="btn ghost" data-timer-act="reset">↺ Reset</button>`;
+        } else { // done
+          btnArea.innerHTML = `<button class="btn ghost" data-timer-act="reset">↺ Reset timer</button>`;
+        }
+      }
+      // Stop the ticker when not running
+      if (t.state !== 'running') stopTimerTick();
+    }
+    // Render a fresh timer node (card or strip variant). Caller injects HTML.
+    function timerHtml(variant) {
+      const klass = variant === 'strip' ? 'timer-strip' : 'timer-card';
+      return `
+        <div id="examTimer" class="${klass} idle">
+          <div>
+            <div class="timer-label">Exam timer</div>
+            <div class="timer-state idle"><span class="dot"></span>Ready</div>
+          </div>
+          <div class="timer-time">${formatHMS(timerDurationMs)}</div>
+          <div class="timer-progress"><div style="width:0%"></div></div>
+          ${variant === 'card' ? `<div class="timer-meta"><div>Paper duration</div><div class="num">${formatHMS(timerDurationMs)}</div></div>` : ''}
+          <div class="timer-buttons"></div>
+        </div>`;
+    }
+    // Wire button clicks for whichever timer is on-screen now.
+    function wireTimerButtons(attempt) {
+      const card = document.getElementById('examTimer');
+      if (!card) return;
+      card.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-timer-act]');
+        if (!btn) return;
+        const act = btn.dataset.timerAct;
+        if (act === 'start')  startTimer(attempt);
+        if (act === 'pause')  pauseTimer(attempt);
+        if (act === 'done')   markTimerDone(attempt);
+        if (act === 'reset')  {
+          if (confirm('Reset the timer? Your elapsed time will be lost.')) resetTimer(attempt);
+        }
+        refreshTimerUI(attempt);
+      });
+    }
+
     function msButtonHtml(cls) {
       if (paper.msUrl) {
         return `<a class="${cls}" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Open mark scheme PDF</a>`;
@@ -438,6 +645,7 @@
     }
 
     function renderPrintMode(attempt) {
+      window._activeAttempt = attempt;
       const area = document.getElementById('modeArea');
       const durStr = `${Math.floor(paper.durationMins/60)}h${paper.durationMins%60 ? ' ' + (paper.durationMins%60) + 'm' : ''}`;
       const msStepAction = paper.msUrl
@@ -463,7 +671,7 @@
               <div class="step-num">2</div>
               <div class="step-icon">⏱️</div>
               <div class="step-title">Sit the paper</div>
-              <div class="step-desc">Time yourself if you can — this paper is ${durStr}. Write your answers on the printed booklet or scrap paper.</div>
+              <div class="step-desc">Hit Start when you're ready — the timer below counts down ${durStr}. Pause if you need a break.</div>
             </div>
             <div class="print-step">
               <div class="step-num">3</div>
@@ -476,8 +684,12 @@
               <div class="step-num">4</div>
               <div class="step-icon">✏️</div>
               <div class="step-title">Enter your total</div>
-              <div class="step-desc">Pop your final score into the box on the right and submit — we'll show your grade band.</div>
+              <div class="step-desc">Pop your final score into the box below and submit — we'll show your grade band.</div>
             </div>
+          </div>
+
+          <div style="margin-top:18px;">
+            ${timerHtml('card')}
           </div>
 
           <div class="score-card">
@@ -528,6 +740,12 @@
       });
       input.focus();
       refreshPct();
+
+      // Wire timer
+      ensureTimer(attempt);
+      refreshTimerUI(attempt);
+      wireTimerButtons(attempt);
+      if (attempt.timer.state === 'running') scheduleTimerTick();
       document.getElementById('submitPrint').addEventListener('click', () => {
         const v = parseInt(input.value, 10);
         if (!Number.isFinite(v) || v < 0 || v > paper.totalMarks) {
@@ -701,7 +919,12 @@
             </div>`;
         }
 
+        // Sticky timer strip is only shown during the attempt phase (when
+        // you're "sitting" the paper). The marking phase is untimed.
+        const timerStripHtml = phase === 'attempt' ? timerHtml('strip') : '';
+
         document.getElementById('modeArea').innerHTML = `
+          ${timerStripHtml}
           <div class="qbq-stepper">
             <div class="qbq-stephead">
               <div class="qbq-progressbar"><div style="width:${pctProgress}%"></div></div>
@@ -719,6 +942,17 @@
             <div class="qbq-prompt">${renderPromptText(part.prompt)}</div>
             ${bottomHtml}
           </div>`;
+
+        // Wire the sticky timer strip if rendered.
+        if (phase === 'attempt') {
+          window._activeAttempt = attempt;
+          ensureTimer(attempt);
+          refreshTimerUI(attempt);
+          wireTimerButtons(attempt);
+          if (attempt.timer.state === 'running') scheduleTimerTick();
+        } else {
+          stopTimerTick();
+        }
 
         // ---------- Per-phase wiring ----------
         const updateWordCount = () => {
@@ -795,6 +1029,10 @@
             attempt.responses[idx].answer = ta.value;
             if (idx === totalParts - 1) {
               // End of attempt phase → show transition screen → marking.
+              // Auto-stop the timer so it freezes at the elapsed time.
+              if (attempt.timer && attempt.timer.state === 'running') {
+                markTimerDone(attempt);
+              }
               attempt.phase = 'marking';
               attempt.currentIndex = 0;
               saveAttempt(attempt);
