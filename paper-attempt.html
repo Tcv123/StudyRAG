@@ -666,6 +666,9 @@
           if (mode === 'qbq') {
             seed.responses = parts.map(p => ({ code: p.code, maxMarks: p.marks, marks: null }));
             seed.currentIndex = 0;
+            // Force a deliberate timer start (or skip) before the attempt
+            // phase actually begins.
+            seed.phase = 'ready';
           }
           saveAttempt(seed);
           if (mode === 'print') renderPrintMode(seed);
@@ -828,9 +831,9 @@
           if (!('marks' in r)) r.marks = null;
         });
       }
-      // Phase: 'attempt' (writing answers) → 'marking' (self-marking with MS)
-      // → optional 'review' (revisiting completed parts from the result screen).
-      if (!['attempt', 'marking', 'review'].includes(attempt.phase)) {
+      // Phase: 'ready' (pre-attempt timer gate) → 'attempt' (writing
+      // answers) → 'marking' (self-marking) → optional 'review'.
+      if (!['ready', 'attempt', 'marking', 'review'].includes(attempt.phase)) {
         attempt.phase = 'attempt';
       }
       if (typeof attempt.currentIndex !== 'number' || attempt.currentIndex < 0 || attempt.currentIndex >= parts.length) {
@@ -1301,9 +1304,50 @@
         });
       }
 
-      // If the user lands mid-attempt at the boundary, kick straight to
-      // the transition screen rather than a malformed step.
-      if (attempt.phase === 'marking' && attempt.responses.every(r => r.marks == null) && attempt.currentIndex === 0) {
+      // Pre-attempt gate: prompt the user to start the timer before they
+      // begin writing answers.
+      function renderReadyGate() {
+        window._activeAttempt = attempt;
+        ensureTimer(attempt);
+        const durStr = `${Math.floor(paper.durationMins/60)}h${paper.durationMins%60 ? ' ' + (paper.durationMins%60) + 'm' : ''}`;
+        document.getElementById('modeArea').innerHTML = `
+          <div class="qbq-intro">
+            <div class="qbq-intro-icon">⏱️</div>
+            <div class="qbq-intro-title">Ready to begin?</div>
+            <div class="qbq-intro-body">
+              This paper is ${parts.length} parts and ${durStr} long. Hit <strong>Start timer &amp; begin paper</strong> to kick off the countdown — the timer stays pinned at the top of the page as you work. If you'd rather time yourself externally, you can skip it.
+            </div>
+            <div style="margin: 18px 0;">${timerHtml('card')}</div>
+            <div class="btn-row" style="justify-content:center;">
+              <button class="btn primary" id="startAndBeginBtn" style="padding:12px 22px;font-size:15px;">▶ Start timer &amp; begin paper</button>
+              <button class="btn ghost" id="beginWithoutTimerBtn">Begin without timer</button>
+            </div>
+          </div>`;
+        refreshTimerUI(attempt);
+        wireTimerButtons(attempt);
+        document.getElementById('startAndBeginBtn').addEventListener('click', () => {
+          // Reset any prior elapsed time and start fresh.
+          resetTimer(attempt);
+          startTimer(attempt);
+          attempt.phase = 'attempt';
+          attempt.currentIndex = 0;
+          saveAttempt(attempt);
+          renderStep();
+        });
+        document.getElementById('beginWithoutTimerBtn').addEventListener('click', () => {
+          attempt.phase = 'attempt';
+          attempt.currentIndex = 0;
+          saveAttempt(attempt);
+          renderStep();
+        });
+      }
+
+      // Phase-aware initial render. 'ready' shows the timer-start gate;
+      // landing mid-marking at index 0 with nothing marked kicks the
+      // transition screen instead of a malformed step.
+      if (attempt.phase === 'ready') {
+        renderReadyGate();
+      } else if (attempt.phase === 'marking' && attempt.responses.every(r => r.marks == null) && attempt.currentIndex === 0) {
         renderPhaseTransition();
       } else {
         renderStep();
