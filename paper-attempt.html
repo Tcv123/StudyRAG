@@ -828,17 +828,20 @@
           if (!('marks' in r)) r.marks = null;
         });
       }
-      // Phase: 'attempt' (writing answers) → 'marking' (self-marking with MS).
-      if (attempt.phase !== 'attempt' && attempt.phase !== 'marking') {
+      // Phase: 'attempt' (writing answers) → 'marking' (self-marking with MS)
+      // → optional 'review' (revisiting completed parts from the result screen).
+      if (!['attempt', 'marking', 'review'].includes(attempt.phase)) {
         attempt.phase = 'attempt';
       }
       if (typeof attempt.currentIndex !== 'number' || attempt.currentIndex < 0 || attempt.currentIndex >= parts.length) {
         if (attempt.phase === 'attempt') {
           const firstBlank = attempt.responses.findIndex(r => !r.answer);
           attempt.currentIndex = firstBlank === -1 ? 0 : firstBlank;
-        } else {
+        } else if (attempt.phase === 'marking') {
           const firstUnmarked = attempt.responses.findIndex(r => r.marks == null);
           attempt.currentIndex = firstUnmarked === -1 ? 0 : firstUnmarked;
+        } else {
+          attempt.currentIndex = 0;
         }
       }
 
@@ -946,7 +949,9 @@
         let bottomHtml = '';
         const phaseChip = phase === 'attempt'
           ? `<span class="qbq-phase attempt">Attempt phase</span>`
-          : `<span class="qbq-phase marking">Self-marking phase</span>`;
+          : phase === 'marking'
+          ? `<span class="qbq-phase marking">Self-marking phase</span>`
+          : `<span class="qbq-phase" style="background:rgba(124,58,237,0.08);color:#6D28D9;border:1px solid rgba(124,58,237,0.3);">Review</span>`;
 
         if (phase === 'attempt') {
           const codeLike = isCodeAnswer(part);
@@ -967,11 +972,11 @@
               <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
               <button class="btn ghost" id="switchMode">↺ Switch mode</button>
             </div>`;
-        } else {
+        } else if (phase === 'marking') {
           const ans = (response.answer || '').trim();
           const hasMs = !!part.markScheme;
           const currentAward = response.marks != null
-            ? `<span style="margin-left:auto;font-family:var(--font-display);font-size:18px;color:var(--accent-dark);">${response.marks} / ${part.marks}</span>`
+            ? `<span class="ai-award-display" style="margin-left:auto;font-family:var(--font-display);font-size:18px;color:var(--accent-dark);">${response.marks} / ${part.marks}</span>`
             : '';
           const aiRowHtml = hasMs ? `
             <div class="ai-mark-row">
@@ -1000,6 +1005,37 @@
               <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
               <button class="btn ghost" id="switchMode">↺ Switch mode</button>
             </div>`;
+        } else {
+          // ----- Review phase: read-only walkthrough after the result -----
+          const ans = (response.answer || '').trim();
+          const award = response.marks != null
+            ? `${response.marks} / ${part.marks}`
+            : 'skipped';
+          const awardCls = response.marks == null ? 'placeholder' : '';
+          const cachedFeedback = response.aiResult
+            ? renderAiFeedback(response.aiResult, part)
+            : (part.markScheme ? `
+              <div class="ai-feedback">
+                <div class="ai-feedback-summary">No AI marking was run on this part during your attempt. Open the mark scheme to review the official points.</div>
+                ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener" style="font-size:12.5px;padding:7px 12px;">📋 View full MS PDF</a>` : ''}
+              </div>` : '');
+          bottomHtml = `
+            <div class="ai-mark-row" style="background:linear-gradient(135deg,rgba(124,58,237,0.06),var(--surface));border:1px solid rgba(124,58,237,0.25);border-radius:12px;padding:12px 16px;margin:14px 22px 0;">
+              <span style="font-size:12.5px;color:#6D28D9;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;">Marks awarded</span>
+              <span style="margin-left:auto;font-family:var(--font-display);font-size:22px;color:${response.marks == null ? 'var(--muted2)' : 'var(--accent-dark)'};">${award}</span>
+            </div>
+            <div class="qbq-answer-label" style="margin-top:18px;">Your answer to ${esc(part.code)}</div>
+            <div class="qbq-answer-area">
+              <div class="qbq-answer-display${ans ? '' : ' empty'}">${ans ? esc(ans) : "You didn’t write an answer for this part."}</div>
+            </div>
+            <div id="aiFeedbackSlot" style="margin:14px 22px 0;">${cachedFeedback}</div>
+            <div class="qbq-controls">
+              <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
+              <button class="btn primary" id="nextBtn" ${idx === totalParts - 1 ? 'disabled style="opacity:0.5;cursor:not-allowed;"' : ''}>Next →</button>
+              <span class="spacer"></span>
+              <span class="nav-hint">Jump to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
+              <button class="btn" id="backToResultBtn">← Back to result</button>
+            </div>`;
         }
 
         // Sticky timer strip is shown in both phases. In the attempt phase
@@ -1014,7 +1050,7 @@
           <div class="qbq-stepper">
             <div class="qbq-stephead">
               <div class="qbq-progressbar"><div style="width:${pctProgress}%"></div></div>
-              <div class="qbq-progress-text">Part ${idx + 1} of ${totalParts} · ${completedCount} ${phase === 'attempt' ? 'answered' : 'marked'}</div>
+              <div class="qbq-progress-text">Part ${idx + 1} of ${totalParts}${phase === 'review' ? '' : ` · ${completedCount} ${phase === 'attempt' ? 'answered' : 'marked'}`}</div>
             </div>
             <div class="qbq-step-meta">
               <span class="qbq-qcode">${esc(part.code)}</span>
@@ -1066,6 +1102,16 @@
               document.getElementById('nextBtn').click();
             }
           });
+        } else if (phase === 'review') {
+          // Read-only — just wire the Back-to-result button. Prev/Next/jump
+          // are wired below in the shared block.
+          const backBtn = document.getElementById('backToResultBtn');
+          if (backBtn) {
+            backBtn.addEventListener('click', () => {
+              // Re-render the result screen from the current attempt totals.
+              renderResult({ ...attempt, status: 'completed' });
+            });
+          }
         } else {
           // --- AI mark-against-scheme button ---
           const aiBtn = document.getElementById('aiMarkBtn');
@@ -1162,7 +1208,7 @@
             opt.value = i;
             let tick = '·';
             if (phase === 'attempt' && attempt.responses[i].answer && attempt.responses[i].answer.trim()) tick = '✓';
-            if (phase === 'marking' && attempt.responses[i].marks != null) tick = '✓';
+            if ((phase === 'marking' || phase === 'review') && attempt.responses[i].marks != null) tick = '✓';
             opt.textContent = `${tick} ${p.code} (${p.marks}m)`;
             if (i === idx) opt.selected = true;
             jump.appendChild(opt);
@@ -1197,6 +1243,9 @@
               renderPhaseTransition();
               return;
             }
+          } else if (phase === 'review') {
+            // Review phase — just advance, no edits. Last part disables Next.
+            if (idx === totalParts - 1) return;
           } else {
             // Marking phase — the AI marker (or skip) is the only way to set
             // a score. If the user hasn't marked this part, treat as 0.
@@ -1274,41 +1323,48 @@
       let breakdownHtml = '';
       if (attempt.mode === 'qbq' && Array.isArray(attempt.responses)) {
         const rows = attempt.responses
-          .map(r => {
+          .map((r, i) => {
             const s = Number.isFinite(r.marks) ? r.marks : null;
             const m = r.maxMarks;
+            const hasAi = !!r.aiResult;
+            const aiPill = hasAi ? `<span style="display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;background:rgba(124,58,237,0.1);color:#6D28D9;padding:1px 6px;border-radius:999px;margin-left:8px;vertical-align:middle;">AI</span>` : '';
             if (s == null) {
               return `
-                <tr>
-                  <td>${esc(r.code || '')}</td>
+                <tr data-review-idx="${i}" style="cursor:pointer;">
+                  <td>${esc(r.code || '')}${aiPill}</td>
                   <td class="num" style="color:var(--muted2);">— / ${m}</td>
                   <td><div class="bar"></div></td>
                   <td class="num" style="color:var(--muted2);">skipped</td>
+                  <td class="num" style="color:var(--muted2);font-size:12px;">review →</td>
                 </tr>`;
             }
             const p = Math.round((s / m) * 100);
             const cls = p >= 70 ? 'high' : p >= 40 ? 'mid' : 'low';
             return `
-              <tr>
-                <td>${esc(r.code || '')}</td>
+              <tr data-review-idx="${i}" style="cursor:pointer;">
+                <td>${esc(r.code || '')}${aiPill}</td>
                 <td class="num">${s} / ${m}</td>
                 <td><div class="bar"><div class="bar-fill ${cls}" style="width:${p}%"></div></div></td>
                 <td class="num">${p}%</td>
+                <td class="num" style="color:var(--muted2);font-size:12px;">review →</td>
               </tr>`;
           })
           .join('');
         if (rows) {
           breakdownHtml = `
             <div class="panel">
-              <div class="panel-head">
-                <div class="panel-title">Per-question breakdown</div>
-                <div class="panel-sub" style="margin-top:2px;">All ${attempt.responses.length} parts. Skipped parts count as 0 marks toward your total.</div>
+              <div class="panel-head" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:14px;">
+                <div>
+                  <div class="panel-title">Per-question breakdown</div>
+                  <div class="panel-sub" style="margin-top:2px;">All ${attempt.responses.length} parts. Click any row to walk through your answer and the marking. Skipped parts count as 0.</div>
+                </div>
+                <button class="btn primary" id="walkAllBtn" style="font-size:13.5px;padding:9px 16px;">▶ Walk through paper</button>
               </div>
               <table class="breakdown-table">
                 <thead>
-                  <tr><th>Part</th><th class="num">Marks</th><th>Bar</th><th class="num">%</th></tr>
+                  <tr><th>Part</th><th class="num">Marks</th><th>Bar</th><th class="num">%</th><th></th></tr>
                 </thead>
-                <tbody>${rows}</tbody>
+                <tbody id="breakdownTbody">${rows}</tbody>
               </table>
             </div>`;
         }
@@ -1345,6 +1401,29 @@
         clearAttempt();
         renderModePicker();
       });
+
+      // Walk-through entry points: row click + Walk-through button → review phase
+      function enterReview(startIdx) {
+        attempt.phase = 'review';
+        attempt.currentIndex = Math.max(0, Math.min(startIdx | 0, attempt.responses.length - 1));
+        saveAttempt(attempt);
+        renderQbqMode(attempt);
+      }
+      const walkAllBtn = document.getElementById('walkAllBtn');
+      if (walkAllBtn) walkAllBtn.addEventListener('click', () => enterReview(0));
+      const tbody = document.getElementById('breakdownTbody');
+      if (tbody) {
+        tbody.addEventListener('click', (e) => {
+          const row = e.target.closest('tr[data-review-idx]');
+          if (!row) return;
+          enterReview(parseInt(row.dataset.reviewIdx, 10));
+        });
+        // Hover affordance — subtle, since we already have cursor:pointer
+        tbody.querySelectorAll('tr[data-review-idx]').forEach(tr => {
+          tr.addEventListener('mouseenter', () => { tr.style.background = 'var(--surface2)'; });
+          tr.addEventListener('mouseleave', () => { tr.style.background = ''; });
+        });
+      }
     }
   } catch (err) {
     console.error('Paper attempt page failed:', err);
