@@ -357,6 +357,11 @@
 
     // ---------- Render: paper meta + mode selector ----------
     const STORAGE_KEY = `paperAttempt.${paper.id}`;
+    // Hoisted const values used inside hoisted render/helper functions —
+    // declared up here to avoid temporal-dead-zone errors when those
+    // functions execute (since they live below this dispatch).
+    const timerDurationMs = (paper.durationMins || 0) * 60 * 1000;
+    let timerInterval = null;
     const stored = loadAttempt();
 
     renderShell();
@@ -406,9 +411,8 @@
     // Timer state lives on attempt.timer and persists in localStorage.
     // Shape: { state: 'idle'|'running'|'paused'|'done', startedAt: number|null,
     //          elapsedBeforePauseMs: number, durationMs: number }
-    const timerDurationMs = (paper.durationMins || 0) * 60 * 1000;
-    let timerInterval = null;
-
+    // (timerDurationMs and timerInterval are declared up above so they're
+    // available before the hoisted render functions execute.)
     function ensureTimer(attempt) {
       if (!attempt.timer) {
         attempt.timer = {
