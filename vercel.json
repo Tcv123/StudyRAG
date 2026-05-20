@@ -9,7 +9,8 @@
     }
   ],
   "functions": {
-    "api/mark-essay.js":           { "maxDuration": 60 },
-    "api/generate-model-answer.js": { "maxDuration": 60 }
+    "api/mark-essay.js":             { "maxDuration": 60 },
+    "api/generate-model-answer.js":  { "maxDuration": 60 },
+    "api/mark-against-scheme.js":    { "maxDuration": 60 }
   }
 }

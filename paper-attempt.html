@@ -159,6 +159,32 @@
     .qbq-answer-display { margin: 0 22px; padding: 14px 16px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; font-size: 14.5px; line-height: 1.65; color: var(--text); white-space: pre-wrap; min-height: 60px; }
     .qbq-answer-display.empty { color: var(--muted2); font-style: italic; }
 
+    /* AI auto-mark panel (sits below the answer in the marking phase) */
+    .ai-mark-row { margin: 14px 22px 0; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+    .ai-mark-btn { display: inline-flex; align-items: center; gap: 8px; padding: 10px 18px; border-radius: 10px; font-weight: 500; font-size: 14px; cursor: pointer; font-family: var(--font-body); background: linear-gradient(135deg, #7C3AED, #5B21B6); color: #fff; border: 1px solid #5B21B6; box-shadow: 0 2px 8px rgba(124,58,237,0.25); }
+    .ai-mark-btn:hover { box-shadow: 0 4px 14px rgba(124,58,237,0.35); transform: translateY(-1px); }
+    .ai-mark-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+    .ai-mark-hint { font-size: 12.5px; color: var(--muted2); }
+    .ai-feedback { margin: 14px 22px 0; padding: 16px 18px; background: linear-gradient(135deg, rgba(124,58,237,0.05), rgba(37,99,235,0.04)); border: 1px solid rgba(124,58,237,0.25); border-radius: 12px; font-size: 14px; line-height: 1.6; }
+    .ai-feedback-head { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; margin-bottom: 10px; flex-wrap: wrap; }
+    .ai-feedback-band { font-family: var(--font-display); font-size: 16px; color: #5B21B6; }
+    .ai-feedback-award { font-family: var(--font-display); font-size: 22px; color: var(--text); font-variant-numeric: tabular-nums; }
+    .ai-feedback-award .denom { color: var(--muted2); font-size: 16px; }
+    .ai-feedback-summary { color: var(--text); font-size: 13.5px; margin-bottom: 12px; }
+    .ai-feedback-section { margin-bottom: 10px; }
+    .ai-feedback-section h5 { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .ai-feedback-section.good h5 { color: #15803D; }
+    .ai-feedback-section.bad h5 { color: #B45309; }
+    .ai-feedback-list { list-style: none; padding: 0; margin: 0; }
+    .ai-feedback-list li { padding: 7px 11px; margin-bottom: 4px; border-radius: 7px; font-size: 13px; line-height: 1.55; }
+    .ai-feedback-section.good .ai-feedback-list li { background: rgba(22,163,74,0.08); border-left: 3px solid #16A34A; }
+    .ai-feedback-section.bad .ai-feedback-list li  { background: rgba(217,119,6,0.08); border-left: 3px solid #B45309; }
+    .ai-feedback-foot { font-size: 11.5px; color: var(--muted2); margin-top: 6px; padding-top: 8px; border-top: 1px solid rgba(124,58,237,0.15); }
+    .ai-feedback-loading { display: flex; align-items: center; gap: 12px; color: var(--muted); font-size: 13.5px; }
+    .ai-spinner { width: 18px; height: 18px; border: 2px solid rgba(124,58,237,0.2); border-top-color: #7C3AED; border-radius: 50%; animation: ai-spin 0.8s linear infinite; }
+    @keyframes ai-spin { to { transform: rotate(360deg); } }
+    .ai-feedback-error { color: var(--bad); font-size: 13.5px; }
+
     /* Phase intro / transition panel */
     .qbq-intro { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; text-align: center; }
     .qbq-intro-icon { font-size: 48px; margin-bottom: 12px; }
@@ -825,6 +851,47 @@
         html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
         return html;
       }
+      // Render the AI-vs-MS feedback panel. result = { awarded, total,
+      // pointsHit, level, notes }.
+      function renderAiFeedback(result, part) {
+        const ms = part.markScheme;
+        if (!ms) return '';
+        const award = `<div class="ai-feedback-award">${result.awarded}<span class="denom"> / ${result.total}</span></div>`;
+        let listHtml = '';
+        if (ms.type === 'levels') {
+          listHtml = result.level
+            ? `<div class="ai-feedback-section good"><h5>Chosen level</h5><div style="padding:6px 11px;background:rgba(22,163,74,0.06);border-left:3px solid #16A34A;border-radius:7px;font-size:13px;">${esc(result.level)}</div></div>`
+            : '';
+        } else {
+          const points = ms.points || [];
+          const hit = new Set(result.pointsHit || []);
+          const hits = points.filter((_, i) => hit.has(i));
+          const misses = points.filter((_, i) => !hit.has(i));
+          const hitItems = hits.map(p => `<li>✓ ${esc(p)}</li>`).join('');
+          const missItems = misses.map(p => `<li>✗ ${esc(p)}</li>`).join('');
+          listHtml = '';
+          if (hits.length) {
+            listHtml += `<div class="ai-feedback-section good"><h5>Mark-scheme points you covered (${hits.length})</h5><ul class="ai-feedback-list">${hitItems}</ul></div>`;
+          }
+          if (misses.length) {
+            listHtml += `<div class="ai-feedback-section bad"><h5>Points still available (${misses.length})</h5><ul class="ai-feedback-list">${missItems}</ul></div>`;
+          }
+        }
+        const notesHtml = result.notes
+          ? `<div class="ai-feedback-summary">${esc(result.notes)}</div>`
+          : '';
+        return `
+          <div class="ai-feedback">
+            <div class="ai-feedback-head">
+              <div class="ai-feedback-band">${ms.type === 'levels' ? 'Levels-of-response · examiner-grounded' : 'Mark-scheme check · ' + (ms.type === 'exact' ? 'exact answers' : 'point-by-point')}</div>
+              ${award}
+            </div>
+            ${notesHtml}
+            ${listHtml}
+            <div class="ai-feedback-foot">Generated by AI grounded on the official OCR mark scheme. The marks input above has been pre-filled with the awarded total — edit it if you disagree.</div>
+          </div>`;
+      }
+
       function renderFigure(fig) {
         if (!fig) return '';
         const label = fig.label ? `<div class="figure-label">${esc(fig.label)}</div>` : '';
@@ -902,17 +969,26 @@
             </div>`;
         } else {
           const ans = (response.answer || '').trim();
+          const hasMs = !!part.markScheme;
+          const aiRowHtml = hasMs ? `
+            <div class="ai-mark-row">
+              <button class="ai-mark-btn" id="aiMarkBtn">✨ Mark against the OCR scheme</button>
+              <span class="ai-mark-hint">Reads your answer, checks each official mark-scheme point, and awards marks accordingly. You can override the result.</span>
+            </div>
+            <div id="aiFeedbackSlot"></div>
+          ` : '';
           bottomHtml = `
             <div class="qbq-answer-label">Your answer to ${esc(part.code)} (from the attempt phase)</div>
             <div class="qbq-answer-area">
               <div class="qbq-answer-display${ans ? '' : ' empty'}">${ans ? esc(ans) : "You didn’t write an answer for this part."}</div>
             </div>
+            ${aiRowHtml}
             <div class="qbq-mark-row">
               <label for="qbqMarksInput">Marks you award yourself:</label>
               <input id="qbqMarksInput" type="number" min="0" max="${part.marks}" step="1"
                      value="${response.marks == null ? '' : response.marks}" placeholder="0">
               <span class="out-of">out of ${part.marks}</span>
-              ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener" style="margin-left:auto;font-size:13px;padding:8px 14px;">📋 Open mark scheme</a>` : ''}
+              ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener" style="margin-left:auto;font-size:13px;padding:8px 14px;">📋 Open full mark scheme PDF</a>` : ''}
             </div>
             <div class="qbq-controls">
               <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
@@ -998,6 +1074,84 @@
           input.addEventListener('keydown', (e) => {
             if (e.key === 'Enter') { e.preventDefault(); document.getElementById('nextBtn').click(); }
           });
+
+          // --- AI mark-against-scheme button ---
+          const aiBtn = document.getElementById('aiMarkBtn');
+          const aiSlot = document.getElementById('aiFeedbackSlot');
+          // Cache last result on the response so re-rendering the step shows it.
+          if (response.aiResult && aiSlot) {
+            aiSlot.innerHTML = renderAiFeedback(response.aiResult, part);
+          }
+          if (aiBtn) {
+            aiBtn.addEventListener('click', async () => {
+              if (!part.markScheme) return;
+              aiBtn.disabled = true;
+              const originalLabel = aiBtn.textContent;
+              aiBtn.textContent = '✨ Marking…';
+              aiSlot.innerHTML = `
+                <div class="ai-feedback">
+                  <div class="ai-feedback-loading">
+                    <div class="ai-spinner"></div>
+                    Reading your answer and checking every mark-scheme point…
+                  </div>
+                </div>`;
+              try {
+                const { data: { session } } = await supabaseClient.auth.getSession();
+                if (!session?.access_token && !new URLSearchParams(location.search).get('demo')) {
+                  throw new Error('Not signed in.');
+                }
+                const headers = { 'Content-Type': 'application/json' };
+                if (session?.access_token) headers['Authorization'] = `Bearer ${session.access_token}`;
+                const resp = await fetch('/api/mark-against-scheme', {
+                  method: 'POST',
+                  headers,
+                  body: JSON.stringify({
+                    partCode:      part.code,
+                    question:      part.prompt,
+                    preamble:      part.preamble || '',
+                    scenario:      part.scenario || '',
+                    marks:         part.marks,
+                    studentAnswer: response.answer || '',
+                    markScheme:    part.markScheme,
+                    subject:       paper.subject,
+                    board:         paper.board,
+                    paperCode:     paper.specCode || paper.paperCode
+                  })
+                });
+                if (!resp.ok) {
+                  const body = await resp.text();
+                  let msg = `Server returned ${resp.status}.`;
+                  try {
+                    const j = JSON.parse(body);
+                    if (j?.error === 'pro_required') msg = 'AI marking is a Pro feature.';
+                    else if (j?.error === 'rate_limited') msg = 'Rate-limited by the AI provider. Wait a moment and try again.';
+                    else if (j?.error) msg = `${j.error}${j.message ? ` — ${j.message}` : ''}`;
+                  } catch (_) {
+                    if (body && body.length < 400) msg = body;
+                  }
+                  throw new Error(msg);
+                }
+                const data = await resp.json();
+                const result = data.result;
+                if (!result) throw new Error('No result in response.');
+                // Persist and pre-fill the marks input.
+                attempt.responses[idx].aiResult = result;
+                attempt.responses[idx].marks = result.awarded;
+                saveAttempt(attempt);
+                input.value = result.awarded;
+                aiSlot.innerHTML = renderAiFeedback(result, part);
+              } catch (err) {
+                console.error('AI marking failed:', err);
+                aiSlot.innerHTML = `
+                  <div class="ai-feedback">
+                    <div class="ai-feedback-error">Couldn't mark this part: ${esc(err.message || String(err))}</div>
+                  </div>`;
+              } finally {
+                aiBtn.disabled = false;
+                aiBtn.textContent = originalLabel;
+              }
+            });
+          }
         }
 
         // Skip-to dropdown — phase-aware tick marks.

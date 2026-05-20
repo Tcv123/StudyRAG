@@ -222,7 +222,364 @@ window.SUBJECTS = [
                   { code: '6(b)(ii)', prompt: "Explain what happens at the link layer (sometimes referred to as the 'network interface layer', 'network access layer' or simply the 'network layer') of the TCP/IP stack when using this program.", marks: 2 }
                 ]
               }
-            ]
+            ],
+            // Mark scheme content for every part, copied from the official OCR
+            // H446/01 June 2022 mark scheme. Used by /api/mark-against-scheme
+            // to ground the AI marker on real OCR criteria.
+            //   type:'points'  — short-answer or list. AI checks each point
+            //                    and awards 1 mark per point covered, up to
+            //                    the part's max marks.
+            //   type:'exact'   — fact recall. AI matches against the listed
+            //                    canonical answers exactly (allowing minor
+            //                    variants noted in guidance).
+            //   type:'levels'  — extended response. AI picks a level band
+            //                    using the descriptors, weighted against the
+            //                    AO1/AO2/AO3 indicative content.
+            markSchemes: {
+              '1(a)(i)': { type: 'points',
+                points: [
+                  'Both data and instructions share the same memory',
+                  'Instructions and Data stored in same format',
+                  'A single set of buses / same bus for instructions & data (to connect CPU to Memory and I/O)',
+                  'Has a (single) control unit',
+                  'Has an ALU',
+                  'Has ways to input and output',
+                  'Has access to storage',
+                  'Works sequentially through instructions / follows Fetch-execute cycle',
+                  '(Special) registers within CPU',
+                  'Based on stored program concept'
+                ],
+                guidance: '1 mark per point, up to a max of 2.' },
+              '1(a)(ii)': { type: 'points',
+                points: [
+                  'Separate memory for data and instructions / multiple memory units',
+                  'Different (sets of) buses one for instructions & one for data / instructions and data can be accessed concurrently'
+                ],
+                guidance: '1 mark.' },
+              '1(b)': { type: 'points',
+                points: [
+                  'Higher / faster clock speed',
+                  'More cores / dual / quad core etc',
+                  'More cache memory',
+                  'Use of pipelining',
+                  'Use of simultaneous multithreading (SMT)'
+                ],
+                guidance: 'Answers must refer to an improvement (more / higher / faster) not just "change the clock speed". Allow discussions of L1/L2 cache sizes for one mark. Do NOT accept RISC/CISC. Max 2 marks.' },
+              '1(c)(i)': { type: 'exact',
+                points: ['10', '60', '200'],
+                guidance: '1 mark per number. Must be in the order 10, 50, 120 was entered (so outputs are 10, 60, 200).' },
+              '1(c)(ii)': { type: 'points',
+                points: [
+                  'Loads a value into the accumulator (e.g. LDA, INP)',
+                  'Establishes a zero value (e.g. via DAT 0 or SUB total)',
+                  'Stores a zero value into total (STA total — case sensitive)',
+                  'Program stops (HLT)'
+                ],
+                guidance: 'Two example solutions: (Example 1) LDA zero / STA total / HLT / zero DAT 0. (Example 2) LDA total / SUB total / STA total / HLT. BP4 (HLT) must NOT be given if HLT is placed AFTER a DAT line (causes the zero to be fetched as an instruction).' },
+              '1(c)(iii)': { type: 'points',
+                points: [
+                  'One instruction can be fetched while another is being decoded',
+                  '…and another is executed',
+                  'The output of one process/instruction is the input of the next',
+                  'Concurrent processing of multiple instructions / completing multiple FDE cycles at once'
+                ],
+                guidance: 'BP1 allow any 2 of the 3 parts of the FDE cycle. BP2 must give the OTHER part of the FDE not given in BP1. Do not award if explaining multiple cores working on different parts of FDE.' },
+              '1(c)(iv)': { type: 'points',
+                points: [
+                  'More instructions can be carried out in a set amount of time / less time to execute the same number of instructions',
+                  'Increases speed/performance/efficiency of the computer/program (must be specific to the charity, e.g. processing more donations)'
+                ],
+                guidance: 'Do not allow "each instruction is quicker to execute". BP2 must be specific to the charity context.' },
+              '1(d)(i)': { type: 'points',
+                points: [
+                  'Holds all input/output',
+                  'Holds results of calculations (from the ALU)',
+                  'Checked for conditional branching (e.g. BRZ)',
+                  'Stores data which has come from the MDR/RAM'
+                ],
+                guidance: '1 mark per point, max 2.' },
+              '1(d)(ii)': { type: 'points',
+                points: [
+                  'Holds the address/location of the next instruction to be executed/fetched',
+                  'Contents copied to the MAR at start of FDE',
+                  'Incremented (by one) on every cycle',
+                  'Can be changed by branch/jump instructions'
+                ],
+                guidance: '1 mark per point, max 2.' },
+              '1(d)(iii)': { type: 'exact',
+                points: [
+                  'Memory Address Register / MAR',
+                  'Memory Data Register / MDR (allow Memory Buffer Register)',
+                  'Current Instruction Register / CIR',
+                  'Index Register / IR'
+                ],
+                guidance: '1 mark per register named. Max 3.' },
+              '1(e)': { type: 'levels',
+                levels: [
+                  { range: [9, 12], descriptor: 'High Level',
+                    criteria: 'Thorough knowledge and understanding of both CISC and RISC. Material generally accurate and detailed. Knowledge applied directly and consistently to the mobile-device context with explicit examples. Thorough, well-balanced discussion with consistently relevant evaluation. Well-developed line of reasoning, clear and logically structured.' },
+                  { range: [5, 8], descriptor: 'Mid Level',
+                    criteria: 'Reasonable knowledge of CISC and/or RISC; generally accurate but at times underdeveloped. Knowledge applied to the context though one or two opportunities missed. Sound, mostly-focused discussion with for-the-most-part appropriate evaluation. Line of reasoning with some structure.' },
+                  { range: [1, 4], descriptor: 'Low Level',
+                    criteria: 'Basic knowledge of CISC or RISC with some inaccuracies. Limited application to context. Narrow discussion, weak unsubstantiated judgments. Basic, unstructured information.' }
+                ],
+                indicative: {
+                  AO1: 'CISC is a complex instruction set, traditional processor design, many instructions some rarely used. RISC is a reduced set, fewer instructions used regularly, RISC has fewer transistors / less complex circuitry, RISC instructions take one cycle whereas CISC may take several. RISC compilers need to be more complex than CISC compilers.',
+                  AO2: 'CISC mobile would run the same software as the desktop machines but be less power efficient, requiring larger battery and cooling, and be more expensive to purchase. RISC requires software written specifically for it (cannot use CISC instructions), is more power efficient, requires less cooling and smaller battery / longer battery life. RISC devices may need greater RAM as programs are larger.',
+                  AO3: 'CISC for mobile saves money on software and increases compatibility but costs more, is physically larger (heat sink/larger battery) and/or has shorter battery life. RISC requires software investment but is cheaper, lighter, better battery life. Some compatibility issues can be reduced with emulators and translators.'
+                },
+                guidance: '12 marks total. AO1.1 (2), AO1.2 (2), AO2.1 (3), AO3.3 (5). 0 marks if no attempt or not worthy of credit.' },
+
+              '2(a)(i)': { type: 'points',
+                points: ['Field that is unique / does not repeat'],
+                guidance: '1 mark.' },
+              '2(a)(ii)': { type: 'exact',
+                points: ['Foreign Key: PackageType', 'Table Name: Membership'],
+                guidance: 'Both must be spelled correctly. 1 mark each.' },
+              '2(a)(iii)': { type: 'exact',
+                points: ['Float', 'Floating Point', 'Real', 'Currency', 'Double', 'Single', 'Decimal'],
+                guidance: 'Any one of these. 1 mark.' },
+              '2(a)(iv)': { type: 'exact',
+                points: ['Adverts'],
+                guidance: 'CAO — Correct Answer Only. 1 mark.' },
+              '2(b)': { type: 'points',
+                points: [
+                  'Username and FirstName fields (and no others) selected correctly using SELECT keyword',
+                  'Membership / both tables correctly selected using FROM keyword',
+                  'Tables joined using correct JOIN / INNER JOIN keywords OR tables joined using correct WHERE clause',
+                  'Fields use table identifiers before them (e.g. Membership.PackageType, not just PackageType)',
+                  'WHERE clause used to correctly show only records where Adverts = true (with AND if WHERE was used to join)'
+                ],
+                guidance: 'For full marks a fully correct working answer must be provided. Example 1: SELECT Username, FirstName FROM Membership JOIN Package on Membership.PackageType = Package.PackageType WHERE Adverts = true. Example 2: SELECT Username, FirstName FROM Membership, Package WHERE Membership.PackageType = Package.PackageType AND Adverts = true. Spellings of all field/table/keyword names must be accurate but only penalise once.' },
+              '2(c)(i)': { type: 'points',
+                points: [
+                  'Form / web form',
+                  'Can use validation to check for common errors',
+                  'Can check for duplicate values',
+                  'Data can be entered direct into the database / limited manual processing',
+                  'Can be done from remote locations'
+                ],
+                guidance: 'One mark MAX for identification of method; two marks for discussion of suitability. Accept other valid methods. Do NOT accept OCR / OMR / barcodes / QR codes. If method is incorrect, do not read on.' },
+              '2(c)(ii)': { type: 'exact',
+                points: ['CSV', 'JSON', 'XML', 'SQL', 'APIs', 'EDI', 'RSS', 'SOAP'],
+                guidance: '1 mark per method identified, max 2.' },
+              '2(d)(i)': { type: 'points',
+                points: [
+                  '(Committed) data/transaction is not lost',
+                  '…in case of power / system failure'
+                ],
+                guidance: '1 mark per point.' },
+              '2(d)(ii)': { type: 'points',
+                points: ['Completed transactions stored in secondary storage / data not stored long-term in RAM/cache'],
+                guidance: '1 mark.' },
+              '2(d)(iii)': { type: 'points',
+                points: [
+                  'The outcome of concurrent transactions is the same as if transactions were completed sequentially',
+                  'Record locking allows one user/process to access/modify record level data at any one time',
+                  'So data that is being used elsewhere cannot be modified / data that is being modified elsewhere cannot be used (allow reference to lost updates / dirty reads / phantom reads)'
+                ],
+                guidance: '1 mark per point, max 3.' },
+              '2(d)(iv)': { type: 'points',
+                points: ['Can cause delays (as users wait for access)', 'Can cause deadlock'],
+                guidance: '1 mark, either one.' },
+              '2(e)': { type: 'points',
+                points: [
+                  'Copyright assigned to owner of video automatically on creation',
+                  'Makes it illegal to copy/distribute videos as your own / without permission',
+                  'Copyright holder can ask for their work to be removed from the streaming platform',
+                  'Membership/licence gives subscribers the agreement to view videos',
+                  'Which may restrict their use (e.g. to whom it is shown or geographical location from which it is accessed)'
+                ],
+                guidance: '1 mark per point, max 2.' },
+              '2(f)': { type: 'points',
+                points: [
+                  'Lossy permanently removes data',
+                  'Lossless rewrites original data in a more efficient format',
+                  'Lossless is able to recreate the original file / Lossy is not',
+                  'Lossy reduces quality of videos / Lossless keeps original quality',
+                  'Lossy file size is smaller than if lossless were used',
+                  'Lossy: compression ratio may be adjusted depending on bandwidth',
+                  'Resulting in a noticeable decrease in quality on slower connections',
+                  'Lossy: the video will buffer less / quicker to start watching / Lossless: the video will buffer more / slower to start'
+                ],
+                guidance: 'Max 5 marks. Do not allow answers relating to speed of download unless this clearly refers to the video starting or reduction in buffering — scenario is streamed not downloaded.' },
+              '2(g)(i)': { type: 'points',
+                points: [
+                  'Class definition with identifier video',
+                  'name, number of views and star rating attributes defined',
+                  '…as private',
+                  'Constructor method definition inside class definition',
+                  '…that accepts only one parameter',
+                  '…name attribute set to parameter passed in',
+                  'Views set to 0 and rating set to 3 either when initialised or in constructor'
+                ],
+                guidance: 'Accept implementations in high-level languages (Python __ for private, class name used for constructor, no need for end of class definition in Python). BP1 allow empty brackets, not anything in the brackets. BP5 ignore self if included as parameter.' },
+              '2(g)(ii)': { type: 'points',
+                points: [
+                  'Method definition that is public',
+                  'View attribute incremented by one'
+                ],
+                guidance: 'View attribute must have the same name as part i.' },
+
+              '3(a)(i)': { type: 'exact',
+                points: ['1011 0111 1110', '101101111110'],
+                guidance: 'CAO. 1 mark.' },
+              '3(a)(ii)': { type: 'exact',
+                points: ['-149', '−149'],
+                guidance: 'CAO. 1 mark.' },
+              '3(a)(iii)': { type: 'points',
+                points: [
+                  'Correct left hand nibble (0011) — CAO',
+                  'Correct right hand nibble (1001) — CAO',
+                  'Working clearly shown (borrowing across columns, or making the second number negative and adding)'
+                ],
+                guidance: 'Final answer: 0011 1001. Answer must be 8 bits to achieve full marks. No marks if only working is in denary.' },
+              '3(b)': { type: 'points',
+                points: [
+                  'Exponent is -2',
+                  'Move decimal place 2 places left',
+                  'Fill with 1s giving 1.1101',
+                  'Denary answer is -0.1875 / −3⁄16'
+                ],
+                guidance: 'Accept alternative method of -0.75 × 2^-2: BP2 credited for -0.75, BP3 credited for multiplying by 2^-2. Correct answer with valid working gets full marks.' },
+              '3(c)': { type: 'exact',
+                points: [
+                  '010101 100 → Normalised',
+                  '110101 111 → Not normalised',
+                  '011010 010 → Normalised',
+                  '101010 110 → Normalised'
+                ],
+                guidance: '1 mark per row. No mark if both/neither box ticked. Accept other marks that clearly indicate choice (e.g. X).' },
+
+              '4': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'High Level',
+                    criteria: 'Thorough knowledge of AI, machine learning and how biases can be inherited. Generally accurate and detailed. Direct application to the context with explicit examples. Thorough, well-balanced discussion; consistently relevant evaluation. Well-developed reasoning.' },
+                  { range: [4, 6], descriptor: 'Mid Level',
+                    criteria: 'Reasonable knowledge, generally accurate but at times underdeveloped. Direct application to context though one or two opportunities missed. Sound mostly-focused discussion; for-the-most-part appropriate evaluation.' },
+                  { range: [1, 3], descriptor: 'Low Level',
+                    criteria: 'Basic knowledge with inaccuracies. Limited application. Narrow discussion, weak judgments. Basic, unstructured information.' }
+                ],
+                indicative: {
+                  AO1: 'AI: computer systems performing tasks that normally require human intelligence; generally programmed. Machine learning: machine improves its performance/output through experience/access to data; a subset of AI.',
+                  AO2: 'AI follows programming, so if a program contains biases the AI outcomes will too. Programmers must be aware of this and tackle it during design/implementation/testing. ML bias depends on the data given; larger data sets are generally more inclusive but must be aware of data that is itself biased.',
+                  AO3: 'Thorough testing, multiple programmers and scrutiny of data sets are essential. If not considered thoroughly, biases will certainly be inherited. Datasets need to be large enough to be representative but not so large that the data cannot be checked.'
+                },
+                guidance: '9 marks total. AO1.1 (2), AO1.2 (2), AO2.1 (2), AO3.3 (3). 0 marks if no attempt or not worthy of credit.' },
+
+              '5(a)(i)':  { type: 'exact', points: ['40'],  guidance: 'CAO. 1 mark.' },
+              '5(a)(ii)': { type: 'exact', points: ['70'],  guidance: 'CAO. 1 mark.' },
+              '5(a)(iii)':{ type: 'exact', points: ['300'], guidance: 'CAO. 1 mark.' },
+              '5(b)(i)': { type: 'points',
+                points: ['To convert (high-level or assembly) code to low level / machine code'],
+                guidance: 'Do not allow answers referring to "making the program executable" — given in the question.' },
+              '5(b)(ii)': { type: 'points',
+                points: [
+                  'Compiler translates code all at once / before it is executed',
+                  'Interpreter translates code line by line / during runtime',
+                  'Compiler produces executable file for reuse / doesn\'t need re-translating each run',
+                  'Interpreter needs to re-translate next time the program is run',
+                  'Compiler lists all errors / compiled code doesn\'t run if there are any',
+                  'Interpreter stops at the first error',
+                  'Compiled programs have the source code hidden',
+                  'Interpreted programs have the source code visible'
+                ],
+                guidance: 'Mark answers in pairs (one compiler, one interpreter). Max 2 marks per answer space, total 4 marks.' },
+              '5(c)': { type: 'exact',
+                points: [
+                  'Comments and whitespace are removed → Lexical analysis',
+                  'Keywords are replaced with tokens → Lexical analysis',
+                  'Object code is created → Code generation',
+                  'Symbol table created for variables → Lexical analysis',
+                  'Builds an abstract syntax tree → Syntax analysis'
+                ],
+                guidance: '1 mark per row. No mark if more than one or no box is ticked.' },
+              '5(d)': { type: 'points',
+                points: [
+                  'To make the program run faster / code is more efficient',
+                  'To make the program use fewer resources / less memory'
+                ],
+                guidance: '1 mark per point, max 2.' },
+              '5(e)(i)': { type: 'points',
+                points: [
+                  'and asc(c) <= 90  (or  and asc(c) < 91)',
+                  'capCount = capCount + 1  (or capCount++ or capCount += 1)',
+                  'return capCount  (or assign to function identifier, depending on language)'
+                ],
+                guidance: 'Accept alternative answers in high-level languages. Follow-through allowed for returning the value the candidate increments if it is not named capCount.' },
+              '5(e)(ii)': { type: 'points',
+                points: [
+                  'Both (use binary) to represent characters / are character sets',
+                  'The first 7/8 bits of Unicode is the same as ASCII (overlaps)'
+                ],
+                guidance: '1 mark.' },
+              '5(e)(iii)': { type: 'points',
+                points: [
+                  'ASCII has fewer characters (128/256) / Unicode has more characters',
+                  'ASCII is 7/8 bits whereas Unicode can be larger 16/32 / variable-sized characters',
+                  'ASCII limited to Latin / English / European characters whereas Unicode represents other symbols (Chinese / Cyrillic / Emojis)'
+                ],
+                guidance: 'Only mark the 1st answer for each difference. Must have BOTH sides (ASCII vs Unicode) to get the mark. Max 2.' },
+              '5(f)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'High Level',
+                    criteria: 'Thorough knowledge of both waterfall and the spiral model. Generally accurate and detailed. Direct application to context with explicit examples. Thorough, well-balanced discussion; consistently relevant evaluation. Well-developed reasoning.' },
+                  { range: [4, 6], descriptor: 'Mid Level',
+                    criteria: 'Reasonable knowledge of waterfall and/or spiral, generally accurate but at times underdeveloped. Direct application to context, one or two opportunities missed. Sound, mostly-focused discussion.' },
+                  { range: [1, 3], descriptor: 'Low Level',
+                    criteria: 'Basic knowledge of one model with inaccuracies. Limited application. Narrow, weak discussion.' }
+                ],
+                indicative: {
+                  AO1: 'Spiral has four quadrants (determine objectives, identify/manage risk, develop and test, plan next iteration). Client feedback informs future development. Waterfall has a structured analysis/design/development/test flow; progress to next step is not made until the previous step is complete.',
+                  AO2: 'Spiral relies on frequent client feedback, produces functional prototypes, features added incrementally, more focus on risk, projects may be modified or dropped. Waterfall is much more structured and very reliant on getting the requirements correct at the start; changes are harder later — but this forces the definition to be well understood.',
+                  AO3: 'Spiral involves client feedback, prototypes and evolving projects — better when requirements may change. Waterfall is better where requirements are clear from the start and outcomes known. Spiral is better for risk management. With a large team, waterfall may be more appropriate due to clearly-defined responsibilities at each stage.'
+                },
+                guidance: '9 marks total. AO1.1 (2), AO1.2 (2), AO2.1 (2), AO3.3 (3).' },
+
+              '6(a)(i)': { type: 'points',
+                points: [
+                  'For printer queue',
+                  'All documents/users have equal priority',
+                  'Whichever document is received first is printed first',
+                  'First in First Out / Last in Last Out'
+                ],
+                guidance: '1 mark per point, max 2.' },
+              '6(a)(ii)': { type: 'points',
+                points: [
+                  'To enable multitasking to take place',
+                  'To switch between active processes and those running in the background',
+                  'To limit each process to a certain amount of time / allow processes an equal share of processor time',
+                  '…to ensure the OS cycles through all processes / process then goes to the back of the queue',
+                  '…so that users receive an immediate response',
+                  '…to handle an interrupt immediately'
+                ],
+                guidance: 'BP4, 5, and 6 are dependent on BP3 only. Max 3.' },
+              '6(a)(iii)': { type: 'points',
+                points: [
+                  'Shortest job first / shortest remaining time — process which has the shortest time (remaining) is completed first',
+                  'Multilevel feedback queues — uses queues with different priorities; jobs can be moved between queues'
+                ],
+                guidance: '1 mark for name + 1 mark for description. Max 2.' },
+              '6(b)(i)': { type: 'points',
+                points: [
+                  'Protocol to be used is decided based on the application',
+                  'E.g. HTTPS for browser based service / SMTP / IMAP for messaging service',
+                  'Adds encryption',
+                  'Passes on to transport layer to send',
+                  'Gets data from transport layer when receiving',
+                  'Unpacks message ready for display / removes headers or other non-viewable data',
+                  'Decrypts message'
+                ],
+                guidance: 'For BP2, don\'t allow plain HTTP (question mentions encryption). Don\'t allow a bare list of protocols, or a protocol without its use. Max 5.' },
+              '6(b)(ii)': { type: 'points',
+                points: [
+                  'Receives (layered) data from internet layer to send',
+                  'MAC addresses are added to the packet',
+                  'Passes and receives data across the wireless network (to WAN / other machine)',
+                  'Passes (layered) data back up to internet layer when receiving'
+                ],
+                guidance: 'Wireless access given in the question stem. Max 2.' }
+            }
           },
           {
             id: 'cs-ocr-h446-2022-p2',
@@ -352,9 +709,12 @@ window.findPaper = function (id) {
   return (window.PAPERS || []).find(p => p.id === id) || null;
 };
 
-// Flat list of leaf parts for a paper, for the qbq stepper.
+// Flat list of leaf parts for a paper, for the qbq stepper. Each part is
+// augmented with its question's scenario/figures and (if present in the
+// paper's markSchemes map) the official mark-scheme criteria.
 window.paperParts = function (paper) {
   if (!paper || !Array.isArray(paper.questions)) return [];
+  const ms = paper.markSchemes || {};
   const out = [];
   paper.questions.forEach(q => {
     (q.parts || []).forEach(p => {
@@ -362,7 +722,8 @@ window.paperParts = function (paper) {
         ...p,
         questionNumber: q.number,
         scenario: q.scenario || '',
-        scenarioFigures: q.scenarioFigures || []
+        scenarioFigures: q.scenarioFigures || [],
+        markScheme: ms[p.code] || null
       });
     });
   });
