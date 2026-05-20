@@ -970,29 +970,32 @@
         } else {
           const ans = (response.answer || '').trim();
           const hasMs = !!part.markScheme;
+          const currentAward = response.marks != null
+            ? `<span style="margin-left:auto;font-family:var(--font-display);font-size:18px;color:var(--accent-dark);">${response.marks} / ${part.marks}</span>`
+            : '';
           const aiRowHtml = hasMs ? `
             <div class="ai-mark-row">
               <button class="ai-mark-btn" id="aiMarkBtn">✨ Mark against the OCR scheme</button>
-              <span class="ai-mark-hint">Reads your answer, checks each official mark-scheme point, and awards marks accordingly. You can override the result.</span>
+              <span class="ai-mark-hint">Reads your answer, checks each official mark-scheme point, and awards marks.</span>
+              ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener" style="margin-left:8px;font-size:12.5px;padding:7px 12px;">📋 View full MS PDF</a>` : ''}
+              ${currentAward}
             </div>
             <div id="aiFeedbackSlot"></div>
-          ` : '';
+          ` : `
+            <div class="ai-mark-row">
+              <span class="ai-mark-hint">No mark scheme attached to this part yet. Use Skip-to to move on, or come back later.</span>
+              ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener" style="font-size:12.5px;padding:7px 12px;">📋 View full MS PDF</a>` : ''}
+            </div>
+          `;
           bottomHtml = `
             <div class="qbq-answer-label">Your answer to ${esc(part.code)} (from the attempt phase)</div>
             <div class="qbq-answer-area">
               <div class="qbq-answer-display${ans ? '' : ' empty'}">${ans ? esc(ans) : "You didn’t write an answer for this part."}</div>
             </div>
             ${aiRowHtml}
-            <div class="qbq-mark-row">
-              <label for="qbqMarksInput">Marks you award yourself:</label>
-              <input id="qbqMarksInput" type="number" min="0" max="${part.marks}" step="1"
-                     value="${response.marks == null ? '' : response.marks}" placeholder="0">
-              <span class="out-of">out of ${part.marks}</span>
-              ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener" style="margin-left:auto;font-size:13px;padding:8px 14px;">📋 Open full mark scheme PDF</a>` : ''}
-            </div>
             <div class="qbq-controls">
               <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
-              <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? '✓ Finish & see result' : 'Save & Next →'}</button>
+              <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? '✓ Finish & see result' : 'Next →'}</button>
               <span class="spacer"></span>
               <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
               <button class="btn ghost" id="switchMode">↺ Switch mode</button>
@@ -1064,17 +1067,6 @@
             }
           });
         } else {
-          const input = document.getElementById('qbqMarksInput');
-          input.focus();
-          input.addEventListener('input', () => {
-            const v = parseInt(input.value, 10);
-            attempt.responses[idx].marks = Number.isFinite(v) ? Math.min(Math.max(v, 0), part.marks) : null;
-            saveAttempt(attempt);
-          });
-          input.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter') { e.preventDefault(); document.getElementById('nextBtn').click(); }
-          });
-
           // --- AI mark-against-scheme button ---
           const aiBtn = document.getElementById('aiMarkBtn');
           const aiSlot = document.getElementById('aiFeedbackSlot');
@@ -1083,6 +1075,7 @@
             aiSlot.innerHTML = renderAiFeedback(response.aiResult, part);
           }
           if (aiBtn) {
+            aiBtn.focus();
             aiBtn.addEventListener('click', async () => {
               if (!part.markScheme) return;
               aiBtn.disabled = true;
@@ -1134,12 +1127,19 @@
                 const data = await resp.json();
                 const result = data.result;
                 if (!result) throw new Error('No result in response.');
-                // Persist and pre-fill the marks input.
                 attempt.responses[idx].aiResult = result;
                 attempt.responses[idx].marks = result.awarded;
                 saveAttempt(attempt);
-                input.value = result.awarded;
                 aiSlot.innerHTML = renderAiFeedback(result, part);
+                // Show the awarded total in the row header.
+                const headerRow = aiSlot.parentElement?.querySelector('.ai-mark-row');
+                if (headerRow && !headerRow.querySelector('.ai-award-display')) {
+                  const span = document.createElement('span');
+                  span.className = 'ai-award-display';
+                  span.style.cssText = 'margin-left:auto;font-family:var(--font-display);font-size:18px;color:var(--accent-dark);';
+                  span.textContent = `${result.awarded} / ${part.marks}`;
+                  headerRow.appendChild(span);
+                }
               } catch (err) {
                 console.error('AI marking failed:', err);
                 aiSlot.innerHTML = `
@@ -1198,13 +1198,11 @@
               return;
             }
           } else {
-            const input = document.getElementById('qbqMarksInput');
-            const v = parseInt(input.value, 10);
-            if (!Number.isFinite(v)) {
-              if (!confirm(`No mark entered for ${part.code}. Treat as 0 and continue?`)) return;
+            // Marking phase — the AI marker (or skip) is the only way to set
+            // a score. If the user hasn't marked this part, treat as 0.
+            if (attempt.responses[idx].marks == null) {
+              if (!confirm(`${part.code} hasn't been marked yet. Skip and count as 0?`)) return;
               attempt.responses[idx].marks = 0;
-            } else {
-              attempt.responses[idx].marks = Math.min(Math.max(v, 0), part.marks);
             }
             if (idx === totalParts - 1) {
               const scored = attempt.responses.reduce((n, r) => n + (Number.isFinite(r.marks) ? r.marks : 0), 0);
