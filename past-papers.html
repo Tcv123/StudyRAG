@@ -247,11 +247,7 @@
   }
 
   const subjects = window.SUBJECTS || [];
-  let html = `
-    <div class="intro-card">
-      <span class="official-tag">Official only</span>
-      Past papers below come straight from the exam board's own filestore (<strong>ocr.org.uk</strong>). Pick a paper and walk it question by question — write your answer in the textarea, then self-mark against the mark scheme at the end.
-    </div>`;
+  let html = '';
   // Only render subjects that have at least one attemptable paper. Boards
   // that only link to an official page are dropped — they add no value
   // beyond the board's own search UI.
