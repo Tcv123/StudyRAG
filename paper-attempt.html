@@ -1345,7 +1345,13 @@
       // Phase-aware initial render. 'ready' shows the timer-start gate;
       // landing mid-marking at index 0 with nothing marked kicks the
       // transition screen instead of a malformed step.
-      if (attempt.phase === 'ready') {
+      // Also fire the ready gate for attempts that look untouched —
+      // phase='attempt', no answers written, timer never started — so
+      // existing in-progress sessions still see it on first reload.
+      const untouchedAttempt = attempt.phase === 'attempt'
+        && attempt.responses.every(r => !r.answer || !r.answer.trim())
+        && (!attempt.timer || attempt.timer.state === 'idle');
+      if (attempt.phase === 'ready' || untouchedAttempt) {
         renderReadyGate();
       } else if (attempt.phase === 'marking' && attempt.responses.every(r => r.marks == null) && attempt.currentIndex === 0) {
         renderPhaseTransition();
