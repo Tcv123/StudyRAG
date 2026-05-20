@@ -919,9 +919,12 @@
             </div>`;
         }
 
-        // Sticky timer strip is only shown during the attempt phase (when
-        // you're "sitting" the paper). The marking phase is untimed.
-        const timerStripHtml = phase === 'attempt' ? timerHtml('strip') : '';
+        // Sticky timer strip is shown in both phases. In the attempt phase
+        // it's the live exam timer. In the marking phase it sits in
+        // 'Finished' state and shows how long the attempt took (markTimerDone
+        // was called when transitioning between phases) — but the user can
+        // still reset it if they want to time their self-marking.
+        const timerStripHtml = timerHtml('strip');
 
         document.getElementById('modeArea').innerHTML = `
           ${timerStripHtml}
@@ -943,16 +946,13 @@
             ${bottomHtml}
           </div>`;
 
-        // Wire the sticky timer strip if rendered.
-        if (phase === 'attempt') {
-          window._activeAttempt = attempt;
-          ensureTimer(attempt);
-          refreshTimerUI(attempt);
-          wireTimerButtons(attempt);
-          if (attempt.timer.state === 'running') scheduleTimerTick();
-        } else {
-          stopTimerTick();
-        }
+        // Wire the sticky timer strip — rendered in both phases.
+        window._activeAttempt = attempt;
+        ensureTimer(attempt);
+        refreshTimerUI(attempt);
+        wireTimerButtons(attempt);
+        if (attempt.timer.state === 'running') scheduleTimerTick();
+        else stopTimerTick();
 
         // ---------- Per-phase wiring ----------
         const updateWordCount = () => {
