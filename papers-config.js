@@ -1364,7 +1364,281 @@ window.SUBJECTS = [
             totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-QP-NOV21.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-MS-NOV21.PDF'
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-MS-NOV21.PDF',
+            qbqNote: "Section D (Q12–Q15, 38 marks) requires the AQA Skeleton Program file (HexGrid-based game, distributed to centres for the exam) — it isn't on the public filestore, so Section D is print-only here. Open the QP PDF alongside this stepper for figures.",
+            questions: [
+              // ── SECTION A — algorithms / data structures / FSMs (37 marks)
+              {
+                number: 1,
+                parts: [
+                  { code: '01',
+                    preamble: "The shaded row of Table 1 contains a list of numbers: 3, 5, 8, 1, 6, 4 (at positions [0]–[5]). A bubble sort algorithm could be used to sort the list of numbers into ascending order.",
+                    figure: { type: 'table', label: 'Table 1 — bubble sort passes (complete the unshaded cells)',
+                      headers: ['Pass', '[0]', '[1]', '[2]', '[3]', '[4]', '[5]'],
+                      rows: [
+                        ['(start)', '3', '5', '8', '1', '6', '4'],
+                        ['First pass', '', '', '', '', '', ''],
+                        ['Second pass', '', '', '', '', '', ''],
+                        ['Third pass', '', '', '', '', '', '']
+                      ] },
+                    prompt: "Complete the unshaded cells of Table 1 to show the results of completing three passes through the list using a bubble sort algorithm.\n\nState the values at the end of each pass.", marks: 3 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "Figure 1 shows a binary tree containing seven nodes. Figure 2 shows how the binary tree could be represented using three one-dimensional arrays: Data, Dir1 and Dir2.\n\n    Index  Data  Dir1  Dir2\n    [0]     C    1    4\n    [1]     I    2    3\n    [2]     E   -1   -1\n    [3]     H   -1   -1\n    [4]     B    5    6\n    [5]     Y   -1   -1\n    [6]     Q   -1   -1\n\nFigure 3 (pseudo-code for an iterative Traversal subroutine using the three arrays + a Stack):\n\n    SUBROUTINE Traversal(StartNode)\n        Current ← StartNode\n        Pos ← 0\n        Stack[Pos] ← Current\n        WHILE Pos ≠ -1\n            Current ← Stack[Pos]\n            Pos ← Pos − 1\n            OUTPUT Data[Current]\n            IF Dir2[Current] ≠ -1 THEN\n                Pos ← Pos + 1\n                Stack[Pos] ← Dir2[Current]\n            ENDIF\n            IF Dir1[Current] ≠ -1 THEN\n                Pos ← Pos + 1\n                Stack[Pos] ← Dir1[Current]\n            ENDIF\n        ENDWHILE\n    ENDSUBROUTINE",
+                parts: [
+                  { code: '02.1', prompt: "Define the term binary tree.", marks: 2 },
+                  { code: '02.2',
+                    preamble: "The output of a post-order traversal algorithm used to print the data item at each node in the binary tree shown in Figure 1 would be E, H, I, Y, Q, B, C.",
+                    prompt: "State the output that would be produced by an in-order traversal algorithm.", marks: 2 },
+                  { code: '02.3',
+                    figure: { type: 'table', label: 'Table 2 — complete the trace of Traversal(0)',
+                      headers: ['Current', 'Pos', 'Stack[0]', 'Stack[1]', 'Stack[2]', 'Stack[3]', 'Output'],
+                      rows: [['', '', '', '', '', '', '']] },
+                    prompt: "Complete the unshaded cells in Table 2 to show the result of the subroutine call Traversal(0).", marks: 7 },
+                  { code: '02.4',
+                    preamble: "The subroutine in Figure 3 could have been written so that it used recursion instead of iteration.",
+                    prompt: "Explain what is meant by a recursive subroutine.", marks: 1 },
+                  { code: '02.5', prompt: "Explain what is meant by a base case for a recursive subroutine.", marks: 1 },
+                  { code: '02.6',
+                    preamble: "If the subroutine had been written using recursion, a stack frame would have been stored each time a recursive subroutine call was made.",
+                    prompt: "State two components of a stack frame.", marks: 2 }
+                ]
+              },
+              {
+                number: 3,
+                parts: [
+                  { code: '03', prompt: "Explain what is meant by procedural decomposition.", marks: 3 }
+                ]
+              },
+              {
+                number: 4,
+                parts: [
+                  { code: '04', prompt: "Describe the steps involved in adding a record to a hash table.", marks: 5 }
+                ]
+              },
+              {
+                number: 5,
+                parts: [
+                  { code: '05.1', prompt: "State two advantages of using Reverse Polish Notation (RPN) instead of infix notation to represent an expression.", marks: 2 },
+                  { code: '05.2', prompt: "Describe how a single stack could be used to evaluate an RPN expression.", marks: 4 }
+                ]
+              },
+              {
+                number: 6,
+                scenario: "The state transition diagram for a finite state machine (FSM) is shown in Figure 4. Figure 4 has the following structure: states S0, S1, S2, S3, S4, S5; transitions with inputs that form the strings the FSM accepts (open the QP PDF for the exact arrows — the regex answer for Q6.2 is a(ba)* | b(ab)*).",
+                parts: [
+                  { code: '06.1',
+                    figure: { type: 'table', label: 'Table 3 — state transition table for transitions involving S2',
+                      headers: ['Current state', 'Input', 'New state'],
+                      rows: [['', '', ''], ['', '', ''], ['', '', ''], ['', '', '']] },
+                    prompt: "Complete the state transition table, Table 3, so that it represents the parts of the state transition diagram shown in Figure 4 that involve state S2.", marks: 2 },
+                  { code: '06.2', prompt: "Regular expressions can be used to recognise the same strings as FSMs without output.\n\nWrite a regular expression that will recognise the same set of strings that are accepted by the FSM shown in Figure 4.", marks: 3 }
+                ]
+              },
+              // ── SECTION B — write a program from scratch (12 marks)
+              {
+                number: 7,
+                parts: [
+                  { code: '07.1', extended: true,
+                    preamble: "Section B. Write a program from scratch. Paste your final program source code into the answer box below — you can write it in any IDE first.\n\nA Harshad number is a positive integer which is exactly divisible by the sum of its digits. The first twelve Harshad numbers are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 and 18.\n\n  • 36 is a Harshad number (digits 3+6 = 9; 36 ÷ 9 = 4 exactly).\n  • 300 is a Harshad number (digits 3+0+0 = 3; 300 ÷ 3 = 100 exactly).\n  • 15 is NOT a Harshad number (digits 1+5 = 6; 15 ÷ 6 ≠ integer).\n\nWrite a program that asks the user to enter a number, n, and will then calculate and display the nth Harshad number.\n\nExample: if the user enters 12 → the program should display 18 (the 12th Harshad number).\n\nYou may assume the input will be a positive integer.",
+                    prompt: "Paste your PROGRAM SOURCE CODE here.\n\n(Question 07.2 — testing with n = 600 (expected output: 3102) — is the screen-capture evidence, done in print mode only.)", marks: 12 }
+                ]
+              },
+              // ── SECTION C — Skeleton Program comprehension (13 marks)
+              {
+                number: 8,
+                scenario: "Section C — these questions refer to the Preliminary Material and the Skeleton Program (a HexGrid game with Tiles indexed by x, y, z coordinates). Open the QP PDF alongside for the figures.",
+                parts: [
+                  { code: '08.1',
+                    preamble: "To specify which tile to use when entering a command, a player enters the index of the tile in the Tiles list. Instead of using this index the player could have been asked to enter the x, y and z coordinates for the tile.\n\nIn the default game the tile with an index of 18 is in a straight line with tiles 0, 7 and 2.",
+                    prompt: "Explain how you can tell from the coordinates of two tiles if they are in a straight line with each other.", marks: 1 },
+                  { code: '08.2',
+                    preamble: "Figure 6 shows an incomplete calculation for converting coordinates to an index:\n\n    index = GridSize × (difference between z and y coordinates) + ▮\n            \n             2",
+                    prompt: "What should ▮ be replaced with so that the index of a tile in Tiles can be calculated from the coordinates of the tile?", marks: 2 },
+                  { code: '08.3', prompt: "Describe the modifications that would need to be made to the CheckMoveCommandFormat subroutine so that the move command could use coordinates instead of indices for the two tiles.", marks: 2 }
+                ]
+              },
+              {
+                number: 9,
+                scenario: "This question is about the different types of piece in the game.",
+                parts: [
+                  { code: '09.1', prompt: "Explain why the FuelCostOfMove attribute in the Piece class could not have been a private attribute.", marks: 1 },
+                  { code: '09.2', prompt: "Describe the circumstances when there could be no baron pieces on the grid but more commands would still have to be entered.", marks: 2 },
+                  { code: '09.3', prompt: "In object-oriented programming, what is meant by polymorphism?", marks: 1 }
+                ]
+              },
+              {
+                number: 10,
+                scenario: "The LoadGame subroutine uses exception handling to prevent potential runtime errors. An example of an event that could cause a runtime error when executing the LoadGame subroutine would be trying to open a file that does not exist.",
+                parts: [
+                  { code: '10.1', prompt: "Describe another event that could cause a runtime error when executing the LoadGame subroutine.", marks: 1 },
+                  { code: '10.2', prompt: "State the identifier of another subroutine that uses exception handling.", marks: 1 }
+                ]
+              },
+              {
+                number: 11,
+                parts: [
+                  { code: '11', prompt: "This question is about the GetDistanceToTileT subroutine in the Tile class.\n\nExplain how this subroutine calculates the distance between two tiles.", marks: 2 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '01': { type: 'exact',
+                points: [
+                  'First pass: 3 5 1 6 4 8',
+                  'Second pass: 3 1 5 4 6 8',
+                  'Third pass: 1 3 4 5 6 8'
+                ],
+                guidance: '3 marks: 1 per row. Alternative answer (right-to-left bubble): First 1 3 5 8 4 6; Second 1 3 5 4 8 6; Third 1 3 4 5 6 8.' },
+              '02.1': { type: 'points',
+                points: [
+                  'Rooted (tree)',
+                  'Where each node has at most two child nodes (R. "each node has two child nodes")'
+                ],
+                guidance: '2 marks: 1 per point.' },
+              '02.2': { type: 'exact',
+                points: ['EIHCYBQ'],
+                guidance: '2 marks. If not fully correct, max 1 mark for any of: E followed by I then H; Y followed by B then Q; C as the 4th output.' },
+              '02.3': { type: 'points',
+                points: [
+                  'Stack[0] set to 0, Pos set to 0 and Current set to 0',
+                  'Current set to 0, Pos set to −1 and output of C',
+                  'Stack[0] set to 4 and Pos set to 0',
+                  'Stack[1] set to 1, then 3 and then 5 with no other values after being set to 5',
+                  'Stack[2] set to 2 with no other values after this; Stack[0] having a 3rd value of 6 with no other values after this; Stack[3] column not used',
+                  'Pos column correct from 4th value (1) onwards and Current column set to 1, then 2, 3, 4, 5, 6 with no further values after being set to 6',
+                  'Correct order in output column for 2nd value onwards (I, E, H, B, Y, Q)'
+                ],
+                guidance: '7 marks: 1 per mark point. Max 6 if any errors.' },
+              '02.4': { type: 'exact',
+                points: ['A subroutine that calls itself'],
+                guidance: '1 mark.' },
+              '02.5': { type: 'exact',
+                points: ['The circumstance(s) when a recursive subroutine does not call itself'],
+                guidance: '1 mark.' },
+              '02.6': { type: 'points',
+                points: [
+                  'Local variables',
+                  'Return address',
+                  'Parameters',
+                  'Register values (A. example of register that would be in stack frame)'
+                ],
+                guidance: 'Max 2.' },
+              '03': { type: 'points',
+                points: [
+                  'AO1 knowledge: Breaking a problem into smaller sub-problems',
+                  'AO1 understanding: Each of which solves an identifiable task',
+                  'AO1 understanding: Each of which might be further subdivided'
+                ],
+                guidance: '3 marks: 1 AO1 knowledge + 2 AO1 understanding.' },
+              '04': { type: 'points',
+                points: [
+                  'Hash algorithm applied',
+                  'To key value (NE. "to data/item")',
+                  'Result is location in table where the record should be stored',
+                  'If location is not empty',
+                  'Then use next free location (A. description of any feasible collision-resolution method)'
+                ],
+                guidance: '5 marks: 1 per point.' },
+              '05.1': { type: 'points',
+                points: [
+                  'Simpler for a machine / computer to evaluate (A. "easier"; R. "to understand")',
+                  'Simpler to code algorithm',
+                  'Do not need brackets to show correct order of evaluation / calculation (A. "RPN expressions cannot be ambiguous")',
+                  'Operators appear in the order required for computation / No need for order of precedence of operators',
+                  'No need to backtrack when evaluating'
+                ],
+                guidance: 'Max 2.' },
+              '05.2': { type: 'points',
+                points: [
+                  '(Starting at LHS of expression) push values / operands onto stack (R. if operators are also pushed onto stack, unless they are immediately popped off)',
+                  'Each time an operator is reached, pop the top two values off the stack (and apply the operator to them) — or pop the required number of values',
+                  'Push result of applying the operator back onto the stack',
+                  'When the end of the expression is reached, the top item of the stack is the result / pop one value off the stack'
+                ],
+                guidance: '4 marks. Max 3 if any errors. Max 3 if more than one stack used. Award 0 marks if description is not about a stack / LIFO structure even if "stack" is mentioned.' },
+              '06.1': { type: 'exact',
+                points: [
+                  'S2 → a → S5',
+                  'S2 → b → S4',
+                  'S0 → b → S2',
+                  'S5 → b → S2'
+                ],
+                guidance: '2 marks: 1 for rows with current state of S2 correct; 1 for rows with new state of S2 correct. I. order of rows.' },
+              '06.2': { type: 'exact',
+                points: ['a(ba)* | b(ab)*', '(a(ba)*) | (b(ab)*)', 'b(ab)* | a(ba)*', 'a | b | b(ab)+ | a(ba)+'],
+                guidance: '3 marks for fully correct regex. Max 2 if not fully correct. If not fully correct, award marks for: expression uses two * metacharacters and a | (1); contains (ba)* and (ab)* — R. ba* or ab*; will match single a and single b; contains (ba)+ and (ab)+ — R. ba+ or ab+.' },
+              '07.1': { type: 'levels',
+                levels: [
+                  { range: [10, 12], descriptor: 'Level 4',
+                    criteria: 'A line of reasoning has been followed to arrive at a logically structured working or almost fully working programmed solution that meets most of the requirements. All of the appropriate design decisions have been taken. To award 12 marks, ALL requirements must be met.' },
+                  { range: [7, 9], descriptor: 'Level 3',
+                    criteria: 'Evidence that a line of reasoning has been followed to produce a logically structured program. The program displays relevant prompts, inputs the required number, has at least one iterative structure and one selection structure, and uses appropriate variables to store most of the needed data. An attempt has been made to determine if a number is a Harshad number, although this may not work correctly under all circumstances.' },
+                  { range: [4, 6], descriptor: 'Level 2',
+                    criteria: 'A program has been written and some appropriate, syntactically correct programming language statements are present. Some appropriate design work — the response recognises at least one appropriate technique that could be used by a working solution.' },
+                  { range: [1, 3], descriptor: 'Level 1',
+                    criteria: 'A program has been written and a few appropriate programming language statements have been written but there is no evidence that a line of reasoning has been followed to arrive at a working solution.' }
+                ],
+                indicative: {
+                  'AO3 Design (4 marks)': '1) Identify that integer division is needed when calculating the sum of digits (or that a character needs converting to a number). 2) Identify that a loop is needed that repeats either by the entered number n, or until the nth Harshad number is found. 3) Identify that nested iteration is needed. 4) Selection structure that compares sum of digits with a number (I. if sum incorrectly calculated).',
+                  'AO3 Programming (8 marks)': '5) Suitable prompt asking the user to enter a number + assignment to a variable. 6) Iterative structure that repeats enough times to find all the digits of a number. 7) Calculates the sum of all the digits of a number. 8) Calculates the remainder from dividing a number by its sum of digits (A. incorrect sum). 9) Resets the variable used to store the sum of digits to 0 in an appropriate place. 10) Program works for the first nine Harshad numbers (1–9). 11) Program displays 10/12/18 if the user enters 10/11/12. 12) Program displays the correct nth Harshad number under all circumstances.',
+                  'Alternative MS (if using recursion for sum of digits)': '3) Identify that a recursive subroutine is needed to calculate the sum of digits. 6) Recursive subroutine has an appropriate base case. 9) Sets the variable used to store the sum to the result returned by the recursive subroutine in an appropriate place.'
+                },
+                guidance: '12 marks (4 AO3 design + 8 AO3 programming). Max 11 if any errors. Test case for Q07.2: input 600 → output 3102.' },
+              '08.1': { type: 'exact',
+                points: ['If they have the same value as each other for one of their coordinates'],
+                guidance: '1 mark.' },
+              '08.2': { type: 'points',
+                points: [
+                  '(The result of) the integer division by 2',
+                  'On the x coordinate'
+                ],
+                guidance: '2 marks: 1 per component of the expression.' },
+              '08.3': { type: 'points',
+                points: [
+                  'Change the 3 in the selection structure to a 7',
+                  'Change the 2 (3 in Python) in the for loop to a 6 (7 in Python)',
+                  '(Alternative) The number of elements in the items list now needs to be seven instead of three, and would need to put three integers in the list for each tile'
+                ],
+                guidance: '2 marks. If answer is incorrect, award 1 mark for changing the 3 to a 5 and the 2 to a 4.' },
+              '09.1': { type: 'exact',
+                points: ['The classes that inherit from Piece would not be able to use it'],
+                guidance: '1 mark. A. answers that use a specific subclass that would not be able to use it (Baron, LESS, PBDS).' },
+              '09.2': { type: 'points',
+                points: [
+                  "When both players' barons are destroyed in the same turn",
+                  "And it is not player two's turn / and it is player one's turn"
+                ],
+                guidance: '2 marks: 1 per point.' },
+              '09.3': { type: 'points',
+                points: [
+                  'A method shared (up and down the inheritance hierarchy) but with each class / method implementing it differently',
+                  'A single interface is provided to entities / objects of different classes / types',
+                  'Objects of different classes / types respond differently to the use of a common interface / the same usage',
+                  'Allowing different classes to be used with the same interface',
+                  'The ability to process objects differently depending on their class / type'
+                ],
+                guidance: '1 mark for any one of the descriptions.' },
+              '10.1': { type: 'points',
+                points: [
+                  'The structure of the data in the file does not match the expected format (A. by example, e.g. "there are not five items in the first line in the file")',
+                  'File is not a text file (A. any reasonable example of a file error apart from "file not existing")',
+                  'The program tries to convert a non-integer (A. non-numeric / string / other invalid data type) value to an integer',
+                  'Program tries to store a value which is too large to be an integer as an integer'
+                ],
+                guidance: 'Max 1.' },
+              '10.2': { type: 'exact',
+                points: ['CheckMoveCommandFormat', 'CheckStandardCommandFormat', 'CheckUpgradeCommandFormat', 'hasMethod (Java only)', 'readLine (Java only)', 'executeCommandInTile (Java only)'],
+                guidance: 'Max 1. R. if spelt incorrectly. R. if any additional code. I. case and spacing.' },
+              '11': { type: 'points',
+                points: [
+                  'It gets the largest of...',
+                  '...the differences between the x coordinates, the y coordinates and the z coordinates (of the two tiles)'
+                ],
+                guidance: '2 marks: 1 for "largest of" + 1 for "differences between the three coordinate pairs".' }
+            }
           },
           {
             id: 'cs-aqa-7517-2021-p2',
