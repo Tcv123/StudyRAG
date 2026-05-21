@@ -2121,7 +2121,301 @@ window.SUBJECTS = [
             totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-QP-NOV20.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-W-MS-NOV20.PDF'
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-W-MS-NOV20.PDF',
+            qbqNote: "Section D (Q10–Q13, 38 marks) requires the AQA Skeleton Program file (a Simulation/Settlement/Outlet/Company system) which AQA distributes to centres for the exam — it isn't on the public filestore, so Section D is print-only here. Open the QP PDF alongside this stepper for figures.",
+            questions: [
+              // ── SECTION A — vectors / regular langs / complexity / queues (35 marks)
+              {
+                number: 1,
+                scenario: "Figure 1 shows two vectors a and b and the angle between them, θ.\n\n    a = [4, 3]\n    b = [4, 0]\n\nThe magnitude of a vector represented as an arrow is the length of the arrow. The magnitude of vector a is 5 because √(4² + 3²) = 5.\n\nNote: the angle between two vectors cannot be larger than 180°. If the angle is measured as being greater than 180° then this angle is subtracted from 360° to find the actual angle.",
+                parts: [
+                  { code: '01.1', prompt: "What is the magnitude of vector b?", marks: 1 },
+                  { code: '01.2', prompt: "Calculate the dot product of vectors a and b. You should show your working.", marks: 2 },
+                  { code: '01.3', prompt: "Describe what will happen to the angle θ and the magnitude of vector a when vector a is multiplied by the scalar 2.", marks: 2 },
+                  { code: '01.4', prompt: "Describe what will happen to the angle θ and the magnitude of vector a when vector a is multiplied by the scalar −1.", marks: 2 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "A regular language is a language that can be defined by a regular expression.\n\nFigure 2 shows a set of Backus-Naur Form (BNF) rules that are used to define a language:\n\n    <sentence> ::= <np><v>\n    <sentence> ::= <v><np>\n    <np>       ::= <d><n>\n    <n>        ::= human | dog | cat | baby\n    <d>        ::= a | the\n    <v>        ::= ate | slept | drank | cuddle\n    <c>        ::= and | but | or",
+                parts: [
+                  { code: '02.1',
+                    figure: { type: 'table', label: 'Table 1 — Statement: True or False?',
+                      headers: ['Statement', 'True or False?'],
+                      rows: [
+                        ['All regular languages can be represented using a finite state machine without outputs.', ''],
+                        ['The set of strings defined by a regular language is always finite in size.', ''],
+                        ['There are some languages which can be represented in Backus-Naur Form (BNF) that are not regular languages.', '']
+                      ] },
+                    prompt: "Complete the unshaded cells of Table 1 to show which of the statements about regular languages are true and which are false.", marks: 2 },
+                  { code: '02.2',
+                    preamble: "There are two rules in Figure 2 with <sentence> on the left-hand side that are used to define what a valid sentence is in the language.",
+                    prompt: "Write a single rule that could replace these two rules. Your new rule must not change what a valid sentence is.", marks: 1 },
+                  { code: '02.3',
+                    figure: { type: 'table', label: 'Table 2 — Valid sentence?',
+                      headers: ['String', 'Valid sentence (Y/N)?'],
+                      rows: [['cuddle the cat', ''], ['drank a human', ''], ['the cat slept', ''], ['cat or dog', '']] },
+                    prompt: "Complete the unshaded cells of Table 2 to show which of the strings are valid sentences for the language defined by the BNF rules in Figure 2.", marks: 1 },
+                  { code: '02.4',
+                    preamble: "The sentence \"dog slept\" is not currently valid in the language defined in Figure 2.",
+                    prompt: "Change the language defined in Figure 2 by either adding or modifying exactly one rule so that \"dog slept\" is a valid sentence.\n\nYou must not use the terminals dog or slept directly in the rule you write/change.", marks: 1 },
+                  { code: '02.5',
+                    preamble: "The sentence \"the cat slept but the dog drank\" is not currently valid in the language. To allow this to be a valid sentence either of the following two BNF rules could be used:\n\n    <sentence> ::= <np><v><c><np><v>\n    <sentence> ::= <sentence><c><sentence>",
+                    prompt: "State the number of different sentences defined by the rule:\n\n    <sentence> ::= <np><v><c><np><v>\n\nYou should only use the rules in Figure 2 (not your answer to Q02.4). You can get full marks for stating either the number of valid sentences or the full calculation needed to work it out.\n\nYou should show your working.", marks: 2 },
+                  { code: '02.6', prompt: "State how many more sentences are defined by the rule:\n\n    <sentence> ::= <sentence><c><sentence>\n\nthan by the rule:\n\n    <sentence> ::= <np><v><c><np><v>", marks: 1 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: "Figure 3 lists some time complexities, where n is the size of the problem input and k denotes a constant:\n\n    O(1), O(n^k), O(k^n), O(n), O(log n), O(n log n)",
+                parts: [
+                  { code: '03.1',
+                    preamble: "There are four athletes taking part in a race. Each athlete is allocated a lane that they run in. There can only be one athlete in each lane and there are four lanes available.",
+                    prompt: "How many different permutations are there for allocating athletes to lanes?", marks: 1 },
+                  { code: '03.2', prompt: "If there are n athletes taking part in a race and n lanes available, with each athlete being allocated to one lane and each lane only used by one athlete, how many different permutations are there for allocating athletes to lanes?", marks: 1 },
+                  { code: '03.3',
+                    preamble: "An anagram of a string is another string that contains exactly the same number of each character as in the original string but the characters may not all be in the same positions. The original string is also an anagram of itself.",
+                    prompt: "If there are n characters in a string, why will the number of anagrams of the string not always be the same as your answer to Question 03.2?", marks: 1 },
+                  { code: '03.4',
+                    preamble: "The travelling salesperson problem (TSP) is when a salesperson has to visit every city in a set of cities and needs to find the shortest route that does this without visiting any city more than once before finally returning to the city that they started from. The TSP is an example of an intractable problem.",
+                    prompt: "Explain what is meant by an intractable problem.", marks: 2 },
+                  { code: '03.5', prompt: "Assuming that the time complexities in Figure 3 are for the most time efficient algorithm that solves a problem, how many of the time complexities in Figure 3 are for intractable problems?", marks: 1 },
+                  { code: '03.6', prompt: "State which of the time complexities shown in Figure 3 is the time complexity of the linear search algorithm and explain why it has that time complexity.", marks: 2 },
+                  { code: '03.7', prompt: "State which of the time complexities shown in Figure 3 is the time complexity of the binary search algorithm and explain why it has that time complexity.", marks: 2 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: "Priority queues and linear queues are examples of data structures.",
+                parts: [
+                  { code: '04.1',
+                    preamble: "A data structure can be implemented as a dynamic data structure or as a static data structure.",
+                    prompt: "Discuss the advantages and disadvantages of dynamic data structures compared to static data structures.", marks: 4 },
+                  { code: '04.2', prompt: "Describe the steps involved in adding an item to a linear queue that has been implemented as a static data structure using an array. Your answer should include a description of how any pointers are used and changed.", marks: 3 },
+                  { code: '04.3',
+                    preamble: "For a priority queue, the process to determine where a new item should be added is more complex than it is with a linear queue.",
+                    prompt: "Describe the steps involved when adding an item to a priority queue, implemented as a static data structure using an array, that were not required when adding an item to a linear queue.", marks: 3 }
+                ]
+              },
+              // ── SECTION B — write a program from scratch (12 marks)
+              {
+                number: 5,
+                parts: [
+                  { code: '05.1', extended: true,
+                    preamble: "Section B. Write a program from scratch. Paste your final program source code into the answer box below — you can write it in any IDE first.\n\nWrite a program that asks the user how many numeric digits they would like to enter and then gets the user to enter that number of numeric digits.\n\nThe program should calculate and display the number of times the most frequently entered numeric digit was input.\n\nExample: if the user says they are going to enter four digits and then enters 3, 4, 5 and 3, the program should display 2 (digit 3 was entered twice).\n\nIf more than one numeric digit has the same maximum frequency (multimodal), instead of displaying the frequency, a message saying \"Data was multimodal\" should be displayed.\n\nA numeric digit is 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9.\n\nYou may assume both the count and the digits entered are valid.",
+                    prompt: "Paste your PROGRAM SOURCE CODE here.\n\n(Question 05.2 — testing with [6: 0,1,2,1,2,1] (expected output: 3) and [5: 0,1,2,2,1] (expected output: \"Data was multimodal\") — is the screen-capture evidence, done in print mode only.)", marks: 12 }
+                ]
+              },
+              // ── SECTION C — Skeleton Program comprehension (15 marks)
+              {
+                number: 6,
+                scenario: "Section C — these questions refer to the Preliminary Material and the Skeleton Program (a Simulation with Settlements, Companies, Outlets, and Households). Open the QP PDF alongside for the figures.",
+                parts: [
+                  { code: '06.1', prompt: "This question is about the method GetIndexOfCompany in the Simulation class.\n\nWhat does a return value of −1 indicate?", marks: 1 },
+                  { code: '06.2', prompt: "Some of the program code in this method is unnecessary. Identify which code is not necessary and explain why.", marks: 2 }
+                ]
+              },
+              {
+                number: 7,
+                scenario: "This question is about the Outlet class.",
+                parts: [
+                  { code: '07.1', prompt: "State the name of a method in the Outlet class that uses string concatenation.", marks: 1 },
+                  { code: '07.2', prompt: "State the name of a local variable in a method in the Outlet class.", marks: 1 },
+                  { code: '07.3', prompt: "The Outlet class contains some protected attributes. Explain the difference between protected and private attributes.", marks: 1 },
+                  { code: '07.4', prompt: "In the Outlet class the constant value 100 has been used when calculating the initial value of DailyCosts in the constructor method.\n\nExplain what problem will occur if this value in the constructor is changed and no other changes are made.", marks: 1 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "Figure 4 shows a partially completed class diagram describing relationships between some Skeleton Program classes. Boxes ③, ④ and ⑤ are unlabelled.",
+                parts: [
+                  { code: '08.1', prompt: "State the identifier of the class that has been labelled ③ in Figure 4.", marks: 1 },
+                  { code: '08.2', prompt: "State the identifier of the class that has been labelled ④ in Figure 4.", marks: 1 },
+                  { code: '08.3', prompt: "State the identifier of the class that has been labelled ⑤ in Figure 4.", marks: 1 },
+                  { code: '08.4', prompt: "Aggregation, composition and inheritance are three different types of relationship that can exist between classes.\n\nWhich of these three types of relationship is NOT shown in Figure 4?", marks: 1 }
+                ]
+              },
+              {
+                number: 9,
+                parts: [
+                  { code: '09', prompt: "This question is about the ProcessDayEnd method in the Simulation class.\n\nExplain how the program decides which company an individual household has decided to use when eating out.", marks: 4 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '01.1': { type: 'exact',
+                points: ['4', '√(4² + 0²)'],
+                guidance: '1 mark for 4 (magnitude of b = [4, 0]).' },
+              '01.2': { type: 'exact',
+                points: ['16', '4 × 4 + 3 × 0'],
+                guidance: '2 marks for 16. If incorrect, max 1 method mark for: (a) multiplying 4 by 4 OR multiplying 3 by 0; (b) adding the sum of two (incorrect) products.' },
+              '01.3': { type: 'points',
+                points: [
+                  'The angle will still be the same (A. "the direction will not change")',
+                  'The magnitude will be doubled / will now be 10'
+                ],
+                guidance: '2 marks: 1 per fact.' },
+              '01.4': { type: 'points',
+                points: [
+                  'The angle will be 180° − θ / 360° − 180° − θ / 143.13° (A. "the direction of a will be the opposite of its current direction")',
+                  'The magnitude will still be the same'
+                ],
+                guidance: '2 marks: 1 per fact.' },
+              '02.1': { type: 'exact',
+                points: [
+                  'All regular languages can be represented using a FSM without outputs: True',
+                  'The set of strings defined by a regular language is always finite in size: False',
+                  'There are some languages which can be represented in BNF that are not regular languages: True'
+                ],
+                guidance: '2 marks: 1 mark for two rows correct, 1 more mark for all three rows correct.' },
+              '02.2': { type: 'exact',
+                points: ['<sentence> ::= <np><v> | <v><np>', '<sentence> ::= <v><np> | <np><v>'],
+                guidance: '1 mark. R. any answers that consist of more than one rule.' },
+              '02.3': { type: 'exact',
+                points: [
+                  'cuddle the cat: Y',
+                  'drank a human: Y',
+                  'the cat slept: Y',
+                  'cat or dog: N'
+                ],
+                guidance: '1 mark for all four rows correct.' },
+              '02.4': { type: 'exact',
+                points: [
+                  'Modify <np> ::= <d><n> | <n>',
+                  'Modify <sentence> ::= <np><v> | <n><v>',
+                  'Modify <sentence> ::= <v><np> | <n><v>',
+                  'Modify <sentence> ::= <np><v> | <v><np> | <n><v>',
+                  'Create new rule: <sentence> ::= <n><v>',
+                  'Create new rule: <np> ::= <n>'
+                ],
+                guidance: '1 mark for any of the modifications.' },
+              '02.5': { type: 'exact',
+                points: ['3072', '8 × 4 × 3 × 8 × 4', '2 × 4 × 4 × 3 × 2 × 4 × 4'],
+                guidance: '2 marks for correct answer 3072. If incorrect, max 1 method mark for: calculating 8 noun phrases (or 4×2 noun phrases) — OR — multiplying an incorrectly-calculated number of NPs by NPs, by 3, by 4 and by 4 again.' },
+              '02.6': { type: 'exact',
+                points: ['Infinitely more'],
+                guidance: '1 mark.' },
+              '03.1': { type: 'exact',
+                points: ['24', '4!', '4 × 3 × 2 × 1', '4 × 3 × 2'],
+                guidance: '1 mark for 24.' },
+              '03.2': { type: 'exact',
+                points: ['n!', 'factorial of n', '1 × 2 × ... × (n−1) × n'],
+                guidance: '1 mark.' },
+              '03.3': { type: 'points',
+                points: [
+                  'The string could contain more than one occurrence of a character',
+                  'Each athlete is unique, each character is not (guaranteed to be) unique',
+                  'There are n characters in the string but not n distinct characters',
+                  'Some of the anagrams could be duplicates'
+                ],
+                guidance: 'Max 1.' },
+              '03.4': { type: 'points',
+                points: [
+                  'A problem that can be solved',
+                  'But not in a reasonable amount of time as the problem size increases / has an exponential (or worse) time complexity / there is no polynomial (or less) time solution'
+                ],
+                guidance: '2 marks: 1 per point.' },
+              '03.5': { type: 'exact',
+                points: ['One', '1'],
+                guidance: '1 mark for "one" (only O(kⁿ) is intractable in the given list).' },
+              '03.6': { type: 'points',
+                points: [
+                  'AO1 knowledge: O(n)',
+                  'AO1 understanding: As the size of the list increases the time taken increases at the same rate',
+                  'AO1 understanding: There is a loop that repeats n times'
+                ],
+                guidance: '2 marks: 1 for the complexity + max 1 for the explanation.' },
+              '03.7': { type: 'points',
+                points: [
+                  'AO1 knowledge: O(log n)',
+                  'AO1 understanding: Each comparison halves the size of the list that has to be searched through',
+                  'AO1 understanding: The time taken increases as the size of the list increases but by smaller and smaller amounts',
+                  'AO1 understanding: If the size of the list doubles then the number of comparisons needed only increases by 1'
+                ],
+                guidance: '2 marks: 1 for the complexity + max 1 for the explanation.' },
+              '04.1': { type: 'points',
+                points: [
+                  'Advantage — No wasted memory',
+                  'Advantage — Can grow as more data is added / no limit on items (except hardware)',
+                  'Advantage — Resources only allocated as they are needed',
+                  'Disadvantage — Additional memory needed for pointers',
+                  'Disadvantage — Can result in memory leak (if memory no longer needed is not returned to the heap)',
+                  'Disadvantage — Can take longer to access an item directly (A. can take longer to add an item, as memory needs to be allocated)'
+                ],
+                guidance: 'Max 4: max 2 advantages + max 2 disadvantages.' },
+              '04.2': { type: 'points',
+                points: [
+                  'Check that the queue is not already full',
+                  '(If it isn\'t) then add 1 to the value of the rear pointer',
+                  'Then add the new item to the position indicated by the rear pointer',
+                  'Alternative: (a) Check not full; (b) add the new item at the rear-pointer position; (c) then add 1 to the rear pointer'
+                ],
+                guidance: '3 marks. Max 2 if any errors. Max 1 if a circular queue has been described.' },
+              '04.3': { type: 'points',
+                points: [
+                  'Starting with the item at the rear of the queue, move each item back one place in the array',
+                  'Until you (reach the start of the queue or) find an item with the same or higher priority than the item to add (NE. "same priority"; NE. "higher priority")',
+                  'Add the new item in the position before that item'
+                ],
+                guidance: '3 marks. A. alternative orderings: start at front and move forward until insertion point; or front-then-back hybrid as described in MS.' },
+              '05.1': { type: 'levels',
+                levels: [
+                  { range: [10, 12], descriptor: 'Level 4',
+                    criteria: 'A line of reasoning has been followed to arrive at a logically structured working or almost fully working programmed solution that meets most of the requirements. All of the appropriate design decisions have been taken. To award 12 marks, ALL requirements must be met.' },
+                  { range: [7, 9], descriptor: 'Level 3',
+                    criteria: 'Evidence that a line of reasoning has been followed to produce a logically structured program. The program displays relevant prompts, inputs the required numbers, has at least one iterative structure and one selection structure, and uses suitable data structure(s) to store the entered numbers and frequencies. An attempt has been made to determine the modal frequency.' },
+                  { range: [4, 6], descriptor: 'Level 2',
+                    criteria: 'A program has been written and some appropriate, syntactically correct programming language statements are present. Some appropriate design work — the response recognises at least one appropriate technique that could be used by a working solution.' },
+                  { range: [1, 3], descriptor: 'Level 1',
+                    criteria: 'A program has been written and a few appropriate programming language statements have been written but there is no evidence that a line of reasoning has been followed to arrive at a working solution.' }
+                ],
+                indicative: {
+                  'AO3 Design (4 marks)': '1) Identify that data structure(s) are needed to store ten frequencies. 2) Identify that a loop is needed that repeats by the first number entered. 3) Identify that a Boolean (or equivalent) variable is needed to indicate multimodality. 4) Selection structure that either outputs a calculated number or a message saying "Data was multimodal" (A. any suitable message).',
+                  'AO3 Programming (8 marks)': '5) Suitable prompts for both the count and the digits, with values assigned to appropriate variables (R. if input is inside or after the iterative structure incorrectly). 6) Correct number of numeric digits obtained from the user. 7) Adds one to the correct frequency count (R. if only works for one digit). 8) Selection structure (inside iteration) that compares calculated frequency with the highest frequency found so far. 9) Boolean multimodal-flag set to true under correct circumstances. 10) Boolean multimodal-flag set to false when a new higher frequency is found. 11) Program works correctly if data is multimodal (A. any sensible message). 12) Program displays the correct frequency under all circumstances and does NOT say multimodal when it isn\'t.'
+                },
+                guidance: '12 marks (4 AO3 design + 8 AO3 programming). Max 11 if any errors. Test cases for Q05.2: [6: 0,1,2,1,2,1] → "3"; [5: 0,1,2,2,1] → "Data was multimodal".' },
+              '06.1': { type: 'exact',
+                points: ['That the company name being searched for does not exist (in the simulation)'],
+                guidance: '1 mark. A. user misspelt the company name.' },
+              '06.2': { type: 'points',
+                points: [
+                  'There is no need for the variable Index / no need to assign the value of −1 to Index',
+                  'If the loop terminates then can just return (the constant value) −1 / if the company name is not found then can just return (the constant value) −1'
+                ],
+                guidance: '2 marks: 1 per point.' },
+              '07.1': { type: 'exact',
+                points: ['GetDetails'],
+                guidance: '1 mark. R. if spelt incorrectly. R. if any additional code. I. case and spacing.' },
+              '07.2': { type: 'exact',
+                points: ['Details', 'OldCapacity'],
+                guidance: 'Max 1. R. if spelt incorrectly. R. if any additional code. I. case and spacing.' },
+              '07.3': { type: 'exact',
+                points: ['Private attributes can only be accessed by the class/object they belong to whereas protected attributes can also be accessed by any classes that inherit from the class they belong to'],
+                guidance: '1 mark. A. "file" instead of class/object (Java only). NE. "private attribute can only be accessed by the class/object they belong to whereas protected attributes can be accessed by other classes/objects" (too vague).' },
+              '07.4': { type: 'exact',
+                points: ['The calculation of the daily costs will be inconsistent as it will be different in the AlterCapacity method', "It won't have been updated in other locations which use that constant"],
+                guidance: '1 mark.' },
+              '08.1': { type: 'exact',
+                points: ['LargeSettlement'],
+                guidance: '1 mark. R. if spelt incorrectly. R. if any additional code. I. case and spacing.' },
+              '08.2': { type: 'exact',
+                points: ['Household'],
+                guidance: '1 mark. R. if spelt incorrectly. R. if any additional code. I. case and spacing.' },
+              '08.3': { type: 'exact',
+                points: ['Company'],
+                guidance: '1 mark. R. if spelt incorrectly. R. if any additional code. I. case and spacing.' },
+              '08.4': { type: 'exact',
+                points: ['Aggregation'],
+                guidance: '1 mark.' },
+              '09': { type: 'points',
+                points: [
+                  'It stores the cumulative reputation for the companies in an array/list',
+                  'It then generates a random number which is less than the total reputation (A. random number based on the total reputation)',
+                  'Finds the first cumulative reputation that the number is less than',
+                  'The position of this cumulative reputation in the list indicates the company that the household will use'
+                ],
+                guidance: '4 marks: 1 per point.' }
+            }
           },
           {
             id: 'cs-aqa-7517-2020-p2',
