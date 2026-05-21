@@ -557,7 +557,200 @@ window.SUBJECTS = [
             totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75172-QP-JUN22.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75172-MS-JUN22.PDF'
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75172-MS-JUN22.PDF',
+            questions: [
+              {
+                number: 1,
+                parts: [
+                  { code: '01.1', prompt: "Describe how a 12-bit unsigned binary integer such as 010010101110 can be converted directly into hexadecimal.\n\nThe method you describe must not involve converting into decimal.", marks: 2 },
+                  { code: '01.2', prompt: "State one reason why hexadecimal is often used in preference to binary.", marks: 1 }
+                ]
+              },
+              {
+                number: 2,
+                parts: [
+                  { code: '02.1', preamble: "A data communications system uses parallel data transmission.",
+                    prompt: "Describe how parallel data transmission works.", marks: 2 },
+                  { code: '02.2', prompt: "State one advantage of serial data transmission over parallel data transmission.", marks: 1 },
+                  { code: '02.3', prompt: "Shade one lozenge to indicate which of these statements about data communications systems is false.\n\nA) For a particular communications channel, the bit rate can be higher than the baud rate.\nB) Latency is the rate at which signals on a wire or line can change.\nC) The bandwidth of a transmission medium is the range of signal frequencies that the medium can transmit without a significant reduction in signal strength.\nD) The greater the bandwidth of a transmission medium the higher the bit rate that can be achieved by a communication system using it.", marks: 1 },
+                  { code: '02.4', prompt: "State the purpose of the start bit in asynchronous serial transmission.", marks: 1 },
+                  { code: '02.5', prompt: "State the purpose of the stop bit in asynchronous serial transmission.", marks: 1 }
+                ]
+              },
+              {
+                number: 3,
+                parts: [
+                  { code: '03.1',
+                    figure: { type: 'table', label: 'Figure 1 — truth table to complete',
+                      headers: ['A', 'B', 'A + B', 'Ā', 'B̄', 'Ā · B̄', '¬(Ā · B̄)'],
+                      rows: [
+                        ['0','0','','','','',''],
+                        ['0','1','','','','',''],
+                        ['1','0','','','','',''],
+                        ['1','1','','','','','']
+                      ] },
+                    prompt: "Complete the truth table in Figure 1 for the inputs A and B.", marks: 1 },
+                  { code: '03.2',
+                    preamble: "The truth table in Figure 1 demonstrates the correctness of an important law in Boolean algebra.",
+                    prompt: "State the name of the law.", marks: 1 },
+                  { code: '03.3',
+                    prompt: "Using the rules of Boolean algebra, simplify the following Boolean expression:\n\n    A + B̄·C + B·C̄ + C̄ · (A + Ā · (B̄ + 1))\n\n(See the official PDF for exact overline notation.)\n\nYou must show your working.", marks: 4 }
+                ]
+              },
+              {
+                number: 4,
+                parts: [
+                  { code: '04.1', prompt: "Define the term 'system software'.", marks: 1 },
+                  { code: '04.2',
+                    preamble: "The list below contains five types of software. Four of the types are examples of system software.",
+                    prompt: "Shade one lozenge to indicate which type of software is not system software.\n\nA) Assemblers\nB) Bitmap image editors\nC) Interpreters\nD) Libraries\nE) Utility programs", marks: 1 },
+                  { code: '04.3', prompt: "Describe two functions of an operating system.", marks: 2 }
+                ]
+              },
+              {
+                number: 5,
+                parts: [
+                  { code: '05.1',
+                    preamble: "Figure 2 shows a number stored using a fixed point representation and two's complement, with six bits before and four bits after the binary point.",
+                    figure: { type: 'code', label: 'Figure 2',
+                      content: "1 0 1 1 0 0 . 1 0 1 1     (binary point between bit 6 and bit 7)" },
+                    prompt: "Convert the number in Figure 2 to decimal.\n\nYou should show your working.", marks: 2 },
+                  { code: '05.2', prompt: "State two reasons why values stored using a floating point representation are usually stored in normalised form.", marks: 2 },
+                  { code: '05.3',
+                    preamble: "Questions 05.3, 05.4 and 05.5 use a normalised floating point representation with an 8-bit mantissa and a 4-bit exponent, both stored using two's complement.\n\nFigure 3 shows a floating point representation of a number.",
+                    figure: { type: 'code', label: 'Figure 3',
+                      content: "Mantissa: 0 . 1 1 0 1 1 0 0 0     (binary point after the first bit)\nExponent: 1 0 0 1     (decimal −7)" },
+                    prompt: "Calculate the decimal equivalent of the number.\n\nExpress your answer as a fraction or to 4 decimal places.\n\nYou should show your working.", marks: 2 },
+                  { code: '05.4',
+                    preamble: "Same floating point system as 05.3 (8-bit mantissa, 4-bit exponent, both two's complement; binary point after first bit of mantissa).",
+                    prompt: "Write the normalised floating point representation of the decimal value −23.25 in the boxes below.\n\nYou should show your working.", marks: 3 },
+                  { code: '05.5',
+                    preamble: "Figure 4 shows the closest possible representation of the decimal number −0.22558594 in this floating point system.\n\nBy converting this number back to decimal it can be seen that the actual value stored is −0.2265625",
+                    prompt: "Calculate the relative error that has occurred when representing −0.22558594\n\nYou should show your working.\n\nExpress your answer as a percentage to 2 decimal places.", marks: 2 }
+                ]
+              },
+              {
+                number: 6,
+                parts: [
+                  { code: '06', extended: true,
+                    scenario: "Supermarkets often gather information about their customers and the purchases that they make. This information can be analysed by the supermarket and other companies for a range of purposes.\n\nSome of the information is collected at the checkout, where the identity of the person is read from a loyalty or payment card using RFID (radio-frequency identification) and a barcode reader is used to identify the products being purchased.\n\nBy analysing the purchases that a shopper has made, it might be possible to identify such things as whether the shopper has children, is pregnant, or lives in a house with a garden. Other types of analysis might include the amount of money a customer spends, the times that they choose to shop at and the differences in shopping habits of different groups of shoppers.",
+                    prompt: "Describe the principles of operation of the hardware used to collect the information and discuss some of the ethical and legal issues that might arise as a result of the capture and processing of this data.\n\nIn your answer you will be assessed on your ability to follow a line of reasoning to produce a coherent, relevant and structured response.", marks: 12 }
+                ]
+              },
+              {
+                number: 7,
+                scenario: "A network of zoos uses a relational database system to store information about the animals that they have so that they can be matched up with animals at other zoos in a breeding programme.\n\nFigure 5 shows the structure of the relations in the database.",
+                scenarioFigures: [
+                  { type: 'code', label: 'Figure 5',
+                    content: "Zoo(ZooName, Town, Country)\nAnimalLocation(AnimalID, ZooName, DateArrived, DateLeft)\nAnimal(AnimalID, IndividualName, Species, DateOfBirth, Sex)\nMatch(AnimalFemaleID, AnimalMaleID, DateOfMatch, Successful)\n\n• Zoo: each zoo uniquely identified by its ZooName.\n• AnimalLocation: identifies which zoos each animal has lived at. The zoo the animal is currently at can be identified because DateLeft is set to 01/01/0001 to indicate the animal has not left.\n• Animal: stores details of individual animals available to be matched (eg 'Timothy', 'Red Panda', date of birth, 'Male' or 'Female').\n• Match: stores details of matches that have been made between two animals." }
+                ],
+                parts: [
+                  { code: '07.1',
+                    prompt: "Shade one lozenge to identify which of the properties below does not have to be true for a fully normalised database.\n\nA) Each attribute in a relation is dependent on the primary key.\nB) Each attribute in a relation is dependent only on the primary key; it is not also dependent on any other attribute in the relation.\nC) The primary key in each relation consists of only one attribute.\nD) There are no repeating groups (or equivalently each attribute is atomic).", marks: 1 },
+                  { code: '07.2',
+                    preamble: "Figure 6 is an incomplete entity-relationship diagram for part of the database shown in Figure 5. It contains three entities — Animal, AnimalLocation, Zoo — drawn as boxes, with the relationship lines between them not yet labelled with their degree (one-to-one, one-to-many, many-to-many).",
+                    prompt: "Draw lines on Figure 6 to indicate the degree of the two relationships between the three entities shown in the entity-relationship diagram.\n\n(Describe the degree of each relationship: between Animal and AnimalLocation, and between Zoo and AnimalLocation.)", marks: 2 },
+                  { code: '07.3',
+                    prompt: "Complete the following SQL statement to create the Animal relation, including the key field.\n\n    CREATE TABLE Animal (\n        ____________________________________\n    )", marks: 3 },
+                  { code: '07.4',
+                    preamble: "There is a requirement to identify all of the red pandas that were present at the zoo called 'Ashdale Park' at any time between 01/04/2020 and 31/05/2020, inclusive.\n\nThe animals might still be at the zoo or may have moved to another zoo.",
+                    prompt: "Write a query that will list all the red pandas that were at the zoo on any day between these dates.\n\nFor each red panda on the list, the animal's individual name and the date that the animal arrived at the zoo, and no other fields, should be listed.", marks: 7 },
+                  { code: '07.5',
+                    preamble: "It is proposed that an additional attribute, ZooName, is added to the Animal relation. This will store the name of the zoo that currently has the animal. No other changes would be made to the database.",
+                    prompt: "Describe one advantage and one disadvantage of adding this new attribute to the relation.", marks: 2 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "A student is setting up a small computer network in their house. The network will link together the laptops, desktop computers and mobile devices that belong to the people who live in the house.",
+                parts: [
+                  { code: '08.1', prompt: "Compare how peer-to-peer networking and client-server networking work.", marks: 3 },
+                  { code: '08.2', prompt: "Explain why a peer-to-peer system would be most appropriate to use in the house.", marks: 3 },
+                  { code: '08.3',
+                    preamble: "When a person in the house uses the network to load a webpage it is likely that the Domain Name Server (DNS) system will be used.",
+                    prompt: "Describe the main purpose of the DNS system and how it works.", marks: 3 }
+                ]
+              },
+              {
+                number: 9,
+                scenario: "Figure 7 shows an assembly language program that has been written using the AQA Assembly Language Instruction Set (LDR, STR, ADD, SUB, MOV, CMP, B, B<cond>, AND, ORR, EOR, MVN, LSL, LSR, HALT; operand2 = #decimal or Rm; general registers R0–R12).",
+                scenarioFigures: [
+                  { type: 'code', label: 'Figure 7',
+                    content: "         LDR R0, 120\n         LDR R1, 121\n         MOV R3, #0\nloop:\n         CMP R1, #0\n         BEQ exit\n         AND R2, R1, #1\n         CMP R2, #0\n         BEQ skip\n         ADD R3, R3, R0\nskip:\n         LSL R0, R0, #1\n         LSR R1, R1, #1\n         B loop\nexit:\n         STR R3, 122\n         HALT" }
+                ],
+                parts: [
+                  { code: '09.1', prompt: "State the name of the addressing mode used in the instruction ADD R3, R3, R0", marks: 1 },
+                  { code: '09.2',
+                    preamble: "Memory location 120 contains the value 23 and memory location 121 contains the value 5.",
+                    figure: { type: 'table', label: 'Trace table to complete',
+                      headers: ['120', '121', '122', 'R0', 'R1', 'R2', 'R3'],
+                      rows: [['23', '5', '', '', '', '', '']] },
+                    prompt: "Complete the trace table to show how the contents of the memory locations and registers change when the program in Figure 7 is executed.", marks: 5 },
+                  { code: '09.3', prompt: "State the purpose of the program in Figure 7.", marks: 1 },
+                  { code: '09.4',
+                    preamble: "The program in Figure 7 has been written using assembly language.",
+                    prompt: "State two reasons why the programmer may have chosen to write this program in assembly language rather than in a high-level programming language.", marks: 2 },
+                  { code: '09.5',
+                    preamble: "The program in Figure 7 will be translated into machine code.",
+                    prompt: "Explain the relationship between an assembly language instruction and a machine code instruction.", marks: 1 }
+                ]
+              },
+              {
+                number: 10,
+                parts: [
+                  { code: '10.1',
+                    preamble: "A digital recording was made using a sampling rate of 44 100 Hz with a 16-bit sample resolution.\n\nA sampling rate of 1 Hz means that one sample has been taken every second.\n\nThe file, which stores only the recording, is 17.199 megabytes in size.",
+                    prompt: "Calculate the duration of the recording in seconds.\n\nYou should show your working.", marks: 3 },
+                  { code: '10.2',
+                    preamble: "MIDI is a system that can be used to enable musical devices to communicate and to represent music on a computer.",
+                    prompt: "Describe the advantages of using MIDI to represent music instead of using sampled sound.", marks: 3 }
+                ]
+              },
+              {
+                number: 11,
+                parts: [
+                  { code: '11', prompt: "Compare the hardware requirements of thin-client and thick-client computing systems.", marks: 3 }
+                ]
+              },
+              {
+                number: 12,
+                scenario: "In a functional programming language, six functions named fu, fv, fw, fx, fy and fz and a list of temperatures in Fahrenheit named temps are defined as shown in Figure 8.\n\nA temperature can be converted from degrees Fahrenheit to degrees centigrade using the formula: centigrade = (Fahrenheit − 32) × 5 / 9. For example, 59 °F = 15 °C.\n\nIn the functions fw and fx: [] is the empty list; (x:xs) lets the function definition refer to the head of the list as x and the tail as xs.",
+                scenarioFigures: [
+                  { type: 'code', label: 'Figure 8',
+                    content: "temps = [50, 68, 95, 86]\n\nfu a = (a − 32) * 5 / 9\n\nfv b = map fu b\n\nfw []     = 0\nfw (x:xs) = 1 + fw (xs)\n\nfx []     = 0\nfx (x:xs) = x + fx (xs)\n\nfy c = fx (c) / fw (c)\n\nfz d = fy (fv (d))" }
+                ],
+                parts: [
+                  { code: '12.1', prompt: "Shade one lozenge to indicate which of the listed functions from Figure 8 includes a higher-order function in its definition.\n\nA) fu\nB) fv\nC) fx\nD) fy", marks: 1 },
+                  { code: '12.2', prompt: "Shade two lozenges to indicate which of the listed functions from Figure 8 use recursion in their definitions.\n\nA) fu\nB) fv\nC) fw\nD) fx", marks: 1 },
+                  { code: '12.3',
+                    figure: { type: 'table', label: 'Table 2',
+                      headers: ['Function call', 'Result'],
+                      rows: [
+                        ['fu 50', ''],
+                        ['fv temps', ''],
+                        ['fw temps', ''],
+                        ['fz temps', '']
+                      ] },
+                    prompt: "Calculate the results of making the function calls listed in Table 2, using the functions and list in Figure 8 as appropriate.", marks: 4 },
+                  { code: '12.4', prompt: "Explain the purpose of the function fz.", marks: 1 },
+                  { code: '12.5',
+                    preamble: "It is proposed that the definition of the function fz is changed to:\n\n    fz d = fu (fy (d))",
+                    prompt: "Explain why this new definition of fz could be considered to be an improvement over the definition of fz in Figure 8.", marks: 1 }
+                ]
+              },
+              {
+                number: 13,
+                parts: [
+                  { code: '13.1',
+                    preamble: "Below is a definition of a term relating to the architecture of a computer system:\n\n    Machine code instructions stored in main memory are fetched and executed serially by a processor that performs arithmetic and logical operations.",
+                    prompt: "Shade one lozenge to indicate which term this defines.\n\nA) The Harvard architecture\nB) The processor instruction set\nC) The stored program concept\nD) The von Neumann architecture", marks: 1 },
+                  { code: '13.2', prompt: "Explain why desktop computers usually have secondary storage devices.", marks: 2 },
+                  { code: '13.3',
+                    preamble: "A computer is fitted with a solid-state disk (SSD).",
+                    prompt: "Describe the principles of operation of an SSD.", marks: 4 }
+                ]
+              }
+            ]
           },
           {
             id: 'cs-aqa-7517-2021-p1',
