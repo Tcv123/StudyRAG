@@ -28,8 +28,86 @@ window.SUBJECTS = [
     name: 'Computer Science',
     icon: '💻',
     boards: [
-      { board: 'AQA', specCode: '7517',
-        officialPageUrl: 'https://www.aqa.org.uk/subjects/computer-science-and-it/a-level/computer-science-7516-7517/assessment-resources' },
+      {
+        board: 'AQA',
+        specCode: '7517',
+        officialPageUrl: 'https://www.aqa.org.uk/subjects/computer-science-and-it/a-level/computer-science-7516-7517/assessment-resources',
+        papers: [
+          // Most recent first. Question + MS data is added per paper as it
+          // gets extracted from the official PDF (otherwise the paper is
+          // attemptable in print mode only).
+          {
+            id: 'cs-aqa-7517-2023-p2',
+            year: 'June 2023',
+            paperName: 'Paper 2 — Written',
+            paperCode: '7517/2',
+            totalMarks: 75,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-75172-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-75172-MS-JUN23.PDF'
+          },
+          {
+            id: 'cs-aqa-7517-2022-p1',
+            year: 'June 2022',
+            paperName: 'Paper 1 — Programming (on-screen)',
+            paperCode: '7517/1',
+            totalMarks: 75,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-MS-JUN22.PDF'
+          },
+          {
+            id: 'cs-aqa-7517-2022-p2',
+            year: 'June 2022',
+            paperName: 'Paper 2 — Written',
+            paperCode: '7517/2',
+            totalMarks: 75,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75172-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75172-MS-JUN22.PDF'
+          },
+          {
+            id: 'cs-aqa-7517-2021-p1',
+            year: 'Autumn 2021',
+            paperName: 'Paper 1 — Programming (on-screen)',
+            paperCode: '7517/1',
+            totalMarks: 75,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-MS-NOV21.PDF'
+          },
+          {
+            id: 'cs-aqa-7517-2021-p2',
+            year: 'Autumn 2021',
+            paperName: 'Paper 2 — Written',
+            paperCode: '7517/2',
+            totalMarks: 75,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75172-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75172-MS-NOV21.PDF'
+          },
+          {
+            id: 'cs-aqa-7517-2020-p1',
+            year: 'Autumn 2020',
+            paperName: 'Paper 1 — Programming (on-screen)',
+            paperCode: '7517/1',
+            totalMarks: 75,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-QP-NOV20.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-W-MS-NOV20.PDF'
+          },
+          {
+            id: 'cs-aqa-7517-2020-p2',
+            year: 'Autumn 2020',
+            paperName: 'Paper 2 — Written',
+            paperCode: '7517/2',
+            totalMarks: 75,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75172-QP-NOV20.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75172-W-MS-NOV20.PDF'
+          }
+        ]
+      },
       {
         board: 'OCR',
         specCode: 'H446',
