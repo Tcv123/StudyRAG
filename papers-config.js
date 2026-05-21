@@ -261,7 +261,283 @@ window.SUBJECTS = [
                     prompt: "Shade one lozenge to indicate the co-domain of the function.\n\nA) The set of integers\nB) The set of irrational numbers\nC) The set of natural numbers\nD) The set of rational numbers\nE) The set of real numbers", marks: 1 }
                 ]
               }
-            ]
+            ],
+            // Official AQA mark-scheme content for every part, copied from
+            // the H7517/2 June 2023 mark scheme. Fed to /api/mark-against-scheme
+            // so the AI marker awards only what the real MS credits.
+            markSchemes: {
+              '01.1': { type: 'exact',
+                points: ['16.48', '16.4794921875', '16 491/1024', '48000 × 16 × 3 × 60 / 8 / 1024 / 1024'],
+                guidance: '2 marks for correct answer 16.48 (or more dp/fraction). 1 mark for 16, 16.5, or truncated 16.47. 1 method mark if not correct but doing at least three of: ×48000, ×16, ×3, ×60, ÷8, ÷1024, ÷1024 again. Equivalent two-step shortcuts: ×180, ÷2, ÷1048576. Max 1 if answer not correct and written to at least 2 dp.' },
+              '01.2': { type: 'exact',
+                points: ['30000', '15000 × 2', 'double 15000'],
+                guidance: '1 mark for 30000 (Nyquist: minimum sampling rate is twice the highest frequency).' },
+              '01.3': { type: 'exact',
+                points: ['Digital to Analogue Converter', 'DAC'],
+                guidance: '1 mark. NE "Digital to Analogue". Reject if initialism and full name given but mismatched (e.g. "Digital to Analogue Converter (ADC)"). Reject if two components named.' },
+              '02.1': { type: 'points',
+                points: [
+                  'Port number(s) (allow destination/source port as separate marks)',
+                  'Sequence number / packet number',
+                  'Time to live / TTL / maximum hop count',
+                  'Packet size / length',
+                  'Type of service / priority',
+                  'Protocol identifier',
+                  'Packet identifier / ID number',
+                  'IP version',
+                  'Options / Padding',
+                  'Flags',
+                  'Window size value',
+                  'Fragment offset / header length',
+                  'Total number of packets in message',
+                  'Acknowledgement number'
+                ],
+                guidance: 'Only mark the first two responses. Max 2. NE "Total number of packets" without "in message".' },
+              '02.2': { type: 'points',
+                points: [
+                  'Explain what checksum is for: to check if the contents of the packet/data have been corrupted/changed during transmission / to check if received data is same as transmitted',
+                  'Outline how the value is determined: calculated/hashed from the payload/data/contents of the packet'
+                ],
+                guidance: '1 mark for each part. A "tampered" for corrupted. A "to check if an error has occurred". NE "error checking" alone. NE "apply an algorithm to data" unless clear it is mathematical or produces single value.' },
+              '02.3': { type: 'points',
+                points: [
+                  'Router determines which outgoing link to send packet along / which router/host/node to send to next',
+                  'Router uses most efficient/shortest/cheapest/best path to the destination',
+                  'Router monitors the network and updates routes/routing table to reflect congestion/failure/network changes',
+                  'Router modifies the MAC/hardware addresses for the next hop',
+                  'To remove packets that have no time to live / have reached the maximum hop count'
+                ],
+                guidance: 'Max 2. NE just "router determines where to send packet next" or "next hop". Reject responses suggesting router always sends to final destination. Reject IP addresses for MAC modification mark.' },
+              '03.1': { type: 'exact',
+                points: ['WIGYVMXC'],
+                guidance: '1 mark. Ignore case. (S→W, E→I, C→G, U→Y, R→V, I→M, T→X, Y→C.)' },
+              '03.2': { type: 'points',
+                points: [
+                  'Each letter/character is always encrypted to the same letter/character',
+                  'The letters/characters in the ciphertext will have the same frequency as their corresponding letters in the plaintext (susceptible to frequency analysis)',
+                  'The ciphertext will retain structural properties of the plaintext (word lengths from spaces, letter adjacency patterns, common short words)'
+                ],
+                guidance: 'Max 1. NE "patterns in the text can be identified". Reject "susceptible to brute force".' },
+              '03.3': { type: 'points',
+                points: [
+                  'There are more (possible) keys',
+                  'It is not possible to work out how other letters have been encrypted directly from the knowledge of how one letter has been encrypted',
+                  'There is no pattern to the letter replacements / replacements not in alphabetical order / not the case that every letter has the same shift / letters shifted by different amounts'
+                ],
+                guidance: 'Max 1. "Random" must clearly relate to the letter replacement. NE "letters are encrypted randomly". Reject "each letter has a random key".' },
+              '03.4': { type: 'points',
+                points: [
+                  'The key must be (at least) as long as the data/plaintext',
+                  'The key must not be reused / key must only be used once',
+                  'The key must be (truly) random',
+                  'The key must be kept securely / not revealed / only known by users (or destroyed after use)'
+                ],
+                guidance: 'Max 2. NE just "one time pad".' },
+              '04.1': { type: 'levels',
+                levels: [
+                  { range: [10, 12], descriptor: 'Level 4',
+                    criteria: 'Coherent, relevant, substantiated, logically-structured response covering BOTH areas (fetch-execute cycle AND hardware improvements). Each area has sufficient detail to show a good level of understanding. Well-developed line of reasoning.' },
+                  { range: [7, 9], descriptor: 'Level 3',
+                    criteria: 'Coherent, relevant, substantiated, logically structured response showing good understanding of AT LEAST ONE area and some understanding of the other.' },
+                  { range: [4, 6], descriptor: 'Level 2',
+                    criteria: 'Limited attempt to follow a line of reasoning, mostly logical structure. Good understanding of one area OR some understanding of both areas.' },
+                  { range: [1, 3], descriptor: 'Level 1',
+                    criteria: 'A few relevant points; no line of reasoning evident. Insufficient evidence of good understanding in either area.' }
+                ],
+                indicative: {
+                  'Area 1 — Fetch-Execute Cycle': 'Fetch stage: PC → MAR; address bus carries the address to main memory; read signal on control bus; data bus transfers contents; addressed memory loaded into MBR; PC incremented (at any point after PC→MAR transfer); MBR contents copied to CIR. Decode stage: instruction held by (Current) Instruction Register; control unit decodes the instruction; split into opcode and operand(s). Execute stage: if necessary data is fetched/stored; opcode identifies the operation type; operation performed by the control unit; ALU used for calculations/comparisons; result stored in register/main memory/accumulator; status register updated; PC updated if jump/branch; control bus signals to other components.',
+                  'Area 2 — Improving Hardware': 'More cores; more cache memory; faster clock speed (NE "faster processor"); parallel processor architecture / more processors in parallel; bigger word size; pipelining; more RAM / faster-access RAM; faster bus clock speed; more lines in data bus; replace HDDs with SSDs / faster drives; use Harvard architecture instead of Von Neumann.'
+                },
+                guidance: '12 marks total. Best-fit by overall quality across BOTH areas. A good Level-4 response covers all three FDE stages without excess focus on one, plus a range of hardware improvements (processor, buses, memory). 0 marks if no attempt or nothing creditworthy.' },
+              '04.2': { type: 'points',
+                points: [
+                  'Knowledge: A signal/request sent to the processor (from a hardware device or program)',
+                  'Understanding: So that a device/source that needs the immediate attention of the processor can be serviced / urgent error condition can be dealt with',
+                  'Understanding: So that the currently executing process/task/program can be suspended (allow "stopped")'
+                ],
+                guidance: '2 marks: 1 knowledge + max 1 understanding. NE "to deal with an error" unless clear it must be dealt with immediately. NE "task of higher priority can be carried out". Reject "suspend/stop the fetch-execute cycle/processor". Reject "instruction" for "process".' },
+              '05.1': { type: 'points',
+                points: [
+                  'Customer relation created with Customer(CustomerID, FirstName, LastName, TelephoneNumber) and no other attributes',
+                  'Booking relation created with Booking(BookingID, ShowingID, CustomerID) and no other attributes (NumberOfPeople allowed)',
+                  'AssignedSeat relation created containing the entity identifier from the Booking relation + SeatNumber (e.g. AssignedSeat(BookingID, SeatNumber))',
+                  'Correct entity identifier (primary key) on at least one or two relations: Customer:CustomerID; Booking:BookingID OR composite (ShowingID, CustomerID); AssignedSeat: composite of Booking identifier + SeatNumber',
+                  'Correct entity identifiers on ALL THREE relations'
+                ],
+                guidance: '5 marks total. Allow spaces in names and alternative attribute names if meaning is clear. Reject use of incorrect names already used in question. Ignore foreign-key representation. Accept SQL responses, ignoring syntax/data-type errors.' },
+              '05.2': { type: 'points',
+                points: [
+                  'The Film table should not be included / only the Showing table should be included',
+                  'The date is missing quotation marks / hashes / delimiters',
+                  'An asterisk or list of attributes is missing AFTER DELETE'
+                ],
+                guidance: 'Max 2. NE "not specified what to delete".' },
+              '05.3': { type: 'points',
+                points: [
+                  'Analysis: There might already be bookings for a showing on this date',
+                  'Understanding: The database would prevent the query from running / there would be records (bookings) referencing showings that no longer existed / referential integrity / foreign key rules violated'
+                ],
+                guidance: '1 mark analysis + 1 mark understanding. Award both marks if the response states that all bookings for the 29 March would also need to be deleted. Reject "bookings for a/the showing" without date reference.' },
+              '05.4': { type: 'points',
+                points: [
+                  'Each resource is represented by a URL',
+                  'Entering a URL causes the server to (use CRUD to) retrieve relevant data / carry out a search / access a database',
+                  'URLs are sent between the client and server using HTTP'
+                ],
+                guidance: 'Max 1.' },
+              '05.5': { type: 'exact',
+                points: ['B', 'GET→SELECT, POST→INSERT, DELETE→DELETE, PUT→UPDATE'],
+                guidance: '1 mark. Reject if more than one lozenge shaded.' },
+              '05.6': { type: 'points',
+                points: [
+                  'More compact / smaller / faster transmission / less memory',
+                  'Quicker / easier to parse',
+                  'Structure understood directly in some languages (e.g. JavaScript)',
+                  '(Native) support for arrays',
+                  'Easier for humans to read/write/understand'
+                ],
+                guidance: 'Max 2.' },
+              '06.1': { type: 'exact',
+                points: ['0.1015625', '13/128', '0.1016'],
+                guidance: '2 marks for correct answer 0.1015625 (or 13/128, or rounded to ≥4 dp). 1 method mark for either: showing mantissa=0.8125 (13/16) and exponent=−3 in decimal; OR showing binary point shifted 3 places left; OR indicating mantissa × 2^exponent and using either correct value.' },
+              '06.2': { type: 'exact',
+                points: ['Mantissa 10100011 Exponent 0101', '10100011 0101'],
+                guidance: '3 marks for correct answer (mantissa=10100011, exponent=0101). Method marks (up to 2): fixed-point 23.25 in binary = 10111.01; fixed-point −23.25 in binary = 101000.11; exponent shown as 5 decimal / 101 binary; mantissa shown correctly.' },
+              '06.3': { type: 'exact',
+                points: ['Underflow (row 1)', 'Overflow (row 2 — reject "stack overflow")', 'Rounding / truncation (row 3)'],
+                guidance: '1 mark for two correctly identified, 2 marks for all three. Reject "stack overflow" for row 2.' },
+              '06.4': { type: 'points',
+                points: [
+                  'Move a bit (or some bits) from the exponent to the mantissa / increase mantissa bits and reduce exponent bits',
+                  'Use an implicit bit in the mantissa / do not store one of the bits on either side of the binary point (since it can be inferred)'
+                ],
+                guidance: 'Max 1. NE "add more bits to mantissa" or "make the mantissa larger and exponent smaller" without referring to redistribution. Reject "use fixed point".' },
+              '07.1': { type: 'exact',
+                points: ['00000110', '0 0 0 0 0 1 1 0'],
+                guidance: '1 mark for the correct AND result. Reject if any cell of R0 is left empty.' },
+              '07.2': { type: 'exact',
+                points: ['00110110', '0 0 1 1 0 1 1 0'],
+                guidance: '1 mark for the correct ORR result. Reject if any cell of R0 is left empty.' },
+              '07.3': { type: 'points',
+                points: [
+                  'MP1 (AO3): Value in memory location 100 loaded into a register (LDR)',
+                  'MP2 (AO3): After manipulation, values stored into memory locations 101 AND 102 (not the same value stored twice)',
+                  'MP3 (AO3): Binary pattern of one digit correctly isolated from the input value (for leftmost digit must also be shifted into correct place)',
+                  'MP4 (AO3): Binary pattern of one digit correctly translated into ASCII for numeric OR letter digits',
+                  'MP5 (AO3): Binary pattern of one digit correctly translated into ASCII for BOTH numeric AND letter digits',
+                  'MP6 (AO3): Conversion process fully working for BOTH digits (ASCII codes correct when program terminates)',
+                  'MP7 (AO2): Attempt to use masking and/or shifting to identify one digit',
+                  'MP8 (AO2): Attempt to use masking and/or shifting a second time to identify the second digit',
+                  'MP9 (AO2): Attempt to use comparison and branching to treat numeric digits and letter digits differently',
+                  'MP10 (AO2): Use of addition or masking to attempt to convert a digit to an ASCII code'
+                ],
+                guidance: 'Max 9 if solution not fully working. If MP3 not awarded, MP4/MP5/MP6/MP10 cannot be awarded. DPT (only penalise once): invalid register names like R27/Rn; binary immediate operands; missing # for immediate; R before memory address (R100); MOV used instead of LDR/STR; repeated wrong delimiters. Example solution outline: LDR R0,100 → AND R2,R0,#15 (low nibble) → CMP/branch on whether ≥10 → ADD #55 (letters) else ADD #48 (digits) → STR result → repeat for high nibble using LSR #4.' },
+              '08.1': { type: 'points',
+                points: ['The data is generated/received/must be processed/responded to at high velocity / very quickly (third V of Big Data)'],
+                guidance: '1 mark. NE "velocity" alone, "high velocity of data", "speed data transmitted at". Allow examples of timeframes (milliseconds) but not "seconds". Allow "instantly/immediately" as BOD.' },
+              '08.2': { type: 'points',
+                points: [
+                  'Bath store sells chocolate biscuits: solid line joining Store:Bath to Product:Chocolate Biscuit, labelled "Sells" (or equivalent like "Stocks")',
+                  '20 individual biscuits per packet & each packet costs £1.50: rectangular boxes containing this data connected to Iced Biscuit with dashed lines (two separate boxes, not combined)',
+                  'Delicious Snacks makes both biscuits + has 75 employees + also makes cake bars: oval for Company:Delicious Snacks; rectangle connected via dashed line for 75 employees; oval for new Product:Cake Bar; solid lines linking the company oval to all three products labelled "Makes" (or equivalent)'
+                ],
+                guidance: '3 marks. Allow directed arrows. Ignore spelling if meaning clear. DPT (penalise once only): wrong line styles (solid/dashed), wrong shapes (rectangles/ovals), missing labels on solid lines, labels on dashed lines.' },
+              '08.3': { type: 'points',
+                points: [
+                  'Immutable data structures / state of a data structure cannot be changed after creation',
+                  'Statelessness / functions do not have side-effects / all functions are pure',
+                  'Functions can be distributed to servers and executed on data sets then results combined / map-reduce',
+                  'Higher-order functions can compose results of processing on multiple processors/cores / functions are first-class objects',
+                  'Order of execution can be determined at run-time by the translator / not defined by program code / programs are not a sequence of instructions in a specific order'
+                ],
+                guidance: 'Max 2. NE just "suitable for parallel processing".' },
+              '09.1': { type: 'points',
+                points: [
+                  'Output C is correct for all inputs (C = A AND B)',
+                  'Output D is correct for all inputs (D = A XOR B)',
+                  'Circuit is fully correct AND uses exactly two gates (an AND gate feeding C and an XOR gate feeding D, both taking A and B as inputs — this is a half-adder)'
+                ],
+                guidance: '3 marks. The minimal 3-mark solution: A AND B → C; A XOR B → D. Equivalent 2-mark solutions exist using more than two gates (e.g. with NOTs and ANDs/ORs).' },
+              '09.2': { type: 'points',
+                points: [
+                  'It adds two bits (or two numbers) together',
+                  'It is a half adder'
+                ],
+                guidance: '1 mark. Allow "it performs addition" / "it is an adder" as BOD. Reject "full adder".' },
+              '09.3': { type: 'exact',
+                points: ['A', 'final simplified expression is A'],
+                guidance: 'Final answer is A (1 mark). 3 marks for working: award 1 mark per successful application of (a) De Morgan, (b) other identity, or (c) bracket expansion/factorising. 2 marks if De Morgan applied twice simultaneously. Max 2 for working if no successful De Morgan. Max 3 overall if any incorrect step. Mark working until first wrong step.' },
+              '10.1': { type: 'exact',
+                points: ['2', 'Patterns 4 and 5'],
+                guidance: '1 mark for 2. Allow identifying patterns 4 and 5 as valid without stating "2". Ignore wrong patterns if 2 is given. (Reasoning: a valid 7-bit ASCII + even parity transmission needs a start bit (0), 7 data bits, even parity bit, stop bit (1).)' },
+              '10.2': { type: 'points',
+                points: [
+                  'Receiver and transmitter (continuously) synchronised by a common clock',
+                  'Timing information transmitted within / alongside the data',
+                  'Receiver and transmitter clocks are continuously synchronised'
+                ],
+                guidance: '1 mark. Allow "both devices synchronised by same clock". NE "receiver and transmitter are synchronised" alone. NE "transmission synchronised to a clock signal".' },
+              '10.3': { type: 'points',
+                points: [
+                  'Errors that change an even number of bits (e.g. two bits) cannot be detected',
+                  'Errors can be detected but cannot be corrected / position of errors cannot be identified'
+                ],
+                guidance: 'Max 1. Reject "multi-bit errors cannot be identified" without specifying even-number.' },
+              '10.4': { type: 'exact',
+                points: ['A', 'Line A'],
+                guidance: '1 mark. Bit rate increases linearly with bandwidth. Reject if more than one lozenge shaded.' },
+              '11.1': { type: 'points',
+                points: [
+                  'Establish an end-to-end connection (between email servers)',
+                  'Perform error detection/correction / request that corrupted segments are resent / add error-detection information / send acknowledgement packets / ensure packets are delivered',
+                  'Use the port number to pass data to the correct (email server) application in the application layer / add port number to segment',
+                  'Split data up into segments and add header information / assemble segments in correct order to rebuild message / add segment numbers',
+                  'Perform flow control / match speed of sender and receiver',
+                  'Manage congestion'
+                ],
+                guidance: 'Max 3. NE "virtual path / virtual circuit". A "packets/frames/datagrams" for segments. A "socket" for port number as BOD.' },
+              '11.2': { type: 'points',
+                points: ['Protocol conversion (allows two different networks/protocols to communicate)'],
+                guidance: '1 mark.' },
+              '11.3': { type: 'points',
+                points: [
+                  'SMTP / Simple Mail Transfer Protocol — used to send/transmit email between servers/clients',
+                  'POP(3) / Post Office Protocol — used by clients to retrieve emails from the server',
+                  'IMAP / Internet Message Access Protocol — used by clients to retrieve/manage emails on the server',
+                  'HTTP / HTTPS — so users can access email via the web / web browser'
+                ],
+                guidance: '2 marks for two correctly named protocols + 2 marks for correct purposes (each linked to its protocol). Allow correct initialism with slightly wrong full term as BOD. Reject non-application-layer protocols (TCP, IP). For POP(3) and IMAP both named, the purposes given must be different to both score.' },
+              '11.4': { type: 'points',
+                points: [
+                  'Knowledge: A (reserved) port (number) that has a specific purpose / a port with a reserved number / a port assigned by IANA (Internet Assigned Numbers Authority)',
+                  'Understanding: The communication is initiated by the sender/client (so the port number must be the same / known in advance for all initial email communications)'
+                ],
+                guidance: '1 mark for "what is" + 1 mark for "why used".' },
+              '11.5': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3',
+                    criteria: 'Comprehensive description covering BOTH transmission and reception. At least three keys correctly identified for particular processes. Minor errors only.' },
+                  { range: [3, 4], descriptor: 'Level 2',
+                    criteria: 'A significant amount of the process described. Some misunderstandings/omissions. At least two keys correctly identified. May cover only transmission OR reception.' },
+                  { range: [1, 2], descriptor: 'Level 1',
+                    criteria: 'A few relevant points. Significant omissions or misunderstandings.' }
+                ],
+                indicative: {
+                  Transmission: 'A message digest (hash) is calculated from the message contents. The digest is encrypted using A\'s PRIVATE key — this encrypted digest is the digital signature. The signature is appended to the message. The message (and signature) are encrypted using B\'s PUBLIC key. (Signature can be appended before or after encryption with B\'s public key.)',
+                  Reception: 'B\'s PRIVATE key is used to decrypt the message (and signature). The message is rehashed — a new digest is calculated. A\'s PUBLIC key is used to decrypt the digital signature to produce the received digest. If the two digests match, the sender is authenticated (B knows A sent the message).'
+                },
+                guidance: '6 marks. Allow "data" for message, "hash"/"digest"/"checksum" as synonyms, "encrypted hash" for signature. Reject any process attributed to more than one key.' },
+              '12.1': { type: 'exact',
+                points: [
+                  'Argument column for calls 2/3/4: [2, 5, 3], [5, 3], [3]',
+                  'Bottom row (call 5): Argument = [] (empty list), Value returned = 0',
+                  'Value returned column: 52, 24, 11, 3 (and 0 on the bottom row) — in order'
+                ],
+                guidance: '3 marks. 1 mark for the three intermediate Arguments in order. 1 mark for the empty list bottom row. 1 mark for the four returned values in order. Allow destructuring 2:[5,3] etc. Reject missing brackets.' },
+              '12.2': { type: 'exact',
+                points: ['A', 'The set of integers'],
+                guidance: '1 mark. Reject if more than one lozenge shaded.' }
+            }
           },
           {
             id: 'cs-aqa-7517-2022-p1',
