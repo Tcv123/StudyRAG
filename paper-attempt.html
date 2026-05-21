@@ -218,18 +218,33 @@
     .timer-meta { font-size: 12px; color: var(--muted); display: flex; flex-direction: column; gap: 2px; min-width: 120px; }
     .timer-meta .num { font-family: var(--font-display); font-size: 15px; color: var(--text); }
 
-    /* Sticky thin timer strip used at the top of the qbq attempt phase */
-    .timer-strip { position: sticky; top: 0; z-index: 5; background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 10px 16px; display: flex; align-items: center; gap: 14px; margin-bottom: 14px; flex-wrap: wrap; box-shadow: 0 2px 12px rgba(11,30,63,0.04); }
-    .timer-strip.running { border-color: var(--accent); }
+    /* Sticky timer used at the top of the qbq attempt + marking phases.
+       Now sized like the print-mode card (not the tiny strip we had before)
+       so the user can't miss it. Pulses orange when idle. */
+    .timer-strip { position: sticky; top: 0; z-index: 5; background: var(--surface); border: 2px solid var(--border); border-radius: 16px; padding: 18px 24px; display: flex; align-items: center; gap: 22px; margin-bottom: 18px; flex-wrap: wrap; box-shadow: 0 4px 18px rgba(11,30,63,0.06); }
+    .timer-strip.idle    { border-color: var(--warn); background: linear-gradient(135deg, rgba(217,119,6,0.08), var(--surface)); animation: idle-pulse 2.4s ease-in-out infinite; }
+    .timer-strip.running { border-color: var(--accent); background: linear-gradient(135deg, var(--accent-dim), var(--surface)); }
     .timer-strip.paused  { border-color: var(--warn); }
-    .timer-strip.overtime, .timer-strip.done { border-color: var(--bad); }
-    .timer-strip .timer-time { font-size: 22px; }
-    .timer-strip .timer-state { margin-top: 0; }
-    .timer-strip .timer-progress { height: 5px; min-height: 5px; }
-    .timer-strip .timer-buttons .btn { padding: 6px 12px; font-size: 12.5px; }
+    .timer-strip.overtime, .timer-strip.done { border-color: var(--bad); background: linear-gradient(135deg, rgba(220,38,38,0.05), var(--surface)); }
+    .timer-strip .timer-time { font-size: 42px; font-family: var(--font-display); }
+    .timer-strip.running .timer-time { color: var(--accent-dark); }
+    .timer-strip .timer-state { margin-top: 4px; font-size: 11px; padding: 4px 12px; }
+    .timer-strip .timer-progress { height: 8px; min-height: 8px; min-width: 200px; }
+    .timer-strip .timer-buttons .btn { padding: 11px 22px; font-size: 14.5px; font-weight: 600; }
+    .timer-strip.idle .timer-buttons .btn.primary { background: var(--warn); border-color: var(--warn); animation: idle-btn-pulse 1.6s ease-in-out infinite; }
+    .timer-strip.idle .timer-buttons .btn.primary:hover { background: #92400E; border-color: #92400E; }
+    @keyframes idle-pulse {
+      0%, 100% { box-shadow: 0 4px 18px rgba(11,30,63,0.06), 0 0 0 0 rgba(217,119,6,0); }
+      50%      { box-shadow: 0 4px 18px rgba(11,30,63,0.06), 0 0 0 8px rgba(217,119,6,0.18); }
+    }
+    @keyframes idle-btn-pulse {
+      50% { transform: scale(1.04); box-shadow: 0 6px 18px rgba(217,119,6,0.35); }
+    }
     @media (max-width: 640px) {
-      .timer-card { gap: 14px; padding: 16px 18px; }
-      .timer-time { font-size: 34px; }
+      .timer-card,
+      .timer-strip { gap: 14px; padding: 16px 18px; }
+      .timer-time { font-size: 32px; }
+      .timer-strip .timer-time { font-size: 30px; }
     }
     .qbq-controls { padding: 18px 22px 22px; display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
     .qbq-controls .spacer { flex: 1; }
@@ -314,7 +329,7 @@
       <div class="page-sub" id="paperSub"></div>
     </div>
     <div id="pageBody"></div>
-    <div style="margin-top:24px;font-size:10.5px;color:var(--muted2);text-align:right;font-variant-numeric:tabular-nums;">build · ready-gate-v2</div>
+    <div style="margin-top:24px;font-size:10.5px;color:var(--muted2);text-align:right;font-variant-numeric:tabular-nums;">build · big-timer-v1</div>
   </main>
 </div>
 
