@@ -1060,7 +1060,470 @@ window.SUBJECTS = [
             totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75172-QP-NOV21.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75172-MS-NOV21.PDF'
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75172-MS-NOV21.PDF',
+            questions: [
+              {
+                number: 1,
+                scenario: "A bitmap image is 1000 pixels wide by 800 pixels high. The image takes up 400 kB of storage space when represented as a bitmap, excluding metadata.",
+                parts: [
+                  { code: '01.1', prompt: "Calculate the maximum number of different colours that could appear in the image.\n\nYou should show your working.", marks: 3 },
+                  { code: '01.2',
+                    preamble: "The same image can also be represented using vector graphics. The vector graphics representation of the image takes up 2 kB of storage space.",
+                    prompt: "Explain why the amount of storage space taken up by the vector graphics representation of the image is significantly smaller than the space taken up by the bitmap representation.", marks: 3 },
+                  { code: '01.3',
+                    preamble: "One advantage of vector graphics compared to bitmap graphics is that fewer bytes are used to represent an image.",
+                    prompt: "State two other advantages of vector graphics compared with bitmap graphics.", marks: 2 }
+                ]
+              },
+              {
+                number: 2,
+                parts: [
+                  { code: '02', prompt: "Describe what thin-client computing is and explain two reasons why a thin-client system might be chosen in preference to a thick-client system.", marks: 3 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: "A data communications system can transmit four different signals. Each different signal represents two bits of data.",
+                parts: [
+                  { code: '03.1', prompt: "Describe the exact relationship between the bit rate and the baud rate for this system.", marks: 1 },
+                  { code: '03.2', prompt: "Describe the relationship between the bit rate of the system and the bandwidth of the transmission medium that the data is transmitted through.", marks: 1 },
+                  { code: '03.3',
+                    preamble: "The system uses serial transmission.",
+                    prompt: "Describe the difference between the operation of serial and parallel transmission.", marks: 2 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: "Figure 1 shows a circuit with inputs X0 to X2 and outputs Q0 to Q7. The circuit is a 3-to-8 line binary decoder built from three NOT gates and eight 3-input AND gates: each output Qn is the AND of the three input lines (each possibly inverted) corresponding to the binary value n.",
+                parts: [
+                  { code: '04.1', prompt: "Write a Boolean expression to represent the output Q1 of the circuit in Figure 1.\n\nQ1 = ____", marks: 1 },
+                  { code: '04.2',
+                    figure: { type: 'table', label: 'Truth table to complete',
+                      headers: ['X2', 'X1', 'X0', 'Q0', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7'],
+                      rows: [
+                        ['0','0','0','','','','','','','',''],
+                        ['0','0','1','','','','','','','',''],
+                        ['0','1','0','','','','','','','',''],
+                        ['0','1','1','','','','','','','',''],
+                        ['1','0','0','','','','','','','',''],
+                        ['1','0','1','','','','','','','',''],
+                        ['1','1','0','','','','','','','',''],
+                        ['1','1','1','','','','','','','','']
+                      ] },
+                    prompt: "Complete the truth table for the circuit in Figure 1.", marks: 3 },
+                  { code: '04.3', prompt: "Explain the purpose of the circuit in Figure 1.\n\nConsidering the inputs and outputs of the circuit and consulting your answers to Question 04.1 and Question 04.2 may help you to do this.", marks: 2 },
+                  { code: '04.4',
+                    preamble: "The logic circuit in Figure 2 produces an output S that is equivalent to one of the outputs of the logic circuit in Figure 1, for the inputs X0, X1 and X2. Figure 2 ANDs the NOTs of all three inputs together (a 3-input AND gate whose inputs are X̄2, X̄1, X̄0).",
+                    prompt: "Which output (Q0 to Q7) from Figure 1 is the output S from the circuit in Figure 2 equivalent to?", marks: 1 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "A sports centre uses a relational database to store information about its facilities (such as the swimming pool) and the bookings that have been made to use them. Figure 3 shows the structure of the relations in the database.",
+                scenarioFigures: [
+                  { type: 'code', label: 'Figure 3',
+                    content: "Facility(FacilityID, Description, MaxPeople, PricePerHour)\nFacilityForSport(Sport, FacilityID)\nBooking(FacilityID, BookingDate, StartTime, EndTime, CustomerID)\nCustomer(CustomerID, Forename, Surname, EmailAddress)\n\n• Facility: each facility identified by a unique number; PricePerHour is price of hiring the facility for 1 hour (e.g. FacilityID 1 = 'Outdoor Pitch A' @ £17.50).\n• FacilityForSport: identifies which facilities are suitable for which sports (one row per facility-sport pair).\n• Booking: bookings must start/end on the hour, quarter past, half past or quarter to. A customer can book more than one facility for the same time but each facility can only be booked by one customer at any one time.\n• Customer: details of customers who have made bookings." }
+                ],
+                parts: [
+                  { code: '05.1',
+                    preamble: "The entity identifier (primary key) for the Booking relation is the composite (FacilityID, BookingDate, StartTime). An alternative entity identifier could have been chosen, composed of different attributes.",
+                    prompt: "Shade one lozenge to indicate which of the following groups of attributes would form a valid alternative entity identifier for the Booking relation.\n\nA) BookingDate, StartTime, EndTime\nB) FacilityID, BookingDate, EndTime\nC) FacilityID, StartTime, CustomerID\nD) FacilityID, BookingDate, EndTime, Sport", marks: 1 },
+                  { code: '05.2',
+                    preamble: "A different design was originally proposed for the database. This design did not have the Customer relation and had the following design for the Booking relation:\n\n    Booking(FacilityID, BookingDate, StartTime, EndTime, Forename, Surname, EmailAddress)",
+                    prompt: "Explain why this alternative design would have been rejected in favour of the design in Figure 3.", marks: 2 },
+                  { code: '05.3', prompt: "Complete the following SQL statement to create the Facility relation specified in Figure 3, including the primary key.\n\n    CREATE TABLE Facility (\n        ____________________________________\n    )", marks: 3 },
+                  { code: '05.4',
+                    preamble: "A customer wants to book a facility that is suitable for playing basketball on the 15/06/2021 between 14:15 and 16:15.\n\nAs part of the booking process, a query is needed to list all the existing bookings that would overlap with the new booking.",
+                    prompt: "Write a query that will list all the bookings for facilities that are suitable for playing basketball and which would overlap with the booking that the customer wants to make.\n\nFor each booking which would overlap with the new booking only the FacilityID, StartTime and EndTime fields should be listed.", marks: 7 }
+                ]
+              },
+              {
+                number: 6,
+                scenario: "Figure 4 shows an assembly language program written using the AQA assembly language instruction set (LDR, STR, ADD, SUB, MOV, CMP, B, B<cond>, AND, ORR, EOR, MVN, LSL, LSR, HALT; operand2 = #decimal or Rm; general registers R0–R12). The program takes its input values from registers R1 and R2 and stores its output in registers R0 and R1.",
+                scenarioFigures: [
+                  { type: 'code', label: 'Figure 4',
+                    content: "         CMP R2, #0\n         BEQ exit\n         MOV R0, #0\n         MOV R3, #1\nmoveleft:\n         LSL R2, R2, #1\n         LSL R3, R3, #1\n         CMP R2, R1\n         BLT moveleft\n         BEQ mainloop\n         LSR R2, R2, #1\n         LSR R3, R3, #1\nmainloop:\n         CMP R1, R2\n         BLT skip\n         ADD R0, R0, R3\n         SUB R1, R1, R2\nskip:\n         AND R4, R3, #1\n         CMP R4, #1\n         BEQ skipshiftR2\n         LSR R2, R2, #1\nskipshiftR2:\n         LSR R3, R3, #1\n         CMP R3, #0\n         BNE mainloop\nexit:\n         HALT" }
+                ],
+                parts: [
+                  { code: '06.1',
+                    preamble: "Each register can hold a 16-bit value. You may find it easier to understand the operation of the program if you write the contents of the registers out in both binary and decimal.",
+                    figure: { type: 'table', label: 'Trace table (initial values shown)',
+                      headers: ['R0', 'R1', 'R2', 'R3', 'R4'],
+                      rows: [
+                        ['', '100010 (34)', '110 (6)', '', '']
+                      ] },
+                    prompt: "Complete the trace table to show the results of executing the program in Figure 4 when the initial values in registers R1 and R2 are 34 and 6.\n\nYou may not need to use all the rows in the table.", marks: 6 },
+                  { code: '06.2',
+                    preamble: "The initial values for the program (its inputs) are stored in R1 and R2 and the final values stored in R0 and R1 are its outputs.",
+                    prompt: "By considering the inputs and the outputs in your trace table for Question 06.1, describe the purpose of the program.", marks: 2 }
+                ]
+              },
+              {
+                number: 7,
+                parts: [
+                  { code: '07.1', prompt: "Explain why a laser printer with a built-in wireless network adapter is likely to be a suitable choice of printer for a small office.", marks: 3 },
+                  { code: '07.2', extended: true,
+                    prompt: "Describe the principles of operation of a laser printer.", marks: 6 }
+                ]
+              },
+              {
+                number: 8,
+                parts: [
+                  { code: '08', prompt: "Use binary addition in 8-bit two's complement to perform the subtraction:\n\n    18 − 72\n\nYou must show both your working and your final answer in binary.", marks: 2 }
+                ]
+              },
+              {
+                number: 9,
+                parts: [
+                  { code: '09', extended: true,
+                    prompt: "Big Data is an important application area for modern computer science.\n\n• Describe what Big Data is, using examples to illustrate your description.\n• Explain some of the challenges that Big Data brings with it and the approaches that can be taken to overcome these, in relation to programming and hardware.\n• Consider some of the ethical and legal issues that might arise in applications that store data, particularly data about people.", marks: 12 }
+                ]
+              },
+              {
+                number: 10,
+                scenario: "A particular computer uses a normalised floating point representation with an 8-bit mantissa and a 4-bit exponent, both stored using two's complement.",
+                parts: [
+                  { code: '10.1',
+                    preamble: "Figure 5 lists four bit patterns A–D stored in this computer's memory. Three of the bit patterns are valid normalised floating point numbers and one is not.",
+                    figure: { type: 'table', label: 'Table 2 — assign one letter A–D per row',
+                      headers: ['Value description', 'Correct letter (A–D)'],
+                      rows: [
+                        ['A negative value that is valid in the representation.', ''],
+                        ['The largest positive value that can be represented in the system.', ''],
+                        ['A value that is not valid in the representation because it is not normalised.', '']
+                      ] },
+                    prompt: "Complete Table 2. In the Correct letter (A–D) column write the appropriate letter from A to D to indicate which bit pattern in Figure 5 is an example of the type of value described in the Value description column.\n\nDo not use the same letter more than once.", marks: 3 },
+                  { code: '10.2',
+                    preamble: "Figure 6 shows a floating point representation of a number with mantissa = 0.1101 (= 0.8125 = 13/16) and exponent = 0110 (= +6). (See the official PDF for the exact bit pattern.)",
+                    prompt: "Calculate the decimal equivalent of the number.\n\nYou should show your working.", marks: 2 },
+                  { code: '10.3',
+                    preamble: "In this floating point system, the closest possible representation of the decimal number 104.7 is shown in Figure 7. By converting this number back to decimal it can be seen that the actual value stored is 105.",
+                    prompt: "Calculate the absolute error that has occurred when representing 104.7 in Figure 7.", marks: 1 },
+                  { code: '10.4', prompt: "Calculate the relative error that has occurred when representing 104.7 in Figure 7.\n\nExpress your answer as a percentage to two decimal places.", marks: 1 },
+                  { code: '10.5', prompt: "Explain why the relative error is usually considered to be a more important measure of error than the absolute error.", marks: 1 }
+                ]
+              },
+              {
+                number: 11,
+                scenario: "Figure 8 shows a computer network. The devices connected to the network are identified using IPv4 addresses. When assigning IP addresses, 20 bits have been allocated to the Network IDs (also known as Subnet IDs or subnet addresses) and 12 bits have been allocated to the Host IDs. The network includes Router 1 with two ports labelled A (one subnet, 192.168.192.0 area) and B (another subnet, 192.168.64.0 area), and a computer labelled C on the 192.168.64.0 subnet. Other subnets include 192.168.64.0 in a physical star topology.",
+                parts: [
+                  { code: '11.1', prompt: "State suitable IP addresses for:\n  • The Router 1 port labelled A\n  • The Router 1 port labelled B\n  • The computer labelled C", marks: 3 },
+                  { code: '11.2', prompt: "Shade one lozenge to indicate which of the following four subnet masks is the one that has been assigned to the devices connected to the network in Figure 8.\n\nA) 255.255.0.0\nB) 255.255.15.0\nC) 255.255.240.0\nD) 255.255.255.0", marks: 1 },
+                  { code: '11.3',
+                    preamble: "The devices on the network in Figure 8 use IPv4.",
+                    prompt: "State one reason why IPv6 has been introduced to replace IPv4.", marks: 1 },
+                  { code: '11.4', prompt: "State the name of the physical topology used in subnet 192.168.64.0 in Figure 8.", marks: 1 },
+                  { code: '11.5', extended: true,
+                    preamble: "Laptop computers and other devices can connect to the network via the wireless access point. The wireless connection uses the CSMA/CA protocol with Request to Send/Clear to Send (RTS/CTS).\n\nA laptop connected to the wireless access point has data to send to another computer.",
+                    prompt: "Explain how the CSMA/CA protocol with RTS/CTS will be used during this transmission.", marks: 6 }
+                ]
+              },
+              {
+                number: 12,
+                parts: [
+                  { code: '12', prompt: "Describe how MIDI is used to represent digital music.", marks: 2 }
+                ]
+              },
+              {
+                number: 13,
+                parts: [
+                  { code: '13.1', prompt: "Describe the difference between application software and system software.", marks: 2 },
+                  { code: '13.2',
+                    preamble: "Utilities are a type of system software.",
+                    prompt: "Describe what utilities are and include an example of a utility in your answer.", marks: 2 }
+                ]
+              },
+              {
+                number: 14,
+                parts: [
+                  { code: '14.1', prompt: "Shade one lozenge to indicate which of these statements about a computer that uses the stored program concept is false.\n\nA) Instructions are fetched and executed in sequence.\nB) The computer can only be used with one program.\nC) The data is stored in the main memory.\nD) The program is stored in the main memory.", marks: 1 },
+                  { code: '14.2',
+                    preamble: "The control unit is an important component of a processor.",
+                    prompt: "Describe the role of the control unit.", marks: 3 },
+                  { code: '14.3',
+                    preamble: "One method that can be used to improve the performance of a processor is to increase the amount of cache memory.",
+                    prompt: "Describe:\n  • what cache memory is\n  • what cache memory is used for\n  • how increasing the amount of cache memory can improve the performance of a processor.", marks: 4 }
+                ]
+              }
+            ],
+            // Official AQA mark-scheme content for every part, copied from
+            // the 7517/2 November 2021 mark scheme.
+            markSchemes: {
+              '01.1': { type: 'exact',
+                points: ['16', '2⁴', '2^4'],
+                guidance: '3 marks for correct final answer of 16 (= 2⁴ colours). If final answer not given/correct, award up to 2 method marks (one per step) for: multiplying 400 by 1000 (= 400 000); dividing 3 200 000 / 400 000 / 8000 / 3200 / 400 / 8 by a number; multiplying 1000 by 800 (= 800 000); multiplying by 8 to convert bytes to bits; colour depth calculated as 4; showing 2^x as the last stage of the working (where x is the calculated colour depth).' },
+              '01.2': { type: 'points',
+                points: [
+                  'Bitmap images store the colour of each pixel / vector graphics do not need to store the colour of each pixel (A. "data about pixel" instead of colour, R. just storing pixels)',
+                  'The image contains 800 000 pixels / images can contain lots of pixels',
+                  'Vector graphics store information about / properties of the objects that an image is composed of (A. "shapes" for "object"; R. "equations" or "instructions" for object unless clear instructions describe objects; A. examples of properties)',
+                  'It takes only a small amount of memory to store the properties of an object',
+                  '(Large) images can be composed of relatively few objects / there will be fewer objects than there would be pixels / a single object might be equivalent to many pixels'
+                ],
+                guidance: 'Max 3. NE. "vector graphics are composed of objects" without reference to properties/information.' },
+              '01.3': { type: 'points',
+                points: [
+                  'Individual objects / components / parts of the image can be manipulated / edited / duplicated / copied independently (NE. "images are easy to edit")',
+                  'The image / objects can be enlarged / scaled without loss of quality / without becoming pixelated / vector graphics are resolution independent (A. "zoomed in"; NE. "easy to scale")',
+                  'If an object / component is deleted, the software knows what is behind it / no "hole" is left in the image'
+                ],
+                guidance: 'Max 2. R. faster transmission times (since fewer bytes is already given in the question).' },
+              '02': { type: 'points',
+                points: [
+                  'What it is (1 mark): Processing is carried out / applications are executed on an application server (A. server; NE. "Resources are stored on the server")',
+                  'Why selected: Clients are cheaper to purchase / can have lower hardware specification (NE. "cheaper" without further explanation)',
+                  'Why selected: Less configuration of clients is necessary / easier to configure or add a new client / easier to replace a client',
+                  'Why selected: Simpler installation / updating of software (as only done on server) (R. if implication software is on client)',
+                  'Why selected: Impossible to install unauthorised software on workstations / more secure as fewer settings can be changed',
+                  'Why selected: Workstations consume less electricity / power',
+                  'Why selected: Licensing can be cheaper (as licence per active user not per client)',
+                  'Why selected: Longer MTBF for workstations / workstations do not fail as often / need less maintenance'
+                ],
+                guidance: 'Max 3: 1 mark AO1 (knowledge) for what thin-client is + max 2 marks AO1 (understanding) for the reasons (two reasons must be given).' },
+              '03.1': { type: 'exact',
+                points: ['Bit rate is double / twice baud rate', 'baud rate is half bit rate', '2:1'],
+                guidance: '1 mark. A. "It is double".' },
+              '03.2': { type: 'exact',
+                points: ['(directly) proportional', 'the greater the bandwidth the higher the bit rate', 'as bit rate increases so does bandwidth'],
+                guidance: '1 mark. A. "as bit rate increases so does bandwidth" as BOD. NE. "bandwidth constrains bit rate".' },
+              '03.3': { type: 'points',
+                points: [
+                  'Serial sends one bit at a time / after each other whereas parallel sends multiple bits simultaneously / at the same time (R. bytes/values/packets/data for bits)',
+                  'Serial uses a single wire / cable / path / line whereas parallel uses several / multiple wires / cables / paths / lines (NE. answers that refer to multiple channels)'
+                ],
+                guidance: '2 marks. BOTH sides of each comparison point must be made to award a mark.' },
+              '04.1': { type: 'exact',
+                points: ['Q1 = X̄2 · X̄1 · X0', 'NOT X2 AND NOT X1 AND X0'],
+                guidance: '1 mark for Q1 = X̄2 · X̄1 · X0 (or any logically equivalent expression).' },
+              '04.2': { type: 'exact',
+                points: [
+                  'Row 000: Q0=1, all others 0',
+                  'Row 001: Q1=1, all others 0',
+                  'Row 010: Q2=1, all others 0',
+                  'Row 011: Q3=1, all others 0',
+                  'Row 100: Q4=1, all others 0',
+                  'Row 101: Q5=1, all others 0',
+                  'Row 110: Q6=1, all others 0',
+                  'Row 111: Q7=1, all others 0'
+                ],
+                guidance: '3 marks: 1 mark per 1 row completed correctly (1 mark for 1 row, 2 marks for 4 rows, 3 marks for all 8 rows).' },
+              '04.3': { type: 'exact',
+                points: [
+                  '2 marks: Output Qn is 1 / on / activated when the binary pattern input is the value n',
+                  '2 marks (alt): It is a (3-bit) binary decoder',
+                  '1 mark: One / a different output is 1 / on / activated for each different input pattern',
+                  '1 mark (alt): It converts a binary input to a decimal output'
+                ],
+                guidance: '2 marks for the full description. 1 mark for a partial description. A. relationship between n and output Qn described by example (e.g. inputs 0 → output 0, inputs 1 → output 1, etc.). A. "n" for "Qn".' },
+              '04.4': { type: 'exact',
+                points: ['Q0'],
+                guidance: '1 mark. NE. "0" without the Q prefix.' },
+              '05.1': { type: 'exact',
+                points: ['B', 'FacilityID, BookingDate, EndTime'],
+                guidance: '1 mark for B. R. if more than one lozenge shaded.' },
+              '05.2': { type: 'points',
+                points: [
+                  'The design is not normalised / there is (unnecessary) data duplication / data redundancy / inconsistent data could occur / customer attributes are determined by attributes that are not part of the primary key',
+                  'If a customer made more than one booking then their details would need to be entered more than once / redundancy in customer data / customer data stored multiple times',
+                  'If customer details were entered more than once they could be inconsistent / there could be inconsistency in the customer data / updates may need to be made to multiple records if a customer\'s details changed',
+                  'Deleting all of the bookings that a customer made would also delete the data about the customer',
+                  'It would not be possible to store details about a customer before they had made a booking',
+                  'It would be harder to identify all the bookings for one customer (no unique identifier) / impossible or difficult to distinguish between two customers with the same name (if they did not have an email address)'
+                ],
+                guidance: 'Max 2. For all mark points (other than the first) it must be stated that it is the CUSTOMER DATA that is the issue. Accept points stated the other way around (as advantages of the new design instead of reasons to reject the original).' },
+              '05.3': { type: 'points',
+                points: [
+                  'FacilityID with sensible data type and identified as primary key',
+                  'Two other fields with sensible data types and lengths (e.g. Description VARCHAR(100), MaxPeople INT, PricePerHour SMALLMONEY)',
+                  'Fully correct definition with syntactically correct SQL including commas separating each line'
+                ],
+                guidance: '3 marks. A. any sensible types. Lengths do not need to be specified. I. brackets at start/end of code. Alternative types: tinyint/smallint/mediumint/integer/number/byte for INT; char/nchar/nvarchar/ntext/longvarchar/varchar2/nvarchar2/text/tinytext/mediumtext/longtext/string for VARCHAR; money/float/real/decimal/double/numeric/currency for PricePerHour (R. integer-only types).' },
+              '05.4': { type: 'points',
+                points: [
+                  'AO2 — correctly identify tables (FacilityForSport, Booking) and fields (FacilityID, StartTime, EndTime) to extract',
+                  'AO2 — correctly identify condition: Sport = "Basketball" OR BookingDate = "15/06/2021"',
+                  'AO2 — correctly identify condition to link tables: Booking.FacilityID = FacilityForSport.FacilityID',
+                  'AO2 — at least one condition that identifies SOME overlapping bookings and NO non-overlapping bookings (e.g. StartTime <= "14:15" AND EndTime >= "16:15")',
+                  'AO2 — full set of conditions identifying ALL overlapping bookings (StartTime <= "16:15" AND EndTime >= "14:15", or the three-clause version)',
+                  'AO3 — fully correct SQL in two of three clauses (SELECT, FROM, WHERE)',
+                  'AO3 — fully correct SQL in all three clauses'
+                ],
+                guidance: '7 marks (5 AO2 + 2 AO3). Max 2 of the 3 condition marks if not joined by correct logical operators. AO2 marks awarded regardless of SQL correctness. A. table-name.fieldname; A. AS alias; A. INNER JOIN as one word; A. spaces in fieldnames; A. any quotation marks/hashes around dates; A. > for >=, < for <=; A. month as 6 instead of 06. I. unnecessary brackets. I. ORDER BY. DPT. fieldname before table name. DPT. unnecessary punctuation — allow one trailing semicolon. Overall Max 6 if solution doesn\'t work fully.' },
+              '06.1': { type: 'points',
+                points: [
+                  'Correct initial values loaded into R0 (= 0) and R3 (= 1)',
+                  'Logical shifting left of register values in moveleft loop: R2 shifts 110 → 1100 → 11000 → 110000; R3 shifts 1 → 10 → 100',
+                  'Exiting moveleft loop (when R2 > R1) and shifting right once: R2 back to 11000 (24); R3 back to 100 (4)',
+                  'First addition + subtraction on R0 and R3 / R1 in mainloop: R0 → 100 (4); R1 → 1010 (10)',
+                  'Addition + subtraction loop continues correctly through subsequent iterations',
+                  'Correct final values in registers: R0 = 101 (5), R1 = 100 (4)'
+                ],
+                guidance: '6 marks total. Values do not need to be in exact cells shown but must be in the correct sequence within each column. A. values written in either decimal or binary; if both are written and only one is correct treat the cell as correct. Max 5 if any incorrect values in table.' },
+              '06.2': { type: 'points',
+                points: [
+                  'Performs (integer) division / outputs the quotient after performing a division / outputs how many times one number (R2) goes into another (R1) / R0 is the quotient',
+                  'Outputs the remainder / what is left over after performing (integer) division / R1 is the remainder'
+                ],
+                guidance: '2 marks: 1 for quotient, 1 for remainder.' },
+              '07.1': { type: 'points',
+                points: [
+                  'Why laser is suitable: Low cost per printed page / toner is cheaper per page than ink',
+                  'Why laser is suitable: Prints many pages per minute / high speed',
+                  'Why laser is suitable: Options to install a greater variety of paper trays / paper handling',
+                  'Why laser is suitable: Toner will not dry out (A. toner does not expire as quickly as ink)',
+                  'Why laser is suitable: High resolution output',
+                  'Why wireless adapter is suitable: Easy to share printer between many devices',
+                  'Why wireless adapter is suitable: Can connect / print directly from computers / laptops with WiFi / no need to install network or cabling',
+                  'Why wireless adapter is suitable: Printer can be managed remotely',
+                  'Why wireless adapter is suitable: WiFi should be fast enough for likely number of users (small office)',
+                  'Why wireless adapter is suitable: WiFi should have sufficient range for devices to connect (small office)'
+                ],
+                guidance: 'Max 3: max 2 from "Why laser is suitable" + max 2 from "Why wireless adapter is suitable".' },
+              '07.2': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3',
+                    criteria: 'A comprehensive description of how a laser printer works, which shows an excellent level of understanding, covering almost all of the indicative content below.' },
+                  { range: [3, 4], descriptor: 'Level 2',
+                    criteria: 'A sound description of how a laser printer works, which shows a good level of understanding. The key parts of the indicative content are covered but there are gaps in the description.' },
+                  { range: [1, 2], descriptor: 'Level 1',
+                    criteria: 'Some relevant points are made, but overall the description conveys only a limited understanding, either because only a very small number of points are made or the points made are not drawn together to form an accurate description.' }
+                ],
+                indicative: {
+                  'Laser printer operation': 'Bitmap of image built in memory from page description. (Negative) charge applied to (photosensitive) drum. Laser beam directed at drum (R. laser directed at paper). Mirror used to direct laser beam. Where laser strikes drum, charge is neutralised / reversed / cancelled / discharged. (Negative) charge applied to toner. Toner sticks to drum based on charge / where the laser struck. Paper passed over drum and toner transfers to it. Positively charged transfer roller assists transfer of toner from drum to paper (A. charge applied to paper assists with transfer). Heater fuses toner onto paper. For colour printing, four different colour toners / four drums are required.'
+                },
+                guidance: '6 marks. Best-fit between Level 1 (1–2), Level 2 (3–4), Level 3 (5–6). 0 marks for nothing creditworthy.' },
+              '08': { type: 'exact',
+                points: ['11001010 (= −54 in 8-bit two\'s complement)'],
+                guidance: '2 marks total. 1 mark for both 18 and −72 represented correctly in two\'s complement: 18 = 00010010 and −72 = 10111000. 1 mark for correct final answer in binary: 11001010.' },
+              '09': { type: 'levels',
+                levels: [
+                  { range: [10, 12], descriptor: 'Level 4',
+                    criteria: 'A line of reasoning has been followed to produce a coherent, relevant, substantiated and logically structured response. Covers all THREE areas and in at least two areas there is sufficient detail to show a good level of understanding. To reach the top of this range, a good level of understanding must be shown of all three areas.' },
+                  { range: [7, 9], descriptor: 'Level 3',
+                    criteria: 'Coherent, relevant, substantiated and logically structured response showing a good level of understanding of two areas, or a good level of understanding of one area and a reasonable level of understanding of the other two. Top of range requires good understanding of two areas.' },
+                  { range: [4, 6], descriptor: 'Level 2',
+                    criteria: 'A limited attempt has been made to follow a line of reasoning and the response has a mostly logical structure. Good level of understanding of at least one area OR some understanding of all three areas.' },
+                  { range: [1, 3], descriptor: 'Level 1',
+                    criteria: 'A few relevant points have been made but there is no evidence that a line of reasoning has been followed. Points may only relate to one or two of the areas. Insufficient evidence of good understanding of any of the three areas.' }
+                ],
+                indicative: {
+                  'Area 1 — What Big Data is': 'Overarching description: data that can\'t be processed or analysed using traditional processes or tools. Characteristics: (1) VARIETY — many different forms of information / data may lack structure / cannot be represented in a table or relational database (e.g. emails, videos, images, web contents, facial recognition); (2) VOLUME — a lot / high volume of data, hundreds of terabytes, will not fit on one server (e.g. medical datasets, gene sequencing, predicting disease outbreaks, results of large-scale experiments); (3) VELOCITY — generated/received/processed at high velocity, thousands of items per second, must be processed as received (e.g. card payment fraud detection, recommendation systems). Good understanding = all three characteristics covered or two characteristics + overarching description, with examples or expansions.',
+                  'Area 2 — Challenges & how overcome': 'Challenges: data cannot be stored on one server/computer; not possible to process quickly enough with one computer; data cannot be represented in a table / relational DB; unstructured data is hard to analyse. How overcome: distributed database / file systems; blocks of files distributed across multiple servers; functional programming; (massively) parallelising execution; MapReduce / function-to-data model; functional programming makes distributable code easier to write and easier to write correctly; commodity servers in thousands; servers with multiple CPUs/cores/drives; machine learning to find patterns; XML/JSON for semi-structured data; fact-based model can manage bigger data sets than relational. Good understanding = a range of challenges and how to overcome them discussed.',
+                  'Area 3 — Ethical and legal issues': 'How can data be kept securely? Who should have access to what data? Will people know what data is being stored about them? Where will data be stored (concerns about other countries)? What rights do people have about data stored on them? Example laws (allow two examples): Computer Misuse Act, GDPR / Data Protection Act, RIPA / Regulation of Investigatory Powers Act. Who owns data about individuals? Good understanding = a range of issues described.'
+                },
+                guidance: '12 marks total. Best-fit by overall quality across the three areas. Indicative content is a guide — credit other valid points. 0 marks for nothing creditworthy.' },
+              '10.1': { type: 'exact',
+                points: [
+                  'A negative value that is valid → A',
+                  'The largest positive value → D',
+                  'A value that is not valid because it is not normalised → C'
+                ],
+                guidance: '3 marks: 1 mark per correct letter on a row. If a letter is used more than once then a mark is only awarded (if merited) the first time the letter is used.' },
+              '10.2': { type: 'exact',
+                points: ['52'],
+                guidance: '2 marks for correct answer 52. If answer is incorrect then award 1 method mark for either: showing correct mantissa = 0.8125 / 13/16 AND/OR exponent = 6 in decimal; showing binary point shifted 6 places to the right; or using answer = mantissa × 2^exponent with the correct mantissa or exponent.' },
+              '10.3': { type: 'exact',
+                points: ['0.3', '105 − 104.7', '|104.7 − 105|'],
+                guidance: '1 mark for 0.3. A. BOD mark if correct method 105 − 104.7 shown but candidate made arithmetic error. R. −0.3 unless the BOD applies.' },
+              '10.4': { type: 'exact',
+                points: ['0.29%', '0.0029', '0.3 ÷ 104.7'],
+                guidance: '1 mark for 0.29(%). A. 0.0029. A. follow-through of incorrect answer to Q10.3. A. BOD mark if correct method shown but candidate made division error.' },
+              '10.5': { type: 'points',
+                points: [
+                  'The effect / impact of an error depends on its size relative to the number that is / should be represented',
+                  'A particular (absolute) error is more significant the smaller the number that is / should be represented',
+                  'A particular (absolute) error is less significant the bigger the number that is / should be represented'
+                ],
+                guidance: '1 mark. NE. "relative error shows the significance/importance of error".' },
+              '11.1': { type: 'points',
+                points: [
+                  'Router 1 port A: 192.168.x.y where x is in range 192–207 and y is in range 0–255 (R. 192.168.192.0 and 192.168.207.255 as broadcast/network addresses)',
+                  'Router 1 port B: 192.168.x.y where x is in range 64–79 and y is in range 0–255 (R. 192.168.64.0 and 192.168.79.255)',
+                  'Computer C: 192.168.x.y where x is in range 64–79 and y is in range 0–255 (R. 192.168.64.0, 192.168.79.255, and same response as port B)'
+                ],
+                guidance: '3 marks: 1 mark per valid IP address.' },
+              '11.2': { type: 'exact',
+                points: ['C', '255.255.240.0'],
+                guidance: '1 mark for C. R. more than one lozenge shaded.' },
+              '11.3': { type: 'points',
+                points: [
+                  'There are not enough (unique) addresses in IPv4 / IPv4 addresses are running out / to provide more addresses',
+                  'Eliminate need for NAT / network address translation / facilitates true end-to-end connectivity',
+                  'Simplified / more efficient routing is possible',
+                  'Improved facilities for multicasting',
+                  'Automatic configuration possible without DHCP',
+                  'Allows bigger packet sizes',
+                  'Devices can move / roam between locations and keep the same IP address',
+                  'Improved support for prioritising traffic by type'
+                ],
+                guidance: 'Max 1.' },
+              '11.4': { type: 'exact',
+                points: ['Star', 'physical star', 'star topology', 'star network'],
+                guidance: '1 mark for Star.' },
+              '11.5': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3',
+                    criteria: 'A detailed, coherent description of CSMA/CA that includes the use of RTS/CTS and conveys good understanding of how the protocol works. Some omissions allowed but no misunderstandings.' },
+                  { range: [3, 4], descriptor: 'Level 2',
+                    criteria: 'An adequate description of CSMA/CA, including at least three points from the indicative list. The description is logically organised. May or may not include RTS/CTS — if RTS/CTS is omitted entirely, marks are capped at Level 2.' },
+                  { range: [1, 2], descriptor: 'Level 1',
+                    criteria: 'A small number of points relevant to CSMA/CA have been recalled (1 mark per point, up to 2). Structure (or lack of it) demonstrates only a very limited understanding, if any, of the protocol.' }
+                ],
+                indicative: {
+                  'CSMA/CA with RTS/CTS': 'Computer with data to send monitors / listens for (data signal). If (data) signal present / another transmission in progress then continue to wait. When no signal present, computer sends a Request to Send / RTS (A. "starts to transmit" if no RTS/CTS points made, but capped at Level 2). Two computers could start transmitting simultaneously if both detect no signal. Receiver / WAP responds with a Clear to Send / CTS signal (A. router). RTS/CTS signal blocks any other transmissions from nodes in range (for a specified time). If/when CTS received, start to transmit. If CTS not received, continue to wait. Receiver sends ACK after data received. After transmitting, the transmitter waits to receive ACK packet (to confirm data received and not corrupted). If no ACK within reasonable time period: wait a (random) time period, then listen again / retransmit. The ACK also notifies other computers they can transmit again / after the time specified in CTS passes other nodes can transmit. Waiting periods are (often) random. Collisions cannot be detected by transmitter.'
+                },
+                guidance: '6 marks. To reach Level 3, response must include RTS/CTS. Cap at Level 2 if RTS/CTS not mentioned.' },
+              '12': { type: 'points',
+                points: [
+                  'Music represented as sequence of MIDI (event) messages (A. instructions; A. "events"; R. "sequence of notes")',
+                  'Example data in a message: Channel; Note on/off; Pitch/frequency/note number; Volume/loudness; Velocity; Key pressure/aftertouch; Duration/length; Timbre; Instrument; Pedal effects; Pitch bend; Note envelope',
+                  'MIDI messages are usually two or three bytes long',
+                  'First byte of each MIDI message is a status byte (others are data bytes)',
+                  'Bit rate is 31 250 bits per second',
+                  'MSB value of 1 indicates status byte, 0 indicates data byte',
+                  'Status bytes are divided into a command and a channel number (4 bits each)',
+                  'Sixteen channels are supported'
+                ],
+                guidance: 'Max 2. Max 1 mark from the "example data in a message" list.' },
+              '13.1': { type: 'points',
+                points: [
+                  'Application Software: Performs user-oriented tasks / performs tasks a user would still want to perform if they did not have a computer (NE. examples of tasks)',
+                  'System Software: Software used in the management of a computer system (A. software used to run a computer)',
+                  'System Software: Layer(s) of software that abstract the user from how the computer works (A. software that hides complexity of hardware; A. software that provides a virtual machine)'
+                ],
+                guidance: '2 marks: 1 mark for application software + 1 mark for system software.' },
+              '13.2': { type: 'points',
+                points: [
+                  'Description (1 mark): (Software that) performs a non-core / ancillary / specific management function for a computer (A. software that performs a task that helps manage / configure / maintain a computer; A. software that manages a computer system but is not essential; NE. "software that manages a computer")',
+                  'Example (1 mark): Virus checker / disk defragmenter / backup / compression / encryption software (etc.)'
+                ],
+                guidance: '2 marks. R. examples that relate to core functions of the OS. R. examples that are application software, or if the response includes multiple examples one of which is application software.' },
+              '14.1': { type: 'exact',
+                points: ['B', 'The computer can only be used with one program'],
+                guidance: '1 mark for B. R. more than one lozenge shaded.' },
+              '14.2': { type: 'points',
+                points: [
+                  'To marshal / control operation of the fetch-execute cycle',
+                  'Controls fetching / loading / storing operations (NE. "fetches instructions")',
+                  'Determines the type of an instruction (A. "decodes instructions")',
+                  'To execute (some) instructions',
+                  'To synchronise operation of the processor',
+                  'To send control signals / commands to other components',
+                  'To control the transfer of data between registers',
+                  'To handle interrupts'
+                ],
+                guidance: 'Max 3.' },
+              '14.3': { type: 'points',
+                points: [
+                  'AO1 knowledge — what cache memory is: Memory that can be accessed very quickly (*)',
+                  'AO1 knowledge — what cache memory is: Memory located on (A. close to) the processor',
+                  'AO1 knowledge — what cache memory is used for: To store most frequently used / most recently used / pre-fetched instructions or data / to store instructions in the locality of the instruction currently being executed',
+                  'AO1 understanding — how more cache improves performance: More instructions / data can be stored in the cache',
+                  'AO1 understanding: Instructions/data stored in cache can be accessed more quickly than instructions/data in main memory / if an instruction is accessed a second time it can be retrieved more quickly (#)',
+                  'AO1 understanding: This increases the probability that a particular data item/instruction is in the cache when fetched / increases the probability of a cache hit / fewer fetches from main memory will be required'
+                ],
+                guidance: '4 marks total: max 1 for "what cache memory is" + 1 for "what cache memory is used for" + max 2 for "how more cache improves performance". Only award the point marked # if the point marked * has not already been awarded (avoids double-credit for "can be accessed quickly").' }
+            }
           },
           {
             id: 'cs-aqa-7517-2020-p1',
