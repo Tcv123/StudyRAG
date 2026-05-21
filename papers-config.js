@@ -628,9 +628,14 @@ window.SUBJECTS = [
               {
                 number: 5,
                 parts: [
-                  { code: '05.1', extended: true,
-                    preamble: "Section B. Write a program from scratch. Paste your final program source code into the answer box below — you can write it in any IDE first.\n\nWrite a program that asks the user to enter a string. It should then change the order of the vowels in the string and display the result.\n\nIf there are n vowels in the string, the 1st vowel in the string should swap with the nth vowel in the string, the 2nd vowel in the string should swap with the (n−1)th vowel in the string, and so on.\n\nThe letters a, e, i, o and u are the only vowels.\n\nExamples:\n  • horse → herso\n  • goose → geoso\n  • pinkfairyarmadillo → ponkfiaryarmidalli\n  • nakedmolerat → nakedmolerat\n  • lynx → lynx (no vowels — unchanged)\n  • pig → pig (one vowel — unchanged)\n\nYou may assume the string entered will contain only lowercase letters.",
-                    prompt: "Paste your PROGRAM SOURCE CODE here.\n\n(Question 05.2 — the screen-capture test — needs you to run the program against persepolis / darius / xerxes and is done in print mode only.)", marks: 12 }
+                  { code: '05.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Vowel reversal — AQA 7517/1 June 2022 Q05.1\n# Read a string and swap the positions of its vowels:\n# 1st vowel ↔ nth vowel, 2nd vowel ↔ (n-1)th vowel, ...\n\ns = input(\"Enter a string: \")\n# TODO: build your solution here.\nprint(s)\n"
+                    },
+                    testInputs: ["horse", "goose", "pinkfairyarmadillo", "nakedmolerat", "lynx", "pig"],
+                    preamble: "Section B. Write a program from scratch. Use the in-browser code editor below — it runs Python directly in your browser. (Other languages: write here for the AI marker to grade against the AO3 design + programming rubric; running them in-browser isn't supported.)\n\nWrite a program that asks the user to enter a string. It should then change the order of the vowels in the string and display the result.\n\nIf there are n vowels in the string, the 1st vowel in the string should swap with the nth vowel in the string, the 2nd vowel in the string should swap with the (n−1)th vowel in the string, and so on.\n\nThe letters a, e, i, o and u are the only vowels.\n\nExamples:\n  • horse → herso\n  • goose → geoso\n  • pinkfairyarmadillo → ponkfiaryarmidalli\n  • nakedmolerat → nakedmolerat\n  • lynx → lynx (no vowels — unchanged)\n  • pig → pig (one vowel — unchanged)\n\nYou may assume the string entered will contain only lowercase letters.",
+                    prompt: "Write your PROGRAM SOURCE CODE in the editor below, then click Run to test it against the suggested inputs. Save & Next once you're happy — your code will be marked against the official AO3-design + AO3-programming mark scheme.\n\n(Question 05.2 — the screen-capture test against persepolis / darius / xerxes — is done in print mode only.)", marks: 12 }
                 ]
               },
               // ── SECTION C — comprehension of the Skeleton Program (17 marks)
@@ -1441,9 +1446,14 @@ window.SUBJECTS = [
               {
                 number: 7,
                 parts: [
-                  { code: '07.1', extended: true,
-                    preamble: "Section B. Write a program from scratch. Paste your final program source code into the answer box below — you can write it in any IDE first.\n\nA Harshad number is a positive integer which is exactly divisible by the sum of its digits. The first twelve Harshad numbers are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 and 18.\n\n  • 36 is a Harshad number (digits 3+6 = 9; 36 ÷ 9 = 4 exactly).\n  • 300 is a Harshad number (digits 3+0+0 = 3; 300 ÷ 3 = 100 exactly).\n  • 15 is NOT a Harshad number (digits 1+5 = 6; 15 ÷ 6 ≠ integer).\n\nWrite a program that asks the user to enter a number, n, and will then calculate and display the nth Harshad number.\n\nExample: if the user enters 12 → the program should display 18 (the 12th Harshad number).\n\nYou may assume the input will be a positive integer.",
-                    prompt: "Paste your PROGRAM SOURCE CODE here.\n\n(Question 07.2 — testing with n = 600 (expected output: 3102) — is the screen-capture evidence, done in print mode only.)", marks: 12 }
+                  { code: '07.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Harshad numbers — AQA 7517/1 Autumn 2021 Q07.1\n# A Harshad number is a positive integer exactly divisible\n# by the sum of its digits (e.g. 36 because 3+6=9 and 36÷9=4).\n# Read n, then output the nth Harshad number.\n\nn = int(input(\"Enter n: \"))\n# TODO: build your solution here.\nprint(0)\n"
+                    },
+                    testInputs: ["12", "600"],
+                    preamble: "Section B. Write a program from scratch. Use the in-browser code editor below — it runs Python directly in your browser. (Other languages: write here for the AI marker to grade against the AO3 design + programming rubric; running them in-browser isn't supported.)\n\nA Harshad number is a positive integer which is exactly divisible by the sum of its digits. The first twelve Harshad numbers are 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 12 and 18.\n\n  • 36 is a Harshad number (digits 3+6 = 9; 36 ÷ 9 = 4 exactly).\n  • 300 is a Harshad number (digits 3+0+0 = 3; 300 ÷ 3 = 100 exactly).\n  • 15 is NOT a Harshad number (digits 1+5 = 6; 15 ÷ 6 ≠ integer).\n\nWrite a program that asks the user to enter a number, n, and will then calculate and display the nth Harshad number.\n\nExample: if the user enters 12 → the program should display 18 (the 12th Harshad number).\n\nYou may assume the input will be a positive integer.",
+                    prompt: "Write your PROGRAM SOURCE CODE in the editor below, then click Run to test (try n = 12 → 18, n = 600 → 3102). Save & Next when ready — your code will be marked against the official AO3-design + AO3-programming mark scheme.\n\n(Question 07.2 — screen-capture evidence for the n = 600 test — is print-only.)", marks: 12 }
                 ]
               },
               // ── SECTION C — Skeleton Program comprehension (13 marks)
@@ -2201,9 +2211,14 @@ window.SUBJECTS = [
               {
                 number: 5,
                 parts: [
-                  { code: '05.1', extended: true,
-                    preamble: "Section B. Write a program from scratch. Paste your final program source code into the answer box below — you can write it in any IDE first.\n\nWrite a program that asks the user how many numeric digits they would like to enter and then gets the user to enter that number of numeric digits.\n\nThe program should calculate and display the number of times the most frequently entered numeric digit was input.\n\nExample: if the user says they are going to enter four digits and then enters 3, 4, 5 and 3, the program should display 2 (digit 3 was entered twice).\n\nIf more than one numeric digit has the same maximum frequency (multimodal), instead of displaying the frequency, a message saying \"Data was multimodal\" should be displayed.\n\nA numeric digit is 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9.\n\nYou may assume both the count and the digits entered are valid.",
-                    prompt: "Paste your PROGRAM SOURCE CODE here.\n\n(Question 05.2 — testing with [6: 0,1,2,1,2,1] (expected output: 3) and [5: 0,1,2,2,1] (expected output: \"Data was multimodal\") — is the screen-capture evidence, done in print mode only.)", marks: 12 }
+                  { code: '05.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Most-frequent-digit / multimodal — AQA 7517/1 Autumn 2020 Q05.1\n# Ask how many digits, then read that many digits.\n# Print the frequency of the most frequent digit,\n# OR \"Data was multimodal\" if more than one digit ties.\n\ncount = int(input(\"How many digits? \"))\n# TODO: build your solution here.\nprint(0)\n"
+                    },
+                    testInputs: ["6", "0", "1", "2", "1", "2", "1"],
+                    preamble: "Section B. Write a program from scratch. Use the in-browser code editor below — it runs Python directly in your browser. (Other languages: write here for the AI marker to grade against the AO3 design + programming rubric; running them in-browser isn't supported.)\n\nWrite a program that asks the user how many numeric digits they would like to enter and then gets the user to enter that number of numeric digits.\n\nThe program should calculate and display the number of times the most frequently entered numeric digit was input.\n\nExample: if the user says they are going to enter four digits and then enters 3, 4, 5 and 3, the program should display 2 (digit 3 was entered twice).\n\nIf more than one numeric digit has the same maximum frequency (multimodal), instead of displaying the frequency, a message saying \"Data was multimodal\" should be displayed.\n\nA numeric digit is 0, 1, 2, 3, 4, 5, 6, 7, 8 or 9.\n\nYou may assume both the count and the digits entered are valid.",
+                    prompt: "Write your PROGRAM SOURCE CODE in the editor below, then click Run to test.\n\nTest cases:\n  • count = 6, digits 0,1,2,1,2,1 → output 3\n  • count = 5, digits 0,1,2,2,1 → output \"Data was multimodal\"\n\nSave & Next when ready — your code will be marked against the official AO3-design + AO3-programming mark scheme.", marks: 12 }
                 ]
               },
               // ── SECTION C — Skeleton Program comprehension (15 marks)

@@ -7,6 +7,17 @@
   <title>RAG Learning — Past Paper Attempt</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <!-- CodeMirror 5 — syntax-highlighted code editor for AQA Paper 1 Section B "write a program" parts.
+       Modes (python/javascript/clike/pascal) are listed here so they're ready when the editor mounts.
+       Pyodide (Python-in-the-browser) is loaded lazily on the first Run click — see ensurePyodide(). -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/theme/eclipse.min.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/python/python.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/javascript/javascript.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/clike/clike.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/pascal/pascal.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.16/mode/vbscript/vbscript.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="nav-gating.js"></script>
@@ -154,6 +165,25 @@
     .qbq-answer.code-like { font-family: 'Consolas', 'Monaco', monospace; min-height: 220px; }
     .qbq-answer:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
     .qbq-answer-meta { margin: 6px 22px 0; font-size: 12px; color: var(--muted2); display: flex; justify-content: space-between; gap: 10px; }
+
+    /* In-browser code editor (Section B "write a program" parts) */
+    .code-editor-wrap { margin: 0 22px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); }
+    .code-editor-toolbar { display: flex; align-items: center; gap: 10px; padding: 10px 12px; background: var(--surface2); border-bottom: 1px solid var(--border); flex-wrap: wrap; font-size: 13px; }
+    .code-editor-toolbar label { color: var(--muted); font-weight: 600; }
+    .code-editor-toolbar select { padding: 5px 9px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); font-family: var(--font-body); font-size: 13px; color: var(--text); }
+    .code-editor-toolbar .btn { padding: 6px 12px; font-size: 13px; }
+    .code-editor-toolbar .spacer { flex: 1; }
+    .code-editor-toolbar .run-status { font-size: 12px; color: var(--muted); }
+    .code-editor-wrap .CodeMirror { height: 280px; font-family: 'Consolas', 'Monaco', monospace; font-size: 14px; line-height: 1.55; }
+    .code-editor-io { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-top: 1px solid var(--border); }
+    .code-editor-io > div { padding: 10px 12px; }
+    .code-editor-io > div + div { border-left: 1px solid var(--border); }
+    .code-editor-io label { display: block; font-size: 11.5px; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 6px; }
+    .code-editor-io textarea { width: 100%; min-height: 90px; padding: 8px 10px; font-family: 'Consolas', 'Monaco', monospace; font-size: 13px; border: 1px solid var(--border); border-radius: 6px; background: var(--surface); color: var(--text); resize: vertical; }
+    .code-editor-output { white-space: pre-wrap; min-height: 90px; padding: 8px 10px; font-family: 'Consolas', 'Monaco', monospace; font-size: 13px; background: #0B1E3F; color: #C7E0FF; border-radius: 6px; line-height: 1.55; overflow-x: auto; }
+    .code-editor-output.error { color: #FCA5A5; }
+    .code-editor-output.empty { color: rgba(199,224,255,0.4); font-style: italic; }
+    .code-editor-banner { margin: 0; padding: 8px 12px; background: rgba(37,99,235,0.05); border-bottom: 1px solid var(--border); font-size: 12.5px; color: var(--muted); }
 
     /* Marking phase — display the student's saved answer */
     .qbq-answer-display { margin: 0 22px; padding: 14px 16px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; font-size: 14.5px; line-height: 1.65; color: var(--text); white-space: pre-wrap; min-height: 60px; }
@@ -946,6 +976,120 @@
         return /lmc|pseudocode|program code|class|function/.test(promptCheck) || c.startsWith('5(e)(i)');
       }
 
+      // True for parts that should render the full in-browser code editor
+      // (CodeMirror + Run button) instead of a plain textarea — set on AQA
+      // Paper 1 Section B "write a program" parts via `kind: 'code'`.
+      function isCodeEntryPart(part) { return part && part.kind === 'code'; }
+
+      // ---------- In-browser code-runner state ----------
+      // Pyodide (Python compiled to WebAssembly) is ~10 MB and async to load,
+      // so we lazy-load on the first Run click of a Python program. Cached
+      // for the rest of the session.
+      let pyodidePromise = null;
+      function ensurePyodide(statusEl) {
+        if (pyodidePromise) return pyodidePromise;
+        pyodidePromise = (async () => {
+          if (statusEl) statusEl.textContent = 'Loading Python (≈10 MB, one-time)…';
+          // Pull in the pyodide loader on demand.
+          await new Promise((res, rej) => {
+            if (window.loadPyodide) return res();
+            const s = document.createElement('script');
+            s.src = 'https://cdn.jsdelivr.net/pyodide/v0.26.0/full/pyodide.js';
+            s.onload = res; s.onerror = rej;
+            document.head.appendChild(s);
+          });
+          const pyo = await window.loadPyodide({ indexURL: 'https://cdn.jsdelivr.net/pyodide/v0.26.0/full/' });
+          if (statusEl) statusEl.textContent = 'Python ready';
+          return pyo;
+        })().catch(err => { pyodidePromise = null; throw err; });
+        return pyodidePromise;
+      }
+
+      // Run the user's code with the contents of the test-input textarea
+      // wired into stdin so input() calls just consume successive lines.
+      async function runUserCode({ code, lang, inputText, outputEl, statusEl }) {
+        outputEl.classList.remove('error', 'empty');
+        outputEl.textContent = '';
+        const inputs = (inputText || '').replace(/\r\n/g, '\n').split('\n');
+        let i = 0;
+        try {
+          if (lang === 'python') {
+            const pyo = await ensurePyodide(statusEl);
+            statusEl.textContent = 'Running…';
+            // Capture stdout + stderr; override input() to pull from our queue.
+            pyo.setStdout({ batched: (s) => { outputEl.textContent += s + '\n'; } });
+            pyo.setStderr({ batched: (s) => { outputEl.textContent += s + '\n'; outputEl.classList.add('error'); } });
+            const queue = inputs;
+            pyo.globals.set('__qbq_inputs__', pyo.toPy(queue));
+            // Install a shim input() that pops from __qbq_inputs__.
+            pyo.runPython(`
+import builtins
+__qbq_q = list(__qbq_inputs__)
+def __qbq_input(prompt=""):
+    if prompt:
+        print(prompt, end="")
+    if not __qbq_q:
+        raise EOFError("No more test inputs — add lines to the Test input box on the left.")
+    return __qbq_q.pop(0)
+builtins.input = __qbq_input
+`);
+            await pyo.runPythonAsync(code);
+            statusEl.textContent = 'Done';
+          } else if (lang === 'javascript') {
+            statusEl.textContent = 'Running…';
+            // Tiny sandbox: capture console.log and provide a queue-fed prompt().
+            const queue = inputs.slice();
+            const log = (...args) => { outputEl.textContent += args.map(a => typeof a === 'string' ? a : JSON.stringify(a)).join(' ') + '\n'; };
+            const promptFn = (msg) => {
+              if (msg) outputEl.textContent += String(msg);
+              if (!queue.length) throw new Error('No more test inputs — add lines to the Test input box on the left.');
+              return queue.shift();
+            };
+            // Run as a function so `return` works and globals don't leak.
+            // eslint-disable-next-line no-new-func
+            const fn = new Function('console', 'prompt', code);
+            await fn({ log, info: log, warn: log, error: log }, promptFn);
+            statusEl.textContent = 'Done';
+          } else {
+            outputEl.textContent = `[Running ${lang} in-browser isn't supported. Your code is still saved and will be marked against the AQA mark scheme.]`;
+            outputEl.classList.add('empty');
+            statusEl.textContent = '';
+          }
+        } catch (err) {
+          outputEl.textContent += String(err && err.message ? err.message : err);
+          outputEl.classList.add('error');
+          statusEl.textContent = 'Error';
+        }
+        if (!outputEl.textContent.trim()) {
+          outputEl.textContent = '[No output — your program ran but printed nothing.]';
+          outputEl.classList.add('empty');
+        }
+      }
+
+      // Mount a CodeMirror editor inside the given <textarea> element. Returns
+      // the CodeMirror instance.
+      function mountCodeMirror(textarea, language) {
+        const modeMap = {
+          python: 'text/x-python',
+          javascript: 'text/javascript',
+          'c#': 'text/x-csharp',
+          'vb.net': 'text/vbscript',
+          java: 'text/x-java',
+          pascal: 'text/x-pascal'
+        };
+        const cm = CodeMirror.fromTextArea(textarea, {
+          lineNumbers: true,
+          mode: modeMap[language] || 'text/plain',
+          theme: 'eclipse',
+          indentUnit: 4,
+          tabSize: 4,
+          indentWithTabs: false,
+          lineWrapping: false,
+          extraKeys: { Tab: (cm) => cm.replaceSelection('    ') }
+        });
+        return cm;
+      }
+
       function renderStep() {
         const idx = attempt.currentIndex;
         const part = parts[idx];
@@ -984,23 +1128,78 @@
 
         if (phase === 'attempt') {
           const codeLike = isCodeAnswer(part);
-          bottomHtml = `
-            <div class="qbq-answer-label">Your answer to ${esc(part.code)}</div>
-            <div class="qbq-answer-area">
-              <textarea id="qbqAnswerInput" class="qbq-answer${codeLike ? ' code-like' : ''}"
-                placeholder="Write your answer here…">${esc(response.answer || '')}</textarea>
-            </div>
-            <div class="qbq-answer-meta">
-              <span id="qbqWordCount">0 words</span>
-              <span>Autosaves as you type. You'll self-mark at the end.</span>
-            </div>
-            <div class="qbq-controls">
-              <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
-              <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? 'Finish answering →' : 'Save & Next →'}</button>
-              <span class="spacer"></span>
-              <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
-              <button class="btn ghost" id="switchMode">↺ Switch mode</button>
-            </div>`;
+          const codeEntry = isCodeEntryPart(part);
+          if (codeEntry) {
+            // ── In-browser code editor block: CodeMirror + Run + Output.
+            // Languages: Python is fully runnable via Pyodide; JavaScript via
+            // native eval. Other languages (C#, VB.NET, Java, Pascal) show the
+            // editor but only the AI marker grades them — running them in the
+            // browser would mean shipping multi-MB compilers per language.
+            const lang = (response.codeLanguage || part.defaultLanguage || 'python').toLowerCase();
+            const langOptions = ['python', 'javascript', 'c#', 'vb.net', 'java', 'pascal'];
+            const optsHtml = langOptions.map(l => `<option value="${l}"${l === lang ? ' selected' : ''}>${l === 'c#' ? 'C#' : l === 'vb.net' ? 'VB.NET' : l[0].toUpperCase() + l.slice(1)}</option>`).join('');
+            const starter = (part.starterCode && part.starterCode[lang]) || (part.starterCode && part.starterCode.python) || '';
+            const initialCode = response.answer && response.answer.trim() ? response.answer : starter;
+            const initialInput = response.testInput != null ? response.testInput : (Array.isArray(part.testInputs) ? part.testInputs.join('\n') : '');
+            const runnable = lang === 'python' || lang === 'javascript';
+            bottomHtml = `
+              <div class="qbq-answer-label">Your answer to ${esc(part.code)} — write &amp; run code in the editor</div>
+              <div class="code-editor-wrap">
+                <div class="code-editor-toolbar">
+                  <label for="codeLangSel">Language:</label>
+                  <select id="codeLangSel">${optsHtml}</select>
+                  <button class="btn primary" id="codeRunBtn"${runnable ? '' : ' disabled style="opacity:0.5;cursor:not-allowed;"'} title="${runnable ? 'Run your code with the test input on the left' : 'In-browser execution only supported for Python and JavaScript'}">▶ Run</button>
+                  <button class="btn ghost" id="codeResetBtn" title="Reload the starter code (clears your work)">↺ Reset starter</button>
+                  <span class="spacer"></span>
+                  <span class="run-status" id="codeRunStatus"></span>
+                </div>
+                <div class="code-editor-banner">${runnable ? '<strong>In-browser execution:</strong> Python runs via Pyodide (first run downloads ~10 MB). JavaScript runs natively. The Test input box on the left feeds <code>input()</code> / <code>prompt()</code> calls one line at a time.' : '<strong>Editor-only mode</strong> for ' + (lang === 'c#' ? 'C#' : lang === 'vb.net' ? 'VB.NET' : lang[0].toUpperCase() + lang.slice(1)) + ': write your code here and it\'ll be saved for AI marking against the official AQA AO3-design + AO3-programming rubric. Switch to Python or JavaScript above if you want to actually run the program.'}</div>
+                <textarea id="qbqCodeEditor">${esc(initialCode)}</textarea>
+                <div class="code-editor-io">
+                  <div>
+                    <label for="codeTestInput">Test input (one value per line — fed to input() / prompt())</label>
+                    <textarea id="codeTestInput" placeholder="e.g.&#10;horse&#10;goose">${esc(initialInput)}</textarea>
+                  </div>
+                  <div>
+                    <label>Output</label>
+                    <div class="code-editor-output empty" id="codeOutput">[Click ▶ Run to execute your code.]</div>
+                  </div>
+                </div>
+              </div>
+              <!-- Hidden textarea — source of truth for response.answer so the
+                   existing save / AI-mark pipeline works unchanged. CodeMirror
+                   keeps it in sync on every edit. -->
+              <textarea id="qbqAnswerInput" style="display:none;">${esc(initialCode)}</textarea>
+              <div class="qbq-answer-meta">
+                <span id="qbqWordCount">${(initialCode || '').split('\n').length} lines</span>
+                <span>Autosaves as you type. AI marks the code against the official MS at the end.</span>
+              </div>
+              <div class="qbq-controls">
+                <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
+                <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? 'Finish answering →' : 'Save & Next →'}</button>
+                <span class="spacer"></span>
+                <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
+                <button class="btn ghost" id="switchMode">↺ Switch mode</button>
+              </div>`;
+          } else {
+            bottomHtml = `
+              <div class="qbq-answer-label">Your answer to ${esc(part.code)}</div>
+              <div class="qbq-answer-area">
+                <textarea id="qbqAnswerInput" class="qbq-answer${codeLike ? ' code-like' : ''}"
+                  placeholder="Write your answer here…">${esc(response.answer || '')}</textarea>
+              </div>
+              <div class="qbq-answer-meta">
+                <span id="qbqWordCount">0 words</span>
+                <span>Autosaves as you type. You'll self-mark at the end.</span>
+              </div>
+              <div class="qbq-controls">
+                <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
+                <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? 'Finish answering →' : 'Save & Next →'}</button>
+                <span class="spacer"></span>
+                <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
+                <button class="btn ghost" id="switchMode">↺ Switch mode</button>
+              </div>`;
+          }
         } else if (phase === 'marking') {
           const ans = (response.answer || '').trim();
           const hasMs = !!part.markScheme;
@@ -1113,24 +1312,103 @@
         };
 
         if (phase === 'attempt') {
-          const ta = document.getElementById('qbqAnswerInput');
-          ta.focus();
-          // Move caret to end so resuming a part doesn't drop you at column 0.
-          const end = ta.value.length;
-          ta.setSelectionRange(end, end);
-          updateWordCount();
-          ta.addEventListener('input', () => {
-            attempt.responses[idx].answer = ta.value;
-            saveAttempt(attempt);
+          const codeEntry = isCodeEntryPart(part);
+          if (codeEntry) {
+            // ── Mount CodeMirror on the visible textarea + mirror edits to
+            // the hidden qbqAnswerInput so saveResponse() / AI marking pick
+            // up the code as response.answer.
+            const cmTextarea = document.getElementById('qbqCodeEditor');
+            const hidden = document.getElementById('qbqAnswerInput');
+            const langSel = document.getElementById('codeLangSel');
+            const runBtn = document.getElementById('codeRunBtn');
+            const resetBtn = document.getElementById('codeResetBtn');
+            const inputBox = document.getElementById('codeTestInput');
+            const outputEl = document.getElementById('codeOutput');
+            const statusEl = document.getElementById('codeRunStatus');
+            const wcEl = document.getElementById('qbqWordCount');
+            let cm = mountCodeMirror(cmTextarea, langSel.value);
+            const syncFromEditor = () => {
+              const v = cm.getValue();
+              hidden.value = v;
+              attempt.responses[idx].answer = v;
+              if (wcEl) {
+                const lines = v.split('\n').length;
+                wcEl.textContent = `${lines} line${lines === 1 ? '' : 's'}`;
+              }
+              saveAttempt(attempt);
+            };
+            cm.on('change', syncFromEditor);
+            cm.focus();
+            // Language switcher: remount CodeMirror with the new mode.
+            // Persist the choice + (if the editor still shows starter code)
+            // load the language's starter so the student isn't stranded with
+            // syntax that no longer matches.
+            langSel.addEventListener('change', () => {
+              const newLang = langSel.value;
+              attempt.responses[idx].codeLanguage = newLang;
+              const currentVal = cm.getValue();
+              const starterPy = (part.starterCode && part.starterCode.python) || '';
+              const usingStarter = currentVal.trim() === starterPy.trim() || !currentVal.trim();
+              cm.toTextArea();
+              const newStarter = (part.starterCode && part.starterCode[newLang]) || '';
+              if (usingStarter && newStarter) cmTextarea.value = newStarter;
+              cm = mountCodeMirror(cmTextarea, newLang);
+              cm.on('change', syncFromEditor);
+              syncFromEditor();
+              // Update Run button enabled state based on new language.
+              const runnable = newLang === 'python' || newLang === 'javascript';
+              runBtn.disabled = !runnable;
+              runBtn.style.opacity = runnable ? '' : '0.5';
+              runBtn.style.cursor = runnable ? '' : 'not-allowed';
+            });
+            // Test-input box: persist between visits to this part.
+            inputBox.addEventListener('input', () => {
+              attempt.responses[idx].testInput = inputBox.value;
+              saveAttempt(attempt);
+            });
+            // Run: execute Python via Pyodide, JS natively, others a no-op.
+            runBtn.addEventListener('click', async () => {
+              if (runBtn.disabled) return;
+              runBtn.disabled = true;
+              try {
+                await runUserCode({
+                  code: cm.getValue(),
+                  lang: langSel.value,
+                  inputText: inputBox.value,
+                  outputEl, statusEl
+                });
+              } finally {
+                runBtn.disabled = false;
+              }
+            });
+            // Reset: clear back to the language's starter (with confirm so
+            // a fat-finger doesn't trash 12 marks of work).
+            resetBtn.addEventListener('click', () => {
+              const newStarter = (part.starterCode && part.starterCode[langSel.value]) || '';
+              if (!newStarter) return;
+              if (!confirm('Reset to the starter code? Your current code will be lost.')) return;
+              cm.setValue(newStarter);
+            });
+          } else {
+            const ta = document.getElementById('qbqAnswerInput');
+            ta.focus();
+            // Move caret to end so resuming a part doesn't drop you at column 0.
+            const end = ta.value.length;
+            ta.setSelectionRange(end, end);
             updateWordCount();
-          });
-          // Ctrl+Enter / Cmd+Enter advances; plain Enter inserts a newline.
-          ta.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
-              e.preventDefault();
-              document.getElementById('nextBtn').click();
-            }
-          });
+            ta.addEventListener('input', () => {
+              attempt.responses[idx].answer = ta.value;
+              saveAttempt(attempt);
+              updateWordCount();
+            });
+            // Ctrl+Enter / Cmd+Enter advances; plain Enter inserts a newline.
+            ta.addEventListener('keydown', (e) => {
+              if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
+                e.preventDefault();
+                document.getElementById('nextBtn').click();
+              }
+            });
+          }
         } else if (phase === 'review') {
           // Read-only — just wire the Back-to-result button. Prev/Next/jump
           // are wired below in the shared block.
