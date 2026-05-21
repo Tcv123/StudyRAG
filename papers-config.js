@@ -548,7 +548,7 @@ window.SUBJECTS = [
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-QP-JUN22.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-MS-JUN22.PDF',
-            qbqNote: "Section D (Q11–Q14, 37 marks) requires the AQA Skeleton Program file (Breakthrough.py / Breakthrough.cs / Breakthrough.vb / Breakthrough.pas / Breakthrough.java) which AQA distributes to centres for the exam — it isn't on the public filestore, so Section D is print-only here. Open the QP PDF alongside this stepper if questions reference figures.",
+            qbqNote: "Section D code parts (Q11.1, Q12.1, Q13.1, Q14.1 — 33 marks total) are now wired up with a study-prep Python reconstruction of the Breakthrough skeleton. Each part gives you a focused starter and a test driver — write your modification, click Run to verify, then Save & Next for AI marking against the official MS. The 4 screen-capture sub-parts (Q11.2/12.2/13.2/14.2 = 5 marks) stay print-only since they're evidence of running your modified program. AQA's real Skeleton Program is centre-only — this reconstruction is for practice.",
             questions: [
               // ── SECTION A — algorithms / data structures / graphs (33 marks)
               {
@@ -689,6 +689,61 @@ window.SUBJECTS = [
                   { code: '10',
                     preamble: "The user must input a D or P to select Discard or Play during a game.",
                     prompt: "Write a regular expression that would match the character D or P.\n\nYou should not make any changes to the Skeleton Program to answer this question.", marks: 1 }
+                ]
+              },
+              // ── SECTION D — Skeleton Program modifications (33 marks).
+              // Each question targets a different focused subroutine, with a
+              // study-prep Python reconstruction of just the relevant piece
+              // of the Breakthrough skeleton. Screen-capture sub-parts
+              // (Q*.2 = 5 marks total) stay print-only — they're literally
+              // "show a screenshot of your terminal".
+              {
+                number: 11,
+                scenario: "Section D — these questions modify subroutines inside the Breakthrough skeleton. The skeleton in front of you below is a study-prep reconstruction in Python that mirrors the relevant subroutine + just enough context to test your modification. AQA's official Skeleton Program is distributed to centres only — this reconstruction is for practice. Run your modified code with the test inputs to verify behaviour; AI marks against the official AQA mark scheme.",
+                parts: [
+                  { code: '11.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed Breakthrough Skeleton — AQA CS 7517/1 June 2022, Q11.1\n# ────────────────────────────────────────────────────────────────────\n# Study-prep reconstruction. The real AQA Skeleton Program is centre-only.\n#\n# Q11 task: Modify the GetDiscardOrPlayChoice subroutine so it checks\n# that the value entered by the player is valid (only D or P are\n# allowed). An appropriate error message should be displayed if an\n# invalid value is entered and the user should be made to enter\n# another value.\n\nclass Breakthrough:\n    def GetDiscardOrPlayChoice(self):\n        # ── ORIGINAL VERSION — modify this ──\n        # Currently reads one line of input with no validation, so any\n        # value is accepted. Wrap this in a loop that keeps asking\n        # until the input is D or P, and shows an error in between.\n        Choice = input(\"Enter D to discard or P to play: \").upper()\n        return Choice\n\n\n# ── Test driver (do not modify) ──\n# The QP test enters L (invalid) then D (valid). Your modified subroutine\n# should reject L with an error message and accept D.\ngame = Breakthrough()\nresult = game.GetDiscardOrPlayChoice()\nprint(f\"--- GetDiscardOrPlayChoice returned: {result!r}\")\n"
+                    },
+                    testInputs: ["L", "D"],
+                    prompt: "Modify the subroutine GetDiscardOrPlayChoice so it checks that the value entered by the player is valid. An appropriate error message should be displayed if an invalid value is entered and the user should be made to enter another value.\n\nClick ▶ Run with the test inputs L, D. A correct modification rejects L with an error then accepts D.\n\n(Question 11.2 — the screen-capture evidence — is print-only.)", marks: 4 }
+                ]
+              },
+              {
+                number: 12,
+                parts: [
+                  { code: '12.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed Breakthrough Skeleton — AQA CS 7517/1 June 2022, Q12.1\n# ────────────────────────────────────────────────────────────────────\n# Q12 task:\n#   1. Create a subroutine GetNumberOfToolCards in CardCollection that\n#      returns the count of tool cards (CardType in {'P','F','K'} —\n#      pick, file, key) in self.Cards.\n#   2. Modify PlayGame so that AFTER the score is displayed and BEFORE\n#      the hand is displayed, two messages are shown:\n#        - how many cards are in the deck\n#        - how many tool cards are in the deck\n\nclass Card:\n    def __init__(self, card_number, card_type):\n        self.CardNumber = card_number\n        self.CardType = card_type   # 'P', 'F', 'K', 'Dif'\n    def GetCardType(self):\n        return self.CardType\n    def __str__(self):\n        return f\"{self.CardNumber}{self.CardType}\"\n\n\nclass CardCollection:\n    def __init__(self):\n        self.Cards = []\n    def AddCard(self, card):\n        self.Cards.append(card)\n    def GetNumberOfCards(self):\n        return len(self.Cards)\n    def __str__(self):\n        return ' '.join(str(c) for c in self.Cards)\n\n    # ── TODO Q12.1 Task 2 ──\n    # Add a method GetNumberOfToolCards(self) below that iterates through\n    # self.Cards and returns the count of cards whose CardType is one of\n    # 'P', 'F', 'K'. It should return that integer count.\n\n\nclass Breakthrough:\n    def __init__(self):\n        self.Score = 0\n        self.Deck = CardCollection()\n        self.Hand = CardCollection()\n        # Sample deck: 33 cards — 28 tools (P/F/K) + 5 difficulty cards\n        for i in range(1, 11):  self.Deck.AddCard(Card(i, 'P'))\n        for i in range(11, 20): self.Deck.AddCard(Card(i, 'F'))\n        for i in range(20, 29): self.Deck.AddCard(Card(i, 'K'))\n        for i in range(29, 34): self.Deck.AddCard(Card(i, 'Dif'))\n        for i in range(1, 6):   self.Hand.AddCard(Card(40 + i, 'P'))\n\n    def PlayGame(self):\n        # ── ORIGINAL VERSION — modify this ──\n        # Currently just shows score + hand. Add the two messages between\n        # them as described above (use GetNumberOfToolCards for the second).\n        print(f\"Your current score is: {self.Score}\")\n        print(f\"Your hand: {self.Hand}\")\n\n\n# ── Test driver (do not modify) ──\ngame = Breakthrough()\ngame.PlayGame()\ntry:\n    count = game.Deck.GetNumberOfToolCards()\n    print(f\"--- GetNumberOfToolCards returned: {count}  (expected 28)\")\nexcept AttributeError:\n    print(\"--- GetNumberOfToolCards not yet defined on CardCollection.\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Implement BOTH tasks: (1) create GetNumberOfToolCards in CardCollection, (2) modify PlayGame to show deck size and tool-card count between the score and the hand.\n\nClick ▶ Run. A correct modification prints:\n  Your current score is: 0\n  There are 33 cards in the deck\n  There are 28 tool cards in the deck\n  Your hand: 41P 42P 43P 44P 45P\n  --- GetNumberOfToolCards returned: 28\n\n(Question 12.2 — screen-capture evidence — is print-only.)", marks: 8 }
+                ]
+              },
+              {
+                number: 13,
+                parts: [
+                  { code: '13.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed Breakthrough Skeleton — AQA CS 7517/1 June 2022, Q13.1\n# ────────────────────────────────────────────────────────────────────\n# Q13 task: Add a blasting cap feature.\n#   • The player can use the blasting cap ONCE per game.\n#   • When chosen, the program should:\n#       - check if the cap has already been used. If yes → nothing\n#         happens, game continues.\n#       - otherwise ask which challenge on the current lock to complete\n#         (1, 2, 3, …).\n#       - check: position ≤ number of challenges AND that challenge\n#         isn't already met.\n#       - if both pass: mark it met, mark cap used, show success.\n#       - if either fails: cap is wasted (marked used, no challenge\n#         completed), game continues.\n\nclass Lock:\n    def __init__(self, challenges):\n        self.Challenges = challenges  # list[bool], True = met\n    def __str__(self):\n        return ' '.join('[X]' if c else '[ ]' for c in self.Challenges)\n\n\nclass Breakthrough:\n    def __init__(self):\n        # Current lock has 4 challenges, none initially met\n        self.CurrentLock = Lock([False, False, False, False])\n        # ── TODO Q13.1 Task 1: add a variable that tracks blasting-cap state ──\n        # e.g. self.BlastingCapAvailable = True  (or HasUsedBlastingCap = False)\n\n    def GetChoice(self):\n        # ── TODO Q13.1 Task 1: also offer 'B' for blasting cap ──\n        print(\"Choose: (D)raw, (P)lay, (U)se, (Q)uit:\", end=' ')\n        return input().upper()\n\n    def PlayGame(self):\n        # Game loop. Modify so a 'B' choice triggers the blasting-cap\n        # behaviour described in the task.\n        while True:\n            print(f\"Lock: {self.CurrentLock}\")\n            choice = self.GetChoice()\n            if choice == 'Q':\n                print(\"Goodbye.\")\n                break\n            elif choice == 'B':\n                # ── TODO Q13.1 Task 2: implement blasting-cap logic here ──\n                print(\"(blasting cap not implemented yet)\")\n            else:\n                print(f\"You chose: {choice}\")\n\n\n# ── Test driver (do not modify) ──\n# The QP test:\n#   • use blasting cap on challenge 3 (succeeds — challenge 3 becomes met)\n#   • use blasting cap again (already used — nothing happens)\ngame = Breakthrough()\ngame.PlayGame()\n"
+                    },
+                    testInputs: ["B", "3", "B", "3", "Q"],
+                    prompt: "Modify the program so the player can use a blasting cap to complete any challenge on the current lock — only once per game.\n\nClick ▶ Run. A correct modification:\n  • First B/3: marks challenge 3 met, shows success message, marks cap used\n  • Second B: shows nothing happens (cap already used)\n\n(Question 13.2 — screen-capture evidence — is print-only.)", marks: 9 }
+                ]
+              },
+              {
+                number: 14,
+                parts: [
+                  { code: '14.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed Breakthrough Skeleton — AQA CS 7517/1 June 2022, Q14.1\n# ────────────────────────────────────────────────────────────────────\n# Q14 task: Add a new type of difficulty card, TrapCard.\n#   1. Create class TrapCard as a subclass of DifficultyCard.\n#      Constructor sets CardNumber from its parameter and CardType to 'Trp'.\n#   2. Create a Process subroutine in TrapCard that overrides the one\n#      in DifficultyCard:\n#        - if NO challenges on current lock have been met → behave like\n#          a normal DifficultyCard (player loses a key)\n#        - if ≥1 challenges have been met → randomly pick one met\n#          challenge and flip it to NOT met (instead of the Dif effect)\n#   3. Modify SetupCardCollectionFromGameFile to create TrapCards\n#      instead of DifficultyCards.\n#   4. Modify GetCardFromDeck so that if the drawn card has CardType\n#      'Trp', the message 'Trap!' is displayed, then it's processed\n#      like a Dif card.\n\nimport random\n\n\nclass Card:\n    def __init__(self, card_number):\n        self.CardNumber = card_number\n        self.CardType = ''\n    def GetCardType(self):\n        return self.CardType\n\n\nclass DifficultyCard(Card):\n    def __init__(self, card_number):\n        super().__init__(card_number)\n        self.CardType = 'Dif'\n    def Process(self, game):\n        print(\"Difficulty: you lost a key.\")\n        game.Keys -= 1\n\n\n# ── TODO Q14.1 Task 1: Create the TrapCard subclass below ──\n# class TrapCard(DifficultyCard):\n#     def __init__(self, card_number):\n#         ...\n#     def Process(self, game):\n#         ...\n\n\nclass Lock:\n    def __init__(self, challenges):\n        self.Challenges = challenges  # list[bool], True = met\n    def __str__(self):\n        return ' '.join('[X]' if c else '[ ]' for c in self.Challenges)\n\n\nclass Breakthrough:\n    def __init__(self, loaded_from_file=False):\n        self.Keys = 3\n        self.CurrentLock = Lock([True, False, True, False])  # mixed initial state\n        self.Deck = []\n        if loaded_from_file:\n            self.SetupCardCollectionFromGameFile()\n        else:\n            self.Deck.append(DifficultyCard(1))\n\n    def SetupCardCollectionFromGameFile(self):\n        # ── TODO Q14.1 Task 2: change DifficultyCard → TrapCard ──\n        self.Deck.append(DifficultyCard(1))\n\n    def GetCardFromDeck(self):\n        # ── TODO Q14.1 Task 3: if CardType is 'Trp', print 'Trap!' before processing ──\n        card = self.Deck.pop(0)\n        card.Process(self)\n        return card\n\n\n# ── Test driver (do not modify) ──\nrandom.seed(42)  # deterministic for the test\nprint(\"=== Test 1: default game (DifficultyCard) ===\")\ngame1 = Breakthrough(loaded_from_file=False)\ncard = game1.GetCardFromDeck()\nprint(f\"Drew: {type(card).__name__} (CardType={card.CardType!r})\")\nprint(f\"Keys after: {game1.Keys}\")\n\nprint(\"\\n=== Test 2: loaded game (TrapCard with some met challenges) ===\")\ngame2 = Breakthrough(loaded_from_file=True)\nprint(f\"Lock before: {game2.CurrentLock}\")\ncard = game2.GetCardFromDeck()\nprint(f\"Drew: {type(card).__name__} (CardType={card.CardType!r})\")\nprint(f\"Lock after:  {game2.CurrentLock}\")\nprint(f\"Keys after:  {game2.Keys}  (should still be 3 — TrapCard flips a challenge instead)\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Implement ALL FOUR tasks: TrapCard class, override Process (random met-challenge flip vs. fall back to Dif behaviour), modify SetupCardCollectionFromGameFile, and modify GetCardFromDeck to print 'Trap!' for Trp cards.\n\nClick ▶ Run. A correct implementation:\n  Test 1 → \"DifficultyCard\" drawn, key lost (Keys = 2)\n  Test 2 → \"Trap!\" printed, \"TrapCard\" drawn, one of the met challenges is now unmet, Keys still 3\n\n(Question 14.2 — screen-capture evidence — is print-only.)", marks: 12 }
                 ]
               }
             ],
@@ -865,7 +920,58 @@ window.SUBJECTS = [
                 guidance: '1 mark for 2.' },
               '10': { type: 'exact',
                 points: ['D|P', '[DP]', 'P|D', '[PD]'],
-                guidance: '1 mark for any of D|P, [DP], P|D, [PD]. I. use of quotes around each character. A. use of ^ and/or $ in expression as long as done correctly.' }
+                guidance: '1 mark for any of D|P, [DP], P|D, [PD]. I. use of quotes around each character. A. use of ^ and/or $ in expression as long as done correctly.' },
+              // ── Section D mark schemes (Q11.1–Q14.1 = 33 marks). All AO3
+              // programming marks against the official MS bullet lists.
+              '11.1': { type: 'points',
+                points: [
+                  'AO3 programming — Iterative structure contains code that gets the choice from the player (e.g. while loop containing input())',
+                  "AO3 programming — One correct condition (e.g. condition that checks if the input is 'D' OR is 'P', or that checks the input is NOT 'D' / NOT 'P')",
+                  'AO3 programming — Both correct conditions and correct logic (the loop continues iff input is neither D nor P; combined with the right boolean operator)',
+                  "AO3 programming — Displays an error message under all correct circumstances and only under correct circumstances (shown when invalid input was entered, not shown when valid input was entered)"
+                ],
+                guidance: '4 marks total. Max 3 if code contains errors. The AI marker should look for: a loop (while / repeat-until / equivalent); one or both validity conditions on D and P; and an error-message print that fires exactly when the input is invalid. Original starter had no validation at all — credit any iteration + validation that follows the QP brief.' },
+              '12.1': { type: 'points',
+                points: [
+                  'AO3 programming — Creating a new subroutine called GetNumberOfToolCards (R. other identifiers; I. case; I. minor spelling mistakes)',
+                  'AO3 programming — New subroutine has a mechanism to return an integer value (I. incorrect value; A. other numeric data types)',
+                  'AO3 programming — Iterative structure that repeats a number of times based on the size of Cards (e.g. for c in self.Cards / for i in range(len(self.Cards)))',
+                  'AO3 programming — Gets the type of the card inside the iterative structure (e.g. c.CardType or c.GetCardType())',
+                  "AO3 programming — Selection structure inside the iterative structure that compares the card type with at least one of 'P', 'F' or 'K'",
+                  "AO3 programming — Selection structure has the correct conditions and the value to return is incremented by one inside the selection structure (e.g. += 1)",
+                  'AO3 programming (PlayGame) — Valid call(s) to GetNumberOfToolCards and/or GetNumberOfCards, with the value returned by the call(s) displayed (A. alternative identifier for the new subroutine if it matches the identifier used in the first mark point)',
+                  "AO3 programming (PlayGame) — Appropriate messages displayed along with the values returned (R. if printed BEFORE the score; R. if printed AFTER the hand — they must appear between the score and the hand per the task brief)"
+                ],
+                guidance: '8 marks total. Max 7 if code contains errors. Alternative answer for mark points 5 and 6: a selection structure that checks for CardType == "Dif" and increments a counter, then subtracts that count from GetNumberOfCards() before returning (same outcome, opposite direction). Alternative answer for mark points 4 and 5: gets the SCORE for the card and compares it with zero (also a valid reading of "tool card" if the skeleton scores Dif cards as 0). Either alternative path earns the same marks.' },
+              '13.1': { type: 'points',
+                points: [
+                  'AO3 programming — Create a variable with an appropriate name and data type to track blasting-cap state (e.g. BlastingCapAvailable = True, or HasUsedBlastingCap = False). Must NOT be inside the iterative game loop',
+                  "AO3 programming — Selection structure (in GetChoice or equivalent) that checks for the player's choice being 'B' (or a suitable alternative letter), with an appropriately modified prompt message",
+                  'AO3 programming — Selection structure that checks if the player has a blasting cap (or does NOT have a blasting cap)',
+                  "AO3 programming — If the player has a blasting cap (A. incorrect condition), get the player's choice of challenge (R. if value is not an integer, unless converted before use)",
+                  'AO3 programming — If they chose to use a blasting cap (A. incorrect condition), set the variable used to indicate if there is a blasting cap to False / used (or equivalent)',
+                  "AO3 programming — Selection structure that checks the player's choice of challenge is less than or equal to the number of challenges on the current lock",
+                  'AO3 programming — Selection structure that checks the chosen challenge has NOT already been met (R. if checks the wrong challenge)',
+                  'AO3 programming — If conditions for both checks are met, display a message saying the blasting cap has been used (I. incorrect logic for the selection structure)',
+                  'AO3 programming — Changes the met status of the challenge specified by the player, inside the selection structure(s) for the two checks (R. if changes the wrong challenge)'
+                ],
+                guidance: '9 marks total. Max 8 if code contains errors. The AI marker should accept any 1-indexed or 0-indexed challenge position as long as the off-by-one is consistent within the student\'s code.' },
+              '14.1': { type: 'points',
+                points: [
+                  'AO3 programming — Create a new class called TrapCard (R. other names for the class; I. case and minor typos)',
+                  'AO3 programming — TrapCard inherits from DifficultyCard',
+                  "AO3 programming — Constructor sets the value of CardNumber to the value of its parameter (NOT a hard-coded value)",
+                  "AO3 programming — Constructor sets the value of CardType to 'Trp' (R. 'trp' lowercase if inconsistent with the skeleton's CardType naming)",
+                  'AO3 programming — Process subroutine in TrapCard overrides the one in DifficultyCard',
+                  "AO3 programming — Process correctly identifies whether there are any met challenges on the current lock",
+                  'AO3 programming — Process uses a random-selection mechanism to pick one met challenge (e.g. random.choice on the list of met-challenge indices)',
+                  "AO3 programming — Process changes the met status of the randomly-selected challenge so it is no longer met",
+                  "AO3 programming — When no met challenges exist, Process falls back to standard DifficultyCard behaviour (player loses a key / discards five cards)",
+                  'AO3 programming — Modify SetupCardCollectionFromGameFile so it creates TrapCard objects instead of DifficultyCard objects',
+                  "AO3 programming — Modify GetCardFromDeck so that if the drawn card has CardType 'Trp', the message 'Trap!' is displayed",
+                  "AO3 programming — In GetCardFromDeck, the Trp card is then processed in the same way as a 'Dif' card (i.e. Process is called)"
+                ],
+                guidance: '12 marks total. Max 11 if code contains errors. The AI marker should check that Process correctly branches on whether ANY met challenges exist and that the random-pick logic only considers met challenges (not all challenges).' }
             }
           },
           {
