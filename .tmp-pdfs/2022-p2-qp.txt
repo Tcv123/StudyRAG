@@ -1,0 +1,863 @@
+Please write clearly in block capitals.                          Candidate number
+Centre number
+
+Surname
+
+Forename(s)
+
+Candidate signature
+                                 I declare this is my own work.
+
+A-level
+COMPUTER SCIENCE
+
+Paper 2
+
+                                                                 Time allowed: 2 hours 30 minutes
+
+Materials                                                                          For Examiner's Use
+For this paper you must have:
+· a calculator.                                                                    Question  Mark
+                                                                                        1
+Instructions                                                                            2
+· Use black ink or black ball-point pen.                                                3
+· Fill in the boxes at the top of this page.                                            4
+· Answer all questions.                                                                 5
+· You must answer the questions in the spaces provided. Do not write outside            6
+                                                                                        7
+   the box around each page or on blank pages.                                          8
+· If you need extra space for your answer(s), use the lined pages at the end of         9
+                                                                                       10
+   this book. Write the question number against your answer(s).                        11
+· Do all rough work in this book. Cross through any work you do not want to            12
+                                                                                       13
+   be marked.
+                                                                                   TOTAL
+Information
+· The marks for questions are shown in brackets.
+· The maximum mark for this paper is 100.
+
+Advice
+· In some questions you are required to indicate your answer by completely
+
+   shading a lozenge alongside the appropriate answer as shown.
+· If you want to change your answer you must cross out your original answer as
+
+   shown.
+· If you wish to return to an answer previously crossed out, ring the answer
+
+   you now wish to select as shown.
+
+*JUN227517201*                                                                     7517/2
+
+                                                                 IB/G/Jun22/E16
+                   2                                                                                Do not write
+      Answer all questions.                                                                         outside the
+
+                                                                                                         box
+
+0 1 . 1 Describe how a 12-bit unsigned binary integer such as 010010101110 can be
+
+                 converted directly into hexadecimal.
+
+      The method you describe must not involve converting into decimal.
+
+                                                                                 [2 marks]
+
+0 1 . 2 State one reason why hexadecimal is often used in preference to binary.
+
+                                                                                 [1 mark]
+
+0 2 . 1 A data communications system uses parallel data transmission.                                3
+                 Describe how parallel data transmission works.                  [2 marks]
+
+*02*                                                                             IB/G/Jun22/7517/2
+          3
+
+0 2.2  State one advantage of serial data transmission over parallel data transmission.                                  Do not write
+                                                                                                              [1 mark]   outside the
+
+                                                                                                                              box
+
+0 2.3  Shade one lozenge to indicate which of these statements about data communications
+       systems is false.
+
+                                                                                                               [1 mark]
+
+       A  For a particular communications channel, the bit rate can be higher than
+          the baud rate.
+
+       B Latency is the rate at which signals on a wire or line can change.
+
+          The bandwidth of a transmission medium is the range of signal
+       C frequencies that the medium can transmit without a significant reduction
+
+          in signal strength.
+
+       D  The greater the bandwidth of a transmission medium the higher the bit
+          rate that can be achieved by a communication system using it.
+
+0 2 . 4 State the purpose of the start bit in asynchronous serial transmission.
+
+                                                                                    [1 mark]
+
+0 2 . 5 State the purpose of the stop bit in asynchronous serial transmission.
+
+                                                                                    [1 mark]
+
+                                                                                                                         6
+
+*03*                                                                             Turn over 
+
+                                                                                   IB/G/Jun22/7517/2
+                                  4
+
+0 3 . 1 Complete the truth table in Figure 1 for the inputs A and B.                         Do not write
+                                                                                              outside the
+
+                                                                                                   box
+
+                                                                      [1 mark]
+
+                                     Figure 1
+
+         +                               
+
+      00
+      01
+      10
+      11
+
+0 3 . 2 The truth table in Figure 1 demonstrates the correctness of an important law in
+                 Boolean algebra.
+
+      State the name of the law.
+
+                                                                      [1 mark]
+
+*04*                                                                  IB/G/Jun22/7517/2
+                                                                5                       Do not write
+0 3 . 3 Using the rules of Boolean algebra, simplify the following Boolean expression.  outside the
+
+                                                                                             box
+
+              A+BC+BC + C  (A + A  (B + 1))
+
+      You must show your working.              [4 marks]
+      Working
+
+      Answer                                                                            6
+
+              Turn over for the next question
+
+*05*                                           Turn over 
+
+                                                 IB/G/Jun22/7517/2
+                                                                6                                                                  Do not write
+0 4 . 1 Define the term `system software'.                                                                                         outside the
+
+                                                                                                                                        box
+
+                                                                   [1 mark]
+
+0 4 . 2 The list below contains five types of software. Four of the types are examples of
+                 system software.
+                 Shade one lozenge to indicate which type of software is not system software.
+                                                                                                                         [1 mark]
+
+                 A Assemblers
+
+                 B Bitmap image editors
+
+                 C Interpreters
+
+                 D Libraries
+
+                 E Utility programs
+
+0 4 . 3 Describe two functions of an operating system.             [2 marks]
+                 Function 1
+
+      Function 2
+                                                                                                                                4
+
+*06*                                                               IB/G/Jun22/7517/2
+                                                                7                                                       Do not write
+                                                                                                                        outside the
+0 5 . 1 Figure 2 shows a number stored using a fixed point representation and two's
+                 complement, with six bits before and four bits after the binary point.                                      box
+                                                                     Figure 2
+
+                 1011001011
+
+       Convert the number in Figure 2 to decimal.
+       You should show your working.
+
+                                                        [2 marks]
+
+       Answer
+
+0 5.2  State two reasons why values stored using a floating point representation are
+       usually stored in normalised form.
+
+                                                                                                             [2 marks]
+
+       Reason 1
+
+       Reason 2
+
+                 Question 5 continues on the next page
+
+*07*                                                    Turn over 
+
+                                                          IB/G/Jun22/7517/2
+              8
+
+      Questions 05.3, 05.4 and 05.5 use a normalised floating point representation with an  Do not write
+      8-bit mantissa and a 4-bit exponent, both stored using two's complement.              outside the
+
+                                                                                                 box
+
+0 5 . 3 Figure 3 shows a floating point representation of a number.
+
+                 Figure 3
+
+      Calculate the decimal equivalent of the number.
+      Express your answer as a fraction or to 4 decimal places.
+      You should show your working.
+
+                                                                     [2 marks]
+
+      Answer
+
+*08*                                                                 IB/G/Jun22/7517/2
+                                     9
+
+      Questions 05.3, 05.4 and 05.5 use a normalised floating point representation with an     Do not write
+      8-bit mantissa and a 4-bit exponent, both stored using two's complement.                 outside the
+
+                                                                                                    box
+
+0 5 . 4 Write the normalised floating point representation of the decimal value ­23.25 in the
+                 boxes below.
+
+      You should show your working.
+
+                                                               [3 marks]
+
+      Answer
+                        Question 5 continues on the next page
+
+*09*                                                           Turn over 
+
+                                                                 IB/G/Jun22/7517/2
+              10
+
+      Questions 05.3, 05.4 and 05.5 use a normalised floating point representation with an           Do not write
+      8-bit mantissa and a 4-bit exponent, both stored using two's complement.                       outside the
+
+                                                                                                          box
+
+0 5 . 5 Figure 4 shows the closest possible representation of the decimal number
+                 ­0.22558594 in this floating point system.
+
+                  Figure 4
+
+      By converting this number back to decimal it can be seen that the actual value stored
+      is ­0.2265625
+
+      Calculate the relative error that has occurred when representing ­0.22558594
+      You should show your working.
+
+      Express your answer as a percentage to 2 decimal places.
+
+                                                                                  [2 marks]
+
+      Answer                                                                                         11
+
+*10*                                                                              IB/G/Jun22/7517/2
+                          11                                Do not write
+      Turn over for the next question                       outside the
+
+                                                                 box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*11*                                   Turn over 
+
+                                         IB/G/Jun22/7517/2
+06                                                  12                                                                Do not write
+                                                                                                                      outside the
+      Supermarkets often gather information about their customers and the purchases that
+      they make. This information can be analysed by the supermarket and other                                             box
+      companies for a range of purposes.
+
+      Some of the information is collected at the checkout, where the identity of the person
+      is read from a loyalty or payment card using RFID (radio-frequency identification) and
+      a barcode reader is used to identify the products being purchased.
+
+      By analysing the purchases that a shopper has made, it might be possible to identify
+      such things as whether the shopper has children, is pregnant, or lives in a house with
+      a garden. Other types of analysis might include the amount of money a customer
+      spends, the times that they choose to shop at and the differences in shopping habits
+      of different groups of shoppers.
+
+      Describe the principles of operation of the hardware used to collect the information
+      and discuss some of the ethical and legal issues that might arise as a result of the
+      capture and processing of this data.
+
+      In your answer you will be assessed on your ability to follow a line of reasoning to
+      produce a coherent, relevant and structured response.
+
+                                                                                                          [12 marks]
+
+*12*  IB/G/Jun22/7517/2
+      13
+
+                                                                                                                       Do not write
+                                                                                                                        outside the
+
+                                                                                                                             box
+
+*13*                        12
+      Turn over 
+
+        IB/G/Jun22/7517/2
+          14
+
+07     A network of zoos uses a relational database system to store information about the                                Do not write
+       animals that they have so that they can be matched up with animals at other zoos in a                             outside the
+       breeding programme.
+                                                                                                                              box
+
+       Figure 5 shows the structure of the relations in the database.
+
+          Figure 5
+
+          Zoo(ZooName, Town, Country)
+          AnimalLocation(AnimalID, ZooName, DateArrived, DateLeft)
+          Animal(AnimalID, IndividualName, Species, DateOfBirth, Sex)
+          Match(AnimalFemaleID, AnimalMaleID, DateOfMatch, Successful)
+
+       · The Zoo relation stores details of the zoos that participate in the breeding
+          programme. Each zoo is uniquely identified by its ZooName.
+
+       · The AnimalLocation relation identifies which zoos each animal has lived at. The
+          zoo that the animal is currently at can be identified because the DateLeft attribute is
+          set to 01/01/0001 to indicate that the animal has not left.
+
+       · The Animal relation stores details of the individual animals that are available to be
+          matched with other animals for breeding. Each animal is identified by a unique
+          number, the AnimalID. The individual name of the animal (eg `Timothy') is also
+          stored, together with the species of the animal (eg `Red Panda'), its date of birth
+          and its sex (`Male' or `Female').
+
+       · The Match relation stores details of matches that have been made. The attributes
+          AnimalFemaleID and AnimalMaleID refer to the AnimalID values of the two
+          matched animals in the Animal relation.
+
+0 7.1  Shade one lozenge to identify which of the properties below does not have to be
+       true for a fully normalised database.
+
+                                                                                                               [1 mark]
+
+       A Each attribute in a relation is dependent on the primary key.
+
+       B  Each attribute in a relation is dependent only on the primary key; it is not
+          also dependent on any other attribute in the relation.
+
+       C The primary key in each relation consists of only one attribute.
+
+       D There are no repeating groups (or equivalently each attribute is atomic).
+
+*14*                                                                                IB/G/Jun22/7517/2
+                              15
+
+0 7 . 2 Figure 6 is an incomplete entity-relationship diagram for part of the database shown                            Do not write
+                 in Figure 5.                                                                                           outside the
+
+                                                                                                                             box
+
+       Draw lines on Figure 6 to indicate the degree of the two relationships between the
+       three entities shown in the entity-relationship diagram.
+
+                                                                                                             [2 marks]
+
+                                  Figure 6
+
+0 7.3  Complete the following SQL statement to create the Animal relation, including the key
+       field.
+
+                                                                                                             [3 marks]
+
+       CREATE TABLE Animal (
+
+       Question 7 continues on the next page               )
+
+*15*                                          Turn over 
+
+                                                IB/G/Jun22/7517/2
+                                                               16                                                      Do not write
+                                                                                                                       outside the
+0 7 . 4 Figure 5 is repeated below to help you answer Question 07.4 without having to turn
+                 back in the question paper.                                                                                box
+
+                                                             Figure 5 (repeated)
+                         Zoo(ZooName, Town, Country)
+                         AnimalLocation(AnimalID, ZooName, DateArrived, DateLeft)
+                         Animal(AnimalID, IndividualName, Species, DateOfBirth, Sex)
+                         Match(AnimalFemaleID, AnimalMaleID, DateOfMatch, Successful)
+
+      There is a requirement to identify all of the red pandas that were present at the zoo
+      called `Ashdale Park' at any time between 01/04/2020 and 31/05/2020, inclusive.
+
+      The animals might still be at the zoo or may have moved to another zoo.
+
+      Write a query that will list all the red pandas that were at the zoo on any day between
+      these dates.
+
+      For each red panda on the list, the animal's individual name and the date that the
+      animal arrived at the zoo, and no other fields, should be listed.
+
+                                                                                                            [7 marks]
+
+*16*  IB/G/Jun22/7517/2
+                  17
+
+                                                                                                                                   Do not write
+                                                                                                                                    outside the
+
+                                                                                                                                         box
+
+0 7.5  It is proposed that an additional attribute, ZooName, is added to the Animal relation.
+       This will store the name of the zoo that currently has the animal. No other changes
+       would be made to the database.
+
+       Describe one advantage and one disadvantage of adding this new attribute to the
+       relation.
+
+                                                                                                             [2 marks]
+
+       Advantage
+
+       Disadvantage
+
+                                                                                                                                15
+                                Turn over for the next question
+
+*17*              Turn over 
+
+                    IB/G/Jun22/7517/2
+      18
+
+08    A student is setting up a small computer network in their house. The network will link                                      Do not write
+      together the laptops, desktop computers and mobile devices that belong to the people                                        outside the
+      who live in the house.
+                                                                                                                                       box
+
+0 8 . 1 Compare how peer-to-peer networking and client-server networking work.
+                                                                                                                       [3 marks]
+
+0 8 . 2 Explain why a peer-to-peer system would be most appropriate to use in the house.
+                                                                                                                       [3 marks]
+
+*18*      IB/G/Jun22/7517/2
+      19
+
+                                                                                                                       Do not write
+                                                                                                                        outside the
+
+                                                                                                                             box
+
+0 8 . 3 When a person in the house uses the network to load a webpage it is likely that the
+                 Domain Name Server (DNS) system will be used.
+
+      Describe the main purpose of the DNS system and how it works.
+
+                                                                     [3 marks]
+
+                                                                                                      9
+      Turn over for the next question
+
+*19*                                                                 Turn over 
+
+                                                                       IB/G/Jun22/7517/2
+                                  20
+
+This table is included so that you can answer Questions 09.1 and 09.2 on page 21.                      Do not write
+                                                                                                       outside the
+
+                                                                                                            box
+
+      Table 1 ­ Standard AQA assembly language instruction set
+
+LDR Rd, <memory ref>    Load the value stored in the memory location specified by
+STR Rd, <memory ref>
+ADD Rd, Rn, <operand2>  <memory ref> into register d.
+SUB Rd, Rn, <operand2>
+MOV Rd, <operand2>      Store the value that is in register d into the memory location
+CMP Rn, <operand2>
+B <label>               specified by <memory ref>.
+B <condition> <label>
+                        Add the value specified in <operand2> to the value in
+AND Rd, Rn, <operand2>
+                        register n and store the result in register d.
+ORR Rd, Rn, <operand2>
+EOR Rd, Rn, <operand2>  Subtract the value specified by <operand2> from the value
+MVN Rd, <operand2>
+LSL Rd, Rn, <operand2>  in register n and store the result in register d.
+
+LSR Rd, Rn, <operand2>  Copy the value specified by <operand2> into register d.
+
+HALT                    Compare the value stored in register n with the value
+
+                        specified by <operand2>.
+
+                        Always branch to the instruction at position <label> in the
+
+                        program.
+
+                        Branch to the instruction at position <label> if the last
+
+                        comparison met the criterion specified by <condition>.
+
+                        Possible values for <condition> and their meanings are:
+
+                        EQ: equal to                     NE: not equal to
+
+                        GT: greater than                 LT: less than
+
+                        Perform a bitwise logical AND operation between the value
+                        in register n and the value specified by <operand2> and
+
+                        store the result in register d.
+
+                        Perform a bitwise logical OR operation between the value in
+
+                        register n and the value specified by <operand2> and
+
+                        store the result in register d.
+
+                        Perform a bitwise logical XOR (exclusive or) operation
+                        between the value in register n and the value specified by
+
+                        <operand2> and store the result in register d.
+
+                        Perform a bitwise logical NOT operation on the value
+
+                        specified by <operand2> and store the result in register d.
+
+                        Logically shift left the value stored in register n by the
+
+                        number of bits specified by <operand2> and store the
+
+                        result in register d.
+
+                        Logically shift right the value stored in register n by the
+
+                        number of bits specified by <operand2> and store the
+
+                        result in register d.
+
+                        Stops the execution of the program.
+
+Labels: A label is placed in the code by writing an identifier followed by a colon (:). To refer to a
+label the identifier of the label is placed after the branch instruction.
+
+                                         Interpretation of <operand2>
+
+<operand2> can be interpreted in two different ways, depending on whether the first character
+
+is a # or an R:
+
+· # ­ use the decimal value specified after the #, eg #25 means use the decimal value 25
+· Rm ­ use the value stored in register m, eg R6 means use the value stored in register 6
+
+The available general-purpose registers that the programmer can use are numbered 0­12
+
+*20*                                                                       IB/G/Jun22/7517/2
+09                                                  21                                                                             Do not write
+                                                                                                                                   outside the
+      Figure 7 shows an assembly language program that has been written using the AQA
+      Assembly Language Instruction Set, which is given in Table 1 on page 20.                                                          box
+
+                                                         Figure 7
+
+                   LDR R0, 120
+                   LDR R1, 121
+                   MOV R3, #0
+                loop:
+                   CMP R1, #0
+                   BEQ exit
+                   AND R2, R1, #1
+                   CMP R2, #0
+                   BEQ skip
+                   ADD R3, R3, R0
+                skip:
+                   LSL R0, R0, #1
+                   LSR R1, R1, #1
+                   B loop
+                exit:
+                   STR R3, 122
+                   HALT
+
+0 9 . 1 State the name of the addressing mode used in the instruction ADD R3, R3, R0
+
+                                                                                                                         [1 mark]
+
+0 9 . 2 Memory location 120 contains the value 23 and memory location 121 contains the
+                 value 5.
+
+      Complete the trace table to show how the contents of the memory locations and
+
+      registers change when the program in Figure 7 is executed.
+                                                                                                            [5 marks]
+
+      Memory locations      Registers
+
+      120  121  122     R0  R1     R2  R3
+
+      23   5
+
+*21*                                       Turn over 
+
+                                             IB/G/Jun22/7517/2
+                                                               22                     Do not write
+0 9 . 3 State the purpose of the program in Figure 7.                                 outside the
+
+                                                                                           box
+
+                                                                   [1 mark]
+
+0 9 . 4 The program in Figure 7 has been written using assembly language.
+                 State two reasons why the programmer may have chosen to write this program in
+                 assembly language rather than in a high-level programming language.
+                                                                                                                       [2 marks]
+                 Reason 1
+
+                 Reason 2
+
+0 9 . 5 The program in Figure 7 will be translated into machine code.
+                 Explain the relationship between an assembly language instruction and a machine
+                 code instruction.
+                                                                                                                         [1 mark]
+
+                                                                                                                                          10
+
+*22*                                                               IB/G/Jun22/7517/2
+1 0.1                                                23                                              Do not write
+                                                                                                     outside the
+       A digital recording was made using a sampling rate of 44 100 Hz with a 16-bit sample
+       resolution.                                                                                        box
+
+       A sampling rate of 1 Hz means that one sample has been taken every second.
+
+       The file, which stores only the recording, is 17.199 megabytes in size.
+
+       Calculate the duration of the recording in seconds.
+
+       You should show your working.
+
+                                                                                [3 marks]
+
+                                                      Answer                    seconds
+       Question 10 continues on the next page
+
+*23*                                                                            Turn over 
+
+                                                                                  IB/G/Jun22/7517/2
+                                                               24                                                      Do not write
+                                                                                                                       outside the
+1 0 . 2 MIDI is a system that can be used to enable musical devices to communicate and to
+                 represent music on a computer.                                                                             box
+
+      Describe the advantages of using MIDI to represent music instead of using sampled
+      sound.
+
+                                                                                                            [3 marks]
+
+11                                                                                                                              6
+
+      Compare the hardware requirements of thin-client and thick-client computing systems.
+                                                                                                            [3 marks]
+
+*24*                       3
+
+      IB/G/Jun22/7517/2
+                          25                                Do not write
+      Turn over for the next question                       outside the
+
+                                                                 box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*25*                                   Turn over 
+
+                                         IB/G/Jun22/7517/2
+12                                                   26                                                                  Do not write
+                                                                                                                         outside the
+       In a functional programming language, six functions named fu, fv, fw, fx, fy and
+       fz and a list of temperatures in Fahrenheit named temps are defined as shown in                                        box
+
+       Figure 8.
+
+                                        Figure 8
+
+                             temps = [50, 68, 95, 86]
+
+                             fu a = (a - 32) * 5 / 9
+
+                             fv b = map fu b
+
+                             fw [] = 0
+                             fw (x:xs) = 1 + fw (xs)
+
+                             fx [] = 0
+                             fx (x:xs) = x + fx (xs)
+
+                             fy c = fx (c) / fw (c)
+
+                             fz d = fy (fv (d))
+
+       A temperature can be converted from degrees Fahrenheit to degrees centigrade using
+       the following method:
+
+                                      centigrade = (Fahrenheit ­ 32) × 5
+                                                                                      9
+
+       For example, 59 degrees Fahrenheit is equivalent to 15 degrees centigrade.
+
+       In the functions fw and fx:
+
+       · [] is the empty list
+       · (x:xs) lets the function definition refer to the head of the list as x and the tail
+
+         as xs.
+
+1 2.1  Shade one lozenge to indicate which of the listed functions from Figure 8 includes a
+       higher-order function in its definition.
+
+                                                                                                               [1 mark]
+
+       fu                           fv  fx        fy
+
+1 2.2  Shade two lozenges to indicate which of the listed functions from Figure 8 use
+       recursion in their definitions.
+
+                                                                                                               [1 mark]
+
+       fu                           fv  fw        fx
+
+*26*                                                  IB/G/Jun22/7517/2
+                      27
+
+                                                                                                                        Do not write
+                                                                                                                        outside the
+
+                                                                                                                             box
+
+1 2.3  Calculate the results of making the function calls listed in Table 2, using the functions
+       and list in Figure 8 as appropriate.
+
+                                                                                                             [4 marks]
+                                                           Table 2
+
+       Function call                             Result
+
+       fu 50
+
+       fv temps
+
+       fw temps
+
+       fz temps
+
+1 2 . 4 Explain the purpose of the function fz.
+
+                                                         [1 mark]
+
+1 2 . 5 It is proposed that the definition of the function fz is changed to:
+                                              fz d = fu (fy (d))
+
+               Explain why this new definition of fz could be considered to be an improvement over
+               the definition of fz in Figure 8.
+
+                                                                                                                         [1 mark]
+
+                                                                                                                                          8
+
+                                          Turn over for the next question
+
+*27*                                                     Turn over 
+
+                                                           IB/G/Jun22/7517/2
+                                                               28                                                                 Do not write
+1 3 . 1 Below is a definition of a term relating to the architecture of a computer system:                                        outside the
+
+                                                                                                                                       box
+
+      Machine code instructions stored in main memory are fetched and
+      executed serially by a processor that performs arithmetic and logical
+      operations.
+
+      Shade one lozenge to indicate which term this defines.
+
+                                                                             [1 mark]
+
+      A The Harvard architecture
+      B The processor instruction set
+      C The stored program concept
+      D The von Neumann architecture
+
+1 3 . 2 Explain why desktop computers usually have secondary storage devices.
+                                                                                                                       [2 marks]
+
+*28*                                                                         IB/G/Jun22/7517/2
+                                                               29                          Do not write
+                                                                                            outside the
+1 3 . 3 A computer is fitted with a solid-state disk (SSD).
+                 Describe the principles of operation of an SSD.                                 box
+
+                                                                   [4 marks]
+
+                                                                                                7
+      END OF QUESTIONS
+
+*29*                                                               IB/G/Jun22/7517/2
+                                   30                                 Do not write
+      There are no questions printed on this page                     outside the
+
+                                                                           box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*30*                                               IB/G/Jun22/7517/2
+Question                            31                                            Do not write
+number                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                          box
+
+*31*                                                           IB/G/Jun22/7517/2
+Question                            32                                                                                                            Do not write
+number                                                                                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                                                                                          box
+
+          Copyright information
+
+          For confidentiality purposes, all acknowledgements of third-party copyright material are published in a separate booklet. This booklet
+          is published after each live examination series and is available for free download from www.aqa.org.uk.
+
+          Permission to reproduce all copyright material has been applied for. In some cases, efforts to contact copyright-holders may have
+          been unsuccessful and AQA will be happy to rectify any omissions of acknowledgements. If you have any queries please contact the
+          Copyright Team.
+
+          Copyright © 2022 AQA and its licensors. All rights reserved.
+
+*32*      *226A7517/2*
+
+                                                      IB/G/Jun22/7517/2
+

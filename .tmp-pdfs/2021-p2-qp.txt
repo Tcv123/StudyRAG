@@ -1,0 +1,819 @@
+Please write clearly in block capitals.                          Candidate number
+Centre number
+
+Surname
+
+Forename(s)
+
+Candidate signature
+                                 I declare this is my own work.
+
+A-level
+COMPUTER SCIENCE
+
+Paper 2
+
+                                                                 Time allowed: 2 hours 30 minutes
+
+Materials                                                                          For Examiner's Use
+For this paper you must have:
+· a calculator.                                                                    Question  Mark
+                                                                                        1
+Instructions                                                                            2
+· Use black ink or black ball-point pen.                                                3
+· Fill in the boxes at the top of this page.                                            4
+· Answer all questions.                                                                 5
+· You must answer the questions in the spaces provided. Do not write outside            6
+                                                                                        7
+   the box around each page or on blank pages.                                          8
+· If you need extra space for your answer(s), use the lined pages at the end of         9
+                                                                                       10
+   this book. Write the question number against your answer(s).                        11
+· Do all rough work in this book. Cross through any work you do not want to            12
+                                                                                       13
+   be marked.                                                                          14
+
+Information                                                                        TOTAL
+· The marks for questions are shown in brackets.
+· The maximum mark for this paper is 100.
+
+Advice
+· In some questions you are required to indicate your answer by completely
+
+   shading a lozenge alongside the appropriate answer as shown.
+· If you want to change your answer you must cross out your original answer as
+
+   shown.
+· If you wish to return to an answer previously crossed out, ring the answer
+
+   you now wish to select as shown.
+
+*JUN217517201*                                                                     7517/2
+
+                                                                 IB/G/Jun21/E17
+                           2                                                             Do not write
+              Answer all questions.                                                      outside the
+
+                                                                                              box
+
+0 1 . 1 A bitmap image is 1000 pixels wide by 800 pixels high.
+
+      The image takes up 400 kB of storage space when represented as a bitmap,
+      excluding metadata.
+
+      Calculate the maximum number of different colours that could appear in the image.
+
+      You should show your working.
+
+                                                                [3 marks]
+
+      Answer
+
+*02*                                                            IB/G/Jun21/7517/2
+      3
+
+0 1 . 2 The same image can also be represented using vector graphics.                                                  Do not write
+                                                                                                                       outside the
+
+                                                                                                                            box
+
+      The vector graphics representation of the image takes up 2 kB of storage space.
+
+      Explain why the amount of storage space taken up by the vector graphics
+      representation of the image is significantly smaller than the space taken up by the
+      bitmap representation.
+
+                                                                                                            [3 marks]
+
+0 1 . 3 One advantage of vector graphics compared to bitmap graphics is that fewer bytes
+                 are used to represent an image.
+                 State two other advantages of vector graphics compared with bitmap graphics.
+                                                                                                                       [2 marks]
+                 Advantage 1
+
+                 Advantage 2
+                                                                                                                                           8
+
+                                          Turn over for the next question
+
+*03*                                                                   Turn over 
+
+                                                                         IB/G/Jun21/7517/2
+       4
+
+02     Describe what thin-client computing is and explain two reasons why a thin-client                                 Do not write
+       system might be chosen in preference to a thick-client system.                                                   outside the
+
+                                                                                                             [3 marks]       box
+
+                                                                                                                        3
+
+03     A data communications system can transmit four different signals. Each different
+       signal represents two bits of data.
+
+0 3.1  Describe the exact relationship between the bit rate and the baud rate for this
+       system.
+
+                                                                                                              [1 mark]
+
+0 3.2  Describe the relationship between the bit rate of the system and the bandwidth of the
+       transmission medium that the data is transmitted through.
+
+                                                                                                              [1 mark]
+
+*04*      IB/G/Jun21/7517/2
+                                                                5                                                      Do not write
+0 3 . 3 The system uses serial transmission.                                                                           outside the
+
+                                                                                                                            box
+
+      Describe the difference between the operation of serial and parallel transmission.
+                                                                                                            [2 marks]
+
+                                                                                                      4
+      Turn over for the next question
+
+*05*                                                               Turn over 
+
+                                                                     IB/G/Jun21/7517/2
+04                                                   6                                                                             Do not write
+      Figure 1 shows a circuit with inputs X0 to X2 and outputs Q0 to Q7                                                           outside the
+
+                                                          Figure 1                                                                      box
+
+0 4 . 1 Write a Boolean expression to represent the output Q1 of the circuit in Figure 1.
+                                                                                                                         [1 mark]
+
+                                                            Q1 =
+
+*06*                                                                      IB/G/Jun21/7517/2
+              7
+
+0 4 . 2 Complete the truth table below for the circuit in Figure 1.                                                               Do not write
+                                                                                                                                  outside the
+
+                                                                                                                                       box
+
+                                                                     [3 marks]
+
+      INPUTS     OUTPUTS
+
+      X2 X1 X0 Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7
+
+      000
+
+      001
+
+      010
+
+      011
+
+      100
+
+      101
+
+      110
+
+      111
+
+0 4 . 3 Explain the purpose of the circuit in Figure 1.
+
+                 Considering the inputs and outputs of the circuit and consulting your answers to
+                 Question 04.1 and Question 04.2 may help you to do this.
+
+                                                                                                                       [2 marks]
+
+      Question 4 continues on the next page
+
+*07*                                                                 Turn over 
+
+                                                                       IB/G/Jun21/7517/2
+                                                     8                                    Do not write
+                                                                                          outside the
+      Figure 1 is repeated below to help you answer Question 04.4.
+                                                  Figure 1 (repeated)                          box
+
+*08*                                                                   IB/G/Jun21/7517/2
+                                                                9                            Do not write
+                                                                                             outside the
+0 4 . 4 The logic circuit in Figure 2 produces an output S that is equivalent to one of the
+                 outputs of the logic circuit in Figure 1, for the inputs X0, X1 and X2.          box
+                                                                     Figure 2
+
+      Which output (Q0 to Q7) from Figure 1 is the output S from the circuit in Figure 2
+
+      equivalent to?
+
+                                                       [1 mark]                              7
+
+                      Turn over for the next question
+
+*09*                                                   Turn over 
+
+                                                         IB/G/Jun21/7517/2
+05                                                  10                                                                             Do not write
+                                                                                                                                   outside the
+      A sports centre uses a relational database to store information about its facilities
+      (such as the swimming pool) and the bookings that have been made to use them.                                                     box
+
+      Figure 3 shows the structure of the relations in the database.
+
+                                                         Figure 3
+
+              Facility(FacilityID, Description, MaxPeople, PricePerHour)
+              FacilityForSport(Sport, FacilityID)
+              Booking(FacilityID, BookingDate, StartTime, EndTime, CustomerID)
+              Customer(CustomerID, Forename, Surname, EmailAddress)
+
+      · The Facility relation stores the different facilities available at the sports centre.
+         Each one is identified by a unique number and has a brief description. For
+         example, the facility with FacilityID 1 has the description `Outdoor Pitch A'.
+         PricePerHour is the price of hiring a facility for 1 hour. For example, the facility with
+         FacilityID 1 has a price per hour of £17.50.
+
+      · The FacilityForSport relation identifies which facilities are suitable for which sports.
+         For example, the facility with FacilityID 1 is suitable for football, rugby and hockey
+         and would therefore require three separate records in this relation.
+
+      · The Booking relation stores the bookings that have been made. Bookings must
+         start and end either on the hour, at quarter past, half past or quarter to the hour.
+         A customer can make bookings for more than one facility for the same time. For
+         example, a badminton club secretary might book both of the indoor sports halls for
+         the same time. However, each facility can only be booked by one customer at any
+         one time.
+
+      · The Customer relation stores the details of customers who have made bookings.
+
+0 5 . 1 The entity identifier (primary key) for the Booking relation is a composite entity
+                 identifier, consisting of these three attributes:
+
+                                                   FacilityID, BookingDate, StartTime
+
+                 An alternative entity identifier could have been chosen, composed of different
+                 attributes.
+
+                 Shade one lozenge to indicate which of the following groups of attributes would form
+                 a valid alternative entity identifier for the Booking relation.
+
+                                                                                                                         [1 mark]
+
+      A BookingDate, StartTime, EndTime
+      B FacilityID, BookingDate, EndTime
+      C FacilityID, StartTime, CustomerID
+      D FacilityID, BookingDate, EndTime, Sport
+
+*10*                                                                            IB/G/Jun21/7517/2
+                                                               11                                                       Do not write
+                                                                                                                        outside the
+0 5 . 2 A different design was originally proposed for the database. This design did not have
+                 the Customer relation and had the following design for the Booking relation:                                box
+
+       Booking(FacilityID, BookingDate, StartTime, EndTime, Forename, Surname,
+       EmailAddress)
+
+       Explain why this alternative design would have been rejected in favour of the design in
+       Figure 3.
+
+                                                                                                             [2 marks]
+
+0 5.3  Complete the following SQL statement to create the Facility relation specified in
+       Figure 3, including the primary key.
+
+                                                                                                             [3 marks]
+
+       CREATE TABLE Facility (
+
+       Question 5 continues on the next page               )
+
+*11*                                          Turn over 
+
+                                                IB/G/Jun21/7517/2
+                                                    12                                                                            Do not write
+                                                                                                                                  outside the
+      Figure 3 is repeated below to help you answer Question 05.4 without having to turn
+      back in the question paper.                                                                                                      box
+
+                                                  Figure 3 (repeated)
+              Facility(FacilityID, Description, MaxPeople, PricePerHour)
+              FacilityForSport(Sport, FacilityID)
+              Booking(FacilityID, BookingDate, StartTime, EndTime, CustomerID)
+              Customer(CustomerID, Forename, Surname, EmailAddress)
+
+0 5 . 4 A customer wants to book a facility that is suitable for playing basketball on the
+                 15/06/2021 between 14:15 and 16:15
+
+                 As part of the booking process, a query is needed to list all the existing bookings that
+                 would overlap with the new booking.
+
+                 Write a query that will list all the bookings for facilities that are suitable for playing
+                 basketball and which would overlap with the booking that the customer wants to
+                 make.
+
+                 For each booking which would overlap with the new booking only the FacilityID,
+                 StartTime and EndTime fields should be listed.
+
+                                                                                                                       [7 marks]
+
+*12*  IB/G/Jun21/7517/2
+                          13                                Do not write
+      Turn over for the next question                       outside the
+
+                                                                 box
+
+                                                              13
+
+*13*                                   Turn over 
+
+                                         IB/G/Jun21/7517/2
+                                    14                                 Do not write
+      There are no questions printed on this page.                     outside the
+
+                                                                            box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*14*                                                IB/G/Jun21/7517/2
+                                  15
+
+      This table is included so that you can answer Question 06.1 on page 17.                                                   Do not write
+                                                                                                                                outside the
+
+                                                                                                                                     box
+
+      Table 1 ­ Standard AQA assembly language instruction set
+
+LDR Rd, <memory ref>    Load the value stored in the memory location specified by
+STR Rd, <memory ref>    <memory ref> into register d.
+ADD Rd, Rn, <operand2>
+SUB Rd, Rn, <operand2>  Store the value that is in register d into the memory location
+MOV Rd, <operand2>
+CMP Rn, <operand2>      specified by <memory ref>.
+B <label>
+B <condition> <label>   Add the value specified in <operand2> to the value in
+
+AND Rd, Rn, <operand2>  register n and store the result in register d.
+
+ORR Rd, Rn, <operand2>  Subtract the value specified by <operand2> from the value
+EOR Rd, Rn, <operand2>
+MVN Rd, <operand2>      in register n and store the result in register d.
+LSL Rd, Rn, <operand2>
+                        Copy the value specified by <operand2> into register d.
+LSR Rd, Rn, <operand2>
+                        Compare the value stored in register n with the value
+HALT
+                        specified by <operand2>.
+
+                        Always branch to the instruction at position <label> in the
+
+                        program.
+
+                        Branch to the instruction at position <label> if the last
+
+                        comparison met the criterion specified by <condition>.
+
+                        Possible values for <condition> and their meanings are:
+
+                        EQ: equal to                     NE: not equal to
+
+                        GT: greater than                 LT: less than
+
+                        Perform a bitwise logical AND operation between the value
+                        in register n and the value specified by <operand2> and
+
+                        store the result in register d.
+
+                        Perform a bitwise logical OR operation between the value in
+                        register n and the value specified by <operand2> and
+
+                        store the result in register d.
+
+                        Perform a bitwise logical XOR (exclusive or) operation
+
+                        between the value in register n and the value specified by
+
+                        <operand2> and store the result in register d.
+
+                        Perform a bitwise logical NOT operation on the value
+                        specified by <operand2> and store the result in register d.
+
+                        Logically shift left the value stored in register n by the
+
+                        number of bits specified by <operand2> and store the
+
+                        result in register d.
+
+                        Logically shift right the value stored in register n by the
+
+                        number of bits specified by <operand2> and store the
+
+                        result in register d.
+
+                        Stops the execution of the program.
+
+Labels: A label is placed in the code by writing an identifier followed by a colon (:). To refer to a
+label, the identifier of the label is placed after the branch instruction.
+
+                                         Interpretation of <operand2>
+
+<operand2> can be interpreted in two different ways, depending on whether the first character
+
+is a # or an R:
+
+· # ­ use the decimal value specified after the #, eg #25 means use the decimal value 25
+· Rm ­ use the value stored in register m, eg R6 means use the value stored in register 6
+
+The available general-purpose registers that the programmer can use are numbered 0­12
+                                                                                                                    Turn over 
+
+*15*                                                                           IB/G/Jun21/7517/2
+06                                                  16                                      Do not write
+                                                                                            outside the
+      Figure 4 shows an assembly language program which has been written using the
+      AQA assembly language instruction set. The instruction set is explained in Table 1         box
+      on page 15.
+
+      Figure 4
+
+         CMP R2, #0
+         BEQ exit
+         MOV R0, #0
+         MOV R3, #1
+      moveleft:
+         LSL R2, R2, #1
+         LSL R3, R3, #1
+         CMP R2, R1
+         BLT moveleft
+         BEQ mainloop
+         LSR R2, R2, #1
+         LSR R3, R3, #1
+      mainloop:
+         CMP R1, R2
+         BLT skip
+         ADD R0, R0, R3
+         SUB R1, R1, R2
+      skip:
+         AND R4, R3, #1
+         CMP R4, #1
+         BEQ skipshiftR2
+         LSR R2, R2, #1
+      skipshiftR2:
+         LSR R3, R3, #1
+         CMP R3, #0
+         BNE mainloop
+      exit:
+
+         HALT
+
+      The program takes its input values from registers R1 and R2 and stores its output in
+      registers R0 and R1
+
+*16*                      IB/G/Jun21/7517/2
+                                                               17                         Do not write
+                                                                                          outside the
+0 6 . 1 Complete the trace table below to show the results of executing the program in
+                                                                                               box
+               Figure 4 when the initial values in registers R1 and R2 are 34 and 6
+
+      Each register can hold a 16-bit value.
+
+      You may find it easier to understand the operation of the program if you write the
+      contents of the registers out in both binary and decimal.
+
+      You may not need to use all the rows in the table.
+
+                                                              [6 marks]
+
+      R0  R1                                  R2          R3  R4
+
+          100010 (34)                         110 (6)
+
+          Question 06 continues on the next page
+
+*17*                                                          Turn over 
+
+                                                                IB/G/Jun21/7517/2
+                                                               18                                                        Do not write
+                                                                                                                         outside the
+0 6 . 2 The initial values for the program (its inputs) are stored in R1 and R2 and the final
+               values stored in R0 and R1 are its outputs.                                                                    box
+
+        By considering the inputs and the outputs in your trace table for Question 06.1,
+        describe the purpose of the program.
+
+                                                                                                              [2 marks]
+
+                                                                                                                         8
+
+0 7 .1  Explain why a laser printer with a built-in wireless network adapter is likely to be a
+        suitable choice of printer for a small office.
+
+                                                                                                              [3 marks]
+
+*18*    IB/G/Jun21/7517/2
+                                                               19                           Do not write
+0 7 . 2 Describe the principles of operation of a laser printer.                             outside the
+
+                                                                                                  box
+
+                                                                   [6 marks]
+
+                                                                                                      9
+      Turn over for the next question
+
+*19*                                                               Turn over 
+
+                                                                     IB/G/Jun21/7517/2
+08                                                  20                                              Do not write
+      Use binary addition in 8-bit two's complement to perform the subtraction:                     outside the
+
+                                                                                                         box
+
+      18 ­ 72
+
+      You must show both your working and your final answer in binary.
+
+                                                                                 [2 marks]
+
+                                                                                                    2
+
+*20*                                                                             IB/G/Jun21/7517/2
+                          21                                Do not write
+      Turn over for the next question                       outside the
+
+                                                                 box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*21*                                   Turn over 
+
+                                         IB/G/Jun21/7517/2
+      22
+
+09    Big Data is an important application area for modern computer science.                                          Do not write
+                                                                                                                      outside the
+
+                                                                                                                           box
+
+      · Describe what Big Data is, using examples to illustrate your description.
+
+      · Explain some of the challenges that Big Data brings with it and the approaches that
+         can be taken to overcome these, in relation to programming and hardware.
+
+      · Consider some of the ethical and legal issues that might arise in applications that
+         store data, particularly data about people.
+                                                                                                          [12 marks]
+
+*22*                                                                               IB/G/Jun21/7517/2
+      23
+
+                                                                                                                      Do not write
+                                                                                                                       outside the
+
+                                                                                                                            box
+
+*23*                        12
+      Turn over 
+
+        IB/G/Jun21/7517/2
+10                                                   24                                           Do not write
+                                                                                                  outside the
+       A particular computer uses a normalised floating point representation with an 8-bit
+       mantissa and a 4-bit exponent, both stored using two's complement.                              box
+
+1 0.1  Four-bit patterns that are stored in this computer's memory are listed in Figure 5 and
+       are labelled with the letters A to D. Three of the bit patterns are valid normalised
+       floating point numbers and one is not.
+
+                          Figure 5
+
+       Complete Table 2 below. In the Correct letter (A­D) column write the appropriate
+       letter from A to D to indicate which bit pattern in Figure 5 is an example of the type of
+       value described in the Value description column.
+
+       Do not use the same letter more than once.
+
+                                                           Table 2
+
+       Value description                                        Correct letter (A­D)
+
+       A negative value that is valid in the representation.
+
+       The largest positive value that can be represented in
+       the system.
+       A value that is not valid in the representation because
+       it is not normalised.
+
+                                                                [3 marks]
+
+*24*                                                            IB/G/Jun21/7517/2
+                                                               25                                       Do not write
+1 0 . 2 Figure 6 shows a floating point representation of a number:                                      outside the
+
+                                                                     Figure 6                                 box
+
+                 Calculate the decimal equivalent of the number.               [2 marks]
+                 You should show your working.
+
+Answer
+
+In this floating point system, the closest possible representation of the decimal
+number 104.7 is shown in Figure 7.
+
+                                                    Figure 7
+
+                 By converting this number back to decimal it can be seen that the actual value stored
+                 is 105
+
+1 0 . 3 Calculate the absolute error that has occurred when representing 104.7 in Figure 7.
+                                                                                                                         [1 mark]
+
+                   Answer                                                      Turn over 
+                                      Question 10 continues on the next page
+                                                                                 IB/G/Jun21/7517/2
+*25*
+               26
+
+1 0 . 4 Calculate the relative error that has occurred when representing 104.7 in Figure 7.                             Do not write
+                                                                                                                        outside the
+
+                                                                                                                             box
+
+       Express your answer as a percentage to two decimal places.
+
+                                                                   [1 mark]
+
+       Answer
+
+1 0.5  Explain why the relative error is usually considered to be a more important measure of
+       error than the absolute error.
+
+                                                                                                              [1 mark]
+
+                                                                                                                        8
+
+*26*                                                               IB/G/Jun21/7517/2
+11                                                  27                                           Do not write
+                                                                                                 outside the
+      Figure 8 shows a computer network. The devices connected to the network are
+      identified using IPv4 addresses. When assigning IP addresses, 20 bits have been                 box
+      allocated to the Network IDs (also known as Subnet IDs or subnet addresses) and
+      12 bits have been allocated to the Host IDs.
+
+                                                         Figure 8
+
+1 1 . 1 State suitable IP addresses for:                                    [3 marks]
+                 The Router 1 port labelled
+                 The Router 1 port labelled
+                 The computer labelled
+
+                                    Question 11 continues on the next page
+
+*27*                                                                        Turn over 
+
+                                                                              IB/G/Jun21/7517/2
+                        28
+
+1 1.2  Shade one lozenge to indicate which of the following four subnet masks is the one                                           Do not write
+       that has been assigned to the devices connected to the network in Figure 8.                                                 outside the
+
+                                                                                                              [1 mark]                  box
+
+       A 255.255.0.0
+       B 255.255.15.0
+       C 255.255.240.0
+       D 255.255.255.0
+
+1 1 . 3 The devices on the network in Figure 8 use IPv4.
+                 State one reason why IPv6 has been introduced to replace IPv4.
+
+                                                                                 [1 mark]
+
+1 1 . 4 State the name of the physical topology used in subnet 192.168.64.0 in Figure 8.
+                                                                                                                         [1 mark]
+
+*28*                                                                             IB/G/Jun21/7517/2
+       29
+
+1 1.5  Laptop computers and other devices can connect to the network via the wireless                                   Do not write
+       access point. The wireless connection uses the CSMA/CA protocol with Request to                                  outside the
+       Send/Clear to Send (RTS/CTS).
+                                                                                                                             box
+
+       A laptop connected to the wireless access point has data to send to another
+       computer.
+
+       Explain how the CSMA/CA protocol with RTS/CTS will be used during this
+       transmission.
+
+                                                                                                             [6 marks]
+
+*29*                             12
+
+           Turn over 
+
+             IB/G/Jun21/7517/2
+12                                                  30                                                                            Do not write
+      Describe how MIDI is used to represent digital music.                                                                       outside the
+
+                                                                                                                                       box
+
+                                                             [2 marks]
+
+                                                                                                                                           2
+
+1 3 . 1 Describe the difference between application software and system software.
+                                                                                                                       [2 marks]
+
+1 3 . 2 Utilities are a type of system software.
+
+                 Describe what utilities are and include an example of a utility in your answer.
+                                                                                                                       [2 marks]
+
+*30*                                                                              4
+
+                                                             IB/G/Jun21/7517/2
+        31
+
+1 4 .1  Shade one lozenge to indicate which of these statements about a computer that uses                               Do not write
+        the stored program concept is false.                                                                             outside the
+
+                                                                                                               [1 mark]       box
+
+        A Instructions are fetched and executed in sequence.
+        B The computer can only be used with one program.
+        C The data is stored in the main memory.
+        D The program is stored in the main memory.
+
+1 4 . 2 The control unit is an important component of a processor.
+                 Describe the role of the control unit.
+
+                                                                    [3 marks]
+
+        Question 14 continues on the next page
+
+*31*                                                                Turn over 
+
+                                                                      IB/G/Jun21/7517/2
+                 32
+
+1 4 . 3 One method that can be used to improve the performance of a processor is to                                    Do not write
+                 increase the amount of cache memory.                                                                  outside the
+
+                                                                                                                            box
+
+      Describe:
+
+      · what cache memory is
+      · what cache memory is used for
+      · how increasing the amount of cache memory can improve the performance of a
+
+         processor.
+                                                                                                            [4 marks]
+
+                                                                                                           8
+                 END OF QUESTIONS
+
+*32*                 IB/G/Jun21/7517/2
+                                   33                                 Do not write
+      There are no questions printed on this page                     outside the
+
+                                                                           box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*33*                                               IB/G/Jun21/7517/2
+Question                            34                                            Do not write
+number                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                          box
+
+*34*                                                           IB/G/Jun21/7517/2
+Question                            35                                            Do not write
+number                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                          box
+
+*35*                                                           IB/G/Jun21/7517/2
+Question                            36                                                                                                            Do not write
+number                                                                                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                                                                                          box
+
+          Copyright information
+
+          For confidentiality purposes, all acknowledgements of third-party copyright material are published in a separate booklet. This booklet
+          is published after each live examination series and is available for free download from www.aqa.org.uk.
+
+          Permission to reproduce all copyright material has been applied for. In some cases, efforts to contact copyright-holders may have
+          been unsuccessful and AQA will be happy to rectify any omissions of acknowledgements. If you have any queries please contact the
+          Copyright Team.
+
+          Copyright © 2021 AQA and its licensors. All rights reserved.
+
+*36*      *216A7517/2*
+
+                                                      IB/G/Jun21/7517/2
+

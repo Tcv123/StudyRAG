@@ -544,7 +544,7 @@ window.SUBJECTS = [
             year: 'June 2022',
             paperName: 'Paper 1 — Programming (on-screen)',
             paperCode: '7517/1',
-            totalMarks: 75,
+            totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-QP-JUN22.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-MS-JUN22.PDF'
@@ -554,7 +554,7 @@ window.SUBJECTS = [
             year: 'June 2022',
             paperName: 'Paper 2 — Written',
             paperCode: '7517/2',
-            totalMarks: 75,
+            totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75172-QP-JUN22.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75172-MS-JUN22.PDF'
@@ -564,7 +564,7 @@ window.SUBJECTS = [
             year: 'Autumn 2021',
             paperName: 'Paper 1 — Programming (on-screen)',
             paperCode: '7517/1',
-            totalMarks: 75,
+            totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-QP-NOV21.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-MS-NOV21.PDF'
@@ -574,7 +574,7 @@ window.SUBJECTS = [
             year: 'Autumn 2021',
             paperName: 'Paper 2 — Written',
             paperCode: '7517/2',
-            totalMarks: 75,
+            totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75172-QP-NOV21.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75172-MS-NOV21.PDF'
@@ -584,7 +584,7 @@ window.SUBJECTS = [
             year: 'Autumn 2020',
             paperName: 'Paper 1 — Programming (on-screen)',
             paperCode: '7517/1',
-            totalMarks: 75,
+            totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-QP-NOV20.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-W-MS-NOV20.PDF'
@@ -594,7 +594,7 @@ window.SUBJECTS = [
             year: 'Autumn 2020',
             paperName: 'Paper 2 — Written',
             paperCode: '7517/2',
-            totalMarks: 75,
+            totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75172-QP-NOV20.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75172-W-MS-NOV20.PDF'
