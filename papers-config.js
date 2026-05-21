@@ -41,10 +41,227 @@ window.SUBJECTS = [
             year: 'June 2023',
             paperName: 'Paper 2 — Written',
             paperCode: '7517/2',
-            totalMarks: 75,
+            totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-75172-QP-JUN23.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-75172-MS-JUN23.PDF'
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-75172-MS-JUN23.PDF',
+            questions: [
+              {
+                number: 1,
+                parts: [
+                  { code: '01.1',
+                    prompt: "A sound is sampled and recorded digitally. The sound is sampled at a rate of 48 000 samples per second (Hz) for 3 minutes using a 16-bit sample resolution.\n\nCalculate the size of the digital recording, giving your answer in mebibytes.\n\nGive your answer rounded to 2 decimal places.\n\nYou should show your working.", marks: 2 },
+                  { code: '01.2',
+                    prompt: "The highest frequency component in a different sound is 15 000 Hz.\n\nWhat is the minimum sampling rate that should be used when recording this sound to ensure that all the frequencies in the original waveform are preserved, so that when the recording is played back the original sound is recreated accurately?", marks: 1 },
+                  { code: '01.3',
+                    preamble: "Figure 1 shows part of the process of playing back a sound that has been sampled. The binary sound data is used to generate an electrical waveform: a binary stream (e.g. …0010111011…) is converted into a stepped voltage-vs-time output.",
+                    prompt: "A hardware component on a sound card carries out the process shown in Figure 1.\n\nState the name of this component.", marks: 1 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "Figure 2 shows some of the fields contained in a packet, transmitted on a computer network.",
+                scenarioFigures: [
+                  { type: 'table', label: 'Figure 2',
+                    headers: ['Destination Address', 'Source Address', 'Payload (data)', 'Checksum'],
+                    rows: [['(field)', '(field)', '(field)', '(field)']] }
+                ],
+                parts: [
+                  { code: '02.1', prompt: "Name two fields typically included in a packet which are not shown in Figure 2.", marks: 2 },
+                  { code: '02.2', prompt: "Explain what the checksum is used for and outline how the checksum's value will be determined.", marks: 2 },
+                  { code: '02.3',
+                    preamble: "Packets of data are transmitted using packet switching.",
+                    prompt: "Describe the role of a router in packet switching.", marks: 2 }
+                ]
+              },
+              {
+                number: 3,
+                parts: [
+                  { code: '03.1', prompt: "Encrypt the plaintext SECURITY using the Caesar cipher with a key of 4.", marks: 1 },
+                  { code: '03.2',
+                    preamble: "The Caesar cipher is an example of a substitution cipher. A different substitution cipher encrypts letters using the method shown in Figure 3.",
+                    figure: { type: 'table', label: 'Figure 3 — substitution cipher',
+                      headers: ['Plaintext', 'Ciphertext'],
+                      rows: [
+                        ['A','C'],['B','D'],['C','J'],['D','R'],['E','K'],['F','Y'],['G','G'],['H','S'],['I','Q'],
+                        ['J','F'],['K','E'],['L','P'],['M','W'],['N','O'],['O','H'],['P','V'],['Q','L'],['R','I'],
+                        ['S','U'],['T','Z'],['U','T'],['V','B'],['W','N'],['X','A'],['Y','X'],['Z','M']
+                      ] },
+                    prompt: "State one weakness that both the Caesar cipher and the cipher shown in Figure 3 have which means they can be easily cracked.", marks: 1 },
+                  { code: '03.3', prompt: "State one reason why the cipher in Figure 3 is harder to crack than the Caesar cipher.", marks: 1 },
+                  { code: '03.4',
+                    preamble: "The Vernam cipher, unlike the Caesar cipher, can be perfectly secure.",
+                    prompt: "State two conditions that must be met for the Vernam cipher to offer perfect security.", marks: 2 }
+                ]
+              },
+              {
+                number: 4,
+                parts: [
+                  { code: '04.1', extended: true,
+                    prompt: "Describe how the fetch-execute cycle is used to carry out machine code instructions and how the hardware of a computer could be improved so that programs can be executed more quickly.\n\nYour response should include a description of what happens during each stage of the fetch-execute cycle.", marks: 12 },
+                  { code: '04.2',
+                    preamble: "An interrupt may occur during the fetch-execute cycle.",
+                    prompt: "Describe what an interrupt is and explain the purpose of interrupts.", marks: 2 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "A company operates a cinema which has three different screens. Each screen has a capacity determined by the number of seats the screen has.\n\nEach seat is identified by a unique seat number for the screen it is in, but two seats in different screens can have the same number. A specific seat is classified as being of one of two types: standard or deluxe.\n\nOn a particular day, there will be several showings of films in each of the screens. A screen might show the same film multiple times or it might show different films at different times of day.\n\nCustomers make bookings to go to the cinema. Each booking is for one specific showing of a film. A booking is for one or more seats, and the customer can select the individual seats that they want to book when they make the booking.\n\nWhen a booking is made, if the customer has not previously made a booking, the customer's first name, last name and telephone number are recorded. If the booking is for more than one seat then only the details of the person who made the booking are recorded — the system does not store the details of who will be sitting in each seat. If a customer has made a booking previously then the details that were stored about them when the previous booking was made are re-used.",
+                parts: [
+                  { code: '05.1',
+                    preamble: "Develop a fully normalised design for a relational database to store the information required by the cinema. To help you, the Screen, Seat, Film and Showing relations have already been defined in Figure 4.",
+                    figure: { type: 'code', label: 'Figure 4',
+                      content: "Screen(ScreenNumber, Capacity)\nSeat(SeatNumber, ScreenNumber, SeatType)\nFilm(FilmID, FilmName, Duration, Certificate)\nShowing(ShowingID, ScreenNumber, FilmID, ShowTime, ShowDate)\n\n(primary-key attributes are underlined in the actual paper)" },
+                    prompt: "Using the format shown in Figure 4, list the other three relations that will need to be created, together with the attributes that each relation will contain.\n\nUnderline the attribute(s) that will form the entity identifier (primary key) in each relation.", marks: 5 },
+                  { code: '05.2',
+                    preamble: "The cinema had to be closed on the 29th March 2023 so that some maintenance could take place. The SQL query in Figure 5 was written to delete all of the showings on this date. Some errors were made in the query.",
+                    figure: { type: 'code', label: 'Figure 5',
+                      content: "DELETE\nFROM Showing, Film\nWHERE ShowDate = 29/03/2023" },
+                    prompt: "Describe two errors that have been made in the query.\n\nDo not refer to the use of semi-colons in your response.", marks: 2 },
+                  { code: '05.3', prompt: "Describe an issue that could arise in the database if a query to delete all of the showings that had been scheduled to take place on the 29th March 2023 was executed.", marks: 2 },
+                  { code: '05.4',
+                    preamble: "The booking system can be accessed through a website which uses CRUD and REST.",
+                    prompt: "Describe what Uniform Resource Locators (URLs) are used for in a RESTful application.", marks: 1 },
+                  { code: '05.5',
+                    prompt: "Shade one lozenge on the row that correctly shows how REST enables CRUD to be mapped to database functions using SQL.\n\nA) GET→FETCH, POST→CREATE, DELETE→DELETE, PUT→UPDATE\nB) GET→SELECT, POST→INSERT, DELETE→DELETE, PUT→UPDATE\nC) GET→SELECT, POST→INSERT, DELETE→DELETE, PUT→CREATE\nD) GET→SELECT, POST→UPDATE, DELETE→DELETE, PUT→INSERT\nE) GET→UPDATE, POST→SELECT, DELETE→DELETE, PUT→CREATE", marks: 1 },
+                  { code: '05.6',
+                    preamble: "JSON is used to encode datasets when they are passed between the server and the booking application. Figure 6 shows an example of how data about some films can be encoded using JSON.",
+                    figure: { type: 'code', label: 'Figure 6',
+                      content: "{\"Films\":[\n  { \"FilmID\": 4301,\n    \"FilmName\": \"Alien Doomsday\",\n    \"Duration\": 106,\n    \"Certificate\": \"12A\" },\n  { \"FilmID\": 2098,\n    \"FilmName\": \"Tom's Amazing Adventure\",\n    \"Duration\": 84,\n    \"Certificate\": \"U\" }\n]}" },
+                    prompt: "State two reasons why JSON might have been chosen to encode the data instead of XML, assuming that the software supports both methods.", marks: 2 }
+                ]
+              },
+              {
+                number: 6,
+                scenario: "Question parts 06.1 and 06.2 use a normalised floating point representation with an 8-bit mantissa and a 4-bit exponent, both stored using two's complement.",
+                parts: [
+                  { code: '06.1',
+                    figure: { type: 'code', label: 'Figure 7',
+                      content: "Mantissa: 0 ● 1 1 0 1 0 0 0     (binary point after the first bit)\nExponent: 1 1 0 1" },
+                    prompt: "Figure 7 shows a floating point representation of a number.\n\nCalculate the decimal equivalent of the number in Figure 7.\n\nYou should show your working.", marks: 2 },
+                  { code: '06.2',
+                    prompt: "Write the normalised floating point representation of the decimal value −23.25 in the boxes provided (8-bit mantissa with binary point after first bit, then 4-bit exponent).\n\nYou should show your working.", marks: 3 },
+                  { code: '06.3',
+                    figure: { type: 'table', label: 'Table 1',
+                      headers: ['Situation', 'Type of error'],
+                      rows: [
+                        ['A calculation is performed and the result of the calculation is so close to zero that the number that is stored is zero.', ''],
+                        ['A calculation is performed and the result of the calculation is too large to fit in the available number of bits.', ''],
+                        ['A decimal value is converted to floating point but it cannot be represented exactly in the available number of bits.', '']
+                      ] },
+                    prompt: "On each row of Table 1, state the name of the Type of error that has occurred in the Situation that is described.", marks: 2 },
+                  { code: '06.4', prompt: "Explain how the floating point representation used in Question parts 06.1 and 06.2 could be modified to represent numbers more precisely, without changing the total number of bits used to represent a number.", marks: 1 }
+                ]
+              },
+              {
+                number: 7,
+                scenario: "For question parts 07.1 and 07.2 you should assume that memory locations and registers store 8-bit values. These question parts use the AQA assembly language instruction set (LDR, STR, ADD, SUB, MOV, CMP, B, B<cond>, AND, ORR, EOR, MVN, LSL, LSR, HALT).\n\nAssembly language instructions can be used to perform masking, which allows the values of individual bits or groups of bits within a number to be isolated or set independently of the values of the other bits in the number. For example, to isolate the values of the rightmost four bits of an 8-bit number, the number could be ANDed with the binary value 00001111.\n\nThe assembly language instruction `AND R0, R1, #15` performs a bitwise logical AND operation between the value in register R1 and the number 15 (equivalent to 00001111 in binary), storing the result in register R0.",
+                parts: [
+                  { code: '07.1',
+                    figure: { type: 'code', label: 'Operands',
+                      content: "R1   0 1 0 0 0 1 1 0   (decimal 70 / hex 46)\n15   0 0 0 0 1 1 1 1\nR0   ? ? ? ? ? ? ? ?" },
+                    prompt: "In binary, show the result of applying the instruction `AND R0, R1, #15` when register R1 contains the decimal value 70 which is 46 in hexadecimal.", marks: 1 },
+                  { code: '07.2',
+                    figure: { type: 'code', label: 'Operands',
+                      content: "R1   0 0 0 0 0 1 1 0   (decimal 6)\n48   0 0 1 1 0 0 0 0\nR0   ? ? ? ? ? ? ? ?" },
+                    prompt: "In binary, show the result of applying the instruction `ORR R0, R1, #48` when register R1 contains the decimal value 6 which is 6 in hexadecimal.", marks: 1 },
+                  { code: '07.3',
+                    preamble: "A computer program is required to display the value of the contents of a memory location that stores an 8-bit value. The value should be displayed on the screen of the computer in hexadecimal.\n\nPart of the process is to convert the value stored in the memory location into the correct ASCII codes for each of the two digits that represent that value in hexadecimal. E.g. for 10011110 (9E hex), the ASCII codes are 00111001 (the '9') and 01000101 (the 'E').\n\nThe ASCII codes are: 0–9 = 48–57 (binary 0110000…0111001); A–F = 65–70 (binary 1000001…1000110).",
+                    figure: { type: 'code', label: 'Standard AQA assembly language instruction set (reference)',
+                      content: "LDR Rd, <memref>          Load value from memory into Rd\nSTR Rd, <memref>          Store value in Rd into memory\nADD Rd, Rn, <operand2>    Rd = Rn + operand2\nSUB Rd, Rn, <operand2>    Rd = Rn - operand2\nMOV Rd, <operand2>        Rd = operand2\nCMP Rn, <operand2>        Compare Rn with operand2\nB <label>                 Always branch\nB<cond> <label>           Branch if condition met (EQ, NE, GT, LT)\nAND/ORR/EOR Rd, Rn, op2   Bitwise logical AND/OR/XOR\nMVN Rd, <operand2>        Rd = NOT operand2\nLSL/LSR Rd, Rn, <op2>     Logical shift left/right\nHALT                      Stop\noperand2: #n decimal literal, Rm register m\nGeneral registers: R0–R12" },
+                    prompt: "Write an assembly language program using the AQA assembly language instruction set that will load a value from memory location 100 and store the ASCII code of the first (lefthand) digit of the hexadecimal representation of this value in memory location 101 and the ASCII code of the second (righthand) digit of the hexadecimal representation of this value in memory location 102.\n\nYour program should use masking and/or shifting to complete this task.", marks: 10 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "A supermarket chain uses a system which stores details of all of the products that it sells and the sales that it makes. The data that the supermarket stores is Big Data.",
+                parts: [
+                  { code: '08.1',
+                    preamble: "Two characteristics of Big Data are that the volume of data means it is too big to fit on a single server and the data comes in a variety of forms.",
+                    prompt: "Describe the third characteristic of Big Data.", marks: 1 },
+                  { code: '08.2',
+                    preamble: "The graph schema in Figure 8 represents part of a fact-based model of the dataset that the supermarket has built. It contains nodes: Product:Chocolate Biscuit; Product:Iced Biscuit; Store:Bath (Sells edge to Iced Biscuit); Store:Bristol (Sells edge to Iced Biscuit); Customer:10437 (Purchased edge to Iced Biscuit, properties Surname:Williams and Forename:John).",
+                    prompt: "Modify the graph schema in Figure 8 to represent the following additional facts.\n\n• The Bath store sells chocolate biscuits.\n• There are 20 individual biscuits in a packet of iced biscuits and each packet costs £1.50.\n• Both chocolate biscuits and iced biscuits are made by the company Delicious Snacks. The company has 75 employees and also makes cake bars.\n\n(Describe the nodes/edges/properties you would add.)", marks: 3 },
+                  { code: '08.3',
+                    preamble: "One approach to dealing with Big Data is to write code that can be distributed to run across more than one server.",
+                    prompt: "State two features of functional programming languages that make it easier to write code that can be distributed to run across more than one server.", marks: 2 }
+                ]
+              },
+              {
+                number: 9,
+                scenario: "The truth table in Table 4 represents the operation of a logic system.",
+                scenarioFigures: [
+                  { type: 'table', label: 'Table 4',
+                    headers: ['A', 'B', 'C', 'D'],
+                    rows: [
+                      ['0','0','0','0'], ['0','1','0','1'], ['1','0','0','1'], ['1','1','1','0']
+                    ] }
+                ],
+                parts: [
+                  { code: '09.1',
+                    prompt: "Describe a logic circuit that would produce the outputs shown in Table 4 for the given inputs.\n\nTo achieve full marks, your circuit should use exactly two gates.\n\n(Name the gates and the wiring — e.g. \"C = A AND B; D = A XOR B\".)", marks: 3 },
+                  { code: '09.2', prompt: "Explain the purpose of the circuit that you have drawn that produces the outputs given in Table 4.", marks: 1 },
+                  { code: '09.3',
+                    prompt: "Using the rules of Boolean algebra, simplify the following Boolean expression:\n\n    A · B̄ + B · ¬(Ā + ¬(B̄ · C))\n\nYou must show your working.", marks: 4 }
+                ]
+              },
+              {
+                number: 10,
+                parts: [
+                  { code: '10.1',
+                    preamble: "A data communication system uses asynchronous data transmission with even parity to send character codes that are encoded using 7-bit ASCII. Figure 9 shows five binary patterns.",
+                    figure: { type: 'code', label: 'Figure 9 — five binary patterns (10 bits each)',
+                      content: "Pattern 1: 1 0 1 1 1 0 1 1 0 1\nPattern 2: 1 1 0 1 1 1 1 0 0 0\nPattern 3: 0 1 0 0 0 0 1 1 1 0\nPattern 4: 1 0 1 1 1 1 0 0 0 0\nPattern 5: 1 1 0 0 0 0 0 1 0 0" },
+                    prompt: "How many of the binary patterns in Figure 9 could represent valid transmissions of a single character in this data communication system?", marks: 1 },
+                  { code: '10.2',
+                    preamble: "An alternative data communication system uses synchronous data transmission.",
+                    prompt: "Describe what synchronous data transmission is.", marks: 1 },
+                  { code: '10.3', prompt: "Describe one limitation of the use of parity bits for managing errors.", marks: 1 },
+                  { code: '10.4', prompt: "Shade one lozenge to indicate which of the lines on the graph in Figure 10 shows the correct relationship between the bandwidth and the bit rate of a communications medium.\n\nFigure 10 shows four lines on a Bit Rate vs Bandwidth graph:\n  Line A: straight line, positive linear slope (bit rate rises proportionally with bandwidth)\n  Line B: straight line, negative slope (bit rate decreases as bandwidth increases)\n  Line C: curve, exponential-like upward (rises slowly, then sharply)\n  Line D: horizontal line (constant bit rate regardless of bandwidth)", marks: 1 }
+                ]
+              },
+              {
+                number: 11,
+                scenario: "An email is being sent from User A on Computer A to User B on Computer B.",
+                parts: [
+                  { code: '11.1', prompt: "Describe the role that will be played by the transport layer of the TCP/IP stack in the transmission of the email from Computer A to an email server.", marks: 3 },
+                  { code: '11.2',
+                    preamble: "Whilst being transported across the Internet, the email data passes through a number of routers and one gateway.",
+                    prompt: "Describe the additional functionality of a gateway, beyond that of a router.", marks: 1 },
+                  { code: '11.3', prompt: "State the name and purpose of two application layer protocols that will be used to transfer the email from Computer A to Computer B.\n\nEach protocol must have a different purpose.", marks: 4 },
+                  { code: '11.4',
+                    preamble: "The email servers involved in the transmission of the email use well-known ports.",
+                    prompt: "Explain what a well-known port is and why an email server must use one.", marks: 2 },
+                  { code: '11.5',
+                    preamble: "The email message needs to be sent securely as it contains confidential information. The message will be encrypted using asymmetric encryption. To enable Computer B to authenticate that the message was sent by Computer A, a digital signature will also be sent with the message.",
+                    prompt: "Describe how:\n  • Computer A will encrypt the message and create the digital signature\n  • Computer B will decrypt the message and verify that it was sent by Computer A.\n\nIn your response you should refer to the specific keys that will be used in this process.", marks: 6 }
+                ]
+              },
+              {
+                number: 12,
+                scenario: "Figure 11 shows a function, FunctionZ, written in a functional programming language.",
+                scenarioFigures: [
+                  { type: 'code', label: 'Figure 11',
+                    content: "FunctionZ [] = 0\nFunctionZ (x:xs) = x + 2 * FunctionZ (xs)\n\n[] is the empty list.\n(x:xs) splits a list into the head x and tail xs." }
+                ],
+                parts: [
+                  { code: '12.1',
+                    figure: { type: 'table', label: 'Table 5 (to complete)',
+                      headers: ['Call number', 'Argument', 'Value returned'],
+                      rows: [
+                        ['1', '[4, 2, 5, 3]', ''],
+                        ['2', '', ''],
+                        ['3', '', ''],
+                        ['4', '', ''],
+                        ['5', '', '']
+                      ] },
+                    prompt: "Complete Table 5 by writing the value of the argument passed to each call of FunctionZ and the value returned by each call, when `FunctionZ [4, 2, 5, 3]` is evaluated.", marks: 3 },
+                  { code: '12.2',
+                    preamble: "All of the values in lists passed to FunctionZ as the argument are members of the set of integers.",
+                    prompt: "Shade one lozenge to indicate the co-domain of the function.\n\nA) The set of integers\nB) The set of irrational numbers\nC) The set of natural numbers\nD) The set of rational numbers\nE) The set of real numbers", marks: 1 }
+                ]
+              }
+            ]
           },
           {
             id: 'cs-aqa-7517-2022-p1',
