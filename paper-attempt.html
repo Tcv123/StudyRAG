@@ -647,12 +647,22 @@
     function renderModePicker() {
       const parts = window.paperParts(paper);
       const qbqAvailable = parts.length > 0;
+      // Sum part marks vs declared totalMarks — if they don't match,
+      // the qbq covers a subset of the paper (e.g. AQA Paper 1 has
+      // Section D questions tied to the Skeleton Program which AQA
+      // doesn't publish, so we wire up Sections A–C only).
+      const qbqMarks = parts.reduce((s, p) => s + (p.marks || 0), 0);
+      const partial = qbqMarks > 0 && qbqMarks < paper.totalMarks;
+      const noteLine = paper.qbqNote
+        ? `<div style="margin-top:8px;padding:8px 10px;background:rgba(180,83,9,0.08);border-left:3px solid var(--warn);border-radius:4px;font-size:13px;color:var(--text);"><strong>Note:</strong> ${paper.qbqNote}</div>`
+        : (partial ? `<div style="margin-top:8px;padding:8px 10px;background:rgba(180,83,9,0.08);border-left:3px solid var(--warn);border-radius:4px;font-size:13px;color:var(--text);"><strong>Partial coverage:</strong> qbq covers ${qbqMarks} of the ${paper.totalMarks} marks. The remainder is in print mode only.</div>` : '');
       const qbqCard = qbqAvailable ? `
             <div class="mode-card" data-mode="qbq">
               <div class="mode-icon">📝</div>
               <div class="mode-title">Work through it question by question</div>
-              <div class="mode-desc">Step through each question on-screen. See the actual exam prompt, enter your marks, then move to the next. Totals and grade band update live. <strong>${parts.length} parts</strong> in this paper.</div>
-              <div><button class="btn primary" data-pick="qbq">Use this mode →</button></div>
+              <div class="mode-desc">Step through each question on-screen. See the actual exam prompt, enter your marks, then move to the next. Totals and grade band update live. <strong>${parts.length} parts</strong> in this paper${partial ? ` <strong>(${qbqMarks}/${paper.totalMarks} marks)</strong>` : ''}.</div>
+              ${noteLine}
+              <div style="margin-top:10px;"><button class="btn primary" data-pick="qbq">Use this mode →</button></div>
             </div>` : `
             <div class="mode-card" style="opacity:0.6;cursor:not-allowed;">
               <div class="mode-icon">📝</div>

@@ -547,7 +547,321 @@ window.SUBJECTS = [
             totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-QP-JUN22.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-MS-JUN22.PDF'
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-75171-MS-JUN22.PDF',
+            qbqNote: "Section D (Q11–Q14, 37 marks) requires the AQA Skeleton Program file (Breakthrough.py / Breakthrough.cs / Breakthrough.vb / Breakthrough.pas / Breakthrough.java) which AQA distributes to centres for the exam — it isn't on the public filestore, so Section D is print-only here. Open the QP PDF alongside this stepper if questions reference figures.",
+            questions: [
+              // ── SECTION A — algorithms / data structures / graphs (33 marks)
+              {
+                number: 1,
+                parts: [
+                  { code: '01',
+                    preamble: "Big-O notation is used to express the time complexity of an algorithm. Table 1 contains a list of algorithms with one row pre-completed (Binary tree search = O(log n)). Complete the table for Bubble sort, Linear search and Merge sort.",
+                    prompt: "State the Big-O time complexity of each of these algorithms (Bubble sort, Linear search, Merge sort).", marks: 3 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "A queue data structure can be implemented as a static data structure using an array.",
+                parts: [
+                  { code: '02.1', prompt: "Describe the method that would need to be followed to attempt to remove an item from a circular queue implemented as a static data structure using an array.\n\nYour method should deal appropriately with any issues which could arise.", marks: 4 },
+                  { code: '02.2', prompt: "Describe three differences between dynamic and static data structures.", marks: 3 },
+                  { code: '02.3',
+                    preamble: "Figure 1 shows data that has been stored in a stack implemented using an array S: position [0]=Harry, [1]=Skye, [2]=Jib, with Top = 2.",
+                    prompt: "What value will be returned by applying the peek operation to S?", marks: 1 },
+                  { code: '02.4', prompt: "What value will be returned by applying the pop operation to S?", marks: 1 },
+                  { code: '02.5', prompt: "Explain how a single stack can be used to reverse the order of the items in a queue.", marks: 2 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: "Figure 2 shows a logic puzzle.\n\n    Which one of these six statements is correct?\n    Statement 1: All of the statements below are correct.\n    Statement 2: None of the statements below are correct.\n    Statement 3: All of the statements above are correct.\n    Statement 4: Exactly one of the statements above is correct.\n    Statement 5: None of the statements above are correct.\n    Statement 6: None of the statements above are correct.",
+                parts: [
+                  { code: '03.1', prompt: "Explain why Statement 1 is not correct.", marks: 1 },
+                  { code: '03.2', prompt: "Which one of the six statements in Figure 2 is correct?", marks: 1 },
+                  { code: '03.3', prompt: "For two statements other than Statement 1 and your answer to Question 03.2, explain why those statements are not correct.", marks: 2 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: "Questions 04.1–04.8 are about graph algorithms. Three subroutines are given (pseudo-code in the QP):\n\n    FUNCTION G(V, P)\n        Visited[V] ← True\n        FOR EACH N IN ConnectedNodes[V]\n            IF Visited[N] = False THEN\n                IF G(N, V) = True THEN RETURN True\n            ELSE IF N ≠ P THEN RETURN True\n        ENDFOR\n        RETURN False\n    ENDFUNCTION\n\n    FUNCTION F()\n        FOR Count ← 0 TO LENGTH(Visited) - 1\n            IF Visited[Count] = False THEN RETURN False\n        ENDFOR\n        RETURN True\n    ENDFUNCTION\n\n    FUNCTION E()\n        Set all elements of Visited to False\n        IF G(0, -1) = True THEN RETURN False\n        ELSE RETURN F()\n    ENDFUNCTION\n\nFigure 6 shows a 3-node graph and the Visited array contents after G(0,-1) — see the QP PDF for the diagram. Figure 7 shows a 4-node graph (nodes 0–3, undirected edges).",
+                parts: [
+                  { code: '04.1',
+                    figure: { type: 'table', label: 'Table 2 — True or False?',
+                      headers: ['Statement', 'True or False?'],
+                      rows: [
+                        ['Calculates the shortest path between a node and other nodes in a graph.', ''],
+                        ['Can be used to prove that the Halting Problem cannot be solved.', ''],
+                        ['Can be used with both directed and undirected graphs.', ''],
+                        ['Can be used with both weighted and unweighted graphs.', '']
+                      ] },
+                    prompt: "For each of the statements in Table 2, complete each row to indicate if the statement is true or false for Dijkstra's algorithm.", marks: 2 },
+                  { code: '04.2',
+                    preamble: "The subroutine G uses recursion.",
+                    prompt: "Explain what is meant by a recursive subroutine.", marks: 1 },
+                  { code: '04.3',
+                    figure: { type: 'table', label: 'Table 3 — F() trace (complete the unshaded cells)',
+                      headers: ['Count', 'Value returned'],
+                      rows: [['', '']] },
+                    prompt: "Complete the unshaded cells in Table 3 to show the result of the subroutine call F() when it is applied using the graph shown in Figure 6.", marks: 2 },
+                  { code: '04.4',
+                    figure: { type: 'table', label: 'Table 4 — adjacency matrix for the 4-node graph in Figure 7',
+                      headers: ['', '0', '1', '2', '3'],
+                      rows: [['0','','','',''], ['1','','','',''], ['2','','','',''], ['3','','','','']] },
+                    prompt: "Complete the unshaded cells in Table 4 to show how the graph in Figure 7 would be represented as an adjacency matrix.", marks: 1 },
+                  { code: '04.5',
+                    figure: { type: 'table', label: 'Table 5 — trace of G(0, -1) on the graph in Figure 7 (some cells pre-filled)',
+                      headers: ['Subroutine call', 'V', 'P', '[0]', '[1]', '[2]', '[3]', 'N'],
+                      rows: [
+                        ['G(0, -1)', '', '', 'False', 'False', 'False', 'False', ''],
+                        ['', '', '', '', '', '', '', ''],
+                        ['', '', '', '', '', '', '', ''],
+                        ['', '', '', '', '', '', '', ''],
+                        ['Final value returned:', '', '', '', '', '', '', '']
+                      ] },
+                    prompt: "Complete the unshaded cells in Table 5 to show the result of the subroutine call G(0, -1) on the graph shown in Figure 7. Some parts, including the initial Visited array values, have been completed for you.", marks: 6 },
+                  { code: '04.6', prompt: "What is the purpose of the subroutine G?", marks: 1 },
+                  { code: '04.7', prompt: "State the type of graph traversal used in subroutine G.", marks: 1 },
+                  { code: '04.8', prompt: "If the graph represented by ConnectedNodes is undirected, what can you determine about the graph when a value of True is returned by subroutine E?", marks: 1 }
+                ]
+              },
+              // ── SECTION B — write a program from scratch (12 marks)
+              {
+                number: 5,
+                parts: [
+                  { code: '05.1', extended: true,
+                    preamble: "Section B. Write a program from scratch. Paste your final program source code into the answer box below — you can write it in any IDE first.\n\nWrite a program that asks the user to enter a string. It should then change the order of the vowels in the string and display the result.\n\nIf there are n vowels in the string, the 1st vowel in the string should swap with the nth vowel in the string, the 2nd vowel in the string should swap with the (n−1)th vowel in the string, and so on.\n\nThe letters a, e, i, o and u are the only vowels.\n\nExamples:\n  • horse → herso\n  • goose → geoso\n  • pinkfairyarmadillo → ponkfiaryarmidalli\n  • nakedmolerat → nakedmolerat\n  • lynx → lynx (no vowels — unchanged)\n  • pig → pig (one vowel — unchanged)\n\nYou may assume the string entered will contain only lowercase letters.",
+                    prompt: "Paste your PROGRAM SOURCE CODE here.\n\n(Question 05.2 — the screen-capture test — needs you to run the program against persepolis / darius / xerxes and is done in print mode only.)", marks: 12 }
+                ]
+              },
+              // ── SECTION C — comprehension of the Skeleton Program (17 marks)
+              {
+                number: 6,
+                scenario: "Section C — these questions refer to the Preliminary Material and the Skeleton Program issued with the QP. Open the QP PDF (it contains the partial class diagram in Figure 8 — see pages 12–13).",
+                parts: [
+                  { code: '06.1', prompt: "State the type of relationship the diagram in Figure 8 shows between the class indicated by ① and the class indicated by ②.", marks: 1 },
+                  { code: '06.2', prompt: "State the identifier of the class indicated by ② in Figure 8.", marks: 1 },
+                  { code: '06.3', prompt: "Explain the difference between an attribute that has a public specifier and an attribute that has a protected specifier.", marks: 2 },
+                  { code: '06.4', prompt: "In object-oriented programming, what is meant by overriding?", marks: 1 }
+                ]
+              },
+              {
+                number: 7,
+                scenario: "This question is about the CardCollection class in the Skeleton Program. Figure 9 shows a pseudo-code version of part of the Shuffle subroutine, and Figure 10 shows an alternative INCORRECT version:\n\n    Figure 9 (correct):\n      TempCard ← Cards[RNo1]\n      Cards[RNo1] ← Cards[RNo2]\n      Cards[RNo2] ← TempCard\n\n    Figure 10 (broken):\n      Cards[RNo1] ← Cards[RNo2]\n      Cards[RNo2] ← Cards[RNo1]",
+                parts: [
+                  { code: '07.1', prompt: "Explain why the Shuffle subroutine would not work if it used the method shown in Figure 10 instead of the method shown in Figure 9.", marks: 1 },
+                  { code: '07.2',
+                    preamble: "The CardCollection class uses a list to store the cards.",
+                    prompt: "State one reason why a set could not have been used instead of a list.", marks: 1 },
+                  { code: '07.3',
+                    preamble: "A hash table could have been used instead of a list.",
+                    prompt: "Describe how a card would be added to a hash table.", marks: 3 },
+                  { code: '07.4',
+                    preamble: "A hash table can be used to implement a dictionary data structure.",
+                    prompt: "Explain why a hash table is a suitable choice.", marks: 1 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "Figure 11 in the QP shows an incomplete hierarchy diagram of the user-defined subroutines in part of the Skeleton Program. One box is marked ③. The SetupGame subroutine contains code that uses the value 5 and calls LoadGame.",
+                parts: [
+                  { code: '08.1', prompt: "Which identifier should replace ③ (from Figure 11)?", marks: 1 },
+                  { code: '08.2',
+                    preamble: "The value 5 is used in the subroutine SetupGame. It would be better to use a named constant with an identifier that describes the purpose of the constant.",
+                    prompt: "Suggest a suitable identifier for the named constant.", marks: 1 },
+                  { code: '08.3', prompt: "State one actual data value that will always be in the stack frame added to the stack when the subroutine LoadGame is called from the SetupGame subroutine.", marks: 1 },
+                  { code: '08.4', prompt: "Explain why the call to the subroutine AddDifficultyCardsToDeck is after, not before, the iteration structure in the SetupGame subroutine.", marks: 1 }
+                ]
+              },
+              {
+                number: 9,
+                parts: [
+                  { code: '09', prompt: "How many subroutines in the Skeleton Program access external data files?\n\n(Answer expected: count subroutines that read from / write to a file. Refer to the Skeleton Program file your centre received for the live exam.)", marks: 1 }
+                ]
+              },
+              {
+                number: 10,
+                parts: [
+                  { code: '10',
+                    preamble: "The user must input a D or P to select Discard or Play during a game.",
+                    prompt: "Write a regular expression that would match the character D or P.\n\nYou should not make any changes to the Skeleton Program to answer this question.", marks: 1 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '01': { type: 'points',
+                points: [
+                  'Bubble sort: O(n²)',
+                  'Linear search: O(n)',
+                  'Merge sort: O(n log n) (A. O(n × log n); NE. O(log n); A. log₂ instead of log)'
+                ],
+                guidance: '3 marks: 1 mark per correct row. I. missing brackets. I. missing O.' },
+              '02.1': { type: 'points',
+                points: [
+                  'Check the queue is (not already) empty',
+                  'Compare the value of the front pointer with the maximum size of the array (or array max − 1, depending on convention)',
+                  'If equal then front pointer becomes one / becomes zero (A. index of first position)',
+                  'Otherwise (or instead of the wrap-around step), add one to the front pointer',
+                  'Alternative: use a modulus / modulo operator with the new value of the front pointer and the maximum size of the array'
+                ],
+                guidance: '4 marks. Max 3 if any errors. Multiple valid alternative orderings — accept any that correctly handles empty-check + wrap-around.' },
+              '02.2': { type: 'points',
+                points: [
+                  'Static data structures have storage size determined at compile-time / before program is run / before the data structure is first used // dynamic data structures can grow / shrink during execution / at run-time',
+                  'Static data structures have fixed (maximum) size // size of dynamic data structures can change',
+                  'Static data structures can waste storage space / memory if the number of data items stored is small relative to the size of the structure // dynamic data structures only take up the amount of storage required for the actual data',
+                  'Dynamic data structures require (memory to store) pointers to the next item(s) // static data structures (typically) do not need pointers',
+                  'Static data structures (typically) store data in consecutive memory locations // dynamic data structures (typically) do not'
+                ],
+                guidance: 'Max 3. Each point requires both sides of the comparison.' },
+              '02.3': { type: 'exact',
+                points: ['Jib'],
+                guidance: '1 mark for Jib.' },
+              '02.4': { type: 'exact',
+                points: ['Jib'],
+                guidance: '1 mark for Jib.' },
+              '02.5': { type: 'points',
+                points: [
+                  '(Until the queue is empty) repeatedly remove / delete (the front item) from the queue and push it on to the stack',
+                  '(Until the stack is empty) repeatedly pop items from the stack and add them to the (rear of the) queue'
+                ],
+                guidance: '2 marks: 1 per step.' },
+              '03.1': { type: 'points',
+                points: [
+                  "Statement 1 can't be correct because it means Statement 5 / Statement 6 is true, which means Statement 1 is false",
+                  "Statement 1 can't be correct because it would mean Statement 2 is correct, which would mean all of the other statements have to be both correct and incorrect",
+                  "Statement 1 can't be correct because it would mean Statement 4 is correct, which means that Statements 2 and 3 have to be both correct and incorrect",
+                  "Question says only one of the statements is true so Statement 1 can't be true as that would mean more than one statement would be true"
+                ],
+                guidance: 'Max 1.' },
+              '03.2': { type: 'exact',
+                points: ['Statement 5', '5'],
+                guidance: '1 mark for 5 (Statement 5).' },
+              '03.3': { type: 'points',
+                points: [
+                  "Statement 3 can't be correct because Statement 1 is false",
+                  "Statement 3 can't be correct because the question says only one of the statements is correct",
+                  "Statement 3 can't be correct because that would mean Statement 2 would be a contradiction (this would mean Statement 3 would have to be incorrect)",
+                  "If Statement 2 is true then Statement 4 has to be false. Working through the contradictions, Statement 2 must be false",
+                  'Statements 1, 2 and 3 are false so Statement 4 is false',
+                  'If Statement 6 is true then 5 has to be false, implying at least one of Statements 1 to 4 has to be true — but they are all false, so Statement 6 has to be false'
+                ],
+                guidance: 'Max 2. One mark per correctly-reasoned elimination.' },
+              '04.1': { type: 'exact',
+                points: [
+                  'Calculates the shortest path between a node and other nodes in a graph: True',
+                  'Can be used to prove the Halting Problem cannot be solved: False',
+                  'Can be used with both directed and undirected graphs: True',
+                  'Can be used with both weighted and unweighted graphs: False'
+                ],
+                guidance: '2 marks for all rows correct. 1 mark for three rows correct.' },
+              '04.2': { type: 'exact',
+                points: ['A subroutine that calls itself'],
+                guidance: '1 mark.' },
+              '04.3': { type: 'points',
+                points: [
+                  'Count column shows 0 (then perhaps 1, but consecutive instances of 0 / blank cells are I.)',
+                  'Value returned: False'
+                ],
+                guidance: '2 marks (1 per point). I. repeated consecutive instances of values. I. blank cells. Max 1 if any errors.' },
+              '04.4': { type: 'exact',
+                points: [
+                  'Row 0: 0,1,1,1 (or blank,1,1,1)',
+                  'Row 1: 1,0,0,1',
+                  'Row 2: 1,0,0,0',
+                  'Row 3: 1,1,0,0 (final cell 0)'
+                ],
+                guidance: '1 mark for fully-correct adjacency matrix. A. any suitable indicators instead of 0 and 1. A. blank cell instead of 0 (R. if usage inconsistent).' },
+              '04.5': { type: 'points',
+                points: [
+                  'Visited[0] set to True and then not changed',
+                  'Visited[1] set to True and not changed; Visited[3] set to True and not changed; Visited[2] always has value False',
+                  'Second subroutine call is G(1, 0) (I. repeated consecutive instances of this call)',
+                  'Third and final subroutine call is G(3, 1) (I. repeated consecutive instances; I. missing calls G(1, 0) and G(0, -1))',
+                  'Value returned is True',
+                  'N column contains correct values (A. values of 3 in 2nd-last cell for N and value of 1 in last cell for N, instead of blank cells)'
+                ],
+                guidance: '6 marks. Max 5 if any errors.' },
+              '04.6': { type: 'exact',
+                points: ['Determine if a graph contains a cycle or not', 'cycle detection'],
+                guidance: '1 mark for "detects whether the graph contains a cycle".' },
+              '04.7': { type: 'exact',
+                points: ['Depth-first search', 'DFS', 'depth-first'],
+                guidance: '1 mark.' },
+              '04.8': { type: 'exact',
+                points: ['The graph is a tree', 'tree'],
+                guidance: '1 mark.' },
+              '05.1': { type: 'levels',
+                levels: [
+                  { range: [10, 12], descriptor: 'Level 4',
+                    criteria: 'A line of reasoning has been followed to arrive at a logically structured working or almost fully working programmed solution that meets most of the requirements. All of the appropriate design decisions have been taken. To award 12 marks, ALL requirements must be met.' },
+                  { range: [7, 9], descriptor: 'Level 3',
+                    criteria: 'Evidence that a line of reasoning has been followed to produce a logically structured program. The program displays relevant prompts, inputs the required string, has at least one iterative structure and at least one selection structure, and uses appropriate variables to store most of the needed data. An attempt has been made to swap the positions of vowels in the string, although this may not work correctly under all circumstances.' },
+                  { range: [4, 6], descriptor: 'Level 2',
+                    criteria: 'A program has been written and some appropriate, syntactically correct programming language statements are present. There is evidence that a line of reasoning has been partially followed.' },
+                  { range: [1, 3], descriptor: 'Level 1',
+                    criteria: 'A program has been written and a few appropriate programming language statements have been written but there is no evidence that a line of reasoning has been followed to arrive at a working solution.' }
+                ],
+                indicative: {
+                  'AO3 Design (4 marks)': '1) Identify that string concatenation / list-character swap is needed when swapping vowels in the string. 2) Identify that a loop is needed that repeats a number of times determined by the length of the word (or the number of vowels in it). 3) Identify that two integer variables are needed for character positions (or an ordered list of vowel positions, or one integer giving the distance from the start/end of the string). 4) A selection structure that checks if a character is a vowel.',
+                  'AO3 Programming (8 marks)': '5) Suitable prompt asking the user to enter a string + user input assigned to an appropriate variable. 6) Iterative structure that repeats enough times to check all characters in the string. 7) Correctly checks if a character is a vowel. 8) Correctly checks ALL characters in the string for vowels. 9) Swaps / moves the position of two characters in the string. 10) Program only moves the position of vowels. 11) Program works correctly if the string contains one vowel and works correctly if no vowels. 12) Program works correctly under ALL circumstances.'
+                },
+                guidance: '12 marks (4 AO3 design + 8 AO3 programming). DPT. mark points 7 and 8 if only checks for some vowels or includes at most one non-vowel character. Max 11 if any errors. I. additional outer loop to repeat the program.' },
+              '06.1': { type: 'exact',
+                points: ['Inheritance'],
+                guidance: '1 mark.' },
+              '06.2': { type: 'exact',
+                points: ['Card'],
+                guidance: '1 mark. R. if spelt incorrectly. R. if any additional code. I. case.' },
+              '06.3': { type: 'points',
+                points: [
+                  'Public means it can be accessed / seen outside of the class it is in',
+                  'Protected means it can be accessed / seen in the class it is in and in any subclasses (or any class inheriting from it)'
+                ],
+                guidance: '2 marks (1 per access specifier). A. Java-only definition for "protected" referring to packages and subclasses in any package.' },
+              '06.4': { type: 'exact',
+                points: ['When a derived class / subclass has a different implementation for a method / function / subroutine to the class it inherits from / the base class'],
+                guidance: '1 mark.' },
+              '07.1': { type: 'points',
+                points: [
+                  'There will end up being two copies of the second card (A. "a card")',
+                  'The first card (A. "a card") will be overwritten'
+                ],
+                guidance: 'Max 1.' },
+              '07.2': { type: 'exact',
+                points: ['Because sets are unordered', 'because the cards have an order'],
+                guidance: '1 mark. R. "because sets only allow one instance of a value to be stored".' },
+              '07.3': { type: 'points',
+                points: [
+                  'AO2 — Hash algorithm / function applied to CardNumber (NE. "primary key")',
+                  'AO1 — Result indicates location that card should be stored in',
+                  'AO1 — If there is already a card in that location, a method is needed to deal with collisions (A. description of any suitable collision-resolution method)'
+                ],
+                guidance: '3 marks: 1 AO2 + 2 AO1.' },
+              '07.4': { type: 'points',
+                points: [
+                  'Allows direct (A. faster) access to the value being looked-up',
+                  'No need to search through the list to find a value (assuming a good choice of hash function)'
+                ],
+                guidance: 'Max 1.' },
+              '08.1': { type: 'exact',
+                points: ['ProcessLockSolved'],
+                guidance: '1 mark. R. if spelt incorrectly. R. if any additional code. I. case and spacing.' },
+              '08.2': { type: 'exact',
+                points: ['MaxHandSize', 'HandSize'],
+                guidance: '1 mark. A. any suitable identifier that makes it clear the constant represents the hand size.' },
+              '08.3': { type: 'exact',
+                points: ['game1.txt'],
+                guidance: '1 mark. I. quotation marks around game1.txt.' },
+              '08.4': { type: 'exact',
+                points: ["To make sure no difficulty cards are put into the player's hand"],
+                guidance: '1 mark.' },
+              '09': { type: 'exact',
+                points: ['2'],
+                guidance: '1 mark for 2.' },
+              '10': { type: 'exact',
+                points: ['D|P', '[DP]', 'P|D', '[PD]'],
+                guidance: '1 mark for any of D|P, [DP], P|D, [PD]. I. use of quotes around each character. A. use of ^ and/or $ in expression as long as done correctly.' }
+            }
           },
           {
             id: 'cs-aqa-7517-2022-p2',
