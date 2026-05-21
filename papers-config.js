@@ -750,7 +750,297 @@ window.SUBJECTS = [
                     prompt: "Describe the principles of operation of an SSD.", marks: 4 }
                 ]
               }
-            ]
+            ],
+            // Official AQA mark-scheme content for every part, copied from
+            // the 7517/2 June 2022 mark scheme. Fed to /api/mark-against-scheme
+            // so the AI marker awards only what the real MS credits.
+            markSchemes: {
+              '01.1': { type: 'points',
+                points: [
+                  'Put the bits into groups of four / nibbles (starting at the right)',
+                  'Convert each group of bits / nibble into a hexadecimal digit'
+                ],
+                guidance: '2 marks. A. "group/section/chunk of bits" even if number of bits not stated or incorrect. A. "value" or "number" for "digit". A. "convert each group of bits into decimal for 0–9 and letter A–F for 10–15". Do not award marks if the conversion has been done but has not been described, although it is acceptable for the conversion to be performed as part of the description.' },
+              '01.2': { type: 'points',
+                points: [
+                  'More compact when displayed / can be displayed using fewer digits',
+                  'Easier (for people) to understand / remember',
+                  'Lower likelihood of an error when typing in data',
+                  'Saves (the programmer) time writing / typing in data'
+                ],
+                guidance: 'Max 1. A. read, write for understand/remember. NE. "takes up less space". R. if stated that hexadecimal uses less memory / storage.' },
+              '02.1': { type: 'points',
+                points: [
+                  'Multiple bits transmitted simultaneously / at the same time',
+                  'Each (simultaneously transmitted) bit is sent down a different wire / cable / path / line'
+                ],
+                guidance: '2 marks. NE. "data" or "values" for "bits". A. "multiple wires/cables/paths/lines used for transmission" for the second mark.' },
+              '02.2': { type: 'points',
+                points: [
+                  'The hardware / wiring required for serial data transmission is cheaper',
+                  "Serial transmission does not suffer from crosstalk / two bits cannot interfere with each other because they are not sent simultaneously",
+                  'Serial transmission does not suffer from data skewing / bits arrive in the order they were sent',
+                  'Serial transmission can be used over longer distances'
+                ],
+                guidance: 'Max 1. NE. "cheaper" without reference to hardware/wiring. NE. "more reliable" / "lower probability of interference / corruption".' },
+              '02.3': { type: 'exact',
+                points: ['B', 'B Latency is the rate at which signals on a wire or line can change'],
+                guidance: '1 mark for B. R. if more than one lozenge shaded.' },
+              '02.4': { type: 'points',
+                points: [
+                  'Start the receiver clock ticking',
+                  'Synchronise the clock in the receiver to the transmitter clock / bring the receiver clock into phase with the transmitter clock'
+                ],
+                guidance: 'Max 1. A. "to wake up the receiver". A. "to synchronise the receiver and transmitter clocks". A. "synchronise the clocks in the devices". NE. "synchronise the (two) clocks". R. "indicates start of transmission".' },
+              '02.5': { type: 'points',
+                points: [
+                  'Provides time for the receiver to process / transfer the received data',
+                  'Allows the (next) start bit to be recognised'
+                ],
+                guidance: 'Max 1. NE. "indicates that the received data can be processed". R. "indicates end of transmission". R. "indicates clocks no longer need to be synchronised".' },
+              '03.1': { type: 'exact',
+                points: [
+                  'A+B column: 0, 1, 1, 1',
+                  'Ā column: 1, 1, 0, 0',
+                  'B̄ column: 1, 0, 1, 0',
+                  'Ā·B̄ column: 1, 0, 0, 0',
+                  '¬(Ā·B̄) column: 0, 1, 1, 1'
+                ],
+                guidance: '1 mark for the table being correctly completed across all rows. (The two columns A+B and ¬(Ā·B̄) being equal is what demonstrates De Morgan in Q3.2.)' },
+              '03.2': { type: 'exact',
+                points: ["De Morgan's (Law)", "De Morgan's", 'De Morgan'],
+                guidance: "1 mark for De Morgan's Law." },
+              '03.3': { type: 'points',
+                points: [
+                  'Final answer: Ā·B + C (or a logically equivalent fully-simplified expression)',
+                  'Successful application of De Morgan\'s Law (and any associated NOT cancellation) that produces a simpler expression',
+                  'Applying an identity other than cancelling NOTs that produces a simpler expression (e.g. X + 1 = 1, X · 1 = X, X + X̄ = 1)',
+                  'Successfully putting terms into brackets',
+                  'Successfully expanding brackets',
+                  'Successfully using the distributive law'
+                ],
+                guidance: '1 mark for final answer. Max 3 for working — award one mark per technique application from the list (any combination, max 3 total). Award marks for working until an incorrect step is made; ignore missing steps if jumps between steps are logically correct. Max 3 overall if any working is incorrect. A simpler expression is one logically equivalent to the original but using fewer logical operators.' },
+              '04.1': { type: 'points',
+                points: [
+                  'Software used in the management of a computer system',
+                  'Layer(s) of software that abstract the user from how the computer works',
+                  'Software that provides a platform for other software to use'
+                ],
+                guidance: '1 mark. A. "software used to run the computer". A. "software that provides a virtual machine". NE. "software that maintains a computer".' },
+              '04.2': { type: 'exact',
+                points: ['B', 'Bitmap image editors'],
+                guidance: '1 mark for B. R. if more than one lozenge shaded.' },
+              '04.3': { type: 'points',
+                points: [
+                  'To hide the complexities of the hardware from the user',
+                  'To handle interrupts / call the appropriate interrupt handler (A. ISR) when an interrupt occurs',
+                  'To allocate processors / cores to processes / schedule processes / decide which process to carry out when / manage execution of multiple processes',
+                  'To allocate memory / RAM to processes / determine what areas of memory used for what purpose / moving data into and out of RAM for virtual memory / ensuring processes only write to memory they have been allocated',
+                  'To allocate I/O devices to processes / manage communication between processes and I/O devices / automatic installation of drivers',
+                  'To allocate space on a storage device to files / organise files into directories / determine where to save a file / recognising storage devices',
+                  'Installation of new software / managing software updates',
+                  'Manage power consumption / use of battery (A. examples e.g. controlling clock speed, screen brightness)'
+                ],
+                guidance: 'Max 2. Students must DESCRIBE — phrases such as "processor management", "allocating memory", "memory management", "user interface" are NOT enough. NE. "manages I/O devices". NE. "saving a file".' },
+              '05.1': { type: 'exact',
+                points: ['−19 5/16', '−309/16', '−19.3125'],
+                guidance: '2 marks for correct answer. If answer is incorrect then award 1 method mark for working including one of: −19; −5/16 / −.3125; −32; addition of 8 and 4 = 12; addition of 1/2, 1/8 and 1/16 = 11/16 = 0.6875; or 44.6875 / 44 11/16.' },
+              '05.2': { type: 'points',
+                points: [
+                  'Maximises precision / accuracy for a given number of bits (must convey "given number of bits", e.g. by example such as "word length")',
+                  'Unique representation of each number / simpler to test for equality of numbers'
+                ],
+                guidance: '2 marks: one per reason. The "given number of bits" concept must be present for the precision mark.' },
+              '05.3': { type: 'exact',
+                points: ['27/4096', '0.0066', '0.0065917969', '6.6×10⁻³'],
+                guidance: '2 marks for correct answer 27/4096 / 0.0066 (4dp). A. higher-precision answers (0.0065917969 to 10dp) or mathematically equivalent values with at least as many significant figures (e.g. 6.6×10⁻³). If answer is incorrect then award 1 method mark for either: showing correct value of mantissa and exponent in decimal (mantissa = 0.84375 / 27/32, exponent = −7); OR showing binary point shifted 7 places left; OR indicating answer = mantissa × 2^exponent and using the correct mantissa or exponent in that calculation.' },
+              '05.4': { type: 'exact',
+                points: ['Mantissa 10100011, exponent 0101', 'Mantissa: 1.0100011 (sign + binary point + fraction), Exponent: +5'],
+                guidance: '3 marks for correct answer. If answer is incorrect then award up to 2 method marks (one per step): correct (unsigned) fixed-point of 23.25 in binary = 10111.01 (A. leading 0s, trailing 0s); correct (signed) fixed-point of −23.25 in binary = 101000.11 (A. leading 1s, trailing 0s; NE. this value shown only in final answer mantissa box); showing correct exponent value in decimal (5) or binary (101), or showing binary point shifted 5 places left (A. if only shown in final answer exponent box).' },
+              '05.5': { type: 'exact',
+                points: ['0.43', '0.43%', '0.0043'],
+                guidance: '2 marks for correct answer 0.43(%). A. 0.0043. A. higher precision (0.4328993199 to 10dp) or mathematically equivalent values (4.3×10⁻³). R. 0.0043%. If answer is incorrect then award 1 method mark for one of: performing −0.22558594 − (−0.2265625) = 0.00097656 in working (R. −0.00097656); dividing by 0.22558594 or −0.22558594; giving final answer as ±0.43(%) or (±0.0043).' },
+              '06': { type: 'levels',
+                levels: [
+                  { range: [10, 12], descriptor: 'Level 4',
+                    criteria: 'A line of reasoning has been followed to produce a coherent, relevant, substantiated and logically structured response. The response covers all THREE areas (RFID, barcode, ethical/legal) and there is sufficient detail to show the student has a good level of understanding of at least two of these.' },
+                  { range: [7, 9], descriptor: 'Level 3',
+                    criteria: 'A line of reasoning has been followed to produce a coherent, relevant, substantiated and logically structured response which shows a good level of understanding of at least one area and a satisfactory understanding of at least one other area.' },
+                  { range: [4, 6], descriptor: 'Level 2',
+                    criteria: 'A limited attempt has been made to follow a line of reasoning and the response has a mostly logical structure. Either a good level of understanding has been demonstrated of one area or some understanding has been demonstrated of at least two areas.' },
+                  { range: [1, 3], descriptor: 'Level 1',
+                    criteria: 'A few relevant points have been made but there is no evidence that a line of reasoning has been followed. The points may only relate to one or two of the areas. There is insufficient evidence of a good understanding of any of the three areas.' }
+                ],
+                indicative: {
+                  'Area 1 — How RFID works': 'RFID tag contains (transmission) circuitry and antenna; memory on tag stores (customer) data; RFID reader at till transmits/sends signal / emits electric or electro-magnetic field; signal activates/energises/induces current in RFID tag; tag transmits data by radio (wave); reader converts radio wave back into binary data; RFID tag (on a card) is a passive device; RFID transmits over very short range.',
+                  'Area 2 — How a barcode reader works': '(reflected-light method) light source/laser directed at bar code / bar code illuminated; (moving) mirror/prism moves beam across bar code, OR user moves reader across bar code; light reflected back; black/white bands reflect different amounts of light (black less, white more); light sensor/photodiode/CCD measures reflected light; reflected light converted into electrical signal (A. into binary/numbers/characters/ASCII). (CMOS/CCD/camera method) grid of pixel sensors / CMOS/CCD sensor; each sensor measures light intensity of a point; outputs voltage dependent on intensity; voltages turned into binary data via ADC; image processing software analyses image to identify black/white bands. (Only one of the two methods needs to be described.)',
+                  'Area 3 — Ethical and legal issues': '(ethical) customers may consider purchase data personal / invasion of privacy; purchase of some items may be sensitive; will people fully understand what is done with the data; do customers feel forced to consent for offers/vouchers; can the company be confident other companies they share data with will process it legally; risk of revealing things to other household members; should ethical consideration be given to which products are promoted to whom; are some customers (e.g. vulnerable) ones who should not be targeted. (legal) naming a relevant law — GDPR, Data Protection Act; need to inform customers / obtain consent; data kept securely; need to consider purposes data should be used for; who can access/share data; impact if stolen or leaked; limit on retention period; data must be accurate; restrictions on transferring data abroad; supermarket should let customers see/edit data; use of RFID might make data vulnerable to theft.'
+                },
+                guidance: '12 marks total. Best-fit by overall quality across the three areas. Indicative content is a guide — credit other valid points. Only one of the two barcode methods is required for Area 2. 0 marks if no attempt or nothing creditworthy.' },
+              '07.1': { type: 'exact',
+                points: ['C', 'The primary key in each relation consists of only one attribute'],
+                guidance: '1 mark for C. R. if more than one lozenge shaded.' },
+              '07.2': { type: 'points',
+                points: [
+                  'One-to-many relationship between Animal and AnimalLocation',
+                  'One-to-many relationship between Zoo and AnimalLocation'
+                ],
+                guidance: '2 marks total. If no marks awarded then award 1 mark for a many-to-many relationship between Animal and Zoo. Max 1 if any incorrect relationships drawn (ignore the inclusion of a many-to-many between Animal and Zoo).' },
+              '07.3': { type: 'points',
+                points: [
+                  'AnimalID with a sensible data type and identified as primary key (e.g. AnimalID INT PRIMARY KEY, or AnimalID INT, ... PRIMARY KEY(AnimalID))',
+                  'Two other fields with sensible data types and lengths (if given) — e.g. IndividualName VARCHAR(50), Species VARCHAR(40)',
+                  'Two further other fields with sensible data types and lengths — e.g. DateOfBirth DATE, Sex VARCHAR(6)'
+                ],
+                guidance: '3 marks (AO3 — syntax including commas must be correct to award). DPT. data type before fieldname (penalisation is of marks not mistakes). DPT. incorrect punctuation — missing commas, unnecessary semi-colons/brackets (but ignore bracket or semi-colon at the very end). A. any sensible types — lengths do not need to be specified. I. case. Alternative types: tinyint/smallint/mediumint/integer/number/byte for INT; char/nchar/nvarchar/ntext/longvarchar/varchar2/nvarchar2/text/tinytext/mediumtext/longtext/string for VARCHAR; datetime/datetime2/datetimeoffset/smalldatetime for DATE (R. time).' },
+              '07.4': { type: 'points',
+                points: [
+                  'AO2 (analyse) — correctly identify tables (Animal, AnimalLocation) and fields (IndividualName, DateArrived) to extract, with no other tables/fields in the SELECT/FROM',
+                  'AO2 — correct condition to select species: Species = "Red Panda" (or correct zoo condition ZooName = "Ashdale Park")',
+                  'AO2 — correct condition to link tables: Animal.AnimalID = AnimalLocation.AnimalID',
+                  'AO2 — at least one pair of date-range conditions that identify some animals at the zoo during the period (e.g. DateArrived <= "31/05/2020" AND DateLeft >= "01/04/2020" OR DateLeft = "01/01/0001")',
+                  'AO2 — full set of date-range conditions covering all four cases (arrived before & left after; arrived before end & still there; arrived in period; left in period)',
+                  'AO3 (programming) — fully correct SQL in two of the three clauses (SELECT, FROM, WHERE)',
+                  'AO3 — fully correct SQL in all three clauses (SELECT, FROM, WHERE)'
+                ],
+                guidance: '7 marks total (5 AO2 + 2 AO3). A. inclusion of unnecessary Zoo table only if correctly linked to AnimalLocation. R. additional linking conditions for unused tables. Award AO2 conditions even if SQL syntax wrong. A. mark(s) for correct conditions even if tables not identified. A. > for >= and < for <=. R. ≤ ≥ => =< symbols. Award maximum 2 of the 4 condition marks if not joined by correct logical operators. A. table-name.fieldname; A. AS alias / "FROM Animal AL"; A. INNERJOIN as one word; A. spaces in fieldnames; I. unnecessary brackets; A. any quotation marks/hashes around dates. I. ORDER BY. DPT. fieldname before table name. DPT. unnecessary punctuation — allow one trailing semicolon. Overall Max 6 if solution does not work fully.' },
+              '07.5': { type: 'points',
+                points: [
+                  'Advantage: quicker to lookup an animal\'s current location / current location identifiable without querying AnimalLocation / less complex query needed',
+                  'Disadvantage: additional storage space required',
+                  'Disadvantage: introduces data redundancy (information already in AnimalLocation)',
+                  'Disadvantage: data inconsistency could occur (Animal vs AnimalLocation mismatch)',
+                  'Disadvantage: more updates required when an animal moves between zoos',
+                  'Disadvantage: the database will no longer be normalised'
+                ],
+                guidance: '2 marks total: max 1 advantage + max 1 disadvantage. NE. "easier to lookup". R. "it will be possible to identify an animal\'s current location".' },
+              '08.1': { type: 'points',
+                points: [
+                  'Equal status (P2P) vs nominated server(s), other computers are clients (CS)',
+                  'Resources stored / shared from any computer (P2P) vs clients access resources from server, resources stored on server(s) (CS)',
+                  'No centralised management of security / security managed individually by each user (P2P) vs centralised management of security / must login to access server(s) (CS)',
+                  'Same resource can be shared from multiple computers / no reliance on central server (P2P) vs resources cannot be accessed if server(s) turned off / reliance on central server(s) (CS)',
+                  'Hardware and software on computers is general purpose / not optimised for services (P2P) vs hardware and software on server(s) can be optimised for providing services (CS)'
+                ],
+                guidance: 'Max 3. Award 1 mark per comparison (one row). Student only needs to state ONE side of the comparison to be awarded the mark — stating both sides is not worth two marks. R. "user" for "computer".' },
+              '08.2': { type: 'points',
+                points: [
+                  'Small number of users / devices (NE. "small network")',
+                  'Likely that the users will trust each other / unlikely confidential data needs to be stored / no requirement for complex security (A. examples e.g. access rights, types of user)',
+                  'Individual users will be able to choose which files / resources they share and with who',
+                  'Will avoid additional cost of buying server (R. "cheaper" without further explanation)',
+                  'No additional expertise required to set up / manage server(s) / easier to set up as no server to configure (R. "easier to set up / maintain" without further explanation)'
+                ],
+                guidance: 'Max 3.' },
+              '08.3': { type: 'points',
+                points: [
+                  'Purpose (AO1 knowledge): Translates / converts / maps Fully Qualified Domain Names (FQDNs) into IP addresses (A. domain names; R. URLs)',
+                  'How it works: DNS / Domain Name Server(s) stores a database/table of FQDNs and corresponding IP addresses (A. FQDN looked up in table; A. domain names; DPT. URLs)',
+                  'How it works: DNS is a distributed database of mappings',
+                  'How it works: (Individual) mappings are only known by some DNS servers',
+                  'How it works: DNS servers are organised into a hierarchy (A. hierarchy given by example; R. description of how domain names themselves are organised)',
+                  'How it works: If one DNS server cannot resolve a lookup the query will be passed to another DNS server',
+                  'How it works: DNS servers support load distribution by returning one IP address from a list'
+                ],
+                guidance: '3 marks: 1 mark AO1 (knowledge) for purpose + 2 marks AO1 (understanding) for how it works.' },
+              '09.1': { type: 'exact',
+                points: ['Direct (addressing)', 'Direct'],
+                guidance: '1 mark for "Direct" / "Direct addressing".' },
+              '09.2': { type: 'points',
+                points: [
+                  'Correct initial values loaded into registers R0, R1 and R3: 23, 5, 0',
+                  'R2 has initial value 1 and R3 is updated to 23',
+                  'R0 shifted left to give 46 and R1 shifted right to give 2',
+                  'R0 changes to 92 then 184, R1 changes to 1 then 0, R2 changes to 0 then 1',
+                  'R3 and memory location 122 set to 115'
+                ],
+                guidance: '5 marks. Max 4 if any incorrect values written into table. Expected final values: 120=23, 121=5, 122=115, R0=184, R1=0, R2=1, R3=115.' },
+              '09.3': { type: 'exact',
+                points: ['(To) multiply (the two numbers in memory locations 120 and 121 together, storing the result in memory location 122)', 'multiplication', 'multiply 120 and 121'],
+                guidance: '1 mark. A. "multiplication".' },
+              '09.4': { type: 'points',
+                points: [
+                  'So it will execute more quickly (TO. if stated that it executes more quickly because translation is not required)',
+                  'So it will use less memory (when translated) (NE. "uses less space", "more compact")',
+                  'A translator for a high-level language might not have been available',
+                  'Programmer would have complete (A. "more") control over the final machine code that is output by the translator / executed (R. "direct access to hardware / registers")'
+                ],
+                guidance: 'Max 2.' },
+              '09.5': { type: 'exact',
+                points: ['There is a one-to-one mapping', 'each assembly language instruction translates into one machine code instruction'],
+                guidance: '1 mark for one-to-one mapping between assembly and machine code instructions.' },
+              '10.1': { type: 'exact',
+                points: ['195 seconds', '3 minutes 15 seconds', '3.25 minutes'],
+                guidance: '3 marks for correct final answer of 195 seconds. A. "3 minutes 15 seconds", "3.25 minutes" but NE. "3.25" without units. If final answer not given/incorrect then award up to 2 method marks (one per step) for: conversion of sample size into bytes/bits (multiplication by 1000 and 1000 and 8 / by 1000000 / by 8000000, or value 17199000 or 137592000 used); calculating seconds from sample size (dividing a number by both 44100 and 16 (or 2), OR multiplying 44100 by 16 (or 2)). Award the second mark even if sample size incorrectly calculated.' },
+              '10.2': { type: 'points',
+                points: [
+                  'More compact representation (NE. "requires less space")',
+                  'Easy to modify / edit at note level (e.g. change octave, change instruments)',
+                  'Simple method to compose algorithmically',
+                  'Musical score can be generated directly from a MIDI file',
+                  'No data lost about musical notes / no data lost through sampling (A. "better quality" only with explanation linked to sampling)',
+                  'MIDI records the musician\'s inputs rather than the sound produced',
+                  'The MIDI file can be directly output to control an instrument / device'
+                ],
+                guidance: 'Max 3.' },
+              '11': { type: 'points',
+                points: [
+                  'Network (max 1): Higher bandwidth network connection required for thin-client (A. examples e.g. fibre optic, gigabit switches)',
+                  'Client (max 2): Slower (clock speed) processor needed in client',
+                  'Client (max 2): Reduced RAM needed in client',
+                  'Client (max 2): No / small HDD / SSD / secondary storage required in workstations (A. "storage" for "secondary storage")',
+                  'Server (max 2): Multiple processors / processor with many cores / high clock speed needed on server',
+                  'Server (max 2): A lot of RAM needed on server',
+                  'Server (max 2): Many HDD/SSD/secondary storage drives needed on server'
+                ],
+                guidance: 'Max 3 overall, with sub-caps: Network max 1, Client max 2, Server max 2. NE. "more powerful / less powerful", "higher performance / lower performance", "cheaper / more expensive". Accept the opposite of points if written from thick-client point of view (e.g. "a thick-client system would need a faster processor in the client" is acceptable).' },
+              '12.1': { type: 'exact',
+                points: ['fv', 'B'],
+                guidance: '1 mark for fv. R. if more than one lozenge shaded.' },
+              '12.2': { type: 'exact',
+                points: ['fw and fx', 'C and D'],
+                guidance: '1 mark for both fw AND fx shaded. R. if number of shaded lozenges is not exactly 2.' },
+              '12.3': { type: 'exact',
+                points: [
+                  'fu 50 → 10.0  (A. integer 10)',
+                  'fv temps → [10.0, 20.0, 35.0, 30.0]  (A. alternative bracket styles, A. integers, R. no brackets, R. each element in a separate list)',
+                  'fw temps → 4',
+                  'fz temps → 23.75  (A. 95/4; A. average of list student gave on row 2; A. 95 divided by row 3 answer; A. sum of student-given row 2 list divided by student-given row 3 number)'
+                ],
+                guidance: '4 marks: one mark per correct row in the Result column.' },
+              '12.4': { type: 'exact',
+                points: ['Calculates the average temperature in centigrade (from a list of temperatures in Fahrenheit)'],
+                guidance: '1 mark. NE. "calculates average of a list of numbers".' },
+              '12.5': { type: 'points',
+                points: [
+                  'Only one conversion is done (from Fahrenheit to centigrade)',
+                  'Fewer conversions (from Fahrenheit to centigrade) are performed',
+                  'The function fv is no longer required'
+                ],
+                guidance: '1 mark. A. "fewer calculations / steps / functions / function calls required". NE. "faster execution", "more efficient".' },
+              '13.1': { type: 'exact',
+                points: ['C', 'The stored program concept'],
+                guidance: '1 mark for C. R. if more than one lozenge shaded.' },
+              '13.2': { type: 'points',
+                points: [
+                  'To store data / programs whilst the computer is turned off (A. long-term / permanent storage; NE. "secondary storage devices are non-volatile"; NE. "store data that is not in use")',
+                  '(As) the contents of RAM are lost when the computer is turned off (R. "main memory" for "RAM"; A. "main memory (RAM)")',
+                  'To transfer data / programs between computers (NE. "secondary storage devices are portable")',
+                  'Allows the storage of data sets / files that could not fit in RAM / computer architecture supports a limited amount of main memory/RAM (A. primary store for main memory; NE. "to extend storage capacity", "store more", "higher capacity")'
+                ],
+                guidance: 'Max 2.' },
+              '13.3': { type: 'levels',
+                levels: [
+                  { range: [3, 4], descriptor: 'Level 2',
+                    criteria: 'A good understanding of the operation of an SSD has been demonstrated. The response is well structured, covers most of the points in the indicative content and does not contain any errors of understanding.' },
+                  { range: [1, 2], descriptor: 'Level 1',
+                    criteria: 'Some relevant points have been made, but the description omits important details or contains some errors so that only a limited understanding is demonstrated.' }
+                ],
+                indicative: {
+                  'SSD operation': 'Data is stored electronically / there are no mechanical or moving parts. Data is stored in floating gate transistors / in transistors that do not lose their charge/state when power is no longer applied / electrons are trapped between oxide layers. Presence (or absence) of trapped electrons / charge indicates 0 / 1 (A. either way around; A. "bit" for 0 or 1 but not "binary"; R. positive and negative charges). NAND memory / flash memory / EEPROM memory is used. Data is organised into pages / blocks. A whole block (A. page) of data must be written / individual values cannot be written. A block (A. page) must be erased before it can be overwritten. Controller manages the organisation of the data / manages the reading and writing of data.'
+                },
+                guidance: '4 marks total. Best-fit between Level 1 (1–2) and Level 2 (3–4). 0 marks for nothing creditworthy.' }
+            }
           },
           {
             id: 'cs-aqa-7517-2021-p1',
