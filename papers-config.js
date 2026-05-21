@@ -1476,7 +1476,7 @@ window.SUBJECTS = [
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-QP-NOV21.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-75171-MS-NOV21.PDF',
-            qbqNote: "Section D (Q12–Q15, 38 marks) requires the AQA Skeleton Program file (HexGrid-based game, distributed to centres for the exam) — it isn't on the public filestore, so Section D is print-only here. Open the QP PDF alongside this stepper for figures.",
+            qbqNote: "Section D code parts (Q12.1, Q13.1, Q14.1, Q15.1 — 33 marks total) are now wired up with study-prep Python reconstructions of the relevant HexGrid skeleton pieces. The 4 screen-capture sub-parts (Q12.2/13.2/14.2/15.2 = 5 marks) stay print-only since they're evidence of running your modified program. AQA's real Skeleton Program is centre-only — these reconstructions are for practice.",
             questions: [
               // ── SECTION A — algorithms / data structures / FSMs (37 marks)
               {
@@ -1597,6 +1597,56 @@ window.SUBJECTS = [
                 number: 11,
                 parts: [
                   { code: '11', prompt: "This question is about the GetDistanceToTileT subroutine in the Tile class.\n\nExplain how this subroutine calculates the distance between two tiles.", marks: 2 }
+                ]
+              },
+              // ── SECTION D — Skeleton Program modifications (33 marks)
+              {
+                number: 12,
+                scenario: "Section D — these questions modify subroutines inside the HexGrid skeleton. The skeleton below is a study-prep reconstruction in Python that mirrors the relevant piece + just enough context to test your modification. AQA's official Skeleton Program is centre-only.",
+                parts: [
+                  { code: '12.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed HexGrid Skeleton — AQA CS 7517/1 Autumn 2021, Q12.1\n# ────────────────────────────────────────────────────────────────────\n# Q12 task: Modify DestroyPiecesAndCountVPs so that AT THE END OF EACH\n# TURN both players gain additional victory points based on how many\n# LESS pieces they have on the board (i.e. pieces of type 'L' that have\n# NOT been destroyed). +1 VP per surviving LESS piece, to the player\n# who owns it.\n\nclass Piece:\n    def __init__(self, player, piece_type):\n        self.Player = player          # 1 or 2\n        self.PieceType = piece_type   # 'B'aron, 'S'erf, 'L'ESS, 'P'BDS\n        self.IsDestroyed = False\n\n\nclass HexGrid:\n    def __init__(self):\n        # Test board:\n        #   Player 1: 1 Baron, 2 LESS (one destroyed), 1 Serf\n        #   Player 2: 1 Baron, 3 LESS (all surviving), 1 PBDS\n        self.Pieces = [\n            Piece(1, 'B'),\n            Piece(1, 'L'),  # P1 LESS — alive\n            Piece(1, 'L'),  # P1 LESS — destroyed below\n            Piece(1, 'S'),\n            Piece(2, 'B'),\n            Piece(2, 'L'),  # P2 LESS — alive\n            Piece(2, 'L'),  # P2 LESS — alive\n            Piece(2, 'L'),  # P2 LESS — alive\n            Piece(2, 'P'),\n        ]\n        self.Pieces[2].IsDestroyed = True\n\n    def DestroyPiecesAndCountVPs(self):\n        # ── ORIGINAL VERSION — modify this ──\n        # Currently: +1 VP to the OPPOSITE player for each destroyed piece.\n        # Q12 asks you to ALSO add +1 VP to a piece's owner for each LESS\n        # piece they own that has NOT been destroyed.\n        Player1VPs = 0\n        Player2VPs = 0\n        for piece in self.Pieces:\n            if piece.IsDestroyed:\n                if piece.Player == 1:\n                    Player2VPs += 1\n                elif piece.Player == 2:\n                    Player1VPs += 1\n        return Player1VPs, Player2VPs\n\n\n# ── Test driver (do not modify) ──\ngrid = HexGrid()\np1, p2 = grid.DestroyPiecesAndCountVPs()\nprint(f\"Player 1 VPs: {p1}\")\nprint(f\"Player 2 VPs: {p2}\")\nprint()\nprint(\"Expected after the LESS-survival bonus is added:\")\nprint(\"  P1 = 0 (kills, no P2 piece destroyed) + 1 (1 surviving P1 LESS) = 1\")\nprint(\"  P2 = 1 (1 P1 LESS destroyed) + 3 (3 surviving P2 LESS) = 4\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Modify DestroyPiecesAndCountVPs so that, for every LESS piece that has NOT been destroyed, the player who owns it gains +1 VP — on top of whatever VPs they already gain for destroyed pieces.\n\nClick ▶ Run. A correct modification prints:\n  Player 1 VPs: 1\n  Player 2 VPs: 4\n\n(Question 12.2 — screen-capture evidence — is print-only.)", marks: 5 }
+                ]
+              },
+              {
+                number: 13,
+                parts: [
+                  { code: '13.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed HexGrid Skeleton — AQA CS 7517/1 Autumn 2021, Q13.1\n# ────────────────────────────────────────────────────────────────────\n# Q13 task: Add a new type of piece, RangerPiece.\n#   • RangerPiece is a subclass of Piece, with PieceType = 'R'.\n#   • Its constructor calls the Piece base constructor.\n#   • CheckMoveIsValid override:\n#       - Standard move = distance of 1 (allowed unless start tile is\n#         a peat bog — fuel cost 2 instead of 1 if so; for this\n#         reconstruction we just block peat-bog moves entirely).\n#       - PLUS: if the ranger is currently on a forest tile, it can\n#         move to ANY forest tile in the grid (any distance). Cost: 1 fuel.\n#   • Modify AddPiece in HexGrid so that if TypeOfPiece is 'Ranger',\n#     it creates a RangerPiece.\n\nclass Tile:\n    def __init__(self, terrain):\n        self.Terrain = terrain   # 'forest', 'plain', 'peatbog'\n\n\nclass Piece:\n    def __init__(self, player, piece_type):\n        self.Player = player\n        self.PieceType = piece_type\n    def CheckMoveIsValid(self, start_tile, end_tile, distance):\n        # Standard move = distance of 1, cost 1 fuel.\n        if distance == 1:\n            return 1\n        return -1   # invalid\n\n\n# ── TODO Q13.1 Tasks 1 & 2: Create RangerPiece subclass below ──\n\n\nclass HexGrid:\n    def __init__(self):\n        self.Pieces = []\n        self.Tiles = [Tile('forest'), Tile('plain'), Tile('forest'), Tile('forest')]\n    def AddPiece(self, TypeOfPiece, player):\n        # ── TODO Q13.1 Task 3: handle TypeOfPiece == 'Ranger' here ──\n        if TypeOfPiece in ('Baron', 'Serf', 'LESS', 'PBDS'):\n            initial_letter = TypeOfPiece[0] if TypeOfPiece != 'PBDS' else 'P'\n            piece = Piece(player, initial_letter)\n        else:\n            raise ValueError(f\"Unknown TypeOfPiece: {TypeOfPiece}\")\n        self.Pieces.append(piece)\n        return piece\n\n\n# ── Test driver (do not modify) ──\ngrid = HexGrid()\nranger = grid.AddPiece('Ranger', 1)\nprint(f\"Created: {type(ranger).__name__} (PieceType={ranger.PieceType!r})\")\n\n# Test 1: standard 1-distance move (should cost 1 fuel)\nstart = grid.Tiles[0]\nend1  = grid.Tiles[1]\nprint(f\"1-distance move (forest→plain): fuel cost = {ranger.CheckMoveIsValid(start, end1, 1)}  (expected 1)\")\n\n# Test 2: long-range forest-to-forest move (should cost 1 fuel)\nend2 = grid.Tiles[3]\nprint(f\"Forest→forest, distance 3:       fuel cost = {ranger.CheckMoveIsValid(start, end2, 3)}  (expected 1)\")\n\n# Test 3: long-range non-forest move (should be invalid)\nplain_tile = grid.Tiles[1]\nprint(f\"Plain→forest,  distance 3:       fuel cost = {ranger.CheckMoveIsValid(plain_tile, end2, 3)}  (expected -1)\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Create the RangerPiece subclass with the forest-to-forest move rule, and modify AddPiece in HexGrid so it creates a RangerPiece when TypeOfPiece is 'Ranger'.\n\nClick ▶ Run. A correct implementation prints:\n  Created: RangerPiece (PieceType='R')\n  1-distance move (forest→plain): fuel cost = 1\n  Forest→forest, distance 3:       fuel cost = 1\n  Plain→forest,  distance 3:       fuel cost = -1\n\n(Question 13.2 — screen-capture evidence — is print-only.)", marks: 7 }
+                ]
+              },
+              {
+                number: 14,
+                parts: [
+                  { code: '14.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed HexGrid Skeleton — AQA CS 7517/1 Autumn 2021, Q14.1\n# ────────────────────────────────────────────────────────────────────\n# Q14 task: Add a new 'burn' command that converts lumber → fuel.\n#   • Modify CheckCommandIsValid: return True if the command is 'burn'.\n#   • Modify ExecuteCommand in HexGrid:\n#       - If the player has NO lumber → return 'Cannot burn lumber'.\n#       - Otherwise: generate a random integer in [1 .. lumber], reduce\n#         the player's lumber by that amount, increase the player's\n#         fuel by the same amount, and return 'Command executed'.\n\nimport random\nrandom.seed(7)   # deterministic for this preview run\n\n\nclass Player:\n    def __init__(self):\n        self.Lumber = 10\n        self.Fuel = 10\n\n\nclass HexGrid:\n    def __init__(self):\n        self.CurrentPlayer = Player()\n\n    def CheckCommandIsValid(self, cmd):\n        # ── TODO Q14.1: also return True for 'burn' ──\n        if cmd in ('move', 'upgrade', 'standard'):\n            return True\n        return False\n\n    def ExecuteCommand(self, cmd):\n        # ── TODO Q14.1: handle 'burn' here per the task brief ──\n        if cmd == 'move':\n            return 'Move executed'\n        return 'Unknown command'\n\n\n# ── Test driver (do not modify) ──\ngrid = HexGrid()\n\nprint(\"=== Test 1: burn with no lumber ===\")\ngrid.CurrentPlayer.Lumber = 0\nprint(f\"Before — lumber: {grid.CurrentPlayer.Lumber}, fuel: {grid.CurrentPlayer.Fuel}\")\nresult = grid.ExecuteCommand('burn')\nprint(f\"Return: {result!r}\")\nprint(f\"After  — lumber: {grid.CurrentPlayer.Lumber}, fuel: {grid.CurrentPlayer.Fuel}\")\nprint(\"Expected: Return 'Cannot burn lumber'; no change to lumber/fuel.\")\n\nprint()\nprint(\"=== Test 2: burn with lumber=10 ===\")\ngrid.CurrentPlayer.Lumber = 10\ngrid.CurrentPlayer.Fuel = 10\nprint(f\"Before — lumber: {grid.CurrentPlayer.Lumber}, fuel: {grid.CurrentPlayer.Fuel}\")\nresult = grid.ExecuteCommand('burn')\nprint(f\"Return: {result!r}\")\nprint(f\"After  — lumber: {grid.CurrentPlayer.Lumber}, fuel: {grid.CurrentPlayer.Fuel}\")\nprint(\"Expected: Return 'Command executed'; lumber DOWN by K (1..10), fuel UP by same K, total preserved.\")\n\nprint()\nprint(f\"CheckCommandIsValid('burn') = {grid.CheckCommandIsValid('burn')}  (expected True)\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Add the burn command: CheckCommandIsValid('burn') should return True; ExecuteCommand('burn') should return 'Cannot burn lumber' when the player has no lumber, OR convert a random amount (1..lumber) of lumber into fuel and return 'Command executed' otherwise.\n\nClick ▶ Run. A correct implementation:\n  • Test 1 returns 'Cannot burn lumber' and leaves lumber/fuel at 0/10\n  • Test 2 returns 'Command executed' with lumber+fuel still summing to 20\n  • CheckCommandIsValid('burn') returns True\n\n(Question 14.2 — screen-capture evidence — is print-only.)", marks: 8 }
+                ]
+              },
+              {
+                number: 15,
+                parts: [
+                  { code: '15.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed HexGrid Skeleton — AQA CS 7517/1 Autumn 2021, Q15.1\n# ────────────────────────────────────────────────────────────────────\n# Q15 task: Add a 'fog of war' feature.\n#   • Create a new method GetFogOfWar in HexGrid that takes a tile index\n#     and returns False if the active player has any piece within 2\n#     cells of that tile (i.e. the tile is NOT hidden), otherwise True.\n#   • Modify GetPieceTypeInTile so that:\n#       - If GetFogOfWar returns True → return ' ' (a single space).\n#       - Otherwise → return the existing piece-type letter (or ' ' if\n#         the tile is empty).\n#\n# Simplification for this reconstruction: tiles are arranged in a line\n# (indexes 0..N-1), and the 'distance' between tile i and tile j is\n# just abs(i - j). The real game uses a hex grid; the algorithm you\n# write here is the same shape.\n\nclass HexGrid:\n    def __init__(self):\n        # 10 tiles in a line. P1 has pieces at tiles 1, 4. P2 at 6, 9.\n        self.Tiles = [None] * 10\n        self.Tiles[1] = ('1', 'B')   # P1 Baron\n        self.Tiles[4] = ('1', 'S')   # P1 Serf\n        self.Tiles[6] = ('2', 'B')   # P2 Baron\n        self.Tiles[9] = ('2', 'L')   # P2 LESS\n        self.ActivePlayer = '1'      # player whose view we're rendering\n\n    def Distance(self, i, j):\n        return abs(i - j)\n\n    # ── TODO Q15.1 Task 1: implement GetFogOfWar(self, tile_index) ──\n    # def GetFogOfWar(self, tile_index):\n    #     ...\n\n    def GetPieceTypeInTile(self, tile_index):\n        # ── ORIGINAL VERSION — modify this ──\n        # Q15 asks: if GetFogOfWar(tile_index) is True, return ' '.\n        # Otherwise: return the piece-type letter, or ' ' if empty.\n        contents = self.Tiles[tile_index]\n        if contents is None:\n            return ' '\n        return contents[1]\n\n\n# ── Test driver (do not modify) ──\ngrid = HexGrid()\nview = ''.join(grid.GetPieceTypeInTile(i) for i in range(10))\nprint(f\"P1's view: '{view}'\")\nprint(\"Expected (P1 sees own pieces + P2 pieces within 2 cells of any P1 piece):\")\nprint(\"  - tiles 0..5: visible (within 2 of P1's pieces at 1 or 4)\")\nprint(\"  - tile 6:     visible (P2 Baron, within 2 of P1's piece at 4)\")\nprint(\"  - tiles 7,8:  hidden (no P1 piece within 2; no P2 piece there anyway)\")\nprint(\"  - tile 9:     hidden  (P2 LESS, but 5+ cells from any P1 piece)\")\nprint(\"  -> P1 should see: ' B  S B   '  (10 chars)\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Add the GetFogOfWar method and modify GetPieceTypeInTile so a tile is hidden (returns ' ') when the active player has no piece within 2 cells of it.\n\nClick ▶ Run. A correct implementation prints:\n  P1's view: ' B  S B   '\n  (P1 sees own pieces at 1, 4; sees P2 Baron at 6 because tile 4's piece is 2 away; hides P2 LESS at 9 since no P1 piece is within 2.)\n\n(Question 15.2 — screen-capture evidence — is print-only.)", marks: 13 }
                 ]
               }
             ],
@@ -1753,7 +1803,57 @@ window.SUBJECTS = [
                   'It gets the largest of...',
                   '...the differences between the x coordinates, the y coordinates and the z coordinates (of the two tiles)'
                 ],
-                guidance: '2 marks: 1 for "largest of" + 1 for "differences between the three coordinate pairs".' }
+                guidance: '2 marks: 1 for "largest of" + 1 for "differences between the three coordinate pairs".' },
+              // ── Section D mark schemes (Q12.1–Q15.1 = 33 marks)
+              '12.1': { type: 'points',
+                points: [
+                  "AO3 programming — Correctly checks if a piece belongs to a player (player == 1 / player == 2)",
+                  "AO3 programming — Correctly checks if a piece is a LESS piece (PieceType == 'L')",
+                  "AO3 programming — Correct logic for the LESS-piece-belonging-to-a-player selection structure, with that player's VPs incremented by 1 when a LESS piece is theirs",
+                  "AO3 programming — Mark points 1 to 3 done for the OTHER player too (symmetric handling)",
+                  "AO3 programming — Only adds VPs for LESS pieces that have NOT been destroyed (IsDestroyed check)"
+                ],
+                guidance: '5 marks total. Max 4 if code contains errors. The AI marker should check the logic correctly differentiates between the two players AND between destroyed/surviving LESS pieces.' },
+              '13.1': { type: 'points',
+                points: [
+                  'AO3 programming — Created a new class called RangerPiece (R. other names for class; I. case and minor typos)',
+                  'AO3 programming — New class inherits from Piece and has a constructor that overrides the base-class constructor with a call made to the base constructor (R. if incorrect parameters)',
+                  "AO3 programming — Constructor sets PieceType to 'R' (R. if before the call to the base constructor; R. lowercase 'r')",
+                  'AO3 programming — Subroutine CheckMoveIsValid created that overrides the base class method, with correct code for a normal move (R. if incorrect parameters)',
+                  'AO3 programming — Selection structure with correct conditions that allow a move from forest terrain to forest terrain (any distance)',
+                  'AO3 programming — Correct fuel cost returned for ALL moves: forest-to-forest (cost 1), normal distance-of-one (cost 1), illegal move (invalid / negative), distance-of-one with peat bog as start or end terrain handled per the skeleton convention',
+                  'AO3 programming — In AddPiece: selection structure with the correct condition in an appropriate place that results in a call to the RangerPiece constructor when TypeOfPiece is "Ranger"'
+                ],
+                guidance: '7 marks total. Max 6 if code contains errors.' },
+              '14.1': { type: 'points',
+                points: [
+                  "AO3 programming (ExecuteCommand) — Selection structure with the correct condition for the 'burn' command",
+                  "AO3 programming — Selection structure with a correct condition that checks if there is lumber in the player's supply",
+                  "AO3 programming — Returns the correct string 'Cannot burn lumber' (A. minor typos; I. case) when the player has no lumber",
+                  'AO3 programming — Generates a random integer',
+                  "AO3 programming — Random integer generated is in the correct range (1 .. amount of lumber the player has, inclusive)",
+                  "AO3 programming — Reduces the player's lumber by the correct amount (the random integer)",
+                  "AO3 programming — Increases the player's fuel by the correct amount (same random integer)",
+                  "AO3 programming (CheckCommandIsValid) — Returns True if the burn command was used"
+                ],
+                guidance: '8 marks total. Max 7 if code contains errors.' },
+              '15.1': { type: 'points',
+                points: [
+                  'AO3 programming — Created a new method called GetFogOfWar (R. other names for the method; I. case and minor typos)',
+                  'AO3 programming — Method returns a Boolean value and takes the index of a tile as a parameter (A. alternatives to passing the tile index e.g. the tile itself; I. other parameters)',
+                  'AO3 programming — Check to see if the tile passed as a parameter contains a piece belonging to the active player',
+                  'AO3 programming — Gets all the neighbours of the tile passed as a parameter',
+                  'AO3 programming — Gets all the neighbours of the tiles identified in mark point 4 (i.e. tiles 2 cells away)',
+                  'AO3 programming — Checks at least one neighbouring tile contains a piece belonging to the active player',
+                  'AO3 programming — Iterative structure that looks at each tile identified as being within two cells of the tile passed to the method (A. not all tiles identified correctly)',
+                  'AO3 programming — Every time a tile is checked, the PieceID in the tile is obtained',
+                  'AO3 programming — Returns a value of False if it correctly identifies, for the tiles checked, that the tile contains a piece belonging to the active player',
+                  'AO3 programming — Method GetFogOfWar returns the correct value under ALL circumstances',
+                  'AO3 programming — Modified GetPieceTypeInTile so that it calls GetFogOfWar (A. alternative identifier used as long as it matches mark point 1)',
+                  'AO3 programming — GetPieceTypeInTile returns a space character if the value returned by GetFogOfWar is True',
+                  'AO3 programming — GetPieceTypeInTile returns the piece in the tile if there is one and a space character otherwise (or when GetFogOfWar is True) (R. if no attempt for either mark points 11 or 12)'
+                ],
+                guidance: '13 marks total. Max 12 if code contains errors or if other parts of GetPieceTypeInTile no longer work correctly. Alternative answer for mark points 4, 5 and 7: iterative structure over EVERY tile, getting Distance from the tile passed in, then checking tiles within distance 2. Both phrasings get full credit.' }
             }
           },
           {
@@ -2238,7 +2338,7 @@ window.SUBJECTS = [
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-QP-NOV20.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75171-W-MS-NOV20.PDF',
-            qbqNote: "Section D (Q10–Q13, 38 marks) requires the AQA Skeleton Program file (a Simulation/Settlement/Outlet/Company system) which AQA distributes to centres for the exam — it isn't on the public filestore, so Section D is print-only here. Open the QP PDF alongside this stepper for figures.",
+            qbqNote: "Section D code parts (Q10.1, Q11.1, Q12.1, Q13.1 — 33 marks total) are now wired up with study-prep Python reconstructions of the relevant Simulation/Settlement/Outlet/Company classes. The 4 screen-capture sub-parts (Q10.2/11.2/12.2/13.2 = 5 marks) stay print-only. AQA's real Skeleton Program is centre-only — these reconstructions are for practice.",
             questions: [
               // ── SECTION A — vectors / regular langs / complexity / queues (35 marks)
               {
@@ -2360,6 +2460,56 @@ window.SUBJECTS = [
                 number: 9,
                 parts: [
                   { code: '09', prompt: "This question is about the ProcessDayEnd method in the Simulation class.\n\nExplain how the program decides which company an individual household has decided to use when eating out.", marks: 4 }
+                ]
+              },
+              // ── SECTION D — Skeleton Program modifications (33 marks)
+              {
+                number: 10,
+                scenario: "Section D — these questions modify subroutines inside the Simulation/Settlement/Company/Household skeleton. The skeleton below is a study-prep reconstruction in Python that mirrors the relevant piece + just enough context to test your modification. AQA's official Skeleton Program is centre-only.",
+                parts: [
+                  { code: '10.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed Simulation Skeleton — AQA CS 7517/1 Autumn 2020, Q10.1\n# ────────────────────────────────────────────────────────────────────\n# Q10 task: Modify the AddCompany method so:\n#   • If the user presses Enter without typing a name → show an error\n#     and ask again.\n#   • If the user types a name that's already used → show an error and\n#     ask again.\n#   Keep asking until a valid (non-empty, unused) name is entered.\n#\n# Tip: GetIndexOfCompany(name) returns -1 if the name isn't taken,\n# otherwise it returns the index of the existing company.\n\nclass Simulation:\n    def __init__(self):\n        self.Companies = ['AQA Burgers', 'In Jest']    # already-used names\n\n    def GetIndexOfCompany(self, name):\n        try:\n            return self.Companies.index(name)\n        except ValueError:\n            return -1\n\n    def AddCompany(self):\n        # ── ORIGINAL VERSION — modify this ──\n        # Currently accepts whatever the user types, including empty\n        # strings and already-used names. Wrap in a loop that re-prompts\n        # on invalid input with an appropriate error message.\n        CompanyName = input(\"Enter a name for the company: \")\n        self.Companies.append(CompanyName)\n        print(f\"Added company: {CompanyName!r}\")\n        return CompanyName\n\n\n# ── Test driver (do not modify) ──\n# The QP test enters: '' (empty), 'AQA Burgers' (duplicate), 'In Jest'\n# (also duplicate — wait, actually the QP test is enter / press enter\n# without typing / type AQA Burgers / type In Jest). Adapted here to\n# exercise both error paths and then a valid name.\nsim = Simulation()\nname = sim.AddCompany()\nprint(f\"\\nFinal company added: {name!r}\")\nprint(f\"All companies now: {sim.Companies}\")\n"
+                    },
+                    testInputs: ["", "AQA Burgers", "MyBrandNewCo"],
+                    prompt: "Add validation to AddCompany: keep asking until a non-empty, not-already-used name is entered.\n\nClick ▶ Run with test inputs '' (empty), 'AQA Burgers' (duplicate), 'MyBrandNewCo' (valid). A correct modification:\n  • shows an error after the empty input, asks again\n  • shows a different error after 'AQA Burgers', asks again\n  • accepts 'MyBrandNewCo' and returns it\n\n(Question 10.2 — screen-capture evidence — is print-only.)", marks: 5 }
+                ]
+              },
+              {
+                number: 11,
+                parts: [
+                  { code: '11.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed Simulation Skeleton — AQA CS 7517/1 Autumn 2020, Q11.1\n# ────────────────────────────────────────────────────────────────────\n# Q11 task: Add a new type of household, AffluentHousehold, that eats\n# out more often than other households.\n#   1. Create class AffluentHousehold that inherits from Household.\n#      Its constructor should call the Household base constructor and\n#      then set ChanceEatOutPerDay to 1.\n#   2. Modify AddHousehold in Settlement so that it creates an\n#      AffluentHousehold instead of a Household when the random X is\n#      less than 100.\n\nclass Household:\n    def __init__(self, X, Y):\n        self.X = X\n        self.Y = Y\n        self.ChanceEatOutPerDay = 0.05\n\n\n# ── TODO Q11.1 Task 1: Create AffluentHousehold subclass below ──\n# class AffluentHousehold(Household):\n#     def __init__(self, X, Y):\n#         ...\n\n\nclass Settlement:\n    def __init__(self):\n        self.Households = []\n\n    def AddHousehold(self):\n        # The skeleton's GetRandomLocation returns an (X, Y) pair. For\n        # the test we use deterministic values to exercise both branches.\n        # ── TODO Q11.1 Task 2: create AffluentHousehold when X < 100 ──\n        for X, Y in [(50, 200), (300, 400), (90, 150), (250, 350)]:\n            # ORIGINAL — always creates a base Household.\n            h = Household(X, Y)\n            self.Households.append(h)\n        return self.Households\n\n\n# ── Test driver (do not modify) ──\nsim = Settlement()\nhouseholds = sim.AddHousehold()\nfor i, h in enumerate(households):\n    cls = type(h).__name__\n    print(f\"Household {i}: X={h.X}, Y={h.Y}, ChanceEatOutPerDay={h.ChanceEatOutPerDay}, class={cls}\")\n\nprint()\nprint(\"Expected:\")\nprint(\"  Household 0: X=50  -> AffluentHousehold (ChanceEatOutPerDay = 1)\")\nprint(\"  Household 1: X=300 -> Household           (ChanceEatOutPerDay = 0.05)\")\nprint(\"  Household 2: X=90  -> AffluentHousehold (ChanceEatOutPerDay = 1)\")\nprint(\"  Household 3: X=250 -> Household           (ChanceEatOutPerDay = 0.05)\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Create the AffluentHousehold subclass and modify AddHousehold so households with X<100 are AffluentHousehold (ChanceEatOutPerDay=1), others are plain Household.\n\nClick ▶ Run. A correct implementation prints:\n  Household 0: ... AffluentHousehold (ChanceEatOutPerDay = 1)\n  Household 1: ... Household (0.05)\n  Household 2: ... AffluentHousehold (1)\n  Household 3: ... Household (0.05)\n\n(Question 11.2 — screen-capture evidence — is print-only.)", marks: 7 }
+                ]
+              },
+              {
+                number: 12,
+                parts: [
+                  { code: '12.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed Simulation Skeleton — AQA CS 7517/1 Autumn 2020, Q12.1\n# ────────────────────────────────────────────────────────────────────\n# Q12 task: Add company loans.\n#   1. Add LoanBalance and InterestRate attributes to Company.\n#   2. A company can take out a loan only if LoanBalance is 0. Taking\n#      a loan: Balance += 10000, LoanBalance += 10000, InterestRate set\n#      to user-specified value.\n#   3. Paying back: Balance -= amount, LoanBalance -= amount.\n#   4. ProcessDayEnd: subtract InterestRate × LoanBalance from Balance.\n#   5. Use encapsulation: LoanBalance and InterestRate should only be\n#      accessed/modified by methods on Company (no direct attribute\n#      access from outside the class).\n\nclass Company:\n    def __init__(self, name, starting_balance):\n        self._Name = name\n        self._Balance = starting_balance\n        # ── TODO Q12.1 Task 1: add _LoanBalance and _InterestRate attributes ──\n\n    def GetName(self):\n        return self._Name\n\n    def GetBalance(self):\n        return self._Balance\n\n    # ── TODO Q12.1 Tasks 3 & 4: add GetLoan, PayBackLoan, and update\n    #    ProcessDayEnd to subtract daily interest. Suggested signatures:\n    #      def GetLoan(self, interest_rate): ...\n    #      def PayBackLoan(self, amount): ...\n    #      def ProcessDayEnd(self): ...  (also reduces _Balance by daily\n    #                                     interest = _InterestRate * _LoanBalance)\n\n    def ProcessDayEnd(self):\n        # ── ORIGINAL — no interest deduction. Modify per task. ──\n        pass\n\n\n# ── Test driver (do not modify) ──\nco = Company('AQA Burgers', 100000)\nprint(f\"Starting balance: {co.GetBalance()}\")\n\n# Take a 10,000 loan at 0.015% daily interest (0.00015 as a decimal)\ntry:\n    co.GetLoan(0.00015)\n    print(f\"After loan: Balance={co.GetBalance()}  (expected 110000)\")\nexcept AttributeError:\n    print(\"GetLoan method not yet defined.\")\n\n# Advance one day — daily interest should reduce balance by 0.00015 * 10000 = 1.5\ntry:\n    co.ProcessDayEnd()\n    print(f\"After 1 day:  Balance={co.GetBalance()}  (expected 109998.5)\")\nexcept Exception as e:\n    print(f\"ProcessDayEnd failed: {e}\")\n\n# Pay back 500 of the loan\ntry:\n    co.PayBackLoan(500)\n    print(f\"After paying back 500: Balance={co.GetBalance()}  (expected 109498.5)\")\nexcept AttributeError:\n    print(\"PayBackLoan method not yet defined.\")\n\n# Advance another day — interest on the remaining 9500 = 0.00015 * 9500 = 1.425\ntry:\n    co.ProcessDayEnd()\n    print(f\"After day 2:  Balance={co.GetBalance()}  (expected 109497.075)\")\nexcept Exception:\n    pass\n"
+                    },
+                    testInputs: [],
+                    prompt: "Add LoanBalance + InterestRate attributes (encapsulated) to Company; add GetLoan, PayBackLoan, and daily-interest deduction in ProcessDayEnd.\n\nClick ▶ Run. A correct implementation prints:\n  Starting balance: 100000\n  After loan: Balance=110000\n  After 1 day:  Balance=109998.5\n  After paying back 500: Balance=109498.5\n  After day 2:  Balance=109497.075\n\n(Question 12.2 — screen-capture evidence — is print-only.)", marks: 10 }
+                ]
+              },
+              {
+                number: 13,
+                parts: [
+                  { code: '13.1', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# Reconstructed Simulation Skeleton — AQA CS 7517/1 Autumn 2020, Q13.1\n# ────────────────────────────────────────────────────────────────────\n# Q13 task: Create a NEAREST-NEIGHBOUR delivery route.\n#   • Add a new method GetOrderedListOfOutlets to Company that builds\n#     a list/array of outlets ordered by nearest-neighbour starting\n#     from outlet 0.\n#   • Modify CalculateDeliveryCost so it uses GetOrderedListOfOutlets\n#     instead of GetListOfOutlets.\n#\n# Algorithm:\n#   1. Start with outlet 0 in the route.\n#   2. Find the not-yet-visited outlet that's closest to the last\n#      outlet in the route, add it.\n#   3. Repeat until all outlets are in the route.\n\nimport math\n\n\nclass Outlet:\n    def __init__(self, name, x, y):\n        self.Name = name\n        self.X = x\n        self.Y = y\n\n\nclass Company:\n    def __init__(self):\n        # 5 outlets in a grid. Optimal NN route from 0:\n        # 0 → 1 → 4 → 2 → 3 (and back to 0 for cost calc).\n        self.Outlets = [\n            Outlet('Outlet 0', 0,  0),\n            Outlet('Outlet 1', 1,  0),\n            Outlet('Outlet 2', 5,  5),\n            Outlet('Outlet 3', 0, 10),\n            Outlet('Outlet 4', 2,  2),\n        ]\n\n    def GetListOfOutlets(self):\n        # Original — just returns outlets in creation order.\n        return list(self.Outlets)\n\n    # ── TODO Q13.1 Task 1: implement GetOrderedListOfOutlets ──\n\n    def CalculateDeliveryCost(self):\n        # ── ORIGINAL — uses GetListOfOutlets. Modify to use\n        # ── GetOrderedListOfOutlets instead. ──\n        route = self.GetListOfOutlets()\n        total = 0.0\n        for i in range(len(route)):\n            a = route[i]\n            b = route[(i + 1) % len(route)]\n            total += math.sqrt((a.X - b.X) ** 2 + (a.Y - b.Y) ** 2)\n        return total\n\n\n# ── Test driver (do not modify) ──\nco = Company()\ntry:\n    ordered = co.GetOrderedListOfOutlets()\n    print(\"Ordered route:\")\n    for o in ordered:\n        print(f\"  {o.Name} ({o.X}, {o.Y})\")\n    print()\nexcept AttributeError:\n    print(\"GetOrderedListOfOutlets not yet defined.\")\n\ncost = co.CalculateDeliveryCost()\nprint(f\"Delivery cost: {cost:.4f}\")\nprint(\"Expected NN route from outlet 0: 0 -> 1 -> 4 -> 2 -> 3 -> (back to 0)\")\nprint(\"Expected cost: ~ 1.0 + 2.236 + 4.243 + 7.071 + 10.0 = 24.55\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Add GetOrderedListOfOutlets (nearest-neighbour from outlet 0) and modify CalculateDeliveryCost to use it.\n\nClick ▶ Run. A correct implementation prints the NN order (0, 1, 4, 2, 3) and total cost ~24.55.\n\n(Question 13.2 — screen-capture evidence — is print-only.)", marks: 11 }
                 ]
               }
             ],
@@ -2535,7 +2685,57 @@ window.SUBJECTS = [
                   'Finds the first cumulative reputation that the number is less than',
                   'The position of this cumulative reputation in the list indicates the company that the household will use'
                 ],
-                guidance: '4 marks: 1 per point.' }
+                guidance: '4 marks: 1 per point.' },
+              // ── Section D mark schemes (Q10.1–Q13.1 = 33 marks)
+              '10.1': { type: 'points',
+                points: [
+                  'AO3 programming — Indefinite iterative structure contains code that gets the name from the user',
+                  'AO3 programming — One correct condition (e.g. name == "", or GetIndexOfCompany(name) != -1)',
+                  'AO3 programming — Both correct conditions and correct logic for the iterative structure (loop continues iff name is empty OR already used)',
+                  'AO3 programming — Displays an error message if no name is entered // displays an error message if a name that has already been used is entered',
+                  'AO3 programming — Displays error message under all correct circumstances and ONLY under correct circumstances (correct error for the matching condition; no error when input is valid)'
+                ],
+                guidance: '5 marks total. Max 4 if code contains errors.' },
+              '11.1': { type: 'points',
+                points: [
+                  'AO3 programming — Creating a new class called AffluentHousehold (R. other names for class; I. case and minor typos)',
+                  'AO3 programming — New class inherits from Household',
+                  'AO3 programming — Constructor created that overrides the base-class constructor with a call made to the base constructor (R. if incorrect parameters)',
+                  'AO3 programming — Sets ChanceEatOutPerDay to 1 (R. if before the call to the base constructor; R. if not after attempt at call)',
+                  'AO3 programming (AddHousehold) — Selection structure with correct condition (X < 100)',
+                  'AO3 programming (AddHousehold) — Creates an AffluentHousehold object (R. if it ALSO creates a base Household)',
+                  'AO3 programming (AddHousehold) — Creates an AffluentHousehold under the correct circumstances and a Household under the correct circumstances (R. if the new household is not added to Households)'
+                ],
+                guidance: '7 marks total. Max 6 if code contains errors.' },
+              '12.1': { type: 'points',
+                points: [
+                  'AO3 programming (Simulation) — Two extra options displayed on the modify-company menu using appropriate messages (e.g. "Get a loan" / "Pay back loan")',
+                  'AO3 programming (Simulation) — Selection structures for the new menu options with appropriate condition(s)',
+                  'AO3 programming — Gets the user to enter the interest rate when getting a loan AND the amount to pay back when paying back, under the appropriate circumstances (A. done in appropriate places in the Company class)',
+                  'AO3 programming — Calls to appropriate methods in the Company class from the selection structures (e.g. GetLoan / PayBackLoan)',
+                  'AO3 programming (Company) — Attributes of appropriate data types created for LoanBalance and InterestRate',
+                  'AO3 programming (Company) — Correct calculation of daily interest payment and new balance in ProcessDayEnd (R. if the balance is changed before previous-balance details are concatenated)',
+                  'AO3 programming — Selection structure to check if LoanBalance is 0 when the user chooses to get a loan (A. check for ≤ 0)',
+                  'AO3 programming — Balance, LoanBalance and InterestRate set to the correct values in the selection structure (Balance += 10000, LoanBalance += 10000, InterestRate from user)',
+                  'AO3 programming — LoanBalance and Balance changed by the correct amount when the user pays back part of the loan (both decreased by the same amount)',
+                  'AO3 programming (encapsulation) — All attributes in Company are only accessed and modified by methods IN Company (R. if no attempt to access/modify the loan-related attributes via methods)'
+                ],
+                guidance: '10 marks total. Max 9 if code contains errors.' },
+              '13.1': { type: 'points',
+                points: [
+                  'AO3 programming — Created a new method called GetOrderedListOfOutlets (R. other names for method; I. case and minor typos)',
+                  'AO3 programming — Method returns a list / array',
+                  'AO3 programming — Outlet 0 is added to the route first',
+                  'AO3 programming — Iterative structure that repeats until ALL outlets have been added to the route',
+                  'AO3 programming — Has a variable to store the shortest distance found between two nodes so far AND a variable to store which outlet results in the shortest distance',
+                  'AO3 programming — Iterative structure that looks at each outlet for which the distance from the previous outlet in the route needs to be calculated (A. looks at all outlets except the previous one)',
+                  'AO3 programming — No outlet can appear more than once in the route created (R. if adds two or fewer outlets to the list only; R. if no attempt to check if outlet has already been added)',
+                  'AO3 programming — Route created contains ALL the company\'s outlets',
+                  'AO3 programming — Shortest-distance-so-far variable set to a suitable starting value AND reset after each outlet (except the last one) is added',
+                  'AO3 programming — GetOrderedListOfOutlets implements the nearest-neighbour algorithm correctly',
+                  'AO3 programming — Modified CalculateDeliveryCost so that it calls GetOrderedListOfOutlets instead of GetListOfOutlets (A. alternative identifier used as long as it matches mark point 1)'
+                ],
+                guidance: '11 marks total. Max 10 if code contains errors or if other parts of the subroutine no longer work correctly.' }
             }
           },
           {
