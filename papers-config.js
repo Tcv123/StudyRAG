@@ -1543,7 +1543,476 @@ window.SUBJECTS = [
             totalMarks: 100,
             durationMins: 150,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75172-QP-NOV20.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75172-W-MS-NOV20.PDF'
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-75172-W-MS-NOV20.PDF',
+            questions: [
+              {
+                number: 1,
+                scenario: "A sound has been sampled and recorded. The sound was sampled for 1 minute and 40 seconds at a sample rate of 8000 Hz with a 16-bit sample resolution. A sample rate of 1 Hz means that one sample has been taken every second.",
+                parts: [
+                  { code: '01.1', prompt: "Calculate the minimum amount of storage space, in bytes, needed to store the sampled sound.\n\nYou should show your working.", marks: 2 },
+                  { code: '01.2',
+                    preamble: "An analogue to digital converter (ADC) was used during the sampling process.",
+                    prompt: "Explain the principles of operation of an ADC.", marks: 2 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "Questions 02.2, 02.3, 02.4 and 02.5 use a normalised floating point representation with a 7-bit mantissa and a 5-bit exponent, both stored using two's complement.",
+                parts: [
+                  { code: '02.1',
+                    preamble: "Non-integer values such as −1.65 and 23/1068 can be represented by a computer using a fixed point or a floating point system. The two systems use the same number of bits to store a value.",
+                    prompt: "State one advantage of using a floating point system over a fixed point system and one advantage of using a fixed point system over a floating point system.", marks: 2 },
+                  { code: '02.2',
+                    preamble: "The figure shows a floating point representation of a number with mantissa = 1.0011 (binary, signed; value = −0.6875 = −11/16) and exponent = 11101 (= −3). (See the official PDF for the exact bit pattern.)",
+                    prompt: "Calculate the decimal equivalent of the number.\n\nExpress your answer to at least four decimal places or as a fraction. You should show your working.", marks: 2 },
+                  { code: '02.3', prompt: "Write the normalised floating point representation of the decimal value 1632 in the boxes below.\n\nYou should show your working.", marks: 3 },
+                  { code: '02.4', prompt: "State, in decimal, the highest (most positive) and lowest (most negative) values that could be represented by this floating point system.\n\nYou should show your working.", marks: 3 },
+                  { code: '02.5',
+                    preamble: "When the decimal value 28.25 is converted into binary using this floating point system, a rounding error occurs.",
+                    prompt: "Explain:\n  • why a rounding error has occurred, and\n  • what the system might do when the value 28.25 is converted into binary.", marks: 2 }
+                ]
+              },
+              {
+                number: 3,
+                parts: [
+                  { code: '03.1',
+                    preamble: "Figure 1 shows how some of the components inside a computer are connected together. The computer uses the von Neumann architecture. Some component names have been replaced with numbers ① to ⑤.",
+                    figure: { type: 'table', label: 'Table 1 — assign one number 1–5 per component',
+                      headers: ['Component Name', 'Component Number (1–5)'],
+                      rows: [
+                        ['Address Bus', ''],
+                        ['Data Bus', ''],
+                        ['Main Memory', ''],
+                        ['Processor', ''],
+                        ['USB I/O Controller', '']
+                      ] },
+                    prompt: "Complete Table 1 by writing in the Component Number column the numbers from Figure 1 that correspond to the Component Names.", marks: 2 },
+                  { code: '03.2', prompt: "The computer has 4 gibibytes of memory installed. How many kibibytes is this equivalent to?", marks: 1 },
+                  { code: '03.3',
+                    preamble: "A tablet computer uses the Harvard architecture.",
+                    prompt: "Describe two advantages of using the Harvard architecture compared to the von Neumann architecture.", marks: 2 },
+                  { code: '03.4',
+                    preamble: "The diagram in Figure 2 describes the fetch part of the Fetch-Execute cycle. Some register names have been replaced with numbers ① to ③.",
+                    prompt: "State the full names of the registers that should appear in the diagram where the numbers ①, ②, ③ are.", marks: 2 },
+                  { code: '03.5',
+                    preamble: "Interrupts can be generated by devices connected to the processor during the Fetch-Execute cycle.",
+                    prompt: "Describe the role of interrupts.", marks: 2 },
+                  { code: '03.6', prompt: "Explain why the volatile environment (the contents of registers) must be saved before an interrupt is serviced.", marks: 2 },
+                  { code: '03.7', prompt: "Explain the relationship between hardware and software.", marks: 1 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: "An estate agency makes details of the properties that it has for sale available to potential customers through a website. The details of the properties and other data are stored in a relational database. Individual web pages about specific properties are generated dynamically from the data. A client-server system using CRUD and REST is used to provide details of properties in a web page being viewed in a web browser.",
+                scenarioFigures: [
+                  { type: 'code', label: 'Figure 3',
+                    content: "Property(PropertyID, HouseNum, Street, Area, Postcode, Bedrooms, Bathrooms, AskingPrice, SellerID)\nSeller(SellerID, Title, Forename, Surname, Telephone)\nBuyer(BuyerID, Title, Forename, Surname, Telephone, DesiredArea, MinBedrooms, MaxPrice)\nViewing(BuyerID, PropertyID, ViewingDate, ViewingTime)\nSale(SaleID, PropertyID, BuyerID, SalePrice)\n\n• Property: properties for sale (bedroom/bathroom counts).\n• Seller: people selling the properties.\n• Buyer: people looking to buy and what they want (desired area, min bedrooms, max price).\n• Viewing: an entry whenever a buyer arranges to look at a property.\n• Sale: an entry whenever a property is sold to a buyer; SalePrice may differ from AskingPrice." }
+                ],
+                parts: [
+                  { code: '04.1',
+                    preamble: "The list below contains four statements about the principles of CRUD and REST. One of these statements is false.",
+                    prompt: "Shade one lozenge to indicate which statement is false.\n\nA) CRUD is an acronym for Create, Retrieve, Update, Delete.\nB) REST allows JavaScript to communicate with the server using the HTTP protocol.\nC) The database is connected to the web browser using REST.\nD) The REST API will be created and run on the client computer.", marks: 1 },
+                  { code: '04.2',
+                    preamble: "An SQL query retrieves details about properties with at least four bedrooms in a particular area. Two records are found (PropertyID 8026: 12 Chester Drive, 4 bedrooms; PropertyID 9034: 23a Castle Street, 5 bedrooms). These records can be sent from server to client using XML or JSON. Figure 4 shows the query results encoded using each method:\n\nRepresentation 1:\n{\"Properties\":[\n  { \"PropertyID\": 8026, \"HouseNum\": \"12\", \"Street\": \"Chester Drive\", \"Bedrooms\": 4 },\n  { \"PropertyID\": 9034, \"HouseNum\": \"23a\", \"Street\": \"Castle Street\", \"Bedrooms\": 5 }\n]}\n\nRepresentation 2:\n<Properties>\n  <Property>\n    <PropertyID>8026</PropertyID>\n    <HouseNum>12</HouseNum>\n    <Street>Chester Drive</Street>\n    <Bedrooms>4</Bedrooms>\n  </Property>\n  ...\n</Properties>",
+                    prompt: "Shade one lozenge to identify the method of encoding used by Representation 2.\n\nA) JSON\nB) XML", marks: 1 },
+                  { code: '04.3', prompt: "State two reasons why it could be argued that JSON is better than XML.", marks: 2 },
+                  { code: '04.4',
+                    preamble: "A composite primary key has been selected for the Viewing relation. This consists of the attributes BuyerID, PropertyID and ViewingDate.",
+                    prompt: "In selecting these attributes to form the primary key, what assumption has the database designer made about the behaviour of the buyers?", marks: 1 },
+                  { code: '04.5', prompt: "Write an SQL query that will retrieve from the database the list of all properties that the buyer with BuyerID 23 might be interested in buying. The properties should:\n  • be in the buyer's desired area\n  • have at least the minimum number of bedrooms the buyer requires\n  • cost no more than the maximum price that the buyer is prepared to pay.\n\nThe list of properties returned should only include, for each property:\n  • the PropertyID\n  • the street that the property is on\n  • the number of bedrooms that the property has\n  • the asking price for the property.\n\nThe list should be ordered with the most expensive property at the top and the least expensive at the bottom.", marks: 5 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "Figure 5 shows a computer (Computer A) located on a LAN in the UK. It is connected via the Internet to an email server (Computer B) located on a LAN in Belgium. Computer A has IP address 192.168.2.3 and Computer B has the public IP address 141.134.27.8. The UK LAN has Router A3.",
+                parts: [
+                  { code: '05.1',
+                    preamble: "The computers on subnet 192.168.2.0 have been configured using the DHCP system.",
+                    prompt: "State one advantage of using the DHCP system.", marks: 1 },
+                  { code: '05.2',
+                    preamble: "Computer A has the IP address 192.168.2.3. Many other computers connected to the Internet have the same IP address.",
+                    prompt: "Explain how two or more computers connected to the Internet can have the same IP address and still communicate with each other.", marks: 2 },
+                  { code: '05.3',
+                    preamble: "In addition to routing, Router A3 also acts as a firewall to protect the computers on the LAN in the UK.",
+                    prompt: "Explain four different ways that a firewall can protect computers on a LAN.", marks: 4 },
+                  { code: '05.4', extended: true,
+                    preamble: "A packet of data is to be transmitted across the Internet from Computer A in the UK to Computer B in Belgium. A checksum will be used to attempt to detect if any errors have occurred during the transmission.",
+                    prompt: "Explain how:\n  • Computer A will use a subnet mask to determine whether or not it can send the packet directly to Computer B across the LAN or if the packet must be sent via the Internet\n  • the packet will be routed across the Internet\n  • the checksum can be used to determine if the received packet has been changed during the transmission.\n\nIn your answer you will be assessed on your ability to follow a line of reasoning to produce a coherent, relevant and structured response.", marks: 12 }
+                ]
+              },
+              {
+                number: 6,
+                parts: [
+                  { code: '06.1',
+                    preamble: "Figure 6 shows truth tables for four logic gates, labelled Table A, Table B, Table C and Table D. The inputs/outputs for each are:\n  Table A — 00→1, 01→0, 10→0, 11→0\n  Table B — 00→0, 01→1, 10→1, 11→0\n  Table C — 00→1, 01→0, 10→0, 11→1\n  Table D — 00→0, 01→1, 10→1, 11→1",
+                    prompt: "Shade in one lozenge to indicate which truth table does NOT represent one of the logic gates: OR, XOR, NOR.\n\nA) Table A\nB) Table B\nC) Table C\nD) Table D", marks: 1 },
+                  { code: '06.2',
+                    preamble: "Figure 7 shows part of a logic circuit designed to take a binary representation of a single decimal digit (X3 X2 X1 X0) as input and light up the segments of a 7-segment display to show the decimal digit. Intermediate points A–E are labelled on the circuit. Output Q controls one segment; Q = 1 lights the segment.",
+                    figure: { type: 'table', label: 'Truth table to complete (rows for 0–9 with some intermediate values pre-filled)',
+                      headers: ['X3', 'X2', 'X1', 'X0', 'A', 'B', 'C', 'D', 'E', 'Q'],
+                      rows: [
+                        ['0','0','0','0','','','','','',''],
+                        ['0','0','0','1','1','0','1','0','0','0'],
+                        ['0','0','1','0','','','','','',''],
+                        ['0','0','1','1','1','1','0','0','1','1'],
+                        ['0','1','0','0','','','','','',''],
+                        ['0','1','0','1','0','0','1','1','1','1'],
+                        ['0','1','1','0','0','0','1','1','1','1'],
+                        ['0','1','1','1','','','','','',''],
+                        ['1','0','0','0','1','0','1','0','0','1'],
+                        ['1','0','0','1','','','','','','']
+                      ] },
+                    prompt: "Complete every empty cell in the truth table for the circuit in Figure 7. The listed inputs (X3, X2, X1, X0) represent the decimal digits 0–9 in binary — the only allowed inputs.", marks: 4 },
+                  { code: '06.3',
+                    preamble: "Figure 8 shows the patterns of segments that are illuminated for each of the decimal digits 0–9, with the seven segments labelled a (top), b (top-right), c (bottom-right), d (bottom), e (bottom-left), f (top-left), g (middle).",
+                    prompt: "By considering the inputs and outputs of the circuit in Figure 7 and consulting your trace table, state which of the segments in the display (labelled a to g) the output Q from the circuit is controlling.", marks: 1 },
+                  { code: '06.4', prompt: "Using the rules of Boolean algebra, simplify the following Boolean expression:\n\n    A · (Ā + 1) · B̄ ∨ ¬(Ā + B + 0)\n\n(See the official PDF for exact overline notation.)\n\nYou must show your working.", marks: 4 }
+                ]
+              },
+              {
+                number: 7,
+                parts: [
+                  { code: '07.1',
+                    preamble: "One of the numbers listed below is a member of the set of integers, the set of rational numbers and the set of real numbers, but is not a member of either the set of irrational numbers or the set of natural numbers.",
+                    prompt: "Shade one lozenge to indicate which number this is.\n\nA) −43\nB) 12/35\nC) 87\nD) 107.834", marks: 1 },
+                  { code: '07.2', prompt: "Shade one lozenge to indicate which type of number would be most appropriate to use to measure the length of an item, such as a piece of rope.\n\nA) Integer\nB) Irrational\nC) Natural\nD) Rational\nE) Real", marks: 1 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "A warehouse stores products waiting to be delivered to supermarkets. Products are packed onto pallets — all of the products on one pallet are of the same type (e.g. 120 boxes of washing powder). Individual products could be identified by labelling them with barcodes or RFID tags. Each label stores a ProductID number (uniquely identifying the type of product) together with an ItemID number (unique to the specific item). Figure 10 (the products table) has columns ProductID, Description, QuantityInStock.\n\nSome pallets delivered will be of products already in the table; others will be of items that don't exist in the table because the warehouse has not stocked them before.",
+                parts: [
+                  { code: '08.1', prompt: "Explain why the warehouse owners might prefer the individual products to be identified using RFID tags.", marks: 2 },
+                  { code: '08.2', prompt: "Explain why the product manufacturers or supermarket owners might prefer the individual products to be identified using barcode labels.", marks: 2 },
+                  { code: '08.3', prompt: "Describe how an RFID reader would read the ProductID and ItemID values from RFID tags as pallets are delivered and explain how this data could be used to update the database table that stores details of the products that the warehouse has in stock.\n\nYou should include in your description references to the type(s) of SQL statements (e.g. INSERT, SELECT, UPDATE) that could be used and their purpose, but you do not need to write any SQL code.", marks: 6 }
+                ]
+              },
+              {
+                number: 9,
+                scenario: "Figure 11 shows the format of a machine code instruction for a particular processor and one instruction in that format. The instruction format is opcode + operand. The operand field is wide enough to be used as a memory address.",
+                parts: [
+                  { code: '09.1', prompt: "If the operand can be used to refer to any location in the memory, how many memory locations can the processor address?", marks: 1 },
+                  { code: '09.2',
+                    preamble: "One of the two addressing modes that the processor supports is immediate addressing.",
+                    prompt: "Explain what is meant by immediate addressing.", marks: 1 },
+                  { code: '09.3',
+                    preamble: "The Vernam cipher encrypts a plaintext character by performing a logical operation between a character in the plaintext and part of the key.\n\nThe AQA assembly language instruction set is provided (LDR, STR, ADD, SUB, MOV, CMP, B, B<cond>, AND, ORR, EOR, MVN, LSL, LSR, HALT; operand2 = #decimal or Rm; general registers R0–R12).",
+                    prompt: "Write an assembly language program, using the AQA assembly language instruction set, to encrypt a plaintext character using this method.\n\nYou should assume that:\n  • the character code of the plaintext character is in memory location 101\n  • the part of the key to use is in memory location 102\n\nThe encrypted ciphertext character should be stored in memory location 103.", marks: 3 },
+                  { code: '09.4',
+                    preamble: "A message has been encrypted using the Caesar cipher with a key value of 5. Each capital letter is replaced by another capital letter (as determined by the key value) whenever it is encrypted or decrypted.\n\nThe pseudocode in Figure 12 is supposed to decrypt a single capital letter character in the message, but it does not work properly:\n\n    asciicode ← CHAR_TO_INT(ciphertextcharacter)\n    asciicode ← asciicode − 5\n    plaintextcharacter ← INT_TO_CHAR(asciicode)\n\nCHAR_TO_INT returns the ASCII code of a character. INT_TO_CHAR returns the character corresponding to an ASCII code. Capital letters A–Z have ASCII codes 65–90.",
+                    prompt: "By analysing the pseudocode in Figure 12, explain what the problem with the algorithm represented by the pseudocode is and how it could be rectified.", marks: 3 }
+                ]
+              },
+              {
+                number: 10,
+                parts: [
+                  { code: '10', extended: true,
+                    preamble: "A company provides a social media service through which members can share information about themselves and view information and news from their friends. The service also displays current affairs news stories to its members. The service does not have journalists who write the stories but instead it uses algorithms to select news stories written by other organisations and individuals and shows these. Different news stories may be shown to different members.",
+                    prompt: "Discuss:\n  • how algorithms might determine which current affairs news stories to display to an individual member\n  • the moral, ethical and legal considerations that the developers of the system and its operators should consider in relation to how the algorithms work and which news stories are displayed.", marks: 6 }
+                ]
+              },
+              {
+                number: 11,
+                parts: [
+                  { code: '11.1',
+                    preamble: "The list towers is defined as:\n\n    towers = [\"Blackpool\", \"Paris\", \"New Brighton\", \"Toronto\"]",
+                    prompt: "What are the head and tail of this list?", marks: 1 },
+                  { code: '11.2',
+                    preamble: "Figure 14 shows some code written in a functional programming language:\n\n    total []     = 0\n    total (x:xs) = x + total (xs)\n\n• [] is the empty list\n• (x:xs) as the argument to a function splits a list into two parts, the head x and tail xs.",
+                    prompt: "Describe how the total function works to add up all of the numbers in a list.", marks: 3 },
+                  { code: '11.3',
+                    preamble: "Functional programming languages support higher-order functions such as map and fold.",
+                    prompt: "Explain what a higher-order function is.", marks: 2 },
+                  { code: '11.4', prompt: "What is the result of this application of the fold function?\n\n    fold (*) 1 [2, 3, 2]", marks: 1 }
+                ]
+              }
+            ],
+            // Official AQA mark-scheme content for every part, copied from
+            // the 7517/2 November 2020 mark scheme.
+            markSchemes: {
+              '01.1': { type: 'exact',
+                points: ['1,600,000 (bytes)', '1600000', '1.6 MB', '1600 kB'],
+                guidance: '2 marks for correct final answer 1,600,000 bytes. A. 1600 kB / 1.6 MB for 1 mark but NE. 1600 or 1.6 without units. If final answer not given but correct calculation shown ((60+40) × 16 × 8000 / 8, or 100 × 16 × 8000 / 8), award 2 marks. If incorrect/incomplete, award 1 method mark for doing any three of: multiplying by 8000; multiplying by 100; multiplying by 16; dividing by 8 (A. multiplying by 2 as alternative to ×16 then ÷8).' },
+              '01.2': { type: 'points',
+                points: [
+                  '(Analogue signal) sampled at fixed / regular time intervals (R. references to graphs)',
+                  'Amplitude / voltage of signal / wave (at each sample point) measured',
+                  'Measurement coded into a fixed number of bits / coded in binary'
+                ],
+                guidance: '2 marks if all three points covered. 1 mark if at least one point covered. A. "sound" as BOD for "analogue signal".' },
+              '02.1': { type: 'points',
+                points: [
+                  'Advantage of floating point (max 1): A floating point system can represent numbers with a greater range than fixed point (A. can represent numbers much closer to zero / much smaller numbers; A. can represent much larger numbers)',
+                  'Advantage of fixed point (max 1): A fixed point system can represent (some) numbers more precisely than floating point (A. "accurately" for "precision" as BOD)',
+                  'Advantage of fixed point (alt): Calculations can be performed more quickly (NE. "time efficient"; A. "simpler evaluation")',
+                  'Advantage of fixed point (alt): Represents all numbers to a constant (A. fixed, guaranteed) level of precision/accuracy'
+                ],
+                guidance: '2 marks: max 1 from floating-point list + max 1 from fixed-point list. NE. "easier to understand".' },
+              '02.2': { type: 'exact',
+                points: ['−0.0859375', '−11/128', '−0.0859'],
+                guidance: '2 marks for correct answer −0.0859375 (= −11/128). A. expressed to at least four decimal places (e.g. −0.0859). If incorrect, award 1 method mark for one of: showing mantissa = −0.6875 / −11/16 AND/OR exponent = −3 in decimal; showing binary point shifted 3 places to the left; using answer = mantissa × 2^exponent with at least one of the correct mantissa or exponent.' },
+              '02.3': { type: 'exact',
+                points: ['Mantissa = 0.110011 (or 0.1100110), exponent = 01011 (= +11)'],
+                guidance: '3 marks for correct answer. If incorrect, award up to 2 method marks for: correct (unsigned) representation of 1632 in binary = 11001100000 (A. leading 0s); correct exponent in decimal (11) or binary (01011), or showing binary point shifted 11 places left (mark can be awarded if seen in final answer); correct mantissa in binary = 0.110011.' },
+              '02.4': { type: 'exact',
+                points: [
+                  'Highest value: 32,256 (A. 0.984375 × 2¹⁵ / 63/64 × 2¹⁵)',
+                  'Lowest value: −32,768 (A. −2¹⁵ / −1 × 2¹⁵)'
+                ],
+                guidance: '3 marks if both correct (1 mark each + 1 for both). If 3 marks not awarded, working marks available (max 2 overall): 1 mark for highest value in binary 111111000000000 (or mantissa 0.111111 AND exponent 01111); 1 mark for lowest value in binary 1000000000000000 (or mantissa 1.000000 AND exponent 01111); 1 mark for multiplying a value by the correct exponent in decimal (2¹⁵ = 32,768), regardless of correctness.' },
+              '02.5': { type: 'points',
+                points: [
+                  'There are not enough bits in the mantissa (to represent 28.25 exactly) / 7 bits is not enough / binary representation needs more significant digits than the mantissa has bits / 28.25 needs 8 bits in mantissa / insufficient precision available',
+                  'It could be rounded to the nearest representable value / it may be truncated / represent as 28 / represent as 28.5'
+                ],
+                guidance: '2 marks. R. "28.25/some numbers can never be represented exactly in binary". R. "an error would be generated".' },
+              '03.1': { type: 'exact',
+                points: [
+                  'Address Bus = 4',
+                  'Data Bus = 5',
+                  'Main Memory = 1',
+                  'Processor = 2',
+                  'USB I/O Controller = 3'
+                ],
+                guidance: '2 marks if all five correct. 1 mark if at least three correct.' },
+              '03.2': { type: 'exact',
+                points: ['4,194,304 (kibibytes)', '1024 × 1024 × 4', '4 × 2²⁰', '2²²'],
+                guidance: '1 mark for 4,194,304 kibibytes (or equivalent).' },
+              '03.3': { type: 'points',
+                points: [
+                  'Avoid / reduce bottleneck of single data / address bus(es) / avoid delays waiting for memory fetches (A. "instruction and data can be accessed simultaneously")',
+                  'Avoids possibility of data being executed as code (one method that can be exploited by hackers) / being able to use exclusively ROM for instruction memory prevents the program being modified / hacked (A. program cannot be (accidentally) overwritten by data)',
+                  'Instruction and data memory can have different word lengths',
+                  'Different technologies can be used to implement instruction and data memory',
+                  'Different quantities of instruction and data memory means address lengths can differ between the two / memory address structures can differ'
+                ],
+                guidance: 'Max 2. NE. "So programs/tasks will run faster". NE. "More efficient". NE. "Quicker access" without further explanation. NE. "Instructions and data stored in different memories".' },
+              '03.4': { type: 'exact',
+                points: [
+                  '① Memory Address Register (NE. MAR alone)',
+                  '② Program Counter (NE. PC alone)',
+                  '③ Current Instruction Register (NE. CIR/IR alone; A. Instruction Register)'
+                ],
+                guidance: '2 marks if all three correctly named. 1 mark for two correct. If student used initialisms instead of full register names (or a mixture), award 1 mark if all three registers have the correct abbreviated name.' },
+              '03.5': { type: 'points',
+                points: [
+                  'Allows the currently executing process / task / program to be suspended (A. "stopped" as BOD; R. "suspend/stop the fetch-execute cycle/processor"; R. "instruction" for "process")',
+                  'So that a device / source that needs the (immediate) attention of the processor can be serviced / dealt with / so that an urgent error condition can be serviced (A. examples; NE. "to deal with an error" unless clear it must be dealt with immediately; NE. "so that a task of higher priority can be carried out")'
+                ],
+                guidance: '2 marks.' },
+              '03.6': { type: 'points',
+                points: [
+                  'So that the currently running process / task / program can be returned to (NE. "so that the content will not be lost/overwritten"; NE. "so that the F-E cycle can continue afterwards")',
+                  'As the (code that deals with the) interrupt will change / overwrite / clear register values (NE. "the contents of the registers will be lost")'
+                ],
+                guidance: '2 marks.' },
+              '03.7': { type: 'points',
+                points: [
+                  'Software (is the programs that) execute(s) on the hardware',
+                  'Hardware is the electrical / physical components that allow the software to execute',
+                  'Software controls the operation of the hardware (A. as BOD)'
+                ],
+                guidance: '1 mark.' },
+              '04.1': { type: 'exact',
+                points: ['D', 'The REST API will be created and run on the client computer'],
+                guidance: '1 mark for D. R. if more than one lozenge shaded.' },
+              '04.2': { type: 'exact',
+                points: ['B', 'XML'],
+                guidance: '1 mark for B. R. if more than one lozenge shaded.' },
+              '04.3': { type: 'points',
+                points: [
+                  'More compact (A. facilitates faster transmission / smaller file size / uses less memory)',
+                  'Quicker (A. easier) to parse',
+                  'Structure understood directly in some languages (e.g. JavaScript)',
+                  '(Native) support for arrays',
+                  'Easier for humans to read / write / understand'
+                ],
+                guidance: 'Max 2.' },
+              '04.4': { type: 'exact',
+                points: ['That the buyer will only view the same property once on a particular day'],
+                guidance: '1 mark. R. "each visit made by only one buyer".' },
+              '04.5': { type: 'points',
+                points: [
+                  'AO2 — Correctly analyse the data model: identify tables (Property, Buyer) and fields (PropertyID, Street, Bedrooms, AskingPrice) to extract, with no other tables/fields',
+                  'AO2 — Identify two of the four required conditions (1 mark) OR all four conditions (2 marks): BuyerID = 23; Buyer.DesiredArea = Property.Area; Buyer.MinBedrooms <= Property.Bedrooms; Buyer.MaxPrice >= Property.AskingPrice',
+                  'AO3 — Fully correct SQL in two of the three/four clauses (SELECT, FROM, WHERE, ORDER BY)',
+                  'AO3 — Fully correct SQL in all three/four clauses'
+                ],
+                guidance: '5 marks (3 AO2 + 2 AO3). AO2 marks awarded regardless of SQL correctness. ORDER BY AskingPrice DESC required for full credit. A. table-name.fieldname; A. AS alias; A. INNER JOIN as one word. Overall Max 4 if solution does not work fully.' },
+              '05.1': { type: 'points',
+                points: [
+                  'Automatic / dynamic IP address allocation to devices on the network',
+                  'No need to manually configure IP addresses on each device',
+                  'No risk of two devices being assigned the same IP address',
+                  'Devices can move between networks and obtain valid addresses without reconfiguration',
+                  'Easier to change network configuration (e.g. subnet mask, gateway) — done once on DHCP server',
+                  'Reduces errors from manually programming incorrect subnet mask'
+                ],
+                guidance: 'Max 1. NE. "avoiding errors" without an example.' },
+              '05.2': { type: 'points',
+                points: [
+                  'The computers have private / non-routable IP addresses / 192.168.2.3 is a private / non-routable IP address (NE. "computers can have the same IP addresses as they are on different networks")',
+                  'NAT / Network Address Translation will be performed (so they can communicate on the Internet) / as data passes onto the Internet the private IP address is replaced with the public IP address of the router / gateway'
+                ],
+                guidance: '2 marks.' },
+              '05.3': { type: 'points',
+                points: [
+                  'Block / allow (traffic on) specific ports / block specified protocols',
+                  'Block / allow (traffic from) specific IP addresses (A. domain names as BOD; R. MAC addresses; NE. "block access to certain websites")',
+                  'Block / allow certain types of packet (A. examples e.g. pings/echo requests; NE. "block specific programs connecting to Internet")',
+                  'Firewall maintains information about current connections and only allows packets relevant to these connections (NE. just "stateful inspection")',
+                  'Act as a proxy server / all traffic to Internet must go via firewall / stops computers on Internet directly accessing devices on the LAN',
+                  'Identify unusual behaviour from a host (e.g. sending an unusually large amount of data)',
+                  'Rules are written to specify conditions under which to block/allow',
+                  '(Fallback) Examine the contents of the packet header and allow/block based on rules (NE. just "packet filtering")'
+                ],
+                guidance: 'Max 4. The packet-header fallback mark can only be awarded if none of the first three points have been awarded.' },
+              '05.4': { type: 'levels',
+                levels: [
+                  { range: [10, 12], descriptor: 'Level 4',
+                    criteria: 'A line of reasoning has been followed to produce a coherent, relevant, substantiated and logically structured response. The response covers all three areas and in at least two of these there is sufficient detail to show a good level of understanding. Top of range requires good understanding of all three areas.' },
+                  { range: [7, 9], descriptor: 'Level 3',
+                    criteria: 'A line of reasoning has been followed to produce a coherent, relevant, substantiated and logically structured response which shows a good level of understanding of two areas.' },
+                  { range: [4, 6], descriptor: 'Level 2',
+                    criteria: 'A limited attempt has been made to follow a line of reasoning and the response has a mostly logical structure. A good level of understanding of at least one area OR a reasonable understanding of at least two areas.' },
+                  { range: [1, 3], descriptor: 'Level 1',
+                    criteria: 'A few relevant points have been made but there is no evidence that a line of reasoning has been followed. Points may only relate to one or two of the areas. Insufficient evidence of good understanding of any of the three areas.' }
+                ],
+                indicative: {
+                  'Area 1 — Determining if on LAN (subnet mask)': 'AND operation of subnet mask with Computer A\'s IP address; AND operation of subnet mask with Computer B\'s IP address; result of each AND is the network / subnet ID; network IDs compared; as they differ, packet must be sent via router/gateway/Internet (Computer B is not on the same subnet); if they were the same, packet sent directly to Computer B. Basic understanding = recognising that the subnet mask is used with IP addresses to determine if the two computers are on the same network/subnet.',
+                  'Area 2 — Routing across the Internet': 'Hierarchical organisation of routers; example (passed up to a national router, transferred internationally, passed back down); path selected by each router (not determined at start; NE. "passed from router to router"); route may change due to congestion / technical problems; (possible) repackaging of packet to use different protocol (e.g. gateway may change protocol); route determined using the (Network ID part of the destination) IP address; use of router tables / criteria to determine next hop; router decrements time-to-live of packet; source and destination MAC addresses changed at each router / MAC addresses used per hop; IP address of Computer A replaced with IP address of Router A3 / NAT will occur at routers.',
+                  'Area 3 — Checksum': 'Checksum produced when packet transmitted (by Computer A); (hash) value calculated from packet contents; MOD operation often used to limit magnitude / fit value to specific number of bits; checksum transmitted with / appended to packet; Computer B recalculates checksum (performs same calculation on data); received and calculated checksum compared; if they match, contents/data are accurate; if they differ, data has been changed / there is an error.'
+                },
+                guidance: '12 marks. Best-fit across the three areas. Indicative content is a guide — credit other valid points.' },
+              '06.1': { type: 'exact',
+                points: ['Table C', 'C'],
+                guidance: '1 mark for Table C (Table C is the AND truth table, which is not OR, XOR or NOR). R. if more than one lozenge shaded.' },
+              '06.2': { type: 'points',
+                points: [
+                  'Correct values in columns A OR C of the unshaded rows',
+                  'Correct values in columns B OR D of the unshaded rows',
+                  'Correct values in column E of the unshaded rows',
+                  'Correct values in column Q of the unshaded rows'
+                ],
+                guidance: '4 marks: 1 mark per correct column-set. Marks are awarded for the correct values in the unshaded cells only. Max 3 if any incorrect values in the table. Expected unshaded rows: 0000 → A=0, B=1, C=0, D=1, E=0, Q=0; 0010 → 1,1,1,0,1,1; 0100 → 0,1,0,0,1,1; 0111 → 0,0,0,0,0,0; 1001 → 0,1,1,0,0,1.' },
+              '06.3': { type: 'exact',
+                points: ['b', 'the middle bar'],
+                guidance: '1 mark for segment b (A. the middle bar).' },
+              '06.4': { type: 'points',
+                points: [
+                  'Final answer: A·B (or a logically equivalent fully-simplified expression)',
+                  'Successful application of De Morgan\'s Law (and any associated NOT cancellation) that produces a simpler expression',
+                  'Applying an identity other than cancelling NOTs that produces a simpler expression (e.g. X + 1 = 1, X · 1 = X, X + 0 = X)',
+                  'Successfully expanding brackets'
+                ],
+                guidance: '4 marks: 1 mark for the final answer + max 3 for working (one mark per technique application). Award marks for working until an incorrect step is made; ignore missing steps if jumps between steps are logically correct. A simpler expression uses fewer logical operators than the original. If a candidate simplifies different parts simultaneously, award all relevant marks for the multiple stage but no further marks for parts simplified incorrectly.' },
+              '07.1': { type: 'exact',
+                points: ['A', '−43'],
+                guidance: '1 mark for A (−43 is in ℤ, ℚ, ℝ but not in ℕ or the irrationals). R. more than one lozenge shaded.' },
+              '07.2': { type: 'exact',
+                points: ['E', 'Real'],
+                guidance: '1 mark for E. R. more than one lozenge shaded.' },
+              '08.1': { type: 'points',
+                points: [
+                  'AO2 (1 mark): A lot of individual products will need to be scanned simultaneously / when a lorry / delivery arrives or leaves',
+                  'AO1 (1 mark): The RFID tags could be read without removing products from their pallet',
+                  'AO1 (alt): RFID tags can be read from a (greater) distance than barcodes',
+                  'AO1 (alt): No need for a person to scan tags / no need to manually scan tags',
+                  'AO1 (alt): RFID tags can be read at a faster rate',
+                  'AO1 (alt): RFID tags less easily damaged / barcodes can be easily damaged and made unreadable',
+                  'AO1 (alt): Don\'t have to spend time locating barcodes on items'
+                ],
+                guidance: '2 marks (1 AO2 + max 1 AO1). R. "RFID tags can store more data" (not relevant here).' },
+              '08.2': { type: 'points',
+                points: [
+                  'AO1 (1 mark): Barcodes are cheaper than RFID tags / less electronic waste (assuming tags not reused) / barcodes can only be read when scanner pointed directly at them / barcodes not susceptible to radio interference / barcodes usually include human-readable encoding of same data',
+                  'AO2 (1 mark): Higher cost of RFID tags would be added to prices / higher cost paid by manufacturer / supermarket / customer / barcodes can be scanned by existing equipment at checkouts / less risk of nearby product being accidentally scanned / backup system exists as barcodes can be keyed in'
+                ],
+                guidance: '2 marks (1 AO1 + 1 AO2).' },
+              '08.3': { type: 'points',
+                points: [
+                  'AO1 — RFID reader / scanner (at warehouse entrance) transmits / sends signal',
+                  'AO1 — Signal activates / energises / induces current in RFID transponder / tag',
+                  'AO1 — RFID transponder / tag transmits / sends data by radio (wave)',
+                  'AO2 — RFID signals processed into a format suitable for querying the database',
+                  'AO2 — (SELECT) query used to check if there is already a record for the product / ProductID in the database / return of empty data set could be used to identify the product is not in the table (NE. "used to lookup record")',
+                  'AO2 — UPDATE statement used to increase the QuantityInStock / stock level (by the number of items delivered) if the product is already in the database',
+                  'AO2 — INSERT statement used to create new record for product if not already in the database; user will need to enter some details manually as these are not in the RFID tag'
+                ],
+                guidance: '6 marks total: 3 AO1 (knowledge) for the RFID-read mechanism + max 3 AO2 (analyse) for the SQL/database logic.' },
+              '09.1': { type: 'exact',
+                points: ['1024', '2¹⁰', '1 KiB'],
+                guidance: '1 mark for 1024 / 2¹⁰. A. 1 KiB.' },
+              '09.2': { type: 'exact',
+                points: ['The operand is the value / datum that the instruction should use'],
+                guidance: '1 mark.' },
+              '09.3': { type: 'points',
+                points: [
+                  'Values in memory locations 101 and 102 loaded into two different registers (e.g. LDR R1, 101 ; LDR R2, 102)',
+                  'Contents of the two registers are exclusive ORed (e.g. EOR R3, R1, R2) (A. XOR achieved another way: two ANDs + two NOTs + an OR; A. EOR 103, 101, 102 if no other marks awarded for this part)',
+                  'Value of register storing the EOR result is stored into memory location 103 (e.g. STR R3, 103) (A. result of incorrect combination stored in 103)'
+                ],
+                guidance: '3 marks (AO3 — programming). DPT. use of invalid register name e.g. Rd. DPT. use of incorrect addressing mode. DPT. inclusion of invalid symbols in commands. Example solution: LDR R1, 101 / LDR R2, 102 / EOR R3, R1, R2 / STR R3, 103.' },
+              '09.4': { type: 'points',
+                points: [
+                  'Problem: Some letters will be shifted back before the letter A / before the start of the alphabet / before ASCII code 65 / some letters will end up as non-alphabetic characters (R. "some values will not be valid ASCII codes")',
+                  'Solution: These need to be shifted back / wrapped around to the end of the alphabet / use an If statement to check if the code is below 65',
+                  'Solution: Shifting achieved by adding 26 to any code below 65 / by using MOD 26 in the calculation'
+                ],
+                guidance: '3 marks: 1 for the problem + max 2 for the solution.' },
+              '10': { type: 'points',
+                points: [
+                  'Area 1 — Algorithm: members could specify their interests / views and stories matched to these',
+                  'Area 1: consider basic facts about member (age, gender, location)',
+                  'Area 1: consider what stories have been read by friends of the member',
+                  'Area 1: analyse the type of stories the user has read before / member\'s search history / member\'s reaction (likes) to similar stories',
+                  'Area 1: show stories viewed by others with a similar profile',
+                  'Area 1: display articles that have been more popular / had more hits / received more positive feedback',
+                  'Area 1: compare keywords in articles with keywords in articles previously viewed by the member',
+                  'Area 1: how can the algorithm avoid displaying click-bait?',
+                  'Area 2 — Legal: who owns the copyright in the story? is it legal to reproduce a story someone else has written?',
+                  'Area 2 — Legal: is the company legally responsible for the content / accuracy of stories?',
+                  'Area 2 — Legal: do contracts need to be signed between the company and the organisations / individuals stories will be displayed from?',
+                  'Area 2 — Legal: laws in some countries may prevent some types of stories / need to ensure laws in different countries are followed',
+                  'Area 2 — Legal: need to ensure stories are age-appropriate; need to notify members about how their information is used',
+                  'Area 3 — Ethical/Moral: by choosing what stories to display, will the service influence the views of members?',
+                  'Area 3: how should the company deal with governments / organisations who might want to influence / control which stories are displayed?',
+                  'Area 3: should the company accept payments to promote stories?',
+                  'Area 3: how should the company deal with complaints (in a timely fashion)?',
+                  'Area 3: will reproduction adversely (or positively) affect the number of people reading the original stories from their authors?',
+                  'Area 3: how can / should reliability of stories be checked (fake news)?',
+                  'Area 3: how should the company assess bias / prevent propaganda? duty to provide balance?',
+                  'Area 3: should members be able to opt out of having their data analysed for this purpose? (importance of consent)',
+                  'Area 3: should the company let members know the news they see is tailored to them?',
+                  'Area 2 or 3: should the company have people who read/check each story? is it practical?',
+                  'Area 2 or 3: how should the company select which organisations / individuals it will display stories from?'
+                ],
+                guidance: '6 marks. Max 4 if all points are from one area — students must spread across at least two of the three areas (Algorithm / Legal / Ethical-Moral).' },
+              '11.1': { type: 'exact',
+                points: [
+                  'Head: "Blackpool"',
+                  'Tail: ["Paris", "New Brighton", "Toronto"]'
+                ],
+                guidance: '1 mark for both head AND tail correctly identified. I. if quotation marks are omitted. A. omissions of brackets from the tail or addition of brackets to the head this time only.' },
+              '11.2': { type: 'points',
+                points: [
+                  'The function is recursive',
+                  'It splits the list up into the head and the tail',
+                  'It calls itself with the tail of the list that it was called with (as an argument)',
+                  'Each call adds the value that is the head of the list to the total / sum of the values in the tail of the list',
+                  'The recursion terminates when the list is empty (by returning 0)'
+                ],
+                guidance: 'Max 3.' },
+              '11.3': { type: 'points',
+                points: [
+                  'A function that takes a function as an argument',
+                  'A function that returns a function as a result'
+                ],
+                guidance: 'Max 2. A. "parameter", "input" for "argument". NE. "a function that uses another function". R. explanations that are specifically of map or fold and do not explain higher-order.' },
+              '11.4': { type: 'exact',
+                points: ['12'],
+                guidance: '1 mark for 12 (fold (*) 1 [2,3,2] = 2*3*2*1 = 12).' }
+            }
           }
         ]
       },
