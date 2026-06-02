@@ -278,14 +278,20 @@
   const { data: userSubjects } = await supabaseClient
     .from('user_subjects').select('*').eq('user_id', user.id).order('created_at');
 
-  // Maths & Further Maths are print-only past-paper subjects with no AI
-  // question bank, so they're excluded from AI feedback (still on past-papers).
-  const AI_FEEDBACK_EXCLUDED = new Set(['Mathematics', 'Further Mathematics']);
+  // Some subjects (historically Maths & Further Maths) have no AI question
+  // bank — they were print-only past-paper subjects. But a subject is still
+  // useful here the moment it gains *attemptable* past papers (the Past papers
+  // source), so we don't hard-exclude by name: we drop a subject only when it
+  // has NEITHER a question bank NOR any attemptable past papers. That way,
+  // adding papers with a `questions` array in papers-config.js automatically
+  // surfaces the subject on this page with no edit here.
+  const BANKLESS_SUBJECTS = new Set(['Mathematics', 'Further Mathematics']);
 
   // De-duplicate to one row per subject (a user can have a subject under one board)
   const subjectMap = new Map();
   (userSubjects || []).forEach(row => {
-    if (AI_FEEDBACK_EXCLUDED.has(row.subject)) return;
+    if (BANKLESS_SUBJECTS.has(row.subject) &&
+        !subjectHasAttemptablePapers(row.subject, row.exam_board)) return;
     if (!subjectMap.has(row.subject)) subjectMap.set(row.subject, row);
   });
   const subjects = Array.from(subjectMap.values());
@@ -361,12 +367,23 @@
     return n === 'ocr' ? 'ocr a' : n;
   }
   function papersForSelected() {
-    const sub = (window.SUBJECTS || []).find(s => s.name === state.subject);
+    return papersFor(state.subject, state.board);
+  }
+
+  // Same lookup, parameterised so the subject-eligibility check (above) can
+  // reuse it before `state` exists. Returns the attemptable papers (those with
+  // a `questions` array) for a subject+board, matching board names loosely.
+  function papersFor(subject, board) {
+    const sub = (window.SUBJECTS || []).find(s => s.name === subject);
     if (!sub) return [];
-    const target = normBoard(state.board);
+    const target = normBoard(board);
     const b = (sub.boards || []).find(x => normBoard(x.board) === target);
     if (!b) return [];
     return (b.papers || []).filter(p => Array.isArray(p.questions) && p.questions.length);
+  }
+
+  function subjectHasAttemptablePapers(subject, board) {
+    return papersFor(subject, board).length > 0;
   }
 
   // ── Safety net (same idea as past-papers.html's validateBoardConfig). Every
