@@ -11460,7 +11460,270 @@ window.SUBJECTS = [
     name: 'Biology', icon: '🧬',
     boards: [
       { board: 'AQA', specCode: '7402',
-        officialPageUrl: 'https://www.aqa.org.uk/subjects/biology/a-level/biology-7402/assessment-resources' },
+        officialPageUrl: 'https://www.aqa.org.uk/subjects/biology/a-level/biology-7402/assessment-resources',
+        // June 2024 papers are still embargoed on AQA's filestore (every
+        // 74021/2/3-QP-JUN24 URL 404s). AQA has also rotated June 2022
+        // Papers 1 and 3 off the public filestore — only June 2022 Paper 2
+        // and the full June 2023 series remain downloadable, so those are
+        // what is wired up question-by-question here.
+        papers: [
+          { id: 'bio-aqa-7402-2023-p1', year: 'June 2023', paperName: 'Paper 1', paperCode: '7402/1', totalMarks: 91, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74021-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74021-MS-JUN23.PDF',
+            qbqNote: 'All 10 questions (91 marks) are wired up question-by-question with the official AQA mark scheme. Figures (diagrams, dissociation curves, graphs and Figures 1–12) are in the question paper PDF — open it alongside to read any figure a question refers to.',
+            questions: [
+              { number: 1,
+                parts: [
+                  { code: '01.1', prompt: "Give the three structural features found in all virus particles and describe the function of one of these features.", marks: 2 },
+                  { code: '01.2', prompt: "Explain why viruses are described as acellular and non-living.", marks: 2 },
+                  { code: '01.3', prompt: "Give one reason why antibiotics are not effective against viruses.", marks: 1 }
+                ] },
+              { number: 2,
+                parts: [
+                  { code: '02.1', preamble: "Chitin is a polysaccharide. The chitin monomer is a β-glucose molecule with one OH group replaced by an NHCOCH₃ group. Figure 1 shows the monomer that forms chitin and the chitin polymer. Chitin has a similar structure to cellulose.", prompt: "Use Figure 1 to describe three ways the structure of chitin is similar to the structure of cellulose.\n\n(See Figure 1 in the question paper PDF.)", marks: 3 },
+                  { code: '02.2', preamble: "Chitin keeps the tracheae open in the tracheal system of gas exchange in an insect. Gas exchange does not occur in the tracheae.", prompt: "Explain the importance of one adaptation of the gas exchange surface in the tracheal system of an insect.", marks: 2 },
+                  { code: '02.3', preamble: "Lignin is a polymer found in the walls of xylem vessels in plants. Lignin keeps the xylem vessel open as a continuous tube.", prompt: "Explain the importance of the xylem being kept open as a continuous tube.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "The human disease malaria is caused by infection with a single-celled eukaryotic organism. Figure 2 shows a diagram of Plasmodium vivax, one of the species that can cause malaria.\n\n(See Figures 2 and 3 in the question paper PDF.)",
+                parts: [
+                  { code: '03.1', prompt: "Other than the Golgi apparatus, name one structure in Figure 2 which shows that P. vivax is a eukaryote.", marks: 1 },
+                  { code: '03.2', prompt: "Describe two functions of the Golgi apparatus in a eukaryotic cell.", marks: 2 },
+                  { code: '03.3', preamble: "P. vivax evolved from a common ancestor in Africa. As humans migrated around the world, new strains of P. vivax evolved. P. vivax is now extremely rare in Africa but there are several different strains in other parts of the world. Figure 3 shows a phylogenetic diagram of the evolution of these different strains.", prompt: "What does Figure 3 suggest is the order of human migration out of Africa? Tick one box.\n\n• Europe, India, East Asia, Central America, South America\n• India, East Asia, Europe, South America, Central America\n• India, Europe, East Asia, Central America, South America\n• South America, Central America, East Asia, Europe, India", marks: 1 },
+                  { code: '03.4', preamble: "There are an estimated 229 million cases of human malaria worldwide per year. 94% of these cases are found in Africa, but are not caused by P. vivax. P. vivax does cause 61% of the cases of human malaria outside Africa.", prompt: "Use this information to calculate the number of cases worldwide caused by P. vivax each year.", marks: 1 },
+                  { code: '03.5', preamble: "In Africa today, most of the human population are resistant to malaria caused by P. vivax.", prompt: "Use your knowledge of natural selection to explain why this resistance is so common in Africa.", marks: 4 }
+                ] },
+              { number: 4,
+                scenario: "Some hospital patients suffer from diarrhoea caused by infection with the bacterium Clostridium difficile. The C. difficile bacteria release toxins. These toxins cause the diarrhoea. The toxins damage the cells lining the ileum, causing them to lose their microvilli. The damage to the cells reduces the absorption of the products of digestion and reduces the absorption of water, resulting in diarrhoea.",
+                parts: [
+                  { code: '04.1', prompt: "Explain why the damage to the cells lining the ileum reduces absorption of the products of digestion and why this reduces absorption of water.", marks: 3 },
+                  { code: '04.2', preamble: "Not all patients in hospital with C. difficile develop diarrhoea. Scientists measured the anti-toxin antibody concentration in hospital patients with and without C. difficile infection, on admission (day 0), day 3, day 6 and the day the patient left hospital. Figure 4 shows the results. The scientists suggest that the anti-toxin antibody could be given to some patients as a form of passive immunity.", prompt: "Use Figure 4 to suggest how this passive immunity would work and which patients should be offered this anti-toxin antibody.\n\n(See Figure 4 in the question paper PDF.)", marks: 3 },
+                  { code: '04.3', preamble: "To be used as passive immunity treatment, the anti-toxin antibody would be injected. If it was given by mouth, it would be digested.", prompt: "Describe how the anti-toxin antibody would be digested.", marks: 3 }
+                ] },
+              { number: 5,
+                scenario: "A student investigated the use of cinnamon oil as an antimicrobial substance. She investigated the effect of cinnamon oil on the growth of five different bacterial cultures grown on agar plates.",
+                parts: [
+                  { code: '05.1', preamble: "The student added 100 mm³ of each bacterial culture from its glass bottle onto a separate agar plate. She spread each bacterial culture evenly over the agar using a spreader.", prompt: "Describe the aseptic techniques she should use.", marks: 3 },
+                  { code: '05.2', preamble: "On each agar plate, the student cut a well (a hole) in the agar. The well had a diameter of 6 mm. The student added 50 mm³ of cinnamon oil into the well.", prompt: "Calculate the minimum depth of the well to allow the addition of 50 mm³ of cinnamon oil.\n\nUse the equation: Volume of a cylinder = πr² × l, with 3.14 as the value for π.\n\nShow your working. Give your answer in mm.", marks: 2 },
+                  { code: '05.3', preamble: "The student kept the plates at 25 °C for 24 hours. Figure 5 shows one of her plates after 24 hours. She measured the diameter of the clear zone with no bacterial growth around each well (to the nearest whole mm). Table 1 shows her results, which included a positive control and a negative control for each culture (all negative controls gave 0 mm).", prompt: "Suggest exactly what the student added to the wells to get the positive control and negative control results.", marks: 2 },
+                  { code: '05.4', preamble: "Table 1 gives, for the five cultures, clear-zone diameters with cinnamon oil of 15, 20, 18, 16 and 14 mm, and positive-control diameters of 14, 17, 12, 12 and 12 mm.", prompt: "Complete Table 1 to show the median and mean diameters for the cinnamon oil and positive control columns.", marks: 1 },
+                  { code: '05.5', preamble: "The mean ± 2 standard deviations includes over 95% of the data. The standard deviation for the cinnamon oil results is 2.4 and for the positive control is 2.2.", prompt: "Use this information to consider whether the standard deviations suggest the differences in means are likely to be due to chance. Explain your answer, including at least one calculation.", marks: 2 }
+                ] },
+              { number: 6,
+                parts: [
+                  { code: '06.1', prompt: "Define genome and proteome.", marks: 2 },
+                  { code: '06.2', preamble: "The classification system used in the early 20th century grouped different species of bacteria according to the position and shape of flagella on bacterial cells and by the number of flagella per cell. These were observed using an optical microscope. Each species of bacterium has a characteristic cell shape and arrangement of flagella, which may be shared with other species within a genus. Flagella are fragile, difficult to stain and may extend from the cell at any angle.", prompt: "Consider the accuracy and limitations of the early classification of bacteria using the arrangement of flagella.", marks: 3 },
+                  { code: '06.3', prompt: "Suggest why several bacterial species have been renamed in recent years.", marks: 1 },
+                  { code: '06.4', preamble: "Figure 6 shows an image from an optical microscope of a single bacterial cell. This bacterial cell is 2.3 µm long (excluding the flagellum).", prompt: "Calculate the magnification of this image. Show your working.\n\n(Measure the length of the cell in Figure 6 in the question paper PDF.)", marks: 2 }
+                ] },
+              { number: 7,
+                parts: [
+                  { code: '07.1', preamble: "Carbon monoxide (CO) is released during incomplete combustion of fossil fuels. Figure 7 shows the dissociation curve for oxyhaemoglobin when not exposed to CO, and when exposed to CO such that 50% of the oxygen binding sites are occupied by CO (50% COHb).", prompt: "Using Figure 7, what can you conclude about how exposure to CO affects the loading and unloading of oxygen by haemoglobin? Explain your answer.\n\n(See Figure 7 in the question paper PDF.)", marks: 3 },
+                  { code: '07.2', preamble: "The World Health Organisation (WHO) suggests that to avoid long-term health effects, COHb concentrations should be kept below 2.5%. WHO recommends that people should not be exposed to air with > 10 mg m⁻³ CO for more than 8 hours, or air with > 30 mg m⁻³ CO for more than 1 hour. Scientists used a mathematical model to calculate the exposure to CO that would result in 2.5% COHb. Table 2 gives the CO concentration in air (mg m⁻³) resulting in 2.5% COHb: at 1 hour exposure — child 31.2, adult 40.2; at 8 hours exposure — child 9.6, adult 10.6. The scientists suggest that the WHO recommendations for CO concentrations should be reduced.", prompt: "Evaluate the scientists' conclusion.", marks: 3 }
+                ] },
+              { number: 8,
+                scenario: "Scientists investigated a drug called MiTMAB as a treatment for cancer. MiTMAB inhibits cytokinesis.",
+                parts: [
+                  { code: '08.1', preamble: "Figure 8 shows drawings of cancer cells seen with an optical microscope from a sample treated with MiTMAB (drawing A) and a control sample (drawing B).", prompt: "The cells in drawing A can be identified as those treated with MiTMAB. Explain why.\n\n(See Figure 8 in the question paper PDF.)", marks: 2 },
+                  { code: '08.2', preamble: "MiTMAB acts as a non-competitive inhibitor of an enzyme called dynamin.", prompt: "Suggest how MiTMAB can cause dynamin to become inactive.", marks: 3 },
+                  { code: '08.3', preamble: "When active, dynamin stimulates cytokinesis and inhibits cell death. The scientists treated actively growing cultures of cancer cells with MiTMAB: one sample of 2500 cells without MiTMAB as a control, and eight samples each with 2500 cells and a different concentration of MiTMAB. After 72 hours they measured the number of cells in each sample. Figure 9 shows the results. A negative value for proportion of control growth means that fewer than 2500 cells were counted after 72 hours.", prompt: "Use all the information given to explain the results shown in Figure 9.\n\n(See Figure 9 in the question paper PDF.)", marks: 3 },
+                  { code: '08.4', preamble: "0.01 dm³ of MiTMAB solution was added to the treated cells.", prompt: "Calculate the increase in mass of MiTMAB (in µg) added to the cells to reduce the cell growth from equal to the control to 0.0 of the control. Show your working.\n\n(Read the relevant concentrations from Figure 9 in the question paper PDF.)", marks: 2 }
+                ] },
+              { number: 9,
+                scenario: "Dengue fever is a human disease caused by the dengue virus. Scientists designed an ELISA test to detect antibodies to the dengue virus in a patient's blood sample. Figure 10 shows a diagram of this test and how it works. Figure 11 shows the negative and positive results produced 20 minutes after the use of the test.\n\n(See Figures 10–12 in the question paper PDF.)",
+                parts: [
+                  { code: '09.1', prompt: "Suggest what is on the test at line T and explain what causes the line to appear in a positive test.", marks: 2 },
+                  { code: '09.2', preamble: "A line at C shows that the test has worked.", prompt: "Suggest one reason why a line at C shows the test has worked.", marks: 1 },
+                  { code: '09.3', preamble: "Figure 12 shows a flowchart of how the anti-human antibodies with enzyme attached are produced.", prompt: "Suggest why the fused cells allow continuous production of monoclonal antibodies.", marks: 2 },
+                  { code: '09.4', prompt: "Evaluate the ethics of the production process shown in Figure 12.", marks: 1 },
+                  { code: '09.5', preamble: "Early identification of dengue fever can be difficult as many other diseases produce the same symptoms. Scientists compared the effectiveness of three diagnostic tests — a laboratory-based test, the current test used in the doctor's clinic, and the new ELISA test. A blood sample from each patient with confirmed dengue fever was tested with all three tests (Table 3). Days 1–2 after onset: 14 patients tested — lab-based 10 positive, current test 0, new test 6. Days 3–4: 38 tested — lab-based 28, current 6, new 24. Days 5–7: 18 tested — lab-based 8, current 14, new 14. The scientists recommend that the new test is used for the identification of dengue fever in all countries around the world.", prompt: "Discuss this recommendation. Use all the information given.", marks: 3 },
+                  { code: '09.6', preamble: "The dengue virus causes damage to capillaries so that blood proteins move out of the capillaries into the tissue fluid.", prompt: "Explain how this would affect the return of tissue fluid into the capillaries.", marks: 2 }
+                ] },
+              { number: 10,
+                parts: [
+                  { code: '10.1', prompt: "Describe how a quaternary protein is formed from its monomers. Do not include the process of translation in your answer.", marks: 5, extended: true },
+                  { code: '10.2', prompt: "Describe the structure of DNA and the structure of a chromosome.", marks: 6, extended: true },
+                  { code: '10.3', preamble: "Mutation can result in an increase in genetic variation within a species.", prompt: "Describe and explain the other processes that result in increases in genetic variation within a species.", marks: 4, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'points', points: [
+                  'Three features: genetic material, capsid and attachment protein',
+                  'Function of one named feature — genetic material codes for (viral) protein OR capsid protects the genetic material/RNA/DNA OR attachment protein binds to receptors (on host cell)'
+                ], guidance: '2 marks (AO1). Accept "DNA or RNA"/nucleic acid/genome for genetic material; nucleocapsid for capsid+nucleic acid; capsomeres for capsid; glycoprotein for attachment protein. Ignore "genetic information".' },
+              '01.2': { type: 'points', points: [
+                  'Acellular: no cell-(surface) membrane / not made of cells / no organelles / no cytoplasm',
+                  'Non-living: have no metabolism / metabolic reactions / cannot independently move, respire, replicate or excrete / have no nutrition'
+                ], guidance: '2 marks (AO1). Accept "do not have cell structures". Accept named metabolic reaction. Accept reproduce for replicate.' },
+              '01.3': { type: 'points', points: [
+                  'Do not have bacterial structures/enzymes (e.g. no ribosomes / no cell wall/murein) OR do not carry out metabolic processes for the antibiotic to disrupt'
+                ], guidance: '1 mark (AO1). Accept named metabolic process ("do not make protein"/"do not replicate"). Accept peptidoglycan/glycoprotein for cell wall. Ignore 70S/80S.' },
+              '02.1': { type: 'points', points: [
+                  '(Alternate) monomers/glucoses are flipped/upside down/rotated by 180°',
+                  '(Joined by) glycosidic bonds',
+                  'Forms straight/linear/unbranched chains'
+                ], guidance: '3 max (AO2). Also accept "contains 1–4 linkages/bonds" (reject 1–6) and "have β glucose". Ignore "both are polysaccharides" and "both contain C, H and O".' },
+              '02.2': { type: 'points', points: [
+                  'Tracheole wall is thin/one cell thick → rapid diffusion / short diffusion pathway',
+                  'Tracheoles enter/supply tissues/muscle fibres → diffusion direct into cells / short diffusion pathway',
+                  'Tracheoles are highly branched → short diffusion distance / large surface area for (rapid) diffusion'
+                ], guidance: '2 max (AO1). Mark as pairs (a feature with its consequence). Accept touch/push/"close to" for enter; cells for tissues; "large number"/"many" for highly branched.' },
+              '02.3': { type: 'points', points: [
+                  '(Allows) unbroken/continuous water column — no barrier to water movement',
+                  'Cohesion from hydrogen bonds (polar attraction) between water molecules',
+                  'Evaporation/transpiration (or water moving from xylem into cells, or pull from above) creates tension in the column'
+                ], guidance: '3 marks (AO1). If MP1/2/3 not awarded, accept one principle mark for correct reference to cohesion–tension causing water movement. Ignore "chain of water molecules".' },
+              '03.1': { type: 'points', points: [
+                  'Any membrane-bound organelle — e.g. mitochondrion, vesicle/lysosome, (rough) endoplasmic reticulum, nucleus/nuclear envelope/pore(s)'
+                ], guidance: '1 mark (AO1). Accept "80S/larger ribosomes". Reject smooth (ER), nucleolus, cell membrane.' },
+              '03.2': { type: 'points', points: [
+                  'Modify/package/transport proteins (or make/transport glycoproteins)',
+                  'Modify/package/transport lipids (or make/transport glycolipids)',
+                  'Forms/releases vesicles/lysosomes'
+                ], guidance: '2 max (AO1). Accept "adds carbohydrate/lipid to" for modify; chylomicron for glycoprotein/glycolipid; also "make/transport polysaccharides" (ignore cellulose).' },
+              '03.3': { type: 'exact', points: ['India, Europe, East Asia, Central America, South America'],
+                guidance: '1 mark (AO3). Tick one box only.' },
+              '03.4': { type: 'exact', points: ['8.38 million', '8 381 400', '8.3814 × 10⁶', '8.4 million', '8 400 000', '8.4 × 10⁶'],
+                guidance: '1 mark (AO2). 229 million × 6% (outside Africa) × 61% = 8.3814 million. Accept any correct numerical equivalent.' },
+              '03.5': { type: 'points', points: [
+                  'Mutation produced (the resistance) allele',
+                  'Those with the allele/resistance are less likely to get / survive malaria (P. vivax)',
+                  '(So more likely to) reproduce and pass on the allele',
+                  '(Over generations) allele frequency increases'
+                ], guidance: '4 marks (AO1/AO2). Reject "mutation caused by infection/exposure". Accept converse (people lacking the allele die from malaria). Accept description of increasing frequency ("more common"); ignore "increase in number of alleles".' },
+              '04.1': { type: 'points', points: [
+                  'Reduced surface area / fewer co-transport/carrier/channel proteins',
+                  'Water potential of ileum/lumen decreases (or water potential in cells increases)',
+                  '(So) less/no water moves out of cells into the ileum is reduced — i.e. less water absorbed by osmosis'
+                ], guidance: '3 marks (AO2). Accept gut/lumen for ileum; absorbed for moves. Ignore references to diffusion/facilitated diffusion/active transport and "SA".' },
+              '04.2': { type: 'points', points: [
+                  'Anti-toxins/antibodies cause phagocytosis/destruction/agglutination/neutralisation of the toxin (prevents toxin binding/damaging ileum cells)',
+                  'Anti-toxin/antibody prevents/reduces diarrhoea — patients with no diarrhoea have highest antibody, those with diarrhoea have lowest',
+                  '(Offer to) patients with diarrhoea / patients with low concentrations of anti-toxin'
+                ], guidance: '3 marks (AO1/AO2). Accept people for patients. Ignore symptoms for diarrhoea.' },
+              '04.3': { type: 'points', points: [
+                  'Peptide bonds are hydrolysed',
+                  'Endopeptidase(s) break internal (peptide) bonds',
+                  'Exopeptidase(s) break terminal (peptide) bonds',
+                  '(Membrane-bound) dipeptidase(s) break dipeptides to amino acids'
+                ], guidance: '3 max (AO1). Accept "bonds within"/"bonds in middle" for internal; "external bonds"/"bonds at ends" for terminal; act on/affect/hydrolyse for break. Ignore named digestive structures and stomach acid.' },
+              '05.1': { type: 'points', points: [
+                  'Wash hands with soap / disinfect surfaces',
+                  'Use sterile pipette/syringe to transfer bacteria',
+                  '(Remove lid and) flame the neck of the bottle',
+                  'Lift the lid of the agar plate at an angle (keep lid over plate)',
+                  'Work close to an upward air movement / Bunsen flame',
+                  'Use a sterile spreader',
+                  'Place pipette/spreader into disinfectant immediately after use'
+                ], guidance: '3 max (AO1). Reject loop for sterile pipette in MP2. Accept sanitise for disinfect; antiseptic/antimicrobial/alcohol wipes; loop for spreader in MP6.' },
+              '05.2': { type: 'exact', points: ['1.77', '1.768 to 1.8', '2'],
+                guidance: '2 marks (AO3). l = 50 / (3.14 × 3²) = 50/28.26 = 1.77 mm. Accept 1 mark for evidence of 28/28.26/28.3 (πr²) or 1.76 (incorrectly rounded). A common 2-mark answer is 1.77.' },
+              '05.3': { type: 'points', points: [
+                  'Positive control: an antimicrobial/antibacterial/antibiotic/antiseptic/disinfectant solution',
+                  'Negative control: (sterile) water OR oil without cinnamon'
+                ], guidance: '2 marks (AO3). If not specified, accept the first answer as the positive control. Accept a named antimicrobial.' },
+              '05.4': { type: 'exact', points: ['Cinnamon oil: median 16, mean 17 (16.6) — Positive control: median 12, mean 13 (13.4)'],
+                guidance: '1 mark (AO2). All four numbers correct. Accept 16.6 and 13.4 as the mean values.' },
+              '05.5': { type: 'points', points: [
+                  'Calculate mean ± 2SD, e.g. cinnamon 11.8–21.4 (or 12.2–21.8) and positive control 8.6–17.4 (or 9.0–17.8)',
+                  'The ranges (SD) overlap, so the difference (is likely to be) due to chance / no significant difference in means'
+                ], guidance: '2 marks (AO3). Accept ECF for correct working from incorrect means in 05.4. Reject bare "results are due to chance" or "results are significant" without the overlap reasoning.' },
+              '06.1': { type: 'points', points: [
+                  'Genome: the complete set of genes / all the DNA / all the genes/alleles/genetic material in a cell',
+                  'Proteome: the (full) range of proteins that a cell can produce / coded for by the cell\'s DNA'
+                ], guidance: '2 marks (AO1). Reject "all the DNA/genes within a species/population". Accept organism for cell. Do not accept "number of proteins" unqualified.' },
+              '06.2': { type: 'points', points: [
+                  'Cannot identify/distinguish species',
+                  '(Optical) microscope resolution is low',
+                  'Flagella are fragile so broken/damaged/missing (or artefacts mistaken for flagella)',
+                  'Flagella difficult to stain so not visible',
+                  'Flagella at an angle/out of plane so not visible',
+                  'Not all bacteria have flagella'
+                ], guidance: '3 max (AO3). Ignore magnification for resolution; ignore "difficult to stain" unqualified.' },
+              '06.3': { type: 'points', points: [
+                  'DNA/mRNA/RNA base sequencing OR amino acid sequencing OR use of electron microscopes (greater resolution / improved staining)'
+                ], guidance: '1 mark (AO1). Accept genome sequencing; accept TEM/SEM. Ignore "detail"/"magnification" for resolution.' },
+              '06.4': { type: 'exact', points: ['19 565 (from 45 mm)', '20 000 (from 46 mm)', '20 435 (from 47 mm)'],
+                guidance: '2 marks (AO2). Magnification = image size ÷ actual size; divide the measured length by 2.3 µm (× 10⁻³ mm). Accept 1 mark for image size 45 000/46 000/47 000 µm or correct use of the equation.' },
+              '07.1': { type: 'points', points: [
+                  'Less oxygen loaded at high pO₂ (maximum Hb saturation is 50%) compared with no CO',
+                  '(At low pO₂) Hb has higher affinity for oxygen',
+                  'Hb has more oxygen / unloads less oxygen at low pO₂'
+                ], guidance: '3 marks (AO2/AO3). Accept "in lungs" for high pO₂; "levels off"/"plateau at 50%" for maximum; "in respiring cells/tissues" for low pO₂. Ignore references to binding sites occupied by CO.' },
+              '07.2': { type: 'points', points: [
+                  'For: children are exposed to CO for 8 hours (below the modelled safe level)',
+                  'Against: children (1 h) or adults (1 h and 8 h) exposure figures do not support reducing the limit',
+                  'Maths model may not be accurate / did not use real people',
+                  'Recommendation is for people only at rest / unknown effects of exercise',
+                  'People vary in size/age/ethnicity/sex',
+                  'No statistical test to show whether differences are significant',
+                  'Unknown effects on people with respiratory disease or smokers',
+                  'Might not be able to reduce CO concentration in air below 10 mg m⁻³'
+                ], guidance: '3 max (AO3). Award 3 only if the answer contains MP1 OR MP2 (a comparison to the data). Accept named respiratory disorder.' },
+              '08.1': { type: 'points', points: [
+                  '2 nuclei (in the cells) / cells stopped at telophase',
+                  'Cytokinesis prevented — no new cell membrane forming / cytoplasm not dividing'
+                ], guidance: '2 marks (AO3). Accept "cell membrane not dividing/splitting/pinching".' },
+              '08.2': { type: 'points', points: [
+                  '(MiTMAB) binds to dynamin other than at the active site (allosteric/inhibitor site)',
+                  'Changes the shape of the active site / changes the tertiary structure',
+                  'Not complementary, so substrate does not bind / fewer enzyme–substrate complexes form'
+                ], guidance: '3 marks (AO1/AO2). Accept denature for "change in shape"; fit/attach for bind. Ignore "ESC".' },
+              '08.3': { type: 'points', points: [
+                  'At lowest concentrations (MiTMAB) does not inhibit dynamin / does not cause cell death or inhibit cytokinesis',
+                  'As concentration increases, more dynamin is inhibited so more cell death / less cytokinesis',
+                  'At highest concentrations all dynamin is inhibited so (maximum) cell death / cytokinesis inhibited'
+                ], guidance: '3 marks (AO2). Accept graph readings (lowest 30–70; highest >2000–8000). Accept "cell replication"/mitosis for cytokinesis.' },
+              '08.4': { type: 'exact', points: ['19.3 to 19.7 µg', '19.3', '19.7'],
+                guidance: '2 marks (AO2). Increase in concentration (≈1930–1970 from readings of 30/70 to 2000) × 0.01 dm³ = 19.3–19.7 µg. Accept 1 mark for a correct reading pair or the increase, or for the × 0.01 conversion.' },
+              '09.1': { type: 'points', points: [
+                  'Antigen (at T, with substrate)',
+                  'Enzyme–substrate complex produces the line / colour change'
+                ], guidance: '2 marks (AO2). Reject "antigen in blood". Accept colourless dye for substrate; "ES complex" in this instance.' },
+              '09.2': { type: 'points', points: [
+                  'Blood/sample (and anti-human antibody) has moved/diffused above T in the test'
+                ], guidance: '1 mark (AO3).' },
+              '09.3': { type: 'points', points: [
+                  '(Cancer/fused/hybridoma) cells divide/replicate rapidly/uncontrollably',
+                  'B cells (plasma/memory cells) produce the (monoclonal) antibody'
+                ], guidance: '2 marks (AO2). Accept mitosis/reproduce for divide; secrete/make for produce.' },
+              '09.4': { type: 'points', points: [
+                  'Must give a "for" and an "against" idea — e.g. harmful/animal exploited BUT produces useful medicine / stops human suffering, OR not harmed but injected with a substance'
+                ], guidance: '1 mark (AO3). Accept stressed/exploited/mistreated/abused for harmed; illness/infection/death for suffering.' },
+              '09.5': { type: 'points', points: [
+                  'New test better than the current test at early detection but not as good as the lab-based test (use comparative figures from Table 3)',
+                  'From day 5 the new/current test is as good as / better than the lab-based test',
+                  'New test (likely) quicker / cheaper than lab-based',
+                  'Labs may be limited/inaccessible or staff need training'
+                ], guidance: '3 max (AO3); max 2 from the practical points (quicker/cheaper/labs). Accept correct comparative figures or calculations from Table 3.' },
+              '09.6': { type: 'points', points: [
+                  'Increases water potential of blood/capillary (or decreases water potential of tissue fluid)',
+                  '(So) less water returns to the blood/capillaries by osmosis (or more water leaves)'
+                ], guidance: '2 marks (AO2). Accept reduces water potential gradient. Ignore "WP".' },
+              '10.1': { type: 'points', points: [
+                  'Amino acids joined by peptide bond(s)',
+                  '(By) condensation reaction(s)',
+                  'Secondary structure formed by hydrogen bonding',
+                  'Tertiary structure formed by interactions between R groups',
+                  'Quaternary structure contains more than one polypeptide / formed by interactions between polypeptides'
+                ], guidance: '5 marks (AO1). Accept α-helix/β-pleated sheet for secondary structure; 3° for tertiary. For "interactions" accept hydrogen/disulfide/ionic bonds or hydrophobic/hydrophilic interactions. Ignore peptide bonds for MP5.' },
+              '10.2': { type: 'points', points: [
+                  'Polymer of nucleotides (polynucleotide)',
+                  'Nucleotide consists of deoxyribose, phosphate and an organic/nitrogenous base',
+                  'Phosphodiester bonds between nucleotides',
+                  'DNA double helix / 2 strands held by hydrogen bonds',
+                  'Hydrogen bonding/pairing between adenine–thymine and cytosine–guanine',
+                  'DNA is associated with histones/proteins',
+                  '(When visible) chromosome consists of two chromatids joined at a centromere'
+                ], guidance: '6 max (AO1). Accept "phosphoric acid" for phosphate. Ignore bases identified only by letters; reject adenosine and cysteine. Accept correctly annotated diagrams.' },
+              '10.3': { type: 'points', points: [
+                  'Independent segregation/assortment of homologous chromosomes',
+                  'Crossing over between homologous chromosomes',
+                  'Random fertilisation/fusion of gametes',
+                  '(Produces) new combinations of alleles (or of maternal and paternal chromosomes)'
+                ], guidance: '4 marks (AO1). If no marks otherwise, accept one principle mark for "meiosis producing cells that are genetically different". Ignore epigenetics; ignore "random mating".' }
+            } }
+        ] },
       { board: 'Edexcel A (Salters-Nuffield)', specCode: '9BN0',
         officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/biology-a-2015.html' },
       { board: 'Edexcel B', specCode: '9BI0',
