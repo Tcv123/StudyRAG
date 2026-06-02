@@ -3770,6 +3770,50 @@ window.SUBJECTS = [
                 guidance: 'Wireless access given in the question stem. Max 2.' }
             }
           },
+          // Order: most-recent first. OCR publishes 4 sittings on the
+          // public site (June 2024, 2023, 2022, November 2021); pre-2021
+          // sittings are behind their Teach Cambridge teacher portal and
+          // not addressable as public PDF URLs.
+          {
+            id: 'cs-ocr-h446-2024-p1',
+            year: 'June 2024',
+            paperName: 'Paper 1 — Computer Systems',
+            paperCode: 'H446/01',
+            totalMarks: 140,
+            durationMins: 150,
+            qpUrl: 'https://www.ocr.org.uk/Images/726571-question-paper-computer-systems.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/726741-mark-scheme-computer-systems.pdf'
+          },
+          {
+            id: 'cs-ocr-h446-2024-p2',
+            year: 'June 2024',
+            paperName: 'Paper 2 — Algorithms and Programming',
+            paperCode: 'H446/02',
+            totalMarks: 140,
+            durationMins: 150,
+            qpUrl: 'https://www.ocr.org.uk/Images/726572-question-paper-algorithms-and-programming.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/726742-mark-scheme-algorithms-and-programming.pdf'
+          },
+          {
+            id: 'cs-ocr-h446-2023-p1',
+            year: 'June 2023',
+            paperName: 'Paper 1 — Computer Systems',
+            paperCode: 'H446/01',
+            totalMarks: 140,
+            durationMins: 150,
+            qpUrl: 'https://www.ocr.org.uk/Images/703780-question-paper-computer-systems.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703953-mark-scheme-computer-systems.pdf'
+          },
+          {
+            id: 'cs-ocr-h446-2023-p2',
+            year: 'June 2023',
+            paperName: 'Paper 2 — Algorithms and Programming',
+            paperCode: 'H446/02',
+            totalMarks: 140,
+            durationMins: 150,
+            qpUrl: 'https://www.ocr.org.uk/Images/703781-question-paper-algorithms-and-programming.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703954-mark-scheme-algorithms-and-programming.pdf'
+          },
           {
             id: 'cs-ocr-h446-2022-p2',
             year: 'June 2022',
@@ -3779,8 +3823,26 @@ window.SUBJECTS = [
             durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/676743-question-paper-algorithms-and-programming.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/676944-mark-scheme-algorithms-and-programming.pdf'
-            // No `questions` array yet — only print-mode attempt available
-            // until P2 is read and extracted (planned follow-up).
+          },
+          {
+            id: 'cs-ocr-h446-2021-p1',
+            year: 'November 2021',
+            paperName: 'Paper 1 — Computer Systems',
+            paperCode: 'H446/01',
+            totalMarks: 140,
+            durationMins: 150,
+            qpUrl: 'https://www.ocr.org.uk/Images/666846-question-paper-computer-systems.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/666849-mark-scheme-computer-systems.pdf'
+          },
+          {
+            id: 'cs-ocr-h446-2021-p2',
+            year: 'November 2021',
+            paperName: 'Paper 2 — Algorithms and Programming',
+            paperCode: 'H446/02',
+            totalMarks: 140,
+            durationMins: 150,
+            qpUrl: 'https://www.ocr.org.uk/Images/666847-question-paper-algorithms-and-programming.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/666850-mark-scheme-algorithms-and-programming.pdf'
           }
         ]
       }
