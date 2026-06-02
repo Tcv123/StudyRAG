@@ -4815,7 +4815,526 @@ window.SUBJECTS = [
             totalMarks: 140,
             durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/703780-question-paper-computer-systems.pdf',
-            msUrl: 'https://www.ocr.org.uk/Images/703953-mark-scheme-computer-systems.pdf'
+            msUrl: 'https://www.ocr.org.uk/Images/703953-mark-scheme-computer-systems.pdf',
+            questions: [
+              {
+                number: 1,
+                scenario: "A small business uses a spreadsheet application package to calculate the wages of all of its employees.",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Give one benefit of using a spreadsheet application for this task compared to calculating wages manually.", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "Give two other types of application packages that the small business could use, giving an example of a task that the business could use each application for.", marks: 4 },
+                  { code: '1(a)(iii)', prompt: "Describe a drawback of using closed source software (rather than open source software) for the small business.", marks: 3 },
+                  { code: '1(b)',
+                    preamble: "Each computer the business uses has a BIOS.",
+                    figure: { type: 'table', label: 'True or False?',
+                      headers: ['Statement', 'True', 'False'],
+                      rows: [
+                        ['BIOS stands for Boot Input Output Standard', '', ''],
+                        ['The BIOS can be used to alter hardware settings, such as which storage device the computer boots from', '', ''],
+                        ['BIOS settings are stored in RAM', '', '']
+                      ] },
+                    prompt: "Tick one box in each row to identify whether each statement is true or false.", marks: 3 },
+                  { code: '1(c)',
+                    preamble: "The business uses virtual storage to hold regular backups of all of its data.",
+                    prompt: "Explain why virtual storage is well-suited for storing backups.", marks: 2 },
+                  { code: '1(d)(i)',
+                    preamble: "All computers owned by the business are connected together into a Local Area Network (LAN). Various network protocols are used in this network.",
+                    prompt: "Give three advantages to the business of connecting computers together in a LAN.", marks: 3 },
+                  { code: '1(d)(ii)', prompt: "Explain what is meant by a network protocol.", marks: 2 },
+                  { code: '1(d)(iii)', prompt: "Give the names of two protocols that may be used in a LAN.", marks: 2 },
+                  { code: '1(d)(iv)', prompt: "Explain why protocol layering is used.", marks: 3 },
+                  { code: '1(e)(i)',
+                    preamble: "One computer owned by the business monitors critical-safety features of manufacturing. All input data must be processed within a predictable timescale of a fraction of a second.",
+                    prompt: "State the type of operating system that should be used by this computer.", marks: 1 },
+                  { code: '1(e)(ii)', prompt: "Give the name of three other types of operating system, and for each state its purpose.", marks: 6 },
+                  { code: '1(f)',
+                    preamble: "When a device such as a keyboard or printer requires attention from the CPU, an interrupt is raised.",
+                    prompt: "Explain how an operating system deals with an interrupt.", marks: 3 },
+                  { code: '1(g)', extended: true,
+                    prompt: "Memory management is a key function of an operating system. Explain how an operating system can manage the memory available to applications and why doing so is important.\n\nYou should include:\n  • the different actions carried out by an operating system to manage memory\n  • how memory that is being managed can be split up\n  • why memory management is important.", marks: 9 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "Sundip writes an algorithm to carry out addition and subtraction. The algorithm uses an initially empty stack called numbers and takes input from the user.\n\nFig. 2 (action per input value):\n  A → pop two values, add them, push the result\n  S → pop two values, subtract first popped from second popped, push the result\n  E → pop one value, output it, end the program\n  Any other value → push it onto the stack",
+                parts: [
+                  { code: '2(a)',
+                    preamble: "Complete the pseudocode to implement Sundip's algorithm:\n\n    do\n        value = input(\"Enter a value\")\n        if ______ then\n            num = numbers.pop()\n            print(num)\n        elseif value == \"A\" or ______ then\n            numone = numbers.pop()\n            numtwo = numbers.pop()\n            if value == \"A\" then\n                numbers.push(______)\n            elseif value == \"S\" then\n                numbers.push(numtwo − numone)\n            endif\n        else\n            numbers.push(______)\n        endif\n    until value == ______",
+                    prompt: "Fill in the five blanks.", marks: 5 },
+                  { code: '2(b)(i)',
+                    preamble: "After the user enters 8, A, 7 in turn (with the first state for 8 already shown):\n\n    [8]    →    [?]    →    [?]\n  (after 8)  (after 7)  (after A)\n\nStates: after entering 8 → stack has [8]; after entering 7 → stack has [8, 7]; after entering A → stack has [15] (8+7).",
+                    prompt: "Describe the state of the stack after each value is entered (give the contents from bottom to top, after each step).", marks: 3 },
+                  { code: '2(b)(ii)',
+                    figure: { type: 'table', label: 'Output for each input sequence',
+                      headers: ['Input data (left to right)', 'Output'],
+                      rows: [
+                        ['9 3 A E', ''],
+                        ['10 5 A 8 S E', ''],
+                        ['25 5 S 2 3 A S E', '']
+                      ] },
+                    prompt: "Give the output from this algorithm for each input sequence.", marks: 3 },
+                  { code: '2(b)(iii)',
+                    preamble: "If the user enters 4 2 S A E, the algorithm will not work correctly.",
+                    prompt: "Explain what problem this input data will cause and why the problem occurs.", marks: 3 },
+                  { code: '2(c)(i)', prompt: "Describe one difference between a stack and a queue.", marks: 2 },
+                  { code: '2(c)(ii)', prompt: "Describe one difference between an array and a list.", marks: 2 },
+                  { code: '2(c)(iii)', prompt: "State how a tuple is different to a list.", marks: 1 },
+                  { code: '2(c)(iv)', prompt: "Describe how the second item in a linked list would be accessed using pointer values.", marks: 3 }
+                ]
+              },
+              {
+                number: 3,
+                parts: [
+                  { code: '3(a)(i)', prompt: "Convert the denary number 189 to hexadecimal.", marks: 1 },
+                  { code: '3(a)(ii)', prompt: "Convert the unsigned binary number 1010101111 to hexadecimal.", marks: 1 },
+                  { code: '3(b)(i)',
+                    preamble: "Negative binary values can be represented using either sign and magnitude or two's complement.",
+                    prompt: "Convert the denary number −107 to an 8-bit binary number using sign and magnitude.", marks: 1 },
+                  { code: '3(b)(ii)', prompt: "Convert the denary number −107 to an 8-bit binary number using two's complement.", marks: 1 },
+                  { code: '3(b)(iii)', prompt: "Give one advantage of storing values using two's complement instead of sign and magnitude.", marks: 1 },
+                  { code: '3(c)', prompt: "Show how the denary value −15.75 can be represented as a normalised floating point binary number using 8 bits for the mantissa and 4 bits for the exponent.\n\nYou must show your working.", marks: 4 },
+                  { code: '3(d)',
+                    preamble: "The normalised floating point binary number 0100 1110 is stored using 4 bits for the mantissa and 4 bits for the exponent, both in two's complement.",
+                    prompt: "Convert this number to denary. You must show your working.", marks: 3 },
+                  { code: '3(e)', prompt: "Complete each sentence with an appropriate word:\n\n  • Increasing the number of bits used for the mantissa increases the ______ of the number that can be stored.\n  • Increasing the number of bits used for the exponent increases the ______ of the number that can be stored.", marks: 2 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: "A team of programmers create a robot that will be used in a factory. The robot will be able to do the work of multiple humans.\n\nThe programmers discuss whether to write the instructions in assembly language or a high-level language.",
+                parts: [
+                  { code: '4(a)', prompt: "Describe two differences between assembly language and high-level languages.", marks: 4 },
+                  { code: '4(b)(i)',
+                    preamble: "The robot uses a multi-core processor. The programmers assume this means the robot will execute programs more quickly than with a single-core processor.",
+                    prompt: "Give one reason why this assumption can sometimes be true.", marks: 1 },
+                  { code: '4(b)(ii)', prompt: "Explain why this assumption is not always true.", marks: 2 },
+                  { code: '4(c)', extended: true,
+                    preamble: "The robot stores data internally and also communicates with other robots and users via a wireless network which is password protected. All data is secured using either encryption or hashing.",
+                    prompt: "Compare the robot's use of encryption and hashing for storing and communicating data.\n\nYou should include:\n  • the different types of encryption that could be used and how this would secure data\n  • how hashing could be used to secure data and which data would be suitable\n  • why encryption and hashing are used by the robot for stored data and communications.", marks: 9 },
+                  { code: '4(d)(i)',
+                    preamble: "The robot provides a web-based interface for users. Fig. 4 shows the home screen webpage (h1 heading, bulleted prime directives, an Updates link, a Login form with a password input and submit button).\n\n    <html>\n      <head>\n        <title>Robot User Interface</title>\n      </head>\n      <body>\n        <h1>Robot prime directives</h1>\n        ______\n          <li>Serve the company trust</li>\n          <li>Protect data</li>\n          <li>Uphold standards</li>\n        ______\n        <a ______=\"updates.html\">Updates</a>\n        <p>______</p>\n        <form action=\"dologin.php\">\n          Password\n          <input type=\"______\" name=\"pw\">\n          <input type=\"______\">\n        </form>\n      </body>\n    </html>",
+                    prompt: "Fill in the five HTML blanks (list-open tag, list-close tag, anchor attribute, paragraph text, password input type, submit input type).", marks: 5 },
+                  { code: '4(d)(ii)', prompt: "Write CSS code that could be used in an external stylesheet to format all text using the <h1> tag as white with a red background.", marks: 3 },
+                  { code: '4(e)(i)',
+                    preamble: "The robot's web interface uses images of the robot. The programmers do not want others to download and use these images.",
+                    prompt: "State the name of one relevant piece of legislation and describe how this would protect these images.", marks: 3 },
+                  { code: '4(e)(ii)',
+                    preamble: "For other areas of the web interface, the programmers need to use images that they have not created themselves.",
+                    prompt: "Give two ways that they could make sure these images are used legally.", marks: 2 },
+                  { code: '4(f)(i)',
+                    preamble: "User access details are stored in a table TblAccessLog (fields: Username [key], UserType, DateAccessed). The DateAccessed field stores multiple comma-separated dates per user.",
+                    prompt: "Write an SQL statement to delete all records from TblAccessLog for users who have a UserType of \"NotNeeded\".", marks: 2 },
+                  { code: '4(f)(ii)', prompt: "State two requirements for a database to be in First Normal Form (1NF).", marks: 2 },
+                  { code: '4(f)(iii)', prompt: "Explain why the structure of TblAccessLog means that this database is not in First Normal Form (1NF).", marks: 2 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "A doCheck() function takes an integer value as a parameter, carries out a series of calculations and returns an integer:\n\n    function doCheck(number)\n        temp = str(number)\n        max = temp.length − 1\n        total = 0\n        for x = 0 to max\n            total = total + int(temp.subString(x,1))\n        next x\n        return total MOD 10\n    endfunction",
+                parts: [
+                  { code: '5(a)', prompt: "State the value returned from the function when doCheck(3178) is called.", marks: 1 },
+                  { code: '5(b)', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/01 June 2023 Q5(b)\n# Write an algorithm that:\n#   - allows the user to enter an integer value\n#   - passes the value to doCheck() as a parameter\n#   - stores BOTH the entered value AND the returned value in a text\n#     file named \"storedvalues.txt\".\n\ndef doCheck(number):\n    temp = str(number)\n    total = 0\n    for c in temp:\n        total += int(c)\n    return total % 10\n\n# TODO: write the algorithm here.\n\n\n# ── Test driver (do not modify) — feeds 3178 to the input ──\n# Expected: storedvalues.txt should contain 3178 and 9 on separate lines\n# (or however your code chooses to store them).\nimport os\nif os.path.exists(\"storedvalues.txt\"):\n    os.remove(\"storedvalues.txt\")\n\n# Run your algorithm. After it finishes, we print what's in the file:\ntry:\n    with open(\"storedvalues.txt\", \"r\") as f:\n        print(\"storedvalues.txt contents:\")\n        print(f.read())\nexcept FileNotFoundError:\n    print(\"storedvalues.txt was not created — your algorithm needs to open it for writing.\")\n"
+                    },
+                    testInputs: ["3178"],
+                    prompt: "Write an algorithm that takes an integer from the user, passes it to doCheck(), and stores both the entered value and the returned value in storedvalues.txt.\n\nClick ▶ Run with input 3178. A correct implementation creates the file with 3178 (the input) and 9 (the return) inside.", marks: 5 }
+                ]
+              },
+              {
+                number: 6,
+                parts: [
+                  { code: '6(a)(i)',
+                    preamble: "Fig. 6 shows a logic circuit with inputs A, B, C and output P:\n  • A and B feed into an OR gate\n  • The output of the OR gate is NOTted\n  • That NOTted value is XORed with C to give P",
+                    prompt: "Give the Boolean expression that represents the logic circuit. Do not attempt to simplify the expression.", marks: 2 },
+                  { code: '6(a)(ii)',
+                    figure: { type: 'table', label: 'Truth table for the circuit',
+                      headers: ['A', 'B', 'C', 'P'],
+                      rows: [['0','0','0',''],['0','0','1',''],['0','1','0',''],['0','1','1',''],['1','0','0',''],['1','0','1',''],['1','1','0',''],['1','1','1','']] },
+                    prompt: "Complete the truth table for the logic circuit shown in Fig. 6.", marks: 3 },
+                  { code: '6(b)',
+                    preamble: "The following Karnaugh map represents another logic circuit:\n\n             AB\n         00  01  11  10\n      00  1   1   1   1\n      01  1   1   0   0\n   CD 11  0   0   0   0\n      10  0   0   1   1",
+                    prompt: "Use this Karnaugh map to find the simplified expression for this circuit.\n\nYou should highlight the map as appropriate and write the expression.", marks: 4 }
+                ]
+              },
+              {
+                number: 7,
+                parts: [
+                  { code: '7', extended: true,
+                    preamble: "The Regulation of Investigatory Powers Act (2000) has been described as both a vital legal tool to ensure the public's safety and an attack on an individual's freedoms.",
+                    prompt: "Evaluate the purpose and use of the Act.\n\nYou should include:\n  • the additional powers given under the Act\n  • to whom these powers are given\n  • the perceived benefits and/or drawbacks of the Act.", marks: 12 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'points',
+                points: [
+                  'Fewer mistakes (likely to be made) / more accurate',
+                  'Faster as you can apply the same formula to multiple cells',
+                  'What-if analysis can be performed',
+                  'Values can be changed and results automatically (re)calculated',
+                  'Can be shared electronically'
+                ],
+                guidance: '1 mark. Do not accept "faster" on its own without clarification.' },
+              '1(a)(ii)': { type: 'points',
+                points: [
+                  'Database/DBMS — to store/query/sort data about customers/staff/stock',
+                  'Word processor — to create documents / letters / invoices',
+                  'Presentation software — to create presentations',
+                  'Email software — for staff to communicate',
+                  'Graphics manipulation — to produce adverts / images for sales',
+                  'Web browser — to view websites to purchase materials / view competitors'
+                ],
+                guidance: '4 marks: mark in pairs, one mark for naming the application type + one for the example. Application type must be correct for example to be marked. Do not accept brand names alone. Do not accept spreadsheet (given in question).' },
+              '1(a)(iii)': { type: 'points',
+                points: [
+                  'No access to source code',
+                  'Cannot modify / improve to meet business needs',
+                  'Cannot fix bugs',
+                  '(Usually) cost to purchase licences / licence conditions / ongoing fees'
+                ],
+                guidance: '3 marks: 1 per row. Do not award a reverse of a mark point by describing open source.' },
+              '1(b)': { type: 'exact',
+                points: [
+                  'BIOS stands for Boot Input Output Standard: False',
+                  'The BIOS can be used to alter hardware settings: True',
+                  'BIOS settings are stored in RAM: False'
+                ],
+                guidance: '3 marks: 1 per correct row.' },
+              '1(c)': { type: 'points',
+                points: [
+                  'Stored away from the computer(s) / remote... so in case of disaster, data is not also damaged',
+                  'All of the data (from multiple machines) can be backed up at the same time',
+                  'Can be accessed from elsewhere / other machines',
+                  'Storage can be expanded as necessary / no limit on size',
+                  'Speed of access is not a priority for a backup',
+                  'Can make recovery from another site easier',
+                  'No physical space needed for backup hardware',
+                  'No on-site maintenance required',
+                  'Allows more local storage capacity for data'
+                ],
+                guidance: 'Max 2. Allow multiple interpretations of virtual storage (e.g. cloud).' },
+              '1(d)(i)': { type: 'points',
+                points: [
+                  'Share hardware (e.g. printers)',
+                  'Share files',
+                  'Share Internet connection',
+                  'Centralised security',
+                  'Log on / access files from any machine on the LAN',
+                  'Central maintenance',
+                  'Central backup / storage',
+                  'Central installation / update of programs',
+                  'Can monitor user activity',
+                  'Can control access levels / centralised user admin',
+                  'Access an intranet'
+                ],
+                guidance: '3 marks: mark first answer in each answer space.' },
+              '1(d)(ii)': { type: 'points',
+                points: [
+                  'A set of rules / an agreement',
+                  'Used to ensure the (proper / successful) transfer of data between devices / govern transmission between devices',
+                  'May specify format of data / error checking / etc.'
+                ],
+                guidance: '2 marks. Allow suitable example of contents of a protocol for MP3. Do not award "a rule" — must be plural.' },
+              '1(d)(iii)': { type: 'exact',
+                points: ['HTTP', 'HTTPS', 'TCP', 'IP', 'UDP', 'FTP', 'Ethernet', 'WPA', 'DHCP', 'SMTP', 'POP', 'IMAP', 'RDP', 'VoIP'],
+                guidance: '2 marks: 1 per protocol listed. If one protocol mentioned with 2 versions (e.g. IPv4 & IPv6) — only 1 mark. If written in full but with any word wrong, no mark.' },
+              '1(d)(iv)': { type: 'points',
+                points: [
+                  'To apply protocols in order / one after the other',
+                  'To provide independence of layers / layers can be modified without affecting other layers / layers are self-contained',
+                  'Hides details from previous/next layer(s) / is an abstraction',
+                  'Each layer is well defined / does a specific job',
+                  'Breaks tasks down into manageable units / groups similar protocols together',
+                  'Improved troubleshooting (easier identification of the layer that causes the issue)',
+                  'Each layer only communicates with adjacent layers / simplifies interfacing',
+                  'Hardware/software can be manufactured to fit into one specific layer',
+                  'Allows for standards for individual tasks/layers to be developed (for compatibility)'
+                ],
+                guidance: 'Max 3.' },
+              '1(e)(i)': { type: 'exact',
+                points: ['Real time', 'Real-time'],
+                guidance: '1 mark. Correct answer only.' },
+              '1(e)(ii)': { type: 'points',
+                points: [
+                  'Multi-tasking — runs multiple programs at the same time',
+                  'Multi-user — allows multiple users at the same time (must be clear that candidate is not discussing an OS that simply has multiple accounts)',
+                  'Distributed — allows multiple computers to work together on a single task',
+                  'Embedded — has a dedicated/limited function; is read-only / cannot be changed'
+                ],
+                guidance: '6 marks: mark in pairs (type + purpose), 3 distinct types. Allow real-time if not given as previous answer. Do not accept "runs on an embedded system" as expansion of embedded OS.' },
+              '1(f)': { type: 'points',
+                points: [
+                  'Interrupt checked for at start/end of each fetch-execute cycle',
+                  'If the interrupt is of lower/equal priority to the current process, the current process continues',
+                  '(If interrupt raised) contents of registers copied to stack',
+                  'Flags are set to determine if interrupts are enabled/disabled',
+                  'Program counter changed to point to Interrupt Service Routine (ISR) / ISR runs',
+                  'After interrupt complete, previous register values restored back from stack',
+                  'Flag is reset',
+                  'If higher priority interrupt received during servicing, this is added to stack and new interrupt dealt with'
+                ],
+                guidance: 'Max 3.' },
+              '1(g)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of memory management; accurate and detailed. Knowledge applied directly and consistently to context; explicitly relevant evidence. Thoroughly assesses the importance of memory management to an efficient and secure system. Well-developed line of reasoning.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of memory management. Knowledge applied to context with one or two missed opportunities. Reasonable attempt to assess importance.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of memory management; some inaccuracies. Limited attempt to apply to context. Vague/unsupported discussion of importance.' }
+                ],
+                indicative: {
+                  'AO1 — Knowledge': 'Memory management = ensure RAM is used efficiently and not wasted. Garbage collection removes data no longer needed, frees space, allocates memory. Paging / segmentation may split memory. Paging = fixed-size physical divisions; Segmentation = varying-size logical divisions. Virtual memory may be used when RAM is full.',
+                  'AO2 — Application': 'If RAM is full, apps cannot be loaded. Data transferred between RAM and virtual memory to free space. Includes security so data in memory isn\'t vulnerable. Without memory management, RAM rapidly runs out. Paging causes internal fragmentation; segmentation causes external fragmentation. Page table maps page location (slower than segmentation table). Easier for OS to manage page locations (non-contiguous).',
+                  'AO3 — Evaluation': 'RAM more expensive than secondary storage, so virtual memory useful. Over-use of VM causes slowdown / disk thrashing. Paging more effective for non-contiguous space; segments work better contiguously. Segmentation errors can cause memory leakage / system crashes. Security — apps only access their allocated memory; data removed before reallocation.'
+                },
+                guidance: '9 marks total.' },
+              '2(a)': { type: 'exact',
+                points: [
+                  'Blank 1: value == "E"',
+                  'Blank 2: value == "S"',
+                  'Blank 3: (numone + numtwo)',
+                  'Blank 4: value',
+                  'Blank 5: "E"'
+                ],
+                guidance: '5 marks. All string values must be in quotes. Don\'t allow single = for MP1 & 2 (penalise once, FT). Case needs to match. Brackets needed for MP3.' },
+              '2(b)(i)': { type: 'exact',
+                points: [
+                  'After 8: stack = [8]',
+                  'After 7: stack = [8, 7]',
+                  'After A: stack = [15] (since 8 + 7 = 15)'
+                ],
+                guidance: '3 marks: 1 per state.' },
+              '2(b)(ii)': { type: 'exact',
+                points: [
+                  '9 3 A E → output 12 (since 9 + 3 = 12, then E pops and prints)',
+                  '10 5 A 8 S E → output 7 (since 10+5=15, then 15−8=7, then E)',
+                  '25 5 S 2 3 A S E → output 15 (since 5−25=−20… wait MS gives 15 — order: push 25, push 5, S pops 5 and 25 → 25−5=20; push 2; push 3; A → 2+3=5; S → 20−5=15; E → output 15)'
+                ],
+                guidance: '3 marks: 1 per correct output. Expected outputs are 12, 7, 15.' },
+              '2(b)(iii)': { type: 'points',
+                points: [
+                  'S causes the two values inputted to be popped and only one value to be pushed back / 4 and 2 are popped and 2 is pushed',
+                  'A causes an attempt to pop two values but only one is present',
+                  'Causing a stack underflow'
+                ],
+                guidance: '3 marks.' },
+              '2(c)(i)': { type: 'points',
+                points: [
+                  'Stack is LIFO / FILO; Queue is FIFO / LILO',
+                  'Stack uses one pointer (for head); Queue uses two pointers (head and tail)',
+                  'Stack: data popped/pushed from the top; Queue: data dequeued from start, enqueued at back / queue can be circular'
+                ],
+                guidance: '2 marks. Mark in pairs.' },
+              '2(c)(ii)': { type: 'points',
+                points: [
+                  'Array is of fixed / defined size / static',
+                  'List size can be changed / no defined size / dynamic',
+                  'Array holds data of single data type',
+                  'List can hold data of multiple / different types'
+                ],
+                guidance: '2 marks. Mark in pairs.' },
+              '2(c)(iii)': { type: 'points',
+                points: [
+                  'A tuple cannot be changed at runtime / a tuple is immutable'
+                ],
+                guidance: '1 mark.' },
+              '2(c)(iv)': { type: 'points',
+                points: [
+                  'Go to the first position indicated by the start pointer',
+                  'From the first position, read the next pointer value',
+                  '...follow this pointer value and access the data item'
+                ],
+                guidance: '3 marks.' },
+              '3(a)(i)': { type: 'exact',
+                points: ['BD'],
+                guidance: '1 mark. Correct answer only.' },
+              '3(a)(ii)': { type: 'exact',
+                points: ['2AF'],
+                guidance: '1 mark. Correct answer only.' },
+              '3(b)(i)': { type: 'exact',
+                points: ['1110 1011', '11101011'],
+                guidance: '1 mark.' },
+              '3(b)(ii)': { type: 'exact',
+                points: ['1001 0101', '10010101'],
+                guidance: '1 mark.' },
+              '3(b)(iii)': { type: 'points',
+                points: [
+                  "Calculations are more easily performed on two's complement",
+                  "Two's complement allows for a (negligible) larger range of numbers to be stored",
+                  "No additional hardware is required in two's complement / addition and subtraction carried out using only an adder",
+                  "Two's complement has only one representation for 0"
+                ],
+                guidance: '1 mark. Accept the reverse of the MP.' },
+              '3(c)': { type: 'points',
+                points: [
+                  "−15.75 is 10000.01 (in fixed point two's complement)",
+                  'Binary point moved 4 places left',
+                  'Mantissa: 1000 0010',
+                  'Exponent: 0100'
+                ],
+                guidance: '4 marks. Mantissa must be 8 bits, exponent must be 4 bits. If mantissa AND exponent are correct with any working, 4 marks.' },
+              '3(d)': { type: 'points',
+                points: [
+                  'Exponent is −2',
+                  'Binary point moved 2 places left (0.001) / 0.5 × 2⁻²',
+                  '0.125 / 1/8 (one eighth)'
+                ],
+                guidance: '3 marks. If answer is correct and working is shown, 3 marks.' },
+              '3(e)': { type: 'exact',
+                points: [
+                  'Mantissa → precision / accuracy',
+                  'Exponent → range / size / magnitude'
+                ],
+                guidance: '2 marks: 1 for each blank.' },
+              '4(a)': { type: 'points',
+                points: [
+                  'Assembly language uses mnemonics; HLL uses English-like words',
+                  'Assembly uses an assembler to convert to machine code; HLL uses a translator (compiler/interpreter)',
+                  'Assembly is one-to-one conversion to machine code; HLL may produce multiple lines of machine code per line (one-to-many)',
+                  'Assembly requires more knowledge of the processor / allows direct control; HLL provides more abstraction / requires less knowledge',
+                  'Assembly is likely to be specific to the processor type / machine-dependent; HLL is portable / machine-independent'
+                ],
+                guidance: '4 marks. Mark in pairs. Allow examples (e.g. JMP, print) for MP1 and 2.' },
+              '4(b)(i)': { type: 'points',
+                points: [
+                  'Can execute multiple instructions / FDE cycles at the same time / some instructions in the program can be run in parallel'
+                ],
+                guidance: '1 mark. Do not accept just "multiple instructions". Do not accept tasks/programs for instructions.' },
+              '4(b)(ii)': { type: 'points',
+                points: [
+                  'Some instructions may not be able to be run in parallel',
+                  'An instruction may be dependent / waiting for other instructions to be completed',
+                  'Other factors influence processing speed (clock speed / cache / bottlenecks)',
+                  'Program / OS needs to be written to specifically use multiple cores'
+                ],
+                guidance: 'Max 2.' },
+              '4(c)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge of encryption and hashing and how they can secure stored data and communications. Knowledge applied directly and consistently to robot context. Weighs up both technologies with supported and realistic judgement. Well-balanced.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of encryption and hashing. Applied to context with one or two missed opportunities. Reasonable attempt at conclusion showing recognition of either technology; may not be well-balanced.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of encryption or/and hashing; some inaccuracies. Limited attempt to apply to context. Almost entirely one-sided discussion.' }
+                ],
+                indicative: {
+                  'AO1 — Knowledge': 'Encryption: converts data into ciphertext using a key; two-way (decryptable with key). Symmetric = same key for both; asymmetric = two keys (public/private). Hashing: one-way (non-reversible) mathematical process producing a value from input.',
+                  'AO2 — Application to robot': 'Data storage on robot: symmetric encryption useful (no keys to share/transmit). Robot↔robot/user communication: asymmetric / public-key — only public key shared, data encrypted/decrypted, private key stays secure. Asymmetric can also verify sender identity. Hashing useful for info like passwords that need to be verified but not known.',
+                  'AO3 — Evaluation': 'Encryption useful for most data storage — hackers cannot read without key. Hashing useful for password storage — hash of input compared with stored hash. Hashing NOT useful for data that needs to be returned (impossible to reverse). Encryption useful for transmission — intercepted data can\'t be decrypted without key.'
+                },
+                guidance: '9 marks total.' },
+              '4(d)(i)': { type: 'exact',
+                points: [
+                  'Blank 1: <ul>',
+                  'Blank 2: </ul>',
+                  'Blank 3: href',
+                  'Blank 4: Login',
+                  'Blank 5: text (or password)',
+                  'Blank 6: submit'
+                ],
+                guidance: '5 marks: 1 per correct blank (max 5 of 6 listed). HTML tags are not case sensitive.' },
+              '4(d)(ii)': { type: 'exact',
+                points: [
+                  'Selector: h1 with code in { }',
+                  'color: white;',
+                  'background-color: red; (or background: red;)'
+                ],
+                guidance: '3 marks. Ignore presence or lack of <style> tags. Ignore lack of semicolons. Penalise misspelling of "color" once and then FT. White can be #FFFFFF or #FFF; red can be #FF0000 or #F00.' },
+              '4(e)(i)': { type: 'points',
+                points: [
+                  'Copyright Designs and Patents Act (must be full name for MP1)',
+                  'Gives the author (the programmers) ownership/copyright of the photographs',
+                  '...no need to apply / this is automatic',
+                  'Others cannot use/distribute / can be prosecuted/fined for using/distributing...',
+                  '...without permission',
+                  'Permission can be granted / bought / licensed'
+                ],
+                guidance: '3 marks: 1 for the Act + 2 from the description.' },
+              '4(e)(ii)': { type: 'points',
+                points: [
+                  'Ask permission of author / photographer / owner',
+                  'Use images marked as copyright-free (e.g. Creative Commons Licence)',
+                  'Purchase (licence to use) image'
+                ],
+                guidance: '2 marks. Do not accept just "ask permission" without context.' },
+              '4(f)(i)': { type: 'exact',
+                points: [
+                  'DELETE FROM TblAccessLog WHERE UserType = "NotNeeded"',
+                  'DELETE FROM TblAccessLog WHERE UserType = \'NotNeeded\''
+                ],
+                guidance: '2 marks. Do not accept DELETE * or inclusion of field names. Need quotation on MP2. Case must match for field/table names — only penalise once and FT. Do not award MP2 if == is used instead of =.' },
+              '4(f)(ii)': { type: 'points',
+                points: [
+                  'Each attribute name is unique',
+                  'Primary key identified',
+                  'No repeated attributes',
+                  'All data in attributes must be atomic (cannot be further split up)'
+                ],
+                guidance: '2 marks.' },
+              '4(f)(iii)': { type: 'points',
+                points: [
+                  'DateAccessed...',
+                  '...has non-atomic data / data can be split up (into separate dates)'
+                ],
+                guidance: '2 marks. Do not accept repeated data / data redundancy (those are higher normal forms) unless specified that this is within one field.' },
+              '5(a)': { type: 'exact',
+                points: ['9'],
+                guidance: '1 mark for 9 (3 + 1 + 7 + 8 = 19; 19 MOD 10 = 9).' },
+              '5(b)': { type: 'points',
+                points: [
+                  'Input and store/use a value from the user',
+                  'Call doCheck function with the value input and save/use the returned value',
+                  'Open and close text file in write/append mode (if given)',
+                  'Write the value returned to the text file',
+                  'Write the value input to the text file'
+                ],
+                guidance: '5 marks. MP2 — doCheck is case-sensitive. MP3 — need speech marks around the file name.' },
+              '6(a)(i)': { type: 'exact',
+                points: [
+                  '¬(A ∨ B) ⊕ C',
+                  'NOT (A OR B) XOR C',
+                  '(A + B)̄ ⊕ C'
+                ],
+                guidance: '2 marks: 1 for ¬(A OR B) — brackets required (NOT A OR B is incorrect), 1 for XOR C. Can be written in any order as long as logically correct.' },
+              '6(a)(ii)': { type: 'exact',
+                points: [
+                  'Row 000: P=1',
+                  'Row 001: P=0',
+                  'Row 010: P=0',
+                  'Row 011: P=1',
+                  'Row 100: P=0',
+                  'Row 101: P=1',
+                  'Row 110: P=0',
+                  'Row 111: P=1'
+                ],
+                guidance: '3 marks: 1 for first two rows (1,0); 1 for next two rows (0,1); 1 for next four rows (0,1,0,1).' },
+              '6(b)': { type: 'points',
+                points: [
+                  'Correct grouping of the four 1s in the top half (rows CD=00 and CD=01) and the four 1s in the corners (CD=00 and CD=10) on the K-map',
+                  'Term: Ā · C̄ (NOT A AND NOT C) — from the top-left 2×2 group',
+                  'Term: A · D̄ (A AND NOT D) — from the right-hand 2×2 group',
+                  'Joined with v / + / OR: Ā·C̄ + A·D̄'
+                ],
+                guidance: '4 marks. Do not penalise candidates who simplify even further (e.g. using De Morgan). MP1 correct answer only. MP4 dependent on MP2 & 3.' },
+              '7': { type: 'levels',
+                levels: [
+                  { range: [9, 12], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of RIPA 2000. Knowledge applied directly and consistently to context; explicitly relevant evidence. Weighs up both sides of the argument with supported and realistic judgement covering benefits and drawbacks. Well-balanced.' },
+                  { range: [5, 8], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of RIPA 2000. Applied to context with one or two missed opportunities. Reasonable attempt to come to a conclusion showing recognition of benefits and/or drawbacks; may not be well-balanced.' },
+                  { range: [1, 4], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of RIPA 2000; some inaccuracies. Limited attempt to apply to context. Almost entirely one-sided.' }
+                ],
+                indicative: {
+                  'AO1 — Knowledge': 'RIPA implements additional rights regarding surveillance / monitoring of individuals and acquisition of communications data. Provides rights for many organisations (Police, security services) to do this. Purpose: detect crime, defend national security. Gives access to private communications — emails, texts, calls, internet history. Some see it as an invasion of privacy.',
+                  'AO2 — Application': 'Monitoring carried out by far more organisations than just Police/security services — local councils, pension regulator, Environment Agency. Forces handover of encryption keys (2-year prison sentence on refusal). Wide-ranging powers have allowed Police to intercept criminals and stop/disrupt crime.',
+                  'AO3 — Evaluation': 'In modern world, important Police/security can deal with electronic communications this way — terrorism etc. can be detected and stopped, making public safer. But criticised as a "snooper\'s charter" — used for minor offences (lying about address for school admissions, fly-tipping). Many communication tools (e.g. WhatsApp) include end-to-end encryption by default so messages can\'t be divulged. Other encryption tools include plausible deniability.'
+                },
+                guidance: '12 marks total. Indicative AO split: AO1.1=2, AO1.2=2, AO2.1=2, AO3.3=3 (+ extra).' }
+            }
           },
           {
             id: 'cs-ocr-h446-2023-p2',
