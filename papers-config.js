@@ -6804,7 +6804,442 @@ window.SUBJECTS = [
             totalMarks: 140,
             durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/666847-question-paper-algorithms-and-programming.pdf',
-            msUrl: 'https://www.ocr.org.uk/Images/666850-mark-scheme-algorithms-and-programming.pdf'
+            msUrl: 'https://www.ocr.org.uk/Images/666850-mark-scheme-algorithms-and-programming.pdf',
+            questions: [
+              {
+                number: 1,
+                scenario: "Taylor is creating an online multiplayer game where users can create accounts and build their own circus. Each circus contains characters such as clowns, animals, magicians and dancers. Users can set up a new circus, purchase new characters and visit other users' circuses.",
+                parts: [
+                  { code: '1(a)',
+                    preamble: "Taylor uses computational methods to analyse the problem including abstraction.",
+                    prompt: "Describe how Taylor could use abstraction in the design of his online circus game.", marks: 3 },
+                  { code: '1(b)(i)',
+                    preamble: "Taylor will make use of concurrent processing within his circus game.",
+                    prompt: "Describe what is meant by the term 'concurrent processing'.", marks: 2 },
+                  { code: '1(b)(ii)', prompt: "Explain why concurrent processing is needed to allow multiple users to log in and interact with game elements at the same time.", marks: 3 },
+                  { code: '1(c)(i)',
+                    preamble: "Some characters move and interact independently. Taylor is using graphs to plan movements. DancerGold's possible movements are in Fig. 1 (weighted edges, heuristic in bold below each node).\n\n  Edges: A-B=21, A-C=42, B-D=38, B-E=40, C-D=12, D-E=50, D-F=23, D-G=55, E-G=50, C-F=65, F-G=33\n  Heuristics: A=90, B=80, C=65, D=50, E=50, F=30, G=0",
+                    prompt: "Define the term heuristic in relation to the A* algorithm.", marks: 2 },
+                  { code: '1(c)(ii)',
+                    figure: { type: 'table', label: "A* working table (one row per node)",
+                      headers: ['Node', 'Distance travelled', 'Heuristic', 'Distance + Heuristic', 'Previous'],
+                      rows: [['A','','','',''],['B','','','',''],['C','','','',''],['D','','','',''],['E','','','',''],['F','','','',''],['G','','','','']] },
+                    prompt: "Perform an A* algorithm on the graph in Fig. 1 to find the shortest path from A to G. Show your working, nodes visited and the distance.", marks: 8 },
+                  { code: '1(d)',
+                    preamble: "A breadth-first traversal can be performed on both a tree and a graph.\n\nTree (root M; M→E,S; E→C,J; S→P,V; J→G,K; K→L):",
+                    prompt: "Show how a breadth-first traversal is performed on the binary tree.", marks: 6 },
+                  { code: '1(e)', extended: true,
+                    preamble: "The game will have thousands of users. Taylor stores data about users and their actions while playing in a large database.",
+                    prompt: "Evaluate how Taylor can use data mining to inform future changes to improve his circus game.", marks: 9 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "The pseudocode function binarySearch() performs a binary search on dataArray (passed as parameter). Returns array index of searchValue, or −1 if not found.",
+                parts: [
+                  { code: '2(a)(i)',
+                    preamble: "    function binarySearch(dataArray:byref, upperbound, lowerbound, ______)\n        while true\n            middle = lowerbound + ((upperbound − lowerbound) ______)\n            if upperbound < lowerbound then\n                return ______\n            else\n                if dataArray[middle] < searchValue then\n                    lowerbound = ______\n                elseif dataArray[middle] > searchValue then\n                    upperbound = ______\n                else\n                    return ______\n                endif\n            endif\n        endwhile\n    endfunction",
+                    prompt: "Complete the algorithm by filling in the six blanks (parameter name, divide expression, return value for not-found, two pointer-update statements, return for found).", marks: 6 },
+                  { code: '2(a)(ii)', prompt: "The algorithm uses a while loop. State a different type of loop that could be used instead.", marks: 1 },
+                  { code: '2(b)',
+                    figure: { type: 'table', label: 'Tick the correct complexity for each scenario',
+                      headers: ['Complexity', 'Binary worst-case space', 'Linear worst-case space', 'Binary best-case space', 'Linear best-case space', 'Binary average time', 'Linear average time'],
+                      rows: [['O(log n)','','','','','',''], ['O(1)','','','','','',''], ['O(n)','','','','','','']] },
+                    prompt: "Tick the correct space/time complexity boxes for binary search and linear search (worst-case space, best-case space, average time).", marks: 6 },
+                  { code: '2(c)', prompt: "Identify one situation where a linear search is more appropriate than a binary search.", marks: 1 }
+                ]
+              },
+              {
+                number: 3,
+                parts: [
+                  { code: '3(a)', prompt: "A one-dimensional array holds data that needs to be sorted. Describe how a quicksort would sort data into ascending order.", marks: 5 },
+                  { code: '3(b)', prompt: "Explain why a quicksort is known as a divide and conquer algorithm.", marks: 2 }
+                ]
+              },
+              {
+                number: 4,
+                parts: [
+                  { code: '4', extended: true,
+                    preamble: "Anna currently writes her program code in a text editor and then runs the compiler. She has been told that using an Integrated Development Environment (IDE) would be more helpful.",
+                    prompt: "Discuss the benefits of Anna using an IDE to write and test her program rather than using a text editor.", marks: 9 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "Christoff is simulating a city using OOP. Plan for some classes:\n\n    class building\n      private: numberFloors, width, height\n      methods: new(pFloors, pWidth, pHeight), get/set methods for all three\n\n    class office (inherits building)\n      private: numDesks, numCompanies\n      methods: new(pFloors, pWidth, pHeight, pDesks, pCompanies), get/set\n\n    class house (inherits building)\n      private: bedrooms, bathrooms\n      methods: new(pFloors, pWidth, pHeight, pBedrooms, pBathrooms), get/set",
+                parts: [
+                  { code: '5(a)', prompt: "The method new is used to denote the constructor for each class. State the purpose of the constructor.", marks: 1 },
+                  { code: '5(b)',
+                    preamble: "The classes office and house inherit from building.",
+                    prompt: "Describe what is meant by inheritance with reference to these classes.", marks: 2 },
+                  { code: '5(c)',
+                    preamble: "    class building\n        private numberFloors\n        private width\n        private ______\n        public procedure new(pFloors, pWidth, pHeight)\n            numberFloors = ______\n            width = pWidth\n            height = pHeight\n        endprocedure\n        public function getNumberFloors()\n            return ______\n        endfunction\n        public function setNumberFloors(pFloors)\n            // returns true if successfully changed (pFloors >= 1)\n            if pFloors >= 1 then\n                numberFloors = ______\n                return true\n            else\n                return ______\n            endif\n        endfunction\n    endclass",
+                    prompt: "Complete the pseudocode declaration by filling in the five blanks.", marks: 5 },
+                  { code: '5(d)', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/02 November 2021 Q5(d) — house class (inherits from building)\n\nclass building:\n    def __init__(self, pFloors, pWidth, pHeight):\n        self._numberFloors = pFloors\n        self._width = pWidth\n        self._height = pHeight\n\n\n# TODO: define class house that inherits from building.\n# Private attributes: bedrooms, bathrooms\n# Constructor: new(pFloors, pWidth, pHeight, pBedrooms, pBathrooms)\n# (Do not write the get/set methods.)\n\n\n# ── Test driver (do not modify) ──\nh = house(2, 8, 10, 3, 2)\nprint(f\"Floors:    {h._numberFloors}    (expected 2)\")\nprint(f\"Width:     {h._width}    (expected 8)\")\nprint(f\"Height:    {h._height}    (expected 10)\")\nprint(f\"Bedrooms:  {getattr(h, '_bedrooms', getattr(h, 'bedrooms', getattr(h, '_house__bedrooms', '?')))}    (expected 3)\")\nprint(f\"Bathrooms: {getattr(h, '_bathrooms', getattr(h, 'bathrooms', getattr(h, '_house__bathrooms', '?')))}    (expected 2)\")\n"
+                    },
+                    testInputs: [],
+                    prompt: "Write program code or pseudocode to declare the class house. Define the attributes and constructor method. You do not need to write the get or set methods.\n\nClick ▶ Run. A correct implementation prints Floors=2, Width=8, Height=10, Bedrooms=3, Bathrooms=2.", marks: 6 },
+                  { code: '5(e)',
+                    preamble: "Christoff develops a class to store houses on one road:\n\n    class houseRoad\n        private buildings(100)  // array of house\n        private numberBuildings // count of houses in array\n        methods: new(building), getBuilding(buildingNum),\n                 procedure newbuilding(pBuilding)\n\nnewbuilding() takes a new building and stores it in the next free space.",
+                    prompt: "Write pseudocode or program code for the method newbuilding().", marks: 4 },
+                  { code: '5(f)',
+                    preamble: "Create a new house called houseOne with 2 floors, 8m width, 10m height, 3 bedrooms, 2 bathrooms. Place it as the first house on the road limeAvenue (type houseRoad).",
+                    prompt: "Write pseudocode or program code to declare houseOne, limeAvenue and assign houseOne to the first position in the road.", marks: 4 }
+                ]
+              },
+              {
+                number: 6,
+                scenario: "Amy's processor makes use of pipelining during the fetch-decode-execute cycle.\n\nPipeline stages: fetching, decoding, executing.\nInstructions A, B, C and D need to be processed.",
+                parts: [
+                  { code: '6(a)',
+                    figure: { type: 'table', label: 'Pipeline contents (Stage(s) + Instruction(s) per interval)',
+                      headers: ['Interval', 'Fetch', 'Decode', 'Execute'],
+                      rows: [['1','','',''], ['2','','',''], ['3','','',''], ['4','','','']] },
+                    prompt: "Identify the stages and instructions run during each pipeline interval (1–4) for instructions A, B, C, D.", marks: 4 },
+                  { code: '6(b)', prompt: "Explain why pipelining can improve the performance of the processor.", marks: 2 }
+                ]
+              },
+              {
+                number: 7,
+                scenario: "Lucas writes a program using a circular queue. An array represents the queue. The program needs two pointers to access/manipulate data.",
+                parts: [
+                  { code: '7(a)', prompt: "State the purpose of the two pointers and give an appropriate identifier for each.", marks: 4 },
+                  { code: '7(b)',
+                    preamble: "Lucas wants procedure enqueue() that adds its parameter to the queue.",
+                    prompt: "Describe the steps enqueue() will follow when adding new items to the queue.", marks: 5 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "A Nonogram is a logic puzzle: colour boxes in a grid black or leave white. Numbers at the side tell the player how many boxes are coloured consecutively. Two or more numbers means white squares between coloured groups.\n\nJuan is creating a program that stores Nonograms. Game randomly selects a puzzle, displays blank grid + numbers. User selects boxes to toggle colour. User can check the answer at any point.",
+                parts: [
+                  { code: '8(a)(i)',
+                    preamble: "Juan creates a structure diagram. Top level: Nonogram. Second level: New game, Play game, Check answer.",
+                    prompt: "Complete the structure diagram by adding another layer (a third level) for each of New game, Play game and Check answer.", marks: 3 },
+                  { code: '8(a)(ii)', prompt: "A structure diagram is one method of showing the decomposition of a problem. Explain why decomposing a problem can help a developer design a solution.", marks: 2 },
+                  { code: '8(a)(iii)', prompt: "Identify one input, one process and one output required for the game.", marks: 3 },
+                  { code: '8(b)(i)',
+                    preamble: "Two integer 2-D arrays store puzzles: puzzle(5,5) for solution, answerGrid(5,5) for user grid. 0 = white, 1 = black.\n\nFunction countRow() counts consecutive coloured boxes in a row. For row 0 of\n  11000\n  01100\n  00101\n  11100\n  01000\nreturns \"2\". For row 2 returns \"1 1\". If no 1s, returns \"0\".\n\n    01 function countRow(puzzle:byref, rowNum:byval)\n    02     count = 0\n    03     output = \" \"\n    04     for i = 0 to ______\n    05         if puzzle[rowNum, i] == ______ then\n    06             count = count + 1\n    07         elseif count >= 1 then\n    08             output = output + str(______) + \" \"\n    09             count = 0\n    10         endif\n    11     next i\n    12     if count >= 1 then\n    13         output = output + str(count)\n    14     elseif output == \"\" then\n    15         output = \"______\"\n    16     endif\n    17     return ______\n    18 endfunction",
+                    prompt: "Complete the pseudocode algorithm countRow() by filling in the five blanks.", marks: 5 },
+                  { code: '8(b)(ii)', prompt: "Explain the purpose of line 03 in the function countRow.", marks: 2 },
+                  { code: '8(b)(iii)', prompt: "Describe the purpose of branching and iteration in the function countRow.", marks: 3 },
+                  { code: '8(b)(iv)', extended: true,
+                    preamble: "displayRowAnswer() takes puzzle as a parameter and outputs the value in each box. Each box in a row separated by a space. At end of each row, two spaces and (by calling countRow) the clue values for that row.",
+                    prompt: "Write pseudocode or program code for the procedure displayRowAnswer().", marks: 6 },
+                  { code: '8(b)(v)',
+                    preamble: "Function checkWon() takes answerGrid + puzzle, compares each element. Identical → true; else false.\n\n    01 function checkWon(puzzle)\n    02     for row = 0 to 4\n    03         for column = 0 to 4\n    04             if puzzle[row, column] == answerGrid[row, column] then\n    05                 return false\n    06             endif\n    07         next column\n    08     next column\n    09     return true\n    10 endfunction\n\nThere are three logic errors.",
+                    prompt: "State the line number of each error and give the corrected line.", marks: 3 },
+                  { code: '8(c)', extended: true,
+                    preamble: "Juan passed the two arrays as parameters, but considered making them globally accessible.",
+                    prompt: "Compare the use of global and local variables and data structures in this program. Include the use of parameters and program efficiency.", marks: 9 },
+                  { code: '8(d)', prompt: "Juan wants to create a program that generates new Nonograms with different grid sizes (e.g. 10×10, 5×20). Describe how the program could be written to automatically generate a new Nonogram.", marks: 4 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'points',
+                points: [
+                  'Removing unnecessary detail (e.g. circuses are simplified visual representations)',
+                  'Characters are objects with key attributes only (name, type, position)',
+                  'Generalising features common to all character types into a base class',
+                  'Simplifying interactions between users / circuses',
+                  'Focusing on essential game mechanics and ignoring real-world complexity'
+                ],
+                guidance: '3 marks.' },
+              '1(b)(i)': { type: 'points',
+                points: [
+                  'Multiple processes / tasks running at the same time',
+                  'Time slicing — each process gets a slice of CPU time',
+                  'Can be true parallel processing or interleaved'
+                ],
+                guidance: 'Max 2.' },
+              '1(b)(ii)': { type: 'points',
+                points: [
+                  'Multiple users need to access the game at the same time',
+                  'Users could override each other\'s changes — needs concurrency control (e.g. record locking)',
+                  'Different users have different response times — processor can handle other requests while waiting',
+                  'Performance for other users is not affected'
+                ],
+                guidance: 'Max 3.' },
+              '1(c)(i)': { type: 'points',
+                points: [
+                  'A rule of thumb / estimate / guess',
+                  'That estimates the distance / cost from each node to the destination node',
+                  'To speed up the process of finding a solution',
+                  '...by identifying which paths to follow first'
+                ],
+                guidance: 'Max 2.' },
+              '1(c)(ii)': { type: 'exact',
+                points: [
+                  'A: distance 0, heuristic 90, total 90, previous —',
+                  'B: distance 21, heuristic 80, total 101, previous A',
+                  'C: distance 42, heuristic 65, total 107, previous A',
+                  'D: distance 54 (via 42+12=54), heuristic 50, total 104, previous C',
+                  'E: distance 61, heuristic 50, total 111, previous B',
+                  'F: distance 77 (via 42+12+23=77), heuristic 30, total 107, previous D',
+                  'G: distance 110, heuristic 0, total 110, previous F',
+                  'Final path: A, C, D, F, G. Distance: 110'
+                ],
+                guidance: '8 marks: 7 for row entries + 1 for final path/distance.' },
+              '1(d)': { type: 'points',
+                points: [
+                  'Visit root node M',
+                  'Visit E and S',
+                  'Visit C and J (from E)',
+                  '...then P and V (from S)',
+                  'Visit G and K (from J)',
+                  'Visit L (from K)',
+                  'Order: M, E, S, C, J, P, V, G, K, L'
+                ],
+                guidance: 'Max 6.' },
+              '1(e)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge of data mining. Knowledge applied directly and consistently to context. Well-developed line of reasoning, balanced evaluation.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of data mining. Some missed opportunities. Reasonable discussion.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of data mining; some inaccuracies. Limited application to context.' }
+                ],
+                indicative: {
+                  'AO1 — Data mining': 'Searches large amounts of data. Searches for relationships between facts/components/events that may not be obvious. May use pattern matching / anomaly detection. Used for business modelling and planning for future eventualities.',
+                  'AO2 — Application': 'Can look at how people use the website (visiting times, what they click, time spent on features, what they do first, which elements are used least). Give recommendations for changes (features to add or remove).',
+                  'AO3 — Evaluation': 'Can introduce new features → increase use / revenue. Sell features used most often. Make game more appealing. Remove features people don\'t use. Use to target advertising. Privacy concerns from users. Misuse of information.'
+                },
+                guidance: '9 marks total.' },
+              '2(a)(i)': { type: 'exact',
+                points: [
+                  'Blank 1 (parameter): searchValue',
+                  'Blank 2 (divide expression): DIV 2  (or // 2 in some pseudocode)',
+                  'Blank 3 (not found): −1',
+                  'Blank 4 (new lowerbound): middle + 1',
+                  'Blank 5 (new upperbound): middle − 1',
+                  'Blank 6 (found): middle'
+                ],
+                guidance: '6 marks: 1 per correct statement.' },
+              '2(a)(ii)': { type: 'exact',
+                points: ['Do...until', 'Repeat...until', 'Post-condition loop'],
+                guidance: '1 mark.' },
+              '2(b)': { type: 'exact',
+                points: [
+                  'Worst-case space — Binary: O(log n), Linear: O(1)',
+                  'Best-case space — Binary: O(1), Linear: O(1)',
+                  'Average time — Binary: O(log n), Linear: O(n)'
+                ],
+                guidance: '6 marks: 1 per correct tick.' },
+              '2(c)': { type: 'points',
+                points: [
+                  'Data is not sorted',
+                  'Item you are looking for is the first item in the list',
+                  'Small number of items'
+                ],
+                guidance: '1 mark for any example.' },
+              '3(a)': { type: 'points',
+                points: [
+                  'Choose a pivot / identify start and end pointers',
+                  'Compare each element to the pivot... / compare start and end pointers',
+                  'Put items < pivot in the left sublist',
+                  'Put items > pivot in the right sublist',
+                  'Choose a pivot in each sublist',
+                  'If start pointer is larger than end pointer... then swap data items around',
+                  'Repeat the process until each item becomes a pivot'
+                ],
+                guidance: 'Max 5.' },
+              '3(b)': { type: 'points',
+                points: [
+                  'Decomposing data sets into smaller subsets',
+                  'And then sorting each split subset',
+                  'Until each subset is sorted',
+                  'And then combining the subsets to provide a solution'
+                ],
+                guidance: 'Max 2.' },
+              '4': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge of IDEs. Applied directly to context (text editor vs IDE). Balanced discussion with consistent evaluation.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of IDEs. Sound discussion, some missed opportunities.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of IDEs; some inaccuracies. Limited application.' }
+                ],
+                indicative: {
+                  'AO1 — IDE features': 'IDE includes editor, compiler, run-time environment. Creating: autocorrect, autocomplete, pretty printing. Testing: breakpoints, stepping, variable watch window.',
+                  'AO2 — Application': 'Tells you when you make a syntax error. Allows writing + running code in one piece of software. Suggests code (don\'t have to remember syntax). Helps trace the program. Autogenerate boilerplate.',
+                  'AO3 — Evaluation': 'Reduce errors through autocorrect + suggestions. Reduce development time — spot errors before running. Write and test in one environment (no closing/reopening).'
+                },
+                guidance: '9 marks total.' },
+              '5(a)': { type: 'exact',
+                points: ['To create an instance of an object from a class'],
+                guidance: '1 mark.' },
+              '5(b)': { type: 'points',
+                points: [
+                  'When the child / derived / subclass class office or house takes on attributes/methods...',
+                  '...from building / parent / base / superclass'
+                ],
+                guidance: 'Max 2.' },
+              '5(c)': { type: 'exact',
+                points: [
+                  'Blank 1: height',
+                  'Blank 2: pFloors',
+                  'Blank 3: numberFloors',
+                  'Blank 4: pFloors',
+                  'Blank 5: false'
+                ],
+                guidance: '5 marks: 1 per blank.' },
+              '5(d)': { type: 'points',
+                points: [
+                  'Class declaration for house with inherits building',
+                  'Declaring bedrooms and bathrooms as private',
+                  'New declaration...',
+                  '...with all five parameters',
+                  'Calling super constructor / equivalent with floors, width and height set',
+                  'Setting bedrooms and bathrooms'
+                ],
+                guidance: 'Max 6.' },
+              '5(e)': { type: 'points',
+                points: [
+                  'Procedure header taking parameter',
+                  'Adding parameter to array',
+                  '...at position numberBuildings',
+                  'Incrementing numberBuildings'
+                ],
+                guidance: 'Max 4.' },
+              '5(f)': { type: 'points',
+                points: [
+                  'Creating a new instance of house with identifier houseOne',
+                  '...with the correct parameters (2, 8, 10, 3, 2)',
+                  'Creating a new instance of houseRoad named limeAvenue',
+                  '...sending houseOne as parameter to the constructor'
+                ],
+                guidance: 'Max 4.' },
+              '6(a)': { type: 'exact',
+                points: [
+                  'Interval 1: A is fetched',
+                  'Interval 2: A is decoded, B is fetched',
+                  'Interval 3: A is executed, B is decoded, C is fetched',
+                  'Interval 4: B is executed, C is decoded, D is fetched'
+                ],
+                guidance: '4 marks: 1 per interval.' },
+              '6(b)': { type: 'points',
+                points: [
+                  'Reduces / removes latency',
+                  '...CPU is not idle while waiting for next instruction',
+                  'Next instruction is fetched while current one is decoded / executed',
+                  'All parts of the processor can be used at any instance in time'
+                ],
+                guidance: 'Max 2.' },
+              '7(a)': { type: 'points',
+                points: [
+                  'Pointer to the first element in the queue',
+                  '...with identifier firstElement / any meaningful name',
+                  'Pointer to the last element / next free element in the queue',
+                  '...with identifier lastElement / any meaningful name'
+                ],
+                guidance: '4 marks: must cover purpose AND name for 2 marks per pointer.' },
+              '7(b)': { type: 'points',
+                points: [
+                  'Check if the queue is full',
+                  '...if the firstElement pointer (+1) == lastElement / length variable == queue capacity',
+                  '...if so, return False',
+                  'Add element at lastElement (+1) position / startposition+length',
+                  '...increment lastElement pointer',
+                  'If lastElement is greater than last index / pointer becomes pointer MOD array.size',
+                  '...reset to 0'
+                ],
+                guidance: 'Max 5.' },
+              '8(a)(i)': { type: 'points',
+                points: [
+                  'Below New Game: Select Puzzle + Display blank grid',
+                  'Below Play Game: Select Box + Change colour of boxes',
+                  'Below Check Answer: Compare to answer + Display Correct/Incorrect'
+                ],
+                guidance: '3 marks: 1 per branch.' },
+              '8(a)(ii)': { type: 'points',
+                points: [
+                  'Splits the problem into smaller chunks',
+                  'Smaller problems are more manageable',
+                  'Smaller problems are easier to solve',
+                  'To see where code can be reused in the solution',
+                  'To split tasks between different programmers'
+                ],
+                guidance: 'Max 2.' },
+              '8(a)(iii)': { type: 'points',
+                points: [
+                  'Input — clicking a box',
+                  'Process — generating new puzzle / checking if block is black / changing block to white',
+                  'Output — grid with coloured squares'
+                ],
+                guidance: '3 marks: 1 for input + 1 for process + 1 for output.' },
+              '8(b)(i)': { type: 'exact',
+                points: [
+                  'Blank 1: 4 (for i = 0 to 4)',
+                  'Blank 2: 1 (if puzzle[rowNum, i] == 1)',
+                  'Blank 3: count (output + str(count))',
+                  'Blank 4: "0" (when output is empty)',
+                  'Blank 5: output'
+                ],
+                guidance: '5 marks: 1 per blank. Accept for i = 0 to row.length-1 or for i = 0 to row.length.' },
+              '8(b)(ii)': { type: 'points',
+                points: [
+                  'Initialise the variable output...',
+                  '...with a space (so it can be used for concatenation later)',
+                  '...to avoid an error being generated'
+                ],
+                guidance: 'Max 2.' },
+              '8(b)(iii)': { type: 'points',
+                points: [
+                  'Check the value stored in each index',
+                  'Check whether it is at the end of a row',
+                  'Check whether each row has been given an output or not'
+                ],
+                guidance: 'Max 3.' },
+              '8(b)(iv)': { type: 'points',
+                points: [
+                  'Procedure heading for displayRowAnswer',
+                  '...taking puzzle as parameters',
+                  'Nested loops through all array elements',
+                  '...outputting all rows',
+                  '...at the end of each row calling countRow...',
+                  '...with parameters puzzle and the current loop counter'
+                ],
+                guidance: 'Max 6.' },
+              '8(b)(v)': { type: 'points',
+                points: [
+                  'Line 01 needs answerGrid as parameter',
+                  'Line 04 — == should be !=',
+                  'Line 08 should be next row'
+                ],
+                guidance: '3 marks. Do not award marks for line numbers alone without stating the error. Consider 1 mark alt: not changing line 04 but changing 05 to true and 09 to False.' },
+              '8(c)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge of local/global variables. Applied directly and consistently to context. Well-developed reasoning.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge. Sound discussion with some missed opportunities.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge; some inaccuracies. Limited application.' }
+                ],
+                indicative: {
+                  'AO1 — Variables and parameters': 'Local: scope within module, freed when module exits, cannot access externally unless passed/returned. Global: scope within entire program, accessible anywhere, retained permanently. ByRef sends pointer to variable (changes propagate). ByVal sends value (copy).',
+                  'AO2 — Application': 'Global arrays accessible from all modules. Local needs to be passed as parameters byRef. Can send ByVal — but not always possible with arrays in some languages. Modules self-contained → reusable.',
+                  'AO3 — Evaluation': '+ve Local = memory efficient. +ve Global = easier programming, simpler to follow, easier to debug. -ve Global = memory inefficient, not good programming. -ve Local = harder to trace/debug. For this small program, globals may not waste significant resources.'
+                },
+                guidance: '9 marks total.' },
+              '8(d)': { type: 'points',
+                points: [
+                  'Make use of random numbers',
+                  'Generate an x / horizontal size for the grid',
+                  'Generate a y / vertical size for the grid',
+                  'Loop through each row / column',
+                  '...generate a number between 0 and the number of rows/columns',
+                  'Loop through each box',
+                  '...generate a 1 or 0 to store in it'
+                ],
+                guidance: 'Max 4.' }
+            }
           }
         ]
       }
