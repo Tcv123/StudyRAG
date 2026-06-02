@@ -11722,7 +11722,708 @@ window.SUBJECTS = [
                   'Random fertilisation/fusion of gametes',
                   '(Produces) new combinations of alleles (or of maternal and paternal chromosomes)'
                 ], guidance: '4 marks (AO1). If no marks otherwise, accept one principle mark for "meiosis producing cells that are genetically different". Ignore epigenetics; ignore "random mating".' }
-            } }
+            } },
+          { id: 'bio-aqa-7402-2023-p2', year: 'June 2023', paperName: 'Paper 2', paperCode: '7402/2', totalMarks: 91, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74022-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74022-MS-JUN23.PDF',
+            qbqNote: 'All 10 questions (91 marks) are wired up question-by-question with the official AQA mark scheme. Figures (the chromatogram, phosphorus cycle, graphs, the genetic cross diagram in Q4 and Figures 1–3) are in the question paper PDF — open it alongside for any figure or table a question refers to.',
+            questions: [
+              { number: 1,
+                scenario: "A student used chromatography to separate the different photosynthetic pigments in a chlorophyll solution. She had the following materials: chromatography paper; a ruler and pencil; suitable glassware; a solvent (solvent A); 2 cm³ of the chlorophyll solution.",
+                parts: [
+                  { code: '01.1', prompt: "Describe how she could use these materials to separate the photosynthetic pigments by chromatography.", marks: 4 },
+                  { code: '01.2', preamble: "Using solvent A, the student separated five pigments. She then repeated her method using a different solvent, B. Using solvent B, she separated six pigments.", prompt: "Explain the difference between these results.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "Glutamate is a neurotransmitter involved in the transmission of nerve impulses from pain receptors to the brain. Ziconotide is a drug that can reduce severe, constant pain. Ziconotide blocks the calcium ion channels at some of the synapses which use glutamate. The transmission of glutamate at synapses is similar to that of acetylcholine.",
+                parts: [
+                  { code: '02.1', prompt: "Explain how ziconotide reduces severe, constant pain.", marks: 5, extended: true },
+                  { code: '02.2', preamble: "Ziconotide is a polypeptide and acts on synapses in the spinal cord. It was injected into each patient's cerebrospinal fluid that bathes the brain and spinal cord. Patients recorded the intensity of their pain using a statistically valid scale.", prompt: "Suggest two reasons why the patients had ziconotide injected into their cerebrospinal fluid rather than taking a pill containing the drug.", marks: 2 },
+                  { code: '02.3', preamble: "Ziconotide was injected at 3 ng kg⁻¹ h⁻¹ for 8 days into each patient. (1 ng = 1 × 10⁻⁹ g.)", prompt: "Calculate the total mass in grams of ziconotide injected after 8 days into a patient with a body mass of 82 kg. Show your working.", marks: 2 },
+                  { code: '02.4', prompt: "When the patients recorded the intensity of pain, suggest two reasons why it was important to use a statistically valid scale.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "Figure 1 shows part of a phosphorus cycle, including the mass of phosphorus in two stores. One teragram (Tg) is 1 × 10¹² grams. The supply of phosphorus to the soil is shown as a percentage of the total phosphorus mass of each store.\n\n(See Figures 1 and 2 in the question paper PDF.)",
+                parts: [
+                  { code: '03.1', prompt: "Calculate, in teragrams, the difference in the supply of phosphorus to the soil from the two stores shown in Figure 1. Show your working.", marks: 2 },
+                  { code: '03.2', preamble: "Scientists investigated the effect of the mycorrhizal species Glomus intraradices on the growth of tomato plants under water shortage and no water shortage. Seedlings (treated with G. intraradices or untreated) were grown in four greenhouses: P — untreated, water shortage; Q — treated, water shortage; R — untreated, no water shortage; S — treated, no water shortage. After 60 days the mean mass of tomatoes (kg m⁻²) from each greenhouse was found. Figure 2 shows the results; error bars represent ± 2 standard deviations (over 95% of the data).", prompt: "Using all the information, evaluate the effectiveness of using mycorrhizae to increase crop production under conditions of water shortage and no water shortage.\n\n(See Figure 2 in the question paper PDF.)", marks: 5, extended: true },
+                  { code: '03.3', preamble: "The tomato seeds were planted into sterilised soil.", prompt: "Suggest two reasons why the soil was sterilised.", marks: 2 },
+                  { code: '03.4', preamble: "The soil used in this investigation had the recommended concentration of fertiliser.", prompt: "Suggest two reasons why the soil contained the recommended concentration of fertiliser.", marks: 2 }
+                ] },
+              { number: 4,
+                scenario: "In cats, males are XY and females are XX. A gene on the X chromosome controls fur colour. The allele G codes for ginger fur and the allele B codes for black fur. These alleles are codominant; heterozygous females have ginger and black patches (phenotype: tortoiseshell female). The two alleles F and f of a different gene, which is not sex-linked, interact with the fur-colour gene. F is dominant and stops the formation of pigment in the fur, resulting in white fur. f is recessive and has no effect on fur colour.",
+                parts: [
+                  { code: '04.1', prompt: "Name the type of interaction between the two genes affecting fur colour.", marks: 1 },
+                  { code: '04.2', prompt: "What phenotype would a cat with the genotype XᴳXᴮff have?", marks: 1 },
+                  { code: '04.3', prompt: "Complete the genetic diagram to show all the possible genotypes and the ratio of phenotypes expected in the offspring of the cross XᴳXᴳFf × XᴮYff. Give the genotypes of offspring, the phenotypes of offspring, and the ratio of offspring phenotypes.", marks: 3 },
+                  { code: '04.4', preamble: "In a population, 36% of cats had the F allele and had white fur.", prompt: "Use the Hardy–Weinberg equation to calculate the frequency of the f allele in this population. Show your working.", marks: 2 }
+                ] },
+              { number: 5,
+                parts: [
+                  { code: '05.1', preamble: "Figure 3 shows the wavelengths of light absorbed by three types of photoreceptor found in the human retina.", prompt: "Use Figure 3 and your knowledge of colour vision to explain how an orange colour is seen at 600 nm.\n\n(See Figure 3 in the question paper PDF.)", marks: 3 },
+                  { code: '05.2', prompt: "Which of the following statements is associated with high sensitivity to light in the retina? Tick one box.\n\n• A single photoreceptor connecting to one neurone and spatial summation\n• A single photoreceptor connecting to one neurone and temporal summation\n• Several photoreceptors connecting to one neurone and spatial summation\n• Several photoreceptors connecting to one neurone and temporal summation", marks: 1 },
+                  { code: '05.3', preamble: "Variation in flower colour is one factor in the evolution of two monkeyflower species. Erythranthe lewisii (Great Purple Monkeyflower) has pink flowers, is mostly found at higher altitudes (1600–3000 m) and attracts bumblebees. Erythranthe cardinalis (Scarlet Monkeyflower) has red flowers, is mostly found at lower altitudes (up to 2000 m) and attracts hummingbirds. Both bumblebees and hummingbirds are important pollinators (pollination transfers male gametes to female gametes).", prompt: "Explain the different processes that may have been involved in the evolution of these two species of monkeyflower. Use the information provided to justify your answer.", marks: 5, extended: true }
+                ] },
+              { number: 6,
+                parts: [
+                  { code: '06.1', prompt: "Describe and explain how three features of the cells in the proximal convoluted tubule allow the rapid reabsorption of glucose into the blood.", marks: 3 },
+                  { code: '06.2', preamble: "Antidiuretic hormone (ADH) binds to V receptors found in cell-surface membranes in two parts of a nephron.", prompt: "Name the two parts of a nephron where V receptors are found.", marks: 1 },
+                  { code: '06.3', preamble: "V receptors only bind with ADH.", prompt: "Suggest and explain why.", marks: 2 },
+                  { code: '06.4', preamble: "A decrease in blood pressure stimulates the release of ADH.", prompt: "Give the location of the receptors that detect a decrease in blood pressure and explain how the release of ADH will affect blood pressure.", marks: 3 }
+                ] },
+              { number: 7,
+                parts: [
+                  { code: '07.1', prompt: "In the following passage the numbered spaces can be filled with biological terms. Write the correct biological term for each number.\n\n\"An ecosystem supports a certain size of population of a species, called the (1) capacity. There are often numerous habitats within an ecosystem. Within a habitat, a species occupies a (2) governed by an adaptation to both (3) and biotic conditions. Populations of different species form a (4).\"", marks: 2 },
+                  { code: '07.2', prompt: "Suggest two reasons for conserving rainforests.", marks: 2 },
+                  { code: '07.3', prompt: "Give three reasons for the low efficiency of energy transfer from secondary consumers to tertiary consumers in an ecosystem.", marks: 3 }
+                ] },
+              { number: 8,
+                parts: [
+                  { code: '08.1', preamble: "The KRAS gene codes for a protein called K-Ras. The protein relays signals from outside a cell to a cell's nucleus, stimulating cell division. An alteration in the KRAS gene produces an oncogene which can cause a tumour to develop.", prompt: "Suggest and explain how an alteration in the KRAS gene can cause a tumour to develop.", marks: 3 },
+                  { code: '08.2', preamble: "Alterations in KRAS can cause colorectal cancer (CRC). Scientists investigated the survival time of three groups of CRC patients with type II diabetes — Group A received no drug; Group B received metformin; Group C received a combination of drugs (including metformin) — comparing them with CRC patients with no history of type II diabetes. Table 1: no history of type II diabetes — mean survival 32.2 months (P = 0.007); Group A — 21.3; Group B — 49.7 (P = 0.022); Group C — 38.3 (P = 0.636).", prompt: "Using the information provided, what can you conclude about the effects of type II diabetes and the different drug treatments on the survival time of CRC patients?", marks: 5, extended: true }
+                ] },
+              { number: 9,
+                scenario: "Short tandem repeats (STRs) are short sequences of DNA, usually 2 to 7 base pairs, repeated a number of times one after another. For example, the STR D5S818 is made up of AGAT repeated 7 to 16 times. STRs are found throughout the whole genome. The repeated sequences are common to all humans, but due to variation in the number of repeats, STRs can be used in genetic fingerprinting.",
+                parts: [
+                  { code: '09.1', prompt: "Describe how STRs could be removed from a sample of DNA.", marks: 2 },
+                  { code: '09.2', preamble: "Genetic fingerprinting using STRs requires amplification of the STRs using the polymerase chain reaction (PCR). The short base sequences either side of a specific STR are known.", prompt: "Explain the importance of knowing these base sequences in PCR.", marks: 2 },
+                  { code: '09.3', preamble: "A single STR molecule consisting of a 12 base pair sequence of AGAT was amplified 50 times using PCR.", prompt: "Calculate the total number of base pairs in all the STR molecules after 50 cycles of PCR. Show your working.", marks: 2 },
+                  { code: '09.4', preamble: "During genetic fingerprinting, the different STRs are separated by gel electrophoresis.", prompt: "Give two features of STRs which enable them to be separated by gel electrophoresis.", marks: 2 }
+                ] },
+              { number: 10,
+                scenario: "Read the following passage.\n\n\"ATP is essential for muscle contraction. The concentration of ATP in skeletal muscle is approximately 5 × 10⁻³ mmol g⁻¹. During maximum exercise, ATP in skeletal muscle is used at a rate of approximately 3.7 mmol kg⁻¹ s⁻¹. If ATP was not resynthesised, maximum exercise would last a short time. Some studies have suggested that taking creatine supplements can improve muscle performance during intense short-term exercise. Eating more carbohydrate, known as 'carbohydrate loading', for a few days before exercise can improve muscle performance when exercising for a long time. During aerobic exercise, calcium ions in muscle cells have several roles. They activate the inclusion of glucose transport proteins, GLUT4, in the cell-surface membrane and the inclusion of fatty acid transport proteins, CD36, in mitochondrial membranes. An increase in muscle activity increases the concentration of carbon dioxide in the blood. This causes an increase in heart rate.\"",
+                parts: [
+                  { code: '10.1', prompt: "ATP is essential for muscle contraction. Describe the roles of ATP in muscle contraction.", marks: 2 },
+                  { code: '10.2', prompt: "Calculate how long maximum exercise would last if ATP was not resynthesised. Give your answer in seconds.", marks: 1 },
+                  { code: '10.3', prompt: "Describe and explain how taking creatine supplements and 'carbohydrate loading' can improve performance of different types of muscle fibres during different types of exercise.", marks: 5, extended: true },
+                  { code: '10.4', prompt: "Suggest and explain how GLUT4 and CD36 transport proteins are beneficial during exercise.", marks: 3 },
+                  { code: '10.5', prompt: "An increase in muscle activity causes an increase in heart rate. Describe and explain how.", marks: 4 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'points', points: [
+                  'Draw a line/origin on the (chromatography) paper using ruler and pencil',
+                  '(Use a pipette/dropper to) add the chlorophyll/solution to the origin/line',
+                  'Add solvent A below the line/origin',
+                  'Remove/stop before the solvent reaches the end (or mark the solvent front)'
+                ], guidance: '4 marks (AO1). Accept all marks on a labelled diagram. Allow filter paper for chromatography paper. Ignore Rf values.' },
+              '01.2': { type: 'points', points: [
+                  'Pigments have different solubilities in the two solvents (e.g. one pigment is soluble in B but not A, so two pigments separate in B that overlapped in A)'
+                ], guidance: '2 marks (AO3). Accept "dissolves"/affinity/polarity/Rf value for solubility. 1 mark only if it refers to solution rather than solvent. Ignore "solvent stronger".' },
+              '02.1': { type: 'points', points: [
+                  'No/fewer calcium ions enter the synaptic knob (via calcium ion channels)',
+                  'No/fewer synaptic vesicles fuse with the presynaptic membrane, so no/less glutamate released',
+                  'No/less glutamate diffuses across the synaptic cleft',
+                  'No/less glutamate attaches to receptors on the postsynaptic membrane',
+                  'No/fewer sodium ions enter the postsynaptic neurone, so no/fewer impulses sent to the brain'
+                ], guidance: '5 marks (AO1/AO2). The "no/less/fewer" idea must appear at least once for full credit (a description of normal transmission without it scores max 4). Accept acetylcholine/neurotransmitter for glutamate; reject "messages"/"signals" for impulses.' },
+              '02.2': { type: 'points', points: [
+                  'Rapidly/directly reaches the spinal cord (or synapses)',
+                  'A pill would be broken down by enzymes/acid OR is too large to be absorbed'
+                ], guidance: '2 marks (AO2). Accept denatured by acid; "not affected by acid/enzymes". Reject named non-protease enzymes. Accept "cross the ileum" for absorption.' },
+              '02.3': { type: 'exact', points: ['4.7 × 10⁻⁵ g', '4.7232 × 10⁻⁵', '5 × 10⁻⁵'],
+                guidance: '2 marks (AO2). 3 ng × 24 h × 8 days × 82 kg = 47 232 ng = 4.7232 × 10⁻⁵ g. Accept any equivalent representation. 1 mark for the right digits with wrong order of magnitude, or for omitting one factor.' },
+              '02.4': { type: 'points', points: [
+                  'Pain is subjective / pain sensitivity, threshold or tolerance varies between people',
+                  'To ensure differences in pain detection were (statistically) significant / for a valid comparison'
+                ], guidance: '2 marks (AO3). Accept "not due to chance" for significant. Do not credit "to determine if results are significant".' },
+              '03.1': { type: 'exact', points: ['12 Tg', '11.95', '11.95 Tg'],
+                guidance: '2 marks (AO2). Accept any numerical representation of the correct answer. 1 mark for 1195 (orders of magnitude ignored) or 1.05/13.' },
+              '03.2': { type: 'points', points: [
+                  'No significant difference in production between untreated and treated with no water shortage (R vs S)',
+                  'Significantly greater production in treated than untreated with water shortage (Q vs P)',
+                  'Significant difference for treated between water shortage and no water shortage (S vs Q)',
+                  'Overlap in SDs → no significant difference; no overlap → significant difference',
+                  'Only one mycorrhizal species studied',
+                  'Only shows results for tomatoes (one crop)',
+                  'Large sample size increases validity/reliability',
+                  'Done in sterile soil',
+                  'Done in a greenhouse / not in the field'
+                ], guidance: '5 max (AO3); max 3 from the evaluation points (5–9). Accept "not due to chance" for significant. Reject bare "results are (not) significant" where there is no indication of greater/reduced/different.' },
+              '03.3': { type: 'points', points: [
+                  'Kill/remove other mycorrhizae/fungi',
+                  'Kill/remove nitrogen-fixing/nitrifying/denitrifying/saprobiotic bacteria',
+                  'Kill/remove pathogens',
+                  'Kill/remove pests',
+                  'Kill/remove competitors',
+                  'Kill/remove seeds/spores',
+                  'So it is a controlled variable'
+                ], guidance: '2 max (AO2). Accept saprophytes/saprobionts; "removes disease-causing microorganisms" (just "harmful bacteria" is not enough); named pests; weeds/other plants for seeds.' },
+              '03.4': { type: 'points', points: [
+                  'So mycorrhizae/water is the only variable / fertiliser is a controlled variable',
+                  'Fertiliser affects production/growth/mass',
+                  'Would affect water potential of the soil',
+                  'Does not affect pH of the soil',
+                  'To provide usual soil/farming conditions'
+                ], guidance: '2 max (AO2). "For comparison" or "same amount of fertiliser" alone is not enough for MP1. Ignore leaching and eutrophication.' },
+              '04.1': { type: 'exact', points: ['Epistasis', 'Epistatic'],
+                guidance: '1 mark (AO2). Ignore words before/after. Accept phonetic spellings.' },
+              '04.2': { type: 'exact', points: ['Tortoiseshell female', 'Female tortoiseshell', 'Ginger and black female'],
+                guidance: '1 mark (AO2).' },
+              '04.3': { type: 'points', points: [
+                  'Gametes: XᴳF, Xᴳf, Xᴮf and Yf',
+                  'Offspring genotypes: XᴳXᴮFf, XᴳXᴮff, XᴳYFf and XᴳYff',
+                  'Phenotypes: white female, tortoiseshell female, white male, ginger male — ratio 1 : 1 : 1 : 1'
+                ], guidance: '3 marks (AO2). Allow 1 mark for correct dihybrid offspring genotypes from incorrect parental gametes. Accept alleles in any order; accept Punnett square; accept equivalent ratios (e.g. 4:4:4:4); accept "ginger and black" for tortoiseshell and "no pigment" for white.' },
+              '04.4': { type: 'exact', points: ['0.8', '80%'],
+                guidance: '2 marks (AO2). White = F_ = 0.36, so q² (ff) = 0.64 and q (f) = 0.8. 1 mark for q² = 0.64 (or 64%).' },
+              '05.1': { type: 'points', points: [
+                  'Colour vision involves cones',
+                  'Each type of photoreceptor has a different pigment / absorbs (is stimulated by) a particular range of wavelengths',
+                  'Greater absorption by "red sensitive" than "green sensitive" cones (→ more impulses to brain along the optic nerve)'
+                ], guidance: '3 marks (AO2). Reject "red/green cones" more than once. Accept approximate percentage values; action potentials for impulses; reject "signals"/"messages".' },
+              '05.2': { type: 'exact', points: ['Several photoreceptors connecting to one neurone and spatial summation'],
+                guidance: '1 mark (AO1). Box 3.' },
+              '05.3': { type: 'points', points: [
+                  'Geographical isolation/separation due to elevation/altitude',
+                  'Allopatric speciation due to isolation',
+                  'Different selection pressures / different environments (abiotic conditions)',
+                  'However some overlap in distribution / both plants found in the same area',
+                  'So possibly sympatric speciation (only if overlap credited)',
+                  'Variation due to mutation(s)',
+                  'Reproductive isolation / separate gene pools due to different pollinators/distributions/altitudes',
+                  'Change in (or different) allele frequency in each population',
+                  'Different species can no longer interbreed to produce fertile offspring'
+                ], guidance: '5 max (AO3). Accept selection due to flower colour. Reject mutation in wrong context ("mutate to adapt"). Accept "no gene flow" for separate gene pools.' },
+              '06.1': { type: 'points', points: [
+                  'Microvilli (or folded membrane) provide a large surface area',
+                  'Many channel/carrier proteins for facilitated diffusion',
+                  'Many carrier proteins for active transport',
+                  'Many channel/carrier proteins for co-transport',
+                  'Many mitochondria produce ATP (for active transport)',
+                  'Many ribosomes to produce carrier/channel proteins'
+                ], guidance: '3 max (AO1); max 2 from points 2–4. Penalise omission of "many" only once. Accept sodium–potassium pumps for carrier proteins; co-transport protein/symport; abundant rough ER for many ribosomes.' },
+              '06.2': { type: 'exact', points: ['Collecting duct and distal (convoluted) tubule'],
+                guidance: '1 mark (AO1). Do not accept "DCT" for distal convoluted tubule.' },
+              '06.3': { type: 'points', points: [
+                  'The receptor has a (specific) tertiary structure/shape',
+                  'The structures (of ADH and receptor) are complementary'
+                ], guidance: '2 marks (AO2). Accept in context of ADH or receptor; ignore "3D". Reject antigen/antibody, and reject active site/enzyme/substrate/induced fit (once).' },
+              '06.4': { type: 'points', points: [
+                  'Location: aorta OR carotid artery/sinus',
+                  '(ADH) increases reabsorption of water',
+                  'Increases blood volume so pressure increases / returns to normal'
+                ], guidance: '3 marks (AO1/AO2). Ignore "arteries" but reject a named incorrect artery. Reject if other substances (glucose, ions) are said to be absorbed.' },
+              '07.1': { type: 'exact', points: ['(1) carrying  (2) niche  (3) abiotic  (4) community'],
+                guidance: '2 marks (AO1). All 4 correct = 2 marks; 2–3 correct = 1 mark; 1 correct = 0. For (3) accept physical/chemical/physicochemical/non-living.' },
+              '07.2': { type: 'points', points: [
+                  'Conserve/protect species/organisms / for biodiversity',
+                  'Conserve/protect (or provide many) habitats/niches',
+                  'Reduces climate change (reduces global warming / takes up CO₂ / provides oxygen)',
+                  'Source of medicines/drugs/wood',
+                  'Reduces erosion/eutrophication',
+                  'For tourism'
+                ], guidance: '2 max (AO2). Accept conserving land/ways of life for indigenous communities.' },
+              '07.3': { type: 'points', points: [
+                  'Heat lost from respiration',
+                  'Food not digested (faeces) / not all of the organism eaten',
+                  'Losses through excretion (urine/urea)'
+                ], guidance: '3 marks (AO1).' },
+              '08.1': { type: 'points', points: [
+                  'Mutation / change in base sequence of KRAS gene',
+                  'Change in (or more) signalling protein (K-Ras) produced',
+                  'Results in rapid/uncontrollable cell division (cannot be regulated)'
+                ], guidance: '3 marks (AO2). Accept named mutation (substitution) and mutation in promoter. Reject "no protein"/non-functional protein for MP2. Reject meiosis for cell division (accept mitosis); ignore growth.' },
+              '08.2': { type: 'points', points: [
+                  'A (untreated type II diabetes) has the lowest survival / lowers survival vs control',
+                  'B (metformin) increases survival the most / has the highest survival',
+                  'C (combined drugs) increases survival',
+                  'Groups A and B have a significant difference (vs control)',
+                  'Group C has no significant difference (vs control)',
+                  'In C, the other drugs reduced the effect of metformin / metformin alone is more effective than the combination'
+                ], guidance: '5 max (AO3). Accept descriptions of each group. Accept "not due to chance" for significant; reject bare "results are (not) significant". Ignore sample size/single-study comments.' },
+              '09.1': { type: 'points', points: [
+                  'Use restriction endonucleases/enzymes',
+                  'Cut DNA at specific base sequences / recognition (restriction) sites'
+                ], guidance: '2 marks (AO2). Accept "at palindromic sequences".' },
+              '09.2': { type: 'points', points: [
+                  'Provide the sequences for the primers (to bind/anneal)',
+                  'Give a complementary base sequence / a starting sequence for DNA (Taq) polymerase, or stop the original strands re-joining'
+                ], guidance: '2 marks (AO2).' },
+              '09.3': { type: 'exact', points: ['1.35 × 10¹⁶', '1.36 × 10¹⁶', '1.4 × 10¹⁶'],
+                guidance: '2 marks (AO2). 12 bp × 2⁵⁰ = 1.35 × 10¹⁶. Ignore digits after 1.35. 1 mark for evidence of 2⁵⁰ (= 1.13 × 10¹⁵).' },
+              '09.4': { type: 'points', points: [
+                  'Differ in number of nucleotides/base pairs (length/mass)',
+                  'Carry a (negative) charge'
+                ], guidance: '2 marks (AO2). Accept weight for mass; "polarity"; reject positive charge. Ignore "short"/density/size on their own.' },
+              '10.1': { type: 'points', points: [
+                  'To break the actinomyosin (cross-)bridges (detach myosin from actin)',
+                  'To move/bend the myosin head (move actin filaments inwards)',
+                  'For active transport of calcium ions (into the sarcoplasmic reticulum)'
+                ], guidance: '2 max (AO1). Accept "to form actinomyosin"; powerstroke/pivot for movement. Reject "active site". Ignore "sliding".' },
+              '10.2': { type: 'exact', points: ['1.35 s', '1.35', '1.4'],
+                guidance: '1 mark (AO2). 5 × 10⁻³ mmol g⁻¹ = 5 mmol kg⁻¹; 5 ÷ 3.7 = 1.35 s. Accept numbers after 1.35.' },
+              '10.3': { type: 'points', points: [
+                  'Fast (twitch) fibres used during short-term/intense exercise',
+                  'Slow (twitch) fibres used during longer-term exercise',
+                  'Creatine used to form phosphocreatine',
+                  'Phosphocreatine combines with ADP to form ATP',
+                  'Carbohydrate/glucose stored as glycogen (glycogenesis)',
+                  'Glycogen hydrolysed to glucose (glycogenolysis)',
+                  'Glucose used for respiration'
+                ], guidance: '5 max (AO2); max 3 from points 3–7. Accept fast/slow twitch fibres; glycolysis for respiration.' },
+              '10.4': { type: 'points', points: [
+                  '(More) glucose enters muscle cells',
+                  'Glucose/fatty acids enter by facilitated diffusion (or active/co-transport)',
+                  'Fatty acids used in the Krebs cycle',
+                  'Respiration provides (more) ATP'
+                ], guidance: '3 max (AO2); max 2 if only in the context of glucose or only fatty acids. Reject "glucose enters mitochondria"; ignore "more glucose leaves liver cells".' },
+              '10.5': { type: 'points', points: [
+                  'Increase in CO₂ detected by chemoreceptors',
+                  'Send (more) impulses to the cardiac centre / medulla',
+                  'More impulses along the sympathetic pathway (or fewer along the parasympathetic/vagus)',
+                  '(Impulses) to the SAN'
+                ], guidance: '4 marks (AO1/AO2). Accept increase in acidity/H⁺ or decrease in pH for increase in CO₂. Reject "an/one impulse" and "signals"/"messages" (once). Accept action potentials for impulses.' }
+            } },
+          { id: 'bio-aqa-7402-2023-p3', year: 'June 2023', paperName: 'Paper 3', paperCode: '7402/3', totalMarks: 78, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74023-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74023-MS-JUN23.PDF',
+            qbqNote: 'Section A (Questions 1–6, 53 marks) is wired up question-by-question with the official AQA mark scheme. Section B is the 25-mark synoptic essay — both title options (07.1 and 07.2) are included; you answer ONE, and it is graded against AQA\'s levels-of-response grid. Figures, tables and the link-reaction/graph parts are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Scientists investigated the stimulation of a Pacinian corpuscle in the skin of a fingertip. They applied two different pressures to the fingertip and recorded the changes in membrane potential of the Pacinian corpuscle's sensory neurone. Figure 1 shows their results.\n\n(See Figure 1 in the question paper PDF.)",
+                parts: [
+                  { code: '01.1', prompt: "Describe how stimulation of a Pacinian corpuscle produces a generator potential.", marks: 3 },
+                  { code: '01.2', prompt: "Use Figure 1 to describe what is meant by the all-or-nothing principle.", marks: 2 },
+                  { code: '01.3', preamble: "On Figure 1, from 0.6 ms to 4.0 ms, no new generator potential could be produced.", prompt: "What is this time period called?", marks: 1 }
+                ] },
+              { number: 2,
+                scenario: "A student investigated the effect of different sugars on the rate of respiration in yeast. Yeast normally respires glucose. Figure 2 shows the method she used for her first experiment, and Figure 3 shows the result she obtained for yeast in glucose solution.\n\n(See Figures 2–4 in the question paper PDF.)",
+                parts: [
+                  { code: '02.1', prompt: "Other than those stated, suggest two variables the student needed to keep constant in her investigation.", marks: 1 },
+                  { code: '02.2', prompt: "Use Figure 2 and Figure 3 to calculate the rate of carbon dioxide production in mm s⁻¹ for yeast in glucose solution. Give your answer in standard form and to 2 significant figures. Show your working.", marks: 2 },
+                  { code: '02.3', preamble: "The student repeated the experiment using yeast in maltose solution. She found the rate of carbon dioxide production was slower than with yeast in glucose solution.", prompt: "Suggest why.", marks: 2 },
+                  { code: '02.4', preamble: "A second student used a different method: he set up a tube with yeast in glucose solution and added bromothymol blue (which changes from blue to yellow when carbon dioxide is produced), then timed how long it took for the solution to change from blue to yellow.", prompt: "Suggest why the method the second student used would be less accurate than the method the first student used, and how the accuracy of the second student's method could be improved.", marks: 2 },
+                  { code: '02.5', prompt: "Complete the boxes A to D in Figure 4 to show the link reaction.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "A student investigated the effect of two antibiotics on the growth of the bacterium Micrococcus luteus. He transferred 9 cm³ of a liquid culture of M. luteus into each of three bottles, added chloramphenicol to the first, novobiocin to the second, and no antibiotic to the third. After 24 hours he diluted each bottle by 1 in 100 000 (10⁻⁵), then transferred 0.25 cm³ samples onto each of 3 separate agar plates (9 plates total) and incubated them for 48 hours. Table 1 shows the colony counts; for novobiocin the three plates gave 238, 263 and 261.\n\n(See Table 1 in the question paper PDF.)",
+                parts: [
+                  { code: '03.1', prompt: "Below are four statements about the structure of prokaryotic cells.\n1. No prokaryotic cell has DNA that is associated with proteins.\n2. No prokaryotic cell has membrane-bound organelles.\n3. All prokaryotic cells have one or more flagella.\n4. All prokaryotic cells have smaller ribosomes than eukaryotic cells.\n\nWhich statements are correct? Tick one box.\n• A: statements 1, 2 and 3\n• B: statements 1, 2 and 4\n• C: statements 2, 3 and 4\n• D: statements 1, 2, 3 and 4", marks: 1 },
+                  { code: '03.2', prompt: "Calculate the mean number of bacteria in the undiluted bottle of liquid culture containing novobiocin. Give your answer in standard form. Show your working.", marks: 2 },
+                  { code: '03.3', prompt: "Starting with a single bacterium, calculate how many generations it would take to produce at least the number of bacteria you calculated in 03.2. Assume no bacteria die. (You could use the ln or log button on your calculator.)", marks: 1 },
+                  { code: '03.4', preamble: "M. luteus is not resistant to chloramphenicol.", prompt: "Suggest two reasons why the bacteria were able to grow in the culture containing chloramphenicol.", marks: 2 }
+                ] },
+              { number: 4,
+                scenario: "Following a body injury, bone marrow stem cells move to the site of damage and differentiate. Figure 5 shows this: the gene c-KIT codes for stem cell growth factor receptor protein (SCFR) on the stem cell surface; stem cell factor (SCF) binds to SCFR and activates tyrosine kinase (TK); TK phosphorylates cell-signalling molecules to begin differentiation; after the cell has differentiated, SCFR is enclosed within a vesicle and destroyed by a lysosome.\n\n(See Figures 5 and 6 in the question paper PDF.)",
+                parts: [
+                  { code: '04.1', prompt: "Suggest how SCFR is destroyed by a lysosome.", marks: 2 },
+                  { code: '04.2', preamble: "After a heart attack, cardiomyocytes (cardiac muscle cells) die and become infarcted tissue, which cannot contract. Stem cells in bone marrow cannot move to infarcted tissue and differentiate into cardiomyocytes. Scientists used rats in three groups: a control group (no transplant); a c-KIT+ group (transplant of bone marrow stem cells with a functioning c-KIT gene); and a c-KIT− group (transplant with no functioning c-KIT gene). After 9 days they measured mean ventricular blood pressure (Figure 6). All differences between groups were statistically significant.", prompt: "Using all of the information, suggest explanations for the results for the Control group and the c-KIT− group shown in Figure 6.", marks: 4, extended: true },
+                  { code: '04.3', preamble: "Nine days after transplantation, the c-KIT+ group showed that 68% of infarcted tissue was made up of new cardiomyocytes; the control group had no new cardiomyocytes.", prompt: "Assuming that mean ventricular blood pressure is directly proportional to the number of cardiomyocytes, calculate the percentage of infarcted tissue that was made up of new cardiomyocytes in the c-KIT− group.", marks: 2 },
+                  { code: '04.4', preamble: "All new cardiomyocytes produced Connexin-43 (a channel protein that allows electrical impulses to pass between cardiomyocytes) and GATA-4 (a transcriptional factor that stimulates the expression of genes for actin and myosin).", prompt: "Suggest how production of Connexin-43 and GATA-4 could give the result seen in the c-KIT+ group in Figure 6. Do not include details of transcription or translation in your answer.", marks: 2 }
+                ] },
+              { number: 5,
+                scenario: "Scientists investigated the effect that the release of heated water into a river from a power station had on the biodiversity of a local fish community over 29 years. They measured species richness and the number of fish of each species at the same site in October every year, and used this to calculate an index of diversity (d). Figures 7 and 8 show their results.\n\n(See Figures 7 and 8 in the question paper PDF.)",
+                parts: [
+                  { code: '05.1', preamble: "The index of diversity is d = N(N−1) / Σn(n−1), where N = total number of fish of all species and n = number of fish of each species. In some years N = 624 and Σn(n−1) = 64 792.", prompt: "Which years had these values? Use Figure 8 and the formula to work out your answer.", marks: 1 },
+                  { code: '05.2', preamble: "In 1997, the scientists recorded the highest species richness, but the lowest value of d over the 29 years.", prompt: "Describe and explain how these results for 1997 were possible.", marks: 2 },
+                  { code: '05.3', preamble: "A journalist studied Figures 7 and 8 and concluded that releasing heated water from a power station has no effect on local fish communities.", prompt: "Use all the information to suggest reasons why the journalist's conclusion might not be valid.", marks: 4, extended: true }
+                ] },
+              { number: 6,
+                scenario: "An autoimmune disease causes the immune system to attack healthy body tissues. Scientists investigated the immune responses of healthy mice and mice with autoimmune disease. The chemical OXA causes an immune response and can make skin swell; mice had olive oil applied to their left ear and OXA in olive oil applied to their right ear. The cellular response was measured as the mean increase in ear thickness 24 h after exposure; the humoral response as the mean concentration of anti-OXA antibody in blood 14 days after exposure. Table 2 shows the results with ± 2 standard deviations in brackets.\n\n(See Tables 2 and 3 in the question paper PDF.)",
+                parts: [
+                  { code: '06.1', prompt: "Give two types of cell that can stimulate an immune response.", marks: 2 },
+                  { code: '06.2', prompt: "Suggest and explain one reason why olive oil was applied to the left ear of the mice.", marks: 1 },
+                  { code: '06.3', kind: 'diagram', prompt: "Plot a suitable graph for mean increase in ear thickness for each group of mice in Table 2. Include the data for ± 2 standard deviations on your graph.", marks: 3 },
+                  { code: '06.4', prompt: "What can you conclude about the effects of autoimmune disease on the cellular response and the humoral response in male and female mice? Use the data to justify your conclusions.", marks: 3 },
+                  { code: '06.5', preamble: "Some studies have shown that in humans, oestrogen has the opposite effect on two different autoimmune diseases: it accelerates the progression of systemic lupus erythematosus (SLE) but prevents the progression of rheumatoid arthritis (RA). Table 3 shows the effect of oestrogen on the immune response in healthy mice and mice with autoimmune disease (in autoimmune mice: increase in humoral response, decrease in cellular response). A student concluded: (1) in humans, SLE is caused by an overproduction of antibodies; (2) in humans, RA is caused by an overproduction of cytotoxic T cells (TC cells).", prompt: "Evaluate the student's conclusions.", marks: 4, extended: true },
+                  { code: '06.6', preamble: "In mice, one type of autoimmune disease is inherited as a dominant allele.", prompt: "Would the Hardy–Weinberg principle hold true for a population of mice, some of which had this autoimmune disease? Explain your answer.", marks: 2 }
+                ] },
+              { number: 7,
+                scenario: "Section B — Answer ONE question. Write an essay on one of the topics below. Each is marked out of 25 using AQA's levels-of-response grid (a fully synoptic answer links at least four different topics from the specification to the theme).",
+                parts: [
+                  { code: '07.1', prompt: "Either: Write an essay on 'The importance of interactions between organisms and their environment.'", marks: 25, extended: true },
+                  { code: '07.2', prompt: "Or: Write an essay on 'The importance of membranes in the functioning of cells.'", marks: 25, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'points', points: [
+                  'There are stretch-mediated sodium ion channels in the membrane',
+                  'Increased pressure deforms/changes the membrane/lamellae (or the sodium ion channels)',
+                  'Sodium ion channels open',
+                  'Sodium ions diffuse in (down a concentration gradient)',
+                  'Depolarisation (leading to the generator potential)'
+                ], guidance: '3 max (AO1). Max 2 if only "sodium" (not "sodium ions"). Accept "inside becomes positive" for depolarisation.' },
+              '01.2': { type: 'points', points: [
+                  'An action potential is only generated when the threshold is reached (not produced unless threshold reached)',
+                  'When high pressure was applied the threshold was reached / high pressure is an above-threshold stimulus (converse for low pressure)'
+                ], guidance: '2 marks (AO1/AO3). Ignore numbers linked to threshold. Accept impulse for action potential; accept references to "the first peak" for high pressure.' },
+              '01.3': { type: 'exact', points: ['(The) refractory period', 'refractory period'],
+                guidance: '1 mark (AO1). Ignore "absolute"/"relative". Reject "refraction period".' },
+              '02.1': { type: 'points', points: [
+                  'Any two of: concentration/mass of yeast; concentration/mass of glucose/sugar solution; concentration of oxygen; volume of yeast; volume of glucose/sugar solution; pH; species/type of yeast; size/volume of the test tubes'
+                ], guidance: '1 mark (AO3) for two correct. Ignore "number of yeast cells"; ignore "amount" for volume/concentration.' },
+              '02.2': { type: 'exact', points: ['2.5 × 10⁻² mm s⁻¹', '2.5 × 10⁻²'],
+                guidance: '2 marks (AO2). 37 mm ÷ (25 × 60 s) = 2.5 × 10⁻² mm s⁻¹. 1 mark for the right value not in standard form / not to 2 sf (e.g. 0.0247), or for evidence of 37 ÷ 1500.' },
+              '02.3': { type: 'points', points: [
+                  'Maltose is a disaccharide (made of two glucose/monosaccharides)',
+                  'Time taken to be hydrolysed into glucose / to break the glycosidic bond'
+                ], guidance: '2 marks (AO2). Accept monosaccharides for glucose.' },
+              '02.4': { type: 'points', points: [
+                  'Less accurate because the colour/endpoint is subjective',
+                  'Improve by using a colour standard of the yellow as a reference for the endpoint (or a colorimeter/absorbance/transmission reading)'
+                ], guidance: '2 marks (AO3). Accept descriptions of "subjective". Accept "use a colorimeter to time how long to reach a certain absorbance/transmission". Ignore references to coloured filters.' },
+              '02.5': { type: 'exact', points: ['A–D: pyruvate, CO₂, reduced NAD, acetyl coenzyme A (acetyl CoA)'],
+                guidance: '2 marks (AO1): all 4 correct = 2; any 2–3 correct = 1. Accept pyruvic acid for pyruvate; NADH/NADH+H⁺/NADH₂ for reduced NAD (reject reduced NADP/NADPH).' },
+              '03.1': { type: 'exact', points: ['B — statements 1, 2 and 4'],
+                guidance: '1 mark (AO1). Second box (B).' },
+              '03.2': { type: 'exact', points: ['9.144 × 10⁸', '9.14 × 10⁸'],
+                guidance: '2 marks (AO2). Mean of 238/263/261 = 254 colonies; × 10⁵ (dilution) ÷ 0.25 cm³ × 9 cm³ = 9.144 × 10⁸. 1 mark for the answer not in standard form (914 400 000), or for 1.016 × 10⁸ (failed ×9) / 2.286 × 10⁸ (failed to account for 0.25 cm³).' },
+              '03.3': { type: 'exact', points: ['30', '30 generations'],
+                guidance: '1 mark (AO2). 2ˣ ≥ 9.144 × 10⁸ → x = log₂(9.144 × 10⁸) = 29.77, so 30 generations. Accept the correct number of generations consequential on an incorrect 03.2.' },
+              '03.4': { type: 'points', points: [
+                  'The chloramphenicol concentration was too low/dilute to kill all (too many bacteria for it to kill)',
+                  'Contamination with other/resistant bacteria',
+                  'Mutation occurred (conferring resistance)',
+                  'Antibiotic not evenly mixed in the liquid culture'
+                ], guidance: '2 max (AO3).' },
+              '04.1': { type: 'points', points: [
+                  'The vesicle fuses/binds with a lysosome',
+                  'Lysozymes / hydrolytic enzymes (proteases) hydrolyse/digest SCFR'
+                ], guidance: '2 marks (AO2). Accept "protease hydrolyses/digests SCFR".' },
+              '04.2': { type: 'points', points: [
+                  'Control: cardiomyocytes have not been replaced / infarcted tissue is not repaired (contraction weak as few cardiomyocytes alive)',
+                  'Control: pressure is not zero because not all cardiomyocytes died / became infarcted tissue',
+                  'c-KIT−: pressure is higher than control, so some stem cells differentiated / some cardiomyocytes replaced',
+                  'c-KIT−: so c-KIT is not the only gene responsible for differentiation (SCF can bind to something other than SCFR, or something else activates TK)',
+                  'c-KIT−: increase is less than the c-KIT+ group because they could not make SCFR / could not activate TK'
+                ], guidance: '4 marks (AO3). Reject "some stem cells from bone marrow moved to the infarcted tissue".' },
+              '04.3': { type: 'exact', points: ['34%', '34'],
+                guidance: '2 marks (AO2). Subtract the control reading before scaling: (c-KIT− rise ÷ c-KIT+ rise) × 68% = 34%. 1 mark for evidence of 2 and 1, or 42.8/43% (did not subtract the control).' },
+              '04.4': { type: 'points', points: [
+                  'Connexin-43 allows impulses (or diffusion/movement of ions) to pass to the apex/bottom of the ventricles, through Purkyne tissue / the bundle of His',
+                  'GATA-4 → more actinomyosin (cross-)bridges / more binding sites on actin / more myosin filaments/heads (so stronger contraction)'
+                ], guidance: '2 marks (AO3). Ignore references to signals/information/messages.' },
+              '05.1': { type: 'exact', points: ['1982 and 2003'],
+                guidance: '1 mark (AO3). Reject if any other years are given.' },
+              '05.2': { type: 'points', points: [
+                  'There were many (48) different species / the highest number of species',
+                  'However, one or a few species were present in very large numbers (most species present in small numbers)'
+                ], guidance: '2 marks (AO2). Accept "dominated by one/a few species". Ignore "each/all species present in small numbers".' },
+              '05.3': { type: 'points', points: [
+                  'Species richness / d are lower after 29 years',
+                  'Data is only for one community/site / might not be representative of all fish communities',
+                  'Measurements only done in October / community might differ at other times of year',
+                  'Volume/temperature/timing/frequency of the heated water released might have varied / is not known',
+                  'Fluctuations suggest another factor had an effect (e.g. weather, oxygen, food, predators, fishing)',
+                  'Species richness / d are not the only measures of "effect"',
+                  'No data before the power station opened / before heated water was released / no control river to compare with'
+                ], guidance: '4 max (AO3).' },
+              '06.1': { type: 'points', points: [
+                  'Pathogens (or cells from an organism of a different species)',
+                  'Cells from other organisms of the same species',
+                  'Abnormal/cancer body cells (or cells infected with a virus)',
+                  'Antigen-presenting cells'
+                ], guidance: '2 max (AO1). Reject toxins; ignore viruses; ignore B cells/T cells.' },
+              '06.2': { type: 'points', points: [
+                  'As a control to show that it is OXA (and not the olive oil) affecting the immune response — a reference/starting point to compare with after OXA exposure'
+                ], guidance: '1 mark (AO3). Reject "control/controlled variable".' },
+              '06.3': { type: 'points', points: [
+                  'Axes the correct way round, with a linear scale and units (bar/dual-bar chart, equal-width non-touching bars; y-axis covers at least half the grid)',
+                  'Mean points/bars plotted correctly',
+                  'SD bars correctly plotted above and below the top of each bar'
+                ], guidance: '3 marks (AO2). Reject if a line graph is drawn. Allow plots to the nearest half cm. Accept an interruption on the y-axis. Best assessed against your sketch in the QP PDF.' },
+              '06.4': { type: 'points', points: [
+                  'Cellular: female-to-female no significant difference (SD overlap)',
+                  'Cellular: male-to-male no significant difference (SD overlap)',
+                  'Cellular: significant increase in autoimmune male vs autoimmune female (SD do not overlap)',
+                  'Humoral: male-to-male no significant difference (SD overlap)',
+                  'Humoral: female-to-female significant increase (SD do not overlap)',
+                  'Humoral: significant increase in autoimmune female vs autoimmune male (SD do not overlap)'
+                ], guidance: '3 max (AO3); max 2 if only cellular OR only humoral. If no other marks, accept 1 principle mark for "if SD overlap there is no significant difference" (or converse). Accept "error bars" for SD; "due to chance" for no significant effect.' },
+              '06.5': { type: 'points', points: [
+                  'Supporting: oestrogen increases the humoral response that produces antibody',
+                  'Supporting: more antibodies could increase progression of SLE',
+                  'Supporting: oestrogen decreases the cellular response that produces TC cells',
+                  'Supporting: fewer TC cells could decrease/slow progression of RA',
+                  'Supporting: mice and humans are both mammals, so likely similar effects',
+                  'Against: increase in response might mean quicker production of antibody (not more) / decrease might mean slower production of TC cells (not fewer)',
+                  'Against: decrease in cellular response could mean fewer antigen-presenting cells (not just TC cells)',
+                  'Against: investigation done in mice, not humans',
+                  'Against: Table 3 does not state which autoimmune disease the mice had / mice might not suffer from SLE/RA'
+                ], guidance: '4 max (AO3); max 3 for reasons supporting or against.' },
+              '06.6': { type: 'points', points: [
+                  'No: mice with autoimmune disease are unlikely to reproduce/survive (selected against), so will not pass on the allele / allele frequency will change',
+                  'Yes: as long as the disease did not affect the mice\'s ability to reproduce/survive, the allele frequency would remain constant'
+                ], guidance: '2 max (AO2). Award as MP1+MP2 (No) or MP3+MP4 (Yes); a bare "No"/"Yes" gains no mark.' },
+              '07.1': { type: 'levels',
+                levels: [
+                  { range: [21, 25], descriptor: 'Top band (21–25)', criteria: 'Holistic, fully integrated answer making clear links between several (at least four) different topics and the theme of the question. Biology is detailed and comprehensive A-level content, uses appropriate terminology, very well written and always clearly explained. No significant errors or irrelevant material. For top marks, shows evidence of reading beyond the specification.' },
+                  { range: [16, 20], descriptor: 'Second band (16–20)', criteria: 'Links several topics to the main theme to form a series of interrelated points which are clearly explained. Biology is fundamentally correct A-level content with some detailed points, though some may be less well developed; appropriate use of terminology. Perhaps one significant error and/or one irrelevant topic.' },
+                  { range: [11, 15], descriptor: 'Third band (11–15)', criteria: 'Response mostly deals with suitable topics but they are not interrelated and links are not made to the theme. Biology is usually correct A-level content though it lacks detail; usually clearly explained with appropriate terminology. Some significant errors and/or more than one irrelevant topic.' },
+                  { range: [6, 10], descriptor: 'Fourth band (6–10)', criteria: 'Response predominantly deals with only one or two topics that relate to the question. Biology shows some superficial A-level content that may be poorly explained, lacking detail, or show limited use of terminology. May contain a number of significant errors and/or irrelevant topics.' },
+                  { range: [1, 5], descriptor: 'Fifth band (1–5)', criteria: 'Response only indirectly addresses the theme and merely presents a series of biological facts that are usually descriptive or poorly explained and at times factually incorrect. Content and terminology generally below A-level. May contain a large number of errors and/or irrelevant topics.' }
+                ],
+                indicative: {
+                  'Relevant specification topics': 'Carbohydrates (glycogen/starch/cellulose structure–function); enzymes & inhibitors; water; transport across cell membranes; cell recognition & the immune system; surface area to volume ratio; gas exchange; digestion & absorption; mass transport in animals and in plants; genetic diversity & adaptation; species & taxonomy (courtship); biodiversity within a community; photosynthesis; energy & ecosystems; nutrient cycles; survival & response; receptors; control of heart rate; nerve impulses; synaptic transmission (effects of drugs); homeostasis & negative feedback; control of blood glucose and of blood water potential; inheritance; evolution & speciation; populations in ecosystems; mutation altering proteins; regulation of transcription & translation; gene expression & cancer.'
+                },
+                guidance: '25 marks (13 AO1, 12 AO2). Mark by best fit on overall quality, then place within the band using its variability. To reach the highest bands the essay must link at least four different specification topics to the theme. Credit valid material beyond the specification if it is at A-level standard and relevant to the title.' },
+              '07.2': { type: 'levels',
+                levels: [
+                  { range: [21, 25], descriptor: 'Top band (21–25)', criteria: 'Holistic, fully integrated answer making clear links between several (at least four) different topics and the theme of the question. Biology is detailed and comprehensive A-level content, uses appropriate terminology, very well written and always clearly explained. No significant errors or irrelevant material. For top marks, shows evidence of reading beyond the specification.' },
+                  { range: [16, 20], descriptor: 'Second band (16–20)', criteria: 'Links several topics to the main theme to form a series of interrelated points which are clearly explained. Biology is fundamentally correct A-level content with some detailed points, though some may be less well developed; appropriate use of terminology. Perhaps one significant error and/or one irrelevant topic.' },
+                  { range: [11, 15], descriptor: 'Third band (11–15)', criteria: 'Response mostly deals with suitable topics but they are not interrelated and links are not made to the theme. Biology is usually correct A-level content though it lacks detail; usually clearly explained with appropriate terminology. Some significant errors and/or more than one irrelevant topic.' },
+                  { range: [6, 10], descriptor: 'Fourth band (6–10)', criteria: 'Response predominantly deals with only one or two topics that relate to the question. Biology shows some superficial A-level content that may be poorly explained, lacking detail, or show limited use of terminology. May contain a number of significant errors and/or irrelevant topics.' },
+                  { range: [1, 5], descriptor: 'Fifth band (1–5)', criteria: 'Response only indirectly addresses the theme and merely presents a series of biological facts that are usually descriptive or poorly explained and at times factually incorrect. Content and terminology generally below A-level. May contain a large number of errors and/or irrelevant topics.' }
+                ],
+                indicative: {
+                  'Relevant specification topics': 'Lipids (phospholipids); structure of eukaryotic cells; structure of prokaryotic cells; all cells arise from other cells (nuclear membrane breakdown in mitosis); transport across cell membranes; cell recognition & the immune system; surface area to volume ratio; gas exchange; digestion & absorption; DNA & protein synthesis; photosynthesis; respiration; receptors; nerve impulses; synaptic transmission; skeletal muscle contraction; control of blood glucose and of blood water potential; regulation of transcription & translation.'
+                },
+                guidance: '25 marks (13 AO1, 12 AO2). Mark by best fit on overall quality, then place within the band using its variability. To reach the highest bands the essay must link at least four different specification topics to the theme. Credit valid material beyond the specification if it is at A-level standard and relevant to the title.' }
+            } },
+          { id: 'bio-aqa-7402-2022-p2', year: 'June 2022', paperName: 'Paper 2', paperCode: '7402/2', totalMarks: 91, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74022-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74022-MS-JUN22.PDF',
+            qbqNote: 'All 10 questions (91 marks) are wired up question-by-question with the official AQA mark scheme. Figures (the respirometer in Figure 1, the lemur distribution map, family tree and Figure 4) are in the question paper PDF — open it alongside for any figure or table a question refers to.',
+            questions: [
+              { number: 1,
+                parts: [
+                  { code: '01.1', prompt: "In the following passage the numbered spaces can be filled with biological terms. Write the correct biological term for each number.\n\n\"During photosynthesis, plants produce (1) compounds which contain carbon, such as carbohydrates, lipids and proteins. Most of the sugars synthesised by plants are used by the plant in (2). The rest are used to make other groups of biological molecules. These biological molecules form the biomass of the plants. Biomass can be measured in terms of mass of (3) per given area per given time. The chemical energy store in dry biomass can be estimated using (4).\"", marks: 2 },
+                  { code: '01.2', prompt: "Describe the light-independent reaction of photosynthesis.", marks: 6, extended: true }
+                ] },
+              { number: 2,
+                scenario: "In the UK, some female cattle are only used for breeding. This female breeding herd has dairy cows and beef cows. Table 1: December 2013 — total 3.35 million (54% dairy, 46% beef); December 2017 — total 3.45 million (55% dairy, 45% beef).",
+                parts: [
+                  { code: '02.1', prompt: "Put a tick in the box next to the equation that shows how the net production of consumers, N, can be calculated, where I = chemical energy in ingested food, F = energy lost in faeces and urine, R = respiratory losses.\n\n• N = (I − F) + R\n• N = I − (F + R)\n• N = I + (F + R)\n• N = I − (F − R)", marks: 1 },
+                  { code: '02.2', preamble: "In December 2017, the female breeding herd was 48% of all female cattle in the UK.", prompt: "Use Table 1 to calculate the percentage of all female cattle that were beef cows in the UK in December 2017.", marks: 1 },
+                  { code: '02.3', prompt: "Use Table 1 to calculate the increase in the number of dairy cows in the UK female breeding herd between December 2013 and December 2017. Show your working.", marks: 2 },
+                  { code: '02.4', preamble: "Farming cattle for humans to eat is less efficient than farming crops because of energy transfer.", prompt: "Explain why.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "Nitrogen-fixing bacteria such as Azotobacter chroococcum use the enzyme nitrogenase to produce ammonia from nitrogen gas. A. chroococcum can use ammonium chloride as a direct source of ammonia; when ammonia is not available it uses nitrogen fixation. A scientist grew several equal-volume liquid cultures, each in a different concentration of ammonium chloride, recording nitrogenase activity (arbitrary units) and the ammonium chloride remaining (Table 2). As ammonium chloride concentration rose from 0 to 120 µg cm⁻³, nitrogenase activity fell from 45 to 0 (reaching 0 at 60 µg cm⁻³ and above), and ammonium chloride only remained in the medium at the higher concentrations.",
+                parts: [
+                  { code: '03.1', prompt: "Apart from temperature and pH, give two variables the scientist would have controlled when preparing the liquid medium cultures.", marks: 2 },
+                  { code: '03.2', preamble: "A student concluded that this investigation showed that ammonia inhibits nitrogenase activity in nitrogen-fixing bacteria.", prompt: "Use all the information to evaluate the student's conclusion.", marks: 3 },
+                  { code: '03.3', preamble: "Nitrogenase catalyses the reduction of nitrogen during nitrogen fixation. The reaction requires 16 molecules of ATP for each molecule of nitrogen reduced. When ammonia inhibits nitrogenase activity, nitrogen-fixing bacteria may benefit.", prompt: "Explain how.", marks: 2 }
+                ] },
+              { number: 4,
+                scenario: "A student used the apparatus shown in Figure 1 (a respirometer with potassium hydroxide solution) to measure the rate of aerobic respiration of seeds for 48 hours.\n\n(See Figure 1 in the question paper PDF.)",
+                parts: [
+                  { code: '04.1', prompt: "Put a tick in the box next to the process that occurs in anaerobic respiration but does not occur in aerobic respiration.\n\n• Phosphorylation of glucose\n• Reduction of NAD\n• Reduction of pyruvate\n• Substrate-level phosphorylation", marks: 1 },
+                  { code: '04.2', preamble: "During the 48 hours, the coloured liquid moved to the left.", prompt: "Explain why.", marks: 3 },
+                  { code: '04.3', prompt: "Apart from time, give two measurements the student would have to make to determine the rate of aerobic respiration of these seeds in cm³ hour⁻¹.", marks: 2 },
+                  { code: '04.4', preamble: "The student used the same apparatus to determine the volume of carbon dioxide the seeds produced during 48 hours.", prompt: "Give the change the student would need to make to the contents of the apparatus and describe how he could calculate the volume of carbon dioxide produced.", marks: 3 },
+                  { code: '04.5', preamble: "The student calculated that during the 48 hours, 6.2 × 10⁻⁴ cm³ of oxygen was absorbed by 40 g of seeds.", prompt: "Calculate the oxygen uptake in cm³ g⁻¹ hour⁻¹.", marks: 1 }
+                ] },
+              { number: 5,
+                scenario: "Lemurs are small mammals that live in trees and feed on leaves and fruit. Scientists used a computer program to predict the expected distribution of two lemur species, Eulemur rufus and Eulemur rufifrons, on Madagascar (based on each species' environmental needs), then determined the actual distribution. Figure 2 shows the results.\n\n(See Figure 2 in the question paper PDF.)",
+                parts: [
+                  { code: '05.1', prompt: "Using Figure 2, give three conclusions you can make about the distribution of these lemur species.", marks: 3 },
+                  { code: '05.2', prompt: "Using all the information, suggest how speciation happened to produce two species of lemur.", marks: 5, extended: true },
+                  { code: '05.3', preamble: "The scientists used the mark-release-recapture method to determine the number of lemurs in one area of forest. They captured, marked and released a first sample of 30 lemurs. A week later they captured a second sample of 25 lemurs from the same area. They calculated that there were 250 lemurs in that area.", prompt: "Suggest one precaution needed when marking the lemurs to make sure the estimate of the number of lemurs is valid.", marks: 1 },
+                  { code: '05.4', prompt: "Using the information provided, calculate how many lemurs in the second sample were marked.", marks: 1 }
+                ] },
+              { number: 6,
+                scenario: "In humans, the ABO blood groups are controlled by three alleles of a single gene: Iᴬ, Iᴮ and Iᴼ. Iᴬ and Iᴮ are codominant, and Iᴼ is recessive to both. The four ABO phenotypes are A, B, AB and O. The Rhesus blood group gene has two alleles: R (Rhesus positive) is dominant to r (Rhesus negative). The ABO and Rhesus genes are not sex-linked and not on the same chromosome. Figure 3 shows a family tree of phenotypes for the ABO and Rhesus blood groups.\n\n(See Figure 3 in the question paper PDF.)",
+                parts: [
+                  { code: '06.1', prompt: "Give the genotypes of the ABO blood groups for individuals 1 and 2. Do not include the genotypes for the Rhesus blood groups in your answer.", marks: 1 },
+                  { code: '06.2', prompt: "Explain one piece of evidence from Figure 3 that the allele for Rhesus positive is dominant.", marks: 2 },
+                  { code: '06.3', prompt: "Calculate the probability of individuals 1 and 2 producing a Rhesus positive son with blood group A (individual 3). Assume individual 1 is heterozygous for the Rhesus blood group. Show your working.", marks: 2 },
+                  { code: '06.4', preamble: "Scientists determined the frequencies of the ABO alleles in a large population. The frequencies of the Iᴬ and Iᴼ alleles were 0.15 and 0.65.", prompt: "What is the frequency of the Iᴮ allele?", marks: 1 },
+                  { code: '06.5', preamble: "The scientists used a statistical test to determine if the observed frequencies of the four phenotypes differed significantly from those expected according to the Hardy–Weinberg equation.", prompt: "Name the statistical test you should use, and state how many degrees of freedom should apply.", marks: 2 },
+                  { code: '06.6', preamble: "The scientists concluded that the observed frequencies of the four phenotypes differed significantly from the expected frequencies.", prompt: "Use your knowledge of the Hardy–Weinberg principle to suggest two reasons why.", marks: 2 }
+                ] },
+              { number: 7,
+                parts: [
+                  { code: '07.1', prompt: "Give two reasons why transmission across a cholinergic synapse is unidirectional.", marks: 2 },
+                  { code: '07.2', preamble: "Figure 4 shows the changes in membrane potential in a postsynaptic neurone after repeated stimulation from a single presynaptic neurone.", prompt: "Name and explain the type of summation shown in Figure 4.\n\n(See Figure 4 in the question paper PDF.)", marks: 2 },
+                  { code: '07.3', preamble: "Myasthenia gravis (MG) is an autoimmune disease caused when antibodies bind to the sarcolemma (postsynaptic membrane) of neuromuscular junctions. This can weaken contraction of muscles.", prompt: "Suggest and explain how MG can weaken contraction of muscles. Do not include details of myofibril or muscle contraction in your answer.", marks: 2 },
+                  { code: '07.4', preamble: "Mestinon is a drug that inhibits the enzyme acetylcholinesterase. Mestinon can help in the treatment of MG.", prompt: "Mestinon can help in the treatment of MG. Explain how.", marks: 3 }
+                ] },
+              { number: 8,
+                scenario: "Scientists investigated producing laboratory rats with the characteristics of type II diabetes. They divided rats into two groups and fed different diets for 2 weeks: group A the normal diet (12% fat) and group B a high-fat diet (56% fat). After 2 weeks both groups were injected with 35 mg kg⁻¹ of the drug streptozotocin (STZ) to induce diabetes. One week later they measured mean body mass and mean blood glucose concentration. Table 3 (± 2 × SD): Group A — mass 221.07 g (±3.28), glucose 129.41 mg dm⁻³ (±8.34); Group B — mass 233.34 g (±5.73), glucose 385.02 mg dm⁻³ (±7.75).",
+                parts: [
+                  { code: '08.1', prompt: "Calculate how many grams of STZ should be injected into a rat with a mass of 230.45 g. Show your working. Give your answer in standard form.", marks: 2 },
+                  { code: '08.2', prompt: "Suggest and explain why STZ was injected per unit of body mass.", marks: 1 },
+                  { code: '08.3', preamble: "The scientists concluded that group B rats could be used for studying type II diabetes in humans.", prompt: "Use all the information and your knowledge of type II diabetes to evaluate this conclusion.", marks: 5, extended: true },
+                  { code: '08.4', preamble: "The scientists repeated the investigation using much higher doses of STZ. This led to destruction of pancreatic cells. They concluded that these rats would not be suitable for studying type II diabetes.", prompt: "Give two reasons why the scientists made this conclusion.", marks: 2 }
+                ] },
+              { number: 9,
+                parts: [
+                  { code: '09.1', prompt: "Name the part of the body which releases antidiuretic hormone (ADH) into the blood.", marks: 1 },
+                  { code: '09.2', preamble: "Alcohol decreases the release of ADH into the blood.", prompt: "Suggest two signs or symptoms which may result from a decrease in ADH.", marks: 2 },
+                  { code: '09.3', prompt: "Describe the effect of ADH on the collecting ducts in kidneys.", marks: 3 }
+                ] },
+              { number: 10,
+                scenario: "Read the following passage.\n\n\"BRCA1 and BRCA2 are human genes that code for tumour suppressor proteins. Mutations in BRCA1 and BRCA2 can cause cancer. Specific inherited mutations in these genes increase the risk of female breast and ovarian cancers and have been associated with several other cancers. Genetic testing, using DNA from saliva, can screen for all known harmful mutations in both genes. ER-positive breast cancers have receptors for the hormone oestrogen and develop as a result of increased oestrogen concentrations in the blood; effective treatment often involves drugs which have a similar structure to oestrogen. Blood tests can be used to test for cancers — men with prostate cancer have a high concentration of prostate-specific antigen (PSA) in their blood, but urinary infections and a naturally enlarged prostate can also increase PSA concentrations. Recent research indicates that several cancers result from epigenetic abnormalities, and treatment with drugs might be able to reverse the epigenetic changes that cause cancers.\"",
+                parts: [
+                  { code: '10.1', prompt: "BRCA1 and BRCA2 are human genes that code for tumour suppressor proteins. Mutations in BRCA1 and BRCA2 can cause cancer. Explain how.", marks: 3 },
+                  { code: '10.2', prompt: "Genetic testing, using DNA from saliva, can screen for all known harmful mutations in both genes. Describe how this DNA could be screened for all known harmful mutations in both genes.", marks: 4, extended: true },
+                  { code: '10.3', preamble: "Effective treatment of ER-positive breast cancers often involves the use of drugs which have a similar structure to oestrogen.", prompt: "Suggest and explain how these drugs are an effective treatment of ER-positive breast cancers.", marks: 3 },
+                  { code: '10.4', preamble: "Blood tests can be used to test for cancers. However, the results of blood tests may not be conclusive when testing for prostate cancer.", prompt: "Explain why.", marks: 2 },
+                  { code: '10.5', preamble: "Treatment with drugs might be able to reverse the epigenetic changes that cause cancers.", prompt: "Suggest and explain how.", marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'exact', points: ['(1) organic  (2) respiration  (3) carbon  (4) calorimetry'],
+                guidance: '2 marks (AO1). 4 correct = 2; 2–3 correct = 1; 0–1 = 0. For (3) accept cells/tissues/plant(s)/organism(s)/NPP/living material/biological molecules. Accept calorimeter but reject colorimeter.' },
+              '01.2': { type: 'points', points: [
+                  'Carbon dioxide combines/reacts with ribulose bisphosphate (RuBP)',
+                  'Produces two glycerate-3-phosphate (GP) using the enzyme Rubisco',
+                  'GP reduced to triose phosphate',
+                  'Using reduced NADP',
+                  'Using energy from ATP',
+                  'Triose phosphate converted to glucose/hexose / regenerates RuBP'
+                ], guidance: '6 marks (AO1). MP3 must convey reduction. Reject reduced NAD for MP4 (NADPH/NADPH₂ accepted). MP4 and MP5 must be in the context of GP → triose phosphate.' },
+              '02.1': { type: 'exact', points: ['N = I − (F + R)'],
+                guidance: '1 mark (AO1). Box 2.' },
+              '02.2': { type: 'exact', points: ['21.6', '21.6%', '22'],
+                guidance: '1 mark (AO2). 45% (beef share of breeding herd) × 48% = 21.6%.' },
+              '02.3': { type: 'exact', points: ['88 500', '89 000', '90 000'],
+                guidance: '2 marks (AO2). Dairy 2013 = 54% × 3.35M = 1.809M; dairy 2017 = 55% × 3.45M = 1.8975M; increase = 88 500. 1 mark for evidence of 1.8975M or 1.809M, or the right digits with wrong decimal place.' },
+              '02.4': { type: 'points', points: [
+                  'Energy is lost between/at trophic (feeding) levels',
+                  'Energy lost via respiration / excretion / faeces / heat / movement / not all eaten'
+                ], guidance: '2 marks (AO2). Reject "energy used in respiration" and "energy produced/generated".' },
+              '03.1': { type: 'points', points: [
+                  'Volume of (stock) bacterial culture',
+                  'Concentration of (stock) bacterial culture',
+                  'Concentration of glucose / respiratory substrate',
+                  'Volume of ammonium chloride',
+                  'Time the culture is left to divide',
+                  'Concentration/volume of oxygen',
+                  'Concentration/volume of nitrogen'
+                ], guidance: '2 max (AO2). If volume/concentration of bacteria not credited, accept number/mass of bacteria for 1 mark. Ignore "amount"; ignore volume/concentration of liquid culture; ignore "sugar" and nutrients.' },
+              '03.2': { type: 'points', points: [
+                  'For: nitrogenase activity decreases as ammonium chloride concentration increases (negative correlation)',
+                  'For: nitrogenase activity is zero at high ammonium chloride concentration (or ammonium chloride remains when activity is zero)',
+                  'Against: only one species (A. chroococcum) was used',
+                  'Against: inhibition may be due to chloride ions / the investigation uses ammonium chloride, not ammonia'
+                ], guidance: '3 max (AO3). Accept ammonia for ammonium chloride in MP1/2; "stops" for zero. Reject "chlorine". Ignore references to statistical tests.' },
+              '03.3': { type: 'points', points: [
+                  'Less/no ATP/energy is required (so more ATP/energy is available)',
+                  'ATP/energy can be used for growth/synthesis/replication/active transport (or a lower rate of respiration is required)'
+                ], guidance: '2 marks (AO2). Reject ATP/energy "used for/in respiration"; reject mitosis. Ignore "aerobic"/"anaerobic".' },
+              '04.1': { type: 'exact', points: ['Reduction of pyruvate'],
+                guidance: '1 mark (AO1). Box 3.' },
+              '04.2': { type: 'points', points: [
+                  'Oxygen taken up/used by the seeds',
+                  'Carbon dioxide given out is absorbed by the solution / potassium hydroxide',
+                  'So a decrease in pressure/volume of air inside (draws the liquid in)'
+                ], guidance: '3 marks (AO2). Accept "air pressure higher than inside". Ignore "negative pressure"; reject "vacuum".' },
+              '04.3': { type: 'points', points: [
+                  'Distance the drop/liquid moves',
+                  'Diameter/radius/bore (or cross-sectional area) of the tubing/lumen'
+                ], guidance: '2 marks (AO2). Ignore time. Accept a description of distance (start and end position).' },
+              '04.4': { type: 'points', points: [
+                  'Remove the potassium hydroxide (or replace it with water)',
+                  'Record the distance the liquid moves without potassium hydroxide',
+                  'Use the difference in distance (or calculated volumes) moved with and without potassium hydroxide'
+                ], guidance: '3 marks (AO3). Answers that add/use a syringe lose MP2 and MP3. Reject if seeds removed. Accept "if the liquid does not move, CO₂ produced = O₂ used".' },
+              '04.5': { type: 'exact', points: ['3 × 10⁻⁷', '3.23 × 10⁻⁷', '3.0 × 10⁻⁷ to 3.33 × 10⁻⁷'],
+                guidance: '1 mark (AO2). 6.2 × 10⁻⁴ cm³ ÷ 40 g ÷ 48 h ≈ 3.23 × 10⁻⁷. Accept equivalent answers not in standard form; ignore digits after 3.33.' },
+              '05.1': { type: 'points', points: [
+                  'E. rufus in the north(-west) / west / above the river',
+                  'E. rufifrons in the south / west and east / below the river',
+                  'Actual distribution is similar to the expected distribution (environmental needs), or slightly less than expected'
+                ], guidance: '3 marks (AO3). If MP1/2 not awarded, accept (for 1) "separated by the river" or "no overlap in their ranges". Accept converse; do not penalise "prefer".' },
+              '05.2': { type: 'points', points: [
+                  'Geographical isolation / allopatric speciation',
+                  'Reproductive separation/isolation (no gene flow / gene pools separate) at the start',
+                  'Different selection pressures / different environmental (abiotic) conditions',
+                  'Variation due to mutation(s) in the different populations',
+                  'Different/advantageous alleles passed on/selected (change in allele frequency)',
+                  'Eventually the different species cannot interbreed to produce fertile offspring'
+                ], guidance: '5 max (AO1/AO2). Reject sympatric for MP1. Reproductive isolation must be at the beginning of the process. Reject "no inbreeding".' },
+              '05.3': { type: 'points', points: [
+                  'The marking does not affect survival/predation/recapture (mark does not rub/wash off, is non-toxic)'
+                ], guidance: '1 mark (AO3). Ignore "does not harm" on its own unless it relates to survival/predation/recapture.' },
+              '05.4': { type: 'exact', points: ['3'],
+                guidance: '1 mark (AO2). Population = (s₁ × s₂) ÷ recaptured → 250 = (30 × 25) ÷ m → m = 3.' },
+              '06.1': { type: 'exact', points: ['(1) IᴬIᴼ and (2) IᴬIᴮ'],
+                guidance: '1 mark (AO2). Accept IᴼIᴬ for (1) and IᴮIᴬ for (2); accept AO/OA and AB/BA; accept lower case.' },
+              '06.2': { type: 'points', points: [
+                  'Two Rhesus positive parents (3 and 4) produce a Rhesus negative child (individual 7)',
+                  'So both parents must carry the recessive allele (are heterozygous/carriers) — if Rhesus positive were recessive, all their children would be Rhesus positive'
+                ], guidance: '2 marks (AO2). Accept "affected" for Rhesus positive and "unaffected" for Rhesus negative. Reject if an incorrect piece of evidence/explanation is also given.' },
+              '06.3': { type: 'exact', points: ['0.125', '1/8', '12.5%', '1 in 8'],
+                guidance: '2 marks (AO2). P(group A | IᴬIᴼ × IᴬIᴮ) = 1/2 × P(Rhesus+ son) = 1/2 × 1/2 × 1/2 = 1/8. 1 mark for 0.25 / 1/4 / 25%.' },
+              '06.4': { type: 'exact', points: ['0.2', '0.20'],
+                guidance: '1 mark (AO2). 1 − 0.15 − 0.65 = 0.2.' },
+              '06.5': { type: 'exact', points: ['Chi-squared (χ²); 3 degrees of freedom'],
+                guidance: '2 marks (AO2). Accept χ² or Chi². Degrees of freedom = 3 (4 phenotype categories − 1).' },
+              '06.6': { type: 'points', points: [
+                  'Selection (for/against a blood group/phenotype/allele)',
+                  '(High rate of) mutation',
+                  'Immigration/emigration (migration / not isolated)',
+                  'No random mating'
+                ], guidance: '2 max (AO2). Reject converse statements. Ignore births/deaths and "no random fertilisation".' },
+              '07.1': { type: 'points', points: [
+                  '(Only) the presynaptic neurone/knob releases neurotransmitter/acetylcholine',
+                  '(Only) the postsynaptic membrane has receptors (no receptors in the presynaptic membrane)'
+                ], guidance: '2 marks (AO1). Accept ACh for acetylcholine. Ignore has/releases "transmitter".' },
+              '07.2': { type: 'points', points: [
+                  'Temporal summation',
+                  'Several/repeated impulses in a short time provide enough neurotransmitter (or enough Na⁺ enter / membrane potential raised) to reach threshold'
+                ], guidance: '2 marks (AO2). Accept "to cause depolarisation"/"to produce an action potential" for "reach threshold".' },
+              '07.3': { type: 'points', points: [
+                  'Less/no acetylcholine/neurotransmitter binds to receptors',
+                  'Less/no depolarisation / fewer/no action potentials / fewer Na⁺ enter to reach threshold'
+                ], guidance: '2 marks (AO2). Ignore competitive inhibition but reject "active site". Accept "takes longer for depolarisation". Ignore "weaker" action potential.' },
+              '07.4': { type: 'points', points: [
+                  'Less/no acetylcholine broken down (more acetylcholine present/remains)',
+                  '(More) acetylcholine attaches to / remains attached to receptors',
+                  'Depolarisation occurs / action potentials produced / enough Na⁺ enter to reach threshold (or fewer antibodies attach)'
+                ], guidance: '3 marks (AO1/AO2). "Acetylcholine remains attached to receptors for longer" = 2 marks (MP1+MP2). Accept ACh; accept Na⁺ for sodium ions.' },
+              '08.1': { type: 'exact', points: ['8.07 × 10⁻³ g', '8.066 × 10⁻³', '8 × 10⁻³'],
+                guidance: '2 marks (AO2). 35 mg kg⁻¹ × 0.23045 kg = 8.066 mg = 8.07 × 10⁻³ g. The × 10⁻³ is required for 2 marks. 8.0 × 10⁻³ or 8.06 × 10⁻³ = 1 mark (incorrect rounding); correct value not in standard form = 1 mark.' },
+              '08.2': { type: 'points', points: [
+                  'For a valid comparison as rats vary in mass / so each rat receives a quantity relative to its mass (so the concentration in the body is the same)'
+                ], guidance: '1 mark (AO2). Accept "standardisation" for comparison; "weight" for mass but ignore size.' },
+              '08.3': { type: 'points', points: [
+                  'SDs do not overlap (for blood glucose concentration or for mass)',
+                  'So there is a significant difference/increase (in blood glucose concentration or mass)',
+                  'Type II diabetes causes high blood glucose concentration',
+                  'Obesity/high body mass (or high-fat diet) is a risk factor in type II diabetes',
+                  'Investigation done on rats, not humans',
+                  'Only shows results after a short time period / long-term effects not known'
+                ], guidance: '5 max (AO3). Accept "difference/increase not due to chance" for significant. Accept associated/linked/have for "causes". Ignore references to the stats test.' },
+              '08.4': { type: 'points', points: [
+                  'Type II diabetics still produce/release insulin',
+                  'In type II the cells/receptors are less/not responsive to insulin',
+                  'Pancreatic cells are not destroyed in type II diabetes',
+                  'Damage to pancreatic cells may affect other processes/reactions in the body'
+                ], guidance: '2 max (AO3). Accept "type 1 would not produce insulin" / would cause type I. Accept "faulty/fewer receptors". Ignore "pancreas is not destroyed".' },
+              '09.1': { type: 'exact', points: ['Posterior pituitary', 'posterior pituitary gland'],
+                guidance: '1 mark (AO1). Accept phonetic spelling. Ignore additional wording.' },
+              '09.2': { type: 'points', points: [
+                  'Dehydration / thirst',
+                  'Frequent urination / increase in volume of urine',
+                  'Less concentrated (dilute) urine / urine paler in colour'
+                ], guidance: '2 max (AO2). Accept "increased urination".' },
+              '09.3': { type: 'points', points: [
+                  'Stimulates the addition (or opening) of channel proteins (aquaporins) into the membrane',
+                  'Increases permeability to water (so more water is reabsorbed)',
+                  'By osmosis'
+                ], guidance: '3 marks (AO1). Accept aquaporins for channel proteins; "movement" for addition; for reabsorbed accept "enters blood"/"leaves collecting duct".' },
+              '10.1': { type: 'points', points: [
+                  'Change in DNA base sequence/triplet',
+                  'Change in the sequence of amino acids (change in primary/tertiary/3D structure)',
+                  'Results in rapid/uncontrollable cell division (cell division cannot be regulated)'
+                ], guidance: '3 marks (AO2). For MP2 reject "(different) amino acids formed"; ignore "protein not formed". Accept cell replication; ignore growth.' },
+              '10.2': { type: 'points', points: [
+                  'Use of PCR to amplify the DNA/sample',
+                  'Cut the DNA using restriction endonucleases',
+                  'Separate the DNA fragments using electrophoresis (or a microarray)',
+                  'Add (labelled) DNA probes which bind by DNA hybridisation',
+                  'Mutations identified by fluorescence/radioactivity (compare positions/bands with a known sample carrying the mutations)'
+                ], guidance: '4 max (AO1/AO2). If only DNA sequencing is described, max 3: PCR to amplify; sequence the DNA; compare with the known sequence of the mutation. Ignore primers; a probe being "complementary" is insufficient on its own.' },
+              '10.3': { type: 'points', points: [
+                  'The drug binds to the oestrogen (ER) receptor',
+                  'Prevents the binding of oestrogen/the hormone',
+                  'So no/fewer transcription factors bind to the promoter (RNA polymerase not stimulated)'
+                ], guidance: '3 marks (AO2). Accept "inactive transcription factor" for receptor. Reject "active site"/"enzyme–substrate complex" once.' },
+              '10.4': { type: 'points', points: [
+                  'High/increased PSA is not always linked to prostate cancer (could be a false positive)',
+                  'Could be due to a urinary infection or an enlarged prostate'
+                ], guidance: '2 marks (AO2). Accept "urine infection".' },
+              '10.5': { type: 'points', points: [
+                  'Drugs could increase methylation of oncogenes',
+                  'Drugs could decrease methylation of tumour suppressor genes',
+                  'Increased methylation of DNA inhibits transcription/expression (decreased methylation stimulates it)',
+                  'Decreased acetylation of histones inhibits transcription/expression (increased acetylation stimulates it)'
+                ], guidance: '3 max (AO1/AO2). Ignore methylation of histones and acetylation of DNA. Accept promoter region for DNA/gene; "switching on/off" genes accepted once if used correctly in the context of transcription/expression.' }
+            } },
         ] },
       { board: 'Edexcel A (Salters-Nuffield)', specCode: '9BN0',
         officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/biology-a-2015.html' },
