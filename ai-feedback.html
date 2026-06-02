@@ -277,9 +277,14 @@
   const { data: userSubjects } = await supabaseClient
     .from('user_subjects').select('*').eq('user_id', user.id).order('created_at');
 
+  // Maths & Further Maths are print-only past-paper subjects with no AI
+  // question bank, so they're excluded from AI feedback (still on past-papers).
+  const AI_FEEDBACK_EXCLUDED = new Set(['Mathematics', 'Further Mathematics']);
+
   // De-duplicate to one row per subject (a user can have a subject under one board)
   const subjectMap = new Map();
   (userSubjects || []).forEach(row => {
+    if (AI_FEEDBACK_EXCLUDED.has(row.subject)) return;
     if (!subjectMap.has(row.subject)) subjectMap.set(row.subject, row);
   });
   const subjects = Array.from(subjectMap.values());
