@@ -8571,9 +8571,150 @@ window.SUBJECTS = [
                 ],
                 guidance: '3 marks. "Too many neutrons" alone is not enough — must use "high N/Z ratio" or "neutron rich". The minus sign on β⁻ must be shown.' }
             } },
-          { id: 'phys-aqa-7408-2022-p3', year: 'June 2022', paperName: 'Paper 3', paperCode: '7408/3', totalMarks: 80, durationMins: 120, printOnly: true,
+          { id: 'phys-aqa-7408-2022-p3', year: 'June 2022', paperName: 'Paper 3', paperCode: '7408/3', totalMarks: 80, durationMins: 120,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74083A-QP-JUN22.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74083A-MS-JUN22.PDF' }
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74083A-MS-JUN22.PDF',
+            qbqNote: 'Section A — Practical skills and data analysis (Questions 1–4, 45 marks) — is wired up question-by-question with the official mark scheme. Section B is an optional topic (Astrophysics, Medical physics, Engineering physics, Turning points in physics or Electronics, 35 marks) and is a separate paper (7408/3B) not included here; the linked QP/MS PDFs are for Section A. Figures and graphs are in the QP PDF — open it alongside; the "best-fit line" / "annotate" parts are best done on the PDF.',
+            questions: [
+              { number: 1,
+                scenario: 'Figure 1 shows apparatus used to measure the speed of sound in a steel rod. The rod is suspended from a beam using rubber bands. When the hammer is in contact with end L, a circuit is completed and the signal generator is connected to the oscilloscope. When the hammer hits L a sound wave travels along the rod, reflects at end R, and when it returns to L the rod bounces away and the circuit is broken. Figure 3 shows the resulting waveform and Figure 4 shows the time-base setting.\n\n(See Figures 1–4 in the question paper PDF.)',
+                parts: [
+                  { code: '01.1', prompt: 'Which control on the oscilloscope should be used to centre the trace vertically on the screen? (Tick one box.)\n\nX-shift     Y-gain     Y-shift', marks: 1 },
+                  { code: '01.2', preamble: 'The distance between L and R in Figure 1 is 0.870 m.', prompt: 'Deduce the speed of sound in the steel rod.', marks: 3 },
+                  { code: '01.3', prompt: 'A student repeats the experiment using a steel rod of twice the length.\n\nExplain how using the longer rod affects the waveform displayed, and any changes needed to get an accurate result for the speed. You should include numerical detail.', marks: 4 }
+                ] },
+              { number: 2,
+                scenario: 'Figure 5 shows a strip of steel of rectangular cross-section clamped at one end, extending horizontally over the edge of a bench. A mass m suspended from the free end produces a vertical displacement y, measured with a horizontal pin fixed to the free end against a clamped vertical ruler (Figure 6).\n\n(See Figures 5–6 in the question paper PDF.)',
+                parts: [
+                  { code: '02.1', prompt: 'Explain a procedure to avoid parallax error when judging the reading indicated by the position of the pin on the ruler. (You may describe additions to Figure 6.)', marks: 2 },
+                  { code: '02.2', preamble: 'It can be shown that y = 4mgL³/(Ewt³), where L is the distance between the free end of the unloaded strip and the blocks, w (≈ 1 cm) is the width, t (≈ 1 mm) is the thickness and E is the Young modulus of the steel.\n\nA student must determine E using the arrangement in Figure 5 with these restrictions: only one steel strip of length ≈ 30 cm is available; m is made using a 50 g hanger plus up to four 50 g slotted masses; the procedure must involve only one independent variable; and a graphical method must be used.', prompt: 'Explain what the student must do to determine E.', marks: 5 }
+                ] },
+              { number: 3,
+                scenario: 'Conductive putty can easily be formed into different shapes to investigate the effect of shape on electrical resistance.\n\n(See Figures 7–8 and Table 1 in the question paper PDF.)',
+                parts: [
+                  { code: '03.1', preamble: 'A student uses vernier callipers to measure the diameter d of a uniform cylinder of the putty.', prompt: 'Suggest one problem with using callipers to make this measurement.', marks: 1 },
+                  { code: '03.2', preamble: 'Table 1 shows the calliper measurements: d₁ = 34.5 mm, d₂ = 34.2 mm, d₃ = 32.9 mm, d₄ = 33.4 mm, d₅ = 34.0 mm. Assume all the data are valid.', prompt: 'Show that the percentage uncertainty in d is about 2.4%.', marks: 2 },
+                  { code: '03.3', preamble: 'The length of the cylinder is 71 ± 2 mm.', prompt: 'Determine the uncertainty, in mm³, in the volume of the cylinder.', marks: 4 },
+                  { code: '03.4', preamble: 'The student forms the putty into cylinders of different lengths, each of volume 5.83 × 10⁻⁵ m³. The length L and resistance R are measured for each. It can be shown that R = ρL²/(5.83 × 10⁻⁵), where ρ is the resistivity. The student plots the graph in Figure 8.', prompt: 'Determine ρ. State an appropriate SI unit for your answer.', marks: 4 }
+                ] },
+              { number: 4,
+                scenario: 'Figure 9 shows air trapped in a vertical cylinder by a valve and a piston P; the valve remains closed throughout. A mass placed on top of P moves it downwards, decreasing the volume of trapped air. There are no air leaks and no friction. The vertical distance y between the end of P and the closed end is measured, and additional masses show how y depends on the total mass M on top of P (Figure 10). Figures 12–13 relate to a separate Boyle\'s law experiment with a fixed mass of air trapped above coloured oil.\n\n(See Figures 9–13 in the question paper PDF.)',
+                parts: [
+                  { code: '04.1', prompt: 'Show that y is not inversely proportional to M. Use data points from Figure 10.', marks: 2 },
+                  { code: '04.2', preamble: 'The masses are removed and the cylinder is inverted; P moves downwards without friction before coming to rest (Figure 11).', prompt: 'Explain why P does not fall out of the cylinder unless the valve is opened.', marks: 3 },
+                  { code: '04.3', preamble: 'The mass of P is 0.350 kg.', prompt: 'Deduce y when the cylinder is in the inverted position shown in Figure 11. Draw a line of best fit on Figure 10 to arrive at your answer.', marks: 4 },
+                  { code: '04.4', preamble: 'A scale marked in 0.2 cm³ intervals is used to measure the volume V of the trapped air in the Boyle\'s law apparatus (Figure 12). A student says the reading shown is 35.4 cm³.', prompt: 'State the error the student has made and the correct reading, in cm³, of the volume.', marks: 2 },
+                  { code: '04.5', preamble: 'Figure 13 shows a graph of log V against log p obtained using the apparatus in Figure 12.', prompt: 'Explain why the gradient of the graph in Figure 13 confirms that the air obeys Boyle\'s law.', marks: 3 },
+                  { code: '04.6', preamble: 'The largest pressure that can be read from the gauge is 3.4 × 10⁵ Pa.', prompt: 'Determine, using Figure 13, the volume V corresponding to this pressure.', marks: 3 },
+                  { code: '04.7', prompt: 'State one property of the air that must not change during the experiment. Go on to suggest how this can be achieved.', marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'exact', points: ['Y-shift'], guidance: '1 mark, CAO.' },
+              '01.2': { type: 'points',
+                points: [
+                  'Transit distance = 2 × 0.870 m (= 1.74 m)',
+                  'Contact time = 6 × 0.2 major divisions × 50 × 10⁻⁶ s (≈ 3.0 × 10⁻⁴ s)',
+                  'Speed in the range 5600–6000 m s⁻¹'
+                ],
+                guidance: '3 marks. No credit for a c = fλ approach. A speed of 2800–3000 m s⁻¹ (forgetting the factor of 2) scores 2.' },
+              '01.3': { type: 'points',
+                points: [
+                  'Quantitative effect on the contact time: the time is doubled (≈ 600 μs)',
+                  'Quantitative effect on the waveform: double the number of cycles / it would need 12 divisions',
+                  'The waveform would extend beyond the screen and could not be fully displayed',
+                  'Adjust the time-base control (to 0.1 ms div⁻¹)'
+                ],
+                guidance: '4 marks. CAO for the 0.1 ms div⁻¹ value.' },
+              '02.1': { type: 'points',
+                points: [
+                  'Place a mirror behind the ruler',
+                  'Adjust the position of the eye/head until the pin lines up with / hides its own reflection'
+                ],
+                guidance: '2 marks. A set-square method is also acceptable. If no other mark, award 1 for "read the value at eye level" or "move the ruler closer to the pin".' },
+              '02.2': { type: 'points',
+                points: [
+                  'y (the dependent variable) is measured for different values of one independent variable (only L or m is acceptable)',
+                  'Identifies the correct control variable (m if L is varied, or L if m is varied; w and t are also kept constant)',
+                  'Suitable measuring instruments: a ruler for L, callipers for w, a micrometer for t',
+                  'Suggests a valid graphical plot involving y and the independent variable (e.g. y against m, or y against L³)',
+                  'Identifies correctly how E is found from the gradient, with E as the subject (e.g. E = 4L³g/(wt³ × gradient) for y vs m)'
+                ],
+                guidance: '5 marks.' },
+              '03.1': { type: 'points',
+                points: ['The callipers may distort/deform/squash/cut into the putty, reducing the diameter reading'],
+                guidance: '1 mark. Reject "the putty will move" or implications that the density/volume changes.' },
+              '03.2': { type: 'points',
+                points: [
+                  'Average d = 33.8 mm OR uncertainty (half the range) = ½(34.5 − 32.9) = 0.8 mm',
+                  'Percentage uncertainty = 0.8/33.8 × 100 = 2.37%'
+                ],
+                guidance: '2 marks. Reject treating 32.9 or 34.5 as anomalous. Percentage uncertainty to ≥3 sf.' },
+              '03.3': { type: 'points',
+                points: [
+                  '% uncertainty in length = 2/71 × 100 = 2.8%',
+                  '% uncertainty in volume = 2 × (% in d) + (% in L) ≈ 7.6%',
+                  'Evidence for the volume evaluated (V = π(d/2)²L ≈ 6.4 × 10⁴ mm³)',
+                  'Uncertainty in volume between 4.8 and 4.9 × 10³ mm³'
+                ],
+                guidance: '4 marks. Allow 2.4% for the % uncertainty in d.' },
+              '03.4': { type: 'points',
+                points: [
+                  'Ruled best-fit line passing between the 4th and 5th points and through/extrapolated to (0, 0)',
+                  'Gradient calculated from R divided by L²',
+                  'ρ = gradient × 5.83 × 10⁻⁵ ≈ 3.8 × 10⁻²',
+                  'Correct power of ten and unit: ρ = 3.78 × 10⁻² Ω m'
+                ],
+                guidance: '4 marks. Accept 2 sf (3.8); allow read-off errors in the gradient calculation.' },
+              '04.1': { type: 'points',
+                points: [
+                  'Two correct calculations of M × y from data points (e.g. M = 1.0, y = 82 → 82; M = 2.0, y = 71 → 142)',
+                  'Reasoned judgement that y is not inversely proportional to M because M × y is not constant (a large/significant difference between the products)'
+                ],
+                guidance: '2 marks. Reasoning must be based on the data points; reject "values are different / not constant" without quantitative support.' },
+              '04.2': { type: 'points',
+                points: [
+                  'As P moves down the trapped air expands, so its pressure is reduced',
+                  'The pressure becomes less than atmospheric pressure (a pressure difference acts across P)',
+                  'This gives an upward force that balances the weight of P (pressure difference × area = weight of piston)',
+                  'P falls when the valve is opened because the internal and external pressures equalise'
+                ],
+                guidance: 'Max 3. "No resultant force" alone is not enough; reject ideas about "suction".' },
+              '04.3': { type: 'points',
+                points: [
+                  'Draws a smooth curve of decreasing negative gradient through all six points',
+                  'Extrapolates the curve backwards (negative gradient) to negative M',
+                  'Reads y corresponding to M = −0.7 kg (twice the piston mass, acting in the opposite sense when inverted)',
+                  'y in the range 108–116 mm'
+                ],
+                guidance: '4 marks. The read-off mark is contingent on extrapolating to the correct M.' },
+              '04.4': { type: 'points',
+                points: [
+                  'Error: the reading was taken at the top of the meniscus/oil instead of the bottom (or the student assumed 0.1 cm³ subdivisions instead of 0.2 cm³)',
+                  'Correct reading = 35.8 cm³'
+                ],
+                guidance: '2 marks, CAO for the reading.' },
+              '04.5': { type: 'points',
+                points: [
+                  'Gradient = Δ(log V)/Δ(log p), evaluated to a 3 sf result between −1.05 and −1.01 (the sign is essential)',
+                  'Relevant algebra: Boyle\'s law gives log V = −log p + constant, compared with y = mx + c',
+                  'A gradient of −1 confirms Boyle\'s law (inverse proportionality)'
+                ],
+                guidance: '3 marks.' },
+              '04.6': { type: 'points',
+                points: [
+                  'Reads off log p₁ and log V₁ for a point on the line',
+                  'Applies a workable method (e.g. the intercept log V + log p ≈ 0.585, or pV = constant)',
+                  'Determines V in the range 10.5–11.5 cm³ at p = 3.4 × 10⁵ Pa (≈ 11 cm³)'
+                ],
+                guidance: '3 marks. No credit for claiming 1.685 or 1.170 are intercepts.' },
+              '04.7': { type: 'points',
+                points: [
+                  'The temperature of the air must not change',
+                  'Achieve this by changing the pressure of the gas slowly (and keeping the lab temperature constant)'
+                ],
+                guidance: '2 marks. The second mark is contingent on a valid first mark.' }
+            } }
         ] },
       { board: 'Edexcel (Pearson)', specCode: '9PH0',
         officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/physics-2015.html',
