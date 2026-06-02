@@ -11,6 +11,7 @@
   <script src="supabase-config.js"></script>
   <script src="nav-gating.js"></script>
   <script src="flashcards-config.js"></script>
+  <script src="subjects-config.js"></script>
   <script src="practice-bank-config.js"></script>
   <script src="papers-config.js"></script>
   <style>
@@ -367,6 +368,38 @@
     if (!b) return [];
     return (b.papers || []).filter(p => Array.isArray(p.questions) && p.questions.length);
   }
+
+  // ── Safety net (same idea as past-papers.html's validateBoardConfig). Every
+  //    board that carries ATTEMPTABLE papers (a `questions` array) MUST
+  //    normalise to a board the picker offers for that subject — otherwise a
+  //    student who studies that board selects it in setup yet never sees its
+  //    papers as an AI-feedback source. Check the whole dataset on load and log
+  //    loudly so the silent board-name mismatch can't recur when new papers are
+  //    added. Scoped to attemptable papers because print-only ones don't feed
+  //    this page.
+  (function validateBoardConfig() {
+    const pickerBoards = (window.SUBJECTS_CONFIG && window.SUBJECTS_CONFIG.boards) || null;
+    if (!pickerBoards) return; // config not loaded — skip silently
+    const problems = [];
+    (window.SUBJECTS || []).forEach(s => {
+      (s.boards || []).forEach(b => {
+        const hasAttemptable = (b.papers || []).some(p => Array.isArray(p.questions) && p.questions.length);
+        if (!hasAttemptable) return; // nothing this page would surface
+        const offered = pickerBoards[s.name] || [];
+        const ok = offered.some(pb => normBoard(pb) === normBoard(b.board));
+        if (!ok) problems.push(`${s.name} → "${b.board}" (picker offers: ${offered.join(', ') || 'none'})`);
+      });
+    });
+    if (problems.length) {
+      console.error(
+        '[ai-feedback] Board-name mismatch — these attemptable papers would be ' +
+        'HIDDEN from the Past papers source, because the board does not match any ' +
+        'board the picker offers for that subject. Fix the name in papers-config.js ' +
+        'or subjects-config.js so they normalise to the same value:\n  • ' +
+        problems.join('\n  • ')
+      );
+    }
+  })();
 
   function paperLabel(p) {
     return `${p.year} · ${p.paperName}`;
