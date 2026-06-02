@@ -12,6 +12,7 @@
   <script src="nav-gating.js"></script>
   <script src="flashcards-config.js"></script>
   <script src="practice-bank-config.js"></script>
+  <script src="papers-config.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -180,13 +181,22 @@
           </div>
           <span class="pill locked" id="boardPill" title="Set in account — your exam board can't change here"><span class="pill-label">…</span> <span class="lock">🔒</span></span>
         </div>
-        <div class="row">
-          <span class="field-label">Topic</span>
-          <div class="dropdown" data-key="topic">
+        <div class="row" id="pickerRow">
+          <span class="field-label">Source</span>
+          <div class="dropdown" data-key="source">
+            <span class="pill active dropdown-toggle"><span class="pill-label">Question bank</span> <span class="chev">▼</span></span>
+            <div class="dropdown-menu"></div>
+          </div>
+          <span class="field-label" id="pickerLabel">Topic</span>
+          <div class="dropdown" data-key="topic" id="topicDdWrap">
             <span class="pill active dropdown-toggle"><span class="pill-label">…</span> <span class="chev">▼</span></span>
             <div class="dropdown-menu"></div>
           </div>
-          <span style="margin-left:auto;font-size:12px;color:var(--muted2);">📚 Question bank</span>
+          <div class="dropdown" data-key="paper" id="paperDdWrap" style="display:none;">
+            <span class="pill active dropdown-toggle"><span class="pill-label">…</span> <span class="chev">▼</span></span>
+            <div class="dropdown-menu"></div>
+          </div>
+          <span style="margin-left:auto;font-size:12px;color:var(--muted2);" id="sourceHint">📚 Question bank</span>
         </div>
         <div class="qbox" id="questionBox">
           <div class="qtext"><span class="q-prefix">Q</span><span id="questionText">Loading question…</span></div>
@@ -292,6 +302,8 @@
         subject: state.subject,
         board:   state.board,
         topic:   state.topic,
+        source:  state.source,
+        paper:   state.paper,
       }));
     } catch (_) {}
   }
@@ -307,6 +319,8 @@
     subject: savedMatch ? saved.subject : (subjects[0]?.subject || 'Geography'),
     board:   savedMatch ? saved.board   : (subjects[0]?.exam_board || 'AQA'),
     topic:   savedMatch ? (saved.topic || '') : '',
+    source:  savedMatch ? (saved.source || 'bank') : 'bank',  // 'bank' | 'paper'
+    paper:   savedMatch ? (saved.paper || '') : '',
     marks: 12,
     command: 'Assess',
   };
@@ -326,6 +340,75 @@
     });
   }
 
+  // ---------- Past papers as a question source ----------
+  // window.SUBJECTS (papers-config.js) holds the extracted past papers. Only
+  // papers that carry a `questions` array can feed the AI marker; the rest are
+  // print-only on the past-papers page and are skipped here.
+  function papersForSelected() {
+    const sub = (window.SUBJECTS || []).find(s => s.name === state.subject);
+    if (!sub) return [];
+    const b = (sub.boards || []).find(x => x.board === state.board);
+    if (!b) return [];
+    return (b.papers || []).filter(p => Array.isArray(p.questions) && p.questions.length);
+  }
+
+  function paperLabel(p) {
+    return `${p.year} · ${p.paperName}`;
+  }
+
+  // First word of the prompt, if it's a recognised command word — gives the
+  // grader/model-answer endpoints the same calibration the bank questions get.
+  function commandFromPrompt(text) {
+    const m = String(text || '').trim().match(
+      /^(Describe|Explain|Discuss|Evaluate|Assess|Compare|Contrast|State|Calculate|Analyse|Analyze|Justify|Outline|Define|Identify|Give|Write|Develop|Show|Complete)/i
+    );
+    return m ? (m[1][0].toUpperCase() + m[1].slice(1).toLowerCase()) : '';
+  }
+
+  function figureToText(fig) {
+    if (!fig) return '';
+    const head = fig.label ? `${fig.label}:\n` : '';
+    if (fig.content) return `${head}${fig.content}`;
+    if (Array.isArray(fig.headers) && Array.isArray(fig.rows)) {
+      const cols = fig.headers.join(' | ');
+      const body = fig.rows.map(r => r.join(' | ')).join('\n');
+      return `${head}${cols}\n${body}`;
+    }
+    return '';
+  }
+
+  // Map a paper's written parts into the {q, marks, command, modelAnswer}
+  // shape the rest of the page already speaks. We keep substantial written
+  // questions (extended, or worth >= 4 marks) and skip one-liners / MCQ that
+  // don't suit free-text examiner feedback.
+  function pastPaperQuestionsFor(paperId) {
+    const paper = papersForSelected().find(p => p.id === paperId);
+    if (!paper) return [];
+    const out = [];
+    (paper.questions || []).forEach(q => {
+      let scenario = q.scenario || '';
+      if (scenario.length > 1200) scenario = scenario.slice(0, 1200) + '…';
+      (q.parts || []).forEach(part => {
+        if (!(part.extended || (part.marks || 0) >= 4)) return;
+        const segs = [
+          scenario,
+          part.preamble || '',
+          figureToText(part.figure).trim(),
+          part.prompt || '',
+        ].filter(Boolean);
+        const plain = segs.join('\n\n');
+        out.push({
+          q: esc(plain).replace(/\n/g, '<br>'),
+          marks: part.marks || 0,
+          command: commandFromPrompt(part.prompt),
+          modelAnswer: '',  // none stored — grader auto-generates an anchor
+          _topicName: `${paper.year} ${paper.paperName} · ${part.code}`,
+        });
+      });
+    });
+    return out;
+  }
+
   // ---------- Practice question bank ----------
   // All BUNDLE_MAP / PRACTICE_MAP entries live in practice-bank-config.js.
   // Add a new subject there once and both pages pick it up.
@@ -337,6 +420,11 @@
   async function loadQuestionsForCurrentTopic() {
     questionIndex = 0;
     topicQuestions = [];
+    // Past-paper source: pull straight from papers-config, no bank lookup.
+    if (state.source === 'paper') {
+      topicQuestions = pastPaperQuestionsFor(state.paper);
+      return;
+    }
     const subjectKey = `${state.subject}_${state.board}`;
     // Prefer the dedicated AI feedback bank (essay-style worded questions).
     // Fall back to the practice bank if no AI feedback bank is wired up yet.
@@ -366,7 +454,9 @@
       if (badge) badge.textContent = `${m} mark${m === 1 ? '' : 's'}`;
     } else {
       currentQuestion = null;
-      questionText.innerHTML = `<em style="color:var(--muted2);">No exam-style questions in the bank for this topic yet — try another topic, or come back once it's added.</em>`;
+      questionText.innerHTML = state.source === 'paper'
+        ? `<em style="color:var(--muted2);">No extracted past-paper questions for this subject and board yet — switch Source back to Question bank, or pick a subject with past papers added (currently Computer Science).</em>`
+        : `<em style="color:var(--muted2);">No exam-style questions in the bank for this topic yet — try another topic, or come back once it's added.</em>`;
       if (badge) badge.textContent = '— marks';
     }
     // New question → drop any stale feedback panel content.
@@ -441,6 +531,7 @@
     state.topic = topics?.[0]?.name || '';
     topicDd?.setLabel(state.topic || 'Pick a topic');
     rebuildTopicDropdown();
+    rebuildPaperDropdown?.();
     refreshTopicAndRender();
     saveSelection();
   });
@@ -476,6 +567,57 @@
     }
   }
   rebuildTopicDropdown();
+
+  // ---------- Source + Paper dropdowns ----------
+  // Show/hide the Topic vs Paper picker and update the right-hand hint.
+  function applySourceMode() {
+    const isPaper = state.source === 'paper';
+    document.getElementById('topicDdWrap').style.display = isPaper ? 'none' : '';
+    document.getElementById('paperDdWrap').style.display = isPaper ? '' : 'none';
+    document.getElementById('pickerLabel').textContent = isPaper ? 'Paper' : 'Topic';
+    document.getElementById('sourceHint').textContent = isPaper ? '📄 Past papers' : '📚 Question bank';
+  }
+
+  let paperDd;
+  function rebuildPaperDropdown() {
+    const papers = papersForSelected();
+    const opts = papers.length
+      ? papers.map(p => ({ value: p.id, label: paperLabel(p), meta: p.totalMarks ? `${p.totalMarks} marks` : '' }))
+      : [{ value: '', label: 'No extracted past papers for this subject yet', meta: '' }];
+    // Drop a saved paper id that no longer belongs to this subject+board.
+    if (state.paper && papers.length && !papers.some(p => p.id === state.paper)) state.paper = '';
+    if (!state.paper && papers.length) state.paper = papers[0].id;
+    const current = papers.find(p => p.id === state.paper);
+    const currentLabel = current ? paperLabel(current) : (papers.length ? opts[0].label : 'No papers');
+    if (paperDd) {
+      paperDd.setOptions(opts);
+      paperDd.render();
+      paperDd.setLabel(currentLabel);
+    } else {
+      paperDd = setupDropdown('paper', opts, (opt) => {
+        if (!opt.value) return;
+        state.paper = opt.value;
+        paperDd.setLabel(opt.label);
+        refreshTopicAndRender();
+        saveSelection();
+      });
+      paperDd.setLabel(currentLabel);
+    }
+  }
+  rebuildPaperDropdown();
+
+  const sourceDd = setupDropdown('source', [
+    { value: 'bank',  label: 'Question bank' },
+    { value: 'paper', label: 'Past papers' },
+  ], (opt) => {
+    state.source = opt.value;
+    sourceDd.setLabel(opt.label);
+    applySourceMode();
+    refreshTopicAndRender();
+    saveSelection();
+  });
+  sourceDd.setLabel(state.source === 'paper' ? 'Past papers' : 'Question bank');
+  applySourceMode();
 
   // Generate-another cycles to the next question in the topic bank
   document.getElementById('generateAnother').addEventListener('click', () => {
@@ -596,7 +738,7 @@
         subject:   state.subject,
         board:     state.board,
         level:     levelSuffix(),
-        topicName: state.topic,
+        topicName: currentQuestion._topicName || state.topic,
       }),
     });
 
@@ -696,7 +838,7 @@
           subject:       state.subject,
           board:         state.board,
           level:         levelSuffix(),
-          topicName:     state.topic,
+          topicName:     currentQuestion._topicName || state.topic,
         }),
       });
 
