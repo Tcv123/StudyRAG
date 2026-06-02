@@ -363,6 +363,23 @@
         </div>`;
     }
 
+    // The board picker (subjects-config.js / auth setup) stores short board
+    // labels like "Edexcel" or "OCR B", whereas the papers config uses the
+    // fuller exam-board names ("Edexcel (Pearson)", "OCR B (MEI)"). Normalise
+    // both sides before comparing so the user's saved board still matches:
+    //   - drop the parenthetical suffix: "Edexcel (Pearson)" → "edexcel"
+    //   - treat a bare "OCR" as "OCR A" (some subjects offer a single OCR
+    //     board the picker labels just "OCR", but the papers list as "OCR A").
+    const normBoard = (b) => {
+      const n = String(b || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
+      return n === 'ocr' ? 'ocr a' : n;
+    };
+    const boardMatches = (userBoards, configBoard) => {
+      const cfg = normBoard(configBoard);
+      for (const ub of userBoards) if (normBoard(ub) === cfg) return true;
+      return false;
+    };
+
     // Build the filtered subjects list:
     //   - drop boards with no attemptable papers (just an official-page link)
     //   - if the user has a filter → keep only the user's boards
@@ -373,7 +390,7 @@
         if (userBoardsBySubject) {
           const userBoards = userBoardsBySubject.get(s.name);
           if (userBoards && userBoards.size > 0) {
-            bs = bs.filter(b => userBoards.has(b.board));
+            bs = bs.filter(b => boardMatches(userBoards, b.board));
           } else {
             // User doesn't study this subject at all → drop entirely.
             bs = [];
