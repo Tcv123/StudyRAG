@@ -455,7 +455,7 @@
     } else {
       currentQuestion = null;
       questionText.innerHTML = state.source === 'paper'
-        ? `<em style="color:var(--muted2);">No extracted past-paper questions for this subject and board yet — switch Source back to Question bank, or pick a subject with past papers added (currently Computer Science).</em>`
+        ? `<em style="color:var(--muted2);">No past-paper questions for ${esc(state.subject)} (${esc(state.board)}) yet — switch Source back to Question bank, or pick a subject that has past papers added.</em>`
         : `<em style="color:var(--muted2);">No exam-style questions in the bank for this topic yet — try another topic, or come back once it's added.</em>`;
       if (badge) badge.textContent = '— marks';
     }
