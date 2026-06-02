@@ -349,10 +349,21 @@
   // window.SUBJECTS (papers-config.js) holds the extracted past papers. Only
   // papers that carry a `questions` array can feed the AI marker; the rest are
   // print-only on the past-papers page and are skipped here.
+  //
+  // The board picker saves short labels ("Edexcel", "OCR B") but papers-config
+  // uses fuller names ("Edexcel (Pearson)", "OCR B (Advancing Physics)"), so an
+  // exact === match would silently hide those papers. Normalise both sides the
+  // same way past-papers.html does (drop the parenthetical suffix; treat a bare
+  // "OCR" as "OCR A") before comparing.
+  function normBoard(b) {
+    const n = String(b || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
+    return n === 'ocr' ? 'ocr a' : n;
+  }
   function papersForSelected() {
     const sub = (window.SUBJECTS || []).find(s => s.name === state.subject);
     if (!sub) return [];
-    const b = (sub.boards || []).find(x => x.board === state.board);
+    const target = normBoard(state.board);
+    const b = (sub.boards || []).find(x => normBoard(x.board) === target);
     if (!b) return [];
     return (b.papers || []).filter(p => Array.isArray(p.questions) && p.questions.length);
   }
