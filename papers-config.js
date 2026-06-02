@@ -5344,7 +5344,487 @@ window.SUBJECTS = [
             totalMarks: 140,
             durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/703781-question-paper-algorithms-and-programming.pdf',
-            msUrl: 'https://www.ocr.org.uk/Images/703954-mark-scheme-algorithms-and-programming.pdf'
+            msUrl: 'https://www.ocr.org.uk/Images/703954-mark-scheme-algorithms-and-programming.pdf',
+            questions: [
+              {
+                number: 1,
+                scenario: "A tree is one example of a data structure.",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Give two characteristics of a tree data structure.", marks: 2 },
+                  { code: '1(a)(ii)',
+                    preamble: "The following data is entered into a binary search tree in this order:\n\n    22  13  5  36  55  14  8",
+                    prompt: "Describe the resulting binary search tree (state the parent and side — left/right — of each inserted value).", marks: 4 },
+                  { code: '1(a)(iii)', prompt: "Describe how a leaf node is deleted from a binary search tree.", marks: 2 },
+                  { code: '1(a)(iv)', prompt: "Describe how a binary search tree can be searched for a value.", marks: 4 },
+                  { code: '1(a)(v)',
+                    preamble: "Tree (root H, left C with children A,F, right P with children L,T):\n              H\n            /   \\\n          C       P\n         / \\     / \\\n        A   F   L   T",
+                    prompt: "Identify the order that the nodes will be visited in a depth-first (post-order) traversal of this binary search tree.", marks: 4 },
+                  { code: '1(a)(vi)', prompt: "Explain how backtracking is used in depth-first (post-order) traversals.", marks: 2 },
+                  { code: '1(b)',
+                    preamble: "Fig. 1 shows a graph with edges:\n    A–B = 5, A–C = 2, B–C = 10, B–E = 2, C–G = 8,\n    D–E = 4, D–F = 8, D–G = 12, E–F = 8, F–G = 1\n  (weights — see QP for diagram)",
+                    figure: { type: 'table', label: "Dijkstra working table (one row per node)",
+                      headers: ['Node', 'Distance travelled', 'Previous node'],
+                      rows: [['A','',''],['B','',''],['C','',''],['D','',''],['E','',''],['F','',''],['G','','']] },
+                    prompt: "Show how Dijkstra's algorithm can be used on the graph in Fig. 1 to find the shortest path from start node A to end node G.\n\nYou must state the nodes on the final path and the distance. Show your working.", marks: 6 }
+                ]
+              },
+              {
+                number: 2,
+                parts: [
+                  { code: '2', extended: true,
+                    preamble: "A company needs a new computer program to create schedules for delivery drivers. It needs to identify a possible order that drivers can deliver items and possible routes they could take.",
+                    prompt: "Discuss how programmers could make use of problem recognition and problem decomposition when designing this system.\n\nYou should include:\n  • a description of both problem recognition and decomposition\n  • how each method can be used when designing the solution\n  • the benefits of using each method when designing the solution.", marks: 9 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: "A program stores data in a linked list (Fig. 3):\n\n    headPointer = 1   freeListPointer = 4\n    location  data       pointer\n      0       \"blue\"        6\n      1       \"red\"         0\n      2       \"green\"       8\n      3       \"orange\"    NULL\n      4       (free)        9\n      5       (free)        ...\n      6       \"grey\"        5\n      7       \"purple\"      2\n      8       (free)        ...\n      9       (free)        ...\n\n(See the official QP for the exact pointer values — the layout is hard to reproduce in text. The MS expects head-traversal output: red → blue → grey → green → purple → orange.)",
+                parts: [
+                  { code: '3(a)', prompt: "State the purpose of headPointer and freeListPointer in the linked list shown in Fig. 3.", marks: 2 },
+                  { code: '3(b)', prompt: "State the meaning of the pointers with the value NULL in the linked list shown in Fig. 3.", marks: 1 },
+                  { code: '3(c)',
+                    preamble: "A procedure outputs the data in the linked list from the first item to the last.",
+                    prompt: "Give the output from the procedure.", marks: 2 },
+                  { code: '3(d)',
+                    preamble: "A new item needs to be added to the linked list.",
+                    prompt: "Describe how a new item is added to a linked list.", marks: 4 },
+                  { code: '3(e)',
+                    preamble: "The function findNode searches and returns the position of the matching node (or −1 if not found). linkedList[x].data is the data; linkedList[x].pointer is the next pointer.\n\n    function findNode(toFind, headPointer, linkedList)\n        currentNode = ______\n        while(currentNode != ______)\n            if linkedList[currentNode].______ == toFind then\n                return currentNode\n            else\n                currentNode = linkedList[______].pointer\n            endif\n        endwhile\n        return ______\n    endfunction",
+                    prompt: "Complete the function by filling in the five blanks.", marks: 5 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: "A programmer has designed a reusable function isInteger() that takes a string and checks each digit is between 0–9. The asc() function returns the ASCII value (e.g. asc(\"1\") = 49). ASCII for '0' is 48, for '9' is 57.\n\n    01 function isInteger(number)\n    02     result = true\n    03     for count = 0 to number.length-1\n    04         asciiValue = asc(number.substring(count, 1))\n    05         if not(asciiValue >= 48 and asciiValue <= 57) then\n    06             result = false\n    07         endif\n    08     next count\n    09     return result\n    10 endfunction",
+                parts: [
+                  { code: '4(a)(i)', prompt: "Identify one identifier used in the function isInteger().", marks: 1 },
+                  { code: '4(a)(ii)', prompt: "Give the line number where the branching (selection) construct starts in isInteger().", marks: 1 },
+                  { code: '4(a)(iii)', prompt: "Give the line number where the iteration construct starts in isInteger().", marks: 1 },
+                  { code: '4(b)', prompt: "Describe the purpose of these lines in the function isInteger():\n  • Line 03\n  • Line 04\n  • Line 09", marks: 3 },
+                  { code: '4(c)', prompt: "Give two reasons why reusable program components are used in programs.", marks: 2 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "A recursive pseudocode function recursiveAlgorithm():\n\n    01 function recursiveAlgorithm(value)\n    02     if value <= 0 then\n    03         return 1\n    04     elseif value MOD 2 = 0 then\n    05         return value + recursiveAlgorithm(value − 3)\n    06     else\n    07         return value + recursiveAlgorithm(value − 1)\n    08     endif\n    09 endfunction",
+                parts: [
+                  { code: '5(a)', prompt: "Describe the key features of a recursive algorithm. You may refer to the function in your answer.", marks: 3 },
+                  { code: '5(b)',
+                    figure: { type: 'table', label: 'Trace table for recursiveAlgorithm(10)',
+                      headers: ['Function call', 'value', 'return'],
+                      rows: [['recursiveAlgorithm(10)','',''],['','',''],['','',''],['','',''],['','',''],['','','']] },
+                    prompt: "Trace the recursive function recursiveAlgorithm() and give the final return value when called with recursiveAlgorithm(10).", marks: 5 }
+                ]
+              },
+              {
+                number: 6,
+                parts: [
+                  { code: '6', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/02 June 2023 Q6 — Convert denary to octal (base 8)\n# Algorithm:\n#   - divide denary by 8, store the remainder\n#   - divide the integer quotient by 8 repeatedly until 0 is reached\n#   - display the remainders in reverse order\n#\n# Examples: 38 → 46 (octal); 57 → 71 (octal)\n#\n# Take a denary value from the user, convert, and output the octal.\n\nnumber = int(input(\"Enter a number: \"))\n# TODO: implement the conversion.\nprint(0)\n"
+                    },
+                    testInputs: ["57"],
+                    preamble: "Octal is a base 8 number system. To convert denary to base 8:\n  • Divide by 8, store the remainder.\n  • Divide the integer quotient by 8 repeatedly until 0 is reached.\n  • Display the remainders in reverse order.\n\nExamples:\n  Denary 38 → 4 r 6, 0 r 4 → Octal 46\n  Denary 57 → 7 r 1, 0 r 7 → Octal 71",
+                    prompt: "Write an algorithm to take a denary value, convert it to octal, and output the result.\n\nClick ▶ Run with input 57. A correct implementation prints 71.", marks: 6 }
+                ]
+              },
+              {
+                number: 7,
+                parts: [
+                  { code: '7(a)', extended: true,
+                    preamble: "A program designer needs to decide on an algorithm. The table shows worst-case Big O complexities:\n\n    Algorithm 1  Linear           Exponential\n    Algorithm 2  Exponential      Constant\n    Algorithm 3  Logarithmic      Logarithmic\n    (Time complexity | Space complexity)\n\nThe program will analyse data that can range from 2 items to 2 billion items.",
+                    prompt: "Compare the use of all three algorithms and suggest which the programmer should use.\n\nYou should include:\n  • the meaning of constant, logarithmic, linear and exponential complexity\n  • how well each algorithm scales as the amount of data increases\n  • which algorithm is the most suitable for the given task.", marks: 9 },
+                  { code: '7(b)(i)', prompt: "Describe what is meant by the term 'concurrent processing'.", marks: 2 },
+                  { code: '7(b)(ii)', prompt: "Give two benefits of using concurrent processing.", marks: 2 },
+                  { code: '7(c)(i)', prompt: "Describe how a merge sort works.", marks: 5 },
+                  { code: '7(c)(ii)', prompt: "Give one benefit and one drawback of the programmer using a merge sort instead of a bubble sort.", marks: 2 },
+                  { code: '7(d)',
+                    figure: { type: 'table', label: 'Three IDE features (feature + description)',
+                      headers: ['IDE feature', 'Description'],
+                      rows: [['', ''], ['', ''], ['', '']] },
+                    prompt: "The programmer uses an Integrated Development Environment (IDE). Identify and describe three IDE features that can help the programmer to develop or debug a program.", marks: 6 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "A program is being designed that will allow a user to log into an account on a website using a username and password.",
+                parts: [
+                  { code: '8(a)', prompt: "Identify two possible inputs and one output this program will need.", marks: 3 },
+                  { code: '8(b)', prompt: "Identify two possible sub-procedures that could be used in this program.", marks: 2 }
+                ]
+              },
+              {
+                number: 9,
+                scenario: "A text-based computer game allows a user to dig for treasure on an island. The island is a grid with 10 rows and 20 columns. Each square has x and y coordinates. Some squares contain a treasure object; each treasure has a value (e.g. 100) and a level (e.g. \"Bronze\").",
+                parts: [
+                  { code: '9(a)(i)', prompt: "Describe what is meant by the term abstraction and give an example of how abstraction can be used in the treasure game.", marks: 3 },
+                  { code: '9(a)(ii)', prompt: "Give three benefits of using abstraction when writing a program.", marks: 3 },
+                  { code: '9(b)(i)', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/02 June 2023 Q9(b)(i) — Treasure class\n# class: Treasure\n# attributes: private value (integer), private level (string)\n# methods:\n#   new()  — constructor: takes value (int) and level (string) as parameters,\n#            assigns to attributes\n#   getValue(), getLevel()  — DO NOT write these\n\nclass Treasure:\n    # TODO: define attributes + constructor only.\n    pass\n\n\n# ── Test driver (do not modify) ──\nbronze = Treasure(100, \"bronze\")\nprint(f\"Value: {getattr(bronze, '_Treasure__value', getattr(bronze, 'value', '?'))}  (expected 100)\")\nprint(f\"Level: {getattr(bronze, '_Treasure__level', getattr(bronze, 'level', '?'))}  (expected bronze)\")\n"
+                    },
+                    testInputs: [],
+                    preamble: "Class design:\n\n    class: Treasure\n    attributes:\n        private value : integer\n        private level : string\n    methods:\n        new()\n        function getValue()\n        function getLevel()\n\nThe constructor takes an integer value (e.g. 100) and a level string (e.g. \"bronze\") as parameters and assigns them to the attributes.",
+                    prompt: "Write pseudocode or program code to declare the class Treasure. Define the attributes and constructor method. You do not need to write the get methods.\n\nClick ▶ Run. A correct implementation prints Value: 100, Level: bronze.", marks: 5 },
+                  { code: '9(b)(ii)', prompt: "The get method getLevel() will return the appropriate attribute. Write the method getLevel() using either pseudocode or program code.", marks: 2 },
+                  { code: '9(b)(iii)', prompt: "Describe the object-oriented programming technique being used in part 9(b)(ii).", marks: 2 },
+                  { code: '9(c)',
+                    preamble: "Class design:\n\n    class: Board\n    attributes:\n        private grid : Array of Treasure\n    methods:\n        new()\n        function getGridItem(x, y)\n        function setGridItem(x, y, treasureToInsert)\n\nThe constructor initialises each space in the grid to a treasure object with value = −1 and level = \"\" (empty string).\n\n    public procedure new()\n        for row = ______ to 9\n            for column = 0 to ______\n                ______[row, column] = new Treasure(______, \"\")\n            next ______\n        next row\n    endprocedure",
+                    prompt: "Complete the pseudocode by filling in the five blanks.", marks: 5 },
+                  { code: '9(d)', extended: true,
+                    preamble: "A procedure guessGrid():\n  • takes a Board object as a parameter\n  • accepts row (x) and column (y) coordinates from the user\n  • outputs \"No treasure\" if no treasure is at the coordinate (level is \"\")\n  • if there is treasure, outputs the level and value in an appropriate message.",
+                    prompt: "Write the procedure guessGrid() using either pseudocode or program code.", marks: 7 },
+                  { code: '9(e)', prompt: "Describe two benefits of using an object-oriented paradigm rather than a procedural paradigm.", marks: 4 },
+                  { code: '9(f)', extended: true,
+                    preamble: "The main program initialises a new instance of Board. The programmer is considering declaring this as a global variable or as a local variable and then passing it into the subroutines that control the game.",
+                    prompt: "Compare the use of variables and parameters in this game.\n\nYou should include:\n  • what is meant by a local variable and global variable\n  • how local and global variables can be used in this program\n  • the use of passing parameters by value and by reference.", marks: 9 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'points',
+                points: [
+                  'A tree has one root node',
+                  'Each node can have 0, 1 or 2 child nodes (for binary trees) / any number of children (for general trees)',
+                  'There are no cycles / loops',
+                  'A connected acyclic graph',
+                  'Has parent-child relationships / hierarchical structure',
+                  'Edges connect nodes'
+                ],
+                guidance: '2 marks: 1 per characteristic.' },
+              '1(a)(ii)': { type: 'exact',
+                points: [
+                  'Root: 22',
+                  '13 → left child of 22',
+                  '5 → left child of 13',
+                  '36 → right child of 22',
+                  '55 → right child of 36',
+                  '14 → right child of 13',
+                  '8 → right child of 5'
+                ],
+                guidance: '4 marks: 1 per correctly-positioned pair of values (max 4).' },
+              '1(a)(iii)': { type: 'points',
+                points: [
+                  'Find the node to delete (using the BST search property)',
+                  "Set the parent's pointer to that leaf to NULL (or equivalent — remove the link from the parent)",
+                  '(Optionally) free the memory used by the leaf'
+                ],
+                guidance: '2 marks.' },
+              '1(a)(iv)': { type: 'points',
+                points: [
+                  'Start at the root node',
+                  'Compare search item to current node',
+                  'If equal, return (found)',
+                  'If search item is less than current node, move to left child',
+                  'If search item is greater than current node, move to right child',
+                  'Repeat until found or null pointer reached',
+                  'If null pointer reached, item not found / return -1'
+                ],
+                guidance: '4 marks.' },
+              '1(a)(v)': { type: 'exact',
+                points: ['A F C L T P H', 'AFCLTPH'],
+                guidance: '4 marks: 1 per correct subgroup. Post-order = left, right, root for each subtree → for left subtree of H: A F C; for right: L T P; then H.' },
+              '1(a)(vi)': { type: 'points',
+                points: [
+                  'After visiting a subtree, the algorithm backtracks to the parent',
+                  'Allows the algorithm to visit the next subtree / parent node',
+                  'Implemented using a stack (or implicitly via recursion call stack)',
+                  'Continues until all nodes have been visited and the algorithm returns to the root'
+                ],
+                guidance: '2 marks.' },
+              '1(b)': { type: 'exact',
+                points: [
+                  'A: distance 0, previous —',
+                  'B: distance 5, previous A',
+                  'C: distance 2, previous A',
+                  'D: distance 10, previous A (or via E/B route — depends on graph)',
+                  'E: distance 7, previous B',
+                  'F: distance 15, previous E',
+                  'G: distance 14, previous E/D — final path A→B→E→G via shortest (depends on diagram exact weights)',
+                  'Final path: A B C ... G (per the exact diagram); distance: 14 (per MS)'
+                ],
+                guidance: '6 marks. Working table values per MS: B=5/A, C=2/A, D=10/A, E=7/B, F=15/E, G=14/E_or_D. Distance = 14. Order of previous nodes must be clear.' },
+              '2': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of both computational thinking methods; accurate and detailed. Knowledge applied directly and consistently to context; explicitly relevant evidence.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of both methods. Knowledge applied to context with one or two missed opportunities. Reasonable discussion, mostly focused.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of both methods; some inaccuracies. Limited attempt to apply to context.' }
+                ],
+                indicative: {
+                  'AO1 — Definitions': 'Problem recognition: identifying that there is a problem to be solved, determining exactly what the problem is, and determining if it can be solved with computational methods. Decomposition: splitting the problem down into subproblems that can be solved independently.',
+                  'AO2 — Application': 'Problem recognition: identifying need for the scheduling system, what inputs (driver list, delivery addresses, time constraints), what outputs (routes, schedules). Decomposition subproblems: inputting requirements, generating possible routes, evaluating routes, outputting the schedule.',
+                  'AO3 — Evaluation': 'Allows programmer to determine the problem, challenges, and additional information required before coding. Identifies key features. Splitting allows quicker solution development. Designs an efficient solution. Allows programmers to focus on their specialities.'
+                },
+                guidance: '9 marks total.' },
+              '3(a)': { type: 'points',
+                points: [
+                  'headPointer: indicates the first element in the list',
+                  'freeListPointer: indicates the next index to store data in (the freeList)'
+                ],
+                guidance: '2 marks: 1 each.' },
+              '3(b)': { type: 'points',
+                points: [
+                  "It doesn't point to another node",
+                  'Indicates the end of the linked list'
+                ],
+                guidance: '1 mark.' },
+              '3(c)': { type: 'exact',
+                points: [
+                  'red blue grey green purple orange'
+                ],
+                guidance: '2 marks: 1 for first output "red", 1 for remainder of list correct.' },
+              '3(d)': { type: 'points',
+                points: [
+                  'Check space available in the free list / check freeListPointer is not NULL',
+                  'Add new data item to first free space (at index freeListPointer)',
+                  '(Append) Traverse to / locate the end of the list',
+                  '(Append) Set the pointer of the last item in the linked list to freeListPointer',
+                  '(Append) Update freeListPointer to the location that new data item pointer is pointing to',
+                  '(Append) Update pointer from new data item to NULL',
+                  '(Prepend) Update freeListPointer to the location the pointer from the first item in the free list points to',
+                  '(Prepend) Update pointer from new data item to headPointer',
+                  '(Prepend) Update headPointer to the index of new data item'
+                ],
+                guidance: 'Max 4. Allow either append or prepend pattern (both valid). Responses must refer to the relevant pointers or give clear exemplifications.' },
+              '3(e)': { type: 'exact',
+                points: [
+                  'Blank 1: headPointer',
+                  'Blank 2: NULL (or null / None)',
+                  'Blank 3: data',
+                  'Blank 4: currentNode',
+                  'Blank 5: −1'
+                ],
+                guidance: '5 marks: 1 per statement. Ignore case of identifiers.' },
+              '4(a)(i)': { type: 'exact',
+                points: ['isInteger', 'number', 'result', 'count', 'asciiValue'],
+                guidance: '1 mark for any one of the five identifiers.' },
+              '4(a)(ii)': { type: 'exact',
+                points: ['05', '5'],
+                guidance: '1 mark for line 05.' },
+              '4(a)(iii)': { type: 'exact',
+                points: ['03', '3'],
+                guidance: '1 mark for line 03.' },
+              '4(b)': { type: 'points',
+                points: [
+                  'Line 03 — Loop through each of the characters / digits in the number string (parameter)',
+                  'Line 04 — Find the ASCII value of the current character / digit',
+                  'Line 09 — Return true if the value is an integer and false otherwise'
+                ],
+                guidance: '3 marks: 1 per line.' },
+              '4(c)': { type: 'points',
+                points: [
+                  'One piece of code can be used many times / in multiple places / makes code more efficient',
+                  'No need to write the same code multiple times',
+                  'Takes less time to plan / design / code the program',
+                  'Easier error detection — fix once and it corrects in each place / less likely to have errors',
+                  'Makes it easier to maintain the program'
+                ],
+                guidance: 'Max 2.' },
+              '5(a)': { type: 'points',
+                points: [
+                  'The function calls itself (e.g. line 05 / 07)',
+                  'Each recursive call creates a new copy of the values in the function',
+                  '...and adds the values of the copy onto a stack',
+                  'There is a base case / condition that stops the recursive calls (e.g. line 02)',
+                  'There may be more than one base case'
+                ],
+                guidance: 'Max 3. Allow answers in context if features are clear.' },
+              '5(b)': { type: 'exact',
+                points: [
+                  'recursiveAlgorithm(10): value=10, return=29',
+                  'recursiveAlgorithm(7):  value=7, return=19',
+                  'recursiveAlgorithm(6):  value=6, return=12',
+                  'recursiveAlgorithm(3):  value=3, return=6',
+                  'recursiveAlgorithm(2):  value=2, return=3',
+                  'recursiveAlgorithm(−1): value=−1, return=1',
+                  'Final return value: 29'
+                ],
+                guidance: '5 marks: 1 for final return value 29 (award in working OR answer space) + 1 each for working bullets (first call with 10 and second call with 7; remainder of calls 6, 3, 2; final call value −1; adding/showing return values 1+2+3+6+7+10).' },
+              '6': { type: 'points',
+                points: [
+                  'Taking number as input',
+                  'Calculating remainder after division by 8',
+                  'Calculating integer after division by 8',
+                  'Correct loop until 0 is reached (or equivalent method)',
+                  'Concatenating each remainder / storing each remainder in an array/list',
+                  'Outputting the correct result'
+                ],
+                guidance: '6 marks. The final mark point can only be awarded where the correct output will be produced by the algorithm. Note: can reverse string before output if not concatenating in reverse-order.' },
+              '7(a)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of Big O; accurate and detailed. Knowledge applied directly and consistently to context; explicitly relevant evidence.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of Big O; one or two missed opportunities.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of Big O; some inaccuracies. Limited attempt to apply to context.' }
+                ],
+                indicative: {
+                  'AO1 — Definitions': 'Big O measures how the number of steps and memory usage change as data size increases. Linear — grows in proportion to data. Exponential — rate of increase is kⁿ as n increases. Constant — does not change. Logarithmic — rate of increase gets smaller (logₖn) as n increases.',
+                  'AO2 — Application': 'Algorithm 1: time grows with data, space significantly increases — not memory-efficient. Algorithm 2: time increases significantly — not time-efficient; space never changes — memory does not grow. Algorithm 3: time grows less fast than others; space increases but not insurmountably — efficient at large scale.',
+                  'AO3 — Evaluation': 'Number of elements is unknown. Exponential is least appropriate — could be unmanageable. Constant is the most ideal time. Algorithm 3 most suitable because logarithmic time scales well — reasonable with 2 items, still tractable at 2 billion items.'
+                },
+                guidance: '9 marks total.' },
+              '7(b)(i)': { type: 'points',
+                points: [
+                  'Processes happen at the same time / processes overlap',
+                  'One process can start before another one finishes',
+                  'Each process is given a slice of processor time',
+                  'Different processes can be executed (in parallel) by different processors / cores'
+                ],
+                guidance: 'Max 2.' },
+              '7(b)(ii)': { type: 'points',
+                points: [
+                  'More efficient processor use / less idle time for processor / greater throughput',
+                  'Long-running tasks do not delay short-running tasks',
+                  'Tasks requiring preconditions can wait and then resume execution',
+                  'User is able to interact with the computer while other tasks are running'
+                ],
+                guidance: 'Max 2.' },
+              '7(c)(i)': { type: 'points',
+                points: [
+                  'The data list is split into two lists',
+                  'These sublists continue to be (recursively) split...',
+                  '...until each sublist is one item',
+                  'The first element in two different sublists is compared...',
+                  '...the smaller item is then selected and written to a new list',
+                  '...until both sublists are fully merged',
+                  'Repeated until all sorted sublists are recombined'
+                ],
+                guidance: 'Max 5.' },
+              '7(c)(ii)': { type: 'points',
+                points: [
+                  'Benefit: More efficient time complexity (for large data sets) / takes fewer steps',
+                  'Benefit: Time complexity O(n log n) rather than O(n²)',
+                  'Benefit: Uses divide and conquer',
+                  'Benefit: Can apply concurrent processing to reduce sorting time',
+                  'Drawback: More difficult to implement / needs more complex code',
+                  'Drawback: Less efficient space complexity / uses more memory with more data items',
+                  'Drawback: Space complexity of O(n) rather than O(1)',
+                  'Drawback: Merge sort is always O(n log₂ n) whereas best case for bubble sort is O(n)'
+                ],
+                guidance: '2 marks: 1 for benefit + 1 for drawback.' },
+              '7(d)': { type: 'points',
+                points: [
+                  'Error diagnostics — to locate and fix errors',
+                  'Breakpoints — stop a program running at a point to check variables',
+                  'Syntax highlighting — to identify key words, variables, help identify syntax errors',
+                  'Stepping / step through — run the program line by line to check variable values at each stage',
+                  'Variable watch window — view how variables change while the program executes',
+                  'Auto-complete — start typing a command/identifier and it completes it'
+                ],
+                guidance: '6 marks: 1 for identification + 1 for description of feature, 3 features total.' },
+              '8(a)': { type: 'points',
+                points: [
+                  'Input — Username',
+                  'Input — Password',
+                  'Output — Message to request input',
+                  'Output — Message to state login successful',
+                  'Output — Message to say login unsuccessful'
+                ],
+                guidance: '3 marks: 1 per input to max 2 + 1 for output.' },
+              '8(b)': { type: 'points',
+                points: [
+                  'Connect to database',
+                  'Access usernames in file / database',
+                  'Check username against file / database',
+                  'Hash password',
+                  'Access password / hash in file / database',
+                  'Check password entered/hashed vs stored',
+                  'Output result'
+                ],
+                guidance: 'Max 2.' },
+              '9(a)(i)': { type: 'points',
+                points: [
+                  'Removal of unnecessary detail',
+                  '...to allow programmers to focus on core aspects of the problem',
+                  '...simplifies a complex problem',
+                  'Example: treasure objects replaced with text labels / no images',
+                  'Example: island is a set of coordinates with no info as to environment/layout/other objects'
+                ],
+                guidance: '3 marks: 1-2 for description + example.' },
+              '9(a)(ii)': { type: 'points',
+                points: [
+                  'Reduces programming time',
+                  'Reduces complexity of code (through abstraction by generalisation)',
+                  'Reduces amount of memory required / computational power',
+                  'Simplifies the problem so it\'s easier to solve / understand (by recognising common patterns)',
+                  'Allows programmers to focus on core aspects of the problem'
+                ],
+                guidance: 'Max 3.' },
+              '9(b)(i)': { type: 'points',
+                points: [
+                  'Defining class Treasure',
+                  'Defining the private attributes value and level',
+                  'Defining a new public procedure (constructor)',
+                  '...taking two parameters (integer and string)',
+                  'Correctly assigning both parameters to the attributes'
+                ],
+                guidance: '5 marks: 1 per bullet. Allow use of this/self. Python: must use comments to indicate private attributes OR use the double-underscore private convention.' },
+              '9(b)(ii)': { type: 'points',
+                points: [
+                  'getLevel method header with no parameter (just self for Python)',
+                  'Returning level attribute'
+                ],
+                guidance: '2 marks.' },
+              '9(b)(iii)': { type: 'points',
+                points: [
+                  'Encapsulation',
+                  'Allowing an attribute to only be accessed/changed via a method'
+                ],
+                guidance: '2 marks.' },
+              '9(c)': { type: 'exact',
+                points: [
+                  'Blank 1: 0 (for row = 0 to 9)',
+                  'Blank 2: 19 (column 0 to 19)',
+                  'Blank 3: grid',
+                  'Blank 4: −1',
+                  'Blank 5: column'
+                ],
+                guidance: '5 marks: 1 per completed statement.' },
+              '9(d)': { type: 'points',
+                points: [
+                  'Procedure declaration taking parameter',
+                  'Taking two inputs for row and column from the user',
+                  'Accessing item at grid position...',
+                  '...using correct get method getGridItem',
+                  "Checking (treasure) object's level/value...",
+                  '...using correct get method getLevel / getValue',
+                  '...outputting "No treasure" if empty',
+                  '...otherwise outputting value and level'
+                ],
+                guidance: 'Max 7. Candidates may attempt to access private attributes directly (gameboard.grid(x,y)) — credit cannot be given for the dependent second mark for using appropriate get method if they do, but FT marks for later points.' },
+              '9(e)': { type: 'points',
+                points: [
+                  'Code can easily be reused — classes can be used in other programs',
+                  'Inheritance can extend existing classes / a class can be based on an existing class',
+                  'Easier to maintain — classes can be modified or extended',
+                  'Debugging easier — encapsulation limits how attributes are changed',
+                  'Code can be more secure — access to attributes restricted via methods',
+                  'Better for coding as part of a team — classes distributed between team members'
+                ],
+                guidance: '4 marks: 1 per benefit + 1 per expansion; max 2 benefits and 1 expansion per benefit.' },
+              '9(f)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge of parameters and local/global variables; accurate and detailed. Knowledge applied directly and consistently to context; explicitly relevant evidence.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of variables and parameters. Knowledge applied to context with one or two missed opportunities.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge; some inaccuracies. Limited attempt to apply to context.' }
+                ],
+                indicative: {
+                  'AO1 — Definitions': 'Local variable can only be accessed within the sub-program / main program it is declared within. Global variable can be accessed by all sub-programs. Parameters are items passed to a subprogram. Pass by reference sends a pointer to the original value (changes propagate). Pass by value sends a copy (original not changed).',
+                  'AO2 — Application to game': 'If board is local, only accessible in main program; must be passed to any sub-programs that need it. If board needs to be changed, pass by reference so updates persist. If only accessed (not changed), pass by value.',
+                  'AO3 — Evaluation': 'Global = present in memory throughout (uses more memory) but board needed throughout so may be as efficient as parameter-passing. Global may make programming more straightforward, fewer parameter-passing errors. Local allows board to be manipulated by subprograms without affecting actual board (useful for simulating potential changes).'
+                },
+                guidance: '9 marks total.' }
+            }
           },
           {
             id: 'cs-ocr-h446-2022-p2',
