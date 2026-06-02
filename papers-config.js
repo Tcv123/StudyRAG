@@ -3822,7 +3822,501 @@ window.SUBJECTS = [
             totalMarks: 140,
             durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/676743-question-paper-algorithms-and-programming.pdf',
-            msUrl: 'https://www.ocr.org.uk/Images/676944-mark-scheme-algorithms-and-programming.pdf'
+            msUrl: 'https://www.ocr.org.uk/Images/676944-mark-scheme-algorithms-and-programming.pdf',
+            questions: [
+              // ── SECTION A — 100 marks (Q1–Q7)
+              {
+                number: 1,
+                scenario: "A computer program stores data in an array named words.",
+                parts: [
+                  { code: '1(a)(i)',
+                    preamble: "The data in the array needs to be searched for a value that the user inputs. One example of a searching algorithm is a binary search.",
+                    prompt: "Identify the precondition for a binary search.", marks: 1 },
+                  { code: '1(a)(ii)',
+                    preamble: "A second example of a searching algorithm is a linear search.",
+                    prompt: "Describe how a linear search works.", marks: 4 },
+                  { code: '1(b)(i)',
+                    preamble: "The array words is defined as a global variable and contains: \"house\" \"boat\" \"car\" \"telephone\" \"garden\" \"spice\" \"elephant\". The pseudocode function useWords() uses the global array words. The number of words in the array is passed as a parameter.\n\n    function useWords(numberOfWords : byVal)\n        contents = \"\"\n        for count = 0 to numberOfWords - 1\n            contents = contents + words[count] + \" \"\n        next count\n        return contents\n    endfunction",
+                    prompt: "Identify two variables in the function useWords().", marks: 2 },
+                  { code: '1(b)(ii)',
+                    preamble: "numberOfWords is a parameter passed by value.",
+                    prompt: "Describe the difference between passing a parameter by value and by reference.", marks: 2 },
+                  { code: '1(b)(iii)',
+                    prompt: "Rewrite the function useWords() to use a while loop instead of a for loop.\n\nThe function header and close have been written for you:\n\n    function useWords(numberOfWords : byVal)\n        // your code here\n    endfunction\n\nWrite your answer using pseudocode or program code.", marks: 4 },
+                  { code: '1(c)', prompt: "Give one benefit and one drawback of declaring the array as a global variable instead of a local variable.", marks: 2 },
+                  { code: '1(d)', prompt: "Describe one feature of an Integrated Development Environment (IDE) that can be used to help write the program and one feature that can be used to help test the program.", marks: 4 },
+                  { code: '1(e)',
+                    preamble: "Functions and procedures are reusable components.",
+                    prompt: "Give two benefits of writing a program with reusable components.", marks: 2 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "A computer program is being written to store data about students. Fig. 2 shows a binary search tree storing student IDs:\n\n                    2005\n                   /    \\\n                 1920    2350\n                /  \\    /    \\\n              1500 1985 2100  2560\n                       /  \\\n                     1952 2000",
+                parts: [
+                  { code: '2(a)', prompt: "Identify the root node in the binary tree shown in Fig. 2.", marks: 1 },
+                  { code: '2(b)', prompt: "Identify two leaf nodes in the binary tree shown in Fig. 2.", marks: 2 },
+                  { code: '2(c)',
+                    preamble: "Four more students are added to the binary search tree in this order:\n\n    1420  2050  2780  2600",
+                    prompt: "Describe where in the binary search tree each new student is added.\n\n(Give the parent node and side — left/right — for each of 1420, 2050, 2780, 2600.)", marks: 4 },
+                  { code: '2(d)', extended: true,
+                    preamble: "A programmer would like to traverse the binary search tree in Fig. 2.",
+                    prompt: "Compare the use of a breadth-first traversal and a depth-first (post-order) traversal on the binary search tree.\n\nYou should include:\n  • how each traversal works\n  • the order of the return values for each traversal.", marks: 9 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: "A bubble sort will sort an array of 50 integer values called numberArray.",
+                parts: [
+                  { code: '3(a)', prompt: "State why the integer values are stored in an array instead of separate variables.", marks: 1 },
+                  { code: '3(b)',
+                    preamble: "This bubble sort algorithm is written to sort numberArray into ascending numerical order.\n\n    arrayLength = ______\n    tempValue = 0\n    do\n        flag = false\n        for y = 0 to arrayLength - ______\n            if numberArray[y] > numberArray[y + 1] then\n                ______ = numberArray[y]\n                numberArray[______] = numberArray[y + 1]\n                numberArray[y + 1] = ______\n                flag = true\n            endif\n        next y\n    until flag == false",
+                    prompt: "Complete this bubble sort algorithm by filling in the five blanks (arrayLength, the loop end value, tempValue, the index in the swap, and the value used to restore from tempValue).", marks: 5 },
+                  { code: '3(c)',
+                    preamble: "One section of numberArray is:  2 12 1 9 3 5 15 7\n\nA second sorting algorithm that could be used is a merge sort.",
+                    prompt: "Show how a merge sort will sort this section of the array numberArray into ascending numerical order. (List each stage: splitting and merging.)", marks: 4 },
+                  { code: '3(d)', extended: true,
+                    preamble: "Another sorting algorithm is insertion sort. The number of values in numberArray has been reduced to 10.",
+                    prompt: "Compare the use of bubble, merge and insertion sorts on the array numberArray.\n\nYou should include:\n  • how each algorithm works\n  • the Big O complexities for each algorithm\n  • the suitability of each algorithm for sorting the 10 values.", marks: 12 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: "A programmer is developing an aeroplane simulator. The user will sit in a cockpit and the simulated environment will be displayed on screens around them.",
+                parts: [
+                  { code: '4(a)(i)',
+                    figure: { type: 'table', label: 'Computational method definitions',
+                      headers: ['Computational Method', 'Definition'],
+                      rows: [['Abstraction', ''], ['Decomposition', '']] },
+                    prompt: "Complete the table by writing a definition for each computational method.", marks: 2 },
+                  { code: '4(a)(ii)', prompt: "Give three potential differences between the abstracted aeroplane simulator and reality.", marks: 3 },
+                  { code: '4(a)(iii)', prompt: "Identify two reasons why abstraction is used when designing a solution to the problem.", marks: 2 },
+                  { code: '4(b)', prompt: "Describe how caching can be used in the aeroplane simulator.", marks: 2 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "Fig. 5 shows a graph data structure representing a small section of a parcel delivery network. Nodes are delivery addresses, edges show possible routes and distances:\n\n    Edges (undirected, weighted):\n      A–B = 3, A–E = 3, B–C = 3, B–D = 7, B–E = 3,\n      C–E = 7, C–D = 3, D–H = 11, E–F = 3,\n      F–G = 7, G–H = 3, D–G = 3 (see QP for diagram)",
+                parts: [
+                  { code: '5(a)(i)', prompt: "State one way a directed graph is different to an undirected graph.", marks: 1 },
+                  { code: '5(a)(ii)', prompt: "State one way a graph data structure is different to a tree data structure.", marks: 1 },
+                  { code: '5(b)', prompt: "Give one reason why the graph is a visualisation of the problem.", marks: 1 },
+                  { code: '5(c)(i)',
+                    figure: { type: 'table', label: 'Dijkstra working table (one row per node)',
+                      headers: ['Node', 'Distance travelled', 'Previous node'],
+                      rows: [['A','',''],['B','',''],['C','',''],['D','',''],['E','',''],['F','',''],['G','',''],['H','','']] },
+                    prompt: "Show how Dijkstra's algorithm can be used on the graph in Fig. 5 to find the shortest path from start node A to end node H.\n\nState the nodes on the final path and the overall distance. Show your working.", marks: 6 },
+                  { code: '5(c)(ii)', prompt: "Give a similarity and a difference between the performance of Dijkstra's algorithm and the performance of A* algorithm.", marks: 2 },
+                  { code: '5(d)(i)', prompt: "State why performance modelling is used to test a system.", marks: 1 },
+                  { code: '5(d)(ii)', prompt: "Describe how performance modelling can be used in the delivery system.", marks: 2 }
+                ]
+              },
+              {
+                number: 6,
+                scenario: "A card game uses a set of 52 standard playing cards (four suits — hearts, diamonds, clubs, spades — each with cards numbered 1–13).\n\nThe game randomly gives 2 players 7 cards each. The unallocated cards become the deck. Players take turns to turn over a card. A valid move is a card of the same suit OR the same number as the last card played. The winner is the first player to play all of their cards.",
+                parts: [
+                  { code: '6(a)',
+                    preamble: "One component of the game is checking if a move is valid.",
+                    prompt: "Identify three other components of the game.", marks: 3 },
+                  { code: '6(b)(i)',
+                    preamble: "A function checkValid() takes the card the player has selected, and the last card played, as parameters. It returns true if the player's move is valid and false otherwise.",
+                    prompt: "State the reason why checkValid() is a function and not a procedure.", marks: 1 },
+                  { code: '6(b)(ii)',
+                    preamble: "The programmer will use a branching (selection) construct to make decisions.",
+                    prompt: "Describe the decisions that will be made in the checkValid() function and how these change the return values.", marks: 3 },
+                  { code: '6(c)',
+                    preamble: "The cards are held in the 2D array cards. The first index stores the card number and the second index stores the suit, both as strings.",
+                    prompt: "Write a pseudocode statement or program code to declare the array cards.", marks: 2 }
+                ]
+              },
+              {
+                number: 7,
+                scenario: "A program uses the recursive function calculate(). The function is written in pseudocode:\n\n    1. function calculate(number : byVal)\n    2.     if number == 1 then\n    3.         return number\n    4.     else\n    5.         return number + calculate(number - 1)\n    6.     endif\n    7. endfunction",
+                parts: [
+                  { code: '7(a)(i)', prompt: "Give the line number in the algorithm calculate() where a recursive call is made.", marks: 1 },
+                  { code: '7(a)(ii)', prompt: "State two features of any recursive algorithm.", marks: 2 },
+                  { code: '7(b)',
+                    figure: { type: 'table', label: 'Trace table for calculate(5)',
+                      headers: ['Function call', 'number', 'return'],
+                      rows: [['calculate(5)','',''],['','',''],['','',''],['','',''],['','','']] },
+                    prompt: "Trace the recursive function calculate() and give the final return value, when the function call calculate(5) is run.", marks: 5 },
+                  { code: '7(c)', prompt: "Give the pseudocode function call that would return 55 from the recursive function calculate().", marks: 1 }
+                ]
+              },
+              // ── SECTION B — 40 marks (Q8 only)
+              {
+                number: 8,
+                scenario: "A computer uses a stack data structure, implemented using an array, to store numbers entered by the user. The array is zero-based and has 100 locations.",
+                parts: [
+                  { code: '8(a)(i)',
+                    preamble: "Fig. 8 shows the current contents of the stack and the first 9 locations of the array:\n\n    pointerValue = 5\n    Index  Data\n      8\n      7    1\n      6    23\n      5    6\n      4    5\n      3    10\n      2\n      1\n      0\n\nThe function pop() removes an item from the stack; push(value) adds a value to the stack.",
+                    prompt: "Show the contents of the stack and pointer after these calls have run:\n\n    pop()\n    pop()\n    push(3)\n    push(6)\n    push(7)\n\n(Give the final value of pointerValue and the contents of indices 0–8.)", marks: 2 },
+                  { code: '8(a)(ii)', prompt: "State the purpose of pointerValue.", marks: 1 },
+                  { code: '8(b)(i)',
+                    preamble: "The stack is programmed as an object using object-oriented programming. The class design:\n\n    class: stack\n    attributes:\n        private stackArray : Array of integer\n        private pointerValue : integer\n    methods:\n        new()\n        function pop()\n        function push(value)\n\nThe method pop() returns the next value in the stack, or −1 if the stack is empty.",
+                    prompt: "Complete the pseudocode method pop() by filling in the five blanks:\n\n    public function pop()\n        if pointerValue == ______ then\n            return ______\n        else\n            pointerValue = pointerValue ______\n            returnValue = stackArray[______]\n            return ______\n        endif\n    endfunction", marks: 5 },
+                  { code: '8(b)(ii)', extended: true,
+                    preamble: "The method push() accepts an integer as a parameter and adds it to the top of the stack unless the stack is already full. If successful it returns true; if unsuccessful (stack full) it returns false.",
+                    prompt: "Write the method push() using either pseudocode or program code.", marks: 6 },
+                  { code: '8(b)(iii)',
+                    preamble: "The main program initialises a new object of type stack with the identifier mathsStack.",
+                    prompt: "Write pseudocode or program code to declare the object.", marks: 2 },
+                  { code: '8(b)(iv)',
+                    preamble: "The main program needs to:\n  • take numbers as input from the user\n  • push them onto mathsStack until the stack is full\n  • output an appropriate message if the stack is full.",
+                    prompt: "Complete the pseudocode algorithm by filling in the four blanks:\n\n    returnValue = true\n    while returnValue == ______\n        returnValue = mathsStack.______(input(\"Enter Number\"))\n        if returnValue == ______ then\n            ______(\"Stack full\")\n        endif\n    endwhile", marks: 4 },
+                  { code: '8(b)(v)', extended: true,
+                    preamble: "The main program also needs to:\n  • remove one item from the stack at a time and add this to a total\n  • output the total every time an item is removed\n  • stop removing items when either the stack is empty, or 20 items have been removed.",
+                    prompt: "Write pseudocode or program code to meet these requirements.", marks: 8 },
+                  { code: '8(c)(i)',
+                    preamble: "The program is amended to include several queue data structures.",
+                    prompt: "Describe how an array can be used to implement a queue data structure.", marks: 3 },
+                  { code: '8(c)(ii)', extended: true,
+                    prompt: "Discuss the use of object-oriented programming and procedural programming to create and manipulate the queue data structures.\n\nYou should include:\n  • the features of object-oriented programming\n  • the features of procedural programming\n  • the benefits of using object-oriented instead of procedural programming when creating several queue structures.", marks: 9 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact',
+                points: ['The array / data must be in order / sorted', 'sorted', 'in order'],
+                guidance: '1 mark for stating the array must be ordered/sorted.' },
+              '1(a)(ii)': { type: 'points',
+                points: [
+                  'Compare the search item with the first value',
+                  '...then compare the search item with the next value',
+                  '...repeat the above process until either',
+                  '...the end of the array has been reached',
+                  'or...the search item is found and then stop',
+                  '...then return the array position / return −1 / False if not found'
+                ],
+                guidance: '1 mark per bullet, max 4. Not all mark points are dependent, but points awarded must follow logically in sequence.' },
+              '1(b)(i)': { type: 'points',
+                points: ['contents', 'count', 'numberOfWords', 'words / words[]'],
+                guidance: '1 mark per variable identified, max 2. Do not award "numberOfWords" if there are obvious spaces in "number of Words" — must be a valid identifier.' },
+              '1(b)(ii)': { type: 'points',
+                points: [
+                  'By reference the function receives the memory location of the data',
+                  'By value the function receives a copy of the variable',
+                  'By reference will make changes to the original variable / By value will make changes to the copy',
+                  'By reference will overwrite data in the original variable / By value will not',
+                  'By reference will keep the changes after the function ends / By value will not'
+                ],
+                guidance: '1 mark per bullet. Must cover BOTH byVal and byRef for 2 marks to be awarded. Must be clear that byVal is a copy of the original value.' },
+              '1(b)(iii)': { type: 'points',
+                points: [
+                  'Initialising a counter (e.g. count = 0)',
+                  'Looping between 0 and numberOfWords − 1 (e.g. while count < numberOfWords)',
+                  'Incrementing counter inside loop',
+                  'Remainder of algorithm correct (initialisation of contents, concatenation, and return)'
+                ],
+                guidance: '4 marks: 1 per bullet. Accept while count <= numberOfWords − 1. Accept other combinations (e.g. counting from 1 and subtracting 1 for the array index) but do not credit off-by-one errors. Accept len(words) for numberOfWords.' },
+              '1(c)': { type: 'points',
+                points: [
+                  "Benefit — Variable doesn't need passing as a parameter (byref)",
+                  "Benefit — You don't need to return a value",
+                  'Benefit — Can be accessed from any function / anywhere in the program',
+                  'Drawback — Increases memory usage (as it is used until full program execution is over)',
+                  'Drawback — Alterations within the function may have unwanted side effects elsewhere in the program'
+                ],
+                guidance: '2 marks: 1 for benefit + 1 for drawback.' },
+              '1(d)': { type: 'points',
+                points: [
+                  'Write — Auto-complete: start typing an identifier/command and it fills in the rest',
+                  'Write — Auto-indent: indents code automatically within structures to avoid errors',
+                  'Write — Coloured command words / pretty printing / syntax highlighting: shows which commands are correct',
+                  'Test — Breakpoints: stop the program at a set point to check variables',
+                  'Test — Variable watch window: display the values of variables while the program runs',
+                  'Test — Stepping: run one line at a time and check variables',
+                  'Test — Unit testing: automated tests to check changes haven\'t introduced errors'
+                ],
+                guidance: '4 marks: 1 mark per identification + 1 mark per expansion, max 2 each for Write and Test (so 2 + 2 = 4).' },
+              '1(e)': { type: 'points',
+                points: [
+                  'Saves time from having to write the same algorithm repeatedly',
+                  'Reduced testing requirements',
+                  'Can be taken and used in different programs / can be used in a program library'
+                ],
+                guidance: '1 mark per bullet, max 2.' },
+              '2(a)': { type: 'exact',
+                points: ['2005'],
+                guidance: '1 mark for 2005.' },
+              '2(b)': { type: 'exact',
+                points: ['1500', '1952', '2000', '2100', '2560'],
+                guidance: '1 mark for each leaf identified, max 2.' },
+              '2(c)': { type: 'points',
+                points: [
+                  '1420 added as left child of 1500',
+                  '2050 added as right child of 2000',
+                  '2780 added as right child of 2560',
+                  '2600 added as left child of 2780'
+                ],
+                guidance: '4 marks: 1 mark per correctly-placed insertion.' },
+              '2(d)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of search traversals; generally accurate and detailed. Knowledge and understanding applied directly and consistently to the context, with explicitly relevant evidence. Well-developed line of reasoning, clear and logically structured.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge and understanding of search traversals; generally accurate but at times underdeveloped. Knowledge applied to context with one or two missed opportunities. Reasonable discussion, mostly focused.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of search traversals with limited understanding; material contains some inaccuracies. Limited attempt to apply knowledge to context. Narrow, unstructured discussion.' }
+                ],
+                indicative: {
+                  'AO1 — Knowledge & Understanding': 'Breadth first takes first value then visits all nodes connected to it, then takes all nodes connected to those. Depth first goes to the left node (becomes a new tree), continues left until a leaf, returns this, then goes right and repeats — "follow left, follow right, take root".',
+                  'AO2 — Application': 'Breadth-first will return: 2005 1920 2350 1500 1985 2100 2560 (and any 4 new students) 1952 2000. Post-order / Depth-first will return: (1420) 1500 1952 2000 1985 1920 (2050) 2100 (2600 2780) 2560 2350 2005.',
+                  'AO3 — Evaluation': 'Breadth is more efficient when data is closer to the root. Depth is more efficient when data is further down. Depth memory requirement is linear. Depth can be written recursively to aid understanding. Breadth in general is better time complexity. In large trees depth may never return a value.'
+                },
+                guidance: '9 marks total (3 AO1.1 + 3 AO1.2 + 3 AO2.1 + 3 AO3.3 indicative split). Limit to band 2 if there is no evaluation of BFS/DFS.' },
+              '3(a)': { type: 'points',
+                points: [
+                  'Can refer to all 50 only using one identifier / all values can be indexed in one array',
+                  'The numbers can be passed as a single parameter',
+                  'Does not need 50 variables to be declared / passed'
+                ],
+                guidance: '1 mark.' },
+              '3(b)': { type: 'exact',
+                points: [
+                  'arrayLength = 50  (or numberArray.length)',
+                  'for y = 0 to arrayLength − 2',
+                  'tempValue = numberArray[y]',
+                  'numberArray[y] = numberArray[y + 1]',
+                  'numberArray[y + 1] = tempValue'
+                ],
+                guidance: '5 marks: 1 mark per completed blank. Note: if arrayLength = numberArray − 1 / 49 is used, then the for loop end value becomes arrayLength − 1 (consistent off-by-one). Allow other suitable valid identifier in place of tempValue (e.g. temp).' },
+              '3(c)': { type: 'points',
+                points: [
+                  'Splitting into individual items: 2 | 12 | 1 | 9 | 3 | 5 | 15 | 7',
+                  'Combining in pairs: 2 12 | 1 9 | 3 5 | 7 15',
+                  'Merge pairs: 1 2 9 12 | 3 5 7 15',
+                  'Merge for final: 1 2 3 5 7 9 12 15'
+                ],
+                guidance: '4 marks: 1 per stage shown. Do not award a mark for the final stage unless the candidate has shown the previous sorting stage(s).' },
+              '3(d)': { type: 'levels',
+                levels: [
+                  { range: [9, 12], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of sorting algorithms; generally accurate and detailed. Knowledge applied directly and consistently to the context; evidence explicitly relevant. Well-developed line of reasoning.' },
+                  { range: [5, 8], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge and understanding of sorting algorithms; generally accurate but at times underdeveloped. Knowledge applied to context with one or two missed opportunities. Reasonable discussion.' },
+                  { range: [1, 4], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of sorting algorithms with limited understanding; material contains some inaccuracies. Limited attempt to apply knowledge to context.' }
+                ],
+                indicative: {
+                  'AO1 — How each algorithm works': 'Merge sort splits data into individual lists and merges them back together. Insertion makes the first value a sorted list, then inserts each subsequent item into the sorted list. Bubble sort looks through each item in turn, repeated N times.',
+                  'AO2 — Big-O complexities': 'Merge uses more memory (new lists are needed); Insertion and Bubble need constant memory. Bubble and Insertion have best-case O(n) (run through the data once); Merge minimum is O(n log n). Merge average is the same as best. Insertion and Bubble have average O(n²). Worst-case Merge is O(n log n) (same as best/average); Bubble and Insertion worst is O(n²).',
+                  'AO3 — Evaluation (10-element context)': 'There are a small number of elements (10), so Bubble or Insertion would be better space-wise (no further space needed). Merge would not need excessive extra memory either, since there are only a small number of elements. Time-complexity differences are unlikely to be significant for 10 elements — either Bubble or Insertion may be preferable for simplicity.'
+                },
+                guidance: '12 marks total (3 AO1.1 + 3 AO1.2 + 3 AO2.1 + 3 AO3.3 indicative split).' },
+              '4(a)(i)': { type: 'exact',
+                points: [
+                  'Abstraction: Removal of unnecessary components / focus on only necessary components',
+                  'Decomposition: Breaking down a problem into subproblems'
+                ],
+                guidance: '2 marks: max 1 mark per definition.' },
+              '4(a)(ii)': { type: 'points',
+                points: [
+                  'Removal of visual elements such as buildings on the ground',
+                  'Simplification of controls',
+                  'Focus on important elements such as weather, height, speed',
+                  'Reduced physical sensations (no real motion / G-forces)',
+                  'Simplified weather / wind models',
+                  'Other valid simulation-vs-reality differences'
+                ],
+                guidance: '3 marks: 1 per valid difference.' },
+              '4(a)(iii)': { type: 'points',
+                points: [
+                  'Reduce memory requirements',
+                  'Reduce processing requirements',
+                  'Simplify the problem being solved'
+                ],
+                guidance: '2 marks: 1 per reason, max 2.' },
+              '4(b)': { type: 'points',
+                points: [
+                  'Store data that has been used in cache / RAM in case needed again',
+                  'e.g. store the design of the weather / a cloud / external environment',
+                  'Cache frequently-rendered terrain or sound effects to speed redisplay',
+                  'Cache instrument readings or computed physics values'
+                ],
+                guidance: '2 marks. Allow 2 valid examples for 2 marks.' },
+              '5(a)(i)': { type: 'exact',
+                points: [
+                  'In directed arcs/edges may only go in one direction; in undirected arcs/edges can go in both directions'
+                ],
+                guidance: '1 mark.' },
+              '5(a)(ii)': { type: 'points',
+                points: [
+                  'More than one path is allowed in a graph',
+                  'Graphs do not have a root node',
+                  'Graphs can be weighted',
+                  'Graphs can have loops / cycles'
+                ],
+                guidance: '1 mark. Allow answers given the reverse (e.g. "a tree does not have loops").' },
+              '5(b)': { type: 'points',
+                points: [
+                  'Symbols are used to represent the address',
+                  'The edges represent possible connections between addresses, not the actual physical routes',
+                  'Visual representation of the underlying problem'
+                ],
+                guidance: '1 mark. Allow other suitable answers that are in context of the problem.' },
+              '5(c)(i)': { type: 'exact',
+                points: [
+                  'A: distance 0, previous —',
+                  'B: distance 3, previous A',
+                  'C: distance 13, previous E (or via D)',
+                  'D: distance 10, previous B',
+                  'E: distance 6, previous B',
+                  'F: distance 9, previous E',
+                  'G: distance 16, previous D (or F)',
+                  'H: distance 19, previous G',
+                  'Final path: A, B, E, F, G, H. Distance: 19'
+                ],
+                guidance: '6 marks: order of previous nodes visited must be clear. Note: nodes do not have to be given in alphabetical order. 1 mark each for the correct entries at B, D, G, and 2 marks for H + final path (Distance = 19).' },
+              '5(c)(ii)': { type: 'points',
+                points: [
+                  'Similarity — Both always find the shortest route',
+                  'Similarity — Both are pathfinding algorithms',
+                  "Difference — A* is (usually) more efficient / Dijkstra's is (usually) slower",
+                  "Difference — A* uses heuristics to find a solution faster / Dijkstra's does not use heuristics"
+                ],
+                guidance: '2 marks: must contain a similarity AND a difference for both marks.' },
+              '5(d)(i)': { type: 'points',
+                points: [
+                  'Simulate / model behaviour of the system (before it is) used under load',
+                  'Because it would be too expensive / unsafe / time-critical to test the real system'
+                ],
+                guidance: 'Max 1.' },
+              '5(d)(ii)': { type: 'points',
+                points: [
+                  'Test with large and small values',
+                  'e.g. largest number of deliveries',
+                  'e.g. largest number of possible routes',
+                  'Model how well the system scales with increasing use'
+                ],
+                guidance: '2 marks.' },
+              '6(a)': { type: 'points',
+                points: [
+                  'Allocating cards to each player',
+                  'Generating the deck',
+                  'Managing whose turn it is to play',
+                  'Checking won',
+                  'Other valid game components (turn timer, scoring, displaying hand, etc.)'
+                ],
+                guidance: '3 marks: 1 mark per component. Accept any reasonable component.' },
+              '6(b)(i)': { type: 'exact',
+                points: ['It returns a value'],
+                guidance: '1 mark.' },
+              '6(b)(ii)': { type: 'points',
+                points: [
+                  "If the player's card is the same suit return true",
+                  "If the player's card is the same number return true",
+                  'If neither is true, return false'
+                ],
+                guidance: '3 marks: 1 per bullet.' },
+              '6(c)': { type: 'points',
+                points: [
+                  'Identifier cards...',
+                  '...with 2 dimensions (e.g. cards[13, 4] of String, or Dim cards(13, 4) As String, or cards = [[""]*4 for _ in range(13)])'
+                ],
+                guidance: '2 marks.' },
+              '7(a)(i)': { type: 'exact',
+                points: ['5', 'Line 5', 'line number 5'],
+                guidance: '1 mark for line 5.' },
+              '7(a)(ii)': { type: 'points',
+                points: [
+                  'A function that calls itself / a function that is defined in terms of itself',
+                  '...has a base case (that terminates the recursion)'
+                ],
+                guidance: '2 marks: 1 per feature.' },
+              '7(b)': { type: 'exact',
+                points: [
+                  'calculate(5): number=5, return=15',
+                  'calculate(4): number=4, return=10',
+                  'calculate(3): number=3, return=6',
+                  'calculate(2): number=2, return=3',
+                  'calculate(1): number=1, return=1'
+                ],
+                guidance: '5 marks: 1 per correctly-completed row. Final return value of calculate(5) = 15.' },
+              '7(c)': { type: 'exact',
+                points: ['calculate(10)'],
+                guidance: '1 mark for calculate(10) (1+2+3+...+10 = 55).' },
+              '8(a)(i)': { type: 'points',
+                points: [
+                  'Correct data: index 0=10, 1=5, 2=6, 3=3, 4=6, 5=7, 6-8 empty (after pop pop push(3) push(6) push(7))',
+                  'Correct top-of-stack pointer: pointerValue = 6'
+                ],
+                guidance: '2 marks: 1 for correct data + 1 for correct pointer. After pop/pop the indices 4 and 3 are empty (or treated as not part of the stack), then push 3 to index 3, push 6 to index 4, push 7 to index 5. So final stack: 0=10, 1=5, 2=6, 3=3, 4=6, 5=7, pointerValue=6.' },
+              '8(a)(ii)': { type: 'points',
+                points: [
+                  'Points to the next free space in the array',
+                  'Points to the top of the stack'
+                ],
+                guidance: '1 mark.' },
+              '8(b)(i)': { type: 'exact',
+                points: [
+                  'if pointerValue == 0 then',
+                  'return −1',
+                  'pointerValue = pointerValue − 1',
+                  'returnValue = stackArray[pointerValue]',
+                  'return returnValue'
+                ],
+                guidance: '5 marks: 1 per correctly-completed blank. Ignore additional parameters in the function definition. Do not accept the return of string values for the empty case.' },
+              '8(b)(ii)': { type: 'points',
+                points: [
+                  'Function header',
+                  '...taking a parameter (ignore byval/byref)',
+                  'Checking if stack is full (pointerValue at 100 / ≥ 100)',
+                  '...and returning false',
+                  '(Otherwise) adding the value to the top of the stack (stackArray[pointerValue] = value)',
+                  '...incrementing the top-of-stack pointer',
+                  'Return true'
+                ],
+                guidance: '6 marks: 1 mark per bullet, max 6. FT following a reasonable attempt to check if the stack is full.' },
+              '8(b)(iii)': { type: 'exact',
+                points: [
+                  'mathsStack = new stack()',
+                  'mathsStack = stack()'
+                ],
+                guidance: '2 marks: 1 for instantiation of new object of type stack + 1 for assignment to variable mathsStack. Allow missing brackets this time only (e.g. mathsStack = stack).' },
+              '8(b)(iv)': { type: 'exact',
+                points: [
+                  'while returnValue == true',
+                  'returnValue = mathsStack.push(input("Enter Number"))',
+                  'if returnValue == false then',
+                  'print("Stack full")'
+                ],
+                guidance: '4 marks: 1 per completed statement. Accept equivalent for print (e.g. output / write / Console.WriteLine).' },
+              '8(b)(v)': { type: 'points',
+                points: [
+                  'Initialise a total to 0 outside of loop',
+                  'Looping',
+                  'Removing an item from the stack using the method pop',
+                  'Check if stack is empty',
+                  '(If not) add value returned to total',
+                  '...outputting total',
+                  'Counting how many values are returned',
+                  'Stopping loop when either 20 items removed or no items left'
+                ],
+                guidance: '8 marks: 1 per bullet, max 8.' },
+              '8(c)(i)': { type: 'points',
+                points: [
+                  'Queue has head pointer and tail pointer',
+                  'When an item is enqueued the tail pointer increments',
+                  'When an item is dequeued the head pointer increments'
+                ],
+                guidance: '3 marks. Max 1 mark for "Enqueue/Dequeue operations" if description of effect on tail/head pointers is not given.' },
+              '8(c)(ii)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of object-oriented and procedural programming; generally accurate and detailed. Knowledge applied directly and consistently to context; explicitly relevant evidence. Well-developed line of reasoning, clear and logically structured.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge and understanding of OOP and procedural; generally accurate but at times underdeveloped. Knowledge applied to context with one or two missed opportunities. Reasonable discussion, mostly focused.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of OOP and procedural with limited understanding; material is basic and contains some inaccuracies.' }
+                ],
+                indicative: {
+                  'AO1 — Features of OOP and procedural': 'OOP defines an object as an independent entity. OOP defines the attributes of the object and the methods that can be applied to it. Attributes could be private to restrict accidental changes. Procedural — the statements are executed in the order they are written.',
+                  'AO2 — Application to queue context': 'OOP allows for an object to be created from the queue. Many instances of this queue can then be declared in the main program. Procedural will need each queue to be declared individually. Procedural will need to make use of subroutines where the queue will need to be sent and returned each time.',
+                  'AO3 — Evaluation: OOP advantages for multiple queues': 'OOP — you can create multiple instances of the queue as required by the program without having to re-write all of the declarations etc. In procedural you would have to write separate code for each new queue. OOP reduces amount of code needed therefore fewer errors are likely. OOP can reduce mistakes because the subroutines are self-contained; in procedural it would need to make sure the correct values are passed and returned, or global variables may be required.'
+                },
+                guidance: '9 marks total (3 AO1.1 + 3 AO1.2 + 3 AO2.1 + 3 AO3.3 indicative split).' }
+            }
           },
           {
             id: 'cs-ocr-h446-2021-p1',
