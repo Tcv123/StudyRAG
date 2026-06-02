@@ -8013,9 +8013,157 @@ window.SUBJECTS = [
                 ],
                 guidance: '2 marks.' }
             } },
-          { id: 'phys-aqa-7408-2023-p3', year: 'June 2023', paperName: 'Paper 3', paperCode: '7408/3', totalMarks: 80, durationMins: 120, printOnly: true,
+          { id: 'phys-aqa-7408-2023-p3', year: 'June 2023', paperName: 'Paper 3', paperCode: '7408/3', totalMarks: 80, durationMins: 120,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74083A-QP-JUN23.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74083A-MS-JUN23.PDF' },
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74083A-MS-JUN23.PDF',
+            qbqNote: 'Section A — Practical skills and data analysis (Questions 1–3, 45 marks) — is wired up question-by-question with the official mark scheme. Section B is an optional topic (Astrophysics, Medical physics, Engineering physics, Turning points in physics or Electronics, 35 marks) and is a separate paper (7408/3B) not included here; the linked QP/MS PDFs are for Section A. Figures are in the QP PDF; the parts that ask you to plot/sketch have an on-screen canvas.',
+            questions: [
+              { number: 1,
+                scenario: 'A stroboscope emits bright flashes of white light; the duration of each flash and the frequency of the flashes can be varied (see Table 1 in the question paper PDF). The duration of each flash is T₁ and the time from the start of one flash to the start of the next is T₂. The duty cycle is defined as T₁/T₂.\n\nFigure 1 shows images of a bouncing ball illuminated by the stroboscope flashing at a constant frequency. Figure 2 shows the first six images starting with n = 0 (n is the image number). H is the vertical distance from the bottom of the ball to the floor when n = 0; h is that distance for each non-zero n. The n = N image is produced when the ball first hits the floor. For n between 0 and N:\n\nH − h = u₀(n/f) + (g/2)(n/f)²\n\nwhere u₀ is the vertical velocity when n = 0, g is the acceleration due to gravity and f is the flash frequency.\n\n(See Table 1 and Figures 1–3 in the question paper PDF.)',
+                parts: [
+                  { code: '01.1', prompt: 'What is the maximum duty cycle of the stroboscope? (Tick one box.)\n\n6.0 × 10⁻⁵     3.0 × 10⁻⁴     9.0 × 10⁻³     4.5 × 10⁻²', marks: 1 },
+                  { code: '01.2', prompt: 'Suggest why T₁ must be very short for this experiment.', marks: 1 },
+                  { code: '01.3', prompt: 'In order to find g, a graph is plotted with values of (H − h)/n on the y-axis.\n\nSuggest what is plotted on the x-axis. Go on to explain how g is determined from this graph.', marks: 3 },
+                  { code: '01.4', preamble: 'The following data are recorded: H = 1550 mm; f = 31.0 Hz. The graphical analysis gives g = 9.79 m s⁻².', prompt: 'Determine u₀.', marks: 3 },
+                  { code: '01.5', preamble: 'Figure 3 shows positions of the bottom of the ball for n = 40 to n = 66, during which the ball contacts the floor for the second and third times. Values of h are plotted on the y-axis and values of s (horizontal displacement from a point on the floor below the centre of the n = 0 image) on the x-axis.', prompt: 'Determine, in mm s⁻¹, the horizontal velocity of the ball between the second and third contacts of the ball with the floor.', marks: 2 },
+                  { code: '01.6', prompt: 'Determine the time between the second and third contacts. Annotate Figure 3 to show your method.', marks: 3 }
+                ] },
+              { number: 2,
+                scenario: 'Figure 4 is a plot of current–voltage data for a filament lamp L. The current I was measured as the voltage V across L was increased at a steady rate, using a current sensor and a voltage sensor connected to a data logger recording at 2.5 Hz.\n\n(See Figures 4–6 and Table 2 in the question paper PDF.)',
+                parts: [
+                  { code: '02.1', prompt: 'Determine, in V s⁻¹, the rate of increase of V.', marks: 2 },
+                  { code: '02.2', prompt: 'State two advantages of using data logging for this experiment.', marks: 2 },
+                  { code: '02.3', preamble: 'Figure 5 shows two circuits that can be used to collect current–voltage data. The dc supply has an emf of 12 V and negligible internal resistance and the sensors behave as ideal meters. In circuit 1, X is used as a variable resistor with a maximum resistance of 14.9 Ω; when X is set to maximum resistance, the resistance of L is 2.3 Ω. In circuit 2, X is used as a potential divider.', prompt: 'Discuss, with reference to circuit 1 and circuit 2, whether either circuit can produce all the data shown in Figure 4. Support your answer with a calculation.', marks: 4 },
+                  { code: '02.4', preamble: 'Table 2 shows some values of V plotted on Figure 4 with the corresponding I and the power P dissipated in L:\n• V = 3.30 V, I = 1.07 A, P = 3.53 W\n• V = 5.17 V, I = 1.32 A, P = ?\n• V = 7.69 V, I = 1.59 A, P = 12.2 W\n• V = 9.58 V, I = ?, P = ?\n• V = 11.47 V, I = 1.94 A, P = 22.3 W', prompt: 'Complete Table 2 (find the three missing values).', marks: 3 },
+                  { code: '02.5', kind: 'diagram', prompt: 'Plot, on the axes in Figure 6, a graph of P against V. You should use only the data in your completed Table 2.', marks: 3 },
+                  { code: '02.6', preamble: 'L is connected to a 12 V power supply of negligible internal resistance and dissipates its rated power P_r. A second lamp, identical to L, is now connected in series with L.', prompt: 'Determine the percentage of P_r that is dissipated in this circuit.', marks: 2 }
+                ] },
+              { number: 3,
+                scenario: 'Figure 7a shows the front view of a vertical coil mounted on a circular frame; Figure 7b is a side view showing the magnetic field lines produced by a constant direct current in the coil. Point Q is at the centre of the coil. A sensor at Q detects B_H, the horizontal component of the magnetic flux density. The effect of the Earth\'s magnetic field at Q is negligible.\n\n(See Figures 7–11 in the question paper PDF.)',
+                parts: [
+                  { code: '03.1', prompt: 'Discuss whether a search coil is a suitable sensor to detect B_H.', marks: 2 },
+                  { code: '03.2', preamble: 'B_H is measured at Q with the coil vertical. The coil is then rotated about Q through 25° (Figure 8); the current in the coil does not change and a new measurement of B_H is made in this position.', prompt: 'Determine the percentage change in B_H produced by this rotation of the coil. Show your working.', marks: 2 },
+                  { code: '03.3', preamble: 'Figure 9 shows a protractor being used to measure the angle through which the coil is rotated.', prompt: 'Estimate the percentage uncertainty in this result. Justify your answer.', marks: 3 },
+                  { code: '03.4', preamble: 'Figure 10 shows an arrangement of two identical vertical coils of radius r, separated by a distance r with a common axis PR; Q is at the centre of coil 1. Four experiments investigate how B_H varies with x, the displacement of the sensor from Q along PR. In experiment 1 the current in coil 1 is 225 mA and in coil 2 is zero; in experiment 2 the current in coil 1 is zero and in coil 2 is 225 mA. Figure 11 shows the results of experiments 1 and 2.\n\nDuring experiment 1, B_H is measured with the sensor at Q. The sensor is then moved along PR until B_H is halved, at a distance x₀.₅ from Q.', prompt: 'Determine x₀.₅ / r.', marks: 2 },
+                  { code: '03.5', preamble: 'In experiment 3, the current in both coils is 225 mA so that the magnetic fields produced by the two coils are combined. The resultant B_H has a constant maximum value in the region between x = r/4 and x = 3r/4.', prompt: 'Deduce, in mT, the value of B_H in this region.', marks: 2 },
+                  { code: '03.6', prompt: 'State two characteristics of the magnetic field lines in this region.', marks: 2 },
+                  { code: '03.7', kind: 'diagram', preamble: 'In experiment 4, the current in coil 2 is reversed so that the direction of the magnetic field produced by coil 2 is also reversed. The magnitudes of the currents in coil 1 and coil 2 are still 225 mA.', prompt: 'Sketch a graph to show how B_H varies between x = 0 and x = r. The x-axis has been provided for you. Your graph should include numerical values on your B_H axis that correspond to x = 0 and x = r.', marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'exact', points: ['4.5 × 10⁻²', '4.5e-2', '0.045'],
+                guidance: '1 mark, CAO.' },
+              '01.2': { type: 'points',
+                points: ['A short T₁ means the images are not blurred / are sharp / focused / the ball appears as a single point — so the position of the ball can be determined in each image'],
+                guidance: '1 mark. Must refer to a quality of the images. Comments about the duty cycle/flash rate or the trajectory are neutral.' },
+              '01.3': { type: 'points',
+                points: [
+                  'Correct rearrangement to a three-term equation with (H − h)/n as the subject, e.g. (H − h)/n = u₀/f + (g/2f²)n',
+                  'Valid quantity plotted on the x-axis: n (aligning with y = mx + c so the gradient = g/2f²), suitably annotated',
+                  'Explains that g is found from the gradient: g = gradient × 2f²'
+                ],
+                guidance: '3 marks. MP3 is contingent on MP2; allow ECF for an incorrect equation.' },
+              '01.4': { type: 'points',
+                points: [
+                  'n = 17 (the image at the first floor contact)',
+                  'Use of H = u₀(n/f) + (g/2)(n/f)² with full substitution (h = 0) so u₀ is the only unknown',
+                  'u₀ correctly evaluated to ≥2 sf (≈ 0.13–0.15 m s⁻¹)'
+                ],
+                guidance: '3 marks. Condone g = 9.79 or 9.81.' },
+              '01.5': { type: 'points',
+                points: [
+                  'Divides a valid horizontal displacement s₂ − s₁ (in the range 490–1000 mm) by a time (found from counting flash intervals, or from their 01.6)',
+                  'Horizontal velocity in the range 1550–1650 mm s⁻¹'
+                ],
+                guidance: '2 marks. MP2 is not contingent on MP1. Allow 2 sf, 1.6 × 10³ mm s⁻¹.' },
+              '01.6': { type: 'points',
+                points: [
+                  'Determines h_max at the top of the bounce by annotating Figure 3 (a smooth curve through the top points) OR determines s for both contacts',
+                  'Valid attempt to find the time t using suvat with u = 0, t = 2√(h_max/g), OR t = (s₂ − s₁)/(their horizontal velocity from 01.5)',
+                  'Time in the range 0.61–0.65 s'
+                ],
+                guidance: '3 marks. MP3 contingent on MP2. Do not condone using an integer number of flash intervals for the time.' },
+              '02.1': { type: 'points',
+                points: ['Rate in the range 1.40–1.75 V s⁻¹', 'Rate in the range 1.50–1.65 V s⁻¹ (expected 1.57 V s⁻¹)'],
+                guidance: '2 marks.' },
+              '02.2': { type: 'points',
+                points: [
+                  'Reduces the impact of statistical/random error in reading and recording the data manually',
+                  'Data can be collected at a high(er) rate',
+                  'Data (in digital form) can be easily processed / graphed / analysed',
+                  'Two or more sets of data (I and V) can be collected simultaneously'
+                ],
+                guidance: 'Max 2. Treat "improves precision/resolution", "reduces uncertainty", "eliminates systematic/parallax error" as neutral.' },
+              '02.3': { type: 'points',
+                points: [
+                  'Circuit 2 can produce the data because the pd can be varied between 0 V and 12 V',
+                  'Circuit 1 cannot produce all of the data shown in Figure 4',
+                  'For circuit 1 with X at maximum resistance, calculates the minimum I = 12/17.2 = 0.70 A (or minimum V = 1.6 V)',
+                  'Compares their minimum I (or V) with the first data point in Figure 4 (e.g. 0.70 A > 0.36 A, so circuit 1 cannot produce the low-current data)'
+                ],
+                guidance: '4 marks. Award the first two for "neither can produce the data" too.' },
+              '02.4': { type: 'points',
+                points: [
+                  'P = 6.82 W in row 2 (= 5.17 × 1.32)',
+                  'I = 1.77 A in row 4 (read from Figure 4 at V = 9.58 V)',
+                  'P = 17.0 W in row 4 (= 9.58 × their I)'
+                ],
+                guidance: '3 marks. Allow I = 1.77 ± 0.01; ECF for P = their I × 9.58. Deduct max 1 if any value is not to 3 sf.' },
+              '02.5': { type: 'points',
+                points: [
+                  'Vertical axis labelled P / W',
+                  'Suitable linear vertical scale for the data',
+                  '5 points plotted AND a smooth curve of increasing gradient'
+                ],
+                guidance: '3 marks (plot — use the drawing canvas).' },
+              '02.6': { type: 'points',
+                points: [
+                  'Reads off P_r at V = 12 V (best-fit extrapolated; expect P_r ≈ 23.8 W) to within half a minor grid square',
+                  'Reads off P₂ at V = 6 V (≈ 8.5 W) and evaluates (P₂/P_r) × 100 (expected 70–73%)'
+                ],
+                guidance: '2 marks. In the series circuit each lamp has 6 V across it. MP2 is not contingent on MP1.' },
+              '03.1': { type: 'points',
+                points: [
+                  'A search coil is NOT suitable: no emf would be induced in it',
+                  'because a search coil needs to be cut by changing flux, but here the flux is constant (the current is dc)'
+                ],
+                guidance: '2 marks (contingent on stating it is not suitable). Alternatively, "suitable" can score if a valid method to change the flux is suggested (e.g. rotate a coil, switch the dc off).' },
+              '03.2': { type: 'points',
+                points: [
+                  'Use of (1 − cos 25°) [or (1 − sin 65°)] in a percentage-change calculation',
+                  'Percentage change = (−)9.4%'
+                ],
+                guidance: '2 marks, CAO for MP2 (≈ −9.4%). Do not insist on the minus sign on the answer line.' },
+              '03.3': { type: 'points',
+                points: [
+                  'Uncertainty in a single reading/judgement is ±0.5° (0.5 appears in the numerator)',
+                  'The angle is based on the difference between two readings, so the absolute uncertainty = 2 × the uncertainty in each reading (= ±1°)',
+                  'Correct percentage-uncertainty calculation: (their absolute uncertainty / 25) × 100 = 4%'
+                ],
+                guidance: '3 marks. (2 × 0.5°)/25° × 100 = 4%. Allow a larger single-reading uncertainty up to ±3° if justified (parallax, frame thickness).' },
+              '03.4': { type: 'points',
+                points: [
+                  'x₀.₅ in the range 50–55 mm (with r in the range 67–69 mm) — either value seen in working or on Figure 11',
+                  'x₀.₅/r in the range 0.73–0.81 (≥2 sf, no unit)'
+                ],
+                guidance: '2 marks.' },
+              '03.5': { type: 'points',
+                points: [
+                  'Uses Figure 11: adds B_H1 (experiment 1) and B_H2 (experiment 2) at a point between x = 17 and x = 51 mm; resultant B_H in the range 0.91–0.99 mT',
+                  'Resultant B_H in the range 0.93–0.97 mT'
+                ],
+                guidance: '2 marks. Ignore any sign given with the result.' },
+              '03.6': { type: 'points',
+                points: ['The field lines are parallel (in the same direction)', 'The field lines are evenly/equally spaced'],
+                guidance: '2 marks. "Horizontal", "straight", "close together", "uniform field" are neutral on their own.' },
+              '03.7': { type: 'points',
+                points: [
+                  'A continuous line drawn between x = 0 and x = r (allow a straight line)',
+                  'The line meets B_H = 0 at x = r/2 (the two fields oppose and cancel at the midpoint)',
+                  'Numerical B_H values shown on the axis at x = 0 and x = r (equal and opposite)'
+                ],
+                guidance: 'Max 3 (sketch — use the drawing canvas).' }
+            } },
           { id: 'phys-aqa-7408-2022-p1', year: 'June 2022', paperName: 'Paper 1', paperCode: '7408/1', totalMarks: 85, durationMins: 120, printOnly: true,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74081-QP-JUN22.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74081-MS-JUN22.PDF' },
