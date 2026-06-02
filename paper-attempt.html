@@ -75,6 +75,7 @@
     .meta-val { font-size: 15px; color: var(--text); margin-top: 2px; }
 
     .mode-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .mode-grid.single { grid-template-columns: 1fr; max-width: 520px; }
     .mode-card { background: var(--surface); border: 2px solid var(--border); border-radius: 14px; padding: 22px; cursor: pointer; transition: all 0.15s; display: flex; flex-direction: column; gap: 12px; min-height: 200px; }
     .mode-card:hover { border-color: var(--accent); box-shadow: 0 4px 16px rgba(37,99,235,0.08); }
     .mode-card.selected { border-color: var(--accent); background: var(--accent-dim); }
@@ -686,7 +687,10 @@
       const noteLine = paper.qbqNote
         ? `<div style="margin-top:8px;padding:8px 10px;background:rgba(180,83,9,0.08);border-left:3px solid var(--warn);border-radius:4px;font-size:13px;color:var(--text);"><strong>Note:</strong> ${paper.qbqNote}</div>`
         : (partial ? `<div style="margin-top:8px;padding:8px 10px;background:rgba(180,83,9,0.08);border-left:3px solid var(--warn);border-radius:4px;font-size:13px;color:var(--text);"><strong>Partial coverage:</strong> qbq covers ${qbqMarks} of the ${paper.totalMarks} marks. The remainder is in print mode only.</div>` : '');
-      const qbqCard = qbqAvailable ? `
+      // Print-only papers (e.g. Maths) deliberately have no question-by-
+      // question mode — show the print card alone, not a disabled second card.
+      const hideQbq = paper.printOnly;
+      const qbqCard = hideQbq ? '' : (qbqAvailable ? `
             <div class="mode-card" data-mode="qbq">
               <div class="mode-icon">📝</div>
               <div class="mode-title">Work through it question by question</div>
@@ -697,17 +701,15 @@
             <div class="mode-card" style="opacity:0.6;cursor:not-allowed;">
               <div class="mode-icon">📝</div>
               <div class="mode-title">Work through it question by question</div>
-              <div class="mode-desc">${paper.printOnly
-                ? 'Not available — this paper is print-only. Download the question paper, work it offline, then mark it against the official mark scheme.'
-                : "Not available for this paper yet — questions haven't been extracted from the QP PDF. Coming soon."}</div>
-            </div>`;
+              <div class="mode-desc">Not available for this paper yet — questions haven't been extracted from the QP PDF. Coming soon.</div>
+            </div>`);
       document.getElementById('modeArea').innerHTML = `
         <div class="panel">
           <div class="panel-head">
             <div class="panel-title">How do you want to take this paper?</div>
-            <div class="panel-sub">Pick one — you can switch later from the result screen.</div>
+            <div class="panel-sub">${hideQbq ? 'This paper is print-only — download it, sit it offline, then enter your score.' : 'Pick one — you can switch later from the result screen.'}</div>
           </div>
-          <div class="mode-grid">
+          <div class="mode-grid${hideQbq ? ' single' : ''}">
             <div class="mode-card" data-mode="print">
               <div class="mode-icon">🖨️</div>
               <div class="mode-title">Print &amp; enter results at the end</div>
