@@ -72,12 +72,6 @@
     .filter-banner .filter-chip { display: inline-flex; align-items: center; gap: 6px; padding: 3px 10px;
       background: var(--accent-dim); border-radius: 999px; color: var(--accent-dark); font-weight: 500; font-size: 12.5px; }
     .filter-banner .filter-chip .chip-board { opacity: 0.85; font-weight: 400; }
-    .filter-banner .filter-spacer { flex: 1; }
-    .filter-banner .filter-toggle { background: none; border: 1px solid var(--border); border-radius: 6px;
-      padding: 5px 11px; font: inherit; font-size: 12.5px; color: var(--muted); cursor: pointer; }
-    .filter-banner .filter-toggle:hover { border-color: var(--accent); color: var(--accent-dark); }
-    .filter-banner.show-all { border-left-color: var(--muted2); }
-    .filter-banner.show-all .filter-chip { background: rgba(120,145,176,0.12); color: var(--muted); }
     .subject-head { display: flex; align-items: baseline; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
     .subject-title { font-family: var(--font-display); font-size: 22px; }
     .subject-meta { font-size: 13px; color: var(--muted); }
@@ -297,46 +291,35 @@
     } catch (_) { /* fall back to showing all */ }
   }
 
-  // Show-all toggle state — persisted in localStorage so the choice
-  // survives page reloads. Defaults to filtered view.
-  let showAll = false;
-  try { showAll = localStorage.getItem('past_papers_show_all') === '1'; } catch (_) {}
-
   const subjects = window.SUBJECTS || [];
 
   function renderPage() {
     let html = '';
 
-    // ── Filter banner. Only render if we have a filter to show or hide;
-    //    in DEMO mode / for users with no subjects, skip it.
+    // ── Filter banner. Informational only — the listing always shows just
+    //    the user's own boards. Skipped in DEMO mode / for users with no
+    //    subjects (where there's no filter to describe).
     if (userBoardsBySubject && userBoardsBySubject.size > 0) {
       const chips = [];
       for (const [subject, boards] of userBoardsBySubject.entries()) {
         const sortedBoards = [...boards].sort();
         chips.push(`<span class="filter-chip">${esc(subject)} <span class="chip-board">· ${sortedBoards.map(esc).join(', ')}</span></span>`);
       }
-      const filterClass = showAll ? 'filter-banner show-all' : 'filter-banner';
-      const labelText = showAll
-        ? 'Showing all boards.'
-        : 'Showing papers for your subjects:';
-      const toggleText = showAll ? 'Filter to my subjects' : 'Show all boards';
       html += `
-        <div class="${filterClass}">
-          <span class="filter-label">${esc(labelText)}</span>
-          ${showAll ? '' : chips.join(' ')}
-          <span class="filter-spacer"></span>
-          <button class="filter-toggle" id="filterToggleBtn" type="button">${esc(toggleText)}</button>
+        <div class="filter-banner">
+          <span class="filter-label">Showing papers for your subjects:</span>
+          ${chips.join(' ')}
         </div>`;
     }
 
     // Build the filtered subjects list:
     //   - drop boards with no attemptable papers (just an official-page link)
-    //   - if NOT showing all AND user has a filter → keep only the user's boards
+    //   - if the user has a filter → keep only the user's boards
     //   - drop subjects that end up with no boards
     const attemptable = subjects
       .map(s => {
         let bs = (s.boards || []).filter(b => Array.isArray(b.papers) && b.papers.length > 0);
-        if (!showAll && userBoardsBySubject) {
+        if (userBoardsBySubject) {
           const userBoards = userBoardsBySubject.get(s.name);
           if (userBoards && userBoards.size > 0) {
             bs = bs.filter(b => userBoards.has(b.board));
@@ -366,12 +349,10 @@
       // "really no papers wired up". The first one is way more common
       // for a Maths student visiting today (CS is the only fully-wired
       // subject right now).
-      if (userBoardsBySubject && !showAll) {
+      if (userBoardsBySubject) {
         html += `
           <div class="intro-card" style="text-align:center;">
-            No past papers wired up yet for the subjects + boards you study.
-            <br><br>
-            <button class="filter-toggle" id="filterToggleBtnEmpty" type="button" style="background:var(--accent);color:#fff;border-color:var(--accent);padding:8px 16px;">Show all boards</button>
+            No past papers wired up yet for the subjects + boards you study. Check back soon.
           </div>`;
       } else {
         html += `
@@ -382,18 +363,6 @@
     }
 
     document.getElementById('pageBody').innerHTML = html;
-
-    // Wire up the toggle (in the banner OR in the empty-state CTA).
-    const wireToggle = (id) => {
-      const btn = document.getElementById(id);
-      if (btn) btn.addEventListener('click', () => {
-        showAll = !showAll;
-        try { localStorage.setItem('past_papers_show_all', showAll ? '1' : '0'); } catch (_) {}
-        renderPage();
-      });
-    };
-    wireToggle('filterToggleBtn');
-    wireToggle('filterToggleBtnEmpty');
   }
 
   renderPage();
