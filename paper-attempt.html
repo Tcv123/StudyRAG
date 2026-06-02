@@ -135,6 +135,8 @@
     .qbq-qcode { display: inline-flex; align-items: center; gap: 6px; padding: 4px 12px; background: var(--accent-dim); color: var(--accent-dark); border: 1px solid var(--accent); border-radius: 999px; font-weight: 600; font-size: 13px; font-variant-numeric: tabular-nums; }
     .qbq-marks-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: var(--surface2); color: var(--muted); border: 1px solid var(--border); border-radius: 999px; font-size: 12.5px; font-weight: 600; }
     .qbq-extended-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: rgba(124,58,237,0.08); color: #6D28D9; border: 1px solid rgba(124,58,237,0.3); border-radius: 999px; font-size: 12px; font-weight: 600; }
+    .qbq-qp-link { margin-left: auto; display: inline-flex; align-items: center; gap: 5px; padding: 4px 11px; font-size: 12px; font-weight: 600; color: var(--accent-dark); background: var(--accent-dim); border: 1px solid var(--accent); border-radius: 999px; text-decoration: none; }
+    .qbq-qp-link:hover { background: var(--accent); color: #fff; }
     .qbq-scenario { margin: 12px 22px 0; padding: 14px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
     .qbq-scenario-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); margin-bottom: 4px; }
     .qbq-scenario p { margin-top: 4px; }
@@ -1365,6 +1367,7 @@ builtins.input = __qbq_input
               <span class="qbq-marks-badge">${part.marks} mark${part.marks === 1 ? '' : 's'}</span>
               ${part.extended ? `<span class="qbq-extended-badge">★ Extended response · quality of writing assessed</span>` : ''}
               ${phaseChip}
+              ${paper.qpUrl ? `<a class="qbq-qp-link" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener" title="Open the question paper PDF — needed to see figures and graphs">📄 Question paper PDF</a>` : ''}
             </div>
             ${scenarioHtml}
             ${preambleHtml}

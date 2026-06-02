@@ -7585,9 +7585,220 @@ window.SUBJECTS = [
         // so it's intentionally omitted until AQA releases it publicly.
         // Filestore quirk: Paper 3's code is 74083A (Sections A+B in one file).
         papers: [
-          { id: 'phys-aqa-7408-2023-p1', year: 'June 2023', paperName: 'Paper 1', paperCode: '7408/1', totalMarks: 85, durationMins: 120, printOnly: true,
+          { id: 'phys-aqa-7408-2023-p1', year: 'June 2023', paperName: 'Paper 1', paperCode: '7408/1', totalMarks: 85, durationMins: 120,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74081-QP-JUN23.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74081-MS-JUN23.PDF' },
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74081-MS-JUN23.PDF',
+            qbqNote: 'Section A (Questions 1–6, 60 marks) is wired up question-by-question with the official mark scheme. Section B (the 25 multiple-choice questions, 25 marks) is in the question paper PDF — open it to attempt those. Figures (graphs, ray diagrams) are in the QP PDF; the parts that ask you to draw have an on-screen canvas.',
+            questions: [
+              { number: 1,
+                scenario: 'The neutral lambda particle Λ⁰ is a baryon with a strangeness of −1. One possible decay for a Λ⁰ is:\n\nΛ⁰ → π⁰ + n',
+                parts: [
+                  { code: '01.1', prompt: 'Deduce the quark structure of a Λ⁰.', marks: 1 },
+                  { code: '01.2', prompt: 'State and explain which interaction is involved in this decay.', marks: 2 },
+                  { code: '01.3', prompt: 'An antiparticle of the neutral lambda particle decays into a neutral pion and particle X.\n\nIdentify X.', marks: 1 },
+                  { code: '01.4', prompt: 'The rest energy of a Λ⁰ is equal to the energy of a photon with a frequency of 2.69 × 10²³ Hz.\n\nDetermine, in MeV, the rest energy of a Λ⁰.', marks: 1 },
+                  { code: '01.5', prompt: 'The discovery of particles such as the Λ⁰ is made by large international research teams.\n\nSuggest one reason for this.', marks: 1 }
+                ] },
+              { number: 2,
+                scenario: 'In 2021 the world land speed record was 1230 km h⁻¹. This was the average speed achieved by a jet-powered car in two runs. Each run was measured over a distance of 1.61 km.',
+                parts: [
+                  { code: '02.1', preamble: 'The average speed for one of these runs was 343 m s⁻¹.', prompt: 'Calculate, in s, the time taken for the car to complete the other run.', marks: 2 },
+                  { code: '02.2', preamble: 'Figure 1 shows the variation of speed with distance for the car, as predicted by the engineers. The car reaches its maximum acceleration when it is 5600 m from the start. At this point the mass of the car is 6.50 × 10³ kg.', prompt: 'Determine the kinetic energy of the car at its maximum acceleration.\n\n(Read the speed at 5600 m from Figure 1 in the question paper PDF.)', marks: 2 },
+                  { code: '02.3', preamble: 'At any point on the graph in Figure 1, the acceleration is given by:\n\nacceleration = speed × gradient of line\n\nWhen the car is at its maximum acceleration, the power input to the jet engines is 640 MW.', prompt: 'Calculate the percentage of the input power used to accelerate the car at its maximum acceleration.', marks: 4 },
+                  { code: '02.4', preamble: 'Scientists recommend that the average deceleration of the driver of the car should be less than 3g.', prompt: 'Deduce whether the average deceleration is less than 3g.\n\n(Use Figure 1 in the question paper PDF.)', marks: 2 }
+                ] },
+              { number: 3,
+                scenario: 'Figure 2 shows a cell with emf ε and internal resistance r. The current in the circuit is I. The potential difference (pd) across R₁ is V₁ and the pd across R₂ is V₂.\n\nFigure 3 shows a variable resistor made with a thin conducting layer on an insulating base, with connections at the ends A and B and a sliding contact C that can move along the surface between A and B. Figure 4 shows a circuit that uses the variable resistor as a potential divider, connected to a battery of emf 3.00 V and internal resistance r. The resistance of the conducting layer between A and B is 125 Ω.\n\n(See Figures 2–6 in the question paper PDF.)',
+                parts: [
+                  { code: '03.1', prompt: 'Explain how the law of conservation of energy applies in this circuit.\n\nYou should consider the movement of one coulomb of charge around the circuit.', marks: 2 },
+                  { code: '03.2', preamble: 'The sliding contact C is moved to end B of the variable resistor. The switch is closed. The digital voltmeter reads 2.89 V.', prompt: 'Show that r is approximately 4.8 Ω.', marks: 3 },
+                  { code: '03.3', prompt: 'C is set at 1/5 of the distance between A and B. The thickness of the conducting layer is uniform so the resistance between A and C is 25.0 Ω.\n\nDetermine the voltmeter reading at this setting.', marks: 2 },
+                  { code: '03.4', kind: 'diagram', preamble: 'Figure 5 shows a variable resistor similar to the one in Figure 3 but with three manufacturing faults: at P the conducting layer changes thickness so AP is thinner than PB; at Q there is a scratch into the surface across its full width; from R to B the conducting connector is laid over the conducting layer. The width of the conducting layer is constant. A pd of 3.0 V is applied across A and B and C is moved from A to B.', prompt: 'Sketch, on the axes in Figure 6, a graph to show how the pd between A and C varies as C is moved from A to B.', marks: 4 }
+                ] },
+              { number: 4,
+                scenario: 'Porro prisms are used in binoculars to reverse the path of the light. The prism is in the shape of a right-angled isosceles triangle. Figure 7 shows a ray of light, at normal incidence on the longest side, passing through a glass Porro prism. The critical angle for light in the prism is 41.5°.\n\n(See Figures 7–10 in the question paper PDF.)',
+                parts: [
+                  { code: '04.1', prompt: 'Show that the glass used to make the prism has a refractive index of about 1.5.', marks: 1 },
+                  { code: '04.2', prompt: 'Explain why the ray emerges parallel to the incident ray.', marks: 2 },
+                  { code: '04.3', kind: 'diagram', preamble: 'Figure 8 shows a ray of light entering the prism at an angle of incidence θ and reflecting off one of the shorter sides. θ is the largest angle of incidence for which all of the light leaves through the longest side.', prompt: 'Draw the path of the ray of light as it continues inside the prism and emerges from the longest side.', marks: 3 },
+                  { code: '04.4', preamble: 'When the angle of incidence is greater than θ, some of the light escapes the prism through one of the shorter sides. Assume that the refractive index is 1.5 and the critical angle is 41.5°.', prompt: 'Show that θ is about 5°.', marks: 4 },
+                  { code: '04.5', prompt: 'A manufacturer wants to make a prism with a larger value of θ. Two alternative changes to the original design are suggested:\n\n1. use a prism of the original glass in the shape of an equilateral triangle (Figure 9)\n2. use a prism of the original shape made from glass with a smaller refractive index (Figure 10).\n\nDiscuss whether either of the two suggestions would work.', marks: 4 }
+                ] },
+              { number: 5,
+                scenario: 'Figure 11 shows the stress–strain graph for a metal in tension up to the point at which it fractures.\n\n(See Figure 11 in the question paper PDF.)',
+                parts: [
+                  { code: '05.1', prompt: 'Determine, using Figure 11, the Young modulus of the metal.', marks: 1 },
+                  { code: '05.2', prompt: 'Explain how the graph shows that this metal is brittle.', marks: 1 },
+                  { code: '05.3', preamble: 'Figure 12 shows a uniform rigid lighting beam AB suspended from a fixed horizontal support by two identical vertical steel wires. A lamp is attached to the midpoint of AB and AB is horizontal.\n\nUnloaded length of each steel wire = 1.20 m; mass of AB = 4.4 kg; mass of lamp = 16.0 kg; distance between wires = 2.00 m; diameter of each wire = 0.800 mm; Young modulus of steel = 2.10 × 10¹¹ Pa.', prompt: 'Calculate the extension of each wire.', marks: 3 },
+                  { code: '05.4', preamble: 'The right-hand steel wire is removed and replaced with an aluminium wire of diameter 1.60 mm and the same unloaded length. When the lamp is at the midpoint of AB, one wire extends more than the other so AB is not horizontal. To make AB horizontal the lamp is moved to a distance x from A (Figure 13). The Young modulus of aluminium is 7.00 × 10¹⁰ Pa.', prompt: 'Deduce distance x.', marks: 5 }
+                ] },
+              { number: 6,
+                scenario: 'A pencil is weighted with a thin coil of wire (the volume of the wire is negligible). Figure 14 shows the pencil and wire floating in equilibrium in water; the combined weight equals an upward buoyancy force, and the submerged length of the pencil is l. A student pushes the pencil down through a displacement y (Figure 15), so the buoyancy force is now greater than the weight. The resultant upward force F for any value of y is:\n\nF = Aρgy\n\nwhere A is the cross-sectional area of the pencil, ρ is the density of water and g is the acceleration due to gravity. The pencil is pushed down and released and then oscillates vertically about the equilibrium position.\n\n(See Figures 14–16 in the question paper PDF.)',
+                parts: [
+                  { code: '06.1', prompt: 'Show that the pencil moves with simple harmonic motion.', marks: 2 },
+                  { code: '06.2', preamble: 'The time period T of the vertical oscillations is given by T = 2π√(l/g). The measured value of l in Figure 15 is 85 mm. The pencil is pushed down 5.0 mm and released.', prompt: 'Calculate the maximum acceleration of the pencil.', marks: 2 },
+                  { code: '06.3', prompt: 'Explain what is meant by resonance.', marks: 2 },
+                  { code: '06.4', preamble: 'A ship floating in the sea can be modelled by the pencil. The ship can oscillate vertically (heave oscillations); wave motion causes forced oscillations and, under certain conditions, heave resonance may occur. Figure 16 shows a ship moving through continuous waves of wavelength 118 m and velocity 14.2 m s⁻¹. The ship moves steadily at 8.0 m s⁻¹ relative to the seabed in the same direction as the waves. The natural frequency of heave oscillations of the ship is 0.13 Hz.\n\nA crew member needs an emergency operation; the ship\'s doctor can do it if the ship remains fairly steady. Two options: (1) stop the ship\'s motors and loosely anchor the ship to the seabed; (2) continue to sail at 8.0 m s⁻¹ in the same direction.', prompt: 'Deduce which is the better option. Support your answer with a calculation.', marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'exact', points: ['uds'],
+                guidance: '1 mark. Do not accept D for d. Penalise extra particles.' },
+              '01.2': { type: 'points',
+                points: [
+                  'Weak (interaction / force)',
+                  'Strangeness changes in this decay (and strangeness can only change in a weak interaction) / strangeness is not conserved in this decay'
+                ],
+                guidance: 'Max 2. Reject negative arguments (e.g. "strangeness is conserved in a strong interaction"). A general statement of strangeness conservation in the weak interaction on its own is insufficient. Condone "strangeness is lost".' },
+              '01.3': { type: 'exact', points: ['anti-neutron', 'antineutron', 'n̄'],
+                guidance: '1 mark. Do not accept an answer solely in terms of quarks. Reject ambiguous answers unless supported.' },
+              '01.4': { type: 'exact', points: ['1.11 × 10³ MeV', '1100', '1110', '1115', '1114.67'],
+                guidance: '1 mark. E = hf = 6.63×10⁻³⁴ × 2.69×10²³, then ÷ (1.60×10⁻¹³) to convert J → MeV. Calculator value 1114.67 MeV. Accept 1100 (2sf) / 1110 (3sf) / 1115 (4sf). Reject incorrectly rounded answers.' },
+              '01.5': { type: 'points',
+                points: [
+                  'Research is expensive / requires funding from many countries',
+                  'Both scientists and engineers are required (the machines are large/complex pieces of engineering)',
+                  'Research is multi-faceted / multi-disciplinary (computation, theory, etc. required)',
+                  'Research is round-the-clock, so large teams work in shifts',
+                  'They are needed to process the large amounts of data produced'
+                ],
+                guidance: 'Any one. Do not accept the idea that it "avoids bias" or aids "reproducibility". Treat peer review as neutral.' },
+              '02.1': { type: 'points',
+                points: [
+                  'Conversion of 1230 km h⁻¹ to m s⁻¹ (= 342 m s⁻¹) OR calculates time for the 343 m s⁻¹ run (4.69 s) OR uses total distance 3.22 km and the record speed',
+                  'Answer that rounds to 4.73 s'
+                ],
+                guidance: 'Max 2. Do not accept 2 sf for the final answer.' },
+              '02.2': { type: 'points',
+                points: [
+                  'Speed from graph at 5600 m: 450 m s⁻¹ (accept 445–455)',
+                  'Use of ½mv² with their speed to give a consistent KE (≈ 6.6 × 10⁸ J)'
+                ],
+                guidance: 'Max 2.' },
+              '02.3': { type: 'points',
+                points: [
+                  'Use of graph to determine gradient (≈ 450/5600 = 0.080 s⁻¹)',
+                  'Uses their speed and their gradient to give acceleration (≈ 36 m s⁻²)',
+                  'Use of F = ma to give resultant force (≈ 2.35 × 10⁵ N)',
+                  'Use of P = Fv (≈ 106 MW)',
+                  'Final answer between 16% and 17%'
+                ],
+                guidance: 'Max 4: up to three method marks from the first four points, plus the final-answer mark. Allow ECF from 02.2. Reject power calculated assuming a constant speed.' },
+              '02.4': { type: 'points',
+                points: [
+                  'Identifies the decelerating distance (7000–7600 m) AND a maximum velocity ≈ 470 m s⁻¹',
+                  'Uses suvat (or gradient × average speed) to get a ≈ −15 m s⁻², which is less than 3g (so yes)'
+                ],
+                guidance: 'Max 2. Full credit also for showing that a 3g deceleration would stop the car in a much shorter distance, with a statement that the actual deceleration must therefore be much less than 3g.' },
+              '03.1': { type: 'points',
+                points: [
+                  '(1 C of) charge gains ε J on passing through the cell (or emf defined as energy transferred per coulomb)',
+                  'Energy transferred per coulomb is V₁ in R₁, V₂ in R₂ and Ir in r; for conservation of energy ε = IR₁ + IR₂ + Ir (= V₁ + V₂ + Ir)'
+                ],
+                guidance: 'Max 2. Accept "work done" for "energy transferred"; accept "lost volts" for Ir but reject "voltage across r". If no other mark, allow 1 for a definition of emf in terms of energy transfer.' },
+              '03.2': { type: 'points',
+                points: [
+                  'Equates emf to Ir + 2.89 in some form',
+                  'Calculates I from 2.89/125 (= 0.0231 A)',
+                  'Gives r = 4.76 Ω'
+                ],
+                guidance: '3 marks. "Show that" — must see at least a 3 sf answer rounding to 4.76 Ω. If no other mark, award 1 for use of the emf value.' },
+              '03.3': { type: 'points',
+                points: [
+                  'Resistance splits into 25 Ω and 100 Ω; applies the potential-divider formula, e.g. V = 25 × 3.00/129.8',
+                  'V = 0.58 V'
+                ],
+                guidance: 'Max 2. If no other mark, allow 1 for using 29.8 Ω instead of 129.8 Ω for the total resistance, giving 2.5 V.' },
+              '03.4': { type: 'points',
+                points: [
+                  'Straight line from 0 V at A up to P',
+                  'Less steep, non-zero gradient from P to Q',
+                  'Short steep increase at Q',
+                  'Q to R about the same non-zero gradient as P to Q',
+                  'Horizontal line from R to B at 3.0 V'
+                ],
+                guidance: 'Max 4 (sketch graph — use the drawing canvas). A single diagonal straight line from 0 V at A to B scores 1 only.' },
+              '04.1': { type: 'points',
+                points: ['Uses sin θ_c = 1/n with θ_c = 41.5° to get n = 1.51'],
+                guidance: '1 mark. Must see relevant work; a minimum of 3 sf (1.51) must be seen.' },
+              '04.2': { type: 'points',
+                points: [
+                  'Each angle of incidence is 45° (at the 2nd and 3rd surfaces) AND total internal reflection occurs because 45° is greater than the critical angle',
+                  'The angle of incidence as the ray leaves the block is 0° / the ray leaves along the normal'
+                ],
+                guidance: 'Max 2.' },
+              '04.3': { type: 'points',
+                points: [
+                  'Only the (totally internally) reflected ray is shown at the 2nd reflecting boundary',
+                  'Reflected ray parallel to the first refracted ray (by eye)',
+                  'Ray leaves parallel to the initial ray (by eye)'
+                ],
+                guidance: '3 marks (ray diagram — use the drawing canvas).' },
+              '04.4': { type: 'points',
+                points: [
+                  'Angle of incidence at the 2nd reflecting boundary = 41.5°',
+                  'Angle of reflection at the 1st reflecting boundary = 48.5° (= 90° − 41.5°)',
+                  'Angle of refraction at entry = 90° − 45° − 41.5° = 3.5°',
+                  'Use of n = 1.5 and Snell\'s law to give θ ≈ 5.3° (to at least 2 sf)'
+                ],
+                guidance: '4 marks. Accept an answer that rounds to 5.3°. Simply writing 90° − 41.5° = 48.5° does not earn a mark on its own.' },
+              '04.5': { type: 'points',
+                points: [
+                  'The equilateral (60°) prism does NOT work: the light would not leave at the original angle / the light would escape at the second reflection because the angle of incidence there is now less than the critical angle',
+                  'A smaller refractive index does NOT work: it gives a larger critical angle, which would reduce the value of θ'
+                ],
+                guidance: '4 marks (2 per design). A suggestion that a design WOULD work limits the mark to Max 1 for that design.' },
+              '05.1': { type: 'points',
+                points: [
+                  'Appropriate use of Figure 11 (e.g. (105×10⁶)/(7.5×10⁻⁴) using a point on the linear section)',
+                  'Answer in the range 1.38–1.42 × 10¹¹ Pa'
+                ],
+                guidance: 'Max 1. Allow a 2 sf answer of 1.4 × 10¹¹ Pa.' },
+              '05.2': { type: 'points',
+                points: ['The metal undergoes only a very small (increase in) strain beyond the linear section before it fractures / it fractures very near the limit of proportionality / it shows no necking'],
+                guidance: 'Max 1. Reject the idea that there is no increase in strain. Condone "extension" or "deformation" for "strain".' },
+              '05.3': { type: 'points',
+                points: [
+                  'Determines the total load ((4.4 + 16.0) × 9.81 = 200 N) or the load on one wire (100 N)',
+                  'Use of E = FL/(AΔL) with A = 5.03 × 10⁻⁷ m²',
+                  'ΔL = 1.1(4) × 10⁻³ m'
+                ],
+                guidance: '3 marks. Allow g = 9.81. Condone use of d in the area calculation.' },
+              '05.4': { type: 'points',
+                points: [
+                  'Extension/strain in each wire is the same: F/(d²E) for steel = F/(d²E) for aluminium',
+                  'Substitutes data leading to F_a = 1.33 F_s',
+                  'Calculates F_s = 86 N or F_a = 114 N (with F_a + F_s = 200 N)',
+                  'Attempt at a moment equation about A or B (e.g. 16.0gx = 228 − 4.4g)',
+                  'Distance x = 1.18 m'
+                ],
+                guidance: '5 marks. An answer of 1.14 m comes from not taking the weight of the beam into account (award max 4). ECF allowed.' },
+              '06.1': { type: 'points',
+                points: [
+                  'Equates the resultant force to ma and shows a is proportional to y (since A, ρ, g and m are constant): a = −(Aρg/m)y',
+                  'Minus sign included and explained: the (restoring) force/acceleration is directed to the centre of oscillation, opposite to y (hence SHM)'
+                ],
+                guidance: '2 marks. Condone missing minus signs in the first mark.' },
+              '06.2': { type: 'points',
+                points: [
+                  'ω = √(g/l) (= 10.74 rad s⁻¹)',
+                  'a_max = ω²y_max = (g/l) × y_max = (9.81/0.085) × 0.005 = 0.58 m s⁻²'
+                ],
+                guidance: '2 marks. Alternatively calculate T (0.585 s) then ω from it.' },
+              '06.3': { type: 'points',
+                points: [
+                  '(At resonance) the frequency of the forced/driving vibrations equals the natural/resonant frequency',
+                  'The amplitude of the oscillations is at a maximum'
+                ],
+                guidance: '2 marks. A fully labelled amplitude-vs-driving-frequency graph with the resonant frequency and peak labelled is acceptable. Ignore references to phase.' },
+              '06.4': { type: 'points',
+                points: [
+                  'Stopped: the wave (driving) frequency = v/λ = 14.2/118 = 0.12 Hz',
+                  'Moving: the forcing frequency is further from the resonant frequency (e.g. using the relative velocity gives ≈ 0.05 Hz)',
+                  'Moving is the better option, with reason (stopped: forcing frequency very close to the 0.13 Hz natural frequency → large-amplitude resonance; moving: resonance does not occur)'
+                ],
+                guidance: '3 marks. Reject a bare "0.12 Hz" with no reference to the ship being stopped.' }
+            } },
           { id: 'phys-aqa-7408-2023-p2', year: 'June 2023', paperName: 'Paper 2', paperCode: '7408/2', totalMarks: 85, durationMins: 120, printOnly: true,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74082-QP-JUN23.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74082-MS-JUN23.PDF' },
