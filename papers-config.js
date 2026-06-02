@@ -8364,9 +8364,213 @@ window.SUBJECTS = [
                 ],
                 guidance: '3 marks (ray diagram — use the drawing canvas). Condone 77° but not 75° for the angle of incidence.' }
             } },
-          { id: 'phys-aqa-7408-2022-p2', year: 'June 2022', paperName: 'Paper 2', paperCode: '7408/2', totalMarks: 85, durationMins: 120, printOnly: true,
+          { id: 'phys-aqa-7408-2022-p2', year: 'June 2022', paperName: 'Paper 2', paperCode: '7408/2', totalMarks: 85, durationMins: 120,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74082-QP-JUN22.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74082-MS-JUN22.PDF' },
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74082-MS-JUN22.PDF',
+            qbqNote: 'Section A (Questions 1–6, 60 marks) is wired up question-by-question with the official mark scheme. Section B (the 25 multiple-choice questions, 25 marks) is in the question paper PDF — open it to attempt those. Figures (graphs, diagrams) are in the QP PDF; the parts that ask you to draw a graph have an on-screen canvas, and the "annotate the figure" parts are best done on the PDF.',
+            questions: [
+              { number: 1,
+                scenario: 'Figure 1 shows an electric steam iron. Water from a reservoir drips onto an electrically-heated metal plate; the water boils and steam escapes through holes in the plate. The electrical power of the heater is 2.1 kW. Assume that all the energy from the heater is transferred to the metal plate.\n\n(See Figure 1 in the question paper PDF.)',
+                parts: [
+                  { code: '01.1', preamble: 'The metal plate has a mass of 1.2 kg and is initially at 20 °C. The heater is switched on and after a time t the plate reaches its working temperature of 125 °C. Specific heat capacity of the metal = 450 J kg⁻¹ K⁻¹.', prompt: 'Calculate t.', marks: 2 },
+                  { code: '01.2', preamble: 'The metal plate is maintained at its working temperature. Water at 20 °C drips continuously onto the plate and steam at 100 °C emerges continuously. The maker claims the iron can generate steam at a rate of 60 g min⁻¹. Specific latent heat of vaporisation of water = 2.3 × 10⁶ J kg⁻¹; specific heat capacity of water = 4200 J kg⁻¹ K⁻¹.', prompt: 'Determine whether this claim is true.', marks: 3 }
+                ] },
+              { number: 2,
+                scenario: 'This question is about the kinetic theory of an ideal gas.\n\n(See Figure 2 in the question paper PDF.)',
+                parts: [
+                  { code: '02.1', prompt: 'In the kinetic theory model it is assumed that there are many identical particles moving at random.\n\nState two other assumptions made in deriving the equation pV = ⅓Nm(c_rms)².', marks: 2 },
+                  { code: '02.2', prompt: 'Explain why molecules of a gas exert a force on the walls of a container. Refer to Newton\'s laws of motion in your answer.', marks: 3 },
+                  { code: '02.3', preamble: 'A sealed flask of volume 0.35 m³ contains an ideal gas at a pressure of 220 kPa. The mean kinetic energy of the gas molecules is 6.7 × 10⁻²¹ J.', prompt: 'Calculate the amount of gas in the container.', marks: 3 },
+                  { code: '02.4', kind: 'diagram', preamble: 'Figure 2 shows the variation of pressure with volume for a fixed mass of an ideal gas at a constant absolute temperature T.', prompt: 'Draw, on Figure 2, the graph for the same gas at temperature 2T.', marks: 2 }
+                ] },
+              { number: 3,
+                scenario: 'An isolated solid conducting sphere is initially uncharged. Electrons are then transferred to the sphere. Figure 3 shows how the electric potential V varies with distance r from the centre of the sphere. The radius of the sphere is 0.10 m.\n\n(See Figure 3 in the question paper PDF.)',
+                parts: [
+                  { code: '03.1', prompt: 'State and explain the location of the excess electrons.', marks: 2 },
+                  { code: '03.2', preamble: 'The magnitude of the electric field strength E is related to V by E = −ΔV/Δr (the potential gradient).', prompt: 'Determine, using this relationship, the magnitude of the electric field strength at a distance 0.30 m from the centre of the sphere. State an appropriate SI unit for your answer.', marks: 4 },
+                  { code: '03.3', prompt: 'The sphere acts as a capacitor because it stores charge at an electric potential.\n\nShow that the capacitance of the sphere is approximately 1 × 10⁻¹¹ F.', marks: 3 },
+                  { code: '03.4', preamble: 'Electrons leak away from the sphere with time and the energy stored decreases. At one instant the magnitude of the electric potential of the sphere has fallen to 1.0 × 10⁶ V (from its fully-charged value of 1.8 × 10⁶ V).', prompt: 'Calculate, for this instant, the change in the energy stored by the sphere.', marks: 3 }
+                ] },
+              { number: 4,
+                scenario: 'The lines in Figure 4 show the shape of the gravitational field around two stars G and H.\n\n(See Figures 4–6 in the question paper PDF.)',
+                parts: [
+                  { code: '04.1', prompt: 'Compare, with reference to Figure 4, the masses of G and H.', marks: 2 },
+                  { code: '04.2', preamble: 'X and Y are two points in the field.', prompt: 'Annotate Figure 4 to show the field direction at X and the field direction at Y. (Describe the directions, or mark them on the QP PDF.)', marks: 1 },
+                  { code: '04.3', preamble: 'A spherical asteroid P has a mass of 2.0 × 10²⁰ kg and the gravitational field strength at its surface is 0.40 N kg⁻¹.', prompt: 'Calculate the radius R of P.', marks: 1 },
+                  { code: '04.4', kind: 'diagram', preamble: 'The distance r is measured from the centre of P.', prompt: 'Sketch, on the axes in Figure 5, the variation of the gravitational field strength g with distance r.', marks: 1 },
+                  { code: '04.5', prompt: 'Explain what is represented by the area under the graph between r = R and r = 2R on Figure 5.', marks: 2 },
+                  { code: '04.6', preamble: 'Asteroid P approaches the two stars G and H. Figure 6 shows one position of P close to H, with the forces from G and H acting at right angles. The gravitational force on P from G is 6.38 × 10¹² N. The mass of H is 3.00 × 10²⁵ kg, the mass of P is 2.00 × 10²⁰ kg and the distance HP is 1.50 × 10¹¹ m.', prompt: 'Calculate the magnitude of the acceleration of P.', marks: 4 },
+                  { code: '04.7', prompt: 'Explain why P cannot have a circular orbit around H.', marks: 1 }
+                ] },
+              { number: 5,
+                scenario: 'Figure 7 shows a transformer. Figure 8 shows a cross-section through the transformer core, in which thin iron sheets are separated by a material M. Figure 9 shows a schematic diagram of a power transmission system.\n\n(See Figures 7–9 in the question paper PDF.)',
+                parts: [
+                  { code: '05.1', prompt: 'Explain the functions of the core and the secondary coil of the transformer.', marks: 3 },
+                  { code: '05.2', prompt: 'Explain how the efficiency of the transformer is increased by constructing the core from thin iron sheets separated by material M.', marks: 3 },
+                  { code: '05.3', preamble: 'Voltages between 33 kV and 400 kV are used for long-distance transmission.', prompt: 'Suggest why engineers have chosen 132 kV for this system.', marks: 2 },
+                  { code: '05.4', preamble: 'The industrial consumers use 72 MW of power. Transformers 1 and 2 each have an efficiency of 98% and the transmission line has an efficiency of 94%.', prompt: 'Calculate the current in the 25 kV line from the power station.', marks: 3 }
+                ] },
+              { number: 6,
+                scenario: 'Fission and fusion are two processes that can result in the transfer of binding energy from nuclei.\n\n(See Figures 10–11 in the question paper PDF.)',
+                parts: [
+                  { code: '06.1', prompt: 'State what is meant by the binding energy of a nucleus.', marks: 2 },
+                  { code: '06.2', preamble: 'Mass of a ⁵⁶₂₆Fe nucleus = 9.288 × 10⁻²⁶ kg.', prompt: 'Calculate, in MeV, the binding energy for a nucleus of iron-56 (⁵⁶₂₆Fe).', marks: 3 },
+                  { code: '06.3', preamble: 'Figure 10 shows a graph of average binding energy per nucleon against nucleon number for common nuclides. The nuclide labelled X undergoes fission.', prompt: 'Annotate Figure 10 with F1 and F2 to show one possible pair of nuclides resulting from the fission of X. (Describe their positions, or mark them on the QP PDF.)', marks: 2 },
+                  { code: '06.4', preamble: 'Figure 11 shows a graph of N against Z for stable nuclides.', prompt: 'Deduce the likely initial mode of decay of F1 and F2. Refer to Figure 11 in your answer.', marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'points',
+                points: ['Combines Q = Pt and Q = mcΔθ', 't = (1.2 × 450 × (125 − 20))/2100 = 27 s'],
+                guidance: '2 marks. No ECF for the second mark, but a correct answer gains both.' },
+              '01.2': { type: 'points',
+                points: [
+                  'Uses an appropriate equation: in time t the power heats m kg of water from 20 °C to 100 °C then vaporises it, Pt = mc_wΔθ + ml',
+                  'Correct evaluation of the steam rate (≈ 0.048 kg min⁻¹) or the power needed (≈ 2.6 kW)',
+                  'Deduces the claim is false, consistent with the calculation (0.048 kg min⁻¹ < 60 g min⁻¹, or 2.6 kW > the 2.1 kW available)'
+                ],
+                guidance: '3 marks. MP3 depends on MP1 or MP2.' },
+              '02.1': { type: 'points',
+                points: [
+                  'The volume of the molecules is negligible compared with the volume of the container',
+                  'The time of a collision is negligible compared with the time between collisions',
+                  'Collisions are elastic / kinetic energy is conserved',
+                  'There are negligible forces between molecules except during collisions'
+                ],
+                guidance: 'Any two. "Volume of the gas" is not enough for the first point.' },
+              '02.2': { type: 'points',
+                points: [
+                  'There is a change in velocity/momentum of the molecules at the wall because their direction changes',
+                  'Relates this to Newton\'s first or second law (a force is required to change the momentum)',
+                  'Uses Newton\'s third law to link the force on the wall to the force on the molecule'
+                ],
+                guidance: '3 marks. Just quoting a Newton law is not enough — the essence must be given in the context of the gas.' },
+              '02.3': { type: 'points',
+                points: [
+                  'Uses E_k = (3/2)kT to find the temperature (T = 324 K)',
+                  'Correct substitution into pV = nRT to find n',
+                  'amount of gas n = 29 mol (28.6 mol)'
+                ],
+                guidance: '3 marks, no ECF for the final answer. If no other marks, award 1 for an unsupported 1.7 × 10²⁵ (the number of molecules).' },
+              '02.4': { type: 'points',
+                points: [
+                  'A concave curve always above the existing graph, passing through at least one data point',
+                  'Passes through coordinates corresponding to (2, 8), (4, 4) and (8, 2) on the cm grid (each pV product doubled)'
+                ],
+                guidance: '2 marks (draw the graph — use the drawing canvas).' },
+              '03.1': { type: 'points',
+                points: [
+                  'The excess electrons move onto / are located on the (outer) surface',
+                  'They are equally spaced because the electrons mutually repel'
+                ],
+                guidance: 'Max 2.' },
+              '03.2': { type: 'points',
+                points: [
+                  'Draws a tangent at r = 0.30 m; the triangle used to find the gradient covers more than 50% of the horizontal scale',
+                  'Finds the gradient from their tangent',
+                  'Field strength ≈ 2.0 × 10⁶ (to better than 1 sf)',
+                  'Unit: N C⁻¹ or V m⁻¹'
+                ],
+                guidance: '4 marks. Using the point-charge formula E = V/r gives the same value but violates the rubric for MP1/MP2; MP3 and MP4 can still be awarded.' },
+              '03.3': { type: 'points',
+                points: [
+                  'Use of V = Q/(4πε₀r) for a data point (or E from 03.2) to find Q = 2.0 × 10⁻⁵ C, OR combines C = Q/V with V = Q/(4πε₀r)',
+                  'Leads to C = 4πε₀r',
+                  'C = 4π × 8.85 × 10⁻¹² × 0.100 = 1.1 × 10⁻¹¹ F'
+                ],
+                guidance: '3 marks (≥2 sf). Do not credit solutions based on the parallel-plate capacitor equation.' },
+              '03.4': { type: 'points',
+                points: [
+                  'Energy stored at 1.0 × 10⁶ V: E = ½CV² = 5.5 J (or 5.0 J using C = 1 × 10⁻¹¹ F)',
+                  'Energy stored when fully charged (1.8 × 10⁶ V): E = ½CV² = 18 J',
+                  'Change in energy = 18 − 5.5 = 12.5 J'
+                ],
+                guidance: '3 marks. ECF allowed; the change may be quoted as positive or negative.' },
+              '04.1': { type: 'points',
+                points: [
+                  'G has the greater mass, with evidence from Figure 4',
+                  'Explanation, e.g. the null point is closer to H (G\'s field equals H\'s at a greater distance), OR the density of field lines is greater for G and field-line density depends on mass'
+                ],
+                guidance: '2 marks.' },
+              '04.2': { type: 'points',
+                points: ['Tangential arrows at X and Y pointing towards G and H respectively (field lines point towards the masses)'],
+                guidance: '1 mark. Arrow heads only are acceptable, drawn alongside X and Y.' },
+              '04.3': { type: 'points',
+                points: ['R = √(GM/g) = √(6.67 × 10⁻¹¹ × 2.0 × 10²⁰ / 0.40) = 1.8 × 10⁵ m'],
+                guidance: '1 mark.' },
+              '04.4': { type: 'points',
+                points: ['Sketch passes through (R, 0.40), (2R, 0.10) and (3R, 0.044) — an inverse-square decrease from the surface value'],
+                guidance: '1 mark (sketch — use the drawing canvas). Must be within one small division of the requested coordinates.' },
+              '04.5': { type: 'points',
+                points: [
+                  'The area represents the work done / energy transferred per unit mass (for a 1 kg mass)',
+                  'when the object moves from R to 2R (i.e. the change in gravitational potential between R and 2R)'
+                ],
+                guidance: '2 marks. The first (briefer) answer scores MP1; the fuller answer scores both.' },
+              '04.6': { type: 'points',
+                points: [
+                  'Use of F = GMm/r² to find the force between P and H (F_PH = 1.8 × 10¹³ N)',
+                  'Resultant force F_total = √(F_PH² + F_PG²) (the two forces are perpendicular)',
+                  'F_total = 1.9 × 10¹³ N',
+                  'a = F/m = 1.9 × 10¹³ / 2.0 × 10²⁰ = 9.4–9.5 × 10⁻⁸ m s⁻²'
+                ],
+                guidance: '4 marks. ECF allowed; condone vector addition of the accelerations (3.91 × 10⁻⁸ due to G, 8.9 × 10⁻⁸ due to H).' },
+              '04.7': { type: 'points',
+                points: ['The resultant force is not (continually) directed towards the centre of H, so it cannot provide the centripetal force for a circular orbit (a circular orbit would not follow a gravitational equipotential)'],
+                guidance: '1 mark. Condone lack of "resultant".' },
+              '05.1': { type: 'points',
+                points: [
+                  'Core: provides / increases the linkage of magnetic flux from the primary to the secondary coil (compared with an air core)',
+                  'Secondary coil: has a varying/alternating/changing magnetic flux linking it',
+                  'which induces an emf determined by the number of turns on the secondary (and primary) coils'
+                ],
+                guidance: '3 marks. Do not allow "induced voltage" or "induced current" in MP3.' },
+              '05.2': { type: 'points',
+                points: [
+                  'The sheets/laminations are separated by an insulating / high-resistivity material M → this reduces the (eddy) currents flowing in the core',
+                  'Thin iron laminations are used → smaller emfs are induced (higher resistance), so lower eddy currents and less heating'
+                ],
+                guidance: 'Max 3. Each design feature must be linked to its effect on efficiency.' },
+              '05.3': { type: 'points',
+                points: [
+                  'If the voltage is too low (e.g. 33 kV) the current is high, so more power is wasted as I²R heating in the cable',
+                  'If the voltage is too high (e.g. 400 kV) it creates major insulation difficulties (taller pylons / better insulation / more expensive equipment)'
+                ],
+                guidance: '2 marks. Do not accept "changes affect the resistance of the cable".' },
+              '05.4': { type: 'points',
+                points: [
+                  'Correct use of efficiency = power_out/power_in at least once (e.g. power at 132 kV = 72/0.98 = 73.5 MW)',
+                  'Correct use of I = P/V with their values at any point',
+                  'I = 3200 A (correct answer only, no ECF)'
+                ],
+                guidance: '3 marks. Working through the stages: 73.5 MW → 78.2 MW → power at 25 kV ≈ 79.8 MW; I = 79.8 × 10⁶ / 25 × 10³ ≈ 3200 A.' },
+              '06.1': { type: 'points',
+                points: [
+                  'The energy / work done to separate the nucleus into its individual nucleons (protons and neutrons)',
+                  'OR, equivalently, the energy released when the nucleus is formed from its separate nucleons'
+                ],
+                guidance: '2 marks. MP2 is only awarded when there is reference to energy via MP1.' },
+              '06.2': { type: 'points',
+                points: [
+                  'Mass defect = (total mass of the separate nucleons) − (mass of the nucleus); total nucleon mass for ⁵⁶₂₆Fe (26 protons + 30 neutrons) = 9.375 × 10⁻²⁶ kg',
+                  'Converts the mass defect to energy using E = mc²',
+                  'Binding energy ≈ 490 MeV (accept the value consistent with the nucleon masses used; using kg rest masses gives ≈ 488–495 MeV)'
+                ],
+                guidance: '3 marks. The final mark requires the proton and neutron masses to be different in MP1.' },
+              '06.3': { type: 'points',
+                points: [
+                  'Both F1 and F2 marked to the right of the peak (a higher binding energy per nucleon than X)',
+                  'F1 and F2 roughly symmetrical about half the nucleon number of X (their nucleon numbers add to that of X)'
+                ],
+                guidance: '2 marks. An F position cannot have a nucleon number lower than the peak.' },
+              '06.4': { type: 'points',
+                points: [
+                  'The fission fragments start with a high N/Z ratio (positioned above/left of the stability line in Figure 11)',
+                  'The initial decay mode is β⁻',
+                  'They move closer to the stable region as a neutron changes to a proton (the position moves down and to the right)'
+                ],
+                guidance: '3 marks. "Too many neutrons" alone is not enough — must use "high N/Z ratio" or "neutron rich". The minus sign on β⁻ must be shown.' }
+            } },
           { id: 'phys-aqa-7408-2022-p3', year: 'June 2022', paperName: 'Paper 3', paperCode: '7408/3', totalMarks: 80, durationMins: 120, printOnly: true,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74083A-QP-JUN22.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74083A-MS-JUN22.PDF' }
