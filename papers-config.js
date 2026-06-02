@@ -7248,12 +7248,62 @@ window.SUBJECTS = [
   {
     name: 'Mathematics', icon: '📐',
     boards: [
+      // Maths papers are print-only by design: every entry has qpUrl + msUrl
+      // but no `questions`, so paper-attempt.html offers print mode only.
+      // Download the QP, sit it offline, mark against the official MS.
       { board: 'AQA', specCode: '7357',
-        officialPageUrl: 'https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/assessment-resources' },
+        officialPageUrl: 'https://www.aqa.org.uk/subjects/mathematics/a-level/mathematics-7357/assessment-resources',
+        papers: [
+          { id: 'math-aqa-7357-2023-p1', year: 'June 2023', paperName: 'Paper 1', paperCode: '7357/1', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73571-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73571-MS-JUN23.PDF' },
+          { id: 'math-aqa-7357-2023-p2', year: 'June 2023', paperName: 'Paper 2', paperCode: '7357/2', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73572-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73572-MS-JUN23.PDF' },
+          { id: 'math-aqa-7357-2023-p3', year: 'June 2023', paperName: 'Paper 3', paperCode: '7357/3', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73573-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73573-MS-JUN23.PDF' },
+          { id: 'math-aqa-7357-2022-p1', year: 'June 2022', paperName: 'Paper 1', paperCode: '7357/1', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73571-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73571-MS-JUN22.PDF' },
+          { id: 'math-aqa-7357-2022-p2', year: 'June 2022', paperName: 'Paper 2', paperCode: '7357/2', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73572-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73572-MS-JUN22.PDF' },
+          { id: 'math-aqa-7357-2022-p3', year: 'June 2022', paperName: 'Paper 3', paperCode: '7357/3', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73573-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73573-MS-JUN22.PDF' }
+        ] },
       { board: 'Edexcel (Pearson)', specCode: '9MA0',
-        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html' },
+        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/mathematics-2017.html',
+        papers: [
+          { id: 'math-edx-9ma0-2023-p1', year: 'June 2023', paperName: 'Paper 1 — Pure Mathematics 1', paperCode: '9MA0/01', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9ma0-01-que-20230607.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9ma0-01-rms-20230817.pdf' },
+          { id: 'math-edx-9ma0-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Pure Mathematics 2', paperCode: '9MA0/02', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9ma0-02-que-20230614.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9ma0-02-rms-20230817.pdf' },
+          { id: 'math-edx-9ma0-2023-p31', year: 'June 2023', paperName: 'Paper 3 — Statistics (Section A)', paperCode: '9MA0/31', totalMarks: 50, durationMins: 120, printOnly: true,
+            description: 'Edexcel publishes Paper 3 as two booklets — Statistics (9MA0/31) and Mechanics (9MA0/32) — sat together in one 2-hour exam.',
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9ma0-31-que-20230621.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9ma0-31-rms-20230817.pdf' },
+          { id: 'math-edx-9ma0-2023-p32', year: 'June 2023', paperName: 'Paper 3 — Mechanics (Section B)', paperCode: '9MA0/32', totalMarks: 50, durationMins: 120, printOnly: true,
+            description: 'Edexcel publishes Paper 3 as two booklets — Statistics (9MA0/31) and Mechanics (9MA0/32) — sat together in one 2-hour exam.',
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9ma0-32-que-20230621.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9ma0-32-rms-20230817.pdf' }
+        ] },
       { board: 'OCR A', specCode: 'H240',
-        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/mathematics-a-h230-h240-from-2017/assessment/' }
+        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/mathematics-a-h230-h240-from-2017/assessment/',
+        papers: [
+          { id: 'math-ocr-h240-2022-p1', year: 'June 2022', paperName: 'Paper 1 — Pure Mathematics', paperCode: 'H240/01', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/676845-question-paper-pure-mathematics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/677005-mark-scheme-pure-mathematics.pdf' },
+          { id: 'math-ocr-h240-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Pure Mathematics and Statistics', paperCode: 'H240/02', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/676847-question-paper-pure-mathematics-and-statistics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/677006-mark-scheme-pure-mathematics-and-statistics.pdf' },
+          { id: 'math-ocr-h240-2022-p3', year: 'June 2022', paperName: 'Paper 3 — Pure Mathematics and Mechanics', paperCode: 'H240/03', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/676849-question-paper-pure-mathematics-and-mechanics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/677007-mark-scheme-pure-mathematics-and-mechanics.pdf' }
+        ] }
     ]
   },
   {

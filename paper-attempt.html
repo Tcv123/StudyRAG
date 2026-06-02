@@ -697,7 +697,9 @@
             <div class="mode-card" style="opacity:0.6;cursor:not-allowed;">
               <div class="mode-icon">📝</div>
               <div class="mode-title">Work through it question by question</div>
-              <div class="mode-desc">Not available for this paper yet — questions haven't been extracted from the QP PDF. Coming soon.</div>
+              <div class="mode-desc">${paper.printOnly
+                ? 'Not available — this paper is print-only. Download the question paper, work it offline, then mark it against the official mark scheme.'
+                : "Not available for this paper yet — questions haven't been extracted from the QP PDF. Coming soon."}</div>
             </div>`;
       document.getElementById('modeArea').innerHTML = `
         <div class="panel">
