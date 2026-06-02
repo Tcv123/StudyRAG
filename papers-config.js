@@ -7415,14 +7415,164 @@ window.SUBJECTS = [
   {
     name: 'Further Mathematics', icon: '∑',
     boards: [
+      // Further Maths papers are print-only by design: every entry has qpUrl + msUrl
+      // but no `questions`, so paper-attempt.html offers print mode only.
       { board: 'AQA', specCode: '7367',
-        officialPageUrl: 'https://www.aqa.org.uk/subjects/mathematics/a-level/further-mathematics-7367/assessment-resources' },
+        officialPageUrl: 'https://www.aqa.org.uk/subjects/mathematics/a-level/further-mathematics-7367/assessment-resources',
+        papers: [
+          // AQA Further Maths Paper 3 is sat as one of three optional papers:
+          // 7367/3D (Discrete), 7367/3M (Mechanics), 7367/3S (Statistics).
+          // June 2018 omitted: no 7367 papers resolve on AQA's filestore (aged out of rolling window).
+          // MS infix: 2019 uses -W-MS-; Nov 2021 / 2022 / 2023 use -MS-.
+          { id: 'fmath-aqa-7367-2023-p1', year: 'June 2023', paperName: 'Paper 1', paperCode: '7367/1', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73671-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73671-MS-JUN23.PDF' },
+          { id: 'fmath-aqa-7367-2023-p2', year: 'June 2023', paperName: 'Paper 2', paperCode: '7367/2', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73672-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73672-MS-JUN23.PDF' },
+          { id: 'fmath-aqa-7367-2023-p3d', year: 'June 2023', paperName: 'Paper 3D — Discrete', paperCode: '7367/3D', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73673D-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73673D-MS-JUN23.PDF' },
+          { id: 'fmath-aqa-7367-2023-p3m', year: 'June 2023', paperName: 'Paper 3M — Mechanics', paperCode: '7367/3M', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73673M-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73673M-MS-JUN23.PDF' },
+          { id: 'fmath-aqa-7367-2023-p3s', year: 'June 2023', paperName: 'Paper 3S — Statistics', paperCode: '7367/3S', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73673S-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-73673S-MS-JUN23.PDF' },
+          { id: 'fmath-aqa-7367-2022-p1', year: 'June 2022', paperName: 'Paper 1', paperCode: '7367/1', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73671-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73671-MS-JUN22.PDF' },
+          { id: 'fmath-aqa-7367-2022-p2', year: 'June 2022', paperName: 'Paper 2', paperCode: '7367/2', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73672-QP-JUN22.PDF',
+            msNote: 'AQA has not published this mark scheme on its own filestore.' },
+          { id: 'fmath-aqa-7367-2022-p3d', year: 'June 2022', paperName: 'Paper 3D — Discrete', paperCode: '7367/3D', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73673D-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73673D-MS-JUN22.PDF' },
+          { id: 'fmath-aqa-7367-2022-p3m', year: 'June 2022', paperName: 'Paper 3M — Mechanics', paperCode: '7367/3M', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73673M-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73673M-MS-JUN22.PDF' },
+          { id: 'fmath-aqa-7367-2022-p3s', year: 'June 2022', paperName: 'Paper 3S — Statistics', paperCode: '7367/3S', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73673S-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-73673S-MS-JUN22.PDF' },
+          // AQA ran an autumn (November) 2021 series instead of June 2021.
+          { id: 'fmath-aqa-7367-2021n-p1', year: 'November 2021', paperName: 'Paper 1', paperCode: '7367/1', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73671-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73671-MS-NOV21.PDF' },
+          { id: 'fmath-aqa-7367-2021n-p2', year: 'November 2021', paperName: 'Paper 2', paperCode: '7367/2', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73672-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73672-MS-NOV21.PDF' },
+          { id: 'fmath-aqa-7367-2021n-p3d', year: 'November 2021', paperName: 'Paper 3D — Discrete', paperCode: '7367/3D', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73673D-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73673D-MS-NOV21.PDF' },
+          { id: 'fmath-aqa-7367-2021n-p3m', year: 'November 2021', paperName: 'Paper 3M — Mechanics', paperCode: '7367/3M', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73673M-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73673M-MS-NOV21.PDF' },
+          { id: 'fmath-aqa-7367-2021n-p3s', year: 'November 2021', paperName: 'Paper 3S — Statistics', paperCode: '7367/3S', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73673S-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-73673S-MS-NOV21.PDF' },
+          { id: 'fmath-aqa-7367-2019-p1', year: 'June 2019', paperName: 'Paper 1', paperCode: '7367/1', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73671-QP-JUN19.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73671-W-MS-JUN19.PDF' },
+          { id: 'fmath-aqa-7367-2019-p2', year: 'June 2019', paperName: 'Paper 2', paperCode: '7367/2', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73672-QP-JUN19.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73672-W-MS-JUN19.PDF' },
+          { id: 'fmath-aqa-7367-2019-p3d', year: 'June 2019', paperName: 'Paper 3D — Discrete', paperCode: '7367/3D', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73673D-QP-JUN19.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73673D-W-MS-JUN19.PDF' },
+          { id: 'fmath-aqa-7367-2019-p3m', year: 'June 2019', paperName: 'Paper 3M — Mechanics', paperCode: '7367/3M', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73673M-QP-JUN19.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73673M-W-MS-JUN19.PDF' },
+          { id: 'fmath-aqa-7367-2019-p3s', year: 'June 2019', paperName: 'Paper 3S — Statistics', paperCode: '7367/3S', totalMarks: 100, durationMins: 120, printOnly: true,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73673S-QP-JUN19.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2019/june/AQA-73673S-W-MS-JUN19.PDF' }
+        ] },
       { board: 'Edexcel (Pearson)', specCode: '9FM0',
-        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/further-mathematics-2017.html' },
+        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/further-mathematics-2017.html',
+        papers: [
+          // Only the two compulsory Core Pure papers (9FM0/01, 9FM0/02) are listed;
+          // the optional papers (3A-3D, 4A-4D) are omitted.
+          // June 2018 omitted: no 9FM0 papers resolve on Pearson's public site.
+          { id: 'fmath-edx-9fm0-2024-p1', year: 'June 2024', paperName: 'Paper 1 — Core Pure Mathematics 1', paperCode: '9FM0/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-01-que-20240523.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-01-rms-20240815.pdf' },
+          { id: 'fmath-edx-9fm0-2024-p2', year: 'June 2024', paperName: 'Paper 2 — Core Pure Mathematics 2', paperCode: '9FM0/02', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-02-que-20240604.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-02-rms-20240815.pdf' },
+          { id: 'fmath-edx-9fm0-2023-p1', year: 'June 2023', paperName: 'Paper 1 — Core Pure Mathematics 1', paperCode: '9FM0/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-01-que-20230526.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-01-rms-20230817.pdf' },
+          { id: 'fmath-edx-9fm0-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Core Pure Mathematics 2', paperCode: '9FM0/02', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-02-que-20230606.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-02-rms-20230817.pdf' },
+          { id: 'fmath-edx-9fm0-2022-p1', year: 'June 2022', paperName: 'Paper 1 — Core Pure Mathematics 1', paperCode: '9FM0/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-01-que-20220526.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-01-rms-20220818.pdf' },
+          { id: 'fmath-edx-9fm0-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Core Pure Mathematics 2', paperCode: '9FM0/02', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-02-que-20220609.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Mathematics/2017/Exam-materials/9fm0-02-rms-20220818.pdf' }
+          // June 2019 omitted: Pearson publishes only the mark schemes, not the question papers,
+          // so there's no sittable paper for those series.
+        ] },
       { board: 'OCR A', specCode: 'H245',
-        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/further-mathematics-a-h235-h245-from-2017/assessment/' },
+        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/further-mathematics-a-h235-h245-from-2017/assessment/',
+        papers: [
+          // Only the two compulsory Pure Core papers are listed (component codes Y540/01, Y541/01);
+          // the optional papers Y542-Y545 are omitted. First A-level series was June 2019.
+          { id: 'fmath-ocr-h245-2024-p1', year: 'June 2024', paperName: 'Paper 1 — Pure Core 1', paperCode: 'Y540/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/726622-question-paper-pure-core-1.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/726781-mark-scheme-pure-core-1.pdf' },
+          { id: 'fmath-ocr-h245-2024-p2', year: 'June 2024', paperName: 'Paper 2 — Pure Core 2', paperCode: 'Y541/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/726624-question-paper-pure-core-2.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/726782-mark-scheme-pure-core-2.pdf' },
+          { id: 'fmath-ocr-h245-2023-p1', year: 'June 2023', paperName: 'Paper 1 — Pure Core 1', paperCode: 'Y540/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/703833-question-paper-pure-core-1.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703993-mark-scheme-pure-core-1.pdf' },
+          { id: 'fmath-ocr-h245-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Pure Core 2', paperCode: 'Y541/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/703835-question-paper-pure-core-2.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703994-mark-scheme-pure-core-2.pdf' },
+          { id: 'fmath-ocr-h245-2022-p1', year: 'June 2022', paperName: 'Paper 1 — Pure Core 1', paperCode: 'Y540/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/676812-question-paper-pure-core-1.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676984-mark-scheme-pure-core-1.pdf' },
+          { id: 'fmath-ocr-h245-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Pure Core 2', paperCode: 'Y541/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/676814-question-paper-pure-core-2.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676985-mark-scheme-pure-core-2.pdf' },
+          // OCR ran an autumn (October) 2021 series instead of June 2021.
+          { id: 'fmath-ocr-h245-2021a-p1', year: 'October 2021', paperName: 'Paper 1 — Pure Core 1', paperCode: 'Y540/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/666970-question-paper-pure-core-1.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/666981-mark-scheme-pure-core-1.pdf' },
+          { id: 'fmath-ocr-h245-2021a-p2', year: 'October 2021', paperName: 'Paper 2 — Pure Core 2', paperCode: 'Y541/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/666972-question-paper-pure-core-2.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/666982-mark-scheme-pure-core-2.pdf' },
+          { id: 'fmath-ocr-h245-2019-p1', year: 'June 2019', paperName: 'Paper 1 — Pure Core 1', paperCode: 'Y540/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/621164-question-paper-pure-core-1.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/621366-mark-scheme-pure-core-1.pdf' },
+          { id: 'fmath-ocr-h245-2019-p2', year: 'June 2019', paperName: 'Paper 2 — Pure Core 2', paperCode: 'Y541/01', totalMarks: 75, durationMins: 90, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/621166-question-paper-pure-core-2.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/621367-mark-scheme-pure-core-2.pdf' }
+        ] },
       { board: 'OCR B (MEI)', specCode: 'H645',
-        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/further-mathematics-b-mei-h635-h645-from-2017/assessment/' }
+        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/further-mathematics-b-mei-h635-h645-from-2017/assessment/',
+        papers: [
+          // Only the compulsory Core Pure paper (component Y420/01) is listed; the optional
+          // Major/Minor papers are omitted. First A-level series was June 2019.
+          { id: 'fmath-ocrb-h645-2024-y420', year: 'June 2024', paperName: 'Y420 — Core Pure', paperCode: 'Y420/01', totalMarks: 144, durationMins: 160, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/726635-question-paper-core-pure.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/726787-mark-scheme-core-pure.pdf' },
+          { id: 'fmath-ocrb-h645-2023-y420', year: 'June 2023', paperName: 'Y420 — Core Pure', paperCode: 'Y420/01', totalMarks: 144, durationMins: 160, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/703847-question-paper-core-pure.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703999-mark-scheme-core-pure.pdf' },
+          { id: 'fmath-ocrb-h645-2022-y420', year: 'June 2022', paperName: 'Y420 — Core Pure', paperCode: 'Y420/01', totalMarks: 144, durationMins: 160, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/676826-question-paper-core-pure.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676996-mark-scheme-core-pure.pdf' },
+          // OCR ran an autumn (October) 2021 series instead of June 2021.
+          { id: 'fmath-ocrb-h645-2021a-y420', year: 'October 2021', paperName: 'Y420 — Core Pure', paperCode: 'Y420/01', totalMarks: 144, durationMins: 160, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/666988-question-paper-core-pure.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/667005-mark-scheme-core-pure.pdf' },
+          // June 2019 question paper was published inside the printed answer booklet (-pab).
+          { id: 'fmath-ocrb-h645-2019-y420', year: 'June 2019', paperName: 'Y420 — Core Pure', paperCode: 'Y420/01', totalMarks: 144, durationMins: 160, printOnly: true,
+            qpUrl: 'https://www.ocr.org.uk/Images/621177-question-paper-core-pure-pab.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/621378-mark-scheme-core-pure.pdf' }
+        ] }
     ]
   },
   {
