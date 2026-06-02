@@ -8740,9 +8740,231 @@ window.SUBJECTS = [
           { id: 'phys-edexcel-9ph0-2023-p3', year: 'June 2023', paperName: 'General and Practical Principles in Physics', paperCode: '9PH0/03', totalMarks: 120, durationMins: 150, printOnly: true,
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-que-20230616.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-rms-20230817.pdf' },
-          { id: 'phys-edexcel-9ph0-2022-p1', year: 'June 2022', paperName: 'Advanced Physics I', paperCode: '9PH0/01', totalMarks: 90, durationMins: 105, printOnly: true,
+          { id: 'phys-edexcel-9ph0-2022-p1', year: 'June 2022', paperName: 'Advanced Physics I', paperCode: '9PH0/01', totalMarks: 90, durationMins: 105,
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-que-20220527.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-rms-20220818.pdf' },
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-rms-20220818.pdf',
+            qbqNote: 'The structured questions (Questions 11–18, 80 marks) are wired up question-by-question with the official mark scheme. The 10 multiple-choice questions (Q1–10, 10 marks) are in the question paper PDF — open it to attempt those. Figures, photographs and graphs are in the QP PDF; the parts that ask you to draw have an on-screen canvas.',
+            questions: [
+              { number: 11,
+                scenario: 'A student drives a go-kart up a slope.',
+                parts: [
+                  { code: '11(a)', preamble: 'The slope is at an angle of 5.7° to the horizontal and the go-kart moves with a constant velocity of 2.8 m s⁻¹. Mass of go-kart and driver = 60 kg; resistive force on the go-kart = 18 N.', prompt: 'Calculate the power of the go-kart.', marks: 4 },
+                  { code: '11(b)', preamble: 'The go-kart is powered by a battery connected to a motor. The rate of thermal energy transfer by the wiring in the motor is 55 W. Current in motor = 24 A.', prompt: 'Calculate the resistance of the wiring in the motor.', marks: 2 }
+                ] },
+              { number: 12,
+                scenario: 'The photograph shows a cyclist cycling at a constant velocity on horizontal ground.\n\n(See the photograph and free-body diagram in the question paper PDF.)',
+                parts: [
+                  { code: '12(a)', kind: 'diagram', prompt: 'Complete the free-body force diagram to show the four forces acting on the bicycle (treat the bicycle and cyclist as a single object). One force — the friction force on the rear wheel — has been added for you.', marks: 3 },
+                  { code: '12(b)(i)', kind: 'diagram', preamble: 'The cyclist stops pedalling and comes to rest in a time of 5.2 s. Assume the deceleration is constant.', prompt: 'Sketch a graph to show how the cyclist\'s velocity changes during this time.', marks: 2 },
+                  { code: '12(b)(ii)', preamble: 'The cyclist travels 7.80 m while coming to rest. Mass of cyclist and bicycle = 28.0 kg.', prompt: 'Calculate the average resistive force on the cyclist and bicycle.', marks: 4 }
+                ] },
+              { number: 13,
+                scenario: 'A "tennis trainer" consists of a tennis ball suspended by a string from the top of a vertical pole. When the ball is hit it travels in a horizontal circle around the pole (see the photograph and diagram in the question paper PDF). The radius of the path of the ball is 1.2 m and the speed of the ball is 3.8 m s⁻¹.',
+                parts: [
+                  { code: '13', prompt: 'Deduce whether these values are consistent with the angle between the string and the vertical pole shown in the photograph.', marks: 5 }
+                ] },
+              { number: 14,
+                scenario: 'Power supplies provide either alternating or direct currents and potential differences.\n\n(See the circuit and graphs in the question paper PDF.)',
+                parts: [
+                  { code: '14(a)(i)', preamble: 'A power supply produces an alternating pd with a period of 0.02 s and a peak value of 4.0 V.', prompt: 'Calculate the frequency of the supply.', marks: 1 },
+                  { code: '14(a)(ii)', prompt: 'Calculate the root-mean-square pd.', marks: 1 },
+                  { code: '14(b)(i)', preamble: 'The power supply provides an input V_in to a circuit containing four diodes D1, D2, D3 and D4 and a resistor R, producing an output V_out. Graphs of V_in and V_out against time are shown.', prompt: 'Explain the operation of this circuit. Your answer should refer to D1, D2, D3 and D4.', marks: 3 },
+                  { code: '14(b)(ii)', preamble: 'A capacitor is added between points X and Y; the new graph of V_out against time is shown. Resistance of R = 2.2 kΩ.', prompt: 'Determine a value for the capacitance of the capacitor.', marks: 3 }
+                ] },
+              { number: 15,
+                scenario: 'A series of experiments was carried out in the 1970s to investigate the structure of protons using the linac (linear accelerator) at Stanford, USA.',
+                parts: [
+                  { code: '15(a)', extended: true, prompt: '*Explain how an electron is accelerated in a linac.', marks: 6 },
+                  { code: '15(b)', preamble: 'The electron leaves the accelerator with a high energy.', prompt: 'Explain why electrons need high energies to investigate the structure of a proton.', marks: 2 },
+                  { code: '15(c)(i)', preamble: 'An electron leaves the accelerator with a momentum of 20 GeV/c.', prompt: 'Explain, with reference to base units, why GeV/c can be used as a unit of momentum.', marks: 2 },
+                  { code: '15(c)(ii)', preamble: 'An electron with initial momentum 20 GeV/c collides with a stationary proton. After the collision the electron is deflected by 20° and its momentum is 9.1 GeV/c; the momentum of the proton after the collision is 11.9 GeV/c.', prompt: 'Deduce whether the law of conservation of momentum is obeyed.', marks: 3 },
+                  { code: '15(c)(iii)', prompt: 'The collisions between electrons and protons are sometimes inelastic. State what is meant by an inelastic collision.', marks: 1 }
+                ] },
+              { number: 16,
+                scenario: 'An eddy-current clutch can connect a motor to a load. Several magnets are embedded in a plastic disc, which is rotated by the motor next to a copper disc (see the diagram in the question paper PDF).',
+                parts: [
+                  { code: '16(a)(i)', prompt: 'Explain why a current is induced in the copper disc when the motor is switched on.', marks: 2 },
+                  { code: '16(a)(ii)', prompt: 'Explain, using Lenz\'s law, why the copper disc rotates.', marks: 3 },
+                  { code: '16(b)', preamble: 'The motor rotates at 500 revolutions per minute.', prompt: 'Calculate the angular speed ω of the motor.', marks: 2 },
+                  { code: '16(c)', preamble: 'The table shows how the turning effect on the load varies with ω for a particular distance between the discs: ω = 52.4 rad s⁻¹ → 1.0 N cm; ω = 104.7 rad s⁻¹ → 2.0 N cm; ω = 157.1 rad s⁻¹ → 2.8 N cm.', prompt: 'Explain the trend shown by the data.', marks: 4 }
+                ] },
+              { number: 17,
+                scenario: 'A cosmic ray, consisting of a fast-moving proton, collides with a proton within the nucleus of an atom in the upper atmosphere. Three particles — a proton, a neutron and a pion — result from the collision.',
+                parts: [
+                  { code: '17(a)', prompt: 'Write a particle equation for this collision.', marks: 2 },
+                  { code: '17(b)', preamble: 'The u quark has charge +2/3 e and the d quark has charge −1/3 e.', prompt: 'Give the quark structure for each of the particles produced by this collision.', marks: 3 },
+                  { code: '17(c)', preamble: 'The mass of a pion is 140 MeV/c².', prompt: 'Calculate the mass of the pion in kg.', marks: 3 },
+                  { code: '17(d)', preamble: 'The mass of a neutron is about the same as the mass of a proton. A student suggests that the minimum kinetic energy the cosmic-ray proton would need to create the pion in this collision is 140 MeV.', prompt: 'Discuss whether this suggestion is correct. Your answer should include reference to the laws of conservation of momentum and conservation of energy.', marks: 4 }
+                ] },
+              { number: 18,
+                scenario: 'A potential divider circuit may contain a potentiometer: a track with terminals X and Y at either end and a sliding contact connected to a terminal Z. The track is 115 mm long and 5.0 mm wide (see the diagram in the question paper PDF).',
+                parts: [
+                  { code: '18(a)', preamble: 'The resistance of the track between X and Y is 12.0 kΩ. Resistivity of track material = 0.49 Ω m.', prompt: 'Calculate the thickness t of the track.', marks: 3 },
+                  { code: '18(b)(i)', preamble: 'The potentiometer monitors the displacement of a moving tool attached to the sliding contact; it is connected to a resistor R with a 12 V supply. The tool moves through a maximum displacement of 60 mm from end X, producing a maximum pd of 5.0 V between Z and X.', prompt: 'Show that the potential difference between X and Y is about 10 V.', marks: 2 },
+                  { code: '18(b)(ii)', prompt: 'Calculate the value of R.', marks: 3 },
+                  { code: '18(b)(iii)', preamble: 'When the circuit is assembled using the correctly calculated R and a battery of emf 12 V, the maximum output from the potentiometer is slightly less than 5.0 V.', prompt: 'Explain why the maximum output is slightly less than predicted.', marks: 3 },
+                  { code: '18(b)(iv)', preamble: 'The tool should not travel with a speed larger than 0.8 m s⁻¹. The graph shows how the displacement varies with time for the downward stroke of the tool (see the QP PDF).', prompt: 'Deduce whether this speed is exceeded by the moving tool.', marks: 4 }
+                ] }
+            ],
+            markSchemes: {
+              '11(a)': { type: 'points',
+                points: [
+                  'Resolves the weight along the slope (60 × 9.81 × sin 5.7° = 58.5 N) or determines the vertical height gained per second',
+                  'Determines the total force along the slope (58.5 + 18 = 76.5 N)',
+                  'Use of P = Fv (or W = Fs and P = W/t)',
+                  'Power = 210 W (214 W)'
+                ],
+                guidance: '4 marks.' },
+              '11(b)': { type: 'points',
+                points: ['Use of P = I²R', 'Resistance = 0.095 Ω'],
+                guidance: '2 marks. 55 = 24² × R.' },
+              '12(a)': { type: 'points',
+                points: [
+                  'An opposite (backward) horizontal force labelled friction/resistance/drag',
+                  'A vertically downward force labelled W/weight/mg',
+                  'A vertically upward force labelled R/reaction/normal (contact force)'
+                ],
+                guidance: '3 marks (complete the free-body diagram — use the drawing canvas).' },
+              '12(b)(i)': { type: 'points',
+                points: ['A straight line starting on the v-axis with a negative gradient', 'Intercept on the t-axis marked 5.2 s'],
+                guidance: '2 marks (sketch — use the drawing canvas).' },
+              '12(b)(ii)': { type: 'points',
+                points: [
+                  'Use of s = (u + v)t/2 with v = 0 to find u (= 3.0 m s⁻¹)',
+                  'Use of another suvat equation (or gradient/area of the graph) to find a (= 0.58 m s⁻²)',
+                  'Use of F = ma',
+                  'Resistance = 16 N'
+                ],
+                guidance: '4 marks.' },
+              '13': { type: 'points',
+                points: [
+                  'Measures (or calculates from dimensions) the angle between the string and the pole ≈ 52°',
+                  'Uses F = ma horizontally (centripetal force)',
+                  'Resolves the forces vertically (T cos θ = mg)',
+                  'Uses a = v²/r',
+                  'Calculates the angle (≈ 51° from tan θ = v²/(rg)) and reaches a consistent conclusion'
+                ],
+                guidance: '5 marks. tan θ = 3.8²/(1.2 × 9.81) → θ ≈ 50.8°, consistent with the ~52° shown.' },
+              '14(a)(i)': { type: 'points', points: ['Frequency = 1/0.02 = 50 Hz'], guidance: '1 mark.' },
+              '14(a)(ii)': { type: 'points', points: ['V_rms = 4.0/√2 = 2.8 V'], guidance: '1 mark.' },
+              '14(b)(i)': { type: 'points',
+                points: [
+                  'A diode only lets current through in one direction',
+                  'In the positive half-cycle D2 and D4 conduct (and in the negative half-cycle D1 and D3 conduct) — full-wave rectification',
+                  'The current is always in the same direction through R (X to Y)'
+                ],
+                guidance: '3 marks.' },
+              '14(b)(ii)': { type: 'points',
+                points: [
+                  'Reads off corresponding values of V and t from the graph',
+                  'Use of V = V₀e^(−t/RC)',
+                  'C in the range 2.7 × 10⁻⁵ to 3.5 × 10⁻⁵ F'
+                ],
+                guidance: '3 marks. Alternatively use I = V/R, Q = It, C = Q/V.' },
+              '15(a)': { type: 'points',
+                points: [
+                  'A set of (metal drift) tubes arranged in a line',
+                  'Electrons are accelerated by an electric field / potential difference',
+                  'The acceleration takes place in the gaps between the tubes',
+                  'Adjacent tubes are connected to opposite terminals / opposite polarity of the supply',
+                  'The supply (pd / electric field) is alternating, so as an electron emerges from one tube the next tube is positive (attracting)',
+                  'The time spent in each tube is the same, so as the electrons travel faster the tubes (or gaps) must get longer'
+                ],
+                guidance: '6-mark *linked-response question. Marks for indicative content plus a logically structured, sustained line of reasoning.' },
+              '15(b)': { type: 'points',
+                points: [
+                  'High-energy electrons have a short de Broglie wavelength',
+                  'The wavelength needs to be comparable to / smaller than the size of a proton (for diffraction/resolution)'
+                ],
+                guidance: '2 marks.' },
+              '15(c)(i)': { type: 'points',
+                points: [
+                  'eV (energy) has base units kg m² s⁻²; momentum has base units kg m s⁻¹',
+                  'Dividing an energy by a speed (c, in m s⁻¹) gives kg m s⁻¹ — the units of momentum (or multiplying momentum by c gives energy units)'
+                ],
+                guidance: '2 marks.' },
+              '15(c)(ii)': { type: 'points',
+                points: [
+                  'Resolves an x- or y-component of the electron\'s momentum (e.g. 9.1 sin 20° = 3.1 GeV/c)',
+                  'Applies momentum conservation in the x- and y-directions',
+                  'Compares the total momentum (or the proton momentum) after the collision (≈ 11.86 GeV/c vs the stated 11.9 GeV/c) and comments — momentum is (approximately) conserved'
+                ],
+                guidance: '3 marks. Alternative: vector triangle + cosine rule giving a deflection angle ≈ 20.4°.' },
+              '15(c)(iii)': { type: 'points', points: ['A collision in which (total) kinetic energy is not conserved'], guidance: '1 mark.' },
+              '16(a)(i)': { type: 'points',
+                points: [
+                  'As the motor rotates there is a change in magnetic flux (linkage) through the copper disc / the disc cuts magnetic flux',
+                  'so an emf (and hence a current) is induced (Faraday\'s law)'
+                ],
+                guidance: '2 marks. Accept flux linkage for magnetic flux.' },
+              '16(a)(ii)': { type: 'points',
+                points: [
+                  'The induced current opposes the change producing it (Lenz\'s law)',
+                  'so the copper disc experiences a force/torque in the same direction as the rotating magnets',
+                  'and the disc rotates in the same direction (to reduce the rate of change of flux)'
+                ],
+                guidance: '3 marks.' },
+              '16(b)': { type: 'points',
+                points: ['Converts 500 rev min⁻¹: ω = 500 × 2π/60', 'ω = 52.4 rad s⁻¹'],
+                guidance: '2 marks.' },
+              '16(c)': { type: 'points',
+                points: [
+                  'The relationship between ω and turning effect is (approximately) proportional',
+                  'As ω increases, the rate of change / cutting of magnetic flux increases',
+                  'so the induced current (or emf) in the copper disc increases',
+                  'which leads to an increase in force / turning effect on the copper disc (in the magnetic field)'
+                ],
+                guidance: '4 marks. The last point is dependent on the second or third.' },
+              '17(a)': { type: 'points',
+                points: ['Correct equation ignoring charges: p + p → p + n + π', 'The pion has charge +1 (π⁺), so charge is conserved'],
+                guidance: '2 marks. p + p → p + n + π⁺.' },
+              '17(b)': { type: 'points',
+                points: ['proton p: uud', 'neutron n: udd', 'π⁺: u d̄ (up + anti-down)'],
+                guidance: '3 marks.' },
+              '17(c)': { type: 'points',
+                points: [
+                  'Converts 140 MeV to joules: 140 × 10⁶ × 1.6 × 10⁻¹⁹ J',
+                  'Uses E = mc² → m = E/c²',
+                  'mass = 2.5 × 10⁻²⁸ kg'
+                ],
+                guidance: '3 marks.' },
+              '17(d)': { type: 'points',
+                points: [
+                  'Energy must be conserved, so by E = mc² creating the pion mass requires 140 MeV',
+                  'Conservation of momentum means the three product particles must have some momentum after the collision',
+                  'and therefore some kinetic energy',
+                  'So the incoming proton needs 140 MeV plus the kinetic energy of the product particles — the suggestion is inaccurate (the minimum is more than 140 MeV)'
+                ],
+                guidance: '4 marks.' },
+              '18(a)': { type: 'points',
+                points: ['Use of Area = width × thickness', 'Use of R = ρl/A', 'thickness = 9.4 × 10⁻⁴ m'],
+                guidance: '3 marks.' },
+              '18(b)(i)': { type: 'points',
+                points: ['Uses the ratio of lengths to find the pd across the potentiometer (115/60 × 5.0)', 'V = 9.6 V (≈ 10 V)'],
+                guidance: '2 marks.' },
+              '18(b)(ii)': { type: 'points',
+                points: [
+                  'Determines the pd across R (12 − 9.6 = 2.4 V)',
+                  'Applies V = IR to the potentiometer to find the current (9.6/12000 = 8.0 × 10⁻⁴ A)',
+                  'R = 3000 Ω'
+                ],
+                guidance: '3 marks.' },
+              '18(b)(iii)': { type: 'points',
+                points: [
+                  'A battery has internal resistance',
+                  'There is a pd across the internal resistance (lost volts)',
+                  'so the terminal pd is less than the emf, and the output is reduced'
+                ],
+                guidance: '3 marks. Accept "lost volts" for the second mark.' },
+              '18(b)(iv)': { type: 'points',
+                points: [
+                  'Tangent drawn on the steepest part of the curve',
+                  'Uses a triangle with a base of at least 0.06 s',
+                  'Attempts to find the gradient',
+                  'velocity ≈ 0.68 m s⁻¹ (allow 0.60–0.80), so the speed is not exceeded'
+                ],
+                guidance: '4 marks. The second mark is dependent on the first.' }
+            } },
           { id: 'phys-edexcel-9ph0-2022-p2', year: 'June 2022', paperName: 'Advanced Physics II', paperCode: '9PH0/02', totalMarks: 90, durationMins: 105, printOnly: true,
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-que-20220611.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-rms-20220818.pdf' },
