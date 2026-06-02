@@ -95,19 +95,32 @@
     .badge { display: inline-flex; align-items: center; gap: 4px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 999px; text-transform: uppercase; letter-spacing: 0.04em; vertical-align: middle; }
     .badge.attempt { background: var(--accent-dim); color: var(--accent-dark); }
 
-    /* OCR Maths direct-paper table */
-    .papers-block { margin-top: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-    .papers-block-head { padding: 14px 18px; border-bottom: 1px solid var(--border); display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; }
-    .papers-block-title { font-family: var(--font-display); font-size: 15px; }
-    .papers-block-sub { font-size: 12.5px; color: var(--muted); }
-    .papers-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
-    .papers-table th { text-align: left; font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); padding: 10px 14px; border-bottom: 1px solid var(--border); background: var(--surface2); }
-    .papers-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); vertical-align: middle; }
-    .papers-table tr:last-child td { border-bottom: none; }
-    .papers-table tr:hover td { background: var(--surface2); }
-    .papers-table .col-year { font-weight: 600; color: var(--text); }
-    .papers-table .col-paper { color: var(--text); }
-    .papers-table .col-paper .code { font-size: 11.5px; color: var(--muted2); display: inline-block; margin-left: 6px; padding: 1px 7px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; }
+    /* Collapsible board card + nested series groups */
+    .board-block { margin-top: 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .board-summary { list-style: none; cursor: pointer; display: flex; align-items: baseline; gap: 12px; padding: 15px 18px; user-select: none; }
+    .board-summary::-webkit-details-marker { display: none; }
+    .board-summary:hover { background: var(--surface2); }
+    .bs-name { font-family: var(--font-display); font-size: 16px; }
+    .bs-spec { font-size: 11.5px; font-weight: 600; color: var(--muted2); background: var(--surface2); border: 1px solid var(--border); padding: 2px 8px; border-radius: 999px; margin-left: 8px; }
+    .bs-meta { font-size: 12.5px; color: var(--muted); }
+    .bs-chev { margin-left: auto; color: var(--muted2); font-size: 12px; transition: transform 0.15s; align-self: center; }
+    details.board-block[open] > .board-summary .bs-chev { transform: rotate(180deg); }
+    .board-body { padding: 0 14px 8px; }
+
+    .series-block { border-top: 1px solid var(--border); }
+    .series-summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 10px; padding: 11px 8px; user-select: none; }
+    .series-summary::-webkit-details-marker { display: none; }
+    .series-summary:hover .ss-year { color: var(--accent-dark); }
+    .ss-year { font-weight: 600; font-size: 13.5px; color: var(--text); }
+    .ss-count { font-size: 12px; color: var(--muted2); }
+    .ss-chev { margin-left: auto; color: var(--muted2); font-size: 11px; transition: transform 0.15s; }
+    details.series-block[open] > .series-summary .ss-chev { transform: rotate(180deg); }
+    .series-papers { padding: 2px 0 10px; display: flex; flex-direction: column; gap: 5px; }
+    .paper-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 8px 12px; border-radius: 8px; background: var(--surface2); }
+    .paper-row:hover { background: var(--accent-dim); }
+    .pr-name { font-size: 13.5px; color: var(--text); }
+    .pr-name .code { font-size: 11.5px; color: var(--muted2); display: inline-block; margin-left: 6px; padding: 1px 7px; background: var(--surface); border: 1px solid var(--border); border-radius: 999px; }
+    .pr-actions { white-space: nowrap; flex-shrink: 0; }
     .mini-btn { display: inline-flex; align-items: center; gap: 4px; padding: 4px 10px; border-radius: 6px; font-size: 12px; font-weight: 500; text-decoration: none; border: 1px solid var(--border); background: var(--surface); color: var(--text); margin-right: 4px; }
     .mini-btn:hover { border-color: var(--accent); }
     .mini-btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
@@ -223,13 +236,16 @@
     catch (_) { return ''; }
   }
 
-  function papersTableHtml(board) {
+  // A board renders as a collapsible card. Inside, papers are grouped by
+  // exam series (year) into nested collapsible groups — so a board with 15+
+  // papers shows a handful of one-line series rows instead of a long table.
+  // The most-recent board (openByDefault) and its most-recent series start
+  // open; everything older collapses to a single summary line.
+  function boardBlockHtml(board, openByDefault) {
     if (!Array.isArray(board.papers) || !board.papers.length) return '';
     // Sort papers by year then by paper code so the most-recent sitting
-    // is at the top regardless of insertion order in papers-config.js.
-    // Heuristic for year: extract a 4-digit year, then for sittings in
-    // the same year favour "June" > "Autumn" > "November" so AQA/OCR
-    // Nov-2021 (COVID sittings) sort BELOW June-2022 etc.
+    // is at the top. For sittings in the same year favour "June" > "Autumn"
+    // > "November" so AQA/OCR Nov-2021 (COVID sittings) sort BELOW June-2022.
     const MONTH_PRIORITY = { 'June':3, 'Autumn':2, 'November':1, 'October':1, 'May':2 };
     const sortKey = (p) => {
       const m = (p.year || '').match(/(\d{4})/);
@@ -240,7 +256,16 @@
       return year * 100 + monthRank + paperRank * 0.01;
     };
     const orderedPapers = [...board.papers].sort((a, b) => sortKey(b) - sortKey(a));
-    const rows = orderedPapers.map(p => {
+
+    // Group into series, preserving the most-recent-first order.
+    const seriesOrder = [];
+    const seriesMap = new Map();
+    orderedPapers.forEach(p => {
+      if (!seriesMap.has(p.year)) { seriesMap.set(p.year, []); seriesOrder.push(p.year); }
+      seriesMap.get(p.year).push(p);
+    });
+
+    const paperRow = (p) => {
       const attemptBtn = `<a class="mini-btn primary" href="paper-attempt.html?id=${encodeURIComponent(p.id)}">▶ Attempt</a>`;
       const qpBtn = p.qpUrl
         ? `<a class="mini-btn" href="${esc(p.qpUrl)}" target="_blank" rel="noopener" title="Question paper">QP</a>`
@@ -249,25 +274,42 @@
         ? `<a class="mini-btn" href="${esc(p.msUrl)}" target="_blank" rel="noopener" title="Mark scheme">MS</a>`
         : `<span class="mini-btn muted" title="${esc(p.msNote || 'Not publicly available')}">MS</span>`;
       return `
-        <tr>
-          <td class="col-year">${esc(p.year)}</td>
-          <td class="col-paper">${esc(p.paperName)} <span class="code">${esc(p.paperCode || '')}</span></td>
-          <td style="text-align:right;white-space:nowrap;">${attemptBtn} ${qpBtn} ${msBtn}</td>
-        </tr>`;
+        <div class="paper-row">
+          <span class="pr-name">${esc(p.paperName)} <span class="code">${esc(p.paperCode || '')}</span></span>
+          <span class="pr-actions">${attemptBtn} ${qpBtn} ${msBtn}</span>
+        </div>`;
+    };
+
+    const seriesHtml = seriesOrder.map((yr, i) => {
+      const ps = seriesMap.get(yr);
+      return `
+        <details class="series-block"${i === 0 ? ' open' : ''}>
+          <summary class="series-summary">
+            <span class="ss-year">${esc(yr)}</span>
+            <span class="ss-count">${ps.length} paper${ps.length === 1 ? '' : 's'}</span>
+            <span class="ss-chev">▾</span>
+          </summary>
+          <div class="series-papers">${ps.map(paperRow).join('')}</div>
+        </details>`;
     }).join('');
+
+    // Year range shown in the collapsed board summary.
+    const years = orderedPapers
+      .map(p => { const m = (p.year || '').match(/(\d{4})/); return m ? parseInt(m[1], 10) : null; })
+      .filter(Boolean);
+    const yearRange = years.length
+      ? (Math.min(...years) === Math.max(...years) ? String(years[0]) : `${Math.min(...years)}–${Math.max(...years)}`)
+      : '';
+
     return `
-      <div class="papers-block">
-        <div class="papers-block-head">
-          <div class="papers-block-title">${esc(board.board)} ${esc(board.specCode)} — direct papers</div>
-          <div class="papers-block-sub">${board.papers.length} papers · QP &amp; MS PDFs hosted by OCR · click ▶ Attempt to mark yourself</div>
-        </div>
-        <table class="papers-table">
-          <thead>
-            <tr><th>Series</th><th>Paper</th><th style="text-align:right;">Actions</th></tr>
-          </thead>
-          <tbody>${rows}</tbody>
-        </table>
-      </div>`;
+      <details class="board-block"${openByDefault ? ' open' : ''}>
+        <summary class="board-summary">
+          <span class="bs-name">${esc(board.board)}<span class="bs-spec">${esc(board.specCode || '')}</span></span>
+          <span class="bs-meta">${board.papers.length} paper${board.papers.length === 1 ? '' : 's'}${yearRange ? ` · ${yearRange}` : ''}</span>
+          <span class="bs-chev">▾</span>
+        </summary>
+        <div class="board-body">${seriesHtml}</div>
+      </details>`;
   }
 
   // ── Load the user's chosen subjects + boards so we can default the
@@ -340,7 +382,7 @@
             <div class="subject-title">${subj.icon || ''} ${esc(subj.name)}</div>
             <div class="subject-meta">${directCount} attemptable paper${directCount === 1 ? '' : 's'}</div>
           </div>
-          ${subj.boards.map(papersTableHtml).join('')}
+          ${subj.boards.map((b, i) => boardBlockHtml(b, i === 0)).join('')}
         </section>`;
     });
 
