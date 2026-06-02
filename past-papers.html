@@ -26,7 +26,7 @@
     .app { display: flex; min-height: 100vh; }
     .sidebar { width: var(--sidebar-w); background: var(--surface); border-right: 1px solid var(--border); display: flex; flex-direction: column; padding: 24px 0; position: fixed; top: 0; left: 0; bottom: 0; z-index: 10; box-shadow: 2px 0 16px rgba(37,99,235,0.08); }
     .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
-    .logo-dot { width: 9px; height: 9px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 8px var(--accent-glow); }
+    .logo-dot { width: 24px; height: 24px; border-radius: 50%; background: url(favicon.svg) center/cover no-repeat; flex-shrink: 0; }
     .logo-text { font-family: var(--font-display); font-size: 18px; }
     .nav-section { padding: 0 12px; margin-bottom: 8px; }
     .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
@@ -247,8 +247,9 @@
   // A board renders as a collapsible card. Inside, papers are grouped by
   // exam series (year) into nested collapsible groups — so a board with 15+
   // papers shows a handful of one-line series rows instead of a long table.
-  // The most-recent board (openByDefault) and its most-recent series start
-  // open; everything older collapses to a single summary line.
+  // Boards render collapsed by default (openByDefault is false at the call
+  // site); when a user expands one, its most-recent series starts open so
+  // the latest papers show immediately without a second click.
   function boardBlockHtml(board, openByDefault) {
     if (!Array.isArray(board.papers) || !board.papers.length) return '';
     // Sort papers by year then by paper code so the most-recent sitting
@@ -390,7 +391,7 @@
             <div class="subject-title">${subj.icon || ''} ${esc(subj.name)}</div>
             <div class="subject-meta">${directCount} attemptable paper${directCount === 1 ? '' : 's'}</div>
           </div>
-          ${subj.boards.map((b, i) => boardBlockHtml(b, i === 0)).join('')}
+          ${subj.boards.map(b => boardBlockHtml(b, false)).join('')}
         </section>`;
     });
 
