@@ -1,0 +1,875 @@
+GCE
+Computer Science
+
+H446/02: Algorithms and programming
+
+Advanced GCE
+
+Mark Scheme for Autumn 2021
+
+Oxford Cambridge and RSA Examinations
+OCR (Oxford Cambridge and RSA) is a leading UK awarding body, providing a wide range of
+qualifications to meet the needs of candidates of all ages and abilities. OCR qualifications
+include AS/A Levels, Diplomas, GCSEs, Cambridge Nationals, Cambridge Technicals,
+Functional Skills, Key Skills, Entry Level qualifications, NVQs and vocational qualifications in
+areas such as IT, business, languages, teaching/training, administration and secretarial skills.
+It is also responsible for developing new specifications to meet national requirements and the
+needs of students and teachers. OCR is a not-for-profit organisation; any surplus made is
+invested back into the establishment to help towards the development of qualifications and
+support, which keep pace with the changing needs of today's society.
+This mark scheme is published as an aid to teachers and students, to indicate the requirements
+of the examination. It shows the basis on which marks were awarded by examiners. It does not
+indicate the details of the discussions which took place at an examiners' meeting before marking
+commenced.
+All examiners are instructed that alternative correct answers and unexpected approaches in
+candidates' scripts must be given marks that fairly reflect the relevant knowledge and skills
+demonstrated.
+Mark schemes should be read in conjunction with the published question papers and the report
+on the examination.
+© OCR 2021
+
+Oxford Cambridge and RSA Examinations
+1. Annotations  Meaning
+Annotation      Omission mark
+                Benefit of the doubt
+                Incorrect point
+                Follow through
+
+                Not answered question
+                No benefit of doubt given
+                Repeat
+                Correct point
+                Too vague
+
+                Level 1
+                Level 2
+                Level 3
+2. Subject-specific Marking Instructions
+INTRODUCTION
+Your first task as an Examiner is to become thoroughly familiar with the material on which the examination depends. This material includes:
+
+    · the specification, especially the assessment objectives
+    · the question paper and its rubrics
+    · the mark scheme.
+You should ensure that you have copies of these materials.
+You should ensure also that you are familiar with the administrative procedures related to the marking process. These are set out in the OCR
+booklet Instructions for Examiners. If you are examining for the first time, please read carefully Appendix 5 Introduction to Script Marking:
+Notes for New Examiners.
+Please ask for help or guidance whenever you need it. Your first point of contact is your Team Leader.
+
+                                                                                                 2
+USING THE MARK SCHEME
+
+Please study this Mark Scheme carefully. The Mark Scheme is an integral part of the process that begins with the setting of the question paper and
+ends with the awarding of grades. Question papers and Mark Schemes are developed in association with each other so that issues of
+differentiation and positive achievement can be addressed from the very start.
+
+This Mark Scheme is a working document; it is not exhaustive; it does not provide `correct' answers. The Mark Scheme can only provide `best
+guesses' about how the question will work out, and it is subject to revision after we have looked at a wide range of scripts.
+
+The Examiners' Standardisation Meeting will ensure that the Mark Scheme covers the range of candidates' responses to the questions, and that all
+Examiners understand and apply the Mark Scheme in the same way. The Mark Scheme will be discussed and amended at the meeting, and
+administrative procedures will be confirmed. Co-ordination scripts will be issued at the meeting to exemplify aspects of candidates' responses and
+achievements; the co-ordination scripts then become part of this Mark Scheme.
+
+Before the Standardisation Meeting, you should read and mark in pencil a number of scripts, in order to gain an impression of the range of
+responses and achievement that may be expected.
+
+In your marking, you will encounter valid responses which are not covered by the Mark Scheme: these responses must be credited. You will
+encounter answers which fall outside the `target range' of Bands for the paper which you are marking. Please mark these answers according to the
+marking criteria.
+
+Please read carefully all the scripts in your allocation and make every effort to look positively for achievement throughout the ability range. Always
+be prepared to use the full range of marks.
+LEVELS OF RESPONSE QUESTIONS:
+The indicative content indicates the expected parameters for candidates' answers, but be prepared to recognise and credit unexpected approaches
+where they show relevance.
+Using `best-fit', decide first which set of BAND DESCRIPTORS best describes the overall quality of the answer. Once the band is located, adjust
+the mark concentrating on features of the answer which make it stronger or weaker following the guidelines for refinement.
+
+    · Highest mark: If clear evidence of all the qualities in the band descriptors is shown, the HIGHEST Mark should be awarded.
+    · Lowest mark: If the answer shows the candidate to be borderline (i.e. they have achieved all the qualities of the bands below and show
+
+         limited evidence of meeting the criteria of the band in question) the LOWEST mark should be awarded.
+    · Middle mark: This mark should be used for candidates who are secure in the band. They are not `borderline' but they have only achieved
+
+         some of the qualities in the band descriptors.
+Be prepared to use the full range of marks. Do not reserve (e.g.) high Band 3 marks `in case' something turns up of a quality you have not yet seen.
+If an answer gives clear evidence of the qualities described in the band descriptors, reward appropriately.
+
+                                                                                                 4
+High (thorough)      AO1                                 AO2                                  AO3
+Middle (reasonable)  Precision in the use of question    Knowledge and understanding          Concerted effort is made to
+Low (basic)          terminology. Knowledge shown is     shown is consistently applied to     consider all aspects of a system /
+                     consistent and well-developed.      context enabling a logical and       problem or weigh up both sides to
+                     Clear appreciation of the question  sustained argument to develop.       an argument before forming an
+                     from a range of different           Examples used enhance rather         overall conclusion. Judgements
+                     perspectives making extensive use   than detract from response.          made are based on appropriate
+                     of acquired knowledge and                                                and concise arguments that have
+                     understanding.                      Knowledge and understanding          been developed in response
+                                                         applied to context. Whilst clear     resulting in them being both
+                     Awareness of the meaning of the     evidence that an argument builds     supported and realistic.
+                     terms in the question. Knowledge    and develops through response
+                     is sound and effectively            there are times when opportunities   There is a reasonable attempt to
+                     demonstrated. Demands of            are missed to use an example or      reach a conclusion considering
+                     question understood although at     relate an aspect of knowledge or     aspects of a system / problem or
+                     times opportunities to make use of  understanding to the context         weighing up both sides of an
+                     acquired knowledge and              provided.                            argument. However the impact of
+                     understanding not always taken.                                          the conclusion is often lessened by
+                                                         Inability to apply knowledge and     a lack of supported judgements
+                     Confusion and inability to          understanding in any sustained       which accompany it. This inability
+                     deconstruct terminology as used in  way to context resulting in tenuous  to build on and develop lines of
+                     the question. Knowledge partial     and unsupported statements being     argument as developed in the
+                     and superficial. Focus on question  made. Examples if used are for the   response can detract from the
+                     narrow and often one-dimensional.   most part irrelevant and             overall quality of the response.
+                                                         unsubstantiated.
+                                                                                              Little or no attempt to prioritise or
+                                                                                              weigh up factors during course of
+                                                                                              answer. Conclusion is often
+                                                                                              dislocated from response and any
+                                                                                              judgements lack substance due in
+                                                                                              part to the basic level of argument
+                                                                                              that has been demonstrated
+                                                                                              throughout response.
+                                                                     Assessment Objective
+
+AO1 Demonstrate knowledge and understanding of the principles and concepts of computer science, including abstraction, logic, algorithms and data
+             representation.
+
+AO1.1 Demonstrate knowledge of the principles and concepts of abstraction, logic, algorithms, data representation or other as appropriate.
+AO1.2 Demonstrate understanding of the principles and concepts of abstraction, logic, algorithms, data representation or other as appropriate.
+AO2 Apply knowledge and understanding of the principles and concepts of computer science including to analyse problems in computational terms.
+AO2.1 Apply knowledge and understanding of the principles and concepts of computer science.
+AO2.2 Analyse problems in computational terms.
+AO3 Design, program and evaluate computer systems that solve problems, making reasoned judgements about these and presenting conclusions.
+AO3.1 Design computer systems that solve problems.
+AO3.2 Program computer systems that solve problems.
+AO3.3 Evaluate computer systems that solve problems, making reasoned judgements about these and presenting conclusions.
+
+                                                                                                 6
+Question                                                              Answer                              Marks    Guidance
+    1a                                                                                                       3
+    1bi   1 mark per bullet to max 3.
+          e.g.                                                                                             AO2.1
+    1bii                                                                                                      (2)
+              · Remove unnecessary details // remove character features that are not needed
+    1ci       · e.g. remove the outside world                                                              AO2.2
+              · e.g. Remove complexity from the realistic entities // Simply real-life objects                (1)
+              · e.g. simplify characters/animals/tents
+              · e.g. by representing them with specific objects/shapes                                       2
+          1 mark per bullet to max 2
+          e.g.                                                                                             AO1.1
+              · Multiple processes being executed at the same time // appearing to happen simultaneously      (2)
+              · Giving processes a slice of the processor time
+              · Having multiple processors each carrying out a different process                             3
+          1 mark per bullet to max 3
+          e.g:                                                                                             AO2.1
+              · Game could have large number of requests to the server at a time                              (2)
+              · ... server needs to respond in reasonable time
+              · ... having multiple processors handling the different requests would increase response     AO2.2
+                                                                                                              (1)
+                   time
+              · Users could override each other's changes                                                    2
+              · ... e.g. needs to handle if someone updates their circus while someone else is visiting
+              · ...use record locking to stop edits if someone else has access to data                     AO1.1
+              · Different users will have different response times                                            (1)
+              · ...therefore the processor can still handle other requests
+              · ...so that the performance for other users is not affected                                 AO1.2
+          1 mark per bullet to max 2                                                                          (1)
+          e.g:
+              · A rule of thumb / estimate / guess
+              · That estimates the distance / cost from each node to the destination node
+              · To speed up the process of finding a solution
+              · ...by identify which paths to follow first
+      Node  Distance travelled     Heuristic       Distance     Previous  MARKING     8
+      A ()  0                     90              travelled +      node   GUIDANCE
+      B ()   21                   80               Heuristic                        AO1.2
+                                              90               A            1 MARK    (3)
+
+                                              101                           1 MARK  AO2.1
+                                                                                      (3)
+
+                                                                                    AO2.2
+                                                                                      (2)
+
+      C ()  42                    65          107              A          1 MARK
+
+1cii  D ()  21+38=59              50          109 104          BC         1 MARK
+
+            42+12=54
+
+      E      21+40=61             50          111              B          1 MARK
+
+      F ()  42+12+23=77 30                    107              D          1 MARK
+
+      G                           0           110              F          1 MARK
+
+            42+12+23+33=110
+
+      Final path = A,C,D,F,G and Distance = 110 (1 Mark)
+
+      1 mark per bullet to max 6                                                      6
+
+      · Visit root node M                                                           AO1.2
+                                                                                      (1)
+      · Visit E and S
+                                                                                    AO2.1
+1d    · Visit C and J (from E)                                                        (3)
+
+      · ...then P and V (from S)                                                    AO2.2
+                                                                                      (2)
+
+      · Visit G and K (from J)
+
+      · Visit L (from K)
+
+                                                          8
+    Mark Band 3 ­ High level (7-9 marks)                                                                             9   AO1: Knowledge and Understanding
+    The candidate demonstrates a thorough knowledge and understanding of data mining; the material is             AO1.1  Indicative content
+    generally accurate and detailed.                                                                                     · Data mining searches large amounts
+    The candidate is able to apply their knowledge and understanding directly and consistently to the context       (2)
+    provided.                                                                                                     AO1.2        of data
+    Evidence/examples will be explicitly relevant to the explanation.
+    The candidate is able to weigh up the use of data mining which results in a supported and realistic judgment    (2)  · Searches for relationships between
+    as to whether it is possible to use them in this context.                                                     AO2.1        facts/components/events that may
+    There is a well-developed line of reasoning which is clear and logically structured. The information                       not be obvious
+    presented is relevant and substantiated.                                                                        (2)
+                                                                                                                  AO3.3  · May include pattern matching
+                                                                                                                               algorithms
+                                                                                                                    (3)
+                                                                                                                         · May involve anomaly detection
+                                                                                                                               algorithms
+
+                                                                                                                         · Used for business modelling
+                                                                                                                         · Used to plan for future eventualities
+
+    Mark Band 2 ­ Mid level (4-6 marks)                                                                                  AO2: Application
+                                                                                                                         · Can look for how people use the
+    The candidate demonstrates reasonable knowledge and understanding of data mining; the material is
+                                                                                                                               website e.g. visiting times, what they
+    generally accurate but at times underdeveloped.                                                                            click on, how long they spend on
+                                                                                                                               certain features, what they do first,
+    The candidate is able to apply their knowledge and understanding directly to the context provided although                 which elements are used least
+                                                                                                                         · Give recommendations for future
+    one or two opportunities are missed. Evidence/examples are for the most part implicitly relevant to the                    changes to the game e.g. features to
+                                                                                                                               add, or remove
+1e  explanation.
+                                                                                                                         AO3: Evaluation
+    The candidate makes a reasonable attempt to come to a conclusion showing some recognition of                         Candidates will need to evaluate the
+                                                                                                                         benefits and drawbacks of using data
+    influencing factors that would determine whether it is possible to use data mining in this context.                  mining.
+                                                                                                                         e.g.
+    There is a line of reasoning presented with some structure. The information presented is in the most part            · Can use to introduce new features
+                                                                                                                         · Increase use from users
+    relevant and supported by some evidence                                                                              · Increase revenue by selling features
+
+    Mark Band 1 ­ Low Level (1-3 marks)                                                                                        used more often
+    The candidate demonstrates a basic knowledge of data mining with limited understanding shown; the                    · Make the game more appealing
+    material is basic and contains some inaccuracies. The candidates makes a limited attempt to apply                    · Remove features people don't use
+    acquired knowledge and understanding to the context provided.                                                        · Use to target advertising
+    The candidate provides nothing more than an unsupported assertion.                                                   · Privacy concerns from users
+    The information is basic and comunicated in an unstructured way. The information is supported by limited             · Misuse of information
+    evidence and the relationship to the evidence may not be clear.
+
+    0 marks
+    No attempt to answer the question or response is not worthy of credit.
+     1 mark for each number/statement up to a maximum of 6 marks:
+
+     function binarySearch(dataArray:byref, upperbound, lowerbound, searchValue)
+
+     while true
+
+     middle = lowerbound + ((upperbound - lowerbound) DIV 2)
+
+     if upperbound < lowerbound then
+
+     return -1
+
+     else                                                                           6
+
+2ai  if dataArray[middle] < searchValue then                                      AO1.2
+                                                                                    (2)
+           lowerbound = middle + 1
+                                                                                  AO3.3
+                        elseif dataArray[middle] > searchValue then                 (4)
+
+                   upperbound = middle - 1                                          1
+
+                        else                                                      AO1.2
+                                                                                    (1)
+                   return middle
+
+                        endif
+                    endif
+                   endwhile
+             endfunction
+
+2aii Do...until // repeat...until // post condition
+
+                                                                     10
+    1 mark for each tick up to a maximum of 6 marks
+
+    Worst-case space complexity:
+
+                 Binary             Linear
+
+                 search             search
+
+    O(log(n))
+
+    O(1)                          
+
+    O(n)
+
+    Best-case space complexity:
+
+                 Binary             Linear
+
+                 search             search                      6
+
+2b  O(log(n))                                                 AO1.1
+                                                                (6)
+    O(1)                          
+                                                                1
+    O(n)
+                                                              AO1.2
+    Average time complexity:        Linear                      (1)
+                                    search
+                          Binary
+                          search
+     O(log(n)) 
+
+    O(1)
+
+    O(n)                          
+
+    1 mark for any example
+
+    e.g.
+
+2c  · Data is not sorted
+
+    · Item you are looking for is the first item in the list
+
+    · Small number of items
+    1 mark per bullet, each must be applied correctly to data
+
+    · Choose a pivot // identify start and end pointers
+
+    · Compare each element to the pivot... // compare start and end pointers
+
+    · Put items < pivot in the left sublist                                     5
+
+3a  · Put items > pivot in the right sublist                                  AO1.2
+    · Choose a pivot in each sublist                                            (2)
+
+    · If start pointer is larger than end pointer...                          AO2.2
+                                                                                (3)
+    · ...then swap data items around
+                                                                                2
+    · And repeat the process until each item becomes a pivot
+                                                                              AO1.1
+    1 mark per bullet to max 2                                                  (1)
+
+    · decomposing data sets into smaller subsets                              AO2.1
+                                                                                (1)
+3b  · and then sorting each split subset
+
+    · until each subset is sorted
+
+    · and then combining the subsets to provide a solution
+
+                                                               12
+   Mark Band 3 ­ High level (7-9 marks)                                                                     9   AO1: Knowledge and Understanding
+   The candidate demonstrates a thorough knowledge and understanding of IDEs; the material is            AO1.1  Indicative content
+                                                                                                                e.g.
+   generally accurate and detailed.                                                                        (2)
+                                                                                                         AO1.2  · IDE is software that includes an
+
+   The candidate is able to apply their knowledge and understanding directly and consistently to the       (2)        editor, compiler, run-time
+   context provided.                                                                                     AO2.1        environment
+                                                                                                                Creating
+   Evidence/examples will be explicitly relevant to the explanation.                                       (2)
+
+                                                                                                         AO3.3 · Autocorrect
+                                                                                                         (3)
+   The candidate is able to weigh up the use of IDEs which results in a supported and realistic                 · Autocomplete
+   judgment as to whether it is possible to use them in this context.
+                                                                                                                · Pretty printing
+
+   There is a well-developed line of reasoning which is clear and logically structured. The information         Testing
+
+                                                                                                                · Breakpoints
+
+   presented is relevant and substantiated.                                                                     · Stepping
+                                                                                                                · Variable watch window
+
+   Mark Band 2 ­ Mid level (4-6 marks)                                                                          AO2: Application
+                                                                                                                e.g.
+
+   The candidate demonstrates reasonable knowledge and understanding of IDEs; the material is                   · Tell you when you make a syntax
+   generally accurate but at times underdeveloped.                                                                    error
+   The candidate is able to apply their knowledge and understanding directly to the context provided
+                                                                                                                · Allows you to write and run the code
+                                                                                                                      in one piece of software
+
+   although one or two opportunities are missed. Evidence/examples are for the most part implicitly             · Suggests code so you don't have to
+                                                                                                                      remember code, or autocorrect
+4  relevant to the explanation.                                                                                       spelling mistakes
+
+   The candidate makes a reasonable attempt to come to a conclusion showing some recognition of                 · Helps you trace the program so you
+
+   influencing factors that would determine whether it is possible to use IDEs in this context.                 can see what happens when values
+   There is a line of reasoning presented with some structure. The information presented is in the              change without having to manually
+                                                                                                                insert print statements etc.
+
+   most part relevant and supported by some evidence                                                            · Autogenerate boilerplate code.
+
+   Mark Band 1 ­ Low Level (1-3 marks)                                                                          AO3: Evaluation
+   The candidate demonstrates a basic knowledge of IDEs with limited understanding shown; the                   Candidates will need to evaluate the
+   material is basic and contains some inaccuracies. The candidates makes a limited attempt to                  benefits and drawbacks of using IDEs.
+   apply acquired knowledge and understanding to the context provided.                                          e.g.
+   The candidate provides nothing more than an unsupported assertion.
+   The information is basic and comunicated in an unstructured way. The information is supported                · Reduce errors through autocorrect
+   by limited evidence and the relationship to the evidence may not be clear.                                         and suggestions
+
+   0 marks                                                                                                      · Reduce time to write the program
+   No attempt to answer the question or response is not worthy of credit.                                             because features help you spot
+                                                                                                                      errors before running the code,
+                                                                                                                      some errors will be corrected so you
+                                                                                                                      don't have to
+
+                                                                                                                · Write and test in one environment so
+                                                                                                                      you don't have to close and run
+                                                                                                                      elsewhere, then re-open etc.
+5a  To create an instance of an object from a class                                        1
+
+    1 mark per bullet up to a maximum of 2 marks, e.g:                                   AO2.1
+                                                                                           (1)
+5b  · When the child/derived/subclass class office/house takes on attributes/methods...
+                                                                                           2
+    · ... from building / parent/base/superclass/ class
+                                                                                         AO1.2
+                                                                                           (1)
+
+                                                                                         AO2.2
+                                                                                           (1)
+
+    1 mark for each completed statement up to a maximum of 5 marks:
+
+    class building
+
+    private numberFloors
+
+    private width
+
+    private height
+
+    public procedure new(pFloors, pWidth, pHeight)
+
+    numberFloors = pFloors
+
+    width = pWidth
+
+    height = pHeight
+
+    endprocedure                                                                           5    Accept other specific
+                                                                                                language conventions that
+5c  public function getNumberFloors()                                                    AO2.2  would correctly achieve the
+                                                                                           (3)  same outcomes.
+       return numberFloors
+                                                                                         AO3.2
+    endfunction                                                                            (2)
+
+    public function setNumberFloors(pFloors)
+
+    if pFloors >= 1 then
+
+    numberFloors = pFloors
+
+    return true
+
+    else
+
+    return false
+
+    endif
+
+    endfunction
+
+    endclass
+
+                                                         14
+    1 mark per bullet up to a maximum of 6 marks:
+
+    · Class declaration for house with inherits building
+
+    · Declaring bedrooms and bathrooms as private
+
+    · New declaration ...
+
+    · ... with all five parameters
+
+    · Calling super constructor // equivalent with floors, width and height set
+
+    · Setting bedrooms and bathrooms                                             6
+
+5d  e.g.                                                                         AO2.1
+                                                                                   (1)
+    class house inherits building
+                                                                                 AO2.2
+    private bedrooms, bathrooms                                                    (2)
+
+                                                                                 AO3.2
+                                                                                   (3)
+
+    public procedure new(pFloors, pWidth, pHeight, pBedrooms, pBathrooms)
+
+          super.new(pFloors, pWidth, pHeight)
+
+          bedrooms = pBedrooms
+
+          bathrooms = pBathrooms
+
+    endprocedure
+
+    endclass
+
+           1 mark per bullet up to a maximum of 4 marks:                           4
+                · Procedure header taking parameter
+                · Adding parameter to array                                      AO2.1
+                · ...at position numberBuildings                                   (1)
+                · Incrementing numberBuilding
+                                                                                 AO3.2
+5e                                                                                 (3)
+
+           e.g.
+           procedure newbuilding(pBuilding)
+
+              buildings[numberBuildings] = pBuilding
+              numberBuildings = numberBuildings + 1
+           endprocedure
+    1 mark per bullet up to a maximum of 4 marks:
+
+    · Creating a new instance of house with identifier houseOne
+
+    · ...with the correct parameters                                       4
+
+    · Creating a new instance of houseRoad named limeAvenue              AO2.1
+                                                                           (1)
+f   · ...sending houseOne as parameter to the constructor
+                                                                         AO3.2
+    e.g.                                                                   (3)
+    houseOne = new house(2, 8, 10, 3, 2)
+                                                                           4
+    limeAvenue = new houseRoad(houseOne)
+    1 mark for each interval                                             AO1.2
+                                                                           (4)
+    Interval 1
+                                                                           2
+    · A is fetched
+                                                                         AO1.2
+    Interval 2                                                             (2)
+
+    · A is decoded
+
+    · B is fetched
+
+6a  Interval 3
+
+    · A is executed
+
+    · B is decoded
+
+    · C is fetched
+
+    Interval 4
+
+    · B is executed
+
+    · C is decoded
+
+    D is fetched
+
+    1 mark per bullet up to a maximum of 2 marks:
+
+    · Reduces/removes latency
+
+6b  · ... CPU is not idle while waiting for next instruction
+
+    · Next instruction is fetched while current one is decoded/executed
+
+    · All parts of the processor can be used at any instance in time.
+
+                                                              16
+           1 mark for the purpose and 1 mark for matching appropriate name (4 marks total), e.g:                4    Must cover purpose and
+                · Pointer to the first element in the queue                                                          name for 2 marks for each
+                · firstElement // any other meaningful name                                                   AO1.2  pointer.
+                                                                                                                (4)
+7a
+                · Pointer to the last element in the queue // Pointer to the first free element in the queue
+                · lastElement / any other meaningful name
+
+    1 mark per bullet up to a maximum of 5 marks, e.g:
+
+    · Check if the queue is full
+
+    · ... if the firstElement pointer (+1) = lastElement // length variable == queue's capacity                 5
+                                                                                                              AO1.2 Look out for variations in
+7b  · ... if it is return False
+    · Adds element at lastElement (+1) position // Adds element at startposition+length                        (5) representing the queue
+
+    · ... increments lastElement pointer
+
+    · If lastElement is greater than last Index // pointer becomes pointer MOD array.size
+
+    · ...reset to 0
+      1 mark per box up to a maximum of 3 marks.                                                                          Boxes might be in 1 box, or
+                                                                                                                          split down into many.
+          · Select puzzle and display blank grid (below new game)
+          · Select box and change colour of boxes (below play game)                                                       Positioning only needs to be
+          · Compare to answer and display correct/incorrect (below check answer)                                          below those identified.
+
+      e.g.                                                                                                                Ignore any
+                                                                                                                          additional/irrelevant boxes.
+8ai                                                            Nonogram
+                                                               Play game                                          3
+                                         New Game
+                                                                                                                AO2.2
+                                                                                                                  (3)
+
+                                                                                 Check answer
+
+      Select Puzzle Display blank grid             Select Box  Change colour of  Compare to        Display
+                                                                     boxes         answer    Correct/Incorrect
+
+      1 mark per bullet up to a maximum of 2 marks, e.g:
+
+      e.g.                                                                                                        2
+
+      · Splits the problem into smaller chunks                                                                  AO1.1
+                                                                                                                  (1)
+8aii  · Smaller problems are more manageable
+                                                                                                                AO1.2
+      · Smaller problems are easier to solve                                                                      (1)
+
+      · To see where code can be reused in the solution
+
+      · To split tasks between different programmers
+
+                                                                          18
+       1 mark for input, 1 for process 1 for output
+
+       e.g.
+
+       Input:
+
+       · Clicking a box                                3
+
+8aiii  Process:                                      AO2.2
+           · Generating new puzzle                     (3)
+
+       · Checking if block is black
+
+       · Changing block to white
+
+       Output:
+
+       · Grid with coloured squares
+       1 mark for each correctly completed statement up to a maximum of 5 marks:
+
+       01 function countRow(puzzle:byref, rowNum:byval)
+
+       02 count = 0
+
+       03 output = " "
+
+       04 for i = 0 To 4
+
+       05  if puzzle[rowNum, i] == 1 then                                                Accept
+                                                                                         for i = 0 to row.length-1
+       06  count = count + 1                                                        5    for i = 0 to row.length
+
+       07  elseif count >= 1 then                                                 AO2.2
+                                                                                    (2)
+8bi 08     output = output + str(count) + " "
+                                                                                  AO3.2
+       09  count = 0                                                                (3)
+
+       10  endif                                                                         for i=0 to 5
+
+       11 next i
+
+       12 if count>= 1 then
+
+       13  output=ouput+str(count)
+
+       14 elseif output == "" then
+
+       15  output = "0"
+
+       16 endif
+
+       17 return output
+
+       18 endfunction
+
+       1 mark per bullet up to a maximum of 2 marks, e.g:                           2
+
+           · Initialise the variable output...                                    AO1.2
+                                                                                    (1)
+8bii       · ...with a space
+           · ...for use later on in the code...                                   AO2.2
+                                                                                    (1)
+           · ...So it can be used for concatenation later in the code ...
+                                                                                    3
+           · ...to avoid an error being generated
+                                                                                  AO2.2
+       1 mark per bullet up to a maximum of 3 marks, e.g:                           (3)
+
+           · check the value stored in each index
+
+8biii      · check whether it is at the end of a row
+
+           · check whether each row has been given an output or not
+
+                                                           20
+            1 mark per bullet up to a maximum of 6 marks:                           Accept
+                 · Procedure heading for displayRowAnswer
+                 · ...taking puzzle as parameters                              6    for i = 0 to row.length-1
+                 · Nested loops through all array elements                          for i = 0 to row.length
+                 · ...outputting all rows                                    AO2.2  for i=0 to 5
+                 · ... at the end of each row calling countRow ....            (3)
+                 · .....with parameters puzzle and the current loop counter
+                                                                             AO3.2
+8biv e.g.                                                                      (3)
+            procedure displayRowAnswer(puzzle)
+               for i = 0 To 4
+                   for j = 0 To 4
+                       print(puzzle[i, j] + " ")
+                   next j
+                   print (" " + countRow(puzzle, i))
+               next i
+            endprocedure
+
+     1 mark for clearly identifying each error and giving the correction.      3    Do not award marks for line
+                                                                                    numbers alone without stating
+8bv  · Line 01 needs answerGrid as parameter                                 AO2.1  the error.
+                                                                               (3)
+     · Line 04 == should be !=                                                      Consider 1 mark for not
+                                                                                    changing line 04 but changing
+     · Line 08 should be next row                                                   05 to true and 09 to False
+    Mark Band 3 ­ High level (7-9 marks)                                                                           9   AO1: Knowledge and Understanding
+    The candidate demonstrates a thorough knowledge and understanding of local and global variables; the        AO1.1  Indicative content
+    material is generally accurate and detailed.                                                                       Local variables:
+    The candidate is able to apply their knowledge and understanding directly and consistently to the context     (2)
+                                                                                                                AO1.2  · Scope within the module defined
+                                                                                                                             within
+                                                                                                                  (2)
+
+    provided.                                                                                                   AO2.1  · Cannot access externally unless
+    Evidence/examples will be explicitly relevant to the explanation.                                             (2)        passed as parameter, or returned
+    The candidate is able to weigh up the use of both local and global variables which results in a supported                from function
+    and realistic judgment as to whether it is possible to use them in this context.                            AO3.3
+    There is a well-developed line of reasoning which is clear and logically structured. The information          (3)  · When module is exited, memory of
+                                                                                                                             variable is freed
+
+                                                                                                                       Global variables:
+
+    presented is relevant and substantiated.                                                                           · Scope within the entire program
+                                                                                                                       · Can access from anywhere
+
+    Mark Band 2 ­ Mid level (4-6 marks)                                                                                · Retained in memory permanently
+    The candidate demonstrates reasonable knoledge and understanding of local and global variables; the                ByRef Points to location of variable
+                                                                                                                       ByVal Sends the value
+
+    material is generally accurate but at times underdeveloped.                                                        AO2: Application
+                                                                                                                       · If global the arrays can be accessed
+    The candidate is able to apply their knowledge and understanding directly to the context provided although
+    one or two opportunities are missed. Evidence/examples are for the most part implicitly relevant to the                  from all modules by direct reference
+    explanation.
+    The candidate makes a reasonable attempt to come to a conclusion showing some recognition of                       · If local to the main, the arrays will
+                                                                                                                             need to be passed as parameters
+
+    influencing factors that would determine whether it is possible to use local and global variables in this                byreference
+                                                                                                                       · Can send ByVal ­ but not always
+8c  context.
+                                                                                                                             possible with arrays in some
+    There is a line of reasoning presented with some structure. The information presented is in the most part                languages
+
+    relevant and supported by some evidence                                                                            · Modules are self contained and then
+
+                                                                                                                             can be reused in other programs he
+
+                                                                                                                             wants to create without needing to
+
+    Mark Band 1 ­ Low Level (1-3 marks)                                                                                      take the global variables with them
+
+    The candidate demonstrates a basic knowledge of local and global variables with limited understanding              AO3: Evaluation
+
+    shown; the material is basic and contains some inaccuracies. The candidates makes a limited attempt to             e.g.
+
+    apply acquired knowledge and understanding to the context provided.                                                · +ve Local = memory efficient
+    The candidate provides nothing more than an unsupported assertion.                                                 · +ve Global = easier programming,
+    The information is basic and comunicated in an unstructured way. The information is supported by limited
+    evidence and the relationship to the evidence may not be clear.                                                          simpler to follow, easier to debug
+
+                                                                                                                       · -ve Global = memory inefficient, not
+                                                                                                                             good programming technique
+
+                                                                                                                       · -ve Local = more difficult to
+
+    0 marks                                                                                                                  trace/debug/follow where the values
+    No attempt to answer the question or response is not worthy of credit.                                                   are passed
+
+                                                                                                                       · Relatively small program ­ don't
+
+                                                                                                                             know about overall plan for it, it
+
+                                                                                                                             might not be memory intensive,
+
+                                                                                                                             unlikely anyone else is going to
+
+                                                                                                                             access/amend e.g. use as a library ­
+
+                                                                                                                             therefore global would not waste
+
+                                                                                                                             significant resources
+
+                                                                 22
+    1 mark per bullet to max 4                                                           4
+
+    e.g.                                                                               AO2.1
+                                                                                         (2)
+    · Make use of random numbers
+                                                                                       AO2.2
+    · Generate an x/horizontal size for the grid                                         (2)
+
+8d  · Generate a y/vertical size for the grid
+    · Loop through each row/column
+
+    · ...generate a number between 0 and the number of rows/columns (depending on MP4
+
+    answer)
+
+    · Loop through each box
+
+    · ...generate a 1 or 0 to store in it
+OCR (Oxford Cambridge and RSA Examinations)
+The Triangle Building
+Shaftesbury Road
+Cambridge
+CB2 8EA
+
+OCR Customer Contact Centre
+
+Education and Learning
+Telephone: 01223 553998
+Facsimile: 01223 552627
+Email: general.qualifications@ocr.org.uk
+
+www.ocr.org.uk
+
+For staff training purposes and as part of our quality assurance programme your call may be
+recorded or monitored
+

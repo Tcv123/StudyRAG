@@ -1,0 +1,651 @@
+GCE
+Computer Science
+
+H446/01: Computer systems
+
+Advanced GCE
+
+Mark Scheme for Autumn 2021
+
+Oxford Cambridge and RSA Examinations
+OCR (Oxford Cambridge and RSA) is a leading UK awarding body, providing a wide range of
+qualifications to meet the needs of candidates of all ages and abilities. OCR qualifications
+include AS/A Levels, Diplomas, GCSEs, Cambridge Nationals, Cambridge Technicals,
+Functional Skills, Key Skills, Entry Level qualifications, NVQs and vocational qualifications in
+areas such as IT, business, languages, teaching/training, administration and secretarial skills.
+It is also responsible for developing new specifications to meet national requirements and the
+needs of students and teachers. OCR is a not-for-profit organisation; any surplus made is
+invested back into the establishment to help towards the development of qualifications and
+support, which keep pace with the changing needs of today's society.
+This mark scheme is published as an aid to teachers and students, to indicate the requirements
+of the examination. It shows the basis on which marks were awarded by examiners. It does not
+indicate the details of the discussions which took place at an examiners' meeting before marking
+commenced.
+All examiners are instructed that alternative correct answers and unexpected approaches in
+candidates' scripts must be given marks that fairly reflect the relevant knowledge and skills
+demonstrated.
+Mark schemes should be read in conjunction with the published question papers and the report
+on the examination.
+© OCR 2021
+
+Oxford Cambridge and RSA Examinations
+H446/01                     Mark Scheme
+1. Annotations
+                                                                         Meaning
+                Annotation                                          Omission mark
+                                                                 Benefit of the doubt
+                                                  Subordinate clause / consequential error
+                                                                     Incorrect point
+                                                                Expansion of a point
+                                                                    Follow through
+                                                               Not answered question
+                                                             No benefit of doubt given
+                                                                   Point being made
+
+                                                                          Repeat
+                                                                      Correct point
+
+                                                                        Too vague
+                                                                        Zero (big)
+                                   Blank Page ­ this annotation must be used on all blank pages
+                                   within an answer booklet (structured or unstructured) and on
+                                   each page of an additional object where there is no candidate
+                                                                        response.
+
+                                                                          Level 1
+                                                                          Level 2
+H446/01                                                       Mark Scheme
+
+                                                                                                 Level 3
+
+· Subject Specific Marking Instructions
+
+   Question                     Answer                                    Mark                                 Guidance
+1 (a) i                                                                     2    Accept
+             · Clock speed                                                       Use of pipelining/size of pipeline
+             · Number of cores                                            AO1.1  Use of out of order execution
+             · Cache                                                             Use of SIMD instructions
+                                                                            4    Integrated graphics processing on CPU
+
+         ii · RAM is volatile                                             AO1.2
+                · Used for storing programs/data/parts of OS
+                     currently in use
+                · ROM is non volatile
+                ·
+
+                · Used for storing (e.g.) BIOS / bootstrap
+
+         iii · Performing complex numerical calculations                    2    Example has to relate to insurance company
+
+                · Calculations on matrices / vectors / multiple data at   AO2.2
+                     the same time
+
+                · ...e.g. insurance pricing, modelling risk, calculating
+                     bills
+
+(b)          · Concurrent processing of multiple instructions             3
+
+             · One instruction can be fetched while previous is           AO1.1
+                 being decoded...
+
+             · And the one before is being executed.
+
+             · In case of a branch pipeline is flushed.
+
+             · Increases speed of execution
+
+(c)          Mark Band 3­High Level (7-9 marks)                           9      AO1
+
+                                                                                 Magnetic devices include magnetic hard drives and
+
+                                                                                 magnetic tape.
+H446/01                                     Mark Scheme
+
+         The candidate demonstrates a thorough knowledge and       AO1.1 (2),  Data stored by altering the magnetic field of a small
+         understanding of magnetic and solid state storage. The    AO1.2 (2),  section of the tape or disk; one orientation represents a
+         material is generally accurate and detailed.              AO2.1 (2),  binary value of 1, the opposite orientation represents a
+                                                                               binary value of 0. Written to using a read head.
+                                                                     AO3.3.    Read head can then read the magnetic field and
+                                                                               retrieve the data.
+                                                                   (3)         These read and write heads move across the disk or
+                                                                               the tape moves under the heads.
+         The candidate is able to apply their knowledge and                    Solid state devices store data using semiconductors;
+                                                                               drives can be based on NAND Flash or DRAM. No
+         understanding directly and consistently to the context                moving parts are required.
+                                                                               Backup involves copying potentially large amounts of
+         provided. Evidence/examples will be explicitly relevant               data to and from storage devices at regular intervals.
+                                                                               Servers distribute data to client devices.
+         to the explanation.
+                                                                               AO2
+         The candidate provides a thorough discussion which is                 Magnetic hard drives entirely suitable for storing
+         well balanced. Evaluative comments are consistently                   operating system, software and data. Large capacity,
+         relevant and well-considered.                                         cheap (by comparison) purchasing price and reliability
+                                                                               make them idea for heavy use in an insurance office.
+         There is a well-developed line of reasoning which is                  Solid state drives have no moving parts and offer an
+         clear and logically structured. The information                       increase in speed and quicker access to customer
+         presented is relevant and substantiated.                              records. However, smaller capacity (in comparison)
+                                                                               may be an issue for larger data sets.
+         Mark Band 2-Mid Level (4-6 marks)                                     Backup systems may be required to maximise storage
+         The candidate demonstrates reasonable knowledge                       whereas access speed is not so much of an issue
+         and understanding of magnetic and solid state storage;                Limited lifespan of SSDs due to limited read/writes may
+                                                                               restrict use in data heavy applications.
+         the material is generally accurate but at times                       Servers will require quick access to data to serve
+         underdeveloped.                                                       multiple client machines but will also be extremely
+                                                                               read/write heavy.
+         The candidate is able to apply their knowledge and
+         understanding directly to the context provided although               AO3
+         one or two opportunities are missed.                                  Both suitable for the insurance office but for different
+         Evidence/examples are for the most part implicitly                    purposes.
+         relevant to the explanation.                                          SSDs to store operating system and program files will
+                                                                               ensure quicker boot up and loading of programs. May
+         The candidate provides a sound discussion, the
+         majority of which is focused. Evaluative comments are
+         for the most part appropriate, although one or two
+         opportunities for development are missed.
+
+         There is a line of reasoning presented with some
+         structure. The information presented is in the most part
+         relevant and supported by some evidence.
+
+         Mark Band 1-Low Level (1-3 marks)
+H446/01                                                         Mark Scheme
+            (d)
+                 The candidate demonstrates a basic knowledge of                             be useful for both client and servers to store operating
+
+                 magnetic and solid state storage; the material is basic                     systems
+
+                 and contains some inaccuracies. The candidate makes                         Magnetic hard drives to store large quantities of data
+
+                 a limited attempt to apply acquired knowledge and                           provides reliability and large capacity at small (by
+
+                 understanding to the context provided.                                      comparison) cost. May be most suitable for storing
+
+                                                                                             large amounts of data on client devices and for backup
+
+                 The candidate provides a limited discussion which is                        systems.
+
+                 narrow in focus. Judgments if made are weak and                             Magnetic tape device may be suitable for backing up
+
+                 unsubstantiated. The information is basic and                               customer data as too slow for use on day-to-day basis.
+
+                 communicated in an unstructured way. The information                        Use of solid state devices for storing customer data that
+
+                 is supported by limited evidence and the relationship to                    is frequently accessed means needing to plan for
+
+                 the evidence may not be clear.                                              replacement of drives when read/write limit reached.
+
+                                                                                             Solid state devices better if used in mobile devices (e.g.
+
+                 0 marks                                                                     for mobile insurance workers) as relatively small
+
+                 No attempt to answer the question or response is not                        chance of damage if dropped as no moving parts.
+
+                 worthy of credit.
+
+                 i · Field with a unique value                                   2
+
+                 · CustomerID                                                    AO1.2 (1),
+                                                                                 AO2.2 (1),
+
+                 ii · SELECT CustomerID, Surname                                   4         1 mark per bullet point.
+                        · FROM Customer                                                      Data in fields must be in speech marks/apostrophes
+                        · WHERE Title="Miss"                                     AO3.2       Allow speech mark/apostrophe FT for BP 2 and 4
+                        · OR Title = "Mrs"                                                   Ignore colons/semicolons
+
+                 iii · Only one customer entry allowed (because of key             2         Mark in pairs.
+                             field)
+                                                                                 AO2.1
+                        · ...so would not be able to add second entry
+                        · Customer data already present/would be repeated          5
+                        · ....resulting in redundant data/wasted space
+                        · ...resulting in inconsistencies should changes be      AO1.2
+
+                             made
+                 Iv · Add in second table
+
+                        · ...for the cars // splitting up cars/customers
+                        · The primary key of customer is used as a field in the
+
+                             car/vehicle table
+
+                        · ... as a foreign key of cars
+                        · Create one to many relationship. Accept many to
+
+                             one.
+H446/01                               Mark Scheme
+
+   Question             Answer                                  Mark                    Guidance
+2 (a) i 11100111                                                  1
+
+         ii 0110 1111                                           AO1.2
+
+(b) i · Move decimal place 1 place right = 0.1101 to              1
+                      normalise
+                                                                AO1.2
+                 · Pad with 0s, mantissa is 011010
+                 · Exponent is 4 / Subtract 1 from exponent...    4
+                 · New exponent is 3 = 0011
+                                                                AO1.2
+
+         ii · move dp 3 places right                              3    Accept conversion of un-normalised number (will result
+                · 0110.1                                               in same output)
+                · 6.5                                           AO1.2
+                                                                       Accept method of using 0.1101 x 2^3
+
+                                                                       FT required from part (i) if this is done incorrectly.
+
+(c)      · Calculating exponent of 6 for first 5 Alternative:
+
+         number/Calculating exponent of 4 for second            AO1.2  · Calculation of exponents (6 and 4) // difference
+
+         number                                                        between exponents of 2
+
+         · Moving binary point correct number of places in             · Move first mantissa 2 places left // second mantissa
+
+         both mantissa to give 0110000.0 and 01010.0                   2 places right to match exponents
+
+         · Addition of 0110000.0 and 01010.0 to give                   · ...giving 011.000 + 0.10100 (exp 4) // 0.11000 +
+
+         0111010.0                                                     0.00101 (exp 6)
+
+         · Movement of binary point six places to left to              · Correct addition (answer of 011.1010 // 0.111010)
+
+         match original mantissa format and give value of              · Final answer normalised (011101 exp 6)
+
+         011101
+
+         · Calculate exponent in original format to give               If exponents initially matched to 4, final bullet point
+
+         value of 0110                                                 should only be given if answer is normalised. If
+
+                                                                       exponents matched to 6, answer will already be
+
+                                                                       normalised.
+
+                                                                       Ensure that answer is in format described (6 bits for
+
+                                                                       mantissa 4 bits for exponent) to gain final bullet point.
+H446/01                                                  Mark Scheme
+
+   Question                                  Answer                      Mark                                 Guidance
+3 (a)        · HTML defines the structure of a web page                    4    Do not accept layout/format for HTML as this is too
+             · HTML defines the content of a web page                           vague and can be used to describe CSS
+             · Using tags (enclosed in <>)                               AO1.1
+
+             · CSS defines the style / appearance
+             · Using selectors such as classes / IDs / etc
+             · Can be placed within HTML or externally in a file
+             · Multiple pieces of CSS can be combined (the more
+
+                 local instances overriding)
+
+(b)          · Correct <a> with close                                    3 <a href="booking.htm"><img src="ticket.png"></a>
+
+             · href property to correct page                             AO3.2
+             · correct <img> tag with src property to correct file
+
+(c)          · 2.99                                                        4 Correct answer only. Penalise spelling if incorrect.
+                                                                         AO3.2 Do not accept £ sign in first bullet point.
+             · nonUKprice
+
+             · numtickets
+
+             · return
+
+(d) i · processing done away from the user's control/Client 3
+
+             side processing could be altered
+
+             · Browser may not support client-side language/             AO2.1
+
+             scripting could be turned off
+
+             · Booking fee calculation needs to be correct for all
+
+             locations
+
+             ii To the customer any 2x1:                                   2
+                    · No need to submit to server and wait for response
+                                                                         AO1.2
+H446/01                                                                   Mark Scheme
+            (e)
+                 · Website will work more quickly for user
+
+                 To the company any 2x1:
+
+                 · Reduces load on the server
+
+                 · Will need to spend less on processing
+                     power/bandwidth
+
+                 i · Web crawler /spider visits site                       4
+
+                 · Either be selecting it from an existing list or         AO1.1
+                     following a link.
+
+                 · Records information
+
+                 · ...such as text / metatags / etc
+
+                 · Records the position of each word within the page
+
+                 · Storing them in an index
+
+                 · Follows links to other sites
+
+                 · Robots.txt file can be used to instruct web crawlers
+
+                 ii · A value between 0 and 1                                1
+                        · Probability that a user will not follow a link
+                                                                           AO1.1
+
+                 iii · Number of links to target site                        2
+                        · PageRank score of those sites (linking inwards)
+                                                                           AO1.1
+H446/01          Mark Scheme
+
+       Question                                  Answer                   Mark                                  Guidance
+   4 (a)         Mark Band 3­High Level (7-9 marks)                          9    AO1
+                 The candidate demonstrates a thorough knowledge and              Computer Misuse Act is legislation aimed at
+                 understanding of legislation including the Computer      AO1.1   criminalising unauthorised access to a computer
+                 Misuse Act. The material is generally accurate and         (2),  system
+                 detailed.                                                        Three stages:
+                                                                          AO1.2   Unauthorised access to a computer system
+                 The candidate is able to apply their knowledge and         (2),  Unauthorised access with intent to commit further
+                 understanding directly and consistently to the context           offences
+                 provided. Evidence/examples will be explicitly relevant  AO2.1   Unauthorised modification of computer material
+                 to the explanation.                                        (2),  Punishable by up to twelve months in prison and an
+                                                                                  unlimited fine.
+                 The candidate provides a thorough discussion which is    AO3.3.
+                 well balanced. Evaluative comments are consistently        (3)   AO2
+                 relevant and well-considered.                                    Computer users who investigate how systems work
+                                                                                  require authorisation in order to not break the Act.
+                 There is a well-developed line of reasoning which is             Examples such as changing a social media post on a
+                 clear and logically structured. The information                  friend's mobile phone potentially breaks all three
+                 presented is relevant and substantiated.                         sections of the Act.
+                                                                                  Investigation of systems can break the Act without
+                 Mark Band 2-Mid Level (4-6 marks)                                intent, e.g. by changing server logs because of their
+                 The candidate demonstrates reasonable knowledge                  actions.
+                 and understanding legislation including the Computer             Users must be aware of the Act (as with any other law)
+                 Misuse Act; the material is generally accurate but at            in order to be responsible.
+                 times underdeveloped.
+                                                                                  AO3
+                 The candidate is able to apply their knowledge and               Material available online (e.g. self study videos) that
+                 understanding directly to the context provided although          explain how systems work and teach without the need
+                 one or two opportunities are missed.                             to investigate using unauthorised access.
+                 Evidence/examples are for the most part implicitly               Investigating systems that you own yourself or have
+                 relevant to the explanation.                                     authorisation to access does not break the law.
+                                                                                  Systems are offered to users with strict conditions
+                 The candidate provides a sound discussion, the                   attached and investigation is not a legitimate excuse for
+                 majority of which is focused. Evaluative comments are            breaking the law.
+                 for the most part appropriate, although one or two               Ethical / white hat hackers will not break this law
+                 opportunities for development are missed.                        because they have authorisation.
+                                                                                  Grey and black hat hackers will break Computer Misuse
+                                                                                  Act.
+H446/01                                                             Mark Scheme
+         There is a line of reasoning presented with some
+         structure. The information presented is in the most part
+         relevant and supported by some evidence.
+
+         Mark Band 1-Low Level (1-3 marks)
+         The candidate demonstrates a basic knowledge of
+         legislation including the Computer Misuse Act; the
+         material is basic and contains some inaccuracies. The
+         candidate makes a limited attempt to apply acquired
+         knowledge and understanding to the context provided.
+
+         The candidate provides a limited discussion which is
+         narrow in focus. Judgments if made are weak and
+         unsubstantiated. The information is basic and
+         communicated in an unstructured way. The information
+         is supported by limited evidence and the relationship to
+         the evidence may not be clear.
+
+         0 marks
+         No attempt to answer the question or response is not
+         worthy of credit.
+H446/01                            Mark Scheme
+       Question
+                           Answer                                  Mark                  Guidance
+   5 (a)
+                   QA B                                            3 Q  A  B  (C  D)
+            (b) i  
+                   (C  D)                                          AO1.2  Accept alternative symbols for AND / OR
+                                                                          e.g. Q = A AND B AND (C OR D)
+                                                                          Brackets must be included for 3rd point
+
+                                                                          Allow XOR for bullet point 3
+                                                                          Any additional symbols max 2 marks
+
+                   · Identification of De Morgan's and/or double     2
+                       negation rule
+                                                                   AO2.2
+                   · Correct final answer to give A v B
+
+(c) i S = A  B                                                       2 Accept alternative symbols for AND /XOR
+                 C=AB
+                                                                   AO2.1
+          ii · 1 mark for S column
+                 · 1 mark for C column                             2      A           B            S               C
+
+         iii · Logic circuit adds together 2 binary digits / half  AO2.1
+                      adder
+                                                                          0           0            0               0
+
+                                                                          0           1            1               0
+
+                                                                          1           0            1               0
+
+                                                                          1           1            0               1
+
+                                                                   4
+H446/01                                                   Mark Scheme
+
+         · S gives sum, C gives carry                     AO1.2
+
+         · Two half adders can be joined together...
+
+         · ...with an OR gate
+
+         · to form full adder
+
+         · 4 full adders can be used to add two four bit
+
+         numbers
+
+         · Carry out on one joined to carry in on next
+H446/01                                                  Mark Scheme
+       Question
+                                   Answer                                 Mark         Guidance
+   6 (a) i
+                 · Temporary storage/memory location...                   2
+
+                 · ...inside the CPU                                      AO1.1
+                 · Used for a single specific purpose
+
+                 · Faster access speed than RAM / secondary storage
+
+     ii · Accumulator checked to see if value held is positive            2
+
+                 or zero
+
+                 · If so, BRANCH carried out / jumps to specified         AO1.2
+
+                 location.
+
+(b)              · 2, 2                                                     4 Code finds integer division and remainder.
+
+                 · 9,0                                                    AO2.2
+
+                 · 4,0
+
+                 · 0,3
+
+(c)              · Input two numbers into two separate variables /        4 Can be completed either by using MOD / DIV or by
+
+                 other suitable data structure                            AO3.2 using repeated subtraction as in LMC example
+
+                 · Correctly calculate integer division
+
+                 · Correctly calculate remainder
+
+                 · Print out both
+
+(d)              Mark Band 3­High Level (9-12 marks)                      12 AO1
+
+                 The candidate demonstrates a thorough knowledge and              Immediate addressing is where the operand holds the
+
+                 understanding of different modes of addressing. The      AO1.1   actual data to be used; no address referenced
+                 material is generally accurate and detailed.               (2),  Direct addressing is where the operand holds the
+                                                                                  address that holds the data to be used.
+                 The candidate is able to apply their knowledge and       AO1.2   Indirect addressing is where the operand holds an
+                 understanding directly and consistently to the context     (2),  address which is where the data to be used is stored
+
+                                                                          AO2.1
+                                                                            (3),
+
+                 provided. Evidence/examples will be explicitly relevant  AO3.3. Indexed addressing is where the operand holds an
+                 to the explanation.                                        (5) address which is offset using the Index Register to find
+
+                                                                                  the true address of the data to be used
+
+                                                                                  AO2
+H446/01                                                             Mark Scheme
+         The candidate provides a thorough discussion which is
+         well balanced. Evaluative comments are consistently                     Immediate addressing; operand of 27 would refer to the
+         relevant and well-considered.                                           value 27
+                                                                                 Direct addressing; operand of 27 would tell the
+         There is a well-developed line of reasoning which is                    processor to fetch the data held at address 27.
+         clear and logically structured. The information                         Indirect addressing; operand of 27 would tell the
+         presented is relevant and substantiated.                                processor to fetch the data held at address 27, which
+                                                                                 itself would then be used an address to fetch data from.
+         Mark Band 2-Mid Level (5-8 marks)                                       Indexed addressing; operand of 27 would be added to
+         The candidate demonstrates reasonable knowledge                         the value of the Index register and this would then be
+         and understanding of different modes of addressing;                     used as the address to fetch data from.
+         the material is generally accurate but at times
+         underdeveloped.                                                         AO3
+                                                                                 Immediate addressing allows simple access to data
+         The candidate is able to apply their knowledge and                      with no fetch required, but limited by the data size of the
+         understanding directly to the context provided although                 operand.
+         one or two opportunities are missed.                                    Direct addressing allows data to be fetched from
+         Evidence/examples are for the most part implicitly                      memory. Data can potentially be larger in size that with
+         relevant to the explanation.                                            immediate addressing but address range limited by size
+                                                                                 of operand.
+         The candidate provides a sound discussion, the                          Indirect addressing allows a larger range of addresses
+         majority of which is focused. Evaluative comments are                   to be accessed as address fetched. However, multiple
+         for the most part appropriate, although one or two                      fetches required to access data.
+         opportunities for development are missed.                               Indexed addressing allows the Index register to be
+                                                                                 manipulated to access data stored sequentially e.g. in
+         There is a line of reasoning presented with some                        an array.
+         structure. The information presented is in the most part
+         relevant and supported by some evidence.
+
+         Mark Band 1-Low Level (1-4 marks)
+         The candidate demonstrates a basic knowledge of
+         different modes of addressing; the material is basic and
+         contains some inaccuracies. The candidate makes a
+         limited attempt to apply acquired knowledge and
+         understanding to the context provided.
+
+         The candidate provides a limited discussion which is
+         narrow in focus. Judgments if made are weak and
+         unsubstantiated. The information is basic and
+H446/01                                                             Mark Scheme
+         communicated in an unstructured way. The information
+         is supported by limited evidence and the relationship to
+         the evidence may not be clear.
+
+         0 marks
+         No attempt to answer the question or response is not
+         worthy of credit.
+H446/01                Answer  Mark Scheme                                                           Guidance
+      Question                                Mark
+                Stack                           1 Correct answer only
+   7 (a) (i)
+
+     (ii) · Input name from user                                       AO1.1  Example answer
+            · Check if stack is full e.g.(top <=5)                            new = input("enter a name : ")
+            · If not, update top pointer                                 4    if top <=5 then
+            · Correctly push name to index referenced by top
+                                                                       AO3.2       top = top + 1
+                                                                                   wNames[top] = new
+                                                                         4    end if
+
+(b)             1 mark per name inserted in correct place in diagram
+
+                                                                       AO2.1
+
+     (ii) · Compare with Kirstie ­ Zoe is larger so go right             3
+            · Compare with Martyn - Zoe is larger so go right                    Allow FT from b(i)
+            · No right element so stop/not found
+                                                                       AO2.2
+
+     (iii) · Binary tree more efficient than linked list                 2 Allow reference to big O for second mark.
+
+             · Do not need to check every value / tree removes half              Linked List O(n), Binary Tree O(log n)
+                  values each time
+                                                                       AO1.2
+
+        (iv) · Binary tree less efficient than hash table                2    Allow reference to big O for second mark.
+                · Hash table can find data immediately / without              Binary tree O(log n) Hash table O(1)
+                     checking other values.                            AO1.2
+
+(c) (i) · Object ­ instantiated from class                               3
+                · Method ­ action object performs / link to
+                     procedure/functions                               AO1.1
+                · Attribute ­ value held by object / link to variable
+                                                                       5 One mark per bullet point to 5 maximum.
+         (ii) · Class definition statement
+                · Defining name and attendance attributes
+H446/01                                                  Mark Scheme
+
+         · Appropriate get methods for name and attendance  AO3.2
+
+         that return a value and have no parameter                    Example answer
+
+         · Appropriate set methods for name and attendance            class Customer
+
+         that take a parameter                                        private name
+
+         · ...that restricts attendance to be 0 to 100.               private attendance
+
+                                                                      public function getName()
+                                                                             return name
+
+                                                                      end function
+
+                                                                      public function getAttendance()
+                                                                             return attendance
+
+                                                                      end function
+
+                                                                      public procedure setName(newName)
+                                                                             name = newName
+
+                                                                      end procedure
+
+                                                                             public procedure setAttendance(newAttend)
+                                                                                    if newAttend >=0 and newAttend <=100 then
+                                                                                           attendance = newAttend
+                                                                                    end if
+
+                                                                             end procedure
+                                                                      end class
+OCR (Oxford Cambridge and RSA Examinations)
+The Triangle Building
+Shaftesbury Road
+Cambridge
+CB2 8EA
+
+OCR Customer Contact Centre
+
+Education and Learning
+Telephone: 01223 553998
+Facsimile: 01223 552627
+Email: general.qualifications@ocr.org.uk
+
+www.ocr.org.uk
+
+For staff training purposes and as part of our quality assurance programme your call may be
+recorded or monitored
+

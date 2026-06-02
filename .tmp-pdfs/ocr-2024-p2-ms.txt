@@ -1,0 +1,963 @@
+GCE
+Computer Science
+
+H446/02: Algorithms and programming
+
+A Level
+
+Mark Scheme for June 2024
+
+Oxford Cambridge and RSA Examinations
+OCR (Oxford Cambridge and RSA) is a leading UK awarding body, providing a wide range of
+qualifications to meet the needs of candidates of all ages and abilities. OCR qualifications
+include AS/A Levels, Diplomas, GCSEs, Cambridge Nationals, Cambridge Technicals,
+Functional Skills, Key Skills, Entry Level qualifications, NVQs and vocational qualifications in
+areas such as IT, business, languages, teaching/training, administration and secretarial skills.
+It is also responsible for developing new specifications to meet national requirements and the
+needs of students and teachers. OCR is a not-for-profit organisation; any surplus made is
+invested back into the establishment to help towards the development of qualifications and
+support, which keep pace with the changing needs of today's society.
+This mark scheme is published as an aid to teachers and students, to indicate the requirements
+of the examination. It shows the basis on which marks were awarded by examiners. It does not
+indicate the details of the discussions which took place at an examiners' meeting before marking
+commenced.
+All examiners are instructed that alternative correct answers and unexpected approaches in
+candidates' scripts must be given marks that fairly reflect the relevant knowledge and skills
+demonstrated.
+Mark schemes should be read in conjunction with the published question papers and the report
+on the examination.
+© OCR 2024
+
+Oxford Cambridge and RSA Examinations
+H446/02                  Mark Scheme  June 2024
+
+MARKING INSTRUCTIONS
+
+PREPARATION FOR MARKING
+
+1. Make sure that you have accessed and completed the relevant training packages for on-screen marking: RM assessor Online Training; OCR Essential
+       Guide to Marking.
+
+2. Make sure that you have read and understood the mark scheme and the question paper for this unit. These are posted on the RM Cambridge Assessment
+       Support Portal http://www.rm.com/support/ca
+
+3. Log-in to RM assessor and mark the required number of practice responses ("scripts") and the number of required standardisation responses.
+
+       YOU MUST MARK 10 PRACTICE AND 10 STANDARDISATION RESPONSES BEFORE YOU CAN BE APPROVED TO MARK LIVE SCRIPTS.
+MARKING
+1. Mark strictly to the mark scheme.
+2. Marks awarded must relate directly to the marking criteria.
+3. The schedule of dates is very important. It is essential that you meet the 50% and 100% deadlines. If you experience problems, you must contact your
+
+       Team Leader (Supervisor) without delay.
+4. If you are in any doubt about applying the mark scheme, consult your Team Leader by telephone or the RM assessor messaging system, or by email.
+
+5. Crossed Out Responses
+    Where a candidate has crossed out a response and provided a clear alternative then the crossed-out response is not marked. Where no alternative response
+    has been provided, examiners may give candidates the benefit of the doubt and mark the crossed-out response where legible.
+    Contradictory Responses
+    When a candidate provides contradictory responses, then no mark should be awarded, even if one of the answers is correct.
+    Short Answer Questions (requiring only a list by way of a response, usually worth only one mark per response)
+    Where candidates are required to provide a set number of short answer responses then only the set number of responses should be marked. The response
+
+                         2
+H446/02                                                   Mark Scheme                  June 2024
+
+space should be marked from left to right on each line and then line by line until the required number of responses have been considered. The remaining
+responses should not then be marked. Examiners will have to apply judgement as to whether a `second response' on a line is a development of the `first
+response', rather than a separate, discrete response. (The underlying assumption is that the candidate is attempting to hedge their bets and therefore getting
+undue benefit rather than engaging with the question and giving the most relevant/correct responses.)
+
+Short Answer Questions (requiring a more developed response, worth two or more marks)
+
+If the candidates are required to provide a description of, say, three items or factors and four items or factors are provided, then mark on a similar basis ­
+that is downwards (as it is unlikely in this situation that a candidate will provide more than one response in each section of the response space.)
+
+Longer Answer Questions (requiring a developed response)
+
+Where candidates have provided two (or more) responses to a medium or high tariff question which only required a single (developed) response and not
+crossed out the first response, then only the first response should be marked. Examiners will need to apply professional judgement as to whether the second
+(or a subsequent) response is a `new start' or simply a poorly expressed continuation of the first response.
+
+6. Always check the pages (and additional objects if present) at the end of the response in case any answers have been continued there. If the candidate has
+    continued an answer there then add a tick to confirm that the work has been seen.
+
+7. Award No Response (NR) if:
+
+         · there is nothing written in the answer space
+
+Award Zero `0' if:
+
+                   · anything is written in the answer space and is not worthy of credit (this includes text and symbols).
+         Team Leaders must confirm the correct use of the NR button with their markers before live marking commences and should check this when reviewing
+         scripts.
+8. The RM assessor comments box is used by your team leader to explain the marking of the practice responses. Please refer to these comments when
+       checking your practice responses. Do not use the comments box for any other reason.
+
+                                                                                                  3
+H446/02                                            Mark Scheme                                                           June 2024
+
+If you have any questions or comments for your team leader, use the phone, the RM assessor messaging system, or e-mail.
+
+9. Assistant Examiners will send a brief report on the performance of candidates to their Team Leader (Supervisor) via email by the end of the marking
+       period. The report should contain notes on particular strengths displayed as well as common errors or weaknesses. Constructive criticism of the question
+       paper/mark scheme is also appreciated.
+
+10. For answers marked by levels of response:
+
+a. To determine the level ­ start at the highest level and work down until you reach the level that matches the answer
+b. To determine the mark within the level, consider the following:
+
+Descriptor                                         Award mark
+
+On the borderline of this level and the one below  At bottom of level
+
+Just enough achievement on balance for this level  Above bottom and either below middle or at middle of level (depending on number of marks available)
+Meets the criteria but with some slight            Above middle and either below top of level or at middle of level (depending on number of marks
+inconsistency                                      available)
+Consistently meets the criteria for this level     At top of level
+
+                                                   4
+H446/02          Mark Scheme  June 2024
+
+11. Annotations    Meaning
+ Annotation        Omission mark
+                   Benefit of the doubt
+                   Incorrect point
+                   Follow through
+
+                   Not answered question
+                   No benefit of doubt given
+                   Repeat
+                   Correct point
+                   Too vague
+                   Zero (big)
+                   Blank Page ­ this annotation must be used on all blank pages within an
+                   answer booklet (structured or unstructured) and on each page of an
+                   additional object where there is no candidate response.
+
+                   Level 1
+                   Level 2
+                   Level 3
+
+                 5
+H446/02                                                                Mark Scheme                                           June 2024
+
+Question                                                       Answer                                 Marks  Guidance
+    1ai
+          1 mark each                                                                                 2 Element/identifier on its own is not
+              · A memory location // named storage location
+              · Stores/holds data / a value                                                                  enough for BP1
+              · That can be changed
+
+            1 mark for all variables:                                                                 1 Must have all three for the mark to be
+1aii a b c                                                                                                    awarded.
+
+           1 mark for do loop and 1 mark for while loop up to a maximum of 2 marks.                   2 Answer must cover both do loop and
+                · While loop will check the condition at the start of the loop // pre-condition loop          while loop for 2 marks to be awarded
+                · Do loop will check the condition at the end of the loop // post-condition
+                                                                                                              BP1 and BP2 must be specific as to
+1b                                                                                                            the location that the condition is placed
+                · The code in a while loop may never run (if the condition is already met)
+                · The code in a do loop will always run at least one.                                 4 BP2 ­ Allow any suitable logic for the
+                                                                                                              while loop condition that iterates
+          1 mark each                                                                                         between 1 and a.
+              · Initialisation of counter variable before loop
+              · Condition (e.g. while c <= a)                                                                 Allow != for <>
+              · c incremented in loop                                                                         Allow += or equivalent for c = c + 1
+              · Completed loop will produce correct results 12, 24 ... 144
+                                                                                                              Allow hard coded values for upper
+          e.g.                                                                                                bound such as a = 12 or a = 13
+                                                                                                              depending on the relational operator
+1c        c=1                          c=0                             c=0                                    used.
+                                       while c < a                     while c <> a
+          while c <= a                                                                                        No marks awarded if a conditional loop
+                                            c=c+1                           c=c+1                             has not been used.
+                print(c * a)                print(c * a)                    print(c * a)
+                                       endwhile                        endwhile                               Max 3 if solution does not completely
+                c=c+1                                                                                         work.
+
+          endwhile
+
+                                                                       6
+H446/02                                             Mark Scheme                                                            June 2024
+
+         Mark Band 3 ­ High level                                                                  12  AO1: Knowledge and Understanding
+         (9-12 marks)
+         The candidate demonstrates a thorough knowledge and understanding of data mining;             Indicative content
+         the material is generally accurate and detailed.
+         The candidate is able to apply their knowledge and understanding directly and                 · Analysis of patterns and anomalies in large
+         consistently to the context provided. Evidence/examples will be explicitly relevant to
+         the explanation.                                                                              data sets
+         There is a well-developed line of reasoning which is clear and logically structured. The
+         information presented is relevant and substantiated.                                          · Turns large quantities of data into useful
+
+                                                                                                       information. These may not be
+
+                                                                                                       immediately obvious to a casual reader.
+
+                                                                                                       · Resulting information is used to make
+
+                                                                                                       predictions, to increase revenue, to target
+
+                                                                                                       advertising and improve services.
+
+         Mark Band 2 ­ Mid level                                                                       AO2: Application
+                                                                                                       · Identify the amount of time students spend
+         (5-8 marks)
+                                                                                                             on the system
+         The candidate demonstrates reasonable knowledge and understanding of data mining;             · Identify the days / times when is it used
+
+         the material is generally accurate but at times underdeveloped.                                     most? Least?
+                                                                                                       · Identify the features/tools students use
+         The candidate is able to apply their knowledge and understanding directly to the
+                                                                                                             most and least
+         context provided although one or two opportunities are missed. Evidence/examples are          · Identify which questions find the most
+
+         for the most part implicitly relevant to the explanation.                                           difficult.
+                                                                                                       · Identify the time / day of the week when
+2        The candidate provides a reasonable discussion, the majority of which is focused.
+         Evaluative comments are, for the most part appropriate, although one or two                         students learn the most
+                                                                                                       · Identify which schools are performing
+         opportunities for development are missed.
+                                                                                                             better or which areas of the country are
+         There is a line of reasoning presented with some structure. The information presented               performing better.
+                                                                                                       · Identify which courses students are
+         is in the most part relevant and supported by some evidence.                                        enjoying more
+
+         Mark Band 1 ­ Low Level                                                                       AO3: Evaluation
+         (1-4 marks)                                                                                   · Data mining can spot patterns/trends,
+         The candidate demonstrates a basic knowledge of data mining with limited
+         understanding shown; the material is basic and contains some inaccuracies. The                      however it cannot explain them. Company
+         candidates makes a limited attempt to apply acquired knowledge and understanding to                 may still need to do extra research.
+         the context provided.                                                                         · Students may have privacy concerns
+         The candidate provides a limited discussion which is narrow in focus. Judgements if                 about their activities being logged.
+         made are weak and unsubstantiated.                                                            · Requires powerful computers with a lot of
+         The information is basic and comunicated in an unstructured way. The information is                 processing power to process huge
+         supported by limited evidence and the relationship to the evidence may not be clear.                amounts of data.
+                                                                                                       · Need to make sure data collection is legal
+         0 marks                                                                                             and in terms and conditions
+         No attempt to answer the question or response is not worthy of credit.
+                                                                                                       · Analysis can be costly e.g. may need an
+
+                                                                                                             external company
+                                                                                                       · Security - data being collected requires
+
+                                                                                                             protection
+
+                                                                    7
+H446/02                                                Mark Scheme                                                June 2024
+
+                                                                                        · Include more features students use so
+                                                                                              they will use it more, and gain more
+                                                                                              revenue
+
+                                                                                      · Identifying features not used means
+
+                                                                                              resources and development can be moved
+                                                                                              from these onto other areas
+
+                                                                              7 For Row A allow N/A, None, Null, - or
+                                                                                      a blank cell / equivalent.
+
+         Node  Distance   Heuristic   Distance         Previous      Marking
+           A   travelled      90     travelled +         node       Guidance
+                                      Heuristic
+                    0                                     N/A         1 Mark
+                                          90
+
+         B     20         80                      100     A
+
+         C     44         43                      87      A         1 Mark
+
+3a       D     128        70                      198     E         1 Mark
+
+         E     66         20                      86      C         1 Mark
+
+         F     81         8                       89      E         1 Mark
+
+         G     90         0                       90      F         1 Mark
+
+         Path: A C E  F  G Distance: 90 (1 Mark)
+
+                                                       8
+H446/02  Mark Scheme                                                                                                      June 2024
+
+         1 mark for each difference up to a maximum of 4 marks:                       4 Do not allow responses related to
+         e.g.                                                                                 weighted / unweighted.
+
+             · Trees have one root node // graphs do not have a root node (1)
+
+         · Trees do not allow cycles/loops // graphs do allow cycles / loops (1)
+
+3b       · Trees store hierarchy // graphs have no hierarchy (1)
+
+         · Trees are always undirected // graphs can be directed (1)
+
+         · Trees are always connected // graphs can be connected or disconnected (1)
+
+         9
+H446/02                                             Mark Scheme                                                           June 2024
+
+         Mark Band 3 ­ High level (7-9 marks)                                                      9  AO1: Knowledge and Understanding
+
+                                                                                                      Indicative content
+
+         The candidate demonstrates a thorough knowledge and understanding of heuristics;             · Heuristics are used to reduce time taken to
+         the material is generally accurate and detailed.                                                   solve a problem
+         The candidate is able to apply their knowledge and understanding directly and
+                                                                                                      · It is a general `rule of thumb' or an
+                                                                                                            educated guess.
+
+         consistently to the context provided. Evidence/examples will be explicitly relevant to       · It finds a solution which is `good enough' /
+         the explanation.                                                                                   close to the best solution
+
+                                                                                                      · Heuristic is a weight added to a
+
+         There is a well-developed line of reasoning which is clear and logically structured. The           node/decision
+         information presented is relevant and substantiated.                                         · E.g. Description of use such as in A*
+
+                                                                                                            algorithm as estimate of distance to
+
+                                                                                                      destination
+
+         Mark Band 2 ­ Mid level (4-6 marks)                                                          AO2: Application
+
+         The candidate demonstrates reasonable knowledge and understanding of heuristics;             · Heuristics reduce the time complexity as
+         the material is generally accurate but at times underdeveloped.                                    every possibilities within the game does
+                                                                                                            not need to be examined.
+
+         The candidate is able to apply their knowledge and understanding directly to the             · Heuristics require skill to implement
+                                                                                                            effectively
+         context provided although one or two opportunities are missed. Evidence/examples are
+                                                                                                      · Used in AI when the exact steps cannot be
+3c       for the most part implicitly relevant to the explanation.                                          pre-programmed and decisions need
+         The candidate provides a reasonable discussion, the majority of which is focused.                  making
+
+         Evaluative comments are, for the most part appropriate, although one or two                  · Due to time-saving, they are not always
+                                                                                                            accurate, the solution e.g. shortest path
+         opportunities for development are missed.                                                          might not be the most efficient.
+
+         There is a line of reasoning presented with some structure. The information presented        AO3: Evaluation
+         is in the most part relevant and supported by some evidence.
+                                                                                                      · Heuristics are more appropriate with
+         Mark Band 1 ­ Low Level (1-3 marks)
+                                                                                                            complex time-critical tasks - some aspects
+         The candidate demonstrates a basic knowledge of heuristics with limited understanding              of game may require faster
+         shown; the material is basic and contains some inaccuracies. The candidates makes a                searching/decisions - current graph is not
+         limited attempt to apply acquired knowledge and understanding to the context provided.             complex or time-critical so not required
+         The candidate provides a limited discussion which is narrow in focus. Judgements if
+         made are weak and unsubstantiated.                                                           · Heuristics are more appropriate with large-
+
+         The information is basic and comunicated in an unstructured way. The information is                scale tasks - game could be large scale
+         supported by limited evidence and the relationship to the evidence may not be clear.               and AI algorithms may need to be
+                                                                                                            shortened
+
+                                                                                                      · Games are not life-critical, so a good
+
+                                                                                                            answer is likely enough, a perfect answer
+                                                                                                            is not necessarily required.
+                                                                                                      · Avoid programs running indefinitely - in a
+                                                                                                            computer game there could be too many
+
+                                                    10
+H446/02                                            Mark Scheme                                                                   June 2024
+
+         0 marks                                                                                             possibilities so will terminate with a
+         No attempt to answer the question or response is not worthy of credit.                              solution faster
+
+         1 mark each                                                                         2
+
+         · headPointer to identify the first item/element in the queue // identify which     2 Allow 20 and 15 in place but crossed
+                                                                                                     out OR allow 20 and 15 in place only if
+4a           item to dequeue/remove next                                                             headPointer and tailPointer
+         · tailpointer to identify the next free space in the queue // identify where the            are correct
+
+         next item/element will be enqueued/added
+
+         1 mark for queue elements
+         1 mark for both pointers
+
+4b       20           15            3  2  20
+
+                          headPointer              tailPointer
+
+         1 mark each to max 2 e.g.                                                           2
+
+         · A queue is a FIFO structure // elements processed in the order entered
+
+4c       · A queue will not allow new data inserted at the front // only allows new data to
+             be enqueued at the rear
+
+         · The queue contents cannot be resequenced/sorted without rewriting
+
+                                                   11
+H446/02                                             Mark Scheme                                                                   June 2024
+
+         1 mark each                                                                          4 Do not award BP3 if a value has been
+                                                                                                      returned from the function for BP4 first.
+         · Check if the stack is empty // check topStack is equal to 0
+                                                                                              4
+5a       · ...and if so return a suitable value (e.g. -1/ null) // do nothing //give warning
+         · (If not empty) decrement topStack                                                  4 True/False comparisons must be
+                                                                                                      Boolean values and not strings, but
+         · Return the value in element topStack from the array numbers                                allow FT after that.
+                                                                                                      If push() is called twice BP4 cannot
+         1 mark for each completed statement                                                          be awarded.
+
+         function push(dataValue)
+
+               if topStack != 100 then
+
+                     numbers[topStack] = dataValue
+
+5b                   topStack = topStack + 1
+                     return true
+
+               else
+
+                     return false
+
+               endif
+
+         end function
+
+         1 mark each
+             · Calling push() with parameter 15
+             · ... storing/using return value in selection ...
+             · ... comparing true/false (may be implicit e.g. if push(15) then ) ...
+             · ... outputting a suitable message if false and if true
+
+         e.g.
+
+5c       added = push(15)                     if push(15) then
+                                                   print("Added")
+         if added = false then
+                                              else
+               print("Not added")                print("Not Added")
+
+         else                                 endif
+
+               print("Added")
+
+         endif
+
+                                                    12
+H446/02                                               Mark Scheme                                                                    June 2024
+
+         1 mark each                                                                             3 Allow answers by example from the
+                                                                                                         given dataset
+         · Compare the first element (rainbow) to search item / clouds
+                                                                                                 1
+6a       · If it is equal to the search item return index / found                                5 If candidate has given descending
+         · If it is not equal move to the next element
+                                                                                                         order, max 4.
+         · Repeat until either search item / clouds is equal // or the end of the list has been          MP1, MP3 and MP4 are lines that
+                                                                                                         show a change of values during a
+         reached                                                                                         pass.
+                                                                                                         MP2 and MP5 do not have to be
+6b       1 mark for: the data is not in order/sorted                                                     explicitly given in full if there is a
+                                                                                                         comment to identify no change occur
+         rainbow moon   sun stars clouds tornado                       Marking   Marking                 during the pass.
+                                                                                                         Award no marks if not an insertion
+                                                                   Guidance Guidance                     sort.
+                                                                                                 2
+         rainbow moon sun stars clouds tornado
+                                                                                                 2
+         moon rainbow sun stars clouds tornado Values change 1 Mark
+                                                                                                 1
+         moon rainbow sun stars clouds tornado                                   1 Mark          1
+
+6c       moon rainbow stars sun clouds tornado Values change 1 Mark
+
+         clouds moon rainbow stars sun tornado Values change 1 Mark
+
+         clouds moon rainbow stars sun tornado                                   1 Mark
+
+         1 mark each
+
+6di      · Linear
+         · The time will (increase) in direct proportion to the number of items
+
+         1 mark each
+
+         · Logarithmic
+
+6dii     · The additional memory space required grows at a decreasing rate as the
+
+         number of items increases
+
+6diii Constant // O(1)
+
+6div     Exponential // O(2n) // O(Kn)
+
+                                                                   13
+H446/02                                          Mark Scheme                                    June 2024
+
+         1 mark each to max 2 for justification                                              2
+
+         e.g.
+
+         · Can store multiple items of data under one identifier // so all the data about a
+
+7a             task can be accessed using the same identifier
+
+         · Can store data of different data types and this task has string, real and
+
+               integers
+
+         1 mark each e.g.                                                                    2
+
+         · Each node can have 0, 1 or 2 child nodes // a maximum of 2 child nodes
+
+7bi      · Nodes are ordered (with left nodes less than the parent and right nodes greater)
+
+         · The location to which a node is added depends on its order.
+
+         1 mark for advantage e.g.                                                           1
+
+         · Searching is faster ( O(log n) )
+
+7bii     · Inserting new tasks is faster
+
+         · Do not need to sort the structure (each time a new task is inserted)
+
+                                                               14
+H446/02                                             Mark Scheme                           June 2024
+
+         1 mark for each row                                                           5
+
+                            Statement             Depth-first  Breadth-    Neither of
+                                                     (post-       first    these two
+         All nodes at the current depth are          order)                traversals
+         visited before moving to the next depth               
+
+         The algorithm traverses to the end of 
+
+         one branch before moving to another
+
+7biii    branch
+
+         The algorithm will make use of           
+
+         backtracking
+
+         The traversal can be used to output the                         
+
+         contents of the tree in ascending order
+
+         The algorithm will output the root node 
+         last
+
+                                                               15
+H446/02                                                    Mark Scheme                                      June 2024
+
+                 1 mark for Task Y to right of Task F                   3 The direction of left/right child nodes
+                 1 mark for Task X to right of Task H ...                       must be clear and cannot just be a
+                 ... 1 mark for Task Z to left of Task X                        downward vertical line.
+
+7biv
+
+      1 mark for each input to max 2 e.g.                               4 Allow any feasible input/output for
+                                                                                scenario
+      · Entering a name
+
+      · Selecting a vehicle
+
+      · Pressing arrow key to move forward
+
+      · Pressing arrow key to move backward
+
+      · Pressing arrow key to move left
+
+8a    · Pressing arrow key to move right
+
+      1 mark for each output to max 2 e.g.
+
+      · Images of vehicles to choose from
+
+      · Background of area
+
+      · Image of other vehicles
+
+      · Image of controls and description of what they do
+
+                                                           16
+H446/02                                                   Mark Scheme                                                         June 2024
+
+         1 mark for definition, 1 mark each for each example of use to max 2 (3 overall)  3 Allow any reasonable examples for
+                                                                                                  this scenario
+         Definition:
+                                                                                                  For the example use, allow 2 marks for
+         · Removal of unnecessary detail                                                          stating a valid example of abstraction
+                                                                                                  with an expansion. For example,
+         Example use:                                                                             "simplify track (1) by taking out the
+                                                                                                  bumps in the road (1)" would be given
+8bi      · E.g. simplifying scenery                                                               two marks.
+                                                                                          3 Do not accept a reiteration of a
+         · E.g. removing internal features of a vehicle that are not needed                       definition of abstraction.
+
+         · E.g. simplify physics for vehicle movement                                     1
+
+         · E.g. The vehicles may not be drawn to scale                                    2 Allow for other valid benefits of using
+                                                                                                  decomposition.
+         1 mark each to max 2
+
+         · Simplifies the problem / algorithm / programming code
+
+         · Faster to create the program code
+
+8bii     · Final program uses less memory/processor time
+
+         · Programmer can focus on core aspects of the game
+
+         · Completed game will be simpler for end users to understand / play
+
+8ci      Splitting the problem down into smaller (sub) problems
+
+         1 mark each to max 2 e.g.
+
+         · To break the problem down into individual components
+
+         · ...to see which components can be tackled concurrently
+
+         · Identify any resusable program elements ...
+
+         · ...to avoid creating the same algorithm twice
+
+8cii     · Split the program between individuals
+         · ... so they can focus on individual elements // to focus on their speciality
+
+         · Identify the subroutines and how they will interract
+
+         · ...so everyone knows the requirements for their part of the problem
+
+         · Easier to tackle/focus on one smaller problem at a time...
+
+         · ... so this simplifies writing/testing code
+
+                                                                 17
+H446/02                                                       Mark Scheme                                                        June 2024
+
+         1 mark each to max 3. Max 2 for generic answers with no relation to     3
+
+         scenario. e.g.
+
+         · Has a set/fixed number of values
+
+         · ... and the number of spaces in the road will not change
+
+         · Stores data of one type
+
+         · ... as the array is only made up of prize objects
+
+         · Stores data linearly
+
+9a       · ... match the linear nature of the road
+
+         · Array contents are mutable
+
+         · ... so prizes can be added/removed from the road
+
+         · A single indentifier is used to directly index
+
+         · ... any position in the road
+
+         · Can be iterated by index
+
+         · ... to perform an operation on all road positions
+
+         1 mark each                                                             2  BP1 Do not award procedure or method
+             · Function/subroutine with identifier getName taking no parameters
+             · Returning name                                                       BP1 Allow self as an additional parameter if
+                                                                                    Python is used.
+
+         e.g.
+
+         public function getName() def getName(self):                               BP1 If an access modifier is given for the
+                                                                                    method, it must be public and not private.
+
+9bi           return name                           return self.__name
+         endfunction
+                                                                                    BP2 Do not allow any modified name attribute
+                                                                                    to be returned.
+
+         public getName(){                   function getName() {
+              return name                         return this.name
+
+         }                                   }
+
+                                                              18
+H446/02                                                      Mark Scheme                           June 2024
+
+         1 mark each                                                                     3  MP2 allow any order of parameters
+             · New instance of prize ...
+             · ... with "Box", "money" and 25 as parameters                                 "Box" and "Money" must be strings and 25
+             · Assigned to allPrizes index 3                                                must be an integer
+
+9bii e.g.                                                                                   Allow prize.new() as new is given as the
+            allPrizes[3] = new prize("Box", "money", 25)                                    constructor method in the class diagram
+
+         allPrizes[3] = prize.new("Box", "money", 25)
+
+         allPrizes[3] = prize("Box", "money", 25)
+
+            1 mark for each bullet to maximum 3                                          3  Give:
+            e.g.
+                                                                                            · 1 mark for stating a decision
+                 · Decision - check whether the space already has a prize allocated ...
+                 · Action if true - another space/number will need to be generated          · 1 mark for the action required if true
+                 · Action if false - the prize will be stored here
+9biii                                                                                       · 1 mark for the action required if false
+                 · Decision - check if all 10 prizes have been allocated ...
+                 · Action if true - the algorithm needs to stop generating numbers
+                 · Action if false - a new number/space needs to be generated and
+
+                      checked
+
+                                                             19
+H446/02                  Mark Scheme                                                                                 June 2024
+
+         1 mark each                                                                 5  Allow minor changes to identifiers as long as
+
+             · Constructor header (any suitable name e.g. new, constructor, create,     purpose is clear.
+                  init)
+                                                                                        Allow
+             · ...taking one parameter only                                             procedure new(pName)
+             · Initialising name to the parameter
+             · Initialising money to 5                                                       this.name = pName
+             · Initialising experience to 0 and roadPosition to 0                            ...
+                                                                                        (or similar e.g. self.name)
+         e.g.
+                                                                                        Allow two parameters if one is self and the
+                                                                                        response is clearly in Python.
+
+             Pseudocode  public procedure new(pName)                                    The parameter name should be different to the
+             example:         name = pName                                              attribute name.
+                              experience = 0
+9ci                           roadPosition = 0
+                              money = 5
+
+                         endprocedure
+
+         Python          def __init__(self, pName):
+         Example:             self.__name = pName
+                              self.__experience = 0
+                              self.__roadPosition = 0
+                              self.__money = 5
+
+         C#              public Character(string pName) {
+         Example:               string name = pName;
+                                int experience = 0;
+                                int roadPosition = 0;
+                                int money = 5;
+
+                         }
+
+                                                       20
+H446/02                                          Mark Scheme                                                         June 2024
+
+         1 mark each                                                               5  Do not allow Function for BP1
+             · Procedure/method header ...
+             · ... taking two parameters, type (or similar) followed by value (or     BP2 parameters must be given in the correct
+                  similar) ...                                                        order to match the calls to updateValues()
+             · ... compare type parameter with "money"                                in the question.
+             · ... compare type parameter with "experience"
+             · ... both attributes updated correctly and nothing else modified        "money" and "experience" must be string
+                                                                                      values
+
+         e.g.
+
+         public procedure updateValues(pType, pValue)
+
+9cii           if pType == "money" then
+
+               money = money + pValue
+
+               elseif pType == "experience"
+
+               experience = experience + pValue
+
+               endif
+
+         endprocedure
+
+         def updateValues(self, pType, pValue):
+              if pType == "money":
+                   money += pValue
+              elif pType == "experience":
+                   experience += pValue
+
+                                                 21
+H446/02                                       Mark Scheme                                       June 2024
+
+         1 mark for each completed space                         6  Allow road.length // len(road) instead of
+
+                                                                    50
+
+         character1 = new Character("Jamal")
+
+         newPosition = 0                                            Allow <=49 instead of < 50
+
+         while newPosition < 50
+
+         move = random(1, 4)
+
+         character1.changePosition(move)
+
+         newPosition = character1.getRoadPosition()
+
+         if newPosition < 50 and road[newPosition] != null
+
+         then
+
+9d             prizeType = road[newPosition].getType()
+
+               valueAmount = road[newPosition].getValue()
+
+               character1.updateValues(prizeType, valueAmount)
+
+               print("Congratulations you are in position",
+
+         newPosition, "and found", road[newPosition].getName())
+
+               print("Money", character1.getMoney(), "and
+
+         experience", character1.getExperience())
+
+         endif
+
+         endwhile
+
+         print("You reached the end of the road")
+
+                                                   22
+H446/02                                  Mark Scheme     June 2024
+
+         1 mark each                                  4  Line 07 allow print(road[x].name)
+             · (Line 02)
+                  for x = 0 to 49
+
+         · (Line 03)
+             print("Space", x)
+
+9e       · (Line 06)
+
+         else // elseif road[x] <> null
+
+         · (Line 07)
+             print(road[x].getName())
+
+                                         23
+H446/02                           Mark Scheme                                                                     June 2024
+
+         Mark Band 3 ­ High level                                                          9  AO1: Knowledge and Understanding
+         (7-9 marks)
+         The candidate demonstrates a thorough knowledge and understanding of                 Indicative content
+         global variables and the alternatives; the material is generally accurate and
+         detailed.                                                                            · Global variables are created when the program starts,
+
+                                                                                              all subroutines can access/update the contents
+
+                                                                                              · Local variables are created in the subroutine they are
+
+                                                                                              created in, they are not accessible directly from any
+
+         The candidate is able to apply their knowledge and understanding directly                  other subroutine
+         and consistently to the context provided. Evidence/examples will be                  · Local variables are removed from memory when the
+         explicitly relevant to the explanation.There is a well-developed line of
+         reasoning which is clear and logically structured. The information presented               subroutine ends.
+         is relevant and substantiated.                                                       · Local variables can be passed as parameters to a
+
+                                                                                                    function to be updated, and then returned to override
+                                                                                                    the original local variable
+
+                                                                                              · Local variables can be passed by reference to a
+
+         Mark Band 2 ­ Mid level                                                                    subroutine to allow the content of the variable to be
+         (4-6 marks)                                                                                updated
+         The candidate demonstrates reasonable knowledge and understanding of                 AO2: Application
+         global variables and the alternatives; the material is generally accurate but at     · The variables will be stored in memory throughout the
+                                                                                                    whole code execution. However, the amount of data
+
+         times underdeveloped.                                                                      they are storing is relatively low so would not use a lot
+                                                                                                    of memory.
+         The candidate is able to apply their knowledge and understanding directly to         · When the game is expanded, the amount of data may
+                                                                                                    increase so it could be memory intensive, especially if
+9f       the context provided although one or two opportunities are missed.                         graphics are used in the game.
+                                                                                              · Both arrays are needed throughout the whole game
+         Evidence/examples are for the most part implicitly relevant to the
+
+         explanation.
+
+         The candidate provides a reasonable discussion, the majority of which is                   so keeping them as global will make writing the code
+         focused. Evaluative comments are, for the most part appropriate, although                  easier as the programmer will not need to keep
+         one or two opportunities for development are missed.There is a line of                     passing them as parameters and setting return
+         reasoning presented with some structure. The information presented is in                   values.
+         the most part relevant and supported by some evidence.
+                                                                                              · Only one part of the game is being created initially
+                                                                                                    and therefore the use of global variables would not
+
+                                                                                              affect the efficiency greatly. However, when the
+
+         Mark Band 1 ­ Low Level                                                              program expands, it could cause accuracy / testing /
+         (1-3 marks)                                                                          debugging and maintenance problems.
+
+         The candidate demonstrates a basic knowledge of global variables and the             AO3: Evaluation
+
+         alternatives with limited understanding shown; the material is basic and             · As this is only a prototype, the use of global variables
+
+         contains some inaccuracies. The candidates makes a limited attempt to                      would be beneficial.
+         apply acquired knowledge and understanding to the context provided.The               · However, when the game expands, the use of global
+         candidate provides a limited discussion which is narrow in focus.
+         Judgements if made are weak and unsubstantiated.The information is basic                   variables could create issues such as running out of
+                                                                                                    memory, coupling, testing & debugging problems and
+                                                                                                    maintenance problems.
+
+         and comunicated in an unstructured way. The information is supported by              · The programmer may be best to keep the variables
+
+         limited evidence and the relationship to the evidence may not be clear.              as local and then pass them between the different
+                                                                                              subroutines as parameters byVal and byRef.
+
+                                  24
+H446/02  Mark Scheme                                                             June 2024
+
+         0 marks
+         No attempt to answer the question or response is not worthy of credit.
+
+         25
+Need to get in touch?
+If you ever have any questions about OCR qualifications or services (including administration, logistics and teaching) please feel free to get in
+touch with our customer support centre.
+Call us on
+01223 553998
+Alternatively, you can email us on
+support@ocr.org.uk
+For more information visit
+
+         ocr.org.uk/qualifications/resource-finder
+         ocr.org.uk
+         Twitter/ocrexams
+        /ocrexams
+        /company/ocr
+        /ocrexams
+
+OCR is part of Cambridge University Press & Assessment, a department of the University of Cambridge.
+For staff training purposes and as part of our quality assurance programme your call may be recorded or monitored. © OCR
+2024 Oxford Cambridge and RSA Examinations is a Company Limited by Guarantee. Registered in England. Registered office
+The Triangle Building, Shaftesbury Road, Cambridge, CB2 8EA.
+Registered company number 3484466. OCR is an exempt charity.
+OCR operates academic and vocational qualifications regulated by Ofqual, Qualifications Wales and CCEA as listed in their
+qualifications registers including A Levels, GCSEs, Cambridge Technicals and Cambridge Nationals.
+OCR provides resources to help you deliver our qualifications. These resources do not represent any particular teaching method
+we expect you to use. We update our resources regularly and aim to make sure content is accurate but please check the OCR
+website so that you have the most up-to-date version. OCR cannot be held responsible for any errors or omissions in these
+resources.
+Though we make every effort to check our resources, there may be contradictions between published support and the
+specification, so it is important that you always use information in the latest specification. We indicate any specification changes
+within the document itself, change the version number and provide a summary of the changes. If you do notice a discrepancy
+between the specification and a resource, please contact us.
+Whether you already offer OCR qualifications, are new to OCR or are thinking about switching, you can request more
+information using our Expression of Interest form.
+Please get in touch if you want to discuss the accessibility of resources we offer to support you in delivering our qualifications.
+

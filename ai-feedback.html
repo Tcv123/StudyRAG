@@ -416,7 +416,11 @@
       dd.classList.toggle('open');
       render();
     });
-    return { setLabel: (text) => label.textContent = text, render };
+    return {
+      setLabel: (text) => label.textContent = text,
+      render,
+      setOptions: (opts) => { options = opts; },
+    };
   }
 
   document.addEventListener('click', () => {
@@ -457,7 +461,7 @@
     }
     if (!state.topic && topics.length) state.topic = topics[0].name;
     if (topicDd) {
-      topicDd.options = topicOptions;
+      topicDd.setOptions(topicOptions);
       topicDd.render();
       topicDd.setLabel(state.topic || 'Pick a topic');
     } else {

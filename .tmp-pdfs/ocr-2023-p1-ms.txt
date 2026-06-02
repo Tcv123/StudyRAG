@@ -1,0 +1,1121 @@
+GCE
+Computer Science
+
+H446/01: Computer systems
+
+A Level
+
+Mark Scheme for June 2023
+
+Oxford Cambridge and RSA Examinations
+OCR (Oxford Cambridge and RSA) is a leading UK awarding body, providing a wide range of
+qualifications to meet the needs of candidates of all ages and abilities. OCR qualifications
+include AS/A Levels, Diplomas, GCSEs, Cambridge Nationals, Cambridge Technicals,
+Functional Skills, Key Skills, Entry Level qualifications, NVQs and vocational qualifications in
+areas such as IT, business, languages, teaching/training, administration and secretarial skills.
+It is also responsible for developing new specifications to meet national requirements and the
+needs of students and teachers. OCR is a not-for-profit organisation; any surplus made is
+invested back into the establishment to help towards the development of qualifications and
+support, which keep pace with the changing needs of today's society.
+This mark scheme is published as an aid to teachers and students, to indicate the requirements
+of the examination. It shows the basis on which marks were awarded by examiners. It does not
+indicate the details of the discussions which took place at an examiners' meeting before marking
+commenced.
+All examiners are instructed that alternative correct answers and unexpected approaches in
+candidates' scripts must be given marks that fairly reflect the relevant knowledge and skills
+demonstrated.
+Mark schemes should be read in conjunction with the published question papers and the report
+on the examination.
+© OCR 2023
+
+Oxford Cambridge and RSA Examinations
+H446/01  Mark Scheme  June 2023
+
+                                                                            MARKING INSTRUCTIONS
+
+PREPARATION FOR MARKING
+RM assessor
+
+1. Make sure that you have accessed and completed the relevant training packages for on-screen marking: RM assessor Online Training; OCR
+       Essential Guide to Marking.
+
+2. Make sure that you have read and understood the mark scheme and the question paper for this unit. These are posted on the RM Cambridge
+       Assessment Support Portal http://www.rm.com/support/ca
+
+3. Log-in to RM assessor and mark the required number of practice responses ("scripts") and the number of required standardisation responses.
+
+       YOU MUST MARK 10 PRACTICE AND 10 STANDARDISATION RESPONSES BEFORE YOU CAN BE APPROVED TO MARK LIVE SCRIPTS.
+
+MARKING
+
+1. Mark strictly to the mark scheme.
+
+2. Marks awarded must relate directly to the marking criteria.
+
+3. The schedule of dates is very important. It is essential that you meet the RM assessor 50% and 100% (traditional 40% Batch 1 and 100% Batch 2)
+       deadlines. If you experience problems, you must contact your Team Leader (Supervisor) without delay.
+
+4. If you are in any doubt about applying the mark scheme, consult your Team Leader by telephone or the RM assessor messaging system, or by email.
+
+5. Crossed Out Responses
+    Where a candidate has crossed out a response and provided a clear alternative then the crossed out response is not marked. Where no alternative
+    response has been provided, examiners may give candidates the benefit of the doubt and mark the crossed out response where legible.
+
+    Contradictory Responses
+    When a candidate provides contradictory responses, then no mark should be awarded, even if one of the answers is correct.
+
+         2
+H446/01  Mark Scheme  June 2023
+
+Short Answer Questions (requiring only a list by way of a response, usually worth only one mark per response)
+Where candidates are required to provide a set number of short answer responses then only the set number of responses should be marked. The
+response space should be marked from left to right on each line and then line by line until the required number of responses have been considered. The
+
+remaining responses should not then be marked. Examiners will have to apply judgement as to whether a `second response' on a line is a development
+
+of the `first response', rather than a separate, discrete response. (The underlying assumption is that the candidate is attempting to hedge their bets and
+therefore getting undue benefit rather than engaging with the question and giving the most relevant/correct responses.)
+
+Short Answer Questions (requiring a more developed response, worth two or more marks)
+If the candidates are required to provide a description of, say, three items or factors and four items or factors are provided, then mark on a similar basis
+­ that is downwards (as it is unlikely in this situation that a candidate will provide more than one response in each section of the response space.)
+
+Longer Answer Questions (requiring a developed response)
+Where candidates have provided two (or more) responses to a medium or high tariff question which only required a single (developed) response and not
+crossed out the first response, then only the first response should be marked. Examiners will need to apply professional judgement as to whether the
+
+second (or a subsequent) response is a `new start' or simply a poorly expressed continuation of the first response.
+
+6. Always check the pages (and additional objects if present) at the end of the response in case any answers have been continued there. If the candidate
+    has continued an answer there then add a tick to confirm that the work has been seen.
+
+7. Award No Response (NR) if:
+                   · there is nothing written in the answer space or no valid attempt at an answer (e.g. "I don't know")
+
+         Award Zero `0' if:
+
+                   · there is an attempt at an answer that is not worthy of credit (this includes text and symbols).
+
+         Team Leaders must confirm the correct use of the NR button with their markers before live marking commences and should check this when
+         reviewing scripts.
+
+8. The RM assessor comments box is used by your team leader to explain the marking of the practice responses. Please refer to these comments
+       when checking your practice responses. Do not use the comments box for any other reason.
+       If you have any questions or comments for your team leader, use the phone, the RM assessor messaging system, or e-mail.
+
+         3
+H446/01                                                             Mark Scheme                                               June 2023
+
+9. Assistant Examiners will send a brief report on the performance of candidates to their Team Leader (Supervisor) via email by the end of the marking
+       period. The report should contain notes on particular strengths displayed as well as common errors or weaknesses. Constructive criticism of the
+       question paper/mark scheme is also appreciated.
+
+10. For answers marked by levels of response:
+
+         To determine the level ­ start at the highest level and work down until you reach the level that matches the answer
+         To determine the mark within the level, consider the following:
+
+Descriptor                                         Award mark
+
+On the borderline of this level and the one below At bottom of level
+
+Just enough achievement on balance for this level  Above bottom and either below middle or at middle of level (depending on number of marks
+                                                   available)
+
+Meets the criteria but with some slight            Above middle and either below top of level or at middle of level (depending on number of marks
+inconsistency                                      available)
+
+Consistently meets the criteria for this level     At top of level
+
+11. Annotations
+
+                                                                      4
+H446/01                       Mark Scheme                             June 2023
+                  Annotation
+                                           Meaning
+
+                                           Omission mark
+
+                                           Benefit of the doubt
+
+                                           Incorrect point
+
+                                           Follow through
+
+                                           Not answered question
+
+                                           No benefit of doubt given
+
+                                           Point being made
+
+                                           Repeat
+
+                                           Correct point
+
+                                                                                     Too vague
+
+                              Blank Page ­ this annotation must be used on all blank pages within an answer booklet
+                              (structured or unstructured) and on each page of an additional object where there is no
+
+                                                                              candidate response.
+
+                                                                                       Level 1
+
+                              5
+H446/01  Mark Scheme           June 2023
+
+                      Level 2
+                      Level 3
+
+12. Levels of Response Questions
+
+The indicative content indicates the expected parameters for candidates' answers, but be prepared to recognise and credit unexpected approaches where
+they show relevance.
+
+Using `best-fit', decide first which set of BAND DESCRIPTORS best describes the overall quality of the answer. Once the band is located, adjust the mark
+concentrating on features of the answer which make it stronger or weaker following the guidelines for refinement.
+
+· Highest mark: If clear evidence of all the qualities in the band descriptors is shown, the HIGHEST Mark should be awarded.
+
+· Lowest mark: If the answer shows the candidate to be borderline (i.e. they have achieved all the qualities of the bands below and show limited evidence
+of meeting the criteria of the band in question) the LOWEST mark should be awarded.
+
+· Middle mark: This mark should be used for candidates who are secure in the band. They are not `borderline' but they have only achieved some of the
+qualities in the band descriptors.
+
+Be prepared to use the full range of marks. Do not reserve (e.g.) high Band 3 marks `in case' something turns up of a quality you have not yet seen. If an
+answer gives clear evidence of the qualities described in the band descriptors, reward appropriately.
+
+    13. Subject Specific Marking Instructions
+Mark scheme conventions:
+
+          Each mark point is worth 1 mark unless stated otherwise
+          Each mark point can only be awarded once
+          A word/phrase that is underlined needs to be exact in the answer to award the mark point
+          A word/phrase that is bold needs that concept to be in the answer (but can be given in multiple ways) to award the mark point
+
+                                                                                              6
+H446/01  Mark Scheme  June 2023
+
+ 3 dots at the end of one mark point and at the start of the next mark point mean that the second mark point cannot be awarded
+    without the first being awarded, unless the mark scheme states otherwise (for example a reasonable attempt with some
+    inaccuracies)
+
+ 3 dots at the start of a mark point, without 3 dots at the end of the mark point above, means the sentence carries on and there is no
+    dependency
+
+ Any text in brackets is not required to gain the mark point
+ Single / means alternative word
+ Double // means an alternative statement that is acceptable for the same mark point
+ Enlarged font is used for visibility reasons only
+
+Annotating scripts:
+          Blank pages at the start of the script need SEEN annotation
+          Any questions answered elsewhere (e.g. on the first blank pages, separately on the page) need to be linked within RM Assessor
+             and annotated with ticks/crosses/SEEN as appropriate
+          1 tick for every mark awarded, if a question is given 3 marks there must be 3 ticks (apart from QER question)
+          A BOD or FT annotation needs to be accompanied by a tick
+          QER ­ One annotation from: L1, L2 or L3, according to the level awarded, the page not annotated with the level needs a SEEN
+             annotation. Do not include any ticks, crosses or other annotations on this question ­ other than SEEN and one from: L1, L2 or L3
+          Any answers with no candidate response need a SEEN annotation and NR entered as the mark.
+          Any questions where the candidate has not attempted the question e.g. answered 'don't know' need a SEEN annotation and NR
+             entered as the mark.
+          All questions must be annotated throughout the marking process.
+
+         7
+H446/01                                            Mark Scheme                                                             June 2023
+  High (thorough)
+  Middle (reasonable)  AO1                                 AO2                                 AO3
+
+  Low (basic)          Precision in the use of question Knowledge and understanding            Concerted effort is made to
+                                                                                               consider all aspects of a system /
+                       terminology. Knowledge shown is shown is consistently applied to        problem or weigh up both sides to
+                                                                                               an argument before forming an
+                       consistent and well-developed.      context enabling a logical and      overall conclusion. Judgements
+                                                                                               made are based on appropriate
+                       Clear appreciation of the question sustained argument to develop.       and concise arguments that have
+                                                                                               been developed in response
+                       from a range of different           Examples used enhance rather        resulting in them being both
+                                                                                               supported and realistic.
+                       perspectives making extensive use than detract from response.
+
+                       of acquired knowledge and
+
+                       understanding.
+
+                       Awareness of the meaning of the     Knowledge and understanding         There is a reasonable attempt to
+                       terms in the question. Knowledge    applied to context. Whilst clear    reach a conclusion considering
+                       is sound and effectively            evidence that an argument builds    aspects of a system / problem or
+                       demonstrated. Demands of            and develops through response       weighing up both sides of an
+                       question understood although at     there are times when opportunities  argument. However the impact of
+                       times opportunities to make use of  are missed to use an example or     the conclusion is often lessened by
+                       acquired knowledge and              relate an aspect of knowledge or    a lack of supported judgements
+                       understanding not always taken.     understanding to the context        which accompany it. This inability
+                                                           provided.                           to build on and develop lines of
+                                                                                               argument as developed in the
+                                                                                               response can detract from the
+                                                                                               overall quality of the response.
+
+                       Confusion and inability to          Inability to apply knowledge and Little or no attempt to prioritise or
+
+                       deconstruct terminology as used in understanding in any sustained weigh up factors during course of
+
+                       the question. Knowledge partial way to context resulting in tenuous answer. Conclusion is often
+
+                       and superficial. Focus on question and unsupported statements being dislocated from response and any
+
+                       narrow and often one-dimensional. made. Examples if used are for the judgements lack substance due in
+
+                                                           most part irrelevant and            part to the basic level of argument
+
+                                                           unsubstantiated.                    that has been demonstrated
+
+                                                                                               throughout response.
+
+                                                           8
+H446/01                                          Mark Scheme                                                                  June 2023
+
+   Question                                  Answer                Mark                                Guidance
+1 (a) (i)                                                            1
+             e.g.                                                        Do not accept "faster" on its own without clarification of
+              Fewer mistakes (likely to be made) // More accurate        what/why it is faster.
+              Faster as you can apply the same formula to
+
+                 multiple cells // By example
+              What-if analysis can be performed
+              Values can be changed and results automatically
+
+                 (re)calculated (by using formulas)
+              Can be shared electronically
+
+1        (ii) e.g.                                                 4 Mark in pairs ­ one mark for naming type of application
+
+              Database/DBMS                                              software, one for the example. Application type must be
+
+              ...to store/query/sort data about                          correct to give example.
+
+                    customers/staff/stock
+
+                                                                         Do not accept brand names for first mark but FT for
+
+              Word processor                                             example.
+
+              ...to create documents / letters / invoices for
+
+                    clients/staff                                        Ignore brand names if description given after
+
+                                                                         E.g. Outlook / Email application
+
+              Presentation software
+
+              ...to create presentations for clients/staff               Accept other sensible application software (such as
+
+                                                                         CAD, Desktop Publishing). Do not accept special
+
+              Email software                                             purpose / bespoke / utility software.
+
+              ...for staff to communicate with each other or
+
+                    with customers                                       Do not accept spreadsheet (given in question)
+
+              Graphics manipulation                                      Example must be relevant to the business
+              ...to produce adverts / images for sales
+
+              Web browser
+              ....to view websites to purchase materials/stock
+
+                 // view competitor's website
+
+                                                               9
+H446/01                                           Mark Scheme                                                                          June 2023
+                                                                        Do not award a reverse of the mark point by describing
+1        (iii)   No access to source code                            3  open source
+
+                 Cannot modify//improve to meet business needs          1 mark per row.
+
+                 Cannot fix bugs
+
+                 (Usually) cost to purchase licences // licence
+
+                conditions to meet//ongoing fees
+
+1 (b)                                                                3
+
+                                                                 10
+H446/01     Mark Scheme                                                         June 2023
+     1 (c)
+             Stored away from the computer(s)/remote...                         2 Allow multiple interpretations of virtual storage (e.g.
+             ... so in case of disaster, data is not also damaged                       cloud / devices not connected directly to the computer)
+             All of the data (from multiple machines) can be
+                                                                                        Do not allow space on its own or memory for storage
+                backed up at the same time
+             Can be accessed from elsewhere / other machines
+             Storage can be expanded as necessary//no limit on
+
+                size
+             Speed of access is not a priority for a backup
+             Can make recovery from another site easier
+             No physical space needed for backup hardware
+             No on site maintenance required
+             Allows more local storage capacity for data
+
+1 (d) (i) e.g.                                                                  3 Mark first answer in each answer space
+                               Share hardware (e.g. printers)
+                               Share files                                      2 Allow suitable example of contents of a protocol for MP3
+                               Share Internet connection                                Do not award a rule - must be plural
+                               Centralised security
+                               Log on / access files from any machine on the
+                                   LAN
+                               Central maintenance
+                               Central backup / storage
+                               Central installation / update of programs
+                               Can monitor user activity
+                               Can control access levels // Centralised user
+                                   admin
+                               Access an intranet
+
+1 (d) (ii)  A set of rules // an agreement
+                          Used to ensure the (proper / successful) transfer of
+                              data between devices // used to govern the
+                              transmission/communication between devices
+                          May specify format of data / error checking / etc
+
+            11
+H446/01                                  Mark Scheme                          June 2023
+
+1 (d) (iii) 1 mark per protocol listed                                     2 Mark first answer in each answer space
+                         e.g.
+                          HTTP // Hypertext Transfer Protocol                      If mentioned one protocol with 2 versions e.g. IPv4 &
+                          HTTPS // Hypertext Transfer Protocol Secure              IPv6 - only 1 mark
+                          TCP // Transmission Control Protocol                     If they've written the protocol in full but got any word
+                          IP // Internet Protocol                                  wrong, no mark awarded
+                          UDP // User Datagram Protocol
+                          FTP // File Transfer Protocol
+                          Ethernet
+                          WPA // Wi-Fi Protected Access
+                          DHCP // Dynamic Host Configuration Protocol
+                          SMTP // Simple Mail Transfer Protocol
+                          POP // Post Office Protocol
+                          IMAP // Internet Message Access Protocol
+                          RDP // Remote Desktop Protocol
+                          VoIP // Voice over Internet Protocol
+
+1 (d) (iv)  To apply protocols in order / one after the other              3
+
+          To provide independence of layers // Layers can be
+
+         modified without affecting other layers // Layers are
+
+         self-contained
+
+          Hides details from previous or next layer(s) // is an
+
+         abstraction
+
+          Each layer is well defined / does a specific job
+
+          Breaks tasks down into manageable units // Groups
+
+         similar protocols together
+
+          Improved troubleshooting (easier identification of the
+
+         layer that causes the issue)
+
+          Each layer only communicates with adjacent layers
+
+         // simplifies interfacing
+
+          Hardware/software can be manufactured to fit into
+
+         one specific layer
+
+          Allows for standards for individual tasks/layers to be
+
+         developed // for compatibility
+
+                                                                       12
+H446/01                                           Mark Scheme                                                   June 2023
+
+1 (e) (i)  Real time                                           1 Correct answer only
+
+1 (e) (ii)   Multi-tasking...                                  6 Mark in pairs
+
+             ...runs multiple programs at the same time
+
+                                                               Allow real time if not given as previous answer
+
+             Multi-user...
+
+             ... allows multiple users at the same time (must  Do not accept "runs on an embedded system" as
+
+            be clear that candidate is not discussing an OS    expansion of embedded OS, this is NE.
+
+            that simply has multiple accounts)
+
+             Distributed...
+
+             ...allows multiple computers to work together on
+                a single task
+
+             Embedded...
+             ...has a dedicated/limited function
+             ...is read-only / cannot be changed
+
+                                                         13
+H446/01                                                Mark Scheme           June 2023
+    1 (f)
+            Interrupt checked for at start/end of each fetch-             3
+
+           execute cycle
+
+            If the interrupt is of a lower/equal priority to the current
+
+           process then the current process continues
+
+            (If interrupt raised) contents of registers copied to
+
+           stack
+
+            Flags are set to determine if interrupts are enabled /
+
+           disabled
+
+            Program counter changed to point to Interrupt
+
+           Service Routine (ISR) // ISR runs
+
+            After interrupt complete, previous register values
+
+           restored back from stack
+
+            Flag is reset
+
+            If higher priority interrupt received during servicing of
+
+           interrupt...
+
+            ...this is added to stack and new interrupt dealt with
+
+                                                               14
+H446/01                                            Mark Scheme                                                                            June 2023
+      1 (g)
+             Mark Band 3 ­ High Level (7-9 marks)                       9  The following shows example content that may form part
+                                                                           of a candidate's answer. It is not intended to be an
+             The candidate demonstrates a thorough knowledge and           exhaustive resource, nor should a candidate be
+                                                                           expected to specifically cover any particular amount of
+             understanding of memory management carried out by             this.
+
+             operating systems. The material is generally accurate         Knowledge (AO1)
+                                                                            Memory management means to ensure that RAM is
+             and detailed.
+                                                                               used efficiently and not wasted
+             The candidate is able to apply their knowledge and             Removes data not needed anymore (garbage
+             understanding directly and consistently to the context
+             provided. Evidence/examples will be explicitly relevant           collection), frees up space and allocates memory to
+             to the explanation.                                               applications
+                                                                            Paging or segmentation may be used to split up
+             The candidate is able to thoroughly assess the                    memory
+             importance of memory management to an efficient and            Paging uses fixed size divisions whereas
+             secure system.                                                    segmentation uses varying size divisions
+                                                                            Paging is where memory is divided physically
+             There is a well-developed line of reasoning which is           Segmentation is where memory is divided logically
+             clear and logically structured. The information presented      Virtual memory may be used when RAM is (almost)
+             is relevant and substantiated.                                     full to enable applications to continue to run
+
+             Mark Band 2 ­ Mid Level (4-6 marks)                           Application (AO2)
+             The candidate demonstrates reasonable knowledge and            If RAM is unavailable or full, applications cannot be
+             understanding of memory management carried out by
+             operating systems. The material is generally accurate              loaded
+             but at times underdeveloped.                                   Data transferred out of RAM into virtual memory to
+
+             The candidate is able to apply their knowledge and                 free up space and then transferred back again when
+             understanding directly to the context provided although            needed
+             one or two opportunities are missed. Evidence /                Also includes security so that data stored in memory
+             examples are for the most part implicitly relevant to the          is not vulnerable
+             explanation.                                                   Memory management is important for a well-running
+                                                                                machine. If not, RAM would rapidly run out and fill up
+             The candidate makes a reasonable attempt to assess                 with unneeded data/instructions and so no new
+             the importance of memory management to an efficient                applications could run
+             and secure system.                                             Paging causes internal fragmentation whereas
+                                                                                segmentation causes external fragmentation
+                                                                            A page table is used to map page location which is
+                                                                                slower than a segmentation table
+
+                                                   15
+H446/01                                                          Mark Scheme                                                                 June 2023
+
+         There is a line of reasoning presented with some                      It is easier for the OS to manage page locations as
+         structure. The information presented is in the most part                 they can be stored non-contiguously. Segments can
+         relevant and supported by some evidence.                                 be non-contiguous but work better contiguously
+
+         Mark Band 1 ­ Low Level (1-3 marks)                                  Evaluation (AO3)
+         The candidate demonstrates a basic knowledge of                       RAM is much more expensive than secondary
+         memory management carried out by operating systems;
+         the material is basic and contains some inaccuracies.                    storage (per unit/GB) so virtual memory is useful
+         The candidate makes a limited attempt to apply                           rather than having to buy more RAM
+         acquired knowledge and understanding to the context                   Over use of virtual memory causes slow down and
+         provided.                                                                even disk thrashing if pages have to be swapped
+                                                                                  back and forth too often
+         The candidate provides nothing more than unsupported                  Paging can be more effective because any free
+         assertions. Any discussion of the importance of memory                   memory space can be used to swap data in and out
+         management will be vague or lacking detail.                               whereas with segments, lots of space will sit unused
+                                                                                   until a segment the right size is available
+         The information is basic and communicated in an                       Segmentation errors can cause memory leakage
+         unstructured way. The information is supported by                         which would cause the system to crash
+         limited evidence and the relationship to the evidence                 Security issues ­ applications can only access
+         may not be clear.                                                         memory allocated to them so (for example) a
+                                                                                   malicious application cannot access the memory
+         0 marks                                                                   allocated to a banking app. Also when applications
+         No attempt to answer the question or response is not                      are closed, data is removed before being reallocated
+         worthy of credit                                                          so that applications cannot see historic data
+
+         16
+H446/01                                               Mark Scheme                                                      June 2023
+
+         Question                             Answer  Mark              Guidance
+    2 (a)
+                    value == "E"                                   5 All string values must be in quotes. Allow single or double
+                    value == "S"                                           quotes.
+                    (numone+numtwo)
+                    value                                               Don't allow single = for MP1&2. Penalise once and FT for
+                    "E"                                                 multiple occurrences.
+
+                                                                        Case needs to match that used in the question
+
+                                                                        Needs to have brackets for MP3
+
+2 (b) (i)          · 8, 7                                                  do
+2 (b) (ii)         · 15                                                      value = input("Enter a value")
+                   · 15,6                                                    if value == "E" then
+                                                                                num = numbers.pop()
+                   · 12                                                         print(num)
+                   ·7                                                        elseif value == "A" or value == "S" then
+                   · 15                                                         numone = numbers.pop()
+                                                                                numtwo = numbers.pop()
+                                                                                if value == "A" then
+                                                                                  numbers.push(numone + numtwo)
+                                                                                elseif value == "S" then
+                                                                                  numbers.push(numtwo - numone)
+                                                                                endif
+                                                                             else
+                                                                                numbers.push(value)
+                                                                             endif
+
+                                                                           until value == "E"
+
+                                                                   3 One mark per stack diagram
+
+                                                                     3
+                                                      17
+H446/01                                          Mark Scheme       June 2023
+
+2 (b) (iii)  S causes the two values inputted to be popped and  3
+
+             only one value to be pushed back // 4 and 2 are
+
+             popped and 2 is pushed
+
+              A causes an attempt to pop two values but only
+
+             one present / not two values there
+
+              Causing a stack underflow
+
+2 (c) (i)     Stack is LIFO / FILO                              2 Mark in pairs
+              Queue is FIFO / LILO                                      Accept descriptions of LIFO / FIFO for MP1 and 2
+2 (c) (ii)
+2 (c) (iii)   Stack uses one pointer (for head)                 2 Mark in pairs
+              Queue uses two pointers (head and tail)           1
+
+              Stack, data is popped/pushed from the top
+              Queue, data is dequeued from the from the start
+
+                 and enqueued onto the back // a queue can be
+                 circular
+
+              Array is of fixed/defined size // static
+              List size can be changed // no defined size //
+
+                 dynamic
+
+              Array holds data of single data type
+              List can hold data of multiple / different types
+
+              A tuple cannot be changed at runtime // a tuple
+                 is immutable
+
+2 (c) (iv)    Go to the first position indicated by the start   3 Accept answers relating to locations given by pointers
+                 pointer                                                Allow acceptable diagram illustrating the same points
+
+              From the first position, read the next pointer
+                 value...
+
+              ...follow this pointer value and access the data
+                 item
+
+                                                 18
+H446/01                           Mark Scheme                                                      June 2023
+
+   Question            Answer                                   Mark                     Guidance
+3 (a) (i)  BD                                                     1 Correct answer only
+
+3 (a) (ii)  2AF                                                 1 Correct answer only
+
+3 (b) (i)  1110 1011                                            1 Correct answer only
+
+3 (b) (ii)  1001 0101                                           1 Correct answer only
+
+3 (b) (iii)  Calculations are more easily performed on two's    1 Accept the reverse of the MP
+
+         complement
+
+          Two's complement allows for a (negligible) larger
+
+         range of numbers to be stored // by example
+
+          No additional hardware is required in two's
+
+         complement // Addition and subtraction are carried
+
+         out using only an adder
+
+          Two's complement has only one representation for 0
+
+3 (c)     -15.75 is 10000.01 (in fixed point two's complement)  4 Mantissa must be 8 bits, exponent must be 4 bits
+
+          Binary point moved 4 places left                              Accept alternative working for MP2 if appropriate.
+          Mantissa 1000 0010
+          Exponent 0100                                                 If mantissa AND exponent are correct with any working, 4
+                                                                        marks
+
+                                                       19
+H446/01                                 Mark Scheme                     June 2023
+      3 (d)
+              Exponent is -2                                         3 MP2 is for correct working of whichever method is used.
+              Binary point moved 2 places left (0.001) // 0.5 x 2-2          If answer is correct and working is shown, 3 marks
+
+              0.125 // 1/8 (one eighth)
+
+3 (e)         precision / accuracy                                   2
+
+              range / size / magnitude
+
+                                        20
+H446/01      Mark Scheme                                                                                                                 June 2023
+
+   Question                             Answer                                    Mark                Guidance
+4 (a) (i)                                                                           4 Mark in pairs.
+              Assembly language uses mnemonics
+              HLL uses English-like words                                         Allow examples (e.g. JMP, print) for MP1 and 2
+
+              Assembly language uses an assembler to
+                 convert to machine code
+
+              HLL uses a translator (compiler/interpreter) to
+                 convert to machine code
+
+              Assembly language is a one-to-one conversion
+                 to machine code
+
+              HLL may produce multiple lines of machine code
+                 per line of code // one-to-many
+
+              Assembly language requires more knowledge of
+                 the processor // allows direct control of the
+                 processor
+
+              HLL provides more abstraction // requires less
+                 knowledge of the processor
+
+                               Assembly language is likely to be specific to the  1 Do not accept just "multiple instructions"
+                                   processor type used // is machine dependent            Do not accept tasks/programs for instructions
+
+                               HLL is portable // can be used for multiple
+                                   processor types // programmer can pick from a
+                                   number of HLLs and paradigms // is machine
+                                   independent
+
+4 (b) (i)  Can execute multiple instructions / FDE cycles at
+                              the same time // some instructions in the program
+                              can be run in parallel
+
+             21
+H446/01                                     Mark Scheme            June 2023
+
+4 (b) (ii)  Some instructions may not be able to be run in      2
+
+         parallel
+
+          An instruction may be dependent / waiting for other
+
+         instructions to be completed
+
+          Other factors influence processing speed ­ clock
+
+         speed / cache / bottlenecks / etc
+
+          Program / OS needs to be written to specifically use
+
+         multiple cores
+
+                                                            22
+H446/01                                                             Mark Scheme                                                                 June 2023
+    4* (c)
+            Mark Band 3 ­ High Level (7-9 marks)                                 The following shows example content that may form part
+            The candidate demonstrates a thorough knowledge and                  of a candidate's answer. It is not intended to be an
+            understanding of encryption and hashing and how they                 exhaustive resource, nor should a candidate be
+            can be used to store data and communicate securely.                  expected to specifically cover any particular amount of
+            The material is generally accurate and detailed.                     this.
+
+            The candidate is able to apply their knowledge and                   Knowledge (AO1)
+            understanding directly and consistently to the context                Encryption converts data into data that cannot be
+            provided. Evidence/examples will be explicitly relevant
+            to the explanation.                                                      understood (ciphertext) using a key.
+                                                                                  Symmetric encryption uses the same key for both
+            The candidate is able to weigh up both technologies
+            which results in a supported and realistic judgement                     encryption and decryption
+            covering when each can be used. This is well balanced.                Asymmetric encryption uses two keys, one for
+
+            There is a well-developed line of reasoning which is                     encryption, one for decryption
+            clear and logically structured. The information presented             Encryption is two-way, so data can be restored to
+            is relevant and substantiated.
+                                                                                     original form, but key is required.
+            Mark Band 2 ­ Mid Level (4-6 marks)                                   Hashing is a one-way (non-reversible) mathematical
+            The candidate demonstrates reasonable knowledge and
+            understanding of encryption and hashing and how they                     process that produces a value from the input value.
+            can be used to store data and communicate securely;
+            the material is generally accurate but at times                      Application (AO2)
+            underdeveloped.                                                       For robot's data storage, symmetric encryption is
+
+            The candidate is able to apply their knowledge and                       useful as no keys to share/transmit.
+            understanding directly to the context provided although               For robot-robot/user communication, asymmetric
+            one or two opportunities are missed. Evidence /
+            examples are for the most part implicitly relevant to the                 encryption / public key encryption means that only
+            explanation.                                                              the public key needs to be shared. Data can be
+                                                                                      encrypted/decrypted with this while the private key is
+            The candidate makes a reasonable attempt to                               kept secure
+            come to a conclusion showing some recognition of                      Also possible to verify identity of sender / origin of
+            either technology. This may not be well-balanced,                         data using asymmetric encryption.
+            covering one side significantly more than the other,                  Hashing is useful for information (e.g. password) that
+            although both sides will be present.                                      needs to be verified but does not need to be known
+                                                                                      at any point; once hashed, it is impossible to return
+                                                                            23        to it.
+
+                                                                                 Evaluation (AO3)
+                                                                                  Encryption useful for most data storage as anyone
+
+                                                                                      hacking into the robot will not be able to
+                                                                                      read/understand the data.
+H446/01  Mark Scheme                                               June 2023
+
+         There is a line of reasoning presented with some           Hashing is useful for data storage of password /
+         structure. The information presented is in the most part      other items that need to be verified, hash of input
+         relevant and supported by some evidence.                      compared against hash stored to confirm
+                                                                       correctness.
+         Mark Band 1 ­ Low Level (1-3 marks)
+         The candidate demonstrates a basic knowledge of            Hashing is not useful for data that needs to be
+         encryption or/and hashing and how they can be used to         returned to the user as impossible to return to.
+         store data and communicate securely; the material is
+         basic and contains some inaccuracies. The candidate        Encryption useful for data transmission as data
+         makes a limited attempt to apply acquired knowledge           intercepted cannot be decrypted without the key.
+         and understanding to the context provided.
+
+         The candidate provides nothing more than unsupported
+         assertions. Any discussion will be almost entirely one-
+         sided.
+
+         The information is basic and communicated in an
+         unstructured way. The information is supported by
+         limited evidence and the relationship to the evidence
+         may not be clear.
+
+         0 marks
+         No attempt to answer the question or response is not
+         worthy of credit.
+
+         24
+H446/01                                         Mark Scheme                                          June 2023
+
+      4 (d) (i)  <ul> and </ul>                              5  <html>
+                                 href
+                                 Login                          <head>
+                                 text/password
+                                 submit                         <title>Robot User Interface</title>
+
+                                                                </head>
+
+                                                                <body>
+
+                                                                <h1>Robot directives</h1>
+
+                                                                <ul>
+
+                                                                <li>Serve the company trust</li>
+
+                                                                <li>Protect data</li>
+
+                                                                <li>Uphold standards</li>
+
+                                                                </ul>
+
+                                                                <a href="updates.html">Updates</a>
+
+                                                                <p>Login</p>
+
+                                                                <form action="dologin.php">
+
+                                                                Password
+
+                                                                <input type = "text" name="pw">
+
+                                                                <input type = "submit">
+
+                                                                </form>
+
+                                                                </body>
+
+                                                                </html>
+
+                                                                HTML tags are not case sensitive
+
+                                                                Correct answer only
+
+                                                25
+H446/01                                                Mark Scheme                                                     June 2023
+
+    4 (d) (ii)  h1 and other code contained in { }          3 Ignore presence or lack of <style> tags. Ignore lack of
+                             color :white;                          semicolons
+                             background-color : red;
+                                //background: red;                  Penalise misspelling of "color" once and then FT
+
+                                                                   h1 {
+                                                                      color:white;
+                                                                      background-color: red;
+
+                                                                   }
+
+                                                                    White can be #FFFFFF or #FFF
+                                                                    Red can be #FF0000 or #F00
+
+4 (e) (i)    Copyright Designs and Patents Act              3 Must be full name of Act for MP1
+                                                                    FT for versions of Copyright or nothing for MP2-6
+            Any two from:
+                                                            2 Do not accept just "ask permission"
+             Gives the author (the programmers)
+
+            ownership/copyright of the photographs
+
+             ...no need to apply // this is automatic
+
+             Others cannot use/distribute // can be
+
+            prosecuted/fined for using/distributing...
+
+             ...without permission
+
+             Permission can be granted / bought / licenced
+
+4 (e) (ii)   Ask permission of author / photographer /
+                owner
+
+             Use images marked as copyright free (e.g.
+                Creative Commons Licence)
+
+             Purchase (licence to use) image
+
+                                                        26
+H446/01                                                       Mark Scheme                                                    June 2023
+
+      4 (f) (i)  DELETE FROM TblAccessLog                                       2 Do not accept DELETE * or inclusion of field names
+                                WHERE UserType = "NotNeeded"
+                                                                                        Need quotation on MP2
+
+                                                                                        For field and table names, case must match - only
+                                                                                        penalise once and FT
+
+                                                                                Do not award MP2 if == is used instead of =
+
+4 (f) (ii)  Each attribute name is unique                                       2 Do not accept repeated data / data redundancy (higher
+                          Primary key identified                                        than 1NF) unless specified that this is within one field
+                          No repeated attributes                                        Allow fields/properties as alternative to attribute
+                          All data in attributes must be atomic (cannot be
+                              further split up) // by example                   2
+
+4 (f) (iii)  DateAccessed...
+                          ...has non-atomic data // data can be split up (into
+                              separate dates)
+
+                                                              27
+H446/01                      Mark Scheme                                                                                  June 2023
+
+        Question     Answer                                               Mark  Guidance
+     5 (a)                                                                  1
+     5 (b)        9
+
+                   input and store/use a value from user                  5 Example code:
+                   call doCheck function with value input from user               num = input("enter a number")
+                                                                                  value=doCheck(num)
+                      and save/use returned value                                 txtfile = openWrite("storedvalues.txt")
+                   open and close text file in write/append mode, if              txtfile.writeLine(num)
+                                                                                  txtfile.writeLine(value)
+                      given                                                       txtfile.close()
+                   write value returned to text file
+
+                   Write value input to text file
+
+                                                                                MP2 - doCheck is case sensitive
+                                                                                MP3 - need speech marks around file name
+
+                                                                      28
+H446/01                                                   Mark Scheme               June 2023
+
+   Question                                       Answer      Mark        Guidance
+
+6        (a) (i)   ¬ (A  B) // NOT (A OR B)                            2 First MP requires brackets, NOT A or B is incorrect.
+                    C // XOR C
+
+                                                                          Can be written in different order (e.g. C XOR NOT (B OR A)
+                                                                          as long as logically correct.
+
+                                                                                    _____
+
+                                                                          Accept (A + B)  C
+
+6        (a) (ii)  1 mark for first two rows (1,0)                     3
+
+                   1 mark for next two rows (0,1)
+
+                   1 mark for next four rows (0,1,0,1)
+
+                                                          29
+H446/01                                                Mark Scheme     June 2023
+
+6        (b)   Correct highlighting on K map as shown               4
+
+              __
+
+               ¬A  ¬C // A.C // NOT A AND NOT C...
+
+              _
+
+               A  ¬D // A.D // A AND NOT D...
+
+               ...v // + // OR joining the 2 correct expressions
+                  together
+
+                                                                             Do not penalise candidates who attempt to simplify even
+                                                                             further (e.g. NOT A AND NOT C = NOT (A OR C) using De
+                                                                             Morgan's).
+                                                                             MP1 - correct answer only
+                                                                             MP4 is dependent on MP2 & 3
+
+                                                       30
+H446/01                      Mark Scheme                                                         June 2023
+           Question
+                     Answer                                                     Mark   Guidance
+      7*
+                     Mark Band 3 ­ High Level (9-12 marks)                        12   The following shows example content that may form part
+                     The candidate demonstrates a thorough knowledge and               of a candidate's answer. It is not intended to be an
+                     understanding of The Regulation of Investigatory           AO1.1  exhaustive resource, nor should a candidate be
+                     Powers Act (RIPA) 2000. The material is generally            (2)  expected to specifically cover any particular amount of
+                     accurate and detailed.                                            this.
+                                                                                AO1.2
+                     The candidate is able to apply their knowledge and           (2)  Knowledge (AO1)
+                     understanding directly and consistently to the context             Implements additional rights regarding surveillance /
+                     provided. Evidence/examples will be explicitly relevant    AO2.1
+                     to the explanation.                                          (2)      monitoring of individuals and acquisition of
+                                                                                           communications data
+                     The candidate is able to weigh up both sides of the        AO3.3   Provides the right for many organisations (including
+                     argument which results in a supported and realistic          (3)      the Police and security services) to do this.
+                     judgement covering the benefits and drawbacks of the               Purpose is to detect crime and defend national
+                     Act. This is well balanced.                                           security (e.g. terrorism, public disorder)
+                                                                                        Gives access to individuals' private communications,
+                     There is a well-developed line of reasoning which is                  such as emails, text messages, phone calls, Internet
+                     clear and logically structured. The information presented             history.
+                     is relevant and substantiated.                                     Some people feel this is an invasion of their privacy
+
+                     Mark Band 2 ­ Mid Level (5-8 marks)                               Application (AO2)
+                     The candidate demonstrates reasonable knowledge and                Monitoring can be carried out by far more
+                     understanding of The Regulation of Investigatory
+                     Powers Act (RIPA) 2000; the material is generally                      organisations than just the Police and Security
+                     accurate but at times underdeveloped.                                  services ­ for example, local councils, the pension
+                                                                                            regulator and the Environment Agency are all able to
+                     The candidate is able to apply their knowledge and                     use surveillance or request data about individuals.
+                     understanding directly to the context provided although            If files are encrypted, the Act gives powers to force
+                     one or two opportunities are missed. Evidence /                        the handover of keys (from individuals or
+                     examples are for the most part implicitly relevant to the              organisations) with a 2 year prison sentence
+                     explanation.                                                           possible on refusal.
+                                                                                        Wide ranging powers have allowed Police and
+                                                                                            Security services to intercept criminals'
+                                                                                            communications and stop / disrupt crime.
+
+                     The candidate makes a reasonable attempt to                       Evaluation (AO3)
+                     come to a conclusion showing some recognition of                   In the modern world, it is important that Police and
+                     benefits and/or drawbacks. This may not be well-
+                     balanced, covering one side significantly more than the               Security services are given the power to deal with
+                     other, although both sides will be present.                           electronic communications in this way. Many crimes
+
+                             31
+H446/01  Mark Scheme                                               June 2023
+
+         There is a line of reasoning presented with some              (e.g. terrorism) can be detected and stopped before
+         structure. The information presented is in the most part      they occur, making the public safer.
+         relevant and supported by some evidence.                   However, some say that it is now a "snooper's
+                                                                       charter", with more organisations using their powers
+         Mark Band 1 ­ Low Level (1-4 marks)                           for minor offences such as detecting those lying
+         The candidate demonstrates a basic knowledge of The           about their address to get children into a better
+         Regulation of Investigatory Powers Act (RIPA) 2000; the       school or fly-tipping.
+         material is basic and contains some inaccuracies. The      Many communication tools (e.g. WhatsApp) now
+         candidate makes a limited attempt to apply acquired           include end-to-end encryption by default so that
+         knowledge and understanding to the context provided.          messages cannot be divulged by the organisation
+                                                                       because they do not have access to it. Other
+         The candidate provides nothing more than unsupported          encryption tools include plausible deniability.
+         assertions. Any conclusion, if present, will be almost
+         entirely one-sided.
+
+         The information is basic and communicated in an
+         unstructured way. The information is supported by
+         limited evidence and the relationship to the evidence
+         may not be clear.
+
+         0 marks
+         No attempt to answer the question or response is not
+         worthy of credit.
+
+         32
+Need to get in touch?
+If you ever have any questions about OCR qualifications or services (including administration, logistics and teaching) please feel free to get in
+touch with our customer support centre.
+Call us on
+01223 553998
+Alternatively, you can email us on
+support@ocr.org.uk
+For more information visit
+
+         ocr.org.uk/qualifications/resource-finder
+         ocr.org.uk
+         Twitter/ocrexams
+        /ocrexams
+        /company/ocr
+        /ocrexams
+
+OCR is part of Cambridge University Press & Assessment, a department of the University of Cambridge.
+For staff training purposes and as part of our quality assurance programme your call may be recorded or monitored. © OCR
+2023 Oxford Cambridge and RSA Examinations is a Company Limited by Guarantee. Registered in England. Registered office
+The Triangle Building, Shaftesbury Road, Cambridge, CB2 8EA.
+Registered company number 3484466. OCR is an exempt charity.
+OCR operates academic and vocational qualifications regulated by Ofqual, Qualifications Wales and CCEA as listed in their
+qualifications registers including A Levels, GCSEs, Cambridge Technicals and Cambridge Nationals.
+OCR provides resources to help you deliver our qualifications. These resources do not represent any particular teaching method
+we expect you to use. We update our resources regularly and aim to make sure content is accurate but please check the OCR
+website so that you have the most up-to-date version. OCR cannot be held responsible for any errors or omissions in these
+resources.
+Though we make every effort to check our resources, there may be contradictions between published support and the
+specification, so it is important that you always use information in the latest specification. We indicate any specification changes
+within the document itself, change the version number and provide a summary of the changes. If you do notice a discrepancy
+between the specification and a resource, please contact us.
+Whether you already offer OCR qualifications, are new to OCR or are thinking about switching, you can request more
+information using our Expression of Interest form.
+Please get in touch if you want to discuss the accessibility of resources we offer to support you in delivering our qualifications.
+
