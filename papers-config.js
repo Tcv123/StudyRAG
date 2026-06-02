@@ -12691,6 +12691,274 @@ window.SUBJECTS = [
                   'Indicative content': 'Aseptic technique; agar plates seeded with bacteria; assess effectiveness via zone of inhibition (largest zone = most effective); repeats; same temperature/time. Range of antibiotic concentrations; apply via wells/paper discs; incubate 24–48 h at 25–40 °C; control variables (bacterial species, soak time, volume); measure zone-of-inhibition diameter; standardised bacterial lawn. Calculate mean area/diameter of the zone of inhibition; repeat with smaller concentration intervals around the dose; identify the minimum effective dose.'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit. The optimum concentration is the lowest concentration at which the zone of inhibition shows no further increase.' }
+            } },
+          { id: 'bio-edxa-9bn0-2024-p2', year: 'June 2024', paperName: 'Paper 2 — Energy, Exercise and Coordination', paperCode: '9BN0/02', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-02-que-20240615.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-02-rms-20240815.pdf',
+            qbqNote: 'All 10 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, ECG/spirometer traces, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Cells in the human brain use glucose as a respiratory substrate. The diagram represents a glucose molecule; the letters P–V represent atoms or groups in the glucose molecule.\n\n(See the diagrams and brain scan images in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Which atom does R represent?\n\nA  carbon\nB  hydrogen\nC  nitrogen\nD  oxygen", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "Which group does P represent?\n\nA  CH₂OH\nB  CH₃\nC  COOH\nD  OH", marks: 1 },
+                  { code: '1(b)(i)', preamble: "PET, MRI and fMRI are methods for scanning the brain. PET uses labelled glucose, which can be detected so that PET can be used to identify brain tumours.", prompt: "Describe the advantages of using PET and fMRI rather than MRI scans to investigate a possible tumour in the brain.", marks: 2 },
+                  { code: '1(b)(ii)', preamble: "The images show brain scans produced from two imaging techniques other than PET.", prompt: "State how image 1 can be identified as being produced by CT and image 2 by MRI.", marks: 1 },
+                  { code: '1(c)', preamble: "The diagram shows a human brain with regions P and Q labelled. Brain tumours can change brain function.", prompt: "Describe the possible effects of brain tumours in parts P and Q.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "A range of organic molecules can be synthesised in metabolic reactions in mammals, including pyruvate, lactate and vitamin C.",
+                parts: [
+                  { code: '2(a)', preamble: "In human liver cells, glycerol can be converted to pyruvate via glycolysis: glycerol → (molecule X) → phosphorylated three-carbon compound → (molecule X) → pyruvate.", prompt: "Which of the following is molecule X?\n\nA  adenosine diphosphate (ADP)\nB  adenosine triphosphate (ATP)\nC  nicotinamide adenine dinucleotide (NAD)\nD  reduced nicotinamide adenine dinucleotide (NADH + H⁺)", marks: 1 },
+                  { code: '2(b)', prompt: "Explain why human muscle cells sometimes convert pyruvate to lactate.", marks: 4 },
+                  { code: '2(c)', preamble: "Many mammals such as cows can synthesise vitamin C from glucose in the liver. Vitamin C solutions can be prepared from fresh or frozen cow liver.", prompt: "Devise an investigation to compare the vitamin C content of these solutions.", marks: 4 }
+                ] },
+              { number: 3,
+                scenario: "In 2021, there was an accident at a nuclear power station in Spain. There was no radiation leak but carbon dioxide was released. Some people were taken to hospital showing symptoms of carbon dioxide poisoning after inhaling carbon dioxide; their symptoms included rapid breathing and an increased heart rate.",
+                parts: [
+                  { code: '3(a)(i)', prompt: "Explain why rapid breathing is a symptom of carbon dioxide poisoning.", marks: 4 },
+                  { code: '3(a)(ii)', preamble: "A person's breathing rate can be calculated from a spirometer trace.", prompt: "Which of the following calculations would give the rate of breathing as breaths per minute?\n\nA  number of peaks on the trace in 10 seconds divided by 60\nB  number of troughs on the trace in 15 seconds divided by 0.25\nC  tidal volume multiplied by 60\nD  tidal volume multiplied by number of peaks per second", marks: 1 },
+                  { code: '3(b)', preamble: "Electrocardiograms (ECGs) were also recorded. The diagram shows part of an ECG with point K labelled.", prompt: "Explain the role of the atrioventricular node (AVN) in the events happening at K on the ECG.", marks: 3 },
+                  { code: '3(c)', preamble: "Radiation leaks from other accidents have led to mutations in developing embryos. Prenatal genetic screening can be offered to check for certain mutations.", prompt: "Give a reason why some pregnant women may choose chorionic villus sampling rather than amniocentesis.", marks: 1 }
+                ] },
+              { number: 4,
+                scenario: "Mutations are rare changes in the sequence of bases in DNA.",
+                parts: [
+                  { code: '4(a)', preamble: "Each body cell contains 6 billion base pairs. The mutation rate for human cells has been estimated to be 2.5 × 10⁻⁸ mutations per base pair per cell cycle.", prompt: "Calculate how many mutations could happen per body cell in one cell cycle.", marks: 1 },
+                  { code: '4(b)(i)', preamble: "The DNA template strand is involved in the synthesis of mRNA. The anticodons of the first four tRNA molecules that carry amino acids into a ribosome are: UAC GGA UCG AAC.", prompt: "Determine why the sequence of bases in these anticodons is 83% the same as the sequence of bases on the DNA template strand.", marks: 2 },
+                  { code: '4(b)(ii)', prompt: "Explain why a change in the DNA sequence can change the phenotype of an organism.", marks: 3 },
+                  { code: '4(c)', preamble: "Mutations can affect the metabolism of glycogen in fast twitch muscle fibres.", prompt: "Explain why fast twitch muscle fibres contain more glycogen than slow twitch muscle fibres.", marks: 3 }
+                ] },
+              { number: 5,
+                scenario: "The resting heart rate varies between individuals for a variety of reasons.",
+                parts: [
+                  { code: '5(a)', preamble: "An adult male had a resting heart rate of 90 beats per minute. The systole stage was found to be 30% of his cardiac cycle.", prompt: "Calculate the length of time for a single systole stage for this person. Give your answer in seconds.", marks: 2 },
+                  { code: '5(b)(i)', preamble: "Some people with high blood pressure have a 100% increased risk of developing CVD.", prompt: "State what is meant by a 100% increased risk.", marks: 1 },
+                  { code: '5(b)(ii)', preamble: "This person could be treated with antihypertensives.", prompt: "Give two risks of this treatment.", marks: 2 },
+                  { code: '5(b)(iii)', prompt: "Explain how antihypertensives can reduce the risk of developing CVD.", marks: 4 }
+                ] },
+              { number: 6,
+                scenario: "In 2018, there were 7340 non-identical twins born in the UK. Each set of twins was the outcome of two egg cells each fertilised by a different sperm cell.",
+                parts: [
+                  { code: '6(a)', prompt: "Which of the following shows the probability of a pair of non-identical twins being the same sex?\n\nA  0.00\nB  0.25\nC  0.50\nD  1.00", marks: 1 },
+                  { code: '6(b)', prompt: "Explain how a sperm cell is adapted for its role in fertilisation.", marks: 3 },
+                  { code: '6(c)(i)', preamble: "At fertilisation a zygote is formed. The zygote is a totipotent cell, then divides repeatedly to form an embryo. There are pluripotent cells in a five-day-old embryo.", prompt: "Describe the differences between pluripotent stem cells and totipotent stem cells.", marks: 3 },
+                  { code: '6(c)(ii)', preamble: "Stem cells divide by mitosis.", prompt: "Describe the role of centromeres in mitosis.", marks: 3 }
+                ] },
+              { number: 7,
+                scenario: "The human retina contains rod cells and three types of colour-sensitive cell, allowing full colour vision. However, there are many inherited conditions that can affect these cells.\n\n(See the retina diagram and family pedigrees in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)', preamble: "The diagram shows a section through a typical human retina.", prompt: "State why the retina can be described as a tissue.", marks: 2 },
+                  { code: '7(b)(i)', preamble: "One recessive genetic condition affecting the eye is fundus albipunctatus. In this condition the speed of rhodopsin formation in rod cells is reduced after exposure to bright light.", prompt: "Describe the process of rhodopsin formation in rod cells after exposure to bright light.", marks: 2 },
+                  { code: '7(b)(ii)', preamble: "Three family pedigrees each show the inheritance of a different genetic condition. Only one definitely shows that fundus albipunctatus is inherited as a recessive condition.", prompt: "Explain which family pedigree shows the inheritance of fundus albipunctatus.", marks: 2 },
+                  { code: '7(c)(i)', preamble: "Each type of colour-sensitive cell contains a different pigment (blue, green or red). The gene for blue pigment is on chromosome 7; the genes for red and green pigment are on the X chromosome.", prompt: "Give a reason why the genes for red and green pigment are not present on the Y chromosome.", marks: 1 },
+                  { code: '7(c)(ii)', preamble: "In a UK sample, 4.5% were colour blind. The table gives the numbers of colour-blind females and males by type (blue: 1 female, 2 males; green: 10 females, 91 males; red: 2 females, 25 males). The percentage of males in the whole sample was 55%, and the total colour blind was 131.", prompt: "Calculate the number of males in the whole sample who have full colour vision.", marks: 3 },
+                  { code: '7(c)(iii)', prompt: "Deduce how colour blindness is inherited.", marks: 4 }
+                ] },
+              { number: 8,
+                scenario: "Phytochromes are photosensitive pigments in plants that absorb light. A phytochrome consists of a protein bonded to a non-protein molecule.",
+                parts: [
+                  { code: '8(a)(i)', prompt: "Which of the following is the location for the synthesis of protein in a cell?\n\nA  centrioles\nB  Golgi apparatus\nC  lysosomes\nD  rough endoplasmic reticulum", marks: 1 },
+                  { code: '8(a)(ii)', prompt: "Which of the following is the location where carbohydrate can be added to a protein molecule in a eukaryotic cell?\n\nA  cytoplasm\nB  Golgi apparatus\nC  lysosome\nD  smooth endoplasmic reticulum", marks: 1 },
+                  { code: '8(a)(iii)', prompt: "Which of the following describes a peptide bond?\n\nA  bond between a carbon atom on one amino acid and a carbon atom on another\nB  bond between a nitrogen atom on one amino acid and a carbon atom on another\nC  bond between a nitrogen atom on one amino acid and an oxygen atom on another\nD  bond between an oxygen atom on one amino acid and a carbon atom on another", marks: 1 },
+                  { code: '8(b)(i)', preamble: "The non-protein part of phytochrome is a light-absorbing pigment. Light of a suitable wavelength and duration can stimulate plant growth.", prompt: "What happens to phytochrome in the dark?\n\nA  rapidly converted to phytochrome far red\nB  rapidly converted to phytochrome red\nC  slowly converted to phytochrome far red\nD  slowly converted to phytochrome red", marks: 1 },
+                  { code: '8(b)(ii)', prompt: "Explain how the response of phytochrome to a light stimulus can cause an increase in plant growth.", marks: 3 }
+                ] },
+              { number: 9,
+                scenario: "Many organisms that live in the sea produce poisonous chemicals called neurotoxins.\n\n(See the tissue distribution and toxicity tables in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)(i)', preamble: "Pufferfish produce a neurotoxin, tetrodotoxin (TTX), believed to be a defence against predators. The mean concentration of TTX varies by tissue: liver 0.046 mg per gram, skin 25.000 µg per gram (gonad 0.365 mg, muscle 2.000 µg).", prompt: "Calculate the percentage difference in mean concentration of TTX in pufferfish liver tissue compared with skin tissue.", marks: 2 },
+                  { code: '9(a)(ii)', preamble: "The toxicity of the different tissues from each of five pufferfish was tested in mice. Some humans eat pufferfish.", prompt: "Describe why mice were used to determine the level of toxicity.", marks: 3 },
+                  { code: '9(a)(iii)', prompt: "Deduce the effect of the sex of the pufferfish on the level of toxicity for different pufferfish tissues.", marks: 2 },
+                  { code: '9(b)', preamble: "Conus is a predatory marine snail that uses a neurotoxin, conotoxin, to paralyse the muscles of its prey. Conotoxin inhibits calcium ion movement across the cell-surface membrane; TTX inhibits sodium ion movement across cell-surface membranes.", prompt: "Discuss how the investigations support the potential use of neurotoxins as painkillers and treatments for uncontrolled muscle movement in humans.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 10,
+                scenario: "Environmental conditions such as temperature can affect the performance of athletes. An investigation studied the effect of temperature on athletes before the Tokyo Olympics in 2021. Athletes were grouped by sport type: endurance (27 athletes, 12 male, mean age 25) and mix-trained (31 athletes, 22 male, mean age 27).\n\n(See the graph and performance table in the question paper PDF.)",
+                parts: [
+                  { code: '10(a)', prompt: "Which of the following shows the ratio, in its simplest form, of female to male athletes in this investigation?\n\nA  0.7 : 1\nB  1 : 12/5\nC  1.4 : 1\nD  12 : 17", marks: 1 },
+                  { code: '10(b)(i)', preamble: "Each athlete swallowed a digital thermometer to measure core body temperature. They warmed up for 20 minutes at 16 °C, then exercised (intensity increased at 3-minute intervals) until unable to continue; the warm-up and exercise were repeated at 32 °C. The change in body mass was recorded as a measure of sweat produced.", prompt: "Explain why the athletes were not allowed to eat or drink during this investigation.", marks: 3 },
+                  { code: '10(b)(ii)', preamble: "The graph shows the effect of the warm-up (0–20 minutes) and exercise (from 20 minutes) on mean core body temperature at 16 °C and 32 °C.", prompt: "Explain the effect of environmental temperature on core body temperature during warm-up activities followed by exercise.", marks: 3 },
+                  { code: '10(b)(iii)', preamble: "The table shows mean performance for the two sport types at 16 °C and 32 °C: endurance — mean exercise length 64 vs 47 min, mean max power output 4.4 vs 3.7 a.u., mean sweating 0.9 vs 1.6 kg h⁻¹; mix-trained — 57 vs 40 min, 3.0 vs 2.5 a.u., 0.9 vs 1.7 kg h⁻¹. The results were used to suggest that training programmes should take into account different environmental conditions.", prompt: "Evaluate the evidence to suggest that this would benefit the performance of athletes when competing in different environmental conditions.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['D — oxygen'], guidance: '1 mark.' },
+              '1(a)(ii)': { type: 'exact', points: ['A — CH₂OH'], guidance: '1 mark.' },
+              '1(b)(i)': { type: 'points', points: [
+                  '(Both) can assess brain activity / show areas of the brain that are more active',
+                  'Image formed in real time / live imaging'
+                ], guidance: '2 marks.' },
+              '1(b)(ii)': { type: 'points', points: [
+                  'Image 1 / CT is less detailed; image 2 / MRI is more detailed'
+                ], guidance: '1 mark. Allow resolution/contrast for detail.' },
+              '1(c)': { type: 'points', points: [
+                  'P — inability to see / reduced visual perception',
+                  'Q — (change in) balance / posture / fine motor skills / coordination'
+                ], guidance: '2 marks. Allow suitable descriptions; allow damage to vision.' },
+              '2(a)': { type: 'exact', points: ['B — adenosine triphosphate (ATP)'], guidance: '1 mark.' },
+              '2(b)': { type: 'points', points: [
+                  'When there is insufficient oxygen / anaerobic conditions',
+                  'So that reduced NAD can be oxidised / regenerated to NAD',
+                  '(NAD) for use in glycolysis / so glycolysis can continue',
+                  'And (some) ATP can continue to be synthesised'
+                ], guidance: '4 marks.' },
+              '2(c)': { type: 'points', points: [
+                  'Use the same volume of solution / same volume/concentration of DCPIP for both',
+                  'Add solution to DCPIP / titrate DCPIP against the vitamin C solution/extract',
+                  'Until DCPIP decolourises / changes from blue to colourless',
+                  'Compare the volume of the two solutions needed for the DCPIP to decolourise',
+                  'Quantify the results by titration using a vitamin C standard solution'
+                ], guidance: '4 max.' },
+              '3(a)(i)': { type: 'points', points: [
+                  'Raised carbon dioxide (concentration) in blood / reduced blood pH (increased carbonic acid)',
+                  '(That is) detected by chemoreceptors',
+                  '(Resulting in) impulses sent to the ventilation centre / medulla (inspiratory centre)',
+                  '(So) more impulses sent along the motor neurones (or phrenic/sympathetic nerves) to the breathing muscles',
+                  '(So) an increase in the rate of diaphragm / intercostal muscle contraction'
+                ], guidance: '4 max.' },
+              '3(a)(ii)': { type: 'exact', points: ['B — number of troughs on the trace in 15 seconds divided by 0.25'], guidance: '1 mark.' },
+              '3(b)': { type: 'points', points: [
+                  'K represents ventricular systole / the QRS complex (ventricular contraction)',
+                  '(AVN) picks up electrical activity from the atria (or SAN) / allows it to travel from atria to ventricles',
+                  '(But) delays transmission of the electrical activity / allows time for the atria to empty (ventricles to fill)',
+                  'Passes electrical activity to the Purkyne fibres / bundle of His'
+                ], guidance: '3 max. Allow depolarisation/action potentials for electrical activity.' },
+              '3(c)': { type: 'points', points: [
+                  'CVS can be carried out earlier in pregnancy (10–14 weeks vs amniocentesis 15–20 weeks)',
+                  'Results available sooner (more time to consider the outcome)'
+                ], guidance: '1 mark. Ignore reference to miscarriage risk.' },
+              '4(a)': { type: 'exact', points: ['150', '1.5 × 10²'],
+                guidance: '1 mark. (2.5 × 10⁻⁸) × (6 × 10⁹) = 150.' },
+              '4(b)(i)': { type: 'points', points: [
+                  '(Only) U is replaced by T (DNA does not have uracil)',
+                  '(So the other) 10 bases out of 12 are the same (10 ÷ 12 × 100 = 83%)'
+                ], guidance: '2 marks.' },
+              '4(b)(ii)': { type: 'points', points: [
+                  '(Change in DNA) may cause a change to an amino acid / the amino acid sequence (or a STOP codon)',
+                  'Protein has a different shape / different tertiary structure / is not made',
+                  'So it does not function / its function is altered',
+                  'Example of how the change affects phenotype (e.g. enzyme has a different specificity, pigment no longer produced)'
+                ], guidance: '3 max. Allow primary structure for amino acid sequence; polypeptide for protein.' },
+              '4(c)': { type: 'points', points: [
+                  '(Glycogen provides) a store of energy / glucose',
+                  'Glycogen provides glucose',
+                  'Glucose for respiration / energy/ATP for contraction',
+                  'Fewer capillaries/blood vessels in fast twitch muscle means less glucose supplied (so more must be stored)'
+                ], guidance: '3 max. Allow reverse arguments for why slow twitch needs less glycogen.' },
+              '5(a)': { type: 'exact', points: ['0.2 s', '0.2', '0.201'],
+                guidance: '2 marks. One cardiac cycle = 60 ÷ 90 = 0.667 s; systole = 0.667 × 0.3 = 0.2 s. 1 mark for the cycle time; 1 for systole. Correct answer with no working gains full marks.' },
+              '5(b)(i)': { type: 'points', points: [
+                  'Twice as likely / doubles the likelihood (× 2 the risk) of developing CVD'
+                ], guidance: '1 mark.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'Any two of: cough / cold / flu-like symptoms; dizziness / fainting; headaches; fatigue (also diarrhoea, constipation, nausea, cold hands/feet, oedema/swollen ankles)'
+                ], guidance: '2 marks (1 each).' },
+              '5(b)(iii)': { type: 'points', points: [
+                  'Reduce blood pressure',
+                  '(So) less likely to damage the artery endothelium (less endothelial dysfunction)',
+                  '(So) less likely to have an inflammatory response',
+                  'Less risk of atheroma / plaque / atherosclerosis',
+                  '(Therefore) less risk of the artery lumen being narrowed / blocked'
+                ], guidance: '4 max.' },
+              '6(a)': { type: 'exact', points: ['C — 0.50'], guidance: '1 mark.' },
+              '6(b)': { type: 'points', points: [
+                  'Acrosome releases digestive/hydrolytic enzymes to digest/penetrate the zona pellucida',
+                  'Mitochondria to supply ATP / carry out aerobic respiration (for movement)',
+                  'Flagellum allows movement of the sperm towards the egg',
+                  'Haploid nucleus to produce a diploid zygote at fertilisation'
+                ], guidance: '3 max. Ignore "to re-establish the full complement of chromosomes".' },
+              '6(c)(i)': { type: 'points', points: [
+                  'Totipotent stem cells have the potential to give rise to all cell types',
+                  'Pluripotent stem cells can give rise to most/some cell types (all except extra-embryonic)',
+                  'Totipotent stem cells can give rise to a whole organism (pluripotent cannot)',
+                  'In totipotent cells no genes are inactivated; pluripotent cells have some genes inactivated'
+                ], guidance: '3 max. Allow differential gene expression.' },
+              '6(c)(ii)': { type: 'points', points: [
+                  'Keep (pairs of) chromatids together',
+                  'Bind/attach to the spindle (fibres)',
+                  'During metaphase',
+                  'The point at which the (sister) chromatids separate during anaphase'
+                ], guidance: '3 max.' },
+              '7(a)': { type: 'points', points: [
+                  '(Retina) is made of a group of specialised/similar cells',
+                  'Working together for a (specific) function/purpose'
+                ], guidance: '2 marks. Ignore "same cells".' },
+              '7(b)(i)': { type: 'points', points: [
+                  '(Rhodopsin reformation) occurs in the dark',
+                  'Retinal joins to opsin',
+                  'Trans retinal is converted to cis retinal (in the dark)'
+                ], guidance: '2 max.' },
+              '7(b)(ii)': { type: 'points', points: [
+                  '(Pedigree) 2',
+                  '(As only pedigree 2) shows parents without the condition (heterozygous carriers) having a child with the condition'
+                ], guidance: '2 marks.' },
+              '7(c)(i)': { type: 'points', points: [
+                  'The Y chromosome is smaller/shorter than the X chromosome'
+                ], guidance: '1 mark.' },
+              '7(c)(ii)': { type: 'exact', points: ['1483'],
+                guidance: '3 marks. Population = 131 ÷ 0.045 = 2911; males = 2911 × 0.55 = 1601; colour-blind males = 2+91+25 = 118; full colour vision males = 1601 − 118 = 1483. Correct answer with no working gains full marks.' },
+              '7(c)(iii)': { type: 'points', points: [
+                  'The allele for blue colour blindness is less common in the population (red/green more common)',
+                  'Lower numbers for females than males for red and green colour blindness',
+                  '(Red and green) less common in females as they need both recessive alleles (homozygous recessive) to have the condition',
+                  'Higher in males as the allele is on the X chromosome / absent on the Y, so only one allele is needed to express it'
+                ], guidance: '4 marks.' },
+              '8(a)(i)': { type: 'exact', points: ['D — rough endoplasmic reticulum'], guidance: '1 mark.' },
+              '8(a)(ii)': { type: 'exact', points: ['B — Golgi apparatus'], guidance: '1 mark.' },
+              '8(a)(iii)': { type: 'exact', points: ['B — bond between a nitrogen atom on one amino acid and a carbon atom on another'], guidance: '1 mark.' },
+              '8(b)(i)': { type: 'exact', points: ['D — slowly converted to phytochrome red'], guidance: '1 mark.' },
+              '8(b)(ii)': { type: 'points', points: [
+                  'Phytochrome far red (Pfr) is formed in the light',
+                  '(Phytochrome far red) is the active form',
+                  '(So it) stimulates mitosis / cell division / cell elongation',
+                  'Phytochrome far red is/activates a transcription factor / stimulates protein synthesis'
+                ], guidance: '3 max.' },
+              '9(a)(i)': { type: 'exact', points: ['84%', '46%', '59%'],
+                guidance: '2 marks. Convert to the same units (0.046 mg = 46 µg; skin = 25 µg); % difference = (46 − 25) ÷ 25 × 100 = 84%. 1 mark for the conversion; 1 for the percentage. Correct answer with no working gains full marks.' },
+              '9(a)(ii)': { type: 'points', points: [
+                  '(Like humans) they are mammals / a good model for humans (similar anatomy)',
+                  '(Therefore) will react / metabolise the toxin in a similar way',
+                  'No risk to humans / unethical to test in humans (to find out if safe to eat)',
+                  'Can control variables (e.g. genetically identical)'
+                ], guidance: '3 max.' },
+              '9(a)(iii)': { type: 'points', points: [
+                  'Greater level of toxicity in tissues of female pufferfish',
+                  'For females, toxicity is much higher in the liver and gonads/ovaries (highest in ovaries)',
+                  'For males and females there is little/no difference (or slightly higher in females) in muscle and skin'
+                ], guidance: '2 max. Allow converse for males.' },
+              '9(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A scientific judgement supported throughout by sustained application of relevant evidence; a conclusion with sustained linkages to biological knowledge. Discusses both conotoxin (calcium ions → neurotransmitter release at the synapse → reduce uncontrolled muscle movement) and TTX (sodium ions → nerve impulse → painkiller), with at least two conclusions about use/limitations applied to humans.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A scientific judgement made through application of relevant evidence, with strengths and weaknesses identified; a conclusion with occasional supporting evidence. Refers to both conotoxin affecting synapses and TTX affecting nerve impulses, plus the role of one ion and a valid conclusion.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Limited scientific judgement focused on mainly one mechanism, with a few strengths/weaknesses; isolated elements of knowledge. E.g. conotoxin affects the synapse and TTX affects the nerve impulse/depolarisation.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Conotoxin reduces exocytosis of neurotransmitter into the synapse, so less stimulation of the postsynaptic membrane → could reduce uncontrolled muscle movement. TTX makes neurones less likely to depolarise/repolarise as Na⁺ cannot move in/out, so fewer impulses reach the synapse → painkiller. Concerns: pufferfish study on one species and only five individuals; mouse studies measured toxicity not therapeutic levels; mice may be a poor human model; only two neurotoxins considered.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '10(a)': { type: 'exact', points: ['A — 0.7 : 1'], guidance: '1 mark.' },
+              '10(b)(i)': { type: 'points', points: [
+                  'Eating/drinking could increase their mass',
+                  'Reducing the estimated level of sweat produced (the method could not measure sweat production)',
+                  '(Temperature of food/drink could) alter the recorded core temperature',
+                  'Would introduce an uncontrolled variable / reduce the validity of results'
+                ], guidance: '3 max.' },
+              '10(b)(ii)': { type: 'points', points: [
+                  'Both increase the same during warm-up (same warm-up/exercise) / environmental temperature had little effect during warm-up',
+                  'Increase in core body temperature during warm-up/exercise due to respiration / muscle contraction',
+                  'During exercise, core body temperature increased to a higher level at 32 °C than at 16 °C',
+                  '(Because) less heat is lost at the higher environmental temperature'
+                ], guidance: '3 max. Allow converse; allow reference to thermoregulatory mechanisms.' },
+              '10(b)(iii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A scientific judgement supported throughout by sustained application of relevant evidence; conclusion with sustained linkages. Uses at least three pieces of evidence (duration, power output, sweating) and a conclusion linking at least three aspects (effect of temperature on performance; only two temperatures; only two sports; uncontrolled variables; no statistical analysis).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A scientific judgement made through application of relevant evidence with strengths/weaknesses; conclusion with occasional support. Uses at least two pieces of evidence linked to biological knowledge.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Limited judgement based on one piece of evidence (e.g. longer duration or greater power output at lower temperature); a single conclusion attempted with limited support.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Evidence: greater exercise duration and greater power output at the lower temperature; higher rate of sweating at the higher temperature; core temperature rising faster at the higher temperature. Conclusions: performance is increased at lower temperatures; increased sweating relates to thermoregulation not necessarily performance; only elite athletes selected; limited to two temperatures and two sports; other environmental variables not controlled; no statistical analysis of the data.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
