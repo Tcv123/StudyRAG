@@ -11,6 +11,7 @@
   <script src="supabase-config.js"></script>
   <script src="nav-gating.js"></script>
   <script src="papers-config.js"></script>
+  <script src="subjects-config.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -344,6 +345,53 @@
 
   const subjects = window.SUBJECTS || [];
 
+  // The board picker (subjects-config.js / auth setup) saves short board
+  // labels like "Edexcel" or "OCR B", whereas papers-config.js uses the fuller
+  // exam-board names ("Edexcel (Pearson)", "OCR B (MEI)"). Normalise both sides
+  // before comparing so a user's saved board still matches its papers:
+  //   - drop the parenthetical suffix: "Edexcel (Pearson)" → "edexcel"
+  //   - treat a bare "OCR" as "OCR A" (some subjects offer a single OCR board
+  //     the picker labels just "OCR", but the papers list as "OCR A").
+  function normBoard(b) {
+    const n = String(b || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
+    return n === 'ocr' ? 'ocr a' : n;
+  }
+  function boardMatches(userBoards, configBoard) {
+    const cfg = normBoard(configBoard);
+    for (const ub of userBoards) if (normBoard(ub) === cfg) return true;
+    return false;
+  }
+
+  // ── Safety net so the "papers hidden by a board-name mismatch" bug can
+  //    never silently recur. Every board that has papers in papers-config.js
+  //    MUST normalise to a board the picker offers for that subject
+  //    (subjects-config.js); otherwise a user who studies that board would
+  //    select it in setup yet never see its papers. We check the whole
+  //    dataset on load and log loudly — turning a silent, user-visible gap
+  //    into an obvious console error the next time someone adds papers.
+  (function validateBoardConfig() {
+    const pickerBoards = (window.SUBJECTS_CONFIG && window.SUBJECTS_CONFIG.boards) || null;
+    if (!pickerBoards) return; // config not loaded (e.g. offline) — skip silently
+    const problems = [];
+    subjects.forEach(s => {
+      (s.boards || []).forEach(b => {
+        if (!Array.isArray(b.papers) || !b.papers.length) return; // no papers → not filterable
+        const offered = pickerBoards[s.name] || [];
+        const ok = offered.some(pb => normBoard(pb) === normBoard(b.board));
+        if (!ok) problems.push(`${s.name} → "${b.board}" (picker offers: ${offered.join(', ') || 'none'})`);
+      });
+    });
+    if (problems.length) {
+      console.error(
+        '[past-papers] Board-name mismatch — these papers would be HIDDEN from ' +
+        'students who study the board, because it does not match any board the ' +
+        'picker offers for that subject. Fix the name in papers-config.js or ' +
+        'subjects-config.js so they normalise to the same value:\n  • ' +
+        problems.join('\n  • ')
+      );
+    }
+  })();
+
   function renderPage() {
     let html = '';
 
@@ -362,23 +410,6 @@
           ${chips.join(' ')}
         </div>`;
     }
-
-    // The board picker (subjects-config.js / auth setup) stores short board
-    // labels like "Edexcel" or "OCR B", whereas the papers config uses the
-    // fuller exam-board names ("Edexcel (Pearson)", "OCR B (MEI)"). Normalise
-    // both sides before comparing so the user's saved board still matches:
-    //   - drop the parenthetical suffix: "Edexcel (Pearson)" → "edexcel"
-    //   - treat a bare "OCR" as "OCR A" (some subjects offer a single OCR
-    //     board the picker labels just "OCR", but the papers list as "OCR A").
-    const normBoard = (b) => {
-      const n = String(b || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
-      return n === 'ocr' ? 'ocr a' : n;
-    };
-    const boardMatches = (userBoards, configBoard) => {
-      const cfg = normBoard(configBoard);
-      for (const ub of userBoards) if (normBoard(ub) === cfg) return true;
-      return false;
-    };
 
     // Build the filtered subjects list:
     //   - drop boards with no attemptable papers (just an official-page link)
