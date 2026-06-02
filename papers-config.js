@@ -12426,7 +12426,273 @@ window.SUBJECTS = [
             } },
         ] },
       { board: 'Edexcel A (Salters-Nuffield)', specCode: '9BN0',
-        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/biology-a-2015.html' },
+        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/biology-a-2015.html',
+        // Pearson publishes stable per-paper PDFs on its filestore; the trailing
+        // YYYYMMDD on a QP is the exam day and every mark scheme in a series
+        // shares one publication date. June 2022–2024 are all public.
+        // Single-answer multiple-choice parts are wired as exact-answer checks;
+        // the two asterisked (*) questions per paper are levels-of-response.
+        papers: [
+          { id: 'bio-edxa-9bn0-2024-p1', year: 'June 2024', paperName: 'Paper 1 — The Natural Environment and Species Survival', paperCode: '9BN0/01', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-01-que-20240606.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-01-rms-20240815.pdf',
+            qbqNote: 'All 10 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Silver Springs is an ecosystem in Florida. Energy flow through this ecosystem has been studied. The light energy entering this ecosystem is 7 112 800 kJ m⁻² yr⁻¹. The gross primary productivity (GPP) is 87 069 kJ m⁻² yr⁻¹. The value for respiration (R) is 55 195 kJ m⁻² yr⁻¹.",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Which of the following is the correct value for the net primary productivity (NPP) in this ecosystem?\n\nA  7 025 731 kJ m⁻² yr⁻¹\nB  697 036 kJ m⁻² yr⁻¹\nC  142 264 kJ m⁻² yr⁻¹\nD  31 874 kJ m⁻² yr⁻¹", marks: 1 },
+                  { code: '1(a)(ii)', preamble: "The table shows information on trophic levels in this ecosystem. Primary consumers: energy intake 14 092 kJ m⁻² yr⁻¹, energy fixed as biomass 4615 kJ m⁻² yr⁻¹. Secondary consumers: 1602 and 464. Tertiary consumers: 88 and 21.", prompt: "Calculate the percentage of the total light energy entering this ecosystem that is fixed as biomass in the primary consumers. Give your answer to two significant figures.", marks: 2 },
+                  { code: '1(b)', prompt: "Describe the role of mineral ions in the production of plant biomass.", marks: 3 }
+                ] },
+              { number: 2,
+                scenario: "Anthropogenic activities are increasing levels of carbon dioxide in the atmosphere. An increased level of carbon dioxide in the atmosphere leads to an increased rate of photosynthesis in some plants.",
+                parts: [
+                  { code: '2(a)', prompt: "Describe how carbon dioxide is used in photosynthesis.", marks: 4 },
+                  { code: '2(b)(i)', preamble: "The effect of increasing carbon dioxide concentration on photosynthesis in soya bean plants was investigated; the mean dry mass of leaves (g m⁻²) rose from 20.3 at 160 ppm to 30.5 at 990 ppm.", prompt: "Which of the following describes the relationship between the increase in carbon dioxide concentration and the change in dry mass?\n\nA  exponential\nB  negative correlation\nC  positive correlation\nD  no correlation", marks: 1 },
+                  { code: '2(b)(ii)', preamble: "The measurements were repeated at each concentration to calculate the mean and standard deviation.", prompt: "Which of the following statements explains why this is carried out?\n\nA  to carry out chi-squared analysis\nB  to determine the repeatability of the measurements\nC  to improve the accuracy of the measurements\nD  to increase the validity of the measurements", marks: 1 },
+                  { code: '2(c)', preamble: "Enzymes catalyse some of the reactions involved in photosynthesis.", prompt: "Explain why an increase in carbon dioxide concentration above 1000 ppm may not increase the rate of photosynthesis.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "New drugs are tested in clinical trials before they can be used in treatments on patients. One of the first people to isolate and test a drug was William Withering.",
+                parts: [
+                  { code: '3(a)', prompt: "Give the name of the drug he tested.", marks: 1 },
+                  { code: '3(b)', prompt: "Complete the table with a (✓) or a (✗) to show which of the stages that take place in contemporary drug trials were carried out by William Withering: use of a placebo; testing of dose; tested on healthy volunteers; double blind trial.", marks: 2 },
+                  { code: '3(c)', preamble: "Paclitaxel is a drug used in the treatment of cancer. Cancer involves cells dividing repeatedly in an uncontrolled manner. Paclitaxel prevents spindle fibres from changing in length.", prompt: "Deduce why Paclitaxel prevents cell division in cancer cells.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "Cystic fibrosis is an inherited condition caused by mutations in the gene coding for the cystic fibrosis transmembrane conductance regulator (CFTR) protein. Some of the mutations cause a change in the primary structure of the CFTR protein.",
+                parts: [
+                  { code: '4(a)', prompt: "Describe how a mutation can change the primary structure of a protein.", marks: 3 },
+                  { code: '4(b)(i)', preamble: "The CFTR protein is produced in cells of the lung and is involved in the transport of chloride ions.", prompt: "Describe the location of the CFTR protein in the cell membrane of one of these cells.", marks: 2 },
+                  { code: '4(b)(ii)', prompt: "Describe how the CFTR protein is transported from the ribosome to the cell membrane.", marks: 3 },
+                  { code: '4(c)', preamble: "The most common mutation in the CFTR gene produces a protein that has the incorrect shape.", prompt: "Explain why a change in the primary structure of a protein changes the three-dimensional (3D) structure of this protein.", marks: 3 }
+                ] },
+              { number: 5,
+                scenario: "Photosynthesis takes place in the chloroplast. The diagram shows the structure of a chloroplast with parts labelled L, J and N.\n\n(See the diagram in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)(i)', prompt: "Which part of the chloroplast is labelled L?\n\nA  a plasmid containing chloroplast DNA\nB  the matrix where the Krebs cycle takes place\nC  the stroma where the Calvin cycle takes place\nD  the thylakoid where the light-dependent reactions take place", marks: 1 },
+                  { code: '5(a)(ii)', prompt: "The part labelled J is\n\nA  the matrix where the light-dependent reactions take place\nB  the matrix where the light-independent reactions take place\nC  the stroma where the light-dependent reactions take place\nD  the stroma where the light-independent reactions take place", marks: 1 },
+                  { code: '5(a)(iii)', prompt: "Which of the following is stored in the structure labelled N?\n\nA  chlorophyll\nB  glucose\nC  lipid\nD  starch", marks: 1 },
+                  { code: '5(b)(i)', prompt: "Give the names of two products of the light-dependent reactions of photosynthesis.", marks: 1 },
+                  { code: '5(b)(ii)', preamble: "The rate of light-dependent reactions can be measured in isolated chloroplasts, and environmental temperature may affect the rate.", prompt: "Describe how DCPIP can be used to measure the effect of temperature on the rate of the light-dependent reactions in isolated chloroplasts.", marks: 4 }
+                ] },
+              { number: 6,
+                scenario: "Anthropogenic climate change could have caused the warmest years on record in the UK from 2015 to 2021. This is leading to changes in the germination of plant seeds. Some seeds store starch.",
+                parts: [
+                  { code: '6(a)', prompt: "Describe the structure of starch.", marks: 3 },
+                  { code: '6(b)(i)', preamble: "The starch in seeds is broken down by enzymes during germination. An investigation into the effect of temperature on germination used seeds from three North American woodland species; percentage germination at the mean spring temperature was compared with an increase of 5 °C, and germination increased with the higher temperature for all three species.", prompt: "Explain the effect of an increase in temperature on germination of these seeds.", marks: 3 },
+                  { code: '6(b)(ii)', preamble: "Global warming can result in climate change.", prompt: "Describe how climate change could affect the distribution of plants in woodlands in North America.", marks: 2 },
+                  { code: '6(c)', preamble: "To conserve plant species, seeds may be stored in seed banks.", prompt: "Explain why cold and dry conditions are required for the storage of these seeds.", marks: 3 }
+                ] },
+              { number: 7,
+                scenario: "Deer are herbivores living wild and in reserves. Several species of deer can be found in the UK. Adult deer have no natural predators in the UK, where deer populations are increasing.",
+                parts: [
+                  { code: '7(a)(i)', prompt: "A population is a group of individuals\n\nA  of different species living in the same habitat\nB  of one species living in different communities\nC  of one species living in different ecosystems\nD  of one species living in the same habitat", marks: 1 },
+                  { code: '7(a)(ii)', preamble: "In the wild, several species of deer can live in the same area.", prompt: "Explain why these deer can live in the same area.", marks: 2 },
+                  { code: '7(b)(i)', preamble: "In one species of deer, a mutation has led to the occurrence of white deer. In a study of one reserve there were 550 brown deer and 250 white deer. The colour of the coats is controlled by a single gene; the allele for brown coats is dominant and the allele for white coats is recessive.", prompt: "Calculate the number of heterozygotes in this population using the Hardy–Weinberg equation (p² + 2pq + q² = 1.0).", marks: 3 },
+                  { code: '7(b)(ii)', preamble: "It may be beneficial for a population to contain a higher percentage of heterozygote individuals. 1. Heterozygotes may have an allele which allows for adaptation if conditions change. 2. Heterozygotes reduce genetic diversity. 3. A beneficial allele could be recessive and heterozygotes breeding together may produce a homozygous recessive offspring.", prompt: "Which of the following statements correctly explain why this is the case?\n\nA  1 only\nB  1 and 2\nC  1 and 3\nD  2 and 3", marks: 1 },
+                  { code: '7(c)', preamble: "A study has shown that grazing by deer reduces plant biodiversity in an area. An area with a large population of deer was compared with an area from which deer were excluded.", prompt: "Devise a procedure that could be used to measure plant biodiversity in these two areas.", marks: 4 }
+                ] },
+              { number: 8,
+                scenario: "The DNA from skeletons of people living in the UK over the last 4000 years has been studied. One of the genes studied was the gene for the enzyme lactase. Lactase is an enzyme that breaks down lactose.",
+                parts: [
+                  { code: '8(a)(i)', prompt: "Which of the following statements about the action of lactase is correct?\n\nA  lactase changes the products of the reaction\nB  lactase increases the activation energy of the reaction\nC  lactase is used up in the reaction\nD  lactase reduces the activation energy of the reaction", marks: 1 },
+                  { code: '8(a)(ii)', prompt: "Describe the role of ribosomes in the synthesis of lactase.", marks: 3 },
+                  { code: '8(b)(i)', preamble: "In most mammals, lactase production decreases when offspring stop feeding on milk. In Europe a single mutation resulted in continued production of lactase in children and adults. The frequency of this mutation in the UK rose from 0.096 (4000 years ago) to 0.740 (present); in Central Europe it increased by 457% over the same period.", prompt: "Calculate the percentage increase in the frequency of this mutation in the UK in the last 4000 years.", marks: 2 },
+                  { code: '8(b)(ii)', preamble: "During the last 4000 years, changes in farming led to a greater increase in the consumption of milk and dairy products in the UK compared with Central Europe.", prompt: "Comment on the effect of consuming milk and dairy products on the change in the frequency of this mutation.", marks: 4 }
+                ] },
+              { number: 9,
+                scenario: "Hepatitis C is a virus that can infect the liver. In some children, hepatitis C can cause serious liver damage.",
+                parts: [
+                  { code: '9(a)(i)', preamble: "After infection with hepatitis C, many people experience a fever.", prompt: "Explain the role of a fever in the immune response.", marks: 2 },
+                  { code: '9(a)(ii)', preamble: "Individuals infected with hepatitis C produce antibodies.", prompt: "Describe how the activation of T helper cells leads to the production of antibodies.", marks: 4 },
+                  { code: '9(b)', preamble: "Hepatitis C enters liver cells and destroys them. The virus has a similar structure to HIV: it is an RNA virus with a lipid envelope and glycoproteins.", prompt: "Deduce how the hepatitis C virus is able to enter liver cells.", marks: 3 },
+                  { code: '9(c)', preamble: "Another type of virus that causes liver disease is hepatitis B; infection can be treated with drugs and a vaccine is available. Drugs: Entecavir (a daily tablet that inhibits hepatitis B viral polymerase) and Interferon (a weekly injection). Hepatitis B antibodies can be given to newborn babies at risk of infection. Vaccination: three doses provide long-term protection for 95% of those vaccinated.", prompt: "Discuss the use of these different hepatitis B treatments.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 10,
+                scenario: "Resistance of bacteria to antibiotics is an increasing problem, requiring the development of new antibiotics. Researchers have developed new antibiotics that are effective against a number of strains of bacteria; they are all bactericidal.",
+                parts: [
+                  { code: '10(a)', prompt: "Which of the following statements describes a bactericidal antibiotic?\n\nA  a substance that can only be used on the skin\nB  a substance that kills bacteria\nC  a substance that prevents reproduction of bacteria\nD  a substance that prevents reproduction of viruses", marks: 1 },
+                  { code: '10(b)(i)', preamble: "Two new antibiotics (A and B) were tested against two species of bacteria (P and Q) resistant to ciprofloxacin. Each species was grown in cultures containing antibiotic A, antibiotic B, ciprofloxacin or no antibiotic, sampled at 0, 1, 2, 4, 6 and 24 hours, recording log₁₀ viable cells per cm³. For species P with antibiotic B, the log count falls from 6.8 at 0 hours.", prompt: "Calculate the mean rate of decrease in the number of cells in the first four hours for species P for antibiotic B.", marks: 2 },
+                  { code: '10(b)(ii)', prompt: "Comment on the effectiveness of antibiotics A and B against both species of bacteria.", marks: 4 },
+                  { code: '10(b)(iii)', preamble: "A further investigation found the optimum concentration needed to kill bacteria for each of the new antibiotics using cultures on agar plates.", prompt: "Devise a procedure that could be used to find the optimum concentration for each antibiotic.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['D — 31 874 kJ m⁻² yr⁻¹'],
+                guidance: '1 mark. NPP = GPP − R = 87 069 − 55 195 = 31 874.' },
+              '1(a)(ii)': { type: 'exact', points: ['0.065%', '0.065'],
+                guidance: '2 marks. (4615 ÷ 7 112 800) × 100 = 0.065%. 1 mark for correct values selected; 1 mark for the percentage. Correct answer with no working gains full marks.' },
+              '1(b)': { type: 'points', points: [
+                  'Nitrates are needed for amino acid (protein/nucleotide/nucleic acid/ATP) synthesis',
+                  'Magnesium ions are needed to make chlorophyll',
+                  'Calcium ions are needed for calcium pectate / the middle lamella',
+                  'Chlorophyll is needed for photosynthesis and the production of organic molecules/biomass',
+                  'Phosphates are needed for membranes/phospholipids/nucleic acids/ATP/NADP'
+                ], guidance: '3 max. Ignore "nitrogen ions".' },
+              '2(a)': { type: 'points', points: [
+                  '(Carbon dioxide is) needed for the light-independent stage / Calvin cycle',
+                  'It combines with RuBP / ribulose bisphosphate',
+                  'Catalysed by RUBISCO',
+                  'For the synthesis of named organic molecules (e.g. GP, GALP, glucose)'
+                ], guidance: '4 marks. Allow "carbon fixation".' },
+              '2(b)(i)': { type: 'exact', points: ['C — positive correlation'],
+                guidance: '1 mark.' },
+              '2(b)(ii)': { type: 'exact', points: ['B — to determine the repeatability of the data'],
+                guidance: '1 mark.' },
+              '2(c)': { type: 'points', points: [
+                  'All the active sites (of the enzymes) are occupied',
+                  'Enzyme concentration is limiting / no more enzyme–substrate complexes can form',
+                  'RUBISCO cannot fix carbon dioxide any faster',
+                  '(Therefore) limiting the rate of photosynthesis'
+                ], guidance: '3 max. Allow a named enzyme (RUBISCO) and reference to another named limiting factor (light intensity/wavelength, temperature, water).' },
+              '3(a)': { type: 'exact', points: ['Digitalin / digitalis (digitalis soup)'],
+                guidance: '1 mark. Allow extract of foxglove plants. Ignore "foxglove" alone and digoxin.' },
+              '3(b)': { type: 'exact', points: ['Use of a placebo ✗; Testing of dose ✓; Tested on healthy volunteers ✗; Double blind trial ✗'],
+                guidance: '2 marks. 1 mark per two correct; all correct = 2.' },
+              '3(c)': { type: 'points', points: [
+                  'Shortening of the spindle fibres separates the chromatids',
+                  'If spindle fibres cannot shorten, the chromatids/chromosomes cannot be pulled to opposite poles / the cell remains in metaphase',
+                  '(So) the cell cannot enter anaphase/telophase / mitosis cannot be completed'
+                ], guidance: '3 marks. Allow "pull chromatids apart".' },
+              '4(a)': { type: 'points', points: [
+                  'There is a change in the base sequence / triplet code in the DNA/gene',
+                  'This changes the sequence of bases in mRNA (during transcription)',
+                  'Causing a change in the amino acid sequence (at translation)'
+                ], guidance: '3 marks. Allow different mRNA codons; allow fewer amino acids in the chain (earlier STOP codon).' },
+              '4(b)(i)': { type: 'points', points: [
+                  '(CFTR) is in the phospholipid bilayer',
+                  'It extends through both layers of the bilayer'
+                ], guidance: '2 marks. Allow intrinsic/integral/transmembrane. Ignore basal/apical membrane.' },
+              '4(b)(ii)': { type: 'points', points: [
+                  '(From the ribosome) moves to the rER where it is folded / takes its tertiary structure',
+                  'Transported to the Golgi apparatus where it is modified / packaged into vesicles',
+                  'Vesicles fuse with the plasma (cell) membrane, inserting the protein into the membrane'
+                ], guidance: '3 marks. Allow 3D shape. Ignore "binds" and "exocytosis".' },
+              '4(c)': { type: 'points', points: [
+                  'The amino acids in the protein are changed',
+                  '(Therefore) there will be different R groups',
+                  'This changes the bonds formed between amino acids / R groups (e.g. ionic, disulfide, hydrogen)',
+                  '(Polypeptide) folds differently / different tertiary structure'
+                ], guidance: '3 max.' },
+              '5(a)(i)': { type: 'exact', points: ['D — the thylakoid where the light-dependent reactions take place'],
+                guidance: '1 mark.' },
+              '5(a)(ii)': { type: 'exact', points: ['D — the stroma where the light-independent reactions take place'],
+                guidance: '1 mark.' },
+              '5(a)(iii)': { type: 'exact', points: ['D — starch'],
+                guidance: '1 mark.' },
+              '5(b)(i)': { type: 'exact', points: ['Any two of: oxygen, ATP, reduced NADP'],
+                guidance: '1 mark for two correct. Allow O₂, NADPH, NADPH + H⁺, NADPH₂.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'A suitable range of temperatures given (e.g. values between 0 °C and 50 °C)',
+                  'Light intensity kept constant for the duration of the investigation',
+                  'One other abiotic variable controlled (e.g. concentration/volume of DCPIP, pH)',
+                  'A biotic variable controlled (e.g. plant species, mass of plant material, volume of chloroplast extract)',
+                  'Measure the time taken for DCPIP to decolourise / change colour at each temperature'
+                ], guidance: '4 max. Do not allow "the solution goes colourless". Allow use of a colorimeter to measure change in absorbance over time.' },
+              '6(a)': { type: 'points', points: [
+                  '(Polymer/polysaccharide) of alpha glucose',
+                  'Made up of amylose and amylopectin',
+                  'Amylose is unbranched and amylopectin is branched',
+                  'Amylose has 1,4-glycosidic bonds and amylopectin has 1,6 and 1,4 glycosidic bonds'
+                ], guidance: '3 max. Do not allow beta glucose. Allow "amylose is linear/straight-chained".' },
+              '6(b)(i)': { type: 'points', points: [
+                  'Increase in (spring) temperature increased germination for all three species',
+                  '(Because) there is more kinetic energy and more frequent collisions between substrate and enzyme',
+                  '(Therefore) starch is broken down / hydrolysed faster',
+                  'A greater supply of glucose increases the rate of respiration'
+                ], guidance: '3 max. Allow lipids/proteins broken down faster.' },
+              '6(b)(ii)': { type: 'points', points: [
+                  'Increase in temperature may lead to earlier germination / plants growing further north (or in different areas)',
+                  'Change in rainfall patterns may lead to an increase in drought-resistant plants / a change in the distribution of plants'
+                ], guidance: '2 marks.' },
+              '6(c)': { type: 'points', points: [
+                  'Reduces/prevents enzyme activity / inhibits metabolic reactions (slows respiration)',
+                  'Prevents germination',
+                  'Prevents bacterial/fungal growth / decomposition (prevents growth of pathogens)'
+                ], guidance: '3 marks. Do not allow photosynthesis.' },
+              '7(a)(i)': { type: 'exact', points: ['D — a group of individuals of one species living in the same habitat'],
+                guidance: '1 mark.' },
+              '7(a)(ii)': { type: 'points', points: [
+                  '(Each species) occupies a different niche',
+                  'Therefore there is no competition (between deer species) for food/space/territory'
+                ], guidance: '2 marks. Allow "no competition for resources".' },
+              '7(b)(i)': { type: 'exact', points: ['394 (allow 392)'],
+                guidance: '3 marks. q² = 250 ÷ 800 = 0.3125, so q = 0.559 and p = 0.441; 2pq = 0.493; × 800 = 394. 1 mark each for allele frequencies, 2pq, and the number of heterozygotes. Correct answer with no working gains full marks.' },
+              '7(b)(ii)': { type: 'exact', points: ['C — 1 and 3'],
+                guidance: '1 mark. Statement 2 is wrong because heterozygotes increase genetic diversity.' },
+              '7(c)': { type: 'points', points: [
+                  'Detail of random sampling in the two areas',
+                  'A suitably sized quadrat used to sample at least 10 times in each area (e.g. 0.5 m × 0.5 m, 1 m × 1 m)',
+                  'Count the number of species in each quadrat',
+                  'Count the number of individuals of each species in each quadrat',
+                  'Calculation of a diversity index / t-test (or compare species richness)'
+                ], guidance: '4 max. Ignore grid/frame/pin.' },
+              '8(a)(i)': { type: 'exact', points: ['D — lactase reduces the activation energy of the reaction'],
+                guidance: '1 mark.' },
+              '8(a)(ii)': { type: 'points', points: [
+                  'The ribosomes receive mRNA (from the nucleus) / mRNA binds to the ribosome',
+                  '(At the ribosome) an anticodon on tRNA pairs with the complementary codon on the mRNA',
+                  'The ribosome moves along the mRNA',
+                  'Peptide bonds form between the amino acids (held at the ribosome)'
+                ], guidance: '3 max. Allow "ribosome is the site of mRNA translation".' },
+              '8(b)(i)': { type: 'exact', points: ['671% (670.8%)'],
+                guidance: '2 marks. (0.740 − 0.096) = 0.644; (0.644 ÷ 0.096) × 100 = 670.8 ≈ 671%. 1 mark for the difference; 1 mark for the percentage. Correct answer with no working gains full marks.' },
+              '8(b)(ii)': { type: 'points', points: [
+                  'A diet containing milk and dairy acted as a selection pressure',
+                  'Individuals able to produce lactase have an advantage / better nutrition (the allele is advantageous)',
+                  'More likely to survive / live longer and reproduce',
+                  '(Therefore) over time the frequency of the allele increases'
+                ], guidance: '4 marks.' },
+              '9(a)(i)': { type: 'points', points: [
+                  'Increase in (core) body temperature',
+                  'Part of the non-specific (inflammatory) immune response / increases efficiency of the immune response',
+                  'The high temperature destroys the pathogen / denatures pathogen enzymes / prevents viral replication'
+                ], guidance: '2 max.' },
+              '9(a)(ii)': { type: 'points', points: [
+                  '(Activated) T helper cells release cytokines',
+                  'B cells are stimulated to produce B effector cells',
+                  '(B effector) cells differentiate into plasma cells',
+                  'Antibodies are released (by plasma cells)'
+                ], guidance: '4 marks. Allow activated B cells.' },
+              '9(b)': { type: 'points', points: [
+                  'A glycoprotein binds to a complementary receptor on the liver cell',
+                  'The viral envelope fuses with the liver cell membrane',
+                  '(Viral) RNA enters the cell'
+                ], guidance: '3 marks. Allow GP120 / CD4. Ignore capsid.' },
+              '9(c)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Comprehensive knowledge and understanding; consequences discussed and supported throughout by sustained linkage to relevant scientific ideas; a well-developed, sustained line of scientific reasoning that is clear and logically structured. Covers all four treatments and links mode of action to when each would be used.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Adequate knowledge by selecting and applying some relevant facts/concepts; consequences occasionally supported by linkage; some linkages and lines of reasoning with some structure. Mode of action discussed for the drugs and how the vaccine/antibodies protect.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; vague statements with limited linkage; basic information (e.g. which treatments are for active infection vs protecting against infection).' }
+                ],
+                indicative: {
+                  'Indicative content': 'Drugs (Entecavir, Interferon) treat infection; antibodies and the vaccine protect against infection; ease of application (3-dose vaccine vs daily/weekly drugs); vaccination produces memory cells. Vaccine = long-lasting protection; drugs = short-term; antibodies = artificial passive immunity; vaccination = artificial active immunity. Entecavir prevents the virus replicating; interferon inhibits protein synthesis/new virus particles. Drugs reduce viral load; vaccine/antibodies cause destruction by agglutination; drugs useful after exposure; vaccine useful for high-risk workers; interferon an option for the 5% not protected; antibodies useful for newborns with limited immunity.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit. Award marks for a logically structured discussion linking mode of action to clinical use.' },
+              '10(a)': { type: 'exact', points: ['B — a substance that kills bacteria'],
+                guidance: '1 mark.' },
+              '10(b)(i)': { type: 'exact', points: ['≈ 1.58 million cells per hour', '1.575 million', '1.577 million'],
+                guidance: '2 marks. Antilog 6.8 = 6.3 million cells; ÷ 4 h ≈ 1.58 million per hour. 1 mark for the conversion from log to actual number; 1 mark for the rate. Allow 1 mark for 6.8 ÷ 4 = 1.7. Ignore the minus sign.' },
+              '10(b)(ii)': { type: 'points', points: [
+                  '(Overall) A is more effective against bacteria Q',
+                  '(Overall) B is more effective against bacteria P',
+                  'Initially antibiotics A and B are more effective against bacteria Q than bacteria P',
+                  'The bacteria are not resistant to the antibiotics / low numbers of Q in antibiotic B at 24 h are not enough to indicate resistance'
+                ], guidance: '4 marks.' },
+              '10(b)(iii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A procedure supported throughout by analysis/interpretation/evaluation of the scientific information; a well-developed, sustained line of reasoning that is clear, coherent and logically structured. Includes calculation of the zone-of-inhibition area, determination of the minimum effective dose, and repeating with smaller intervals to find the optimum.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A procedure with occasional analysis/interpretation/evaluation; some linkages and lines of reasoning with some structure. Standardised incubation time/temperature, method of adding antibiotic, control of variables.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A limited procedure with generalised comments; basic information (preparing agar plates with bacteria, largest zone = most effective concentration, repeats for each antibiotic).' }
+                ],
+                indicative: {
+                  'Indicative content': 'Aseptic technique; agar plates seeded with bacteria; assess effectiveness via zone of inhibition (largest zone = most effective); repeats; same temperature/time. Range of antibiotic concentrations; apply via wells/paper discs; incubate 24–48 h at 25–40 °C; control variables (bacterial species, soak time, volume); measure zone-of-inhibition diameter; standardised bacterial lawn. Calculate mean area/diameter of the zone of inhibition; repeat with smaller concentration intervals around the dose; identify the minimum effective dose.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit. The optimum concentration is the lowest concentration at which the zone of inhibition shows no further increase.' }
+            } }
+        ] },
       { board: 'Edexcel B', specCode: '9BI0',
         officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/biology-b-2015.html' },
       { board: 'OCR A', specCode: 'H420',
