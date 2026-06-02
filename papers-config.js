@@ -7799,9 +7799,220 @@ window.SUBJECTS = [
                 ],
                 guidance: '3 marks. Reject a bare "0.12 Hz" with no reference to the ship being stopped.' }
             } },
-          { id: 'phys-aqa-7408-2023-p2', year: 'June 2023', paperName: 'Paper 2', paperCode: '7408/2', totalMarks: 85, durationMins: 120, printOnly: true,
+          { id: 'phys-aqa-7408-2023-p2', year: 'June 2023', paperName: 'Paper 2', paperCode: '7408/2', totalMarks: 85, durationMins: 120,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74082-QP-JUN23.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74082-MS-JUN23.PDF' },
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74082-MS-JUN23.PDF',
+            qbqNote: 'Section A (Questions 1–7, 60 marks) is wired up question-by-question with the official mark scheme. Section B (the 25 multiple-choice questions, 25 marks) is in the question paper PDF — open it to attempt those. Figures (graphs, diagrams) are in the QP PDF; the parts that ask you to draw have an on-screen canvas.',
+            questions: [
+              { number: 1,
+                scenario: 'Figure 1 shows a single gas particle P of an ideal gas inside a hollow cube of side length l and volume V. P has mass m and is travelling at a velocity c perpendicular to side W.\n\n(See Figure 1 in the question paper PDF.)',
+                parts: [
+                  { code: '01.1', prompt: 'State what is meant by the internal energy of an ideal gas.', marks: 1 },
+                  { code: '01.2', prompt: 'Explain why P has a change in momentum of −2mc during one collision with W.', marks: 1 },
+                  { code: '01.3', prompt: 'P collides repeatedly with W.\n\nShow that the frequency f of collisions is c/2l.', marks: 1 },
+                  { code: '01.4', prompt: 'Deduce an expression, in terms of m, c and V, for the contribution of P to the pressure exerted on W.\n\nRefer to appropriate Newton\'s laws of motion.', marks: 2 }
+                ] },
+              { number: 2,
+                scenario: 'Figure 2 shows a wheel used in motorsport. A rubber tyre is fitted around a cylindrical metal rim and is filled with a gas. Assume that the volume of gas in the tyre remains constant throughout this question.\n\n(See Figure 2 in the question paper PDF.)',
+                parts: [
+                  { code: '02.1', preamble: 'The mass of the wheel is measured when the gas in the tyre is at a pressure of 1.01 × 10⁵ Pa. More of the same gas is added and the mass of the wheel is measured again. The gas is kept at a constant temperature of 100 °C.\n\nTable 1\nBefore — pressure 1.01 × 10⁵ Pa, mass of wheel 14.897 kg\nAfter — pressure 2.11 × 10⁵ Pa, mass of wheel 14.991 kg', prompt: 'Determine, in kg mol⁻¹, the molar mass of the gas.', marks: 5 },
+                  { code: '02.2', preamble: 'Motorsport regulations specify a minimum amount of gas in the tyre. The amount is checked by measuring the pressure before the wheel is put onto the car. The regulations also specify a maximum temperature for the tyre when making this measurement.', prompt: 'Explain why a maximum temperature is specified.', marks: 2 }
+                ] },
+              { number: 3,
+                scenario: 'A space probe is launched from the Earth\'s surface. Figure 3 shows how the gravitational force acting on the space probe varies with height above the Earth\'s surface.\n\n(See Figure 3 in the question paper PDF.)',
+                parts: [
+                  { code: '03.1', prompt: 'Describe two properties of a radial gravitational field.', marks: 2 },
+                  { code: '03.2', prompt: 'State the physical significance of the shaded area in Figure 3.', marks: 1 },
+                  { code: '03.3', preamble: 'At the Earth\'s surface, the gravitational field strength of the Sun is g_S and the gravitational field strength of the Earth is g_E. Distance from the Earth to the Sun = 1.50 × 10¹¹ m.', prompt: 'Calculate g_S / g_E.', marks: 2 },
+                  { code: '03.4', prompt: 'Explain why g_S is more important than g_E in predicting the motion of the space probe as it escapes from the Solar System.', marks: 1 },
+                  { code: '03.5', preamble: 'The space probe eventually reaches a point where the gravitational influence of the Solar System is negligible. The probe is unpowered as it approaches an isolated interstellar body X, whose gravitational field changes the kinetic energy of the probe.\n\nTable 2 (positions A and B of the probe)\nA — distance from centre of mass of X 6.0 × 10⁶ m, speed 1.1 × 10³ m s⁻¹\nB — distance 0.17 × 10⁶ m, speed 1.3 × 10³ m s⁻¹\n\nThe space probe has a mass of 4.9 × 10⁴ kg.', prompt: 'Calculate the mass of X.', marks: 4 }
+                ] },
+              { number: 4,
+                scenario: 'Figure 4 shows a spark detector used to detect alpha particles. The detector consists of a metal mesh placed 5.0 mm above a wire, with a potential difference of 4000 V applied between them. Molecules in the air between the mesh and the wire are ionised by an alpha particle and a spark is produced. Figure 5 shows equipotentials between the mesh and the wire.\n\n(See Figures 4–7 in the question paper PDF.)',
+                parts: [
+                  { code: '04.1', kind: 'diagram', preamble: 'Figure 5 shows a dashed line between the mesh and the wire.', prompt: 'Sketch, on the axes in Figure 6, a graph to show how the magnitude E of the electric field strength varies with the distance d from the mesh along this dashed line.\n\nNo values are required on the E axis.', marks: 2 },
+                  { code: '04.2', preamble: 'An alpha particle passes through the mesh and ionises an argon atom at P on Figure 5, releasing one electron. The electron and the argon ion have no kinetic energy at P. The electron then travels to the wire and the argon ion travels to the mesh. Assume the air has no effect on their motion. Mass of argon ion = 6.64 × 10⁻²⁶ kg.', prompt: 'Calculate the ratio (speed of electron when it reaches the wire) / (speed of argon ion when it reaches the mesh).', marks: 2 },
+                  { code: '04.3', prompt: 'In practice, the air does affect the motion of the electron and the motion of the argon ion.\n\nSuggest how the presence of air between the mesh and the wire changes the ratio in Question 04.2. No numerical detail is required.', marks: 1 },
+                  { code: '04.4', preamble: 'The alpha source is moved to different heights h above the mesh. Figure 7 shows how the number of sparks N produced in 10 minutes varies with h. No sparks are produced when the source is not present. Student A suggests that the spark rate obeys an inverse-square law; Student B suggests that the spark rate decreases exponentially with h.', prompt: 'Determine whether either student is correct.', marks: 3 }
+                ] },
+              { number: 5,
+                scenario: 'Figure 8 shows a circuit used to investigate the charge and discharge of a capacitor of capacitance C using resistors of resistances R₁ and R₂. The battery has an emf of 6.0 V and negligible internal resistance.\n\n(See Figures 8–10 in the question paper PDF.)',
+                parts: [
+                  { code: '05.1', prompt: 'Show that the time taken for the capacitor to charge from 2.0 V to 4.0 V is approximately 0.7R₁C.', marks: 3 },
+                  { code: '05.2', preamble: 'The capacitor is fully discharged and then charged until the pd across it is 4.0 V. Figure 9 shows the variation with time of the ammeter reading as the capacitor is charged.', prompt: 'Show that the capacitance of the capacitor is about 1 × 10⁻⁴ F.', marks: 4 },
+                  { code: '05.3', preamble: 'When the pd reaches 4.0 V the switch is immediately set to discharge the capacitor. When the pd reaches 2.0 V the switch is immediately set to charge it. Figure 10 shows how the pd across the capacitor varies with time.', prompt: 'Determine the value of R₂.', marks: 3 }
+                ] },
+              { number: 6,
+                scenario: 'Nuclear radii can be estimated using either alpha particles or high-energy electrons.\n\n(See Figures 11–12 in the question paper PDF.)',
+                parts: [
+                  { code: '06.1', prompt: 'State two advantages of using high-energy electrons rather than alpha particles for this estimate.', marks: 2 },
+                  { code: '06.2', kind: 'diagram', preamble: 'Figure 11 shows a beam of electrons, each with the same high energy, incident on a target gas. The electrons are diffracted by the nuclei in the gas and the intensities of the diffracted electrons are measured at various angles θ. The data are used to determine the nuclear radius R of the atoms in the gas.', prompt: 'Sketch, on the axes in Figure 12, a graph showing how the electron intensity varies with θ.', marks: 2 },
+                  { code: '06.3', preamble: 'The radius R of a nucleus is related to its nucleon number A by R = R₀A^(1/3).', prompt: 'Show that this equation is consistent with the idea that all nuclei have the same density.', marks: 2 },
+                  { code: '06.4', prompt: 'The equation R = R₀A^(1/3) is derived from experimental data.\n\nSuggest one reason why the constant density of nuclear material derived from this equation is only approximate.', marks: 1 },
+                  { code: '06.5', preamble: 'The measured radius R of ³⁵₁₇Cl is 4.02 × 10⁻¹⁵ m.', prompt: 'Calculate an estimate of:\n• the constant R₀\n• the density of nuclear material.', marks: 3 }
+                ] },
+              { number: 7,
+                scenario: 'In a thermal nuclear reactor, the neutrons released during fission are slowed down by a moderator.\n\n(See Figures 13–15 in the question paper PDF.)',
+                parts: [
+                  { code: '07.1', prompt: 'Carbon is used as the moderator in some thermal nuclear reactors.\n\nIdentify one other material commonly used as a moderator.', marks: 1 },
+                  { code: '07.2', prompt: 'State two benefits of slowing down the neutrons released during fission.', marks: 2 },
+                  { code: '07.3', preamble: 'The collision of a neutron with the nucleus of a moderator atom is modelled using two gliders on a horizontal frictionless air track. Glider N of mass m_N represents the neutron and glider M of mass m_M represents the moderator nucleus. Figure 13 shows N travelling with initial speed u towards the stationary glider M; they collide and N rebounds with speed v (Figure 14). Figure 15 shows the variation of the ratio v/u with the ratio m_M/m_N.', prompt: 'Show that when m_M/m_N is 12, N loses about 30% of its initial kinetic energy in the collision.', marks: 2 },
+                  { code: '07.4', preamble: 'In a reactor, the speed of a fast-moving neutron is reduced by a series of y random collisions with carbon-12 nuclei. The final kinetic energy E_f of the neutron is E_f = E₀e^(−by), where E₀ is the initial kinetic energy and b = 0.73. A thermal neutron has kinetic energy equivalent to that of the average particle of an ideal gas at a temperature of 350 K. One neutron has an initial kinetic energy of 1.0 MeV.', prompt: 'Calculate the minimum value of y required so that this neutron becomes a thermal neutron.', marks: 3 },
+                  { code: '07.5', prompt: 'Explain, with reference to Figure 15, why elements with a small nucleon number are preferred as moderator materials.', marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'points', points: ['Total kinetic energy of the particles (molecules/atoms)'],
+                guidance: '1 mark. Means total KE — do not accept mean KE or the KE of a single particle. Do not allow any reference that implies potential energy or other energy is added to the KE.' },
+              '01.2': { type: 'points',
+                points: ['The speed is the same before and after the (elastic) collision; describing the initial or final momentum clearly, Δp = p_f − p_i = −mc − mc = −2mc'],
+                guidance: '1 mark. Either the initial or final momentum must be described clearly enough to justify the negative answer.' },
+              '01.3': { type: 'points', points: ['Time between collisions with W = 2l/c (distance 2l ÷ speed c), so f = c/2l'],
+                guidance: '1 mark. Must show evidence of a time calculation using distance and speed. Do not allow any attempted use of v = fλ.' },
+              '01.4': { type: 'points',
+                points: ['Reference to a Newton law AND P = F/A', 'F = mc²/l and P = F/l² = mc²/V'],
+                guidance: '2 marks. The reference to a Newton law can be a simple link between Newton\'s name and an equation.' },
+              '02.1': { type: 'points',
+                points: [
+                  'Attempt to calculate a volume using V = πhd²/4 (e.g. 0.1265 m³ and 0.0316 m³)',
+                  'Subtracts the two volumes to get the gas volume ≈ 0.0949 m³',
+                  'Attempt to find n using pV = nRT with the correct temperature (373 K)',
+                  'Calculates n = 6.46 − 3.09 = 3.37 mol',
+                  'Molar mass = (14.991 − 14.897)/3.37 = 0.028 kg mol⁻¹'
+                ],
+                guidance: '5 marks. Condone powers-of-ten error in the volume.' },
+              '02.2': { type: 'points',
+                points: [
+                  'At a higher temperature the pressure in the tyre increases (p ∝ T)',
+                  'So the tyre could pass the check with a smaller amount of gas / the same pressure can be reached with less gas'
+                ],
+                guidance: '2 marks.' },
+              '03.1': { type: 'points',
+                points: [
+                  'A general property: a region in which a mass experiences a force due to another mass / the force is always attractive (field lines point to the centre of mass; equipotential surfaces are spherical) / it is a non-contact force / the field is conservative',
+                  'Specific to a radial field: the field strength/force has an inverse-square variation with distance'
+                ],
+                guidance: '2 marks. "The force is attractive" on its own is insufficient. The term "force" must be used (not "effect"/"gravity") and "mass" (not "object").' },
+              '03.2': { type: 'points',
+                points: ['The (minimum) energy needed / work done to launch the probe to a height of 8 × 10⁶ m (i.e. the change in GPE from the surface to that height)'],
+                guidance: '1 mark.' },
+              '03.3': { type: 'points',
+                points: [
+                  'Evaluates g_S = GM_S/r² = 5.90 × 10⁻³ N kg⁻¹ (or shows substitution into a valid equation)',
+                  'g_S/g_E = 5.90 × 10⁻³/9.81 = 6.0 × 10⁻⁴ (= 0.060%)'
+                ],
+                guidance: '2 marks. Answer needed to at least 2 sf; if 3+ sf, must round to (6.01 or 6.02) × 10⁻⁴.' },
+              '03.4': { type: 'points',
+                points: ['The force from the Earth is less than the force from the Sun at a similar distance (because the Earth has a much smaller mass) / the total work done moving far from the Sun is much greater than moving far from the Earth'],
+                guidance: '1 mark.' },
+              '03.5': { type: 'points',
+                points: [
+                  'Change in kinetic energy formulated: ΔE_k = ½m(v_B² − v_A²) (≈ 1.18 × 10¹⁰ J)',
+                  'Change in gravitational potential energy formulated: ΔE_p = GMm(1/r_B − 1/r_A) with r_A = 6.0 × 10⁶ m, r_B = 1.7 × 10⁵ m',
+                  'Evidence of intention to equate their E_k and E_p',
+                  'Mass of X = 6.3 × 10²⁰ kg'
+                ],
+                guidance: '4 marks. ECF allowed.' },
+              '04.1': { type: 'points',
+                points: ['Horizontal line above zero for more than half the distance', '(then) curves upwards'],
+                guidance: '2 marks, independent (sketch — use the drawing canvas).' },
+              '04.2': { type: 'points',
+                points: [
+                  'Statement that the (kinetic) energy gained is the same, OR correct substitution into the ratio',
+                  'ratio = √(6.64 × 10⁻²⁶ / 9.11 × 10⁻³¹) = 270'
+                ],
+                guidance: '2 marks.' },
+              '04.3': { type: 'points',
+                points: ['Due to collisions the argon ion loses more energy/speed/momentum than the electron (the argon ion is more ionising / has a higher probability of collision), so the ratio is larger'],
+                guidance: '1 mark (the mark is for the explanation). Do not allow references to air resistance or to different distances travelled.' },
+              '04.4': { type: 'points',
+                points: [
+                  'Suitable test of Student A (inverse square) using 2+ data points, e.g. Nh² = constant',
+                  'Suitable test of Student B (exponential) using 2+ data points, e.g. N should halve in equal intervals of h (or Neᵇʰ not constant)',
+                  'Both tests performed AND both suggestions rejected with reasons (Nh² is not constant and N does not fall by the same fraction in equal intervals of h)'
+                ],
+                guidance: '3 marks. Allow accepting B if a reference to experimental error is made and the difference is small.' },
+              '05.1': { type: 'points',
+                points: [
+                  'Uses V = V₀(1 − e^(−t/RC)) with substitution attempted (V₀ = 6.0 V, larger than the charging voltages)',
+                  'Time to charge to 4.0 V: t₂ = −R₁C ln(1 − 4/6) = 1.10 R₁C; time to 2.0 V: t₁ = −R₁C ln(1 − 2/6) = 0.41 R₁C',
+                  'Δt = t₂ − t₁ = R₁C ln 2 = 0.69 R₁C'
+                ],
+                guidance: '3 marks. Must see 0.69R₁C obtained from a time difference. Award 0 for a solution using the discharge equation.' },
+              '05.2': { type: 'points',
+                points: [
+                  'Attempt to find usable data from Figure 9',
+                  'Determine a scaling factor or R₁ (e.g. R₁ = V/I = 1.0 × 10⁵ Ω)',
+                  'Calculate the charge Q stored at 4 V (≈ 4 × 10⁻⁴ C from the area) or the charging time constant R₁C (≈ 10 s)',
+                  'C = Q/V (or time constant / R₁) = a value rounding to 1.0 × 10⁻⁴ F'
+                ],
+                guidance: '4 marks (2 sf required). Award max 1 for estimating the average current by sight and using C = IT/V.' },
+              '05.3': { type: 'points',
+                points: [
+                  'Reads relevant discharge data from Figure 10 (e.g. the time for the voltage to halve)',
+                  'Valid substitution of their data into t₁ = 0.69RC (allow 0.7RC) to find R_total (≈ 3.0 × 10⁵ Ω) or R₁ (≈ 1.0 × 10⁵ Ω)',
+                  'R₂ = R_total − their R₁ = 2.0 × 10⁵ Ω'
+                ],
+                guidance: '3 marks. Allow one ECF from their R_total or R₁; R₁ may be taken from 05.2.' },
+              '06.1': { type: 'points',
+                points: [
+                  'Electrons give greater resolution (their wavelength can be made very small)',
+                  'Electrons can get closer to the nuclei (no electrostatic repulsion)',
+                  'Electrons have less recoil (small mass compared with the nucleus)',
+                  'Free electrons are easier to accelerate / give energy to (higher charge-to-mass ratio) or easier to produce',
+                  'Scattering distributions are easier to interpret (the strong nuclear interaction is not involved)',
+                  'Using alpha particles only gives the distance of closest approach / an upper limit to the radius'
+                ],
+                guidance: 'Any two. Allow reverse arguments.' },
+              '06.2': { type: 'points',
+                points: ['A curved line showing intensity decreasing as θ increases', 'There is a single non-zero minimum'],
+                guidance: '2 marks (sketch — use the drawing canvas). Do not allow U-shaped graphs; the initial part of the curve may be absent. Max 1 for a line covering less than half the θ axis.' },
+              '06.3': { type: 'points',
+                points: [
+                  'Density = mass/volume = (A·m_nucleon)/((4/3)πR³), substituting R = R₀A^(1/3)',
+                  'Density = 3m_nucleon/(4π R₀³), in which all terms are constant — the expression does not depend on A'
+                ],
+                guidance: '2 marks.' },
+              '06.4': { type: 'points',
+                points: ['One of: the nuclear mass is not exactly A × m_nucleon (this ignores binding energy); the volume equation assumes the nucleus is a perfect sphere; the formula implies uniform density within a nucleus, which is not true; protons and neutrons have slightly different masses'],
+                guidance: '1 mark. Do not accept "the density of individual nucleons can differ".' },
+              '06.5': { type: 'points',
+                points: [
+                  'R₀ = R/A^(1/3) = 4.02 × 10⁻¹⁵ / 35^(1/3) = 1.2(3) × 10⁻¹⁵ m',
+                  'Substitutes into density = mass/volume = (35 × 1.67 × 10⁻²⁷)/((4/3)π(4.02 × 10⁻¹⁵)³)',
+                  'Density = 2.1 × 10¹⁷ kg m⁻³'
+                ],
+                guidance: '3 marks. Accept 2.15 but not 2.2 × 10¹⁷.' },
+              '07.1': { type: 'exact', points: ['Heavy water', 'D2O', 'Beryllium', 'Be', '(normal) water', 'H2O'],
+                guidance: '1 mark.' },
+              '07.2': { type: 'points',
+                points: [
+                  'U-235 fuel is more likely to absorb a slow neutron (fission of U-236 more likely / absorption by U-238 less likely)',
+                  'Slow neutrons are less damaging / cause less fatigue to the reactor structure or shielding',
+                  'Slow neutrons spend longer within the fissionable material, increasing the chance of causing fission',
+                  'Slowing the neutrons transfers heat energy to the moderator (making heat easier to extract)'
+                ],
+                guidance: 'Any two.' },
+              '07.3': { type: 'points',
+                points: [
+                  'final KE / initial KE = (½m_N v²)/(½m_N u²) = (v/u)² = 0.85² = 0.72 (using v/u ≈ 0.85 from Figure 15)',
+                  'Proportion of kinetic energy lost = 1 − 0.72 = 28% (≈ 30%)'
+                ],
+                guidance: '2 marks. MP2 can be ECF for an arithmetic error.' },
+              '07.4': { type: 'points',
+                points: [
+                  'Final kinetic energy = (3/2)kT = 7.2 × 10⁻²¹ J (= 0.045 eV)',
+                  'Initial kinetic energy = 1.0 MeV = 1.6 × 10⁻¹³ J (consistent units)',
+                  'y = ln(E₀/E_f)/b = ln(1.0 × 10⁶ / 0.045)/0.73 = 23.(2)'
+                ],
+                guidance: '3 marks. Condone an answer of 24 provided it is given as an integer.' },
+              '07.5': { type: 'points',
+                points: [
+                  'Figure 15 shows that a low nucleon number (low mass) gives a greater change/reduction in speed/KE in a collision',
+                  'So fewer collisions are needed (the moderator can be made thinner)'
+                ],
+                guidance: '2 marks.' }
+            } },
           { id: 'phys-aqa-7408-2023-p3', year: 'June 2023', paperName: 'Paper 3', paperCode: '7408/3', totalMarks: 80, durationMins: 120, printOnly: true,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74083A-QP-JUN23.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74083A-MS-JUN23.PDF' },
