@@ -189,6 +189,20 @@
     /* Marking phase — display the student's saved answer */
     .qbq-answer-display { margin: 0 22px; padding: 14px 16px; background: var(--surface2); border: 1px solid var(--border); border-left: 3px solid var(--accent); border-radius: 10px; font-size: 14.5px; line-height: 1.65; color: var(--text); white-space: pre-wrap; min-height: 60px; }
     .qbq-answer-display.empty { color: var(--muted2); font-style: italic; }
+    /* A drawn-diagram answer shown back in the marking / review phases. */
+    .qbq-diagram-saved { display: block; max-width: 100%; height: auto; background: #fff; border-radius: 6px; }
+
+    /* Diagram answer — drawing canvas + its toolbar (attempt phase) */
+    .qbq-diagram-wrap { margin: 0 22px; border: 1px solid var(--border); border-radius: 10px; overflow: hidden; background: var(--surface); }
+    .qbq-diagram-toolbar { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; padding: 8px 10px; background: var(--surface2); border-bottom: 1px solid var(--border); }
+    .diagram-tool { display: inline-flex; align-items: center; gap: 5px; padding: 6px 11px; font-size: 13px; font-family: var(--font-body); cursor: pointer; background: var(--surface); color: var(--text); border: 1px solid var(--border); border-radius: 8px; }
+    .diagram-tool.active { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-dark); font-weight: 600; }
+    .diagram-sep { width: 1px; align-self: stretch; background: var(--border); margin: 2px 2px; }
+    .diagram-swatches { display: inline-flex; gap: 6px; }
+    .diagram-color { width: 22px; height: 22px; padding: 0; border-radius: 50%; cursor: pointer; border: 2px solid var(--border); }
+    .diagram-color.active { border-color: var(--accent-dark); box-shadow: 0 0 0 2px var(--accent-dim); }
+    .diagram-width-label { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); }
+    .qbq-diagram-canvas { display: block; width: 100%; height: 420px; background: #fff; cursor: crosshair; touch-action: none; }
 
     /* AI auto-mark panel (sits below the answer in the marking phase) */
     .ai-mark-row { margin: 14px 22px 0; display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
@@ -985,6 +999,28 @@
       // Paper 1 Section B "write a program" parts via `kind: 'code'`.
       function isCodeEntryPart(part) { return part && part.kind === 'code'; }
 
+      // True for parts whose answer is a drawn diagram — graphs, ray
+      // diagrams, circuits, free-body diagrams (common in Physics). Flagged on
+      // the part with `kind: 'diagram'`. The drawing is stored in
+      // response.answer as a PNG data-URL so the existing save / display
+      // pipeline carries it unchanged.
+      function isDiagramPart(part) { return part && part.kind === 'diagram'; }
+
+      // A saved answer is an inline image when it's a data:image/* URL — i.e.
+      // a drawn-diagram answer rather than typed prose.
+      function isImageAnswer(ans) { return typeof ans === 'string' && /^data:image\//.test(ans.trim()); }
+
+      // Render a saved answer for the marking / review phases: a drawn diagram
+      // shows as an image, prose shows as escaped text.
+      function savedAnswerHtml(ans) {
+        const t = (ans || '').trim();
+        if (!t) return `<div class="qbq-answer-display empty">You didn’t answer this part.</div>`;
+        if (isImageAnswer(t)) {
+          return `<div class="qbq-answer-display"><img src="${t}" alt="Your drawn answer" class="qbq-diagram-saved"></div>`;
+        }
+        return `<div class="qbq-answer-display">${esc(t)}</div>`;
+      }
+
       // ---------- In-browser code-runner state ----------
       // Pyodide (Python compiled to WebAssembly) is ~10 MB and async to load,
       // so we lazy-load on the first Run click of a Python program. Cached
@@ -1185,6 +1221,46 @@ builtins.input = __qbq_input
                 <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
                 <button class="btn ghost" id="switchMode">↺ Switch mode</button>
               </div>`;
+          } else if (isDiagramPart(part)) {
+            // ── Drawing canvas for diagram answers (graphs, ray diagrams,
+            // circuits, free-body diagrams). The drawing is exported as a PNG
+            // data-URL into the hidden qbqAnswerInput so save / display /
+            // self-marking all work through response.answer unchanged.
+            const initialDrawing = isImageAnswer(response.answer) ? response.answer : '';
+            bottomHtml = `
+              <div class="qbq-answer-label">Your answer to ${esc(part.code)} — draw your diagram</div>
+              <div class="qbq-diagram-wrap">
+                <div class="qbq-diagram-toolbar">
+                  <button type="button" class="diagram-tool active" data-tool="pen">✏️ Pen</button>
+                  <button type="button" class="diagram-tool" data-tool="eraser">🩹 Eraser</button>
+                  <span class="diagram-sep"></span>
+                  <span class="diagram-swatches">
+                    <button type="button" class="diagram-color active" data-color="#1a1a1a" style="background:#1a1a1a" title="Black"></button>
+                    <button type="button" class="diagram-color" data-color="#dc2626" style="background:#dc2626" title="Red"></button>
+                    <button type="button" class="diagram-color" data-color="#2563eb" style="background:#2563eb" title="Blue"></button>
+                  </span>
+                  <span class="diagram-sep"></span>
+                  <label class="diagram-width-label">Pen width
+                    <input type="range" id="diagramWidth" min="1" max="10" value="2">
+                  </label>
+                  <span class="spacer"></span>
+                  <button type="button" class="btn ghost" id="diagramUndo">↶ Undo</button>
+                  <button type="button" class="btn ghost" id="diagramClear">🗑 Clear</button>
+                </div>
+                <canvas id="qbqDiagramCanvas" class="qbq-diagram-canvas" aria-label="Drawing area for your diagram answer"></canvas>
+              </div>
+              <textarea id="qbqAnswerInput" style="display:none;">${esc(initialDrawing)}</textarea>
+              <div class="qbq-answer-meta">
+                <span id="qbqWordCount">${initialDrawing ? 'Diagram saved' : 'Blank canvas'}</span>
+                <span>Autosaves as you draw. You'll self-mark against the MS at the end.</span>
+              </div>
+              <div class="qbq-controls">
+                <button class="btn" id="prevBtn" ${idx === 0 ? 'disabled' : ''}>← Previous</button>
+                <button class="btn primary" id="nextBtn">${idx === totalParts - 1 ? 'Finish answering →' : 'Save & Next →'}</button>
+                <span class="spacer"></span>
+                <span class="nav-hint">Skip to: <select id="jumpTo" style="margin-left:4px;padding:4px 8px;border-radius:6px;border:1px solid var(--border);background:var(--surface);font-family:var(--font-body);font-size:12px;color:var(--text);"></select></span>
+                <button class="btn ghost" id="switchMode">↺ Switch mode</button>
+              </div>`;
           } else {
             bottomHtml = `
               <div class="qbq-answer-label">Your answer to ${esc(part.code)}</div>
@@ -1227,7 +1303,7 @@ builtins.input = __qbq_input
           bottomHtml = `
             <div class="qbq-answer-label">Your answer to ${esc(part.code)} (from the attempt phase)</div>
             <div class="qbq-answer-area">
-              <div class="qbq-answer-display${ans ? '' : ' empty'}">${ans ? esc(ans) : "You didn’t write an answer for this part."}</div>
+              ${savedAnswerHtml(response.answer)}
             </div>
             ${aiRowHtml}
             <div class="qbq-controls">
@@ -1258,7 +1334,7 @@ builtins.input = __qbq_input
             </div>
             <div class="qbq-answer-label" style="margin-top:18px;">Your answer to ${esc(part.code)}</div>
             <div class="qbq-answer-area">
-              <div class="qbq-answer-display${ans ? '' : ' empty'}">${ans ? esc(ans) : "You didn’t write an answer for this part."}</div>
+              ${savedAnswerHtml(response.answer)}
             </div>
             <div id="aiFeedbackSlot" style="margin:14px 22px 0;">${cachedFeedback}</div>
             <div class="qbq-controls">
@@ -1392,6 +1468,114 @@ builtins.input = __qbq_input
               if (!newStarter) return;
               if (!confirm('Reset to the starter code? Your current code will be lost.')) return;
               cm.setValue(newStarter);
+            });
+          } else if (isDiagramPart(part)) {
+            // ── Free-hand drawing surface. Strokes are vector-tracked this
+            // session so Undo works; a resumed drawing loads as a baseline
+            // image underneath new strokes. Each stroke end exports the canvas
+            // to a PNG data-URL saved as response.answer (same pipeline as text).
+            const canvas = document.getElementById('qbqDiagramCanvas');
+            const hidden = document.getElementById('qbqAnswerInput');
+            const wcEl = document.getElementById('qbqWordCount');
+            const ctx = canvas.getContext('2d');
+            const dpr = window.devicePixelRatio || 1;
+            const cssH = 420;
+            let cssW = 0;
+            let baselineImg = null;
+            const strokes = [];               // [{tool,color,width,points:[{x,y}]}]
+            let tool = 'pen', color = '#1a1a1a', penWidth = 2;
+            let drawing = null;               // current stroke while pointer is down
+
+            const sizeCanvas = () => {
+              cssW = canvas.clientWidth || (canvas.parentElement && canvas.parentElement.clientWidth) || 700;
+              canvas.style.height = cssH + 'px';
+              canvas.width = Math.round(cssW * dpr);
+              canvas.height = Math.round(cssH * dpr);
+              ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+            };
+            const drawStroke = (s) => {
+              if (!s.points.length) return;
+              ctx.lineJoin = ctx.lineCap = 'round';
+              ctx.strokeStyle = s.tool === 'eraser' ? '#ffffff' : s.color;
+              ctx.lineWidth = s.tool === 'eraser' ? Math.max(s.width * 6, 14) : s.width;
+              ctx.beginPath();
+              ctx.moveTo(s.points[0].x, s.points[0].y);
+              for (let i = 1; i < s.points.length; i++) ctx.lineTo(s.points[i].x, s.points[i].y);
+              if (s.points.length === 1) ctx.lineTo(s.points[0].x + 0.01, s.points[0].y); // a dot
+              ctx.stroke();
+            };
+            const redraw = () => {
+              ctx.clearRect(0, 0, cssW, cssH);
+              ctx.fillStyle = '#ffffff';
+              ctx.fillRect(0, 0, cssW, cssH);
+              if (baselineImg) ctx.drawImage(baselineImg, 0, 0, cssW, cssH);
+              strokes.forEach(drawStroke);
+            };
+            const save = () => {
+              const data = canvas.toDataURL('image/png');
+              hidden.value = data;
+              attempt.responses[idx].answer = data;
+              saveAttempt(attempt);
+              if (wcEl) wcEl.textContent = (strokes.length || baselineImg) ? 'Diagram saved' : 'Blank canvas';
+            };
+            const posFromEvent = (e) => {
+              const r = canvas.getBoundingClientRect();
+              return { x: e.clientX - r.left, y: e.clientY - r.top };
+            };
+            sizeCanvas();
+            // Load any resumed drawing as a baseline layer, then render.
+            const initial = isImageAnswer(response.answer) ? response.answer : '';
+            if (initial) {
+              const img = new Image();
+              img.onload = () => { baselineImg = img; redraw(); };
+              img.src = initial;
+            } else {
+              redraw();
+            }
+            canvas.addEventListener('pointerdown', (e) => {
+              e.preventDefault();
+              canvas.setPointerCapture(e.pointerId);
+              drawing = { tool, color, width: penWidth, points: [posFromEvent(e)] };
+              redraw(); drawStroke(drawing);
+            });
+            canvas.addEventListener('pointermove', (e) => {
+              if (!drawing) return;
+              drawing.points.push(posFromEvent(e));
+              redraw(); drawStroke(drawing);
+            });
+            const endStroke = () => {
+              if (!drawing) return;
+              strokes.push(drawing);
+              drawing = null;
+              redraw();
+              save();
+            };
+            canvas.addEventListener('pointerup', endStroke);
+            canvas.addEventListener('pointercancel', endStroke);
+            canvas.addEventListener('pointerleave', endStroke);
+            // Tool buttons (pen / eraser).
+            document.querySelectorAll('.diagram-tool').forEach(b => b.addEventListener('click', () => {
+              tool = b.dataset.tool;
+              document.querySelectorAll('.diagram-tool').forEach(x => x.classList.toggle('active', x === b));
+            }));
+            // Colour swatches (selecting a colour also switches back to pen).
+            document.querySelectorAll('.diagram-color').forEach(b => b.addEventListener('click', () => {
+              color = b.dataset.color; tool = 'pen';
+              document.querySelectorAll('.diagram-color').forEach(x => x.classList.toggle('active', x === b));
+              document.querySelectorAll('.diagram-tool').forEach(x => x.classList.toggle('active', x.dataset.tool === 'pen'));
+            }));
+            const widthEl = document.getElementById('diagramWidth');
+            widthEl.addEventListener('input', () => { penWidth = parseInt(widthEl.value, 10) || 2; });
+            // Undo drops the last stroke (can't undo into a resumed baseline —
+            // Clear wipes everything including it).
+            document.getElementById('diagramUndo').addEventListener('click', () => {
+              if (!strokes.length) return;
+              strokes.pop(); redraw(); save();
+            });
+            document.getElementById('diagramClear').addEventListener('click', () => {
+              if (!strokes.length && !baselineImg) return;
+              if (!confirm('Clear the whole drawing? This can’t be undone.')) return;
+              strokes.length = 0; baselineImg = null; redraw(); save();
             });
           } else {
             const ta = document.getElementById('qbqAnswerInput');
