@@ -248,8 +248,8 @@
   // exam series (year) into nested collapsible groups — so a board with 15+
   // papers shows a handful of one-line series rows instead of a long table.
   // Boards render collapsed by default (openByDefault is false at the call
-  // site); when a user expands one, its most-recent series starts open so
-  // the latest papers show immediately without a second click.
+  // site), and every series inside starts collapsed too — the user expands
+  // exactly the board + series they want, nothing is pre-opened.
   function boardBlockHtml(board, openByDefault) {
     if (!Array.isArray(board.papers) || !board.papers.length) return '';
     // Sort papers by year then by paper code so the most-recent sitting
@@ -289,10 +289,10 @@
         </div>`;
     };
 
-    const seriesHtml = seriesOrder.map((yr, i) => {
+    const seriesHtml = seriesOrder.map((yr) => {
       const ps = seriesMap.get(yr);
       return `
-        <details class="series-block"${i === 0 ? ' open' : ''}>
+        <details class="series-block">
           <summary class="series-summary">
             <span class="ss-year">${esc(yr)}</span>
             <span class="ss-count">${ps.length} paper${ps.length === 1 ? '' : 's'}</span>
