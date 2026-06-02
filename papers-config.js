@@ -4315,7 +4315,497 @@ window.SUBJECTS = [
             totalMarks: 140,
             durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/726572-question-paper-algorithms-and-programming.pdf',
-            msUrl: 'https://www.ocr.org.uk/Images/726742-mark-scheme-algorithms-and-programming.pdf'
+            msUrl: 'https://www.ocr.org.uk/Images/726742-mark-scheme-algorithms-and-programming.pdf',
+            questions: [
+              {
+                number: 1,
+                scenario: "A student has written this program:\n\n    01  a = 12\n    02  do\n    03      b = input(\"Enter a number\")\n    04  until b >= 0 and b <= 100\n    05  for c = 1 to a\n    06      print(c * a)\n    07  next c",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Describe what is meant by a variable.", marks: 2 },
+                  { code: '1(a)(ii)', prompt: "Give the identifiers of all the variables used in this program.", marks: 1 },
+                  { code: '1(b)',
+                    preamble: "The student has used a do loop on line 02.",
+                    prompt: "Describe the difference between a do loop and a while loop.", marks: 2 },
+                  { code: '1(c)', prompt: "Rewrite lines 05 to 07 to use a while loop instead of a for loop.\n\nYou should write your answer using either program code or pseudocode.", marks: 4 }
+                ]
+              },
+              {
+                number: 2,
+                parts: [
+                  { code: '2', extended: true,
+                    preamble: "A company runs a Virtual Learning Environment (VLE). Schools register students; each school has up to 1000 students; there are over 10 000 schools registered. Students watch videos, take quizzes and communicate using forums and online chat. The company gathers a large amount of data and wants to use data mining to help improve the VLE.",
+                    prompt: "Discuss how the company can use data mining to decide how to improve the VLE.\n\nYou should include:\n  • the characteristics of data mining\n  • the benefits of data mining in this scenario\n  • the drawbacks of data mining in this scenario.", marks: 12 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: "A computer game has a building containing 7 rooms (A–G). Fig. 3 represents the rooms and the passages between them as a weighted graph. Heuristic values below each node (the bold numbers):\n    A=90, B=80, C=43, D=70, E=20, F=8, G=0\n\nWeighted edges (approximate, see QP for diagram):\n    A–B = 20, A–C = 44, B–D = 13, C–E = 22, D–E = 56,\n    D–G = 80, D–F = 62, E–F = 20, F–G = 15 (and others — see QP)",
+                parts: [
+                  { code: '3(a)',
+                    preamble: "The number in bold below each node in Fig. 3 is the heuristic value.",
+                    figure: { type: 'table', label: 'A* working table (complete one row per node)',
+                      headers: ['Node', 'Distance travelled', 'Heuristic', 'Distance + Heuristic', 'Previous node'],
+                      rows: [['A','','','',''], ['B','','','',''], ['C','','','',''], ['D','','','',''], ['E','','','',''], ['F','','','',''], ['G','','','','']] },
+                    prompt: "Perform an A* algorithm on the graph in Fig. 3 to find the shortest path from A to G.\n\nShow your working, the nodes visited and the distance.", marks: 7 },
+                  { code: '3(b)', prompt: "State four ways that a graph data structure is different from a tree data structure.", marks: 4 },
+                  { code: '3(c)', extended: true,
+                    preamble: "The final game will involve multiple computer-controlled characters and interactive elements that make use of AI to determine moves. The AI will use heuristics.",
+                    prompt: "Discuss how heuristics can be used in algorithms.\n\nYou should include:\n  • the purpose of heuristics\n  • the benefits and drawbacks of heuristics\n  • the suitability of heuristics in algorithms within a computer game.", marks: 9 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: "The current contents of a queue data structure (Fig. 4):\n\n    [20] [15] [3] [2]\n     ^                ^\n  headPointer    tailPointer",
+                parts: [
+                  { code: '4(a)', prompt: "State the purpose of headPointer and tailPointer in the queue shown in Fig. 4.", marks: 2 },
+                  { code: '4(b)',
+                    preamble: "enqueue will add data to the queue. dequeue will remove data from the queue.",
+                    prompt: "Show the contents of the queue and the position of both pointers after the following actions in order:\n  • enqueue(20)\n  • dequeue()\n  • dequeue()", marks: 2 },
+                  { code: '4(c)',
+                    preamble: "The queue is used to store ID numbers of jobs that a program needs to process. Some jobs will be given a priority which means they need to be processed first.",
+                    prompt: "Explain why this queue is not a suitable data structure for this program.", marks: 2 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "The contents of a stack are stored in a 1-dimensional array called numbers. topStack stores the index of the next free space. The array has space for 100 elements.",
+                parts: [
+                  { code: '5(a)', prompt: "The function pop() returns the next item from the stack and updates the appropriate pointers. Describe the steps in the function pop().", marks: 4 },
+                  { code: '5(b)',
+                    preamble: "Complete the function push() using pseudocode or program code:\n\n    function push(______)\n        if ______ != 100 then\n            numbers[______] = dataValue\n            topStack = topStack + ______\n            return true\n        else\n            return false\n        endif\n    endfunction",
+                    prompt: "Fill in the four blanks (the parameter name, the value being compared with 100, the index used to write to the array, and the increment).", marks: 4 },
+                  { code: '5(c)', prompt: "Write an algorithm, using pseudocode or program code, to call the function push() with the value 15 and output \"Added\" if successful or \"Not Added\" if the stack is full.", marks: 4 }
+                ]
+              },
+              {
+                number: 6,
+                scenario: 'The following strings are stored in an array:\n\n    "rainbow" "moon" "sun" "stars" "clouds" "tornado"',
+                parts: [
+                  { code: '6(a)', prompt: 'Explain how a linear search would search the array for the index that stores "clouds".', marks: 3 },
+                  { code: '6(b)', prompt: "State why a binary search cannot be used in this example.", marks: 1 },
+                  { code: '6(c)', prompt: "Show how an insertion sort will sort the given data into ascending alphabetical order.\n\n(List each pass showing the array contents — indicate which passes change values.)", marks: 5 },
+                  { code: '6(d)(i)',
+                    preamble: "A sorting algorithm has a best time complexity of O(n).",
+                    prompt: "Describe what is meant by the best time complexity O(n) for a sorting algorithm.", marks: 2 },
+                  { code: '6(d)(ii)',
+                    preamble: "Another sorting algorithm has a worst space complexity of O(log(n)).",
+                    prompt: "Describe what is meant by the worst space complexity O(log(n)) for a sorting algorithm.", marks: 2 },
+                  { code: '6(d)(iii)', prompt: "Identify the time complexity that means the time will not change even when the number of items increases.", marks: 1 },
+                  { code: '6(d)(iv)', prompt: "Identify the space complexity that means the amount of memory (space) used will double each time a new item is included.", marks: 1 }
+                ]
+              },
+              {
+                number: 7,
+                scenario: "A computer game stores tasks that the player has requested. Each task has:\n  • an identification (ID) number (e.g. Task A)\n  • a real number to be processed (e.g. 123456.789)\n  • an integer to represent the order the tasks should be accessed (e.g. 1; 1 = earliest).\nTwo or more tasks can have the same order number.",
+                parts: [
+                  { code: '7(a)',
+                    preamble: "Each task will store an ID number, data value and order number.",
+                    prompt: "Explain why a record data structure is suitable for this data.", marks: 2 },
+                  { code: '7(b)(i)',
+                    preamble: "The tasks will be stored in a binary search tree before they are processed, in ascending order by their order number.",
+                    prompt: "Give two characteristics of a binary search tree.", marks: 2 },
+                  { code: '7(b)(ii)', prompt: "Give an advantage of storing the tasks in a binary search tree instead of a 1-dimensional array.", marks: 1 },
+                  { code: '7(b)(iii)',
+                    figure: { type: 'table', label: 'Tick one column per row (Depth-first post-order / Breadth-first / Neither)',
+                      headers: ['Statement', 'Depth-first (post-order)', 'Breadth-first', 'Neither'],
+                      rows: [
+                        ['All nodes at the current depth are visited before moving to the next depth', '', '', ''],
+                        ['The algorithm traverses to the end of one branch before moving to another branch', '', '', ''],
+                        ['The algorithm will make use of backtracking', '', '', ''],
+                        ['The traversal can be used to output the contents of the tree in ascending order', '', '', ''],
+                        ['The algorithm will output the root node last', '', '', '']
+                      ] },
+                    prompt: "Tick one column in each row to identify whether each statement applies to a depth-first (post-order) tree traversal, a breadth-first tree traversal, or neither of these two traversals when performed on a binary search tree.", marks: 5 },
+                  { code: '7(b)(iv)',
+                    preamble: "Current BST contents (order shown next to each task):\n\n                            Task A (Order 6)\n                           /              \\\n               Task B (Order 3)        Task D (Order 9)\n              /          \\              /            \\\n        Task E (Ord 1)  Task C (5)  Task F (7)   Task H (10)\n        /                              \\\n   Task I (Ord 2)                  Task G (Order 6 — same as A, classed higher)\n\nWhen a new task is inserted with the same order number as a pre-existing task, it is classed as having a higher order number.",
+                    prompt: "Describe where the following tasks are inserted into the BST, in this order:\n  • Task X with order number 12\n  • Task Y with order number 7\n  • Task Z with order number 11", marks: 3 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "A group of students are designing a racing car game. The game will allow players to enter their name and then a choice of vehicle. They will then race against other vehicles that will be controlled by the program. Players will use the arrow keys to control their vehicle.",
+                parts: [
+                  { code: '8(a)',
+                    figure: { type: 'table', label: 'Inputs and outputs (2 of each)',
+                      headers: ['Input/Output', 'Description'],
+                      rows: [['Input 1', ''], ['Input 2', ''], ['Output 1', ''], ['Output 2', '']] },
+                    prompt: "Complete the table by identifying two inputs and two outputs for the game.", marks: 4 },
+                  { code: '8(b)(i)',
+                    preamble: "The students use abstraction during the design process.",
+                    prompt: "State what is meant by abstraction and describe how it can be used to design the racing car game.", marks: 3 },
+                  { code: '8(b)(ii)', prompt: "Explain why it is beneficial to use abstraction when designing a computer program such as a game.", marks: 3 },
+                  { code: '8(c)(i)',
+                    preamble: "The group of students also use decomposition.",
+                    prompt: "State what is meant by decomposition.", marks: 1 },
+                  { code: '8(c)(ii)', prompt: "Describe one benefit of using decomposition when designing a computer program such as a game.", marks: 2 }
+                ]
+              },
+              // ── SECTION B (40 marks)
+              {
+                number: 9,
+                scenario: "A game is being written that makes use of object-oriented programming. A prototype for one part of the game is being designed: a character, a road and a prize to collect.\n\nThe road will have 50 spaces that a character can move along. Each space will store a null value or a prize object. Spaces are numbered sequentially from 0 to 49 and won't change during the game. As the player travels down the road, the position is output.",
+                parts: [
+                  { code: '9(a)',
+                    preamble: "The road is designed as a 1-dimensional array with identifier road.",
+                    prompt: "Explain why an array is a suitable data structure to represent the road.", marks: 3 },
+                  { code: '9(b)(i)',
+                    preamble: "The class design for Prize:\n\n    class: Prize\n    attributes:\n        private name : string\n        private type : string\n        private value : integer\n    methods:\n        new()\n        getName()\n        getType()\n        getValue()\n\nnew() is the constructor — name, type and value are passed in and assigned to the attributes.",
+                    prompt: "The method getName() returns the data in the attribute name. Write the method getName() using pseudocode or program code.", marks: 2 },
+                  { code: '9(b)(ii)',
+                    preamble: "A global 1-D array allPrizes stores 10 objects of type Prize. The prize at index 3 has name \"Box\", type \"money\" and value 25.",
+                    prompt: "Write pseudocode or program code to create a new object for this prize and store it in index 3 of allPrizes.", marks: 3 },
+                  { code: '9(b)(iii)',
+                    preamble: "The game starts with 10 prizes. Each prize is allocated to one space on the road; each road space can only store one prize.",
+                    prompt: "Describe the decisions that will need to be made in the algorithm that randomly assigns each prize to a unique road space, and how these decisions affect the program flow.", marks: 3 },
+                  { code: '9(c)(i)', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/02 June 2024 Q9(c)(i) — Character constructor\n# class: Character\n# attributes: private name, private money, private experience, private roadPosition\n# Constructor takes the name as a parameter; initialises:\n#   experience = 0, roadPosition = 0, money = 5\n\nclass Character:\n    # TODO: write the constructor method (only).\n    pass\n\n\n# ── Test driver (do not modify) ──\np = Character('Jamal')\nprint(f\"Name: {getattr(p, '_Character__name', getattr(p, 'name', '?'))}\")\nprint(f\"Money: {getattr(p, '_Character__money', getattr(p, 'money', '?'))}\")\nprint(f\"Experience: {getattr(p, '_Character__experience', getattr(p, 'experience', '?'))}\")\nprint(f\"Road position: {getattr(p, '_Character__roadPosition', getattr(p, 'roadPosition', '?'))}\")\nprint(\"Expected: Name=Jamal, Money=5, Experience=0, Road position=0\")\n"
+                    },
+                    testInputs: [],
+                    preamble: "Full class design for Character:\n\n    class: Character\n    attributes: private name, private money, private experience, private roadPosition\n    methods: new(), getName(), getMoney(), getExperience(), getRoadPosition(),\n             changePosition(), updateValues()\n\nThe constructor takes a name parameter. It initialises experience and roadPosition to 0 and money to 5.",
+                    prompt: "Write the constructor method for Character using either pseudocode or program code. You do not need to declare the class, the attributes or any other methods.\n\nClick ▶ Run. A correct implementation prints Name=Jamal, Money=5, Experience=0, Road position=0.", marks: 5 },
+                  { code: '9(c)(ii)', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/02 June 2024 Q9(c)(ii) — updateValues method\n# Takes two parameters: pType (string), pValue (integer)\n#   If pType is \"money\":      add pValue to character's money\n#   If pType is \"experience\": add pValue to character's experience\n#   Otherwise: no change\n\nclass Character:\n    def __init__(self):\n        self.money = 100\n        self.experience = 50\n    \n    # TODO: write updateValues(self, pType, pValue).\n\n\n# ── Test driver (do not modify) ──\np = Character()\np.updateValues('money', 10)\nprint(f\"After money+10: Money={p.money}  (expected 110)\")\np.updateValues('experience', 5)\nprint(f\"After exp+5:    Experience={p.experience}  (expected 55)\")\np.updateValues('foo', 9)\nprint(f\"After foo+9:    Money={p.money} Experience={p.experience}  (expected unchanged: 110 / 55)\")\n"
+                    },
+                    testInputs: [],
+                    preamble: "The type and value of a prize are passed as parameters to updateValues(pType, pValue). If pType is \"money\" the value is added to money; if \"experience\" the value is added to experience; otherwise no changes.",
+                    prompt: "Write pseudocode or program code for the method updateValues().\n\nClick ▶ Run. A correct implementation prints:\n  After money+10: Money=110\n  After exp+5:    Experience=55\n  After foo+9:    Money=110 Experience=55", marks: 5 },
+                  { code: '9(d)',
+                    preamble: "Incomplete pseudocode that:\n  • creates a new character named Jamal\n  • loops until the character reaches the end of the road\n  • generates a random number of spaces to move (1–4 inclusive)\n  • moves the character and checks if the new space has a prize\n  • updates the character if there is a prize\n  • outputs the character's new attribute values\n\n    character1 = new ______(\"Jamal\")\n    newPosition = 0\n    while newPosition < ______\n        move = random(1, 4)\n        character1.changePosition(move)\n        newPosition = character1.getRoadPosition()\n        if newPosition < 50 and road[______] != null then\n            prizeType = road[newPosition].getType()\n            valueAmount = road[newPosition].getValue()\n            character1.updateValues(______, valueAmount)\n            print(\"Congratulations you are in position\", newPosition, \"and found\", road[newPosition].getName())\n            print(\"Money =\", character1.getMoney(), \"and experience =\", character1.______())\n        endif\n    ______\n    print(\"You reached the end of the road\")",
+                    prompt: "Complete the pseudocode by filling in the six blanks (class name, loop upper bound, road index inside the if, parameter to updateValues, getExperience call, and the loop terminator).", marks: 6 },
+                  { code: '9(e)',
+                    preamble: "The procedure displayRoad() outputs the contents of each space. The number of each space is output with either \"empty\" if there is no prize, or the name of the prize otherwise.\n\n    01 procedure displayRoad()\n    02     for x = 0 to 60\n    03     print(\"Space\", y)\n    04     if road[x] == null then\n    05         print(\"empty\")\n    06     elseif\n    07         print(road[x].getValue())\n    08     endif\n    09     next x\n    10 endprocedure\n\nThe algorithm contains errors.",
+                    prompt: "Give the line number of four different errors and write the corrected line for each. (Format: Line N: <corrected line>)", marks: 4 },
+                  { code: '9(f)', extended: true,
+                    preamble: "A programmer is going to create a prototype for one small part of the game. Both road and allPrizes will be needed throughout the whole prototype. The programmer is considering making these global arrays as she thinks it will reduce development time. Another programmer has suggested this may create some problems when the rest of the game is created at a later stage.",
+                    prompt: "Compare the use of global and local variables in this program.\n\nYou should include:\n  • the use of local and global variables\n  • alternative methods to using global variables\n  • the appropriateness of each to this program design.", marks: 9 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'points',
+                points: [
+                  'A named location in memory',
+                  'Used to store data / a value',
+                  'Whose value can change while the program is running'
+                ],
+                guidance: '2 marks: 1 per bullet (max 2).' },
+              '1(a)(ii)': { type: 'exact',
+                points: ['a, b, c'],
+                guidance: '1 mark for all three (a, b, c).' },
+              '1(b)': { type: 'points',
+                points: [
+                  'A do (do-until) loop checks the condition AFTER executing the body, so the body always runs at least once',
+                  'A while loop checks the condition BEFORE executing the body, so the body may not run at all',
+                  'Do loops are typically condition-controlled at the end; while loops are condition-controlled at the start'
+                ],
+                guidance: '2 marks: 1 for "do runs body first / while checks first", 1 for the consequence (at-least-once vs zero-or-more).' },
+              '1(c)': { type: 'points',
+                points: [
+                  'Initialise the counter (e.g. c = 1)',
+                  'while c <= a (or c < a + 1 etc.) — condition correct',
+                  'print(c * a) inside the loop',
+                  'Increment counter inside the loop (c = c + 1)'
+                ],
+                guidance: '4 marks: 1 per bullet. Accept c = 0 with adjusted bound. Off-by-one errors lose the condition mark.' },
+              '2': { type: 'levels',
+                levels: [
+                  { range: [9, 12], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of data mining; accurate and detailed. Knowledge applied directly and consistently to context, with explicitly relevant evidence. Well-developed line of reasoning.' },
+                  { range: [5, 8], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of data mining; generally accurate. Knowledge applied to context with one or two missed opportunities. Reasonable discussion, mostly focused.' },
+                  { range: [1, 4], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of data mining; some inaccuracies. Limited attempt to apply knowledge to context.' }
+                ],
+                indicative: {
+                  'AO1 — Characteristics of data mining': 'Process of analysing large datasets to identify patterns/trends/correlations. Uses techniques like classification, clustering, regression, association rules. Often requires large volumes of data.',
+                  'AO2 — Application to VLE': 'Could identify which videos / quizzes / forums are most/least used; trends across schools (small vs large); time-of-day usage; common dropout points in courses; correlations between quiz scores and forum participation; identify struggling students.',
+                  'AO3 — Benefits & drawbacks': 'Benefits: improve features students use most (more revenue); identify unused features → redirect dev resources; better resource allocation; predict student behaviour; tailor content. Drawbacks: data mining can find correlations without explaining causation (extra research needed); privacy concerns about logging activity; requires powerful hardware; legality / T&Cs; analysis costs (may need external company); security of collected data.'
+                },
+                guidance: '12 marks total. Best-fit by overall quality.' },
+              '3(a)': { type: 'exact',
+                points: [
+                  'Node A: distance 0, heuristic 90, total 90, previous N/A',
+                  'Node B: distance 20, heuristic 80, total 100, previous A',
+                  'Node C: distance 44, heuristic 43, total 87, previous A',
+                  'Node D: distance 128, heuristic 70, total 198, previous E',
+                  'Node E: distance 66, heuristic 20, total 86, previous C',
+                  'Node F: distance 81, heuristic 8, total 89, previous E',
+                  'Node G: distance 90, heuristic 0, total 90, previous F',
+                  'Final path: A → C → E → F → G, distance = 90'
+                ],
+                guidance: '7 marks: 1 per correct row of the working table, max 6 + 1 mark for final path / distance. For Row A allow N/A, None, Null, − or blank.' },
+              '3(b)': { type: 'points',
+                points: [
+                  'Trees have one root node // graphs do not have a root node',
+                  'Trees do not allow cycles / loops // graphs do allow cycles / loops',
+                  'Trees store hierarchy // graphs have no hierarchy',
+                  'Trees are always undirected // graphs can be directed',
+                  'Trees are always connected // graphs can be connected or disconnected'
+                ],
+                guidance: '4 marks: 1 per difference, max 4. Do NOT allow responses related to weighted/unweighted.' },
+              '3(c)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of heuristics; accurate and detailed. Knowledge applied directly and consistently to the computer-game context; explicitly relevant evidence. Well-developed line of reasoning.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of heuristics. Knowledge applied to context with one or two missed opportunities.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of heuristics; some inaccuracies. Limited attempt to apply knowledge to context.' }
+                ],
+                indicative: {
+                  'AO1 — Purpose of heuristics': 'Reduce time taken to solve a problem. A general "rule of thumb" or educated guess. Finds a solution that is "good enough" / close to the best solution. A weight added to a node/decision. E.g. used in A* algorithm as estimate of distance to destination.',
+                  'AO2 — Benefits & drawbacks': 'Reduce time complexity (every possibility doesn\'t need to be examined). Require skill to implement effectively. Used in AI when exact steps can\'t be pre-programmed. Due to time-saving, not always accurate — solution might not be the most efficient.',
+                  'AO3 — Suitability in a computer game': 'More appropriate with complex time-critical tasks (some game aspects need faster decisions). More appropriate with large-scale tasks (game could be large; AI algorithms may need shortening). Games are not life-critical — a "good enough" answer is usually enough. Avoid programs running indefinitely — in a game there could be too many possibilities, so heuristics terminate with a solution faster.'
+                },
+                guidance: '9 marks total.' },
+              '4(a)': { type: 'points',
+                points: [
+                  'headPointer — identifies the first item/element in the queue / identifies which item to dequeue / remove next',
+                  'tailPointer — identifies the next free space in the queue / identifies where the next item will be enqueued / added'
+                ],
+                guidance: '2 marks: 1 per pointer.' },
+              '4(b)': { type: 'exact',
+                points: [
+                  'Contents (after enqueue(20), dequeue, dequeue): [_, _, 3, 2, 20]',
+                  'headPointer now at index 2 (pointing to "3")',
+                  'tailPointer now at index 5 (next free, after "20")'
+                ],
+                guidance: '2 marks: 1 for correct queue elements + 1 for both pointers in correct positions. Allow 20 and 15 in place but crossed out, OR allow 20 and 15 in place only if both pointers are correctly placed.' },
+              '4(c)': { type: 'points',
+                points: [
+                  'A queue is a FIFO structure / elements processed in the order entered — priority can\'t be enforced',
+                  'A queue will not allow new data to be inserted at the front / only allows new data to be enqueued at the rear',
+                  'The queue contents cannot be resequenced / sorted without rewriting'
+                ],
+                guidance: 'Max 2.' },
+              '5(a)': { type: 'points',
+                points: [
+                  'Check if the stack is empty / check topStack is equal to 0',
+                  '...and if so return a suitable value (e.g. -1 / null) / do nothing / give warning',
+                  '(If not empty) decrement topStack',
+                  'Return the value in element topStack from the array numbers'
+                ],
+                guidance: '4 marks: 1 per bullet. Do not award BP3 if a value has been returned from the function before BP4.' },
+              '5(b)': { type: 'exact',
+                points: [
+                  'function push(dataValue)',
+                  'if topStack != 100 then',
+                  'numbers[topStack] = dataValue',
+                  'topStack = topStack + 1'
+                ],
+                guidance: '4 marks: 1 per completed statement.' },
+              '5(c)': { type: 'points',
+                points: [
+                  'Calling push() with parameter 15',
+                  '...storing/using return value in selection',
+                  '...comparing true/false (may be implicit, e.g. if push(15) then ...)',
+                  '...outputting a suitable message ("Added" if true, "Not Added" if false)'
+                ],
+                guidance: '4 marks. True/False comparisons must be Boolean values and not strings (but allow FT after that). If push() is called twice BP4 cannot be awarded.' },
+              '6(a)': { type: 'points',
+                points: [
+                  'Compare the first element (rainbow) to search item (clouds)',
+                  'If it is equal to the search item, return index / found',
+                  'If it is not equal, move to the next element',
+                  'Repeat until either search item (clouds) is found OR the end of the list has been reached'
+                ],
+                guidance: 'Max 3. Allow answers by example from the given dataset.' },
+              '6(b)': { type: 'exact',
+                points: ['The data is not in order / sorted', 'Data is not sorted'],
+                guidance: '1 mark.' },
+              '6(c)': { type: 'exact',
+                points: [
+                  'Pass 1: moon rainbow sun stars clouds tornado (values changed)',
+                  'Pass 2: moon rainbow sun stars clouds tornado (no change)',
+                  'Pass 3: moon rainbow stars sun clouds tornado (values changed)',
+                  'Pass 4: clouds moon rainbow stars sun tornado (values changed — clouds moves all the way to front)',
+                  'Pass 5: clouds moon rainbow stars sun tornado (no change)'
+                ],
+                guidance: '5 marks: 5 lines showing the insertion-sort passes. If descending order shown, max 4. MP1, MP3, MP4 are lines showing a change of values; MP2, MP5 do not have to be explicitly given in full if there is a comment to identify no change occurred during the pass. 0 marks if not an insertion sort.' },
+              '6(d)(i)': { type: 'points',
+                points: [
+                  'Linear',
+                  'The time will (increase) in direct proportion to the number of items'
+                ],
+                guidance: '2 marks: 1 for "linear" + 1 for the proportionality.' },
+              '6(d)(ii)': { type: 'points',
+                points: [
+                  'Logarithmic',
+                  'The additional memory space required grows at a decreasing rate as the number of items increases'
+                ],
+                guidance: '2 marks.' },
+              '6(d)(iii)': { type: 'exact',
+                points: ['Constant', 'O(1)'],
+                guidance: '1 mark.' },
+              '6(d)(iv)': { type: 'exact',
+                points: ['Exponential', 'O(2ⁿ)', 'O(Kⁿ)'],
+                guidance: '1 mark.' },
+              '7(a)': { type: 'points',
+                points: [
+                  'Can store multiple items of data under one identifier — so all data about a task can be accessed using the same identifier',
+                  'Can store data of different data types — this task has string, real and integer fields'
+                ],
+                guidance: 'Max 2 for justification.' },
+              '7(b)(i)': { type: 'points',
+                points: [
+                  'Each node can have 0, 1 or 2 child nodes / a maximum of 2 child nodes',
+                  'Nodes are ordered (with left nodes less than the parent and right nodes greater)',
+                  'The location to which a node is added depends on its order'
+                ],
+                guidance: 'Max 2.' },
+              '7(b)(ii)': { type: 'points',
+                points: [
+                  'Searching is faster (O(log n))',
+                  'Inserting new tasks is faster',
+                  'Do not need to sort the structure each time a new task is inserted'
+                ],
+                guidance: '1 mark.' },
+              '7(b)(iii)': { type: 'exact',
+                points: [
+                  'All nodes at current depth visited before next depth → Breadth-first',
+                  'Traverses to end of one branch before moving → Depth-first (post-order)',
+                  'Algorithm makes use of backtracking → Depth-first (post-order)',
+                  'Used to output contents in ascending order → Neither (this is in-order, not post-order)',
+                  'Algorithm outputs the root node last → Depth-first (post-order)'
+                ],
+                guidance: '5 marks: 1 per correct row.' },
+              '7(b)(iv)': { type: 'exact',
+                points: [
+                  'Task Y (order 7) — added to the RIGHT of Task F (order 7 — since Y is classed higher than F)',
+                  'Task X (order 12) — added to the RIGHT of Task H (order 10)',
+                  'Task Z (order 11) — added to the LEFT of Task X (since 11 < 12)'
+                ],
+                guidance: '3 marks: 1 per correctly-placed task. The direction (left/right) must be clear; cannot just be a downward vertical line.' },
+              '8(a)': { type: 'points',
+                points: [
+                  'Input: Entering a name',
+                  'Input: Selecting a vehicle',
+                  'Input: Pressing arrow key to move (forward/backward/left/right)',
+                  'Output: Images of vehicles to choose from',
+                  'Output: Background of area',
+                  'Output: Image of other vehicles',
+                  'Output: Image of controls and description of what they do'
+                ],
+                guidance: '4 marks: 1 per input to max 2 + 1 per output to max 2. Allow any feasible input/output for the scenario.' },
+              '8(b)(i)': { type: 'points',
+                points: [
+                  'Definition: Removal of unnecessary detail',
+                  'Example: simplifying scenery',
+                  'Example: removing internal features of a vehicle that are not needed',
+                  'Example: simplifying physics for vehicle movement',
+                  'Example: vehicles may not be drawn to scale'
+                ],
+                guidance: '3 marks: 1 for definition + 1 each for example of use to max 2 (3 overall). Allow 2 marks for a valid example with expansion (e.g. "simplify track (1) by taking out the bumps in the road (1)").' },
+              '8(b)(ii)': { type: 'points',
+                points: [
+                  'Simplifies the problem / algorithm / programming code',
+                  'Faster to create the program code',
+                  'Final program uses less memory / processor time',
+                  'Programmer can focus on core aspects of the game',
+                  'Completed game will be simpler for end users to understand / play'
+                ],
+                guidance: 'Max 3. Do not accept a reiteration of a definition of abstraction.' },
+              '8(c)(i)': { type: 'exact',
+                points: ['Splitting the problem down into smaller (sub) problems'],
+                guidance: '1 mark.' },
+              '8(c)(ii)': { type: 'points',
+                points: [
+                  'To break the problem down into individual components / see which components can be tackled concurrently',
+                  'Identify any reusable program elements / to avoid creating the same algorithm twice',
+                  'Split the program between individuals / so they can focus on individual elements / their speciality',
+                  'Identify the subroutines and how they will interact / so everyone knows the requirements for their part',
+                  'Easier to tackle/focus on one smaller problem at a time / simplifies writing/testing code'
+                ],
+                guidance: 'Max 2.' },
+              '9(a)': { type: 'points',
+                points: [
+                  'Has a set/fixed number of values... and the number of spaces in the road will not change',
+                  'Stores data of one type... as the array is only made up of prize objects',
+                  'Stores data linearly... match the linear nature of the road',
+                  'Array contents are mutable... so prizes can be added/removed from the road',
+                  'A single identifier is used to directly index... any position in the road',
+                  'Can be iterated by index... to perform an operation on all road positions'
+                ],
+                guidance: 'Max 3. Max 2 for generic answers with no relation to scenario.' },
+              '9(b)(i)': { type: 'points',
+                points: [
+                  'Function / subroutine with identifier getName taking no parameters',
+                  'Returning name'
+                ],
+                guidance: '2 marks. Do not award BP1 for procedure or method (must return a value). Allow self as additional parameter for Python. If an access modifier is given for the method, it must be public.' },
+              '9(b)(ii)': { type: 'points',
+                points: [
+                  'New instance of Prize',
+                  '...with "Box", "money" and 25 as parameters (in any order)',
+                  'Assigned to allPrizes index 3'
+                ],
+                guidance: '3 marks. "Box" and "money" must be strings; 25 must be an integer. Allow prize.new() as new is given as the constructor method.' },
+              '9(b)(iii)': { type: 'points',
+                points: [
+                  'Decision — check whether the space already has a prize allocated',
+                  'Action if true — another space/number will need to be generated',
+                  'Action if false — the prize will be stored here',
+                  'Decision — check if all 10 prizes have been allocated',
+                  'Action if true — the algorithm needs to stop generating numbers',
+                  'Action if false — a new number/space needs to be generated and checked'
+                ],
+                guidance: 'Max 3 (1 for stating a decision, 1 for action if true, 1 for action if false — per decision).' },
+              '9(c)(i)': { type: 'points',
+                points: [
+                  'Constructor header (any suitable name e.g. new, constructor, create, __init__)',
+                  '...taking one parameter only (or two if one is self in Python)',
+                  'Initialising name to the parameter',
+                  'Initialising money to 5',
+                  'Initialising experience to 0 AND roadPosition to 0'
+                ],
+                guidance: '5 marks: 1 per bullet. Parameter name should be different from the attribute name (e.g. pName).' },
+              '9(c)(ii)': { type: 'points',
+                points: [
+                  'Procedure / method header (do NOT allow Function for BP1)',
+                  '...taking two parameters, type (or similar) followed by value (or similar) — order must match',
+                  '...compare type parameter with "money"',
+                  '...compare type parameter with "experience"',
+                  '...both attributes updated correctly AND nothing else modified for any other type'
+                ],
+                guidance: '5 marks: 1 per bullet. "money" and "experience" must be string values.' },
+              '9(d)': { type: 'exact',
+                points: [
+                  'Blank 1: Character (the class name)',
+                  'Blank 2: 50 (the road length)',
+                  'Blank 3: newPosition (the road index)',
+                  'Blank 4: prizeType (the type parameter)',
+                  'Blank 5: getExperience (the method call)',
+                  'Blank 6: endwhile (the loop terminator)'
+                ],
+                guidance: '6 marks: 1 per completed space. Allow road.length / len(road) instead of 50; allow <=49 instead of < 50.' },
+              '9(e)': { type: 'exact',
+                points: [
+                  'Line 02 corrected: for x = 0 to 49',
+                  'Line 03 corrected: print("Space", x)  // y → x',
+                  'Line 06 corrected: else  // or elseif road[x] != null',
+                  'Line 07 corrected: print(road[x].getName())  // getValue → getName'
+                ],
+                guidance: '4 marks: 1 per correctly identified line + correction. Line 07 allow print(road[x].name).' },
+              '9(f)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of global variables and alternatives; accurate and detailed. Knowledge applied directly and consistently to context; explicitly relevant evidence. Well-developed line of reasoning.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of globals/locals. Knowledge applied to context with one or two missed opportunities.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge; some inaccuracies. Limited attempt to apply knowledge to context.' }
+                ],
+                indicative: {
+                  'AO1 — Local and global variables': 'Global variables created when the program starts; all subroutines can access/update them. Local variables created in the subroutine they\'re used in; not directly accessible from other subroutines. Local variables removed from memory when the subroutine ends. Locals can be passed as parameters and returned to override the original. Locals can be passed by reference to allow updating.',
+                  'AO2 — Application to the game': 'Globals stored throughout whole execution — but the amount of data is relatively low, so memory not heavy. When game expands, memory use could grow (especially with graphics). Both arrays needed throughout the game, so global makes coding easier (no parameter-passing). For just one part of the game, globals don\'t hurt efficiency much — but at scale could cause accuracy/testing/debugging/maintenance problems.',
+                  'AO3 — Evaluation': 'For a prototype, global variables would be beneficial. When the game expands, globals could cause running-out-of-memory, coupling, testing & debugging, and maintenance problems. Best to keep variables local and pass between subroutines as parameters byVal and byRef.'
+                },
+                guidance: '9 marks total.' }
+            }
           },
           {
             id: 'cs-ocr-h446-2023-p1',
