@@ -8722,24 +8722,672 @@ window.SUBJECTS = [
         // YYYYMMDD on a QP is the exam day; every mark scheme in a series shares
         // one publication date. 2022–2024 are all public.
         papers: [
-          { id: 'phys-edexcel-9ph0-2024-p1', year: 'June 2024', paperName: 'Advanced Physics I', paperCode: '9PH0/01', totalMarks: 90, durationMins: 105, printOnly: true,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-que-20240525.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-rms-20240815.pdf' },
-          { id: 'phys-edexcel-9ph0-2024-p2', year: 'June 2024', paperName: 'Advanced Physics II', paperCode: '9PH0/02', totalMarks: 90, durationMins: 105, printOnly: true,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-que-20240607.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-rms-20240815.pdf' },
-          { id: 'phys-edexcel-9ph0-2024-p3', year: 'June 2024', paperName: 'General and Practical Principles in Physics', paperCode: '9PH0/03', totalMarks: 120, durationMins: 150, printOnly: true,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-que-20240618.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-rms-20240815.pdf' },
-          { id: 'phys-edexcel-9ph0-2023-p1', year: 'June 2023', paperName: 'Advanced Physics I', paperCode: '9PH0/01', totalMarks: 90, durationMins: 105, printOnly: true,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-que-20230525.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-rms-20230817.pdf' },
-          { id: 'phys-edexcel-9ph0-2023-p2', year: 'June 2023', paperName: 'Advanced Physics II', paperCode: '9PH0/02', totalMarks: 90, durationMins: 105, printOnly: true,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-que-20230610.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-rms-20230817.pdf' },
-          { id: 'phys-edexcel-9ph0-2023-p3', year: 'June 2023', paperName: 'General and Practical Principles in Physics', paperCode: '9PH0/03', totalMarks: 120, durationMins: 150, printOnly: true,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-que-20230616.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-rms-20230817.pdf' },
+          { id: 'phys-edexcel-9ph0-2024-p1', year: 'June 2024', paperName: 'Advanced Physics I', paperCode: '9PH0/01', totalMarks: 90, durationMins: 105,
+  qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-que-20240525.pdf',
+  msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-rms-20240815.pdf',
+  qbqNote: 'Questions 11 to 18 (the structured questions, 80 marks) are wired up here. Questions 1 to 10 are single-answer multiple-choice questions (A–D), each worth 1 mark (10 marks total); these are not wired up and can be found in the question paper PDF.',
+  questions: [
+    { number: 11, scenario: 'A film involves a gang of bank robbers making a getaway on a bus loaded with gold bars. The bus spins out of control and ends up balancing on the edge of a cliff, as shown. (See the diagram in the question paper PDF.)', parts: [
+      { code: '11(a)', prompt: 'State what is meant by the moment of a force about a point.', marks: 1 },
+      { code: '11(b)', preamble: 'The bus is balanced on a pivot that is a distance y from the centre of the bus.\nThe centre of mass of the gold is 1.5 m from one end of the bus. The centre of mass of the bank robbers is 1.0 m from the other end of the bus, as shown. (See the diagram in the question paper PDF.)\nThe unloaded bus can be treated as a uniform body with a weight of 32000 N.', prompt: 'Calculate the distance y when the bus is balanced.\nlength of bus = 11.0 m\nweight of gold bars = 31000 N\nweight of bank robbers = 8700 N', marks: 4 }
+    ] },
+    { number: 12, parts: [
+      { code: '12', preamble: 'Electrical power is transmitted from Norway to Britain using a cable laid under the North Sea.\nThe following information is published on a website.\nThe cable has a diameter of 15 cm and a length of 720 km.\nIt is made of copper of resistivity 1.7×10⁻⁸ Ω m.\nThe electrical power transmitted from Norway is 1400 MW and the transmission potential difference is 1100 kV.\nThe efficiency of this process is almost 100%.', prompt: 'Deduce, by calculation, whether the claim for efficiency is correct.', marks: 6 }
+    ] },
+    { number: 13, scenario: 'Beams of antiprotons are often used in particle physics experiments.', parts: [
+      { code: '13(a)', prompt: 'Show that the rest mass of an antiproton is about 900 MeV/c².', marks: 4 },
+      { code: '13(b)', preamble: 'Antiprotons can be produced by accelerating and colliding two protons moving in opposite directions. A website suggests a possible outcome for a collision between these protons is described by the nuclear equation:\np + p → p + p + p + p̄', prompt: 'Deduce, by using conservation laws, whether it should be possible to produce an antiproton in this way.', marks: 4 }
+    ] },
+    { number: 14, scenario: 'The decay of a positive muon produced a positron, an electron neutrino and a muon antineutrino. The diagram shows the tracks formed in a particle detector. (See the diagram in the question paper PDF.)', parts: [
+      { code: '14(a)', preamble: 'A muon belongs to a family of particles called leptons.', prompt: 'State two features that all particles in the lepton family have in common.', marks: 2 },
+      { code: '14(b)', prompt: 'Write a nuclear equation for the decay of the muon (μ⁺) described above.', marks: 2 },
+      { code: '14(c)', prompt: 'Describe the role of the magnetic field in a particle detector.', marks: 3 },
+      { code: '14(d)', prompt: 'Explain how the diagram gives evidence that a particle or particles, other than the positron, were produced in this decay.', marks: 4 }
+    ] },
+    { number: 15, scenario: 'A teacher demonstrates the electric field produced between two parallel metal plates. The plates are connected to a variable power supply, as shown. The power supply has a very large internal resistance and includes a voltmeter that indicates its output. (See the diagram in the question paper PDF.)', parts: [
+      { code: '15(a)(i)', prompt: 'Add to the diagram to show the electric field between the two plates. (See the diagram in the question paper PDF.)', marks: 3, kind: 'diagram' },
+      { code: '15(a)(ii)', prompt: 'Explain why the reading on the voltmeter indicates the e.m.f. of the power supply.', marks: 2 },
+      { code: '15(b)(i)', preamble: 'The power supply output is increased until sparks are heard and are seen in the gap between the plates. Sparks form in air when the electric field strength exceeds 3.0×10⁶ V m⁻¹ and the air becomes conducting for a short time.', prompt: 'Calculate the minimum potential difference across the plates for sparks to be created.\ndistance between parallel plates = 2.0 mm', marks: 2 },
+      { code: '15(b)(ii)', prompt: 'Explain why the voltmeter reading decreases significantly whenever sparks are produced.', marks: 3 }
+    ] },
+    { number: 16, scenario: 'A student is investigating circuits that include a filament bulb. The filament bulb is labelled \'1.5 V, 0.50 W\'.', parts: [
+      { code: '16(a)', prompt: 'Show that the resistance of the filament bulb when operating normally is about 5 Ω.', marks: 2 },
+      { code: '16(b)', preamble: 'The student wishes to control the brightness of the filament bulb using a potentiometer. The student connects the circuit shown. The total resistance of the potentiometer is very much larger than the resistance of the filament bulb. (See the diagram in the question paper PDF.)', prompt: '*Explain how the brightness of the filament bulb changes as the potentiometer slider is moved from A to B.', marks: 6, extended: true },
+      { code: '16(c)', preamble: 'The student connects the filament bulb in the circuit shown below. The capacitor is initially uncharged and has a capacitance of 1.2 F.\nThe resistance of the filament bulb is 5 Ω. (See the diagram in the question paper PDF.)', prompt: 'Explain how the brightness of the filament bulb will vary as the switch is closed.', marks: 4 }
+    ] },
+    { number: 17, scenario: 'Over one hundred years ago, Rutherford supervised a series of experiments using a source of alpha particles and thin gold foil.', parts: [
+      { code: '17(a)', prompt: 'Describe the model of the atom that Rutherford proposed as a result of this series of experiments.', marks: 3 },
+      { code: '17(b)(i)', preamble: 'The initial kinetic energy of an alpha (⁴₂α) particle is 7.3×10⁻¹³ J.\nIn a textbook, it states that an alpha particle with this energy would be brought to rest when it reached a distance of 5.0×10⁻¹⁴ m from the centre of the gold nucleus (¹⁹⁷₇₉Au).', prompt: 'Deduce whether this statement is correct.', marks: 4 },
+      { code: '17(b)(ii)', prompt: 'Determine the initial momentum of the alpha particle.', marks: 3 },
+      { code: '17(c)(i)', preamble: 'An alpha particle moves along a path directly towards a gold nucleus, as shown. An elastic interaction occurs and the alpha particle recoils. (See the diagram in the question paper PDF.)', prompt: 'State what is meant by an elastic interaction.', marks: 1 },
+      { code: '17(c)(ii)', prompt: 'State what happens to the atoms in the gold foil as a result of these interactions.', marks: 1 }
+    ] },
+    { number: 18, scenario: 'Regenerative braking supplies a current back to the power transmission system whilst slowing a vehicle. The arrangement shown can be used as a regenerative braking system on a train.\nThe coil rotates with the wheels of the train. Two copper rings are connected to the ends of the coil. The rings rotate with the coil and two carbon blocks make electrical contact with the rings as they rotate. (See the diagram in the question paper PDF.)', parts: [
+      { code: '18(a)', prompt: 'Describe how this arrangement can be used as a regenerative brake.', marks: 4 },
+      { code: '18(b)(i)', preamble: 'A specification for a new train states that the train should be able to accelerate to a speed of 360 km hour⁻¹ from rest, and that this acceleration should be completed within 40 km of level track.\nThe graph shows the performance of the train on a test run. (See the graph in the question paper PDF.)', prompt: 'Calculate the acceleration of the train as it accelerates to a speed of 360 km hour⁻¹.', marks: 3 },
+      { code: '18(b)(ii)', prompt: 'Deduce whether the performance of the train met the specification on this test run.', marks: 3 },
+      { code: '18(c)(i)', preamble: 'On curved tracks there is a maximum safe speed for the train.', prompt: 'Explain why there is a maximum safe speed for a train travelling on a curved track.', marks: 4 },
+      { code: '18(c)(ii)', preamble: 'When the train travels at 200 km hour⁻¹, the minimum safe radius of curvature of the track is 1800 m.', prompt: 'Calculate the minimum safe radius of curvature for a speed of 360 km hour⁻¹.', marks: 2 }
+    ] }
+  ],
+  markSchemes: {
+    '11(a)': { type: 'points', points: ['Moment of a force (about a point) = force × perpendicular distance (to the line of action of the force from the point)', 'Or moment of a force (about a point) = distance (to the point) × perpendicular component of force'], guidance: '1 mark. Need to see \'perpendicular\' or equivalent.' },
+    '11(b)': { type: 'points', points: ['Takes one moment around the pivot', 'Equates a clockwise and anticlockwise moment', 'Correct distance to gold or people', 'y = 1.2 m'], guidance: '4 marks. Example: 32000 N × y + 8700 N × (y + 4.5) = 31000 N × (4.0 − y); 71700y = 124000 − 39150 = 84850; y = 1.18 m.' },
+    '12': { type: 'points', points: ['Use of P = VI', 'Use of A = πr²', 'Use of R = ρl/A', 'Use of P = I²R', 'Use of efficiency = power out / power in (accept power loss / power in for MP5)', '100% and consistent conclusion (MP6 dependent on fully correct method)'], guidance: '6 marks. Example: I = 1400×10⁶ / 1100×10³ = 1273 A; radius = 0.075 m, A = π(0.075)² = 0.0177 m²; R = 1.7×10⁻⁸ × 720000 / 0.0177 = 0.693 Ω; P_lost = 1273² × 0.693 = 1.12 MW; efficiency = (1400 − 1.12)/1400 = 99.9%.' },
+    '13(a)': { type: 'points', points: ['Identifies that the mass of the antiproton is the same as a proton (use of 1.67×10⁻²⁷ kg)', 'Convert kg to J', 'Convert J to eV', 'Mass = 940 (MeV/c²)'], guidance: '4 marks. Example: E = 1.67×10⁻²⁷ kg × (3.0×10⁸)² = 1.5×10⁻¹⁰ J; ÷(1.6×10⁻¹³ J MeV⁻¹) gives m = 939 MeV/c².' },
+    '13(b)': { type: 'points', points: ['Applies conservation of charge number (e.g. +1 +1 = +1 +1 +1 −1)', 'Applies conservation of baryon number (e.g. +1 +1 = +1 +1 +1 −1)', 'The momentum is conserved if the products have zero (total) momentum', 'Energy required to create the extra mass of the two particles, Or calculates Δm = 1880 MeV/c² (\'show that\' value gives 1800 MeV/c²)', 'So possible if the protons can be given the energy by accelerating each beam through (at least) 940 MeV, Or this can come from (a loss of) kinetic energy of protons'], guidance: '4 marks (maximum 4 out of 5 listed points). Accept each beam needs an energy of at least 940 MeV.' },
+    '14(a)': { type: 'points', points: ['Each lepton has an antiparticle', 'Baryon number = 0', 'Leptons are fundamental particles', 'Leptons interact via the weak force', 'Leptons have a lepton number which isn\'t zero'], guidance: '2 marks. Any two from the list.' },
+    '14(b)': { type: 'points', points: ['Correct symbols for positive muon and positron', 'Correct symbols for neutrino and antineutrino'], guidance: '2 marks. e.g. μ⁺ → e⁺ + νₑ + ν̄_μ.' },
+    '14(c)': { type: 'points', points: ['Magnetic field is used to curve the track, Or magnetic field exerts a centripetal force', 'The direction of curvature indicates whether the charge is positive or negative', 'It enables the momentum of particles to be determined'], guidance: '3 marks.' },
+    '14(d)': { type: 'points', points: ['The path of the positron has a different direction to that of the muon, Or the radius of curvature of each path is different', 'Momentum of positron is different to that of muon', 'Momentum is conserved', 'So a further particle(s) must be produced (MP4 depends on MP3)'], guidance: '4 marks. A correctly labelled momentum-vector sketch can gain the marks.' },
+    '15(a)(i)': { type: 'points', points: ['At least three straight horizontal parallel lines', 'Equispaced', 'Arrow to indicate direction to the right'], guidance: '3 marks. Add field lines to the diagram in the question paper PDF.' },
+    '15(a)(ii)': { type: 'points', points: ['As no current is drawn from the supply', 'Terminal potential difference is equal to the e.m.f., Or no potential difference across the internal resistance'], guidance: '2 marks. Accept no \'lost volts\'.' },
+    '15(b)(i)': { type: 'points', points: ['Use of E = V / d', 'V = 6000 V'], guidance: '2 marks. Example: 3×10⁶ V m⁻¹ = V / 0.002 m, so V = 6000 V.' },
+    '15(b)(ii)': { type: 'points', points: ['(A spark is) a current (drawn from the supply)', 'A potential difference is produced across the internal resistance of the supply (accept \'lost volts\' are present/increase)', 'According to V = E − Ir, V decreases, Or (the decrease in V) is large because the internal resistance is large'], guidance: '3 marks. Accept: reduces the terminal potential difference which is shown on the voltmeter.' },
+    '16(a)': { type: 'points', points: ['Use of P = V²/R', 'R = 4.5 (Ω)'], guidance: '2 marks. Example: 0.50 W = (1.5 V)² / R, R = 4.5 Ω.' },
+    '16(b)': { type: 'points', points: ['IC1: When slider is at A bulb not lit, Or when slider is at A p.d. (across bulb) is zero', 'IC2: When slider is at B bulb will be lit normally / maximum', 'IC3: When slider is at B p.d. (across bulb) is 1.5 V (accept \'supply voltage\')', 'IC4: The brightness of the bulb will increase as the slider moves towards B', 'IC5: The potential difference/current in bulb increases as the slider is moved towards B', 'IC6: Resistance to right of slider decreases, Or resistance of section of potential divider in series with bulb decreases, Or bulb lights just before B'], guidance: '6 marks (QWC). Marks awarded for indicative content and for a coherent, logically structured answer.' },
+    '16(c)': { type: 'points', points: ['Initial p.d. across the capacitor is zero, Or initial p.d. across bulb will be 1.5 V/maximum, Or initial current is maximum', 'Bulb will be bright/lit initially', 'As the capacitor charges the brightness of the bulb decreases', 'Exponential decrease, Or the time constant is 6.0 s (so the process will be of the order of 25–35 s)'], guidance: '4 marks. RC = 5.0 Ω × 1.2 F = 6.0 s.' },
+    '17(a)': { type: 'points', points: ['The atom is mainly empty space', 'All/most of the mass of the atom is in a nucleus/centre which is charged', 'The nucleus is small compared to the atom'], guidance: '3 marks. Accept dense and charged.' },
+    '17(b)(i)': { type: 'points', points: ['Use of V = Q / 4πε₀r', 'Identifies number of (positive) charges for the alpha or gold nucleus', 'Use of W = VQ', 'r = 5×10⁻¹⁴ m so textbook statement is correct, Or W = 7.27×10⁻¹³ J so textbook statement is correct (MP4 dependent on MP1)'], guidance: '4 marks. Example: r = 4.98×10⁻¹⁴ m.' },
+    '17(b)(ii)': { type: 'points', points: ['Use of Eₖ = p²/2m (accept use of Eₖ = ½mv² and p = mv)', 'Converts atomic mass to kg', 'p = 9.9×10⁻²⁰ kg m s⁻¹'], guidance: '3 marks.' },
+    '17(c)(i)': { type: 'exact', points: ['(Total) kinetic energy is conserved'], guidance: '1 mark.' },
+    '17(c)(ii)': { type: 'points', points: ['The gold atoms/nuclei recoil, Or the gold atoms/nuclei gain kinetic energy, Or the gold atoms/nuclei are displaced/move'], guidance: '1 mark. Accept small/negligible increase in thermal energy.' },
+    '18(a)': { type: 'points', points: ['There is a (rate of) change of flux (linkage)/field with the (moving coil)', 'Induces an emf (and current)', 'To oppose the change that created (the induced current)', 'Wheels will slow down/not turn as fast'], guidance: '4 marks.' },
+    '18(b)(i)': { type: 'points', points: ['Converts speed to m s⁻¹ Or converts time to hours (360 km/h = 100 m s⁻¹)', 'Determines gradient of graph Or uses appropriate equation of motion', 'Acceleration = 0.22 m s⁻² Or 2800 km h⁻² (range 2800–2900 km h⁻²)'], guidance: '3 marks. a = 100 m s⁻¹ / 450 s = 0.222 m s⁻².' },
+    '18(b)(ii)': { type: 'points', points: ['Determines area under graph for a time of 450 s, Or uses appropriate equation of motion', 'Distance = 22.5 km', '22.5 km is less than 40 km so meets specification'], guidance: '3 marks. s = (0 + 100 m s⁻¹)/2 × 450 s = 22.5 km.' },
+    '18(c)(i)': { type: 'points', points: ['If the track is curved then a centripetal force is required', 'This force is provided by the reaction force between wheel and rails (accept friction)', 'The centripetal force is given by F = mv²/r', 'There is a maximum value of reaction/friction, so above a maximum speed the train leaves the track'], guidance: '4 marks.' },
+    '18(c)(ii)': { type: 'points', points: ['Use of v²/r = constant', 'r = 5800 m'], guidance: '2 marks. k = 200²/1800 = 22.22; r = 360²/22.22 = 5840 m.' }
+  } },
+          { id: 'phys-edexcel-9ph0-2024-p2', year: 'June 2024', paperName: 'Advanced Physics II', paperCode: '9PH0/02', totalMarks: 90, durationMins: 105,
+  qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-que-20240607.pdf',
+  msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-rms-20240815.pdf',
+  qbqNote: 'Questions 11-19 (the structured questions, 80 marks) are wired here. Questions 1-10 are single-answer multiple-choice questions (A-D), each worth 1 mark (10 marks total); they are not wired and can be found in the question paper PDF.',
+  questions: [
+    { number: 11, scenario: 'A student shone green light from a laser through a diffraction grating, producing a diffraction pattern on a screen. The student determined the angle of the third order maximum.',
+      parts: [
+        { code: '11', preamble: 'angle of third order maximum = 73.3°\ngrating spacing = 1.67 × 10⁻⁶ m', prompt: 'Calculate the wavelength of the green light.', marks: 2 }
+      ] },
+    { number: 12, scenario: 'Study of the photoelectric effect leads to observations that cannot be explained by the wave theory of light.\nWhen ultraviolet light is shone on a charged zinc plate, electrons are released.\nWhen visible light is shone on the zinc plate, electrons are not released.',
+      parts: [
+        { code: '12(a)(i)', prompt: 'State what is meant by threshold frequency.', marks: 1 },
+        { code: '12(a)(ii)', prompt: 'Explain why the observation of a threshold frequency is not consistent with the wave theory of light.', marks: 2 },
+        { code: '12(b)', preamble: 'The photoelectric effect can be explained using the idea of photons.', prompt: 'State what is meant by the term photon.', marks: 1 }
+      ] },
+    { number: 13, scenario: 'Aldebaran is a red giant star.\nFor a black body radiator of Aldebaran\'s surface temperature, the wavelength λmax at which the intensity is maximum is 7.43 × 10⁻⁷ m.',
+      parts: [
+        { code: '13', preamble: 'radius of Aldebaran = 3.14 × 10¹⁰ m', prompt: 'Determine the luminosity of Aldebaran.', marks: 4 }
+      ] },
+    { number: 14, scenario: 'A student used two converging thin lenses in combination to form an image of an object.',
+      parts: [
+        { code: '14(a)', preamble: 'focal length of lens 1 = 10 cm\nfocal length of lens 2 = 15 cm', prompt: 'Show that the power of the combination of lenses was about 20 D.', marks: 3 },
+        { code: '14(b)', preamble: 'The object was 4 cm in front of the combination of lenses.', prompt: 'Calculate the image distance.', marks: 2 },
+        { code: '14(c)', preamble: 'The object height was 1.4 cm.', prompt: 'Calculate the image height.', marks: 3 },
+        { code: '14(d)', preamble: 'The object is magnified.', prompt: 'State two other properties of the image.', marks: 1 }
+      ] },
+    { number: 15, scenario: 'A student wound a piece of string around the head of an electric toothbrush. The student attached a small mass to the other end of the string (Photograph 1). The toothbrush was switched on and the head started to vibrate. The student rotated the toothbrush slowly to unwind the string. At a particular length, large vibrations were observed on the string. The string formed a loop (Photograph 2). (See Figure/the diagram in the question paper PDF.)',
+      parts: [
+        { code: '15(a)', prompt: 'Explain how the vibrations of the toothbrush head caused the loop to form.', marks: 5 },
+        { code: '15(b)', preamble: 'The student continued to unwind the string and the loop disappeared. When the length of the unwound string was twice that shown in Photograph 2 two loops were seen. Three loops were seen when the unwound length was three times that shown in Photograph 2 and so on.\nunwound length of string with 4 loops = 0.69 m\nmass on string = 0.010 kg\nmass per unit length of string = 9.1 × 10⁻⁴ kg m⁻¹', prompt: 'Determine the frequency of vibration of the toothbrush head.', marks: 5 }
+      ] },
+    { number: 16, scenario: 'On the International Space Station (ISS), astronauts measure their mass once a month using a Body Mass Measurement Device (BMMD). The BMMD is constructed from a large spring attached to the floor of the ISS, with a platform and handles attached to the spring. The spring is compressed and the astronaut puts his body onto the platform and holds onto the handles. The spring is released and the astronaut and platform oscillate with simple harmonic motion. An astronaut used the BMMD. The frequency of oscillation was 0.34 Hz. (See Figure/the diagram in the question paper PDF.)',
+      parts: [
+        { code: '16(a)', preamble: 'spring constant = 350 N m⁻¹\nmass of platform = 5.7 kg', prompt: 'Determine the mass of the astronaut.', marks: 4 },
+        { code: '16(b)(i)', preamble: 'The distance between the upper and lower points of the first oscillation is 0.29 m.', prompt: 'Calculate the magnitude of the maximum acceleration of the astronaut.', marks: 4 },
+        { code: '16(b)(ii)', prompt: 'Calculate the speed of the astronaut 3.5 s after the start of the oscillations.', marks: 2 }
+      ] },
+    { number: 17, scenario: 'A hot air balloon consists of a fabric envelope, heaters and a basket. (See Figure/the diagram in the question paper PDF.)',
+      parts: [
+        { code: '17(a)', preamble: 'When the balloon is set up, the envelope is partly filled with air at 20 °C. The air is then heated to 120 °C and expands to fill the envelope and becomes less dense.\nThe air pressure inside the envelope is always equal to the air pressure outside the envelope because the envelope is open at the bottom.\nThe balloon takes off when the upthrust is more than the total weight of the balloon, the air in the envelope and the passengers.\nvolume of air at 120 °C in inflated envelope = 2800 m³\ndensity of air at 20 °C = 1.2 kg m⁻³\nmass of balloon = 380 kg\nmass of passengers = 340 kg\nupthrust when the envelope is full = 33000 N', prompt: 'Deduce whether the balloon can take off.', marks: 6 },
+        { code: '17(b)(i)', prompt: 'State one assumption of the kinetic theory of gases.', marks: 1 },
+        { code: '17(b)(ii)', prompt: 'Derive an equation to show that, for a gas at temperature T, the mean kinetic energy of the molecules = 3/2 kT', marks: 2 },
+        { code: '17(b)(iii)', preamble: 'mass of nitrogen molecule = 28u', prompt: 'Calculate the root-mean-square speed of nitrogen molecules at a temperature of 120 °C.', marks: 3 }
+      ] },
+    { number: 18, scenario: 'In 1864, William Huggins and William Miller used dark lines in the spectrum of the Sun to identify elements in the Sun\'s atmosphere.',
+      parts: [
+        { code: '18(a)', extended: true, prompt: '*Explain how gases in the Sun\'s atmosphere cause dark lines in the spectrum corresponding to different elements.', marks: 6 },
+        { code: '18(b)', preamble: 'The diagram shows some energy levels of a hydrogen atom: n=5 −0.54 eV, n=4 −0.85 eV, n=3 −1.51 eV, n=2 −3.40 eV, n=1 −13.6 eV (not to scale).\nThe absorption spectrum for hydrogen includes a set of lines that all derive from transitions involving the n = 2 energy level. One of these lines is known as the hydrogen-alpha line.\nwavelength of hydrogen-alpha line = 656.46 nm', prompt: 'Deduce the transition involved in the formation of the hydrogen-alpha line.', marks: 4 },
+        { code: '18(c)(i)', preamble: 'In 1868, William Huggins analysed light from the star Sirius A. The wavelength of the hydrogen-alpha line for light from Sirius A was slightly different from the hydrogen-alpha line observed from a source in a laboratory. Huggins suggested that this difference could be explained using the Doppler effect and could be used to determine the speed and direction of the star\'s motion relative to the Earth.', prompt: 'Assess Huggins\'s suggestion.', marks: 3 },
+        { code: '18(c)(ii)', preamble: 'Sirius A has a component of velocity away from the Earth of 5.5 km s⁻¹.\nThe wavelength of the hydrogen-alpha line observed from a source in the laboratory is 656.46 nm.', prompt: 'Calculate the wavelength of the hydrogen-alpha line as seen in the spectrum of Sirius A.', marks: 2 }
+      ] },
+    { number: 19, scenario: 'Nuclear decay is described as being spontaneous and random.',
+      parts: [
+        { code: '19(a)(i)', prompt: 'State what is meant by spontaneous and random in this context.', marks: 2 },
+        { code: '19(a)(ii)', prompt: 'Explain why the decay constant of an isotope can be determined even though nuclear decay is random.', marks: 2 },
+        { code: '19(b)', preamble: 'A radioactive source used in a school laboratory emits alpha and beta radiation.', prompt: 'Describe how the percentage of the activity due to beta radiation may be determined using a Geiger-Müller tube and ratemeter.', marks: 4 },
+        { code: '19(c)(i)', preamble: 'Americium-241 is used in schools as a source of alpha radiation. A pure americium-241 source was bought 34 years ago by a school.\nhalf-life of americium-241 = 432 years', prompt: 'Determine the percentage of the initial activity that would be expected today for the americium-241 source.', marks: 3 },
+        { code: '19(c)(ii)', preamble: 'The decay products of americium are unstable and undergo a series of further decays. The table shows the first three decays in this sequence: americium-241 → neptunium-237 (alpha, half-life 432 years); neptunium-237 → protactinium-233 (alpha, half-life 2100000 years); protactinium-233 → uranium-233 (beta, half-life 27 days).\nA student states, "Protactinium-233 emits beta particles when it decays, so by now the americium-241 source bought 34 years ago will be emitting a significant amount of beta radiation."', prompt: 'Discuss the student\'s statement.', marks: 3 }
+      ] }
+  ],
+  markSchemes: {
+    '11': { type: 'points', points: ['Use of nλ = d sin θ (1)', 'λ = 5.33 × 10⁻⁷ m (1)'], guidance: '2 marks. Example: 3λ = 1.67 × 10⁻⁶ m × sin 73.3°, λ = 5.33 × 10⁻⁷ m.' },
+    '12(a)(i)': { type: 'points', points: ['The (minimum) frequency at/above which electrons are released (1)'], guidance: '1 mark. Accept: frequency below which electrons are not released.' },
+    '12(a)(ii)': { type: 'points', points: ['With waves, energy would build up (1)', 'A photoelectron would (eventually have enough energy to) be emitted with any frequency, (which is not observed) (1)'], guidance: '2 marks. Accept light for energy/radiation.' },
+    '12(b)': { type: 'points', points: ['A quantum of (electromagnetic) energy/radiation, Or a discrete packet of (electromagnetic) energy/radiation (1)'], guidance: '1 mark.' },
+    '13': { type: 'points', points: ['Use of λmax T = 2.898 × 10⁻³ m K (1)', 'Use of A = 4πr² (1)', 'Use of L = σ A T⁴ (1)', 'L = 1.63 × 10²⁹ W (1)'], guidance: '4 marks. Example: T = 3900 K; A = 4π(3.14 × 10¹⁰ m)² = 1.24 × 10²² m²; L = 5.67 × 10⁻⁸ × 1.24 × 10²² × (3900)⁴ = 1.63 × 10²⁹ W.' },
+    '14(a)': { type: 'points', points: ['Use of 1/f = P (1)', 'Use of P = P₁ + P₂ (1)', 'P = 17 (D) (1)'], guidance: '3 marks. Example: P₁ = 1/0.1 m = 10 D, P₂ = 1/0.15 m = 6.7 D, P = 16.7 D ≈ 17 D.' },
+    '14(b)': { type: 'points', points: ['Use of 1/v + 1/u = 1/f Or 1/v + 1/u = P (1)', 'v = (−) 12 cm (ecf from a) (1)'], guidance: '2 marks. Example: 1/v + 1/0.04 m = 16.7 D, v = −0.12 m.' },
+    '14(c)': { type: 'points', points: ['Use of M = v/u (1)', 'Use of M = (image height)/(object height) (1)', 'Image height = 4.2 cm (ecf from b) (1)'], guidance: '3 marks. Example: M = 12 cm / 4 cm = 3; image height = 3 × 1.4 cm = 4.2 cm.' },
+    '14(d)': { type: 'points', points: ['Virtual and erect/upright (1)'], guidance: '1 mark.' },
+    '15(a)': { type: 'points', points: ['EITHER: Waves are produced by the toothbrush and reflected (at the mass) (1); Waves meet and superpose (1); Constructive interference where waves are in phase Or destructive interference where waves are in antiphase (1); The string vibrates at the centre with maximum amplitude, forming an antinode in the centre Or the string has zero/minimum amplitude, forming nodes at the ends (1); Creating a standing/stationary wave (1)', 'OR: The toothbrush causes the string to vibrate at its natural frequency (1); There is a maximum/efficient transfer of energy from the toothbrush to the string (1); Resonance occurs (1); The string vibrates at the centre with maximum amplitude, forming an antinode in the centre (1); Creating a standing/stationary wave (1)'], guidance: '5 marks. Accept answer in terms of multiple loops.' },
+    '15(b)': { type: 'points', points: ['Use of W = mg (1)', 'Use of v = √(T/μ) (1)', 'Determination of wavelength (1)', 'Use of v = fλ (1)', 'f = 30 Hz (1)'], guidance: '5 marks. Example: T = 0.010 × 9.81 = 0.0981 N; v = √(0.0981 / 9.1 × 10⁻⁴) = 10.4 m s⁻¹; λ = 0.69/2 = 0.345 m; f = 10.4 / 0.345 = 30 Hz.' },
+    '16(a)': { type: 'points', points: ['Use of f = 1/T (1)', 'Use of T = 2π√(m/k) (1)', 'Correct for mass of platform (1)', 'Mass of astronaut = 71 kg (1)'], guidance: '4 marks. Example: T = 1/0.34 = 2.94 s; 2.94 = 2π√(m/350), m = 76.6 kg; 76.6 − 5.7 = 70.9 kg.' },
+    '16(b)(i)': { type: 'points', points: ['Determine amplitude (1)', 'Use of ω = 2πf (1)', 'Use of max a = (−)ω²A (1)', 'Max acceleration = 0.66 m s⁻² (1)'], guidance: '4 marks. Example: amplitude = 0.29/2 = 0.145 m; ω = 2π × 0.34 = 2.14 rad s⁻¹; max a = (2.14)² × 0.145 = 0.66 m s⁻².' },
+    '16(b)(ii)': { type: 'points', points: ['Use of v = (−)ωA sin ωt (1)', 'Speed = 0.29 m s⁻¹ (ecf for ω and A from (b)(i)) (1)'], guidance: '2 marks. Example: v = 0.145 × 2.14 × sin((2.14 × 3.5) rad) = 0.29 m s⁻¹.' },
+    '17(a)': { type: 'points', points: ['Use of pV = NkT (1)', 'Conversion of T in K (1)', 'Use of ρ = m/V to determine mass of air in the balloon (1)', 'Calculation of total mass = mass of air at 120 °C + passengers + balloon (1)', 'Use of W = mg (1)', 'W = 31 600 N, which is less than 33 000 N, so the balloon can take off (1)'], guidance: '6 marks. Example: V₁/293 = 2800/393, V₁ = 2087 m³; mass of air = 1.2 × 2087 = 2505 kg; total = 2505 + 340 + 380 = 3225 kg; W = 3225 × 9.81 = 31 637 N; 31 600 N < 33 000 N.' },
+    '17(b)(i)': { type: 'points', points: ['Any one from: Point particles; Particles have negligible volume; Negligible forces between particles (except during a collision); Duration of collisions negligible; Newtonian mechanics applies; Elastic collisions; Particles move with (constant) random motion (1)'], guidance: '1 mark. Accept molecules for particles.' },
+    '17(b)(ii)': { type: 'points', points: ['States pV = NkT or pV = ⅓ Nm⟨c²⟩ (1)', 'Suitable algebra to show ½ m⟨c²⟩ = 3/2 kT (1)'], guidance: '2 marks.' },
+    '17(b)(iii)': { type: 'points', points: ['Use of a.m.u. to determine particle mass (1)', 'Use of ½ m⟨c²⟩ = 3/2 kT with T in K (1)', 'rms speed = 590 m s⁻¹ (1)'], guidance: '3 marks. Example: mass = 28 × 1.66 × 10⁻²⁷ = 4.65 × 10⁻²⁶ kg; c = √349900 = 590 m s⁻¹.' },
+    '18(a)': { type: 'points', points: ['IC1 Electrons are in (discrete) energy levels', 'IC2 Absorption of (a single) photon causes an electron to move to a higher energy level', 'IC3 Photon energy = hf Or photon energy is proportional to frequency', 'IC4 Energy of (absorbed) photon must equal difference in energy levels', 'IC5 The (changes in) energy levels are specific to each element', 'IC6 Different wavelengths/frequencies of light are absorbed'], guidance: '6 marks (QWC). Indicative content (max 4) plus structure (max 2).' },
+    '18(b)': { type: 'points', points: ['Use of c = fλ (1)', 'Use of E = hf (1)', 'Use of 1 eV = 1.6 × 10⁻¹⁹ J (1)', 'Change in energy equal to 1.89 eV and transition from energy level 2 to energy level 3 (1)'], guidance: '4 marks. f = 4.57 × 10¹⁴ Hz; E = 1.89 eV; 1.89 eV − 3.40 eV = −1.51 eV = level 3.' },
+    '18(c)(i)': { type: 'points', points: ['(According to the Doppler effect) if the source is moving away from the observer the wavelength will increase (1)', 'There is a change in wavelength proportional to velocity (1)', 'He is correct (as speed and direction can be determined) (1)'], guidance: '3 marks. Allow converse for motion towards the observer.' },
+    '18(c)(ii)': { type: 'points', points: ['Use of Δλ/λ₀ = v/c (1)', 'λ = 656.47 nm (1)'], guidance: '2 marks. Must see 656.46 × 10⁻⁹ m in denominator; moving away, so add Δλ.' },
+    '19(a)(i)': { type: 'points', points: ['(Spontaneous) – independent of external conditions (1)', '(Random) – cannot predict when a decay will occur (1)'], guidance: '2 marks. Accept: cannot tell which nucleus will decay next.' },
+    '19(a)(ii)': { type: 'points', points: ['The probability of decay (in a specified time) may be determined (1)', '(Probability may be applied accurately because) very large numbers are involved (1)'], guidance: '2 marks.' },
+    '19(b)': { type: 'points', points: ['Measure the background count (rate) (1)', 'Measure count (rate) from source (1)', 'Use paper to absorb alpha radiation (1)', 'Percentage = [count with paper (− background) / count from source (− background)] × 100 (1)'], guidance: '4 marks.' },
+    '19(c)(i)': { type: 'points', points: ['Use of ln2 = λt½ (1)', 'Use of A = A₀ e⁻λt (1)', 'Expected percentage of A₀ = 95 % (1)'], guidance: '3 marks. λ = ln2 / 432 = 1.6 × 10⁻³ y⁻¹; (A/A₀) × 100 % = 94.7 %.' },
+    '19(c)(ii)': { type: 'points', points: ['Beta is only emitted after the decay of neptunium to protactinium Or americium and neptunium only emit alpha (1)', 'The half-life of neptunium is very long (1)', 'There will only be a very small proportion of protactinium, so the suggestion is incorrect (1)'], guidance: '3 marks. Accept amount for proportion.' }
+  } },
+          { id: 'phys-edexcel-9ph0-2024-p3', year: 'June 2024', paperName: 'General and Practical Principles in Physics', paperCode: '9PH0/03', totalMarks: 120, durationMins: 150,
+  qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-que-20240618.pdf',
+  msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-rms-20240815.pdf',
+  qbqNote: 'All questions are wired up question-by-question with the official mark scheme. Figures and graphs are in the question paper PDF; parts that ask you to plot/draw have an on-screen canvas.',
+  questions: [
+    { number: 1, scenario: 'A student stretched a length of nylon fishing line using the apparatus shown (a G-clamp holds wooden blocks at the edge of a bench; the nylon line runs over a pulley to a mass holder, with a metre rule used to measure positions). (See the figure in the question paper PDF.)\nThe nylon fishing line was stretched by adding masses to the mass holder. The positions of the bottom of the mass holder were measured as masses were added. For each mass, the extension of the nylon fishing line was calculated. The student recorded the results, as shown in the table.\n\nMass / kg   Extension / cm\n0.05        0.4\n0.1         0.8\n0.25        2.1\n0.5         3.9\n0.75        6.0\n1.0         7.2',
+      parts: [
+        { code: '1(a)', prompt: 'Criticise the recording of these results.', marks: 2 },
+        { code: '1(b)', prompt: 'Describe how the extension of the nylon fishing line could have been determined as accurately as possible.', marks: 3 },
+        { code: '1(c)(i)', preamble: 'The strain for the nylon fishing line at its yield point is 0.04.', prompt: 'State what is meant by yield point.', marks: 1 },
+        { code: '1(c)(ii)', preamble: 'The original length of the nylon fishing line was 2.00 m.', prompt: 'Determine whether the fishing line was stretched beyond its yield point.', marks: 2 }
+      ] },
+    { number: 2, scenario: 'A student made measurements to determine if some gold coins were made from pure gold. The coins that were available to the student are shown. (See the figure in the question paper PDF.)',
+      parts: [
+        { code: '2(a)(i)', preamble: 'The student used digital calipers to measure the thickness t and the diameter d of one of the coins.\nt = 1.54 mm\nd = 22.16 mm', prompt: 'Calculate the volume V of the coin, and the percentage uncertainty in V.', marks: 7 },
+        { code: '2(a)(ii)', preamble: 'The student measured the mass of the coin using an electronic balance. The balance had a resolution of 0.1 g.\ndensity of pure gold = 1.93×10⁴ kg m⁻³\nmass of coin = 11.2 g', prompt: 'Assess whether the coin could be made from pure gold.', marks: 4 },
+        { code: '2(b)', preamble: 'The student\'s experimental method could have been improved.', prompt: 'Explain two changes the student could have made to the experimental method.', marks: 4 }
+      ] },
+    { number: 3, scenario: 'A student connects three identical 3 V bulbs to a 6 V battery of negligible internal resistance. The circuit includes two switches, S1 and S2. An ammeter A and bulb 1, bulb 2 are in the circuit, with S1 in one branch; bulb 3 is in a branch controlled by S2. (See the circuit diagram in the question paper PDF.)\nThe student closes S1 and records the brightness of each bulb. With S1 still closed, the student closes S2.',
+      parts: [
+        { code: '3', extended: true, prompt: '*Explain how the brightness of bulb 1 compares with the brightness of bulb 2 before and after S2 is closed.', marks: 6 }
+      ] },
+    { number: 4, scenario: 'Helium is available in small metal canisters. The helium can be used to fill party balloons.',
+      parts: [
+        { code: '4(a)', preamble: 'A full canister contains helium gas at a temperature of 18.5°C and a pressure of 1.65×10⁷ Pa. The canister is approximately spherical, with a radius of 4.36×10⁻² m.\nmass of 6.02×10²³ atoms of helium = 4.00×10⁻³ kg', prompt: 'Calculate the mass of helium gas in the full canister.', marks: 5 },
+        { code: '4(b)', preamble: 'Student X and Student Y discuss the weight of the canister and its contents after a number of balloons have been filled.\nStudent X suggests that the weight will have increased, because the upthrust exerted on the canister by the helium will be reduced.\nStudent Y suggests that the weight will have decreased, because helium has been released from the canister.', prompt: 'Assess which student\'s suggestion is correct.', marks: 4 }
+      ] },
+    { number: 5, scenario: 'A student used springs to attach a trolley between two fixed supports. (See the figure in the question paper PDF.)\nWhen displaced horizontally, the trolley oscillated with simple harmonic motion. To determine the time period T of oscillation of the trolley, the student displaced the trolley from its equilibrium position and released it. As she released the trolley, she started a stopwatch. She stopped the stopwatch when the trolley had returned to its starting point.',
+      parts: [
+        { code: '5(a)', prompt: 'Explain how the procedure used by the student to determine T could have been improved.', marks: 6 },
+        { code: '5(b)', preamble: 'The mass of the trolley was M. The student added a small mass m to the trolley and determined the new value of T. She repeated the procedure for a range of values of m. She plotted a graph of T² against m.', prompt: 'Explain how she could use her graph to determine a value for M.', marks: 4 }
+      ] },
+    { number: 6, scenario: 'Rosslyn Chapel is a 15th century chapel in Scotland. Inside the chapel, small sandstone cubes protrude from a number of arches. It has been suggested that carvings on these cubes bear a resemblance to standing wave patterns that can be produced on a vibrating metal plate.\nA metal plate is made to vibrate and sand is scattered evenly across its surface. At a certain frequency the sand moves to produce the standing wave pattern shown. (See the figure in the question paper PDF.)',
+      parts: [
+        { code: '6(a)', prompt: 'Explain why the sand moves to different positions when a standing wave is formed on the plate.', marks: 3 },
+        { code: '6(b)', preamble: 'The plate is set into movement by a vibration generator. The wavelength of the waves produced in the plate was estimated to be 0.32 m.\nThe signal applied to the vibration generator is shown on the oscilloscope trace. The time base of the oscilloscope was set to 0.50 ms div⁻¹. (See the oscilloscope trace in the question paper PDF.)\nThe waves produced in the plate travel at a speed much less than the speed of sound in air.\nspeed of sound in air = 340 m s⁻¹', prompt: 'Evaluate whether the data supports a value for the speed of waves in the plate that is much less than the speed of sound in air.', marks: 5 },
+        { code: '6(c)', preamble: 'The speed of sound in air can be determined by creating a standing wave in a column of air. The diagram shows a tuning fork just above the open end of a Perspex tube of air-column length L, dipping into water in a large measuring cylinder. (See the figure in the question paper PDF.)\nThe tuning fork produces a sound wave of known frequency f. Several tuning forks are available, each with a different frequency.\nA student adjusted the length L of the air column. A loud sound was heard when a standing wave was produced. A node was formed at the water surface, and an antinode was formed at the open end of the tube. The student used values of L and f to determine a value for the speed of sound.', prompt: 'Describe a graphical method that the student could have used to determine a value for the speed of sound.', marks: 3 }
+      ] },
+    { number: 7, scenario: 'Radon is a radioactive gas. One isotope of radon, ²²⁰₈₆Rn, decays to polonium, Po, by emitting an alpha particle.',
+      parts: [
+        { code: '7(a)', prompt: 'Complete the nuclear equation for the decay of radon.\n²²⁰₈₆Rn → ___Po + ___ (See the equation layout in the question paper PDF.)', marks: 2 },
+        { code: '7(b)', prompt: 'Explain why this is a safety hazard.', marks: 2 },
+        { code: '7(c)(i)', preamble: 'The diagram shows apparatus for monitoring the decay of radon in the laboratory. Radon gas is produced in the plastic bottle from the decay of radium. A small amount of radon is then inserted into the decay chamber by squeezing the plastic bottle. A current is produced between two electrodes inside the chamber. This current is amplified and recorded by the ammeter. (See the figure in the question paper PDF.)', prompt: 'Explain why a current is produced in the decay chamber.', marks: 2 },
+        { code: '7(c)(ii)', preamble: 'A teacher is demonstrating the operation of the decay chamber to her class. She squeezes the bottle to introduce radon into the chamber. She claims that within 450 s the activity of the radon in the chamber will be less than 1% of its initial value.\nhalf-life of radon = 55.6 s', prompt: 'Assess whether her claim is correct.', marks: 3 }
+      ] },
+    { number: 8, scenario: 'A student investigated the behaviour of a pendulum. The student used a \'spring gun\' to fire a small sphere of modelling clay at the wooden pendulum bob, as shown in Figure 1. The clay stuck to the pendulum bob, which swung to one side, as shown in Figure 2. (See Figures 1 and 2 in the question paper PDF.)',
+      parts: [
+        { code: '8(a)', extended: true, preamble: 'Consider the situation from the instant the spring gun is released to the instant the bob reaches its maximum height.', prompt: '*Describe how the principle of energy conservation and the principle of momentum conservation apply to this situation.', marks: 6 },
+        { code: '8(b)(i)', preamble: 'When the modelling clay hits the pendulum bob, the pendulum swings to one side.\neffective length of pendulum = 1.25 m', prompt: 'Show that the time taken for the pendulum bob to move from its lowest position to its highest position is about 0.6 s.', marks: 3 },
+        { code: '8(b)(ii)', preamble: 'The pendulum bob was then attached to a spring of stiffness 0.12 N m⁻¹. When the bob was displaced vertically and released, it oscillated with a time period equal to that of the pendulum.', prompt: 'Calculate the mass of the pendulum bob.', marks: 2 }
+      ] },
+    { number: 9, scenario: 'A student carried out an experiment with a light dependent resistor (LDR). He connected the LDR in series with an ammeter and a power supply, as shown in the circuit diagram. The student placed the LDR a known distance from a desk lamp, with a metre rule used to measure the distance x. (See the figures in the question paper PDF.)\nThe student noted the reading on the ammeter as he brought the LDR closer to the lamp.',
+      parts: [
+        { code: '9(a)(i)', preamble: 'The student planned to vary the intensity of light incident upon the LDR by adjusting the distance x between the LDR and the lamp. He thought that the intensity of light on the LDR would increase uniformly if he decreased x by equal intervals. He therefore planned to take ammeter readings as he decreased x from 20.0 cm to 10.0 cm in equal intervals.', prompt: 'Criticise the student\'s plan for data collection.', marks: 3 },
+        { code: '9(a)(ii)', prompt: 'Explain one precaution that the student should take to ensure that results are accurate.', marks: 2 },
+        { code: '9(b)', prompt: 'Explain why the ammeter reading increased as the LDR was brought closer to the lamp. Your answer should include reference to the charge carriers in the LDR.', marks: 3 }
+      ] },
+    { number: 10, scenario: 'A \'jumperoo\' is a harness, suspended by a vertical spring, into which a baby can be placed. (See the figure in the question paper PDF.)\nThe jumperoo is adjusted so that the baby\'s feet are a few centimetres above the floor. If the baby is then displaced downwards and released, he oscillates vertically.',
+      parts: [
+        { code: '10(a)', preamble: 'The graph shows how the acceleration a (in cm s⁻²) of the baby depends upon the displacement x (in cm) of the baby from its equilibrium position. (See the graph in the question paper PDF.)\nFor safety reasons, it is suggested that the maximum velocity of the baby should not exceed 0.5 m s⁻¹.', prompt: 'Assess whether it is safe for the baby to oscillate in the jumperoo with an amplitude of 22 cm.', marks: 3 },
+        { code: '10(b)', preamble: 'The amplitude of the oscillations quickly decreases, so the baby has to push down on the floor to maintain the oscillations. When the baby pushes at a particular frequency, the amplitude of oscillation increases to a maximum.\nA baby of greater mass is placed in the jumperoo. This baby pushes on the floor at a frequency that produces a maximum amplitude of oscillation. A calculation is not necessary.', prompt: 'Explain how this frequency compares with the frequency of pushing of the original baby.', marks: 3 }
+      ] },
+    { number: 11, scenario: 'A student connected a voltmeter to a potential divider, as shown in the circuit diagram. A sliding contact S can move along the resistance wire between ends X and Y, with the voltmeter V connected across part of it. (See the circuit diagram in the question paper PDF.)',
+      parts: [
+        { code: '11(a)', preamble: 'The potential divider was adjusted by moving sliding contact S from position X to position Y.', prompt: 'Explain how the voltmeter reading V depends upon the position of S.', marks: 3 },
+        { code: '11(b)', preamble: 'A filament bulb and ammeter were connected to the potential divider. The potential divider was used to vary V across the filament bulb. The ammeter gave the corresponding current I in the filament. I varied with V, as shown in the graph. (See the graph in the question paper PDF.)', prompt: 'Explain the shape of the graph.', marks: 2 },
+        { code: '11(c)(i)', preamble: 'The temperature T of the filament varies with the potential difference V across the filament according to the expression\nT = aVᵇ\nwhere a and b are constants.', prompt: 'Explain why a graph of logT against logV would give a straight line.', marks: 2 },
+        { code: '11(c)(ii)', kind: 'diagram', preamble: 'Data for T and V is shown in the table below.\n\nT / K   V / V\n1480    5.03\n1680    6.89\n1850    8.95\n2010    11.11\n2140    12.94\n2280    15.06', prompt: 'Plot a graph of logT against logV on the grid opposite. Use the extra columns provided to show any processed data.', marks: 5 },
+        { code: '11(c)(iii)', prompt: 'Determine a value for b using your graph.', marks: 2 }
+      ] },
+    { number: 12, scenario: 'Chocolate is a solid at room temperature, but melts just below body temperature.',
+      parts: [
+        { code: '12(a)(i)', preamble: 'A student investigated the viscosity of some melted chocolate using a falling-ball method. Since chocolate is opaque, a thin rod was attached to the ball so that the movement of the ball could be monitored. The apparatus (measuring cylinder containing melted chocolate, with rod and ball) is shown. (See the figure in the question paper PDF.)\nThe chocolate was maintained at a constant temperature during the investigation.\nThe student used a stopwatch to measure the time t for the ball to fall 22.5 cm whilst travelling at its terminal velocity v. Her results are shown in the table.\n\nt₁ / s   t₂ / s   t₃ / s\n9.6      9.9      9.6\n\nv is given by the formula\nv = 2r²g(ρB − ρC) / 9η\nwhere r is the radius of the ball, ρB is the density of the ball, ρC is the density of the chocolate, η is the viscosity of the chocolate.\nThe graph (taken from a commercial website) shows how, at the temperature of the experiment, η (in Pa s) depends on the percentage of cocoa in the chocolate. (See the graph in the question paper PDF.)\nThe chocolate wrapper indicated that the chocolate had a 35% cocoa content.\nr = 4.25×10⁻³ m\nρB = 7750 kg m⁻³\nρC = 1330 kg m⁻³', prompt: 'Assess whether the student\'s timing data supports this percentage cocoa content.', marks: 5 },
+        { code: '12(a)(ii)', prompt: 'Explain one reason why the student\'s data may have led to an inaccurate conclusion about the cocoa content.', marks: 2 },
+        { code: '12(b)', preamble: 'One type of chocolate melts at a temperature of 32°C. The energy released when 65 g of this chocolate is digested is 345 kcal. It is suggested that the energy used to melt a piece of this chocolate is at least 15% of the energy released when the chocolate is digested.\ninitial temperature of chocolate = 15°C\nspecific heat capacity of chocolate = 3.9×10³ J kg⁻¹ K⁻¹\nspecific latent heat of chocolate = 1.50×10⁵ J kg⁻¹\n1 kcal = 4200 J', prompt: 'Assess the accuracy of this suggestion.', marks: 6 }
+      ] }
+  ],
+  markSchemes: {
+    '1(a)': { type: 'points', points: ['Positions of mass holder not recorded (accept reference to not all raw data being recorded/shown)', 'Data not recorded to the same sf/dp'], guidance: 'Two distinct points required.' },
+    '1(b)': { type: 'points', points: ['Read the metre rule at eye level (to avoid parallax)', 'Bring the metre rule closer (to avoid parallax)', 'Use set square to read position of bottom of mass holder (accept valid alternatives e.g. marker on mass holder)', 'Use plumb line to check that metre rule is vertical', 'Record positions of mass holder when loading and unloading and calculate mean value'], guidance: 'MAX 3.' },
+    '1(c)(i)': { type: 'points', points: ['The value of stress at which the fishing line starts to deform permanently/plastically, OR the value of stress at which the fishing line continues to extend with no additional force'], guidance: 'Accept point / strain for "value of stress".' },
+    '1(c)(ii)': { type: 'points', points: ['Use of extension = strain × original length, e.g. 0.04 × 2.0 m = 0.08 m', '(Maximum) extension before yielding is 8 cm, so line doesn\'t yield, OR strain at max extension = 0.036, so line doesn\'t yield'], guidance: 'Max recorded extension 7.2 cm (0.036 strain) is below the 8 cm (0.04) yield point.' },
+    '2(a)(i)': { type: 'points', points: ['Use of V = π(d/2)²t', 'Use of half resolution to calculate % uncertainty in d', '% uncertainty in area = 2 × (% uncertainty in d)', 'Calculation of % uncertainty in t', '% uncertainty in t added to % uncertainty in area', 'V = 5.94×10⁻⁷ m³', '%V = 0.4 %'], guidance: 'V = π(22.16×10⁻³ m / 2)² × 1.54×10⁻³ m = 5.94×10⁻⁷ m³. %V ≈ 0.36 %.' },
+    '2(a)(ii)': { type: 'points', points: ['Use of ρ = m/V', 'Calculation of % uncertainty in ρ', 'Max density = 1.9×10⁴ kg m⁻³ (ecf)', '1.9×10⁴ kg m⁻³ < 1.93×10⁴ kg m⁻³ so coin not pure gold (or comparison and consistent conclusion)'], guidance: 'ρ = 11.2×10⁻³ kg / 5.94×10⁻⁷ m³ = 1.89×10⁴ kg m⁻³; %ρ ≈ 0.81 %.' },
+    '2(b)': { type: 'points', points: ['Measure thickness of a stack of coins (or mass of a stack of coins)', '(Uncertainty remains the same, so) % U is reduced [dependent]', 'Determine diameter/mass/thickness by repeating and calculating a mean', 'This reduces the effect of random errors [dependent]', 'Check and correct for zero error on calipers or balance', 'This reduces the effect of systematic error [dependent]'], guidance: 'MAX 4. Two improvements each with justification.' },
+    '3': { type: 'points', points: ['IC1: Before closing S2, bulb 1 and bulb 2 have the same p.d./current so both bulbs have equal brightness', 'IC2: Closing switch S2 allows current to flow in bulb 3', 'IC3: Bulb 1 and bulb 3 are in parallel, so the resistance of the combination decreases', 'IC4: The p.d. across bulb 1 (and bulb 3) decreases, or the p.d. across bulb 2 increases', 'IC5: The current in bulb 2 increases so its brightness increases, or current in bulb 1 decreases so its brightness decreases', 'IC6: (When S2 closed) bulb 1 is not as bright as bulb 2'], guidance: '*Extended-response; indicative content plus structure/linkage (max 6).' },
+    '4(a)': { type: 'points', points: ['Use of V = (4/3)πr³', 'Use of pV = NkT', 'Temperature conversion to kelvin', 'Use of m = (N / 6.02×10²³) × 4.00×10⁻³ kg', 'm = 9.46×10⁻³ kg'], guidance: 'V = (4/3)π(4.36×10⁻²)³ = 3.47×10⁻⁴ m³; N = 1.42×10²⁴; m = 9.46×10⁻³ kg.' },
+    '4(b)': { type: 'points', points: ['Upthrust on canister equals weight of air/fluid displaced', 'Volume of canister stays constant, so upthrust on canister remains constant (and student X is incorrect)', 'Mass of helium gas (in canister) decreases', 'Hence the weight will decrease (as helium is released) and student Y is correct'], guidance: 'Student Y is correct.' },
+    '5(a)': { type: 'points', points: ['Time a number of (complete) oscillations and calculate a mean time period', 'This reduces the effect of random error [dependent]', 'Allow oscillation to settle before starting to time', 'Use a (fiducial) marker', 'Use the mid-point of the oscillation (for timing)', 'Trolley is travelling fastest at mid-point, so effect of reaction time is reduced'], guidance: 'Accept reaction time for random error.' },
+    '5(b)': { type: 'points', points: ['Substitutes into equation for mass on spring to give T = 2π√((M+m)/k)', 'T² = 4π²M/k + 4π²m/k', 'Identify gradient as 4π²/k (and calculate a value for k)', 'Identify y-intercept as 4π²M/k (and calculate a value for M)'], guidance: 'Plot T² (y) against m (x); use gradient and intercept to find M.' },
+    '6(a)': { type: 'points', points: ['There are nodes and antinodes on the plate', 'Sand is displaced away from the antinodes', 'Sand collects/gathers at the nodes'], guidance: 'Accept "displacement" for "amplitude".' },
+    '6(b)': { type: 'points', points: ['1 full cycle read from oscilloscope trace as 4.5–4.7 div', 'Converts from div to s', 'Use of f = 1/T', 'Use of v = fλ', 'v = 140 m s⁻¹, which is (much) less than 340 m s⁻¹'], guidance: 'T = 4.6 div × 0.5 ms div⁻¹ = 2.3×10⁻³ s; f = 435 Hz; v = 139 m s⁻¹.' },
+    '6(c)': { type: 'points', points: ['EITHER: Plot a graph of L against 1/f; L = λ/4; λ = 4L so speed of sound = 4 × gradient', 'OR: (Calculate λ using) λ = 4L; Plot a graph of λ against 1/f; Speed of sound = gradient'], guidance: 'Antinode at the open end, node at the water surface, so L = λ/4.' },
+    '7(a)': { type: 'points', points: ['Top line correct: ²¹⁶Po and ⁴He(α) mass numbers (216 and 4)', 'Bottom line correct: ⁸⁴Po and ₂He(α) atomic numbers (84 and 2)'], guidance: '²²⁰₈₆Rn → ²¹⁶₈₄Po + ⁴₂α.' },
+    '7(b)': { type: 'points', points: ['Radon gas can be breathed in and can cause damage to living cells', 'Because alpha (particles) highly ionising'], guidance: 'Must state that this happens inside the body.' },
+    '7(c)(i)': { type: 'points', points: ['The alpha particles ionise the air (inside the chamber)', 'This produces (moving) electrons/ions inside the chamber'], guidance: 'If no other marks, MAX 1 for: alpha particles are charged and attracted to electrode.' },
+    '7(c)(ii)': { type: 'points', points: ['Use of λ = ln2 / t½', 'Use of A = A₀e^(−λt)', '% activity remaining = 0.4 % (<1%), so claim is correct, OR time to decay to 1% = 370 s (<450 s), so claim is correct'], guidance: 'λ = ln2/55.6 = 0.0125 s⁻¹; % remaining = 100e^(−0.0125 × 450) = 0.37 %.' },
+    '8(a)': { type: 'points', points: ['IC1: Elastic P.E. (of the spring) is transferred to K.E. of the modelling clay', 'IC2: Clay has momentum before hitting the bob', 'IC3: Momentum is conserved when clay hits the bob', 'IC4: K.E. is transferred from the clay to the bob', 'IC5: Collision is inelastic, or K.E. is not conserved', 'IC6: At the maximum height all the K.E. (after the collision) has been transferred to gravitational P.E.'], guidance: '*Extended-response; indicative content plus structure/linkage (max 6).' },
+    '8(b)(i)': { type: 'points', points: ['Use of T = 2π√(l/g)', 'Time to reach maximum height = T/4', 'Time to reach maximum height = 0.56 (s)'], guidance: 'T = 2.24 s; t = T/4 = 0.56 s ≈ 0.6 s.' },
+    '8(b)(ii)': { type: 'points', points: ['Use of T = 2π√(m/k)', 'm = 0.015 kg (ecf from (b)(i))'], guidance: '2.24 s = 2π√(m/0.12); m = 0.0153 kg.' },
+    '9(a)(i)': { type: 'points', points: ['Intensity of light varies as an inverse square law, or reference to I = P/4πx²', 'The light intensity would not increase uniformly', 'The student should decrease the distance at decreasing intervals', 'The student should use a greater range (of distances)'], guidance: 'MAX 3.' },
+    '9(a)(ii)': { type: 'points', points: ['EITHER carry out experiment under subdued lighting; as ambient light increases the ammeter reading [dependent]', 'OR take readings at eye level; reduces parallax error [dependent]', 'OR take multiple readings and calculate a mean; reduces effect of random error [dependent]'], guidance: 'One precaution with justification.' },
+    '9(b)': { type: 'points', points: ['Photons incident upon LDR promoted electrons into conduction band / released conduction electrons', 'Number of free electrons (per unit volume) increases', 'Current I = nqvA so the current increases (or R decreases so the current increases)'], guidance: 'Accept "charge carriers" for "free electrons".' },
+    '10(a)': { type: 'points', points: ['Use of ω = √(a/(−x)) (ω from the gradient of the a–x graph)', 'Use of vmax = ωA', 'vmax = 0.44 m s⁻¹, so it is safe to oscillate at this amplitude'], guidance: 'ω = √(20.0 cm s⁻² / 5.0 cm) = 2.0 s⁻¹; vmax = 2.0 × 0.22 = 0.44 m s⁻¹.' },
+    '10(b)': { type: 'points', points: ['The (pushing) frequency must match the natural frequency', 'The time period of oscillation increases, as T = 2π√(m/k)', 'So the frequency of pushing must decrease [dependent]'], guidance: 'Greater mass → larger T → lower natural (and pushing) frequency.' },
+    '11(a)': { type: 'points', points: ['When S is at end X, V is zero, OR when S is at end Y, V equals supply (terminal) p.d.', 'The resistance (between X and S) is proportional to the length XS', 'V increases as the slider moves from X to Y'], guidance: 'If both versions of the first point are given, then give the third mark too.' },
+    '11(b)': { type: 'points', points: ['(As V increases) I increases, so the temperature of the filament increases', 'So the resistance of the filament increases (so the increase in current per unit increase in p.d. decreases)'], guidance: 'Allow "filament heats up".' },
+    '11(c)(i)': { type: 'points', points: ['Shows expansion log(T) = b log(V) + log(a)', 'Compares with y = mx + c and states/indicates that the gradient is b (a constant)'], guidance: 'Taking logs of T = aVᵇ linearises the relationship.' },
+    '11(c)(ii)': { type: 'points', points: ['Log values correct and to 2 or 3 decimal places', 'Labels and unit', 'Scales (points spread over at least half the grid)', 'Plots (within 1 mm)', 'Line of best fit'], guidance: 'log(V): 0.702, 0.838, 0.952, 1.046, 1.112, 1.178; log(T): 3.170, 3.225, 3.267, 3.303, 3.330, 3.358. On-screen canvas for plotting.' },
+    '11(c)(iii)': { type: 'points', points: ['Gradient determined using a large triangle', 'b = 0.38 – 0.40 (2 or 3 sf)'], guidance: 'gradient = (3.32 − 3.18)/(1.09 − 0.73) = 0.389.' },
+    '12(a)(i)': { type: 'points', points: ['Calculation of mean t', 'Use of v = distance/t', 'Use of v = 2r²g(ρB−ρC)/9η', 'Cocoa content = 30% (or viscosity at 35% = 4.5 Pa s)', 'Conclusion consistent with their graph value'], guidance: 'mean t = 9.7 s; v = 0.0232 m s⁻¹; η = 10.9 Pa s → cocoa ≈ 30% (from graph), not consistent with 35%.' },
+    '12(a)(ii)': { type: 'points', points: ['EITHER temperature may not have been constant; so viscosity would have varied', 'OR reaction-time/parallax error reading the distance; so velocity inaccurate', 'OR an extra drag force (eddies/turbulent flow); so terminal velocity reduced'], guidance: 'One reason with consequence.' },
+    '12(b)': { type: 'points', points: ['Use of E = mcΔθ', 'Use of E = Lm', 'total E = E(heat) + E(latent)', 'Conversion between kcal and J', 'Use of 15% to give 2.2×10⁵ J, or energy required = 1%', 'Conclusion consistent with comparison'], guidance: 'E(heat) = 4.31×10³ J; E(latent) = 9.75×10³ J; energy to melt = 1.41×10⁴ J. 15% of digested energy = 2.17×10⁵ J. Energy to melt is much less than 15% — suggestion not accurate.' }
+  } },
+          { id: 'phys-edexcel-9ph0-2023-p1', year: 'June 2023', paperName: 'Advanced Physics I', paperCode: '9PH0/01', totalMarks: 90, durationMins: 105,
+  qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-que-20230525.pdf',
+  msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-rms-20230817.pdf',
+  qbqNote: 'Structured questions Q11–Q18 are wired up here (80 marks total). The 10 multiple-choice questions (Q1–Q10, 1 mark each, 10 marks total) are not wired up — see the question paper PDF for those.',
+  questions: [
+    { number: 11, scenario: 'An induction hob consists of a coil beneath a sheet of ceramic material. The coil is connected to an alternating current (a.c.) supply. (See the diagram in the question paper PDF.)', parts: [
+      { code: '11(a)', preamble: 'A steel pan containing water is placed on the induction hob.', prompt: 'Explain why the pan becomes hot when the supply is switched on.', marks: 4 },
+      { code: '11(b)', preamble: 'The a.c. supply to the coil in an induction hob has a much higher frequency than normal mains frequency.', prompt: 'Explain why this is an advantage in this case.', marks: 2 }
+    ] },
+    { number: 12, scenario: 'An electrical conductor XY carries a current I. The current density j is defined as j = I/A where A is the cross-sectional area of the conductor. (See the diagram in the question paper PDF.)', parts: [
+      { code: '12(a)', preamble: 'Current density is a vector quantity.', prompt: 'State what is meant by a vector quantity.', marks: 1 },
+      { code: '12(b)', preamble: 'I is constant but A decreases towards end Y.', prompt: 'Explain how this affects the drift velocity of the free electrons in the conductor.', marks: 2 },
+      { code: '12(c)', preamble: 'The resistivity ρ of the conducting material is given by ρ = E/j where E is the electric field strength.', prompt: 'Show that the units are the same on both sides of this equation.', marks: 4 }
+    ] },
+    { number: 13, scenario: 'The circuit shown provides an input to a transistor. A transistor is a type of electronic switch and in this circuit it can be assumed to have infinite resistance. A 7.0 V supply is connected to a 333 Ω resistor in series with an LDR, with the input to the transistor taken across part of the circuit. The resistance of the LDR varies with light level as shown on a graph (resistance from about 100 to 100000 Ω against light level from 0.1 to 1000 lux). The transistor switches on when the potential difference across the input increases above 0.7 V. This should happen as the light level reaching the LDR increases above 30 lux. (See the diagram and graph in the question paper PDF.)', parts: [
+      { code: '13(a)', prompt: 'Deduce whether this circuit responds as required.', marks: 6 },
+      { code: '13(b)', prompt: 'Explain how the resistance of the LDR changes as the light level increases.', marks: 2 }
+    ] },
+    { number: 14, scenario: 'Overhead electricity cables for railway lines are supported by structures like the one shown. An electric cable of mass 45 kg is suspended from a support rod X. A second support rod Y is attached to X. X and Y are attached at one end to a column. The cable hangs from the far end of rod X (length 1.3 m); rod Y (length 1.5 m) makes an angle of 35° with rod X and braces it against the column. The masses of support rods X and Y are negligible. (See the diagram in the question paper PDF.)', parts: [
+      { code: '14(a)(i)', prompt: 'Determine, by taking moments, the force exerted on rod X by rod Y.', marks: 4 },
+      { code: '14(a)(ii)', prompt: 'Complete the free-body force diagram for support rod X. (The weight of cable arrow is already shown.)', marks: 2, kind: 'diagram' },
+      { code: '14(b)', preamble: 'A website gives a value of the electric field strength E, at two distances from the electric cable:\nDistance = 3 m, E = 1200 N C⁻¹\nDistance = 25 m, E = 100 N C⁻¹', prompt: 'Deduce whether these data are consistent with an inverse square law.', marks: 3 }
+    ] },
+    { number: 15, scenario: 'A delta particle decays into a proton and a pion.', parts: [
+      { code: '15(a)(i)', preamble: 'The diagram shows tracks in a particle detector formed when the delta particle decays, labelled "pion" and "proton". (See the diagram in the question paper PDF.)', prompt: 'State why it can be concluded from the diagram that the delta particle is neutral.', marks: 1 },
+      { code: '15(a)(ii)', prompt: 'Deduce the charge on the pion.', marks: 2 },
+      { code: '15(a)(iii)', prompt: 'Complete the particle equation for the decay of the delta (Δ⁰) particle.\nΔ⁰ →', marks: 1 },
+      { code: '15(a)(iv)', prompt: 'State why the delta particle must be classified as a baryon based on the evidence of its decay.', marks: 1 },
+      { code: '15(a)(v)', prompt: 'Explain how the momentum of the proton compares with the momentum of the pion.', marks: 3 },
+      { code: '15(b)(i)', preamble: 'The mass of the delta particle is 1232 MeV/c².', prompt: 'Calculate the mass of the delta particle in kg.', marks: 3 },
+      { code: '15(b)(ii)', preamble: 'The mass of the proton is 939 MeV/c² and the mass of the pion is 139 MeV/c².', prompt: 'Explain why the sum of the masses of the two particles after the decay is not equal to the mass of the delta particle.', marks: 3 }
+    ] },
+    { number: 16, scenario: 'Electric vehicles use a direct current (d.c.) electric motor powered by a battery for propulsion. A simplified diagram of a d.c. electric motor is shown. A split ring consists of two semicircular sections that are attached to a coil. The coil is labelled ABCD. Two brushes, made of carbon, rub against and make electrical contact with the split ring. (See the diagram in the question paper PDF.)', parts: [
+      { code: '16(a)', prompt: '*Describe how this arrangement can lead to the coil rotating.', marks: 6, extended: true },
+      { code: '16(b)', preamble: 'An advert for an electric car has the following information:\n• electric motor can develop up to 390 kW output power\n• car achieves a velocity of 28 m s⁻¹ from rest in 4.0 s at maximum power', prompt: 'Calculate the work done by resistive forces when the car accelerates to a velocity of 28 m s⁻¹ from rest in 4.0 s.\nmass of car = 1950 kg', marks: 3 },
+      { code: '16(c)', preamble: 'A website suggests that \'fast-charging\' the battery in an electric vehicle can increase the internal resistance of the battery.', prompt: 'Explain why an increase in internal resistance of a battery is a disadvantage.', marks: 3 }
+    ] },
+    { number: 17, scenario: 'In cricket a fielder is often placed at the boundary edge. If the fielder catches the ball, the batter is out. The fielder is 55.0 m away from the batter. The fielder can catch the ball providing the ball is less than three metres above the height at which it was hit. The ball is hit with a velocity of 23.8 m s⁻¹ and at an angle of 50.0° to the horizontal. (See the diagram in the question paper PDF.)', parts: [
+      { code: '17(a)', prompt: 'Deduce whether the fielder can catch the ball in this case.', marks: 5 },
+      { code: '17(b)(i)', preamble: 'The ball was bowled. Just after the bat hit the ball, the ball had a velocity of 23.8 m s⁻¹ at an angle of 50° to the horizontal.', prompt: 'Show that the magnitude of the momentum of the ball, after it was hit, was about 3.3 N s.\nmass of cricket ball = 0.140 kg', marks: 1 },
+      { code: '17(b)(ii)', preamble: 'The vector diagram shows, accurately to scale, the momentum of the ball and the momentum of the bat before the hit.\nmomentum of bat before hitting ball = 15.0 N s at 25° to the horizontal\nmomentum of ball before hitting bat = 4.6 N s at 10° to the horizontal\n(See the vector diagram in the question paper PDF.)', prompt: 'Determine, by completing the vector diagram, the momentum of the bat after it hit the ball.', marks: 5, kind: 'diagram' }
+    ] },
+    { number: 18, scenario: 'The circuit shows a 1 mF capacitor connected to an a.c. supply. The graph shows how the potential difference V varies with time t (V oscillates between +5 V and −5 V, with t from 0 to 0.03 s). (See the diagram and graph in the question paper PDF.)', parts: [
+      { code: '18(a)(i)', prompt: 'Calculate the root-mean-square potential difference.', marks: 1 },
+      { code: '18(a)(ii)', preamble: 'The formula used to generate this graph is V = 5sin(100πt).', prompt: 'Explain why this formula leads to the graph above.', marks: 3 },
+      { code: '18(b)(i)', preamble: 'A spreadsheet is used to model how the current I in the 1 mF capacitor varies with t. Six rows of the spreadsheet are shown, with columns: A (t/s), B (Δt/s), C (V/V), D–F (Q initial/C, Q final/C, ΔQ/C) and G (I/A). For example row 10 has t = 0.0080 s, Δt = 0.0010 s, V = 2.94 V, Q initial = 0.00500 C, Q final = 0.00476 C, ΔQ = −0.00024 C. (See the spreadsheet in the question paper PDF.)', prompt: 'Explain how cell E10 has been calculated.', marks: 2 },
+      { code: '18(b)(ii)', prompt: 'State the formula used to calculate cell G11.', marks: 1 },
+      { code: '18(b)(iii)', prompt: 'Calculate the maximum energy stored on the capacitor.', marks: 2 },
+      { code: '18(c)', preamble: 'The spreadsheet data are used to plot a graph to show how I varies with t (shown as a dashed line). The corresponding graph of V against t is also shown as a continuous line. (See the graph in the question paper PDF.)', prompt: 'Deduce whether the capacitor dissipates power over one cycle of the a.c. supply.', marks: 4 }
+    ] }
+  ],
+  markSchemes: {
+    '11(a)': { type: 'points', points: ['current (in coil) produces a magnetic field/flux', '(a.c.) leads to changing (magnetic) field/flux through pan', 'induces an emf in pan', 'leads to current (in pan because it is an electrical conductor)'], guidance: '4 marks. MP2–4 must relate to the pan. Heating arises from the induced current in the pan.' },
+    '11(b)': { type: 'points', points: ['high frequency means that flux/field is changing quickly (increases rate of change of flux/field)', 'leads to increased (induced) emf in pan (or increase in induced current in pan)'], guidance: '2 marks. MP2 dependent on MP1.' },
+    '12(a)': { type: 'exact', points: ['A vector has magnitude and direction', 'has magnitude and direction'], guidance: '1 mark.' },
+    '12(b)': { type: 'points', points: ['states I = nqvA (Or n and q stated as constant)', 'v must increase (if A decreases)'], guidance: '2 marks. MP2 dependent on MP1.' },
+    '12(c)': { type: 'points', points: ['j has units A m⁻²', 'E has units V m⁻¹ or N C⁻¹', 'ρ has units of Ω m', 'algebra to show units the same on both sides'], guidance: '4 marks. Units of E/j = (V m⁻¹)/(A m⁻²) = Ω m, the units of ρ. Accept equivalent base-unit derivations.' },
+    '13(a)': { type: 'points', points: ['30 lux corresponds to 3000 Ω', 'use of ratio of resistances', 'use of corresponding ratio of p.d.s', 'to a p.d. of 0.7 (V)', 'if light goes above this level then resistance of LDR decreases', 'so p.d. to transistor increases so does perform as required'], guidance: '6 marks. MP6 dependent on MP5. e.g. 7.0 V × 333/(333 + 3000) = 0.70 V.' },
+    '13(b)': { type: 'points', points: ['more electrons move into a conduction band (more electrons become free)', 'with increased light level so resistance decreases'], guidance: '2 marks. MP2 dependent on MP1.' },
+    '14(a)(i)': { type: 'points', points: ['attempt to take moments around right hand end of X', 'use of W = mg', 'correct component of T or perpendicular distance to T', 'T = 890 N'], guidance: '4 marks. 45 × 9.81 × 1.3 = T × 1.5 × sin35° → T = 888 N.' },
+    '14(a)(ii)': { type: 'points', points: ['(thrust) arrow approx 35° to horizontal to the upper left — force from rod Y', 'arrow direction (force from column) capable of balancing opposite pair'], guidance: '2 marks (complete the free-body diagram — use the canvas).' },
+    '14(b)': { type: 'points', points: ['use of E r² = constant (eg writes Q = 4πε₀Er² Or Er² = k)', 'calculates at least one value of the constant', 'calculates a second value and states that the field is not inverse square law'], guidance: '3 marks. 1200 × 3² = 10800; 100 × 25² = 62500 — values differ, so not inverse square.' },
+    '15(a)(i)': { type: 'exact', points: ['leaves no track', 'the tracks present are opposite curvatures'], guidance: '1 mark.' },
+    '15(a)(ii)': { type: 'points', points: ['proton is positive', 'conservation of charge means pion is negative (Or opposite curvature to proton means pion is negative)'], guidance: '2 marks. Both marks for 0 = +1 −1 with pion identified as negative.' },
+    '15(a)(iii)': { type: 'exact', points: ['Δ⁰ → p⁺ + π⁻', 'Δ → p + π⁻'], guidance: '1 mark. Allow ecf if pion was stated as positive in (ii).' },
+    '15(a)(iv)': { type: 'exact', points: ['baryon number conserved', 'baryon number is +1 on both sides of equation', 'proton is a baryon and the pion is not a baryon'], guidance: '1 mark.' },
+    '15(a)(v)': { type: 'points', points: ['the radius of the proton path is (very) large compared with the pion (allow: proton path is less curved)', 'according to p = BQr', 'the momentum of the proton is larger than the momentum of the pion (dependent on MP2 or MP1)'], guidance: '3 marks.' },
+    '15(b)(i)': { type: 'points', points: ['converts eV to J', 'use of m = E/c²', 'mass = 2.19 × 10⁻²⁷ (kg)'], guidance: '3 marks. (1232 × 1.6×10⁻¹⁹ × 10⁶)/(3×10⁸)² = 2.19 × 10⁻²⁷ kg.' },
+    '15(b)(ii)': { type: 'points', points: ['calculates mass difference (Or states total mass of decay products is less than mass of delta particle)', 'according to ΔE = c²Δm', 'becomes (extra) Eₖ between decay products'], guidance: '3 marks. 939 + 139 = 1078; 1232 − 1078 = 154 MeV/c² converted to kinetic energy of the products.' },
+    '16(a)': { type: 'points', points: ['current direction is D to C in coil (Or current direction is B to A)', 'there is a force due to current(-carrying conductor) within a magnetic field (accept F = BIl)', 'the force is vertically down on side DC (Or vertically up on side BA)', 'moment of force (around axis) produces rotation', 'as coil moves through half a turn split ring ensures the current switches direction (for a particular side)', 'this results in the coil continuing to rotate (in the same direction)'], guidance: '6 marks (QWC/*). Indicative content plus logical structure/linkage. Allow ecf if current direction defined oppositely.' },
+    '16(b)': { type: 'points', points: ['use of P = W/t', 'use of Eₖ = ½mv² (Or SUVAT, F = ma and W = Fs)', 'work done = 8.0 × 10⁵ J'], guidance: '3 marks. Work by motor = 1.56×10⁶ J; Eₖ = 764400 J; work by resistive forces ≈ 7.96×10⁵ J.' },
+    '16(c)': { type: 'points', points: ['Energy argument: more energy transferred in the battery (heating effect in the battery)', 'the battery/car will be less efficient', 'therefore the battery will need charging more often / journey will be shorter', 'Force/Power argument: increased internal resistance reduces terminal p.d.', 'reduces the current (in the circuit)', 'so acceleration of car is reduced / less power / battery takes longer to charge'], guidance: '3 marks. Award via either the energy argument or the force/power argument.' },
+    '17(a)': { type: 'points', points: ['uses correct components of velocity', 'uses v = d/t in the horizontal plane Or uses any equation of motion in the horizontal plane', 'uses s = ut + ½at²', 'the ut term has the opposite sign to the term ½at²', 's = 2.1 m so fielder can catch the ball because it is less than 3 m'], guidance: '5 marks. vV = 18.23, vH = 15.30 m s⁻¹; t = 3.595 s; s = 2.1 m (< 3 m, so caught).' },
+    '17(b)(i)': { type: 'exact', points: ['p = 3.33 (N s)', '3.33', 'p = 0.140 × 23.8 = 3.33 kg m s⁻¹'], guidance: '1 mark (show that). p = mv = 0.140 × 23.8 = 3.33 N s.' },
+    '17(b)(ii)': { type: 'points', points: ['draws labelled vector line with a ruler representing p_ball after', 'at approximately the correct angle (50°)', 'length of line scaled correctly (scale 1 cm = 1 N s, length ≈ 3.3 cm)', 'either p_ball after or p_bat after line should start at the start of the p_ball before line', 'Momentum = 8.3 (N s) ± 0.3 and angle = 34° ± 3°'], guidance: '5 marks. Conservation of momentum on the scale vector diagram (1 cm = 1 N s). Bat momentum after ≈ 8.3 N s at ≈ 34°.' },
+    '18(a)(i)': { type: 'exact', points: ['Vrms = 3.5 V', '3.5 V', '3.54 V'], guidance: '1 mark. Vrms = 5/√2 = 3.54 V.' },
+    '18(a)(ii)': { type: 'points', points: ['"5" is the peak value of pd', 'use of T = 1/f Or ω = 2π/T Or ω = 2πf', 'uses ω = 100π to show that the time period should be 0.02 s'], guidance: '3 marks.' },
+    '18(b)(i)': { type: 'points', points: ['Q = CV Or E10 = C10 × C', 'where C = 0.001 (F)'], guidance: '2 marks. MP2 dependent on MP1.' },
+    '18(b)(ii)': { type: 'exact', points: ['I = Q/t Or G11 = F11/B11', 'G11 = F11/B11'], guidance: '1 mark.' },
+    '18(b)(iii)': { type: 'points', points: ['use of W = ½CV² Or W = ½QV Or W = ½Q²/C', 'W = 0.0125 J'], guidance: '2 marks. ½ × 0.001 × 5² = 0.0125 J.' },
+    '18(c)': { type: 'points', points: ['states P = IV', 'any two corresponding values of I and V used to calculate a value of P', 'observation that at different times P is negative or positive', 'overall power dissipated by capacitor is zero'], guidance: '4 marks.' }
+  } },
+          { id: 'phys-edexcel-9ph0-2023-p2', year: 'June 2023', paperName: 'Advanced Physics II', paperCode: '9PH0/02', totalMarks: 90, durationMins: 105,
+  qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-que-20230610.pdf',
+  msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-rms-20230817.pdf',
+  qbqNote: 'Structured questions 11–18 are wired up here (80 marks). Questions 1–10 are multiple-choice (single answer A–D, 1 mark each, 10 marks total) and are not wired up — they are in the question paper PDF.',
+  questions: [
+    { number: 11, scenario: 'The photograph shows a stringed instrument called a cello being played with a bow. (See the diagram in the question paper PDF.)\n\nA standing wave forms on a cello string when the bow moves across the string.',
+      parts: [
+        { code: '11', prompt: 'Deduce whether a thicker string will produce a note of higher or lower frequency compared with a thinner string.\nAssume each string is the same length and at the same tension.', marks: 4 }
+      ] },
+    { number: 12, scenario: 'A student placed a metal block of mass 220 g in boiling water at 100 °C for several minutes.\n\nThe student then transferred the metal block into 300 g of water at 19 °C inside a glass container of mass 50 g. The final temperature of the water was 23 °C.\n\nThe table shows specific heat capacity values for copper and tin.\nMetal: copper / tin\nSpecific heat capacity / J kg⁻¹ K⁻¹: 390 / 230',
+      parts: [
+        { code: '12', preamble: 'specific heat capacity of water = 4200 J kg⁻¹ K⁻¹\nspecific heat capacity of glass = 840 J kg⁻¹ K⁻¹', prompt: 'Deduce whether the metal block was made from copper or tin.', marks: 5 }
+      ] },
+    { number: 13, scenario: 'A fusion research centre was opened in Rotherham in 2021. The centre has a device which tests materials in the extreme conditions found inside a fusion reactor.',
+      parts: [
+        { code: '13(a)', prompt: 'Describe the extreme conditions inside a fusion reactor.', marks: 3 },
+        { code: '13(b)', preamble: 'The graph shows how the binding energy per nucleon varies with nucleon number for a range of nuclides. The vertical axis is binding energy per nucleon / MeV (0 to 10) and the horizontal axis is nucleon number (0 to 250). (See the diagram in the question paper PDF.)', prompt: 'Explain why the fusion of nuclei can produce large amounts of energy. Your answer should refer to information from the graph.', marks: 3 }
+      ] },
+    { number: 14, scenario: 'The fuel used in a camping stove is butane, which is stored in a canister as shown. (See the diagram in the question paper PDF.)\n\nSome of the butane in the canister is in a liquid state, and some is a gas.',
+      parts: [
+        { code: '14(a)', preamble: 'When the stove uses the butane gas, some of the liquid butane evaporates.', prompt: 'Explain why the temperature of the canister decreases when the stove is used.', marks: 3 },
+        { code: '14(b)(i)', preamble: 'The pressure inside the canister is 220 kPa and the temperature of the gas is 21 °C.\nThe canister is in the shape of a cylinder of length 0.23 m and radius 0.11 m.\nAssume the volume of liquid butane inside the canister is negligible.', prompt: 'Calculate the number of molecules of butane gas in the canister.', marks: 4 },
+        { code: '14(b)(ii)', preamble: 'mass of butane molecule = 9.6×10⁻²⁶ kg', prompt: 'Calculate the r.m.s. speed of the molecules of butane gas.', marks: 2 }
+      ] },
+    { number: 15, scenario: 'The photograph below was taken by the James Webb Space Telescope (JWST) and shows a group of galaxies that formed shortly after the big bang, about 13×10⁹ years ago. (See the diagram in the question paper PDF.)',
+      parts: [
+        { code: '15(a)(i)', prompt: 'Derive the equation T = 1/H₀ where T is the age of the universe.', marks: 1 },
+        { code: '15(a)(ii)', prompt: 'State one assumption made in your derivation.', marks: 1 },
+        { code: '15(a)(iii)', preamble: 'The parsec (pc) is a unit used for astronomical distances. 1 pc is 3.1×10¹⁶ m.\nThe accepted range for the Hubble constant H₀ is (60–80) km s⁻¹ Mpc⁻¹.\n1 year = 3.16×10⁷ s', prompt: 'Deduce whether the observation by the JWST leads to a value of H₀ within the accepted range.', marks: 3 },
+        { code: '15(b)(i)', preamble: 'The light from one of the galaxies, called Maisie, has a redshift z of 14. The wavelength of light from Maisie detected at the telescope is 4.0×10⁻⁶ m and lies within the infrared section of the electromagnetic spectrum.', prompt: 'Calculate the wavelength of light emitted by Maisie.', marks: 3 },
+        { code: '15(b)(ii)', prompt: 'Explain why the light emitted by Maisie arrives at the telescope as infrared.', marks: 2 },
+        { code: '15(c)', preamble: 'One of the infrared detectors on the JWST is made from material with a work function of 0.30 eV.', prompt: 'Deduce whether this detector can detect the light from Maisie.', marks: 4 }
+      ] },
+    { number: 16, scenario: 'The suspension system in a car includes a spring attached to each wheel as shown. (See the diagram in the question paper PDF.)\n\nThe car, of mass 1100 kg, is stationary. Each spring is compressed by 152 mm due to a quarter of the weight of the car. Each spring is well within both the limit of proportionality and the elastic limit.',
+      parts: [
+        { code: '16(a)', prompt: 'State what is meant by within the elastic limit.', marks: 1 },
+        { code: '16(b)(i)', prompt: 'Show that the stiffness of each spring is about 18000 N m⁻¹.', marks: 3 },
+        { code: '16(b)(ii)', preamble: 'A force is applied to the car which results in a further small compression of each spring. The force is then removed, and the body of the car oscillates with simple harmonic motion.', prompt: 'Determine the frequency of the oscillations.', marks: 3 },
+        { code: '16(c)', prompt: 'State the conditions for simple harmonic motion.', marks: 2 },
+        { code: '16(d)', preamble: 'The oscillations are heavily damped by a piston in the suspension system. The piston moves within a cylinder filled with oil, as shown. The oil has a high viscosity. (See the diagram in the question paper PDF.)', prompt: 'Explain why using oil of high viscosity will produce heavy damping.', marks: 3 }
+      ] },
+    { number: 17, scenario: 'Scientists can analyse light from stars that has passed through a diffraction grating.',
+      parts: [
+        { code: '17(a)', extended: true, prompt: '*Explain the pattern produced when a mixture of blue and red light, from the same source, passes through a diffraction grating.', marks: 6 },
+        { code: '17(b)(i)', preamble: 'A spectrum of the visible light emitted by a particular star is shown. The wavelength scale runs from 400 nm to 700 nm (violet, indigo, blue, green, yellow, orange, red), with dark lines labelled G (hydrogen), F (hydrogen), b (magnesium), D (sodium) and C (hydrogen). (See the diagram in the question paper PDF.)\nLight interacts with atoms as it passes through the atmosphere of the star.', prompt: 'Explain how this leads to the formation of the dark lines within the spectrum.', marks: 4 },
+        { code: '17(b)(ii)', kind: 'diagram', preamble: 'The surface temperature of the star is 5800 K.\nThe axes are intensity (vertical) against wavelength / m (horizontal). (See the diagram in the question paper PDF.)', prompt: 'On the axes below, sketch a graph of the intensity of radiation against the wavelength of that radiation for this star.', marks: 4 },
+        { code: '17(b)(iii)', preamble: 'This star is a main sequence star.', prompt: 'Explain why main sequence stars do not collapse due to gravitational forces.', marks: 2 }
+      ] },
+    { number: 18, scenario: 'Galileo is credited with inventing the first telescope in 1610. The picture shows an early demonstration of the telescope. (See the diagram in the question paper PDF.)\n\nA converging lens was positioned at one end of the telescope. A diverging lens was placed at the other end and a person looked through this lens.',
+      parts: [
+        { code: '18(a)', preamble: 'The converging lens produced an image at a distance equal to the focal length of the lens.', prompt: 'Explain what can be concluded about the object being viewed.', marks: 2 },
+        { code: '18(b)', preamble: 'The final image produced by the telescope is described as virtual and upright.', prompt: 'State what is meant by virtual and upright.', marks: 2 },
+        { code: '18(c)', kind: 'diagram', preamble: 'The image, I, produced by the converging lens is at a distance from the diverging lens equal to the focal length of the diverging lens, as shown. This image acts as an object for the diverging lens. The distance equal to the focal length on the other side of the lens is marked with F. (See the diagram in the question paper PDF.)', prompt: 'Draw the ray diagram for the diverging lens.', marks: 3 },
+        { code: '18(d)', preamble: 'Galileo\'s first telescope had a magnification of 10, and a distance between the centres of the two lenses of 90 cm.\nThe magnification of the telescope = (focal length of converging lens) / (focal length of diverging lens)', prompt: 'Calculate the focal length of each lens.', marks: 2 },
+        { code: '18(e)', preamble: 'Galileo was the first person to observe Jupiter\'s larger moons. Ganymede is Jupiter\'s largest moon. The distance between the centre of Ganymede and the centre of Jupiter is 1.07×10⁶ km. Ganymede takes 171 hours to complete an orbit around Jupiter.', prompt: 'Calculate the mass of Jupiter.', marks: 5 }
+      ] }
+  ],
+  markSchemes: {
+    '11': { type: 'points', points: [
+      'Thicker string has greater mass per unit length μ (accept words or symbols).',
+      'Refers to v = √(T/μ), so v is smaller; or states v is proportional to 1/√μ, so v is smaller.',
+      'Refers to v = fλ with λ constant.',
+      'So thicker string has lower frequency (dependent on the speed and wave-equation points).'
+    ], guidance: '4 marks. May be answered with v = fλ → f = v/λ.' },
+    '12': { type: 'points', points: [
+      'Energy lost by block = energy gained by water and/or glass.',
+      'Use of E = mcΔθ.',
+      'Using the temperature change of the block.',
+      'c = 310 J kg⁻¹ K⁻¹ (e.g. 307); or required temperature change for tin = 103 K; or required starting temperature for tin = 126 °C.',
+      'Block is copper with justification, e.g. some energy transferred to surroundings, or block not fully at 100 °C, or tin cannot produce the required temperature change.'
+    ], guidance: '5 marks. 16.94 c = 0.05×840×4 + 0.3×4200×4 = 5208 J → c = 307 J kg⁻¹ K⁻¹ (closer to copper).' },
+    '13(a)': { type: 'points', points: [
+      'Very high temperatures (accept T ~ 10⁷ K – 10⁸ K).',
+      'High magnetic flux density.',
+      'Bombardment by neutrons.',
+      'Material is a plasma / material is fully ionised.'
+    ], guidance: 'Max 3 marks.' },
+    '13(b)': { type: 'points', points: [
+      'Small(er) nuclei fuse to form larger nuclei.',
+      'The binding energy per nucleon increases, releasing energy; or mass deficit and E = c²Δm.',
+      'Comparison of values from the graph (e.g. H to He is ~7 MeV per nucleon).'
+    ], guidance: '3 marks.' },
+    '14(a)': { type: 'points', points: [
+      'There is an increase in the potential energy of molecules leaving the liquid; or latent heat must be supplied; or only faster molecules have enough energy to escape; or work is done by the expanding gas.',
+      'The internal energy of the liquid decreases; or the average kinetic energy of the remaining molecules decreases.',
+      'So the temperature of the liquid decreases.'
+    ], guidance: '3 marks.' },
+    '14(b)(i)': { type: 'points', points: [
+      'Use of V = πr²l.',
+      'Use of pV = NkT.',
+      'Conversion of °C to K (T = 294 K).',
+      'N = 4.7×10²³.'
+    ], guidance: '4 marks. V = π×0.11²×0.23 = 8.74×10⁻³ m³; N = (2.2×10⁵×8.74×10⁻³)/(1.38×10⁻²³×294) = 4.74×10²³.' },
+    '14(b)(ii)': { type: 'points', points: [
+      'Use of ½m⟨c²⟩ = (3/2)kT; or use of pV = (1/3)Nm⟨c²⟩.',
+      'r.m.s. speed = 360 m s⁻¹ (ecf from (b)(i)).'
+    ], guidance: '2 marks. ⟨c²⟩ = 127000 m² s⁻² → r.m.s. speed ≈ 356 m s⁻¹.' },
+    '15(a)(i)': { type: 'points', points: [
+      'Use of v = H₀d and v = d/t (need to see v = d/t), giving 1/t = H₀ so T = 1/H₀.'
+    ], guidance: '1 mark.' },
+    '15(a)(ii)': { type: 'points', points: [
+      'Expansion of the Universe has been uniform; or expansion at a constant rate; or galaxy moves at constant velocity (accept H₀ constant).'
+    ], guidance: '1 mark.' },
+    '15(a)(iii)': { type: 'points', points: [
+      'Converts age to seconds (age = 13×10⁹×3.16×10⁷ = 4.11×10¹⁷ s).',
+      'Use of H = 1/T (= 2.43×10⁻¹⁸ s⁻¹).',
+      '75 km s⁻¹ Mpc⁻¹ and conclusion that it lies within range.'
+    ], guidance: '3 marks. 2.43×10⁻¹⁸×10³×10⁶×3.1×10¹⁶ = 75.5 km s⁻¹ Mpc⁻¹, within 60–80.' },
+    '15(b)(i)': { type: 'points', points: [
+      'Use of z = Δλ/λ.',
+      'Uses λ = (4.0×10⁻⁶ m − λ) with λ as the denominator (z = 14 = (4.0×10⁻⁶ − λ)/λ).',
+      'Wavelength emitted = 2.7×10⁻⁷ m.'
+    ], guidance: '3 marks. λ emitted = 2.67×10⁻⁷ m.' },
+    '15(b)(ii)': { type: 'points', points: [
+      'Wavelength of light has increased.',
+      'One from: visible/UV light initially emitted arrives as IR; due to the expanding universe/space; Maisie is moving away from us.'
+    ], guidance: '2 marks.' },
+    '15(c)': { type: 'points', points: [
+      'Use of E = hf (f = 7.5×10¹³ Hz; E = 4.97×10⁻²⁰ J = 0.31 eV).',
+      'Use of eV to joule conversion (W = 0.30×1.6×10⁻¹⁹ = 4.8×10⁻²⁰ J).',
+      'Compares correct values (e.g. threshold frequency 7.2×10¹³ Hz or threshold wavelength 4.2×10⁻⁶ m).',
+      'Conclusion: photon energy larger than the work function so it can be detected.'
+    ], guidance: '4 marks.' },
+    '16(a)': { type: 'points', points: [
+      'Within the elastic limit, if the load is removed the spring returns to its original shape/length; or above the elastic limit it is permanently deformed.'
+    ], guidance: '1 mark.' },
+    '16(b)(i)': { type: 'points', points: [
+      'Use of W = mg (275 kg × 9.81 = 2700 N).',
+      'Use of F = kx (2700 = k × 0.152).',
+      'k = 17700 N m⁻¹.'
+    ], guidance: '3 marks.' },
+    '16(b)(ii)': { type: 'points', points: [
+      'Use of T = 2π√(m/k) (T = 2π√(275/17700) = 0.783 s).',
+      'Use of f = 1/T.',
+      'f = 1.3 Hz (ecf from (b)(i)).'
+    ], guidance: '3 marks.' },
+    '16(c)': { type: 'points', points: [
+      'Resultant force/acceleration is proportional to the displacement from the equilibrium position.',
+      'Resultant force/acceleration is in the opposite direction to the displacement (directed towards equilibrium).'
+    ], guidance: '2 marks.' },
+    '16(d)': { type: 'points', points: [
+      'High viscosity oil means a large resistive force (may refer to F = 6πηrv).',
+      'When the piston moves, a large amount of work is done (may refer to W = Fs).',
+      'Heavy damping, so the oscillation energy is quickly dissipated to the oil.'
+    ], guidance: '3 marks.' },
+    '17(a)': { type: 'points', points: [
+      'IC1: Waves from different slits undergo superposition/interference.',
+      'IC2: Constructive interference where path difference = nλ / where in phase.',
+      'IC3: Bright lines/maxima seen where constructive interference.',
+      'IC4: Central maximum due to mixture of red and blue light (purple).',
+      'IC5: nλ = d sinθ, so the angle of the lines is larger for greater wavelength.',
+      'IC6: Blue wavelength shorter than red, so the blue maximum is closer to the centre than the red.'
+    ], guidance: '6 marks (extended-writing). Indicative content (max 4) plus structure/linkage (max 2).' },
+    '17(b)(i)': { type: 'points', points: [
+      'Electrons/atoms exist in discrete energy levels.',
+      'Absorbing a photon causes an electron/atom to move to a higher energy level.',
+      'Photons are only absorbed when the photon energy equals the difference between energy levels.',
+      'Photon energy depends on frequency/wavelength, so specific wavelengths are absorbed, producing dark lines.'
+    ], guidance: '4 marks.' },
+    '17(b)(ii)': { type: 'points', points: [
+      'Use of λmaxT = 2.898×10⁻³ m K.',
+      'λmax = 5.0×10⁻⁷ m.',
+      'Curve with a peak at the candidate\'s value of λmax.',
+      'Black-body asymmetric curve with intensity 0 at λ = 0 (steeper on the left than the right).'
+    ], guidance: '4 marks (sketch — use the canvas). λmax = 2.898×10⁻³/5800 = 5.0×10⁻⁷ m.' },
+    '17(b)(iii)': { type: 'points', points: [
+      'Fusion takes place (hydrogen to helium).',
+      'This releases energy and leads to an outward pressure/force which balances gravitational forces.'
+    ], guidance: '2 marks.' },
+    '18(a)': { type: 'points', points: [
+      'The rays must be parallel.',
+      'So the object must be a large distance away (accept at infinity).'
+    ], guidance: '2 marks.' },
+    '18(b)': { type: 'points', points: [
+      'Virtual: the rays of light do not pass through the image position / the image cannot be formed on a screen.',
+      'Upright: the image is the same way up as the object being observed.'
+    ], guidance: '2 marks. Do not accept "not inverted".' },
+    '18(c)': { type: 'points', points: [
+      'Ray from the top of the image through the centre of the diverging lens.',
+      'Ray parallel to the principal axis refracted as if from the focal point F.',
+      'Arrow on at least one ray towards the eye.'
+    ], guidance: '3 marks (ray diagram — use the canvas).' },
+    '18(d)': { type: 'points', points: [
+      'f_c = 90 + f_d with magnification 10 = f_c/f_d.',
+      'f_c = 100 cm and f_d = 10 cm.'
+    ], guidance: '2 marks. Accept f_d = −10 cm for a diverging lens.' },
+    '18(e)': { type: 'points', points: [
+      'Converts hours to seconds (171×60×60 = 615 600 s).',
+      'Equates F = GMm/r² with F = mω²r (or mv²/r) and uses ω = 2π/T (or v = 2πr/T).',
+      'Substitutes ω = 2π/T.',
+      'M = 4π²r³/(GT²) derived and used.',
+      'M = 1.9×10²⁷ kg.'
+    ], guidance: '5 marks. M = 4π²×(1.07×10⁹ m)³/(6.67×10⁻¹¹×(615600 s)²) = 1.91×10²⁷ kg.' }
+  } },
+          { id: 'phys-edexcel-9ph0-2023-p3', year: 'June 2023', paperName: 'General and Practical Principles in Physics', paperCode: '9PH0/03', totalMarks: 120, durationMins: 150,
+  qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-que-20230616.pdf',
+  msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-rms-20230817.pdf',
+  qbqNote: 'All questions are wired up question-by-question with the official mark scheme. Figures and graphs are in the question paper PDF; parts that ask you to plot/draw have an on-screen canvas.',
+  questions: [
+    { number: 1, scenario: 'A student used a laser pointer to direct monochromatic light normal to the plane of a diffraction grating. A diffraction pattern was produced on a screen. The distance between the first order maximum and the central maximum of the diffraction pattern was x. The distance between the diffraction grating and the screen was D. (See the diagram in the question paper PDF.)',
+      parts: [
+        { code: '1(a)', preamble: 'The diffraction grating had 300 lines per mm. The laser pen was marked with λ = 520 nm.\nx = 43.5 cm\nD = 2.75 m', prompt: 'Determine whether the spacing of the diffraction pattern was consistent with these values.', marks: 4 },
+        { code: '1(b)', preamble: 'The student wrote the following conclusion:\n"The value of x was measured with a metre rule. A metre rule has a precision of 0.1 cm, so this value was determined with a high degree of accuracy."', prompt: 'Comment on this conclusion.', marks: 3 }
+      ] },
+    { number: 2, scenario: 'A battery has an e.m.f. of 12 V and an internal resistance of 0.50 Ω. The battery is connected into a circuit. Each bulb has a normal working power of 40 W when a potential difference (p.d.) of 12 V is applied. (See the circuit diagram in the question paper PDF.)',
+      parts: [
+        { code: '2(a)', preamble: 'Initially the switch is open.', prompt: 'Calculate the terminal p.d. of the battery when bulb 1 is lit. Assume that the resistance of the bulb has its normal working value.', marks: 4 },
+        { code: '2(b)', prompt: 'Explain how the brightness of bulb 1 changes when the switch is closed. No further calculations are necessary.', marks: 3 }
+      ] },
+    { number: 3, scenario: 'The specific latent heat of vaporisation of water can be determined using apparatus consisting of an electric heater in a glass beaker of water standing on an electronic balance. (See the diagram in the question paper PDF.)',
+      parts: [
+        { code: '3(a)', preamble: 'A student planned to vary the current in the heater from 0 A to 5 A. The student connected a circuit to measure the current in the heater, using a milliammeter (mA) and a voltmeter (V) with the heater. (See the circuit diagram in the question paper PDF.)', prompt: 'Criticise the student\'s circuit.', marks: 2 },
+        { code: '3(b)(i)', kind: 'diagram', preamble: 'The student corrected the circuit and closed the switch. He waited until the water started boiling. He started a stopwatch and recorded the readings on the balance at regular time intervals.', prompt: 'Sketch a graph, on the axes below, of how the readings on the balance would vary with time. (See the axes in the question paper PDF.)', marks: 3 },
+        { code: '3(b)(ii)', preamble: 'The heater was switched on for 6.0 minutes and the change in mass of water in the beaker was 7.5 g.\nV = 12 V\nI = 4.2 A', prompt: 'Calculate the specific latent heat of vaporisation of water, L.', marks: 3 },
+        { code: '3(b)(iii)', preamble: 'The errors in the experiment include uncertainty in the mass reading and uncertainty in reading the stopwatch, as the water boils.', prompt: 'Explain how another significant source of error affects the value of L obtained from the experiment.', marks: 2 }
+      ] },
+    { number: 4, scenario: 'Alpha particle scattering experiments led Rutherford to propose the nuclear model of the atom. Alpha particles were directed towards a thin gold foil.',
+      parts: [
+        { code: '4', extended: true, prompt: 'Describe how evidence from these experiments supports the nuclear model of the atom.', marks: 6 }
+      ] },
+    { number: 5, scenario: 'A student used apparatus to determine the Young modulus of brass. Loads were added to the test wire and corresponding readings taken from the vernier scale. The test wire and the reference wire were identical. (See the diagram in the question paper PDF.)',
+      parts: [
+        { code: '5(a)(i)', prompt: 'Give one advantage of using a reference wire as well as a test wire.', marks: 1 },
+        { code: '5(a)(ii)', prompt: 'State why a reference load was applied to the reference wire.', marks: 1 },
+        { code: '5(b)', prompt: 'Explain why the test wire should be both long and thin.', marks: 3 },
+        { code: '5(c)', preamble: 'The student varied the load F on the test wire and recorded the corresponding change in length x from the vernier scale. The results are shown on the graph of x/mm against F/N. (See the graph in the question paper PDF.)\nlength of wire = 2.75 m\ndiameter of wire = 5.60 × 10⁻⁴ m', prompt: 'Determine a value for the Young modulus of brass.', marks: 5 }
+      ] },
+    { number: 6, scenario: 'A student investigated the horizontal oscillations of a trolley between two springs. The student displaced the trolley from its equilibrium position. She then released the trolley and started a stopwatch. She stopped the stopwatch when the trolley had completed one oscillation. (See the diagram in the question paper PDF.)',
+      parts: [
+        { code: '6(a)', prompt: 'Describe how the method used by the student could be improved to determine a more accurate value of the time period.', marks: 4 },
+        { code: '6(b)', preamble: 'The student displaced the trolley 6.0 cm from the equilibrium position. She recorded the velocity of the oscillating trolley using a sensor connected to a data logger. The output from the data logger is shown in the question paper PDF. The time-base of the data logger output was set to 250 ms div⁻¹.', prompt: 'Determine the maximum velocity of the trolley.', marks: 5 },
+        { code: '6(c)(i)', preamble: 'The student modified the apparatus so that the trolley was driven into oscillation by a vibrator. A sensor connected to a data logger recorded the amplitude A of the oscillations. The graph shows how A varied as the student increased the frequency f of the oscillations. (See the diagram and graph in the question paper PDF.)', prompt: 'Explain the shape of the graph.', marks: 4 },
+        { code: '6(c)(ii)', preamble: 'mass of trolley = 0.87 kg', prompt: 'Determine the effective spring constant k of the oscillating trolley system.', marks: 2 }
+      ] },
+    { number: 7, scenario: 'The neon lamp shown is a glass bulb filled with neon gas at low pressure, with electrodes and wire leads. (See the diagram in the question paper PDF.)',
+      parts: [
+        { code: '7(a)', extended: true, preamble: 'When in use, the neon gas between the electrodes emits electromagnetic radiation.', prompt: 'Explain why this happens when there is an electric current between the electrodes.', marks: 6 },
+        { code: '7(b)', preamble: 'When light from the neon lamp is incident upon a metal surface, electrons with a maximum speed of 2.68 × 10⁵ m s⁻¹ are emitted from the surface.\nThe table shows the work functions of some metals:\nMetal: Caesium, Potassium, Sodium\nWork function/10⁻¹⁹ J: 3.36, 3.68, 3.84\nfrequency of light from the neon lamp = 5.56 × 10¹⁴ Hz', prompt: 'Deduce which metal the light is incident upon.', marks: 4 }
+      ] },
+    { number: 8, scenario: 'A student investigated the discharge of a capacitor C through a resistor R using a circuit with a 6 V supply and a switch with positions X and Y. The student used the switch to connect C to X to charge the capacitor. She then connected C to Y to discharge the capacitor through R. As the capacitor discharged, she recorded values of the potential difference V across C and corresponding values of time t. She used a stopwatch to measure t. The student used her results to plot a graph of V/V against t/s. (See the circuit diagram and graph in the question paper PDF.)',
+      parts: [
+        { code: '8(a)', preamble: 'The capacitor was marked 220 μF ± 20%.\nR = 82 kΩ', prompt: 'Deduce whether the student\'s data give a value of capacitance within the stated range.', marks: 5 },
+        { code: '8(b)', preamble: 'The student suggested that her results would have been more accurate if she had used a data logger to record the data.', prompt: 'Assess the student\'s suggestion.', marks: 3 }
+      ] },
+    { number: 9, scenario: 'A student investigated the behaviour of small, positively charged oil drops in an electric field. He introduced an oil drop between two horizontal metal plates. A potential difference V was applied to bring the oil drop to rest. (See the diagram in the question paper PDF.)',
+      parts: [
+        { code: '9(a)(i)', kind: 'diagram', prompt: 'Add to the diagram to show the polarity of the power supply when the oil drop is at rest. (See the diagram in the question paper PDF.)', marks: 1 },
+        { code: '9(a)(ii)', preamble: 'The oil drop was at rest when V = 4870 V. The student expected the charge on the oil drop to be a whole number multiple of the charge on an electron.\ndistance between top plate and bottom plate = 1.55 cm\ndensity of oil = 920 kg m⁻³\nradius of the oil drop = 1.78 × 10⁻⁶ m', prompt: 'Deduce whether this is confirmed by the experimental data.', marks: 6 },
+        { code: '9(b)(i)', preamble: 'The student determined the terminal velocity of the oil drop in order to obtain a value for the weight of the oil drop. He disconnected the power supply and the oil drop fell downwards. He viewed the oil drop through a microscope.', prompt: 'Explain why the student should wait a short while before starting to take measurements.', marks: 2 },
+        { code: '9(b)(ii)', preamble: 'The view through the microscope is shown in the question paper PDF. The scale is in millimetres. The position of the oil drop at the start and end of a 120 s time interval is indicated by the black dots.', prompt: 'Determine the terminal velocity of the oil drop.', marks: 3 },
+        { code: '9(c)', preamble: 'The student repeated the measurements on fifty oil drops. For each drop the student calculated the charge on the oil drop. His results are shown in the bar chart (Number of oil drops against Charge/10⁻¹⁹ C). The student predicted that the charge on each oil drop would be a whole number multiple of the charge on an electron. (See the bar chart in the question paper PDF.)', prompt: 'Comment on the extent to which the bar chart supports the student\'s prediction.', marks: 3 }
+      ] },
+    { number: 10, scenario: 'A student made a simple pendulum by connecting a paper cone to a piece of string. She attached the pendulum to a clamp. (See the diagram in the question paper PDF.)',
+      parts: [
+        { code: '10(a)(i)', preamble: 'The student displaced the pendulum through a small angle so that it oscillated. She determined the time period T as 2.50 s.', prompt: 'Calculate the length of the pendulum.', marks: 2 },
+        { code: '10(a)(ii)', prompt: 'Explain why the amplitude of oscillation of the pendulum did not stay constant.', marks: 3 },
+        { code: '10(b)(i)', preamble: 'The student recorded how the amplitude of oscillation varied over time. It is suggested that the relationship between amplitude A and time t is A = A₀e^(-kt/T), where A₀ is the initial amplitude of the oscillation and k is a constant.', prompt: 'Explain why a graph of lnA against t would give a straight line.', marks: 2 },
+        { code: '10(b)(ii)', kind: 'diagram', preamble: 'The table shows the student\'s data:\nt/s: 2.5, 5.0, 7.5, 10.0, 12.5\nA/cm: 17.6, 14.3, 11.6, 9.4, 7.6', prompt: 'Plot a graph of lnA against t on the grid opposite. Use the additional column to show your processed data. (See the grid in the question paper PDF.)', marks: 5 },
+        { code: '10(b)(iii)', prompt: 'Determine values for A₀ and k.', marks: 4 }
+      ] },
+    { number: 11, scenario: 'A student carried out an experiment to determine the density of the metal that some metal washers are made from. Each washer has a diameter d₁ of about 4.5 cm. The internal diameter d₂ of each washer is about 2.5 cm. Each washer has a thickness t of about 4 mm. (See the photograph and diagram in the question paper PDF.)',
+      parts: [
+        { code: '11(a)', preamble: 'The student used a half metre rule to make measurements of a washer.', prompt: 'Comment on the student\'s choice of measuring instrument.', marks: 3 },
+        { code: '11(b)', preamble: 'The student measured t for each of the five washers and then calculated a mean value.', prompt: 'Explain how the student could modify her method to obtain a more accurate mean value for t.', marks: 3 },
+        { code: '11(c)(i)', preamble: 'The student obtained the following mean values:\nd₁ = 4.52 cm ± 0.02 cm\nd₂ = 2.53 cm ± 0.02 cm\nShe calculated the area A of a washer (the shaded section) using the formula A = (π/4)(d₁ + d₂)(d₁ − d₂).', prompt: 'Show that the percentage uncertainty in her value for the area of a washer is about 3%.', marks: 4 },
+        { code: '11(c)(ii)', preamble: 'The student obtained the following values of t for each of the five washers:\nt/mm: 4.3, 4.2, 4.1, 3.9, 4.0\nThe table shows the density of iron and steel:\nMetal: Iron, Steel\nDensity/g cm⁻³: 6.9, 7.9\nmean mass of a washer = 32.0 g\nThe uncertainty in the mass is negligible.', prompt: 'Deduce whether the washers are made from iron or steel.', marks: 6 }
+      ] }
+  ],
+  markSchemes: {
+    '1(a)': { type: 'points', points: ['Use of tan θ = x/D Or use of sin θ = x/√(x²+D²)', 'Use of d = 1/(number of lines per metre)', 'Use of nλ = d sinθ', 'λ = 520 nm so spacing of pattern was consistent (or d = 3.32 × 10⁻⁶ m ≈ 3.33 × 10⁻⁶ m, or θ = 8.97° ≈ 8.99°, so consistent)'], guidance: '4 marks. tanθ = 0.435/2.75 → θ = 8.99°; d = 1/(3×10⁵) = 3.33×10⁻⁶ m; λ = d sinθ = 5.20×10⁻⁷ m.' },
+    '1(b)': { type: 'points', points: ['The metre rule has a resolution of 0.1 cm (resolution, not precision)', 'Precision is how closely grouped repeated readings are', 'Accuracy is how close the measured value is to the actual value', 'Systematic error may shift measured values from the actual values, or it may be difficult to judge the positions of the maxima'], guidance: 'MAX 3.' },
+    '2(a)': { type: 'points', points: ['Use of P = V²/R', 'Use of sum of e.m.f.s = sum of p.d.s', 'Use of V = IR to calculate a p.d.', 'V = 10.5 V'], guidance: '4 marks. R = 12²/40 = 3.6 Ω; I = 12/(3.6+0.5) = 2.93 A; V = 2.93×3.6 = 10.5 V.' },
+    '2(b)': { type: 'points', points: ['EITHER: current (from battery) increases; therefore terminal p.d. decreases; so brightness of bulb 1 decreases', 'OR: the resistance of the external circuit decreases; so a smaller proportion of p.d. across the bulbs; so brightness of bulb 1 decreases'], guidance: '3 marks via either route (MP3 dependent on MP2).' },
+    '3(a)': { type: 'points', points: ['The ammeter should be in series with the heater (it is not measuring the heater current)', 'The range of the milliammeter is too small'], guidance: '2 marks.' },
+    '3(b)(i)': { type: 'points', points: ['Both axes labelled', 'Straight line with negative gradient', 'Reading on balance does not cut the time axis (dependent on MP2)'], guidance: '3 marks (sketch — use the canvas). A straight line of negative gradient not reaching zero balance reading.' },
+    '3(b)(ii)': { type: 'exact', points: ['L = 2.4 × 10⁶ J kg⁻¹'], guidance: 'E = VIt = 12×4.2×360 = 1.81×10⁴ J; L = 1.81×10⁴ / 7.5×10⁻³ = 2.41×10⁶ J kg⁻¹.' },
+    '3(b)(iii)': { type: 'points', points: ['Energy is transferred from the beaker/heater/water to the surroundings', 'So the calculated value of L will be larger than the true value'], guidance: '2 marks.' },
+    '4': { type: 'points', points: ['IC1 Most of the particles are not deflected as they pass through the gold foil', 'IC2 This indicates that the atom is mostly empty space', 'IC3 Some particles were deflected through small angles', 'IC4 This indicates a charged centre', 'IC5 A very small proportion of particles were deflected through more than 90°', 'IC6 This indicates that most of the mass is concentrated in a small nucleus'], guidance: 'Extended-response. Indicative content plus structure/linkage.' },
+    '5(a)(i)': { type: 'points', points: ['Changes in recorded length due to the support bending are minimised, or changes due to temperature are minimised, or it allows use of a vernier scale to determine extension'], guidance: '1 mark.' },
+    '5(a)(ii)': { type: 'points', points: ['To keep the reference wire taut/straight (under tension)'], guidance: '1 mark.' },
+    '5(b)': { type: 'points', points: ['A thin wire has a large stress (for a given load)', 'A long/thin wire has a large extension (for a given stress)', 'Hence the percentage uncertainty in the length/extension is reduced'], guidance: '3 marks.' },
+    '5(c)': { type: 'exact', points: ['E = 1.1 × 10¹¹ N m⁻²'], guidance: 'A = (π/4)(5.60×10⁻⁴)² = 2.46×10⁻⁷ m²; gradient of x–F ≈ 1.06×10⁻⁴ m N⁻¹; E = (1/grad)(l/A) = 1.06×10¹¹ N m⁻².' },
+    '6(a)': { type: 'points', points: ['Time a number of (complete) oscillations and divide by the number of oscillations', 'Repeat the measurement and determine a mean value', 'Use a (fiducial) marker so it is easier to see when the trolley passes a point', 'Time from the mid-point of the oscillation, or wait for the oscillation to settle before timing'], guidance: '4 marks. Allow 1 mark for light gates + data logger if no other marks.' },
+    '6(b)': { type: 'exact', points: ['v = 0.75 m s⁻¹'], guidance: 'T = 2 div × 250 ms = 500 ms; ω = 2π/0.50 = 12.6 rad s⁻¹; v = Aω = 6.0×10⁻² × 12.6 = 0.754 m s⁻¹.' },
+    '6(c)(i)': { type: 'points', points: ['As the frequency increases, the amplitude increases to a maximum at ≈ 2 Hz (then decreases)', 'This is the natural frequency of the trolley', 'At the natural frequency there is a maximum transfer of energy from the vibrator to the trolley', 'This is resonance'], guidance: '4 marks.' },
+    '6(c)(ii)': { type: 'exact', points: ['k = 140 N m⁻¹'], guidance: 'T = 2π√(m/k); 0.5 = 2π√(0.87/k); k = 4π²×0.87/0.5² = 137 N m⁻¹.' },
+    '7(a)': { type: 'points', points: ['IC1 The electric current is a movement of electrons between the electrodes', 'IC2 The electrons collide with neon atoms', 'IC3 Energy is transferred to the neon atoms in the collisions', 'IC4 Electrons in the neon atoms are promoted to higher energy states (excited)', 'IC5 After a short time the electrons return to lower/ground states (de-excite)', 'IC6 When an electron returns to a lower energy state it emits a photon'], guidance: 'Extended-response. Indicative content plus structure/linkage.' },
+    '7(b)': { type: 'points', points: ['Use of E = hf', 'Use of E_k = ½mv²', 'Use of hf = φ + ½mv²max', 'φ = 3.36 × 10⁻¹⁹ J so metal is caesium'], guidance: '4 marks. E = 3.69×10⁻¹⁹ J; max E_k = 3.27×10⁻²⁰ J; φ = 3.36×10⁻¹⁹ J.' },
+    '8(a)': { type: 'points', points: ['A pair of corresponding V and t values read from the graph', 'Use of V = V₀e^(−t/RC) or time constant = RC', 'C = 270 μF', 'Use of ±20% with 220 μF (largest 264 μF, smallest 176 μF)', 'Comparison of 264 μF with the calculated value and consistent conclusion'], guidance: '5 marks. ln(1.0/6.0) = −t/(82×10³ × C) → C ≈ 2.7×10⁻⁴ F (270 μF); 264 μF is the largest within range.' },
+    '8(b)': { type: 'points', points: ['The data has to be collected in a short time / a data logger has a high sampling rate', 'It would be difficult to read the voltmeter and stopwatch simultaneously', 'So the suggestion is correct (dependent on MP1 or MP2)'], guidance: '3 marks.' },
+    '9(a)(i)': { type: 'points', points: ['Bottom plate (or bottom terminal of the supply) marked positive'], guidance: '1 mark. Accept top plate/terminal marked negative.' },
+    '9(a)(ii)': { type: 'points', points: ['Calculates the volume of the oil drop', 'Use of m = ρV', 'Use of E = V/d', 'Use of F = QE with the weight balanced by the electric force (and W = mg)', 'Use of N = Q/e', 'N = 4.2, so the expectation is not supported (not a whole number), or taking experimental error into account it may be supported'], guidance: '6 marks. V = 2.36×10⁻¹⁷ m³; m = 2.17×10⁻¹⁴ kg; E = 3.14×10⁵ V m⁻¹; Q = mg/E = 6.78×10⁻¹⁹ C; N = 4.23.' },
+    '9(b)(i)': { type: 'points', points: ['The oil drop initially accelerates / it takes time to reach terminal velocity', 'Initially the weight is not balanced by the drag force (+ upthrust)', 'If measurements are taken immediately the calculated velocity will be less than the terminal velocity'], guidance: 'Max two of the points.' },
+    '9(b)(ii)': { type: 'exact', points: ['v = 3.4 × 10⁻⁵ m s⁻¹ to 3.5 × 10⁻⁵ m s⁻¹'], guidance: 'displacement ≈ 4.15 mm; v = 4.15×10⁻³ / 120 = 3.46×10⁻⁵ m s⁻¹.' },
+    '9(c)': { type: 'points', points: ['The maxima are at charges of e, 2e, 3e etc. (24 drops had charge as an integer multiple of e)', 'But there is a significant number of non-integer-charged oil drops (only ≈ half had integer multiples)', 'The evidence is inconclusive, or refers to variation due to experimental uncertainties'], guidance: '3 marks.' },
+    '10(a)(i)': { type: 'exact', points: ['l = 1.55 m'], guidance: 'l = T²g/4π² = 2.50² × 9.81 / 4π² = 1.55 m.' },
+    '10(a)(ii)': { type: 'points', points: ['Resistive forces act on the pendulum (the oscillation is damped)', 'Work is done against the resistive/damping forces', 'So the energy and amplitude of the oscillation decrease'], guidance: '3 marks.' },
+    '10(b)(i)': { type: 'points', points: ['Shows the expansion ln(A) = −(k/T)t + ln A₀', 'Compares with y = mx + c and indicates the gradient is −k/T (a constant)'], guidance: '2 marks.' },
+    '10(b)(ii)': { type: 'points', points: ['ln values correct and to 2 (or 3) decimal places', 'Labels and unit', 'Scales', 'Plots', 'Line of best fit'], guidance: '5 marks (plot — use the canvas). ln(A/cm): 2.87, 2.66, 2.45, 2.24, 2.03.' },
+    '10(b)(iii)': { type: 'exact', points: ['A₀ = 22 cm (allow 21–22 cm)', 'k = 0.21'], guidance: 'gradient = (3.08 − 2.00)/(0 − 12.9) = −0.0837 s⁻¹; k = 0.0837 × 2.50 = 0.209; A₀ = e³·⁰⁸ = 21.8 cm.' },
+    '11(a)': { type: 'points', points: ['The rule has a resolution of 1 mm', 'The rule is not suitable to measure t as the % uncertainty would be too large', 'She should use vernier/digital calipers instead', 'Vernier calipers have a resolution of 0.1 mm (or digital calipers 0.01 mm)'], guidance: 'MAX 3. Accept micrometer (resolution 0.01 mm).' },
+    '11(b)': { type: 'points', points: ['Stack the washers together', 'This increases the distance being measured', 'So the % uncertainty is reduced'], guidance: '3 marks.' },
+    '11(c)(i)': { type: 'points', points: ['Uncertainty added for the sum and the difference', '% uncertainty calculated for the sum and the difference', '% uncertainties added for the product', '% uncertainty in A = 2.6 %'], guidance: '4 marks. %U(d₁+d₂) = (0.04/7.05)×100 = 0.57%; %U(d₁−d₂) = (0.04/1.99)×100 = 2.0%; total = 2.6%.' },
+    '11(c)(ii)': { type: 'points', points: ['Mean t = 4.1 mm', 'Use of half-range to calculate % U in t', 'Calculates the volume from area and thickness', 'Use of ρ = m/V', 'Calculates % U in density (ecf from (c)(i))', 'Range of density is 6.6–7.6 g cm⁻³, so the washer is made of iron'], guidance: '6 marks. A = 11.0 cm²; V = 4.52 cm³; ρ = 32.0/4.52 = 7.08 g cm⁻³; %U in ρ = 2.6 + 4.9 = 7.5%; range 6.55–7.61 g cm⁻³ → only iron lies in range.' }
+  } },
           { id: 'phys-edexcel-9ph0-2022-p1', year: 'June 2022', paperName: 'Advanced Physics I', paperCode: '9PH0/01', totalMarks: 90, durationMins: 105,
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-que-20220527.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-01-rms-20220818.pdf',
@@ -8965,12 +9613,192 @@ window.SUBJECTS = [
                 ],
                 guidance: '4 marks. The second mark is dependent on the first.' }
             } },
-          { id: 'phys-edexcel-9ph0-2022-p2', year: 'June 2022', paperName: 'Advanced Physics II', paperCode: '9PH0/02', totalMarks: 90, durationMins: 105, printOnly: true,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-que-20220611.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-rms-20220818.pdf' },
-          { id: 'phys-edexcel-9ph0-2022-p3', year: 'June 2022', paperName: 'General and Practical Principles in Physics', paperCode: '9PH0/03', totalMarks: 120, durationMins: 150, printOnly: true,
-            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-que-20220617.pdf',
-            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-rms-20220818.pdf' }
+          { id: 'phys-edexcel-9ph0-2022-p2', year: 'June 2022', paperName: 'Advanced Physics II', paperCode: '9PH0/02', totalMarks: 90, durationMins: 105,
+  qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-que-20220611.pdf',
+  msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-02-rms-20220818.pdf',
+  qbqNote: 'Structured questions 11 to 21 are wired up here (80 marks). Questions 1 to 10 are single-answer multiple-choice questions (A–D), each worth 1 mark (10 marks total); these are not wired up here — see the question paper PDF for them.',
+  questions: [
+    { number: 11, scenario: 'The lens of a mobile phone camera has a focal length of 4.25 mm. Light is focused onto light sensors at the back of the camera. (See the diagram in the question paper PDF.)', parts: [
+      { code: '11(a)', preamble: 'The camera is initially focused on an object in the far distance.', prompt: 'Calculate the displacement of the lens that would be required to focus on an object 25.0 cm from the camera.', marks: 4 },
+      { code: '11(b)', prompt: 'State why the lens and the light sensors in a mobile phone camera can be positioned a fixed distance apart.', marks: 1 }
+    ] },
+    { number: 12, scenario: 'In February 2021 the spacecraft Perseverance Rover landed on Mars. When the spacecraft was 11.0 km above the surface of Mars, parachutes opened to slow the descent. The parachutes detached from the spacecraft when it was 2.1 km above the surface of Mars.\nmass of spacecraft = 1030 kg\nmass of Mars = 6.39 × 10²³ kg\nradius of Mars = 3390 km', parts: [
+      { code: '12', prompt: 'Calculate the change in gravitational potential energy of the spacecraft during the parachute section of its descent.', marks: 3 }
+    ] },
+    { number: 13, scenario: 'Actinium-225 and bismuth-210 are radioactive isotopes. A sample of each isotope is prepared so that each sample has the same number of nuclei initially.\nhalf-life of actinium-225 = 10 days\nhalf-life of bismuth-210 = 5 days', parts: [
+      { code: '13', prompt: 'Explain why the activity of each sample would be the same after 10 days.', marks: 4 }
+    ] },
+    { number: 14, scenario: 'The diagram shows the spectra produced by two stars. Spectrum A is produced from the light from the Sun and spectrum B is produced from the light from a distant star. The wavelength scale runs from 400 to 700 nm. (See the diagram in the question paper PDF.)\nThe dark lines are produced when light from the core of the star is absorbed by hydrogen atoms in the outer regions of the star. Light is then re-radiated, but in all directions, giving rise to the dark lines in the spectrum.', parts: [
+      { code: '14(a)', prompt: 'Explain why the long wavelength lines are shifted by a greater amount than the short wavelength lines.', marks: 2 },
+      { code: '14(b)', preamble: 'One of the lines in the hydrogen spectrum occurs at a wavelength of 656 nm in the laboratory.', prompt: 'Explain what conclusion can be made from the shift in wavelength of this line in spectrum B. Your answer should include a calculation.', marks: 4 }
+    ] },
+    { number: 15, scenario: 'Aluminium is one of the most widely recycled metals. Aluminium cans are heated from room temperature until all the aluminium has melted. The molten aluminium is then used to make new cans. This process uses only 5% of the energy needed to extract aluminium from raw materials.\nOn a website it is claimed that recycling one aluminium can of mass 14 g saves enough energy to listen to music on a mobile phone continuously for 7 days.\nmelting point of aluminium = 660 K\nspecific heat capacity of aluminium = 902 J kg⁻¹ K⁻¹\nspecific latent heat of aluminium = 396 kJ kg⁻¹\nroom temperature = 293 K\nmobile phone p.d. = 3.7 V\nmobile phone current = 120 mA', parts: [
+      { code: '15', prompt: 'Assess the validity of this claim.', marks: 6 }
+    ] },
+    { number: 16, scenario: 'In an investigation of the photoelectric effect, electromagnetic radiation of frequency f was directed onto a metal plate. The maximum kinetic energy E of the photoelectrons emitted from the metal plate was determined. The procedure was repeated for a range of frequencies.\nThe graph shows how E (in eV, axis 0.0 to 2.0) depended upon f (in units of 10¹³ Hz, axis 50 to 110). (See the graph in the question paper PDF.)', parts: [
+      { code: '16(a)', prompt: 'Determine a value for the Planck constant, h, in J s.', marks: 4 },
+      { code: '16(b)', preamble: 'The table gives data for different metal surfaces.\nCaesium: work function 2.0 eV\nCalcium: work function 2.9 eV\nMagnesium: work function 3.7 eV', prompt: 'Deduce which metal was being used in the investigation.', marks: 3 }
+    ] },
+    { number: 17, scenario: 'A simple astronomical refracting telescope consists of two converging lenses. Light from a star is brought to a focus by the objective lens and then viewed through an eyepiece lens. (See the diagram in the question paper PDF.)', parts: [
+      { code: '17(a)(i)', preamble: 'In the arrangement shown, the final image is formed at infinity.', prompt: 'Explain why the separation of the objective and eyepiece lenses is equal to the sum of their focal lengths.', marks: 2 },
+      { code: '17(a)(ii)', prompt: 'State why the final image is inverted.', marks: 1 },
+      { code: '17(b)(i)', preamble: 'Glass lenses used for optical instruments often have an anti-reflective coating. The coating is a thin layer of a transparent substance with refractive index nc. Light is reflected from the coating surface and from the lens surface; the reflected light interferes destructively. When a single-layer coating is used, the coating thickness is chosen to eliminate reflections for green light, which is in the middle of the visible spectrum. (See the diagram in the question paper PDF.)\nfrequency of green light = 6.00 × 10¹⁴ Hz\nnc = 1.38', prompt: 'Calculate the minimum thickness d of the coating required for the reflection of green light to be eliminated.', marks: 4 },
+      { code: '17(b)(ii)', prompt: 'State why white light reflected from coated lenses is seen as purple.', marks: 1 }
+    ] },
+    { number: 18, scenario: 'The harp is a musical instrument with many strings. All the strings are under tension. The strings on one type of harp are made from nylon of density 1070 kg m⁻³. One string has a diameter of 1.14 mm. (See the photograph in the question paper PDF.)', parts: [
+      { code: '18(a)(i)', prompt: 'Show that the mass per unit length μ of the string is about 1.1 × 10⁻³ kg m⁻¹.', marks: 2 },
+      { code: '18(a)(ii)', preamble: 'When the middle of the string is plucked, a note of frequency 440 Hz is produced.\nlength of string = 41.0 cm', prompt: 'Calculate the tension in the string.', marks: 4 },
+      { code: '18(b)', preamble: 'The graph shows how the Young modulus E of the nylon varies with temperature, over a temperature range of 0 to 30 °C. (See the graph in the question paper PDF.)\nWhen the harp is played, the temperature of the string increases.', prompt: 'Explain how this temperature change would affect the frequency of the note produced when the string is plucked.', marks: 3 }
+    ] },
+    { number: 19, scenario: 'A fine-beam tube is used for investigating properties of electrons. An electron beam is produced inside a spherical glass bulb. The bulb contains neon gas at a very low pressure.', parts: [
+      { code: '19(a)', preamble: 'The neon gas is at a pressure of 1.25 Pa and a temperature of 25 °C.\nbulb diameter = 16.0 cm', prompt: 'Calculate the number N of neon atoms inside the bulb.', marks: 4 },
+      { code: '19(b)', extended: true, preamble: 'Interactions between electrons and the neon atoms in the tube make the beam visible. Part of the spectrum of visible light produced by these interactions is shown. (See the image in the question paper PDF.)', prompt: '*Explain the process that results in the emission of this spectrum. Your answer should include reference to energy levels in atoms.', marks: 6 }
+    ] },
+    { number: 20, scenario: 'A garden ornament consists of a metal flamingo suspended from a spring. The spring is hung from a support using the hook. (See the diagram in the question paper PDF.)', parts: [
+      { code: '20(a)', preamble: 'The mass of the flamingo is 65 g. When the flamingo is suspended vertically the spring extends by 8.5 cm. The flamingo is pulled downwards by a small extra displacement and then released. The flamingo undergoes simple harmonic motion vertically.\nThe instructions state that the flamingo will oscillate with a frequency of 2.5 Hz.', prompt: 'Deduce whether this statement is correct.', marks: 5 },
+      { code: '20(b)', preamble: 'After being set into vertical oscillation, the flamingo comes to rest after a short time.', prompt: 'Explain why the flamingo comes to rest.', marks: 2 },
+      { code: '20(c)(i)', preamble: 'In a slight breeze the flamingo swings from side to side and behaves as a simple pendulum.\npendulum length = 1.25 m', prompt: 'Show that the period of oscillation of the flamingo pendulum is about 2.2 s.', marks: 2 },
+      { code: '20(c)(ii)', preamble: 'The amplitude of oscillation of the flamingo pendulum is 7.5 cm.', prompt: 'Calculate the maximum velocity of the flamingo pendulum.', marks: 3 }
+    ] },
+    { number: 21, scenario: 'A hundred years ago, a method to determine the age of certain rocks was developed. An unstable isotope of rubidium is present in some rocks when they form. Over time the rubidium decays to a stable isotope of strontium.', parts: [
+      { code: '21(a)', kind: 'diagram', prompt: 'Rubidium decays to strontium via β⁻ decay. Complete the nuclear equation representing the decay.\n⁸⁷₃₇Rb → ......Sr + ......β⁻ + ......ν̄e (See the equation in the question paper PDF.)', marks: 2 },
+      { code: '21(b)', preamble: 'A sample of Moon rock from the Apollo 11 mission was analysed to determine the age of the rock. When the sample was analysed the number of rubidium atoms was NR and the number of strontium atoms was NS. As strontium atoms have all been produced from the decay of rubidium, the original number of rubidium atoms in the sample was (NR + NS). From the analysis of the sample, it was determined that NS/NR = 0.0532.\nage of Earth = 4.5 × 10⁹ years\nhalf-life of rubidium isotope = 4.88 × 10¹⁰ years', prompt: 'Deduce whether this ratio is consistent with the Earth and the Moon forming at the same time.', marks: 5 },
+      { code: '21(c)', prompt: 'Give a reason why the half-life of the rubidium isotope is hard to determine.', marks: 1 },
+      { code: '21(d)', preamble: 'Recent investigations suggest that the half-life of the rubidium isotope may be larger than the traditionally accepted value.', prompt: 'Explain how this would affect the ages obtained by this dating method.', marks: 2 }
+    ] }
+  ],
+  markSchemes: {
+    '11(a)': { type: 'points', points: ['Use of 1/u + 1/v = 1/f', '... with consistent units for u and f', 'Use of displacement = v − f', 'Displacement of lens = 0.07 mm away from sensor'], guidance: '4 marks. v = 1/231.3 = 4.32 × 10⁻³ m; displacement = (4.32 − 4.25) mm = 0.0735 mm.' },
+    '11(b)': { type: 'points', points: ['Lens displacement is so minimal that v does not change much, Or u >> v so v ≈ f, Or most object distances can be considered to be at infinity so will focus at about f'], guidance: '1 mark.' },
+    '12': { type: 'points', points: ['Use of Vgrav = −Gm/r', 'Recognises that ΔEgrav = m × ΔVgrav', 'ΔEgrav = (−)3.4 × 10⁷ J', 'OR: use of gMars = Gm/r²; use of ΔEgrav = m × g × Δh; ΔEgrav = (−)3.4 × 10⁷ J'], guidance: '3 marks. ΔVgrav across the descent ≈ −3.29 × 10⁴ J kg⁻¹; ΔEgrav = −3.29 × 10⁴ × 1030 = −3.39 × 10⁷ J.' },
+    '13': { type: 'points', points: ['Use of λ = ln2 / t½', 'Initial activity of Ac is 50% that of Bi, Or decay constant of Ac is 50% that of Bi', 'Applies half-lives (or exponential decay) to show the fraction remaining after 10 days for one isotope', 'Demonstrates quantitatively that both isotopes have the same activity after 10 days'], guidance: '4 marks. λAc = ln2/10; λBi = ln2/5; after 10 days Ac has done 1 half-life and Bi 2, giving equal activities.' },
+    '14(a)': { type: 'points', points: ['The fractional change in wavelength (Δλ/λ) is proportional to the relative velocity of the source', 'Hence the change in wavelength is proportional to the wavelength', 'OR: Δλ/λ = v/c with v and c the same for all wavelengths (z constant); so Δλ ∝ λ'], guidance: '2 marks.' },
+    '14(b)': { type: 'points', points: ['Estimate of star wavelength (above 7 × 10⁻⁷ m)', 'Use of z = Δλ/λ with 656 nm as denominator', 'v = 3.8 × 10⁷ m s⁻¹ (range 3.4–4.2 × 10⁷ m s⁻¹)', '(Star is) moving away from the Earth / receding'], guidance: '4 marks. v = [(7.40 − 6.56)/6.56] × 3.00 × 10⁸ = 3.84 × 10⁷ m s⁻¹.' },
+    '15': { type: 'points', points: ['Use of E = mcΔθ', 'Use of E = Lm', 'Apply 5% to calculate energy saved', 'Use of P = VI or Q = It', 'Use of E = Pt or E = QV', '2.69 × 10⁵ J (phone) compared with 1.93 × 10⁵ J (energy saved), and concludes claim invalid (or 5 days vs 7 days)'], guidance: '6 marks. Heating 4.63×10³ J + melting 5.54×10³ J; energy saved = (0.95/0.05)×(10170) = 1.93×10⁵ J. Phone: P = 0.444 W; energy for 7 days = 2.69×10⁵ J. Claim invalid.' },
+    '16(a)': { type: 'points', points: ['Line of best fit drawn', 'Gradient determined', 'Applies eV to J conversion factor', 'h = 6.62 × 10⁻³⁴ J s (6.4–6.8 × 10⁻³⁴ J s)'], guidance: '4 marks. gradient = 4.14 × 10⁻¹⁵ eV s; h = 4.14×10⁻¹⁵ × 1.6×10⁻¹⁹ = 6.62 × 10⁻³⁴ J s.' },
+    '16(b)': { type: 'points', points: ['x-intercept (threshold frequency) determined', 'Use of φ = hf₀', 'φ = 2.3 eV, so metal is (probably) caesium (allow ecf for h)'], guidance: '3 marks. f₀ ≈ 55 × 10¹³ Hz; φ = 6.62×10⁻³⁴ × 55×10¹³ = 2.28 eV.' },
+    '17(a)(i)': { type: 'points', points: ['Object/star at infinity, so the intermediate image is formed at the focal length of the objective lens', 'Final image at infinity, so the intermediate image must be at the focal length of the eyepiece lens'], guidance: '2 marks. Accept parallel-ray arguments.' },
+    '17(a)(ii)': { type: 'points', points: ['The rays cross after the objective lens / the objective lens inverts the image; the eyepiece keeps it the same way up, so the final image is inverted relative to the object'], guidance: '1 mark.' },
+    '17(b)(i)': { type: 'points', points: ['Use of n = c/v', 'Use of v = fλ (in the coating)', 'Use of path difference = λ/2 with a factor of 2 (so 2d = λ/2)', 'd = 9.1 × 10⁻⁸ m'], guidance: '4 marks. v = 2.17×10⁸ m s⁻¹; λ = 3.62×10⁻⁷ m; d = λ/4 = 9.06×10⁻⁸ m.' },
+    '17(b)(ii)': { type: 'points', points: ['Red and blue light do not interfere destructively, so they remain in the reflected light (giving purple)'], guidance: '1 mark.' },
+    '18(a)(i)': { type: 'points', points: ['Use of μ = m/L with V = πr²L', 'μ = 1.09 × 10⁻³ kg m⁻¹ (to at least 3 sf)'], guidance: '2 marks (show that). μ = 1070 × π(0.57×10⁻³)² = 1.09 × 10⁻³ kg m⁻¹.' },
+    '18(a)(ii)': { type: 'points', points: ['Use of v = fλ', 'Use of λ = 2L', 'Use of v = √(T/μ)', 'T = 140 N (ecf from (a)(i))'], guidance: '4 marks. λ = 0.82 m; v = 361 m s⁻¹; T = v²μ = 142 N.' },
+    '18(b)': { type: 'points', points: ['(As temperature increases) E decreases', 'The tension in the string decreases', 'The wave speed decreases and so the frequency decreases (λ constant)'], guidance: '3 marks.' },
+    '19(a)': { type: 'points', points: ['Use of V = (4/3)πr³', 'Use of pV = NkT', 'Conversion of temperature to kelvin', 'N = 6.5 × 10¹⁷'], guidance: '4 marks. V = (4/3)π(0.080)³ = 2.14×10⁻³ m³; N = (1.25×2.14×10⁻³)/(1.38×10⁻²³×298) = 6.50×10¹⁷.' },
+    '19(b)': { type: 'points', points: ['IC1: Electrons in neon atoms absorb energy due to electron collisions', 'IC2: Electrons/atoms move to higher energy levels (are excited)', 'IC3: A photon is released when an electron drops down energy levels (de-excites)', 'IC4: Electrons/atoms have discrete energy levels', 'IC5: Frequency/wavelength of emitted photon is determined by the difference in energy levels (E₂ − E₁ = hf)', 'IC6: Limited number of energy levels, so only certain frequencies/wavelengths are emitted'], guidance: '6 marks (*extended). Indicative content plus structure/lines of reasoning.' },
+    '20(a)': { type: 'points', points: ['Use of W = mg', 'Use of k = F/x', 'Use of T = 2π√(m/k)', 'Use of f = 1/T', 'f = 1.7 Hz, so claim is incorrect'], guidance: '5 marks. k = (0.065×9.81)/0.085 = 7.50 N m⁻¹; T = 0.585 s; f = 1.71 Hz.' },
+    '20(b)': { type: 'points', points: ['There is damping / resistive forces act on the flamingo', 'Energy is removed from the oscillating system (and the amplitude decreases)'], guidance: '2 marks.' },
+    '20(c)(i)': { type: 'points', points: ['Use of T = 2π√(l/g)', 'T = 2.24 s (at least 3 sf)'], guidance: '2 marks (show that). T = 2π√(1.25/9.81) = 2.24 s.' },
+    '20(c)(ii)': { type: 'points', points: ['Use of ω = 2π/T', 'Use of v = Aω (maximum velocity)', 'v = 0.21 m s⁻¹ (ecf from (i))'], guidance: '3 marks. ω = 2.80 rad s⁻¹; v = 0.075 × 2.80 = 0.210 m s⁻¹.' },
+    '21(a)': { type: 'points', points: ['Top line correct (mass and proton numbers): ⁸⁷₃₇Rb → ⁸⁷₃₈Sr', 'Bottom line correct: + ⁰₋₁β⁻ + ν̄e'], guidance: '2 marks. ⁸⁷₃₇Rb → ⁸⁷₃₈Sr + ⁰₋₁β⁻ + ν̄e.' },
+    '21(b)': { type: 'points', points: ['Use of λ = ln2 / t½', 'Use of N = N₀e⁻λt', 'Use of NS/NR to determine N/N₀', 't = 3.7 × 10⁹ year', 'Comparison with the age of the Earth and valid conclusion'], guidance: '5 marks. λ = 1.42×10⁻¹¹ year⁻¹; N₀/N = 1.0532; t = 3.65×10⁹ year < 4.5×10⁹ year, so the rock formed later — not consistent with forming at the same time.' },
+    '21(c)': { type: 'points', points: ['Because the activity is small (and therefore difficult to measure)', 'Or because a (significant) change in activity would take a long time to measure'], guidance: '1 mark.' },
+    '21(d)': { type: 'points', points: ['If t½ is larger, λ is smaller; since N = N₀e⁻λt the calculated time would be greater (MP2 dependent on MP1)', 'OR: a larger half-life means more time for the ratio to reach its value, so the rock would be older than originally determined'], guidance: '2 marks.' }
+  } },
+          { id: 'phys-edexcel-9ph0-2022-p3', year: 'June 2022', paperName: 'General and Practical Principles in Physics', paperCode: '9PH0/03', totalMarks: 120, durationMins: 150,
+  qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-que-20220617.pdf',
+  msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Physics/2015/Exam-materials/9ph0-03-rms-20220818.pdf',
+  qbqNote: 'All questions are wired up question-by-question with the official mark scheme. Figures and graphs are in the question paper PDF; parts that ask you to plot/draw have an on-screen canvas.',
+  questions: [
+    { number: 1, scenario: 'A student investigated the behaviour of a spring under tension. The spring was hung vertically with a mass holder attached, as shown. The position of the bottom of the mass holder was determined using a metre rule. (See Figure in the question paper PDF.)', parts: [
+      { code: '1(a)', preamble: 'The position of the bottom of the mass holder was recorded. The spring was stretched by adding masses to the mass holder and the new positions were determined. The extension of the spring for each mass was calculated.\nThe results are shown in the table.\nMass/kg, Extension/m: 0.05, 0.019; 0.10, 0.042; 0.15, 0.058; 0.20, 0.085; 0.25, 0.1; 0.35, 0.14.', prompt: 'Criticise the recording of these results.', marks: 2 },
+      { code: '1(b)', prompt: 'Describe how the student should determine the extension of the spring as accurately as possible.', marks: 3 }
+    ] },
+    { number: 2, scenario: 'A student was given a box of identical glass microscope slides and asked to determine the density of the glass. She used a micrometer to measure the thickness of one of the slides. She repeated this measurement twice in different places and calculated a mean value for the thickness. The thickness of each slide was approximately 1 mm.', parts: [
+      { code: '2(a)', prompt: 'Explain how she should have measured the thickness of the slides in order to minimise the percentage uncertainty.', marks: 2 },
+      { code: '2(b)', preamble: 'In her report she wrote\n"My value for the mass of the glass slides was precise, because I measured the mass using an electronic balance which was accurate to the nearest 0.01 g. I reduced the effect of random error by repeating the measurement several times."', prompt: 'Comment on this statement.', marks: 4 }
+    ] },
+    { number: 3, scenario: 'It was suggested on an online forum that it would be possible to cook a chicken by repeatedly slapping the chicken with one hand.\nIt was claimed that the energy transferred to a chicken in 8000 slaps would be sufficient to raise the temperature of the chicken from 23 °C to 165 °C.\nIn an investigation to test the claim, the effective mass of the hand was taken as 1.75 kg and the speed of the hand just before impact with the chicken as 6.25 m s⁻¹.', parts: [
+      { code: '3(a)', preamble: 'Assume that no energy is transferred from the chicken to the surroundings.\nmass of chicken = 0.875 kg\nspecific heat capacity of chicken = 1770 J kg⁻¹ K⁻¹\nefficiency of energy transfer from the hand = 65%', prompt: 'Deduce whether the data confirms that 8000 slaps would be sufficient.', marks: 5 },
+      { code: '3(b)', prompt: 'Explain whether the assumption made in (a) is realistic.', marks: 2 }
+    ] },
+    { number: 4, scenario: 'The diagram shows a metronome, which includes an inverted pendulum, used by musicians to set a tempo. The pendulum oscillates with simple harmonic motion and makes a loud click at regular intervals. (See Figure in the question paper PDF.)\nA faulty metronome stopped making a clicking noise. A student tried to check the accuracy of the period T of the metronome, using a stopwatch. The student timed the pendulum as it moved from one extreme of the oscillation to the other.', parts: [
+      { code: '4', prompt: 'Explain how the procedure used by the student to determine T could have been improved.', marks: 5 }
+    ] },
+    { number: 5, scenario: 'The diagram shows a \'shaker torch\'. When the torch is shaken, a strong magnet moves forwards and backwards through a copper coil, powering a light-emitting diode (LED).\nEach time the magnet moves through the coil a current pulse is generated. The coil is connected to a capacitor via a diode, as shown.\nOnce the torch has been shaken for a few minutes the switch is closed and the LED lights for a short while. (See Figures in the question paper PDF.)', parts: [
+      { code: '5', prompt: '*Explain how the shaker torch is able to light the LED.', marks: 6, extended: true }
+    ] },
+    { number: 6, scenario: 'In an experiment to determine the speed of sound in air a student connected two microphones to an oscilloscope, as shown. (See Figure in the question paper PDF.)\nThe microphones detect sound from the loudspeaker, converting it to an electrical signal. The signal is displayed on the oscilloscope screen.\nBoth microphones were initially positioned the same distance from the loudspeaker. The two signals were in phase on the oscilloscope screen. The student slowly moved microphone 2 towards the loudspeaker, until the two signals on the oscilloscope were in phase again. He then measured the distance d between the microphones to determine the wavelength λ of the sound waves.\nd = 20.5 cm', parts: [
+      { code: '6(a)', prompt: 'Comment on the student\'s experimental technique to determine λ.', marks: 2 },
+      { code: '6(b)', preamble: 'The oscilloscope trace for the signal from microphone 1 is shown below. (See Figure in the question paper PDF.)\nThe time base of the oscilloscope was set to 0.20 ms div⁻¹.', prompt: 'Determine a value for the speed of sound in air.', marks: 5 }
+    ] },
+    { number: 7, scenario: 'A projectile of mass 65 g is fired vertically upwards into a stationary wooden block of mass 2.400 kg, as shown. (See Figure in the question paper PDF.)', parts: [
+      { code: '7(a)', preamble: 'The projectile becomes embedded in the block. They both move vertically upwards through a vertical displacement of 55 cm before momentarily coming to rest.', prompt: 'Calculate the energy dissipated as the projectile hits the block.', marks: 6 },
+      { code: '7(b)', prompt: 'Explain how the principle of conservation of energy applies to this collision.', marks: 2 }
+    ] },
+    { number: 8, scenario: 'A teacher demonstrated the decay of protactinium using a Geiger-Müller (GM) tube connected to a data logger.\nA sealed plastic bottle contains a solvent floating above a liquid containing a uranium salt. Protactinium is produced from the decay of uranium and is present in the solvent as shown. (See Figure in the question paper PDF.)', parts: [
+      { code: '8(a)', prompt: 'Deduce whether alpha radiation or beta radiation from the inside of the bottle is detected by the GM tube.', marks: 2 },
+      { code: '8(b)(i)', preamble: 'The data logger output is shown below. (See the graph of count rate/s⁻¹ against t/s in the question paper PDF.)', prompt: 'Determine the half-life of the protactinium.', marks: 4 },
+      { code: '8(b)(ii)', prompt: 'Explain why the count rate doesn\'t reach zero.', marks: 2 }
+    ] },
+    { number: 9, scenario: 'A student is planning to collect data to produce a current-potential difference graph for a filament lamp. Her teacher suggests two circuits that she could use.\nCircuit 1 uses a potential divider and circuit 2 uses a variable resistor to vary the potential difference across the filament lamp. (See Figures in the question paper PDF.)', parts: [
+      { code: '9(a)', prompt: '*Discuss the suitability of each circuit to collect the data.', marks: 6, extended: true },
+      { code: '9(b)(i)', preamble: 'The student sets up the following circuit with the filament lamp. The battery has negligible internal resistance. The circuit has a 12 V supply, a 560 Ω resistor and an ammeter A in series with the filament lamp. (See Figure in the question paper PDF.)\nThe reading on the ammeter is 17.5 mA.', prompt: 'Calculate the value of the potential difference (p.d.) across the filament lamp.', marks: 2 },
+      { code: '9(b)(ii)', preamble: 'When a voltmeter with a resistance of 1.5 kΩ is connected as shown (across the filament lamp), the p.d. across the filament lamp decreases. (See Figure in the question paper PDF.)', prompt: 'Explain why the p.d. across the filament lamp decreases.', marks: 3 }
+    ] },
+    { number: 10, scenario: 'A student carried out an experiment to determine the viscosity of some honey. He filled a tall glass cylinder with honey as shown, and timed a ball bearing as it fell through the honey. (See Figure in the question paper PDF.)', parts: [
+      { code: '10(a)', preamble: 'The student placed rubber bands near the top and bottom of the cylinder. He started a stopwatch when the ball bearing passed the first band and stopped the stopwatch when the ball bearing passed the second band. He repeated this several times to determine a mean time.', prompt: 'Criticise the student\'s method.', marks: 2 },
+      { code: '10(b)(i)', preamble: 'The time t for the sphere to fall through a distance of 25.0 cm is shown in the table.\nt/s: 6.40, 6.35, 6.36, 6.38.', prompt: 'Show that the mean velocity v of the ball bearing is about 0.04 m s⁻¹.', marks: 3 },
+      { code: '10(b)(ii)', preamble: 'The student had three different types of honey available.\nViscosity η is given by the following expression\nη = 2r²g(ρB − ρH) / 9v\nradius r of ball bearing = 5.50 × 10⁻³ m\ndensity of ball bearing ρB = 7750 kg m⁻³\ndensity of honey ρH = 1360 kg m⁻³\nViscosity (at 20 °C)/Pa s — Honey A: 10.6; Honey B: 12.5; Honey C: 13.6.', prompt: 'Deduce which honey the student used.', marks: 2 }
+    ] },
+    { number: 11, scenario: 'A student carried out an experiment to calibrate a thermistor. She connected the thermistor in series with a resistor and a power supply as shown. Then she placed the thermistor in a beaker of hot water and used a thermometer to record the temperature θ of the water. (See Figure in the question paper PDF.)\nThe student recorded θ and corresponding values of the reading V on the voltmeter as the water cooled.', parts: [
+      { code: '11(a)', prompt: 'Explain, making reference to charge carriers, why V increased as the water cooled.', marks: 3 },
+      { code: '11(b)(i)', preamble: 'Over a limited temperature range V varies with θ according to the expression\nV = V₀e⁻ᵇθ\nwhere b and V₀ are constants.', prompt: 'Explain why a graph of lnV against θ would give a straight line.', marks: 2 },
+      { code: '11(b)(ii)', kind: 'diagram', preamble: 'The student\'s data is shown in the table below.\nθ/°C, V/V: 89.0, 1.9; 74.0, 2.9; 53.5, 4.9; 32.5, 9.1; 18.5, 12.6; 3.5, 18.7.', prompt: 'Plot a graph of lnV against θ on the grid opposite. Use the column provided to show any processed data.', marks: 5 },
+      { code: '11(b)(iii)', prompt: 'Determine values for b and V₀.', marks: 4 }
+    ] },
+    { number: 12, scenario: 'In 2011, a tsunami was caused by a massive earthquake centred some distance off the coast of Japan. The tsunami caused a cooling system failure at the Fukushima Nuclear Power Plant. This resulted in a nuclear meltdown and radioactive materials were released into the surroundings.', parts: [
+      { code: '12(a)(i)', preamble: 'A reservoir beside one of the reactor buildings contained a large volume of water. In 2013, this water was found to have an extremely high concentration of caesium-137.\nCaesium-137 is a radioactive isotope of caesium.\nThe nuclear equation for the decay of caesium-137 is:\n¹³⁷₅₅Cs → ___Ba + ___β⁻ + ⁰₀e (atomic and mass numbers to be completed). (See the equation in the question paper PDF.)', prompt: 'Complete the nuclear equation for the decay of caesium-137.', marks: 2 },
+      { code: '12(a)(ii)', preamble: 'An activity of 2.35 × 10¹² Bq per m³ of water in the reservoir was measured. It is suggested that a safe level for the activity of all water in the reservoir would be 100 Bq.\nvolume of water in reservoir = 5000 m³\nhalf-life of caesium-137 = 30 years', prompt: 'Calculate the time in years for the caesium-137 to decay to a safe level.', marks: 4 },
+      { code: '12(b)', preamble: 'The most common radionuclide amongst the fission products in the fuel was iodine-131, which decays with a half-life of 8.0 days to form a stable isotope of the gas xenon.\nAssume that no gas escapes.\ntemperature = 20 °C\ninitial number of iodine nuclei = 1.25 × 10²⁸', prompt: 'Deduce whether enough xenon would have collected in 32 days to exert a pressure of 1.0 × 10⁵ Pa in a volume of 450 m³.', marks: 6 },
+      { code: '12(c)', preamble: 'Buildings in nearby Tohoku University suffered structural damage during the 2011 earthquake.\nThe graph shows how the acceleration of one of the buildings, measured on the 9th floor, varied with time during the earthquake. (See the graph of a/m s⁻² against t/s in the question paper PDF.)\nAt the time it was reported that during the earthquake the 9th floor of the building displaced by more than 30 cm from its normal position.', prompt: 'Assess the accuracy of this report.', marks: 5 }
+    ] },
+    { number: 13, scenario: 'A student used a sonometer to investigate the properties of a stretched wire. The sonometer is a long hollow wooden box.\nA steel wire is attached to one end of the box and rests on two wooden bridges. The wire is placed under tension T by hanging a mass from the end of the wire, as shown. (See Figure in the question paper PDF.)\nThe student placed the base of a vibrating tuning fork in contact with the wire, at one of the bridges. This set the wire into oscillation. He adjusted the position of the other bridge until a single-loop standing wave was produced on the wire between the bridges.', parts: [
+      { code: '13(a)', prompt: 'Explain how an antinode is produced at the mid-point of the wire between the bridges.', marks: 3 },
+      { code: '13(b)(i)', preamble: 'The student repeated this for a series of tuning forks with different frequencies f. For each fork he measured the distance L between the bridges.\nThe steel wire, of mass per unit length μ, was placed under tension T by hanging a mass of 2.10 kg from the end of the wire.', prompt: 'State one safety precaution that should be taken when carrying out the investigation.', marks: 1 },
+      { code: '13(b)(ii)', preamble: 'The student plotted a graph of L² against 1/f².', prompt: 'Show that the gradient of this graph is equal to T/4μ.', marks: 3 },
+      { code: '13(b)(iii)', preamble: 'The student\'s graph of L²/m² against 1/f²/10⁻⁶ s² is shown below. (See the graph in the question paper PDF.)\nThe value of μ for different standard wire gauge (SWG) steel wire is shown in the table.\nSWG, μ/g m⁻¹: 22, 3.15; 24, 1.95; 26, 1.31.', prompt: 'Deduce which wire the student used in the investigation.', marks: 4 },
+      { code: '13(c)(i)', preamble: 'The student then found a value of μ for a brass wire, using a different method. He measured the diameter d of the wire using a micrometer.', prompt: 'Explain one technique the student should use when measuring d.', marks: 2 },
+      { code: '13(c)(ii)', preamble: 'The student obtained the following data.\nd/mm: 0.55, 0.59, 0.57, 0.58.\nThe stated value of μ for the brass wire used by the student was 2.14 × 10⁻³ kg m⁻¹.\ndensity of brass = 8700 kg m⁻³ ± 200 kg m⁻³', prompt: 'Deduce whether the student\'s data supports this value for μ.', marks: 6 }
+    ] }
+  ],
+  markSchemes: {
+    '1(a)': { type: 'points', points: ['Data not recorded to the same s.f./d.p.', 'Position of mass holder not recorded'], guidance: 'Any 2 for 2 marks.' },
+    '1(b)': { type: 'points', points: ['Calculate mean value of position by taking loading and unloading positions of the mass holder, or by taking repeat readings for each mass', 'Use a pointer on the mass holder / take readings at eye level / use a set square to read the metre rule / bring the metre rule close to the mass holder', 'Check that the metre rule is vertical, or fix the metre rule in position'], guidance: 'Any 3 for 3 marks.' },
+    '2(a)': { type: 'points', points: ['Measure the thickness of a stack of slides and divide by the number of slides', 'The uncertainty would be the same but the measurement would be larger (so the percentage uncertainty would be less)'], guidance: '2 marks.' },
+    '2(b)': { type: 'points', points: ['Precision refers to the spread of values (so the reference to precision is incorrect)', 'Accuracy refers to how close the value is to the true value', 'The resolution of the balance is 0.01 g, or the uncertainty of the readings is (half of) 0.01 g', 'Repeating the measurement and calculating a mean reduces the effect of random error'], guidance: 'Any 4 for 4 marks.' },
+    '3(a)': { type: 'points', points: ['Use of Ek = ½mv²', 'Use of E = mcΔθ', 'Use of 8000, or use of (energy required)/(energy per slap)', 'Use of 65% with input energy', 'Energy from 8000 slaps = 1.78 × 10⁵ J, less than the 2.20 × 10⁵ J required, so not sufficient (or final temperature 138 °C, or 9900 slaps needed, or temperature rise 115 K < 142 K)'], guidance: '5 marks. Ek = ½×1.75×6.25² = 34.2 J; energy in = 0.65×8000×34.2 = 1.78×10⁵ J; energy required = 0.875×1770×142 = 2.20×10⁵ J.' },
+    '3(b)': { type: 'points', points: ['There is no way to insulate the chicken / there will be energy transfer to the surroundings (there is a temperature difference, or it takes a long time for 8000 slaps)', 'So the assumption is unrealistic (dependent)'], guidance: '2 marks. MP2 dependent on MP1.' },
+    '4': { type: 'points', points: ['Time a number of (complete) oscillations and divide by the number of oscillations', 'This increases the total time / reduces the effect of reaction time (dependent on MP1)', 'Time from the mid-point of the oscillation', 'Use a marker to identify the mid-point / pendulum travels fastest at the mid-point', 'Each method reduces the (percentage) uncertainty in T'], guidance: '5 marks. MP5 cannot be awarded on its own.' },
+    '5': { type: 'points', points: ['IC1: As the magnet moves through the coil there is a change in magnetic flux linkage / the coil cuts magnetic flux', 'IC2: An e.m.f. is induced across the coil', 'IC3: This generates a current in the circuit', 'IC4: The diode only allows current in one direction', 'IC5: So the capacitor is charged (repeatedly)', 'IC6: When the switch is closed the capacitor discharges through the LED'], guidance: '*Extended QWC. Indicative content plus structure/lines of reasoning.' },
+    '6(a)': { type: 'points', points: ['He should have moved the microphone over more in-phase positions (to measure multiple wavelengths)', 'This would reduce the uncertainty in the value for d (dependent on MP1)'], guidance: '2 marks.' },
+    '6(b)': { type: 'points', points: ['Number of divisions read from the oscilloscope trace', 'Use of the time-base setting', 'Use of f = 1/T', 'Use of v = fλ', 'v = 340 m s⁻¹'], guidance: '5 marks. T = 3 × 0.20×10⁻³ = 6.0×10⁻⁴ s; f = 1.67×10³ Hz; v = 1.67×10³ × 0.205 = 342 m s⁻¹.' },
+    '7(a)': { type: 'points', points: ['Use of Egrav = mgh', 'Use of Ek = ½mv² for the block and projectile', 'Use of conservation of momentum', 'Use of Ek = ½mv² for the projectile', 'Use of energy dissipated = (Ek of projectile) − (energy after collision)', 'E = 490 J'], guidance: '6 marks. Egrav = 2.465×9.81×0.55 = 13.3 J; v after = 3.28 m s⁻¹; u = 124.6 m s⁻¹; Ek = 504 J; E = 504 − 13.3 = 491 J.' },
+    '7(b)': { type: 'points', points: ['Total energy is constant, but kinetic energy decreases (inelastic collision)', 'The projectile does work on the block, or the internal energy of the block increases'], guidance: '2 marks.' },
+    '8(a)': { type: 'points', points: ['α radiation would be absorbed by the plastic bottle', 'β radiation can penetrate the plastic bottle, therefore it must be β radiation'], guidance: '2 marks.' },
+    '8(b)(i)': { type: 'points', points: ['Smooth best-fit curve drawn on the graph', 'Time for the count rate to fall by half once', 'Time for the count rate to fall by half twice and a mean time calculated', 't½ = 60–80 s'], guidance: '4 marks. Alternatively read 2 values and use the exponential equation, or draw a tangent at t = 0.' },
+    '8(b)(ii)': { type: 'points', points: ['There will be background radiation, or decay is exponential so the count rate never reaches zero', 'The data logger output includes counts due to background radiation as well as the source'], guidance: '2 marks.' },
+    '9(a)': { type: 'points', points: ['IC1: Both circuits allow readings of p.d./current for the lamp', 'IC2: For circuit 1 the minimum p.d. across the lamp is 0 V; for circuit 2 the minimum p.d. is greater than 0 V', 'IC3: For circuit 1 the maximum p.d. is the supply p.d.', 'IC4: For circuit 2 adjusting the resistor changes the circuit resistance / the battery p.d. is shared between lamp and variable resistor', 'IC5: So for circuit 2 the minimum p.d. depends on the resistance of the variable resistor', 'IC6: Circuit 1 is better because it allows a bigger range (down to 0 V)'], guidance: '*Extended QWC. Indicative content plus structure.' },
+    '9(b)(i)': { type: 'exact', points: ['2.2 V'], guidance: '2 marks. V across resistor = 17.5×10⁻³ × 560 = 9.8 V; V_lamp = 12 − 9.8 = 2.2 V.' },
+    '9(b)(ii)': { type: 'points', points: ['The effective resistance of the lamp-and-voltmeter combination is less than the resistance of the lamp', 'The combination has a smaller fraction of the total circuit resistance', 'Hence a smaller fraction of the supply p.d. falls across the lamp'], guidance: '3 marks. Alternative routes via increased circuit current and increased p.d. across the resistor.' },
+    '10(a)': { type: 'points', points: ['The first rubber band is too near the surface of the honey (so the ball is not yet at terminal velocity)', 'There is no method for checking that the ball is falling at terminal velocity when timing'], guidance: '2 marks. Accept valid improvements consistent with the points.' },
+    '10(b)(i)': { type: 'points', points: ['Mean time calculated', 'Use of v = s/t', 'v = 0.039 m s⁻¹'], guidance: '3 marks (show that). t_av = 6.37 s; v = 0.25/6.37 = 3.92×10⁻² m s⁻¹.' },
+    '10(b)(ii)': { type: 'points', points: ['Use of η = 2r²g(ρB − ρH)/9v', 'η = 10.8 Pa s, so it is honey A'], guidance: '2 marks. η = 2×(5.50×10⁻³)²×9.81×(7750−1360)/(9×3.9×10⁻²) = 10.8 Pa s. Allow ecf from (b)(i).' },
+    '11(a)': { type: 'points', points: ['The number of (free) charge carriers per unit volume in the thermistor decreased', '(Hence) the resistance of the thermistor increased', 'And a larger fraction of the supply p.d. is across the thermistor'], guidance: '3 marks. Accept electrons for charge carriers.' },
+    '11(b)(i)': { type: 'points', points: ['Shows the expansion ln(V) = ln(V₀) − bθ', 'Compares with y = mx + c and shows that the gradient m is (−)b'], guidance: '2 marks.' },
+    '11(b)(ii)': { type: 'points', points: ['ln values correct and to 2 or 3 decimal places', 'Labels and unit on axes', 'Scales suitable (points spread over more than half each axis)', 'Plots correct to within 1 mm', 'Line of best fit drawn'], guidance: '5 marks (plot — use the canvas). lnV: 89.0→0.64; 74.0→1.06; 53.5→1.59; 32.5→2.21; 18.5→2.53; 3.5→2.93.' },
+    '11(b)(iii)': { type: 'points', points: ['Gradient determined using a large triangle', 'b in the range 0.026–0.028 °C⁻¹ (2 or 3 sf, with unit)', 'Inverse ln of intercept determined', 'V₀ in the range 19–22 V'], guidance: '4 marks. gradient = (3.04 − 0.35)/(0 − 100) = −0.027 °C⁻¹; V₀ = e³·⁰ = 20.1 V.' },
+    '12(a)(i)': { type: 'points', points: ['Top line correct (mass number 137 on Ba, 0 on β)', 'Bottom line correct (proton number 56 on Ba, −1 on β)'], guidance: '2 marks. ¹³⁷₅₅Cs → ¹³⁷₅₆Ba + ⁰₋₁β⁻ + ⁰₀e.' },
+    '12(a)(ii)': { type: 'points', points: ['Use of λ = ln2/t½', 'Use of 5000 m³', 'Use of A = A₀e⁻λt', 't = 1400 year'], guidance: '4 marks. λ = ln2/30 = 0.0231 year⁻¹; t = ln(8.51×10⁻¹⁵)/(−0.0231) = 1402 year.' },
+    '12(b)': { type: 'points', points: ['Calculation of the number of half-lives elapsed', 'Number of iodine nuclei remaining', 'Number of iodine nuclei decayed (= xenon nuclei)', 'Conversion of temperature to kelvin', 'Use of pV = NkT', 'Pressure 1.1 × 10⁵ Pa (> 1.0 × 10⁵), so there is sufficient gas'], guidance: '6 marks. 32 days = 4 half-lives; xenon = 1.25×10²⁸ − 7.81×10²⁶ = 1.17×10²⁸; p = 1.17×10²⁸ × 1.38×10⁻²³ × 293/450 = 1.05×10⁵ Pa.' },
+    '12(c)': { type: 'points', points: ['Maximum value of a read from the graph (8–9 m s⁻²)', 'Period determined from the time for at least 3 cycles', 'Use of ω = 2π/T', 'Use of a = (−)ω²x', 'A = 0.33 m, so the report is correct (accept A in range 0.25–0.40 m with appropriate conclusion)'], guidance: '5 marks. ω ≈ 5.2 rad s⁻¹; A = a_max/ω² = 9/5.2² = 0.33 m.' },
+    '13(a)': { type: 'points', points: ['Waves are reflected from the opposite bridge', 'Waves meet in phase at the mid-point and superpose', 'Constructive interference gives a maximum displacement'], guidance: '3 marks.' },
+    '13(b)(i)': { type: 'points', points: ['Wear safety glasses (to protect eyes from a breaking wire), or wear suitable footwear, or place a sand tray under the masses'], guidance: 'Any one valid safety precaution.' },
+    '13(b)(ii)': { type: 'points', points: ['λ = 2L substituted into v = fλ', 'v = √(T/μ) substituted into v = fλ', 'Correct rearrangement into y = mx + c form'], guidance: '3 marks. v = 2Lf and v = √(T/μ) give 4L²f² = T/μ, so L² = (T/4μ)(1/f²); gradient = T/4μ.' },
+    '13(b)(iii)': { type: 'points', points: ['Gradient calculated', 'Use of gradient = T/4μ', 'μ = 1.8 g m⁻¹', 'SWG consistent with their μ (24 SWG)'], guidance: '4 marks. gradient ≈ 2.87×10³ m² s⁻²; μ = (2.1×9.81)/(4×2.87×10³) = 1.79×10⁻³ kg m⁻¹ = 1.79 g m⁻¹ → 24 SWG.' },
+    '13(c)(i)': { type: 'points', points: ['Take readings in different positions/orientations along the wire and calculate a mean (as the diameter may not be uniform)', 'Check and correct for zero error (a zero error reduces the accuracy)'], guidance: '2 marks (either route). Accept using the ratchet to avoid squashing the wire.' },
+    '13(c)(ii)': { type: 'points', points: ['Use of half-range to calculate the % uncertainty in d', '% uncertainty in area = 2 × (% uncertainty in d)', 'Calculation of % uncertainty in density', '% uncertainty in density added to % uncertainty in area', 'Use of μ = ρA with A = πd²/4', 'μ = 2.2 × 10⁻³ kg m⁻¹ ± 0.2 × 10⁻³ kg m⁻¹, so the stated value is supported'], guidance: '6 marks. d̄ = 0.57 mm; %U in d = 3.5%; %U in area = 7.0%; %U in density = 2.3%; %U in μ = 9.3%; μ = 2.2×10⁻³ kg m⁻¹, range covers 2.14×10⁻³ — supported.' }
+  } }
         ] },
       { board: 'OCR A', specCode: 'H556',
         officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/physics-a-h156-h556-from-2015/assessment/',
