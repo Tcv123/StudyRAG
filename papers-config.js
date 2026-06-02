@@ -8164,9 +8164,206 @@ window.SUBJECTS = [
                 ],
                 guidance: 'Max 3 (sketch — use the drawing canvas).' }
             } },
-          { id: 'phys-aqa-7408-2022-p1', year: 'June 2022', paperName: 'Paper 1', paperCode: '7408/1', totalMarks: 85, durationMins: 120, printOnly: true,
+          { id: 'phys-aqa-7408-2022-p1', year: 'June 2022', paperName: 'Paper 1', paperCode: '7408/1', totalMarks: 85, durationMins: 120,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74081-QP-JUN22.PDF',
-            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74081-MS-JUN22.PDF' },
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74081-MS-JUN22.PDF',
+            qbqNote: 'Section A (Questions 1–6, 60 marks) is wired up question-by-question with the official mark scheme. Section B (the 25 multiple-choice questions, 25 marks) is in the question paper PDF — open it to attempt those. Figures (graphs, diagrams) are in the QP PDF; the parts that ask you to draw have an on-screen canvas.',
+            questions: [
+              { number: 1,
+                scenario: 'Two stable isotopes of helium are ⁴₂He and ³₂He. Helium was discovered by analysing the light in the absorption spectrum of the Sun. Figure 1 shows the positions of the brightest lines, labelled A to F, in the emission spectrum of helium, together with the brightest lines in the emission spectra of sodium and hydrogen.\n\n(See Figure 1 in the question paper PDF.)',
+                parts: [
+                  { code: '01.1', preamble: 'An atom of ⁴₂He is produced in a rock that contains uranium, following the radioactive decay of a ²³⁸₉₂U atom. The decay also creates an atom of thorium (Th).', prompt: 'Write an equation for the decay of ²³⁸₉₂U.', marks: 2 },
+                  { code: '01.2', preamble: 'A ³₂He nucleus can be produced by the decay of a tritium nucleus ³₁H.', prompt: 'State and explain which exchange particle is responsible for this decay.', marks: 2 },
+                  { code: '01.3', prompt: 'Before helium was identified, some scientists suggested that the lines of the helium spectrum seen in the absorption spectrum of the Sun were due to the presence of sodium and hydrogen.\n\nDiscuss, with reference to the lines A to F in Figure 1, the evidence for and against this suggestion.', marks: 2 },
+                  { code: '01.4', prompt: 'Calculate, in eV, the change in energy level responsible for the spectral line labelled E in Figure 1.', marks: 3 },
+                  { code: '01.5', prompt: 'Explain, with reference to the processes within an atom, the difference between an emission spectrum and an absorption spectrum.', marks: 3 }
+                ] },
+              { number: 2,
+                scenario: 'Carbon-14 decays into nitrogen-14 with the release of a beta-minus (β⁻) particle and an antineutrino (ν̄_e).\n\n(See Figure 2 and Table 1 in the question paper PDF.)',
+                parts: [
+                  { code: '02.1', prompt: 'State the change of quark character in β⁻ decay.', marks: 1 },
+                  { code: '02.2', preamble: 'Figure 2 shows the distribution of kinetic energies of β⁻ particles from the decay of carbon-14.', prompt: 'Explain how Figure 2 supports the existence of the antineutrino.', marks: 2 },
+                  { code: '02.3', preamble: 'The existence of the antineutrino was confirmed by experiments in which antineutrinos interact with protons: ν̄_e + p → e⁺ + X.', prompt: 'Identify particle X.', marks: 1 },
+                  { code: '02.4', preamble: 'The positron released in this interaction is annihilated when it encounters an electron, producing a pair of gamma photons. Particle X can be absorbed by a nucleus, producing another gamma ray. Table 1 gives data for three gamma photons detected during an antineutrino–proton interaction experiment:\n• G1 — 5.0 × 10⁻¹⁴ J\n• G2 — 6.6 × 10⁻¹⁴ J\n• G3 — 1.0 × 10⁻¹³ J', prompt: 'Deduce which of the three gamma photons could have been produced by positron annihilation.', marks: 3 }
+                ] },
+              { number: 3,
+                scenario: 'Figure 3 shows a garden gate with a pulley system designed to close the gate. The pulley system raises weight A when the gate is opened; when the gate is released, A falls. The horizontal cable C passes over pulley R and its tension causes the gate to close. Weight A is a solid cylinder of diameter 4.8 × 10⁻² m, length 0.23 m and weight 35 N. Table 2 gives the densities of three available materials: concrete 2.4 × 10³ kg m⁻³, iron 7.8 × 10³ kg m⁻³, brass 8.6 × 10³ kg m⁻³.\n\n(See Figures 3–5 and Table 2 in the question paper PDF.)',
+                parts: [
+                  { code: '03.1', prompt: 'Deduce which one of the three materials is used for A.', marks: 3 },
+                  { code: '03.2', preamble: 'Figure 4 shows the pulley arrangement when the gate is closed. Pulleys P and M are frictionless so the tension in the rope attached to A equals the weight of A (35 N); the weight of the moveable pulley M is negligible.', prompt: 'Calculate the tension in the horizontal cable C when the gate is closed.', marks: 2 },
+                  { code: '03.3', prompt: 'Pulley M is pulled to the left as the gate is opened.\n\nExplain why this increases the tension in the horizontal cable C.', marks: 2 },
+                  { code: '03.4', preamble: 'Figure 5 shows a plan view with the gate open. The horizontal cable C passes over pulley R and is attached to the door at D. The angle between the door and the cable C is 12° and the horizontal distance between the hinge and D is 0.95 m. The tension in cable C is now 41 N.', prompt: 'Calculate the moment of the tension about the hinge.', marks: 2 },
+                  { code: '03.5', preamble: 'The same system is attached to an identical gate with stiffer hinges. Now the system does not supply a sufficiently large moment to close the gate.', prompt: 'Discuss two independent changes to the design to increase the moment about the hinges due to the horizontal cable C.', marks: 4 }
+                ] },
+              { number: 4,
+                scenario: 'A student assembles the circuit in Figure 6. The battery has an internal resistance of 2.5 Ω.\n\n(See Figures 6–8 in the question paper PDF.)',
+                parts: [
+                  { code: '04.1', prompt: 'Show that the resistance of the 6.2 V, 4.5 W lamp at its working potential difference (pd) is about 9 Ω.', marks: 1 },
+                  { code: '04.2', preamble: 'The terminal pd across the battery is 6.2 V.', prompt: 'Calculate the emf of the battery.', marks: 3 },
+                  { code: '04.3', preamble: 'The student makes a variable resistor (Figure 7) using a resistance wire of diameter 0.19 mm; a 5.0 m length of this wire has a resistance of 9.0 Ω.', prompt: 'Calculate the resistivity of the wire.', marks: 3 },
+                  { code: '04.4', preamble: 'Figure 8 shows the 5.0 m length of wire wrapped around a tube to make the variable resistor. A moveable copper contact varies the length of wire in series with the lamp. With the contact at one position the lamp is dim; the contact is then moved slowly to the right.', prompt: 'Explain, without calculation, what happens to the brightness of the lamp as the contact is moved (variable resistor in series with the lamp).', marks: 2 },
+                  { code: '04.5', preamble: 'The student now connects the variable resistor in parallel with the lamp. The contact is returned to its original position (the lamp is dim) and again moved slowly to the right.', prompt: 'Explain, without calculation, what happens to the brightness of the lamp as the contact is moved (variable resistor in parallel with the lamp).', marks: 2 }
+                ] },
+              { number: 5,
+                scenario: 'A teacher sets up a demonstration to show the relationship between circular motion and simple harmonic motion (SHM). She places a block on a turntable at a point 0.25 m from its centre (Figure 9). The turntable rotates with an angular speed of 1.8 rad s⁻¹ and the block does not slip.\n\n(See Figures 9–11 in the question paper PDF.)',
+                parts: [
+                  { code: '05.1', prompt: 'Calculate the time taken for the turntable to complete one revolution.', marks: 2 },
+                  { code: '05.2', kind: 'diagram', preamble: 'Figure 10 shows a plan view of the turntable and block; the turntable rotates in a clockwise direction.', prompt: 'Draw an arrow on Figure 10 to show the direction of the resultant force on the block.', marks: 1 },
+                  { code: '05.3', preamble: 'The mass of the block is 0.12 kg.', prompt: 'Calculate the magnitude of the resultant force on the block.', marks: 2 },
+                  { code: '05.4', prompt: 'Describe, with reference to one of Newton\'s laws of motion, the evidence that a resultant force is acting on the block.', marks: 2 },
+                  { code: '05.5', preamble: 'The teacher adjusts the angular speed of the turntable so that the block completes one rotation every 2.50 s. She sets up a simple pendulum above the centre of the turntable so that it swings in phase with the movement of the block.', prompt: 'Calculate the length of the simple pendulum.', marks: 2 },
+                  { code: '05.6', preamble: 'A lamp projects shadow images of the block and pendulum bob on a screen; both shadows appear to move with SHM (Figure 11). Initially the shadows move in phase with the same amplitude. Air resistance affects the motion of the pendulum.', prompt: 'Suggest the effect this has on the amplitude relationship and the phase relationship between the moving shadows.', marks: 2 }
+                ] },
+              { number: 6,
+                scenario: 'Two transparent prisms A and B of different refractive indices are placed in contact to produce a rectangular block. Figure 12 shows the path of a ray, incident normally on A, refracting as it crosses the boundary between the prisms.\n\n(See Figure 12 in the question paper PDF.)',
+                parts: [
+                  { code: '06.1', prompt: 'Explain how the path of the ray shows that the refractive index of A is greater than the refractive index of B.', marks: 1 },
+                  { code: '06.2', prompt: 'Show that the angle of refraction of the ray in B is about 60°.', marks: 2 },
+                  { code: '06.3', kind: 'diagram', prompt: 'Draw, on Figure 12, the path of the ray immediately after it reaches P. Justify your answer with calculations.', marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'points',
+                points: ['²³⁸₉₂U → ²³⁴₉₀Th + ⁴₂He', 'A thorium-234 nucleus (²³⁴₉₀Th) and an alpha particle (⁴₂He), correctly balanced'],
+                guidance: '2 marks (1 each for the alpha and the Th; the numbers must be correct and the "+" must be shown). Condone He for alpha.' },
+              '01.2': { type: 'points',
+                points: [
+                  'A neutron changes to a proton (β⁻ decay; down quark → up quark)',
+                  'The exchange particle is the W⁻ boson — this is a weak interaction and the particle must be negative so that charge is conserved'
+                ],
+                guidance: '2 marks. The second mark requires some explanation of why the particle is negative. Max 1 for a consistent inverse interaction leading to W⁺.' },
+              '01.3': { type: 'points',
+                points: [
+                  'FOR: line C is in both the hydrogen and helium spectra, OR line E is in both the sodium and helium spectra',
+                  'AGAINST: line D is missing — it is in neither the hydrogen nor the sodium spectrum'
+                ],
+                guidance: '2 marks. Must link a line to an element. Condone emission for absorption.' },
+              '01.4': { type: 'points',
+                points: [
+                  'Wavelength of line E = 580–590 nm (read from Figure 1)',
+                  'Use of E = hc/λ',
+                  'Conversion of E from J to eV, giving an answer in the range 2.11–2.14 eV'
+                ],
+                guidance: '3 marks.' },
+              '01.5': { type: 'points',
+                points: [
+                  'The photon is the energy carrier',
+                  'In absorption, an atom becomes excited / moves to a higher energy level by absorbing a photon',
+                  'In emission, an atom de-excites / moves to a lower energy level by emitting a photon'
+                ],
+                guidance: '3 marks. Condone "electron" for "atom"; allow "energy shell" but not "shell".' },
+              '02.1': { type: 'exact', points: ['down quark changes to up quark', 'd → u', 'du'],
+                guidance: '1 mark. Condone U for u but not D for d. No extra particles.' },
+              '02.2': { type: 'points',
+                points: [
+                  'The graph shows that the beta particles have a range of kinetic energies',
+                  'There is a fixed/maximum total energy released, so another particle (the antineutrino) must carry away the missing energy'
+                ],
+                guidance: '2 marks. A mention of conservation of energy on its own is insufficient for the second mark.' },
+              '02.3': { type: 'exact', points: ['neutron', 'n'],
+                guidance: '1 mark. Condone "n" but not "N"; do not allow "udd".' },
+              '02.4': { type: 'points',
+                points: [
+                  'Calculation of the minimum energy from annihilation = 2 × rest energy = 2 × 0.51 MeV = 1.6 × 10⁻¹³ J',
+                  'Energy per photon = 8.2 × 10⁻¹⁴ J (two photons produced)',
+                  'Conclusion consistent with the calculation — only G3 (1.0 × 10⁻¹³ J) has sufficient energy'
+                ],
+                guidance: '3 marks. If no other mark, award 1 for determining the rest energy of the positron or electron in J.' },
+              '03.1': { type: 'points',
+                points: [
+                  'Volume of A = πr²L = 4.16 × 10⁻⁴ m³ (or mass of A = W/g = 3.6 kg)',
+                  'Uses the density equation to compute a comparable property (e.g. mass if brass = density × volume = 3.58 kg → weight 35 N)',
+                  'Comparison identifies the material as brass'
+                ],
+                guidance: '3 marks. Do not allow weight in the density equation. Award the final mark only if "brass" is stated; zero for an unsupported "brass".' },
+              '03.2': { type: 'points',
+                points: ['Resolves the rope tension, e.g. 35 × cos 55°', 'Tension in cable C = 2 × the component ≈ 40 N'],
+                guidance: '2 marks.' },
+              '03.3': { type: 'points',
+                points: [
+                  'As the gate opens the angle of the rope to the horizontal decreases, while the rope tension stays constant at 35 N',
+                  'So the horizontal component of the rope tension increases, increasing the tension in cable C'
+                ],
+                guidance: '2 marks. Do not allow "the tension in the rope increases".' },
+              '03.4': { type: 'points',
+                points: [
+                  'Component of the force perpendicular to the door = 41 sin 12° = 8.5 N (or perpendicular distance = 0.95 sin 12° = 0.198 m)',
+                  'Moment = 8.5 × 0.95 = 8.1 N m'
+                ],
+                guidance: '2 marks. Award zero for simply multiplying 41 N × 0.95 m.' },
+              '03.5': { type: 'points',
+                points: [
+                  'Increase the weight/density/mass/volume of A → increases the rope tension and therefore the moment',
+                  'Position pulley R further from the hinge / increase the diameter of pulley R → increases the angle and the perpendicular component',
+                  'Decrease the angle of the rope (e.g. bring P and the fixed point closer together) → increases the tension',
+                  'Move D further from the hinge / make C longer → increases the perpendicular distance'
+                ],
+                guidance: '4 marks. Any two complete alternatives (each = a stated change + its effect on the moment).' },
+              '04.1': { type: 'points', points: ['R = V²/P = 6.2²/4.5 = 8.5 Ω (≈ 9 Ω)'],
+                guidance: '1 mark. Condone use of W for P.' },
+              '04.2': { type: 'points',
+                points: [
+                  'Calculation of the lamp current (0.73 A), or the current in the 12 Ω resistor (0.52 A), or the parallel-pair resistance (5.0 Ω)',
+                  'Calculation of the total circuit current (1.24 A) or total circuit resistance (7.5 Ω)',
+                  'emf = terminal pd + Ir = 6.2 + (1.24 × 2.5) = 9.3 V'
+                ],
+                guidance: '3 marks. ECF from 04.1; using 9 Ω gives emf ≈ 9.2 V.' },
+              '04.3': { type: 'points',
+                points: [
+                  'Calculation of cross-sectional area A = π(d/2)² = 2.84 × 10⁻⁸ m²',
+                  'Use of ρ = RA/l',
+                  'ρ = 5.1 × 10⁻⁸ Ω m'
+                ],
+                guidance: '3 marks. Allow powers-of-ten errors in MP1/MP2.' },
+              '04.4': { type: 'points',
+                points: [
+                  'Moving the contact increases the length of wire in series, so the resistance increases',
+                  'This reduces the current through the lamp, so the lamp gets dimmer'
+                ],
+                guidance: '2 marks. Do not condone "current across" or "pd through".' },
+              '04.5': { type: 'points',
+                points: [
+                  'In parallel, increasing the variable-resistor resistance reduces the current in the circuit/battery (increases the external resistance)',
+                  'This reduces the lost volts across the internal resistance, so the terminal pd increases and the lamp gets brighter'
+                ],
+                guidance: '2 marks. Award max 1 for arguments about the initial dimming when the wire is attached.' },
+              '05.1': { type: 'points',
+                points: ['Use of time = angle/angular speed (= 2π/ω)', 'time = 3.5 s'],
+                guidance: '2 marks. Accept answers rounding to 3.49 s.' },
+              '05.2': { type: 'points', points: ['Arrow pointing towards the centre of the turntable'],
+                guidance: '1 mark (draw the arrow — use the drawing canvas).' },
+              '05.3': { type: 'points',
+                points: ['Use of F = mrω² (or centripetal acceleration then F = ma)', 'F = 0.097 N'],
+                guidance: '2 marks. Calculator value 0.0972 N.' },
+              '05.4': { type: 'points',
+                points: [
+                  'The block is constantly changing direction (at constant speed)',
+                  'Uses an appropriate Newton law: N1 (a body changing direction is not in equilibrium, so a resultant force must act) or N2 (changing direction = centripetal acceleration → a force acts)'
+                ],
+                guidance: '2 marks. "Changing velocity" without reference to direction is not enough for MP1.' },
+              '05.5': { type: 'points',
+                points: ['Use of T = 2π√(l/g) with T = 2.50 s', 'l = 1.55 m'],
+                guidance: '2 marks. Using g = 10 gives 1.58 m — do not allow for MP2.' },
+              '05.6': { type: 'points',
+                points: [
+                  'Amplitude: the pendulum shadow\'s amplitude becomes less than the block shadow\'s amplitude',
+                  'Phase: as the pendulum\'s amplitude decreases its period changes (frequency increases), so the phase changes (condone: the periods stay equal, so the shadows stay in phase)'
+                ],
+                guidance: '2 marks. Must see a comparison for MP1.' },
+              '06.1': { type: 'points',
+                points: ['The angle of refraction is greater than the angle of incidence (by Snell\'s law / light bends away from the normal as it speeds up), therefore n_A > n_B'],
+                guidance: '1 mark.' },
+              '06.2': { type: 'points',
+                points: ['Angle of incidence at the boundary = 90° − 43° = 47°', 'Use of Snell\'s law gives the angle of refraction in B = 61(.4)°'],
+                guidance: '2 marks, CAO (calculator value 61.4°).' },
+              '06.3': { type: 'points',
+                points: [
+                  'Use of sin θ_c = 1/n to get the critical angle θ_c = 48° (or finds the angle of incidence at P, i = 180° − 43° − 61.4° = 76°)',
+                  'i (76°) is greater than θ_c (48°), therefore total internal reflection occurs',
+                  'Ray drawn correctly reflecting off P'
+                ],
+                guidance: '3 marks (ray diagram — use the drawing canvas). Condone 77° but not 75° for the angle of incidence.' }
+            } },
           { id: 'phys-aqa-7408-2022-p2', year: 'June 2022', paperName: 'Paper 2', paperCode: '7408/2', totalMarks: 85, durationMins: 120, printOnly: true,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74082-QP-JUN22.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74082-MS-JUN22.PDF' },
