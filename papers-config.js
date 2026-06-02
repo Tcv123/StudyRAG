@@ -6338,7 +6338,463 @@ window.SUBJECTS = [
             totalMarks: 140,
             durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/666846-question-paper-computer-systems.pdf',
-            msUrl: 'https://www.ocr.org.uk/Images/666849-mark-scheme-computer-systems.pdf'
+            msUrl: 'https://www.ocr.org.uk/Images/666849-mark-scheme-computer-systems.pdf',
+            questions: [
+              {
+                number: 1,
+                scenario: "OCR Insurance uses a computer system to calculate the price that customers pay for car insurance.",
+                parts: [
+                  { code: '1(a)(i)',
+                    preamble: "The computer system contains a CPU, GPU, RAM and ROM.",
+                    prompt: "State two factors that affect the performance of a CPU.", marks: 2 },
+                  { code: '1(a)(ii)', prompt: "Explain the difference between RAM and ROM, including how these are used by the computer system.", marks: 4 },
+                  { code: '1(a)(iii)', prompt: "Describe one non-graphical use OCR Insurance may have for a GPU.", marks: 2 },
+                  { code: '1(b)',
+                    preamble: "The CPU uses pipelining to improve efficiency.",
+                    prompt: "Explain what is meant by the term 'pipelining'.", marks: 3 },
+                  { code: '1(c)', extended: true,
+                    preamble: "OCR Insurance's computer system uses secondary storage across the company in servers, client machines and for backup purposes.",
+                    prompt: "For each of these, discuss whether magnetic storage or solid state storage would be most suitable, taking into account the advantages and disadvantages of both.", marks: 9 },
+                  { code: '1(d)(i)',
+                    preamble: "Customers' details are stored in the flat file database Customer (CustomerID, Surname, Title, Phone, CarReg).",
+                    prompt: "State what is meant by the term 'primary key', identifying the primary key in the table above.", marks: 2 },
+                  { code: '1(d)(ii)', prompt: "Write the SQL statement that would show only the CustomerID and Surname fields for customers with the Title \"Miss\" or \"Mrs\".", marks: 4 },
+                  { code: '1(d)(iii)', prompt: "Describe one problem that would arise with the flat file database structure if a customer wanted to insure more than one car at the same time.", marks: 2 },
+                  { code: '1(d)(iv)', prompt: "Describe how the flat file database structure could be altered to efficiently allow each customer to insure multiple cars at the same time. (Assume each car is insured to only one customer.)", marks: 5 }
+                ]
+              },
+              {
+                number: 2,
+                parts: [
+                  { code: '2(a)(i)', prompt: "Convert the denary number 231 to an unsigned 8-bit binary number.", marks: 1 },
+                  { code: '2(a)(ii)', prompt: "Convert the hexadecimal number 6F to an unsigned 8-bit binary number.", marks: 1 },
+                  { code: '2(b)(i)',
+                    preamble: "The floating point number 001101 0100 is stored using 6 bits for the mantissa and 4 bits for the exponent, both in two's complement. This number is not normalised.",
+                    prompt: "Give the normalised version of this number, showing your working.", marks: 4 },
+                  { code: '2(b)(ii)', prompt: "Convert your answer to part (i) to denary, showing your working.", marks: 3 },
+                  { code: '2(c)', prompt: "Add together these two numbers (both in normalised floating point: 6-bit mantissa + 4-bit exponent, two's complement):\n\n    011000 0110 +\n    010100 0100\n\nShow the result in the same format and show your working.", marks: 5 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: "A website sells tickets for sporting events. The website uses HTML, CSS and JavaScript.",
+                parts: [
+                  { code: '3(a)', prompt: "Describe the purpose of HTML and CSS within the code of the website.", marks: 4 },
+                  { code: '3(b)',
+                    preamble: "One page contains a hyperlink on an image. When the image stored as \"ticket.png\" is clicked, the user is hyperlinked to the page stored as \"booking.htm\".",
+                    prompt: "Write the HTML code to implement this hyperlink.", marks: 3 },
+                  { code: '3(c)',
+                    preamble: "The website charges a booking fee of £2.99 per ticket. Tickets bought from outside the UK have £4.99 added.\n\n    function bookingfee(numtickets, country) {\n        var nonUKprice = 4.99;\n        var perTicketPrice = ______;\n        var total = 0;\n        if (country!=\"UK\") {\n            total = total + ______;\n        }\n        total = total + (______ * perTicketPrice);\n        ______ total;\n    }",
+                    prompt: "Complete the bookingfee() function by filling in the four blanks.", marks: 4 },
+                  { code: '3(d)(i)',
+                    preamble: "The JavaScript function shows users the booking fee. When users click to buy, the fee is recalculated on the server.",
+                    prompt: "Explain why server side processing is used to recalculate the booking fee.", marks: 3 },
+                  { code: '3(d)(ii)', prompt: "Explain one advantage of client side processing to either the customer buying the tickets, or to the company who own the website.", marks: 2 },
+                  { code: '3(e)(i)',
+                    preamble: "Users find the ticket website using a search engine. Search engines use indexing and ranking.",
+                    prompt: "Describe how a website is indexed by a search engine.", marks: 4 },
+                  { code: '3(e)(ii)',
+                    preamble: "A search engine can use the PageRank algorithm. PageRank utilises a damping factor.",
+                    prompt: "State what is meant by the term 'damping factor'.", marks: 1 },
+                  { code: '3(e)(iii)', prompt: "Give two other factors that affect the output value given by the PageRank algorithm for a website.", marks: 2 }
+                ]
+              },
+              {
+                number: 4,
+                parts: [
+                  { code: '4', extended: true,
+                    prompt: "\"The Computer Misuse Act means that computer users are criminalised for simply trying to learn how systems work.\"\n\nDiscuss whether or not you agree with this statement.", marks: 9 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "All users of a computer system have a unique username and password. The system has two-factor authentication so users must respond to either an email OR text message containing a secret code to access the system.\n\n  A = valid username entered\n  B = password matches their username\n  C = user can respond to email with secret code\n  D = user can respond to text message with secret code\n  Q = entry to the system is allowed",
+                parts: [
+                  { code: '5(a)', prompt: "Complete the Boolean expression:\n\n    Q ≡ ______", marks: 3 },
+                  { code: '5(b)(i)',
+                    preamble: "Another Boolean expression: Q ≡ ¬(¬A ∧ ¬B)",
+                    prompt: "Simplify this Boolean expression so that it does not include any negation. You must explain which Boolean algebra rule(s) you are using at each step.", marks: 2 },
+                  { code: '5(c)(i)',
+                    preamble: "The logic circuit has inputs A, B and outputs S, C. S is the XOR of A and B; C is the AND of A and B.",
+                    prompt: "Give the Boolean expressions for the outputs S and C.", marks: 2 },
+                  { code: '5(c)(ii)',
+                    figure: { type: 'table', label: 'Truth table',
+                      headers: ['A', 'B', 'S', 'C'],
+                      rows: [['0','0','',''],['0','1','',''],['1','0','',''],['1','1','','']] },
+                    prompt: "Complete the truth table for this logic circuit.", marks: 2 },
+                  { code: '5(c)(iii)', prompt: "Describe how this logic circuit can be adapted to add together two 4-bit binary numbers.", marks: 4 }
+                ]
+              },
+              {
+                number: 6,
+                scenario: "A program written using the Little Man Computer instruction set (Fig. 1):\n\n    main    INP\n    notpos  STA numone\n            INP\n    pos     STA numtwo\n            LDA numone\n    numone  SUB numtwo\n    numtwo  BRP pos\n    one     LDA count\n    count   OUT\n            LDA numone\n            OUT\n            HLT\n            STA numone\n            LDA count\n            ADD one\n            STA count\n            BRA main\n            DAT\n            DAT\n            DAT 1\n            DAT 0",
+                parts: [
+                  { code: '6(a)(i)', prompt: "State what is meant by the term 'register'.", marks: 2 },
+                  { code: '6(a)(ii)', prompt: "Explain how the accumulator is used when the line BRP pos is executed.", marks: 2 },
+                  { code: '6(b)',
+                    figure: { type: 'table', label: 'Outputs for each input pair',
+                      headers: ['Inputs', 'Output(s)'],
+                      rows: [['12, 5', ''],['18, 2', ''],['16, 4', ''],['3, 7', '']] },
+                    prompt: "Complete the table to show the output(s) from this program given the inputs.", marks: 4 },
+                  { code: '6(c)', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/01 November 2021 Q6(c)\n# Write an algorithm with the same functionality as the LMC code:\n# input two numbers, find their integer division quotient and remainder,\n# and print both. (LMC uses repeated subtraction; Python can use //  and  %.)\n\nnum1 = int(input(\"Enter first number: \"))\nnum2 = int(input(\"Enter second number: \"))\n# TODO: compute integer division and remainder, then print both.\n"
+                    },
+                    testInputs: ["18", "2"],
+                    prompt: "Write an algorithm in pseudocode (or Python) that has the same functionality as the LMC code.\n\nClick ▶ Run with inputs 18, 2 — a correct implementation prints 9 and 0 (integer division and remainder).", marks: 4 },
+                  { code: '6(d)', extended: true,
+                    prompt: "In assembly language, different modes of addressing memory can be used.\n\nDiscuss the different modes used. You should include:\n  • How the operand value is determined\n  • What an operand of 27 would refer to in that mode\n  • The reasons for requiring multiple modes of addressing.", marks: 12 }
+                ]
+              },
+              {
+                number: 7,
+                scenario: "A business uses an array wNames to store workers' names. Variable top stores the index of the last element added (which is also the next to be removed).\n\n    Index:  0       1       2        3      4    5    6\n    Data:   Kirstie Martyn  Louise   Alex   Anna\n    top = 4",
+                parts: [
+                  { code: '7(a)(i)', prompt: "State the name of the type of data structure described above.", marks: 1 },
+                  { code: '7(a)(ii)', prompt: "Using pseudocode, write an algorithm that allows the user to enter a name which is then pushed onto the data structure above, checking first that the data structure is not full.", marks: 4 },
+                  { code: '7(b)(i)',
+                    preamble: "The same workers' names are stored in a binary search tree ordered alphabetically. Kirstie is the root node; Martyn, Louise, Alex, and Anna are added one by one.",
+                    prompt: "Describe where Martyn, Louise, Alex and Anna would be added in the binary search tree (give parent + side for each).", marks: 4 },
+                  { code: '7(b)(ii)', prompt: "Describe the process of using the binary search tree above to search for the name \"Zoe\".", marks: 3 },
+                  { code: '7(b)(iii)', prompt: "Compare the efficiency of a binary search tree to a linked list when searching for data.", marks: 2 },
+                  { code: '7(b)(iv)', prompt: "Compare the efficiency of a binary search tree to a hash table when searching for data.", marks: 2 },
+                  { code: '7(c)(i)',
+                    preamble: "An object-oriented system is implemented to organise further information about each worker's attendance. Classes, objects, methods and attributes are used.",
+                    prompt: "State the meaning of each of the following terms:\n  • Object\n  • Method\n  • Attribute", marks: 3 },
+                  { code: '7(c)(ii)', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/01 November 2021 Q7(c)(ii) — Customer class\n# Fully encapsulated:\n#   - private name (string)\n#   - private attendance (integer, 0-100)\n#   - get and set methods for both attributes\n#   - setAttendance should restrict to 0-100\n# (Do not need to write the constructor.)\n\nclass Customer:\n    # TODO: define attributes + getters + setters.\n    pass\n\n\n# ── Test driver (do not modify) ──\nc = Customer()\nc.setName('Alice')\nc.setAttendance(85)\nprint(f\"Name:       {c.getName()}        (expected Alice)\")\nprint(f\"Attendance: {c.getAttendance()}  (expected 85)\")\nc.setAttendance(150)  # invalid — should be rejected\nprint(f\"After setAttendance(150): {c.getAttendance()}  (still expected 85; 150 is out of range)\")\n"
+                    },
+                    testInputs: [],
+                    preamble: "Each worker has a name and an attendance figure which can be between 0 and 100.",
+                    prompt: "Write a definition for a fully encapsulated customer class, providing both get and set methods for all attributes. You do not have to write code for the constructor method.\n\nClick ▶ Run. A correct implementation prints Name: Alice, Attendance: 85, and the second setAttendance(150) leaves attendance at 85 (rejected because it's out of range).", marks: 5 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'points',
+                points: [
+                  'Clock speed',
+                  'Number of cores',
+                  'Cache (size / speed)',
+                  'Use of pipelining / size of pipeline',
+                  'Use of out-of-order execution',
+                  'Use of SIMD instructions',
+                  'Integrated graphics processing on CPU'
+                ],
+                guidance: '2 marks: 1 per factor.' },
+              '1(a)(ii)': { type: 'points',
+                points: [
+                  'RAM is volatile',
+                  'Used for storing programs / data / parts of OS currently in use',
+                  'ROM is non-volatile',
+                  'Used for storing (e.g.) BIOS / bootstrap'
+                ],
+                guidance: '4 marks: 1 per bullet.' },
+              '1(a)(iii)': { type: 'points',
+                points: [
+                  'Performing complex numerical calculations',
+                  'Calculations on matrices / vectors / multiple data at the same time',
+                  'E.g. insurance pricing, modelling risk, calculating bills'
+                ],
+                guidance: '2 marks. Example has to relate to insurance company.' },
+              '1(b)': { type: 'points',
+                points: [
+                  'Concurrent processing of multiple instructions',
+                  'One instruction can be fetched while previous is being decoded...',
+                  '...and the one before is being executed',
+                  'In case of a branch, pipeline is flushed',
+                  'Increases speed of execution'
+                ],
+                guidance: '3 marks.' },
+              '1(c)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of magnetic and solid state storage; accurate and detailed. Knowledge applied directly and consistently to context (insurance servers/clients/backup); explicitly relevant evidence. Well-balanced discussion with consistent evaluative comments.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of magnetic and SSD storage. Knowledge applied to context with one or two missed opportunities. Sound discussion.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of magnetic and SSD; some inaccuracies. Limited attempt to apply to context.' }
+                ],
+                indicative: {
+                  'AO1 — Storage tech': 'Magnetic = hard drives + tape; data stored by altering magnetic field; one orientation = 1, other = 0. Read/write heads. SSD = semiconductors (NAND Flash / DRAM), no moving parts.',
+                  'AO2 — Application': 'Magnetic HDDs suitable for storing OS, software and data on servers — large capacity, cheap, reliable. SSDs offer speed for customer record access but smaller capacity (vs price). Backup needs maximum storage (access speed less critical). SSD lifespan (limited read/writes) restricts data-heavy use. Servers need quick + heavy read/write.',
+                  'AO3 — Evaluation': 'Both suitable for different purposes in the insurance office. SSDs for OS + programs (boot/load speed) on both clients + servers. Magnetic HDDs for large data (reliability, capacity, cost) — clients + backup. Magnetic tape for backups (slow but cheap and capacious). SSD in mobile worker devices (no moving parts → durable).'
+                },
+                guidance: '9 marks total.' },
+              '1(d)(i)': { type: 'points',
+                points: [
+                  'Field with a unique value',
+                  'CustomerID (identifying the primary key in the given table)'
+                ],
+                guidance: '2 marks.' },
+              '1(d)(ii)': { type: 'exact',
+                points: [
+                  'SELECT CustomerID, Surname FROM Customer WHERE Title = "Miss" OR Title = "Mrs"'
+                ],
+                guidance: '4 marks: 1 per bullet (SELECT, FROM, WHERE Title="Miss", OR Title="Mrs"). Data in fields must be in speech marks/apostrophes (allow FT for BP2/4). Ignore colons/semicolons.' },
+              '1(d)(iii)': { type: 'points',
+                points: [
+                  'Only one customer entry allowed (because of key field)',
+                  '...so would not be able to add second entry',
+                  'Customer data already present / would be repeated',
+                  '...resulting in redundant data / wasted space',
+                  '...resulting in inconsistencies should changes be made'
+                ],
+                guidance: '2 marks. Mark in pairs.' },
+              '1(d)(iv)': { type: 'points',
+                points: [
+                  'Add in second table',
+                  '...for the cars / splitting up cars/customers',
+                  'The primary key of customer is used as a field in the car/vehicle table',
+                  '... as a foreign key of cars',
+                  'Create one-to-many relationship (or many-to-one)'
+                ],
+                guidance: '5 marks.' },
+              '2(a)(i)': { type: 'exact',
+                points: ['11100111'],
+                guidance: '1 mark.' },
+              '2(a)(ii)': { type: 'exact',
+                points: ['0110 1111', '01101111'],
+                guidance: '1 mark.' },
+              '2(b)(i)': { type: 'points',
+                points: [
+                  'Move decimal place 1 place right = 0.1101 to normalise',
+                  'Pad with 0s, mantissa is 011010',
+                  'Exponent is 4 / subtract 1 from exponent',
+                  'New exponent is 3 = 0011'
+                ],
+                guidance: '4 marks. Normalised: 011010 0011.' },
+              '2(b)(ii)': { type: 'points',
+                points: [
+                  'Move dp 3 places right',
+                  '0110.1',
+                  '6.5 (denary)'
+                ],
+                guidance: '3 marks. Accept conversion of unnormalised number (same output). FT required from part (i).' },
+              '2(c)': { type: 'points',
+                points: [
+                  'Calculating exponent of 6 for first number / 4 for second',
+                  'Moving binary point correct number of places in both mantissa to give 0110000.0 and 01010.0',
+                  'Addition of 0110000.0 and 01010.0 to give 0111010.0',
+                  'Movement of binary point six places to left to match original mantissa format → value 011101',
+                  'Calculate exponent in original format → 0110 (= 6)'
+                ],
+                guidance: '5 marks. Final answer: 011101 0110.' },
+              '3(a)': { type: 'points',
+                points: [
+                  'HTML defines the structure of a web page',
+                  'HTML defines the content of a web page',
+                  'Using tags (enclosed in <>)',
+                  'CSS defines the style / appearance',
+                  'Using selectors such as classes / IDs / etc',
+                  'Can be placed within HTML or externally in a file',
+                  'Multiple pieces of CSS can be combined (more local instances overriding)'
+                ],
+                guidance: '4 marks: 2 per section (HTML and CSS).' },
+              '3(b)': { type: 'exact',
+                points: [
+                  '<a href="booking.htm"><img src="ticket.png"></a>'
+                ],
+                guidance: '3 marks: 1 for <a> with close + 1 for href to correct page + 1 for <img> with src to correct file.' },
+              '3(c)': { type: 'exact',
+                points: [
+                  'Blank 1: 2.99',
+                  'Blank 2: nonUKprice',
+                  'Blank 3: numtickets',
+                  'Blank 4: return'
+                ],
+                guidance: '4 marks: correct answer only. Do not accept £ sign in first bullet.' },
+              '3(d)(i)': { type: 'points',
+                points: [
+                  "Processing done away from the user's control / client-side processing could be altered",
+                  'Browser may not support client-side language / scripting could be turned off',
+                  'Booking fee calculation needs to be correct for all locations'
+                ],
+                guidance: '3 marks.' },
+              '3(d)(ii)': { type: 'points',
+                points: [
+                  'Customer: No need to submit to server and wait for response / website will work more quickly',
+                  'Company: Reduces load on the server / will need to spend less on processing power / bandwidth'
+                ],
+                guidance: '2 marks (any 2×1 from one perspective).' },
+              '3(e)(i)': { type: 'points',
+                points: [
+                  'Web crawler / spider visits site',
+                  'Either by selecting it from an existing list or following a link',
+                  'Records information... such as text / metatags / etc',
+                  'Records the position of each word within the page',
+                  'Storing them in an index',
+                  'Follows links to other sites',
+                  'Robots.txt file can be used to instruct web crawlers'
+                ],
+                guidance: '4 marks.' },
+              '3(e)(ii)': { type: 'points',
+                points: [
+                  'A value between 0 and 1',
+                  'Probability that a user will not follow a link'
+                ],
+                guidance: '1 mark.' },
+              '3(e)(iii)': { type: 'points',
+                points: [
+                  'Number of links to target site',
+                  'PageRank score of those sites (linking inwards)'
+                ],
+                guidance: '2 marks.' },
+              '4': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge of CMA. Well-balanced discussion. Consistent evaluative comments.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of CMA. Sound discussion, some opportunities missed.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of CMA; some inaccuracies. Limited evaluation.' }
+                ],
+                indicative: {
+                  'AO1 — CMA': 'Legislation aimed at criminalising unauthorised access to a computer system. Three offences: unauthorised access to a system; unauthorised access with intent to commit further offences; unauthorised modification of computer material. Up to 12 months in prison + unlimited fine.',
+                  'AO2 — Application': 'Investigators need authorisation to not break the Act. Example: changing a social media post on a friend\'s phone potentially breaks all three sections. Investigation can break the Act without intent (e.g. changing server logs). Users must know about the Act.',
+                  'AO3 — Evaluation': 'Material is available online (self-study, videos) that explain systems without unauthorised access. Investigating systems you own / have authorisation to access does not break the law. Systems offered with strict T&Cs — investigation is not a legitimate excuse. Ethical/white-hat hackers operate under authorisation. Grey/black-hat hackers break the CMA.'
+                },
+                guidance: '9 marks total.' },
+              '5(a)': { type: 'exact',
+                points: [
+                  'Q ≡ A ∧ B ∧ (C ∨ D)',
+                  'Q = A AND B AND (C OR D)'
+                ],
+                guidance: '3 marks: 1 for Q ≡ A; 1 for ∧ B; 1 for ∧ (C ∨ D) — brackets required for 3rd point. Allow XOR for 3rd point. Any additional symbols max 2 marks.' },
+              '5(b)(i)': { type: 'points',
+                points: [
+                  "Identification of De Morgan's and/or double negation rule",
+                  'Correct final answer to give A v B'
+                ],
+                guidance: '2 marks. ¬(¬A ∧ ¬B) → (De Morgan) ¬¬A v ¬¬B → (double negation) A v B.' },
+              '5(c)(i)': { type: 'exact',
+                points: [
+                  'S = A ⊕ B (XOR)',
+                  'C = A · B (AND)'
+                ],
+                guidance: '2 marks. Accept alternative symbols.' },
+              '5(c)(ii)': { type: 'exact',
+                points: [
+                  '00 → S=0, C=0',
+                  '01 → S=1, C=0',
+                  '10 → S=1, C=0',
+                  '11 → S=0, C=1'
+                ],
+                guidance: '2 marks: 1 for S column, 1 for C column.' },
+              '5(c)(iii)': { type: 'points',
+                points: [
+                  'Logic circuit adds together 2 binary digits / half adder',
+                  'S gives sum, C gives carry',
+                  'Two half adders can be joined together...',
+                  '...with an OR gate',
+                  '...to form a full adder',
+                  '4 full adders can be used to add two four-bit numbers',
+                  'Carry out on one joined to carry in on next'
+                ],
+                guidance: '4 marks.' },
+              '6(a)(i)': { type: 'points',
+                points: [
+                  'Temporary storage / memory location...',
+                  '...inside the CPU',
+                  'Used for a single specific purpose',
+                  'Faster access speed than RAM / secondary storage'
+                ],
+                guidance: '2 marks.' },
+              '6(a)(ii)': { type: 'points',
+                points: [
+                  'Accumulator checked to see if value held is positive or zero',
+                  'If so, BRANCH carried out / jumps to specified location'
+                ],
+                guidance: '2 marks.' },
+              '6(b)': { type: 'exact',
+                points: [
+                  '12, 5 → output 2, 2',
+                  '18, 2 → output 9, 0',
+                  '16, 4 → output 4, 0',
+                  '3, 7 → output 0, 3'
+                ],
+                guidance: '4 marks. Code finds integer division and remainder.' },
+              '6(c)': { type: 'points',
+                points: [
+                  'Input two numbers into two separate variables / other suitable data structure',
+                  'Correctly calculate integer division',
+                  'Correctly calculate remainder',
+                  'Print out both'
+                ],
+                guidance: '4 marks. Can be completed using MOD / DIV or repeated subtraction.' },
+              '6(d)': { type: 'levels',
+                levels: [
+                  { range: [9, 12], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge of all four addressing modes. Well-balanced discussion. Consistent evaluative comments.' },
+                  { range: [5, 8], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of addressing modes. Sound discussion.' },
+                  { range: [1, 4], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge; some inaccuracies. Limited evaluation.' }
+                ],
+                indicative: {
+                  'AO1 — Modes': 'Immediate addressing: operand holds the actual data; no address referenced. Direct addressing: operand holds the address that holds the data. Indirect addressing: operand holds an address; the data at THAT address is itself an address to the actual data. Indexed addressing: operand holds an address offset by the Index Register.',
+                  'AO2 — Operand of 27': 'Immediate: refers to the value 27. Direct: fetch data at address 27. Indirect: fetch data at address 27; that data is itself an address — fetch from THAT. Indexed: add 27 to the Index Register and use that as the address.',
+                  'AO3 — Reasons for multiple modes': 'Immediate: simple, no fetch required, but limited by operand size. Direct: data can be larger than operand size but address range limited by operand. Indirect: larger address range, but multiple fetches required. Indexed: allows manipulation of Index register to access sequential data (arrays).'
+                },
+                guidance: '12 marks total.' },
+              '7(a)(i)': { type: 'exact',
+                points: ['Stack'],
+                guidance: '1 mark. Correct answer only.' },
+              '7(a)(ii)': { type: 'points',
+                points: [
+                  'Input name from user',
+                  'Check if stack is full (e.g. top <= 5 / top < 6)',
+                  'If not, update top pointer (top = top + 1)',
+                  'Correctly push name to index referenced by top (wNames[top] = new)'
+                ],
+                guidance: '4 marks.' },
+              '7(b)(i)': { type: 'exact',
+                points: [
+                  'Martyn → right child of Kirstie (M > K)',
+                  'Louise → left child of Martyn (L < M, L > K so right of K then left of M)',
+                  'Alex → left child of Kirstie (A < K)',
+                  'Anna → right child of Alex (Anna > Alex but < Kirstie)'
+                ],
+                guidance: '4 marks: 1 per name inserted in correct place in the diagram.' },
+              '7(b)(ii)': { type: 'points',
+                points: [
+                  'Compare with Kirstie — Zoe is larger so go right',
+                  'Compare with Martyn — Zoe is larger so go right',
+                  'No right element so stop / not found'
+                ],
+                guidance: '3 marks. Allow FT from b(i).' },
+              '7(b)(iii)': { type: 'points',
+                points: [
+                  'Binary tree more efficient than linked list',
+                  'Do not need to check every value / tree removes half values each time (Big O: Linked List O(n), Binary Tree O(log n))'
+                ],
+                guidance: '2 marks. Allow reference to Big O for second mark.' },
+              '7(b)(iv)': { type: 'points',
+                points: [
+                  'Binary tree less efficient than hash table',
+                  'Hash table can find data immediately / without checking other values (Big O: Binary Tree O(log n), Hash Table O(1))'
+                ],
+                guidance: '2 marks. Allow reference to Big O for second mark.' },
+              '7(c)(i)': { type: 'points',
+                points: [
+                  'Object — instantiated from class',
+                  'Method — action object performs / link to procedure/functions',
+                  'Attribute — value held by object / link to variable'
+                ],
+                guidance: '3 marks: 1 per term.' },
+              '7(c)(ii)': { type: 'points',
+                points: [
+                  'Class definition statement',
+                  'Defining name and attendance attributes (both private)',
+                  'Appropriate get methods for name and attendance that return a value and have no parameter',
+                  'Appropriate set methods for name and attendance that take a parameter',
+                  '...that restricts attendance to be 0 to 100'
+                ],
+                guidance: '5 marks: 1 per bullet to max 5.' }
+            }
           },
           {
             id: 'cs-ocr-h446-2021-p2',
