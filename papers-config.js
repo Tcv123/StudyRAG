@@ -3782,7 +3782,530 @@ window.SUBJECTS = [
             totalMarks: 140,
             durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/726571-question-paper-computer-systems.pdf',
-            msUrl: 'https://www.ocr.org.uk/Images/726741-mark-scheme-computer-systems.pdf'
+            msUrl: 'https://www.ocr.org.uk/Images/726741-mark-scheme-computer-systems.pdf',
+            questions: [
+              {
+                number: 1,
+                scenario: "The stored program concept uses the Fetch-Decode-Execute cycle to get the next instruction from memory and then execute it.",
+                parts: [
+                  { code: '1(a)', prompt: "Describe what happens during the fetch stage of the Fetch-Decode-Execute cycle.\n\nYou should state the different registers and buses that are used in your answer.", marks: 4 },
+                  { code: '1(b)',
+                    preamble: "One of the instructions that may be fetched and executed as part of this cycle is a branch instruction.",
+                    prompt: "State the name of the register that would be altered in the execute phase during a branch instruction.", marks: 1 },
+                  { code: '1(c)',
+                    preamble: "Three ways of improving the performance of a CPU are increasing the clock speed, adding more cores and using pipelining.",
+                    prompt: "Explain how pipelining improves the performance of a CPU.", marks: 3 },
+                  { code: '1(d)(i)',
+                    preamble: "The Fibonacci sequence is a series of numbers. It starts with 0 and 1. Each subsequent number is the sum of the two before it (0, 1, 1, 2, 3, 5, 8...).\n\nOrla has written LMC code to show the first five Fibonacci numbers, but it contains an error:\n\n    START  LDA MAX\n           BRZ END\n    END    LDA A\n    A      OUT\n    B      ADD B\n    MAX    STA B\n    ONE    LDA B\n           STA A\n           LDA MAX\n           SUB ONE\n           STA MAX\n           BRA START\n           HLT\n           DAT 0    ; A\n           DAT 1    ; B\n           DAT 5    ; MAX\n           DAT 1    ; ONE",
+                    prompt: "State the five outputs that Orla's code would give.", marks: 3 },
+                  { code: '1(d)(ii)',
+                    preamble: "Orla has rewritten her LMC code to fix the error and added an additional DAT.\n\n    START  LDA MAX\n           BRZ END\n           LDA A\n           OUT\n           ______\n           STA TEMP\n           ______\n           ADD B\n           STA B\n           ______\n           STA A\n           LDA MAX\n           SUB ONE\n           STA MAX\n           BRA START\n    END    HLT\n    A      DAT 0\n    B      DAT 1\n    ______ DAT 0\n    MAX    DAT 5\n    ONE    DAT 1",
+                    prompt: "Complete the LMC code to output the first five correct Fibonacci numbers (0, 1, 1, 2, 3). Fill in the four blanks (the three missing instructions and the label for the new DAT).", marks: 4 },
+                  { code: '1(e)',
+                    preamble: "In Orla's LMC code, she used direct memory addressing.",
+                    prompt: "Give three other modes of memory addressing.", marks: 3 },
+                  { code: '1(f)',
+                    preamble: "Since the development of high-level languages, the use of assembly languages has reduced.",
+                    prompt: "Give two reasons why in some circumstances programmers will choose to write code in assembly language.", marks: 2 },
+                  { code: '1(g)',
+                    preamble: "The performance of a computer system can be improved by adding more RAM.",
+                    prompt: "Explain why adding more RAM will improve the performance of a computer system.", marks: 3 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: "An embedded system is often a small device that is designed to carry out a limited number of specialised tasks. Professional athletes sometimes wear small embedded systems called fitness trackers in their shirts. These can be used to track their speed, position, heart rate and other performance data during an event. The tracker transmits this data to a pitch-side server which collates the data from all the athletes.",
+                parts: [
+                  { code: '2(a)', prompt: "State the name of one input device that might be used in this embedded system and state what it would be used for.", marks: 2 },
+                  { code: '2(b)', prompt: "Explain two reasons why flash (solid state) storage would be the best type of secondary storage for the fitness tracker system.", marks: 4 },
+                  { code: '2(c)(i)',
+                    preamble: "One use of ROM is to store the Basic Input Output System (BIOS). The BIOS is used when the computer is first turned on.",
+                    prompt: "Describe what the BIOS will do to start up the computer.", marks: 3 },
+                  { code: '2(c)(ii)',
+                    preamble: "Apart from storing the BIOS, ROM can also be used in other ways.",
+                    prompt: "Describe how the embedded system can make a different use of ROM and why it is an advantage.", marks: 2 },
+                  { code: '2(d)(i)',
+                    preamble: "The embedded system will have an operating system. Two roles of an operating system are to handle interrupts and manage scheduling.",
+                    prompt: "Describe two other roles of an operating system.", marks: 4 },
+                  { code: '2(d)(ii)',
+                    figure: { type: 'table', label: 'Match each scheduling algorithm to its description',
+                      headers: ['Scheduling Algorithm', 'Description (write A–E)'],
+                      rows: [
+                        ['Round Robin', ''],
+                        ['First come first served', ''],
+                        ['Multi-level feedback queues', ''],
+                        ['Shortest job first', ''],
+                        ['Shortest remaining time', '']
+                      ] },
+                    prompt: "Match each scheduling algorithm to the correct description:\n\nA — Splits processes into different priority queues based on the amount of processor time they need. It allows them to move between the queues as their characteristics change.\nB — Selects the process that takes the shortest amount of time to complete. The processes are run until they are fully complete.\nC — Each process is allocated a fixed amount of CPU time. If the process is not complete it will be suspended and the next process will start.\nD — Each process is given equal priority and they are processed in the order they arrive.\nE — Selects the process that takes the shortest amount of time. The process can be suspended if another shorter process is added.", marks: 5 },
+                  { code: '2(e)', extended: true,
+                    preamble: "The fitness trackers will send athletes' performance data to a pitch-side server. A program needs to be developed to analyse this data and display the results. Different words, colours and charts will be displayed to indicate how well athletes are performing. The program will be used by athletes from different cultures all over the world.",
+                    prompt: "Discuss the layout considerations that the programmer needs to consider when creating the program user interface for different cultures.\n\nYou should include:\n  • layout considerations\n  • colour considerations\n  • character set considerations.", marks: 9 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: "OCR Solutions is a software development company. Employees use a wide range of application software to complete admin tasks. Tasks include writing letters to clients and creating graphics.",
+                parts: [
+                  { code: '3(a)',
+                    figure: { type: 'table', label: 'Application software for each task',
+                      headers: ['Task', 'Application Software'],
+                      rows: [
+                        ['Creating graphics such as a logo', ''],
+                        ['Writing letters to clients to confirm their appointment date and time', ''],
+                        ['Calculating the company profits at the end of each month', ''],
+                        ['Storing, searching and updating client details and purchases', ''],
+                        ['Creating brochures and flyers about the organisation', '']
+                      ] },
+                    prompt: "State the most appropriate application software for each task in the table.", marks: 5 },
+                  { code: '3(b)',
+                    preamble: "The application software is run on thin client computers. A thin client computer is a very low-powered computer connected to a powerful central server. The OS and all applications run within a virtual machine on the server. The thin client computer only displays the output and captures input.",
+                    prompt: "State one advantage of running the application software within the virtual machine.", marks: 1 },
+                  { code: '3(c)',
+                    preamble: "The thin client computer needs to send data input by the user to the server so the VM can process it. Data is compressed to improve the speed of transmission between client and server.",
+                    prompt: "Explain why lossless compression should be used instead of lossy compression.", marks: 3 },
+                  { code: '3(d)(i)',
+                    preamble: "OCR Solutions make use of software libraries when writing their programming code. They also make use of linkers and loaders to compile and run the program.",
+                    prompt: "Describe what linker means.", marks: 2 },
+                  { code: '3(d)(ii)', prompt: "Describe what loader means.", marks: 2 }
+                ]
+              },
+              {
+                number: 4,
+                parts: [
+                  { code: '4(a)(i)',
+                    preamble: "Two's complement can be used to represent negative binary numbers.",
+                    prompt: "Convert the denary number −124 into an 8-bit two's complement binary number.", marks: 1 },
+                  { code: '4(a)(ii)', prompt: "State one other way to represent negative binary numbers.", marks: 1 },
+                  { code: '4(b)', prompt: "Convert the denary number 298 into hexadecimal.", marks: 2 },
+                  { code: '4(c)',
+                    preamble: "The binary number 10011101  0110 is stored in normalised floating point form with an 8-bit mantissa and a 4-bit exponent, both in two's complement.",
+                    prompt: "Convert this binary number into denary. You must show your working.", marks: 3 },
+                  { code: '4(d)',
+                    preamble: "The binary number 00001011  0111 is represented in unnormalised floating point form with an 8-bit mantissa and a 4-bit exponent, both in two's complement.",
+                    prompt: "Convert this binary number into a normalised floating point binary number, represented using an 8-bit mantissa and 4-bit exponent. You must show your working.", marks: 4 },
+                  { code: '4(e)',
+                    prompt: "Calculate the binary addition of these two 8-bit (unsigned) binary numbers. Show your working.\n\n    00110111\n    10011001 +", marks: 2 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: "Ben installs burglar alarms. The alarm has a door sensor and a motion sensor. When the alarm is set, the siren will sound if either sensor detects movement. A test mode setting lets an engineer check the sensors are working without the siren going off.\n\nInputs:\n    A — Door sensor\n    B — Motion sensor\n    C — Alarm has been set\n    D — Test mode enabled",
+                parts: [
+                  { code: '5(a)', prompt: "Draw a logic circuit to show the logic that is used in the burglar alarm to determine if the siren goes off.\n\n(Describe in words: which gates connect which inputs to produce the siren output. The correct circuit produces siren = (A OR B) AND C AND NOT D.)", marks: 4 },
+                  { code: '5(b)(i)', prompt: "Simplify the Boolean expression ¬A v ¬B using De Morgan's First Law.", marks: 1 },
+                  { code: '5(b)(ii)', prompt: "Simplify the Boolean expression ¬(¬B) using double negation.", marks: 1 },
+                  { code: '5(b)(iii)', prompt: "Simplify the Boolean expression (A v B) ∧ (A v C) using distribution.", marks: 2 }
+                ]
+              },
+              {
+                number: 6,
+                scenario: "A company wants more customers to be able to find their website on the internet.",
+                parts: [
+                  { code: '6(a)', extended: true,
+                    prompt: "Discuss why search engine indexing and page ranking will be important in achieving this.\n\nYou should include:\n  • what search engine indexing means and what information is collected\n  • what PageRank means and possible factors that can affect a PageRank score of a website\n  • possible ways for the company to improve the PageRank score of pages on its website.", marks: 12 },
+                  { code: '6(b)',
+                    preamble: "The company would like to start selling their products on their website. They will use both client-side and server-side processing.",
+                    figure: { type: 'table', label: 'Tick one box per row',
+                      headers: ['Task', 'Client Side', 'Server Side'],
+                      rows: [
+                        ['Loading the website HTML code', '', ''],
+                        ['Applying CSS styles to a website', '', ''],
+                        ['Running JavaScript code to check that the customer surname has been entered on the order form', '', ''],
+                        ['Running queries on the database to check if an item is available in stock', '', '']
+                      ] },
+                    prompt: "Tick one box on each row to identify whether each task would be best performed on the client side or the server side.", marks: 4 },
+                  { code: '6(c)',
+                    preamble: "When customers contact the company, their computers will use a number of protocols such as TCP/IP and HTTP to make connections with other devices over the internet.",
+                    prompt: "Explain what a protocol is and why they are important in network communications.", marks: 2 },
+                  { code: '6(d)', prompt: "Describe three different pieces of networking hardware in a client–server network apart from the clients and servers themselves.", marks: 6 }
+                ]
+              },
+              {
+                number: 7,
+                parts: [
+                  { code: '7', extended: true,
+                    preamble: "Rosa has recently opened a new leisure centre. She currently has 150 members but is estimating this will increase to around 10 000 members. Rosa will store members' details in a database, plus gym class bookings and fitness instructor appointments. She is considering using either a flat file database or a relational database.",
+                    prompt: "Discuss the benefits and drawbacks of flat file databases and relational databases and which one would be the most suitable for Rosa.\n\nYou should include:\n  • the features of flat file databases and relational databases\n  • the benefits and drawbacks of each type of database\n  • which type of database would be the most suitable for Rosa.", marks: 9 }
+                ]
+              },
+              {
+                number: 8,
+                scenario: "Fig. 8 shows a binary search tree containing the names of different towns in Ireland:\n\n                Sligo\n               /     \\\n          Dublin       Waterford\n         /     \\      /\n      Cork    Galway  Tralee\n              /  \\\n           Dundalk  Limerick\n\nThe binary search tree is held in a 2-dimensional array called towns with 8 rows and 3 columns.",
+                parts: [
+                  { code: '8(a)', prompt: "Write a line of program code or pseudocode to declare the array towns.", marks: 2 },
+                  { code: '8(b)(i)',
+                    preamble: "In the 2-D array towns: first column = pointer to left, second = data, third = pointer to right. Leaf nodes have the pointer null.",
+                    figure: { type: 'table', label: 'Pointers for each row (data shown)',
+                      headers: ['Row', 'Left', 'Data', 'Right'],
+                      rows: [
+                        ['0', '', 'Sligo', ''],
+                        ['1', '', 'Dublin', ''],
+                        ['2', '', 'Cork', ''],
+                        ['3', '', 'Waterford', ''],
+                        ['4', '', 'Galway', ''],
+                        ['5', '', 'Limerick', ''],
+                        ['6', '', 'Tralee', ''],
+                        ['7', '', 'Dundalk', '']
+                      ] },
+                    prompt: "Complete the table showing the contents of the towns array to store the binary search tree in Fig. 8. (Use null where there is no pointer.)", marks: 4 },
+                  { code: '8(b)(ii)',
+                    preamble: "Four more towns are added to the binary search tree shown in Fig. 8 in this order: Mallow, Cavan, Tuam, Wexford.",
+                    prompt: "Describe where each new town is placed in the binary search tree. (Give the parent node and side — left/right.)", marks: 4 }
+                ]
+              },
+              {
+                number: 9,
+                parts: [
+                  { code: '9', extended: true, kind: 'code',
+                    defaultLanguage: 'python',
+                    starterCode: {
+                      python: "# OCR H446/01 June 2024 Q9 — Define the Dog class\n# Each dog is declared using an instance of the class Dog.\n# Private attributes: name, breed, height, weight.\n# Constructor sets all attributes to values passed in as parameters.\n# (Do not write the set/get methods.)\n\nclass Dog:\n    # TODO: declare the 4 private attributes and the constructor.\n    pass\n\n\n# ── Test driver (do not modify) ──\nrex = Dog('Rex', 'Labrador', 60.5, 30.0)\nprint(f\"Name:   {rex._Dog__name if hasattr(rex, '_Dog__name') else getattr(rex, 'name', '?')}\")\nprint(f\"Breed:  {rex._Dog__breed if hasattr(rex, '_Dog__breed') else getattr(rex, 'breed', '?')}\")\nprint(f\"Height: {rex._Dog__height if hasattr(rex, '_Dog__height') else getattr(rex, 'height', '?')}\")\nprint(f\"Weight: {rex._Dog__weight if hasattr(rex, '_Dog__weight') else getattr(rex, 'weight', '?')}\")\n"
+                    },
+                    testInputs: [],
+                    preamble: "OCR DogCare look after dogs while their owners are at work. They use a program developed in an object-oriented paradigm. Each dog is an instance of the class Dog with private attributes: name, breed, height, weight. The constructor sets all attributes from its parameters.",
+                    prompt: "Write pseudocode or program code to define the class Dog. Include the attributes and constructor method. You do not need to write the set or get methods.\n\nClick ▶ Run. A correct implementation prints Name: Rex, Breed: Labrador, Height: 60.5, Weight: 30.0.", marks: 5 }
+                ]
+              },
+              {
+                number: 10,
+                scenario: "An investigative firm wants to start investigating cyber security issues.",
+                parts: [
+                  { code: '10(a)',
+                    preamble: "Government bodies have been given additional powers under the Regulation of Investigatory Powers Act.",
+                    prompt: "State three additional powers that this law gives to some government bodies.", marks: 3 },
+                  { code: '10(b)',
+                    preamble: "As part of their new roles, employees will be accessing personal data. All employees are enrolled on a course about the Data Protection Act.",
+                    prompt: "Identify three principles of the Data Protection Act.", marks: 3 }
+                ]
+              }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'points',
+                points: [
+                  'Contents of the Program Counter / PC are copied to the Memory Address Register / MAR',
+                  'The address is sent along the address bus',
+                  'Control unit sends a (read) signal along the control bus',
+                  'Contents stored in the memory address are sent along the data bus',
+                  'Contents (from memory) are stored in the Memory Data Register / MDR (A. MBR / Memory Buffer Register)',
+                  '...and sent / copied to the Current Instruction Register / CIR (A. IR / Instruction Register)',
+                  'The Program Counter / PC is incremented'
+                ],
+                guidance: '4 marks: 1 mark per bullet, max 4.' },
+              '1(b)': { type: 'exact',
+                points: ['Program Counter', 'PC'],
+                guidance: '1 mark.' },
+              '1(c)': { type: 'points',
+                points: [
+                  'Allows the next instruction to be fetched whilst the previous one is being decoded / executed // allows overlapping of different parts of the FDE',
+                  'It increases throughput / number of instructions processed in a set period of time',
+                  'It prevents the CPU having to wait / prevents idle components'
+                ],
+                guidance: '3 marks: 1 per bullet. DNA "more efficient" alone. DNA points if clearly discussing multiple cores.' },
+              '1(d)(i)': { type: 'exact',
+                points: ['0', '1, 2, 4', '8 with no numbers after it'],
+                guidance: '3 marks for outputs 0, 1, 2, 4, 8 (with 0 in any position). CAO.' },
+              '1(d)(ii)': { type: 'exact',
+                points: [
+                  'After OUT: LDA B',
+                  'After STA TEMP: LDA A',
+                  'After STA B: LDA TEMP',
+                  'New DAT label: TEMP'
+                ],
+                guidance: '4 marks: 1 per correct line. Case for mnemonics can be ignored. Case for A, B, TEMP labels must be all caps. Penalise first error and allow FT.' },
+              '1(e)': { type: 'exact',
+                points: ['Immediate', 'Indirect', 'Indexed'],
+                guidance: '3 marks. DNA "direct". BOD "index" for indexed.' },
+              '1(f)': { type: 'points',
+                points: [
+                  'Quicker / more efficient to translate',
+                  'Makes more efficient use of the CPU / memory / system resources / where a system has limited resources',
+                  'The programmer wants direct control over hardware / memory / to access machine-specific functionality',
+                  'Code might be written for a specific architecture',
+                  'Compilers / interpreters may not be available'
+                ],
+                guidance: 'Max 2. MP1 must be a comparison (e.g. "faster/quicker" not just "fast/quick").' },
+              '1(g)': { type: 'points',
+                points: [
+                  'Allows more active / running / temporary data in RAM',
+                  'It reduces the need to use virtual memory',
+                  'RAM is faster to access than VM / secondary storage...',
+                  '...because data in VM / SS has to be swapped with data in RAM first',
+                  'Use of RAM rather than VM reduces the risk of disk thrashing',
+                  'Faster bootup / shutdown time / reduces load / access time'
+                ],
+                guidance: 'Max 3.' },
+              '2(a)': { type: 'points',
+                points: [
+                  'Heart rate sensor — detects athlete\'s electrical activity / heart rate',
+                  'GPS receiver — mapping the athlete\'s movement / position / speed',
+                  'Accelerometer / gyroscope / motion sensor — to track acceleration / speed / movement / counting steps / measuring orientation',
+                  'Button — to allow the athlete to turn it on/off'
+                ],
+                guidance: '2 marks: 1 max for input device + 1 max for reason. Use must relate to the fitness tracker scenario.' },
+              '2(b)': { type: 'points',
+                points: [
+                  'Durable / flash has no moving parts... so will be resistant to damage if the player runs / falls / collides',
+                  'Low power usage... won\'t need recharging / will last during an event',
+                  'Small physical size / portable... so it can fit on a shirt / be unobtrusive',
+                  'Fast / real-time read/write speed... needed to rapidly record athlete\'s data'
+                ],
+                guidance: '4 marks: 1 for reason + 1 for expansion, max 2 reasons. DNA anything to do with capacity.' },
+              '2(c)(i)': { type: 'points',
+                points: [
+                  'Contains the computer start-up instructions',
+                  'Loads settings / configuration (CMOS / NVRAM)',
+                  'Initialises / checks hardware / peripheral devices are available / work / carry out a POST check',
+                  '...and reports errors',
+                  'Determines the drive on which the OS is stored',
+                  'Finds / loads the bootstrap / operating system / kernel (into main memory)'
+                ],
+                guidance: 'Max 3. DNA "boots up" on its own.' },
+              '2(c)(ii)': { type: 'points',
+                points: [
+                  'Storing firmware / config / operating instructions / OS / device drivers... that can\'t be overwritten / doesn\'t need to be updated... so access is faster',
+                  'Storing security settings / encryption keys / digital signatures... that must be maintained / can\'t be changed',
+                  'Could be used as primary storage... so no need to load programs into memory... saving time loading',
+                  'Could be used as secondary storage... so device will not need additional storage... reducing the size of the device'
+                ],
+                guidance: '2 marks: mark from ONE group to max 2.' },
+              '2(d)(i)': { type: 'points',
+                points: [
+                  'Resource / memory management — moving data between RAM and secondary storage / virtual memory / paging-segmentation / allocating-deallocating memory',
+                  'Manage hardware / peripherals — tracking all devices / device drivers',
+                  'File management — storing / searching / copying / moving / renaming files / folders',
+                  'Security / user management — controlling access to system / managing user profiles / access rights',
+                  'Provide a user interface — allowing user to interact with software / hardware',
+                  'Providing utilities — used to monitor / manage / maintain the computer / manage security',
+                  'Providing a platform on which to run software — allows additional software to be installed'
+                ],
+                guidance: '4 marks: 2 marks from each group, max 4 (must be 2 distinct roles). DNA handle interrupts or manage scheduling.' },
+              '2(d)(ii)': { type: 'exact',
+                points: [
+                  'Round Robin → C (fixed CPU time slice)',
+                  'First come first served → D (equal priority, order of arrival)',
+                  'Multi-level feedback queues → A (priority queues, can move between)',
+                  'Shortest job first → B (shortest time, run until complete)',
+                  'Shortest remaining time → E (shortest time, can be suspended)'
+                ],
+                guidance: '5 marks: 1 mark per correct match.' },
+              '2(e)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of each cultural issue. Material accurate and detailed. Knowledge applied directly and consistently to context; evidence explicitly relevant. Covers all three points (layout, colour, character sets) and evaluates why it is important.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of most cultural issues. Knowledge applied to context with one or two missed opportunities. Covers at least two of layout/colour/character sets, expanded with cultural considerations.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of some cultural issues, basic and contains some inaccuracies. Some relevant points related to layout, colour and/or character sets; may not be linked to cultural considerations.' }
+                ],
+                indicative: {
+                  'AO1 — Knowledge': 'Cultural issues are about how different groups of people with particular beliefs/practices/languages may be affected. Layout determines where items are placed on screen — what suits one country may not suit another. Colour: humans have personal perception; colour can confirm messages (e.g. success/fail) but can mean different things in different cultures. Character set: ASCII vs UNICODE etc.',
+                  'AO2 — Application': 'Western audiences read left-to-right top-to-bottom; other cultures read right-to-left. Green = positive, red = negative in many Western contexts; can mean very different things elsewhere. ASCII (128–256 chars) suits English / European languages; not suitable for many world languages — characters wouldn\'t display.',
+                  'AO3 — Evaluation': 'User interface must be usable and understandable by all audiences. Consider typical layout / colours / characters in different cultures; use icons rather than words for universal understanding. Designers could release different versions or allow settings to be changed so athletes can customise.'
+                },
+                guidance: '9 marks total. Accessibility / colour blindness are NOT relevant to context.' },
+              '3(a)': { type: 'exact',
+                points: [
+                  'Creating graphics such as a logo: Graphics / image editing software',
+                  'Writing letters to clients: Word processing software',
+                  'Calculating the company profits: Spreadsheet / Accounting software',
+                  'Storing, searching and updating client details: Database software',
+                  'Creating brochures and flyers: Desktop publishing software / DTP'
+                ],
+                guidance: '5 marks: 1 per correct application software. Allow any sensible software (e.g. text editor for WP, photo/image editor for row 1, publication editor for DTP). DNA brand names alone — ignore brand name if application type is also given.' },
+              '3(b)': { type: 'points',
+                points: [
+                  'Reduced hardware is needed on computers / reduced hardware costs',
+                  'Improved security by keeping all software running from one physical device',
+                  'Easier / cheaper to manage as only one physical device runs the programs',
+                  'Can add / remove resources / memory / processes to the VM',
+                  'If infected by malware it can be deleted and recreated / rest of system isn\'t affected',
+                  'No direct access to hardware',
+                  'Resources can be used more flexibly between machines'
+                ],
+                guidance: 'Max 1.' },
+              '3(c)': { type: 'points',
+                points: [
+                  'Lossless will not permanently remove data',
+                  'Lossless can be fully reconstructed / restored',
+                  'Quality (of text/graphics/sound) is not lost',
+                  'Any loss of text would be noticeable / would make it unreadable / unusable',
+                  'Lossless rewrites data in a more efficient format'
+                ],
+                guidance: 'Max 3. Accept reverse points (e.g. "lossy will delete data permanently").' },
+              '3(d)(i)': { type: 'points',
+                points: [
+                  'Combines / links code / programs to files / software libraries...',
+                  '...to form a single executable file',
+                  '(Allow valid description of static and/or dynamic linkers, e.g. "static linkers combine code and libraries into one file; dynamic linkers link/add addresses to libraries")'
+                ],
+                guidance: 'Max 2.' },
+              '3(d)(ii)': { type: 'points',
+                points: [
+                  'It is part of the operating system',
+                  'Loads an executable file (into memory)...',
+                  '...from secondary storage',
+                  'Loads the required software libraries'
+                ],
+                guidance: 'Max 2. Allow "loads applications / programs" for MP2.' },
+              '4(a)(i)': { type: 'exact',
+                points: ['1000 0100', '10000100'],
+                guidance: '1 mark. CAO.' },
+              '4(a)(ii)': { type: 'exact',
+                points: ['Sign and magnitude', "One's complement"],
+                guidance: '1 mark for sign-and-magnitude (A. one\'s complement).' },
+              '4(b)': { type: 'exact',
+                points: ['12A'],
+                guidance: '2 marks. Must be in correct order. 1 mark for 12, 1 mark for A.' },
+              '4(c)': { type: 'exact',
+                points: ['-49.5', '−49.5'],
+                guidance: '3 marks. Correct answer with any binary working = full marks. Mark scheme: convert exponent to 6, mantissa to 1001110.1 (moving binary point 6 right), answer −49.5.' },
+              '4(d)': { type: 'exact',
+                points: ['Mantissa 01011000, exponent 0100', '01011000 0100'],
+                guidance: '4 marks. Correct mantissa and exponent with any binary working = full marks. Steps: reduce exponent to 4 (decrease by 3); new mantissa starts 01011...; written out to 8 bits = 01011000; new exponent 0100.' },
+              '4(e)': { type: 'exact',
+                points: ['1101 0000', '11010000'],
+                guidance: '2 marks: 1 for 11010000 + 1 for correct working out / 6 carries shown. 0 marks for denary calculations with no carries shown.' },
+              '5(a)': { type: 'points',
+                points: [
+                  'OR gate combining A and B (the two sensors)',
+                  'AND gate combining (A OR B) with C (alarm set)',
+                  'NOT gate on D (test mode), feeding into final AND',
+                  'Final output: siren = ((A OR B) AND C) AND NOT D'
+                ],
+                guidance: '4 marks: 1 mark per correct area with labelled inputs. Max 3 if any additional gates. NOT gate must have only one input; AND/OR must have two inputs.' },
+              '5(b)(i)': { type: 'exact',
+                points: ['¬(A ∧ B)', '¬(A·B)', 'NOT (A AND B)', '!(A AND B)'],
+                guidance: '1 mark for ¬(A ∧ B) or equivalent notation.' },
+              '5(b)(ii)': { type: 'exact',
+                points: ['B'],
+                guidance: '1 mark for B (¬ must be in the correct way round to cancel).' },
+              '5(b)(iii)': { type: 'exact',
+                points: ['A v (B ∧ C)', 'A + (B·C)', 'A v BC'],
+                guidance: '2 marks: 1 for A, 1 for v (B ∧ C). Allow either order: (B∧C) v A. Brackets not required.' },
+              '6(a)': { type: 'levels',
+                levels: [
+                  { range: [9, 12], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of search indexing and page rank. Material accurate and detailed. Knowledge applied directly and consistently to context. Explains in detail how search indexing happens and the factors affecting PageRank, with clear evaluative points on how to improve PageRank.' },
+                  { range: [5, 8], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of search indexing and page rank. Covers both topics, expanding information collected during indexing and PageRank factors. Some attempt to identify how to improve PageRank.' },
+                  { range: [1, 4], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of search indexing or page rank; contains some inaccuracies. Some basic facts about indexing and/or PageRank; may not discuss improvements.' }
+                ],
+                indicative: {
+                  'AO1 — Search engine indexing & PageRank': 'Search indexing: database of keywords with links to relevant pages; words stored with their position; spiders/crawlers crawl the web finding pages; navigate via hyperlinks; sent back to the search engine database; you search the providers\' database, not the live web. PageRank: ranks websites; more links from more important pages → higher rank; stored as a weighted directed graph (pages = nodes, hyperlinks = edges, weights from PageRank).',
+                  'AO2 — Application': 'To improve presence: effective meta tags describing content; effective H1 tags; increase quantity and quality of incoming links (especially from high-PageRank sites); increase outgoing links; store keywords in meta/title/header tags; damping factor (assumption user follows limited number of links).',
+                  'AO3 — Evaluation': 'PageRank is only one ranking algorithm. To improve presence consider who links to you (popular = better). Could partner with established websites for incoming links. Site must be malware-free / secure — affects PageRank.'
+                },
+                guidance: '12 marks total.' },
+              '6(b)': { type: 'exact',
+                points: [
+                  'Loading the website HTML code: Client Side',
+                  'Applying CSS styles to a website: Client Side',
+                  'Running JavaScript code to check that the customer surname has been entered: Client Side',
+                  'Running queries on the database to check stock: Server Side'
+                ],
+                guidance: '4 marks: 1 per correct row. Accept alternatives to ticks so long as it is clear which side is marked.' },
+              '6(c)': { type: 'points',
+                points: [
+                  'A set of rules for communication / transmission / transfer of data between devices',
+                  'The sending system has no direct control over the way the receiving system responds',
+                  'Allows standardisation as different devices have different OS / hardware',
+                  'Protocols allow data to be exchanged in a predictable way / in the correct format'
+                ],
+                guidance: '2 marks: 1 for "set of rules" + 1 max from the rest. Not "a rule" — must be plural. MP1 not "a set of instructions". MP1 accept "standards" / "an agreement".' },
+              '6(d)': { type: 'points',
+                points: [
+                  'Router — connects networks together / assigns IP addresses / examines data packets and forwards them',
+                  'Cable / Ethernet — carries digital data from one device / NIC to the next / connects wired devices',
+                  'Gateway — connects different types of network / translates protocols from one network to another',
+                  'Bridge — connects different network segments',
+                  'Repeater — receives a signal and retransmits it',
+                  'NIC (Network Interface Card) — gives each device a MAC address / allows a computer to interface with a network',
+                  'WAP (Wireless Access Point) — allows wireless devices to communicate / sends and receives radio waves / examines and forwards data packets',
+                  'Switch — connects multiple wired devices / receives data and forwards to intended recipient / routes based on MAC addresses',
+                  'Hub — receives data from a device and broadcasts to all connected devices',
+                  'Modem — changes signal from digital to analogue',
+                  'Firewall — filters traffic coming in and out of a network',
+                  'Proxy server — sits between user and computer to route requests / creates separation / hides IPs'
+                ],
+                guidance: '6 marks: 1 for hardware + 1 for expansion, 2 marks max each, total max 6 (so 3 different items × 2 marks). Allow any suitable expansion. Mark in pairs.' },
+              '7': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Mark Band 3 — High level',
+                    criteria: 'Thorough knowledge and understanding of databases. Material accurate and detailed. Knowledge applied directly and consistently to Rosa\'s context. Covers benefits and drawbacks of both flat file and relational databases, relating to Rosa\'s needs, and evaluates why a relational database is most appropriate.' },
+                  { range: [4, 6], descriptor: 'Mark Band 2 — Mid level',
+                    criteria: 'Reasonable knowledge of databases. Covers features of both database types and expands with benefits, drawbacks, and Rosa\'s data set, though may not be balanced. Attempts to recommend a type.' },
+                  { range: [1, 3], descriptor: 'Mark Band 1 — Low level',
+                    criteria: 'Basic knowledge of databases; basic facts about flat file and/or relational; may not be linked to Rosa\'s specific needs.' }
+                ],
+                indicative: {
+                  'AO1 — Flat file vs Relational': 'Flat file: data in a single table, often plain text; benefits = easy to set up, all in one place; drawbacks = redundant data, slow searches, harder to manage/expand. Relational: data in multiple tables linked via primary/foreign keys; benefits = less duplication, easier to manage/expand, faster searches, more secure; drawbacks = more complex to set up, needs DBMS, more expensive.',
+                  'AO2 — Application to Rosa': 'With 150 members, flat file is suitable; with 10 000 it becomes problematic. Lots of redundant data with bookings/appointments. More data → higher risk of inconsistency, lost integrity. Relational stores member details once, references by ID for each booking/appointment, easier to expand and normalise.',
+                  'AO3 — Evaluation': 'Most suitable for Rosa = relational database. More complex and needs normalisation but stores less repeated data when the company expands, easier to maintain, expand, and keep secure.'
+                },
+                guidance: '9 marks total.' },
+              '8(a)': { type: 'points',
+                points: [
+                  'Typed as array / string and set to the variable towns (e.g. array towns, string towns[][])',
+                  '2 dimensions set to 8 and 3 in brackets (e.g. towns(8,3) or towns[8][3])'
+                ],
+                guidance: '2 marks. Examples: array towns(8,3); string towns[][] = new string[8][3]; array towns[8][3] as string. Allow 7, 2 as the array index (zero-indexed). Allow column-major notation (towns[3,8]).' },
+              '8(b)(i)': { type: 'exact',
+                points: [
+                  'Row 0 (Sligo):     Left = 1,     Right = 3',
+                  'Row 1 (Dublin):    Left = 2,     Right = 4',
+                  'Row 2 (Cork):      Left = null,  Right = null',
+                  'Row 3 (Waterford): Left = 6,     Right = null',
+                  'Row 4 (Galway):    Left = 7,     Right = 5',
+                  'Row 5 (Limerick):  Left = null,  Right = null',
+                  'Row 6 (Tralee):    Left = null,  Right = null',
+                  'Row 7 (Dundalk):   Left = null,  Right = null'
+                ],
+                guidance: '4 marks. Allow −1 or 0 for null. FT for 0/blank used as null after the first error.' },
+              '8(b)(ii)': { type: 'exact',
+                points: [
+                  'Mallow added to left of Dundalk (or right of Cork) per BST rules',
+                  'Cavan added to left of Cork',
+                  'Tuam added to right of Tralee',
+                  'Wexford added to left of Tralee (or to right of Limerick) per BST rules'
+                ],
+                guidance: '4 marks: 1 per correctly-placed town. Ignore basic spelling mistakes and case. Towns must be to left or right of the node above (DNA "straight below"). If same town added more than once, BOD if one is in the right place.' },
+              '9': { type: 'points',
+                points: [
+                  'Suitable logic for class Dog declaration',
+                  'Suitable logic to define the 4 (private) attributes: name, breed, height, weight',
+                  'Suitable logic to declare a public method for constructor (e.g. new or class name)...',
+                  '...taking only 4 different parameters in any order',
+                  'Suitable logic to set the values of each attribute'
+                ],
+                guidance: '5 marks: 1 per bullet. Ignore data types in attribute names. Allow colon/empty brackets at end of class def. For Python: allow the extra 5th parameter representing the object (self) as the first parameter. For Python: MP2 can be considered implicitly met if attributes are set in the constructor (Python doesn\'t require attribute declaration outside the constructor).' },
+              '10(a)': { type: 'points',
+                points: [
+                  'Allows for mass surveillance of communications',
+                  "Allows the monitoring of an individual's internet activities / history",
+                  'Allows covert surveillance to be carried out',
+                  'Can demand access to protected data',
+                  'Can demand that ISPs / businesses give access to customer communications / history',
+                  'Can demand that ISPs / businesses install equipment that facilitates surveillance',
+                  'Can demand that encryption keys are handed over / force individuals to decrypt data',
+                  'Can keep existence of searches and findings private in court'
+                ],
+                guidance: 'Max 3.' },
+              '10(b)': { type: 'points',
+                points: [
+                  'Data must be processed fairly / lawfully',
+                  'Data must be adequate / relevant / not excessive',
+                  'Data must be accurate and (where necessary) up to date',
+                  'Data must not be retained for longer than necessary',
+                  'Data can only be used for the purpose for which it was collected',
+                  'Data must be kept secure',
+                  'Data must be processed in accordance with people\'s rights',
+                  'Data must not be transferred outside the EU without adequate protection',
+                  'Right to see their own data / change if incorrect'
+                ],
+                guidance: 'Max 3.' }
+            }
           },
           {
             id: 'cs-ocr-h446-2024-p2',
