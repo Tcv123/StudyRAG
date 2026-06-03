@@ -14001,6 +14001,260 @@ window.SUBJECTS = [
                   'Axes correct and labelled (x = substrate/H₂O₂ concentration, y = rate of oxygen production / rate of reaction)',
                   'Suitable axis units (x: mol dm⁻³ etc.; y: mol dm⁻³ s⁻¹ etc.)'
                 ], guidance: '3 marks. Best assessed against your sketch in the QP PDF. Ignore "a.u." for units.' }
+            } },
+          { id: 'bio-edxa-9bn0-2022-p1', year: 'June 2022', paperName: 'Paper 1 — The Natural Environment and Species Survival', paperCode: '9BN0/01', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-01-que-20220610.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-01-rms-20220818.pdf',
+            qbqNote: 'All 10 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Mineral ions are required for plant growth.",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Nitrate ions are required for the synthesis of\n\nA  amino acids\nB  cellulose\nC  starch\nD  sucrose", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "Phosphate ions are required for the synthesis of\n\nA  cellulose\nB  chlorophyll\nC  nucleic acids\nD  sucrose", marks: 1 },
+                  { code: '1(a)(iii)', prompt: "Magnesium ions are present in the structure of\n\nA  amino acids\nB  cellulose\nC  chlorophyll\nD  starch", marks: 1 },
+                  { code: '1(b)', preamble: "Mineral ions in the soil are in lower concentrations than in the vacuoles of root hair cells.", prompt: "Describe how mineral ions are taken up by root hair cells.", marks: 3 }
+                ] },
+              { number: 2,
+                scenario: "Anthropogenic activities are contributing to global warming. The IPCC says changes to diet can have a major impact on greenhouse gas emissions, and the method of farming affects the level of impact.\n\n(See the protein-source table in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)', prompt: "How many of the following statements about global warming are correct?\n• global warming is caused by a reduction in greenhouse gases\n• deforestation may contribute to global warming\n• global warming is leading to the melting of sea ice\n• global warming may lead to a change in rainfall patterns\n• global warming is affecting only the ice caps\n\nA  2\nB  3\nC  4\nD  5", marks: 1 },
+                  { code: '2(b)(i)', preamble: "The table shows the mass of greenhouse gas released per serving of various protein sources (beef 7.0 kg down to nuts 0.5 kg).", prompt: "Explain why a diet based on plant protein produces lower greenhouse gas emissions than a diet based on animal protein.", marks: 3 },
+                  { code: '2(b)(ii)', preamble: "Beef cattle are traditionally reared by grazing on natural pastures, but large areas of rainforest have been cleared to produce beef.", prompt: "Explain why the farming of beef cattle on deforested land produces more greenhouse gas emissions than from those reared on natural pastures.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "Peat bogs are formed over millions of years from the remains of plants and animals. Waterlogging and acidic conditions prevent decomposition.",
+                parts: [
+                  { code: '3(a)(i)', prompt: "State how the age of the layers in a peat bog can be determined.", marks: 1 },
+                  { code: '3(a)(ii)', prompt: "Explain why the conditions in peat bogs prevent decomposition.", marks: 3 },
+                  { code: '3(b)', preamble: "A scheme to plant trees on peat bog dried it out and allowed it to decompose, releasing CO₂. Conservationists are cutting down the trees and raising the water level to recreate the bog (estimated to recover in 15 years). Sphagnum moss grows on the surface and helps formation.", prompt: "Devise a procedure to measure the rate of recovery of the peat bog.", marks: 4 }
+                ] },
+              { number: 4,
+                scenario: "Malaria kills more than 400 000 people every year. It is caused by Plasmodium, a single-celled organism that lives in the blood and is transmitted by mosquitoes. A diagram shows a Plasmodium organism.\n\n(See the diagram in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)', prompt: "State and justify two structures shown in the diagram that indicate that Plasmodium is a eukaryotic organism.", marks: 2 },
+                  { code: '4(b)(i)', preamble: "Scientists are genetically modifying Metarhizium pingshaense, a fungus that infects mosquitoes, with a spider gene coding for a protein that kills mosquitoes. The GM fungus transcribes and translates this gene.", prompt: "Describe the primary structure of a protein.", marks: 2 },
+                  { code: '4(b)(ii)', preamble: "The primary structure of this protein is then converted into a tertiary structure and modified by organelles in the cell.", prompt: "Describe the role of the organelles involved in these processes.", marks: 5 }
+                ] },
+              { number: 5,
+                scenario: "Porphyria is a life-threatening genetic disease caused by a mutation in the gene coding for an enzyme involved in the production of haem; in people with porphyria, haem cannot be produced. It is caused by a dominant allele and may not develop until later in life.\n\n(See the pedigree diagram in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)', prompt: "Explain why this mutation may prevent the enzyme involved in the production of haem from functioning correctly.", marks: 4 },
+                  { code: '5(b)(i)', preamble: "A pedigree diagram shows a family in which some individuals have porphyria; person C is unaffected.", prompt: "State the genotype and phenotype of person C.", marks: 1 },
+                  { code: '5(b)(ii)', preamble: "Person A and Person B have one son with porphyria.", prompt: "What was the probability of them having a child that was male and had porphyria?\n\nA  0.00\nB  0.25\nC  0.50\nD  1.00", marks: 1 },
+                  { code: '5(c)', preamble: "Gene silencing has been developed to treat this disease. Small interfering RNA (siRNA) combines with mRNA to prevent translation.", prompt: "Deduce how siRNA may be used to prevent the development of porphyria.", marks: 4 }
+                ] },
+              { number: 6,
+                scenario: "Leigh syndrome is a disease of the nervous system that affects the brain. It is caused by a mutation in the DNA present inside mitochondria.",
+                parts: [
+                  { code: '6(a)', kind: 'diagram', prompt: "Draw and label a mitochondrion.", marks: 2 },
+                  { code: '6(b)', preamble: "Mitochondrial diseases such as Leigh syndrome are passed on by the mother during fertilisation.", prompt: "Explain why a fertilised egg cell will contain only maternal mitochondria.", marks: 2 },
+                  { code: '6(c)(i)', preamble: "Using IVF, an embryo without the disease can be produced: the nucleus is removed from a donor egg cell, and the nucleus from a fertilised egg of a mother with the mutation is placed in the donor egg.", prompt: "Explain why the resulting embryo does not develop mitochondrial disease.", marks: 2 },
+                  { code: '6(c)(ii)', prompt: "Comment on the inheritance of parental characteristics in offspring produced in this way.", marks: 3 }
+                ] },
+              { number: 7,
+                scenario: "Measles is a contagious disease that can be controlled by vaccination. A table shows the number of cases of measles and the percentage of children vaccinated in the UK from 2012 to 2017.\n\n(See the table in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)(i)', preamble: "From 2013 (1855 cases) to 2014 (135 cases).", prompt: "Calculate the percentage change in the number of cases of measles from 2013 to 2014. Give your answer to three significant figures.", marks: 2 },
+                  { code: '7(a)(ii)', preamble: "One conclusion is that it takes time for an increase in vaccination rate to reduce the number of cases of measles in children.", prompt: "Explain why this is a valid conclusion.", marks: 4 },
+                  { code: '7(b)(i)', preamble: "A study found that some B memory cells and antibodies are destroyed by the measles virus.", prompt: "Antibodies are released into the blood when\n\nA  B cells are activated to become killer cells\nB  B cells are activated to become plasma cells\nC  macrophages are activated to become B cells\nD  plasma cells are activated to become memory cells", marks: 1 },
+                  { code: '7(b)(ii)', preamble: "Vaccination leads to the production of antibodies and memory cells.", prompt: "Which kind of immunity is provided by this type of vaccination?\n\nA  active artificial\nB  active natural\nC  passive artificial\nD  passive natural", marks: 1 },
+                  { code: '7(b)(iii)', prompt: "Explain why, following a measles infection, it may be advisable for children to repeat other vaccinations they have had.", marks: 3 }
+                ] },
+              { number: 8,
+                scenario: "Tuberculosis (TB) affects the lungs and is caused by the bacterium Mycobacterium tuberculosis. When these bacteria enter the body an immune response is triggered.\n\n(See the HIV/TB tables and graph in the question paper PDF.)",
+                parts: [
+                  { code: '8(a)', prompt: "The initial response when bacteria enter the body is a\n\nA  non-specific response and bacteria are destroyed by antibodies\nB  non-specific response and bacteria are destroyed by phagocytes\nC  specific response and bacteria are destroyed by antibodies\nD  specific response and bacteria are destroyed by phagocytes", marks: 1 },
+                  { code: '8(b)', preamble: "M. tuberculosis can remain dormant in the body after infection.", prompt: "Explain why these dormant bacteria are not destroyed by the immune system.", marks: 3 },
+                  { code: '8(c)(i)', preamble: "In 2008, an estimated 9.4 million people had TB; 15% were HIV positive and 85% HIV negative. Of HIV-positive TB patients, 521 700 died.", prompt: "Calculate the percentage of TB patients infected with HIV who died of TB.", marks: 2 },
+                  { code: '8(c)(ii)', prompt: "Describe the effect of HIV on the number of deaths from TB.", marks: 2 },
+                  { code: '8(c)(iii)', preamble: "In 2016, deaths worldwide: TB only 1 300 000; HIV only 826 000; TB and HIV 374 000. Treating HIV with anti-viral drugs has reduced the incidence of TB associated with HIV. HIV replication reduces the T-helper cell count; the drugs reduce viral replication. A graph shows TB incidence against T-helper cell count.", prompt: "Explain the effect of using anti-viral drugs to treat HIV on the number of deaths from TB.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 9,
+                scenario: "A biodiversity hotspot is a region that is both highly diverse and threatened with destruction.\n\n(See the χ² tables in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)', prompt: "Biodiversity can be measured by the number of\n\nA  different genes in a population\nB  different species in a habitat\nC  homozygotes in a habitat\nD  individuals in a population", marks: 1 },
+                  { code: '9(b)', preamble: "Biodiversity hotspots have at least 1500 endemic plant species and have lost at least 70% of their natural vegetation.", prompt: "Explain how protection of these hotspots can affect global biodiversity.", marks: 2 },
+                  { code: '9(c)(i)', preamble: "A population of white-tailed deer was introduced from North America into Finland in 1934 (four females, one male) and has increased rapidly. A 2012 study compared the genetic diversity (allele richness of 10 genes from 72 deer) of the Finland and North American populations using a χ² test.", prompt: "The null hypothesis for this investigation is\n\nA  the allele richness in the population from Finland is higher than the USA\nB  the allele richness in the population from the USA is higher than Finland\nC  the population in the USA is more genetically diverse than the population in Finland\nD  there is no difference in allele richness between the two populations", marks: 1 },
+                  { code: '9(c)(ii)', preamble: "Using the USA values as expected, the χ² table is partly completed (some (X−Y)²/Y values given).", prompt: "Complete the table to calculate the χ² value, using χ² = Σ (O − E)² / E.", marks: 3 },
+                  { code: '9(c)(iii)', preamble: "Critical values of χ²: at 9 degrees of freedom, 14.684 (p = 0.10) and 16.919 (p = 0.05).", prompt: "Deduce the effect of a small founder population on the allele richness in the population of white-tailed deer in Finland.", marks: 3 },
+                  { code: '9(d)', preamble: "The heterozygosity index is 0.692 for the Finland population and 0.742 for the North American population. Climate change may affect the habitat of both populations.", prompt: "Explain which population is more likely to adapt to changing conditions.", marks: 4 }
+                ] },
+              { number: 10,
+                scenario: "Some plants are adapted to grow in shady conditions. Seedlings of nine species (rated for shade tolerance) were grown in either 25% or 5% of full sunlight (all other abiotic factors controlled) for six weeks, then exposed to full sunlight for 15 minutes while the rate of photosynthesis was measured. A table gives results for four species (A intolerant to D very tolerant).\n\n(See the table and growth graph in the question paper PDF.)",
+                parts: [
+                  { code: '10(a)(i)', prompt: "Determine which species had the greatest percentage change in rate of photosynthesis when grown in lower light intensities.", marks: 2 },
+                  { code: '10(a)(ii)', preamble: "A graph shows the effect of the rate of photosynthesis on the rate of growth of these plants at 25% and 5% light.", prompt: "Explain the effect of light intensity during the first six weeks of growth on the growth rate of these species of plant.", marks: 4 },
+                  { code: '10(b)', preamble: "Differences in the rate of photosynthesis may be due to the light-dependent reactions in chloroplasts.", prompt: "Devise an investigation to compare the rate of the light-dependent reaction in shade tolerant and shade intolerant plants grown at different light intensities.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['A — amino acids'], guidance: '1 mark.' },
+              '1(a)(ii)': { type: 'exact', points: ['C — nucleic acids'], guidance: '1 mark.' },
+              '1(a)(iii)': { type: 'exact', points: ['C — chlorophyll'], guidance: '1 mark.' },
+              '1(b)': { type: 'points', points: [
+                  '(Mineral ions) are taken up by active transport',
+                  'Through carrier proteins (protein pumps)',
+                  'This requires energy / ATP'
+                ], guidance: '3 marks. Ignore "channel".' },
+              '2(a)': { type: 'exact', points: ['B — 3'],
+                guidance: '1 mark. Correct: deforestation may contribute; melting of sea ice; change in rainfall patterns.' },
+              '2(b)(i)': { type: 'points', points: [
+                  'Plants produce organic compounds/biomass from photosynthesis',
+                  'Plants remove carbon dioxide from the atmosphere',
+                  'Animals produce (more) carbon dioxide by respiration',
+                  '(Some) animals produce methane'
+                ], guidance: '3 max. Allow "plants are carbon neutral"; converse for plants.' },
+              '2(b)(ii)': { type: 'points', points: [
+                  '(Deforestation cuts down) trees which are carbon sinks/stores',
+                  'Burning/decomposition of these trees releases carbon dioxide into the atmosphere',
+                  'Without trees there is less/no photosynthesis to remove carbon dioxide'
+                ], guidance: '3 marks.' },
+              '3(a)(i)': { type: 'points', points: ['Using carbon-14 dating (the deeper the layer, the older it is)'],
+                guidance: '1 mark.' },
+              '3(a)(ii)': { type: 'points', points: [
+                  'Conditions are anaerobic (waterlogging reduces oxygen)',
+                  'Therefore less (aerobic) respiration by decomposers',
+                  'Acidic conditions inhibit/denature enzymes',
+                  'Therefore enzymes cannot digest/break down the organic material'
+                ], guidance: '3 max.' },
+              '3(b)': { type: 'points', points: [
+                  'Use of quadrats for sampling',
+                  'A method of determining co-ordinates for random sampling (e.g. random number table)',
+                  'Record percentage cover of sphagnum in each quadrat',
+                  'Several quadrats/samples measured and a mean calculated',
+                  'Sample at regular time intervals',
+                  'Calculate the rate of change in sphagnum cover'
+                ], guidance: '4 max.' },
+              '4(a)': { type: 'points', points: [
+                  'Plasmodium contains two named (membrane-bound) organelles (e.g. nucleus, mitochondria, Golgi, ER)',
+                  '(They have) membrane-bound organelles (prokaryotes do not)'
+                ], guidance: '2 marks.' },
+              '4(b)(i)': { type: 'points', points: [
+                  'Sequence of amino acids',
+                  'Joined together by peptide bonds'
+                ], guidance: '2 marks.' },
+              '4(b)(ii)': { type: 'points', points: [
+                  'Folding of the protein inside the rough endoplasmic reticulum (rER)',
+                  'Bonds formed between R groups',
+                  'rER forms/packages proteins in vesicles',
+                  'Vesicles transport the protein to the Golgi apparatus',
+                  'Protein is modified in the Golgi apparatus',
+                  'Detail of modification (e.g. carbohydrate added / prosthetic group)'
+                ], guidance: '5 max.' },
+              '5(a)': { type: 'points', points: [
+                  'A mutation leads to a change in the sequence of bases (in the DNA / triplet code)',
+                  '(May lead to) a different amino acid / change in the sequence of amino acids',
+                  'So different R groups change the tertiary structure of the enzyme',
+                  'Therefore the (shape of the) active site is changed',
+                  'Therefore the substrate does not fit the active site / enzyme–substrate complexes cannot form'
+                ], guidance: '4 max. Allow reference to a STOP codon being produced.' },
+              '5(b)(i)': { type: 'exact', points: ['Heterozygous (e.g. Pp) and affected with the disease'],
+                guidance: '1 mark. Accept any upper/lower case pair (e.g. Pp). Ignore male/female.' },
+              '5(b)(ii)': { type: 'exact', points: ['B — 0.25'], guidance: '1 mark.' },
+              '5(c)': { type: 'points', points: [
+                  'siRNA binds to the mRNA (from the mutated allele)',
+                  'mRNA cannot bind to the ribosome',
+                  'tRNA is prevented from binding with the mRNA',
+                  'Polypeptide / protein is not synthesised',
+                  '(No development of porphyria) as the faulty enzyme is not produced'
+                ], guidance: '4 max.' },
+              '6(a)': { type: 'points', points: [
+                  'A drawing of a double membrane with folding of the inner membrane',
+                  'Two parts correctly labelled (e.g. cristae, matrix, inner/outer membrane, ribosomes, DNA)'
+                ], guidance: '2 marks. Best assessed against your drawing in the QP PDF.' },
+              '6(b)': { type: 'points', points: [
+                  'Only the nucleus (head) of the sperm enters the ovum',
+                  '(Therefore) all the mitochondria come from the egg cell'
+                ], guidance: '2 marks.' },
+              '6(c)(i)': { type: 'points', points: [
+                  'Because all the mitochondria (in the egg / embryo) come from the donor',
+                  'Which do not carry the mutation'
+                ], guidance: '2 marks.' },
+              '6(c)(ii)': { type: 'points', points: [
+                  'DNA / chromosomes in the nucleus come from the parents (sperm and egg)',
+                  'Characteristics determined by nuclear DNA will be inherited from the parents',
+                  'Any characteristic controlled by mitochondrial DNA would be inherited from the donor'
+                ], guidance: '3 marks.' },
+              '7(a)(i)': { type: 'exact', points: ['92.7%'],
+                guidance: '2 marks. (1855 − 135) ÷ 1855 × 100 = 92.7% (3 sf). 1 mark for the difference (1720). Correct answer with no working gains full marks.' },
+              '7(a)(ii)': { type: 'points', points: [
+                  'As the vaccination rate increases, the number of cases of measles decreases (in some years)',
+                  'An example from the data to show why the conclusion is valid (e.g. 2013→2014)',
+                  '(The effects appear the following year) because it takes time for antibodies / memory cells to be produced',
+                  'Time taken for herd immunity to develop'
+                ], guidance: '4 max.' },
+              '7(b)(i)': { type: 'exact', points: ['B — B cells are activated to become plasma cells'], guidance: '1 mark.' },
+              '7(b)(ii)': { type: 'exact', points: ['A — active artificial'], guidance: '1 mark.' },
+              '7(b)(iii)': { type: 'points', points: [
+                  'Due to a loss of memory cells there is no secondary immune response',
+                  'Therefore antibodies cannot be produced quickly',
+                  'Therefore there is less immunity to diseases previously vaccinated against',
+                  'Need to repeat vaccinations to produce more memory cells'
+                ], guidance: '3 max.' },
+              '8(a)': { type: 'exact', points: ['B — non-specific response and bacteria are destroyed by phagocytes'], guidance: '1 mark.' },
+              '8(b)': { type: 'points', points: [
+                  'The bacteria are inside macrophages/phagocytes',
+                  'This bacterium has a (thick) waxy cell wall',
+                  'Lysosomes cannot fuse with the phagocytic vacuole / bacteria not destroyed by enzymes',
+                  'Bacteria within tubercles cannot be destroyed'
+                ], guidance: '3 max.' },
+              '8(c)(i)': { type: 'exact', points: ['37%'],
+                guidance: '2 marks. 15% of 9.4 million = 1.41 million; 521 700 ÷ 1 410 000 = 0.37 = 37%. 1 mark for the number of HIV+ TB patients. Correct answer with no working gains full marks.' },
+              '8(c)(ii)': { type: 'points', points: [
+                  'A greater percentage of patients with HIV die from TB compared with TB patients without HIV',
+                  'The total number of cases and deaths from TB is greater in those without HIV'
+                ], guidance: '2 marks.' },
+              '8(c)(iii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'An explanation supported throughout by sustained application of relevant analysis/interpretation of both pieces of information; a well-developed, sustained line of reasoning, clear and logically structured. Explains how anti-viral drugs prevent TB by preventing HIV replication, gives relevant immune-response detail, and notes the drugs only reduce TB deaths in those also infected with HIV.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Basic information with some linkage to context; occasional analysis of both pieces of information; some lines of reasoning with structure (e.g. HIV infects T-helper cells, reducing the immune response; anti-viral drugs prevent HIV replication).' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A limited explanation focused on mainly one piece of information; data described (e.g. TB incidence decreases as T-helper cells increase).' }
+                ],
+                indicative: {
+                  'Indicative content': 'TB is more likely to develop in HIV patients; HIV binds CD4 receptors on T-helper cells, replicates inside and destroys them, reducing T-helper cell numbers, so M. tuberculosis is not cleared and TB develops. Drugs that prevent HIV replication preserve T-helper cells, so the immune system can prevent TB → fewer TB deaths in HIV patients. However more TB deaths are in patients without HIV, so anti-viral drugs will not reduce those (the graph: overlapping error bars indicate no difference above 300 T-helper cells mm⁻³).'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '9(a)': { type: 'exact', points: ['B — the number of different species in a habitat'], guidance: '1 mark.' },
+              '9(b)': { type: 'points', points: [
+                  'Endemic species are only found in that one location',
+                  'Protection of hotspots prevents extinction (of endemic species)',
+                  'The loss of these species would (significantly) reduce global biodiversity'
+                ], guidance: '2 max.' },
+              '9(c)(i)': { type: 'exact', points: ['D — there is no difference in allele richness between the two populations'], guidance: '1 mark.' },
+              '9(c)(ii)': { type: 'exact', points: ['16.5', '16.50'],
+                guidance: '3 marks. Complete the missing (X−Y)²/Y values (gene 2: 0.2; gene 9: 2.78) and sum: χ² = 16.5. 1 mark for table completion, 1 for substitution, 1 for the value. Allow ECF. Correct answer with no working gains full marks.' },
+              '9(c)(iii)': { type: 'points', points: [
+                  'Little/no effect of the small founder population on allele richness',
+                  'Degrees of freedom = 9 / critical value = 16.919',
+                  'The stated χ² value (16.5) is below the critical value (16.919)',
+                  'Therefore there is no significant difference in allele richness / the null hypothesis is accepted at p = 0.05'
+                ], guidance: '3 max. Allow converse for a calculated value above the critical value.' },
+              '9(d)': { type: 'points', points: [
+                  'The North American population is more genetically diverse (so more likely to adapt)',
+                  '(More different alleles) so more likely to have an allele that gives an advantage',
+                  'Individuals with an advantageous allele are more likely to survive and breed',
+                  'The frequency of that allele will increase'
+                ], guidance: '4 marks.' },
+              '10(a)(i)': { type: 'exact', points: ['Species D (≈ 43%)'],
+                guidance: '2 marks. Species D: (215 − 150) ÷ 150 × 100 = 43.3%. 1 mark for species D; 1 for the percentage.' },
+              '10(a)(ii)': { type: 'points', points: [
+                  'The rate of growth increases as the rate of photosynthesis increases',
+                  'Growth rate is higher for plants grown at a higher light intensity',
+                  'Role of light in the light-dependent reactions described (e.g. photolysis / photophosphorylation → ATP and reduced NADP)',
+                  'More photosynthesis means more glucose/carbohydrate produced',
+                  '(More carbohydrate) means more glucose for energy/respiration'
+                ], guidance: '4 max.' },
+              '10(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A procedure supported throughout by analysis/interpretation/evaluation; a well-developed, sustained line of reasoning, clear and logically structured. Includes isolating chloroplasts from shade-tolerant and shade-intolerant plants, exposing them to different light intensities, timing DCPIP decolourisation with repeats, and linking to the light-dependent reaction (and how the result would support the difference, ideally with a statistical test).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Basic information with some linkage and occasional analysis; some lines of reasoning with structure. Compares shade-tolerant and shade-intolerant plants at different light intensities, uses DCPIP to measure the rate, with a correct change in DCPIP and sensible repeats.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A limited procedure with generalised comments; compares shade-tolerant and shade-intolerant plants, controls at least one variable, refers to different light intensities.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Use shade-tolerant and shade-intolerant plants grown in the same conditions, in 5%/25% light or a range. Take equal masses of leaf, add to equal volumes of isolation medium, homogenise for the same time, filter/centrifuge to concentrate chloroplasts, resuspend the pellet. Expose suspensions to the light intensities (temperature controlled), add DCPIP and record the time to decolourise; repeat to calculate a mean. If the difference is due to the light-dependent reaction, shade-tolerant plants would decolourise DCPIP more quickly at lower light intensity (use a statistical test, e.g. t-test).'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
