@@ -16048,6 +16048,311 @@ window.SUBJECTS = [
                   'Indicative content': 'Data: increasing light intensity increases phytoplankton biomass; at 10 °C it levels off; at 30 °C the increase is low at low light but greatest at high light. Explanations: respiration rate rises with temperature; warmer temperatures → more evaporation → more cloud → lower light intensity → less NPP at low light/high temperature → less food for orcas; nitrates needed for proteins. Fossil-fuel hypothesis/validity: fossil fuel use releases CO₂; reducing it lessens warming and cloud cover; the data is from one short experiment; no evidence cloud cover will increase; other factors/greenhouse gases (methane) affect temperature; CO₂ also causes acidification; orcas have other food sources/food chains.'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxb-9bi0-2023-p3', year: 'June 2023', paperName: 'Paper 3 — General and Practical Principles in Biology', paperCode: '9BI0/03', totalMarks: 120, durationMins: 150,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-03-que-20230622.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-03-rms-20230817.pdf',
+            qbqNote: 'All 11 questions (120 marks) are wired up question-by-question with the official Pearson mark scheme. This practical-principles paper is structured data-analysis and practical-method questions; Question 9(b) is the 9-mark asterisked (*) levels-of-response question. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Glucose is a monosaccharide. Glucose molecules can be joined to form the polysaccharides starch and cellulose.\n\n(See the β-glucose diagram in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)', kind: 'diagram', prompt: "Complete the diagram to show the structure of beta-glucose.", marks: 1 },
+                  { code: '1(b)', prompt: "Give three differences between the structures of starch and cellulose.", marks: 3 },
+                  { code: '1(c)', prompt: "Explain how the properties of starch make it suitable as an energy store in cells.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "Insects such as locusts can be dissected to show their gas exchange system. A photograph shows part of the dissected system with structures A and B labelled and a point X.\n\n(See the diagrams and photograph in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)(i)', kind: 'diagram', prompt: "Draw a line on the locust to show where you would cut through the exoskeleton to expose the gas exchange system.", marks: 1 },
+                  { code: '2(a)(ii)', prompt: "State why you would cover the dissected locust with water.", marks: 1 },
+                  { code: '2(b)(i)', prompt: "Name the structures labelled A and B.", marks: 2 },
+                  { code: '2(b)(ii)', prompt: "Name the structure that supplies oxygen directly to the muscle tissue.", marks: 1 },
+                  { code: '2(b)(iii)', preamble: "At the point labelled A, the structure is 0.9 mm in diameter.", prompt: "Calculate the diameter of the structure at the point labelled X. Give your answer to two decimal places.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "In genetic modification, DNA from one species is joined to DNA from another to form recombinant DNA, inserted into a host using a vector. A simplified sequence (Steps A–F) shows the formation of herbicide-resistant GM soya beans using Agrobacterium tumefaciens.",
+                parts: [
+                  { code: '3(a)(i)', prompt: "Name the enzyme used in Step C (inserting the gene into the plasmid).", marks: 1 },
+                  { code: '3(a)(ii)', prompt: "Name the vector in this process.", marks: 1 },
+                  { code: '3(b)', prompt: "Explain why it is possible to clone many herbicide-resistant plants from one infected plant in Step F.", marks: 2 },
+                  { code: '3(c)', prompt: "Explain how herbicide resistance would improve the yield of GM soya bean plants compared to non-GM soya bean plants.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "When cereal grains germinate, stored starch is broken down by amylase. A student investigated the effect of gibberellin concentration on amylase production in cereal grains (grains halved, embryo discarded, soaked in sodium hypochlorite then gibberellin, transferred to starch agar plates, iodine added, clear-zone diameter measured).",
+                parts: [
+                  { code: '4(a)(i)', preamble: "The stock solution of gibberellin has a concentration of 1 g per dm³.", prompt: "Describe how you would dilute this stock solution to give a test solution of 300 µg per dm³.", marks: 2 },
+                  { code: '4(a)(ii)', prompt: "State one reason for each of the following steps: Step 2 (discard the half containing the embryo); Step 3 (soak in sodium hypochlorite).", marks: 2 },
+                  { code: '4(b)(i)', prompt: "Describe how you would control one named abiotic variable and one named biotic variable.", marks: 2 },
+                  { code: '4(b)(ii)', prompt: "Describe three further improvements to the method that would improve the validity of the results.", marks: 3 }
+                ] },
+              { number: 5,
+                scenario: "Bacteria are prokaryotes. Gram staining is often used to help identify bacteria.",
+                parts: [
+                  { code: '5(a)(i)', prompt: "Give two differences between the structures of a prokaryotic cell and a eukaryotic cell.", marks: 2 },
+                  { code: '5(a)(ii)', preamble: "A sample of bacteria from an infected person stained red with Gram staining.", prompt: "Explain why the bacteria stained red and why this information is useful for treating the infected person.", marks: 3 },
+                  { code: '5(b)(i)', prompt: "Describe the method used to isolate individual species from a mixed culture of bacteria in nutrient broth.", marks: 4 },
+                  { code: '5(b)(ii)', prompt: "Explain three precautions that would be taken to reduce the growth of pathogenic bacteria.", marks: 3 }
+                ] },
+              { number: 6,
+                scenario: "Water potential determines the direction of movement of water in and out of cells. A plant cell has a turgor pressure (P) of 400 kPa and an osmotic potential of −500 kPa. A student determined the water potential of potato tuber cells using a range of sucrose concentrations.\n\n(See the results table in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)(i)', prompt: "Calculate the water potential (Ψ) of this cell.", marks: 1 },
+                  { code: '6(a)(ii)', preamble: "The cell is placed in a sucrose solution with a water potential of −400 kPa.", prompt: "Explain the direction of net movement of water for this plant cell.", marks: 2 },
+                  { code: '6(b)(i)', kind: 'diagram', preamble: "The table gives the percentage change in mass of potato discs in sucrose solutions from 0.0 to 0.5 mol dm⁻³.", prompt: "Plot a suitable graph of these results. Join the points with straight lines.", marks: 3 },
+                  { code: '6(b)(ii)', prompt: "Determine the concentration of sucrose solution that causes no change in mass, using your graph.", marks: 1 },
+                  { code: '6(b)(iii)', prompt: "Evaluate whether the method used in this investigation would provide valid results for the water potential of potato cells.", marks: 5 }
+                ] },
+              { number: 7,
+                scenario: "A student investigated whether light intensity affects the leaf area of hedge woundwort (Stachys sylvatica), measuring 20 leaves from full sun and 20 from shade, and analysed the data with a t-test.\n\n(See the histograms and critical-value table in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)(i)', prompt: "Give a suitable null hypothesis for this investigation.", marks: 1 },
+                  { code: '7(a)(ii)', prompt: "Devise a valid fieldwork method that the student could use to compare the leaf areas of the plants growing in full sunlight with those in shady areas.", marks: 4 },
+                  { code: '7(b)(i)', preamble: "The mean leaf area in full sun is 27.55 cm² with a standard deviation of 9.62 cm². Two standard deviations either side of the mean include 95% of the leaves.", prompt: "Determine the size range that would include 95% of leaves from plants in full sun, using the standard deviation value.", marks: 2 },
+                  { code: '7(b)(ii)', preamble: "Full sun: mean 27.55, SD 9.62, n = 20. Shade: mean 55.50, SD 13.40, n = 20.", prompt: "Calculate the value of t, using t = (x̄A − x̄B) ÷ √((SA²/nA) + (SB²/nB)).", marks: 3 },
+                  { code: '7(b)(iii)', preamble: "The critical value of t (38 degrees of freedom) is about 2.02 (p = 0.05) and 2.71 (p = 0.01).", prompt: "Comment on the results of this investigation. Use the information in the table to support your answer.", marks: 3 }
+                ] },
+              { number: 8,
+                scenario: "Haemoglobin transports oxygen around the human body. Beta thalassaemia is a recessive inherited condition caused by a mutation in the HBB gene (less or no beta-globin). It affects 30 in 1000 people overall, but 280 in 1000 on one Mediterranean island.\n\n(See the oxygen dissociation curve in the question paper PDF.)",
+                parts: [
+                  { code: '8(a)(i)', prompt: "Explain how the structure of haemoglobin enables it to combine with oxygen in the blood vessels of the lungs.", marks: 3 },
+                  { code: '8(a)(ii)', kind: 'diagram', preamble: "A graph shows the oxygen dissociation curve for haemoglobin in blood in the lungs.", prompt: "The curve for haemoglobin in the tissues of respiring muscle is different. Sketch this curve onto the axes.", marks: 1 },
+                  { code: '8(a)(iii)', prompt: "Explain the advantage of this change in the position of the oxygen dissociation curve.", marks: 2 },
+                  { code: '8(b)(i)', prompt: "State the probability that two parents who are heterozygous for this condition would have a child who has beta thalassaemia.", marks: 1 },
+                  { code: '8(b)(ii)', prompt: "Explain why a person who is heterozygous does not show the symptoms of beta thalassaemia.", marks: 2 },
+                  { code: '8(c)(i)', preamble: "On the island, 280 in 1000 people have beta thalassaemia.", prompt: "Calculate the probability that a person on this island is heterozygous for beta thalassaemia. Use the Hardy–Weinberg equation (p² + 2pq + q² = 1). Give your answer to two significant figures.", marks: 3 },
+                  { code: '8(c)(ii)', prompt: "Give two reasons why this value may not be accurate.", marks: 2 }
+                ] },
+              { number: 9,
+                scenario: "Coronary heart disease is a major cause of death in Europe. A table shows the change in deaths from coronary heart disease in some European countries between 1990 and 2019, and a graph shows UK male deaths from 1979 to 2013.\n\n(See the table and graph in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)', prompt: "Explain how atherosclerosis can cause coronary heart disease and can lead to death.", marks: 4 },
+                  { code: '9(b)', preamble: "It has been suggested that the change in deaths from coronary heart disease in the UK is due to improved lifestyle choices, and that coronary heart disease could be reduced to almost zero in the UK if people made better choices.", prompt: "Discuss the validity of this suggestion. Use the data and your own knowledge to support your answer.\n\n*Marks will be awarded for a logically structured answer.", marks: 9, extended: true }
+                ] },
+              { number: 10,
+                scenario: "Five groups of students used respirometers to investigate the rate of aerobic respiration by maggots at 15 °C, measuring the distance the coloured liquid moved in 15 minutes (rates 0.12–0.16 mm³ min⁻¹ g⁻¹).\n\n(See the respirometer diagram in the question paper PDF.)",
+                parts: [
+                  { code: '10(a)', prompt: "State the two additional measurements that you would make to calculate the rate of oxygen uptake in mm³ per minute per gram.", marks: 2 },
+                  { code: '10(b)', prompt: "Justify two improvements that would ensure the validity of this investigation.", marks: 2 },
+                  { code: '10(c)(i)', preamble: "For enzyme-controlled reactions, a 10 °C rise in temperature doubles the rate (mean rate at 15 °C ≈ 0.14 mm³ min⁻¹ g⁻¹).", prompt: "Predict the mean rate of oxygen uptake if the water bath had been set at 5 °C.", marks: 1 },
+                  { code: '10(c)(ii)', prompt: "Explain why decreasing the temperature affects the rate of respiration of maggots.", marks: 2 },
+                  { code: '10(d)', prompt: "Describe the role of oxygen in the formation of ATP during aerobic respiration.", marks: 3 }
+                ] },
+              { number: 11,
+                scenario: "Citizen science involves members of the public collecting scientific data. In 2019–2020 a UK project surveyed wild flowering plants in lawns (volunteers counted flowers in a random 1 m² area). A table shows the five most commonly recorded species in 2020 and the percentage change from 2019.\n\n(See the tables in the question paper PDF.)",
+                parts: [
+                  { code: '11(a)(i)', prompt: "Name one factor, other than temperature, that could cause the change in the numbers of flowers of these five species.", marks: 1 },
+                  { code: '11(a)(ii)', preamble: "The scientists concluded that the number of flowers of wild plants in lawns decreased 19% in 2020 compared to 2019.", prompt: "Evaluate the method of data collection in this survey.", marks: 5 },
+                  { code: '11(b)(i)', preamble: "A table gives the flowers recorded in one quadrat: daisy 11, dandelion 8, cat's-ear 14, selfheal 2.", prompt: "Calculate the biodiversity index (D) for the quadrat, using D = N(N−1) / Σn(n−1).", marks: 3 },
+                  { code: '11(b)(ii)', prompt: "Describe two improvements which should be made to the method to give a more accurate measure of the biodiversity index for this quadrat.", marks: 2 },
+                  { code: '11(c)(i)', preamble: "Bees feed on nectar. In 2019 the mean mass of nectar sugar was 41 912 mg m⁻² supporting 3.8 bees per m²; in 2020 it was 38 885 mg m⁻².", prompt: "Calculate the mean number of bees supported per square metre of lawn in 2020.", marks: 2 },
+                  { code: '11(c)(ii)', prompt: "Bees are important pollinators. Explain the possible short-term and long-term consequences of the decline in flowers of wild plant species in lawns in 2020.", marks: 4 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'points', points: ['Complete β-glucose: the OH on carbon 1 drawn above the ring (with H below); the standard ring with CH₂OH on carbon 5'],
+                guidance: '1 mark. Best assessed against your completed diagram. Accept HO for OH.' },
+              '1(b)': { type: 'points', points: [
+                  'Cellulose is made of beta glucose monomers, but starch is made of alpha glucose monomers',
+                  'Cellulose contains unbranched/straight chains, but starch contains branched chains (amylose and amylopectin)',
+                  'Cellulose contains 1,4 glycosidic bonds only, but starch contains 1,4 and 1,6 glycosidic bonds',
+                  'Glucose molecules are inverted/flipped in cellulose but in the same orientation in starch'
+                ], guidance: '3 max.' },
+              '1(c)': { type: 'points', points: [
+                  'Insoluble, so it does not affect the water potential / have an osmotic effect',
+                  'OR compact/coiled, so a lot can be stored in a small space',
+                  'OR branched, so it can be broken down/hydrolysed quickly'
+                ], guidance: '2 marks (a paired idea).' },
+              '2(a)(i)': { type: 'points', points: ['An appropriate line drawn through the thorax and abdomen (roughly horizontal, in the lighter grey area)'],
+                guidance: '1 mark. Best assessed against the diagram in the QP PDF.' },
+              '2(a)(ii)': { type: 'points', points: ['So that the gas exchange system / trachea / air sacs are clearly visible (or to stop it drying out)'],
+                guidance: '1 mark.' },
+              '2(b)(i)': { type: 'exact', points: ['A — trachea; B — spiracle'], guidance: '2 marks. Accept phonetic spelling.' },
+              '2(b)(ii)': { type: 'exact', points: ['Tracheole(s)'], guidance: '1 mark.' },
+              '2(b)(iii)': { type: 'exact', points: ['≈ 0.18 mm', '0.08 to 0.30'],
+                guidance: '2 marks. Measure A (≈ 5 mm scaled) and X (≈ 1 mm); diameter of X = 0.9 × (X measurement ÷ A measurement) ≈ 0.18 mm. 1 mark for the measurements. Correct answer gains full marks.' },
+              '3(a)(i)': { type: 'exact', points: ['(DNA) ligase'], guidance: '1 mark.' },
+              '3(a)(ii)': { type: 'exact', points: ['(The plasmid in) Agrobacterium tumefaciens'],
+                guidance: '1 mark. Accept plasmid / bacterium.' },
+              '3(b)': { type: 'points', points: [
+                  'Plant cells are totipotent',
+                  'The plant cells contain the gene for herbicide resistance (the recombinant DNA)',
+                  'Cells divide by mitosis (to produce genetically identical daughter cells)',
+                  'So plants can be grown from one / a few plant cells'
+                ], guidance: '2 max.' },
+              '3(c)': { type: 'points', points: [
+                  '(In GM plants) the herbicide kills weeds but not the crop plant',
+                  'So there is less competition from weeds',
+                  'For two named resources (e.g. water, light, minerals)',
+                  'So more light/water for photosynthesis / more nitrates for proteins'
+                ], guidance: '3 max. Ignore space / nutrients / CO₂.' },
+              '4(a)(i)': { type: 'points', points: [
+                  'Dilution by 1 in 1000 (300 µg dm⁻³ = 3 × 10⁻⁴ g dm⁻³ from 1 g dm⁻³)',
+                  'And a further dilution in the ratio 3 : 7 (e.g. 0.3 cm³ stock + 999.7 cm³ water in one step)'
+                ], guidance: '2 marks. Answer must be in volumes. Correct one-step volumes gain 2 marks.' },
+              '4(a)(ii)': { type: 'points', points: [
+                  'Step 2: the embryo produces/contains gibberellin (so discarding it means no gibberellin affects the results); the endosperm half produces the amylase',
+                  'Step 3: to kill bacteria/fungi/microbes (sterilise the grain), which may otherwise produce amylase'
+                ], guidance: '2 marks (1 per step).' },
+              '4(b)(i)': { type: 'points', points: [
+                  'Abiotic: control pH by adding a buffer (or temperature using an incubator)',
+                  'Biotic: control the mass/length/surface area of the grains (with a method of measurement), or use the same species/source'
+                ], guidance: '2 marks (1 abiotic + 1 biotic).' },
+              '4(b)(ii)': { type: 'points', points: [
+                  'Rinse the grains in water after soaking in hypochlorite',
+                  'Use more than one grain for each concentration (repeat)',
+                  'An example of aseptic technique',
+                  'Measure the diameter of the clear zone several times (or measure area)',
+                  'Use a control with 0% gibberellin'
+                ], guidance: '3 max.' },
+              '5(a)(i)': { type: 'points', points: [
+                  'Prokaryotes have a loop of DNA but eukaryotes have linear chromosomes (DNA associated with histones)',
+                  'Prokaryote cell walls contain peptidoglycan/murein but eukaryote cell walls (if present) do not',
+                  'Prokaryotes do not have a nucleus but eukaryotes do',
+                  'Prokaryotes do not contain membrane-bound organelles but eukaryotes do',
+                  'Prokaryotes have 70S ribosomes but eukaryotes have 80S'
+                ], guidance: '2 max.' },
+              '5(a)(ii)': { type: 'points', points: [
+                  'The bacteria are Gram negative',
+                  'The cell wall has a thin peptidoglycan layer / an outer (lipopolysaccharide) membrane, so it does not retain the crystal violet / blue stain (picks up the red stain)',
+                  'This helps to determine which antibiotics are used / will be most effective to treat the infection'
+                ], guidance: '3 max.' },
+              '5(b)(i)': { type: 'points', points: [
+                  'Use of an inoculating loop to transfer bacteria',
+                  'A description / diagram of streak plating',
+                  'Incubation for a suitable period (24–48 hours)',
+                  'Incubation at a suitable temperature (20–37 °C, below 30 °C for safety)',
+                  'Identification of colonies by colour/shape (or microscopy / selective media)',
+                  'Transfer to separate agar plates'
+                ], guidance: '4 max.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'Use aseptic technique to prevent contamination / growth of pathogens',
+                  'An example of aseptic technique with explanation (e.g. flaming the loop / neck of the bottle to kill bacteria; working near a lit Bunsen)',
+                  'Incubate below 30 °C, as pathogens are more likely to grow at 37 °C',
+                  'Use cross-tape between the lid and base (not sealing fully) to allow air in / prevent growth of anaerobes'
+                ], guidance: '3 max.' },
+              '6(a)(i)': { type: 'exact', points: ['−100 kPa'],
+                guidance: '1 mark. Ψ = P + Ψs = 400 + (−500) = −100 kPa.' },
+              '6(a)(ii)': { type: 'points', points: [
+                  '(Water moves) out of the cell by osmosis',
+                  'Because water moves from an area of higher water potential (−100 kPa) to lower water potential (−400 kPa)'
+                ], guidance: '2 marks. Allow ECF from 6(a)(i).' },
+              '6(b)(i)': { type: 'points', points: [
+                  'Axes correctly orientated and labelled with units',
+                  'All values accurately plotted on a linear scale',
+                  'Points joined with straight lines'
+                ], guidance: '3 marks. Best assessed against your graph in the QP PDF.' },
+              '6(b)(ii)': { type: 'exact', points: ['≈ 0.11 to 0.13 mol dm⁻³'],
+                guidance: '1 mark. The concentration where the percentage change in mass is zero (read from the graph).' },
+              '6(b)(iii)': { type: 'points', points: [
+                  'Strength: a cork borer gives equal-sized pieces; discs increase surface area; 12 hours is enough time; all discs from the same tuber; an appropriate range of concentrations (positive and negative values)',
+                  'Weakness: discs must be submerged; discs should be the same width/thickness; only one disc per solution (no mean); discs should be blotted dry before reweighing; test more molarities near the intercept; control temperature; need a conversion table to get the water potential'
+                ], guidance: '5 max (≥1 strength and ≥1 weakness).' },
+              '7(a)(i)': { type: 'points', points: ['There is no difference in the (mean) area of leaves growing in sun and shade'],
+                guidance: '1 mark.' },
+              '7(a)(ii)': { type: 'points', points: [
+                  'Random selection of the plants to be studied',
+                  'Measure the leaf area of hedge woundwort',
+                  'A method of measurement described (e.g. using squared paper)',
+                  'A suggested method of controlling which leaf to measure (e.g. the lowest leaf on each plant)',
+                  'Select leaves in light and shade / measure light intensity; control another relevant factor'
+                ], guidance: '4 max.' },
+              '7(b)(i)': { type: 'exact', points: ['8.31 to 46.79 cm²'],
+                guidance: '2 marks. 2 × 9.62 = 19.24; range = 27.55 ± 19.24 = 8.31 to 46.79 cm². 1 mark for 2SD = 19.24. Correct answer with no working gains full marks.' },
+              '7(b)(ii)': { type: 'exact', points: ['≈ 7.57 (7.6)'],
+                guidance: '3 marks. (27.55 − 55.50) = −27.95; denominator = √(9.62²/20 + 13.40²/20) = √(4.63 + 8.98) = 3.69; t = 27.95 ÷ 3.69 ≈ 7.57. 1 mark each for the difference, the denominator and t. Ignore the minus sign.' },
+              '7(b)(iii)': { type: 'points', points: [
+                  'The calculated value (7.6) is more than the critical value (2.02 at p = 0.05, or 2.71 at p = 0.01)',
+                  'Therefore reject the null hypothesis',
+                  'There is a significant difference between the leaf area in sun and shade plants (less than 5% probability the difference is due to chance)'
+                ], guidance: '3 marks. Allow ECF from (b)(ii).' },
+              '8(a)(i)': { type: 'points', points: [
+                  'Four polypeptide chains / subunits / haem groups (2 alpha and 2 beta)',
+                  'Haem groups bind reversibly with oxygen (iron binds oxygen), so it can pick up four molecules of oxygen',
+                  'Co-operative binding occurs — after the first oxygen binds, the 3D shape changes so further oxygen binds more easily'
+                ], guidance: '3 max.' },
+              '8(a)(ii)': { type: 'points', points: ['A curve drawn lower and to the right of the existing curve, with the same start and end points'],
+                guidance: '1 mark. Best assessed against your sketch in the QP PDF.' },
+              '8(a)(iii)': { type: 'points', points: [
+                  'Oxygen is more likely to be released (from haemoglobin) at the respiring tissues / muscle',
+                  'Because the partial pressure of carbon dioxide is higher there (the Bohr shift / reduced affinity for oxygen)'
+                ], guidance: '2 marks.' },
+              '8(b)(i)': { type: 'exact', points: ['0.25 (25% / 1 in 4)'],
+                guidance: '1 mark. Do not accept 1:4 or 3:1.' },
+              '8(b)(ii)': { type: 'points', points: [
+                  '(Heterozygotes have) one dominant / non-mutated copy of the allele',
+                  'So beta-globin / the protein can still be made'
+                ], guidance: '2 marks.' },
+              '8(c)(i)': { type: 'exact', points: ['0.50 (50%)'],
+                guidance: '3 marks. q² = 0.28, so q = 0.529 and p = 0.471; 2pq = 2 × 0.471 × 0.529 = 0.50. 1 mark each. Correct answer with no working gains full marks.' },
+              '8(c)(ii)': { type: 'points', points: [
+                  'Migration may occur (the population may not be isolated)',
+                  'Mating may not be random',
+                  'The population may be small (genetic drift) / selection may occur (heterozygote advantage) / mutation may occur'
+                ], guidance: '2 max.' },
+              '9(a)': { type: 'points', points: [
+                  'A plaque / atheroma forms in the coronary artery',
+                  'Causing narrowing/blockage of the coronary artery',
+                  'Reducing the blood (oxygen/glucose) supply to the cardiac muscle',
+                  'So the cardiac muscle dies (heart attack / myocardial infarction)',
+                  'The heart stops contracting/pumping, so oxygen is not supplied to the brain (causing death)'
+                ], guidance: '4 max.' },
+              '9(b)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Level 3', criteria: 'A well-developed, sustained line of reasoning that assesses validity. Seven to nine points drawn from all three areas — lifestyle choices (L), confounding factors (C) and the data (D) — with a comment on validity, and (for 9 marks) a reasoned argument assessing the suggestion.' },
+                  { range: [4, 6], descriptor: 'Level 2', criteria: 'Adequate knowledge with some structure. Four to six points from at least two areas, including data.' },
+                  { range: [1, 3], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; one to three points.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Lifestyle (L): more exercise / better diet (fruit/veg/antioxidants) reduce risk; saturated fat / salt / smoking / alcohol / obesity increase risk; but lifestyle may not be the only reason for the decrease. Confounding factors (C): age, sex, ethnicity, genetic predisposition (high blood pressure/cholesterol/diabetes) — any of which could stop deaths reaching zero. Data (D): death rate declines in all countries except Montenegro; UK vs European comparisons; the graph appears to be plateauing; percentage vs absolute change; the table shows males and females but the graph males only; gradual decline (not a single event); incomplete data (only 1990 and 2019, no ages); only death from CHD (not incidence); no evidence lifestyle choices have actually changed.'
+                },
+                guidance: '9 marks. Levels-of-response: mark holistically, best fit.' },
+              '10(a)': { type: 'points', points: [
+                  'Mass of the maggots',
+                  'Radius / diameter / area of the capillary tubing (or the volume of air from the syringe needed to reset the liquid)'
+                ], guidance: '2 marks.' },
+              '10(b)': { type: 'points', points: [
+                  'Use a thermostatically controlled water bath, so temperature does not affect the rate',
+                  'Control the age of the maggots, as respiratory rate changes with age',
+                  'Control the species of maggot',
+                  'Use a control tube without maggots to account for changes in temperature/pressure',
+                  'Allow the maggots to equilibrate before recording results'
+                ], guidance: '2 max.' },
+              '10(c)(i)': { type: 'exact', points: ['0.07 mm³ min⁻¹ g⁻¹'],
+                guidance: '1 mark. Halving the mean rate (0.14) for a 10 °C drop = 0.07.' },
+              '10(c)(ii)': { type: 'points', points: [
+                  'Enzymes/substrates will have less kinetic energy',
+                  'So collisions between enzymes and substrates are less frequent (fewer enzyme–substrate complexes form per unit time)'
+                ], guidance: '2 marks.' },
+              '10(d)': { type: 'points', points: [
+                  'Oxygen is the final / terminal hydrogen (electron) acceptor',
+                  'Allows electrons to pass down the electron transport chain',
+                  'Allows NAD / FAD to be regenerated',
+                  'Movement of hydrogen ions / protons through ATP synthase in the membrane drives the synthesis of ATP'
+                ], guidance: '3 max.' },
+              '11(a)(i)': { type: 'points', points: ['A suitable factor, e.g. rainfall / water availability; frequency of mowing or grazing; use of herbicide; time of year; geographical location; disease; number of participants'],
+                guidance: '1 mark.' },
+              '11(a)(ii)': { type: 'points', points: [
+                  'Strength: a large amount of data collected',
+                  'Strength: the method is simple / easy to follow (easier to count flowers than plants); random sampling reduces bias',
+                  'Weakness: the area surveyed may not be exactly 1 m² (or may not be chosen randomly)',
+                  'Weakness: plants/flowers may be identified or counted incorrectly',
+                  'Weakness: we are not told the area surveyed in 2019 / the time of year may vary'
+                ], guidance: '5 max (≥1 strength and ≥1 weakness).' },
+              '11(b)(i)': { type: 'exact', points: ['3.4'],
+                guidance: '3 marks. N = 35, N(N−1) = 1190; Σn(n−1) = 110 + 56 + 182 + 2 = 350; D = 1190 ÷ 350 = 3.4. 1 mark each. Correct answer with no working gains full marks.' },
+              '11(b)(ii)': { type: 'points', points: [
+                  'Record/count all species of plants (including grasses)',
+                  'Record/count the number of plants, not the number of flowers'
+                ], guidance: '2 marks.' },
+              '11(c)(i)': { type: 'exact', points: ['≈ 3.5 bees per m²', '3.53'],
+                guidance: '2 marks. Nectar to support one bee = 41 912 ÷ 3.8 = 11 029; 38 885 ÷ 11 029 = 3.5 bees per m². 1 mark for an intermediate step. Correct answer with no working gains 2 marks.' },
+              '11(c)(ii)': { type: 'points', points: [
+                  'Short term: a decrease in the bee population due to a lack of food/nectar (≈ 7.9% decrease)',
+                  'Short term: fewer bees → reduced pollination of wildflowers → less seed/offspring produced',
+                  'Long term: the wildflower plant population declines in future years (reduced genetic diversity)',
+                  'Long term: the decline of wildflowers could further reduce bee populations / reduce crop yields / affect predators'
+                ], guidance: '4 max (≥1 short-term and ≥1 long-term effect).' }
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
