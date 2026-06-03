@@ -14767,7 +14767,253 @@ window.SUBJECTS = [
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
-        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/biology-b-2015.html' },
+        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/biology-b-2015.html',
+        // Pearson filestore (same folder as Edexcel A). Papers 1 and 2 are 90
+        // marks (1h45); Paper 3 is 120 marks (2h30, with a pre-released
+        // scientific article for the final question). June 2022–2024 public.
+        // Single-answer multiple-choice parts are wired as exact-answer checks;
+        // the asterisked (*) questions are levels-of-response.
+        papers: [
+          { id: 'bio-edxb-9bi0-2024-p1', year: 'June 2024', paperName: 'Paper 1 — Advanced Biochemistry, Microbiology and Genetics', paperCode: '9BI0/01', totalMarks: 90, durationMins: 105,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-01-que-20240606.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-01-rms-20240815.pdf',
+            qbqNote: 'All 9 questions (90 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Blood is pumped around the body in blood vessels to supply cells with nutrients and oxygen.",
+                parts: [
+                  { code: '1(a)', prompt: "Which box in each row of the table shows where endothelial cells and valves are found (both capillaries and veins / capillaries only / veins only / neither)? Give the type of blood vessel for: (i) endothelial cells; (ii) valves.", marks: 2 },
+                  { code: '1(b)', preamble: "Nutrients and oxygen pass into cells from tissue fluid.", prompt: "Explain how tissue fluid is formed.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "Glucose is a monosaccharide that is found in sucrose, amylose and amylopectin.",
+                parts: [
+                  { code: '2(a)', prompt: "Sucrose is made from glucose and one other molecule. Which row gives the name of this molecule and the type of reaction that joins the two molecules?\n\nA  fructose, condensation\nB  fructose, hydrolysis\nC  galactose, condensation\nD  galactose, hydrolysis", marks: 1 },
+                  { code: '2(b)', prompt: "Compare and contrast the structure of amylose and amylopectin.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "Viruses can replicate using the lytic cycle and can be grown in a laboratory by culturing them with appropriate cells. A graph shows the change in the number of viruses after they were added to the cells.\n\n(See the graph in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)', prompt: "Explain why viruses have to be cultured with 'appropriate cells'.", marks: 2 },
+                  { code: '3(b)(i)', prompt: "Explain why the number of viruses did not start to increase until after 20 minutes.", marks: 3 },
+                  { code: '3(b)(ii)', preamble: "At 70 minutes log₁₀(number) ≈ 7; at 50 minutes ≈ 5.7.", prompt: "Calculate how many more viruses are present at 70 minutes than at 50 minutes. Give your answer to three significant figures.", marks: 2 }
+                ] },
+              { number: 4,
+                scenario: "Photosynthesis results in the production of GALP, which plants use to produce glucose and other organic molecules.",
+                parts: [
+                  { code: '4(a)', prompt: "Glucose consists of carbon, hydrogen and oxygen. Name the inorganic molecules that supply these elements for photosynthesis (for carbon, for hydrogen, and for oxygen).", marks: 2 },
+                  { code: '4(b)', prompt: "Light is needed for photolysis and the excitation of electrons. Which row shows where photolysis and the excitation of electrons occurs?\n\nA  stroma / stroma\nB  stroma / thylakoid membrane\nC  thylakoid membrane / stroma\nD  thylakoid membrane / thylakoid membrane", marks: 1 },
+                  { code: '4(c)(i)', preamble: "Scientists used electricity from solar panels to convert carbon dioxide and water into acetate; plants were then able to grow in the dark using the acetate.", prompt: "Explain why these plants were able to grow in the dark.", marks: 3 },
+                  { code: '4(c)(ii)', preamble: "The scientists hope this technique will produce plant-based food.", prompt: "State one advantage of using this method and give a reason for your answer.", marks: 1 }
+                ] },
+              { number: 5,
+                scenario: "Septicaemia is a life-threatening condition that can arise from bacterial infection. Two types of bacteria that cause it are Escherichia coli (Gram negative) and Staphylococcus aureus (Gram positive).\n\n(See the graphs in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)', preamble: "In one year, 245 000 people were diagnosed with septicaemia and 49 735 died as a result.", prompt: "Which percentage of people survived septicaemia in this year?\n\nA  20.3%\nB  25.5%\nC  39.3%\nD  79.7%", marks: 1 },
+                  { code: '5(b)(i)', prompt: "Which statements about the cell walls of these bacteria are correct?\n1. Both bacteria have peptidoglycan (murein) in their cell walls.\n2. S. aureus has an outer membrane (lipopolysaccharide layer).\n3. The cell wall of E. coli is thinner than that of S. aureus.\n\nA  2 only\nB  3 only\nC  1 and 2 only\nD  1 and 3 only", marks: 1 },
+                  { code: '5(b)(ii)', preamble: "E. coli produces the same type of toxin as Salmonella.", prompt: "Which statements about the toxins produced by these bacteria are correct?\n1. E. coli produces endotoxins.\n2. The toxins produced by S. aureus are released only once the bacteria die.\n3. The toxins produced by S. aureus are components of their cell wall.\n\nA  1 only\nB  2 only\nC  1 and 2 only\nD  1, 2 and 3", marks: 1 },
+                  { code: '5(c)', preamble: "Vaccines against bacteria are not always effective; the antigens they contain stimulate only a weak immune response.", prompt: "Which type of immune response is stimulated by a vaccine?\n\nA  artificial active\nB  artificial passive\nC  natural active\nD  natural passive", marks: 1 },
+                  { code: '5(d)(i)', preamble: "Scientists are developing implantable vaccines against E. coli and S. aureus, with bacterial antigens in a mesh that attracts tissue macrophages. A graph shows the number of T helper cells in the draining lymph nodes over 21 days.", prompt: "Explain the results shown in the graph.", marks: 3 },
+                  { code: '5(d)(ii)', preamble: "Mice had the vaccine implanted 35 days before being infected with E. coli; a control group was not vaccinated. A graph shows the antibody levels in both groups after infection.", prompt: "Explain the results shown in the graph.", marks: 3 }
+                ] },
+              { number: 6,
+                scenario: "In a cell, DNA is found in both the nucleus and the mitochondria.\n\n(See the gel-electrophoresis and tRNA diagrams in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)', prompt: "Where is DNA found in mitochondria?\n\nA  cytoplasm\nB  intermembrane space\nC  matrix\nD  nucleus", marks: 1 },
+                  { code: '6(b)', prompt: "Which row describes DNA found in the mitochondria (shape; ratio of phosphodiester bonds : pentose sugars)?\n\nA  circular, higher than nuclear DNA\nB  circular, lower than nuclear DNA\nC  linear, higher than nuclear DNA\nD  linear, lower than nuclear DNA", marks: 1 },
+                  { code: '6(c)', preamble: "A gel-electrophoresis diagram shows bands at positions 1–5 for a family (mother, father, daughter, son 1, son 2).", prompt: "Analyse the information to explain the bands found at positions 1 to 5 in this family.", marks: 4 },
+                  { code: '6(d)(i)', preamble: "A mutation in the tRNALys gene in the mitochondria replaces one uracil with a cytosine in the resulting tRNA molecule.", prompt: "Name this type of mutation.", marks: 1 },
+                  { code: '6(d)(ii)', prompt: "Explain how this mutation could affect the structure of the tRNALys molecule shown in the diagram.", marks: 2 },
+                  { code: '6(d)(iii)', prompt: "Explain how this mutation could affect the role of the tRNALys molecule.", marks: 2 }
+                ] },
+              { number: 7,
+                scenario: "Coal tits, blue tits and great tits are three UK bird species, all with mitochondria in their red blood cells. A photograph shows a blue tit.\n\n(See the photograph, table and graphs in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)(i)', preamble: "More than 90% of ATP is produced by mitochondrial respiration.", prompt: "Describe how the remaining ATP is produced.", marks: 2 },
+                  { code: '7(a)(ii)', preamble: "Leakage of protons (H⁺) across the inner mitochondrial membrane reduces ATP synthesis and generates more heat (leaked respiration).", prompt: "Explain why leakage of protons reduces ATP synthesis.", marks: 3 },
+                  { code: '7(b)(i)', preamble: "An adult blue tit is 12 cm from head to tail.", prompt: "Calculate the magnification of the photograph of the blue tit (measure from the top of the head to the tip of the tail).", marks: 1 },
+                  { code: '7(b)(ii)', preamble: "A great tit is 14 cm head to tail with a mass of 18 g.", prompt: "Calculate the length from head to tail : mass ratio for the great tit. Give your answer to one decimal place.", marks: 1 },
+                  { code: '7(c)(i)', preamble: "The generation of heat by red blood cell mitochondria was investigated in autumn (mean 10.7 °C) and winter (7.2 °C), with bird feeders containing nuts refilled each day.", prompt: "Explain why well-stocked bird feeders containing nuts were available throughout this investigation.", marks: 2 },
+                  { code: '7(c)(ii)', preamble: "Graphs show: (1) mean volume of mitochondria, (2) respiration producing ATP, and (3) leaked respiration, for each species in autumn and winter.", prompt: "Explain the results of this investigation. Use all the information in the question to support your answer.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 8,
+                scenario: "Changes must occur to mammalian sperm cells as they pass through the female reproductive tract for successful fertilisation. Capacitation changes the sperm cell membrane and increases motility; the acrosome reaction (AR) must follow capacitation but not too soon nor too late.",
+                parts: [
+                  { code: '8(a)', prompt: "Explain why the timing of the AR is important for successful fertilisation.", marks: 3 },
+                  { code: '8(b)', preamble: "A protein involved in the timings exists as protein G (inhibits the AR, located in the head) and protein GP (stimulates capacitation, located in the midpiece and flagellum). Levels change just before capacitation, during capacitation, and just before the AR.", prompt: "Complete the table to show which form of protein (G in the head region; GP in the midpiece and flagellum) is present (✓) or absent (✗) at each event: just before capacitation, during capacitation, and just before the AR.", marks: 4 },
+                  { code: '8(c)', preamble: "In some infertile males, the gene coding for protein G is methylated.", prompt: "Explain why DNA-methylation of this gene could result in infertility.", marks: 3 },
+                  { code: '8(d)(i)', preamble: "Scientists have used 'knockout' mice to investigate the effect of protein G on fertility.", prompt: "State the meaning of the term 'knockout' mice, as used in this context.", marks: 2 },
+                  { code: '8(d)(ii)', preamble: "Female mice and 'knockout' mice were housed together.", prompt: "Describe how this investigation should be designed to confirm that protein G affects fertility.", marks: 3 }
+                ] },
+              { number: 9,
+                scenario: "The structure of haemoglobin changes as the embryo develops into a fetus and after birth. A graph shows the changes in synthesis of four globin subunits (beta, gamma, delta, epsilon) and the structures responsible (yolk sac, liver, spleen, bone marrow).\n\n(See the graph in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)(i)', prompt: "Explain why there is no synthesis of globin subunits in the first few days after fertilisation.", marks: 3 },
+                  { code: '9(a)(ii)', prompt: "Analyse the data to describe conclusions that can be made about globin subunit synthesis during the 14 months following fertilisation.", marks: 4 },
+                  { code: '9(a)(iii)', preamble: "Gamma globin synthesis falls from 84% at 7.6 months to 32% at 10 months.", prompt: "Calculate the rate of decrease in percentage of gamma globin subunit synthesis from 7.6 to 10 months after fertilisation. Give your answer to two decimal places with appropriate units.", marks: 2 },
+                  { code: '9(b)(i)', preamble: "There are approximately 67 million people in the UK; 15 000 are affected by sickle cell disease (SCD).", prompt: "Calculate the ratio of the number of people without SCD to the number of people with SCD in the UK. Express your answer in whole numbers.", marks: 2 },
+                  { code: '9(b)(ii)', preamble: "A new treatment for SCD genetically modifies bone marrow stem cells by turning the BCL11A gene off (its product regulates the switch from fetal to adult globin subunit synthesis), then returns them to the same patient.", prompt: "Analyse all the information to discuss how this approach could provide a cure for SCD and the ethical issues surrounding this treatment. Use your own knowledge to support your answer.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'exact', points: ['Endothelial cells: both capillaries and veins. Valves: veins only.'],
+                guidance: '2 marks (1 each).' },
+              '1(b)': { type: 'points', points: [
+                  '(Blood) fluid is forced through the capillary wall',
+                  'Due to high hydrostatic pressure (at the arterial end) / narrowing of the arteries'
+                ], guidance: '2 marks. Accept pores/gaps in the capillary.' },
+              '2(a)': { type: 'exact', points: ['A — fructose, condensation'], guidance: '1 mark.' },
+              '2(b)': { type: 'points', points: [
+                  'Both contain α glucose',
+                  'Both contain glycosidic bonds',
+                  'Amylose has 1–4 glycosidic bonds only, but amylopectin has both 1–4 and 1–6 glycosidic bonds',
+                  'Amylose is helical/coiled (unbranched) but amylopectin is branched'
+                ], guidance: '3 max. "Both contain glucose joined by α glycosidic bonds" = 2 marks.' },
+              '3(a)': { type: 'points', points: [
+                  'Viruses can only bind to one type / a limited number of types of cell (due to receptors)',
+                  'Because they cannot replicate without a host cell'
+                ], guidance: '2 marks.' },
+              '3(b)(i)': { type: 'points', points: [
+                  'Time was needed for the viral DNA/RNA (genetic material) to enter the cell',
+                  'Time needed for nucleic acid / protein synthesis (transcription/translation)',
+                  'Time needed for assembly of the viruses',
+                  'Numbers only increase once the host cells have been lysed'
+                ], guidance: '3 max.' },
+              '3(b)(ii)': { type: 'exact', points: ['9.50 × 10⁶ (9 500 000)'],
+                guidance: '2 marks. 10⁷ − 10^5.7 = 9 498 813 ≈ 9.50 × 10⁶. 1 mark for the values read from the graph; 1 for the answer to 3 sf.' },
+              '4(a)': { type: 'exact', points: ['Carbon: carbon dioxide; Hydrogen: water; Oxygen: carbon dioxide'],
+                guidance: '2 marks. All 3 correct = 2; 1–2 correct = 1. Ignore formulae CO₂/H₂O.' },
+              '4(b)': { type: 'exact', points: ['D — thylakoid membrane / thylakoid membrane'], guidance: '1 mark.' },
+              '4(c)(i)': { type: 'points', points: [
+                  'Because carbon dioxide has already been fixed (into acetate)',
+                  'Acetate is used to form GALP / glucose / organic molecules',
+                  'And to store organic molecules as biomass',
+                  'Acetate can be used in respiration'
+                ], guidance: '3 max.' },
+              '4(c)(ii)': { type: 'points', points: [
+                  'Can be grown anywhere/indoors (no need for sunlight) — e.g. where daylight is limited / day or night, so higher yield'
+                ], guidance: '1 mark (advantage + reason).' },
+              '5(a)': { type: 'exact', points: ['D — 79.7%'],
+                guidance: '1 mark. (245 000 − 49 735) ÷ 245 000 × 100 = 79.7%.' },
+              '5(b)(i)': { type: 'exact', points: ['D — 1 and 3 only'], guidance: '1 mark. (S. aureus is Gram positive, so statement 2 is wrong.)' },
+              '5(b)(ii)': { type: 'exact', points: ['A — 1 only'], guidance: '1 mark. (S. aureus releases exotoxins while alive.)' },
+              '5(c)': { type: 'exact', points: ['A — artificial active'], guidance: '1 mark.' },
+              '5(d)(i)': { type: 'points', points: [
+                  'Few T helper cells at the start as there is a delay while the antigen is being presented',
+                  'Some T helper cells present as they have been activated and are beginning to divide (clonal selection)',
+                  'Large number by day 2 due to clonal expansion (division by mitosis)',
+                  'Drop in number after 21 days as the T helper cells have died / moved out of the lymph nodes'
+                ], guidance: '3 max. Ignore descriptions of the immune response not linked to time.' },
+              '5(d)(ii)': { type: 'points', points: [
+                  'No antibodies in control mice as they had not been exposed to the antigen before (a primary response takes time)',
+                  'Rapid production of antibodies in vaccinated mice due to a secondary immune response',
+                  'Immediate increase in vaccinated mice as memory cells were present from the vaccine',
+                  'Therefore rapid increase in plasma cells to release antibodies'
+                ], guidance: '3 max.' },
+              '6(a)': { type: 'exact', points: ['C — matrix'], guidance: '1 mark.' },
+              '6(b)': { type: 'exact', points: ['A — circular, higher than nuclear DNA'],
+                guidance: '1 mark. Circular DNA has two more phosphodiester bonds than linear DNA with the same number of pentoses.' },
+              '6(c)': { type: 'points', points: [
+                  'Position 1: only the daughter has inherited this DNA from the mother',
+                  'Position 2: (genes in) this DNA is common to all people',
+                  'Position 3: daughter and son 1 inherited this DNA from their father but son 2 has not',
+                  'Position 4: this could be mitochondrial DNA as it is found in the mother and all children',
+                  'Position 5: this could be the mitochondrial DNA of the father as it is not present in any of the children'
+                ], guidance: '4 max. Must refer to the DNA in a band at least once.' },
+              '6(d)(i)': { type: 'exact', points: ['Substitution'],
+                guidance: '1 mark. Accept transition. Do not accept insertion/deletion/frameshift/inversion.' },
+              '6(d)(ii)': { type: 'points', points: [
+                  'The cytosine will not bind with the adenine',
+                  'Therefore the hydrogen bonds will not form',
+                  'So the left-hand loop will open up / other bonds may form'
+                ], guidance: '2 max. Accept "the tRNA will be a different shape".' },
+              '6(d)(iii)': { type: 'points', points: [
+                  'The tRNA may not bind with the ribosome, so cannot hold the amino acid in place',
+                  'OR the amino acid may not bind to the tRNA, so it cannot be brought to the ribosome',
+                  'OR the anticodon may not bind to the codon on the mRNA, so the amino acid is not held in place'
+                ], guidance: '2 max (a paired idea).' },
+              '7(a)(i)': { type: 'points', points: [
+                  'During glycolysis',
+                  'Glucose is converted to pyruvate',
+                  'By substrate-level phosphorylation'
+                ], guidance: '2 max. Accept anaerobic respiration.' },
+              '7(a)(ii)': { type: 'points', points: [
+                  'Because the proton gradient would be shallower',
+                  'So protons would flow through the ATP synthase more slowly',
+                  'Therefore less energy for the phosphorylation of ADP'
+                ], guidance: '3 marks. Accept electrochemical/chemiosmotic gradient.' },
+              '7(b)(i)': { type: 'exact', points: ['≈ × 0.33', '0.33 to 0.35'],
+                guidance: '1 mark. Magnification = image length (≈ 40 mm) ÷ actual (120 mm) ≈ 0.33.' },
+              '7(b)(ii)': { type: 'exact', points: ['0.8 : 1'],
+                guidance: '1 mark. 14 : 18 = 0.8 : 1.' },
+              '7(c)(i)': { type: 'points', points: [
+                  'To attract the birds to be caught',
+                  'So that respiration would not be limited by the energy source (all birds had plenty to eat)',
+                  'To make the investigation valid'
+                ], guidance: '2 max.' },
+              '7(c)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'An explanation supported throughout by sustained application of analysis/interpretation/evaluation of the information; a well-developed, sustained line of reasoning, clear and logically structured. Explains all three graphs and discusses both size and seasonal variation (and error bars).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'An explanation with occasional analysis/interpretation of both pieces of information; some lines of reasoning with structure. Explanation for one or two graphs.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A limited explanation focused on mainly one piece of information; simple descriptions of the data (one to three graphs).' }
+                ],
+                indicative: {
+                  'Indicative content': 'Graph 1 (mitochondrial volume): great tits > blue tits > coal tits; bigger birds need more ATP for flight; all three increase mitochondrial number in winter (by division) to generate more heat; error bars do not overlap (significant). Graph 2 (respiration making ATP): coal tits respire faster (fewer mitochondria); rate decreases in winter for blue/coal tits as they switch to leaked respiration (larger SA:V → more heat loss). Graph 3 (leaked respiration): faster in all species in winter and faster in coal tits, producing more heat for the smaller birds with a larger SA:V; no error bars so significance is uncertain.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '8(a)': { type: 'points', points: [
+                  'If the AR is too early there will not be enzymes available for fertilisation',
+                  'And it will not be able to digest through the zona pellucida / jelly coat',
+                  'If the AR is too late the egg/sperm may have died / the sperm have swum past the egg'
+                ], guidance: '3 marks.' },
+              '8(b)': { type: 'exact', points: ['Just before capacitation: G present in head ✓, GP absent in midpiece/flagellum ✗. During capacitation: G absent in head ✗, GP present ✓. Just before the AR: G present in head ✓, GP present ✓.'],
+                guidance: '4 marks. Best assessed against the completed table in the QP PDF.' },
+              '8(c)': { type: 'points', points: [
+                  'DNA methylation silences / switches off a gene',
+                  'Because it is a form of epigenetic modification',
+                  'Therefore the gene cannot be transcribed / no protein G will be produced',
+                  'Without protein G the timings of capacitation and the AR will be wrong'
+                ], guidance: '3 max. Accept "if the AR is not inhibited it will happen too soon".' },
+              '8(d)(i)': { type: 'points', points: [
+                  'Genetically-modified (laboratory) mice',
+                  'That have had the gene coding for protein G inactivated / replaced (prevented from being expressed)'
+                ], guidance: '2 marks.' },
+              '8(d)(ii)': { type: 'points', points: [
+                  'All female mice would have to be fertile',
+                  'Fertile males used as a control (a group that have not had the gene modified)',
+                  'Pregnancy rate / number of offspring measured',
+                  'Same species/age of mouse / diet controlled'
+                ], guidance: '3 max.' },
+              '9(a)(i)': { type: 'points', points: [
+                  'Because the embryo is increasing in cell number (mitosis)',
+                  'All the cells are unspecialised (not yet differentiated)',
+                  'And have no genes switched on to produce the globin subunits',
+                  'No yolk sac has developed yet'
+                ], guidance: '3 max. Ignore "genes haven\'t been switched off".' },
+              '9(a)(ii)': { type: 'points', points: [
+                  'The structure responsible for synthesising the globin subunits changes with time after fertilisation',
+                  'The embryo/fetus contains gamma globin and either epsilon or beta globin (and some delta)',
+                  'The baby has increasing levels of beta (and delta) and decreasing levels of gamma globin',
+                  'The yolk sac is responsible for synthesis of epsilon globin',
+                  'The liver synthesises mainly gamma globin',
+                  'The bone marrow synthesises both components of adult haemoglobin'
+                ], guidance: '4 max.' },
+              '9(a)(iii)': { type: 'exact', points: ['21.67 (%) month⁻¹'],
+                guidance: '2 marks. (84 − 32) ÷ 2.4 = 21.67 % per month. 1 mark for the values/working; 1 for the answer to 2 dp with units.' },
+              '9(b)(i)': { type: 'exact', points: ['4466 : 1'],
+                guidance: '2 marks. (67 000 000 − 15 000) = 66 985 000; ÷ 15 000 = 4466 : 1. 1 mark for the number without SCD; 1 for the ratio.' },
+              '9(b)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Comprehensive knowledge applied; consequences supported throughout by sustained linkage; a well-developed, sustained line of reasoning, clear and logically structured. Discusses aspects from all sections (SCD/globin, the BCL11A switch, the stem-cell method) including the ethical issues and the significance of using the patient\'s own stem cells.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Adequate knowledge with some relevant facts; consequences occasionally supported by linkage; some lines of reasoning with structure. Limited links between the treatment and SCD, with a basic understanding of the method.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; a limited discussion of the treatment / SCD / ethics.' }
+                ],
+                indicative: {
+                  'Indicative content': 'SCD: a mutation in the beta-globin gene changes the red blood cell shape and reduces blood supply; fetal haemoglobin uses gamma globin, switched to beta at birth. BCL11A: switching it off means its product is not made, so gamma (fetal) globin keeps being produced — which is not defective, so cells are no longer sickle-shaped. Method: bone marrow stem cells divide by mitosis to give genetically identical cells carrying the modified gene; using the patient\'s own cells avoids an immune response / rejection / immunosuppressants. Ethics: new technology with little long-term evidence; cost; changes are not inherited; painful cell extraction; consent if young; who gets the treatment.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } }
+        ] },
       { board: 'OCR A', specCode: 'H420',
         officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/biology-a-h020-h420-from-2015/assessment/' },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
