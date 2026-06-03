@@ -18370,6 +18370,191 @@ window.SUBJECTS = [
                   'Glucose is small, so it can cross membranes (fit through protein channels)',
                   'Its OH / H groups allow hydrogen-bond formation / solubility / bonding with water molecules'
                 ], guidance: '2 marks.' }
+            } },
+          { id: 'bio-ocra-h420-2023-p3', year: 'June 2023', paperName: 'Paper 3 — Unified biology', paperCode: 'H420/03', totalMarks: 70, durationMins: 90,
+            qpUrl: 'https://www.ocr.org.uk/Images/703904-question-paper-unified-biology.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/704032-mark-scheme-unified-biology.pdf',
+            qbqNote: 'All 7 questions (70 marks) are wired up question-by-question with the official OCR mark scheme. This synoptic paper has no multiple-choice section — all questions are structured. Questions 4(a) and 6 are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, micrographs, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Cats are mammals. A light micrograph of a section through the trachea of a cat (Fig. 1.1) shows tissues A and B and a box C (see the QP PDF).",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Name the tissues labelled A and B in Fig. 1.1.", marks: 2 },
+                  { code: '1(a)(ii)', prompt: "Name the two types of cell in the box labelled C in Fig. 1.1 and outline their functions.", marks: 2 },
+                  { code: '1(b)(i)', preamble: "An alveolus in the lung of a cat is spherical, with a diameter of 0.13 mm and a surface area of 0.053 mm². Volume of sphere = (4/3)πr³.", prompt: "Calculate the SA:V of this alveolus.", marks: 3 },
+                  { code: '1(b)(ii)', prompt: "Explain why the large SA:V of alveoli is an advantage to mammals.", marks: 1 },
+                  { code: '1(c)', preamble: "Fig. 1.2 shows a reflex response that stops objects becoming stuck in a cat's throat (sensory neurone → spinal trigeminal nucleus / nucleus ambiguus in the medulla → motor neurone) — see the QP PDF.", prompt: "Explain two conclusions that can be drawn from Fig. 1.2 about the type of nervous response shown.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "Vitamins are molecules consumed in the diet that have essential roles in the body.",
+                parts: [
+                  { code: '2(a)(i)', preamble: "Thin layer chromatography (TLC) was used to separate a mixture of vitamins. Most vitamins are colourless.", prompt: "Suggest one method for visualising the vitamins in TLC.", marks: 1 },
+                  { code: '2(a)(ii)', preamble: "The TLC chromatogram is shown in Fig. 2.1 (see the QP PDF).", prompt: "Use Fig. 2.1 to calculate the Rf value of vitamin B2.", marks: 2 },
+                  { code: '2(b)', preamble: "Vitamin B9 is needed for the synthesis of molecule D (Fig. 2.2), a component of DNA. A deficiency of vitamin B9 can cause interphase to stop in some cells.", prompt: "Use Fig. 2.2 to explain why a deficiency of vitamin B9 can cause interphase to stop.", marks: 2 },
+                  { code: '2(c)(i)', kind: 'diagram', preamble: "Vitamin B2 is used to make FAD. A mitochondrion is shown in Fig. 2.3 (see the QP PDF).", prompt: "Label Fig. 2.3 with the letter E to show where FAD gains H atoms and the letter F to show where FAD releases H atoms during respiration.", marks: 2 },
+                  { code: '2(c)(ii)', prompt: "Complete the table by adding a tick (correct) or cross (incorrect) for FAD and NAD against each feature: 'Is a prosthetic group'; 'Is reduced in the link reaction'; 'Oxidises molecules in the electron transport chain'.", marks: 2 },
+                  { code: '2(c)(iii)', prompt: "ATP is used in the early stages of glycolysis. Suggest one other way in which ATP contributes to the process of respiration.", marks: 1 },
+                  { code: '2(d)(i)', preamble: "Vitamin C acts as a coenzyme for several enzymes in the synthesis of collagen.", prompt: "Outline the role of coenzymes in biological reactions.", marks: 2 },
+                  { code: '2(d)(ii)', preamble: "A scientist measured the activity of adenylyl cyclase (ATP → cAMP) without vitamin C and with 1 mmol dm⁻³ vitamin C; the results are in Fig. 2.4 (see the QP PDF).", prompt: "Explain what can be concluded from the results in Fig. 2.4 about the effect of vitamin C on the activity of adenylyl cyclase.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "Genetic modification and selective breeding can improve crop plants such as maize.",
+                parts: [
+                  { code: '3(a)(i)', preamble: "Non-photochemical quenching (NPQ) converts excess light to heat but continues when light is no longer in excess, making photosynthesis inefficient. Scientists GM-modified plants to limit NPQ and compared the rate of NPQ and CO₂ fixation in unmodified and GM plants after a decrease in light intensity (table in the QP PDF).", prompt: "State one dependent variable in this investigation.", marks: 1 },
+                  { code: '3(a)(ii)', prompt: "Explain the effect of genetic modification on the rate of CO₂ fixation after 150 seconds of low light intensity.", marks: 2 },
+                  { code: '3(a)(iii)', prompt: "Often a single company holds the patent for a GM crop plant. Suggest a potential ethical issue that may exist if one company holds the patent.", marks: 1 },
+                  { code: '3(b)', prompt: "Describe how bioinformatics and computational biology can be used to compare the genomes of different varieties of maize.", marks: 3 },
+                  { code: '3(c)', preamble: "Colour: A (purple) dominant to a (yellow). Kernel shape: B (smooth) dominant to b (wrinkled). The genes are on different chromosomes. One parent is purple and smooth, heterozygous for both genes; the other is yellow and smooth, heterozygous for gene B/b.", prompt: "Complete the genetic cross: parental genotypes, gametes, expected offspring phenotypes and the expected phenotypic ratio.", marks: 4 }
+                ] },
+              { number: 4,
+                scenario: "The Convention on International Trade in Endangered Species (CITES) came into effect in 1975.",
+                parts: [
+                  { code: '4(a)', preamble: "Fig. 4.1 shows the percentage of threatened species protected under CITES; Fig. 4.2 shows the number of species assessed and the number categorised as threatened by the IUCN each year (see the QP PDF). The aim of CITES is to monitor and regulate the international trade of threatened species to prevent extinctions.", prompt: "Using the data in Fig. 4.1 and Fig. 4.2, evaluate how successful CITES has been in achieving its aim.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '4(b)(i)', preamble: "The kakapo is an endangered flightless bird of New Zealand; there are now fewer than 250 in the wild.", prompt: "State the term for a large decrease in population size that reduces the gene pool.", marks: 1 },
+                  { code: '4(b)(ii)', prompt: "Name the type of adaptation (anatomical, behavioural or physiological) represented by each of four kakapo traits: active at night to avoid predators; green feathers that camouflage; slow digestion to extract nutrients; strong beak and claws to climb trees.", marks: 2 },
+                  { code: '4(b)(iii)', preamble: "The kakapo, kaka and kea evolved from a common ancestor ~70 million years ago; the evolutionary timeline (Fig. 4.4) shows the emergence of the Southern Alps. All three live on the South Island; kaka also live on the North Island. A student suggested all three species evolved by sympatric speciation.", prompt: "Evaluate the student's conclusion.", marks: 4 },
+                  { code: '4(b)(iv)', preamble: "Species biodiversity includes species richness and species evenness.", prompt: "Explain the difference between species richness and species evenness.", marks: 2 }
+                ] },
+              { number: 5,
+                scenario: "Yeast can respire aerobically or anaerobically.",
+                parts: [
+                  { code: '5(a)(i)', preamble: "A student measured the CO₂ produced by four yeast populations given fructose, glucose, maltose or sucrose as a respiratory substrate over 150 minutes (Fig. 5.1) — see the QP PDF.", prompt: "Compare CO₂ production when the substrate is glucose and when the substrate is maltose.", marks: 2 },
+                  { code: '5(a)(ii)', preamble: "The student wrote: 'The CO₂ production with fructose is approximately the same as the CO₂ production with sucrose.'", prompt: "Explain whether you agree with the student's note.", marks: 2 },
+                  { code: '5(b)(i)', preamble: "A student plans to compare anaerobic respiration in two yeast species. They produce a 0.01 mol dm⁻³ glucose solution by making two 10-fold dilutions from a 1.0 mol dm⁻³ stock, using a measuring cylinder for the water and a dropping pipette for the glucose solutions.", prompt: "Suggest two ways in which the student can reduce the percentage error in their measurements when producing the glucose solutions.", marks: 2 },
+                  { code: '5(b)(ii)', prompt: "Complete the sentences about the method: place the yeast in glucose solutions produced using … water; ensure anaerobic conditions by using a … flask; repeat with 10 populations from each species and calculate two means and two … .", marks: 3 }
+                ] },
+              { number: 6,
+                scenario: "Homeobox genes, including Hox genes, code for transcription factors and regulate the expression of structural genes.",
+                parts: [
+                  { code: '6', prompt: "Describe the general roles of homeobox genes in the human body and suggest the roles of these genes in the development of the brain.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true }
+                ] },
+              { number: 7,
+                scenario: "Organisms are classified into three domains: Archaea, Bacteria and Eukarya. A table compares features (type of DNA polymerase, type of helicase, histone proteins, size of ribosomes, mitochondria) across the three domains (see the QP PDF).",
+                parts: [
+                  { code: '7(a)', prompt: "Explain what conclusions can be drawn from the table about which two domains are most closely related.", marks: 3 },
+                  { code: '7(b)', prompt: "State the roles of DNA polymerase and helicase in cells.", marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['A = smooth (involuntary) muscle; B = cartilage'],
+                guidance: '2 marks. Ignore elastic fibres / elastin.' },
+              '1(a)(ii)': { type: 'points', points: [
+                  'Goblet cells — secrete mucus (to trap microorganisms)',
+                  'Ciliated epithelial cells — (beat to) move/waft the mucus (upwards / towards the throat)'
+                ], guidance: '2 marks (cell + function each). Do not allow "excrete mucus".' },
+              '1(b)(i)': { type: 'exact', points: ['46 : 1 (accept 46.1 : 1)'],
+                guidance: '3 marks. radius = 0.065 mm; volume = (4/3)π(0.065)³ = 0.00115 mm³; SA:V = 0.053 ÷ 0.00115 = 46:1. 1 mark each; correct value not as a ratio (e.g. 46) = 2 marks.' },
+              '1(b)(ii)': { type: 'points', points: ['A faster / increased rate of gas exchange / diffusion (greater uptake of oxygen)'],
+                guidance: '1 mark. Ignore "more efficient gas exchange" / "maximises area".' },
+              '1(c)': { type: 'points', points: [
+                  'It is involuntary / autonomic — it does not use the cerebrum / somatic nervous system / decision-making (coordinated by the medulla oblongata)',
+                  'It is a reflex / fast response — it involves only a few (three named) neurones / few synapses (coordinated by the brainstem / medulla)'
+                ], guidance: '2 marks (two conclusions, each explained).' },
+              '2(a)(i)': { type: 'points', points: ['Use a stain / dye (any named stain), OR view under UV light'],
+                guidance: '1 mark.' },
+              '2(a)(ii)': { type: 'exact', points: ['0.3 (accept 0.29–0.31)'],
+                guidance: '2 marks. Rf = distance moved by spot ÷ distance moved by solvent ≈ 2.4 ÷ 8 = 0.3. More than 2 sig figs = max 1.' },
+              '2(b)': { type: 'points', points: [
+                  'D is a pyrimidine base (thymine) with a pentose sugar (deoxyribose) — i.e. thymidine',
+                  'A B9 deficiency means fewer nucleotides / pyrimidines / bases are available',
+                  'So DNA synthesis / replication / the S phase slows / stops / is incomplete (less complementary base pairing with the purines/adenine on the template strand)',
+                  'The cell does not pass the G2 checkpoint'
+                ], guidance: '2 max.' },
+              '2(c)(i)': { type: 'points', points: ['Label E anywhere in the mitochondrial matrix (where FAD gains H); label F on the inner mitochondrial membrane (where FAD releases H)'],
+                guidance: '2 marks. Best assessed against your labelled Fig. 2.3.' },
+              '2(c)(ii)': { type: 'exact', points: ['Is a prosthetic group: FAD ✓, NAD ✗; Is reduced in the link reaction: FAD ✗, NAD ✓; Oxidises molecules in the ETC: FAD ✗, NAD ✗'],
+                guidance: '2 marks. 3 rows correct = 2; 2 rows correct = 1. No hybrid ticks.' },
+              '2(c)(iii)': { type: 'points', points: ['Active transport / uptake (e.g. of pyruvate into the mitochondrion), OR the synthesis of (named) enzymes involved in respiration'],
+                guidance: '1 max. Do not allow active transport of H⁺ ions; ignore the role of ATP in glycolysis.' },
+              '2(d)(i)': { type: 'points', points: [
+                  'Assists / activates enzymes (helps the enzyme carry out its function)',
+                  'Without being permanently bound to the enzyme (temporarily attached)',
+                  'An example of mechanism (e.g. helps the substrate bind to the active site / allows more enzyme–substrate complexes to form / reduces the activation energy)'
+                ], guidance: '2 max.' },
+              '2(d)(ii)': { type: 'points', points: [
+                  'Vitamin C acts as an inhibitor / reduces enzyme activity (activity is always lower with vitamin C / less cAMP produced)',
+                  'Possibly non-competitive because increasing ATP does not allow activity to reach the level without vitamin C (Vmax not reached)',
+                  'OR cannot decide whether competitive or non-competitive because activity has not plateaued at the ATP concentrations shown'
+                ], guidance: '2 max.' },
+              '3(a)(i)': { type: 'points', points: ['Rate of NPQ, OR rate of CO₂ fixation'],
+                guidance: '1 max.' },
+              '3(a)(ii)': { type: 'points', points: [
+                  'A greater rate of carbon fixation in GM plants (ORA), because less light energy is converted to heat / lower NPQ rate / more energy remains as light',
+                  'So more electrons enter the electron transport chain',
+                  'More ATP / reduced NADP is generated for / supplied to the Calvin cycle (light-independent stage)'
+                ], guidance: '2 max.' },
+              '3(a)(iii)': { type: 'points', points: ['The company could charge high prices (poorer farmers/countries cannot afford the GM seed), OR the GM crop is not available to everyone'],
+                guidance: '1 max.' },
+              '3(b)': { type: 'points', points: [
+                  'Sequence the genomes of the different varieties',
+                  'Develop / use (appropriate) software; use algorithms / statistical tests / (mathematical) models',
+                  'Store the data from the different DNA sequences (use a database)',
+                  'Analyse / identify the differences / similarities in the DNA sequences / alleles'
+                ], guidance: '3 max.' },
+              '3(c)': { type: 'exact', points: ['Parents AaBb × aaBb; gametes AB Ab aB ab and aB ab; offspring purple & smooth, purple & wrinkled, yellow & smooth, yellow & wrinkled; ratio 3 : 1 : 3 : 1'],
+                guidance: '4 marks (1 each: parental genotypes; gametes; the four phenotypes; the 3:1:3:1 ratio, accept 6:2:6:2). ECF for later marks if genotypes wrong; max 3 if incorrect symbols used throughout.' },
+              '4(a)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A detailed evaluation of the negatives AND positives in the data from both graphs. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Evaluation of both negatives and positives of one graph and either the negatives or the positives of the other graph. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Discussion of negatives or positives of either graph. Basic, unstructured, limited evidence.' }
+                ],
+                indicative: {
+                  'Positives (success)': 'The majority of threatened species are protected under CITES (4.1); ~20% of threatened species cannot be traded (4.1); the number of species assessed by the IUCN rises every year, so more can be protected (4.2); the number assessed is rising faster than the number identified as threatened (4.2).',
+                  'Negatives (lack of success)': 'More than a quarter of threatened species are not protected under CITES (4.1); more than three-quarters of threatened species can still be traded (4.1); trade is only one aspect of protection; the number assessed is a small fraction of all species (4.2); threatened species have risen more rapidly since 2018 (4.2); no data on extinctions; CITES and the IUCN alone cannot prevent extinctions.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '4(b)(i)': { type: 'exact', points: ['(Genetic / population) bottleneck'],
+                guidance: '1 mark.' },
+              '4(b)(ii)': { type: 'exact', points: ['Active at night: behavioural; green feathers: anatomical; slow digestion: physiological; strong beak and claws: anatomical'],
+                guidance: '2 marks. 4 correct = 2; 2 correct = 1.' },
+              '4(b)(iii)': { type: 'points', points: [
+                  'Evidence for sympatric speciation: the species lived in the same geographical area',
+                  'Ecological / behavioural / temporal isolation, because they occupy different niches (different diets / times of activity)',
+                  'Evidence for allopatric speciation: geographical isolation as the mountain range (Alps) emerged, creating a physical barrier',
+                  'Idea that some proto-kaka / kaka flew to the North Island (and evolved / later returned), so not all speciation was sympatric'
+                ], guidance: '4 max.' },
+              '4(b)(iv)': { type: 'points', points: [
+                  'Species richness is the number of different species (in an area / community / ecosystem)',
+                  'Species evenness is the relative abundance of individuals in each species'
+                ], guidance: '2 marks. Ignore "amount of different species".' },
+              '5(a)(i)': { type: 'points', points: [
+                  'CO₂ is produced earlier with maltose (ORA for glucose)',
+                  'CO₂ production is higher with maltose (e.g. ~100 cm³ vs ~84 cm³ for glucose)',
+                  'The difference between maltose and glucose increases over time',
+                  'Both show a slow increase at the start followed by a steeper increase later'
+                ], guidance: '2 max.' },
+              '5(a)(ii)': { type: 'points', points: [
+                  'Agree: the final volumes of CO₂ are low / similar / the same order of magnitude (neither rises far) / the same up to ~20 minutes',
+                  'Disagree: sucrose increases earlier / plateaus while fructose continues to rise; the final sucrose volume is approximately half that of fructose'
+                ], guidance: '2 max.' },
+              '5(b)(i)': { type: 'points', points: [
+                  'Use (named) equipment with a higher resolution / smaller intervals (e.g. a burette/syringe instead of a measuring cylinder for the water; a graduated/volumetric pipette or syringe instead of a dropping pipette for the glucose)',
+                  'Use fewer dilutions (one instead of two), or produce one 0.01 mol dm⁻³ solution for all the populations instead of separate solutions'
+                ], guidance: '2 max. Ignore "more intervals" / "precise" / "accurate".' },
+              '5(b)(ii)': { type: 'exact', points: ['sterilised / boiled / distilled (water); sealed / airtight / closed (flask); standard deviation(s)'],
+                guidance: '3 marks (1 per gap).' },
+              '6': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A detailed description of the general roles of homeobox genes AND valid suggestions for their roles in brain development. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A description of the general role of homeobox genes AND a valid suggestion for a role in brain development. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'An outline of the general role of homeobox genes OR a valid suggestion for a role in brain development. Basic and unstructured.' }
+                ],
+                indicative: {
+                  'General roles': 'Determine the overall body plan; switch different genes on/off in different cells and tissues (so determine cell identity); expressed in a set order during development; regulate the patterning and positioning of (named) structures; determine polarity; regulate levels of apoptosis and mitosis.',
+                  'Roles in brain development': 'Determine the head/tail (anterior/posterior) regions and so where the brain and spinal cord develop; expressed in a set order to determine regions of the brain and neural organisation; switch genes on/off in the brain to form specialised neurones; regulate mitosis and apoptosis of neurones to adjust neural organisation.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '7(a)': { type: 'points', points: [
+                  'Archaea and Eukarya are most closely related, due to similarities in histones / DNA polymerase',
+                  'Archaea and Bacteria share similarities in ribosomes / the absence of mitochondria',
+                  'There is no evidence that Bacteria and Eukarya are most closely related; the helicase comparison provides no useful evidence (all share it)',
+                  'Phylogeny / evolutionary relationships should be determined by genome analysis'
+                ], guidance: '3 max.' },
+              '7(b)': { type: 'points', points: [
+                  'DNA polymerase catalyses the formation of phosphodiester bonds between nucleotides (adds nucleotides to / proofreads the new DNA strand)',
+                  'Helicase unwinds / separates / unzips the DNA double helix (breaks the hydrogen bonds between base pairs)'
+                ], guidance: '2 marks.' }
             } }
         ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
