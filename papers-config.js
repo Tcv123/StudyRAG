@@ -13228,6 +13228,268 @@ window.SUBJECTS = [
                   'Results in reduced gene flow between populations',
                   '(Forming) populations with different gene pools'
                 ], guidance: '3 max.' }
+            } },
+          { id: 'bio-edxa-9bn0-2023-p1', year: 'June 2023', paperName: 'Paper 1 — The Natural Environment and Species Survival', paperCode: '9BN0/01', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-01-que-20230608.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-01-rms-20230817.pdf',
+            qbqNote: 'All 10 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Homo sapiens is the only living species of the genus Homo. Over 100 000 years ago, Homo neanderthalensis, a species closely related to modern humans, lived with other Homo species in the same habitat.",
+                parts: [
+                  { code: '1(a)', prompt: "Which of the following is the correct definition of the term habitat?\n\nA  a group of organisms of different species living in the same area\nB  a group of organisms of the same species living in the same area\nC  a place where an organism lives\nD  the role of an organism", marks: 1 },
+                  { code: '1(b)(i)', preamble: "A fossil bone discovered in China is thought to be from a new species, Homo longi. Samples of DNA from this bone and from other Homo species can be amplified using PCR.", prompt: "Describe how these amplified samples of DNA can be prepared for analysis using gel electrophoresis.", marks: 3 },
+                  { code: '1(b)(ii)', prompt: "Explain how the results of this analysis would show whether Homo longi is closely related to other Homo species.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "Human activities are affecting many habitats. These activities can change the biodiversity of communities and populations within a habitat. The biodiversity of plants growing in two ponds, A and B, at Brown Moss (a site of special scientific interest) was studied.\n\n(See the full species table in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)', prompt: "Which of the following describes biodiversity within a habitat?\n\nA  the number of different alleles and the number of the same species\nB  the number of different species and the number of different alleles\nC  the number of different species and the number of the same alleles\nD  the number of the same alleles and the number of the same species", marks: 1 },
+                  { code: '2(b)(i)', preamble: "In the table, Ranunculus circinatus has n = 13 in pond A.", prompt: "Complete the table for pond A giving the value for n(n−1) for Ranunculus circinatus and give the totals (for number n and for n(n−1)).", marks: 1 },
+                  { code: '2(b)(ii)', preamble: "For pond B, N = 156 and Σn(n−1) = 9110.", prompt: "Calculate the index of diversity for pond B using D = N(N−1) / Σn(n−1).", marks: 2 },
+                  { code: '2(b)(iii)', preamble: "Pond B is close to a farm and some houses; chemicals and waste have increased the levels of pollutants in pond B. The biodiversity index for pond A is 4.81.", prompt: "Comment on the effect of pollutants on the biodiversity of pond B.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "The genetic information for a cell is stored in the DNA.",
+                parts: [
+                  { code: '3(a)', prompt: "Describe the structure of a DNA mononucleotide.", marks: 2 },
+                  { code: '3(b)(i)', preamble: "Molecules of DNA are copied by semi-conservative replication.", prompt: "Which of the following is the result of semi-conservative replication?\n\nA  both DNA molecules are a mixture of original DNA and RNA\nB  both daughter DNA molecules contain one original DNA strand and one new DNA strand\nC  one daughter DNA molecule has two original parent strands, the other has two new strands\nD  each strand of both daughter DNA molecules is a mixture of original and new DNA", marks: 1 },
+                  { code: '3(b)(ii)', prompt: "Describe how DNA is replicated.", marks: 4 }
+                ] },
+              { number: 4,
+                scenario: "Cell division can be observed using a microscope. A photograph shows cells from a root tip dividing, with one cell labelled A.\n\n(See the photograph in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)(i)', prompt: "Which of the following is the stage of mitosis shown in the cell labelled A?\n\nA  anaphase\nB  cytokinesis\nC  metaphase\nD  telophase", marks: 1 },
+                  { code: '4(a)(ii)', prompt: "Describe how other plant tissues can be prepared to find out if the cells are undergoing mitosis.", marks: 3 },
+                  { code: '4(b)', prompt: "Describe what happens inside a cell during prophase of mitosis.", marks: 4 }
+                ] },
+              { number: 5,
+                scenario: "Many plants have medicinal properties and are used in traditional medicines; these plants are often endangered. A drug to treat breast cancer has been extracted from Taxus brevifolia, the Pacific yew tree.",
+                parts: [
+                  { code: '5(a)(i)', preamble: "Seeds from endangered plants are placed in seed banks to conserve the species.", prompt: "Describe how the seeds are preserved for long periods of time in a seed bank.", marks: 3 },
+                  { code: '5(a)(ii)', preamble: "Seed banks obtain seeds collected from a number of plants of each species.", prompt: "Explain the advantages of this for the conservation of a plant species.", marks: 2 },
+                  { code: '5(b)(i)', preamble: "The active ingredients in medicinal plants are identified and purified to make new drugs, which are tested extensively before use.", prompt: "Which of the following methods are used before the three-phased testing of clinical trials?\n\nA  testing on animals and humans\nB  testing on animals, isolated cells and tissues\nC  computer modelling and testing on humans\nD  computer modelling and testing isolated cells with a placebo", marks: 1 },
+                  { code: '5(b)(ii)', prompt: "Describe the stages of a three-phased clinical trial.", marks: 3 },
+                  { code: '5(c)', preamble: "The gut has barriers to prevent pathogens entering the body.", prompt: "Explain the role of conditions in the gut in preventing infection by microorganisms.", marks: 2 }
+                ] },
+              { number: 6,
+                scenario: "Shrews, moles and hedgehogs are members of the same taxonomic group of mammals that eat insects.",
+                parts: [
+                  { code: '6(a)', preamble: "Members of this group of mammals occupy a variety of niches.", prompt: "Which of the following describes a niche?\n\nA  the environment of an organism\nB  the habitat of an organism\nC  the population of an organism\nD  the role of an organism in its environment", marks: 1 },
+                  { code: '6(b)(i)', preamble: "Shrews are very small mammals that maintain a body temperature of 40 °C. They require a good supply of oxygen as they lose heat rapidly.", prompt: "Explain how the structure of their lungs enables shrews to get oxygen into the body rapidly.", marks: 4 },
+                  { code: '6(b)(ii)', preamble: "Some species of shrew have evolved to feed on insects in cold water streams; they are semi-aquatic. They have large concentrations of myoglobin (which stores oxygen for aerobic respiration during a dive) in their muscles. The myoglobin in these shrews has a different tertiary structure, allowing larger quantities to be stored.", prompt: "Describe how these species of semi-aquatic shrew may have evolved.", marks: 4 },
+                  { code: '6(b)(iii)', prompt: "Explain why a change in the base sequence of the gene coding for myoglobin could change its tertiary structure.", marks: 3 }
+                ] },
+              { number: 7,
+                scenario: "A diagram shows the structure of a bacterium. Some bacteria are pathogenic to humans and can cause inflammation and fever.\n\n(See the bacterium diagram, antibiotic graph and resistance table in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)', prompt: "Which of the following are found only in bacterial cells?\n\nA  cellulose cell wall, plasmid, 70S ribosome\nB  flagellum, plasma membrane, mitochondria\nC  plasma membrane, cellulose cell wall, plasmid\nD  plasmid, 70S ribosome, circular DNA", marks: 1 },
+                  { code: '7(b)(i)', preamble: "Bacteriostatic and bactericidal antibiotics are drugs used to treat diseases caused by bacteria. A graph shows the effect of two types of antibiotic on bacterial growth, with a control line (no antibiotic).", prompt: "State what is meant by the term bactericidal antibiotic.", marks: 1 },
+                  { code: '7(b)(ii)', prompt: "Calculate the mean rate of increase in the number of bacteria in the control from 6 to 8 hours. Give your answer in standard form.", marks: 2 },
+                  { code: '7(b)(iii)', preamble: "Symptoms of bacterial infection include fever and inflammation.", prompt: "Explain the role of the inflammatory response in protecting the body from bacterial infection.", marks: 4 },
+                  { code: '7(c)', preamble: "Antibiotics act in a number of ways but all affect a target site in the bacteria. Many bacteria are developing resistance. A table gives mechanisms of resistance (destruction of the antibiotic, decrease in antibiotic uptake, activation of a transport mechanism, modification of the target site) with example antibiotics and resistant bacteria.", prompt: "Discuss the mechanisms bacteria have developed to become resistant to antibiotics and the codes of practice used to overcome this resistance.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 8,
+                scenario: "The seagrass Posidonia oceanica is endemic to the Mediterranean Sea. It is very slow growing, lives a long time, and absorbs large amounts of carbon dioxide — storing 15 times more carbon dioxide per year than a similar area of rainforest (rainforests store ≈ 5 tonnes of carbon per hectare per year). Near Spain, seagrass covers ≈ 1.2 million hectares.",
+                parts: [
+                  { code: '8(a)', prompt: "Which of the following describes an endemic species?\n\nA  found in many geographical areas\nB  found in only one geographical area\nC  a hybrid between two species\nD  threatened with extinction", marks: 1 },
+                  { code: '8(b)', prompt: "Which of the following describes the mass of carbon stored by this area of seagrass each year?\n\nA  7.5 × 10⁶ tonnes year⁻¹\nB  75 tonnes per year\nC  9.0 × 10⁶ tonnes year⁻¹\nD  9.0 × 10⁷ tonnes year⁻¹", marks: 1 },
+                  { code: '8(c)(i)', preamble: "Seagrass cannot survive if the water becomes warmer or more acidic; it has declined by 34% in the Mediterranean in the last 50 years.", prompt: "Explain why the increase in greenhouse gases is leading to a decrease in the growth of seagrass.", marks: 3 },
+                  { code: '8(c)(ii)', prompt: "Discuss the possible effects of a reduction in seagrass on animals living in the Mediterranean Sea.", marks: 4 },
+                  { code: '8(c)(iii)', preamble: "Seagrass is long-living and more resistant to breakdown by microorganisms than rainforest plants.", prompt: "Explain why maintaining a healthy population of seagrass reduces the release of carbon dioxide into the atmosphere.", marks: 3 }
+                ] },
+              { number: 9,
+                scenario: "It is difficult to tell the sex of young chickens; breeding programmes can make the sex determine visible features. In birds the sex chromosomes are Z and W: males are ZZ and females are ZW. Head colour is sex-linked, carried only on the Z chromosome — the dominant allele gives bar-headed chickens and the recessive allele gives black-headed chickens.",
+                parts: [
+                  { code: '9(a)(i)', prompt: "Which of the following is the genotype of a black-headed female chicken?\n\nA  ZᴮZᵇ\nB  ZᵇZᵇ\nC  ZᵇW\nD  ZᴮWᵇ", marks: 1 },
+                  { code: '9(a)(ii)', prompt: "A bar-headed female chicken was crossed with a black-headed male chicken. Draw a genetic diagram to show the genotypes and phenotypes of the offspring produced by this cross.", marks: 3 },
+                  { code: '9(a)(iii)', preamble: "Male chickens produced by this cross were crossed with a bar-headed female chicken.", prompt: "Deduce why this cross will produce both bar-headed and black-headed females.", marks: 3 },
+                  { code: '9(b)', preamble: "Gene expression leads to the synthesis of proteins that give rise to the phenotype.", prompt: "Describe how one gene can give rise to more than one protein.", marks: 3 }
+                ] },
+              { number: 10,
+                scenario: "The average spring temperature in the UK has increased by 0.5 °C from 1995 to 2014 due to climate change. This has affected plants and the insects that feed on them.\n\n(See the oak-leaf and butterfly-population graphs in the question paper PDF.)",
+                parts: [
+                  { code: '10(a)', preamble: "Many butterfly species depend on oak trees; the larvae feed on young leaves in spring. A graph shows the first date oak leaves appeared on one tree between 1950 and 2021.", prompt: "Draw a trend line to predict when oak leaves will first appear in the year 2030, and give the date.", marks: 2 },
+                  { code: '10(b)', preamble: "Specialist butterfly species feed on only one plant species; generalist species feed on a range. A graph shows population changes for both types from 1980 to 2017.", prompt: "Explain why specialist butterfly species may find it more difficult to adapt to the changes in spring temperatures.", marks: 3 },
+                  { code: '10(c)(i)', preamble: "Butterflies have a four-stage life cycle: egg, larva, pupa and adult.", prompt: "Explain why an increase in environmental temperature may lead to a shorter life cycle.", marks: 2 },
+                  { code: '10(c)(ii)', prompt: "Devise a laboratory investigation to study the effect of temperature on the duration of the larval stage in a specialist butterfly species.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'exact', points: ['C — a place where an organism lives'], guidance: '1 mark.' },
+              '1(b)(i)': { type: 'points', points: [
+                  'DNA (from bones) is cut into fragments (using restriction enzymes)',
+                  'Radioactive tracers / fluorescent tags (or stains/dye) attached to the DNA',
+                  'DNA fragments loaded onto the (agarose) gel / placed in wells',
+                  'An electric current is passed through the gel / a potential difference is set up'
+                ], guidance: '3 max. Allow negatively charged fragments move toward the positive electrode. Ignore references to anode/cathode.' },
+              '1(b)(ii)': { type: 'points', points: [
+                  'Compare the size/thickness/position of the bands',
+                  'If they are closely related there will be (more) similarities'
+                ], guidance: '2 marks.' },
+              '2(a)': { type: 'exact', points: ['B — the number of different species and the number of different alleles'], guidance: '1 mark.' },
+              '2(b)(i)': { type: 'exact', points: ['n(n−1) for Ranunculus circinatus = 156; total n = 136; total n(n−1) = 3818'],
+                guidance: '1 mark. All three figures correct.' },
+              '2(b)(ii)': { type: 'exact', points: ['2.65', '2.654', '2.7'],
+                guidance: '2 marks. (156 × 155) ÷ 9110 = 2.65. 1 mark for correct substitution; 1 for the answer. Correct answer with no working gains full marks.' },
+              '2(b)(iii)': { type: 'points', points: [
+                  'Species richness is lower / fewer species present (less biodiversity) in pond B',
+                  'Because most species cannot survive in the polluted conditions (pollutants are toxic / kill organisms)',
+                  'Adaptations are required for polluted conditions',
+                  'Lack of competition in pond B, so large numbers of those species present'
+                ], guidance: '3 max. Allow comparison of relative numbers in ponds A and B; allow converse for pond A.' },
+              '3(a)': { type: 'points', points: [
+                  'Deoxyribose (pentose sugar), a (nitrogenous) base and a phosphate group',
+                  'Deoxyribose and adenine/guanine/cytosine/thymine'
+                ], guidance: '2 marks. Do not allow uracil or ribose. Allow a labelled diagram.' },
+              '3(b)(i)': { type: 'exact', points: ['B — both daughter DNA molecules contain one original DNA strand and one new DNA strand'], guidance: '1 mark.' },
+              '3(b)(ii)': { type: 'points', points: [
+                  'Hydrogen bonds between the bases/strands are broken / the double helix unwinds (unzips)',
+                  '(Unzipping brought about by) DNA helicase',
+                  '(DNA) nucleotides line up along each DNA strand',
+                  '(By) complementary base pairing (A–T, C–G)',
+                  '(Adjacent nucleotides) joined by DNA polymerase'
+                ], guidance: '4 max.' },
+              '4(a)(i)': { type: 'exact', points: ['A — anaphase'], guidance: '1 mark.' },
+              '4(a)(ii)': { type: 'points', points: [
+                  'Tissue treated with hydrochloric acid',
+                  'Tissue heated',
+                  'Stained with toluidine blue / (acetic) orcein (or another appropriate stain)',
+                  'Tissue macerated / squashed'
+                ], guidance: '3 max.' },
+              '4(b)': { type: 'points', points: [
+                  'The chromosomes condense (become visible / coil)',
+                  'Centrioles move to opposite poles of the cell',
+                  'The spindle / spindle fibres form',
+                  'The nucleolus breaks down',
+                  'The nuclear envelope/membrane breaks down'
+                ], guidance: '4 max.' },
+              '5(a)(i)': { type: 'points', points: [
+                  'The seeds are cleaned / (surface) sterilised',
+                  'The seeds are dried / stored in dry conditions',
+                  'They are stored at a cold temperature / −20 °C (or frozen)'
+                ], guidance: '3 marks. Ignore low humidity.' },
+              '5(a)(ii)': { type: 'points', points: [
+                  '(Seeds from different plants) ensures genetic diversity / a large gene pool / genetic variation',
+                  'Therefore a greater chance of survival/adaptation (reduces risk of extinction)',
+                  '(If reintroduced) conditions may have changed / it may be a different habitat'
+                ], guidance: '2 max. Allow different genotypes/alleles.' },
+              '5(b)(i)': { type: 'exact', points: ['B — testing on animals, isolated cells and tissues'], guidance: '1 mark.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'Stage 1: tested on healthy individuals (side effects / metabolism)',
+                  'Stage 2: tested on small groups of patients (with the condition) to see if the drug is effective',
+                  'Stage 3: double-blind testing on a large group of patients'
+                ], guidance: '3 marks. Allow description (e.g. half given a placebo / existing drug).' },
+              '5(c)': { type: 'points', points: [
+                  'Acidic conditions in the stomach (HCl / low pH)',
+                  '(Acidic conditions) denature the enzymes of microorganisms; OR gut flora outcompete other microorganisms',
+                  'Therefore inhibiting the growth/reproduction of pathogens'
+                ], guidance: '2 max. Allow gut flora produce lactic acid/chemicals to destroy microorganisms.' },
+              '6(a)': { type: 'exact', points: ['D — the role of an organism in its environment'], guidance: '1 mark.' },
+              '6(b)(i)': { type: 'points', points: [
+                  '(Many) alveoli provide a large surface area for gas exchange',
+                  'Thin walls of alveoli / walls one cell thick',
+                  'Therefore a short diffusion distance/pathway',
+                  'Network of capillaries (around alveoli) maintains the concentration gradient',
+                  'Network of capillaries increases the surface area for gas exchange'
+                ], guidance: '4 max. Allow SA:V; epithelium for wall.' },
+              '6(b)(ii)': { type: 'points', points: [
+                  '(A gene) mutation leads to some shrews having different myoglobin / a different tertiary structure',
+                  'A selection pressure described (e.g. availability of food / flooding)',
+                  '(Shrews with the mutation are) able to dive / feed in water (advantageous)',
+                  '(Therefore more likely to) survive and reproduce',
+                  'The advantageous allele is passed on to offspring',
+                  'The frequency of the advantageous allele increases over time'
+                ], guidance: '4 max. Ignore "more myoglobin".' },
+              '6(b)(iii)': { type: 'points', points: [
+                  '(A change in the base sequence) causes a change to the triplet code (codons in mRNA)',
+                  'Therefore a change in the amino acids (R groups / primary structure)',
+                  'Changing the bonding (e.g. hydrogen/ionic/disulfide) and therefore the (tertiary) structure'
+                ], guidance: '3 marks.' },
+              '7(a)': { type: 'exact', points: ['D — plasmid, 70S ribosome, circular DNA'], guidance: '1 mark.' },
+              '7(b)(i)': { type: 'points', points: ['A substance that can kill bacteria'], guidance: '1 mark.' },
+              '7(b)(ii)': { type: 'exact', points: ['4.0 × 10³ per hour', '4 × 10³ hour⁻¹'],
+                guidance: '2 marks. (16 000 − 8000) ÷ 2 = 4000 per hour = 4.0 × 10³ hour⁻¹. 4.0 × 10³ alone gains 1 mark. Correct answer with no working gains full marks.' },
+              '7(b)(iii)': { type: 'points', points: [
+                  'Histamine is released',
+                  '(Histamine) causes vasodilation / dilation of arterioles',
+                  '(Vasodilation) increases the blood flow',
+                  'Capillaries become more permeable',
+                  '(Therefore) white blood cells / phagocytes reach the infected area / pathogen'
+                ], guidance: '4 max. Allow macrophages/neutrophils for phagocytes.' },
+              '7(c)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'An explanation supported throughout by sustained application of relevant analysis/interpretation of both pieces of scientific information; a well-developed, sustained line of reasoning, clear and logically structured. Includes how resistance spreads between bacteria (e.g. conjugation/plasmid exchange) and explains how a hospital practice reduces resistance.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Basic information with some linkage to context; occasional analysis/interpretation of both pieces of information; some lines of reasoning with structure. Describes more than one mechanism of resistance and at least two hospital practices, linking resistance evolution to natural selection.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A limited explanation focused on mainly one piece of information; e.g. describes one mechanism of resistance from the table or one hospital practice.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Antibiotic use is a selection pressure; antibiotics kill/stop non-resistant bacteria; only bacteria with a resistance mechanism survive and reproduce. Mechanisms: destruction of the antibiotic, decreased uptake, transport (efflux) pumps, modification of the target site, with explanations of how each protects the cell. Bacteria have a single DNA molecule so mutations are expressed; conjugation/plasmid exchange spreads resistance; each antibiotic has a specific target. Hospital practices: hygiene, screening/isolation of patients, management of antibiotic use — and why they are effective.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '8(a)': { type: 'exact', points: ['B — found in only one geographical area'], guidance: '1 mark.' },
+              '8(b)': { type: 'exact', points: ['D — 9.0 × 10⁷ tonnes year⁻¹'],
+                guidance: '1 mark. 5 × 15 = 75 tonnes/ha/yr × 1.2 × 10⁶ ha = 9.0 × 10⁷ tonnes year⁻¹.' },
+              '8(c)(i)': { type: 'points', points: [
+                  'Carbon dioxide dissolves in the (sea) water (forming carbonic acid)',
+                  'This increases the acidity of the water (lowers pH)',
+                  'Increased global warming could increase the water temperature',
+                  'Therefore the change in temperature/pH will denature the enzymes (no longer optimum), so less seagrass survives'
+                ], guidance: '3 max.' },
+              '8(c)(ii)': { type: 'points', points: [
+                  'The number of (aquatic) animals would decrease (change in biodiversity)',
+                  '(Less seagrass) means less food for primary consumers / herbivores',
+                  'Less oxygen (or food) due to a decrease in photosynthesis',
+                  'Less oxygen for respiration by (aquatic) animals',
+                  'An impact on food chains / webs / energy transfer described'
+                ], guidance: '4 max. Allow more predation/competition.' },
+              '8(c)(iii)': { type: 'points', points: [
+                  'Seagrass takes up carbon dioxide by photosynthesis (Calvin cycle)',
+                  'Less decomposition / not broken down by decomposers (less respiration by microorganisms)',
+                  'Therefore the carbon remains locked in the plant / seagrass is a carbon sink (sequesters carbon)'
+                ], guidance: '3 marks.' },
+              '9(a)(i)': { type: 'exact', points: ['C — ZᵇW'], guidance: '1 mark.' },
+              '9(a)(ii)': { type: 'points', points: [
+                  'Diagram shows female gametes Zᴮ and W, male gametes Zᵇ and Zᵇ',
+                  'Diagram completed to show the correct offspring genotypes (ZᴮZᵇ and ZᵇW)',
+                  'Phenotypes: ZᵇW = black-headed females and ZᴮZᵇ = bar-headed males'
+                ], guidance: '3 marks.' },
+              '9(a)(iii)': { type: 'points', points: [
+                  'Males (from this cross) are all ZᴮZᵇ / heterozygous',
+                  'Therefore females will inherit either the B or the b allele from the male',
+                  'Females only have one allele for head colour, so some will be bar-headed and some black-headed'
+                ], guidance: '3 marks.' },
+              '9(b)': { type: 'points', points: [
+                  'Introns are removed',
+                  'Exons can be arranged in several different ways / exons can be removed (alternative splicing)',
+                  'This produces different mRNA (from the same gene)',
+                  'Translation gives different amino acid sequences / polypeptides / proteins'
+                ], guidance: '3 max.' },
+              '10(a)': { type: 'points', points: [
+                  'A suitable trend line drawn on the graph (smooth/straight line)',
+                  'The correct date read from the extrapolated trend line (≈ late March / early April 2030)'
+                ], guidance: '2 marks. Best assessed against the graph in the QP PDF.' },
+              '10(b)': { type: 'points', points: [
+                  '(Because specialist species feed on only one plant) they may have less/nothing to feed on',
+                  'The food plant may not be available (at all or at the right time) due to climate change',
+                  'Other species may compete with the specialist species for food',
+                  'Generalist species can survive because they would be more likely to find alternative food'
+                ], guidance: '3 max. Allow young leaves not available for the larvae / plant flowering earlier.' },
+              '10(c)(i)': { type: 'points', points: [
+                  '(Life cycle) depends on metabolic reactions',
+                  '(Increase in temperature) increases the kinetic energy of enzymes',
+                  '(Therefore) more frequent collisions / a faster rate of enzyme–substrate complex formation'
+                ], guidance: '2 max. Allow increases the rate of metabolism/respiration/cell division. Do not allow "increase in enzyme activity" without reference to rate.' },
+              '10(c)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A procedure supported throughout by analysis/interpretation/evaluation; a well-developed, sustained line of reasoning, clear and logically structured. Includes measuring time from egg hatching to pupation, repeats to calculate a mean, five or more temperatures, and a relevant statistical test.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Basic information with some linkage to context and occasional analysis/interpretation; some lines of reasoning with structure. Incubates at five or more temperatures, measures time in the larval stage with repeats to calculate a mean.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A limited procedure with generalised comments; more than one temperature, at least one variable controlled, repeats at each temperature.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Independent variable: a range of temperatures (e.g. 5–40 °C). Dependent variable: time from egg hatching to pupating. Control variables: same specialist species, source/age of eggs/larvae, food plant, mass of food, humidity (e.g. water baths). Repeats (several larvae per temperature); monitor at regular intervals; record the time since hatching; calculate the mean per temperature; suitable statistical analysis (SD, Spearman\'s rank, or t-test if only two temperatures).'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
