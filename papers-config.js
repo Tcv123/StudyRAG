@@ -14255,6 +14255,259 @@ window.SUBJECTS = [
                   'Indicative content': 'Use shade-tolerant and shade-intolerant plants grown in the same conditions, in 5%/25% light or a range. Take equal masses of leaf, add to equal volumes of isolation medium, homogenise for the same time, filter/centrifuge to concentrate chloroplasts, resuspend the pellet. Expose suspensions to the light intensities (temperature controlled), add DCPIP and record the time to decolourise; repeat to calculate a mean. If the difference is due to the light-dependent reaction, shade-tolerant plants would decolourise DCPIP more quickly at lower light intensity (use a statistical test, e.g. t-test).'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxa-9bn0-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Energy, Exercise and Coordination', paperCode: '9BN0/02', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-02-que-20220618.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-02-rms-20220818.pdf',
+            qbqNote: 'All 10 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, ECG/spirometer traces, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Blood from the lungs returns to the left side of the heart in the pulmonary vein, which does not have valves.\n\n(See the angiogram in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Describe how the atrioventricular (AV) valves work during one cardiac cycle.", marks: 2 },
+                  { code: '1(a)(ii)', preamble: "The structure of the pulmonary vein is different from the structure of the pulmonary artery.", prompt: "Explain how this difference is related to the function of the pulmonary vein.", marks: 2 },
+                  { code: '1(b)(i)', preamble: "An angiogram shows a blood clot (labelled Q) in a vein near the hip.", prompt: "Which of the following is released by platelets at location Q?\n\nA  fibrin\nB  prothrombin\nC  thrombin\nD  thromboplastin", marks: 1 },
+                  { code: '1(b)(ii)', prompt: "Which of the following is an enzyme that converts a soluble plasma protein into an insoluble protein at location Q?\n\nA  fibrinogen\nB  prothrombin\nC  thrombin\nD  thromboplastin", marks: 1 }
+                ] },
+              { number: 2,
+                scenario: "The human brain is an organ that has a range of functions.\n\n(See the brain diagrams in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)', prompt: "A student linked three brain functions to a labelled diagram: (1) site where more synapses form during the critical window for vision; (2) required for fine motor skills to draw a straight line; (3) sends impulses to the SAN in response to a lowering of blood pH. Which diagram of the brain correctly matches the table?\n\nA / B / C / D", marks: 1 },
+                  { code: '2(b)(i)', prompt: "Describe why a region of the brain might appear lighter in an image obtained by a functional magnetic resonance image (fMRI) scan.", marks: 3 },
+                  { code: '2(b)(ii)', preamble: "One scan combines positron emission tomography (PET) and computed tomography (CT) and can show whether a person has cancer.", prompt: "Describe why a combined PET and CT scan may be better for diagnosing cancer than a PET or CT scan on its own.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "Some lipoproteins may reduce fertility in mammals. Female mice were divided into three groups: P (genetically modified only — increased HDL), Q (GM and supplied with drug K, which lowers HDL), R (drug K only). They bred with non-GM males and the number of offspring was recorded (graph).\n\n(See the graph and sperm diagram in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)(i)', prompt: "The mice were all of one breed to improve data\n\nA  accuracy\nB  precision\nC  quantity\nD  validity", marks: 1 },
+                  { code: '3(a)(ii)', prompt: "State a null hypothesis for this investigation.", marks: 1 },
+                  { code: '3(a)(iii)', prompt: "Comment on the effect of blood plasma HDL levels on the fertility of these female mice.", marks: 4 },
+                  { code: '3(b)', prompt: "Which of the following are always the same for both mammalian sperm and egg cells of the same species?\n1. The total mass of nuclear DNA\n2. They both release enzymes by exocytosis\n\nA  Neither of them\nB  1 only\nC  2 only\nD  1 and 2", marks: 1 },
+                  { code: '3(c)', preamble: "A diagram shows a mammalian sperm cell with parts 1–4.", prompt: "Which of the labelled parts contains enzymes that phosphorylate glucose during respiration?\n\nA  1\nB  2\nC  3\nD  4", marks: 1 }
+                ] },
+              { number: 4,
+                scenario: "A person arrived at hospital having eaten some poisonous berries. An ECG was recorded (with a region labelled Z).\n\n(See the ECG in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)(i)', preamble: "Tachycardia for an adult is a heart rate above 100 beats per minute. The ECG shows 0.2 seconds between equivalent points.", prompt: "Calculate the percentage increase above 100 beats per minute for the heart rate of this person.", marks: 2 },
+                  { code: '4(a)(ii)', preamble: "The length of time labelled Z was shorter than for a person with a normal heart rate.", prompt: "Which of the following is shown by label Z on the diagram?\n\nA  the time that the atria are contracting\nB  the time for the AV valves to open\nC  the time that the atrioventricular node (AVN) delays depolarisation\nD  the time that the ventricles are contracting", marks: 1 },
+                  { code: '4(b)', preamble: "One poison binds to acetylcholine receptors on cells in the SAN, preventing acetylcholine binding if it is at low concentration. The person was treated with a drug that stopped acetylcholinesterase being released into the synaptic gap.", prompt: "Explain how this drug lowered the heart rate of this person.", marks: 3 },
+                  { code: '4(c)', preamble: "The poison also caused the pupils to dilate.", prompt: "Describe the interaction of the muscles in the eye that led to this dilation of the pupils.", marks: 3 }
+                ] },
+              { number: 5,
+                scenario: "A spirometer can be used to study aspects of the human respiratory system.\n\n(See the spirometer trace in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)', prompt: "Which of the following parts of the spirometer trace could be used to determine the maximum volume of air that can be exhaled?\n\nA  1 only\nB  2 and 3 combined\nC  3 only\nD  3 and 4 combined", marks: 1 },
+                  { code: '5(b)(i)', preamble: "Populations living at high altitude have adapted to lower oxygen availability; one adaptation is a larger thorax. Hypothesis: people with this adaptation will have a lower breathing rate as their tidal volume will be greater.", prompt: "Devise a valid investigation, using a spirometer, to test this hypothesis.", marks: 4 },
+                  { code: '5(b)(ii)', preamble: "Another adaptation is to have more red blood cells circulating in the blood.", prompt: "Explain how a bone marrow stem cell can give rise to red blood cells.", marks: 4 }
+                ] },
+              { number: 6,
+                scenario: "The nervous system is one of the features found only in animals. A graph shows the change in potential difference across a neurone's membrane when stimulated at point W (with point X later).\n\n(See the graph and neuromuscular-junction diagram in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)(i)', prompt: "The threshold intensity is the minimum stimulus that will cause an action potential. Which potential difference could be the threshold potential for this neurone?\n\nA  −80 millivolts\nB  −70 millivolts\nC  −60 millivolts\nD  40 millivolts", marks: 1 },
+                  { code: '6(a)(ii)', prompt: "Explain the changes in the sodium and potassium ion concentrations in the cytoplasm of the neurone from point W to point X on the graph.", marks: 4 },
+                  { code: '6(a)(iii)', prompt: "Explain why the neurone becomes hyperpolarised after point X on the graph.", marks: 3 },
+                  { code: '6(b)', preamble: "The junction between the end of a motor neurone and a muscle myofibril is a modified synapse (a diagram shows the neuromuscular junction).", prompt: "Describe how the neurotransmitter crosses this synapse.", marks: 2 }
+                ] },
+              { number: 7,
+                scenario: "Athletes compete in a range of environmental conditions. Nine athletes ran for 50 minutes in warm/high-humidity and in cool/low-humidity conditions (all other variables constant); core temperature was recorded during and for 70 minutes after exercise (graph).\n\n(See the graph and neutrophil table in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)(i)', prompt: "Explain why there was a change in core temperature during the first 20 minutes of exercise.", marks: 2 },
+                  { code: '7(a)(ii)', preamble: "A student concluded: during exercise the human thermoregulatory system only works in cool environmental temperatures when the humidity is low.", prompt: "Comment on this conclusion.", marks: 4 },
+                  { code: '7(a)(iii)', prompt: "Compare and contrast the changes in core body temperature, in the two environments, after the exercise was completed.", marks: 3 },
+                  { code: '7(b)(i)', preamble: "Blood samples gave a mean neutrophil concentration of 3.57 × 10⁶ cells cm⁻³ during exercise and 3.42 × 10⁶ immediately after. Mean body mass was 70 kg and mean blood volume 5 dm³.", prompt: "Calculate how many fewer neutrophils there are in the blood per kilogram of body mass immediately after exercise.", marks: 3 },
+                  { code: '7(b)(ii)', preamble: "The mean activity of neutrophils fell from 28.4 to 22.0 a.u.", prompt: "State how these results support the statement that exercise increases the risk of infection.", marks: 1 }
+                ] },
+              { number: 8,
+                scenario: "Cells can be classified as either prokaryotic or eukaryotic.\n\n(See the membrane-percentage table in the question paper PDF.)",
+                parts: [
+                  { code: '8(a)', prompt: "Which row identifies the type of DNA found in prokaryotic cells?\n\nA  plasmid double-stranded, chromosomal double-stranded\nB  plasmid double-stranded, chromosomal single-stranded\nC  plasmid single-stranded, chromosomal double-stranded\nD  plasmid single-stranded, chromosomal single-stranded", marks: 1 },
+                  { code: '8(b)(i)', prompt: "Eukaryotic cells contain membrane-bound organelles including the Golgi apparatus and rough endoplasmic reticulum. Name two other organelles that are bound by a single membrane.", marks: 1 },
+                  { code: '8(b)(ii)', preamble: "A table gives the percentage of cell membranes that make up the Golgi apparatus and rER in liver (7% Golgi, 35% rER) and pancreas (10% Golgi, 60% rER) cells.", prompt: "Explain the differences in the percentage of membranes that comprise the two organelles in these cells.", marks: 5 },
+                  { code: '8(c)', preamble: "A single Golgi apparatus has 6 cisternae, each 15 nm high, with 25 nm between adjacent cisternae.", prompt: "Calculate the total height of the stack of cisternae in this Golgi apparatus. Give your answer in micrometres.", marks: 2 },
+                  { code: '8(d)', preamble: "Beetroot cells contain the pigment betalain. When placed in alcohol, the concentration of betalain in the cells changes.", prompt: "Explain why alcohol affects the concentration of betalain in these cells.", marks: 3 }
+                ] },
+              { number: 9,
+                scenario: "The inheritance of coat colour in mice has been investigated. Scientists crossed mice with yellow coats; the offspring had either yellow or non-yellow coats.",
+                parts: [
+                  { code: '9(a)(i)', prompt: "Explain how the scientists knew which allele for coat colour was recessive.", marks: 2 },
+                  { code: '9(a)(ii)', preamble: "The crosses led to a total of 1599 offspring.", prompt: "Predict the number of yellow and non-yellow offspring produced.", marks: 2 },
+                  { code: '9(a)(iii)', preamble: "The actual numbers were 1064 yellow and 535 non-yellow.", prompt: "Explain why there are differences between the predicted and actual numbers of these mice.", marks: 3 },
+                  { code: '9(b)', preamble: "A human gene similar to the mouse coat-colour gene comprises 74 775 base pairs; the mRNA produced codes for a protein of 132 amino acids.", prompt: "Explain the differences in the gene coding for this protein and the mRNA produced from it.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 10,
+                scenario: "All mammals have an internal skeleton that includes bone and cartilage; bones contain calcium ions, which are also involved in physiological processes in soft tissue.\n\n(See the data table in the question paper PDF.)",
+                parts: [
+                  { code: '10(a)', prompt: "Explain one way in which cartilage at the ends of the bones in the knee joint reduces wear and tear.", marks: 2 },
+                  { code: '10(b)(i)', preamble: "Data: mean adult mass 80 kg; mean % of body mass that is bone 4%; mean mass of calcium ions per adult 1000 g; mean % of calcium ions in soft tissue 1%.", prompt: "Calculate the calcium ion concentration in the soft tissue of a human. Give your answer in µg g⁻¹.", marks: 3 },
+                  { code: '10(b)(ii)', preamble: "The calcium ion concentration in one species of plant was 170 µg g⁻¹ of plant tissue. A student concluded: calcium ions are more important in the tissue of plants than in animals.", prompt: "Evaluate this conclusion.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true },
+                  { code: '10(c)', preamble: "Milk contains calcium ions and lactose, a disaccharide.", prompt: "Describe how lactose is formed from two monosaccharides.", marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'points', points: [
+                  'The valves are open when the atria contract (atrial systole / pressure greater in atria)',
+                  'The valves close when the ventricles contract (ventricular systole / pressure greater in ventricles)',
+                  'Valves prevent backflow of blood into the atria during ventricular systole'
+                ], guidance: '2 max. Allow tendons prevent the valves from inverting.' },
+              '1(a)(ii)': { type: 'points', points: [
+                  'Larger lumen / less muscle in the walls / thinner walls',
+                  'Larger lumen as blood pressure is lower / less muscle because contraction is not needed to push blood back to the heart'
+                ], guidance: '2 marks. Ignore valves.' },
+              '1(b)(i)': { type: 'exact', points: ['D — thromboplastin'], guidance: '1 mark.' },
+              '1(b)(ii)': { type: 'exact', points: ['C — thrombin'], guidance: '1 mark.' },
+              '2(a)': { type: 'exact', points: ['Diagram C'], guidance: '1 mark.' },
+              '2(b)(i)': { type: 'points', points: [
+                  'Due to more activity (increased aerobic respiration)',
+                  'An increase in oxygenated blood / blood flow to this region',
+                  'fMRI signals are reflected / not absorbed by oxygenated blood'
+                ], guidance: '3 marks. Allow oxyhaemoglobin/oxygen-rich blood for oxygenated blood.' },
+              '2(b)(ii)': { type: 'points', points: [
+                  '(Using both provides) information on function (PET) and structure (CT)',
+                  'PET shows areas that are more (metabolically) active / dividing more',
+                  'CT gives location / size',
+                  'Each scan uses a different technique (e.g. CT uses X-rays, PET a radioactively labelled metabolite)'
+                ], guidance: '3 max. Allow reference to 3D images.' },
+              '3(a)(i)': { type: 'exact', points: ['D — validity'], guidance: '1 mark.' },
+              '3(a)(ii)': { type: 'points', points: ['There is no difference in the number of offspring born / fertility between the treatments (whether GM or not / supplied drug K or not)'],
+                guidance: '1 mark. Ignore "significant".' },
+              '3(a)(iii)': { type: 'points', points: [
+                  '(The GM mice / group P) had very few (the fewest) offspring',
+                  'Therefore raised HDL levels lead to reduced fertility',
+                  '(Non-GM mice / group R) had fewer offspring than group Q (GM given drug K)',
+                  'Suggesting that HDL levels below a certain concentration reduce fertility (some HDL is required)'
+                ], guidance: '4 marks. Allow converse.' },
+              '3(b)': { type: 'exact', points: ['C — 2 only'],
+                guidance: '1 mark. 50% of sperm have less DNA, so statement 1 is not always the same.' },
+              '3(c)': { type: 'exact', points: ['D — 4'],
+                guidance: '1 mark. (1 = acrosome, 2 = nucleus, 3 = mitochondrion; glucose phosphorylation occurs in the cytoplasm.)' },
+              '4(a)(i)': { type: 'exact', points: ['20%'],
+                guidance: '2 marks. Heart rate = 60 ÷ 0.5 = 120 bpm; (120 − 100) ÷ 100 × 100 = 20%. 1 mark for the heart rate. Correct answer with no working gains full marks.' },
+              '4(a)(ii)': { type: 'exact', points: ['C — the time that the atrioventricular node (AVN) delays depolarisation'], guidance: '1 mark.' },
+              '4(b)': { type: 'points', points: [
+                  'Acetylcholine was not broken down (as quickly)',
+                  'Therefore maintaining/increasing the concentration of acetylcholine in the synaptic gap',
+                  'So able to compete with the poison',
+                  'And so able to bind to receptors (on the SAN cells)'
+                ], guidance: '3 max.' },
+              '4(c)': { type: 'points', points: [
+                  'Antagonistic interaction of muscles',
+                  'In the iris',
+                  'Radial muscles contract and circular muscles relax'
+                ], guidance: '3 marks.' },
+              '5(a)': { type: 'exact', points: ['A — 1 only'], guidance: '1 mark.' },
+              '5(b)(i)': { type: 'points', points: [
+                  'Select people with different thorax sizes (with/without the adaptation)',
+                  'Select people who are similar in other respects (e.g. same age, fitness, sex)',
+                  'One relevant variable controlled (e.g. temperature, data collected at rest)',
+                  'Measure tidal volume from the spirometer trace (peak-to-trough volume)',
+                  'Measure breathing rate as the number of peaks/troughs in a set time'
+                ], guidance: '4 max.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  '(By) differentiation',
+                  '(Due to) certain stimuli',
+                  '(Causing) some genes / the gene for haemoglobin to be activated and some deactivated',
+                  'mRNA / haemoglobin produced from the activated genes',
+                  'Removal of the nucleus / produce a biconcave shape'
+                ], guidance: '4 max. Ignore "genes turned on/off".' },
+              '6(a)(i)': { type: 'exact', points: ['C — −60 millivolts'], guidance: '1 mark.' },
+              '6(a)(ii)': { type: 'points', points: [
+                  'Voltage-gated sodium ion channels open and sodium ions diffuse in from outside the cell',
+                  '(Causing an) increase in sodium ion concentration',
+                  'Voltage-gated potassium ion channels open and potassium ions diffuse out from the inside',
+                  '(Causing a) decrease in potassium ion concentration at/after repolarisation'
+                ], guidance: '4 marks.' },
+              '6(a)(iii)': { type: 'points', points: [
+                  'Potassium ions (continue) leaving the axon/cytoplasm (voltage-gated K⁺ channels remain open)',
+                  '(Therefore) preventing another depolarisation / it is the refractory period',
+                  'Allowing time for the neurone to reset',
+                  'So that nerve impulses travel in one direction only'
+                ], guidance: '3 max.' },
+              '6(b)': { type: 'points', points: [
+                  'Vesicles fuse with the presynaptic membrane / motor endplate, releasing acetylcholine (by exocytosis)',
+                  '(Acetylcholine crosses the synapse) by diffusion (down the concentration gradient)'
+                ], guidance: '2 marks.' },
+              '7(a)(i)': { type: 'points', points: [
+                  'Heat is released/generated',
+                  '(Due to) increased respiration'
+                ], guidance: '2 marks. Allow heat/thermal energy.' },
+              '7(a)(ii)': { type: 'points', points: [
+                  'Core temperature increases more when humidity is high (during exercise)',
+                  'Therefore body temperature is not as well controlled at higher humidity',
+                  'In low humidity there is no body temperature rise after 35 minutes / above 37.7 °C (indicating thermoregulation)',
+                  'However no investigation was carried out on low temperature with high humidity',
+                  'Comment on the quality of the design (e.g. only nine athletes, one occasion per condition, only 50 min)'
+                ], guidance: '4 max.' },
+              '7(a)(iii)': { type: 'points', points: [
+                  'Both decrease',
+                  'Both reach the same temperature (by 70 minutes after running / after 120 minutes)',
+                  'Greater decrease for the warm and humid conditions',
+                  'Greater rate of cooling for those in warm humid conditions'
+                ], guidance: '3 max.' },
+              '7(b)(i)': { type: 'exact', points: ['≈ 1.07 × 10⁷ (10.7 million) per kg', '10 714 286'],
+                guidance: '3 marks. Difference = 0.15 × 10⁶ cells cm⁻³ × 5000 cm³ = 7.5 × 10⁸ in the blood; ÷ 70 kg = 1.07 × 10⁷ kg⁻¹. 1 mark each for the difference, the per-athlete/per-kg step, and the final value. Correct answer with no working gains full marks.' },
+              '7(b)(ii)': { type: 'points', points: ['There are fewer neutrophils and the activity is reduced (after exercise)'],
+                guidance: '1 mark.' },
+              '8(a)': { type: 'exact', points: ['A — plasmid double-stranded, chromosomal double-stranded'], guidance: '1 mark.' },
+              '8(b)(i)': { type: 'points', points: ['Two correctly identified single-membrane organelles (e.g. smooth ER, vesicles, lysosomes, acrosome, vacuole)'],
+                guidance: '1 mark for two. Ignore nucleus, mitochondria, chloroplast, ribosome, centriole.' },
+              '8(b)(ii)': { type: 'points', points: [
+                  'Pancreatic cells have more rER (converse: liver cells have less)',
+                  '(More rER) for the synthesis of protein',
+                  'Pancreatic cells have more Golgi apparatus',
+                  '(More Golgi) for the modification of protein (e.g. adding carbohydrate / making glycoprotein)',
+                  '(More) vesicles/lysosomes produced by the Golgi apparatus',
+                  '(Vesicles) as the pancreas secretes more protein/glycoprotein (e.g. insulin, digestive enzymes)'
+                ], guidance: '5 max.' },
+              '8(c)': { type: 'exact', points: ['0.215 µm'],
+                guidance: '2 marks. (6 × 15) + (5 × 25) = 90 + 125 = 215 nm = 0.215 µm. "215" alone gains 1 mark. Correct answer with no working gains full marks.' },
+              '8(d)': { type: 'points', points: [
+                  'Decreases the betalain concentration in the cells',
+                  'Due to betalain diffusing out / moving down a concentration gradient',
+                  '(Because) the alcohol increases membrane permeability',
+                  'Membrane lipids/phospholipids dissolve in alcohol'
+                ], guidance: '3 max. Ignore reference to the cell wall.' },
+              '9(a)(i)': { type: 'points', points: [
+                  'The parents were heterozygous (had a dominant and a recessive allele) as the offspring had both yellow and non-yellow coats',
+                  '(Because the parents had yellow coats) the recessive allele was for the non-yellow coat'
+                ], guidance: '2 marks. Allow "parents were carriers".' },
+              '9(a)(ii)': { type: 'exact', points: ['≈ 1199 yellow and 400 non-yellow'],
+                guidance: '2 marks. A 3:1 ratio gives 1199.25 yellow and 399.75 non-yellow. 1 mark per predicted number.' },
+              '9(a)(iii)': { type: 'points', points: [
+                  'The ratio is 2:1 rather than 3:1',
+                  'Random fertilisation',
+                  'Due to no homozygous dominant individuals surviving / homozygous dominant is lethal'
+                ], guidance: '3 marks.' },
+              '9(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'An explanation supported throughout by sustained application of relevant analysis of both pieces of information; a well-developed, sustained line of reasoning, clear and logically structured. Explains the greater number of bases in the gene than the mRNA, and references the removal of introns / post-transcriptional changes before translation.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Basic information with some linkage and occasional analysis of both pieces of information; reasons given for differences in the structure of DNA and mRNA.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A limited explanation focused on mainly one piece of information; a basic description of differences between DNA and mRNA.' }
+                ],
+                indicative: {
+                  'Indicative content': 'DNA: double-stranded (more stable), allows a template strand, larger as it includes the promoter / transcription-factor sites. mRNA: ribose not deoxyribose and uracil not thymine; smaller / fewer bases (min ~396 for 132 amino acids) so it can leave the nucleus through a pore; single-stranded so codons are exposed to complementary tRNA anticodons, bringing amino acids in the correct sequence; introns removed (post-transcriptional modification).'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '10(a)': { type: 'points', points: [
+                  'Compressible / cushioning, to absorb shocks',
+                  'OR smooth / slippery, to reduce friction / prevent bones rubbing together'
+                ], guidance: '2 marks (a feature and its consequence).' },
+              '10(b)(i)': { type: 'exact', points: ['≈ 130 µg g⁻¹', '130.2'],
+                guidance: '3 marks. Calcium in soft tissue = 1% of 1000 g = 10 g; soft tissue mass = 96% of 80 kg = 76 800 g; 10 g ÷ 76 800 g = 130.2 µg g⁻¹. 1 mark each. Correct answer with no working gains full marks.' },
+              '10(b)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A scientific judgement supported throughout by sustained application of relevant evidence; a conclusion with sustained linkages. Gives details of the roles of calcium ions in animals and plants, compares the data (higher concentration in the plant, but the human value was for soft tissue not bone), evaluates the data (only humans/one plant species) and notes that concentration is not the same as importance.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A scientific judgement with strengths/weaknesses; a conclusion with occasional support. Details for the roles of calcium ions in both animals and plants, with a data comparison.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Limited judgement focused on mainly one area; a basic description of the role of calcium ions in plants and animals, or a basic conclusion / comment on the data.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Data compared in humans and one plant species; concentration is not the same as importance; no evidence more than one plant used. Roles: calcium pectate in plant cell walls; in humans calcium is used at synapses, in muscle contraction, blood clotting and bone tissue. Study comments: only one plant species (may not be representative); humans not necessarily representative of all animals; the human value was for soft tissue and did not include bone.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '10(c)': { type: 'points', points: [
+                  'Glucose and galactose',
+                  'Joined by a glycosidic bond',
+                  'Through a condensation reaction (removal of a water molecule)'
+                ], guidance: '2 max. Ignore alpha/beta.' }
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
