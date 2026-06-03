@@ -17875,6 +17875,261 @@ window.SUBJECTS = [
                   'Structure Y is a runner (stolon / horizontal stem)',
                   'Roots / shoots form (away from the parent plant) and the runner between the plantlet and parent dies / breaks down'
                 ], guidance: '2 marks. Ignore "by asexual reproduction / vegetative propagation" alone as a description.' }
+            } },
+          { id: 'bio-ocra-h420-2023-p1', year: 'June 2023', paperName: 'Paper 1 — Biological processes', paperCode: 'H420/01', totalMarks: 100, durationMins: 135,
+            qpUrl: 'https://www.ocr.org.uk/Images/703902-question-paper-biological-processes.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/704030-mark-scheme-biological-processes.pdf',
+            qbqNote: 'All questions (100 marks) are wired up question-by-question with the official OCR mark scheme. Section A is 15 single-answer multiple-choice questions (answer with the letter A–D); Section B is structured questions. Questions 16(b) and 20(b) are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1, parts: [ { code: '1', prompt: "Section A (multiple choice). Which description of biological molecules is correct?\n\nA  DNA and RNA are both polymers of nucleotides.\nB  Hydrolysis of sucrose produces fructose and α-glucose.\nC  Proteins are polymers of amino acids and are broken down in condensation reactions.\nD  Starch is a polymer of the monosaccharide maltose.", marks: 1 } ] },
+              { number: 2, parts: [ { code: '2', prompt: "Which statement about lipids is correct?\n\nA  Phospholipids are formed by esterification of glycerol with three molecules of fatty acid.\nB  Phospholipids containing unsaturated fatty acids can increase the fluidity of cell membranes.\nC  Triglycerides are good energy stores although they release less energy than an equal mass of polysaccharide.\nD  Triglycerides form the bilayer of the plasma membrane.", marks: 1 } ] },
+              { number: 3, parts: [ { code: '3', prompt: "Which statement about the structure of amino acids is not true?\n\nA  Amino acids contain amino and carboxyl groups.\nB  Amino acids contain the elements hydrogen, carbon and oxygen only.\nC  Each amino acid has a unique R group.\nD  The R groups in amino acids can be polar or non-polar.", marks: 1 } ] },
+              { number: 4, parts: [ { code: '4', prompt: "Which of the options is a feature of collagen?\n\nA  It allows alveoli to recoil\nB  It dissolves in water\nC  It is flexible\nD  It is the main protein found in hair", marks: 1 } ] },
+              { number: 5, parts: [ { code: '5', prompt: "Increasing the pH of an enzyme solution from 7.4 to 8.0 causes the rate of reaction to fall by 90%. When the pH returns to 7.4 the rate returns to its original value. Which statement explains these observations?\n\nA  Increasing the pH from 7.4 to 8.0 breaks hydrogen bonds but returning the pH to 7.4 allows them to re-form.\nB  Increasing the pH from 7.4 to 8.0 changes the shape of the active site and so the substrate binds more tightly.\nC  Increasing the pH from 7.4 to 8.0 denatures the enzyme.\nD  Reducing the pH below 7.4 will reduce the rate of reaction.", marks: 1 } ] },
+              { number: 6, parts: [ { code: '6', prompt: "Which of the options describes movement of water through a plant?\n\nA  The Casparian strip forces water to enter the cytoplasm before it can enter the xylem.\nB  Water can move across the root by the apoplast pathway because of plasmodesmata between cells.\nC  Water is drawn up the xylem because of adhesion between water molecules.\nD  Water moves by osmosis from a low water potential to a high water potential.", marks: 1 } ] },
+              { number: 7, parts: [ { code: '7', prompt: "Which of the statements about the heart is correct?\n\nA  Contraction of the ventricles is known as ventricular systole.\nB  Deoxygenated blood enters the heart by the pulmonary vein.\nC  The pressure in the ventricles is always greater than in the atria because of the thicker ventricle wall.\nD  The wall of the left ventricle is less thick because it only has to pump blood to the lungs.", marks: 1 } ] },
+              { number: 8, parts: [ { code: '8', prompt: "A diagram shows the absorption spectra of chlorophyll a, chlorophyll b and carotenoids (see the QP PDF). Which statement about the absorption spectra is not correct?\n\nA  Absorption of light energy by accessory pigments such as chlorophyll b and carotenoids increases the efficiency of light harvesting.\nB  Chlorophyll a absorbs red light but not blue light and chlorophyll b absorbs blue light but not red light.\nC  Chlorophyll b and carotenoids are described as accessory pigments because they are not involved directly in the light dependent reaction.\nD  The absorption spectra explain why plants appear green because they absorb red and blue wavelengths of light.", marks: 1 } ] },
+              { number: 9, parts: [ { code: '9', prompt: "A diagram shows reactions in a leaf cell (see the QP PDF). Which statements about triose phosphate is/are correct?\n\n1  Six turns of the Calvin cycle produces 6 molecules of triose phosphate.\n2  Triose phosphate from the Calvin cycle can be recycled to ribulose bisphosphate.\n3  Triose phosphate from the Calvin cycle can be used to make cellulose, lipids and proteins.\n\nA  1, 2 and 3 are correct\nB  Only 1 and 2 are correct\nC  Only 2 and 3 are correct\nD  Only 1 is correct", marks: 1 } ] },
+              { number: 10, parts: [ { code: '10', prompt: "Which of the diagrams shows a neurone that connects to an effector? Select A, B, C or D (diagrams in the QP PDF).", marks: 1 } ] },
+              { number: 11, parts: [ { code: '11', prompt: "In a phototropism investigation, oat seedlings were illuminated from one side; a table shows four experiments (tip covered, impermeable sheet on shaded side, tip removed and replaced on agar) — see the QP PDF. Which option correctly explains the experimental results?\n\nA  Experiment 1 shows that auxin increases cell division on the shaded side.\nB  Experiments 1 and 2 show that photoreceptors are in the tip of the seedlings.\nC  Experiments 1, 3 and 4 show that electrical signals control stem elongation.\nD  Experiments 1, 3 and 4 show that soluble inhibitors of elongation move down the illuminated side.", marks: 1 } ] },
+              { number: 12, parts: [ { code: '12', prompt: "Which of the statements about communication systems is correct?\n\nA  Cell signalling acts only over short distances.\nB  Communication systems are required to coordinate responses and maintain a near-constant internal environment.\nC  Effectors that respond to hormones do not respond to nervous stimulation.\nD  Plants do not require communication systems because, unlike animals, they do not respond to their environments.", marks: 1 } ] },
+              { number: 13, parts: [ { code: '13', prompt: "The Pacinian corpuscle is a sensory receptor that detects pressure. Which option describes its action?\n\nA  A strong stimulus at a Pacinian corpuscle produces a generator potential that exceeds a threshold value.\nB  A strong stimulus at a Pacinian corpuscle produces a larger action potential.\nC  Pressure on the Pacinian corpuscle causes the neurone membrane to become less permeable to sodium ions.\nD  The Pacinian corpuscle is a transducer that converts pressure into chemical energy.", marks: 1 } ] },
+              { number: 14, parts: [ { code: '14', prompt: "Students investigated the effect of ethanol on the permeability of beetroot membranes, measuring the redness of the solution by colorimeter; a graph shows the results (mean ± 2 SD) — see the QP PDF. Which observation(s) is/are correct?\n\n1  Ethanol disrupts the cell membranes leading to increased permeability.\n2  The permeability is proportional to ethanol concentration between 0% and 50% ethanol.\n3  The cell membranes are completely disrupted in 60% ethanol.\n\nA  1, 2 and 3 are correct\nB  Only 1 and 2 are correct\nC  Only 2 and 3 are correct\nD  Only 1 is correct", marks: 1 } ] },
+              { number: 15, parts: [ { code: '15', prompt: "The students were asked to decide whether the permeability of the membrane is significantly greater with 50% ethanol compared to 40% ethanol. Which statistical test should they use?\n\nA  Chi-squared (χ²)\nB  Spearman's rank correlation coefficient\nC  Standard deviation\nD  t-test", marks: 1 } ] },
+              { number: 16,
+                scenario: "Section B. During pregnancy the mother's body undergoes several physiological changes to support the developing fetus.",
+                parts: [
+                  { code: '16(a)(i)', preamble: "Fig. 16.1 shows the changes in stroke volume and heart rate during pregnancy (see the QP PDF).", prompt: "Use the data in Fig. 16.1 to calculate the cardiac output in week 20. Give the value and the unit.", marks: 3 },
+                  { code: '16(a)(ii)', prompt: "Suggest an advantage of the increase in cardiac output.", marks: 1 },
+                  { code: '16(a)(iii)', preamble: "Fig. 16.2 shows how blood pressure varies throughout pregnancy. A student concluded: 'As cardiac output increased, blood pressure dropped, so there must have been a decrease in vascular resistance.'", prompt: "Evaluate this conclusion.", marks: 3 },
+                  { code: '16(b)', prompt: "Describe the flow of blood through the left side of the heart during the cardiac cycle and explain the role of valves and pressure differences in this process.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '16(c)(i)', kind: 'diagram', preamble: "Fig. 16.3 shows the oxygen dissociation curve for the mother's haemoglobin (see the QP PDF).", prompt: "Sketch the oxygen dissociation curve for fetal haemoglobin (answer on Fig. 16.3).", marks: 1 },
+                  { code: '16(c)(ii)', prompt: "Explain how the different affinities of maternal and fetal haemoglobin enable transfer of oxygen from the maternal circulation to the fetus.", marks: 3 },
+                  { code: '16(d)', preamble: "The eGFR in a healthy 30–39-year-old is 107 cm³ min⁻¹; in pregnancy it can increase by 50–85%. A table gives measurements for two 35-year-old women (Patient A: eGFR 162, urine glucose moderately high, urine protein slightly high; Patient B: eGFR 35, urine glucose slightly high, urine protein very high) — see the QP PDF. A doctor concluded Patient A was undergoing a normal pregnancy whereas Patient B was suffering from kidney failure.", prompt: "Explain the doctor's conclusion.", marks: 4 }
+                ] },
+              { number: 17,
+                scenario: "Students investigate the effect of IAA (auxin) concentration on the growth of roots and shoots in mustard seedlings, using 8 concentrations of IAA on damp filter paper plus a distilled-water control, grown vertically in the dark for 2–3 days (method and grid lid in the QP PDF).",
+                parts: [
+                  { code: '17(a)(i)', prompt: "Explain why the Petri dishes were placed vertically and in the dark.", marks: 2 },
+                  { code: '17(a)(ii)', prompt: "Explain the purpose of the Petri dish containing distilled water instead of IAA solution.", marks: 2 },
+                  { code: '17(b)', preamble: "One student recorded a mean root length of 16.5 grid squares in test solution and 13.9 in water.", prompt: "Calculate the percentage change in mean root length in test solution compared with water. Give your answer to 2 significant figures.", marks: 2 },
+                  { code: '17(c)(i)', kind: 'diagram', preamble: "Table 17.2 gives the % change in root and shoot length for IAA concentrations from 1×10⁻⁵ to 1×10² ppm (see the QP PDF).", prompt: "Plot a graph of the data in Table 17.2.", marks: 4 },
+                  { code: '17(c)(ii)', preamble: "The students were given an IAA solution of concentration 100 ppm.", prompt: "Outline a procedure the students could use to prepare the 8 test solutions required for the experiment.", marks: 2 },
+                  { code: '17(c)(iii)', prompt: "Describe two precautions the students should take to make sure the concentrations of the solutions they prepare are accurate.", marks: 2 },
+                  { code: '17(c)(iv)', prompt: "Suggest why the range of IAA concentrations could be described as logarithmic.", marks: 1 }
+                ] },
+              { number: 18,
+                scenario: "An electron micrograph shows the junction between two neurones, with regions A, B and C labelled (see the QP PDF).",
+                parts: [
+                  { code: '18(a)(i)', prompt: "State the name given to the region labelled B.", marks: 1 },
+                  { code: '18(a)(ii)', prompt: "Identify whether structure A or structure C is the first neurone in the pathway. Use one piece of evidence visible in the electron micrograph to explain your choice.", marks: 1 },
+                  { code: '18(a)(iii)', prompt: "Complete the sentences about the action potential: the rapid opening of voltage-gated sodium ion channels is an example of … feedback; when the inside of the neurone becomes more positive than the outside this is known as … of the membrane.", marks: 2 },
+                  { code: '18(b)(i)', preamble: "Mutations in genes coding for cytoskeleton proteins have been associated with neurodegenerative disorders.", prompt: "Give three functions of the cytoskeleton.", marks: 3 },
+                  { code: '18(b)(ii)', prompt: "Suggest how a mutation in cytoskeleton genes could cause a disease of the nervous system.", marks: 2 }
+                ] },
+              { number: 19,
+                scenario: "Excretion and homeostasis.",
+                parts: [
+                  { code: '19(a)', prompt: "State whether each statement about excretion and homeostasis is true or false (tick one box per row): (1) the liver, kidneys, lungs and skin are all involved in excretion; (2) carbon dioxide is formed by deamination of excess amino acids; (3) urea is less soluble and less toxic than ammonia; (4) breakdown of haem from haemoglobin produces bile pigments excreted in the faeces.", marks: 2 },
+                  { code: '19(b)(i)', preamble: "Fig. 19.1 is a drawing of a longitudinal section of a kidney with parts T, U and V labelled (see the QP PDF).", prompt: "Identify the parts of the kidney labelled T, U and V.", marks: 3 },
+                  { code: '19(b)(ii)', preamble: "Fig. 19.2 is a photomicrograph of a cross-section of part of the kidney (×360).", prompt: "Using the letter T, U or V, identify the part of the kidney used to make the cross-section, and give a reason.", marks: 2 },
+                  { code: '19(c)(i)', preamble: "Fig. 19.3 is a diagram of a single nephron with regions W to Z labelled (see the QP PDF).", prompt: "Complete the table using the most appropriate letter(s) W–Z for each statement: 'ADH increases the permeability of the walls'; 'This region has the highest hydrostatic pressure'; 'Movement of mineral ions occurs to maintain the balance of mineral ions in the blood'.", marks: 3 },
+                  { code: '19(c)(ii)', prompt: "Outline the processes in the loop of Henle that cause the solute concentration to increase.", marks: 3 },
+                  { code: '19(d)', preamble: "An adult reduced their body mass by 1 kg over several weeks before surgery.", prompt: "Suggest what happened to the 1 kg of body mass.", marks: 2 }
+                ] },
+              { number: 20,
+                scenario: "Organisms can be ectotherms or endotherms.",
+                parts: [
+                  { code: '20(a)(i)', prompt: "Define the term endotherm.", marks: 1 },
+                  { code: '20(a)(ii)', prompt: "Suggest one advantage and one disadvantage that ectotherms have compared to endotherms.", marks: 2 },
+                  { code: '20(b)', preamble: "One student stated: 'Ectotherms cannot control their body temperature.' Another stated: 'Ectotherms control their body temperature by behavioural responses, but endotherms do not.'", prompt: "Discuss, using examples, whether these two statements are correct.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '20(c)(i)', preamble: "Infection often releases pyrogens, which stimulate COX-2 to produce PGE2; PGE2 binds to receptors in the hypothalamus and increases the thermogenic set point.", prompt: "Suggest the consequences of an increase in the thermogenic set point.", marks: 2 },
+                  { code: '20(c)(ii)', prompt: "PGE2 receptors are located on the cell surface membrane. State two functions of the cell surface membrane that are illustrated by the action of PGE2.", marks: 2 }
+                ] },
+              { number: 21,
+                scenario: "In 1933 two scientists investigated the movement of coloured dyes in the transpiration stream of sycamore stems, boring holes, pouring in dye and sealing with impermeable tape.",
+                parts: [
+                  { code: '21(a)(i)', prompt: "Describe what is meant by the term transpiration stream.", marks: 2 },
+                  { code: '21(a)(ii)', prompt: "Suggest why the scientists sealed the borehole with tape.", marks: 1 },
+                  { code: '21(a)(iii)', preamble: "The scientists found that the dye moved both up and down the stems. A student wanted to investigate this using water-soluble food dyes injected into sunflower stems.", prompt: "Suggest how they could observe the route taken by the dyes.", marks: 2 },
+                  { code: '21(b)(i)', preamble: "A technician accidentally watered some sunflower plants with a mineral concentration 1000 times higher than normal.", prompt: "Explain why the plants wilted, even though they were given a lot of water.", marks: 3 },
+                  { code: '21(b)(ii)', prompt: "The teacher suggested the same effect would be seen if the plants had been watered with a solution containing cyanide ions that inhibit ATP synthesis. Explain whether the teacher was correct.", marks: 2 },
+                  { code: '21(b)(iii)', prompt: "Explain why plants growing in high light intensity require more water than plants growing in shade, even when the temperatures are the same.", marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '1': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '2': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '3': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '4': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '5': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '6': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '7': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '8': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '9': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '10': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '11': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '12': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '13': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '14': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '15': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '16(a)(i)': { type: 'exact', points: ['≈ 7010 cm³ min⁻¹ (7012.5; accept 7.01 dm³ min⁻¹)'],
+                guidance: '3 marks. Cardiac output = heart rate × stroke volume = 82.5 × 85 = 7012.5; unit cm³ min⁻¹. 1 mark for correct read-offs (SV 85, HR 82.5), 1 for the calculation, 1 for the unit. ECF for incorrect read-offs.' },
+              '16(a)(ii)': { type: 'points', points: ['To deliver more blood / oxygen / glucose / amino acids to (maternal or fetal) cells/tissues/organs/placenta, OR to meet the need for a higher metabolic rate'],
+                guidance: '1 max. Do not allow "delivers more blood to fetus".' },
+              '16(a)(iii)': { type: 'points', points: [
+                  'Valid: during weeks ~9–24, as cardiac output increases, blood pressure decreases',
+                  'Valid: a decreased vascular resistance could explain the drop in blood pressure',
+                  'Not valid: after 24 weeks blood pressure increases (while cardiac output stays high)',
+                  'Not valid: changes could be due to another named factor (e.g. blood volume / hormones)',
+                  'General: overlapping error bars suggest the changes may not be significant; no statistical test; no sample size; no data at 0 weeks'
+                ], guidance: '3 max (general statements capped at 2).' },
+              '16(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A detailed account correctly describing blood flow through the (left) heart, including the role of valves AND pressure differences. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'An account partly describing blood flow and including a statement about the role of valves AND pressure differences. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A basic outline partly describing blood flow, OR a statement about valves, OR a statement about pressure differences. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Blood flow (left side)': 'Return via the pulmonary vein → left atrium → left ventricle → aorta.',
+                  'Role of valves': 'Valves prevent back-flow; open or close due to pressure differences; atrioventricular (bicuspid) valve between atrium and ventricle, semi-lunar (aortic) valve between ventricle and aorta.',
+                  'Pressure differences': 'During diastole pressure is low and rises as the atrium fills; atrial systole raises pressure and forces blood into the ventricle; ventricular systole raises pressure further, closing the AV valve and forcing blood into the aorta; as ventricular pressure drops the SL valve closes; when it falls below atrial pressure the AV valve opens.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '16(c)(i)': { type: 'points', points: ['A sigmoid curve sketched to the left of the adult curve'],
+                guidance: '1 mark. Best assessed against your sketch. The curve must start and finish at the same % as the maternal curve and not exceed 96%.' },
+              '16(c)(ii)': { type: 'points', points: [
+                  '(At the same pO₂) fetal haemoglobin has a higher affinity for oxygen (ORA for maternal)',
+                  'There is a low pO₂ in the placenta',
+                  'So oxygen dissociates from maternal haemoglobin (in the placenta)',
+                  'Oxygen diffuses from maternal to fetal blood',
+                  'Increased saturation of fetal haemoglobin at the low pO₂'
+                ], guidance: '3 max.' },
+              '16(d)': { type: 'points', points: [
+                  'Patient A: the increase in eGFR is in line with that expected during pregnancy (≈50% higher)',
+                  'Patient A: the high eGFR explains the increased urine glucose / protein',
+                  'Patient B: has a much lower eGFR than a healthy person',
+                  'Patient B: less / no ultrafiltration so blood electrolytes are higher than normal',
+                  'Patient B: very high urine protein indicates damage to the nephron / glomerulus / Bowman\'s capsule',
+                  'A correct supporting calculation (e.g. Patient A +51%; Patient B −67%)'
+                ], guidance: '4 max.' },
+              '17(a)(i)': { type: 'points', points: [
+                  'Placed vertically so that roots grow downwards / shoots grow upwards (positive/negative geotropism)',
+                  'In the dark so that light does not affect the results / to prevent phototropism (light is a control variable)'
+                ], guidance: '2 marks. Do not allow "trophism".' },
+              '17(a)(ii)': { type: 'points', points: [
+                  'Acts as a control',
+                  'To determine growth without auxin / compare growth with and without auxin',
+                  'To allow calculation of the percentage change / stimulation / inhibition'
+                ], guidance: '2 max. Do not allow "control variable".' },
+              '17(b)': { type: 'exact', points: ['19 (%)'],
+                guidance: '2 marks. Change = 16.5 − 13.9 = 2.6; 2.6 ÷ 13.9 × 100 = 18.7 = 19% to 2 sig figs. Max 1 if not given to 2 sig figs.' },
+              '17(c)(i)': { type: 'points', points: [
+                  'Correct axis labels and an appropriate scale, with plotted points occupying at least 50% (x = IAA concentration in ppm, y = % change in length)',
+                  '16 plots mostly correct for both roots and shoots',
+                  'Appropriate lines for roots and shoots',
+                  'An appropriate key for the root and shoot lines, correctly labelled'
+                ], guidance: '4 marks. Best assessed against your graph; should be a line graph. A bar chart scores max 2 (labels + key).' },
+              '17(c)(ii)': { type: 'points', points: [
+                  'Keep some stock / undiluted solution to use for the 100 ppm value',
+                  'Use serial dilution: 1 cm³ of the 100 ppm solution + 9 cm³ distilled water (to get 10 ppm)',
+                  'Repeat this procedure with each previously diluted solution'
+                ], guidance: '2 max.' },
+              '17(c)(iii)': { type: 'points', points: [
+                  'Use a new / clean syringe or pipette for measuring volumes / each transfer',
+                  'Ensure adequate mixing at each step'
+                ], guidance: '2 marks.' },
+              '17(c)(iv)': { type: 'points', points: ['Because each interval is a factor of 10'],
+                guidance: '1 mark. Do not allow "changes by 10 each time".' },
+              '18(a)(i)': { type: 'exact', points: ['Synaptic cleft / gap'], guidance: '1 mark. Ignore "synapse".' },
+              '18(a)(ii)': { type: 'points', points: ['Structure A, because vesicles are present (fused with the membrane) / exocytosis / neurotransmitter is being released'],
+                guidance: '1 mark — must include structure A and a reason.' },
+              '18(a)(iii)': { type: 'exact', points: ['positive (feedback); depolarisation'],
+                guidance: '2 marks.' },
+              '18(b)(i)': { type: 'points', points: [
+                  'Movement of cells / change in cell shape (e.g. phagocytosis)',
+                  'Strengthening / supporting / maintaining cell shape',
+                  'Movement of (named) organelles (forming tracks for motor proteins)',
+                  'Holding organelles in place / attachment of organelles',
+                  'Forming the (mitotic/meiotic) spindle; movement of chromatids/chromosomes; cytokinesis'
+                ], guidance: '3 max.' },
+              '18(b)(ii)': { type: 'points', points: [
+                  'A change in the structure / function of the cytoskeleton protein (a non-functional protein is produced)',
+                  'Less / no movement of vesicles / exocytosis / release of neurotransmitter',
+                  'Less / no synaptic transmission (impulse cannot cross the synapse)',
+                  'Could change the diameter of the axon / affect the speed of nerve impulses / affect Schwann cell integrity'
+                ], guidance: '2 max.' },
+              '19(a)': { type: 'exact', points: ['True; False; False; True'],
+                guidance: '2 marks. All four correct = 2; two or three correct = 1.' },
+              '19(b)(i)': { type: 'exact', points: ['T = (renal) medulla (pyramid); U = (renal) cortex; V = pelvis'],
+                guidance: '3 marks.' },
+              '19(b)(ii)': { type: 'points', points: [
+                  'U (the cortex)',
+                  'Because it shows a glomerulus / Bowman\'s capsule'
+                ], guidance: '2 marks.' },
+              '19(c)(i)': { type: 'exact', points: ['ADH increases permeability: Z; highest hydrostatic pressure: W; movement of mineral ions: Y'],
+                guidance: '3 marks (1 per row). Ignore Y for the first row.' },
+              '19(c)(ii)': { type: 'points', points: [
+                  'The ascending limb is impermeable to water',
+                  'Na⁺ / Cl⁻ diffuse out of the lower part of the ascending limb',
+                  'Active transport of Na⁺ / Cl⁻ out of the (upper part of the) ascending limb',
+                  'Diffusion of Na⁺ / Cl⁻ into the descending limb; water leaves the descending limb by osmosis',
+                  'A countercurrent multiplier'
+                ], guidance: '3 max.' },
+              '19(d)': { type: 'points', points: [
+                  'Body fat / glycogen is broken down / used for respiration',
+                  '(Respired to) produce carbon dioxide and water',
+                  'Carbon dioxide / water / waste products are excreted (so body mass is lost)'
+                ], guidance: '2 max.' },
+              '20(a)(i)': { type: 'points', points: ['An endotherm uses heat produced within/internally (from metabolic processes) to maintain its body temperature'],
+                guidance: '1 mark. Ignore "control".' },
+              '20(a)(ii)': { type: 'points', points: [
+                  'Advantage: less food/energy used; more energy for growth/reproduction; less time spent finding food (can survive where food is scarce)',
+                  'Disadvantage: metabolism slows / less active at low temperatures; at risk from predators when cold; less able to hunt/find food when cold'
+                ], guidance: '2 max (one advantage and one disadvantage).' },
+              '20(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A detailed discussion of both statements using appropriate examples for both ectotherms AND endotherms. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A discussion of both statements using appropriate example(s) for either ectotherms or endotherms. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A discussion of either statement using an appropriate example. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Statement 1 — ectotherms': 'Ectotherms control body temperature less well than endotherms; their temperature varies with the environment; but they can control it using behaviour (and some physiological methods) — e.g. moving to cooler/warmer places, basking, lying on hot rocks, increasing/reducing absorption of heat from the sun.',
+                  'Statement 2 — endotherms': 'Endotherms use mostly physiological/metabolic methods but also some behaviour — e.g. metabolic heat, sweating, vasoconstriction/vasodilation, hairs erect, shivering, large surface area for cooling; behavioural examples include hibernation/aestivation, burrows/shade, gaping/wrist-licking, clothing, migration, huddling. So the second statement is incorrect.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '20(c)(i)': { type: 'points', points: [
+                  'An increase in set point results in a fever',
+                  'Raised body temperature helps to kill / prevent an increase in the number of pathogens',
+                  'Causes an increase in antibody production / a faster immune response',
+                  'A very high body temperature can result in organ damage / failure'
+                ], guidance: '2 max.' },
+              '20(c)(ii)': { type: 'points', points: [
+                  '(Membrane acts in) cell signalling / communication',
+                  '(Membrane) controls entry/exit to the cell / acts as a (partially permeable) barrier'
+                ], guidance: '2 marks.' },
+              '21(a)(i)': { type: 'points', points: ['The movement of water', 'From the roots to the leaves'],
+                guidance: '2 marks.' },
+              '21(a)(ii)': { type: 'points', points: ['To prevent air from breaking the water column (prevent air locks / maintain the continuous water column), OR to reduce evaporation / loss of water vapour, OR to prevent entry of pathogens'],
+                guidance: '1 max.' },
+              '21(a)(iii)': { type: 'points', points: [
+                  'Cut a series of (transverse / longitudinal) sections at intervals along the stem (from above and below the injection site)',
+                  'View the sections using a microscope (or see whether the dye visibly appears in the leaves/flowers/stem)'
+                ], guidance: '2 max.' },
+              '21(b)(i)': { type: 'points', points: [
+                  'The fertiliser solution lowers the water potential of the soil (below that of the root cells)',
+                  'Water moves out of the root cells into the soil by osmosis / less water enters by osmosis',
+                  'The plant loses more water than it gains, so turgor pressure in the aerial parts is reduced (cells become flaccid/plasmolysed)'
+                ], guidance: '3 max.' },
+              '21(b)(ii)': { type: 'points', points: [
+                  'Correct because ATP is required for the active transport of mineral ions into the root/xylem, so there is no water-potential gradient into the root',
+                  'Incorrect because the cyanide may not have entered the roots / the cells may be tolerant / the concentration may be too low to inhibit ATP synthesis'
+                ], guidance: '2 max.' },
+              '21(b)(iii)': { type: 'points', points: [
+                  '(High light intensity) increases the rate of the light-dependent reaction / photosynthesis',
+                  'More stomata open (widen) to allow gas exchange / entry of carbon dioxide',
+                  'This increases transpiration, so more water vapour is lost'
+                ], guidance: '2 max.' }
             } }
         ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
