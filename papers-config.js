@@ -16353,6 +16353,278 @@ window.SUBJECTS = [
                   'Long term: the wildflower plant population declines in future years (reduced genetic diversity)',
                   'Long term: the decline of wildflowers could further reduce bee populations / reduce crop yields / affect predators'
                 ], guidance: '4 max (≥1 short-term and ≥1 long-term effect).' }
+            } },
+          { id: 'bio-edxb-9bi0-2022-p1', year: 'June 2022', paperName: 'Paper 1 — Advanced Biochemistry, Microbiology and Genetics', paperCode: '9BI0/01', totalMarks: 90, durationMins: 105,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-01-que-20220610.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-01-rms-20220818.pdf',
+            qbqNote: 'All 9 questions (90 marks) are wired up question-by-question with the official Pearson mark scheme. Question 7(b) and Question 9(c)(ii) are the asterisked (*) levels-of-response questions. Multiple-choice options, images, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "The pathogenic effects of bacteria can be due to the toxins they release.",
+                parts: [
+                  { code: '1(a)(i)', preamble: "Endotoxins are released by Gram negative bacteria.", prompt: "Name one type of Gram negative bacteria that releases endotoxins.", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "Give one difference between the structure of Gram negative bacteria and Gram positive bacteria.", marks: 1 },
+                  { code: '1(b)(i)', preamble: "Endotoxins are usually less toxic than exotoxins. The LD50 value is the mass of the chemical per kg of body mass that would kill half the number of rodent animals. One endotoxin has an LD50 value of 11 ng kg⁻¹. The mean body mass of a group of rodents is 28 g.", prompt: "Calculate the mass of endotoxin given to each rodent that would kill half of the rodents in this group. Give your answer in ng.", marks: 1 },
+                  { code: '1(b)(ii)', prompt: "State two differences, other than toxicity, between endotoxins and exotoxins.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "A zygote is formed when gametes fuse at fertilisation.",
+                parts: [
+                  { code: '2(a)', prompt: "Explain how meiosis results in genetic variation in the gametes.", marks: 2 },
+                  { code: '2(b)', prompt: "Describe how the process of fertilisation results in the formation of a zygote from the gametes in humans.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "Malaria is a serious and sometimes fatal disease. Scientists are constantly looking for new ways of controlling this disease.",
+                parts: [
+                  { code: '3(a)', prompt: "Which row of the table shows the name of the pathogen that causes malaria, and its classification group?\n\nA  Plasmodium — genus\nB  Plasmodium — species\nC  Puccinia — genus\nD  Puccinia — species", marks: 1 },
+                  { code: '3(b)', preamble: "One group of scientists has genetically modified a fungus to produce a spider toxin that kills mosquitoes.", prompt: "Describe how a fungus could be genetically modified to produce spider toxin.", marks: 3 },
+                  { code: '3(c)', preamble: "Another group of scientists has discovered a type of fungus that completely protects mosquitoes from infection by the pathogen that causes malaria. This fungus does not kill the mosquitoes.", prompt: "Explain why this approach is less controversial than the approach used by the scientists who are developing the genetically-modified fungus.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "Bacteria are the host cells for λ (lambda) phage viruses.",
+                parts: [
+                  { code: '4(a)', prompt: "Which is a description of a λ phage?\n\nA  DNA virus with a complex protein capsid\nB  DNA virus with a helical protein capsid\nC  RNA virus with a complex protein capsid\nD  RNA virus with a helical protein capsid", marks: 1 },
+                  { code: '4(b)', kind: 'diagram', preamble: "The image shows phage viruses attacking a bacterium (see the QP PDF). The length of this bacterium is 1.7 µm.", prompt: "Calculate the length of the labelled phage. Give your answer in nanometres (nm).", marks: 2 },
+                  { code: '4(c)(i)', preamble: "Viruses can be cultured and a growth curve produced: host cells are grown on agar, viruses are added, and lysed (burst) cells are counted at regular intervals. The graph shows a growth curve for viruses (see the QP PDF).", prompt: "Explain why there was a delay before the number of lysed cells started to increase.", marks: 3 },
+                  { code: '4(c)(ii)', prompt: "Calculate the mean rate of increase in the actual number of lysed cells between 50 minutes and 90 minutes. Give your answer in cells min⁻¹.", marks: 2 },
+                  { code: '4(c)(iii)', kind: 'diagram', preamble: "A sketch has been made of this growth curve.", prompt: "Complete this sketch to predict the shape of the growth curve after 120 minutes, assuming there is an excess of host cells.", marks: 2 }
+                ] },
+              { number: 5,
+                scenario: "The light-dependent stage and the light-independent stage of photosynthesis both take place in the chloroplast. The rate of photosynthesis is affected by a number of different factors, including carbon dioxide concentration and temperature. The diagram shows a chloroplast with regions Q, R, S, T, U, V, W and X labelled (see the QP PDF).",
+                parts: [
+                  { code: '5(a)(i)', prompt: "Where does the light-dependent stage take place?\n\nA  Q\nB  T\nC  V\nD  X", marks: 1 },
+                  { code: '5(a)(ii)', preamble: "The light-dependent stage produces hydrogen ions.", prompt: "Where do these hydrogen ions accumulate?\n\nA  Q\nB  R\nC  S\nD  W", marks: 1 },
+                  { code: '5(a)(iii)', prompt: "Where does translation take place?\n\nA  Q\nB  R\nC  S\nD  U", marks: 1 },
+                  { code: '5(b)(i)', preamble: "Scientists measured the effect of two different concentrations of carbon dioxide on the rate of photosynthesis at different leaf temperatures, in one species of plant (results in the QP PDF).", prompt: "Which units are suitable for measuring the rate of photosynthesis in leaves?\n\nA  µmol m⁻¹ sec⁻¹\nB  µmol m⁻¹ sec⁻²\nC  µmol m⁻² sec⁻¹\nD  µmol m⁻² sec⁻²", marks: 1 },
+                  { code: '5(b)(ii)', prompt: "Analyse the data to identify three conclusions that can be made from this graph.", marks: 3 },
+                  { code: '5(b)(iii)', prompt: "Explain the effects of carbon dioxide concentration and temperature on the rate of formation of GALP.", marks: 4 }
+                ] },
+              { number: 6,
+                scenario: "The lipid content of the cell membranes of prokaryotic organisms changes in response to changes in the environmental temperature.",
+                parts: [
+                  { code: '6(a)', preamble: "Phospholipids form a bilayer in the cell membranes of bacteria.", prompt: "Describe the structure of a phospholipid.", marks: 2 },
+                  { code: '6(b)', preamble: "The cell membranes of most organisms belonging to the domain Archaea are lipid monolayers. The lipid that forms this monolayer is a bipolar lipid.", prompt: "Explain why a bipolar lipid is a suitable molecule to form the cell membrane.", marks: 2 },
+                  { code: '6(c)(i)', preamble: "The percentage of branched-chain fatty acids in membranes of bacteria that have different optimum growth temperatures was investigated (graph in the QP PDF).", prompt: "Calculate the mean percentage of branched-chain fatty acids in bacteria whose optimum growth temperature is <20 °C.", marks: 1 },
+                  { code: '6(c)(ii)', prompt: "Analyse the data to describe two conclusions that can be drawn from this investigation.", marks: 2 },
+                  { code: '6(d)', preamble: "A change in temperature can affect the permeability and fluidity of the membrane.", prompt: "Explain why it is important that the lipid composition of the membrane of prokaryotic organisms changes if the temperature changes.", marks: 3 }
+                ] },
+              { number: 7,
+                scenario: "Macrophages are involved in response to infection. Macrophages engulf bacteria by surrounding the bacteria with pseudopodia. A flow chart shows one theory for the formation of pseudopodia: Step 1 — antibody binds to the cell surface of the macrophage; Step 2 — fibrous proteins in the cytoplasm, close to the antibody binding site, break down to form soluble components; Step 3 — water flows into the part of the cell where the soluble components are located; Step 4 — pseudopodia start to form around the bacteria.",
+                parts: [
+                  { code: '7(a)(i)', prompt: "Which diagram shows one antibody binding to the surface of a macrophage (Step 1)? Select A, B, C or D (diagrams in the QP PDF).", marks: 1 },
+                  { code: '7(a)(ii)', preamble: "Actin is a fibrous protein.", prompt: "Which row of the table describes the breakdown of actin (Step 2)?\n\nA  monomer formed: amino acid; bond broken by: condensation\nB  monomer formed: amino acid; bond broken by: hydrolysis\nC  monomer formed: nucleotide; bond broken by: condensation\nD  monomer formed: nucleotide; bond broken by: hydrolysis", marks: 1 },
+                  { code: '7(a)(iii)', prompt: "Explain why water flows into the part of the cell where the soluble components are located (Step 3).", marks: 2 },
+                  { code: '7(a)(iv)', prompt: "Describe the events that take place resulting in T helper cell activation, following the formation of pseudopodia by the macrophages (Step 4).", marks: 3 },
+                  { code: '7(b)', preamble: "Phagocytosis by macrophages is affected by a number of factors. Microorganisms with a fluorescent green dye attached to them were used to measure phagocytosis by macrophages; the extent of the green glow is proportional to the number of microorganisms engulfed. Four graphs show the effects of concentration of microorganisms, number of macrophages per culture, source of macrophages (lung/abdomen/bone marrow, for bacteria A and B) and concentration of an ATP synthase inhibitor (graphs in the QP PDF).", prompt: "Analyse the data to discuss the factors that affect phagocytosis by macrophages.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 8,
+                scenario: "Hypoxia is an inadequate supply of oxygen to tissues and cells that restricts their function.",
+                parts: [
+                  { code: '8(a)(i)', preamble: "The normal partial pressures of oxygen vary from tissue to tissue. The table shows the normal partial pressure of oxygen in two tissues: pulmonary arterial blood 5.3 kPa; other arterial blood 13.3 kPa.", prompt: "Calculate the ratio of the partial pressures of oxygen in these two tissues. Give your answer to one decimal place.", marks: 1 },
+                  { code: '8(a)(ii)', prompt: "Explain why the partial pressures of oxygen in these two tissues are different.", marks: 2 },
+                  { code: '8(b)(i)', preamble: "The body responds to hypoxia by releasing hypoxia-inducible transcription factors (HIF). Investigations have shown that one effect of HIF is an increase in the rate of glycolysis in the affected cells.", prompt: "Explain how HIF could result in an increase in the rate of glycolysis.", marks: 2 },
+                  { code: '8(b)(ii)', prompt: "Explain why cells need to respond to hypoxia with an increase in the rate of glycolysis.", marks: 4 },
+                  { code: '8(b)(iii)', preamble: "The graph shows the changes in levels of two HIFs, HIF-1 and HIF-2, before and during hypoxia (see the QP PDF).", prompt: "Compare and contrast the changes in the levels of HIF-1 and HIF-2 during hypoxia.", marks: 2 },
+                  { code: '8(b)(iv)', prompt: "Explain the changes in levels of HIF-1 and HIF-2 during hypoxia.", marks: 2 }
+                ] },
+              { number: 9,
+                scenario: "Plants and animals are adapted for gas exchange.",
+                parts: [
+                  { code: '9(a)(i)', prompt: "Which row of the table describes gas exchange in the root of a plant?\n\nA  net CO₂ movement: in only; net O₂ movement: out only\nB  net CO₂ movement: out only; net O₂ movement: in only\nC  net CO₂ movement: in and out; net O₂ movement: in and out\nD  net CO₂ movement: neither in nor out; net O₂ movement: neither in nor out", marks: 1 },
+                  { code: '9(a)(ii)', prompt: "Which is the gas exchange surface in the stem of a woody plant?\n\nA  lenticel\nB  pit\nC  plasmodesmata\nD  stomata", marks: 1 },
+                  { code: '9(b)(i)', preamble: "Spiracles are small openings in the exoskeletons of insects that allow air to enter the respiratory system; water can evaporate out of open spiracles. Insects were kept in air at 80% humidity then moved into lower humidity, and water loss was measured (repeated in air high in carbon dioxide to keep the spiracles open). Results are in the table in the QP PDF.", prompt: "State how the water loss could have been measured in this investigation.", marks: 1 },
+                  { code: '9(b)(ii)', prompt: "Calculate the percentage increase in water loss from the insects kept in air at 0% humidity compared with those kept at 80% humidity. Give your answer to two decimal places.", marks: 1 },
+                  { code: '9(b)(iii)', prompt: "Explain why the insects were kept in air with 80% humidity at the start of this investigation.", marks: 2 },
+                  { code: '9(b)(iv)', prompt: "Explain the results of this investigation.", marks: 3 },
+                  { code: '9(c)(i)', preamble: "The gas exchange surfaces of fish are the gills. The table shows data on active and inactive species of fish and their gills (see the QP PDF). Lamellae are present on both sides of the gill filaments. The mean length of a gill filament is 25 mm.", prompt: "Calculate the total number of lamellae on the gill filaments of Thunnus (6480 filaments, 24 lamellae per mm per side). Express your answer in standard form.", marks: 1 },
+                  { code: '9(c)(ii)', prompt: "Analyse the data to explain the relationships between the activity of these fish and the structure of their gills.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['Salmonella (or another named Gram-negative genus)'],
+                guidance: '1 mark. Accept Shigella, Neisseria, Escherichia (e.g. E. coli), Pseudomonas, Klebsiella, Proteus, Providencia, Morganella, Aeromonas, Citrobacter. Do not accept Gram-positive bacteria (e.g. Actinomyces, Clostridium, Mycobacterium, Streptococci, Staphylococci, Nocardia).' },
+              '1(a)(ii)': { type: 'points', points: ['Gram-negative bacteria have a thinner peptidoglycan/murein cell wall / an outer lipopolysaccharide layer / an outer membrane (accept converse for Gram-positive; also larger periplasmic space / no teichoic acid)'],
+                guidance: '1 mark.' },
+              '1(b)(i)': { type: 'exact', points: ['0.308 (accept 0.31 or 0.3) ng'],
+                guidance: '1 mark. 11 ng kg⁻¹ × 0.028 kg = 0.308 ng.' },
+              '1(b)(ii)': { type: 'points', points: [
+                  'Endotoxins are released from Gram-negative bacteria only, but exotoxins from both Gram-negative and Gram-positive bacteria',
+                  'Endotoxins are lipopolysaccharides but exotoxins are proteins',
+                  'Endotoxins are released from dead/broken-down bacteria but exotoxins are released from living bacteria',
+                  'The effect of endotoxins is later'
+                ], guidance: '2 max.' },
+              '2(a)': { type: 'points', points: [
+                  'Meiosis results in recombination of alleles',
+                  'Due to independent/random assortment of (homologous) chromosomes',
+                  'And due to crossing over between (non-sister) chromatids of the same homologous chromosomes'
+                ], guidance: '2 max. Do not accept wrong description / wrong stage.' },
+              '2(b)': { type: 'points', points: [
+                  'Acrosome reaction occurs (enzymes released from the acrosome) on contact between sperm and secondary oocyte',
+                  'Meiosis is completed (in the oocyte)',
+                  'Cortical reaction takes place (cortical granules released that harden the membrane / form a fertilisation membrane)',
+                  'Fusion of the sperm nucleus/genetic material with the nucleus/genetic material of the ovum'
+                ], guidance: '3 max.' },
+              '3(a)': { type: 'exact', points: ['A — Plasmodium, genus'],
+                guidance: '1 mark. B wrong: Plasmodium is the genus not the species name. C and D wrong: Plasmodium (not Puccinia) causes malaria.' },
+              '3(b)': { type: 'points', points: [
+                  'Gene/DNA coding for the toxin is isolated (from the spiders) — accept mRNA isolated and used to synthesise the gene / base sequence determined and used to synthesise a gene',
+                  'Using restriction enzymes / (restriction) endonucleases',
+                  'Spider gene inserted into the fungus using a vector (e.g. virus / plasmid / gene gun / injection)',
+                  'Genetically-modified fungi identified / cloned / cultured'
+                ], guidance: '3 max.' },
+              '3(c)': { type: 'points', points: [
+                  'Not unethical as the mosquitoes are not killed',
+                  'Risk of other organisms being affected by the GM fungus is avoided (e.g. toxins harming other organisms, transfer of genes — accept unknown risks)',
+                  'Organisms that feed on mosquitoes will not lose their food supply (biodiversity/ecosystem/food chain not disrupted)',
+                  'Some people believe modifying DNA is wrong/unethical'
+                ], guidance: '3 max.' },
+              '4(a)': { type: 'exact', points: ['A — DNA virus with a complex protein capsid'],
+                guidance: '1 mark. B wrong: the capsid is complex not helical. C and D wrong: DNA (not RNA) is the genetic material.' },
+              '4(b)': { type: 'points', points: [
+                  'Measure drawing length of bacterium and of the virus in the same units (ratio of drawing lengths)',
+                  'Actual length of virus, to the nearest whole number, between 103 and 143 nm'
+                ], guidance: '2 marks. ecf if numerals correct but order of magnitude wrong.' },
+              '4(c)(i)': { type: 'points', points: [
+                  'Time for the virus to attach to host cells / for the DNA to enter host cells',
+                  'Synthesis of (new) DNA',
+                  'Protein synthesis / transcription and translation (e.g. capsid / tail / enzymes)',
+                  'Assembly of new viruses'
+                ], guidance: '3 max. Do not accept RNA. Accept time for replication/multiplication of the virus if no other marks awarded.' },
+              '4(c)(ii)': { type: 'exact', points: ['156 cells min⁻¹'],
+                guidance: '2 marks. Correct values read from graph (≈3.8 and 1.7 as log₁₀, converted to actual numbers) divided by 40 min. Correct answer only = 2 marks; ecf for a wrong time value.' },
+              '4(c)(iii)': { type: 'points', points: [
+                  'Line going up and (generally) levelling off',
+                  'The increase is greater than the first increase'
+                ], guidance: '2 marks. Best assessed against your completed sketch in the QP PDF.' },
+              '5(a)(i)': { type: 'exact', points: ['A'],
+                guidance: '1 mark. The light-dependent stage takes place on the thylakoid membrane (not the stroma, inner or outer membrane).' },
+              '5(a)(ii)': { type: 'exact', points: ['A'],
+                guidance: '1 mark. Hydrogen ions accumulate inside the thylakoids (not the starch grain, DNA loop or inner membrane space).' },
+              '5(a)(iii)': { type: 'exact', points: ['D'],
+                guidance: '1 mark. Translation occurs on the ribosomes (not inside the thylakoids, the starch grain or the DNA loop).' },
+              '5(b)(i)': { type: 'exact', points: ['C — µmol m⁻² sec⁻¹'],
+                guidance: '1 mark. Per area is m⁻² and per second is sec⁻¹.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'As temperature increases so does the rate of photosynthesis',
+                  'Rate of photosynthesis is faster in high levels of carbon dioxide',
+                  'The optimum temperature for photosynthesis is higher in higher levels of carbon dioxide',
+                  'Optimum conditions are high CO₂ and a temperature of ~37 °C (accept 35.5–36.5 °C)'
+                ], guidance: '3 max. Accept converse throughout.' },
+              '5(b)(iii)': { type: 'points', points: [
+                  'More CO₂ and higher temperatures (below optimum) mean more GALP formed',
+                  'Higher CO₂ concentration means more CO₂ for / a faster light-independent stage / Calvin cycle / carbon fixation (CO₂ reacting with RuBP)',
+                  'Higher temperatures mean RUBISCO can catalyse carbon fixation faster (too high and RUBISCO denatures)',
+                  'Because more kinetic energy means more enzyme–substrate complexes / energetic collisions',
+                  'Therefore GP is formed to be converted into GALP'
+                ], guidance: '4 max. Accept converse throughout; points may be pieced together.' },
+              '6(a)': { type: 'points', points: [
+                  'Glycerol attached to two fatty acids (by ester bonds)',
+                  'And one phosphate attached to the glycerol'
+                ], guidance: '2 marks. NB "made from one glycerol, two fatty acids and one phosphate" = 1 mark if neither point awarded.' },
+              '6(b)': { type: 'points', points: [
+                  'The two polar groups / outside layers interact with (form H bonds with) the aqueous environment on each side of the membrane',
+                  'The rest of the molecule provides a hydrophobic barrier / layer (inside)'
+                ], guidance: '2 marks.' },
+              '6(c)(i)': { type: 'exact', points: ['1.5 (%)'],
+                guidance: '1 mark.' },
+              '6(c)(ii)': { type: 'points', points: [
+                  'Bacteria with higher optimum growth temperatures have a greater percentage of branched-chain fatty acids (positive correlation; accept converse)',
+                  'The greater the percentage of branched-chain fatty acids, the greater the range of optimum growth temperature',
+                  'An optimum growth temperature of more than 40 °C needs at least 30% branched chains'
+                ], guidance: '2 max.' },
+              '6(d)': { type: 'points', points: [
+                  'Because membranes control permeability / what can enter and leave the cell (membranes become more permeable/leaky at higher temperatures)',
+                  'Such as uptake of nutrients / uptake of oxygen / removal of waste products',
+                  'Because membranes need to be fluid for movement / cell division'
+                ], guidance: '3 max. Accept converse (what would happen if the composition did not change).' },
+              '7(a)(i)': { type: 'exact', points: ['D'],
+                guidance: '1 mark. Antibodies have two antigen binding sites; the two binding sites attach to the antigen (not the macrophage); there is only one macrophage binding site.' },
+              '7(a)(ii)': { type: 'exact', points: ['B — monomer: amino acid; bond broken by hydrolysis'],
+                guidance: '1 mark. A wrong: condensation reactions build molecules. C and D wrong: nucleotides are the monomers of polynucleotides, not proteins.' },
+              '7(a)(iii)': { type: 'points', points: [
+                  '(Water enters part of the cell) by osmosis',
+                  'From a high water potential to a low water potential / because the cytoplasm is more concentrated (lower solute/osmotic potential inside)'
+                ], guidance: '2 marks.' },
+              '7(a)(iv)': { type: 'points', points: [
+                  'Bacteria engulfed and digested / broken down',
+                  'Antigen attached to MHC (antigen)',
+                  'Macrophage becomes an antigen-presenting cell (presents the antigen to the T helper cell)',
+                  'CD4 (antigen) of the T helper cell binds to the antigen / macrophage'
+                ], guidance: '3 max. NB CD4 of the T helper cell binds to the antigen–MHC complex = 2 marks.' },
+              '7(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Comments relating to phagocytosis on four sets of data, with an extended comment on at least one set (5 marks) or at least two sets (6 marks).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Comments must relate to phagocytosis (not just the green glow): three sets of data commented on (3 marks) or four sets commented on (4 marks).' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'One comment on one set of data (1 mark) or two sets of data commented on (2 marks).' }
+                ],
+                indicative: {
+                  'Graph 1 — concentration of microorganisms': 'As time increases the number of bacteria taken up increases; the more microorganisms present the more enhanced the uptake; but not proportional to number present; effect only seen after 10 minutes.',
+                  'Graph 2 — number of macrophages': 'The more macrophages present the more uptake of bacteria; but the difference is only marked with 100 000 macrophages present; effect only seen after 30 minutes.',
+                  'Graph 3 — source of macrophages': 'Source of macrophages affects how many bacteria are taken up; bone marrow cells take up more of both types; type of bacteria affects uptake; combination of both affects uptake.',
+                  'Graph 4 — ATP synthase inhibitor': 'Presence of the ATP synthase inhibitor reduces uptake (no ATP available for phagocytosis); but differences only really seen at concentrations of 100 a.u. and above.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '8(a)(i)': { type: 'exact', points: ['2.5 : 1 (other : pulmonary) / 1 : 2.5 (pulmonary : other) / 2.5 / 0.4'],
+                guidance: '1 mark. Do not accept with units.' },
+              '8(a)(ii)': { type: 'points', points: [
+                  '(Low pO₂ in) the pulmonary artery is carrying deoxygenated blood to the lungs (back from the body)',
+                  '(High pO₂ in) the arterial blood is carrying oxygenated blood to the body / cells / tissues (after the lungs)'
+                ], guidance: '2 marks.' },
+              '8(b)(i)': { type: 'points', points: [
+                  'Because HIF can switch on gene expression',
+                  'Bind to a promoter region / stimulate transcription / stimulate protein synthesis',
+                  'For enzymes / proteins involved in glycolysis'
+                ], guidance: '2 max. Ignore "enzymes" alone; accept named enzyme/protein involved in glycolysis.' },
+              '8(b)(ii)': { type: 'points', points: [
+                  '(If conditions are hypoxic) there is not much oxygen available to act as the terminal electron acceptor',
+                  'Therefore the electron transport chain will not operate',
+                  'Therefore ATP production by oxidative phosphorylation is reduced',
+                  'ATP is produced (directly / by substrate-level phosphorylation) during glycolysis (under these anaerobic conditions)'
+                ], guidance: '4 marks.' },
+              '8(b)(iii)': { type: 'points', points: [
+                  'Both HIF-1 and HIF-2 increase (during hypoxia)',
+                  'Levels of HIF-2 remain high (after a small decrease) but levels of HIF-1 fall'
+                ], guidance: '2 marks. Do not piece together.' },
+              '8(b)(iv)': { type: 'points', points: [
+                  'HIF-1 and HIF-2 switch on different genes (bind to different promoter regions)',
+                  'Products / transcription of genes from both HIF-1 and HIF-2 are needed in the early stages of hypoxia',
+                  'Products / transcription of genes from HIF-2 are needed for longer periods of hypoxia / to sustain glycolysis (accept converse for HIF-1)'
+                ], guidance: '2 max.' },
+              '9(a)(i)': { type: 'exact', points: ['B — CO₂ out only, O₂ in only'],
+                guidance: '1 mark. A and D wrong: respiration takes place in the root. C wrong: photosynthesis does not take place in the root.' },
+              '9(a)(ii)': { type: 'exact', points: ['A — lenticel'],
+                guidance: '1 mark. B wrong: pits are in the xylem. C wrong: plasmodesmata are between cells. D wrong: stomata are in the leaves.' },
+              '9(b)(i)': { type: 'points', points: ['Insect weighed before and after the investigation and the difference (in mass) calculated'],
+                guidance: '1 mark.' },
+              '9(b)(ii)': { type: 'exact', points: ['42.86 (%)'],
+                guidance: '1 mark. (0.10 − 0.07) ÷ 0.07 × 100 = 42.86%.' },
+              '9(b)(iii)': { type: 'points', points: [
+                  'As a standard for comparison',
+                  'To prevent water loss / dehydration before the start of the investigation (so there is water in the tracheoles)',
+                  'As this is the highest humidity they could tolerate / that could be produced (higher humidities might be harmful)'
+                ], guidance: '2 max.' },
+              '9(b)(iv)': { type: 'points', points: [
+                  'Water loss increases with a decrease in humidity as there are fewer water molecules in the air (down a water-vapour concentration gradient)',
+                  'Less water loss at low (20% / 0%) humidity in air because the spiracles close',
+                  'Water loss is greater in air with higher levels of carbon dioxide as the ventilation/gas-exchange rate is faster',
+                  'And the spiracles stay open'
+                ], guidance: '3 max. Accept converse where appropriate.' },
+              '9(c)(i)': { type: 'exact', points: ['7.776 × 10⁶ (accept 7.78 × 10⁶ / 7.8 × 10⁶ / 8 × 10⁶)'],
+                guidance: '1 mark. 6480 filaments × 24 lamellae per mm × 2 sides × 25 mm.' },
+              '9(c)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Four gill aspects commented on, with an explanation (5 marks) and (for 6 marks) an explanation linking to muscle contraction.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Two gill aspects commented on with an explanation (3 marks) or three gill aspects commented on with an explanation (4 marks).' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'One gill aspect commented on (1 mark) or two gill aspects commented on (2 marks).' }
+                ],
+                indicative: {
+                  'Gill filaments': 'Active fish generally have a greater number of gill filaments than inactive fish; the exception is the heaviest inactive fish (Tinca); maybe a weak correlation between number of filaments and mass of active fish.',
+                  'Lamellae': 'Active fish generally have more lamellae on each filament; but this does not correlate with the mass of the fish; Tinca is the inactive fish with the highest total number (e.g. 1.9 × 10⁶ — way lower than Thunnus and only slightly above the active fish with the least).',
+                  'Surface area': 'Active fish generally have a greater surface area of gills than inactive fish of similar mass; but no correlation with mass.',
+                  'Diffusion distance': 'Very little data; active fish seem to have a smaller diffusion distance; but no obvious correlation with activity or mass.',
+                  'Explanations': 'Higher number of filaments / lamellae / surface area increases gas exchange; a smaller diffusion distance increases gas exchange; so more oxygen is available for aerobic respiration; therefore more ATP can be generated; for the contraction of muscles (of the active fish); more energy is needed for movement of heavier fish.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
