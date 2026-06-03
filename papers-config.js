@@ -13490,6 +13490,265 @@ window.SUBJECTS = [
                   'Indicative content': 'Independent variable: a range of temperatures (e.g. 5–40 °C). Dependent variable: time from egg hatching to pupating. Control variables: same specialist species, source/age of eggs/larvae, food plant, mass of food, humidity (e.g. water baths). Repeats (several larvae per temperature); monitor at regular intervals; record the time since hatching; calculate the mean per temperature; suitable statistical analysis (SD, Spearman\'s rank, or t-test if only two temperatures).'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxa-9bn0-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Energy, Exercise and Coordination', paperCode: '9BN0/02', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-02-que-20230617.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-02-rms-20230817.pdf',
+            qbqNote: 'All 10 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "During growth, cells divide by mitosis. Many organisms also carry out meiosis to enable sexual reproduction.",
+                parts: [
+                  { code: '1(a)(i)', prompt: "In which stage of cell division do spindle fibres attach to the centromeres?\n\nA  anaphase\nB  interphase\nC  metaphase\nD  telophase", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "In which stage of cell division does the nuclear membrane start to break down?\n\nA  interphase\nB  metaphase\nC  prophase\nD  telophase", marks: 1 },
+                  { code: '1(a)(iii)', prompt: "In which stage of cell division are chromatids first visible when using a light microscope?\n\nA  interphase\nB  metaphase\nC  prophase\nD  telophase", marks: 1 },
+                  { code: '1(b)', preamble: "Meiosis is involved in the production of sperm cells. Crossing over during meiosis can result in genetic variation.", prompt: "Explain how crossing over can lead to genetic variation.", marks: 3 }
+                ] },
+              { number: 2,
+                scenario: "It has been estimated that up to 90% of the cells present in a human are prokaryotic, due to prokaryotes on the skin surface and within the body.",
+                parts: [
+                  { code: '2(a)', prompt: "Which one of the following statements comparing prokaryotic DNA with human DNA is correct?\n\nA  prokaryotic DNA is linear and human DNA is circular\nB  prokaryotic DNA is located in a membrane-bound nucleus\nC  the base thymine is replaced by uracil in the prokaryotic DNA\nD  the sugar in both eukaryotic and prokaryotic DNA is deoxyribose", marks: 1 },
+                  { code: '2(b)(i)', preamble: "The lac operon is found in some prokaryotes.", prompt: "Describe what is meant by the term operon.", marks: 2 },
+                  { code: '2(b)(ii)', prompt: "Describe the effect of lactose on the lac operon.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "Damage to the anterior cruciate ligament (ACL) is the most common major knee injury in football.\n\n(See the ACL surgery graph and infection table in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)', prompt: "Which of the following describes the structure and function of a ligament?\n\nA  elastic and attaches bone to bone\nB  elastic and attaches muscle to bone\nC  non-elastic and attaches bone to bone\nD  non-elastic and attaches muscle to bone", marks: 1 },
+                  { code: '3(b)', preamble: "A graph shows the percentage of people in the UK in different age groups who had ACL surgery from 2013 to 2018.", prompt: "Comment on the effect of age on the percentage of people who had ACL surgery from 2013 to 2018.", marks: 3 },
+                  { code: '3(c)(i)', preamble: "A study compared wound infections from keyhole and open surgery. Keyhole: 2623 surgeries, 2 infections, ratio 0.0008:1. Open: 13 472 surgeries, 68 infections.", prompt: "Complete the table to show the ratio of wound infections to number of open surgeries. Give your answer to one significant figure.", marks: 1 },
+                  { code: '3(c)(ii)', prompt: "Explain why there is a greater ratio of wound infections in open surgery compared with keyhole surgery.", marks: 2 }
+                ] },
+              { number: 4,
+                scenario: "There are different types of genetic screening available. Each year, about 30 000 prenatal genetic screening tests are carried out.",
+                parts: [
+                  { code: '4(a)', prompt: "Compare and contrast the use of pre-implantation genetic diagnosis (PGD) and amniocentesis.", marks: 4 },
+                  { code: '4(b)', prompt: "Describe two different social issues related to the use of PGD.", marks: 2 },
+                  { code: '4(c)', preamble: "Genetic screening can be used to test for conditions such as cystic fibrosis.", prompt: "Explain why cystic fibrosis affects digestion.", marks: 3 }
+                ] },
+              { number: 5,
+                scenario: "The bacterium Escherichia coli (E. coli) makes up about 1% of the human gut flora. Some strains aid digestion but some are pathogenic.",
+                parts: [
+                  { code: '5(a)', preamble: "The width of the E. coli DNA is 250 times smaller than the width of the bacterium. An image of E. coli at a magnification of 20 000 had a width of 10 mm.", prompt: "Calculate the width of its DNA. Give your answer in micrometres (µm) and in standard form.", marks: 3 },
+                  { code: '5(b)(i)', preamble: "Meselson and Stahl grew E. coli in heavy nitrogen (¹⁵N), then transferred them to light nitrogen (¹⁴N), sampling after the first and second replications.", prompt: "Complete the table to show the expected DNA after E. coli had been grown in ¹⁴N, for conservative and semi-conservative replication (using the heavy/light strand key).", marks: 3 },
+                  { code: '5(b)(ii)', prompt: "Explain what is meant by the term semi-conservative DNA replication.", marks: 2 },
+                  { code: '5(c)', preamble: "A pathogenic strain, E. coli-STEC, produces a toxin that reduces blood platelet concentration.", prompt: "Explain how an E. coli-STEC infection increases the time taken for a blood clot to form.", marks: 3 }
+                ] },
+              { number: 6,
+                scenario: "Cellular respiration is a metabolic process essential for life. A diagram represents part of aerobic respiration in a muscle cell: 6C —(process J)→ 3C —(process K)→ 2C → 2C + CoA, plus process L.\n\n(See the diagram and respirometer in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)(i)', prompt: "Name two products, other than the three-carbon molecule (3C), that are formed by process J.", marks: 1 },
+                  { code: '6(a)(ii)', prompt: "Describe what would happen to the three-carbon molecule (3C) if process K stopped.", marks: 2 },
+                  { code: '6(a)(iii)', prompt: "Which one of the following represents process L?\n\nA  6C → 4C → 2C → 0C\nB  6C → 5C → 4C → 3C\nC  6C → 4C → 2C\nD  6C → 5C → 4C", marks: 1 },
+                  { code: '6(b)', preamble: "Three maggots were placed in a respirometer with potassium hydroxide solution and respired aerobically for 20 minutes.", prompt: "Explain why the coloured liquid moved to the left during the 20 minutes of this investigation.", marks: 2 },
+                  { code: '6(c)', prompt: "Devise an investigation, using a respirometer, to find the optimum temperature for respiration in maggots.", marks: 5 }
+                ] },
+              { number: 7,
+                scenario: "Muscles and eyes are examples of organs found in the human body. Skeletal muscle tissue contains type I (slow, fatigue-resistant, high mitochondria, low anaerobic respiration) and type II (four times the speed, short time to fatigue, low mitochondria, high anaerobic respiration) fibres.",
+                parts: [
+                  { code: '7(a)', preamble: "The proportion of type I and type II fibres in skeletal muscle differs between long-distance runners and sprinters.", prompt: "Explain the advantages for long-distance runners of having both type I and type II muscle fibres, but not in equal quantities.", marks: 5 },
+                  { code: '7(b)(i)', preamble: "Some people have a recessive genetic eye condition due to a non-functional gene; genetically modified viruses can introduce a functional version into eye cells. A student made three statements: ligase would be used to cut open the viral plasmid; a restriction enzyme would add the functional gene to the person's genome; the functional gene would act as the vector.", prompt: "How many of these statements are correct?\n\nA  none\nB  1\nC  2\nD  3", marks: 1 },
+                  { code: '7(b)(ii)', preamble: "EcoR1 hydrolyses bonds in DNA producing sticky ends. The diagram shows a fragment of DNA cut out of a longer sample (not all bases shown).", prompt: "How many phosphodiester bonds were hydrolysed in the production of this fragment of DNA?\n\nA  2\nB  4\nC  8\nD  16", marks: 1 },
+                  { code: '7(b)(iii)', prompt: "Explain why a person successfully treated using a genetically modified virus may still have a child with this recessive condition.", marks: 3 },
+                  { code: '7(c)', preamble: "The ability to produce personalised medicines is one outcome of the human genome project (HGP).", prompt: "Which one of the following allows the development of personalised medicines?\n\nA  differences in the genome between people\nB  medicines having the same effects on people\nC  similarities in the genome between people\nD  the genome does not affect the activity of medicines", marks: 1 }
+                ] },
+              { number: 8,
+                scenario: "The nervous system contains different types of cell including neurones and Schwann cells.\n\n(See the membrane-composition table in the question paper PDF.)",
+                parts: [
+                  { code: '8(a)', preamble: "Mitochondria in the cytoplasm of neurones synthesise adenosine triphosphate (ATP).", prompt: "Explain the role of ATP in the transmission of impulses along neurones.", marks: 2 },
+                  { code: '8(b)(i)', preamble: "Mitochondria move along the axon in the cytoplasm. The axon cytoplasm contains actin along its length, with myosin on the surface of the mitochondria.", prompt: "Explain how the myosin head could move mitochondria along the axon.", marks: 3 },
+                  { code: '8(b)(ii)', preamble: "In an axon 9 cm long, the speed of mitochondrial movement was 0.5 µm s⁻¹.", prompt: "Calculate the time it would take a mitochondrion to move the length of this axon. Give your answer in hours.", marks: 2 },
+                  { code: '8(c)', preamble: "The table shows the percentage composition (lipid and protein) of the cell-surface membrane of a motor neurone (50% lipid, 40% protein) and a Schwann cell (70% lipid, 30% protein).", prompt: "Discuss the relative importance of lipids and proteins in the cell-surface membranes of motor neurones and Schwann cells.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 9,
+                scenario: "Many organisms contain photosensitive pigments. Humans have rhodopsin in the eye; plants have phytochrome.\n\n(See the family pedigree and absorbance table in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)(i)', preamble: "Retinitis pigmentosa (RP) is a genetic condition caused by a dominant allele, affecting rhodopsin. A family pedigree shows its inheritance.", prompt: "How many members of this family can have their genotype for RP determined from this diagram?\n\nA  3\nB  7\nC  9\nD  10", marks: 1 },
+                  { code: '9(a)(ii)', preamble: "Rhodopsin is made of protein and retinal. The absorbance ratio (280 nm : 500 nm) is 2.0:1 for a person without RP and 5.6:1 for a person with RP.", prompt: "Explain why a gene mutation causes the difference in the absorbance ratio for a person with RP.", marks: 3 },
+                  { code: '9(b)', preamble: "Rod cells form synapses with bipolar neurones.", prompt: "Describe how movement of sodium ions in a rod cell affects depolarisation in a bipolar neurone.", marks: 4 },
+                  { code: '9(c)(i)', preamble: "Some plants only flower when the days are long and the nights are short (long-day plants).", prompt: "Describe the role of the photosensitive pigment phytochrome in the flowering of long-day plants.", marks: 2 },
+                  { code: '9(c)(ii)', prompt: "Devise an investigation to find out if a species of plant is a long-day plant or a short-day plant.", marks: 3 }
+                ] },
+              { number: 10,
+                scenario: "Doctors believe that about 28% of the adult UK population are obese, which can lead to coronary heart disease (CHD). The Million Women Study (set up 1996) investigated factors affecting CHD.\n\n(See the nutritional table, CHD-by-age/BMI table and lifestyle graphs in the question paper PDF.)",
+                parts: [
+                  { code: '10(a)(i)', preamble: "A nutritional table for chocolate biscuits gives, per four biscuits: energy 700 kJ, fats 7.6 g (of which saturated 4.7 g), sugars 20.3 g.", prompt: "Calculate the percentage of fat present in the biscuits that contains carbon to carbon double bonds (i.e. the unsaturated fat).", marks: 1 },
+                  { code: '10(a)(ii)', preamble: "The recommended daily intake (RI) for sugar is 90 g.", prompt: "Calculate the number of biscuits needed to exceed the recommended daily intake (RI) for sugar.", marks: 2 },
+                  { code: '10(a)(iii)', preamble: "The energy content of four biscuits (700 kJ) is 8% of the total recommended daily intake.", prompt: "Calculate the daily recommended intake of energy from the data in the table. Give your answer in joules and in standard form.", marks: 2 },
+                  { code: '10(b)(i)', preamble: "A table shows the percentage incidence of CHD over 5 years for different ages (55–74) and BMI values (22.5–37.5).", prompt: "Describe the effect of age and BMI on the development of CHD in women.", marks: 2 },
+                  { code: '10(b)(ii)', preamble: "Graphs show the effect of three lifestyle factors (smoking, physical activity, alcohol intake) on the development of CHD in women across BMI values.", prompt: "Evaluate the information provided in the table and graphs to determine which factors are most likely to increase the risk of CHD in women.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['C — metaphase'], guidance: '1 mark.' },
+              '1(a)(ii)': { type: 'exact', points: ['C — prophase'], guidance: '1 mark.' },
+              '1(a)(iii)': { type: 'exact', points: ['C — prophase'], guidance: '1 mark.' },
+              '1(b)': { type: 'points', points: [
+                  'Swapping of alleles / genetic material (sections of DNA)',
+                  'Between non-sister chromatids (between maternal and paternal chromosomes)',
+                  'Of a homologous pair of chromosomes / bivalent',
+                  'Resulting in different combinations of alleles'
+                ], guidance: '3 max.' },
+              '2(a)': { type: 'exact', points: ['D — the sugar in both eukaryotic and prokaryotic DNA is deoxyribose'], guidance: '1 mark.' },
+              '2(b)(i)': { type: 'points', points: [
+                  'A group of genes / a section of DNA',
+                  '(Controlled by a single) operator/promoter / transcribed together'
+                ], guidance: '2 marks. Allow 2 marks for "operator and the group of genes associated with it".' },
+              '2(b)(ii)': { type: 'points', points: [
+                  'Lactose allows the lac operon to function (lactose binds to the repressor)',
+                  'RNA polymerase can now bind to the promoter / the repressor no longer binds to the operator',
+                  'Allowing transcription / mRNA to be synthesised',
+                  'So the enzymes involved in metabolising lactose are made (e.g. lactase / β-galactosidase)'
+                ], guidance: '3 max.' },
+              '3(a)': { type: 'exact', points: ['A — elastic and attaches bone to bone'], guidance: '1 mark.' },
+              '3(b)': { type: 'points', points: [
+                  'No change / very little change for each age group that had surgery (10–19 group showed the greatest variation)',
+                  'The 20–29 age group had the greatest percentage / the 50+ group the smallest percentage who underwent surgery',
+                  'Percentage undergoing surgery decreased as age increased from the 20–29 age group'
+                ], guidance: '3 marks. Allow reference to fewer people playing sport above age 29.' },
+              '3(c)(i)': { type: 'exact', points: ['0.005 : 1'],
+                guidance: '1 mark. 68 ÷ 13 472 = 0.005 (1 sf).' },
+              '3(c)(ii)': { type: 'points', points: [
+                  'Larger opening / slower recovery time (converse for keyhole)',
+                  'Access for (more) pathogens/bacteria / more time for infection (converse for keyhole)'
+                ], guidance: '2 marks.' },
+              '4(a)': { type: 'points', points: [
+                  'Similarity: both look for any genetic condition (so parents can make informed decisions)',
+                  'PGD is done before implantation / amniocentesis after implantation (testing earlier in PGD)',
+                  '(Increased) risk of miscarriage with amniocentesis (reduced/no risk with PGD)',
+                  'Embryo is tested in PGD / amniotic fluid is tested in amniocentesis'
+                ], guidance: '4 marks.' },
+              '4(b)': { type: 'points', points: [
+                  'Selecting one embryo over another / loss of a potential life (discarding spare embryos)',
+                  'Risk of identifying other conditions / selecting for other characteristics ("designer baby")',
+                  'Costly / emotional strain as not always accurate (false positives)'
+                ], guidance: '2 max.' },
+              '4(c)': { type: 'points', points: [
+                  '(Produces) sticky/thick/viscous mucus',
+                  '(Which) blocks/reduces the flow of pancreatic juice/enzymes from the pancreas (blocks the pancreatic duct)',
+                  '(So) reducing digestion (food not broken down)',
+                  'Blocks/reduces the flow of bile (blocks the bile duct)'
+                ], guidance: '3 max. Allow a named enzyme.' },
+              '5(a)': { type: 'exact', points: ['2.0 × 10⁻³ µm', '0.002 µm'],
+                guidance: '3 marks. Actual bacterium width = 10 mm ÷ 20 000 = 0.5 µm; DNA width = 0.5 ÷ 250 = 0.002 µm = 2.0 × 10⁻³ µm. 1 mark each for bacterium width, DNA width, and standard form. Correct answer with no working gains full marks.' },
+              '5(b)(i)': { type: 'exact', points: ['Conservative: one all-heavy (¹⁵N) and one all-light (¹⁴N) double helix after the 1st replication, then 1 heavy + 3 light after the 2nd. Semi-conservative: two hybrid (one ¹⁵N + one ¹⁴N strand) helices after the 1st; after the 2nd, 2 hybrid + 2 all-light helices.'],
+                guidance: '3 marks for the correctly completed diagram.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'Doubling of the DNA (two double helices formed)',
+                  'Each original DNA strand acts as a template (onto which a new strand is formed)',
+                  '(So) each DNA formed contains one original strand and one new strand'
+                ], guidance: '2 max. Allow marks for an annotated diagram.' },
+              '5(c)': { type: 'points', points: [
+                  'Less thromboplastin (thrombokinase) released from fewer platelets',
+                  '(So less/slower) prothrombin converted to thrombin',
+                  '(So less/slower) fibrinogen converted to fibrin',
+                  'Fewer platelets to be trapped in the fibrin mesh (smaller/slower platelet plug)'
+                ], guidance: '3 max.' },
+              '6(a)(i)': { type: 'points', points: ['Reduced NAD and ATP'],
+                guidance: '1 mark for both. Allow NADH₂ / NADH + H⁺ for reduced NAD.' },
+              '6(a)(ii)': { type: 'points', points: [
+                  'It would be used in anaerobic respiration',
+                  'Reduced NAD provides hydrogen',
+                  'Reduced to lactate / lactic acid'
+                ], guidance: '2 max.' },
+              '6(a)(iii)': { type: 'exact', points: ['D — 6C → 5C → 4C'], guidance: '1 mark. (Carbons are recycled in the Krebs cycle.)' },
+              '6(b)': { type: 'points', points: [
+                  'Decrease in pressure/volume in the tube',
+                  'As oxygen is used / taken up by the maggots',
+                  'As the carbon dioxide released is absorbed by the potassium hydroxide'
+                ], guidance: '2 max.' },
+              '6(c)': { type: 'points', points: [
+                  'A suitable range of temperatures (≥ 3, e.g. 5–50 °C)',
+                  'Control of a relevant biotic variable (e.g. age, species, mass/size of maggots)',
+                  'Record the distance the bubble travels in a set time / time to travel a set distance',
+                  'A judgement of the optimum (temperature at which the rate is highest)',
+                  'Details of the respirometer set-up (water baths, soda lime, acclimatisation time)',
+                  'Repeats at each temperature to calculate a mean'
+                ], guidance: '5 max.' },
+              '7(a)': { type: 'points', points: [
+                  'Predominance of type I / slow-twitch muscle fibres',
+                  '(Long duration) requires fibres that are slow to fatigue (fatigue resistant)',
+                  'Low level of anaerobic respiration reduces lactic acid build-up (reduces oxygen debt)',
+                  'More ATP needed over a longer time, provided by aerobic respiration / oxidative phosphorylation',
+                  'High mitochondria concentration for (more) aerobic respiration',
+                  'Type II / fast-twitch fibres allow the runner to run faster (towards the end)'
+                ], guidance: '5 max.' },
+              '7(b)(i)': { type: 'exact', points: ['A — none'], guidance: '1 mark.' },
+              '7(b)(ii)': { type: 'exact', points: ['B — 4'], guidance: '1 mark.' },
+              '7(b)(iii)': { type: 'points', points: [
+                  'Genetic modification has only occurred in the cells of the eye / not in the gametes',
+                  '(The person treated) has gametes with the allele for the condition',
+                  'The partner / other gamete also supplies a recessive allele (other parent may be a carrier)',
+                  'A mutation occurs in the gene of the offspring'
+                ], guidance: '3 max.' },
+              '7(c)': { type: 'exact', points: ['A — differences in the genome between people'], guidance: '1 mark.' },
+              '8(a)': { type: 'points', points: [
+                  'ATP is required for the sodium–potassium pumps',
+                  'To move ions against the concentration gradient (active transport)',
+                  'To maintain the potential difference / resting potential across the axon membrane'
+                ], guidance: '2 max.' },
+              '8(b)(i)': { type: 'points', points: [
+                  'Myosin attaches to the myosin-binding site / actin',
+                  'Splits ATP / acts as an ATPase (ATP → ADP + Pi)',
+                  '(Myosin head) changes position/shape to move the mitochondria (then detaches from actin)'
+                ], guidance: '3 marks.' },
+              '8(b)(ii)': { type: 'exact', points: ['50 hours'],
+                guidance: '2 marks. 9 cm = 90 000 µm; 90 000 ÷ 0.5 = 180 000 s; ÷ 3600 = 50 hours. Allow 1 mark for 0.5/5/500 hours. Correct answer with no working gains full marks.' },
+              '8(c)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Comprehensive knowledge applied; consequences supported throughout by sustained linkage; a well-developed, sustained line of reasoning, clear and logically structured. Both cell types discussed in detail linking function to membrane composition — phospholipid bilayer, lipids for insulation/saltatory conduction in Schwann cells, proteins for ion movement/action potentials in the motor neurone.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Adequate knowledge with some relevant facts; consequences occasionally supported by linkage; some lines of reasoning with structure. Functions of both cell types discussed in relation to membrane composition, including channel/carrier proteins.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; vague statements with limited linkage; basic comments on either lipids or proteins (e.g. "lipids more important to Schwann cells, proteins to motor neurones").' }
+                ],
+                indicative: {
+                  'Indicative content': 'Percentages are not the same as importance; both cells have more lipid than protein, Schwann cells more lipid. Common lipid roles: phospholipid bilayer; barrier to polar/non-polar substances; movement via channel/carrier proteins. Additional lipid in Schwann cells: myelin sheath / electrical insulation; stops ions crossing → depolarisation only at nodes of Ranvier → saltatory conduction. Additional protein in the motor neurone: voltage-gated Na⁺/K⁺ channels, Na⁺/K⁺ pump → resting potential and action potentials along the axon.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '9(a)(i)': { type: 'exact', points: ['C — 9'], guidance: '1 mark.' },
+              '9(a)(ii)': { type: 'points', points: [
+                  'The mutation leads to a different primary structure / amino acid sequence',
+                  'For the protein opsin',
+                  '(So) a different/misfolded tertiary structure / altered shape (different R-group interactions, less retinal binding)',
+                  '(Resulting in) more light of 280 nm being absorbed (than 500 nm)'
+                ], guidance: '3 max.' },
+              '9(b)': { type: 'points', points: [
+                  '(In the dark) sodium ions move in through sodium ion channels into the outer segment',
+                  'Sodium ions are removed/pumped out at the inner segment',
+                  'So the rod cell depolarises',
+                  'Causing neurotransmitter / glutamate to be released',
+                  'Which inhibits depolarisation in the (adjacent) bipolar neurone'
+                ], guidance: '4 max. Converse applies for the bipolar neurone depolarising in the light.' },
+              '9(c)(i)': { type: 'points', points: [
+                  'Increased red light (long day / short night) / limited exposure to far-red light',
+                  'Phytochrome red converted to phytochrome far-red in the day / little conversion back during the short night',
+                  '(Accumulation / high concentration of) phytochrome far-red stimulates flowering'
+                ], guidance: '2 max. Allow Pr/Pfr (non-active/active phytochrome).' },
+              '9(c)(ii)': { type: 'points', points: [
+                  'Grow plants in conditions with different periods of light per day (a range of hours of light)',
+                  'Control a relevant abiotic factor (e.g. temperature, light intensity, water, soil)',
+                  'Record whether the plants flower or not'
+                ], guidance: '3 marks.' },
+              '10(a)(i)': { type: 'exact', points: ['38%', '38.2%'],
+                guidance: '1 mark. Unsaturated fat = 7.6 − 4.7 = 2.9 g; (2.9 ÷ 7.6) × 100 = 38%.' },
+              '10(a)(ii)': { type: 'exact', points: ['18 biscuits'],
+                guidance: '2 marks. Sugar per biscuit = 20.3 ÷ 4 = 5.08 g; 90 ÷ 5.08 ≈ 17.7 → 18 biscuits. 1 mark for sugar mass per biscuit. Correct answer with no working gains full marks.' },
+              '10(a)(iii)': { type: 'exact', points: ['8.75 × 10⁶ J'],
+                guidance: '2 marks. 700 kJ ÷ 8 × 100 = 8750 kJ = 8 750 000 J = 8.75 × 10⁶ J. 1 mark for the value; 1 for standard form. Correct answer with no working gains full marks.' },
+              '10(b)(i)': { type: 'points', points: [
+                  'Increasing age increases the incidence of CHD',
+                  'Increasing BMI increases the incidence of CHD',
+                  'The greatest increase is due to increasing age'
+                ], guidance: '2 max.' },
+              '10(b)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A scientific judgement supported throughout by sustained application of relevant evidence; a conclusion with sustained linkages. All lifestyle factors plus BMI and age considered, with data from both the table and graphs (e.g. risk for smokers at the lowest BMI doubles; greatest percentage increase in risk is for smokers with the greatest BMI).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A scientific judgement made through application of relevant evidence, with strengths/weaknesses; a conclusion with occasional support. At least two lifestyle factors discussed plus BMI or age, with data from the table or graphs.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Limited judgement focused on mainly one factor; a basic conclusion from data on at least one lifestyle factor (smoking, inactivity, alcohol) and CHD incidence.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Study design: large cohort but only ages 55–74; self-reported data could over/under-estimate. Data: age-related data is 5-year incidence whereas graphs are 20-year; graphs give no age information; likelihood of CHD increases with BMI and age, and if a smoker, non-drinker, or inactive. Relative likelihood: from the table, increasing age increases risk more than increasing BMI; from the graphs, risk is greatest for smokers (all BMIs) and least affected by inactivity.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
