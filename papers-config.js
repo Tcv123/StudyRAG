@@ -18130,6 +18130,246 @@ window.SUBJECTS = [
                   'More stomata open (widen) to allow gas exchange / entry of carbon dioxide',
                   'This increases transpiration, so more water vapour is lost'
                 ], guidance: '2 max.' }
+            } },
+          { id: 'bio-ocra-h420-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Biological diversity', paperCode: 'H420/02', totalMarks: 100, durationMins: 135,
+            qpUrl: 'https://www.ocr.org.uk/Images/703903-question-paper-biological-diversity.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/704031-mark-scheme-biological-diversity.pdf',
+            qbqNote: 'All questions (100 marks) are wired up question-by-question with the official OCR mark scheme. Section A is 15 single-answer multiple-choice questions (answer with the letter A–D); Section B is structured questions. Questions 16(c) and 18(c)(ii) are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1, parts: [ { code: '1', prompt: "Section A (multiple choice). Which option correctly describes a tissue?\n\nA  A group of cells performing similar functions\nB  A group of organs performing a specific function\nC  A group of similar cells performing a specific function\nD  A group of similar cells performing a variety of functions", marks: 1 } ] },
+              { number: 2, parts: [ { code: '2', prompt: "Which statement about bone marrow stem cells and their role in the production of erythrocytes is correct?\n\nA  Bone marrow stem cells are totipotent and can therefore differentiate into any type of cell.\nB  Erythrocytes are the only blood cell produced from bone marrow stem cells.\nC  Erythrocytes need to be replaced from bone marrow stem cells because erythrocytes are unable to undergo mitosis.\nD  In humans, differentiation of bone marrow stem cells into erythrocytes involves the synthesis of a haploid nucleus.", marks: 1 } ] },
+              { number: 3, parts: [ { code: '3', prompt: "Which option correctly describes the sequence of events during the cell cycle?\n\nA  Cytokinesis → interphase → G1 → G2 → S → mitosis\nB  Cytokinesis → mitosis → interphase\nC  G2 → mitosis → cytokinesis → G1 → S\nD  Mitosis → interphase → cytokinesis", marks: 1 } ] },
+              { number: 4, parts: [ { code: '4', prompt: "Two plants of genotype AaBb were crossed; the offspring genotypes/ratio were AABB : AaBb : aabb = 1 : 2 : 1. Which option could explain these observations?\n\nA  Autosomal linkage\nB  Crossing over\nC  Epistasis\nD  Mutation", marks: 1 } ] },
+              { number: 5, parts: [ { code: '5', prompt: "Which option describes a method that would enable a student to accurately measure the length of a cell with a light microscope?\n\nA  View the cells using a calibrated eyepiece graticule and note the magnification of the eyepiece lens.\nB  View the cells using a calibrated eyepiece graticule and note the magnification of the objective lens.\nC  View the cells using a stage micrometer and note the magnification of the eyepiece lens.\nD  View the cells using a stage micrometer and note the magnification of the objective lens.", marks: 1 } ] },
+              { number: 6, parts: [ { code: '6', prompt: "Which of the following describes, from lowest to highest, the resolution of images that can be achieved by different types of microscope?\n\nA  Light microscope → scanning electron microscope → transmission electron microscope\nB  Light microscope → transmission electron microscope → laser scanning confocal microscope\nC  Light microscope → transmission electron microscope → scanning electron microscope\nD  Scanning electron microscope → transmission electron microscope → light microscope", marks: 1 } ] },
+              { number: 7, parts: [ { code: '7', prompt: "Lactose metabolism in E. coli is controlled by the lac operon. Which of the structures associated with the lac operon contain nucleic acids?\n\n1  the operator\n2  the regulator gene\n3  the structural gene product\n\nA  1, 2 and 3\nB  Only 1 and 2\nC  Only 2 and 3\nD  Only 1", marks: 1 } ] },
+              { number: 8, parts: [ { code: '8', prompt: "Which of the statements about homeobox genes are correct?\n\n1  they bind to transcription factors\n2  they contain a highly conserved sequence of 180 base pairs\n3  they regulate the expression of structural genes\n\nA  1, 2 and 3\nB  Only 1 and 2\nC  Only 2 and 3\nD  Only 1", marks: 1 } ] },
+              { number: 9, parts: [ { code: '9', prompt: "A graph shows the population of viable bacteria over 48 hours, with points A to D marked (see the QP PDF). Which time, A to D, has the highest bacterial death rate?", marks: 1 } ] },
+              { number: 10, parts: [ { code: '10', prompt: "An image shows the structures of four polysaccharides (see the QP PDF). Which of the molecules contains the highest proportion of 1-6 glycosidic bonds?\n\nA  Amylopectin\nB  Amylose\nC  Cellulose\nD  Glycogen", marks: 1 } ] },
+              { number: 11, parts: [ { code: '11', prompt: "Which of the molecules is not used for energy storage?\n\nA  Amylopectin\nB  Amylose\nC  Cellulose\nD  Glycogen", marks: 1 } ] },
+              { number: 12, parts: [ { code: '12', prompt: "Which option does not explain why genetic disorders are common in pedigree dogs?\n\nA  Characteristics that are desirable to humans can be associated with features that are harmful to dogs.\nB  Selective breeding increases the chance of an individual being homozygous for certain characteristics.\nC  Selective breeding increases the chance of mutations.\nD  Selective breeding is associated with inbreeding depression.", marks: 1 } ] },
+              { number: 13, parts: [ { code: '13', prompt: "What step could be taken to reduce the occurrence of genetic disorders in pedigree dogs?\n\nA  Breeding only with individuals that meet the official breed descriptions.\nB  Broadening the official descriptions of pedigree dog breeds.\nC  Increased use of somatic gene therapy.\nD  Regular cross-breeding with the wild ancestor of domestic dogs.", marks: 1 } ] },
+              { number: 14, parts: [ { code: '14', prompt: "What is the correct way to represent the binomial name for domestic dogs?\n\nA  Canis familiaris (italic, capital C)\nB  Canis familiaris (non-italic, capital C)\nC  canis familiaris (italic, lower-case c)\nD  canis familiaris (non-italic, lower-case c)", marks: 1 } ] },
+              { number: 15, parts: [ { code: '15', prompt: "An image shows an enzyme and its substrate (see the QP PDF). Which option represents a coenzyme for this enzyme? Select A, B, C or D.", marks: 1 } ] },
+              { number: 16,
+                scenario: "Section B. Many organisms undergo asexual reproduction by mitosis.",
+                parts: [
+                  { code: '16(a)', prompt: "State two other roles of mitosis in organisms.", marks: 1 },
+                  { code: '16(b)(i)', prompt: "Explain why mitosis, and not meiosis, is used for asexual reproduction in plants.", marks: 2 },
+                  { code: '16(b)(ii)', preamble: "Bacteria reproduce asexually by a process called binary fission.", prompt: "Suggest why bacteria are unable to reproduce asexually by mitosis.", marks: 2 },
+                  { code: '16(c)', preamble: "Asexual reproduction is also known as cloning; many organisms can be artificially cloned for commercial purposes.", prompt: "Discuss the arguments for and against artificial cloning in plants and animals.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '16(d)', preamble: "Gametes of the western clawed frog contain 10 chromosomes.", prompt: "Calculate the number of genetically different gametes resulting from the independent assortment of chromosomes that would be produced by an individual frog.", marks: 2 }
+                ] },
+              { number: 17,
+                scenario: "Catalase breaks down hydrogen peroxide into oxygen and water. Students investigate the effect of hydrogen peroxide concentration on the rate of this reaction by collecting the gas produced over water (apparatus Fig. 17.1; potato cylinders as the catalase source; method using 2, 8 and 20 a.u. hydrogen peroxide) — see the QP PDF.",
+                parts: [
+                  { code: '17(a)(i)', prompt: "State the independent variable in this investigation.", marks: 1 },
+                  { code: '17(a)(ii)', prompt: "Describe how a student could produce an 8 a.u. solution from a 20 a.u. stock solution.", marks: 2 },
+                  { code: '17(a)(iii)', preamble: "Liver tissue contains a higher concentration of catalase than potato.", prompt: "Suggest two reasons why the students chose potato rather than liver as a source of catalase.", marks: 2 },
+                  { code: '17(a)(iv)', prompt: "The potato cylinders were cut to equal lengths. Suggest a further precaution the students should have taken when preparing them, to ensure the investigation was valid.", marks: 1 },
+                  { code: '17(b)(i)', preamble: "Tables give the volume of oxygen produced over time at each concentration, with means and standard deviations (see the QP PDF). At 20 a.u., the 60 s readings were 57, 55, 58 (mean 56.7).", prompt: "Calculate the standard deviation for the 60 s result at 20 a.u. hydrogen peroxide, using s = √(Σ(x − x̄)² ÷ (n − 1)).", marks: 2 },
+                  { code: '17(b)(ii)', prompt: "Use the standard deviations to discuss the repeatability of the students' results.", marks: 2 },
+                  { code: '17(b)(iii)', prompt: "Calculate the rate of reaction over the first 30 s for the result at 2 a.u. hydrogen peroxide. Give the value and the unit.", marks: 2 },
+                  { code: '17(b)(iv)', prompt: "The students assumed the volume of oxygen collected was the same as the volume produced. Suggest two reasons why the recorded value might not accurately reflect the volume of oxygen produced.", marks: 2 },
+                  { code: '17(c)', preamble: "Fig. 17.2 shows a graph of the results for all three concentrations (see the QP PDF).", prompt: "Explain the results for 20 a.u. hydrogen peroxide.", marks: 3 }
+                ] },
+              { number: 18,
+                scenario: "Immobilised enzymes are often used for industrial processes. Fig. 18.1 shows three methods (adsorption, covalent bonding, entrapment in a matrix) — see the QP PDF.",
+                parts: [
+                  { code: '18(a)', prompt: "State one other method for immobilising enzymes.", marks: 1 },
+                  { code: '18(b)', prompt: "With reference to Fig. 18.1, explain why the activity of immobilised enzymes might be lower than that of enzymes that are free in solution.", marks: 2 },
+                  { code: '18(c)(i)', preamble: "Invertase catalyses sucrose → glucose + fructose, and is present in baker's yeast cells. Both invertase and yeast cells can be immobilised.", prompt: "Suggest one reason why using immobilised yeast might be more expensive than using immobilised invertase.", marks: 1 },
+                  { code: '18(c)(ii)', preamble: "A student has sucrose solution, alginate beads containing invertase, alginate beads containing yeast cells, glass columns (Fig. 18.2) and standard laboratory equipment.", prompt: "Outline a valid method the student could use to compare the activity of immobilised invertase and immobilised yeast cells.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true }
+                ] },
+              { number: 19,
+                scenario: "Animals are protected from infectious diseases by their immune system.",
+                parts: [
+                  { code: '19(a)', preamble: "Influenza is a viral disease transmitted in exhaled droplets.", prompt: "Explain how mucous membranes make it more difficult for the influenza virus to enter the body.", marks: 2 },
+                  { code: '19(b)', preamble: "Fig. 19.1 shows the changes in antibody concentration in a patient's blood over two exposures to an antigen, with areas A to F labelled (see the QP PDF).", prompt: "Complete the table with the letter(s) indicating where each event is represented: antigen presentation; clonal expansion; clonal selection; high T-helper cell activity; highest number of memory cells.", marks: 5 },
+                  { code: '19(c)(i)', preamble: "Snakebites can be treated using Fab fragments of antibodies (specific to the venom) produced in donor sheep and injected into the patient.", prompt: "Name the type of immunity this treatment gives the patient.", marks: 1 },
+                  { code: '19(c)(ii)', preamble: "Fig. 19.2 shows the structure of a Fab fragment (see the QP PDF).", prompt: "Identify two similarities and one difference in structure between a Fab fragment and a whole antibody.", marks: 3 },
+                  { code: '19(d)', prompt: "Explain why many varieties of pathogenic bacteria are now resistant to a range of antibiotics.", marks: 3 },
+                  { code: '19(e)', prompt: "Outline how synthetic biology can be used in the provision of new medicines.", marks: 2 }
+                ] },
+              { number: 20,
+                scenario: "Grey wolves became extinct in an area of North America in the 1920s and were reintroduced in 1993; they feed mainly on large herbivores such as deer. A graph shows the populations of wolves, deer and beaver since the reintroduction (see the QP PDF).",
+                parts: [
+                  { code: '20(a)', prompt: "Describe the changes in the deer population since 1993.", marks: 3 },
+                  { code: '20(b)(i)', prompt: "Calculate the percentage increase in the wolf population between 1995 and 2003.", marks: 2 },
+                  { code: '20(b)(ii)', preamble: "Between 2003 and 2010 there were no significant changes in climate and no disease outbreaks.", prompt: "Suggest and explain one reason for the changes in the grey wolf population since 2003.", marks: 2 },
+                  { code: '20(c)(i)', prompt: "Suggest why the population of beavers is measured in colonies rather than individual animals.", marks: 1 },
+                  { code: '20(c)(ii)', preamble: "Scientists claimed the reintroduction of the wolves has caused the beaver population to increase.", prompt: "Evaluate the support given by the evidence in the graph for the scientists' claim.", marks: 4 },
+                  { code: '20(c)(iii)', preamble: "Suggested explanation: wolves cause deer to avoid grazing near water, so trees near water are not damaged, so beavers have plenty of trees to build dams.", prompt: "Suggest one other piece of useful evidence that could be measured that would support the scientists' claim.", marks: 1 },
+                  { code: '20(d)(i)', preamble: "Beavers were once native to Britain but became extinct ~400 years ago; in 2009 a Norwegian population was released into the wild in Britain.", prompt: "Explain why the reintroduction of beavers to Britain is an example of conservation.", marks: 2 },
+                  { code: '20(d)(ii)', prompt: "Suggest a situation in which preservation of a habitat would be necessary.", marks: 1 }
+                ] },
+              { number: 21,
+                scenario: "The element nitrogen is recycled within ecosystems.",
+                parts: [
+                  { code: '21(a)', prompt: "Complete the sentences using the most appropriate terms: when animals die, microorganisms convert nitrogen-containing molecules to ammonia in a process known as …; this ammonia is converted to nitrites and nitrates by … bacteria; … converts ammonia to nitrites and … converts nitrites to nitrates; nitrates absorbed by plants are converted to …; nitrogen gas can enter the cycle by being converted to ammonia by … bacteria such as Rhizobium.", marks: 6 },
+                  { code: '21(b)', prompt: "Use your knowledge of the nitrogen cycle to suggest and explain why plants do not grow well in soil with a low oxygen content.", marks: 2 },
+                  { code: '21(c)(i)', kind: 'diagram', preamble: "Rhizobium forms nodules on roots and receives glucose from the plant. An incomplete diagram of alpha glucose is shown (see the QP PDF).", prompt: "Write on the diagram to show the complete structure of alpha glucose.", marks: 3 },
+                  { code: '21(c)(ii)', prompt: "Explain how the structure of glucose allows it to move from the plant to the bacterium.", marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '1': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '2': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '3': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '4': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '5': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '6': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '7': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '8': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '9': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '10': { type: 'exact', points: ['D'], guidance: '1 mark. Glycogen has the highest proportion of 1-6 branch points.' },
+              '11': { type: 'exact', points: ['C'], guidance: '1 mark. Cellulose is structural, not an energy store.' },
+              '12': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '13': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '14': { type: 'exact', points: ['A — Canis familiaris (genus capitalised, species lower case, italic)'], guidance: '1 mark.' },
+              '15': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '16(a)': { type: 'exact', points: ['Growth (of organisms/tissues) AND repair (of organisms/tissues)'],
+                guidance: '1 mark — both required. Accept controlling body plan / clonal expansion / replacement of cells.' },
+              '16(b)(i)': { type: 'points', points: [
+                  'Produces genetically identical cells / organisms (offspring with identical genes)',
+                  'Maintains the chromosome / diploid number between generations (ORA for meiosis)'
+                ], guidance: '2 marks.' },
+              '16(b)(ii)': { type: 'points', points: [
+                  'Mitosis is nuclear division (involves the disintegration of the nuclear membrane)',
+                  'Bacteria have no nucleus (AVP, e.g. no spindle fibres)'
+                ], guidance: '2 max.' },
+              '16(c)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Describes arguments for AND against artificial cloning in animals AND plants. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Describes arguments for AND against artificial cloning with some reference to animals or plants. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'States some reasons for AND against artificial cloning. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Generic advantages': 'Rapid production of large numbers of individuals; propagation of individuals with desirable traits; numbers of rare species can be increased; production of large numbers of selectively-bred or GM individuals.',
+                  'Specific advantages': 'Animal: key individuals (e.g. beloved pets) can be cloned. Plant: propagation of seedless plants / plants hard to grow from seed; quicker than seed; pathogen-free individuals.',
+                  'Disadvantages': 'Generic: lack of genetic variation; population at greater risk from environmental change. Animal: SCNT is inefficient/expensive, high incidence of health issues. Plant: if source material is infected, offspring will be too; complex aseptic procedures.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '16(d)': { type: 'exact', points: ['1024'],
+                guidance: '2 marks. 2ⁿ = 2¹⁰ = 1024. 1 mark for 512 / 2048 / 1000.' },
+              '17(a)(i)': { type: 'exact', points: ['(Hydrogen peroxide) concentration'], guidance: '1 mark.' },
+              '17(a)(ii)': { type: 'points', points: [
+                  'Mix with distilled (or deionised) water',
+                  'In a ratio of 3 parts water : 2 parts stock solution (any volumes giving 3:2)'
+                ], guidance: '2 marks. Ignore units; ignore any procedure with more than one step.' },
+              '17(a)(iii)': { type: 'points', points: [
+                  'Easier to control the surface area',
+                  'Less chance of ethical objection to the use of animal material (more acceptable to vegetarians / lower infection risk)',
+                  'AVP, e.g. less violent frothing / slower reaction so easier to record accurately'
+                ], guidance: '2 max. Ignore "cheaper".' },
+              '17(a)(iv)': { type: 'points', points: ['Ensure there is no skin on the potato / use a consistent potato variety / use potatoes of the same age'],
+                guidance: '1 mark. Ignore drying / "same part of potato" / measuring mass.' },
+              '17(b)(i)': { type: 'exact', points: ['2.3'],
+                guidance: '2 marks. Mean = 56.7; Σ(x−x̄)² ÷ (n−1) under the root gives ≈ 10.67, √ ≈ 2.3 (to 1 dp). 1 mark for 2.3 to more than 1 dp.' },
+              '17(b)(ii)': { type: 'points', points: [
+                  'The standard deviations are lower at lower concentrations / earlier times (ORA)',
+                  'So the results are more repeatable at the lower concentrations / earlier times (less repeatable as time goes on)'
+                ], guidance: '2 marks. Must be comparative. Accept "higher precision" for "more repeatable".' },
+              '17(b)(iii)': { type: 'exact', points: ['0.18 (0.2) cm³ s⁻¹ (or ≈ 11 cm³ min⁻¹)'],
+                guidance: '2 marks. 5.3 ÷ 30 s = 0.18 cm³ s⁻¹. Max 1 if no/incorrect unit.' },
+              '17(b)(iv)': { type: 'points', points: [
+                  'The bung was not airtight / some gas escaped',
+                  'Some oxygen / gas dissolved in the solution (or was used in respiration)',
+                  'Difficult to judge the volume at a set time if the rate is high (e.g. at 20 a.u.)',
+                  'A gas other than oxygen was collected'
+                ], guidance: '2 max.' },
+              '17(c)': { type: 'points', points: [
+                  'More frequent collisions at the start (ORA) — rate depends on collision frequency',
+                  'Substrate / H₂O₂ collides with the active site of catalase (forming enzyme–substrate complexes)',
+                  'The rate of oxygen/product formation decreases with time',
+                  'Because the substrate / H₂O₂ concentration decreases with time (becomes a limiting factor)'
+                ], guidance: '3 max. Do not credit answers that do not address changes over time; do not credit "enzyme concentration".' },
+              '18(a)': { type: 'points', points: ['Membrane separation / encapsulation / microcapsule (contained by a partially-permeable membrane)'],
+                guidance: '1 mark.' },
+              '18(b)': { type: 'points', points: [
+                  'The covalent bonding / matrix / carrier might affect the shape of the active site (restrict induced fit)',
+                  'The active site might be (partly) hidden when bonded to the carrier (fewer active sites accessible)',
+                  'The substrate must move through a matrix (enzymes and substrates can\'t freely mix)'
+                ], guidance: '2 max.' },
+              '18(c)(i)': { type: 'points', points: ['Yeast needs resources to stay alive (waste products need to be removed)'],
+                guidance: '1 mark.' },
+              '18(c)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Outlines a valid investigation explaining how the independent variable is changed AND how the dependent variable is measured AND mentions controlling other variables. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Outlines a valid investigation mentioning the independent variable AND the dependent variable AND control variables. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Attempts to outline a valid investigation but does not discuss one of the variables. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Independent variable': 'Set up two columns — one with invertase beads and one with yeast beads; use a control column.',
+                  'Dependent variable': "Measure the product (reducing sugar) using Benedict's test; quantify with a colour chart / testing strips / colorimeter.",
+                  'Control variables': 'Number or volume of beads per column; concentration and volume of substrate added; time the substrate is exposed; temperature; pH; an identical procedure for measuring product; zero the colorimeter.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '19(a)': { type: 'points', points: [
+                  'Mucus traps the pathogen / virus (it sticks to the mucus)',
+                  'Cilia (ciliated cells / epithelium) move the mucus / pathogens away from the lungs / out of the body'
+                ], guidance: '2 marks.' },
+              '19(b)': { type: 'exact', points: ['Antigen presentation: A; Clonal expansion: B and D; Clonal selection: A; High T-helper cell activity: B and D; Highest number of memory cells: E'],
+                guidance: '5 marks (1 per row). Do not credit a row if any incorrect/ambiguous letter appears.' },
+              '19(c)(i)': { type: 'exact', points: ['Artificial (and) passive immunity'],
+                guidance: '1 mark.' },
+              '19(c)(ii)': { type: 'points', points: [
+                  'Similarity: two variable regions / antigen-binding sites',
+                  'Similarity: a hinge region; disulfide bonds/bridges; or (max two) four polypeptide chains',
+                  'Difference: the Fab fragment has a shorter constant region / heavy chain (no Fc region)'
+                ], guidance: '3 marks (≥2 similarities and the difference). Ignore constant regions as a similarity.' },
+              '19(d)': { type: 'points', points: [
+                  'Widespread use / overprescribing (use in agriculture; use at low dose or unfinished course)',
+                  'Natural selection — the antibiotic acts as a selective agent (genetic variation, differential survival, passing on resistance)',
+                  'AVP, e.g. genetic modification / sharing of plasmids carrying resistance genes (horizontal gene transmission)'
+                ], guidance: '3 max.' },
+              '19(e)': { type: 'points', points: [
+                  'Genetic modification of (named) organisms',
+                  'To produce a (named) drug / therapeutic protein / vaccine (e.g. insulin, artemisinin)'
+                ], guidance: '2 marks. The second point must be linked to the first.' },
+              '20(a)': { type: 'points', points: [
+                  'An overall decrease',
+                  'Fluctuates (before 2006)',
+                  'Little / no change after 2006 (a plateau)',
+                  'Figures that illustrate any of the above (e.g. a fall of ~39 000 / 67% from 1993 to 2010; ~20 000 after 2006)'
+                ], guidance: '3 max.' },
+              '20(b)(i)': { type: 'exact', points: ['350 (%)'],
+                guidance: '2 marks. (90 − 20) ÷ 20 × 100 = 350%. Max 1 if given to more than 3 sig figs; 1 mark for the correct method.' },
+              '20(b)(ii)': { type: 'points', points: [
+                  'A fall in the deer population means less food / prey for the wolves',
+                  'OR the spike in wolf population in 2007 relates to the higher deer population in 2005'
+                ], guidance: '2 marks.' },
+              '20(c)(i)': { type: 'points', points: [
+                  'Living in water (in dams / under wood) makes them hard to count',
+                  'It is easier to count the (big) mounds of wood'
+                ], guidance: '1 mark.' },
+              '20(c)(ii)': { type: 'points', points: [
+                  'Supported: the beaver and wolf populations both increase',
+                  'Supported: the beaver population increases after the wolf population increases',
+                  'Supported: the lag is consistent with allowing time for the wolves to affect the ecosystem',
+                  'Not supported: the beaver and wolf population curves are different shapes',
+                  'Not supported: correlation does not imply a causal link; there is a plausible alternative reason (e.g. climate change, other management); figures that illustrate'
+                ], guidance: '4 max.' },
+              '20(c)(iii)': { type: 'points', points: ['The population of trees near water / proportion of damaged trees near water / time spent by deer near water'],
+                guidance: '1 mark.' },
+              '20(d)(i)': { type: 'points', points: [
+                  'The idea of human intervention (the population was actively moved/released)',
+                  'The habitat / ecosystem / biodiversity is changed / restored when they are reintroduced'
+                ], guidance: '2 marks. Ignore "maintain".' },
+              '20(d)(ii)': { type: 'points', points: ['The idea of a habitat being sensitive to damage (e.g. a rare / endangered / threatened species lives there)'],
+                guidance: '1 mark.' },
+              '21(a)': { type: 'exact', points: ['ammonification; nitrifying; Nitrosomonas; Nitrobacter; amino acids (protein); nitrogen-fixing'],
+                guidance: '6 marks (1 per gap, in order). Accept lower-case for generic names and phonetic spelling.' },
+              '21(b)': { type: 'points', points: [
+                  'Increased denitrification / decreased nitrification (conditions favour denitrifying bacteria)',
+                  '(More) nitrate / NO₃⁻ is converted to nitrogen (N₂) gas, reducing the nitrate available to plants'
+                ], guidance: '2 marks. Ignore references to nitrifying bacteria.' },
+              '21(c)(i)': { type: 'points', points: ['Correct positions for the CH₂OH group, the ring O, the H atoms and the OH groups completing the alpha-glucose structure'],
+                guidance: '3 marks. Best assessed against your completed diagram (a correct displayed formula). Ignore bond angles.' },
+              '21(c)(ii)': { type: 'points', points: [
+                  'Glucose is small, so it can cross membranes (fit through protein channels)',
+                  'Its OH / H groups allow hydrogen-bond formation / solubility / bonding with water molecules'
+                ], guidance: '2 marks.' }
             } }
         ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
