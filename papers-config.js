@@ -17435,6 +17435,253 @@ window.SUBJECTS = [
                   'A curve to the left of the student\'s curve',
                   'Reaching the same maximum value'
                 ], guidance: '2 marks. Best assessed against your sketch. Max 1 if the curve drops below the student\'s curve or exceeds the maximum.' }
+            } },
+          { id: 'bio-ocra-h420-2024-p2', year: 'June 2024', paperName: 'Paper 2 — Biological diversity', paperCode: 'H420/02', totalMarks: 100, durationMins: 135,
+            qpUrl: 'https://www.ocr.org.uk/Images/726691-question-paper-biological-diversity.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/726818-mark-scheme-biological-diversity.pdf',
+            qbqNote: 'All questions (100 marks) are wired up question-by-question with the official OCR mark scheme. Section A is 15 single-answer multiple-choice questions (answer with the letter A–D); Section B is structured questions. Questions 18(b)(i) and 20(b)(i) are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1, parts: [ { code: '1', prompt: "Section A (multiple choice). Biomass is transferred through ecosystems. What process makes biomass available for transfer to the next trophic level in the food chain?\n\nA  Excretion\nB  Growth\nC  Removal of undigested food\nD  Respiration", marks: 1 } ] },
+              { number: 2, parts: [ { code: '2', prompt: "What explains why food chains rarely have more than five trophic levels?\n\nA  Parts of the food organism are not eaten by organisms higher in the food chain.\nB  Plants absorb only a small proportion of the Sun's energy.\nC  There is a limit to the size to which a predator can grow.\nD  Transfer of biomass between trophic levels is inefficient.", marks: 1 } ] },
+              { number: 3, parts: [ { code: '3', prompt: "The rate at which plants produce biomass is known as productivity. What is a suitable unit with which to measure productivity at different depths in the ocean?\n\nA  kg day⁻¹ m⁻²\nB  kg day⁻¹ m⁻³\nC  kg year⁻¹ m²\nD  m kg⁻¹ year⁻¹", marks: 1 } ] },
+              { number: 4, parts: [ { code: '4', prompt: "Which option describes the terms magnification and resolution?\n\nA  Magnification is the size of an image under a microscope and resolution is the sharpness of that image.\nB  Magnification is the size of the image compared to the actual size and resolution is the ability to distinguish two objects from one another.\nC  Resolution is the ability to make small objects appear larger and magnification is the ability to distinguish two objects from one another.\nD  Resolution is the size of an image under a microscope and magnification is the sharpness of that image.", marks: 1 } ] },
+              { number: 5, parts: [ { code: '5', prompt: "Which statement about the genetic control of variation cannot be true for discontinuous variation?\n\nA  Variation is controlled by a single gene with multiple alleles.\nB  Variation is controlled by an epistatic interaction between two genes with multiple alleles.\nC  Variation is controlled by many genes on different chromosomes.\nD  Variation is controlled by two genes on the same chromosome.", marks: 1 } ] },
+              { number: 6, parts: [ { code: '6', prompt: "What is a direct consequence of the genetic code being degenerate?\n\nA  It is possible that a mutation could change the sequence of amino acids but leave the function of the protein unchanged.\nB  It is possible that a mutation could leave the primary structure of the protein unchanged.\nC  It is possible that a mutation could leave the sequence of bases unchanged.\nD  It is possible that a mutation could substitute one amino acid for another with similar properties.", marks: 1 } ] },
+              { number: 7, parts: [ { code: '7', prompt: "Which of the statements describe(s) control of gene expression at the post-transcriptional level?\n\n1  binding of a repressor protein to an operator sequence\n2  the removal of introns to form mature RNA\n3  editing of primary RNA\n\nA  1, 2 and 3\nB  Only 1 and 2\nC  Only 2 and 3\nD  Only 1", marks: 1 } ] },
+              { number: 8, parts: [ { code: '8', prompt: "A graph shows diffusion rates in cubes of agar jelly with different surface area to volume ratios (SA:VOL) — see the QP PDF. Which option best describes the results?\n\nA  SA:VOL is directly proportional to rate of diffusion.\nB  SA:VOL is inversely proportional to rate of diffusion.\nC  There is a negative correlation between SA:VOL and rate of diffusion.\nD  There is an inverse correlation between SA:VOL and rate of diffusion.", marks: 1 } ] },
+              { number: 9, parts: [ { code: '9', prompt: "Calculate the SA:VOL of a cube with edges 4 cm long.\n\nA  0.25\nB  0.67\nC  0.96\nD  1.5", marks: 1 } ] },
+              { number: 10, parts: [ { code: '10', prompt: "Which of the following are important steps when cloning a plant by taking a cutting?\n\n1  Keep it regularly watered.\n2  Add rooting hormones to agar jelly.\n3  Sterilise a small sample of plant material.\n\nA  1, 2 and 3\nB  Only 1 and 2\nC  Only 2 and 3\nD  Only 1", marks: 1 } ] },
+              { number: 11, parts: [ { code: '11', prompt: "Which option is not seen as an advantage of using microorganisms to produce food compared to traditional food production methods?\n\nA  Microorganisms grow more rapidly than plants or animals.\nB  Production can be easily varied to meet demand.\nC  Production can occur at low temperatures and pressures.\nD  There are no animal welfare issues.", marks: 1 } ] },
+              { number: 12, parts: [ { code: '12', prompt: "Aseptic conditions are important when culturing microorganisms. Which option is not a correct part of the procedure for spreading bacteria on an agar-filled Petri dish?\n\nA  Remove the lid of the Petri dish and rest it upside-down on the work surface.\nB  Replace the lid of the Petri dish and secure it with tape.\nC  Sterilise the area surrounding the experiment with disinfectant.\nD  Work near a Bunsen flame to create an upward draft of air.", marks: 1 } ] },
+              { number: 13, parts: [ { code: '13', prompt: "A standard growth curve for a population of bacteria in a closed system involves a death phase. Which option explains the death phase?\n\nA  Interspecific competition for nutrients, such as glucose, is high.\nB  Intraspecific competition for resources, such as oxygen, begins.\nC  Production of toxic waste products is at its highest level.\nD  Reproduction stops due to exhaustion of resources.", marks: 1 } ] },
+              { number: 14, parts: [ { code: '14', prompt: "An electron micrograph of an intestine cell has structures X and Y labelled (see the QP PDF). Identify the structure labelled X.\n\nA  Centriole\nB  Lysosome\nC  Mitochondrion\nD  Nucleolus", marks: 1 } ] },
+              { number: 15, parts: [ { code: '15', prompt: "Identify the structure labelled Y in the electron micrograph.\n\nA  Cell wall\nB  Cilium\nC  Plasma membrane\nD  Smooth ER", marks: 1 } ] },
+              { number: 16,
+                scenario: "Section B. DNA profiling is an important technique with many uses. The steps in creating a DNA profile are: 1. DNA extraction; 2. Digestion; 3. Separation; 4. Analysis.",
+                parts: [
+                  { code: '16(a)', prompt: "DNA profiling is used in the investigation of crime and in paternity cases. State one other use of DNA profiling.", marks: 1 },
+                  { code: '16(b)(i)', preamble: "When creating a DNA profile from a crime scene, an intermediate step between extraction and digestion, PCR, is usually carried out. A graph shows the cycle of temperature changes with steps X, Y and Z (see the QP PDF).", prompt: "Name the technique known as PCR.", marks: 1 },
+                  { code: '16(b)(ii)', prompt: "Outline the process of PCR, with reference to steps X, Y and Z.", marks: 3 },
+                  { code: '16(b)(iii)', prompt: "Explain why a temperature of 72–75 °C is used for step Z.", marks: 3 },
+                  { code: '16(b)(iv)', prompt: "Suggest why a PCR step is usually necessary when creating a DNA profile from a crime scene sample in particular.", marks: 1 },
+                  { code: '16(c)(i)', preamble: "Part of a DNA profile for six loci is shown for a crime-scene sample (E) and a potential suspect (S) — see the QP PDF.", prompt: "Suggest why some loci have two peaks but some have only one.", marks: 2 },
+                  { code: '16(c)(ii)', prompt: "Using the evidence in the DNA profile it was claimed that suspect S had been at the crime scene. Explain how strongly the evidence supports this claim.", marks: 3 }
+                ] },
+              { number: 17,
+                scenario: "Blood cells can be examined using microscopy.",
+                parts: [
+                  { code: '17(a)', preamble: "Equipment shown: a pipette, a glass slide and a blood sample (see the QP PDF).", prompt: "Describe how to use the equipment to prepare a blood smear that could then be stained and viewed under a microscope.", marks: 3 },
+                  { code: '17(b)(i)', preamble: "A light micrograph of a human blood smear shows cells A, B and C with an eyepiece graticule scale (see the QP PDF). Cell A is sometimes known as a red blood cell.", prompt: "Name cell A.", marks: 1 },
+                  { code: '17(b)(ii)', kind: 'diagram', prompt: "In the space provided, draw a labelled diagram of cell C.", marks: 4 },
+                  { code: '17(b)(iii)', preamble: "The image was taken using a ×40 objective lens, calibrated with the stage micrometer shown; each of the three large divisions on the stage micrometer measured exactly 0.01 mm.", prompt: "Calculate the diameter of cell B. Give your answer in µm to 2 significant figures.", marks: 3 }
+                ] },
+              { number: 18,
+                scenario: "Bioinformatics, computational biology and synthetic biology are relatively new techniques with a variety of uses. The thylacine (Thylacinus cynocephalus), a large Australian carnivore, became extinct in 1936; scientists have used DNA sequencing, bioinformatics and computational biology to reconstruct its genome.",
+                parts: [
+                  { code: '18(a)(i)', preamble: "To assemble an entire thylacine genome, the broken-down DNA must be supplemented with DNA from a living close relative. A table shows the classification of the thylacine and some living species of the order Dasyuromorphia, with a column headed A (see the QP PDF).", prompt: "Name the classification taxon represented by the column headed A.", marks: 1 },
+                  { code: '18(a)(ii)', prompt: "Using the information in the table, describe the evolutionary and genetic relationships between the species that are listed.", marks: 3 },
+                  { code: '18(a)(iii)', prompt: "Explain why it is difficult to decide which of the other species would be the most appropriate to use as a source of DNA for constructing a thylacine genome.", marks: 2 },
+                  { code: '18(a)(iv)', preamble: "All the species belong to the animal kingdom.", prompt: "Other than the presence or absence of vacuoles, state two features of the cells of these multicellular organisms that would mean they could be classified only in the animal kingdom.", marks: 1 },
+                  { code: '18(b)(i)', preamble: "Synthetic biology involves re-designing organisms for useful purposes such as producing useful proteins; bioinformatics and computational biology can produce new proteins not found in nature.", prompt: "Explain how gene sequencing, bioinformatics and computational biology are used in the production of useful proteins in synthetic biology.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '18(b)(ii)', prompt: "Suggest why some people might be concerned about the increase of synthetic biology.", marks: 1 },
+                  { code: '18(c)(i)', preamble: "The thylacine's population had been in decline for years before extinction. A table shows the proportion of heterozygous loci (genetic diversity) and conservation status for a range of Australian mammals (see the QP PDF).", prompt: "Describe the evidence in the table that supports the conclusion that low genetic diversity contributed to the extinction of the thylacine.", marks: 2 },
+                  { code: '18(c)(ii)', prompt: "Identify one piece of evidence that does not support the conclusion that low genetic diversity contributed to the extinction of the thylacine.", marks: 1 }
+                ] },
+              { number: 19,
+                scenario: "Vaccination can protect an individual from infectious disease. Polio is a viral disease that usually affects children and can have lifelong effects.",
+                parts: [
+                  { code: '19(a)(i)', preamble: "A vaccine against polio was introduced in 1956.", prompt: "Suggest the contents of the original anti-polio vaccine.", marks: 1 },
+                  { code: '19(a)(ii)', prompt: "Describe the role of T-lymphocytes in the development of immunity to a virus such as polio.", marks: 4 },
+                  { code: '19(b)(i)', preamble: "A graph shows the number of cases of polio in England and Wales between 1946 and 2016, with the vaccine introduced in 1956 (see the QP PDF).", prompt: "Calculate the percentage decrease in cases between 1956 and 1960.", marks: 2 },
+                  { code: '19(b)(ii)', prompt: "A student wants to use the calculation in part (b)(i) to support a conclusion about the effectiveness of the polio vaccination. Another student argues 1957 would be a better starting year. Suggest two reasons why 1957 might have been a better starting year.", marks: 2 },
+                  { code: '19(b)(iii)', preamble: "There were cases of polio in the 1980s, but the graph's scale is not sensitive enough to show them.", prompt: "Suggest one way in which the y-axis scale could be changed so that changes in the 1950s and 1980s were both visible.", marks: 1 },
+                  { code: '19(b)(iv)', preamble: "Between 90% and 95% of UK children are currently fully vaccinated. In 2022 polio virus was detected in London sewage and an extra dose was offered to children in London only.", prompt: "Suggest why the extra vaccine was offered to children in London only.", marks: 2 }
+                ] },
+              { number: 20,
+                scenario: "On a biology field trip, students studied an area of mixed woodland dominated by oak, ash and sycamore. They counted every wood sorrel plant within a 3 m radius of one tree of each species: ash 56, oak 44, sycamore 20. The null hypothesis is that tree species would not affect the number of wood sorrel growing near it.",
+                parts: [
+                  { code: '20(a)(i)', preamble: "Use χ² = Σ(O − E)² / E.", prompt: "Calculate the χ² value for the students' data.", marks: 3 },
+                  { code: '20(a)(ii)', preamble: "The critical value for χ² at p = 0.05 is 5.991.", prompt: "Discuss what can be concluded from the χ² calculation in part (a)(i).", marks: 3 },
+                  { code: '20(a)(iii)', preamble: "The teacher suggested including data from more than one tree per species; the students collected all results on the same day.", prompt: "Identify two other variables the students should attempt to control when carrying out an investigation such as this.", marks: 2 },
+                  { code: '20(b)(i)', preamble: "The woodland is a climax community resulting from succession; the first sere is the pioneer community and the final sere the climax community.", prompt: "Compare the plant and animal species that make up the climax and the pioneer communities.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '20(b)(ii)', prompt: "Succession involves changes in the species that live in an area over time. State one other change that takes place in the same area over the same time.", marks: 1 },
+                  { code: '20(b)(iii)', prompt: "Suggest what was present in the area that is now occupied by mixed woodland before the pioneer community arrived.", marks: 1 }
+                ] },
+              { number: 21,
+                scenario: "Certain changes occur throughout the life of a cell, known as the cell cycle.",
+                parts: [
+                  { code: '21(a)(i)', preamble: "An image shows an onion cell undergoing mitosis (see the QP PDF).", prompt: "Name the stage of mitosis shown in the image.", marks: 1 },
+                  { code: '21(a)(ii)', prompt: "Describe how the image would look different if the cell was in interphase.", marks: 2 },
+                  { code: '21(a)(iii)', prompt: "The cell is from the root of an onion. State why root tissue is frequently chosen to study mitosis.", marks: 1 },
+                  { code: '21(b)(i)', preamble: "At the beginning of mitosis and meiosis, the nuclear envelope disintegrates.", prompt: "Identify two other similarities between prophase in mitosis and prophase 1 of meiosis.", marks: 2 },
+                  { code: '21(b)(ii)', prompt: "Identify one difference between prophase in mitosis and prophase 2 of meiosis.", marks: 1 },
+                  { code: '21(c)', preamble: "The cell cycle of an onion cell is estimated to be 15 h. A root-tip squash contained 124 cells, of which 16 were undergoing mitosis.", prompt: "Calculate the mean length of time each cell spent undergoing mitosis. Give your answer in minutes to 3 significant figures.", marks: 2 },
+                  { code: '21(d)', prompt: "Complete the sentences about the cell cycle by choosing the most appropriate terms: during mitosis the … divides, followed immediately by …; replication of DNA takes place during the … phase; the G1 and G2 checkpoints check for cell size and …; the second checkpoint occurs at the end of the … phase; if a cell does not satisfy a checkpoint it enters the … .", marks: 6 }
+                ] }
+            ],
+            markSchemes: {
+              '1': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '2': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '3': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '4': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '5': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '6': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '7': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '8': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '9': { type: 'exact', points: ['D'], guidance: '1 mark. A cube of edge 4 cm: SA = 96 cm², V = 64 cm³, ratio = 1.5.' },
+              '10': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '11': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '12': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '13': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '14': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '15': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '16(a)': { type: 'points', points: ['Any one other use, e.g. identifying genetic diseases / disease risk / evolutionary relationships / disaster (disease) victims; classifying organisms / evidence for evolution; as part of breeding programmes'],
+                guidance: '1 max. Ignore non-genetic medical diagnosis/screening.' },
+              '16(b)(i)': { type: 'exact', points: ['Polymerase chain reaction'], guidance: '1 mark.' },
+              '16(b)(ii)': { type: 'points', points: [
+                  'X = denaturation / strand separation / breaking of hydrogen bonds',
+                  'Y = annealing / primers added (to DNA)',
+                  'Z = synthesis/extension/elongation of a new (complementary) strand / addition of nucleotides'
+                ], guidance: '3 marks (1 per step).' },
+              '16(b)(iii)': { type: 'points', points: [
+                  'It is the optimum temperature for the enzyme (Taq polymerase)',
+                  'Taq polymerase allows a high(er) rate of DNA replication',
+                  'The enzyme is obtained from thermophilic organisms (e.g. bacteria from hot springs)',
+                  'So it can withstand high temperatures / does not denature / is thermostable (higher optimum than normal DNA polymerase)'
+                ], guidance: '3 max.' },
+              '16(b)(iv)': { type: 'points', points: ['The (initial) crime-scene sample is small / there is not much DNA to begin with'],
+                guidance: '1 mark.' },
+              '16(c)(i)': { type: 'points', points: [
+                  'Double peaks: the individual is heterozygous / has two different alleles (VNTR lengths)',
+                  'Single peaks: the individual is homozygous / has the same allele'
+                ], guidance: '2 marks. 1 mark for using "homozygous" and "heterozygous" if not linked to peaks.' },
+              '16(c)(ii)': { type: 'points', points: [
+                  'Supported: the DNA profiles are identical / match',
+                  'Supported: the probability of two people having identical profiles is very low',
+                  'However: 6 is a low number of loci / peaks (only 6 tested; 17 loci needed in court)',
+                  'So they could have been closely related, or could be identical twins (only if the low-loci point is made)'
+                ], guidance: '3 max.' },
+              '17(a)': { type: 'points', points: [
+                  'Use the pipette to place blood on the slide',
+                  'Near one end of the slide',
+                  'Use a second slide / coverslip to spread (smear) the blood across the slide, held at an angle',
+                  'AVP, e.g. allow to air dry'
+                ], guidance: '3 max. Ignore staining.' },
+              '17(b)(i)': { type: 'exact', points: ['Erythrocyte'], guidance: '1 mark. Accept phonetic spelling.' },
+              '17(b)(ii)': { type: 'points', points: [
+                  'A single cell with a two-lobed nucleus, broadly circular',
+                  'Clear continuous single lines (nuclear and cell-surface membranes)',
+                  'Approximately 45 mm horizontal diameter, with ruled label lines touching the feature',
+                  'Nucleus AND cytoplasm/cytosol AND cell-surface/plasma membrane labelled',
+                  'Colour of any of the above given as an annotation'
+                ], guidance: '4 max. Best assessed against your drawing. Do not credit if anything obviously incorrect is drawn; do not credit other labelled structures.' },
+              '17(b)(iii)': { type: 'exact', points: ['8.0 (± 0.3) µm'],
+                guidance: '3 marks: 1 for reading the diameter with the graticule mapped onto the stage micrometer (8.0 ± 0.3 divisions / 0.008 mm); 1 for converting 0.008 mm = 8.0 µm; 1 for 2 sig figs. A single error caps at 2.' },
+              '18(a)(i)': { type: 'exact', points: ['Family'], guidance: '1 mark.' },
+              '18(a)(ii)': { type: 'points', points: [
+                  'All the species are in different genera',
+                  'Tasmanian devil, quoll and dunnart are in the same family (Dasyuridae / taxon A)',
+                  'The Dasyuridae species share a more recent common ancestor (with one another than with thylacine or numbat) / are more closely related',
+                  'All are in the same order, so likely to have a phylogenetic relationship'
+                ], guidance: '3 max.' },
+              '18(a)(iii)': { type: 'points', points: [
+                  'None of the living species are in Thylacinidae (the thylacine\'s family)',
+                  'Further information is required (e.g. DNA sequences not available; classification based on observable features rather than molecular evidence)'
+                ], guidance: '2 marks.' },
+              '18(a)(iv)': { type: 'exact', points: ['No cell wall AND no chloroplasts'],
+                guidance: '1 mark — both required (any order). Ignore heterotrophic / lysosomes / glycogen / centrioles.' },
+              '18(b)(i)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Explains in detail how gene sequencing AND bioinformatics AND computational biology are used to produce synthetic proteins. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Explains how two of (gene sequencing, bioinformatics, computational biology) are used. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Mentions how one of the three is used. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Principle': 'Computational biology can use bioinformatics to predict the structure and function of a synthetic protein from DNA sequences; involves genetic modification of organisms.',
+                  'Gene sequencing': 'Determines the order of bases; order of bases is linked to the order of amino acids; the order of amino acids is the protein primary structure; a DNA sequence can be inferred from a desired primary structure.',
+                  'Bioinformatics': 'Stores and organises large amounts of data (databases of DNA/amino-acid sequences, protein structures, metabolic pathways); facilitates fast retrieval and sharing; uses algorithms and statistical tests.',
+                  'Computational biology': 'Needed for analysis and rapid processing of large amounts of data; prediction of amino-acid sequences; modelling of protein structure or function; algorithms and statistical tests.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '18(b)(ii)': { type: 'points', points: ['Idea of unknown consequences, OR (named) ethical issues (accept creating bioweapons)'],
+                guidance: '1 mark. Ignore "tampering with nature" / "designer babies" / animal welfare.' },
+              '18(c)(i)': { type: 'points', points: [
+                  'The thylacine has the lowest genetic diversity (proportion of heterozygous loci)',
+                  'The species with the highest genetic diversity (antechinus, dunnart, wombat) are of least concern',
+                  'A general pattern: species with more genetic variation are less vulnerable (a correlation between genetic diversity and conservation status)'
+                ], guidance: '2 max.' },
+              '18(c)(ii)': { type: 'points', points: ['The koala is vulnerable but has relatively high genetic diversity, OR the tammar wallaby is of least concern but has relatively low genetic diversity (0.0013 > 0.0007)'],
+                guidance: '1 max.' },
+              '19(a)(i)': { type: 'points', points: ['A weakened / attenuated / dead form of the (polio) virus (accept fragments / antigens of the virus)'],
+                guidance: '1 mark. Ignore DNA/RNA.' },
+              '19(a)(ii)': { type: 'points', points: [
+                  'Involved in clonal selection',
+                  '(Cell-surface) receptors on the T-cell bind to antigens / (named) antigen-presenting cells',
+                  'Produce / release interleukins / cytokines',
+                  'T-helper cells / interleukins stimulate phagocytosis',
+                  'Stimulate clonal expansion (mitosis / proliferation of T or B cells); activate B / T-killer cells',
+                  'T-killer cells destroy infected cells',
+                  'Differentiate into T-memory cells, which allow a rapid secondary response'
+                ], guidance: '4 max.' },
+              '19(b)(i)': { type: 'exact', points: ['≈ 85% (accept 82–86%)'],
+                guidance: '2 marks. Read ≈3440 cases (1956) and ≈520 (1960); decrease ≈2920; ÷ ≈3400 × 100 ≈ 85%. 1 mark for 80% or a correct method with read-off values.' },
+              '19(b)(ii)': { type: 'points', points: [
+                  'Vaccine uptake might not have been immediate / high in 1956 (time to vaccinate all children / slow distribution)',
+                  'Some 1956 cases might have occurred before the vaccine was introduced; 1957 was the first full year of the vaccine'
+                ], guidance: '2 marks.' },
+              '19(b)(iii)': { type: 'points', points: ['Use a logarithmic scale on the y-axis'],
+                guidance: '1 mark.' },
+              '19(b)(iv)': { type: 'points', points: [
+                  '(Because of the virus in London sewage) those in London are more at risk',
+                  'Vaccination rates are lower in London / higher outside London',
+                  'Vaccinating people outside London might be a waste of money (cheaper and more likely to make a difference where the risk is)'
+                ], guidance: '2 max. Ignore herd/ring vaccination and adult-vs-child differences.' },
+              '20(a)(i)': { type: 'exact', points: ['16.8 (16.80)'],
+                guidance: '3 marks. E = 40 for each (120 ÷ 3). (44−40)²/40 = 0.4; (56−40)²/40 = 6.4; (20−40)²/40 = 10; Σ = 16.8. Working marks credited anywhere.' },
+              '20(a)(ii)': { type: 'points', points: [
+                  'The calculated value (16.8) is greater than the critical value (5.991)',
+                  'So the differences (between observed and expected) are significant (less than 5% chance of being due to chance)',
+                  'Reject the null hypothesis',
+                  'There is an association between tree species and wood sorrel population'
+                ], guidance: '3 max.' },
+              '20(a)(iii)': { type: 'points', points: ['Any two of: age/size/height of tree; gradient of the ground; density of surrounding trees (shading); direction of sunlight / aspect (same side of a hill)'],
+                guidance: '2 max. Ignore "light intensity" unqualified and "presence of other species".' },
+              '20(b)(i)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Makes detailed comparisons between plant AND animal species in the climax AND pioneer communities (addressing some emboldened indicative points). Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Makes comparisons between plant AND animal species in the climax AND pioneer communities. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Mentions some features of species in the climax and/or pioneer community. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Pioneer community': 'Plants: small species (e.g. moss/lichen), shorter life cycle / fast-growing, seeds or spores produced in large quantities and dispersed long distances, germinate rapidly, self-pollinating / asexual, tolerate extreme environments (xerophytic / nitrogen-fixing). Animals: few species (if any), mostly small.',
+                  'Climax community': 'Plants: more species than the pioneer community, larger species (e.g. trees), unable to tolerate extreme environments, require soil with ample water and minerals, dominant species, slow-growing. Animals: larger species, more herbivore species, carnivores present, longer food chains.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '20(b)(ii)': { type: 'points', points: ['A change in the soil / substrate (e.g. increased humus / any feature of the soil)'],
+                guidance: '1 mark (first answer).' },
+              '20(b)(iii)': { type: 'points', points: ['Bare ground / rock / water / mud / sand / glacier / lava'],
+                guidance: '1 mark. Do not credit "soil".' },
+              '21(a)(i)': { type: 'exact', points: ['Telophase'], guidance: '1 mark.' },
+              '21(a)(ii)': { type: 'points', points: [
+                  'A single area of dark staining material (one nucleus visible)',
+                  '(Individual) chromosomes / chromatids not visible',
+                  '(Nuclear material) not as dark'
+                ], guidance: '2 max.' },
+              '21(a)(iii)': { type: 'points', points: ['There are many dividing cells / cells undergo frequent mitosis (in the root tip)'],
+                guidance: '1 mark. Ignore "meristem tissue".' },
+              '21(b)(i)': { type: 'points', points: [
+                  'Chromosomes / chromatin fibres coil / condense / thicken',
+                  'Spindle fibres form (centrioles move to the poles)',
+                  'The nucleolus disappears'
+                ], guidance: '2 max.' },
+              '21(b)(ii)': { type: 'points', points: [
+                  'In meiosis prophase 2, only one chromosome from each homologous pair is present (ORA for mitosis)',
+                  'OR the sister chromatids are not genetically identical / recombinants present due to crossing over (ORA)'
+                ], guidance: '1 mark. Accept "chromosomes already condensed in meiosis".' },
+              '21(c)': { type: 'exact', points: ['116 (min)'],
+                guidance: '2 marks. Proportion in mitosis = 16/124 = 0.129; × 900 min = 116 min. 1 mark for 0.129/12.9% or for 1.93 h / 1 h 56 min.' },
+              '21(d)': { type: 'exact', points: ['nucleus; cytokinesis; synthesis / S; DNA damage (breaks); second growth / G2; resting phase / G0'],
+                guidance: '6 marks (1 per gap, in order). Accept "cell division" for nucleus and "apoptosis" for the resting phase where appropriate.' }
             } }
         ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
