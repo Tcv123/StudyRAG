@@ -15012,6 +15012,246 @@ window.SUBJECTS = [
                   'Indicative content': 'SCD: a mutation in the beta-globin gene changes the red blood cell shape and reduces blood supply; fetal haemoglobin uses gamma globin, switched to beta at birth. BCL11A: switching it off means its product is not made, so gamma (fetal) globin keeps being produced — which is not defective, so cells are no longer sickle-shaped. Method: bone marrow stem cells divide by mitosis to give genetically identical cells carrying the modified gene; using the patient\'s own cells avoids an immune response / rejection / immunosuppressants. Ethics: new technology with little long-term evidence; cost; changes are not inherited; painful cell extraction; consent if young; who gets the treatment.'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxb-9bi0-2024-p2', year: 'June 2024', paperName: 'Paper 2 — Advanced Physiology, Evolution and Ecology', paperCode: '9BI0/02', totalMarks: 90, durationMins: 105,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-02-que-20240615.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-02-rms-20240815.pdf',
+            qbqNote: 'All 9 questions (90 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "A photograph shows part of a root tip cell as seen with an electron microscope, with structures labelled P (nucleus), Q (mitochondrion), R (rough endoplasmic reticulum) and S (vacuole), and a width X–Y across P.\n\n(See the photograph in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Which of the following structures is surrounded by a tonoplast?\n\nA  P\nB  Q\nC  R\nD  S", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "In which of the following structures does the process of translation occur?\n\nA  P\nB  Q\nC  R\nD  S", marks: 1 },
+                  { code: '1(a)(iii)', prompt: "How many of the labelled structures in this cell will be present in a cell of an organism in the domain Archaea?\n\nA  0\nB  1\nC  2\nD  3", marks: 1 },
+                  { code: '1(b)', preamble: "The width of structure P, measured between X and Y, is 36 µm.", prompt: "Calculate the magnification of this photograph. Give your answer in standard form.", marks: 2 },
+                  { code: '1(c)', preamble: "Sorghum stores dhurrin inside the structures labelled S. Dhurrin is broken down by the enzyme glucosidase (stored within the chloroplasts) to release hydrogen cyanide, which inhibits aerobic respiration.", prompt: "Explain why dhurrin is stored within structure S, and glucosidase is stored separately in the chloroplasts.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "A photograph shows tomato flowers. The colour of tomato fruits is controlled by two genes on different chromosomes: flesh colour (R red dominant, r white recessive) and skin colour (T yellow dominant, t white recessive). If a plant has an allele for red flesh (R), the tomatoes are always red regardless of skin colour.",
+                parts: [
+                  { code: '2(a)(i)', prompt: "Describe how an embryo sac, containing eight haploid nuclei, is formed inside the ovary of a flower.", marks: 3 },
+                  { code: '2(a)(ii)', prompt: "Which row gives the correct chromosome number in these structures (endosperm cell; generative nucleus of pollen grain; embryo cell)?\n\nA  n / n / 2n\nB  2n / 2n / 2n\nC  3n / n / 2n\nD  3n / 2n / n", marks: 1 },
+                  { code: '2(b)', preamble: "Cereal grains such as barley start to germinate after exposure to water.", prompt: "Which growth substance is released by the embryo during germination to stimulate enzyme production?\n\nA  auxin\nB  cytokinin\nC  gibberellin\nD  phytochrome", marks: 1 },
+                  { code: '2(c)(i)', prompt: "Which are the possible genotypes for a yellow-coloured tomato?\n\nA  RrTT only\nB  rrTt only\nC  rrtt only\nD  rrTt and rrTT", marks: 1 },
+                  { code: '2(c)(ii)', preamble: "A breeder crosses a yellow tomato plant with a red tomato plant that is heterozygous for both genes; some of the F1 are white.", prompt: "Determine the expected ratios of all the phenotypes of the F1 generation, using a genetic diagram.", marks: 4 }
+                ] },
+              { number: 3,
+                scenario: "Fats and oils are lipids synthesised from glycerol and fatty acids. A diagram shows glycerol and three fatty acids.\n\n(See the diagram and fatty-acid table in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)(i)', kind: 'diagram', prompt: "Draw the triglyceride that would be produced from these molecules (glycerol and three fatty acids).", marks: 1 },
+                  { code: '3(a)(ii)', prompt: "Which type of reaction produces the triglyceride from these molecules?\n\nA  condensation, releasing water\nB  condensation, using water\nC  hydrolysis, releasing water\nD  hydrolysis, using water", marks: 1 },
+                  { code: '3(b)(i)', preamble: "Almond oil is 77% oleic acid.", prompt: "Calculate the mass of oleic acid present in 25 g of almond oil. Give your answer to two significant figures.", marks: 1 },
+                  { code: '3(b)(ii)', prompt: "Give one similarity and one difference between the structure of a saturated fatty acid and an unsaturated fatty acid.", marks: 2 },
+                  { code: '3(b)(iii)', prompt: "Analyse the data to comment on which of these lipids are healthier to eat.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "Asthma narrows the bronchi in the lungs. Salbutamol treats asthma by causing muscles to relax to widen the bronchi; it acts by binding to the adrenaline receptors of cells.\n\n(See the graph in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)', preamble: "Gas exchange in the lungs occurs at the alveoli.", prompt: "Explain how alveoli are adapted to maximise gas exchange.", marks: 3 },
+                  { code: '4(b)', prompt: "Which of these statements are correct about the action of adrenaline?\n1. adrenaline stimulates the release of second messengers inside cells\n2. adrenaline binds directly to transcription factors\n3. adrenaline causes the activation of enzymes inside the cells\n\nA  1 and 2 only\nB  1 and 3 only\nC  1, 2 and 3\nD  2 and 3 only", marks: 1 },
+                  { code: '4(c)(i)', preamble: "A graph shows the volumes of air breathed out before and after taking salbutamol.", prompt: "Determine the rate of exhalation of air at one second after taking salbutamol. Use a tangent to the curve. Give your answer in dm³ per second.", marks: 2 },
+                  { code: '4(c)(ii)', prompt: "Explain why taking salbutamol increases the concentration of oxygen in the blood compared with not taking salbutamol.", marks: 3 }
+                ] },
+              { number: 5,
+                scenario: "Forest fires often occur in areas with old, dry trees. Graph 1 shows the number of forest fires in Europe from 1980 to 2005; Graph 2 shows changes in plant species (all species, herbaceous annuals, shrubs, trees) for 40 years after a forest fire.\n\n(See the graphs and tree-species table in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)', preamble: "Some scientists state that the number of forest fires is increasing due to climate change and that measures need to be taken to stop forest fires.", prompt: "Analyse the data to discuss whether measures to prevent climate change need to be taken to prevent further forest fires.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true },
+                  { code: '5(b)(i)', preamble: "A table gives the number of trees of six species 7 years after a fire (Aleppo pine 45, silver fir 30, beech 14, oak 12, chestnut 18, plane 11; total 130).", prompt: "Calculate the index of biodiversity (D) for the trees, using D = N(N−1) / Σn(n−1). Give your answer to two decimal places.", marks: 3 },
+                  { code: '5(b)(ii)', prompt: "State why using the index of diversity is a more valid way of comparing biodiversity of areas than comparing the number of species.", marks: 1 },
+                  { code: '5(b)(iii)', prompt: "Explain why a high species diversity means that an area is more resistant to environmental changes.", marks: 2 }
+                ] },
+              { number: 6,
+                scenario: "Tissue hypoxia occurs if body tissues cannot get sufficient oxygen from the blood. A graph shows the oxygen dissociation curves for haemoglobin from a patient treated with a hypoxia drug and a patient not treated.\n\n(See the dissociation curves in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)', prompt: "Explain the shape of the haemoglobin dissociation curve without the drug.", marks: 3 },
+                  { code: '6(b)', preamble: "The partial pressure of oxygen in the alveoli is approximately 14 kPa.", prompt: "Explain why giving a patient the drug is a more effective method of treating tissue hypoxia than increasing the partial pressure of oxygen in the inhaled air.", marks: 3 }
+                ] },
+              { number: 7,
+                scenario: "Thermoregulation and osmoregulation are examples of homeostasis. A diagram shows a cross section of a human brain with structures W, X, Y, Z.\n\n(See the brain diagram and graphs in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)', prompt: "Which structure is the hypothalamus?\n\nA  W\nB  X\nC  Y\nD  Z", marks: 1 },
+                  { code: '7(b)(i)', preamble: "A student monitored core body temperature, skin temperature (forearm) and sweat production every five minutes during 15 minutes of rest then 30 minutes of exercise (graphs).", prompt: "Explain the changes in core body temperature and skin temperature during exercise, using the information in the graphs.", marks: 4 },
+                  { code: '7(b)(ii)', preamble: "Mammals are endotherms.", prompt: "Give one method that ectotherms, such as reptiles, can use to thermoregulate.", marks: 1 },
+                  { code: '7(b)(iii)', preamble: "Hypothermia occurs when thermoregulation does not work and core temperature decreases rapidly.", prompt: "Explain how positive feedback results in a decrease in core body temperature.", marks: 2 },
+                  { code: '7(c)', preamble: "The hypothalamus plays a role in osmoregulation.", prompt: "Describe how stimulation of the hypothalamus leads to the production of concentrated urine.", marks: 3 }
+                ] },
+              { number: 8,
+                scenario: "Animals use nervous systems to coordinate their behaviour. A diagram shows a cross section of a spinal cord with a neurone labelled X; another graph shows the relationship between impulse transmission speed and myelinated axon diameter. A cone snail produces toxins that paralyse its prey.\n\n(See the diagrams and graphs in the question paper PDF.)",
+                parts: [
+                  { code: '8(a)', prompt: "Which of the following are the name and location of the neurone labelled X?\n\nA  motor neurone in the dorsal root\nB  motor neurone in the ventral root\nC  sensory neurone in the dorsal root\nD  sensory neurone in the ventral root", marks: 1 },
+                  { code: '8(b)(i)', preamble: "A graph relates transmission speed to axon diameter.", prompt: "Calculate the distance that an action potential would move in 400 milliseconds along a myelinated axon with a diameter of 12 µm. Give your answer in metres.", marks: 2 },
+                  { code: '8(b)(ii)', preamble: "Some varieties of dog can have delaminating disease when the myelin sheath of neurones is lost.", prompt: "Explain why dogs with delaminating disease respond more slowly to stimuli.", marks: 2 },
+                  { code: '8(c)(i)', preamble: "Cone snail toxins are protein molecules held together by disulfide bonds.", prompt: "Which other types of bond hold together the tertiary structure of a protein?\n\nA  hydrogen bonds only\nB  ionic bonds only\nC  hydrogen bonds and ionic bonds only\nD  peptide bonds only", marks: 1 },
+                  { code: '8(c)(ii)', prompt: "Describe how the arrival of an action potential at a presynaptic neurone leads to the generation of an inhibitory postsynaptic potential (ipsp) in the postsynaptic neurone.", marks: 4 },
+                  { code: '8(c)(iii)', preamble: "A graph shows the changes in calcium ion concentration inside the presynaptic terminal after stimulation, with and without toxin.", prompt: "Analyse the data to explain why this toxin causes paralysis of prey animals.", marks: 3 }
+                ] },
+              { number: 9,
+                scenario: "Asiatic lions are endangered; some have been kept in zoos for many years. In 2017, a European zoo stated that 392 lions in captivity had died over 14 years, 80% of them less than one year old.\n\n(See the graphs in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)(i)', preamble: "The zoo population was initially started by breeding from nine lions.", prompt: "Explain why many of the next generations of lions died before they were one year old.", marks: 2 },
+                  { code: '9(a)(ii)', preamble: "A nervous-system condition is caused by a recessive allele. In wild Asiatic lions this allele has a frequency of 0.02; in zoo populations it has a frequency of 0.30.", prompt: "Determine the frequency of heterozygous Asiatic lions in zoo populations. Use the Hardy–Weinberg equation p² + 2pq + q² = 1.", marks: 2 },
+                  { code: '9(a)(iii)', prompt: "State two conditions that must occur for allele frequencies to stay constant over several generations.", marks: 2 },
+                  { code: '9(a)(iv)', prompt: "Describe how CITES helps to maintain populations of Asiatic lions in the wild.", marks: 2 },
+                  { code: '9(b)', preamble: "Zoos keep species in captivity and engage in research, ex-situ conservation and in-situ conservation. Graph 1 shows the numbers of endangered/threatened species of mammals, birds, amphibians and invertebrates kept in zoos; Graph 2 shows the percentages of each group used for research, ex-situ and in-situ conservation.", prompt: "Analyse the data and use your own knowledge to discuss the effectiveness of zoos as centres for the conservation of animals.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['D — S (the vacuole, surrounded by the tonoplast)'], guidance: '1 mark.' },
+              '1(a)(ii)': { type: 'exact', points: ['C — R (the rough endoplasmic reticulum)'], guidance: '1 mark.' },
+              '1(a)(iii)': { type: 'exact', points: ['A — 0'], guidance: '1 mark. None of the labelled structures are present in Archaea.' },
+              '1(b)': { type: 'exact', points: ['≈ 1.4 × 10³', '1.36 × 10³ to 1.42 × 10³'],
+                guidance: '2 marks. Magnification = measured width of P ÷ 36 µm. 1 mark for the value (1361–1417); 1 for standard form. Correct answer gains both marks.' },
+              '1(c)': { type: 'points', points: [
+                  'To prevent the enzyme and substrate reacting / no E–S complexes form / hydrogen cyanide is not produced',
+                  'They react only when the cell is damaged (the vacuole and chloroplast break), so dhurrin and glucosidase only meet when the cell is eaten/damaged',
+                  'So the plant cell does not die / stop growing'
+                ], guidance: '2 max.' },
+              '2(a)(i)': { type: 'points', points: [
+                  '(Megaspore mother cell) meiosis producing four haploid nuclei/megaspores',
+                  'Three nuclei/megaspores disintegrate',
+                  'Only one nucleus/megaspore then undergoes mitosis',
+                  'Three (mitotic) divisions occur (to produce 8 nuclei)'
+                ], guidance: '3 max. Penalise "cells" once.' },
+              '2(a)(ii)': { type: 'exact', points: ['C — 3n / n / 2n'], guidance: '1 mark.' },
+              '2(b)': { type: 'exact', points: ['C — gibberellin'], guidance: '1 mark.' },
+              '2(c)(i)': { type: 'exact', points: ['D — rrTt and rrTT'], guidance: '1 mark.' },
+              '2(c)(ii)': { type: 'points', points: [
+                  'Correct parent genotypes (rrTt × RrTt)',
+                  'Correct gametes (rT, rt and RT, Rt, rT, rt)',
+                  'Correct offspring genotypes (RrTT, RrTt, Rrtt, rrTT, rrTt, rrtt)',
+                  'Correct ratio of phenotypes: 4 red : 3 yellow : 1 white (or 8 : 6 : 2)'
+                ], guidance: '4 marks. The three phenotype colours must be shown for MP4. Allow ECF.' },
+              '3(a)(i)': { type: 'points', points: ['A triglyceride: glycerol joined to the three fatty acids by three ester bonds (with three water molecules removed)'],
+                guidance: '1 mark. Best assessed against your drawing in the QP PDF.' },
+              '3(a)(ii)': { type: 'exact', points: ['A — condensation, releasing water'], guidance: '1 mark.' },
+              '3(b)(i)': { type: 'exact', points: ['19 g'],
+                guidance: '1 mark. 77% of 25 g = 19 g (2 sf).' },
+              '3(b)(ii)': { type: 'points', points: [
+                  'Similarity: both contain a COOH (carboxylic acid) group / the elements C, H, O / C–C single bonds / an OH group',
+                  'Difference: saturated fatty acids have no C=C double bonds (a higher proportion of hydrogen / are straight not kinked); unsaturated have C=C double bonds'
+                ], guidance: '2 marks (1 similarity + 1 difference). Allow converse.' },
+              '3(b)(iii)': { type: 'points', points: [
+                  'Palmitic/stearic acid is saturated; oleic/linoleic/linolenic acid is unsaturated',
+                  'Almond/flaxseed oil is high in unsaturated fatty acids; cocoa butter is high in saturated',
+                  'Unsaturated fats (almond/flaxseed) do not increase CHD / are less likely to lead to atherosclerosis / fewer plaque deposits (correct ref to LDLs/HDLs)',
+                  'Unsaturated fats have less energy so less obesity'
+                ], guidance: '3 max. Accept converse for saturated/cocoa butter.' },
+              '4(a)': { type: 'points', points: [
+                  'Thin epithelium / capillary endothelium (one cell thick) for a short diffusion path',
+                  'Capillaries / a good blood supply to maintain the diffusion (concentration) gradient',
+                  'Many alveoli / the shape of alveoli increases the surface area for gas exchange',
+                  'Fluid/moisture to dissolve gases'
+                ], guidance: '3 max. Do not accept "cell walls".' },
+              '4(b)': { type: 'exact', points: ['B — 1 and 3 only'], guidance: '1 mark. Adrenaline does not bind to transcription factors.' },
+              '4(c)(i)': { type: 'exact', points: ['≈ 0.7 to 0.9 dm³ per second'],
+                guidance: '2 marks. Draw a tangent at 1 s and divide volume by time. 1 mark for a correct tangent; 1 for the division.' },
+              '4(c)(ii)': { type: 'points', points: [
+                  'Exhalation/inhalation is more rapid / more air breathed in and out (higher tidal volume)',
+                  'To maintain a diffusion (concentration) gradient / high partial pressure of oxygen in the alveoli',
+                  'So faster/more diffusion of oxygen into the blood/capillaries'
+                ], guidance: '3 marks.' },
+              '5(a)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A scientific judgement supported throughout by sustained application of relevant evidence; a conclusion with sustained linkages. Uses at least five points drawn from all of: forest-fire data (F), succession/vegetation data (S) and discussion ideas (D).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A scientific judgement with strengths/weaknesses; a conclusion with occasional support. At least three or four points from at least two of F, S, D.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Limited judgement focused on mainly one area; one or two points from F, S or D.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Fires (F): number of fires increases over time but decreases in the last few years; fluctuations. Succession (S): herbaceous plants high after fires then decrease; species number peaks ~7 years then falls; after 40 years a climax community dominated by few species. Discussion (D): fires may be due to other/human factors; correlation not causation; CO₂ from fires drives further warming; fires can increase species diversity; early succession is more productive/removes more carbon; data is only for Europe (small/unrepresentative sample); preventing fires may harm smaller plants.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '5(b)(i)': { type: 'exact', points: ['4.68'],
+                guidance: '3 marks. N(N−1) = 130 × 129 = 16 770; Σn(n−1) = 3580; D = 16 770 ÷ 3580 = 4.68. 1 mark each. Correct answer gains all three.' },
+              '5(b)(ii)': { type: 'points', points: ['It takes population numbers / abundance into account (species evenness)'],
+                guidance: '1 mark.' },
+              '5(b)(iii)': { type: 'points', points: [
+                  'There are many food chains / complex food webs (alternative food sources)',
+                  'There are different predators / a range of niches',
+                  'High genetic diversity (many alleles), so some survive / have advantageous alleles'
+                ], guidance: '2 max.' },
+              '6(a)': { type: 'points', points: [
+                  'The curve is S-shaped / sigmoidal',
+                  'Because cooperative binding occurs',
+                  'When the first oxygen binds, the shape of the subunits changes (conformational/allosteric change)',
+                  'So subsequent oxygen molecules bind more easily / affinity increases as more oxygen binds'
+                ], guidance: '3 max.' },
+              '6(b)': { type: 'points', points: [
+                  'The haemoglobin is already saturated at 14 kPa (so adding more oxygen has no effect)',
+                  'The drug does not affect oxygen saturation at high partial pressures',
+                  'The drug shifts the curve to the right / reduces the affinity for oxygen at lower partial pressures',
+                  'So more oxygen is released/unloaded to the tissues'
+                ], guidance: '3 max.' },
+              '7(a)': { type: 'exact', points: ['C — Y'], guidance: '1 mark.' },
+              '7(b)(i)': { type: 'points', points: [
+                  'Muscle contraction / respiration releases heat',
+                  'Core temperature does not rise as much as skin temperature',
+                  '(Blood) temperature rise detected by the hypothalamus, which sends impulses to the skin/sweat glands/shunt vessels',
+                  'Vasodilation causes the skin temperature to rise (increased blood flow to the skin)',
+                  'Water from sweat evaporates, removing heat / cooling the skin so the skin temperature rise levels off'
+                ], guidance: '4 max.' },
+              '7(b)(ii)': { type: 'points', points: ['A correct example of behavioural thermoregulation (e.g. basking in the sun, seeking shade, pressing the body onto hot sand)'],
+                guidance: '1 mark.' },
+              '7(b)(iii)': { type: 'points', points: [
+                  'If the body cools, positive feedback makes it even colder (a drop causes a larger drop, away from normal)',
+                  'Because respiration/metabolism is slower (enzymes have less kinetic energy), so even less heat is released'
+                ], guidance: '2 marks.' },
+              '7(c)': { type: 'points', points: [
+                  'High blood salt concentration / low blood water potential stimulates osmoreceptors (in the hypothalamus)',
+                  'Causing ADH release from the pituitary',
+                  'ADH increases the permeability of the collecting duct (more aquaporins in the membranes)',
+                  'More reabsorption of water into the blood'
+                ], guidance: '3 max.' },
+              '8(a)': { type: 'exact', points: ['B — motor neurone in the ventral root'], guidance: '1 mark.' },
+              '8(b)(i)': { type: 'exact', points: ['≈ 27.2 m', '27.2 to 28.0'],
+                guidance: '2 marks. Read speed at 12 µm (≈ 68 m s⁻¹); 68 × 0.4 = 27.2 m. 1 mark for the speed; 1 for the distance. Correct answer gains both.' },
+              '8(b)(ii)': { type: 'points', points: [
+                  'Impulses travel more slowly / take longer to travel',
+                  'Less saltatory conduction / impulses cannot jump between nodes of Ranvier (the impulse must travel along all of the membrane)'
+                ], guidance: '2 marks. Accept converse for when myelin is present.' },
+              '8(c)(i)': { type: 'exact', points: ['C — hydrogen bonds and ionic bonds only'], guidance: '1 mark. (Peptide bonds form the primary structure.)' },
+              '8(c)(ii)': { type: 'points', points: [
+                  'Calcium channels open and calcium ions enter the neurone',
+                  'Vesicles fuse with the presynaptic membrane (exocytosis) releasing neurotransmitter',
+                  'Neurotransmitter binds to receptors on the postsynaptic membrane',
+                  'Chloride ions enter the neurone (or potassium ions move out)',
+                  'The membrane hyperpolarises / becomes more negative inside (further from the threshold)'
+                ], guidance: '4 max. Accept a correct named neurotransmitter.' },
+              '8(c)(iii)': { type: 'points', points: [
+                  'Fewer calcium ions enter the neurone (the membrane is less permeable to calcium / calcium does not increase inside)',
+                  'The toxin blocks/inhibits/binds to the calcium channels (prevents opening)',
+                  'No neurotransmitter is released / can diffuse across the synapse',
+                  'No action potential / depolarisation in the postsynaptic neurone, so muscles cannot contract'
+                ], guidance: '3 max.' },
+              '9(a)(i)': { type: 'points', points: [
+                  'A founder effect (bottleneck) has occurred',
+                  'So only a small range of alleles / small gene pool / low genetic diversity',
+                  'High chance that two harmful recessive alleles will be inherited / both parents carry the harmful recessive allele'
+                ], guidance: '2 max.' },
+              '9(a)(ii)': { type: 'exact', points: ['0.42 (42%)'],
+                guidance: '2 marks. q = 0.30, so p = 0.70; 2pq = 2 × 0.7 × 0.3 = 0.42. 1 mark for p = 0.7. Correct answer gains both.' },
+              '9(a)(iii)': { type: 'points', points: [
+                  'No migration (isolated population)',
+                  'No (natural/sexual) selection',
+                  'No genetic drift / a large population',
+                  'No mutation',
+                  'Random mating'
+                ], guidance: '2 max.' },
+              '9(a)(iv)': { type: 'points', points: [
+                  'Ban / control of the trade and movement of lions (between countries)',
+                  'By countries that sign/agree the treaties',
+                  'Ban on poaching / killing / hunting of the animals'
+                ], guidance: '2 max.' },
+              '9(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Comprehensive knowledge applied; consequences supported throughout by sustained linkage; clear, logically structured. Uses at least five or six comments drawn from all of: graph descriptions (G), own knowledge (K) and discussion points (D), and considers both graphs.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Adequate knowledge with some relevant facts; some lines of reasoning with structure. Four or five comments from at least two of G, K, D.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; two or three comments from any of G, K, D.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Graphs (G): all groups have more endangered than threatened species; more mammals/birds kept than invertebrates/amphibians; zoos do most research on mammals/birds, little on invertebrates; high proportion of invertebrates have in-situ conservation; ex-situ low for mammals/birds. Knowledge (K): ex-situ = in zoos, in-situ = in habitats; zoos prevent extinction, run breeding programmes/stud books to reduce genetic problems, allow research/education; ex-situ can cause inbreeding/behaviour change/ethical issues. Discussion (D): some species kept just as exhibits; zoos raise money/awareness for in-situ; limited data (no species detail, no zoo numbers, only threatened/endangered categories).'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
