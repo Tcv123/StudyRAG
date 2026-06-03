@@ -15808,6 +15808,246 @@ window.SUBJECTS = [
                   'Indicative content': 'Data: fish from H₂S environments have more DMRs than those from non-H₂S environments (both sexes); the number of DMRs rises to a CpG density of ~3 then falls; females have more DMRs than males; second-generation fish show similar patterns (DMRs retained even after H₂S is removed). Knowledge: DNA methylation adds a CH₃ to cytosine at CpG sites, silencing genes by preventing transcription; epigenetic modifications are inherited; no statistical analysis given. Higher-level: H₂S could be causing the methylation (but other water differences not controlled); methylation is a survival advantage as the interruption to mitochondrial respiration is reduced / the ETC can continue; lab conditions also appear to cause more DMRs in male fish.'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxb-9bi0-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Advanced Physiology, Evolution and Ecology', paperCode: '9BI0/02', totalMarks: 90, durationMins: 105,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-02-que-20230617.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-02-rms-20230817.pdf',
+            qbqNote: 'All 9 questions (90 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, graphs, ECG traces and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Carbohydrates and proteins are important biological molecules. Diagrams show various bonds labelled V, W, X, Y and Z.\n\n(See the bond diagrams in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Which one of the letters shows a bond that joins glucose molecules together in a disaccharide?\n\nA  W\nB  X\nC  Y\nD  Z", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "Which letters show bonds that hold together the tertiary structure of a protein?\n\nA  V and X\nB  V and Z\nC  W and Y\nD  W and Z", marks: 1 },
+                  { code: '1(a)(iii)', prompt: "Which letter shows a bond that holds together cellulose molecules within a cellulose microfibril?\n\nA  V\nB  W\nC  X\nD  Y", marks: 1 },
+                  { code: '1(b)', preamble: "Raw egg white contains dissolved ovalbumin, a globular protein with some polar and some non-polar R-groups. Heating above 70 °C irreversibly changes it into a solid.", prompt: "Explain why heating ovalbumin to temperatures above 70 °C causes egg white to change from a liquid into a solid.", marks: 3 }
+                ] },
+              { number: 2,
+                scenario: "Bromelain is a protease enzyme in pineapple juice. A student investigated its digestion of gelatine and the effects of substrate concentration and copper sulfate on the rate of digestion of a soluble protein.\n\n(See the diagrams and graph in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)', prompt: "Which graph shows the energy changes that occur in a typical enzyme-catalysed reaction?\n\nA  W\nB  X\nC  Y\nD  Z", marks: 1 },
+                  { code: '2(b)', preamble: "A solid disc of gelatine 1 cm deep had a 2 cm-diameter well filled with pineapple juice; after one hour the digested circular area had a diameter of 6 cm.", prompt: "Calculate the volume of gelatine that had been digested. Give your answer in mm³ to two significant figures (volume of a cylinder = πr²l, π = 3.14).", marks: 3 },
+                  { code: '2(c)(i)', prompt: "Explain the effect of increasing substrate concentration on the rate of digestion of the soluble protein.", marks: 2 },
+                  { code: '2(c)(ii)', prompt: "Explain the effect of copper sulfate on the rate of digestion of the soluble protein.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "A photograph shows part of a testis; cell X is a primary spermatocyte. Scientists investigated whether there is an association between sperm with damaged DNA and the risk of pregnancies not developing to full term (graphs for 130 men with a history of pregnancies not developing to full term and 78 men where pregnancies developed to full term).\n\n(See the photograph and graphs in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)(i)', prompt: "At which stage of cell division is cell X (a primary spermatocyte)?\n\nA  prophase I of meiosis\nB  prophase II of meiosis\nC  prophase I of mitosis\nD  prophase II of mitosis", marks: 1 },
+                  { code: '3(a)(ii)', preamble: "In the photograph, cell X has a width of 0.8 cm at a magnification of × 1500.", prompt: "Calculate the actual width, in micrometres (µm), of cell X. Give your answer to one decimal place.", marks: 2 },
+                  { code: '3(b)(i)', prompt: "Calculate the number of men with partners that have a history of pregnancies not developing to full term that had 25% or less of sperm with DNA damage.", marks: 1 },
+                  { code: '3(b)(ii)', preamble: "The scientists concluded that having more than 25% of sperm with damaged DNA leads to a high risk of pregnancies not developing to full term.", prompt: "Analyse the data to evaluate this conclusion.", marks: 4 }
+                ] },
+              { number: 4,
+                scenario: "Saltmarshes are coastal habitats regularly flooded with seawater and colonised by different plant species. Samphire grows in the areas closest to the sea (small leaves, swollen stems). Students investigated succession along a transect from the sea.\n\n(See the diagrams and results table in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)(i)', prompt: "Which row in the table causes the highest rate of transpiration from a plant (temperature; wind speed; air humidity)?\n\nA  high / high / high\nB  high / high / low\nC  high / low / high\nD  low / high / low", marks: 1 },
+                  { code: '4(a)(ii)', preamble: "Samphire has a thick epidermis and waxy cuticle, palisade cells in the stem, a cortex with large cells of high salt concentration and air spaces, and vascular tissue.", prompt: "Explain how samphire is adapted to grow in areas of saltmarshes closest to the sea.", marks: 4 },
+                  { code: '4(b)(i)', preamble: "Students measured ACFOR scales for three species, an index of diversity, and the percentage of silt made of organic material along a transect.", prompt: "Give two limitations of using ACFOR scales to compare the distribution of different plant species.", marks: 2 },
+                  { code: '4(b)(ii)', preamble: "As the distance from the sea increases, the age of the saltmarsh increases.", prompt: "Explain the changes in distribution of the species as distance from the sea increases.", marks: 4 }
+                ] },
+              { number: 5,
+                scenario: "The human retina contains rod cells and cone cells. Red-green colour blindness is a sex-linked recessive condition (Xr recessive to XR). On Pingelap, an isolated Pacific island, 4–10% of the population has achromatopsia (cannot see colour), compared with ~0.003% elsewhere.\n\n(See the pedigree diagrams in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)(i)', prompt: "Which of the following occur in the rod cell when it is stimulated by light?\n1. rhodopsin breaks down into retinal and opsin\n2. there is a decrease in the release of neurotransmitter molecules\n3. there is more diffusion of sodium ions into the rod cell\n\nA  1 and 2\nB  1 and 3\nC  1, 2 and 3\nD  2 and 3", marks: 1 },
+                  { code: '5(a)(ii)', prompt: "Explain why the centre of the retina is less sensitive to low intensity light than the outer areas.", marks: 2 },
+                  { code: '5(b)(i)', preamble: "A pedigree diagram shows the inheritance of red-green colour blindness in a family (individuals 1–13).", prompt: "How many of the individuals in the family must have a genotype of XRXr?\n\nA  2\nB  3\nC  4\nD  5", marks: 1 },
+                  { code: '5(b)(ii)', prompt: "Explain how this pedigree diagram demonstrates that red-green colour blindness is caused by a recessive allele.", marks: 2 },
+                  { code: '5(c)(i)', preamble: "A pedigree diagram shows people affected and unaffected with achromatopsia in a family.", prompt: "Deduce how achromatopsia is inherited. Use the information in the pedigree diagram to support your answer.", marks: 3 },
+                  { code: '5(c)(ii)', preamble: "In 1755 a tsunami reduced the population to 20 people, with little immigration since; in 2022 the population was ~250.", prompt: "Explain why the incidence of achromatopsia is higher in Pingelap than in other countries.", marks: 2 }
+                ] },
+              { number: 6,
+                scenario: "A diagram shows an action potential in a neurone, with points X, Y and Z. The African crested rat has adaptations to avoid being eaten: it chews bark containing the poison ouabain, rubs it onto its hollow fur, and produces salivary proteins that prevent the ouabain harming it. Ouabain inhibits sodium–potassium exchange pumps.\n\n(See the diagrams in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)(i)', prompt: "Which of the following causes the change in potential between X and Y?\n\nA  movement of calcium ions out of the neurone\nB  movement of potassium ions out of the neurone\nC  movement of sodium ions into the neurone\nD  movement of sodium ions out of the neurone", marks: 1 },
+                  { code: '6(a)(ii)', prompt: "Explain how membrane proteins cause the change in potential between Y and Z.", marks: 2 },
+                  { code: '6(b)(i)', prompt: "Which types of adaptation has the rat evolved?\n1. anatomical\n2. behavioural\n3. physiological\n\nA  1 and 2\nB  1, 2 and 3\nC  1 and 3\nD  2 and 3", marks: 1 },
+                  { code: '6(b)(ii)', preamble: "A diagram shows the effect of ouabain on the potential difference across a motor neurone membrane.", prompt: "Explain how ouabain prevents the transmission of nerve impulses.", marks: 3 }
+                ] },
+              { number: 7,
+                scenario: "Scientists investigated the role of ex-situ conservation of plant species on genetic biodiversity, examining the variability of DNA sequences of 30 genes for plants in seed banks and in the wild.\n\n(See the graphs in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)(i)', prompt: "Which row gives correct statements about the genetic code in eukaryotes (overlapping; degenerate; contains introns in genes)?\n\nA  yes / yes / yes\nB  yes / no / yes\nC  no / yes / no\nD  no / yes / yes", marks: 1 },
+                  { code: '7(a)(ii)', prompt: "Explain why the DNA sequences of genes are more variable than the sequences of amino acids in the proteins coded for by these genes.", marks: 2 },
+                  { code: '7(a)(iii)', prompt: "Describe how the scientists could use technology to find out whether gene sequences of two species are similar.", marks: 2 },
+                  { code: '7(b)', preamble: "Graphs show the mean genetic diversity of species in the wild and in seed banks (trees, non-woody, endangered, non-endangered, economically important), and the mean number of DNA-sequence differences against the age of seeds in the seed bank.", prompt: "Analyse the data to discuss the results of this investigation.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 8,
+                scenario: "Mammals have a double circulatory system. Abnormal heart rhythms can be identified in ECG traces; a diagram shows a regular and an abnormal trace.\n\n(See the ECG traces in the question paper PDF.)",
+                parts: [
+                  { code: '8(a)', prompt: "Explain why a double circulatory system enables mammals to have a high metabolic rate.", marks: 2 },
+                  { code: '8(b)(i)', prompt: "Calculate the heart rate, in beats per minute, of the person with an abnormal heart rate. Give your answer to the nearest whole number.", marks: 2 },
+                  { code: '8(b)(ii)', prompt: "Explain how the ECG traces show this abnormal heart rhythm is due to damage to the septum in the centre of the heart between the left and right sides.", marks: 2 },
+                  { code: '8(b)(iii)', preamble: "Bradycardia results in a slower-than-normal heart rate. Atropine, a competitive inhibitor of acetylcholine, can treat some forms.", prompt: "Explain why atropine will lead to an increase in heart rate.", marks: 3 },
+                  { code: '8(b)(iv)', prompt: "Describe how exercise leads to the stimulation of the cardiac centre in the medulla oblongata.", marks: 4 }
+                ] },
+              { number: 9,
+                scenario: "A South Atlantic Ocean food chain is: phytoplankton → zooplankton → sardine → common seal → orca. Diagrams show ecological pyramids and an energy-flow diagram. Scientists investigated the effect of temperature and light intensity on the net primary productivity of phytoplankton.\n\n(See the pyramids, energy diagram and results table in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)', prompt: "Comment on the shapes of these three ecological pyramids (biomass for November, biomass for December, energy for one year).", marks: 3 },
+                  { code: '9(b)(i)', preamble: "Energy flow: phytoplankton 6.80 × 10⁶, energy passing to zooplankton 7.50 × 10⁴... (energy values in kJ m⁻³ yr⁻¹; phytoplankton receive 6.80 × 10⁶ and pass on so that 6.08 × 10⁶ is not transferred).", prompt: "Calculate the percentage efficiency of energy transfer between the phytoplankton and the zooplankton. Give your answer to the nearest whole number.", marks: 2 },
+                  { code: '9(b)(ii)', preamble: "Common seals and orcas are endotherms; sardines are ectotherms.", prompt: "Explain why the transfer of energy from sardines to orcas is less efficient than the transfer of energy from zooplankton to common seals.", marks: 3 },
+                  { code: '9(c)(i)', prompt: "State what is meant by the term net primary productivity (NPP).", marks: 1 },
+                  { code: '9(c)(ii)', preamble: "Effects of global warming: rising CO₂ → higher temperature → more cloud cover; warmer oceans reduce nutrient movement (e.g. nitrates) to the surface. The scientists concluded that if fossil fuel use is not reduced, orca populations in the South Atlantic will fall. A table gives the mean increase in dry biomass of phytoplankton at different light intensities and temperatures.", prompt: "Analyse the data in the table and the information given to discuss this conclusion.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['B — X'], guidance: '1 mark.' },
+              '1(a)(ii)': { type: 'exact', points: ['B — V and Z'], guidance: '1 mark.' },
+              '1(a)(iii)': { type: 'exact', points: ['A — V'], guidance: '1 mark.' },
+              '1(b)': { type: 'points', points: [
+                  'In raw egg white the polar/charged groups are on the outside because they associate with / bond to water (are hydrophilic)',
+                  'Heating denatures the ovalbumin (the tertiary structure changes) because hydrogen/ionic bonds break',
+                  'New bonds form between the non-polar/hydrophobic groups of ovalbumin molecules (to form a solid)'
+                ], guidance: '3 max.' },
+              '2(a)': { type: 'exact', points: ['A — W'], guidance: '1 mark.' },
+              '2(b)': { type: 'exact', points: ['25 000 mm³ (2.5 × 10⁴)'],
+                guidance: '3 marks. Digested volume = π × 3² × 1 (whole disc) − π × 1² × 1 (well) = (28.26 − 3.14) cm³ = 25.12 cm³ = 25 120 mm³ ≈ 25 000 mm³ (2 sf). Correct answer gains all three.' },
+              '2(c)(i)': { type: 'points', points: [
+                  'Rate increases then levels off',
+                  'Increases because there is a higher chance of enzyme–substrate collisions / unoccupied active sites (substrate concentration is the limiting factor)',
+                  'Levels off when all the active sites are occupied / enzyme concentration is limiting'
+                ], guidance: '2 max.' },
+              '2(c)(ii)': { type: 'points', points: [
+                  'Copper sulfate is a (non-competitive) inhibitor',
+                  'It binds to the enzyme and changes the shape/structure of the active site (binds to an allosteric site)',
+                  'So the substrate does not bind / E–S complexes cannot form (the rate falls)'
+                ], guidance: '2 max. Do not accept "competitive inhibitor".' },
+              '3(a)(i)': { type: 'exact', points: ['A — prophase I of meiosis'], guidance: '1 mark.' },
+              '3(a)(ii)': { type: 'exact', points: ['5.3 µm'],
+                guidance: '2 marks. 0.8 cm ÷ 1500 = 5.33 × 10⁻⁴ cm = 5.3 µm. 1 mark for ÷ 1500. Correct answer with no working gains both.' },
+              '3(b)(i)': { type: 'exact', points: ['12'],
+                guidance: '1 mark. The number of men with ≤ 25% sperm DNA damage in the "not full term" group.' },
+              '3(b)(ii)': { type: 'points', points: [
+                  'Support: for pregnancies not going to full term there are more men with > 25% DNA damage (few have < 25%)',
+                  'Support: no men where pregnancies go to full term have > 60% damage / converse',
+                  'Against: some men whose partners\' pregnancies went to full term had high % DNA damage',
+                  'Against: small / uneven sample sizes',
+                  'Against: other factors not accounted for (age, diet, genetic conditions) / maternal factors affect pregnancy'
+                ], guidance: '4 max (≥1 support and ≥1 against).' },
+              '4(a)(i)': { type: 'exact', points: ['B — high / high / low'], guidance: '1 mark.' },
+              '4(a)(ii)': { type: 'points', points: [
+                  'Reduced leaf surface area / smaller leaves so less transpiration / water loss',
+                  'Thick epidermis / waxy cuticle reduces evaporation / water loss',
+                  'The stem is used as the photosynthetic organ (palisade cells in the stem)',
+                  '(When submerged) air spaces provide oxygen for respiration / CO₂ for photosynthesis',
+                  'High salt concentration lowers the water potential / maintains a water potential gradient, so less water loss by osmosis'
+                ], guidance: '4 max.' },
+              '4(b)(i)': { type: 'points', points: [
+                  'Not quantitative / it is qualitative (not numerical), so cannot do statistical tests',
+                  'Difficult to standardise / subjective (different people make different estimates)'
+                ], guidance: '2 max.' },
+              '4(b)(ii)': { type: 'points', points: [
+                  'Succession has occurred',
+                  'Samphire is a pioneer species / coloniser whose roots bind the silt / stabilise the substrate',
+                  'More organic matter / humus in the silt due to death and decomposition, so more nutrients for other plant species',
+                  'Competition from sea lavender / scurvy grass results in less samphire (different niches)',
+                  'Abiotic factors change further from the sea (more sheltered, less salt, less often flooded)'
+                ], guidance: '4 max.' },
+              '5(a)(i)': { type: 'exact', points: ['A — 1 and 2'], guidance: '1 mark.' },
+              '5(a)(ii)': { type: 'points', points: [
+                  'More cones / fewer rods in the centre (fovea)',
+                  'Cone cells are less sensitive to low light levels (rhodopsin is more sensitive than iodopsin)',
+                  'Only one cone attaches to each bipolar neurone (cones do not have spatial summation/convergence), whereas several rods converge'
+                ], guidance: '2 max.' },
+              '5(b)(i)': { type: 'exact', points: ['C — 4'], guidance: '1 mark.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'A cross of unaffected parents (e.g. 6 and 7) produces a colour-blind child (e.g. 11)',
+                  'So the parent must be a carrier / heterozygous (have a hidden recessive allele) — therefore the allele is recessive'
+                ], guidance: '2 marks (a paired idea). Do not accept "both parents are carriers".' },
+              '5(c)(i)': { type: 'points', points: [
+                  'The condition is recessive',
+                  'But not sex-linked / is on an autosome',
+                  'Because individuals 4 and 5 are unaffected but 6 is affected (4 and 5 must both be carriers)',
+                  'It cannot be sex-linked as 3 is not affected'
+                ], guidance: '3 max. "Autosomal recessive" = 2 marks.' },
+              '5(c)(ii)': { type: 'points', points: [
+                  'There has been a (genetic/population) bottleneck / founder effect',
+                  'Which increases the frequency of the affected allele (small gene pool / little genetic variation)',
+                  'Few new alleles introduced (little immigration)',
+                  'So a higher chance of two heterozygotes/carriers having children together'
+                ], guidance: '2 max.' },
+              '6(a)(i)': { type: 'exact', points: ['C — movement of sodium ions into the neurone'], guidance: '1 mark.' },
+              '6(a)(ii)': { type: 'points', points: [
+                  '(Voltage-gated) potassium channels open and sodium channels close',
+                  'So potassium ions diffuse out of the neurone, repolarising the membrane'
+                ], guidance: '2 marks.' },
+              '6(b)(i)': { type: 'exact', points: ['B — 1, 2 and 3'], guidance: '1 mark.' },
+              '6(b)(ii)': { type: 'points', points: [
+                  'Fewer sodium ions are pumped out / fewer potassium ions pumped in',
+                  'So the resting potential is reduced / not maintained',
+                  'There is a lower diffusion gradient for sodium ions (ions leak through the membrane)',
+                  'So sodium ions will not diffuse in during stimulation / the membrane cannot depolarise / no action potential'
+                ], guidance: '3 max.' },
+              '7(a)(i)': { type: 'exact', points: ['D — no / yes / yes'], guidance: '1 mark. The code is non-overlapping, degenerate, and eukaryotic genes contain introns.' },
+              '7(a)(ii)': { type: 'points', points: [
+                  'Because most amino acids have more than one triplet / the code is degenerate',
+                  'Genes contain introns / non-coding DNA',
+                  'Changing the amino acid sequence affects the secondary/tertiary structure / bonding (so is selected against)'
+                ], guidance: '2 max.' },
+              '7(a)(iii)': { type: 'points', points: [
+                  'DNA sequencing',
+                  'Use gel electrophoresis / bioinformatics to compare DNA band patterns / sequences in databases'
+                ], guidance: '2 marks.' },
+              '7(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Comprehensive knowledge applied; consequences supported throughout by sustained linkage; clear, logically structured. Five or six comments drawn from all of: descriptions (D), explanations (E) and validity/role (V), with six relating to both graphs.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Adequate knowledge with some relevant facts; some lines of reasoning with structure. Three or four comments from at least two of D, E, V.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; one or two comments from D, E or V.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Descriptions: more diversity in the wild for trees / non-woody / non-endangered species, but more in seed banks for endangered / economically important species; the number of DNA differences increases with seed age. Explanations: more variation generated in the wild by meiosis/crossing over/mutation/random breeding and natural selection; endangered species show inbreeding / a genetic bottleneck (lower diversity). Validity/role: comment on overlapping error bars and significance; outliers / less data at longer times; different (small) group sizes reduce validity; seed banks help maintain genetic diversity for conservation but plants need re-breeding.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '8(a)': { type: 'points', points: [
+                  'Fast transport of / more oxygen delivered for respiration (at a high rate)',
+                  'Plus one of: keeps oxygenated and deoxygenated blood separate; maintains high pressure to the body and lower pressure to the lungs; the pulmonary and systemic systems are separate'
+                ], guidance: '2 marks.' },
+              '8(b)(i)': { type: 'exact', points: ['70 to 75 beats per minute'],
+                guidance: '2 marks. Duration of one cycle ≈ 0.80–0.86 s; 60 ÷ duration = 70–75 bpm. 1 mark for the duration. Correct answer with no working gains both.' },
+              '8(b)(ii)': { type: 'points', points: [
+                  'There is a longer gap between the P and QRS waves (extended PQ time)',
+                  'A delay between atrial systole and ventricular systole (ventricular systole is delayed)',
+                  '(Damage to) the bundle of His / Purkinje fibres'
+                ], guidance: '2 max.' },
+              '8(b)(iii)': { type: 'points', points: [
+                  'Acetylcholine is released from the parasympathetic neurones',
+                  'Acetylcholine slows the heart rate / reduces the frequency of depolarisation',
+                  'Atropine binds / blocks the acetylcholine receptors (at the SAN), preventing acetylcholine binding'
+                ], guidance: '3 max.' },
+              '8(b)(iv)': { type: 'points', points: [
+                  '(Increased respiration) raises blood CO₂ / lowers blood pH (more acidic)',
+                  'Detected by chemoreceptors',
+                  'Baroreceptors / stretch receptors detect changes in blood pressure',
+                  '(Receptors in the) aorta / carotid artery / medulla',
+                  'Impulses sent to the medulla / cardiac (cardio-acceleratory) centre'
+                ], guidance: '4 max. Do not accept "signals/messages".' },
+              '9(a)': { type: 'points', points: [
+                  'Phytoplankton biomass is higher in November and lower in December, while zooplankton/sardine biomass is lower in November and higher in December',
+                  'Phytoplankton were consumed by zooplankton / sardines increased as they had more food',
+                  'Energy decreases along the food chain (not all energy is transferred, due to respiration/egestion/excretion/not eaten)',
+                  'The biomass pyramids have different shapes as they are for one moment in time, whereas the energy pyramid is for a whole year'
+                ], guidance: '3 max.' },
+              '9(b)(i)': { type: 'exact', points: ['11%'],
+                guidance: '2 marks. Energy transferred to zooplankton = 6 800 000 − 6 080 000 = 720 000; 720 000 ÷ 6 800 000 × 100 = 10.6 ≈ 11%. 1 mark for the transferred energy. Correct answer with no working gains both.' },
+              '9(b)(ii)': { type: 'points', points: [
+                  'Seals maintain a constant body temperature, whereas sardines are the same temperature as the environment',
+                  'So seals maintain a high metabolic / respiration rate',
+                  'Because seals lose more heat to the environment',
+                  'Seals may have more indigestible parts / less is eaten / more is lost in excretion'
+                ], guidance: '3 max. Allow converse for sardines.' },
+              '9(c)(i)': { type: 'exact', points: ['NPP = GPP − R (the energy available to primary consumers / left after respiration)'],
+                guidance: '1 mark.' },
+              '9(c)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Comprehensive knowledge applied; consequences supported throughout by sustained linkage; clear, logically structured. Four or five points drawn from all three of: descriptions of the data (D), explanations (E) and the fossil-fuel hypothesis/validity (F).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Adequate knowledge with some relevant facts; some lines of reasoning with structure. Three or four points from at least two of D, E, F.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; one or two points from D, E or F.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Data: increasing light intensity increases phytoplankton biomass; at 10 °C it levels off; at 30 °C the increase is low at low light but greatest at high light. Explanations: respiration rate rises with temperature; warmer temperatures → more evaporation → more cloud → lower light intensity → less NPP at low light/high temperature → less food for orcas; nitrates needed for proteins. Fossil-fuel hypothesis/validity: fossil fuel use releases CO₂; reducing it lessens warming and cloud cover; the data is from one short experiment; no evidence cloud cover will increase; other factors/greenhouse gases (methane) affect temperature; CO₂ also causes acidification; orcas have other food sources/food chains.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
