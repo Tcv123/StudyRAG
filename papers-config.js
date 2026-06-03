@@ -16625,6 +16625,245 @@ window.SUBJECTS = [
                   'Explanations': 'Higher number of filaments / lamellae / surface area increases gas exchange; a smaller diffusion distance increases gas exchange; so more oxygen is available for aerobic respiration; therefore more ATP can be generated; for the contraction of muscles (of the active fish); more energy is needed for movement of heavier fish.'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxb-9bi0-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Advanced Physiology, Evolution and Ecology', paperCode: '9BI0/02', totalMarks: 90, durationMins: 105,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-02-que-20220618.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-02-rms-20220818.pdf',
+            qbqNote: 'All 9 questions (90 marks) are wired up question-by-question with the official Pearson mark scheme. Question 5(c) and Question 7(b) are the asterisked (*) levels-of-response questions. Multiple-choice options, diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "The diagram shows DNA replication, with a bond labelled X (see the QP PDF).",
+                parts: [
+                  { code: '1(a)', prompt: "Which of the following is the name of the bond labelled X on the diagram?\n\nA  ester\nB  glycosidic\nC  hydrogen\nD  phosphodiester", marks: 1 },
+                  { code: '1(b)', prompt: "Describe the roles of three named enzymes involved in DNA replication.", marks: 3 },
+                  { code: '1(c)', preamble: "A section of double-stranded DNA has a total number of 10 000 nucleotides. Adenine makes up 35% of the nucleotides in this section.", prompt: "Calculate the total number of cytosine nucleotides found in this section of DNA.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "Plant growth substances and phytochromes are chemicals that affect the growth of plants.",
+                parts: [
+                  { code: '2(a)(i)', prompt: "Which row of the table shows the concentrations required for the fastest growth of lateral buds?\n\nA  high auxin, high cytokinin\nB  high auxin, low cytokinin\nC  low auxin, high cytokinin\nD  low auxin, low cytokinin", marks: 1 },
+                  { code: '2(a)(ii)', preamble: "Some types of auxin affect cells in the same way as hormones such as oestrogen affect human cells. These auxins pass through the cell membrane and affect the synthesis of enzymes.", prompt: "Explain how these auxins affect the synthesis of enzymes.", marks: 3 },
+                  { code: '2(b)', preamble: "The effect of red (R) light and far-red (FR) light on the germination of lettuce seeds was investigated. Groups of 50 seeds were exposed to various sequences of R and FR light, planted, and the mean number that germinated (with standard deviations) recorded in the table (see the QP PDF).", prompt: "Analyse the data to comment on the effect of red (R) and far-red (FR) light on the germination of lettuce seeds.", marks: 4 }
+                ] },
+              { number: 3,
+                scenario: "The diagram shows the structure of an animal cell, with structures P, Q, R and S labelled (see the QP PDF).",
+                parts: [
+                  { code: '3(a)(i)', prompt: "Which of the following is the name of the structure labelled Q?\n\nA  centriole\nB  nucleus\nC  rough endoplasmic reticulum\nD  smooth endoplasmic reticulum", marks: 1 },
+                  { code: '3(a)(ii)', preamble: "These cells were cultured in radioactively-labelled amino acids.", prompt: "In which sequence would the cell structures in the diagram become radioactive during protein synthesis?\n\nA  Q → S → R\nB  S → P → R\nC  P → R → Q\nD  P → S → R", marks: 1 },
+                  { code: '3(a)(iii)', prompt: "Explain one function of lysosomes.", marks: 2 },
+                  { code: '3(b)(i)', preamble: "The diagram shows the development of a zygote into a blastocyst, and a graph shows how the ratio of nuclear volume to cytoplasmic volume changes (see the QP PDF). The ratio is volume of nucleus ÷ (total volume of cell − volume of nucleus). On day 2, the volume of the cell nucleus was 900 µm³.", prompt: "Calculate the total volume of this cell on day 2. Give your answer to two significant figures.", marks: 3 },
+                  { code: '3(b)(ii)', prompt: "Comment on the changes in the ratios as the zygote develops into a blastocyst.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "The autonomic nervous system controls the heart rate. The diagram shows a human brain with regions W, X, Y and Z labelled (see the QP PDF).",
+                parts: [
+                  { code: '4(a)(i)', prompt: "Which region of the brain controls the heart rate?\n\nA  W\nB  X\nC  Y\nD  Z", marks: 1 },
+                  { code: '4(a)(ii)', prompt: "Which one of the following would lead to an increase in heart rate?\n\nA  release of acetylcholine by the sympathetic nervous system\nB  release of acetylcholine by the parasympathetic nervous system\nC  release of noradrenaline by the sympathetic nervous system\nD  release of noradrenaline by the parasympathetic nervous system", marks: 1 },
+                  { code: '4(b)(i)', preamble: "Graphs show the pressure changes in a healthy heart and in a heart with an atrioventricular valve that leaks (see the QP PDF). An atrioventricular valve in the healthy heart has a surface area of 3.5 cm². Use Pressure (kPa) = Force (N) ÷ Area (m²).", prompt: "Determine the force that is applied to this atrioventricular valve when it closes.", marks: 3 },
+                  { code: '4(b)(ii)', prompt: "Explain why people with an atrioventricular valve that leaks find exercise difficult.", marks: 4 }
+                ] },
+              { number: 5,
+                scenario: "The diagram shows a section of a human retina, with a cell labelled X (see the QP PDF).",
+                parts: [
+                  { code: '5(a)', prompt: "Which of the following is the name of the cell labelled X?\n\nA  bipolar neurone\nB  ganglion neurone\nC  motor neurone\nD  optic neurone", marks: 1 },
+                  { code: '5(b)', prompt: "Explain the role of rhodopsin in the generation of a nerve impulse in cell X when light falls on the retina.", marks: 3 },
+                  { code: '5(c)', preamble: "A scientist investigated how the length of time a volunteer spent in darkness affected the sensitivity of their retina to light, using an LED of wavelength 500 nm and then 620 nm; the minimum light intensity at which the LED could be seen was recorded against time in darkness. A second graph shows the relative sensitivity of rods and the three types of cone to light of different wavelengths (graphs in the QP PDF).", prompt: "Analyse the graphs to explain the results of this investigation.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 6,
+                scenario: "The diagram shows a nephron with parts W, X, Y and Z labelled (see the QP PDF).",
+                parts: [
+                  { code: '6(a)', prompt: "Which labelled parts of this nephron would normally contain glucose?\n\nA  W only\nB  W and X\nC  W, X and Y\nD  W, X, Y and Z", marks: 1 },
+                  { code: '6(b)(i)', preamble: "Oedema is an accumulation of tissue fluid, due to less tissue fluid being returned to the blood capillaries.", prompt: "Explain how tissue fluid is returned to capillaries.", marks: 3 },
+                  { code: '6(b)(ii)', preamble: "Furosemides are diuretic drugs used to reduce oedema; they reduce the active transport of sodium ions by the loop of Henle.", prompt: "Explain how furosemides cause an increase in urine production.", marks: 4 }
+                ] },
+              { number: 7,
+                scenario: "Tawny owls live in areas close to the Arctic Circle. Scientists scored the feather colours of a population on a scale of 1 to 11 (1 = most grey, 11 = most brown). A graph shows the percentage of owls with each colour score (see the QP PDF). Feather colour is controlled by a single genetic locus; the brown allele is dominant to the grey allele.",
+                parts: [
+                  { code: '7(a)(i)', prompt: "State what is meant by a dominant allele.", marks: 1 },
+                  { code: '7(a)(ii)', prompt: "Explain the range of feather colours, shown in the graph, in this population of owls.", marks: 2 },
+                  { code: '7(a)(iii)', preamble: "In this population of 120 owls, 84 of them were grey.", prompt: "Calculate the number of owls that are heterozygous for feather colour. Use the Hardy–Weinberg equation (p² + 2pq + q² = 1).", marks: 3 },
+                  { code: '7(b)', preamble: "Scientists investigated the effect of climate change on the allele frequencies. They measured the percentage survival of both colours of owl at different snow depths, the mean snow depth each year (1980–2007), and the percentage of brown owls (1960–2007). The graphs show the results (see the QP PDF). The scientists concluded that increased greenhouse gases from human activity are increasing the frequency of the brown allele.", prompt: "Analyse the data to evaluate this conclusion.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 8,
+                scenario: "As a glacier gradually melts, it leaves behind bare rock. Scientists sampled soil from areas uncovered for different lengths of time after the ice melted, recording soil depth, mass of nitrate in soil and mass of leaf litter (see the table in the QP PDF).",
+                parts: [
+                  { code: '8(a)', prompt: "Which of the following should be used to determine if there is an association between length of time since the glacial ice has melted and soil depth?\n\nA  chi-squared\nB  correlation coefficient\nC  standard deviation\nD  t-test", marks: 1 },
+                  { code: '8(b)', prompt: "Explain how succession brings about the changes in the soil during this period of time.", marks: 5 },
+                  { code: '8(c)(i)', preamble: "The roots of some plants around the glacier contain an oxygen-binding protein called leghaemoglobin. A graph shows the oxygen dissociation curves for leghaemoglobin and for haemoglobin (see the QP PDF). Leghaemoglobin is similar in structure to myoglobin; both have one subunit.", prompt: "Explain how the oxygen dissociation curve shows that the structure of leghaemoglobin is more similar to myoglobin than to haemoglobin.", marks: 3 },
+                  { code: '8(c)(ii)', prompt: "Explain how leghaemoglobin enables these plants to grow in waterlogged and compact soils.", marks: 3 }
+                ] },
+              { number: 9,
+                scenario: "In Kenya, an in-situ conservation project makes paper from elephant dung to help conserve elephant populations and biodiversity and help local communities. The diagram shows part of a cellulose molecule with a monomer labelled X (see the QP PDF).",
+                parts: [
+                  { code: '9(a)(i)', prompt: "Which of the following is the name of the monomer labelled X on the diagram?\n\nA  α-glucose\nB  β-glucose\nC  α-ribose\nD  β-ribose", marks: 1 },
+                  { code: '9(a)(ii)', kind: 'diagram', prompt: "Draw one of the products of the hydrolysis of this part of the cellulose molecule.", marks: 2 },
+                  { code: '9(a)(iii)', prompt: "Explain how the structure of cellulose is adapted for its function in plant cell walls.", marks: 3 },
+                  { code: '9(b)(i)', preamble: "Conservationists measured the index of diversity of the area over two years, comparing the new paper project with a protected conservation area where local people are banned from entering (see the table in the QP PDF).", prompt: "State why calculating an index of diversity is a better measure of biodiversity than counting the number of different species.", marks: 1 },
+                  { code: '9(b)(ii)', prompt: "Give two advantages of in-situ conservation of elephants compared with ex-situ conservation of elephants.", marks: 2 },
+                  { code: '9(b)(iii)', prompt: "Explain the effect of the new paper project on biodiversity compared with the protected area where local people were banned.", marks: 4 },
+                  { code: '9(c)', prompt: "Describe the limitations of CITES in the conservation of organisms such as elephants.", marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'exact', points: ['D — phosphodiester'],
+                guidance: '1 mark. A (ester) is found in lipids; B (glycosidic) in carbohydrates; C (hydrogen) pairs the bases between the two strands.' },
+              '1(b)': { type: 'points', points: [
+                  'DNA polymerase joins the sugar–phosphate backbone / forms phosphodiester bonds / joins adjacent nucleotides',
+                  'DNA ligase joins fragments / short pieces / Okazaki fragments of DNA',
+                  'DNA helicase breaks hydrogen bonds / unzips the double helix / separates the strands',
+                  '(Accept RNA primase makes RNA to start replication of DNA)'
+                ], guidance: '3 max — three named enzymes with their roles.' },
+              '1(c)': { type: 'exact', points: ['1500'],
+                guidance: '2 marks. Adenine 35% → thymine 35%, so cytosine = (100 − 70) ÷ 2 = 15%; 15% of 10 000 = 1500. 1 mark for 15% cytosine. Correct answer with no working gains full marks.' },
+              '2(a)(i)': { type: 'exact', points: ['C — low auxin, high cytokinin'],
+                guidance: '1 mark. High auxin inhibits lateral shoots (A and B); low cytokinin inhibits lateral shoots (D).' },
+              '2(a)(ii)': { type: 'points', points: [
+                  'Auxin binds with a receptor / transcription factor (inside the cell / cytoplasm / nucleus) — forms an auxin–receptor complex',
+                  'The transcription factor becomes active / is activated (changes shape)',
+                  'The transcription factor binds to DNA / a promoter',
+                  'Switches on / causes transcription (production of RNA)'
+                ], guidance: '3 max. Do not accept a receptor on the cell membrane.' },
+              '2(b)': { type: 'points', points: [
+                  'More seeds germinate when the last colour is red',
+                  'The number of exposures to light makes no difference',
+                  'Significant difference when the last colours are different, as the standard deviations do not overlap (and no significant difference when the last colour is the same)',
+                  'Red light converts PR into PFR / far-red light converts PFR into PR',
+                  'PFR stimulates / PR inhibits germination / gibberellin release / activation of amylase'
+                ], guidance: '4 max. Allow converse for FR light. Accept P725/P730 for PFR, P665/P660 for PR.' },
+              '3(a)(i)': { type: 'exact', points: ['D — smooth endoplasmic reticulum'],
+                guidance: '1 mark. A (centriole) has microtubules; B (nucleus) has a nucleolus; C wrong as there are no ribosomes shown.' },
+              '3(a)(ii)': { type: 'exact', points: ['D — P → S → R'],
+                guidance: '1 mark. A and C wrong: the SER is not involved in protein synthesis; B wrong: the Golgi should be after the RER.' },
+              '3(a)(iii)': { type: 'points', points: [
+                  '(Lysosomes) contain (hydrolytic) enzymes',
+                  'And one of: to digest/hydrolyse pathogens / bacteria / viruses / proteins / antigens; to digest old organelles; for apoptosis / autolysis of cells'
+                ], guidance: '2 marks. Accept a correct named hydrolytic enzyme (e.g. protease, lysozyme).' },
+              '3(b)(i)': { type: 'exact', points: ['950 or 960 µm³'],
+                guidance: '3 marks. Correct reading from graph (ratio ≈17 or 16); total volume = nucleus + (nucleus ÷ ratio) ≈ 952.94 or 956.25, to 2 sig figs = 950 or 960. Correct answer with no working gains full marks.' },
+              '3(b)(ii)': { type: 'points', points: [
+                  'Ratio for ICM increases up to 3/4 days (at a steady rate) / trophectoderm cells increase up to 3/4/5 days',
+                  'After 3/4 days the ratio increases more steeply for ICM cells / levels off for trophectoderm cells (ICM divide faster)',
+                  'As the ratio increases, the volume of cytoplasm / volume of cells decreases over time (for ICM cells)',
+                  'Cells are differentiating'
+                ], guidance: '3 max.' },
+              '4(a)(i)': { type: 'exact', points: ['D — Z (medulla oblongata)'],
+                guidance: '1 mark. W is the hypothalamus; X is the cerebrum; Y is the cerebellum.' },
+              '4(a)(ii)': { type: 'exact', points: ['C — release of noradrenaline by the sympathetic nervous system'],
+                guidance: '1 mark. Acetylcholine (A, B) decreases the rate; noradrenaline (D) is released by the sympathetic, not parasympathetic, system.' },
+              '4(b)(i)': { type: 'exact', points: ['≈ 0.00028 N (2.8 × 10⁻⁴ N)'],
+                guidance: '3 marks. Pressure when valve closes ≈ 0.8 kPa (= 800 Pa); area 3.5 cm² = 0.00035 m²; Force = 800 × 0.00035 = 0.28 N... accept final answer 0.00021–0.00028 N (2.1–2.8 × 10⁻⁴). 1 mark each for the reading, the area conversion and the force. ecf; correct answer with no working gains full marks.' },
+              '4(b)(ii)': { type: 'points', points: [
+                  'Pressure rises in the atrium during contraction of the ventricle (systole) as blood flows back into the atrium',
+                  'Lower pressure in the aorta / ventricle / systemic circulation',
+                  'Therefore less oxygenated blood / a slower flow of oxygen reaches the muscles',
+                  'So there is less (aerobic) respiration in the muscles (less ATP / more anaerobic respiration)'
+                ], guidance: '4 max.' },
+              '5(a)': { type: 'exact', points: ['A — bipolar neurone'],
+                guidance: '1 mark. Ganglion neurones (B) are after bipolar neurones; motor neurones (C) are not found in the retina; "optic neurone" (D) is an incorrect term.' },
+              '5(b)': { type: 'points', points: [
+                  'Rhodopsin breaks down into opsin and (trans) retinal (cis retinal converted to trans)',
+                  'Causing sodium channels on the rod cell to close / be blocked (sodium ions stop entering)',
+                  'Leading to the rod cell hyperpolarising (more negative inside)',
+                  'So that less (inhibitory) transmitter / glutamate is released'
+                ], guidance: '3 max. Do not accept voltage-gated sodium channels.' },
+              '5(c)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A well-developed, sustained, logically structured explanation using both pieces of information (D, B and R): 5 marks = ≥2 descriptions of data plus one R and one B; 6 marks = ≥2 descriptions of data plus ≥2 R and ≥2 B.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'An explanation with occasional analysis/interpretation of both pieces of information (D with some of R or B): 3 marks = 1D and 2 from R/B, or 2D and 1 from R/B; 4 marks = 2D and ≥2 from R/B, or 1D and ≥2 from R/B.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Limited interpretation focusing mainly on one piece of information: 1 mark = one point from D, R or B; 2 marks = one from D plus one from D, R or B.' }
+                ],
+                indicative: {
+                  'Data (D)': 'Spending longer in the dark reduces the minimum intensity / increases sensitivity; retina less sensitive to 620 nm / more sensitive to 500 nm; sensitivity continues to increase with 500 nm but levels off with 620 nm; 620 nm stimulates cones but not rods; 500 nm stimulates rods and cones.',
+                  'Bleaching/recovery (B)': 'Light bleaches/breaks down rhodopsin/iodopsin; trans retinal converted back to cis retinal in the dark; rhodopsin/iodopsin re-synthesised in the dark; cis retinal binds to opsin; cones/iodopsin dark-adapt faster than rods; rhodopsin takes longer to reconvert than iodopsin; rhodopsin more sensitive than iodopsin.',
+                  'Rods (R)': 'Rod cells are more sensitive / stimulate at lower minimum light; due to spatial summation / retinal convergence of rods; several rods stimulated to overcome a threshold / generate an action potential in bipolar cells; levelling off with 620 nm shows cones are less sensitive than rods.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '6(a)': { type: 'exact', points: ['B — W and X'],
+                guidance: '1 mark. Glucose passes out of the glomerulus (so not "W only"); it is reabsorbed in the PCT (so not present at Y or Z).' },
+              '6(b)(i)': { type: 'points', points: [
+                  'There is more protein in plasma than in tissue fluid',
+                  'Because plasma proteins are too large to pass out of the capillary',
+                  'An oncotic pressure is generated by the (plasma) proteins',
+                  'So fluid moves in as the oncotic/osmotic pressure is greater than the hydrostatic pressure (at the venule end)'
+                ], guidance: '3 max. Accept converse.' },
+              '6(b)(ii)': { type: 'points', points: [
+                  'Sodium ions are not removed from the ascending limb',
+                  'So the water potential of the medullary fluid is higher (less negative)',
+                  'Therefore less water is removed from the descending limb',
+                  'And less water is removed from the collecting duct / distal tubule',
+                  'A higher volume of dilute / low-concentration urine is produced'
+                ], guidance: '4 max.' },
+              '7(a)(i)': { type: 'points', points: ['Only one copy of the allele is required to affect the phenotype (always expressed / expressed in heterozygotes)'],
+                guidance: '1 mark.' },
+              '7(a)(ii)': { type: 'points', points: [
+                  'There are two main peaks as there are only two different alleles (that are not codominant) — grey peak = homozygous recessive, brown peak = has a dominant allele',
+                  'The environment affects feather colour (intermediates) / intermediates are due to subjective scoring',
+                  'Grey owls have a selective / survival advantage (e.g. camouflage; accept converse)'
+                ], guidance: '2 max.' },
+              '7(a)(iii)': { type: 'exact', points: ['33 (accept 32)'],
+                guidance: '3 marks. q² = 84/120 = 0.7, q = 0.84, p = 0.16; 2pq = 2 × 0.16 × 0.84 = 0.269; × 120 ≈ 33 (accept 32). 1 mark each for q, p and the number of heterozygotes. Correct answer with no working gains full marks.' },
+              '7(b)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A scientific judgement supported throughout by sustained analysis, with a conclusion linked to biological knowledge. Must combine all three of Data (D), Explanation/evolution (E) and Against/limitations (A): 5 marks = ≥5 points; 6 marks = ≥6 points.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A scientific judgement with strengths and weaknesses identified and a conclusion with occasional support (D plus E or A): 3 marks = ≥3 points; 4 marks = ≥4 points.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Limited judgement focusing mainly on one aspect: 1 mark = any 1 from D, E, A; 2 marks = any 2 from D, E, A.' }
+                ],
+                indicative: {
+                  'Data (D)': 'With increasing snow depth there is higher survival of grey owls / fewer brown owls survive; snow depth has decreased over time; the percentage of brown owls has increased over time (grey decreased).',
+                  'Explanation / evolution (E)': 'With less snow, more ground / twigs / trees are visible; grey owls become more obvious (less camouflaged); natural selection favours brown owls (more brown alleles passed on, brown outcompete grey); the enhanced greenhouse effect (CO₂ reflecting/absorbing radiation) causes melting.',
+                  'Against / limitations (A)': 'No direct measure of greenhouse gas / temperature / fossil-fuel emissions; graphs show correlations not causal links; owl-survival vs snow-depth data is scattered with gaps / weak correlation; mean snow-depth data has outliers/anomalies; other factors could affect the owl population; reduced snow may not be due to greenhouse-gas release.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '8(a)': { type: 'exact', points: ['B — correlation coefficient'],
+                guidance: '1 mark. Chi-squared (A) compares frequencies; standard deviation (C) is a measure of dispersion; the t-test (D) compares mean values.' },
+              '8(b)': { type: 'points', points: [
+                  'Pioneer species (mosses / lichens) arrive after the glacier melts and colonise the bare rock',
+                  'Decomposition / decay increases the soil depth / humus / mineral / nutrient content',
+                  'Therefore larger plants can grow (due to greater soil depth / minerals / nutrients); animals arrive, increasing niches',
+                  'Leaf litter increases after 40/100 years as more herbaceous plants / shrubs / trees are present',
+                  'A steep increase in nitrate after 40/100 years as more leaves / plants / animals / faeces are present',
+                  'Leaf litter falls (from 150–250 years) as the climax community has emerged'
+                ], guidance: '5 max.' },
+              '8(c)(i)': { type: 'points', points: [
+                  '(Leghaemoglobin/myoglobin) curve is not S-shaped / is linear / a straight line (converse for haemoglobin)',
+                  'Because its affinity for oxygen does not alter',
+                  'Because there is no cooperative binding (no conformational change of subunits)',
+                  'It binds to only one molecule of oxygen / has only one oxygen binding site (haemoglobin has four)'
+                ], guidance: '3 max.' },
+              '8(c)(ii)': { type: 'points', points: [
+                  'Waterlogged soil has little / low / no oxygen',
+                  'Leghaemoglobin provides (binds / stores) oxygen for respiration',
+                  'Which enables active uptake of mineral ions / a named active process (e.g. amino acid synthesis, protein synthesis, mitosis)',
+                  'Such as calcium (calcium pectate), nitrate (amino acids) or magnesium (chlorophyll)'
+                ], guidance: '3 max.' },
+              '9(a)(i)': { type: 'exact', points: ['B — β-glucose'],
+                guidance: '1 mark. Cellulose does not contain α-glucose (A) or ribose (C, D).' },
+              '9(a)(ii)': { type: 'points', points: ['A correct β-glucose structure: hexagonal ring with oxygen in the correct place, CH₂OH in the correct place, all OH groups (apart from carbon 1) in the right places, and the OH on carbon 1 pointing in the same direction as the CH₂OH'],
+                guidance: '2 marks. Best assessed against your drawing in the QP PDF. Do not accept if a water molecule is also drawn.' },
+              '9(a)(iii)': { type: 'points', points: [
+                  '(Cellulose molecules are) straight / not helical / not coiled',
+                  'Many hydrogen bonds hold the molecules / chains / layers (microfibrils) together',
+                  '(Strong) to prevent cell lysis / bursting / to maintain turgidity / resist turgor pressure',
+                  'The polar nature of glucose allows water / minerals to diffuse through'
+                ], guidance: '3 max.' },
+              '9(b)(i)': { type: 'points', points: ['The index of diversity takes into account the population/abundance of each species (not just the number of species present)'],
+                guidance: '1 mark.' },
+              '9(b)(ii)': { type: 'points', points: [
+                  'Other species are also conserved / protected (food webs and biodiversity maintained)',
+                  'Animals are not humanised / their behaviours stay natural; more space for animals; no need to transport animals',
+                  'Less inbreeding occurs (less inbreeding depression / maintains the gene pool)'
+                ], guidance: '2 max.' },
+              '9(b)(iii)': { type: 'points', points: [
+                  'Biodiversity has increased more in the paper-project area than in the protected area (where it did not increase / went down)',
+                  'As less / no grassland is burnt / less poaching occurs (converse for the protected area)',
+                  'More niches are available / habitats are not destroyed / elephants transfer plant seeds',
+                  'Local people make money from the paper project, so they have a vested interest in the elephants (lose income if the elephants are not present)'
+                ], guidance: '4 max.' },
+              '9(c)': { type: 'points', points: [
+                  'Not all countries sign the treaty / signing is voluntary (not legally binding within nations)',
+                  'Many species move across national boundaries / migrate / have very large ranges',
+                  'Monitoring is expensive / some countries are too large to monitor / high financial rewards for poaching/smuggling / CITES only prevents trade'
+                ], guidance: '2 max.' }
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
