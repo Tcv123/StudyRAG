@@ -13749,6 +13749,258 @@ window.SUBJECTS = [
                   'Indicative content': 'Study design: large cohort but only ages 55–74; self-reported data could over/under-estimate. Data: age-related data is 5-year incidence whereas graphs are 20-year; graphs give no age information; likelihood of CHD increases with BMI and age, and if a smoker, non-drinker, or inactive. Relative likelihood: from the table, increasing age increases risk more than increasing BMI; from the graphs, risk is greatest for smokers (all BMIs) and least affected by inactivity.'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxa-9bn0-2023-p3', year: 'June 2023', paperName: 'Paper 3 — General and Practical Applications in Biology', paperCode: '9BN0/03', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-03-que-20230622.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-03-rms-20230817.pdf',
+            qbqNote: 'All 8 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme. Question 7 includes the 9-mark asterisked (*) levels-of-response question, and Question 8 (30 marks) is based on the pre-released scientific article "Green Planet: Radiation and the Evolution of Photosynthesis" (adapted from Nick Lane, Oxygen) — the article and all figures/graphs/tables are in the question paper PDF; open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "The heart pumps blood around the circulation system. If the heart of an animal is removed from its body, it will continue to beat for a period of time. The left atrium stops contracting if separated from the rest of the heart; the right atrium and the rest of the heart continue to beat but eventually also stop.",
+                parts: [
+                  { code: '1(a)', prompt: "Explain why many animals need a heart and circulation system.", marks: 2 },
+                  { code: '1(b)(i)', prompt: "Give a reason why the heart will continue to beat after being removed from the body.", marks: 1 },
+                  { code: '1(b)(ii)', prompt: "Explain why the left atrium stops beating when it is separated from the right atrium.", marks: 2 },
+                  { code: '1(b)(iii)', prompt: "Explain why the right atrium and the rest of the heart eventually stop beating.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "White blood cells are involved in the non-specific and specific immune responses. Neutrophils and monocytes are two types of white blood cell. A table gives, per mm³ of blood: 3000 neutrophils (diameter 10 µm) and 400 monocytes (diameter 20 µm, volume 314 µm³).\n\n(See the property table in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)', prompt: "Complete the table to show the volume of each neutrophil. (Volume of a sphere V = 4/3 πr³.)", marks: 2 },
+                  { code: '2(b)(i)', prompt: "State what is meant by the term phagocytosis.", marks: 1 },
+                  { code: '2(b)(ii)', preamble: "Activated monocytes are called macrophages. Neutrophils take up bacteria and fungi by phagocytosis but do not present antigens or produce cytokines; monocytes take up dead cell debris, bacteria and fungi, present antigens and produce cytokines.", prompt: "Explain why monocytes play a role in the antigen-specific immune response to viruses but neutrophils do not.", marks: 3 }
+                ] },
+              { number: 3,
+                scenario: "A photograph shows a three-spined stickleback (Gasterosteus aculeatus) at magnification × 1.8, with lines A and B marking its length. The fish feeds on small invertebrates such as the brine shrimp (Artemia salina).\n\n(See the photograph and bite-response graph in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)', prompt: "Calculate the length of the stickleback between lines A and B. Give your answer to two significant figures, in mm.", marks: 1 },
+                  { code: '3(b)(i)', preamble: "In an investigation, a glass tube containing live brine shrimps was placed in a stickleback's tank and the number of bites at the shrimp was recorded each minute for 10 minutes (graph).", prompt: "Calculate the percentage decrease in the number of bite responses from 1 to 6 minutes.", marks: 2 },
+                  { code: '3(b)(ii)', prompt: "Explain the results of this investigation.", marks: 3 },
+                  { code: '3(c)', preamble: "Adult male sticklebacks develop a red throat during the breeding season; the male of a breeding pair will attack a competing male to drive it away.", prompt: "Devise an investigation to determine the effect of the presence of a competing male on the attack response of the male stickleback.", marks: 4 }
+                ] },
+              { number: 4,
+                scenario: "The effect of environmental temperature and exercise on the rate of sweating was studied in one person (resting, exercising, and exercising twice as vigorously); a graph shows the results.\n\n(See the sweating graph in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)', prompt: "Explain the importance of the dipole nature of water in sweating.", marks: 2 },
+                  { code: '4(b)', prompt: "Comment on the results of this study.", marks: 4 },
+                  { code: '4(c)', prompt: "Describe how the production of sweat is controlled during exercise in humans.", marks: 4 }
+                ] },
+              { number: 5,
+                scenario: "People with diabetes can suffer from diabetic peripheral neuropathy (DPN), in which peripheral nerves become damaged, affecting impulse transmission. A diagram shows the structure of a peripheral nerve (bundles of axons surrounded by myelin sheath and connective tissue).\n\n(See the nerve diagram and risk-factor table in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)(i)', prompt: "Name the type of cell that forms the myelin sheath.", marks: 1 },
+                  { code: '5(a)(ii)', prompt: "Describe the role of myelination in the conduction of a nerve impulse.", marks: 2 },
+                  { code: '5(a)(iii)', prompt: "Describe the role of ion channels in the conduction of a nerve impulse.", marks: 5 },
+                  { code: '5(b)(i)', preamble: "Risk factors for DPN: high triglycerides (+100%), smoking (+42%), high LDL to HDL ratio (+67%). Individual A is a diabetic who smokes and has high triglycerides; individual B smokes and has a high LDL to HDL ratio.", prompt: "Calculate the ratio of the increase in percentage risk for individuals A and B.", marks: 1 },
+                  { code: '5(b)(ii)', prompt: "Explain why these risk factors can cause peripheral nerve cells to die.", marks: 3 }
+                ] },
+              { number: 6,
+                scenario: "The zebrafish (Danio rerio) is a model for vertebrate development. Wild type zebrafish are homozygous for the black stripe and short fin phenotypes; mutants can have spots (melanin in spots instead of stripes) or long fins. Melanin is produced by cells called melanophores.\n\n(See the photographs and cross tables in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)', prompt: "Explain how a specialised cell such as a melanophore is produced from a stem cell.", marks: 3 },
+                  { code: '6(b)(i)', prompt: "State what is meant by the term gene mutation.", marks: 1 },
+                  { code: '6(b)(ii)', preamble: "In cross 1 (homozygous stripes × homozygous spots) all offspring had stripes and short fins. In cross 2 (homozygous short fins × homozygous long fins) all offspring had stripes and long fins.", prompt: "Deduce the pattern of inheritance of the spots and long fin phenotypes.", marks: 2 },
+                  { code: '6(c)(i)', preamble: "Melanin pattern (D/d) and fin length (N/n) are controlled by different genes. Parents heterozygous for both (DdNn) were crossed; a Punnett square gives the offspring, assuming independent inheritance. The bottom row (parent 2 gamete dn) is incomplete.", prompt: "Complete the table by filling in the missing genotypes and phenotypes (for the dn × DN, Dn, dN, dn offspring).", marks: 2 },
+                  { code: '6(c)(ii)', preamble: "Observed vs expected numbers: stripes and long fins 270/288; stripes and short fins 87/96; spots and long fins 115/96; spots and short fins 40/32 (total 512).", prompt: "Calculate a value for chi squared (χ²) using χ² = Σ (O − E)² / E.", marks: 3 },
+                  { code: '6(c)(iii)', preamble: "Critical values (χ²): 3 degrees of freedom — 7.82 at p = 0.05 and 11.35 at p = 0.01.", prompt: "State a conclusion that can be drawn from the results of this cross.", marks: 2 }
+                ] },
+              { number: 7,
+                scenario: "Tuberculosis is an infectious disease caused by the bacterium Mycobacterium tuberculosis.\n\n(See the SNP table and graphs in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)', prompt: "Describe how M. tuberculosis bacteria evade the immune system.", marks: 2 },
+                  { code: '7(b)(i)', preamble: "The transcription factor STAT3 is involved in regulating the activity of macrophages and T cells.", prompt: "State what is meant by the term transcription factor.", marks: 1 },
+                  { code: '7(b)(ii)', preamble: "The STAT3 gene can have alternative bases at two sites, SNP1 (A or G) and SNP2 (T or C), both in introns. A table shows the chance of TB for each genotype; one graph shows genotype vs severe/mild TB, and a second shows the number of surviving bacteria for white blood cells of different SNP1 genotypes (AA vs AG/GG).", prompt: "Evaluate the role of the different STAT alleles in tuberculosis infections.\n\n*Marks will be awarded for a logically structured answer.", marks: 9, extended: true }
+                ] },
+              { number: 8,
+                scenario: "These questions are based on the pre-released scientific article \"Green Planet: Radiation and the Evolution of Photosynthesis\" (adapted from Nick Lane, Oxygen). The article discusses why oxygenic photosynthesis splits water (a high-energy, risky reaction giving toxic oxygen), how chlorophyll absorbs photons and feeds electrons into an electron transport chain, the oxygen-evolving complex (which appears to have evolved from two catalase enzymes), and the difference between catalase and peroxidase.\n\n(Read the full article in the question paper / insert PDF.)",
+                parts: [
+                  { code: '8(a)', prompt: "The mass of 'carbon turned into sugars by photosynthesis' is a measure of the gross productivity (paragraph 2). Write an equation that describes the relationship between total carbon turned into sugar and the carbon turned into sugar that becomes available to primary consumers.", marks: 1 },
+                  { code: '8(b)', prompt: "Name one product, other than ATP and oxygen, produced by the light-dependent reactions of photosynthesis (paragraph 4).", marks: 1 },
+                  { code: '8(c)', prompt: "Explain why cells use 'chemical energy in the form of ATP' (paragraphs 4 and 5).", marks: 3 },
+                  { code: '8(d)', prompt: "Describe how 'plant photosynthesis converts carbon dioxide from the air into simple organic molecules' (paragraph 5).", marks: 4 },
+                  { code: '8(e)', prompt: "Devise an investigation to show that in chloroplasts, the oxygen for photosynthesis comes from water and not carbon dioxide (paragraphs 6 and 7).", marks: 4 },
+                  { code: '8(f)', prompt: "Explain how chloroplasts are adapted for their role in photosynthesis (paragraphs 9 and 10).", marks: 4 },
+                  { code: '8(g)', prompt: "Explain how the energy of the electrons passed along an electron transport chain 'is used to power the synthesis of ATP' (paragraph 10).", marks: 3 },
+                  { code: '8(h)', prompt: "Explain how 'tiny changes' in chlorophyll molecules could result in a change in the wavelength of light absorbed (paragraphs 12 and 13).", marks: 3 },
+                  { code: '8(i)', prompt: "The structure of the oxygen-evolving complex is similar to that of catalase, 'it looks as if it evolved from two catalase enzymes lashed together' (paragraph 17). Explain how proteomics and genomics could be used to support the suggestion that the oxygen-evolving complex evolved from catalase.", marks: 4 },
+                  { code: '8(j)', kind: 'diagram', prompt: "Sketch a graph to compare the effect of substrate concentration on the rate of reaction of catalase and peroxidase (paragraphs 19 and 20). Include suitable units in the labels for each axis.", marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'points', points: [
+                  'To pump blood around the blood vessels',
+                  'Enabling mass transport (e.g. to carry oxygen to where it is used)',
+                  'Therefore overcoming the limitations of diffusion (the organism is too large / distance too great / SA:V too small)'
+                ], guidance: '2 max. Ignore "to move blood".' },
+              '1(b)(i)': { type: 'points', points: ['The heart / cardiac muscle is myogenic'],
+                guidance: '1 mark. Ignore references to impulses/electrical signals.' },
+              '1(b)(ii)': { type: 'points', points: [
+                  'The pacemaker / SAN is in the right atrium',
+                  '(The left atrium) cannot contract without impulses from the SAN'
+                ], guidance: '2 marks.' },
+              '1(b)(iii)': { type: 'points', points: [
+                  '(Heart/muscle cells) run out of oxygen (no blood supply)',
+                  '(Aerobic) respiration stops',
+                  '(Heart/muscle cells) stop making ATP'
+                ], guidance: '2 max. Allow anaerobic respiration / lactic acid accumulation.' },
+              '2(a)': { type: 'exact', points: ['≈ 524 µm³', '523.6', '523.8'],
+                guidance: '2 marks. V = 4/3 × π × 5³ = 524 µm³. 1 mark for r³ = 125; 1 for the volume. Correct answer with no working gains full marks.' },
+              '2(b)(i)': { type: 'points', points: ['Engulfing / ingesting (endocytosis) of a pathogen / cell debris / bacteria / virus / fungi'],
+                guidance: '1 mark. Ignore "foreign bodies"/"cell" unqualified.' },
+              '2(b)(ii)': { type: 'points', points: [
+                  '(Monocytes/macrophages) phagocytose / digest / break down the virus/pathogen',
+                  '(Monocytes/macrophages) present the virus/antigens to T cells (converse for neutrophils)',
+                  '(Produce) cytokines involved in the immune response (e.g. activate B cells)'
+                ], guidance: '3 marks.' },
+              '3(a)': { type: 'exact', points: ['60 mm'],
+                guidance: '1 mark. Measured length ÷ 1.8 = 60 mm. Watch out for an incorrect 6.0.' },
+              '3(b)(i)': { type: 'exact', points: ['79%', '77.9 to 79.2%'],
+                guidance: '2 marks. (9.6 − 2) ÷ 9.6 × 100 = 79%. 1 mark for the change (7.6); 1 for the percentage. Correct answer with no working gains full marks.' },
+              '3(b)(ii)': { type: 'points', points: [
+                  'As time increased the number of bites decreased',
+                  'Because the stickleback is unable to get to the brine shrimps',
+                  'Therefore it has become habituated (the stimulus was not rewarded)',
+                  'To avoid wasting energy'
+                ], guidance: '3 max. Ignore description of the mechanism of habituation.' },
+              '3(c)': { type: 'points', points: [
+                  'Place a breeding (red-throat) male stickleback in a tank',
+                  'Allow the fish to acclimatise (control a sensible variable, e.g. age, temperature, pH)',
+                  'Introduce another male (or a picture/model of a fish)',
+                  'A method of keeping the males apart (e.g. a glass tube/sheet, adjacent tank)',
+                  'Record the number of attacks/bites (or duration of attack)',
+                  'Compare results for a male with and without a red throat (breeding vs non-breeding)'
+                ], guidance: '4 max. Ignore "observe behaviour".' },
+              '4(a)': { type: 'points', points: [
+                  'The dipole allows water molecules to form hydrogen bonds with each other',
+                  'Heat/energy is used to break the bonds between water molecules (high latent heat of vaporisation)',
+                  'Evaporation of water (sweat) causes cooling / removal of heat (evaporative cooling)'
+                ], guidance: '2 max. Ignore strength of bonds.' },
+              '4(b)': { type: 'points', points: [
+                  '(Rate of) sweating increases with increasing environmental temperature (positive correlation)',
+                  '(At any temperature) sweating is greater with exercise than at rest',
+                  '(Little/no) difference between exercising and exercising twice as vigorously',
+                  'The increase in sweating begins at a lower environmental temperature during exercise'
+                ], guidance: '4 marks. Allow converse for MP1/MP2.' },
+              '4(c)': { type: 'points', points: [
+                  'By homeostasis / a negative feedback response',
+                  'Thermoreceptors (in the skin / hypothalamus) detect a rise in temperature',
+                  'Send impulses to the heat-loss / thermoregulatory centre (hypothalamus)',
+                  'The thermoregulatory centre sends impulses to the sweat glands',
+                  'To increase sweat production'
+                ], guidance: '4 max.' },
+              '5(a)(i)': { type: 'exact', points: ['Schwann cell'],
+                guidance: '1 mark. Allow oligodendrocyte; allow phonetic spelling.' },
+              '5(a)(ii)': { type: 'points', points: [
+                  'Provides (electrical) insulation (prevents movement of ions)',
+                  'Enables saltatory conduction (longer local circuits)'
+                ], guidance: '2 marks.' },
+              '5(a)(iii)': { type: 'points', points: [
+                  'Sodium ion channels open',
+                  '(Then) sodium ions diffuse in (to the axon)',
+                  '(Causing) depolarisation of the membrane',
+                  'Sodium ion channels close and potassium ion channels open',
+                  '(Then) potassium ions diffuse out',
+                  '(Causing) repolarisation of the membrane'
+                ], guidance: '5 max. Do not allow "diffuse into/out of the membrane".' },
+              '5(b)(i)': { type: 'exact', points: ['1.3 : 1', '1 : 0.77'],
+                guidance: '1 mark. A = 100 + 42 = 142; B = 67 + 42 = 109; ratio 142:109 ≈ 1.3:1. If B:A, allow 1:1.3.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'Relevant damage to the cardiovascular system (e.g. atherosclerosis/atheroma)',
+                  'Reduced blood flow / oxygen / glucose supply to the (peripheral) nerves',
+                  'Insufficient (aerobic) respiration takes place (so neurones die)'
+                ], guidance: '3 marks.' },
+              '6(a)': { type: 'points', points: [
+                  'Due to a chemical stimulus / transcription factors',
+                  'Activating specific genes (differential gene expression — some switched on, some off)',
+                  'Resulting in synthesis of proteins/enzymes',
+                  'Involved in the synthesis of melanin'
+                ], guidance: '3 max. Allow translation of mRNA to produce protein.' },
+              '6(b)(i)': { type: 'points', points: ['A change in the base sequence in the DNA / gene'],
+                guidance: '1 mark.' },
+              '6(b)(ii)': { type: 'points', points: [
+                  'Long fin is a dominant trait/allele',
+                  'Spots is a recessive trait/allele'
+                ], guidance: '2 marks. Do not accept answers referring to "dominant/recessive genes".' },
+              '6(c)(i)': { type: 'exact', points: ['DdNn (stripes and long fins); Ddnn (stripes and short fins); ddNn (spots and long fins); ddnn (spots and short fins)'],
+                guidance: '2 marks: 1 for correct genotypes, 1 for correct phenotypes. Allow any order of letters in a genotype.' },
+              '6(c)(ii)': { type: 'exact', points: ['7.73', '7.7 to 7.73'],
+                guidance: '3 marks. Σ(O−E)²/E = (−18)²/288 + (−9)²/96 + 19²/96 + 8²/32 = 7.73. 1 mark for O−E values; 1 for (O−E)²/E; 1 for the total. Correct answer with no working gains full marks.' },
+              '6(c)(iii)': { type: 'points', points: [
+                  'The calculated value (7.73) is less than the critical value at 3 degrees of freedom (7.82) at p = 0.05',
+                  'The observed results are not (significantly) different from the expected results',
+                  'The two traits are inherited independently'
+                ], guidance: '2 max. Ignore reference to the null hypothesis. Consequential on the 6(c)(ii) value.' },
+              '7(a)': { type: 'points', points: [
+                  '(M. tuberculosis) survive inside macrophages (e.g. thick waxy wall; lysosomes cannot fuse with the vacuole)',
+                  '(M. tuberculosis) survive / remain dormant in tubercles (antigen presentation disrupted)',
+                  '(M. tuberculosis) inhibit T helper cells / suppress the acquired immune response'
+                ], guidance: '2 max.' },
+              '7(b)(i)': { type: 'points', points: ['A protein that controls the activation/transcription of genes (binds RNA polymerase / the promoter/operator region to start transcription)'],
+                guidance: '1 mark. Ignore "factor/molecule/chemical"; ignore DNA methylation/histone acetylation.' },
+              '7(b)(ii)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Level 3', criteria: 'A scientific judgement supported throughout by sustained application of relevant evidence; a conclusion with sustained linkages. Uses three different sources of information (SNP location, prevalence table, severity graph, bacteria culture graph) with two or three interpretations (validity, an overall AA/TT conclusion across sources, the role of STAT3 in the immune response).' },
+                  { range: [4, 6], descriptor: 'Level 2', criteria: 'A scientific judgement made through application of relevant evidence, with strengths and weaknesses; a conclusion with occasional support. Two or three sources of information plus one interpretation.' },
+                  { range: [1, 3], descriptor: 'Level 1', criteria: 'Limited scientific judgement focused on mainly one source; a conclusion attempted with isolated elements of knowledge and limited supporting evidence.' }
+                ],
+                indicative: {
+                  'Indicative content': 'STAT3 regulates macrophage and T-helper-cell genes; the SNPs are in non-coding introns. Table: AA and TT genotypes are more common in people with TB. Graph 1: AA/TT more common in severe than mild TB (TT error bars do not overlap; AA error bars do). Graph 2: white blood cells with the AA genotype are less effective at killing mycobacteria (no SNP2 data, no error bars). Comments: some error bars overlap/missing, effects relatively small, incomplete data, no SNP1+SNP2 combination data. Conclusions: the SNPs may affect synthesis (not function) of the transcription factor; genotype affects the effectiveness of the immune response / susceptibility/severity of infection.'
+                },
+                guidance: '9 marks. Levels-of-response: mark holistically, best fit; credit sources of information and interpretations.' },
+              '8(a)': { type: 'exact', points: ['NPP = GPP − R (GPP = NPP + R)'],
+                guidance: '1 mark. Allow any correct rearrangement; allow net/gross primary productivity and respiration spelled out.' },
+              '8(b)': { type: 'exact', points: ['Reduced NADP (NADPH / NADPH₂ / NADPH + H⁺)'],
+                guidance: '1 mark. Ignore reference to electrons.' },
+              '8(c)': { type: 'points', points: [
+                  'Contains phosphate (P–O–P) / high-energy bonds',
+                  'That when hydrolysed release/supply energy (exothermic)',
+                  'A description of how the energy is used (e.g. to form/break bonds, form sugars, drive metabolic/light-independent reactions)',
+                  'ATP is an immediate source of energy / releases energy rapidly (quickly hydrolysed)'
+                ], guidance: '3 max. Ignore "ATP → ADP + Pi" and "energy is produced".' },
+              '8(d)': { type: 'points', points: [
+                  'CO₂ is combined with RuBP (ribulose bisphosphate)',
+                  'By RUBISCO',
+                  'Forming molecules of GP (glycerate 3-phosphate)',
+                  'Each GP is converted to GALP using ATP and reduced NADP',
+                  'GALP is used to form glucose / hexose sugars'
+                ], guidance: '4 max.' },
+              '8(e)': { type: 'points', points: [
+                  'Isolate chloroplasts (use the Hill reaction)',
+                  'Incubate the chloroplasts in a solution of iron ferricyanide (no oxygen-containing CO₂)',
+                  'Identify one abiotic factor to control (e.g. temperature, light intensity, reagent concentration)',
+                  'Place the chloroplasts in the light',
+                  'Collect/test the gas produced / observe decolourisation of DCPIP (measure volume of oxygen)'
+                ], guidance: '4 max.' },
+              '8(f)': { type: 'points', points: [
+                  'Large surface area of the thylakoid membrane',
+                  'Thylakoid membrane contains photosynthetic pigments (chlorophyll/photosystems) to absorb light',
+                  'Thylakoid membrane enables photophosphorylation (electron transport chain / proton gradient / ATP synthase)',
+                  'Stroma contains enzymes for the light-independent reaction',
+                  'Stroma contains DNA/ribosomes to produce proteins involved in photosynthesis'
+                ], guidance: '4 max.' },
+              '8(g)': { type: 'points', points: [
+                  'By photophosphorylation',
+                  '(Transfer of) electrons releases energy',
+                  'That is used to pump protons (H⁺) into the thylakoid space/lumen',
+                  'Protons diffuse/move back down the concentration gradient through ATP synthase',
+                  'Which forms ATP from ADP and inorganic phosphate (phosphorylates ADP)'
+                ], guidance: '3 max. Do not allow "diffuse" for the pumping step, nor "pumped" for the ATP synthase step.' },
+              '8(h)': { type: 'points', points: [
+                  'A change in the 3D / tertiary structure (bonds formed; or change in amino acid sequence / primary structure)',
+                  'Changes the shape of the (chlorophyll) light-absorbing region',
+                  'Changing the quantity of energy needed to release/excite an electron (so the wavelength of light absorbed changes, e.g. 870 → 716 → 680 nm)'
+                ], guidance: '3 marks. Ignore an unqualified "change in wavelength of light absorbed".' },
+              '8(i)': { type: 'points', points: [
+                  'Compare the amino acid sequences (primary structure) of catalase and the oxygen-evolving complex',
+                  'Compare the base sequences of the DNA/genes (for catalase and the oxygen-evolving complex)',
+                  'In organisms from different stages in evolution / the phylogenetic tree',
+                  'The further back in evolution, the more similar the sequences will be (similar sequences support the suggestion)'
+                ], guidance: '4 marks.' },
+              '8(j)': { type: 'points', points: [
+                  'Two lines (catalase and peroxidase), with the slope for catalase steeper than that for peroxidase',
+                  'Axes correct and labelled (x = substrate/H₂O₂ concentration, y = rate of oxygen production / rate of reaction)',
+                  'Suitable axis units (x: mol dm⁻³ etc.; y: mol dm⁻³ s⁻¹ etc.)'
+                ], guidance: '3 marks. Best assessed against your sketch in the QP PDF. Ignore "a.u." for units.' }
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
