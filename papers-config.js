@@ -17164,7 +17164,279 @@ window.SUBJECTS = [
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
-        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/biology-a-h020-h420-from-2015/assessment/' },
+        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/biology-a-h020-h420-from-2015/assessment/',
+        // OCR filestore (www.ocr.org.uk/Images, numeric file IDs). Papers 1
+        // (Biological processes) and 2 (Biological diversity) are 100 marks
+        // (2h15) and open with Section A = 15 single-answer multiple-choice
+        // questions; Paper 3 (Unified biology) is 70 marks (1h30), synoptic.
+        // Multiple-choice parts are wired as exact-answer checks; asterisked
+        // (*) questions are levels-of-response. June 2022–2024 public.
+        papers: [
+          { id: 'bio-ocra-h420-2024-p1', year: 'June 2024', paperName: 'Paper 1 — Biological processes', paperCode: 'H420/01', totalMarks: 100, durationMins: 135,
+            qpUrl: 'https://www.ocr.org.uk/Images/726690-question-paper-biological-processes.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/726817-mark-scheme-biological-processes.pdf',
+            qbqNote: 'All questions (100 marks) are wired up question-by-question with the official OCR mark scheme. Section A is 15 single-answer multiple-choice questions (answer with the letter A–D); Section B is structured questions. Questions 18(d) and 19(b)(ii) are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1, parts: [ { code: '1', prompt: "Section A (multiple choice). Which statement about lipids is correct?\n\nA  Lipids are polar molecules.\nB  Lipids that contain fatty acids with carbon–carbon double bonds are liquid at room temperature.\nC  Saturated fatty acids, which are present in some lipids, contain carbon–carbon double bonds.\nD  The presence of carbon–carbon double bonds in fatty acids allows lipids to pack more closely together.", marks: 1 } ] },
+              { number: 2, parts: [ { code: '2', prompt: "Lipids, polysaccharides, nucleic acids and proteins are all macromolecules. Which statement about macromolecules is correct?\n\nA  All macromolecules are formed in hydrolysis reactions.\nB  Lipids are not polymers, but polysaccharides, nucleic acids and proteins are polymers.\nC  Lipids are polymers of fatty acids and glycerol.\nD  Macromolecules all consist of repeating units of monomers.", marks: 1 } ] },
+              { number: 3, parts: [ { code: '3', prompt: "The diagram shows part of a plasma membrane, with a molecule X labelled (see the QP PDF). How can molecule X be described?\n\nA  It has a hydrophilic head and a hydrophobic tail.\nB  It is formed when the glycerol in a triglyceride is replaced by a phosphate.\nC  It is non-polar.\nD  The tails are joined to the head by peptide bonds.", marks: 1 } ] },
+              { number: 4, parts: [ { code: '4', prompt: "Which statement describes a feature of plasma membranes?\n\nA  Channel proteins are a type of intrinsic protein.\nB  Glycolipids are intrinsic proteins that have lipid molecules attached.\nC  Phospholipids form a rigid bilayer that membrane proteins are attached to.\nD  The plasma membrane forms an impermeable barrier.", marks: 1 } ] },
+              { number: 5, parts: [ { code: '5', prompt: "The adrenaline receptor is one of a class of receptors known as GPCRs. The glucagon receptor on liver cells is another type of GPCR. Glucagon stimulates conversion of glycogen to glucose in liver cells. What is the action of glucagon?\n\nA  Cyclic AMP catalyses the conversion of glycogen to glucose.\nB  Glucagon is a second messenger.\nC  The glucagon receptor is located in the cytoplasm of liver cells.\nD  When glucagon binds to its receptor it stimulates the conversion of ATP to cyclic AMP.", marks: 1 } ] },
+              { number: 6, parts: [ { code: '6', prompt: "Lymph and tissue fluid are both formed from the blood. Which statement describes the composition of these fluids?\n\nA  Lymph contains more protein than tissue fluid because of antibody production.\nB  Lymph is similar in composition to tissue fluid but has more oxygen and nutrients.\nC  Tissue fluid does not contain hormones such as insulin and glucagon.\nD  Tissue fluid contains red blood cells and platelets.", marks: 1 } ] },
+              { number: 7, parts: [ { code: '7', prompt: "Which statement describes features of the mammalian heart?\n\nA  Branches of the pulmonary artery supply blood to the heart muscle.\nB  Semi-lunar valves prevent backflow of blood from the ventricles to the atria.\nC  The left ventricle pumps deoxygenated blood to the lungs.\nD  The wall of the left ventricle is thicker because it needs to pump blood around the whole body.", marks: 1 } ] },
+              { number: 8, parts: [ { code: '8', prompt: "Bumblebees are large insects that have a high demand for oxygen during flight. What adaptation enables bumblebees to obtain sufficient oxygen during flight?\n\nA  Accumulation of lactate in muscles during flight increases the amount of tracheal fluid which increases the surface area for gas exchange.\nB  Muscle contraction before or during flight increases ventilation of the tracheal system.\nC  Spiracles take air directly to the respiring tissues.\nD  Tracheoles can open and close to allow gas exchange and minimise water loss.", marks: 1 } ] },
+              { number: 9, parts: [ { code: '9', prompt: "Which option is not an adaptation that helps fish increase the efficiency of gas exchange?\n\nA  Blood capillaries lie close to the surface of the lamellae to minimise the diffusion distance.\nB  Blood flows in the capillaries in the same direction as the flow of water over the lamellae to maximise gas exchange.\nC  Gill filaments have many lamellae that increase the surface area for gas exchange.\nD  Raising and lowering of the floor of the buccal cavity helps maintain a flow of water over the gills.", marks: 1 } ] },
+              { number: 10, parts: [ { code: '10', prompt: "The diagram shows part of a liver lobule, with regions E, F, G, H and I labelled (see the QP PDF). Which statement about liver function is correct?\n\nA  Blood flows from I towards G.\nB  H carries blood arriving from the digestive system.\nC  Hepatocytes produce urea that flows into F.\nD  Toxic substances enter liver cells from the blood at E.", marks: 1 } ] },
+              { number: 11, parts: [ { code: '11', prompt: "The photomicrograph shows a stained section of liver tissue, with a structure labelled J (see the QP PDF). What is the structure labelled J?\n\nA  Hepatic artery\nB  Hepatic portal vein\nC  Hepatic vein\nD  Sinusoid", marks: 1 } ] },
+              { number: 12, parts: [ { code: '12', prompt: "Which statement describes urea production in the liver?\n\nA  Amino acids enter the ornithine cycle.\nB  Ammonia and carbon dioxide combine to make urea in the Krebs cycle.\nC  Ammonia is produced by the deamination of amino acids.\nD  The ornithine cycle makes urea less harmful.", marks: 1 } ] },
+              { number: 13, parts: [ { code: '13', prompt: "Which of the statements about the effect of light intensity on the concentrations of GP, RuBP and TP is/are correct?\n\n1  At low light intensity, less GP is converted into TP because there is less product of the light-dependent stage available.\n2  At high light intensity, RuBP concentration is high because it is regenerated from TP.\n3  At high light intensity, RuBP accumulates because it cannot be converted to GP.\n\nA  1, 2 and 3 are correct\nB  Only 1 and 2 are correct\nC  Only 2 and 3 are correct\nD  Only 1 is correct", marks: 1 } ] },
+              { number: 14, parts: [ { code: '14', prompt: "Which of the statements about factors affecting the rate of photosynthesis is/are correct?\n\n1  Lack of water is not usually a limiting factor, although it does cause closure of stomata which reduces carbon dioxide levels.\n2  Carbon dioxide concentrations can be low inside greenhouses; therefore, growers will often enrich the atmosphere with carbon dioxide.\n3  Between zero and 25 °C the rate of photosynthesis doubles for every 10 °C rise in temperature.\n\nA  1, 2 and 3 are correct\nB  Only 1 and 2 are correct\nC  Only 2 and 3 are correct\nD  Only 1 is correct", marks: 1 } ] },
+              { number: 15, parts: [ { code: '15', prompt: "Which option about the relative energy values of different foods is not correct?\n\nA  Carbohydrates have lower energy values because they have a higher oxygen content.\nB  Food that has a mixture of carbohydrate, lipid and protein, e.g. chocolate, has a higher energy value than the same mass of sugar.\nC  Lipids have energy values lower than proteins because they have a low ratio of hydrogen and carbon atoms to oxygen atoms.\nD  Proteins and carbohydrates have similar energy values.", marks: 1 } ] },
+              { number: 16,
+                scenario: "Section B. A question on biological molecules.",
+                parts: [
+                  { code: '16(a)', kind: 'diagram', preamble: "A table lists some biological molecules (amino acid, amylopectin, glucose, sucrose) with columns 'Is a monomer', 'Is a polymer' and 'Contains glycosidic bond(s)'; the amino-acid row is completed for you.", prompt: "Complete the table by putting a tick in the appropriate box(es) on each line to show whether the corresponding feature is present.", marks: 3 },
+                  { code: '16(b)', prompt: "Describe the bond between the two glucose monomers in maltose.", marks: 2 },
+                  { code: '16(c)(i)', preamble: "Maltotriose is a trisaccharide formed during the breakdown of starch by amylase; it can be broken down further to produce glucose.", prompt: "Complete the equation for the conversion of maltotriose to glucose (maltotriose + … → 3 glucose).", marks: 2 },
+                  { code: '16(c)(ii)', preamble: "The enzyme maltase converts maltose to glucose during the final stages of starch digestion in the small intestine.", prompt: "Suggest why maltotriose can also be converted to glucose by maltase.", marks: 1 }
+                ] },
+              { number: 17,
+                scenario: "Fig. 17.1 shows the relationship between photosynthesis and aerobic respiration, with molecules X, Y and Z labelled (see the QP PDF).",
+                parts: [
+                  { code: '17(a)(i)', prompt: "Identify the molecules labelled X, Y and Z in Fig. 17.1.", marks: 2 },
+                  { code: '17(a)(ii)', prompt: "Use the information in Fig. 17.1 to explain how plants are able to survive in a sealed glass container, such as a terrarium or bottle garden, for many months or even years.", marks: 3 },
+                  { code: '17(b)(i)', preamble: "Algae such as seaweed carry out photosynthesis using chlorophyll a as the primary pigment. Fig. 17.2 shows the percentage of light at each wavelength used in photosynthesis by the red alga Porphyra naiadum (see the QP PDF). Chlorophyll a has an absorption peak at 680 nm.", prompt: "Use Fig. 17.2 to estimate the percentage of light absorbed by chlorophyll a that is used in photosynthesis by Porphyra naiadum.", marks: 1 },
+                  { code: '17(b)(ii)', prompt: "Explain why the percentage of light used in photosynthesis is higher than your answer to part (i) at wavelengths other than 680 nm.", marks: 3 },
+                  { code: '17(b)(iii)', preamble: "Porphyra naiadum grows in deep water.", prompt: "Use the data in Fig. 17.2 to suggest how it is able to survive in conditions where other types of algae or plant cannot.", marks: 2 },
+                  { code: '17(c)(i)', preamble: "Calvin illuminated a suspension of green algae with radioactive carbon dioxide and used paper chromatography to identify the compounds of the Calvin cycle at 1 s, 5 s and 30 s. Fig. 17.3 shows the results (see the QP PDF). Calvin concluded that GP was the first product of carbon fixation and that GP was converted into TP.", prompt: "Use the data in Fig. 17.3 to explain how Calvin reached this conclusion.", marks: 2 },
+                  { code: '17(c)(ii)', prompt: "State what you can conclude from Fig. 17.3 about what happens to TP.", marks: 1 }
+                ] },
+              { number: 18,
+                scenario: "Furosemide is a diuretic that acts on the nephron to decrease reabsorption of water in the collecting ducts; it is often prescribed for high blood pressure and is on the International Olympic Committee's list of banned substances.",
+                parts: [
+                  { code: '18(a)(i)', prompt: "State one other type of drug on the list of banned substances that can be detected in urine samples.", marks: 1 },
+                  { code: '18(a)(ii)', preamble: "Furosemide can be misused by jockeys or boxers who need to be below a certain weight.", prompt: "Explain how a diuretic could help to reduce weight.", marks: 2 },
+                  { code: '18(a)(iii)', preamble: "Furosemide is banned because it can be used as a masking agent to hide the use of performance-enhancing drugs.", prompt: "Suggest how furosemide could act as a masking agent.", marks: 1 },
+                  { code: '18(b)(i)', preamble: "Bladder cancer can be diagnosed by surgical removal of a small piece of bladder tissue (a biopsy sample).", prompt: "State one advantage of urine analysis over a biopsy sample.", marks: 1 },
+                  { code: '18(b)(ii)', prompt: "Give one other application of urine analysis in diagnosis, stating the substance measured and the corresponding medical condition.", marks: 1 },
+                  { code: '18(c)(i)', preamble: "The formation of tissue fluid has many similarities with ultrafiltration. A table gives the hydrostatic and oncotic pressures (kPa) in blood and tissue fluid at the arteriole and venule ends; the net pressure at the arteriole end is +1.3 kPa.", prompt: "Calculate the net pressure at the venule end.", marks: 2 },
+                  { code: '18(c)(ii)', prompt: "Use the information in the table to explain the formation of tissue fluid and its return to the blood.", marks: 2 },
+                  { code: '18(d)', preamble: "You do not need to describe how the loop of Henle sets up a water potential gradient.", prompt: "Describe the homeostatic mechanisms that regulate the water content of the blood by changing how much water is reabsorbed from the collecting duct.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true }
+                ] },
+              { number: 19,
+                scenario: "Plants respond to their environments in different ways.",
+                parts: [
+                  { code: '19(a)(i)', prompt: "Describe the meaning of the term tropism.", marks: 1 },
+                  { code: '19(a)(ii)', prompt: "State one named example of a tropism.", marks: 1 },
+                  { code: '19(a)(iii)', prompt: "Give one example of an abiotic stress and the corresponding plant response.", marks: 2 },
+                  { code: '19(b)(i)', preamble: "Mycorrhizae are associations between fungi and plant roots. Trees release pheromones into the air that stimulate nearby trees to produce defensive chemicals, and communication can also occur via the mycorrhizae. Scientists grew a 'donor' fir plant with a 'recipient' pine plant (40 pairs in four groups), enclosed recipient roots in a mesh bag (0.5 µm blocking hyphae, or 35 µm allowing hyphae) and simulated herbivory by removing donor leaves in half the groups, measuring polyphenol oxidase (PPO) activity at the start and after 72 h.", prompt: "Suggest how the scientists could ensure that airborne pheromones did not contribute to communication between plants in this investigation.", marks: 1 },
+                  { code: '19(b)(ii)', preamble: "The results (mean PPO activity ± SD, arbitrary units): Group 1 (leaves on / small mesh / no hyphae) 18±2 → 20±2; Group 2 (leaves removed / small mesh / no hyphae) 16±2 → 50±4; Group 3 (leaves on / large mesh / hyphae) 12±2 → 22±4; Group 4 (leaves removed / large mesh / hyphae) 18±2 → 116±14. The scientists conclude that removing donor leaves leads to a chemical defence response in the recipients, due to signals carried by the mycorrhizal hyphae.", prompt: "Evaluate the support given by the results to the scientists' conclusions. You should comment on the quality of the scientists' data in your answer.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true }
+                ] },
+              { number: 20,
+                scenario: "A student investigated ventilation and heart rate in a resting subject breathing through a spirometer (chamber filled with room air, soda lime present). Fig. 20.1 shows the spirometer trace and Fig. 20.2 the heart rate and blood oxygen saturation (see the QP PDF).",
+                parts: [
+                  { code: '20(a)(i)', preamble: "The downward slope of the spirometer trace is due to oxygen consumption; the subject exhales the same volume of air as they inhale.", prompt: "State why the trace slopes downwards.", marks: 1 },
+                  { code: '20(a)(ii)', preamble: "The subject had a mass of 75 kg.", prompt: "Calculate the subject's oxygen consumption in cm³ kg⁻¹ during the first 2 minutes of the experiment. Give your answer to 2 significant figures.", marks: 2 },
+                  { code: '20(a)(iii)', prompt: "Using Fig. 20.1, compare the breathing pattern between 0–120 s and 120–240 s.", marks: 2 },
+                  { code: '20(a)(iv)', prompt: "Use the data in Fig. 20.1 and Fig. 20.2 and your own knowledge of homeostatic control to explain the changes in breathing rate and heart rate during the experiment.", marks: 4 },
+                  { code: '20(b)', preamble: "Blood oxygen saturation of less than 90% can be dangerous.", prompt: "Explain one modification that you could make to the experiment to safely study the effect of extended periods of exercise.", marks: 2 },
+                  { code: '20(c)(i)', preamble: "Fig. 20.3 shows how the respiratory quotient (RQ) of an athlete changed during exercise (see the QP PDF).", prompt: "State the two measurements that you would need to make during the experiment to calculate RQ.", marks: 1 },
+                  { code: '20(c)(ii)', prompt: "Explain what Fig. 20.3 shows about the respiratory substrate(s) used at different intensities of exercise.", marks: 3 }
+                ] },
+              { number: 21,
+                scenario: "Enzymes catalyse reactions in cells.",
+                parts: [
+                  { code: '21(a)', preamble: "Most digestive enzymes are extracellular.", prompt: "Complete the sentences about the synthesis and secretion of a typical digestive enzyme: the polypeptide is assembled at ribosomes on the …; the protein is transported to the … where further processing occurs; the final protein is packaged into … for transport to the plasma membrane.", marks: 3 },
+                  { code: '21(b)(i)', preamble: "Catalase is an intracellular enzyme that catalyses the breakdown of the highly reactive chemical hydrogen peroxide.", prompt: "Explain why it is important that catalase is able to break down hydrogen peroxide very quickly.", marks: 2 },
+                  { code: '21(b)(ii)', preamble: "Fig. 21.1 is a graph of decomposition of hydrogen peroxide against time for catalase (see the QP PDF).", prompt: "Calculate the rate of the enzyme-catalysed reaction at 30 s. Give the value and the units.", marks: 3 },
+                  { code: '21(c)(i)', preamble: "Male infertility is associated with low sperm motility. Superoxide dismutase (SOD), often located with catalase, converts highly reactive superoxide ions (produced in mitochondria) into hydrogen peroxide and oxygen.", prompt: "Explain why sperm cells might have high concentrations of hydrogen peroxide.", marks: 2 },
+                  { code: '21(c)(ii)', preamble: "Scientists incubated sperm cells with different concentrations of hydrogen peroxide for two hours, measuring motility and the percentage of cells with changed membrane phospholipid composition, using samples from 10 men (Fig. 21.2 in the QP PDF). They conclude that hydrogen peroxide causes membrane changes that reduce motility.", prompt: "Evaluate this conclusion.", marks: 3 },
+                  { code: '21(c)(iii)', prompt: "Suggest how hydrogen peroxide could affect the plasma membrane.", marks: 2 }
+                ] },
+              { number: 22,
+                scenario: "A student investigated the effect of ethanol on the membranes of beetroot cells at 25 °C, placing equal masses of beetroot in different ethanol concentrations and using a colorimeter to measure the purple pigment that leaked out (five replicates per concentration; absorption plotted against ethanol concentration).",
+                parts: [
+                  { code: '22(a)', prompt: "The student controls the mass of beetroot. Identify two other variables that the student should control in this investigation.", marks: 2 },
+                  { code: '22(b)(i)', preamble: "The student's graph (absorption in A.U. against % ethanol) is shown in the QP PDF.", prompt: "Explain the shape of the graph.", marks: 2 },
+                  { code: '22(b)(ii)', kind: 'diagram', preamble: "The student repeats the experiment at a temperature of 30 °C.", prompt: "Sketch the graph you expect the student to obtain (answer on the graph).", marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '1': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '2': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '3': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '4': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '5': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '6': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '7': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '8': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '9': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '10': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '11': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '12': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '13': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '14': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '15': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '16(a)': { type: 'points', points: [
+                  'Amylopectin: tick "Is a polymer" and "Contains glycosidic bonds"',
+                  'Glucose: tick "Is a monomer" only',
+                  'Sucrose: tick "Contains glycosidic bonds" only'
+                ], guidance: '3 marks (1 per correct row). Best assessed against your completed table. Ignore crosses and hybrid ticks.' },
+              '16(b)': { type: 'points', points: [
+                  '(α-)glycosidic bond',
+                  'Carbon 1 to carbon 4 (a 1,4 bond)'
+                ], guidance: '2 marks (1 per row). Allow "α-1,4 glycosidic bond" for both. Do not allow beta or 1,6.' },
+              '16(c)(i)': { type: 'exact', points: ['H₂O / water; 2 (two)'],
+                guidance: '2 marks: 1 for water, 1 for the number 2 (maltotriose + 2 H₂O → 3 glucose).' },
+              '16(c)(ii)': { type: 'points', points: ['(Maltotriose is) complementary to / fits into the active site of maltase, OR it also contains (α-1,4) glycosidic bonds, OR maltase hydrolyses (α-1,4) glycosidic bonds'],
+                guidance: '1 mark. Do not allow beta.' },
+              '17(a)(i)': { type: 'exact', points: ['X = water / H₂O; Y = carbon dioxide / CO₂; Z = oxygen / O₂'],
+                guidance: '2 marks (all three correct = 2; one or two correct = 1).' },
+              '17(a)(ii)': { type: 'points', points: [
+                  'Light energy is the only requirement from outside the terrarium (light passes through glass)',
+                  'Respiration provides carbon dioxide and water for photosynthesis OR photosynthesis provides glucose and oxygen for respiration',
+                  'Water used for photolysis / oxygen used as the final electron acceptor in respiration',
+                  'Carbon dioxide used for the light-independent stage / Calvin cycle',
+                  'ATP (still) produced / energy provided for cell activities',
+                  'Decomposing plant material provides (named) mineral ions'
+                ], guidance: '3 max.' },
+              '17(b)(i)': { type: 'exact', points: ['21–24 (%)'],
+                guidance: '1 mark. Accept e.g. 22.0; do not accept other decimal places.' },
+              '17(b)(ii)': { type: 'points', points: [
+                  '(The alga has) accessory pigments',
+                  '(Other pigments) absorb different/other wavelengths of light',
+                  'Little / not all light is absorbed by chlorophyll a / the primary pigment',
+                  '(Light) energy is transferred to the reaction centre',
+                  'For use in the light-dependent reaction (LDR)'
+                ], guidance: '3 max.' },
+              '17(b)(iii)': { type: 'points', points: [
+                  '(Red) algae have pigments that absorb shorter (light) wavelengths (accept 500–630 nm / blue / green / yellow)',
+                  'These wavelengths can penetrate water to greater depths (reach the algae at depth)'
+                ], guidance: '2 marks.' },
+              '17(c)(i)': { type: 'points', points: [
+                  'GP was the only compound seen after 1 second',
+                  'TP appears after 5 seconds'
+                ], guidance: '2 marks. Accept glycerate 3-phosphate for GP, triose phosphate for TP.' },
+              '17(c)(ii)': { type: 'points', points: ['TP is converted into / is the source of sugar phosphates / (named) amino acids / citrate / sucrose / RuBP'],
+                guidance: '1 mark. Must be the idea of synthesis into, not breaking down. Do not allow GP.' },
+              '18(a)(i)': { type: 'points', points: ['Any one named banned substance, e.g. rhEPO; a named anabolic/androgenic steroid (e.g. nandrolone); a named narcotic (e.g. cannabis, methadone); a named stimulant (e.g. amphetamine); a peptide/steroid hormone (e.g. testosterone)'],
+                guidance: '1 mark. Ignore diuretics / alcohol.' },
+              '18(a)(ii)': { type: 'points', points: [
+                  'The collecting duct becomes less permeable to water (fewer aquaporins) → (rapid) water loss',
+                  'A larger volume of urine is produced (reduction in "water weight")'
+                ], guidance: '2 max.' },
+              '18(a)(iii)': { type: 'points', points: ['It could increase the removal of (performance-enhancing) drugs / other banned substances, OR the drugs are undetectable / too dilute in the larger volume of urine produced'],
+                guidance: '1 mark.' },
+              '18(b)(i)': { type: 'points', points: ['It does not require surgery / no recovery time / is less invasive / less painful / less chance of infection / more rapid / cheaper'],
+                guidance: '1 max. Ignore disadvantages of biopsy.' },
+              '18(b)(ii)': { type: 'points', points: ['A correct substance AND condition, e.g. glucose AND diabetes; protein AND kidney disease/albuminuria; creatinine AND kidney disease/muscle damage; hCG AND pregnancy'],
+                guidance: '1 max.' },
+              '18(c)(i)': { type: 'exact', points: ['−1.5 (kPa)'],
+                guidance: '2 marks. Net hydrostatic = 1.7 − 1.1 = 0.6; net oncotic = −3.3 − (−1.2) = −2.1; net = 0.6 + (−2.1) = −1.5 kPa. 1 mark for 1.5 without the minus, or for either intermediate value.' },
+              '18(c)(ii)': { type: 'points', points: [
+                  'Hydrostatic pressure at the arteriole end is higher than oncotic pressure (net positive) so fluid moves out of the capillaries',
+                  'Hydrostatic pressure at the venule end is lower than oncotic pressure (net negative) so fluid moves back into the capillaries'
+                ], guidance: '2 marks. Must be comparative. Do not allow "blood" for fluid.' },
+              '18(d)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Describes in detail the regulation of the water content of blood with reference to the action of ADH AND the role of receptors AND the (posterior) pituitary. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Describes the regulation with reference to two of: action of ADH, receptors, (posterior) pituitary. Some structure, relevant and supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Describes the regulation with reference to one of: action of ADH, receptors, (posterior) pituitary. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Mechanism of ADH action': 'ADH targets/binds to cells of the collecting duct; release of a second messenger; vesicles with aquaporins fuse with the plasma membrane; increased permeability of the collecting-duct wall; more water moves down the water-potential gradient into the cells.',
+                  'Role of receptors': 'Osmoreceptors in the hypothalamus detect changes in osmotic pressure / water potential of the blood and respond to osmosis by shrinking or swelling; receptors also located on collecting-duct cells.',
+                  '(Posterior) pituitary': 'ADH made in the hypothalamus; moves down the axon to the posterior pituitary; stored in vesicles; action potentials in neurosecretory cells; ADH released by the posterior pituitary by exocytosis.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '19(a)(i)': { type: 'points', points: ['Directional growth in response to a stimulus (grows towards or away from a stimulus)'],
+                guidance: '1 mark. "Growth" unqualified is not enough — must be directional.' },
+              '19(a)(ii)': { type: 'exact', points: ['Phototropism / geotropism (gravitropism) / hydrotropism / thigmotropism / chemotropism'],
+                guidance: '1 mark. Any correct plant tropism.' },
+              '19(a)(iii)': { type: 'points', points: [
+                  'A correct abiotic stress (e.g. drought/lack of water; freezing/cold; high temperature; low light/short day length; high wind)',
+                  'A correct linked plant response (e.g. closing stomata / leaf drop / wilting / antifreeze production / etiolation)'
+                ], guidance: '2 marks (correct response linked to the abiotic stress). 1 mark for a correct abiotic stress with an incorrect response. Do not allow biotic stress (e.g. grazing).' },
+              '19(b)(i)': { type: 'points', points: ['By enclosing the (donor/recipient) plant in an (airtight plastic) bag / container that covers the aerial parts and prevents interaction between them'],
+                guidance: '1 mark.' },
+              '19(b)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'An evaluation including supporting evidence AND non-supporting evidence AND a general statement about data quality. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'An evaluation including supporting OR non-supporting evidence AND a general statement about data quality (or both types of evidence plus a quality statement). Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'An evaluation including one of: a supporting statement, a non-supporting statement, or a general statement about data quality. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Supporting evidence': 'Defoliation increased PPO activity; non-defoliation did not increase it as much; Group 2 increase > Group 1, Group 4 increase > Group 3; bigger increase with the large-mesh bag / hyphae involved; Group 4 had the largest increase (e.g. Group 2 +213%, Group 4 +544% vs Group 1 +11%, Group 3 +83%).',
+                  'Non-supporting evidence': 'Increase in all groups (including those not defoliated); increase even with the small-mesh bag (no hyphae), so some transmission by means other than mycorrhizae.',
+                  'Quality of data': 'Good: SDs calculated, low spread / small SDs vs means, increases could be significant. Poor: no control for the effect of the mesh bag; small sample size; may not represent mature/wild trees; no statistical test; only two species used; raw data not shown.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '20(a)(i)': { type: 'points', points: ['(Inhaled) oxygen is being used / removed (the soda lime absorbs the exhaled carbon dioxide), so the volume of gas in the chamber falls'],
+                guidance: '1 mark.' },
+              '20(a)(ii)': { type: 'exact', points: ['12–15 (cm³ kg⁻¹)'],
+                guidance: '2 marks. Oxygen consumed in 120 s ≈ 1.0 dm³ = 1000 cm³; 1000 ÷ 75 ≈ 13 cm³ kg⁻¹. Max 1 if not to 2 sig figs or not converted to cm³.' },
+              '20(a)(iii)': { type: 'points', points: [
+                  'At 120–240 s the breaths are deeper (greater tidal volume)',
+                  'The amplitude / tidal volume becomes more variable',
+                  'The (calculated) breathing rate is the same / similar'
+                ], guidance: '2 max. Accept ORA for 0–120 s.' },
+              '20(a)(iv)': { type: 'points', points: [
+                  'Breathing rate AND heart rate both increase',
+                  '(Blood) oxygen saturation decreases / CO₂ concentration in the blood increases',
+                  'Reduction in pH (increase in H⁺ ions)',
+                  'Detected by chemoreceptors in the medulla oblongata (or carotid arteries / aorta)',
+                  'The cardiovascular centre controls heart rate',
+                  'Impulses along the sympathetic / accelerator nerve (to the heart / SAN)',
+                  'The SAN responds by increasing the rate at which it generates a wave of excitation'
+                ], guidance: '4 max.' },
+              '20(b)': { type: 'points', points: [
+                  'Enrich the air in the spirometer with oxygen',
+                  'So that a high (blood) oxygen saturation is maintained / does not drop below 90%'
+                ], guidance: '2 marks.' },
+              '20(c)(i)': { type: 'points', points: ['Volume of oxygen consumed/inhaled AND volume of carbon dioxide produced/exhaled'],
+                guidance: '1 mark — both needed.' },
+              '20(c)(ii)': { type: 'points', points: [
+                  'RQ of carbohydrate is 1 / RQ of fat is approximately 0.7',
+                  'At rest fat is used',
+                  'As intensity increases (more) carbohydrate is used',
+                  'Even at the highest intensity some fat is used / not just carbohydrate'
+                ], guidance: '3 max.' },
+              '21(a)': { type: 'exact', points: ['Rough endoplasmic reticulum (RER); Golgi (body/apparatus); (secretory/transport) vesicles'],
+                guidance: '3 marks (1 each, in order).' },
+              '21(b)(i)': { type: 'points', points: [
+                  'Hydrogen peroxide is toxic / damages cells (organelles / enzymes / triggers apoptosis)',
+                  'Breaking it down minimises/prevents damage; the products (water and oxygen) are harmless'
+                ], guidance: '2 marks.' },
+              '21(b)(ii)': { type: 'exact', points: ['≈ 3.7 µg s⁻¹ (accept 3.7 ± 0.6)'],
+                guidance: '3 marks. Draw a tangent at t = 30 s; figures from the tangent (e.g. 170 µg ÷ 46 s); units µg s⁻¹. Max 2 if given to more than 3 sig figs; 1 mark for a correct tangent or the calculation.' },
+              '21(c)(i)': { type: 'points', points: [
+                  'Because they have many mitochondria (so produce many superoxide ions → much hydrogen peroxide via SOD)',
+                  'Catalase activity may be too low (mutation / less transcription / low concentration), OR SOD activity may be too high'
+                ], guidance: '2 max.' },
+              '21(c)(ii)': { type: 'points', points: [
+                  'Support: as H₂O₂ concentration increases, motility (of treated sperm) decreases (negative correlation)',
+                  'Support: as H₂O₂ concentration increases, cells with changes to the plasma membrane increase (positive correlation)',
+                  'Against: correlation does not prove causation (another cause possible)',
+                  'Against: sample size was small (only 10 men)',
+                  'Against: no statistical test performed; samples may not be representative / biased; some error bars overlap'
+                ], guidance: '3 max (with at least one "does not support" point capped at 2).' },
+              '21(c)(iii)': { type: 'points', points: [
+                  'Oxidises / reacts with fatty acids / phospholipids / cholesterol (changes membrane fluidity)',
+                  'Damages / denatures membrane proteins; disrupts the phospholipid bilayer (causes pores / breaks)',
+                  'Causes the membrane to be more permeable'
+                ], guidance: '2 max.' },
+              '22(a)': { type: 'points', points: ['Any two of: size/shape/surface area of beetroot pieces; type/variety of beetroot; same part of beetroot / no skin; age of beetroot; time in ethanol before measuring; volume of ethanol solution'],
+                guidance: '2 max. Ignore mass of beetroot, temperature and pH (given or stated in the stem).' },
+              '22(b)(i)': { type: 'points', points: [
+                  '(Increased) ethanol concentration increases the permeability of the membranes (disrupts the phospholipid bilayer) so more pigment leaks out',
+                  'The curve levels off as no more / all pigment is released (concentration inside and outside equalises)'
+                ], guidance: '2 marks. Ignore "positive correlation".' },
+              '22(b)(ii)': { type: 'points', points: [
+                  'A curve to the left of the student\'s curve',
+                  'Reaching the same maximum value'
+                ], guidance: '2 marks. Best assessed against your sketch. Max 1 if the curve drops below the student\'s curve or exceeds the maximum.' }
+            } }
+        ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
         officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/biology-b-advancing-biology-h022-h422-from-2015/assessment/' }
     ]
