@@ -16864,6 +16864,303 @@ window.SUBJECTS = [
                   'Many species move across national boundaries / migrate / have very large ranges',
                   'Monitoring is expensive / some countries are too large to monitor / high financial rewards for poaching/smuggling / CITES only prevents trade'
                 ], guidance: '2 max.' }
+            } },
+          { id: 'bio-edxb-9bi0-2022-p3', year: 'June 2022', paperName: 'Paper 3 — General and Practical Principles in Biology', paperCode: '9BI0/03', totalMarks: 120, durationMins: 150,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-03-que-20220625.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-03-rms-20220818.pdf',
+            qbqNote: 'All 11 questions (120 marks) are wired up question-by-question with the official Pearson mark scheme. This practical-principles paper is structured data-analysis and practical-method questions; Question 10(c) is the 9-mark asterisked (*) levels-of-response question. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Nerve impulses are transmitted along neurones.",
+                parts: [
+                  { code: '1(a)(i)', preamble: "In the time period between two nerve impulses, the potential difference across the membrane is −70 mV.", prompt: "State the term given to this potential difference.", marks: 1 },
+                  { code: '1(a)(ii)', preamble: "When the neurone is stimulated, an action potential may occur in the axon. A graph shows an action potential (see the QP PDF).", prompt: "Describe what happens in the axon membrane to cause the change in potential difference between 0.55 ms and 0.80 ms.", marks: 4 },
+                  { code: '1(b)', preamble: "Scientists stimulated an axon with different voltages: 25, 35 and 45 mV gave no action potential, while 55, 65 and 75 mV each gave an action potential.", prompt: "Analyse the data to describe the conclusions which can be drawn.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "A student investigated the number of dividing cells in an onion root tip by making a root tip squash and counting cells at each stage: prophase 4, metaphase 2, anaphase 1, telophase 1, interphase 90.",
+                parts: [
+                  { code: '2(a)(i)', prompt: "Calculate the mitotic index for these results, using Mitotic index = (number of actively dividing cells ÷ total number of cells) × 100.", marks: 2 },
+                  { code: '2(a)(ii)', preamble: "A graph shows the relationship between the mitotic index and the distance from the root tip (see the QP PDF).", prompt: "Explain the relationship shown in the graph.", marks: 2 },
+                  { code: '2(b)', preamble: "The student's method was: 1. cut a small piece from the tip of a growing onion root and place in weak acid; 2. transfer to a slide; 3. add a drop of stain; 4. use a mounted needle to flatten the root and add a coverslip; 5. view using the low power objective; 6. count the cells at each stage.", prompt: "Justify two improvements to this method.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "Single-celled algae trapped in gel beads can be used to study photosynthesis. The beads are placed in hydrogencarbonate indicator (yellow = highest CO₂, orange = higher than atmospheric, red = same as atmospheric, magenta = lower, purple = lowest). A student placed five tubes of beads in red indicator at different distances from a lamp in a dark room for 30 minutes, then recorded the indicator colour and bead position (results in the QP PDF).",
+                parts: [
+                  { code: '3(a)(i)', prompt: "Describe two control tubes that should be used in this investigation.", marks: 2 },
+                  { code: '3(a)(ii)', prompt: "Explain the changes in colour of the hydrogencarbonate indicator in this investigation.", marks: 3 },
+                  { code: '3(b)', preamble: "The colour of the indicator and the position of the beads can be used to give a quantitative measure of the effect of light intensity.", prompt: "Describe how the method could be modified to give valid, quantitative results.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "Fruit flies, Drosophila melanogaster, are often used in genetics investigations. The diagrams show male and female flies (actual size = 3 mm; see the QP PDF).",
+                parts: [
+                  { code: '4(a)', prompt: "Give one feature, visible in the diagrams, that you could use to distinguish between male and female flies, and state how it differs between them.", marks: 1 },
+                  { code: '4(b)(i)', preamble: "A grey-bodied fly was crossed with a black-bodied fly; all the F1 offspring were grey-bodied. Two of the grey-bodied F1 flies were then crossed.", prompt: "Determine the expected ratio of phenotypes of the offspring in the resulting F2 generation, using a genetic diagram.", marks: 2 },
+                  { code: '4(b)(ii)', preamble: "Long wing (L) is dominant to vestigial wing (l) — gene on chromosome 2. Normal antennae (A) is dominant to bushy antennae (a) — gene on chromosome 3. Two flies heterozygous for both characteristics are crossed.", prompt: "Determine the ratio of phenotypes you would expect in the next generation, using a genetic diagram.", marks: 3 },
+                  { code: '4(b)(iii)', preamble: "Red eyes (R) is dominant to white eyes (r). Cross 1 — a red-eyed female × a white-eyed male: half the offspring were red-eyed females and half were red-eyed males. Cross 2 — a white-eyed female × a red-eyed male: half were red-eyed females and half were white-eyed males.", prompt: "Explain the results of these crosses.", marks: 4 }
+                ] },
+              { number: 5,
+                scenario: "Pollen grains germinate to form pollen tubes.",
+                parts: [
+                  { code: '5(a)', preamble: "A photograph shows a germinating pollen grain through a light microscope (see the QP PDF). The actual length of this pollen tube is 136 µm.", prompt: "Calculate the magnification of this photograph.", marks: 2 },
+                  { code: '5(b)(i)', preamble: "A diagram shows a pollen grain that has begun to germinate on a stigma, with structures A and B labelled (see the QP PDF).", prompt: "Identify the structures labelled A and B.", marks: 2 },
+                  { code: '5(b)(ii)', prompt: "Describe the process of double fertilisation in flowering plants.", marks: 3 },
+                  { code: '5(c)', prompt: "Devise an investigation to determine the effect of pH on the rate of growth of pollen tubes.", marks: 5 }
+                ] },
+              { number: 6,
+                scenario: "Fritillaria delavayi is a small plant that grows on rocky mountain slopes in China and has been collected for Chinese medicine for over 2000 years; it is not known to be eaten by animals. In less accessible regions the plants are bright green with bright yellow flowers; where bulbs are collected in high numbers most plants have greyish-brown leaves and flowers. Scientists believe the greyish-brown plants are the same species as the brightly-coloured plants.",
+                parts: [
+                  { code: '6(a)', prompt: "Explain why most of the plants in areas where bulbs are collected in high numbers have greyish-brown leaves and flowers.", marks: 4 },
+                  { code: '6(b)(i)', prompt: "Describe how scientists can use gel electrophoresis to show that these plants belong to the same species.", marks: 4 },
+                  { code: '6(b)(ii)', prompt: "Explain why the features of the brightly-coloured plants enable them to grow successfully in the areas where they are not collected by humans.", marks: 2 }
+                ] },
+              { number: 7,
+                scenario: "Plants require mineral ions from the soil for healthy growth.",
+                parts: [
+                  { code: '7(a)(i)', prompt: "Describe how mineral (inorganic) ions are taken up by active transport.", marks: 3 },
+                  { code: '7(a)(ii)', prompt: "Describe the function of a named mineral ion that is vital for the growth of plants.", marks: 2 },
+                  { code: '7(b)(i)', preamble: "Galium verum (Lady's bedstraw) grows to between 15 cm and 60 cm in height. A student investigated whether Galium verum growing in meadows was taller than Galium verum growing on sand dunes.", prompt: "Give a suitable null hypothesis for this investigation.", marks: 1 },
+                  { code: '7(b)(ii)', prompt: "Devise a method that can be used to collect valid results to test this null hypothesis.", marks: 5 },
+                  { code: '7(b)(iii)', prompt: "Explain which statistical test would be most suitable to test this null hypothesis.", marks: 2 }
+                ] },
+              { number: 8,
+                scenario: "The activity of enzymes is affected by a number of factors. A student investigated the activity of catalase (which catalyses hydrogen peroxide → oxygen + water) in potato, collecting the oxygen produced in an inverted burette (apparatus and graph in the QP PDF).",
+                parts: [
+                  { code: '8(a)', prompt: "Explain why increasing the temperature of an enzyme-controlled reaction changes the rate of reaction.", marks: 3 },
+                  { code: '8(b)(i)', prompt: "Describe how two named variables, other than the potato, can be controlled in order to obtain valid results.", marks: 4 },
+                  { code: '8(b)(ii)', preamble: "A graph shows the volume of oxygen produced against time (see the QP PDF).", prompt: "Determine the initial rate of reaction from this graph.", marks: 1 },
+                  { code: '8(b)(iii)', prompt: "Explain why the rate of reaction decreases over time.", marks: 2 },
+                  { code: '8(c)', preamble: "The student then used 1 cm³ potato cubes (1, 2, 3, 4 then 5 cubes), measuring the volume of oxygen produced in 30 seconds each time (replacing the hydrogen peroxide between trials).", prompt: "Explain the results you would expect from this investigation.", marks: 3 }
+                ] },
+              { number: 9,
+                scenario: "Water moves through xylem vessels during transpiration; phloem tissue transports organic materials such as sucrose.",
+                parts: [
+                  { code: '9(a)', prompt: "Compare and contrast the structure of xylem tissue and phloem tissue.", marks: 3 },
+                  { code: '9(b)(i)', preamble: "A student used a potometer to investigate water uptake in a leafy shoot under different conditions (results table in the QP PDF). The internal diameter of the capillary tubing is 0.3 mm; the volume of a cylinder is πr²h.", prompt: "Calculate the mean rate of water uptake for the shoot in moving air, in the light. Give your answer in mm³ min⁻¹ to two significant figures.", marks: 3 },
+                  { code: '9(b)(ii)', prompt: "Analyse the data to explain the results of this investigation.", marks: 3 },
+                  { code: '9(b)(iii)', prompt: "Describe how this investigation could be modified to make a valid comparison of water loss from the upper and lower surfaces of the leaves.", marks: 4 }
+                ] },
+              { number: 10,
+                scenario: "Grassland is an important habitat for grazing animals such as cattle.",
+                parts: [
+                  { code: '10(a)', preamble: "Fields used for grazing cattle must have a high gross primary productivity.", prompt: "State what is meant by the term gross primary productivity, and include the units in which it is measured.", marks: 2 },
+                  { code: '10(b)', prompt: "Cattle graze on the plants on grassland. Describe what happens to the energy in the plants that are not eaten by cattle.", marks: 2 },
+                  { code: '10(c)', preamble: "Cattle dung is eaten by dung beetles, which bury it up to a metre underground and are themselves eaten by other animals; a cow can produce over eight tonnes of dung per year. Of the ~60 UK dung beetle species, 50% were scarce or threatened in 2016. Suggested causes of decline include: more land used for crops/building; keeping grazing animals in sheds over winter; isolated dung-beetle populations (preventing outbreeding); and routine anti-parasitic drugs that can kill dung beetles. Some scientists state that farming practices need to change to conserve dung beetles and maintain biodiversity and ecosystem stability.", prompt: "Discuss the validity of this statement.\n\n*Marks will be awarded for a logically structured answer.", marks: 9, extended: true }
+                ] },
+              { number: 11,
+                scenario: "Yeast, Saccharomyces cerevisiae, is used in brewing and baking. A student counted yeast cells at 90-minute intervals in a liquid culture at 30 °C; a graph shows the results (see the QP PDF).",
+                parts: [
+                  { code: '11(a)(i)', prompt: "Calculate the percentage increase in the number of yeast cells from 2 hours to 6 hours.", marks: 2 },
+                  { code: '11(a)(ii)', prompt: "Predict the number of cells per cm³ of the culture at 12 hours, assuming the culture continues to grow at the same rate.", marks: 1 },
+                  { code: '11(b)', prompt: "Describe two precautions that would prevent the yeast culture becoming contaminated with bacteria.", marks: 2 },
+                  { code: '11(c)(i)', preamble: "The student counted the yeast cells using a haemocytometer. The volume of liquid in the counting square shown is 0.004 mm³, and 7 cells are counted within it (plus those overlapping the top or left-hand side).", prompt: "Calculate the number of yeast cells per mm³. Give your answer in standard form.", marks: 2 },
+                  { code: '11(c)(ii)', prompt: "Identify two causes of inaccuracy in this method of counting cells.", marks: 2 },
+                  { code: '11(d)(i)', preamble: "A table gives the number of cells counted at several times. At 3.0 hours the counts were 4, 9, 9, 3, 7 (mean 6.4). SD = √(Σ(x − x̄)² ÷ (n − 1)).", prompt: "Calculate the standard deviation for the sample at 3 hours.", marks: 3 },
+                  { code: '11(d)(ii)', preamble: "The student concluded that the yeast population doubles every 90 minutes.", prompt: "Comment on the validity of this conclusion.", marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['Resting potential'],
+                guidance: '1 mark.' },
+              '1(a)(ii)': { type: 'points', points: [
+                  'Sodium (Na⁺) channels open',
+                  'Sodium ions flow into the axon / cell / neurone',
+                  'This causes depolarisation',
+                  'Sodium channels close at 0.8 ms / +30 mV',
+                  'Potassium (K⁺) channels open at 0.8 ms / +30 mV'
+                ], guidance: '4 max.' },
+              '1(b)': { type: 'points', points: [
+                  'There is no action potential until the stimulus is greater than 45 mV (accept 45–55 mV)',
+                  'This is the threshold value (threshold potential / voltage)'
+                ], guidance: '2 marks.' },
+              '2(a)(i)': { type: 'exact', points: ['8.2 (accept 8.16) %'],
+                guidance: '2 marks. Dividing cells = 4 + 2 + 1 + 1 = 8; total = 98; 8 ÷ 98 × 100 = 8.16%. 1 mark for the number of dividing cells. Correct answer with no working gains 2 marks.' },
+              '2(a)(ii)': { type: 'points', points: [
+                  'As distance from the root tip increases, the mitotic index decreases (a negative correlation)',
+                  'Because cells differentiate / become specialised / elongate further from the root tip (the meristem / stem cells are close to the tip)'
+                ], guidance: '2 marks. Accept converse.' },
+              '2(b)': { type: 'points', points: [
+                  'Use strong/concentrated acid to break down the middle lamella / pectins / separate the layers of cells (or use a standardised length of root tip to include just the dividing area)',
+                  'Heat to intensify the effect of the acid / stain',
+                  'Press on the coverslip to form a single layer of cells',
+                  'View at high power to see the details of the chromosomes'
+                ], guidance: '2 max — improvements with justification.' },
+              '3(a)(i)': { type: 'points', points: [
+                  'A tube with hydrogencarbonate indicator in light but with no gel beads (or no algae)',
+                  'A tube with hydrogencarbonate indicator and gel beads in a light-proof cover / in the dark'
+                ], guidance: '2 marks.' },
+              '3(a)(ii)': { type: 'points', points: [
+                  'At 5 cm and 15 cm (high light intensity, close to lamp) the indicator is purple — more photosynthesis, so carbon dioxide is taken in',
+                  'There is more photosynthesis than respiration, so a net uptake of carbon dioxide',
+                  'At 25 cm the indicator is red — the CO₂ used in photosynthesis equals the CO₂ produced in respiration (compensation point)',
+                  'At 35/45 cm (low light intensity, far from lamp) the indicator is orange — more respiration than photosynthesis, so CO₂ is released / more CO₂ present'
+                ], guidance: '3 max. Accept converse.' },
+              '3(b)': { type: 'points', points: [
+                  'Up to two examples of standardisation (e.g. equal volume of indicator; equal number of gel beads / mass of algae; same temperature) — up to 2 marks',
+                  'Set up a reference set of solutions at different carbon dioxide concentrations',
+                  'Compare by colour matching / using a colorimeter',
+                  'Measure the time taken for the gel beads to rise a known distance / to the surface (as oxygen is produced in photosynthesis)'
+                ], guidance: '3 max.' },
+              '4(a)': { type: 'points', points: [
+                  'Feature: shape of the abdomen/body — pointed in the female, rounded in the male',
+                  'OR Feature: banding pattern on the abdomen — five (narrow) bands in the female, three in the male (accept dark tip / spots descriptions)'
+                ], guidance: '1 mark. Must refer to both sexes or use a comparative term.' },
+              '4(b)(i)': { type: 'exact', points: ['3 grey-bodied : 1 black-bodied'],
+                guidance: '2 marks. 1 mark for a genetic diagram showing parents, gametes and offspring genotypes (e.g. Gg × Gg); 1 mark for the 3 : 1 ratio of named phenotypes.' },
+              '4(b)(ii)': { type: 'exact', points: ['9 long-winged normal antennae : 3 long-winged bushy antennae : 3 vestigial-winged normal antennae : 1 vestigial-winged bushy antennae'],
+                guidance: '3 marks. 1 mark each: each parent produces four gamete types (LA, La, lA, la); a correctly laid-out 4 × 4 Punnett square; the 9 : 3 : 3 : 1 ratio of named phenotypes.' },
+              '4(b)(iii)': { type: 'points', points: [
+                  'The gene for eye colour is sex-linked (only on the X chromosome)',
+                  'Females have two alleles for eye colour but males have only one',
+                  'Cross 1: parents are XᴿXᴿ and XʳY (RR and rY)',
+                  'Cross 2: parents are XʳXʳ and XᴿY (rr and RY)'
+                ], guidance: '4 marks. Accept descriptions or symbols in a genetic diagram.' },
+              '5(a)': { type: 'exact', points: ['≈ 243× (242.7 / 242.65; accept 227.9–250.0×)'],
+                guidance: '2 marks. 1 mark for measuring the pollen-tube length on the photo (≈33 mm); 1 mark for magnification = image size ÷ actual size = 33 000 µm ÷ 136 µm. Do not accept units. Correct answer with no working gains 2 marks.' },
+              '5(b)(i)': { type: 'exact', points: ['A — generative nucleus; B — (pollen) tube nucleus'],
+                guidance: '2 marks.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'One male nucleus / male gamete fuses with the two polar nuclei',
+                  'To form a triploid (3n) (endosperm) nucleus',
+                  'One male nucleus / male gamete fuses with (fertilises) the egg cell / ovum / female gamete',
+                  'To form a diploid (2n) zygote'
+                ], guidance: '3 max. Do not accept polar bodies.' },
+              '5(c)': { type: 'points', points: [
+                  'At least 5 different pH values tested',
+                  'Sucrose solution added',
+                  'A suitable time allowed before the pollen tube is measured (single measurement 30 min–24 h, or measured at intervals)',
+                  'Method of measuring the pollen tube with a microscope described (e.g. calibrated graticule / stage micrometer)',
+                  'Method of calculating the rate of growth (e.g. length ÷ time, or gradient of a graph)',
+                  'Method of controlling one relevant variable (e.g. temperature via a water bath; sucrose concentration; humidity; same flower/anther; mineral-salt concentration)',
+                  'A repeat at each pH and calculate the mean / standard deviation'
+                ], guidance: '5 max.' },
+              '6(a)': { type: 'points', points: [
+                  'Collection acts as a selection pressure (natural selection)',
+                  '(Random) mutation in the gene for pigment/colour (genetic variation for colour exists)',
+                  'Greyish-brown plants are less likely to be collected/found as they are harder to see / better camouflaged (converse for brightly-coloured)',
+                  'So they are more likely to reproduce, passing on the new allele',
+                  'The allele frequency increases in the gene pool'
+                ], guidance: '4 max.' },
+              '6(b)(i)': { type: 'points', points: [
+                  'Obtain DNA from the two types of plant (accept PCR to amplify the DNA)',
+                  'Use restriction enzymes / endonucleases to cut the DNA into fragments',
+                  'Load the DNA/fragments onto an (agarose) gel and apply a current / voltage (negatively charged DNA moves to the positive electrode)',
+                  'The fragments of DNA are separated (shorter fragments travel further)',
+                  'The same / similar banding pattern (or sequence) suggests they are the same species'
+                ], guidance: '4 max. Accept converse.' },
+              '6(b)(ii)': { type: 'points', points: [
+                  '(If the leaf is green it contains) chlorophyll / photosynthetic pigments, so more light is absorbed for photosynthesis, so more glucose is produced for growth',
+                  'OR (if the flower is brightly coloured) it attracts pollinators / insects, so the plant is more likely to reproduce successfully, to produce seeds / pass the trait on'
+                ], guidance: '2 marks.' },
+              '7(a)(i)': { type: 'points', points: [
+                  'Moved across the membrane / into the cell / into the root by carrier proteins',
+                  'Against a concentration gradient (from a low to a high concentration)',
+                  'Using ATP'
+                ], guidance: '3 marks. Ignore channel proteins.' },
+              '7(a)(ii)': { type: 'points', points: [
+                  'A suitable mineral ion named (e.g. nitrate, phosphate, calcium, magnesium)',
+                  'An appropriate function given (e.g. nitrate → amino acids/proteins/nucleic acids/chlorophyll; phosphate → nucleotides/DNA/RNA/ATP; calcium → middle lamella/calcium pectate; magnesium → chlorophyll)'
+                ], guidance: '2 marks.' },
+              '7(b)(i)': { type: 'points', points: ['There is no (significant) difference in the mean height of Galium verum (Lady\'s bedstraw) growing in meadows and on dunes'],
+                guidance: '1 mark.' },
+              '7(b)(ii)': { type: 'points', points: [
+                  'Use of random numbers to select the sampling site (e.g. a grid and coordinates for random sampling)',
+                  'Use of a (frame or point) quadrat to define the sampling area in the meadow and the dune',
+                  'Measurement of the height/length of Galium verum',
+                  'A large sample size or use of a running mean (e.g. at least 10 plants in each place)',
+                  'An attempt to control a relevant named variable (e.g. shading, slope, grazing, trampling, time of year, herbicide)'
+                ], guidance: '5 max. Ignore soil type / pH / temperature / time of day.' },
+              '7(b)(iii)': { type: 'points', points: [
+                  't-test (accept Mann–Whitney U test)',
+                  'Because it tests for the difference between the means of two sets of values'
+                ], guidance: '2 marks.' },
+              '8(a)': { type: 'points', points: [
+                  'Higher kinetic energy so more enzyme–substrate complexes form (more frequent collisions)',
+                  'At very high temperatures (above the optimum) the rate decreases due to denaturation',
+                  'Because of bond changes in the enzyme altering the shape of the active site, so the substrate no longer fits / is no longer complementary'
+                ], guidance: '3 max. Do not accept peptide bonds.' },
+              '8(b)(i)': { type: 'points', points: [
+                  'An appropriate named variable (e.g. volume of hydrogen peroxide) and a description of how it is controlled (e.g. measure the same volume with a measuring cylinder/syringe)',
+                  'An appropriate second named variable (e.g. concentration of hydrogen peroxide; temperature via a thermostatic water bath; pH via a buffer) and a description of how it is controlled'
+                ], guidance: '4 marks — two variables, each with a method of control.' },
+              '8(b)(ii)': { type: 'exact', points: ['≈ 0.33 cm³ s⁻¹ (or 19.8 cm³ min⁻¹)'],
+                guidance: '1 mark. Accept 0.28–0.35 cm³ s⁻¹ or 16.8–21.0 cm³ min⁻¹.' },
+              '8(b)(iii)': { type: 'points', points: [
+                  'The hydrogen peroxide / substrate is being converted to products / used up (becomes a limiting factor)',
+                  'So there is less substrate to collide with the enzyme (fewer enzyme–substrate complexes form)'
+                ], guidance: '2 marks.' },
+              '8(c)': { type: 'points', points: [
+                  'As more potato is added, more oxygen is produced because more enzyme / more active sites are present (rate increases)',
+                  'An increase in the volume of oxygen is expected as the surface area increases',
+                  'At a higher number of cubes the volume of oxygen / rate may level off as the substrate is no longer in excess / the hydrogen peroxide becomes limiting'
+                ], guidance: '3 max.' },
+              '9(a)': { type: 'points', points: [
+                  'Similarity: both tissues contain tubes/vessels; both have cell walls containing cellulose',
+                  'Difference: xylem vessels contain lignin but phloem does not (xylem has thicker walls / pits)',
+                  'Difference: in xylem the end walls break down completely (hollow tubes) but phloem has sieve plates',
+                  'Difference: phloem sieve tubes have companion cells / cytoplasm / organelles but xylem does not'
+                ], guidance: '3 max — must include at least one similarity and at least one difference.' },
+              '9(b)(i)': { type: 'exact', points: ['≈ 4.5 mm³ min⁻¹ (4.522 / 4.524)'],
+                guidance: '3 marks. 1 mark for manipulating units to mm; 1 mark for the volume of the cylinder (π × 0.15² × 64 ≈ 4.52 mm³ over 5 min); 1 mark for the rate per minute to 2 sig figs. Correct answer with no working gains 3 marks.' },
+              '9(b)(ii)': { type: 'points', points: [
+                  'Water uptake / transpiration is fastest in moving air in the light (slowest in still air in the dark)',
+                  'Water uptake / transpiration is very slow / stops / decreases in the dark as the stomata close',
+                  'It is faster in moving air than still air as the diffusion (water-potential) gradient is maintained / steeper',
+                  'A comment on the decline in rate as trials continue in darkness, with explanation',
+                  'The effect of light is greater than the effect of moving air'
+                ], guidance: '3 max. Accept converse.' },
+              '9(b)(iii)': { type: 'points', points: [
+                  'Cover one surface of the leaves with petroleum jelly / clear tape / nail varnish (to prevent transpiration)',
+                  'Measure the rate / distance moved in 5 min / volume of water taken up',
+                  'Ensure the covering is fully removed, or use another shoot with the same surface area',
+                  'Repeat for the other surface of the leaves and compare results',
+                  'Method of controlling / monitoring one named variable (e.g. temperature, humidity, light intensity, air movement)',
+                  'Repeats for each set-up and calculate the standard deviation / carry out a suitable stats test'
+                ], guidance: '4 max.' },
+              '10(a)': { type: 'points', points: [
+                  'The rate at which producers make organic material (by photosynthesis) / the rate at which light energy is incorporated into organic matter / the rate at which carbon is fixed into organic matter',
+                  'Suitable units of biomass per area per time or energy per area per time (e.g. kJ m⁻² yr⁻¹, g m⁻² yr⁻¹)'
+                ], guidance: '2 marks. Do not accept "energy produced".' },
+              '10(b)': { type: 'points', points: [
+                  'Energy passes to other animals (e.g. eaten by herbivores / primary consumers)',
+                  'Energy remains in the plant biomass (plants grow / are broken down by decomposers / remains in humus)',
+                  'Energy is released in respiration (lost as heat / used for active transport and other metabolic processes)'
+                ], guidance: '2 max.' },
+              '10(c)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Level 3', criteria: 'Comprehensive knowledge with a well-developed, sustained, logically structured discussion: up to 9 points linking the information to the effect on dung beetles, with at least two points from each of the three categories (Threats, Benefits, Wider points).' },
+                  { range: [4, 6], descriptor: 'Level 2', criteria: 'Adequate knowledge with some structure: up to 6 points from a minimum of two categories, occasionally supported by linkage to scientific ideas.' },
+                  { range: [1, 3], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments and limited linkage: up to 3 points from anywhere.' }
+                ],
+                indicative: {
+                  'Threats to dung beetles (T)': 'Fewer grazing animals → less dung / reduced food source; farmland used for building → reduced habitat; animals in sheds over winter → unreliable food; anti-parasitic drugs in faeces kill dung beetles; isolated populations → reduced genetic diversity / small gene pool / rapid allele-frequency change / more vulnerable to disease; many beetles feed on specific dung, so fewer grazing species reduces diversity.',
+                  'Benefits of dung beetles (B)': 'Remove dung → more grazing access / light for plants; less chance of parasites reinfecting cattle; bury dung so decomposers break it down (faster decomposition); decomposed dung increases soil mineral content; food for birds etc — loss could collapse food chains.',
+                  'Wider points / consequences for farming (W)': 'No statistics to prove/disprove the statement; changing practices may harm animals (left outside over winter), reduce economic viability or food production; climate change / a new predator / urbanisation may be responsible instead; anti-parasitic drugs kill other beneficial invertebrates / accumulate up the food chain; fertilisers and ploughing disrupt the dung-beetle life cycle; tunnelling aerates soil; beetles may aid seed dispersal; cattle contribute to global warming.'
+                },
+                guidance: '9 marks. Levels-of-response: mark holistically, best fit.' },
+              '11(a)(i)': { type: 'exact', points: ['500 (%)'],
+                guidance: '2 marks. (2400 − 400) ÷ 400 × 100 = 500% (read as ×10² per cm³: (24 − 4) ÷ 4 × 100). 1 mark for the difference. Correct answer with no working gains 2 marks.' },
+              '11(a)(ii)': { type: 'exact', points: ['384 (×10² per cm³) — accept 360–400'],
+                guidance: '1 mark.' },
+              '11(b)': { type: 'points', points: [
+                  'Use sterile / autoclaved equipment; flame the neck of the bottle / transfer loops',
+                  'Work next to a lit Bunsen burner; disinfect the bench / work surface; use a selective medium / antibiotics in the medium'
+                ], guidance: '2 marks — two relevant aseptic techniques.' },
+              '11(c)(i)': { type: 'exact', points: ['1.75 × 10³ per mm³ (accept 1.8 × 10³ / 2 × 10³)'],
+                guidance: '2 marks. 7 ÷ 0.004 = 1750 per mm³; 1 mark for the number of cells, 1 mark for standard form. Correct answer with no working gains 2 marks.' },
+              '11(c)(ii)': { type: 'points', points: [
+                  'Yeast cells may not be evenly distributed / the sample may not be representative (clumping or overlapping of cells)',
+                  'Yeast cells may be reproducing / budding / dividing (hard to know whether to count one or two; dead cells may be counted as well as live)',
+                  'Difficult to decide if cells are touching the sides of the counting square'
+                ], guidance: '2 max. Ignore unqualified "human error / miscounting".' },
+              '11(d)(i)': { type: 'exact', points: ['2.8'],
+                guidance: '3 marks. Σ(x − x̄)² = 31.2; ÷ (n − 1 = 4) = 7.8; √7.8 = 2.8. 1 mark each stage. Correct answer with no working gains 3 marks.' },
+              '11(d)(ii)': { type: 'points', points: [
+                  'The SDs for 0, 1.5, 3 and 4.5 hours are non-overlapping, so the conclusion is likely to be valid (for those times)',
+                  'The SD for 6 hours overlaps with the SD for 4.5 hours, so the conclusion is not likely to be valid then',
+                  'Description of a possible error (e.g. dilution, measurement, counting error; live and dead cells counted)',
+                  'The value of 43 may be an anomalous result (so the conclusion may not be valid)'
+                ], guidance: '3 max.' }
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
