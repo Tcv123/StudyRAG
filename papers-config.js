@@ -18796,6 +18796,249 @@ window.SUBJECTS = [
                 guidance: '4 marks. No more than one letter per response.' },
               '22(b)': { type: 'exact', points: ['RuBP / ribulose bisphosphate; GP / glycerate 3-phosphate; ATP; NADPH (reduced NADP); sucrose'],
                 guidance: '5 marks (1 per gap; ATP and NADPH in either order).' }
+            } },
+          { id: 'bio-ocra-h420-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Biological diversity', paperCode: 'H420/02', totalMarks: 100, durationMins: 135,
+            qpUrl: 'https://www.ocr.org.uk/Images/676884-question-paper-biological-diversity.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/677028-mark-scheme-biological-diversity.pdf',
+            qbqNote: 'All questions (100 marks) are wired up question-by-question with the official OCR mark scheme. Section A is 15 single-answer multiple-choice questions (answer with the letter A–D); Section B is structured questions. Questions 16(b)(iv) and 18(a)(ii) are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1, parts: [ { code: '1', prompt: "Section A (multiple choice). Which of the options is an extracellular process controlled by enzymes?\n\nA  Conversion of fibrinogen to fibrin during blood clotting\nB  Digestion of a pathogen inside a lysosome\nC  DNA replication\nD  Movement of vesicles from the Golgi apparatus to the cell membrane", marks: 1 } ] },
+              { number: 2, parts: [ { code: '2', prompt: "Which of the options is not an advantage of using immobilised enzymes rather than free enzymes?\n\nA  Enzymes can be reused.\nB  Enzymes remain active over a wider range of temperatures.\nC  Set-up costs are low.\nD  The product is not contaminated by enzymes.", marks: 1 } ] },
+              { number: 3, parts: [ { code: '3', prompt: "Which of the following changes of lifestyle is/are likely to reduce the spread of a disease that is transmitted by droplets of moisture?\n\n1  Clean drinking water\n2  Fewer people living together in the same house\n3  Housing with improved ventilation\n\nA  1, 2 and 3\nB  Only 1 and 2\nC  Only 2 and 3\nD  Only 1", marks: 1 } ] },
+              { number: 4, parts: [ { code: '4', prompt: "Which of the following could explain how ash dieback could have reached the UK from mainland Europe?\n\n1  Spores carried on the wind\n2  Young diseased trees imported from Europe and planted in the UK\n3  Contaminated soil from a previously infected crop\n\nA  1, 2 and 3\nB  Only 1 and 2\nC  Only 2 and 3\nD  Only 1", marks: 1 } ] },
+              { number: 5, parts: [ { code: '5', prompt: "What chemical is produced by plants in response to attack by pathogens?\n\nA  Amylopectin\nB  Amylose\nC  Callose\nD  Cellulose", marks: 1 } ] },
+              { number: 6, parts: [ { code: '6', prompt: "Which of the diseases is caused by a pathogen without mitochondria in its cells?\n\nA  Black sigatoka in bananas\nB  Late blight in potatoes\nC  Ring rot in potatoes\nD  Ringworm in cattle", marks: 1 } ] },
+              { number: 7, parts: [ { code: '7', prompt: "A student calculated that an area of ancient woodland had a Simpson's Index of Diversity of 0.85. Which interpretation is correct?\n\nA  Biodiversity is high.\nB  Biodiversity is low.\nC  Interspecific variation is high.\nD  Intraspecific variation is low.", marks: 1 } ] },
+              { number: 8, parts: [ { code: '8', prompt: "Which statement about the secondary structure of a protein is correct?\n\nA  β-pleated sheets contain β-glucose.\nB  Disulfide bonds are not involved.\nC  Each single polypeptide is either an α-helix or a β-pleated sheet.\nD  Hydrogen bonds form between the R-groups of different amino acids.", marks: 1 } ] },
+              { number: 9, parts: [ { code: '9', prompt: "Which option is not a property of cellulose?\n\nA  High tensile strength\nB  Inflexible\nC  Insoluble in water\nD  Resistant to digestion by enzymes", marks: 1 } ] },
+              { number: 10, parts: [ { code: '10', prompt: "Which option describes the structure and function of glycogen?\n\nA  1–6 glycosidic bonds are more accessible to enzymes than 1–4 glycosidic bonds so energy can be released more quickly.\nB  Bonds between β-glucose residues are easily broken by enzymes.\nC  Exposed OH groups mean glycogen is soluble.\nD  Short branches allow more energy storage in a small space.", marks: 1 } ] },
+              { number: 11, parts: [ { code: '11', prompt: "Which nitrogen cycle reaction is carried out by Nitrobacter?\n\nA  2NO₂⁻ + O₂ → 2NO₃⁻\nB  N₂ + 8H⁺ + 8e⁻ → 2NH₃ + H₂\nC  NH₂CONH₂ + H₂O → 2NH₃ + CO₂\nD  NO₃⁻ → NO₂⁻ → N₂O → N₂", marks: 1 } ] },
+              { number: 12, parts: [ { code: '12', prompt: "Which option shows the correct procedure for gel electrophoresis?\n\nA  Load the sample onto agarose gel → apply voltage for a set time → photograph the gel\nB  Load the sample onto agarose gel → apply voltage for a set time → stain the gel → photograph the gel\nC  Photograph the agarose gel → load the sample onto gel → apply voltage for a set time → stain the gel\nD  Stain the agarose gel → apply voltage for a set time → load the sample onto agarose gel → photograph the gel", marks: 1 } ] },
+              { number: 13, parts: [ { code: '13', prompt: "Which structure shows ATP? Select A, B, C or D (structures in the QP PDF).", marks: 1 } ] },
+              { number: 14, parts: [ { code: '14', prompt: "Which option is commonly used to determine evolutionary relationships?\n\nA  The amino acid sequence of collagen\nB  The amino acid sequence of messenger RNA\nC  The base sequence of cytochrome c\nD  The base sequence of ribosomal RNA", marks: 1 } ] },
+              { number: 15, parts: [ { code: '15', prompt: "Which statement about competition is not correct?\n\nA  Competition between two species can result in the extinction of the less well-adapted species.\nB  Competition occurs between individuals of the same species.\nC  Predators only compete within their own species.\nD  Species with overlapping niches will compete with one another.", marks: 1 } ] },
+              { number: 16,
+                scenario: "Section B. Haemoglobin is a globular protein. Fig. 16.1 shows its structure with a feature labelled X (see the QP PDF).",
+                parts: [
+                  { code: '16(a)(i)', prompt: "Name the bond present in the primary structure of a protein.", marks: 1 },
+                  { code: '16(a)(ii)', prompt: "Name the structure labelled X.", marks: 1 },
+                  { code: '16(a)(iii)', prompt: "State one feature, visible in Fig. 16.1, that shows that haemoglobin is a globular protein.", marks: 1 },
+                  { code: '16(b)(i)', preamble: "Sickle cell disease results from a substitution mutation. Fig. 16.2 shows part of the mRNA sequence for normal haemoglobin and the corresponding amino acids (ACU = amino acid 1, CCU = amino acid 2, GAG/GAG = glutamic acid, AAG = lysine); Fig. 16.3 is a representation of the genetic code (see the QP PDF).", prompt: "Use Fig. 16.3 to identify the missing amino acids 1 and 2 in Fig. 16.2.", marks: 2 },
+                  { code: '16(b)(ii)', prompt: "Outline the role of RNA polymerase in the production of the mRNA sequence in Fig. 16.2.", marks: 2 },
+                  { code: '16(b)(iii)', preamble: "In sickle cell disease, the haemoglobin contains valine in a position normally occupied by glutamic acid.", prompt: "State the base sequence on the anticodon of a tRNA molecule that brings valine to the ribosome.", marks: 1 },
+                  { code: '16(b)(iv)', preamble: "In sickle cell disease the mutated haemoglobin has a reduced ability to carry oxygen, but some gene mutations do not affect protein function.", prompt: "Use Fig. 16.3 and levels of protein structure to explain why some gene mutations do not affect the function of a protein.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true }
+                ] },
+              { number: 17,
+                scenario: "Students investigated the effect of time on bacterial population growth, dividing a culture into flasks incubated at 20 °C for up to 48 h and counting the total and viable bacteria every 4 h.",
+                parts: [
+                  { code: '17(a)(i)', prompt: "State why it is important that the technique used for culturing microorganisms be aseptic.", marks: 1 },
+                  { code: '17(a)(ii)', prompt: "List two precautions that should be taken when preparing a bacterial culture in order to ensure that the procedure is aseptic.", marks: 2 },
+                  { code: '17(b)(i)', preamble: "The students performed serial dilutions (0.1 cm³ into 9.9 cm³ water) before counting. They shook each flask before removing samples.", prompt: "Suggest why the students shook the flasks.", marks: 1 },
+                  { code: '17(b)(ii)', prompt: "Suggest one reason why bacterial cells are difficult to count using a light microscope.", marks: 1 },
+                  { code: '17(b)(iii)', preamble: "In one 0.01 cm³ sample of the final serial dilution the students counted 52 bacterial cells under the microscope.", prompt: "Describe the calculation steps the students would then need to make to estimate the total number of bacteria in the small flask.", marks: 3 },
+                  { code: '17(c)(i)', preamble: "The graph shows the total and viable counts against time (see the QP PDF).", prompt: "Explain, with reference to the graph, why the students used a logarithmic scale on the y-axis.", marks: 2 },
+                  { code: '17(c)(ii)', prompt: "Calculate the percentage decrease in the viable population between 40 h and 48 h. Give your answer to 3 significant figures.", marks: 3 },
+                  { code: '17(d)', prompt: "Explain, with reference to the graph, the decrease in the population of viable bacteria between 40 h and 48 h.", marks: 4 }
+                ] },
+              { number: 18,
+                scenario: "The Maasai Mara is a grassland ecosystem in east Africa with a large range of wildlife; the human population in the area is increasing. A graph shows the populations of some large mammals (wildebeest, gazelle, zebra, cattle, goat/sheep) between 1975 and 2007 (see the QP PDF).",
+                parts: [
+                  { code: '18(a)(i)', prompt: "Calculate the rate of change in wildebeest population between 1975 and 2007.", marks: 2 },
+                  { code: '18(a)(ii)', preamble: "The graph has been used to support the claim that rising human population in the Maasai Mara has a negative impact on biodiversity in the area.", prompt: "Use the evidence in the graph to evaluate this claim.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '18(b)', preamble: "Statements about biodiversity in the Maasai Mara: A — people visit to see animals such as lions, giraffes and rhinoceros; B — wild animals are sometimes killed for food by local people; C — large herbivores are the main food for large predators; D — part of the area is used for grazing livestock; E — soil erosion has occurred where trees have been removed; F — there is accommodation for over 7000 tourists.", prompt: "Fill in the table to show which of the statements (A–F) could be used as an example of the importance of each category: ecological; economic; aesthetic.", marks: 3 }
+                ] },
+              { number: 19,
+                scenario: "The Atlantic cod, Gadus morhua, is a large fish often eaten by humans. A table gives the body length distribution of cod caught in one survey (frequencies for length classes from 100 to 800 mm) — see the QP PDF.",
+                parts: [
+                  { code: '19(a)(i)', kind: 'diagram', prompt: "In the space provided, plot the results from the table as a suitable graph.", marks: 5 },
+                  { code: '19(a)(ii)', prompt: "Explain why your graph shows that at least some of the variation in body length in Atlantic cod is caused by environmental factors.", marks: 2 },
+                  { code: '19(b)(i)', preamble: "Fish farms are one potential solution to declining fish stocks.", prompt: "List three other strategies that governments could use to increase the sustainability of commercial fishing.", marks: 3 },
+                  { code: '19(b)(ii)', prompt: "Suggest why international agreements are particularly important in the case of sustainable fishing.", marks: 1 }
+                ] },
+              { number: 20,
+                scenario: "Students surveyed the abundance and distribution of plants on a ~20 m × 20 m area of grass, laying two tape measures at right angles, using a random number generator for coordinates and placing the left-hand corner of a quadrat at each point (method in the QP PDF).",
+                parts: [
+                  { code: '20(a)(i)', prompt: "The teacher said this method would not allow the students to measure the distribution of plant species. Suggest an improvement to the method that would allow the distribution of plants to be measured.", marks: 1 },
+                  { code: '20(a)(ii)', prompt: "Identify a limitation with step 3 of the students' method and explain why this limitation might affect the data collected.", marks: 2 },
+                  { code: '20(b)(i)', preamble: "The students' results give the mean number of individuals per quadrat for several species (see the QP PDF).", prompt: "Calculate the Simpson's Index of Diversity (D) for the students' data, using D = 1 − Σ(n/N)².", marks: 3 },
+                  { code: '20(b)(ii)', preamble: "The students recorded any grass species as 'grass'.", prompt: "Explain how the students' decision might have affected the calculated value for D.", marks: 2 },
+                  { code: '20(c)(i)', preamble: "On a field trip the students surveyed heather moorland using an ACFOR rating scale (Abundant, Common, Frequent, Occasional, Rare) instead of quadrats.", prompt: "Suggest one other advantage of using an ACFOR rating scale for the students' survey.", marks: 1 },
+                  { code: '20(c)(ii)', prompt: "Suggest one limitation of using an ACFOR rating scale, instead of quadrat sampling, to rate the abundance of plant species.", marks: 1 }
+                ] },
+              { number: 21,
+                scenario: "Microorganisms can be used to produce a variety of food products.",
+                parts: [
+                  { code: '21(a)', preamble: "Microorganisms have simple nutrient requirements, which helps reduce production costs.", prompt: "List two other advantages of using microorganisms in food production.", marks: 2 },
+                  { code: '21(b)(i)', preamble: "Yoghurt is produced from milk using Lactobacillus delbrueckii and Streptococcus thermophilus, which convert lactose into lactic acid. Lactic acid helps give yoghurt a longer shelf life than milk.", prompt: "Suggest how lactic acid helps to extend the shelf life of yoghurt.", marks: 2 },
+                  { code: '21(b)(ii)', preamble: "Both bacteria also break down the protein casein.", prompt: "Name the product of protein breakdown and describe the type of reaction that takes place.", marks: 2 },
+                  { code: '21(c)(i)', preamble: "A diagram shows a fermenter used for mycoprotein production, with glucose, ammonia and air inlets, a product outlet and a cooling system (see the QP PDF).", prompt: "Use the diagram to name the type of fermentation process used for mycoprotein production, and justify your answer.", marks: 1 },
+                  { code: '21(c)(ii)', prompt: "Suggest and explain why a cooling system is necessary.", marks: 2 },
+                  { code: '21(c)(iii)', prompt: "The air inlet provides the fungus with oxygen and ammonia. Suggest and explain why the fungus is provided with ammonia.", marks: 2 },
+                  { code: '21(d)(i)', preamble: "Protein can be detected using biuret reagent (blue to violet in the presence of protein).", prompt: "Outline how to use a colorimeter, along with biuret reagent, to determine the concentration of protein in a solution.", marks: 4 },
+                  { code: '21(d)(ii)', prompt: "State one alternative method for determining the concentration of protein in a solution.", marks: 1 }
+                ] },
+              { number: 22,
+                scenario: "Body plan is important in multicellular organisms.",
+                parts: [
+                  { code: '22(a)', prompt: "Complete the sentences about control of body plan: body plan is under genetic and … control; internal and external … can influence the expression of genes that regulate the cell cycle; such genes can promote or inhibit programmed cell death, known as …; during programmed cell death … digest the cell contents and the products are removed by … so they do not damage surrounding tissues.", marks: 5 },
+                  { code: '22(b)', prompt: "State the name of the type of gene responsible for controlling body plan in multicellular organisms.", marks: 1 }
+                ] }
+            ],
+            markSchemes: {
+              '1': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '2': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '3': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '4': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '5': { type: 'exact', points: ['C'], guidance: '1 mark. Callose is deposited in response to pathogen attack.' },
+              '6': { type: 'exact', points: ['C'], guidance: '1 mark. Ring rot is caused by a bacterium (no mitochondria).' },
+              '7': { type: 'exact', points: ['A'], guidance: '1 mark. A Simpson\'s index near 1 indicates high biodiversity.' },
+              '8': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '9': { type: 'exact', points: ['B'], guidance: '1 mark. Cellulose is actually flexible, so "inflexible" is not a property.' },
+              '10': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '11': { type: 'exact', points: ['A'], guidance: '1 mark. Nitrobacter oxidises nitrite to nitrate.' },
+              '12': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '13': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '14': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '15': { type: 'exact', points: ['C'], guidance: '1 mark. Predators also compete with other species, so this statement is not correct.' },
+              '16(a)(i)': { type: 'exact', points: ['Peptide (bond)'], guidance: '1 mark.' },
+              '16(a)(ii)': { type: 'exact', points: ['Haem (group)'], guidance: '1 mark. Ignore "prosthetic group / iron".' },
+              '16(a)(iii)': { type: 'points', points: ['Spherical / round / ball shape; no fibres; (contains) prosthetic groups'],
+                guidance: '1 mark. Ignore coiled / compact / tertiary structure.' },
+              '16(b)(i)': { type: 'exact', points: ['1 = threonine; 2 = proline'],
+                guidance: '2 marks.' },
+              '16(b)(ii)': { type: 'points', points: [
+                  'Joins / adds (RNA) nucleotides',
+                  'Forms phosphodiester bonds between nucleotides (the sugar–phosphate backbone)'
+                ], guidance: '2 marks. Ignore "bases" / "covalent bonds".' },
+              '16(b)(iii)': { type: 'exact', points: ['CAC (cytosine adenine cytosine)'],
+                guidance: '1 mark. Ignore CAU.' },
+              '16(b)(iv)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Explains in detail why mutations may leave a protein\'s function unchanged, using Fig. 16.3 AND referring to more than one level of protein structure. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Explains why mutations may leave a protein\'s function unchanged, using Fig. 16.3 AND referring to protein structure. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Suggests why mutations may leave a protein\'s function unchanged, using Fig. 16.3 OR referring to protein structure. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Mutations': 'The genetic code is degenerate; a point mutation might code for the same amino acid; use of an example from Fig. 16.3 to support.',
+                  'Protein structure and function': 'Haemoglobin function depends on the tertiary structure; a silent mutation leaves the primary structure unchanged, so the tertiary structure is unchanged; substitution of an amino acid with similar properties might leave the tertiary/secondary structure unchanged; a mutation might change part of the tertiary structure away from the functional part (e.g. away from an active site).'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '17(a)(i)': { type: 'points', points: ['To prevent contamination by / entry or growth of unwanted microorganisms'],
+                guidance: '1 max. Ignore "kill".' },
+              '17(a)(ii)': { type: 'points', points: [
+                  'Use sterile / autoclaved flask / pipette / equipment / broth',
+                  'Stopper the flask; disinfect/sterilise surfaces; work near a Bunsen flame (upward air flow); flame the neck of the flask; wash hands / wear gloves'
+                ], guidance: '2 max.' },
+              '17(b)(i)': { type: 'points', points: ['So the bacterial cells are evenly distributed (the sample is representative)'],
+                guidance: '1 mark.' },
+              '17(b)(ii)': { type: 'points', points: ['Bacterial cells are small (similar in size to the wavelength of visible light)'],
+                guidance: '1 mark. Ignore reference to the resolution of the microscope.' },
+              '17(b)(iii)': { type: 'points', points: [
+                  'Calculate the number in 1 cm³: multiply 52 by 100 (the sample was 0.01 cm³)',
+                  'Correct treatment of the serial dilutions: multiply by 100ⁿ (n = number of serial dilutions)',
+                  'Calculate the total in 50 cm³: multiply by 50'
+                ], guidance: '3 marks. Credit steps in any order; a correct single formula gains full marks.' },
+              '17(c)(i)': { type: 'points', points: [
+                  'The differences in numbers would be too big to represent on paper (so the scale fits the page)',
+                  'Two figures quoted in support (e.g. total count is 10 at 0 h but 1 × 10¹² at 40 h)'
+                ], guidance: '2 marks.' },
+              '17(c)(ii)': { type: 'exact', points: ['99.9 (%)'],
+                guidance: '3 marks. Read 1 × 10⁹ (40 h) and 1 × 10⁶ (48 h); (10⁹ − 10⁶) ÷ 10⁹ × 100 = 99.9%. 2 marks for 0.999.' },
+              '17(d)': { type: 'points', points: [
+                  'The reproduction rate is lower than the death rate (the death/decline phase)',
+                  'The total count / number of dead bacteria is much higher than the viable count',
+                  'Use of figures with units to support',
+                  'An increased / high level of (named) waste products (a fall in pH)',
+                  'Less oxygen / fewer (named) nutrients (limiting)',
+                  'Increased intraspecific competition; dead cells / lack of space reduce access to nutrients/oxygen'
+                ], guidance: '4 max.' },
+              '18(a)(i)': { type: 'exact', points: ['≈ −3400 animals per year'],
+                guidance: '2 marks. Change in wildebeest ÷ years (≈ −110 000 ÷ 32 ≈ −3438). Max 1 if no minus sign.' },
+              '18(a)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Evaluates the support, discussing aspects of the graph that support AND do not support the claim AND the validity of the data. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Describes evidence that supports the claim AND either describes evidence that does not support it OR questions the validity of the data. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Describes evidence that supports OR does not support the claim, or questions the validity of the data. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'In support': 'A decline in populations of wild species; the increase in domestic animals is associated with a decrease in wildebeest since 1995; figures used to support.',
+                  'Not in support': 'The number of species recorded on the graph is unchanged; before 1995 there was little change in domestic animals but a concurrent decrease in wild animals; little change in gazelle and zebra since 1995; figures used to support.',
+                  'Validity': 'The graph does not show the human population; only 3 species of wild animal are shown; Simpson\'s Index not calculated; correlation does not mean causation; no statistical test to assess the correlation.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '18(b)': { type: 'exact', points: ['Ecological: C; Economic: A, D and F; Aesthetic: A'],
+                guidance: '3 marks (1 per row). Do not credit if any incorrect letters are given; ignore B and E.' },
+              '19(a)(i)': { type: 'points', points: [
+                  'Horizontal axis labelled "body length (mm)" AND vertical axis labelled "frequency" / "frequency density"',
+                  'A linear scale on both axes AND at least 50% of the grid covered',
+                  'A histogram plotted with ruled lines and touching bars',
+                  'The first 5 bars plotted accurately (±0.5 square) and of equal width',
+                  'The 6th bar twice the width and height 23 (a frequency density of 0.23)'
+                ], guidance: '5 marks. Best assessed against your graph. Points 1 and 2 can also be gained from a line graph.' },
+              '19(a)(ii)': { type: 'points', points: [
+                  'The graph shows a bell-shaped / normal distribution (continuous variation)',
+                  'Continuous variation is (at least partly) caused by environmental factors'
+                ], guidance: '2 marks.' },
+              '19(b)(i)': { type: 'points', points: [
+                  'Quotas / limiting the mass of fish caught',
+                  'Use nets with a larger mesh',
+                  'Limit fishing to certain times of year / regulate fishing seasons',
+                  'Areas where fishing is banned',
+                  'Allow catching of certain (non-endangered) species only; strict enforcement (e.g. licences)'
+                ], guidance: '3 max.' },
+              '19(b)(ii)': { type: 'points', points: ['Fish swim between countries / much of the ocean does not belong to any one country / people catch fish in countries other than their own'],
+                guidance: '1 max.' },
+              '20(a)(i)': { type: 'points', points: ['Use systematic sampling / a transect (rather than random sampling)'],
+                guidance: '1 mark. Ignore "stratified".' },
+              '20(a)(ii)': { type: 'points', points: [
+                  'The quadrat placement could be inaccurate / biased — the position of the coordinates is difficult to judge',
+                  'The method does not specify the top-left or bottom-left corner, so placement is inconsistent'
+                ], guidance: '2 max.' },
+              '20(b)(i)': { type: 'exact', points: ['0.68 (0.6816)'],
+                guidance: '3 marks. Σ(n/N)² = 0.3184; D = 1 − 0.3184 = 0.68. ECF from a calculated Σ(n/N)².' },
+              '20(b)(ii)': { type: 'points', points: [
+                  'D / the calculated diversity index is lower (ORA)',
+                  'Σ(n/N)² is higher because (26/N)² for grass-as-one-species is bigger than the sum of (n/N)² for the individual grass species'
+                ], guidance: '2 max.' },
+              '20(c)(i)': { type: 'points', points: ['It is quicker / a wider area can be surveyed'],
+                guidance: '1 max. Ignore "easier".' },
+              '20(c)(ii)': { type: 'points', points: ['It is subjective / uses judgement (opinion), OR it misses small / non-flowering plants (overestimates the abundance of large plants)'],
+                guidance: '1 max. Ignore "qualitative / inaccurate / biased".' },
+              '21(a)': { type: 'points', points: [
+                  'No welfare / ethical issues (acceptable to vegetarians)',
+                  'Can be genetically modified relatively easily',
+                  'Rapid growth/reproduction; production easily changed to meet demand',
+                  'Non-seasonal / year-round production; take up little space; low costs (work at low temperatures)'
+                ], guidance: '2 max. Ignore nutrient requirements (given).' },
+              '21(b)(i)': { type: 'points', points: [
+                  'The pH is below the optimum / low pH',
+                  'For bacterial enzymes (denatures enzymes in microorganisms), so microorganisms cannot grow / spoil the yoghurt'
+                ], guidance: '2 marks.' },
+              '21(b)(ii)': { type: 'exact', points: ['Product: amino acid(s); Reaction: hydrolysis (water added)'],
+                guidance: '2 marks (1 product, 1 reaction).' },
+              '21(c)(i)': { type: 'points', points: ['Continuous, AND there is an outlet for the continuous collection of product (raw materials can be constantly added)'],
+                guidance: '1 mark.' },
+              '21(c)(ii)': { type: 'points', points: [
+                  'Temperature affects the rate of growth / enzyme activity (proteins could denature at higher temperatures)',
+                  '(Fungal) metabolic reactions generate heat (respiration is exothermic); to inhibit the growth of pathogenic bacteria'
+                ], guidance: '2 max.' },
+              '21(c)(iii)': { type: 'points', points: [
+                  'A source of nitrogen / amine / NH₂ groups',
+                  'For producing amino acids / polypeptides / proteins (or named nucleic acids)'
+                ], guidance: '2 marks. Ignore nitrate / NH₃.' },
+              '21(d)(i)': { type: 'points', points: [
+                  'Zero the colorimeter (with a blank)',
+                  'Use known concentrations of protein solution',
+                  'Plot a calibration curve (absorbance vs concentration)',
+                  'Measure the absorbance of the unknown sample and compare it with the calibration graph',
+                  'Use an appropriate filter for the (shade of) purple (e.g. a green/yellow filter)'
+                ], guidance: '4 max.' },
+              '21(d)(ii)': { type: 'points', points: ['A biosensor; or compare with a colour chart / chromatography / mass spectrometry / UV absorbance'],
+                guidance: '1 max.' },
+              '22(a)': { type: 'exact', points: ['environmental; stimuli (stress/factors); apoptosis; enzymes (proteases/caspases); phagocytes / phagocytosis (macrophages)'],
+                guidance: '5 marks (1 per gap). Ignore "lysosomes".' },
+              '22(b)': { type: 'exact', points: ['Hox / homeotic / homeobox (genes)'],
+                guidance: '1 mark. Ignore "regulatory".' }
             } }
         ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
