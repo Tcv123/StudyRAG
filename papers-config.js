@@ -15567,6 +15567,247 @@ window.SUBJECTS = [
                   'Because the mass/concentration of sucrose (substrate) is the same for both',
                   'The line levels off sooner for 7 g because the sucrose is used up more quickly (3.5 g takes about twice as long)'
                 ], guidance: '3 max. All points must be comparative; accept converse for 3.5 g.' }
+            } },
+          { id: 'bio-edxb-9bi0-2023-p1', year: 'June 2023', paperName: 'Paper 1 — Advanced Biochemistry, Microbiology and Genetics', paperCode: '9BI0/01', totalMarks: 90, durationMins: 105,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-01-que-20230608.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-01-rms-20230817.pdf',
+            qbqNote: 'All 9 questions (90 marks) are wired up question-by-question with the official Pearson mark scheme, including the multiple-choice parts (answer with the letter A–D) and the two asterisked (*) extended questions, which are graded on Edexcel\'s levels-of-response grid. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Plants take up inorganic ions from the soil, including calcium, phosphate and potassium. The uptake of potassium ions by seedlings was investigated over 30 hours: anaerobic for the first 15 hours and aerobic for the second 15 hours (graph).\n\n(See the graph in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Name the molecule that contains calcium ions in the cell walls of a plant.", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "How many of the following statements are correct?\n• phosphate ions are used to make DNA and RNA\n• phosphate ions are used in the structure of the cell membrane\n• the element potassium is part of a peptide bond\n\nA  none\nB  one only\nC  two only\nD  three", marks: 1 },
+                  { code: '1(b)', prompt: "Explain the changes in the concentration of potassium ions in the cells in the roots of the seedlings during this investigation.", marks: 4 }
+                ] },
+              { number: 2,
+                scenario: "Living organisms are divided into three domains: Archaea, Bacteria and Eukaryota. Archaea have no membrane-enclosed nucleus, no peptidoglycan in the cell wall, and 70S ribosomes.\n\n(See the AK enzyme table in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)', prompt: "Explain why these organisms (Archaea) have not been classified in either of the other two domains.", marks: 2 },
+                  { code: '2(b)(i)', preamble: "Some Archaea have the enzyme adenylate kinase (AK), similar to human AK1 (cytoplasm, substrate ATP) and AK3 (mitochondria, substrate GTP); their tertiary structures are very similar but not identical.", prompt: "Analyse the information to deduce why there are two AK enzymes (in humans).", marks: 3 },
+                  { code: '2(b)(ii)', preamble: "Some Archaea have only one type of AK enzyme that catalyses both reactions, with a tertiary structure different from AK1 and AK3.", prompt: "Explain why Archaea have a different type of AK enzyme.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "Xylem and phloem tissues transport molecules and ions through plants. Aphids can be used to study the transport of sugars in the phloem (a plant is exposed to radioactive CO₂ and aphids A–D feed on the phloem).\n\n(See the table and diagram in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)', prompt: "Give the meaning of the term tissue.", marks: 1 },
+                  { code: '3(b)', prompt: "For each statement, state whether it is true for both xylem and phloem, xylem only, phloem only, or neither: contain sieve plates; have cellulose in the cell walls; have mitochondria.", marks: 3 },
+                  { code: '3(c)(i)', prompt: "Which disaccharide is transported in the phloem?\n\nA  fructose\nB  glucose\nC  lactose\nD  sucrose", marks: 1 },
+                  { code: '3(c)(ii)', preamble: "The time between radioactivity appearing in aphid A and aphid D was 210 minutes; the distance between them was 50 cm.", prompt: "Calculate the rate of flow of phloem contents between these two aphids, in cm hour⁻¹.", marks: 1 },
+                  { code: '3(c)(iii)', prompt: "Describe how sugars are transported through the phloem.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "Influenza is an infectious disease caused by an RNA virus with an envelope.",
+                parts: [
+                  { code: '4(a)', prompt: "Which pair of viruses also have RNA and an envelope?\n\nA  Ebola and human immunodeficiency virus\nB  Ebola and tobacco mosaic virus\nC  human immunodeficiency virus and λ phage\nD  tobacco mosaic virus and λ phage", marks: 1 },
+                  { code: '4(b)', prompt: "Which of the following is the predominant method of transmission of the influenza virus?\n\nA  contaminated surfaces\nB  contaminated food\nC  respiratory droplets\nD  insect vectors", marks: 1 },
+                  { code: '4(c)', preamble: "Symptoms of influenza appear some time after a person is infected.", prompt: "Explain why there is a time delay between infection and the symptoms appearing.", marks: 3 },
+                  { code: '4(d)(i)', preamble: "In a survey, 77% of people who had taken antibiotics had taken them without a prescription.", prompt: "Calculate the ratio of the number of people who took antibiotics without a prescription to the number who took them with a prescription. Give your answer to two decimal places.", marks: 1 },
+                  { code: '4(d)(ii)', prompt: "Explain why antibiotics should not be taken by people with viral infections.", marks: 2 }
+                ] },
+              { number: 5,
+                scenario: "Some forms of infertility are due to the female producing antibodies to sperm cells; contraceptives are being developed using these antibodies. An agglutination assay recorded the time for 100% of sperm to agglutinate, and the number escaping, at different antibody concentrations.\n\n(See the graphs in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)', preamble: "Antibodies can be injected into a person to give immunity.", prompt: "Which type of immunity develops from the injection of antibodies?\n\nA  artificial active\nB  artificial passive\nC  natural active\nD  natural passive", marks: 1 },
+                  { code: '5(b)(i)', preamble: "Each test used 2 µl of a sperm cell suspension at 3.0 × 10⁶ cells per cm³ (1 µl = 10⁻⁶ dm³).", prompt: "Calculate the number of sperm cells used in each test.", marks: 1 },
+                  { code: '5(b)(ii)', prompt: "Analyse the data to comment on these results.", marks: 3 },
+                  { code: '5(b)(iii)', preamble: "Some agglutinated sperm were joined head to head, some head to flagellum and some flagellum to flagellum.", prompt: "Explain these observations.", marks: 3 },
+                  { code: '5(c)', prompt: "Explain why agglutination could take longer at low and at high concentrations of sperm cells.", marks: 2 }
+                ] },
+              { number: 6,
+                scenario: "Scientists have removed thylakoids from chloroplasts to make artificial chloroplasts. A diagram shows part of a chloroplast (outer membrane, stack of thylakoids/granum).\n\n(See the diagram in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)(i)', kind: 'diagram', prompt: "Draw and label three other structures found in a chloroplast.", marks: 3 },
+                  { code: '6(a)(ii)', preamble: "Chloroplasts can be 3 µm in length.", prompt: "Calculate the magnification of this diagram for a chloroplast that is 3 µm in length. Give your answer to two significant figures.", marks: 2 },
+                  { code: '6(b)', prompt: "Explain the importance of the thylakoid membranes in the light-dependent stage of photosynthesis.", marks: 4 },
+                  { code: '6(c)(i)', preamble: "The artificial chloroplasts consisted of thylakoids and enzymes involved in carbon fixation, formed into cell-sized droplets.", prompt: "Name the enzyme that fixes carbon dioxide in the light-independent stage of photosynthesis.", marks: 1 },
+                  { code: '6(c)(ii)', prompt: "Explain why it is necessary to keep the thylakoids and enzymes together within droplets.", marks: 2 }
+                ] },
+              { number: 7,
+                scenario: "In 2017, a new species of fish, the Yap hadal snailfish, was caught in the Yap Trench in the Pacific Ocean, closely related to the Mariana hadal snailfish.\n\n(See the Venn diagram and evolutionary diagram in the question paper PDF.)",
+                parts: [
+                  { code: '7(a)', preamble: "The fish was caught at a depth of 7000 m; hydrostatic pressure increases 100 kPa with every 10 m of depth.", prompt: "Calculate the hydrostatic pressure at 7000 m. Give your answer in standard form, in kPa.", marks: 1 },
+                  { code: '7(b)(i)', preamble: "The DNA contained 725 608 564 bases, of which 204 202 736 were adenines.", prompt: "Calculate the number of guanine bases in the DNA of this fish.", marks: 2 },
+                  { code: '7(b)(ii)', preamble: "A Venn diagram shows shared/unique gene families. The Yap hadal snailfish has 14 750 gene families in total, of which 12 658 are shared with the Mariana hadal snailfish.", prompt: "Calculate the percentage of gene families in the Yap hadal snailfish that are shared with the Mariana hadal snailfish. Give your answer to one decimal place.", marks: 2 },
+                  { code: '7(b)(iii)', prompt: "Analyse the diagram to describe the evolutionary relationship between these four species of fish.", marks: 3 },
+                  { code: '7(b)(iv)', preamble: "The Mariana hadal snailfish and the Yap hadal snailfish were caught in separate trenches hundreds of kilometres apart.", prompt: "Explain how these fish evolved to become separate species.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] },
+              { number: 8,
+                scenario: "Vaccines are being developed to stimulate the immune response to destroy cancer cells; some contain mRNA coding for specific antigens found on cancer cells, delivered into antigen-presenting cells such as macrophages.",
+                parts: [
+                  { code: '8(a)', prompt: "Describe how the delivery of mRNA into macrophages results in antigen presentation by these cells.", marks: 4 },
+                  { code: '8(b)', preamble: "Antigen presentation stimulates both the humoral and the cell-mediated immune response.", prompt: "Compare and contrast the humoral immune response with the cell-mediated immune response.", marks: 4 },
+                  { code: '8(c)', prompt: "Explain how the products of these responses result in the destruction of cancer cells.", marks: 4 }
+                ] },
+              { number: 9,
+                scenario: "The shortfin molly has adapted to survive in environments where hydrogen sulfide (H₂S), which can interrupt mitochondrial respiration by inactivating cytochrome c oxidase, is toxic to other organisms. The adaptation is thought to be due to epigenetic modification by DNA methylation, investigated over two generations.\n\n(See the four graphs in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)(i)', prompt: "Where is the electron transport chain located in mitochondria?\n\nA  inner membrane\nB  intermembrane space\nC  matrix\nD  outer membrane", marks: 1 },
+                  { code: '9(a)(ii)', prompt: "Explain why inactivating cytochrome c oxidase could be fatal.", marks: 3 },
+                  { code: '9(b)(i)', prompt: "State the meaning of the term epigenetic modification.", marks: 1 },
+                  { code: '9(b)(ii)', prompt: "Which of the following is another type of epigenetic modification?\n\nA  deletion mutation\nB  histone modification\nC  translation\nD  translocation", marks: 1 },
+                  { code: '9(c)', preamble: "Wild and laboratory-bred fish (first and second generation) from H₂S and non-H₂S environments were analysed for DNA-methylated regions (DMRs) at different CpG densities (Graphs 1–4).", prompt: "Discuss the results of this investigation.\n\n*Marks will be awarded for a logically structured answer.", marks: 6, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['(Calcium) pectate'],
+                guidance: '1 mark. Ignore middle lamella. Do not accept any other molecule.' },
+              '1(a)(ii)': { type: 'exact', points: ['C — two only'],
+                guidance: '1 mark. Statements 1 and 2 are correct; statement 3 is incorrect (potassium is not part of a peptide bond).' },
+              '1(b)': { type: 'points', points: [
+                  'Decrease in concentration due to K⁺ leaving / being used in synthesis; increase due to K⁺ being taken up',
+                  'Ions leave/decrease by (facilitated) diffusion (down a concentration gradient)',
+                  'Ions taken up by active transport (which cannot occur in anaerobic conditions)',
+                  '(In aerobic conditions) oxygen is available for aerobic respiration',
+                  'Aerobic respiration generates (more) ATP/energy'
+                ], guidance: '4 max.' },
+              '2(a)': { type: 'points', points: [
+                  'Not Bacteria, as Archaea do not have a peptidoglycan cell wall',
+                  'Not Eukaryota, as these organisms have 70S ribosomes / do not have a nucleus'
+                ], guidance: '2 marks. Do not accept if a wrong reason is also given.' },
+              '2(b)(i)': { type: 'points', points: [
+                  '(Two enzymes) because they are found in different locations (ATP in the cytoplasm, GTP in the mitochondria)',
+                  'pH is different / their substrates are found in different locations',
+                  '(Two enzymes) because their substrates are different (ATP vs GTP)',
+                  'Therefore their active sites will be a different shape/structure',
+                  'Similar structure (both AK enzymes/kinases) because both transfer phosphate / have similar roles'
+                ], guidance: '3 max.' },
+              '2(b)(ii)': { type: 'points', points: [
+                  'Archaea do not have mitochondria (only cytoplasm), so do not need two enzymes',
+                  'The pH/temperature of Archaea is different from a human\'s',
+                  'The Archaea enzyme needs to be able to bind/fit to both substrates (ATP and GTP)',
+                  'Different genetic code / base sequence (different primary structure)'
+                ], guidance: '2 max.' },
+              '3(a)': { type: 'points', points: ['A (group of similar) cells that perform a similar function'],
+                guidance: '1 mark.' },
+              '3(b)': { type: 'exact', points: ['Contain sieve plates: phloem only. Have cellulose in the cell walls: both. Have mitochondria: phloem only.'],
+                guidance: '3 marks (1 each).' },
+              '3(c)(i)': { type: 'exact', points: ['D — sucrose'], guidance: '1 mark.' },
+              '3(c)(ii)': { type: 'exact', points: ['14.3 cm hour⁻¹', '14'],
+                guidance: '1 mark. 50 cm ÷ (210 ÷ 60) h = 14.3 cm hour⁻¹.' },
+              '3(c)(iii)': { type: 'points', points: [
+                  'By mass flow / as a solution flowing through the phloem',
+                  'Sugars/sucrose loaded (actively transported) into the phloem in the leaf / at the source',
+                  'Sugars/sucrose move out into the sink tissues / roots / storage sites',
+                  'Description of how water enters the phloem at the source and leaves at the sink',
+                  'Contents move to a region of lower hydrostatic pressure'
+                ], guidance: '3 max. Do not accept glucose / cohesion / osmosis / diffusion.' },
+              '4(a)': { type: 'exact', points: ['A — Ebola and human immunodeficiency virus'], guidance: '1 mark.' },
+              '4(b)': { type: 'exact', points: ['C — respiratory droplets'], guidance: '1 mark.' },
+              '4(c)': { type: 'points', points: [
+                  '(It takes time) for enough cells to be damaged by the viruses to cause the symptoms (or for an immune response to occur) — there must be a reference to a time delay',
+                  'Time taken for attachment to / penetration of the host cell with the virus/RNA',
+                  'Time taken for synthesis of RNA and of proteins, and for assembly of new viruses'
+                ], guidance: '3 max. Do not accept DNA.' },
+              '4(d)(i)': { type: 'exact', points: ['1 : 0.30', '3.35 : 1'],
+                guidance: '1 mark. 77% without : 23% with = 1 : 0.30 (or 3.35 : 1).' },
+              '4(d)(ii)': { type: 'points', points: [
+                  'Antibiotics will not work as viruses are not living / not cells',
+                  '(Unnecessary usage) acts as a selection pressure increasing antibiotic resistance in bacteria'
+                ], guidance: '2 marks. Do not accept "viruses are dead".' },
+              '5(a)': { type: 'exact', points: ['B — artificial passive'], guidance: '1 mark.' },
+              '5(b)(i)': { type: 'exact', points: ['6 × 10³ (6000)'],
+                guidance: '1 mark. 2 µl = 2 × 10⁻⁶ dm³ = 2 × 10⁻³ cm³; × 3.0 × 10⁶ = 6000 cells.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  'Time taken to agglutinate decreases as antibody concentration increases (negative correlation)',
+                  'Comment about the lack of error bars in graph 1',
+                  'The antibody reduces/prevents sperm from escaping',
+                  'The concentration of antibody does not affect the percentage of sperm escaping',
+                  'Comment about overlapping error bars in graph 2'
+                ], guidance: '3 max.' },
+              '5(b)(iii)': { type: 'points', points: [
+                  'Because antibodies have (more than one identical) binding sites',
+                  'Antibodies are specific to (one) antigen',
+                  '(Head and flagellum joined) the same antigen/binding site is present on both the head and the flagellum',
+                  '(Only head or flagellum) different antigens/binding sites on the head and the flagellum',
+                  'There may be (three) different types of antibody present'
+                ], guidance: '3 max.' },
+              '5(c)': { type: 'points', points: [
+                  'At low concentrations the collisions between antibody and sperm take longer / are less frequent',
+                  'At high concentrations there may be insufficient antibodies (a lower antibody : sperm ratio)'
+                ], guidance: '2 marks.' },
+              '6(a)(i)': { type: 'points', points: [
+                  'A labelled drawing of three of: DNA (loop), stroma, starch grain, inner membrane/envelope, intermembrane space, intergranal lamellae, (70S) ribosome, lipid droplet'
+                ], guidance: '3 marks. Best assessed against your drawing. Do not accept linear DNA / "stoma".' },
+              '6(a)(ii)': { type: 'exact', points: ['≈ 27 000', '27000'],
+                guidance: '2 marks. Measured length (≈ 81 000 µm scaled, or 81 mm) ÷ 3 µm = 27 000. 1 mark for the working. Correct answer with no working gains both; too many sig figs = 1 mark.' },
+              '6(b)': { type: 'points', points: [
+                  '(Contain) photosystems / chlorophyll / pigments so that light can be absorbed',
+                  '(Contain) electron carrier proteins / an electron transport chain so reduced NADP is formed / H⁺ is pumped into the thylakoid',
+                  '(Contain) ATP synthase so that hydrogen ions can pass through',
+                  'The membranes enclose a space / form a barrier so hydrogen ions can accumulate',
+                  'The membranes are the site of photolysis / chemiosmosis / photophosphorylation'
+                ], guidance: '4 max.' },
+              '6(c)(i)': { type: 'exact', points: ['RUBISCO (ribulose bisphosphate carboxylase)'],
+                guidance: '1 mark.' },
+              '6(c)(ii)': { type: 'points', points: [
+                  'Keep the thylakoids and enzymes close together',
+                  'So that the products of the light-dependent stage are not lost / can collide with the enzymes more frequently',
+                  'Because the enzymes need to be in solution to function'
+                ], guidance: '2 max.' },
+              '7(a)': { type: 'exact', points: ['7 × 10⁴ kPa'],
+                guidance: '1 mark. 7000 ÷ 10 × 100 = 70 000 = 7 × 10⁴ kPa.' },
+              '7(b)(i)': { type: 'exact', points: ['158 601 546'],
+                guidance: '2 marks. A = T = 204 202 736, so G + C = 725 608 564 − 408 405 472 = 317 203 092; G = ÷ 2 = 158 601 546. Correct answer with no working gains both.' },
+              '7(b)(ii)': { type: 'exact', points: ['85.8%', '85.6%'],
+                guidance: '2 marks. 12 658 (shared) ÷ 14 750 (total) × 100 = 85.8%. 1 mark for incorrect rounding/too many dp. Allow ECF.' },
+              '7(b)(iii)': { type: 'points', points: [
+                  'All four fish share the same (original) common ancestor',
+                  'The Yap hadal and Mariana snailfish are most closely related; the zebrafish is the least closely related',
+                  'The Yap hadal and Mariana snailfish evolved from the same species / most recent common ancestor',
+                  'Their common ancestor shared a common ancestor with Tanaka\'s snailfish',
+                  'Zebrafish are the most distantly related as they diverged the longest time ago (~240 million years)'
+                ], guidance: '3 max.' },
+              '7(b)(iv)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A well-developed, sustained line of reasoning. Good understanding of at least two aspects plus two others mentioned (6 marks needs good understanding of three aspects with specific detail relating to the scenario).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Good understanding of one or two aspects plus one other aspect mentioned, with some structure.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Any relevant comment / some understanding of one aspect.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Isolation: the common ancestor lived in the same area; allopatric speciation as the fish are in different trenches separated by a geographical barrier (shallower water). Selection pressures: conditions differ (temperature, food, predators) → different selection pressures. Natural selection: mutations occur, some giving advantageous alleles / new phenotypes enabling survival; survivors reproduce and pass on alleles; allele frequencies change. Reduced gene flow: the populations no longer interbreed, becoming reproductively isolated → two separate species that cannot interbreed to produce fertile offspring. Epigenetics: inherited epigenetic modifications switch off different genes in the two species.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '8(a)': { type: 'points', points: [
+                  'The mRNA is used (translated) by the macrophage to synthesise a polypeptide/protein/antigen',
+                  'The polypeptide is transported in the rER / modified and packaged in the Golgi',
+                  'The antigen/protein is expressed on the surface of the macrophage / its membrane',
+                  'The antigen is attached to an MHC molecule',
+                  'Binding of the macrophage to T helper cells'
+                ], guidance: '4 max. Do not accept transcription. Ignore reverse transcription.' },
+              '8(b)': { type: 'points', points: [
+                  'Similarity: both are active forms of immunity / both involve T helper cells / cytokines / produce memory cells',
+                  'Difference: antigen presentation in the humoral response is by B cells (or antibody-bound B cells), whereas in cell-mediated it is by infected host cells',
+                  'Difference: B cells/plasma cells are involved in the humoral response but not the cell-mediated (T killer cells in the cell-mediated)',
+                  'Difference: antibodies are involved in the humoral response but not the cell-mediated',
+                  'Difference: the humoral response acts on cell-free antigens, the cell-mediated on host-infected cells'
+                ], guidance: '4 max. At least one similarity and one difference for full marks.' },
+              '8(c)': { type: 'points', points: [
+                  'Chemicals/enzymes/perforins (from T killer cells / the cell-mediated response) cause destruction of the cancer cells',
+                  'Antibodies (from the humoral response) bind to the cancer cells (opsonisation)',
+                  'Therefore macrophages/phagocytes engulf the cancer cells',
+                  'And enzymes break down / digest the cancer cells'
+                ], guidance: '4 max. Do not accept "antibodies destroy cancer cells".' },
+              '9(a)(i)': { type: 'exact', points: ['A — inner membrane'], guidance: '1 mark.' },
+              '9(a)(ii)': { type: 'points', points: [
+                  'The electron transport chain can no longer function (electrons cannot flow through the cytochromes)',
+                  'The protein carriers become reduced (cannot be oxidised; NAD/FAD cannot be regenerated)',
+                  'Therefore cells can only respire anaerobically (oxidative phosphorylation is prevented / no protons pumped / ATP synthase cannot make ATP)',
+                  'Therefore insufficient ATP/energy is generated to sustain the fish (e.g. for muscle contraction, active transport)'
+                ], guidance: '3 max.' },
+              '9(b)(i)': { type: 'points', points: ['A change in gene expression/phenotype without a change in the base sequence / DNA (switching genes on or off)'],
+                guidance: '1 mark. Do not accept mutation.' },
+              '9(b)(ii)': { type: 'exact', points: ['B — histone modification'], guidance: '1 mark.' },
+              '9(c)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Data discussed with application of ideas: comparisons described plus three or four discussion points, including at least one higher-level point (e.g. H₂S could be causing DNA methylation; methylation is a survival advantage as it allows the ETC to continue).' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Some data discussed, with one or two discussion points (e.g. methylation silences genes by preventing transcription; epigenetic modifications are inherited).' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Data commented on without discussion; any relevant comment or some comparison of the data.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Data: fish from H₂S environments have more DMRs than those from non-H₂S environments (both sexes); the number of DMRs rises to a CpG density of ~3 then falls; females have more DMRs than males; second-generation fish show similar patterns (DMRs retained even after H₂S is removed). Knowledge: DNA methylation adds a CH₃ to cytosine at CpG sites, silencing genes by preventing transcription; epigenetic modifications are inherited; no statistical analysis given. Higher-level: H₂S could be causing the methylation (but other water differences not controlled); methylation is a survival advantage as the interruption to mitochondrial respiration is reduced / the ETC can continue; lab conditions also appear to cause more DMRs in male fish.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
