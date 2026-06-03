@@ -17682,6 +17682,199 @@ window.SUBJECTS = [
                 guidance: '2 marks. Proportion in mitosis = 16/124 = 0.129; × 900 min = 116 min. 1 mark for 0.129/12.9% or for 1.93 h / 1 h 56 min.' },
               '21(d)': { type: 'exact', points: ['nucleus; cytokinesis; synthesis / S; DNA damage (breaks); second growth / G2; resting phase / G0'],
                 guidance: '6 marks (1 per gap, in order). Accept "cell division" for nucleus and "apoptosis" for the resting phase where appropriate.' }
+            } },
+          { id: 'bio-ocra-h420-2024-p3', year: 'June 2024', paperName: 'Paper 3 — Unified biology', paperCode: 'H420/03', totalMarks: 70, durationMins: 90,
+            qpUrl: 'https://www.ocr.org.uk/Images/726692-question-paper-unified-biology.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/726819-mark-scheme-unified-biology.pdf',
+            qbqNote: 'All 6 questions (70 marks) are wired up question-by-question with the official OCR mark scheme. This synoptic paper has no multiple-choice section — all questions are structured. Questions 3(c)(ii) and 5(a) are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, micrographs, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "Escherichia coli is a bacterium used widely in scientific experiments and biotechnology. A transmission electron micrograph shows an E. coli cell with a structure labelled A (see the QP PDF).",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Name the structure labelled A.", marks: 1 },
+                  { code: '1(a)(ii)', prompt: "Based on your knowledge, estimate the diameter of the E. coli cell. Give your answer in µm.", marks: 1 },
+                  { code: '1(b)(i)', preamble: "A student carries out a serial dilution of an E. coli culture: 10 cm³ is transferred from a 50 cm³ original culture, then four 10-fold serial dilutions (1 cm³ into 9 cm³ distilled water) are performed; 1 cm³ of the final culture is spread on an agar plate, incubated 24 h, and colonies counted (each assumed to develop from a single bacterium).", prompt: "Describe two improvements to the student's method, other than using different equipment, that could improve the accuracy of their population estimate.", marks: 2 },
+                  { code: '1(b)(ii)', preamble: "The student counts 22 colonies on the agar plate.", prompt: "Calculate the total number of E. coli cells in the original 50 cm³ culture. Give your answer in standard form.", marks: 3 },
+                  { code: '1(c)', preamble: "E. coli can be genetically modified to produce useful proteins.", prompt: "State two other reasons why E. coli is a suitable microorganism to use in biotechnology.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "Species biodiversity is affected by many factors.",
+                parts: [
+                  { code: '2(a)', preamble: "A student plans to sample plant species in an area (grassland, grassland with shrubs and bushes, separated by a river) by using a random number generator for 10 coordinates, sampling at each with a point quadrat and identification key to estimate percentage cover (see the QP PDF).", prompt: "Describe two improvements to the student's plan and explain why they would be improvements.", marks: 4 },
+                  { code: '2(b)(i)', preamble: "The IUCN Red List records species and their conservation status. A 2016 study of 3789 species classified each population by its greatest threat (habitat degradation; human exploitation; invasive species and disease; pollution; climate change). A graph shows the results for birds, reptiles and amphibians, mammals and fish (see the QP PDF).", prompt: "Outline the differences between the bird and mammal results shown in the graph.", marks: 2 },
+                  { code: '2(b)(ii)', prompt: "A student concluded that 'climate change is not a major threat to species biodiversity'. Evaluate this conclusion.", marks: 4 },
+                  { code: '2(c)', prompt: "Timber can be produced sustainably to maintain biodiversity in woodland. Describe one way in which timber can be produced sustainably.", marks: 1 }
+                ] },
+              { number: 3,
+                scenario: "Xylem vessels maintain the transpiration stream by transporting water up plant stems.",
+                parts: [
+                  { code: '3(a)', prompt: "Complete the sentences using the most appropriate words: meristem cells are located between xylem and … tissues in plants; cells of either vascular tissue can be produced when meristem cells divide and … .", marks: 2 },
+                  { code: '3(b)(i)', preamble: "A pair of students dissect the vascular tissue of the primrose plant, Primula vulgaris.", prompt: "State and explain one safety precaution that the students should take when dissecting the vascular tissue.", marks: 2 },
+                  { code: '3(b)(ii)', preamble: "A light micrograph of a transverse section through a P. vulgaris stem (×90) shows a vascular bundle whose diameter is marked by line V (see the QP PDF).", prompt: "Calculate the actual diameter of the vascular bundle labelled V. Give your answer in mm to 2 significant figures.", marks: 2 },
+                  { code: '3(c)(i)', preamble: "A scientist investigates the effect of temperature on transpiration in P. vulgaris using a potometer. In a preliminary trial at 20 °C the air bubble moves 18 mm in 30 minutes; the capillary tubing diameter is 1 mm. Volume of cylinder = πr²l.", prompt: "Calculate the rate of transpiration, in mm³ h⁻¹, during this preliminary trial.", marks: 2 },
+                  { code: '3(c)(ii)', preamble: "Details of how to set up and use a potometer are not needed. In your answer you should name an appropriate statistical test that could be used to analyse the data.", prompt: "Describe how the scientist could use the potometer to collect the data needed to assess the effect of temperature on the rate of transpiration in P. vulgaris.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '3(d)', preamble: "Erica cinerea (bell heather) has evolved adaptations to limit water loss; a drawing shows a leaf with an air space and epidermis labelled (see the QP PDF).", prompt: "State and explain how the leaf of E. cinerea is adapted to limit water loss by transpiration.", marks: 2 }
+                ] },
+              { number: 4,
+                scenario: "Respiration allows cells to carry out processes such as DNA replication.",
+                parts: [
+                  { code: '4(a)', kind: 'diagram', preamble: "A diagram shows a molecule of deoxyguanosine (deoxyribose bonded to guanine) — see the QP PDF.", prompt: "Draw two circles on the diagram around the two parts of the molecule that bond to phosphate when phosphodiester bonds form in DNA.", marks: 2 },
+                  { code: '4(b)', prompt: "Outline why cellular respiration is necessary in cells that are carrying out DNA replication.", marks: 1 },
+                  { code: '4(c)(i)', preamble: "Chemiosmosis is thought to occur in respiration and photosynthesis. Evidence for chemiosmosis during photosynthesis: isolate chloroplasts, place them in an acidic solution in the dark, shine light on them and measure the final pH.", prompt: "Explain what is likely to happen to the pH of the solution when light is shone on the chloroplasts.", marks: 2 },
+                  { code: '4(c)(ii)', preamble: "Jagendorf broke open chloroplasts to expose thylakoids (in the dark), placed them in solution 1 (pH 4), then transferred some to solution 2 (pH 4, with ADP and Pi) and others to solution 3 (pH 8, with ADP and Pi). ATP production was measured in solutions 2 and 3.", prompt: "Explain what you would expect to observe in solution 2 and solution 3 after the transfer of the thylakoids.", marks: 2 }
+                ] },
+              { number: 5,
+                scenario: "Type 1 diabetes mellitus is characterised by a lack of insulin production. Type 2 diabetes mellitus can involve reduced production of insulin and a decreased response to insulin.",
+                parts: [
+                  { code: '5(a)', preamble: "Scientists analysed diabetes in identical twins (same DNA) and non-identical twins (~50% shared DNA), using 614 pairs (109 type 1, 505 type 2). The table gives the percentage probability of both twins having the disease: identical twins — type 1 23%, type 2 34%; non-identical twins — type 1 5%, type 2 16%.", prompt: "Explain what conclusions can be drawn from the data in the table about the influence of the environment and genetics on the probability of developing diabetes.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '5(b)', preamble: "A photomicrograph of pancreatic tissue has structures A, B and C labelled (see the QP PDF).", prompt: "Identify the structures labelled A, B and C.", marks: 3 },
+                  { code: '5(c)', kind: 'diagram', preamble: "A graph shows the rate of insulin secretion after consuming glucose for a person with type 2 diabetes; a table gives values for a person with normal glucose tolerance (0 min: 60; 40: 460; 80: 365; 120: 299; 160: 190 pmol min⁻¹ m⁻²).", prompt: "Plot the data from the table on the graph and draw a line of best fit.", marks: 2 },
+                  { code: '5(d)', prompt: "Complete the table by stating the level of protein structure (primary, secondary, tertiary or quaternary) to which each statement about insulin relates: (1) two polypeptide chains A and B linked by disulfide bonds; (2) chain A is a sequence of 21 amino acids; (3) chain A contains a disulfide bond between cysteines; (4) chain B contains both α-helix and β-pleated sheet structures.", marks: 2 },
+                  { code: '5(e)(i)', prompt: "State how a plasmid containing the gene coding for insulin can be transferred into a bacterial cell.", marks: 1 },
+                  { code: '5(e)(ii)', prompt: "Suggest how bacterial cells can be screened to check if they have taken up a recombinant plasmid.", marks: 1 },
+                  { code: '5(f)(i)', preamble: "In the future, type 1 diabetes could be treated by giving patients new pancreatic β-cells produced in a laboratory from stem cells.", prompt: "State a feature of stem cells that allows them to be used to produce pancreatic β-cells.", marks: 1 },
+                  { code: '5(f)(ii)', prompt: "Future treatments may use stem cells from a patient's own body. Explain why patients receiving these new β-cells would still need to be given immunosuppressant drugs.", marks: 1 }
+                ] },
+              { number: 6,
+                scenario: "Plants can be cloned and propagated in horticulture and agriculture.",
+                parts: [
+                  { code: '6(a)', prompt: "Describe how artificial clones of plants are produced using micropropagation.", marks: 4 },
+                  { code: '6(b)', preamble: "Potato plants can be naturally cloned from tubers and can be infected by many diseases.", prompt: "State one disease that can infect potato plants and state the type of pathogen that causes the disease.", marks: 2 },
+                  { code: '6(c)(i)', preamble: "A diagram shows a lily plant with an underground structure X and a peppermint plant with a horizontal structure Y (see the QP PDF).", prompt: "State the name of structure X and outline how a gardener could produce many cloned plants from structure X.", marks: 2 },
+                  { code: '6(c)(ii)', prompt: "State the name of structure Y and describe the process by which a new plant can form naturally from structure Y.", marks: 2 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'exact', points: ['Flagellum (flagella)'],
+                guidance: '1 mark. Accept phonetic spelling. Do not allow undulipodium (eukaryotic only).' },
+              '1(a)(ii)': { type: 'exact', points: ['0.1–10 µm (any single value in range)'],
+                guidance: '1 mark (from knowledge of prokaryote size).' },
+              '1(b)(i)': { type: 'points', points: [
+                  'Mix (stir/shake) each dilution before plating',
+                  'Replace micropipette tips between each transfer (sterilise between dilutions)',
+                  'Repeat the plating (at least three times) and calculate a mean',
+                  'Take a photo of the final plate so colonies can be counted',
+                  'Reduce the number of dilutions/transfers (to reduce random error)'
+                ], guidance: '2 max. Ignore "repeat the experiment" and general aseptic technique.' },
+              '1(b)(ii)': { type: 'exact', points: ['1.1 × 10⁷'],
+                guidance: '3 marks. 22 × 10⁵ = 2 200 000; × 5 = 11 000 000; standard form = 1.1 × 10⁷. ECF within working for max 2; 11 000 000 alone = 2 marks.' },
+              '1(c)': { type: 'points', points: [
+                  'Short life cycle / fast growth rate (reproduces quickly)',
+                  'Simple nutrient requirements',
+                  'Can be maintained at (relatively) low temperatures',
+                  'Few ethical concerns / no animal welfare issues',
+                  'A qualified reason why it costs less (e.g. uses cheap substrates / little space)'
+                ], guidance: '2 max.' },
+              '2(a)': { type: 'points', points: [
+                  'Larger sample size (e.g. more than 10 coordinates) → more representative of the populations/area',
+                  'Stratified sampling (divide into zones, samples proportional to area) → avoids missing species in different areas / either side of the river',
+                  'Use a frame quadrat rather than a point quadrat → less likely to miss species / easier for tall plants',
+                  'Use transects from bank into grassland → more representative / less likely to miss species along the environmental gradient',
+                  'Sample at different times of the year → less likely to miss species growing at different times'
+                ], guidance: '4 max — two improvements each with a linked explanation. The explanation mark only if linked to a correct improvement.' },
+              '2(b)(i)': { type: 'points', points: [
+                  'Mammals have a greater threat (%) from human exploitation than birds (e.g. 37% vs 16%)',
+                  'Mammals have a smaller threat (%) from climate change / pollution than birds',
+                  'Mammals have a similar / slightly lower threat (%) from habitat degradation / invasive species (ORA for birds)'
+                ], guidance: '2 max.' },
+              '2(b)(ii)': { type: 'points', points: [
+                  'Supports: climate change is the lowest % threat for reptiles/amphibians and mammals',
+                  'Supports: it threatens fewer than 11–13% of species in all groups',
+                  'Supports: 3789 species is a large enough sample to be representative',
+                  'Does not support: only a small proportion of all species was assessed',
+                  'Does not support: the sample was not random (species chosen from the Red List)',
+                  'Does not support: threat categories overlap / species threatened by more than one factor',
+                  'Does not support: the effects of climate change are yet to be fully felt / will increase in future (data is 8 years old); no statistical analysis; only vertebrates/no plants'
+                ], guidance: '4 max (the "does not support" side capped at 3).' },
+              '2(c)': { type: 'points', points: ['Rotate the trees harvested (rotational felling); (rotational) coppicing / pollarding; replant trees rather than rely on natural regrowth; selective / strip felling'],
+                guidance: '1 max (first answer). Ignore clear felling and afforestation.' },
+              '3(a)': { type: 'exact', points: ['phloem; differentiate (specialise)'],
+                guidance: '2 marks. Do not allow "phloem sieve tubes".' },
+              '3(b)(i)': { type: 'points', points: [
+                  'A safety precaution, e.g. cut away from the body / only one person works on the specimen at a time / use a sharp scalpel / wear goggles / wash hands or wear gloves',
+                  'A correctly linked explanation, e.g. to avoid cuts / to prevent sap entering the eye / to avoid infection or allergic reaction'
+                ], guidance: '2 max. Explanation mark only if linked to a relevant precaution.' },
+              '3(b)(ii)': { type: 'exact', points: ['0.17 (mm)'],
+                guidance: '2 marks. Measured ≈15 mm ÷ 90 = 0.166; to 2 sig figs = 0.17 mm. 1 mark if not to 2 sig figs; ECF for an incorrect measurement ÷ 90.' },
+              '3(c)(i)': { type: 'exact', points: ['≈ 28 (28.3) mm³ h⁻¹'],
+                guidance: '2 marks. r = 0.5 mm; π × 0.5² × 18 = 14.14 mm³ in 30 min; × 2 = 28.3 mm³ h⁻¹. 1 mark for the 30-min volume or an unrounded answer; ECF (110/113) if diameter used instead of radius.' },
+              '3(c)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Detailed description of the data to be collected AND control variables AND an appropriate statistical test. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Detailed description of the data to be collected AND (control variables OR an appropriate statistical test). Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Description of the data to be collected OR control variables OR an appropriate statistical test. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Data collected': 'An appropriate range of temperatures (e.g. 10–45 °C); detail of how temperature is regulated (climate-controlled room / thermostatic chamber — not a water bath); at least three repeats per temperature; identify anomalies; calculate means / standard deviation.',
+                  'Validity / controls': 'Area of leaf; humidity; light intensity; same plant; air movement; time — with details of how to control each.',
+                  'Statistical test': "Spearman's rank / Pearson correlation coefficient (if comparing 5 or more temperatures); t-test or Mann–Whitney U (if comparing two temperatures)."
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '3(d)': { type: 'points', points: [
+                  'Adaptation: stomata in pits / sunken; hairs; or curled/rolled leaves',
+                  'Linked explanation: reduces air movement / increases humidity around the stomata (reduces the water-potential or water-vapour gradient), OR (for rolled leaves) reduces the exposed surface area',
+                  'OR a thick waxy cuticle — impermeable to water'
+                ], guidance: '2 max (adaptation + linked explanation; explanation only if adaptation given).' },
+              '4(a)': { type: 'points', points: ['One circle around the 3\'-OH group and one circle around the 5\'-CH₂OH (the two parts that bond to phosphate)'],
+                guidance: '2 marks (1 per correct circle). Best assessed against your annotated diagram. −1 for each extra incorrect circle.' },
+              '4(b)': { type: 'points', points: ['(Respiration produces) ATP to provide chemical energy, as DNA replication is an active process (e.g. to form phosphodiester bonds)'],
+                guidance: '1 mark. Do not allow "produces energy".' },
+              '4(c)(i)': { type: 'points', points: [
+                  'The pH would increase (become less acidic / more alkaline)',
+                  'Because protons (H⁺) move into the chloroplasts by diffusion / down a concentration gradient (to be pumped into the thylakoid lumen)'
+                ], guidance: '2 max. If pH decreases = 0. Do not allow "H/hydrogen" for protons.' },
+              '4(c)(ii)': { type: 'points', points: [
+                  'ATP is produced in solution 3 (pH 8) but not solution 2 (pH 4)',
+                  'Because there is a proton gradient between the thylakoid lumen and solution 3, so protons diffuse through ATP synthase (no gradient exists with solution 2)'
+                ], guidance: '2 marks. ATP higher in 2, or higher in 3-only-reasoning reversed = 0.' },
+              '5(a)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Appropriate conclusions AND accompanying explanations. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'An appropriate conclusion AND an accompanying explanation. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'An appropriate conclusion. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Both genetics and environment': 'Both types of diabetes are affected by environment and genetics — genetics alone would give 100% concordance in identical twins and ~50% in non-identical twins.',
+                  'Environment dominant': 'Environment appears to have more influence than genetics for both types, because all four percentages are low (well below 50%/25%).',
+                  'Type 2 vs type 1': 'The genetic component of type 2 may be higher than type 1, because percentages are higher for type 2 in both identical and non-identical twins.',
+                  'Limitations': 'Conclusions are limited — different numbers of pairs in each group (many more type 2), small overall sample, no statistical analysis, assumption that twins shared the same environment/diet/age/sex.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '5(b)': { type: 'exact', points: ['A = islet of Langerhans; B = (branch of pancreatic) duct; C = (named) blood vessel'],
+                guidance: '3 marks. C: accept artery/arteriole/vein/venule/erythrocyte; do not allow capillary or an incorrectly named vessel.' },
+              '5(c)': { type: 'points', points: [
+                  'All 5 data points plotted correctly (± half a square)',
+                  'A smooth line/curve of best fit from point 1 through to point 5'
+                ], guidance: '2 marks. Best assessed against your plot. Do not allow ruled lines between points.' },
+              '5(d)': { type: 'exact', points: ['quaternary; primary; tertiary; secondary'],
+                guidance: '2 marks. 4 correct = 2; 2–3 correct = 1; 1 correct = 0.' },
+              '5(e)(i)': { type: 'points', points: ['Culture heating / heat shock / electroporation (electric shock); via a virus vector; transfection; add calcium ions and heat'],
+                guidance: '1 mark. Ignore Agrobacterium tumefaciens / electrofusion / "vector" unqualified.' },
+              '5(e)(ii)': { type: 'points', points: ['Use of marker / reporter genes added to the plasmid (e.g. genes for antibiotic resistance / fluorescence / nutrient deficiency); or PCR / DNA sequencing / electrophoresis'],
+                guidance: '1 max. Do not allow "add a fluorescent tag/dye".' },
+              '5(f)(i)': { type: 'points', points: ['They can differentiate into specialised/specific cells (e.g. pancreatic β-cells); pluripotent / multipotent'],
+                guidance: '1 mark. Ignore "undifferentiated" unqualified and "totipotent".' },
+              '5(f)(ii)': { type: 'points', points: ['Type 1 diabetes is an autoimmune disease, so the immune response against β-cells would still occur (the body would attack the new β-cells as if foreign)'],
+                guidance: '1 mark. Ignore "to stop the immune system attacking the cells" alone.' },
+              '6(a)': { type: 'points', points: [
+                  'Remove meristem tissue from a shoot/root tip / leaf / bud (the explant)',
+                  'Use aseptic techniques (e.g. sterile scalpel, work near a Bunsen flame, sterilise with bleach/ethanol)',
+                  'Place the explant in (sterile) culture medium with named nutrients',
+                  'To allow the cells to divide / form a callus',
+                  'Divide the callus into smaller clumps of cells',
+                  'Use (named) hormones / plant growth substances (e.g. auxins, cytokinins) to encourage differentiation / shoot and root growth',
+                  'Transfer the plantlet to soil / compost'
+                ], guidance: '4 max.' },
+              '6(b)': { type: 'exact', points: ['Disease + matched pathogen, e.g. ring rot — bacteria; (potato/late) blight — protoctista; (potato) leaf roll/mosaic — virus; powdery mildew/dry rot — fungus'],
+                guidance: '2 marks. The pathogen mark is only awarded when correctly matched to the disease.' },
+              '6(c)(i)': { type: 'points', points: [
+                  'Structure X is a bulb (accept corm / tuber)',
+                  'Split / divide / cut the bulb (remove bulb scales) and plant / repot each piece'
+                ], guidance: '2 marks. Ignore rhizomes.' },
+              '6(c)(ii)': { type: 'points', points: [
+                  'Structure Y is a runner (stolon / horizontal stem)',
+                  'Roots / shoots form (away from the parent plant) and the runner between the plantlet and parent dies / breaks down'
+                ], guidance: '2 marks. Ignore "by asexual reproduction / vegetative propagation" alone as a description.' }
             } }
         ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
