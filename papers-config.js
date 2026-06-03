@@ -14508,6 +14508,262 @@ window.SUBJECTS = [
                   'Joined by a glycosidic bond',
                   'Through a condensation reaction (removal of a water molecule)'
                 ], guidance: '2 max. Ignore alpha/beta.' }
+            } },
+          { id: 'bio-edxa-9bn0-2022-p3', year: 'June 2022', paperName: 'Paper 3 — General and Practical Applications in Biology', paperCode: '9BN0/03', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-03-que-20220625.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-03-rms-20220818.pdf',
+            qbqNote: 'All 8 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme. Question 7 is the 9-mark asterisked (*) levels-of-response question, and Question 8 (30 marks) is based on the pre-released scientific article on cancer and evolution (adapted from Scientific American) — the article and all figures/graphs/tables are in the question paper PDF; open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "When oat seeds germinate, they produce roots and a coleoptile, which can bend towards light. The effect of shading the tip was investigated: coleoptiles were exposed to light from one side with 0, 5 or 10 mm of the tip shaded, and the curvature was measured after 2 and 3 hours (graph).\n\n(See the diagrams and graphs in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)(i)', prompt: "Describe two conclusions that can be drawn from the results of this investigation.", marks: 2 },
+                  { code: '1(a)(ii)', preamble: "The results were analysed using the Student's t-test, with a p value of 0.05 used to interpret the results.", prompt: "Explain what a p value of 0.05 means.", marks: 2 },
+                  { code: '1(b)(i)', preamble: "In a second investigation, cells from below the tip were soaked in buffer alone or buffer with IAA for 60 minutes and their lengths measured every six minutes (graph).", prompt: "Give one abiotic factor, other than pH, that would need to be controlled in this investigation.", marks: 1 },
+                  { code: '1(b)(ii)', prompt: "Calculate the difference in the rates of change in cell length from 30 to 60 minutes, in the presence of IAA and in the absence of IAA.", marks: 2 },
+                  { code: '1(c)', prompt: "Explain how the evidence from these investigations indicates that plant hormones are involved in the phototropic response of oat coleoptiles.", marks: 3 }
+                ] },
+              { number: 2,
+                scenario: "A diagram shows an RNA virus that causes influenza, with a capsid covered in 'spike' proteins. The diameter of the capsid is 240 nm.\n\n(See the diagrams in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)', prompt: "Explain why antibiotics cannot be used to treat influenza.", marks: 2 },
+                  { code: '2(b)', preamble: "Each spike protein occupies a triangular area with h = 22.4 nm and b = 20.0 nm. Surface area of a sphere = 4πr²; area of a triangle = ½ h × b.", prompt: "Calculate the maximum number of spike proteins that can be packed on the surface of one virus particle.", marks: 3 },
+                  { code: '2(c)', preamble: "Changes in the RNA of influenza produce new strains with an altered spike protein.", prompt: "Devise a procedure to determine the similarity of the strains of influenza in saliva samples collected from different people.", marks: 4 }
+                ] },
+              { number: 3,
+                scenario: "Eukaryotic cells contain membrane-bound organelles. An electron-microscope photograph shows an organelle with a component labelled X.\n\n(See the photograph and succession graph in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)(i)', kind: 'diagram', prompt: "Label a part of this organelle (a chloroplast) where carbon fixation occurs.", marks: 1 },
+                  { code: '3(a)(ii)', prompt: "Give the name of the component labelled X.", marks: 1 },
+                  { code: '3(a)(iii)', prompt: "Describe how the structure of a membrane in the part labelled X is related to its function.", marks: 3 },
+                  { code: '3(a)(iv)', prompt: "Describe how GP is produced by carbon fixation in this organelle.", marks: 2 },
+                  { code: '3(b)(i)', kind: 'diagram', preamble: "A graph shows changes in biomass, gross primary productivity and respiration during succession from grassland to mature forest.", prompt: "Add shading to the graph to show the area that represents net primary productivity.", marks: 1 },
+                  { code: '3(b)(ii)', prompt: "Describe what is meant by the term succession.", marks: 2 },
+                  { code: '3(b)(iii)', prompt: "Deduce the effect of succession on the level of carbon dioxide in the atmosphere.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "The leaves of lantana (Lantana camara) contain chemicals with antimicrobial properties. Extracts prepared with three solvents (A, B, C) were compared. The mean mass of extract from 5 g of powdered leaf was: A 501.3 µg, B 721.3 µg, C 245.6 µg.\n\n(See the antimicrobial table in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)', preamble: "The mass of dried and powdered lantana leaves is 10.5% of the mass of fresh leaves.", prompt: "Calculate the mass of fresh leaves needed to produce 1 mg of extract using solvent A. Give your answer to three significant figures.", marks: 2 },
+                  { code: '4(b)(i)', preamble: "A table shows the mean diameter of the zone of inhibition against Klebsiella pneumoniae (Gram negative) and Micrococcus luteus (Gram positive) for extracts A and B at 5.0 and 10.0 µg.", prompt: "Deduce the effect of using different solvents on the effectiveness of the extracts against these two bacteria.", marks: 2 },
+                  { code: '4(b)(ii)', prompt: "Devise a method that could be used to collect the data in the table.", marks: 4 }
+                ] },
+              { number: 5,
+                scenario: "Habituation is a learning response observed in many animals. The 'light-off jump' assay studies habituation in fruit flies: when the light is turned off the flies jump, and the response strength is measured by the noise made. Flies with reduced expression of synapsin (a protein that inhibits the binding of presynaptic vesicles to the cell membrane) were compared with a control group (graph).\n\n(See the graph in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)', prompt: "Explain the importance of the habituation response in an animal.", marks: 2 },
+                  { code: '5(b)(i)', prompt: "State two variables associated with the light-off stimulus that need to be controlled in this experiment.", marks: 2 },
+                  { code: '5(b)(ii)', prompt: "Determine the effect of reduced synapsin on the habituation of fruit flies in this experiment.", marks: 3 },
+                  { code: '5(b)(iii)', prompt: "Explain how reduced expression of synapsin could produce these results.", marks: 3 },
+                  { code: '5(c)', preamble: "Scientists are using fruit fly habituation to investigate genes associated with human autism spectrum disorders (ASD), but first must identify genes linked to human ASD.", prompt: "Describe how genes linked to human ASD could be identified.", marks: 2 }
+                ] },
+              { number: 6,
+                scenario: "The red flour beetle (Tribolium castaneum) is a food pest found in flour. A photograph shows a beetle at magnification × 15, with points A and B marking its length.\n\n(See the photograph and egg-development graph in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)', prompt: "Calculate the length of the red flour beetle between A and B. Give your answer in mm.", marks: 1 },
+                  { code: '6(b)', preamble: "The main food source for adult beetles is starch; the main food source in their eggs is glycogen.", prompt: "Describe how starch can be used to make glycogen.", marks: 3 },
+                  { code: '6(c)(i)', preamble: "A graph shows the changes in mass of glucose and glycogen in the eggs during embryo development.", prompt: "Calculate the percentage of glycogen used from 4 to 8 hours after the eggs were laid.", marks: 2 },
+                  { code: '6(c)(ii)', preamble: "A student suggested that between 20 and 24 hours the cells switched from anaerobic to aerobic respiration.", prompt: "Describe how a respirometer could be used to test this suggestion.", marks: 3 }
+                ] },
+              { number: 7,
+                parts: [
+                  { code: '7', preamble: "The human genome codes for approximately 20 000 different proteins carrying out different functions (a pie chart shows the proportions). The 20 amino acids are classified by their side chains (R groups): 9 non-polar, 6 polar uncharged, 3 negatively charged, 2 positively charged. Three amino acids have unique properties: cysteine (a reactive thiol side chain), glycine (a hydrogen side chain allowing tight coiling) and proline (forms a peptide bond with its amino group, making chains more rigid).", prompt: "Discuss the importance of the amino acid side chain to the structure, function and location of proteins.\n\n*Marks will be awarded for a logically structured answer.\n\n(See the pie chart and Tables 1 and 2 in the question paper PDF.)", marks: 9, extended: true }
+                ] },
+              { number: 8,
+                scenario: "These questions are based on the pre-released scientific article (adapted from Scientific American) about cancer as an evolutionary process — covering natural selection in tumours, how mutations arise, how cancer cells use surrounding tissue resources, cancer-causing mutations in stem cells, 'competitive release' in drug treatment, and the use of mice in experiments.\n\n(Read the full article in the question paper / insert PDF.)",
+                parts: [
+                  { code: '8(a)', prompt: "Explain why natural selection took place in Darwin's Galápagos finches (paragraph 3).", marks: 3 },
+                  { code: '8(b)', prompt: "Explain how inflammation and the immune response can cause damage to tissues (paragraph 4).", marks: 3 },
+                  { code: '8(c)', prompt: "Describe how tumour shrinkage could be observed (paragraph 6).", marks: 2 },
+                  { code: '8(d)', preamble: "'Why is aging, smoking or radiation exposure associated with cancer? These things cause mutations' (paragraph 8).", prompt: "Explain why 'these things cause mutations'.", marks: 3 },
+                  { code: '8(e)', prompt: "Explain why a cancer cell needs to 'use the resources of the tissue immediately around it' (paragraph 12).", marks: 2 },
+                  { code: '8(f)', prompt: "Explain how 'a cancer-causing mutation' could increase the rate of division in stem cells (paragraph 14).", marks: 3 },
+                  { code: '8(g)', prompt: "Describe how a cell that is 'a key player in the body's immune system' differs from a stem cell (paragraph 14).", marks: 4 },
+                  { code: '8(h)', prompt: "Describe how the effects of 'competitive release' could be demonstrated (paragraphs 18 and 19).", marks: 4 },
+                  { code: '8(i)', prompt: "Describe how evasion mechanisms can enable pathogens to become drug-resistant (paragraph 20).", marks: 2 },
+                  { code: '8(j)', prompt: "Discuss the ethical issues relating to the use of mice in experiments such as those described in the article (paragraph 25).", marks: 4 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)(i)': { type: 'points', points: [
+                  'Shading the coleoptile tip reduces/stops bending (more shading → less bending)',
+                  'The light-detecting part of the coleoptile is in the first 5 mm (the part that bends is below the part that detects light)',
+                  'No (significant) difference between 2 or 3 hours of exposure / between 5 mm or 10 mm of shading'
+                ], guidance: '2 max. Allow converse.' },
+              '1(a)(ii)': { type: 'points', points: [
+                  'A 5% (1 in 20) probability (or 95% probability)',
+                  'That the results occurred by chance (or did not occur by chance)'
+                ], guidance: '2 marks. Ignore reference to the null hypothesis. Do not allow "results are accurate/correct/wrong".' },
+              '1(b)(i)': { type: 'points', points: ['Temperature / light wavelength / light intensity / (mineral) ion concentration / CO₂ concentration'],
+                guidance: '1 mark. Ignore humidity/sunlight/"light" unqualified.' },
+              '1(b)(ii)': { type: 'exact', points: ['≈ 3.13 µm min⁻¹', '2.9 to 3.13'],
+                guidance: '2 marks. With IAA: (900 − 800)/30 = 3.33; without: (806 − 800)/30 = 0.20; difference ≈ 3.13 µm min⁻¹. 1 mark for both rates; 1 for the difference with units. Correct answer with no working gains full marks.' },
+              '1(c)': { type: 'points', points: [
+                  'IAA/auxin is a (plant) hormone',
+                  'Cells grew longer with IAA / IAA stimulates cell elongation',
+                  'The light-sensing / IAA-producing cells are in the tip',
+                  'Cell elongation happened in cells below the tip',
+                  'The response to IAA is (relatively) slow/prolonged'
+                ], guidance: '3 max.' },
+              '2(a)': { type: 'points', points: [
+                  'Because influenza is caused by a virus',
+                  'Antibiotics target prokaryotes/bacteria',
+                  'The structure of a virus is different to that of a bacterium (no cell wall / 70S ribosomes to target)'
+                ], guidance: '2 max. Ignore "antibiotics only kill bacteria"; ignore receptors/antigens.' },
+              '2(b)': { type: 'exact', points: ['808 spike proteins', '807'],
+                guidance: '3 marks. Surface area = 4π × 120² = 180 956 nm²; area of one triangle = ½ × 22.4 × 20 = 224 nm²; 180 956 ÷ 224 = 808. 1 mark each. ECF for one incorrect area (max 2). Correct answer with no working gains full marks.' },
+              '2(c)': { type: 'points', points: [
+                  'Isolate/extract RNA from the saliva samples',
+                  'Amplify the RNA/DNA by PCR (reverse-transcribe RNA to DNA first)',
+                  'Cut the nucleic acid into fragments (using restriction enzymes) / sequence the genome',
+                  'Separate the fragments using gel electrophoresis',
+                  'The more similar the banding/profile (or the fewer base changes), the more closely related the strain'
+                ], guidance: '4 max.' },
+              '3(a)(i)': { type: 'points', points: ['Label the stroma (the location of carbon fixation)'],
+                guidance: '1 mark. Best assessed against the labelled photograph in the QP PDF. Ignore unqualified letters.' },
+              '3(a)(ii)': { type: 'exact', points: ['Granum (stack of thylakoids / grana)'], guidance: '1 mark.' },
+              '3(a)(iii)': { type: 'points', points: [
+                  'Large surface area',
+                  'Containing chlorophyll / photosystems / photosynthetic pigments',
+                  'To absorb as much light as possible',
+                  'The membrane contains the electron transport chain / ATP synthase for the synthesis of ATP'
+                ], guidance: '3 max. Ignore "to absorb light" unqualified.' },
+              '3(a)(iv)': { type: 'points', points: [
+                  '(The enzyme) RUBISCO combines carbon dioxide with RuBP (a 5-carbon molecule)',
+                  'The unstable 6-carbon molecule breaks down into (two) GP (glycerate phosphate)'
+                ], guidance: '2 marks.' },
+              '3(b)(i)': { type: 'points', points: ['Shade the area between the gross primary productivity and respiration lines (GPP − R = NPP)'],
+                guidance: '1 mark. Allow solid or hatched shading; must be complete. Best assessed against the graph in the QP PDF.' },
+              '3(b)(ii)': { type: 'points', points: [
+                  'A change in communities/species',
+                  '(Taking place) over time'
+                ], guidance: '2 marks. Allow a description of succession from pioneer species to climax community.' },
+              '3(b)(iii)': { type: 'points', points: [
+                  '(The energy lost in) respiration levels off / stops increasing',
+                  'Accumulation of biomass continues (more carbon sinks)',
+                  'Therefore with succession more carbon dioxide is fixed (more photosynthesis)',
+                  'Reduces the amount of carbon dioxide in the atmosphere'
+                ], guidance: '3 max.' },
+              '4(a)': { type: 'exact', points: ['95.0 g'],
+                guidance: '2 marks. Dry leaf for 1 mg = 5000 mg ÷ 501.3 = 9.97 g; fresh = 9.97 ÷ 0.105 = 95.0 g. 1 mark for the dry-leaf mass; 1 for the fresh mass. Correct answer with no working gains both marks.' },
+              '4(b)(i)': { type: 'points', points: [
+                  'Solvent B extract has the greatest antimicrobial activity (solvent A the least)',
+                  'Gram-negative bacteria / Klebsiella are more sensitive to both extracts'
+                ], guidance: '2 marks.' },
+              '4(b)(ii)': { type: 'points', points: [
+                  'Prepare an agar plate with a bacterial lawn (seed the agar with bacteria)',
+                  'A description of how the extract is added (e.g. to wells / on paper discs)',
+                  'Incubate at a stated temperature between 20 °C and 37 °C',
+                  'Measure the diameter of the zones of inhibition after a (suitable) stated time'
+                ], guidance: '4 marks. Ignore "at room temperature".' },
+              '5(a)': { type: 'points', points: [
+                  'Allows an animal to learn to ignore repetitive, non-threatening stimuli',
+                  'Therefore allowing it to focus on (potentially) more relevant stimuli / conserve energy'
+                ], guidance: '2 marks. Allow converse (without habituation, energy is wasted on unimportant stimuli).' },
+              '5(b)(i)': { type: 'points', points: [
+                  'Frequency of the light-off pulses (interval between pulses)',
+                  'Duration of the light-off pulse',
+                  'Wavelength / intensity of the light'
+                ], guidance: '2 max.' },
+              '5(b)(ii)': { type: 'points', points: [
+                  '(With reduced synapsin) habituation is not as complete / a greater percentage of maximum jump response',
+                  '(With reduced synapsin) habituation takes place more slowly / jump-response decreases more slowly',
+                  'Appropriate manipulation/comparative use of the data (e.g. takes 25 more light-off stimuli for maximum response)'
+                ], guidance: '3 max. Allow converse for normal synapsin.' },
+              '5(b)(iii)': { type: 'points', points: [
+                  '(Reduced synapsin) increases the number of vesicles fusing with the presynaptic membrane',
+                  '(Resulting in more) exocytosis/release of neurotransmitter into the synapse',
+                  'Therefore (more) action potentials generated in the postsynaptic membrane',
+                  'Therefore the flies continue to respond to the light-off stimulus'
+                ], guidance: '3 max.' },
+              '5(c)': { type: 'points', points: [
+                  'Sequence the genome/genes/DNA of people with (and without) ASD',
+                  'Identify genes that have mutations/differences in sequence between ASD and non-ASD individuals'
+                ], guidance: '2 marks. Allow DNA profiling / comparing genomics.' },
+              '6(a)': { type: 'exact', points: ['3.3 mm', '3.33'],
+                guidance: '1 mark. Measured length ÷ 15.' },
+              '6(b)': { type: 'points', points: [
+                  'Starch can be broken down / hydrolysed into glucose',
+                  'By hydrolysis of the glycosidic bonds',
+                  'Glycogen is formed by condensation reactions forming glycosidic bonds between glucose molecules'
+                ], guidance: '3 marks.' },
+              '6(c)(i)': { type: 'exact', points: ['60%'],
+                guidance: '2 marks. (0.16 − 0.064) ÷ 0.16 × 100 = 60%. 1 mark for the values/difference. Correct answer with no working gains full marks.' },
+              '6(c)(ii)': { type: 'points', points: [
+                  'Comparison using a sensible period before 20 hours and after 24 hours',
+                  'Use of a carbon dioxide absorber (e.g. soda lime, sodium hydroxide)',
+                  'Observe the movement of / measure the distance moved by the coloured liquid in the capillary tube (respirometer)',
+                  'The coloured liquid does not move during anaerobic respiration but moves during aerobic respiration'
+                ], guidance: '3 max. Allow measuring the change in volume of gas.' },
+              '7': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Level 3', criteria: 'Comprehensive knowledge applied; consequences supported throughout by sustained linkage; a well-developed, sustained line of reasoning, clear and logically structured. Links R groups to all three aspects — structure, function and location — with examples (e.g. cysteine disulfide bonds, polar/non-polar R groups and solubility/membrane location, haemoglobin/collagen).' },
+                  { range: [4, 6], descriptor: 'Level 2', criteria: 'Adequate knowledge with some relevant facts; consequences occasionally supported by linkage; some lines of reasoning with structure. Links R groups to two of the three aspects (structure, function, location).' },
+                  { range: [1, 3], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; selection of some information from the tables with little or no linkage.' }
+                ],
+                indicative: {
+                  'Indicative content': '20 000 proteins with different functions; ~20 different R groups (most non-polar, some polar, a few charged). Structure: R groups determine the 3D shape; many combinations give variety; R groups form bonds (e.g. cysteine disulfide bonds) that stabilise the structure; roles in haemoglobin/collagen. Function: specific shapes for antibodies/enzymes/receptors; polar/ionic R groups increase solubility; non-polar R groups on the outside of membrane/structural proteins. Location: polar R groups in aqueous environments / line ion channels / on soluble proteins; non-polar regions in non-aqueous environments (membranes).'
+                },
+                guidance: '9 marks. Levels-of-response: mark holistically, best fit.' },
+              '8(a)': { type: 'points', points: [
+                  'There was isolation of (populations of) finches',
+                  'There were different selection pressures at the different locations (e.g. different food sources)',
+                  '(Different/random) mutations in the different populations',
+                  'Therefore populations adapt to different selection pressures (favourable alleles passed on → change in allele frequency)'
+                ], guidance: '3 max. Do not allow "selection pressures caused mutations".' },
+              '8(b)': { type: 'points', points: [
+                  'Chemical mediators / histamine released',
+                  'Increasing blood flow / capillary permeability / causing oedema',
+                  'Increasing the number of / activating white blood cells in the area',
+                  '(Stimulating) the release of (catabolic) enzymes / increasing phagocytosis of damaged tissue'
+                ], guidance: '3 max.' },
+              '8(c)': { type: 'points', points: [
+                  'Use of MRI / CT / PET scans (or ultrasound / clinical investigation)',
+                  'Before treatment and after treatment (regular scans over the course of treatment)'
+                ], guidance: '2 marks.' },
+              '8(d)': { type: 'points', points: [
+                  'Chemicals in smoke / carcinogens / radiation can damage DNA',
+                  'By changing the DNA base sequence / chromosome number (or epigenetic changes)',
+                  'With age there have been a greater number of cell divisions (longer exposure to mutagens)',
+                  'Therefore a greater chance of an error in the base sequence during replication'
+                ], guidance: '3 max. Ignore "they cause mutations".' },
+              '8(e)': { type: 'points', points: [
+                  'Cancer cells grow/divide',
+                  'Therefore they need oxygen/glucose for respiration',
+                  'Therefore they need amino acids/nucleotides/lipids for growth/cell division'
+                ], guidance: '2 max.' },
+              '8(f)': { type: 'points', points: [
+                  'Mutation / change in base sequence of a gene for a checkpoint / cell-cycle control protein',
+                  'No checkpoint',
+                  'Activating oncogenes / deactivating tumour suppressor genes',
+                  'Cell cycle/division is no longer inhibited / the cell cycle is shortened (uncontrolled division)'
+                ], guidance: '3 max. Ignore "rate of division increases".' },
+              '8(g)': { type: 'points', points: [
+                  'A stem cell is undifferentiated whereas a "key player" is differentiated',
+                  'An example of a "key player" (e.g. B cells, plasma cells, phagocytes, lymphocytes)',
+                  'An example of its specific function (e.g. B cells produce antibodies)',
+                  'A stem cell can divide an unlimited number of times whereas a "key player" is limited (Hayflick limit)',
+                  'A "key player" has undergone differential gene expression'
+                ], guidance: '4 max.' },
+              '8(h)': { type: 'points', points: [
+                  'A suitable study group selected (e.g. two groups of patients with the same cancer / two flasks of bacteria)',
+                  'Treat one group with a high dose and a second with a minimum/lower dose',
+                  'A suitable sampling method (e.g. scanning, random quadrats, zones of inhibition)',
+                  'Repeat sampling over a period of time',
+                  'A description of how the results would demonstrate competitive release (e.g. the cancer responds better to the low dose; only the low-dose group stays drug-sensitive)'
+                ], guidance: '4 max.' },
+              '8(i)': { type: 'points', points: [
+                  '(Accumulation of) mutations resulting in a change in the target recognised by the host (or change in antigen shape)',
+                  'Transfer of genetic material coding for resistance genes (e.g. plasmids between bacteria)',
+                  'An example of a resistance mechanism (e.g. enzyme, waxy coat, virus using the host cell membrane)'
+                ], guidance: '2 max.' },
+              '8(j)': { type: 'points', points: [
+                  'For — utilitarianism: the overall benefits outweigh the harm done',
+                  'For — welfare argument: animals can be used if treated well / their use is regulated',
+                  'Against — rights argument: all animals have rights (e.g. not acceptable to cause pain/suffering)',
+                  'Against — results may not be applicable to humans',
+                  'Against — consent argument: animals cannot give consent (as required for human trials)'
+                ], guidance: '4 max.' }
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
