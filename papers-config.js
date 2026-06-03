@@ -18555,6 +18555,247 @@ window.SUBJECTS = [
                   'DNA polymerase catalyses the formation of phosphodiester bonds between nucleotides (adds nucleotides to / proofreads the new DNA strand)',
                   'Helicase unwinds / separates / unzips the DNA double helix (breaks the hydrogen bonds between base pairs)'
                 ], guidance: '2 marks.' }
+            } },
+          { id: 'bio-ocra-h420-2022-p1', year: 'June 2022', paperName: 'Paper 1 — Biological processes', paperCode: 'H420/01', totalMarks: 100, durationMins: 135,
+            qpUrl: 'https://www.ocr.org.uk/Images/676883-question-paper-biological-processes.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/677027-mark-scheme-biological-processes.pdf',
+            qbqNote: 'All questions (100 marks) are wired up question-by-question with the official OCR mark scheme. Section A is 15 single-answer multiple-choice questions (answer with the letter A–D); Section B is structured questions. Questions 17 and 19(d) are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, micrographs, graphs and tables (and Fig. 16.2 on the insert) are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1, parts: [ { code: '1', prompt: "Section A (multiple choice). Which statement describes the properties or functions of cholesterol?\n\nA  It increases the fluidity of the phospholipid bilayer at high temperatures.\nB  It is an unsaturated fatty acid because it contains carbon–carbon double bonds.\nC  It is used to produce some hormones.\nD  It is very hydrophilic so is attracted to the fatty acid tails in the membrane.", marks: 1 } ] },
+              { number: 2, parts: [ { code: '2', prompt: "Which statement describes triglycerides?\n\nA  They are broken down by condensation reactions.\nB  They are polymers of glycerol and fatty acids.\nC  They contain ester bonds.\nD  They contain glycosidic bonds.", marks: 1 } ] },
+              { number: 3, parts: [ { code: '3', prompt: "Kendal Mint Cake is made from sugar; climbers now prefer to take chocolate. Which statement describes why?\n\nA  Chocolate contains fat. Fat stores and releases less energy per gram than sugar.\nB  Chocolate contains fat. Fat stores and releases more energy per gram than sugar.\nC  Fat contains more oxygen than glucose.\nD  Glucose can be digested more rapidly than fat.", marks: 1 } ] },
+              { number: 4, parts: [ { code: '4', prompt: "A graph shows the effect of substrate concentration on the rate of an enzyme-controlled reaction. Which graph (A–D) shows how increasing the concentration of enzyme would affect the rate of this reaction? (Graphs in the QP PDF.)", marks: 1 } ] },
+              { number: 5, parts: [ { code: '5', prompt: "Which statement about the effect of temperature on enzyme-controlled reactions is not correct?\n\nA  At temperatures above 40 °C the rate of all enzyme-controlled reactions decreases.\nB  Increasing the temperature above the optimum changes the tertiary structure of the active site.\nC  Increasing the temperature increases the kinetic energy of the enzyme and substrate.\nD  Increasing the temperature increases the probability of enzyme–substrate collisions.", marks: 1 } ] },
+              { number: 6, parts: [ { code: '6', prompt: "Which option describes expiration?\n\nA  In expiration at rest, the external intercostal muscles and the diaphragm relax and the rib cage moves down and in.\nB  In expiration at rest, the internal intercostal muscles and the diaphragm contract pulling the rib cage down and in.\nC  In forced expiration, the diaphragm relaxes and the external intercostal muscles contract pulling the rib cage down and in.\nD  In forced expiration, the internal intercostal muscles and the diaphragm contract pulling the rib cage down and in.", marks: 1 } ] },
+              { number: 7, parts: [ { code: '7', prompt: "Which option is not a component of a chloroplast?\n\nA  Cristae\nB  DNA\nC  Ribosome\nD  Thylakoid", marks: 1 } ] },
+              { number: 8, parts: [ { code: '8', prompt: "A student counted the chloroplasts per cell in a leaf: 13, 14, 13, 21, 14, 13, 17. Which option gives the correct values for mean, median and mode?\n\nA  Mean = 13, median = 14, mode = 15\nB  Mean = 14, median = 15, mode = 13\nC  Mean = 15, median = 14, mode = 13\nD  Mean = 15, median = 13, mode = 14", marks: 1 } ] },
+              { number: 9, parts: [ { code: '9', prompt: "Which option is the correct procedure for statistical analysis of the class data (chloroplast numbers in high vs low light intensity areas)?\n\nA  Calculate the mean and use a paired t-test.\nB  Calculate the mean and use an unpaired t-test.\nC  Calculate the median and calculate Spearman's rank correlation coefficient.\nD  Calculate the median and use a chi-squared test.", marks: 1 } ] },
+              { number: 10, parts: [ { code: '10', prompt: "Which process is an example of cell signalling?\n\nA  Binding of a virus to a receptor on the cell surface membrane of an epithelial cell in the upper respiratory tract\nB  Binding of acetylcholine to cell surface receptors on sodium ion channels in the post-synaptic neurone\nC  Co-transport of glucose and Na⁺ ions across the cell surface membrane of an epithelial cell in the proximal convoluted tubule\nD  Operation of the Na⁺/K⁺ pump in the cell surface membrane of the axon", marks: 1 } ] },
+              { number: 11, parts: [ { code: '11', prompt: "Which statement describes an aspect of homeostasis?\n\nA  Effectors detect a change and cause release of hormones that bind to target cells.\nB  Homeostasis maintains the internal body temperature of animals at a constant level.\nC  Homeostasis involves both positive and negative feedback.\nD  Receptors coordinate nervous and hormonal responses.", marks: 1 } ] },
+              { number: 12, parts: [ { code: '12', prompt: "The equation for oxidation of linoleic acid is: C₁₈H₃₂O₂ + 25 O₂ → 18 CO₂ + 16 H₂O. What is the respiratory quotient (RQ) of linoleic acid?\n\nA  0.33\nB  0.72\nC  1.00\nD  1.39", marks: 1 } ] },
+              { number: 13, parts: [ { code: '13', prompt: "An EMG trace shows a muscle undergoing fatigue (see the QP PDF). Which statements about muscle fatigue is/are correct?\n\n1  Increased acidity in the muscle during long periods of contraction is a cause of muscle fatigue.\n2  There is a decrease in the frequency of the signal on an EMG trace as the muscle becomes fatigued.\n3  There is an increase in amplitude of the signal on an EMG trace as the muscle becomes fatigued.\n\nA  1, 2 and 3 are correct\nB  Only 1 and 2 are correct\nC  Only 2 and 3 are correct\nD  Only 1 is correct", marks: 1 } ] },
+              { number: 14, parts: [ { code: '14', prompt: "Which statements about the relationship between photosynthesis and aerobic respiration in plants is/are correct?\n\n1  During the day, photosynthesis produces all the ATP that cells in the leaves require.\n2  Carbon dioxide produced in respiration can be used as a carbon source in photosynthesis.\n3  Oxygen produced in photosynthesis can be used in aerobic respiration.\n\nA  1, 2 and 3 are correct\nB  Only 1 and 2 are correct\nC  Only 2 and 3 are correct\nD  Only 1 is correct", marks: 1 } ] },
+              { number: 15, parts: [ { code: '15', prompt: "Erythrocytes are formed from bone marrow stem cells and lose most of their organelles. Which statement about respiration in erythrocytes is correct?\n\nA  Oxygen bound to haemoglobin is used by erythrocytes in aerobic respiration.\nB  They do not respire because their cell surface membrane is impermeable to glucose.\nC  They respire aerobically because they always have adequate supplies of oxygen.\nD  They respire anaerobically because they do not have mitochondria.", marks: 1 } ] },
+              { number: 16,
+                scenario: "Section B. Dicotyledons are a large and diverse group of multicellular plants that includes oak trees and dandelions.",
+                parts: [
+                  { code: '16(a)', prompt: "Explain, using examples of transported substances, why multicellular plants need transport systems.", marks: 3 },
+                  { code: '16(b)(i)', preamble: "Fig. 16.1 is a light micrograph of a transverse section through the leaf of a dicotyledon, with tissues A and B labelled (see the QP PDF).", prompt: "Identify the tissue labelled B in Fig. 16.1.", marks: 1 },
+                  { code: '16(b)(ii)', prompt: "State two functions of structure A.", marks: 2 },
+                  { code: '16(c)', preamble: "Fig. 16.2 (on the insert) is a coloured SEM of a longitudinal section through vascular tissue in the stem of a dicotyledon.", prompt: "Explain how two features, visible in Fig. 16.2, show that this tissue is adapted to its function.", marks: 4 },
+                  { code: '16(d)', preamble: "A mycorrhiza is a mutualistic association between a fungus and a plant. Wild type barley produce root hairs; mutant (brb) barley do not. brb mutant and wild type plants were grown with or without mycorrhiza, and dry mass and phosphate content measured after 28 days (table in the QP PDF). The scientists concluded the mycorrhiza compensated for the absence of root hairs in the mutant plants.", prompt: "Evaluate this conclusion.", marks: 3 }
+                ] },
+              { number: 17,
+                scenario: "The thermal properties of water allow organisms to live with relatively small changes in temperature and make water an efficient coolant.",
+                parts: [
+                  { code: '17', prompt: "Outline how other properties of water are essential for sustaining life on Earth.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true }
+                ] },
+              { number: 18,
+                scenario: "A student investigated osmosis in plant cells using potato cylinders cut with a cork borer, measuring the change in length after the cylinders were placed in sucrose solutions overnight.",
+                parts: [
+                  { code: '18(a)(i)', preamble: "The student was given 100 cm³ of 1 mol dm⁻³ sucrose and asked to prepare 30 cm³ of each dilution (1.0, 0.8, 0.6, 0.4, 0.2, 0.0 mol dm⁻³).", prompt: "Complete Table 18.1 to show how the student should prepare the solutions (volume of 1 mol dm⁻³ sucrose and volume of distilled water for each).", marks: 3 },
+                  { code: '18(a)(ii)', preamble: "The 1 mol dm⁻³ solution used 34.23 g of sucrose. The weighing boat was 10.55 g empty and 44.78 g with sucrose; the balance has an uncertainty of ±0.01 g.", prompt: "Calculate the percentage uncertainty in the mass of sucrose.", marks: 2 },
+                  { code: '18(b)(i)', preamble: "The student's results are shown in Table 18.2 (see the QP PDF). One result was anomalous.", prompt: "Identify the anomalous result.", marks: 1 },
+                  { code: '18(b)(ii)', prompt: "State one variable that should be controlled in this experiment and give a reason for your choice.", marks: 2 }
+                ] },
+              { number: 19,
+                scenario: "Muscle structure and contraction.",
+                parts: [
+                  { code: '19(a)', prompt: "Place a tick in each box where the structure or function applies to that type of muscle (skeletal / cardiac / involuntary): fibres are multinucleate; fibres are branched and interconnected; under conscious control. (The 'contraction speed is slow' row is completed for you.)", marks: 3 },
+                  { code: '19(b)(i)', preamble: "Fig. 19.1 and Fig. 19.2 are TEMs of striated muscle, with bands X and Y and filaments Z labelled (see the QP PDF).", prompt: "Identify three proteins that make up the filaments labelled Z on Fig. 19.1.", marks: 3 },
+                  { code: '19(b)(ii)', prompt: "Labels X and Y indicate two distinct bands. Explain why the two bands look different.", marks: 2 },
+                  { code: '19(b)(iii)', prompt: "Use your knowledge of the sliding filament model of muscle contraction to explain why Fig. 19.2 represents contracted muscle.", marks: 3 },
+                  { code: '19(c)', preamble: "After death, the ATP concentration in muscle cells decreases and the muscles become rigid (rigor mortis).", prompt: "Suggest why a lack of ATP leads to muscle rigidity.", marks: 2 },
+                  { code: '19(d)', prompt: "Describe the different sources of the ATP that is used in muscle contraction during strenuous exercise.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true }
+                ] },
+              { number: 20,
+                scenario: "Oplegnathus insignis is a saltwater fish being assessed for fish farming. Scientists investigated its growth at different temperatures using a respirometer (Fig. 20.1) and measured the rate of oxygen consumption at different body masses and temperatures (Fig. 20.2) — see the QP PDF.",
+                parts: [
+                  { code: '20(a)(i)', prompt: "Suggest two modifications the researcher would need to make to this apparatus to investigate the effect of temperature on the rate of respiration.", marks: 2 },
+                  { code: '20(a)(ii)', prompt: "Suggest one advantage of using a computer to collect data.", marks: 1 },
+                  { code: '20(a)(iii)', prompt: "A constant flow of water past the oxygen probe allows continuous monitoring. Explain one other reason why it is necessary to maintain a constant flow of water in the respirometer.", marks: 2 },
+                  { code: '20(a)(iv)', prompt: "Suggest and explain one other precaution the scientists should take to ensure the results obtained are valid.", marks: 2 },
+                  { code: '20(b)(i)', preamble: "High oxygen consumption is associated with a fast growth rate.", prompt: "Calculate the Q10 for respiration in the largest fish. Give your answer to 3 significant figures.", marks: 2 },
+                  { code: '20(b)(ii)', preamble: "The scientists concluded that the best temperature for farming O. insignis was 18 °C.", prompt: "Evaluate their conclusion.", marks: 4 }
+                ] },
+              { number: 21,
+                scenario: "Glands can be either endocrine or exocrine.",
+                parts: [
+                  { code: '21(a)(i)', prompt: "Describe what is meant by an endocrine gland.", marks: 2 },
+                  { code: '21(a)(ii)', preamble: "The pancreas contains the Islets of Langerhans and also cells that produce digestive enzymes.", prompt: "Suggest why the cells that produce digestive enzymes are described as exocrine rather than endocrine.", marks: 1 },
+                  { code: '21(b)', preamble: "Steroids are lipid soluble.", prompt: "Suggest the location of the receptors for steroid hormones and state a reason for your suggestion.", marks: 2 },
+                  { code: '21(c)(i)', preamble: "Adrenal failure is the inability to produce sufficient cortisol and aldosterone; ACTH from the pituitary normally stimulates the adrenal cortex to release them. Symptoms include severe fatigue, weakness, weight loss, low blood pressure and salt craving.", prompt: "Explain the symptoms of adrenal failure.", marks: 2 },
+                  { code: '21(c)(ii)', prompt: "Explain why patients with a pituitary tumour have adrenal failure but still respond normally to situations of danger or excitement.", marks: 3 },
+                  { code: '21(d)(i)', preamble: "Scientists investigated stem cell transplants to treat hypothyroidism in mice, using mouse embryonic stem cells (ESCs) incubated with or without growth factors. The ESCs are described as pluripotent.", prompt: "Explain what is meant by pluripotent.", marks: 2 },
+                  { code: '21(d)(ii)', preamble: "Mice were split into four groups (thyroid destroyed and/or ESCs transplanted with or without growth factors); thyroxine concentration was measured (graph in the QP PDF). The scientists concluded that growing the ESCs with growth factors caused them to differentiate into functional thyroid tissue.", prompt: "Evaluate this conclusion.", marks: 3 },
+                  { code: '21(d)(iii)', preamble: "The experiment was repeated with adult skin stem cells from patients, transformed into induced pluripotent stem cells (iPSCs). The scientists concluded that using human iPSCs would be safer than using human ESCs.", prompt: "Use your knowledge of stem cells to suggest one reason that supports and one reason that does not support the scientists' conclusion.", marks: 2 }
+                ] },
+              { number: 22,
+                scenario: "A TEM of a chloroplast has structures D, E, F and G labelled (see the QP PDF).",
+                parts: [
+                  { code: '22(a)', prompt: "Complete the table using the letters from the TEM: chloroplast envelope; site of light independent reactions; inter-granal lamellae; contains starch grains and lipid droplets.", marks: 4 },
+                  { code: '22(b)', prompt: "Complete the sentences: carbon fixation occurs when CO₂ combines with the five-carbon molecule …; this forms an unstable six-carbon molecule that breaks down into two molecules of …; these are reduced to triose phosphate using … and … from the light-dependent stage; triose phosphate forms hexose phosphates which can be converted to … for transport elsewhere in the plant.", marks: 5 }
+                ] }
+            ],
+            markSchemes: {
+              '1': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '2': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '3': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '4': { type: 'exact', points: ['C'], guidance: '1 mark. Increasing the enzyme raises the plateau (Vmax higher).' },
+              '5': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '6': { type: 'exact', points: ['A'], guidance: '1 mark.' },
+              '7': { type: 'exact', points: ['A'], guidance: '1 mark. Cristae are found in mitochondria, not chloroplasts.' },
+              '8': { type: 'exact', points: ['C'], guidance: '1 mark. Mean ≈15, median 14, mode 13.' },
+              '9': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '10': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '11': { type: 'exact', points: ['B'], guidance: '1 mark.' },
+              '12': { type: 'exact', points: ['B'], guidance: '1 mark. RQ = 18 CO₂ ÷ 25 O₂ = 0.72.' },
+              '13': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '14': { type: 'exact', points: ['C'], guidance: '1 mark.' },
+              '15': { type: 'exact', points: ['D'], guidance: '1 mark.' },
+              '16(a)': { type: 'points', points: [
+                  'Large size requires transport over long distances',
+                  'Diffusion is too slow / the diffusion distance is too great / cannot rely on diffusion alone',
+                  'A low / small surface area to volume ratio',
+                  'To transport water / ions from the roots to the cells / other parts of the plant',
+                  'To transport sucrose / products of photosynthesis (assimilates) from source to sink',
+                  'To transport (named) hormones from where they are produced to their site of action'
+                ], guidance: '3 max (max 2 from the explanations, max 2 from the examples).' },
+              '16(b)(i)': { type: 'exact', points: ['B = phloem'], guidance: '1 mark. Ignore cambium.' },
+              '16(b)(ii)': { type: 'points', points: ['Transport of water / (named) ions (or some hormones); (mechanical/structural) support'],
+                guidance: '2 marks. Ignore "strength".' },
+              '16(c)': { type: 'points', points: [
+                  'Lignin / lignification — provides support / prevents collapse / waterproofing',
+                  'Spiral thickening — allows flexibility',
+                  'Hollow vessels (no organelles / no end walls) — minimise resistance to the flow of water (water flows as one continuous column)',
+                  '(Bordered) pits — allow the passage / lateral movement of water between vessels (or into/out of cells)'
+                ], guidance: '4 max — max 2 features and max 2 explanations; feature and explanation must match.' },
+              '16(d)': { type: 'points', points: [
+                  'Supports: adding mycorrhiza increased the dry mass AND phosphate content in the mutants',
+                  'Supports: the mycorrhiza could stimulate the growth of extra roots / root hair cells in mutants',
+                  'Does not support: the dry mass / phosphate content of the mutants is still less than in the wild type',
+                  'Does not support: adding mycorrhiza reduces the dry mass / phosphate content in the wild type',
+                  'Does not support: no information about control variables / sample size; no statistical test carried out; no information about other ions',
+                  'Data to compare the two sets (e.g. a calculated difference)'
+                ], guidance: '3 max (ORA for some points; max 2 for the "does not support" points).' },
+              '17': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'An outline that includes a chemical AND a physical property of water AND an example (of how life is sustained). Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'An outline that includes a chemical OR a physical property of water AND an example, OR a chemical AND a physical property. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'An outline that includes either a physical or chemical property of water, or an example. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Chemical properties': 'A polar molecule; unequal sharing of electrons / a dipole; hydrogen δ+ and oxygen δ−; hydrogen bonds between water molecules; individually weak but collectively strong; a (polar) solvent; transparent.',
+                  'Physical properties': 'Ice is less dense than liquid water so it floats and insulates the water below (freezes from the top down); cohesion; adhesion; high surface tension.',
+                  'Examples of sustaining life': 'A habitat for aquatic organisms; buoyancy/support; dissolved oxygen; organisms survive beneath ice; ice as a habitat/resting/breeding area; the transpiration stream; turgor pressure; hydrostatic skeletons; a lubricant (e.g. pleural fluid); a medium for chemical reactions; transport of dissolved substances; removal of metabolic waste; allows light to penetrate.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '18(a)(i)': { type: 'exact', points: ['1.0: 30.0 sucrose / 0.0 water; 0.8: 24.0 / 6.0; 0.6: 18.0 / 12.0; 0.4: 12.0 / 18.0; 0.2: 6.0 / 24.0; 0.0: 0.0 / 30.0'],
+                guidance: '3 marks. All 12 values correct to 1 dp = 3; correct values with wrong dp = 2; one column correct = 1.' },
+              '18(a)(ii)': { type: 'exact', points: ['0.06 (%)'],
+                guidance: '2 marks. Total uncertainty = ±0.02 g (two readings); 0.02 ÷ 34.23 × 100 = 0.06%. 1 mark for the calculator value not to 2 dp, or for 0.03%.' },
+              '18(b)(i)': { type: 'exact', points: ['−1.5(0) — the 3rd replicate at 0.4 mol dm⁻³ (a −2.9% change)'],
+                guidance: '1 mark. Accept any value in the 0.4 mol dm⁻³ third-replicate row.' },
+              '18(b)(ii)': { type: 'points', points: [
+                  'Temperature — because it affects the rate of diffusion / osmosis (kinetic energy / membrane permeability)',
+                  'OR type / variety / age of potato — because potatoes have different densities / water potentials',
+                  'OR ensure enough solution to fully immerse the cylinders — so osmosis occurs across the whole surface'
+                ], guidance: '2 marks (one variable + matching reason). Do not allow "shape" (the question says cylinders).' },
+              '19(a)': { type: 'exact', points: ['Fibres multinucleate: skeletal; fibres branched and interconnected: cardiac; under conscious control: skeletal'],
+                guidance: '3 marks (1 per row). No more than one tick per row; ignore crosses/hybrid ticks.' },
+              '19(b)(i)': { type: 'exact', points: ['Actin; tropomyosin; troponin'],
+                guidance: '3 marks (any order).' },
+              '19(b)(ii)': { type: 'points', points: [
+                  'X (dark / A band) contains myosin / thick filaments',
+                  'Y (light / I band) contains only actin / thin filaments'
+                ], guidance: '2 marks. Ignore references to the H zone, M line or Z line.' },
+              '19(b)(iii)': { type: 'points', points: [
+                  'The light / I band is smaller',
+                  'The dark / A band remains the same; the sarcomeres are shorter (Z lines closer together)',
+                  'The H zone becomes smaller',
+                  'There is greater overlap between the actin and myosin filaments'
+                ], guidance: '3 max.' },
+              '19(c)': { type: 'points', points: [
+                  'ATP is required to break the cross-bridges / detach myosin from actin',
+                  'So the actin and myosin filaments remain cross-linked, preventing relaxation (the muscle stays contracted)'
+                ], guidance: '2 max.' },
+              '19(d)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A description of a source of ATP during strenuous exercise AND detail of both aerobic AND anaerobic respiration. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A description of a source of ATP AND detail of aerobic OR anaerobic respiration, OR detail of both aerobic AND anaerobic respiration. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A description of a source of ATP for muscle contraction OR detail of aerobic OR anaerobic respiration. An attempt at logical structure.' }
+                ],
+                indicative: {
+                  'Sources of ATP': 'Free ATP in the muscle cells / sarcoplasm; ATP formed from creatine (phospho)creatine — runs out in a few seconds.',
+                  'Aerobic respiration': 'Occurs if oxygen is available; oxidative phosphorylation; a greater yield of ATP; O₂ delivery does not meet demand / is limited during strenuous exercise.',
+                  'Anaerobic respiration': 'Needed during strenuous exercise; involves only glycolysis; ATP by substrate-level phosphorylation; a net yield of 2 ATP; NAD regenerated so glycolysis can continue; cannot continue indefinitely due to lactic acid build-up.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '20(a)(i)': { type: 'points', points: [
+                  'A thermostat / heater / iced water / thermostatically controlled water bath (to control the temperature)',
+                  'A thermometer / temperature probe (to monitor the temperature in the chamber)',
+                  'An oxygen probe in the water entering / before the respirometer'
+                ], guidance: '2 max.' },
+              '20(a)(ii)': { type: 'points', points: ['Allows continual data collection / the person need not be present; less risk of (human) error; allows easier / immediate data analysis (less bias / not subjective)'],
+                guidance: '1 max. Ignore accuracy / precision.' },
+              '20(a)(iii)': { type: 'points', points: [
+                  'To maintain an adequate supply of oxygen so the fish can respire aerobically (does not respire anaerobically)',
+                  'To remove (named metabolic) waste products that could damage / be toxic to the fish'
+                ], guidance: '2 max — mark in pairs.' },
+              '20(a)(iv)': { type: 'points', points: [
+                  'Allow the temperature to reach the required point / allow the fish to acclimatise before taking measurements',
+                  'Use a suitable temperature range — to avoid stress (oxygen solubility varies with temperature)',
+                  'Wait for the fish to calm down — because stress affects oxygen consumption',
+                  'Ensure the correct salt concentration — because it is a saltwater fish (osmotic balance)',
+                  'Maintain the optimum pH; remove other microorganisms — they remove oxygen / may cause disease'
+                ], guidance: '2 max (precaution + matching explanation).' },
+              '20(b)(i)': { type: 'exact', points: ['2.22 (accept 2.20)'],
+                guidance: '2 marks. Q10 = rate at 23 °C ÷ rate at 13 °C = 200 ÷ 90 = 2.22. 1 mark if not to 3 sig figs, or for the two correct read-offs (200 and 90/91). Do not allow if 170 (the 18 °C value) is used.' },
+              '20(b)(ii)': { type: 'points', points: [
+                  'Supported: a larger increase in O₂ consumption between 13 °C and 18 °C (smaller between 18 °C and 23 °C)',
+                  'Supported: 23 °C may not be economic (extra heating costs)',
+                  'Not supported: greater O₂ consumption may indicate a high metabolic rate rather than growth rate',
+                  'Not supported: greater O₂ consumption may mean more food consumption / higher feeding costs',
+                  'Not supported: temperatures below 13 °C and above 23 °C not used (only three temperatures); no sample size; no statistical tests / replicates / means'
+                ], guidance: '4 max (max 3 from the "not supported" points).' },
+              '21(a)(i)': { type: 'points', points: [
+                  'A group of cells that secretes / releases / produces hormones',
+                  'Directly into the blood(stream) (it is ductless)'
+                ], guidance: '2 marks. Do not allow "excretes".' },
+              '21(a)(ii)': { type: 'points', points: ['Because the digestive enzymes are released into ducts (not directly into the blood)'],
+                guidance: '1 mark.' },
+              '21(b)': { type: 'points', points: [
+                  'Inside the cells / in the cytoplasm / in the nucleus',
+                  'Because steroids can cross the cell surface / plasma membrane (the phospholipid bilayer)'
+                ], guidance: '2 marks.' },
+              '21(c)(i)': { type: 'points', points: [
+                  'Cortisol / glucocorticoids regulate carbohydrate metabolism (glucose availability / gluconeogenesis / glycogenolysis) — explaining the fatigue/weakness/weight loss',
+                  'A lack of aldosterone / mineralocorticoids causes low blood pressure / salt craving as they regulate ion (Na⁺/K⁺) concentration'
+                ], guidance: '2 max.' },
+              '21(c)(ii)': { type: 'points', points: [
+                  'ACTH only affects the adrenal cortex (not the medulla)',
+                  'Adrenaline is produced by the adrenal medulla',
+                  'Adrenaline is responsible for the response to danger / fight-or-flight response',
+                  'The fight-or-flight response is also mediated by the (autonomic / sympathetic) nervous system'
+                ], guidance: '3 max. Do not allow parasympathetic.' },
+              '21(d)(i)': { type: 'points', points: [
+                  'Can differentiate / specialise into any / all (adult) cell or tissue types',
+                  'But cannot form whole organisms / extra-embryonic tissues (e.g. placenta)'
+                ], guidance: '2 marks.' },
+              '21(d)(ii)': { type: 'points', points: [
+                  'Supports: group 4 has a higher thyroxine concentration than group 3 / can produce thyroxine',
+                  'Supports: group 2 shows destroying the thyroid lowers thyroxine; group 4 produces almost as much as the control (group 1)',
+                  'Not supported: the group 4 mean is lower than the control; the SDs of groups 1 and 4 do not overlap',
+                  'Not supported: there was an anomaly/outlier in group 4; small sample sizes; group 4 has more mice; thyroxine concentration may not measure differentiation into functional thyroid tissue'
+                ], guidance: '3 max (max 2 supporting and max 2 not-supporting).' },
+              '21(d)(iii)': { type: 'points', points: [
+                  'Supports: less / no risk of rejection (no need for immunosuppression)',
+                  'Does not support: adult stem cells may have accumulated mutations; iPSCs may increase the risk of cancer / tumour formation; may still carry the allele for hypothyroidism'
+                ], guidance: '2 marks. Ignore references to ethics.' },
+              '22(a)': { type: 'exact', points: ['Chloroplast envelope: F; site of light-independent reactions: E; inter-granal lamellae: D; contains starch grains and lipid droplets: E'],
+                guidance: '4 marks. No more than one letter per response.' },
+              '22(b)': { type: 'exact', points: ['RuBP / ribulose bisphosphate; GP / glycerate 3-phosphate; ATP; NADPH (reduced NADP); sucrose'],
+                guidance: '5 marks (1 per gap; ATP and NADPH in either order).' }
             } }
         ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
