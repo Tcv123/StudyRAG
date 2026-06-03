@@ -19039,6 +19039,189 @@ window.SUBJECTS = [
                 guidance: '5 marks (1 per gap). Ignore "lysosomes".' },
               '22(b)': { type: 'exact', points: ['Hox / homeotic / homeobox (genes)'],
                 guidance: '1 mark. Ignore "regulatory".' }
+            } },
+          { id: 'bio-ocra-h420-2022-p3', year: 'June 2022', paperName: 'Paper 3 — Unified biology', paperCode: 'H420/03', totalMarks: 70, durationMins: 90,
+            qpUrl: 'https://www.ocr.org.uk/Images/676886-question-paper-unified-biology.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/677029-mark-scheme-unified-biology.pdf',
+            qbqNote: 'All 6 questions (70 marks) are wired up question-by-question with the official OCR mark scheme. This synoptic paper has no multiple-choice section — all questions are structured. Questions 3(c)(ii) and 4(c) are the asterisked (*) levels-of-response (quality-of-extended-response) questions. Diagrams, micrographs, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "The heart can be affected by a variety of disorders, some of which involve the immune system.",
+                parts: [
+                  { code: '1(a)', preamble: "Fig. 1.1 shows the roles of three different types of antibody, labelled R (binds a pathogen to a white blood cell receptor), S (clumps pathogens together) and T (neutralises harmful molecules released by pathogens) — see the QP PDF.", prompt: "State the names of the three different types of antibody shown in Fig. 1.1 (R, S and T).", marks: 3 },
+                  { code: '1(b)', preamble: "Rheumatic heart disease can occur when a person's antibodies attack antigens on their own heart cells.", prompt: "State the name of the type of disease represented by rheumatic heart disease.", marks: 1 },
+                  { code: '1(c)', preamble: "Fig. 1.2 shows two ECG traces: a normal heart and a heart with a type of heart disease (see the QP PDF).", prompt: "Describe how the ECG trace of the heart with heart disease is different from the ECG trace of a normal heart.", marks: 2 },
+                  { code: '1(d)(i)', preamble: "The AC6 gene codes for one form of the enzyme adenylyl cyclase; clinical trials have tested increasing AC6 levels in heart cells.", prompt: "Suggest how using gene therapy to increase levels of the AC6 gene in heart cells may improve heart function.", marks: 2 },
+                  { code: '1(d)(ii)', prompt: "State one method for inserting the AC6 gene into the heart cells during gene therapy.", marks: 1 },
+                  { code: '1(d)(iii)', prompt: "The results from gene therapy trials are published in peer-reviewed journals. State why the results are published in journals.", marks: 1 }
+                ] },
+              { number: 2,
+                scenario: "Fig. 2.1 is a light micrograph of a blood smear (×800) with cells W, X, Y and Z labelled (see the QP PDF).",
+                parts: [
+                  { code: '2(a)(i)', prompt: "Cells X and Y are two different types of white blood cell. Identify the types of white blood cell labelled X and Y.", marks: 2 },
+                  { code: '2(a)(ii)', preamble: "The blood cell labelled Z contains a high concentration of haemoglobin.", prompt: "Outline two other ways in which the blood cell labelled Z is adapted for its function.", marks: 2 },
+                  { code: '2(a)(iii)', preamble: "The diameter of another blood cell is represented by the line W; the magnification was ×800.", prompt: "Calculate the actual diameter, W, of the blood cell. Give your answer in µm.", marks: 2 },
+                  { code: '2(b)(i)', prompt: "State the role of lysosomes in white blood cells.", marks: 1 },
+                  { code: '2(b)(ii)', preamble: "Mean volume of a lysosome = 6.5 × 10⁻¹⁴ cm³; mean number of H⁺ ions per lysosome = 1.3 × 10⁻²¹ mol.", prompt: "Use these values to calculate the mean H⁺ ion concentration per lysosome. Give your answer in mol dm⁻³.", marks: 2 },
+                  { code: '2(b)(iii)', preamble: "pH = −log[H⁺], where [H⁺] is in mol dm⁻³.", prompt: "Use your answer from part (ii) to calculate the mean pH of the lysosomes. Give your answer to 2 significant figures.", marks: 1 },
+                  { code: '2(b)(iv)', preamble: "A table lists five stains (A–E) with their properties (acidic/alkaline/neutral; living/fixed cells) — see the QP PDF.", prompt: "Select the most appropriate stain for the scientist to use to stain lysosomes in living white blood cells, based on your answer from part (iii).", marks: 1 },
+                  { code: '2(c)', preamble: "Four substances are used in differential staining: crystal violet (stains purple); safranin (stains pink but not visible with crystal violet); alcohol (removes fixed stains from thin-walled bacteria); iodide solution (fixes crystal violet to cells).", prompt: "Suggest a practical procedure for staining a slide that would allow thin-walled bacteria to be differentiated from thick-walled bacteria.", marks: 2 },
+                  { code: '2(d)(i)', preamble: "Fig. 2.2 shows stained tissue with two blood vessels L and M and a substance N (see the QP PDF).", prompt: "State whether L is an artery or a vein and give two pieces of evidence from Fig. 2.2 that allow you to reach your decision.", marks: 2 },
+                  { code: '2(d)(ii)', prompt: "State the substance labelled N.", marks: 1 }
+                ] },
+              { number: 3,
+                scenario: "Plant cloning and growth substances.",
+                parts: [
+                  { code: '3(a)', preamble: "A student wrote a method for taking a cutting to clone a plant: select a stem with many flowers and leaves; make a slanting cut below some leaves; dip in rooting powder; plant in watered compost.", prompt: "Describe and explain how the student's procedure could be improved.", marks: 3 },
+                  { code: '3(b)(i)', preamble: "A student investigated the effect of auxin concentration on the growth of apical and lateral shoots (% stimulation/inhibition vs auxin concentration; graph in the QP PDF).", prompt: "Use the graph to estimate the auxin concentration at which inhibition of lateral shoots is 100%.", marks: 1 },
+                  { code: '3(b)(ii)', preamble: "The student identified a possible anomaly: the apical-shoot data point at 10⁻⁶ mol dm⁻³.", prompt: "State what the student could do to determine whether this data point was an anomaly.", marks: 1 },
+                  { code: '3(b)(iii)', prompt: "Using the graph, describe the conclusions that can be drawn about the role of different auxin concentrations in the control of apical dominance.", marks: 3 },
+                  { code: '3(c)(i)', preamble: "Another student plans to investigate the effect of gibberellin concentration on the rate of stem elongation in the pea plant, Pisum sativum.", prompt: "Suggest appropriate units for the dependent variable in this investigation.", marks: 1 },
+                  { code: '3(c)(ii)', preamble: "The student has access to standard laboratory equipment and planting materials. In your answer you should include details of an appropriate statistical test.", prompt: "Outline a method that the student could use to investigate the effect of gibberellin concentration on stem elongation in P. sativum.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true },
+                  { code: '3(d)', preamble: "A friend wants to ripen the fruit on an apple tree within a few days; the student advised 'spray the tree with ethene'.", prompt: "Evaluate whether acting on the student's advice would produce fruit that was ready to eat within a few days.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "The sea sponge, Aplysina aerophoba, and the zebra shark, Stegostoma fasciatum, are both animals. A. aerophoba has no internal circulatory system and filters food and oxygen from the surrounding water (Fig. 4.1); S. fasciatum has the circulatory system shown in Fig. 4.2 (see the QP PDF).",
+                parts: [
+                  { code: '4(a)(i)', prompt: "Suggest why A. aerophoba does not need a circulatory system.", marks: 1 },
+                  { code: '4(a)(ii)', prompt: "Describe the type of circulatory system that S. fasciatum has.", marks: 2 },
+                  { code: '4(b)', preamble: "In asexual reproduction in A. aerophoba, clumps of diploid cells detach and grow into new adult sponges. In S. fasciatum, meiosis occurs in a female, two haploid cells fuse to form a diploid cell, and this develops into a new shark. A student stated: 'When they reproduce asexually, both animals produce clones of themselves.'", prompt: "Evaluate the student's statement.", marks: 3 },
+                  { code: '4(c)', prompt: "Humans can produce artificial clones of animals. Describe two methods for producing artificial clones of animals.\n\n*Quality of extended response is assessed in this question.", marks: 6, extended: true }
+                ] },
+              { number: 5,
+                scenario: "DNA must be extracted from cells before it can be analysed.",
+                parts: [
+                  { code: '5(a)', prompt: "Complete the sentences about DNA extraction: detergent is used to break down …; proteins such as histones surrounding DNA can be hydrolysed by the addition of …; the DNA is precipitated from solution by adding … .", marks: 3 },
+                  { code: '5(b)', preamble: "A scientist assessed genetic biodiversity in four populations (A–D) of yellow horn using the percentage of polymorphic gene loci and observed heterozygosity, analysing 23 gene loci per tree (table in the QP PDF). Another scientist stated the results may not allow an accurate assessment.", prompt: "Identify two pieces of evidence that support this scientist's evaluation.", marks: 2 },
+                  { code: '5(c)', preamble: "In Ipomoea purpurea, purple (F) is dominant to pink (f). A field contained 600 plants, 150 with pink flowers. Use p + q = 1 and p² + 2pq + q² = 1.", prompt: "Using the Hardy–Weinberg principle, calculate the number of plants that had a homozygous dominant (FF) genotype.", marks: 2 }
+                ] },
+              { number: 6,
+                scenario: "Haemoglobin is an important protein in many animals, including humans.",
+                parts: [
+                  { code: '6(a)', preamble: "A CRISPR gene-editing treatment for sickle cell disease removes bone marrow stem cells, adds the enzyme Cas9 which deletes bases from the BCL11A gene (which normally switches off the fetal haemoglobin gene in adults), and returns the edited cells so the patient can produce fetal haemoglobin. This differs from traditional genetic engineering, which uses restriction enzymes and plasmids.", prompt: "Describe the similarities and other differences between CRISPR gene editing and traditional genetic engineering methods.", marks: 4 },
+                  { code: '6(b)', prompt: "Place ticks in the correct boxes to indicate which properties are true for each ion (hydrogen, hydrogencarbonate, chloride): has a negative charge; binds to haemoglobin; a product of the dissociation of carbonic acid; involved in the chloride shift.", marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'exact', points: ['R = opsonin; S = agglutinin; T = anti-toxin'],
+                guidance: '3 marks. Accept opsonisation for R; IgM / agglutination for S; neutralisation for T.' },
+              '1(b)': { type: 'exact', points: ['Autoimmune (disease)'], guidance: '1 mark. Accept autoimmunity.' },
+              '1(c)': { type: 'points', points: [
+                  'The QRS complexes are closer together (higher heart rate / tachycardia)',
+                  'Inconsistent gaps between QRS / ventricular systoles (irregular heart beat / arrhythmia)',
+                  'More / no clear P waves / atrial systoles (atrial fibrillation)',
+                  'No clear T peak / diastole'
+                ], guidance: '2 max. Assume the answer refers to the heart-disease ECG. Ignore "no P wave" / "no T wave".' },
+              '1(d)(i)': { type: 'points', points: [
+                  'More adenylyl cyclase on the cell-surface membranes, so more cAMP / second messenger is produced',
+                  'Adrenaline has a greater effect on the heart cells, improving the contraction of the cardiac muscle (greater heart rate)'
+                ], guidance: '2 max. Ignore "improved heart function" / "pumps blood more efficiently" alone.' },
+              '1(d)(ii)': { type: 'points', points: ['A virus / viral vector; a liposome; a plasmid / YAC'],
+                guidance: '1 max. Ignore "injection" unqualified.' },
+              '1(d)(iii)': { type: 'points', points: ['To share knowledge / allow others to repeat the procedure or compare results; to allow validation of new knowledge (check reproducibility / ensure integrity)'],
+                guidance: '1 max.' },
+              '2(a)(i)': { type: 'exact', points: ['X = (T or B) lymphocyte; Y = neutrophil (phagocyte)'],
+                guidance: '2 marks. Accept T cell / B cell / T helper / T killer / T regulator for X.' },
+              '2(a)(ii)': { type: 'points', points: [
+                  'Flattened / biconcave shape to increase the surface area to volume ratio',
+                  'No nucleus / few organelles to give more space for haemoglobin',
+                  'Flexible / small to fit through (and increase contact with) capillaries',
+                  'Transport proteins / carbonic anhydrase to allow the chloride shift / CO₂ transport'
+                ], guidance: '2 max.' },
+              '2(a)(iii)': { type: 'exact', points: ['13 (12.5) µm'],
+                guidance: '2 marks. Measured ≈10 mm ÷ 800 = 0.0125 mm = 12.5 µm. Accept 12.5 for 2 marks; ECF for a different measurement ÷ 800.' },
+              '2(b)(i)': { type: 'points', points: ['Digest / hydrolyse / destroy / break down pathogens (accept parasites / damaged / tumour / old cells / old organelles)'],
+                guidance: '1 mark. Do not allow "engulf pathogens"; ignore antigens.' },
+              '2(b)(ii)': { type: 'exact', points: ['2 × 10⁻⁵ mol dm⁻³'],
+                guidance: '2 marks. 1.3 × 10⁻²¹ ÷ 6.5 × 10⁻¹⁴ = 2 × 10⁻⁸ mol cm⁻³; × 1000 = 2 × 10⁻⁵ mol dm⁻³. Accept 0.00002 for 2 marks; "× 1000" seen = 1 mark.' },
+              '2(b)(iii)': { type: 'exact', points: ['4.7'],
+                guidance: '1 mark. −log(2 × 10⁻⁵) = 4.7 (to 2 sig figs). ECF from part (ii).' },
+              '2(b)(iv)': { type: 'exact', points: ['B'],
+                guidance: '1 mark. Lysosomes are acidic (pH ≈ 4.7) and the cells are living, so a stain suitable for acidic components taken up by active cells. ECF: allow B if the calculated pH is < 7. Best assessed against the stain table in the QP PDF.' },
+              '2(c)': { type: 'points', points: [
+                  'Step 1: add crystal violet; Step 2: add iodide solution; Step 3: add alcohol/ethanol; Step 4: add safranin',
+                  'All steps in the correct order'
+                ], guidance: '2 marks (all four steps in order = 2; three steps in order = 1).' },
+              '2(d)(i)': { type: 'points', points: [
+                  'L is an artery',
+                  'Evidence: a smaller diameter / lumen; a thicker layer of (smooth) muscle / elastic tissue (thicker tunica media / wall); the lumen is more open / less flattened; the endothelium is folded'
+                ], guidance: '2 max — no marks if L is identified as a vein. Give two pieces of evidence.' },
+              '2(d)(ii)': { type: 'exact', points: ['Collagen'], guidance: '1 mark.' },
+              '3(a)': { type: 'points', points: [
+                  'Select a stem with no flowers / remove flowers — to direct energy to root growth / reduce water loss',
+                  'Remove most leaves (or cover with a plastic bag) — to reduce water loss / transpiration',
+                  'Use aseptic techniques / sterilise equipment — to stop infection / contamination',
+                  'Use a propagator / greenhouse — to control temperature / humidity',
+                  'Do not overwater the compost — to allow air to reach the roots for respiration'
+                ], guidance: '3 max. An explanation is credited only with a correct description; max 2 for descriptions alone.' },
+              '3(b)(i)': { type: 'exact', points: ['10⁻⁵ mol dm⁻³ (accept 9 × 10⁻⁶ to 1 × 10⁻⁵)'],
+                guidance: '1 mark.' },
+              '3(b)(ii)': { type: 'points', points: ['Repeat the measurements (for that concentration)'],
+                guidance: '1 mark. Ignore "repeat the experiment" unqualified.' },
+              '3(b)(iii)': { type: 'points', points: [
+                  'At higher auxin concentrations (from ~10⁻⁹ mol dm⁻³) apical growth / apical dominance is stimulated; apical growth peaks at ~10⁻⁵ mol dm⁻³ and very high concentrations inhibit it',
+                  'At lower auxin concentrations (~10⁻¹¹ to 10⁻⁷ mol dm⁻³) lateral shoot growth is stimulated',
+                  'At higher auxin concentrations (above ~3 × 10⁻⁷ mol dm⁻³) lateral shoot growth is inhibited (so high auxin gives greatest apical dominance)'
+                ], guidance: '3 max.' },
+              '3(c)(i)': { type: 'exact', points: ['mm h⁻¹ (or cm h⁻¹ / mm d⁻¹ / cm d⁻¹)'],
+                guidance: '1 mark. Do not allow seconds or minutes.' },
+              '3(c)(ii)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'A comprehensive outline of a valid method including details of all three types of variable AND statistical analysis. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'Detailed reference to variables AND statistical analysis. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'Brief reference to a variable or statistical analysis. Basic and unstructured.' }
+                ],
+                indicative: {
+                  'Experimental design / validity': 'Details of sample sizes and repeats; group design (e.g. a control group with no added gibberellin plus several groups receiving different gibberellin concentrations); details of how the gibberellin is applied.',
+                  'Variables': 'Control variables (plant/seedling size, water, light, temperature); the independent variable (gibberellin concentration); the dependent variable (measurement of stem length).',
+                  'Statistical analysis': "Identify anomalies; calculate means and standard deviations; a statistical test (a t-test for two groups, or Spearman's rank / Pearson correlation for a range of concentrations)."
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '3(d)': { type: 'points', points: [
+                  'Ethene promotes fruit ripening / maturing',
+                  'The concentration of ethene / the stage of apple development needs to be known (too much could over-ripen)',
+                  'Using ethene to ripen fruit normally needs controlled conditions (a particular temperature / closed conditions / gradual release)',
+                  'Ethene is a gas and would diffuse away in the air, so it would not be effective on the tree',
+                  'Ethene also promotes fruit drop / abscission, so the apples may fall and be damaged'
+                ], guidance: '3 max.' },
+              '4(a)(i)': { type: 'points', points: ['It has a large surface area to volume ratio, so it can obtain all the required substances by diffusion (a short diffusion pathway); a low metabolic rate'],
+                guidance: '1 max. Ignore "small size".' },
+              '4(a)(ii)': { type: 'points', points: ['Closed (blood stays in vessels); single (blood passes through the heart once per circuit)'],
+                guidance: '2 marks.' },
+              '4(b)': { type: 'points', points: [
+                  'Sponges produce genetically identical offspring / clones (offspring share the same DNA/genome)',
+                  'Shark offspring will not be genetically identical / are not clones',
+                  'Shark offspring have alleles from only the mother / one parent',
+                  'But crossing over / independent assortment in meiosis creates new allele combinations / genetic variation'
+                ], guidance: '3 max. So only the sponge produces clones — the statement is only partly correct.' },
+              '4(c)': { type: 'levels',
+                levels: [
+                  { range: [5, 6], descriptor: 'Level 3', criteria: 'Detailed descriptions of BOTH embryo splitting AND somatic cell nuclear transfer. Well-developed, logically structured, substantiated.' },
+                  { range: [3, 4], descriptor: 'Level 2', criteria: 'A detailed description of one method AND an outline of the other. Some structure, supported by some evidence.' },
+                  { range: [1, 2], descriptor: 'Level 1', criteria: 'A detailed description of either method, OR outlines of both. Basic and unstructured.' }
+                ],
+                indicative: {
+                  'Embryo splitting (artificial twinning)': 'Sperm taken from a male with desired traits; artificial insemination or IVF; the embryo is split; incubated in a lab; implanted into a surrogate; the offspring are clones of each other.',
+                  'Somatic cell nuclear transfer': 'A nucleus is removed from a somatic cell; an egg is enucleated; electrofusion; the embryo is transferred into a surrogate; the offspring is a clone of the original somatic cell.'
+                },
+                guidance: '6 marks. Levels-of-response: mark holistically, best fit.' },
+              '5(a)': { type: 'exact', points: ['(cell/nuclear/mitochondrial/chloroplast) membranes; protease (e.g. pepsin/trypsin); alcohol / ethanol'],
+                guidance: '3 marks (1 per gap).' },
+              '5(b)': { type: 'points', points: [
+                  'Few gene loci studied (only 23)',
+                  'Small sample sizes within each population (e.g. only 6 trees in population A)',
+                  'The two measures show different patterns of results (e.g. B has the joint-highest diversity by polymorphic loci but only the third-highest by heterozygosity)'
+                ], guidance: '2 max. Ignore "different sample sizes in each population".' },
+              '5(c)': { type: 'exact', points: ['150'],
+                guidance: '2 marks. q² = 150/600 = 0.25; q = 0.5; p = 0.5; p² = 0.25; × 600 = 150. Accept 0.25 for 1 mark; ECF through the steps.' },
+              '6(a)': { type: 'points', points: [
+                  'Similarity: both use an enzyme that cuts DNA',
+                  'Similarity: both change the base sequence / order in the organism; both result in the production of a new polypeptide',
+                  'Difference: no gene/DNA insertion in CRISPR (no donor organism) — ORA for genetic engineering',
+                  'Difference: no marker genes / ligase / bacterial cells / vector used in CRISPR (it needs an RNA guide sequence); traditional genetic engineering is illegal in humans'
+                ], guidance: '4 max. Do not allow "both use restriction enzymes" or "both change bases" alone.' },
+              '6(b)': { type: 'exact', points: ['Hydrogen (H⁺): binds to haemoglobin ✓, product of dissociation of carbonic acid ✓ (no negative charge, not the chloride shift); Hydrogencarbonate (HCO₃⁻): negative charge ✓, product of dissociation of carbonic acid ✓, involved in the chloride shift ✓; Chloride (Cl⁻): negative charge ✓, involved in the chloride shift ✓'],
+                guidance: '3 marks (1 per correct row).' }
             } }
         ] },
       { board: 'OCR B (Advancing Biology)', specCode: 'H422',
