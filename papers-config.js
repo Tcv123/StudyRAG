@@ -12959,6 +12959,275 @@ window.SUBJECTS = [
                   'Indicative content': 'Evidence: greater exercise duration and greater power output at the lower temperature; higher rate of sweating at the higher temperature; core temperature rising faster at the higher temperature. Conclusions: performance is increased at lower temperatures; increased sweating relates to thermoregulation not necessarily performance; only elite athletes selected; limited to two temperatures and two sports; other environmental variables not controlled; no statistical analysis of the data.'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxa-9bn0-2024-p3', year: 'June 2024', paperName: 'Paper 3 — General and Practical Applications in Biology', paperCode: '9BN0/03', totalMarks: 100, durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-03-que-20240620.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bn0-03-rms-20240815.pdf',
+            qbqNote: 'All 8 questions (100 marks) are wired up question-by-question with the official Pearson mark scheme. Question 7 is the 9-mark asterisked (*) question graded on Edexcel\'s levels-of-response grid, and Question 8 (30 marks) is based on the pre-released scientific article "Life in the Sloth Lane" (adapted from New Scientist / Brazilian Journal of Medical and Biological Research) — the article and all figures, graphs and tables are in the question paper PDF; open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "One of the first plant species to colonise some habitats is thale cress (Arabidopsis thaliana). The plant hormone IAA (auxin) is produced in the growing tips of plants such as thale cress.\n\n(See the lateral-root diagram and graph in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)', prompt: "State what is meant by the term colonisation of a habitat.", marks: 1 },
+                  { code: '1(b)', preamble: "One role of IAA is to stimulate the phototropic response of shoots.", prompt: "Describe how IAA causes a phototropic response in the shoots of a plant.", marks: 3 },
+                  { code: '1(c)(i)', preamble: "Another role of IAA is to stimulate the growth of lateral roots. One type of receptor for IAA is coded for by the tir1 gene. Scientists treated plants homozygous for a normal tir1 gene and plants homozygous for a mutation in the tir1 gene with different concentrations of IAA, recording the mean number of lateral roots per mm of main root.", prompt: "Explain why the scientists used plants homozygous for the normal and the mutant tir1 gene in this investigation.", marks: 2 },
+                  { code: '1(c)(ii)', prompt: "Calculate the percentage decrease in mean number of lateral roots for thale cress with the mutant tir1 gene compared to thale cress with the normal tir1 gene at 1.00 mol dm⁻³ of IAA.", marks: 1 },
+                  { code: '1(c)(iii)', prompt: "Deduce the effect of the mutation in the tir1 gene on the response of thale cress to IAA.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "Pathogenic bacteria can become resistant to antibiotics. Methicillin-resistant Staphylococcus aureus (MRSA) is resistant to many antibiotics. Licochalcone A is a chemical isolated from the liquorice plant; its antibacterial properties were investigated on a bacterial lawn of MRSA using different masses (10, 20, 40 and 80 µg).\n\n(See the clear-zone diagram and table in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)', preamble: "The table gives clear-zone diameters: 14.5 mm (area 165 mm²), 16.5 mm (214 mm²), 16.5 mm (214 mm²) and a fourth value to complete.", prompt: "Complete the table using information from the diagram (the missing diameter and area of the clear zone).", marks: 2 },
+                  { code: '2(b)', preamble: "The bacteria used in this investigation are pathogenic.", prompt: "Describe how filter paper discs containing licochalcone A can be safely placed on the bacterial lawn.", marks: 3 },
+                  { code: '2(c)', prompt: "Explain how an anomalous result could be identified for this investigation.", marks: 2 }
+                ] },
+              { number: 3,
+                scenario: "Photosynthesis takes place in chloroplasts. The light-dependent processes can be investigated using the Hill reaction; a graph shows the effect of three herbicides (A, B, C) on inhibition of the Hill reaction in isolated chloroplasts.\n\n(See the graph in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)(i)', prompt: "State the location of the light-dependent reactions in chloroplasts.", marks: 1 },
+                  { code: '3(a)(ii)', prompt: "Calculate the gradient of the slope for herbicide A at 50% inhibition of the Hill reaction. Give your answer to two significant figures.", marks: 2 },
+                  { code: '3(a)(iii)', prompt: "Describe the role of chlorophyll in the light-dependent reactions of photosynthesis.", marks: 2 },
+                  { code: '3(b)', prompt: "Describe the role of RUBISCO in the light-independent reactions of photosynthesis.", marks: 3 }
+                ] },
+              { number: 4,
+                scenario: "The great white shark (adult mass ≈ 600 kg) and the humpback whale (adult mass ≈ 140 000 kg) are two large marine animals. A diagram shows the trophic levels for two marine communities: one with the great white shark as a tertiary consumer (zooplankton → fish → shark), and one with the humpback whale as a secondary consumer (krill → whale), both with phytoplankton as primary producer.\n\n(See the food-chain diagram and copepod graph in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)', prompt: "Explain why an area of ocean can support a greater biomass of humpback whales than of great white sharks.", marks: 3 },
+                  { code: '4(b)(i)', preamble: "Phytoplankton are photosynthetic unicellular primary producers in aquatic ecosystems.", prompt: "State the relationship between gross primary productivity and net primary productivity.", marks: 1 },
+                  { code: '4(b)(ii)', preamble: "The concentration of oxygen in water (dissolved oxygen) can be measured using an oxygen probe.", prompt: "Explain how an oxygen probe could be used to estimate the effect of temperature on the gross primary productivity (GPP) of phytoplankton.", marks: 4 },
+                  { code: '4(c)(i)', preamble: "Copepods are zooplankton that feed on phytoplankton. The production of carbon dioxide and uptake of oxygen by copepods was measured at 14 °C and 17 °C (graph).", prompt: "Determine the mean ratio of carbon dioxide produced to oxygen consumed at 17 °C.", marks: 1 },
+                  { code: '4(c)(ii)', prompt: "Deduce two conclusions from the results of this experiment.", marks: 2 }
+                ] },
+              { number: 5,
+                scenario: "Human immune deficiency virus (HIV) can cause acquired immune deficiency syndrome (AIDS). The diagram shows an HIV virus particle (gp120, host-cell proteins in the lipid membrane, capsid, viral RNA genome, protease and reverse transcriptase).\n\n(See the HIV diagram, polyprotein diagram and enzyme graphs in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)(i)', prompt: "State the role of gp120 in the life cycle of the HIV virus.", marks: 1 },
+                  { code: '5(a)(ii)', prompt: "Give a reason why there are proteins from the host cell in the lipid membrane surrounding the virus particle.", marks: 1 },
+                  { code: '5(b)', preamble: "During viral replication, virus mRNA molecules are translated into a virus polyprotein called gag (a chain of smaller proteins), which is then split into individual proteins by the HIV protease at specific sites.", prompt: "Deduce how HIV protease can split the gag polyprotein into individual proteins.", marks: 3 },
+                  { code: '5(c)(i)', preamble: "HIV protease inhibitors are used to treat HIV infection, but in some individuals the HIV has developed resistance. A graph shows the effect of polyprotein concentration on the initial rate of reaction of normal and inhibitor-resistant HIV protease.", prompt: "Calculate the initial rate of reaction in the inhibitor-resistant HIV protease for a polyprotein concentration of 7 mol dm⁻³.", marks: 2 },
+                  { code: '5(c)(ii)', prompt: "Explain the importance of enzyme and substrate concentrations when comparing the initial rates of reaction of different enzymes.", marks: 3 }
+                ] },
+              { number: 6,
+                scenario: "The drug MDMA (ecstasy) can cause damage to the brain. This affects serotonin synapses and can change behaviour. MDMA is also responsible for swelling of the brain resulting in death in some people (water retention → fall in blood solute concentration → swelling of brain cells → constriction of blood vessels in the brain → death).\n\n(See the synapse/behaviour graph and flow diagram in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)(i)', prompt: "Explain how MDMA changes the rate of transmission of nerve impulses across serotonin synapses.", marks: 4 },
+                  { code: '6(a)(ii)', preamble: "Mice had access to an MDMA button (giving a dose of MDMA) and a control button (giving salt solution), activated for one three-hour period each day; a graph shows the number of button presses over 10 days.", prompt: "Determine the effect of MDMA on the number of button presses made by these mice.", marks: 3 },
+                  { code: '6(b)(i)', preamble: "Brain cells regulate their volume using active transport of sodium ions.", prompt: "State what is meant by active transport.", marks: 2 },
+                  { code: '6(b)(ii)', prompt: "Explain how the active transport of sodium ions can regulate brain cell volume.", marks: 3 },
+                  { code: '6(b)(iii)', prompt: "Explain why swelling of the brain cells will result in vasoconstriction.", marks: 2 },
+                  { code: '6(b)(iv)', prompt: "Explain why vasoconstriction will result in the death of brain cells.", marks: 2 }
+                ] },
+              { number: 7,
+                parts: [
+                  { code: '7', preamble: "Sports injuries can be treated to reduce pain caused by muscle cramp. Ice massage, ice pack and cold-water immersion are three treatments. The compound action potential (CAP) is the sum of all action potentials in a muscle; graphs show the effect of each treatment (pre- and post-treatment) on the latency, duration, amplitude and conduction velocity of the CAP for motor and sensory neurones.", prompt: "Assess the effect of different cold treatments on nerve conduction and the reduction of pain caused by muscle cramp. Use all the information provided in the question as well as your own knowledge and understanding.\n\n*Marks will be awarded for a logically structured answer.\n\n(See the CAP diagram and graphs in the question paper PDF.)", marks: 9, extended: true }
+                ] },
+              { number: 8,
+                scenario: "These questions are based on the pre-released scientific article \"Life in the Sloth Lane\" (adapted from New Scientist and the Brazilian Journal of Medical and Biological Research). The article describes sloths as energy-saving specialists: their classification (Box 1 — Order Xenarthra; two-toed sloths in Megalonychidae, three-toed in Bradypodidae), the four phyla of algae on their hair (Box 2), arboviruses they host (Box 3), their very slow metabolism and digestion, variable body temperature, lattice of tendons for gripping, lactic-acid-tolerant muscle enzymes, and the commensal community of beetles, mites and moths (Box 4).\n\n(Read the full article in the question paper / insert PDF.)",
+                parts: [
+                  { code: '8(a)', prompt: "Explain why analysis of the amino acid sequence of the eye lens proteins can be used to determine the phylogenetic relationship of different sloths (Box 1).", marks: 3 },
+                  { code: '8(b)', prompt: "Describe how the algae living on the hair of sloths can be shown to belong to one of four phyla (Box 2).", marks: 4 },
+                  { code: '8(c)', prompt: "Describe how a spirometer could be used to estimate the metabolic rate of a sloth (paragraph 5).", marks: 4 },
+                  { code: '8(d)', prompt: "Explain how the presence of different antibodies can be used to show that some viruses are specific to sloths and some are incidental (Box 3).", marks: 3 },
+                  { code: '8(e)', prompt: "Sloths have 'the longest digestive process on record for a plant-eating mammal' (paragraph 7). Deduce the advantage to the sloth of a slow digestive process.", marks: 2 },
+                  { code: '8(f)', prompt: "Explain why 'maintaining a core body temperature is energetically expensive' for a sloth (paragraphs 8 and 9).", marks: 3 },
+                  { code: '8(g)', prompt: "Sloths can warm up by climbing higher up into the canopy (paragraph 9). State the type of adaptation that this represents.", marks: 1 },
+                  { code: '8(h)', prompt: "Sloths spend a lot of time hanging upside down — 'constant grip is made possible by a lattice of tendons in the hands and feet that draw the digits closed' (paragraph 10). Explain the advantage of using a lattice of tendons to draw the digits closed.", marks: 3 },
+                  { code: '8(i)', prompt: "Sloth muscles 'contain a unique set of enzymes that confers tolerance to heavy accumulations of lactic acid' (paragraph 12). Deduce how the enzymes in sloth muscles will differ from those in human muscles.", marks: 2 },
+                  { code: '8(j)', prompt: "Sloths carry a 'community of commensal beetles, mites and moths'. Explain what is meant by this phrase (Box 4).", marks: 2 },
+                  { code: '8(k)', prompt: "Describe how sympatric speciation could have occurred in the moths living on sloths (Box 4).", marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'points', points: [
+                  'When a species moves/spreads/grows (immigrates) into a new area/habitat'
+                ], guidance: '1 mark. Allow pioneer species being first to live in an area. Ignore "dominant species" or "outcompeting other species".' },
+              '1(b)': { type: 'points', points: [
+                  'IAA accumulates on / diffuses to the shaded side of the shoot',
+                  '(IAA) regulates the activity of transcription factors',
+                  'Causing cell elongation',
+                  'Bending the shoot towards the light'
+                ], guidance: '3 max. Allow auxin for IAA. Ignore "moves/points towards".' },
+              '1(c)(i)': { type: 'points', points: [
+                  'To ensure any response is due to the mutated or non-mutated allele (a controlled variable, increasing validity)',
+                  'Because heterozygotes have both the non-mutated and the mutated allele',
+                  'One allele may be recessive (hidden by a dominant allele) in heterozygous plants, or the alleles may be codominant/incompletely dominant'
+                ], guidance: '2 max. Allow "heterozygotes may still make enough tir1 protein".' },
+              '1(c)(ii)': { type: 'exact', points: ['43%', '42.9%', '42.86%'],
+                guidance: '1 mark. Ignore any sign.' },
+              '1(c)(iii)': { type: 'points', points: [
+                  '(tir1) mutation caused a decrease in the response to IAA',
+                  'Plants with the mutation produce fewer lateral roots',
+                  'Because IAA binding to its receptor is required to stimulate growth of lateral roots'
+                ], guidance: '2 max. Allow "mutation causes the IAA receptor to stop working / be the wrong shape".' },
+              '2(a)': { type: 'exact', points: ['Diameter ≈ 19 mm; area ≈ 283/284 mm²'],
+                guidance: '2 marks. 1 for the correct diameter (19, allow 18.5–19.5); 1 for the area calculated and recorded as a whole number. Correct answer with no working gains full marks.' },
+              '2(b)': { type: 'points', points: [
+                  'Wear gloves (that can be disposed of) / wash hands after transferring the disc',
+                  'After transfer of the disc, sterilise the tweezers (e.g. flame the forceps)',
+                  'Keep exposure of the bacteria in the Petri dish to the environment to a minimum (lift the lid only slightly / work in a containment cabinet)',
+                  'After transferring discs, clean the workspace'
+                ], guidance: '3 max.' },
+              '2(c)': { type: 'points', points: [
+                  'Plot a graph; results not close to the line of best fit / not fitting the trend could be anomalous',
+                  'OR repeat the experiment; results outside the standard deviation could be anomalous'
+                ], guidance: '2 marks.' },
+              '3(a)(i)': { type: 'points', points: [
+                  'The thylakoid (membrane) / grana'
+                ], guidance: '1 mark. Do not accept thylakoid space.' },
+              '3(a)(ii)': { type: 'exact', points: ['25 to 28 (any value, to 2 sf)'],
+                guidance: '2 marks. Answer between 25 and 28. Correct answer without working gains both marks.' },
+              '3(a)(iii)': { type: 'points', points: [
+                  'Absorb light (photoactivation of chlorophyll)',
+                  'Transfer (light) energy to electrons / excite electrons',
+                  'Provide (high-energy) electrons to the electron transport chain (photoionisation)'
+                ], guidance: '2 max. Ignore colour of light.' },
+              '3(b)': { type: 'points', points: [
+                  'RUBISCO is an enzyme',
+                  'RUBISCO combines (fixes) carbon dioxide with RuBP',
+                  'To form GP / glycerate 3-phosphate'
+                ], guidance: '3 marks.' },
+              '4(a)': { type: 'points', points: [
+                  'Fewer trophic levels in the humpback whale community (whales are secondary consumers, sharks are tertiary)',
+                  'Energy is lost at each trophic level / transfer between levels is inefficient',
+                  'Therefore more energy is available (in the humpback whale) to be stored as biomass'
+                ], guidance: '3 marks. Allow converse for the shark; allow 4 trophic levels for shark and 3 for whale.' },
+              '4(b)(i)': { type: 'points', points: [
+                  'GPP = NPP + R (NPP = GPP − R)'
+                ], guidance: '1 mark. Allow a description in words.' },
+              '4(b)(ii)': { type: 'points', points: [
+                  'Use different temperatures (a sensible range, e.g. −5 to 40 °C)',
+                  'Control a relevant variable (e.g. pH, light intensity, salinity, volume of water; or biotic: age/species of phytoplankton)',
+                  'Measure oxygen produced in the light (to estimate NPP)',
+                  'Measure oxygen used in the dark (to estimate respiration) — GPP = NPP + R'
+                ], guidance: '4 marks. Allow determining NPP from change in mass of phytoplankton.' },
+              '4(c)(i)': { type: 'exact', points: ['0.86 : 1'],
+                guidance: '1 mark. Allow values between 0.8 : 1 and 0.92 : 1 (or 1 : 1.09 to 1 : 1.25).' },
+              '4(c)(ii)': { type: 'points', points: [
+                  'More oxygen taken up / carbon dioxide released at the lower temperature (more respiration at 14 °C)',
+                  'CO₂ produced is directly proportional to O₂ consumed (constant ratio / positive correlation)',
+                  '(Mostly) aerobic respiration is taking place',
+                  'Using respiratory substrates other than carbohydrates/glucose (e.g. fats/proteins)'
+                ], guidance: '2 max.' },
+              '5(a)(i)': { type: 'points', points: [
+                  'Attaches to the CD4 receptor / the T helper cell'
+                ], guidance: '1 mark.' },
+              '5(a)(ii)': { type: 'points', points: [
+                  'Because the virus buds off from / is surrounded by the host cell-surface membrane (the lipid membrane is taken from the host cell)'
+                ], guidance: '1 mark. Ignore comments about immune recognition and exocytosis.' },
+              '5(b)': { type: 'points', points: [
+                  'Hydrolysis',
+                  'Of peptide bond(s)',
+                  'At parts of the polyprotein recognised by (complementary to the active site of) the protease'
+                ], guidance: '3 marks. Ignore other bonds.' },
+              '5(c)(i)': { type: 'exact', points: ['≈ 2.8 to 3 mol dm⁻³ s⁻¹'],
+                guidance: '2 marks. Use the slope of the inhibitor-resistant line and y = mx + c (slope ≈ 0.4); at 7 mol dm⁻³ ≈ 2.8–3. Correct answer without working gains both marks.' },
+              '5(c)(ii)': { type: 'points', points: [
+                  'Substrate concentration should be in excess / not limiting',
+                  'So that the enzyme works at its maximum rate',
+                  'The concentrations of the different enzymes should be the same to allow a fair comparison'
+                ], guidance: '3 marks.' },
+              '6(a)(i)': { type: 'points', points: [
+                  'MDMA binds to serotonin receptors (on the presynaptic membrane) / makes serotonin transporters work in reverse',
+                  'Preventing the re-uptake of serotonin (by the presynaptic knob)',
+                  'So more serotonin binds to receptors on the postsynaptic membrane',
+                  'Therefore more action potentials are triggered / the rate of transmission of nerve impulses increases'
+                ], guidance: '4 marks.' },
+              '6(a)(ii)': { type: 'points', points: [
+                  'MDMA increased the number of button pushes compared to the control',
+                  'Initially (day 1) mice chose the MDMA button ≈ 4 times more often than the control',
+                  'After day 6 the number of MDMA button presses increased',
+                  'By day 8–10 the MDMA presses had ≈ doubled (≈ 7 times the control) while the control stayed the same'
+                ], guidance: '3 max. Allow quantified differences (e.g. 72% increase from day 6 to day 10).' },
+              '6(b)(i)': { type: 'points', points: [
+                  'Movement of a substance against a concentration gradient (low to high concentration)',
+                  'Requiring energy / ATP'
+                ], guidance: '2 marks. Allow named substances (ions/molecules).' },
+              '6(b)(ii)': { type: 'points', points: [
+                  'If sodium ions are taken into the cell the solute concentration inside increases (water potential decreases)',
+                  'Water (molecules) move into the cell by osmosis',
+                  '(Movement of water in) increases the cell volume'
+                ], guidance: '3 marks. Allow converse argument.' },
+              '6(b)(iii)': { type: 'points', points: [
+                  'The space available to the brain is fixed / swollen brain cells take up more of the available space',
+                  '(Therefore) reducing the space available for blood vessels / narrowing arterioles',
+                  '(Vasoconstriction) reduces blood flow/pressure in the brain'
+                ], guidance: '2 max. Ignore arteries/capillaries.' },
+              '6(b)(iv)': { type: 'points', points: [
+                  'Reduced blood flow to (brain) cells',
+                  'Therefore reducing the supply of oxygen / glucose required for respiration'
+                ], guidance: '2 marks.' },
+              '7': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Level 3', criteria: 'A scientific judgement supported throughout by sustained application of relevant evidence from analysis and interpretation of the data; a conclusion with sustained linkages to biological knowledge and supporting evidence. Uses data on latency, duration, amplitude and conduction velocity for both motor and sensory neurones, links to impulse transmission/pain, and concludes on each treatment with limitations.' },
+                  { range: [4, 6], descriptor: 'Level 2', criteria: 'A scientific judgement made through application of relevant evidence, with strengths and weaknesses of each method identified; a conclusion with occasional supporting evidence and some linkage to biological knowledge.' },
+                  { range: [1, 3], descriptor: 'Level 1', criteria: 'Limited scientific judgement focused on mainly one treatment/measure, with a few strengths/weaknesses; a conclusion may be attempted with isolated elements of knowledge and limited supporting evidence.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Data: cold water increased latency and duration of the motor- and sensory-neurone CAP; all treatments increased sensory-neurone latency; ice massage and ice pack decreased sensory-neurone amplitude; all three decreased sensory-neurone conduction velocity; cold water gave a small decrease in motor-neurone conduction velocity. Linkages: increased latency / decreased conduction velocity / reduced amplitude → fewer impulses transmitted; increased motor CAP duration → prolonged contraction / delayed repolarisation. Conclusions: ice pack/ice massage reduce sensory conduction and pain; cold-water immersion reduces both motor and sensory conduction and is most effective at reducing cramp and pain; plus limitations of the study.'
+                },
+                guidance: '9 marks. Levels-of-response: mark holistically, best fit.' },
+              '8(a)': { type: 'points', points: [
+                  'Eye lens protein is present in all vertebrates/mammals/sloths (and is easily obtained/sequenced)',
+                  'The amino acid sequence is determined by the (lens protein) gene / DNA sequence',
+                  '(Over time) mutations occur in the gene that change the amino acid sequence',
+                  'Differences in amino acid sequence can be used to place sloths into different phylogenetic branches (more differences = less closely related)'
+                ], guidance: '3 max.' },
+              '8(b)': { type: 'points', points: [
+                  'Collect DNA samples from the algae',
+                  'Amplify the DNA using PCR',
+                  'Cut the DNA using restriction enzymes',
+                  'Separate the fragments / analyse the DNA using electrophoresis (DNA profiling)',
+                  'The banding pattern would match one of four distinct banding patterns',
+                  'OR isolate a named protein/gene, sequence the amino acids/bases, and place in a phylum based on similarities/differences with algae from the four phyla'
+                ], guidance: '4 max.' },
+              '8(c)': { type: 'points', points: [
+                  'Use of a carbon dioxide absorber (e.g. soda lime / NaOH / KOH)',
+                  'Control the temperature',
+                  'Record the spirometer trace (peaks and troughs)',
+                  'Obtain the rate of oxygen consumption from the trace (slope / change in height of peaks ÷ time)',
+                  'Use the mass of the sloth',
+                  'Convert oxygen consumption to kilojoules (energy)'
+                ], guidance: '4 max.' },
+              '8(d)': { type: 'points', points: [
+                  'Different viruses have different proteins / antigens',
+                  'Antibodies are specific to antigens',
+                  'The virus is specific to sloths if antibodies to it are only found in sloths',
+                  'The virus is incidental if antibodies to it are also found in other species'
+                ], guidance: '3 max.' },
+              '8(e)': { type: 'points', points: [
+                  'Plant material is difficult to digest (cell walls / cellulose / lignin / fibres hard to break down)',
+                  'A slow process allows time for digestive enzymes to work',
+                  'Ensures maximum possible absorption of nutrients'
+                ], guidance: '2 max.' },
+              '8(f)': { type: 'points', points: [
+                  'Sloths have a relatively large surface area to volume ratio (small mammal)',
+                  'Temperature changes a lot in the upper canopy / their habitat',
+                  'Thermoregulation (homeostasis) uses a lot of energy',
+                  'A named thermoregulatory process that requires energy (e.g. generating metabolic heat, shivering, sweating)'
+                ], guidance: '3 max.' },
+              '8(g)': { type: 'points', points: ['Behavioural (adaptation)'],
+                guidance: '1 mark.' },
+              '8(h)': { type: 'points', points: [
+                  'Tendons are non-elastic structures (do not contract/stretch)',
+                  'Using a lattice of tendons reduces the number of muscles involved in gripping',
+                  'Muscle contraction requires energy/ATP, so using tendons reduces energy expenditure',
+                  'Tendons do not fatigue like muscles'
+                ], guidance: '3 max.' },
+              '8(i)': { type: 'points', points: [
+                  'Different primary structure',
+                  'More/stronger/different bonds between R-groups (amino acid side chains)',
+                  'Remain active over a broader pH range / not denatured by low pH'
+                ], guidance: '2 max. Allow different tertiary structure.' },
+              '8(j)': { type: 'points', points: [
+                  'Populations of species that occupy the same habitat (the sloth)',
+                  'That benefit from the host/sloth without harming it (e.g. food, shelter, protection)'
+                ], guidance: '2 max.' },
+              '8(k)': { type: 'points', points: [
+                  'A method of isolation of populations described (e.g. different food sources, feeding times, mating rituals, genitalia)',
+                  'Reduces the chance of reproduction between populations (reproductive isolation)',
+                  'Results in reduced gene flow between populations',
+                  '(Forming) populations with different gene pools'
+                ], guidance: '3 max.' }
             } }
         ] },
       { board: 'Edexcel B', specCode: '9BI0',
