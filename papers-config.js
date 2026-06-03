@@ -15252,6 +15252,321 @@ window.SUBJECTS = [
                   'Indicative content': 'Graphs (G): all groups have more endangered than threatened species; more mammals/birds kept than invertebrates/amphibians; zoos do most research on mammals/birds, little on invertebrates; high proportion of invertebrates have in-situ conservation; ex-situ low for mammals/birds. Knowledge (K): ex-situ = in zoos, in-situ = in habitats; zoos prevent extinction, run breeding programmes/stud books to reduce genetic problems, allow research/education; ex-situ can cause inbreeding/behaviour change/ethical issues. Discussion (D): some species kept just as exhibits; zoos raise money/awareness for in-situ; limited data (no species detail, no zoo numbers, only threatened/endangered categories).'
                 },
                 guidance: '6 marks. Levels-of-response: mark holistically, best fit.' }
+            } },
+          { id: 'bio-edxb-9bi0-2024-p3', year: 'June 2024', paperName: 'Paper 3 — General and Practical Principles in Biology', paperCode: '9BI0/03', totalMarks: 120, durationMins: 150,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-03-que-20240620.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Biology/2015/Exam-materials/9bi0-03-rms-20240815.pdf',
+            qbqNote: 'All 10 questions (120 marks) are wired up question-by-question with the official Pearson mark scheme. This practical-principles paper is mostly structured data-analysis and practical-method questions; Question 9(b) is the 9-mark asterisked (*) levels-of-response question. Diagrams, graphs and tables are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: "A student made a root tip squash to observe the stages of mitosis. A diagram shows cells from the squash (total 39 cells).\n\n(See the diagram in the question paper PDF.)",
+                parts: [
+                  { code: '1(a)', prompt: "Name the region of the root tip where cells are actively dividing.", marks: 1 },
+                  { code: '1(b)(i)', prompt: "Give one reason for treating the root tip with strong acid.", marks: 1 },
+                  { code: '1(b)(ii)', prompt: "Give one reason for adding a stain to the root tip.", marks: 1 },
+                  { code: '1(b)(iii)', prompt: "Give one reason for pressing lightly on the coverslip.", marks: 1 },
+                  { code: '1(c)', preamble: "The total number of cells is 39.", prompt: "Calculate the mitotic index for this root tip squash (mitotic index = number of cells in mitosis ÷ total number of cells × 100). Give your answer to one decimal place.", marks: 2 }
+                ] },
+              { number: 2,
+                scenario: "The mammalian kidney contains over one million nephrons; one function is to produce urine with a high concentration of urea. A diagram shows one nephron, collecting duct and associated blood vessels, with a region labelled A.\n\n(See the diagram and graph in the question paper PDF.)",
+                parts: [
+                  { code: '2(a)(i)', prompt: "Explain how urea enters the nephron.", marks: 2 },
+                  { code: '2(a)(ii)', preamble: "In the region labelled A, sodium ions are actively pumped out of the nephron into the surrounding fluid.", prompt: "Explain how this movement of ions results in the formation of concentrated urine.", marks: 3 },
+                  { code: '2(b)(i)', preamble: "A graph shows the urine concentration in kangaroo rats, camels and humans.", prompt: "Determine the ratio of urine concentration for these three mammals.", marks: 1 },
+                  { code: '2(b)(ii)', preamble: "Kangaroo rats live in a desert habitat.", prompt: "Explain one adaptation in the structure of a kangaroo rat kidney that enables it to produce very concentrated urine.", marks: 2 },
+                  { code: '2(b)(iii)', preamble: "Kangaroo rats are endotherms.", prompt: "Give one behavioural adaptation that you would expect to see in kangaroo rats that helps them to conserve water in a hot desert.", marks: 1 }
+                ] },
+              { number: 3,
+                scenario: "Beetroot (Beta vulgaris) root cells contain a red pigment, betalain, in the vacuole. A group of students investigated the effect of temperature (20–60 °C) on membrane permeability by measuring the absorbance of pigment released from beetroot pieces (Group 1 results were excluded as anomalous).\n\n(See the results table in the question paper PDF.)",
+                parts: [
+                  { code: '3(a)(i)', kind: 'diagram', prompt: "Draw a typical cell from a root, as seen using a light microscope. Label three named membranes.", marks: 2 },
+                  { code: '3(a)(ii)', prompt: "Describe the structure of a membrane in a plant cell.", marks: 2 },
+                  { code: '3(b)(i)', prompt: "Describe the relationship between temperature and absorbance, as shown by these results.", marks: 2 },
+                  { code: '3(b)(ii)', prompt: "Explain the results of this investigation.", marks: 2 },
+                  { code: '3(c)', preamble: "Group 1 results were excluded as they were so different from the other groups.", prompt: "Identify four errors this group may have made which would account for the difference in results.", marks: 4 }
+                ] },
+              { number: 4,
+                scenario: "Woodlice are crustaceans that obtain oxygen through gills on their legs. A photograph shows Armadillidium vulgare (× 2). A student also used a choice chamber (light/dark, damp/dry) to investigate habitat preference.\n\n(See the photographs and results table in the question paper PDF.)",
+                parts: [
+                  { code: '4(a)(i)', prompt: "Describe how you could measure the respiration rate of woodlice collected from a garden.", marks: 5 },
+                  { code: '4(a)(ii)', prompt: "Identify one safety issue and one ethical issue involved in your method in part (a)(i) and state how you would minimise the effect of these.", marks: 2 },
+                  { code: '4(b)(i)', preamble: "A choice chamber gave the number of woodlice in each section (light/dry, light/damp, dark/dry, dark/damp) over four trials. The hypothesis was that woodlice show no habitat preference.", prompt: "Explain which statistical test could be used to analyse these results.", marks: 2 },
+                  { code: '4(b)(ii)', preamble: "The results suggest woodlice prefer some conditions to others.", prompt: "Explain why it is an advantage for them to live in these conditions.", marks: 2 },
+                  { code: '4(b)(iii)', prompt: "Describe three improvements that could be made to this investigation to ensure the conclusion is valid.", marks: 3 }
+                ] },
+              { number: 5,
+                scenario: "Differences in water potential affect the direction of movement of water in and out of cells. The osmotic potential of cell sap in onion epidermal cells was found using plasmolysis (the osmotic potential is equivalent to the sucrose concentration when 50% of cells are plasmolysed). A stock sucrose solution of 0.8 mol dm⁻³ was used.\n\n(See the results table and conversion graph in the question paper PDF.)",
+                parts: [
+                  { code: '5(a)(i)', prompt: "Describe how you would prepare 10 cm³ of a sucrose solution with a concentration of 0.6 mol dm⁻³ from the stock solution.", marks: 2 },
+                  { code: '5(a)(ii)', kind: 'diagram', preamble: "The table gives the mean percentage of plasmolysed cells at sucrose concentrations from 0.0 to 0.8 mol dm⁻³.", prompt: "Plot a suitable graph to display these results. Join the points with straight lines.", marks: 3 },
+                  { code: '5(a)(iii)', prompt: "Determine the concentration of the cell sap of the onion epidermal cells, using your graph (the concentration at 50% plasmolysis).", marks: 1 },
+                  { code: '5(a)(iv)', preamble: "A conversion graph converts the concentration of cell sap into osmotic potential.", prompt: "Determine the osmotic potential of the cell sap of the onion epidermal cells. Use your answer to (a)(iii) and the conversion graph.", marks: 1 },
+                  { code: '5(a)(v)', prompt: "Write the equation that is used to calculate the water potential of a plant cell.", marks: 1 },
+                  { code: '5(a)(vi)', prompt: "State the water potential of the cell sap of the onion epidermal cells when 50% of the cells are plasmolysed.", marks: 1 },
+                  { code: '5(b)', preamble: "The students modified the method: all pieces of onion epidermis were cut from a single onion; tubes were left in a thermostatically controlled water bath; and the count was repeated twice for each concentration.", prompt: "Explain why each of these changes is likely to improve the validity of this investigation.", marks: 3 }
+                ] },
+              { number: 6,
+                scenario: "Duckweed (Lemna minor) is a small floating plant. A student investigated the effect of light wavelength (no filter, red filter, blue filter) on the time taken for the number of duckweed plants to double, and a second investigation on the effect of fertiliser concentration on growth.\n\n(See the graphs in the question paper PDF.)",
+                parts: [
+                  { code: '6(a)(i)', prompt: "Explain the results of this investigation (the effect of light wavelength).", marks: 2 },
+                  { code: '6(a)(ii)', preamble: "The shortest time for the number of plants to double was more than 3 days.", prompt: "Give two ways of reducing the time taken for the number of plants to double.", marks: 2 },
+                  { code: '6(a)(iii)', prompt: "Give one reason why the results may not be accurate.", marks: 1 },
+                  { code: '6(a)(iv)', prompt: "Describe a method that could be used to measure the growth of the plants more accurately.", marks: 2 },
+                  { code: '6(b)', preamble: "Duckweed was grown in water containing a fertiliser (nitrate, phosphate and magnesium ions) at three concentrations; a graph shows the results.", prompt: "Explain the effect of increasing fertiliser concentration on the growth of these plants.", marks: 3 },
+                  { code: '6(c)', preamble: "It has been suggested that duckweed could be grown in water polluted with organic waste from cows and processed to make feed for poultry and cattle.", prompt: "Analyse the information to comment on this suggestion.", marks: 4 }
+                ] },
+              { number: 7,
+                scenario: "Turmeric is a spice made from the root of Curcuma longa, used in traditional medicine.",
+                parts: [
+                  { code: '7(a)', preamble: "A student suggested the hypothesis: an extract made from turmeric root will reduce the growth of bacteria.", prompt: "Devise a valid method to test this hypothesis.", marks: 6 },
+                  { code: '7(b)', preamble: "A 2019 trial compared curcumin with Drug A (an existing anti-inflammatory) for joint pain: 139 patients aged 38–65, randomly assigned to 50 mg Drug A twice daily or 500 mg curcumin three times daily for 28 days; patients with various conditions were excluded. Graphs show pain improvement, side effects, weight loss and doctor-rated outcomes.", prompt: "Analyse the data to discuss the suggestion that curcumin should be used to replace Drug A as a treatment for knee pain. Use information about the design of this trial and the results to support your answer.", marks: 6 }
+                ] },
+              { number: 8,
+                scenario: "A student investigated the distribution of celandine (Ficaria verna) in a mature beech woodland, which seemed less abundant as distance from a path increased. A transect at 90° to the path was used, recording presence/absence every 25 cm, repeated for three transects. The data were analysed using Spearman's rank correlation.\n\n(See Tables 1 and 2 and the critical-value table in the question paper PDF.)",
+                parts: [
+                  { code: '8(a)', prompt: "Give a null hypothesis for this investigation.", marks: 1 },
+                  { code: '8(b)(i)', preamble: "Table 2 gives the ranks and d values for nine distances (Σd² = 236, n = 9).", prompt: "Calculate the correlation coefficient, rs, using rs = 1 − (6Σd² / n(n² − 1)). Give your answer to three significant figures.", marks: 3 },
+                  { code: '8(b)(ii)', preamble: "A table gives critical values; at 9 pairs of values the critical value at p = 0.05 is 0.700.", prompt: "Analyse the data to explain the conclusion that can be drawn from this investigation. Use the table of critical values and your calculated correlation coefficient.", marks: 3 },
+                  { code: '8(c)(i)', prompt: "Name one abiotic factor that might influence the distribution of celandine plants.", marks: 1 },
+                  { code: '8(c)(ii)', prompt: "Describe a method that could be used to measure how this abiotic factor changes along the transect.", marks: 3 },
+                  { code: '8(c)(iii)', prompt: "Explain why the factor you have chosen would change along the transect and how this affects the growth of celandine plants.", marks: 3 }
+                ] },
+              { number: 9,
+                scenario: "Peppered moths (Biston betularia) have a light form and a dark form. Until 1848 only light moths were recorded; in 1848 a dark form was observed in an industrial area, and by 1895 98% of moths there were dark. Scientists have carried out several investigations (predation by birds, mark–recapture, map data) and recent evidence suggests moths rest on the underside of high branches and that bats, not birds, are the main predators.\n\n(See the photographs, tables and maps in the question paper PDF.)",
+                parts: [
+                  { code: '9(a)', prompt: "Explain how natural selection could have led to these changes (the increase in the dark form in the industrial area).", marks: 4 },
+                  { code: '9(b)', preamble: "Investigation 1: on lichen-covered trunks, birds were twice as likely to eat dark moths as light moths. Investigation 2: mark–recapture gave recapture percentages — light form 13.1% (industrial), 13.7% (rural); dark form 27.5% (industrial), 4.7% (rural). Investigation 3: maps of light/dark proportions in the 1950s and 1970s, with more light moths in once-industrial areas by the 1970s despite unchanged lichen cover.", prompt: "It has been suggested that the change in proportions of peppered moth forms is an example of natural selection. Discuss the validity of this suggestion.\n\n*Marks will be awarded for a logically structured answer.", marks: 9, extended: true }
+                ] },
+              { number: 10,
+                scenario: "During respiration, yeast cells break down sugars to produce carbon dioxide and ethanol; the rate can be estimated by measuring the rate of CO₂ production. Scientists measured the rate of respiration of yeast with sucrose, and with lactose (with and without lactase), at 30 °C.\n\n(See the graphs in the question paper PDF.)",
+                parts: [
+                  { code: '10(a)(i)', prompt: "Calculate the initial rate of respiration of yeast with sucrose. Give your answer in cm³ min⁻¹.", marks: 1 },
+                  { code: '10(a)(ii)', prompt: "Explain the results for sucrose compared with lactose without lactase.", marks: 3 },
+                  { code: '10(a)(iii)', prompt: "Explain the effect of lactase on the respiration rate of yeast during the first 400 minutes.", marks: 3 },
+                  { code: '10(b)', preamble: "The experiment with sucrose was repeated at a temperature 10 °C lower, with all other variables the same.", prompt: "Explain the effect of this temperature change on the rate of respiration of yeast.", marks: 3 },
+                  { code: '10(c)(i)', kind: 'diagram', preamble: "A graph shows the results for a suspension containing 7.0 g of yeast in 100 cm³ of water with 20 g of sucrose.", prompt: "Sketch a line on this graph to show the expected results for a suspension containing 3.5 g of yeast.", marks: 1 },
+                  { code: '10(c)(ii)', prompt: "Explain the effect of the concentration of yeast on the volume of carbon dioxide produced in this investigation.", marks: 3 }
+                ] }
+            ],
+            markSchemes: {
+              '1(a)': { type: 'exact', points: ['Meristem'], guidance: '1 mark.' },
+              '1(b)(i)': { type: 'points', points: ['To break down the middle lamella / pectins / separate the layers of cells'],
+                guidance: '1 mark. Accept calcium pectate / separate cells.' },
+              '1(b)(ii)': { type: 'points', points: ['To make the chromosomes / DNA visible (to dye/colour them)'], guidance: '1 mark.' },
+              '1(b)(iii)': { type: 'points', points: ['To form a single / thin layer of cells (separate the layers)'], guidance: '1 mark.' },
+              '1(c)': { type: 'exact', points: ['10.3'],
+                guidance: '2 marks. 4 cells in mitosis ÷ 39 × 100 = 10.3 (1 dp). 1 mark for counting 4. Correct answer with no working gains full marks.' },
+              '2(a)(i)': { type: 'points', points: [
+                  '(Urea moves) from the blood/glomerulus into the capsule',
+                  'By ultrafiltration (due to high blood/hydrostatic pressure)'
+                ], guidance: '2 marks.' },
+              '2(a)(ii)': { type: 'points', points: [
+                  'The ion concentration is higher outside the nephron / in the medulla (lowering the water potential there)',
+                  'Water moves out of the descending limb / collecting duct',
+                  'By osmosis (down a water potential gradient)',
+                  '(The loop of Henle acts as a) countercurrent multiplier'
+                ], guidance: '3 max.' },
+              '2(b)(i)': { type: 'exact', points: ['≈ 3.9 : 2 : 1', '4 : 2 : 1'],
+                guidance: '1 mark. Accept numbers in any order if qualified.' },
+              '2(b)(ii)': { type: 'points', points: [
+                  'The nephron has a (relatively) long loop of Henle (or many juxtamedullary nephrons)',
+                  'So a longer distance / larger gradient can build up (greater countercurrent multiplier effect); OR thick medulla; OR highly folded membranes / many mitochondria for active transport'
+                ], guidance: '2 marks (a paired idea).' },
+              '2(b)(iii)': { type: 'points', points: ['Hide in burrows during the day / nocturnal / feed at night'], guidance: '1 mark.' },
+              '3(a)(i)': { type: 'points', points: ['A drawing of a cell containing a cell wall, vacuole and nucleus, with three membranes correctly labelled (e.g. tonoplast, cell-surface membrane, nuclear membrane)'],
+                guidance: '2 marks. Best assessed against your drawing. Do not accept chloroplasts.' },
+              '3(a)(ii)': { type: 'points', points: [
+                  'Phospholipid bilayer',
+                  'Proteins embedded / protein channels'
+                ], guidance: '2 marks. Accept integral/intrinsic/carrier proteins.' },
+              '3(b)(i)': { type: 'points', points: [
+                  'As temperature increases, absorbance increases (until 50 °C) — positive correlation',
+                  'The increase is greatest between 40 °C and 50 °C',
+                  '(Absorbance) levels off / plateaus at/above 50 °C'
+                ], guidance: '2 max. Ignore permeability.' },
+              '3(b)(ii)': { type: 'points', points: [
+                  'Increasing temperature causes increased permeability / betalain can pass through the tonoplast/membrane when it is disrupted',
+                  'As temperature increases the membrane becomes more fluid / above 40 °C the proteins in the membrane are denatured'
+                ], guidance: '2 marks (one from each set). Ignore enzymes.' },
+              '3(c)': { type: 'points', points: [
+                  'Less than 20 cm³ water in the boiling tube',
+                  'A different beetroot used',
+                  'Beetroot pieces longer than 1 cm',
+                  'Beetroot pieces not rinsed',
+                  'Pieces left in the tubes longer than 20 minutes',
+                  'Tubes may have been shaken',
+                  'Incorrect use of the colorimeter (scratched cuvettes, wrong filter, not zeroed)'
+                ], guidance: '4 max. Answers must be consistent with the higher absorbance.' },
+              '4(a)(i)': { type: 'points', points: [
+                  'Find the mass of the woodlice',
+                  'Description/diagram of a respirometer',
+                  'With sodium hydroxide / potassium hydroxide / soda lime to absorb carbon dioxide',
+                  'Measure the distance moved by the liquid in a stated time',
+                  'Method of controlling temperature (thermostatically controlled water bath / control tube)',
+                  'Method of finding the volume of oxygen used',
+                  'Method of calculating the rate (volume ÷ time ÷ mass)'
+                ], guidance: '5 max.' },
+              '4(a)(ii)': { type: 'points', points: [
+                  'Safety: soda lime is corrosive / woodlice may carry bacteria / glassware may break — so wear gloves/goggles',
+                  'Ethics: avoid harm to the woodlice (handle carefully with a paintbrush, separate them from the soda lime, refresh the air, return them to the garden)'
+                ], guidance: '2 marks (1 safety + 1 ethics).' },
+              '4(b)(i)': { type: 'points', points: [
+                  'Chi-squared',
+                  'Used to compare observed and expected frequencies (a single categoric variable)'
+                ], guidance: '2 marks.' },
+              '4(b)(ii)': { type: 'points', points: [
+                  '(Woodlice prefer dark/damp as they are) less likely to lose water / be eaten by predators',
+                  'Damp conditions mean they can absorb oxygen / carry out gas exchange more effectively (gills stay damp)'
+                ], guidance: '2 marks.' },
+              '4(b)(iii)': { type: 'points', points: [
+                  'Set up the choice chamber in advance / clean it between trials to remove scent trails',
+                  'Leave the woodlice for longer than 5 minutes',
+                  'Ensure all woodlice are the same species',
+                  'Use more woodlice',
+                  'Take a photograph to count numbers / state how to deal with woodlice on a boundary'
+                ], guidance: '3 max.' },
+              '5(a)(i)': { type: 'points', points: [
+                  'Correct ratio (3 : 1) of stock solution to water',
+                  'Correct volumes, e.g. 7.5 cm³ stock and 2.5 cm³ water (made up to 10 cm³)'
+                ], guidance: '2 marks.' },
+              '5(a)(ii)': { type: 'points', points: [
+                  'Axes correctly orientated and labelled with units (mean % plasmolysed cells on the y-axis)',
+                  'All values accurately plotted on a linear scale',
+                  'A scatter graph with straight lines joining the points'
+                ], guidance: '3 marks. Best assessed against your graph in the QP PDF.' },
+              '5(a)(iii)': { type: 'exact', points: ['0.37 mol dm⁻³', '0.36 to 0.38'],
+                guidance: '1 mark. The concentration at 50% plasmolysis read from the graph.' },
+              '5(a)(iv)': { type: 'exact', points: ['−980 kPa (± 20)'],
+                guidance: '1 mark. Read from the conversion graph at 0.37 mol dm⁻³. Allow ECF from (a)(iii). Do not accept positive values.' },
+              '5(a)(v)': { type: 'exact', points: ['Water potential = pressure (turgor) potential + osmotic (solute) potential (Ψ = Ψp + Ψs)'],
+                guidance: '1 mark.' },
+              '5(a)(vi)': { type: 'exact', points: ['−980 kPa'],
+                guidance: '1 mark. Allow ECF from (a)(iv) (at the point of incipient plasmolysis the pressure potential is 0, so water potential = osmotic potential).' },
+              '5(b)': { type: 'points', points: [
+                  'Tissue from the same onion, as different onions may have a different osmotic/solute potential',
+                  'All tubes in a water bath, as temperature affects the rate of osmosis',
+                  'Count more than one field of view, as it may not be representative (increases sample size / identifies anomalies)'
+                ], guidance: '3 marks.' },
+              '6(a)(i)': { type: 'points', points: [
+                  'The rate of photosynthesis is highest in white light / with no filter',
+                  'Because the chlorophyll/plant can absorb more wavelengths of light when no filter is present',
+                  'So more GP/GALP/glucose/ATP is made (allowing faster growth / mitosis to produce daughter plants)'
+                ], guidance: '2 max. Accept converse for red/blue filters.' },
+              '6(a)(ii)': { type: 'points', points: [
+                  'Higher light intensity (move the lamp closer)',
+                  'Higher temperature',
+                  'Higher concentration of carbon dioxide',
+                  'Add fertiliser / more mineral ions'
+                ], guidance: '2 max.' },
+              '6(a)(iii)': { type: 'points', points: [
+                  'Plants may overlap (hard to count) / frond size may vary / hard to tell when one plant becomes two during budding'
+                ], guidance: '1 mark. Ignore "difficult to count" unqualified.' },
+              '6(a)(iv)': { type: 'points', points: [
+                  'Measure the mass of the plants (with detail, e.g. blotting dry / dry mass with replicates)',
+                  'OR measure the surface area covered (e.g. squared paper / photograph) OR root length (e.g. with calipers)'
+                ], guidance: '2 marks (a method + detail).' },
+              '6(b)': { type: 'points', points: [
+                  'As fertiliser concentration increases, growth / cell division increases (positive correlation)',
+                  'Because nitrate is needed to make amino acids/proteins/enzymes/DNA/chlorophyll',
+                  'Because phosphate is needed to make nucleic acids/DNA/RNA/ATP/phospholipids',
+                  'Because magnesium is needed to make chlorophyll'
+                ], guidance: '3 max.' },
+              '6(c)': { type: 'points', points: [
+                  'Positive: removes excess minerals/pollutants from the water',
+                  'Positive: rapid growth so large amounts of animal feed produced quickly',
+                  'Positive: cheap (uses waste products) / sustainable; floats so not shaded by manure',
+                  'Negative: needs a large surface area / a warm temperature for rapid growth',
+                  'Negative: very high mineral levels or pollutant chemicals may inhibit/kill the duckweed',
+                  'Negative: may harm other aquatic life / feed may be contaminated with bacteria'
+                ], guidance: '4 max (≤3 positives, ≤3 negatives).' },
+              '7(a)': { type: 'points', points: [
+                  'Suitable method of making the root extract (e.g. grind with sterile water and filter; known mass in known volume)',
+                  'Method of controlling concentration (a range, including a 0/water control)',
+                  'Suitable method of growing bacteria (agar plates / broth)',
+                  'Suitable method of applying the extract (paper discs / wells / mixed into agar)',
+                  'Carried out with and without turmeric (a control)',
+                  'Suitable time/temperature for incubation (24–72 h, ≤30 °C)',
+                  'Method of collecting results (diameter/area of the clear zone of inhibition)',
+                  'Use of a suitable statistical test (e.g. t-test) / replicates for an SD',
+                  'Description of aseptic technique'
+                ], guidance: '6 max.' },
+              '7(b)': { type: 'points', points: [
+                  'Small number of patients in the trial',
+                  'Short duration of the trial',
+                  'Limited range of ages (people with complex conditions excluded)',
+                  'Not a double-blind study (patients knew which treatment they got → bias)',
+                  'Measurement of pain is subjective',
+                  'Relevant comment on pain reduction (little difference between treatments)',
+                  'Relevant comment on side effects (curcumin had fewer)',
+                  'Relevant comment on the doctor-rated overall outcome',
+                  'Relevant comment on weight loss (curcumin causes weight loss — good or bad depending on the patient)'
+                ], guidance: '6 max (≤4 about design, ≤4 about results).' },
+              '8(a)': { type: 'points', points: ['There is no correlation between the (mean) abundance of celandine plants and the distance from the path'],
+                guidance: '1 mark.' },
+              '8(b)(i)': { type: 'exact', points: ['−0.967'],
+                guidance: '3 marks. Σd² = 236; 6Σd² / n(n²−1) = 1416 / 720 = 1.967; rs = 1 − 1.967 = −0.967. 1 mark each for Σd², the intermediate step, and rs to 3 sf. Correct answer with no working gains full marks.' },
+              '8(b)(ii)': { type: 'points', points: [
+                  'The critical value (at 9 pairs, p = 0.05) is 0.700',
+                  'The calculated value (0.967) is greater than the critical value, so reject the null hypothesis',
+                  'There is a significant (negative) correlation between distance from the path and the abundance of celandine plants (not due to chance)'
+                ], guidance: '3 marks. Allow ECF. Do not allow "−0.967 < critical value".' },
+              '8(c)(i)': { type: 'points', points: ['A suitable abiotic factor (e.g. light intensity, humidity, temperature, soil pH, soil water/mineral/humus content)'],
+                guidance: '1 mark.' },
+              '8(c)(ii)': { type: 'points', points: [
+                  'Use of correct equipment/method (e.g. a probe/meter, or collecting and drying a soil sample)',
+                  'Standardisation (e.g. meter at the same height / sample at a known depth)',
+                  'Location of samples (at every position / 1 m intervals along the transect)'
+                ], guidance: '3 marks.' },
+              '8(c)(iii)': { type: 'points', points: [
+                  'Comment on how the factor will vary with distance from the path (e.g. light intensity decreases)',
+                  'A correct explanation for why it varies (e.g. shading by trees; humus from decomposing leaf litter)',
+                  'Comment on how this affects plant physiology (e.g. light → light-dependent reactions)',
+                  'Explanation of how this affects growth (e.g. less photosynthesis → less glucose/amino acids for growth)'
+                ], guidance: '3 max.' },
+              '9(a)': { type: 'points', points: [
+                  'Dark moths arose by (random) mutation (causing variation)',
+                  '(In industrial areas) dark moths are less likely to be seen/eaten by predators (camouflage); light moths more likely',
+                  'Dark moths have a selective advantage in industrial areas (the dark allele is advantageous)',
+                  'Dark moths are more likely to survive and breed, passing on the allele',
+                  'The allele frequency for the dark form increases'
+                ], guidance: '4 max.' },
+              '9(b)': { type: 'levels',
+                levels: [
+                  { range: [7, 9], descriptor: 'Level 3', criteria: 'Comprehensive knowledge applied; consequences supported throughout by sustained linkage; clear, logically structured. A minimum of six comments drawn from all three investigations, including the confounding data (e.g. for 8 marks include one confounding point, for 9 marks two).' },
+                  { range: [4, 6], descriptor: 'Level 2', criteria: 'Adequate knowledge with some relevant facts; some lines of reasoning with structure. Up to six comments from at least two of the investigations.' },
+                  { range: [1, 3], descriptor: 'Level 1', criteria: 'Isolated elements of knowledge with generalised comments; up to three comments from any area.' }
+                ],
+                indicative: {
+                  'Indicative content': 'Supports natural selection: Inv. 1 — very visible moths were eaten, better-camouflaged ones were not; Inv. 2 — in the industrial area twice as many dark moths survived (matches predation data), in the rural area more light moths survived; Inv. 3 — non-industrial areas have mostly light moths and industrial areas mostly dark (with examples), prevailing winds carry pollution. Confounding/against: in Inv. 2 the light-form survival is the same in both areas; if moths rest on the underside of high branches, trunk-lichen camouflage is irrelevant; bats (the main predators) hunt at night so camouflage does not matter; in the 1970s proportions changed without lichen change, suggesting pollution itself (not camouflage) drives the change; no sample-size/SD data; mark–recapture assumes those not recaptured are eaten.'
+                },
+                guidance: '9 marks. Levels-of-response: mark holistically, best fit.' },
+              '10(a)(i)': { type: 'exact', points: ['0.03 cm³ min⁻¹', '0.028 to 0.032'],
+                guidance: '1 mark. Initial gradient of the sucrose line.' },
+              '10(a)(ii)': { type: 'points', points: [
+                  '(Yeast) can use sucrose to produce carbon dioxide (respire)',
+                  '(Yeast) cannot use lactose, so no respiration, because lactose cannot be broken down',
+                  'For sucrose, respiration stops / CO₂ levels off because all the sucrose/substrate has been used up'
+                ], guidance: '3 max.' },
+              '10(a)(iii)': { type: 'points', points: [
+                  'Lactase breaks down lactose to give glucose and galactose',
+                  'Yeast can use one of these sugars (glucose) as a respiratory substrate',
+                  'The volume of CO₂ is approximately half that produced by sucrose',
+                  'The rate at 400 minutes is close to zero as all the glucose/substrate has been used up'
+                ], guidance: '3 max.' },
+              '10(b)': { type: 'points', points: [
+                  'At the lower temperature there is less kinetic energy, so the respiration rate is lower',
+                  'Because there are fewer enzyme–substrate collisions per unit time',
+                  'Respiration will continue until all the sucrose is used up',
+                  'So eventually the same volume of CO₂ is produced (the rate reaches zero), just more slowly'
+                ], guidance: '3 max. Do not accept "no ES collisions" or "enzyme denatured".' },
+              '10(c)(i)': { type: 'points', points: ['A line drawn to the right of the existing line (slower initial rate but reaching the same final value)'],
+                guidance: '1 mark. Best assessed against the graph in the QP PDF.' },
+              '10(c)(ii)': { type: 'points', points: [
+                  '(7 g yeast) more yeast cells, so CO₂ is produced faster (more enzymes to hydrolyse sucrose / respire)',
+                  'The final volume of CO₂ produced is the same for 7 g and 3.5 g',
+                  'Because the mass/concentration of sucrose (substrate) is the same for both',
+                  'The line levels off sooner for 7 g because the sucrose is used up more quickly (3.5 g takes about twice as long)'
+                ], guidance: '3 max. All points must be comparative; accept converse for 3.5 g.' }
             } }
         ] },
       { board: 'OCR A', specCode: 'H420',
