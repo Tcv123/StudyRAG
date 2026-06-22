@@ -20046,7 +20046,6 @@ window.SUBJECTS = [
       '5(b)(i)': { type: 'exact', points: ["'"], guidance: '1 mark.' },
       '5(b)(ii)': { type: 'exact', points: ["'"], guidance: 'ACCEPT distal convoluted tubule/DCT.' },
     } },
-] },
   { id: 'bio-ocrb-h422-2023-p1', year: 'June 2023', paperName: 'Paper 1 — Fundamentals of biology', paperCode: 'H422/01', totalMarks: 80, durationMins: 135,
     qpUrl: 'https://www.ocr.org.uk/Images/703906-question-paper-fundamentals-of-biology.pdf',
     msUrl: 'https://www.ocr.org.uk/Images/704033-mark-scheme-fundamentals-of-biology.pdf',
