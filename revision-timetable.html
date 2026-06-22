@@ -1417,6 +1417,7 @@ function openWizard({ firstTime }) {
     Object.assign(profile, update);
     backdrop.remove();
     renderPage();
+    if (firstTime) onAutoFill();
   }
 
   render();
