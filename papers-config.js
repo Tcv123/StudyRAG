@@ -11462,10 +11462,10 @@ window.SUBJECTS = [
       { board: 'AQA', specCode: '7402',
         officialPageUrl: 'https://www.aqa.org.uk/subjects/biology/a-level/biology-7402/assessment-resources',
         // June 2024 papers are still embargoed on AQA's filestore (every
-        // 74021/2/3-QP-JUN24 URL 404s). AQA has also rotated June 2022
-        // Papers 1 and 3 off the public filestore — only June 2022 Paper 2
-        // and the full June 2023 series remain downloadable, so those are
-        // what is wired up question-by-question here.
+        // 74021/2/3-QP-JUN24 URL 404s). June 2022 Papers 1 and 3 use the
+        // -CR (clean/readable) URL variant rather than the standard path —
+        // all three June 2022 papers and the full June 2023 series are wired
+        // up question-by-question here.
         papers: [
           { id: 'bio-aqa-7402-2023-p1', year: 'June 2023', paperName: 'Paper 1', paperCode: '7402/1', totalMarks: 91, durationMins: 120,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74021-QP-JUN23.PDF',
@@ -12171,6 +12171,267 @@ window.SUBJECTS = [
                 },
                 guidance: '25 marks (13 AO1, 12 AO2). Mark by best fit on overall quality, then place within the band using its variability. To reach the highest bands the essay must link at least four different specification topics to the theme. Credit valid material beyond the specification if it is at A-level standard and relevant to the title.' }
             } },
+          { id: 'bio-aqa-7402-2022-p1', year: 'June 2022', paperName: 'Paper 1', paperCode: '7402/1', totalMarks: 91, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74021-QP-JUN22-CR.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74021-MS-JUN22.PDF',
+            qbqNote: 'All 9 questions (91 marks) are wired up question-by-question with the official AQA mark scheme. Figures (the diversity index graph, C. difficile growth rates, AP membrane diagrams, channel cross-section, meiosis chromosomes, age/meiosis-division error graph, enzyme activity at two pHs, transpiration rate, ribosome isolation tubes, fish gill images and fish circulation) are in the question paper PDF — open it alongside for any figure a question refers to.',
+            questions: [
+              { number: 1,
+                parts: [
+                  { code: '01.1', prompt: 'Describe the structure and function of the nucleus.', marks: 4 },
+                  { code: '01.2', prompt: 'Name the main polymer that forms the following cell walls.\n\nPlant cell wall:\nFungal cell wall:', marks: 1 },
+                  { code: '01.3', preamble: 'Scientists investigated the effect of the number of fungal species in soil on the diversity of plant species. Table 1 shows their raw data for soil containing 14 fungal species, with the total shoot biomass (g m⁻²) for 7 plant species: Poa compressa (2), Achillea millefolium (4), Aster cordifolius (5), Aster novae-angliae (7), Daucus carota (15), Fragaria virginiana (36), and one further species (51). Total N = 120.', prompt: 'Suggest one reason the scientists used biomass instead of the number of individuals of each plant species when collecting data to measure diversity.', marks: 1 },
+                  { code: '01.4', preamble: 'The scientists used this equation to calculate the plant species index of diversity:\n\nd = 1 − Σn(n−1) / N(N−1)\n\nwhere n = shoot biomass of each plant species and N = total shoot biomass of all plant species. Use the Table 1 data above (total N = 120; species biomasses: 2, 4, 5, 7, 15, 36, 51).', prompt: 'Use this equation to calculate the index of diversity for the data in Table 1. Show your working.', marks: 2 },
+                  { code: '01.5', preamble: 'Figure 1 shows the plant species index of diversity the scientists calculated when the soil contained 0, 1, 2, 4 and 8 fungal species.\n\n(See Figure 1 in the question paper PDF.)', prompt: 'Sometimes farmers stop growing crops on an area of land to allow the natural ecosystem to recover. The plant species index of diversity of these areas previously used to grow crops is different from nearby land that has never been used to grow crops.\n\nSuggest and explain how the plant species index of diversity would be different in these areas previously used to grow crops. Use Figure 1 and your knowledge of the effect of farming on biodiversity in your answer.', marks: 2 }
+                ] },
+              { number: 2,
+                scenario: 'Clostridium difficile is a bacterial species that causes disease in humans. Antibiotic-resistant strains of C. difficile have become a common cause of infection acquired when in hospital.',
+                parts: [
+                  { code: '02.1', prompt: 'Explain how the use of antibiotics has led to antibiotic-resistant strains of bacteria becoming a common cause of infection acquired when in hospital.', marks: 3 },
+                  { code: '02.2', preamble: 'Scientists suggested that factors, other than antibiotic use, led to the increase in antibiotic-resistant C. difficile infections. One suggested factor is people eating more trehalose in their diet. Trehalose is a disaccharide formed from two glucose molecules.', prompt: 'Name another disaccharide formed from two glucose molecules.', marks: 1 },
+                  { code: '02.3', preamble: 'Scientists investigated the effect of trehalose on the growth rate of C. difficile. They grew populations of non-resistant and antibiotic-resistant C. difficile on separate agar plates with no carbohydrate added and with trehalose added, then measured growth rate. Figure 2 shows their results.\n\n(See Figure 2 in the question paper PDF.)', prompt: 'Describe how the scientists could use aseptic techniques to transfer 0.3 cm³ of C. difficile in liquid culture from a bottle onto an agar plate.', marks: 3 },
+                  { code: '02.4', prompt: 'Use Figure 2 to evaluate whether more trehalose in the diet could be a factor in the increased number of antibiotic-resistant C. difficile infections.\n\n(See Figure 2 in the question paper PDF.)', marks: 3 }
+                ] },
+              { number: 3,
+                scenario: 'Many multicellular organisms produce antimicrobial polypeptides (APs) that protect them against prokaryotes. Figure 3 shows how one type of AP acts on the cell-surface membrane of prokaryotes.\n\n(See Figures 3–5 in the question paper PDF.)',
+                parts: [
+                  { code: '03.1', prompt: 'Give two features of all prokaryotic cells that are not features of eukaryotic cells.\n\n1.\n2.', marks: 1 },
+                  { code: '03.2', prompt: 'This AP has a secondary structure in a helical shape. Tick (✓) the box to show which type of bond maintains the helical structure of the polypeptide.\n\n• Disulfide\n• Hydrogen\n• Ionic\n• Peptide', marks: 1 },
+                  { code: '03.3', preamble: 'The amino acids on one side of each AP helix have hydrophobic properties. The amino acids on the opposite side have hydrophilic properties (Figure 4 shows this).\n\n(See Figures 3 and 4 in the question paper PDF.)', prompt: 'Suggest how these properties of the APs allow them to become positioned across the membrane (as shown in Figure 3) and make a channel through which ions can pass.', marks: 2 },
+                  { code: '03.4', preamble: 'Figure 5 shows further information about a channel formed in the cell-surface membrane by the APs.\n\n(See Figure 5 in the question paper PDF.)', prompt: 'Use Figure 5 to calculate the cross-sectional area of the channel through which ions can pass. Assume the cross-sectional area is circular. Use π = 3.14. Give your answer in nm² and to 1 decimal place.', marks: 2 },
+                  { code: '03.5', preamble: 'The APs damage prokaryotic cells but do not damage the eukaryotic cells in the organisms that produce them. Prokaryotic cell membranes do not contain cholesterol.', prompt: 'Assess why the APs do not damage the eukaryotic cells of the organisms that produce them.', marks: 2 },
+                  { code: '03.6', preamble: 'Scientists observed these APs on prokaryotes using a transmission electron microscope. They stained the APs using a monoclonal antibody with gold attached to it.', prompt: 'Suggest how these techniques allowed observation of APs on prokaryotes.', marks: 3 }
+                ] },
+              { number: 4,
+                parts: [
+                  { code: '04.1', prompt: 'Describe viral replication.', marks: 3 },
+                  { code: '04.2', prompt: 'Complete the table by putting a tick (✓) where the feature is part of that cell cycle.\n\nFeature | Mitosis | Binary fission\nReplication of linear DNA | |\nReplication of circular DNA | |\nProduces 2 daughter cells | |\nProduces 4 daughter cells | |\nHappens in prokaryotic cells | |\nHappens in eukaryotic cells | |', marks: 2 },
+                  { code: '04.3', preamble: 'Figure 6 represents a cell undergoing meiosis. It shows the chromosomes in the parent cell and in the two cells formed after the first meiotic division. The second division of meiosis proceeds normally except that non-disjunction occurs in the chromosome labelled N.\n\n(See Figure 6 in the question paper PDF.)', prompt: 'Describe the chromosomes that would be found in each of the four daughter cells formed after the second meiotic division, given that non-disjunction occurs in chromosome N. (In the real paper you would draw these in Figure 6.)\n\nDescribe: which cells get extra/missing copies of chromosome N, and how the other chromosomes are distributed.', marks: 2, kind: 'diagram' },
+                  { code: '04.4', preamble: 'Doctors studied babies born with a mutation caused by chromosome non-disjunction during gamete formation in their mother. They determined each mother\'s age at childbirth and whether the non-disjunction happened in the first meiotic division (MM1 error) or the second meiotic division (MM2 error). Figure 7 shows their results.\n\n(See Figure 7 in the question paper PDF.)', prompt: 'A student concluded that there were more mothers of age 37 with MM2 errors than with MM1 errors. Using Figure 7 and suitable calculations, show why this conclusion is not valid.', marks: 2 }
+                ] },
+              { number: 5,
+                scenario: 'Two enzymes, P and Q, are proteins with quaternary structure which catalyse the same reaction, but they have different amino acid sequences. Scientists investigated the effect of pH 8.4 and pH 7.5 on the activity of enzymes P and Q. Figure 8 shows their results.\n\n(See Figure 8 in the question paper PDF.)',
+                parts: [
+                  { code: '05.1', prompt: 'Define the quaternary structure of a protein.', marks: 1 },
+                  { code: '05.2', prompt: 'Explain how two enzymes with different amino acid sequences can catalyse the same reaction.', marks: 2 },
+                  { code: '05.3', prompt: 'Describe what the scientists should place in the control tubes in this investigation.', marks: 3 },
+                  { code: '05.4', prompt: 'Give three conclusions you can make from Figure 8.\n\n(See Figure 8 in the question paper PDF.)\n\n1.\n2.\n3.', marks: 3 }
+                ] },
+              { number: 6,
+                scenario: 'Mangrove trees grow near the sea. Sea water surrounds the lower parts of the trees at high tide. Scientists investigated the rate of transpiration in a mangrove tree. Figure 9 shows the scientists\' results.\n\n(See Figure 9 in the question paper PDF.)',
+                parts: [
+                  { code: '06.1', prompt: 'Explain the rate of transpiration between 5 am and midday shown in Figure 9.\n\n(See Figure 9 in the question paper PDF.)', marks: 4 },
+                  { code: '06.2', prompt: 'Use Figure 9 to calculate the percentage increase in the rate of transpiration from 1 pm to 2 pm.\n\n(See Figure 9 in the question paper PDF.)', marks: 2 },
+                  { code: '06.3', preamble: 'The higher rate of transpiration at high tide shows that the mangrove tree is absorbing water from the sea water surrounding its roots.\n\nYou are given: a piece of fresh mangrove root; sea water; access to laboratory equipment.', prompt: 'Describe an experiment that you could do to investigate whether the mangrove root cells have a lower water potential than sea water.', marks: 4 }
+                ] },
+              { number: 7,
+                scenario: 'Scientists investigated ribosomal RNA in liver cells. Figure 10 shows the method they used to isolate ribosomes from the liver cells. The detergent dissolves lipids.\n\n(See Figure 10 in the question paper PDF.)',
+                parts: [
+                  { code: '07.1', prompt: 'Complete the table to give three differences between DNA molecules and tRNA molecules.\n\nDNA molecules | tRNA molecules\n(give three rows, one difference per row)', marks: 3 },
+                  { code: '07.2', preamble: 'The scientists broke open the cells to produce a suspension of cell contents.', prompt: 'Describe how the scientists would remove large organelles from this suspension of cell contents.', marks: 2 },
+                  { code: '07.3', prompt: 'Explain the position of the bands of ribosomes in tubes A and B in Figure 10.\n\n(See Figure 10 in the question paper PDF.)', marks: 3 }
+                ] },
+              { number: 8,
+                scenario: 'Scientists studied gills from two fish using an optical microscope. Image C shows gills from a fish with healthy gills; Image D shows gills from a fish with damaged gills. Figure 11 shows their results. Figure 12 shows the general pattern of blood circulation in fish.\n\n(See Figures 11 and 12 in the question paper PDF.)',
+                parts: [
+                  { code: '08.1', preamble: 'To observe the fish gills with the optical microscope, the scientists used two different stains. The first stain binds to DNA; the second stain binds to the red blood cells.', prompt: 'Explain why a second stain would be needed to stain the red blood cells. Suggest which molecule the stain could bind to in the red blood cells.\n\nExplanation:\nMolecule:', marks: 2 },
+                  { code: '08.2', preamble: 'The scientists calculated the surface area to volume ratios for each gill filament. Table 4: Healthy gill — surface area 7.4 × 10³ µm², volume 2.3 × 10⁴ µm³, SA:V ratio = ?; Damaged gill — surface area 1.1 × 10⁴ µm², volume = ?, SA:V ratio = 0.13:1.', prompt: 'Complete Table 4. Calculate the missing volume for the damaged gill and the missing SA:V ratio for the healthy gill. State your calculated values to 2 significant figures.', marks: 2 },
+                  { code: '08.3', preamble: 'The damage to the gills causes uncontrolled cell division in the cells around the capillaries in the gill filaments.', prompt: 'Other than surface area:volume ratio, describe one way this uncontrolled cell division changes the gills as shown in Figure 11. Explain how this difference would affect gas exchange.\n\n(See Figure 11 in the question paper PDF.)\n\nDifference:\nExplanation:', marks: 3 },
+                  { code: '08.4', prompt: 'Use Figure 12 to complete the table showing two differences between the circulation of blood in fish and the circulation of blood in a mammal.\n\n(See Figure 12 in the question paper PDF.)', marks: 2 }
+                ] },
+              { number: 9,
+                parts: [
+                  { code: '09.1', prompt: 'Describe the transport of carbohydrate in plants.', marks: 5, extended: true },
+                  { code: '09.2', prompt: 'Compare and contrast the structure of starch and the structure of cellulose.', marks: 6, extended: true },
+                  { code: '09.3', prompt: 'Describe the complete digestion of starch by a mammal.', marks: 4 }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'points', points: [
+                  'Nuclear envelope (double membrane) and pores',
+                  'Chromosomes / chromatin / DNA with histones',
+                  'Nucleolus / nucleoli',
+                  '(Holds/stores) genetic information/material for polypeptide production / code for polypeptides / regulation of gene expression',
+                  'DNA replication (occurs)',
+                  'Production of mRNA/tRNA / transcription occurs',
+                  'Production of rRNA / ribosomes'
+                ], guidance: '4 max (AO1). Max 2 for structure or 2 for function alone. Accept nucleoplasm for nucleolus. Ignore promoter regions/genes/alleles. Accept protein/amino acid sequences/primary structure for polypeptides.' },
+              '01.2': { type: 'exact', points: ['Plant cell wall: cellulose; Fungal cell wall: chitin'],
+                guidance: '1 mark (AO1). Both must be correct. Accept N-acetylglucosamine for chitin.' },
+              '01.3': { type: 'points', points: [
+                  'Individual organisms could not be identified/separated',
+                  'Too small/numerous to count individuals',
+                  'Too time-consuming to count'
+                ], guidance: '1 mark (AO2). Ignore "too difficult to identify different species" unless qualified. Accept reference to fungi for plants.' },
+              '01.4': { type: 'exact', points: ['0.71 (accept 0.70–0.71)'],
+                guidance: '2 marks (AO2). d = 1 − (2×1 + 4×3 + 5×4 + 7×6 + 15×14 + 36×35 + 51×50) / (120×119) = 1 − 4096/14280 = 0.713. Correct answer 0.70–0.71. 1 mark for: 0.29–0.3 (not subtracted from 1) OR 120 (correct total N).' },
+              '01.5': { type: 'points', points: [
+                  'Plant (bio)diversity is lower on previously used crop land / higher on land never used for crops',
+                  'Farming reduces (bio)diversity/species richness of fungi; fewer fungal species → fewer plant species (using Figure 1)'
+                ], guidance: '2 marks (AO3). Accept "farming reduces plant biodiversity" for MP1. Accept "farming reduces number of fungal species" for MP2.' },
+              '02.1': { type: 'points', points: [
+                  '(Some bacteria have) alleles/genes for resistance',
+                  '(Exposure to) antibiotics is the selection pressure / non-resistant bacteria die / resistant bacteria survive and reproduce',
+                  'More antibiotics used in hospital / patients have weakened immune systems / so high frequency of resistance allele in the bacterial population'
+                ], guidance: '3 marks (AO1). Reject if antibiotics said to cause production of resistance gene. Accept strain for bacteria. Accept gene for allele.' },
+              '02.2': { type: 'exact', points: ['Maltose'],
+                guidance: '1 mark (AO1). Reject maltase. Accept phonetic spellings.' },
+              '02.3': { type: 'points', points: [
+                  'Wash hands with soap / disinfect/sanitise surfaces or hands',
+                  'Use a sterile pipette/syringe to transfer bacteria (reject loop)',
+                  '(Remove bottle lid and) flame the neck of the bottle',
+                  'Lift lid of agar plate at an angle / keep lid over plate',
+                  'Work close to upward air movement / near a Bunsen burner',
+                  'Use a sterile spreader',
+                  'Place pipette/spreader into disinfectant immediately after use'
+                ], guidance: '3 max (AO1). Accept antiseptic/antimicrobial/alcohol wipes for disinfect. Accept unopened pipette for sterile. Reject loop for pipette/syringe.' },
+              '02.4': { type: 'points', points: [
+                  'For: resistant bacteria grow faster with trehalose (than without it)',
+                  'For: (so) resistant bacteria likely to increase in frequency/proportion in the population/people',
+                  'For: resistant bacteria likely to outcompete non-resistant bacteria',
+                  'Against: investigation is in laboratory not in people',
+                  'Against: other carbohydrates/disaccharides/sugars/polysaccharides in the diet might also affect bacteria',
+                  'Against: other bacterial species in the body might affect C. difficile',
+                  'Against: no statistical test to check if difference is significant/not due to chance',
+                  'Against: no data for resistant and non-resistant bacteria growing together',
+                  'Against: no data for different concentrations of trehalose'
+                ], guidance: '3 max (AO3). Max 2 if only "For" or only "Against" marks awarded.' },
+              '03.1': { type: 'points', points: [
+                  'No membrane-bound organelles (or correct named example)',
+                  '(Single,) circular/loop DNA in cytoplasm / DNA free in cytoplasm / nucleoid region',
+                  'DNA not associated with proteins/histones',
+                  'Murein/peptidoglycan in cell wall',
+                  'Smaller ribosomes (70S)'
+                ], guidance: '1 mark for any two correct (AO1). Apply list rule. Accept mesosome. Accept no introns. Reject plasmid; reject capsule/slime layer; reject flagellum (not universal).' },
+              '03.2': { type: 'exact', points: ['Hydrogen'],
+                guidance: '1 mark (AO1). The second option (Hydrogen bonds) should be ticked.' },
+              '03.3': { type: 'points', points: [
+                  'Hydrophobic side/region positions next to/in/facing fatty acid tails of the phospholipid bilayer',
+                  'Hydrophilic sides face inward/allow ion movement through the membrane / hydrophilic sides form a channel'
+                ], guidance: '2 marks (AO2). Accept "part/region/half" for side. Accept water/charged/polar molecules/water-soluble substances for ions.' },
+              '03.4': { type: 'exact', points: ['2.5 nm²'],
+                guidance: '2 marks (AO2). π × r² = 3.14 × (0.9)² = 2.5434 → 2.5 nm² to 1 d.p. 1 mark for 2.5434 (correct but too many d.p.) or 10.2 (used diameter as radius) or 6.6 (radius = 4 × 1.1/2) or 26.4 (diameter = 4 × 1.1).' },
+              '03.5': { type: 'points', points: [
+                  'Cholesterol stabilises the (eukaryotic) membrane / restricts movement of phospholipids/fatty acid tails (making it less fluid/stiffer/rigid)',
+                  '(So) APs do not make channels in eukaryotic membranes / APs cannot enter/fit into/be positioned in eukaryotic membranes'
+                ], guidance: '2 marks (AO3). Accept "gives structural support" for stabilises. Accept "fewer" for "do not".' },
+              '03.6': { type: 'points', points: [
+                  'Antibody (with complementary tertiary structure) binds to AP / gold present where AP is located',
+                  '(As antibody is) complementary to AP',
+                  'Gold interacts with/scatters/deflects/blocks electrons (in TEM)',
+                  '(T)EM has a high resolution'
+                ], guidance: '3 max (AO2). Reject "active site" for complementary. For interact: accept scattered/deflected/reflected/blocked/absorbed/bounced.' },
+              '04.1': { type: 'points', points: [
+                  'Attachment proteins/glycoproteins attach to/bind to (cell surface) receptors',
+                  '(Viral) nucleic acid enters cell (by engulfment/injection)',
+                  'Nucleic acid replicated in cell / reverse transcriptase makes DNA from RNA',
+                  'Cell produces viral proteins/capsid/enzymes (including capsomeres)',
+                  'Virus assembled and released from cell / lysis / buds off'
+                ], guidance: '3 max (AO1). Accept gp41/gp120/glycoprotein for attachment protein. Accept RNA/DNA/genetic material for nucleic acid. Ignore references to viral DNA incorporated into genome.' },
+              '04.2': { type: 'points', points: [
+                  'Mitosis column correct: ✓ Replication of linear DNA; ✓ Produces 2 daughter cells; ✓ Happens in eukaryotic cells (only these three)',
+                  'Binary fission column correct: ✓ Replication of circular DNA; ✓ Produces 2 daughter cells; ✓ Happens in prokaryotic cells (only these three)'
+                ], guidance: '2 marks (AO1). One mark per correct column. "Produces 4 daughter cells" gets no tick in either column.' },
+              '04.3': { type: 'points', points: [
+                  'Two cells on left correct: one daughter cell has both copies of chromosome N (non-disjunction → both chromatids go to same cell); its sister cell has no copy of chromosome N; all other chromosomes distributed normally (one copy each)',
+                  'Two cells on right correct: each has one copy of all non-N chromosomes distributed normally'
+                ], guidance: '2 marks (AO2). One mark per pair of daughter cells. Ignore differences in drawn chromosome length.' },
+              '04.4': { type: 'exact', points: ['MM1 errors at age 37 ≈ 197; MM2 errors at age 37 ≈ 83; more MM1 errors than MM2 errors, so the conclusion is reversed'],
+                guidance: '2 marks (AO3). 1 mark for correct MM1 value (197/197.1) AND correct MM2 value (83/82.8), or for correct difference (114–114.3). Accept 259.2 and 345.6 (using total population) for 1 mark.' },
+              '05.1': { type: 'exact', points: ['(A protein made of) more than one polypeptide (chain/subunit)'],
+                guidance: '1 mark (AO1). Ignore prosthetic group or named interactions between chains.' },
+              '05.2': { type: 'points', points: [
+                  '(Both) active sites have similar/identical tertiary structure / identical amino acid sequences at the active site',
+                  '(So) both form enzyme-substrate complexes (with the same substrate)'
+                ], guidance: '2 marks (AO1). Ignore "shape" for tertiary structure. Accept "both active sites complementary to different parts of the substrate".' },
+              '05.3': { type: 'points', points: [
+                  'Same volume of each buffer/pH solution',
+                  'Same concentration/mass of substrate (at start)',
+                  'Same concentration/mass of denatured enzyme (boiled/heat-treated) — no active enzyme'
+                ], guidance: '3 marks (AO3). Ignore temperature. Ignore "amount" for volume/concentration/mass. Accept pH solution for buffer. If no marks, accept 1 mark for: buffer + substrate + denatured enzyme; or buffer + substrate + no enzyme; or buffer + substrate + water.' },
+              '05.4': { type: 'points', points: [
+                  'Both P and Q are active at pH 8.4',
+                  'P is equally active at both pHs (P not affected by pH change); Q is less active than P at both pHs / Q is affected by the pH change',
+                  'Q is denatured / not active at pH 7.5 / Q is less active than the control at pH 7.5',
+                  'Reaction occurs without enzyme(s) / in the control (without enzyme)',
+                  'All reactions reach the same end point / substrate is not used up / does not reach zero'
+                ], guidance: '3 max (AO3). Three distinct conclusions required. Accept catalyse/break down/hydrolyse for active. Ignore "optimum".' },
+              '06.1': { type: 'points', points: [
+                  'Transpiration/evaporation increases due to increased temperature / increased light intensity / decreased humidity / increased wind/air movement (from 5 am to midday)',
+                  '(So) increased kinetic energy (causing more water loss) / increased water potential gradient / increased water diffusion gradient (so more water lost)',
+                  'Stomata open at sunrise/after 5 am allowing gas exchange / allowing CO₂ to enter',
+                  '(Some) stomata close at midday/after 11 am, reducing transpiration'
+                ], guidance: '4 marks (AO2). Ignore reference to tide affecting transpiration/water potential/humidity. Need correct link between factor and explanation. Accept "at 11 am" as time stomata close.' },
+              '06.2': { type: 'exact', points: ['6.6% (accept 6.6–7%)'],
+                guidance: '2 marks (AO2). 1 mark for 0.05 (correct difference in rate) or for 6.25/6.3 (using wrong denominator) or 666/667 (decimal error).' },
+              '06.3': { type: 'points', points: [
+                  'Record mass/length of mangrove root before and after placing in sea water',
+                  'Place root tissue in sea water for a specified/equal time',
+                  'Method to remove surface water before final measurement (e.g. blot dry/use tissue paper)',
+                  'Increase in mass/length shows cells absorbed water by osmosis / have lower water potential than sea water',
+                  'OR alternatively: put tissue on slide, add sea water, observe under optical microscope; if cells become turgid they have lower water potential; if cells become flaccid/plasmolyse they do not'
+                ], guidance: '4 max (AO3). Accept weight for mass; diameter for length. Accept sea water dilution series. Ignore "blot dry before initial measurement". Reject "size" once then allow ECF.' },
+              '07.1': { type: 'points', points: [
+                  'DNA contains deoxyribose; tRNA contains ribose',
+                  'DNA is double-stranded; tRNA is single-stranded',
+                  'DNA has many nucleotides; tRNA has few nucleotides / DNA is longer',
+                  'DNA contains thymine; tRNA contains uracil',
+                  'DNA is linear/double helix; tRNA is clover-leaf shaped',
+                  'DNA does not bind to an amino acid; tRNA does bind to an amino acid',
+                  'DNA has no anticodon; tRNA has an anticodon'
+                ], guidance: '3 max (AO1). Apply list rule. Each mark requires a clearly comparative pair. Accept double helix for double-stranded. Accept description of clover-leaf structure. Ignore T vs U (just accept).' },
+              '07.2': { type: 'points', points: [
+                  'Use centrifuge/centrifugation at slow/low/increasing (sequence of) speeds',
+                  'Large/dense organelles removed in first/early pellet / small organelles/ribosomes remain in supernatant'
+                ], guidance: '2 marks (1×AO2, 1×AO3). Ignore homogenate or filtering. Accept descriptions of supernatant (liquid) and pellet (sediment/bottom). Accept named large organelle in pellet (e.g. mitochondria, nucleus).' },
+              '07.3': { type: 'points', points: [
+                  'Tube A: ribosomes bound to rough endoplasmic reticulum (rER) are present',
+                  'rER-bound ribosomes are denser/heavier so move further / settle lower / in pellet',
+                  'Tube B: only free ribosomes present because membrane/phospholipids/endoplasmic reticulum dissolved/broken down by detergent'
+                ], guidance: '3 marks (AO2). Award marks across A and B. Do not credit "ER" the first time used without "endoplasmic reticulum". Accept "free ribosomes lighter so form band higher in tube" for point 2.' },
+              '08.1': { type: 'points', points: [
+                  '(Fish) red blood cells do not have a nucleus/DNA (so first/DNA stain would not bind to them)',
+                  'Haemoglobin (as the molecule the stain binds to in red blood cells)'
+                ], guidance: '2 marks (AO3). Accept haem or globin for haemoglobin. Ignore Hb. Accept "to distinguish red blood cells from other cells as fish red blood cells have a nucleus".' },
+              '08.2': { type: 'exact', points: ['Damaged gill volume = 8.5 × 10⁴ µm³ (accept 85 000); Healthy gill SA:V ratio = 0.32:1'],
+                guidance: '2 marks (AO2). One mark per correct row. Healthy SA:V = 7400/23000 = 0.3217 → 0.32:1. Damaged volume = 11000/0.13 = 84 615 → 8.5 × 10⁴. Accept 1 mark for 0.3217 (correct but not 2 s.f.) or 84 615 (correct but not 2 s.f.).' },
+              '08.3': { type: 'points', points: [
+                  'Difference: more cells between water and capillary/blood / wider/thicker gill filament/lamella',
+                  'Longer diffusion pathway / longer diffusion distance',
+                  '(So) slower rate of gas exchange / slower absorption of oxygen / slower release of carbon dioxide / slower rate of diffusion'
+                ], guidance: '3 marks (AO2). Accept correct difference and explanation in either section. Accept "thicker epithelium" for more cells; accept gill plate for lamella.' },
+              '08.4': { type: 'points', points: [
+                  'Fish: 2 chambers (1 atrium, 1 ventricle) / Mammal: 4 chambers (2 atria, 2 ventricles)',
+                  'Fish: blood does not return to heart after being oxygenated (single circulation) / Mammal: blood returns to heart after oxygenation (double circulation)',
+                  'Fish: heart contains only deoxygenated blood / Mammal: heart contains both oxygenated and deoxygenated blood',
+                  'Fish: blood reaches body capillaries at lower pressure / Mammal: at higher pressure'
+                ], guidance: '2 max (AO2). One mark per correct difference (with both sides stated). Accept names of relevant blood vessels. Accept single vs double circulation.' },
+              '09.1': { type: 'points', points: [
+                  'Sucrose actively transported into phloem sieve element/cell (by companion/transfer cells)',
+                  'By companion/transfer cells (if not already stated)',
+                  'Lowers water potential in phloem; water enters from xylem by osmosis',
+                  '(Produces) higher hydrostatic pressure / (hydrostatic) pressure gradient',
+                  'Mass flow to respiring cells / storage tissue / sinks (roots, buds, fruit, seeds, meristems)',
+                  'Sucrose unloaded/removed from phloem by active transport / facilitated diffusion'
+                ], guidance: '5 max (AO1). Accept sieve element/tube/cell for phloem cell. Accept description of gradient for pressure gradient.' },
+              '09.2': { type: 'points', points: [
+                  'Both are polysaccharides / both are glucose polymers / both made of glucose monomers',
+                  'Both contain glycosidic bonds (between monomers)',
+                  'Both contain carbon, hydrogen and oxygen (C, H, O)',
+                  'Starch has α-glucose; cellulose has β-glucose',
+                  'Starch molecule is helical/coiled; cellulose molecule is straight/unbranched',
+                  'Starch (molecule) is branched; cellulose is unbranched',
+                  'Cellulose has (micro/macro)fibrils; starch does not',
+                  'Starch has 1–6 glycosidic bonds and cellulose does not / Starch has two types of molecule (amylose and amylopectin); cellulose has one type'
+                ], guidance: '6 max (AO1). Must include at least one similarity (points 1, 2 or 3) to achieve 6 marks. All statements must be clearly comparative.' },
+              '09.3': { type: 'points', points: [
+                  'Hydrolysis (of starch)',
+                  'Of glycosidic bonds',
+                  '(Starch) to maltose by amylase',
+                  '(Maltose) to glucose by disaccharidase/maltase',
+                  'Membrane-bound disaccharidase/maltase (on brush border / microvilli)'
+                ], guidance: '4 max (AO1). Do not penalise incorrect site for digestion or enzyme production (except for point 5). Accept microvilli for membrane.' }
+            } },
           { id: 'bio-aqa-7402-2022-p2', year: 'June 2022', paperName: 'Paper 2', paperCode: '7402/2', totalMarks: 91, durationMins: 120,
             qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74022-QP-JUN22.PDF',
             msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74022-MS-JUN22.PDF',
@@ -12423,6 +12684,198 @@ window.SUBJECTS = [
                   'Increased methylation of DNA inhibits transcription/expression (decreased methylation stimulates it)',
                   'Decreased acetylation of histones inhibits transcription/expression (increased acetylation stimulates it)'
                 ], guidance: '3 max (AO1/AO2). Ignore methylation of histones and acetylation of DNA. Accept promoter region for DNA/gene; "switching on/off" genes accepted once if used correctly in the context of transcription/expression.' }
+            } },
+          { id: 'bio-aqa-7402-2022-p3', year: 'June 2022', paperName: 'Paper 3', paperCode: '7402/3', totalMarks: 78, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74023-QP-JUN22-CR.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74023-MS-JUN22.PDF',
+            qbqNote: 'Section A (Questions 1–5, 53 marks) is wired up question-by-question with the official AQA mark scheme. Section B is the 25-mark synoptic essay — both title options (06.1 and 06.2) are included; answer ONE, graded against AQA\'s levels-of-response grid. Figures, tables and graphs are in the question paper PDF — open it alongside.',
+            questions: [
+              { number: 1,
+                scenario: 'Amino acids are used to make proteins. Table 1 shows the R groups of six different amino acids: Alanine (CH₃), Asparagine (CH₂CONH₂), Aspartic acid (CH₂COOH), Glutamic acid (CH₂CH₂COOH), Glycine (H), Serine (CH₂OH).',
+                parts: [
+                  { code: '01.1', preamble: 'Figure 1 shows a polypeptide made from three of the amino acids listed in Table 1.\n\n(See Figure 1 in the question paper PDF.)', prompt: 'Use Table 1 to identify the three different amino acids used to make the polypeptide shown in Figure 1.\n\nLeft amino acid:\nMiddle amino acid:\nRight amino acid:', marks: 2 },
+                  { code: '01.2', prompt: 'Table 2 shows three statements and names of four biological molecules. Put a tick (✓) in each box where the statement is true for that biological molecule.\n\nStatement | DNA | ATP | Reverse transcriptase | Phospholipid\nContains peptide bonds | | | |\nIs formed using a condensation reaction | | | |\nIs a polymer | | | |', marks: 3 },
+                  { code: '01.3', preamble: 'Figure 2 represents the structure of adult human haemoglobin, which has two alpha chains and two beta chains. Each alpha chain contains 141 amino acids. The number of amino acids in the beta chains is 3.546% greater than in the alpha chains.\n\n(See Figure 2 in the question paper PDF.)', prompt: 'Calculate how many amino acids there are in total in the haemoglobin molecule shown in Figure 2. Give your answer to the nearest whole number.', marks: 2 },
+                  { code: '01.4', preamble: 'When a substance called BPG binds to haemoglobin, it reduces the affinity of haemoglobin for oxygen. Figure 3 shows an oxyhaemoglobin dissociation curve for haemoglobin in normal conditions.\n\n(See Figure 3 in the question paper PDF — sketch your curve on Figure 3.)', prompt: 'Sketch a curve on Figure 3 to show the oxyhaemoglobin dissociation curve for haemoglobin when BPG binds to it. Describe in words where your curve is relative to the original and why.', marks: 1, kind: 'diagram' },
+                  { code: '01.5', prompt: 'Suggest and explain when it would be an advantage to a human for BPG to bind to haemoglobin.', marks: 2 }
+                ] },
+              { number: 2,
+                scenario: 'Two students (A and B) investigated reaction time in response to touch. Student A sat with eyes shut and forearm resting on a worktop with her hand over the edge. Student B held a ruler vertically between student A\'s thumb and first finger with the ruler at 0 mm touching the first finger, then released the ruler. Student A closed her fingers as soon as she felt the ruler fall. Student B measured the distance the ruler had fallen to the nearest mm. The test was repeated three more times. Table 3 results: Trial 1 = 79 mm, Trial 2 = 97 mm, Trial 3 = 10 mm, Trial 4 = 94 mm. Table 4 (distance → reaction time): 10 mm = 45 ms, 20 mm = 64 ms, 30 mm = 78 ms, 40 mm = 90 ms, 50 mm = 101 ms, 60 mm = 111 ms, 70 mm = 120 ms, 80 mm = 128 ms, 90 mm = 136 ms.',
+                parts: [
+                  { code: '02.1', preamble: 'Figure 4 shows a diagram of a Pacinian corpuscle.\n\n(See Figure 4 in the question paper PDF.)', prompt: 'Name the structures labelled P, Q and R shown in Figure 4.\n\nP:\nQ:\nR:', marks: 2 },
+                  { code: '02.2', prompt: 'Calculate the percentage uncertainty in the measurement of Trial 1 in Table 3. Put a tick (✓) in the correct box below.\n\n• 0.633%\n• 1.27%\n• 2.53%\n• 12.6%', marks: 1 },
+                  { code: '02.3', preamble: 'In this investigation, it is not possible for a student to react in less than 45 ms.', prompt: 'Suggest one explanation for the value recorded in Trial 3 in Table 3.', marks: 1 },
+                  { code: '02.4', preamble: 'Student A estimated that the length of the nerve pathway involved was 175 cm.', prompt: 'Use Table 3 and Table 4 to calculate the mean speed of nerve impulse transmission. Do not use the value for Trial 3 in your calculation. Show your working.', marks: 2 },
+                  { code: '02.5', prompt: 'In response to touch, nerve impulses can be transmitted at speeds of 76.2 m s⁻¹. Suggest three reasons why, in this investigation, the estimated speed of student A\'s impulse transmission was less than 76.2 m s⁻¹.\n\n1.\n2.\n3.', marks: 3 }
+                ] },
+              { number: 3,
+                scenario: 'A student prepared a stained squash of cells from the root tips of garlic to calculate a mitotic index. He: (1) cut the end 5 mm from 10 garlic roots; (2) placed root tips into hydrochloric acid for 12 minutes; (3) rinsed in distilled water; (4) placed one root tip on a microscope slide and added toluidine blue stain; (5) placed a coverslip on the slide and gently pressed it downwards onto the root tip; (6) observed under an optical microscope.',
+                parts: [
+                  { code: '03.1', prompt: 'Suggest why the student soaked the root tips in hydrochloric acid in step 2.', marks: 2 },
+                  { code: '03.2', prompt: 'Pressing the coverslip downwards enabled the student to observe the stages of mitosis clearly. Explain why.', marks: 2 },
+                  { code: '03.3', preamble: 'Figure 6 shows the student\'s drawing of one field of view, including a cell labelled G.\n\n(See Figure 6 in the question paper PDF.)', prompt: 'Name the stage of mitosis shown in cell G. Explain the appearance of this cell.\n\nStage of mitosis:\nExplanation:', marks: 2 },
+                  { code: '03.4', preamble: 'In Figure 6, there are 39 cells visible in the field of view, of which 5 cells are in a stage of mitosis.', prompt: 'Use Figure 6 to calculate a mitotic index for the cells in this field of view.', marks: 1 },
+                  { code: '03.5', prompt: 'Other students in the class followed the same method, but calculated different mitotic indices. Apart from student errors, suggest two explanations why.\n\n1.\n2.', marks: 2 }
+                ] },
+              { number: 4,
+                scenario: 'Recombinant DNA technology can involve the transfer of fragments of human DNA into bacteria. The bacteria are then used to produce human proteins. Genetically modified goats are used to produce antithrombin (a protein that prevents blood clotting too much). The human antithrombin gene is transferred into goat embryos. Figure 7 shows an example of a DNA fragment transferred into goat cells, including an enhancer, Region M, a marker gene, and Region N.\n\n(See Figure 7 in the question paper PDF.)',
+                parts: [
+                  { code: '04.1', prompt: 'Complete the following definitions.\n\nThe genome is:\n\nThe proteome is:', marks: 2 },
+                  { code: '04.2', prompt: 'Give two reasons why bacteria are able to use human DNA to produce human proteins.\n\n1.\n2.', marks: 2 },
+                  { code: '04.3', prompt: 'Suggest and explain one reason why bacteria might not be able to produce every human protein.', marks: 1 },
+                  { code: '04.4', preamble: 'The enhancer stimulates Region M.', prompt: 'Name regions M and N shown in Figure 7.\n\nRegion M:\nRegion N:', marks: 2 },
+                  { code: '04.5', prompt: 'Explain the purpose of the marker gene.', marks: 1 },
+                  { code: '04.6', preamble: 'The enhancer only stimulates Region M in the milk-producing glands of a goat.', prompt: 'Suggest two explanations for the importance of the enhancer being included in the DNA fragment transferred.\n\n1.\n2.', marks: 2 }
+                ] },
+              { number: 5,
+                scenario: 'Scientists investigated the effect of full sun and shade on the rate of photosynthesis in a species of shade-tolerant tree. They measured CO₂ uptake by trees in a forest during 08.30–09.40 and 11.40–13.15 hours. Figure 8 shows their results.\n\n(See Figures 8 and 9 in the question paper PDF.)',
+                parts: [
+                  { code: '05.1', preamble: 'From Figure 8, trees in full sun during 11.40–13.15 had a mean CO₂ uptake of 8.8 µmol m⁻² s⁻¹. This period lasts 95 minutes (5700 seconds). The forest area is 12 000 m².', prompt: 'Calculate the total uptake of carbon dioxide between 11.40 and 13.15 hours in trees exposed to full sun in a forest that is 12 000 m² in area. Give your answer in standard form. Show your working.', marks: 3 },
+                  { code: '05.2', preamble: 'Figure 8 shows a small difference in the mean uptake of CO₂ between 08.30 and 09.40 hours by trees in full sun and by trees in the shade. When the scientists performed a statistical test on these data, they calculated P > 0.5.', prompt: 'State what this P value tells you about this difference. Explain your answer using the words probability and chance.', marks: 2 },
+                  { code: '05.3', preamble: 'In this species of tree, very high light intensities can inhibit the release of electrons from chlorophyll.', prompt: 'Suggest how this could explain the results shown in Figure 8 for 11.40 to 13.15 hours.\n\n(See Figure 8 in the question paper PDF.)', marks: 4 },
+                  { code: '05.4', preamble: 'To increase the yield of tomato plants, a farmer uses LED lightbulbs to provide additional light. The increase in dry mass (D) is calculated using D = L / (0.4F), where L = light used in photosynthesis and F = GPP to NPP conversion factor. For LED lightbulbs: L = 2.87 × 10⁻² MJ m⁻² h⁻¹, F = 20 MJ kg⁻¹.', prompt: 'Use the equation and Table 5 values to calculate the increase in dry mass produced when using LED lightbulbs. Give your answer in standard form and give the units.', marks: 2 },
+                  { code: '05.5', preamble: 'Mature leaves from slow-growing, shade-tolerant plants produce poisonous chemicals that are a defence against being eaten by herbivores.', prompt: 'Suggest how this benefits slow-growing, shade-tolerant plants.', marks: 2 },
+                  { code: '05.6', preamble: 'Scientists measured the concentration of poisonous chemicals produced by shade-tolerant plant species in six taxa (ferns, monocots, basal angiosperms, magnoliids, rosids, asterids) and compared this with the mean concentration for all plants. Figure 9 shows results alongside the phylogenetic relationships between the six taxa.\n\nA journalist published: "The more recently a shade-tolerant plant species evolved, the greater the concentration of poisonous chemicals it produces."\n\n(See Figure 9 in the question paper PDF.)', prompt: 'Do the data in Figure 9 support this summary? Justify your answer.', marks: 2 }
+                ] },
+              { number: 6,
+                scenario: 'Section B — Answer ONE question. Write an essay on one of the topics below. Each is marked out of 25 using AQA\'s levels-of-response grid (a fully synoptic answer links at least four different topics from the specification to the theme).',
+                parts: [
+                  { code: '06.1', prompt: 'Either: Write an essay on \'The uses and importance of ATP in organisms.\'', marks: 25, extended: true },
+                  { code: '06.2', prompt: 'Or: Write an essay on \'The importance of cycles in biology.\'', marks: 25, extended: true }
+                ] }
+            ],
+            markSchemes: {
+              '01.1': { type: 'exact', points: ['Left amino acid: Serine; Middle amino acid: Alanine; Right amino acid: Aspartic acid'],
+                guidance: '2 marks (AO2). Two marks for all three correct; one mark for any two correct. Accept phonetic spellings.' },
+              '01.2': { type: 'points', points: [
+                  'Row 1 (Contains peptide bonds): Reverse transcriptase ✓ only',
+                  'Row 2 (Is formed using a condensation reaction): DNA ✓, ATP ✓, Reverse transcriptase ✓, Phospholipid ✓ (all four ticked)',
+                  'Row 3 (Is a polymer): DNA ✓ and Reverse transcriptase ✓ only'
+                ], guidance: '3 marks (AO1). One mark per correct row.' },
+              '01.3': { type: 'exact', points: ['574 amino acids'],
+                guidance: '2 marks (AO2). Alpha chain = 141 AA; beta chain = 141 × 1.03546 = 145.9994 ≈ 146 AA. Total = (141 × 2) + (146 × 2) = 574. 1 mark for 573.99936 (not rounded) or 146/145.99986 (correct beta chain only) or 287 (two alpha chains only) or 292 (two beta chains only).' },
+              '01.4': { type: 'points', points: [
+                  'Curve drawn to the right of the original, following the same S-shape, starting at Y = 0 and finishing at the same maximum percentage saturation as the original curve'
+                ], guidance: '1 mark (AO3). A rightward shift shows reduced affinity — haemoglobin releases oxygen more readily at any given pO₂.' },
+              '01.5': { type: 'points', points: [
+                  'During exercise / at high altitude / at low pO₂ in the tissues / when there is high pCO₂ in the tissues',
+                  '(Allowing) more oxygen for respiration / more aerobic respiration / oxygen can unload/dissociate more readily / to delay anaerobic respiration'
+                ], guidance: '2 marks (AO3). Accept "lack of red blood cells" for exercise. Accept descriptions of aerobic respiration (e.g. more oxygen to act as terminal electron acceptor).' },
+              '02.1': { type: 'exact', points: ['P: Capsule / lamellae; Q: Axon (membrane) / sensory neurone / nerve cell; R: Schwann cell(s) / Myelin (sheath)'],
+                guidance: '2 marks (AO1). Two marks for all three correct; one mark for any two correct. Accept connective tissue for P. Accept nerve cell for Q (ignore bare "nerve"). Accept myelin sheath for R.' },
+              '02.2': { type: 'exact', points: ['1.27%'],
+                guidance: '1 mark (AO2). Percentage uncertainty = (1 mm / 79 mm) × 100 = 1.27% (using total uncertainty range of ±0.5 mm = 1 mm). Second box ticked.' },
+              '02.3': { type: 'points', points: [
+                  'The student started to move/close her hand before the ruler was released (pre-emptive movement)',
+                  'The ruler did not fall vertically / was not held vertically',
+                  'The ruler stuck to her skin',
+                  'Student B held the ruler too high/higher than 0 mm'
+                ], guidance: '1 max (AO3). Ignore answers about student A having eyes open. Ignore student B misreading the ruler.' },
+              '02.4': { type: 'exact', points: ['12.9 m s⁻¹ (accept 13 m s⁻¹ or any correct rounding)'],
+                guidance: '2 marks (AO2). Exclude Trial 3. Distances: 79 mm → 128 ms, 97 mm → 136 ms (interpolate), 94 mm → 136 ms. Mean reaction time ≈ 133 ms = 0.133 s. Speed = 1.75 m / 0.133 s ≈ 13.2 m s⁻¹. Accept 12.9–13.1 m s⁻¹. 1 mark for using reaction time of 136 ms/0.136 s OR for 14.58 (including Trial 3) OR for 1.29 (decimal error).' },
+              '02.5': { type: 'points', points: [
+                  'Synaptic transmission / transmission at neuromuscular junction takes time',
+                  'Time for muscle contraction (to close the fingers)',
+                  'Time taken for stretch-mediated sodium ion channels to open in the Pacinian corpuscle',
+                  'Student may have been distracted / not concentrating (or tiredness/medication)',
+                  'Time taken for coordination/comprehension by the brain'
+                ], guidance: '3 max (AO3). Ignore answers relating to the estimated length of the nerve pathway.' },
+              '03.1': { type: 'points', points: [
+                  'To break down links between cells / to separate cells / to break down/hydrolyse cellulose/cell walls',
+                  'Allowing the stain to pass/diffuse into the cells / allowing cells to be more easily squashed',
+                  'To stop mitosis / stop cell division'
+                ], guidance: '2 max (AO2). Ignore references to specific bonds.' },
+              '03.2': { type: 'points', points: [
+                  'To create a single/thin layer of cells / to spread out cells',
+                  'So that light could pass through (enabling observation under the optical microscope)'
+                ], guidance: '2 marks (AO3).' },
+              '03.3': { type: 'points', points: [
+                  'Stage: Anaphase',
+                  'Explanation: chromatids moved/pulled to opposite poles/ends of the cell (by spindle fibres)'
+                ], guidance: '2 marks (1×AO1, 1×AO2). Reject "Anaphase I (of meiosis)". Accept "chromosomes" for "chromatids". Reject "homologous chromosomes" for chromatids.' },
+              '03.4': { type: 'exact', points: ['0.13 (accept 0.1, 0.13 or 0.128)'],
+                guidance: '1 mark (AO2). Mitotic index = cells in mitosis / total cells = 5/39 = 0.128. Reject answers expressed as a percentage.' },
+              '03.5': { type: 'points', points: [
+                  '(Garlic roots/plants) are a different age / grown in different conditions or temperatures',
+                  '(Root tips) from different (garlic) plants/bulbs/species',
+                  'Single field of view is not representative of a root tip / other students looked at more fields of view or calculated a mean',
+                  '(Different fields of view are from) different parts of the root tip',
+                  'Cells/roots undergo mitosis/cell division at different times/rates'
+                ], guidance: '2 max (AO3). Reject "different sized fields of view" or "different number of cells per field of view".' },
+              '04.1': { type: 'points', points: [
+                  'Genome: the complete set of genes/all the DNA in a cell/organism / the total number of DNA bases in a cell/organism',
+                  'Proteome: range of proteins that a cell/organism can produce / range of proteins the genome/DNA can code for'
+                ], guidance: '2 marks (AO1). Reject "all the DNA/genes within a species/population" for genome. Do not accept "number of proteins" unqualified for proteome.' },
+              '04.2': { type: 'points', points: [
+                  'The genetic/DNA code is universal / the same triplets/codons code for the same amino acids in all species',
+                  '(The mechanism of) transcription is universal',
+                  '(The mechanism of) translation is universal / bacteria have ribosomes and can translate human mRNA'
+                ], guidance: '2 max (AO1). Do not accept "DNA is universal" unqualified. If neither transcription nor translation stated, accept "protein synthesis is universal" for 1 mark.' },
+              '04.3': { type: 'points', points: [
+                  'Cannot splice pre-mRNA / cannot remove introns / do not have spliceosomes',
+                  'Do not have Golgi apparatus / cannot process/modify proteins',
+                  'Do not have (required) transcriptional factors / cannot carry out transcription of human genes'
+                ], guidance: '1 mark (AO2). Accept "rough endoplasmic reticulum" for Golgi.' },
+              '04.4': { type: 'exact', points: ['Region M: promoter; Region N: terminator'],
+                guidance: '2 marks (AO2). Accept phonetic spellings.' },
+              '04.5': { type: 'points', points: [
+                  'Shows that the (antithrombin) gene has been taken up by cells/embryos/goats / shows transgenic/transformed goat cells / allows detection of genetically modified cells/organisms/goats'
+                ], guidance: '1 mark (AO1). Accept "GM" for "genetically modified".' },
+              '04.6': { type: 'points', points: [
+                  'Milk/protein/antithrombin is easy to extract from a goat / extracting milk from a goat does it no harm',
+                  'If antithrombin was produced in their blood it could prevent/affect clotting / antithrombin could damage other cells'
+                ], guidance: '2 marks (AO3).' },
+              '05.1': { type: 'exact', points: ['6.0 × 10⁸ µmol (accept 6.0–6.02 × 10⁸)'],
+                guidance: '3 marks (AO3). 8.8 µmol m⁻² s⁻¹ × 12 000 m² × 5700 s = 601 920 000 = 6.0 × 10⁸ µmol. Correct answer not in standard form (601 920 000) = 2 marks. 1 mark for any two of: 8.8, 12 000, 5700 (or 95 minutes) used correctly.' },
+              '05.2': { type: 'points', points: [
+                  '(This difference) is not significant',
+                  'There is greater than a 0.5 (50%) / greater than a 0.05 (5%) / 1 in 2 / 1 in 20 probability that this difference is due to chance'
+                ], guidance: '2 marks (AO3). Reject "results" for "difference" once.' },
+              '05.3': { type: 'points', points: [
+                  'Less ATP and reduced NADP produced (at very high light intensities in full sun trees)',
+                  'Less GP/glycerate 3-phosphate reduced/converted to triose phosphate',
+                  'Less triose phosphate to regenerate/make RuBP / less RuBP regenerated',
+                  'Less RuBP to react with/fix carbon dioxide (so less CO₂ uptake in full sun trees at 11.40–13.15)'
+                ], guidance: '4 marks (2×AO2, 2×AO3). Need "less" at least once. Reject "no" once. Accept NADPH/NADPH₂ for reduced NADP. If points 2–4 absent, allow 1 mark for "less light-independent reaction / fewer Calvin cycles".' },
+              '05.4': { type: 'exact', points: ['3.5875 × 10⁻³ kg m⁻² h⁻¹ (accept 3.6 × 10⁻³ or 4 × 10⁻³)'],
+                guidance: '2 marks (AO2). D = (2.87 × 10⁻²) / (0.4 × 20) = 2.87 × 10⁻² / 8 = 3.5875 × 10⁻³. 1 mark for correct value. 1 mark for correct units (kg m⁻² h⁻¹). Reject kg⁻¹ or h⁻¹ m⁻² kg.' },
+              '05.5': { type: 'points', points: [
+                  '(In the shade, so) less/slower rate of photosynthesis / named aspect using light (e.g. LDR, photoionisation)',
+                  '(Slow-growing, so) would take a long time to replace mature leaves / leaves more likely to reach maturity',
+                  'Plants can maintain a large enough surface area for photosynthesis / can absorb enough light'
+                ], guidance: '2 max (AO3).' },
+              '05.6': { type: 'points', points: [
+                  'Yes: the most recently evolved species/asterids produce more than the mean concentration',
+                  'Yes: the least recently evolved species/ferns produce less than the mean concentration',
+                  'No: the highest concentration was not in the most recently evolved (asterids) — highest was in magnoliids',
+                  'No: the lowest concentration was not in the least recently evolved (ferns) — lowest was in monocots / monocots evolved more recently but produce lower concentration than ferns',
+                  'No: ferns have the same concentration as basal angiosperms/rosids (more recently evolved)',
+                  'No: basal angiosperms and rosids have the same concentration but evolved at different times'
+                ], guidance: '2 max (AO3). Accept "newest species" for asterids; "oldest species" for ferns.' },
+              '06.1': { type: 'levels',
+                levels: [
+                  { range: [21, 25], descriptor: 'Top band (21–25)', criteria: 'Holistic, fully integrated answer making clear links between several (at least four) different topics and the theme of the question. Biology is detailed and comprehensive A-level content, uses appropriate terminology, very well written and always clearly explained. No significant errors or irrelevant material. For top marks, shows evidence of reading beyond the specification.' },
+                  { range: [16, 20], descriptor: 'Second band (16–20)', criteria: 'Links several topics to the main theme to form a series of interrelated points which are clearly explained. Biology is fundamentally correct A-level content with some detailed points, though some may be less well developed; appropriate use of terminology. Perhaps one significant error and/or one irrelevant topic.' },
+                  { range: [11, 15], descriptor: 'Third band (11–15)', criteria: 'Response mostly deals with suitable topics but they are not interrelated and links are not made to the theme. Biology is usually correct A-level content though it lacks detail; usually clearly explained with appropriate terminology. Some significant errors and/or more than one irrelevant topic.' },
+                  { range: [6, 10], descriptor: 'Fourth band (6–10)', criteria: 'Response predominantly deals with only one or two topics that relate to the question. Biology shows some superficial A-level content that may be poorly explained, lacking detail, or show limited use of terminology. May contain a number of significant errors and/or irrelevant topics.' },
+                  { range: [1, 5], descriptor: 'Fifth band (1–5)', criteria: 'Response only indirectly addresses the theme and merely presents a series of biological facts that are usually descriptive or poorly explained and at times factually incorrect. Content and terminology generally below A-level. May contain a large number of errors and/or irrelevant topics.' }
+                ],
+                indicative: {
+                  'Relevant specification topics': 'DNA replication (3.1.5.2); ATP synthesis and structure (3.1.6); mitosis/cell cycle (3.2.2); active transport (3.2.3); digestion and absorption — co-transport (3.3.3); mass transport in plants (3.3.4.2); DNA and protein synthesis (3.4.2); meiosis (3.4.3); photosynthesis (3.5.1); respiration (3.5.2); nutrient cycles — nitrogen fixation (3.5.4); nerve impulses — resting potential (3.6.2.1); synaptic transmission (3.6.2.2); muscle contraction (3.6.3); control of blood glucose (3.6.4.2); control of blood water potential (3.6.4.3).'
+                },
+                guidance: '25 marks (13 AO1, 12 AO2). Mark by best fit on overall quality, then place within the band using its variability. To reach the highest bands the essay must link at least four different specification topics to the theme. Credit valid material beyond the specification if it is at A-level standard and relevant to the title.' },
+              '06.2': { type: 'levels',
+                levels: [
+                  { range: [21, 25], descriptor: 'Top band (21–25)', criteria: 'Holistic, fully integrated answer making clear links between several (at least four) different topics and the theme of the question. Biology is detailed and comprehensive A-level content, uses appropriate terminology, very well written and always clearly explained. No significant errors or irrelevant material. For top marks, shows evidence of reading beyond the specification.' },
+                  { range: [16, 20], descriptor: 'Second band (16–20)', criteria: 'Links several topics to the main theme to form a series of interrelated points which are clearly explained. Biology is fundamentally correct A-level content with some detailed points, though some may be less well developed; appropriate use of terminology. Perhaps one significant error and/or one irrelevant topic.' },
+                  { range: [11, 15], descriptor: 'Third band (11–15)', criteria: 'Response mostly deals with suitable topics but they are not interrelated and links are not made to the theme. Biology is usually correct A-level content though it lacks detail; usually clearly explained with appropriate terminology. Some significant errors and/or more than one irrelevant topic.' },
+                  { range: [6, 10], descriptor: 'Fourth band (6–10)', criteria: 'Response predominantly deals with only one or two topics that relate to the question. Biology shows some superficial A-level content that may be poorly explained, lacking detail, or show limited use of terminology. May contain a number of significant errors and/or irrelevant topics.' },
+                  { range: [1, 5], descriptor: 'Fifth band (1–5)', criteria: 'Response only indirectly addresses the theme and merely presents a series of biological facts that are usually descriptive or poorly explained and at times factually incorrect. Content and terminology generally below A-level. May contain a large number of errors and/or irrelevant topics.' }
+                ],
+                indicative: {
+                  'Relevant specification topics': 'Monomers and polymers (3.1.1); enzymes (3.1.4.2); DNA replication (3.1.5.2); ATP (3.1.6); mitosis/cell cycle (3.2.2); mechanism of breathing (3.3.2); cardiac cycle and blood circulation (3.3.4.1); meiosis (3.4.3); photosynthesis — light-independent reaction/Calvin cycle (3.5.1); respiration — Krebs cycle and electron transport chain (3.5.2); nutrient cycles (3.5.4); nerve impulses (3.6.2.1); synaptic transmission (3.6.2.2); muscle contraction (3.6.3); negative feedback (3.6.4.1); control of blood glucose (3.6.4.2); control of blood water potential (3.6.4.3); populations — predation (3.7.4); recombinant DNA technology — PCR (3.8.4.1).'
+                },
+                guidance: '25 marks (13 AO1, 12 AO2). Mark by best fit on overall quality, then place within the band using its variability. To reach the highest bands the essay must link at least four different specification topics to the theme. Credit valid material beyond the specification if it is at A-level standard and relevant to the title.' }
             } },
         ] },
       { board: 'Edexcel A (Salters-Nuffield)', specCode: '9BN0',
