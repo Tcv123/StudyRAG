@@ -20346,6 +20346,7 @@ window.SUBJECTS = [
       '4(d)(ii)': { type: 'exact', points: ['\''], guidance: '6-mark levels-based question. Observation method: use light microscope; prepare blood smear; detail of blood smear preparation (sterile slide, spreader, fixative). Identification method: use differential staining; correctly named stain e.g. Leishman\'s; detail of staining distinguishing leucocyte types; use of flow cytometry; detail of flow cytometry (sorting by mass/density/shape). Safety considerations: named hazard, level of risk and precaution.' },
       '4(e)': { type: 'points', points: ['To ensure oxygenated and deoxygenated blood do not mix', 'Idea that blood pressure in the separate circuits can be maintained at different pressures', 'Increased efficiency/more efficient delivery of oxygen/nutrients to the cells/tissues/organs'], guidance: 'Max 2.' },
     } }
+] }
     ]
   },
   {
