@@ -1041,8 +1041,12 @@ function renderExamDates(subjects) {
     if (!seen.has(key)) { seen.add(key); _dashCalMonths.push({ year: e.examDate.getFullYear(), month: e.examDate.getMonth() }); }
   });
 
-  _dashCalYear  = _dashCalMonths[0].year;
-  _dashCalMonth = _dashCalMonths[0].month;
+  // Start at the current month (or the earliest future exam month if all exams are in the future)
+  const todayY = now.getFullYear(), todayM = now.getMonth();
+  const currentOrLater = _dashCalMonths.find(m => m.year > todayY || (m.year === todayY && m.month >= todayM));
+  const startMonth = currentOrLater || _dashCalMonths[_dashCalMonths.length - 1];
+  _dashCalYear  = startMonth.year;
+  _dashCalMonth = startMonth.month;
   renderExamCalendar();
 }
 
