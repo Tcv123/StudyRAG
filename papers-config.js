@@ -22089,7 +22089,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '01', prompt: 'Using the data in Extract A (Table 1), calculate the index of total car sales in 2021 if, in the base year, total car sales were 1.25 million.\n\nGive your answer to two decimal places.', marks: 2 },
                   { code: '02', prompt: 'Explain how the data in Extract A (Table 1 and Figure 1) show that developments in the car market are the main reason for the changing demand for lithium-ion batteries in the UK.', marks: 4 },
-                  { code: '03', prompt: 'Extract C (lines 3–4) states that \'the mining, manufacturing and disposal process for batteries could soon become an environmental disaster.\'\n\nWith the help of a diagram, explain why the production and sale of lithium-ion batteries might lead to market failure.', marks: 9 },
+                  { code: '03', prompt: 'Extract C (lines 3–4) states that \'the mining, manufacturing and disposal process for batteries could soon become an environmental disaster.\'\n\nWith the help of a diagram, explain why the production and sale of lithium-ion batteries might lead to market failure.', marks: 9, kind: 'diagram' },
                   { code: '04', prompt: 'Extract B (lines 20–21) states that \'all vehicle owners should be forced to pay the full costs of their driving. This would incentivise people to consider using public transport, cycling or walking.\'\n\nEvaluate policies that could be used to reduce the environmental impact of all types of car.', marks: 25, extended: true }
                 ]
               },
@@ -22100,7 +22100,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '05', prompt: 'Use the data in Extract D (Figure 2) to calculate the difference between the mean and median rate of growth of working households\' real pre-tax earnings, over the period 1994–2017.', marks: 2 },
                   { code: '06', prompt: 'Explain how the data in Extract D (Figure 3) show that employment is an increasingly ineffective protection against poverty.', marks: 4 },
-                  { code: '07', prompt: 'Extract E (lines 19–20) states that \'Some out-of-work benefits have not kept up with inflation, putting downward pressure on wages, contributing to the rise in in-work poverty.\'\n\nWith the help of a diagram, explain how a reduction in out-of-work benefits may lead to lower wages in some labour markets.', marks: 9 },
+                  { code: '07', prompt: 'Extract E (lines 19–20) states that \'Some out-of-work benefits have not kept up with inflation, putting downward pressure on wages, contributing to the rise in in-work poverty.\'\n\nWith the help of a diagram, explain how a reduction in out-of-work benefits may lead to lower wages in some labour markets.', marks: 9, kind: 'diagram' },
                   { code: '08', prompt: 'Extract F (lines 1–2) states that \'Charities and think tanks have called for action to reduce job insecurity, lower housing costs and increase earnings for low-paid workers.\'\n\nUsing the extracts and your knowledge of economics, evaluate policies that could be used to reduce in-work poverty in the UK.', marks: 25, extended: true }
                 ]
               },
@@ -22148,7 +22148,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '01', prompt: 'Using the data in Extract A (Figure 1), calculate the difference between Ireland\'s corporation tax rate and the mean corporation tax rate of the other five European nations.\n\nGive your answer to one decimal place.', marks: 2 },
                   { code: '02', prompt: 'Explain how the data in Extract A (Figure 2), show that Ireland\'s economy performed better than the economies of France and Spain in 2021.', marks: 4 },
-                  { code: '03', prompt: 'Extract C (line 13) states: \'High economic growth rates allowed Ireland to run a budget surplus in 2018 and 2019.\'\n\nWith the help of a diagram, explain how high economic growth could help to create a budget surplus.', marks: 9 },
+                  { code: '03', prompt: 'Extract C (line 13) states: \'High economic growth rates allowed Ireland to run a budget surplus in 2018 and 2019.\'\n\nWith the help of a diagram, explain how high economic growth could help to create a budget surplus.', marks: 9, kind: 'diagram' },
                   { code: '04', prompt: 'Extract B (lines 1–3) states: \'Ireland has dropped its low-tax policy of the past 18 years, which had helped to persuade some of the world\'s biggest companies, including Google and Facebook, to site their European headquarters in Ireland.\'\n\nUsing the data in the extracts and your knowledge of economics, assess the view that a rise in Ireland\'s corporation tax rate is likely to have a damaging effect on its macroeconomic performance.', marks: 25, extended: true }
                 ]
               },
@@ -22159,7 +22159,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '05', prompt: 'Using the data in Extract D (Figure 3), calculate the value of bonds that had been purchased by November 2020 for every £1 worth of bonds purchased by November 2009.\n\nGive your answer in £s and to two decimal places.', marks: 2 },
                   { code: '06', prompt: 'Explain how the data in Extract D (Figure 4), show that the growth in quantitative easing (shown in Figure 3) may have been successful in helping the UK achieve its macroeconomic objectives since 2009.', marks: 4 },
-                  { code: '07', prompt: 'Extract E (lines 4–5) states: \'...banks in the UK decreased lending, reducing the availability of credit for households and firms. This damaged the real economy and created high unemployment.\'\n\nWith the help of a diagram, explain how reduced availability of credit from banks may lead to increased unemployment.', marks: 9 },
+                  { code: '07', prompt: 'Extract E (lines 4–5) states: \'...banks in the UK decreased lending, reducing the availability of credit for households and firms. This damaged the real economy and created high unemployment.\'\n\nWith the help of a diagram, explain how reduced availability of credit from banks may lead to increased unemployment.', marks: 9, kind: 'diagram' },
                   { code: '08', prompt: 'Extract F (lines 18–19) states: \'Some say that the use of QE is a dangerous addiction and its overuse can lead to problems in the future.\'\n\nUsing the data in the extracts and your knowledge of economics, assess the view that the continued use of quantitative easing (QE) is damaging for the UK economy.', marks: 25, extended: true }
                 ]
               },
@@ -22261,7 +22261,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '01', prompt: 'Using the data in Extract A (Figure 1), calculate the number of workers doing weekly platform work in 2019 for each worker doing monthly platform work in 2019.\n\nGive your answer to two decimal places.', marks: 2 },
                   { code: '02', prompt: 'Explain how the data in Extract A (Figure 2) show that the incentive for workers to become self-employed increased between 2009/10 and 2018/19.', marks: 4 },
-                  { code: '03', prompt: 'Extract C (lines 4–5) states that, as a result of trade union action, \'The hospital trust increased their £8.21 minimum wage to the London Living Wage of £10.75.\'\n\nWith the help of a diagram, analyse how a trade union might achieve higher pay for its members.', marks: 9 },
+                  { code: '03', prompt: 'Extract C (lines 4–5) states that, as a result of trade union action, \'The hospital trust increased their £8.21 minimum wage to the London Living Wage of £10.75.\'\n\nWith the help of a diagram, analyse how a trade union might achieve higher pay for its members.', marks: 9, kind: 'diagram' },
                   { code: '04', prompt: 'Extract B (lines 16–18) states that, \'Gig economy defenders claim that today\'s flexible labour markets offer modern workers the opportunity to move freely between jobs and this gives them more choice over their working hours.\'\n\nAssess the view that government intervention in the UK labour market is necessary to protect the interests of people who are working in the gig economy.', marks: 25, extended: true }
                 ]
               },
@@ -22272,7 +22272,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '05', prompt: 'Using the data in Extract D (Figure 3), calculate, in percentage terms, how much more expensive a basket of groceries at Waitrose was than at Lidl in April 2020.\n\nGive your answer as a percentage to two decimal places.', marks: 2 },
                   { code: '06', prompt: 'Explain how the data in Extract D (Figure 4) show that the supermarket sector is competitive.', marks: 4 },
-                  { code: '07', prompt: 'Extract E (lines 16–17) states that, \'Supermarkets set prices interdependently, and price wars look very likely.\'\n\nWith the help of a diagram, analyse the impact on grocery consumers of interdependence between supermarkets.', marks: 9 },
+                  { code: '07', prompt: 'Extract E (lines 16–17) states that, \'Supermarkets set prices interdependently, and price wars look very likely.\'\n\nWith the help of a diagram, analyse the impact on grocery consumers of interdependence between supermarkets.', marks: 9, kind: 'diagram' },
                   { code: '08', prompt: 'Extract E (lines 17–19) states that, \'the price gap between discounters and conventional supermarkets is now about 10–12%, against more than 20% a few years ago.\'\n\nEvaluate the view that the supermarket sector is serving customers\' interests well.', marks: 25, extended: true }
                 ]
               },
@@ -22320,7 +22320,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '01', prompt: 'Using the data in Extract A (Figure 1), if 2015 is the base year, calculate the index of Egypt\'s real GDP in 2018.\n\nGive your answer to one decimal place.', marks: 2 },
                   { code: '02', prompt: 'Explain how the data in Extract A (Figures 1 and 2) show that nations with high and stable economic growth attract rising foreign direct investment (FDI) inflows.', marks: 4 },
-                  { code: '03', prompt: 'Extract B (lines 18–19) states: \'FDI can have many benefits. It should create employment, boost long-run economic growth and increase exports.\'\n\nWith the help of a suitable diagram, explain how a rise in inward foreign direct investment (FDI) may lead to increased exports.', marks: 9 },
+                  { code: '03', prompt: 'Extract B (lines 18–19) states: \'FDI can have many benefits. It should create employment, boost long-run economic growth and increase exports.\'\n\nWith the help of a suitable diagram, explain how a rise in inward foreign direct investment (FDI) may lead to increased exports.', marks: 9, kind: 'diagram' },
                   { code: '04', prompt: 'Extract C (lines 13–14) states: \'Some argue that African governments should be doing more to improve the living standards of their citizens, rather than relying on foreign firms.\'\n\nUsing the data in the extracts and your knowledge of economics, assess the view that to improve the living standards of their citizens, African nations should pursue policies to attract foreign direct investment (FDI).', marks: 25, extended: true }
                 ]
               },
@@ -22331,7 +22331,7 @@ window.SUBJECTS = [
                 parts: [
                   { code: '05', prompt: 'Using the data in Extract D (Figure 3), calculate the difference between the UK\'s and Argentina\'s mean unemployment rates over the period 2015 to 2018.\n\nGive your answer to two decimal places.', marks: 2 },
                   { code: '06', prompt: 'Explain how the data in Extract D (Figures 3 and 4) show that there may be a short-run trade-off between unemployment and inflation.', marks: 4 },
-                  { code: '07', prompt: 'Extract E (lines 7–9) states: \'It was hoped that policy measures, including a reduction in tariffs... would help to reduce inflation\'.\n\nWith the help of a diagram, explain how a reduction in tariffs could help to reduce inflation.', marks: 9 },
+                  { code: '07', prompt: 'Extract E (lines 7–9) states: \'It was hoped that policy measures, including a reduction in tariffs... would help to reduce inflation\'.\n\nWith the help of a diagram, explain how a reduction in tariffs could help to reduce inflation.', marks: 9, kind: 'diagram' },
                   { code: '08', prompt: 'Extract E (lines 15–17) states: \'Policies were put in place to reduce the money supply and reduce government spending. The control of inflation became the main target of UK government macroeconomic policy.\'\n\nUsing the data in the extracts and your knowledge of economics, evaluate the view that achieving a low and stable rate of inflation should be the main economic objective of governments.', marks: 25, extended: true }
                 ]
               },
