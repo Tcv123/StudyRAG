@@ -20353,7 +20353,498 @@ window.SUBJECTS = [
     name: 'Chemistry', icon: '⚗',
     boards: [
       { board: 'AQA', specCode: '7405',
-        officialPageUrl: 'https://www.aqa.org.uk/subjects/chemistry/a-level/chemistry-7405/assessment-resources' },
+        officialPageUrl: 'https://www.aqa.org.uk/subjects/chemistry/a-level/chemistry-7405/assessment-resources',
+        papers: [
+          { id: 'chem-aqa-7405-2023-p1', year: 'June 2023', paperName: 'Paper 1 — Inorganic and Physical Chemistry', paperCode: '7405/1', totalMarks: 105, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74051-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74051-MS-JUN23.PDF',
+            qbqNote: 'Figures (cell diagrams, Born–Haber cycle, EDTA structure) are in the question paper PDF — open it alongside for any question that references a Figure.',
+            questions: [
+              { number: 1, scenario: "This question is about complexes of the transition metal chromium.",
+                parts: [
+                  { code: '01.1', prompt: "State the meaning of the term transition metal complex.", marks: 1 },
+                  { code: '01.2', preamble: "Cr(PF3)6 is a complex of chromium that contains molecules of PF3. The electron pair repulsion theory can be used to predict the shape of a PF3 molecule.", prompt: "Draw the shape of a PF3 molecule. Include any lone pairs of electrons that influence the shape. Name the shape.", marks: 2 },
+                  { code: '01.3', prompt: "Suggest why the oxidation state of chromium is zero in Cr(PF3)6.", marks: 1 },
+                  { code: '01.4', preamble: "The compound [Cr(NH3)4Cl2]Cl contains ammonia molecules.", prompt: "Deduce the oxidation state of chromium in [Cr(NH3)4Cl2]Cl.", marks: 1 },
+                  { code: '01.5', prompt: "Name the type of bond between N and H in ammonia.", marks: 1 },
+                  { code: '01.6', preamble: "The compound [Cr(NH3)4Cl2]Cl contains a complex ion that shows isomerism.", prompt: "Draw the two isomers of the complex ion. State the type of isomerism shown.", marks: 3 },
+                  { code: '01.7', prompt: "Complete the equation to show the formation of one complex that contains chromium in its +3 oxidation state.\n\nCrCl3 + 5 H2O →", marks: 1 }
+                ] },
+              { number: 2, scenario: "Figure 1 shows a cell used to measure the standard electrode potential for the half-cell Mg2+(aq) + 2e⁻ ⇌ Mg(s). (See Figure 1 in question paper PDF.)",
+                parts: [
+                  { code: '02.1', prompt: "State the purpose of the salt bridge. Identify an ionic compound that could be used in the salt bridge.", marks: 2 },
+                  { code: '02.2', prompt: "State how, if at all, the EMF of this cell will change if the surface area of the platinum electrode is increased.", marks: 1 },
+                  { code: '02.3', preamble: "The standard electrode potential E° for the half-cell Mg2+(aq) + 2e⁻ ⇌ Mg(s) is −2.38 V. Water is added to the beaker containing the magnesium chloride solution.", prompt: "What is the effect on the magnitude of the EMF of the cell?\n\nEMF increases / EMF stays the same / EMF decreases", marks: 1 },
+                  { code: '02.4', preamble: "The voltmeter V shown in Figure 1 is replaced by a bulb.", prompt: "Give an equation for the overall reaction that occurs when the cell is operating.", marks: 1 }
+                ] },
+              { number: 3, scenario: "This question is about Period 3 elements and their oxides.",
+                parts: [
+                  { code: '03.1', prompt: "Give an equation for the reaction between phosphorus and an excess of oxygen.", marks: 1 },
+                  { code: '03.2', prompt: "Give an equation for the reaction between sulfur dioxide and water.", marks: 1 },
+                  { code: '03.3', prompt: "Give the displayed formula for the anion formed when sulfur trioxide reacts with water.", marks: 1 },
+                  { code: '03.4', prompt: "Give an equation for the reaction of magnesium with steam. State one observation made.", marks: 2 },
+                  { code: '03.5', prompt: "Give an equation to show how an excess of magnesium oxide reacts with phosphoric acid (H3PO4).", marks: 1 }
+                ] },
+              { number: 4, scenario: "Nitrogen dioxide decomposes at a high temperature.\n\n2 NO2(g) ⇌ 2 NO(g) + O2(g)   ΔH = +113 kJ mol⁻¹",
+                parts: [
+                  { code: '04.1', preamble: "A 0.317 mol sample of nitrogen dioxide is placed in a sealed flask and heated at a constant temperature until equilibrium is reached. At equilibrium, the flask contains 0.120 mol of oxygen.", prompt: "Calculate the mole fraction of each substance at equilibrium.", marks: 3 },
+                  { code: '04.2', preamble: "The total pressure in the flask in Question 04.1 is 120 kPa at equilibrium. If you were unable to answer Question 04.1 you should assume that the mole fraction of NO2 is 0.380 (this is not the correct answer).", prompt: "Calculate the partial pressure, in kPa, of NO2.", marks: 1 },
+                  { code: '04.3', preamble: "Table 1 shows the mole fractions of the three gases in a different equilibrium mixture: NO2 = 0.310, NO = 0.460, O2 = 0.230. For this equilibrium mixture, Kp = 59.7 kPa.", prompt: "Give an expression for Kp for this reaction. Use your expression and the data in Table 1 to calculate the total pressure, in kPa, in the flask.", marks: 3 },
+                  { code: '04.4', preamble: "The equilibrium mixture in Question 04.3 is compressed into a smaller volume.", prompt: "Deduce the effect, if any, of this change on the equilibrium yield of oxygen and on the value of Kp.", marks: 2 },
+                  { code: '04.5', preamble: "The equilibrium mixture in Question 04.3 is allowed to reach equilibrium at a lower temperature.", prompt: "Explain why the equilibrium yield of oxygen decreases.", marks: 2 }
+                ] },
+              { number: 5, scenario: "This question is about metal chlorides.",
+                parts: [
+                  { code: '05.1', preamble: "Table 2 shows some enthalpy change data: Ca2+(g) → Ca2+(aq) = −1650 kJ mol⁻¹; Cl⁻(g) → Cl⁻(aq) = −364 kJ mol⁻¹; Ca2+(g) + 2 Cl⁻(g) → CaCl2(s) = −2237 kJ mol⁻¹.", prompt: "Use the data in Table 2 to calculate the molar enthalpy change when calcium chloride dissolves in water.", marks: 2 },
+                  { code: '05.2', prompt: "Use your answer to Question 05.1 to deduce how the temperature changes when calcium chloride dissolves in water.", marks: 1 },
+                  { code: '05.3', prompt: "Explain why the enthalpy of hydration of fluoride ions is more negative than the enthalpy of hydration of chloride ions.", marks: 2 },
+                  { code: '05.4', preamble: "Figure 2 shows an incomplete Born–Haber cycle for calcium chloride. (See Figure 2 in question paper PDF.)", prompt: "Complete the Born–Haber cycle by writing the formulas of the missing species on each of the two blank lines.", marks: 2 },
+                  { code: '05.5', preamble: "Table 3 shows some enthalpy change data: enthalpy of atomisation of calcium = +193 kJ mol⁻¹; first ionisation energy of calcium = +590 kJ mol⁻¹; enthalpy of atomisation of chlorine = +121 kJ mol⁻¹; electron affinity of chlorine = −364 kJ mol⁻¹; enthalpy of formation of calcium chloride = −795 kJ mol⁻¹; enthalpy of lattice formation of calcium chloride = −2237 kJ mol⁻¹.", prompt: "Use Figure 2 and data from Table 3 to calculate the second ionisation energy of calcium.", marks: 2 },
+                  { code: '05.6', prompt: "Explain why the second ionisation energy of calcium is greater than the first ionisation energy of calcium.", marks: 1 },
+                  { code: '05.7', preamble: "Table 4 shows lattice enthalpies (dissociation, kJ mol⁻¹) based on a perfect ionic model and from Born–Haber cycles: CaCl2 — model 2223, cycle 2237; KCl — model 690, cycle 701; AgCl — model 770, cycle 905.", prompt: "Discuss the values in Table 4. In your answer you should:\n• compare the three values based on a perfect ionic model\n• compare the values based on a perfect ionic model to the values from a Born–Haber cycle for each compound.", marks: 6 }
+                ] },
+              { number: 6, scenario: "The concentration of dilute hydrochloric acid can be found by titration using a standard solution of barium hydroxide.",
+                parts: [
+                  { code: '06.1', prompt: "Calculate the mass, in g, of solid barium hydroxide (Mr = 171.3) needed to prepare 250 cm³ of 0.100 mol dm⁻³ barium hydroxide solution.", marks: 1 },
+                  { code: '06.2', preamble: "The mass of barium hydroxide from Question 06.1 is dissolved in a beaker containing 150 cm³ of distilled water.", prompt: "Describe how this solution is used to make 250 cm³ of the 0.100 mol dm⁻³ barium hydroxide solution.", marks: 3 },
+                  { code: '06.3', preamble: "Before the first titration, the 25 cm³ pipette is rinsed with a small volume of the 0.100 mol dm⁻³ barium hydroxide solution.", prompt: "State why it is good practice to rinse the pipette in this way.", marks: 1 },
+                  { code: '06.4', preamble: "Hydrochloric acid is added to the burette using a funnel.", prompt: "State why it is good practice to remove the funnel from the burette before the titration.", marks: 1 },
+                  { code: '06.5', preamble: "In a different experiment, 0.952 g of solid barium hydroxide is used to make 250 cm³ of standard barium hydroxide solution. 25.0 cm³ of this barium hydroxide solution reacts with exactly 24.50 cm³ of hydrochloric acid.", prompt: "Calculate the concentration of the hydrochloric acid.", marks: 3 },
+                  { code: '06.6', preamble: "The uncertainty in the 25.0 cm³ of solution from the pipette is ±0.05 cm³. The total uncertainty in the 24.50 cm³ of solution from the burette is ±0.15 cm³.", prompt: "Calculate the total percentage error in using the pipette and burette.", marks: 1 }
+                ] },
+              { number: 7, scenario: "This question is about complexes containing the aluminium ion.",
+                parts: [
+                  { code: '07.1', prompt: "Give the electron configuration of the Al3+ ion.", marks: 1 },
+                  { code: '07.2', preamble: "When anhydrous aluminium sulfate, Al2(SO4)3, is added to water a solution forms that contains the complex aluminium ion, [Al(H2O)6]3+.", prompt: "Give the equation for the reaction.", marks: 1 },
+                  { code: '07.3', prompt: "Explain why the solution containing [Al(H2O)6]3+ is acidic.", marks: 2 },
+                  { code: '07.4', prompt: "State why the concentration of aluminium sulfate solution cannot be determined by colorimetry.", marks: 1 },
+                  { code: '07.5', preamble: "An excess of aqueous ammonia is added to a solution containing [Al(H2O)6]3+.", prompt: "Give an ionic equation for the reaction and state one observation.", marks: 2 },
+                  { code: '07.6', preamble: "An excess of dilute sulfuric acid is added to the products of the reaction in Question 07.5.", prompt: "Identify the aluminium species produced.", marks: 1 },
+                  { code: '07.7', preamble: "Figure 3 shows the structure of the EDTA4⁻ ion. (See Figure 3 in question paper PDF.) Atoms of two different elements in EDTA4⁻ can form co-ordinate bonds with an aluminium ion.", prompt: "On Figure 3, draw circles around the atoms of two different elements that would link to an aluminium ion by a co-ordinate bond.", marks: 2 },
+                  { code: '07.8', preamble: "Hydrated aluminium sulfate Al2(SO4)3·xH2O is soluble in water. Aqueous [Al(H2O)6]3+ ions react to form a stable complex when treated with excess EDTA4⁻ ions; the excess EDTA4⁻ is determined by titration with ZnSO4 solution.\n\nMethod: dissolve 1.036 g of Al2(SO4)3·xH2O in distilled water and make up to 250 cm³; add 25.0 cm³ of this solution to 50.0 cm³ of 0.0100 mol dm⁻³ EDTA4⁻ solution; titrate the excess EDTA4⁻ with ZnSO4 solution — the excess requires 18.00 cm³ of 0.0105 mol dm⁻³ ZnSO4.\n\nReactions: [Al(H2O)6]3+ + EDTA4⁻ → [AlEDTA]⁻ + 6 H2O; [Zn(H2O)6]2+ + EDTA4⁻ → [ZnEDTA]2⁻ + 6 H2O. Mr(Al2(SO4)3) = 342.3.", prompt: "Use the information given to calculate the Mr of Al2(SO4)3·xH2O. Calculate x. Give your answer as an integer.", marks: 7 }
+                ] },
+              { number: 8, scenario: "This question is about fuel cells.\n\nIn a methanol–oxygen fuel cell, the overall reaction is:\nCH3OH(l) + 3/2 O2(g) → CO2(g) + 2 H2O(l)   EMF = +1.20 V",
+                parts: [
+                  { code: '08.1', preamble: "At the positive electrode, oxygen reacts with hydrogen ions to form water.", prompt: "Give a half-equation for this reaction.", marks: 1 },
+                  { code: '08.2', preamble: "At the negative electrode, methanol reacts with water to produce carbon dioxide and hydrogen ions.", prompt: "Give a half-equation for this reaction.", marks: 1 },
+                  { code: '08.3', preamble: "The standard electrode potential for the CO2/CH3OH electrode is +0.03 V.", prompt: "Calculate the standard electrode potential for the O2/H2O electrode.", marks: 1 },
+                  { code: '08.4', prompt: "State why a fuel cell does not need to be electrically recharged.", marks: 1 },
+                  { code: '08.5', prompt: "Suggest one advantage of using methanol, rather than hydrogen, in a fuel cell for use in cars.", marks: 1 }
+                ] },
+              { number: 9, scenario: "This question is about time of flight (TOF) mass spectrometry.",
+                parts: [
+                  { code: '09.1', prompt: "Give the equation, including state symbols, for the formation of Sr⁺ ions from Sr atoms by electron impact.", marks: 1 },
+                  { code: '09.2', preamble: "A sample of strontium is analysed by TOF mass spectrometry. The ions are accelerated to have a kinetic energy of 7.02 × 10⁻²⁰ J. An ion takes 9.47 × 10⁻⁴ s to travel along a 95.0 cm flight tube. KE = ½mv² (m = mass in kg, v = speed in m s⁻¹). Avogadro constant L = 6.022 × 10²³ mol⁻¹.", prompt: "Use the information given to deduce the mass number of this ion.", marks: 5 },
+                  { code: '09.3', prompt: "Explain how the ions are detected in the TOF mass spectrometer. State how the relative abundance of the ions is determined.", marks: 2 },
+                  { code: '09.4', preamble: "A sample of strontium contains three isotopes: ⁸⁶Sr, ⁸⁷Sr and ⁸⁸Sr. 82% of the sample is ⁸⁸Sr. The other isotopes are in a 1:2 ratio of ⁸⁶Sr : ⁸⁷Sr.", prompt: "Calculate the percentage abundance of ⁸⁷Sr in this sample. Use your answer to deduce the relative atomic mass (Ar) of the sample. Give your answer to 1 decimal place.", marks: 3 },
+                  { code: '09.5', preamble: "Electrospray ionisation is used instead of electron impact for the ionisation of a protein in a mass spectrometry experiment.", prompt: "Suggest why.", marks: 1 }
+                ] },
+              { number: 10, scenario: "This question is about weak acids.",
+                parts: [
+                  { code: '10.1', preamble: "Table 5 shows pH ranges of some indicators: Bromocresol green 3.8–5.4; Bromothymol blue 6.0–7.6; Thymol blue 8.0–9.6.", prompt: "Identify the indicator that is most suitable for use in a titration between propanoic acid and sodium hydroxide.", marks: 1 },
+                  { code: '10.2', prompt: "Give the expression for the acid dissociation constant (Ka) for propanoic acid (CH3CH2COOH).", marks: 1 },
+                  { code: '10.3', preamble: "For propanoic acid, pKa = 4.87.", prompt: "Calculate the pH of a 0.100 mol dm⁻³ propanoic acid solution. Give your answer to 2 decimal places.", marks: 4 },
+                  { code: '10.4', preamble: "For butanoic acid, Ka = 1.51 × 10⁻⁵ mol dm⁻³. 20.0 cm³ of 0.100 mol dm⁻³ sodium hydroxide solution are added to 25.0 cm³ of 0.100 mol dm⁻³ butanoic acid solution.", prompt: "Calculate the pH of the solution formed.", marks: 5 },
+                  { code: '10.5', preamble: "A student plans to titrate butanoic acid solution with a solution of ethylamine.", prompt: "Explain why this titration could not be done using an indicator.", marks: 2 }
+                ] }
+            ]
+          },
+          { id: 'chem-aqa-7405-2023-p2', year: 'June 2023', paperName: 'Paper 2 — Organic and Physical Chemistry', paperCode: '7405/2', totalMarks: 105, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74052-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74052-MS-JUN23.PDF',
+            qbqNote: 'Figures (rate graphs, mechanism diagrams, NMR/IR spectra, distillation apparatus) are in the question paper PDF — open it alongside for any question that references a Figure.',
+            questions: [
+              { number: 1, scenario: "This question is about rates of reaction. Figure 1 shows apparatus used to measure the rate of reaction when an acid reacts with an excess of solid sodium hydrogencarbonate. The mass of CO2 gas lost is recorded at regular intervals. (See Figure 1 in question paper PDF.)",
+                parts: [
+                  { code: '01.1', prompt: "Suggest a reason why using a conical flask instead of a beaker would give more accurate results in this experiment.", marks: 1 },
+                  { code: '01.2', preamble: "Figure 2 shows the results when 25.0 cm³ of a 2.23 mol dm⁻³ solution of ethanoic acid reacts with an excess of NaHCO3. (See Figure 2 in question paper PDF.)", prompt: "Use Figure 2 to calculate the rate of reaction at 2 minutes. Deduce the units of your calculated rate.", marks: 3 },
+                  { code: '01.3', prompt: "Sketch, on Figure 2, the curve you would expect when 25.0 cm³ of a 2.23 mol dm⁻³ solution of chloroethanoic acid reacts with an excess of NaHCO3. Suggest why chloroethanoic acid is a stronger acid than ethanoic acid.", marks: 3 }
+                ] },
+              { number: 2, scenario: "A and B react together in the presence of an acid catalyst: A(aq) + 2B(aq) → C(aq) + D(aq). The rate equation is: rate = k[B]²[H⁺]. Table 1 data — Exp 1: [A]=0.40, [B]=0.20, [H⁺]=0.10, relative rate=1.00; Exp 2: [A]=0.50, [B]=0.20, [H⁺]=0.10, rate=?; Exp 3: [A]=0.40, [B]=?, [H⁺]=0.10, rate=0.64; Exp 4: [A]=0.50, [B]=0.30, [H⁺]=0.06, rate=?",
+                parts: [
+                  { code: '02.1', prompt: "Complete Table 1 by calculating the missing values.", marks: 3 },
+                  { code: '02.2', preamble: "A suggested mechanism: Step 1: B + H⁺ → BH⁺; Step 2: BH⁺ + B → B2H⁺; Step 3: B2H⁺ + A → C + D.", prompt: "Deduce the rate-determining step for this reaction. Give a reason for your answer.", marks: 2 }
+                ] },
+              { number: 3, scenario: "This question is about intermediates in reaction mechanisms.",
+                parts: [
+                  { code: '03.1', preamble: "Figure 3 shows an intermediate formed in the first step of a nucleophilic addition–elimination mechanism. (See Figure 3 in question paper PDF.)", prompt: "Complete Figure 3 to show the structures of the two reactant species with curly arrows and relevant lone pairs of electrons involved in the formation of the intermediate. Draw curly arrows and relevant lone pairs of electrons on the intermediate to show how the final products are formed.", marks: 4 },
+                  { code: '03.2', preamble: "Figure 4 shows an intermediate formed in the first step of a reaction mechanism of methylbenzene. (See Figure 4 in question paper PDF.)", prompt: "Complete Figure 4 to show the reactant species and any curly arrows involved in the formation of the intermediate. Draw a curly arrow on the intermediate to show how the product is formed. Give the name of the reaction mechanism.", marks: 4 },
+                  { code: '03.3', preamble: "Figure 5 shows the reactant species involved in the first step of a mechanism. (See Figure 5 in question paper PDF.)", prompt: "Complete Figure 5 to show the structure of the intermediate formed with curly arrows involved in its formation. Give the name of the reaction mechanism.", marks: 4 }
+                ] },
+              { number: 4, scenario: "Acrylonitrile, H2C=CHCN, can be used as a starting material for the synthesis of butane-1,4-diamine. Reaction 1 produces isomer W and two other isomers; Reaction 2 converts W; Reaction 3 gives butane-1,4-diamine. (See reaction scheme in question paper PDF.)",
+                parts: [
+                  { code: '04.1', prompt: "Use IUPAC rules to name isomer W.", marks: 1 },
+                  { code: '04.2', prompt: "Reaction 1 produces a mixture of W and two other isomers. Draw the structures of the two other isomers. Explain, by considering the mechanism of this reaction, why all three isomers are formed.", marks: 6 },
+                  { code: '04.3', prompt: "Identify the reagent that is warmed with isomer W in reaction 2. State the other reaction condition needed.", marks: 2 },
+                  { code: '04.4', prompt: "State the reagent and reaction conditions needed for reaction 3. Give an equation for reaction 3.", marks: 2 },
+                  { code: '04.5', prompt: "An incomplete equation for the formation of nylon 4,6 from five molecules of butane-1,4-diamine and five molecules of hexanedioic acid is shown. Deduce the values of x and y in this equation.", marks: 2 },
+                  { code: '04.6', preamble: "Figure 6 shows a section of the nylon 4,6 polymer molecule. (See Figure 6 in question paper PDF.)", prompt: "Draw, on Figure 6, another section of nylon 4,6 polymer showing two hydrogen bonds between the two sections.", marks: 2 }
+                ] },
+              { number: 5, scenario: "This question is about compound Z, with molecular formula C7H12O3. Figure 7 shows the infrared spectrum of Z and Figure 8 shows the ¹³C NMR spectrum of Z. (See Figures 7 and 8 in question paper PDF.)",
+                parts: [
+                  { code: '05.1', prompt: "Identify the bond that causes the absorption at 1725 cm⁻¹.", marks: 1 },
+                  { code: '05.2', prompt: "How many different carbon environments are there in a molecule of Z?\n\n5 / 6 / 7 / 8", marks: 1 },
+                  { code: '05.3', prompt: "State the type of carbon environment that causes the peak at δ = 174 ppm. Use Table C in the Data Booklet to help you answer this question.", marks: 1 },
+                  { code: '05.4', preamble: "Table 2 shows data from the ¹H NMR spectrum for compound Z: δ 4.10 ppm — quartet, integration 2; δ 2.60 ppm — triplet, integration 2; δ 2.56 ppm — triplet, integration 2; δ 2.19 ppm — singlet, integration 3; δ 1.26 ppm — triplet, integration 3.", prompt: "Explain what can be deduced from the splitting patterns and chemical shift values for the peaks at δ = 4.10 ppm and at δ = 1.26 ppm. Deduce the part of the structure of Z that causes these peaks. Use Table B in the Data Booklet to help you answer this question.", marks: 5 },
+                  { code: '05.5', prompt: "Deduce the part of the structure of Z that causes the peak at δ = 2.19 ppm.", marks: 1 },
+                  { code: '05.6', preamble: "Figure 9 shows the ¹H NMR spectrum of compound Z without integration data. (See Figure 9 in question paper PDF.)", prompt: "Suggest why it would be difficult to determine the structure of Z using the spectrum in Figure 9, without the information in Table 2.", marks: 1 },
+                  { code: '05.7', prompt: "Deduce the structure of Z.", marks: 1 }
+                ] },
+              { number: 6, scenario: "A student plans a series of chemical tests on four organic liquids J, K, L and M: Test 1 — add potassium dichromate(VI) solution and warm gently; Test 2 — add Fehling's solution and cool in iced water; Test 3 — add sodium hydrogencarbonate solution and test any gas with a lighted splint; Test 4 — add bromine water and shake at room temperature.",
+                parts: [
+                  { code: '06.1', prompt: "Identify the missing reagent needed in Test 1.", marks: 1 },
+                  { code: '06.2', prompt: "In addition to the missing reagent in Test 1, there is a mistake in the method for two of the other tests. State the two mistakes. Suggest how each mistake should be corrected.", marks: 2 },
+                  { code: '06.3', prompt: "Identify the liquid(s) J, K, L and M that would react in each test. State the expected observation for each reaction.", marks: 8 },
+                  { code: '06.4', preamble: "Figure 10 shows the apparatus used to separate a mixture of liquids K and M using fractional distillation. (See Figure 10 in question paper PDF.)", prompt: "Suggest labels that should be added to positions S, T and U in Figure 10. Explain why fractional distillation is preferred to simple distillation to separate liquids K and M.", marks: 3 }
+                ] },
+              { number: 7, scenario: "A gas syringe contains 0.146 g of propanone (Mr = 58.0) at 95 °C and 103 kPa. The gas constant R = 8.31 J K⁻¹ mol⁻¹.",
+                parts: [
+                  { code: '07.1', prompt: "Calculate the volume, in cm³, of propanone in the gas syringe.", marks: 4 },
+                  { code: '07.2', preamble: "The gas syringe is cooled to 75 °C, without changing the pressure. (If unable to calculate the volume in 07.1, use 89 cm³.)", prompt: "Calculate the decrease in volume.", marks: 2 },
+                  { code: '07.3', preamble: "The total uncertainty in using the balance to measure the mass of propanone is ±0.001 g. (If unable to calculate the volume in 07.1, use 89 cm³.)", prompt: "Calculate the uncertainty that this causes in the volume, in cm³, of propanone calculated in Question 07.1.", marks: 2 },
+                  { code: '07.4', preamble: "A 600 cm³ sample of propanone is mixed with 2800 cm³ of oxygen in a container at 60 °C and 100 kPa. The mixture is ignited. When the reaction is complete, the remaining mixture of gases is cooled to 60 °C at 100 kPa.\n\nCH3COCH3(g) + 4O2(g) → 3CO2(g) + 3H2O(l)", prompt: "Calculate the total volume of the remaining gas mixture.", marks: 2 }
+                ] },
+              { number: 8, scenario: "This question is about biofuels. Palmitic acid, CH3(CH2)14COOH, can be made by hydrolysis of the triester in palm oil under acidic conditions.",
+                parts: [
+                  { code: '08.1', prompt: "Complete the equation for the hydrolysis of the triester in palm oil under acidic conditions.", marks: 2 },
+                  { code: '08.2', preamble: "Combustion of 387 mg of palmitic acid (Mr = 256.4) increases the temperature of 0.150 kg of water from 23.9 °C to 37.5 °C. Specific heat capacity of water = 4.18 J K⁻¹ g⁻¹.", prompt: "Calculate a value, in kJ mol⁻¹, for the enthalpy of combustion of palmitic acid in this experiment. Give your answer to the appropriate number of significant figures.", marks: 5 },
+                  { code: '08.3', prompt: "State how the value calculated in Question 08.2 is likely to differ from data book values. Give one reason, other than heat loss, for this difference.", marks: 2 },
+                  { code: '08.4', preamble: "A sample of a different biofuel made from sewage sludge contains 37.08% carbon, 5.15% hydrogen and 24.72% oxygen by mass. The rest is sulfur.", prompt: "Calculate the empirical formula of this biofuel.", marks: 3 },
+                  { code: '08.5', prompt: "Complete combustion of the biofuel made from sewage sludge produces CO2. Suggest one other possible environmental problem with the complete combustion of this biofuel. State the formula of the pollutant responsible.", marks: 2 },
+                  { code: '08.6', preamble: "Ethanol is a biofuel produced by fermentation: C6H12O6 → 2C2H5OH + 2CO2. Mean bond enthalpies (kJ mol⁻¹): C–H = 412; C–C = 348; C–O = 360; C=O = 805; O–H = 463.", prompt: "Use the equation and the data to calculate an approximate value of ΔH for the fermentation of glucose. Assume all substances are in the gaseous state.", marks: 3 },
+                  { code: '08.7', preamble: "The CO2 produced from fermentation can be reacted with steam: 2CO2(g) + 3H2O(g) → C2H5OH(g) + 3O2(g). Standard enthalpies of formation (kJ mol⁻¹): CO2(g) = −394; O2(g) = 0; C2H5OH(g) = −235; H2O(g) = −242.", prompt: "Use the data to calculate a standard enthalpy change value for this reaction.", marks: 2 }
+                ] },
+              { number: 9, scenario: "This question is about ethanoic anhydride. In the gas phase, ethanoic anhydride (CH3CO)2O decomposes to form ethenone:\n(CH3CO)2O → H2C=C=O + CH3COOH",
+                parts: [
+                  { code: '09.1', preamble: "Ethenone is the simplest member of the ketene homologous series. Ketenes all contain one C=C double bond and one C=O double bond.", prompt: "Deduce the general formula for the ketene homologous series.", marks: 1 },
+                  { code: '09.2', preamble: "Figure 11 shows an incomplete mechanism for the decomposition of ethanoic anhydride. (See Figure 11 in question paper PDF.)", prompt: "Complete the mechanism in Figure 11 by adding three curly arrows and any relevant lone pairs of electrons.", marks: 3 },
+                  { code: '09.3', preamble: "Arrhenius equation: k = Ae^(−Ea/RT). For the decomposition: Ea = 34.5 kJ mol⁻¹; A = 1.00 × 10¹² s⁻¹; at temperature T1, k = 2.48 × 10⁸ s⁻¹. R = 8.31 J K⁻¹ mol⁻¹.", prompt: "Calculate T1.", marks: 3 },
+                  { code: '09.4', prompt: "Sketch the Maxwell–Boltzmann distribution of molecular energies for gaseous ethanoic anhydride at temperature T1 and at a higher temperature T2. Include a label for each axis, and mark on the appropriate axis a typical position for the activation energy. Explain why the rate of reaction is faster at T2.", marks: 5 }
+                ] }
+            ]
+          },
+          { id: 'chem-aqa-7405-2023-p3', year: 'June 2023', paperName: 'Paper 3 — Practical Skills and Data Analysis', paperCode: '7405/3', totalMarks: 90, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74053-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-74053-MS-JUN23.PDF',
+            qbqNote: 'Section A (Q1–6) are structured practical questions; Section B (Q7–36) are 1-mark multiple choice. Figures (apparatus diagrams, TLC plates, mechanism diagrams) are in the question paper PDF.',
+            questions: [
+              { number: 1, scenario: "Ethyl ethanoate can be made by reacting ethanol with ethanoic acid in the presence of concentrated sulfuric acid.\n\nMethod: (1) Heat mixture under reflux 10 min. (2) Rearrange for distillation. (3) Collect distillate 70–85 °C. (4) Add aqueous sodium carbonate in separating funnel, shake releasing pressure. (5) Remove lower aqueous layer; collect upper organic layer. (6) Add anhydrous calcium chloride to organic layer; shake and leave. (7) Redistil, collect 74–79 °C.",
+                parts: [
+                  { code: '01.1', prompt: "State the role of concentrated sulfuric acid in this reaction.", marks: 1 },
+                  { code: '01.2', preamble: "The reaction mixture is flammable.", prompt: "Suggest how the reaction mixture should be heated in step 1.", marks: 1 },
+                  { code: '01.3', preamble: "Figure 1 shows how a student set up the apparatus for reflux in step 1. (See Figure 1 in question paper PDF.)", prompt: "Identify two mistakes the student made in setting up the apparatus. State the problem caused by each mistake.", marks: 4 },
+                  { code: '01.4', prompt: "State why sodium carbonate is added to the distillate in step 4. Explain why there is a build-up of pressure in the separating funnel.", marks: 2 },
+                  { code: '01.5', prompt: "Give a reason why two layers form in the separating funnel. Suggest why ethyl ethanoate forms the upper layer.", marks: 3 },
+                  { code: '01.6', prompt: "State why anhydrous calcium chloride is added in step 6.", marks: 1 },
+                  { code: '01.7', preamble: "A student adds 10.0 cm³ of ethanol (Mr = 46.0, density = 0.790 g cm⁻³) to 5.25 g of ethanoic acid (Mr = 60.0) and obtains 5.47 g of ethyl ethanoate (Mr = 88.0).", prompt: "Determine the limiting reagent. Calculate the percentage yield of ethyl ethanoate.", marks: 5 },
+                  { code: '01.8', prompt: "Suggest a reason why the percentage yield is not 100%.", marks: 1 }
+                ] },
+              { number: 2, scenario: "This question is about isomerism and the dehydration of alcohols. Pentan-2-ol has the molecular formula C5H12O.",
+                parts: [
+                  { code: '02.1', prompt: "Draw the displayed formula of an unbranched position isomer of pentan-2-ol that can be dehydrated to form a single alkene.", marks: 1 },
+                  { code: '02.2', prompt: "Draw the skeletal formula of a chain isomer of pentan-2-ol that can be dehydrated to form a mixture of alkenes.", marks: 1 },
+                  { code: '02.3', prompt: "Draw the structure of an unbranched functional group isomer of pentan-2-ol.", marks: 1 },
+                  { code: '02.4', preamble: "Another isomer of pentan-2-ol is an alcohol that is not dehydrated when heated with concentrated sulfuric acid.", prompt: "Draw the structure of this isomer.", marks: 1 },
+                  { code: '02.5', preamble: "An incomplete mechanism for the dehydration of a compound is shown. (See Figure in question paper PDF — mechanism showing a carbocation intermediate.)", prompt: "Complete the mechanism for this reaction by drawing two curly arrows on the intermediate. Name the mechanism for this reaction.", marks: 3 },
+                  { code: '02.6', preamble: "An isomer of the final product can also form in the reaction in Question 02.5.", prompt: "Draw the structure of this isomer.", marks: 1 }
+                ] },
+              { number: 3, scenario: "Endomorphin-2 is a peptide with the amino acid sequence Tyr–Pro–Phe–Phe–NH2. Figure 2 shows part of the structure of endomorphin-2. (See Figure 2 in question paper PDF.)",
+                parts: [
+                  { code: '03.1', preamble: "The –NH2 at the end of the sequence shows the terminal functional group is an amide, not an acid.", prompt: "Complete the structure of endomorphin-2 in Figure 2.", marks: 2 },
+                  { code: '03.2', prompt: "Use the structure in Figure 2 to draw the skeletal formula of proline (Pro).", marks: 1 },
+                  { code: '03.3', preamble: "A student hydrolyses a sample of endomorphin-2 to break it down into its constituent amino acids and analyses the resulting mixture by thin-layer chromatography (TLC).", prompt: "State a reagent and the conditions needed for the hydrolysis.", marks: 2 },
+                  { code: '03.4', preamble: "Figure 3 shows the apparatus used for the TLC. (See Figure 3 in question paper PDF.) There is a piece of apparatus missing from Figure 3. This omission will result in an inaccurate chromatogram.", prompt: "Identify the missing piece of apparatus. State and explain why this piece is needed.", marks: 3 },
+                  { code: '03.5', prompt: "State why the amino acids separate on the TLC plate.", marks: 1 },
+                  { code: '03.6', preamble: "When the solvent has risen up the TLC plate, the student removes the plate and sprays it with a developing agent. Figure 4 shows the result. (See Figure 4 in question paper PDF.)", prompt: "Name a suitable developing agent. State why the developing agent is needed.", marks: 2 },
+                  { code: '03.7', prompt: "Determine the Rf value for Tyr.", marks: 1 }
+                ] },
+              { number: 4,
+                parts: [
+                  { code: '04', preamble: "A student is given two aqueous solutions, L and M, that both contain iron salts. Tests (see Table 1 in question paper PDF): add ammonia solution in excess — L gives red-brown precipitate insoluble in excess, M gives green precipitate insoluble in excess; add sodium carbonate — L gives red-brown precipitate, M no change; add dilute nitric acid then split into two portions — L gives effervescence, M no change; add barium chloride to first portion — L no change, M white precipitate; add silver nitrate to second portion — L white precipitate, M no change.", prompt: "Identify L and M using the results in Table 1. In your answer: identify all precipitates; explain why effervescence is seen in the reaction of sodium carbonate with L but not with M; give ionic equations for all reactions.", marks: 6 }
+                ] },
+              { number: 5, scenario: "A student determines the molar enthalpy of vaporisation (ΔHvap) of water by boiling water with a 2.4 kW heater for 100 s. The loss in mass is 103 g.",
+                parts: [
+                  { code: '05.1', preamble: "1 kW = 1 kJ s⁻¹", prompt: "Calculate ΔHvap for water.", marks: 3 },
+                  { code: '05.2', preamble: "Table 2 shows data about three compounds with the same number of electrons: CH3CH2OH (bp 352 K), CH3CH2NH2 (bp 290 K), CH3OCH3 (bp 248 K). All three are polar. Ethanol is the most polar and ethylamine is the least polar.", prompt: "Explain why all three molecules are polar and why ethylamine is the least polar. In your answer refer to the shapes around, and relative electronegativities of, the most electronegative atoms.", marks: 4 },
+                  { code: '05.3', prompt: "Explain the trend in the boiling points of the three compounds. Refer to the intermolecular forces in all three compounds in your answer.", marks: 3 }
+                ] },
+              { number: 6, scenario: "Calcium hydroxide is almost insoluble in water, but it reacts with dilute hydrochloric acid:\nCa(OH)2(s) + 2 HCl(aq) → CaCl2(aq) + 2 H2O(l)\n\nA student adds 100 cm³ of 0.100 mol dm⁻³ hydrochloric acid to 0.600 g of solid calcium hydroxide.",
+                parts: [
+                  { code: '06.1', prompt: "Show, by calculation, that the calcium hydroxide is in excess.", marks: 2 },
+                  { code: '06.2', preamble: "The final mixture contains a saturated solution of Ca(OH)2 at 293 K. At 293 K: solubility of Ca(OH)2 = 0.400 g dm⁻³; Kw = 6.80 × 10⁻¹⁵ mol² dm⁻⁶.", prompt: "Calculate the pH of this solution. Give your answer to two decimal places.", marks: 5 }
+                ] },
+              { number: 7, parts: [{ code: '07', prompt: "Which row shows the number of each fundamental particle in one ²⁵Mg²⁺ ion?\n\nA protons 12, neutrons 12, electrons 10\nB protons 14, neutrons 11, electrons 12\nC protons 12, neutrons 13, electrons 10\nD protons 12, neutrons 13, electrons 12", marks: 1 }] },
+              { number: 8, parts: [{ code: '08', prompt: "What is the relative molecular mass (Mr) of benzene-1,4-dicarboxylic acid?\n\nA 164.0   B 166.0   C 168.0   D 170.0", marks: 1 }] },
+              { number: 9, parts: [{ code: '09', prompt: "Which substance has significant electron delocalisation?\n\nA graphite   B iodine   C sodium chloride   D tetrachloromethane", marks: 1 }] },
+              { number: 10, parts: [{ code: '10', prompt: "Which reaction has a standard enthalpy change equal to the standard enthalpy of formation for barium chloride?\n\nA Ba(g) + Cl2(g) → BaCl2(s)\nB Ba2+(g) + 2 Cl⁻(g) → BaCl2(s)\nC Ba(s) + Cl2(g) → BaCl2(s)\nD Ba2+(s) + 2 Cl⁻(g) → BaCl2(s)", marks: 1 }] },
+              { number: 11, parts: [{ code: '11', preamble: "This is a Maxwell–Boltzmann distribution for a gaseous reactant. (See Figure in question paper PDF.)", prompt: "What is represented by the total area under the curve?\n\nA total energy of the particles\nB activation energy for the reaction\nC total number of reacting particles\nD total number of particles present", marks: 1 }] },
+              { number: 12, parts: [{ code: '12', prompt: "The rate of reaction is greater when a catalyst is used, without changing the temperature. Which statement explains why?\n\nA The collision frequency increases because the catalysed reaction has a lower activation energy.\nB The collision frequency increases because there is an increase in the average energy of the particles.\nC The proportion of successful collisions increases because the catalysed reaction has a lower activation energy.\nD The proportion of successful collisions increases because there is an increase in the average energy of the particles.", marks: 1 }] },
+              { number: 13, parts: [{ code: '13', preamble: "When HF is added to water at 298 K: HF(aq) ⇌ H⁺(aq) + F⁻(aq). At equilibrium, [HF] = 7.70 × 10⁻³ mol dm⁻³ and [F⁻] = 2.30 × 10⁻³ mol dm⁻³.", prompt: "What is the value of the equilibrium constant, in mol dm⁻³, at 298 K?\n\nA 1.45 × 10³   B 3.35   C 2.99 × 10⁻¹   D 6.87 × 10⁻⁴", marks: 1 }] },
+              { number: 14, parts: [{ code: '14', prompt: "In which oxide is the named element in its highest oxidation state?\n\nA chlorine in ClO2   B magnesium in MgO   C nitrogen in N2O4   D sulfur in SO2", marks: 1 }] },
+              { number: 15, parts: [{ code: '15', prompt: "What happens when water is vaporised?\n\nA Covalent bonds break within molecules.\nB Intermolecular forces are overcome.\nC The enthalpy of the molecules decreases.\nD The disorder of the molecules decreases.", marks: 1 }] },
+              { number: 16, parts: [{ code: '16', prompt: "Which species can behave as a Brønsted–Lowry acid in aqueous solution?\n\nA SO4²⁻   B HCO3⁻   C BF3   D NH3", marks: 1 }] },
+              { number: 17, parts: [{ code: '17', preamble: "Kw = 1.0 × 10⁻¹⁴ at 298 K.", prompt: "Which change causes the pH of 10 cm³ of 1.0 mol dm⁻³ NaOH to be halved at 298 K?\n\nA adding 10 cm³ of water\nB adding 10 dm³ of water\nC adding 5 cm³ of 1.0 mol dm⁻³ HCl\nD adding 10 cm³ of 1.0 mol dm⁻³ HCl", marks: 1 }] },
+              { number: 18, parts: [{ code: '18', preamble: "A 0.100 mol dm⁻³ solution of a weak acid has pH = 2.50.", prompt: "What is the value of Ka for this acid, in mol dm⁻³?\n\nA 3.16 × 10⁻²   B 3.16 × 10⁻³   C 1.00 × 10⁻⁴   D 1.00 × 10⁻⁵", marks: 1 }] },
+              { number: 19, parts: [{ code: '19', prompt: "Which statement is not correct about the Period 3 elements sodium to chlorine?\n\nA Sodium has the largest atomic radius.\nB Sodium has the lowest melting point.\nC Silicon has the highest melting point.\nD Chlorine has the highest first ionisation energy.", marks: 1 }] },
+              { number: 20, parts: [{ code: '20', preamble: "Equal volumes of pairs of solutions are mixed.", prompt: "Which pair forms a buffer solution?\n\nA ammonia and ammonium chloride\nB ammonia and methylamine\nC ethanoic acid and methanoic acid\nD hydrochloric acid and sodium hydroxide", marks: 1 }] },
+              { number: 21, parts: [{ code: '21', preamble: "Barium metal is added to a large excess of water.", prompt: "Which observation is correct and complete?\n\nA a colourless solution\nB a colourless solution with effervescence\nC a dense white precipitate\nD a dense white precipitate with effervescence", marks: 1 }] },
+              { number: 22, parts: [{ code: '22', prompt: "Which species is the strongest reducing agent?\n\nA F2   B I2   C F⁻   D I⁻", marks: 1 }] },
+              { number: 23, parts: [{ code: '23', prompt: "Which statement about the shapes of ions is not correct?\n\nA [CoCl4]²⁻ is square planar.\nB NH4⁺ is tetrahedral.\nC [Co(H2NCH2CH2NH2)3]²⁺ is octahedral.\nD [Co(H2O)6]²⁺ is octahedral.", marks: 1 }] },
+              { number: 24, parts: [{ code: '24', prompt: "Which compound can decolourise acidified potassium manganate(VII) solution?\n\nA AgNO3   B CuSO4   C FeSO4   D Fe2(SO4)3", marks: 1 }] },
+              { number: 25, parts: [{ code: '25', prompt: "Which statement about catalysts used in reactions at equilibrium, at a constant temperature, is correct?\n\nA They are always used in the solid state.\nB They increase the rate of the forward reaction but decrease the rate of the reverse reaction.\nC They have no effect on the value of the equilibrium constant.\nD They make the forward reaction more exothermic.", marks: 1 }] },
+              { number: 26, parts: [{ code: '26', preamble: "Consider a multi-step organic reaction scheme with steps 1–5. (See Figure in question paper PDF.)", prompt: "Which step is shown with a correct reagent and a correct condition?\n\nA Step 1: HCN dissolved in water\nB Step 2: KOH dissolved in warm water\nC Step 4: CH3OH with an alkaline catalyst\nD Step 5: H2 with a nickel catalyst", marks: 1 }] },
+              { number: 27, parts: [{ code: '27', prompt: "Which process does not involve a heterogeneous catalyst?\n\nA catalytic cracking of alkanes\nB Contact process\nC decomposition of ozone\nD Haber process", marks: 1 }] },
+              { number: 28, parts: [{ code: '28', preamble: "The equation for the complete combustion of butane is: C4H10 + 6½ O2 → 4 CO2 + 5 H2O.", prompt: "What is the mole fraction of butane in a mixture of butane and oxygen with the minimum amount of oxygen needed for complete combustion?\n\nA 0.133   B 0.153   C 0.167   D 0.200", marks: 1 }] },
+              { number: 29, parts: [{ code: '29', preamble: "The skeletal formulas of two compounds and a reaction with KOH are shown. (See Figure in question paper PDF.)", prompt: "Which is not a possible product of a reaction between KOH and the compound shown?\n\n(See answer options A–D in question paper PDF.)", marks: 1 }] },
+              { number: 30, parts: [{ code: '30', preamble: "Most scientists believe that the concentration of ozone in the upper atmosphere should not be allowed to decrease.", prompt: "Which statement is a correct reason for this belief?\n\nA Ozone helps to prevent global warming.\nB Ozone is an efficient disinfectant.\nC Ozone helps to remove pollutants such as chloroalkanes.\nD Ozone absorbs ultraviolet radiation.", marks: 1 }] },
+              { number: 31, parts: [{ code: '31', preamble: "Compound X can be converted into an alcohol in a two-stage process. (See Figure in question paper PDF.)", prompt: "What is the name of compound X?\n\nA propene   B propanal   C methylbenzene   D ethanamide", marks: 1 }] },
+              { number: 32, parts: [{ code: '32', preamble: "[O] represents oxygen from an oxidising agent.", prompt: "Which is a correct equation for the oxidation of 1-phenylethanol?\n\nA C6H5CH2CH2OH + 2[O] → C6H5CH2COOH + H2O\nB C6H5CH2CH2OH + [O] → C6H5CH2CHO + H2O\nC C6H5CH(OH)CH3 + [O] → C6H5CH2CHO + H2O\nD C6H5CH(OH)CH3 + [O] → C6H5COCH3 + H2O", marks: 1 }] },
+              { number: 33, parts: [{ code: '33', preamble: "The skeletal formulas of two isomeric compounds are shown. (See Figure in question paper PDF.)", prompt: "Which method would distinguish between samples of these compounds?\n\nA comparing fingerprint regions of their infrared spectra\nB obtaining molecular masses from their high resolution mass spectra\nC warming with acidified potassium dichromate(VI) solution\nD warming with Tollens' reagent", marks: 1 }] },
+              { number: 34, parts: [{ code: '34', preamble: "Two amine structures A and B are shown. (See Figure in question paper PDF.)", prompt: "Which compound is the strongest base?\n\nA structure A   B structure B   C NH3   D NH4Cl", marks: 1 }] },
+              { number: 35, parts: [{ code: '35', prompt: "Which statement about enzymes is not correct?\n\nA The tertiary structure of an enzyme influences which molecules can bind to the active site.\nB The action of enzymes can be inhibited by a molecule or ion that binds to the active site.\nC Enzymes work equally well on both optical isomers of a substrate.\nD Computers can be used to design drugs to block active sites on enzymes.", marks: 1 }] },
+              { number: 36, parts: [{ code: '36', preamble: "Cisplatin has the formula [Pt(NH3)2Cl2]. Cisplatin is an anti-cancer drug that prevents replication of DNA.", prompt: "When cisplatin bonds to DNA, which is the correct ligand replacement reaction?\n\nA replacement of one NH3 ligand\nB replacement of two NH3 ligands\nC replacement of one NH3 ligand and one Cl⁻ ligand\nD replacement of two Cl⁻ ligands", marks: 1 }] }
+            ]
+          },
+          { id: 'chem-aqa-7405-2022-p1', year: 'June 2022', paperName: 'Paper 1 — Inorganic and Physical Chemistry', paperCode: '7405/1', totalMarks: 105, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74051-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74051-MS-JUN22.PDF',
+            qbqNote: 'Figures (electrochemical cell, silver–zinc cell cross-section, reaction scheme) are in the question paper PDF — open it alongside for any question that references a Figure.',
+            questions: [
+              { number: 1, scenario: "This question is about equilibria.\n\nCO(g) + 2H2(g) ⇌ CH3OH(g)   ΔH = −90 kJ mol⁻¹",
+                parts: [
+                  { code: '01.1', prompt: "Give two features of a reaction in dynamic equilibrium.", marks: 2 },
+                  { code: '01.2', preamble: "A gas-phase reaction is at equilibrium. When the pressure is increased the yield of product decreases.", prompt: "State what can be deduced about the chemical equation for this equilibrium.", marks: 1 },
+                  { code: '01.3', preamble: "0.430 mol of carbon monoxide is mixed with 0.860 mol of hydrogen. At equilibrium, the total pressure in the flask is 250 kPa and the mixture contains 0.110 mol of methanol.", prompt: "Calculate the amount, in moles, of carbon monoxide present at equilibrium. Calculate the partial pressure, in kPa, of carbon monoxide in this equilibrium mixture.", marks: 3 },
+                  { code: '01.4', prompt: "Give an expression for the equilibrium constant (Kp) for this reaction.", marks: 1 },
+                  { code: '01.5', preamble: "A different mixture of CO and H2 is left to reach equilibrium at temperature T. Data from Table 1: partial pressure of CO = 125 kPa; partial pressure of CH3OH = 5.45 kPa; Kp = 1.15 × 10⁻⁶ kPa⁻².", prompt: "Calculate the partial pressure, in kPa, of hydrogen in this equilibrium mixture.", marks: 3 },
+                  { code: '01.6', preamble: "Use the Kp value from Table 1 for: CO(g) + 2H2(g) ⇌ CH3OH(g)", prompt: "Calculate a value for Kp for the following reaction at temperature T: CH3OH(g) ⇌ CO(g) + 2H2(g). Give the units for Kp.", marks: 2 }
+                ] },
+              { number: 2, scenario: "Rhenium has an atomic number of 75.",
+                parts: [
+                  { code: '02.1', prompt: "Define the term relative atomic mass.", marks: 2 },
+                  { code: '02.2', preamble: "The relative atomic mass of a sample of rhenium is 186.3. Table 2 shows two isotopes: ¹⁸⁵Re with relative abundance 10, and a second isotope with relative abundance 17.", prompt: "Calculate the relative isotopic mass of the other rhenium isotope. Show your working.", marks: 2 },
+                  { code: '02.3', prompt: "State why the isotopes of rhenium have the same chemical properties.", marks: 1 },
+                  { code: '02.4', preamble: "A ¹⁸⁵Re⁺ ion with a kinetic energy of 1.153 × 10⁻¹³ J travels through a 1.450 m flight tube. KE = ½mv² (m = mass in kg, v = speed in m s⁻¹). Avogadro constant L = 6.022 × 10²³ mol⁻¹.", prompt: "Calculate the time, in seconds, for the ion to reach the detector.", marks: 5 },
+                  { code: '02.5', prompt: "State how the relative abundance of ¹⁸⁵Re⁺ is determined in a TOF mass spectrometer.", marks: 2 }
+                ] },
+              { number: 3, scenario: "Hair bleach solution contains hydrogen peroxide. A 25.0 cm³ sample of diluted hair bleach solution (concentration = 5.00% of original) is acidified and titrated with 0.0200 mol dm⁻³ potassium manganate(VII). The reaction is complete when 35.85 cm³ of KMnO4 are added.\n\nHalf-equation for oxidation of H2O2: H2O2 → O2 + 2H⁺ + 2e⁻",
+                parts: [
+                  { code: '03.1', prompt: "Give an ionic equation for the reaction between potassium manganate(VII) and acidified hydrogen peroxide. Calculate the concentration, in mol dm⁻³, of hydrogen peroxide in the original hair bleach solution. (If you were unable to write an equation, assume mole ratio KMnO4 : H2O2 = 3:4 — this is not the correct ratio.)", marks: 5 },
+                  { code: '03.2', prompt: "State why an indicator is not added in this titration.", marks: 1 },
+                  { code: '03.3', prompt: "Give the oxidation state of oxygen in hydrogen peroxide.", marks: 1 },
+                  { code: '03.4', preamble: "Hydrogen peroxide decomposes to form water and oxygen. The gas constant R = 8.31 J K⁻¹ mol⁻¹.", prompt: "Give an equation for this reaction. Calculate the amount, in moles, of hydrogen peroxide that would be needed to produce 185 cm³ of oxygen gas at 100 kPa and 298 K.", marks: 5 },
+                  { code: '03.5', preamble: "Hydrazine (N2H4) is used as a rocket fuel oxidised by hydrogen peroxide:\nN2H4 + 2H2O2 → N2 + 4H2O   ΔH = −789 kJ mol⁻¹\nMean bond enthalpies (kJ mol⁻¹): N–H = 388; N–N = 163; N≡N = 944; O–H = 463.", prompt: "Define the term mean bond enthalpy. Use the equation and the data to calculate a value for the O–O bond enthalpy in hydrogen peroxide.", marks: 5 }
+                ] },
+              { number: 4, scenario: "This question is about acids and bases.",
+                parts: [
+                  { code: '04.1', preamble: "For ethanoic acid, Ka = 1.74 × 10⁻⁵ mol dm⁻³ at 25 °C.", prompt: "Calculate the pH of a 0.150 mol dm⁻³ solution of ethanoic acid at 25 °C. Give your answer to 2 decimal places.", marks: 3 },
+                  { code: '04.2', preamble: "Strontium is an element in Group 2. Strontium hydroxide is completely dissociated in solution. At 10 °C, Kw = 2.93 × 10⁻¹⁵ mol² dm⁻⁶.", prompt: "Calculate the pH of a 0.0100 mol dm⁻³ solution of strontium hydroxide at 10 °C.", marks: 3 },
+                  { code: '04.3', preamble: "The pH of a barium hydroxide solution is lower at 50 °C than at 10 °C. At 50 °C a 25 cm³ sample of barium hydroxide solution was neutralised by 22.45 cm³ of hydrochloric acid.", prompt: "Deduce the volume of this hydrochloric acid that should be added to neutralise another 25 cm³ sample of this barium hydroxide solution at 10 °C.\n\n> 22.45 cm³ / = 22.45 cm³ / < 22.45 cm³\n\nExplain your answer.", marks: 2 },
+                  { code: '04.4', prompt: "State how a buffer solution can be made from solutions of potassium hydroxide and ethanoic acid. Give an equation for the reaction between potassium hydroxide and ethanoic acid. State how this buffer solution resists changes in pH when a small amount of acid is added.", marks: 3 },
+                  { code: '04.5', preamble: "A buffer solution is made by adding 2.00 g of sodium hydroxide to 500 cm³ of 1.00 mol dm⁻³ ethanoic acid solution. For ethanoic acid, Ka = 1.74 × 10⁻⁵ mol dm⁻³ at 25 °C.", prompt: "Calculate the pH of this buffer solution at 25 °C. Give your answer to 2 decimal places.", marks: 5 }
+                ] },
+              { number: 5, scenario: "This question is about Period 3 elements and their compounds.",
+                parts: [
+                  { code: '05.1', prompt: "Which is not a correct statement about magnesium hydroxide? Tick one box.\n• It is used to neutralise stomach acid\n• It forms a solution with pH = 14 at 25 °C\n• It has the empirical formula H2MgO2", marks: 1 },
+                  { code: '05.2', prompt: "Give an equation for the reaction of aluminium oxide with sulfuric acid.", marks: 1 },
+                  { code: '05.3', prompt: "Identify a reagent or test that could be used to distinguish between aqueous solutions of sulfur dioxide and sulfur trioxide with the same concentrations. State the observation in each case.", marks: 3 },
+                  { code: '05.4', preamble: "The mass spectrum of the element phosphorus has a peak at m/z = 124.", prompt: "Give the formula of the species responsible for this peak.", marks: 2 },
+                  { code: '05.5', prompt: "Give an equation for the reaction of phosphorus(V) oxide with sodium hydroxide solution.", marks: 1 },
+                  { code: '05.6', prompt: "Draw the displayed formula of the molecule formed when phosphorus(V) oxide reacts with water.", marks: 1 },
+                  { code: '05.7', preamble: "Table 4 shows melting points: NaCl = 1074 K; Cl2 = 172 K; HCl = 158 K.", prompt: "Explain why the melting points of these substances are different. You should refer to the structure of and bonding in each substance.", marks: 6 }
+                ] },
+              { number: 6, scenario: "This question is about some elements in Group 7 and their compounds.",
+                parts: [
+                  { code: '06.1', preamble: "Chlorine is added to some drinking water supplies to decrease the risk of diseases such as cholera.", prompt: "State why the amount of chlorine added must be controlled.", marks: 1 },
+                  { code: '06.2', prompt: "Give an equation for the reaction of chlorine with water to form a solution containing two acids. Explain, with reference to electrons, why this is a redox reaction.", marks: 2 },
+                  { code: '06.3', preamble: "A student bubbles chlorine gas through a solution of sodium iodide.", prompt: "State the observation the student would make. Give an ionic equation for the reaction.", marks: 2 },
+                  { code: '06.4', preamble: "The student adds a few drops of concentrated sulfuric acid to solid sodium iodide. Two gaseous sulfur-containing products are formed.", prompt: "Give an equation for the formation of each of these sulfur-containing products. State the role of sulfuric acid in the formation of these products.", marks: 3 },
+                  { code: '06.5', preamble: "The student adds acidified silver nitrate solution to a solution of an unknown impure sodium halide. Bubbles of gas are observed and a colourless solution forms. The gas is bubbled through calcium hydroxide solution and a white precipitate forms.", prompt: "Deduce the identity of the sodium halide. Suggest the identity of the gas. Give an ionic equation for the formation of this gas from the impurity.", marks: 3 },
+                  { code: '06.6', preamble: "The ClF2⁺ ion contains two different Group 7 elements.", prompt: "Use electron pair repulsion theory to draw the shape of this ion. Include any lone pairs of electrons that influence the shape. Explain why the ion has the shape you have drawn. Suggest a value for the bond angle in the ion.", marks: 3 },
+                  { code: '06.7', preamble: "Magnesium is used in the extraction of titanium from titanium(IV) chloride.", prompt: "Give an equation for this reaction.", marks: 1 }
+                ] },
+              { number: 7, scenario: "Copper(II) complexes are coloured. The colour is caused by d electrons of copper moving from their ground state to an excited state.",
+                parts: [
+                  { code: '07.1', prompt: "Explain why aqueous solutions containing [CuCl4]²⁻ ions are yellow.", marks: 2 },
+                  { code: '07.2', preamble: "When a d electron moves from the ground state to the excited state in a copper complex, the energy change is 3.98 × 10⁻¹⁹ J. Planck constant h = 6.63 × 10⁻³⁴ J s.", prompt: "Calculate the frequency, in s⁻¹, of the light absorbed.", marks: 2 },
+                  { code: '07.3', prompt: "State three ways in which a transition metal complex can be changed to alter its colour.", marks: 3 },
+                  { code: '07.4', preamble: "Reaction scheme: [CuCl4]²⁻(aq) + excess water → P(aq); [CuCl4]²⁻(aq) + excess aqueous ammonia → Q(aq); P(aq) + Na4EDTA(aq) → R(aq).", prompt: "Name the shape of the [CuCl4]²⁻ ion.", marks: 1 },
+                  { code: '07.5', prompt: "Give an ionic equation for the conversion of [CuCl4]²⁻ to complex ion P.", marks: 1 },
+                  { code: '07.6', prompt: "State the colour of the solution containing the complex ion Q. Give an ionic equation for the conversion of [CuCl4]²⁻ to Q.", marks: 2 },
+                  { code: '07.7', prompt: "Identify complex ion R.", marks: 1 }
+                ] },
+              { number: 8, scenario: "This question is about cells.",
+                parts: [
+                  { code: '08.1', preamble: "Half-equations for a non-rechargeable cell: Zn²⁺(aq) + 2e⁻ → Zn(s)  E° = −0.76 V; 2MnO2(s) + 2NH4⁺(aq) + 2e⁻ → Mn2O3(s) + 2NH3(aq) + H2O(l)  E° = +0.52 V.", prompt: "Identify the oxidising agent in this cell.", marks: 1 },
+                  { code: '08.2', preamble: "Figure 1 shows a cross-section through a rechargeable silver–zinc cell. (See Figure 1 in question paper PDF.)", prompt: "Suggest the function of the porous separator in Figure 1.", marks: 1 },
+                  { code: '08.3', preamble: "Standard electrode potentials for the silver–zinc cell: Ag2O(s) + H2O(l) + 2e⁻ → 2Ag(s) + 2OH⁻(aq)  E° = +0.34 V; ZnO(s) + H2O(l) + 2e⁻ → Zn(s) + 2OH⁻(aq)  E° = −1.26 V.", prompt: "Give an equation for the overall reaction that occurs when the cell is recharging.", marks: 1 },
+                  { code: '08.4', preamble: "The EMF of an alkaline hydrogen–oxygen fuel cell is +1.23 V. One half-equation: 2H2O(l) + 2e⁻ → 2OH⁻(aq) + H2(g)  E° = −0.83 V.", prompt: "Give the half-equation for the other electrode and calculate its standard electrode potential.", marks: 2 },
+                  { code: '08.5', prompt: "Suggest why the EMF values of the acidic and alkaline hydrogen–oxygen fuel cells are the same.", marks: 1 }
+                ] }
+            ]
+          },
+          { id: 'chem-aqa-7405-2022-p2', year: 'June 2022', paperName: 'Paper 2 — Organic and Physical Chemistry', paperCode: '7405/2', totalMarks: 105, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74052-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74052-MS-JUN22.PDF',
+            qbqNote: 'Figures (kinetics graph, NMR/IR spectra, mechanism diagrams, reaction scheme) are in the question paper PDF — open it alongside for any question that references a Figure.',
+            questions: [
+              { number: 1, scenario: "An acidified solution of butanone reacts with iodine:\nCH3CH2COCH3 + I2 → CH3CH2COCH2I + HI",
+                parts: [
+                  { code: '01.1', prompt: "Draw the displayed formula for CH3CH2COCH2I. Give the name of CH3CH2COCH2I.", marks: 2 },
+                  { code: '01.2', preamble: "The rate equation for the reaction is: rate = k[CH3CH2COCH3][H⁺]. Initial concentrations: [CH3CH2COCH3] = 4.35 mol dm⁻³; [I2] = 0.00500 mol dm⁻³; [H⁺] = 0.825 mol dm⁻³. Initial rate = 1.45 × 10⁻⁴ mol dm⁻³ s⁻¹.", prompt: "Calculate the value of the rate constant, k, for the reaction and give its units.", marks: 3 },
+                  { code: '01.3', prompt: "Calculate the initial rate of reaction when all of the initial concentrations are halved.", marks: 1 },
+                  { code: '01.4', preamble: "An experiment measured the time t taken for a solution of iodine to react completely when added to an excess of acidified butanone at different temperatures. Figure 1 shows how 1/t varied with temperature. (See Figure 1 in question paper PDF.)", prompt: "Suggest an observation used to judge when all the iodine had reacted.", marks: 1 },
+                  { code: '01.5', prompt: "Describe and explain the shape of the graph in Figure 1.", marks: 3 },
+                  { code: '01.6', prompt: "Deduce the time taken for the reaction at 35 °C.", marks: 1 },
+                  { code: '01.7', preamble: "For a different reaction, Table 2 shows the rate constant at different temperatures: T1 = 303 K, k1 = 1.55 × 10⁻⁵ s⁻¹; T2 = 333 K, k2 = 1.70 × 10⁻⁴ s⁻¹. Equation: ln(k1/k2) = (Ea/R)(1/T2 − 1/T1). R = 8.31 J K⁻¹ mol⁻¹.", prompt: "Calculate the value, in kJ mol⁻¹, of the activation energy, Ea.", marks: 5 },
+                  { code: '01.8', prompt: "Name and outline the mechanism for the reaction of butanone with KCN followed by dilute acid.", marks: 5 }
+                ] },
+              { number: 2, scenario: "Tetrafluoroethene is made from chlorodifluoromethane in a reversible reaction:\n2CHClF2(g) ⇌ C2F4(g) + 2HCl(g)   ΔH = +128 kJ mol⁻¹\n\nA 2.00 mol sample of CHClF2 is placed in a container of volume 23.2 dm³ and heated. At equilibrium, the mixture contains 0.270 mol of CHClF2.",
+                parts: [
+                  { code: '02.1', prompt: "Calculate the amount, in moles, of C2F4 and of HCl in the equilibrium mixture.", marks: 2 },
+                  { code: '02.2', prompt: "Give an expression for Kc for this equilibrium.", marks: 1 },
+                  { code: '02.3', prompt: "Calculate a value for Kc. Give its units.", marks: 3 },
+                  { code: '02.4', prompt: "State and explain the effect of using a higher temperature on the equilibrium yield of tetrafluoroethene.", marks: 3 },
+                  { code: '02.5', preamble: "Many refrigerators now use pentane as a refrigerant instead of chlorodifluoromethane.", prompt: "State the environmental problem that chlorodifluoromethane can cause. Give one reason why pentane does not cause this problem.", marks: 2 }
+                ] },
+              { number: 3, scenario: "This question is about 2-methylbut-1-ene.",
+                parts: [
+                  { code: '03.1', prompt: "Name the mechanism for the reaction of 2-methylbut-1-ene with concentrated sulfuric acid. Outline the mechanism for this reaction to form the major product.", marks: 5 },
+                  { code: '03.2', prompt: "Draw the structure of the minor product formed in the reaction in Question 03.1. Explain why this is the minor product.", marks: 3 },
+                  { code: '03.3', prompt: "Draw the skeletal formula of a functional group isomer of 2-methylbut-1-ene.", marks: 1 },
+                  { code: '03.4', prompt: "2-methylbut-1-ene can form a polymer. State the type of polymerisation. Draw the repeating unit for the polymer formed.", marks: 2 }
+                ] },
+              { number: 4, scenario: "Proteins are polymers made from amino acids. Part of the structure of a protein is shown: –Cys–Ser–Asp–Phe–",
+                parts: [
+                  { code: '04.1', prompt: "Identify the type of protein structure shown.\n\nPrimary / Secondary / Tertiary", marks: 1 },
+                  { code: '04.2', prompt: "Draw a structure for the –Cys–Ser– section of the protein. Use the Data Booklet to help you answer this question.", marks: 2 },
+                  { code: '04.3', preamble: "The general structure of an amino acid is H2N–CH(R)–COOH. R groups can interact and contribute to protein structure.", prompt: "Name the other substance formed when two amino acids react together to form part of a protein chain.", marks: 1 },
+                  { code: '04.4', prompt: "Explain why the strength of the interaction between two cysteine R groups differs from the strength of the interaction between a serine R group and an aspartic acid R group. Use the Data Booklet to help you answer this question.", marks: 4 },
+                  { code: '04.5', prompt: "Deduce the type of interaction that occurs between a lysine R group and an aspartic acid R group.", marks: 1 }
+                ] },
+              { number: 5, scenario: "This question is about the preparation of hexan-2-ol (boiling point 140 °C, does not mix with water). Method: (a) measure 11.0 cm³ of hex-1-ene into a boiling tube in an ice bath; (b) add 5 cm³ of concentrated phosphoric acid; (c) after 5 min add 10 cm³ distilled water and transfer to separating funnel; (d) shake, allow to settle; (e) discard lower aqueous layer; (f) add fresh 10 cm³ distilled water, repeat steps d and e; (g) transfer remaining liquid to beaker; (h) add 2 g anhydrous magnesium sulfate, leave 5 min; (i) filter under reduced pressure; (j) distil filtrate, collect 130–160 °C.",
+                parts: [
+                  { code: '05.1', preamble: "It is important to wear eye protection and a lab coat.", prompt: "Suggest, with a reason, one other appropriate safety precaution for this experiment.", marks: 2 },
+                  { code: '05.2', prompt: "Give a reason for adding the distilled water in steps c and f.", marks: 1 },
+                  { code: '05.3', prompt: "Give a reason for adding anhydrous magnesium sulfate in step h.", marks: 1 },
+                  { code: '05.4', preamble: "A partial diagram of the apparatus for filtration under reduced pressure is shown. (See Figure in question paper PDF.)", prompt: "Complete and label the diagram of the apparatus used to filter the mixture under reduced pressure in step i.", marks: 2 },
+                  { code: '05.5', prompt: "Identify the most likely organic impurity, other than hex-1-ene, in the distillate collected in step j. Suggest one reason why it could be difficult to remove this impurity.", marks: 2 },
+                  { code: '05.6', preamble: "Density of hex-1-ene = 0.678 g cm⁻³.", prompt: "Calculate the mass, in g, of hexan-2-ol formed from 11.0 cm³ of hex-1-ene if the yield is 31.0%. Give your answer to 1 decimal place.", marks: 4 }
+                ] },
+              { number: 6, scenario: "This question is about compound X with the empirical formula C2H4O. Figure 2 shows the infrared spectrum of X and Figure 3 shows the ¹³C NMR spectrum of X. (See Figures 2 and 3 in question paper PDF.) Table 3 shows ¹H NMR data: δ 3.9 ppm — quartet, integration 1; δ 3.7 ppm — singlet, integration 1; δ 2.1 ppm — singlet, integration 3; δ 1.2 ppm — doublet, integration 3.",
+                parts: [
+                  { code: '06.1', prompt: "Show how information from Figure 2, Figure 3 and Table 3 can be used to deduce the structure of compound X.", marks: 6 }
+                ] },
+              { number: 7, scenario: "Figure 4 shows an incomplete mechanism for the reaction of an ester with aqueous sodium hydroxide: step 1 shows OH⁻ attacking CH3–C(=O)–O–CH3 to form a tetrahedral intermediate; step 3 gives products CH3–C(=O)–O⁻ + CH3OH. (See Figure 4 in question paper PDF.)",
+                parts: [
+                  { code: '07.1', prompt: "Add three curly arrows to complete the mechanism in Figure 4.", marks: 3 },
+                  { code: '07.2', prompt: "Name the type of reaction shown in Figure 4.", marks: 1 },
+                  { code: '07.3', prompt: "Deduce the role of the CH3O⁻ ion in step 3 shown in Figure 4.", marks: 1 },
+                  { code: '07.4', preamble: "A triester in vegetable oil reacts with sodium hydroxide in a similar way.", prompt: "Give a use for a product of this reaction.", marks: 1 }
+                ] },
+              { number: 8, scenario: "Benzene reacts with methanoyl chloride (HCOCl) in the presence of a catalyst.",
+                parts: [
+                  { code: '08.1', prompt: "Give an equation for the overall reaction when benzene reacts with methanoyl chloride. Name the organic product.", marks: 2 },
+                  { code: '08.2', prompt: "Identify the catalyst needed in this reaction. Give an equation to show how the catalyst is used to form the electrophile, [HCO]⁺.", marks: 2 },
+                  { code: '08.3', prompt: "Outline the mechanism for the reaction of benzene with the electrophile, [HCO]⁺.", marks: 3 }
+                ] },
+              { number: 9, scenario: "A sample of olive oil is mainly the unsaturated fat Y (molecular formula C57H100O6, Mr = 880) mixed with a small amount of inert impurity. The amount of Y is found by measuring how much bromine water is decolourised: transfer a weighed sample of oil to a 250 cm³ volumetric flask and make up to the mark with inert organic solvent; titrate 25.0 cm³ samples of the olive oil solution with 0.025 mol dm⁻³ Br2(aq). (See Figure in question paper PDF for structure of Y.)",
+                parts: [
+                  { code: '09.1', preamble: "A suitable target titre is 30.0 cm³ of 0.025 mol dm⁻³ Br2(aq).", prompt: "Justify why a much smaller target titre would not be appropriate. Calculate the amount, in moles, of bromine in the target titre.", marks: 2 },
+                  { code: '09.2', prompt: "Calculate a suitable mass of olive oil to transfer to the volumetric flask. Assume that the olive oil contains 85% of Y by mass. (If unable to calculate the amount of bromine in 09.1, use 6.25 × 10⁻⁴ mol — this is not the correct amount.)", marks: 5 },
+                  { code: '09.3', preamble: "The olive oil solution can be prepared by: placing a weighing bottle on a balance and recording the mass to 2 decimal places; adding olive oil until a suitable mass is added; recording the mass of the weighing bottle and olive oil; pouring the olive oil into a 250 cm³ volumetric flask; adding organic solvent to the mark; inverting the flask several times.", prompt: "Suggest an extra step to ensure that the mass of olive oil in the solution is recorded accurately. Justify your suggestion.", marks: 2 },
+                  { code: '09.4', prompt: "State the reason for inverting the flask several times.", marks: 1 },
+                  { code: '09.5', preamble: "A sample of the olive oil was dissolved in methanol and ionised by electrospray ionisation. Each molecule gained a hydrogen ion (H⁺). The spectrum showed a peak for an ion with m/z = 345 from an impurity with empirical formula C5H10O.", prompt: "Deduce the molecular formula of this compound. Show your working.", marks: 2 }
+                ] },
+              { number: 10, scenario: "Reaction scheme: methylbenzene → (step 1) → 4-nitrotoluene → (step 2) → amine A (4-methylaniline) → (step 3) → CH3C6H4NHCOCH3; methylbenzene → (step 4) → (chloromethyl)benzene → (step 5) → amine B (benzylamine). (See Figure in question paper PDF.)",
+                parts: [
+                  { code: '10.1', prompt: "State the reagents needed for step 1 and the reagents needed for step 2.", marks: 3 },
+                  { code: '10.2', prompt: "Give the name of the mechanism for the reaction in step 3.", marks: 1 },
+                  { code: '10.3', prompt: "Name the reagent for step 4. State a necessary condition for step 4.", marks: 2 },
+                  { code: '10.4', preamble: "Amine A is formed in step 2 and amine B is formed in step 5.", prompt: "Explain why the yield of B in step 5 is less than the yield of A in step 2.", marks: 2 },
+                  { code: '10.5', prompt: "Explain why amine B is a stronger base than amine A.", marks: 2 }
+                ] }
+            ]
+          },
+          { id: 'chem-aqa-7405-2022-p3', year: 'June 2022', paperName: 'Paper 3 — Practical Skills and Data Analysis', paperCode: '7405/3', totalMarks: 90, durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74053-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-74053-MS-JUN22.PDF',
+            qbqNote: 'Section A (Q1–5) are structured practical questions; Section B (Q6–35) are 1-mark multiple choice. Figures (graphs, apparatus diagrams) are in the question paper PDF.',
+            questions: [
+              { number: 1, scenario: "A student investigates the enthalpy of solution of ammonium nitrate, NH4NO3 (Mr = 80.0). Standard enthalpy of hydration values: ΔhydH°(NH4⁺) = −307 kJ mol⁻¹; ΔhydH°(NO3⁻) = −314 kJ mol⁻¹. Standard entropy values: S°(NH4NO3(s)) = 151 J K⁻¹ mol⁻¹; S°(NH4⁺(aq)) = 113 J K⁻¹ mol⁻¹; S°(NO3⁻(aq)) = 146 J K⁻¹ mol⁻¹.",
+                parts: [
+                  { code: '01.1', prompt: "Define the term enthalpy of lattice dissociation.", marks: 2 },
+                  { code: '01.2', preamble: "The enthalpy of solution of NH4NO3 is +26 kJ mol⁻¹.", prompt: "Use a Hess's law cycle and the data to calculate the standard enthalpy of lattice dissociation of NH4NO3. Show your working.", marks: 3 },
+                  { code: '01.3', preamble: "The student adds 4.00 g of NH4NO3 to 25.0 cm³ of water in a polystyrene cup. The temperature falls from 20.2 °C to 12.2 °C. Specific heat capacity of solution = 4.18 J K⁻¹ g⁻¹. Assume density = 1.00 g cm⁻³.", prompt: "Calculate the enthalpy change of solution, in kJ mol⁻¹, of NH4NO3 from this experiment. Give your answer to three significant figures.", marks: 3 },
+                  { code: '01.4', preamble: "The thermometer used has an uncertainty of ±0.1 °C in each reading.", prompt: "Calculate the percentage uncertainty in the temperature change measured in this experiment.", marks: 1 },
+                  { code: '01.5', prompt: "Suggest one change the student could make, using the same apparatus, to reduce the percentage uncertainty in the temperature change. Give a reason for your answer.", marks: 2 },
+                  { code: '01.6', preamble: "Another student obtains a value of +15 kJ mol⁻¹ for the enthalpy of solution of NH4NO3, compared to the accepted value of +26 kJ mol⁻¹.", prompt: "Suggest one reason why this student obtained a value lower than the accepted value.", marks: 1 },
+                  { code: '01.7', prompt: "Use the data and the enthalpy of solution (+26 kJ mol⁻¹) to calculate the Gibbs free energy change, ΔG, in kJ mol⁻¹, for the dissolving of NH4NO3 at 298 K. Use your value of ΔG to explain whether the dissolving of NH4NO3 is feasible at 298 K.", marks: 4 },
+                  { code: '01.8', preamble: "Ammonium nitrate can decompose: NH4NO3(s) → N2(g) + ½O2(g) + 2H2O(g). ΔH = +123 kJ mol⁻¹; ΔS = +144 J K⁻¹ mol⁻¹.", prompt: "Calculate the temperature, in K, above which this decomposition becomes feasible.", marks: 2 }
+                ] },
+              { number: 2, scenario: "Tschermigite is a naturally occurring mineral with composition by mass: N = 3.09%, H = 6.18%, Al = 5.96%, S = 14.16%, O = 70.61%. Mr = 453.2. It has the formula M·xH2O where M contains NH4⁺, Al³⁺ and SO4²⁻ ions.",
+                parts: [
+                  { code: '02.1', prompt: "Use the percentage composition by mass to calculate the empirical formula of tschermigite and determine the value of x in the formula M·xH2O.", marks: 3 },
+                  { code: '02.2', prompt: "Describe how you would confirm the presence of the NH4⁺, Al³⁺ and SO4²⁻ ions in a solution of tschermigite. Include any observations and ionic equations for any reactions that occur.", marks: 3 }
+                ] },
+              { number: 3, scenario: "2-Bromobutane reacts with a hot ethanolic solution of potassium hydroxide to form five products: A, B and C are alkenes; D and E are alcohols. A is a structural isomer of B and C. A does not show stereoisomerism. B and C are stereoisomers of each other. D and E are enantiomers of each other.",
+                parts: [
+                  { code: '03.1', prompt: "Name the two mechanisms that occur concurrently in this reaction to produce the alkenes A, B and C and the alcohols D and E.", marks: 2 },
+                  { code: '03.2', prompt: "Define the term stereoisomers.", marks: 2 },
+                  { code: '03.3', prompt: "Deduce the name of alkene A. Explain why A does not show stereoisomerism.", marks: 2 },
+                  { code: '03.4', preamble: "Alkene A is formed by an elimination reaction.", prompt: "Outline the mechanism for the formation of alkene A from 2-bromobutane. Use curly arrows and relevant dipoles in your answer.", marks: 3 },
+                  { code: '03.5', prompt: "Name alkenes B and C. Explain the origin of the stereoisomerism in B and C.", marks: 2 },
+                  { code: '03.6', preamble: "D and E are enantiomers of butan-2-ol.", prompt: "Draw three-dimensional representations of D and E, showing clearly the arrangement of groups around the chiral centre.", marks: 2 },
+                  { code: '03.7', preamble: "A student adds separate samples of 1-chlorobutane, 1-bromobutane and 1-iodobutane to aqueous silver nitrate solution.", prompt: "State the order in which the silver halide precipitates form, starting with the first to precipitate. Explain why the precipitates form in this order.", marks: 2 }
+                ] },
+              { number: 4, scenario: "A student investigates the decomposition of H2O2 catalysed by MnO2, monitoring the volume of oxygen produced using a gas syringe. The maximum volume of O2 = 100 cm³. (See Figures 1 and 2 in question paper PDF for graphs of [H2O2] vs time and rate vs [H2O2].)",
+                parts: [
+                  { code: '04.1', prompt: "Explain why the rate of decomposition of H2O2 is fastest at the start of the reaction.", marks: 2 },
+                  { code: '04.2', preamble: "Figure 1 shows [H2O2] plotted against time. (See Figure 1 in question paper PDF.)", prompt: "Draw a tangent to the curve on Figure 1 at the point where [H2O2] = 0.05 mol dm⁻³. Use your tangent to calculate the rate of reaction at this concentration. Give the units of rate.", marks: 2 },
+                  { code: '04.3', preamble: "The concentration of H2O2 at time t can be calculated using: [H2O2]t = [H2O2]initial × (Vmax − Vt) / Vmax, where Vmax = 100 cm³. Initial concentration of H2O2 = 0.083 mol dm⁻³.", prompt: "Calculate the concentration of H2O2 when 20 cm³ of O2 has been collected.", marks: 2 },
+                  { code: '04.4', preamble: "Table 5 gives values of rate and [H2O2] at different times. (See Figure 2 axes in question paper PDF.)", prompt: "Plot the data from Table 5 on Figure 2 and draw a line of best fit.", marks: 2 },
+                  { code: '04.5', prompt: "Determine the order of reaction with respect to H2O2. State how Figure 2 shows this order.", marks: 2 }
+                ] },
+              { number: 5, scenario: "This question is about catalysis in different types of chemical reactions.",
+                parts: [
+                  { code: '05.1', preamble: "Tetradecane, C14H30, can be cracked using a zeolite catalyst to form octane and a cycloalkane.", prompt: "Write an equation for this cracking reaction. State the meaning of the term heterogeneous in the context of this catalytic cracking.", marks: 2 },
+                  { code: '05.2', preamble: "The reaction between MnO4⁻ and C2O4²⁻ in acidic solution is an example of autocatalysis:\n2MnO4⁻(aq) + 5C2O4²⁻(aq) + 16H⁺(aq) → 2Mn²⁺(aq) + 10CO2(g) + 8H2O(l)", prompt: "Explain what is meant by autocatalysis. Explain why the reaction is initially slow and then speeds up, including equations for the two steps in the catalytic cycle.", marks: 6 },
+                  { code: '05.3', preamble: "Co²⁺ ions catalyse the reaction between S2O8²⁻ and I⁻: S2O8²⁻(aq) + 2I⁻(aq) → 2SO4²⁻(aq) + I2(aq). Standard electrode potentials: E°(S2O8²⁻/SO4²⁻) = +2.01 V; E°(Co³⁺/Co²⁺) = +1.82 V; E°(I2/I⁻) = +0.54 V.", prompt: "Explain how Co²⁺ ions act as a catalyst for this reaction. Use the standard electrode potential data to support your answer, including the two equations for the steps in the catalytic cycle.", marks: 3 }
+                ] },
+              { number: 6, parts: [{ code: '06', prompt: "Which species has an unpaired electron in a p orbital?\n\nA Na⁺   B Mg²⁺   C O   D F⁻", marks: 1 }] },
+              { number: 7, parts: [{ code: '07', prompt: "Which molecule is the simplest dicarboxylic acid?\n\nA HCOOH   B CH3COOH   C HOOCCOOH   D CH2(COOH)2", marks: 1 }] },
+              { number: 8, parts: [{ code: '08', prompt: "Which polymer is formed by addition polymerisation of propene?\n\nA poly(ethene)   B nylon   C poly(propene)   D poly(chloroethene)", marks: 1 }] },
+              { number: 9, parts: [{ code: '09', prompt: "A sample of gas is heated. Which statement about the Maxwell–Boltzmann distribution is correct?\n\nA The area under the curve decreases.\nB The most probable energy decreases.\nC The peak of the curve moves to a higher energy.\nD The number of molecules with energy greater than Ea decreases.", marks: 1 }] },
+              { number: 10, parts: [{ code: '10', prompt: "What is the oxidation state of fluorine in F2O?\n\nA −2   B 0   C −1   D +1", marks: 1 }] },
+              { number: 11, parts: [{ code: '11', prompt: "A platinum catalyst is used in the Contact process. Which factor most increases the rate of this heterogeneous catalysis?\n\nA Increasing the mass of platinum\nB Increasing the pressure\nC Increasing the surface area of platinum\nD Increasing the temperature", marks: 1 }] },
+              { number: 12, parts: [{ code: '12', prompt: "A cell is made from zinc and lead electrodes in solutions of their sulfate salts. Which statement about this cell is correct?\n\nA Electrons flow from zinc to lead in the external circuit.\nB Electrons flow from lead to zinc in the external circuit.\nC The zinc electrode is the positive electrode.\nD The lead electrode is the negative electrode.", marks: 1 }] },
+              { number: 13, parts: [{ code: '13', prompt: "Which ion is the conjugate base of ethanoic acid, CH3COOH?\n\nA CH3COO⁻   B CH3COOH2⁺   C H3O⁺   D OH⁻", marks: 1 }] },
+              { number: 14, parts: [{ code: '14', prompt: "A solution is made by dissolving 0.10 mol of HCl in water to make 250 cm³ of solution. What is the pH of this solution?\n\nA 1.00   B 1.40   C 0.70   D 2.40", marks: 1 }] },
+              { number: 15, parts: [{ code: '15', prompt: "Which combination of reagents would produce a buffer solution?\n\nA Excess NaOH + CH3COOH\nB Excess KOH + CH3COOH\nC Equal volumes of equal concentration HCl + CH3COONa\nD Excess HCl + CH3COONa", marks: 1 }] },
+              { number: 16, parts: [{ code: '16', prompt: "Which statement explains why the first ionisation energy of aluminium is lower than that of magnesium?\n\nA The outer electron in aluminium is in a higher energy sub-level (3p) compared with magnesium (3s).\nB Aluminium has more protons than magnesium.\nC Aluminium has more electrons than magnesium.\nD The 3p sub-level in aluminium is fully occupied.", marks: 1 }] },
+              { number: 17, parts: [{ code: '17', prompt: "Which statement about the second ionisation energies of lithium and rubidium is correct?\n\nA The second IE of Rb is greater than the second IE of Li.\nB The second IE of Li is greater than the second IE of Rb.\nC Both have similar second ionisation energies.\nD The second IE of Rb is less than the second IE of Li.", marks: 1 }] },
+              { number: 18, parts: [{ code: '18', prompt: "In the test for halide ions using silver nitrate solution, dilute nitric acid is added before the silver nitrate. Why is dilute nitric acid added first?\n\nA To dissolve the silver nitrate\nB To speed up the reaction\nC To acidify the solution\nD To prevent precipitation of other insoluble silver salts", marks: 1 }] },
+              { number: 19, parts: [{ code: '19', prompt: "Iron(III) chloride, FeCl3, is dissolved in concentrated hydrochloric acid. Which statement describes the complex ion formed?\n\nA Octahedral with 6 Cl⁻ ligands\nB Tetrahedral with 4 Cl⁻ ligands and Fe³⁺\nC Tetrahedral with 4 Cl⁻ ligands\nD Tetrahedral with 4 Cl⁻ ligands giving [FeCl4]⁻", marks: 1 }] },
+              { number: 20, parts: [{ code: '20', prompt: "Which statement describes the reaction when excess ammonia is added to a solution of copper(II) sulfate?\n\nA Precipitation only\nB Ligand substitution only\nC Precipitation followed by dissolving\nD No reaction", marks: 1 }] },
+              { number: 21, parts: [{ code: '21', prompt: "An unknown gas has a volume of 2.0 dm³ at 300 K and 200 kPa. What volume does it occupy at 600 K and 400 kPa?\n\nA 0.50 dm³   B 2.0 dm³   C 1.0 dm³   D 4.0 dm³", marks: 1 }] },
+              { number: 22, parts: [{ code: '22', prompt: "Methane reacts with chlorine in ultraviolet light. Which type of mechanism is this?\n\nA Electrophilic substitution\nB Nucleophilic substitution\nC Free-radical substitution\nD Electrophilic addition", marks: 1 }] },
+              { number: 23, parts: [{ code: '23', prompt: "Which amine is a primary amine with the molecular formula C2H7N?\n\nA (CH3)2NH   B CH3CH2NH2   C CH3NHCH3   D N(CH3)3", marks: 1 }] },
+              { number: 24, parts: [{ code: '24', prompt: "Which statement about the oxidation of alcohols is correct?\n\nA Primary alcohols cannot be easily oxidised directly to carboxylic acids in the laboratory.\nB Secondary alcohols are oxidised to carboxylic acids.\nC Tertiary alcohols are readily oxidised.\nD Primary alcohols are oxidised to ketones.", marks: 1 }] },
+              { number: 25, parts: [{ code: '25', prompt: "Which ester is formed when propanoic acid reacts with methanol in the presence of an acid catalyst?\n\nA Methyl ethanoate   B Methyl propanoate   C Propyl methanoate   D Ethyl methanoate", marks: 1 }] },
+              { number: 26, parts: [{ code: '26', prompt: "Which amide is formed when ethanoic acid reacts with ethylamine (CH3CH2NH2)?\n\nA CH3NHCOCH3   B CH3CONHCH2CH3   C CH3CH2CONHCH3   D CH3CH2NHCOCH2CH3", marks: 1 }] },
+              { number: 27, parts: [{ code: '27', prompt: "Which compound is a diamine that could be used to make a polyamide?\n\nA H2NCH2CH2NH2   B HOOCCH2NH2   C CH3CH2NH2   D H2NCH2COOH", marks: 1 }] },
+              { number: 28, parts: [{ code: '28', prompt: "Which polymer contains only C–C bonds in its backbone chain?\n\nA Nylon-6,6   B Poly(lactic acid)   C Poly(propene)   D Terylene", marks: 1 }] },
+              { number: 29, parts: [{ code: '29', preamble: "A compound has the molecular formula C4H8O2 and reacts with sodium carbonate solution to produce a gas. (See Figure in question paper PDF for structural options.)", prompt: "Which structure is consistent with these observations?\n\n(See answer options A–D in question paper PDF.)", marks: 1 }] },
+              { number: 30, parts: [{ code: '30', prompt: "Which type of reaction occurs when a polyester is treated with aqueous sodium hydroxide?\n\nA Esterification   B Hydrolysis   C Condensation   D Addition", marks: 1 }] },
+              { number: 31, parts: [{ code: '31', prompt: "Which equation represents the alkaline hydrolysis of methyl ethanoate?\n\nA CH3COOCH3 + H2O → CH3COOH + CH3OH\nB CH3COOCH3 + NaOH → CH3COONa + CH3OH\nC CH3COOCH3 + NaOH → CH3COOH + CH3ONa\nD CH3COOCH3 + H2O → CH3COONa + CH3OH", marks: 1 }] },
+              { number: 32, parts: [{ code: '32', prompt: "Which type of intermolecular force exists between molecules of propan-1-ol?\n\nA Instantaneous dipole–induced dipole forces only\nB Hydrogen bonds, permanent dipole–dipole forces, and instantaneous dipole–induced dipole forces\nC Hydrogen bonds only\nD Permanent dipole–dipole forces only", marks: 1 }] },
+              { number: 33, parts: [{ code: '33', prompt: "Which compound reacts with hydrochloric acid to form a salt?\n\nA Ethanamide   B Ethanoic acid   C Ethanol   D Phenylamine", marks: 1 }] },
+              { number: 34, parts: [{ code: '34', prompt: "Which compound undergoes oxidation with acidified potassium dichromate(VI) to form an aldehyde?\n\nA Propan-2-ol   B Propanone   C Ethanol   D 2-Methylpropan-2-ol", marks: 1 }] },
+              { number: 35, parts: [{ code: '35', prompt: "Which amino acid has the molecular formula C4H9NO2 and is optically active?\n\nA Glycine (H2NCH2COOH)\nB Alanine (CH3CH(NH2)COOH)\nC 2-Aminobutanoic acid (CH3CH2CH(NH2)COOH)\nD β-Alanine (H2NCH2CH2COOH)", marks: 1 }] }
+            ]
+          }
+        ]
+      },
       { board: 'Edexcel (Pearson)', specCode: '9CH0',
         officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/chemistry-2015.html' },
       { board: 'OCR A', specCode: 'H432',
