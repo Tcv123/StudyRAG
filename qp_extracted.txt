@@ -1,0 +1,1140 @@
+--- Page 1 ---
+*9900704893*   Oxford Cambridge and RSA
+
+              Monday 12 June 2023 ­ Morning
+
+              A Level Chemistry B (Salters)
+
+              H433/01 Fundamentals of Chemistry
+
+              Time allowed: 2 hours 15 minutes
+
+                You must have:
+                · the Data Sheet for Chemistry B
+                You can use:
+                · a scientific or graphical calculator
+                · an HB pencil
+
+                                                                 *  H           4  3  3  0  1  *
+
+              Please write clearly in black ink. Do not write in the barcodes.
+
+              Centre number            Candidate number
+
+                First name(s)
+
+                Last name
+
+              INSTRUCTIONS
+              · Use black ink. You can use an HB pencil, but only for graphs and diagrams.
+              · Write your answer to each question in the space provided. If you need extra space use
+
+                 the lined pages at the end of this booklet. The question numbers must be clearly shown.
+              · Answer all the questions.
+              · Where appropriate, your answer should be supported with working. Marks might be
+
+                 given for using a correct method, even if your answer is wrong.
+
+              INFORMATION
+              · The total mark for this paper is 110.
+              · The marks for each question are shown in brackets [ ].
+              · Quality of extended response will be assessed in questions marked with an asterisk (*).
+              · This document has 36 pages.
+
+              ADVICE
+              · Read each question carefully before you start your answer.
+
+              © OCR 2023 [601/5371/4]  OCR is an exempt Charity
+              DC (ST/SG) 317976/4
+                                                                                            Turn over
+
+--- Page 2 ---
+                                               Section A
+             You should spend a maximum of 40 minutes on this section.
+                Write your answer to each question in the box provided.
+
+1 Which row is correct for the properties of substances with the bonding types shown?
+
+            Bonding type  Melting  Electrical conductivity
+                           point
+                                                    Solid  Molten
+                             low
+A covalent network          high                    poor   poor
+                            high
+B            ionic           low                    good   good
+
+C            metallic                               poor   good
+
+D simple molecular                                  poor   poor
+
+Your answer                                                                            [1]
+
+2 Helium-4 is formed by a nuclear fusion reaction.
+      232He 24He + ....................
+      What is needed to complete the equation?
+      A 1 electron
+      B 1 neutron
+      C 1 proton
+      D 2 protons
+
+Your answer                                                                            [1]
+
+© OCR 2023
+
+--- Page 3 ---
+3 Which molecule is the most polar?
+
+      A CCl 4
+      B CF4
+      C CHF3
+      D CHCl 2F
+
+Your answer                                                                                         [1]
+
+4 One of the principles of green chemistry in industrial processes involves the use of a selective
+      catalyst.
+      Which of the following makes a selective catalyst `green'?
+      A It speeds up the process.
+      B It improves the atom economy.
+      C It minimises the use of organic solvents.
+      D It reduces energy usage and minimises waste product.
+
+Your answer                                                                                         [1]
+
+5 Sodium phosphate(V) has the formula Na3PO4.
+      What is the formula of calcium phosphate(V)?
+      A CaPO4
+      B Ca2(PO4)3
+      C Ca3PO4
+      D Ca3(PO4)2
+
+Your answer                                                                                         [1]
+
+© OCR 2023                                                            Turn over
+
+--- Page 4 ---
+6 A colorimeter is used to measure the concentration of a blue solution of copper(II) sulfate(VI).
+
+      Which of the following is correct?
+      A A blue filter is used.
+      B A calibration curve is plotted with known concentrations of Cu2+.
+      C The amount of light transmitted is proportional to the Cu2+ concentration.
+      D The measured absorbance decreases with increasing Cu2+ concentration.
+
+Your answer                                                                                         [1]
+
+7 A student studies a reaction that `goes to completion'.
+      The student estimates the numerical value of Kc for the reaction.
+      What is a valid estimate for Kc for this reaction?
+      A0
+      B 1 × 10­10
+      C1
+      D 1 × 1010
+
+Your answer                                                                                         [1]
+
+8 Which of the following is correct for gas-liquid chromatography?
+      A A reactive carrier gas is used.
+      B The column consists of a volatile liquid on a porous support.
+      C The emerging compounds can be detected by mass spectrometry.
+      D The largest molecules usually have the shortest retention times.
+
+Your answer                                                                                         [1]
+
+© OCR 2023
+
+--- Page 5 ---
+9 Which of the following molecules is linear?
+
+      A HCN
+      B H2S
+      C NO2
+      D SO2
+
+Your answer                                                                                   [1]
+
+10 Sodium nitrate(V) is warmed with Devarda's alloy and NaOH(aq).
+      Which gas is released?
+      A ammonia
+      B nitrogen
+      C nitrogen dioxide
+      D nitrogen monoxide
+
+Your answer                                                                                   [1]
+
+11 Which row shows the number of sigma () and pi () bonds in one molecule of buta-1,3-diene,
+      CH2=CHCH=CH2?
+
+            Sigma () bonds  Pi () bonds
+                                   2
+A            7                     4
+                                   2
+B            7                     4
+
+C            9
+
+D            9
+
+Your answer                                                                                   [1]
+
+© OCR 2023                                                            Turn over
+
+--- Page 6 ---
+12 Which combination of organic molecules can be formed during the cracking of octane?
+
+      A propane + pentane
+      B propene + pentane
+      C propene + pent-1-ene
+      D 2 molecules of butane
+
+Your answer                                                                             [1]
+
+13 Which of the following compounds can display E/Z isomerism?
+      A CH2BrCH=CHCH2Br
+      B (CH3CH2)2C=CBr2
+      C (CH2Br)2C=CH2
+      D CH2BrCH2BrCH=CH2
+
+Your answer                                                                             [1]
+
+14 Which row is possible for a transition metal complex?
+
+            Shape        Bond angle  Co-ordination
+                                         number
+A           octahedral        90°             8
+                              120°
+B           octahedral        90°             6
+                              120°
+C square planar                               4
+
+D           tetrahedral                       4
+
+Your answer                                                                             [1]
+
+© OCR 2023
+
+--- Page 7 ---
+15 What is the correct order of boiling points for CH3CH2OH, CH3CHO and CH3COOH?
+
+      A CH3CHO > CH3CH2OH > CH3COOH
+      B CH3COOH > CH3CH2OH > CH3CHO
+      C CH3CH2OH > CH3COOH > CH3CHO
+      D CH3CH2OH > CH3CHO > CH3COOH
+
+Your answer                                                                                      [1]
+
+16 Which compound can undergo an elimination reaction to produce an alkene?
+      A (CH3)3CH
+      B C6H5OH
+      C C6H5CH2OH
+      D CH3CH(CH3)CH2OH
+
+Your answer                                                                                      [1]
+
+17 An organic liquid is being purified. The liquid does not mix with water and contains a small
+      aqueous acidic impurity.
+
+      What is the correct order for the following stages in the purification?
+
+            shake with Na2CO3(aq)  dry with Na2SO4(s)  distil
+                                             2nd        3rd
+A            1st                              3rd       1st
+                                              1st       2nd
+B            2nd                             2nd        1st
+
+C            3rd
+
+D            3rd
+
+Your answer                                                                                      [1]
+
+© OCR 2023                                                                        Turn over
+
+--- Page 8 ---
+18 10 cm3 of pentane gas is burned in 100 cm3 of oxygen at constant pressure and 390 K.
+
+      C5H12 + 8O2 5CO2 + 6H2O
+      What volume of gas is present when all the pentane has burned under these conditions?
+      A 50 cm3
+      B 110 cm3
+      C 130 cm3
+      D 138 cm3
+
+Your answer                                                                                    [1]
+
+19 Which statement is correct for the Group 1 chlorides, going down the group?
+      A The charge density of the anion becomes smaller.
+      B The charge density of the cation becomes greater.
+      C The hydration energy of the cation becomes less exothermic.
+      D The lattice enthalpy becomes more exothermic.
+
+Your answer                                                                                    [1]
+
+20 10 cm3 of 0.30 mol dm­3 AgNO3 is mixed with 20 cm3 of 0.10 mol dm­3 NaCl .
+      What is the maximum mass (in grams) of silver chloride (Mr = 143) that could be formed?
+      A 0.13
+      B 0.29
+      C 0.43
+      D 0.71
+
+Your answer                                                                                    [1]
+
+© OCR 2023
+
+--- Page 9 ---
+21 The following equations represent reactions for making hydrogen from water.
+
+      Which reaction produces hydrogen with the greatest atom economy?
+      A C + H2O H2 + CO
+      B CO + H2O H2 + CO2
+      C CH4 + H2O 3H2 + CO
+      D CH4 + 2H2O 4H2 + CO2
+
+Your answer                                                                                   [1]
+
+22 A student plots a graph of ln k (y-axis) against 1/T for a reaction. The student draws the straight
+      line of best fit.
+
+      The Arrhenius equation is ln k = ­Ea/RT + ln A
+      Which statement is correct?
+
+      A The graph shows that ln k is proportional to T.
+      B The intercept of the line on the y-axis is ln A.
+      C The slope of the line is Ea/RT.
+      D When T = 0, ln k = ln A.
+
+Your answer                                                                                   [1]
+
+23 What is correct about the structure of DNA?
+      A Guanine is paired with Adenine.
+      B The repeating units in the backbone are deoxyribose-phosphate-deoxyribose-phosphate.
+      C The bases are joined by condensation to phosphate groups.
+      D The bases involved are represented as A C G and U.
+
+Your answer                                                                                   [1]
+
+© OCR 2023                                                                      Turn over
+
+--- Page 10 ---
+
+24 The data below is for the dissolving of MgCl 2 in water.
+
+                                         kJ mol­1
+
+Lattice enthalpy of MgCl 2(s)            ­2526
+Enthalpy change of hydration of Mg2+(g)  ­1926
+
+Enthalpy change of hydration of Cl ­(g)      ­378
+
+What is the enthalpy change of solution of MgCl 2 in kJ mol­1?
+A ­222
+B ­156
+C +156
+D +222
+
+Your answer                                                                 [1]
+
+25 A student records the following readings for a titration:
+
+2nd burette reading / cm3  Trial           1                    2      3
+1st burette reading / cm3  20.45         40.80                40.45  20.50
+                                         20.50                20.40
+        Volume / cm3        0.20         20.30                20.05   0.35
+                           20.25                                     20.15
+
+What should the student record as the result of the titration?
+A 20.10 cm3
+B 20.17 cm3
+C 20.19 cm3
+D 20.28 cm3
+
+Your answer                                                                 [1]
+
+© OCR 2023
+
+--- Page 11 ---
+26 What is the amount (in moles) of a gas that occupies 23 dm3 at 1.0 × 105 Pa and 293 K?
+
+      A 0.94 mol
+      B 1.4 mol
+      C 14 mol
+      D 94 mol
+
+Your answer                                                                                 [1]
+
+27 The solubility product of silver carbonate, Ag2CO3, is p mol3 dm­9 at 298 K.
+      The solubility of silver carbonate is s mol dm­3 at 298 K.
+      Which equation is correct?
+      A p = 3s
+      B p = 2s2
+      C p = 2s3
+      D p = 4s3
+
+Your answer                                                                                 [1]
+
+28 Which of these would cause an increased greenhouse effect?
+      1 an increased concentration of CO2 in the troposphere
+      2 less UV from the Sun reaching the Earth
+      3 the Earth radiating less IR
+      A 1, 2 and 3
+      B Only 1 and 2
+      C Only 2 and 3
+      D Only 1
+
+Your answer                                                                                 [1]
+
+© OCR 2023                                                                       Turn over
+
+--- Page 12 ---
+29 Which statement(s) is/are correct for a Friedel-Crafts alkylation reaction?
+
+      1 An alkyl group bonds with a benzene ring by an addition reaction.
+      2 Al Cl 3 is used as a catalyst.
+      3 A chloroalkane forms a carbocation during the reaction.
+      A 1, 2 and 3
+      B Only 1 and 2
+      C Only 2 and 3
+      D Only 1
+
+Your answer                                                                                   [1]
+
+30 Iodine is soluble in hexane.
+      Which of the following is/are reason(s) that it dissolves?
+      1 Instantaneous dipole ­ induced dipole bonds of similar strength are broken and made.
+      2 The I ­ I covalent bond is weak.
+      3 Iodine and hexane both have permanent dipole ­ permanent dipole bonds.
+      A 1, 2 and 3
+      B Only 1 and 2
+      C Only 2 and 3
+      D Only 1
+
+Your answer                                                                                   [1]
+
+© OCR 2023
+
+--- Page 13 ---
+                        BLANK PAGE
+
+            DO NOT WRITE ON THIS PAGE
+                  Turn over for Section B
+
+© OCR 2023                                 Turn over
+
+--- Page 14 ---
+                                    Section B
+
+31 This question is about Group 2 elements and their compounds.
+
+(a) Strontium is one of the elements in Group 2. Compounds of strontium are used in fireworks
+      to give a crimson colour.
+
+Analysis of the mass spectrum of a sample of strontium gives the data shown below.
+
+            Relative isotopic mass  Relative abundance / %
+                          84                      0.56
+                          86                      9.86
+                          87                      7.00
+                          88
+                                                82.58
+
+Use this data to calculate the relative atomic mass, Ar, of this sample of strontium.
+Give your answer to 2 decimal places.
+
+                                    Ar of strontium = ......................................................... [2]
+
+© OCR 2023
+
+--- Page 15 ---
+(b) The atomic emission spectrum of strontium shows a series of coloured lines against a black
+
+      background.
+
+      The diagram shows the line of shortest frequency in the spectrum and the electron energy
+      change causing it.
+
+      Complete the diagram to show the relationship between the next two lines in the spectrum
+      and the corresponding energy changes.
+
+                                         electron energy levels:
+
+                energy
+
+                                         atomic emission spectrum:
+
+                                                                            frequency
+
+                                                                                                                              [3]
+(c) A student has three test tubes, each containing the same volume and concentration of a
+
+      different solution.
+      · One test tube contains aqueous calcium nitrate.
+      · One test tube contains aqueous strontium nitrate.
+      · One test tube contains aqueous barium nitrate.
+      The student adds an equal volume of aqueous sodium hydroxide to each test tube. A white
+      precipitate forms rapidly in the test tube containing calcium nitrate.
+      Describe and explain the trend in what the student would observe in the other two test
+      tubes.
+      ...................................................................................................................................................
+      ...................................................................................................................................................
+      ...................................................................................................................................................
+      .............................................................................................................................................. [2]
+
+© OCR 2023  Turn over
+
+--- Page 16 ---
+   (d) Another student uses a roaring Bunsen flame to heat a small sample of calcium carbonate in
+
+         a test tube. The gas given off is bubbled through lime water.
+         After about 1 minute the lime water is white and cloudy.
+         (i) Write an equation for the reaction that occurs when the calcium carbonate is heated.
+
+               Include state symbols.
+
+                                                                                                                                 [1]
+        (ii) Carbonates of metals below calcium in Group 2 are heated under the same conditions.
+
+               The lime water becomes cloudy after different amounts of time.
+               Describe and explain the trend in thermal stabilities of the Group 2 carbonates.
+                ...........................................................................................................................................
+                ...........................................................................................................................................
+                ...........................................................................................................................................
+                ...........................................................................................................................................
+                ...........................................................................................................................................
+                ...................................................................................................................................... [3]
+   (e) Barium chloride solution is used as a test for the sulfate ion.
+         Write an ionic equation for the reaction that occurs when this test is done.
+         Include state symbols.
+
+                                                                                                                                 [2]
+
+© OCR 2023
+
+--- Page 17 ---
+32 The impact of climate change is driving the development of replacements for fossil fuels. Crude
+
+      oil currently remains a source of hydrocarbons, some of which can be used as fuels.
+      (a) Octane, C8H18, is one of the alkane hydrocarbons present in petrol.
+
+            For maximum fuel efficiency, petrol should burn completely. However, some incomplete
+            combustion usually takes place.
+            Write an equation for the incomplete combustion of octane that forms carbon monoxide as
+            the only carbon compound.
+
+                                                                                                                                    [1]
+      (b) 2,2,3-trimethylpentane is a structural isomer of octane.
+
+            Draw the skeletal formula for 2,2,3-trimethylpentane.
+
+                                                                                                                                    [1]
+
+© OCR 2023  Turn over
+
+--- Page 18 ---
+(c) Ethanol is often added to petrol to improve combustion.
+
+A student wishes to measure the enthalpy change of combustion of ethanol.
+
+The student carries out a simple method.
+
+Step 1      Some water is measured into a copper can.
+Step 2      The initial temperature of the water in the can is measured.
+Step 3      The initial mass of a spirit burner containing ethanol is measured.
+Step 4      The spirit burner is placed under the can which is held above it using a clamp.
+Step 5      The wick of the spirit burner is lit.
+Step 6      After heating the water in the can, the flame is blown out.
+Step 7      The final temperature of the water is measured.
+Step 8      The final mass of the spirit burner is measured.
+
+The results are recorded in Table 32.1.
+
+Table 32.1
+
+            Mass of water used / g             250
+
+            Mass of ethanol burned / g         2.73
+
+            Initial temperature of water / °C  16.5
+
+            Final temperature of water / °C    52.0
+
+            (i) Use the results in Table 32.1 to calculate a value for the enthalpy change of
+                 combustion, cH, of ethanol, C2H5OH, in kJ mol­1.
+
+                                               cH of ethanol = ............................................ kJ mol­1 [3]
+
+© OCR 2023
+
+--- Page 19 ---
+(ii) The student found that the value of cH obtained using this method was considerably
+
+      less exothermic than that in a data book.
+      State two sources of error in the student's method.
+      Describe a correction for each.
+      Error 1 ...............................................................................................................................
+       ...........................................................................................................................................
+      Correction 1 .......................................................................................................................
+       ...........................................................................................................................................
+
+      Error 2 ...............................................................................................................................
+       ...........................................................................................................................................
+      Correction 2 .......................................................................................................................
+       ...........................................................................................................................................
+
+                                                                                                                         [4]
+
+© OCR 2023  Turn over
+
+--- Page 20 ---
+
+(d) A value for the enthalpy change of combustion of ethanol can also be calculated using the
+      average bond enthalpy values given in Table 32.2.
+
+Table 32.2
+
+            Bond  Average bond enthalpy / kJ mol­1
+            C­C                      +347
+            C­O                      +358
+            C­H
+            O­H                      +464
+            C=O                      +805
+            O=O                      +498
+
+(i) Why are the bond enthalpies in Table 32.2 described as average values?
+       ...........................................................................................................................................
+       ...................................................................................................................................... [1]
+
+(ii) The larger bond enthalpy of C=O compared with C­O implies that the C=O bond is
+      shorter.
+      Explain why double bonds are shorter than single bonds between the same atoms.
+       ...........................................................................................................................................
+       ...........................................................................................................................................
+       ...........................................................................................................................................
+       ...................................................................................................................................... [2]
+
+© OCR 2023
+
+--- Page 21 ---
+(iii) The equation for the combustion of ethanol is shown below:
+
+            C2H5OH + 3O2 2CO2 + 3H2O cH = ­1367 kJ mol­1 Equation 32.1
+
+            Use the data   in Table  32.2  and the value of  cH   from Equation 32.1,  to  calculate  a
+            value for the  average   bond  enthalpy for the  C­H  bond in kJ mol­1.
+
+                       average bond enthalpy for C­H bond = ............................................ kJ mol­1 [3]
+(e) The ethanol that is mixed with fossil fuels in petrol can be made by fermentation of crops.
+
+      A student says that this ethanol is carbon neutral in petrol.
+      Discuss this statement.
+      ...................................................................................................................................................
+      ...................................................................................................................................................
+      ...................................................................................................................................................
+      ...................................................................................................................................................
+      ...................................................................................................................................................
+      .............................................................................................................................................. [3]
+
+© OCR 2023                                                                                 Turn over
+
+--- Page 22 ---
+33 Citric acid is a weak acid that is present in many fruits. The addition of citrate salts to fruit-based
+
+      products such as jams forms buffer solutions in the products.
+
+      (a) A student uses citric acid, C3H5O(COOH)3, to prepare a sample of sodium citrate,
+            C3H5O(COONa)3 as shown in Equation 33.1.
+            C3H5O(COOH)3 + 3NaOH C3H5O(COONa)3 + 3H2O Equation 33.1
+            The Mr of citric acid is 192.
+            The student uses 4.80 g of citric acid and obtains 5.18 g of sodium citrate.
+
+            (i) Calculate the percentage yield in this salt preparation.
+
+                                             percentage yield = ...................................................... % [2]
+(ii) The pH of the sodium hydroxide solution used in this salt preparation is 13.46 at 25 °C.
+
+      Calculate the concentration of the sodium hydroxide solution.
+
+            concentration of sodium hydroxide = .......................................... mol dm­3 [2]
+
+(b) Buffer solutions are also important in living systems. For example, human blood needs to be
+      maintained at a pH between 7.35 and 7.45.
+
+The buffering action in blood involves the equilibrium as represented by Equation 33.2.
+
+H2CO3(aq)   H+(aq) + HCO3­(aq) Equation 33.2
+
+            (i) Identify the Brønsted-Lowry acid and conjugate base in Equation 33.2.
+
+            Brønsted-Lowry acid .........................................................................................................
+
+            Conjugate base .................................................................................................................
+                                                                                                                              [1]
+
+© OCR 2023
+
+--- Page 23 ---
+
+(ii) Using Equation 33.2, explain how this buffer solution maintains its pH when small
+      amounts of acid and alkali are added.
+
+            ...........................................................................................................................................
+
+            ...........................................................................................................................................
+
+            ...........................................................................................................................................
+
+            ...........................................................................................................................................
+
+            ...........................................................................................................................................
+
+            ...........................................................................................................................................
+
+            ...........................................................................................................................................
+
+            ...................................................................................................................................... [4]
+
+(iii) At body temperature, healthy blood at a pH of 7.40 has a concentration ratio
+
+            HCO3­  =  11.3
+            H2CO3
+
+            If the pH falls below 7.35, a condition known as acidosis may develop which can cause
+            shortness of breath and, in extreme cases, death.
+
+            Calculate the concentration ratio of HCO3­ in a patient with a blood pH of 7.20.
+                                                            H2CO3
+
+                            concentration ratio of  HCO3­  =  .........................................................  [4]
+                                                    H2CO3
+
+© OCR 2023                                                    Turn over
+
+--- Page 24 ---
+34 Electrode potentials are used to investigate redox reactions.
+
+Standard electrode potentials for a range of redox half-cells are shown in Table 34.1.
+
+Table 34.1
+
+ redox      half-equation                                              E°/ V
+half-cell                                                              ­0.76
+                                 Zn2+(aq) + 2e­   Zn(s)                ­0.44
+    1                            Fe2+(aq) + 2e­   Fe(s)                ­0.14
+    2                            Sn2+(aq) + 2e­   Sn(s)
+    3                             2H+(aq) + 2e­   H2(g)                 0.00
+    4                ½O2(g) + H2O(l) + 2e­        2OH­(aq)             +0.40
+    5                                             Fe2+(aq)             +0.77
+    6                             Fe3+(aq) + e­   2Cr3+(aq) + 7H2O(l)  +1.33
+    7       Cr2O72­(aq) + 14H+(aq) + 6e­          2Cl ­(aq)            +1.36
+    8                                             Mn2+(aq) + 4H2O(l)   +1.51
+    9                             Cl 2(aq) + 2e­
+              MnO4­(aq) + 8H+(aq) + 5e­
+
+(a) A student sets up an electrochemical cell in the laboratory based on redox half-cells 1 and 6.
+      (i) Complete the labelled diagram to show the student's cell.
+
+                                                  V
+
+                       Zn(s)
+            Zn2+(aq)
+            (1.0 mol dm­3)
+
+                                                                                                                            [3]
+
+© OCR 2023
+
+--- Page 25 ---
+
+(ii)        Use  the  data  in  Table  34.1  to  calculate  E  o      for  the  student's  electrochemical  cell.
+                                                                cell
+
+                                                            E  o      =    ......................................................  V  [1]
+                                                                cell
+
+(iii) State the types of particle that cause the transfer of charge through the wire and the
+       solutions.
+
+            The wire ............................................................................................................................
+
+            The solutions .....................................................................................................................
+                                                                                                                              [2]
+
+(b) Standard electrode potentials can be used to explain how some metals protect iron from
+      rusting.
+
+A thin coating of zinc on the surface of iron will provide protection from rusting even when
+the zinc coating becomes scratched. However, a scratched thin coating of tin will not protect
+the surface.
+
+Use the data in Table 34.1 to explain these observations.
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            .............................................................................................................................................. [3]
+
+© OCR 2023                                                                                 Turn over
+
+--- Page 26 ---
+   (c)* The analysis of iron(II) compounds can be carried out using manganate(VII) redox titrations.
+
+         MnO4­(aq) + 5Fe2+(aq) + 8H+(aq) Mn2+(aq) + Fe3+(aq) + 4H2O(l)
+         · 5.88 g of an alloy containing iron are dissolved in dilute sulfuric acid.
+         · The resulting Fe2+ solution is completely transferred into a 0.250 dm3 volumetric flask
+
+               and made up to the mark.
+         · 25.0 cm3 of the Fe2+ solution requires a mean titre of 20.80 cm3 of 0.0200 mol dm­3
+
+               potassium manganate(VII).
+         Describe, giving practical details, how the titration is carried out and use the information to
+         calculate the percentage by mass of iron in the alloy, giving your answer to an appropriate
+         number of significant figures.
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         .............................................................................................................................................. [6]
+         Additional answer space if required
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+
+© OCR 2023
+
+--- Page 27 ---
+Table 34.1 is repeated below:
+
+Table 34.1
+
+ redox      half-equation                                                            E°/ V
+half-cell                                                                            ­0.76
+                                 Zn2+(aq) + 2e­                 Zn(s)                ­0.44
+    1                            Fe2+(aq) + 2e­                 Fe(s)                ­0.14
+    2                            Sn2+(aq) + 2e­                 Sn(s)
+    3                             2H+(aq) + 2e­                 H2(g)                 0.00
+    4                ½O2(g) + H2O(l) + 2e­                      2OH­(aq)             +0.40
+    5                                                           Fe2+(aq)             +0.77
+    6                             Fe3+(aq) + e­                 2Cr3+(aq) + 7H2O(l)  +1.33
+    7       Cr2O72­(aq) + 14H+(aq) + 6e­                        2Cl ­(aq)            +1.36
+    8                                                           Mn2+(aq) + 4H2O(l)   +1.51
+    9                             Cl 2(aq) + 2e­
+              MnO4­(aq) + 8H+(aq) + 5e­
+
+(d) A student carries out the analysis described in part (c) but uses hydrochloric acid instead of
+      sulfuric acid to dissolve the sample of the alloy.
+
+      Using the data in Table 34.1, predict and explain the effect of this change of acid on the titre
+      of potassium manganate(VII).
+
+      ...................................................................................................................................................
+
+      ...................................................................................................................................................
+
+      ...................................................................................................................................................
+
+      .............................................................................................................................................. [2]
+
+© OCR 2023                                                                           Turn over
+
+--- Page 28 ---
+35 When developing vaccines against viruses, scientists need to understand the chemistry of the
+
+      virus spike protein. One type of vaccine contains the messenger RNA so that cells can produce
+      the spike proteins themselves and develop immune reactions to them.
+      (a) One section of mRNA contains the sequence .....GGUGCC.... that codes for glycine and
+
+            alanine.
+            Explain how this mRNA sequence enables these two amino acids to form the correct primary
+            structure in a protein.
+            ...................................................................................................................................................
+            ...................................................................................................................................................
+            ...................................................................................................................................................
+            .............................................................................................................................................. [2]
+      (b) All amino acids apart from glycine, H2NCH2COOH, show optical isomerism.
+            (i) Describe the feature of the amino acid structure that allows optical isomerism to occur.
+
+                   ...........................................................................................................................................
+                   ...................................................................................................................................... [1]
+           (ii) Draw two diagrams that show the 3-D relationship between the optical isomers of
+                  alanine, H2NCH(CH3)COOH.
+
+                                                                mirror
+                                                                                                                                    [2]
+
+     © OCR 2023
+
+--- Page 29 ---
+(c) The primary structure of a protein is the order in which the amino acid residues are bonded
+
+      together.
+
+      Draw a structural formula to show a dipeptide that can be formed when alanine,
+      H2NCH(CH3)COOH, and serine, H2NCH(CH2OH)COOH, bond together.
+
+      Draw a circle around the peptide link.
+
+                                                                                                                              [2]
+(d) A student dissolves some solid alanine in distilled water and finds the pH is 6.0.
+
+      The student then divides this solution into two separate beakers.
+      To one beaker the student adds ten drops of dilute hydrochloric acid, and to the other beaker
+      ten drops of dilute sodium hydroxide.
+      The student finds that the pH of both solutions remains at 6.0.
+      (i) The formula of the species present in the aqueous solution of alanine is
+
+            H3N+CH(CH3)COO­.
+            Name this type of species.
+             ...................................................................................................................................... [1]
+     (ii) Write equations for the reactions that occur in the two beakers.
+            Equation for reaction with acid (H3O+).
+
+               Equation for reaction with alkali (OH­).               [2]
+                                                         Turn over
+© OCR 2023
+
+--- Page 30 ---
+(e) The secondary structure of a protein is held together by hydrogen bonds.
+
+Fig. 35.1, shows hydrogen bonding between neighbouring peptide chains in a sheet-type
+secondary structure.
+
+Fig. 35.1
+
+               OHROHR
+
+            N     N     N     N
+
+            HROHRO
+
+            ORHORH
+
+               N     N     N     N
+
+               HORHOR
+
+Describe and explain how a hydrogen bond forms in Fig. 35.1.
+...................................................................................................................................................
+...................................................................................................................................................
+...................................................................................................................................................
+...................................................................................................................................................
+...................................................................................................................................................
+.............................................................................................................................................. [3]
+
+© OCR 2023
+
+--- Page 31 ---
+(f)* Enzymes are proteins that catalyse certain reactions. They can be used by viruses to infect
+
+      cells.
+
+      The rates of enzyme-catalysed reactions typically vary with substrate concentration as
+      shown in the graph in Fig. 35.2.
+
+      Fig. 35.2
+
+            Rate of reaction
+
+                              Substrate concentration
+
+The mechanism of an enzyme-catalysed reaction can be written:
+
+E + S ES EP E + P
+
+State the meaning of the symbols used in the mechanism and explain how this mechanism
+
+accounts for the shape of the curve in Fig. 35.2.                         [6]
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+            ...................................................................................................................................................
+
+© OCR 2023                                                     Turn over
+
+--- Page 32 ---
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         Additional answer space if required
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+         ...................................................................................................................................................
+
+                                             END OF QUESTION PAPER
+
+© OCR 2023
+
+--- Page 33 ---
+                                              ADDITIONAL ANSWER SPACE
+If additional space is required, you should use the following lined page(s). The question number(s)
+must be clearly shown in the margin(s).
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+
+     © OCR 2023
+
+--- Page 34 ---
+
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+
+     © OCR 2023
+
+--- Page 35 ---
+
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+
+     © OCR 2023
+
+--- Page 36 ---
+
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+..................................................................................................................................................................
+
+Oxford Cambridge and RSA
+Copyright Information
+OCR is committed to seeking permission to reproduce all third-party content that it uses in its assessment materials. OCR has attempted to identify and contact all copyright holders
+whose work is used in this paper. To avoid the issue of disclosure of answer-related information to candidates, all copyright acknowledgements are reproduced in the OCR Copyright
+Acknowledgements Booklet. This is produced for each series of examinations and is freely available to download from our public website (www.ocr.org.uk) after the live examination series.
+If OCR has unwittingly failed to correctly acknowledge or clear any third-party content in this assessment material, OCR will be happy to correct its mistake at the earliest possible
+opportunity.
+For queries or further information please contact The OCR Copyright Team, The Triangle Building, Shaftesbury Road, Cambridge CB2 8EA.
+OCR is part of Cambridge University Press & Assessment, which is itself a department of the University of Cambridge.
+
+     © OCR 2023
+
+--- Page 37 ---

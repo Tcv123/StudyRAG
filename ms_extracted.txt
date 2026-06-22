@@ -1,0 +1,750 @@
+--- Page 1 ---
+GCE
+Chemistry B
+
+H433/01: Fundamentals of chemistry
+
+A Level
+
+Mark Scheme for June 2023
+
+Oxford Cambridge and RSA Examinations
+
+--- Page 2 ---
+qualifications to meet the needs of candidates of all ages and abilities. OCR qualifications
+include AS/A Levels, Diplomas, GCSEs, Cambridge Nationals, Cambridge Technicals,
+Functional Skills, Key Skills, Entry Level qualifications, NVQs and vocational qualifications in
+areas such as IT, business, languages, teaching/training, administration and secretarial skills.
+It is also responsible for developing new specifications to meet national requirements and the
+needs of students and teachers. OCR is a not-for-profit organisation; any surplus made is
+invested back into the establishment to help towards the development of qualifications and
+support, which keep pace with the changing needs of today's society.
+This mark scheme is published as an aid to teachers and students, to indicate the requirements
+of the examination. It shows the basis on which marks were awarded by examiners. It does not
+indicate the details of the discussions which took place at an examiners' meeting before marking
+commenced.
+All examiners are instructed that alternative correct answers and unexpected approaches in
+candidates' scripts must be given marks that fairly reflect the relevant knowledge and skills
+demonstrated.
+Mark schemes should be read in conjunction with the published question papers and the report
+on the examination.
+© OCR 2023
+
+Oxford Cambridge and RSA Examinations
+
+--- Page 3 ---
+
+                                      MARKING INSTRUCTIONS
+
+PREPARATION FOR MARKING
+RM ASSESSOR
+
+1. Make sure that you have accessed and completed the relevant training packages for on-screen marking: RM Assessor Assessor Online Training;
+       OCR Essential Guide to Marking.
+
+2. Make sure that you have read and understood the mark scheme and the question paper for this unit. These are posted on the RM Cambridge
+       Assessment Support Portal http://www.rm.com/support/ca
+
+3. Log-in to RM Assessor and mark the required number of practice responses ("scripts") and the number of required standardisation responses.
+
+YOU MUST MARK 10 PRACTICE AND 10 STANDARDISATION RESPONSES BEFORE YOU CAN BE APPROVED TO MARK LIVE SCRIPTS.
+
+MARKING
+1. Mark strictly to the mark scheme.
+
+2. Marks awarded must relate directly to the marking criteria.
+
+3. The schedule of dates is very important. It is essential that you meet the RM Assessor 50% and 100% (traditional 40% Batch 1 and 100% Batch 2)
+       deadlines. If you experience problems, you must contact your Team Leader (Supervisor) without delay.
+
+4. If you are in any doubt about applying the mark scheme, consult your Team Leader by telephone or the RM Assessor messaging system, or by email.
+
+5. Crossed Out Responses
+       Where a candidate has crossed out a response and provided a clear alternative then the crossed out response is not marked. Where no alternative
+       response has been provided, examiners may give candidates the benefit of the doubt and mark the crossed out response where legible.
+
+Rubric Error Responses ≠ Optional Questions
+Where candidates have a choice of question across a whole paper or a whole section and have provided more answers than required, then all responses
+are marked and the highest mark allowable within the rubric is given. Enter a mark for each question answered into RM assessor, which will select the
+
+                                                                2
+
+--- Page 4 ---
+
+highest mark from those awarded. (The underlying assumption is that the candidate has penalised themselves by attempting more questions than
+necessary in the time allowed.)
+
+Multiple Choice Question Responses
+When a multiple choice question has only a single, correct response and a candidate provides two responses (even if one of these responses is correct),
+then no mark should be awarded (as it is not possible to determine which was the first response selected by the candidate).
+When a question requires candidates to select more than one option/multiple options, then local marking arrangements need to ensure consistency of
+approach.
+
+Contradictory Responses
+When a candidate provides contradictory responses, then no mark should be awarded, even if one of the answers is correct.
+
+Short Answer Questions (requiring only a list by way of a response, usually worth only one mark per response)
+Where candidates are required to provide a set number of short answer responses then only the set number of responses should be marked. The
+response space should be marked from left to right on each line and then line by line until the required number of responses have been considered. The
+remaining responses should not then be marked. Examiners will have to apply judgement as to whether a `second response' on a line is a development
+of the `first response', rather than a separate, discrete response. (The underlying assumption is that the candidate is attempting to hedge their bets
+and therefore getting undue benefit rather than engaging with the question and giving the most relevant/correct responses.)
+
+Short Answer Questions (requiring a more developed response, worth two or more marks)
+If the candidates are required to provide a description of, say, three items or factors and four items or factors are provided, then mark on a similar basis
+
+≠ that is downwards (as it is unlikely in this situation that a candidate will provide more than one response in each section of the response space.)
+
+Longer Answer Questions (requiring a developed response)
+Where candidates have provided two (or more) responses to a medium or high tariff question which only required a single (developed) response and
+not crossed out the first response, then only the first response should be marked. Examiners will need to apply professional judgement as to whether
+the second (or a subsequent) response is a `new start' or simply a poorly expressed continuation of the first response.
+
+6. Always check the pages (and additional objects if present) at the end of the response in case any answers have been continued there. If the candidate
+       has continued an answer there, then add a tick to confirm that the work has been seen.
+
+7. Award No Response (NR) if:
+                   ∑ there is nothing written in the answer space
+                                                                                                       3
+
+--- Page 5 ---
+
+Award Zero `0' if:
+            ∑ anything is written in the answer space and is not worthy of credit (this includes text and symbols).
+
+Team Leaders must confirm the correct use of the NR button with their markers before live marking commences and should check this when
+reviewing scripts.
+
+8. The RM Assessor comments box is used by your team leader to explain the marking of the practice responses. Please refer to these comments
+       when checking your practice responses. Do not use the comments box for any other reason.
+       If you have any questions or comments for your team leader, use the phone, the RM Assessor messaging system, or e-mail.
+
+9. Assistant Examiners will send a brief report on the performance of candidates to their Team Leader (Supervisor) via email by the end of the marking
+
+       period. The report should contain notes on particular strengths displayed as well as common errors or weaknesses. Constructive criticism of the
+
+       question paper/mark scheme is also appreciated.
+
+1. For answers marked by levels of response:
+
+       Read through the whole answer from start to finish, using the Level descriptors to help you decide whether it is a strong or weak answer. The
+       indicative scientific content in the Guidance column indicates the expected parameters for candidates' answers, but be prepared to recognise and
+       credit unexpected approaches where they show relevance. Using a `best-fit' approach based on the skills and science content evidenced within the
+       answer, first decide which set of level descriptors, Level 1, Level 2 or Level 3, best describes the overall quality of the answer.
+
+       Once the level is located, award the higher or lower mark:
+
+       The higher mark should be awarded where the level descriptor has been evidenced and all aspects of the communication statement (in italics) have
+       been met.
+
+       The lower mark should be awarded where the level descriptor has been evidenced but aspects of the communication statement (in italics) are
+       missing.
+
+       In summary:
+
+       The skills and science content determines the level.
+
+       The communication statement determines the mark within a level.
+
+         4
+
+--- Page 6 ---
+
+Level of response questions on this paper are 34c and 35f
+
+The only annotation on a level of response question should be the indication of the level.
+
+A level annotation should be used where all marks for a level have been achieved.
+e.g. if a candidate has 6 marks, they would have this annotation on their script:
+
+If a candidate has achieved 5 marks then they have reached Level 3 but will not have met the communication statement.
+They should have the following annotations on their scripts:
+
+The same principle should be applied to Level 2 and Level 1.
+No marks (0) should have a cross:
+Place the annotations alongside the mark for the question.
+
+On additional pages, annotate using
+
+                                                              5
+
+--- Page 7 ---
+
+10. Annotations                                                     Meaning
+
+          Annotation                                          6
+
+                      Correct response
+                      Incorrect response
+                      Omission mark
+                      Benefit of doubt given
+                      Contradiction
+                      Rounding error
+                      Error in number of significant figures
+                      Error carried forward
+                      Level 1
+                      Level 2
+                      Level 3
+                      Benefit of doubt not given
+                      Noted but no credit given
+
+--- Page 8 ---
+          Annotation                             Meaning
+
+                      Ignore
+                      Blank page
+
+                                  7
+
+--- Page 9 ---
+
+11. Subject Specific Marking Instructions
+Abbreviations, annotations and conventions used in the detailed Mark Scheme (to include abbreviations and subject-specific conventions).
+
+   Annotation  Meaning
+           /   alternative and acceptable answers for the same marking point
+               Separates marking points
+               Answers which are not worthy of credit
+DO NOT ALLOW   Contradiction
+        CON    Statements which are irrelevant
+               Answers that can be accepted
+     IGNORE    Words which are not essential to gain credit
+      ALLOW    Underlined words must be present in answer to score a mark
+               Error carried forward
+          ()   Alternative wording
+          __   Or reverse argument
+        ECF
+         AW
+        ORA
+
+               8
+
+--- Page 10 ---
+
+13. Subject-specific Marking Instructions
+
+INTRODUCTION
+Your first task as an Examiner is to become thoroughly familiar with the material on which the examination depends. This material includes:
+∑ the specification, especially the assessment objectives
+∑ the question paper
+∑ the mark scheme.
+
+You should ensure that you have copies of these materials.
+
+You should ensure also that you are familiar with the administrative procedures related to the marking process. These are set out in the OCR
+booklet Instructions for Examiners. If you are examining for the first time, please read carefully Appendix 5 Introduction to Script Marking:
+Notes for New Examiners.
+
+Please ask for help or guidance whenever you need it. Your first point of contact is your Team Leader.
+
+                                           9
+
+--- Page 11 ---
+
+                   Multiple Choice answers
+
+         Question  Key                      AO
+
+         1         D                        1.1
+
+         2         D                        1.1
+
+         3         C                        1.1
+
+         4         D                        1.1
+
+         5         D                        2.2
+
+         6         B                        1.2
+
+         7         D                        2.2
+
+         8         C                        1.2
+
+         9         A                        2.1
+
+         10        A                        1.1
+
+         11        C                        1.2
+
+         12        B                        1.2
+
+         13        A                        1.1
+
+         14        C                        2.2
+
+         15        B                        1.1
+
+         16        D                        1.1
+
+         17        A                        2.7
+
+         18        C                        2.4
+
+         19        C                        2.5
+
+         20        B                        2.6
+
+         21        C                        1.1
+
+         22        B                        2.6
+
+         23        B                        1.1
+
+         24        B                        2.6
+
+         25        A                        2.8
+
+         26        A                        2.2
+
+         27        D                        2.2
+
+         28        D                        1.2
+
+         29        C                        1.2
+
+         30        D                        2.7
+
+                   10
+
+--- Page 12 ---
+        Question
+                                                Answer                                    Marks AO                               Guidance
+ 31 (a)                                                                                              Element
+                  CHECK ANSWER LINE
+ 31 (b)           If answer is 87.71, award 2 marks                                       2  1.2 (x2)
+
+                  (84 x 0.56) + (86 x 9.86) + (87 x 7.00) + (88 x 82.58) /100                                 Expression
+                  (47.04 + 847.96 + 609.00 + 7267.04)/100 = 8771.04
+                  8771.04 / 100 
+
+                  = 87.71                                                                                     Evaluation and sf
+                   energy
+                                                                                          3  1.1 (x3)
+
+                                        atomic emission spectrum:                                             Lines below CON mp1
+                                                                                                              Upward arrows CON mp2
+                                                                             frequency
+                  two energy lines above AND lines getting closer
+                  together 
+                  two downward arrows AND between 31 and 41 
+                  two lines in spectrum AND lines getting closer at higher
+                  frequency 
+
+                                                                                      11
+
+--- Page 13 ---
+
+       Question                                Answer                         Mark     AO                           Guidance
+                                                                                    Element
+31 (c)           Strontium (nitrate) faint ppt/more slowly, barium (nitrate)     2             Coloured ppt CON mp1
+                 fainter ppt/slower still                                            1.2 (x2)
+                 OR
+                 A decreasing amount of white precipitate/cloudiness 
+
+31 (d)                  (Group 2) hydroxides become more soluble down the     1     1.2        Equation AND state symbols
+                        Group 
+
+                 (i) CaCO3(s)  CaO(s) + CO2(g) 
+
+31 (d)           (ii) Thermal stability (of carbonates) increases down the    3     1.1
+                        Group 
+                                                                                    2.1 (x2) ALLOW charge density decreases down the
+                        Group 2 ions increase in size down the group ORA                           group
+
+                        The carbonate ion is less polarised/distorted
+                        AND more stable/less easily broken down ORA
+
+31 (e)           Ba2+(aq) + SO42-(aq)  BaSO4(s)                               2     1.2 (x2) Mp2 dependent on mp1
+                 Equation 
+                 State symbols 
+
+                                                 Total 13
+
+                                                 12
+
+--- Page 14 ---
+        Question
+                                                Answer                           Mark     AO                         Guidance
+ 32 (a)                                                                                Element
+                  C8H18 + 8ΩO2  8CO + 9H2O                                          1           IGNORE state symbols
+                                                                                    1      1.2  ALLOW 2, 17, 16, 18 as an alternative for
+                                                                                                balancing
+                                                                                           1.1
+32 (b)
+
+32 (c)                                                                           3     2.4 (x3) ALLOW 2 or more sf
+
+                  (i) CHECK ANSWER LINE                                                         ALLOW ECF
+                         If answer = -625 (kJ mol-1) award 3 marks
+                                                                                                (+)625 (kJmol-1) scores 2
+                         (q = mcT)
+                         q = 250 x 4.18 x 35.5
+
+                            = 37097.5 J 
+
+                         n = 2.73 / 46
+                            = 5.93478 x 10-2 mol 
+
+                         cH = -(37097.5 / 5.93478 x 10-2) / 1000
+                               = - 625 (kJ mol-1) 
+
+                                                                    13
+
+--- Page 15 ---
+
+Question  Answer                                                       Mark     AO                       Guidance
+                                                                             Element
+32 (c)    (ii) Any two errors identified with appropriate correction      4
+                                                                              3.4 (x4)
+
+          Error 1: heat transferred/'lost' (to surroundings)                            Use of polystyrene cup CON correction 1
+          Correction 1: use a draft shield/lagging/lid 
+                                                                                        ALLOW
+          Error 2: evaporation (of ethanol) from spirit burner                          Error: evaporation of (hot) water from can
+          Correction 2: put a cap/lid on burner (when not burning)/                     Correction: cover (can) with a lid
+          weigh burner immediately it is blown out 
+
+          Error 3: uneven distribution of heat / not recorded highest                   Ignore incomplete combustion
+          temperature reached
+          Correction 3: stir water
+
+32 (d)    (i) (bond enthalpies/they are averaged) over different       1     1.1
+                 molecules that contain that bond AW 
+                                                                                        Ignore compound
+
+32 (d)    (ii) Double bonds have four electrons/ two pairs AND         2     2.1 (x2) Not just more electrons
+                 Single bonds have only two electrons/ one pair 
+
+          There is a greater force of attraction between the shared                     ORA in terms of repulsion
+          electrons and the bonded nuclei in the double bond 
+
+                                                                  14
+
+--- Page 16 ---
+
+Question                      Answer                               Mark     AO                 Guidance
+                                                                         Element
+32 (d)    (iii) CHECK ANSWER LINE                                     3             ALLOW ECF
+                 If answer = (+) 395 (kJ mol-1) award 3 marks             2.6 (x3)
+
+          [(C-C) + (C-O) + (O-H) + (5(C-H) + 3(O=O)]/                               Mp1 correct evaluation of bonds broken and
+          [347 + 358 + 464 + 5(C-H) + 3(498)] = 2663 + 5(C-H)                       bonds made
+          AND
+          [4(C=O) + 6(O-H)]) /                                                      Mp2 expression using cH / -1367
+          [4(805) + 6(464)] = 6004 
+
+          -1367 = [2663 + 5(C-H)] ≠ 6004 
+
+          -1367 + 6004 - 2663 = 5(C-H)                                                  Correct evaluation using appropriate data from
+          C-H = 1974 / 5                                                                question
+          = (+) 395 (kJ mol-1) 
+                                                                         3.2 (x 3)
+32 (e)    CO2 emitted during combustion is balanced by CO2 taken 3
+          in during photosynthesis/growth AW                                            ALLOW fermentation/ anaerobic respiration of
+                                                                                        crops
+          Fossil fuel energy might be used to produce/ transport
+          fuel/ crops 
+
+          These produce CO2 
+
+                                                               Total 18
+
+                                                               15
+
+--- Page 17 ---
+
+Question  Answer                                                          Mark     AO                           Guidance
+                                                                                Element
+33 (a)    (i) CHECK ANSWER LINE                                              2             ALLOW 2 or more sf
+33 (a)           If answer = 80.3 (%) award 2 marks                              2.4 (x2)
+                                                                                           ALLOW ECF
+                 Mr C3H5O(COONa)3 = 258 
+                                                                                           ALLOW
+                 (theoretical yield of sodium citrate = 4.80 / 192 x 258                   amount citric acid = 4.8 / 192 = 0.025 (mol)
+                 = 6.45 g)                                                                 amount sodium citrate = 5.18 / 258
+                 % yield = 5.18 / 6.45 x 100                                               = 0.0201 (mol)
+                 = 80.3 %                                                                  yield = 0.0201/0.025 =80.3 %
+
+          (ii) CHECK ANSWER LINE                                          2     2.2 (x2) ALLOW 2 or more sf
+                 If answer = 0.288 (mol dm-3) award 2 marks
+                                                                                           [H+] does not need to be shown as calculated
+                 [H+] = 10-13.46                                                           separately
+                 = 3.47 x 10-14 (mol dm-3) 
+
+          [OH-] = 10-14 / 3.47 x 10-14
+          = 2.88 x 10-1/ 0.288 (mol dm-3) 
+
+33 (b)    (i) Brÿnsted-Lowry acid is H2CO3                                1     1.1
+                 AND
+                 Conjugate base is HCO3≠ 
+
+                                            16
+
+--- Page 18 ---
+
+Question  Answer                                                               Mark     AO    Guidance
+                                                                                     Element
+                                                                                  4
+33 (b)    (ii) When acid is added/[H+] increases,                                    2.5 (x4)
+                  the position of equilibrium (33.2) shifts to the left/ side                       Ignore reference to HA and A-
+                 with H2CO3 
+                                                                                              ALLOW H+ + OH-  H2O
+                 When alkali is added/[OH-] increases
+                  the OH- reacts with/ removes H+ 
+
+          The position of equilibrium (33.2) shifts to the right/ side
+          with HCO3- 
+
+          (In both cases) pH remains constant / [H+] does not
+          change / change is counteracted because concentration
+          of [HA] and [A-] are both high/large 
+
+                  17
+
+--- Page 19 ---
+
+Question  Answer                                                     Mark     AO                           Guidance
+                                                                           Element
+33 (b)    (iii) CHECK ANSWER LINE                                       4             ALLOW 2 or more sf
+                 If answer = 7.13 award 4 marks                             2.6 (x4)
+
+                 [H+] = 10-7.40
+                       = 3.98 x 10-8 (mol dm-3) 
+
+          (Ka = [H+] [HCO3-] / [H2CO3])
+               = 3.98 x 10-8 x 11.3
+               = 4.50 x 10-7 (mol dm-3) 
+
+          [H+] = 10-7.20
+               = 6.31 x 10-8 (mol dm-3) 
+
+          4.5 x 10-7 = 6.31 x 10-8 [HCO3-] / [H2CO3]                                  Ignore units
+          [HCO3-] / [H2CO3] = 4.5 x 10-7 / 6.31 x 10-8
+          = 7.13
+
+                                                        Total 13
+
+                                                        18
+
+--- Page 20 ---
+
+Question  Answer                                                             Mark     AO                           Guidance
+                                                                                   Element
+34 (a)    (i) Platinum / Pt electrode                                           3             ALLOW description of salt bridge, e.g. filter
+                 (both) 1.0 mol dm-3 Fe2+/Fe3+                                      3.3 (x3)  paper strip soaked in saturated potassium
+                                                                                              nitrate
+
+          salt bridge AND wire connecting Pt and voltmeter                                    Ensure no obvious breaks in the circuit
+
+34 (a)    (ii) = 1.53 (V)                                                    1     1.2        Eocell = (+0.77) ≠ (-0.76)
+34 (a)
+34 (b)    (iii) The wire ≠ electrons                                                          Ignore sign
+
+                 The solutions ≠ ions                                        2     1.1 (x2) Ignore types of ions
+                 Zn/Zn2+ electrode potential / Eo value is more negative
+                 than that for Fe/Fe2+ so the zinc is oxidised/loses         3     2.5 (x3) ALLOW any clear indication of half-cell e.g.
+                 electrons more readily 
+                                                                                              half cell 1, 2, 3 or Zn, Fe, Sn
+                 Fe/Fe2+ electrode potential / Eo value is more negative
+                 than that for Sn/Sn2+ so iron/Fe is oxidised/loses                           ORA throughout
+                 electrons more readily 
+                                                                                              ALLOW iron corrodes/rusts with tin/Sn and
+                 (therefore) zinc corrodes/ is oxidised/ iron is protected/                   not with zinc/Zn
+                 reduced / does not rust 
+
+                                                 19
+
+--- Page 21 ---
+
+ 34 (c)*  Please refer to the marking instructions on page 4 of this  6  2.7 (x3)  Indicative scientific points include
+                                                                         3.1 (x3)
+          mark scheme for guidance on how to mark this question.                   Method
+                                                                                    ∑ pipette out 25 cm3 Fe2+ into (conical) flask
+          Level 3 (5≠6 marks)                                                       ∑ Titrate with KMnO4 in burette
+          Method fully explained with some fine detail points                       ∑ End point faint pink/purple colour (AW)
+          AND                                                                       ∑ Repeat until concordant
+          Calculation is correct with correct sf
+          There is a well-developed line of reasoning which is clear               Fine detail points:
+          and logically structured. The information presented is                    ∑ dry glassware or rinse with appropriate
+          relevant and substantiated.
+                                                                                         solution
+          Level 2 (3≠4 marks)                                                       ∑ add dropwise(AW) near end-point
+          Method explained in outline (most main points and some                    ∑ use white tile
+          fine detail points)                                                       ∑ read burette at eye level
+          AND                                                                       ∑ do a trial run
+          The calculation is progressed and partly correct.                         ∑ concordant means two readings ±0.1 cm3
+          OR
+          Method fully explained with most fine detail points                      Calculation
+          OR                                                                        ∑ calc of amount MnO4≠ (20.8 x 0.02/1000)
+          Calculation is correct with correct sf
+          There is a line of reasoning presented with some                               = 4.16 x 10≠4 (mol)
+          structure. The information presented is relevant and                      ∑ correct use of factor of 5 (amt Fe2+ in 25 =
+          supported by some evidence.                                               ∑ 4.16 x 10≠4 x 5 = 0.00208 (mol))
+                                                                                    ∑ correct use of factor of 10 (amt Fe2+ in
+          Level 1 (1≠2 marks)
+          Some method points and some attempt at calculation                             250 = 4.16 x 10≠4 x 10 = 0.0208 (mol))
+          OR                                                                        ∑ calc of mass of Fe2+ (0.0208 x 55.8 =
+          Most method points
+          OR                                                                             1.16g)
+          Some calculation points                                                   ∑ calc of % 1.16 x 100/5.88 = 19.7% (if 56
+          There is an attempt at a logical structure with a line of
+          reasoning. The information is in the most part relevant.                       used as Ar for Fe, 19.8%)
+                                                                                    ∑ 3sf
+          0 marks
+          No response or no response worthy of credit.
+
+                                                        20
+
+--- Page 22 ---
+        Question
+                  Answer                                                          Mark AO                             Guidance
+ 34 (d)                                                                                      Element
+
+                  The Cl2/Cl- (redox half-cell) electrode potential/Eo value is 2  3.2 (x2) ALLOW any clear indication of half-cell e.g.
+                  more negative than that for MnO4-/Mn2+                                          half cell 8 & 9
+
+                  Cl- are oxidised to Cl2 (as well as Fe2+ to Fe3+) so the titre                      ORA throughout
+                  would be larger 
+
+                          Total 17
+
+                          21
+
+--- Page 23 ---
+
+      Question                                      Answer                      Mark     AO              Guidance
+                                                                                      Element
+35 (a)                the amino acids are joined to t-RNA with an anti-codon       2
+                      these attach to codon/ triplet on mRNA                          1.1 (x2) ALLOW description of complementary
+                                                                                                     sequence for anti-codon or CCACGG
+
+35 (b)          (i) A carbon atom with four different groups bonded/ attached   1     1.1
+
+                      to it 
+
+35 (b)          (ii)                                                            2     1.1 (x2)
+
+                                                                                                DO NOT ALLOW Two in plane lines at 180o
+
+                                                                                                but ECF
+
+                                                                                                DO NOT ALLOW incorrect connectivity in first
+                                                                                                isomer but then ECF
+
+                                                                                                One image must be 3D to score
+
+                      3-D tetrahedral using solid/dashed/wedge lines for bonds
+                      
+                      related object and mirror image 
+
+                              22
+
+--- Page 24 ---
+       Question
+                   Answer                                            Mark                                    AO                           Guidance
+                                                                                                          Element
+35 (c)                                                                  2                                            ALLOW `CONH'
+35 (d)                                                                                                     1.1 (x2)
+
+                       H2NCH(CH3)COHNCH(CH2OH)COOH                                                                   Accept any unambiguous structure.
+                       OR
+                       H2NCH(CH2OH)COHNCH(CH3)COOH                   1                                    1.1
+
+                       formula  peptide link 
+                 (i) zwitterion 
+
+35 (d)           (ii) H3N+CH(CH3)COO- + H3O+  H3N+CH(CH3)COOH + H2O  2                                    1.2 (x2) ECF if amino acid used instead of zwitterion
+                                                                                                                         Ignore state symbols
+                 
+
+                 H3N+CH(CH3)COO- + OH-  H2NCH(CH3)COO- + H2O 
+
+35 (e)                                                                                                 3  1.1 (x3) CHECK the diagram for lone pair on O (in
+                 The C=O is polar as O is more electronegative than C, so                                                C=O) and ≠/+
+                 the O is ≠ 
+                                                                                                                         O is ≠/ H is + can be scored from diagram if
+                 The N-H bond is polar as N is more electronegative that H,                                              appropriate description of electronegativity is
+                 so the H is +                                                                                           written
+                                                                                                                         Ignore O/F
+                 The H atom is attracted to the lone pair of electrons on the
+                 O atom                                                                                                  Mp3 can be scored from labelled diagram
+
+                                                    23
+
+--- Page 25 ---
+       Question
+                                               Answer                         Mark     AO                           Guidance
+ 35 (f)                                                                             Element
+                 Please refer to the marking instructions on page 4 of this      6             Indicative scientific points include
+                 mark scheme for guidance on how to mark this question.              2.7 (x3)
+                                                                                     3.2 (x3)  Knowledge of mechanism
+                 Level 3 (5≠6 marks)
+                 A good knowledge of mechanism with good evaluation of                             ∑ E is enzyme
+                 shape of curve including consideration of both RDS AND                            ∑ S is substrate
+                 order of reaction for both high and low [S].                                      ∑ ES is the enzyme-substrate complex.
+                                                                                                   ∑ EP is the enzyme-product complex.
+                 There is a well-developed line of reasoning which is clear                        ∑ P is the product
+                 and logically structured. The information presented is
+                 relevant and substantiated.                                                   Evaluation of shape of curve
+
+                 Level 2 (3≠4 marks)                                                           low [S]:
+                 A good knowledge of mechanism with evaluation of shape                            ∑ When [S] is low, sufficient active sites
+                 of curve including some consideration of RDS / order of                                on E for all S to bind, rate increases
+                 reaction for high / low [S] ,/ change in shape of graph                                as [S] increases
+                                                                                                   ∑ Rate is proportional to [S]
+                 There is a line of reasoning presented with some structure.                       ∑ Reaction is first order (wrt [S]).
+                 The information presented is relevant and supported by
+                 some evidence.                                                                    ∑ RDS is E + S  ES
+
+                 Level 1 (1≠2 marks)                                                           high [S]
+                 Most of the symbols are explained                                                 ∑ When [S] is high, all active sites are
+                 Simple description of rate                                                             occupied, no change in rate
+                                                                                                   ∑ Increasing [S] has no effect on rate
+                 There is an attempt at a logical structure with a line of                         ∑ Reaction is zero order wrt [S]
+                 reasoning. The information is in the most part relevant.
+                                                                                                   ∑ RDS is EP  E + P (or ES  EP)
+
+                 0 marks
+                 No response or no response worthy of credit.
+
+                                                                              19
+
+                                                               24
+
+--- Page 26 ---
+If you ever have any questions about OCR qualifications or services (including administration, logistics and teaching) please feel free to get in
+touch with our customer support centre.
+Call us on
+01223 553998
+Alternatively, you can email us on
+support@ocr.org.uk
+For more information visit
+
+         ocr.org.uk/qualifications/resource-finder
+         ocr.org.uk
+         Twitter/ocrexams
+        /ocrexams
+        /company/ocr
+        /ocrexams
+
+OCR is part of Cambridge University Press & Assessment, a department of the University of Cambridge.
+For staff training purposes and as part of our quality assurance programme your call may be recorded or monitored. © OCR
+2023 Oxford Cambridge and RSA Examinations is a Company Limited by Guarantee. Registered in England. Registered office
+The Triangle Building, Shaftesbury Road, Cambridge, CB2 8EA.
+Registered company number 3484466. OCR is an exempt charity.
+OCR operates academic and vocational qualifications regulated by Ofqual, Qualifications Wales and CCEA as listed in their
+qualifications registers including A Levels, GCSEs, Cambridge Technicals and Cambridge Nationals.
+OCR provides resources to help you deliver our qualifications. These resources do not represent any particular teaching method
+we expect you to use. We update our resources regularly and aim to make sure content is accurate but please check the OCR
+website so that you have the most up-to-date version. OCR cannot be held responsible for any errors or omissions in these
+resources.
+Though we make every effort to check our resources, there may be contradictions between published support and the
+specification, so it is important that you always use information in the latest specification. We indicate any specification changes
+within the document itself, change the version number and provide a summary of the changes. If you do notice a discrepancy
+between the specification and a resource, please contact us.
+Whether you already offer OCR qualifications, are new to OCR or are thinking about switching, you can request more
+information using our Expression of Interest form.
+Please get in touch if you want to discuss the accessibility of resources we offer to support you in delivering our qualifications.
+
+--- Page 27 ---
