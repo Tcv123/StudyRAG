@@ -1143,17 +1143,7 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
         ${gradeStr ? `<span style="font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));padding:2px 8px;border-radius:20px;box-shadow:0 2px 6px var(--accent-glow);letter-spacing:0.01em;">${gradeStr}</span>` : ''}
         ${!diagComplete && total ? `<span title="Take the diagnostic to get your personalised weak-topic list" style="font-size:10px;font-weight:600;color:#B45309;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">◎ Diagnostic ${tested}/${total}</span>` : ''}
       </div>
-      ${prediction ? (() => {
-        const col     = (typeof predictedGradeColour === 'function') ? predictedGradeColour(prediction.grade) : '#6B7280';
-        const dimmed  = prediction.confidence === 'low';
-        const tip     = dimmed
-          ? `Low confidence — answer more practice questions to improve accuracy`
-          : `${prediction.masteryPct}% mastery · RAG ${prediction.ragScore}%${prediction.practiceScore !== null ? ` · Practice ${prediction.practiceScore}%` : ''}`;
-        return `<div title="${tip}" style="display:flex;align-items:center;justify-content:space-between;background:${col}15;border:1.5px solid ${col}55;border-radius:10px;padding:8px 12px;margin-bottom:10px;cursor:help;opacity:${dimmed ? '0.6' : '1'};">
-          <span style="font-size:12px;font-weight:600;color:${col}CC;">Predicted grade</span>
-          <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;">${prediction.grade}${dimmed ? `<span style="font-size:13px;font-weight:400;opacity:0.6;margin-left:2px;">?</span>` : ''}</span>
-        </div>`;
-      })() : ''}
+      ${(typeof renderPredictedGradeBadge === 'function') ? renderPredictedGradeBadge(prediction, { level: _level, target: tgtGrade }) : ''}
       <div class="subj-progress" style="display:flex;">
         ${greenPct ? `<div class="subj-fill fill-green" style="width:${greenPct}%"></div>` : ''}
         ${amberPct ? `<div class="subj-fill fill-amber" style="width:${amberPct}%"></div>` : ''}

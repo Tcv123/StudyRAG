@@ -11,6 +11,7 @@
   <script src="supabase-config.js"></script>
   <script src="exam-dates-config.js"></script>
   <script src="study-tracker.js"></script>
+  <script src="predicted-grade.js"></script>
   <script src="nav-gating.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -387,7 +388,7 @@
     .subj-list { display: flex; flex-direction: column; gap: 10px; }
     .subj-row {
       display: grid;
-      grid-template-columns: minmax(180px, 1.2fr) 2fr auto;
+      grid-template-columns: minmax(180px, 1.2fr) 2fr auto auto;
       align-items: center; gap: 16px;
       background: var(--surface); border: 1px solid var(--border);
       border-radius: 12px; padding: 12px 16px;
@@ -1343,6 +1344,7 @@ function toggleSection(idx) {
 let allTopicData = [];
 let allSubjectData = [];
 let practiceHistory = [];
+let BD_LEVEL = 'gcse';   // 'gcse' | 'as' | 'a-level' — drives predicted-grade boundaries
 let activeFilter = 'all';
 let activeSubject = null;
 
@@ -1932,6 +1934,8 @@ async function load() {
     supabaseClient.from('practice_attempts').select('subject, exam_board, topic, topic_name, earned, total_marks, pct, questions, answered, time_used_sec, timed_out, taken_at').eq('user_id', user.id).order('taken_at', { ascending: false })
   ]);
 
+  BD_LEVEL = (profile?.level || localStorage.getItem('cached_level') || 'gcse').toLowerCase();
+
   // Sidebar user info
   const firstName = profile?.first_name || '';
   const lastName = profile?.last_name || '';
@@ -1958,7 +1962,8 @@ async function load() {
       label: diagData.label,
       subject: s.subject,
       board: s.exam_board,
-      emoji: diagData.emoji || s.emoji || '📚'
+      emoji: diagData.emoji || s.emoji || '📚',
+      target: s.target_grade && s.target_grade !== 'none' ? s.target_grade : null
     });
 
     diagData.topics.forEach(t => {
@@ -2041,6 +2046,22 @@ function renderSubjectOverview() {
       <div class="summary-seg red"     style="width:${pct(r)}%"></div>
       <div class="summary-seg pending" style="width:${pct(p)}%"></div>` : '';
 
+    // Predicted grade — same engine as the dashboard. Only tested topics feed
+    // the RAG signal; untested ones still count against the spec total.
+    const prediction = (typeof computePredictedGrade === 'function')
+      ? computePredictedGrade({
+          level: BD_LEVEL,
+          totalTopics: total,
+          topicRows: topics.filter(t => t.rag !== 'pending').map(t => ({ rag_status: t.rag })),
+          practiceRows: practiceHistory
+            .filter(h => h.subject === s.subject && h.board === s.board)
+            .map(h => ({ earned: h.earned, total_marks: h.total })),
+        })
+      : null;
+    const predChip = (prediction && typeof renderPredictedGradeBadge === 'function')
+      ? renderPredictedGradeBadge(prediction, { level: BD_LEVEL, target: s.target, compact: true })
+      : '<div></div>';
+
     return `<div class="subj-row">
       <div class="subj-row-left">
         <div class="subj-emoji">${s.emoji || '📚'}</div>
@@ -2050,6 +2071,7 @@ function renderSubjectOverview() {
         </div>
       </div>
       <div class="subj-row-bar">${segs}</div>
+      ${predChip}
       <div class="subj-row-pills">
         <span class="subj-pill green"   title="Green"><span class="dot"></span>${g}</span>
         <span class="subj-pill amber"   title="Amber"><span class="dot"></span>${a}</span>

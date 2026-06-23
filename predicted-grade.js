@@ -141,6 +141,76 @@
 
   function gradeColour(g) { return GRADE_COLOUR[g] || '#6B7280'; }
 
-  window.computePredictedGrade = computePredictedGrade;
-  window.predictedGradeColour  = gradeColour;
+  // ── Grade ordering, for predicted-vs-target comparison ────────────────────
+  // Bands are listed best→worst, so a lower index is a better grade. We flip
+  // that into a rank where a higher number is a better grade.
+  function gradeRank(grade, level) {
+    const bands = bandsForLevel(level);
+    const idx = bands.findIndex(b => b.grade === grade);
+    return idx === -1 ? -1 : (bands.length - 1 - idx);
+  }
+
+  // Describe a predicted grade relative to the student's target grade.
+  // Returns { label, short, colour } or null when no comparison is possible.
+  function targetStatus(prediction, target, level) {
+    if (!target || target === 'none') return null;
+    const pr = gradeRank(prediction.grade, level);
+    const tr = gradeRank(target, level);
+    if (pr < 0 || tr < 0) return null;
+    const diff = pr - tr;
+    if (diff >= 1)   return { label: '✓ Above target',          short: '✓ Above',    colour: '#15803D' };
+    if (diff === 0)  return { label: '✓ On track',              short: '✓ On track', colour: '#16A34A' };
+    if (diff === -1) return { label: '1 grade below target',    short: '1 below',    colour: '#D97706' };
+    return             { label: `${-diff} grades below target`, short: `${-diff} below`, colour: '#DC2626' };
+  }
+
+  // ── Predicted-grade badge ─────────────────────────────────────────────────
+  // Shared renderer so the dashboard and breakdown stay visually identical.
+  //   opts.level   — 'gcse' | 'as' | 'a-level' (for target comparison)
+  //   opts.target  — the student's target grade, optional
+  //   opts.compact — true → a small fixed-width chip (for list rows)
+  function renderPredictedGradeBadge(prediction, opts) {
+    if (!prediction) return '';
+    opts = opts || {};
+    const col   = gradeColour(prediction.grade);
+    const dim   = prediction.confidence === 'low';
+    const qmark = dim ? '<span style="font-size:14px;font-weight:400;opacity:0.55;margin-left:2px;">?</span>' : '';
+    const conf  = { low: 'Low confidence', medium: 'Medium confidence', high: 'High confidence' }[prediction.confidence] || '';
+    const ts    = targetStatus(prediction, opts.target, opts.level);
+    const tip   = dim
+      ? 'Low confidence — answer more practice questions to improve accuracy'
+      : `${prediction.masteryPct}% mastery · RAG ${prediction.ragScore}%${prediction.practiceScore !== null ? ` · Practice ${prediction.practiceScore}%` : ''}`;
+
+    if (opts.compact) {
+      return `<div title="${tip}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:${col}12;border:1.5px solid ${col}40;border-radius:10px;padding:6px 14px;min-width:72px;cursor:help;opacity:${dim ? '0.72' : '1'};">
+        <span style="font-size:9px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:${col}CC;">Predicted</span>
+        <span style="font-size:20px;font-weight:800;color:${col};line-height:1;letter-spacing:-0.02em;">${prediction.grade}${qmark}</span>
+        ${ts ? `<span style="font-size:9px;font-weight:700;color:${ts.colour};">${ts.short}</span>` : `<span style="font-size:9px;font-weight:600;color:var(--muted,#6B7280);">${prediction.masteryPct}% mastery</span>`}
+      </div>`;
+    }
+
+    return `<div title="${tip}" style="background:${col}12;border:1.5px solid ${col}44;border-radius:12px;padding:10px 12px;margin-bottom:10px;cursor:help;opacity:${dim ? '0.72' : '1'};">
+      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;">
+        <div style="display:flex;align-items:baseline;gap:8px;">
+          <span style="font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:${col}CC;">Predicted</span>
+          <span style="font-size:24px;font-weight:800;color:${col};letter-spacing:-0.02em;line-height:1;">${prediction.grade}${qmark}</span>
+        </div>
+        ${ts ? `<div style="display:flex;flex-direction:column;align-items:flex-end;gap:1px;">
+          <span style="font-size:10px;font-weight:600;color:var(--muted,#6B7280);">Target ${opts.target}</span>
+          <span style="font-size:11px;font-weight:700;color:${ts.colour};white-space:nowrap;">${ts.label}</span>
+        </div>` : ''}
+      </div>
+      <div style="height:6px;border-radius:6px;background:${col}1f;overflow:hidden;">
+        <div style="height:100%;width:${Math.max(2, prediction.masteryPct)}%;background:${col};border-radius:6px;"></div>
+      </div>
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:5px;">
+        <span style="font-size:10px;font-weight:600;color:${col}AA;">${prediction.masteryPct}% mastery</span>
+        ${conf ? `<span style="font-size:10px;font-weight:600;color:var(--muted,#6B7280);">${conf}</span>` : ''}
+      </div>
+    </div>`;
+  }
+
+  window.computePredictedGrade     = computePredictedGrade;
+  window.predictedGradeColour      = gradeColour;
+  window.renderPredictedGradeBadge = renderPredictedGradeBadge;
 })();
