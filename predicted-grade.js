@@ -79,14 +79,20 @@
    */
   function computePredictedGrade({ level, totalTopics, topicRows, practiceRows }) {
     const bands = bandsForLevel(level);
+    const specTopics = Math.max(totalTopics || (topicRows || []).length, 1);
 
-    // ── Signal 1: RAG topic coverage ──────────────────────────────────────────
-    // Untested topics count as zero mastery, so a student who's only diagnosed
-    // 3 out of 10 topics is penalised even if those 3 are all green.
-    const specTopics = Math.max(totalTopics || topicRows.length, 1);
-    let ragSum = 0;
-    (topicRows || []).forEach(t => { ragSum += RAG_WEIGHT[t.rag_status] || 0; });
-    const ragScore = ragSum / specTopics;  // 0–1
+    // ── Signal 1: Diagnostic (RAG) result ─────────────────────────────────────
+    // Average mastery across the topics the student has actually diagnosed.
+    // We deliberately DON'T treat un-diagnosed topics as zero — the prediction
+    // should reflect how they're doing on what they've been assessed on so far,
+    // so an early diagnostic gives an encouraging grade rather than a scary "U".
+    // How complete the picture is is conveyed by the confidence level instead.
+    const tested = (topicRows || []).filter(t => RAG_WEIGHT[t.rag_status] !== undefined);
+    let diagnosticScore = null;
+    if (tested.length > 0) {
+      const sum = tested.reduce((s, t) => s + RAG_WEIGHT[t.rag_status], 0);
+      diagnosticScore = sum / tested.length;  // 0–1
+    }
 
     // ── Signal 2: Practice question accuracy ──────────────────────────────────
     const attempts = (practiceRows || []).filter(r => (r.total_marks || 0) > 0);
@@ -97,23 +103,25 @@
       if (total > 0) practiceScore = earned / total;
     }
 
+    // No diagnostic and no practice → nothing to predict from yet.
+    if (diagnosticScore === null && practiceScore === null) return null;
+
     // ── Blend the two signals ─────────────────────────────────────────────────
-    // With sparse practice data we lean on RAG more heavily.
+    // The diagnostic anchors the prediction; practice nudges it once there's
+    // enough of it to be meaningful.
     let masteryPct;
-    if (practiceScore === null) {
-      masteryPct = ragScore;
-    } else if (attempts.length < 5) {
-      masteryPct = ragScore * 0.70 + practiceScore * 0.30;
-    } else {
-      masteryPct = ragScore * 0.50 + practiceScore * 0.50;
-    }
+    if (practiceScore === null)        masteryPct = diagnosticScore;
+    else if (diagnosticScore === null) masteryPct = practiceScore;
+    else if (attempts.length < 5)      masteryPct = diagnosticScore * 0.70 + practiceScore * 0.30;
+    else                               masteryPct = diagnosticScore * 0.50 + practiceScore * 0.50;
 
     // ── Confidence level ──────────────────────────────────────────────────────
-    const testedFraction = (topicRows || []).length / specTopics;
+    // More diagnosed topics + more practice attempts → a firmer prediction.
+    const testedFraction = tested.length / specTopics;
     let confidence;
     if (attempts.length >= 10 && testedFraction >= 0.5) {
       confidence = 'high';
-    } else if (attempts.length >= 5 || testedFraction >= 0.3) {
+    } else if (attempts.length >= 5 || testedFraction >= 0.25 || tested.length >= 4) {
       confidence = 'medium';
     } else {
       confidence = 'low';
@@ -123,8 +131,8 @@
       grade:         gradeFromPct(masteryPct, bands),
       masteryPct:    Math.round(masteryPct * 100),
       confidence,
-      ragScore:      Math.round(ragScore * 100),
-      practiceScore: practiceScore !== null ? Math.round(practiceScore * 100) : null,
+      ragScore:      diagnosticScore !== null ? Math.round(diagnosticScore * 100) : null,
+      practiceScore: practiceScore   !== null ? Math.round(practiceScore   * 100) : null,
     };
   }
 
@@ -176,9 +184,10 @@
     const dim   = prediction.confidence === 'low';
     const qmark = dim ? '<span style="font-size:14px;font-weight:400;opacity:0.55;margin-left:2px;">?</span>' : '';
     const ts    = targetStatus(prediction, opts.target, opts.level);
-    const tip   = dim
-      ? 'Low confidence — answer more practice questions to improve accuracy'
-      : `${prediction.masteryPct}% mastery · RAG ${prediction.ragScore}%${prediction.practiceScore !== null ? ` · Practice ${prediction.practiceScore}%` : ''}`;
+    const parts = [`${prediction.masteryPct}% mastery`];
+    if (prediction.ragScore !== null && prediction.ragScore !== undefined) parts.push(`Diagnostic ${prediction.ragScore}%`);
+    if (prediction.practiceScore !== null) parts.push(`Practice ${prediction.practiceScore}%`);
+    const tip   = parts.join(' · ') + (dim ? ' · diagnose more topics or do more practice to sharpen this' : '');
 
     if (opts.inline) {
       // Small horizontal pill that sits inline with the grade/diagnostic chips.
