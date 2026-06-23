@@ -23070,7 +23070,360 @@ window.SUBJECTS = [
         ]
       },
       { board: 'OCR', specCode: 'H460',
-        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/economics-h060-h460-from-2015/assessment/' }
+        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/economics-h060-h460-from-2019/assessment/',
+        papers: [
+          // ── June 2023 ──────────────────────────────────────────────────
+          {
+            id: 'econ-ocr-h460-2023-p1',
+            year: 'June 2023',
+            paperName: 'Paper 1 — Microeconomics',
+            paperCode: 'H460/01',
+            totalMarks: 80,
+            durationMins: 120,
+            qpUrl: 'https://www.ocr.org.uk/Images/703800-question-paper-microeconomics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703968-mark-scheme-microeconomics.pdf',
+            questions: [
+              // ── Section A: Wage differentials in the USA ──
+              {
+                number: 1,
+                scenario: 'SECTION A — Read the stimulus material and answer all parts of Question 1.\n\nWage differentials in the USA\n\nResearch shows the ratio of Chief Executive pay ("remuneration") to employee remuneration in the USA has increased significantly since 2010 (Fig. 1). In 2019, Chief Executives at the largest 350 firms in the USA earned 320 times more than a typical employee.\n\nFig. 1: Chief Executive-to-employee remuneration ratio (USA), 2010–2019 [chart: ratio rising from ~200 in 2010 to ~320 in 2019]\n\nChief Executives earned an average of $21 million in 2019, a 14% increase since 2018. In that year, the US stock market price index also rose (Fig. 2).\n\nFig. 2: Chief Executive remuneration and stock market performance (USA), 2010–2019 [dual-axis chart: stock market index (LH axis) rising from ~1100 to ~2900; CE remuneration $m (RH axis) rising from ~10m to ~21m]\n\nThis growth in Chief Executive remuneration has happened while wage growth for most Americans has remained relatively low. To distract attention from their remuneration, some Chief Executives have taken a voluntary cut in salary. However, this approach is criticised as much of their remuneration comes from share options and bonuses. Other policies that may help reduce the remuneration gap include:\n• reinstating a higher marginal income tax rate at the very top income levels;\n• setting corporation tax rates higher for firms that have higher ratios of Chief Executive-to-employee remuneration;\n• allowing greater use of "say on pay" which allows a firm\'s shareholders to vote on Chief Executive remuneration.\n\nSociety is increasingly recognising who are the essential workers. They harvest our food, stock our grocery shelves and deliver goods all over the country. They look after our children and care for us when we are ill. They are also amongst the lowest-paid workers in the country. Why is this? And, in contrast, why are relatively non-essential jobs, in such areas as entertainment and sport, so well paid?\n\nThe answer to these questions is not clear. The traditional economics answer would be to consider the concepts of demand and supply. Many of the essential occupations are easy to enter. For example, a cleaner might not require specialist knowledge or training.\n\nA different answer could be "scalability". A cleaner, however skilled at their job, can only clean one building at a time. However, an entertainer can provide value to millions of people at the same time, thanks to television or the Internet. In many jobs, such as those in entertainment or sport, it is difficult to measure marginal physical productivity and so pay is set in a seemingly random way, often based on power.\n\nThis "power differential" is a new area of research to explain wage differentials. This suggests that skill levels are not good predictors of wage levels, as there are big differences in wage between workers who do the same job.\n\nIn the USA, business leaders and politicians have worked together to weaken trade unions, oppose minimum wage legislation and remove labour market restrictions. Marshall Steinbaum, an economist at the University of Utah, suggests that the decline in workers\' rights and bargaining power of trade unions alongside the greater power of employers is the main reason for growing wage differentials. He says that "[The power] American bosses have to dictate take-it-or-leave-it terms to workers is the core reason our \'essential\' workforce are underpaid." (Source: Adapted from The Washington Post (6/4/20) & Pressenza (19/8/20))',
+                parts: [
+                  { code: '1(a)(i)', prompt: 'Refer to Fig. 2. Describe the relationship between Chief Executive remuneration and stock market performance between 2010 and 2019.', marks: 2 },
+                  { code: '1(a)(ii)', prompt: 'Explain why this relationship may exist.', marks: 2 },
+                  { code: '1(b)', prompt: 'A marginal income tax rate is one example of the marginal principle used by economists. Explain what is meant by the economic concept of "the margin".', marks: 2 },
+                  { code: '1(c)', prompt: 'Explain, using an appropriate diagram, the size of economic rent relative to transfer earnings for essential workers such as cleaners (lines 23–25).', marks: 4, kind: 'diagram' },
+                  { code: '1(d)', prompt: 'Evaluate, using evidence from the stimulus material, the extent to which greater use of "say on pay" alone may help reduce the remuneration gap between Chief Executive and employee in the US.', marks: 8 },
+                  { code: '1(e)*', prompt: 'Evaluate, using evidence from the stimulus material, whether weaker trade unions is the main reason for increased wage differentials in the USA.', marks: 12 }
+                ]
+              },
+              // ── Section B: Essay (choose ONE) ──
+              {
+                number: 2,
+                scenario: 'SECTION B — Answer Question 2 OR Question 3.\n\nQuestion 2: In 2020, the Competition and Markets Authority (CMA) found that three pharmaceutical companies had taken part in an illegal agreement resulting in the price of a life-saving medicine supplied to the NHS increasing by up to 1800%. This was one of many examples investigated by the CMA where consumers were being disadvantaged by collusion and the actions of monopolies.',
+                parts: [
+                  { code: '2*', prompt: 'Evaluate, using an appropriate diagram(s), whether collusion and monopoly would always disadvantage consumers.', marks: 25, extended: true, kind: 'diagram' }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'SECTION B — Answer Question 2 OR Question 3.\n\nQuestion 3: A report for the charity Action on Smoking and Health (ASH) in January 2022 estimated that smoking in England imposed costs on the NHS totalling £2.4 billion and costs on businesses, from lost productivity, of £17.2 billion.',
+                parts: [
+                  { code: '3*', prompt: 'Evaluate, using an appropriate diagram(s), the most effective method of government intervention to reduce the negative externalities from smoking in England.', marks: 25, extended: true, kind: 'diagram' }
+                ]
+              },
+              // ── Section C: Essay (choose ONE) ──
+              {
+                number: 4,
+                scenario: 'SECTION C — Answer Question 4 OR Question 5.\n\nQuestion 4: Flood defences are considered by economists to be public goods. The £67.4 million Ipswich tidal flood barrier is just one of the many flood defence schemes which has been completed during the government\'s current capital investment programme. The scheme protects 1600 homes and 400 businesses from tidal flooding.',
+                parts: [
+                  { code: '4*', prompt: 'Evaluate the case for government provision of goods and services such as the Ipswich flood defence scheme.', marks: 25, extended: true }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'SECTION C — Answer Question 4 OR Question 5.\n\nQuestion 5: Aldi, a discount supermarket, entered the UK market for the first time in 1990. Since then it has expanded its operation and, in 2022, its market share was 9.3% making it the fourth largest supermarket in the UK.',
+                parts: [
+                  { code: '5*', prompt: 'Evaluate the importance of economies of scale to a large retailer when deciding whether to increase the size of its firm.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-ocr-h460-2023-p2',
+            year: 'June 2023',
+            paperName: 'Paper 2 — Macroeconomics',
+            paperCode: 'H460/02',
+            totalMarks: 80,
+            durationMins: 120,
+            qpUrl: 'https://www.ocr.org.uk/Images/703801-question-paper-macroeconomics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703969-mark-scheme-macroeconomics.pdf',
+            questions: [
+              // ── Section A: International Competitiveness ──
+              {
+                number: 1,
+                scenario: 'SECTION A — Read the stimulus material and answer all parts of Question 1.\n\nInternational competitiveness\n\nIn 2019, the UK had a trade in goods and services deficit of £30.5bn and a current account deficit of £95.3bn. A country\'s international competitiveness is influenced primarily by the relative price and quality of its products.\n\nIn the 2019 global competitiveness index, published by the World Economic Forum, the UK was ranked 9th out of 141 countries (down one on 2018). Singapore was placed 1st in 2019 and 2nd in 2018.\n\nThe World Economic Forum considers 12 categories of influences on a country\'s international competitiveness. These include the country\'s financial system, the skills of its workers and its macroeconomic stability. The UK has a strong financial system and was placed 7th in this category. Its central bank has experience in maintaining price stability and engaging in quantitative easing. The country\'s commercial banks provide savings facilities, loans and other services for their customers.\n\nThe UK was placed 11th in the skills category. A more skilled labour force is likely to have higher productivity. In turn, productivity can also be affected by working hours. Between 2018 and 2019, average working hours fell in Germany, the UK and the USA and labour productivity rose. In contrast, both average working hours and labour productivity rose in Poland and both fell in Mexico over this period.\n\nThe category in the global competitiveness index which the UK performed best in was macroeconomic stability. It came 1st achieving a maximum score of 100. Macroeconomic stability can increase business confidence. This can increase investment, international competitiveness and GDP per capita.\n\nFig. 1: International competitiveness ranking and GDP per capita of selected countries [scatter plot: x-axis GDP per capita ($0–70,000), y-axis ranking 0–140; countries shown include Singapore (high GDP, rank ~1), Sweden, UK (~rank 9), Slovenia, Italy, Brazil, Rwanda (~rank 56 high growth), Eswatini]\n\nThe country which experienced the largest increase in international competitiveness ranking between 2018 and 2019 was Rwanda. The main destination of Rwanda\'s exports is the UAE and its main source of imports is China. Rwanda\'s imports to GDP rose from 28% in 2010 to 35% in 2019 and GDP per capita increased from $610 to $802.\n\nFig. 2: Rwanda\'s savings ratio and change in GDP per capita 2010–2019 [dual line chart: savings ratio (%) and % change in GDP per capita, 2010–2019]\n\nThe Rwandan government tried to increase the savings ratio over the period. The government wanted to increase the domestic supply of finance for investment. It encouraged adults to open savings accounts at banks and students to join savings clubs. It did not, however, change tax rates over this period.\n\nHigher investment would be likely to increase Rwanda\'s international competitiveness. The country\'s inflation rate also affects international competitiveness.\n\nTable 1: Inflation rates for Rwanda, China, the UAE and the global average, 2010–2019\nYear: 2010 2011 2012 2013 2014 2015 2016 2017 2018 2019\nRwanda: –0.3  3.1  10.3  5.9  2.3  2.5  7.2  8.3  –0.3  3.4\nChina:   3.2  5.5   2.6  2.6  1.9  1.4  2.0  1.6   2.1  2.9\nUAE:     0.9  0.9   0.7  1.1  2.3  4.1  1.6  2.0   3.1 –1.9\nGlobal avg: 3.3 4.8 3.7 2.6 2.3 1.4 1.5 2.2 2.5 2.3\n\nWages rose in Rwanda between 2010 and 2019 at a higher rate for skilled than unskilled workers. Unemployment fell and foreign direct investment increased slightly, although it was still low.',
+                parts: [
+                  { code: '1(a)', prompt: 'Using information from the stimulus material, calculate the balance on the UK\'s primary and secondary income in 2019.', marks: 2 },
+                  { code: '1(b)', prompt: 'Using information from the stimulus material, identify two causes of an increase in the money supply.', marks: 2 },
+                  { code: '1(c)', prompt: 'Explain how a change in working hours is likely to affect productivity.', marks: 2 },
+                  { code: '1(d)', prompt: 'Using Fig. 1, explain the relationship between international competitiveness and GDP per capita.', marks: 4 },
+                  { code: '1(e)', prompt: 'Using information from the stimulus material, evaluate whether the size of Rwanda\'s multiplier is likely to have increased between 2010 and 2019.', marks: 8 },
+                  { code: '1(f)', prompt: 'Using information from the stimulus material, evaluate whether the changes in Rwanda\'s price level between 2010 and 2019 is likely to have harmed Rwandan households and firms.', marks: 12 }
+                ]
+              },
+              // ── Section B: Essay (choose ONE) ──
+              {
+                number: 2,
+                scenario: 'SECTION B — Answer Question 2 OR Question 3.\n\nQuestion 2: Consumer expenditure rose in the USA in 2019. In that year, US unemployment fell to a 50-year low of 3.5%.',
+                parts: [
+                  { code: '2*', prompt: 'Evaluate, with the use of an appropriate diagram(s), whether an increase in consumer expenditure will always reduce a country\'s unemployment rate.', marks: 25, extended: true, kind: 'diagram' }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'SECTION B — Answer Question 2 OR Question 3.\n\nQuestion 3: Between July 2018 and August 2020, the value of the Turkish lira fell from 4.73 lira to 1 US dollar to 7.32 lira to 1 US dollar. The Turkish central bank spent much of its foreign currency reserves in attempt to stop the decline in the country\'s exchange rate.',
+                parts: [
+                  { code: '3*', prompt: 'Evaluate, with the use of an appropriate diagram(s), whether a central bank should try to stop a decline in a country\'s exchange rate.', marks: 25, extended: true, kind: 'diagram' }
+                ]
+              },
+              // ── Section C: Essay (choose ONE) ──
+              {
+                number: 4,
+                scenario: 'SECTION C — Answer Question 4 OR Question 5.\n\nQuestion 4: Since 1978, more than 800 million people have been lifted out of poverty in China. In this period, the Chinese government has made increasing use of supply side policy measures.',
+                parts: [
+                  { code: '4*', prompt: 'Evaluate the effectiveness of using supply side policy measures to reduce poverty.', marks: 25, extended: true }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'SECTION C — Answer Question 4 OR Question 5.\n\nQuestion 5: In 2020, the Saudi Arabian government tripled Value Added Tax from 5% to 15%. It did not change the country\'s corporate tax rate.',
+                parts: [
+                  { code: '5*', prompt: 'Evaluate whether a government should rely more on indirect or direct taxation as a source of revenue.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-ocr-h460-2023-p3',
+            year: 'June 2023',
+            paperName: 'Paper 3 — Themes in Economics',
+            paperCode: 'H460/03',
+            totalMarks: 80,
+            durationMins: 120,
+            qpUrl: 'https://www.ocr.org.uk/Images/703802-question-paper-themes-in-economics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703970-mark-scheme-themes-in-economics.pdf',
+            questions: [
+              // ── Section A: 30 MCQ ──
+              {
+                number: 'MCQ',
+                scenario: 'SECTION A — Write your answer to each question in the box provided.',
+                parts: [
+                  { code: 'Q1', prompt: 'What would a shift in the long run aggregate supply curve to the right be most likely to cause?\nA A decrease in the level of income inequality\nB A decrease in the rate of inflation\nC An increase in the current account deficit\nD An increase in unemployment', marks: 1 },
+                  { code: 'Q2', prompt: 'A Central Bank is operating a fixed exchange rate. What intervention can it take to prevent the value of the currency falling?\nA Decreasing the interest rate\nB Imposing tariffs\nC Quantitative easing\nD Selling foreign currency reserves', marks: 1 },
+                  { code: 'Q3', prompt: 'A firm is producing Q1 units of output at a price of P1 in the diagram below [MC intersects AC; P1 is above AC at Q1; AR is horizontal below P1; MR is below AR]. What objective is it likely to be pursuing?\nA Profit maximisation\nB Profit satisficing\nC Sales revenue maximisation\nD Sales volume maximisation', marks: 1 },
+                  { code: 'Q4', prompt: '650 units of a good are demanded by consumers. If the income elasticity of demand is 0.4, what will the new quantity demanded of the good be if income decreases by 3%?\nA 601 units\nB 631 units\nC 642 units\nD 658 units', marks: 1 },
+                  { code: 'Q5', prompt: 'The diagram shows the impact of imposing a quota on imports, which causes the price of a good to increase from P1 to P2. Areas W, X, Y, Z are labelled. Which area(s) represents the net welfare loss to economic agents in the domestic economy from imposing this quota?\nA W\nB W+X+Y+Z\nC X+Y+Z\nD X+Z', marks: 1 },
+                  { code: 'Q6', prompt: 'What is relative poverty in the UK?\nA Households are unable to afford the essentials needed for survival\nB Household income is below 60% of median household income\nC Individuals are not incentivised to work because of the high level of welfare benefits\nD Individuals earn below the living wage', marks: 1 },
+                  { code: 'Q7', prompt: 'What is one of the roles of a firm?\nA To produce goods and/or services\nB To regulate markets\nC To supply labour\nD To tax households', marks: 1 },
+                  { code: 'Q8', prompt: 'What does a country\'s terms of trade show?\nA The ability to produce a good at a lower opportunity cost than another country\nB The ability to produce a good using fewer resources than another country\nC The ratio of export prices to import prices\nD The value of exports minus the value of imports', marks: 1 },
+                  { code: 'Q9', prompt: 'Which of these types of government spending is an example of current expenditure?\nA Construction of a new railway line\nB Flood defence schemes\nC New hospital equipment\nD Universal credit', marks: 1 },
+                  { code: 'Q10', prompt: 'A firm experiences a shift in its long run average cost curve from LRAC1 to LRAC2 downward. What is the most likely cause of this?\nA An increase in input prices resulting from new firms entering the market\nB An increase in the availability of skilled labour as a result of growth in the industry\nC Coordination problems arising as a result of an increase in the scale of production\nD Greater division of labour occurring as a result of the growth of the firm', marks: 1 },
+                  { code: 'Q11', prompt: 'What is one of the causes of government failure?\nA Externalities of consumption or production\nB Policy short-termism\nC The free rider problem\nD The principal-agent problem', marks: 1 },
+                  { code: 'Q12', prompt: 'Which of the diagrams illustrates the impact of an increase in the Gini coefficient? [Four options showing Lorenz curves and other diagrams — option C shows the Lorenz curve bowing further from the line of equality]\nA, B, C, or D', marks: 1 },
+                  { code: 'Q13', prompt: 'What is the likely impact on the wage rate and level of employment of an increase in the marginal physical product of labour in an industry?\nA Employment Decreases; Wage Rate Increases\nB Employment Increases; Wage Rate Unchanged\nC Employment Increases; Wage Rate Increases\nD Employment Unchanged; Wage Rate Increases', marks: 1 },
+                  { code: 'Q14', prompt: 'A smartphone manufacturer sees the demand for its phone rise in response to a decision to reduce its price below that of a competitor. How can this rise in demand be shown on a diagram?\nA A contraction along the demand curve\nB An extension along the demand curve\nC The demand curve shifting to the left\nD The demand curve shifting to the right', marks: 1 },
+                  { code: 'Q15', prompt: 'Brazil has a progressive income tax system. Tax bands (BRL): 0–22,849 (0%); 22,850–33,920 (7.5%); 33,921–45,012 (15.0%); 45,013–55,976 (22.5%); 55,977+ (27.5%). What is the marginal tax rate for an individual who gets a pay rise of 15,000 BRL having initially earned 51,000 BRL?\nA 11.7%\nB 22.5%\nC 25.8%\nD 27.5%', marks: 1 },
+                  { code: 'Q16', prompt: 'What type of efficiency is a profit maximising monopoly most likely to display?\nA Allocative efficiency\nB Dynamic efficiency\nC Productive efficiency\nD X-efficiency', marks: 1 },
+                  { code: 'Q17', prompt: 'Output in an economy moves from point X to point Y in the diagram [PPC diagram; X is inside the frontier; Y is on the frontier further along the consumer goods axis]. What does this represent?\nA An increase in allocative efficiency\nB An increase in productive efficiency\nC An increase in the demand for capital goods\nD An increase in the opportunity cost of producing consumer goods', marks: 1 },
+                  { code: 'Q18', prompt: 'What is the key insight from the Fisher equation using the quantity theory of money?\nA Inflation is caused by increases in the money supply\nB Money avoids the need for a double coincidence of wants\nC Output will return to the full employment level of output in the long run\nD There is a trade-off between unemployment and inflation', marks: 1 },
+                  { code: 'Q19', prompt: 'A firm is deciding whether or not to increase output by one unit. What is this an example of?\nA Economies of scale\nB Opportunity cost\nC Profit maximisation\nD The marginal principle', marks: 1 },
+                  { code: 'Q20', prompt: 'What is most likely to cause a decrease in the size of the national income multiplier?\nA A decrease in the top rate of income tax\nB A decrease in interest rates\nC An increase in consumer and business confidence\nD An increase in the value of the domestic currency', marks: 1 },
+                  { code: 'Q21', prompt: 'What is the impact of a shift in the aggregate supply curve from AS1 to AS2 (leftward shift) in the diagram?\nA Long run economic growth\nB Neither short run or long run economic growth\nC Short run and long run economic growth\nD Short run economic growth', marks: 1 },
+                  { code: 'Q22', prompt: 'An individual renting a car for a week\'s holiday can pay a premium of £85 to the car rental company. If they damage the car during the rental period they do not need to pay. Evidence suggests individuals are more likely to damage their rental cars as a result of paying this premium. What is this an example of?\nA Asymmetric information\nB Moral hazard\nC Negative externalities of consumption\nD Negative externalities of production', marks: 1 },
+                  { code: 'Q23', prompt: 'What is a barter system?\nA Firms collude to agree on prices\nB Goods and services are directly exchanged\nC The government intervenes in a commodity market to stabilise the price\nD Workers are assigned to particular stages of the production process', marks: 1 },
+                  { code: 'Q24', prompt: 'A government managing an economy currently operating at point X in the diagram [AS/AD diagram with X below LRAS intersection — positive output gap scenario not reached; AD1 below potential] is considering pursuing demand-side economic growth. Which macroeconomic policy objective is this most likely to conflict with?\nA Economic development\nB Full employment\nC More even distribution of income\nD Sustainable balance of payments position', marks: 1 },
+                  { code: 'Q25', prompt: 'An individual recently lost their full-time job as an architect earning £60,000 a year. They are seeking a similar job whilst temporarily on a zero hours contract at a distribution centre, where their hours have ranged from 4 to 18 hours a week. Under which measure of unemployment would they be classed as being unemployed?\nA Claimant Count\nB Claimant Count and Labour Force Survey\nC Labour Force Survey\nD Neither Claimant Count or Labour Force Survey', marks: 1 },
+                  { code: 'Q26', prompt: 'A firm produces 85 units of output. The fixed costs associated with running the business total £4000 with an average variable cost of £3.20. If average variable cost is unchanged, what is the change in average total cost when the firm increases production to 86 units of output?\nA Decreases by £46.51\nB Decreases by £0.55\nC Remains the same\nD Increases by £3.20', marks: 1 },
+                  { code: 'Q27', prompt: 'The European Central Bank aims to keep the price level in the Eurozone rising at a rate of below but close to 2% a year. What is this an example of?\nA A conflict between macroeconomic policy objectives\nB A satisfactory balance of payments position\nC A symmetric inflation target\nD An asymmetric inflation target', marks: 1 },
+                  { code: 'Q28', prompt: 'The diagram shows the market for fried chicken with S1 shifting to S2 (rightward) and equilibrium moving from point X to point Y along D1. What is the most likely cause of the market equilibrium moving from X to Y?\nA A change in tastes and preferences\nB An increase in labour productivity\nC An increase in regulation\nD A reduction in income tax', marks: 1 },
+                  { code: 'Q29', prompt: 'Which of these is only seen in a planned economy?\nA Government ownership and allocation of all resources\nB Inequality in the distribution of income and wealth\nC Profit maximising behaviour results in monopoly firms exploiting consumers\nD The price mechanism fails to achieve allocative efficiency', marks: 1 },
+                  { code: 'Q30', prompt: 'What is the main role of the World Bank?\nA To act as the banker to governments\nB To promote free trade\nC To provide finance for long-term development projects\nD To provide short-term financing for countries experiencing balance of payments problems', marks: 1 }
+                ]
+              },
+              // ── Section B: Context 1 — Transport in the UK ──
+              {
+                number: 31,
+                scenario: 'SECTION B — Read the extracts before answering the questions.\n\nExtract 1: Transport in the UK\n\nInvestment in public transport is a significant area of government expenditure. Government intervention to tackle the market failure that arises from the use of private cars, which are overconsumed in the free market, is considered crucial in enabling the government to achieve its long-term environmental objectives, as well as in the short term reducing the problems caused by congestion. However, despite government spending of nearly £3.5bn in 2019/20, the data in Fig. 1.1 shows that private vehicles are still the primary mode of transport in the UK.\n\nFig. 1.1: Passenger transport by mode, 2019 [bar chart: Cars, vans & taxis dominate at ~700bn passenger km; Rail ~100bn; Buses & coaches ~60bn; Pedal cycles ~10bn; Motorcycles ~10bn; Air ~10bn]\n\nFor many individuals, the most viable substitute for travel by car is travel by rail. Whilst investment in infrastructure has contributed to increasing the quality and speed of train services, perhaps the biggest challenge has been trying to make it an affordable mode of transport.\n\nFig. 1.2: Index of train prices and journey numbers 2004–2020 (Base Year 2014 = 100) [line chart showing Ticket Prices rising above RPI (Retail Price Index), Number of Journeys rising then falling sharply in 2020]\n\nOne of the biggest costs faced by train operating companies is the wages of their drivers, who have seen above inflation pay rises for many years. Trade Unions play a significant role in wage negotiations in this industry, with London Underground being a good example of this. Between 2010 and 2020, more than 36,000 days were lost due to strike action on the London Underground, with drivers and station staff striking over pay, working patterns and conditions. Some argue this intervention by unions has resulted in tube drivers earning well above their marginal revenue product of labour, with the starting pay in excess of £55,000 in 2020 almost double the average wage in the UK.\n\nHowever, unions state the high wages simply reflect the demanding nature of the job, with drivers having significant responsibilities for public safety as well as having to work unsociable hours. They believe their intervention is necessary to protect their members from otherwise being exploited and underpaid by Transport for London.\n\nThe rail industry is one of only a handful where unions retain significant power, owing to the size of their membership and the fact that their members\' jobs are critical to keeping the economy moving. Whilst in the 1970s more than two thirds of workers in the UK were members of a union, this has fallen to less than 25% in 2020. Alongside the impact of globalisation, this has meant the influence of trade unions has declined, with their bargaining power remaining high in only a limited number of occupations primarily in the public sector.\n\nExtract 2: The automotive industry\n\nOur continued reliance on travel by car is good news for the automotive industry, a vital part of the UK\'s economy which contributes more than £150bn to GDP. With the production of many other goods having moved abroad in recent decades the industry has become an increasingly important element of the manufacturing sector as a whole, now accounting for 10% of the UK\'s total manufacturing output. It is also a major source of employment, with 180,000 workers employed directly in car manufacturing and 864,000 employed across the wider industry.\n\nFig. 2.1: Car production in the UK by brand, 2019 [pie chart: Jaguar Land Rover 29%; Nissan 26%; BMW 16%; Toyota 11%; Honda 8%; Other 10%]\n\nOutput in the industry is relatively volatile, with demand particularly sensitive to the macroeconomic climate. The global economic downturn that resulted from the financial crisis saw car manufacturing output decrease by more than 25% in 2009, whilst new car sales fell by almost 30% in 2020 when the economy experienced a deep recession.\n\nThe export market represents by far the biggest source of demand for the UK automobile industry, with 80% of cars produced in the UK exported. This accounts for 13% of the total exports of UK goods, making the industry a crucial component of the country\'s international trade. This is also the case in other developed European economies such as Germany, which is why for a number of years the UK and European governments have given annual subsidies in excess of £30bn to the industry.\n\nThere are concerns that the UK\'s new relationship with the European Union following Brexit poses a number of problems to the industry. This is because of its reliance on global supply chains being threatened by any barriers to trade imposed and a potential shortage of workers arising from the end of the free movement of labour. Some therefore argue that significant state aid (effectively acting as an export subsidy) is needed to ensure UK car manufacturing remains internationally competitive. However, critics are concerned such action goes against the principles of comparative advantage and could do more harm than good in the long run.\n\nExtract 3: The financial sector\n\nWhilst the 2020 Trade and Cooperation Agreement between the UK and EU to an extent reassured domestic car manufacturers that they would continue to be able to export cars to the EU tariff-free, the agreement did little to facilitate access to the EU\'s single market for UK financial services firms. In particular, financial services firms lost their "passporting" rights, which previously enabled them to sell their services into the EU without the need for additional regulatory clearances. Without such rights firms would be forced to comply with the requirements of different member states, which is likely to increase complexity and cost. Whilst it is hoped that over time equivalent agreements could be reached, there is no guarantee these will be long lasting, which has already caused some firms to relocate part of their operations away from London to places like Paris or Frankfurt.\n\nThis poses a major threat to the UK economy given the significant contribution financial services make to the UK\'s exports of services, which totalled £297.4bn in 2018. The current account surplus enjoyed in the trade in services is important in helping to offset the significant deficit on the current account in the trade in goods.\n\nFig. 3.1: UK export of services by sector, 2018 [table: Financial 21.0%; Insurance and pension services 6.6%; Intellectual property 5.5%; Other business 37.3%; Telecommunication, computer and information services 7.5%; Transport 9.9%; Travel 12.2%]\n\nOne way in which the UK government could act to ensure the financial services sector remains competitive would be to deregulate. This could be achieved by, for example, removing the cap on bankers\' bonuses imposed by the EU or looking again at capital adequacy requirements. Such deregulation could fulfil former Chancellor Rishi Sunak\'s goal of making sure that "the City of London remains the most dynamic place to do financial services anywhere in the world". However, some suggest deregulation could create the very type of systemic risk that greater financial regulation was designed to overcome following the global financial crisis of 2008.',
+                parts: [
+                  { code: '31', prompt: 'Explain, using the information in Extract 1, why private car journeys may be overconsumed in the free market.', marks: 2 },
+                  { code: '32', prompt: 'Explain, using the information in Fig. 1.2, what has happened to the price of train tickets between 2004 and 2020.', marks: 2 },
+                  { code: '33*', prompt: 'Evaluate, using an appropriate diagram(s) and the information in Extract 1, the extent to which Trade Unions are responsible for labour market failure.', marks: 15, kind: 'diagram' },
+                  { code: '34', prompt: 'Explain, using the data in Fig. 2.1, the most likely market structure of the car manufacturing industry in the UK.', marks: 2 },
+                  { code: '35', prompt: 'Explain, using the information in Extract 2 and a relevant diagram, the impact on the market for new cars of the 2020 recession.', marks: 4, kind: 'diagram' },
+                  { code: '36', prompt: 'Explain, using the information in Extract 2, the impact on the UK economy of introducing export subsidies to the automotive industry in the UK.', marks: 8 },
+                  { code: '37', prompt: 'Using the data in Fig. 3.1 and the information in Extract 3, calculate the value of UK financial services exports in 2018.', marks: 2 },
+                  { code: '38*', prompt: 'Evaluate, using the information in Extract 3, the extent to which deregulation of financial services would benefit the UK economy.', marks: 15 }
+                ]
+              }
+            ]
+          },
+          // ── June 2022 ──────────────────────────────────────────────────
+          {
+            id: 'econ-ocr-h460-2022-p1',
+            year: 'June 2022',
+            paperName: 'Paper 1 — Microeconomics',
+            paperCode: 'H460/01',
+            totalMarks: 80,
+            durationMins: 120,
+            qpUrl: 'https://www.ocr.org.uk/Images/676764-question-paper-microeconomics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676959-mark-scheme-microeconomics.pdf',
+            questions: [
+              // ── Section A: Changing consumer trends in the UK ──
+              {
+                number: 1,
+                scenario: 'SECTION A — Read the following stimulus material and answer all parts of Question 1.\n\nChanging consumer trends in the UK?\n\nRenewable energy sources, including wind, solar power and biomass, now provide more electricity to UK homes and businesses than fossil fuels, such as coal and gas. This was first achieved in the third quarter of 2019.\n\nFig. 1: UK electricity generation per quarter (measured in Terawatt hours) [line chart 2009–2019: Fossil fuels declining from ~90 TWh to ~40 TWh; Renewables rising from ~10 TWh to ~50 TWh]\n\nCoal is now used for less than 1% of electricity generation in the UK, with only four coal-powered plants remaining, ahead of a ban in 2025. Gas is the largest fossil fuel (38%) in the UK energy system. In terms of renewable energy sources, wind power is the UK\'s largest, making up 20% of the UK\'s electricity, followed by 12% from biomass and 6% from solar power.\n\nOne of the largest firms in the UK is Shell, a multinational company. It provides 10% of the UK\'s oil and gas, employs about 6,000 people and serves over 5 million customers every week at more than 1,000 fuel service stations. It has the third largest number of fuel service stations, behind Tesco and BP.\n\nHowever, Shell now faces the prospect of no more petrol cars, lorries running on liquid gas, and solar or wind powered homes and businesses. Even the fuel service station is changing, with most now seen as a retail outlet where people can do their food shopping, pick up a parcel or drink a coffee. Managers at Shell have taken all of these changes very seriously, as they attempt to reinvent the company which is also faced with new climate change targets.\n\nShell\'s managers have already taken some big decisions. Shell has bought a company which makes electric vehicle (EV) charging points for homes and workplaces. It has also bought a supplier of electricity and gas in the UK. Shell\'s managers see a time when the business will supply all of an individual\'s energy needs.\n\nShell is trying to take the lead in EV charging points for battery-powered cars. At present, less than 2% of cars on UK roads are battery-powered. However, by 2040 a third of all vehicles could be electric. Shell believes it is well placed to take advantage of this growing market, as it has already launched a "rapid recharge service" which uses 100% renewable energy. It announced the opening of its 50th EV charging station in October 2019.\n\nThe growth in EV charging stations will be necessary if the UK government\'s "Road to Zero" strategy, to ban the sale of new petrol cars by 2030, is to be successful. As part of this strategy, more taxes may be imposed to change the marginal private cost of using petrol cars, so that the price paid is closer to the marginal social cost inflicted on society. Once the price of battery-powered cars falls to a level closer to that of petrol cars, the use of a subsidy may also be beneficial.\n\nOne of the largest costs of running a petrol car is the petrol. The demand for petrol appears to be significantly price inelastic. A 2019 review of over 100 pieces of research about the price elasticity of demand for petrol found it to have a value of −0.26 in the short run and −0.58 in the long run.\n\nAnother limit on the growth of battery-powered cars is the cost of producing the batteries. Many experts say that a battery-powered car cannot be price competitive until the cost of a battery falls below $100 per kilowatt hour (kWh).\n\nFig. 2: Global car battery production [dual-axis chart: Output (millions) rising 2018–2030* from ~5 to ~35; Cost per kWh ($) falling 2018–2030* from ~200 to below 100]\n\nSome experts argue that the structure of this market will affect progress as, along with the energy and power generation markets, it is really a natural monopoly.',
+                parts: [
+                  { code: '1(a)', prompt: 'Explain what is meant by the term "subsidy".', marks: 2 },
+                  { code: '1(b)', prompt: '"...more taxes may be imposed to change the marginal private cost of using petrol cars, so that the price paid is closer to the marginal social cost inflicted on society." (lines 36–38) Explain, using an appropriate diagram, how this could be achieved.', marks: 4, kind: 'diagram' },
+                  { code: '1(c)', prompt: 'Refer to lines 40–42. Calculate the percentage change in price required to achieve a 6.5% fall in demand for petrol in the short run.', marks: 2 },
+                  { code: '1(d)(i)', prompt: 'Using the data in Fig. 2, explain how there are economies of scale in the global production of car batteries.', marks: 2 },
+                  { code: '1(d)(ii)', prompt: 'Evaluate, using evidence from the stimulus material, whether it is a disadvantage if the market for car battery production is a natural monopoly.', marks: 8 },
+                  { code: '1(e)*', prompt: 'Evaluate, using evidence from the stimulus material, the factors which may influence the choice of objectives for a firm such as Shell.', marks: 12 }
+                ]
+              },
+              // ── Section B: Essay (choose ONE) ──
+              {
+                number: 2,
+                scenario: 'SECTION B — Answer Question 2 OR Question 3.\n\nQuestion 2: In 2018, the French bank, BNP Paribus, was found guilty of eliminating competition and fixing prices with rival firms between 2011 and 2013. It was the sixth major bank to face criminal charges as part of the same investigation in the USA and agreed to pay a fine of $90m.',
+                parts: [
+                  { code: '2*', prompt: 'Evaluate, using an appropriate diagram(s), whether such collusion is the most significant disadvantage of an oligopolistic market.', marks: 25, extended: true, kind: 'diagram' }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'SECTION B — Answer Question 2 OR Question 3.\n\nQuestion 3: The education sector has the highest level of trade union membership in the UK, with over 50% of full-time teachers in a trade union. Approximately 90% of all teachers work in the state sector.',
+                parts: [
+                  { code: '3*', prompt: 'Evaluate, using an appropriate diagram(s), the impact of a bilateral monopoly on equilibrium in the labour market.', marks: 25, extended: true, kind: 'diagram' }
+                ]
+              },
+              // ── Section C: Essay (choose ONE) ──
+              {
+                number: 4,
+                scenario: 'SECTION C — Answer Question 4 OR Question 5.\n\nQuestion 4: "A £1.4bn government bailout has been announced for Crossrail, as Europe\'s biggest infrastructure project to build a new underground line across London is once again over budget and delayed. This is yet another example of a failed government-financed and managed project."',
+                parts: [
+                  { code: '4*', prompt: 'Evaluate whether governments should finance large infrastructure projects such as Crossrail.', marks: 25, extended: true }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'SECTION C — Answer Question 4 OR Question 5.\n\nQuestion 5: Supporters of a centrally planned economic system believe a central government can achieve social and national objectives more efficiently than a market economy. For example, they highlight the increase in income inequality in China since it has introduced market-based reforms.',
+                parts: [
+                  { code: '5*', prompt: 'Evaluate whether it is possible to allocate resources efficiently in a centrally planned economic system.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-ocr-h460-2022-p2',
+            year: 'June 2022',
+            paperName: 'Paper 2 — Macroeconomics',
+            paperCode: 'H460/02',
+            totalMarks: 80,
+            durationMins: 120,
+            qpUrl: 'https://www.ocr.org.uk/Images/676765-question-paper-macroeconomics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676960-mark-scheme-macroeconomics.pdf',
+            questions: [
+              // ── Section A: Does rising national debt matter? ──
+              {
+                number: 1,
+                scenario: 'SECTION A — Read the following stimulus material and answer all parts of Question 1.\n\nDoes rising national debt matter?\n\nAt the start of 2020, there were reasons to think there was both a greater need for government borrowing and a reduced concern about rising national debt. There had been a slowdown on the growth of aggregate demand. Although interest rates were low, private sector investment was not making full use of available savings.\n\nFig. 1: A virtuous circle [diagram: savings → investment → productivity → economic growth → savings]\n\nHowever, more savings, if not used for investment, can slow down economic growth. One cause of an increase in savings can be greater income inequality.\n\nFig. 2: The Gini coefficient and economic growth rate for selected countries 2018 [scatter plot: x-axis Gini coefficient 0–0.6; y-axis Economic growth rate 0–8%; countries shown: Mongolia (highest growth ~7%), Indonesia, Turkey, UK, Brazil]\n\nThe UK\'s low inflation rate at the start of 2020 was combined with a low economic growth rate. The economy was experiencing a negative output gap. Between January 2019 and January 2020, the Consumer Prices Index increased from 106.3 to 108.2.\n\nIf a central bank can convince households, workers and firms that inflation will be at a low and stable rate, it can affect expectations and investment in a beneficial way. One way of doing this is by setting an inflation rate target. Of course, trying to achieve an inflation rate target can be affected by adverse demand-side and supply-side shocks. If the target is not met, it can also cause households, workers, and firms to question the central bank\'s ability to control inflation.\n\nSome governments change their inflation rate target. For example, the Brazilian government between 2005 and 2018 had kept the inflation rate target fixed at 4.5% with a margin of plus or minus 2%. In 2019 however, the target was changed to 4.25% and in 2021 it was set at 3.75%. In both years the margins were set at plus or minus 1.5%.\n\nFig. 3: Brazil\'s performance in meeting its inflation rate target [target-zone chart 2005–2018: central target 4.5%; margin ±2%; years inside margin shown; 2011 (9.0%) and 2015 (9.0%) and 2016 (8.7%) outside margin]\n\nThe UK\'s low inflation rate at the start of 2020 was combined with a low economic growth rate. There was the possibility that higher government spending, financed by borrowing, could increase economic growth. Higher government borrowing, however, increases the national debt, at least in the short run. In January 2020, the UK\'s national debt was 72% of GDP. An increase in government debt also runs the risk of increasing the inflation rate. There is the possibility that higher government debt may make it more difficult to attract lenders who are willing to buy the debt. Japan, however, which had a much higher national debt of 230% of GDP at this date, was not having any difficulty selling its debt.',
+                parts: [
+                  { code: '1(a)', prompt: 'Using information from the stimulus material, identify two reasons why crowding out may not occur.', marks: 2 },
+                  { code: '1(b)', prompt: 'Using Fig. 1, explain how savings can promote economic growth.', marks: 2 },
+                  { code: '1(c)', prompt: 'Using Fig. 2, explain the relationship between the Gini coefficient and economic growth rate.', marks: 4 },
+                  { code: '1(d)', prompt: 'Using information from the stimulus material, calculate the UK\'s 12 month inflation rate in January 2020.', marks: 2 },
+                  { code: '1(e)', prompt: 'Using information from the stimulus material, evaluate whether setting an inflation rate target is likely to result in low and stable inflation.', marks: 8 },
+                  { code: '1(f)', prompt: 'Using information from the stimulus material, evaluate whether an increase in national debt will harm an economy.', marks: 12 }
+                ]
+              },
+              // ── Section B: Essay (choose ONE) ──
+              {
+                number: 2,
+                scenario: 'SECTION B — Answer Question 2 OR Question 3.\n\nQuestion 2: Poland\'s unemployment rate fell from 10.3% in 2013 to 3.3% in 2019 while its inflation rate rose from 0.9% to 2.3% over this period.',
+                parts: [
+                  { code: '2*', prompt: 'Evaluate, with the use of an appropriate diagram(s), whether the Phillips curve is useful for economic policy makers.', marks: 25, extended: true, kind: 'diagram' }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'SECTION B — Answer Question 2 OR Question 3.\n\nQuestion 3: In 2020, several governments were considering cutting taxes to get their countries out of recession.',
+                parts: [
+                  { code: '3*', prompt: 'Evaluate, with the use of an appropriate diagram(s), whether a cut in tax rates will end a recession.', marks: 25, extended: true, kind: 'diagram' }
+                ]
+              },
+              // ── Section C: Essay (choose ONE) ──
+              {
+                number: 4,
+                scenario: 'SECTION C — Answer Question 4 OR Question 5.\n\nQuestion 4: In some recent years, Mongolia has experienced high rates of economic growth. In 2019, its government adopted a long term development strategy known as Mongolia\'s Sustainable Development Vision 2030.',
+                parts: [
+                  { code: '4*', prompt: 'Evaluate whether a country with a high economic growth rate can achieve sustainable development.', marks: 25, extended: true }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'SECTION C — Answer Question 4 OR Question 5.\n\nQuestion 5: In recent years there has been a rise in protectionism. For example, the US Trump administration argued that higher tariffs on Chinese imports would reduce US unemployment.',
+                parts: [
+                  { code: '5*', prompt: 'Evaluate whether protectionism always reduces unemployment.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-ocr-h460-2022-p3',
+            year: 'June 2022',
+            paperName: 'Paper 3 — Themes in Economics',
+            paperCode: 'H460/03',
+            totalMarks: 80,
+            durationMins: 120,
+            qpUrl: 'https://www.ocr.org.uk/Images/676766-question-paper-themes-in-economics.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676961-mark-scheme-themes-in-economics.pdf',
+            questions: [
+              // ── Section A: 30 MCQ ──
+              {
+                number: 'MCQ',
+                scenario: 'SECTION A — Write your answer for each question in the box provided.',
+                parts: [
+                  { code: 'Q1', prompt: 'What is the impact of a decrease in price?\nA An increase in quantity demanded\nB An increase in quantity supplied\nC A shift to the right of the demand curve\nD A shift to the right of the supply curve', marks: 1 },
+                  { code: 'Q2', prompt: 'If real GDP in 2019 was $482bn and $476bn in 2020, what was the rate of economic growth in 2020?\nA −1.26%\nB −1.24%\nC 1.24%\nD 1.26%', marks: 1 },
+                  { code: 'Q3', prompt: 'The diagram shows a firm producing Q1 units at price P1 [MC and AC curves; P1 is above AC at Q1; AR = MR is horizontal at P1]. What is likely to happen next?\nA New firms enter the market, causing a shift in the average and marginal cost curves\nB New firms enter the market, causing a shift in the average and marginal revenue curve\nC Some firms leave the market, causing a shift in the average and marginal cost curves\nD Some firms leave the market, causing a shift in the average and marginal revenue curve', marks: 1 },
+                  { code: 'Q4', prompt: 'What is the relationship between accounting and economic profit?\nA Accounting profit will be equal to economic profit\nB Accounting profit will be larger than economic profit\nC Economic profit will be larger than accounting profit\nD There is no relationship between accounting profit and economic profit', marks: 1 },
+                  { code: 'Q5', prompt: 'The table shows maximum output if all resources used for one good: Country X — Corn 1000, Golf clubs 450; Country Y — Corn 5000, Golf clubs 900. What can be concluded about Country X?\nA It has an absolute advantage in the production of corn and golf clubs\nB It has an absolute advantage in the production of golf clubs\nC It has a comparative advantage in the production of corn\nD It has a comparative advantage in the production of golf clubs', marks: 1 },
+                  { code: 'Q6', prompt: 'What could cause the natural rate of unemployment to decrease?\nA An increase in corporation tax\nB An increase in government spending on welfare benefits\nC An increase in government spending on education and training\nD An increase in the price level', marks: 1 },
+                  { code: 'Q7', prompt: '"There are insufficient resources to meet society\'s wants." What does this statement describe?\nA Positive externalities of consumption\nB Positive externalities of production\nC The basic economic problem\nD The free rider problem', marks: 1 },
+                  { code: 'Q8', prompt: 'The diagram shows the value of a country\'s currency with supply shifting from S1 to S2 (rightward), price rising from P1 to P2, quantity rising from Q1 to Q2. What is most likely to have caused the change illustrated here?\nA A decrease in the marginal propensity to import\nB Contractionary monetary policy\nC Expansionary monetary policy\nD Supply side policy designed to increase labour productivity', marks: 1 },
+                  { code: 'Q9', prompt: 'What type of good is described as being excludable and rival?\nA Free good\nB Private good\nC Public good\nD Quasi-public good', marks: 1 },
+                  { code: 'Q10', prompt: 'If the marginal rate of taxation is 0.34, the marginal propensity to import is 0.18 and the multiplier is 1.42, what is the marginal propensity to save?\nA 0.18\nB 0.30\nC 0.48\nD 0.90', marks: 1 },
+                  { code: 'Q11', prompt: 'What is one of the key roles of the financial sector?\nA Facilitate investment by firms\nB Increase interdependence between countries\nC Promote free trade\nD Reduce income inequality', marks: 1 },
+                  { code: 'Q12', prompt: 'What does the shift of the PPC from PPC1 to PPC2 (outward) in the diagram show?\nA A fall in the production of good A\nB A fall in the production of goods A and B\nC An increase in the opportunity cost of producing good A\nD An increase in the opportunity cost of producing good B', marks: 1 },
+                  { code: 'Q13', prompt: 'What is one of the stages in the process of calculating the rate of inflation in the UK?\nA Goods and services are weighted according to the level of utility they bring society\nB Prices of goods and services are compared to prices in other countries\nC Survey data is used to establish the most commonly consumed goods and services\nD The amount of quantitative easing introduced by the Bank of England is recorded', marks: 1 },
+                  { code: 'Q14', prompt: 'The diagrams show markets for goods X and Y responding to a change in a determinant of demand [both demand curves shift left with different magnitudes; price falls more in X than Y]. What might it be possible to conclude from this?\nA Demand for good X is more cross elastic than the demand for good Y\nB Demand for good X is more income elastic than demand for good Y\nC Demand for good X is more price elastic than the demand for good Y\nD Supply of good X is more price elastic than supply of good Y', marks: 1 },
+                  { code: 'Q15', prompt: 'What would cause the demand for labour to increase?\nA An increase in the minimum wage\nB An increase in the price of complementary factors of production\nC An increase in the price of the product the labour produces\nD An increase in unit labour costs', marks: 1 },
+                  { code: 'Q16', prompt: 'An individual going on holiday to Spain exchanges £100 into euros when the exchange rate was 1.26 euros to 1 pound. They spend 82 euros and when they return from holiday exchange what they have left into pounds. By this point the exchange rate has changed to 1.14 euros to 1 pound. How many pounds are they left with?\nA £34.92\nB £38.60\nC £44.00\nD £50.16', marks: 1 },
+                  { code: 'Q17', prompt: 'Which elasticity is the availability of stock of the product likely to impact?\nA Cross elasticity of demand\nB Income elasticity of demand\nC Price elasticity of demand\nD Price elasticity of supply', marks: 1 },
+                  { code: 'Q18', prompt: 'What does curve X represent? [diagram: price level on y-axis; real GDP on x-axis; curve X is vertical]\nA Long run Aggregate Supply\nB Long run Phillips Curve\nC Short run Aggregate Supply\nD Short run Phillips Curve', marks: 1 },
+                  { code: 'Q19', prompt: 'The separation between ownership and control means managers are likely to be more incentivised to pursue sales revenue maximisation over profit maximisation. What type of firm is this most likely to describe?\nA Public limited company\nB Public sector company\nC Small business\nD Voluntary organisation', marks: 1 },
+                  { code: 'Q20', prompt: 'Money fulfils a number of important functions, including acting as a medium of exchange. What characteristic would prevent money from fulfilling this function?\nA Durable to use\nB Portable to carry\nC Scarce in supply\nD Volatile in value', marks: 1 },
+                  { code: 'Q21', prompt: 'Who is most likely to be categorised as being unemployed?\nA 19 year old full time student\nB 38 year old father who chooses to stay at home to be a home-maker\nC 42 year old former bank worker who is economically active\nD 68 year old who worked in the steel industry and who is now claiming the state pension', marks: 1 },
+                  { code: 'Q22', prompt: 'A firm is considering increasing its output from 239 to 240 units of a good. Data: Quantity 238–242; Average Cost £360, £356, £362, £371, £382. What is the marginal cost of doing this?\nA £1.51\nB £6\nC £1796\nD £86 880', marks: 1 },
+                  { code: 'Q23', prompt: 'What is most likely to cause the international price competitiveness of a country\'s goods and services to decrease?\nA Exchange rate depreciates\nB Minimum wage decreases\nC Productivity increases\nD Trade union power increases', marks: 1 },
+                  { code: 'Q24', prompt: 'Kai purchases a second-hand car for £12,000. However, they only derive £7,000 utility from the car during the five years that they own it. What is likely to have occurred at the point of purchase to cause this?\nA Information failure\nB Moral hazard\nC Negative externalities of consumption\nD Opportunity cost', marks: 1 },
+                  { code: 'Q25', prompt: 'An economy is producing at Y1, P1 [AD/AS/LRAS/SRAS diagram; Y1 is to the right of LRAS; P1 is above the long-run equilibrium price]. What is happening at this point?\nA Deflation\nB Inflation\nC Negative output gap\nD Positive output gap', marks: 1 },
+                  { code: 'Q26', prompt: 'A group of firms reaches an agreement on prices and output. What sort of collusion is this?\nA A cartel\nB Price leadership\nC Strategic alliances\nD Tacit collusion', marks: 1 },
+                  { code: 'Q27', prompt: 'What is an example of an automatic stabiliser in response to a period of negative economic growth?\nA A decrease in the corporation tax rate\nB An increase in expenditure on education and training\nC An increase in expenditure on unemployment benefits\nD An increase in the income tax-free personal allowance', marks: 1 },
+                  { code: 'Q28', prompt: 'What is likely to be an irrational act?\nA Consumption decreasing when the interest rate increases\nB Consumers demanding more of an inferior good when their income falls\nC Firms engaging in predatory pricing to increase their market share\nD Firms increasing the price of a product with price elastic demand', marks: 1 },
+                  { code: 'Q29', prompt: 'The diagram shows the market for a good allocated in the free market without government intervention [MSB and MPB curves; area XYZ below the supply curve = MPC = MSC, above MPB, to the left of equilibrium]. What is represented by area XYZ?\nA Allocative inefficiency\nB Consumer surplus\nC Deadweight loss\nD Producer surplus', marks: 1 },
+                  { code: 'Q30', prompt: 'What is the most likely impact of a policy decision to reduce the amount of protectionism in a country?\nA Domestic firms face higher tariffs on their exports\nB Sunset industries experience a decrease in the demand for their products\nC The rate of inflation increases\nD The volume of international trade decreases', marks: 1 }
+                ]
+              },
+              // ── Section B: Context 1 — The "Levelling Up" agenda ──
+              {
+                number: 31,
+                scenario: 'SECTION B — Read the following extracts and answer all the questions which follow.\n\nExtract 1: The "levelling up" agenda\n\nIn December 2019 Boris Johnson\'s Conservative Party won a majority in the General Election, in large part because it secured the votes of people in the North and Midlands that had never voted Conservative before. The government attracted these voters with a promise to "level up" the UK, reducing the inequality that exists between regions. Whilst the country\'s large cities and towns are amongst the most productive and prosperous in Europe, other parts of the country lag far behind, resulting in stark wage differentials between regions.\n\nFig. 1.1: Average Weekly Wage (£s) by region in 2020 [bar chart: London highest ~£750; Scotland, South East, East of England, South West, West Midlands, East Midlands, Yorkshire & the Humber, North West, Wales, Northern Ireland, North East all lower; UK average ~£590]\n\nIt is argued that a decrease in labour market flexibility is partly responsible for the widening regional inequality. A significant cause of this is the increasing gap between house prices in different parts of the country, as shown by the data in Fig. 1.2. This makes it harder for individuals to relocate to high wage areas, preventing market forces from reducing wage differentials.\n\nFig. 1.2: House Prices by Region 1995–2020 (base year = 1995) [index table: London 100→209→422; East of England 100→211→345; South East 100→198→316; East Midlands 100→216→294; South West 100→229→318; North East 100→203→262; North West 100→177→248; Yorkshire & Humber 100→179→250; Northern Ireland 100→193→259; Scotland 100→164→255; Wales 100→184→243; West Midlands 100→180→254]\n\nThere are other factors that further explain labour market inflexibility. The UK\'s relatively poor transport infrastructure, individuals being unaware of job opportunities outside of their local area and perhaps more significantly a lack of transferable skills trapping workers in low paid jobs, all contribute to the problem. However, it could be said that technological progress is helping to make the labour market more flexible over time.\n\nSome therefore argue there are other causes of regional wage differentials beyond the flexibility of the labour market. Whilst the proportion of the workforce with an undergraduate degree has been rising in recent decades, this is not spread evenly across the country, with much of the increase concentrated in London. The nature of employment has changed dramatically in recent years; technology has seen labour substituted in some semi-skilled occupations whilst at the same time increasing demand for highly skilled workers. The impact of large multinationals in the financial and scientific sectors typically choosing to locate in the South of England must also not be underestimated.\n\nExtract 2: The policy response\n\nThe data in Fig. 2.1 compares the level of regional inequality around the world. The 90:10 figures denote the ratio between regional GDP per capita in the 90th percentile to the 10th percentile.\n\nFig. 2.1: Measures of inequality in regional GDP per capita, by country [bar chart: 80:20 ratio and 90:10 ratio shown for ~20 countries; UK near the higher end; Czech Republic, Sweden lowest]\n\nIt demonstrates the need for an urgent policy response by the UK government. In November 2020 a £4 billion fund was announced, which prioritised the need to upskill much of the population to address low productivity levels and invest heavily in improving the public transport network.\n\nThe commitment to this fund follows a report by the Institute of Fiscal Studies in October 2020, which presented a number of policy options:\n• Invest in high speed rail in the North, addressing current inequality in government spending on transport which is 2.8 times per capita higher in London than in the rest of the UK.\n• Subsidise research and development to create prosperous, knowledge-based local economies in left behind regions (R&D spending in the South East is 1.8 times higher per capita than in the rest of the UK).\n• Move a number of government departments and civil service jobs away from London to the regions (at present 20% of all civil servants are based in London, along with 64% of the most senior government jobs).\n• Provide targeted funding for specific towns to put towards local priorities, including retraining and skills support as well as investment in culture and heritage.\n\nDeciding on the most appropriate policy response is complicated by the wider challenges presented to the labour market by Brexit. On the one hand it is argued that tighter controls on immigration will benefit low skilled workers, but on the other there are serious concerns that the same group of workers in manufacturing towns already scarred by persistent long term unemployment resulting from deindustrialisation will suffer from the negative employment consequences that could result from more barriers to trade with the EU.\n\nExtract 3: Growth at all costs?\n\nThe UK government has been very clear that "levelling up" is not about redistributing income from London to the North but by increasing incomes across the UK, with incomes in the North rising faster than in London to enable them to catch up. However, the principle underpinning this — that economic growth is desirable — is increasingly coming under question. It can be argued that economic growth will not always lead to an improvement in welfare, with some economists suggesting the Genuine Progress Indicator (GPI), which includes factors such as the distribution of income, environmental standards and the cost of crime, is a more effective measure of standard of living.\n\nFig. 3.1: GDP and GPI per capita in New Zealand, 1970–2015 [line chart: GDP per capita rising consistently from ~$25,000 to ~$45,000; GPI per capita roughly flat/slowly rising from ~$25,000 to ~$28,000 in real 2014 prices]\n\nThere is growing support for the "degrowth" movement, which criticises the global capitalist system that pursues growth at all costs, causing human exploitation and environmental destruction. The degrowth movement instead argues in favour of prioritising social and ecological well-being over profits and consumption. Achieving this would require a strong commitment to reducing global GDP, in doing so utilising less natural resources and requiring us to live our lives differently to the way we do today. Supporters point to data in many developed countries that shows despite significant economic growth welfare has largely stagnated since the 1970s as powerful evidence in favour of this approach. However, such action would clearly require a radical change to the way economists think — virtually no attempt has been made to develop an economic model that doesn\'t rely on long term growth.',
+                parts: [
+                  { code: '31', prompt: 'Using the data in Fig. 1.1, describe the regional wage differentials that exist in the UK.', marks: 2 },
+                  { code: '32', prompt: 'Using the data in Fig. 1.2, calculate how much faster house prices rose in London compared to the North East between 2005 and 2020.', marks: 2 },
+                  { code: '33*', prompt: 'Evaluate, using an appropriate diagram(s) and the information in Extract 1, whether low labour market flexibility is the main cause of wage differentials between the North and South.', marks: 15, kind: 'diagram' },
+                  { code: '34', prompt: 'Explain, how the data in Fig. 2.1 can be used to measure the level of income inequality in the UK.', marks: 2 },
+                  { code: '35', prompt: 'Explain, why infrastructure such as high speed rail is unlikely to be provided in a market economy without government intervention.', marks: 3 },
+                  { code: '36', prompt: 'Evaluate, using the information in Extract 2, whether subsidising research and development in "left behind regions" would be the most effective macroeconomic policy option for the government to achieve its objective of a more even distribution of income.', marks: 8 },
+                  { code: '37', prompt: 'Explain, whether Fig. 3.1 supports the view that "economic growth will not always lead to an improvement in welfare".', marks: 3 },
+                  { code: '38*', prompt: 'Evaluate, using the information in Extract 3, the impact of removing economic growth as one of the government\'s primary macroeconomic objectives.', marks: 15 }
+                ]
+              }
+            ]
+          }
+        ]
+      }
     ]
   },
   {
