@@ -459,14 +459,24 @@
       display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99;
     }
     .mobile-overlay.active { display: block; }
+    .topics-toggle-btn {
+      display: none; align-items: center; gap: 6px;
+      padding: 7px 12px; border-radius: 8px;
+      background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.3);
+      color: var(--accent-dark); font-size: 13px; font-weight: 500;
+      cursor: pointer; white-space: nowrap; flex-shrink: 0;
+    }
     @media (max-width: 768px) {
       .mobile-menu-btn { display: flex; }
+      .topics-toggle-btn { display: flex; }
       .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; }
       .sidebar.open { transform: translateX(0); }
-      .main { margin-left: 0; padding: 16px 14px; }
+      .topics-panel { position: fixed; top: 0; left: 0; bottom: 0; width: min(320px, 85vw); z-index: 98; transform: translateX(-100%); transition: transform 0.3s ease; }
+      .topics-panel.open { transform: translateX(0); }
+      .content { width: 100%; min-width: 0; }
     }
     @media (max-width: 480px) {
-      .main { padding: 12px 10px; }
+      .content { padding: 12px 10px; }
     }
   </style>
 </head>
@@ -538,11 +548,17 @@
   <!-- ── MAIN CONTENT ── -->
   <div class="content">
     <div class="content-header" id="contentHeader">
-      <div>
-        <div class="content-title" id="contentTitle">Practice Questions</div>
-        <div class="content-sub" id="contentSub">Select a topic from the left to start practising</div>
+      <div style="display:flex;align-items:center;gap:10px;min-width:0;">
+        <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
+        <div style="min-width:0;">
+          <div class="content-title" id="contentTitle">Practice Questions</div>
+          <div class="content-sub" id="contentSub">Select a topic from the left to start practising</div>
+        </div>
       </div>
-      <div id="headerActions"></div>
+      <div style="display:flex;align-items:center;gap:8px;flex-shrink:0;">
+        <button class="topics-toggle-btn" onclick="document.querySelector('.topics-panel').classList.toggle('open');document.querySelector('.mobile-overlay').classList.toggle('active');">☰ Topics</button>
+        <div id="headerActions"></div>
+      </div>
     </div>
 
     <div class="content-body" id="contentBody">
@@ -2296,7 +2312,7 @@ function showEmpty(msg) {
 
 init();
 </script>
-<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
+<div class="mobile-overlay" onclick="document.querySelectorAll('.sidebar,.topics-panel').forEach(el=>el.classList.remove('open'));this.classList.remove('active');"></div>
 
 <!-- ── SIGN-OUT CONFIRM MODAL ── -->
 <div class="signout-overlay" id="signoutOverlay" onclick="if(event.target===this)cancelSignOut()">
