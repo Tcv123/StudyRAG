@@ -135,6 +135,25 @@
     .ms-note-delete:hover { border-color: #DC2626; color: #DC2626; }
     .ms-note-display { margin-top: 4px; padding: 7px 10px; background: rgba(217,119,6,0.06); border-left: 3px solid rgba(217,119,6,0.5); border-radius: 0 6px 6px 0; font-size: 12.5px; color: #78350F; line-height: 1.5; white-space: pre-wrap; }
 
+    /* Edit panels */
+    .ms-edit-bar { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+    .ms-edit-btn { display: inline-flex; align-items: center; gap: 5px; padding: 6px 12px; border-radius: 7px; font-family: var(--font-body); font-size: 12px; font-weight: 600; cursor: pointer; border: 1px dashed var(--border); background: none; color: var(--muted); }
+    .ms-edit-btn:hover { border-color: var(--accent); color: var(--accent-dark); border-style: solid; }
+    .ms-edit-btn.active { border-style: solid; border-color: var(--accent); color: var(--accent-dark); background: var(--accent-dim); }
+    .ms-edit-panel { display: none; margin-top: 10px; padding: 14px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; }
+    .ms-edit-panel.open { display: block; }
+    .ms-edit-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted2); margin-bottom: 6px; }
+    .ms-edit-hint { font-size: 12px; color: var(--muted); margin-bottom: 8px; line-height: 1.5; }
+    .ms-edit-textarea { width: 100%; padding: 9px 11px; font-family: var(--font-body); font-size: 13px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--text); resize: vertical; line-height: 1.6; min-height: 90px; }
+    .ms-edit-textarea:focus { outline: none; border-color: var(--accent); }
+    .ms-edit-actions { display: flex; gap: 8px; margin-top: 8px; }
+    .ms-edit-save { padding: 6px 14px; background: var(--accent); color: #fff; border: none; border-radius: 7px; font-family: var(--font-body); font-size: 12.5px; font-weight: 600; cursor: pointer; }
+    .ms-edit-save:hover { background: var(--accent-dark); }
+    .ms-edit-clear { padding: 6px 11px; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 7px; font-family: var(--font-body); font-size: 12.5px; cursor: pointer; }
+    .ms-edit-clear:hover { border-color: #DC2626; color: #DC2626; }
+    .ms-custom-badge { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; padding: 1px 6px; border-radius: 4px; background: rgba(37,99,235,0.12); color: var(--accent-dark); margin-left: 6px; vertical-align: middle; }
+    .ms-model-answer { white-space: pre-wrap; font-size: 13.5px; line-height: 1.7; color: var(--text); padding: 12px 14px; background: var(--surface2); border-radius: 8px; border-left: 3px solid var(--good); }
+
     /* No MS */
     .no-ms { font-size: 13px; color: var(--muted2); font-style: italic; }
 
@@ -239,212 +258,280 @@ function extractKeywords(points) {
   return [...kws].slice(0, 22);
 }
 
-// ── Note storage (localStorage, keyed by paperKey + partCode + pointIndex) ──
-function noteKey(paperKey, partCode, idx) {
-  return `ms_note__${paperKey}__${partCode}__${idx}`;
-}
-function getNote(paperKey, partCode, idx) {
-  try { return localStorage.getItem(noteKey(paperKey, partCode, idx)) || ''; } catch { return ''; }
-}
-function saveNote(paperKey, partCode, idx, text) {
-  try {
-    if (text.trim()) localStorage.setItem(noteKey(paperKey, partCode, idx), text);
-    else localStorage.removeItem(noteKey(paperKey, partCode, idx));
-  } catch {}
-}
+// ── Custom data storage (localStorage) ──
+function lsGet(k)    { try { return localStorage.getItem(k) || ''; } catch { return ''; } }
+function lsSet(k, v) { try { if (v) localStorage.setItem(k, v); else localStorage.removeItem(k); } catch {} }
+function customPtsKey(pk, pc)  { return `ms_pts__${pk}__${pc}`; }
+function modelAnsKey(pk, pc)   { return `ms_ans__${pk}__${pc}`; }
+function noteKey(pk, pc, idx)  { return `ms_note__${pk}__${pc}__${idx}`; }
 
+function getCustomPoints(pk, pc) {
+  const raw = lsGet(customPtsKey(pk, pc));
+  if (!raw) return [];
+  try { return JSON.parse(raw); } catch { return raw.split('\n').map(s => s.trim()).filter(Boolean); }
+}
+function saveCustomPoints(pk, pc, lines) {
+  lsSet(customPtsKey(pk, pc), lines.length ? JSON.stringify(lines) : '');
+}
+function getModelAnswer(pk, pc)        { return lsGet(modelAnsKey(pk, pc)); }
+function saveModelAnswer(pk, pc, text) { lsSet(modelAnsKey(pk, pc), text); }
+
+// ── Per-point note handlers ──
 window._msNoteToggle = function(btnEl, areaId) {
   const area = document.getElementById(areaId);
   if (!area) return;
   const open = area.classList.toggle('open');
   btnEl.textContent = open ? '✕ Close' : (btnEl.dataset.hasNote === '1' ? '📝 My note' : '+ Add note');
 };
-window._msNoteSave = function(paperKey, partCode, idx, areaId, btnId) {
+window._msNoteSave = function(pk, pc, idx, areaId, btnId) {
   const ta = document.getElementById('ta_' + areaId);
   const text = ta ? ta.value : '';
-  saveNote(paperKey, partCode, idx, text);
+  lsSet(noteKey(pk, pc, idx), text);
   const display = document.getElementById('nd_' + areaId);
   const btn = document.getElementById(btnId);
-  if (display) {
-    if (text.trim()) { display.style.display = 'block'; display.textContent = text; }
-    else { display.style.display = 'none'; }
-  }
-  if (btn) {
-    btn.dataset.hasNote = text.trim() ? '1' : '0';
-    btn.className = 'ms-note-btn' + (text.trim() ? ' has-note' : '');
-  }
+  if (display) { display.style.display = text.trim() ? 'block' : 'none'; display.textContent = text; }
+  if (btn) { btn.dataset.hasNote = text.trim() ? '1' : '0'; btn.className = 'ms-note-btn' + (text.trim() ? ' has-note' : ''); }
   const area = document.getElementById(areaId);
-  if (area) {
-    area.classList.remove('open');
-    if (btn) btn.textContent = text.trim() ? '📝 My note' : '+ Add note';
-  }
+  if (area) { area.classList.remove('open'); if (btn) btn.textContent = text.trim() ? '📝 My note' : '+ Add note'; }
 };
-window._msNoteDelete = function(paperKey, partCode, idx, areaId, btnId) {
-  saveNote(paperKey, partCode, idx, '');
+window._msNoteDelete = function(pk, pc, idx, areaId, btnId) {
+  lsSet(noteKey(pk, pc, idx), '');
   const ta = document.getElementById('ta_' + areaId);
   if (ta) ta.value = '';
-  _msNoteSave(paperKey, partCode, idx, areaId, btnId);
+  _msNoteSave(pk, pc, idx, areaId, btnId);
 };
 
-function renderPointWithNote(pointText, typeClass, paperKey, partCode, idx) {
-  const existing = getNote(paperKey, partCode, idx);
+// ── Edit panel handlers ──
+window._msEditToggle = function(panelId, btnId) {
+  const panel = document.getElementById(panelId);
+  const btn   = document.getElementById(btnId);
+  if (!panel) return;
+  const open = panel.classList.toggle('open');
+  if (btn) btn.classList.toggle('active', open);
+};
+window._msSavePoints = function(pk, pc, panelId, btnId) {
+  const ta = document.getElementById('ta_pts_' + panelId);
+  const raw = ta ? ta.value : '';
+  const lines = raw.split('\n').map(s => s.trim()).filter(Boolean);
+  saveCustomPoints(pk, pc, lines);
+  // Re-render this part card
+  const card = document.getElementById('mscard_' + panelId);
+  if (card) card.innerHTML = renderMsCard._cache[panelId] ? '' : '';
+  // Simplest: just re-render the whole viewer section
+  window._msRerenderPart && window._msRerenderPart(panelId);
+};
+window._msSaveAnswer = function(pk, pc, panelId) {
+  const ta = document.getElementById('ta_ans_' + panelId);
+  const text = ta ? ta.value : '';
+  saveModelAnswer(pk, pc, text);
+  window._msRerenderPart && window._msRerenderPart(panelId);
+};
+window._msClearPoints = function(pk, pc, panelId) {
+  saveCustomPoints(pk, pc, []);
+  window._msRerenderPart && window._msRerenderPart(panelId);
+};
+window._msClearAnswer = function(pk, pc, panelId) {
+  saveModelAnswer(pk, pc, '');
+  window._msRerenderPart && window._msRerenderPart(panelId);
+};
+
+// Registry so re-render knows what to rebuild
+window._msPartRegistry = {};
+window._msRerenderPart = function(uid) {
+  const reg = window._msPartRegistry[uid];
+  if (!reg) return;
+  const body = document.getElementById('pcbody_' + uid);
+  if (body) body.innerHTML = renderMsCard(reg.part, reg.paperKey);
+};
+
+function renderPointWithNote(pointText, typeClass, pk, pc, idx) {
+  const existing = lsGet(noteKey(pk, pc, idx));
   const hasNote = !!existing.trim();
-  const uid = (paperKey + '_' + partCode + '_' + idx).replace(/\W/g, '_');
-  const areaId = 'na_' + uid;
-  const btnId  = 'nb_' + uid;
+  const uid = (pk + '_' + pc + '_' + idx).replace(/\W/g, '_');
+  const areaId = 'na_' + uid, btnId = 'nb_' + uid;
   return `
     <div class="ms-point-wrap">
       <div class="ms-point-row">
         <div class="ms-point-text ${typeClass}">${esc(pointText)}</div>
-        <button class="ms-note-btn${hasNote ? ' has-note' : ''}" id="${btnId}"
-          data-has-note="${hasNote ? '1' : '0'}"
-          onclick="_msNoteToggle(this,'${areaId}')"
-        >${hasNote ? '📝 My note' : '+ Add note'}</button>
+        <button class="ms-note-btn${hasNote ? ' has-note' : ''}" id="${btnId}" data-has-note="${hasNote?'1':'0'}" onclick="_msNoteToggle(this,'${areaId}')">${hasNote ? '📝 My note' : '+ Add note'}</button>
       </div>
-      ${hasNote ? `<div class="ms-note-display" id="nd_${areaId}">${esc(existing)}</div>` : `<div class="ms-note-display" id="nd_${areaId}" style="display:none"></div>`}
+      <div class="ms-note-display" id="nd_${areaId}" style="${hasNote?'':'display:none'}">${esc(existing)}</div>
       <div class="ms-note-area" id="${areaId}">
-        <textarea class="ms-note-textarea" id="ta_${areaId}" placeholder="Your note on this point — e.g. memory trick, common mistake, extra context…">${esc(existing)}</textarea>
+        <textarea class="ms-note-textarea" id="ta_${areaId}" placeholder="Memory trick, common mistake, extra context…">${esc(existing)}</textarea>
         <div class="ms-note-actions">
-          <button class="ms-note-save" onclick="_msNoteSave('${paperKey}','${partCode}',${idx},'${areaId}','${btnId}')">Save note</button>
-          <button class="ms-note-delete" onclick="_msNoteDelete('${paperKey}','${partCode}',${idx},'${areaId}','${btnId}')">Delete</button>
+          <button class="ms-note-save" onclick="_msNoteSave('${pk}','${pc}',${idx},'${areaId}','${btnId}')">Save note</button>
+          <button class="ms-note-delete" onclick="_msNoteDelete('${pk}','${pc}',${idx},'${areaId}','${btnId}')">Delete</button>
         </div>
       </div>
     </div>`;
 }
 
 function renderMsCard(part, paperKey) {
-  const ms = part.markScheme;
-  const msType = ms ? (ms.type || 'points') : null;
+  const ms        = part.markScheme;
+  const msType    = ms ? (ms.type || 'points') : null;
   const totalMarks = part.marks;
-  const partCode = part.code || '';
+  const partCode  = part.code || '';
+  const uid       = (paperKey + '__' + partCode).replace(/\W/g, '_');
 
-  // Prompt display
+  // Register for re-render
+  window._msPartRegistry[uid] = { part, paperKey };
+
+  // Custom data
+  const customPts  = !ms ? getCustomPoints(paperKey, partCode) : [];
+  const modelAns   = getModelAnswer(paperKey, partCode);
+
+  // Effective points for keyword mining
+  const officialPts = (ms && msType === 'points') ? (ms.points || []) : [];
+  const effectivePts = officialPts.length ? officialPts : customPts;
+
+  // ── Prompt ──
   const promptHtml = part.prompt ? `<div class="part-prompt-full">${esc(part.prompt)}</div>` : '';
 
-  // ── Mark Allocation ── (always shown, even without a full mark scheme)
+  // ── Mark Allocation ──
   let allocHtml = '';
-  if (!ms) {
-    // No mark scheme yet — show marks-based chips as placeholders
-    const chips = Array.from({length: totalMarks}, (_, i) => `<span class="ms-alloc-chip">Mark ${i+1}</span>`).join('');
-    allocHtml = `<div class="ms-alloc-bar">${chips}</div>
-      <div class="ms-alloc-desc"><strong>${totalMarks}</strong> mark${totalMarks !== 1 ? 's' : ''} available · full mark scheme not yet added for this part</div>`;
-  } else if (msType === 'points') {
+  if (ms && msType === 'points') {
     const pts = ms.points || [];
     const chips = pts.map((_, i) => `<span class="ms-alloc-chip">Point ${i+1}</span>`).join('');
     allocHtml = `<div class="ms-alloc-bar">${chips}</div>
-      <div class="ms-alloc-desc">${pts.length} marking point${pts.length !== 1 ? 's' : ''} available · max <strong>${totalMarks}</strong> mark${totalMarks !== 1 ? 's' : ''} awarded${ms.guidance ? ` · <em>${esc(ms.guidance)}</em>` : ''}</div>`;
-  } else if (msType === 'levels') {
-    const lvls = ms.levels || [];
-    const chips = lvls.map(l => `<span class="ms-alloc-chip">${esc(l.descriptor)} ${l.range[0]}–${l.range[1]}</span>`).join('');
+      <div class="ms-alloc-desc">${pts.length} marking point${pts.length!==1?'s':''} · max <strong>${totalMarks}</strong> mark${totalMarks!==1?'s':''}${ms.guidance ? ` · <em>${esc(ms.guidance)}</em>` : ''}</div>`;
+  } else if (ms && msType === 'levels') {
+    const chips = (ms.levels||[]).map(l => `<span class="ms-alloc-chip">${esc(l.descriptor)} ${l.range[0]}–${l.range[1]}</span>`).join('');
+    allocHtml = `<div class="ms-alloc-bar">${chips}</div><div class="ms-alloc-desc">Levels-of-response · <strong>${totalMarks}</strong> marks</div>`;
+  } else if (ms) {
+    allocHtml = `<div class="ms-alloc-desc">Exact answer · <strong>${totalMarks}</strong> mark${totalMarks!==1?'s':''}</div>`;
+  } else if (customPts.length) {
+    const chips = customPts.map((_, i) => `<span class="ms-alloc-chip">Point ${i+1}</span>`).join('');
     allocHtml = `<div class="ms-alloc-bar">${chips}</div>
-      <div class="ms-alloc-desc">Levels-of-response · <strong>${totalMarks}</strong> marks total · holistically graded</div>`;
+      <div class="ms-alloc-desc">${customPts.length} custom point${customPts.length!==1?'s':''} · max <strong>${totalMarks}</strong> mark${totalMarks!==1?'s':''} <span class="ms-custom-badge">Your MS</span></div>`;
   } else {
-    allocHtml = `<div class="ms-alloc-desc">Exact answer required · <strong>${totalMarks}</strong> mark${totalMarks !== 1 ? 's' : ''}</div>`;
+    const chips = Array.from({length: totalMarks}, (_, i) => `<span class="ms-alloc-chip" style="opacity:.45">Mark ${i+1}</span>`).join('');
+    allocHtml = `<div class="ms-alloc-bar">${chips}</div>
+      <div class="ms-alloc-desc"><strong>${totalMarks}</strong> mark${totalMarks!==1?'s':''} available · enter the mark scheme points below to fill this in</div>`;
   }
 
-  // ── Mark Scheme Points / Levels (with per-point annotations) ──
-  let schemeHtml = '';
+  // Edit bar for MS points (only when no official MS)
+  const ptsEditUid  = 'ep_' + uid;
+  const ansEditUid  = 'ea_' + uid;
+  let editBarHtml = '';
   if (!ms) {
-    schemeHtml = `<div class="no-ms">Full mark scheme not yet added for this part. Use the official MS PDF above for reference.</div>`;
-  } else if (msType === 'points') {
-    const items = (ms.points || []).map((p, i) => renderPointWithNote(p, '', paperKey, partCode, i)).join('');
-    schemeHtml = `<div class="ms-points-list">${items}</div>`;
-    if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
-  } else if (msType === 'exact') {
-    const items = (ms.points || []).map((p, i) => renderPointWithNote(p, 'type-exact', paperKey, partCode, i)).join('');
-    schemeHtml = `<div class="ms-points-list">${items}</div>`;
-    if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
-  } else if (msType === 'levels') {
-    const lvls = ms.levels || [];
-    const total = lvls.length;
-    schemeHtml = lvls.map((l, i) => {
-      const cls = i === 0 ? 'top' : (i === total - 1 ? 'low' : 'mid');
-      return `<div class="ms-level-card ${cls}">
-        <div class="ms-level-range">${esc(l.descriptor)} · ${l.range[0]}–${l.range[1]} marks</div>
-        ${l.criteria ? `<div class="ms-level-criteria">${esc(l.criteria)}</div>` : ''}
+    const hasPts = customPts.length > 0;
+    const hasAns = !!modelAns.trim();
+    editBarHtml = `
+      <div class="ms-edit-bar">
+        <button class="ms-edit-btn${hasPts?' active':''}" id="btn_${ptsEditUid}" onclick="_msEditToggle('${ptsEditUid}','btn_${ptsEditUid}')">
+          ✏️ ${hasPts ? 'Edit mark scheme points' : 'Add mark scheme points'}
+        </button>
+        <button class="ms-edit-btn${hasAns?' active':''}" id="btn_${ansEditUid}" onclick="_msEditToggle('${ansEditUid}','btn_${ansEditUid}')">
+          📝 ${hasAns ? 'Edit model answer' : 'Add model answer'}
+        </button>
+      </div>
+      <div class="ms-edit-panel" id="${ptsEditUid}">
+        <div class="ms-edit-label">Mark scheme points</div>
+        <div class="ms-edit-hint">One point per line. Each line = one mark. Copy from the official PDF or write your own.</div>
+        <textarea class="ms-edit-textarea" id="ta_pts_${ptsEditUid}" placeholder="e.g. The processor fetches the instruction from memory&#10;The program counter is incremented&#10;The instruction is decoded by the CU">${esc(customPts.join('\n'))}</textarea>
+        <div class="ms-edit-actions">
+          <button class="ms-edit-save" onclick="_msSavePoints('${paperKey}','${partCode}','${uid}')">Save points</button>
+          <button class="ms-edit-clear" onclick="_msClearPoints('${paperKey}','${partCode}','${uid}')">Clear</button>
+        </div>
+      </div>
+      <div class="ms-edit-panel" id="${ansEditUid}">
+        <div class="ms-edit-label">Model answer</div>
+        <div class="ms-edit-hint">Write a full model answer. Keywords from this are extracted for Keyword Mining.</div>
+        <textarea class="ms-edit-textarea" id="ta_ans_${ansEditUid}" placeholder="Write a complete model answer here…" style="min-height:120px">${esc(modelAns)}</textarea>
+        <div class="ms-edit-actions">
+          <button class="ms-edit-save" onclick="_msSaveAnswer('${paperKey}','${partCode}','${uid}')">Save answer</button>
+          <button class="ms-edit-clear" onclick="_msClearAnswer('${paperKey}','${partCode}','${uid}')">Clear</button>
+        </div>
       </div>`;
+  }
+
+  // ── Official / Custom Mark Scheme points ──
+  let schemeHtml = '';
+  if (ms && msType === 'points') {
+    const items = (ms.points||[]).map((p,i) => renderPointWithNote(p,'',paperKey,partCode,i)).join('');
+    schemeHtml = `<div class="ms-points-list">${items}</div>${ms.guidance?`<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`:''}`;
+  } else if (ms && msType === 'exact') {
+    const items = (ms.points||[]).map((p,i) => renderPointWithNote(p,'type-exact',paperKey,partCode,i)).join('');
+    schemeHtml = `<div class="ms-points-list">${items}</div>${ms.guidance?`<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`:''}`;
+  } else if (ms && msType === 'levels') {
+    const lvls = ms.levels||[], tot = lvls.length;
+    schemeHtml = lvls.map((l,i) => {
+      const cls = i===0?'top':(i===tot-1?'low':'mid');
+      return `<div class="ms-level-card ${cls}"><div class="ms-level-range">${esc(l.descriptor)} · ${l.range[0]}–${l.range[1]} marks</div>${l.criteria?`<div class="ms-level-criteria">${esc(l.criteria)}</div>`:''}</div>`;
     }).join('');
     if (ms.indicative) {
-      const ind = Object.entries(ms.indicative).map(([k,v], i) => renderPointWithNote(`${k}: ${v}`, '', paperKey, partCode, 100 + i)).join('');
+      const ind = Object.entries(ms.indicative).map(([k,v],i) => renderPointWithNote(`${k}: ${v}`,'',paperKey,partCode,100+i)).join('');
       schemeHtml += `<div style="margin-top:12px;"><div class="ms-section-title" style="margin-bottom:6px;">Indicative content</div><div class="ms-points-list">${ind}</div></div>`;
     }
     if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
+  } else if (customPts.length) {
+    const items = customPts.map((p,i) => renderPointWithNote(p,'',paperKey,partCode,i)).join('');
+    schemeHtml = `<div class="ms-points-list">${items}</div>`;
+  } else {
+    schemeHtml = `<div class="no-ms">No mark scheme points yet — use the edit button above to add them from the official MS PDF.</div>`;
   }
 
-  // ── Answer Anatomy — always shown, driven by mark count ──
-  let anatomySteps = [];
-  const isLevels = msType === 'levels';
-  const isExact  = msType === 'exact';
-  if (isLevels) {
-    const lvls = ms.levels || [];
-    const top = lvls.length ? lvls.reduce((a,b) => b.range[1] > a.range[1] ? b : a) : null;
-    anatomySteps = [
-      `This is a <strong>levels-of-response</strong> question — quality of argument matters more than quantity of points.`,
-      top && top.criteria ? `Top level: ${esc(top.criteria.slice(0, 130))}${top.criteria.length > 130 ? '…' : ''}` : `Aim for the top level band with a clear, evidence-backed argument.`,
-      `Structure: define key terms → build the argument → address counter-arguments → reach a justified conclusion.`
-    ].filter(Boolean);
-    if (ms && ms.indicative) {
-      const snip = Object.values(ms.indicative).slice(0,3).map(v => esc(String(v).slice(0,60))).join('; ');
-      anatomySteps.push(`Draw on indicative content: ${snip}…`);
+  // ── Answer Anatomy ──
+  let anatomyContent = '';
+  if (modelAns.trim()) {
+    anatomyContent = `<div class="ms-model-answer">${esc(modelAns)}</div>`;
+  } else {
+    let steps = [];
+    if (msType === 'levels') {
+      const top = (ms.levels||[]).reduce((a,b) => b.range[1]>a.range[1]?b:a, {descriptor:'',range:[0,0],criteria:''});
+      steps = [
+        `Levels-of-response — quality of argument over quantity of points.`,
+        top.criteria ? `Top level: ${esc(top.criteria.slice(0,130))}${top.criteria.length>130?'…':''}` : `Aim for the top band with a structured, evidenced argument.`,
+        `Structure: define → argue → counter-argue → conclude.`
+      ];
+    } else if (msType === 'exact') {
+      steps = [`Precise answer required — units, sig figs, and format matter.`, `Show working for method marks.`];
+    } else if (totalMarks === 1) {
+      steps = [`One clear, specific point in a single sentence.`];
+    } else if (totalMarks === 2) {
+      steps = [`Two distinct points — don't rephrase the same idea.`, `One sentence each is enough.`];
+    } else if (totalMarks <= 4) {
+      steps = [`${totalMarks} separate points.`, `Avoid repeating the same idea.`, `Use subject-specific vocabulary.`];
+    } else if (totalMarks <= 6) {
+      steps = [`${totalMarks} points — breadth matters.`, `Each point should be a distinct idea.`, `Back up key points with mechanisms or examples.`, `Read the guidance — some marks combine.`];
+    } else {
+      steps = [`Extended response (${totalMarks} marks) — structure carefully.`, `Open with a clear position or definition.`, `Develop each point with evidence or mechanism.`, `Balance both sides then reach a justified conclusion.`, `Precise vocabulary throughout.`];
     }
-  } else if (isExact) {
-    anatomySteps = [
-      `Write the precise answer — units, significant figures, and format all matter.`,
-      `Show working where possible to earn method marks even if the final answer is wrong.`
-    ];
-  } else if (totalMarks === 1) {
-    anatomySteps = [`State <strong>one</strong> clear, specific point. A single accurate sentence is enough.`];
-  } else if (totalMarks === 2) {
-    anatomySteps = [
-      `Make <strong>two</strong> distinct points — do not repeat the same idea in different words.`,
-      `Each point should be a separate, self-contained statement.`
-    ];
-  } else if (totalMarks <= 4) {
-    anatomySteps = [
-      `Make <strong>${totalMarks}</strong> separate, distinct points.`,
-      `Avoid repeating the same idea in different words — each sentence should earn a new mark.`,
-      `Use subject-specific vocabulary; vague statements rarely score.`
-    ];
-  } else if (totalMarks <= 6) {
-    anatomySteps = [
-      `Cover <strong>${totalMarks}</strong> separate points — breadth matters here.`,
-      `Each point should be a distinct idea, not a rephrasing of the previous one.`,
-      `Support key points with mechanisms or examples where the mark scheme requires them.`,
-      `Check the guidance — some marks may only be awarded in combination with another point.`
-    ];
-  } else {
-    anatomySteps = [
-      `This is an extended response worth <strong>${totalMarks}</strong> marks — structure your answer carefully.`,
-      `Open with a clear position or definition, then develop each point with evidence or mechanism.`,
-      `Balance your argument: present both sides before reaching a justified conclusion.`,
-      `Use subject-specific vocabulary throughout — precision is rewarded at the top band.`
-    ];
+    anatomyContent = steps.map((s,i) => `<div class="ms-anatomy-step"><div class="ms-anatomy-num">${i+1}</div><div class="ms-anatomy-text">${s}</div></div>`).join('');
+    anatomyContent = `<div class="ms-anatomy-steps">${anatomyContent}</div>`;
+    if (!ms) anatomyContent += `<div style="margin-top:8px;font-size:12px;color:var(--muted);">Add a model answer above to replace this generic guidance with a worked example.</div>`;
   }
-  const anatomyHtml = anatomySteps.map((s,i) => `<div class="ms-anatomy-step"><div class="ms-anatomy-num">${i+1}</div><div class="ms-anatomy-text">${s}</div></div>`).join('');
 
-  // ── Keyword Mining — only meaningful when mark scheme points exist ──
+  // ── Keyword Mining ──
   let keywordsHtml = '';
-  if (ms && msType === 'points' && (ms.points || []).length) {
-    const kws = extractKeywords(ms.points);
-    const chips = kws.map(kw => `<span class="ms-kw-chip">${esc(kw)}</span>`).join('');
-    keywordsHtml = `<div class="ms-kw-list">${chips}</div><div style="font-size:12px;color:var(--muted);">These are the examiner's key terms — use them naturally in your answer to signal precision.</div>`;
+  const kwSources = [...effectivePts, ...(modelAns ? [modelAns] : [])];
+  if (kwSources.length) {
+    const kws = extractKeywords(kwSources);
+    if (kws.length) {
+      const chips = kws.map(kw => `<span class="ms-kw-chip">${esc(kw)}</span>`).join('');
+      const src = officialPts.length ? 'mark scheme points' : (customPts.length && modelAns ? 'your mark scheme points and model answer' : customPts.length ? 'your mark scheme points' : 'your model answer');
+      keywordsHtml = `<div class="ms-kw-list">${chips}</div><div style="font-size:12px;color:var(--muted);">Extracted from ${src}. Use these naturally in your answer.</div>`;
+    } else {
+      keywordsHtml = `<div style="font-size:13px;color:var(--muted2);">No keywords could be extracted yet.</div>`;
+    }
   } else {
-    keywordsHtml = `<div style="font-size:13px;color:var(--muted2);">Keyword mining will appear once mark scheme points are added for this part.</div>`;
+    keywordsHtml = `<div style="font-size:13px;color:var(--muted2);">Add mark scheme points or a model answer to generate keywords.</div>`;
   }
 
   return `
     ${promptHtml}
-    <div class="ms-section">
+    ${editBarHtml}
+    <div class="ms-section" style="margin-top:${editBarHtml?'14px':'0'}">
       <div class="ms-section-title">Mark Allocation</div>
       ${allocHtml}
     </div>
     <div class="ms-section">
-      <div class="ms-section-title">Official Mark Scheme${ms ? ' — click "+ Add note" to annotate any point' : ''}</div>
+      <div class="ms-section-title">Mark Scheme${ms?' — click "+ Add note" to annotate':''}</div>
       ${schemeHtml}
     </div>
     <div class="ms-section">
-      <div class="ms-section-title">Answer Anatomy</div>
-      <div class="ms-anatomy-steps">${anatomyHtml}</div>
+      <div class="ms-section-title">Answer Anatomy${modelAns?' — Model Answer':''}</div>
+      ${anatomyContent}
     </div>
     <div class="ms-section">
       <div class="ms-section-title">Keyword Mining</div>
