@@ -97,10 +97,8 @@
     .ms-level-card.mid { background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.2); }
     .ms-level-card.low { background: rgba(217,119,6,0.06); border: 1px solid rgba(217,119,6,0.2); }
 
-    /* Key terms */
-    .mc-key-terms { display: flex; align-items: center; flex-wrap: wrap; gap: 6px; padding-top: 14px; border-top: 1px solid var(--border); margin-top: 4px; }
-    .mc-key-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted2); margin-right: 4px; white-space: nowrap; }
-    .ms-kw-chip { padding: 3px 11px; border-radius: 20px; font-size: 12.5px; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.25); color: var(--accent-dark); }
+    /* Keyword highlight inside model answer */
+    .kw-highlight { background: rgba(37,99,235,0.15); color: var(--accent-dark); border-radius: 3px; padding: 0 2px; font-weight: 600; }
 
     /* Edit bar */
     .mc-edit-bar { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 10px; }
@@ -407,18 +405,31 @@ function renderMsCard(part, paperKey) {
       </div>`;
   }
 
-  // ── Model answer (shown for every part) ──
+  // ── Key terms extracted from mark scheme points ──
+  const kws = effectivePts.length ? extractKeywords(effectivePts) : [];
+
+  // ── Model answer with key terms highlighted inline ──
   const hasAns = !!modelAns.trim();
+  let modelAnswerDisplay = '';
+  if (hasAns && kws.length) {
+    // Highlight each keyword inside the model answer text
+    const escaped = esc(modelAns);
+    const pattern = new RegExp('(' + kws.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
+    modelAnswerDisplay = escaped.replace(pattern, '<mark class="kw-highlight">$1</mark>');
+  } else if (hasAns) {
+    modelAnswerDisplay = esc(modelAns);
+  }
+
   const modelAnswerHtml = `
     <div class="mc-model-section">
-      ${hasAns ? `<div class="mc-model-answer">${esc(modelAns)}</div>` : ''}
+      ${hasAns ? `<div class="mc-model-answer">${modelAnswerDisplay}</div>` : ''}
       <div class="mc-edit-bar" style="margin-top:${hasAns ? '10px' : '0'};">
         <button class="mc-edit-btn${hasAns ? ' active' : ''}" id="btn_${ansEditUid}" onclick="_msEditToggle('${ansEditUid}','btn_${ansEditUid}')">
-          📝 ${hasAns ? 'Edit model answer' : 'Write a model answer'}
+          📝 ${hasAns ? 'Edit model answer' : 'Add model answer'}
         </button>
       </div>
       <div class="ms-edit-panel" id="${ansEditUid}">
-        <div class="ms-edit-hint">Write a complete model answer for this question. Keywords from it will appear as key terms.</div>
+        <div class="ms-edit-hint">Write a complete model answer — key terms from the mark scheme will be highlighted automatically.</div>
         <textarea class="ms-edit-textarea" id="ta_ans_${ansEditUid}" placeholder="Write a complete model answer here…" style="min-height:110px">${esc(modelAns)}</textarea>
         <div class="ms-edit-actions">
           <button class="ms-edit-save" onclick="_msSaveAnswer('${paperKey}','${partCode}','${uid}')">Save</button>
@@ -427,20 +438,11 @@ function renderMsCard(part, paperKey) {
       </div>
     </div>`;
 
-  // ── Key terms ──
-  const kwSources = [...effectivePts, ...(modelAns ? [modelAns] : [])];
-  const kws = kwSources.length ? extractKeywords(kwSources) : [];
-  const keyTermsHtml = kws.length ? `<div class="mc-key-terms">
-    <span class="mc-key-label">Key terms</span>
-    ${kws.map(kw => `<span class="ms-kw-chip">${esc(kw)}</span>`).join('')}
-  </div>` : '';
-
   return `
     ${promptHtml}
     <div class="ms-points-list">${pointsHtml}</div>
     ${editPtsHtml}
-    ${modelAnswerHtml}
-    ${keyTermsHtml}`;
+    ${modelAnswerHtml}`;
 }
 
 function renderPaper(paper) {
