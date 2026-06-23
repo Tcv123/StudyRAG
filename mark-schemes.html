@@ -66,19 +66,32 @@
     .btn-ms-pdf { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.3); color: var(--accent-dark); border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; }
     .btn-ms-pdf:hover { background: var(--accent); color: #fff; }
 
-    /* Part cards */
-    .parts-list { display: flex; flex-direction: column; gap: 14px; }
-    .part-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
-    .part-card-head { display: flex; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; }
-    .part-card-head:hover { background: var(--surface2); }
-    .part-code { font-family: var(--font-display); font-size: 16px; }
+    /* Question cards */
+    .questions-list { display: flex; flex-direction: column; gap: 12px; }
+    .q-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .q-card-head { display: flex; align-items: center; gap: 12px; padding: 15px 20px; cursor: pointer; user-select: none; }
+    .q-card-head:hover { background: var(--surface2); }
+    .q-num { font-family: var(--font-display); font-size: 17px; flex: 1; }
+    .q-marks { font-size: 13px; color: var(--muted); }
+    .q-arrow { color: var(--muted2); font-size: 13px; margin-left: 8px; transition: transform 0.2s; display: inline-block; }
+    .q-card.open .q-arrow { transform: rotate(180deg); }
+    .q-card-body { display: none; border-top: 1px solid var(--border); }
+    .q-card.open .q-card-body { display: block; }
+
+    /* Part rows inside question card */
+    .part-row { border-bottom: 1px solid var(--border); }
+    .part-row:last-child { border-bottom: none; }
+    .part-row-head { display: flex; align-items: center; gap: 12px; padding: 13px 20px; cursor: pointer; user-select: none; }
+    .part-row-head:hover { background: var(--surface2); }
+    .part-code { font-size: 13px; font-weight: 700; color: var(--accent-dark); min-width: 64px; flex-shrink: 0; }
     .part-prompt { font-size: 13.5px; color: var(--muted); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .part-marks-badge { background: var(--accent-dim); color: var(--accent-dark); border-radius: 6px; padding: 3px 9px; font-size: 12px; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
-    .part-ms-type { font-size: 11px; color: var(--muted2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
-    .part-arrow { color: var(--muted2); font-size: 13px; flex-shrink: 0; transition: transform 0.2s; }
-    .part-card.open .part-arrow { transform: rotate(180deg); }
-    .part-card-body { display: none; border-top: 1px solid var(--border); padding: 18px 20px; }
-    .part-card.open .part-card-body { display: block; }
+    .part-row-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
+    .part-marks-badge { background: var(--accent-dim); color: var(--accent-dark); border-radius: 6px; padding: 3px 9px; font-size: 12px; font-weight: 700; white-space: nowrap; }
+    .part-ms-type { font-size: 11px; color: var(--muted2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .part-arrow { color: var(--muted2); font-size: 12px; transition: transform 0.2s; display: inline-block; }
+    .part-row.open .part-arrow { transform: rotate(180deg); }
+    .part-row-body { display: none; border-top: 1px solid var(--border); padding: 20px 22px; background: var(--surface2); }
+    .part-row.open .part-row-body { display: block; }
 
     /* Question text */
     .mc-question { font-size: 14.5px; line-height: 1.7; color: var(--text); margin-bottom: 16px; padding: 13px 16px; background: var(--surface2); border-radius: 9px; border-left: 3px solid var(--accent); }
@@ -504,8 +517,15 @@ function renderPaper(paper) {
 }
 
 window.togglePart = function(i) {
-  const card = document.getElementById('pc-' + i);
-  if (card) card.classList.toggle('open');
+  const row = document.getElementById('pc-' + i);
+  if (row) row.classList.toggle('open');
+};
+window.toggleQuestion = function(qi) {
+  const card = document.getElementById('qb-' + qi);
+  const arrow = document.getElementById('qa-' + qi);
+  if (!card) return;
+  const open = card.parentElement.classList.toggle('open');
+  if (arrow) arrow.style.transform = open ? 'rotate(180deg)' : '';
 };
 
 // ── Picker logic ──
@@ -618,35 +638,54 @@ function buildPicker(userSubs) {
       ? `<a class="btn-ms-pdf" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Full MS PDF</a>`
       : '';
 
+    // Group by top-level question number
+    const questions = paper.questions || [];
+    let globalPartIdx = 0;
+    const questionsHtml = questions.map((q, qi) => {
+      const qParts = window.paperParts ? window.paperParts({ questions: [q], markSchemes: paper.markSchemes }) : (q.parts || []);
+      const qMarks = qParts.reduce((s, p) => s + (p.marks || 0), 0);
+      const partsHtml = qParts.map((part) => {
+        const pi = globalPartIdx++;
+        const msType = part.markScheme ? (part.markScheme.type || 'points') : null;
+        const typeLabel = msType === 'levels' ? 'Levels' : msType === 'exact' ? 'Exact' : msType === 'points' ? 'Points' : '';
+        const shortPrompt = (part.prompt || '').slice(0, 90) + ((part.prompt || '').length > 90 ? '…' : '');
+        return `
+          <div class="part-row" id="pc-${pi}">
+            <div class="part-row-head" onclick="togglePart(${pi})">
+              <span class="part-code">${esc(part.code || String(pi+1))}</span>
+              <span class="part-prompt">${esc(shortPrompt)}</span>
+              <span class="part-row-right">
+                <span class="part-marks-badge">${part.marks} mark${part.marks !== 1 ? 's' : ''}</span>
+                ${typeLabel ? `<span class="part-ms-type">${typeLabel}</span>` : ''}
+                <span class="part-arrow">▾</span>
+              </span>
+            </div>
+            <div class="part-row-body">${renderMsCard(part, paperKey, paper.id)}</div>
+          </div>`;
+      }).join('');
+      return `
+        <div class="q-card">
+          <div class="q-card-head" onclick="toggleQuestion(${qi})">
+            <span class="q-num">Question ${q.number || qi + 1}</span>
+            <span class="q-marks">${qMarks} marks</span>
+            <span class="q-arrow" id="qa-${qi}">▾</span>
+          </div>
+          <div class="q-card-body" id="qb-${qi}">
+            ${partsHtml}
+          </div>
+        </div>`;
+    }).join('');
+
     viewer.innerHTML = `
       <div class="paper-header">
-        <div class="paper-header-title">${esc(paper.title || paper.label || 'Paper')}</div>
+        <div class="paper-header-title">${esc(paper.paperName || paper.year || 'Paper')} <span style="font-family:var(--font-body);font-size:14px;color:var(--muted);font-weight:400;">${esc(paper.paperCode || '')}</span></div>
         <div class="paper-header-meta">
-          ${paper.year ? `<span class="meta-chip">📅 ${esc(String(paper.year))}</span>` : ''}
-          <span class="meta-chip">${parts.length} part${parts.length !== 1 ? 's' : ''}</span>
-          <span class="meta-chip">${partsWithMs.length} with mark scheme</span>
-          ${paper.totalMarks ? `<span class="meta-chip">/${paper.totalMarks} marks</span>` : ''}
+          ${paper.year ? `<span class="meta-chip">${esc(String(paper.year))}</span>` : ''}
+          ${paper.totalMarks ? `<span class="meta-chip">${paper.totalMarks} marks total</span>` : ''}
         </div>
         ${pdfBtn}
       </div>
-      <div class="parts-list">
-        ${parts.map((part, i) => {
-          const msType = part.markScheme ? (part.markScheme.type || 'points') : null;
-          const typeLabel = msType === 'levels' ? 'Levels' : msType === 'exact' ? 'Exact' : msType === 'points' ? 'Points' : 'No MS';
-          const shortPrompt = (part.prompt || '').slice(0, 80) + ((part.prompt || '').length > 80 ? '…' : '');
-          return `
-            <div class="part-card" id="pc-${i}">
-              <div class="part-card-head" onclick="togglePart(${i})">
-                <span class="part-code">${esc(part.code || String(i+1))}</span>
-                <span class="part-prompt">${esc(shortPrompt)}</span>
-                <span class="part-marks-badge">${part.marks} mark${part.marks !== 1 ? 's' : ''}</span>
-                <span class="part-ms-type">${typeLabel}</span>
-                <span class="part-arrow">▾</span>
-              </div>
-              <div class="part-card-body">${renderMsCard(part, paperKey, paper.id)}</div>
-            </div>`;
-        }).join('')}
-      </div>`;
+      <div class="questions-list">${questionsHtml}</div>`;
   });
 }
 
