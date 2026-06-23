@@ -1,0 +1,927 @@
+A-level
+CHEMISTRY
+7405/3
+
+Paper 3
+
+Mark scheme
+June 2022
+
+Version: 1.0 Final
+
+*226A74053/MS*
+                                                MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Mark schemes are prepared by the Lead Assessment Writer and considered, together with the relevant
+questions, by a panel of subject teachers. This mark scheme includes any amendments made at the
+standardisation events which all associates participate in and is the scheme which was used by them in
+this examination. The standardisation process ensures that the mark scheme covers the students'
+responses to questions and that every associate understands and applies it in the same correct way.
+As preparation for standardisation each associate analyses a number of students' scripts. Alternative
+answers not already covered by the mark scheme are discussed and legislated for. If, after the
+standardisation process, associates encounter unusual answers which have not been raised they are
+required to refer these to the Lead Examiner.
+It must be stressed that a mark scheme is a working document, in many cases further developed and
+expanded on the basis of students' reactions to a particular paper. Assumptions about future mark
+schemes on the basis of one year's document should be avoided; whilst the guiding principles of
+assessment remain constant, details will change, depending on the content of a particular examination
+paper.
+Further copies of this mark scheme are available from aqa.org.uk
+
+  Copyright information
+  AQA retains the copyright on all its publications. However, registered schools/colleges for AQA are permitted to copy material from this booklet for
+  their own internal use, with the following important exception: AQA cannot give permission to schools/colleges to photocopy any material that is
+  acknowledged to a third party even for internal use within the centre.
+  Copyright © 2022 AQA and its licensors. All rights reserved.
+2
+                                                MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+AS and A-Level Chemistry
+
+Mark Scheme Instructions for Examiners
+
+1. General
+         The mark scheme for each question shows:
+         · the marks available for each part of the question
+         · the total marks available for the question
+         · the typical answer or answers which are expected
+         · extra information to help the examiner make his or her judgement and help to delineate what
+              is acceptable or not worthy of credit or, in discursive answers, to give an overview of the area
+              in which a mark or marks may be awarded.
+         The extra information in the `Comments' column is aligned to the appropriate answer in the left-
+         hand part of the mark scheme and should only be applied to that item in the mark scheme.
+         You should mark according to the contents of the mark scheme. If you are in any doubt about
+         applying the mark scheme to a particular response, consult your Team Leader.
+         At the beginning of a part of a question a reminder may be given, for example: where
+         consequential marking needs to be considered in a calculation; or the answer may be on the
+         diagram or at a different place on the script.
+         In general the right-hand side of the mark scheme is there to provide those extra details which
+         might confuse the main part of the mark scheme yet may be helpful in ensuring that marking is
+         straightforward and consistent.
+         The use of M1, M2, M3 etc in the right-hand column refers to the marking points in the order in
+         which they appear in the mark scheme. So, M1 refers to the first marking point, M2 the second
+         marking point etc.
+
+2. Emboldening
+         2.1 In a list of acceptable answers where more than one mark is available `any two from' is
+                   used, with the number of marks emboldened. Each of the following bullet points is a
+                   potential mark.
+         2.2 A bold and is used to indicate that both parts of the answer are required to award the
+                   mark.
+         2.3 Alternative answers acceptable for a mark are indicated by the use of OR. Different terms
+                   in the mark scheme are shown by a / ; eg allow smooth / free movement.
+
+3. Marking points
+         3.1 Marking of lists
+                   This applies to questions requiring a set number of responses, but for which students
+                   have provided extra responses. The general `List' principle to be followed in such a
+                   situation is that `right + wrong = wrong'.
+                   Each error / contradiction negates each correct response. So, if the number of errors /
+                   contradictions equals or exceeds the number of marks available for the question, no
+                   marks can be awarded.
+                   However, responses considered to be neutral (often prefaced by `Ignore' in the mark
+                   scheme) are not penalised.
+
+                                                                                                                                                                                                3
+         MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+For example, in a question requiring 2 answers for 2 marks:
+
+Correct      Incorrect     Mark (2)                          Comment
+answers    answers (ie
+         incorrect rather  1
+    1     than neutral)
+    1                                They have not exceeded the maximum
+                  0
+    1                      1         number of responses so there is no
+    2             1
+    2                                                        penalty.
+    2             2
+    3                                They have exceeded the maximum number
+    3             0
+                  1        0         of responses so the extra incorrect
+    3             2
+    3             0                  response cancels the correct one.
+
+                  1        2
+
+                  2        1
+                  3
+                           0
+
+                           2         The maximum mark is 2
+
+                                     The incorrect response cancels out one of
+
+                           1         the two correct responses that gained
+
+                                                             credit.
+
+                           0         Two incorrect responses cancel out the two
+                                                        marks gained.
+
+                           0
+
+3.2 Marking procedure for calculations
+
+         Full marks should be awarded for a correct numerical answer, without any working
+         shown, unless the question states `Show your working' or `justify your answer'. In this
+         case, the mark scheme will clearly indicate what is required to gain full credit.
+
+         If an answer to a calculation is incorrect and working is shown, process mark(s) can
+         usually be gained by correct substitution / working and this is shown in the `Comments'
+         column or by each stage of a longer calculation.
+
+3.3 Errors carried forward, consequential marking and arithmetic errors
+
+         Allowances for errors carried forward are most likely to be restricted to calculation
+         questions and should be shown by the abbreviation ECF or consequential in the marking
+         scheme.
+
+         An arithmetic error should be penalised for one mark only unless otherwise amplified in
+         the marking scheme. Arithmetic errors may arise from a slip in a calculation or from an
+         incorrect transfer of a numerical value from data given in a question.
+
+         3.4 Equations
+                   In questions requiring students to write equations, state symbols are generally ignored
+                   unless otherwise stated in the `Comments' column.
+                   Examiners should also credit correct equations using multiples and fractions unless
+                   otherwise stated in the `Comments' column.
+
+4
+                                       MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+3.5 Oxidation states
+         In general, the sign for an oxidation state will be assumed to be positive unless
+         specifically shown to be negative.
+
+3.6 Interpretation of `it'
+         Answers using the word `it' should be given credit only if it is clear that the `it' refers to the
+         correct subject.
+
+3.7 Phonetic spelling
+         The phonetic spelling of correct scientific terminology should be credited unless there is a
+         possible confusion with another technical term or if the question requires correct IUPAC
+         nomenclature.
+
+3.8 Brackets
+         (.....) are used to indicate information which is not essential for the mark to be awarded
+         but is included to help the examiner identify the sense of the answer required.
+
+3.9 Ignore / Insufficient / Do not allow
+         Ignore or insufficient is used when the information given is irrelevant to the question or not
+         enough to gain the marking point. Any further correct amplification could gain the marking
+         point.
+         Do not allow means that this is a wrong answer which, even if the correct answer is
+         given, will still mean that the mark is not awarded.
+
+3.10 Marking crossed out work
+         Crossed out work that has not been replaced should be marked as if it were not crossed
+         out, if possible. Where crossed out work has been replaced, the replacement work and
+         not the crossed out work should be marked.
+
+3.11 Reagents
+         The command word `Identify', allows the student to choose to use either the name or the
+         formula of a reagent in their answer. In some circumstances, the list principle may apply
+         when both the name and the formula are used. Specific details will be given in mark
+         schemes.
+
+         The guiding principle is that a reagent is a chemical which can be taken out of a bottle or
+         container. Failure to identify complete reagents will be penalised, but follow-on marks
+         (eg for a subsequent equation or observation) can be scored from an incorrect attempt
+         (possibly an incomplete reagent) at the correct reagent. Specific details will be given in
+         mark schemes.
+
+         For example, no credit would be given for:
+         · the cyanide ion or CN­ when the reagent should be potassium cyanide or KCN;
+
+                                                                                                                                                                                  5
+                                                MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+                   · the hydroxide ion or OH­ when the reagent should be sodium hydroxide or NaOH;
+                   · the Ag(NH3)2+ ion when the reagent should be Tollens' reagent (or ammoniacal silver
+
+                      nitrate). In this example, no credit is given for the ion, but credit could be given for a
+                      correct observation following on from the use of the ion. Specific details will be given in
+                      mark schemes.
+
+                   In the event that a student provides, for example, both KCN and cyanide ion, it would be
+                   usual to ignore the reference to the cyanide ion (because this is not contradictory) and
+                   credit the KCN. Specific details will be given in mark schemes.
+
+         3.12 Organic structures
+                   Where students are asked to draw organic structures, unless a specific type is required in
+                   the question and stated in the mark scheme, these may be given as displayed, structural
+                   or skeletal formulas or a combination of all three as long as the result is unambiguous.
+                   In general
+                   · Displayed formulae must show all of the bonds and all of the atoms in the molecule, but
+                      need not show correct bond angles.
+                   · Skeletal formulae must show carbon atoms by an angle or suitable intersection in the
+                      skeleton chain. Functional groups must be shown and it is essential that all atoms
+                      other than C atoms are shown in these (except H atoms in the functional groups of
+                      aldehydes, secondary amines and N-substituted amides which do not need to be
+                      shown).
+                   · Structures must not be ambiguous, eg 1-bromopropane should be shown as
+                      CH3CH2CH2Br and not as the molecular formula C3H7Br which could also represent the
+                      isomeric 2-bromopropane.
+                   · Bonds should be drawn correctly between the relevant atoms. This principle applies in
+                      all cases where the attached functional group contains a carbon atom, eg nitrile,
+                      carboxylic acid, aldehyde and acid chloride. The carbon-carbon bond should be clearly
+                      shown. Wrongly bonded atoms will be penalised on every occasion. (see the
+                      examples below)
+                   · The same principle should also be applied to the structure of alcohols. For example, if
+                      students show the alcohol functional group as C  HO, they should be penalised on
+                      every occasion.
+                   · Latitude should be given to the representation of C  C bonds in alkyl groups, given
+                      that CH3 is considered to be interchangeable with H3C even though the latter would
+                      be preferred.
+                   · Similar latitude should be given to the representation of amines where NH2 C will be
+                      allowed, although H2N C would be preferred.
+                   · Poor presentation of vertical C  CH3 bonds or vertical C  NH2 bonds should not be
+                      penalised. For other functional groups, such as  OH and  CN, the limit of tolerance
+                      is the half-way position between the vertical bond and the relevant atoms in the
+                      attached group.
+
+6
+              MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+By way of illustration, the following would apply.
+
+CH3 C              C                 C               OH C                      C
+                 CH3                 CH3CH2                                 OH
+ allowed                                            not allowed
+              allowed       not allowed                              not allowed
+NH2 C
+                    C      NH2                                     NO2
+ allowed          NH2
+                               allowed                  NH2        not allowed
+              allowed
+                                                    allowed
+
+CN C                  C    COOH C                           C              C
+not allowed        CN                               COOH               COOH
+                             not allowed
+              not allowed                           not allowed    not allowed
+
+CHO C                C            C                 COCl C                 C
+                                CHO                                  COCl
+ not allowed    CHO                                   not allowed
+              not allowed  not allowed                             not allowed
+
+· Representation of CH2 by C-H2 will be penalised.
+
+· Some examples are given here of structures for specific compounds that should not
+   gain credit (but, exceptions may be made in the context of balancing equations)
+
+CH3COH             for     ethanal
+
+CH3CH2HO           for     ethanol
+                           ethanol
+OHCH2CH3           for     ethanol
+
+C2H6O              for
+
+CH2CH2             for     ethene
+CH2.CH2
+CH2:CH2            for     ethene
+
+                   for     ethene
+
+· Each of the following should gain credit as alternatives to correct representations of
+   the structures.
+
+CH2 = CH2     for          ethene, H2C=CH2
+                           propan-2-ol, CH3CH(OH)CH3
+CH3CHOHCH3 for
+
+                                                                                          7
+                       MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+   · In most cases, the use of `sticks' to represent C  H bonds in a structure should not be
+      penalised. The exceptions to this when "sticks" will be penalised include
+
+           · structures in mechanisms where the C  H bond is essential (e.g. elimination
+              reactions in halogenoalkanes and alcohols)
+
+           · when a displayed formula is required
+
+           · when a skeletal structure is required or has been drawn by the candidate
+
+   3.13 Organic names
+
+            As a general principle, non-IUPAC names or incorrect spelling or incomplete names
+            should not gain credit. Some illustrations are given here.
+
+            Unnecessary but not wrong numbers will not be penalised such as the number `2' in 2-
+            methylpropane or the number `1' in 2-chlorobutan-1-oic acid.
+
+   but-2-ol            should be butan-2-ol
+
+   2-hydroxybutane     should be butan-2-ol
+
+   butane-2-ol         should be butan-2-ol
+
+   2-butanol           should be butan-2-ol
+
+   ethan-1,2-diol      should be ethane-1,2-diol
+
+   2-methpropan-2-ol   should be 2-methylpropan-2-ol
+
+   2-methylbutan-3-ol  should be 3-methylbutan-2-ol
+
+   3-methylpentan      should be 3-methylpentane
+
+   3-mythylpentane     should be 3-methylpentane
+
+   3-methypentane      should be 3-methylpentane
+
+   propanitrile        should be propanenitrile
+
+   aminethane          should be ethylamine (although aminoethane can gain credit)
+
+   2-methyl-3-bromobutane should be 2-bromo-3-methylbutane
+
+   3-bromo-2-methylbutane should be 2-bromo-3-methylbutane
+
+   3-methyl-2-bromobutane should be 2-bromo-3-methylbutane
+
+   2-methylbut-3-ene   should be 3-methylbut-1-ene
+
+   difluorodichloromethane should be dichlorodifluoromethane
+
+8
+        MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+3.14 Organic reaction mechanisms
+
+         Curly arrows should originate either from a lone pair of electrons or from a bond.
+
+         The following representations should not gain credit and will be penalised each time
+         within a clip.
+
+H3C Br     H3C .. Br                                  .  .Br
+
+                                                   H3C
+
+        _             .. _
+
+: OH                  OH
+
+For example, the following would score zero marks
+
+           H
+
+           H3C C Br
+           HO H
+
+When the curly arrow is showing the formation of a bond to an atom, the arrow can go
+directly to the relevant atom, alongside the relevant atom or more than half-way towards
+the relevant atom.
+
+In free-radical substitution:
+· the absence of a radical dot should be penalised once only within a clip.
+· the use of half-headed arrows is not required, but the use of double-headed arrows or
+
+   the incorrect use of half-headed arrows in free-radical mechanisms should be penalised
+   once only within a clip.
+
+The correct use of skeletal formulae in mechanisms is acceptable, but where a C-H bond
+breaks, both the bond and the H must be drawn to gain credit.
+
+3.15 Extended responses
+
+         For questions marked using a `Levels of Response' mark scheme:
+
+         Level of response mark schemes are broken down into three levels, each of which has a
+         descriptor. Each descriptor contains two statements. The first statement is the Chemistry
+         content statement and the second statement is the communication statement.
+
+         Determining a level
+
+         Start at the lowest level of the mark scheme and use it as a ladder to see whether the
+         answer meets the Chemistry content descriptor for that level. The descriptor for the level
+         indicates the qualities that might be seen in the student's answer for that level. If it meets
+         the lowest level, then go to the next one and decide if it meets this level, and so on, until
+         you have a match between the level descriptor and the answer.
+
+                                                                                               9
+                                                MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+                   When assigning a level you should look at the overall quality of the answer and not look to
+                   pick holes in small and specific parts of the answer where the student has not performed
+                   quite as well as the rest. If the answer covers different aspects of different levels of the
+                   mark scheme you should use a best fit approach for defining the level.
+
+                   Once the level has been decided, the mark within the level is determined by the
+                   communication statement:
+                   · If the answer completely matches the communication descriptor, award the higher mark
+
+                     within the level.
+                   · If the answer does not completely match the communication descriptor, award the lower
+
+                     mark within the level.
+
+                   The exemplar materials used during standardisation will help you to determine the
+                   appropriate level. There will be an exemplar in the standardising materials which will
+                   correspond with each level of the mark scheme and for each mark within each level. This
+                   answer will have been awarded a mark by the Lead Examiner. You can compare the
+                   student's answer with the exemplar to determine if it is the same standard, better or worse
+                   than the example. You can then use this to allocate a mark for the answer based on the
+                   Lead Examiner's mark on the exemplar.
+                   You may well need to read back through the answer as you apply the mark scheme to
+                   clarify points and assure yourself that the level and the mark are appropriate.
+                   Indicative content in the mark scheme is provided as a guide for examiners. It is not
+                   intended to be exhaustive and you must credit other chemically valid points. Students
+                   may not have to cover all of the points mentioned in the indicative content to reach the
+                   highest level of the mark scheme. The mark scheme will state how much chemical
+                   content is required for the highest level.
+                   An answer which contains nothing of relevance to the question must be awarded no
+                   marks.
+
+                   For other extended response answers:
+                   Where a mark scheme includes linkage words (such as `therefore', `so', `because' etc),
+                   these are optional. However, a student's marks for the question may be limited if they do
+                   not demonstrate the ability to construct and develop a sustained line of reasoning which is
+                   coherent, relevant, substantiated and logically structured. In particular answers in the
+                   form of bullet pointed lists may not be awarded full marks if there is no indication of logical
+                   flow between each point or if points are in an illogical order.
+                   The mark schemes for some questions state that the maximum mark available for an
+                   extended response answer is limited if the answer is not coherent, relevant, substantiated
+                   and logically structured. During the standardisation process, the Lead Examiner will
+                   provide marked exemplar material to demonstrate answers which have not met these
+                   criteria. You should use these exemplars as a comparison when marking student answer.
+
+10
+                                                 MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                          Answers              Additional Comments/Guidelines                                       Mark
+
+                                                 Ignore standard states / conditions                                        1
+
+          The enthalpy change / H when one mole of a (solid) ionic compound Allow heat change at constant pressure when...
+
+                                                 Ignore heat change (alone) / energy change
+
+01.1
+
+          dissociates (fully) into gaseous ions  M2 Allow suitable equation with state symbols for                          1
+
+                                                 ions                                                                       (2 x AO1)
+
+                                                 Not one mole of gaseous ions
+
+Question                               Answers             Additional Comments/Guidelines                                   Mark
+                (26)                             Allow + water or +aq
+
+          (LE)                    (-307) (-314)  M1 = cycle (3 `corners' with formulae and state                                 1
+                                                          symbols and suitable arrows)
+01.2                                                                                                                             1
+             LE = 26 + 307 + 314                 Allow equivalent Born-Haber style energy cycle                                  1
+                                                 Not ecf to M2 and M3 from incorrect cycle
+                  = (+)647                                                                                                  (3 x AO2)
+                                                 M2 = working e.g. 26 = LE ­ 307 ­ 314
+
+                                                 M3 = answer (+)647 gets 3/3 if M1 given or 2/3 if
+                                                          not
+
+                                                 ­647 = 2/3 if M1 given or 1/3 if not
+                                                 +595 / ­595 = 2/3 if M1 given or 1/3 if not
+                                                 ­621/+621 = 1/3 if M1 given
+                                                 Not ecf for M3 from incorrect expression in M2
+
+                                                                                                                            11
+                                                                    MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                            Answers                         Additional Comments/Guidelines                    Mark
+
+          (q = mcT =) 25.0 × 4.18 × (20.2­12.2) OR 25.0 × 4.18 × 8  Not if m = 29                                          1
+            (= 836 (J) or 0.836 (kJ))                               Ignore sign of q
+                                                                                                                           1
+          4.00 g NH4NO3 = 4.00/80 OR 0.0500 mol                     Allow ecf from M1 and/or from M2                       1
+                                                                    ­16.7(2) = 2/3                                    (3 x AO2)
+          Hosoln = 836/0.05 = 16720 = (+)16.7(2) (kJ mol-1)         +19.4 = 2/3 (using m = 29 in M1)
+                                                                    ­19.4 = 1/3
+01.3                                                                +2.68 = 2/3
+                                                                    ­2.68 = 1/3
+                                                                    +587 or +588 = 2/3
+                                                                    ­587 or ­588 = 1/3
+                                                                    Allow 2 sig figs or more
+
+Question                            Answers                                   Additional Comments/Guidelines          Mark
+                                                                    Allow ecf from T in 01.3
+01.4      (2 × 0.1/8) × 100 = 2.5%                                                                                       1
+                                                                                                                      (AO2)
+
+Question                            Answers                         Additional Comments/Guidelines                    Mark
+
+             use a larger mass/amount of NH4NO3 / solid             Marking points are independent                         1
+                                                                    Allow smaller volume of water / less water
+01.5                                                                Allow use more NH4NO3                                  1
+                                                                    Not larger volume of water                        (2 x AO3)
+             so temperature change/decrease is greater              Ignore higher concentration (of NH4NO3)
+             OR final temperature is lower                          Ignore any references to changing apparatus e.g.
+                                                                    insulation
+                                                                    Allow temperature increase is greater
+                                                                    Not final temperature is higher
+
+12
+                                                                           MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                             Answers                               Additional Comments/Guidelines                    Mark
+
+             heat gain (from the surroundings) / incomplete dissolving     Allow incomplete reaction                            1
+01.6                                                                       Allow thermal energy gain                         (AO3)
+                                                                           Not heat loss
+                                                                           Ignore energy gain
+                                                                           Ignore references to mistakes in method
+
+Question                             Answers                                         Additional Comments/Guidelines            Mark
+                                                                                                                                  1
+          S = (113 + 146) - 151 = +108 (J K-1 mol-1)                       Allow ecf 26 ­ (298 x M1 x 10­3)                       1
+          G = H - TS OR 26 - (298 × 108 × 10-3)                            Allow ecf 26 ­ (298 x M1)
+                                                                           Allow M2 for 26000 ­ (298 x 108)                       1
+01.7      G = -6.184 / -6.18 / -6.2                                        Allow M2 for 26 ­ (298 x 108)
+                                                                                                                                  1
+          negative value for G indicates reaction is feasible/spontaneous  ­32158 = M1 and M2                                (3 x AO2,
+                                                                           ­32.2 = M1 and M2                                 1 x AO3)
+                                                                           ­6184 = M1 and M2
+                                                                           (+)58.2 = M2 and M3 (ecf if -108 for M1)
+
+                                                                           Allow positive value for G indicates reaction is
+                                                                                    NOT feasible/spontaneous
+
+                                                                           Allow <0 or >0 as appropriate
+                                                                           M4 is standalone
+
+Question                             Answers                                         Additional Comments/Guidelines            Mark
+
+          Converting H into J OR S into kJ                                 0.854 (K) = 1/2                                        1
+                                                                           0.00117 (K) = 1/2 (calculation upside down)            1
+01.8      (T = H/S = 123/144 × 10-3 OR 123000/144) = 854(.1666666) (K)     2SF minimum                                       (2 x AO2)
+
+                                                                                                                             13
+                                                                             MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                   Answers                                             Additional Comments/Guidelines                          Mark
+
+          This question is marked using levels of response. Refer to the Mark  Indicative Chemistry content
+          Scheme Instructions for examiners for guidance on how to mark it.
+                                                                               Stage 1 Formula
+          Level 3          All stages are covered and the explanation of each  (1a) divides % masses by Ar for each element
+          5-6 marks        stage is correct and virtually complete             (N = 0.221; H = 6.18; Al = 0.221; S = 0.441; O =4.41)
+                                                                               (1b) divides throughout by smallest and confirms
+                           Answer communicates the whole explanation,
+                           including equations, coherently and shows a                formula as NH28AlS2O20
+                           logical progression through all three stages        Correct formula ticks 1a and 1b irrespective of method
+                                                                               (1c) x = 12
+
+                Level 2    All stages are covered but the explanation of each  Stage 2 Ion ID                                               6
+                3-4 marks  stage may be incomplete or may contain              (2a) addition of NaOH/OH­ and warming gives gas
+                           inaccuracies                                                                                                (2 x AO2,
+    02                     OR two stages covered and the explanations are             that turns (damp) red litmus blue (= ammonia)    4 x AO3)
+                           generally correct and virtually complete                   showing NH4+ (water bath = warm)
+                Level 1
+                1-2 marks  Answer is coherent and shows some progression       (2b) white ppt with acidified BaCl2/Ba2+ = SO42-
+                           through all three stages. Some steps in each stage
+                           may be incomplete                                   (2c) addition of NaOH/OH­ until in excess gives
+                                                                                      white ppt that redissolves = Al3+
+                           Two stages are covered but the explanation of              OR addition of carbonate giving white ppt and
+                           each stage may be incomplete or may contain                effervescence/fizzing/bubbles/gas formed
+                           inaccuracies
+                           OR only one stage is covered but the explanation    Stage 3 Equations (Ignore state symbols)
+                           is generally correct and virtually complete         (3a) NH4+ + OH-  NH3 + H2O
+                                                                               (3b) Ba2+ + SO42-  BaSO4
+
+          Level 0          Answer shows some progression between two           (3c) Al(H2O)63+ + 3 OH-  Al(H2O)3(OH)3 + 3 H2O
+          0 marks          stages                                              Allow Al3+ + 3 OH-  Al(OH)3
+
+                           Insufficient correct Chemistry to warrant a mark    (3d) Al(H2O)3(OH)3 + OH-  Al(H2O)2(OH)4- + H2O
+                                                                               Allow Al(OH)3 + OH-  Al(OH)4- etc.
+
+                                                                               OR 2Al(H2O)63+ + 3CO32­  2Al(H2O)3(OH)3 + 3CO2 + 3H2O
+
+                                                                               Equation with CO32­ `ticks' 3c AND 3d
+
+14
+                                                                            MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                             Answers                                Additional Comments/Guidelines                  Mark
+
+          (for alkenes) elimination                                         Allow base elimination                               1
+                                                                            Not nucleophilic elimination
+03.1                                                                                                                             1
+          (for alcohols) nucleophilic substitution                                                                          (2 x AO1)
+
+Question                             Answers                                          Additional Comments/Guidelines          Mark
+                                                                                                                                 1
+             (Different molecules/compounds with the) same (molecular and)  Allow different spatial arrangement of
+             structural formula                                             bonds/groups                                         1
+03.2                                                                                                                        (2 x AO1)
+             Different spatial arrangement of atoms
+
+Question                             Answers                                          Additional Comments/Guidelines          Mark
+                                                                                                                                 1
+             A = but-1-ene                                                  Not butene                                           1
+
+             two groups/atoms/Hs the same on one of the C=C carbons         Allow two groups/atoms/Hs the same on first C   (1 x AO1,
+03.3                                                                        Not two groups the same on one side of C=C      1 x AO3)
+                                                                            Ignore references to no chiral carbon
+                                                                            Ignore `priority' i.e. 2 groups with the same
+                                                                            priority... gets M2 for `2 groups the same...'
+
+                                                                                                                            15
+                                            MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                           Answers  Additional Comments/Guidelines                          Mark
+
+                   HH                       If wrong halogenoalkane used then max 2/3
+
+                                            M1 lone pair on O, negative charge (anywhere) and       1
+
+          H3CCH2   CC      H                curly arrow from lone pair to H on carbon 1
+               M3      M2
+                               M1           Not if (covalent) NaOH / additional arrows to or
+                   Br H    HO-
+                                            from NaOH / additional arrows to or from Na+
+
+                                            M2 curly arrow from C(1)­H to C(1)­C(2)                 1
+
+                                            M2 is standalone from M1
+
+                                            Allow ecf if H on carbon 3 attacked in M1 for curly
+
+                                            arrow from C(3)-H to C(2)­C(3)
+
+                                            Not as ecf if H on carbon 2 attacked in M1 for curly
+
+                                            arrow from C(2)-H
+
+03.4                                        M3 Curly arrow from C­Br to Br (mark is                      1
+                                                 independent)                                       (3 x AO2)
+                                                 Not if any additional arrows / incorrect polarity
+                                                 or formal charges on C­Br
+
+                                            Allow ecf for mechanism to form but-2-ene from
+                                            03.3
+
+                                            Allow E1 mechanism
+                                            M1 curly arrow from C­Br bond to the Br
+                                            M2 curly arrow from lone pair on O of OH­ to a
+
+                                                 correct H on the correct C adjacent to C+ on
+                                                 the carbocation
+                                            M3 curly arrow from a correct C­H bond to a
+                                                 correct C­C bond
+                                            penalise M1 for any additional arrow(s) to/from the
+                                            Br to/from anything else
+                                            penalise M2 for any additional arrow(s) on NaOH
+
+16
+                                                                   MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                     Answers                               Additional Comments/Guidelines                       Mark
+
+             Z-but-2-ene AND E-but-2-ene                           allow `cis'/`trans' and B and C either way round          1
+03.5 lack of/restricted/no (free) rotation around C=C/double bond  Allow E/Z but-2-ene, cis/trans but-2-ene
+                                                                   Allow C=C/double bond cannot rotate                       1
+                                                                                                                        (1 x AO1,
+                                                                                                                        1 x AO3)
+
+Question                     Answers                               Additional Comments/Guidelines                       Mark
+
+                  OH                          OH                   M1 any correct 2D or 3D structure of butan-2-ol           1
+                                                                   Allow C2H5
+          H3CH2C  C          H3C              C                    M2 must show at least one wedge bond and one              1
+                        CH3      H                 CH2CH3          dash bond in each structure from the chiral C and
+                                                                   any bonds in the plane cannot be at 180º to each     (1 x AO2,
+                       H                                           other                                                1 x AO3)
+
+03.6
+
+                                                                   second structure could be drawn as mirror image of
+                                                                   first or with same orientation of bonds and two
+                                                                   groups swapped round
+                                                                   Allow ECF for second structure from incorrect first
+                                                                   structure, providing molecule is chiral
+
+Question                     Answers                                         Additional Comments/Guidelines               Mark
+                                                                                                                             1
+          Silver iodide then silver bromide then silver chloride   Allow yellow then cream then white
+                                                                   Allow iodide/AgI then bromide/AgBr then                   1
+03.7                                                               chloride/AgCl                                        (2 x AO3)
+             bond strength C-I < C-Br < C-Cl                       Allow iodo(butane) then bromo(butane) then
+                                                                   chloro(butane)
+                                                                   Ignore iodine then bromine then chlorine
+                                                                   Ignore incorrect formulae
+                                                                   Allow carbon-halogen bond strength decreases
+                                                                   down the group / from Cl to I
+
+                                                                                                                        17
+                                                           MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                         Answers                   Additional Comments/Guidelines                                            Mark
+
+                M1                                         Alternative approach
+   04.1
+                    Higher/est concentration of / more H2O2 / particles / molecules M1 Lower/est concentration of / fewer particles  1
+                M2
+                    / reactants                            / molecules / reactants as time goes on
+
+                    More frequent successful collisions    M2 Less frequent successful collisions
+                                                           (look for both ideas even if separated)
+                                                           Ignore `chance' / `probability'                                                1
+                                                                                                                                     (2 x AO1)
+
+Question                                          Answers  Additional Comments/Guidelines                                            Mark
+                M1  Suitable tangent drawn
+                                                           M1 Tangent must be drawn with ruler and touch                             1
+
+                                                           line at 0.05 mol dm­3 (± 1 square) and not
+
+                                                           cross the curve (if white seen between lines
+
+                                                           it crosses)                                                               1
+
+04.2                                                                                                                                 (2 x AO2)
+
+      M2 ­0.00120 to ­0.00155 (mol dm­3 s­1)               M2 Ignore units
+
+                                                           Allow ecf from unsuitable tangent i.e if M1
+
+                                                           not awarded
+
+                                                           Ignore sign of gradient
+
+Question                                          Answers            Additional Comments/Guidelines                                    Mark
+                M1  [H2O2]initial = 0.083 mol dm-3
+                    [H2O2]t = 0.0664 (mol dm-3)            Allow 0.082 ­ 0.084                                                            1
+   04.3 M2
+                                                           Allow 0.0656 ­ 0.0672 (scores 2/2)                                             1
+                                                           2SF minimum                                                               (2 x AO3)
+                                                           Allow ecf from M1 (M2 = M1 x 0.8)
+
+18
+                                                                       MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                                  Answers                      Additional Comments/Guidelines                           Mark
+
+          M1 Points plotted                                            M1 allow each point (± 1 square)                              1
+
+          M2 best fit straight line drawn                                                                               2            1
+                 0.0025
+                                                                       M2 line should be drawn with a ruler and cover           (1 x AO2,
+                                                                                the five points given going within 1 square of  1 x AO3)
+                                                                                each point, no doubles no kinks. The line
+                               0.002                                            does not need to be extended to the origin
+
+          rate / mol dm-3 s-1                                          Allow reasonable best fit line if points plotted
+                                                                                incorrectly
+
+04.4                           0.0015
+                                0.001
+
+                               0.0005
+
+                               0
+
+                                       0  0.02 0.04 0.06 0.08 0.1
+
+                                          [H2O2] / mol dm-3
+
+Question                                                     Answers             Additional Comments/Guidelines                   Mark
+                M1             1st (order)
+                M2             straight line graph through the origin  Ignore rate is (directly) proportional to [H2O2]              1
+                                                                       Allow constant gradient line through the origin
+   04.5                                                                Allow use of data from line to show                           1
+                                                                       e.g. x2 conc = x2 rate                                   (2 x AO3)
+                                                                       Allow if M1 missing
+                                                                       Not if M1 wrong
+
+                                                                                                                                19
+                                                                                  MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question                                          Answers                                   Additional Comments/Guidelines              Mark
+                M1  C14H30  C6H12 + C8H18 or C14H30  2 C3H6 + C8H18                                                                        1
+                                                                                  M1 Allow any correct structural representation
+05.1 M2 (catalyst is in) different phase/state (to reactants)                              of tetradecane, octane, and a cycloalkane       1
+                                                                                           with formula C6H12 OR C3H6
+                                                                                                                                      (1 x AO1,
+                                                                                  M2 Assume that `it' refers to the catalyst          1 x AO2)
+                                                                                  Allow ....... to reactants and products
+                                                                                  Not ...... to products
+
+Question                     Answers                                              Additional Comments/Guidelines                        Mark
+                M1                                                                                                                         1
+                M2  autocatalyst: product of the reaction catalyses the reaction  Not `reactant'                                           1
+                M3                                                                                                                         1
+                    slow: negative ions repel / ions of same charge repel                                                                  1
+   05.2 M4
+                    high Ea                                                       Allow catalyst reduces Ea as an alternative for M3       1
+                M5                                                                                                                         1
+                M6  attraction between oppositely charged ions / negative reactant Not catalyst reduces Ea as an alternative for M4   (6 x AO1)
+                    ion(s) and positive catalyst / Mn2+ / Mn3+
+
+                    4 Mn2+ + MnO4­ + 8 H+  5 Mn3+ + 4 H2O                         Ignore state symbols
+                    2 Mn3+ + C2O42­  2 Mn2+ + 2 CO2
+
+20
+                                                       MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+Question  Answers                                                                 Additional Comments/Guidelines                        Mark
+                                                                                                                                          1
+          M1 idea of change from Co2+ to Co3+          M2 alternatives                                                                    1
+                    and back to Co2+                   electrode potential for S2O82­ greater than Co3+ so S2O82­ ions oxidise Co2+
+                                                       or Co2+ ions reduce S2O82­                                                         1
+          M2 Eo S2O82­ / SO42­ > Eo Co3+ / Co2+        OR 2.01 (V) > 1.82 (V) so S2O82­ ions oxidise Co2+ or Co2+ ions reduce            (3 x
+                    and so                             S2O82­                                                                           AO3)
+                    S2O82­ ions oxidise Co2+           OR 2 Co2+ + S2O82­  2 Co3+ + 2 SO42­ Ecell = (+)0.19 (V)
+                    or Co2+ ions reduce S2O82­
+                                                       M3 alternatives
+            M3 Eo Co3+ /Co2+ > Eo I2 /I­ and so        electrode potential for Co3+ greater than I2 so Co3+ ions oxidise I­ or I­ ions
+                      Co3+ ions oxidise I­ or I­ ions  reduce Co3+
+                      reduce Co3+                      OR 1.82 (V) > 0.54 (V) so Co3+ ions oxidise I­ or I­ ions reduce Co3+
+                                                       OR 2 Co3+ + 2 I­  2 Co2+ + I2 Ecell = (+)1.28 (V)
+05.3
+                                                       for M2 and M3 Allow 1 mark (out of 2 marks) (if neither M2 or M3 already
+                                                       given) for combined:
+
+                                                       Co2+ ions reduce S2O82­ AND Co3+ oxidises I­,
+
+                                                       OR
+
+                                                       2 Co2+ + S2O82­  2 Co3+ + 2 SO42­ AND
+                                                       2 Co3+ + 2 I­  2 Co2+ + I2
+                                                       Not if with negative Ecell value
+                                                       Allow if incorrect positive Ecell values
+
+                                                                                                                                               21
+    6   C (AO2)  MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+                     1O
+
+    7   C (AO3)  1 HOOCCOOH
+
+    8   C (AO1)  1 poly(propene)
+
+    9   D (AO1)  1 There is an increase in the most probable energy of the
+                          molecules.
+
+    10  C (AO1)  1 Fluorine in F2O is ­1
+
+    11  C (AO1)  1 the surface area of the platinum electrode
+
+    12  A (AO1)  1 Electrons travel in the external circuit from zinc to lead.
+
+    13  A (AO3)  1  CH3COO­
+
+    14  B (AO2)  1 1.40
+
+    15  B (AO3)  1 KOH and CH3COOH
+
+    16  A (AO2)  1  Al(g)  Al+(g) + e­
+
+    17  D (AO3)  1  The second ionisation energy of rubidium is lower than the
+                    second ionisation energy of lithium.
+
+    18  D (AO1)  1 To prevent the precipitation of other silver compounds
+
+    19  D (AO3)  1 FeCl3(aq) and concentrated HCl(aq)
+
+    20  B (AO1)  1 ligand substitution
+
+    21  C (AO2)  1 1.0
+
+22
+             MARK SCHEME ­ A-LEVEL CHEMISTRY ­ 7405/3 ­ JUNE 2022
+
+22  C (AO2)  1 Free-radical substitution
+
+23  B (AO2)  1  CH3CH2NH2
+
+24  A (AO1)  1  They are easily oxidised to carboxylic acids by
+                acidified K2Cr2O7 solution.
+
+25  B (AO1)  1 methyl propanoate
+
+26  B (AO1)  1  CH3CONHCH2CH3
+
+27  A (AO2)  1  H2NCH2CH2NH2
+
+28  C (AO3)  1 Poly(propene)
+
+29  D (AO2)  1
+
+30  B (AO3)  1 hydrolysis
+
+31  B (AO2)  1  CH3COOCH3 and NaOH(aq)
+
+32  B (AO1)  1 hydrogen bonds
+
+33  D (AO1)  1 It reacts with hydrochloric acid.
+
+34  C (AO1)  1  CH3CH2OH
+
+35  B (AO3)  1  CH3CH(NH2)CH2COOH
+
+                                                                 23
+

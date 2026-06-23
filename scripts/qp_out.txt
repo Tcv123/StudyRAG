@@ -1,0 +1,921 @@
+Please write clearly in block capitals.                           Candidate number
+Centre number
+
+    Surname
+
+    Forename(s)
+
+    Candidate signature
+                                  I declare this is my own work.
+
+A-level
+CHEMISTRY
+
+Paper 3
+
+                                                                  Time allowed: 2 hours
+
+Materials                                                                           For Examiner's Use
+
+For this paper you must have:                                                       Question   Mark
+· the Periodic Table/Data Booklet, provided as an insert (enclosed)                      1
+· a ruler with millimetre measurements                                                   2
+· a scientific calculator, which you are expected to use where appropriate.              3
+                                                                                         4
+Instructions                                                                             5
+
+· Use black ink or black ball-point pen.                                            Section B
+· Fill in the boxes at the top of this page.
+· Answer all questions.                                                             TOTAL
+· You must answer the questions in the spaces provided. Do not write outside
+
+   the box around each page or on blank pages.
+· If you need extra space for your answer(s), use the lined pages at the end of
+
+   this book. Write the question number against your answer(s).
+· All working must be shown.
+· Do all rough work in this book. Cross through any work you do not
+
+   want to be marked.
+
+Information
+
+· The marks for questions are shown in brackets.
+· The maximum mark for this paper is 90.
+
+Advice
+
+· You are advised to spend 70 minutes on Section A and 50 minutes on Section B.
+
+*JUN227405301*                           IB/M/Jun22/E16                             7405/3
+                                   2                                  Do not write
+      There are no questions printed on this page                     outside the
+
+                                                                           box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*02*                                               IB/M/Jun22/7405/3
+      3
+
+                       Section A                                                                             Do not write
+      Answer all questions in this section.                                                                  outside the
+
+01    A value for enthalpy of solution can be determined in two ways:                                             box
+
+      · from a cycle, using lattice enthalpy and enthalpies of hydration           [2 marks]
+      · from the results of a calorimetry experiment.
+
+0 1 . 1 Define the term enthalpy of lattice dissociation.
+
+0 1 . 2 The enthalpy of solution for ammonium nitrate is the enthalpy change for the reaction
+                 shown.
+                                  NH4NO3(s) + aq  NH4+(aq) + NO3-(aq) H = +26 kJ mol-1
+                                                                     Table 1
+
+      Enthalpy of hydration hydH / kJ mol 1                NH4+(g)        NO3-(g)
+                                                            -307           -314
+
+      Draw a suitably labelled cycle and use it, with data from Table 1, to calculate the
+      enthalpy of lattice dissociation for ammonium nitrate.
+
+                                                                                                            [3 marks]
+
+      Enthalpy of lattice dissociation                                    kJ mol-1
+                                                                          Turn over 
+*03*
+                                                                            IB/M/Jun22/7405/3
+                                                                4                                        Do not write
+                                                                                                         outside the
+0 1 . 3 A student does an experiment to determine a value for the enthalpy of solution for
+                 ammonium nitrate.                                                                            box
+
+                 The student uses this method.
+
+                 · Measure 25.0 cm3 of distilled water in a measuring cylinder.
+                 · Pour the water into a beaker.
+                 · Record the temperature of the water in the beaker.
+                 · Add 4.00 g of solid NH4NO3 to the water in the beaker.
+                 · Stir the solution and record the lowest temperature reached.
+
+                 Table 2 shows the student's results.
+
+                                                                     Table 2
+
+      Initial temperature / °C 20.2
+      Lowest temperature / °C 12.2
+
+      Calculate the enthalpy of solution, in kJ mol-1, for ammonium nitrate in this
+      experiment.
+
+      Assume that the specific heat capacity of the solution, c = 4.18 J K-1 g-1
+
+      Assume that the density of the solution = 1.00 g cm-3
+
+                                                                                     [3 marks]
+
+      Enthalpy of solution                                                           kJ mol-1
+
+*04*                                                                                  IB/M/Jun22/7405/3
+                                                                5                                                                                            Do not write
+                                                                                                                                                             outside the
+0 1 . 4 The uncertainty in each of the temperature readings from the thermometer used in
+                 this experiment is ±0.1°C                                                                                                                        box
+
+      Calculate the percentage uncertainty in the temperature change in this experiment.
+                                                                                                             [1 mark]
+
+              Percentage uncertainty
+
+0 1 . 5 Suggest a change to the student's method, using the same apparatus, that would
+                 reduce the percentage uncertainty in the temperature change.
+
+      Give a reason for your answer.
+
+                                      [2 marks]
+
+      Change
+
+      Reason
+
+0 1 . 6 Another student obtained a value of +15 kJ mol-1 using the same method.
+
+                 Suggest the main reason for the difference between this experimental value for the
+                 enthalpy of solution and the correct value of +26 kJ mol-1
+
+                                                                                                                         [1 mark]
+
+*05*          Question 1 continues on the next page
+
+                                                                                            Turn over 
+
+                                                                                                                                          IB/M/Jun22/7405/3
+           6
+
+0 1 . 7 Table 3 shows some entropy data at 298 K                                                                 Do not write
+                                                                     Table 3                                     outside the
+
+                                                                                                                      box
+
+              Entropy S / J K 1 mol 1
+
+NH4NO3(s)                                                                     151
+
+NH4+(aq)                                                                      113
+
+NO3-(aq)                                                                      146
+
+Calculate a value for the Gibbs free-energy change (G), at 298 K, for the reaction
+when ammonium nitrate dissolves in water.
+
+                NH4NO3(s) + aq  NH4+(aq) + NO3-(aq) H = +26 kJ mol-1
+
+Use data from Table 3 and the value of H from the equation.
+Assume for the solvent, water, that the entropy change, S = 0
+
+Explain what the calculated value of G indicates about the feasibility of this reaction
+at 298 K
+
+                                                                                                      [4 marks]
+
+                                                                       G             kJ mol-1
+                   Explanation
+                                                                                   IB/M/Jun22/7405/3
+*06*
+                                 7
+
+0 1 . 8 Ammonium nitrate decomposes as shown.                                                  Do not write
+                                                                                               outside the
+
+                                                                                                    box
+
+      NH4NO3(s)    N2 (g)  +  1  O2 (g)  +     2  H2 O (g)  H = +123 kJ mol-1
+                              2
+
+      The entropy change (S) for this reaction is +144 J K­1 mol-1
+
+      Calculate the temperature at which this reaction becomes feasible.
+
+                                                                               [2 marks]
+
+                               Temperature                                     K               18
+      Turn over for the next question
+
+*07*                                                                      Turn over 
+
+                                                                            IB/M/Jun22/7405/3
+      8
+
+                                                                                                                       Do not write
+
+                                                                                                                       outside the
+
+02    Tschermigite is a hydrated, water-soluble mineral, with relative formula mass of 453.2                           box
+
+      The formula of tschermigite can be represented as M.xH2O, where M represents all
+      the ions present.
+
+      Table 4 shows its composition by mass.
+
+         Table 4
+
+      Element                                 % by mass
+          N                                        3.09
+          H                                        6.18
+          Al                                       5.96
+          S
+          O                                       14.16
+                                                  70.61
+
+      In an analysis, it is found that the mineral contains the ions NH4+, Al3+ and SO42-
+
+      Calculate the empirical formula of tschermigite and the value of x in M.xH2O
+
+      Describe the tests, with their results, including ionic equations, that would confirm the
+      identities of the ions present.
+
+                                                                                                            [6 marks]
+
+*08*                                                     IB/M/Jun22/7405/3
+      9
+
+                                                                                                                      Do not write
+                                                                                                                       outside the
+
+                                                                                                                            box
+
+*09*                        6
+
+      Turn over 
+
+        IB/M/Jun22/7405/3
+03                                                   10                                                                 Do not write
+                                                                                                                        outside the
+       Under suitable conditions, 2-bromobutane reacts with sodium hydroxide to produce a
+       mixture of five products, A, B, C, D and E.                                                                           box
+
+       Products A, B and C are alkenes.
+
+       A is a structural isomer of B and C.
+
+       A does not exhibit stereoisomerism.
+
+       B and C are a pair of stereoisomers.
+
+       Products D and E are alcohols.
+
+       D and E are a pair of enantiomers.
+
+0 3.1  Give the names of the two concurrent mechanisms responsible for the formation of
+       the alkenes and the alcohols.
+
+                                                                                                             [2 marks]
+
+       Mechanism to form alkenes
+
+       Mechanism to form alcohols
+
+0 3 . 2 Define the term stereoisomers.
+
+                                                                  [2 marks]
+
+0 3 . 3 Deduce the name of isomer A.                              [2 marks]
+                 Explain why A does not exhibit stereoisomerism.
+
+                 Name
+                 Explanation
+
+*10*                                                              IB/M/Jun22/7405/3
+       11
+
+0 3.4  Outline the mechanism for the reaction of 2-bromobutane with sodium hydroxide to                                 Do not write
+       form alkene A.                                                                                                   outside the
+
+                                                                                                             [3 marks]       box
+
+0 3 . 5 Deduce the name of isomer B and the name of isomer C.           [2 marks]
+                 Explain the origin of the stereoisomerism in B and C.
+                 Names
+
+                 Explanation
+
+0 3.6  Draw 3D representations of enantiomers D and E to show how their structures are
+       related.
+
+                                                                                                             [2 marks]
+
+       Question 3 continues on the next page
+
+*11*                                                                    Turn over 
+
+                                                                          IB/M/Jun22/7405/3
+                                          12
+
+0 3 . 7 A student compares the rates of hydrolysis of 1-chlorobutane, 1-bromobutane and           Do not write
+                 1-iodobutane.                                                                    outside the
+
+                                                                                                       box
+
+      The suggested method is:
+
+      · add equal volumes of the three halogenoalkanes to separate test tubes
+      · add equal volumes of aqueous silver nitrate to each test tube
+      · record the time taken for a precipitate to appear in each test tube.
+
+      State and explain the order in which precipitates appear.
+
+                                                                               [2 marks]
+
+      Order in which precipitates appear
+
+      Explanation
+
+                                                                                                  15
+
+*12*                                                                           IB/M/Jun22/7405/3
+                         13                                 Do not write
+      Turn over for the next question                       outside the
+
+                                                                 box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*13*                                   Turn over 
+
+                                         IB/M/Jun22/7405/3
+04                                                  14                                        Do not write
+                                                                                              outside the
+      Hydrogen peroxide solution decomposes to form water and oxygen.
+                                           2 H2O2(aq)  2 H2O(l) + O2(g)                            box
+
+      The reaction is catalysed by manganese(IV) oxide.
+      A student determines the order of this reaction with respect to hydrogen peroxide.
+      The student uses a continuous monitoring method in the experiment.
+      The student places hydrogen peroxide solution in a conical flask with the catalyst and
+      uses a gas syringe to collect the oxygen formed. The student records the volume of
+      oxygen every 10 seconds for 100 seconds.
+
+0 4 . 1 Explain why the reaction is fastest at the start.  [2 marks]
+
+*14*                                                       IB/M/Jun22/7405/3
+                                                               15                                       Do not write
+                                                                                                        outside the
+0 4 . 2 The graph in Figure 1 shows how the concentration of hydrogen peroxide changes
+                 with time in this experiment.                                                               box
+                                                                     Figure 1
+
+      Tangents to the curve in Figure 1 can be used to determine rates of reaction.
+
+      Draw a tangent to the curve when the concentration of hydrogen peroxide solution is
+      0.05 mol dm­3
+
+      Use your tangent to calculate the gradient of the curve at this point.
+
+                                                                              [2 marks]
+
+                                Gradient                                      mol dm­3 s­1
+      Question 4 continues on the next page                                      Turn over 
+
+*15*                                                                                 IB/M/Jun22/7405/3
+                                          16
+
+0 4.3  The concentration of hydrogen peroxide solution at time t during the experiment can                              Do not write
+       be calculated using this expression.                                                                             outside the
+
+                                                                                                                             box
+
+       [ ] [ ] H2O2                                              Vmax -  Vt  
+                                             =  H2O2               Vmax      
+                                          t           initial                
+
+       [H2O2 ]t = concentration of hydrogen peroxide solution at time t / mol dm­3
+
+       [ ] H2O2 initial = concentration of hydrogen peroxide solution at the start / mol dm­3
+
+       Vmax = total volume of oxygen gas collected during the whole experiment / cm3
+
+       Vt = volume of oxygen gas collected at time t / cm3
+
+       In this experiment,Vmax = 100 cm3
+
+       Use Figure 1 and the expression to calculate [H2O2 ]t when 20 cm3 of oxygen has
+
+       been collected.
+                                                                                                             [2 marks]
+
+                                          [H2O2 ]t                                  mol dm­3
+
+*16*                                                                                IB/M/Jun22/7405/3
+                              17
+
+      Table 5 shows data from a similar experiment.                                             Do not write
+                                                                                                outside the
+
+                                                                                                     box
+
+                                  Table 5
+
+      [H2O2] / mol dm­3 0.02      0.03               0.05                      0.07  0.09
+
+      Rate / mol dm­3 s­1 0.00049 0.00073 0.00124                              0.00168 0.00219
+
+0 4 . 4 Plot the data from Table 5 on the grid in Figure 2.                          [2 marks]
+                 Draw a line of best fit.
+                                                                     Figure 2
+
+0 4 . 5 Use Figure 2 to determine the order of reaction with respect to H2O2         [2 marks]
+                 State how the graph shows this order.
+
+                 Order
+                 How the graph shows this order
+
+*17*                                                                                                      10
+                                                                                     Turn over 
+
+                                                                                       IB/M/Jun22/7405/3
+05                                                  18                                                                            Do not write
+      This question is about catalysis.                                                                                           outside the
+
+                                                                                                                                       box
+
+0 5 . 1 Zeolites are used as heterogeneous catalysts in the catalytic cracking of alkanes.
+                 Tetradecane (C14H30) can be cracked to form octane and a cycloalkane.
+                 Give an equation for this reaction.
+
+      State the meaning of the term heterogeneous.      [2 marks]
+      Equation
+
+      Heterogeneous
+
+0 5 . 2 A student determines the concentration of ethanedioate ions in an acidified solution by
+                 titration with potassium manganate(VII) solution.
+
+                                      2 MnO4­ + 5 C2O42­ + 16 H+  2 Mn2+ + 10 CO2 + 8 H2O
+
+                 The mixture is warmed before the addition of potassium manganate(VII) solution
+                 because the reaction is slow at first. When more potassium manganate(VII) solution
+                 is added, the mixture goes colourless quickly due to the presence of an autocatalyst.
+
+                 Explain the meaning of the term autocatalyst.
+
+                 Explain, using equations where appropriate, why the reaction is slow at first and then
+                 goes quickly.
+
+                                                                                                                       [6 marks]
+
+*18*                                                    IB/M/Jun22/7405/3
+       19
+
+                                                                                                                        Do not write
+                                                                                                                         outside the
+
+                                                                                                                              box
+
+0 5.3  The reaction between peroxodisulfate ions and iodide ions in aqueous solution can be
+       catalysed by Co2+ ions.
+
+                                             S2O82­ + 2 I­  2 SO42­ + I2
+
+       Table 6 gives relevant standard electrode potentials.
+
+       Table 6
+
+           Electrode half-equation     E / V
+       S2O82­(aq) + 2 e­  2 SO42­(aq)  +2.01
+                                       +1.82
+           Co3+(aq) + e­  Co2+(aq)     +0.54
+             I2(aq) + 2 e­  2 I­(aq)
+
+       Use the electrode potential data to suggest how Co2+ catalyses the reaction.
+                                                                                                             [3 marks]
+
+*19*                                                               11
+                                              Turn over 
+
+                                                IB/M/Jun22/7405/3
+                                      20                                                                                Do not write
+                                                                                                                        outside the
+                                 Section B
+                Answer all questions in this section.                                                                        box
+
+Only one answer per question is allowed.
+For each answer completely fill in the circle alongside the appropriate answer.
+
+CORRECT METHOD  WRONG METHODS
+
+If you want to change your answer you must cross out your original answer as shown.
+
+If you wish to return to an answer previously crossed out, ring the answer you now wish to select
+as shown.
+
+You may do your working in the blank space around each question but this will not be marked.
+Do not use additional sheets for this working.
+
+06    Which atom in the ground state contains at least one unpaired p electron?
+                                                                                                              [1 mark]
+
+      A Na
+      B Ne
+      CO
+      D Sc
+
+07    Complete combustion of 0.0100 mol of an organic acid produced 0.0200 mol of
+      carbon dioxide.
+
+      The same amount of the acid required 20 cm3 of 1.00 mol dm­3 NaOH (aq) for
+      neutralisation.
+
+      Which could be the formula of the acid?
+
+                                                                                     [1 mark]
+
+      A HCOOH
+      B CH3COOH
+      C HOOCCOOH
+      D HOOCCH2COOH
+
+*20*                                                                                 IB/M/Jun22/7405/3
+08                                                  21                                                                  Do not write
+                                                                                                                        outside the
+      Which substance has no delocalised electrons?
+                                                                                                                             box
+      A graphite
+      B methylbenzene                                   [1 mark]
+      C poly(propene)
+      D sodium
+
+09    Consider the change that occurs in the shape of the curve for the distribution of
+      molecular energies in a gas when the temperature of the gas is increased.
+      Which is a correct statement about the gas molecules at a higher temperature?
+
+                                                                                                              [1 mark]
+
+      A There are more molecules with any given energy.
+
+      B There are more molecules with the mean energy.
+
+      C There are more molecules with the most probable energy.
+
+      D There is an increase in the most probable energy of the molecules.
+
+10    Which of these oxidation states is correct?
+
+                                                        [1 mark]
+
+      A Chlorine in Cl2 is ­1
+      B Chromium in K2Cr2O7 is +7
+      C Fluorine in F2O is ­1
+      D Hydrogen in NaH is +1
+
+*21*                                                    Turn over 
+
+                                                          IB/M/Jun22/7405/3
+      22
+
+11    Which change to a hydrogen electrode has no effect on the electrode potential?                                    Do not write
+                                                                                                              [1 mark]  outside the
+
+                                                                                                                             box
+
+      A the concentration of the hydrogen ions
+      B the pressure of the hydrogen
+      C the surface area of the platinum electrode
+      D the temperature of the acid
+
+12    Some electrode potential data are shown.
+
+      Zn2+(aq) + 2 e-  Zn(s)                            E = - 0.76 V
+      Pb2+(aq) + 2 e-  Pb(s)                            E = - 0.13 V
+
+      Which is a correct statement about this cell?
+                                           Zn(s) Zn2+ (aq) Pb2+ (aq) Pb(s)
+
+                                                                            [1 mark]
+
+      A Electrons travel in the external circuit from zinc to lead.
+      B The concentration of lead(II) ions increases.
+      C The maximum EMF of the cell is 0.89 V
+      D Zinc is deposited.
+
+13    Which can not function as a Brønsted-Lowry acid?
+
+      A CH3COO­                                                             [1 mark]
+      B HCO3­
+      C H3O+
+      D NH4+
+
+*22*                                                                        IB/M/Jun22/7405/3
+14                                                  23                                         Do not write
+                                                                                                outside the
+      A strong acid H2X dissociates in aqueous solution.
+                                          H2X(aq)  2 H+(aq) + X2­ (aq)                               box
+
+      What is the pH of a 0.020 mol dm­3 solution of this acid?         [1 mark]
+
+      A 1.00
+      B 1.40
+      C 1.70
+      D 2.00
+
+15    Equal volumes of two solutions, each with the same concentration, are mixed together
+      at 298 K
+
+      Which two solutions, when mixed, form a solution with a pH >7?
+
+                                                                        [1 mark]
+
+      A HCOOH and HCOOK
+      B KOH and CH3COOH
+      C NH3 and HCl
+      D NH4Cl and KCl
+
+16    Which ionisation needs less energy than this process?
+                                                 Mg(g)  Mg+(g) + e­
+                                                                        [1 mark]
+      A Al(g)  Al+(g) + e­
+      B Ar(g)  Ar+(g) + e­
+      C Be(g)  Be+(g) + e­
+      D Mg+(g)  Mg2+(g) + e­
+
+*23*                                                                    Turn over 
+
+                                                                          IB/M/Jun22/7405/3
+17                                                  24                                          Do not write
+18                                                                                              outside the
+      Which statement is correct about the Group 1 elements?
+                                                                                                     box
+      A The Cs+ ion has a more negative enthalpy of hydration than the
+         Rb+ ion.                                                           [1 mark]
+
+      B The enthalpy of atomisation for potassium is greater than the
+         enthalpy of atomisation for sodium.
+
+      C The melting point of potassium is higher than the melting point of
+         sodium.
+
+      D The second ionisation energy of rubidium is lower than the
+         second ionisation energy of lithium.
+
+      A test for chloride ions in aqueous solution involves adding dilute nitric acid followed
+      by aqueous silver nitrate.
+
+      What is the reason for adding the nitric acid?
+
+                                                                            [1 mark]
+
+      A To convert AgNO3 into [Ag(NO3)2]-
+      B To decrease the solubility of silver chloride
+      C To increase the pH of the solution
+      D To prevent the precipitation of other silver compounds
+
+19    Which pair of reagents reacts to form a tetrahedral complex?
+
+      A CoCl2(aq) and concentrated NH3(aq)                                  [1 mark]
+      B CuSO4(aq) and concentrated NH3(aq)
+      C CuSO4(aq) and sodium ethanedioate(aq)
+      D FeCl3(aq) and concentrated HCl(aq)
+
+*24*                                                                        IB/M/Jun22/7405/3
+                                   25
+
+20    Cobalt(II) chloride solution changes colour when an excess of concentrated              Do not write
+      hydrochloric acid is added.                                                             outside the
+
+                                                                                                   box
+
+      What type of reaction takes place?
+
+                                                                                  [1 mark]
+
+      A hydrolysis
+      B ligand substitution
+      C precipitation
+      D redox
+
+21    The reaction between vanadium(IV) ions and manganate(VII) ions in acidic solution
+      can be represented by the equation
+
+              5 V4+ + MnO4- + 8 H+  5 V5+ + Mn2+ + 4 H2O
+
+      What volume, in dm3, of 0.020 mol dm-3 KMnO4 is needed to oxidise
+      0.10 mol of vanadium(IV) ions completely?
+
+                                                                                  [1 mark]
+
+      A 0.10
+      B 0.50
+      C 1.0
+      D 5.0
+
+22    2-Bromopropane reacts with bromine to form 2,2-dibromopropane.
+      What is the name of the mechanism of this reaction?
+
+                                                                                  [1 mark]
+
+      A Electrophilic addition
+      B Elimination
+      C Free-radical substitution
+      D Nucleophilic substitution
+
+*25*                                                                     Turn over 
+
+                                                                           IB/M/Jun22/7405/3
+                      26
+
+23    Which compound is formed from bromoethane in a nucleophilic substitution reaction?                                Do not write
+24                                                                                                            [1 mark]  outside the
+
+                                                                                                                             box
+
+      A CH3CN
+      B CH3CH2NH2
+      C CH2=CH2
+      D CH3CH2OSO2OH
+
+      Which statement is not correct for both primary and secondary alcohols?
+
+                                                                               [1 mark]
+
+      A They are easily oxidised to carboxylic acids by
+         acidified K2Cr2O7 solution.
+
+      B They can be formed from bromoalkanes by hydrolysis.
+
+      C They form esters with carboxylic acids.
+
+      D They show hydrogen bonding in the liquid state.
+
+25    Which compound is an isomer of ethyl ethanoate?
+
+      A butyl methanoate                                                       [1 mark]
+      B methyl propanoate
+      C methyl butanoate
+      D propanoic acid
+
+*26*                                                                           IB/M/Jun22/7405/3
+26                                                  27                                       Do not write
+27                                                                                           outside the
+28    Which compound is an amide?
+                                                                                                  box
+      A CH3CH2CH2CN
+      B CH3CONHCH2CH3                                                   [1 mark]
+      C CH3COOCH2CH3
+      D CH3NHCH2CH2CH3
+
+      Suberoyl chloride, ClOC(CH2)6COCl, is commonly used in the manufacture of
+      polymers.
+
+      Which compound can form a polymer with suberoyl chloride?
+
+                                                                        [1 mark]
+
+      A H2NCH2CH2NH2
+      B ClOCCH2COCl
+      C CH3CH2CONH2
+      D HOOCCH2COOH
+
+      Which polymer is not hydrolysed when heated with aqueous alkali?  [1 mark]
+
+      A Kevlar
+      B Nylon 6,6
+      C Poly(propene)
+      D Terylene
+
+*27*                                                                    Turn over 
+
+                                                                          IB/M/Jun22/7405/3
+                    28
+
+29    Which is the main species present in an aqueous solution of aspartic acid at pH = 14?                             Do not write
+                                                                                                              [1 mark]  outside the
+
+                                                                                                                             box
+
+      A
+
+      B
+
+      C
+
+                 D
+30
+
+      Which type of reaction is not involved in this reaction sequence?  [1 mark]
+
+      A esterification
+      B hydrolysis
+      C nitration
+      D reduction
+
+*28*                                                                     IB/M/Jun22/7405/3
+31                                                  29                                                                  Do not write
+                                                                                                                        outside the
+      Which pair of reagents does not produce ethanol?
+                                                                                                                             box
+      A CH3CH2Br and NaOH(aq)
+      B CH3COOCH3 and NaOH(aq)                            [1 mark]
+      C HCOOCH2CH3 and NaOH(aq)
+      D CH3CHO and NaBH4(aq)
+
+32    Which type of interaction between polypeptide chains is mainly responsible for
+      maintaining the secondary structure of a protein in the form of an alpha helix?
+
+                                                                                                              [1 mark]
+
+      A covalent bonds
+
+      B hydrogen bonds
+
+      C ionic interactions
+
+      D van der Waals forces
+
+33    Which statement about HOCH2CH(NH2)COOH is correct?
+
+      A It decolourises bromine water.                    [1 mark]
+      B It is a component of DNA.
+      C It is insoluble in water.
+      D It reacts with hydrochloric acid.
+
+*29*                                                      Turn over 
+
+                                                            IB/M/Jun22/7405/3
+34                                                  30                        Do not write
+      Which compound can be dehydrated to form an alkene?                     outside the
+
+                                                                                   box
+
+                                                           [1 mark]
+
+      A CH3CHO
+      B CH3COOH
+      C CH3CH2OH
+      D CH3COOCH3
+
+35    Which compound is not a 2-aminocarboxylic acid?
+
+      A CH3CH(NH2)COOH                                     [1 mark]
+      B CH3CH(NH2)CH2COOH                                                  30
+      C CH3CH2CH(NH2)COOH
+      D (CH3)2CHCH(NH2)COOH
+
+                   END OF QUESTIONS
+
+*30*                                                       IB/M/Jun22/7405/3
+                                   31                                 Do not write
+      There are no questions printed on this page                     outside the
+
+                                                                           box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+*31*                                               IB/M/Jun22/7405/3
+Question                            32                                            Do not write
+number                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                          box
+
+*32*                                                           IB/M/Jun22/7405/3
+Question                            33                                            Do not write
+number                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                          box
+
+*33*                                                           IB/M/Jun22/7405/3
+Question                            34                                            Do not write
+number                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                          box
+
+*34*                                                           IB/M/Jun22/7405/3
+Question                            35                                            Do not write
+number                                                                            outside the
+                           Additional page, if required.
+          Write the question numbers in the left-hand margin.                          box
+
+*35*                                                           IB/M/Jun22/7405/3
+                                   36                                                                                                                      Do not write
+      There are no questions printed on this page                                                                                                          outside the
+
+                                                                                                                                                                box
+
+          DO NOT WRITE ON THIS PAGE
+      ANSWER IN THE SPACES PROVIDED
+
+Copyright information
+
+For confidentiality purposes, all acknowledgements of third-party copyright material are published in a separate booklet. This booklet is published after
+each live examination series and is available for free download from www.aqa.org.uk.
+
+Permission to reproduce all copyright material has been applied for. In some cases, efforts to contact copyright-holders may have been unsuccessful
+and AQA will be happy to rectify any omissions of acknowledgements. If you have any queries please contact the Copyright Team.
+
+Copyright © 2022 AQA and its licensors. All rights reserved.
+
+*36*  *226A7405/3*
+
+                                                  IB/M/Jun22/7405/3
+
