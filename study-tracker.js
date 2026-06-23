@@ -76,6 +76,16 @@
   // ── Mark streak in Supabase ───────────────────────────────────────────────
   async function markStreak() {
     if (streakMarked) return;
+
+    // Cross-tab write lock: if another tab started writing within the last 5s,
+    // bail out. The server-side last_study_date check is the true dedup, but
+    // this avoids two concurrent Supabase writes in the same tick.
+    const lockKey = 'streak_writing_at';
+    const now = Date.now();
+    const lockVal = lsGet(lockKey);
+    if (lockVal && (now - parseInt(lockVal, 10)) < 5000) return;
+    lsSet(lockKey, String(now));
+
     streakMarked = true;
     lsSet('streak_marked', 'true');
 
