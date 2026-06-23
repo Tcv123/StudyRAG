@@ -565,12 +565,16 @@ function buildPicker(userSubs) {
     pickPaper.disabled = true;
     if (fi === '') return;
     const entry = filtered[parseInt(fi)];
+    function paperYear(p) {
+      const s = String(p.year || p.id || '');
+      const m = s.match(/\b(20\d{2})\b/);
+      return m ? parseInt(m[1]) : 9999;
+    }
     const sorted = entry.papers
       .map((p, pi) => ({ p, pi }))
       .sort((a, b) => {
-        const yearA = parseInt((a.p.year || '').match(/\d{4}/)?.[0]) || 0,
-              yearB = parseInt((b.p.year || '').match(/\d{4}/)?.[0]) || 0;
-        if (yearA !== yearB) return yearA - yearB;
+        const yA = paperYear(a.p), yB = paperYear(b.p);
+        if (yA !== yB) return yA - yB;
         return (a.p.paperCode || '').localeCompare(b.p.paperCode || '');
       });
     sorted.forEach(({ p, pi }) => {
