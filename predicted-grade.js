@@ -191,11 +191,11 @@
 
     if (opts.inline) {
       // Small horizontal pill that sits inline with the grade/diagnostic chips.
-      return `<span title="${tip}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:${col};background:${col}14;border:1px solid ${col}44;padding:2px 9px;border-radius:20px;cursor:help;opacity:${dim ? '0.7' : '1'};white-space:nowrap;">Predicted <span style="font-size:13px;font-weight:800;letter-spacing:-0.01em;">${prediction.grade}</span>${ts ? `<span style="font-weight:700;color:${ts.colour};">· ${ts.short}</span>` : ''}</span>`;
+      return `<span data-pred-tip="${tip}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:${col};background:${col}14;border:1px solid ${col}44;padding:2px 9px;border-radius:20px;cursor:help;opacity:${dim ? '0.7' : '1'};white-space:nowrap;">Predicted <span style="font-size:13px;font-weight:800;letter-spacing:-0.01em;">${prediction.grade}</span>${ts ? `<span style="font-weight:700;color:${ts.colour};">· ${ts.short}</span>` : ''}</span>`;
     }
 
     if (opts.compact) {
-      return `<div title="${tip}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:${col}12;border:1.5px solid ${col}40;border-radius:10px;padding:6px 14px;min-width:72px;cursor:help;opacity:${dim ? '0.72' : '1'};">
+      return `<div data-pred-tip="${tip}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:${col}12;border:1.5px solid ${col}40;border-radius:10px;padding:6px 14px;min-width:72px;cursor:help;opacity:${dim ? '0.72' : '1'};">
         <span style="font-size:9px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:${col}CC;">Predicted</span>
         <span style="font-size:20px;font-weight:800;color:${col};line-height:1;letter-spacing:-0.02em;">${prediction.grade}</span>
         ${ts ? `<span style="font-size:9px;font-weight:700;color:${ts.colour};">${ts.short}</span>` : `<span style="font-size:9px;font-weight:600;color:var(--muted,#6B7280);">${prediction.masteryPct}% mastery</span>`}
@@ -204,13 +204,66 @@
 
     // Single-row pill — same compact height as the grade chips, with a small
     // inline on-track / below-target indicator when a target is set.
-    return `<div title="${tip}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:${col}15;border:1.5px solid ${col}55;border-radius:10px;padding:8px 12px;margin-bottom:10px;cursor:help;opacity:${dim ? '0.6' : '1'};">
+    return `<div data-pred-tip="${tip}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:${col}15;border:1.5px solid ${col}55;border-radius:10px;padding:8px 12px;margin-bottom:10px;cursor:help;opacity:${dim ? '0.6' : '1'};">
       <span style="display:flex;align-items:baseline;gap:8px;min-width:0;">
         <span style="font-size:12px;font-weight:600;color:${col}CC;white-space:nowrap;">Predicted grade</span>
         ${ts ? `<span style="font-size:10px;font-weight:700;color:${ts.colour};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${ts.short}</span>` : ''}
       </span>
       <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;white-space:nowrap;">${prediction.grade}</span>
     </div>`;
+  }
+
+  // ── Custom hover tooltip ──────────────────────────────────────────────────
+  // Native title= tooltips are slow, easy to miss, and get clipped inside the
+  // subject cards. We render our own from the data-pred-tip attribute: a single
+  // floating element on <body>, shown via event delegation so it works for
+  // chips added to the DOM at any time.
+  function initPredTooltip() {
+    if (window.__predTipInit || !document.body) return;
+    window.__predTipInit = true;
+
+    let tip = null;
+    function ensure() {
+      if (tip) return tip;
+      tip = document.createElement('div');
+      tip.style.cssText = 'position:fixed;z-index:99999;max-width:260px;background:#1f2937;color:#fff;' +
+        'font:500 12px/1.45 -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;' +
+        'padding:9px 12px;border-radius:8px;box-shadow:0 8px 24px rgba(0,0,0,0.28);' +
+        'pointer-events:none;opacity:0;transition:opacity .12s ease;white-space:pre-line;';
+      document.body.appendChild(tip);
+      return tip;
+    }
+    function place(t, x, y) {
+      const pad = 12, r = t.getBoundingClientRect();
+      let left = x + 14, top = y + 18;
+      if (left + r.width  + pad > window.innerWidth)  left = x - r.width  - 14;
+      if (top  + r.height + pad > window.innerHeight) top  = y - r.height - 18;
+      t.style.left = Math.max(pad, left) + 'px';
+      t.style.top  = Math.max(pad, top)  + 'px';
+    }
+
+    document.addEventListener('mouseover', e => {
+      const host = e.target.closest && e.target.closest('[data-pred-tip]');
+      if (!host) return;
+      const t = ensure();
+      t.textContent = host.getAttribute('data-pred-tip');
+      t.style.opacity = '1';
+      place(t, e.clientX, e.clientY);
+    });
+    document.addEventListener('mousemove', e => {
+      if (tip && tip.style.opacity === '1') place(tip, e.clientX, e.clientY);
+    });
+    document.addEventListener('mouseout', e => {
+      const host = e.target.closest && e.target.closest('[data-pred-tip]');
+      if (!host || !tip) return;
+      if (e.relatedTarget && host.contains(e.relatedTarget)) return; // still inside the chip
+      tip.style.opacity = '0';
+    });
+  }
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initPredTooltip);
+  } else {
+    initPredTooltip();
   }
 
   window.computePredictedGrade     = computePredictedGrade;
