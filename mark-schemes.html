@@ -406,44 +406,32 @@ function renderMsCard(part, paperKey) {
   } else {
     const chips = Array.from({length: totalMarks}, (_, i) => `<span class="ms-alloc-chip" style="opacity:.45">Mark ${i+1}</span>`).join('');
     allocHtml = `<div class="ms-alloc-bar">${chips}</div>
-      <div class="ms-alloc-desc"><strong>${totalMarks}</strong> mark${totalMarks!==1?'s':''} available · enter the mark scheme points below to fill this in</div>`;
+      <div class="ms-alloc-desc"><strong>${totalMarks}</strong> mark${totalMarks!==1?'s':''} available</div>`;
   }
 
-  // Edit bar for MS points (only when no official MS)
-  const ptsEditUid  = 'ep_' + uid;
-  const ansEditUid  = 'ea_' + uid;
-  let editBarHtml = '';
+  // Edit panel for MS points — shown inside Mark Allocation when no official MS
+  let ptsEditHtml = '';
   if (!ms) {
     const hasPts = customPts.length > 0;
-    const hasAns = !!modelAns.trim();
-    editBarHtml = `
+    ptsEditHtml = `
       <div class="ms-edit-bar">
         <button class="ms-edit-btn${hasPts?' active':''}" id="btn_${ptsEditUid}" onclick="_msEditToggle('${ptsEditUid}','btn_${ptsEditUid}')">
-          ✏️ ${hasPts ? 'Edit mark scheme points' : 'Add mark scheme points'}
-        </button>
-        <button class="ms-edit-btn${hasAns?' active':''}" id="btn_${ansEditUid}" onclick="_msEditToggle('${ansEditUid}','btn_${ansEditUid}')">
-          📝 ${hasAns ? 'Edit model answer' : 'Add model answer'}
+          ✏️ ${hasPts ? 'Edit mark scheme' : 'Add mark scheme points'}
         </button>
       </div>
       <div class="ms-edit-panel" id="${ptsEditUid}">
         <div class="ms-edit-label">Mark scheme points</div>
-        <div class="ms-edit-hint">One point per line. Each line = one mark. Copy from the official PDF or write your own.</div>
+        <div class="ms-edit-hint">One point per line — each line = one mark. Copy from the official MS PDF or write your own.</div>
         <textarea class="ms-edit-textarea" id="ta_pts_${ptsEditUid}" placeholder="e.g. The processor fetches the instruction from memory&#10;The program counter is incremented&#10;The instruction is decoded by the CU">${esc(customPts.join('\n'))}</textarea>
         <div class="ms-edit-actions">
-          <button class="ms-edit-save" onclick="_msSavePoints('${paperKey}','${partCode}','${uid}')">Save points</button>
+          <button class="ms-edit-save" onclick="_msSavePoints('${paperKey}','${partCode}','${uid}')">Save</button>
           <button class="ms-edit-clear" onclick="_msClearPoints('${paperKey}','${partCode}','${uid}')">Clear</button>
-        </div>
-      </div>
-      <div class="ms-edit-panel" id="${ansEditUid}">
-        <div class="ms-edit-label">Model answer</div>
-        <div class="ms-edit-hint">Write a full model answer. Keywords from this are extracted for Keyword Mining.</div>
-        <textarea class="ms-edit-textarea" id="ta_ans_${ansEditUid}" placeholder="Write a complete model answer here…" style="min-height:120px">${esc(modelAns)}</textarea>
-        <div class="ms-edit-actions">
-          <button class="ms-edit-save" onclick="_msSaveAnswer('${paperKey}','${partCode}','${uid}')">Save answer</button>
-          <button class="ms-edit-clear" onclick="_msClearAnswer('${paperKey}','${partCode}','${uid}')">Clear</button>
         </div>
       </div>`;
   }
+
+  const ptsEditUid = 'ep_' + uid;
+  const ansEditUid = 'ea_' + uid;
 
   // ── Official / Custom Mark Scheme points ──
   let schemeHtml = '';
@@ -499,7 +487,27 @@ function renderMsCard(part, paperKey) {
     }
     anatomyContent = steps.map((s,i) => `<div class="ms-anatomy-step"><div class="ms-anatomy-num">${i+1}</div><div class="ms-anatomy-text">${s}</div></div>`).join('');
     anatomyContent = `<div class="ms-anatomy-steps">${anatomyContent}</div>`;
-    if (!ms) anatomyContent += `<div style="margin-top:8px;font-size:12px;color:var(--muted);">Add a model answer above to replace this generic guidance with a worked example.</div>`;
+  }
+
+  // Edit panel for model answer — shown inside Answer Anatomy when no official MS
+  let ansEditHtml = '';
+  if (!ms) {
+    const hasAns = !!modelAns.trim();
+    ansEditHtml = `
+      <div class="ms-edit-bar">
+        <button class="ms-edit-btn${hasAns?' active':''}" id="btn_${ansEditUid}" onclick="_msEditToggle('${ansEditUid}','btn_${ansEditUid}')">
+          📝 ${hasAns ? 'Edit model answer' : 'Write a model answer'}
+        </button>
+      </div>
+      <div class="ms-edit-panel" id="${ansEditUid}">
+        <div class="ms-edit-label">Model answer</div>
+        <div class="ms-edit-hint">Write a complete answer. Keywords from it are extracted for Keyword Mining.</div>
+        <textarea class="ms-edit-textarea" id="ta_ans_${ansEditUid}" placeholder="Write a complete model answer here…" style="min-height:120px">${esc(modelAns)}</textarea>
+        <div class="ms-edit-actions">
+          <button class="ms-edit-save" onclick="_msSaveAnswer('${paperKey}','${partCode}','${uid}')">Save</button>
+          <button class="ms-edit-clear" onclick="_msClearAnswer('${paperKey}','${partCode}','${uid}')">Clear</button>
+        </div>
+      </div>`;
   }
 
   // ── Keyword Mining ──
@@ -520,10 +528,10 @@ function renderMsCard(part, paperKey) {
 
   return `
     ${promptHtml}
-    ${editBarHtml}
-    <div class="ms-section" style="margin-top:${editBarHtml?'14px':'0'}">
+    <div class="ms-section">
       <div class="ms-section-title">Mark Allocation</div>
       ${allocHtml}
+      ${ptsEditHtml}
     </div>
     <div class="ms-section">
       <div class="ms-section-title">Mark Scheme${ms?' — click "+ Add note" to annotate':''}</div>
@@ -532,6 +540,7 @@ function renderMsCard(part, paperKey) {
     <div class="ms-section">
       <div class="ms-section-title">Answer Anatomy${modelAns?' — Model Answer':''}</div>
       ${anatomyContent}
+      ${ansEditHtml}
     </div>
     <div class="ms-section">
       <div class="ms-section-title">Keyword Mining</div>
