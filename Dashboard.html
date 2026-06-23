@@ -538,7 +538,7 @@
       <a class="nav-item active" onclick="switchView('Dashboard', this)"><span class="nav-icon">⊞</span> Dashboard</a>
       <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
       <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
-      <a class="nav-item" onclick="switchView('Diagnostic', this)"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" onclick="switchView('Diagnostic', this)"><span class="nav-icon">🚦</span> Diagnostic</a>
       <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
       <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
     </div>
@@ -781,7 +781,7 @@
     <!-- ══ DIAGNOSTIC VIEW ═══════════════════════════════════════════ -->
     <div class="view" id="viewDiagnostic">
       <div class="section-hd" style="margin-bottom:18px;">
-        <div class="section-title" style="font-size:18px;font-family:var(--font-display);">◎ Diagnostics</div>
+        <div class="section-title" style="font-size:18px;font-family:var(--font-display);">🚦 Diagnostics</div>
       </div>
       <p style="font-size:14px;color:var(--muted);margin-bottom:20px;line-height:1.6;">Test your knowledge on any topic below. Each diagnostic gives you a mix of questions and updates your RAG colour based on how you score — green means confident, amber means almost there, and red means it needs more revision.</p>
       <div id="diagSubjectCards" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:20px;">
@@ -1141,7 +1141,7 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
       <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
         <span class="subj-board-tag" style="margin-bottom:0;">${s.exam_board}</span>
         ${gradeStr ? `<span style="font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));padding:2px 8px;border-radius:20px;box-shadow:0 2px 6px var(--accent-glow);letter-spacing:0.01em;">${gradeStr}</span>` : ''}
-        ${!diagComplete && total ? `<span title="Take the diagnostic to get your personalised weak-topic list" style="font-size:10px;font-weight:600;color:#B45309;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">◎ Diagnostic ${tested}/${total}</span>` : ''}
+        ${!diagComplete && total ? `<span title="Take the diagnostic to get your personalised weak-topic list" style="font-size:10px;font-weight:600;color:#B45309;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">🚦 Diagnostic ${tested}/${total}</span>` : ''}
       </div>
       ${(typeof renderPredictedGradeBadge === 'function') ? renderPredictedGradeBadge(prediction, { level: _level, target: tgtGrade }) : ''}
       <div class="subj-progress" style="display:flex;">
