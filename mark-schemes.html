@@ -391,14 +391,11 @@ window.togglePart = function(i) {
 
 // ── Picker logic ──
 function buildPicker() {
-  const cfg = window.PAPERS_CONFIG;
-  if (!cfg) {
+  const subjects = window.SUBJECTS;
+  if (!subjects || !subjects.length) {
     document.getElementById('pageBody').innerHTML = `<div class="placeholder"><div class="placeholder-icon">⚠️</div><div class="placeholder-title">Config not loaded</div><div class="placeholder-msg">papers-config.js did not load correctly.</div></div>`;
     return;
   }
-
-  // Gather subjects
-  const subjects = Object.keys(cfg).sort();
 
   const pickerHtml = `
     <div class="picker-row">
@@ -406,7 +403,7 @@ function buildPicker() {
         <div class="picker-label">Subject</div>
         <select class="picker-select" id="pickSubject">
           <option value="">— Select subject —</option>
-          ${subjects.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('')}
+          ${subjects.map((s, i) => `<option value="${i}">${esc(s.name)}</option>`).join('')}
         </select>
       </div>
       <div class="picker-group">
@@ -437,29 +434,29 @@ function buildPicker() {
   const pickPaper = document.getElementById('pickPaper');
 
   pickSubject.addEventListener('change', () => {
-    const subj = pickSubject.value;
+    const si = pickSubject.value;
     pickBoard.innerHTML = '<option value="">— Select board —</option>';
     pickPaper.innerHTML = '<option value="">— Select paper —</option>';
     pickBoard.disabled = true;
     pickPaper.disabled = true;
-    if (!subj) return;
-    const boards = Object.keys(cfg[subj] || {}).sort();
-    boards.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; pickBoard.appendChild(o); });
+    if (si === '') return;
+    const subj = subjects[parseInt(si)];
+    (subj.boards || []).forEach((b, bi) => { const o = document.createElement('option'); o.value = bi; o.textContent = b.board; pickBoard.appendChild(o); });
     pickBoard.disabled = false;
     document.getElementById('msViewer').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">Select a board</div><div class="placeholder-msg">Choose an exam board to see available papers.</div></div>`;
   });
 
   pickBoard.addEventListener('change', () => {
-    const subj = pickSubject.value;
-    const board = pickBoard.value;
+    const si = pickSubject.value;
+    const bi = pickBoard.value;
     pickPaper.innerHTML = '<option value="">— Select paper —</option>';
     pickPaper.disabled = true;
-    if (!board) return;
-    const papers = cfg[subj][board] || [];
-    papers.forEach((p, i) => {
+    if (bi === '') return;
+    const board = subjects[parseInt(si)].boards[parseInt(bi)];
+    (board.papers || []).forEach((p, pi) => {
       const o = document.createElement('option');
-      o.value = i;
-      o.textContent = p.title || p.label || `Paper ${i+1}`;
+      o.value = pi;
+      o.textContent = p.title || p.label || `Paper ${pi+1}`;
       pickPaper.appendChild(o);
     });
     pickPaper.disabled = false;
@@ -467,11 +464,11 @@ function buildPicker() {
   });
 
   pickPaper.addEventListener('change', () => {
-    const subj = pickSubject.value;
-    const board = pickBoard.value;
-    const idx = pickPaper.value;
-    if (idx === '') return;
-    const paper = (cfg[subj][board] || [])[parseInt(idx)];
+    const si = pickSubject.value;
+    const bi = pickBoard.value;
+    const pi = pickPaper.value;
+    if (pi === '') return;
+    const paper = subjects[parseInt(si)].boards[parseInt(bi)].papers[parseInt(pi)];
     if (!paper) return;
     // Render into msViewer
     const viewer = document.getElementById('msViewer');
