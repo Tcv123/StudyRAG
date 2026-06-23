@@ -22823,7 +22823,252 @@ window.SUBJECTS = [
         ]
       },
       { board: 'Edexcel B', specCode: '9EB0',
-        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/economics-b-2015.html' },
+        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/economics-b-2015.html',
+        papers: [
+          // ── June 2023 ──────────────────────────────────────────────────
+          {
+            id: 'econ-edexcel-b-9eb0-2023-p1',
+            year: 'June 2023',
+            paperName: 'Paper 1 — Markets and how they Work',
+            paperCode: '9EB0/01',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-01-que-20230518.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-01-rms-20230817.pdf',
+            questions: [
+              // ── Section A: Music Streaming Industry ──
+              {
+                number: 1,
+                scenario: 'SECTION A: The music streaming industry\n\nExtract A: The Competition and Markets Authority (CMA) launched a review of the UK music industry to address concerns about the power of big music firms and to ensure the music industry is competitive, thriving and works in the interests of the consumer. The UK music streaming market is dominated by a few large firms including Spotify, Apple Music, Amazon Music, YouTube Music, and Tencent Music, which together hold 87.23% market share.\n\nExtract B: Spotify — key data (2021): Revenue: $9,668 million; R&D expenditure: $912 million; Market share: 31.7%; Apple Music market share: 17.48%\n\nSpotify uses price discrimination, segmenting customers by income, age and lifestyle with different subscription rates: students, individuals, couples, and families. A \'freemium\' version is available at no cost.\n\nExtract C: Spotify pricing by consumer group: Student plan; Individual plan; Duo (couples) plan; Family plan. Spotify has also expanded to 190 countries in seven years, with lower prices in developing markets.\n\nExtract D: Employment in the UK music industry fell by approximately 69,000 workers between 2019 and 2020 as live music venues and studios were forced to close. Since then, unemployment in the wider UK economy has been falling.\n\nExtract E: Live music in the UK — following the lifting of COVID-19 restrictions, demand for live music events rebounded strongly. The UK Government charges VAT on tickets for live music events. Major festivals such as Glastonbury were cancelled in 2020 and 2021, leading many firms to exit the market.\n\nExtract F: The UK music streaming market concentration data: Spotify 31.7%; Apple Music 17.48%; Amazon Music 13.3%; YouTube Music 12.0%; Tencent Music 12.73%; Others 12.79%',
+                parts: [
+                  { code: '1(a)', prompt: 'Explain one method the Competition and Markets Authority (CMA) could use to research the music streaming industry.', marks: 4 },
+                  { code: '1(b)', prompt: 'Using a supply and demand diagram, illustrate the impact on the market for traditional music formats following the increase in music streaming.', marks: 4, kind: 'diagram' },
+                  { code: '1(c)', prompt: 'Using Extract B, calculate, to two decimal places, the percentage of revenue spent on research and development (R&D) by Spotify in 2021. You are advised to show your working.', marks: 4 },
+                  { code: '1(d)', prompt: 'Analyse two possible reasons why Spotify might have increased its spending on R&D.', marks: 6 },
+                  { code: '1(e)', prompt: 'Discuss the benefits for Spotify of using price discrimination.', marks: 8 },
+                  { code: '1(f)', prompt: 'Using a supply and demand diagram, assess the likely impact on the market for live music if the UK Government reduced VAT on tickets for live music events.', marks: 10, kind: 'diagram' },
+                  { code: '1(g)', prompt: 'Assess the implications of a fall in unemployment for firms within the music industry.', marks: 12 },
+                  { code: '1(h)', prompt: 'Assess the benefits for consumers of the music streaming industry being an oligopoly.', marks: 12 }
+                ]
+              },
+              // ── Section B: Essay ──
+              {
+                number: 2,
+                scenario: 'SECTION B\n\nExtract G: UK smoking and health — The Better Health Smoke Free campaign released a new film showing parents how children are four times more likely to start smoking if parents or caregivers smoke. In the UK, approximately 14% of adults smoke. The NHS and government provide stop-smoking services and information campaigns to reduce smoking rates.',
+                parts: [
+                  { code: '2', prompt: 'Evaluate the effectiveness of the UK Government providing information in reducing the number of smokers in the UK.', marks: 20, extended: true }
+                ]
+              },
+              // ── Section C: Essay ──
+              {
+                number: 3,
+                scenario: 'SECTION C\n\nExtract G: UK job vacancies reached a record high following the pandemic. Data shows 1,294,000 vacancies across the UK economy as of early 2022, including high vacancy rates in accommodation and food services, health and social care, and education. The government has introduced Skills Bootcamps offering free, flexible training courses for adults.\n\nExtract H: Supply-side policies such as investment in education and training can increase the skills and quality of the labour force, shifting the aggregate supply (AS) curve to the right.',
+                parts: [
+                  { code: '3', prompt: 'Using an AD/AS diagram, evaluate the impact of improving the skills and quality of the labour force for the UK economy.', marks: 20, extended: true, kind: 'diagram' }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-edexcel-b-9eb0-2023-p2',
+            year: 'June 2023',
+            paperName: 'Paper 2 — Competing in the Global Economy',
+            paperCode: '9EB0/02',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-02-que-20230522.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-02-rms-20230817.pdf',
+            questions: [
+              // ── Section A: UK Restaurant and Takeaway Market ──
+              {
+                number: 1,
+                scenario: 'SECTION A: The UK restaurant and takeaway meals market\n\nExtract A: UK restaurants face rising costs and falling demand — Restaurants are facing food, wage and energy inflation simultaneously. The Restaurant Group and Casual Dining Group have been exiting the market. Both groups grew inorganically through acquisitions: The Restaurant Group controls brands including Frankie & Benny\'s and Garfunkel\'s; Casual Dining Group controls Café Rouge and Bella Italia. Meanwhile, independent restaurants have stepped into the gaps left by the chains. Cheaper rents have made it easier for entrepreneurs to start new restaurants.\n\nExtract B: Dark kitchens — A dark kitchen is a cooking facility with no front-of-house or dining area, intended to increase efficiency — to cook, pack and deliver takeaway meals as quickly as possible. Dark kitchens are also intended to help existing restaurant brands reach customers further away from their restaurants and increase turnover. Costs are reduced as dark kitchens are located within warehouses in low-cost areas of cities. There have been concerns about poor working conditions and low pay within the dark kitchen industry. Negative externalities for local communities include increased delivery traffic and litter.\n\nExtract C: UK Consumer Price Index (CPI) data 2021–2022 (Index, base 2015=100): Jan 2022: 115.8; Feb 2022: 115.8; Mar 2022: 117.1 [selected months shown]. Monthly inflation rates shown for Nov 2021 through Mar 2022.\n\nMedian nominal annual earnings for full-time employees in the UK increased from £25,806 in 2009 to £31,285 in 2021. In the same period, there was an increase of 52% in demand for takeaway meals.',
+                parts: [
+                  { code: '1(a)', prompt: 'Using the data from Extract C, calculate, to 2 decimal places, the rate of inflation in March 2022. You are advised to show your working.', marks: 4 },
+                  { code: '1(b)', prompt: 'With reference to Extract C, explain in which month there was deflation and in which month there was disinflation.', marks: 4 },
+                  { code: '1(c)', prompt: 'Median nominal annual earnings for full-time employees in the UK increased from £25,806 in 2009 to £31,285 in 2021. In the same period, there was an increase of 52% in demand for takeaway meals. Using this data, calculate, to 2 decimal places, the income elasticity of demand for takeaway meals.', marks: 4 },
+                  { code: '1(d)', prompt: 'Analyse two ways small firms might survive in the competitive restaurant market.', marks: 6 },
+                  { code: '1(e)', prompt: 'Discuss the possible benefits to takeaway firms of using dark kitchens.', marks: 8 },
+                  { code: '1(f)', prompt: 'With reference to Extract A, assess the likely impact of rising inflation on the UK restaurant market.', marks: 10 },
+                  { code: '1(g)', prompt: 'With reference to Extract A, assess problems arising from the inorganic growth used by UK restaurant chains such as The Restaurant Group and the Casual Dining Group.', marks: 12 },
+                  { code: '1(h)', prompt: 'With reference to Extract B, assess potential stakeholder conflicts associated with the growth of dark kitchens.', marks: 12 }
+                ]
+              },
+              // ── Section B: Essay ──
+              {
+                number: 2,
+                scenario: 'SECTION B\n\nExtracts D–G provide information on supply chain disruptions and stock management. Extract E: Retail supply chain disruptions have led to empty shelves in supermarkets. Extract F: Car and electronics manufacturers have faced production halts due to semiconductor shortages. Extract G: Natural gas prices have risen sharply, affecting energy-intensive industries.',
+                parts: [
+                  { code: '2', prompt: 'Evaluate the impact of just in time (JIT) management of stock on the efficiency and competitiveness of firms.', marks: 20, extended: true }
+                ]
+              },
+              // ── Section C: Essay ──
+              {
+                number: 3,
+                scenario: 'SECTION C\n\nExtract H: Central banks face dilemma — Rising inflation, driven partly by energy prices and supply chain disruptions, has prompted debate about raising interest rates. Raising interest rates to control inflation risks reducing economic growth. Policymakers warn of the danger of acting too slowly or too quickly.\n\nExtract I: Norway faces a difficult trade-off between generating prosperity from fossil fuel exports — its sovereign wealth fund exceeds $1.4 trillion — and the environmental imperative to reduce carbon emissions and promote sustainable development. Norway has committed to achieving carbon neutrality.',
+                parts: [
+                  { code: '3', prompt: 'Evaluate the extent to which there is a trade-off between the policy objective of economic growth and the other objectives outlined in Extracts H and I.', marks: 20, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-edexcel-b-9eb0-2023-p3',
+            year: 'June 2023',
+            paperName: 'Paper 3 — The Economic Environment and Business',
+            paperCode: '9EB0/03',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-que-20230605.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-rms-20230817.pdf',
+            questions: [
+              // ── Section 1 ──
+              {
+                number: 1,
+                scenario: 'SECTION 1: Markets and competition\n\nExtract A: Wage rates in a modern labour market — A historical extract describing rural Cumbrian labour markets in the 1870s illustrates how supply and demand once set wages. In modern labour markets, trade unions can negotiate higher wages through collective bargaining, often backed by industrial action. Some labour markets face monopsony employers (such as the NHS or state education) that can drive down wage rates.\n\nExtract B: Barriers to entry and market structure — Tesla entered the electric vehicle market despite very high barriers to entry in the established car industry, including high start-up costs, brand loyalty, and economies of scale enjoyed by incumbents. Changes in technology have circumvented the old barriers. The supermarket oligopoly has been diluted by the emergence of Aldi and Lidl.\n\nExtract C: Global marketing — Dunkin\' Donuts adapts its menus and marketing to local tastes in different countries (glocalisation). Red Bull does not adapt its product or marketing globally. McDonald\'s offers localised menus such as the McAloo Tikki burger in India (no beef). Sony, Apple and Ferrari sell standardised premium products globally.\n\nExtract D: The digital economy — Amazon, eBay, and Alibaba have transformed retail markets. Price comparison sites have increased price competition. Supermarkets now offer online shopping and home delivery. Employment has shifted from traditional workplaces to digital businesses. Examples: growth in demand for delivery drivers; digital platforms creating new markets. Amazon has been accused of using its power to exploit workers in terms of wages and conditions.',
+                parts: [
+                  { code: '1(a)', prompt: 'Discuss if wage rates in a modern labour market are always determined by supply and demand.', marks: 8 },
+                  { code: '1(b)', prompt: 'Assess how barriers to entry affect market structure.', marks: 10 },
+                  { code: '1(c)', prompt: 'Assess the benefits for a firm of adapting its marketing strategies for global markets.', marks: 12 },
+                  { code: '1(d)', prompt: 'Evaluate the impact of the digital economy on markets and firms.', marks: 20, extended: true }
+                ]
+              },
+              // ── Section 2 ──
+              {
+                number: 2,
+                scenario: 'SECTION 2: Business strategy and government policy\n\nExtract E: IOC (Independent Oil Company) operates petrol stations along the road to the Himalayas in India, targeting motorcycle travellers and tourists — a niche market. The company has achieved significant increases in revenue by focusing on this specialist segment.\n\nExtract F: The European Commission is investigating a proposed takeover of OMV Slovenija (one of Slovenia\'s major fuel retailers) by MOL (a Hungarian energy company). The Commission is concerned the merger will reduce competition in the Slovenian fuel market. Petrol is the largest supplier in Slovenia. MOL may be required to divest some outlets if the takeover is approved.\n\nExtract G: The French government introduced subsidies on household energy bills in 2022 to shield consumers from surging gas and electricity prices caused by the energy crisis. Extract H notes that such subsidies may prevent future investment in energy infrastructure and increase consumption, potentially worsening negative externalities.\n\nExtract I: Global emissions — the burning of fossil fuels produces greenhouse gases that cause climate change, with costs estimated in the tens of trillions of dollars. Governments have a range of policy options to reduce emissions including tradeable pollution permits, indirect taxation, regulation/legislation, information provision, and subsidies for green technology.',
+                parts: [
+                  { code: '2(a)', prompt: 'Discuss the benefits for a firm of operating in a niche market.', marks: 8 },
+                  { code: '2(b)', prompt: 'Assess the likely impact of the proposed takeover of OMV Slovenija by MOL on the market for fuel in Slovenia.', marks: 10 },
+                  { code: '2(c)', prompt: 'Using a suitable diagram, assess the benefits of a subsidy in a market such as the French energy market.', marks: 12, kind: 'diagram' },
+                  { code: '2(d)', prompt: 'Evaluate government policies that can be used to deal with market failure in an economy caused by emissions.', marks: 20, extended: true }
+                ]
+              }
+            ]
+          },
+          // ── June 2022 ──────────────────────────────────────────────────
+          {
+            id: 'econ-edexcel-b-9eb0-2022-p1',
+            year: 'June 2022',
+            paperName: 'Paper 1 — Markets and how they Work',
+            paperCode: '9EB0/01',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-01-que-20220524.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-01-rms-20220818.pdf',
+            questions: [
+              // ── Section A: UK Car Manufacturing Industry ──
+              {
+                number: 1,
+                scenario: 'SECTION A: The UK car manufacturing industry\n\nExtract A: Market share of UK car manufacturers, 2021 (selected firms): Stellantis 22.8%; Volkswagen Group 13.1%; Toyota 9.84%; BMW 9.43%; Ford 8.88%; Others 35.95%. 81% of cars produced in the UK are exported; the EU is the UK\'s largest trading partner for car exports.\n\nExtract B: Stellantis financial data (£m): 2020 — Revenue: 60,734; Profit for the year: 2,022. Stellantis was formed from the merger of Fiat Chrysler and PSA Group in 2021 and has 18 different car brands in its portfolio including Peugeot, Citroën, Vauxhall, Fiat, Ferrari, and Maserati.\n\nExtract C: Electric vehicles and government policy — The UK Government has announced plans to ban the sale of new petrol and diesel cars by 2030. The government offered a £2,500 grant to help consumers purchase electric cars. Extract D shows that only 6.3% of vehicles on UK roads are currently electric.\n\nExtract E: Cost comparison between electric and petrol cars over a typical ownership period shows electric vehicles are ultimately cheaper to run but more expensive to buy initially. Vauxhall\'s Ellesmere Port plant (employing 1,000 direct and 6,000 supply chain workers) received a £30 million government subsidy to switch to producing electric vans.',
+                parts: [
+                  { code: '1(a)', prompt: 'Using Extract A, calculate to two decimal places the 5-firm concentration ratio for the UK car manufacturing industry. You are advised to show your working.', marks: 4 },
+                  { code: '1(b)', prompt: 'Explain one reason why there is less likely to be price competition in the car industry.', marks: 4 },
+                  { code: '1(c)', prompt: 'Using Extract B, calculate to two decimal places the profit for the year margin for Stellantis in 2020. You are advised to show your working.', marks: 4 },
+                  { code: '1(d)', prompt: 'Using a suitable diagram, analyse the likely impact on the market for new petrol and diesel cars if the government increases the subsidy on new electric cars.', marks: 6, kind: 'diagram' },
+                  { code: '1(e)', prompt: 'Discuss the likely impact on UK car exports following a depreciation of the pound against the euro.', marks: 8 },
+                  { code: '1(f)', prompt: 'Assess the likely benefits for Stellantis of selling a range of different car brands.', marks: 10 },
+                  { code: '1(g)', prompt: 'Assess the benefits to the UK economy of subsidising the Vauxhall car plant in Ellesmere Port.', marks: 12 },
+                  { code: '1(h)', prompt: 'Assess the likely impact on the UK economy of the Government banning the sale of new petrol and diesel cars from 2030.', marks: 12 }
+                ]
+              },
+              // ── Section B: Essay ──
+              {
+                number: 2,
+                scenario: 'SECTION B\n\nIn 2021 UK inflation reached 2.1% and was expected to exceed 4% — above the Bank of England\'s 2% inflation target. The Bank of England base interest rate stood at 0.1%.',
+                parts: [
+                  { code: '2', prompt: 'Evaluate the effectiveness of using monetary policy to control inflation in the UK.', marks: 20, extended: true }
+                ]
+              },
+              // ── Section C: Essay ──
+              {
+                number: 3,
+                scenario: 'SECTION C\n\nUber was required by the UK Supreme Court in 2021 to reclassify its drivers from \'independent contractors\' to \'workers\', entitling them to the National Living Wage, holiday pay and pension contributions. Companies such as Uber, Amazon, and Deliveroo have been accused of exploiting workers through low pay and informal contracts. The UK currently has strong employee protections including minimum wage legislation and pension requirements.',
+                parts: [
+                  { code: '3', prompt: 'Evaluate the case for a reduction in the regulations that protect UK employees.', marks: 20, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-edexcel-b-9eb0-2022-p2',
+            year: 'June 2022',
+            paperName: 'Paper 2 — Competing in the Global Economy',
+            paperCode: '9EB0/02',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-02-que-20220607.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-02-rms-20220818.pdf',
+            questions: [
+              // ── Section A: UK vs Denmark — Productivity and Inequality ──
+              {
+                number: 1,
+                scenario: 'SECTION A: UK and Denmark — a productivity and inequality comparison\n\nExtract A: UK GDP (2017): £2.12 trillion; UK population: 66 million. Danish GDP per capita exceeded UK GDP per capita in 2017.\n\nExtract B: GDP growth comparison (2016–2018): Denmark consistently grew faster than the UK. Denmark investment as % of GDP: 23%; UK investment as % of GDP: 17%. UK GDP growth was lower than 13 neighbouring countries during this period.\n\nExtract C: Hourly wages by sector in the UK and Denmark (selected service sector data): Finance: £22.62; Professional services: £18.83; Retail: £9.62. Denmark has no legal minimum wage; the UK has a National Living Wage.\n\nExtract D: Labour productivity index (base 2015 = 100): UK 2018: 100.3; Denmark 2018: 105.4. Both countries indexed at 100 in 2015.\n\nIncome distribution — quintile shares of total income: UK bottom quintile receives less than in Denmark; when combining the bottom two quintiles, the UK distributes 5% less than Denmark.\n\nGini coefficients (2018): UK: 0.36; Denmark: 0.28. Human Development Index: UK: 0.926; Denmark: 0.939.',
+                parts: [
+                  { code: '1(a)', prompt: 'Using the data from Extract A, calculate to two decimal places the UK GDP per capita for 2017.', marks: 4 },
+                  { code: '1(b)', prompt: 'Calculate the median hourly wage for the service sector only. You are advised to show your workings.', marks: 4 },
+                  { code: '1(c)', prompt: 'Using the data in Extract D, calculate the difference in the percentage change in labour productivity for the United Kingdom and Denmark between 2015 and 2018.', marks: 4 },
+                  { code: '1(d)', prompt: 'Analyse two factors influencing labour productivity in either Denmark or the UK.', marks: 6 },
+                  { code: '1(e)', prompt: 'Discuss the likely impact of low productivity on economic growth in the United Kingdom between 2015 and 2018.', marks: 8 },
+                  { code: '1(f)', prompt: 'Assess the use of the Gini coefficient as a measure of absolute and relative poverty.', marks: 10 },
+                  { code: '1(g)', prompt: 'The United Kingdom has a legal minimum wage. Denmark has no legal minimum wage. Assess the impact of a minimum wage on income inequality.', marks: 12 },
+                  { code: '1(h)', prompt: 'Using Extract B and a suitable diagram, assess the likely economic impact of the level of investment in Denmark.', marks: 12, kind: 'diagram' }
+                ]
+              },
+              // ── Section B: Essay ──
+              {
+                number: 2,
+                scenario: 'SECTION B\n\nExtracts E–G: Nabisco moved production of Oreo biscuits from the US to Mexico, where the minimum wage is $1.05/hour compared to $7.25/hour in the US. Germany has maintained its manufacturing base in the EU trade bloc. South Korea has a business environment promoting enterprise. Rolls Royce manufactures aero engines requiring highly skilled workers.',
+                parts: [
+                  { code: '2', prompt: 'Evaluate the importance of wage costs in influencing the location of manufacturing firms.', marks: 20, extended: true }
+                ]
+              },
+              // ── Section C: Essay ──
+              {
+                number: 3,
+                scenario: 'SECTION C\n\nExtracts H–I: Brazil\'s economic data — unemployment reached 13.67% in 2020; Gini coefficient among the highest in the world; GDP growth peaked at only 3% in 2013; inflation at 9% in 2015 despite the economy being in recession; Brazil holds the world\'s largest rainforest; deforestation has been increasing; new car industry investment announced.',
+                parts: [
+                  { code: '3', prompt: 'Evaluate the impact of low or negative economic growth upon a developing economy such as Brazil.', marks: 20, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-edexcel-b-9eb0-2022-p3',
+            year: 'June 2022',
+            paperName: 'Paper 3 — The Economic Environment and Business',
+            paperCode: '9EB0/03',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-que-20220613.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9eb0-03-rms-20220818.pdf',
+            questions: [
+              // ── Section 1 ──
+              {
+                number: 1,
+                scenario: 'SECTION 1: The macroeconomy\n\nExtract A: The macroeconomic context (2021–2022) — GDP growth rebounded strongly after the pandemic-related contraction of 2020. Government debt increased substantially as a result of pandemic support packages.\n\nExtract B: Business investment — Following the recovery, investment in the UK began to pick up, though remained below pre-pandemic levels. Economists suggest that expanding business investment would boost the productive capacity of the economy.\n\nExtract C: Credit Suisse economists warn that expansionary fiscal policy risks overheating economies and creating inflationary pressures, particularly where economies are already near full capacity.\n\nExtract D: The cost of negative externalities from economic activity was estimated at $25 trillion annually, according to a major environmental study.\n\nExtract E: Germany\'s Energiewende (energy transition) policy aims to shift the country from fossil fuels to renewable energy sources such as wind and solar power. Germany has made commitments to phase out coal by 2038 and nuclear power.',
+                parts: [
+                  { code: '1(a)', prompt: 'Discuss the usefulness of GDP as an indicator of growth.', marks: 8 },
+                  { code: '1(b)', prompt: 'Assess the impact of exchange rate changes on economic growth.', marks: 10 },
+                  { code: '1(c)', prompt: 'Using a suitable diagram, assess the use of fiscal policy to stimulate economic growth.', marks: 12, kind: 'diagram' },
+                  { code: '1(d)', prompt: 'Evaluate the extent of the trade-off between economic growth and negative externalities.', marks: 20, extended: true }
+                ]
+              },
+              // ── Section 2 ──
+              {
+                number: 2,
+                scenario: 'SECTION 2: Emerging economies and global business\n\nExtract F: Vietnam\'s economic growth — Vietnam is predicted to experience GDP growth of 8.5% in 2021, making it the fastest-growing economy in South East Asia. FDI inflows reached $17 billion in 2020. Major MNCs including Toyota, Honda, Canon, Nike, and Apple have established manufacturing operations in Vietnam.\n\nExtract G: The Regional Comprehensive Economic Partnership (RCEP) — signed in 2020, RCEP became the world\'s largest trading bloc with an output of $26.2 trillion, reducing trade barriers for nearly a third of the global population. Members include China, Japan, South Korea, Australia, and 10 ASEAN nations including Vietnam.\n\nExtract H: South East Asian growth prospects — Vietnam 8.5%; Philippines 8.4%; Malaysia 7.1%; Thailand 4.0%; Indonesia 3.8% (forecast GDP growth rates for 2021). China (RCEP member) has considerable competitive advantages in manufacturing over smaller neighbours.',
+                parts: [
+                  { code: '2(a)', prompt: 'Discuss the possible impact of economic growth on employment patterns in a country such as Vietnam.', marks: 8 },
+                  { code: '2(b)', prompt: 'Assess the benefits of membership of a trade bloc for a country such as Vietnam.', marks: 10 },
+                  { code: '2(c)', prompt: 'Assess the impact of Multinational Corporations (MNCs) on the national economy of a country such as Vietnam.', marks: 12 },
+                  { code: '2(d)', prompt: 'Evaluate the impact on European firms of the growing economic power of emerging economies in South East Asia.', marks: 20, extended: true }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       { board: 'OCR', specCode: 'H460',
         officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/economics-h060-h460-from-2015/assessment/' }
     ]
