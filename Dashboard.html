@@ -1151,7 +1151,7 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
           : `${prediction.masteryPct}% mastery · RAG ${prediction.ragScore}%${prediction.practiceScore !== null ? ` · Practice ${prediction.practiceScore}%` : ''}`;
         return `<div title="${tip}" style="display:flex;align-items:center;justify-content:space-between;background:${col}15;border:1.5px solid ${col}55;border-radius:10px;padding:8px 12px;margin-bottom:10px;cursor:help;opacity:${dimmed ? '0.6' : '1'};">
           <span style="font-size:12px;font-weight:600;color:${col}CC;">Predicted grade</span>
-          <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;">${prediction.grade}${dimmed ? ' ?' : ''}</span>
+          <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;">${prediction.grade}${dimmed ? `<span style="font-size:13px;font-weight:400;opacity:0.6;margin-left:2px;">?</span>` : ''}</span>
         </div>`;
       })() : ''}
       <div class="subj-progress" style="display:flex;">
