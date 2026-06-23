@@ -116,6 +116,25 @@
     .ms-kw-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
     .ms-kw-chip { padding: 3px 10px; border-radius: 20px; font-size: 12.5px; border: 1px solid; background: var(--accent-dim); border-color: rgba(37,99,235,0.3); color: var(--accent-dark); }
 
+    /* Annotations */
+    .ms-point-wrap { display: flex; flex-direction: column; gap: 4px; }
+    .ms-point-row { display: flex; align-items: flex-start; gap: 6px; }
+    .ms-point-text { flex: 1; padding: 8px 12px; background: var(--surface2); border-radius: 7px; border-left: 3px solid var(--border); font-size: 13px; line-height: 1.5; }
+    .ms-point-text.type-exact { border-left-color: var(--accent); }
+    .ms-note-btn { flex-shrink: 0; margin-top: 6px; background: none; border: 1px dashed var(--border); border-radius: 6px; color: var(--muted2); font-size: 11px; padding: 4px 8px; cursor: pointer; white-space: nowrap; font-family: var(--font-body); }
+    .ms-note-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
+    .ms-note-btn.has-note { border-style: solid; border-color: rgba(217,119,6,0.5); color: #B45309; background: rgba(217,119,6,0.06); }
+    .ms-note-area { display: none; margin-top: 4px; }
+    .ms-note-area.open { display: flex; flex-direction: column; gap: 6px; }
+    .ms-note-textarea { width: 100%; min-height: 64px; padding: 8px 10px; font-family: var(--font-body); font-size: 13px; border: 1px solid var(--border); border-radius: 7px; background: var(--surface); color: var(--text); resize: vertical; line-height: 1.5; }
+    .ms-note-textarea:focus { outline: none; border-color: var(--accent); }
+    .ms-note-actions { display: flex; gap: 6px; }
+    .ms-note-save { padding: 5px 12px; background: var(--accent); color: #fff; border: none; border-radius: 6px; font-family: var(--font-body); font-size: 12px; font-weight: 600; cursor: pointer; }
+    .ms-note-save:hover { background: var(--accent-dark); }
+    .ms-note-delete { padding: 5px 10px; background: none; border: 1px solid var(--border); color: var(--muted); border-radius: 6px; font-family: var(--font-body); font-size: 12px; cursor: pointer; }
+    .ms-note-delete:hover { border-color: #DC2626; color: #DC2626; }
+    .ms-note-display { margin-top: 4px; padding: 7px 10px; background: rgba(217,119,6,0.06); border-left: 3px solid rgba(217,119,6,0.5); border-radius: 0 6px 6px 0; font-size: 12.5px; color: #78350F; line-height: 1.5; white-space: pre-wrap; }
+
     /* No MS */
     .no-ms { font-size: 13px; color: var(--muted2); font-style: italic; }
 
@@ -220,10 +239,84 @@ function extractKeywords(points) {
   return [...kws].slice(0, 22);
 }
 
-function renderMsCard(part) {
+// ── Note storage (localStorage, keyed by paperKey + partCode + pointIndex) ──
+function noteKey(paperKey, partCode, idx) {
+  return `ms_note__${paperKey}__${partCode}__${idx}`;
+}
+function getNote(paperKey, partCode, idx) {
+  try { return localStorage.getItem(noteKey(paperKey, partCode, idx)) || ''; } catch { return ''; }
+}
+function saveNote(paperKey, partCode, idx, text) {
+  try {
+    if (text.trim()) localStorage.setItem(noteKey(paperKey, partCode, idx), text);
+    else localStorage.removeItem(noteKey(paperKey, partCode, idx));
+  } catch {}
+}
+
+window._msNoteToggle = function(btnEl, areaId) {
+  const area = document.getElementById(areaId);
+  if (!area) return;
+  const open = area.classList.toggle('open');
+  btnEl.textContent = open ? '✕ Close' : (btnEl.dataset.hasNote === '1' ? '📝 My note' : '+ Add note');
+};
+window._msNoteSave = function(paperKey, partCode, idx, areaId, btnId) {
+  const ta = document.getElementById('ta_' + areaId);
+  const text = ta ? ta.value : '';
+  saveNote(paperKey, partCode, idx, text);
+  const display = document.getElementById('nd_' + areaId);
+  const btn = document.getElementById(btnId);
+  if (display) {
+    if (text.trim()) { display.style.display = 'block'; display.textContent = text; }
+    else { display.style.display = 'none'; }
+  }
+  if (btn) {
+    btn.dataset.hasNote = text.trim() ? '1' : '0';
+    btn.className = 'ms-note-btn' + (text.trim() ? ' has-note' : '');
+  }
+  const area = document.getElementById(areaId);
+  if (area) {
+    area.classList.remove('open');
+    if (btn) btn.textContent = text.trim() ? '📝 My note' : '+ Add note';
+  }
+};
+window._msNoteDelete = function(paperKey, partCode, idx, areaId, btnId) {
+  saveNote(paperKey, partCode, idx, '');
+  const ta = document.getElementById('ta_' + areaId);
+  if (ta) ta.value = '';
+  _msNoteSave(paperKey, partCode, idx, areaId, btnId);
+};
+
+function renderPointWithNote(pointText, typeClass, paperKey, partCode, idx) {
+  const existing = getNote(paperKey, partCode, idx);
+  const hasNote = !!existing.trim();
+  const uid = (paperKey + '_' + partCode + '_' + idx).replace(/\W/g, '_');
+  const areaId = 'na_' + uid;
+  const btnId  = 'nb_' + uid;
+  return `
+    <div class="ms-point-wrap">
+      <div class="ms-point-row">
+        <div class="ms-point-text ${typeClass}">${esc(pointText)}</div>
+        <button class="ms-note-btn${hasNote ? ' has-note' : ''}" id="${btnId}"
+          data-has-note="${hasNote ? '1' : '0'}"
+          onclick="_msNoteToggle(this,'${areaId}')"
+        >${hasNote ? '📝 My note' : '+ Add note'}</button>
+      </div>
+      ${hasNote ? `<div class="ms-note-display" id="nd_${areaId}">${esc(existing)}</div>` : `<div class="ms-note-display" id="nd_${areaId}" style="display:none"></div>`}
+      <div class="ms-note-area" id="${areaId}">
+        <textarea class="ms-note-textarea" id="ta_${areaId}" placeholder="Your note on this point — e.g. memory trick, common mistake, extra context…">${esc(existing)}</textarea>
+        <div class="ms-note-actions">
+          <button class="ms-note-save" onclick="_msNoteSave('${paperKey}','${partCode}',${idx},'${areaId}','${btnId}')">Save note</button>
+          <button class="ms-note-delete" onclick="_msNoteDelete('${paperKey}','${partCode}',${idx},'${areaId}','${btnId}')">Delete</button>
+        </div>
+      </div>
+    </div>`;
+}
+
+function renderMsCard(part, paperKey) {
   const ms = part.markScheme;
   const msType = ms ? (ms.type || 'points') : null;
   const totalMarks = part.marks;
+  const partCode = part.code || '';
 
   // Prompt display
   const promptHtml = part.prompt ? `<div class="part-prompt-full">${esc(part.prompt)}</div>` : '';
@@ -248,15 +341,15 @@ function renderMsCard(part) {
     allocHtml = `<div class="ms-alloc-desc">Exact answer required · <strong>${totalMarks}</strong> mark${totalMarks !== 1 ? 's' : ''}</div>`;
   }
 
-  // ── Mark Scheme Points / Levels ──
+  // ── Mark Scheme Points / Levels (with per-point annotations) ──
   let schemeHtml = '';
   if (msType === 'points') {
-    const items = (ms.points || []).map(p => `<li class="ms-point-item">${esc(p)}</li>`).join('');
-    schemeHtml = `<ul class="ms-points-list">${items}</ul>`;
+    const items = (ms.points || []).map((p, i) => renderPointWithNote(p, '', paperKey, partCode, i)).join('');
+    schemeHtml = `<div class="ms-points-list">${items}</div>`;
     if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
   } else if (msType === 'exact') {
-    const items = (ms.points || []).map(p => `<li class="ms-point-item type-exact"><strong>${esc(p)}</strong></li>`).join('');
-    schemeHtml = `<ul class="ms-points-list">${items}</ul>`;
+    const items = (ms.points || []).map((p, i) => renderPointWithNote(p, 'type-exact', paperKey, partCode, i)).join('');
+    schemeHtml = `<div class="ms-points-list">${items}</div>`;
     if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
   } else if (msType === 'levels') {
     const lvls = ms.levels || [];
@@ -269,8 +362,8 @@ function renderMsCard(part) {
       </div>`;
     }).join('');
     if (ms.indicative) {
-      const ind = Object.entries(ms.indicative).map(([k,v]) => `<li class="ms-point-item"><strong>${esc(k)}:</strong> ${esc(v)}</li>`).join('');
-      schemeHtml += `<div style="margin-top:12px;"><div class="ms-section-title" style="margin-bottom:6px;">Indicative content</div><ul class="ms-points-list">${ind}</ul></div>`;
+      const ind = Object.entries(ms.indicative).map(([k,v], i) => renderPointWithNote(`${k}: ${v}`, '', paperKey, partCode, 100 + i)).join('');
+      schemeHtml += `<div style="margin-top:12px;"><div class="ms-section-title" style="margin-bottom:6px;">Indicative content</div><div class="ms-points-list">${ind}</div></div>`;
     }
     if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
   }
@@ -331,7 +424,7 @@ function renderMsCard(part) {
       ${allocHtml}
     </div>
     <div class="ms-section">
-      <div class="ms-section-title">Official Mark Scheme</div>
+      <div class="ms-section-title">Official Mark Scheme — click "+ Add note" to annotate any point</div>
       ${schemeHtml}
     </div>
     <div class="ms-section">
@@ -467,8 +560,12 @@ function buildPicker(userSubs) {
     const fi = pickSubject.value;
     const pi = pickPaper.value;
     if (pi === '') return;
-    const paper = filtered[parseInt(fi)].papers[parseInt(pi)];
+    const entry = filtered[parseInt(fi)];
+    const paper = entry.papers[parseInt(pi)];
     if (!paper) return;
+    // Stable key for localStorage notes: subject + board + paper title
+    const paperKey = (entry.subjectName + '_' + entry.board + '_' + (paper.title || paper.label || pi))
+      .replace(/\W+/g, '_').toLowerCase();
     // Render into msViewer
     const viewer = document.getElementById('msViewer');
     const parts = paper.parts || [];
@@ -502,7 +599,7 @@ function buildPicker(userSubs) {
                 <span class="part-ms-type">${typeLabel}</span>
                 <span class="part-arrow">▾</span>
               </div>
-              <div class="part-card-body">${renderMsCard(part)}</div>
+              <div class="part-card-body">${renderMsCard(part, paperKey)}</div>
             </div>`;
         }).join('')}
       </div>`;
