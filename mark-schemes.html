@@ -10,6 +10,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="nav-gating.js"></script>
+  <script src="papers-config.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     :root {
@@ -18,6 +19,8 @@
       --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
       --accent: #2563EB; --accent-dark: #1D4ED8;
       --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+      --good: #16A34A; --good-dim: rgba(22,163,74,0.1);
+      --warn: #B45309; --warn-dim: rgba(217,119,6,0.1);
       --font-display: 'DM Serif Display', serif; --font-body: 'DM Sans', sans-serif;
       --sidebar-w: 240px;
     }
@@ -42,9 +45,82 @@
     .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; }
     .logout-btn:hover { color: #DC2626; }
     .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
-    .topbar { margin-bottom: 32px; }
+    .topbar { margin-bottom: 28px; }
     .page-title { font-family: var(--font-display); font-size: 28px; letter-spacing: -0.02em; }
     .page-sub { font-size: 14px; color: var(--muted); margin-top: 3px; }
+
+    /* Picker */
+    .picker-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
+    .picker-group { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 160px; }
+    .picker-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted2); }
+    .picker-select { padding: 9px 12px; border-radius: 9px; border: 1px solid var(--border); background: var(--surface); font-family: var(--font-body); font-size: 14px; color: var(--text); cursor: pointer; }
+    .picker-select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .picker-select:disabled { opacity: 0.4; cursor: not-allowed; }
+
+    /* Paper header */
+    .paper-header { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; margin-bottom: 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
+    .paper-header-title { font-family: var(--font-display); font-size: 20px; flex: 1; min-width: 200px; }
+    .paper-header-meta { display: flex; gap: 8px; flex-wrap: wrap; }
+    .meta-chip { background: var(--surface2); border: 1px solid var(--border); border-radius: 6px; padding: 4px 10px; font-size: 12px; color: var(--muted); }
+    .btn-ms-pdf { display: inline-flex; align-items: center; gap: 6px; padding: 8px 14px; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.3); color: var(--accent-dark); border-radius: 8px; font-size: 13px; font-weight: 600; text-decoration: none; }
+    .btn-ms-pdf:hover { background: var(--accent); color: #fff; }
+
+    /* Part cards */
+    .parts-list { display: flex; flex-direction: column; gap: 14px; }
+    .part-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; }
+    .part-card-head { display: flex; align-items: center; gap: 12px; padding: 14px 18px; cursor: pointer; user-select: none; }
+    .part-card-head:hover { background: var(--surface2); }
+    .part-code { font-family: var(--font-display); font-size: 16px; }
+    .part-prompt { font-size: 13.5px; color: var(--muted); flex: 1; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .part-marks-badge { background: var(--accent-dim); color: var(--accent-dark); border-radius: 6px; padding: 3px 9px; font-size: 12px; font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+    .part-ms-type { font-size: 11px; color: var(--muted2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; flex-shrink: 0; }
+    .part-arrow { color: var(--muted2); font-size: 13px; flex-shrink: 0; transition: transform 0.2s; }
+    .part-card.open .part-arrow { transform: rotate(180deg); }
+    .part-card-body { display: none; border-top: 1px solid var(--border); padding: 18px 20px; }
+    .part-card.open .part-card-body { display: block; }
+
+    /* Prompt full */
+    .part-prompt-full { font-size: 14px; line-height: 1.65; color: var(--text); margin-bottom: 18px; padding: 12px 14px; background: var(--surface2); border-radius: 8px; border-left: 3px solid var(--accent); }
+
+    /* Mark scheme sections */
+    .ms-section { margin-bottom: 18px; }
+    .ms-section:last-child { margin-bottom: 0; }
+    .ms-section-title { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); margin-bottom: 8px; }
+
+    /* Allocation */
+    .ms-alloc-bar { display: flex; gap: 5px; flex-wrap: wrap; margin-bottom: 6px; }
+    .ms-alloc-chip { background: var(--accent-dim); color: var(--accent-dark); border-radius: 6px; padding: 3px 10px; font-size: 12px; font-weight: 600; }
+    .ms-alloc-desc { font-size: 12.5px; color: var(--muted); line-height: 1.5; }
+
+    /* Points list */
+    .ms-points-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 5px; }
+    .ms-point-item { padding: 8px 12px; background: var(--surface2); border-radius: 7px; border-left: 3px solid var(--border); font-size: 13px; line-height: 1.5; }
+    .ms-point-item.type-exact { border-left-color: var(--accent); }
+    .ms-guidance { margin-top: 8px; font-size: 12px; color: var(--muted2); font-style: italic; padding: 6px 10px; background: rgba(217,119,6,0.06); border-radius: 6px; border-left: 2px solid rgba(217,119,6,0.4); }
+
+    /* Levels */
+    .ms-level-card { padding: 10px 14px; border-radius: 9px; margin-bottom: 6px; }
+    .ms-level-card:last-child { margin-bottom: 0; }
+    .ms-level-range { font-family: var(--font-display); font-size: 15px; margin-bottom: 3px; }
+    .ms-level-criteria { font-size: 13px; color: var(--muted); line-height: 1.5; }
+    .ms-level-card.top { background: rgba(22,163,74,0.07); border: 1px solid rgba(22,163,74,0.25); }
+    .ms-level-card.mid { background: rgba(37,99,235,0.06); border: 1px solid rgba(37,99,235,0.2); }
+    .ms-level-card.low { background: rgba(217,119,6,0.06); border: 1px solid rgba(217,119,6,0.2); }
+
+    /* Anatomy */
+    .ms-anatomy-steps { display: flex; flex-direction: column; gap: 7px; }
+    .ms-anatomy-step { display: flex; gap: 10px; align-items: flex-start; }
+    .ms-anatomy-num { width: 20px; height: 20px; border-radius: 50%; background: var(--accent-dim); color: var(--accent-dark); font-size: 11px; font-weight: 700; display: flex; align-items: center; justify-content: center; flex-shrink: 0; margin-top: 2px; }
+    .ms-anatomy-text { font-size: 13px; color: var(--text); line-height: 1.5; }
+
+    /* Keywords */
+    .ms-kw-list { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 6px; }
+    .ms-kw-chip { padding: 3px 10px; border-radius: 20px; font-size: 12.5px; border: 1px solid; background: var(--accent-dim); border-color: rgba(37,99,235,0.3); color: var(--accent-dark); }
+
+    /* No MS */
+    .no-ms { font-size: 13px; color: var(--muted2); font-style: italic; }
+
+    /* Empty / lock / placeholder */
     .placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 80px 20px; text-align: center; background: var(--surface); border: 1px solid var(--border); border-radius: 18px; }
     .placeholder-icon { width: 80px; height: 80px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center; font-size: 36px; margin-bottom: 22px; }
     .placeholder-title { font-family: var(--font-display); font-size: 26px; margin-bottom: 10px; }
@@ -55,16 +131,8 @@
     .lock-msg { font-size: 14.5px; color: var(--muted); max-width: 480px; line-height: 1.6; margin-bottom: 24px; }
     .lock-btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 22px; background: linear-gradient(135deg, #D97706, #B45309); color: #fff; border-radius: 10px; font-weight: 600; font-size: 14px; text-decoration: none; }
 
-    /* ── Mobile responsive ── */
-    .mobile-menu-btn {
-      display: none; width: 36px; height: 36px; border-radius: 10px;
-      background: var(--surface); border: 1px solid var(--border);
-      align-items: center; justify-content: center; cursor: pointer;
-      font-size: 18px; box-shadow: 0 1px 4px rgba(37,99,235,0.1); flex-shrink: 0;
-    }
-    .mobile-overlay {
-      display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99;
-    }
+    .mobile-menu-btn { display: none; width: 36px; height: 36px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); align-items: center; justify-content: center; cursor: pointer; font-size: 18px; box-shadow: 0 1px 4px rgba(37,99,235,0.1); flex-shrink: 0; }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
     .mobile-overlay.active { display: block; }
     @media (max-width: 768px) {
       .mobile-menu-btn { display: flex; }
@@ -72,9 +140,6 @@
       .sidebar.open { transform: translateX(0); }
       .main { margin-left: 0; padding: 16px 14px; }
       .page-title { font-size: 20px; }
-    }
-    @media (max-width: 480px) {
-      .main { padding: 12px 10px; }
     }
   </style>
   <link rel="stylesheet" href="responsive.css">
@@ -126,21 +191,328 @@
         <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
         <div>
           <div class="page-title">📋 Mark Schemes</div>
-          <div class="page-sub">Examiner-style mark schemes for every past paper.</div>
+          <div class="page-sub">Browse mark schemes question-by-question with keyword and structure analysis.</div>
         </div>
       </div>
     </div>
     <div id="pageBody">
       <div class="placeholder">
-        <div class="placeholder-icon">🚧</div>
-        <div class="placeholder-title">Coming soon</div>
-        <div class="placeholder-msg">Mark schemes will be paired with each past paper, with annotated examiner notes and grade-boundary reference data.</div>
+        <div class="placeholder-icon">⏳</div>
+        <div class="placeholder-title">Loading…</div>
+        <div class="placeholder-msg">Checking your account.</div>
       </div>
     </div>
   </main>
 </div>
 
 <script>
+function esc(s) {
+  return String(s ?? '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+function extractKeywords(points) {
+  const stop = new Set(['the','a','an','and','or','of','in','to','is','are','was','were','be','been','by','for','with','on','at','from','this','that','it','as','has','have','had','its','use','used','using','not','do','does','did','but','so','if','any','all','both','each','more','less','than','such','into','which','who','when','where','how','their','they','them','can','will','would','may','should','must','about','after','before','between','through','during','one','two','three','four','five','give','show','state','describe','explain','name','write','calculate']);
+  const kws = new Set();
+  (points || []).forEach(pt => {
+    (pt.match(/\b[A-Z]{2,5}\b/g) || []).forEach(a => kws.add(a));
+    const main = pt.split(/[\/;]|\bor\b/)[0].trim();
+    main.split(/\s+/).map(w => w.replace(/[^a-zA-Z'-]/g,'')).filter(w => w.length > 3 && !stop.has(w.toLowerCase())).slice(0, 3).forEach(w => kws.add(w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()));
+  });
+  return [...kws].slice(0, 22);
+}
+
+function renderMsCard(part) {
+  const ms = part.markScheme;
+  const msType = ms ? (ms.type || 'points') : null;
+  const totalMarks = part.marks;
+
+  // Prompt display
+  const promptHtml = part.prompt ? `<div class="part-prompt-full">${esc(part.prompt)}</div>` : '';
+
+  if (!ms) {
+    return `${promptHtml}<div class="no-ms">No mark scheme attached to this part yet.</div>`;
+  }
+
+  // ── Mark Allocation ──
+  let allocHtml = '';
+  if (msType === 'points') {
+    const pts = ms.points || [];
+    const chips = pts.map((_, i) => `<span class="ms-alloc-chip">Point ${i+1}</span>`).join('');
+    allocHtml = `<div class="ms-alloc-bar">${chips}</div>
+      <div class="ms-alloc-desc">${pts.length} marking point${pts.length !== 1 ? 's' : ''} available · max <strong>${totalMarks}</strong> mark${totalMarks !== 1 ? 's' : ''} awarded${ms.guidance ? ` · <em>${esc(ms.guidance)}</em>` : ''}</div>`;
+  } else if (msType === 'levels') {
+    const lvls = ms.levels || [];
+    const chips = lvls.map(l => `<span class="ms-alloc-chip">${esc(l.descriptor)} ${l.range[0]}–${l.range[1]}</span>`).join('');
+    allocHtml = `<div class="ms-alloc-bar">${chips}</div>
+      <div class="ms-alloc-desc">Levels-of-response · <strong>${totalMarks}</strong> marks total · holistically graded</div>`;
+  } else {
+    allocHtml = `<div class="ms-alloc-desc">Exact answer required · <strong>${totalMarks}</strong> mark${totalMarks !== 1 ? 's' : ''}</div>`;
+  }
+
+  // ── Mark Scheme Points / Levels ──
+  let schemeHtml = '';
+  if (msType === 'points') {
+    const items = (ms.points || []).map(p => `<li class="ms-point-item">${esc(p)}</li>`).join('');
+    schemeHtml = `<ul class="ms-points-list">${items}</ul>`;
+    if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
+  } else if (msType === 'exact') {
+    const items = (ms.points || []).map(p => `<li class="ms-point-item type-exact"><strong>${esc(p)}</strong></li>`).join('');
+    schemeHtml = `<ul class="ms-points-list">${items}</ul>`;
+    if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
+  } else if (msType === 'levels') {
+    const lvls = ms.levels || [];
+    const total = lvls.length;
+    schemeHtml = lvls.map((l, i) => {
+      const cls = i === 0 ? 'top' : (i === total - 1 ? 'low' : 'mid');
+      return `<div class="ms-level-card ${cls}">
+        <div class="ms-level-range">${esc(l.descriptor)} · ${l.range[0]}–${l.range[1]} marks</div>
+        ${l.criteria ? `<div class="ms-level-criteria">${esc(l.criteria)}</div>` : ''}
+      </div>`;
+    }).join('');
+    if (ms.indicative) {
+      const ind = Object.entries(ms.indicative).map(([k,v]) => `<li class="ms-point-item"><strong>${esc(k)}:</strong> ${esc(v)}</li>`).join('');
+      schemeHtml += `<div style="margin-top:12px;"><div class="ms-section-title" style="margin-bottom:6px;">Indicative content</div><ul class="ms-points-list">${ind}</ul></div>`;
+    }
+    if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
+  }
+
+  // ── Answer Anatomy ──
+  let anatomySteps = [];
+  if (msType === 'points') {
+    if (totalMarks <= 2) {
+      anatomySteps = [`State <strong>${totalMarks}</strong> distinct marking point${totalMarks > 1 ? 's' : ''}. No extended explanation needed — one clear sentence per point.`];
+    } else if (totalMarks <= 4) {
+      anatomySteps = [
+        `Make <strong>${totalMarks}</strong> separate, distinct points.`,
+        `Avoid repeating the same idea in different words — each sentence should earn a new mark.`,
+        `Use subject-specific vocabulary; vague statements rarely score.`
+      ];
+    } else {
+      anatomySteps = [
+        `Cover <strong>${totalMarks}</strong> separate points — breadth matters.`,
+        `Each point should be a distinct idea, not a rephrasing of the previous one.`,
+        `Support key points with mechanisms or examples where the mark scheme includes them.`,
+        `Read the guidance note — some marks may only be awarded in combination with another point.`
+      ];
+    }
+  } else if (msType === 'levels') {
+    const lvls = ms.levels || [];
+    const top = lvls.length ? lvls.reduce((a,b) => b.range[1] > a.range[1] ? b : a) : null;
+    anatomySteps = [
+      `This is a <strong>levels-of-response</strong> question — quality of argument matters more than quantity of points.`,
+      top && top.criteria ? `Top level: ${esc(top.criteria.slice(0, 130))}${top.criteria.length > 130 ? '…' : ''}` : `Aim for the top level band with a clear, evidence-backed argument.`,
+      `Structure: define key terms → build the argument → address counter-arguments → reach a justified conclusion.`
+    ].filter(Boolean);
+    if (ms.indicative) {
+      const snip = Object.values(ms.indicative).slice(0,3).map(v => esc(String(v).slice(0,60))).join('; ');
+      anatomySteps.push(`Draw on indicative content: ${snip}…`);
+    }
+  } else {
+    anatomySteps = [
+      `Write the precise answer — units, significant figures, and format all matter.`,
+      `Show working where possible to earn method marks even if the final answer is wrong.`
+    ];
+  }
+  const anatomyHtml = anatomySteps.map((s,i) => `<div class="ms-anatomy-step"><div class="ms-anatomy-num">${i+1}</div><div class="ms-anatomy-text">${s}</div></div>`).join('');
+
+  // ── Keyword Mining ──
+  let keywordsHtml = '';
+  if (msType === 'points') {
+    const kws = extractKeywords(ms.points || []);
+    const chips = kws.map(kw => `<span class="ms-kw-chip">${esc(kw)}</span>`).join('');
+    keywordsHtml = `<div class="ms-kw-list">${chips}</div><div style="font-size:12px;color:var(--muted);">These are the examiner's key terms — use them naturally in your answer to signal precision.</div>`;
+  } else {
+    keywordsHtml = `<div style="font-size:13px;color:var(--muted);">Keyword mining applies to point-based mark schemes. For levels questions, focus on the level descriptors above.</div>`;
+  }
+
+  return `
+    ${promptHtml}
+    <div class="ms-section">
+      <div class="ms-section-title">Mark Allocation</div>
+      ${allocHtml}
+    </div>
+    <div class="ms-section">
+      <div class="ms-section-title">Official Mark Scheme</div>
+      ${schemeHtml}
+    </div>
+    <div class="ms-section">
+      <div class="ms-section-title">Answer Anatomy</div>
+      <div class="ms-anatomy-steps">${anatomyHtml}</div>
+    </div>
+    <div class="ms-section">
+      <div class="ms-section-title">Keyword Mining</div>
+      ${keywordsHtml}
+    </div>`;
+}
+
+function renderPaper(paper) {
+  const parts = paper.parts || [];
+  const partsWithMs = parts.filter(p => p.markScheme);
+  const pdfBtn = paper.msUrl
+    ? `<a class="btn-ms-pdf" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Full MS PDF</a>`
+    : '';
+
+  const headerHtml = `
+    <div class="paper-header">
+      <div class="paper-header-title">${esc(paper.title || paper.label || 'Paper')}</div>
+      <div class="paper-header-meta">
+        ${paper.year ? `<span class="meta-chip">📅 ${esc(String(paper.year))}</span>` : ''}
+        <span class="meta-chip">${parts.length} part${parts.length !== 1 ? 's' : ''}</span>
+        <span class="meta-chip">${partsWithMs.length} with mark scheme</span>
+        ${paper.totalMarks ? `<span class="meta-chip">/${paper.totalMarks} marks</span>` : ''}
+      </div>
+      ${pdfBtn}
+    </div>`;
+
+  const partsHtml = parts.map((part, i) => {
+    const msType = part.markScheme ? (part.markScheme.type || 'points') : null;
+    const typeLabel = msType === 'levels' ? 'Levels' : msType === 'exact' ? 'Exact' : msType === 'points' ? 'Points' : 'No MS';
+    const shortPrompt = (part.prompt || '').slice(0, 80) + ((part.prompt || '').length > 80 ? '…' : '');
+    return `
+      <div class="part-card" id="pc-${i}">
+        <div class="part-card-head" onclick="togglePart(${i})">
+          <span class="part-code">${esc(part.code || String(i+1))}</span>
+          <span class="part-prompt">${esc(shortPrompt)}</span>
+          <span class="part-marks-badge">${part.marks} mark${part.marks !== 1 ? 's' : ''}</span>
+          <span class="part-ms-type">${typeLabel}</span>
+          <span class="part-arrow">▾</span>
+        </div>
+        <div class="part-card-body">${renderMsCard(part)}</div>
+      </div>`;
+  }).join('');
+
+  document.getElementById('pageBody').innerHTML = headerHtml + `<div class="parts-list">${partsHtml}</div>`;
+}
+
+window.togglePart = function(i) {
+  const card = document.getElementById('pc-' + i);
+  if (card) card.classList.toggle('open');
+};
+
+// ── Picker logic ──
+function buildPicker() {
+  const cfg = window.PAPERS_CONFIG;
+  if (!cfg) {
+    document.getElementById('pageBody').innerHTML = `<div class="placeholder"><div class="placeholder-icon">⚠️</div><div class="placeholder-title">Config not loaded</div><div class="placeholder-msg">papers-config.js did not load correctly.</div></div>`;
+    return;
+  }
+
+  // Gather subjects
+  const subjects = Object.keys(cfg).sort();
+
+  const pickerHtml = `
+    <div class="picker-row">
+      <div class="picker-group">
+        <div class="picker-label">Subject</div>
+        <select class="picker-select" id="pickSubject">
+          <option value="">— Select subject —</option>
+          ${subjects.map(s => `<option value="${esc(s)}">${esc(s)}</option>`).join('')}
+        </select>
+      </div>
+      <div class="picker-group">
+        <div class="picker-label">Exam board</div>
+        <select class="picker-select" id="pickBoard" disabled>
+          <option value="">— Select board —</option>
+        </select>
+      </div>
+      <div class="picker-group">
+        <div class="picker-label">Paper</div>
+        <select class="picker-select" id="pickPaper" disabled>
+          <option value="">— Select paper —</option>
+        </select>
+      </div>
+    </div>
+    <div id="msViewer">
+      <div class="placeholder">
+        <div class="placeholder-icon">📋</div>
+        <div class="placeholder-title">Select a paper</div>
+        <div class="placeholder-msg">Choose a subject, board, and paper above to browse its mark scheme question by question.</div>
+      </div>
+    </div>`;
+
+  document.getElementById('pageBody').innerHTML = pickerHtml;
+
+  const pickSubject = document.getElementById('pickSubject');
+  const pickBoard = document.getElementById('pickBoard');
+  const pickPaper = document.getElementById('pickPaper');
+
+  pickSubject.addEventListener('change', () => {
+    const subj = pickSubject.value;
+    pickBoard.innerHTML = '<option value="">— Select board —</option>';
+    pickPaper.innerHTML = '<option value="">— Select paper —</option>';
+    pickBoard.disabled = true;
+    pickPaper.disabled = true;
+    if (!subj) return;
+    const boards = Object.keys(cfg[subj] || {}).sort();
+    boards.forEach(b => { const o = document.createElement('option'); o.value = b; o.textContent = b; pickBoard.appendChild(o); });
+    pickBoard.disabled = false;
+    document.getElementById('msViewer').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">Select a board</div><div class="placeholder-msg">Choose an exam board to see available papers.</div></div>`;
+  });
+
+  pickBoard.addEventListener('change', () => {
+    const subj = pickSubject.value;
+    const board = pickBoard.value;
+    pickPaper.innerHTML = '<option value="">— Select paper —</option>';
+    pickPaper.disabled = true;
+    if (!board) return;
+    const papers = cfg[subj][board] || [];
+    papers.forEach((p, i) => {
+      const o = document.createElement('option');
+      o.value = i;
+      o.textContent = p.title || p.label || `Paper ${i+1}`;
+      pickPaper.appendChild(o);
+    });
+    pickPaper.disabled = false;
+    document.getElementById('msViewer').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">Select a paper</div><div class="placeholder-msg">Choose a paper to view its mark scheme.</div></div>`;
+  });
+
+  pickPaper.addEventListener('change', () => {
+    const subj = pickSubject.value;
+    const board = pickBoard.value;
+    const idx = pickPaper.value;
+    if (idx === '') return;
+    const paper = (cfg[subj][board] || [])[parseInt(idx)];
+    if (!paper) return;
+    // Render into msViewer
+    const viewer = document.getElementById('msViewer');
+    const parts = paper.parts || [];
+    const partsWithMs = parts.filter(p => p.markScheme);
+    const pdfBtn = paper.msUrl
+      ? `<a class="btn-ms-pdf" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Full MS PDF</a>`
+      : '';
+
+    viewer.innerHTML = `
+      <div class="paper-header">
+        <div class="paper-header-title">${esc(paper.title || paper.label || 'Paper')}</div>
+        <div class="paper-header-meta">
+          ${paper.year ? `<span class="meta-chip">📅 ${esc(String(paper.year))}</span>` : ''}
+          <span class="meta-chip">${parts.length} part${parts.length !== 1 ? 's' : ''}</span>
+          <span class="meta-chip">${partsWithMs.length} with mark scheme</span>
+          ${paper.totalMarks ? `<span class="meta-chip">/${paper.totalMarks} marks</span>` : ''}
+        </div>
+        ${pdfBtn}
+      </div>
+      <div class="parts-list">
+        ${parts.map((part, i) => {
+          const msType = part.markScheme ? (part.markScheme.type || 'points') : null;
+          const typeLabel = msType === 'levels' ? 'Levels' : msType === 'exact' ? 'Exact' : msType === 'points' ? 'Points' : 'No MS';
+          const shortPrompt = (part.prompt || '').slice(0, 80) + ((part.prompt || '').length > 80 ? '…' : '');
+          return `
+            <div class="part-card" id="pc-${i}">
+              <div class="part-card-head" onclick="togglePart(${i})">
+                <span class="part-code">${esc(part.code || String(i+1))}</span>
+                <span class="part-prompt">${esc(shortPrompt)}</span>
+                <span class="part-marks-badge">${part.marks} mark${part.marks !== 1 ? 's' : ''}</span>
+                <span class="part-ms-type">${typeLabel}</span>
+                <span class="part-arrow">▾</span>
+              </div>
+              <div class="part-card-body">${renderMsCard(part)}</div>
+            </div>`;
+        }).join('')}
+      </div>`;
+  });
+}
+
 (async function () {
   const { data: { user } } = await supabaseClient.auth.getUser();
   if (!user) { location = 'auth/login.html'; return; }
@@ -168,10 +540,12 @@
         <div class="lock-msg">Mark schemes are available with a Pro subscription.</div>
         <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
       </div>`;
+    return;
   }
+  buildPicker();
 })();
 </script>
 <div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
-  <script src="fit-to-screen.js"></script>
+<script src="fit-to-screen.js"></script>
 </body>
 </html>
