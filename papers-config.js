@@ -23715,7 +23715,215 @@ window.SUBJECTS = [
         ]
       },
       { board: 'Edexcel (Pearson)', specCode: '9GE0',
-        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/geography-2016.html' },
+        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/geography-2016.html',
+        papers: [
+          {
+            id: 'edexcel-geog-9ge0-01-2023', year: 2023, paperName: 'Paper 1: Dynamic Landscapes', paperCode: '9GE0/01',
+            totalMarks: 105, durationMins: 135,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-01-que-20230518.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-01-rms-20230817.pdf',
+            questions: [
+              { number: 1, scenario: 'Fig 1: Spearman\'s rank data table — volcanic eruption frequency vs deaths for 8 volcanoes', parts: [
+                { code: '1(a)(i)', prompt: 'Calculate the value of d² for the Kilauea volcano data.', marks: 1 },
+                { code: '1(a)(ii)', prompt: 'Calculate the Spearman\'s rank correlation coefficient (rs) using the formula provided.', marks: 2 },
+                { code: '1(a)(iii)', prompt: 'Interpret the result of the Spearman\'s rank correlation coefficient.', marks: 1 },
+                { code: '1(b)', prompt: 'Assess the relative importance of different strategies used to manage the impacts of volcanic hazards on communities.', marks: 12, extended: true },
+              ]},
+              { number: 2, scenario: 'Fig 2a: diagram of meltwater and temperate glacier movement; Fig 2b: diagram of ice sheets, sea ice and feedback loops — Section B Glaciated Landscapes (answer Q2 OR Q3)', parts: [
+                { code: '2(a)', prompt: 'Explain how meltwater contributes to the movement of a temperate glacier.', marks: 6 },
+                { code: '2(b)', prompt: 'Explain the feedback mechanisms shown between increased atmospheric temperature, ice sheets and sea ice.', marks: 6 },
+                { code: '2(c)', prompt: 'Explain how the processes of melting and refreezing contribute to the formation of periglacial landforms.', marks: 8 },
+                { code: '2(d)', prompt: 'Evaluate the view that the management of glaciated landscapes should prioritise the needs of local communities over conservation.', marks: 20, extended: true },
+              ]},
+              { number: 3, scenario: 'Fig 3a: diagram of a coastal sediment cell showing sources, transfers and outputs; Fig 3b: graph of global mean sea level change 1920–2020 — Section B Coastal Landscapes (answer Q2 OR Q3)', parts: [
+                { code: '3(a)', prompt: 'Explain how erosional processes and sediment transfer contribute to the development of coastal landforms shown in Figure 3a.', marks: 6 },
+                { code: '3(b)', prompt: 'Explain how global warming has contributed to the changes in sea level shown in Figure 3b since 1920.', marks: 6 },
+                { code: '3(c)', prompt: 'Explain how geology and rock structure influence the development of cliff profiles.', marks: 8 },
+                { code: '3(d)', prompt: 'Evaluate the view that hard engineering is the most effective approach to protecting coastal communities.', marks: 20, extended: true },
+              ]},
+              { number: 4, scenario: 'Fig 4a: photograph of an onshore wind farm; Figs 4b and 4c: maps and hydrographs of two neighbouring upland catchments X and Y following a storm event — Section C Physical Systems and Sustainability', parts: [
+                { code: '4(a)', prompt: 'Explain one possible impact on local communities of the development of onshore wind farms.', marks: 3 },
+                { code: '4(b)', prompt: 'Explain how adaptation strategies, such as water conservation, may help communities cope with a changed climate.', marks: 6 },
+                { code: '4(c)', prompt: 'Explain how water insecurity can cause both social and economic problems.', marks: 8 },
+                { code: '4(d)', prompt: 'Assess the extent to which land use affects the shape of the storm hydrographs shown in Figures 4b and 4c.', marks: 12 },
+                { code: '4(e)', prompt: 'Evaluate the view that human activities are having a greater impact on shorter term biological carbon cycle processes than on longer term geological processes.', marks: 20, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'edexcel-geog-9ge0-02-2023', year: 2023, paperName: 'Paper 2: Dynamic Places', paperCode: '9GE0/02',
+            totalMarks: 105, durationMins: 135,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-02-que-20230607.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-02-rms-20230817.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A Globalisation / Superpowers — Q1 Globalisation', parts: [
+                { code: '1(a)', prompt: 'Explain one way in which the spread of a \'westernised\' culture can affect people in developing countries.', marks: 4 },
+                { code: '1(b)', prompt: 'Assess the positive and negative impacts of the spread of a \'westernised\' culture.', marks: 12, extended: true },
+              ]},
+              { number: 2, scenario: 'Section A Globalisation / Superpowers — Q2 Superpowers', parts: [
+                { code: '2(a)', prompt: 'Explain one reason why some countries choose to join economic alliances.', marks: 4 },
+                { code: '2(b)', prompt: 'Assess the importance of hard power in maintaining the status of superpowers.', marks: 12, extended: true },
+              ]},
+              { number: 3, scenario: 'Fig 1a: deprivation index data for two UK towns; Fig 1b: voter turnout data for the same towns — Section B Regenerating Places (answer Q3 OR Q4)', parts: [
+                { code: '3(a)(i)', prompt: 'Suggest one reason for the difference in levels of deprivation shown in Figure 1a.', marks: 3 },
+                { code: '3(a)(ii)', prompt: 'Voter turnout is one measure of political engagement. Suggest why levels of deprivation may affect political engagement in these towns.', marks: 6 },
+                { code: '3(b)', prompt: 'Explain the reasons for variation in the functions of your two chosen places.', marks: 6 },
+                { code: '3(c)', prompt: 'Evaluate the success of rebranding and regeneration strategies in increasing the attractiveness of rural areas.', marks: 20, extended: true },
+              ]},
+              { number: 4, scenario: 'Figs 2a, 2b, 2c: data on ethnic diversity, voting %, and living conditions in two contrasting areas — Section B Diverse Places (answer Q3 OR Q4)', parts: [
+                { code: '4(a)(i)', prompt: 'Suggest one reason why ethnic diversity may affect the percentage of people who vote.', marks: 3 },
+                { code: '4(a)(ii)', prompt: 'Using Figures 2a, 2b and 2c, suggest why greater ethnic diversity can help create more varied living environments.', marks: 6 },
+                { code: '4(b)', prompt: 'Explain why your two chosen places have contrasting levels of cultural diversity.', marks: 6 },
+                { code: '4(c)', prompt: 'Evaluate the success of different strategies in improving the image and reality of rural places.', marks: 20, extended: true },
+              ]},
+              { number: 5, scenario: 'Fig 3: table of life expectancy at birth and healthcare spending (2020) for 8 selected developed countries — Section C Health, Human Rights and Intervention (answer Q5 OR Q6)', parts: [
+                { code: '5(a)(i)', prompt: 'Calculate the mean life expectancy at birth for the countries shown in Figure 3. Give your answer to one decimal place.', marks: 2 },
+                { code: '5(a)(ii)', prompt: 'Calculate the range of healthcare spending per capita for the countries shown. Give your answer in US$.', marks: 2 },
+                { code: '5(a)(iii)', prompt: 'Suggest why life expectancy varies for these developed countries.', marks: 6 },
+                { code: '5(b)', prompt: 'Explain why a range of variables is needed to measure the success of development aid.', marks: 8 },
+                { code: '5(c)', prompt: 'Evaluate the view that Intergovernmental Organisations (IGOs) have been largely unsuccessful in improving human development.', marks: 20, extended: true },
+              ]},
+              { number: 6, scenario: 'Fig 4: table of % population living overseas and GDP per capita (2021) for 8 countries (USA, Switzerland, Norway, Ireland, Netherlands, Mexico, Japan, Turkey) — Section C Migration, Identity and Sovereignty (answer Q5 OR Q6)', parts: [
+                { code: '6(a)(i)', prompt: 'Calculate the mean percentage of population living overseas for the countries shown in Figure 4. Give your answer to one decimal place.', marks: 2 },
+                { code: '6(a)(ii)', prompt: 'Calculate the range in GDP per capita for the countries shown. Give your answer in US$.', marks: 2 },
+                { code: '6(a)(iii)', prompt: 'Suggest why the percentage of the population living overseas varies for these countries.', marks: 6 },
+                { code: '6(b)', prompt: 'Explain how successful Intergovernmental Organisations (IGOs) have been in managing the environmental challenges facing oceans.', marks: 8 },
+                { code: '6(c)', prompt: 'Evaluate the view that a loss of national sovereignty is inevitable in a globalised world.', marks: 20, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'edexcel-geog-9ge0-03-2023', year: 2023, paperName: 'Paper 3: Geographical Debates', paperCode: '9GE0/03',
+            totalMarks: 70, durationMins: 105,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-03-que-20230613.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-03-rms-20230817.pdf',
+            questions: [
+              { number: 1, scenario: 'No figures — short written question', parts: [
+                { code: '1', prompt: 'Explain one reason why global demand for energy is likely to rise.', marks: 4 },
+              ]},
+              { number: 2, scenario: 'Table 1: 2019 survey data — % of people in 11 developed countries who agreed climate change is a major threat to their country', parts: [
+                { code: '2(a)(i)', prompt: 'Calculate the mean percentage (%) of people who agreed that climate change is a major threat to their country. Give your answer to one decimal place.', marks: 2 },
+                { code: '2(a)(ii)', prompt: 'Calculate the interquartile range of the % of people who agreed that climate change is a major threat to their country.', marks: 2 },
+                { code: '2(b)', prompt: 'Explain why the data in Table 1 may not be a reliable guide to global opinions about the threat of climate change.', marks: 4 },
+              ]},
+              { number: 3, scenario: 'Fig 1: past and projected global population growth 1700–2100; Fig 2: changes in land-use of habitable land over 10,000 years — Section A resource analysis', parts: [
+                { code: '3', prompt: 'Analyse the relationship between global population growth and land-use changes.', marks: 8 },
+              ]},
+              { number: 4, scenario: 'Fig 3: European forest coverage map; Fig 4a: graph of forest area change 1990–2020 by region; Fig 4b: chart of reasons for deforestation — Section A resource analysis', parts: [
+                { code: '4', prompt: 'Analyse the variations in European forest coverage.', marks: 8 },
+              ]},
+              { number: 5, scenario: 'Section B resources on climate change mitigation strategies (provided in Resource Booklet)', parts: [
+                { code: '5', prompt: 'Evaluate the view that to be effective the mitigation of climate change requires many contrasting strategies.', marks: 18, extended: true },
+              ]},
+              { number: 6, scenario: 'Section C resources on biodiversity and climate change (provided in Resource Booklet)', parts: [
+                { code: '6', prompt: 'Evaluate the view that the crisis of biodiversity loss is both more serious and more challenging to solve than climate change.', marks: 24, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'edexcel-geog-9ge0-01-2022', year: 2022, paperName: 'Paper 1: Dynamic Landscapes', paperCode: '9GE0/01',
+            totalMarks: 105, durationMins: 135,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-01-que-20220528.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-01-rms-20220818.pdf',
+            questions: [
+              { number: 1, scenario: 'Fig 1: data table of earthquake events with over five deaths in Sumatra, Indonesia (magnitude and deaths, 2000–2016)', parts: [
+                { code: '1(a)(i)', prompt: 'Calculate the mean magnitude of these earthquakes. Give your answer to one decimal place.', marks: 1 },
+                { code: '1(a)(ii)', prompt: 'Calculate the median number of deaths caused by these earthquakes.', marks: 1 },
+                { code: '1(a)(iii)', prompt: 'Calculate the interquartile range of deaths caused by these earthquakes. You must show your working.', marks: 2 },
+                { code: '1(b)', prompt: 'Assess the importance of prediction and forecasting in reducing the vulnerability of communities to earthquake hazards.', marks: 12, extended: true },
+              ]},
+              { number: 2, scenario: 'Fig 2a: photograph of distinctive glacial landforms in an upland relict landscape; Fig 2b: photograph of an active glacial landscape in Iceland — Section B Glaciated Landscapes (answer Q2 OR Q3)', parts: [
+                { code: '2(a)', prompt: 'Explain the contribution of glacial processes to the development of the landforms shown in Figure 2a.', marks: 6 },
+                { code: '2(b)', prompt: 'Explain how glacial deposition contributes to the development of the landscape shown in Figure 2b.', marks: 6 },
+                { code: '2(c)', prompt: 'Explain the role of glacial and periglacial landscapes in the maintenance of the water cycle.', marks: 8 },
+                { code: '2(d)', prompt: 'Evaluate the view that global warming is the greatest threat to both active and relict glaciated landscapes.', marks: 20, extended: true },
+              ]},
+              { number: 3, scenario: 'Fig 3a: photograph of distinctive landforms in a coastal plain landscape; Fig 3b: photograph of a coastal landscape in Dorset — Section B Coastal Landscapes (answer Q2 OR Q3)', parts: [
+                { code: '3(a)', prompt: 'Explain the contribution of marine processes in the development of the landforms shown in Figure 3a.', marks: 6 },
+                { code: '3(b)', prompt: 'Explain how subaerial processes contribute to the development of the landscape shown in Figure 3b.', marks: 6 },
+                { code: '3(c)', prompt: 'Explain the role of sea level change in the formation of both emergent and submergent coastlines.', marks: 8 },
+                { code: '3(d)', prompt: 'Evaluate the view that global warming is the greatest threat to coastlines and their communities.', marks: 20, extended: true },
+              ]},
+              { number: 4, scenario: 'Fig 4: graph of electricity generated from solar power (megawatts, China and other selected countries, 2010–2021) — Section C Physical Systems and Sustainability', parts: [
+                { code: '4(a)', prompt: 'Suggest one reason for the differences in the growth of electricity generated from solar power.', marks: 3 },
+                { code: '4(b)', prompt: 'Explain how oceans regulate the composition of the atmosphere.', marks: 6 },
+                { code: '4(c)', prompt: 'Explain the contribution of human activity to the risk of drought.', marks: 8 },
+                { code: '4(d)', prompt: 'Assess how successful different countries have been in achieving energy security.', marks: 12 },
+                { code: '4(e)', prompt: 'Evaluate the view that land use changes are the main cause of the increasing risk of river flooding.', marks: 20, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'edexcel-geog-9ge0-02-2022', year: 2022, paperName: 'Paper 2: Dynamic Places', paperCode: '9GE0/02',
+            totalMarks: 105, durationMins: 135,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-02-que-20220609.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-02-rms-20220818.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A Globalisation / Superpowers — Q1 Globalisation', parts: [
+                { code: '1(a)', prompt: 'Explain one way governments can attract foreign direct investment (FDI).', marks: 4 },
+                { code: '1(b)', prompt: 'Assess the importance of ICT and mobile communications in the growth of globalisation.', marks: 12, extended: true },
+              ]},
+              { number: 2, scenario: 'Fig 1: table of GDP per capita (1999 and 2019) for 8 selected US states (Mississippi, Florida, North Carolina, Nevada, Texas, Washington, California, New York) — Section A Superpowers', parts: [
+                { code: '2(a)(i)', prompt: 'Calculate the percentage increase in GDP per capita for New York between 1999 and 2019. Give your answer to one decimal place.', marks: 2 },
+                { code: '2(a)(ii)', prompt: 'Calculate the range of percentage (%) change in GDP for these states. You must show your working.', marks: 2 },
+                { code: '2(b)', prompt: 'Assess the political implications of the rising demand for resources from current and emerging powers.', marks: 12, extended: true },
+              ]},
+              { number: 3, scenario: 'Fig 2: deprivation/unemployment data for two areas — Section B Regenerating Places (answer Q3 OR Q4)', parts: [
+                { code: '3(a)(i)', prompt: 'Suggest one reason for the difference in adult unemployment in these areas.', marks: 3 },
+                { code: '3(a)(ii)', prompt: 'Explain why there may be changes over time in the levels of deprivation of these areas.', marks: 6 },
+                { code: '3(b)', prompt: 'Explain the variations in the quality of the living environment within one local place you have studied.', marks: 6 },
+                { code: '3(c)', prompt: 'Evaluate the impact of government decisions on the economic and social characteristics of either urban or rural places.', marks: 20, extended: true },
+              ]},
+              { number: 4, scenario: 'Fig 3: birth rate data for two areas — Section B Diverse Places (answer Q3 OR Q4)', parts: [
+                { code: '4(a)(i)', prompt: 'Suggest one reason for the difference in birth rates in these areas.', marks: 3 },
+                { code: '4(a)(ii)', prompt: 'Explain why there may be changes over time in the population characteristics of these areas.', marks: 6 },
+                { code: '4(b)', prompt: 'Explain why different groups of people vary in their perceptions of one local place you have studied.', marks: 6 },
+                { code: '4(c)', prompt: 'Evaluate the impact of government decisions on the demographic and cultural characteristics of either urban or rural places.', marks: 20, extended: true },
+              ]},
+              { number: 5, scenario: 'Fig 4: scatter graph of female literacy rate vs fertility rate for selected countries — Section C Health, Human Rights and Intervention (answer Q5 OR Q6)', parts: [
+                { code: '5(a)', prompt: 'Explain why some states see the European Convention on Human Rights (ECHR) as controversial.', marks: 4 },
+                { code: '5(b)', prompt: 'Suggest reasons for the relationship shown between the rates of female literacy and fertility.', marks: 6 },
+                { code: '5(c)', prompt: 'Explain why high levels of political corruption are a threat to human rights.', marks: 8 },
+                { code: '5(d)', prompt: 'Evaluate the view that direct military intervention is the most effective way of improving levels of human development.', marks: 20, extended: true },
+              ]},
+              { number: 6, scenario: 'Fig 5: scatter graph of % of country\'s population who are foreign-born vs GDP per capita for selected countries — Section C Migration, Identity and Sovereignty (answer Q5 OR Q6)', parts: [
+                { code: '6(a)', prompt: 'Explain why the rate of assimilation of migrants varies between countries.', marks: 4 },
+                { code: '6(b)', prompt: 'Suggest reasons for the relationship shown between the percentage of a country\'s population who are foreign-born and their GDP per capita.', marks: 6 },
+                { code: '6(c)', prompt: 'Explain why some national borders are contested.', marks: 8 },
+                { code: '6(d)', prompt: 'Evaluate the view that global organisations have been more effective in managing global economic issues than environmental issues.', marks: 20, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'edexcel-geog-9ge0-03-2022', year: 2022, paperName: 'Paper 3: Geographical Debates', paperCode: '9GE0/03',
+            totalMarks: 70, durationMins: 105,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-03-que-20220618.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Geography/2016/Exam-materials/9ge0-03-rms-20220818.pdf',
+            questions: [
+              { number: 1, scenario: 'No figures — short written question', parts: [
+                { code: '1', prompt: 'Explain the differences between hazards and disasters.', marks: 4 },
+              ]},
+              { number: 2, scenario: 'Table 1: Chi-squared test data on environmental vulnerability of Small Island Developing States (SIDS) vs other states across 5 vulnerability categories', parts: [
+                { code: '2(a)(i)', prompt: 'Calculate the total for (O−E)²/E for the \'At risk\' category for Other States (Column 6). Answer to one decimal place.', marks: 2 },
+                { code: '2(a)(ii)', prompt: 'Calculate the value of χ², using the formula provided. Answer to one decimal place.', marks: 2 },
+                { code: '2(b)', prompt: 'The result shows the null hypothesis should be rejected at the 99% confidence level. Explain how this result might be used to guide further research into the environmental vulnerability of SIDS.', marks: 4 },
+              ]},
+              { number: 3, scenario: 'Fig 1: world map of SIDS locations; Fig 2: data table of SIDS characteristics (area, population, GDP) — Section A resource analysis', parts: [
+                { code: '3', prompt: 'Analyse the similarities and differences in the locations and sizes of SIDS.', marks: 8 },
+              ]},
+              { number: 4, scenario: 'Fig 3: bar chart of HDI for SIDS; Fig 4a: scatter graph of land area vs GDP per capita; Fig 4b: scatter graph of population vs GDP per capita — Section A resource analysis', parts: [
+                { code: '4', prompt: 'Analyse the social consequences for countries with small land areas and small populations.', marks: 8 },
+              ]},
+              { number: 5, scenario: 'Section B resources on sustainable development challenges facing SIDS (provided in Resource Booklet)', parts: [
+                { code: '5', prompt: 'Evaluate the view that geographical isolation has been the main barrier to the sustainable development of SIDS.', marks: 18, extended: true },
+              ]},
+              { number: 6, scenario: 'Section C resources on climate change impacts and responses for SIDS (provided in Resource Booklet)', parts: [
+                { code: '6', prompt: 'Evaluate the view that without significant global action to address climate change, the future of SIDS is one of decline.', marks: 24, extended: true },
+              ]},
+            ],
+          },
+        ],
+      },
       { board: 'Eduqas (WJEC)', specCode: 'A110QS',
         officialPageUrl: 'https://www.eduqas.co.uk/qualifications/geography-as-a-level/',
         note: "Eduqas requires a free account to download papers (their official policy)." },
