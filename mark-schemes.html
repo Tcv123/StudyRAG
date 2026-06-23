@@ -423,8 +423,11 @@ function renderMsCard(part, paperKey, paperId) {
   if (hasAns && kws.length) {
     // Highlight each keyword inside the model answer text
     const escaped = esc(modelAns);
-    const pattern = new RegExp('(' + kws.map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('|') + ')', 'gi');
-    modelAnswerDisplay = escaped.replace(pattern, '<mark class="kw-highlight">$1</mark>');
+    const safeParts = kws.filter(k => k.length >= 4).map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
+    if (safeParts.length) {
+      const pattern = new RegExp('\\b(' + safeParts.join('|') + ')\\b', 'gi');
+      modelAnswerDisplay = escaped.replace(pattern, '<mark class="kw-highlight">$1</mark>');
+    }
   } else if (hasAns) {
     modelAnswerDisplay = esc(modelAns);
   }
