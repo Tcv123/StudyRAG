@@ -27,8 +27,13 @@
   };
 
   // ── PHASE 1: synchronous CSS override (no flash) ────────────────
+  // Only trust the cache if it was written within the last 30 minutes.
+  // Lapsed subscribers have a stale cache and skip Phase 1 entirely,
+  // preventing the unlock→re-lock flash on their first page load.
   try {
-    if (localStorage.getItem('rag_is_pro') === 'true') {
+    const cached    = localStorage.getItem('rag_is_pro') === 'true';
+    const expiresAt = parseInt(localStorage.getItem('rag_pro_expires_at') || '0', 10);
+    if (cached && Date.now() < expiresAt) {
       injectOverrideStyle();
     }
   } catch (e) { /* localStorage blocked — fall through to async path */ }
@@ -90,9 +95,14 @@
     const pro = isPro(profile);
 
     // Refresh cache for next page load (and across-tab navigation in
-    // the same browser).
+    // the same browser). Store an expiry so Phase 1 only trusts fresh values.
     try {
       localStorage.setItem('rag_is_pro', pro ? 'true' : 'false');
+      if (pro) {
+        localStorage.setItem('rag_pro_expires_at', String(Date.now() + 30 * 60 * 1000));
+      } else {
+        localStorage.removeItem('rag_pro_expires_at');
+      }
     } catch (e) {}
 
     if (!pro) {
