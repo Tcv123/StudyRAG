@@ -389,10 +389,32 @@ window.togglePart = function(i) {
 };
 
 // ── Picker logic ──
-function buildPicker() {
-  const subjects = window.SUBJECTS;
-  if (!subjects || !subjects.length) {
+// userSubs = [{subject, exam_board}] from Supabase user_subjects table
+function buildPicker(userSubs) {
+  const allSubjects = window.SUBJECTS;
+  if (!allSubjects || !allSubjects.length) {
     document.getElementById('pageBody').innerHTML = `<div class="placeholder"><div class="placeholder-icon">⚠️</div><div class="placeholder-title">Config not loaded</div><div class="placeholder-msg">papers-config.js did not load correctly.</div></div>`;
+    return;
+  }
+
+  // Build lookup: subject name (normalised) → board name the user chose
+  const userBoardFor = {};
+  (userSubs || []).forEach(r => {
+    userBoardFor[r.subject.trim().toLowerCase()] = r.exam_board.trim();
+  });
+
+  // Filter allSubjects to only ones the user takes, and find their board entry
+  const filtered = [];
+  allSubjects.forEach(subj => {
+    const board = userBoardFor[subj.name.trim().toLowerCase()];
+    if (!board) return;
+    const boardEntry = (subj.boards || []).find(b => b.board.trim().toLowerCase() === board.trim().toLowerCase());
+    if (!boardEntry || !(boardEntry.papers || []).length) return;
+    filtered.push({ subjectName: subj.name, board: boardEntry.board, papers: boardEntry.papers });
+  });
+
+  if (!filtered.length) {
+    document.getElementById('pageBody').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">No papers found</div><div class="placeholder-msg">No past papers are available yet for your chosen subjects and boards. Try visiting the Past Papers section.</div></div>`;
     return;
   }
 
@@ -402,13 +424,7 @@ function buildPicker() {
         <div class="picker-label">Subject</div>
         <select class="picker-select" id="pickSubject">
           <option value="">— Select subject —</option>
-          ${subjects.map((s, i) => `<option value="${i}">${esc(s.name)}</option>`).join('')}
-        </select>
-      </div>
-      <div class="picker-group">
-        <div class="picker-label">Exam board</div>
-        <select class="picker-select" id="pickBoard" disabled>
-          <option value="">— Select board —</option>
+          ${filtered.map((f, i) => `<option value="${i}">${esc(f.subjectName)} · ${esc(f.board)}</option>`).join('')}
         </select>
       </div>
       <div class="picker-group">
@@ -422,37 +438,22 @@ function buildPicker() {
       <div class="placeholder">
         <div class="placeholder-icon">📋</div>
         <div class="placeholder-title">Select a paper</div>
-        <div class="placeholder-msg">Choose a subject, board, and paper above to browse its mark scheme question by question.</div>
+        <div class="placeholder-msg">Choose a subject and paper above to browse its mark scheme question by question.</div>
       </div>
     </div>`;
 
   document.getElementById('pageBody').innerHTML = pickerHtml;
 
   const pickSubject = document.getElementById('pickSubject');
-  const pickBoard = document.getElementById('pickBoard');
   const pickPaper = document.getElementById('pickPaper');
 
   pickSubject.addEventListener('change', () => {
-    const si = pickSubject.value;
-    pickBoard.innerHTML = '<option value="">— Select board —</option>';
-    pickPaper.innerHTML = '<option value="">— Select paper —</option>';
-    pickBoard.disabled = true;
-    pickPaper.disabled = true;
-    if (si === '') return;
-    const subj = subjects[parseInt(si)];
-    (subj.boards || []).forEach((b, bi) => { const o = document.createElement('option'); o.value = bi; o.textContent = b.board; pickBoard.appendChild(o); });
-    pickBoard.disabled = false;
-    document.getElementById('msViewer').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">Select a board</div><div class="placeholder-msg">Choose an exam board to see available papers.</div></div>`;
-  });
-
-  pickBoard.addEventListener('change', () => {
-    const si = pickSubject.value;
-    const bi = pickBoard.value;
+    const fi = pickSubject.value;
     pickPaper.innerHTML = '<option value="">— Select paper —</option>';
     pickPaper.disabled = true;
-    if (bi === '') return;
-    const board = subjects[parseInt(si)].boards[parseInt(bi)];
-    (board.papers || []).forEach((p, pi) => {
+    if (fi === '') return;
+    const entry = filtered[parseInt(fi)];
+    entry.papers.forEach((p, pi) => {
       const o = document.createElement('option');
       o.value = pi;
       o.textContent = p.title || p.label || `Paper ${pi+1}`;
@@ -463,11 +464,10 @@ function buildPicker() {
   });
 
   pickPaper.addEventListener('change', () => {
-    const si = pickSubject.value;
-    const bi = pickBoard.value;
+    const fi = pickSubject.value;
     const pi = pickPaper.value;
     if (pi === '') return;
-    const paper = subjects[parseInt(si)].boards[parseInt(bi)].papers[parseInt(pi)];
+    const paper = filtered[parseInt(fi)].papers[parseInt(pi)];
     if (!paper) return;
     // Render into msViewer
     const viewer = document.getElementById('msViewer');
@@ -548,7 +548,10 @@ function buildPicker() {
       document.head.appendChild(s);
     });
   }
-  buildPicker();
+  // Fetch the user's chosen subjects and boards
+  const { data: userSubs } = await supabaseClient
+    .from('user_subjects').select('subject, exam_board').eq('user_id', user.id);
+  buildPicker(userSubs || []);
 })();
 </script>
 <div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
