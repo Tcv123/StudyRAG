@@ -568,7 +568,8 @@ function buildPicker(userSubs) {
     entry.papers.forEach((p, pi) => {
       const o = document.createElement('option');
       o.value = pi;
-      o.textContent = p.title || p.label || `Paper ${pi+1}`;
+      const parts = [p.year, p.paperCode, p.title || p.label].filter(Boolean);
+      o.textContent = parts.length ? parts.join(' · ') : `Paper ${pi + 1}`;
       pickPaper.appendChild(o);
     });
     pickPaper.disabled = false;
