@@ -1138,21 +1138,22 @@ function renderSubjectsProgress(subjects, topicRows, practiceAttempts, level) {
     <div class="subj-card ${ragClass(cardRag)}" onclick="window.location='${cardHref}'">
       <span class="subj-emoji">${s.emoji || '📚'}</span>
       <div class="subj-name">${s.subject}</div>
-      <div style="display:flex;align-items:center;gap:8px;margin-bottom:10px;">
+      <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
         <span class="subj-board-tag" style="margin-bottom:0;">${s.exam_board}</span>
         ${gradeStr ? `<span style="font-size:11px;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--accent),var(--accent-dark));padding:2px 8px;border-radius:20px;box-shadow:0 2px 6px var(--accent-glow);letter-spacing:0.01em;">${gradeStr}</span>` : ''}
-        ${prediction ? (() => {
-          const col  = (typeof predictedGradeColour === 'function') ? predictedGradeColour(prediction.grade) : '#6B7280';
-          const tip  = prediction.confidence === 'low'
-            ? `Predicted ${prediction.grade} — low confidence (answer more practice questions to improve accuracy)`
-            : prediction.confidence === 'medium'
-            ? `Predicted ${prediction.grade} — based on ${prediction.masteryPct}% mastery (RAG ${prediction.ragScore}%${prediction.practiceScore !== null ? `, practice ${prediction.practiceScore}%` : ''})`
-            : `Predicted ${prediction.grade} — ${prediction.masteryPct}% mastery (RAG ${prediction.ragScore}%, practice ${prediction.practiceScore}%)`;
-          const opacity = prediction.confidence === 'low' ? '0.55' : '1';
-          return `<span title="${tip}" style="font-size:11px;font-weight:700;color:${col};background:${col}18;border:1.5px solid ${col}44;padding:2px 8px;border-radius:20px;letter-spacing:0.01em;opacity:${opacity};cursor:help;">✦ Predicted ${prediction.grade}</span>`;
-        })() : ''}
         ${!diagComplete && total ? `<span title="Take the diagnostic to get your personalised weak-topic list" style="font-size:10px;font-weight:600;color:#B45309;background:rgba(217,119,6,0.1);border:1px solid rgba(217,119,6,0.25);padding:2px 8px;border-radius:20px;">◎ Diagnostic ${tested}/${total}</span>` : ''}
       </div>
+      ${prediction ? (() => {
+        const col     = (typeof predictedGradeColour === 'function') ? predictedGradeColour(prediction.grade) : '#6B7280';
+        const dimmed  = prediction.confidence === 'low';
+        const tip     = dimmed
+          ? `Low confidence — answer more practice questions to improve accuracy`
+          : `${prediction.masteryPct}% mastery · RAG ${prediction.ragScore}%${prediction.practiceScore !== null ? ` · Practice ${prediction.practiceScore}%` : ''}`;
+        return `<div title="${tip}" style="display:flex;align-items:center;justify-content:space-between;background:${col}15;border:1.5px solid ${col}55;border-radius:10px;padding:8px 12px;margin-bottom:10px;cursor:help;opacity:${dimmed ? '0.6' : '1'};">
+          <span style="font-size:12px;font-weight:600;color:${col}CC;">Predicted grade</span>
+          <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;">${prediction.grade}${dimmed ? ' ?' : ''}</span>
+        </div>`;
+      })() : ''}
       <div class="subj-progress" style="display:flex;">
         ${greenPct ? `<div class="subj-fill fill-green" style="width:${greenPct}%"></div>` : ''}
         ${amberPct ? `<div class="subj-fill fill-amber" style="width:${amberPct}%"></div>` : ''}
