@@ -1,0 +1,67 @@
+/* ==========================================================================
+   responsive.css — shared cross-device safety net for RAG Learning
+   Linked last in <head> on every top-level page so it can fill gaps without
+   fighting each page's own styles. Three concerns:
+     1. A universal safety net so no page overflows the screen on any device.
+     2. Responsive fixes for the shared marketing nav (.nav-* classes).
+     3. The shared app off-canvas sidebar pattern for .app pages on phones.
+   ========================================================================== */
+
+/* ── 1. Universal safety net ────────────────────────────────────────────── */
+/* Stop iOS from auto-inflating text, and never let content scroll sideways. */
+html { -webkit-text-size-adjust: 100%; }
+body { overflow-x: hidden; }
+
+/* Media should shrink to fit its container, never push the page wider. */
+img, svg, video, canvas { max-width: 100%; }
+img, video { height: auto; }
+
+/* Wide tables and code blocks scroll inside themselves instead of the page. */
+table { max-width: 100%; }
+pre { max-width: 100%; overflow-x: auto; }
+
+/* ── 2. Marketing nav (index, features, pricing, subjects, support …) ────── */
+/* On narrow phones the Sign in / Register buttons used to clip off-screen. */
+@media (max-width: 600px) {
+  .nav-wrap { gap: 12px; }
+  .nav-right { gap: 6px; }
+  .nav-btn { padding: 8px 14px; font-size: 11.5px; letter-spacing: 0.05em; }
+}
+@media (max-width: 380px) {
+  .nav-wrap { gap: 8px; }
+  .nav-btn { padding: 7px 11px; letter-spacing: 0.03em; }
+  .logo-name { font-size: 17px; }
+}
+
+/* ── 3. App pages: collapse the fixed sidebar into an off-canvas drawer ──── */
+/* Scoped to .app so marketing pages are untouched. Pages that already ship
+   this pattern inline keep working; pages that don't now get it for free. */
+@media (max-width: 768px) {
+  .app .sidebar {
+    position: fixed; top: 0; left: 0; bottom: 0;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 100;
+  }
+  .app .sidebar.open { transform: translateX(0); }
+  .app .main { margin-left: 0; }
+  /* Give the hamburger room above the page title when it appears. */
+  .app .topbar > .mobile-menu-btn { margin-bottom: 14px; }
+}
+
+/* Hamburger toggle + dimming overlay (hidden on desktop, shown on phones). */
+.mobile-menu-btn {
+  display: none;
+  width: 38px; height: 38px; border-radius: 10px;
+  background: var(--surface, #fff);
+  border: 1px solid var(--border, #e2e8f0);
+  align-items: center; justify-content: center;
+  cursor: pointer; font-size: 18px; flex-shrink: 0;
+}
+@media (max-width: 768px) { .mobile-menu-btn { display: flex; } }
+
+.mobile-overlay {
+  display: none; position: fixed; inset: 0;
+  background: rgba(0, 0, 0, 0.35); z-index: 99;
+}
+.mobile-overlay.active { display: block; }

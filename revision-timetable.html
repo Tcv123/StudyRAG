@@ -336,6 +336,7 @@
       box-shadow: 0 0 0 2px var(--surface);
     }
   </style>
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 <div class="app">
@@ -380,6 +381,7 @@
 
   <main class="main">
     <div class="topbar">
+      <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
       <div>
         <div class="page-title">📆 Revision Timetable</div>
         <div class="page-sub">Plan your week. Auto-balance subjects against your weak topics.</div>
@@ -1440,5 +1442,6 @@ function escapeHtml(s) {
     .replace(/"/g,'&quot;').replace(/'/g,'&#39;');
 }
 </script>
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
 </body>
 </html>
