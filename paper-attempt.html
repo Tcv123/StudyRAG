@@ -327,6 +327,7 @@
       .main { padding: 28px 22px; }
     }
   </style>
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 <div class="app">
@@ -371,6 +372,7 @@
 
   <main class="main">
     <div class="topbar">
+      <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
       <div class="breadcrumb"><a href="past-papers.html">← All past papers</a></div>
       <div class="page-title" id="paperTitle">Loading paper…</div>
       <div class="page-sub" id="paperSub"></div>
@@ -1980,5 +1982,6 @@ builtins.input = __qbq_input
   }
 })();
 </script>
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
 </body>
 </html>

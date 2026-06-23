@@ -136,6 +136,7 @@
     .mini-btn.primary:hover { background: var(--accent-dark); color: #fff; }
     .mini-btn.muted { opacity: 0.45; cursor: not-allowed; pointer-events: none; }
   </style>
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
 <div class="app">
@@ -180,6 +181,7 @@
 
   <main class="main">
     <div class="topbar">
+      <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
       <div class="page-title">📄 Past Papers</div>
       <div class="page-sub">Browse and download exam-board-specific past papers.</div>
     </div>
@@ -467,5 +469,6 @@
   renderPage();
 })();
 </script>
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
 </body>
 </html>
