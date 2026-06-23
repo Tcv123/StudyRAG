@@ -14,6 +14,7 @@
   <script src="medals-data.js"></script>
   <script src="study-tracker.js"></script>
   <script src="nav-gating.js"></script>
+  <script src="predicted-grade.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -1534,16 +1535,19 @@ async function load() {
   maybeShowWelcome();
 
   // Load all data in parallel
+  const sixtyDaysAgo = new Date(Date.now() - 60 * 86400000).toISOString();
   const [
     { data: profile },
     { data: subjects },
     { data: medals },
-    { data: topicProgress }
+    { data: topicProgress },
+    { data: recentAttempts }
   ] = await Promise.all([
     supabaseClient.from('profiles').select('*').eq('id', user.id).single(),
     supabaseClient.from('user_subjects').select('*').eq('user_id', user.id).order('created_at'),
     supabaseClient.from('user_medals').select('*').eq('user_id', user.id),
-    supabaseClient.from('topic_progress').select('subject, exam_board, topic, rag_status, updated_at').eq('user_id', user.id)
+    supabaseClient.from('topic_progress').select('subject, exam_board, topic, rag_status, updated_at').eq('user_id', user.id),
+    supabaseClient.from('practice_attempts').select('subject, exam_board, earned, total_marks').eq('user_id', user.id).gte('taken_at', sixtyDaysAgo)
   ]);
 
   const firstName = profile?.first_name || '';
@@ -1607,7 +1611,7 @@ async function load() {
   const existingMedalIds = (medals || []).map(m => m.medal_id);
   const allMedalIds = await checkAndAwardMedals(user, topicRows, subjectList, existingMedalIds);
   renderMedals(allMedalIds);
-  renderSubjectsProgress(subjectList, topicRows);
+  renderSubjectsProgress(subjectList, topicRows, recentAttempts || [], level);
   renderDiagnosticList(subjectList, topicRows);
   try { renderExamDates(subjectList); } catch(e) { console.error('Exam dates error:', e); }
   renderRecentActivity(topicRows, medals || [], profile);
