@@ -186,7 +186,8 @@
     const parts = [`${prediction.masteryPct}% mastery`];
     if (prediction.ragScore !== null && prediction.ragScore !== undefined) parts.push(`Diagnostic ${prediction.ragScore}%`);
     if (prediction.practiceScore !== null) parts.push(`Practice ${prediction.practiceScore}%`);
-    const tip   = parts.join(' · ') + (dim ? ' · diagnose more topics or do more practice to sharpen this' : '');
+    const note  = "This prediction is based on the diagnostics (and practice) you've done so far — it's a guide, not a perfect prediction. The more you diagnose and practise, the more accurate it gets.";
+    const tip   = parts.join(' · ') + '\n' + note;
 
     if (opts.inline) {
       // Small horizontal pill that sits inline with the grade/diagnostic chips.
