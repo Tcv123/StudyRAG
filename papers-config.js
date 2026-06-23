@@ -23928,7 +23928,294 @@ window.SUBJECTS = [
         officialPageUrl: 'https://www.eduqas.co.uk/qualifications/geography-as-a-level/',
         note: "Eduqas requires a free account to download papers (their official policy)." },
       { board: 'OCR', specCode: 'H481',
-        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/geography-h081-h481-from-2016/assessment/' }
+        officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/geography-h081-h481-from-2016/assessment/',
+        papers: [
+          {
+            id: 'ocr-geog-h481-01-2023', year: 2023, paperName: 'Paper 1: Physical Systems', paperCode: 'H481/01',
+            totalMarks: 66, durationMins: 90,
+            qpUrl: 'https://www.ocr.org.uk/Images/703819-question-paper-physical-systems.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703980-mark-scheme-physical-systems.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A Option A — Coastal Landscapes. Table 1: mean monthly wind speed at a South African coastal location for 11 months (2019). Fig. 1: photograph of a coastal landscape in England showing landform A.', parts: [
+                { code: '1(a)', prompt: 'With reference to a case study of one coastal landscape that is being used by people, explain the reasons for the economic development taking place.', marks: 8 },
+                { code: '1(b)(i)', prompt: 'Using the data in Table 1, calculate the median. You must show your working.', marks: 2 },
+                { code: '1(b)(ii)', prompt: 'Using the data in Table 1, calculate the interquartile range. You must show your working.', marks: 2 },
+                { code: '1(b)(iii)', prompt: 'The mean wind speed for December 2019 was 9.4 m/sec. Interpret this value with reference to the interquartile range for the data in Table 1.', marks: 2 },
+                { code: '1(c)', prompt: 'With reference to Fig. 1, explain one way flows of material influence the formation of landform A.', marks: 3 },
+                { code: '1(d)', prompt: 'Discuss the relative importance of geomorphic processes in forming coastal landforms.', marks: 16, extended: true },
+              ]},
+              { number: 2, scenario: 'Section A Option B — Glaciated Landscapes. Table 2: mean monthly precipitation at a Canadian glaciated location for 11 months (2019). Fig. 2: photograph of a glaciated landscape in England showing landform B.', parts: [
+                { code: '2(a)', prompt: 'With reference to a case study of one glaciated landscape that is being used by people, explain the reasons for the human activity taking place.', marks: 8 },
+                { code: '2(b)(i)', prompt: 'Using the data in Table 2, calculate the median. You must show your working.', marks: 2 },
+                { code: '2(b)(ii)', prompt: 'Using the data in Table 2, calculate the interquartile range. You must show your working.', marks: 2 },
+                { code: '2(b)(iii)', prompt: 'The mean monthly precipitation for December 2019 was 370 mm. Interpret this value with reference to the interquartile range for the data in Table 2.', marks: 2 },
+                { code: '2(c)', prompt: 'With reference to Fig. 2, explain one way flows of material influence the formation of landform B.', marks: 3 },
+                { code: '2(d)', prompt: 'Discuss the relative importance of geomorphic processes in forming glacial landforms.', marks: 16, extended: true },
+              ]},
+              { number: 3, scenario: 'Section A Option C — Dryland Landscapes. Table 3: mean monthly precipitation at an Australian dryland location for 11 months (2019). Fig. 3: photograph of a dryland landscape in the USA showing landform C.', parts: [
+                { code: '3(a)', prompt: 'With reference to a case study of one dryland landscape that is being used by people, explain the reasons for the economic activity taking place.', marks: 8 },
+                { code: '3(b)(i)', prompt: 'Using the data in Table 3, calculate the median. You must show your working.', marks: 2 },
+                { code: '3(b)(ii)', prompt: 'Using the data in Table 3, calculate the interquartile range. You must show your working.', marks: 2 },
+                { code: '3(b)(iii)', prompt: 'The mean monthly precipitation for December 2019 was 40 mm. Interpret this value with reference to the interquartile range for the data in Table 3.', marks: 2 },
+                { code: '3(c)', prompt: 'With reference to Fig. 3, explain one way flows of material influence the formation of landform C.', marks: 3 },
+                { code: '3(d)', prompt: 'Discuss the relative importance of geomorphic processes in forming dryland landforms.', marks: 16, extended: true },
+              ]},
+              { number: 4, scenario: 'Section B — Earth\'s Life Support Systems. Fig. 4: map showing spring snowmelt timing in Alaska 1999–2015.', parts: [
+                { code: '4(a)(i)', prompt: 'Using evidence from Fig. 4, identify three limitations of the data presentation method.', marks: 3 },
+                { code: '4(a)(ii)', prompt: 'With reference to Fig. 4, suggest one way this seasonal change in snowmelt timing affects the water cycle in the Arctic tundra.', marks: 2 },
+                { code: '4(a)(iii)', prompt: 'With reference to Fig. 4, suggest one way this seasonal change in snowmelt timing affects the carbon cycle in the Arctic tundra.', marks: 2 },
+                { code: '4(b)', prompt: 'Examine how temperature affects flows and stores in the carbon cycle of a tropical rainforest.', marks: 10 },
+                { code: '4(c)', prompt: 'To what extent do human factors enhance rather than disturb the natural processes and stores in the water cycle?', marks: 16, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'ocr-geog-h481-02-2023', year: 2023, paperName: 'Paper 2: Human Interactions', paperCode: 'H481/02',
+            totalMarks: 66, durationMins: 90,
+            qpUrl: 'https://www.ocr.org.uk/Images/703821-question-paper-human-interactions.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703981-mark-scheme-human-interactions.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A — Changing Spaces; Making Places. Fig. 1: TV set for Coronation Street (fictional inner city). Fig. 2: photographs of rural settlements in Niger (LIDC) and the Netherlands (AC).', parts: [
+                { code: '1(a)', prompt: 'Use one piece of evidence from Fig. 1 to explain how this informal representation of place represents an inner city area.', marks: 3 },
+                { code: '1(b)', prompt: 'Using evidence from Fig. 2, suggest how social inequalities can affect people\'s daily lives in different ways.', marks: 8 },
+                { code: '1(c)', prompt: 'Explain how flows of money and investment into an area can help to shape its place profile over time.', marks: 6 },
+                { code: '1(d)', prompt: 'With reference to one place that has undergone rebranding, assess the role of a range of players involved in the placemaking process.', marks: 16, extended: true },
+              ]},
+              { number: 2, scenario: 'Section B Option A — Trade in the Contemporary World. Fig. 3: scatter graph of export of commercial services vs HDI for selected countries, 2019.', parts: [
+                { code: '2(a)(i)', prompt: 'Suggest two limitations of Fig. 3 for showing the relationship between international trade and socio-economic development.', marks: 4 },
+                { code: '2(a)(ii)', prompt: 'Explain two factors that might account for the variation in export of commercial services shown in Fig. 3.', marks: 5 },
+                { code: '2(b)', prompt: 'With reference to a case study, examine the interdependence between one EDC and its trading partners.', marks: 8 },
+              ]},
+              { number: 3, scenario: 'Section B Option B — Global Migration. Fig. 4: scatter graph of international migration rate vs HDI for selected countries, 2019.', parts: [
+                { code: '3(a)(i)', prompt: 'Suggest two limitations of Fig. 4 for showing the relationship between international migration and socio-economic development.', marks: 4 },
+                { code: '3(a)(ii)', prompt: 'Explain two factors that might account for the variation in international migration shown in Fig. 4.', marks: 5 },
+                { code: '3(b)', prompt: 'With reference to a case study, examine the interdependence between one EDC and countries connected to it by migrant flows.', marks: 8 },
+              ]},
+              { number: 4, scenario: 'Section B Option C — Human Rights (answer Q4 OR Q5)', parts: [
+                { code: '4', prompt: '\'National government is the organisation that has the most significant role in global governance of human rights.\' Discuss in the context of one area of conflict.', marks: 16, extended: true },
+              ]},
+              { number: 5, scenario: 'Section B Option D — Power and Borders (answer Q4 OR Q5)', parts: [
+                { code: '5', prompt: '\'National government is the organisation that has the most significant role in global governance of conflict.\' Discuss in the context of one area of conflict.', marks: 16, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'ocr-geog-h481-03-2023', year: 2023, paperName: 'Paper 3: Geographical Debates', paperCode: 'H481/03',
+            totalMarks: 108, durationMins: 150,
+            qpUrl: 'https://www.ocr.org.uk/Images/703823-question-paper-geographical-debates.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/703982-mark-scheme-geographical-debates.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A Topic 3.1 — Climate Change. Fig. 1: diagram showing the global energy balance.', parts: [
+                { code: '1(a)', prompt: 'Identify three limitations of Fig. 1 as a source of information about the global energy balance.', marks: 3 },
+                { code: '1(b)', prompt: 'Explain how increasing atmospheric water vapour influences the climate system.', marks: 6 },
+              ]},
+              { number: 2, scenario: 'Section A Topic 3.2 — Disease Dilemmas. Fig. 2: map/chart of percentage of deaths caused by air pollution in South and East Asia, 2017.', parts: [
+                { code: '2(a)', prompt: 'Identify three limitations of Fig. 2 as a source of information about the percentage of deaths caused by air pollution in South and East Asia, 2017.', marks: 3 },
+                { code: '2(b)', prompt: 'Explain the socio-economic impacts of a non-communicable disease.', marks: 6 },
+              ]},
+              { number: 3, scenario: 'Section A Topic 3.3 — Exploring Oceans. Fig. 3: map/diagram of the relief of the Indian Ocean Basin.', parts: [
+                { code: '3(a)', prompt: 'Identify three limitations of Fig. 3 as a source of information about the relief of the Indian Ocean Basin.', marks: 3 },
+                { code: '3(b)', prompt: 'Explain the pattern of circulation in the North Atlantic Ocean.', marks: 6 },
+              ]},
+              { number: 4, scenario: 'Section A Topic 3.4 — Future of Food. Fig. 4: diagram/map showing types of soil.', parts: [
+                { code: '4(a)', prompt: 'Identify three limitations of Fig. 4 as a source of information about types of soil.', marks: 3 },
+                { code: '4(b)', prompt: 'Explain why geographical pinchpoints exist in the food supply chain.', marks: 6 },
+              ]},
+              { number: 5, scenario: 'Section A Topic 3.5 — Hazardous Earth. Fig. 5: graph/chart of the global economic cost of natural disasters.', parts: [
+                { code: '5(a)', prompt: 'Identify three limitations of Fig. 5 as a source of information about the global economic cost of natural disasters.', marks: 3 },
+                { code: '5(b)', prompt: 'Explain how fossil record evidence supports the theory of continental drift.', marks: 6 },
+              ]},
+              { number: 6, scenario: 'Section B Topic 3.1 — Climate Change (synoptic question)', parts: [
+                { code: '6', prompt: 'Examine how climate change may influence human activity in one landscape system.', marks: 12 },
+              ]},
+              { number: 7, scenario: 'Section B Topic 3.2 — Disease Dilemmas (synoptic question)', parts: [
+                { code: '7', prompt: 'Examine how patterns of disease may be influenced by placemaking.', marks: 12 },
+              ]},
+              { number: 8, scenario: 'Section B Topic 3.3 — Exploring Oceans (synoptic question)', parts: [
+                { code: '8', prompt: 'Examine how alterations to the oceans caused by climate change affect the water cycle.', marks: 12 },
+              ]},
+              { number: 9, scenario: 'Section B Topic 3.4 — Future of Food (synoptic question)', parts: [
+                { code: '9', prompt: 'Examine how risks to food security may influence patterns of social inequality in places.', marks: 12 },
+              ]},
+              { number: 10, scenario: 'Section B Topic 3.5 — Hazardous Earth (synoptic question)', parts: [
+                { code: '10', prompt: 'Examine how the risks from tectonic hazards can alter patterns of either international trade or global migration.', marks: 12 },
+              ]},
+              { number: 11, scenario: 'Section C Topic 3.1 — Climate Change essay option A', parts: [
+                { code: '11', prompt: '\'Adaptation is the most effective way humans can respond to climate change.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 12, scenario: 'Section C Topic 3.1 — Climate Change essay option B', parts: [
+                { code: '12', prompt: '\'Political organisations have the most influence in shaping the climate change debate.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 13, scenario: 'Section C Topic 3.2 — Disease Dilemmas essay option A', parts: [
+                { code: '13', prompt: '\'Human factors are most influential in affecting the spread of disease.\' To what extent do you agree?', marks: 33, extended: true },
+              ]},
+              { number: 14, scenario: 'Section C Topic 3.2 — Disease Dilemmas essay option B', parts: [
+                { code: '14', prompt: '\'Strategies that deal with disease risk and eradication, at a local scale, are more effective than at any other scale.\' To what extent do you agree?', marks: 33, extended: true },
+              ]},
+              { number: 15, scenario: 'Section C Topic 3.3 — Exploring Oceans essay option A', parts: [
+                { code: '15', prompt: '\'It is only possible to use ocean resources successfully with political involvement.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 16, scenario: 'Section C Topic 3.3 — Exploring Oceans essay option B', parts: [
+                { code: '16', prompt: '\'It is more important to prevent ocean pollution than to protect human economic activities.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 17, scenario: 'Section C Topic 3.4 — Future of Food essay option A', parts: [
+                { code: '17', prompt: '\'The future of food depends upon key players and strategies.\' To what extent do you agree?', marks: 33, extended: true },
+              ]},
+              { number: 18, scenario: 'Section C Topic 3.4 — Future of Food essay option B', parts: [
+                { code: '18', prompt: 'To what extent is the global food system vulnerable to shocks?', marks: 33, extended: true },
+              ]},
+              { number: 19, scenario: 'Section C Topic 3.5 — Hazardous Earth essay option A', parts: [
+                { code: '19', prompt: '\'Earthquake activity has a greater impact on landscapes than volcanic activity.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 20, scenario: 'Section C Topic 3.5 — Hazardous Earth essay option B', parts: [
+                { code: '20', prompt: '\'Levels of economic development determine the impacts people experience from volcanic eruptions.\' Discuss.', marks: 33, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'ocr-geog-h481-01-2022', year: 2022, paperName: 'Paper 1: Physical Systems', paperCode: 'H481/01',
+            totalMarks: 66, durationMins: 90,
+            qpUrl: 'https://www.ocr.org.uk/Images/676789-question-paper-physical-systems.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676971-mark-scheme-physical-systems.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A Option A — Coastal Landscapes. Fig. 1: scatter graph of spending on coastal management vs time in England. Fig. 2: correlation coefficient and table of critical values for a significance test.', parts: [
+                { code: '1(a)', prompt: 'Explain how coastal landscapes can be viewed as systems.', marks: 8 },
+                { code: '1(b)(i)', prompt: 'Comment on one advantage of the data presentation technique used in Fig. 1.', marks: 2 },
+                { code: '1(b)(ii)', prompt: 'Describe the relationship shown in Fig. 1.', marks: 2 },
+                { code: '1(b)(iii)', prompt: 'With reference to Fig. 2, test the significance of the relationship shown in Fig. 1.', marks: 3 },
+                { code: '1(b)(iv)', prompt: 'Suggest one reason for the relationship between spending on coastal management and time.', marks: 2 },
+                { code: '1(c)', prompt: 'To what extent are long-term changes more influential on coastal landscape systems than short-term changes?', marks: 16, extended: true },
+              ]},
+              { number: 2, scenario: 'Section A Option B — Glaciated Landscapes. Fig. 3: scatter graph of spending on oil pipeline management vs time in Alaska, USA. Fig. 4: correlation coefficient and table of critical values for a significance test.', parts: [
+                { code: '2(a)', prompt: 'Explain how glaciated landscapes can be viewed as systems.', marks: 8 },
+                { code: '2(b)(i)', prompt: 'Comment on one advantage of the data presentation technique used in Fig. 3.', marks: 2 },
+                { code: '2(b)(ii)', prompt: 'Describe the relationship shown in Fig. 3.', marks: 2 },
+                { code: '2(b)(iii)', prompt: 'With reference to Fig. 4, test the significance of the relationship shown in Fig. 3.', marks: 3 },
+                { code: '2(b)(iv)', prompt: 'Suggest one reason for the relationship between spending on oil pipeline management and time.', marks: 2 },
+                { code: '2(c)', prompt: 'To what extent are long-term changes more influential on glaciated landscape systems than short-term changes?', marks: 16, extended: true },
+              ]},
+              { number: 3, scenario: 'Section A Option C — Dryland Landscapes. Fig. 5: scatter graph of spending on water supply management vs time in the USA. Fig. 6: correlation coefficient and table of critical values for a significance test.', parts: [
+                { code: '3(a)', prompt: 'Explain how dryland landscapes can be viewed as systems.', marks: 8 },
+                { code: '3(b)(i)', prompt: 'Comment on one advantage of the data presentation technique used in Fig. 5.', marks: 2 },
+                { code: '3(b)(ii)', prompt: 'Describe the relationship shown in Fig. 5.', marks: 2 },
+                { code: '3(b)(iii)', prompt: 'With reference to Fig. 6, test the significance of the relationship shown in Fig. 5.', marks: 3 },
+                { code: '3(b)(iv)', prompt: 'Suggest one reason for the relationship between spending on water supply management and time.', marks: 2 },
+                { code: '3(c)', prompt: 'To what extent are long-term changes more influential on dryland landscape systems than short-term changes?', marks: 16, extended: true },
+              ]},
+              { number: 4, scenario: 'Section B — Earth\'s Life Support Systems. Fig. 7: OS map of Wiston Park, UK, showing Area A and Area B.', parts: [
+                { code: '4(a)(i)', prompt: 'Comment on one advantage of an OS map as a data presentation technique.', marks: 2 },
+                { code: '4(a)(ii)', prompt: 'State the distance in kilometres between grid references 145124 and 155124.', marks: 1 },
+                { code: '4(a)(iii)', prompt: 'Suggest two reasons for differences in characteristics of the water cycle between Area A and Area B on Fig. 7.', marks: 4 },
+                { code: '4(b)', prompt: 'Examine the extent to which the developing oil and gas industry affects the water cycle in the Arctic tundra.', marks: 10 },
+                { code: '4(c)', prompt: 'Assess the importance of carbon to humans.', marks: 16, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'ocr-geog-h481-02-2022', year: 2022, paperName: 'Paper 2: Human Interactions', paperCode: 'H481/02',
+            totalMarks: 66, durationMins: 90,
+            qpUrl: 'https://www.ocr.org.uk/Images/676791-question-paper-human-interactions.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676972-mark-scheme-human-interactions.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A — Changing Spaces; Making Places. Fig. 1: advertisement for the Lincolnshire Co-op Community Champions scheme. Fig. 2: OS 1:50,000 map extracts of a dockland area in east London for 1974 and 2016.', parts: [
+                { code: '1(a)', prompt: 'Use one piece of evidence from Fig. 1 to explain how local community groups can shape the place in which they live.', marks: 3 },
+                { code: '1(b)', prompt: 'Using evidence from Fig. 2, examine the impacts of economic change in the dockland area shown.', marks: 8 },
+                { code: '1(c)', prompt: 'Explain how cultural characteristics might shape place identity at local scale.', marks: 6 },
+                { code: '1(d)', prompt: 'How far do you agree that education is the main influence on social inequality?', marks: 16, extended: true },
+              ]},
+              { number: 2, scenario: 'Section B Option A — Trade in the Contemporary World (answer Q2 OR Q3)', parts: [
+                { code: '2', prompt: '\'The impacts of international trade are always beneficial.\' Assess this statement with reference to a case study of one EDC.', marks: 16, extended: true },
+              ]},
+              { number: 3, scenario: 'Section B Option B — Global Migration (answer Q2 OR Q3)', parts: [
+                { code: '3', prompt: '\'The impacts of international migration are always beneficial.\' Assess this statement with reference to a case study of one EDC.', marks: 16, extended: true },
+              ]},
+              { number: 4, scenario: 'Section B Option C — Human Rights (answer Q4 OR Q5). Fig. 3: photograph of villagers in Jharkhand, India, being addressed by NGO workers about their land rights.', parts: [
+                { code: '4(a)', prompt: 'Suggest two limitations of the photograph (Fig. 3) as a source of information about NGO assistance in areas of human rights violation.', marks: 4 },
+                { code: '4(b)', prompt: 'Explain how two obstacles for women might limit their access to reproductive health services.', marks: 5 },
+                { code: '4(c)', prompt: 'With reference to one LIDC case study, explain the opportunities for development created by global governance of human rights.', marks: 8 },
+              ]},
+              { number: 5, scenario: 'Section B Option D — Power and Borders (answer Q4 OR Q5). Fig. 4: photograph of South Sudanese refugees being registered by NGO workers at the Uganda border.', parts: [
+                { code: '5(a)', prompt: 'Suggest two limitations of the photograph (Fig. 4) as a source of information about NGO assistance in areas of conflict.', marks: 4 },
+                { code: '5(b)', prompt: 'Explain how two different types of challenge to sovereign states might cause loss of their territorial integrity.', marks: 5 },
+                { code: '5(c)', prompt: 'With reference to one LIDC case study, explain the opportunities for development created by global governance of either sovereignty or territorial integrity.', marks: 8 },
+              ]},
+            ],
+          },
+          {
+            id: 'ocr-geog-h481-03-2022', year: 2022, paperName: 'Paper 3: Geographical Debates', paperCode: 'H481/03',
+            totalMarks: 108, durationMins: 150,
+            qpUrl: 'https://www.ocr.org.uk/Images/676793-question-paper-geographical-debates.pdf',
+            msUrl: 'https://www.ocr.org.uk/Images/676973-mark-scheme-geographical-debates.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A Topic 3.1 — Climate Change. Fig. 1: resource booklet source showing predicted global surface temperatures.', parts: [
+                { code: '1(a)', prompt: 'Identify three limitations of Fig. 1 as a source of information about predicted global surface temperatures.', marks: 3 },
+                { code: '1(b)', prompt: 'Explain the vulnerability of one type of natural environment to the impacts of climate change.', marks: 6 },
+              ]},
+              { number: 2, scenario: 'Section A Topic 3.2 — Disease Dilemmas. Fig. 2: resource booklet source showing reported outbreaks of communicable diseases.', parts: [
+                { code: '2(a)', prompt: 'Identify three limitations of Fig. 2 as a source of information about reported outbreaks of communicable diseases.', marks: 3 },
+                { code: '2(b)', prompt: 'Explain the impacts of one named disease on resident populations in a country which has experienced a natural hazard.', marks: 6 },
+              ]},
+              { number: 3, scenario: 'Section A Topic 3.3 — Exploring Oceans. Fig. 3: resource booklet source showing data on coral bleaching.', parts: [
+                { code: '3(a)', prompt: 'Identify three limitations of Fig. 3 as a source of information about coral bleaching.', marks: 3 },
+                { code: '3(b)', prompt: 'Explain how acidification of oceans contributes to depleting fish stocks.', marks: 6 },
+              ]},
+              { number: 4, scenario: 'Section A Topic 3.4 — Future of Food. Fig. 4: resource booklet source showing food security risks in a dryland area.', parts: [
+                { code: '4(a)', prompt: 'Identify three limitations of Fig. 4 as a source of information about food security risks in a dryland area.', marks: 3 },
+                { code: '4(b)', prompt: 'Explain the physical conditions of an extreme environment where there is indigenous farming.', marks: 6 },
+              ]},
+              { number: 5, scenario: 'Section A Topic 3.5 — Hazardous Earth. Fig. 5: resource booklet source showing data on volcanic eruptions.', parts: [
+                { code: '5(a)', prompt: 'Identify three limitations of Fig. 5 as a source of information about volcanic eruptions.', marks: 3 },
+                { code: '5(b)', prompt: 'Explain the Park model of disaster-response.', marks: 6 },
+              ]},
+              { number: 6, scenario: 'Section B Topic 3.1 — Climate Change (synoptic question)', parts: [
+                { code: '6', prompt: 'Examine how the balance of anthropogenic emissions around the world has been changed by EITHER international trade OR global migration.', marks: 12 },
+              ]},
+              { number: 7, scenario: 'Section B Topic 3.2 — Disease Dilemmas (synoptic question)', parts: [
+                { code: '7', prompt: 'Examine how disease diffusion is affected by physical factors in any one landscape system.', marks: 12 },
+              ]},
+              { number: 8, scenario: 'Section B Topic 3.3 — Exploring Oceans (synoptic question)', parts: [
+                { code: '8', prompt: 'Examine how the accumulation of plastic in oceans influences representations of place.', marks: 12 },
+              ]},
+              { number: 9, scenario: 'Section B Topic 3.4 — Future of Food (synoptic question)', parts: [
+                { code: '9', prompt: 'Examine how strategies to increase food security can be affected by issues of EITHER human rights OR territorial integrity.', marks: 12 },
+              ]},
+              { number: 10, scenario: 'Section B Topic 3.5 — Hazardous Earth (synoptic question)', parts: [
+                { code: '10', prompt: 'Examine how volcanic eruptions influence the carbon cycle.', marks: 12 },
+              ]},
+              { number: 11, scenario: 'Section C Topic 3.1 — Climate Change essay option A', parts: [
+                { code: '11', prompt: '\'International responses to climate change will never work.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 12, scenario: 'Section C Topic 3.1 — Climate Change essay option B', parts: [
+                { code: '12', prompt: 'Assess the success of mitigation strategies to cut global emissions of greenhouse gases.', marks: 33, extended: true },
+              ]},
+              { number: 13, scenario: 'Section C Topic 3.2 — Disease Dilemmas essay option A', parts: [
+                { code: '13', prompt: 'To what extent can LIDCs or EDCs successfully mitigate against and respond to outbreaks of a communicable disease?', marks: 33, extended: true },
+              ]},
+              { number: 14, scenario: 'Section C Topic 3.2 — Disease Dilemmas essay option B', parts: [
+                { code: '14', prompt: '\'There is a link between disease and levels of economic development.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 15, scenario: 'Section C Topic 3.3 — Exploring Oceans essay option A', parts: [
+                { code: '15', prompt: '\'The oceans are vital to globalisation.\' To what extent do you agree with this statement?', marks: 33, extended: true },
+              ]},
+              { number: 16, scenario: 'Section C Topic 3.3 — Exploring Oceans essay option B', parts: [
+                { code: '16', prompt: '\'The opportunities arising from the use of ocean resources are greater than the threats.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 17, scenario: 'Section C Topic 3.4 — Future of Food essay option A', parts: [
+                { code: '17', prompt: '\'Economic factors are the main cause of spatial variation in global food security.\' Discuss.', marks: 33, extended: true },
+              ]},
+              { number: 18, scenario: 'Section C Topic 3.4 — Future of Food essay option B', parts: [
+                { code: '18', prompt: 'To what extent is globalisation changing the food industry?', marks: 33, extended: true },
+              ]},
+              { number: 19, scenario: 'Section C Topic 3.5 — Hazardous Earth essay option A', parts: [
+                { code: '19', prompt: '\'The most effective strategy to manage tectonic hazards is to mitigate against vulnerability.\' To what extent do you agree with this statement?', marks: 33, extended: true },
+              ]},
+              { number: 20, scenario: 'Section C Topic 3.5 — Hazardous Earth essay option B', parts: [
+                { code: '20', prompt: '\'The hazards generated by earthquakes have greater impact on people than those from volcanic eruptions.\' Discuss.', marks: 33, extended: true },
+              ]},
+            ],
+          },
+        ],
+      }
     ]
   }
 ];
