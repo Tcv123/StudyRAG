@@ -175,7 +175,6 @@
     const col   = gradeColour(prediction.grade);
     const dim   = prediction.confidence === 'low';
     const qmark = dim ? '<span style="font-size:14px;font-weight:400;opacity:0.55;margin-left:2px;">?</span>' : '';
-    const conf  = { low: 'Low confidence', medium: 'Medium confidence', high: 'High confidence' }[prediction.confidence] || '';
     const ts    = targetStatus(prediction, opts.target, opts.level);
     const tip   = dim
       ? 'Low confidence — answer more practice questions to improve accuracy'
@@ -189,24 +188,14 @@
       </div>`;
     }
 
-    return `<div title="${tip}" style="background:${col}12;border:1.5px solid ${col}44;border-radius:12px;padding:10px 12px;margin-bottom:10px;cursor:help;opacity:${dim ? '0.72' : '1'};">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:8px;margin-bottom:8px;">
-        <div style="display:flex;align-items:baseline;gap:8px;">
-          <span style="font-size:11px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:${col}CC;">Predicted</span>
-          <span style="font-size:24px;font-weight:800;color:${col};letter-spacing:-0.02em;line-height:1;">${prediction.grade}${qmark}</span>
-        </div>
-        ${ts ? `<div style="display:flex;flex-direction:column;align-items:flex-end;gap:1px;">
-          <span style="font-size:10px;font-weight:600;color:var(--muted,#6B7280);">Target ${opts.target}</span>
-          <span style="font-size:11px;font-weight:700;color:${ts.colour};white-space:nowrap;">${ts.label}</span>
-        </div>` : ''}
-      </div>
-      <div style="height:6px;border-radius:6px;background:${col}1f;overflow:hidden;">
-        <div style="height:100%;width:${Math.max(2, prediction.masteryPct)}%;background:${col};border-radius:6px;"></div>
-      </div>
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:5px;">
-        <span style="font-size:10px;font-weight:600;color:${col}AA;">${prediction.masteryPct}% mastery</span>
-        ${conf ? `<span style="font-size:10px;font-weight:600;color:var(--muted,#6B7280);">${conf}</span>` : ''}
-      </div>
+    // Single-row pill — same compact height as the grade chips, with a small
+    // inline on-track / below-target indicator when a target is set.
+    return `<div title="${tip}" style="display:flex;align-items:center;justify-content:space-between;gap:8px;background:${col}15;border:1.5px solid ${col}55;border-radius:10px;padding:8px 12px;margin-bottom:10px;cursor:help;opacity:${dim ? '0.6' : '1'};">
+      <span style="display:flex;align-items:baseline;gap:8px;min-width:0;">
+        <span style="font-size:12px;font-weight:600;color:${col}CC;white-space:nowrap;">Predicted grade</span>
+        ${ts ? `<span style="font-size:10px;font-weight:700;color:${ts.colour};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${ts.short}</span>` : ''}
+      </span>
+      <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;white-space:nowrap;">${prediction.grade}${qmark}</span>
     </div>`;
   }
 
