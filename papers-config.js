@@ -22418,7 +22418,410 @@ window.SUBJECTS = [
         ]
       },
       { board: 'Edexcel A', specCode: '9EC0',
-        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/economics-a-2015.html' },
+        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/economics-a-2015.html',
+        papers: [
+          // ── June 2023 ──────────────────────────────────────────────
+          {
+            id: 'econ-edexcel-a-9ec0-2023-p1',
+            year: 'June 2023',
+            paperName: 'Paper 1 — Markets and Business Behaviour',
+            paperCode: '9EC0/01',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-01-que-20230519.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-01-rms-20230817.pdf',
+            questions: [
+              // SECTION A — 25 marks total (5 questions × 5 marks each)
+              {
+                number: 1,
+                scenario: 'In a major reform of its command economy, the Cuban government will allow small private businesses to operate in most fields. Free market economists have long called for the role of small business to be expanded to help jumpstart the economy and to create jobs.\n(Source adapted from: https://www.telegraph.co.uk/news/2021/02/07/cuba-allows-massive-expansion-private-businesses/)',
+                parts: [
+                  { code: '1(a)', prompt: 'With reference to the information provided, explain one advantage of a free market economy.', marks: 4 },
+                  { code: '1(b)', prompt: 'Which one of the following economic thinkers supported the idea of a command economy?\nA Adam Smith\nB Friedrich Hayek\nC John Maynard Keynes\nD Karl Marx', marks: 1 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: 'The production possibility frontier shows last year\'s harvest for a UK farmer at point X. [Diagram: PPF with wheat (0–7 units) on y-axis, oats (0–5 units) on x-axis, points W (inside frontier), X, Y, Z on or outside frontier]',
+                parts: [
+                  { code: '2(a)', prompt: 'Calculate the opportunity cost of the decision by the farmer to harvest 6 units of wheat this year at point Y (movement from point X to point Y).', marks: 2 },
+                  { code: '2(b)', prompt: 'Explain the impact on efficiency of producing at point W in the following year.', marks: 2 },
+                  { code: '2(c)', prompt: 'Which one of the following would be most likely to help the farmer reach point Z?\nAn increase in:\nA investment in milk production machinery\nB investment in modern farming technology\nC the demand for wheat\nD the price of oats', marks: 1 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'A luxury brownie baker is faced with falling demand as incomes fall.',
+                parts: [
+                  { code: '3(a)', prompt: 'The likely income elasticity of demand for a luxury good is:\nA −3.40\nB −0.74\nC +0.74\nD +3.40', marks: 1 },
+                  { code: '3(b)', prompt: 'Small local bakeries have many of the characteristics of monopolistic competition. Draw the short run profit maximising equilibrium of a loss-making luxury brownie baker.', marks: 4, kind: 'diagram' }
+                ]
+              },
+              {
+                number: 4,
+                scenario: 'An annual season ticket for a train journey between London and Reading is planned to increase from £5044 to £5664 in 2023.\n(Source adapted from: https://commonslibrary.parliament.uk/how-much-could-rail-fares-increase-by-in-2023-and-why)\n\nThe diagram shows the demand and supply for sugary drinks with a minimum price imposed above equilibrium price Pe.',
+                parts: [
+                  { code: '4(a)', prompt: 'With reference to the information provided, calculate the percentage change in the price of an annual season ticket.', marks: 2 },
+                  { code: '4(b)', prompt: 'Explain the likely impact of the increase in price of a season ticket on consumer surplus.', marks: 2 },
+                  { code: '4(c)', prompt: 'Which one of the following areas represents the change in producer surplus when a minimum price is imposed? [Refer to labelled supply-demand diagram with minimum price above Pe]\nA FEPeP1\nB FMP1\nC GEPeP1\nD GKP1', marks: 1 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'Index of pay in the public and private sector. Nominal average weekly earnings (base year January 2018 = 100). Chart shows Private Sector index reaching 118 and Public Sector reaching 114 by 2022.\n(Source adapted from: https://www.ft.com/content/48dafbb9-371d-4683-9afb-26652add888c)\n\nOver 90% of nurses work in the public sector. Nurses in the public sector have experienced wage rises lower than those in the private sector over the past 10 years.\n(Source adapted from: https://www.nuffieldtrust.org.uk/resource/chart-of-the-week-real-terms-nhs-staff-pay-from-2010-to-2020)',
+                parts: [
+                  { code: '5(a)', prompt: 'Which one of the following is the ratio of public sector pay relative to private sector pay in 2022?\nA 1:0.97\nB 1:1.04\nC 1:4.0\nD 1:14.0', marks: 1 },
+                  { code: '5(b)', prompt: 'Using the information provided and the concept of monopsony, explain why nurses in the public sector have had lower wage rises than those in the private sector.', marks: 4 }
+                ]
+              },
+              // SECTION B — 50 marks (Question 6, parts a–e)
+              {
+                number: 6,
+                scenario: 'SECTION B: The UK online streaming services market\n\nFigure 1: Market share of UK online streaming services (Q2 2021 – Q2 2022). Selected values: Amazon Prime Video 37.9%→25.9%; Disney+ 16.0%→21.5%; Netflix 15.0%→4.5%; NOW 11.3%→11.1%; AppleTV+ 4.0%→9.9%; BritBox 4.0%→5.9%; Others 11.8%→21.2%\n(Source: Kantar, Worldpanel Division Geotech 2022)\n\nFigure 2: UK online streaming services – monthly fees (September 2022): Netflix premium £15.99; Netflix standard £10.99; Netflix basic £6.99; Amazon Prime Video £8.99; Amazon Prime Video Student £4.49; Disney+ £7.99; AppleTV+ £4.99\n(Source: https://www.radiotimes.com/tv/what-to-watch-tv/best-streaming-service-uk/)\n\nExtract A – How Netflix makes use of behavioural science: Companies such as Netflix, Amazon, and YouTube use "nudges" to influence consumer behaviour. The "nextup" feature on Netflix and "autoplay" on YouTube relate to binge-watching. Netflix\'s policy of a one-month free "free trial" requiring credit card information turns forgetful subscribers into potential paying ones. Netflix expanded to 190 countries in seven years and generated total revenue of over $5.2 billion in 2019. However, 2022 data shows consumers, increasingly worried about rising cost of living, cancelling Netflix, with over 200,000 cancellations in Q1 and another two million forecast to leave by year-end. Subscribers cite decline in value for money and show quality. Disney now leads satisfaction rankings across quality of shows, original content, new-release films, classic films and kids\' content. Disney+ cancellation rates fell to an all-time low of 3.2%.\n\nExtract B – The economics of price discrimination: Netflix increased prices in the US, Canada, UK and Ireland in 2022, while reducing prices in India (standard/2-user 499 rupees, ≈£5.42) to compete with Disney+ and Prime. UK students with a valid student email can join Amazon Prime Student at nearly 50% off a standard Prime membership.\n\nExtract C – Educational Websites and TV Programmes: BBC Bitesize, created in 1998, allows parents to teach children from home using ready-made lesson plans for ages 5 to late teens. Lessons are free and written by teachers/subject experts. Bitesize attracted around two million weekly unique browsers with a peak of 3.3 million in the GCSE exam period. Oak National Academy, launched in 2020 in response to the global health crisis, is freely available for pupils aged 4–16 and includes lesson slides, video lessons, worksheets and quizzes. Ministers set aside £43 million to fund Oak National Academy over three years.',
+                parts: [
+                  { code: '6(a)', prompt: 'With reference to Figure 1, explain the market structure that best describes the market for UK online streaming services.', marks: 5 },
+                  { code: '6(b)', prompt: 'With reference to the information provided, assess whether Netflix subscribers behave rationally.', marks: 10 },
+                  { code: '6(c)', prompt: 'With reference to the information provided, examine the likely numerical value of the cross elasticity of demand between UK online streaming services.', marks: 8 },
+                  { code: '6(d)', prompt: 'With reference to Extract C, discuss the likely private and external benefits of viewing educational websites and TV programmes.', marks: 12 },
+                  { code: '6(e)', prompt: 'Using examples from Figure 2 or Extract B, discuss the likely impact of price discrimination on a firm\'s profits. Use a relevant diagram to support your answer.', marks: 15 }
+                ]
+              },
+              // SECTION C — 25 marks (answer ONE of Q7 or Q8)
+              {
+                number: 7,
+                scenario: 'SECTION C (answer ONE question)\n\nThe average UK household energy bill (gas and electric combined) rose 80% from £1971 in 2021 to £3549 in 2022.\n(Source adapted from: https://www.telegraph.co.uk/money/consumer-affairs/energy-price-cap-rise-october-2022-what-happen-household-bills/)',
+                parts: [
+                  { code: '7', prompt: 'Evaluate possible methods of government intervention to control household energy bills in the UK.', marks: 25, extended: true }
+                ]
+              },
+              {
+                number: 8,
+                scenario: 'SECTION C (answer ONE question)\n\nUsing 2021 estimates of carbon emissions, it is estimated that a petrol car journey from London to Glasgow emits approximately 3.3 times more carbon dioxide per passenger than the equivalent journey by train.\n(Source adapted from: https://www.gov.uk/government/statistics/transport-and-environment-statistics-autumn-2021/transport-and-environment-statistics-autumn-2021)',
+                parts: [
+                  { code: '8', prompt: 'Evaluate possible methods of government intervention to reduce carbon emissions caused by road transport in the UK.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-edexcel-a-9ec0-2023-p2',
+            year: 'June 2023',
+            paperName: 'Paper 2 — The National and Global Economy',
+            paperCode: '9EC0/02',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-02-que-20230523.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-02-rms-20230817.pdf',
+            questions: [
+              // SECTION A — 25 marks
+              {
+                number: 1,
+                scenario: 'In September 2022 the Bank of England increased the base interest rate from 1.75% to 2.25%.\n(Source: adapted from https://www.bankofengland.co.uk/boeapps/database/Bank-Rate.asp)',
+                parts: [
+                  { code: '1(a)', prompt: 'Draw an aggregate demand and aggregate supply diagram to illustrate the likely impact of an increase in the UK base interest rate on the average price level and real output.', marks: 4, kind: 'diagram' },
+                  { code: '1(b)', prompt: 'Which one of the following is the most likely impact of an increase in the base interest rate? A decrease in the:\nA level of demand pull inflation\nB marginal propensity to save\nC rate of cyclical unemployment\nD value of the pound against the dollar', marks: 1 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: 'UK unemployment rate (%), December 2020 – June 2022. Chart shows rate falling from 5.2% (Dec 2020) to 3.7% (May 2022), briefly rising to 3.8% (Jun 2022).\n(Source: adapted from https://www.ons.gov.uk/employmentandlabourmarket/peopleinwork/employmentandemployeetypes/bulletins/employmentintheuk/august2022)',
+                parts: [
+                  { code: '2(a)', prompt: 'With reference to the chart, which one of the following is true? The unemployment rate:\nA fell by 1.4% between December 2020 and April 2022\nB fell by one percentage point between February 2021 and December 2021\nC was highest in March 2022 and lowest in December 2020\nD will continue to rise but at a slower rate', marks: 1 },
+                  { code: '2(b)', prompt: 'With reference to the chart on the previous page, explain one likely reason for the change in the UK\'s rate of unemployment.', marks: 4 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'UK real GDP, 2020–2022. Table: 2020: −9.9%, £2,045,091m; 2021: +7.5%, £2,198,473m; 2022*: +3.5% forecast (*2022 figures are forecast)\n(Source: adapted from https://www.ons.gov.uk/economy/grossdomesticproductgdp)',
+                parts: [
+                  { code: '3(a)', prompt: 'Calculate the value of the total forecast GDP in 2022.', marks: 2 },
+                  { code: '3(b)', prompt: 'Explain one likely cost of UK real GDP falling by 9.9% in 2020.', marks: 2 },
+                  { code: '3(c)', prompt: 'Which one of the following is most likely to lead to an increase in potential economic growth? An increase in:\nA consumption\nB costs of raw materials and energy\nC income tax\nD technological advances', marks: 1 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: 'UK consumption, % of GDP, 2004–2021. Chart shows consumption % of GDP ranging between approximately 83% and 87%, with a spike in 2020 due to the pandemic.\n(Source: adapted from https://data.worldbank.org/indicator/NE.CON.TOTL.ZS)',
+                parts: [
+                  { code: '4(a)', prompt: 'Which one of the following is an example of consumption?\nA Construction of a new cycle lane\nB Expansion of Heathrow Airport\nC New school buildings\nD Purchase of new clothes', marks: 1 },
+                  { code: '4(b)', prompt: 'With reference to the chart on the previous page, explain the likely effect of a fall in the marginal propensity to consume on the level of real GDP. Refer to the multiplier in your answer.', marks: 4 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'In 2021, the US total GDP was $23 trillion and national debt was $28.4 trillion.\n(Source: adapted from https://data.worldbank.org/indicator/NY.GDP.MKTP.CD?locations=US and https://fiscaldata.treasury.gov/national-debt/)',
+                parts: [
+                  { code: '5(a)', prompt: 'Calculate the US national debt in 2021 as a percentage of GDP.', marks: 2 },
+                  { code: '5(b)', prompt: 'Explain the relationship between a fiscal deficit and the national debt.', marks: 2 },
+                  { code: '5(c)', prompt: 'Which one of the following is the most likely consequence of an increase in the US national debt? An increase in:\nA crowding out\nB inequality\nC poverty\nD unemployment', marks: 1 }
+                ]
+              },
+              // SECTION B — 50 marks (Question 6, parts a–e)
+              {
+                number: 6,
+                scenario: 'SECTION B: Trade and development in Africa\n\nFigure 1: Intra- and extra-regional exports as a percentage of total exports, 2020. Chart shows Africa with only ~18% intra-regional trade, compared to Asia ~58%, Europe ~68%, North America ~30%.\n(Source: adapted from https://www.economist.com/middle-east-and-africa/2022/03/26/why-it-costs-so-much-to-move-goods-around-africa)\n\nExtract A – Why it costs so much to move goods around Africa: Lorries carrying cobalt from Congo, copper from Zambia and tea from Malawi queue for miles to cross the Limpopo river into South Africa. African politicians support the African Continental Free Trade Area (AfCFTA), agreed by 41 of Africa\'s 55 countries, which could boost economies by making intra-regional trade easier. In 2020 just 18% of exports were to other African countries (vs. 30% North America, 58% Asia, 68% Europe). The AfCFTA pledges to reduce tariffs (boosting intra-African trade 15–25%) and cut non-tariff barriers (potential 50% rise). Africa\'s poor infrastructure is a major barrier: its railway network is little bigger than France and Germany combined, ports are slow with cargo waiting 2+ weeks on average (vs. <1 week elsewhere), handling costs are ~50% higher, and nearly 90% of goods transport goes by road, of which only 800,000 km out of 2.8 million km in sub-Saharan Africa are paved. Key problem: lack of information means firms must sign long-term contracts for transport capacity rather than buying space as needed.\n\nExtract B – Economic reform in Angola: When President João Lourenço took power in 2017, he pledged to reform the economy. Oil accounts for nearly all of Angola\'s exports and two-thirds of government revenues. Declining production and falling oil prices caused GDP collapse and rising debts to China and the IMF. The government opted for debt relief: together with a complete stop on debt repayments for three years, Angola will gain $6.9 billion additional cash flow in 2020–22, bringing annual borrowing to ~8.7% of GDP. The IMF agreed to lend $4.5 billion since 2018. Finance minister Vera Daves de Sousa wants the state oil firm to sell shares to the public and over 100 state firms to be privatised (only 34 sales so far). Since 2019 Angola ended intervention in the foreign exchange market and moved to a floating exchange rate.',
+                parts: [
+                  { code: '6(a)', prompt: 'With reference to Extract A, explain what is meant by a "regional trade agreement" (Extract A, line 7).', marks: 5 },
+                  { code: '6(b)', prompt: 'With reference to Extract A, examine two causes of the high cost of transporting goods between African countries.', marks: 8 },
+                  { code: '6(c)', prompt: 'Discuss the impact of improved transport links between African countries on economic growth rates.', marks: 12 },
+                  { code: '6(d)', prompt: 'Assess two likely benefits of debt relief to Angola. Refer to Extract B in your answer.', marks: 10 },
+                  { code: '6(e)', prompt: 'Discuss market-orientated strategies the Angolan government could use to improve development.', marks: 15 }
+                ]
+              },
+              // SECTION C — 25 marks (answer ONE of Q7 or Q8)
+              {
+                number: 7,
+                scenario: 'SECTION C (answer ONE question)\n\nIn 2022 the value of UK exports fell by 14% compared with 2020. In contrast, the global average increase in exports was 8.2% over the same time period. The UK\'s competitiveness also fell, dropping five places from 18th in 2021 to 23rd in 2022 in the world competitiveness rankings.\n(Sources: adapted from https://www.ft.com/content/021c629d-5853-4111-9600-ab5f0eb65a35 and https://www.imd.org/centers/world-competitiveness-center/rankings/world-competitiveness)',
+                parts: [
+                  { code: '7', prompt: 'Evaluate macroeconomic policies that could be used to increase international competitiveness in the UK\'s export markets.', marks: 25, extended: true }
+                ]
+              },
+              {
+                number: 8,
+                scenario: 'SECTION C (answer ONE question)\n\nUK inflation, as measured by the CPI, rose to 10.1% in the 12 months to July 2022, compared to 2.0% in the 12 months to July 2021.\n(Source: adapted from https://www.ons.gov.uk/economy/inflationandpriceindices/bulletins/consumerpriceinflation/july2022)',
+                parts: [
+                  { code: '8', prompt: 'Evaluate macroeconomic policies, apart from monetary policy, the UK government could use to reduce inflation.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-edexcel-a-9ec0-2023-p3',
+            year: 'June 2023',
+            paperName: 'Paper 3 — Microeconomics and Macroeconomics',
+            paperCode: '9EC0/03',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-03-que-20230606.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-03-rms-20230817.pdf',
+            questions: [
+              // SECTION A — 50 marks (Question 1: parts a–c compulsory; then ONE of d or e)
+              {
+                number: 1,
+                scenario: 'SECTION A: The UK economy\n\nFigure 1: UK gas prices in pence per therm, August 2002 to August 2022. Chart shows prices spiking to ~500+ pence per therm by August 2022.\n\nFigure 2: UK inflation, CPI, August 2002 to August 2022. Chart shows CPI rising to 9.9% by August 2022.\n\nExtract A – Fiscal policy changes in the UK, Autumn 2022: People earning above £150,000 will no longer benefit from the tax cut in the September 2022 mini-budget removing the 45% tax band. The proposed change in the 20% standard rate to 19% has been postponed. In April 2022, a 1.25% rise in National Insurance as a "health and social care levy" was implemented, then cancelled in Autumn 2022. Britain\'s poorest households would have lost £7.56/year from the NI rise; the richest 10% (earning average £108,000) would have lost £1,800. Truss Government\'s £30 billion tax cut proposals included cancelling the planned rise in corporation tax from 19% to 25% (former chancellor wanted to cut it to 15%). The removal of the 2014 cap on bankers\' bonuses was "clearly an unfair decision at the time." The reflationary fiscal policy triggered warnings that the MPC would raise interest rates further — having already raised from 0.1% in 2021 to 2.25% by September 2022.\n\nExtract B – Inequality to rise in the UK: Rising cost of living expected to affect low-income families most. Inflation in Autumn 2022 expected to hit 14% for families in the poorest tenth, compared with 8% for the richest tenth, driven by rising energy costs and food prices. About half of the food consumed in the UK is imported, and the 20% fall in the pound in 2022 has affected lower income groups more. The government\'s decision to freeze benefits means real-terms cut for families receiving high levels of benefits. A two-year freeze on energy price caps will now only last until April 2023, which would have kept the average energy bill at £2,500 rather than £3,500.',
+                parts: [
+                  { code: '1(a)', prompt: 'Explain the difference between a positive and a normative statement, using an example of each from Extract A.', marks: 5 },
+                  { code: '1(b)', prompt: 'Examine two reasons for the rise in inflation in the UK. Refer to the information provided in your answer.', marks: 8 },
+                  { code: '1(c)', prompt: 'Discuss the likely impact of a rise in gas prices on a firm that uses a large amount of gas in its production process. Use a cost and revenue diagram to support your answer.', marks: 12, kind: 'diagram' },
+                  { code: '1(d)', prompt: 'EITHER: Evaluate microeconomic and macroeconomic policies that could be used to reduce inequality in the UK.', marks: 25, extended: true },
+                  { code: '1(e)', prompt: 'OR: Evaluate the likely microeconomic and macroeconomic effects of tax cuts in the UK.', marks: 25, extended: true }
+                ]
+              },
+              // SECTION B — 50 marks (Question 2: parts a–c compulsory; then ONE of d or e)
+              {
+                number: 2,
+                scenario: 'SECTION B: Changes in the nature of UK towns and cities\n\nFigure 3: Growing and declining high street firms – net change in store numbers, 2013–2022. Growing sectors (net increase): barbers, beauty salons, cafés and tearooms, nail salons, restaurants. Declining sectors (net decrease): fashion shops, estate agents, Post Office services, women\'s clothes, banks and other financial institutions.\n(Source: adapted from https://www2.deloitte.com/uk/en/pages/consumer-business/articles/what-next-for-the-high-street.html)\n\nFigure 4: House price changes in the UK (%), 2005 to 2022. Chart shows house price growth peaking around +10% and falling to negative territory around 2009 and potentially heading negative again in 2022.\n(Source: adapted from https://www.theguardian.com/money/2022/sep/28/uk-house-prices-may-fall-20-amid-mortgage-carnage-warn-experts)\n\nExtract C – What next for the high street?: UK high streets include independent food retailers, cafés, nail and beauty salons, restaurants and charity shops. They are more diverse, family-run and offering local or personalised services with loyal customers, but often have limited car access or expensive parking. The rise of online retailers such as Amazon and eBay placed huge pressures on UK high streets — many well-known shops forced to close. High street firms cannot compete on price with online retailers with very low fixed costs. Even before online shopping, out-of-town retail parks were eroding high street activity. While failures suggest the high street has no future, some analysts argue it is ideally placed to reinvent itself — its fragmented ownership, lack of centralised coordination and high vacancy rates become strengths as they lower barriers to entry. Staff shortages pushing up wages and house price falls damaging consumer confidence are challenges.\n\nExtract D – UK house prices may fall up to 20%: Turmoil on UK financial markets has prompted analysts to predict house prices could fall dramatically, with many lenders withdrawing mortgage deals. People coming off fixed-rate mortgages see rises from 2% to over 5.5%, with increases in cost of borrowing of over £5,200/year by 2024. Analysts say the fall could be 10–20%. One lender said "the decade-long property bubble is about to burst. It\'s a buyer\'s market now." Greatest impact in the south-east of England.\n\nExtract E – UK job vacancies hit record 1.1 million as labour shortages increase: The ratio of jobless people to vacancies is 1.45 to 1, lower than at any point in the last 40 years. Social care has 300,000 unfilled posts. "Labour shortages are now affecting the whole economy," with almost a million fewer people in the labour market, largely due to younger people staying in education and older people dropping out. The inactivity rate is 21.1%. "People seeking work do not have the skills or availability that employers need." Firms offering higher wages does not solve the issue.',
+                parts: [
+                  { code: '2(a)', prompt: 'Using the data provided in Extract D, explain one role of financial markets.', marks: 5 },
+                  { code: '2(b)', prompt: 'Examine two reasons why retailers on the high street tend to remain small.', marks: 8 },
+                  { code: '2(c)', prompt: 'Discuss possible methods of price and non-price competition that firms could use to increase the value of sales on the high street.', marks: 12 },
+                  { code: '2(d)', prompt: 'EITHER: Evaluate the microeconomic and macroeconomic effects of falling house prices.', marks: 25, extended: true },
+                  { code: '2(e)', prompt: 'OR: Evaluate the microeconomic and macroeconomic effects of labour shortages in the UK, or a developed economy of your choice.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          // ── June 2022 ──────────────────────────────────────────────
+          {
+            id: 'econ-edexcel-a-9ec0-2022-p1',
+            year: 'June 2022',
+            paperName: 'Paper 1 — Markets and Business Behaviour',
+            paperCode: '9EC0/01',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-01-que-20220524.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-01-rms-20220818.pdf',
+            questions: [
+              // SECTION A — 25 marks
+              {
+                number: 1,
+                scenario: 'Disney+ is a streaming service that distributes films and television series produced by the Walt Disney Studios.\n\nDisney+ subscribers (million): November 2019: 10; December 2019: 26.5; February 2020: 28.6; April 2020: 50\n(Source adapted from: https://www.businessofapps.com/data/disney-plus-statistics/)',
+                parts: [
+                  { code: '1(a)', prompt: 'Ceteris paribus, the most likely consequence of the above data is that Disney+ will experience an increase in its:\nA fixed costs\nB income elasticity of demand\nC price elasticity of demand\nD revenue', marks: 1 },
+                  { code: '1(b)', prompt: 'Draw a supply and demand diagram to show the likely effect of the change in the number of subscribers on the market equilibrium for Disney+ services.', marks: 4, kind: 'diagram' }
+                ]
+              },
+              {
+                number: 2,
+                scenario: 'The table below shows data on the drinks market in Chile in 2017.\nPrice elasticity of demand for sweetened drinks: −1.37\nCross price elasticity of demand for bottled water in response to a price change in sweetened drinks: +0.63\n(Source: adapted from https://bmcpublichealth.biomedcentral.com/articles/10.1186/s12889-017-4098-x)',
+                parts: [
+                  { code: '2(a)', prompt: 'The price of sweetened drinks increases by 5%. Ceteris paribus, calculate the percentage change in the quantity demanded for sweetened drinks. You are advised to show your working.', marks: 2 },
+                  { code: '2(b)', prompt: 'The price of sweetened drinks increases by 5%. Ceteris paribus, calculate the percentage change in the quantity demanded for bottled water. You are advised to show your working.', marks: 2 },
+                  { code: '2(c)', prompt: 'Using the data on the previous page, which one of the following is most likely? A decrease in the price of sweetened drinks will have the following effect on revenue / and sweetened drinks and bottled water are:\nA Decrease / Complements\nB Decrease / Substitutes\nC Increase / Complements\nD Increase / Substitutes', marks: 1 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'A company that provides drinking water and treats waste water has been fined £180,000 after an incident that killed about 2,500 fish. The charges relate to an illegal discharge of sewage from the waste water treatment plant that polluted nine kilometres of the River Severn, a popular tourist destination.\n(Source: adapted from https://www.leaderlive.co.uk/news/wrexham/19393552.water-company-fined-today-sewage-leaked-wrexham-river-killing-2-500-fish/)',
+                parts: [
+                  { code: '3(a)', prompt: 'Draw an externalities diagram to show the likely impact of the sewage discharge on the local tourist industry.', marks: 4, kind: 'diagram' },
+                  { code: '3(b)', prompt: 'Which one of the following is the most likely effect of the £180,000 fine? To:\nA increase market failure\nB increase profits for the water company\nC reduce external costs\nD reduce government failure', marks: 1 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: 'Pilgrim\'s Pride is the second-largest chicken supplier in the US. It will pay a $107.9 million fine for price fixing with Tyson Foods and other chicken suppliers. The firms limited production to force prices higher and harm major customers, including KFC. Pilgrim\'s Pride is thought to have gained at least $361 million in total revenue from the collusion.\n(Source: adapted from https://www.drovers.com/news/industry/pilgrims-pride-agrees-price-fixing-fine)',
+                parts: [
+                  { code: '4(a)', prompt: 'Draw a simple two-firm/two-outcome game theory model to show why the chicken suppliers may have colluded.', marks: 4, kind: 'diagram' },
+                  { code: '4(b)', prompt: 'Which one of the following is most closely associated with tacit collusion?\nA Overt sharing of information\nB Predatory pricing\nC Price wars\nD Unspoken agreements', marks: 1 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'The makers of Fiat cars merged with the makers of Vauxhall cars in 2021. Fiat management had aggressively sought a merger to achieve economies of scale. The competition authorities in the EU investigated the merger.\n(Source: adapted from https://www.thedrive.com/news/34856/the-merged-fiat-chrysler-and-peugeot-group-will-be-called-stellantis)',
+                parts: [
+                  { code: '5(a)', prompt: 'Which one of the following best describes the merger of the makers of Fiat cars and Vauxhall cars?\nA Backward vertical integration\nB Forward vertical integration\nC Horizontal integration\nD Organic growth', marks: 1 },
+                  { code: '5(b)', prompt: 'Explain one type of internal economies of scale that the newly merged car company may achieve.', marks: 2 },
+                  { code: '5(c)', prompt: 'Explain one likely concern the EU competition authorities may have had about the merger.', marks: 2 }
+                ]
+              },
+              // SECTION B — 50 marks (Question 6, parts a–e)
+              {
+                number: 6,
+                scenario: 'SECTION B: UK branded coffee shop chains market\n\nFigure 1: Branded coffee shops by number of shops in the UK in 2021: Costa 2,681; Starbucks 1,025; Caffè Nero 648; AMT 50; Soho Coffee 40; Coffee Republic 30; Other chains 3,748\n(Source: adapted from https://www.statista.com/statistics/297863/leading-coffee-shop-chains-in-the-united-kingdom-uk-store-number/)\n\nFigure 2: International coffee price (Arabica bean), US dollars per kilogram, Jan–Dec 2020: Jan $3.13; Feb $2.99 (−4.47%); Mar $3.27 (+9.36%); Apr $3.41 (+4.28%); May $3.30 (−3.23%); Jun $3.12 (−5.45%); Jul $3.24 (+3.85%); Aug $3.60 (+11.11%); Sep $3.67 (+1.94%); Oct $3.35 (−8.72%); Nov $3.31 (−1.19%); Dec $3.48 (+5.14%)\n(Source: adapted from https://www.indexmundi.com/commodities/?commodity=other-mild-arabicas-coffee&months=12)\n\nExtract A – Tough market conditions for coffee shops: UK coffee shop chains experienced slow growth and rising costs. In 2019, Costa opened 60% fewer stores than in 2018; Starbucks opened just three new stores. By 2020, many costs were rising: staff shortages meant rising wages for baristas, a 6.2% National Minimum Wage increase for over-25s, and rising rents. In a challenging economy, consumers placed coffee quality ahead of convenient location. Independent coffee shops (25,892 shops in 2020) remain a threat. Independent coffee shops run on average profit as low as 2% of revenue, and many go out of business as new chains arrive. In January 2020, Coca-Cola finalised its £3.9 billion takeover of market leader Costa Coffee. The Coca-Cola company\'s stated aims are to maximise long-term returns to shareholders while being mindful of overall responsibilities.\n\nExtract B – Greggs aiming for "coffee shop experience": Greggs achieved record profits and overtook Starbucks in the amount of coffee served in the UK. Greggs will invest in better coffee machines and WiFi, and wants one in three new outlets to have more seating. The company believes it can take market share by expanding its coffee range and enhancing the coffee shop experience, modelling its plan on rival Pret A Manger. Greggs transformed itself from an unremarkable bread and pastry seller into one of the UK\'s most popular food-on-the-go chains, thanks in part to vegan, gluten-free and healthy options and clever marketing.',
+                parts: [
+                  { code: '6(a)', prompt: 'With reference to Figure 1, calculate the three-firm concentration ratio for branded coffee shop chains.', marks: 5 },
+                  { code: '6(b)', prompt: 'With reference to Figure 2 and your understanding of price elasticity, examine two factors that may cause significant changes in the international price of coffee beans.', marks: 8 },
+                  { code: '6(c)', prompt: 'Profit maximisation is assumed to be the business objective of most firms. With reference to Extract A, assess whether this is the case for coffee shop owners.', marks: 10 },
+                  { code: '6(d)', prompt: 'Using a cost and revenue diagram, discuss the likely impact of "rising costs" for coffee shops on their profitability (Extract A, line 2).', marks: 12, kind: 'diagram' },
+                  { code: '6(e)', prompt: 'With reference to the information provided, discuss whether the coffee shop market is contestable.', marks: 15 }
+                ]
+              },
+              // SECTION C — 25 marks (answer ONE of Q7 or Q8)
+              {
+                number: 7,
+                scenario: 'SECTION C (answer ONE question)\n\nTesla held an 82% market share of the electric vehicle market in the United States during the first half of 2020.\n(Source: adapted from https://electrek.co/2020/08/21/tesla-holds-us-ev-market-losing-federal-tax-credit/)',
+                parts: [
+                  { code: '7', prompt: 'Evaluate whether a monopoly is likely to operate efficiently. Refer to at least one monopoly of your choice.', marks: 25, extended: true }
+                ]
+              },
+              {
+                number: 8,
+                scenario: 'SECTION C (answer ONE question)\n\nSome occupations in the UK are facing large labour shortages. Hard-to-fill vacancies include qualified chefs, software engineers, construction workers and qualified nurses.\n(Source: adapted from https://www.ft.com/content/36baacce-ddd0-11e8-9f04-38d397e6661c)',
+                parts: [
+                  { code: '8', prompt: 'Evaluate the factors that might influence the supply of labour in an occupation of your choice.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-edexcel-a-9ec0-2022-p2',
+            year: 'June 2022',
+            paperName: 'Paper 2 — The National and Global Economy',
+            paperCode: '9EC0/02',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-02-que-20220607.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-02-rms-20220818.pdf',
+            questions: [
+              // SECTION A — 25 marks
+              {
+                number: 1,
+                scenario: 'According to the Bank of England, the UK\'s marginal propensity to consume is estimated to be 0.64.\n(Source: adapted from https://www.bankofengland.co.uk/-/media/boe/files/working-paper/2017/the-consumption-response-to-positive-and-negative-income-changes.pdf)',
+                parts: [
+                  { code: '1(a)', prompt: 'Using the information above, calculate the total reduction in the UK\'s GDP from a fall in government spending of £20 million.', marks: 4 },
+                  { code: '1(b)', prompt: 'Which one of the following is an injection into the circular flow of income?\nA Imports\nB Investment\nC Savings\nD Taxation', marks: 1 }
+                ]
+              },
+              {
+                number: 2,
+                scenario: 'Annual percentage change in average UK house prices chart, May 2018 to May 2021. Shows house price growth falling to near zero/slightly negative in mid-2019, then rising sharply to above 10% by May 2021.\n(Source: adapted from https://www.nationwide.co.uk/-/media/MainSite/documents/about/house-price-index/2021/May_2021.pdf)',
+                parts: [
+                  { code: '2(a)', prompt: 'With reference to the chart, which one of the following is true? Average UK house prices:\nA fell in August 2020\nB fell in November 2018\nC rose the fastest in May 2021\nD stayed constant in 2018', marks: 1 },
+                  { code: '2(b)', prompt: 'With reference to the chart on the previous page, explain the likely impact of an increase in average house prices on UK consumption.', marks: 4 }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'Bank of England base interest rate, 2016–2020. Chart shows the rate falling from approximately 0.5% in 2016–17, rising briefly to 0.75% in 2018–19, then dropping to 0.1% in 2020.\n(Source: adapted from https://www.bankofengland.co.uk/monetary-policy/the-interest-rate-bank-rate)',
+                parts: [
+                  { code: '3(a)', prompt: 'With reference to the chart above, explain the likely impact of a reduction in the base interest rate on UK investment.', marks: 4 },
+                  { code: '3(b)', prompt: 'Which one of the following would be most likely to result from lower base interest rates? A fall in:\nA the average price of houses\nB the external value of the pound\nC the level of employment\nD the rate of economic growth', marks: 1 }
+                ]
+              },
+              {
+                number: 4,
+                scenario: 'The trade cycle diagram shows Real GDP with an actual GDP line above a Trend GDP line, showing a positive output gap at point Z.\n[Diagram: trade cycle with positive output gap at Z]',
+                parts: [
+                  { code: '4(a)', prompt: 'At point Z on the diagram, which one of the following is likely to occur? An increase in:\nA absolute poverty\nB budget deficit\nC cyclical unemployment\nD inflation', marks: 1 },
+                  { code: '4(b)', prompt: 'With reference to the graph, explain the difference between automatic stabilisers and discretionary fiscal policy.', marks: 4 }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'In May 2020, the UK government introduced a loan scheme to help small businesses survive the downturn in the economy. Small businesses could borrow up to £50,000 at an interest rate of 2.5% for up to 6 years from a bank. The government guaranteed 100% of the loans, to enable banks to issue them quickly, and only minimal checks were made on borrowers.\n(Source: adapted from https://www.ft.com/content/1ca15db2-93e4-4e34-877d-110309cd9716)',
+                parts: [
+                  { code: '5(a)', prompt: 'With reference to the information above, explain one role of financial markets.', marks: 4 },
+                  { code: '5(b)', prompt: 'Which one of the following would be a risk if "only minimal checks were made on borrowers" in this loan scheme?\nA Asymmetric information\nB Crowding out\nC Market rigging\nD Speculation', marks: 1 }
+                ]
+              },
+              // SECTION B — 50 marks (Question 6, parts a–e)
+              {
+                number: 6,
+                scenario: 'SECTION B: UK Government spending and inequality\n\nFigure 1: UK regional gross disposable household income per capita, 2018 (map). Highest incomes in South East (£19,000–£21,000), with North East among the lowest (£13,000–£13,999).\n(Source: adapted from University of Sheffield/Office for National Statistics)\n\nFigure 2: UK subjective happiness by income, April 2021 (answer to "On a scale of 1–10, how happy did you feel after yesterday?"): Less than £10,000: 7.31; £10,000–£20,000: 7.02; £20,000–£40,000: 7.13; More than £40,000: 7.29\n(Source: adapted from https://www.ons.gov.uk/peoplepopulationandcommunity/wellbeing/datasets/incomegroupsplitestimatesonpersonalandeconomicwellbeingacrosstime)\n\nExtract A – Regional inequality in the UK: The UK is geographically highly unequal in incomes; the estimated Gini coefficient is 0.34. Causes include: labour in poor places develops too few skills (in Rotherham, 21% of disadvantaged 18-year-olds go to higher education vs. 41% in London); lack of infrastructure in northern cities vs. London (in 2017–18, 28% of public expenditure on transport and 46% of capital expenditure on railways was spent in London). Problems compound each other. Germany\'s approach to its eastern regions is cited as a model. McKinsey\'s Tera Allas argues improving education is crucial, though returns are not immediately obvious.\n\nExtract B – Public sector spending on infrastructure: Economic differences across the UK are large and growing. Government is looking to reduce inequality through transport infrastructure spending. Public sector capital spending due to rise from ~2% to 3% of GDP — around £20 billion additional spending per year. Government is focused on the north of England, Wales and the Midlands. Planned schemes: new Trafford Park tram line in Manchester, reopening train lines closed in the 1960s (Haxby in Yorkshire, Blyth in Northumberland). The reopened Bow Street station near Aberystwyth took 11 years and cost £8m; estimated to generate £24m boost to the economy through local trade, new jobs, and easing road congestion.\n\nExtract C – Options for UK tax rises in the future: Options include: increasing council tax (currently based on 1991 house prices — would negatively affect areas where prices have risen most); a one-off wealth tax (5% on property and pension wealth above £500,000 would raise £260 billion over 5 years); increasing corporation tax (top rate to rise to 25% by 2023 — lowest in G7, but will raise £17.2 billion in 2025–26).',
+                parts: [
+                  { code: '6(a)', prompt: 'Using a Lorenz curve diagram, explain how income inequality is measured using the Gini coefficient. Refer to Extract A in your answer.', marks: 5, kind: 'diagram' },
+                  { code: '6(b)', prompt: 'With reference to Figure 1 and Extract A, examine two likely causes of income inequality within the UK.', marks: 8 },
+                  { code: '6(c)', prompt: 'With reference to Figure 2, assess whether an increase in real income improves subjective happiness within the UK.', marks: 10 },
+                  { code: '6(d)', prompt: 'With reference to Extract C and your own knowledge, discuss methods the UK government could use to increase tax revenue.', marks: 12 },
+                  { code: '6(e)', prompt: 'With reference to Extract B, discuss the benefits of an increase in infrastructure spending on the UK economy. Use an aggregate demand and aggregate supply diagram to support your answer.', marks: 15, kind: 'diagram' }
+                ]
+              },
+              // SECTION C — 25 marks (answer ONE of Q7 or Q8)
+              {
+                number: 7,
+                scenario: 'SECTION C (answer ONE question)\n\nBoth China and the United States have been gradually increasing the tariffs imposed on each other\'s exports as their trade dispute continues. The IMF estimated that the trade dispute between China and the United States would reduce global GDP growth by 0.8 percentage points by the end of 2020.\n(Source: adapted from https://www.theguardian.com/business/2019/oct/15/imf-recession-world-growth-forecast-central-banks)',
+                parts: [
+                  { code: '7', prompt: 'Evaluate the likely impact of an increase in protectionism on the global economy.', marks: 25, extended: true }
+                ]
+              },
+              {
+                number: 8,
+                scenario: 'SECTION C (answer ONE question)\n\nWith global economic growth slowing and inequality rising, the case against globalisation is strengthening. But there are also many benefits to globalisation. Global trade and international trade agreements allow countries to focus on their strengths and share expertise, as well as reducing risk through diversification.\n(Source: adapted from https://www.ft.com/content/7b365844-9b75-11ea-adb1-529f96d8a00b)',
+                parts: [
+                  { code: '8', prompt: 'Evaluate the likely impact of globalisation on the global economy.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'econ-edexcel-a-9ec0-2022-p3',
+            year: 'June 2022',
+            paperName: 'Paper 3 — Microeconomics and Macroeconomics',
+            paperCode: '9EC0/03',
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-03-que-20220614.pdf',
+            msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Economics/2015/Exam-materials/9ec0-03-rms-20220818.pdf',
+            questions: [
+              // SECTION A — 50 marks (Question 1: parts a–c compulsory; then ONE of d or e)
+              {
+                number: 1,
+                scenario: 'SECTION A: The food delivery industry\n\nFigure 1: Market share for third-party food delivery services in the UK, 2019: Just Eat 67.3%; Deliveroo 21.3%; Uber Eats 10.2%; Others 1.2%\n(Source: adapted from https://onefourzerogroup.com/thetakeawaytakeover/)\n\nExtract A – National Minimum Wage rises are more significant for 23 to 25-year-olds: In 2021, the National Living Wage rose by 2.2% to £8.91, following a 6.2% rise in 2020. By reducing the eligible age to 23 in 2021, an estimated additional 7.5% of 23–25-year-olds could get a 71p/hour (8.7%) pay rise, causing further financial worries for employers.\n\nExtract B – What is the true cost of the food delivery service?: The food delivery industry has boomed. Just Eat, Uber Eats and Deliveroo take up to 30% of the price of restaurant meals and deliver within a certain radius. Average spend per customer is ~£15 with a £5 delivery fee — about five times more expensive than cooking at home. Food delivery comes with around 1.4 billion individual pieces of plastic packaging per 200 million annual UK meals. People order more food, often high in fat, sugar and salt. Concerns that delivery firms are exploiting employees: low pay and informal contracts; drivers classed as "independent contractors" not subject to minimum wage, sick pay, pensions or holiday pay. Drivers paid either a flat hourly rate or fee per delivery. Deliveroo says wages amount to ~£10/hour, but drivers say pay was as low as £1/hour during 2020. Many drivers are recent immigrants or students with no financial safety net. Government could address with wider minimum pay legislation, codes of practice, or recommended wage targets.\n\nExtract C – Integration in the third-party food delivery industry: The CMA is watching to prevent any one firm controlling the food delivery industry. Just Eat merged with Dutch firm Takeaway.com (creating a European leader by revenues) and bought US Grubhub (20 million active users). Just Eat uses an aggressive pricing strategy undercutting below average cost of other firms, forcing mergers to gain economies of scale. Amazon, after failing with Amazon Restaurants in 2018, bought 16% of Deliveroo — the CMA took over a year to agree to this, on the argument that Deliveroo would close without external investment. Food delivery is often uneconomical because a single household puts in a single order from a single restaurant at any one time. Tech companies such as Amazon can improve efficiency by using apps to move an ordered restaurant to the top of neighbourhood rankings. Restaurants turn to delivery firms because of the sheer volume of customers, but resentment is growing — they prefer customers to collect in-store to avoid the 30% commission. Restaurant profit margins are small, and the effects of the 20% fall in the external value of the pound since 2016 on food costs are significant, given over half of their food and drink is sourced outside the UK.',
+                parts: [
+                  { code: '1(a)', prompt: 'Using the information provided, explain one externality that arises in the food delivery market.', marks: 5 },
+                  { code: '1(b)', prompt: 'With reference to Extract B, examine whether the demand for delivered food is price inelastic and income elastic.', marks: 8 },
+                  { code: '1(c)', prompt: 'With reference to Extract C, discuss the likely effects of increasing integration within the food delivery market.', marks: 12 },
+                  { code: '1(d)', prompt: 'EITHER: Evaluate the microeconomic and macroeconomic effects of a depreciation of the pound. Refer to restaurants or other food delivery services in your answer.', marks: 25, extended: true },
+                  { code: '1(e)', prompt: 'OR: Evaluate the microeconomic and macroeconomic effects of significant increases in the minimum wage. Refer to restaurants or other food delivery services in your answer.', marks: 25, extended: true }
+                ]
+              },
+              // SECTION B — 50 marks (Question 2: parts a–c compulsory; then ONE of d or e)
+              {
+                number: 2,
+                scenario: 'SECTION B: Sub-Saharan Africa — growth and development\n\nFigure 2: Kenya population, millions, 1960 to 2020: 1960: 8.1; 1970: 11.3; 1980: 16.4; 1990: 23.7; 2000: 32.0; 2010: 42.0; 2020: 53.7\n(Source: adapted from World Bank data)\n\nExtract D – Growth and development in Africa: "Africa has a massive opportunity as a low-cost provider of services." The outlook for Africa\'s economies is not as simple as the Lewis model implies (do more manufacturing or stay poor). Many countries are expanding into "industries without smoking chimneys", such as flower exports, which look like factory work and deliver many of the benefits of normal manufacturing, including many well-paid jobs.\n\nExtract E – The demography of Kenya: Falling birth rates, accompanied by rising literacy, can help kickstart growth. In Kenya 39% of population is below 15 years (falling from 43% in 2009); the labour force (15–64) is 57% and the fastest-growing group; 6% are over 60. Children per family has fallen from 8.1 (1978) to 4.6 (2008), projected to reach 2.4 by 2050. Primary school enrolment has risen from just over half to almost 100% (though regular attendance is nearer 60%). Kenya\'s total population continues rising despite smaller family sizes because there are many more families and Kenyans are living longer (life expectancy projected to rise from 54 to 68 by 2050). 28% of Kenya is urbanised (expected to reach 36% by the 2030s). Rich countries are urban countries. Large urban centres enable innovation and provide economies of scale.\n\nExtract F – Kenya has an absolute advantage in cut flowers: In the UK, 80% of cut flowers come via the Netherlands, but a significant proportion come from Kenya. Kenya\'s advantages over the Netherlands: areas of high altitude with cool nights; proximity to the equator for maximum sunlight; cheaper labour. This means 365-day-a-year production. Cut flowers are now Kenya\'s second largest export after tea, contributing ~1% of GDP and employing over 100,000 people directly and an estimated 2 million indirectly.\n\nExtract G – Changes in interest rates in sub-Saharan Africa: An entrepreneur in eastern Africa must borrow at 22% to buy a new machine. Kenya\'s central bank rate has fallen from over 20% to 7% in the last decade, but rates charged to individuals are much higher. In sub-Saharan Africa, the gap between saving and borrowing rates is higher than anywhere else — the average bank lends at 6.8% above the central bank rate. Mobile banking and credit-information sharing have helped bring costs down. But until birth rates fall, interest rates will stay relatively high because families with many children cannot afford to save.',
+                parts: [
+                  { code: '2(a)', prompt: 'Explain what is meant by the Lewis model. Refer to Extract D in your answer.', marks: 5 },
+                  { code: '2(b)', prompt: 'Examine two demographic factors influencing development in Kenya.', marks: 8 },
+                  { code: '2(c)', prompt: 'Using the example of cut flowers (Extract F), discuss how the concept of absolute advantage may lead to growth in Kenya. Use numerical or diagrammatic analysis in your answer.', marks: 12 },
+                  { code: '2(d)', prompt: 'EITHER: Evaluate the microeconomic and macroeconomic effects of decreasing interest rates in Kenya, or another developing country of your choice.', marks: 25, extended: true },
+                  { code: '2(e)', prompt: 'OR: Evaluate the microeconomic and macroeconomic strategies that could be used to promote development in Kenya, or another developing country of your choice.', marks: 25, extended: true }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       { board: 'Edexcel B', specCode: '9EB0',
         officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/economics-b-2015.html' },
       { board: 'OCR', specCode: 'H460',
