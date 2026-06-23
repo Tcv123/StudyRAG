@@ -6,12 +6,12 @@
 ═══════════════════════════════════════════════════════════════════ */
 (function () {
   const subjects = [
-    { name: 'Mathematics',         emoji: '➗'  },
+    { name: 'Mathematics',         emoji: '🔢' },
     { name: 'Further Mathematics', emoji: '∑'  },
-    { name: 'Chemistry',           emoji: '⚗️' },
+    { name: 'Chemistry',           emoji: '🧪' },
     { name: 'Biology',             emoji: '🧬' },
     { name: 'Computer Science',    emoji: '💻' },
-    { name: 'Physics',             emoji: '⚡' },
+    { name: 'Physics',             emoji: '⚛️' },
     { name: 'Economics',           emoji: '📈' },
     { name: 'Geography',           emoji: '🌍' },
     { name: 'English Language',    emoji: '📝' },

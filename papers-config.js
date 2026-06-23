@@ -7246,7 +7246,7 @@ window.SUBJECTS = [
     ]
   },
   {
-    name: 'Mathematics', icon: '📐',
+    name: 'Mathematics', icon: '🔢',
     boards: [
       // Maths papers are print-only by design: every entry has qpUrl + msUrl
       // but no `questions`, so paper-attempt.html offers print mode only.
@@ -7576,7 +7576,7 @@ window.SUBJECTS = [
     ]
   },
   {
-    name: 'Physics', icon: '⚛',
+    name: 'Physics', icon: '⚛️',
     boards: [
       { board: 'AQA', specCode: '7408',
         officialPageUrl: 'https://www.aqa.org.uk/subjects/physics/a-level/physics-7408/assessment-resources',
@@ -20350,7 +20350,7 @@ window.SUBJECTS = [
     ]
   },
   {
-    name: 'Chemistry', icon: '⚗',
+    name: 'Chemistry', icon: '🧪',
     boards: [
       { board: 'AQA', specCode: '7405',
         officialPageUrl: 'https://www.aqa.org.uk/subjects/chemistry/a-level/chemistry-7405/assessment-resources',
@@ -22066,7 +22066,7 @@ window.SUBJECTS = [
     ]
   },
   {
-    name: 'Economics', icon: '💹',
+    name: 'Economics', icon: '📈',
     boards: [
       { board: 'AQA', specCode: '7136',
         officialPageUrl: 'https://www.aqa.org.uk/subjects/economics/a-level/economics-7135-7136/assessment-resources',
