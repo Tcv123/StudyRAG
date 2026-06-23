@@ -338,7 +338,7 @@ function renderPoint(pointText, typeClass) {
   return `<div class="ms-point-text ${typeClass}">${esc(pointText)}</div>`;
 }
 
-function renderMsCard(part, paperKey) {
+function renderMsCard(part, paperKey, paperId) {
   const ms         = part.markScheme;
   const msType     = ms ? (ms.type || 'points') : null;
   const totalMarks = part.marks;
@@ -347,10 +347,14 @@ function renderMsCard(part, paperKey) {
   const ptsEditUid = 'ep_' + uid;
   const ansEditUid = 'ea_' + uid;
 
-  window._msPartRegistry[uid] = { part, paperKey };
+  window._msPartRegistry[uid] = { part, paperKey, paperId };
 
   const customPts  = !ms ? getCustomPoints(paperKey, partCode) : [];
-  const modelAns   = getModelAnswer(paperKey, partCode);
+  // Pre-written model answer takes priority over localStorage
+  const preWritten = paperId && window.CS_MODEL_ANSWERS
+    ? (window.CS_MODEL_ANSWERS[paperId + '::' + partCode] || '')
+    : '';
+  const modelAns   = preWritten || getModelAnswer(paperKey, partCode);
   const officialPts = (ms && msType === 'points') ? (ms.points || []) : [];
   const effectivePts = officialPts.length ? officialPts : customPts;
 
@@ -423,6 +427,7 @@ function renderMsCard(part, paperKey) {
   const modelAnswerHtml = `
     <div class="mc-model-section">
       ${hasAns ? `<div class="mc-model-answer">${modelAnswerDisplay}</div>` : ''}
+      ${!preWritten ? `
       <div class="mc-edit-bar" style="margin-top:${hasAns ? '10px' : '0'};">
         <button class="mc-edit-btn${hasAns ? ' active' : ''}" id="btn_${ansEditUid}" onclick="_msEditToggle('${ansEditUid}','btn_${ansEditUid}')">
           📝 ${hasAns ? 'Edit model answer' : 'Add model answer'}
@@ -435,7 +440,7 @@ function renderMsCard(part, paperKey) {
           <button class="ms-edit-save" onclick="_msSaveAnswer('${paperKey}','${partCode}','${uid}')">Save</button>
           <button class="ms-edit-clear" onclick="_msClearAnswer('${paperKey}','${partCode}','${uid}')">Clear</button>
         </div>
-      </div>
+      </div>` : ''}
     </div>`;
 
   return `
@@ -621,7 +626,7 @@ function buildPicker(userSubs) {
                 <span class="part-ms-type">${typeLabel}</span>
                 <span class="part-arrow">▾</span>
               </div>
-              <div class="part-card-body">${renderMsCard(part, paperKey)}</div>
+              <div class="part-card-body">${renderMsCard(part, paperKey, paper.id)}</div>
             </div>`;
         }).join('')}
       </div>`;
@@ -657,13 +662,22 @@ function buildPicker(userSubs) {
       </div>`;
     return;
   }
-  // Load papers-config.js on demand (3.2 MB — only after Pro confirmed)
+  // Load papers-config.js and model answers on demand (only after Pro confirmed)
   if (!window.SUBJECTS) {
     await new Promise((resolve, reject) => {
       const s = document.createElement('script');
       s.src = 'papers-config.js';
       s.onload = resolve;
       s.onerror = () => reject(new Error('Failed to fetch papers-config.js'));
+      document.head.appendChild(s);
+    });
+  }
+  if (!window.CS_MODEL_ANSWERS) {
+    await new Promise((resolve) => {
+      const s = document.createElement('script');
+      s.src = 'model-answers-cs.js';
+      s.onload = resolve;
+      s.onerror = resolve; // non-fatal
       document.head.appendChild(s);
     });
   }
