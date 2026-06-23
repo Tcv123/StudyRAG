@@ -336,26 +336,8 @@ window._msRerenderPart = function(uid) {
   if (body) body.innerHTML = renderMsCard(reg.part, reg.paperKey);
 };
 
-function renderPointWithNote(pointText, typeClass, pk, pc, idx) {
-  const existing = lsGet(noteKey(pk, pc, idx));
-  const hasNote = !!existing.trim();
-  const uid = (pk + '_' + pc + '_' + idx).replace(/\W/g, '_');
-  const areaId = 'na_' + uid, btnId = 'nb_' + uid;
-  return `
-    <div class="ms-point-wrap">
-      <div class="ms-point-row">
-        <div class="ms-point-text ${typeClass}">${esc(pointText)}</div>
-        <button class="ms-note-btn${hasNote ? ' has-note' : ''}" id="${btnId}" data-has-note="${hasNote?'1':'0'}" onclick="_msNoteToggle(this,'${areaId}')">${hasNote ? '📝 My note' : '+ Add note'}</button>
-      </div>
-      <div class="ms-note-display" id="nd_${areaId}" style="${hasNote?'':'display:none'}">${esc(existing)}</div>
-      <div class="ms-note-area" id="${areaId}">
-        <textarea class="ms-note-textarea" id="ta_${areaId}" placeholder="Memory trick, common mistake, extra context…">${esc(existing)}</textarea>
-        <div class="ms-note-actions">
-          <button class="ms-note-save" onclick="_msNoteSave('${pk}','${pc}',${idx},'${areaId}','${btnId}')">Save note</button>
-          <button class="ms-note-delete" onclick="_msNoteDelete('${pk}','${pc}',${idx},'${areaId}','${btnId}')">Delete</button>
-        </div>
-      </div>
-    </div>`;
+function renderPoint(pointText, typeClass) {
+  return `<div class="ms-point-text ${typeClass}">${esc(pointText)}</div>`;
 }
 
 function renderMsCard(part, paperKey) {
@@ -383,7 +365,7 @@ function renderMsCard(part, paperKey) {
   let pointsHtml = '';
   if (ms && (msType === 'points' || msType === 'exact')) {
     const pts = ms.points || [];
-    pointsHtml = pts.map((p, i) => renderPointWithNote(p, msType === 'exact' ? 'type-exact' : '', paperKey, partCode, i)).join('');
+    pointsHtml = pts.map(p => renderPoint(p, msType === 'exact' ? 'type-exact' : '')).join('');
     if (ms.guidance) pointsHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
   } else if (ms && msType === 'levels') {
     const lvls = ms.levels || [], tot = lvls.length;
@@ -395,64 +377,69 @@ function renderMsCard(part, paperKey) {
       </div>`;
     }).join('');
     if (ms.indicative) {
-      const ind = Object.entries(ms.indicative).map(([k, v], i) => renderPointWithNote(`${k}: ${v}`, '', paperKey, partCode, 100 + i)).join('');
+      const ind = Object.entries(ms.indicative).map(([k, v]) => renderPoint(`${k}: ${v}`, '')).join('');
       pointsHtml += `<div class="mc-sub-label" style="margin-top:14px;">Indicative content</div><div class="ms-points-list">${ind}</div>`;
     }
     if (ms.guidance) pointsHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
   } else if (customPts.length) {
-    pointsHtml = customPts.map((p, i) => renderPointWithNote(p, '', paperKey, partCode, i)).join('');
-    if (modelAns.trim()) pointsHtml += `<div class="mc-model-answer">${esc(modelAns)}</div>`;
+    pointsHtml = customPts.map(p => renderPoint(p, '')).join('');
   } else {
-    pointsHtml = `<div class="mc-empty">No mark scheme yet. Add points below from the official MS PDF.</div>`;
+    pointsHtml = `<div class="mc-empty">No mark scheme yet — use the button below to add points.</div>`;
   }
 
-  // Edit controls (only when no official MS)
-  let editHtml = '';
+  // ── Edit mark scheme (no official MS only) ──
+  let editPtsHtml = '';
   if (!ms) {
     const hasPts = customPts.length > 0;
-    const hasAns = !!modelAns.trim();
-    editHtml = `
-      <div class="mc-edit-bar">
+    editPtsHtml = `
+      <div class="mc-edit-bar" style="margin-top:10px;">
         <button class="mc-edit-btn${hasPts ? ' active' : ''}" id="btn_${ptsEditUid}" onclick="_msEditToggle('${ptsEditUid}','btn_${ptsEditUid}')">
           ✏️ ${hasPts ? 'Edit mark scheme' : 'Add mark scheme'}
-        </button>
-        <button class="mc-edit-btn${hasAns ? ' active' : ''}" id="btn_${ansEditUid}" onclick="_msEditToggle('${ansEditUid}','btn_${ansEditUid}')">
-          📝 ${hasAns ? 'Edit model answer' : 'Add model answer'}
         </button>
       </div>
       <div class="ms-edit-panel" id="${ptsEditUid}">
         <div class="ms-edit-hint">One point per line — copy from the official MS PDF or write your own.</div>
-        <textarea class="ms-edit-textarea" id="ta_pts_${ptsEditUid}" placeholder="The processor fetches the instruction from memory&#10;The program counter is incremented&#10;The instruction is decoded by the CU">${esc(customPts.join('\n'))}</textarea>
+        <textarea class="ms-edit-textarea" id="ta_pts_${ptsEditUid}" placeholder="Clock speed&#10;Number of cores&#10;Cache size">${esc(customPts.join('\n'))}</textarea>
         <div class="ms-edit-actions">
           <button class="ms-edit-save" onclick="_msSavePoints('${paperKey}','${partCode}','${uid}')">Save</button>
           <button class="ms-edit-clear" onclick="_msClearPoints('${paperKey}','${partCode}','${uid}')">Clear</button>
         </div>
+      </div>`;
+  }
+
+  // ── Model answer (shown for every part) ──
+  const hasAns = !!modelAns.trim();
+  const modelAnswerHtml = `
+    <div class="mc-model-section">
+      ${hasAns ? `<div class="mc-model-answer">${esc(modelAns)}</div>` : ''}
+      <div class="mc-edit-bar" style="margin-top:${hasAns ? '10px' : '0'};">
+        <button class="mc-edit-btn${hasAns ? ' active' : ''}" id="btn_${ansEditUid}" onclick="_msEditToggle('${ansEditUid}','btn_${ansEditUid}')">
+          📝 ${hasAns ? 'Edit model answer' : 'Write a model answer'}
+        </button>
       </div>
       <div class="ms-edit-panel" id="${ansEditUid}">
-        <div class="ms-edit-hint">Write a full model answer — keywords from it will appear as key terms below.</div>
+        <div class="ms-edit-hint">Write a complete model answer for this question. Keywords from it will appear as key terms.</div>
         <textarea class="ms-edit-textarea" id="ta_ans_${ansEditUid}" placeholder="Write a complete model answer here…" style="min-height:110px">${esc(modelAns)}</textarea>
         <div class="ms-edit-actions">
           <button class="ms-edit-save" onclick="_msSaveAnswer('${paperKey}','${partCode}','${uid}')">Save</button>
           <button class="ms-edit-clear" onclick="_msClearAnswer('${paperKey}','${partCode}','${uid}')">Clear</button>
         </div>
-      </div>`;
-  }
+      </div>
+    </div>`;
 
   // ── Key terms ──
-  let keyTermsHtml = '';
   const kwSources = [...effectivePts, ...(modelAns ? [modelAns] : [])];
   const kws = kwSources.length ? extractKeywords(kwSources) : [];
-  if (kws.length) {
-    keyTermsHtml = `<div class="mc-key-terms">
-      <span class="mc-key-label">Key terms</span>
-      ${kws.map(kw => `<span class="ms-kw-chip">${esc(kw)}</span>`).join('')}
-    </div>`;
-  }
+  const keyTermsHtml = kws.length ? `<div class="mc-key-terms">
+    <span class="mc-key-label">Key terms</span>
+    ${kws.map(kw => `<span class="ms-kw-chip">${esc(kw)}</span>`).join('')}
+  </div>` : '';
 
   return `
     ${promptHtml}
     <div class="ms-points-list">${pointsHtml}</div>
-    ${editHtml}
+    ${editPtsHtml}
+    ${modelAnswerHtml}
     ${keyTermsHtml}`;
 }
 
