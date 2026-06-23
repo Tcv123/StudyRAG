@@ -49,12 +49,14 @@
     .page-sub { font-size: 14px; color: var(--muted); margin-top: 3px; }
 
     /* Picker */
-    .picker-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 28px; }
-    .picker-group { display: flex; flex-direction: column; gap: 5px; flex: 1; min-width: 160px; }
-    .picker-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--muted2); }
-    .picker-select { padding: 9px 12px; border-radius: 9px; border: 1px solid var(--border); background: var(--surface); font-family: var(--font-body); font-size: 14px; color: var(--text); cursor: pointer; }
-    .picker-select:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
-    .picker-select:disabled { opacity: 0.4; cursor: not-allowed; }
+    .picker-card { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 22px 24px; margin-bottom: 28px; box-shadow: 0 2px 12px rgba(37,99,235,0.06); }
+    .picker-card-title { font-family: var(--font-display); font-size: 17px; margin-bottom: 16px; color: var(--text); }
+    .picker-row { display: flex; gap: 16px; flex-wrap: wrap; }
+    .picker-group { display: flex; flex-direction: column; gap: 6px; flex: 1; min-width: 200px; }
+    .picker-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); }
+    .picker-select { padding: 10px 14px; border-radius: 10px; border: 1.5px solid var(--border); background: var(--surface2); font-family: var(--font-body); font-size: 14px; color: var(--text); cursor: pointer; appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%237891B0' d='M6 8L1 3h10z'/%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 12px center; padding-right: 32px; }
+    .picker-select:focus { outline: none; border-color: var(--accent); background-color: var(--surface); box-shadow: 0 0 0 3px var(--accent-dim); }
+    .picker-select:disabled { opacity: 0.35; cursor: not-allowed; }
 
     /* Paper header */
     .paper-header { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 22px; margin-bottom: 20px; display: flex; align-items: center; gap: 16px; flex-wrap: wrap; }
@@ -537,19 +539,22 @@ function buildPicker(userSubs) {
   }
 
   const pickerHtml = `
-    <div class="picker-row">
-      <div class="picker-group">
-        <div class="picker-label">Subject</div>
-        <select class="picker-select" id="pickSubject">
-          <option value="">— Select subject —</option>
-          ${filtered.map((f, i) => `<option value="${i}">${esc(f.subjectName)} · ${esc(f.board)}</option>`).join('')}
-        </select>
-      </div>
-      <div class="picker-group">
-        <div class="picker-label">Paper</div>
-        <select class="picker-select" id="pickPaper" disabled>
-          <option value="">— Select paper —</option>
-        </select>
+    <div class="picker-card">
+      <div class="picker-card-title">Choose a paper</div>
+      <div class="picker-row">
+        <div class="picker-group">
+          <div class="picker-label">Subject</div>
+          <select class="picker-select" id="pickSubject">
+            <option value="">— Select subject —</option>
+            ${filtered.map((f, i) => `<option value="${i}">${esc(f.subjectName)} · ${esc(f.board)}</option>`).join('')}
+          </select>
+        </div>
+        <div class="picker-group">
+          <div class="picker-label">Paper</div>
+          <select class="picker-select" id="pickPaper" disabled>
+            <option value="">— Select paper —</option>
+          </select>
+        </div>
       </div>
     </div>
     <div id="msViewer">
