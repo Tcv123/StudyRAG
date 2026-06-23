@@ -23924,9 +23924,303 @@ window.SUBJECTS = [
           },
         ],
       },
-      { board: 'Eduqas (WJEC)', specCode: 'A110QS',
-        officialPageUrl: 'https://www.eduqas.co.uk/qualifications/geography-as-a-level/',
-        note: "Eduqas requires a free account to download papers (their official policy)." },
+      { board: 'Eduqas (WJEC)', specCode: 'A110',
+        officialPageUrl: 'https://www.eduqas.co.uk/qualifications/geography-asa-level/',
+        papers: [
+          {
+            id: 'eduqas-geog-a110u10-2022', year: 2022, paperName: 'Component 1: Changing Landscapes and Changing Places', paperCode: 'A110U10-1',
+            totalMarks: 82, durationMins: 105,
+            qpUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-1/June%202022%20QP%20-%20Component%201%20Eduqas%20Geography%20A-level.pdf',
+            msUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-1/June%202022%20MS%20-%20Component%201%20Eduqas%20Geography%20A-level.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A — Coastal Landscapes. Figure 1: Changes to the coastal environment at Cape Cod, Massachusetts, USA, 1984–2019 (two satellite images showing changes to North Beach, Nantucket Sound, and Atlantic Ocean boundaries).', parts: [
+                { code: '1(a)', prompt: 'Use Figure 1 to describe changes in the coastal environment shown.', marks: 5 },
+                { code: '1(b)', prompt: 'Outline two economic impacts of coastal processes on human activity.', marks: 8 },
+              ]},
+              { number: 2, scenario: 'Section A — Coastal Landscapes. Figure 2: Grain size distributions on a transect across a beach and coastal dune sequence in Great Exhibition Bay, New Zealand (bar charts for three sites from Mean High Water to Mean Low Water and dunes).', parts: [
+                { code: '2(a)(i)', prompt: 'Use Figure 2 to analyse variations in grain size along the transect.', marks: 5 },
+                { code: '2(a)(ii)', prompt: 'Suggest how marine and aeolian processes may have influenced the variations in grain size shown in Figure 2.', marks: 8 },
+              ]},
+              { number: 3, scenario: 'Section A — Coastal Landscapes (answer Q3 OR Q4)', parts: [
+                { code: '3', prompt: 'Examine the relative importance of marine erosional processes to the characteristics and formation of one or more landforms of coastal erosion.', marks: 15, extended: true },
+              ]},
+              { number: 4, scenario: 'Section A — Coastal Landscapes (answer Q3 OR Q4)', parts: [
+                { code: '4', prompt: 'Assess the success of one strategy used to manage the interaction between human activity and coastal processes and/or landscapes.', marks: 15, extended: true },
+              ]},
+              { number: 5, scenario: 'Section A — Glaciated Landscapes (alternative to Coastal, answer Q5–8 instead). Figure 3: Changes to the glacial environment, Glacier Steffen, Chile, 1999–2011 (two satellite images showing glacier terminus, supraglacial moraine, and ice-dammed lake).', parts: [
+                { code: '5(a)', prompt: 'Use Figure 3 to describe changes in the glacial environment shown.', marks: 5 },
+                { code: '5(b)', prompt: 'Outline the impact of two glacial processes on human activity.', marks: 8 },
+              ]},
+              { number: 6, scenario: 'Section A — Glaciated Landscapes. Figure 4: Grain size distributions on a transect across a terminal moraine and sandur (outwash plain), Longyearbyen, Svalbard, Norway (bar charts for three sites).', parts: [
+                { code: '6(a)(i)', prompt: 'Use Figure 4 to analyse variations in grain size along the transect.', marks: 5 },
+                { code: '6(a)(ii)', prompt: 'Suggest how glacial and fluvioglacial processes may have influenced the variations in grain size shown in Figure 4.', marks: 8 },
+              ]},
+              { number: 7, scenario: 'Section A — Glaciated Landscapes (answer Q7 OR Q8)', parts: [
+                { code: '7', prompt: 'Examine the relative importance of glacial weathering to the characteristics and formation of one or more landforms of glacial erosion.', marks: 15, extended: true },
+              ]},
+              { number: 8, scenario: 'Section A — Glaciated Landscapes (answer Q7 OR Q8)', parts: [
+                { code: '8', prompt: 'Assess the success of one strategy used to manage the interaction between human activity and glacial processes and/or landscapes.', marks: 15, extended: true },
+              ]},
+              { number: 9, scenario: 'Section B — Changing Places. Figure 5: Distribution of population aged over 65 in Norfolk, 2018 (choropleth map with settlements above 24,000 population marked).', parts: [
+                { code: '9(a)', prompt: 'Use Figure 5 to describe the distribution of population aged over 65 in Norfolk.', marks: 5 },
+                { code: '9(b)', prompt: 'Suggest why the age characteristics of a population vary from place to place.', marks: 8 },
+              ]},
+              { number: 10, scenario: 'Section B — Changing Places. Figure 6: Employment by sector, 2019, comparing older industrial towns (e.g. Bolton, Barnsley), London, and GB as a whole.', parts: [
+                { code: '10(a)', prompt: 'Use Figure 6 to analyse variations in employment structure.', marks: 5 },
+                { code: '10(b)', prompt: 'Outline two different ways in which urban places can be re-imaged.', marks: 8 },
+              ]},
+              { number: 11, scenario: 'Section B — Changing Places (answer Q11 OR Q12)', parts: [
+                { code: '11', prompt: 'Assess the impacts of quaternary industry clusters on people and places.', marks: 15, extended: true },
+              ]},
+              { number: 12, scenario: 'Section B — Changing Places (answer Q11 OR Q12)', parts: [
+                { code: '12', prompt: 'Assess the importance of recreation in the rebranding of rural places.', marks: 15, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'eduqas-geog-a110u20-2022', year: 2022, paperName: 'Component 2: Global Systems and Global Governance', paperCode: 'A110U20-1',
+            totalMarks: 110, durationMins: 120,
+            qpUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-2/June%202022%20QP%20-%20Component%202%20Eduqas%20Geography%20A-level.pdf',
+            msUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-2/June%202022%20MS%20-%20Component%202%20Eduqas%20Geography%20A-level.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A — Global Systems: Water and Carbon Cycles. Figure 1: Annual carbon flows and stores in a temperate grassland ecosystem (grams of carbon per square metre), including respiration, consumption, litter fall, soil biota and water losses.', parts: [
+                { code: '1(a)(i)', prompt: 'Use Figure 1 to calculate the percentage of carbon consumed by grassland animals which is then transferred to the soil. Show your working.', marks: 2 },
+                { code: '1(a)(ii)', prompt: 'Analyse the evidence in Figure 1 which shows the system is in equilibrium.', marks: 3 },
+                { code: '1(a)(iii)', prompt: 'Suggest two reasons why carbon losses due to water flows may increase if the vegetation in Figure 1 is removed.', marks: 5 },
+              ]},
+              { number: 2, scenario: 'Section A — Water and Carbon Cycles. Figure 2: Monthly changes in the extent of Arctic sea ice in 1979, 2000 and 2019 (line graph, millions of km²).', parts: [
+                { code: '2(a)', prompt: 'Use Figure 2 to analyse changes in the extent of Arctic sea ice over time.', marks: 5 },
+                { code: '2(b)', prompt: 'Outline how long-term changes in the size of Earth\'s cryosphere (ice store) affects the size of other major water stores.', marks: 5 },
+              ]},
+              { number: 3, scenario: 'Section A — Water and Carbon Cycles (answer Q3 OR Q4)', parts: [
+                { code: '3', prompt: '\'Recent increases in the atmospheric carbon store are the main cause of local water shortages.\' Discuss.', marks: 20, extended: true },
+              ]},
+              { number: 4, scenario: 'Section A — Water and Carbon Cycles (answer Q3 OR Q4)', parts: [
+                { code: '4', prompt: '\'Climate is the most important factor influencing the formation of peatlands and their survival.\' Discuss.', marks: 20, extended: true },
+              ]},
+              { number: 5, scenario: 'Section B — Global Governance: Change and Challenges. Figure 3: The availability of 4G communications technology in African countries, 2019 (choropleth map showing countries where 4G is available in some places vs. no 4G services).', parts: [
+                { code: '5(a)(i)', prompt: 'Describe the pattern shown in Figure 3.', marks: 3 },
+                { code: '5(a)(ii)', prompt: 'Outline one limitation of the choropleth map used in Figure 3.', marks: 2 },
+                { code: '5(a)(iii)', prompt: 'Suggest ways in which poor quality internet connectivity could affect rural-urban migration flows for some countries in Figure 3.', marks: 5 },
+              ]},
+              { number: 6, scenario: 'Section B — Global Governance. Figure 4: Estimated mass of floating plastic waste in selected marine areas (table with Indian Ocean, Mediterranean Sea, North Atlantic, South Atlantic, North Pacific, South Pacific — showing surface area, total mass, and mass per km²).', parts: [
+                { code: '6(a)(i)', prompt: 'Use Figure 4 to calculate the value for X (mass of floating plastic waste per km² of surface water for the South Atlantic) to two decimal places.', marks: 1 },
+                { code: '6(a)(ii)', prompt: 'Use Figure 4 to analyse variations in the estimated mass of floating plastic waste.', marks: 4 },
+                { code: '6(b)', prompt: 'Outline why large plastic garbage patches have developed in some ocean areas.', marks: 5 },
+              ]},
+              { number: 7, scenario: 'Section B — Global Governance (answer Q7 OR Q8)', parts: [
+                { code: '7', prompt: '\'Powerful countries tend to ignore the international rules they have agreed to follow.\' To what extent do you agree? Refer to both ocean governance and migration in your answer.', marks: 20, extended: true },
+              ]},
+              { number: 8, scenario: 'Section B — Global Governance (answer Q7 OR Q8)', parts: [
+                { code: '8', prompt: '\'International migration has always been the most important driver of global economic growth over time.\' To what extent do you agree? Refer to both migration and ocean governance in your answer.', marks: 20, extended: true },
+              ]},
+              { number: 9, scenario: 'Section C — 21st Century Challenges (answer Q9 OR Q10). Figures 5–8: percentage of US workers in manufacturing 1960–2020; Jamaican newspaper cartoon on the migration brain drain; annual changes in global GDP and atmospheric CO₂ 1970–2019; selected impacts of the Love Bug computer virus (May 2000).', parts: [
+                { code: '9', prompt: 'Evaluate the economic risks that globalisation brings to different places and societies.', marks: 30, extended: true },
+              ]},
+              { number: 10, scenario: 'Section C — 21st Century Challenges (answer Q9 OR Q10)', parts: [
+                { code: '10', prompt: 'Evaluate ways of reducing people\'s vulnerability to the negative impacts of globalisation.', marks: 30, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'eduqas-geog-a110u30-2022', year: 2022, paperName: 'Component 3: Contemporary Themes in Geography', paperCode: 'A110U30-1',
+            totalMarks: 128, durationMins: 135,
+            qpUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-3/June%202022%20QP%20-%20Component%203%20Eduqas%20Geography%20A-level.pdf',
+            msUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-3/June%202022%20MS%20-%20Component%203%20Eduqas%20Geography%20A-level.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A — Theme 1: Tectonic Hazards (answer Q1 OR Q2)', parts: [
+                { code: '1', prompt: '\'The characteristics of the physical hazard profile are the key factors influencing the severity of impact of volcanic hazards.\' Discuss.', marks: 38, extended: true },
+              ]},
+              { number: 2, scenario: 'Section A — Theme 1: Tectonic Hazards (answer Q1 OR Q2)', parts: [
+                { code: '2', prompt: '\'The level of development is the most important factor influencing risk and vulnerability to earthquake hazards.\' Discuss.', marks: 38, extended: true },
+              ]},
+              { number: 3, scenario: 'Section B — Theme 2: Ecosystems (answer Q3 OR Q4)', parts: [
+                { code: '3', prompt: '\'Human well-being depends on the goods and services provided by ecosystems, yet humans are the main drivers of ecosystem destruction.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 4, scenario: 'Section B — Theme 2: Ecosystems (answer Q3 OR Q4)', parts: [
+                { code: '4', prompt: '\'Some ecosystems are at greater risk from destruction and damage than others.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 5, scenario: 'Section B — Theme 3: India (answer Q5 OR Q6)', parts: [
+                { code: '5', prompt: '\'Globalisation has been the main driver of economic growth in India.\' Discuss.', marks: 45, extended: true },
+              ]},
+              { number: 6, scenario: 'Section B — Theme 3: India (answer Q5 OR Q6)', parts: [
+                { code: '6', prompt: '\'It is inevitable that India\'s recent high rates of economic growth have resulted in considerable damage to its environment.\' Discuss.', marks: 45, extended: true },
+              ]},
+              { number: 7, scenario: 'Section B — Theme 3: China (answer Q7 OR Q8)', parts: [
+                { code: '7', prompt: '\'Globalisation has been the main driver of economic growth in China.\' Discuss.', marks: 45, extended: true },
+              ]},
+              { number: 8, scenario: 'Section B — Theme 3: China (answer Q7 OR Q8)', parts: [
+                { code: '8', prompt: '\'It is inevitable that China\'s recent high rates of economic growth have resulted in considerable damage to its environment.\' Discuss.', marks: 45, extended: true },
+              ]},
+              { number: 9, scenario: 'Section B — Theme 3: Development in an African Context (answer Q9 OR Q10)', parts: [
+                { code: '9', prompt: '\'Social and cultural factors both provide more constraints than opportunities for economic development in Sub-Saharan African countries.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 10, scenario: 'Section B — Theme 3: Development in an African Context (answer Q9 OR Q10)', parts: [
+                { code: '10', prompt: '\'The environmental impacts of economic development are inevitably negative in all sectors of the economies of Sub-Saharan African countries.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 11, scenario: 'Section B — Theme 4: Energy Challenges and Dilemmas (answer Q11 OR Q12)', parts: [
+                { code: '11', prompt: 'Evaluate the importance of physical factors in determining both the distribution and use of energy supplies.', marks: 45, extended: true },
+              ]},
+              { number: 12, scenario: 'Section B — Theme 4: Energy Challenges and Dilemmas (answer Q11 OR Q12)', parts: [
+                { code: '12', prompt: '\'Increased efficiency of energy use is the only sustainable solution to the energy crisis.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 13, scenario: 'Section B — Theme 5: Weather and Climate (answer Q13 OR Q14)', parts: [
+                { code: '13', prompt: 'To what extent can the damaging impacts of atmospheric pollution be managed and reduced in urban areas?', marks: 45, extended: true },
+              ]},
+              { number: 14, scenario: 'Section B — Theme 5: Weather and Climate (answer Q13 OR Q14)', parts: [
+                { code: '14', prompt: '\'Both adaptation and mitigation strategies have important roles to play in coping with the impacts of climate change.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'eduqas-geog-a110u10-2023', year: 2023, paperName: 'Component 1: Changing Landscapes and Changing Places', paperCode: 'A110U10-1',
+            totalMarks: 82, durationMins: 105,
+            qpUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-1/June%202023%20QP%20-%20Component%201%20Eduqas%20Geography%20A-level.pdf',
+            msUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-1/June%202023%20MS%20-%20Component%201%20Eduqas%20Geography%20A-level.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A — Coastal Landscapes. Figure 1: Selected impacts of coastal erosion in two Nigerian states — Lagos and Cross River (table showing erosion rates in hectares/year, coastal population in millions, and economic losses in millions US$).', parts: [
+                { code: '1(a)', prompt: 'Use Figure 1 to analyse variations in the impacts of coastal erosion.', marks: 5 },
+                { code: '1(b)', prompt: 'Outline how sediment is transported by the coastal processes of (i) longshore drift and (ii) solution.', marks: 8 },
+              ]},
+              { number: 2, scenario: 'Section A — Coastal Landscapes. Figure 2 in Resource Folder: OS Explorer map (1:25,000) of Coastal Landscapes of Skye, Scotland.', parts: [
+                { code: '2(a)(i)', prompt: 'Use Figure 2 in the Resource Folder to state the six-figure grid reference of the viewpoint.', marks: 1 },
+                { code: '2(a)(ii)', prompt: 'Use Figure 2 in the Resource Folder to identify and locate, using four-figure grid references, two different landforms that suggest coastal erosion has taken place.', marks: 4 },
+                { code: '2(b)', prompt: 'Suggest how seasonal variations in coastal processes may influence the characteristics of one coastal landform.', marks: 8 },
+              ]},
+              { number: 3, scenario: 'Section A — Coastal Landscapes (answer Q3 OR Q4)', parts: [
+                { code: '3', prompt: 'Assess the relative importance of fluvial processes in the formation of landforms in low energy coastal environments.', marks: 15, extended: true },
+              ]},
+              { number: 4, scenario: 'Section A — Coastal Landscapes (answer Q3 OR Q4)', parts: [
+                { code: '4', prompt: 'Examine the positive impacts of coastal processes on human activity.', marks: 15, extended: true },
+              ]},
+              { number: 5, scenario: 'Section A — Glaciated Landscapes (alternative to Coastal, answer Q5–8 instead). Figure 3: Selected potential impacts of Glacial Lake Outburst Floods (GLOFs) in Nepal — Thulagi and Imja Tsho glacial lakes (expansion rate, population affected, and potential economic losses).', parts: [
+                { code: '5(a)', prompt: 'Use Figure 3 to analyse variations in the potential impacts of glacial lake outburst floods.', marks: 5 },
+                { code: '5(b)', prompt: 'Outline how glaciers move by (i) internal deformation and (ii) basal sliding.', marks: 8 },
+              ]},
+              { number: 6, scenario: 'Section A — Glaciated Landscapes. Figure 4 in Resource Folder: OS Explorer map (1:25,000) of Glaciated Landscapes of the Cairngorm Mountains, Scotland.', parts: [
+                { code: '6(a)(i)', prompt: 'Use Figure 4 in the Resource Folder to state the six-figure grid reference of the viewpoint.', marks: 1 },
+                { code: '6(a)(ii)', prompt: 'Use Figure 4 in the Resource Folder to identify and locate, using four-figure grid references, two different landforms that suggest glacial erosion has taken place.', marks: 4 },
+                { code: '6(b)', prompt: 'Suggest how post-glacial processes may influence the characteristics of one glacial landform.', marks: 8 },
+              ]},
+              { number: 7, scenario: 'Section A — Glaciated Landscapes (answer Q7 OR Q8)', parts: [
+                { code: '7', prompt: 'Assess the relative importance of processes of glacial deposition in the formation of landforms in lowland glacial landscapes.', marks: 15, extended: true },
+              ]},
+              { number: 8, scenario: 'Section A — Glaciated Landscapes (answer Q7 OR Q8)', parts: [
+                { code: '8', prompt: 'Examine how glacial budgets vary over different timescales.', marks: 15, extended: true },
+              ]},
+              { number: 9, scenario: 'Section B — Changing Places. Figure 5: Number of neighbourhoods gentrified in selected cities in western USA, 2000–2013 (map showing San Francisco, Seattle, Los Angeles etc. with 2–10, 11–20, 21–50, 51–144 neighbourhoods gentrified).', parts: [
+                { code: '9(a)', prompt: 'Use Figure 5 to analyse the pattern of gentrification.', marks: 5 },
+                { code: '9(b)', prompt: 'Explain why cities with high levels of gentrification may experience social changes.', marks: 8 },
+              ]},
+              { number: 10, scenario: 'Section B — Changing Places. Figure 6: Population structure of Bristol and Clifton, 2019 (population pyramid comparing the affluent suburb of Clifton with the city of Bristol as a whole).', parts: [
+                { code: '10(a)', prompt: 'Use Figure 6 to compare the age characteristics of the populations shown.', marks: 5 },
+                { code: '10(b)', prompt: 'Outline two inequalities associated with change in rural communities.', marks: 8 },
+              ]},
+              { number: 11, scenario: 'Section B — Changing Places (answer Q11 OR Q12)', parts: [
+                { code: '11', prompt: 'Examine ways in which place meanings and representations can influence change in one or more places.', marks: 15, extended: true },
+              ]},
+              { number: 12, scenario: 'Section B — Changing Places (answer Q11 OR Q12)', parts: [
+                { code: '12', prompt: 'Assess the consequences of industrial decline in urban places.', marks: 15, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'eduqas-geog-a110u20-2023', year: 2023, paperName: 'Component 2: Global Systems and Global Governance', paperCode: 'A110U20-1',
+            totalMarks: 110, durationMins: 120,
+            qpUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-2/June%202023%20QP%20-%20Component%202%20Eduqas%20Geography%20A-level.pdf',
+            msUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-2/June%202023%20MS%20-%20Component%202%20Eduqas%20Geography%20A-level.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A — Water and Carbon Cycles. Figure 1: Precipitation, evaporation and transpiration data for an area of northern Canada — monthly bar/line chart (annual PP = 392 mm, annual ET = 345 mm) showing water surplus and deficit periods.', parts: [
+                { code: '1(a)(i)', prompt: 'Use Figure 1 to state the water surplus in millimetres for October.', marks: 1 },
+                { code: '1(a)(ii)', prompt: 'Use Figure 1 to identify the month with the greatest water deficit.', marks: 1 },
+                { code: '1(a)(iii)', prompt: 'Use Figure 1 to describe the annual pattern of precipitation (PP).', marks: 3 },
+                { code: '1(a)(iv)', prompt: 'Suggest reasons why evaporation and transpiration (ET) exceed precipitation (PP) for part of the year in Figure 1.', marks: 5 },
+              ]},
+              { number: 2, scenario: 'Section A — Water and Carbon Cycles. Figures 2a and 2b: Maps of Great Britain — Figure 2a shows local climate relative to UK average (warmer/colder and drier/wetter); Figure 2b shows peatland distribution.', parts: [
+                { code: '2(a)', prompt: 'Use Figures 2a and 2b to analyse the relationship between local climate and peatland distribution in Great Britain.', marks: 5 },
+                { code: '2(b)', prompt: 'Explain how peat formation is influenced by physical factors other than climate.', marks: 5 },
+              ]},
+              { number: 3, scenario: 'Section A — Water and Carbon Cycles (answer Q3 OR Q4)', parts: [
+                { code: '3', prompt: '\'The water and carbon that are stored in rocks only play very minor roles in supporting human life.\' Discuss.', marks: 20, extended: true },
+              ]},
+              { number: 4, scenario: 'Section A — Water and Carbon Cycles (answer Q3 OR Q4)', parts: [
+                { code: '4', prompt: '\'Land-use changes always affect local water and carbon cycles in highly negative ways.\' Discuss.', marks: 20, extended: true },
+              ]},
+              { number: 5, scenario: 'Section B — Global Governance: Change and Challenges. Figure 3: The relative importance of different types of internal migration for selected countries with varying levels of urbanisation — stacked bar chart for Eswatini, Vietnam, Egypt, Indonesia, Poland, New Zealand (urban-urban, rural-rural, rural-urban, urban-rural).', parts: [
+                { code: '5(a)(i)', prompt: 'Use Figure 3 to state the percentage value of urban-urban migration for Egypt.', marks: 1 },
+                { code: '5(a)(ii)', prompt: 'Describe variations in the relative importance of rural-rural migration for the countries shown in Figure 3.', marks: 4 },
+                { code: '5(a)(iii)', prompt: 'Suggest why the relative importance of rural-urban migration varies for the countries shown in Figure 3.', marks: 5 },
+              ]},
+              { number: 6, scenario: 'Section B — Global Governance. Figure 4: Numbers of containers handled by the world\'s ten busiest container ports in 2005 and 2019 (table with rank, port name, and TEU figures — showing rise of Chinese ports).', parts: [
+                { code: '6(a)', prompt: 'Use Figure 4 to analyse the changing size and importance of Asian container ports.', marks: 5 },
+                { code: '6(b)', prompt: 'Outline two ways in which shipping movements are regulated by global agreements.', marks: 5 },
+              ]},
+              { number: 7, scenario: 'Section B — Global Governance (answer Q7 OR Q8)', parts: [
+                { code: '7', prompt: 'Evaluate the severity of different risks created by the growth of international shipping and communications networks. Refer to both ocean governance and migration in your answer.', marks: 20, extended: true },
+              ]},
+              { number: 8, scenario: 'Section B — Global Governance (answer Q7 OR Q8)', parts: [
+                { code: '8', prompt: 'Evaluate ways in which the UK\'s present-day international relationships are influenced by Commonwealth and former colonial links. Refer to both migration and ocean governance in your answer.', marks: 20, extended: true },
+              ]},
+              { number: 9, scenario: 'Section C — 21st Century Challenges (answer Q9 OR Q10). Figures 5–8: projected climate change impacts on landscape systems; environmental and human causes of refugee movements; Swedish no-fly movement data (Flygskam, 2013–2020); climate innovation clusters in the UK (e.g. Bristol Temple Quarter).', parts: [
+                { code: '9', prompt: '\'Climate change will soon become the main driver of all international migration.\' Discuss.', marks: 30, extended: true },
+              ]},
+              { number: 10, scenario: 'Section C — 21st Century Challenges (answer Q9 OR Q10)', parts: [
+                { code: '10', prompt: '\'We can still stop climate change from causing permanent harm to societies and environments.\' Discuss.', marks: 30, extended: true },
+              ]},
+            ],
+          },
+          {
+            id: 'eduqas-geog-a110u30-2023', year: 2023, paperName: 'Component 3: Contemporary Themes in Geography', paperCode: 'A110U30-1',
+            totalMarks: 128, durationMins: 135,
+            qpUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-3/June%202023%20QP%20-%20Component%203%20Eduqas%20Geography%20A-level.pdf',
+            msUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-3/June%202023%20MS%20-%20Component%203%20Eduqas%20Geography%20A-level.pdf',
+            questions: [
+              { number: 1, scenario: 'Section A — Theme 1: Tectonic Hazards (answer Q1 OR Q2)', parts: [
+                { code: '1', prompt: '\'Most volcanic eruptions pose little risk to life, as it is possible to predict, monitor and warn people of their hazardous impacts.\' Discuss.', marks: 38, extended: true },
+              ]},
+              { number: 2, scenario: 'Section A — Theme 1: Tectonic Hazards (answer Q1 OR Q2)', parts: [
+                { code: '2', prompt: '\'Secondary not primary hazards from earthquakes generate the most severe impacts.\' Discuss.', marks: 38, extended: true },
+              ]},
+              { number: 3, scenario: 'Section B — Theme 2: Ecosystems (answer Q3 OR Q4)', parts: [
+                { code: '3', prompt: 'Evaluate the impacts of physical and human factors on succession for one or more local scale ecosystems.', marks: 45, extended: true },
+              ]},
+              { number: 4, scenario: 'Section B — Theme 2: Ecosystems (answer Q3 OR Q4)', parts: [
+                { code: '4', prompt: 'Evaluate the view that the growing threats to the Arctic tundra biome make its sustainable use increasingly challenging.', marks: 45, extended: true },
+              ]},
+              { number: 5, scenario: 'Section B — Theme 3: India (answer Q5 OR Q6)', parts: [
+                { code: '5', prompt: '\'Water availability is an increasingly serious physical constraint on economic development in India.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 6, scenario: 'Section B — Theme 3: India (answer Q5 OR Q6)', parts: [
+                { code: '6', prompt: '\'Soft power is increasingly significant in enhancing the global importance of India.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 7, scenario: 'Section B — Theme 3: China (answer Q7 OR Q8)', parts: [
+                { code: '7', prompt: '\'Water availability is an increasingly serious physical constraint on economic development in China.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 8, scenario: 'Section B — Theme 3: China (answer Q7 OR Q8)', parts: [
+                { code: '8', prompt: '\'Soft power is increasingly significant in enhancing the global importance of China.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 9, scenario: 'Section B — Theme 3: Development in an African Context (answer Q9 OR Q10)', parts: [
+                { code: '9', prompt: '\'Mineral and energy resources are vital for the development of many Sub-Saharan African countries, but they can lead to the resource curse and conflict.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 10, scenario: 'Section B — Theme 3: Development in an African Context (answer Q9 OR Q10)', parts: [
+                { code: '10', prompt: '\'Strategies to address both the causes and consequences of desertification in Sub-Saharan African countries have met with limited success.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 11, scenario: 'Section B — Theme 4: Energy Challenges and Dilemmas (answer Q11 OR Q12)', parts: [
+                { code: '11', prompt: '\'In recent years, the use of fossil fuels has posed greater environmental problems than political and economic ones.\' Discuss.', marks: 45, extended: true },
+              ]},
+              { number: 12, scenario: 'Section B — Theme 4: Energy Challenges and Dilemmas (answer Q11 OR Q12)', parts: [
+                { code: '12', prompt: '\'Although the level of development has a major impact on a country\'s choice of energy mix, there are many other influencing factors.\' Discuss.', marks: 45, extended: true },
+              ]},
+              { number: 13, scenario: 'Section B — Theme 5: Weather and Climate (answer Q13 OR Q14)', parts: [
+                { code: '13', prompt: '\'Variations in the jet stream are the most important influence on weather in the UK.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+              { number: 14, scenario: 'Section B — Theme 5: Weather and Climate (answer Q13 OR Q14)', parts: [
+                { code: '14', prompt: '\'The impacts of hazards associated with high-pressure systems are increasingly difficult to manage.\' To what extent do you agree?', marks: 45, extended: true },
+              ]},
+            ],
+          },
+        ],
+      },
       { board: 'OCR', specCode: 'H481',
         officialPageUrl: 'https://www.ocr.org.uk/qualifications/as-and-a-level/geography-h081-h481-from-2016/assessment/',
         papers: [
