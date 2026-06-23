@@ -8,11 +8,11 @@
    ========================================================================== */
 
 /* ── 1. Universal safety net ────────────────────────────────────────────── */
-/* Stop iOS from auto-inflating text. On phones, where layout reflows, also
-   guard against sideways scroll. On larger screens we DON'T hide overflow —
-   fit-to-screen.js scales the page down to fit instead, so nothing is cut off. */
+/* Stop iOS from auto-inflating text. We deliberately do NOT hide horizontal
+   overflow — fit-to-screen.js scales the page down to fit instead, so nothing
+   is ever cut off. (Hiding overflow would clip content AND hide it from the
+   fit calculation, which is the opposite of what we want.) */
 html { -webkit-text-size-adjust: 100%; }
-@media (max-width: 767px) { body { overflow-x: hidden; } }
 
 /* Media should shrink to fit its container, never push the page wider. */
 img, svg, video, canvas { max-width: 100%; }
