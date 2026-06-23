@@ -180,6 +180,11 @@
       ? 'Low confidence — answer more practice questions to improve accuracy'
       : `${prediction.masteryPct}% mastery · RAG ${prediction.ragScore}%${prediction.practiceScore !== null ? ` · Practice ${prediction.practiceScore}%` : ''}`;
 
+    if (opts.inline) {
+      // Small horizontal pill that sits inline with the grade/diagnostic chips.
+      return `<span title="${tip}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:${col};background:${col}14;border:1px solid ${col}44;padding:2px 9px;border-radius:20px;cursor:help;opacity:${dim ? '0.7' : '1'};white-space:nowrap;">Predicted <span style="font-size:13px;font-weight:800;letter-spacing:-0.01em;">${prediction.grade}${qmark}</span>${ts ? `<span style="font-weight:700;color:${ts.colour};">· ${ts.short}</span>` : ''}</span>`;
+    }
+
     if (opts.compact) {
       return `<div title="${tip}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:${col}12;border:1.5px solid ${col}40;border-radius:10px;padding:6px 14px;min-width:72px;cursor:help;opacity:${dim ? '0.72' : '1'};">
         <span style="font-size:9px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:${col}CC;">Predicted</span>
