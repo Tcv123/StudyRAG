@@ -321,13 +321,14 @@ function renderMsCard(part, paperKey) {
   // Prompt display
   const promptHtml = part.prompt ? `<div class="part-prompt-full">${esc(part.prompt)}</div>` : '';
 
-  if (!ms) {
-    return `${promptHtml}<div class="no-ms">No mark scheme attached to this part yet.</div>`;
-  }
-
-  // ── Mark Allocation ──
+  // ── Mark Allocation ── (always shown, even without a full mark scheme)
   let allocHtml = '';
-  if (msType === 'points') {
+  if (!ms) {
+    // No mark scheme yet — show marks-based chips as placeholders
+    const chips = Array.from({length: totalMarks}, (_, i) => `<span class="ms-alloc-chip">Mark ${i+1}</span>`).join('');
+    allocHtml = `<div class="ms-alloc-bar">${chips}</div>
+      <div class="ms-alloc-desc"><strong>${totalMarks}</strong> mark${totalMarks !== 1 ? 's' : ''} available · full mark scheme not yet added for this part</div>`;
+  } else if (msType === 'points') {
     const pts = ms.points || [];
     const chips = pts.map((_, i) => `<span class="ms-alloc-chip">Point ${i+1}</span>`).join('');
     allocHtml = `<div class="ms-alloc-bar">${chips}</div>
@@ -343,7 +344,9 @@ function renderMsCard(part, paperKey) {
 
   // ── Mark Scheme Points / Levels (with per-point annotations) ──
   let schemeHtml = '';
-  if (msType === 'points') {
+  if (!ms) {
+    schemeHtml = `<div class="no-ms">Full mark scheme not yet added for this part. Use the official MS PDF above for reference.</div>`;
+  } else if (msType === 'points') {
     const items = (ms.points || []).map((p, i) => renderPointWithNote(p, '', paperKey, partCode, i)).join('');
     schemeHtml = `<div class="ms-points-list">${items}</div>`;
     if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
@@ -368,26 +371,11 @@ function renderMsCard(part, paperKey) {
     if (ms.guidance) schemeHtml += `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`;
   }
 
-  // ── Answer Anatomy ──
+  // ── Answer Anatomy — always shown, driven by mark count ──
   let anatomySteps = [];
-  if (msType === 'points') {
-    if (totalMarks <= 2) {
-      anatomySteps = [`State <strong>${totalMarks}</strong> distinct marking point${totalMarks > 1 ? 's' : ''}. No extended explanation needed — one clear sentence per point.`];
-    } else if (totalMarks <= 4) {
-      anatomySteps = [
-        `Make <strong>${totalMarks}</strong> separate, distinct points.`,
-        `Avoid repeating the same idea in different words — each sentence should earn a new mark.`,
-        `Use subject-specific vocabulary; vague statements rarely score.`
-      ];
-    } else {
-      anatomySteps = [
-        `Cover <strong>${totalMarks}</strong> separate points — breadth matters.`,
-        `Each point should be a distinct idea, not a rephrasing of the previous one.`,
-        `Support key points with mechanisms or examples where the mark scheme includes them.`,
-        `Read the guidance note — some marks may only be awarded in combination with another point.`
-      ];
-    }
-  } else if (msType === 'levels') {
+  const isLevels = msType === 'levels';
+  const isExact  = msType === 'exact';
+  if (isLevels) {
     const lvls = ms.levels || [];
     const top = lvls.length ? lvls.reduce((a,b) => b.range[1] > a.range[1] ? b : a) : null;
     anatomySteps = [
@@ -395,26 +383,53 @@ function renderMsCard(part, paperKey) {
       top && top.criteria ? `Top level: ${esc(top.criteria.slice(0, 130))}${top.criteria.length > 130 ? '…' : ''}` : `Aim for the top level band with a clear, evidence-backed argument.`,
       `Structure: define key terms → build the argument → address counter-arguments → reach a justified conclusion.`
     ].filter(Boolean);
-    if (ms.indicative) {
+    if (ms && ms.indicative) {
       const snip = Object.values(ms.indicative).slice(0,3).map(v => esc(String(v).slice(0,60))).join('; ');
       anatomySteps.push(`Draw on indicative content: ${snip}…`);
     }
-  } else {
+  } else if (isExact) {
     anatomySteps = [
       `Write the precise answer — units, significant figures, and format all matter.`,
       `Show working where possible to earn method marks even if the final answer is wrong.`
     ];
+  } else if (totalMarks === 1) {
+    anatomySteps = [`State <strong>one</strong> clear, specific point. A single accurate sentence is enough.`];
+  } else if (totalMarks === 2) {
+    anatomySteps = [
+      `Make <strong>two</strong> distinct points — do not repeat the same idea in different words.`,
+      `Each point should be a separate, self-contained statement.`
+    ];
+  } else if (totalMarks <= 4) {
+    anatomySteps = [
+      `Make <strong>${totalMarks}</strong> separate, distinct points.`,
+      `Avoid repeating the same idea in different words — each sentence should earn a new mark.`,
+      `Use subject-specific vocabulary; vague statements rarely score.`
+    ];
+  } else if (totalMarks <= 6) {
+    anatomySteps = [
+      `Cover <strong>${totalMarks}</strong> separate points — breadth matters here.`,
+      `Each point should be a distinct idea, not a rephrasing of the previous one.`,
+      `Support key points with mechanisms or examples where the mark scheme requires them.`,
+      `Check the guidance — some marks may only be awarded in combination with another point.`
+    ];
+  } else {
+    anatomySteps = [
+      `This is an extended response worth <strong>${totalMarks}</strong> marks — structure your answer carefully.`,
+      `Open with a clear position or definition, then develop each point with evidence or mechanism.`,
+      `Balance your argument: present both sides before reaching a justified conclusion.`,
+      `Use subject-specific vocabulary throughout — precision is rewarded at the top band.`
+    ];
   }
   const anatomyHtml = anatomySteps.map((s,i) => `<div class="ms-anatomy-step"><div class="ms-anatomy-num">${i+1}</div><div class="ms-anatomy-text">${s}</div></div>`).join('');
 
-  // ── Keyword Mining ──
+  // ── Keyword Mining — only meaningful when mark scheme points exist ──
   let keywordsHtml = '';
-  if (msType === 'points') {
-    const kws = extractKeywords(ms.points || []);
+  if (ms && msType === 'points' && (ms.points || []).length) {
+    const kws = extractKeywords(ms.points);
     const chips = kws.map(kw => `<span class="ms-kw-chip">${esc(kw)}</span>`).join('');
     keywordsHtml = `<div class="ms-kw-list">${chips}</div><div style="font-size:12px;color:var(--muted);">These are the examiner's key terms — use them naturally in your answer to signal precision.</div>`;
   } else {
-    keywordsHtml = `<div style="font-size:13px;color:var(--muted);">Keyword mining applies to point-based mark schemes. For levels questions, focus on the level descriptors above.</div>`;
+    keywordsHtml = `<div style="font-size:13px;color:var(--muted2);">Keyword mining will appear once mark scheme points are added for this part.</div>`;
   }
 
   return `
@@ -424,7 +439,7 @@ function renderMsCard(part, paperKey) {
       ${allocHtml}
     </div>
     <div class="ms-section">
-      <div class="ms-section-title">Official Mark Scheme — click "+ Add note" to annotate any point</div>
+      <div class="ms-section-title">Official Mark Scheme${ms ? ' — click "+ Add note" to annotate any point' : ''}</div>
       ${schemeHtml}
     </div>
     <div class="ms-section">
@@ -568,7 +583,8 @@ function buildPicker(userSubs) {
       .replace(/\W+/g, '_').toLowerCase();
     // Render into msViewer
     const viewer = document.getElementById('msViewer');
-    const parts = paper.parts || [];
+    // Use paperParts() which flattens questions→parts and merges markSchemes map
+    const parts = window.paperParts ? window.paperParts(paper) : (paper.parts || []);
     const partsWithMs = parts.filter(p => p.markScheme);
     const pdfBtn = paper.msUrl
       ? `<a class="btn-ms-pdf" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Full MS PDF</a>`
