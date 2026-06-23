@@ -23430,7 +23430,290 @@ window.SUBJECTS = [
     name: 'Geography', icon: '🌍',
     boards: [
       { board: 'AQA', specCode: '7037',
-        officialPageUrl: 'https://www.aqa.org.uk/subjects/geography/a-level/geography-7037/assessment-resources' },
+        officialPageUrl: 'https://www.aqa.org.uk/subjects/geography/a-level/geography-7037/assessment-resources',
+        papers: [
+          // ── June 2023 ──────────────────────────────────────────────────
+          {
+            id: 'geog-aqa-7037-2023-p1',
+            year: 'June 2023',
+            paperName: 'Paper 1 — Physical Geography',
+            paperCode: '7037/1',
+            totalMarks: 120,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-70371-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-70371-MS-JUN23.PDF',
+            questions: [
+              {
+                number: 1,
+                scenario: 'SECTION A — Water and carbon cycles. Answer all parts of Question 1.',
+                parts: [
+                  { code: '01.1', prompt: 'Outline the purpose of a flood hydrograph.', marks: 4 },
+                  { code: '01.2', prompt: 'Figure 1 shows information about freshwater abstraction in Finland in 2020. Analyse the data shown in Figure 1.', marks: 6 },
+                  { code: '01.3', prompt: 'Figure 2 shows global proposed carbon sequestration rates compared to implemented carbon sequestration rates between 2000 and 2020. Using Figure 2 and your own knowledge, assess the challenges associated with carbon sequestration.', marks: 6 },
+                  { code: '01.4', prompt: 'Evaluate the potential impact of changes in the carbon budget on a tropical rainforest that you have studied.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 2,
+                scenario: 'SECTION B — Answer either Question 2 or Question 3 or Question 4.\n\nQuestion 2: Hot desert systems and landscapes.',
+                parts: [
+                  { code: '02.1', prompt: 'Outline weathering processes in hot deserts.', marks: 4 },
+                  { code: '02.2', prompt: 'Figure 3 shows the changing size of the Sahara Desert between 1980 and 1990 with a standard deviation calculation started. Complete the table and standard deviation calculation in Figure 3 and evaluate the usefulness of the technique in analysing this data.', marks: 6 },
+                  { code: '02.3', prompt: 'Figures 4a, 4b and 4c show information about a town in Egypt (El-Sheikh El-Shazli) prone to desert flash flooding — a satellite image of its location relative to wadis, sketch maps of the area flooded before and after increased urbanisation, and a photograph of the town. Using Figures 4a, 4b, 4c and your own knowledge, assess the relative importance of physical and human factors contributing to the flash flooding events in this area.', marks: 6 },
+                  { code: '02.4', prompt: 'With reference to a hot desert that you have studied, assess the relative importance of different sources of energy in landscape development.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'SECTION B — Answer either Question 2 or Question 3 or Question 4.\n\nQuestion 3: Coastal systems and landscapes.',
+                parts: [
+                  { code: '03.1', prompt: 'Outline processes of mass movement at the coastline.', marks: 4 },
+                  { code: '03.2', prompt: 'Figure 5 shows the variation in tidal ranges at various locations across the British Isles with a standard deviation calculation started. Complete the table and standard deviation calculation in Figure 5 and evaluate the usefulness of the technique in analysing this data.', marks: 6 },
+                  { code: '03.3', prompt: 'Figures 6a, 6b and 6c show a photograph of mangrove above and below the water line, the major benefits of mangrove for people, and the proportion of protected and unprotected mangrove in the ten largest nations with mangrove forests. Using Figures 6a, 6b, 6c and your own knowledge, assess the sustainability of mangrove forests in coastal management.', marks: 6 },
+                  { code: '03.4', prompt: 'To what extent do natural processes account for the changes in a local scale coastal landscape that you have studied?', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 4,
+                scenario: 'SECTION B — Answer either Question 2 or Question 3 or Question 4.\n\nQuestion 4: Glacial systems and landscapes.',
+                parts: [
+                  { code: '04.1', prompt: 'Outline the processes by which ice moves within a glacier.', marks: 4 },
+                  { code: '04.2', prompt: 'Figure 7 shows the minimum extent of Arctic ice between 2002 and 2015 with a standard deviation calculation started. Complete the table and standard deviation calculation in Figure 7 and evaluate the usefulness of the technique in analysing this data.', marks: 6 },
+                  { code: '04.3', prompt: 'Figure 8a shows trends in the onset of winter freeze-up in the Arctic Ocean and surrounding areas, 1979–2019. Figure 8b shows the change in the age of ice in the Arctic Ocean, 1985–2019. Using Figure 8a, Figure 8b and your own knowledge, assess the potential future for Arctic sea ice.', marks: 6 },
+                  { code: '04.4', prompt: 'Analyse the relative importance of erosion and deposition in the development of fluvioglacial landscapes.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'SECTION C — Answer either Question 5 or Question 6.\n\nQuestion 5: Hazards.',
+                parts: [
+                  { code: '05.1', prompt: 'Outline the concept of mitigation in relation to the management of hazards.', marks: 4 },
+                  { code: '05.2', prompt: 'Figure 9 shows information about wildfires in Australia. To what extent does Figure 9 show that wildfires are increasing in intensity and severity?', marks: 6 },
+                  { code: '05.3', prompt: 'Figure 10 shows information about areas at risk following a seismic event based upon underlying geology in Waikato District and the surrounding area, New Zealand. Using Figure 10 and your own knowledge, discuss likely approaches to seismic hazard management in this area.', marks: 9 },
+                  { code: '05.4', prompt: 'How far do you agree that mudflows are more hazardous than nuées ardentes?', marks: 9 },
+                  { code: '05.5', prompt: 'With reference to a hazardous location at a local scale, assess the importance of the physical processes and factors which have contributed to the scale and nature of the hazard.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 6,
+                scenario: 'SECTION C — Answer either Question 5 or Question 6.\n\nQuestion 6: Ecosystems under stress.',
+                parts: [
+                  { code: '06.1', prompt: 'Outline the concept of net primary production.', marks: 4 },
+                  { code: '06.2', prompt: 'Figure 11 shows data related to the number of endangered species across the Mediterranean Basin in 2017. Analyse the data shown in Figure 11.', marks: 6 },
+                  { code: '06.3', prompt: 'Figure 12 shows information about the Ainsdale Sand Dunes National Nature Reserve (NNR) in north-west England. Using Figure 12 and your own knowledge, assess the challenges in managing this local scale ecosystem.', marks: 9 },
+                  { code: '06.4', prompt: 'Assess the relative importance of different physical factors in a region experiencing ecological change.', marks: 9 },
+                  { code: '06.5', prompt: 'How far do you agree that the development pressures facing savanna grassland are more extreme than those facing tropical rainforest?', marks: 20, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'geog-aqa-7037-2023-p2',
+            year: 'June 2023',
+            paperName: 'Paper 2 — Human Geography',
+            paperCode: '7037/2',
+            totalMarks: 120,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-70372-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-70372-MS-JUN23.PDF',
+            questions: [
+              {
+                number: 1,
+                scenario: 'SECTION A — Global systems and global governance. Answer all parts of Question 1.',
+                parts: [
+                  { code: '01.1', prompt: 'Outline how patterns of global production and consumption reflect globalisation.', marks: 4 },
+                  { code: '01.2', prompt: 'Figure 1a shows the economic assets and liabilities of selected countries in 2016. Figure 1b shows the total debt in NEEs (Newly Emerging Economies) and LICs (Low Income Countries) between 1970 and 2019. Analyse the data shown in Figure 1a and Figure 1b.', marks: 6 },
+                  { code: '01.3', prompt: 'Figure 2a shows workers in a shoe factory in Vietnam supplying TNCs. Figure 2b shows a newspaper article about a workers\' protest in a TNC footwear factory in Vietnam in 2018. Using Figure 2a, Figure 2b and your own knowledge, assess the extent to which global systems cause injustices for people.', marks: 6 },
+                  { code: '01.4', prompt: '\'The impacts of changes in the carbon cycle represent the greatest threat to Antarctica and the Southern Ocean.\' How far do you agree with this view?', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 2,
+                scenario: 'SECTION B — Changing places. Answer all parts of Question 2.\n\nFigure 3a shows the age breakdown of population of council wards in Bristol in 2011 on a triangular graph, categorised by income deprivation level. Figure 3b provides data for Southville ward (14% aged 0–15, 74% aged 16–64, 12% aged 65+). Figure 4a shows the Albert Docks, Liverpool, as a working port in 1885. Figure 4b shows the Albert Docks, Liverpool, as a shopping and entertainment area in 2021.',
+                parts: [
+                  { code: '02.1', prompt: 'Outline how you used one data source to investigate lived experience in your distant place.', marks: 4 },
+                  { code: '02.2', prompt: 'Complete Figure 3a by plotting the data for Southville shown in Figure 3b and analyse the data shown in the completed Figure 3a.', marks: 6, kind: 'diagram' },
+                  { code: '02.3', prompt: 'Using Figure 4a, Figure 4b and your own knowledge, evaluate the role of past processes in creating present-day place meanings.', marks: 6 },
+                  { code: '02.4', prompt: 'You have studied either economic change or changing cultural characteristics. Assess the contrasting impact of one of these factors on the characters of your local and distant places.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'SECTION C — Answer either Question 3 or Question 4 or Question 5.\n\nQuestion 3: Contemporary urban environments.',
+                parts: [
+                  { code: '03.1', prompt: 'Outline how the rise of the service economy has led to urban change.', marks: 4 },
+                  { code: '03.2', prompt: 'Figure 5 shows the GDP per capita and the percentage of total population living in urban areas in selected countries in 2016. Analyse the data shown in Figure 5.', marks: 6 },
+                  { code: '03.3', prompt: 'Figure 6a shows photochemical pollution over Mexico City in 2013. Figure 6b shows a 2016 report about Mexico City\'s pollution reduction policies. Using Figure 6a, Figure 6b and your own knowledge, evaluate the success of pollution reduction policies in cities such as Mexico City.', marks: 9 },
+                  { code: '03.4', prompt: '\'The success of recycling schemes to reduce waste in urban areas depends on the economic characteristics and attitudes of the population.\' How far do you agree with this view?', marks: 9 },
+                  { code: '03.5', prompt: 'Assess the relative importance of physical and human factors in creating patterns of economic inequality in contrasting urban areas you have studied.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 4,
+                scenario: 'SECTION C — Answer either Question 3 or Question 4 or Question 5.\n\nQuestion 4: Population and the environment.\n\nFigure 8 shows some predicted impacts of global climate change across water, ecosystems, food and coasts at different temperature increases (0–5°C above 1980–1999 average).',
+                parts: [
+                  { code: '04.1', prompt: 'Outline why salinisation is a problem for agriculture.', marks: 4 },
+                  { code: '04.2', prompt: 'Figure 7 shows population change in the UK between 2017 and 2018. Analyse the data shown in Figure 7.', marks: 6 },
+                  { code: '04.3', prompt: 'Using Figure 8 and your own knowledge, discuss the possible health impacts of global climate change.', marks: 9 },
+                  { code: '04.4', prompt: 'To what extent is epidemiological transition the most important influence on the global distribution of a non-communicable disease you have studied?', marks: 9 },
+                  { code: '04.5', prompt: 'Assess the relative importance of the physical environment and socio-economic factors in determining the health characteristics of a local area you have studied.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'SECTION C — Answer either Question 3 or Question 4 or Question 5.\n\nQuestion 5: Resource security.',
+                parts: [
+                  { code: '05.1', prompt: 'Outline the concept of the resource frontier.', marks: 4 },
+                  { code: '05.2', prompt: 'Figure 9a shows the percentage land area affected by drought in Montana, USA, between May 2017 and January 2018. Figure 9b shows the energy sources of electricity generation in Montana, 2012–2017. Analyse the data shown in Figure 9a and Figure 9b.', marks: 6 },
+                  { code: '05.3', prompt: 'Figure 10a shows information produced by West Cumbria Mining about a proposal to mine coal in the area. Figure 10b shows a local protest about the proposal to open a coal mine in West Cumbria. Using Figure 10a, Figure 10b and your own knowledge, discuss why there may be conflict between resource security and human welfare.', marks: 9 },
+                  { code: '05.4', prompt: 'With reference to one mineral ore, assess the relationship between demand for the ore and the end uses of the ore.', marks: 9 },
+                  { code: '05.5', prompt: '\'Strategies to increase water supply can never be sustainable as they always result in negative consequences somewhere else.\' To what extent do you agree with this view?', marks: 20, extended: true }
+                ]
+              }
+            ]
+          },
+          // ── June 2022 ──────────────────────────────────────────────────
+          {
+            id: 'geog-aqa-7037-2022-p1',
+            year: 'June 2022',
+            paperName: 'Paper 1 — Physical Geography',
+            paperCode: '7037/1',
+            totalMarks: 120,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-70371-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-70371-MS-JUN22.PDF',
+            questions: [
+              {
+                number: 1,
+                scenario: 'SECTION A — Water and carbon cycles. Answer all parts of Question 1.',
+                parts: [
+                  { code: '01.1', prompt: 'Explain the concept of negative feedback within the carbon cycle.', marks: 4 },
+                  { code: '01.2', prompt: 'Figure 1 shows changes in the terrestrial water system in response to human activity and climate change between 2012 and 2016. Analyse the changes in the terrestrial water system shown in Figure 1.', marks: 6 },
+                  { code: '01.3', prompt: 'Figure 2 shows regional changes in forest cover between 1990 and 2010. Using Figure 2 and your own knowledge, assess the challenges arising out of the changing forest cover.', marks: 6 },
+                  { code: '01.4', prompt: '\'Human activity needs to focus more on adapting to the expected negative impacts of climate change than on taking measures to restore atmospheric carbon to pre-industrial levels.\' How far do you agree with this view?', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 2,
+                scenario: 'SECTION B — Answer either Question 2 or Question 3 or Question 4.\n\nQuestion 2: Hot desert systems and landscapes.\n\nFigure 4 shows a landscape feature in the White Desert in western Egypt. Note: The White Desert extends over 300 km² of the Egyptian Sahara Desert. Sedimentary rocks formed from oceanic deposition in an earlier geological era are now subject to hot desert conditions. Mushroom-shaped formations can be as high as 4.5 metres.',
+                parts: [
+                  { code: '02.1', prompt: 'Outline the sources of water in deserts.', marks: 4 },
+                  { code: '02.2', prompt: 'Figure 3a shows annual mean temperatures in Australia in 2018 compared to historical temperature observations. Figure 3b shows annual rainfall in Australia in 2018 compared to historical rainfall observations. Analyse the extent of the relationships shown in Figure 3a and Figure 3b.', marks: 6 },
+                  { code: '02.3', prompt: 'Using Figure 4 and your own knowledge, assess the role of wind in the development of this landscape.', marks: 6 },
+                  { code: '02.4', prompt: 'How far can an understanding of systems in physical geography help to mitigate against the expansion of deserts into semi-arid areas?', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'SECTION B — Answer either Question 2 or Question 3 or Question 4.\n\nQuestion 3: Coastal systems and landscapes.\n\nFigure 6 is a photograph of part of the Mersey Estuary at Runcorn, Cheshire in 2019. Note: Runcorn lies about 25 km from the sea on the south bank of the tidal estuary of the River Mersey where the tidal range can be as high as 9 metres. Photograph taken at low tide looking towards the north bank.',
+                parts: [
+                  { code: '03.1', prompt: 'Outline factors leading to the formation of fjords.', marks: 4 },
+                  { code: '03.2', prompt: 'Figure 5a shows geographical variation in the 1992–2014 global sea level change using satellite data. Figure 5b shows geographical variation in the 1992–2019 global sea level change using another source of satellite data. Using only Figures 5a and 5b, evaluate the relative usefulness of these sources in demonstrating eustatic sea level change.', marks: 6 },
+                  { code: '03.3', prompt: 'Using Figure 6 and your own knowledge, assess the view that deposition is the most important factor in the development of this landscape.', marks: 6 },
+                  { code: '03.4', prompt: 'With reference to a coastal landscape from beyond the UK, assess the role of human intervention in shaping the physical environment.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 4,
+                scenario: 'SECTION B — Answer either Question 2 or Question 3 or Question 4.\n\nQuestion 4: Glacial systems and landscapes.\n\nFigure 8 shows a glacial landscape feature, Striding Edge, in the Lake District National Park, England. Note: Striding Edge runs for several kilometres from Helvellyn Peak (950 m) in the west towards Ullswater in the east. To the north is Red Tarn, a large corrie lake. The predominant rock type is igneous.',
+                parts: [
+                  { code: '04.1', prompt: 'Outline processes leading to the formation of kames.', marks: 4 },
+                  { code: '04.2', prompt: 'Figure 7a shows the distribution, size and type of selected Himalayan glaciers. Figure 7b shows the change in mass balance of the selected glaciers between 2000 and 2016. Analyse the data shown in Figures 7a and 7b.', marks: 6 },
+                  { code: '04.3', prompt: 'Using Figure 8 and your own knowledge, assess the role of erosion in the development of this landscape feature.', marks: 6 },
+                  { code: '04.4', prompt: '\'Human activity is having a devastating impact upon cold environments with little evidence of a sustainable future emerging.\' To what extent do you agree with this view?', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'SECTION C — Answer either Question 5 or Question 6.\n\nQuestion 5: Hazards.\n\nFigures 10a, 10b and 10c show data related to coastal flooding risk in Louisiana, USA, based upon a 2017 master plan for a 1 in 100 year extreme flood event.',
+                parts: [
+                  { code: '05.1', prompt: 'Outline factors which lead to the formation of mudflows, a volcanic hazard.', marks: 4 },
+                  { code: '05.2', prompt: 'Figure 9 shows responses by some companies and individuals to the Haiti earthquake, 2010. Analyse the data shown in Figure 9.', marks: 6 },
+                  { code: '05.3', prompt: 'Using Figures 10a, 10b, 10c and your own knowledge, assess the challenges in managing flood risk associated with tropical storms in Louisiana.', marks: 9 },
+                  { code: '05.4', prompt: 'Assess the usefulness of prediction in the management of wildfire.', marks: 9 },
+                  { code: '05.5', prompt: '\'Seismic hazards will always be harder to manage than volcanic hazards due to their unpredictability and scale.\' To what extent do you agree with this view?', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 6,
+                scenario: 'SECTION C — Answer either Question 5 or Question 6.\n\nQuestion 6: Ecosystems under stress.\n\nFigure 11a shows the cause of deforestation in equatorial west Africa, 2000–2014. Figure 11b shows national estimates of forest loss by area and cause in equatorial west Africa, 2000–2014. Figure 12 shows a range of issues facing game parks and reserves in Kenya, east Africa.',
+                parts: [
+                  { code: '06.1', prompt: 'Outline the concept of climatic climax in vegetation succession.', marks: 4 },
+                  { code: '06.2', prompt: 'Analyse the data shown in Figure 11a and Figure 11b.', marks: 6 },
+                  { code: '06.3', prompt: 'Using Figure 12 and your own knowledge, assess the implications of this data for sustainability in areas of savanna grassland in east Africa.', marks: 9 },
+                  { code: '06.4', prompt: 'Analyse the interconnections between climate, vegetation and soils in the development of temperate deciduous woodland.', marks: 9 },
+                  { code: '06.5', prompt: 'With reference to an ecosystem at a local scale, evaluate the extent to which management has created a viable future for the area.', marks: 20, extended: true }
+                ]
+              }
+            ]
+          },
+          {
+            id: 'geog-aqa-7037-2022-p2',
+            year: 'June 2022',
+            paperName: 'Paper 2 — Human Geography',
+            paperCode: '7037/2',
+            totalMarks: 120,
+            durationMins: 150,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-70372-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-70372-MS-JUN22.PDF',
+            questions: [
+              {
+                number: 1,
+                scenario: 'SECTION A — Global systems and global governance. Answer all parts of Question 1.',
+                parts: [
+                  { code: '01.1', prompt: 'Outline threats to Antarctica from fishing and whaling.', marks: 4 },
+                  { code: '01.2', prompt: 'Figure 1a shows the change in Antarctic ice and the relative contribution to sea-level change between 1992 and 2017. Figure 1b shows the distribution of the changing ice extent across Antarctica in 2013. Analyse the data shown in Figure 1a and Figure 1b.', marks: 6 },
+                  { code: '01.3', prompt: 'Figure 2 shows a container ship in a port on the island of Heimaey, Iceland. Using Figure 2 and your own knowledge, assess the role of transport as a factor in globalisation.', marks: 6 },
+                  { code: '01.4', prompt: 'Assess the impacts of world trade in a food commodity and/or a manufactured product on your life and the lives of people across the globe.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 2,
+                scenario: 'SECTION B — Changing places. Answer all parts of Question 2.\n\nFigure 3a is a map of Newton Abbot, a town in Devon, in 1946. Figure 3b is a satellite image of Newton Abbot in 2019. Figure 4 shows a painting of Manchester in 1946 by LS Lowry.',
+                parts: [
+                  { code: '02.1', prompt: 'Explain the difference between experienced places and media places.', marks: 4 },
+                  { code: '02.2', prompt: 'Analyse the changes shown between Figure 3a and Figure 3b.', marks: 6 },
+                  { code: '02.3', prompt: 'Using Figure 4 and your own knowledge, examine endogenous factors contributing to the character of this place.', marks: 6 },
+                  { code: '02.4', prompt: '\'Place meaning and identity are simply a reflection of past and present socio-economic characteristics and no attempt by external agencies at rebranding can change this.\' To what extent do you agree with this viewpoint?', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 3,
+                scenario: 'SECTION C — Answer either Question 3 or Question 4 or Question 5.\n\nQuestion 3: Contemporary urban environments.\n\nFigure 5a shows information about a river restoration project on the River Alt in Knowsley, Merseyside (1996), aimed to improve water quality and increase biodiversity. Figure 5b shows water quality and biodiversity in the River Alt between 1995 and 2006.',
+                parts: [
+                  { code: '03.1', prompt: 'Explain why thunderstorms are common in urban areas.', marks: 4 },
+                  { code: '03.2', prompt: 'Analyse the changes brought about by river restoration shown in Figure 5a and Figure 5b.', marks: 6 },
+                  { code: '03.3', prompt: 'With reference to one urban policy in Britain since 1979, evaluate its success in contributing to urban resurgence.', marks: 9 },
+                  { code: '03.4', prompt: 'Assess the effects on the carbon cycle of incineration and landfill approaches to waste disposal in urban areas.', marks: 9 },
+                  { code: '03.5', prompt: 'How far do you agree that new urban landscapes such as fortress developments, heritage quarters and edge cities have intensified issues associated with economic inequality and social segregation?', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 4,
+                scenario: 'SECTION C — Answer either Question 3 or Question 4 or Question 5.\n\nQuestion 4: Population and the environment.\n\nFigure 6 shows information about the ecological footprint, Human Development Index (HDI) and Happy Planet Index in selected countries for 2016.',
+                parts: [
+                  { code: '04.1', prompt: 'Outline the concept of Malthusian perspectives on population growth.', marks: 4 },
+                  { code: '04.2', prompt: 'Analyse the data shown in Figure 6.', marks: 6 },
+                  { code: '04.3', prompt: 'With reference to two climatic types you have studied, assess the extent to which precipitation influences human activities.', marks: 9 },
+                  { code: '04.4', prompt: 'To what extent do you agree that global governance is necessary to ensure food security?', marks: 9 },
+                  { code: '04.5', prompt: 'Assess the relative importance of human and physical factors in creating global patterns of health and morbidity.', marks: 20, extended: true }
+                ]
+              },
+              {
+                number: 5,
+                scenario: 'SECTION C — Answer either Question 3 or Question 4 or Question 5.\n\nQuestion 5: Resource security.\n\nFigure 7a shows the amount of nuclear waste being stored at nuclear reactor sites in the USA in 2010. Figure 7b shows nuclear energy use and the waste fund contribution in selected states in 2014.',
+                parts: [
+                  { code: '05.1', prompt: 'Outline the difference between indicated and inferred resources.', marks: 4 },
+                  { code: '05.2', prompt: 'Analyse the data shown in Figure 7a and Figure 7b.', marks: 6 },
+                  { code: '05.3', prompt: 'To what extent does the role of one specified mineral ore in global commerce and industry lead to sustainability issues?', marks: 9 },
+                  { code: '05.4', prompt: 'Assess the extent to which changes in the carbon cycle can lead to water stress.', marks: 9 },
+                  { code: '05.5', prompt: '\'Transnational corporations (TNCs) care far more about their own profits than the environmental impacts of their activities.\' With reference to energy production and distribution, how far do you agree with this statement?', marks: 20, extended: true }
+                ]
+              }
+            ]
+          }
+        ]
+      },
       { board: 'Edexcel (Pearson)', specCode: '9GE0',
         officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/geography-2016.html' },
       { board: 'Eduqas (WJEC)', specCode: 'A110QS',
