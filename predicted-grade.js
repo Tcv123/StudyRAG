@@ -182,7 +182,6 @@
     opts = opts || {};
     const col   = gradeColour(prediction.grade);
     const dim   = prediction.confidence === 'low';
-    const qmark = dim ? '<span style="font-size:14px;font-weight:400;opacity:0.55;margin-left:2px;">?</span>' : '';
     const ts    = targetStatus(prediction, opts.target, opts.level);
     const parts = [`${prediction.masteryPct}% mastery`];
     if (prediction.ragScore !== null && prediction.ragScore !== undefined) parts.push(`Diagnostic ${prediction.ragScore}%`);
@@ -191,13 +190,13 @@
 
     if (opts.inline) {
       // Small horizontal pill that sits inline with the grade/diagnostic chips.
-      return `<span title="${tip}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:${col};background:${col}14;border:1px solid ${col}44;padding:2px 9px;border-radius:20px;cursor:help;opacity:${dim ? '0.7' : '1'};white-space:nowrap;">Predicted <span style="font-size:13px;font-weight:800;letter-spacing:-0.01em;">${prediction.grade}${qmark}</span>${ts ? `<span style="font-weight:700;color:${ts.colour};">· ${ts.short}</span>` : ''}</span>`;
+      return `<span title="${tip}" style="display:inline-flex;align-items:center;gap:5px;font-size:11px;font-weight:700;color:${col};background:${col}14;border:1px solid ${col}44;padding:2px 9px;border-radius:20px;cursor:help;opacity:${dim ? '0.7' : '1'};white-space:nowrap;">Predicted <span style="font-size:13px;font-weight:800;letter-spacing:-0.01em;">${prediction.grade}</span>${ts ? `<span style="font-weight:700;color:${ts.colour};">· ${ts.short}</span>` : ''}</span>`;
     }
 
     if (opts.compact) {
       return `<div title="${tip}" style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1px;background:${col}12;border:1.5px solid ${col}40;border-radius:10px;padding:6px 14px;min-width:72px;cursor:help;opacity:${dim ? '0.72' : '1'};">
         <span style="font-size:9px;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:${col}CC;">Predicted</span>
-        <span style="font-size:20px;font-weight:800;color:${col};line-height:1;letter-spacing:-0.02em;">${prediction.grade}${qmark}</span>
+        <span style="font-size:20px;font-weight:800;color:${col};line-height:1;letter-spacing:-0.02em;">${prediction.grade}</span>
         ${ts ? `<span style="font-size:9px;font-weight:700;color:${ts.colour};">${ts.short}</span>` : `<span style="font-size:9px;font-weight:600;color:var(--muted,#6B7280);">${prediction.masteryPct}% mastery</span>`}
       </div>`;
     }
@@ -209,7 +208,7 @@
         <span style="font-size:12px;font-weight:600;color:${col}CC;white-space:nowrap;">Predicted grade</span>
         ${ts ? `<span style="font-size:10px;font-weight:700;color:${ts.colour};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${ts.short}</span>` : ''}
       </span>
-      <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;white-space:nowrap;">${prediction.grade}${qmark}</span>
+      <span style="font-size:20px;font-weight:800;color:${col};letter-spacing:-0.01em;line-height:1;white-space:nowrap;">${prediction.grade}</span>
     </div>`;
   }
 
