@@ -568,7 +568,8 @@ function buildPicker(userSubs) {
     const sorted = entry.papers
       .map((p, pi) => ({ p, pi }))
       .sort((a, b) => {
-        const yearA = parseInt(a.p.year) || 0, yearB = parseInt(b.p.year) || 0;
+        const yearA = parseInt((a.p.year || '').match(/\d{4}/)?.[0]) || 0,
+              yearB = parseInt((b.p.year || '').match(/\d{4}/)?.[0]) || 0;
         if (yearA !== yearB) return yearA - yearB;
         return (a.p.paperCode || '').localeCompare(b.p.paperCode || '');
       });
