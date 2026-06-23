@@ -76,7 +76,7 @@ const ALL_MEDALS = [
   // ── Subject Firsts ──
   { id: 'first_cs',          icon: '💻', name: 'Code Breaker',      desc: 'Complete your first Computer Science diagnostic', cat: 'Subject Firsts' },
   { id: 'first_physics',     icon: '⚛️', name: 'Force Awakens',     desc: 'Complete your first Physics diagnostic',    cat: 'Subject Firsts' },
-  { id: 'first_economics',   icon: '💰', name: 'Market Entry',      desc: 'Complete your first Economics diagnostic',  cat: 'Subject Firsts' },
+  { id: 'first_economics',   icon: '📈', name: 'Market Entry',      desc: 'Complete your first Economics diagnostic',  cat: 'Subject Firsts' },
   { id: 'first_chemistry',   icon: '🧪', name: 'First Reaction',    desc: 'Complete your first Chemistry diagnostic',  cat: 'Subject Firsts' },
   { id: 'first_biology',     icon: '🧬', name: 'Life Begins',       desc: 'Complete your first Biology diagnostic',    cat: 'Subject Firsts' },
   { id: 'first_geography',   icon: '🌍', name: 'Explorer',          desc: 'Complete your first Geography diagnostic',  cat: 'Subject Firsts' },
