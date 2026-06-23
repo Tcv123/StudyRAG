@@ -565,7 +565,14 @@ function buildPicker(userSubs) {
     pickPaper.disabled = true;
     if (fi === '') return;
     const entry = filtered[parseInt(fi)];
-    entry.papers.forEach((p, pi) => {
+    const sorted = entry.papers
+      .map((p, pi) => ({ p, pi }))
+      .sort((a, b) => {
+        const yearA = parseInt(a.p.year) || 0, yearB = parseInt(b.p.year) || 0;
+        if (yearA !== yearB) return yearA - yearB;
+        return (a.p.paperCode || '').localeCompare(b.p.paperCode || '');
+      });
+    sorted.forEach(({ p, pi }) => {
       const o = document.createElement('option');
       o.value = pi;
       const parts = [p.year, p.paperCode, p.title || p.label].filter(Boolean);
