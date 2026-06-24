@@ -90,6 +90,11 @@
     .part-row-right { display: flex; align-items: center; gap: 8px; flex-shrink: 0; }
     .part-marks-badge { background: var(--accent-dim); color: var(--accent-dark); border-radius: 6px; padding: 3px 9px; font-size: 12px; font-weight: 700; white-space: nowrap; }
     .part-ms-type { font-size: 11px; color: var(--muted2); font-weight: 600; text-transform: uppercase; letter-spacing: 0.05em; }
+    .ms-legend { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 18px; margin-bottom: 20px; display: flex; flex-direction: column; gap: 9px; }
+    .ms-legend-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted2); }
+    .ms-legend-item { font-size: 13px; color: var(--muted); line-height: 1.5; display: flex; gap: 10px; align-items: baseline; }
+    .ms-legend .part-ms-type { flex: 0 0 auto; min-width: 54px; text-align: center; background: var(--surface2); border: 1px solid var(--border); border-radius: 5px; padding: 3px 8px; color: var(--text); }
+    .ms-legend .part-ms-type.type-exact { color: var(--accent-dark); border-color: rgba(37,99,235,0.3); background: var(--accent-dim); }
     .part-arrow { color: var(--muted2); font-size: 12px; transition: transform 0.2s; display: inline-block; }
     .part-row.open .part-arrow { transform: rotate(180deg); }
     .part-row-body { display: none; border-top: 1px solid var(--border); padding: 20px 22px; background: var(--surface2); }
@@ -473,10 +478,17 @@ function renderMsCard(part, paperKey, paperId) {
     ${kws.map(kw => `<span class="ms-kw-chip">${esc(kw)}</span>`).join('')}
   </div>` : '';
 
+  // ── Examiner note (orange) — marking guidance like "max 1 advantage +
+  //    max 1 disadvantage", "award up to 6 marks total", etc. ──
+  const guidanceHtml = (ms && ms.guidance)
+    ? `<div class="ms-guidance">Examiner note: ${esc(ms.guidance)}</div>`
+    : '';
+
   return `
     ${promptHtml}
     ${modelAnswerHtml}
-    ${keyTermsHtml}`;
+    ${keyTermsHtml}
+    ${guidanceHtml}`;
 }
 
 function renderPaper(paper) {
@@ -690,6 +702,12 @@ function buildPicker(userSubs) {
         </div>
         ${qpBtn}
         ${pdfBtn}
+      </div>
+      <div class="ms-legend">
+        <span class="ms-legend-label">What the tags mean</span>
+        <span class="ms-legend-item"><span class="part-ms-type">Points</span> One mark per valid point, up to the maximum. The examiner note (orange) says how many are needed, e.g. "max 1 advantage + max 1 disadvantage".</span>
+        <span class="ms-legend-item"><span class="part-ms-type">Levels</span> Banded, level-of-response marking — the whole answer is judged against level descriptors and placed in a band.</span>
+        <span class="ms-legend-item"><span class="part-ms-type type-exact">Exact</span> A specific required answer (e.g. a value or calculation) — marks only for the correct response.</span>
       </div>
       <div class="questions-list">${questionsHtml}</div>`;
   });
