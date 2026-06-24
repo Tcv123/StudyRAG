@@ -377,9 +377,11 @@ function renderMsCard(part, paperKey, paperId) {
   window._msPartRegistry[uid] = { part, paperKey, paperId };
 
   const customPts  = !ms ? getCustomPoints(paperKey, partCode) : [];
-  // Pre-written model answer takes priority over localStorage
-  const preWritten = paperId && window.CS_MODEL_ANSWERS
-    ? (window.CS_MODEL_ANSWERS[paperId + '::' + partCode] || '')
+  // Pre-written model answer takes priority over localStorage.
+  // Look across every subject's model-answer map (CS, Maths, …).
+  const preWritten = paperId
+    ? (((window.CS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.MATHS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
     : '';
   const modelAns   = preWritten || getModelAnswer(paperKey, partCode);
   const officialPts = (ms && msType === 'points') ? (ms.points || []) : [];
@@ -640,6 +642,10 @@ function buildPicker(userSubs) {
     const entry = filtered[parseInt(fi)];
     const paper = entry.papers[parseInt(pi)];
     if (!paper) return;
+    // Maths papers carry their questions + mark schemes in a side file
+    // (papers-config.js lists them print-only). Merge them in on demand.
+    const mq = window.MATHS_QUESTIONS && window.MATHS_QUESTIONS[paper.id];
+    if (mq) { paper.questions = mq.questions; paper.markSchemes = mq.markSchemes; }
     // Stable key for localStorage notes: subject + board + paper title
     const paperKey = (entry.subjectName + '_' + entry.board + '_' + (paper.title || paper.label || pi))
       .replace(/\W+/g, '_').toLowerCase();
@@ -752,15 +758,18 @@ function buildPicker(userSubs) {
       document.head.appendChild(s);
     });
   }
-  if (!window.CS_MODEL_ANSWERS) {
-    await new Promise((resolve) => {
-      const s = document.createElement('script');
-      s.src = 'model-answers-cs.js';
-      s.onload = resolve;
-      s.onerror = resolve; // non-fatal
-      document.head.appendChild(s);
-    });
-  }
+  // Load every subject's questions + pre-written model answers (non-fatal if missing).
+  await Promise.all([
+    ['CS_MODEL_ANSWERS', 'model-answers-cs.js'],
+    ['MATHS_QUESTIONS', 'maths-questions.js'],
+    ['MATHS_MODEL_ANSWERS', 'model-answers-maths.js'],
+  ].map(([flag, src]) => window[flag] ? Promise.resolve() : new Promise((resolve) => {
+    const s = document.createElement('script');
+    s.src = src;
+    s.onload = resolve;
+    s.onerror = resolve; // non-fatal
+    document.head.appendChild(s);
+  })));
   // Fetch the user's chosen subjects and boards
   const { data: userSubs } = await supabaseClient
     .from('user_subjects').select('subject, exam_board').eq('user_id', user.id);
