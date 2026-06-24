@@ -612,6 +612,1369 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-aqa-7357-2023-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "The graph of y = ax² + bx + c has roots x = 2 and x = 5 (an upward-opening parabola crossing the x-axis at x = 2 and x = 5).",
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "State the set of values of x which satisfy ax² + bx + c > 0\nTick (✓) one box.\n• {x : x < 2} ∪ {x : x > 5}\n• {x : 0 < x < 2} ∩ {x : x > 5}\n• {x : 2 < x < 5}\n• {x : 2 > x > 5}",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "It is given that ∫₀⁶ f(x) dx = 20 and ∫₃⁶ f(x) dx = −10\nFind the value of ∫₀³ f(x) dx\nCircle your answer:  −30   −10   10   30",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "A circle has equation (x − 5)² + (y − 13)² = 16\nFind the radius of the circle.\nCircle your answer:  4   12   16   256",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A curve has equation y = x²/8 + 4√x",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find an expression for dy/dx",
+      "marks": 3
+     },
+     {
+      "code": "4(b)",
+      "prompt": "The point P with coordinates (4, 10) lies on the curve.\nFind an equation of the tangent to the curve at the point P",
+      "marks": 2
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Show that the curve has no stationary points.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "Ziad is training to become a long-distance swimmer. He trains every day by swimming lengths at his local pool. The length of the pool is 25 metres. Each day he increases the number of lengths that he swims by four. On his first day of training, Ziad swims 10 lengths of the pool.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Write down an expression for the number of lengths Ziad will swim on his nth day of training.",
+      "marks": 1
+     },
+     {
+      "code": "5(b)(i)",
+      "prompt": "Ziad’s target is to be able to swim at least 3000 metres in one day.\nDetermine the minimum number of days he will need to train to reach his target.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)(ii)",
+      "prompt": "Ziad’s coach claims that when he reaches his target he will have covered a total distance of over 50 000 metres.\nDetermine if Ziad’s coach is correct.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "Victoria, a market researcher, believes the average weekly value, £V million, of online grocery sales in the UK has grown exponentially since 2009. Victoria models the incomplete data, shown in the table, using the formula V = a × b^(N) where N is the number of years since 2009 and a and b are constants.\nTable (Year : Average Weekly Sales £V million): 2009 : 56.4 ; 2011 : 74.5 ; 2012 : 86.9 ; 2013 : 97.7 ; 2014 : 109.3 ; 2016 : 141.9.\nTo do this she plots a graph of log₁₀V against N and draws a line of best fit. The equation of Victoria’s line of best fit is log₁₀V = 0.057N + 1.76",
+    "parts": [
+     {
+      "code": "6(a)(i)",
+      "prompt": "Use the equation of Victoria’s line of best fit to show that, correct to three significant figures, a = 57.5",
+      "marks": 1
+     },
+     {
+      "code": "6(a)(ii)",
+      "prompt": "Use the equation of Victoria’s line of best fit to find the value of b\nGive your answer to three significant figures.",
+      "marks": 1
+     },
+     {
+      "code": "6(b)",
+      "prompt": "According to Victoria’s model, state the yearly percentage increase in the average weekly value of online grocery sales.",
+      "marks": 1
+     },
+     {
+      "code": "6(c)(i)",
+      "prompt": "Use Victoria’s model to predict the average weekly value of online grocery sales in 2025.",
+      "marks": 2
+     },
+     {
+      "code": "6(c)(ii)",
+      "prompt": "Explain why the prediction made in part (c)(i) may be unreliable.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "The functions f and g are defined by f(x) = √(10 − 2x) for x ≤ 5 and g(x) = 1/x for x ≠ 0. The function h has maximum possible domain and is defined by h(x) = gf(x).",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Find an expression for h(x)",
+      "marks": 1
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the domain of h",
+      "marks": 1
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Show that h⁻¹(x) = 5 − 1/(2x²)",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Given that cos θ ≠ ±1, prove the identity\n1/(1 − cos θ) + 1/(1 + cos θ) ≡ 2 cosec² θ",
+      "marks": 4
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Hence, find the set of values of A for which the equation\n1/(1 − cos θ) + 1/(1 + cos θ) = A\nhas real solutions.\nFully justify your answer.",
+      "marks": 3
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Given that θ is obtuse and\n1/(1 − cos θ) + 1/(1 + cos θ) = 16\nfind the exact value of cot θ",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the first three terms, in ascending powers of x, of the binomial expansion of (1 + x)^(−1/2)",
+      "marks": 2
+     },
+     {
+      "code": "9(b)",
+      "prompt": "A student substitutes x = 2 into the expansion of (1 + x)^(−1/2) to find an approximation for 1/√3\nExplain the mistake in the student’s approach.",
+      "marks": 1
+     },
+     {
+      "code": "9(c)",
+      "prompt": "By substituting x = −1/4 in your expansion for (1 + x)^(−1/2) find an approximation for 1/√3\nGive your answer to three significant figures.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Expand and simplify (a − b)²",
+      "marks": 1
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Peter thinks that the sum of any rational number and its reciprocal is always greater than 2\nPeter checks two examples:\n2/3 + 3/2 = 2.16̇\n2 + 1/2 = 2.5\nUse a counter example to show that Peter is incorrect.",
+      "marks": 2
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Given that a and b are distinct positive numbers, use proof by contradiction to prove that a/b + b/a > 2",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "A decoration is hanging freely from a fixed point on a ceiling. The decoration has a mass of 0.2 kilograms. The decoration is hanging by a light, inextensible wire. The wire is 0.1 metres long.\nFind the tension in the wire.\nCircle your answer:  0.02 N   0.02g N   0.2 N   0.2g N",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "A particle moves in a straight line. After the first 4 seconds of its motion, the displacement of the particle from its initial position is 0 metres. One of the graphs on the opposite page shows the velocity v m s⁻¹ of the particle after time t seconds of its motion.\nIdentify the correct graph. Tick (✓) one box. (The four velocity–time graphs over 0 ≤ t ≤ 4 are: (1) a straight line from v=5 at t=0 down to v=0 at t=4; (2) a line up from 0 to 5 at t=2 then down to −5 at t=4; (3) a line down from 5 at t=0 to −5 at t=2 then up to 5 at t=4; (4) a line down from 5 at t=0 to 0 at t=2 then up to 5 at t=4.)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A ball falls freely towards the Earth. The ball passes through two different fixed points M and N before reaching the Earth’s surface. At M the ball has velocity u m s⁻¹. At N the ball has velocity 3u m s⁻¹. It can be assumed that: the motion is due to gravitational force only; the acceleration due to gravity remains constant throughout.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Show that the time taken for the ball to travel from M to N is 2u/g seconds.",
+      "marks": 2
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Point M is h metres above the Earth.\nShow that h > 4u²/g\nFully justify your answer.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A car has an initial velocity of 1 m s⁻¹. The car is moving in a straight line. The acceleration a m s⁻² of the car at time t seconds is given by a = 3kt² − 2kt + 1 where k is a constant. When t = 3 the car has a velocity of 10 m s⁻¹.",
+    "parts": [
+     {
+      "code": "14",
+      "prompt": "Show that k = 1/3",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "In this question use g = 9.8 m s⁻². A particle, Q, moves in a straight line across a rough horizontal surface. A horizontal driving force of magnitude D newtons acts on Q. Q moves with a constant acceleration of 0.91 m s⁻². Q has a weight of 0.65 N. The only resistance force acting on Q is due to friction. The coefficient of friction between Q and the surface is 0.4",
+    "parts": [
+     {
+      "code": "15",
+      "prompt": "Find D",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "A particle moves under the action of two forces, F₁ and F₂. It is given that F₁ = (1.6i − 5j) N and F₂ = (ki + 5kj) N where k is a constant. The acceleration of the particle is (3.2i + 12j) m s⁻².",
+    "parts": [
+     {
+      "code": "16",
+      "prompt": "Find k",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "A uniform plank PQ, of length 7 metres, lies horizontally at rest, in equilibrium, on two fixed supports at points X and Y. The distance PX is 1.4 metres and the distance QY is 2 metres (X is 1.4 m from end P, Y is 2 m from end Q).",
+    "parts": [
+     {
+      "code": "17(a)(i)",
+      "prompt": "The reaction force on the plank at X is 4g newtons.\nShow that the mass of the plank is 9.6 kilograms.",
+      "marks": 2
+     },
+     {
+      "code": "17(a)(ii)",
+      "prompt": "Find the reaction force, in terms of g, on the plank at Y",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "The support at Y is moved so that the distance QY = 1.4 metres. The plank remains horizontally at rest in equilibrium. It is claimed that the reaction force at Y remains unchanged.\nExplain, with a reason, whether this claim is correct.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "In this question i and j are perpendicular unit vectors representing due east and due north respectively. A particle, T, is moving on a plane at a constant speed. The path followed by T makes the exact shape of a triangle ABC. T moves around ABC in an anticlockwise direction (from A to B to C and back to A). On its journey from A to B the velocity vector of T is (3i + √3 j) m s⁻¹.",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Find the speed of T as it moves from A to B",
+      "marks": 1
+     },
+     {
+      "code": "18(b)",
+      "prompt": "On its journey from B to C the velocity vector of T is (−3i + √3 j) m s⁻¹.\nShow that the acute angle ABC = 60°",
+      "marks": 2
+     },
+     {
+      "code": "18(c)",
+      "prompt": "It is given that ABC is an equilateral triangle. T returns to its initial position after 9 seconds. Vertex B lies at position vector (1, 0) metres with respect to a fixed origin O.\nFind the position vector of C",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "scenario": "A wooden toy comprises a train engine and a trailer connected to each other by a light, inextensible rod. The train engine has a mass of 1.5 kilograms. The trailer has a mass 0.7 kilograms. A string inclined at an angle of 40° above the horizontal is attached to the front of the train engine. The tension in the string is 2 newtons. As a result the toy moves forward, from rest, in a straight line along a horizontal surface with acceleration 0.06 m s⁻². As it moves the train engine experiences a total resistance force of 0.8 N.",
+    "parts": [
+     {
+      "code": "19(a)",
+      "prompt": "Show that the total resistance force experienced by the trailer is approximately 0.6 N",
+      "marks": 4
+     },
+     {
+      "code": "19(b)(i)",
+      "prompt": "At the instant that the toy reaches a speed of 0.5 m s⁻¹ the string breaks. As a result of this the train engine and trailer decelerate at a constant rate until they come to rest, having travelled a distance of h metres. It can be assumed that the resistance forces remain unchanged.\nFind the tension in the rod after the string has broken.",
+      "marks": 4
+     },
+     {
+      "code": "19(b)(ii)",
+      "prompt": "Find h",
+      "marks": 3
+     },
+     {
+      "code": "19(c)",
+      "prompt": "State one modelling assumption that you have used about the rod when answering part (b)(i).",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 20,
+    "scenario": "In this question use g = 9.8 m s⁻². Nell and her pet dog Maia are visiting the beach. The beach surface can be assumed to be level and horizontal. Nell and Maia are initially standing next to each other. Nell throws a ball forward, from a height of 1.8 metres above the surface of the beach, at an angle of 60° above the horizontal with a speed of 14 m s⁻¹. Exactly 0.2 seconds after the ball is thrown, Maia sets off from Nell and runs across the surface of the beach, in a straight line with a constant acceleration a m s⁻². Maia catches the ball when it is 0.3 metres above ground level.",
+    "parts": [
+     {
+      "code": "20",
+      "prompt": "Find a",
+      "marks": 7
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "{x : x < 2} ∪ {x : x > 5}"
+    ],
+    "guidance": "B1: ticks the correct box. The parabola is positive outside its roots, i.e. for x < 2 or x > 5."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "30"
+    ],
+    "guidance": "R1: circles 30. ∫₀³ = ∫₀⁶ − ∫₃⁶ = 20 − (−10) = 30."
+   },
+   "3": {
+    "type": "exact",
+    "points": [
+     "4"
+    ],
+    "guidance": "B1: circles 4. radius² = 16 so radius = 4."
+   },
+   "11": {
+    "type": "exact",
+    "points": [
+     "Tension = weight = 0.2g N"
+    ],
+    "guidance": "B1: circles 0.2g N. The decoration hangs in equilibrium so tension = mg = 0.2g N."
+   },
+   "12": {
+    "type": "exact",
+    "points": [
+     "Graph 3: v starts at 5 (t=0), falls to −5 at t=2, rises back to 5 at t=4"
+    ],
+    "guidance": "B1: ticks the correct box — the graph for which the signed area (displacement) over 0 ≤ t ≤ 4 is zero, i.e. the one going from +5 down to −5 then back up to +5."
+   },
+   "14": {
+    "type": "points",
+    "points": [
+     "v = ∫a dt = kt³ − kt² + t + c",
+     "At t = 0, v = 1 ⇒ c = 1, so v = kt³ − kt² + t + 1",
+     "At t = 3: 10 = 27k − 9k + 3 + 1 = 18k + 4",
+     "18k = 6 ⇒ k = 1/3"
+    ],
+    "guidance": "M1: integrates a with at least one correct term. A1: v = kt³ − kt² + t + c (constant condoned). M1: uses v = 1 at t = 0 to find c (must be before substituting t = 3). A1: substitutes t = 3, v = 10 and completes to k = 1/3. AG."
+   },
+   "15": {
+    "type": "exact",
+    "points": [
+     "Mass m = W/g = 0.65/9.8 = 0.0663… kg",
+     "Friction F = μR = 0.4 × 0.65 = 0.26 N (R = weight = 0.65 N)",
+     "Newton’s 2nd law: D − 0.26 = m × 0.91 = 0.0663 × 0.91 ≈ 0.0603",
+     "D = 0.32 N"
+    ],
+    "guidance": "B1: m = W/g (PI by 0.26). M1: F = μR = 0.26. M1: forms a three-term equation D − F = ma with their m. A1: D = 0.32 N (AWRT 0.32)."
+   },
+   "16": {
+    "type": "exact",
+    "points": [
+     "F₁ + F₂ = ((1.6 + k)i + (5k − 5)j) N",
+     "F = ma: 1.6 + k = 3.2m and 5k − 5 = 12m",
+     "Eliminate m: (5k − 5)/12 = (1.6 + k)/3.2",
+     "Solve ⇒ k = 8.8 (m = 3.25)"
+    ],
+    "guidance": "B1: adds the two forces correctly. M1: applies F = ma with their resultant and a = (3.2i + 12j) (PI by ratio). A1: two correct scalar equations (vectors removed) or a correct linear equation in k. A1: k = 8.8 (ACF)."
+   },
+   "20": {
+    "type": "exact",
+    "points": [
+     "Horizontal component of throw: 14 cos 60° = 7 m s⁻¹",
+     "Vertical component: 14 sin 60° = 7√3 m s⁻¹",
+     "Vertical motion of ball: s = ut − ½gt² with u = 7√3, s = 0.3 − 1.8 = −1.5",
+     "−1.5 = 7√3 t − 4.9t² ⇒ 4.9t² − 12.124t − 1.5 = 0 ⇒ t = 2.592 s",
+     "Horizontal distance of ball when caught = 7 × 2.592 = 18.144 m",
+     "Dog runs from rest (u = 0) for time t − 0.2 = 2.392 s: 18.144 = ½ a (2.392)²",
+     "a = 6.3 m s⁻²"
+    ],
+    "guidance": "B1: 14 cos 60° = 7 (horizontal). B1: 14 sin 60° = 7√3 (vertical). M1: uses s = ut + ½at² for the ball with u = vertical component, a = −g, s = ±1.5 (PI by t AWFW [2.54, 2.60]). A1: t = 2.592 (exact (3√10 + 5√3)/7). M1: horizontal distance = their t × horizontal component (t > 0.2). M1: substitutes u = 0 and time (their t − 0.2) into ut + ½at² for the dog. A1: a = 6.3 (CAO)."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = x/4 + 2x^(−1/2)"
+    ],
+    "guidance": "B1: writes √x as x^(1/2) (PI by derivative term kx^(−1/2)). M1: differentiates with at least one term correct. A1: correct dy/dx, any correct form, ISW."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "Gradient at P is 2",
+     "Tangent: y = 2x + 2  (e.g. y − 10 = 2(x − 4))"
+    ],
+    "guidance": "M1: obtains gradient 2 or substitutes x = 4 into their dy/dx. A1: correct tangent equation, need not be fully simplified, ACF, ISW."
+   },
+   "4(c)": {
+    "type": "points",
+    "points": [
+     "dy/dx = x/4 + 2/√x",
+     "For x > 0 (the domain, since √x requires x > 0) both x/4 > 0 and 2/√x > 0",
+     "Therefore dy/dx = x/4 + 2/√x > 0, so dy/dx is never 0 ⇒ no stationary points"
+    ],
+    "guidance": "M1: equates dy/dx to zero. A1 (R1): reasoned argument that dy/dx > 0 throughout the domain so there are no solutions and hence no stationary points (e.g. x² = −8 has no real solutions)."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "Number of lengths on day n = 4n + 6"
+    ],
+    "guidance": "B1: correct expression for the number of lengths (arithmetic sequence, first term 10, common difference 4). ACF, e.g. 10 + 4(n − 1)."
+   },
+   "5(b)(i)": {
+    "type": "exact",
+    "points": [
+     "Lengths needed: 3000/25 = 120 lengths",
+     "4n + 6 ≥ 120 ⇒ n ≥ 28.5",
+     "Minimum number of days = 29"
+    ],
+    "guidance": "M1: forms a correct inequality 25 × (their day-n expression) ≥ 3000. M1: solves to n = 28.5. A1: 29 (CAO)."
+   },
+   "5(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "Total lengths over 29 days = (29/2)(2×10 + (29−1)×4) = 1914",
+     "Total distance = 1914 × 25 = 47 850 metres",
+     "47 850 < 50 000, so the coach is NOT correct"
+    ],
+    "guidance": "M1: uses correct arithmetic-series sum with a = 10, d = 4, n = 29. A1: obtains 47 850 m (or 1914 lengths). R1: explicit comparison 47 850 < 50 000 with correct conclusion that the coach is wrong."
+   },
+   "6(a)(i)": {
+    "type": "exact",
+    "points": [
+     "When N = 0, log₁₀ a = 1.76",
+     "a = 10^(1.76) = 57.5 (3 s.f.)"
+    ],
+    "guidance": "B1: shows log₁₀ a = 1.76 (or log₁₀ V = 1.76 at N = 0) leading to a = 10^(1.76) = 57.5. AG."
+   },
+   "6(a)(ii)": {
+    "type": "exact",
+    "points": [
+     "log₁₀ b = 0.057 (gradient)",
+     "b = 10^(0.057) = 1.14 (3 s.f.)"
+    ],
+    "guidance": "B1: b = 1.14 (AWRT 1.14)."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "Yearly percentage increase = 100(b − 1) = 100(1.14 − 1) = 14%"
+    ],
+    "guidance": "B1: 14%. FT their b where b > 1."
+   },
+   "6(c)(i)": {
+    "type": "exact",
+    "points": [
+     "2025 ⇒ N = 16",
+     "V = 57.5 × 1.14^(16) = 467.9 (£ million)",
+     "Average weekly value ≈ £467 900 000"
+    ],
+    "guidance": "M1: substitutes N = 16 into V = 57.5 × 1.14^N (or log₁₀ V = 0.057×16 + 1.76), giving V AWRT 467.9 or 469.9. A1: value in the interval [£467 800 000, £470 000 000], including £ or pounds (accept millions, e.g. £467.9 million)."
+   },
+   "6(c)(ii)": {
+    "type": "points",
+    "points": [
+     "2025 is well beyond the data range (extrapolation), so the model may not be valid",
+     "e.g. sales could fall or rise unexpectedly due to events such as a pandemic, supply shortages, or a shift back to in-person shopping"
+    ],
+    "guidance": "E1: gives a reason in context (must reference sales/shopping) why extrapolation from the model may not be valid."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "h(x) = 1/√(10 − 2x)"
+    ],
+    "guidance": "B1: h(x) = 1/√(10 − 2x). ACF."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "Domain of h: x < 5"
+    ],
+    "guidance": "B1: x < 5 (need 10 − 2x > 0, strict to avoid division by zero). Condone incorrect set notation."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "Let y = 1/√(10 − 2x), so √(10 − 2x) = 1/y",
+     "10 − 2x = 1/y²",
+     "2x = 10 − 1/y² ⇒ x = 5 − 1/(2y²)",
+     "Hence h⁻¹(x) = 5 − 1/(2x²)"
+    ],
+    "guidance": "M1: sets y = h(x) and squares both sides to remove the root (or rearranges). A1: obtains 10 − 2x = 1/y² or x = 5 − 1/(2y²). R1: reasoned argument with no incorrect steps reaching the given result, correct inverse notation. AG."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Common denominator: [(1 + cos θ) + (1 − cos θ)] / [(1 − cos θ)(1 + cos θ)]",
+     "= 2 / (1 − cos²θ)",
+     "= 2 / sin²θ",
+     "= 2 cosec²θ"
+    ],
+    "guidance": "B1: recalls cosec θ = 1/sin θ (PI by use of cosec²θ = 1/sin²θ). B1: combines over a single denominator (1 − cos θ)(1 + cos θ). M1: simplifies numerator to 2 and denominator to 1 − cos²θ. R1: uses cos²θ + sin²θ = 1 to reach 2/sin²θ = 2 cosec²θ. AG."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "Equation becomes 2 cosec²θ = A",
+     "Since cosec²θ ≥ 1 (cosec θ ≤ −1 or cosec θ ≥ 1), 2 cosec²θ ≥ 2",
+     "For real solutions: A ≥ 2"
+    ],
+    "guidance": "M1: forms 2 cosec²θ = A (or 2/sin²θ = A). E1: explains that cosec²θ ≥ 1, i.e. cosec θ ≤ −1 or cosec θ ≥ 1 (or −1 ≤ sin θ ≤ 1, sin²θ ≤ 1). R1: deduces A ≥ 2."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "2 cosec²θ = 16 ⇒ cosec²θ = 8",
+     "1 + cot²θ = 8 ⇒ cot²θ = 7",
+     "θ obtuse ⇒ cot θ < 0, so cot θ = −√7"
+    ],
+    "guidance": "M1: uses the part (a) identity to get 2 cosec²θ = 16, i.e. cosec²θ = 8 (or sin²θ = 1/8). A1: cot²θ = 7 (PI by cot θ = ±√7). R1: deduces cot θ = −√7 because θ is obtuse."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "(1 + x)^(−1/2) = 1 + (−1/2)x + [(−1/2)(−3/2)/2!]x² + …",
+     "= 1 − ½x + (3/8)x²"
+    ],
+    "guidance": "M1: correct binomial structure with n = −1/2. A1: 1 − ½x + (3/8)x²."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "x = 2 lies outside the interval of validity |x| < 1",
+     "so the expansion does not converge / the approximation is not valid"
+    ],
+    "guidance": "E1: explains the expansion is only valid for |x| < 1 and x = 2 is not in this interval."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "x = −1/4: 1 − ½(−1/4) + (3/8)(−1/4)² = 1 + 1/8 + 3/128 = 147/128",
+     "(1 − 1/4)^(−1/2) = (3/4)^(−1/2) = 2/√3",
+     "So 1/√3 = ½ × (147/128) = 147/256 = 0.574 (3 s.f.)"
+    ],
+    "guidance": "M1: substitutes x = −1/4 into their expansion to obtain 147/128 (≈1.148). A1: relates (3/4)^(−1/2) = 2/√3 so 1/√3 = ½ × 147/128. A1: 0.574 (AWRT), ISW."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "(a − b)² = a² − 2ab + b²"
+    ],
+    "guidance": "B1: a² − 2ab + b²."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "Choose a negative rational, e.g. a = −2",
+     "a + 1/a = −2 + (−1/2) = −5/2",
+     "−5/2 is not greater than 2, so Peter is incorrect"
+    ],
+    "guidance": "M1: forms the sum of a non-zero rational and its reciprocal. A1: a valid counter-example giving a value not greater than 2 (must use a negative value)."
+   },
+   "10(c)": {
+    "type": "points",
+    "points": [
+     "Assume the contrary: a/b + b/a ≤ 2",
+     "Multiply by ab (> 0): a² + b² ≤ 2ab",
+     "So a² − 2ab + b² ≤ 0, i.e. (a − b)² ≤ 0",
+     "But a, b distinct ⇒ (a − b)² > 0, a contradiction",
+     "Hence a/b + b/a > 2"
+    ],
+    "guidance": "M1: assumes a/b + b/a ≤ 2. A1: rearranges and factorises to (a − b)² ≤ 0 (deduce (a − b)² ≤ 0). R1: reasoned argument concluding a contradiction since (a − b)² > 0 for distinct a, b."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "Use v = u + at with v = 3u, initial velocity u, a = g",
+     "3u = u + gt",
+     "2u = gt ⇒ t = 2u/g"
+    ],
+    "guidance": "M1: selects a suitable constant-acceleration equation with u = u, v = 3u, a = g. R1: reasoned argument clearly stating these values and reaching t = 2u/g. AG."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "MN = s: use v² = u² + 2as with v = 3u, u = u, a = g",
+     "(3u)² = u² + 2gs ⇒ 9u² = u² + 2gs ⇒ 8u² = 2gs ⇒ s = MN = 4u²/g",
+     "M is above N (which is above the ground), so h = height of M > MN",
+     "Therefore h > 4u²/g"
+    ],
+    "guidance": "M1: uses v² = u² + 2as with correct substitution (condone a = −g). A1: reaches MN = 4u²/g. R1: explains that N is above the ground so the height of M exceeds MN, giving h > 4u²/g. AG."
+   },
+   "17(a)(i)": {
+    "type": "points",
+    "points": [
+     "Weight mg acts at the centre, 3.5 m from P. X is 1.4 m from P, Y is 5 m from P.",
+     "Take moments about Y: R_X × (5 − 1.4) = mg × (5 − 3.5)",
+     "4g × 3.6 = mg × 1.5",
+     "m = (4 × 3.6)/1.5 = 9.6 kg"
+    ],
+    "guidance": "M1: forms a correct moments equation using R_X = 4g and the weight at the centre. A1: completes to m = 9.6 kg. AG. (Alternative correct moment points accepted.)"
+   },
+   "17(a)(ii)": {
+    "type": "exact",
+    "points": [
+     "Resolve vertically: R_X + R_Y = mg = 9.6g",
+     "4g + R_Y = 9.6g",
+     "R_Y = 5.6g N"
+    ],
+    "guidance": "M1: resolves vertically (R_X + R_Y = weight) or takes moments. A1: R_Y = 5.6g N."
+   },
+   "17(b)": {
+    "type": "points",
+    "points": [
+     "Original supports X (1.4 m from P) and Y (5 m from P) are equidistant from the centre (3.5 m), so reactions were equal — but here 4g ≠ 5.6g, so they were NOT equal originally",
+     "Moving Y to QY = 1.4 m (so Y is 5.6 m from P, 2.1 m from centre) changes the moments",
+     "New R_Y = 4.8g (< 5.6g), so the reaction at Y decreases",
+     "Therefore the claim is wrong"
+    ],
+    "guidance": "B1: obtains the new reaction 4.8g, or refers to symmetry/ the supports no longer equidistant from the centre. E1: states the reaction at Y changes/decreases (4.8g < 5.6g) and concludes the claim is incorrect."
+   },
+   "18(a)": {
+    "type": "exact",
+    "points": [
+     "Speed = |(3, √3)| = √(3² + (√3)²) = √(9 + 3) = √12 = 2√3 m s⁻¹"
+    ],
+    "guidance": "B1: speed = √12 = 2√3 m s⁻¹ (≈3.46)."
+   },
+   "18(b)": {
+    "type": "points",
+    "points": [
+     "Direction A→B: tan θ = (√3)/3 ⇒ 30° above i (east)",
+     "Direction B→C: velocity (−3, √3), tan = (√3)/3 above the −i direction ⇒ 150° from east",
+     "Interior angle ABC = angle between BA and BC; angle of incoming AB with east is 30°, of BC is 150°",
+     "Acute angle ABC = 180° − (150° − 30°) ... gives 60°"
+    ],
+    "guidance": "M1: finds the direction of each velocity (e.g. each makes 30° with the i-axis). R1: reasoned argument combining the two directions to show the acute angle ABC = 60°. AG."
+   },
+   "18(c)": {
+    "type": "exact",
+    "points": [
+     "Equilateral, total time 9 s ⇒ each side takes 3 s; speed 2√3, so each side has length 6√3",
+     "Velocity B→C is (−3, √3); displacement B→C = 3 × (−3, √3) = (−9, 3√3)",
+     "OC = OB + BC = (1, 0) + (−9, 3√3) = (−8, 3√3)"
+    ],
+    "guidance": "R1: deduces time from B to C is 9/3 = 3 s. M1: displacement B→C = t(−3, √3) with 1 < t ≤ 9 (here t = 3). A1: position vector of C = (−8, 3√3)."
+   },
+   "19(a)": {
+    "type": "points",
+    "points": [
+     "Resolve string: horizontal component 2 cos 40° ≈ 1.53 N",
+     "Whole system, F = ma: 2 cos 40° − (0.8 + R) = (1.5 + 0.7)(0.06)",
+     "1.53 − 0.8 − R = 0.132",
+     "R ≈ 0.6 N (trailer resistance)"
+    ],
+    "guidance": "M1: resolves the 2 N force (2 cos 40° ≈ 1.53). M1: applies Newton’s 2nd law to the whole system (total mass 2.2 kg) with resistance 0.8 + R. A1: fully correct system equation. R1: completes to show R ≈ 0.6 N. AG."
+   },
+   "19(b)(i)": {
+    "type": "exact",
+    "points": [
+     "After string breaks, driving force removed; total resistance 0.8 + 0.6 = 1.4 N decelerates the 2.2 kg system",
+     "Whole system: −1.4 = 2.2a ⇒ a = −7/11 m s⁻²",
+     "Trailer (0.7 kg), let T be rod tension: ±(T − 0.6) = 0.7a (rod pulls/pushes trailer)",
+     "T = 17/110 N (≈ 0.155 N)"
+    ],
+    "guidance": "M1: forms an equation of motion without a driving force for the engine or the whole system (a = −7/11). M1: forms a correct equation of motion for the trailer (or engine) involving T. A1: correct pair / equation in T. A1: T = 17/110 N."
+   },
+   "19(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "Deceleration a = −7/11 m s⁻², initial speed 0.5 m s⁻¹, final 0",
+     "v² = u² + 2as: 0 = 0.5² + 2(−7/11)h",
+     "h = 0.25/(14/11) = 11/56 ≈ 0.20 m"
+    ],
+    "guidance": "B1: a = −7/11 (AWRT −0.64). M1: uses a correct constant-acceleration equation with u = 0.5, v = 0 and their a (do not accept a = −g). A1: h ≈ 0.2 m (AWRT 0.2, ISW)."
+   },
+   "19(c)": {
+    "type": "points",
+    "points": [
+     "The rod is horizontal (or the rod is rigid / light)"
+    ],
+    "guidance": "E1: states one appropriate modelling assumption about the rod, e.g. the rod is horizontal (accept rod is rigid OE)."
+   }
+  }
+ },
+ "math-aqa-7357-2023-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "The graph of y = f(x) is shown. It is a V-shaped (modulus) graph with its vertex (minimum) below the x-axis and to the right of the y-axis, at the point (2, −3).",
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "One of the four equations listed below is the equation of the graph y = f(x). Identify which one is the correct equation of the graph. Tick (✓) one box.\ny = |x+2|+3\ny = |x+2|−3\ny = |x−2|+3\ny = |x−2|−3",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "The trapezium rule is used to estimate the area of the shaded region in each of four graphs. Identify the graph for which the trapezium rule produces an overestimate. Tick (✓) one box. (The four graphs show, in order: a straight increasing line; a convex increasing curve (curving upwards, e.g. exponential growth); a concave increasing curve (curving downwards); and a curve that rises then falls (a maximum within the strip).)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "A curve with equation y = f(x) passes through the point (3, 7). Given that f′(3) = 0 find the equation of the normal to the curve at (3, 7). Circle your answer.\ny = (7/3)x        y = 0        x = 3        x = 7",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Express (5 − ³√x)/x² in the form 5x^(p) − x^(q) where p and q are constants.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "A curve has equation y = 3e^(2x). Find the gradient of the curve at the point where y = 10",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Sketch the curve with equation y = x²(2x + a) where a > 0",
+      "marks": 3
+     },
+     {
+      "code": "6(b)(i)",
+      "prompt": "The polynomial p(x) is given by p(x) = x²(2x + a) + 36. It is given that x + 3 is a factor of p(x). Use the factor theorem to show a = 2",
+      "marks": 2
+     },
+     {
+      "code": "6(b)(ii)",
+      "prompt": "State the transformation which maps the curve with equation y = x²(2x + 2) onto the curve with equation y = x²(2x + 2) + 36",
+      "marks": 2
+     },
+     {
+      "code": "6(b)(iii)",
+      "prompt": "The polynomial x²(2x + 2) + 36 can be written as (x + 3)(2x² + bx + c). Without finding the values of b and c, use your answers to parts (a) and (b)(ii) to explain why b² < 8c",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A new design for a company logo is to be made from two sectors of a circle, ORP and OQS, and a rhombus OSTR. The points P, O and Q lie on a straight line and the angle ROS is θ radians. (The rhombus OSTR sits above O with T at the top; R and S are the upper vertices of the two sectors.) A large copy of the logo, with PQ = 5 metres, is to be put on a wall.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that the area of the logo, A square metres, is given by A = (25/8)(π − θ + 2 sin θ)",
+      "marks": 4
+     },
+     {
+      "code": "7(b)(i)",
+      "prompt": "Show that the maximum value of A occurs when θ = π/3. Fully justify your answer.",
+      "marks": 6
+     },
+     {
+      "code": "7(b)(ii)",
+      "prompt": "Find the exact maximum value of A",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Without further calculation, state how your answers to parts (b)(i) and (b)(ii) would change if PQ were increased to 10 metres.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8",
+      "prompt": "Use the substitution u = x⁵ + 2 to show that ∫₀¹ x⁹/(x⁵+2)³ dx = 1/180",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A water slide is the shape of a curve PQ. The curve can be modelled by the parametric equations x = t − 1/t + 4.8 and y = t + 2/t, where 0.2 ≤ t ≤ 3. The horizontal distance from O is x metres. The vertical distance above the point O at ground level is y metres. P is the point where t = 0.2 and Q is the point where t = 3.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "To make sure speeds are safe at Q, the difference in height between P and Q must be less than 7 metres. Show that the slide meets this safety requirement.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)(i)",
+      "prompt": "Find an expression for dy/dx in terms of t",
+      "marks": 3
+     },
+     {
+      "code": "9(b)(ii)",
+      "prompt": "A vertical support, RS, is to be added between the ground and the lowest point on the slide (R is the lowest point of the curve, S is directly below it on the ground). Find the length of RS",
+      "marks": 4
+     },
+     {
+      "code": "9(b)(iii)",
+      "prompt": "Find the acute angle the slide makes with the horizontal at Q. Give your answer to the nearest degree.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10",
+      "prompt": "Which of the following is not a possible value for a product moment correlation coefficient? Circle your answer.\n−6/5        −3/5        0        1",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "A and B are mutually exclusive events. Which one of the following statements must be correct? Tick (✓) one box.\nP(A∪B) = P(A) × P(B)\nP(A∪B) = P(A) − P(B)\nP(A∩B) = 0\nP(A∩B) = 1",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "It is known that, on average, 40% of the drivers who take their driving test at a local test centre pass their driving test. Each day 32 drivers take their driving test at this centre. The number of drivers who pass their test on a particular day can be modelled by the distribution B(32, 0.4).",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "State one assumption, in context, required for this distribution to be used.",
+      "marks": 1
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the probability that exactly 7 of the drivers on a particular day pass their test.",
+      "marks": 1
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Find the probability that, at most, 16 of the drivers on a particular day pass their test.",
+      "marks": 1
+     },
+     {
+      "code": "12(d)",
+      "prompt": "Find the probability that more than 12 of the drivers on a particular day pass their test.",
+      "marks": 2
+     },
+     {
+      "code": "12(e)",
+      "prompt": "Find the mean number of drivers per day who pass their test.",
+      "marks": 1
+     },
+     {
+      "code": "12(f)",
+      "prompt": "Find the standard deviation of the number of drivers per day who pass their test.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "There are two types of coins in a money box: 20% are bronze coins and 80% are silver coins. Craig takes out a coin at random and places it back in the money box. Craig then takes out a second coin at random.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find the probability that both coins were of the same type.",
+      "marks": 2
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find the probability that both coins are bronze, given that at least one of the coins is bronze.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The mass of aluminium cans recycled each day in a city may be modelled by a normal distribution with mean 24 500 kg and standard deviation 5 200 kg.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "State the probability that the mass of aluminium cans recycled on any given day is not equal to 24 500 kg.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)",
+      "prompt": "To reduce costs, the city’s council decides to collect aluminium cans for recycling less frequently. Following the decision, it was found that over a 24-day period a total mass of 641 520 kg of aluminium cans was recycled. It can be assumed that the distribution of the mass of aluminium cans recycled is still normal with standard deviation 5 200 kg, and that the 24-day period can be regarded as a random sample. Investigate, at the 5% level of significance, whether the mean daily mass of aluminium cans recycled has changed.",
+      "marks": 7
+     },
+     {
+      "code": "14(c)",
+      "prompt": "A member of the council claims that if a different sample of 24 days had been used the hypothesis test in part (b) would have given the same result. Comment on the validity of this claim.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "parts": [
+     {
+      "code": "15(a)(i)",
+      "prompt": "A random sample of eight cars was selected from the Large Data Set. The masses of these cars, in kilograms, were as follows: 950, 989, 1247, 1415, 1506, 1680, 1833, 2040. It is given that, for the population of cars in the Large Data Set: lower quartile = 1167, median = 1393, upper quartile = 1570. It was decided to remove any of the masses which fall outside the following interval: median − 1.5 × interquartile range ≤ mass ≤ median + 1.5 × interquartile range. Show that only one of the eight masses in the sample should be removed.",
+      "marks": 3
+     },
+     {
+      "code": "15(a)(ii)",
+      "prompt": "Write down the statistical name for the mass that should be removed in part (a)(i).",
+      "marks": 1
+     },
+     {
+      "code": "15(b)",
+      "prompt": "The table shows the probability distribution of the number of previous owners, N, for a sample of cars taken from the Large Data Set.\nn:        0     1     2     3     4     5     6 or more\nP(N=n): 0.14  0.37  0.9k  0.25  0.4k  1.7k   0\nFind the value of P(1 ≤ N < 5)",
+      "marks": 4
+     },
+     {
+      "code": "15(c)(i)",
+      "prompt": "An expert team is investigating whether there have been any changes in CO₂ emissions from all cars taken from the Large Data Set. The team decided to collect a quota sample of 200 cars to reflect the different years and the different makes of cars in the Large Data Set. Using your knowledge of the Large Data Set, explain how the team can collect this sample.",
+      "marks": 2
+     },
+     {
+      "code": "15(c)(ii)",
+      "prompt": "Describe one disadvantage of quota sampling.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "A farm supplies apples to a supermarket. The diameters of the apples, D centimetres, are normally distributed with mean 6.5 and standard deviation 0.73",
+    "parts": [
+     {
+      "code": "16(a)(i)",
+      "prompt": "Find P(D < 5.2)",
+      "marks": 1
+     },
+     {
+      "code": "16(a)(ii)",
+      "prompt": "Find P(D > 7)",
+      "marks": 1
+     },
+     {
+      "code": "16(a)(iii)",
+      "prompt": "The supermarket only accepts apples with diameters between 5 cm and 8 cm. Find the proportion of apples that the supermarket accepts.",
+      "marks": 1
+     },
+     {
+      "code": "16(b)",
+      "prompt": "The farm also supplies plums to the supermarket. These plums have diameters that are normally distributed. It is found that 60% of these plums have a diameter less than 5.9 cm. It is found that 20% of these plums have a diameter greater than 6.1 cm. Find the mean and standard deviation of the diameter, in centimetres, of the plums supplied by the farm.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "parts": [
+     {
+      "code": "17",
+      "prompt": "A council found that 70% of its new local businesses made a profit in their first year. The council introduced an incentive scheme for its residents to encourage the use of new local businesses. At the end of the scheme, a random sample of 25 new local businesses was selected and it was found that 21 of them had made a profit in their first year. Using a binomial distribution, investigate, at the 2.5% level of significance, whether there is evidence of an increase in the proportion of new local businesses making a profit in their first year.",
+      "marks": 6
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "Ticks the box y = |x−2|−3"
+    ],
+    "guidance": "R1. Vertex at (2, −3) gives a horizontal shift +2 (|x−2|) and vertical shift −3."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "Ticks the box for the convex (curving-upwards) increasing curve — the second graph"
+    ],
+    "guidance": "R1. The trapezium rule overestimates when the curve is convex (lies below its chords), i.e. the curve that bends upwards."
+   },
+   "3": {
+    "type": "exact",
+    "points": [
+     "Circles x = 3"
+    ],
+    "guidance": "R1. f′(3)=0 means the tangent is horizontal, so the normal is vertical: x = 3."
+   },
+   "4": {
+    "type": "exact",
+    "points": [
+     "5x⁻² or x^(1/3 − 2) seen (M1)",
+     "5x⁻² − x^(−5/3), i.e. p = −2 and q = −5/3 (A1)"
+    ],
+    "guidance": "M1 obtains 5x⁻² or x^(1/3−2); A1 for 5x⁻² − x^(−5/3) (p = −2, q = −5/3). Allow −1.67 or better for −5/3. Do not ISW incorrect algebra."
+   },
+   "5": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 2 × 3e^(2x) = 6e^(2x) (B1)",
+     "Substitutes y = 10 (so 3e^(2x) = 10) into their dy/dx, or substitutes x = ½ln(10/3) ≈ 0.602 (M1)",
+     "Gradient = 20 (A1, CAO)"
+    ],
+    "guidance": "B1 for 2×3e^(2x) (= 2y). M1 substitutes y=10 into dy/dx=2y. A1 = 20 exactly; 20 cannot come from a rounded value."
+   },
+   "8": {
+    "type": "points",
+    "points": [
+     "du/dx = 5x⁴, PI by (1/5)(u−2)^(−4/5) (B1)",
+     "Substitutes for the denominator and dx operator: ∫ x⁹/u³ · (1/(5x⁴)) du (M1)",
+     "Substitutes x⁵ = u − 2 (so x⁹ = x⁵·x⁴ = (u−2)x⁴): obtains (1/5)∫ (u−2)/u³ du (M1, A1)",
+     "Integrates: (1/5)∫ (u⁻² − 2u⁻³) du = (1/5)[−u⁻¹ + u⁻²] (M1)",
+     "Applies the limits u = 2 (x=0) to u = 3 (x=1): (1/5)[(1/9 − 1/3) − (1/4 − 1/2)] = 1/180 (A1, R1 AG)"
+    ],
+    "guidance": "With u = x⁵ + 2, du = 5x⁴ dx. New limits u = 2 (x=0) and u = 3 (x=1). The integrand becomes (1/5)(u−2)/u³ = (1/5)(u⁻² − 2u⁻³). Integrate and evaluate to show exactly 1/180. R1 for substituting correct limits consistent with the variable to show the given result."
+   },
+   "10": {
+    "type": "exact",
+    "points": [
+     "Circles −6/5"
+    ],
+    "guidance": "B1. A correlation coefficient must lie in [−1, 1]; −6/5 = −1.2 is outside this range."
+   },
+   "11": {
+    "type": "exact",
+    "points": [
+     "Ticks P(A∩B) = 0"
+    ],
+    "guidance": "B1. Mutually exclusive events cannot occur together, so P(A∩B) = 0."
+   },
+   "17": {
+    "type": "points",
+    "points": [
+     "H₀: p = 0.7, H₁: p > 0.7 (one-tailed) (B1)",
+     "Under H₀, X ~ B(25, 0.7); P(X ≥ 21) = 1 − P(X ≤ 20) = 1 − 0.9095 = 0.0905 (M1, A1)",
+     "Compare with 0.025: 0.0905 > 0.025 (M1)",
+     "Do not reject H₀ (A1)",
+     "Conclude in context: there is insufficient evidence of an increase in the proportion of new local businesses making a profit in their first year (R1)"
+    ],
+    "guidance": "One-tailed test at 2.5%. P(X ≥ 21) = 0.0905 > 0.025 (critical region is X ≥ 23), so do not reject H₀. R1 requires M1A1M1A1 minimum, correct probability labels, and a non-definite contextual conclusion."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "Cubic drawn in the correct (positive) orientation (M1)",
+     "Minimum (and maximum) deduced — curve has a minimum/maximum at the origin (0,0) (M1)",
+     "Fully correct cubic with x-intercept at −a/2 shown, touching at O (A1)"
+    ],
+    "guidance": "M1 correct cubic orientation; M1 turning point at (0,0); A1 fully correct with other intercept at x = −a/2 (a double root at x=0 so the curve touches the x-axis at O)."
+   },
+   "6(b)(i)": {
+    "type": "points",
+    "points": [
+     "Substitutes x = −3 into p(x): (−3)²(2×−3 + a) + 36 = 0 (M1)",
+     "−54 + 9a + 36 = 0 ⇒ 9a − 18 = 0 ⇒ a = 2, completed with no errors (R1, AG)"
+    ],
+    "guidance": "M1 sets p(−3)=0 with an expression in a. R1 reasoned argument with at least one correct intermediate step and no errors to reach a = 2. Do not condone missing brackets (other than the condoned (−3)²)."
+   },
+   "6(b)(ii)": {
+    "type": "points",
+    "points": [
+     "States it is a translation (B1)",
+     "States the vector (0, 36), i.e. 36j — translation 36 units in the positive y-direction (B1)"
+    ],
+    "guidance": "B1 “translation” (no other transformation). B1 vector (0,36) or 36j."
+   },
+   "6(b)(iii)": {
+    "type": "points",
+    "points": [
+     "The translated graph y = x²(2x+2) + 36 has only one real root (at x = −3), since the original curve had a minimum at the origin and the +36 translation lifts it so it crosses once (E1)",
+     "Hence the quadratic factor 2x² + bx + c has no real roots, so its discriminant < 0: b² − 4(2)c < 0 ⇒ b² < 8c (E1)"
+    ],
+    "guidance": "E1 explains translated graph has only one real solution / root at −3. E1 deduces discriminant of 2x²+bx+c is negative: b² − 8c < 0. Do not allow use of a = 2 with reference to (b)(i)."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Area of one or both sectors: 2 × ½r²((π−θ)/2) = r²(π−θ)/2 with r = 2.5 (M1)",
+     "Area of (half/full) rhombus: 2 × ½r² sinθ = r² sinθ with r = 2.5 (M1)",
+     "Substitutes r = 2.5 to get A = (2.5)²((π−θ)/2) + (2.5)² sinθ = (25/8)(π−θ) + (25/4) sinθ (A1)",
+     "Reasoned argument shows A = (25/8)(π − θ + 2 sinθ) (R1, AG)"
+    ],
+    "guidance": "PQ = 5 so radius r = 2.5. The two sectors together subtend angle (π − θ) (since angle ROS = θ and POQ is a straight line). Rhombus area = r² sinθ. M1 sectors, M1 rhombus, A1 correct expression, R1 completes to given answer."
+   },
+   "7(b)(i)": {
+    "type": "points",
+    "points": [
+     "Differentiates: dA/dθ = (25/8)(−1 + 2cosθ) (M1)",
+     "Sets dA/dθ = 0 ⇒ −1 + 2cosθ = 0 ⇒ cosθ = ½ (A1)",
+     "θ = π/3 (E1)",
+     "Second derivative d²A/dθ² = (25/8)(−2sinθ) = −(25/4)sinθ (M1)",
+     "At θ = π/3, d²A/dθ² = −5.41 < 0 (A1)",
+     "Since d²A/dθ² < 0 the stationary point is a maximum (R1)"
+    ],
+    "guidance": "M1 correct derivative, A1 cosθ=½, E1 θ=π/3. Then justify it is a maximum: M1 second derivative, R1 shows it is negative at θ=π/3 (≈ −5.41 < 0). AWRT/AWFW accepted for the numerical value."
+   },
+   "7(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "Substitutes θ = π/3 fully into A = (25/8)(π − θ + 2 sinθ) (M1)",
+     "A = (25/8)(π − π/3 + 2 sin(π/3)) = (25/8)(2π/3 + √3) square metres (A1)"
+    ],
+    "guidance": "M1 full substitution θ=π/3 or AWFW [11.9, 12]. A1 correct exact area (25/8)(2π/3 + √3) with sin(π/3) evaluated to √3/2. ISW."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "The angle (answer to (b)(i)) would be the same, θ = π/3 (E1)",
+     "The maximum area (answer to (b)(ii)) would be quadrupled — A = (25/2)(2π/3 + √3) — since radius doubles and area scales by the square (E1)"
+    ],
+    "guidance": "E1 angle unchanged. E1 area quadrupled (scale factor 4) because PQ doubles so r doubles and area ∝ r²."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "At t = 0.2: y = 10.2; at t = 3: y = 11/3 ≈ 3.67 (B1)",
+     "Finds the difference in the two y-values: 10.2 − 11/3 (M1)",
+     "= 6.53 < 7, so the safety requirement is met / the slide is safe (R1)"
+    ],
+    "guidance": "B1 y = 10.2 or y = 11/3. M1 difference between the two y-values. R1 compares 6.53 with 7 and states requirement met. AWFW [6.5, 6.53] for the difference."
+   },
+   "9(b)(i)": {
+    "type": "exact",
+    "points": [
+     "dx/dt = 1 + t⁻² and dy/dt = 1 − 2t⁻² (B1)",
+     "Uses chain rule dy/dx = (dy/dt)/(dx/dt) (M1)",
+     "dy/dx = (1 − 2t⁻²)/(1 + t⁻²) (A1)"
+    ],
+    "guidance": "B1 one correct derivative; M1 forms (dy/dt)/(dx/dt); A1 correct expression. ISW."
+   },
+   "9(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "Lowest point where dy/dx = 0 (or dy/dt = 0): 1 − 2t⁻² = 0 ⇒ t² = 2 ⇒ t = √2 (M1, A1)",
+     "Substitutes t = √2 into y: y = √2 + 2/√2 = 2√2 (M1)",
+     "RS = 2√2 ≈ 2.83 metres (A1)"
+    ],
+    "guidance": "M1 sets derivative = 0; A1 t = √2 (from correct dy/dx or dy/dt). M1 substitutes into y; A1 RS = 2√2 ≈ 2.83 m. AWFW [2.82, 2.83]."
+   },
+   "9(b)(iii)": {
+    "type": "exact",
+    "points": [
+     "At Q (t = 3): tanθ = dy/dx = (1 − 2/9)/(1 + 1/9) = 0.7 (M1)",
+     "θ = arctan(0.7) = 35° to the nearest degree (A1, CAO)"
+    ],
+    "guidance": "M1 sets tanθ equal to dy/dx at t = 3 (= 0.7 or 0.61 or 55° if measured from vertical). A1 = 35°."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "One valid assumption in context, e.g. the probability of each driver passing the test is constant (0.4), OR each driver passes independently of the others, OR there are only two outcomes (pass/fail) for each test"
+    ],
+    "guidance": "E1. Must be in context (test/pass/drivers). Allow equivalent statements about constant probability or independence. Do not allow incorrect statements about the mean."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "P(X = 7) = 0.0157"
+    ],
+    "guidance": "B1. AWFW [0.0156, 0.016]. X ~ B(32, 0.4)."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "P(X ≤ 16) = 0.908"
+    ],
+    "guidance": "B1. AWFW [0.908, 0.91]."
+   },
+   "12(d)": {
+    "type": "exact",
+    "points": [
+     "P(X > 12) = 1 − P(X ≤ 12) = 1 − 0.4618 (M1)",
+     "= 0.538 (A1)"
+    ],
+    "guidance": "M1 states P(X > 12) = 1 − P(X ≤ 12) (or P(13 ≤ X ≤ 32)). A1 = 0.538. AWFW [0.538, 0.54]."
+   },
+   "12(e)": {
+    "type": "exact",
+    "points": [
+     "Mean = np = 32 × 0.4 = 12.8"
+    ],
+    "guidance": "B1 = 12.8. Do not ISW."
+   },
+   "12(f)": {
+    "type": "exact",
+    "points": [
+     "Variance = npq = 32 × 0.4 × 0.6 = 7.68 (M1)",
+     "Standard deviation = √7.68 = 8√3/5 ≈ 2.77 (A1)"
+    ],
+    "guidance": "M1 correct variance formula with 32, 0.4, 0.6, giving 7.68 (or 8√3/5). A1 sd = 2.77 (AWFW [2.77, 2.8] or 8√3/5). Do not ISW; do not allow leaving the answer as √7.68."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "P(both bronze) = 0.2 × 0.2 = 0.04; P(both silver) = 0.8 × 0.8 = 0.64 (M1)",
+     "P(both same type) = 0.04 + 0.64 = 0.68 (A1)"
+    ],
+    "guidance": "M1 finds P(both bronze) or P(both silver), or computes 1 − 2×0.2×0.8. A1 = 0.68. (Replacement, so the draws are independent.)"
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "P(at least one bronze) = 1 − 0.8 × 0.8 = 0.36 (M1)",
+     "P(both bronze | at least one bronze) = (0.2 × 0.2)/0.36 = 0.04/0.36 = 1/9 (A1)"
+    ],
+    "guidance": "M1 finds P(at least one bronze) = 0.36. A1 = 1/9 ≈ 0.111. Conditional probability P(both bronze ∩ at least one bronze)/P(at least one bronze) = 0.04/0.36."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "P(mass ≠ 24 500) = 1 (or 100%)"
+    ],
+    "guidance": "B1. For a continuous distribution P(D = a specific value) = 0, so P(D ≠ 24 500) = 1."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "H₀: μ = 24 500, H₁: μ ≠ 24 500 (two-tailed) (B1)",
+     "Sample mean X̄ = 641 520 / 24 = 26 730 (B1)",
+     "Under H₀, X̄ ~ N(24 500, 5200²/24); compute P(X̄ ≥ 26 730) = 0.018 < 0.025, OR test statistic z = (26 730 − 24 500)/(5200/√24) ≈ 2.10, OR critical value 26 600 / acceptance region (M1, A1)",
+     "Correctly compares with 0.025 (or z with 1.96) (M1)",
+     "Reject H₀ — all figures correct (A1)",
+     "Conclude in context: there is sufficient evidence to suggest the mean daily mass of aluminium cans recycled has changed (R1)"
+    ],
+    "guidance": "Two-tailed test at 5%. X̄ = 26 730. Probability 0.018 < 0.025 (or |z| ≈ 2.10 > 1.96), so reject H₀. R1 requires M1A1M1A1 as a minimum and a correct contextual conclusion (mean changed, non-definite wording)."
+   },
+   "14(c)": {
+    "type": "points",
+    "points": [
+     "The claim is not necessarily valid: a different sample of 24 days could give a different sample mean (E1)",
+     "so the test result could be different — the claim that it would give the same result need not be true / cannot be definite (E1)"
+    ],
+    "guidance": "E1 a different sample would likely give a different sample mean. E1 hence the result might differ, so the claim could be wrong / result not definite."
+   },
+   "15(a)(i)": {
+    "type": "points",
+    "points": [
+     "IQR = UQ − LQ = 1570 − 1167 = 403 (B1)",
+     "Lower limit = 1393 − 1.5 × 403 = 788.5; Upper limit = 1393 + 1.5 × 403 = 1997.5 (M1)",
+     "Only 2040 lies outside [788.5, 1997.5], so only one mass should be removed (A1)"
+    ],
+    "guidance": "B1 IQR = 403. M1 substitutes into median ± 1.5×IQR for at least one limit. A1 obtains limits 788.5 and 1997.5 and identifies that only 2040 (> 1997.5) is removed."
+   },
+   "15(a)(ii)": {
+    "type": "exact",
+    "points": [
+     "Outlier"
+    ],
+    "guidance": "B1. The mass 2040 kg is an outlier. ISW."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "Total probability = 1: 0.14 + 0.37 + 0.9k + 0.25 + 0.4k + 1.7k + 0 = 1 (M1)",
+     "0.76 + 3k = 1 ⇒ k = 0.08 (A1)",
+     "P(1 ≤ N < 5) = P(1) + P(2) + P(3) + P(4) = 0.37 + 0.9k + 0.25 + 0.4k = 0.37 + 0.25 + 1.3k (M1)",
+     "= 0.62 + 1.3(0.08) = 0.724 (A1)"
+    ],
+    "guidance": "M1 forms total-probability equation; A1 k = 0.08. M1 forms P(1 ≤ N < 5) = P(1)+P(2)+P(3)+P(4) (note N=5 excluded); A1 = 0.724."
+   },
+   "15(c)(i)": {
+    "type": "points",
+    "points": [
+     "Use knowledge of the LDS: it contains cars from two years (so choose 100 cars from each year) and identifies 5 makes (so choose 20 of each make in each year), reflecting the different years and makes (M1)",
+     "Concludes that 20 cars are selected from each of the 5 makes of car for both years (so 5 × 20 × 2 = 200) (R1)"
+    ],
+    "guidance": "M1 identifies the LDS structure (2 years, 5 makes) and how to split the 200. R1 concludes 20 cars of each make per year. Answer reflects specific LDS knowledge."
+   },
+   "15(c)(ii)": {
+    "type": "points",
+    "points": [
+     "Quota sampling is non-random, so it could produce a biased (unrepresentative) sample"
+    ],
+    "guidance": "E1. Disadvantage: not random / can be biased / not proportionate, so may not be representative."
+   },
+   "16(a)(i)": {
+    "type": "exact",
+    "points": [
+     "P(D < 5.2) = 0.0375"
+    ],
+    "guidance": "B1. AWFW [0.037, 0.038]. D ~ N(6.5, 0.73²)."
+   },
+   "16(a)(ii)": {
+    "type": "exact",
+    "points": [
+     "P(D > 7) = 0.2467"
+    ],
+    "guidance": "B1. AWFW [0.246, 0.25]."
+   },
+   "16(a)(iii)": {
+    "type": "exact",
+    "points": [
+     "P(5 < D < 8) = 0.9601"
+    ],
+    "guidance": "B1. AWFW [0.96, 0.9602]. Proportion accepted ≈ 0.960."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "From inverse normal: P(D < 5.9) = 0.6 ⇒ z = 0.2533; P(D > 6.1) = 0.2 ⇒ z = 0.8416 (B1)",
+     "Equation 1: (5.9 − μ)/σ = 0.2533 (M1)",
+     "Equation 2: (6.1 − μ)/σ = 0.8416 (M1)",
+     "Both equations correct (A1)",
+     "Solving: μ = 5.81 (A1) and σ = 0.34 (A1)"
+    ],
+    "guidance": "B1 both z-values (0.2533 and 0.8416). M1, M1 form the two standardised equations using 5.9 and 6.1. A1 both equations correct. A1 μ ≈ 5.81 (AWFW [5.8, 5.82]); A1 σ ≈ 0.34 (AWFW [0.33, 0.35]). ISW."
+   }
+  }
+ },
  "math-edx-9ma0-2024-p1": {
   "questions": [
    {
