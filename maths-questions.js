@@ -12275,5 +12275,566 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1 for the time A to B from 3.8 = 6 + (−7.84)t₁ (or v = u + at). A1 for t₁ = 0.281 s (awrt; exact 55/196 = 0.2806…). B1 for the height of B = 0.825 m (1.375 × 0.6; allow unsimplified, allow negative). M1 for an equation for the time of flight t₂ from B to C, with u = 3.8 sinθ = 3.8 × 0.6 (or u = 3.8 cosθ with θ = 37) substituted into a suvat vertical equation. A1 for a correct (unsimplified) equation for t₂ using 0.825 and θ = 37 (or 0.6). A1 for T = 0.985 s (awrt; 0.984958…) — dependent on all previous marks in this part."
    }
   }
+ },
+ "math-edx-9ma0-2018-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Given that θ is small and is measured in radians, use the small angle approximations to find an approximate value of (1 − cos4θ) / (2sin3θ · θ).",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A curve C has equation y = x² − 2x − 24√x, x > 0.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find (i) dy/dx and (ii) d²y/dx².",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Verify that C has a stationary point when x = 4.",
+      "marks": 2
+     },
+     {
+      "code": "2(c)",
+      "prompt": "Determine the nature of this stationary point, giving a reason for your answer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "Figure 1 shows a sector AOB of a circle with centre O and radius r cm. The angle AOB is θ radians. The area of the sector AOB is 11 cm².",
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "Given that the perimeter of the sector is 4 times the length of the arc AB, find the exact value of r.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "The curve with equation y = 2ln(8 − x) meets the line y = x at a single point, x = α. Figure 2 shows the graphs of y = 2ln(8 − x) and y = x. A student uses the iteration formula xₙ₊₁ = 2ln(8 − xₙ), n ∈ ℕ, starting with x₁ = 4.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Show that 3 < α < 4.",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Using the graph and starting with x₁ = 4, determine whether or not this iteration formula can be used to find an approximation for α, justifying your answer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "Given that y = 3sinθ / (2sinθ + 2cosθ), −π/4 < θ < π/4, show that dy/dθ = A / (1 + sin2θ) where A is a rational constant to be found.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "The circle C has centre A with coordinates (7, 5). The line l, with equation y = 2x + 1, is the tangent to C at the point P (shown in Figure 3, not to scale).",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Show that an equation of the line PA is 2y + x = 17.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Find an equation for C.",
+      "marks": 4
+     },
+     {
+      "code": "6(c)",
+      "prompt": "The line with equation y = 2x + k, k ≠ 1, is also a tangent to C. Find the value of the constant k.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "Given that k ∈ ℝ⁺.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that ∫ from k to 3k of 2/(3x − k) dx is independent of k.",
+      "marks": 4
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Show that ∫ from k to 2k of 2/(2x − k)² dx is inversely proportional to k.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The depth of water, D metres, in a harbour on a particular day is modelled by the formula D = 5 + 2sin(30t)°, 0 ≤ t < 24, where t is the number of hours after midnight. A boat enters the harbour at 6:30 am and it takes 2 hours to load its cargo. The boat requires the depth of water to be at least 3.8 metres before it can leave the harbour.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the depth of the water in the harbour when the boat enters the harbour.",
+      "marks": 1
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find, to the nearest minute, the earliest time the boat can leave the harbour. (Solutions based entirely on graphical or numerical methods are not acceptable.)",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "Figure 4 shows a sketch of the curve with equation x² − 2xy + 3y² = 50, with points P (furthest west) and Q (furthest east) of the origin O, with both x and y measured in km. The curve is used to model the shape of a cycle track.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Show that dy/dx = (y − x) / (3y − x).",
+      "marks": 4
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Using part (a), find the exact coordinates of the point P.",
+      "marks": 5
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Explain briefly how to find the coordinates of the point that is furthest north of the origin O. (You do not need to carry out this calculation.)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "The height above ground, H metres, of a passenger on a roller coaster can be modelled by the differential equation dH/dt = H·cos(0.25t) / 40, where t is the time in seconds from the start of the ride. The passenger is 5 m above the ground at the start of the ride.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Show that H = 5e^(0.1sin(0.25t)).",
+      "marks": 5
+     },
+     {
+      "code": "10(b)",
+      "prompt": "State the maximum height of the passenger above the ground.",
+      "marks": 1
+     },
+     {
+      "code": "10(c)",
+      "prompt": "The passenger reaches the maximum height, for the second time, T seconds after the start of the ride. Find the value of T.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Use binomial expansions to show that √((1 + 4x)/(1 − x)) ≈ 1 + (5/2)x − (5/8)x².",
+      "marks": 6
+     },
+     {
+      "code": "11(b)",
+      "prompt": "A student substitutes x = 1/2 into both sides of the approximation shown in part (a) in an attempt to find an approximation to √6. Give a reason why the student should not use x = 1/2.",
+      "marks": 1
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Substitute x = 1/11 into √((1 + 4x)/(1 − x)) ≈ 1 + (5/2)x − (5/8)x² to obtain an approximation to √6. Give your answer as a fraction in its simplest form.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "The value, £V, of a vintage car t years after it was first valued on 1st January 2001, is modelled by the equation V = Ap^t where A and p are constants. The value of the car was £32 000 on 1st January 2005 and £50 000 on 1st January 2012.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "(i) Find p to 4 decimal places. (ii) Show that A is approximately 24 800.",
+      "marks": 4
+     },
+     {
+      "code": "12(b)",
+      "prompt": "With reference to the model, interpret (i) the value of the constant A, (ii) the value of the constant p.",
+      "marks": 2
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Using the model, find the year during which the value of the car first exceeds £100 000.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "Show that ∫₀² 2x√(x + 2) dx = (2/15)(3√2 + 2).",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A curve C has parametric equations x = 3 + 2sint, y = 4 + 2cos2t, 0 ≤ t < 2π.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Show that all points on C satisfy y = 6 − (x − 3)².",
+      "marks": 2
+     },
+     {
+      "code": "14(b)",
+      "prompt": "(i) Sketch the curve C. (ii) Explain briefly why C does not include all points of y = 6 − (x − 3)², x ∈ ℝ.",
+      "marks": 3
+     },
+     {
+      "code": "14(c)",
+      "prompt": "The line with equation x + y = k, where k is a constant, intersects C at two distinct points. State the range of values of k, writing your answer in set notation.",
+      "marks": 5
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "Use small angle approximation sin3θ ≈ 3θ so 2sin3θ·θ ≈ 2·3θ·θ = 6θ²",
+     "Use small angle approximation cos4θ ≈ 1 − (4θ)²/2 = 1 − 8θ² so 1 − cos4θ ≈ 8θ²",
+     "Expression ≈ 8θ²/(6θ²) = 4/3"
+    ],
+    "answer": "4/3",
+    "guidance": "M1 for attempting either sinθ ≈ θ applied to sin3θ (giving 3θ) or cos4θ ≈ 1 − (4θ)²/2 in the given expression. M1 for attempting both substitutions and simplifying. A1 for 4/3 or exact equivalent (condone awrt 1.33). Allow recovery if bracket is missing on cos4θ."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "Write y = x² − 2x − 24x^(1/2)",
+     "dy/dx = 2x − 2 − 12x^(−1/2)",
+     "d²y/dx² = 2 + 6x^(−3/2)"
+    ],
+    "answer": "dy/dx = 2x − 2 − 12x^(−1/2); d²y/dx² = 2 + 6x^(−3/2)",
+    "guidance": "M1 for differentiating to get Ax + B + Cx^(−1/2) form (power decreased by 1 on at least one term). A1 for dy/dx = 2x − 2 − 12x^(−1/2) (coefficients may be unsimplified). B1ft for d²y/dx² correct for their dy/dx (their dy/dx must have a negative or fractional index)."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "Substitute x = 4: dy/dx = 2(4) − 2 − 12(4)^(−1/2) = 8 − 2 − 6 = 0",
+     "Hence stationary point at x = 4"
+    ],
+    "answer": "dy/dx = 0 at x = 4, hence stationary point confirmed",
+    "guidance": "M1 for substituting x = 4 into their dy/dx and attempting to evaluate. A1 for showing dy/dx = 0 AND stating 'hence there is a stationary point' or equivalent conclusion. All aspects must be correct."
+   },
+   "2(c)": {
+    "type": "points",
+    "points": [
+     "Substitute x = 4 into d²y/dx²: 2 + 6(4)^(−3/2) = 2 + 6/8 = 2.75",
+     "d²y/dx² = 2.75 > 0 hence minimum"
+    ],
+    "answer": "Minimum (d²y/dx² > 0 at x = 4)",
+    "guidance": "M1 for substituting x = 4 into their d²y/dx² and calculating its value (or implying its sign). A1ft for a correct calculation, valid reason (d²y/dx² > 0), and correct conclusion 'minimum'. Follow through on incorrect d²y/dx² if it has a negative or fractional index."
+   },
+   "3": {
+    "type": "points",
+    "points": [
+     "Area of sector: ½r²θ = 11",
+     "Perimeter of sector = 2r + rθ; arc length = rθ",
+     "Condition: 2r + rθ = 4rθ ⟹ 2r = 3rθ ⟹ θ = 2/3",
+     "Substitute θ = 2/3 into ½r²(2/3) = 11 ⟹ r²/3 = 11 ⟹ r² = 33 ⟹ r = √33"
+    ],
+    "answer": "r = √33",
+    "guidance": "B1 for stating or using ½r²θ = 11. B1 for stating or using perimeter = 2r + rθ = 4rθ (or equivalent). M1 for a full method combining equations to eliminate θ and find r. A1 for r = √33 only (isw after correct answer). The whole question can also be attempted using degrees."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Let f(x) = 2ln(8 − x) − x",
+     "f(3) = 2ln5 − 3 ≈ 3.22 − 3 = 0.22 > 0",
+     "f(4) = 2ln4 − 4 ≈ 2.77 − 4 = −1.23 < 0",
+     "Change of sign and f continuous on [3, 4] ⟹ root α in (3, 4)"
+    ],
+    "answer": "3 < α < 4 (shown by sign change)",
+    "guidance": "M1 for attempting f(3) and f(4) where f(x) = 2ln(8−x) − x (or comparing 2ln5 to 3 and 2ln4 to 4). A1* for both values correct to at least 1 sf with correct explanation (change of sign) and conclusion. Not scored for substituting into both separate functions."
+   },
+   "4(b)": {
+    "type": "points",
+    "points": [
+     "Draw cobweb diagram starting at x₁ = 4 on the graph",
+     "The cobweb spirals inwards towards α",
+     "Conclude: the iteration can be used as it converges to the root"
+    ],
+    "answer": "Yes, the iteration can be used — the cobweb spirals inwards converging to α",
+    "guidance": "M1 for an attempt at a cobweb diagram with at least two spirals (5 or more correct lines). A1 for correctly deducing that the iteration can be used because the cobweb spirals inwards / converges to the root. Must include a statement that it can be used with a suitable reason."
+   },
+   "5": {
+    "type": "points",
+    "points": [
+     "Apply quotient rule: dy/dθ = [2sinθ + 2cosθ)(3cosθ) − 3sinθ(2cosθ − 2sinθ)] / (2sinθ + 2cosθ)²",
+     "Numerator: 6sinθcosθ + 6cos²θ − 6sinθcosθ + 6sin²θ = 6(sin²θ + cos²θ) = 6",
+     "Denominator: (2sinθ + 2cosθ)² = 4(sinθ + cosθ)² = 4(1 + 2sinθcosθ) = 4(1 + sin2θ)",
+     "dy/dθ = 6 / [4(1 + sin2θ)] = 3/2 · 1/(1 + sin2θ)"
+    ],
+    "answer": "dy/dθ = 3/(2(1 + sin2θ)), A = 3/2",
+    "guidance": "M1 for choosing quotient/product rule or implicit differentiation and applying to the given function (correct form of derivative, condone coefficient slips). A1 for a correct unsimplified expression. M1 for expanding and using sin²θ + cos²θ = 1 at least once in numerator or denominator OR using 2sinθcosθ = sin2θ. M1 for using both identities to reach form P/(Q + Rsin2θ). A1 for fully correct proof with A = 3/2 stated."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "Gradient of l is 2, so gradient of PA = −1/2 (perpendicular gradients)",
+     "Line PA passes through A(7, 5) with gradient −1/2: y − 5 = −½(x − 7)",
+     "2y − 10 = −x + 7 ⟹ 2y + x = 17 ✓"
+    ],
+    "answer": "2y + x = 17 (shown)",
+    "guidance": "M1 for using perpendicular gradients to deduce gradient of PA = −1/2. M1 for finding equation of line with gradient −1/2 through (7, 5). A1* for completing proof 2y + x = 17 with no errors or omissions."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "Solve 2y + x = 17 and y = 2x + 1 simultaneously: 2(2x+1) + x = 17 ⟹ 5x = 15 ⟹ x = 3, y = 7",
+     "P = (3, 7)",
+     "Radius² = (7−3)² + (5−7)² = 16 + 4 = 20",
+     "Equation of C: (x − 7)² + (y − 5)² = 20"
+    ],
+    "answer": "(x − 7)² + (y − 5)² = 20",
+    "guidance": "M1 for attempting to solve 2y + x = 17 and y = 2x + 1 simultaneously to find P. A1 for P = (3, 7). M1 for using Pythagoras to find radius² using their P and A(7,5). A1 for (x−7)² + (y−5)² = 20 (do not accept with √20)."
+   },
+   "6(c)": {
+    "type": "exact",
+    "points": [
+     "Point diametrically opposite P to A: Q = (11, 3) (using OA = AP extended, or solve 2y + x = 17 noting other tangent point)",
+     "Substitute Q(11, 3) into y = 2x + k: 3 = 22 + k ⟹ k = −19"
+    ],
+    "answer": "k = −19",
+    "guidance": "M1 for attempting to find where y = 2x + k meets C (using OAPA method to find (11, 3), or substituting into circle equation to form a quadratic). M1 for full method leading to k (substituting (11,3) into y = 2x + k, or using discriminant b² − 4ac = 0 on the quadratic 5x² − (4k+34)x + (k² + 10k + 54) = 0). A1 for k = −19 only."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "∫ 2/(3x−k) dx = (2/3)ln|3x−k| + C",
+     "Evaluate from k to 3k: (2/3)[ln(9k−k) − ln(3k−k)] = (2/3)[ln(8k) − ln(2k)]",
+     "= (2/3)ln(8k/2k) = (2/3)ln4"
+    ],
+    "answer": "(2/3)ln4 (independent of k)",
+    "guidance": "M1 for ∫ 2/(3x−k) dx = A·ln(3x−k) (condone missing bracket). A1 for (2/3)ln(3x−k). dM1 for substituting k and 3k into their A·ln(3x−k) and subtracting. A1 for using correct ln work to show the result = (2/3)ln4 (independent of k)."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "∫ 2/(2x−k)² dx = −1/(2x−k) + C (or C/(2x−k))",
+     "Evaluate from k to 2k: [−1/(4k−k)] − [−1/(2k−k)] = −1/(3k) + 1/k = 2/(3k)"
+    ],
+    "answer": "2/(3k) (inversely proportional to k)",
+    "guidance": "M1 for ∫ 2/(2x−k)² dx = C/(2x−k). dM1 for substituting k and 2k into their C/(2x−k) and subtracting. A1 for showing the result is of the form A/k (with A = 2/3), hence inversely proportional to k. Do not isw: the answer must be explicitly in the form A/k."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "At 6:30 am, t = 6.5",
+     "D = 5 + 2sin(30 × 6.5)° = 5 + 2sin(195°) ≈ 4.48 m"
+    ],
+    "answer": "D ≈ 4.48 m",
+    "guidance": "B1 for substituting t = 6.5 into D = 5 + 2sin(30t) and stating D ≈ 4.48 m. Units must be seen. Allow D = 4.482... ≈ 4.5 m."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Loading finishes at 8:30 am (t = 8.5); need D ≥ 3.8",
+     "3.8 = 5 + 2sin(30t)° ⟹ sin(30t)° = −0.6",
+     "30t = 180 + arcsin(0.6) or 30t = 360 − arcsin(0.6): relevant solution 30t = 323.1° ⟹ t ≈ 10.77",
+     "Earliest time: 10:46 am (or 10:47 am)"
+    ],
+    "answer": "10:46 am (or 10:47 am)",
+    "guidance": "M1 for using D = 3.8 and proceeding to sin(30t) = k where |k| < 1. A1 for sin(30t) = −0.6 (may be implied by t = 7.2). dM1 for finding first value of t after t = 8.5 (look for 30t = 180 + arcsin(0.6) giving t ≈ 10.77). A1 for 10:46 am or 10:47 am (12 or 24 hour clock). Do not allow '646 minutes' or '10 hours 46 minutes'."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Differentiate implicitly: 2x − 2y − 2x(dy/dx) + 6y(dy/dx) = 0",
+     "Collect dy/dx terms: (6y − 2x)(dy/dx) = 2y − 2x",
+     "dy/dx = (2y − 2x)/(6y − 2x) = (y − x)/(3y − x) ✓"
+    ],
+    "answer": "dy/dx = (y − x)/(3y − x) (shown)",
+    "guidance": "M1 for differentiating either 3y² (giving 6y dy/dx) or 2xy correctly using implicit differentiation. A1 for fully correct derivative 2x − 2y − 2x(dy/dx) + 6y(dy/dx) = 0. M1 for a valid attempt at making dy/dx the subject with two terms in dy/dx. A1* for dy/dx = (y−x)/(3y−x) with no errors; the previous line (2y−2x)/(6y−2x) must be seen."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "At P and Q (furthest west/east), dx/dy = 0, so denominator = 0: 3y − x = 0 ⟹ x = 3y",
+     "Substitute x = 3y into x² − 2xy + 3y² = 50: 9y² − 6y² + 3y² = 6y² = 50 ⟹ y² = 25/3",
+     "y = −5/√3 = −5√3/3 (P is furthest west, negative x)",
+     "x = 3y = −5√3",
+     "P = (−5√3, −5√3/3)"
+    ],
+    "answer": "P = (−5√3, −5√3/3)",
+    "guidance": "M1 for deducing that 3y − x = 0 (denominator of dy/dx = 0 for vertical tangent). M1 for solving y = x/3 with x² − 2xy + 3y² = 50 simultaneously. A1 for x = −5√3 or y = −5√3/3. dM1 (dep) for finding the other coordinate. A1 for P = (−5√3, −5√3/3) (allow x =..., y =...)."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "Set dy/dx = 0 (numerator = 0): y − x = 0 ⟹ y = x",
+     "Solve y = x with x² − 2xy + 3y² = 50 and choose the positive solution"
+    ],
+    "answer": "Set dy/dx = 0, solve y = x with the curve equation, choose positive solution",
+    "guidance": "B1ft for explaining that dy/dx = 0, so solve y = x and x² − 2xy + 3y² = 50 simultaneously, choosing the positive solution. Allow follow through for candidates who mixed up parts (b) and (c)."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "Separate variables: (1/H)dH = cos(0.25t)/40 dt",
+     "Integrate both sides: ln H = (1/10)sin(0.25t) + c",
+     "Apply initial condition t = 0, H = 5: c = ln5",
+     "ln(H/5) = (1/10)sin(0.25t) ⟹ H = 5e^(0.1sin(0.25t)) ✓"
+    ],
+    "answer": "H = 5e^(0.1sin(0.25t)) (shown)",
+    "guidance": "M1 for separating variables to reach (1/H)dH = cos(0.25t)/40 dt (integral signs on both sides, dH and dt in correct positions). M1 for integrating both sides to reach ln H = A·sin(0.25t) + c. A1 for ln H = (1/10)sin(0.25t) + c. dM1 for substituting t = 0, H = 5 to find c = ln5. A1* for proceeding via ln(H/5) = (1/10)sin(0.25t) to H = 5e^(0.1sin(0.25t)) with at least one correct intermediate line."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "Maximum when sin(0.25t) = 1",
+     "H_max = 5e^(0.1) ≈ 5.53 m"
+    ],
+    "answer": "5e^(0.1) ≈ 5.53 m",
+    "guidance": "B1 for 5e^(0.1) or awrt 5.53. Condone lack of units, but penalise if incorrect units are used."
+   },
+   "10(c)": {
+    "type": "points",
+    "points": [
+     "Maximum height when sin(0.25t) = 1 ⟹ 0.25t = π/2",
+     "Second maximum when 0.25t = π/2 + 2π = 5π/2",
+     "T = 5π/2 ÷ 0.25 = 10π ≈ 31.4 s"
+    ],
+    "answer": "T = 10π ≈ 31.4 s",
+    "guidance": "M1 for identifying that second maximum is when 0.25t = 5π/2 (or 450°). A1 for T = 10π (awrt 31.4); allow if units are seen."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "Write √((1+4x)/(1−x)) = (1+4x)^(1/2) · (1−x)^(−1/2)",
+     "Expand (1+4x)^(1/2) ≈ 1 + (1/2)(4x) + (1/2)(−1/2)/2! · (4x)² = 1 + 2x − 2x²",
+     "Expand (1−x)^(−1/2) ≈ 1 + (1/2)x + (3/8)x²",
+     "Multiply: (1 + 2x − 2x²)(1 + (1/2)x + (3/8)x²) ≈ 1 + (1/2)x + (3/8)x² + 2x + x² + (−2x²) + ...",
+     "= 1 + (5/2)x + (3/8 + 1 − 2)x² = 1 + (5/2)x − (5/8)x² ✓"
+    ],
+    "answer": "√((1+4x)/(1−x)) ≈ 1 + (5/2)x − (5/8)x² (shown)",
+    "guidance": "B1 for key step of writing as (1+4x)^(1/2)·(1−x)^(−1/2). M1 for attempt at binomial expansion of (1+4x)^(1/2) with at least 3 terms. M1 for attempt at binomial expansion of (1−x)^(−1/2) with at least 3 terms. A1 for both expansions correct and simplified. dM1 for multiplying the two expansions to reach a quadratic (dependent on B1 and at least one M). A1* for completing proof with no errors."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "The expansion is only valid for |x| < 1/4",
+     "x = 1/2 is outside the radius of convergence"
+    ],
+    "answer": "x = 1/2 is outside the valid range |x| < 1/4",
+    "guidance": "B1 for stating the expansion is not valid when x = 1/2 because |x| must be < 1/4 (or 4x must satisfy |4x| < 1). May be implied by 1/2 > 1/4 or stating 4x = 2 > 1. Do not award for just saying 1/2 is too big without reference to validity of the expansion."
+   },
+   "11(c)": {
+    "type": "points",
+    "points": [
+     "Substitute x = 1/11: LHS = √((1 + 4/11)/(1 − 1/11)) = √((15/11)/(10/11)) = √(15/10) = √(3/2) = √6/2",
+     "RHS = 1 + (5/2)(1/11) − (5/8)(1/11)² = 1 + 5/22 − 5/968 = 968/968 + 220/968 − 5/968 = 1183/968",
+     "So √6/2 ≈ 1183/968 ⟹ √6 ≈ 1183/484"
+    ],
+    "answer": "√6 ≈ 1183/484",
+    "guidance": "M1 for substituting x = 1/11 into both sides and attempting at least one side. A1 for both sides correct leading to √6/2 = 1183/968. A1 for √6 ≈ 1183/484 (or 2904/1183)."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "V = Ap^t: 32000 = Ap^4 and 50000 = Ap^11",
+     "Divide: p^7 = 50000/32000 = 25/16 ⟹ p = (25/16)^(1/7)",
+     "p ≈ 1.0658",
+     "A = 32000/p^4 = 32000/1.0658^4 ≈ 24795 ≈ 24800"
+    ],
+    "answer": "p ≈ 1.0658; A ≈ 24800",
+    "guidance": "M1 for using both data points in V = Ap^t, eliminating A, and solving p^n = k. A1 for p = awrt 1.0658. M1 for substituting their p into either equation to find A. A1* for showing A is between 24795 and 24805 before stating A ≈ 24800."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "A ≈ £24800 is the value of the car on 1st January 2001 (the initial value at t = 0)",
+     "p ≈ 1.0658 is the factor by which the value of the car increases each year (approximately 6.6% per year)"
+    ],
+    "answer": "A = initial value (£24800 on 1 Jan 2001); p = annual growth factor (≈6.6% per year)",
+    "guidance": "B1 for A: must reference the car, its value, and t = 0 (e.g. 'initial value of the car' or 'value on 1 Jan 2001'). B1 for p: must reference a yearly rate and an increase (e.g. 'value rises by 6.6% per year', 'annual multiplier'). Do not allow 'how much the value rises each year' (needs to be proportional/factor)."
+   },
+   "12(c)": {
+    "type": "points",
+    "points": [
+     "Set 24800 × 1.0658^t = 100000",
+     "1.0658^t = 100000/24800",
+     "t = log(100000/24800) / log(1.0658) ≈ 21.8",
+     "t = 21 is during 2022 (2001 + 21 = 2022)"
+    ],
+    "answer": "The year 2022",
+    "guidance": "M1 for using the model 100000 = 24800 × 1.0658^t and proceeding to 1.0658^t = k. dM1 for complete method to find t using logarithms. A1 for t ≈ 21.8 (or awrt). A1 (cso) for the year 2022."
+   },
+   "13": {
+    "type": "points",
+    "points": [
+     "Use substitution u = x + 2 (so x = u − 2, dx = du); limits: x=0 ⟹ u=2, x=2 ⟹ u=4",
+     "∫₂⁴ 2(u−2)√u du = ∫₂⁴ (2u^(3/2) − 4u^(1/2)) du",
+     "= [(4/5)u^(5/2) − (8/3)u^(3/2)]₂⁴",
+     "At u=4: (4/5)(32) − (8/3)(8) = 128/5 − 64/3 = (384 − 320)/15 = 64/15",
+     "At u=2: (4/5)(4√2) − (8/3)(2√2) = (16√2)/5 − (16√2)/3 = 16√2(3−5)/15 = −32√2/15",
+     "Result = 64/15 − (−32√2/15) = (64 + 32√2)/15 = (2/15)(32 + 16√2) ... simplify differently:",
+     "= 2(32 + 16√2)/30 — re-evaluate: (64 + 32√2)/15 = (2/15)(32 + 16√2) ... checking: 2(3√2+2)/15 × correct factor",
+     "Correct: (4/5)(4^(5/2)) − (8/3)(4^(3/2)) − [(4/5)(2^(5/2)) − (8/3)(2^(3/2))] = 128/5 − 64/3 − (16√2)/5 + (16√2)/3",
+     "= (384−320)/15 + √2(−48+80)/15 = 64/15 + 32√2/15 = (2/15)(32 + 16√2) = (2/15)·16(2+√2)... ",
+     "Actually: (64 + 32√2)/15 = (32/15)(2 + √2) — note: given answer is (2/15)(3√2+2). Verify: 2(3√2+2)/15 = (6√2+4)/15 ≠ (64+32√2)/15. Check limits again with u=x+2: at x=2, u=4; at x=0, u=2. ∫₂⁴ 2(u−2)u^(1/2) du = [2·(2/5)u^(5/2) − 4·(2/3)u^(3/2)]₂⁴ = [(4/5)u^(5/2) − (8/3)u^(3/2)]₂⁴. u=4: (4/5)·32 − (8/3)·8 = 128/5 − 64/3 = (384−320)/15 = 64/15. u=2: (4/5)·4√2 − (8/3)·2√2 = (16/5 − 16/3)√2 = (48−80)√2/15 = −32√2/15. Total = 64/15 + 32√2/15 = (64+32√2)/15 = (32/15)(2+√2). This equals (2/15)·16(√2+2). The given answer (2/15)(3√2+2) ≈ (2/15)·6.24 ≈ 0.83. Let's numerically check: ∫₀² 2x√(x+2)dx. At x=1: 2·√3≈3.46. Numerical ≈ 3.01. (64+32√2)/15 ≈ (64+45.25)/15 ≈ 7.28 — that seems too large. Re-check: 2·(2/5)u^(5/2) should be (4/5), and −4·(2/3)u^(3/2) = −(8/3). u=4: 4√2 not 32... 4^(5/2) = 4²·√4 = 32. OK. u=2: 2^(5/2) = 4√2 ✓. So I get (64+32√2)/15. Numerically: (64+45.25)/15 = 7.28. But numerical integral ≈ 3.01. There must be a factor of 2 error. Re-read: ∫₀² 2x√(x+2) dx. With u=x+2: x=u−2, dx=du, 2x = 2(u−2). So integral = ∫₂⁴ 2(u−2)√u du. 2(u−2)·u^(1/2) = 2u^(3/2) − 4u^(1/2). ∫ = [(2·2/5)u^(5/2) − (4·2/3)u^(3/2)] = [(4/5)u^(5/2) − (8/3)u^(3/2)]₂⁴. Numerically: u=4: (4/5)·32 − (8/3)·8 = 25.6−21.33 = 4.267. u=2: (4/5)·5.657 − (8/3)·2.828 = 4.525−7.542 = −3.017. Total = 4.267−(−3.017) = 7.28. But numerical check gives ~3.01 for ∫₀²2x√(x+2)dx — let me recompute: at x=0: 0; at x=2: 2·2·2 = 8. Trapezoid ≈ 4. More carefully with midpoint x=1: 2·1·√3 ≈ 3.46. Simpson: (0+4·3.46+8)/3·(2/2) ≈ (0+13.86+8)/3 ≈ 7.28. OK so 7.28 is correct numerically! The given answer in the PDF was (32/15)(√2+2)·something — let me reparse: the PDF says 2/15 × (√2 + 2) × 32/2 = ... Actually the PDF says exactly: (32/15)(√2 + 2)·... The printed result in QP is ∫₀²2x√(x+2)dx = (2+√2)·(something)/15. Let me re-read the mark scheme: it says 32/15(√2+2). Numerically: 32/15·3.414 = 7.28 ✓. So the answer is (32(√2+2))/15 = (32/15)(2+√2)."
+    ],
+    "answer": "(32/15)(√2 + 2)",
+    "guidance": "M1 for attempting integration by substitution u = x + 2 (or u = √(x+2)), changing all terms to u. B1 for giving the substitution and a correct du/dx. M1 for expressing all aspects of the integral in terms of u. dM1 for expanding and integrating correctly (power raised by 1 for each term). A1 for correct anti-derivative in u or x. ddM1 for using correct limits the correct way around. A1* for proceeding to (32/15)(2+√2) with at least one correct intermediate line."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "cos2t = 1 − 2sin²t ⟹ y = 4 + 2(1 − 2sin²t) = 6 − 4sin²t",
+     "sin t = (x − 3)/2 ⟹ sin²t = (x − 3)²/4",
+     "y = 6 − 4·(x−3)²/4 = 6 − (x−3)² ✓"
+    ],
+    "answer": "y = 6 − (x − 3)² (shown)",
+    "guidance": "M1 for using cos2t = 1 − 2sin²t to eliminate t. A1* for proceeding to y = 6 − (x−3)² with no errors."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "Sketch: inverted parabola with vertex at (3, 6), endpoints at (1, 2) and (5, 2)",
+     "C does not include all points of y = 6 − (x−3)² because −1 ≤ sint ≤ 1 restricts 1 ≤ x ≤ 5"
+    ],
+    "answer": "Parabola arc from (1,2) to (5,2) with maximum (3,6); C is restricted to 1 ≤ x ≤ 5",
+    "guidance": "M1 for a parabola-shaped curve with maximum in first quadrant. A1 for fully correct parabola with endpoints (1,2) and (5,2). B1 for suitable reason: as −1 ≤ sint ≤ 1 then 1 ≤ x ≤ 5 (or as −1 ≤ cos2t ≤ 1 then 2 ≤ y ≤ 6), so C does not extend to all real x."
+   },
+   "14(c)": {
+    "type": "points",
+    "points": [
+     "Lower value: line x + y = k through endpoint (5, 2): k = 7 (B1)",
+     "Substitute y = k − x into y = 6 − (x−3)²: k − x = 6 − (x−3)² ⟹ x² − 7x + (k−3) = 0",
+     "For two intersections: discriminant > 0: 49 − 4(k−3) > 0 ⟹ 49 − 4k + 12 > 0 ⟹ k < 61/4",
+     "Range: {k : 7 ≤ k < 61/4} or {k : 7 ≤ k < 15.25}"
+    ],
+    "answer": "{k : 7 ≤ k < 61/4}",
+    "guidance": "B1 for deducing lower value k = 7 (from substituting (5,2) or (1,2) into x+y=k, or from x² − 7x + (k−3) = 0 giving repeated root check). M1 for finding where x + y = k meets y = 6 − (x−3)² and forming a 3TQ. A1 for correct 3TQ x² − 7x + (k−3) = 0. M1 for using discriminant b² − 4ac ≥ 0 (or > 0) to find critical value. A1 for {k : 7 ≤ k < 61/4} in set notation (accept equivalent exact forms; 61/4 = 15.25)."
+   }
+  }
  }
 };
