@@ -80,7 +80,7 @@ const CS_OCR_QUESTIONS = {
       { q: 'Which unit represents approximately one billion bytes?', options: ['Megabyte','Gigabyte','Terabyte','Kilobyte'], answer: 1 },
       { q: 'What type of storage medium is a CD or DVD?', options: ['Magnetic','Solid state','Optical','Flash'], answer: 2 },
       { q: 'What is virtual memory?', options: ['A type of RAM','Hard drive space used as extra RAM when RAM is full','A type of ROM','Memory inside the GPU'], answer: 1 },
-      { q: 'What does "non-volatile" memory mean?', options: ['It is very fast','Data is retained when power is removed','It can only be read, not written','It is inside the CPU'], answer: 1 },
+      { q: 'What does "non-volatile" memory mean?', options: ['It requires no power at all','Data is retained when power is removed','It can only be read, not written','It is inside the CPU'], answer: 1 },
       { q: 'Which stores more data — a terabyte or a gigabyte?', options: ['Gigabyte','They are the same','Terabyte','It depends on the device'], answer: 2 },
       { q: 'What does HDD stand for?', options: ['High Density Drive','Hard Disk Drive','Hybrid Digital Device','High Data Disk'], answer: 1 },
       { q: 'What does SSD stand for?', options: ['Solid State Drive','Super Speed Disk','Secondary Storage Device','Silicon Storage Drive'], answer: 0 },
