@@ -5092,5 +5092,688 @@ window.MATHS_QUESTIONS = {
     "guidance": "E1 states any one valid assumption, e.g. rope is light, rope is inextensible, pulley is fixed, no air resistance."
    }
   }
+ },
+ "math-aqa-7357-2024-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Each of the series below shows the first four terms of a geometric series.\n\nIdentify the only one of these geometric series that is convergent.\n\nTick (✓) one box.\n\n0.1 + 0.2 + 0.4 + 0.8 + …\n\n1 − 1 + 1 − 1 + …\n\n128 − 64 + 32 − 16 + …\n\n1 + 2 + 4 + 8 + …",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "The quadratic equation\n\n4x² + bx + 9 = 0\n\nhas one repeated real root.\n\nFind b\n\nCircle your answer.\n\nb = 0     b = ±12     b = ±13     b = ±36",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "One of the graphs shown below cannot have an equation of the form\n\ny = aˣ     where a > 0\n\nIdentify this graph.\n\nTick (✓) one box.\n\n(Four graphs are shown: an increasing curve in Q1/Q2, a decreasing curve in Q1/Q2, a curve decreasing into Q3/Q4 passing through the origin area going negative, and a horizontal line. The graph that cannot be y = aˣ is the one that goes negative/below the x-axis.)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "A curve has equation y = x⁴ + 2ˣ\n\nFind an expression for dy/dx",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The diagram shows a sector of a circle OAB. The chord AB divides the sector into a triangle and a shaded segment. Angle AOB is π/6 radians. The radius of the sector is 18 cm.",
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "Show that the area of the shaded segment is\n\nk(π − 3) cm²\n\nwhere k is an integer to be found.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find ∫(6x² − 5/√x) dx",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "The gradient of a curve is given by\n\ndy/dx = 6x² − 5/√x\n\nThe curve passes through the point (4, 90).\n\nFind the equation of the curve.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "The graphs with equations y = 2 + 3x − 2x² and x + y = 1 are shown in the diagram. The graphs intersect at the points A and B.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "On the diagram, shade and label the region, R, that is satisfied by the inequalities\n\n0 ≤ y ≤ 2 + 3x − 2x²\n\nand\n\nx + y ≥ 1",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the exact coordinates of A",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The temperature θ °C of an oven t minutes after it is switched on can be modelled by the equation θ = 20(11 − 10e^(−kt)) where k is a positive constant. Initially the oven is at room temperature. The maximum temperature of the oven is T °C.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the room temperature.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find the value of T",
+      "marks": 2
+     },
+     {
+      "code": "8(c)(i)",
+      "prompt": "The oven reaches a temperature of 86 °C one minute after it is switched on.\n\nFind the value of k.",
+      "marks": 2
+     },
+     {
+      "code": "8(c)(ii)",
+      "prompt": "Find the time it takes for the temperature of the oven to be within 1°C of its maximum.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "Figure 1 shows a circle. The centre of the circle is P and the circle intersects the y-axis at Q. The equation of the circle is x² + y² = 12y − 8x − 27.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Express the equation of the circle in the form\n\n(x − a)² + (y − b)² = k\n\nwhere a, b and k are constants to be found.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "State the coordinates of P",
+      "marks": 1
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Find the y-coordinate of Q",
+      "marks": 2
+     },
+     {
+      "code": "9(d)",
+      "prompt": "The line segment QR is a tangent to the circle. The point R has coordinates (9, −3).\n\nFind the angle QPR\n\nGive your answer in radians to three significant figures.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10",
+      "prompt": "It is given that\n\nf(x) = 5x³ + x\n\nUse differentiation from first principles to prove that\n\nf′(x) = 15x² + 1",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "The curve C with equation y = (x² − 8x) ln x is defined for x > 0. The shaded region, R, lies below the x-axis and is bounded by C and the x-axis.",
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "Show that the area of R can be written as\n\np + q ln 2\n\nwhere p and q are rational numbers to be found.",
+      "marks": 10
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A random sample of 84 students was asked how many revision websites they had visited in the past month. The data is: 0 websites: 1, 1 website: 4, 2 websites: 18, 3 websites: 16, 4 websites: 5, 5 websites: 37, 6 websites: 2, 7 websites: 1.",
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "Find the interquartile range of the number of websites visited by these 84 students.\n\nCircle your answer.\n\n3     4     19     42",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "The shaded region on one of the Venn diagrams below represents (A ∪ C) ∩ B\n\nIdentify this Venn diagram.\n\nTick (✓) one box.\n\n(Four Venn diagrams with three circles A, B, C are shown with different regions shaded.)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The annual cost of energy in 2021 for each of the 350 households in Village A can be modelled by a random variable £X. It is given that ∑x = 945 000 and ∑x² = 2 607 500 000.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Calculate the mean of X.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Calculate the standard deviation of X.",
+      "marks": 2
+     },
+     {
+      "code": "14(c)",
+      "prompt": "For households in Village B the annual cost of energy in 2021 has mean £3100 and standard deviation £325\n\nCompare the annual cost of energy in 2021 for households in Village A and Village B.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "It is given that X ~ B(48, 0.175)",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the mean of X",
+      "marks": 1
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Show that the variance of X is 6.93",
+      "marks": 1
+     },
+     {
+      "code": "15(c)",
+      "prompt": "Find P(X < 10)",
+      "marks": 1
+     },
+     {
+      "code": "15(d)",
+      "prompt": "Find P(X ≥ 6)",
+      "marks": 2
+     },
+     {
+      "code": "15(e)",
+      "prompt": "Find P(9 ≤ X ≤ 15)",
+      "marks": 2
+     },
+     {
+      "code": "15(f)",
+      "prompt": "The aeroplanes used on a particular route have 48 seats. The proportion of passengers who use this route to travel for business is known to be 17.5%\n\nMake two comments on whether it would be appropriate to use X to model the number of passengers on an aeroplane who are travelling for business using this route.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "parts": [
+     {
+      "code": "16",
+      "prompt": "A medical student believes that, in adults, there is a negative correlation between the amount of nicotine in their blood stream and their energy level.\n\nThe student collected data from a random sample of 50 adults. The correlation coefficient between the amount of nicotine in their blood stream and their energy level was −0.45\n\nCarry out a hypothesis test at the 2.5% significance level to determine if this sample provides evidence to support the student's belief.\n\nFor n = 50, the critical value for a one-tailed test at the 2.5% level for the population correlation coefficient is 0.2787",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "In 2019, the lengths of new-born babies at a clinic can be modelled by a normal distribution with mean 50 cm and standard deviation 4 cm.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "This normal distribution is represented in the diagram below.\n\nLabel the values 50 and 54 on the horizontal axis.",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "State the probability that the length of a new-born baby is less than 50 cm.",
+      "marks": 1
+     },
+     {
+      "code": "17(c)",
+      "prompt": "Find the probability that the length of a new-born baby is more than 56 cm.",
+      "marks": 1
+     },
+     {
+      "code": "17(d)",
+      "prompt": "Find the probability that the length of a new-born baby is more than 40 cm but less than 60 cm.",
+      "marks": 1
+     },
+     {
+      "code": "17(e)",
+      "prompt": "Determine the length exceeded by 95% of all new-born babies at the clinic.",
+      "marks": 2
+     },
+     {
+      "code": "17(f)",
+      "prompt": "In 2020, the lengths of 40 new-born babies at the clinic were selected at random. The total length of the 40 new-born babies was 2060 cm.\n\nCarry out a hypothesis test at the 10% significance level to investigate whether the mean length of a new-born baby at the clinic in 2020 has increased compared to 2019.\n\nYou may assume that the length of a new-born baby is still normally distributed with standard deviation 4 cm.",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "The Human Resources director in a company is investigating the graduate status and salaries of its employees. Event G is defined as the employee is a graduate. Event H is defined as the employee earns at least £40 000 a year. The table of probabilities is: P(G∩H) = 0.21, P(G∩H') = 0.18, P(G'∩H) = 0.07, P(G'∩H') = 0.54.",
+    "parts": [
+     {
+      "code": "18(a)(i)",
+      "prompt": "An employee is selected at random.\n\nFind P(G)",
+      "marks": 1
+     },
+     {
+      "code": "18(a)(ii)",
+      "prompt": "Find P[(G ∩ H)′]",
+      "marks": 2
+     },
+     {
+      "code": "18(a)(iii)",
+      "prompt": "Find P(H | G′)",
+      "marks": 2
+     },
+     {
+      "code": "18(b)",
+      "prompt": "Determine whether the events G and H are independent.\n\nFully justify your answer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "scenario": "It is known that 80% of all diesel cars registered in 2017 had carbon monoxide (CO) emissions less than 0.3 g/km. Talat decides to investigate whether the proportion of diesel cars registered in 2022 with CO emissions less than 0.3 g/km has changed. Talat will carry out a hypothesis test at the 10% significance level on a random sample of 25 diesel cars registered in 2022.",
+    "parts": [
+     {
+      "code": "19(a)(i)",
+      "prompt": "State suitable null and alternative hypotheses for Talat's test.",
+      "marks": 1
+     },
+     {
+      "code": "19(a)(ii)",
+      "prompt": "Using a 10% level of significance, find the critical region for Talat's test.",
+      "marks": 5
+     },
+     {
+      "code": "19(a)(iii)",
+      "prompt": "In his random sample, Talat finds 18 cars with CO emissions less than 0.3 g/km.\n\nState Talat's conclusion in context.",
+      "marks": 1
+     },
+     {
+      "code": "19(b)",
+      "prompt": "Talat now wants to use his random sample of 25 diesel cars, registered in 2022, to investigate whether the proportion of diesel cars in England with CO emissions more than 0.5 g/km has changed from the proportion given by the Large Data Set.\n\nUsing your knowledge of the Large Data Set, give two reasons why it is not possible for Talat to do this.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "128 − 64 + 32 − 16 + …"
+    ],
+    "guidance": "B1 for ticking the 3rd box. A convergent geometric series requires |r| < 1. Here r = −1/2, so |r| = 0.5 < 1."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "b = ±12"
+    ],
+    "guidance": "B1 for circling b = ±12. For a repeated root the discriminant = 0: b² − 4(4)(9) = 0 ⇒ b² = 144 ⇒ b = ±12."
+   },
+   "3": {
+    "type": "exact",
+    "points": [
+     "The graph that goes below the x-axis (3rd box — curve decreasing through the x-axis into negative y values)"
+    ],
+    "guidance": "B1 for ticking the 3rd box. y = aˣ with a > 0 is always positive; a graph that takes negative values cannot be of this form."
+   },
+   "4": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 4x³ + 2ˣ ln 2"
+    ],
+    "guidance": "M1 for obtaining one correct term (either 4x³ or 2ˣ ln 2). A1 for the fully correct answer 4x³ + 2ˣ ln 2. Condone 4x³ + ln 2 × 2ˣ. Do not ISW."
+   },
+   "5": {
+    "type": "points",
+    "points": [
+     "Area of sector = ½ × 18² × π/6 = 27π",
+     "Area of triangle = ½ × 18² × sin(π/6) = ½ × 324 × ½ = 81",
+     "Area of segment = sector − triangle = 27π − 81 = 27(π − 3) cm²",
+     "So k = 27"
+    ],
+    "guidance": "M1 for obtaining either ½ × 18² × π/6 or ½ × 18² × sin(π/6). A1 for obtaining both expressions. R1 for completing the argument to obtain 27(π − 3) cm² — must see 27π − 81 or 162(π/6 − 1/2)."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "2x³ − 10x^(1/2) + c"
+    ],
+    "guidance": "B1 writes 5/√x as 5x^(−1/2). M1 for obtaining one correctly integrated term. A1 for 2x³ − 10x^(1/2) + c (simplified; condone omission of +c)."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "y = 2x³ − 10x^(1/2) − 18"
+    ],
+    "guidance": "M1 substitutes x = 4 into their integrated expression from 6(a) with arbitrary constant and sets equal to 90, giving c = −18. A1 for y = 2x³ − 10x^(1/2) − 18 (CAO; condone f(x) for y)."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Shade the region between the curve y = 2 + 3x − 2x² (above) and the line x + y = 1 (below), in the first quadrant between A and the x-axis — i.e. regions 1 and 2 only, labelled R"
+    ],
+    "guidance": "M1 for shading two of regions 1, 2, 3 only (or one only, or all three). R1 for shading the correct regions 1 and 2 only (condone missing label R)."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "A = ((2 − √6)/2, √6/2)"
+    ],
+    "guidance": "M1 eliminates y or x correctly to obtain a quadratic (2x² − 4x − 1 = 0). A1 for x = (2 − √6)/2 or y = √6/2 (may be unsimplified). A1 for the exact coordinates ((2 − √6)/2, √6/2) — must be simplified."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "20°C"
+    ],
+    "guidance": "M1 substitutes t = 0. A1 for 20°C (must have units)."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "T = 220"
+    ],
+    "guidance": "M1 replaces e^(−kt) with 0 (as t → ∞). A1 for T = 220."
+   },
+   "8(c)(i)": {
+    "type": "exact",
+    "points": [
+     "k = 0.4"
+    ],
+    "guidance": "M1 forms 86 = 20(11 − 10e^(−k)). A1 for k ≈ 0.4 (AWFW [0.4, 0.4005] or −ln 0.67)."
+   },
+   "8(c)(ii)": {
+    "type": "exact",
+    "points": [
+     "t ≈ 13.2 minutes"
+    ],
+    "guidance": "M1 uses T − 1 = 20(11 − 10e^(−kt)) with their T and k. A1 for AWFW [13.2, 13.25] minutes (condone missing units or inequality t > 13.2)."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "(x + 4)² + (y − 6)² = 25"
+    ],
+    "guidance": "M1 for obtaining (x ± 4)²... or (y ± 6)².... M1 for obtaining (x + 4)² + (y − 6)².... A1 for (x + 4)² + (y − 6)² = 25 (accept 5² for 25)."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "P = (−4, 6)"
+    ],
+    "guidance": "B1F for (−4, 6) — follow through their squared brackets from 9(a)."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "y = 9"
+    ],
+    "guidance": "M1 substitutes x = 0 into the equation of the circle to get y² − 12y + 27 = 0, giving y = 3 or y = 9. A1 for y = 9 (the higher intersection point Q as shown in Figure 1)."
+   },
+   "9(d)": {
+    "type": "exact",
+    "points": [
+     "Angle QPR ≈ 1.25 radians"
+    ],
+    "guidance": "M1 uses distance formula to find QR or PR (PR = 5√10). M1 substitutes correctly into a trig equation (cos QPR = 5/(5√10) = 1/√10). A1 for AWFW [1.249, 1.25] radians."
+   },
+   "10": {
+    "type": "points",
+    "points": [
+     "Write f(x+h) − f(x) = 5(x+h)³ + (x+h) − (5x³ + x)",
+     "Expand (x+h)³ = x³ + 3x²h + 3xh² + h³ correctly",
+     "Simplify numerator: (15x²h + 15xh² + 5h³ + h)/h = 15x² + 15xh + 5h² + 1",
+     "Divide by h to obtain 15x² + 15xh + 5h² + 1",
+     "Take the limit as h → 0: f′(x) = lim_{h→0}(15x² + 15xh + 5h² + 1) = 15x² + 1"
+    ],
+    "guidance": "M1 states 5(x+h)³ + (x+h) − (5x³ + x). M1 expands (x+h)³ correctly. A1 obtains (15x²h + 15xh² + 5h³ + h)/h correctly eliminating 5x³ and x. A1 obtains 15x² + 15xh + 5h² + 1 by correctly dividing by h. R1 completes a reasoned argument using lim_{h→0} to prove f′(x) = 15x² + 1."
+   },
+   "11": {
+    "type": "points",
+    "points": [
+     "Set (x² − 8x) ln x = 0: x = 0 (boundary) or x = 8 or ln x = 0 ⇒ x = 1; limits are 1 and 8",
+     "Use integration by parts with u = ln x, v′ = x² − 8x: ∫(x² − 8x) ln x dx = (x³/3 − 4x²) ln x − ∫(x³/3 − 4x²)(1/x) dx",
+     "= (x³/3 − 4x²) ln x − (x³/9 − 2x²)",
+     "Evaluate from 1 to 8: [(512/3 − 256) ln 8 − (512/9 − 128)] − [(1/3 − 4) ln 1 − (1/9 − 2)]",
+     "= −(256/3) ln 8 + 640/9 − 17/9 = 623/9 − 256 ln 2",
+     "Area = −(623/9 − 256 ln 2) = −623/9 + 256 ln 2, so p = −623/9, q = 256"
+    ],
+    "guidance": "M1 equates (x² − 8x) ln x to zero. A1 obtains at least one of x = 1 or x = 8. R1 deduces limits are 1 and 8. M1 states u = ln x and v′ = x² − 8x. A1 finds u′ = 1/x and v = x³/3 − 4x². M1 applies integration by parts. A1 obtains (x³/3 − 4x²) ln x − (x³/9 − 2x²). M1 substitutes limits. A1 obtains 623/9 − 256 ln 2. R1 completes argument to obtain area = −623/9 + 256 ln 2."
+   },
+   "12": {
+    "type": "exact",
+    "points": [
+     "3"
+    ],
+    "guidance": "B1 for circling 3. Q1 is the 21st value = 2, Q3 is the 63rd value = 5, IQR = 5 − 2 = 3."
+   },
+   "13": {
+    "type": "exact",
+    "points": [
+     "Bottom left Venn diagram (A ∩ B shaded, plus the part of C ∩ B that overlaps with A)"
+    ],
+    "guidance": "B1 for ticking the bottom left box. (A ∪ C) ∩ B is the intersection of B with the union of A and C — shading the parts of B that overlap with A or C."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "Mean = £2700"
+    ],
+    "guidance": "B1 for 2700. Mean = 945 000 / 350 = 2700."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "Standard deviation = £400"
+    ],
+    "guidance": "M1 uses the correct formula √(∑x²/n − x̄²) with their mean. A1 for 400. √(2607500000/350 − 2700²) = √160000 = 400."
+   },
+   "14(c)": {
+    "type": "points",
+    "points": [
+     "The mean annual cost of energy for households in Village A (£2700) is lower on average than for Village B (£3100)",
+     "The variation (standard deviation) in annual energy cost is higher in Village A (£400) than in Village B (£325)"
+    ],
+    "guidance": "E1F for a correct contextual comparison of means (must include 'on average', 'typically' etc). E1F for a correct contextual comparison of standard deviations (must include 'varies', 'spread', 'variation', 'consistent' etc). Do not allow 'range' or 'variety'."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "Mean = 8.4"
+    ],
+    "guidance": "B1 for 8.4. Mean = np = 48 × 0.175 = 8.4."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "Variance = np(1−p) = 48 × 0.175 × 0.825 = 6.93 (AG)"
+    ],
+    "guidance": "B1 for showing 48 × 0.175 × 0.825 = 6.93."
+   },
+   "15(c)": {
+    "type": "exact",
+    "points": [
+     "P(X < 10) ≈ 0.6742"
+    ],
+    "guidance": "B1 for AWFW [0.674, 0.6742]."
+   },
+   "15(d)": {
+    "type": "exact",
+    "points": [
+     "P(X ≥ 6) ≈ 0.8675"
+    ],
+    "guidance": "M1 for finding P(X ≤ 5) ≈ 0.1325 or equivalent. A1 for P(X ≥ 6) = 1 − 0.1325 = 0.8675 (AWFW [0.867, 0.868])."
+   },
+   "15(e)": {
+    "type": "exact",
+    "points": [
+     "P(9 ≤ X ≤ 15) ≈ 0.4623"
+    ],
+    "guidance": "M1 for finding P(X ≤ 15) ≈ 0.9940 or P(X ≤ 8) ≈ 0.5317. A1 for 0.9940 − 0.5317 = 0.4623 (AWFW [0.462, 0.4631])."
+   },
+   "15(f)": {
+    "type": "points",
+    "points": [
+     "Appropriate: the 48 seats and 17.5% proportion of business passengers match the values of n and p in the model (or: outcomes are binary — business/non-business; or: passengers travel independently)",
+     "Not appropriate: the plane may not be full so n might not be 48 (or: the proportion p might not be fixed at 0.175 e.g. during peak/holiday periods; or: passengers may not be independent as they may book in groups)"
+    ],
+    "guidance": "E1 for one relevant comment (for or against) from the acceptable list. E1 for a second non-contradictory comment. Do not allow 'probability being independent' as a comment."
+   },
+   "16": {
+    "type": "points",
+    "points": [
+     "H₀: ρ = 0; H₁: ρ < 0 (one-tailed test for negative correlation)",
+     "Test statistic: r = −0.45; critical value = −0.2787 (one-tailed, 2.5%, n = 50)",
+     "Since −0.45 < −0.2787, reject H₀",
+     "There is sufficient evidence at the 2.5% significance level to support the student's belief that there is a negative correlation between the amount of nicotine in the blood stream and energy level in adults"
+    ],
+    "guidance": "B1 for H₀: ρ = 0 and H₁: ρ < 0. M1 for comparing |−0.45| or −0.45 with ±0.2787. A1 for stating −0.45 < −0.2787 and inferring H₀ rejected. R1 for a conclusion in context (must reference negative correlation and nicotine/energy; must be non-definite using 'suggest'/'support' etc)."
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "Label 50 on the horizontal axis below the vertex (peak) of the normal curve",
+     "Label 54 on the horizontal axis below the right-hand point of inflection"
+    ],
+    "guidance": "B1 for labelling 50 below the vertex. B1 for labelling 54 below the right-hand point of inflection (one standard deviation above the mean)."
+   },
+   "17(b)": {
+    "type": "exact",
+    "points": [
+     "0.5"
+    ],
+    "guidance": "B1 for 0.5. By symmetry of the normal distribution, P(X < 50) = 0.5."
+   },
+   "17(c)": {
+    "type": "exact",
+    "points": [
+     "P(X > 56) ≈ 0.0668"
+    ],
+    "guidance": "B1 for AWFW [0.0668, 0.067]. 56 is 1.5 standard deviations above the mean."
+   },
+   "17(d)": {
+    "type": "exact",
+    "points": [
+     "P(40 < X < 60) ≈ 0.9876"
+    ],
+    "guidance": "B1 for AWFW [0.987, 0.99]. 40 and 60 are 2.5 standard deviations either side of the mean."
+   },
+   "17(e)": {
+    "type": "exact",
+    "points": [
+     "Minimum length ≈ 43.4 cm"
+    ],
+    "guidance": "M1 for forming (x − 50)/4 = −1.6449 (the 5th percentile z-value). A1 for AWFW [43.4, 43.44] cm or 43 cm (condone missing units)."
+   },
+   "17(f)": {
+    "type": "points",
+    "points": [
+     "H₀: μ = 50; H₁: μ > 50 (one-tailed test)",
+     "Sample mean x̄ = 2060/40 = 51.5 cm",
+     "Under H₀, X̄ ~ N(50, 4²/40) = N(50, 0.4)",
+     "P(X̄ > 51.5) = P(Z > (51.5 − 50)/√0.4) = P(Z > 2.372) ≈ 0.0089",
+     "Since 0.0089 < 0.1, reject H₀",
+     "There is sufficient evidence at the 10% significance level to suggest that the mean length of a new-born baby at the clinic in 2020 has increased compared to 2019"
+    ],
+    "guidance": "B1 for H₀: μ = 50, H₁: μ > 50. B1 for sample mean 51.5. M1 for stating or using the correct sampling distribution N(50, 4²/40). A1 for P ≈ 0.0089 or test statistic ≈ 2.37 or critical value ≈ 50.8. M1 for correct comparison with 0.1. A1F for inferring H₀ rejected. R1 for conclusion in context (must refer to increase in mean length; must be non-definite)."
+   },
+   "18(a)(i)": {
+    "type": "exact",
+    "points": [
+     "P(G) = 0.39"
+    ],
+    "guidance": "B1 for 0.39. P(G) = 0.21 + 0.18 = 0.39."
+   },
+   "18(a)(ii)": {
+    "type": "exact",
+    "points": [
+     "P[(G ∩ H)′] = 0.79"
+    ],
+    "guidance": "M1 for 1 − P(G ∩ H) or 0.07 + 0.18 + 0.54. A1 for 0.79."
+   },
+   "18(a)(iii)": {
+    "type": "exact",
+    "points": [
+     "P(H | G′) = 7/61 ≈ 0.115"
+    ],
+    "guidance": "M1 for P(H ∩ G′)/P(G′) = 0.07/(0.07 + 0.54). A1 for 7/61 or AWFW [0.11, 0.115]."
+   },
+   "18(b)": {
+    "type": "points",
+    "points": [
+     "P(G) × P(H) = 0.39 × 0.28 = 0.1092",
+     "P(G ∩ H) = 0.21",
+     "Since P(G ∩ H) ≠ P(G) × P(H), G and H are not independent"
+    ],
+    "guidance": "M1 for computing P(G) × P(H) = 0.39 × 0.28 (or equivalent valid comparison). R1 for completing the argument and concluding G and H are not independent."
+   },
+   "19(a)(i)": {
+    "type": "points",
+    "points": [
+     "H₀: p = 0.8",
+     "H₁: p ≠ 0.8"
+    ],
+    "guidance": "B1 for both H₀: p = 0.8 and H₁: p ≠ 0.8 (two-tailed since the question asks whether the proportion has 'changed')."
+   },
+   "19(a)(ii)": {
+    "type": "points",
+    "points": [
+     "X ~ B(25, 0.8) under H₀",
+     "Lower tail: P(X ≤ 16) = 0.0468 < 0.05 and P(X ≤ 17) = 0.1091 > 0.05, so lower critical region is X ≤ 16",
+     "Upper tail: P(X ≥ 24) = 0.0274 < 0.05 and P(X ≥ 23) = 0.0982 > 0.05, so upper critical region is X ≥ 24",
+     "Critical region: X ≤ 16 or X ≥ 24"
+    ],
+    "guidance": "B1 for stating/using X ~ B(25, 0.8). M1 for calculating one relevant probability. M1 for comparing with 0.05. A1 for one of the critical regions (X ≤ 16 or X ≥ 24). A1 for both critical regions X ≤ 16 and X ≥ 24."
+   },
+   "19(a)(iii)": {
+    "type": "points",
+    "points": [
+     "18 does not lie in the critical region (X ≤ 16 or X ≥ 24)",
+     "There is insufficient evidence to suggest that the proportion of diesel cars registered in 2022 with CO emissions less than 0.3 g/km has changed"
+    ],
+    "guidance": "E1F for a correct contextual conclusion — 18 is not in the critical region, so do not reject H₀ (must be non-definite)."
+   },
+   "19(b)": {
+    "type": "points",
+    "points": [
+     "No diesel cars in the Large Data Set have CO emissions more than 0.5 g/km (so a proportion cannot be estimated)",
+     "The Large Data Set only uses data from cars in some regions in England, not all, so it is not representative of diesel cars in England as a whole (or: values of CO emissions for some diesel cars are missing from the LDS)"
+    ],
+    "guidance": "E1 for one valid reason. E1 for a different valid reason from the approved list."
+   }
+  }
  }
 };
