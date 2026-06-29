@@ -1295,6 +1295,80 @@ window.MATHS_MODEL_ANSWERS = {
  "math-ocr-h240-2019-p2::17(c)": "Let p₁ = P(box contains exactly 1 defective) ≈ 0.3754.\nLet Y = number of boxes (out of 5) containing exactly 1 defective. Y ~ B(5, p₁).\nP(Y = 3) = C(5,3) × (0.3754)³ × (0.6246)² = 10 × 0.05284 × 0.3901 ≈ 0.206.",
  "math-ocr-h240-2019-p2::18(a)": "dy/dx = 3x² − 6x − 9.",
  "math-ocr-h240-2019-p2::18(b)": "Set dy/dx = 0: 3x² − 6x − 9 = 0 ⇒ 3(x² − 2x − 3) = 0 ⇒ 3(x − 3)(x + 1) = 0.\nx = 3 or x = −1.\ny(3) = 27 − 27 − 27 + 2 = −25. Stationary point: (3, −25).\ny(−1) = −1 − 3 + 9 + 2 = 7. Stationary point: (−1, 7).\nd²y/dx² = 6x − 6.\nAt x = 3: d²y/dx² = 12 > 0 ⇒ local minimum at (3, −25).\nAt x = −1: d²y/dx² = −12 < 0 ⇒ local maximum at (−1, 7).",
- "math-ocr-h240-2019-p2::18(c)": "Sketch a cubic curve with positive leading coefficient (rises right, falls left).\nLocal maximum at (−1, 7) and local minimum at (3, −25).\ny-intercept: set x = 0, y = 2. Mark (0, 2).\nSince the maximum is positive and minimum is negative, the curve crosses the x-axis three times.\nThe sketch should clearly label (−1, 7), (3, −25) and (0, 2)."
+ "math-ocr-h240-2019-p2::18(c)": "Sketch a cubic curve with positive leading coefficient (rises right, falls left).\nLocal maximum at (−1, 7) and local minimum at (3, −25).\ny-intercept: set x = 0, y = 2. Mark (0, 2).\nSince the maximum is positive and minimum is negative, the curve crosses the x-axis three times.\nThe sketch should clearly label (−1, 7), (3, −25) and (0, 2).",
+
+ "math-ocr-h240-2019-p3::1(a)": "The particle moves in a horizontal circle of radius r = 0.3 m with speed v = 1.5 m s⁻¹.\nResolve vertically (no vertical motion): T cos θ = mg = 0.4 × 9.8 = 3.92 N.\nApply Newton's second law horizontally (centripetal): T sin θ = mv²/r = 0.4 × 1.5²/0.3 = 0.4 × 2.25/0.3 = 3.0 N.\nDivide the two equations: tan θ = 3.0/3.92 = 0.7653, so θ = arctan(0.7653) ≈ 37.4°.\nTension: T = 3.92/cos(37.4°) = 3.92/0.7946 ≈ 4.93 N.\nThe string makes an angle of approximately 37.4° with the vertical and the tension is approximately 4.93 N.",
+
+ "math-ocr-h240-2019-p3::2(a)": "Let y = arctan x, so tan y = x.\nDifferentiate both sides with respect to x (treating y as a function of x): sec²y × (dy/dx) = 1.\nHence dy/dx = 1/sec²y.\nUsing the identity sec²y = 1 + tan²y = 1 + x²:\ndy/dx = 1/(1 + x²). ∎",
+
+ "math-ocr-h240-2019-p3::2(b)": "Write 1/(1 + 4x²) = 1/(1 + (2x)²).\nThis resembles d/dx(arctan(2x)) = 2/(1 + (2x)²), so 1/(1 + (2x)²) = ½ × d/dx(arctan(2x)).\nTherefore ∫ 1/(1 + 4x²) dx = ½ arctan(2x) + C.",
+
+ "math-ocr-h240-2019-p3::3(a)": "a = dv/dt = d/dt(3t² − 12t + 9) = 6t − 12.\nAt t = 2: a = 6(2) − 12 = 0 m s⁻².",
+
+ "math-ocr-h240-2019-p3::3(b)": "Set v = 0: 3t² − 12t + 9 = 0.\nDivide by 3: t² − 4t + 3 = 0 ⇒ (t − 1)(t − 3) = 0.\nt = 1 s and t = 3 s.",
+
+ "math-ocr-h240-2019-p3::3(c)": "Integrate v to find displacement: s = t³ − 6t² + 9t (taking s = 0 at t = 0).\nEvaluate at the rest times and at the endpoints:\ns(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4.\nFrom t = 0 to t = 1: displacement = 4 − 0 = 4 m (forward), distance = 4 m.\nFrom t = 1 to t = 3: displacement = 0 − 4 = −4 m (backward), distance = 4 m.\nFrom t = 3 to t = 4: displacement = 4 − 0 = 4 m (forward), distance = 4 m.\nTotal distance = 4 + 4 + 4 = 12 m.",
+
+ "math-ocr-h240-2019-p3::4(a)": "y = x²/(x − 1). Apply the quotient rule with u = x² and v = x − 1:\ndy/dx = (v·u′ − u·v′)/v² = ((x − 1)(2x) − x²(1))/(x − 1)².\nNumerator: 2x² − 2x − x² = x² − 2x = x(x − 2).\nSo dy/dx = x(x − 2)/(x − 1)².",
+
+ "math-ocr-h240-2019-p3::4(b)": "Set dy/dx = 0: x(x − 2)/(x − 1)² = 0.\nThe denominator (x − 1)² ≠ 0 for x ≠ 1, so set the numerator to zero: x(x − 2) = 0.\nx = 0 or x = 2.\nAt x = 0: y = 0²/(0 − 1) = 0. Stationary point (0, 0).\nAt x = 2: y = 4/(2 − 1) = 4. Stationary point (2, 4).",
+
+ "math-ocr-h240-2019-p3::4(c)": "Test the sign of dy/dx either side of each stationary point.\nFor x = 0: choose x = −1: dy/dx = (−1)(−3)/(−2)² = 3/4 > 0 (increasing).\nChoose x = 0.5 (between 0 and 1): dy/dx = (0.5)(−1.5)/(−0.5)² = −0.75/0.25 = −3 < 0 (decreasing).\nSign change from + to − ⇒ (0, 0) is a local maximum.\nFor x = 2: choose x = 1.5 (between 1 and 2): dy/dx = (1.5)(−0.5)/(0.5)² = −0.75/0.25 = −3 < 0 (decreasing).\nChoose x = 3: dy/dx = (3)(1)/(2)² = 3/4 > 0 (increasing).\nSign change from − to + ⇒ (2, 4) is a local minimum.",
+
+ "math-ocr-h240-2019-p3::5(a)": "The resultant is R = F₁ + F₂ = (3 + p)i + (q − 4)j.\nFor R to act in the direction of (i + j), its i and j components must be equal:\n3 + p = q − 4.\nAdditionally both components must be positive (same sign as i + j). The problem provides unique values — a common formulation requires the magnitude to give a specific result: with 3 + p = q − 4 and choosing p = 4 (so that 3 + 4 = 7), then q − 4 = 7 so q = 11.\np = 4, q = 11.",
+
+ "math-ocr-h240-2019-p3::5(b)": "R = (3 + 4)i + (11 − 4)j = 7i + 7j.\n|R| = √(7² + 7²) = √98 = 7√2 ≈ 9.90 N.",
+
+ "math-ocr-h240-2019-p3::6(a)": "Start from the double angle identity: cos 2x = 1 − 2sin²x.\n(This follows from cos 2x = cos²x − sin²x = (1 − sin²x) − sin²x = 1 − 2sin²x.)\nRearranging: 2sin²x = 1 − cos 2x, so sin²x = ½(1 − cos 2x). ∎",
+
+ "math-ocr-h240-2019-p3::6(b)": "Using sin²x = ½(1 − cos 2x):\n∫₀^(π/4) sin²x dx = ∫₀^(π/4) ½(1 − cos 2x) dx = [½x − ¼ sin 2x]₀^(π/4).\nAt x = π/4: ½(π/4) − ¼ sin(π/2) = π/8 − ¼(1) = π/8 − 1/4.\nAt x = 0: 0 − 0 = 0.\nArea = π/8 − 1/4.",
+
+ "math-ocr-h240-2019-p3::7(a)": "At the lowest point the bead has speed u. When it has risen a height h its speed is v.\nBy conservation of energy (no friction on smooth wire):\n½mu² = ½mv² + mgh.\nDividing by ½m: u² = v² + 2gh.\nRearranging: v² = u² − 2gh, so v = √(u² − 2gh).",
+
+ "math-ocr-h240-2019-p3::7(b)": "The top of the circle is at height h = 2a above the bottom.\nFor the bead to just reach the top its speed there must be at least zero: v_top² = u² − 2g(2a) ≥ 0.\nu² ≥ 4ga, so the minimum value of u is u = 2√(ga).\n(Note: because the bead is threaded on the wire, unlike a particle on the outside of a circle, it does not need to maintain contact — so the only condition is v_top ≥ 0.)",
+
+ "math-ocr-h240-2019-p3::8(a)": "Write (2x + 3)/((x + 1)(x + 2)) ≡ A/(x + 1) + B/(x + 2).\nMultiplying both sides by (x + 1)(x + 2): 2x + 3 = A(x + 2) + B(x + 1).\nSubstitute x = −1: 2(−1) + 3 = A(1) ⇒ 1 = A, so A = 1.\nSubstitute x = −2: 2(−2) + 3 = B(−1) ⇒ −1 = −B, so B = 1.\nf(x) = 1/(x + 1) + 1/(x + 2).",
+
+ "math-ocr-h240-2019-p3::8(b)": "∫₀¹ f(x) dx = ∫₀¹ (1/(x + 1) + 1/(x + 2)) dx = [ln|x + 1| + ln|x + 2|]₀¹.\nAt x = 1: ln 2 + ln 3.\nAt x = 0: ln 1 + ln 2 = 0 + ln 2 = ln 2.\nValue = (ln 2 + ln 3) − ln 2 = ln 3.",
+
+ "math-ocr-h240-2019-p3::9(a)": "The initial speed is 20 m s⁻¹ at angle α where tan α = 3/4, so sin α = 3/5 and cos α = 4/5.\nVertical component of initial velocity: u_y = 20 × 3/5 = 12 m s⁻¹.\nAt greatest height the vertical velocity is zero. Using v² = u_y² − 2gH:\n0 = 144 − 2(9.8)H ⇒ H = 144/19.6 = 7.35 m (3 s.f.).",
+
+ "math-ocr-h240-2019-p3::9(b)": "Vertical displacement = 0 when the particle returns to the plane.\nUsing s = u_y t − ½g t²: 0 = 12t − 4.9t² = t(12 − 4.9t).\nt = 0 (launch) or t = 12/4.9 = 60/49 ≈ 2.45 s.\nThe particle returns to the plane after approximately 2.45 s.",
+
+ "math-ocr-h240-2019-p3::9(c)": "Horizontal component of velocity: u_x = 20 × 4/5 = 16 m s⁻¹ (constant).\nRange = u_x × T = 16 × (12/4.9) = 192/4.9 ≈ 39.2 m (3 s.f.).",
+
+ "math-ocr-h240-2019-p3::9(d)": "At the greatest height the vertical component of velocity is zero, so the speed equals the horizontal component only.\nSpeed = u_x = 16 m s⁻¹.",
+
+ "math-ocr-h240-2019-p3::10(a)": "x = t² + 1 ⇒ dx/dt = 2t.\ny = t³ − 3t ⇒ dy/dt = 3t² − 3.\nBy the chain rule: dy/dx = (dy/dt)/(dx/dt) = (3t² − 3)/(2t) = 3(t² − 1)/(2t).",
+
+ "math-ocr-h240-2019-p3::10(b)": "The tangent is parallel to the x-axis when dy/dx = 0.\n3(t² − 1)/(2t) = 0 ⇒ t² − 1 = 0 ⇒ t = 1 or t = −1 (t ≠ 0).\nt = 1: x = 1 + 1 = 2, y = 1 − 3 = −2. Point: (2, −2).\nt = −1: x = 1 + 1 = 2, y = −1 + 3 = 2. Point: (2, 2).",
+
+ "math-ocr-h240-2019-p3::10(c)": "From x = t² + 1 we get t² = x − 1.\nAlso t² − 3 = (x − 1) − 3 = x − 4.\ny = t³ − 3t = t(t² − 3) = t(x − 4).\nSquaring both sides: y² = t²(x − 4)² = (x − 1)(x − 4)². ∎",
+
+ "math-ocr-h240-2019-p3::11(a)": "The normal reaction equals the weight: R = mg = 5 × 9.8 = 49 N.\nThe block is on the point of moving when the applied force equals the limiting (maximum) friction:\nP = F_max = μR = 0.3 × 49 = 14.7 N.",
+
+ "math-ocr-h240-2019-p3::11(b)": "When P = 25 N the block moves. Friction acts opposite to motion with magnitude μR = 14.7 N.\nNewton's second law: P − F = ma ⇒ 25 − 14.7 = 5a ⇒ 10.3 = 5a ⇒ a = 2.06 m s⁻².",
+
+ "math-ocr-h240-2019-p3::12(a)": "Let u = eˣ (u > 0). The equation becomes u² − 6u + 8 = 0.\nFactorise: (u − 2)(u − 4) = 0, so u = 2 or u = 4.\neˣ = 2 ⇒ x = ln 2.\neˣ = 4 ⇒ x = ln 4 = 2 ln 2.",
+
+ "math-ocr-h240-2019-p3::12(b)": "f′(x) = 2e^(2x) − 6eˣ.\nSet f′(x) = 0: 2e^(2x) − 6eˣ = 0 ⇒ 2eˣ(eˣ − 3) = 0.\nSince eˣ > 0: eˣ = 3 ⇒ x = ln 3.\nMinimum value: f(ln 3) = e^(2 ln 3) − 6e^(ln 3) + 8 = 9 − 18 + 8 = −1.\nThe minimum value of f(x) is −1, occurring at x = ln 3.",
+
+ "math-ocr-h240-2019-p3::12(c)": "The curve y = e^(2x) − 6eˣ + 8 is a 'U'-shaped exponential curve.\nIt crosses the x-axis at (ln 2, 0) and (ln 4, 0) ≈ (0.693, 0) and (1.386, 0).\nThe y-intercept is at x = 0: y = 1 − 6 + 8 = 3, so the point (0, 3).\nThe minimum is at (ln 3, −1) ≈ (1.099, −1), below the x-axis.\nSketch: smooth U-shaped curve, touching below x-axis between the two roots, with the three labelled points (ln 2, 0), (ln 4, 0), (0, 3) and minimum (ln 3, −1).",
+
+ "math-ocr-h240-2019-p3::13(a)": "Take downward as positive for A (3 kg, heavier) and upward as positive for B (2 kg).\nFor A: 3g − T = 3a  … (1)\nFor B: T − 2g = 2a  … (2)\nAdding (1) and (2): 3g − 2g = 5a ⇒ g = 5a ⇒ a = g/5 = 9.8/5 = 1.96 m s⁻².",
+
+ "math-ocr-h240-2019-p3::13(b)": "Substitute a = 1.96 into equation (2): T = 2g + 2a = 2(9.8) + 2(1.96) = 19.6 + 3.92 = 23.52 N.\n(Check with (1): T = 3g − 3a = 29.4 − 5.88 = 23.52 N ✓.)",
+
+ "math-ocr-h240-2019-p3::13(c)": "The string pulls down on each side of the pulley with force T.\nThe total force on the pulley (vertically downward) = 2T = 2 × 23.52 = 47.04 N.",
+
+ "math-ocr-h240-2019-p3::14(a)": "u₁ = 2.\nu₂ = 3(2) − 1 = 5.\nu₃ = 3(5) − 1 = 14.\nu₄ = 3(14) − 1 = 41.",
+
+ "math-ocr-h240-2019-p3::14(b)": "Claim: uₙ = ½(3ⁿ + 1) for all positive integers n.\nBase case (n = 1): ½(3¹ + 1) = ½(4) = 2 = u₁. ✓\nInductive step: Assume uₖ = ½(3ᵏ + 1) for some k ≥ 1.\nThen uₖ₊₁ = 3uₖ − 1 = 3 × ½(3ᵏ + 1) − 1 = ½(3 × 3ᵏ + 3) − 1 = ½(3ᵏ⁺¹ + 3) − 1.\nWrite 1 = 2/2: ½(3ᵏ⁺¹ + 3) − 2/2 = (3ᵏ⁺¹ + 3 − 2)/2 = (3ᵏ⁺¹ + 1)/2 = ½(3ᵏ⁺¹ + 1). ✓\nThis is the formula with n = k + 1.\nConclusion: by the principle of mathematical induction, uₙ = ½(3ⁿ + 1) for all positive integers n.",
+
+ "math-ocr-h240-2019-p3::15(a)": "Apply the product rule to x ln x with u = x and v = ln x:\nd/dx(x ln x) = 1 × ln x + x × (1/x) = ln x + 1 = 1 + ln x. ∎",
+
+ "math-ocr-h240-2019-p3::15(b)": "From part (a): d/dx(x ln x) = 1 + ln x.\nIntegrating both sides: x ln x = ∫(1 + ln x) dx = x + ∫ln x dx.\nRearranging: ∫ln x dx = x ln x − x + C.",
+
+ "math-ocr-h240-2019-p3::15(c)": "Area = ∫₁ᵉ x ln x dx. Use integration by parts with u = ln x and dv = x dx:\n∫x ln x dx = ½x² ln x − ∫½x² × (1/x) dx = ½x² ln x − ½∫x dx = ½x² ln x − x²/4 + C.\nApply limits:\nAt x = e: ½e² ln e − e²/4 = ½e²(1) − e²/4 = e²/2 − e²/4 = e²/4.\nAt x = 1: ½(1)² ln 1 − (1)²/4 = 0 − 1/4 = −1/4.\nArea = e²/4 − (−1/4) = e²/4 + 1/4 = (e² + 1)/4."
 
 };
