@@ -2460,7 +2460,7 @@ function renderPastPapersChecklist(subjects) {
       const pct = totalPapers ? Math.round(donePapers / totalPapers * 100) : 0;
       const progressColor = pct === 100 ? 'var(--green)' : pct > 0 ? 'var(--amber)' : 'var(--border)';
 
-      html += `<details class="pp-subject" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:16px;overflow:hidden;" open>`;
+      html += `<details class="pp-subject" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:16px;overflow:hidden;">`;
       // Subject + board header (acts as the toggle)
       html += `<summary style="padding:14px 18px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap;cursor:pointer;list-style:none;user-select:none;" onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background=''">
         <span style="font-family:var(--font-display);font-size:16px;">${subj.icon || '📄'} ${subj.name}</span>
