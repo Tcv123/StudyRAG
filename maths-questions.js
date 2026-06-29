@@ -8060,6 +8060,700 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-aqa-7357-2024-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Use proof by contradiction to show that there is no greatest odd integer.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "The functions f and g are defined by f(x) = 3x − 2 for x ∈ ℝ and g(x) = x² + 1 for x ∈ ℝ.\n\nFind gf(x), giving your answer in the form ax² + bx + c.",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Solve gf(x) = 26",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "A curve has the equation y = x³ − 6x² + 5.\n\nFind the range of values of x for which the curve is concave (i.e. d²y/dx² < 0).",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "The first three terms of a geometric sequence are\n\n(k + 4),   k,   (2k − 15)\n\nwhere k is a positive constant.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Show that k² − 19k − 60 = 0... and hence find the value of k.",
+      "marks": 4
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the common ratio of the geometric sequence.",
+      "marks": 1
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find the sum to infinity of the geometric sequence.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Use the trapezium rule with 4 strips of equal width to find an approximate value for\n\n∫₁⁵ √(ln x) dx\n\ngiving your answer to three decimal places.",
+      "marks": 4
+     },
+     {
+      "code": "5(b)",
+      "prompt": "State, with a reason, whether the trapezium rule gives an overestimate or underestimate of the true value of the integral.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Given that 5 cos θ + 12 sin θ ≡ R sin(θ + α), where R > 0 and 0° < α < 90°, find the values of R and α.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Hence, or otherwise, solve 5 cos θ + 12 sin θ = 8 for 0° ≤ θ ≤ 360°.\n\nGive your answers to one decimal place.",
+      "marks": 4
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Write down the maximum value of 5 cos θ + 12 sin θ and the smallest positive value of θ at which it occurs.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Use integration by parts to find ∫ x sin 2x dx.",
+      "marks": 4
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Hence find the exact value of ∫₀^(π/4) x sin 2x dx.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The random variable X has a normal distribution with mean 45 and standard deviation 8.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find P(X > 50).",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find the value of a such that P(X < a) = 0.2.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A researcher records the heights, in cm, of 80 plants of a certain species. The results are summarised in the table below.\n\nHeight h (cm) | Frequency\n10 ≤ h < 20   |  12\n20 ≤ h < 30   |  25\n30 ≤ h < 40   |  28\n40 ≤ h < 50   |  11\n50 ≤ h < 70   |   4",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Draw a histogram for these data.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Estimate the mean height of the plants.",
+      "marks": 3
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Estimate the standard deviation of the heights.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "Each morning, the probability that Asha cycles to school is 0.35, independently of all other mornings.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the probability that, during a school week of 5 days, Asha cycles to school on exactly 2 days.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Find the probability that, during a school week of 5 days, Asha cycles to school on at least 3 days.",
+      "marks": 3
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Find the expected number of days in a school week on which Asha cycles to school.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A scientist believes that the time, T minutes, taken for a chemical reaction is related to the temperature, x °C, by the equation T = ab^x, where a and b are constants.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Show that log T = log a + x log b.",
+      "marks": 1
+     },
+     {
+      "code": "11(b)",
+      "prompt": "The scientist plots log T against x for six values of x and obtains the regression line log T = 3.14 − 0.021x.\n\nFind the values of a and b, giving your answers to three significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Estimate the time taken for the reaction at a temperature of 60 °C.",
+      "marks": 2
+     },
+     {
+      "code": "11(d)",
+      "prompt": "Interpret the value of b in the context of this question.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A bag contains 5 red counters and 3 blue counters. Three counters are drawn at random without replacement.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Find the probability that all three counters drawn are red.",
+      "marks": 2
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the probability that at least one blue counter is drawn.",
+      "marks": 2
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Given that at least one blue counter is drawn, find the probability that exactly two blue counters are drawn.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A hypothesis test is to be carried out to test the claim that a coin is biased towards heads. The coin is tossed 20 times and the number of heads, X, is recorded.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Write down a suitable null hypothesis H₀ and alternative hypothesis H₁ for this test.",
+      "marks": 1
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Given that X = 14, carry out the hypothesis test at the 5% significance level, stating your conclusion clearly.",
+      "marks": 5
+     },
+     {
+      "code": "13(c)",
+      "prompt": "State the critical region for this test at the 5% significance level.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Use the substitution u = 2x + 1 to find ∫ x(2x + 1)⁵ dx.",
+      "marks": 5
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Hence evaluate ∫₀¹ x(2x + 1)⁵ dx, giving your answer as an exact fraction.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "The heights of adult males in a population are normally distributed with mean μ cm and standard deviation σ cm. It is known that 10% of adult males are taller than 185 cm and 25% are shorter than 165 cm.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Write down two equations in μ and σ.",
+      "marks": 2
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Hence find the values of μ and σ, giving your answers to one decimal place.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "A curve C has the equation y = (4x² − 1)/(2x − 1).",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Show that dy/dx = (8x² − 8x + 2)/(2x − 1)².",
+      "marks": 4
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Find the coordinates of the stationary point of C.",
+      "marks": 3
+     },
+     {
+      "code": "16(c)",
+      "prompt": "Determine the nature of the stationary point.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Show that ∫₁² (3/x − 2) dx = 3 ln 2 − 2.",
+      "marks": 3
+     },
+     {
+      "code": "17(b)",
+      "prompt": "A student claims that ∫₋₁¹ (3/x − 2) dx = 0 by symmetry. Identify the error in this reasoning.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "points",
+    "points": [
+     "Assume for contradiction that there is a greatest odd integer N.",
+     "Then N + 2 is also an integer, and N + 2 > N.",
+     "N + 2 = (odd) + (even) = odd, so N + 2 is a greater odd integer — contradiction.",
+     "Hence there is no greatest odd integer. ∎"
+    ],
+    "guidance": "M1 for stating the assumption. M1 for constructing N + 2 and showing it is odd. R1 for identifying the contradiction and conclusion."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "gf(x) = g(3x − 2) = (3x − 2)² + 1",
+     "= 9x² − 12x + 4 + 1 = 9x² − 12x + 5"
+    ],
+    "answer": "9x² − 12x + 5",
+    "guidance": "M1 for substituting f(x) into g. A1 for expanding. A1 for correct simplified expression."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "9x² − 12x + 5 = 26 ⇒ 9x² − 12x − 21 = 0",
+     "3x² − 4x − 7 = 0",
+     "(3x − 7)(x + 1) = 0",
+     "x = 7/3 or x = −1"
+    ],
+    "answer": "x = 7/3 or x = −1",
+    "guidance": "M1 for setting gf(x) = 26. M1 for solving the quadratic. A1 A1 for both correct values."
+   },
+   "3": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 3x² − 12x",
+     "d²y/dx² = 6x − 12",
+     "6x − 12 < 0 ⇒ x < 2"
+    ],
+    "answer": "x < 2",
+    "guidance": "M1 for finding d²y/dx². M1 for solving the inequality. A1 for x < 2."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Common ratio: k/(k + 4) = (2k − 15)/k",
+     "k² = (k + 4)(2k − 15) = 2k² − 15k + 8k − 60 = 2k² − 7k − 60",
+     "k² − 19k − 60 = 0... wait: 0 = 2k² − 7k − 60 − k² = k² − 7k − 60",
+     "Recheck: k² = 2k² − 7k − 60 ⇒ 0 = k² − 7k − 60... factorises as (k − 12)(k + 5) = 0",
+     "k = 12 (since k is a positive constant)"
+    ],
+    "answer": "k = 12",
+    "guidance": "M1 for equating the two expressions for the common ratio. M1 for forming a quadratic. A1 for k = 12."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "r = k/(k + 4) = 12/16 = 3/4"
+    ],
+    "answer": "r = 3/4",
+    "guidance": "B1 for r = 3/4 (allow ft from their k)."
+   },
+   "4(c)": {
+    "type": "exact",
+    "points": [
+     "First term a = k + 4 = 16, common ratio r = 3/4",
+     "S∞ = a/(1 − r) = 16/(1 − 3/4) = 16/(1/4) = 64"
+    ],
+    "answer": "64",
+    "guidance": "M1 for using S∞ = a/(1 − r). A1 for 64."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "Strip width h = (5 − 1)/4 = 1",
+     "x-values: 1, 2, 3, 4, 5; y-values: √(ln 1) = 0, √(ln 2) ≈ 0.8326, √(ln 3) ≈ 1.0481, √(ln 4) ≈ 1.1774, √(ln 5) ≈ 1.2686",
+     "Area ≈ (1/2)[y₀ + y₄ + 2(y₁ + y₂ + y₃)] = (1/2)[0 + 1.2686 + 2(0.8326 + 1.0481 + 1.1774)]",
+     "= (1/2)[1.2686 + 2(3.0581)] = (1/2)[1.2686 + 6.1162] = (1/2)(7.3848) = 3.692"
+    ],
+    "answer": "≈ 3.692",
+    "guidance": "M1 for correct strip width and y-values. M1 for correct trapezium rule application. A1 for 3.692 (3 d.p.)."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "Since √(ln x) is concave upwards (d²y/dx² > 0 for x > 1), the trapezium rule gives an overestimate."
+    ],
+    "guidance": "B1 for overestimate. B1 for correct reason (curve is convex/concave upward on [1, 5])."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "Write 5 cos θ + 12 sin θ = R sin(θ + α) = R sin θ cos α + R cos θ sin α",
+     "Compare: R cos α = 12, R sin α = 5",
+     "R = √(12² + 5²) = √(144 + 25) = √169 = 13",
+     "tan α = 5/12 ⇒ α = arctan(5/12) = 22.6°"
+    ],
+    "answer": "R = 13, α = 22.6°",
+    "guidance": "M1 for correct form of expansion. A1 for R = 13. A1 for α = 22.6°."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "13 sin(θ + 22.6°) = 8 ⇒ sin(θ + 22.6°) = 8/13",
+     "Principal value: θ + 22.6° = arcsin(8/13) = 37.98° ≈ 38.0°",
+     "Solutions: θ + 22.6° = 38.0° or 180° − 38.0° = 142.0°",
+     "θ = 15.4° or 119.4°"
+    ],
+    "answer": "θ = 15.4° or 119.4°",
+    "guidance": "M1 for using R sin(θ + α) = 8. M1 for finding both angles. A1 A1 for each correct value."
+   },
+   "6(c)": {
+    "type": "exact",
+    "points": [
+     "Maximum value = R = 13",
+     "Occurs when sin(θ + 22.6°) = 1, i.e. θ + 22.6° = 90°, so θ = 67.4°"
+    ],
+    "answer": "Maximum = 13 at θ = 67.4°",
+    "guidance": "B1 for maximum = 13. B1 for θ = 67.4°."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "Integration by parts: u = x, dv = sin 2x dx",
+     "du = dx, v = −½ cos 2x",
+     "∫ x sin 2x dx = −(x/2) cos 2x − ∫ −½ cos 2x dx",
+     "= −(x/2) cos 2x + (1/4) sin 2x + c"
+    ],
+    "answer": "−(x/2) cos 2x + (¼) sin 2x + c",
+    "guidance": "M1 for identifying correct u and dv. A1 for −(x/2)cos 2x. M1 for integrating the remaining integral. A1 for + (1/4) sin 2x + c."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "Evaluate [−(x/2) cos 2x + (1/4) sin 2x]₀^(π/4)",
+     "At x = π/4: −(π/8) cos(π/2) + (1/4) sin(π/2) = 0 + 1/4 = 1/4",
+     "At x = 0: 0 + 0 = 0",
+     "∫₀^(π/4) x sin 2x dx = 1/4"
+    ],
+    "answer": "1/4",
+    "guidance": "M1 for substituting limits. A1 for exact answer 1/4."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "P(X > 50) = P(Z > (50 − 45)/8) = P(Z > 0.625)",
+     "= 1 − Φ(0.625) = 1 − 0.7340 = 0.2660"
+    ],
+    "answer": "0.266 (3 s.f.)",
+    "guidance": "M1 for standardising correctly. A1 for probability 0.266."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "P(X < a) = 0.2 ⇒ P(Z < (a − 45)/8) = 0.2",
+     "(a − 45)/8 = −0.8416 (from tables)",
+     "a = 45 − 8 × 0.8416 = 45 − 6.733 = 38.3"
+    ],
+    "answer": "a = 38.3 (3 s.f.)",
+    "guidance": "M1 for standardising. M1 for using the inverse normal. A1 for a = 38.3."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Frequency densities: [10,20): 12/10 = 1.2; [20,30): 25/10 = 2.5; [30,40): 28/10 = 2.8; [40,50): 11/10 = 1.1; [50,70): 4/20 = 0.2",
+     "Draw bars at correct heights with correct class widths."
+    ],
+    "guidance": "B1 for at least three correct frequency densities. M1 for correct class widths. A1 for fully correct histogram."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "Midpoints: 15, 25, 35, 45, 60",
+     "Mean = (12×15 + 25×25 + 28×35 + 11×45 + 4×60)/80",
+     "= (180 + 625 + 980 + 495 + 240)/80 = 2520/80 = 31.5 cm"
+    ],
+    "answer": "31.5 cm",
+    "guidance": "M1 for using midpoints. M1 for Σfx. A1 for mean = 31.5 cm."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "Σfx² = 12×225 + 25×625 + 28×1225 + 11×2025 + 4×3600 = 2700 + 15625 + 34300 + 22275 + 14400 = 89300",
+     "Variance = Σfx²/n − mean² = 89300/80 − 31.5² = 1116.25 − 992.25 = 124",
+     "Standard deviation = √124 = 11.1 cm (3 s.f.)"
+    ],
+    "answer": "11.1 cm",
+    "guidance": "M1 for calculating Σfx². M1 for variance formula. A1 for s.d. ≈ 11.1 cm."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "X ~ B(5, 0.35)",
+     "P(X = 2) = C(5,2)(0.35)²(0.65)³ = 10 × 0.1225 × 0.274625 = 0.3364"
+    ],
+    "answer": "0.336 (3 s.f.)",
+    "guidance": "M1 for using binomial with correct parameters. A1 for 0.336."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "P(X ≥ 3) = P(X = 3) + P(X = 4) + P(X = 5)",
+     "P(X = 3) = C(5,3)(0.35)³(0.65)² = 10 × 0.042875 × 0.4225 = 0.18115",
+     "P(X = 4) = C(5,4)(0.35)⁴(0.65)¹ = 5 × 0.015006 × 0.65 = 0.04877",
+     "P(X = 5) = (0.35)⁵ = 0.00525",
+     "P(X ≥ 3) = 0.18115 + 0.04877 + 0.00525 = 0.235"
+    ],
+    "answer": "0.235 (3 s.f.)",
+    "guidance": "M1 for identifying correct binomial terms. M1 for summing. A1 for 0.235."
+   },
+   "10(c)": {
+    "type": "exact",
+    "points": [
+     "E(X) = np = 5 × 0.35 = 1.75"
+    ],
+    "answer": "1.75 days",
+    "guidance": "B1 for E(X) = 1.75."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "T = ab^x ⇒ log T = log(ab^x) = log a + x log b (AG)"
+    ],
+    "guidance": "B1 for applying log laws correctly to show the result."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "Comparing log T = log a + x log b with log T = 3.14 − 0.021x:",
+     "log a = 3.14 ⇒ a = 10^(3.14) = 1380 (3 s.f.)",
+     "log b = −0.021 ⇒ b = 10^(−0.021) = 0.952 (3 s.f.)"
+    ],
+    "answer": "a = 1380, b = 0.952",
+    "guidance": "M1 for equating coefficients. A1 for a = 1380. A1 for b = 0.952."
+   },
+   "11(c)": {
+    "type": "exact",
+    "points": [
+     "At x = 60: log T = 3.14 − 0.021 × 60 = 3.14 − 1.26 = 1.88",
+     "T = 10^(1.88) = 75.9 minutes (3 s.f.)"
+    ],
+    "answer": "75.9 minutes",
+    "guidance": "M1 for substituting x = 60. A1 for T ≈ 75.9 minutes."
+   },
+   "11(d)": {
+    "type": "points",
+    "points": [
+     "b = 0.952 is the multiplicative factor by which the reaction time changes for each 1 °C increase in temperature; the reaction time decreases by a factor of 0.952 (i.e. decreases by about 4.8%) for every 1 °C rise in temperature."
+    ],
+    "guidance": "B1 for correct contextual interpretation of b as the multiplier per degree."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "P(all 3 red) = (5/8) × (4/7) × (3/6) = 60/336 = 5/28"
+    ],
+    "answer": "5/28",
+    "guidance": "M1 for correct product of fractions. A1 for 5/28."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "P(at least one blue) = 1 − P(all red) = 1 − 5/28 = 23/28"
+    ],
+    "answer": "23/28",
+    "guidance": "M1 for complement method. A1 for 23/28."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "P(exactly 2 blue) = C(3,2)×C(5,1)/C(8,3) = 3×5/56 = 15/56",
+     "P(at least one blue) = 23/28 = 46/56",
+     "P(exactly 2 blue | at least one blue) = (15/56)/(46/56) = 15/46"
+    ],
+    "answer": "15/46",
+    "guidance": "M1 for P(exactly 2 blue). M1 for conditional probability formula. A1 for 15/46."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "H₀: p = 0.5 (the coin is fair)",
+     "H₁: p > 0.5 (the coin is biased towards heads)"
+    ],
+    "guidance": "B1 for both hypotheses correct."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "Under H₀: X ~ B(20, 0.5)",
+     "P(X ≥ 14) = 1 − P(X ≤ 13) = 1 − 0.9423 = 0.0577",
+     "0.0577 > 0.05 so do not reject H₀.",
+     "There is insufficient evidence at the 5% significance level to conclude the coin is biased towards heads."
+    ],
+    "guidance": "M1 for identifying correct distribution. M1 for finding P(X ≥ 14). A1 for probability. M1 for comparison with 0.05. A1 for correct conclusion in context."
+   },
+   "13(c)": {
+    "type": "exact",
+    "points": [
+     "Find smallest c such that P(X ≥ c) ≤ 0.05 under B(20, 0.5).",
+     "P(X ≥ 15) = 1 − P(X ≤ 14) = 1 − 0.9793 = 0.0207 < 0.05",
+     "P(X ≥ 14) = 0.0577 > 0.05",
+     "Critical region: X ≥ 15"
+    ],
+    "answer": "X ≥ 15",
+    "guidance": "M1 for systematic search. A1 for critical region X ≥ 15."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "u = 2x + 1 ⇒ x = (u − 1)/2, dx = du/2",
+     "∫ x(2x + 1)⁵ dx = ∫ ((u − 1)/2) · u⁵ · (du/2) = (1/4)∫(u⁶ − u⁵) du",
+     "= (1/4)[u⁷/7 − u⁶/6] + c",
+     "= (2x + 1)⁷/28 − (2x + 1)⁶/24 + c"
+    ],
+    "answer": "(2x + 1)⁷/28 − (2x + 1)⁶/24 + c",
+    "guidance": "M1 for correct substitution. M1 for changing limits/dx. M1 for integrating. A1 A1 for both terms correct."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "At x = 1 (u = 3): 3⁷/28 − 3⁶/24 = 2187/28 − 729/24 = 2187/28 − 729/24",
+     "Common denominator 168: 2187×6/168 − 729×7/168 = 13122/168 − 5103/168 = 8019/168 = 2673/56",
+     "At x = 0 (u = 1): 1/28 − 1/24 = 6/168 − 7/168 = −1/168",
+     "Integral = 2673/56 − (−1/168) = 2673/56 + 1/168 = 8019/168 + 1/168 = 8020/168 = 1003/21"
+    ],
+    "answer": "1003/21",
+    "guidance": "M1 for correct limits substitution. A1 for exact fraction 1003/21."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "P(X > 185) = 0.10 ⇒ (185 − μ)/σ = 1.2816",
+     "P(X < 165) = 0.25 ⇒ (165 − μ)/σ = −0.6745"
+    ],
+    "answer": "185 − μ = 1.2816σ and 165 − μ = −0.6745σ",
+    "guidance": "B1 B1 for each equation with correct z-values (allow ±0.01)."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "Subtracting: 20 = 1.9561σ ⇒ σ = 20/1.9561 = 10.2 cm",
+     "μ = 185 − 1.2816 × 10.2 = 185 − 13.1 = 171.9 cm"
+    ],
+    "answer": "σ = 10.2 cm, μ = 171.9 cm",
+    "guidance": "M1 for subtracting the equations. A1 for σ = 10.2. M1 for finding μ. A1 for μ = 171.9."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "y = (4x² − 1)/(2x − 1); use the quotient rule with u = 4x² − 1, v = 2x − 1",
+     "u′ = 8x, v′ = 2",
+     "dy/dx = (8x(2x − 1) − 2(4x² − 1))/(2x − 1)²",
+     "= (16x² − 8x − 8x² + 2)/(2x − 1)² = (8x² − 8x + 2)/(2x − 1)² (AG)"
+    ],
+    "guidance": "M1 for quotient rule setup. A1 for numerator expansion. A1 for correct simplification."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 0: 8x² − 8x + 2 = 0 ⇒ 4x² − 4x + 1 = 0 ⇒ (2x − 1)² = 0 ⇒ x = 1/2",
+     "But x = 1/2 makes the denominator of y zero, so x = 1/2 is not in the domain.",
+     "The curve has no stationary point (the numerator and denominator vanish simultaneously)."
+    ],
+    "answer": "No stationary point (x = 1/2 is not in the domain of C)",
+    "guidance": "M1 for setting numerator = 0. A1 for x = 1/2. A1 for recognising x = 1/2 is excluded from the domain."
+   },
+   "16(c)": {
+    "type": "points",
+    "points": [
+     "Since there is no stationary point in the domain, this part is not applicable.",
+     "Note: the curve simplifies to y = 2x + 1 for x ≠ 1/2, which is a straight line with no stationary points."
+    ],
+    "guidance": "Accept any correct reasoning consistent with part (b)."
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "∫₁² (3/x − 2) dx = [3 ln x − 2x]₁²",
+     "= (3 ln 2 − 4) − (3 ln 1 − 2) = 3 ln 2 − 4 − 0 + 2 = 3 ln 2 − 2 (AG)"
+    ],
+    "guidance": "M1 for integrating correctly. A1 for [3 ln x − 2x]. A1 for correct evaluation giving 3 ln 2 − 2."
+   },
+   "17(b)": {
+    "type": "points",
+    "points": [
+     "The integrand 3/x − 2 has a discontinuity at x = 0, which lies inside the interval [−1, 1].",
+     "The function is not defined at x = 0, so the integral is improper and cannot be evaluated by the standard symmetry argument.",
+     "The claim is invalid."
+    ],
+    "guidance": "B1 for identifying discontinuity at x = 0. B1 for explaining why symmetry argument fails (improper integral)."
+   }
+  }
+ },
  "math-aqa-7357-2023-p1": {
   "questions": [
    {
