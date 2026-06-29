@@ -585,7 +585,6 @@
         </div>
       </div>
       <div class="topbar-right">
-        <a href="auth/setup.html" class="settings-link">✏️ Edit setup</a>
         <div class="help-btn" onclick="document.getElementById('helpOverlay').classList.add('active')" title="How it works">?</div>
       </div>
     </div>
@@ -746,8 +745,8 @@
         <div class="panel">
           <div class="panel-title">Study streak</div>
           <div class="streak-display">
-            <div class="streak-num" id="streakNum">🔥 0</div>
-            <div class="streak-label" id="streakLabel">days in a row</div>
+            <div class="streak-num" id="streakNum" style="visibility:hidden;">🔥 0</div>
+            <div class="streak-label" id="streakLabel" style="visibility:hidden;">days in a row</div>
           </div>
           <div class="streak-days" id="streakDots"></div>
           <div id="streakGoalLabel" style="text-align:center;margin-top:8px;font-size:11px;color:var(--muted);">
@@ -982,18 +981,40 @@ function fillClass(status) {
   return { red: 'fill-red', amber: 'fill-amber', green: 'fill-green' }[status] || 'fill-pending';
 }
 
-function renderSubjectsRow(subjects) {
+function renderSubjectsRow(subjects, topicRows) {
   const el = document.getElementById('subjectsRowScroll');
   if (!subjects.length) {
     el.innerHTML = `<p class="no-data-msg">No subjects yet. <a href="auth/setup.html">Add your subjects</a> to get started.</p>`;
     return;
   }
-  el.innerHTML = subjects.map(s => `
-    <div class="subj-info-card">
+  // Build per-subject RAG from topicRows
+  const byKey = {};
+  (topicRows || []).forEach(t => {
+    const k = `${t.subject}_${t.exam_board}`;
+    if (!byKey[k]) byKey[k] = [];
+    byKey[k].push(t);
+  });
+  el.innerHTML = subjects.map(s => {
+    const topics = byKey[`${s.subject}_${s.exam_board}`] || [];
+    let rag = 'pending';
+    if (topics.length > 0) {
+      const green = topics.filter(t => t.rag_status === 'green').length;
+      const red   = topics.filter(t => t.rag_status === 'red').length;
+      const gPct  = green / topics.length;
+      const rPct  = red   / topics.length;
+      rag = gPct >= 0.7 ? 'green' : rPct >= 0.4 ? 'red' : 'amber';
+    }
+    const ragClass = { green: 'rag-green', amber: 'rag-amber', red: 'rag-red', pending: 'rag-pending' }[rag];
+    const tagClass = { green: 'tag-green', amber: 'tag-amber', red: 'tag-red', pending: 'tag-pending' }[rag];
+    const tagLabel = { green: 'Green', amber: 'Amber', red: 'Red', pending: 'Pending' }[rag];
+    return `
+    <div class="subj-info-card ${ragClass}">
       <div class="subj-info-emoji">${s.emoji || '📚'}</div>
       <div class="subj-info-name">${s.subject}</div>
       <div class="subj-info-board">${s.exam_board}</div>
-    </div>`).join('');
+      <span class="rag-tag ${tagClass}">${tagLabel}</span>
+    </div>`;
+  }).join('');
 }
 
 function renderMedals(earnedIds) {
@@ -1625,7 +1646,7 @@ async function load() {
 
 
   // Rows
-  renderSubjectsRow(subjectList);
+  renderSubjectsRow(subjectList, topicRows);
   const existingMedalIds = (medals || []).map(m => m.medal_id);
   const allMedalIds = await checkAndAwardMedals(user, topicRows, subjectList, existingMedalIds);
   renderMedals(allMedalIds);
@@ -1801,10 +1822,14 @@ function renderStreak(count, lastDate) {
     validCount = 0;
   }
 
-  document.getElementById('streakNum').textContent   = `🔥 ${validCount}`;
+  const streakNumEl = document.getElementById('streakNum');
+  const streakLblEl = document.getElementById('streakLabel');
+  streakNumEl.textContent   = `🔥 ${validCount}`;
+  streakLblEl.textContent   = validCount === 1 ? 'day in a row' : 'days in a row';
+  streakNumEl.style.visibility = '';
+  streakLblEl.style.visibility = '';
   const statStreakEl = document.getElementById('statStreak');
   if (statStreakEl) statStreakEl.textContent = `🔥 ${validCount}`;
-  document.getElementById('streakLabel').textContent = validCount === 1 ? 'day in a row' : 'days in a row';
 
   const days = ['S','M','T','W','T','F','S'];
   const dots = document.getElementById('streakDots');
