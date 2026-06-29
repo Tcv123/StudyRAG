@@ -139,7 +139,7 @@ const BIOLOGY_EDEXCEL_A_QUESTIONS = {
       { q: 'What is transpiration?', options: ['Absorption of water by roots','Loss of water vapour from leaves through stomata','Transport of sugars','Photosynthesis'], answer: 1 },
       { q: 'What is the function of root hair cells?', options: ['Photosynthesis','Absorb water and mineral ions from soil','Support the plant','Store starch'], answer: 1 },
       { q: 'What are the two circulations in a double circulatory system?', options: ['Systemic and renal','Pulmonary and systemic','Hepatic and cardiac','Coronary and pulmonary'], answer: 1 },
-      { q: 'What is the function of the xylem?', options: ['Transport sugars','Transport water and mineral ions upward from roots','Transport hormones','Gas exchange'], answer: 1 },
+      { q: 'What is the function of the xylem?', options: ['Transport sugars','Transport water and mineral ions upward from roots','Transport dissolved amino acids','Provide flexible structural support'], answer: 1 },
       { q: 'What is the function of the phloem?', options: ['Transport water only','Transport dissolved sugars (translocation) from source to sink','Transport oxygen','Structural support only'], answer: 1 },
       { q: 'What adaptations do alveoli have for efficient gas exchange?', options: ['Thick walls and small surface area','Large surface area, thin walls, rich blood supply, moist surface','Few blood vessels','No ventilation'], answer: 1 },
       { q: 'What is fertilisation?', options: ['Cell division','Fusion of male and female gametes to form a zygote','Implantation','Ovulation'], answer: 1 },
