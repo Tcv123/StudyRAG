@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -223,6 +223,13 @@
 const W = { green: 1, amber: 2, red: 3, written_full: 3, written_partial: 1.5 };
 const THRESHOLD = { green: 8, amber: 4 };
 
+function normalizeAnswer(q) {
+  if (typeof q.answer === 'string' && Array.isArray(q.options)) {
+    const idx = q.options.indexOf(q.answer);
+    return { ...q, answer: idx >= 0 ? idx : 0 };
+  }
+  return q;
+}
 function buildQuestionSet(mcq, written) {
   const w = written || { green: [], amber: [], red: [] };
   const tiers = ['green', 'amber', 'red'];
@@ -236,11 +243,11 @@ function buildQuestionSet(mcq, written) {
       const wq = pick(w[tier], 1).map(q => ({ ...q, type: 'written', tier }));
       selected.push(...wq);
       if (count > 1 && mcq[tier]) {
-        selected.push(...pick(mcq[tier], count - 1).map(q => ({ ...q, type: 'mcq', tier })));
+        selected.push(...pick(mcq[tier], count - 1).map(q => normalizeAnswer({ ...q, type: 'mcq', tier })));
       }
     } else {
       if (mcq[tier]) {
-        selected.push(...pick(mcq[tier], count).map(q => ({ ...q, type: 'mcq', tier })));
+        selected.push(...pick(mcq[tier], count).map(q => normalizeAnswer({ ...q, type: 'mcq', tier })));
       }
     }
   }
