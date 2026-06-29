@@ -568,7 +568,6 @@ window.toggleQuestion = function(qi) {
 };
 
 // ── Picker logic ──
-// userSubs = [{subject, exam_board}] from Supabase user_subjects table
 function buildPicker(userSubs) {
   const allSubjects = window.SUBJECTS;
   if (!allSubjects || !allSubjects.length) {
@@ -576,24 +575,17 @@ function buildPicker(userSubs) {
     return;
   }
 
-  // Build lookup: subject name (normalised) → board name the user chose
-  const userBoardFor = {};
-  (userSubs || []).forEach(r => {
-    userBoardFor[r.subject.trim().toLowerCase()] = r.exam_board.trim();
-  });
-
-  // Filter allSubjects to only ones the user takes, and find their board entry
+  // Show all subjects/boards that have papers — not filtered to user's saved subjects
   const filtered = [];
   allSubjects.forEach(subj => {
-    const board = userBoardFor[subj.name.trim().toLowerCase()];
-    if (!board) return;
-    const boardEntry = (subj.boards || []).find(b => b.board.trim().toLowerCase() === board.trim().toLowerCase());
-    if (!boardEntry || !(boardEntry.papers || []).length) return;
-    filtered.push({ subjectName: subj.name, board: boardEntry.board, papers: boardEntry.papers });
+    (subj.boards || []).forEach(boardEntry => {
+      if (!(boardEntry.papers || []).length) return;
+      filtered.push({ subjectName: subj.name, board: boardEntry.board, papers: boardEntry.papers });
+    });
   });
 
   if (!filtered.length) {
-    document.getElementById('pageBody').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">No papers found</div><div class="placeholder-msg">No past papers are available yet for your chosen subjects and boards. Try visiting the Past Papers section.</div></div>`;
+    document.getElementById('pageBody').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">No papers found</div><div class="placeholder-msg">No past papers are available yet. Try visiting the Past Papers section.</div></div>`;
     return;
   }
 
@@ -804,7 +796,6 @@ function buildPicker(userSubs) {
   // Fetch the user's chosen subjects and boards
   const { data: userSubs } = await supabaseClient
     .from('user_subjects').select('subject, exam_board').eq('user_id', user.id);
-  console.log('[mark-schemes] userSubs from Supabase:', JSON.stringify(userSubs));
   buildPicker(userSubs || []);
 })();
 </script>
