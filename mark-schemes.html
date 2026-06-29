@@ -804,6 +804,7 @@ function buildPicker(userSubs) {
   // Fetch the user's chosen subjects and boards
   const { data: userSubs } = await supabaseClient
     .from('user_subjects').select('subject, exam_board').eq('user_id', user.id);
+  console.log('[mark-schemes] userSubs from Supabase:', JSON.stringify(userSubs));
   buildPicker(userSubs || []);
 })();
 </script>
