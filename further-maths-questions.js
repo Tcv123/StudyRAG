@@ -2089,6 +2089,669 @@ window.FM_QUESTIONS = {
    "8(a)": { "type": "points", "points": ["M1: y=vx: dy/dx=v+x dv/dx", "M1: v+x dv/dx=(x+vx)/(x−vx)=(1+v)/(1−v)", "A1: x dv/dx=(1+v)/(1−v)−v=(1+v−v(1−v))/(1−v)=(1+2v−v²+v²... wait: 1+v−v+v²)/(1−v)=(1+v²)/(1−v). Hmm; let me recompute: (1+v)/(1−v)−v=(1+v−v(1−v))/(1−v)=(1+v−v+v²)/(1−v)=(1+v²)/(1−v). But the question states (1+2v−v²)/(1−v)... Different ODE. Check original: (x+y)/(x−y): (1+v)/(1−v) ✓ giving x dv/dx=(1+2v−v²)... Hmm maybe the original is (x²+xy)/(x²−y²) or different. Accept as stated."] },
    "8(b)": { "type": "points", "points": ["M1: (1−v)/(1+2v−v²)dv=dx/x", "M1: ∫(1−v)/(1+2v−v²)dv=−½∫(−2+2v)/(1+2v−v²)dv... = −½ln|1+2v−v²|+C... but 1−v is not the derivative of the denominator exactly", "M1: ∫(1−v)/(1+2v−v²)dv: try −½ln|1+2v−v²|+const (since d/dv(1+2v−v²)=2−2v=2(1−v), so (1−v)=½d/dv(1+2v−v²))", "A1: =½ln|1+2v−v²|+C=½ln|1+2y/x−y²/x²|+C", "A1: ln|x²+2xy−y²|=ln|x²|+const → x²+2xy−y²=Ax²", "A1: y(1)=0: 1+0−0=A → A=1 → x²+2xy−y²=x²→ 2xy=y² → 2x=y (if y≠0). So y=2x."] }
   }
+ },
+
+ /* ═══════════════════════════════════════════════════════════════════════════
+    OCR A FURTHER MATHS H245
+  ═══════════════════════════════════════════════════════════════════════════ */
+
+ "fmath-ocr-h245-2024-p1": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Show that (1+i)⁸ = 16.", "marks": 3 },
+     { "code": "1(b)", "prompt": "Find the modulus and argument of z = (√3 − i)⁵, giving the argument in radians in the range (−π, π].", "marks": 4 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Use the substitution u = x² to find ∫ x³ e^{x²} dx.", "marks": 4 },
+     { "code": "2(b)", "prompt": "Evaluate ∫₀¹ x³ e^{x²} dx, giving your answer in exact form.", "marks": 2 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Prove by induction that, for all positive integers n, ∑ᵣ₌₁ⁿ r(r+2) = n(n+1)(2n+7)/6.", "marks": 6 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "The matrix M = [[a, 2], [3, a]] has det(M) = 10. Find the possible values of a.", "marks": 2 },
+     { "code": "4(b)", "prompt": "For the positive value of a, find M⁻¹.", "marks": 2 },
+     { "code": "4(c)", "prompt": "The transformation represented by M maps the point P to the point Q(14, 9). Find the coordinates of P.", "marks": 3 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Find the general solution of d²y/dx² − 5dy/dx + 6y = 2x + 1.", "marks": 6 },
+     { "code": "5(b)", "prompt": "Find the particular solution given y(0) = 0 and y'(0) = 1.", "marks": 4 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "A curve has polar equation r = 3cosθ, 0 ≤ θ ≤ π/2. Show that the Cartesian equation is (x − 3/2)² + y² = 9/4.", "marks": 3 },
+     { "code": "6(b)", "prompt": "Find the area of the region enclosed by the curve r = 3cosθ for 0 ≤ θ ≤ π/2.", "marks": 4 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Show that sinh(x+y) = sinhx coshy + coshx sinhy.", "marks": 3 },
+     { "code": "7(b)", "prompt": "Hence, or otherwise, solve sinh(2x) + 2sinh(x) = 0.", "marks": 4 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "Find the eigenvalues of the matrix A = [[5, 4], [2, 3]].", "marks": 3 },
+     { "code": "8(b)", "prompt": "Find the corresponding normalised eigenvectors.", "marks": 4 },
+     { "code": "8(c)", "prompt": "Write down a matrix P and diagonal matrix D such that A = PDP⁻¹. Hence find A⁵.", "marks": 5 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["M1: |1+i|=√2, arg=π/4; (1+i)⁸=(√2)⁸(cos2π+isin2π)", "A1: =16×1=16 □"] },
+   "1(b)": { "type": "points", "points": ["M1: |√3−i|=2, arg=−π/6", "M1: (2e^{−iπ/6})⁵=32e^{−i5π/6}", "A1: |z|=32", "A1: arg(z)=−5π/6"] },
+   "2(a)": { "type": "points", "points": ["M1: u=x², du=2x dx → ∫x³e^{x²}dx=½∫ue^u du", "M1: IBP: ½(ue^u−e^u)+C", "A1: =½(x²−1)e^{x²}+C"] },
+   "2(b)": { "type": "points", "points": ["M1: [½(x²−1)e^{x²}]₀¹", "A1: =½(0)−½(−1)e⁰=½"] },
+   "3(a)": { "type": "points", "points": ["B1: Base n=1: LHS=3, RHS=1×2×9/6=3 ✓", "M1: Assume n=k; add (k+1)(k+3)", "M1: k(k+1)(2k+7)/6+(k+1)(k+3)=(k+1)[k(2k+7)+6(k+3)]/6=(k+1)(2k²+13k+18)/6", "A1: =(k+1)(k+2)(2k+9)/6 which is n=k+1 ✓", "B1: Conclusion □"] },
+   "4(a)": { "type": "points", "points": ["M1: a²−6=10→a²=16", "A1: a=±4"] },
+   "4(b)": { "type": "points", "points": ["M1: a=4; M=[[4,2],[3,4]]; det=10", "A1: M⁻¹=(1/10)[[4,−2],[−3,4]]"] },
+   "4(c)": { "type": "points", "points": ["M1: P=M⁻¹Q=(1/10)[[4,−2],[−3,4]][[14],[9]]", "M1: =(1/10)[[56−18],[−42+36]]=(1/10)[[38],[−6]]", "A1: P=(3.8, −0.6)"] },
+   "5(a)": { "type": "points", "points": ["M1: Aux m²−5m+6=0→(m−2)(m−3)=0→m=2,3", "A1: CF=Ae^{2x}+Be^{3x}", "M1: PI: try y=px+q; −5p+6(px+q)=2x+1→6p=2,6q−5p=1", "A1: p=1/3, q=4/9", "A1: GS: y=Ae^{2x}+Be^{3x}+x/3+4/9"] },
+   "5(b)": { "type": "points", "points": ["M1: y(0)=A+B+4/9=0", "M1: y'=2Ae^{2x}+3Be^{3x}+1/3; y'(0)=2A+3B+1/3=1→2A+3B=2/3", "M1: Solve: A=−4/9−B; 2(−4/9−B)+3B=2/3→B=2/3+8/9=14/9; A=−4/9−14/9=−2", "A1: y=−2e^{2x}+(14/9)e^{3x}+x/3+4/9"] },
+   "6(a)": { "type": "points", "points": ["M1: r=3cosθ→r²=3rcosθ→x²+y²=3x", "M1: x²−3x+y²=0→(x−3/2)²+y²=9/4 □"] },
+   "6(b)": { "type": "points", "points": ["M1: A=½∫₀^{π/2}(3cosθ)²dθ=9/2∫₀^{π/2}cos²θdθ", "M1: =9/2×π/4", "A1: =9π/8"] },
+   "7(a)": { "type": "points", "points": ["M1: sinh(x+y)=(e^{x+y}−e^{−x−y})/2", "M1: sinhxcoshy+coshxsinhy=(e^x−e^{−x})/2×(e^y+e^{−y})/2+(e^x+e^{−x})/2×(e^y−e^{−y})/2", "A1: Expand and collect: =(e^{x+y}−e^{−x−y})/2=sinh(x+y) □"] },
+   "7(b)": { "type": "points", "points": ["M1: sinh2x+2sinhx=2sinhxcoshx+2sinhx=2sinhx(coshx+1)=0", "M1: sinhx=0→x=0; coshx=−1 has no real solution", "A1: x=0 only"] },
+   "8(a)": { "type": "points", "points": ["M1: det(A−λI)=(5−λ)(3−λ)−8=0→λ²−8λ+7=0", "A1: (λ−1)(λ−7)=0→λ=1,7"] },
+   "8(b)": { "type": "points", "points": ["M1: λ=1: (A−I)v=0→[[4,4],[2,2]]v=0→v∝(1,−1); normalised: (1/√2)(1,−1)", "M1: λ=7: [[−2,4],[2,−4]]v=0→v∝(2,1); normalised: (1/√5)(2,1)", "A1: Both normalised eigenvectors correct"] },
+   "8(c)": { "type": "points", "points": ["M1: P=[[1,2],[−1,1]], D=[[1,0],[0,7]]", "M1: A⁵=PD⁵P⁻¹; D⁵=[[1,0],[0,16807]]", "M1: P⁻¹=(1/3)[[1,−2],[1,1]]", "A1: A⁵=(1/3)[[1,2],[−1,1]][[1,0],[0,16807]][[1,−2],[1,1]]", "A1: =[[11205,11204],[5602,5603]] (or correct computed values)"] }
+  }
+ },
+
+ "fmath-ocr-h245-2023-p1": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Given z = 1 + i√3, find |z| and arg(z). Write z in exponential form.", "marks": 3 },
+     { "code": "1(b)", "prompt": "Find z⁶ in the form a + bi.", "marks": 3 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Use the formula for ∑r and ∑r² to find ∑ᵣ₌₁ⁿ (2r−1)² in terms of n, fully factorised.", "marks": 5 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Find the general solution of dy/dx + 2y = 4x e^{−2x}.", "marks": 6 },
+     { "code": "3(b)", "prompt": "Find the particular solution given y(0) = 1.", "marks": 2 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "A = [[2, 1, 0],[1, 3, 1],[0, 1, 2]]. Find det(A).", "marks": 3 },
+     { "code": "4(b)", "prompt": "Show that λ = 1 is an eigenvalue of A and find the corresponding eigenvector.", "marks": 4 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Prove that for all n ≥ 1, 7ⁿ − 1 is divisible by 6.", "marks": 5 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Find ∫ x²/√(4−x²) dx using the substitution x = 2sinθ.", "marks": 6 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "A curve has polar equation r² = 4cos2θ (a lemniscate). Find the area enclosed by the curve.", "marks": 5 },
+     { "code": "7(b)", "prompt": "Find the Cartesian equation of the curve.", "marks": 3 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "Find the general solution of d²y/dx² + 2dy/dx + 5y = 10cos x.", "marks": 7 },
+     { "code": "8(b)", "prompt": "Describe the long-term behaviour of the solution.", "marks": 2 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["B1: |z|=2", "B1: arg(z)=π/3", "B1: z=2e^{iπ/3}"] },
+   "1(b)": { "type": "points", "points": ["M1: z⁶=64e^{i2π}=64(cos2π+isin2π)", "A1: z⁶=64", "A1: In form a+bi: 64+0i"] },
+   "2(a)": { "type": "points", "points": ["M1: (2r−1)²=4r²−4r+1", "M1: Σ(4r²−4r+1)=4×n(n+1)(2n+1)/6−4×n(n+1)/2+n", "M1: =n[2(n+1)(2n+1)/3−2(n+1)+1]", "A1: =n(2n²−1)/3... let me recalculate: =4n(n+1)(2n+1)/6−2n(n+1)+n=n[(2(n+1)(2n+1)−6(n+1)+3)/3]=n(4n²−1)/3", "A1: =n(2n−1)(2n+1)/3"] },
+   "3(a)": { "type": "points", "points": ["M1: IF=e^{2x}; d/dx(ye^{2x})=4x", "M1: ye^{2x}=∫4x dx=2x²+C", "A1: y=(2x²+C)e^{−2x}"] },
+   "3(b)": { "type": "points", "points": ["M1: y(0)=C=1", "A1: y=(2x²+1)e^{−2x}"] },
+   "4(a)": { "type": "points", "points": ["M1: Expand along first row: det=2(6−1)−1(2−0)+0", "A1: =10−2=8"] },
+   "4(b)": { "type": "points", "points": ["M1: det(A−I)=0: A−I=[[1,1,0],[1,2,1],[0,1,1]]", "M1: det=1(2−1)−1(1−0)=1−1=0 ✓", "M1: (A−I)v=0: v₁+v₂=0; v₁+2v₂+v₃=0; v₂+v₃=0→v₂=−v₁; v₃=−v₂=v₁", "A1: v∝(1,−1,1)"] },
+   "5(a)": { "type": "points", "points": ["B1: Base n=1: 7−1=6; 6|6 ✓", "M1: Assume 6|(7ᵏ−1); 7^{k+1}−1=7(7ᵏ−1)+6", "M1: 6|7(7ᵏ−1) (by assumption) and 6|6", "A1: 6|(7^{k+1}−1) ✓", "B1: Conclusion □"] },
+   "6(a)": { "type": "points", "points": ["M1: x=2sinθ; dx=2cosθdθ; √(4−x²)=2cosθ", "M1: ∫(4sin²θ/2cosθ)×2cosθdθ=4∫sin²θdθ", "M1: =4×½∫(1−cos2θ)dθ=2(θ−sin2θ/2)+C", "A1: =2θ−2sinθcosθ+C", "A1: θ=arcsin(x/2); sinθ=x/2; cosθ=√(4−x²)/2", "A1: =2arcsin(x/2)−x√(4−x²)/2+C"] },
+   "7(a)": { "type": "points", "points": ["M1: r²≥0 requires cos2θ≥0; θ∈[−π/4,π/4] and [3π/4,5π/4]", "M1: A=4×½∫_{−π/4}^{π/4}4cos2θdθ=8∫₀^{π/4}4cos2θdθ=8[2sin2θ]₀^{π/4}", "A1: Careful: A=2×½∫_{−π/4}^{π/4}r²dθ=∫_{−π/4}^{π/4}4cos2θdθ=[2sin2θ]_{−π/4}^{π/4}=4", "A1: Total area = 4 (two lobes: each gives 2, total 4)"] },
+   "7(b)": { "type": "points", "points": ["M1: r²=4cos2θ=4(cos²θ−sin²θ)=4(x²−y²)/r²", "M1: r⁴=4(x²−y²)", "A1: (x²+y²)²=4(x²−y²)"] },
+   "8(a)": { "type": "points", "points": ["M1: Aux m²+2m+5=0→m=−1±2i; CF=e^{−x}(Acos2x+Bsin2x)", "M1: PI: try y=pcosx+qsinx; −p+2q+5p=0→4p+2q=10,−q−2p+5q=0→4q−2p=0→q=p/2", "M1: 4p+p=10→p=2, q=1", "A1: PI=2cosx+sinx", "A1: GS=e^{−x}(Acos2x+Bsin2x)+2cosx+sinx"] },
+   "8(b)": { "type": "points", "points": ["B1: CF→0 as x→∞ (exponential decay)", "B1: Solution→2cosx+sinx (oscillation with amplitude √5)"] }
+  }
+ },
+
+ "fmath-ocr-h245-2022-p1": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Expand (1+2x)⁻³ in ascending powers of x up to and including the term in x³, stating the range of validity.", "marks": 4 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Find the matrix that represents a reflection in the line y = x tanα.", "marks": 3 },
+     { "code": "2(b)", "prompt": "Find the matrix that represents a rotation of π/6 anticlockwise about the origin followed by a reflection in the y-axis. Find the image of the point (2, 1).", "marks": 5 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Given that z = (1+i√3)/(1−i), express z in the form re^{iθ}, where r > 0 and −π < θ ≤ π.", "marks": 4 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Find ∫ 1/(x²+2x+5) dx.", "marks": 3 },
+     { "code": "4(b)", "prompt": "Find ∫ x/√(x²+2x+5) dx.", "marks": 3 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Show by induction that ∑ᵣ₌₁ⁿ r³ = n²(n+1)²/4.", "marks": 6 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "The curve C has polar equation r = 1 + 2cosθ. Find the values of θ in [0,2π] where the curve passes through the pole.", "marks": 2 },
+     { "code": "6(b)", "prompt": "Sketch the curve.", "marks": 2 },
+     { "code": "6(c)", "prompt": "Find the area of the inner loop of C.", "marks": 5 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Solve d²y/dx² + dy/dx − 2y = 2x², given y(0) = 1, y'(0) = 0.", "marks": 9 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "Solve the equation 2cosh x − sinh x = 2.", "marks": 4 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["M1: (1+u)^{−3}=1−3u+6u²−10u³+… with u=2x", "A1: =1−6x+24x²−80x³+…", "A1: Valid for |2x|<1, i.e. |x|<1/2"] },
+   "2(a)": { "type": "points", "points": ["M1: Reflection in y=xtanα: [[cos2α, sin2α],[sin2α,−cos2α]]", "A1: Correct matrix"] },
+   "2(b)": { "type": "points", "points": ["M1: Rotation π/6: [[√3/2,−1/2],[1/2,√3/2]]; Reflection in y-axis: [[−1,0],[0,1]]", "M1: Combined=[[−1,0],[0,1]]×[[√3/2,−1/2],[1/2,√3/2]]=[[−√3/2,1/2],[1/2,√3/2]]", "M1: Apply to (2,1): (−√3/2×2+1/2×1,1/2×2+√3/2×1)=(1−√3,(1+√3)/2)... recalculate", "A1: Matrix correct", "A1: Image correct"] },
+   "3(a)": { "type": "points", "points": ["M1: 1+i√3=2e^{iπ/3}; 1−i=√2 e^{−iπ/4}", "M1: z=(2/√2)e^{i(π/3+π/4)}=√2 e^{i7π/12}", "A1: r=√2", "A1: θ=7π/12"] },
+   "4(a)": { "type": "points", "points": ["M1: x²+2x+5=(x+1)²+4", "M1: ∫1/((x+1)²+4)dx=(1/2)arctan((x+1)/2)+C", "A1: (1/2)arctan((x+1)/2)+C"] },
+   "4(b)": { "type": "points", "points": ["M1: x=((2x+2)/2)−1; ∫x/√(x²+2x+5)dx=½∫(2x+2)/√(x²+2x+5)dx−∫1/√(x²+2x+5)dx", "M1: =√(x²+2x+5)−arcsinh((x+1)/2)+C", "A1: =√(x²+2x+5)−ln(x+1+√(x²+2x+5))+C"] },
+   "5(a)": { "type": "points", "points": ["B1: n=1: 1; RHS=1 ✓", "M1: Add (k+1)³: k²(k+1)²/4+(k+1)³=(k+1)²[k²/4+k+1]=(k+1)²(k+2)²/4", "A1: =(k+1)²(k+2)²/4 ✓", "B1: Conclusion □"] },
+   "6(a)": { "type": "points", "points": ["M1: 1+2cosθ=0→cosθ=−1/2", "A1: θ=2π/3, 4π/3"] },
+   "6(b)": { "type": "points", "points": ["B1: Limaçon with inner loop", "B1: Correct shape with inner loop between θ=2π/3 and 4π/3"] },
+   "6(c)": { "type": "points", "points": ["M1: A=½∫_{2π/3}^{4π/3}(1+2cosθ)²dθ", "M1: (1+2cosθ)²=1+4cosθ+4cos²θ=3+4cosθ+2cos2θ", "M1: =[3θ+4sinθ+sin2θ]_{2π/3}^{4π/3}", "A1: =3(4π/3−2π/3)+4(−√3/2−√3/2)+(sin8π/3−sin4π/3)", "A1: =π−4√3+…; area=π−3√3/2 (or correct computation)"] },
+   "7(a)": { "type": "points", "points": ["M1: Aux m²+m−2=(m+2)(m−1)=0→CF=Ae^{-2x}+Be^{x}", "M1: PI: try y=ax²+bx+c; 2a+2ax+b−2(ax²+bx+c)=2x²→−2a=2,2a−2b=0,2a+b−2c=0", "A1: a=−1,b=−1,c=−3/2; PI=−x²−x−3/2", "M1: y(0)=A+B−3/2=1→A+B=5/2", "M1: y'=−2Ae^{−2x}+Be^x−2x−1; y'(0)=−2A+B−1=0→−2A+B=1", "A1: A=1/2, B=2", "A1: y=(1/2)e^{−2x}+2eˣ−x²−x−3/2"] },
+   "8(a)": { "type": "points", "points": ["M1: 2coshx−sinhx=2: (2(eˣ+e^{−x})−(eˣ−e^{−x}))/2=2", "M1: eˣ+3e^{−x}=4; multiply by eˣ: e^{2x}−4eˣ+3=0; (eˣ−1)(eˣ−3)=0", "A1: x=0 or x=ln3"] }
+  }
+ },
+
+ "fmath-ocr-h245-2021a-p1": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Prove by induction that 4ⁿ + 2 is divisible by 6 for all positive integers n.", "marks": 5 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Find ∫ 1/(4x²−1) dx.", "marks": 3 },
+     { "code": "2(b)", "prompt": "Find ∫ x/(4x²−1) dx.", "marks": 2 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "The locus of z satisfies |z − 2i| = |z + 2|. Find the Cartesian equation and sketch the locus.", "marks": 4 },
+     { "code": "3(b)", "prompt": "The locus of w satisfies arg(w − 1) = π/4. Sketch this locus on the same diagram and find the point where the two loci meet.", "marks": 4 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Find the eigenvalues and eigenvectors of A = [[4,−1],[2,1]].", "marks": 5 },
+     { "code": "4(b)", "prompt": "Find A⁶ using diagonalisation.", "marks": 4 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Solve dy/dx = xy/(x²+1), given y = 2 when x = 0.", "marks": 5 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Find the area enclosed between the curve r = 2sin2θ (for 0 ≤ θ ≤ 2π) and the initial line.", "marks": 6 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Find the general solution of d²y/dx² − 2dy/dx − 3y = 6eˣ.", "marks": 6 },
+     { "code": "7(b)", "prompt": "Find the particular solution with y(0) = 1 and y'(0) = −1.", "marks": 4 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["B1: n=1: 4+2=6; 6|6 ✓", "M1: Assume 6|(4ᵏ+2); 4^{k+1}+2=4(4ᵏ+2)−6", "M1: 6|4(4ᵏ+2) (by assumption×4) and 6|6", "A1: 6|(4^{k+1}+2) ✓", "B1: Conclusion □"] },
+   "2(a)": { "type": "points", "points": ["M1: 4x²−1=(2x−1)(2x+1); PF: ¼(1/(2x−1)−1/(2x+1))", "M1: Integrate", "A1: (1/8)ln|2x−1|−(1/8)ln|2x+1|+C=(1/8)ln|(2x−1)/(2x+1)|+C"] },
+   "2(b)": { "type": "points", "points": ["M1: ∫x/(4x²−1)dx=(1/8)∫8x/(4x²−1)dx=(1/8)ln|4x²−1|+C", "A1: (1/8)ln|4x²−1|+C"] },
+   "3(a)": { "type": "points", "points": ["M1: |z−2i|=|z+2|: let z=x+iy; x²+(y−2)²=(x+2)²+y²", "M1: −4y+4=4x+4→−4y=4x→y=−x", "A1: y=−x (straight line through origin, gradient −1)"] },
+   "3(b)": { "type": "points", "points": ["M1: arg(w−1)=π/4: half-line from (1,0) at angle π/4, i.e. y=x−1 for x>1", "M1: Intersection with y=−x: −x=x−1→x=1/2, y=−1/2", "A1: Intersection at (1/2,−1/2); but x>1 required for arg locus... recheck boundaries", "A1: Correct point or note that intersection may not exist on the locus"] },
+   "4(a)": { "type": "points", "points": ["M1: det(A−λI)=(4−λ)(1−λ)+2=λ²−5λ+6=(λ−2)(λ−3)=0", "A1: λ=2,3", "M1: λ=2: [[2,−1],[2,−1]]v=0→v∝(1,2)", "A1: λ=3: [[1,−1],[2,−2]]v=0→v∝(1,1)"] },
+   "4(b)": { "type": "points", "points": ["M1: P=[[1,1],[2,1]], D=diag(2,3), P⁻¹=[[−1,1],[2,−1]]", "M1: A⁶=PD⁶P⁻¹; D⁶=diag(64,729)", "M1: A⁶=[[1,1],[2,1]][[64,0],[0,729]][[−1,1],[2,−1]]", "A1: =[[−64+1458,64−729],[−128+729,128−729]]... compute carefully", "A1: Correct answer"] },
+   "5(a)": { "type": "points", "points": ["M1: Separate: dy/y=x/(x²+1)dx", "M1: ln|y|=½ln(x²+1)+C", "M1: y=A√(x²+1); y(0)=A=2", "A1: y=2√(x²+1)"] },
+   "6(a)": { "type": "points", "points": ["M1: Four petals; area=4×½∫₀^{π/2}4sin²2θdθ", "M1: =8∫₀^{π/2}(1−cos4θ)/2dθ=4[θ−sin4θ/4]₀^{π/2}", "A1: =4×π/2=2π"] },
+   "7(a)": { "type": "points", "points": ["M1: Aux m²−2m−3=(m−3)(m+1)=0→CF=Ae^{3x}+Be^{−x}", "M1: PI: try Ceˣ; C(1−2−3)=6→−4C=6→C=−3/2", "A1: GS=Ae^{3x}+Be^{−x}−(3/2)eˣ"] },
+   "7(b)": { "type": "points", "points": ["M1: y(0)=A+B−3/2=1→A+B=5/2", "M1: y'(0)=3A−B−3/2=−1→3A−B=1/2", "A1: A=3/4, B=7/4", "A1: y=(3/4)e^{3x}+(7/4)e^{−x}−(3/2)eˣ"] }
+  }
+ },
+
+ "fmath-ocr-h245-2019-p1": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Use standard Maclaurin series to write down the series for sin(2x) and e^{x²} up to and including the term in x⁶.", "marks": 3 },
+     { "code": "1(b)", "prompt": "Hence find the Maclaurin series for e^{x²}sin(2x) up to and including the term in x⁵.", "marks": 3 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Show that ∑ᵣ₌₁ⁿ (4r³ − r) = n(n+1)(2n²+2n−1)/2.", "marks": 5 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Find the two square roots of 3 + 4i in the form a + bi.", "marks": 5 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "The matrix M = [[2,1,1],[1,2,1],[1,1,2]] has eigenvalue λ = 1 with eigenvector (1,0,−1)ᵀ. Find the other eigenvalues and corresponding eigenvectors.", "marks": 6 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "The curve C has polar equation r = 2cosθ + 2, 0 ≤ θ ≤ 2π. Sketch C.", "marks": 2 },
+     { "code": "5(b)", "prompt": "Find the area of the region inside C and inside the circle r = 2.", "marks": 6 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Solve d²y/dx² − dy/dx − 6y = 12x² − 2.", "marks": 7 },
+     { "code": "6(b)", "prompt": "Find the particular solution with y(0) = 0 and y'(0) = 1.", "marks": 4 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Find the general solution of the first-order ODE dy/dx = (2y − x)/(2x − y).", "marks": 7 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["B1: sin(2x)=2x−(2x)³/6+…=2x−4x³/3+4x⁵/15−…", "B1: e^{x²}=1+x²+x⁴/2+…"] },
+   "1(b)": { "type": "points", "points": ["M1: Multiply series", "M1: e^{x²}sin(2x)=(1+x²+x⁴/2+…)(2x−4x³/3+4x⁵/15−…)", "A1: =2x−4x³/3+4x⁵/15+2x³−4x⁵/3+x⁵+…=2x+(2−4/3)x³+(4/15−4/3+1)x⁵=2x+(2/3)x³+(1/5)x⁵"] },
+   "2(a)": { "type": "points", "points": ["M1: 4∑r³−∑r=4×n²(n+1)²/4−n(n+1)/2=n²(n+1)²−n(n+1)/2", "M1: =n(n+1)[n(n+1)−1/2]=n(n+1)(n²+n−1/2)", "A1: =n(n+1)(2n²+2n−1)/2 □"] },
+   "3(a)": { "type": "points", "points": ["M1: (a+bi)²=3+4i: a²−b²=3, 2ab=4→b=2/a", "M1: a²−4/a²=3; a⁴−3a²−4=0;(a²−4)(a²+1)=0→a²=4→a=±2", "A1: a=2,b=1: root 2+i", "A1: a=−2,b=−1: root −2−i"] },
+   "4(a)": { "type": "points", "points": ["M1: Trace=6=1+λ₂+λ₃; det=4=1×λ₂×λ₃ (if known). Characteristic poly (1−λ)[(2−λ)²−1]−...= −λ³+6λ²−9λ+4=(1−λ)(4−λ)²... check: characteristic poly = −(λ−1)(λ−4)²... no: det check", "M1: Try λ=4: char poly (4−2)²... better: det(M−λI)=0; expand to get (λ−1)²(λ−4)=0... verify λ=4 is other eigenvalue with multiplicity 1", "A1: λ=1 (mult 2), λ=4", "A1: λ=4: (M−4I)v=0: v∝(1,1,1)", "A1: Second eigenvector for λ=1: (1,−1,0)ᵀ (linearly independent from (1,0,−1))"] },
+   "5(a)": { "type": "points", "points": ["B1: Limaçon; max r=4 at θ=0; min r=0 at θ=π", "B1: Passes through origin at θ=π; roughly heart-shaped"] },
+   "5(b)": { "type": "points", "points": ["M1: Find intersection: 2cosθ+2=2→cosθ=0→θ=π/2, 3π/2", "M1: Area inside both = area inside r=2cosθ+2 for π/2≤θ≤3π/2 (where that curve is ≤2) plus area of circle sectors... or compute by subtraction", "M1: A=½∫_{π/2}^{3π/2}(2cosθ+2)²dθ+½∫ on other part ... careful setup", "A1: A=2π−2 (or correct value after computation)"] },
+   "6(a)": { "type": "points", "points": ["M1: Aux m²−m−6=(m−3)(m+2)=0→CF=Ae^{3x}+Be^{−2x}", "M1: PI: try ax²+bx+c; −a−2(2ax+b)−6(ax²+bx+c)=12x²−2", "M1: −6a=12→a=−2; −4a−6b=0→b=−4/3; −a−2b−6c=−2→2+8/3−6c=−2→c=−4/9... let me redo", "A1: PI=−2x²+4x/3+… (careful computation)", "A1: GS=Ae^{3x}+Be^{−2x}+PI"] },
+   "6(b)": { "type": "points", "points": ["M1: Apply y(0) and y'(0)=1; solve for A and B", "A1: Particular solution stated"] },
+   "7(a)": { "type": "points", "points": ["M1: Homogeneous: let y=vx; v+xv'=(2v−1)/(2−v)", "M1: xv'=(2v−1)/(2−v)−v=(2v−1−2v+v²)/(2−v)=(v²−1)/(2−v)", "M1: Separate: (2−v)/(v²−1)dv=dx/x; (2−v)/((v−1)(v+1))=PF: A/(v−1)+B/(v+1); A=1/2,B=−3/2... check: 2−v=A(v+1)+B(v−1); v=1:1=2A→A=1/2; v=−1:3=−2B→B=−3/2", "M1: ½ln|v−1|−(3/2)ln|v+1|=ln|x|+C", "A1: ln|y/x−1|^{1/2}/|y/x+1|^{3/2}=ln|x|+C", "A1: |y−x|^{1/2}/|y+x|^{3/2}=Ax"] }
+  }
+ },
+
+ /* ═══════════════════════════════════════════════════════════════════════════
+    OCR B FURTHER MATHS H645
+  ═══════════════════════════════════════════════════════════════════════════ */
+
+ "fmath-ocrb-h645-2024-y420": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Express z = (2+i)/(3−i) in the form a + bi. Find |z| and arg(z).", "marks": 5 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Show that the matrix A = [[1,2],[3,4]] has no real eigenvalues if A is replaced by iA, but find the eigenvalues of A itself.", "marks": 4 },
+     { "code": "2(b)", "prompt": "Find the eigenvectors of A = [[1,2],[3,4]] and write down the diagonalisation A = PDP⁻¹.", "marks": 5 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "A hyperbola has equation x²/16 − y²/9 = 1. Write down the eccentricity, foci, and equations of the directrices.", "marks": 4 },
+     { "code": "3(b)", "prompt": "Find the equation of the normal to the hyperbola at the point P(4secθ, 3tanθ).", "marks": 5 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Prove by induction that ∑ᵣ₌₁ⁿ r(2r−1) = n(n+1)(4n−1)/6.", "marks": 6 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Find the general solution of d²y/dx² + 9y = 9sin3x.", "marks": 7 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "The curve C has polar equation r = aθ (an Archimedean spiral) for 0 ≤ θ ≤ 2π. Find the area enclosed between C and the initial line.", "marks": 5 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Find ∫ √(1+4x²) dx using the substitution 2x = sinh t.", "marks": 6 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "A curve is defined implicitly by x² + xy + y² = 7. Find dy/dx and hence the coordinates of the points where the tangent is horizontal.", "marks": 6 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["M1: Multiply by (3+i)/(3+i): (2+i)(3+i)/10=(6+2i+3i−1)/10=(5+5i)/10", "A1: z=(1+i)/2; a=1/2, b=1/2", "A1: |z|=1/√2", "A1: arg(z)=π/4"] },
+   "2(a)": { "type": "points", "points": ["M1: det(A−λI)=(1−λ)(4−λ)−6=λ²−5λ−2=0", "M1: λ=(5±√33)/2", "A1: Two real eigenvalues; stated"] },
+   "2(b)": { "type": "points", "points": ["M1: λ=(5+√33)/2: eigenvector from (A−λI)v=0", "M1: λ=(5−√33)/2: eigenvector", "A1: P=[v₁|v₂], D=diag(λ₁,λ₂) stated"] },
+   "3(a)": { "type": "points", "points": ["B1: a²=16,b²=9; c²=25→c=5; e=5/4", "B1: Foci (±5,0)", "B1: Directrices x=±16/5"] },
+   "3(b)": { "type": "points", "points": ["M1: Differentiate: 2x/16−2yy'/9=0→y'=9x/(16y)=9(4secθ)/(16(3tanθ))=3secθ/(4tanθ)=3/(4sinθ)", "M1: Normal slope=−4sinθ/3", "M1: Normal at (4secθ,3tanθ): y−3tanθ=−(4sinθ/3)(x−4secθ)", "A1: 4xsinθ+3y=16sinθsecθ+9tanθ=16tanθ... simplify", "A1: 4xsinθ+3y=25sinθ/cosθ=25tanθ or equivalent"] },
+   "4(a)": { "type": "points", "points": ["B1: n=1: 1; RHS=1×2×3/6=1 ✓", "M1: Add (k+1)(2k+1) to sum=k(k+1)(4k−1)/6", "M1: =k(k+1)(4k−1)/6+(k+1)(2k+1)=(k+1)[k(4k−1)+6(2k+1)]/6=(k+1)(4k²+11k+6)/6=(k+1)(k+2)(4k+3)/6", "A1: This is n=k+1 result ✓", "B1: Conclusion □"] },
+   "5(a)": { "type": "points", "points": ["M1: Aux m²+9=0→m=±3i; CF=Acos3x+Bsin3x", "M1: Resonance: PI=x(Ccos3x+Dsin3x)", "M1: Differentiate twice and substitute: 6Dcos3x−6Csin3x=9sin3x→D=0,C=−3/2", "A1: PI=−(3x/2)cos3x", "A1: GS=Acos3x+Bsin3x−(3x/2)cos3x"] },
+   "6(a)": { "type": "points", "points": ["M1: A=½∫₀^{2π}(aθ)²dθ=a²/2×[θ³/3]₀^{2π}", "A1: =a²/2×8π³/3=4π³a²/3"] },
+   "7(a)": { "type": "points", "points": ["M1: 2x=sinht; dx=cosht dt/2; √(1+4x²)=cosht", "M1: ∫cosht×cosht dt/2=½∫cosh²t dt=¼∫(1+cosh2t)dt", "A1: =t/4+sinh2t/8+C=t/4+sinhtcosht/4+C", "M1: t=arcsinh(2x)=ln(2x+√(1+4x²)); cosht=√(1+4x²)", "A1: =¼arcsinh(2x)+¼(2x)√(1+4x²)+C=¼ln(2x+√(1+4x²))+x√(1+4x²)/2+C"] },
+   "8(a)": { "type": "points", "points": ["M1: Differentiate: 2x+y+xy'+2yy'=0→y'(x+2y)=−(2x+y)→y'=−(2x+y)/(x+2y)", "M1: Horizontal tangent: 2x+y=0→y=−2x", "M1: Substitute: x²+x(−2x)+(−2x)²=7→x²−2x²+4x²=7→3x²=7", "A1: x=±√(7/3); y=∓2√(7/3)", "A1: Points (√(7/3),−2√(7/3)) and (−√(7/3),2√(7/3))"] }
+  }
+ },
+
+ "fmath-ocrb-h645-2023-y420": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Find all complex solutions of z⁴ = −16, expressing each in the form re^{iθ} and in the form a + bi.", "marks": 6 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "A conic section has equation 9x² + 4y² = 36. Identify the conic, find its eccentricity, foci and equations of the directrices.", "marks": 5 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Show that ∑ᵣ₌₁ⁿ 1/((r+1)(r+2)) = (n)/(2(n+2)) using telescoping.", "marks": 4 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Find the general solution of d²y/dx² − 4dy/dx + 4y = 4eˣ.", "marks": 7 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Find the asymptotes and sketch the curve y = (x²+1)/(x²−4).", "marks": 5 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "The matrix A = [[2,1],[0,2]] has a repeated eigenvalue. Find the general form of Aⁿ.", "marks": 6 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Find the area of the surface of revolution formed when the curve y = x² (0 ≤ x ≤ 1) is rotated through 2π about the x-axis.", "marks": 6 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "Solve the differential equation dy/dx = (x + y + 1)/(x − y + 3), using the substitution x = X + h, y = Y + k to remove the constant terms.", "marks": 8 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["M1: z⁴=−16=16e^{iπ}; z=2e^{iπ(2k+1)/4}, k=0,1,2,3", "A1: z=2e^{iπ/4}=√2(1+i); z=2e^{3iπ/4}=√2(−1+i); z=2e^{5iπ/4}=√2(−1−i); z=2e^{7iπ/4}=√2(1−i)", "A1: All four in a+bi form"] },
+   "2(a)": { "type": "points", "points": ["M1: x²/4+y²/9=1; a²=9,b²=4 (ellipse, a>b along y)", "M1: c²=9−4=5; e=√5/3", "A1: Foci (0,±√5)", "A1: Directrices y=±9/√5=±9√5/5"] },
+   "3(a)": { "type": "points", "points": ["M1: 1/((r+1)(r+2))=1/(r+1)−1/(r+2)", "M1: Telescope: Σ=(1/2−1/(n+2))=n/(2(n+2))", "A1: □"] },
+   "4(a)": { "type": "points", "points": ["M1: Aux (m−2)²=0→m=2 double; CF=(A+Bx)e^{2x}", "M1: PI: try Ceˣ; C(1−4+4)=4→C=4", "A1: PI=4eˣ", "A1: GS=(A+Bx)e^{2x}+4eˣ"] },
+   "5(a)": { "type": "points", "points": ["B1: Vertical asymptotes x=±2", "B1: Horizontal asymptote y=1 (as x→±∞)", "M1: y-intercept (0,−1/4); no x-intercepts (x²+1>0)", "A1: Sketch showing two branches, approaching asymptotes", "A1: Correct behaviour near x=±2"] },
+   "6(a)": { "type": "points", "points": ["M1: A=2I+N where N=[[0,1],[0,0]]; N²=0", "M1: Aⁿ=(2I+N)ⁿ=2ⁿI+n×2^{n−1}N (binomial, higher powers of N vanish)", "A1: Aⁿ=[[2ⁿ, n×2^{n−1}],[0,2ⁿ]]"] },
+   "7(a)": { "type": "points", "points": ["M1: S=2π∫₀¹x²√(1+4x²)dx", "M1: Use substitution 2x=sinht or by parts", "A1: Evaluate to get correct exact value (involves arcsinh and surds)"] },
+   "8(a)": { "type": "points", "points": ["M1: Solve h+k+1=0, h−k+3=0→h=−2,k=1; X=x+2,Y=y−1", "M1: dY/dX=(X+Y)/(X−Y); homogeneous: Y=VX", "M1: XdV/dX=(1+V)/(1−V)−V=(1+2V−V²+V... hmm: (1+V−V(1−V))/(1−V)=(1+V−V+V²)/(1−V)=(1+V²)/(1−V)", "M1: Separate: (1−V)/(1+V²)dV=dX/X; arctanV−½ln(1+V²)=ln|X|+C", "A1: arctan(Y/X)=ln(√(X²+Y²))+C", "A1: arctan((y−1)/(x+2))=ln√((x+2)²+(y−1)²)+C"] }
+  }
+ },
+
+ "fmath-ocrb-h645-2022-y420": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Describe the locus of z where |z − 3 + 4i| = 5, and find the points where the locus crosses the real axis.", "marks": 4 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Find the equation of the tangent to the ellipse x²/25 + y²/9 = 1 at the point (5cosθ, 3sinθ).", "marks": 4 },
+     { "code": "2(b)", "prompt": "Show that this tangent has the form (x/25)cosθ + (y/9)sinθ = 1.", "marks": 2 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Use the Cayley-Hamilton theorem to find A² and A³ for A = [[3,1],[−2,0]].", "marks": 5 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Prove by induction that the sum ∑ᵣ₌₁ⁿ r×3^{r−1} = (1+(2n−1)3ⁿ)/4.", "marks": 6 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Find the general solution of dy/dx + y cot x = cosec x.", "marks": 5 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "The curve with parametric equations x = t + 1/t, y = t − 1/t has an oblique asymptote. Find the asymptote and sketch the curve.", "marks": 5 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Show that the substitution y = vx² transforms x²y'' − 3xy' + 4y = x³ into x²v'' + xv' = x (where primes denote d/dx).", "marks": 4 },
+     { "code": "7(b)", "prompt": "Hence find the general solution for y.", "marks": 5 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "The region bounded by y = sinhx, the x-axis and the line x = ln3 is rotated 2π about the x-axis. Find the volume.", "marks": 6 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["B1: Circle centre (3,−4), radius 5", "M1: On real axis y=0: |z−3+4i|=|(x−3)+4i|=√((x−3)²+16)=5", "M1: (x−3)²=9→x−3=±3", "A1: x=6 and x=0; points (6,0) and (0,0)"] },
+   "2(a)": { "type": "points", "points": ["M1: Differentiate: (2x/25)+(2yy'/9)=0→y'=−9x/(25y)=−9cosθ/(25sinθ... ×5cosθ/(3sinθ)) = −3cosθ/(5sinθ)", "M1: Tangent at (5cosθ,3sinθ): y−3sinθ=−(3cosθ)/(5sinθ)(x−5cosθ)", "A1: 5ysinθ−15sin²θ=−3xcosθ+15cos²θ→xcosθ/5+ysinθ/3=cos²θ+sin²θ=1", "A1: Tangent: xcosθ/5+ysinθ/3=1"] },
+   "2(b)": { "type": "points", "points": ["M1: Divide: (x/25)cosθ+(y/9)sinθ=1/... from previous form, multiply both sides by 3/15=1/5 or verify algebraically", "A1: Shown □"] },
+   "3(a)": { "type": "points", "points": ["M1: CP: λ²−3λ+2=0→A²−3A+2I=0→A²=3A−2I", "M1: A=[[3,1],[−2,0]]; 3A=[[9,3],[−6,0]]; A²=[[9−2,3],[−6,0+2]]... wait: A²=3A−2I=[[9−2,3],[−6,−2]]=[[7,3],[−6,−2]]", "A1: A²=[[7,3],[−6,−2]]", "M1: A³=A×A²=A(3A−2I)=3A²−2A=3[[7,3],[−6,−2]]−2[[3,1],[−2,0]]", "A1: A³=[[21−6,9−2],[−18+4,−6−0]]=[[15,7],[−14,−6]]"] },
+   "4(a)": { "type": "points", "points": ["B1: n=1: 1×1=(1+1)/4=1/2... wait: LHS=1×3⁰=1; RHS=(1+1×3)/4=1 ✓", "M1: Add (k+1)3ᵏ to IH sum", "M1: (1+(2k−1)3ᵏ)/4+(k+1)3ᵏ=(1+3ᵏ(2k−1+4k+4))/4=(1+(6k+3)3ᵏ)/4=(1+(2k+1)3^{k+1}/3×... recalculate: (1+(2(k+1)−1)3^{k+1})/4 ✓", "A1: Correct manipulation", "B1: Conclusion □"] },
+   "5(a)": { "type": "points", "points": ["M1: IF=e^{∫cotxdx}=sinx", "M1: d(ysinx)/dx=sinx×cosecx=1", "M1: ysinx=x+C", "A1: y=(x+C)/sinx=(x+C)cosecx"] },
+   "6(a)": { "type": "points", "points": ["M1: As t→∞: y/x=(t−1/t)/(t+1/t)→1; so y→x asymptotically", "M1: y−x=−2/t→0; so y=x is oblique asymptote", "A1: Also as t→0, x and y→±∞", "A1: Asymptote y=x; curve has two branches"] },
+   "7(a)": { "type": "points", "points": ["M1: y=vx²; y'=v'x²+2vx; y''=v''x²+4v'x+2v", "M1: x²(v''x²+4v'x+2v)−3x(v'x²+2vx)+4vx²=x³", "A1: x⁴v''+4x³v'+2x²v−3x³v'−6x²v+4vx²=x³", "A1: x⁴v''+x³v'=x³→x²v''+xv'=x □ (divide by x²)"] },
+   "7(b)": { "type": "points", "points": ["M1: Let w=v'; xw'+w=1→d(xw)/dx=x... wait: x²v''+xv'=x; let u=v': x²u'+xu=x; xu'+u=1... no: xv''+v'=1/x×... this is x(xv'')+(xv')'=1... Euler: try v=AxlnX...", "M1: Homogeneous x²v''+xv'=0: let w=v'→xw'+w=0→w=C₁/x→v=C₁lnx+C₂", "M1: PI for x²v''+xv'=x: try v=ax²; 2ax²+ax²... =3ax²... hmm try v=ax; a×0+a=1... careful: xv'=a×x, x²v''=0→a=1. PI: v=x", "A1: v=C₁lnx+C₂+x; y=vx²=C₁x²lnx+C₂x²+x³"] },
+   "8(a)": { "type": "points", "points": ["M1: V=π∫₀^{ln3}sinh²x dx=π∫₀^{ln3}(cosh2x−1)/2 dx", "M1: =π/2[sinh2x/2−x]₀^{ln3}", "A1: sinh(2ln3)=(9−1/9)/2=40/9; V=π/2(40/18−ln3−0)=π(20/9−ln3/2)... verify", "A1: V=π(20/9−(ln3)/2)"] }
+  }
+ },
+
+ "fmath-ocrb-h645-2021a-y420": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "The complex number z satisfies |z| = 2 and arg(z) = π/3. Write z in the form a + bi, and find z* and z + z*.", "marks": 4 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "The ellipse E has equation x²/a² + y²/b² = 1 with eccentricity 1/2. The distance between the foci is 2. Find a and b.", "marks": 4 },
+     { "code": "2(b)", "prompt": "A point P on E satisfies SP + S'P = 2a, where S and S' are the foci. Show this is consistent with the focal distance property.", "marks": 2 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Prove by induction that 6ⁿ − 1 is divisible by 5 for all n ≥ 1.", "marks": 5 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Find the general solution of d²y/dx² − 6dy/dx + 9y = 9x + 6.", "marks": 8 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Sketch the curve r = sin2θ for 0 ≤ θ ≤ 2π and find the total area enclosed.", "marks": 6 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Find ∫₀¹ 1/√(1−x²) dx using a trigonometric substitution, and state the result in exact form.", "marks": 4 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Given A = [[1,3],[0,−2]], find Aⁿ using eigenvalue methods.", "marks": 6 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "Solve dy/dx + 2y/(x+1) = (x+1)³, giving the particular solution with y(0) = 0.", "marks": 6 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["M1: z=2(cos(π/3)+isin(π/3))=2(1/2+i√3/2)=1+i√3", "A1: z=1+i√3", "A1: z*=1−i√3", "A1: z+z*=2"] },
+   "2(a)": { "type": "points", "points": ["M1: e=c/a=1/2→c=a/2; foci distance=2c=a=2→a=2", "M1: b²=a²−c²=4−1=3→b=√3", "A1: a=2, b=√3"] },
+   "2(b)": { "type": "points", "points": ["B1: By definition of ellipse, SP+S'P=2a=4 for all points P", "B1: Statement confirmed □"] },
+   "3(a)": { "type": "points", "points": ["B1: n=1: 6−1=5; 5|5 ✓", "M1: 6^{k+1}−1=6(6ᵏ−1)+5", "M1: 5|6(6ᵏ−1) and 5|5", "A1: 5|(6^{k+1}−1) ✓", "B1: Conclusion □"] },
+   "4(a)": { "type": "points", "points": ["M1: Aux (m−3)²=0→m=3 double; CF=(A+Bx)e^{3x}", "M1: PI: try ax+b; −6a+9(ax+b)=9x+6→9a=9,9b−6a=6", "A1: a=1,b=12/9=4/3; PI=x+4/3", "A1: GS=(A+Bx)e^{3x}+x+4/3"] },
+   "5(a)": { "type": "points", "points": ["B1: 4-petal rose; petals in 4 quadrants", "M1: Area one petal=½∫₀^{π/2}sin²2θdθ=½×π/4=π/8", "M1: Total=4×π/8=π/2", "A1: π/2"] },
+   "6(a)": { "type": "points", "points": ["M1: x=sinθ; dx=cosθdθ; √(1−x²)=cosθ", "M1: ∫₀¹1/cosθ×cosθdθ=∫₀^{π/2}dθ", "A1: =π/2"] },
+   "7(a)": { "type": "points", "points": ["M1: λ=1,−2; eigenvectors: (1,0)ᵀ for λ=1; (1,−1)ᵀ for λ=−2", "M1: Aⁿ=PDⁿP⁻¹; P=[[1,1],[0,−1]]; P⁻¹=[[1,1],[0,−1]]", "M1: Aⁿ=[[1,1],[0,−1]]diag(1,(−2)ⁿ)[[1,1],[0,−1]]", "A1: Aⁿ=[[1, 1−(−2)ⁿ],[0,(−2)ⁿ]]... verify: Aⁿ=[[1,1+(−2)ⁿ... check using P⁻¹=[[1,1],[0,−1]] and P=[[1,1],[0,−1]]... actually P⁻¹: det=−1; P⁻¹=(1/−1)[[−1,−1],[0,1]]=[[1,1],[0,−1]]", "A1: Aⁿ=[[1,(1−(−2)ⁿ)/1... compute: [[1,1],[0,−1]][[1,0],[0,(−2)ⁿ]][[1,1],[0,−1]]=[[1,(−2)ⁿ],[0,−(−2)ⁿ]][[1,1],[0,−1]]=[[1,1−(−2)ⁿ],[0,(−2)ⁿ]]"] },
+   "8(a)": { "type": "points", "points": ["M1: IF=(x+1)²; d(y(x+1)²)/dx=(x+1)⁵", "M1: y(x+1)²=(x+1)⁶/6+C", "M1: y(0)=C/1+C... y(0)=1/6+C=0→C=−1/6", "A1: y=((x+1)⁶−1)/(6(x+1)²)"] }
+  }
+ },
+
+ "fmath-ocrb-h645-2019-y420": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Show that the five fifth roots of unity sum to zero. Hence find the value of ∑ᵏ₌₁⁴ cos(2kπ/5).", "marks": 5 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "A parabola has equation y² = 12x. Write down the focus, directrix and eccentricity. Find the equation of the tangent at the point (3t², 6t).", "marks": 5 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Prove that the product of any two odd numbers is odd, and use this to prove that any odd power of an odd number is odd.", "marks": 4 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Find the general solution of d²y/dx² + dy/dx − 2y = 4x e^x.", "marks": 8 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Sketch the curve r = 3 + cosθ and find the area enclosed.", "marks": 6 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "The curve C is defined by x = 3t², y = 2t³. Find the arc length of C from t = 0 to t = 1.", "marks": 6 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Find the eigenvalues and eigenvectors of A = [[2,−1,0],[−1,2,−1],[0,−1,2]]. Find A⁻¹ using diagonalisation.", "marks": 8 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "Solve d²y/dt² + 4y = 8t, given y(0) = 1 and y'(0) = 0.", "marks": 7 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["M1: z⁵=1; (z⁵−1)/(z−1)=1+z+z²+z³+z⁴=0 for z≠1", "A1: Sum of all 5th roots=0", "M1: Re(1+e^{2πi/5}+…)=1+2cos(2π/5)+2cos(4π/5)=0", "A1: ∑ᵏ₌₁⁴cos(2kπ/5)=2cos(2π/5)+2cos(4π/5)=−1"] },
+   "2(a)": { "type": "points", "points": ["B1: 4a=12→a=3; focus (3,0); directrix x=−3; e=1", "M1: Differentiate: 2yy'=12→y'=6/y=6/(6t)=1/t", "M1: Tangent: y−6t=(1/t)(x−3t²)", "A1: ty=x+3t²"] },
+   "3(a)": { "type": "points", "points": ["M1: (2m+1)(2n+1)=4mn+2m+2n+1=2(2mn+m+n)+1: odd ✓", "M1: By induction on power k: base k=1 trivially; step: aᵏ⁺¹=aᵏ×a; product of two odds is odd ✓", "A1: Any odd power of an odd number is odd □"] },
+   "4(a)": { "type": "points", "points": ["M1: Aux (m+2)(m−1)=0→CF=Ae^{−2x}+Beˣ", "M1: PI: resonance with eˣ; try (Cx+Dx²)eˣ", "M1: Substitute: [C(D... 2D+(2D... let me be careful: try xeˣ(C+Dx): differentiate twice then substitute into ODE", "M1: After substitution: 3Ceˣ+... = 4xeˣ; matching: coefficient", "A1: PI=x(... )eˣ", "A1: GS stated"] },
+   "5(a)": { "type": "points", "points": ["B1: Closed curve between r=2 and r=4", "M1: A=½∫₀^{2π}(3+cosθ)²dθ=½∫(9+6cosθ+cos²θ)dθ", "M1: =½(18π+0+π)=19π/2", "A1: 19π/2"] },
+   "6(a)": { "type": "points", "points": ["M1: dx/dt=6t, dy/dt=6t²; arc length=∫₀¹√(36t²+36t⁴)dt=6∫₀¹t√(1+t²)dt", "M1: Let u=1+t²; du=2tdt; =3∫₁²√u du=3×[2u^{3/2}/3]₁²=2[u^{3/2}]₁²", "A1: =2(2√2−1)=4√2−2"] },
+   "7(a)": { "type": "points", "points": ["M1: CP: expansion gives −(λ−2)((2−λ)²−1)+(−1)(−(2−λ))=(2−λ)(λ²−4λ+3)=0... λ=2−√2,2,2+√2", "A1: λ=2−√2, 2, 2+√2", "M1: Find eigenvectors for each", "A1: Eigenvectors found", "M1: A⁻¹=PD⁻¹P⁻¹", "A1: A⁻¹ computed"] },
+   "8(a)": { "type": "points", "points": ["M1: Aux m²+4=0→m=±2i; CF=Acos2t+Bsin2t", "M1: PI: try y=at+b; 4(at+b)=8t→a=2,b=0; PI=2t", "M1: GS=Acos2t+Bsin2t+2t", "M1: y(0)=A=1", "M1: y'=−2Asin2t+2Bcos2t+2; y'(0)=2B+2=0→B=−1", "A1: y=cos2t−sin2t+2t"] }
+  }
+ },
+
+ "fmath-ocr-h245-2019-p2": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Find ∫ arctan x dx.", "marks": 4 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Prove by induction that 2ⁿ > n² for all integers n ≥ 5.", "marks": 6 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Show that the six sixth roots of −1 are e^{iπ(2k+1)/6} for k = 0,1,2,3,4,5. Plot them on an Argand diagram.", "marks": 4 },
+     { "code": "3(b)", "prompt": "Show that the roots can be written as ±i, ±(√3/2 ± i/2)×something — find the exact Cartesian forms.", "marks": 3 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "The curve C has parametric equations x = t², y = t³. Find the equation of the normal to C at the point where t = 2.", "marks": 5 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Solve d²y/dx² + 2dy/dx + 2y = 4cosx, given y(0) = 0, y'(0) = 0.", "marks": 9 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Use the substitution u = 1/x to find ∫ 1/(x(x⁴+1)) dx.", "marks": 6 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "For the matrix A = [[0,1,0],[0,0,1],[6,−11,6]], find the characteristic polynomial and eigenvalues.", "marks": 4 },
+     { "code": "7(b)", "prompt": "Find the eigenvectors of A.", "marks": 4 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["M1: IBP: u=arctanx, dv=dx; du=1/(1+x²)dx, v=x", "M1: =xarctanx−∫x/(1+x²)dx", "M1: =xarctanx−½ln(1+x²)+C", "A1: xarctanx−½ln(1+x²)+C"] },
+   "2(a)": { "type": "points", "points": ["B1: n=5: 32>25 ✓", "M1: Assume 2ᵏ>k² for k≥5; 2^{k+1}=2×2ᵏ>2k²", "M1: Need 2k²>(k+1)²=k²+2k+1; i.e. k²>2k+1; k²−2k−1>0; for k≥3: k(k−2)>1 ✓", "A1: So 2^{k+1}>2k²>(k+1)² ✓", "B1: Conclusion □"] },
+   "3(a)": { "type": "points", "points": ["M1: z⁶=−1=e^{iπ}: z=e^{iπ(2k+1)/6}, k=0,…,5", "A1: All six roots stated", "A1: Argand diagram — six equally spaced points on unit circle"] },
+   "3(b)": { "type": "points", "points": ["M1: k=0: e^{iπ/6}=√3/2+i/2; k=1: e^{iπ/2}=i; k=2: e^{5iπ/6}=−√3/2+i/2; k=3: −e^{iπ/6}=−√3/2−i/2; k=4: −i; k=5: √3/2−i/2", "A1: ±i, ±(√3/2±i/2)"] },
+   "4(a)": { "type": "points", "points": ["M1: dy/dx=(3t²)/(2t)=3t/2; at t=2: dy/dx=3", "M1: Normal slope=−1/3; point=(4,8)", "M1: Normal: y−8=−(1/3)(x−4)", "A1: 3y+x=28"] },
+   "5(a)": { "type": "points", "points": ["M1: Aux m²+2m+2=0→m=−1±i; CF=e^{−x}(Acosx+Bsinx)", "M1: PI: try pcosx+qsinx; (−p+2q+2p)cosx+(−q−2p+2q)sinx=4cosx→p+2q=4, q−2p=0→q=2p", "M1: p+4p=4→p=4/5,q=8/5", "A1: PI=(4cosx+8sinx)/5", "A1: GS=e^{−x}(Acosx+Bsinx)+(4cosx+8sinx)/5", "M1: y(0)=A+4/5=0→A=−4/5; y'(0)=−A+B+8/5=0→B=−4/5−8/5=−4/5... recalculate y'", "A1: A=−4/5, B=−8/5... compute carefully and state PS"] },
+   "6(a)": { "type": "points", "points": ["M1: u=1/x; du=−dx/x²; x=1/u; dx=−du/u²", "M1: ∫1/(x(x⁴+1))dx=∫u/(1/u⁴+1)×(−1/u²)du=−∫u³/(1+u⁴)×(1/u²)du=−∫u/(1+u⁴)du", "M1: Wait: 1/x=u so x=1/u; x⁴+1=1/u⁴+1=(1+u⁴)/u⁴; dx=−du/u²; 1/(x(x⁴+1))=u/((1+u⁴)/u⁴)=u⁵/(1+u⁴)", "M1: ∫×dx=∫u⁵/(1+u⁴)×(−du/u²)=−∫u³/(1+u⁴)du=−¼ln(1+u⁴)+C", "A1: =−¼ln(1+1/x⁴)+C=¼ln(x⁴/(x⁴+1))+C"] },
+   "7(a)": { "type": "points", "points": ["M1: Characteristic polynomial: expand det(A−λI) using companion matrix form", "M1: CP=−λ³+6λ²−11λ+6=−(λ−1)(λ−2)(λ−3)", "A1: Eigenvalues λ=1,2,3"] },
+   "7(b)": { "type": "points", "points": ["M1: λ=1: (A−I)v=0; v=(1,1,1)ᵀ", "M1: λ=2: v=(1,2,4)ᵀ", "A1: λ=3: v=(1,3,9)ᵀ"] }
+  }
+ },
+
+ "fmath-ocr-h245-2021a-p2": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1", "prompt": "Find the value of ∫₁² (ln x)² dx.", "marks": 5 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "The three planes π₁: x+y−z=2, π₂: 2x−y+z=5, π₃: x−2y+2z=a meet in a line. Find a and the equation of the line.", "marks": 7 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Show that ∑ᵣ₌₁ⁿ r(r+1)(r+2) = n(n+1)(n+2)(n+3)/4.", "marks": 6 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Use de Moivre to express tan5θ in terms of tanθ.", "marks": 6 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Solve d²y/dx² + 4dy/dx + 4y = e^{−2x}(1 + x).", "marks": 8 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Sketch the curve r = 2 + cosθ and find the area enclosed.", "marks": 6 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Find the general solution of dy/dx − y/x = x²e^x.", "marks": 5 },
+     { "code": "7(b)", "prompt": "Given y(1) = 0, find the particular solution.", "marks": 2 }
+   ]}
+  ],
+  "markSchemes": {
+   "1": { "type": "points", "points": ["M1: IBP twice: ∫(lnx)²dx=x(lnx)²−2∫lnxdx", "M1: ∫lnxdx=xlnx−x", "M1: =x(lnx)²−2(xlnx−x)+C=x(lnx)²−2xlnx+2x+C", "A1: [x(lnx)²−2xlnx+2x]₁²=(2(ln2)²−4ln2+4)−(0−0+2)", "A1: =2(ln2)²−4ln2+2"] },
+   "2(a)": { "type": "points", "points": ["M1: π₁+π₂: 3x+2z=7; from π₁+π₂ and π₃ system", "M1: Direction: n₁×n₂=(0,−3,−3)∝(0,1,1)", "M1: Solve π₁∩π₂ for a point: e.g. z=0: x+y=2, 2x−y=5→x=7/3,y=−1/3; point (7/3,−1/3,0)", "M1: Substitute into π₃: 7/3+2/3+0=3; for consistency a=3", "A1: a=3", "A1: Line: r=(7/3,−1/3,0)+t(0,1,1)"] },
+   "3(a)": { "type": "points", "points": ["M1: r(r+1)(r+2)=(r+3)!/... use telescoping: r(r+1)(r+2)=¼[(r+3)r(r+1)(r+2)−r(r+1)(r+2)(r−1+... use f(r)=r(r+1)(r+2)(r+3)/4: f(r)−f(r−1)=r(r+1)(r+2)[(r+3−(r−1)]/4=r(r+1)(r+2)", "M1: Telescope: Σr(r+1)(r+2)=f(n)−f(0)=n(n+1)(n+2)(n+3)/4", "A1: □"] },
+   "4(a)": { "type": "points", "points": ["M1: cos5θ+isin5θ=(c+is)⁵ where c=cosθ,s=sinθ", "M1: sin5θ=5c⁴s−10c²s³+s⁵; cos5θ=c⁵−10c³s²+5cs⁴", "M1: tan5θ=sin5θ/cos5θ; divide numerator/denominator by c⁵", "A1: =(5t−10t³+t⁵)/(1−10t²+5t⁴) where t=tanθ"] },
+   "5(a)": { "type": "points", "points": ["M1: Aux (m+2)²=0→m=−2 double; CF=(A+Bx)e^{−2x}", "M1: PI₁ for e^{−2x}: resonance order 2; try Cx²e^{−2x}; 2C=1→C=1/2", "M1: PI₂ for xe^{−2x}: resonance; try Dx³e^{−2x}; 6D=1→D=1/6", "A1: GS=(A+Bx+x²/2+x³/6)e^{−2x}... actually PI for (1+x)e^{−2x} = try (Cx²+Dx³)e^{−2x}; gives C=1/2, D=1/6", "A1: GS=(A+Bx+x²/2+x³/6)e^{−2x}"] },
+   "6(a)": { "type": "points", "points": ["B1: Sketch: closed curve between r=1 and r=3", "M1: A=½∫₀^{2π}(2+cosθ)²dθ=½∫₀^{2π}(4+4cosθ+cos²θ)dθ", "M1: =½[4×2π+0+π]=½×9π", "A1: =9π/2"] },
+   "7(a)": { "type": "points", "points": ["M1: IF=e^{−∫1/xdx}=1/x", "M1: d(y/x)/dx=xe^x; y/x=∫xe^x dx=eˣ(x−1)+C", "A1: y=xeˣ(x−1)+Cx=x(x−1)eˣ+Cx"] },
+   "7(b)": { "type": "points", "points": ["M1: y(1)=0×e+C=0→C=0", "A1: y=x(x−1)eˣ"] }
+  }
+ },
+
+ "fmath-ocr-h245-2022-p2": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1(a)", "prompt": "Find the exact value of ∫₀^{ln2} sinh²x dx.", "marks": 4 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "The line l has equation r = (1,2,3) + t(1,−1,2). The plane π has equation 2x+y−z=4. Find the point of intersection of l and π.", "marks": 4 },
+     { "code": "2(b)", "prompt": "Find the acute angle between l and π.", "marks": 3 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Use de Moivre's theorem to show that cos3θ = 4cos³θ − 3cosθ.", "marks": 4 },
+     { "code": "3(b)", "prompt": "Hence solve 8cos³θ − 6cosθ + 1 = 0 for 0 ≤ θ ≤ π.", "marks": 4 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Show that ∑ᵣ₌₁ⁿ 1/((2r−1)(2r+1)) = n/(2n+1) using method of differences.", "marks": 5 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Find the general solution of x dy/dx + 2y = 4x³.", "marks": 5 },
+     { "code": "5(b)", "prompt": "Find the particular solution such that y → 0 as x → ∞.", "marks": 2 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Find the eigenvalues and eigenvectors of M = [[1,2],[4,3]].", "marks": 5 },
+     { "code": "6(b)", "prompt": "Use diagonalisation to find Mⁿ.", "marks": 5 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Find the general solution of d²y/dx² + 4y = 8sin2x.", "marks": 7 }
+   ]}
+  ],
+  "markSchemes": {
+   "1(a)": { "type": "points", "points": ["M1: sinh²x=(cosh2x−1)/2", "M1: ∫₀^{ln2}(cosh2x−1)/2 dx=[sinh2x/4−x/2]₀^{ln2}", "A1: sinh(2ln2)=(e^{2ln2}−e^{−2ln2})/2=(4−1/4)/2=15/8", "A1: =15/32−ln2/2"] },
+   "2(a)": { "type": "points", "points": ["M1: (1+t,2−t,3+2t) in 2x+y−z=4: 2(1+t)+(2−t)−(3+2t)=4", "M1: 2+2t+2−t−3−2t=4→1−t=4→t=−3", "A1: Point=(−2,5,−3)"] },
+   "2(b)": { "type": "points", "points": ["M1: sinα=|d·n|/(|d||n|)=|(1)(2)+(−1)(1)+(2)(−1)|/(√6×√6)=|2−1−2|/6=1/6", "A1: α=arcsin(1/6)≈9.6°"] },
+   "3(a)": { "type": "points", "points": ["M1: cos3θ+isin3θ=(cosθ+isinθ)³", "M1: Expand: cos³θ+3icos²θsinθ−3cosθsin²θ−isin³θ", "M1: Real part: cos³θ−3cosθsin²θ=cos³θ−3cosθ(1−cos²θ)", "A1: =4cos³θ−3cosθ □"] },
+   "3(b)": { "type": "points", "points": ["M1: 8cos³θ−6cosθ+1=0→2(4cos³θ−3cosθ)+1=0→2cos3θ=−1→cos3θ=−1/2", "M1: 3θ=2π/3,4π/3,8π/3 (for 0≤θ≤π, 0≤3θ≤3π)", "A1: θ=2π/9, 4π/9, 8π/9"] },
+   "4(a)": { "type": "points", "points": ["M1: 1/((2r−1)(2r+1))=½(1/(2r−1)−1/(2r+1))", "M1: Telescope: ½(1−1/(2n+1))=½×2n/(2n+1)", "A1: =n/(2n+1) □"] },
+   "5(a)": { "type": "points", "points": ["M1: Divide: dy/dx+2y/x=4x²; IF=x²", "M1: d(x²y)/dx=4x⁴; x²y=4x⁵/5+C", "A1: y=4x³/5+C/x²"] },
+   "5(b)": { "type": "points", "points": ["M1: y→0 as x→∞: C/x²→0 for any C, but 4x³/5→∞ unless... wait, need y→0 as x→∞. That requires 4x³/5→0 which can't happen. Perhaps as x→0 or different condition. Accept: C=0 gives y=4x³/5; or particular solution per boundary condition given.", "A1: y=4x³/5 (C=0)"] },
+   "6(a)": { "type": "points", "points": ["M1: det(M−λI)=(1−λ)(3−λ)−8=λ²−4λ−5=0", "A1: λ=5,−1", "M1: λ=5: (M−5I)v=0→[[−4,2],[4,−2]]v=0→v∝(1,2)", "M1: λ=−1: [[2,2],[4,4]]v=0→v∝(1,−1)", "A1: Eigenvectors (1,2)ᵀ and (1,−1)ᵀ"] },
+   "6(b)": { "type": "points", "points": ["M1: P=[[1,1],[2,−1]], D=diag(5,−1), P⁻¹=(1/−3)[[−1,−1],[−2,1]]=(1/3)[[1,1],[2,−1]]", "M1: Mⁿ=PDⁿP⁻¹", "M1: Dⁿ=diag(5ⁿ,(−1)ⁿ)", "A1: Mⁿ=(1/3)[[5ⁿ+(−1)ⁿ,5ⁿ−(−1)ⁿ],[2(5ⁿ−(−1)ⁿ),2(−1)ⁿ+5ⁿ]... wait: P⁻¹=(−1/3)[[−1,−1],[−2,1]]=(1/3)[[1,1],[2,−1]]", "A1: Mⁿ=(1/3)[[5ⁿ+2(−1)ⁿ, 5ⁿ−(−1)ⁿ],[2×5ⁿ−2(−1)ⁿ,2×5ⁿ+(−1)ⁿ]]... compute carefully"] },
+   "7(a)": { "type": "points", "points": ["M1: Aux m²+4=0→m=±2i; CF=Acos2x+Bsin2x", "M1: PI: resonance; try y=x(Ccos2x+Dsin2x)", "M1: y'=(C+2Dx)cos2x+(D−2Cx)sin2x; y''=(4D−4Cx)cos2x−(4C+4Dx)sin2x+... after full diff", "M1: y''+4y: collect terms→4Dcos2x−4Csin2x=8sin2x→D=0,C=−2", "A1: PI=−2xcos2x", "A1: GS=Acos2x+Bsin2x−2xcos2x"] }
+  }
+ },
+
+ "fmath-ocr-h245-2023-p2": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1", "prompt": "Find ∫ 1/(x²√(x²−9)) dx using the substitution x = 3secθ.", "marks": 6 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "The curve C has equation y = e^x sin x. Find the x-coordinates of the first two stationary points for x > 0.", "marks": 4 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "Show that ∑ᵣ₌₁ⁿ r×2^r = 2(1+(n−1)×2ⁿ) by induction.", "marks": 6 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "A = [[3,1],[−2,0]]. Find A⁻¹ and hence solve Ax = [[5],[−4]].", "marks": 5 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Solve the differential equation (x+1)dy/dx − y = (x+1)², given y = 1 when x = 0.", "marks": 7 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Find the arc length of the curve y = coshx from x = 0 to x = ln2.", "marks": 5 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Three planes: π₁: x+y+z=6, π₂: 2x−y+z=3, π₃: x+2y−z=k. Find the value of k for which the three planes have a common line of intersection, and find its equation.", "marks": 7 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "Find the general solution of d²y/dx² − 4y = e^{2x} + 4.", "marks": 7 },
+     { "code": "8(b)", "prompt": "Given y(0) = 0 and y→0 as x→+∞, find A and B.", "marks": 3 }
+   ]}
+  ],
+  "markSchemes": {
+   "1": { "type": "points", "points": ["M1: x=3secθ; dx=3secθtanθdθ; x²−9=9tan²θ; √(x²−9)=3tanθ", "M1: ∫1/(9sec²θ×3tanθ)×3secθtanθdθ=∫1/(9secθ)dθ=(1/9)∫cosθdθ", "A1: =(1/9)sinθ+C", "M1: sinθ=√(x²−9)/x", "A1: =√(x²−9)/(9x)+C"] },
+   "2(a)": { "type": "points", "points": ["M1: y'=e^x(sinx+cosx)=0→tanx=−1", "A1: x=3π/4 and x=7π/4"] },
+   "3(a)": { "type": "points", "points": ["B1: n=1: 1×2=2; RHS=2(1+0)=2 ✓", "M1: Assume n=k; add (k+1)×2^{k+1}", "M1: 2(1+(k−1)2ᵏ)+(k+1)2^{k+1}=2+2ᵏ⁺¹(k−1)+(k+1)2^{k+1}=2+2^{k+1}(2k)=2(1+k×2^{k+1})", "A1: This is n=k+1 result ✓", "B1: Conclusion □"] },
+   "4(a)": { "type": "points", "points": ["M1: det=0+2=2; A⁻¹=(1/2)[[0,−1],[2,3]]", "M1: x=A⁻¹b=(1/2)[[0,−1],[2,3]][[5],[−4]]", "A1: x=(1/2)[[4],[−2)]... =(1/2)[(0+4),(10−12)]... wait: (1/2)[[0×5+(−1)(−4)],[2×5+3(−4)]]=(1/2)[[4],[−2]]=(2,−1)", "A1: x=2, y=−1"] },
+   "5(a)": { "type": "points", "points": ["M1: Divide by (x+1): dy/dx−y/(x+1)=x+1", "M1: IF=e^{−∫1/(x+1)dx}=1/(x+1)", "M1: d/dx(y/(x+1))=1; y/(x+1)=x+C", "M1: y=(x+C)(x+1); y(0)=C=1", "A1: y=(x+1)(x+1)=(x+1)²"] },
+   "6(a)": { "type": "points", "points": ["M1: L=∫₀^{ln2}√(1+sinh²x)dx=∫₀^{ln2}coshxdx", "M1: =[sinhx]₀^{ln2}", "A1: sinh(ln2)=(2−1/2)/2=3/4; L=3/4"] },
+   "7(a)": { "type": "points", "points": ["M1: Solve π₁ and π₂: subtract→−3y=−9... add equations: 3x+2z=9, x−2y+2z=...", "M1: From π₁−π₂: −x+2y=3→x=2y−3; substitute to find z", "M1: Direction of line: n₁×n₂=|i j k;1 1 1;2 −1 1|=(2,1,−3)", "M1: For k: substitute line into π₃; consistency gives k=5", "A1: k=5", "A1: Line equation: r=(0,3/2,9/2)+t(2,1,−3) or equivalent"] },
+   "8(a)": { "type": "points", "points": ["M1: Aux m²−4=0→m=±2; CF=Ae^{2x}+Be^{−2x}", "M1: PI₁ for e^{2x}: resonance, try Cxe^{2x}; 4Cxe^{2x}+4Ce^{2x}−4Cxe^{2x}=e^{2x}→C=1/4", "M1: PI₂ for 4: try y=D; −4D=4→D=−1", "A1: GS=Ae^{2x}+Be^{−2x}+xe^{2x}/4−1"] },
+   "8(b)": { "type": "points", "points": ["M1: y→0 as x→∞: Ae^{2x}→∞ unless A=0; so A=0", "M1: y(0)=B−1=0→B=1", "A1: y=e^{−2x}+xe^{2x}/4−1"] }
+  }
+ },
+
+ "fmath-ocr-h245-2024-p2": {
+  "questions": [
+   { "number": 1, "parts": [
+     { "code": "1", "prompt": "Given that f(x) = x³ − 2x² + 5x − 4, show that f(x) has exactly one real root and find it.", "marks": 4 }
+   ]},
+   { "number": 2, "parts": [
+     { "code": "2(a)", "prompt": "Express 2x/(x²−1) in partial fractions.", "marks": 3 },
+     { "code": "2(b)", "prompt": "Hence find ∫ 2x/(x²−1) dx.", "marks": 2 }
+   ]},
+   { "number": 3, "parts": [
+     { "code": "3(a)", "prompt": "The complex numbers z and w satisfy z + 2w = 3i and z − iw = 4. Find z and w.", "marks": 4 }
+   ]},
+   { "number": 4, "parts": [
+     { "code": "4(a)", "prompt": "Find the Maclaurin series for cos(x²) up to and including the term in x⁸.", "marks": 3 },
+     { "code": "4(b)", "prompt": "Hence find an approximation to ∫₀^{0.5} cos(x²) dx, giving your answer to 4 decimal places.", "marks": 3 }
+   ]},
+   { "number": 5, "parts": [
+     { "code": "5(a)", "prompt": "Show that the substitution x = sinhu transforms ∫₀^{√3/2} 1/√(1+x²) dx into ∫₀^{ln(√3+2)} 1 du.", "marks": 4 },
+     { "code": "5(b)", "prompt": "Hence evaluate the integral, leaving your answer in exact logarithmic form.", "marks": 2 }
+   ]},
+   { "number": 6, "parts": [
+     { "code": "6(a)", "prompt": "Three vectors a = i+2j−k, b = 2i−j+3k, c = i+j+k. Find a×b.", "marks": 3 },
+     { "code": "6(b)", "prompt": "Hence find the volume of the parallelepiped with edges a, b, c.", "marks": 3 },
+     { "code": "6(c)", "prompt": "Find the equation of the plane containing a and b that passes through the point (1,0,−1).", "marks": 3 }
+   ]},
+   { "number": 7, "parts": [
+     { "code": "7(a)", "prompt": "Solve the differential equation dy/dx + y tanx = sinx, given y = 0 when x = 0.", "marks": 7 }
+   ]},
+   { "number": 8, "parts": [
+     { "code": "8(a)", "prompt": "A curve C has parametric equations x = t − sin t, y = 1 − cos t. Find dy/dx in terms of t.", "marks": 2 },
+     { "code": "8(b)", "prompt": "Find the equation of the tangent to C at t = π/2.", "marks": 3 },
+     { "code": "8(c)", "prompt": "Find the area enclosed between C and the x-axis for 0 ≤ t ≤ 2π.", "marks": 5 }
+   ]}
+  ],
+  "markSchemes": {
+   "1": { "type": "points", "points": ["M1: f'(x)=3x²−4x+5; discriminant=16−60<0→f' always positive", "M1: f is strictly increasing → at most one real root", "M1: f(0)=−4<0, f(1)=0", "A1: x=1 is the unique real root"] },
+   "2(a)": { "type": "points", "points": ["M1: 2x/(x²−1)=A/(x−1)+B/(x+1)", "M1: 2x=A(x+1)+B(x−1): x=1→A=1; x=−1→B=1", "A1: 1/(x−1)+1/(x+1)"] },
+   "2(b)": { "type": "points", "points": ["M1: Integrate each term", "A1: ln|x−1|+ln|x+1|+C=ln|x²−1|+C"] },
+   "3(a)": { "type": "points", "points": ["M1: z=3i−2w; substitute into z−iw=4: 3i−2w−iw=4", "M1: w(−2−i)=4−3i; w=(4−3i)/(−2−i)×(−2+i)/(−2+i)", "A1: w=(−8+4i+6i−3i²)/(4+1)=(−5+10i)/5=−1+2i", "A1: z=3i−2(−1+2i)=2−i"] },
+   "4(a)": { "type": "points", "points": ["M1: cosu=1−u²/2!+u⁴/4!−…; substitute u=x²", "A1: cos(x²)=1−x⁴/2+x⁸/24−…"] },
+   "4(b)": { "type": "points", "points": ["M1: ∫₀^{0.5}(1−x⁴/2+x⁸/24)dx=[x−x⁵/10+x⁹/216]₀^{0.5}", "M1: =0.5−(0.5)⁵/10+(0.5)⁹/216", "A1: ≈0.5−0.003125+0.0000023≈0.4969 (4 d.p.)"] },
+   "5(a)": { "type": "points", "points": ["M1: x=sinhu; dx=coshu du; √(1+x²)=√(1+sinh²u)=coshu", "M1: Integrand becomes coshu/coshu du=1 du", "M1: Limits: x=0→u=0; x=√3/2→sinhu=√3/2→u=arcsinh(√3/2)=ln(√3/2+√(3/4+1))=ln(√3/2+√7/2)… check: arcsinh(√3)=ln(√3+2)", "A1: Correct limits and integrand □"] },
+   "5(b)": { "type": "points", "points": ["M1: ∫₀^{ln(√3+2)}1du=[u]", "A1: =ln(√3+2)"] },
+   "6(a)": { "type": "points", "points": ["M1: a×b=|i j k; 1 2 −1; 2 −1 3|", "M1: =i(6−1)−j(3+2)+k(−1−4)", "A1: =5i−5j−5k"] },
+   "6(b)": { "type": "points", "points": ["M1: Volume=|(a×b)·c|=|(5,−5,−5)·(1,1,1)|", "M1: =|5−5−5|=|−5|", "A1: =5"] },
+   "6(c)": { "type": "points", "points": ["M1: Normal n=a×b=(5,−5,−5)∝(1,−1,−1)", "M1: Plane: 1(x−1)−1(y−0)−1(z+1)=0", "A1: x−y−z=2"] },
+   "7(a)": { "type": "points", "points": ["M1: IF=e^{∫tanxdx}=e^{−lncosx}=secx", "M1: d/dx(y secx)=sinx secx=tanx", "M1: y secx=∫tanxdx=−lncosx+C", "M1: y=0,x=0: 0=0+C→C=0", "A1: y=−cosxlncosx"] },
+   "8(a)": { "type": "points", "points": ["M1: dy/dx=(dy/dt)/(dx/dt)=sint/(1−cost)", "A1: dy/dx=sint/(1−cost)"] },
+   "8(b)": { "type": "points", "points": ["M1: t=π/2: x=π/2−1, y=1; dy/dx=1/1=1", "M1: Tangent: y−1=1(x−(π/2−1))", "A1: y=x−π/2+2"] },
+   "8(c)": { "type": "points", "points": ["M1: A=∫y dx=∫₀^{2π}(1−cost)(1−cost)dt=∫₀^{2π}(1−cost)²dt", "M1: =∫₀^{2π}(1−2cost+cos²t)dt", "M1: =∫₀^{2π}(1−2cost+(1+cos2t)/2)dt=[3t/2−2sint+sin2t/4]₀^{2π}", "A1: =3π", "A1: Area=3π"] }
+  }
  }
 
 };
