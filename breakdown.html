@@ -2437,7 +2437,6 @@ function renderPastPapersChecklist(subjects) {
         <span style="font-family:var(--font-display);font-size:16px;">${subj.icon || '📄'} ${subj.name}</span>
         <span style="font-size:11px;font-weight:600;color:var(--accent-dark);background:var(--accent-dim);padding:2px 10px;border-radius:999px;">${board.board}</span>
         <span style="margin-left:auto;font-size:13px;color:var(--muted);">${donePapers}/${totalPapers} done</span>
-        <a href="past-papers.html" style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:var(--accent);color:#fff;border-radius:7px;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;">▶ Try it</a>
       </div>`;
       // Progress bar
       html += `<div style="height:4px;background:var(--surface3);"><div style="height:4px;width:${pct}%;background:${progressColor};transition:width 0.3s;"></div></div>`;
@@ -2454,6 +2453,7 @@ function renderPastPapersChecklist(subjects) {
           <input type="checkbox" id="${checkId}" ${done ? 'checked' : ''} style="width:16px;height:16px;accent-color:var(--green);flex-shrink:0;cursor:pointer;" onchange="togglePaperDone('${p.id}', this)">
           <span style="flex:1;font-size:13.5px;color:var(--text);${done ? 'text-decoration:line-through;color:var(--muted);' : ''}">${p.paperName}${p.paperCode ? ` <span style="font-size:11px;color:var(--muted2);margin-left:4px;">${p.paperCode}</span>` : ''}</span>
           <span style="font-size:12px;color:var(--muted2);white-space:nowrap;">${p.year || ''}</span>
+          <a href="past-papers.html" style="font-size:12px;font-weight:500;color:#fff;text-decoration:none;background:var(--accent);padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0;" onclick="event.stopPropagation()">▶ Try it</a>
           <a href="paper-attempt.html?id=${encodeURIComponent(p.id)}" style="font-size:12px;font-weight:500;color:var(--accent-dark);text-decoration:none;background:var(--accent-dim);padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0;" onclick="event.stopPropagation()">▶ Open</a>
         </label>`;
       });
