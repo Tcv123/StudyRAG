@@ -389,7 +389,8 @@ function renderMsCard(part, paperKey, paperId) {
     ? (((window.CS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.MATHS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.FM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
-       ((window.PHYSICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
+       ((window.PHYSICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.BIO_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
     : '';
   const modelAns   = preWritten || getModelAnswer(paperKey, partCode);
   const officialPts = (ms && msType === 'points') ? (ms.points || []) : [];
@@ -808,6 +809,7 @@ function buildPicker(userSubs) {
     ['FM_QUESTIONS', 'further-maths-questions.js'],
     ['FM_MODEL_ANSWERS', 'model-answers-fm.js'],
     ['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js'],
+    ['BIO_MODEL_ANSWERS', 'model-answers-biology.js'],
   ].map(([flag, src]) => window[flag] ? Promise.resolve() : new Promise((resolve) => {
     const s = document.createElement('script');
     s.src = src;
