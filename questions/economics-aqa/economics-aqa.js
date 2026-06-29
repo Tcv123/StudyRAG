@@ -95,7 +95,7 @@ const ECONOMICS_AQA_QUESTIONS = {
       { q: 'If YED for a good is +2.5, a 4% rise in income will lead to:', options: ['A 10% rise in demand', 'A 2.5% rise in demand', 'A 4% rise in demand', 'A 1.6% rise in demand'], answer: 0 },
       { q: 'A minimum price set above equilibrium will lead to:', options: ['A shortage', 'Excess supply', 'No effect on the market', 'Increased consumer surplus'], answer: 1 },
       { q: 'A maximum price set below equilibrium will create:', options: ['Excess supply', 'A shortage (excess demand)', 'No change', 'Higher producer surplus'], answer: 1 },
-      { q: 'If both demand and supply increase simultaneously, the effect on equilibrium price is:', options: ['Definitely rises', 'Definitely falls', 'Indeterminate without knowing relative magnitudes', 'Always stays the same'], answer: 2 },
+      { q: 'If both demand and supply increase simultaneously, the effect on equilibrium price is:', options: ['Definitely rises', 'Quantity traded definitely falls', 'Indeterminate without knowing relative magnitudes', 'Always stays the same'], answer: 2 },
       { q: 'A subsidy to producers will:', options: ['Shift supply left', 'Shift supply right, reducing equilibrium price', 'Shift demand right', 'Have no effect on price'], answer: 1 },
       { q: 'An indirect tax on a good with perfectly inelastic demand will:', options: ['Be fully borne by consumers', 'Be fully borne by producers', 'Be shared equally', 'Have no effect'], answer: 0 },
       { q: 'When PED = -1 (unitary), a price change will:', options: ['Increase total revenue', 'Decrease total revenue', 'Leave total revenue unchanged', 'Double total revenue'], answer: 2 },

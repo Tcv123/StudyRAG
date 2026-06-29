@@ -15,7 +15,7 @@ const GEOGRAPHY_AQA_QUESTIONS = {
       { q: 'Which store holds the largest proportion of freshwater on Earth?', options: ['Rivers','Groundwater','Ice sheets and glaciers','Atmosphere'], answer: 2 },
       { q: 'What is evapotranspiration?', options: ['Water seeping into soil','Combined loss of water from evaporation and plant transpiration','Water flowing over the surface','Condensation of water vapour'], answer: 1 },
       { q: 'What is the term for water soaking into the ground surface?', options: ['Throughflow','Percolation','Infiltration','Interception'], answer: 2 },
-      { q: 'Which part of the carbon cycle involves photosynthesis?', options: ['Geological carbon cycle','Biological carbon cycle','Oceanic carbon cycle','Atmospheric carbon cycle'], answer: 1 },
+      { q: 'Which part of the carbon cycle involves photosynthesis?', options: ['Terrestrial carbon cycle','Biological carbon cycle','Oceanic carbon cycle','Atmospheric carbon cycle'], answer: 1 },
       { q: 'What is a drainage basin?', options: ['A river channel','The area of land drained by a river and its tributaries','A lake or reservoir','An underground water store'], answer: 1 },
       { q: 'What is the water table?', options: ['The surface level of a lake','The upper boundary of the saturated zone in the ground','The depth of the ocean floor','The height of a river above sea level'], answer: 1 },
       { q: 'What is the main greenhouse gas released by burning fossil fuels?', options: ['Methane','Nitrous oxide','Carbon dioxide','Water vapour'], answer: 2 },

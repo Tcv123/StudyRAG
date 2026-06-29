@@ -34,7 +34,7 @@ const ECONOMICS_OCR_QUESTIONS = {
       { q: 'If the XED between goods A and B is -1.5, the goods are likely to be:', options: ['Substitutes', 'Complements', 'Unrelated', 'Inferior goods'], answer: 1 },
       { q: 'A firm produces luxury handbags with YED of +2.5. A recession reduces national income by 5%. What happens to quantity demanded?', options: ['Falls by 2.5%', 'Falls by 12.5%', 'Rises by 12.5%', 'Falls by 5%'], answer: 1 },
       { q: 'When a per-unit tax is imposed, the burden falls more on consumers when:', options: ['Demand is elastic', 'Supply is elastic', 'Demand is inelastic', 'Supply is inelastic'], answer: 2 },
-      { q: 'A PPF bowed outward from the origin indicates:', options: ['Constant opportunity cost', 'Increasing opportunity cost', 'Decreasing opportunity cost', 'Zero opportunity cost'], answer: 1 },
+      { q: 'A PPF bowed outward from the origin indicates:', options: ['Constant opportunity cost', 'Increasing opportunity cost', 'Decreasing opportunity cost', 'Diminishing opportunity cost'], answer: 1 },
       { q: 'If PED for cigarettes is -0.3, a 20% price increase would reduce quantity demanded by:', options: ['6%', '3%', '20%', '60%'], answer: 0 },
       { q: 'A subsidy granted to producers will:', options: ['Shift supply left', 'Shift supply right', 'Shift demand right', 'Shift demand left'], answer: 1 },
       { q: 'In a market where demand is perfectly elastic, the incidence of an indirect tax falls entirely on:', options: ['Consumers', 'Producers', 'Government', 'Both equally'], answer: 1 },

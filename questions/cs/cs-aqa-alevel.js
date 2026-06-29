@@ -20,7 +20,7 @@ const CS_AQA_ALEVEL_QUESTIONS = {
       { q: 'A local variable has scope limited to:', options: ['The program as a whole','The block or subroutine where it is declared','The operating system session','Its containing file only'], answer: 1 },
       { q: 'What is the result of 7 MOD 3?', options: ['2','1','3','0'], answer: 1 },
       { q: 'What is the result of 7 DIV 3 (integer division)?', options: ['2','2.33','1','3'], answer: 0 },
-      { q: 'In programming, a constant is:', options: ['A variable whose value changes over time','An identifier bound to a value that cannot be reassigned','Always an integer','A function parameter'], answer: 1 },
+      { q: 'In programming, a constant is:', options: ['A variable whose value changes over time','An identifier bound to a value that cannot be reassigned','Must be declared at runtime','A function parameter'], answer: 1 },
       { q: 'Which of these is NOT a valid identifier in most programming languages?', options: ['total_score','_count','2names','firstName'], answer: 2 },
       { q: 'Exception handling is used to:', options: ['Increase program speed','Catch and respond to runtime errors gracefully','Prevent compilation errors','Remove the need for testing'], answer: 1 },
       { q: 'Which statement about parameters is correct?', options: ['Pass-by-value copies the argument','Pass-by-value lets the function modify the original','Pass-by-reference always copies data','Parameters must always be integers'], answer: 0 },

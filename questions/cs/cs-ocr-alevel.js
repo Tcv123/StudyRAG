@@ -215,7 +215,7 @@ const CS_OCR_QUESTIONS = {
       { q: 'In two\'s complement, how many bit patterns represent zero?', options: ['Zero','Exactly one','Exactly two (+0 and −0)','Depends on word length'], answer: 1 },
       { q: 'A floating-point number is stored as which three components?', options: ['Sign, mantissa, exponent','Sign, base, index','Mantissa, divisor, quotient','Numerator, denominator, sign'], answer: 0 },
       { q: 'Each hexadecimal digit represents exactly how many binary digits (bits)?', options: ['2','3','4','8'], answer: 2 },
-      { q: 'Which character set allocates the first 128 code points identically to ASCII but extends to over a million code points?', options: ['EBCDIC','Unicode','Baudot','Morse'], answer: 1 },
+      { q: 'Which character set allocates the first 128 code points identically to ASCII but extends to over a million code points?', options: ['EBCDIC','Unicode','Baudot','Base64'], answer: 1 },
       { q: 'How many bits does a standard (non-extended) ASCII character occupy?', options: ['4','7','8','16'], answer: 1 },
       // 1.4.2 Data Structures (6)
       { q: 'A tuple is best described as:', options: ['An unordered set of unique values','An ordered, immutable sequence of values, possibly of different types','A hash table key','A binary tree node'], answer: 1 },
