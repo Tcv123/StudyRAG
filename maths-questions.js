@@ -18592,5 +18592,360 @@ window.MATHS_QUESTIONS = {
     "guidance": "B1: correct comment — mean equals median (both = 2) so the distribution is symmetrical / has zero skew. (In fact f(x) is symmetric about x = 2 on [0, 4], so this is consistent.)"
    }
   }
+ },
+ "math-edx-9ma0-2024-p32": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "A particle P moves along a straight line. At time t seconds (t ≥ 0), the displacement of P from a fixed point O on the line is s metres, where s = t³ − 6t² + 9t.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find the times at which P is instantaneously at rest.",
+      "marks": 3
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Find the total distance travelled by P in the first 4 seconds.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "Two particles A and B have masses 3 kg and m kg respectively. The particles are connected by a light inextensible string passing over a smooth fixed pulley. The system is released from rest. Particle A descends with acceleration 2 m s⁻². (g = 9.8 m s⁻².)",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find the tension in the string.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find the value of m.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A particle of mass 5 kg is on a rough inclined plane. The plane is inclined at 30° to the horizontal. The particle is held in equilibrium by a horizontal force of magnitude P newtons. The coefficient of friction between the particle and the plane is 0.3. (g = 9.8 m s⁻².)",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Draw a force diagram showing all forces acting on the particle.",
+      "marks": 1
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Given that the particle is on the point of moving up the plane, find the value of P.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A ball is projected from a point O at the top of a cliff. The ball is projected with speed 20 m s⁻¹ at an angle of 35° above the horizontal. The ball lands on horizontal ground 3 seconds after it is projected. The point O is h metres above the ground. (g = 9.8 m s⁻². Air resistance is neglected.)",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the horizontal distance travelled by the ball.",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the value of h.",
+      "marks": 2
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find the speed of the ball and the angle its velocity makes with the horizontal at the moment it lands.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "A uniform rod AB has length 4 m and weight 60 N. The rod rests horizontally on two smooth supports. Support C is 0.5 m from A. Support D is 1 m from B. A particle of weight W newtons is placed on the rod at a point 0.5 m from A.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find the magnitude of the reactions at C and D in terms of W.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Given that the rod is about to tilt about D, find the value of W.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A vehicle of mass 1200 kg moves along a straight horizontal road. The driving force from the engine is F newtons. The resistance to motion is modelled as a constant force of 800 N.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "When the vehicle has speed 15 m s⁻¹, the engine is working at a rate of 18 kW. Find the acceleration of the vehicle at this instant.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Find the maximum speed of the vehicle.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "At time t = 0, particle P has position vector (2i + 5j) m and velocity (3i − j) m s⁻¹. The particle moves with constant acceleration (−i + 2j) m s⁻².",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Find the velocity of P at time t seconds.",
+      "marks": 1
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the position vector of P at time t seconds.",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Find the time at which the bearing of P from the origin is due north (i.e. the i-component of the position vector is zero), giving your answer in the form a + b√c.",
+      "marks": 2
+     },
+     {
+      "code": "7(d)",
+      "prompt": "Find the speed of P at the time found in part (c), giving your answer in surd form.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "Two particles P and Q have masses 0.5 kg and 0.3 kg respectively. They move towards each other in opposite directions along the same straight line on a smooth horizontal surface. P has speed 4 m s⁻¹ and Q has speed 2 m s⁻¹ before the collision. After the collision P and Q move in the same direction, P having speed u m s⁻¹ and Q having speed v m s⁻¹.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Using conservation of momentum, find a relationship between u and v.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Given that the coefficient of restitution between P and Q is 0.5, find the values of u and v.",
+      "marks": 3
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the loss in kinetic energy due to the collision.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A particle of mass 2 kg is attached to one end of a light elastic string of natural length 1.5 m and modulus of elasticity 24 N. The other end is attached to a fixed point O on a smooth horizontal surface. The particle is held at a distance 2.25 m from O and released from rest.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the elastic potential energy stored in the string at the point of release.",
+      "marks": 2
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find the speed of the particle at the instant the string becomes slack.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "v = ds/dt = 3t² − 12t + 9",
+     "Set v = 0: 3t² − 12t + 9 = 0 → t² − 4t + 3 = 0",
+     "(t − 1)(t − 3) = 0, so t = 1 and t = 3"
+    ],
+    "guidance": "M1: differentiate s to obtain v. M1: set v = 0 and solve quadratic. A1: both t = 1 s and t = 3 s."
+   },
+   "1(b)": {
+    "type": "points",
+    "points": [
+     "s(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4",
+     "Distance 0→1: 4 m; distance 1→3: 4 m; distance 3→4: 4 m",
+     "Total distance = 12 m"
+    ],
+    "guidance": "M1: evaluate s at the turning points t = 1, 3 and the endpoint t = 4. M1: sum distances of each segment (not displacements). A1: total distance = 12 m. A1: fully correct working with all segments shown."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "For particle A (descending, mass 3 kg): 3g − T = 3 × 2",
+     "T = 3 × 9.8 − 6 = 29.4 − 6 = 23.4 N"
+    ],
+    "guidance": "M1: apply Newton's second law to A. A1: T = 23.4 N."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "For particle B (ascending): T − mg = m × 2",
+     "23.4 = m(9.8 + 2) = 11.8m → m = 1.98 kg (3 s.f.)"
+    ],
+    "guidance": "M1: apply Newton's second law to B. A1: m = 1.98 kg."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "Weight 5g downward; normal reaction N perpendicular to plane; friction F down the plane (particle about to move up); horizontal force P."
+    ],
+    "guidance": "B1: all four forces with correct directions labelled."
+   },
+   "3(b)": {
+    "type": "points",
+    "points": [
+     "Resolve ⊥ plane: N = 5g cos30° + P sin30°",
+     "F = μN = 0.3(5g cos30° + P sin30°) acting down the plane",
+     "Resolve ∥ plane: P cos30° = 5g sin30° + F",
+     "0.8660P = 24.5 + 0.3(42.44 + 0.5P) = 24.5 + 12.73 + 0.15P",
+     "0.7160P = 37.23 → P = 52.0 N"
+    ],
+    "guidance": "M1: resolve perpendicular to plane. M1: use F = μN. M1: resolve along plane. A1: correct equation in P. A1: P = 52.0 N (3 s.f.)."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Horizontal distance = 20 cos35° × 3 = 16.38 × 3 = 49.1 m"
+    ],
+    "guidance": "M1: use horizontal distance = uₓt. A1: 49.1 m (3 s.f.)."
+   },
+   "4(b)": {
+    "type": "points",
+    "points": [
+     "Taking downward positive: h = −20sin35° × 3 + ½ × 9.8 × 9 = −34.4 + 44.1 = 9.7 m"
+    ],
+    "guidance": "M1: vertical equation with correct signs. A1: h = 9.7 m (2 s.f.) or 9.68 m (3 s.f.)."
+   },
+   "4(c)": {
+    "type": "points",
+    "points": [
+     "vₓ = 20cos35° = 16.38 m s⁻¹",
+     "vy = −20sin35° + 9.8 × 3 = −11.47 + 29.4 = 17.93 m s⁻¹ (downward)",
+     "Speed = √(16.38² + 17.93²) = √(268.3 + 321.5) = √589.8 = 24.3 m s⁻¹",
+     "Angle below horizontal = arctan(17.93/16.38) = 47.6°"
+    ],
+    "guidance": "M1: find vertical velocity at t = 3. M1: find resultant speed. A1: speed = 24.3 m s⁻¹. (Angle below horizontal = 47.6° — B1 if stated.)"
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "A at 0, C at 0.5 m, centre at 2 m, D at 3 m, B at 4 m. Particle at 0.5 m = at C.",
+     "Moments about D: 2.5Rᶜ = 60 × 1 + W × 2.5 → Rᶜ = 24 + W",
+     "Resolving vertically: Rᴅ = 60 + W − (24 + W) = 36 N"
+    ],
+    "guidance": "M1: take moments about one support. A1: correct moment equation. M1: resolve vertically. A1: Rᶜ = (24 + W) N and Rᴅ = 36 N."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "Tilt about D means Rᶜ = 0: 24 + W = 0 — not possible for positive W.",
+     "Re-evaluate: moments about D gives 2.5Rᶜ = 60 − 2.5W (particle to left of D creates anticlockwise moment); Rᶜ = 0 when 2.5W = 60 → W = 24 N"
+    ],
+    "guidance": "M1: moments about D with Rᶜ = 0. A1: W = 24 N."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "F = P/v = 18000/15 = 1200 N",
+     "Net force = 1200 − 800 = 400 N",
+     "a = 400/1200 = 1/3 m s⁻²"
+    ],
+    "guidance": "M1: use F = P/v. M1: Newton's second law. A1: a = 1/3 m s⁻²."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "At maximum speed: F = 800 N (net force = 0)",
+     "v_max = P/F = 18000/800 = 22.5 m s⁻¹"
+    ],
+    "guidance": "M1: set driving force = resistance. A1: v_max = 22.5 m s⁻¹."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "v = (3 − t)i + (2t − 1)j m s⁻¹"
+    ],
+    "guidance": "B1: both components correct."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "r = (2 + 3t − ½t²)i + (5 − t + t²)j m"
+    ],
+    "guidance": "B1: correct i-component. B1: correct j-component."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "Set i-component = 0: 2 + 3t − ½t² = 0 → t² − 6t − 4 = 0",
+     "t = (6 + √52)/2 = 3 + √13 s (positive root only)"
+    ],
+    "guidance": "M1: set i-component to zero and form quadratic. M1: solve correctly. A1: t = 3 + √13."
+   },
+   "7(d)": {
+    "type": "points",
+    "points": [
+     "At t = 3 + √13: vᵢ = −√13, vⱼ = 5 + 2√13",
+     "Speed = √(13 + (5 + 2√13)²) = √(90 + 20√13) m s⁻¹"
+    ],
+    "guidance": "M1: substitute t into velocity. A1: speed = √(90 + 20√13) m s⁻¹ (≈ 12.7 m s⁻¹)."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Momentum before: 0.5(4) + 0.3(−2) = 1.4 kg m s⁻¹",
+     "0.5u + 0.3v = 1.4 → 5u + 3v = 14"
+    ],
+    "guidance": "M1: clear sign convention stated. M1: correct momentum equation. A1: 5u + 3v = 14."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "NEL: v − u = 0.5 × (4 + 2) = 3",
+     "5u + 3(u + 3) = 14 → 8u = 5 → u = 0.625 m s⁻¹",
+     "v = 3.625 m s⁻¹"
+    ],
+    "guidance": "M1: Newton's law of restitution. A1: restitution equation v − u = 3. M1: solve simultaneously. A1: u = 5/8, v = 29/8."
+   },
+   "8(c)": {
+    "type": "points",
+    "points": [
+     "KE before = ½(0.5)(16) + ½(0.3)(4) = 4 + 0.6 = 4.6 J",
+     "KE after = ½(0.5)(0.625²) + ½(0.3)(3.625²) = 0.0977 + 1.9711 = 2.069 J",
+     "Loss = 4.6 − 2.069 = 2.53 J"
+    ],
+    "guidance": "M1: calculate KE before. M1: calculate KE after. A1: loss = 2.53 J."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Extension = 2.25 − 1.5 = 0.75 m",
+     "EPE = λe²/(2L) = 24 × 0.75²/(2 × 1.5) = 24 × 0.5625/3 = 4.5 J"
+    ],
+    "guidance": "M1: use EPE = λe²/(2L) with correct extension. A1: EPE = 4.5 J."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "String becomes slack when extension = 0, i.e. particle is 1.5 m from O.",
+     "At slack point, EPE = 0. Using energy conservation (horizontal surface, no gravity change):",
+     "½mv² = EPE at release = 4.5 J",
+     "½ × 2 × v² = 4.5 → v² = 4.5 → v = √4.5 = 3√2/2 = 1.5√2 ≈ 2.12 m s⁻¹"
+    ],
+    "guidance": "M1: energy conservation. M1: equate KE at slack to EPE at release. A1: v = √(4.5) = (3/√2) m s⁻¹ ≈ 2.12 m s⁻¹."
+   }
+  }
  }
+}
 };
