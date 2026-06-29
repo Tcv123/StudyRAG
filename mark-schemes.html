@@ -645,8 +645,10 @@ function buildPicker(userSubs) {
         return (a.p.paperCode || '').localeCompare(b.p.paperCode || '');
       });
     sorted.forEach(({ p, pi }) => {
-      // For maths papers (printOnly, no inline parts), only show if question data is loaded
-      if (!p.parts && p.printOnly && !(window.MATHS_QUESTIONS && window.MATHS_QUESTIONS[p.id])) return;
+      // Only show a paper if it has inline parts (e.g. CS) OR has question data loaded (e.g. Maths)
+      const hasInlineParts = p.parts && p.parts.length > 0;
+      const hasMathsData = window.MATHS_QUESTIONS && !!window.MATHS_QUESTIONS[p.id];
+      if (!hasInlineParts && !hasMathsData) return;
       const o = document.createElement('option');
       o.value = pi;
       const parts = [p.year, p.paperCode, p.title || p.label].filter(Boolean);

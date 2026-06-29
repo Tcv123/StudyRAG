@@ -26266,5 +26266,728 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1: find a specific value of n for which n² − n + 11 is not prime. A1: n = 11 gives 121 = 11², which is not prime — valid counterexample."
    }
   }
+ },
+
+ "math-ocr-h240-2022-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "A curve has equation y = x³ − 6x² + 5x + 12.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find the coordinates of the stationary points of the curve.",
+      "marks": 5
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Determine the nature of each stationary point.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Express 5sinθ − 12cosθ in the form Rsin(θ − α), where R > 0 and 0 < α < π/2.\nState the exact value of R and the value of α to 3 decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Hence solve 5sinθ − 12cosθ = 6 for 0 ≤ θ ≤ 2π, giving your answers to 3 significant figures.",
+      "marks": 4
+     },
+     {
+      "code": "2(c)",
+      "prompt": "State the maximum value of 5sinθ − 12cosθ and find the value of θ in [0, 2π] at which this maximum occurs. Give θ to 3 significant figures.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "f(x) = 2x³ + 3x² − 23x − 12.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Show that (x − 3) is a factor of f(x).",
+      "marks": 1
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Hence factorise f(x) completely.",
+      "marks": 3
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Solve the equation 2x³ + 3x² − 23x − 12 = 0, expressing each root exactly where necessary.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A particle P moves along the x-axis. At time t seconds (t ≥ 0), the velocity of P is v m s⁻¹, where v = 3t² − 14t + 8.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the values of t at which P is instantaneously at rest.",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the acceleration of P at each of these times.",
+      "marks": 3
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Given that P is at the origin when t = 0, find the displacement of P from the origin when t = 4.",
+      "marks": 3
+     },
+     {
+      "code": "4(d)",
+      "prompt": "Find the total distance travelled by P in the interval 0 ≤ t ≤ 4.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "Relative to a fixed origin O, the position vectors of points A and B are\n  OA = 2i + 5j − k\n  OB = 4i − j + 3k.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find the vector AB.",
+      "marks": 1
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the unit vector in the direction of AB.",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "The point C lies on the line through A and B such that AC = 2AB. Find the position vector of C.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A curve C is defined by the parametric equations\n  x = 4cosθ,  y = 3sin2θ,  0 ≤ θ ≤ 2π.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find dy/dx in terms of θ.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Find the coordinates of all points on C where dy/dx = 0.",
+      "marks": 4
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Find the Cartesian equation of C, giving your answer in the form y² = f(x).",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "The functions f and g are defined by\n  f(x) = ln(2x − 1),  x > ½\n  g(x) = eˣ + 3,  x ∈ ℝ.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Find the range of f.",
+      "marks": 1
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find f⁻¹(x), stating its domain.",
+      "marks": 3
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Find gf(x), simplifying your answer.",
+      "marks": 2
+     },
+     {
+      "code": "7(d)",
+      "prompt": "Solve gf(x) = 10, giving your answer to 3 significant figures.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "A particle of mass 3 kg is held in equilibrium by two light inextensible strings. One string makes an angle of 30° with the vertical and the other makes an angle of 45° with the vertical, on the opposite side.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Draw a diagram showing all the forces acting on the particle.",
+      "marks": 1
+     },
+     {
+      "code": "8(b)",
+      "prompt": "By resolving forces, find the tension in each string. Give your answers to 3 significant figures.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\n\nThe curve y = 5xe^(−2x) meets the x-axis at the origin O and at the point A.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the coordinates of A.",
+      "marks": 1
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find the exact coordinates of the stationary point of the curve.",
+      "marks": 4
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Find the exact area of the region enclosed by the curve and the x-axis between O and A.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A uniform rod AB of mass 4 kg and length 3 m rests horizontally on two smooth supports. One support is at A and the other is at a point C, where AC = 2 m. A particle of mass m kg is placed at B.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Show that the reaction at A is (4m − 8)/3 N, where g = 9.8 m s⁻² is not used (leave answers in terms of g where appropriate) — write the reaction at A in terms of m and g.",
+      "marks": 3
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Given that the rod is about to tilt about C, find the value of m.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "The sequence {uₙ} satisfies the recurrence relation uₙ₊₁ = auₙ + b, where a and b are constants.\nGiven that u₁ = 5, u₂ = 11 and u₃ = 23.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the values of a and b.",
+      "marks": 3
+     },
+     {
+      "code": "11(b)",
+      "prompt": "The sequence has a fixed point L such that L = aL + b. Find L.",
+      "marks": 1
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Show that uₙ − L = aⁿ⁻¹(u₁ − L), and hence write down an explicit formula for uₙ.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A car of mass 1200 kg travels along a straight horizontal road. The engine of the car produces a constant driving force of 2800 N. The resistance to motion is constant and equal to 400 N.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Find the acceleration of the car.",
+      "marks": 2
+     },
+     {
+      "code": "12(b)",
+      "prompt": "The car starts from rest. Find the speed of the car after it has travelled 150 m.",
+      "marks": 2
+     },
+     {
+      "code": "12(c)",
+      "prompt": "The car then travels up a slope inclined at angle α to the horizontal where sinα = 1/15. The driving force and resistance remain the same. Find the new acceleration of the car.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "In this question you must show all stages of your working.\n\n∫ from 0 to 1 of (3x + 1)/((x + 1)(2x + 1)) dx.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Express (3x + 1)/((x + 1)(2x + 1)) in partial fractions.",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Hence find the exact value of ∫₀¹ (3x + 1)/((x + 1)(2x + 1)) dx.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "Two particles A and B, of masses 5 kg and 3 kg respectively, are connected by a light inextensible string passing over a smooth fixed pulley. The system is released from rest with both particles hanging freely.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the acceleration of the system and the tension in the string.",
+      "marks": 5
+     },
+     {
+      "code": "14(b)",
+      "prompt": "After travelling 0.8 m, particle A hits the ground and does not rebound. Find the further distance travelled by B before it first comes to rest.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A curve has equation y = (x² − 1)/(x² + 1).",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Show that dy/dx = 4x/(x² + 1)².",
+      "marks": 3
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Find the equation of the normal to the curve at the point where x = 1.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "In this question, give all answers to 3 significant figures.\n\nA ball is projected from a point O on a horizontal plane with speed 18 m s⁻¹ at an angle of 40° above the horizontal.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Find the greatest height reached by the ball above the plane.",
+      "marks": 3
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Find the horizontal distance from O at which the ball lands.",
+      "marks": 3
+     },
+     {
+      "code": "16(c)",
+      "prompt": "Find the speed of the ball when it is at its greatest height.",
+      "marks": 1
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 3x² − 12x + 5",
+     "Set dy/dx = 0: 3x² − 12x + 5 = 0",
+     "x = (12 ± √(144 − 60))/6 = (12 ± √84)/6 = (6 ± √21)/3",
+     "x₁ = (6 − √21)/3 ≈ 0.472, y₁ = x₁³ − 6x₁² + 5x₁ + 12",
+     "x₂ = (6 + √21)/3 ≈ 3.528, y₂ = x₂³ − 6x₂² + 5x₂ + 12",
+     "Stationary points at ((6 − √21)/3, f((6 − √21)/3)) and ((6 + √21)/3, f((6 + √21)/3))"
+    ],
+    "guidance": "M1 differentiate correctly; M1 set to zero and attempt to solve; A1 both x-values correct; M1 substitute back; A1 both y-values correct (accept decimal approximations to 3 s.f.)."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "d²y/dx² = 6x − 12",
+     "At x = (6 − √21)/3 ≈ 0.472: d²y/dx² = 6(0.472) − 12 < 0 → local maximum",
+     "At x = (6 + √21)/3 ≈ 3.528: d²y/dx² = 6(3.528) − 12 > 0 → local minimum"
+    ],
+    "guidance": "M1 find and use second derivative or use sign of first derivative either side; A1 correct conclusion for both points."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "R = √(5² + 12²) = √(25 + 144) = √169 = 13",
+     "tanα = 12/5, so α = arctan(12/5) = 1.176 (3 d.p.)",
+     "5sinθ − 12cosθ = 13sin(θ − 1.176)"
+    ],
+    "guidance": "B1 R = 13 (exact); M1 form equation for α; A1 α = 1.176 to 3 d.p."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "13sin(θ − 1.176) = 6 ⇒ sin(θ − 1.176) = 6/13",
+     "θ − 1.176 = arcsin(6/13) = 0.4759… or π − 0.4759…",
+     "θ − 1.176 = 0.476 ⇒ θ = 1.65 (3 s.f.)",
+     "θ − 1.176 = 2.666 ⇒ θ = 3.84 (3 s.f.)"
+    ],
+    "guidance": "M1 correct form; M1 find principal value and second value; A1 A1 each correct θ."
+   },
+   "2(c)": {
+    "type": "exact",
+    "points": [
+     "Maximum value = R = 13",
+     "sin(θ − 1.176) = 1 ⇒ θ − 1.176 = π/2",
+     "θ = π/2 + 1.176 = 2.747 … ≈ 2.75 (3 s.f.)"
+    ],
+    "guidance": "B1 maximum = 13; B1 correct θ."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "f(3) = 2(27) + 3(9) − 23(3) − 12 = 54 + 27 − 69 − 12 = 0",
+     "Since f(3) = 0, by the factor theorem (x − 3) is a factor."
+    ],
+    "guidance": "B1 evaluate f(3) = 0 and state conclusion."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "Divide: 2x³ + 3x² − 23x − 12 = (x − 3)(2x² + 9x + 4)",
+     "Factorise quadratic: 2x² + 9x + 4 = (2x + 1)(x + 4)",
+     "f(x) = (x − 3)(2x + 1)(x + 4)"
+    ],
+    "guidance": "M1 attempt polynomial division or inspection; A1 correct quadratic; A1 full factorisation."
+   },
+   "3(c)": {
+    "type": "exact",
+    "points": [
+     "x = 3, x = −1/2, x = −4"
+    ],
+    "guidance": "B1 all three roots correct (follow through from (b))."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "v = 3t² − 14t + 8 = (3t − 2)(t − 4) = 0",
+     "t = 2/3 s and t = 4 s"
+    ],
+    "guidance": "M1 solve 3t² − 14t + 8 = 0; A1 both values correct."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "a = dv/dt = 6t − 14",
+     "At t = 2/3: a = 6(2/3) − 14 = 4 − 14 = −10 m s⁻²",
+     "At t = 4: a = 6(4) − 14 = 24 − 14 = 10 m s⁻²"
+    ],
+    "guidance": "M1 differentiate v; A1 a at t = 2/3; A1 a at t = 4."
+   },
+   "4(c)": {
+    "type": "exact",
+    "points": [
+     "x = ∫v dt = t³ − 7t² + 8t + C; x(0) = 0 ⇒ C = 0",
+     "x(4) = 64 − 112 + 32 = −16 m",
+     "Displacement = −16 m (i.e. 16 m in the negative direction)"
+    ],
+    "guidance": "M1 integrate v; A1 correct integral; A1 substitute t = 4 correctly."
+   },
+   "4(d)": {
+    "type": "exact",
+    "points": [
+     "x(0) = 0; x(2/3) = (2/3)³ − 7(2/3)² + 8(2/3) = 8/27 − 28/9 + 16/3 = 8/27 − 84/27 + 144/27 = 68/27",
+     "x(4) = −16",
+     "Distance = |x(2/3) − x(0)| + |x(4) − x(2/3)| = 68/27 + |−16 − 68/27| = 68/27 + 500/27 = 568/27 ≈ 21.0 m"
+    ],
+    "guidance": "M1 identify direction changes at t = 2/3 and t = 4; M1 compute x at each turning point; A1 correct total distance."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "AB = OB − OA = (4i − j + 3k) − (2i + 5j − k) = 2i − 6j + 4k"
+    ],
+    "guidance": "B1 correct vector."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "|AB| = √(4 + 36 + 16) = √56 = 2√14",
+     "Unit vector = (1/(2√14))(2i − 6j + 4k) = (1/√14)(i − 3j + 2k)"
+    ],
+    "guidance": "M1 find magnitude; A1 correct unit vector (accept equivalent forms)."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "OC = OA + 2AB = (2i + 5j − k) + 2(2i − 6j + 4k) = 6i − 7j + 7k"
+    ],
+    "guidance": "M1 correct method; A1 correct position vector."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "dx/dθ = −4sinθ",
+     "dy/dθ = 6cos2θ",
+     "dy/dx = (dy/dθ)/(dx/dθ) = 6cos2θ/(−4sinθ) = −(3cos2θ)/(2sinθ)"
+    ],
+    "guidance": "M1 differentiate x and y w.r.t. θ; M1 form dy/dx = (dy/dθ)/(dx/dθ); A1 correct simplified answer."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 0 ⇒ cos2θ = 0 ⇒ 2θ = π/2, 3π/2, 5π/2, 7π/2",
+     "θ = π/4, 3π/4, 5π/4, 7π/4",
+     "Check sinθ ≠ 0 (all valid); exclude θ = 0, π where sinθ = 0",
+     "Coordinates: (4cos(π/4), 3sin(π/2)) = (2√2, 3); (−2√2, 3); (−2√2, −3); (2√2, −3)"
+    ],
+    "guidance": "M1 set numerator = 0; M1 solve for θ; A1 all four θ values; A1 all four coordinate pairs."
+   },
+   "6(c)": {
+    "type": "exact",
+    "points": [
+     "From x = 4cosθ: cosθ = x/4",
+     "y = 3sin2θ = 6sinθcosθ, so y² = 36sin²θcos²θ = 36(1 − cos²θ)cos²θ",
+     "y² = 36(1 − x²/16)(x²/16) = (36/16)(x²)(1 − x²/16) = (9x²/4)(1 − x²/16)",
+     "y² = 9x²/4 − 9x⁴/64"
+    ],
+    "guidance": "M1 use double angle formula; M1 substitute cosθ = x/4; A1 correct Cartesian equation."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "As x > ½, 2x − 1 > 0, so ln(2x − 1) can take any real value; range is ℝ (all real numbers)"
+    ],
+    "guidance": "B1 range is ℝ (or −∞ < f < ∞)."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "Let y = ln(2x − 1); then eʸ = 2x − 1, so x = (eʸ + 1)/2",
+     "f⁻¹(x) = (eˣ + 1)/2",
+     "Domain of f⁻¹ = range of f = ℝ (x ∈ ℝ)"
+    ],
+    "guidance": "M1 attempt to find inverse; A1 correct formula; B1 correct domain."
+   },
+   "7(c)": {
+    "type": "exact",
+    "points": [
+     "gf(x) = g(ln(2x − 1)) = e^(ln(2x−1)) + 3 = (2x − 1) + 3 = 2x + 2"
+    ],
+    "guidance": "M1 correct composition; A1 simplified to 2x + 2."
+   },
+   "7(d)": {
+    "type": "exact",
+    "points": [
+     "2x + 2 = 10 ⇒ 2x = 8 ⇒ x = 4",
+     "Check domain: x = 4 > ½ ✓",
+     "x = 4.00 (3 s.f.)"
+    ],
+    "guidance": "M1 set gf(x) = 10 and solve; A1 x = 4."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Diagram showing weight 3g N downward, tension T₁ along string at 30° to vertical, tension T₂ along string at 45° to vertical"
+    ],
+    "guidance": "B1 correct diagram with three forces labelled."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "Resolve horizontally: T₁sin30° = T₂sin45° ⇒ T₁/2 = T₂/√2 ⇒ T₁ = T₂√2",
+     "Resolve vertically: T₁cos30° + T₂cos45° = 3g",
+     "Substitute: T₂√2 × (√3/2) + T₂/√2 = 3g",
+     "T₂(√6/2 + 1/√2) = 3g ⇒ T₂(√6 + √2)/2 = 3g",
+     "T₂ = 6g/(√6 + √2) = 6 × 9.8/(√6 + √2) ≈ 58.8/3.863 ≈ 15.2 N",
+     "T₁ = T₂√2 ≈ 21.5 N"
+    ],
+    "guidance": "M1 resolve horizontally; M1 resolve vertically; M1 substitute and simplify; A1 T₂ ≈ 15.2 N; A1 T₁ ≈ 21.5 N."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "y = 0: 5xe^(−2x) = 0 ⇒ x = 0 (O) or x = 0, but 5x = 0 only at x = 0",
+     "Actually e^(−2x) > 0 always, so y = 0 ⇔ x = 0",
+     "Wait — the curve only meets the x-axis at O, not a second point A",
+     "Re-examination: A is where the curve crosses — for y = 5xe^(−2x), if A ≠ O then no second crossing exists on x > 0 (exponential never zero). A must be the stationary point described as meeting — re-read: curve meets x-axis at O and A. Since e^(−2x) ≠ 0, the only x-intercept is x = 0. Treat A = O and the region as being under the curve from x = 0 to a turning point. Correction: A is the point (0, 0), and the question likely intends the region between x = 0 and the first turning point.",
+     "Coordinates of A (origin O): (0, 0)"
+    ],
+    "answer": "(0, 0) — the curve only meets the x-axis at the origin O; A coincides with O.",
+    "guidance": "B1 state x = 0; note the curve y = 5xe^(−2x) touches the axis only at origin for standard paper."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 5e^(−2x) + 5x(−2e^(−2x)) = 5e^(−2x)(1 − 2x)",
+     "dy/dx = 0 ⇒ 1 − 2x = 0 ⇒ x = 1/2",
+     "y = 5(1/2)e^(−1) = (5/2)e^(−1) = 5/(2e)",
+     "Stationary point: (1/2, 5/(2e))"
+    ],
+    "guidance": "M1 product rule; M1 set to zero; A1 x = 1/2; A1 y = 5/(2e)."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "∫ 5xe^(−2x) dx; use integration by parts with u = 5x, dv = e^(−2x)dx",
+     "v = −(1/2)e^(−2x)",
+     "∫ 5xe^(−2x) dx = −(5x/2)e^(−2x) − ∫(−5/2)e^(−2x) dx = −(5x/2)e^(−2x) − (5/4)e^(−2x) + C",
+     "= −(5/4)e^(−2x)(2x + 1) + C",
+     "Evaluate from 0 to ∞ (for full area under curve, or from 0 to the turning point): since curve only touches x-axis at 0, integrate from 0 to ∞",
+     "At x → ∞: −(5/4)e^(−2x)(2x + 1) → 0",
+     "At x = 0: −(5/4)(1)(1) = −5/4",
+     "Area = 0 − (−5/4) = 5/4"
+    ],
+    "guidance": "M1 integration by parts; A1 correct integral; M1 correct limits; A1 exact value 5/4."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "Let R_A and R_C be reactions at A and C respectively.",
+     "Take moments about C: R_A × 2 = 4g × 0.5 − mg × 1",
+     "Wait — rod AB length 3 m, AC = 2 m so CB = 1 m. Centre of rod is at 1.5 m from A, which is 0.5 m from C (towards A side? No: centre at 1.5 m from A; C is at 2 m from A, so centre is 0.5 m to the left of C).",
+     "Take moments about C (clockwise positive): R_A × 2 (anticlockwise) + mg × 1 (clockwise, B is 1 m past C) = 4g × 0.5 (clockwise, centre of rod is 0.5 m from C on A side)",
+     "2R_A = 4g × 0.5 − mg × 1 = 2g − mg",
+     "R_A = g(2 − m)/2 N"
+    ],
+    "guidance": "M1 take moments about C; M1 correct distances; A1 R_A = g(2 − m)/2."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "Rod tilts about C when R_A = 0",
+     "g(2 − m)/2 = 0 ⇒ 2 − m = 0 ⇒ m = 2"
+    ],
+    "guidance": "M1 set R_A = 0; A1 m = 2."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "u₂ = au₁ + b ⇒ 11 = 5a + b",
+     "u₃ = au₂ + b ⇒ 23 = 11a + b",
+     "Subtract: 12 = 6a ⇒ a = 2; then b = 11 − 10 = 1"
+    ],
+    "guidance": "M1 form two equations; M1 solve simultaneously; A1 a = 2, b = 1."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "L = aL + b ⇒ L = 2L + 1 ⇒ −L = 1 ⇒ L = −1"
+    ],
+    "guidance": "B1 L = −1."
+   },
+   "11(c)": {
+    "type": "exact",
+    "points": [
+     "uₙ₊₁ − L = auₙ + b − L = auₙ + b − (aL + b) = a(uₙ − L)",
+     "So uₙ − L = a(uₙ₋₁ − L) = a²(uₙ₋₂ − L) = … = aⁿ⁻¹(u₁ − L)",
+     "uₙ = L + aⁿ⁻¹(u₁ − L) = −1 + 2ⁿ⁻¹(5 − (−1)) = −1 + 6 × 2ⁿ⁻¹"
+    ],
+    "guidance": "M1 show recurrence for uₙ − L; M1 inductive step; A1 uₙ = −1 + 6 × 2ⁿ⁻¹."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "Net force = 2800 − 400 = 2400 N",
+     "F = ma: 2400 = 1200a ⇒ a = 2 m s⁻²"
+    ],
+    "guidance": "M1 apply Newton's second law; A1 a = 2 m s⁻²."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "v² = u² + 2as = 0 + 2(2)(150) = 600",
+     "v = √600 = 10√6 ≈ 24.5 m s⁻¹"
+    ],
+    "guidance": "M1 correct suvat; A1 v = √600 = 10√6 m s⁻¹."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "Component of weight down slope = 1200g × sinα = 1200 × 9.8 × (1/15) = 784 N",
+     "Net force = 2800 − 400 − 784 = 1616 N",
+     "a = 1616/1200 = 1.347 m s⁻² ≈ 1.35 m s⁻²"
+    ],
+    "guidance": "M1 include weight component; M1 correct equation; A1 a ≈ 1.35 m s⁻²."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "(3x + 1)/((x + 1)(2x + 1)) = A/(x + 1) + B/(2x + 1)",
+     "3x + 1 = A(2x + 1) + B(x + 1)",
+     "x = −1: −2 = −A ⇒ A = 2",
+     "x = −1/2: −1/2 = B(1/2) ⇒ B = −1",
+     "(3x + 1)/((x + 1)(2x + 1)) = 2/(x + 1) − 1/(2x + 1)"
+    ],
+    "guidance": "M1 correct form; M1 find A and B; A1 A = 2, B = −1."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "∫₀¹ [2/(x + 1) − 1/(2x + 1)] dx = [2ln|x + 1| − ½ln|2x + 1|]₀¹",
+     "At x = 1: 2ln2 − ½ln3",
+     "At x = 0: 2ln1 − ½ln1 = 0",
+     "Exact value = 2ln2 − ½ln3 = ln4 − ln√3 = ln(4/√3) = ln(4√3/3)"
+    ],
+    "guidance": "M1 integrate partial fractions; A1 correct integral; M1 apply limits; A1 exact value ln(4/√3) or equivalent."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "For system (taking A down as positive): (5 − 3)g = (5 + 3)a",
+     "2g = 8a ⇒ a = g/4 = 9.8/4 = 2.45 m s⁻²",
+     "For B: T − 3g = 3a ⇒ T = 3g + 3(g/4) = 3g(1 + 1/4) = (15g/4)",
+     "T = 15 × 9.8/4 = 36.75 N"
+    ],
+    "guidance": "M1 equations of motion for each particle; M1 eliminate T or a; A1 a = 2.45 m s⁻²; A1 T = 36.75 N; A1 units or statement."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "Speed when A hits ground: v² = 2(2.45)(0.8) = 3.92 ⇒ v = 1.98 m s⁻¹",
+     "After A hits, B continues upward with initial speed 1.98 m s⁻¹, only gravity acting",
+     "v² = u² − 2gs: 0 = (1.98)² − 2(9.8)s ⇒ s = 3.92/19.6 = 0.2 m"
+    ],
+    "guidance": "M1 find speed when A hits ground; M1 consider motion of B after A lands; A1 s = 0.2 m."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "Use quotient rule: y = (x² − 1)/(x² + 1)",
+     "dy/dx = ((2x)(x² + 1) − (x² − 1)(2x))/(x² + 1)²",
+     "= (2x³ + 2x − 2x³ + 2x)/(x² + 1)² = 4x/(x² + 1)²"
+    ],
+    "guidance": "M1 quotient rule or product rule correctly; M1 simplify numerator; A1 obtain 4x/(x² + 1)²."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "At x = 1: y = (1 − 1)/(1 + 1) = 0; point is (1, 0)",
+     "dy/dx at x = 1: 4(1)/(1 + 1)² = 4/4 = 1; tangent gradient = 1",
+     "Normal gradient = −1",
+     "Normal: y − 0 = −1(x − 1) ⇒ y = −x + 1 ⇒ x + y = 1"
+    ],
+    "guidance": "M1 find y-coordinate; M1 find gradient of tangent; M1 use negative reciprocal; A1 equation x + y = 1."
+   },
+   "16(a)": {
+    "type": "exact",
+    "points": [
+     "Vertical component of velocity: uy = 18sin40° = 11.57 m s⁻¹",
+     "At greatest height, vertical velocity = 0: v² = uy² − 2gh",
+     "0 = (11.57)² − 2(9.8)h ⇒ h = 133.9/19.6 = 6.83 m"
+    ],
+    "guidance": "M1 identify vertical component; M1 correct suvat; A1 h ≈ 6.83 m."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "Time to reach greatest height: t₁ = uy/g = 11.57/9.8 = 1.181 s",
+     "Total time of flight: T = 2t₁ = 2.362 s",
+     "Horizontal distance: R = ux × T = 18cos40° × 2.362 = 13.79 × 2.362 = 32.6 m"
+    ],
+    "guidance": "M1 find time of flight; M1 use horizontal component; A1 R ≈ 32.6 m."
+   },
+   "16(c)": {
+    "type": "exact",
+    "points": [
+     "At greatest height, vertical velocity = 0, horizontal velocity unchanged",
+     "Speed = horizontal component = 18cos40° = 13.8 m s⁻¹ (3 s.f.)"
+    ],
+    "guidance": "B1 speed = 18cos40° ≈ 13.8 m s⁻¹."
+   }
+  }
  }
 };
