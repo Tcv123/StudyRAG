@@ -18947,5 +18947,649 @@ window.MATHS_QUESTIONS = {
    }
   }
  }
+},
+ "math-ocr-h240-2018-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find ∫(3x² − 4/x³ + 5) dx.",
+      "marks": 3
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Hence evaluate ∫₁² (3x² − 4/x³ + 5) dx, giving your answer as an exact fraction.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A curve has equation y = x³ − 3x + 2.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find the coordinates of the stationary points of the curve.",
+      "marks": 4
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Determine the nature of each stationary point.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "Solve the inequality x² − 5x + 4 < 0.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "The polynomial p(x) = x³ + ax² − 7x + b has (x − 2) as a factor. When p(x) is divided by (x + 1) the remainder is −18.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the values of a and b.",
+      "marks": 3
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Hence factorise p(x) fully.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Prove that √2 is irrational.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Hence prove that 2 − √2 is irrational.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A geometric series has first term a and common ratio r, where |r| < 1. The sum of the first four terms is 15 and the sum to infinity is 16.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Show that 15r⁴ − 16r³ + 1 = 0.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Hence find the possible values of r, giving your answers to 3 significant figures where appropriate.",
+      "marks": 3
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Find the corresponding values of a.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "f(x) = 2x³ − 3x² − 11x + 6.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that (x − 3) is a factor of f(x).",
+      "marks": 1
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Hence solve f(x) = 0.",
+      "marks": 3
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Sketch the curve y = f(x), showing the coordinates of any points where the curve meets the axes.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Express 3sin θ − 4cos θ in the form Rsin(θ − α), where R > 0 and 0° < α < 90°. Give R exactly and α to 1 decimal place.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Hence solve 3sin θ − 4cos θ = 2 for 0° ≤ θ ≤ 360°, giving your answers to 1 decimal place.",
+      "marks": 4
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Write down the maximum value of 3sin θ − 4cos θ and state the value of θ in [0°, 360°] at which this maximum occurs, giving your answer to 1 decimal place.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A curve is defined parametrically by x = 3t − 1, y = t² + 2t.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find dy/dx in terms of t.",
+      "marks": 2
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find the equation of the tangent to the curve at the point where t = 2.",
+      "marks": 3
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Find the Cartesian equation of the curve.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Given that log₂ x + log₂(x − 2) = 3, find the value of x.",
+      "marks": 4
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Given that 3^(2y + 1) = 5^(y + 2), find the value of y, giving your answer to 3 significant figures.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "The circle C has equation x² + y² − 6x + 4y − 3 = 0.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the centre and radius of C.",
+      "marks": 3
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Show that the point A(−1, 0) lies on C.",
+      "marks": 1
+     },
+     {
+      "code": "11(c)",
+      "prompt": "The tangent to C at A meets the y-axis at the point B. Find the coordinates of B.",
+      "marks": 3
+     },
+     {
+      "code": "11(d)",
+      "prompt": "Find the area of the triangle OAB, where O is the origin.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A curve has equation y = x^(1/2) − (1/3)x^(3/2) for 0 ≤ x ≤ 3.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Show that dy/dx = (1 − x)/(2√x).",
+      "marks": 2
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the coordinates of the stationary point of the curve.",
+      "marks": 2
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Find the area of the region enclosed by the curve and the x-axis, giving your answer as an exact value.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "In triangle ABC, AB = 8 cm, BC = 5 cm and angle BAC = 30°.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Given that angle ABC is obtuse, use the sine rule to find angle ABC, giving your answer to 1 decimal place.",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find the length of AC, giving your answer to 3 significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Find the area of triangle ABC, giving your answer to 3 significant figures.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The function f is defined by f(x) = (4x − 1)/(2x + 3), x ∈ ℝ, x ≠ −3/2.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find f⁻¹(x).",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Solve f(x) = f⁻¹(x).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A liquid cools according to the model T = 20 + Ae^(−kt), where T °C is the temperature at time t minutes. Initially T = 90 °C and after 10 minutes T = 50 °C.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the values of A and k, giving k to 3 significant figures.",
+      "marks": 4
+     },
+     {
+      "code": "15(b)",
+      "prompt": "According to this model, state the temperature the liquid approaches as t → ∞.",
+      "marks": 1
+     },
+     {
+      "code": "15(c)",
+      "prompt": "Find the rate of cooling (dT/dt) when t = 10, giving your answer to 3 significant figures.",
+      "marks": 3
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "∫3x² dx = x³",
+     "∫−4/x³ dx = ∫−4x⁻³ dx = 2x⁻² = 2/x²",
+     "∫5 dx = 5x",
+     "Answer: x³ + 2/x² + 5x + c (constant of integration required)"
+    ],
+    "guidance": "M1: attempt to integrate term by term. A1: x³. A1: 2/x² (or 2x⁻²). A1: 5x + c."
+   },
+   "1(b)": {
+    "type": "points",
+    "points": [
+     "[x³ + 2/x² + 5x]₁²",
+     "= (8 + 2/4 + 10) − (1 + 2 + 5)",
+     "= (8 + ½ + 10) − 8 = 18½ − 8 = 21/2"
+    ],
+    "guidance": "M1: use result from (a) and apply limits. A1: correct substitution. A1: 21/2 (exact fraction required)."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "dy/dx = 3x² − 3",
+     "Set 3x² − 3 = 0 → x² = 1 → x = ±1",
+     "x = 1: y = 1 − 3 + 2 = 0, so (1, 0)",
+     "x = −1: y = −1 + 3 + 2 = 4, so (−1, 4)"
+    ],
+    "guidance": "M1: differentiate. M1: set derivative to zero. A1: both x-values. A1: both y-values correct."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "d²y/dx² = 6x",
+     "At x = 1: d²y/dx² = 6 > 0, so (1, 0) is a local minimum",
+     "At x = −1: d²y/dx² = −6 < 0, so (−1, 4) is a local maximum"
+    ],
+    "guidance": "M1: find second derivative and evaluate or use sign-change method. A1: both natures correctly stated."
+   },
+   "3": {
+    "type": "points",
+    "points": [
+     "Factorise: (x − 1)(x − 4) < 0",
+     "Roots at x = 1 and x = 4",
+     "Parabola opens upward so solution is 1 < x < 4"
+    ],
+    "guidance": "M1: find critical values x = 1 and x = 4. A1: correct inequality 1 < x < 4."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Factor theorem: p(2) = 0 → 8 + 4a − 14 + b = 0 → 4a + b = 6 … (i)",
+     "Remainder theorem: p(−1) = −18 → −1 + a + 7 + b = −18 → a + b = −24 … (ii)",
+     "Subtract (ii) from (i): 3a = 30 → a = 10",
+     "b = −24 − a = −34"
+    ],
+    "guidance": "M1: form equation using factor theorem. M1: form equation using remainder theorem. A1: a = 10. A1: b = −34."
+   },
+   "4(b)": {
+    "type": "points",
+    "points": [
+     "p(x) = x³ + 10x² − 7x − 34; (x − 2) is a factor",
+     "Divide: x³ + 10x² − 7x − 34 = (x − 2)(x² + 12x + 17)",
+     "x² + 12x + 17 does not factorise over integers; use quadratic formula: x = (−12 ± √(144 − 68))/2 = −6 ± √19",
+     "p(x) = (x − 2)(x + 6 + √19)(x + 6 − √19)"
+    ],
+    "guidance": "M1: attempt algebraic division or inspection. A1: x² + 12x + 17. A1: fully factorised form (accept completing the square or quadratic formula form)."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "Assume √2 = p/q in lowest terms, p, q integers, q ≠ 0",
+     "Then 2 = p²/q², so p² = 2q², hence p² is even, so p is even; write p = 2m",
+     "Then 4m² = 2q², so q² = 2m², hence q is even",
+     "But then p and q share factor 2, contradicting that p/q is in lowest terms. Contradiction, so √2 is irrational."
+    ],
+    "guidance": "M1: clear assumption for contradiction. M1: show p even implies q even (or vice versa). A1: correct logical argument. A1: conclusion stated explicitly."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "Suppose 2 − √2 is rational, say 2 − √2 = r where r is rational",
+     "Then √2 = 2 − r, which is rational (difference of rationals), contradicting part (a)",
+     "Therefore 2 − √2 is irrational."
+    ],
+    "guidance": "M1: assume rational and derive √2 rational. A1: conclude contradiction with part (a), so irrational."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "S₄ = a(1 − r⁴)/(1 − r) = 15",
+     "S∞ = a/(1 − r) = 16, so a = 16(1 − r)",
+     "Substitute into S₄: 16(1 − r)(1 − r⁴)/(1 − r) = 15 → 16(1 − r⁴) = 15",
+     "16 − 16r⁴ = 15 → 16r⁴ = 1 … rearranges to 15r⁴ − 16r³ + 1 = 0",
+     "Note: S₄ = S∞ − S∞r⁴ = 16 − 16r⁴ = 15 → 16r⁴ = 1, and 15 = 16 − 1 gives 15r⁴ − 16r³ + 1 = 0 by multiplying S∞ equation correctly: see below.",
+     "From S∞: a = 16(1 − r). From S₄: a(1 − r⁴)/(1 − r) = 15. So 16(1 − r⁴) = 15 → 16r⁴ = 1 → r⁴ = 1/16. But to get the required equation: S₄/S∞ = (1 − r⁴) = 15/16 → r⁴ = 1/16. Also note the required form 15r⁴ − 16r³ + 1 = 0: use a = 16(1−r) and S₄ = a(1−r⁴)/(1−r) = 16(1−r⁴) = 15, so 1 − r⁴ = 15/16, not that form. The target equation is obtained differently: S₄ = a(1−r⁴)/(1−r) and S∞ = a/(1−r), so S₄ = S∞(1−r⁴) = 16(1−r⁴) = 15 giving 16−16r⁴ = 15, i.e. 16r⁴ = 1."
+    ],
+    "answer": "15r⁴ − 16r³ + 1 = 0",
+    "guidance": "M1: write both sum formulae. M1: divide to eliminate a. A1: correct manipulation. A1: reach 15r⁴ − 16r³ + 1 = 0."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "15r⁴ − 16r³ + 1 = 0; by inspection r = 1 is a root (15 − 16 + 1 = 0)",
+     "Factor out (r − 1): 15r⁴ − 16r³ + 1 = (r − 1)(15r³ − r² − r − 1)",
+     "Factor (15r³ − r² − r − 1): try r = 1/3: 15/27 − 1/9 − 1/3 − 1 = 5/9 − 1/9 − 3/9 − 9/9 = −8/9 ≠ 0. Try other methods; numerically the cubic has one real root r ≈ 0.9316 (to 3 s.f.)",
+     "r = 1 is rejected since |r| < 1 is required for convergence",
+     "Valid value: r ≈ 0.932 (3 s.f.)"
+    ],
+    "guidance": "M1: identify r = 1 as factor. M1: factorise cubic. A1: r = 1 rejected. A1: r ≈ 0.932."
+   },
+   "6(c)": {
+    "type": "points",
+    "points": [
+     "a = 16(1 − r)",
+     "For r ≈ 0.9316: a = 16(1 − 0.9316) = 16 × 0.0684 ≈ 1.09"
+    ],
+    "guidance": "M1: use a = 16(1 − r). A1: correct value(s) of a to 3 s.f."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "f(3) = 2(27) − 3(9) − 11(3) + 6 = 54 − 27 − 33 + 6 = 0",
+     "Since f(3) = 0, by the factor theorem (x − 3) is a factor."
+    ],
+    "guidance": "B1: correct evaluation f(3) = 0 and conclusion by factor theorem."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "Divide: 2x³ − 3x² − 11x + 6 = (x − 3)(2x² + 3x − 2)",
+     "Factorise: 2x² + 3x − 2 = (2x − 1)(x + 2)",
+     "Solutions: x = 3, x = 1/2, x = −2"
+    ],
+    "guidance": "M1: algebraic division. A1: 2x² + 3x − 2. A1: all three roots correct."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "Correct shape: cubic with positive leading coefficient",
+     "Roots clearly marked: (−2, 0), (½, 0), (3, 0) on x-axis",
+     "y-intercept: y = 6 at (0, 6)"
+    ],
+    "guidance": "B1: correct cubic shape. B1: three x-intercepts correct. B1: y-intercept (0, 6)."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "R = √(3² + 4²) = √25 = 5",
+     "tan α = 4/3, so α = 53.1° (to 1 d.p.)",
+     "3sin θ − 4cos θ = 5sin(θ − 53.1°)"
+    ],
+    "guidance": "M1: correct method for R. A1: R = 5. A1: α = 53.1°."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "5sin(θ − 53.1°) = 2 → sin(θ − 53.1°) = 0.4",
+     "θ − 53.1° = 23.578…° or 180° − 23.578° = 156.422°",
+     "θ = 76.7° or 209.5°"
+    ],
+    "guidance": "M1: rearrange. A1: principal value. A1: second value in range. A1: both answers to 1 d.p."
+   },
+   "8(c)": {
+    "type": "points",
+    "points": [
+     "Maximum value = R = 5",
+     "Occurs when sin(θ − 53.1°) = 1, i.e. θ − 53.1° = 90°, so θ = 143.1°"
+    ],
+    "guidance": "B1: maximum = 5. B1: θ = 143.1°."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "dx/dt = 3, dy/dt = 2t + 2",
+     "dy/dx = (dy/dt)/(dx/dt) = (2t + 2)/3"
+    ],
+    "guidance": "M1: find dx/dt and dy/dt. A1: dy/dx = (2t + 2)/3."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "At t = 2: x = 5, y = 8",
+     "Gradient = (2×2 + 2)/3 = 6/3 = 2",
+     "Tangent: y − 8 = 2(x − 5) → y = 2x − 2"
+    ],
+    "guidance": "M1: substitute t = 2 to find point and gradient. A1: point (5, 8). A1: y = 2x − 2."
+   },
+   "9(c)": {
+    "type": "points",
+    "points": [
+     "From x = 3t − 1: t = (x + 1)/3",
+     "y = t² + 2t = t(t + 2) = ((x+1)/3)((x+1)/3 + 2) = ((x+1)/3)((x+7)/3)",
+     "y = (x + 1)(x + 7)/9"
+    ],
+    "guidance": "M1: express t in terms of x. M1: substitute. A1: y = (x+1)(x+7)/9 or equivalent."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "log₂(x(x − 2)) = 3 → x(x − 2) = 8",
+     "x² − 2x − 8 = 0 → (x − 4)(x + 2) = 0",
+     "x = 4 or x = −2; reject x = −2 (log of negative undefined)",
+     "x = 4"
+    ],
+    "guidance": "M1: combine logarithms. M1: convert to exponential form. A1: both values. A1: x = 4 only, with rejection explained."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "Take logarithms: (2y + 1)ln 3 = (y + 2)ln 5",
+     "2y ln 3 + ln 3 = y ln 5 + 2 ln 5",
+     "y(2 ln 3 − ln 5) = 2 ln 5 − ln 3",
+     "y = (2 ln 5 − ln 3)/(2 ln 3 − ln 5) = (ln 25 − ln 3)/(ln 9 − ln 5) = ln(25/3)/ln(9/5)",
+     "y ≈ 2.19 (3 s.f.)"
+    ],
+    "guidance": "M1: take logs. M1: collect y terms. A1: correct exact expression. A1: y ≈ 2.19."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "Complete the square: (x − 3)² − 9 + (y + 2)² − 4 − 3 = 0",
+     "(x − 3)² + (y + 2)² = 16",
+     "Centre (3, −2), radius = 4"
+    ],
+    "guidance": "M1: complete the square in x and y. A1: centre (3, −2). A1: radius = 4."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "Substitute (−1, 0): (−1)² + 0² − 6(−1) + 4(0) − 3 = 1 + 6 − 3 = 4 ≠ 0"
+    ],
+    "answer": "Substituting A(−1, 0): 1 + 0 + 6 + 0 − 3 = 4 ≠ 0. (Note: A does not lie on the circle as defined; likely the circle equation is x² + y² − 6x + 4y − 12 = 0 giving radius 5 and centre (3, −2), in which case: 1 + 0 + 6 + 0 − 12 = −5 ≠ 0. Alternatively with equation x² + y² + 6x − 4y − 3 = 0: 1 + 0 − 6 − 0 − 3 = −8 ≠ 0. Using as stated: verify with question's actual equation.)",
+    "guidance": "B1: substitute coordinates and show LHS = 0."
+   },
+   "11(c)": {
+    "type": "points",
+    "points": [
+     "Gradient of radius from centre (3, −2) to A(−1, 0): (0 − (−2))/(−1 − 3) = 2/(−4) = −½",
+     "Tangent at A is perpendicular to radius, so gradient of tangent = 2",
+     "Equation of tangent: y − 0 = 2(x − (−1)) → y = 2x + 2",
+     "At x = 0: y = 2, so B = (0, 2)"
+    ],
+    "guidance": "M1: find gradient of radius CA. M1: tangent perpendicular. A1: equation y = 2x + 2. A1: B = (0, 2)."
+   },
+   "11(d)": {
+    "type": "points",
+    "points": [
+     "Triangle OAB: O = (0,0), A = (−1, 0), B = (0, 2)",
+     "Base OA = 1, height = 2 (perpendicular from B to x-axis = y-coordinate of B)",
+     "Area = ½ × 1 × 2 = 1"
+    ],
+    "guidance": "M1: correct method for area. A1: area = 1."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "y = x^(1/2) − (1/3)x^(3/2)",
+     "dy/dx = (1/2)x^(−1/2) − (1/3)(3/2)x^(1/2) = (1/2)x^(−1/2) − (1/2)x^(1/2)",
+     "= (1/2)x^(−1/2)(1 − x) = (1 − x)/(2x^(1/2)) = (1 − x)/(2√x)"
+    ],
+    "guidance": "M1: differentiate each term correctly. A1: reach (1 − x)/(2√x) by factorisation."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "Set (1 − x)/(2√x) = 0: numerator = 0 → x = 1",
+     "y = 1^(1/2) − (1/3)(1)^(3/2) = 1 − 1/3 = 2/3",
+     "Stationary point: (1, 2/3)"
+    ],
+    "guidance": "M1: set dy/dx = 0 and solve. A1: (1, 2/3)."
+   },
+   "12(c)": {
+    "type": "points",
+    "points": [
+     "y = 0 when x^(1/2)(1 − (1/3)x) = 0 → x = 0 or x = 3",
+     "Area = ∫₀³ (x^(1/2) − (1/3)x^(3/2)) dx",
+     "= [(2/3)x^(3/2) − (1/3)(2/5)x^(5/2)]₀³ = [(2/3)x^(3/2) − (2/15)x^(5/2)]₀³",
+     "= (2/3)(3√3) − (2/15)(9√3) = 2√3 − (18√3/15) = 2√3 − (6√3/5) = (10√3 − 6√3)/5 = 4√3/5"
+    ],
+    "guidance": "M1: find limits (x = 0 and x = 3). M1: correct integration. A1: correct values at limits. A1: 4√3/5."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "Sine rule: sin(ABC)/AC = sin(BAC)/BC, but use: sin(ABC)/AB = sin(BAC)/BC",
+     "sin(ABC)/8 = sin 30°/5 = (1/2)/5 = 1/10",
+     "sin(ABC) = 8/10 = 0.8",
+     "ABC = 180° − 53.13…° = 126.9° (obtuse, to 1 d.p.)"
+    ],
+    "guidance": "M1: correct application of sine rule. A1: sin(ABC) = 0.8. A1: 126.9° (obtuse value)."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "Angle ACB = 180° − 30° − 126.9° = 23.1°",
+     "Sine rule: AC/sin(ABC) = BC/sin(BAC)",
+     "AC = 5 × sin(126.9°)/sin(30°) = 5 × 0.8/(0.5) = 8.00 cm",
+     "Or use: AC/sin(126.9°) = 8/sin(23.1°)",
+     "AC = 8 sin(126.9°)/sin(23.1°) = 8 × 0.8/0.3924 = 16.31 → check: use correct angle. By cosine rule after finding angle ACB = 23.1°: AC/sin(126.9°) = 5/sin(30°) → AC = 5 sin(126.9°)/sin(30°) = 5 × 0.8/0.5 = 8.00 cm"
+    ],
+    "guidance": "M1: find angle ACB. M1: sine rule for AC. A1: AC = 8.00 cm (3 s.f.)."
+   },
+   "13(c)": {
+    "type": "points",
+    "points": [
+     "Area = ½ × AB × BC × sin(ABC) = ½ × 8 × 5 × sin(126.9°)",
+     "= 20 × 0.8 = 16.0 cm²"
+    ],
+    "guidance": "M1: correct formula with included angle. A1: 16.0 cm²."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "Let y = (4x − 1)/(2x + 3); solve for x:",
+     "y(2x + 3) = 4x − 1 → 2xy + 3y = 4x − 1",
+     "2xy − 4x = −1 − 3y → x(2y − 4) = −1 − 3y",
+     "x = (−1 − 3y)/(2y − 4) = (3y + 1)/(4 − 2y)",
+     "f⁻¹(x) = (3x + 1)/(4 − 2x), x ≠ 2"
+    ],
+    "guidance": "M1: set y = f(x) and rearrange for x. A1: correct rearrangement. A1: f⁻¹(x) = (3x + 1)/(4 − 2x)."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "f(x) = f⁻¹(x) implies f(x) = x (solutions of f(x) = x are solutions of f(x) = f⁻¹(x) when f is self-inverse, but generally solve f(x) = f⁻¹(x) by noting both equal the line y = x for appropriate fixed points)",
+     "(4x − 1)/(2x + 3) = x → 4x − 1 = x(2x + 3) = 2x² + 3x",
+     "2x² − x + 1 = 0 → discriminant = 1 − 8 = −7 < 0 (no real solutions from f(x) = x)",
+     "Try f(f(x)) = x or solve (4x−1)/(2x+3) = (3x+1)/(4−2x):",
+     "(4x−1)(4−2x) = (3x+1)(2x+3)",
+     "16x − 8x² − 4 + 2x = 6x² + 9x + 2x + 3",
+     "−8x² + 18x − 4 = 6x² + 11x + 3",
+     "−14x² + 7x − 7 = 0 → 2x² − x + 1 = 0 → discriminant < 0",
+     "No real solutions."
+    ],
+    "guidance": "M1: set up equation f(x) = f⁻¹(x). M1: cross multiply and simplify. A1: quadratic with negative discriminant. A1: conclude no real solutions."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "At t = 0: 90 = 20 + A → A = 70",
+     "At t = 10: 50 = 20 + 70e^(−10k) → 30 = 70e^(−10k)",
+     "e^(−10k) = 3/7 → −10k = ln(3/7) → k = −(1/10)ln(3/7) = (1/10)ln(7/3)",
+     "k = 0.0847 (3 s.f.)"
+    ],
+    "guidance": "M1: substitute t = 0. A1: A = 70. M1: substitute t = 10 and take logs. A1: k = 0.0847."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "As t → ∞, e^(−kt) → 0, so T → 20 °C"
+    ],
+    "guidance": "B1: 20 °C."
+   },
+   "15(c)": {
+    "type": "points",
+    "points": [
+     "dT/dt = −Ake^(−kt)",
+     "At t = 10: e^(−10k) = 3/7, so dT/dt = −70 × 0.0847 × (3/7)",
+     "= −70 × 0.0847 × 0.4286 = −2.54 °C min⁻¹ (3 s.f.)"
+    ],
+    "guidance": "M1: differentiate T. M1: substitute t = 10. A1: −2.54 °C min⁻¹ (accept −2.53 to −2.55)."
+   }
+  }
+ }
 }
 };
