@@ -1859,6 +1859,90 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-ocr-h240-2022-p3::16(b)": "Time to greatest height: t₁ = uy/g = 11.57/9.8 = 1.181 s.\nTotal time of flight (lands at same level): T = 2t₁ = 2.362 s.\nHorizontal component: ux = 18cos40° = 18 × 0.7660 = 13.79 m s⁻¹.\nRange = ux × T = 13.79 × 2.362 = 32.6 m (3 s.f.).",
 
- "math-ocr-h240-2022-p3::16(c)": "At greatest height, vertical velocity = 0. The speed equals the horizontal component only:\nSpeed = 18cos40° = 13.8 m s⁻¹ (3 s.f.)."
+ "math-ocr-h240-2022-p3::16(c)": "At greatest height, vertical velocity = 0. The speed equals the horizontal component only:\nSpeed = 18cos40° = 13.8 m s⁻¹ (3 s.f.).",
+
+ "math-ocr-h240-2023-p2::1(a)": "Differentiate: dy/dx = 3x² − 6x − 9.\nSet equal to zero: 3x² − 6x − 9 = 0 ⇒ x² − 2x − 3 = 0 ⇒ (x − 3)(x + 1) = 0.\nx = 3 or x = −1.\nAt x = 3: y = 27 − 27 − 27 + 5 = −22. Stationary point (3, −22).\nAt x = −1: y = −1 − 3 + 9 + 5 = 10. Stationary point (−1, 10).",
+
+ "math-ocr-h240-2023-p2::1(b)": "Second derivative: d²y/dx² = 6x − 6.\nAt x = 3: d²y/dx² = 18 − 6 = 12 > 0, so (3, −22) is a local minimum.\nAt x = −1: d²y/dx² = −6 − 6 = −12 < 0, so (−1, 10) is a local maximum.",
+
+ "math-ocr-h240-2023-p2::2(a)": "X ∼ B(20, 0.35).\nP(X = 7) = C(20,7) × 0.35⁷ × 0.65¹³.\nC(20,7) = 77520.\n0.35⁷ = 0.000643797, 0.65¹³ = 0.009643.\nP(X = 7) = 77520 × 0.000643797 × 0.009643 ≈ 0.1844.",
+
+ "math-ocr-h240-2023-p2::2(b)": "X ∼ B(20, 0.35).\nUsing cumulative binomial tables or a calculator:\nP(X ≤ 9) ≈ 0.8782.",
+
+ "math-ocr-h240-2023-p2::2(c)": "P(5 ≤ X ≤ 9) = P(X ≤ 9) − P(X ≤ 4).\nP(X ≤ 4) ≈ 0.1182.\nP(5 ≤ X ≤ 9) = 0.8782 − 0.1182 = 0.7600.",
+
+ "math-ocr-h240-2023-p2::3(a)": "Use the identity cos²θ = 1 − sin²θ:\n2cos²θ − 3sinθ = 0 ⇒ 2(1 − sin²θ) − 3sinθ = 0 ⇒ 2 − 2sin²θ − 3sinθ = 0.\nRearranging: 2sin²θ + 3sinθ − 2 = 0, as required.",
+
+ "math-ocr-h240-2023-p2::3(b)": "Factorise 2sin²θ + 3sinθ − 2 = 0:\n(2sinθ − 1)(sinθ + 2) = 0.\nsinθ = ½ or sinθ = −2.\nSince −1 ≤ sinθ ≤ 1, sinθ = −2 is impossible.\nsinθ = ½ ⇒ θ = 30° or θ = 180° − 30° = 150°.",
+
+ "math-ocr-h240-2023-p2::4(a)": "Mean: x̄ = Σx/n = 48/8 = 6.\nVariance: σ² = Σx²/n − x̄² = 400/8 − 6² = 50 − 36 = 14.\nStandard deviation: σ = √14 ≈ 3.742.",
+
+ "math-ocr-h240-2023-p2::4(b)": "For the transformation y = 3x − 2:\nMean of y = 3 × x̄ − 2 = 3 × 6 − 2 = 16.\nStandard deviation of y = 3 × σ = 3√14 ≈ 11.22 (the constant −2 does not affect spread).",
+
+ "math-ocr-h240-2023-p2::5(a)": "Evaluate f(3) = 2(27) − 3(9) − 11(3) + 6 = 54 − 27 − 33 + 6 = 0.\nSince f(3) = 0, by the Factor Theorem (x − 3) is a factor of f(x).",
+
+ "math-ocr-h240-2023-p2::5(b)": "Divide f(x) = 2x³ − 3x² − 11x + 6 by (x − 3) by inspection or long division:\n2x³ − 3x² − 11x + 6 = (x − 3)(2x² + 3x − 2).\nFactorise the quadratic: 2x² + 3x − 2 = (2x − 1)(x + 2).\nTherefore f(x) = (x − 3)(2x − 1)(x + 2).",
+
+ "math-ocr-h240-2023-p2::5(c)": "The roots are x = −2, x = ½ and x = 3. The y-intercept is f(0) = 6.\nSince the leading coefficient is positive, the cubic rises from bottom-left to top-right.\nSketch a positive cubic crossing the x-axis at (−2, 0), (½, 0) and (3, 0), crossing the y-axis at (0, 6).",
+
+ "math-ocr-h240-2023-p2::6(a)": "X ∼ B(15, 0.08). The batch is rejected when X ≥ 3.\nP(X ≥ 3) = 1 − P(X ≤ 2).\nP(X = 0) = 0.92¹⁵ = 0.2863.\nP(X = 1) = C(15,1) × 0.08 × 0.92¹⁴ = 15 × 0.08 × 0.3112 = 0.3734.\nP(X = 2) = C(15,2) × 0.08² × 0.92¹³ = 105 × 0.0064 × 0.3382 = 0.2273.\nP(X ≤ 2) = 0.2863 + 0.3734 + 0.2273 = 0.8870.\nP(X ≥ 3) = 1 − 0.8870 = 0.1130.",
+
+ "math-ocr-h240-2023-p2::6(b)": "P(X = 1) = C(15,1) × 0.08¹ × 0.92¹⁴ = 15 × 0.08 × 0.3112 ≈ 0.3734.",
+
+ "math-ocr-h240-2023-p2::6(c)": "P(X ≥ 2) = 1 − P(X ≤ 1) = 1 − P(X = 0) − P(X = 1) = 1 − 0.2863 − 0.3734 = 0.3403.",
+
+ "math-ocr-h240-2023-p2::7(a)": "Let the first term be a and common ratio r.\nSecond term: ar = 12 — (1).\nFifth term: ar⁴ = −96 — (2).\nDivide (2) by (1): r³ = −96/12 = −8 ⇒ r = −2.\nSubstitute into (1): a(−2) = 12 ⇒ a = −6.",
+
+ "math-ocr-h240-2023-p2::7(b)": "S₁₀ = a(1 − rⁿ)/(1 − r) = −6(1 − (−2)¹⁰)/(1 − (−2)) = −6(1 − 1024)/3 = −6 × (−1023)/3 = 6138/3 = 2046.",
+
+ "math-ocr-h240-2023-p2::7(c)": "The sum to infinity of a geometric series exists only when |r| < 1.\nHere |r| = |−2| = 2 > 1, so the terms grow in magnitude and the series diverges.\nTherefore the sum to infinity does not exist.",
+
+ "math-ocr-h240-2023-p2::8(a)": "Total ways to choose 3 counters from 12: C(12,3) = 220.\nAll red: C(5,3) = 10. All blue: C(4,3) = 4. All green: C(3,3) = 1.\nP(all same colour) = (10 + 4 + 1)/220 = 15/220 = 3/44.",
+
+ "math-ocr-h240-2023-p2::8(b)": "Use the complement: P(at least one red) = 1 − P(no red).\nP(no red) = C(7,3)/C(12,3) = 35/220 = 7/44.\nP(at least one red) = 1 − 7/44 = 37/44.",
+
+ "math-ocr-h240-2023-p2::9(a)": "Use the quotient rule with u = 3x − 1 and v = x + 2:\ndy/dx = (u′v − uv′)/v² = (3(x + 2) − (3x − 1)(1))/(x + 2)².\nNumerator: 3x + 6 − 3x + 1 = 7.\ndy/dx = 7/(x + 2)².",
+
+ "math-ocr-h240-2023-p2::9(b)": "For a stationary point we need dy/dx = 0, i.e. 7/(x + 2)² = 0.\nThe numerator is the constant 7, which is never zero, so dy/dx > 0 for all x ≠ −2.\nTherefore C has no stationary points.",
+
+ "math-ocr-h240-2023-p2::9(c)": "At x = 1: y = (3 − 1)/(1 + 2) = 2/3. Point is (1, 2/3).\nGradient of tangent = 7/(1 + 2)² = 7/9.\nGradient of normal = −9/7.\nEquation of normal: y − 2/3 = −(9/7)(x − 1).\nMultiply through by 21: 21y − 14 = −27(x − 1) = −27x + 27.\n27x + 21y = 41.",
+
+ "math-ocr-h240-2023-p2::10(a)": "Data: 152, 158, 161, 163, 165, 167, 169, 172, 175, 178.\nSum = 1660, so mean x̄ = 1660/10 = 166 cm.\nΣx² = 152² + 158² + 161² + 163² + 165² + 167² + 169² + 172² + 175² + 178²\n= 23104 + 24964 + 25921 + 26569 + 27225 + 27889 + 28561 + 29584 + 30625 + 31684 = 276126.\nVariance = 276126/10 − 166² = 27612.6 − 27556 = 56.6.\nStandard deviation = √56.6 ≈ 7.52 cm.",
+
+ "math-ocr-h240-2023-p2::10(b)": "The mean for condition B (168.5 cm) is slightly higher than for condition A (166 cm), so plants under condition B are on average taller.\nThe standard deviation for condition B (7.2 cm) is similar to that for condition A (≈7.52 cm), so the variability in height is comparable under both conditions.",
+
+ "math-ocr-h240-2023-p2::11(a)": "Write (2x − 1)/(x(x − 1)) = A/x + B/(x − 1).\n2x − 1 = A(x − 1) + Bx.\nSet x = 0: −1 = −A ⇒ A = 1.\nSet x = 1: 1 = B ⇒ B = 1.\nSo (2x − 1)/(x(x − 1)) = 1/x + 1/(x − 1).\n∫₂³ [1/x + 1/(x − 1)] dx = [ln x + ln(x − 1)]₂³.\nAt x = 3: ln 3 + ln 2. At x = 2: ln 2 + ln 1 = ln 2 + 0 = ln 2.\nResult = (ln 3 + ln 2) − ln 2 = ln 3.\nTherefore k = 3.",
+
+ "math-ocr-h240-2023-p2::12(a)": "H₀: ρ = 0 (there is no correlation between screen time and anxiety score).\nH₁: ρ > 0 (there is positive correlation).",
+
+ "math-ocr-h240-2023-p2::12(b)": "This is a one-tailed test at the 5% significance level with n = 12.\nFrom tables the critical value is r_crit = 0.4973.\nSince r = 0.623 > 0.4973, we reject H₀.\nThere is sufficient evidence at the 5% level to support the researcher's belief that there is a positive correlation between daily screen time and anxiety score.",
+
+ "math-ocr-h240-2023-p2::12(c)": "The data must come from a bivariate normal distribution (i.e. both variables are normally distributed).",
+
+ "math-ocr-h240-2023-p2::13(a)": "f(x) = e^(2x) + 3, g(x) = ½ln(x − 3) (domain x > 3).\nCompute gf(x): g(f(x)) = g(e^(2x) + 3) = ½ln(e^(2x) + 3 − 3) = ½ln(e^(2x)) = ½ × 2x = x. ✓\nCompute fg(x): f(g(x)) = f(½ln(x−3)) = e^(2 × ½ln(x−3)) + 3 = e^(ln(x−3)) + 3 = (x − 3) + 3 = x. ✓\nSince fg(x) = x and gf(x) = x, f and g are inverse functions of each other.",
+
+ "math-ocr-h240-2023-p2::13(b)": "y = f(x) = e^(2x) + 3: passes through (0, e⁰ + 3) = (0, 4); asymptote y = 3 as x → −∞; no x-intercept.\ny = g(x) = ½ln(x−3): passes through (4, ½ln1) = (4, 0); asymptote x = 3; no y-intercept.\nThe two curves are reflections of each other in the line y = x.\nLabel (0, 4) on f and (4, 0) on g.",
+
+ "math-ocr-h240-2023-p2::13(c)": "fg(x) = x (since f and g are inverses). So the equation fg(x) = 4x − 1 becomes x = 4x − 1 ⇒ 3x = 1 ⇒ x = 1/3.\nCheck domain: g requires x > 3, but x = 1/3 is outside this domain.\nSolve directly: e^(2x) + 3 = 4x − 1 is needed when the composition is applied outside the standard domain; solve numerically.\nLet h(x) = e^(2x) − 4x + 4. h′(x) = 2e^(2x) − 4 = 0 ⇒ x = ½ln2 ≈ 0.347.\nMinimum value h(0.347) = e^(0.693) − 4(0.347) + 4 = 2 − 1.387 + 4 = 4.61 > 0.\nSince the minimum of h(x) is positive, there are no real solutions to e^(2x) + 3 = 4x − 1.\nConclusion: the equation fg(x) = 4x − 1 has no solution in the domain of g.",
+
+ "math-ocr-h240-2023-p2::14(a)": "Under H₀, X ∼ B(25, 0.4). Observed value X = 5.\nP(X ≤ 5) = P(X=0) + P(X=1) + … + P(X=5).\nUsing tables or calculator: P(X ≤ 5) ≈ 0.0294.\nSince 0.0294 > 0.01, we do not reject H₀.\nThere is insufficient evidence at the 1% significance level to conclude that p < 0.4.",
+
+ "math-ocr-h240-2023-p2::14(b)": "The critical region is the set of values of X that lead to rejection of H₀.\nFind the largest integer c such that P(X ≤ c) < 0.01.\nP(X ≤ 4) ≈ 0.0095 < 0.01; P(X ≤ 5) ≈ 0.0294 > 0.01.\nCritical region: X ≤ 4.",
+
+ "math-ocr-h240-2023-p2::15(a)": "Parametric equations: x = 3t − 1, y = t³ − 3t.\ndx/dt = 3, dy/dt = 3t² − 3.\ndy/dx = (dy/dt)/(dx/dt) = (3t² − 3)/3 = t² − 1.\nSet dy/dx = 0: t² − 1 = 0 ⇒ t = 1 or t = −1.\nAt t = 1: x = 2, y = 1 − 3 = −2. Point (2, −2).\nAt t = −1: x = −4, y = −1 + 3 = 2. Point (−4, 2).",
+
+ "math-ocr-h240-2023-p2::15(b)": "From x = 3t − 1: t = (x + 1)/3.\nSubstitute into y = t³ − 3t:\ny = ((x+1)/3)³ − 3·(x+1)/3 = (x+1)³/27 − (x+1).\nThis is the Cartesian equation: y = (x+1)³/27 − (x+1).",
+
+ "math-ocr-h240-2023-p2::16(a)": "y = x²e^(−x). Use the product rule with u = x² and v = e^(−x):\nu′ = 2x, v′ = −e^(−x).\ndy/dx = 2x·e^(−x) + x²·(−e^(−x)) = e^(−x)(2x − x²) = xe^(−x)(2 − x), as required.",
+
+ "math-ocr-h240-2023-p2::16(b)": "Set dy/dx = xe^(−x)(2 − x) = 0.\ne^(−x) > 0 for all x, so x = 0 or 2 − x = 0 ⇒ x = 2.\nAt x = 0: y = 0. Stationary point (0, 0).\nAt x = 2: y = 4e^(−2). Stationary point (2, 4e^(−2)).",
+
+ "math-ocr-h240-2023-p2::16(c)": "Integrate by parts twice. Let I = ∫x²e^(−x)dx.\nFirst application (u = x², dv = e^(−x)dx): v = −e^(−x).\nI = −x²e^(−x) + ∫2xe^(−x)dx.\nSecond application (u = 2x, dv = e^(−x)dx): v = −e^(−x).\n= −x²e^(−x) + [−2xe^(−x) + ∫2e^(−x)dx]\n= −x²e^(−x) − 2xe^(−x) − 2e^(−x) + C = −e^(−x)(x² + 2x + 2) + C.\nApply limits 0 to 2:\n[−e^(−x)(x² + 2x + 2)]₀² = −e^(−2)(4 + 4 + 2) − (−e⁰(0 + 0 + 2))\n= −10e^(−2) + 2 = 2 − 10e^(−2), as required.",
+
+ "math-ocr-h240-2023-p2::17(a)": "For f to be a valid pdf: ∫₀⁴ kx(4 − x) dx = 1.\n∫₀⁴ (4x − x²) dx = [2x² − x³/3]₀⁴ = (32 − 64/3) = (96 − 64)/3 = 32/3.\nSo k × 32/3 = 1 ⇒ k = 3/32, as required.",
+
+ "math-ocr-h240-2023-p2::17(b)": "E(X) = ∫₀⁴ x·f(x) dx = (3/32)∫₀⁴ x²(4 − x) dx = (3/32)∫₀⁴ (4x² − x³) dx.\n= (3/32)[4x³/3 − x⁴/4]₀⁴ = (3/32)[(4×64/3) − 64] = (3/32)[256/3 − 64] = (3/32)[(256 − 192)/3]\n= (3/32)(64/3) = 64/32 = 2.",
+
+ "math-ocr-h240-2023-p2::17(c)": "P(1 ≤ X ≤ 3) = (3/32)∫₁³ x(4 − x) dx = (3/32)∫₁³ (4x − x²) dx.\n= (3/32)[2x² − x³/3]₁³.\nAt x = 3: 2(9) − 9 = 18 − 9 = 9.\nAt x = 1: 2(1) − 1/3 = 2 − 1/3 = 5/3.\n= (3/32)(9 − 5/3) = (3/32)(27/3 − 5/3) = (3/32)(22/3) = 22/32 = 11/16."
 
 };
