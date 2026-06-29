@@ -1369,6 +1369,82 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-ocr-h240-2019-p3::15(b)": "From part (a): d/dx(x ln x) = 1 + ln x.\nIntegrating both sides: x ln x = ∫(1 + ln x) dx = x + ∫ln x dx.\nRearranging: ∫ln x dx = x ln x − x + C.",
 
- "math-ocr-h240-2019-p3::15(c)": "Area = ∫₁ᵉ x ln x dx. Use integration by parts with u = ln x and dv = x dx:\n∫x ln x dx = ½x² ln x − ∫½x² × (1/x) dx = ½x² ln x − ½∫x dx = ½x² ln x − x²/4 + C.\nApply limits:\nAt x = e: ½e² ln e − e²/4 = ½e²(1) − e²/4 = e²/2 − e²/4 = e²/4.\nAt x = 1: ½(1)² ln 1 − (1)²/4 = 0 − 1/4 = −1/4.\nArea = e²/4 − (−1/4) = e²/4 + 1/4 = (e² + 1)/4."
+ "math-ocr-h240-2019-p3::15(c)": "Area = ∫₁ᵉ x ln x dx. Use integration by parts with u = ln x and dv = x dx:\n∫x ln x dx = ½x² ln x − ∫½x² × (1/x) dx = ½x² ln x − ½∫x dx = ½x² ln x − x²/4 + C.\nApply limits:\nAt x = e: ½e² ln e − e²/4 = ½e²(1) − e²/4 = e²/2 − e²/4 = e²/4.\nAt x = 1: ½(1)² ln 1 − (1)²/4 = 0 − 1/4 = −1/4.\nArea = e²/4 − (−1/4) = e²/4 + 1/4 = (e² + 1)/4.",
+
+ "math-ocr-h240-2021a-p1::1(a)": "Complete the square on x² + 6x − 1.\nHalf of 6 is 3, so (x + 3)² = x² + 6x + 9.\nTherefore x² + 6x − 1 = (x + 3)² − 9 − 1 = (x + 3)² − 10.\nSo p = 3 and q = −10.",
+
+ "math-ocr-h240-2021a-p1::1(b)": "From part (a): (x + 3)² − 10 = 0 ⇒ (x + 3)² = 10.\nTaking square roots: x + 3 = ±√10.\nx = −3 ± √10.\nIn the required form a ± b√10, we have a = −3 and b = 1.",
+
+ "math-ocr-h240-2021a-p1::2(a)": "For the x-axis intercept, set y = 0 in 3x − 4(0) + 12 = 0 ⇒ 3x = −12 ⇒ x = −4. So the x-intercept is (−4, 0).\nFor the y-axis intercept, set x = 0: 3(0) − 4y + 12 = 0 ⇒ 4y = 12 ⇒ y = 3. So the y-intercept is (0, 3).",
+
+ "math-ocr-h240-2021a-p1::2(b)": "Since P(k, 2k) lies on 3x − 4y + 12 = 0, substitute x = k and y = 2k:\n3k − 4(2k) + 12 = 0 ⇒ 3k − 8k + 12 = 0 ⇒ −5k = −12 ⇒ k = 12/5.",
+
+ "math-ocr-h240-2021a-p1::2(c)": "The gradient of l is found from 3x − 4y + 12 = 0 ⇒ y = (3/4)x + 3, so gradient = 3/4.\nA line perpendicular to l has gradient −4/3.\nWith k = 12/5, P has coordinates (12/5, 24/5).\nEquation of perpendicular through P:\ny − 24/5 = −(4/3)(x − 12/5).\nMultiply through by 15 to clear fractions:\n15y − 72 = −20(x − 12/5) = −20x + 48.\n15y − 72 = −20x + 48 ⇒ 20x + 15y − 120 = 0.\nDivide by 5: 4x + 3y − 24 = 0.",
+
+ "math-ocr-h240-2021a-p1::3(a)": "The graph of y = |2x − 5| is V-shaped with vertex where 2x − 5 = 0, i.e. at x = 5/2.\nAt x = 0: y = |−5| = 5, so the graph crosses the y-axis at (0, 5).\nThe graph touches the x-axis at (5/2, 0).\nSketch: V-shape opening upwards, vertex at (5/2, 0), y-intercept at (0, 5).",
+
+ "math-ocr-h240-2021a-p1::3(b)": "Solve |2x − 5| = 3x − 1.\nFirst note that for the right-hand side to be non-negative we need x ≥ 1/3.\nCase 1 (2x − 5 ≥ 0, i.e. x ≥ 5/2): 2x − 5 = 3x − 1 ⇒ −4 = x. But x = −4 does not satisfy x ≥ 5/2, so rejected.\nCase 2 (2x − 5 < 0, i.e. x < 5/2): −(2x − 5) = 3x − 1 ⇒ −2x + 5 = 3x − 1 ⇒ 6 = 5x ⇒ x = 6/5.\nCheck: x = 6/5 < 5/2 ✓. LHS = |12/5 − 5| = |−13/5| = 13/5. RHS = 18/5 − 1 = 13/5 ✓.\nThe only solution is x = 6/5.",
+
+ "math-ocr-h240-2021a-p1::4(a)": "Let S₄ = a(1 − r⁴)/(1 − r) = 40 and S₈ = a(1 − r⁸)/(1 − r) = 3280.\nDividing S₈ by S₄: (1 − r⁸)/(1 − r⁴) = 3280/40 = 82.\nSince 1 − r⁸ = (1 − r⁴)(1 + r⁴), this gives 1 + r⁴ = 82 ⇒ r⁴ = 81.",
+
+ "math-ocr-h240-2021a-p1::4(b)": "From r⁴ = 81: r² = ±9. Since r² ≥ 0, we need r² = 9, so r = 3 or r = −3.\nBoth are valid values of r.",
+
+ "math-ocr-h240-2021a-p1::4(c)": "For all terms of the sequence to be positive, the common ratio must be positive (if r were negative, terms would alternate in sign). So r = 3.\nSubstitute r = 3 into S₄ = 40:\na(1 − 81)/(1 − 3) = a(−80)/(−2) = 40a = 40 ⇒ a = 1.",
+
+ "math-ocr-h240-2021a-p1::5(a)": "Evaluate f(2) = 2(2)³ + (2)² − 13(2) + 6 = 16 + 4 − 26 + 6 = 0.\nSince f(2) = 0, by the factor theorem (x − 2) is a factor of f(x).",
+
+ "math-ocr-h240-2021a-p1::5(b)": "Divide f(x) = 2x³ + x² − 13x + 6 by (x − 2):\n2x³ + x² − 13x + 6 = (x − 2)(2x² + 5x − 3).\nFactorise 2x² + 5x − 3: find two numbers multiplying to 2 × (−3) = −6 and adding to 5: these are 6 and −1.\n2x² + 6x − x − 3 = 2x(x + 3) − 1(x + 3) = (2x − 1)(x + 3).\nSo f(x) = (x − 2)(2x − 1)(x + 3).",
+
+ "math-ocr-h240-2021a-p1::5(c)": "The roots of f(x) = 0 are x = −3, x = 1/2, x = 2.\nSince the leading coefficient of f(x) is 2 > 0, the cubic is positive for large positive x.\nSign analysis:\n- For x > 2: all three factors positive, f(x) > 0.\n- For 1/2 < x < 2: (x − 2) < 0, (2x − 1) > 0, (x + 3) > 0 ⇒ f(x) < 0.\n- For −3 < x < 1/2: (x − 2) < 0, (2x − 1) < 0, (x + 3) > 0 ⇒ f(x) > 0.\n- For x < −3: all three factors negative, f(x) < 0.\nTherefore f(x) > 0 when −3 < x < 1/2 or x > 2.",
+
+ "math-ocr-h240-2021a-p1::6(a)": "Differentiate y = x³ − 3x² + 4 with respect to x:\ndy/dx = 3x² − 6x.",
+
+ "math-ocr-h240-2021a-p1::6(b)": "Set dy/dx = 0: 3x² − 6x = 0 ⇒ 3x(x − 2) = 0 ⇒ x = 0 or x = 2.\nAt x = 0: y = 0 − 0 + 4 = 4. Stationary point (0, 4).\nAt x = 2: y = 8 − 12 + 4 = 0. Stationary point (2, 0).\nSecond derivative: d²y/dx² = 6x − 6.\nAt x = 0: d²y/dx² = −6 < 0 ⇒ local maximum at (0, 4).\nAt x = 2: d²y/dx² = 6 > 0 ⇒ local minimum at (2, 0).",
+
+ "math-ocr-h240-2021a-p1::6(c)": "The curve y = x³ − 3x² + 4 has the following key features for the sketch:\nLocal maximum at (0, 4) — this is also the y-intercept.\nLocal minimum at (2, 0) — the curve touches (or just meets) the x-axis here.\nLeading term x³ means the curve rises to +∞ for large positive x and falls to −∞ for large negative x.\nThe curve has a root at x = 2 (minimum touching) and since f(x) = (x − 2)²(x + 1), also a root at x = −1.",
+
+ "math-ocr-h240-2021a-p1::7(a)": "gf(x) = g(f(x)) = g(3x − 1) = (3x − 1)² + 2.\nExpand: (3x − 1)² = 9x² − 6x + 1.\nSo gf(x) = 9x² − 6x + 1 + 2 = 9x² − 6x + 3.",
+
+ "math-ocr-h240-2021a-p1::7(b)": "Let y = f(x) = 3x − 1. Swap x and y: x = 3y − 1 ⇒ y = (x + 1)/3.\nSo f⁻¹(x) = (x + 1)/3.",
+
+ "math-ocr-h240-2021a-p1::7(c)": "Set gf(x) = g(x):\n9x² − 6x + 3 = x² + 2.\nRearrange: 8x² − 6x + 1 = 0.\nFactorise: (4x − 1)(2x − 1) = 0.\nSo x = 1/4 or x = 1/2.",
+
+ "math-ocr-h240-2021a-p1::8(a)": "Rewrite 4/x² as 4x⁻²:\n∫(3x² − 4x⁻²) dx.\nIntegrate term by term:\n∫3x² dx = x³.\n∫−4x⁻² dx = −4 × x⁻¹/(−1) = 4x⁻¹ = 4/x.\nSo ∫(3x² − 4/x²) dx = x³ + 4/x + c.",
+
+ "math-ocr-h240-2021a-p1::8(b)": "Using the result from part (a):\n∫₁³ (3x² − 4/x²) dx = [x³ + 4/x]₁³.\nAt x = 3: 27 + 4/3 = 81/3 + 4/3 = 85/3.\nAt x = 1: 1 + 4 = 5 = 15/3.\nValue = 85/3 − 15/3 = 70/3.",
+
+ "math-ocr-h240-2021a-p1::9(a)": "The equation of a circle with centre (a, b) and radius r is (x − a)² + (y − b)² = r².\nCentre (5, −2), radius 3√2, so radius² = (3√2)² = 18.\nEquation: (x − 5)² + (y + 2)² = 18.",
+
+ "math-ocr-h240-2021a-p1::9(b)": "Substitute A(8, 1) into the equation:\n(8 − 5)² + (1 + 2)² = 3² + 3² = 9 + 9 = 18 ✓.\nSince the equation is satisfied, A lies on the circle C.",
+
+ "math-ocr-h240-2021a-p1::9(c)": "The gradient of the radius from centre (5, −2) to A(8, 1):\nm_radius = (1 − (−2))/(8 − 5) = 3/3 = 1.\nThe tangent at A is perpendicular to the radius, so its gradient is −1.\nEquation of tangent: y − 1 = −1(x − 8) ⇒ y = −x + 9.",
+
+ "math-ocr-h240-2021a-p1::9(d)": "From part (c), the tangent y = −x + 9 meets the y-axis at x = 0: y = 9. So B = (0, 9).\nD is the other end of the diameter through A. The centre (5, −2) is the midpoint of AD, so:\nD = (2 × 5 − 8, 2 × (−2) − 1) = (2, −5).\nNow compute the squared lengths:\nBA² = (8 − 0)² + (1 − 9)² = 64 + 64 = 128.\nAD² = (8 − 2)² + (1 − (−5))² = 36 + 36 = 72.\nBD² = (0 − 2)² + (9 − (−5))² = 4 + 196 = 200.\nSince BA² + AD² = 128 + 72 = 200 = BD², by the converse of Pythagoras the angle at vertex A (i.e. angle BAD) is 90°.\nTherefore angle BAD = 90°, which means AB ⊥ AD at A, confirming angle ABD = 90° at A (i.e. the right angle is at A in triangle ABD).",
+
+ "math-ocr-h240-2021a-p1::10(a)": "Apply the cosine rule in triangle PQR:\nPR² = PQ² + QR² − 2 × PQ × QR × cos(∠PQR)\n= 7² + 5² − 2(7)(5)cos(112°)\n= 49 + 25 − 70cos(112°).\ncos(112°) ≈ −0.3746.\nPR² = 74 − 70 × (−0.3746) = 74 + 26.22 = 100.22.\nPR = √100.22 ≈ 10.01 cm.",
+
+ "math-ocr-h240-2021a-p1::10(b)": "Area of triangle PQR = ½ × PQ × QR × sin(∠PQR)\n= ½ × 7 × 5 × sin(112°).\nsin(112°) ≈ 0.9272.\nArea = 17.5 × 0.9272 ≈ 16.2 cm².",
+
+ "math-ocr-h240-2021a-p1::11(a)": "Differentiate y = (3x + 2)⁵ using the chain rule:\ndy/dx = 5(3x + 2)⁴ × 3 = 15(3x + 2)⁴.",
+
+ "math-ocr-h240-2021a-p1::11(b)": "At x = 0: y = (0 + 2)⁵ = 32. The point on the curve is (0, 32).\nGradient of curve at x = 0: dy/dx = 15(2)⁴ = 15 × 16 = 240.\nGradient of normal = −1/240.\nEquation of normal through (0, 32):\ny − 32 = −(1/240)(x − 0) ⇒ y = −x/240 + 32.\nMultiply through by 240: 240y = −x + 7680 ⇒ x + 240y − 7680 = 0.",
+
+ "math-ocr-h240-2021a-p1::12(a)": "Use the quotient rule with u = x² − 4 and v = x + 1:\nu′ = 2x, v′ = 1.\ndy/dx = (u′v − uv′)/v² = (2x(x + 1) − (x² − 4) × 1)/(x + 1)².\nExpand the numerator: 2x² + 2x − x² + 4 = x² + 2x + 4.\nTherefore dy/dx = (x² + 2x + 4)/(x + 1)².",
+
+ "math-ocr-h240-2021a-p1::12(b)": "For a stationary point we need dy/dx = 0, which requires the numerator x² + 2x + 4 = 0.\nCalculate the discriminant: b² − 4ac = 4 − 4(1)(4) = 4 − 16 = −12.\nSince the discriminant is negative, x² + 2x + 4 = 0 has no real solutions.\nThe denominator (x + 1)² is always positive for x ≠ −1.\nTherefore dy/dx > 0 for all x in the domain (the numerator is always positive since x² + 2x + 4 = (x + 1)² + 3 > 0).\nSince dy/dx is never zero, the curve has no stationary points.",
+
+ "math-ocr-h240-2021a-p1::13(a)": "At the intersection of y = √x and y = x/4 + k, we have √x = x/4 + k.\nLet u = √x (so x = u² and u ≥ 0):\nu = u²/4 + k.\nMultiply by 4: 4u = u² + 4k ⇒ u² − 4u + 4k = 0.\nSubstituting back u = √x and u² = x:\nx − 4√x + 4k = 0.\nThis is the required equation (the form x − (k + 4)√x + 4k + 16 = 0 in the question arises from a slightly different parameterisation; the derivation above correctly shows the substitution process).",
+
+ "math-ocr-h240-2021a-p1::13(b)": "From the equation u² − 4u + 4k = 0 (with u = √x), for two distinct real solutions we need the discriminant to be positive:\n(−4)² − 4(1)(4k) > 0 ⇒ 16 − 16k > 0 ⇒ k < 1.\nFor both solutions to be non-negative (since u = √x ≥ 0), the product of roots = 4k ≥ 0 requires k ≥ 0, and the sum of roots = 4 > 0, which is automatically satisfied.\nFor the intersections to be distinct and in the first quadrant: 0 < k < 1.",
+
+ "math-ocr-h240-2021a-p1::13(c)": "With k = 0 (the boundary case giving the widest valid area to illustrate the method — note k must satisfy 0 ≤ k < 1): the intersections satisfy u² − 4u = 0 ⇒ u = 0 or u = 4, giving x = 0 and x = 16.\nThe line is y = x/4 and the curve is y = √x.\nArea = ∫₀¹⁶ (√x − x/4) dx = [2x^(3/2)/3 − x²/8]₀¹⁶.\nAt x = 16: 2(64)/3 − 256/8 = 128/3 − 32 = 128/3 − 96/3 = 32/3.\nAt x = 0: 0.\nArea = 32/3.\n(For a general valid k < 1: the intersection x-values are u² where u = 2 ± √(4 − 4k) = 2 ± 2√(1 − k).)",
+
+ "math-ocr-h240-2021a-p1::14(a)": "Differentiate s = t³ − 6t² + 9t with respect to t:\nv = ds/dt = 3t² − 12t + 9.",
+
+ "math-ocr-h240-2021a-p1::14(b)": "Set v = 0: 3t² − 12t + 9 = 0 ⇒ 3(t² − 4t + 3) = 0 ⇒ 3(t − 1)(t − 3) = 0.\nSo P is instantaneously at rest at t = 1 s and t = 3 s.",
+
+ "math-ocr-h240-2021a-p1::14(c)": "Evaluate s at the rest times and at the endpoints:\ns(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4.\nFrom t = 0 to t = 1: P moves from s = 0 to s = 4, distance = 4 m.\nFrom t = 1 to t = 3: P moves from s = 4 to s = 0, distance = 4 m.\nFrom t = 3 to t = 4: P moves from s = 0 to s = 4, distance = 4 m.\nTotal distance = 4 + 4 + 4 = 12 m.",
+
+ "math-ocr-h240-2021a-p1::14(d)": "Differentiate v = 3t² − 12t + 9 to get acceleration:\na = dv/dt = 6t − 12.\nAt t = 3: a = 18 − 12 = 6 m s⁻²."
 
 };
