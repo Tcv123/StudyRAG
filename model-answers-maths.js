@@ -1944,5 +1944,142 @@ window.MATHS_MODEL_ANSWERS = {
  "math-ocr-h240-2023-p2::17(b)": "E(X) = ∫₀⁴ x·f(x) dx = (3/32)∫₀⁴ x²(4 − x) dx = (3/32)∫₀⁴ (4x² − x³) dx.\n= (3/32)[4x³/3 − x⁴/4]₀⁴ = (3/32)[(4×64/3) − 64] = (3/32)[256/3 − 64] = (3/32)[(256 − 192)/3]\n= (3/32)(64/3) = 64/32 = 2.",
 
  "math-ocr-h240-2023-p2::17(c)": "P(1 ≤ X ≤ 3) = (3/32)∫₁³ x(4 − x) dx = (3/32)∫₁³ (4x − x²) dx.\n= (3/32)[2x² − x³/3]₁³.\nAt x = 3: 2(9) − 9 = 18 − 9 = 9.\nAt x = 1: 2(1) − 1/3 = 2 − 1/3 = 5/3.\n= (3/32)(9 − 5/3) = (3/32)(27/3 − 5/3) = (3/32)(22/3) = 22/32 = 11/16."
+,
+
+  "math-ocr-h240-2023-p3::1(a)": "(1 + 3x)^(−2): use the binomial expansion with n = −2 and replace x with 3x.\n(1 + 3x)^(−2) = 1 + (−2)(3x) + (−2)(−3)/2!(3x)² + (−2)(−3)(−4)/3!(3x)³ + …\n= 1 − 6x + 27x² − 108x³ + …\nThe expansion is valid for |3x| < 1, i.e. |x| < 1/3.",
+
+ "math-ocr-h240-2023-p3::1(b)": "Set x = 0.001 (so that 1 + 3x = 1.003):\n(1.003)^(−2) ≈ 1 − 6(0.001) + 27(0.001)² − 108(0.001)³\n= 1 − 0.006 + 0.000027 − 0.000000108\n= 0.994027 (to 6 d.p.).",
+
+ "math-ocr-h240-2023-p3::2(a)": "s = t³ − 6t² + 9t.\nv = ds/dt = 3t² − 12t + 9.",
+
+ "math-ocr-h240-2023-p3::2(b)": "Set v = 0: 3t² − 12t + 9 = 0 ⟹ t² − 4t + 3 = 0 ⟹ (t − 1)(t − 3) = 0.\nP is at rest at t = 1 s and t = 3 s.",
+
+ "math-ocr-h240-2023-p3::2(c)": "Evaluate s at the rest times and the endpoints:\ns(0) = 0, s(1) = 1 − 6 + 9 = 4 m, s(3) = 27 − 54 + 27 = 0 m, s(4) = 64 − 96 + 36 = 4 m.\nTotal distance = |s(1) − s(0)| + |s(3) − s(1)| + |s(4) − s(3)| = 4 + 4 + 4 = 12 m.",
+
+ "math-ocr-h240-2023-p3::3(a)": "y = x² ln x. Apply the product rule with u = x² and v = ln x:\ndy/dx = 2x · ln x + x² · (1/x) = 2x ln x + x = x(2 ln x + 1).",
+
+ "math-ocr-h240-2023-p3::3(b)": "Set dy/dx = 0: x(2 ln x + 1) = 0.\nSince x > 0 (domain of ln x), we need 2 ln x + 1 = 0 ⟹ ln x = −1/2 ⟹ x = e^(−1/2) = 1/√e.",
+
+ "math-ocr-h240-2023-p3::3(c)": "Find d²y/dx²: differentiate x(2 ln x + 1) = 2x ln x + x.\nd²y/dx² = 2 ln x + 2x(1/x) + 1 = 2 ln x + 3.\nAt x = 1/√e: d²y/dx² = 2(−1/2) + 3 = −1 + 3 = 2 > 0.\nSince d²y/dx² > 0 at the stationary point, it is a minimum.",
+
+ "math-ocr-h240-2023-p3::4": "Resultant R = F₁ + F₂ = (3+p)i + (−2+q)j.\nThe resultant acts in the direction of (i + j), so the i and j components are equal:\n3 + p = −2 + q ⟹ q − p = 5.\nThe magnitude is 5√2:\n(3+p)² + (−2+q)² = 50.\nSubstitute q = p + 5: (3+p)² + (3+p)² = 50 ⟹ 2(3+p)² = 50 ⟹ (3+p)² = 25 ⟹ 3+p = 5 (positive, since resultant has positive i-component).\np = 2, q = 7.",
+
+ "math-ocr-h240-2023-p3::5(a)": "AB = OB − OA = (5i − 2j + k) − (2i + j − 3k) = 3i − 3j + 4k.",
+
+ "math-ocr-h240-2023-p3::5(b)": "Let P be a general point on l: OP = (2i + j − 3k) + t(2i − j + 2k) = (2+2t)i + (1−t)j + (−3+2t)k.\nVector from P to B: OB − OP = (5−2−2t)i + (−2−1+t)j + (1+3−2t)k = (3−2t)i + (−3+t)j + (4−2t)k.\nFor the closest point, this vector is perpendicular to the direction vector (2i − j + 2k):\n2(3−2t) + (−1)(−3+t) + 2(4−2t) = 0\n6−4t + 3−t + 8−4t = 0 ⟹ 17 − 9t = 0 ⟹ t = 17/9.\nPosition vector of closest point:\n= (2 + 34/9)i + (1 − 17/9)j + (−3 + 34/9)k\n= (52/9)i − (8/9)j + (7/9)k.",
+
+ "math-ocr-h240-2023-p3::6(a)": "Resolve perpendicular to the plane:\nR = 5g cos 30° = 5g(√3/2).\nWhen on the point of moving down, friction acts up the slope. Resolving along the plane (equilibrium):\nP + F = 5g sin 30°, where F = μR = μ × 5g√3/2.\nTherefore P = 5g/2 − 5μg√3/2 = (5g/2)(1 − √3μ).",
+
+ "math-ocr-h240-2023-p3::6(b)": "R = 5 × 9.8 × cos 30° = 5 × 9.8 × (√3/2) ≈ 42.44 N.\nμ = 0.4, so F = 0.4 × 42.44 ≈ 16.97 N.\nWhen on the point of moving up, friction acts down the slope. Resolving along the plane:\nP = 5g sin 30° + F = 5 × 9.8 × 0.5 + 16.97 = 24.5 + 16.97 ≈ 41.5 N.",
+
+ "math-ocr-h240-2023-p3::7(a)": "Write (5x + 1)/((x+1)(2x−1)) = A/(x+1) + B/(2x−1).\nMultiply through: 5x + 1 = A(2x − 1) + B(x + 1).\nSet x = −1: −4 = −3A ⟹ A = 4/3.\nSet x = 1/2: 7/2 = (3/2)B ⟹ B = 7/3.\nSo f(x) = (4/3)/(x+1) + (7/3)/(2x−1).",
+
+ "math-ocr-h240-2023-p3::7(b)": "∫f(x) dx = ∫[(4/3)/(x+1) + (7/3)/(2x−1)] dx\n= (4/3)ln|x+1| + (7/3) × (1/2)ln|2x−1| + C\n= (4/3)ln|x+1| + (7/6)ln|2x−1| + C.",
+
+ "math-ocr-h240-2023-p3::7(c)": "Evaluate [(4/3)ln|x+1| + (7/6)ln|2x−1|]₁².\nAt x = 2: (4/3)ln 3 + (7/6)ln 3 = ln 3 × (8/6 + 7/6) = (15/6)ln 3 = (5/2)ln 3.\nAt x = 1: (4/3)ln 2 + (7/6)ln 1 = (4/3)ln 2.\nResult = (5/2)ln 3 − (4/3)ln 2 = ln(3^(5/2)) − ln(2^(4/3)) = ln(3^(5/2)/2^(4/3)).",
+
+ "math-ocr-h240-2023-p3::8(a)": "Vertical component of initial velocity: u_y = 28 sin 30° = 14 m s⁻¹.\nAt greatest height, v_y = 0. Using v² = u² − 2gs:\n0 = 14² − 2(9.8)h ⟹ h = 196/19.6 = 10 m.",
+
+ "math-ocr-h240-2023-p3::8(b)": "Using vertical displacement s = u_y t − ½gt² = 0 when the particle lands:\n0 = 14t − 4.9t² = t(14 − 4.9t).\nNon-zero solution: t = 14/4.9 = 20/7 ≈ 2.86 s.",
+
+ "math-ocr-h240-2023-p3::8(c)": "Horizontal component: u_x = 28 cos 30° = 14√3 m s⁻¹.\nRange = u_x × T = 14√3 × (20/7) = 40√3 ≈ 69.3 m.",
+
+ "math-ocr-h240-2023-p3::9(a)": "For x < ln 2: e^x < 2, so the denominator 2 − e^x lies in (0, 2).\nAs x → −∞: 2 − e^x → 2, so f(x) = 3/(2 − e^x) → 3/2.\nAs x → ln 2⁻: 2 − e^x → 0⁺, so f(x) → +∞.\nf is strictly increasing on its domain, so the range is f(x) > 3/2, i.e. (3/2, ∞).",
+
+ "math-ocr-h240-2023-p3::9(b)": "Let y = 3/(2 − e^x). Rearrange:\n2 − e^x = 3/y ⟹ e^x = 2 − 3/y ⟹ x = ln(2 − 3/y).\nSo f⁻¹(x) = ln(2 − 3/x).\nThe domain of f⁻¹ equals the range of f: x > 3/2.",
+
+ "math-ocr-h240-2023-p3::9(c)": "For y = f(x) = 3/(2−e^x): the curve passes through (0, 3); it has a vertical asymptote x = ln 2 and a horizontal asymptote y = 3/2. The curve is increasing.\nFor y = f⁻¹(x) = ln(2−3/x): the curve passes through (3, 0); it has a vertical asymptote x = 3/2 and a horizontal asymptote y = ln 2. The two curves are reflections of each other in the line y = x.\nLabel: (0, 3) on f, (3, 0) on f⁻¹, asymptotes x = ln2, y = 3/2 for f and x = 3/2, y = ln2 for f⁻¹.",
+
+ "math-ocr-h240-2023-p3::10(a)": "At maximum speed, the driving force equals the resistance:\nDriving force = Power/speed = 20000/v.\nSet equal to resistance: 20000/v = 800 ⟹ v = 20000/800 = 25 m s⁻¹.",
+
+ "math-ocr-h240-2023-p3::10(b)": "At v = 10 m s⁻¹: driving force F = 20000/10 = 2000 N.\nApply Newton's second law: F − R = ma.\n2000 − 800 = 1200a ⟹ 1200 = 1200a ⟹ a = 1 m s⁻².",
+
+ "math-ocr-h240-2023-p3::11(a)": "v = dr/dt = (3t² − 3)i + 4tj m s⁻¹.",
+
+ "math-ocr-h240-2023-p3::11(b)": "At t = 2: v = (3(4) − 3)i + 4(2)j = 9i + 8j.\nSpeed = |v| = √(9² + 8²) = √(81 + 64) = √145 m s⁻¹.",
+
+ "math-ocr-h240-2023-p3::11(c)": "Moving parallel to i means the j-component of velocity is zero:\n4t = 0 ⟹ t = 0.\nFor t ≥ 0, the only solution is t = 0.",
+
+ "math-ocr-h240-2023-p3::12(a)": "y = (2x − 1)/√(x² + 3). Use the quotient rule with u = 2x − 1, v = (x² + 3)^(1/2):\nu′ = 2, v′ = x(x² + 3)^(−1/2).\ndy/dx = [2(x²+3)^(1/2) − (2x−1) × x(x²+3)^(−1/2)] / (x²+3).\nMultiply numerator and denominator by (x²+3)^(1/2):\n= [2(x²+3) − x(2x−1)] / (x²+3)^(3/2)\n= [2x²+6−2x²+x] / (x²+3)^(3/2)\n= (x+6)/(x²+3)^(3/2), as required.",
+
+ "math-ocr-h240-2023-p3::12(b)": "From part (a), dy/dx = (x+6)/(x²+3)^(3/2).\nSetting dy/dx = 0: x = −6 (the denominator is always positive).\nFor x < −6: dy/dx < 0 (decreasing). For x > −6: dy/dx > 0 (increasing). So x = −6 gives a minimum.\nAt x = −6: y = (−12−1)/√(36+3) = −13/√39.\nAs x → +∞: y = (2x−1)/√(x²+3) → 2 (from below).\nAs x → −∞: y → −2 (from above).\nSince y has a minimum of −13/√39 and approaches 2 as x → +∞ (never reaching 2), the range is −13/√39 ≤ y < 2.",
+
+ "math-ocr-h240-2023-p3::13(a)": "Integrate a = (4t−2)i + 6j component-wise:\nv = (2t²−2t)i + 6tj + C.\nAt t = 0, v = −2i + j: C = −2i + j.\nTherefore v = (2t²−2t−2)i + (6t+1)j m s⁻¹.",
+
+ "math-ocr-h240-2023-p3::13(b)": "At t = 1: a = (4−2)i + 6j = 2i + 6j m s⁻².\nF = ma = 3(2i + 6j) = (6i + 18j) N.",
+
+ "math-ocr-h240-2023-p3::14(a)": "Differentiate x² + xy + y² = 7 implicitly with respect to x:\n2x + y + x(dy/dx) + 2y(dy/dx) = 0.\nCollect dy/dx terms: (x + 2y)(dy/dx) = −(2x + y).\nTherefore dy/dx = −(2x + y)/(x + 2y), as required.",
+
+ "math-ocr-h240-2023-p3::14(b)": "Tangent parallel to the y-axis means the gradient is undefined, i.e. the denominator is zero:\nx + 2y = 0 ⟹ x = −2y.\nSubstitute into x² + xy + y² = 7:\n(−2y)² + (−2y)(y) + y² = 4y² − 2y² + y² = 3y² = 7 ⟹ y² = 7/3 ⟹ y = ±√(7/3).\nWhen y = √(7/3): x = −2√(7/3). When y = −√(7/3): x = 2√(7/3).\nThe two points are (−2√(7/3), √(7/3)) and (2√(7/3), −√(7/3)).",
+
+ "math-ocr-h240-2023-p3::14(c)": "At both points found in part (b), the denominator x + 2y = 0. Since the tangent is parallel to the y-axis, the gradient dy/dx is undefined (infinite) at both points.",
+
+ "math-ocr-h240-2023-p3::15(a)": "Apply Newton's second law to the whole system (mass 2+3 = 5 kg):\nThe only driving force is the weight of B: 3g N.\n3g = 5a ⟹ a = 3g/5 = 3 × 9.8/5 = 5.88 m s⁻².",
+
+ "math-ocr-h240-2023-p3::15(b)": "Apply Newton's second law to particle A (mass 2 kg, acceleration 5.88 m s⁻²):\nT = 2a = 2 × 5.88 = 11.76 N.\n(Check with B: 3g − T = 3a ⟹ 29.4 − 11.76 = 17.64 = 3 × 5.88 ✓)",
+
+ "math-ocr-h240-2023-p3::15(c)": "Speed after 2 s: v = at = 5.88 × 2 = 11.76 m s⁻¹.\nAfter the string breaks:\n– Particle A: the table is smooth, so no horizontal force acts on A. A continues to move at a constant velocity of 11.76 m s⁻¹.\n– Particle B: the string is gone, so only gravity acts. B falls freely under gravity, accelerating downward at g = 9.8 m s⁻².,
+
+  "math-edx-9ma0-2018-p1::1": "For small θ (radians): sin 3θ ≈ 3θ and cos 4θ ≈ 1 − (4θ)²/2 = 1 − 8θ².\nSubstitute:\n(1 − cos 4θ) / (2 sin 3θ · θ) ≈ (1 − (1 − 8θ²)) / (2 × 3θ × θ) = 8θ² / (6θ²) = 4/3.",
+
+ "math-edx-9ma0-2018-p1::2(a)": "Write y = x² − 2x − 24x^(1/2).\n(i) dy/dx = 2x − 2 − 12x^(−1/2).\n(ii) d²y/dx² = 2 + 6x^(−3/2).",
+
+ "math-edx-9ma0-2018-p1::2(b)": "Substitute x = 4 into dy/dx:\ndy/dx = 2(4) − 2 − 12(4)^(−1/2) = 8 − 2 − 12/2 = 8 − 2 − 6 = 0.\nSince dy/dx = 0 at x = 4, there is a stationary point at x = 4.",
+
+ "math-edx-9ma0-2018-p1::2(c)": "Substitute x = 4 into d²y/dx²:\nd²y/dx² = 2 + 6(4)^(−3/2) = 2 + 6/8 = 2 + 0.75 = 2.75 > 0.\nSince d²y/dx² > 0, the stationary point at x = 4 is a minimum.",
+
+ "math-edx-9ma0-2018-p1::3": "Let arc length AB = rθ and perimeter = 2r + rθ.\nGiven perimeter = 4 × arc: 2r + rθ = 4rθ ⟹ 2r = 3rθ ⟹ θ = 2/3.\nArea of sector: ½r²θ = 11 ⟹ ½r²(2/3) = 11 ⟹ r²/3 = 11 ⟹ r² = 33 ⟹ r = √33.",
+
+ "math-edx-9ma0-2018-p1::4(a)": "Let f(x) = 2ln(8−x) − x.\nf(3) = 2ln5 − 3 ≈ 3.219 − 3 = 0.219 > 0.\nf(4) = 2ln4 − 4 ≈ 2.773 − 4 = −1.227 < 0.\nSince f is continuous and changes sign on [3, 4], by the intermediate value theorem there is a root α with 3 < α < 4.",
+
+ "math-edx-9ma0-2018-p1::4(b)": "Starting from x₁ = 4, draw a vertical line to the curve y = 2ln(8−x) then a horizontal line to y = x, and repeat. From the graph, the cobweb diagram spirals inwards, converging to α. Therefore the iteration formula can be used to find an approximation for α.",
+
+ "math-edx-9ma0-2018-p1::5": "y = 3sinθ/(2sinθ + 2cosθ). Apply the quotient rule with u = 3sinθ, v = 2sinθ + 2cosθ:\nu′ = 3cosθ, v′ = 2cosθ − 2sinθ.\ndy/dθ = [3cosθ(2sinθ+2cosθ) − 3sinθ(2cosθ−2sinθ)] / (2sinθ+2cosθ)².\nNumerator: 6sinθcosθ + 6cos²θ − 6sinθcosθ + 6sin²θ = 6(sin²θ+cos²θ) = 6.\nDenominator: (2sinθ+2cosθ)² = 4(sinθ+cosθ)² = 4(1 + 2sinθcosθ) = 4(1 + sin2θ).\nTherefore dy/dθ = 6/(4(1+sin2θ)) = 3/(2(1+sin2θ)), so A = 3/2.",
+
+ "math-edx-9ma0-2018-p1::6(a)": "The tangent l has gradient 2, so the radius PA (perpendicular to l) has gradient −1/2.\nLine through A(7, 5) with gradient −1/2: y − 5 = −½(x − 7) ⟹ 2y − 10 = −x + 7 ⟹ x + 2y = 17, which is the same as 2y + x = 17, as required.",
+
+ "math-edx-9ma0-2018-p1::6(b)": "Find P: solve y = 2x + 1 and x + 2y = 17 simultaneously.\nSubstitute: x + 2(2x+1) = 17 ⟹ 5x = 15 ⟹ x = 3, y = 7. So P = (3, 7).\nRadius² = (7−3)² + (5−7)² = 16 + 4 = 20.\nEquation of C: (x − 7)² + (y − 5)² = 20.",
+
+ "math-edx-9ma0-2018-p1::6(c)": "The second tangent y = 2x + k is parallel to y = 2x + 1 and also tangent to the circle.\nSubstitute into the circle: (x−7)² + (2x+k−5)² = 20.\nExpand and set discriminant = 0:\n(x−7)² + (2x+k−5)² = 20. Let me use the perpendicular distance method:\nDistance from centre (7, 5) to line 2x − y + k = 0 equals radius √20:\n|2(7) − 5 + k|/√(4+1) = √20 ⟹ |9 + k|/√5 = 2√5 ⟹ |9 + k| = 10.\n9 + k = 10 ⟹ k = 1 (the original tangent) or 9 + k = −10 ⟹ k = −19.\nSince k ≠ 1, the answer is k = −19.",
+
+ "math-edx-9ma0-2018-p1::7(a)": "∫ₖ^(3k) 2/(3x−k) dx.\nAntiderivative: (2/3)ln|3x−k|.\nEvaluate: (2/3)[ln(9k−k) − ln(3k−k)] = (2/3)[ln(8k) − ln(2k)] = (2/3)ln(8k/2k) = (2/3)ln 4.\nThis is independent of k.",
+
+ "math-edx-9ma0-2018-p1::7(b)": "∫ₖ^(2k) 2/(2x−k)² dx.\nAntiderivative of 2(2x−k)^(−2): use the chain rule — ∫ 2/(2x−k)² dx = −1/(2x−k) + C.\nEvaluate from k to 2k: [−1/(2x−k)]ₖ^(2k) = −1/(4k−k) − (−1/(2k−k)) = −1/(3k) + 1/k = 2/(3k).\nSince 2/(3k) = (2/3) × (1/k), the result is inversely proportional to k.",
+
+ "math-edx-9ma0-2018-p1::8(a)": "At 6:30 am, t = 6.5.\nD = 5 + 2sin(30 × 6.5)° = 5 + 2sin(195°) = 5 + 2(−sin15°) ≈ 5 + 2(−0.2588) ≈ 4.48 m.",
+
+ "math-edx-9ma0-2018-p1::8(b)": "Loading finishes at 8:30 am (t = 8.5). Need D ≥ 3.8:\n5 + 2sin(30t)° = 3.8 ⟹ sin(30t)° = −0.6.\n30t = 180 + arcsin(0.6) or 30t = 360 − arcsin(0.6) (in the third/fourth quadrant).\narcsin(0.6) ≈ 36.87°.\nFor t > 8.5: relevant solution is 30t = 180 + 36.87 = 216.87 ⟹ t ≈ 7.229 (too small) or 30t = 360 − 36.87 + 360 = 683.13 — wait, look for t > 8.5:\n30t = 180 + 36.87 = 216.87 ⟹ t = 7.229 (before 8.5).\n30t = 360 − 36.87 = 323.13 ⟹ t = 10.771.\nEarliest time t ≈ 10.77 hours = 10 h 46 min after midnight = 10:46 am.",
+
+ "math-edx-9ma0-2018-p1::9(a)": "Differentiate x² − 2xy + 3y² = 50 implicitly:\n2x − 2y − 2x(dy/dx) + 6y(dy/dx) = 0.\nCollect dy/dx: (6y − 2x)(dy/dx) = 2y − 2x.\ndy/dx = (2y − 2x)/(6y − 2x) = (y − x)/(3y − x), as required.",
+
+ "math-edx-9ma0-2018-p1::9(b)": "At P (furthest west), the tangent is vertical so dy/dx is undefined, meaning the denominator is zero:\n3y − x = 0 ⟹ x = 3y.\nSubstitute into x² − 2xy + 3y² = 50:\n9y² − 6y² + 3y² = 6y² = 50 ⟹ y² = 25/3 ⟹ y = ±5/√3 = ±5√3/3.\nP is furthest west (most negative x), so x = 3y with the negative y:\ny = −5√3/3, x = −5√3.\nP = (−5√3, −5√3/3).",
+
+ "math-edx-9ma0-2018-p1::9(c)": "Set dy/dx = 0, i.e. numerator = 0: y − x = 0 ⟹ y = x. Substitute y = x into x² − 2xy + 3y² = 50 and solve for x (taking the positive solution for the northernmost point).",
+
+ "math-edx-9ma0-2018-p1::10(a)": "Separate variables: (1/H)dH = cos(0.25t)/40 dt.\nIntegrate both sides: ln H = (1/40) × 4sin(0.25t) + c = (1/10)sin(0.25t) + c.\nAt t = 0, H = 5: ln 5 = 0 + c ⟹ c = ln 5.\nln H − ln 5 = (1/10)sin(0.25t) ⟹ ln(H/5) = (1/10)sin(0.25t) ⟹ H = 5e^(0.1sin(0.25t)), as required.",
+
+ "math-edx-9ma0-2018-p1::10(b)": "H is maximum when e^(0.1sin(0.25t)) is maximum, i.e. when sin(0.25t) = 1.\nH_max = 5e^(0.1) ≈ 5.53 m.",
+
+ "math-edx-9ma0-2018-p1::10(c)": "Maximum occurs when sin(0.25t) = 1 ⟹ 0.25t = π/2 + 2nπ.\nFirst maximum: t = 2π ≈ 6.28 s.\nSecond maximum: 0.25T = π/2 + 2π = 5π/2 ⟹ T = 10π ≈ 31.4 s.",
+
+ "math-edx-9ma0-2018-p1::11(a)": "√((1+4x)/(1−x)) = (1+4x)^(1/2)(1−x)^(−1/2).\nExpand (1+4x)^(1/2) ≈ 1 + (1/2)(4x) + ((1/2)(−1/2)/2!)(4x)² = 1 + 2x − 2x².\nExpand (1−x)^(−1/2) ≈ 1 + (1/2)x + ((1/2)(3/2)/2!)x² = 1 + x/2 + 3x²/8.\nMultiply:\n(1+2x−2x²)(1+x/2+3x²/8)\n≈ 1 + x/2 + 3x²/8 + 2x + x² + (−2x²) + …\n= 1 + (5/2)x + (3/8 + 1 − 2)x² = 1 + (5/2)x − (5/8)x², as required.",
+
+ "math-edx-9ma0-2018-p1::11(b)": "The expansion of (1+4x)^(1/2) requires |4x| < 1, i.e. |x| < 1/4. Since x = 1/2 > 1/4, it lies outside the radius of convergence and the expansion is not valid for this value.",
+
+ "math-edx-9ma0-2018-p1::11(c)": "Substitute x = 1/11:\nLHS = √((1 + 4/11)/(1 − 1/11)) = √((15/11)/(10/11)) = √(3/2) = √6/2.\nRHS = 1 + (5/2)(1/11) − (5/8)(1/11)²\n= 1 + 5/22 − 5/968.\nCommon denominator 968: = 968/968 + 220/968 − 5/968 = 1183/968.\nSo √6/2 ≈ 1183/968 ⟹ √6 ≈ 2366/968 = 1183/484.",
+
+ "math-edx-9ma0-2018-p1::12(a)": "V = Ap^t. At t = 4 (year 2005): 32000 = Ap⁴. At t = 11 (year 2012): 50000 = Ap^(11).\nDivide: p⁷ = 50000/32000 = 25/16 ⟹ p = (25/16)^(1/7) ≈ 1.0658.\nA = 32000/p⁴ = 32000/(1.0658)⁴ ≈ 32000/1.2909 ≈ 24789 ≈ 24800.",
+
+ "math-edx-9ma0-2018-p1::12(b)": "(i) A ≈ 24800 is the estimated value of the car on 1st January 2001 (the initial value when t = 0).\n(ii) p ≈ 1.0658 is the annual growth factor — the car's value increases by approximately 6.58% per year.",
+
+ "math-edx-9ma0-2018-p1::12(c)": "Solve 24800 × 1.0658^t = 100000:\n1.0658^t = 100000/24800 ≈ 4.0323.\nt = ln(4.0323)/ln(1.0658) ≈ 1.3939/0.0637 ≈ 21.9.\nSo the value first exceeds £100,000 during year 1980 + 21 = 2001 + 21 = 2022.",
+
+ "math-edx-9ma0-2018-p1::13": "Use the substitution u = x + 2, so x = u − 2, dx = du. When x = 0, u = 2; when x = 2, u = 4.\n∫₀² 2x√(x+2) dx = ∫₂⁴ 2(u−2)√u du = ∫₂⁴ (2u^(3/2) − 4u^(1/2)) du.\n= [(4/5)u^(5/2) − (8/3)u^(3/2)]₂⁴.\nAt u = 4: (4/5)(32) − (8/3)(8) = 128/5 − 64/3 = (384 − 320)/15 = 64/15.\nAt u = 2: (4/5)(4√2) − (8/3)(2√2) = (16√2/5 − 16√2/3) = 16√2(3−5)/15 = −32√2/15.\nResult = 64/15 − (−32√2/15) = (64 + 32√2)/15 = (32/15)(2 + √2).",
+
+ "math-edx-9ma0-2018-p1::14(a)": "From x = 3 + 2sint: sint = (x−3)/2 ⟹ sin²t = (x−3)²/4.\nUsing cos2t = 1 − 2sin²t: y = 4 + 2cos2t = 4 + 2(1 − 2sin²t) = 6 − 4sin²t = 6 − 4(x−3)²/4 = 6 − (x−3)².",
+
+ "math-edx-9ma0-2018-p1::14(b)": "(i) C is an inverted parabola arc with vertex at (3, 6) and endpoints at (1, 2) and (5, 2) (since −1 ≤ sint ≤ 1 gives 1 ≤ x ≤ 5).\n(ii) Since sint ∈ [−1, 1], the parametric equations restrict x to [1, 5]. The Cartesian equation y = 6−(x−3)² holds for all real x, so C only includes the arc where 1 ≤ x ≤ 5.",
+
+ "math-edx-9ma0-2018-p1::14(c)": "Substitute y = k − x into y = 6 − (x−3)²:\nk − x = 6 − (x−3)² ⟹ (x−3)² − x + k − 6 = 0 ⟹ x² − 7x + (k−3) = 0.\nFor two distinct intersections: discriminant > 0: 49 − 4(k−3) > 0 ⟹ k < 61/4.\nAlso the intersections must lie on C (1 ≤ x ≤ 5). At the boundary x = 5 (or x = 1, by symmetry): k = x + y = 5 + 2 = 7. So k ≥ 7.\nFull range: {k : 7 ≤ k < 61/4}.
 
 };
