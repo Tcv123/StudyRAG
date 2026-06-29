@@ -905,12 +905,12 @@ function renderExamCalendar() {
   const DAY_LABELS = ['Mon','Tue','Wed','Thu','Fri','Sat','Sun'];
   let html = `<div style="display:grid;grid-template-columns:repeat(7,1fr);border-bottom:1px solid var(--border);">`;
   DAY_LABELS.forEach(d => {
-    html += `<div style="text-align:center;font-size:11px;font-weight:600;color:var(--muted2);padding:10px 0;text-transform:uppercase;letter-spacing:0.05em;">${d}</div>`;
+    html += `<div style="text-align:center;font-size:10px;font-weight:600;color:var(--muted2);padding:6px 0;text-transform:uppercase;letter-spacing:0.05em;">${d}</div>`;
   });
   html += `</div><div style="display:grid;grid-template-columns:repeat(7,1fr);">`;
 
   for (let i = 0; i < startDow; i++) {
-    html += `<div style="min-height:70px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface2);"></div>`;
+    html += `<div style="min-height:44px;border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--surface2);"></div>`;
   }
 
   for (let day = 1; day <= totalDays; day++) {
@@ -934,20 +934,18 @@ function renderExamCalendar() {
       const badge   = done ? '✓ Done' : `${e.diffDays}d`;
       const cardOpacity = done ? '0.55' : '1';
       const strike  = done ? 'text-decoration:line-through;' : '';
-      return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:4px solid ${sc};border-radius:8px;padding:8px 10px;margin-top:5px;opacity:${cardOpacity};${done ? 'filter:grayscale(0.3);' : ''}">
-        <div style="display:flex;align-items:flex-start;justify-content:space-between;gap:6px;margin-bottom:4px;">
-          <div style="font-size:13px;font-weight:700;color:var(--text);line-height:1.2;${strike}">${e.emoji} ${e.subject}</div>
-          <span style="font-size:11.5px;font-weight:700;color:${urgency};background:${urgBg};padding:2px 8px;border-radius:10px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${badge}</span>
+      return `<div style="background:${sc}15;border:1px solid ${sc}40;border-left:3px solid ${sc};border-radius:6px;padding:4px 6px;margin-top:3px;opacity:${cardOpacity};${done ? 'filter:grayscale(0.3);' : ''}">
+        <div style="display:flex;align-items:center;justify-content:space-between;gap:4px;margin-bottom:2px;">
+          <div style="font-size:11px;font-weight:700;color:var(--text);line-height:1.2;${strike}">${e.emoji} ${e.subject}</div>
+          <span style="font-size:10px;font-weight:700;color:${urgency};background:${urgBg};padding:1px 5px;border-radius:8px;border:1px solid ${urgency}40;flex-shrink:0;white-space:nowrap;">${badge}</span>
         </div>
-        <div style="margin-bottom:3px;"><span style="color:${bc};font-size:11px;font-weight:600;background:${bb};border:1px solid ${bc}40;padding:1px 7px;border-radius:6px;">${e.board}</span></div>
-        <div style="font-size:12px;font-weight:600;color:var(--text);margin-top:3px;line-height:1.3;${strike}">${e.paper}</div>
-        <div style="font-size:11px;color:var(--muted);margin-top:3px;">🕐 ${timeStr}${e.duration ? ' &nbsp;·&nbsp; ⏱ ' + e.duration : ''}</div>
+        <div style="font-size:10px;color:var(--muted);line-height:1.3;${strike}">${e.paper}</div>
       </div>`;
     }).join('');
 
     const hasExams = examsOnDay.length > 0;
-    html += `<div style="min-height:${hasExams ? '120' : '70'}px;padding:8px 7px;border-right:${isLast ? 'none' : '1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday ? 'var(--accent-dim)' : isPast ? 'var(--surface2)' : isWeekend ? 'rgba(248,251,254,0.6)' : 'var(--surface)'};">
-      <div style="font-size:${isToday ? '14' : '13'}px;font-weight:${isToday ? '800' : '500'};color:${isToday ? 'var(--accent-dark)' : isPast ? 'var(--muted2)' : 'var(--text)'};${isToday ? 'background:var(--accent);color:#fff;width:24px;height:24px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;' : ''}">${day}</div>
+    html += `<div style="min-height:${hasExams ? '80' : '44'}px;padding:5px 5px;border-right:${isLast ? 'none' : '1px solid var(--border)'};border-bottom:1px solid var(--border);background:${isToday ? 'var(--accent-dim)' : isPast ? 'var(--surface2)' : isWeekend ? 'rgba(248,251,254,0.6)' : 'var(--surface)'};">
+      <div style="font-size:${isToday ? '12' : '11'}px;font-weight:${isToday ? '800' : '500'};color:${isToday ? 'var(--accent-dark)' : isPast ? 'var(--muted2)' : 'var(--text)'};${isToday ? 'background:var(--accent);color:#fff;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;' : ''}">${day}</div>
       ${inlineEvents}
     </div>`;
   }
@@ -957,7 +955,7 @@ function renderExamCalendar() {
   if (remainder !== 0) {
     for (let i = 0; i < 7 - remainder; i++) {
       const isLast = i === (7 - remainder - 1);
-      html += `<div style="min-height:70px;border-right:${isLast ? 'none' : '1px solid var(--border)'};background:var(--surface2);"></div>`;
+      html += `<div style="min-height:44px;border-right:${isLast ? 'none' : '1px solid var(--border)'};background:var(--surface2);"></div>`;
     }
   }
 
