@@ -287,7 +287,7 @@
         ? `<a class="mini-btn" href="${esc(p.msUrl)}" target="_blank" rel="noopener" title="Mark scheme">MS</a>`
         : `<span class="mini-btn muted" title="${esc(p.msNote || 'Not publicly available')}">MS</span>`;
       return `
-        <div class="paper-row">
+        <div class="paper-row" id="paper-${esc(p.id)}">
           <span class="pr-name">${esc(p.paperName)} <span class="code">${esc(p.paperCode || '')}</span></span>
           <span class="pr-actions">${attemptBtn} ${qpBtn} ${msBtn}</span>
         </div>`;
@@ -296,7 +296,7 @@
     const seriesHtml = seriesOrder.map((yr) => {
       const ps = seriesMap.get(yr);
       return `
-        <details class="series-block">
+        <details class="series-block" id="series-${esc(yr.replace(/\s+/g,'-').toLowerCase())}">
           <summary class="series-summary">
             <span class="ss-year">${esc(yr)}</span>
             <span class="ss-count">${ps.length} paper${ps.length === 1 ? '' : 's'}</span>
@@ -468,6 +468,25 @@
   }
 
   renderPage();
+
+  // Deep-link: past-papers.html#paper-<id> scrolls to that paper row and
+  // opens its parent series and board blocks so it's visible.
+  const hash = location.hash.slice(1);
+  if (hash) {
+    const target = document.getElementById(hash);
+    if (target) {
+      // Open any ancestor <details> elements so the row is visible.
+      let el = target.parentElement;
+      while (el) {
+        if (el.tagName === 'DETAILS') el.open = true;
+        el = el.parentElement;
+      }
+      setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'center' }), 120);
+      target.style.transition = 'background 0.4s';
+      target.style.background = 'rgba(37,99,235,0.08)';
+      setTimeout(() => { target.style.background = ''; }, 1800);
+    }
+  }
 })();
 </script>
 <div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>

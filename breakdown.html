@@ -2440,22 +2440,43 @@ function renderPastPapersChecklist(subjects) {
       </div>`;
       // Progress bar
       html += `<div style="height:4px;background:var(--surface3);"><div style="height:4px;width:${pct}%;background:${progressColor};transition:width 0.3s;"></div></div>`;
-      // Paper rows
-      html += `<div style="padding:10px 14px 14px;display:flex;flex-direction:column;gap:6px;">`;
-      board.papers.forEach(p => {
-        let done = false;
-        try {
-          const stored = JSON.parse(localStorage.getItem(`paperAttempt.${p.id}`) || 'null');
-          done = stored && stored.status === 'completed';
-        } catch (_) {}
-        const checkId = `pp-chk-${p.id}`;
-        html += `<label for="${checkId}" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;border:1px solid ${done ? 'var(--green)' : 'var(--border)'};background:${done ? 'rgba(22,163,74,0.05)' : 'var(--surface2)'};cursor:pointer;transition:border-color 0.15s,background 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='${done ? 'var(--green)' : 'var(--border)'}'">
-          <input type="checkbox" id="${checkId}" ${done ? 'checked' : ''} style="width:16px;height:16px;accent-color:var(--green);flex-shrink:0;cursor:pointer;" onchange="togglePaperDone('${p.id}', this)">
-          <span style="flex:1;font-size:13.5px;color:var(--text);${done ? 'text-decoration:line-through;color:var(--muted);' : ''}">${p.paperName}${p.paperCode ? ` <span style="font-size:11px;color:var(--muted2);margin-left:4px;">${p.paperCode}</span>` : ''}</span>
-          <span style="font-size:12px;color:var(--muted2);white-space:nowrap;">${p.year || ''}</span>
-          <a href="past-papers.html" style="font-size:12px;font-weight:500;color:#fff;text-decoration:none;background:var(--accent);padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0;" onclick="event.stopPropagation()">▶ Try it</a>
-          <a href="paper-attempt.html?id=${encodeURIComponent(p.id)}" style="font-size:12px;font-weight:500;color:var(--accent-dark);text-decoration:none;background:var(--accent-dim);padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0;" onclick="event.stopPropagation()">▶ Open</a>
-        </label>`;
+
+      // Group papers by year, most recent first
+      const MONTH_RANK = { 'June':3, 'Autumn':2, 'November':1, 'October':1, 'May':2 };
+      const sortedPapers = [...board.papers].sort((a, b) => {
+        const yr = s => { const m = (s.year||'').match(/(\d{4})/); return m ? parseInt(m[1]) : 0; };
+        const mo = s => { const m = (s.year||'').match(/June|Autumn|November|October|May/); return m ? (MONTH_RANK[m[0]]||0) : 0; };
+        return (yr(b) - yr(a)) || (mo(b) - mo(a));
+      });
+      const yearOrder = [];
+      const yearMap = new Map();
+      sortedPapers.forEach(p => {
+        if (!yearMap.has(p.year)) { yearMap.set(p.year, []); yearOrder.push(p.year); }
+        yearMap.get(p.year).push(p);
+      });
+
+      html += `<div style="padding:10px 14px 14px;display:flex;flex-direction:column;gap:10px;">`;
+      yearOrder.forEach(yr => {
+        const papers = yearMap.get(yr);
+        // Year heading
+        html += `<div style="font-size:12px;font-weight:600;color:var(--muted2);text-transform:uppercase;letter-spacing:0.06em;padding:4px 2px 2px;">${yr}</div>`;
+        html += `<div style="display:flex;flex-direction:column;gap:6px;">`;
+        papers.forEach(p => {
+          let done = false;
+          try {
+            const stored = JSON.parse(localStorage.getItem(`paperAttempt.${p.id}`) || 'null');
+            done = stored && stored.status === 'completed';
+          } catch (_) {}
+          const checkId = `pp-chk-${p.id}`;
+          const tryItUrl = `past-papers.html#paper-${encodeURIComponent(p.id)}`;
+          html += `<label for="${checkId}" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;border:1px solid ${done ? 'var(--green)' : 'var(--border)'};background:${done ? 'rgba(22,163,74,0.05)' : 'var(--surface2)'};cursor:pointer;transition:border-color 0.15s,background 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='${done ? 'var(--green)' : 'var(--border)'}'">
+            <input type="checkbox" id="${checkId}" ${done ? 'checked' : ''} style="width:16px;height:16px;accent-color:var(--green);flex-shrink:0;cursor:pointer;" onchange="togglePaperDone('${p.id}', this)">
+            <span style="flex:1;font-size:13.5px;color:var(--text);${done ? 'text-decoration:line-through;color:var(--muted);' : ''}">${p.paperName}${p.paperCode ? ` <span style="font-size:11px;color:var(--muted2);margin-left:4px;">${p.paperCode}</span>` : ''}</span>
+            <a href="${tryItUrl}" style="font-size:12px;font-weight:500;color:#fff;text-decoration:none;background:var(--accent);padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0;" onclick="event.stopPropagation()">▶ Try it</a>
+            <a href="paper-attempt.html?id=${encodeURIComponent(p.id)}" style="font-size:12px;font-weight:500;color:var(--accent-dark);text-decoration:none;background:var(--accent-dim);padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0;" onclick="event.stopPropagation()">▶ Open</a>
+          </label>`;
+        });
+        html += `</div>`;
       });
       html += `</div></div>`;
     });
