@@ -2303,6 +2303,22 @@ function setTab(name) {
   try { sessionStorage.setItem('breakdown_tab', name); } catch (_) {}
 }
 
+// Restore the saved tab immediately on parse so the correct panel shows
+// before load() finishes its Supabase calls.
+(function () {
+  const VALID = ['summary','topics','practice','exams','flashcards','pastpapers'];
+  try {
+    const saved = sessionStorage.getItem('breakdown_tab');
+    if (saved && VALID.includes(saved)) {
+      // If restoring flashcards, unhide its tab button right away.
+      if (saved === 'flashcards') {
+        const btn = document.getElementById('tabFlashcards');
+        if (btn) btn.style.display = '';
+      }
+      setTab(saved);
+    }
+  } catch (_) {}
+})();
 
 let practiceCarouselIdx = 0;
 
