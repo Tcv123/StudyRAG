@@ -35,7 +35,7 @@ const BIOLOGY_OCR_A_GCSE_QUESTIONS = {
     amber: [
       { q: 'A cell is 50 μm long. In an image it appears 25 mm long. What is the magnification?', options: ['×0.5','×500','×50','×5000'], answer: 1 },
       { q: 'A cell viewed at ×200 measures 40 mm in the image. What is the actual length?', options: ['8 μm','200 μm','2000 μm','0.2 μm'], answer: 1 },
-      { q: 'Why are mitochondria especially numerous in muscle cells?', options: ['Muscle cells need to make protein','Muscle cells respire a lot to release energy for contraction','Muscle cells need many ribosomes','Muscle cells need to photosynthesise'], answer: 1 },
+      { q: 'Why are mitochondria especially numerous in muscle cells?', options: ['Muscle cells need to make protein','Muscle cells respire a lot to release energy for contraction','Muscle cells need many ribosomes','Muscle cells need to absorb minerals'], answer: 1 },
       { q: 'Which feature of a root hair cell increases the rate of mineral ion uptake?', options: ['A flagellum','Many mitochondria for active transport','Chloroplasts for photosynthesis','A thick cell wall'], answer: 1 },
       { q: 'Which structures are found in BOTH a plant cell and a bacterial cell?', options: ['Cell wall and ribosomes','Nucleus and chloroplast','Vacuole and mitochondrion','Plasmid and chloroplast'], answer: 0 },
       { q: 'Why is electron microscopy needed to see a virus?', options: ['Viruses absorb light','Viruses are smaller than the resolution of a light microscope','Viruses move too fast','Viruses are coloured'], answer: 1 },
@@ -97,7 +97,7 @@ const BIOLOGY_OCR_A_GCSE_QUESTIONS = {
       { q: 'A DNA strand reads A G C T T A. What does the complementary strand read?', options: ['T C G A A T','A G C T T A','T G A C T A','C G T A A T'], answer: 0 },
       { q: 'A protein is 100 amino acids long. How many DNA bases are needed (minimum) to code for it?', options: ['100','200','300','400'], answer: 2 },
       { q: 'A reaction with enzyme gives 30 cm³ of product in 60 s. What is the rate in cm³/s?', options: ['0.5','2','30','60'], answer: 0 },
-      { q: 'A graph of rate vs temperature for a human enzyme rises, peaks at 37 °C and falls sharply. The fall is because:', options: ['The enzyme runs out of substrate','The enzyme denatures — active site changes shape','The enzyme freezes','The pH changes'], answer: 1 },
+      { q: 'A graph of rate vs temperature for a human enzyme rises, peaks at 37 °C and falls sharply. The fall is because:', options: ['The enzyme runs out of substrate','The enzyme denatures — active site changes shape','The substrate is destroyed','The pH changes'], answer: 1 },
       { q: 'A graph of rate vs substrate concentration rises and then plateaus. The plateau is because:', options: ['Substrate runs out','All active sites are occupied — enzyme concentration is now limiting','The enzyme denatures','pH has changed'], answer: 1 },
       { q: 'Why is amylase only active in the mouth and small intestine, not the stomach?', options: ['Stomach has no starch','Stomach pH is too low — amylase denatures','Stomach is too warm','Stomach contains lipase'], answer: 1 },
       { q: 'Which graph shape best shows the effect of pH on most enzymes?', options: ['Straight line','Increases then plateaus','Bell-shaped curve with optimum','Step graph'], answer: 2 },
