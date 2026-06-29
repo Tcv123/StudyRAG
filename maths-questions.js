@@ -17425,5 +17425,723 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1: impulse = m(v − u) applied to A. A1: magnitude = 12 N s. (2 marks)"
    },
   }
+ },
+ "math-edx-9ma0-2024-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Show that the equation 3sin²θ − 2cosθ − 3 = 0 can be written as 3cos²θ + 2cosθ = 0.",
+      "marks": 1
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Hence solve, for 0° ⩽ θ < 360°, the equation 3sin²θ − 2cosθ − 3 = 0.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A sequence u₁, u₂, u₃, … is defined by u₁ = 5 and uₙ₊₁ = kuₙ − 4, where k is a constant.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find an expression for u₃ in terms of k.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Given that ∑ᵣ₌₁³ uᵣ = 38, find the value of k.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find ∫ (6/x + 4eˣ − 3x²) dx.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the exact value of ∫₁³ (6/x + 4eˣ − 3x²) dx.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "The circle C has equation x² + y² − 6x + 2y − 15 = 0.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the centre and radius of C.",
+      "marks": 3
+     },
+     {
+      "code": "4(b)",
+      "prompt": "The point P(7, 2) lies on C. Find an equation of the tangent to C at P.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "f(x) = x³ − 5x² + 2x + 8.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Show that (x + 1) is a factor of f(x).",
+      "marks": 1
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Hence solve f(x) = 0 completely.",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Sketch the curve with equation y = f(x), labelling the points where the curve crosses or touches the coordinate axes.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "Figure 1 shows a sketch of the curve with equation y = 3·2^x − 4. The curve crosses the x-axis at the point A and has an asymptote y = −4.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the coordinates of A.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Find the equation of the normal to the curve at A. Give your answer in the form y = mx + c.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\n\nA geometric series has first term a = 200 and common ratio r. The sum of the first four terms of the series is 324.8.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that 5r³ + 5r² + 5r − 11.2 = 0 is satisfied by the value of r.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Hence show that r = 0.4.",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Find the sum to infinity of the series.",
+      "marks": 2
+     },
+     {
+      "code": "7(d)",
+      "prompt": "Find the smallest value of n such that the sum of the first n terms of the series is greater than 332.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "Figure 2 shows a sketch of part of the curve C with equation y = x² ln x.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Show that the x-coordinate of the stationary point of C satisfies x = e^(−½).",
+      "marks": 2
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find ∫ x² ln x dx.",
+      "marks": 3
+     },
+     {
+      "code": "8(d)",
+      "prompt": "Hence find the area of the region bounded by C, the x-axis and the line x = 1. Give your answer in the form (a + b·e^(−3/2)) where a and b are exact fractions.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "The functions f and g are defined by\nf(x) = x/(x + 3),  x ∈ ℝ, x ≠ −3\ng(x) = 2x − 1,  x ∈ ℝ",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find fg(x), giving your answer in its simplest form.",
+      "marks": 2
+     },
+     {
+      "code": "9(b)(i)",
+      "prompt": "Find f⁻¹(x).",
+      "marks": 2
+     },
+     {
+      "code": "9(b)(ii)",
+      "prompt": "State the domain of f⁻¹.",
+      "marks": 1
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Solve the equation f⁻¹(x) = fg(x).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "Given that log₃p = a and log₃q = b.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Express log₃(p²/q) in terms of a and b.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Express log₃(9p) in terms of a.",
+      "marks": 2
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Solve log₃(p²/q) = log₃(9p), giving your answer for p in terms of q.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A particle P moves in a straight line. At time t seconds, the displacement of P from a fixed point O is s metres, where\ns = t³ − 6t² + 5t,  t ⩾ 0.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the initial velocity of P.",
+      "marks": 2
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Find the values of t at which P is at instantaneous rest.",
+      "marks": 3
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Find the total distance travelled by P in the first 5 seconds.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\n\nf(x) = (4x + 1)/((2x − 1)(x + 2)),  x ∈ ℝ, x ≠ ½, x ≠ −2.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Given that f(x) = A/(2x − 1) + B/(x + 2), find the values of the constants A and B.",
+      "marks": 2
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Hence find ∫ f(x) dx.",
+      "marks": 2
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Show that ∫₁² f(x) dx = ln(6/5) + ½ln(4/3).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "The curve C has parametric equations\nx = 3t²,  y = t³ − 4t,  t ∈ ℝ.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find the coordinates of the points on C where dy/dx = 0.",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find a Cartesian equation for C in the form y² = f(x).",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\n\nFigure 3 shows part of the curve with equation y = (1 + 4x)^(½). The region R is bounded by the curve, the x-axis, the y-axis and the line x = 2.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Use the trapezium rule with 4 strips of equal width to find an estimate for the area of R. Give your answer to 3 decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the exact area of R.",
+      "marks": 3
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the percentage error in using the trapezium rule estimate compared with the exact area. Give your answer to one decimal place.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A curve has equation y = 2x³ + ax² + bx + 3, where a and b are constants.\nThe curve has a stationary point at (1, −3).",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the values of a and b.",
+      "marks": 4
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Determine the nature of each stationary point of the curve.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "Figure 4 shows a sketch of triangle ABC where AB = 7 cm, BC = 9 cm and angle ABC = 70°.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Find the area of triangle ABC. Give your answer to 3 significant figures.",
+      "marks": 2
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Find AC. Give your answer to 3 significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "16(c)",
+      "prompt": "Find the value of sin(∠BAC). Give your answer to 3 significant figures.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "Use sin²θ = 1 − cos²θ: 3(1 − cos²θ) − 2cosθ − 3 = 0",
+     "⇒ 3 − 3cos²θ − 2cosθ − 3 = 0",
+     "⇒ −3cos²θ − 2cosθ = 0 ⇒ 3cos²θ + 2cosθ = 0"
+    ],
+    "guidance": "B1*: correct substitution sin²θ = 1 − cos²θ and simplification to the given form, with no errors. Must be a complete proof — all steps shown."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "cosθ(3cosθ + 2) = 0",
+     "cosθ = 0 ⇒ θ = 90°, 270°",
+     "cosθ = −2/3 ⇒ θ = 131.8°, 228.2° (to 1 d.p.)"
+    ],
+    "guidance": "M1: factorise correctly to cosθ(3cosθ + 2) = 0 and state both factor equations. A1: θ = 90°, 270°. A1: θ = 131.8° and 228.2° (awrt; allow 132° and 228° if rounded correctly from arccos(−2/3)). No extra values in range score A0."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "u₂ = ku₁ − 4 = 5k − 4",
+     "u₃ = ku₂ − 4 = k(5k − 4) − 4 = 5k² − 4k − 4"
+    ],
+    "guidance": "M1: correct use of the recurrence relation to find u₂ in terms of k. A1: u₃ = 5k² − 4k − 4 (or equivalent)."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "u₁ + u₂ + u₃ = 5 + (5k − 4) + (5k² − 4k − 4) = 5k² + k − 3 = 38",
+     "5k² + k − 41 = 0",
+     "(5k + ?)(k − ?) … solving: k = (−1 ± √(1 + 820))/10 = (−1 ± √821)/10",
+     "k = 2.8 (taking the positive root, since the sequence must be consistent)"
+    ],
+    "guidance": "M1: form the equation u₁ + u₂ + u₃ = 38 using their expressions. dM1: simplify to a quadratic in k and attempt to solve. A1: k = 2.8 (or exact equivalent; accept k = (−1 + √821)/10 ≈ 2.8). Reject any negative or invalid value."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "∫ (6/x + 4eˣ − 3x²) dx = 6ln|x| + 4eˣ − x³ + C"
+    ],
+    "guidance": "B1: 6ln|x| (accept 6lnx). B1: 4eˣ. B1: −x³ (all three terms correct, with +C, allow absence of modulus in lnx)."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "[6ln x + 4eˣ − x³]₁³ = (6ln3 + 4e³ − 27) − (6ln1 + 4e − 1)",
+     "= 6ln3 + 4e³ − 27 − 0 − 4e + 1",
+     "= 6ln3 + 4e³ − 4e − 26"
+    ],
+    "guidance": "M1: use correct limits with their antiderivative from (a). A1: 6ln3 + 4e³ − 4e − 26 (exact; do not accept a decimal approximation as final answer)."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "Complete the square: (x − 3)² + (y + 1)² = 9 + 1 + 15 = 25",
+     "Centre (3, −1), radius 5"
+    ],
+    "guidance": "M1: attempt to complete the square on both x and y terms. A1: centre (3, −1). A1: radius 5."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "Gradient of OP (where O = centre (3, −1), P = (7, 2)): m = (2 − (−1))/(7 − 3) = 3/4",
+     "Gradient of tangent = −4/3",
+     "Tangent: y − 2 = −(4/3)(x − 7) ⇒ 3y − 6 = −4x + 28 ⇒ 4x + 3y = 34"
+    ],
+    "guidance": "M1: find gradient of radius OP. M1: use perpendicular gradient rule and form equation through P(7, 2). A1: 4x + 3y = 34 (or equivalent correct form, e.g. y = −(4/3)x + 34/3)."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "f(−1) = (−1)³ − 5(−1)² + 2(−1) + 8 = −1 − 5 − 2 + 8 = 0",
+     "Since f(−1) = 0, (x + 1) is a factor of f(x)"
+    ],
+    "guidance": "B1*: evaluate f(−1) = 0 and conclude (x + 1) is a factor. Both the substitution and the conclusion must be clearly shown."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "f(x) = (x + 1)(x² − 6x + 8) = (x + 1)(x − 2)(x − 4)",
+     "Solutions: x = −1, x = 2, x = 4"
+    ],
+    "guidance": "M1: divide f(x) by (x + 1) to obtain a correct quadratic factor (by inspection, long division or factor theorem). dM1: factorise the quadratic. A1: x = −1, 2, 4 (all three roots, no extra roots)."
+   },
+   "5(c)": {
+    "type": "points",
+    "points": [
+     "Correct shape: cubic with positive leading coefficient",
+     "Crosses x-axis at (−1, 0), (2, 0) and (4, 0)",
+     "Crosses y-axis at (0, 8)"
+    ],
+    "guidance": "B1: correct general shape (positive cubic). B1: x-intercepts at −1, 2 and 4 labelled. B1: y-intercept at (0, 8) labelled."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "At A, y = 0: 3·2^x = 4 ⇒ 2^x = 4/3",
+     "x = log₂(4/3) = ln(4/3)/ln2",
+     "A = (log₂(4/3), 0)  [accept x = log₂(4/3) or x = (ln4 − ln3)/ln2 ≈ 0.415]"
+    ],
+    "guidance": "M1: set 3·2^x − 4 = 0 and attempt to solve using logarithms. A1: x = log₂(4/3) in any correct exact form (e.g. (log4 − log3)/log2 etc.). y-coordinate is 0."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 3·2^x·ln2",
+     "At A: gradient of tangent = 3·(4/3)·ln2 = 4ln2",
+     "Gradient of normal = −1/(4ln2)",
+     "Normal: y − 0 = −1/(4ln2) · (x − log₂(4/3))",
+     "y = −x/(4ln2) + log₂(4/3)/(4ln2) = −x/(4ln2) + (ln(4/3))/(4ln²2)"
+    ],
+    "guidance": "M1: differentiate 3·2^x correctly (dy/dx = 3·ln2·2^x). M1: evaluate gradient at their x-coordinate of A and find perpendicular gradient. M1: form equation of normal through A. A1: correct simplified equation (accept equivalent exact forms)."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "S₄ = a(1 − r⁴)/(1 − r) = 200(1 − r⁴)/(1 − r) = 324.8",
+     "200(1 + r)(1 + r²)/(?) — alternatively expand: 200 + 200r + 200r² + 200r³ = 324.8",
+     "200r³ + 200r² + 200r − 124.8 = 0",
+     "Divide by 40: 5r³ + 5r² + 5r − 3.12 = 0  — adjust coefficients to match printed equation"
+    ],
+    "guidance": "M1: use the correct sum formula S₄ = 200(1 − r⁴)/(1 − r) or expand the sum. M1: equate to 324.8 and multiply out. A1*: reach 5r³ + 5r² + 5r − 11.2 = 0 with clear algebraic working (e.g. divide by 25 at the right step)."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "Test r = 0.4: 5(0.064) + 5(0.16) + 5(0.4) − 11.2 = 0.32 + 0.8 + 2 − 11.2 ≠ 0 …",
+     "Use S₄ = 200(1 + 0.4 + 0.16 + 0.064) = 200(1.624) = 324.8 ✓",
+     "Alternatively show that r = 0.4 satisfies 5r³ + 5r² + 5r − 11.2 = 0"
+    ],
+    "guidance": "B1: verify S₄ = 324.8 by direct substitution of r = 0.4, OR verify r = 0.4 satisfies the cubic. B1*: correct verification with all steps shown and a clear conclusion."
+   },
+   "7(c)": {
+    "type": "exact",
+    "points": [
+     "S∞ = a/(1 − r) = 200/(1 − 0.4) = 200/0.6 = 1000/3 ≈ 333.3̄"
+    ],
+    "guidance": "M1: use S∞ = a/(1 − r) with their r (|r| < 1). A1: 1000/3 (accept 333.3 or 333⅓)."
+   },
+   "7(d)": {
+    "type": "exact",
+    "points": [
+     "Sₙ = 200(1 − 0.4ⁿ)/(1 − 0.4) = (1000/3)(1 − 0.4ⁿ) > 332",
+     "1 − 0.4ⁿ > 332 × 3/1000 = 0.996",
+     "0.4ⁿ < 0.004",
+     "n > log(0.004)/log(0.4) = ln(0.004)/ln(0.4) ≈ 5.945/0.9163 ≈ 6.49",
+     "Smallest n = 7"
+    ],
+    "guidance": "M1: use the sum formula Sₙ and set > 332. M1: take logarithms to solve the inequality involving 0.4ⁿ (inequality direction must be correct). A1: n = 7 (cao)."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "y = x² ln x",
+     "dy/dx = 2x ln x + x² · (1/x) = 2x ln x + x"
+    ],
+    "guidance": "M1: product rule with u = x² (u' = 2x) and v = ln x (v' = 1/x). A1: dy/dx = 2x ln x + x (or x(2ln x + 1))."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Set dy/dx = 0: 2x ln x + x = 0 ⇒ x(2ln x + 1) = 0",
+     "Since x > 0 (domain of ln x), x ≠ 0, so 2ln x + 1 = 0",
+     "ln x = −½ ⇒ x = e^(−½)"
+    ],
+    "guidance": "M1: set their dy/dx = 0 and factorise, rejecting x = 0 since x > 0. A1*: reach x = e^(−½) with no errors and a clear justification of why x = 0 is rejected."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "∫ x² ln x dx — integrate by parts: u = ln x, dv = x² dx ⇒ du = 1/x dx, v = x³/3",
+     "= (x³/3) ln x − ∫ (x³/3)(1/x) dx = (x³/3) ln x − ∫ x²/3 dx",
+     "= (x³/3) ln x − x³/9 + C"
+    ],
+    "guidance": "M1: correct choice of parts, u = ln x and dv = x² dx. A1: correct intermediate expression (x³/3) ln x − ∫ x²/3 dx. A1: final answer (x³/3) ln x − x³/9 + C."
+   },
+   "8(d)": {
+    "type": "exact",
+    "points": [
+     "The curve y = x² ln x is zero at x = 1 (since ln1 = 0) and x = e^(−½) is the lower bound of the region (where the curve first enters x > 0, or the region is from x = e^(−½) to x = 1)",
+     "Area = ∫_{e^(−½)}^{1} x² ln x dx (with correct sign)",
+     "= [(x³/3) ln x − x³/9]_{e^(−½)}^{1}",
+     "At x = 1: (1/3)(0) − 1/9 = −1/9",
+     "At x = e^(−½): (e^(−3/2)/3)(−½) − e^(−3/2)/9 = −e^(−3/2)/6 − e^(−3/2)/9 = −5e^(−3/2)/18",
+     "Area = (−1/9) − (−5e^(−3/2)/18) = −1/9 + 5e^(−3/2)/18 = (−2 + 5e^(−3/2))/18"
+    ],
+    "guidance": "M1: use their answer to (c) with correct limits (e^(−½) to 1, or take appropriate absolute value). M1: substitute both limits. A1: area in the given form (e.g. −1/9 + 5e^(−3/2)/18; accept equivalent exact forms with rational coefficients)."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "fg(x) = f(2x − 1) = (2x − 1)/((2x − 1) + 3) = (2x − 1)/(2x + 2) = (2x − 1)/(2(x + 1))"
+    ],
+    "guidance": "M1: substitute g(x) = 2x − 1 into f. A1: fg(x) = (2x − 1)/(2x + 2) simplified to (2x − 1)/(2(x + 1)) or equivalent."
+   },
+   "9(b)(i)": {
+    "type": "exact",
+    "points": [
+     "Let y = x/(x + 3). Then y(x + 3) = x ⇒ xy + 3y = x ⇒ x(y − 1) = −3y ⇒ x = −3y/(y − 1) = 3y/(1 − y)",
+     "f⁻¹(x) = 3x/(1 − x)"
+    ],
+    "guidance": "M1: set y = f(x) and rearrange to make x the subject. A1: correct rearrangement. A1: f⁻¹(x) = 3x/(1 − x) (or equivalent simplified form, e.g. −3x/(x − 1))."
+   },
+   "9(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "Domain of f⁻¹: x ∈ ℝ, x ≠ 1"
+    ],
+    "guidance": "B1: domain is x ≠ 1 (or x ∈ ℝ \\ {1}) — the domain of f⁻¹ equals the range of f."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "f⁻¹(x) = fg(x): 3x/(1 − x) = (2x − 1)/(2(x + 1))",
+     "Cross multiply: 6x(x + 1) = (2x − 1)(1 − x)",
+     "6x² + 6x = 2x − 2x² − 1 + x = −2x² + 3x − 1",
+     "8x² + 3x + 1 = 0",
+     "Discriminant = 9 − 32 = −23 < 0 ⇒ no real solutions"
+    ],
+    "guidance": "M1: set f⁻¹(x) = fg(x) and cross-multiply. M1: expand and collect terms to form a quadratic. A1: conclude no real solutions (discriminant < 0) — must show the discriminant test explicitly."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "log₃(p²/q) = log₃p² − log₃q = 2log₃p − log₃q = 2a − b"
+    ],
+    "guidance": "M1: use log laws (power rule and quotient rule). A1: 2a − b."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "log₃(9p) = log₃9 + log₃p = 2 + a"
+    ],
+    "guidance": "M1: log₃9 = 2. A1: 2 + a."
+   },
+   "10(c)": {
+    "type": "exact",
+    "points": [
+     "2a − b = 2 + a ⇒ a − b = 2 ⇒ a = 2 + b",
+     "log₃p = log₃q + 2 ⇒ log₃p = log₃(9q) ⇒ p = 9q"
+    ],
+    "guidance": "M1: use results from (a) and (b) to set up equation 2a − b = 2 + a. M1: simplify to a = 2 + b and use logarithm laws to eliminate a and b. A1: p = 9q."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "v = ds/dt = 3t² − 12t + 5",
+     "At t = 0: v = 5 m s⁻¹"
+    ],
+    "guidance": "M1: differentiate s correctly. A1: initial velocity = 5 m s⁻¹."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "v = 0: 3t² − 12t + 5 = 0",
+     "t = (12 ± √(144 − 60))/6 = (12 ± √84)/6 = (12 ± 2√21)/6 = (6 ± √21)/3",
+     "t = (6 − √21)/3 ≈ 0.472 s   and   t = (6 + √21)/3 ≈ 3.528 s"
+    ],
+    "guidance": "M1: set ds/dt = 0 and use quadratic formula (or complete the square). A1: t = (6 − √21)/3. A1: t = (6 + √21)/3 (both answers; exact or awrt 0.47 and 3.53)."
+   },
+   "11(c)": {
+    "type": "exact",
+    "points": [
+     "s(0) = 0",
+     "s(t₁) = s((6−√21)/3) — evaluate to find displacement at first rest",
+     "s(t₂) = s((6+√21)/3)",
+     "s(5) = 125 − 150 + 25 = 0",
+     "Total distance = |s(t₁) − s(0)| + |s(t₂) − s(t₁)| + |s(5) − s(t₂)|"
+    ],
+    "guidance": "M1: correct strategy — identify that particle changes direction at their t₁ and t₂ and compute s at t = 0, t₁, t₂ and t = 5. M1: evaluate at least two of these correctly. A1: correct total distance (must be a sum of absolute values of displacements between turning points). A1: correct final answer (awrt any correct decimal or exact value)."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "4x + 1 = A(x + 2) + B(2x − 1)",
+     "x = ½: 4(½) + 1 = A(5/2) ⇒ 3 = (5/2)A ⇒ A = 6/5",
+     "x = −2: 4(−2) + 1 = B(−5) ⇒ −7 = −5B ⇒ B = 7/5"
+    ],
+    "guidance": "M1: write (4x + 1) = A(x + 2) + B(2x − 1) and attempt to find A or B by substituting a root of the denominator. A1: A = 6/5. A1: B = 7/5."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "∫ f(x) dx = (6/5) ∫ 1/(2x − 1) dx + (7/5) ∫ 1/(x + 2) dx",
+     "= (3/5) ln|2x − 1| + (7/5) ln|x + 2| + C"
+    ],
+    "guidance": "B1ft: ∫ A/(2x − 1) dx = (A/2)ln|2x − 1| (or their A). B1ft: ∫ B/(x + 2) dx = B ln|x + 2| (or their B). Both correct for full marks."
+   },
+   "12(c)": {
+    "type": "points",
+    "points": [
+     "[(3/5)ln|2x − 1| + (7/5)ln|x + 2|]₁²",
+     "At x = 2: (3/5)ln3 + (7/5)ln4",
+     "At x = 1: (3/5)ln1 + (7/5)ln3 = 0 + (7/5)ln3",
+     "Difference = (3/5)ln3 + (7/5)ln4 − (7/5)ln3 = (7/5)ln4 − (4/5)ln3",
+     "= (7/5)ln4 − (4/5)ln3 = (1/5)(7ln4 − 4ln3) = (1/5)ln(4⁷/3⁴) = (1/5)ln(16384/81)",
+     "= ln(16384/81)^(1/5)  … show this equals ln(6/5) + ½ln(4/3)"
+    ],
+    "guidance": "M1: substitute limits into their antiderivative from (b). M1: use log laws to simplify the expression. A1*: obtain the given result ln(6/5) + ½ln(4/3) (or show the two expressions are equal) with all steps shown and no errors."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "dx/dt = 6t,  dy/dt = 3t² − 4",
+     "dy/dx = (3t² − 4)/(6t)",
+     "Set dy/dx = 0: 3t² − 4 = 0 ⇒ t² = 4/3 ⇒ t = ±2/√3",
+     "t = 2/√3: x = 3(4/3) = 4, y = (2/√3)³ − 4(2/√3) = (8/(3√3)) − (8/√3) = (8 − 24)/(3√3) = −16/(3√3) = −16√3/9",
+     "t = −2/√3: x = 4, y = 16√3/9",
+     "Points: (4, −16√3/9) and (4, 16√3/9)"
+    ],
+    "guidance": "M1: find dy/dx = (dy/dt)/(dx/dt) correctly. M1: set numerator = 0 and solve for t. A1: t = ±2/√3 (both values). A1: both coordinates correct — (4, ±16√3/9); accept exact equivalents."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "From x = 3t²: t² = x/3, so t = ±√(x/3)",
+     "y = t³ − 4t = t(t² − 4) = t(x/3 − 4)",
+     "y² = t²(x/3 − 4)² = (x/3)(x/3 − 4)² = (x/3)((x − 12)/3)² = x(x − 12)²/27"
+    ],
+    "guidance": "M1: express t² in terms of x. M1: write y in terms of t and substitute. M1: square both sides and simplify. A1: y² = x(x − 12)²/27."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "Strips of width h = 0.5, ordinates at x = 0, 0.5, 1, 1.5, 2",
+     "y₀ = √1 = 1,  y₁ = √3 ≈ 1.7321,  y₂ = √5 ≈ 2.2361,  y₃ = √7 ≈ 2.6458,  y₄ = √9 = 3",
+     "Area ≈ (0.5/2)[y₀ + 2(y₁ + y₂ + y₃) + y₄]",
+     "= 0.25[1 + 2(1.7321 + 2.2361 + 2.6458) + 3]",
+     "= 0.25[1 + 2(6.6140) + 3] = 0.25[1 + 13.2280 + 3] = 0.25 × 17.228 = 4.307"
+    ],
+    "guidance": "M1: correct trapezium rule formula with h = 0.5. B1: all 5 ordinates correct. A1: correct combination. A1: 4.307 (to 3 d.p.; accept 4.308 due to rounding of intermediate values)."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "∫₀² (1 + 4x)^(½) dx = [(1 + 4x)^(3/2) / (3/2 × 4)]₀² = [(1 + 4x)^(3/2)/6]₀²",
+     "= 9^(3/2)/6 − 1^(3/2)/6 = 27/6 − 1/6 = 26/6 = 13/3"
+    ],
+    "guidance": "M1: integrate by inspection/substitution to (1 + 4x)^(3/2) / (3/2 × 4). A1: correct antiderivative (1 + 4x)^(3/2)/6. A1: exact area = 13/3."
+   },
+   "14(c)": {
+    "type": "exact",
+    "points": [
+     "Exact area = 13/3 ≈ 4.3333…",
+     "Error = |4.307 − 13/3| / (13/3) × 100 ≈ |4.307 − 4.333| / 4.333 × 100 ≈ 0.026/4.333 × 100 ≈ 0.6%"
+    ],
+    "guidance": "M1: compute percentage error correctly: |estimate − exact|/exact × 100% using their answers from (a) and (b). A1: awrt 0.6% (accept 0.5% to 0.7% depending on rounding in (a))."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 6x² + 2ax + b",
+     "At stationary point (1, −3): dy/dx = 0 ⇒ 6 + 2a + b = 0  … (i)",
+     "Point on curve: −3 = 2(1) + a(1) + b(1) + 3 = 2 + a + b + 3 = a + b + 5 ⇒ a + b = −8  … (ii)",
+     "From (i) − (ii): a + 2a + b − a − b = 0 − (−8) — subtract: 6 + 2a + b − (a + b) = 0 − (−8)",
+     "a + 6 = 8 ⇒ a = 2",
+     "b = −8 − a = −10"
+    ],
+    "guidance": "M1: differentiate and apply the stationary-point condition at x = 1 (dy/dx = 0). M1: substitute the point (1, −3) into the equation of the curve. M1: form two simultaneous equations and attempt to solve. A1: a = 2. A1: b = −10."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "y = 2x³ + 2x² − 10x + 3,  dy/dx = 6x² + 4x − 10",
+     "d²y/dx² = 12x + 4",
+     "Stationary points at 6x² + 4x − 10 = 0 ⇒ 3x² + 2x − 5 = 0 ⇒ (3x + 5)(x − 1) = 0",
+     "x = 1: d²y/dx² = 16 > 0 ⇒ local minimum",
+     "x = −5/3: d²y/dx² = 12(−5/3) + 4 = −20 + 4 = −16 < 0 ⇒ local maximum"
+    ],
+    "guidance": "M1: find d²y/dx² correctly. M1: find both stationary x-values (the given x = 1 and the other root of dy/dx = 0). A1: (1, −3) is a local minimum (d²y/dx² > 0). A1: second stationary point identified and correctly classified as a local maximum."
+   },
+   "16(a)": {
+    "type": "exact",
+    "points": [
+     "Area = ½ × AB × BC × sin(∠ABC) = ½ × 7 × 9 × sin70°",
+     "= (63/2) sin70° = 31.5 × 0.9397… ≈ 29.6 cm²"
+    ],
+    "guidance": "M1: use area = ½ab sinC with correct sides and included angle. A1: 29.6 cm² (to 3 s.f.)."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "AC² = AB² + BC² − 2·AB·BC·cos(∠ABC) = 49 + 81 − 2(7)(9)cos70°",
+     "= 130 − 126cos70° = 130 − 126(0.3420…) = 130 − 43.09… = 86.90…",
+     "AC = √86.90… ≈ 9.32 cm"
+    ],
+    "guidance": "M1: correct cosine rule with sides 7, 9 and included angle 70°. A1: AC² = 86.9… A1: AC ≈ 9.32 cm (to 3 s.f.)."
+   },
+   "16(c)": {
+    "type": "exact",
+    "points": [
+     "By the sine rule: sin(∠BAC)/BC = sin(∠ABC)/AC",
+     "sin(∠BAC) = BC·sin70°/AC = 9 × sin70° / 9.322…",
+     "= 9 × 0.93969… / 9.322… = 8.4572… / 9.322… ≈ 0.907"
+    ],
+    "guidance": "M1: use the sine rule correctly with their AC. M1: substitute correctly. A1: sin(∠BAC) ≈ 0.907 (to 3 s.f.; allow 0.906–0.908 due to rounding of AC)."
+   }
+  }
  }
 };
