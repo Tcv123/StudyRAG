@@ -488,9 +488,9 @@ function renderMsCard(part, paperKey, paperId) {
 
   return `
     ${promptHtml}
+    <div class="ms-points-list">${pointsHtml}</div>
     ${modelAnswerHtml}
-    ${keyTermsHtml}
-    ${guidanceHtml}`;
+    ${keyTermsHtml}`;
 }
 
 function renderPaper(paper) {
