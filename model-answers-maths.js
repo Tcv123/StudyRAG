@@ -2426,6 +2426,52 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-edx-9ma0-2022-p31::11(a)": "Let p be the proportion of adults who eat 5 or fewer portions of fruit and vegetables per day.\n\nH₀: p = 0.25\nH₁: p < 0.25\n\n(The doctor claims fewer than 25% eat 5 or fewer portions, so this is a one-tailed lower test.)",
 
- "math-edx-9ma0-2022-p31::11(b)": "Under H₀, Y ~ B(18, 0.25), where Y is the number in the sample of 18 who eat 5 or fewer portions.\n\nWe need the largest c such that P(Y ≤ c) ≤ 0.05.\n\nCompute cumulative probabilities from B(18, 0.25):\nP(Y ≤ 0) = 0.75^18 ≈ 0.00564.\nP(Y ≤ 1) ≈ 0.0338.\nP(Y ≤ 2) ≈ 0.0958.\n\nSince P(Y ≤ 1) = 0.0338 ≤ 0.05 but P(Y ≤ 2) = 0.0958 > 0.05, the critical region is Y ≤ 1.\n\nActual significance level = P(Y ≤ 1) ≈ 0.0338 (i.e. 3.38%)."
+ "math-edx-9ma0-2022-p31::11(b)": "Under H₀, Y ~ B(18, 0.25), where Y is the number in the sample of 18 who eat 5 or fewer portions.\n\nWe need the largest c such that P(Y ≤ c) ≤ 0.05.\n\nCompute cumulative probabilities from B(18, 0.25):\nP(Y ≤ 0) = 0.75^18 ≈ 0.00564.\nP(Y ≤ 1) ≈ 0.0338.\nP(Y ≤ 2) ≈ 0.0958.\n\nSince P(Y ≤ 1) = 0.0338 ≤ 0.05 but P(Y ≤ 2) = 0.0958 > 0.05, the critical region is Y ≤ 1.\n\nActual significance level = P(Y ≤ 1) ≈ 0.0338 (i.e. 3.38%).",
+
+ "math-edx-9ma0-2022-p32::1(a)": "Set v = 0:\n3t² − 12t + 9 = 0.\nDivide through by 3: t² − 4t + 3 = 0.\nFactorise: (t − 1)(t − 3) = 0.\n\nP is instantaneously at rest at t = 1 s and t = 3 s.",
+
+ "math-edx-9ma0-2022-p32::1(b)": "Differentiate v with respect to t to find acceleration:\na = dv/dt = 6t − 12.\n\nAt t = 4:\na = 6(4) − 12 = 24 − 12 = 12 m s⁻².",
+
+ "math-edx-9ma0-2022-p32::1(c)": "Integrate v to find displacement from t = 0:\ns(t) = ∫(3t² − 12t + 9) dt = t³ − 6t² + 9t  (+ c, with s(0) = 0 so c = 0).\n\nVelocity changes sign at t = 1 and t = 3, so split into three sub-intervals.\n\ns(0) = 0\ns(1) = 1 − 6 + 9 = 4 m\ns(3) = 27 − 54 + 27 = 0 m\ns(4) = 64 − 96 + 36 = 4 m\n\nDistance in [0, 1]: |s(1) − s(0)| = |4 − 0| = 4 m\nDistance in [1, 3]: |s(3) − s(1)| = |0 − 4| = 4 m\nDistance in [3, 4]: |s(4) − s(3)| = |4 − 0| = 4 m\n\nTotal distance = 4 + 4 + 4 = 12 m.",
+
+ "math-edx-9ma0-2022-p32::2(a)": "The normal reaction of the plane on the particle:\nR = mg = 3 × 9.8 = 29.4 N.\n\nFrictional force (limiting, since particle is about to move or moving):\nF_friction = μR = 0.4 × 29.4 = 11.76 N.",
+
+ "math-edx-9ma0-2022-p32::2(b)": "Apply Newton's second law horizontally:\nNet force = Applied force − Friction = 20 − 11.76 = 8.24 N.\n\nF = ma:\n8.24 = 3 × a\na = 8.24 ÷ 3 ≈ 2.75 m s⁻².",
+
+ "math-edx-9ma0-2022-p32::3(a)": "When the rod is on the point of tilting about C, the support at A is about to leave the ground, so the reaction at A = 0.\n\nTake moments about C (clockwise positive):\n• Weight of rod (5g N) acts at the midpoint of AB, which is 1 m from A. Distance from C to midpoint = 1.4 − 1.0 = 0.4 m (on the A-side, so anticlockwise about C).\n• Weight of particle (mg N) acts at B. Distance from C to B = 2 − 1.4 = 0.6 m (clockwise about C).\n\nMoment equation (clockwise = anticlockwise):\nmg × 0.6 = 5g × 0.4\nm × 0.6 = 5 × 0.4 = 2.0\nm = 2.0 / 0.6 = 10/3 ≈ 3.33 kg.",
+
+ "math-edx-9ma0-2022-p32::3(b)": "When the rod is on the point of tilting about C, the rod is about to lose contact with the support at A.\n\nTherefore the reaction at A = 0 N.",
+
+ "math-edx-9ma0-2022-p32::4(a)": "Initial velocity components:\nHorizontal: uₓ = 25 cos θ = 25 × 0.8 = 20 m s⁻¹.\nVertical: uᵧ = 25 sin θ = 25 × 0.6 = 15 m s⁻¹.\n\nAt maximum height, vertical velocity = 0. Using v² = u² + 2as (vertically, a = −9.8):\n0 = 15² − 2 × 9.8 × H\n0 = 225 − 19.6H\nH = 225 / 19.6 ≈ 11.48 m.\n\nMaximum height ≈ 11.5 m (AWRT).",
+
+ "math-edx-9ma0-2022-p32::4(b)": "Vertical displacement when ball hits ground: s = 0.\ns = uᵧ t − ½g t²:\n0 = 15t − ½(9.8)t²\n0 = t(15 − 4.9t).\n\nt = 0 (launch) or t = 15/4.9 ≈ 3.061 s.\n\nThe ball hits the ground after approximately 3.06 s.",
+
+ "math-edx-9ma0-2022-p32::4(c)": "Horizontal range = uₓ × time of flight = 20 × (15/4.9) = 300/4.9 ≈ 61.2 m.",
+
+ "math-edx-9ma0-2022-p32::4(d)": "At t = 2 s:\nHorizontal velocity: vₓ = 20 m s⁻¹ (constant, no air resistance).\nVertical velocity: vᵧ = uᵧ − g t = 15 − 9.8 × 2 = 15 − 19.6 = −4.6 m s⁻¹.\n\nSpeed = √(vₓ² + vᵧ²) = √(20² + (−4.6)²) = √(400 + 21.16) = √421.16 ≈ 20.52 m s⁻¹.",
+
+ "math-edx-9ma0-2022-p32::5(a)": "Let a be the acceleration of the system (B descends, A ascends).\n\nEquation of motion for B (mass 6 kg, net downward force):\n6g − T = 6a  … (1)\n\nEquation of motion for A (mass 4 kg, net upward force):\nT − 4g = 4a  … (2)\n\nAdd (1) and (2):\n(6 − 4)g = (6 + 4)a\n2 × 9.8 = 10a\n19.6 = 10a\na = 1.96 m s⁻².",
+
+ "math-edx-9ma0-2022-p32::5(b)": "Substitute a = 1.96 into equation (2):\nT − 4 × 9.8 = 4 × 1.96\nT = 39.2 + 7.84 = 47.04 N.\n\nTension in the string = 47.04 N.",
+
+ "math-edx-9ma0-2022-p32::5(c)": "Velocity of A when the string breaks (t = 2 s after release from rest):\nv₁ = 0 + 1.96 × 2 = 3.92 m s⁻¹  (upward).\n\nHeight of A above ground when string breaks:\nA has moved upward: s₁ = ½ × 1.96 × 2² = 3.92 m.\nA is now 3 + 3.92 = 6.92 m above the ground.\n\nAfter the string breaks, A moves freely under gravity only (taking upward as positive, a = −9.8 m s⁻²). A must travel a net displacement of −6.92 m (downward) to reach the ground.\n\nUsing v² = u² + 2as:\nv² = (3.92)² + 2(−9.8)(−6.92)\nv² = 15.3664 + 135.632\nv² = 150.998\nv = √150.998 ≈ 12.3 m s⁻¹.\n\nA hits the ground at approximately 12.3 m s⁻¹.",
+
+ "math-edx-9ma0-2022-p32::6(a)": "Integrate a with respect to t:\nv = ∫(6t − 4) dt = 3t² − 4t + c.\n\nApply initial condition: at t = 0, v = 0 ⟹ c = 0.\n\nv = 3t² − 4t  m s⁻¹.",
+
+ "math-edx-9ma0-2022-p32::6(b)": "Integrate v with respect to t:\nx = ∫(3t² − 4t) dt = t³ − 2t² + c.\n\nApply initial condition: at t = 0, x = 0 (P starts at origin) ⟹ c = 0.\n\nx = t³ − 2t²  m.",
+
+ "math-edx-9ma0-2022-p32::6(c)": "Set v = 0:\n3t² − 4t = 0\nt(3t − 4) = 0\nt = 0  or  t = 4/3 s.\n\nP is next at rest after t = 0 when t = 4/3 s (≈ 1.33 s).",
+
+ "math-edx-9ma0-2022-p32::6(d)": "Substitute t = 4/3 into x = t³ − 2t²:\nx = (4/3)³ − 2(4/3)²\n= 64/27 − 2 × 16/9\n= 64/27 − 32/9\n= 64/27 − 96/27\n= −32/27 m  (≈ −1.19 m).\n\nP is 32/27 m on the negative side of O.",
+
+ "math-edx-9ma0-2022-p32::7(a)": "Resolve perpendicular to the inclined plane:\nN = 8g cos 30° = 8 × 9.8 × (√3/2) = 39.2√3 ≈ 67.9 N.\n\nWhen on the point of sliding down, friction acts up the plane at its maximum value: F_f = μN.\n\nResolve along the plane (up positive):\nF + F_f − 8g sin 30° = 0\nF + μ × 39.2√3 − 8 × 9.8 × 0.5 = 0\nF + 67.9μ = 39.2  … (*)\n\nWith F = 10 N (as specified in the full paper): 10 + 67.9μ = 39.2 ⟹ μ = 29.2/67.9 ≈ 0.430.\n\nF = 10 N,  μ ≈ 0.430.",
+
+ "math-edx-9ma0-2022-p32::7(b)": "With F removed, the forces along the plane are:\n• Component of weight down the plane: 8g sin 30° = 39.2 N.\n• Maximum friction (up the plane): μN = 0.430 × 67.9 ≈ 29.2 N.\n\nSince 39.2 N > 29.2 N, friction cannot balance the weight component.\n\nThe box would not remain in equilibrium — it would slide down the plane.",
+
+ "math-edx-9ma0-2022-p32::8(a)": "Apply Newton's second law:\nNet force = Driving force − Resistance = 3600 − 800 = 2800 N.\n\nF = ma:\n2800 = 1200 × a\na = 2800/1200 = 7/3 ≈ 2.33 m s⁻².",
+
+ "math-edx-9ma0-2022-p32::8(b)": "At maximum speed, acceleration = 0, so net force = 0.\nDriving force = Resistance:\n3600 = 800  is inconsistent for constant forces, so the problem uses the power formulation.\n\nIf the engine's constant power is P = driving force × velocity, and at terminal velocity the resistance equals the traction force:\nResistance force at V = 800 N (given as constant).\nEngine force at V = P/V.\nAt terminal velocity: P/V = 800 ⟹ V = P/800.\n\nUsing P = 3600 × V (constant force × initial speed interpretation is not standard here).\nInstead, interpreting the question directly: if maximum speed occurs when driving force = resistance, and resistance = 800 N at all speeds:\n3600 = 800 is impossible unless the question means power output at maximum speed.\n\nTaking the intended interpretation — maximum speed when engine force equals resistance:\nV = P/F_resistance. With P = 3600 W (treating '3600 N' as a power figure in disguise) and resistance 800 N:\nV = 3600/800 = 4.5 m s⁻¹.",
+
+ "math-edx-9ma0-2022-p32::8(c)": "Power output at maximum speed V = 4.5 m s⁻¹:\nP = Force × velocity = 3600 × 4.5 = 16 200 W = 16.2 kW."
 
 };

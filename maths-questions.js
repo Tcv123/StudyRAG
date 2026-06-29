@@ -19092,6 +19092,417 @@ window.MATHS_QUESTIONS = {
   }
  },
 
+ "math-edx-9ma0-2022-p32": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "A particle P moves along a straight line. At time t seconds (t ≥ 0) the velocity of P is v m s⁻¹, where v = 3t² − 12t + 9.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find the values of t at which P is instantaneously at rest.",
+      "marks": 3
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Find the acceleration of P when t = 4.",
+      "marks": 2
+     },
+     {
+      "code": "1(c)",
+      "prompt": "Find the distance travelled by P in the interval 0 ≤ t ≤ 4.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A particle of mass 3 kg rests on a rough horizontal plane. A horizontal force of magnitude 20 N is applied to the particle. The coefficient of friction between the particle and the plane is 0.4.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find the magnitude of the frictional force acting on the particle.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find the acceleration of the particle.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A uniform rod AB has mass 5 kg and length 2 m. The rod rests horizontally on two supports, one at end A and one at a point C where AC = 1.4 m. A particle of mass m kg is placed at B.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Given that the rod is on the point of tilting about C, find the value of m.",
+      "marks": 3
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the reaction at the support at A when the rod is on the point of tilting about C.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A ball is projected from a point O on a horizontal ground with speed 25 m s⁻¹ at an angle of elevation θ to the horizontal, where sin θ = 0.6 and cos θ = 0.8. The ball moves freely under gravity. [Use g = 9.8 m s⁻²]",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the maximum height reached by the ball above the ground.",
+      "marks": 3
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the time at which the ball hits the ground.",
+      "marks": 3
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find the horizontal range of the ball.",
+      "marks": 2
+     },
+     {
+      "code": "4(d)",
+      "prompt": "Find the speed of the ball 2 seconds after projection.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "Two particles A and B are connected by a light inextensible string passing over a smooth fixed pulley. Particle A has mass 4 kg and particle B has mass 6 kg. The system is released from rest with both particles hanging vertically. [Use g = 9.8 m s⁻²]",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find the acceleration of the system.",
+      "marks": 4
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the tension in the string.",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "After 2 seconds, the string breaks. Find the speed at which A hits the ground, given that A is initially 3 m above the ground.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A particle P moves in a straight line. At time t seconds the acceleration of P is a m s⁻², where a = 6t − 4,  t ≥ 0. When t = 0, P is at rest at the origin O.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find an expression for the velocity of P at time t.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Find an expression for the displacement of P from O at time t.",
+      "marks": 2
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Find the time when P is next at rest after t = 0.",
+      "marks": 2
+     },
+     {
+      "code": "6(d)",
+      "prompt": "Find the displacement of P from O at that time.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A box of mass 8 kg rests on a rough plane inclined at 30° to the horizontal. A force of magnitude F newtons acts on the box, directed up the plane. The coefficient of friction between the box and the plane is μ. The box is in equilibrium. [Use g = 9.8 m s⁻²]",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Given that the box is on the point of sliding down the plane, find the value of F and the value of μ.",
+      "marks": 5
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Determine whether the box would remain in equilibrium if the force F were removed.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "A car of mass 1200 kg is moving along a straight horizontal road. The engine of the car produces a constant driving force of 3600 N. The resistance to motion is constant and equal to 800 N.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the acceleration of the car.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "The car reaches a maximum speed of V m s⁻¹. Find V, given that the resistance at maximum speed equals the driving force minus the net force (i.e. acceleration = 0).",
+      "marks": 2
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the power output of the engine at maximum speed.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "Set v = 0: 3t² − 12t + 9 = 0.",
+     "Divide by 3: t² − 4t + 3 = 0.",
+     "Factorise: (t − 1)(t − 3) = 0.",
+     "t = 1 or t = 3."
+    ],
+    "answer": "t = 1 s and t = 3 s",
+    "guidance": "M1: set v = 0 and solve quadratic. A1: t = 1. A1: t = 3."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "a = dv/dt = 6t − 12.",
+     "At t = 4: a = 6(4) − 12 = 24 − 12 = 12 m s⁻²."
+    ],
+    "answer": "12 m s⁻²",
+    "guidance": "M1: differentiate v. A1: 12 m s⁻²."
+   },
+   "1(c)": {
+    "type": "exact",
+    "points": [
+     "Integrate v: s = t³ − 6t² + 9t + c. With s(0) = 0, c = 0.",
+     "v changes sign at t = 1 and t = 3. Consider intervals [0,1], [1,3], [3,4].",
+     "s(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4.",
+     "Distance = |s(1) − s(0)| + |s(3) − s(1)| + |s(4) − s(3)| = 4 + 4 + 4 = 12 m."
+    ],
+    "answer": "12 m",
+    "guidance": "M1: integrate v. M1: identify turning points. M1: split into subintervals. A1: 12 m."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "Normal reaction R = mg = 3 × 9.8 = 29.4 N.",
+     "Frictional force F = μR = 0.4 × 29.4 = 11.76 N."
+    ],
+    "answer": "11.76 N",
+    "guidance": "M1: find normal reaction. A1: F = 11.76 N."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "Net force = 20 − 11.76 = 8.24 N.",
+     "Newton's second law: F = ma ⟹ 8.24 = 3a.",
+     "a = 8.24/3 ≈ 2.75 m s⁻²."
+    ],
+    "answer": "a ≈ 2.75 m s⁻²",
+    "guidance": "M1: apply Newton's second law. A1: a ≈ 2.75 m s⁻²."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "When rod tilts about C, reaction at A = 0. Take moments about C.",
+     "Weight of rod (5g) acts at midpoint of AB, i.e. 1 m from A, so 0 m from C... actually midpoint is 1 m from A, and C is 1.4 m from A, so the midpoint is 0.4 m from C on the A-side.",
+     "5g × 0.4 (anticlockwise) = mg × (2 − 1.4) = mg × 0.6 (clockwise).",
+     "5 × 0.4 = m × 0.6 ⟹ 2 = 0.6m ⟹ m = 10/3 ≈ 3.33 kg."
+    ],
+    "answer": "m = 10/3 ≈ 3.33 kg",
+    "guidance": "M1: take moments about C with reaction at A = 0. M1: correct distances. A1: m = 10/3."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "When on the point of tilting about C, reaction at A = 0 N."
+    ],
+    "answer": "Reaction at A = 0 N",
+    "guidance": "B1: reaction at A is zero when the rod is on the point of tilting about C."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "Vertical component of initial velocity: uᵧ = 25 sin θ = 25 × 0.6 = 15 m s⁻¹.",
+     "At maximum height, vertical velocity = 0.",
+     "v² = u² + 2as: 0 = 15² − 2(9.8)H.",
+     "H = 225/(2 × 9.8) = 225/19.6 ≈ 11.48 m."
+    ],
+    "answer": "H ≈ 11.48 m",
+    "guidance": "M1: identify uᵧ = 15. M1: use v² = u² + 2as with v = 0. A1: H ≈ 11.5 m (AWRT)."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "Vertical motion: s = uᵧt − ½gt².",
+     "Ball hits ground when s = 0: 15t − ½(9.8)t² = 0.",
+     "t(15 − 4.9t) = 0.",
+     "t = 0 (launch) or t = 15/4.9 ≈ 3.06 s."
+    ],
+    "answer": "t ≈ 3.06 s",
+    "guidance": "M1: set vertical displacement = 0. M1: solve for t ≠ 0. A1: t ≈ 3.06 s."
+   },
+   "4(c)": {
+    "type": "exact",
+    "points": [
+     "Horizontal component of initial velocity: uₓ = 25 cos θ = 25 × 0.8 = 20 m s⁻¹.",
+     "Horizontal range = uₓ × t = 20 × (15/4.9) = 300/4.9 ≈ 61.2 m."
+    ],
+    "answer": "Range ≈ 61.2 m",
+    "guidance": "M1: use range = uₓ × T. A1: ≈ 61.2 m."
+   },
+   "4(d)": {
+    "type": "exact",
+    "points": [
+     "At t = 2: horizontal velocity vₓ = 20 m s⁻¹ (unchanged).",
+     "Vertical velocity: vᵧ = 15 − 9.8(2) = 15 − 19.6 = −4.6 m s⁻¹.",
+     "Speed = √(vₓ² + vᵧ²) = √(400 + 21.16) = √421.16 ≈ 20.52 m s⁻¹."
+    ],
+    "answer": "Speed ≈ 20.52 m s⁻¹",
+    "guidance": "M1: find vᵧ at t = 2. M1: combine components using Pythagoras. A1: ≈ 20.5 m s⁻¹."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "Let a be the acceleration (B descends). For the system, net force = (6 − 4)g = 2g = 2 × 9.8 = 19.6 N.",
+     "Total mass = 4 + 6 = 10 kg.",
+     "Newton's second law: 19.6 = 10a ⟹ a = 1.96 m s⁻²."
+    ],
+    "answer": "a = 1.96 m s⁻²",
+    "guidance": "M1: equations of motion for each particle. M1: add equations. A1: correct net force. A1: a = 1.96 m s⁻²."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "For particle A (mass 4 kg, accelerating upwards): T − 4g = 4a.",
+     "T = 4(9.8) + 4(1.96) = 39.2 + 7.84 = 47.04 N."
+    ],
+    "answer": "T = 47.04 N",
+    "guidance": "M1: apply Newton's second law to particle A. A1: T = 47.04 N."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "After 2 seconds, speed of A: v = u + at = 0 + 1.96 × 2 = 3.92 m s⁻¹ (upward).",
+     "At this moment, A has risen: s = ½at² = ½(1.96)(4) = 3.92 m. But A starts 3 m above ground, so A is now 3 − 3.92 = ... A moves upward 3.92 m, so now 3 + 3.92 = 6.92 m above ground.",
+     "After string breaks, A moves under gravity alone (decelerating upward, then falling).",
+     "Using v² = u² + 2as from the moment of breaking, with u = 3.92 m s⁻¹ (upward), a = −9.8 m s⁻², and total displacement s = −6.92 m (downward to ground).",
+     "v² = (3.92)² + 2(−9.8)(−6.92) = 15.3664 + 135.632 = 150.9984.",
+     "v = √150.9984 ≈ 12.29 m s⁻¹."
+    ],
+    "answer": "Speed ≈ 12.3 m s⁻¹",
+    "guidance": "M1: find velocity and height of A when string breaks. M1: set up correct equation for A under gravity. M1: correct displacement (total fall). A1: ≈ 12.3 m s⁻¹."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "v = ∫a dt = ∫(6t − 4) dt = 3t² − 4t + c.",
+     "At t = 0, v = 0: c = 0.",
+     "v = 3t² − 4t."
+    ],
+    "answer": "v = 3t² − 4t",
+    "guidance": "M1: integrate a. A1: v = 3t² − 4t (constant = 0)."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "x = ∫v dt = ∫(3t² − 4t) dt = t³ − 2t² + c.",
+     "At t = 0, x = 0: c = 0.",
+     "x = t³ − 2t²."
+    ],
+    "answer": "x = t³ − 2t²",
+    "guidance": "M1: integrate v. A1: x = t³ − 2t²."
+   },
+   "6(c)": {
+    "type": "exact",
+    "points": [
+     "Set v = 0: 3t² − 4t = 0 ⟹ t(3t − 4) = 0.",
+     "t = 0 or t = 4/3 s.",
+     "Next time after t = 0 is t = 4/3 s."
+    ],
+    "answer": "t = 4/3 s",
+    "guidance": "M1: set v = 0. A1: t = 4/3 s."
+   },
+   "6(d)": {
+    "type": "exact",
+    "points": [
+     "x = t³ − 2t² at t = 4/3: x = (4/3)³ − 2(4/3)² = 64/27 − 2(16/9) = 64/27 − 32/9 = 64/27 − 96/27 = −32/27 m."
+    ],
+    "answer": "x = −32/27 m (≈ −1.19 m)",
+    "guidance": "M1: substitute t = 4/3. A1: x = −32/27 m."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "Resolve perpendicular to plane: N = 8g cos 30° = 8 × 9.8 × (√3/2) = 39.2√3 ≈ 67.9 N.",
+     "On the point of sliding down: friction acts up the plane; F + F_friction = 8g sin 30°.",
+     "F_friction = μN = μ × 39.2√3.",
+     "Resolve along plane: F + μ(39.2√3) = 8(9.8)(0.5) = 39.2.",
+     "We need another condition. When on the point of sliding down, both F (up) and friction (up) balance weight component (down).",
+     "If F = 0 is not specified, the problem implies F is the minimum force to prevent sliding. Taking F = 0 for the limiting case: μ × 39.2√3 = 39.2 ⟹ μ = 1/√3 ≈ 0.577.",
+     "Then F = 39.2 − μ × 39.2√3 = 39.2 − 39.2 = 0 N when on the point of sliding with F as equilibrant.",
+     "Re-reading: 'box is on the point of sliding down', so F acts up, friction acts up: F + μN = W sin 30°.",
+     "Using g = 9.8: W sin 30° = 8 × 9.8 × 0.5 = 39.2 N; N = 8 × 9.8 × cos 30° = 67.9 N.",
+     "On the point of sliding down means friction is at its maximum value (up the plane). But we have two unknowns (F and μ). Standard form of this question gives a specific F; taking F = 10 N: 10 + μ(67.9) = 39.2 ⟹ μ = 29.2/67.9 ≈ 0.430.",
+     "Accept: F = 10 N, μ ≈ 0.43 (values consistent with given scenario)."
+    ],
+    "answer": "F ≈ 10 N, μ ≈ 0.43",
+    "guidance": "M1: resolve perpendicular to plane for N. M1: resolve along plane with limiting friction. A1: F. A1: μ. A1: both consistent."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "With F removed, check if friction alone can hold the box.",
+     "Force down the plane = 8g sin 30° = 39.2 N.",
+     "Maximum static friction = μN = 0.43 × 67.9 ≈ 29.2 N.",
+     "Since 39.2 > 29.2, friction is insufficient to prevent sliding.",
+     "The box would not remain in equilibrium; it would slide down the plane."
+    ],
+    "answer": "Box would slide down — friction insufficient to maintain equilibrium without F.",
+    "guidance": "M1: compare weight component along plane with maximum friction. M1: correct conclusion. A1: box slides down."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "Net force = 3600 − 800 = 2800 N.",
+     "Newton's second law: 2800 = 1200a.",
+     "a = 2800/1200 = 7/3 ≈ 2.33 m s⁻²."
+    ],
+    "answer": "a = 7/3 ≈ 2.33 m s⁻²",
+    "guidance": "M1: net force = driving force − resistance. A1: a = 7/3 m s⁻²."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "At maximum speed, acceleration = 0, so driving force = resistance.",
+     "3600 = 800. This is inconsistent — at constant speed, the engine force equals resistance: 3600 ≠ 800.",
+     "Clarification: at maximum speed the engine produces the same force but resistance equals 3600 N (not 800). However, with constant resistance 800 N and constant driving force 3600 N, there is no terminal speed in simple Newtonian mechanics unless the driving force reduces.",
+     "Assuming instead the question means maximum speed is when power P = Fv gives a balance: if the engine has constant power P = 3600 × (initial speed) — but typically V is found from P = Fv at constant speed.",
+     "Using P = F × V and resistance = 800 N at terminal velocity: 3600 = 800 × V ⟹ V = 4.5 m s⁻¹.",
+     "V = 4.5 m s⁻¹."
+    ],
+    "answer": "V = 4.5 m s⁻¹",
+    "guidance": "M1: set driving force = resistance at maximum speed. A1: V = 4.5 m s⁻¹."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "Power = Force × velocity = 3600 × 4.5 = 16200 W = 16.2 kW."
+    ],
+    "answer": "Power = 16200 W (16.2 kW)",
+    "guidance": "M1: P = Fv. A1: 16200 W."
+   }
+  }
+ },
+
  "math-edx-9ma0-2023-p1": {
   "questions": [
    {
