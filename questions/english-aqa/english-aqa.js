@@ -329,7 +329,7 @@ const ENGLISH_AQA_QUESTIONS = {
       { q: 'Who argued in "The Myth of Mars and Venus" (2007) that gender differences in language are exaggerated?', options: ['Deborah Cameron','Lakoff','Fishman','Butler'], answer: 0 },
       { q: 'Cameron\'s argument is that gender differences in language are…', options: ['Biologically fixed','Often overstated, culturally varied and overlap heavily between men and women','Purely genetic','Invented by linguists'], answer: 1 },
       { q: 'Judith Butler is associated with the concept of…', options: ['Tag questions','Performativity — gender is something we DO in everyday acts (including speech) rather than something we have','Pidgins','Creolisation'], answer: 1 },
-      { q: 'What is a "tag question"?', options: ['A question written on a tag','A short question added to a statement, e.g. "…isn\'t it?"','A type of punctuation','A nickname'], answer: 1 },
+      { q: 'What is a "tag question"?', options: ['A question written on a tag','A short question added to a statement, e.g. "…isn\'t it?"','A type of punctuation','A sentence connector'], answer: 1 },
       { q: 'Which of these is a "hedge"?', options: ['"sort of", "I think", "kind of"','"stop"','"go"','"no"'], answer: 0 },
       { q: 'Which term describes a word that implies a default male norm, e.g. "chairman", "mankind"?', options: ['Inclusive language','Marked form','Generic masculine / androcentric lexis','Gender-neutral lexis'], answer: 2 },
       { q: 'Which of these is considered gender-neutral alternative lexis?', options: ['"spokesperson" instead of "spokesman"','"actress" for all actors','"mankind"','"chairman"'], answer: 0 },
