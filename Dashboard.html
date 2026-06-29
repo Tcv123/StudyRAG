@@ -1802,16 +1802,10 @@ function renderRecentActivity(topicRows, medals, profile) {
       </div>`).join('');
   }
 
-  let expanded = false;
   function render() {
-    const shown = expanded ? events : events.slice(0, 6);
-    const btn = events.length > 6
-      ? `<button onclick="document.querySelector('#activityList')._toggle()" style="background:none;border:none;color:var(--accent);font-size:12px;font-weight:600;cursor:pointer;padding:8px 0 0;display:block;width:100%;">${expanded ? 'Show less ▴' : `View all (${events.length}) ▾`}</button>`
-      : '';
-    container.innerHTML = renderItems(shown) + btn;
+    container.innerHTML = renderItems(events);
   }
 
-  container._toggle = () => { expanded = !expanded; render(); };
   render();
 }
 
