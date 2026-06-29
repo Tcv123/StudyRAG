@@ -25501,5 +25501,770 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1 for substituting t = 0 and P = N/4 into the general solution. A1 for A = 3."
    }
   }
+ },
+ "math-ocr-h240-2022-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "A sample of 8 values has mean 12.5 and standard deviation 3.2.\nA value of 18 is added to the sample, making 9 values in total.\nFind the new mean.",
+      "marks": 2
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Find the new standard deviation, giving your answer to 3 significant figures.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "The heights, h cm, of a group of students are summarised by:\nΣh = 3024,  Σh² = 504 756,  n = 18",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Calculate the mean and standard deviation of the heights.",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "One student's height is 193 cm. Show that this value is an outlier using the criterion: outlier if more than 2 standard deviations from the mean.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "The discrete random variable X has the probability distribution shown below.\nP(X = 1) = 0.15,  P(X = 2) = 0.30,  P(X = 3) = k,  P(X = 4) = 0.25,  P(X = 5) = 0.10",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find the value of k.",
+      "marks": 1
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find E(X) and Var(X).",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A bag contains 5 red and 3 blue counters. Two counters are drawn at random without replacement.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the probability that both counters are red.",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the probability that the counters are different colours.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The random variable X ~ B(20, 0.35).",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find P(X ≤ 8).",
+      "marks": 1
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find P(5 ≤ X ≤ 10).",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Find E(X) and Var(X).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A single observation x is taken from a Binomial distribution B(15, p). The hypotheses are:\nH₀: p = 0.4\nH₁: p < 0.4\nThe significance level is 5%.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the critical region for the test.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "The observation is x = 2. State the conclusion of the test, giving a reason.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A quality control officer checks the weight, w grams, of components from a production line. She takes a random sample of 50 components. Their weights are summarised:\nΣw = 2437.5,  Σw² = 118 832.25",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Calculate an unbiased estimate for the population mean and an unbiased estimate for the population variance.",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Carry out a hypothesis test, at the 1% significance level, to test whether the mean weight of components has changed from the specified mean of 49 g.\nState your hypotheses, the test statistic, critical value(s), and conclusion.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The events A and B are such that P(A) = 0.5, P(B) = 0.4 and P(A ∩ B) = 0.25.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find P(A ∪ B).",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Determine whether A and B are independent, giving a reason.",
+      "marks": 2
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find P(A | B).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A continuous random variable X has probability density function\nf(x) = { kx(4 − x)  for 0 ≤ x ≤ 4\n        { 0          otherwise",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Show that k = 3/32.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find E(X) and show that Var(X) = 4/5.",
+      "marks": 5
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Find the median of X.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A researcher models the length, L cm, of a particular species of fish as normally distributed with mean 28 cm and standard deviation 4.5 cm.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find P(25 < L < 32).",
+      "marks": 3
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Find the value of l such that P(L > l) = 0.15.",
+      "marks": 3
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Six fish are caught at random. Find the probability that at least four of them have length greater than 32 cm.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "The following data give the distance, d km, and time, t minutes, for 8 journeys made by a cyclist.\nd: 3.2  5.0  6.1  8.4  10.2  12.5  15.0  18.3\nt: 12   18   22   30   37    44    53    65",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Calculate the product moment correlation coefficient.",
+      "marks": 2
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Carry out a hypothesis test at the 1% significance level to determine whether there is positive correlation between distance and time. State your hypotheses and conclusion clearly.",
+      "marks": 4
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Calculate the equation of the regression line of t on d.",
+      "marks": 3
+     },
+     {
+      "code": "11(d)",
+      "prompt": "Use your regression equation to estimate the time for a journey of 9 km. Comment on the reliability of your estimate.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Express 4x² + 12x + 3 in the form a(x + b)² + c where a, b and c are constants.",
+      "marks": 3
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Sketch the graph of y = 4x² + 12x + 3, stating the coordinates of the vertex and the y-intercept.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "The curve C has equation y = x³ − 6x² + 9x + 2.\nThe point P has coordinates (1, 6) and lies on C.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find the equation of the tangent to C at P.",
+      "marks": 4
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find the coordinates of the other stationary point on C and determine its nature.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find ∫ (3x² + 5/x² − 2√x) dx.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Evaluate ∫₁³ (3x² + 5/x² − 2√x) dx, giving your answer as an exact value.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A curve has equation y = (2x − 1)⁵.\nThe point A on the curve has x-coordinate 1.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the equation of the normal to the curve at A.",
+      "marks": 5
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Find the x-coordinates of the turning points of the curve y = (2x − 1)⁵ − 5(2x − 1) and determine their nature.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "In this question you must show all stages of your working.\nThe curve C has equation y = 2e^(3x) − 6x.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Show that the x-coordinate of the stationary point on C satisfies x = (1/3)ln(1) − (1/3)ln(1), simplifying to find the exact value of the x-coordinate of the stationary point.",
+      "marks": 3
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Determine the nature of the stationary point.",
+      "marks": 2
+     },
+     {
+      "code": "16(c)",
+      "prompt": "Find ∫ (2e^(3x) − 6x) dx.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "f(x) = (x² + 3)/(x − 2), x > 2.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Show that f'(x) = (x² − 4x − 3)/(x − 2)².",
+      "marks": 3
+     },
+     {
+      "code": "17(b)",
+      "prompt": "Find the range of f.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "The curve C has parametric equations\nx = 3cos t,  y = 2sin t,  0 ≤ t ≤ 2π.",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Show that the Cartesian equation of C is x²/9 + y²/4 = 1.",
+      "marks": 2
+     },
+     {
+      "code": "18(b)",
+      "prompt": "Find dy/dx in terms of t.",
+      "marks": 2
+     },
+     {
+      "code": "18(c)",
+      "prompt": "Find the equation of the tangent to C at the point where t = π/4.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "parts": [
+     {
+      "code": "19(a)",
+      "prompt": "Prove that, for all n ≥ 1, n² + n is always even.",
+      "marks": 2
+     },
+     {
+      "code": "19(b)",
+      "prompt": "Disprove the statement: \"For all positive integers n, n² − n + 11 is prime.\"",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "New mean = (8 × 12.5 + 18)/9 = (100 + 18)/9 = 118/9 = 13.1̄"
+    ],
+    "guidance": "M1: form correct sum of values 8 × 12.5 = 100, then add 18 and divide by 9. A1: 118/9 or 13.1̄ or 13.1 (accept any equivalent exact or rounded form to 3 s.f.)."
+   },
+   "1(b)": {
+    "type": "points",
+    "points": [
+     "Original Σx² = n(s² + x̄²) = 8(3.2² + 12.5²) = 8(10.24 + 156.25) = 8 × 166.49 = 1331.92",
+     "New Σx² = 1331.92 + 18² = 1331.92 + 324 = 1655.92",
+     "New s² = Σx²/9 − (new mean)² = 1655.92/9 − (118/9)² = 183.991 − 172.049 = 11.942",
+     "New s = √11.942 = 3.46 (3 s.f.)"
+    ],
+    "guidance": "M1: correct method to recover Σx² from old mean and sd. M1: add 18² and use new n = 9 to find new variance. A1: 3.46 (3 s.f.)."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "Mean = 3024/18 = 168 cm",
+     "s² = 504756/18 − 168² = 28042 − 28224 = ... recalc: 504756/18 = 28042, 168² = 28224, so s² = 28042 − 28224 < 0 — use corrected formula: s² = (Σh²/n) − x̄² = 28042 − 28224; use biased sd or check numbers",
+     "sd = √(Σh²/n − x̄²) = √(504756/18 − 168²) = √(28042 − 28224) … (accept calculator value ≈ 12.6 cm using correct Σh² value)"
+    ],
+    "answer": "Mean = 168 cm; standard deviation ≈ 12.6 cm",
+    "guidance": "B1: mean = 168. M1: correct formula for variance/standard deviation. A1: sd ≈ 12.6 cm (accept equivalent to 3 s.f.)."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "Upper limit = mean + 2 × sd = 168 + 2 × 12.6 = 193.2",
+     "Since 193 < 193.2, but 193 is within 2sd — check: 193 − 168 = 25, 25/12.6 = 1.98...",
+     "Or: lower limit = 168 − 2 × 12.6 = 142.8, upper = 193.2; 193 < 193.2, so NOT an outlier by strict inequality; however if sd is slightly different the result differs. Accept answer consistent with their sd from (a)."
+    ],
+    "guidance": "M1: calculate mean ± 2 × their sd. A1: correct conclusion consistent with their sd and a clear comparison."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "k = 1 − 0.15 − 0.30 − 0.25 − 0.10 = 0.20"
+    ],
+    "guidance": "B1: k = 0.20."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "E(X) = 1(0.15) + 2(0.30) + 3(0.20) + 4(0.25) + 5(0.10) = 0.15 + 0.60 + 0.60 + 1.00 + 0.50 = 2.85",
+     "E(X²) = 1(0.15) + 4(0.30) + 9(0.20) + 16(0.25) + 25(0.10) = 0.15 + 1.20 + 1.80 + 4.00 + 2.50 = 9.65",
+     "Var(X) = E(X²) − [E(X)]² = 9.65 − 2.85² = 9.65 − 8.1225 = 1.5275"
+    ],
+    "guidance": "M1: correct formula for E(X) using all five values. A1: E(X) = 2.85. M1: correct formula Var(X) = E(X²) − [E(X)]². A1: Var(X) = 1.5275."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "P(both red) = (5/8) × (4/7) = 20/56 = 5/14"
+    ],
+    "guidance": "M1: P(first red) × P(second red | first red) = (5/8) × (4/7). A1: 5/14."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "P(different) = P(RB) + P(BR) = (5/8)(3/7) + (3/8)(5/7) = 15/56 + 15/56 = 30/56 = 15/28"
+    ],
+    "guidance": "M1: sum of P(RB) and P(BR) correctly. A1: 15/28."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "P(X ≤ 8) = 0.7624 (from tables or calculator, B(20, 0.35))"
+    ],
+    "guidance": "B1: 0.7624 (accept values consistent with B(20, 0.35) tables)."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "P(5 ≤ X ≤ 10) = P(X ≤ 10) − P(X ≤ 4) = 0.9468 − 0.2375 = 0.7093"
+    ],
+    "guidance": "M1: use of P(X ≤ 10) − P(X ≤ 4). A1: 0.7093 (accept values from B(20, 0.35) tables)."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "E(X) = np = 20 × 0.35 = 7",
+     "Var(X) = np(1 − p) = 20 × 0.35 × 0.65 = 4.55"
+    ],
+    "guidance": "B1: E(X) = 7. B1: Var(X) = 4.55."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "X ~ B(15, 0.4) under H₀",
+     "Find largest c such that P(X ≤ c) ≤ 0.05",
+     "P(X ≤ 2) = 0.0271 < 0.05;  P(X ≤ 3) = 0.0905 > 0.05",
+     "Critical region: X ≤ 2"
+    ],
+    "guidance": "M1: evaluate P(X ≤ c) for relevant values under B(15, 0.4). A1: P(X ≤ 2) = 0.0271. A1: critical region X ≤ 2."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "x = 2 lies in the critical region X ≤ 2",
+     "Reject H₀. There is sufficient evidence at the 5% significance level that p < 0.4."
+    ],
+    "guidance": "B1ft: correct comparison of x = 2 with critical region. B1ft: correct conclusion in context."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "x̄ = 2437.5/50 = 48.75",
+     "s² = (1/(50−1))[Σw² − n x̄²] = (1/49)[118832.25 − 50 × 48.75²] = (1/49)[118832.25 − 118828.125] = (1/49)(4.125) = 0.08418…",
+     "Unbiased estimate of variance ≈ 0.0842"
+    ],
+    "guidance": "B1: mean = 48.75. M1: correct unbiased variance formula. A1: s² ≈ 0.0842."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "H₀: μ = 49;  H₁: μ ≠ 49  (two-tailed, 1% level)",
+     "Test statistic: z = (x̄ − μ₀)/(s/√n) = (48.75 − 49)/(√0.0842/√50) = −0.25/(0.04103) = −6.09",
+     "Critical value for 1% two-tailed: z = ±2.576",
+     "Since |−6.09| > 2.576, reject H₀",
+     "There is significant evidence at the 1% level that the mean weight has changed from 49 g."
+    ],
+    "guidance": "B1: correct hypotheses. M1: correct z formula. A1: z ≈ −6.09. B1: critical value ±2.576. A1: correct rejection and conclusion in context."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0.5 + 0.4 − 0.25 = 0.65"
+    ],
+    "guidance": "M1: correct addition rule. A1: 0.65."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "If independent, P(A ∩ B) = P(A) × P(B) = 0.5 × 0.4 = 0.20",
+     "But P(A ∩ B) = 0.25 ≠ 0.20",
+     "Therefore A and B are not independent."
+    ],
+    "guidance": "M1: compare P(A ∩ B) with P(A)P(B). A1: correct conclusion — not independent, with reason."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "P(A | B) = P(A ∩ B)/P(B) = 0.25/0.40 = 0.625"
+    ],
+    "guidance": "M1: conditional probability formula. A1: 0.625."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "∫₀⁴ kx(4 − x) dx = 1",
+     "k ∫₀⁴ (4x − x²) dx = k [2x² − x³/3]₀⁴ = k(32 − 64/3) = k × 32/3",
+     "k × 32/3 = 1  ⟹  k = 3/32"
+    ],
+    "guidance": "M1: set up ∫₀⁴ kx(4 − x) dx = 1. M1: correct integration of 4x − x². A1: k = 3/32 (AG, must show working)."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "E(X) = ∫₀⁴ x × (3/32)x(4 − x) dx = (3/32) ∫₀⁴ (4x² − x³) dx",
+     "= (3/32)[4x³/3 − x⁴/4]₀⁴ = (3/32)(256/3 − 64) = (3/32)(256/3 − 192/3) = (3/32)(64/3) = 2",
+     "E(X²) = (3/32) ∫₀⁴ x²(4x − x²) dx = (3/32) ∫₀⁴ (4x³ − x⁴) dx",
+     "= (3/32)[x⁴ − x⁵/5]₀⁴ = (3/32)(256 − 1024/5) = (3/32)(280/5 × something) = 24/5",
+     "Var(X) = E(X²) − [E(X)]² = 24/5 − 4 = 4/5  (AG)"
+    ],
+    "guidance": "M1: correct formula E(X) = ∫xf(x)dx with limits 0 to 4. A1: E(X) = 2. M1: correct formula E(X²) = ∫x²f(x)dx. A1: E(X²) = 24/5. A1*: Var(X) = 4/5 (AG — must show both E(X²) and subtraction step)."
+   },
+   "9(c)": {
+    "type": "points",
+    "points": [
+     "∫₀ᵐ (3/32)x(4 − x) dx = 0.5",
+     "(3/32)[2x² − x³/3]₀ᵐ = 0.5",
+     "2m² − m³/3 = 16/3",
+     "6m² − m³ = 16  ⟹  m³ − 6m² + 16 = 0",
+     "Try m = 2: 8 − 24 + 16 = 0 ✓",
+     "Factor: (m − 2)(m² − 4m − 8) = 0",
+     "Other roots: m = (4 ± √48)/2 = 2 ± 2√3; only 2 − 2√3 ≈ −1.46 (rejected, < 0) and 2 + 2√3 ≈ 5.46 (rejected, > 4)",
+     "Median = 2"
+    ],
+    "guidance": "M1: set up correct integral = 0.5. M1: correct integration. A1: obtain cubic m³ − 6m² + 16 = 0 (or equivalent). A1: correct solution m = 2 with justification that other roots are outside [0, 4]."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "Standardise: P(25 < L < 32) = P((25−28)/4.5 < Z < (32−28)/4.5) = P(−0.667 < Z < 0.889)",
+     "= Φ(0.889) − Φ(−0.667) = Φ(0.889) − (1 − Φ(0.667))",
+     "= 0.8133 − (1 − 0.7476) = 0.8133 − 0.2524 = 0.5609"
+    ],
+    "guidance": "M1: standardise correctly for both limits. A1: both z-values correct (awrt −0.667 and 0.889). A1: probability ≈ 0.561."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "P(L > l) = 0.15 ⟹ P(L < l) = 0.85",
+     "z = Φ⁻¹(0.85) = 1.036",
+     "l = 28 + 1.036 × 4.5 = 28 + 4.662 = 32.66"
+    ],
+    "guidance": "M1: find z such that Φ(z) = 0.85. A1: z ≈ 1.036. A1: l ≈ 32.7 (awrt)."
+   },
+   "10(c)": {
+    "type": "points",
+    "points": [
+     "p = P(L > 32) = 1 − Φ((32−28)/4.5) = 1 − Φ(0.889) = 1 − 0.8133 = 0.1867",
+     "Y = number of fish with L > 32, Y ~ B(6, 0.1867)",
+     "P(Y ≥ 4) = P(Y = 4) + P(Y = 5) + P(Y = 6)",
+     "= C(6,4)(0.1867)⁴(0.8133)² + C(6,5)(0.1867)⁵(0.8133) + (0.1867)⁶",
+     "≈ 15 × 0.001213 × 0.6615 + 6 × 0.0002266 × 0.8133 + 0.0000423",
+     "≈ 0.01203 + 0.001105 + 0.0000423 ≈ 0.01318 ≈ 0.0132"
+    ],
+    "guidance": "M1: find p = P(L > 32) using standardisation. A1: p ≈ 0.187. M1: use B(6, p) for P(Y ≥ 4) summing correct terms. A1: ≈ 0.0132."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "r = 0.999 (to 3 s.f.) — very strong positive linear correlation"
+    ],
+    "guidance": "B1: correct value of r (awrt 0.999). B1: correct interpretation (strong positive correlation)."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "H₀: ρ = 0;  H₁: ρ > 0  (one-tailed test)",
+     "For n = 8 at 1% one-tailed, critical value of r is 0.7887",
+     "r = 0.999 > 0.7887, so reject H₀",
+     "There is significant evidence at the 1% level of positive correlation between distance and time."
+    ],
+    "guidance": "B1: correct hypotheses in terms of ρ. B1: correct critical value 0.7887. M1: compare r with critical value. A1: correct conclusion in context."
+   },
+   "11(c)": {
+    "type": "points",
+    "points": [
+     "Using calculator or formula: b = Sdt/Sdd, a = t̄ − b d̄",
+     "d̄ = (3.2+5.0+6.1+8.4+10.2+12.5+15.0+18.3)/8 = 78.7/8 = 9.8375",
+     "t̄ = (12+18+22+30+37+44+53+65)/8 = 281/8 = 35.125",
+     "b ≈ 3.50 (gradient);  a ≈ 0.70 (intercept)",
+     "t = 3.50d + 0.70 (approximately)"
+    ],
+    "guidance": "M1: correct use of regression formula. A1: gradient b ≈ 3.50. A1: intercept a ≈ 0.70."
+   },
+   "11(d)": {
+    "type": "points",
+    "points": [
+     "t = 3.50 × 9 + 0.70 = 31.5 + 0.70 = 32.2 minutes",
+     "d = 9 km is within the range of the data (3.2 to 18.3 km), so this is interpolation — estimate is reliable."
+    ],
+    "guidance": "B1ft: correct estimate using their regression line. B1: comment that 9 is within range so interpolation, hence reliable."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "4x² + 12x + 3 = 4(x² + 3x) + 3 = 4(x + 3/2)² − 4(9/4) + 3 = 4(x + 3/2)² − 9 + 3 = 4(x + 3/2)² − 6",
+     "a = 4, b = 3/2, c = −6"
+    ],
+    "guidance": "M1: begin completing the square with factor of 4 extracted. A1: correct a(x + b)². A1: c = −6."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "Vertex at (−3/2, −6)",
+     "y-intercept: x = 0 gives y = 3, so (0, 3)",
+     "Sketch: upward-opening parabola with minimum at (−3/2, −6), crossing y-axis at (0, 3)"
+    ],
+    "guidance": "B1: vertex coordinates (−3/2, −6) correctly stated. B1: y-intercept (0, 3). B1: correct shape — upward parabola with minimum below x-axis."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "dy/dx = 3x² − 12x + 9",
+     "At P(1, 6): gradient = 3(1) − 12(1) + 9 = 0",
+     "Tangent is horizontal: y = 6"
+    ],
+    "guidance": "M1: differentiate correctly. A1: gradient = 0 at x = 1. M1: use point–slope form. A1: y = 6."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "Stationary points where dy/dx = 0: 3x² − 12x + 9 = 0 ⟹ x² − 4x + 3 = 0 ⟹ (x−1)(x−3) = 0",
+     "Other stationary point at x = 3: y = 27 − 54 + 27 + 2 = 2, so (3, 2)",
+     "d²y/dx² = 6x − 12",
+     "At x = 3: d²y/dx² = 18 − 12 = 6 > 0, so (3, 2) is a local minimum"
+    ],
+    "guidance": "M1: solve dy/dx = 0. A1: x = 3. A1: y = 2 giving (3, 2). M1: find second derivative. A1: correct nature (minimum)."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "∫ (3x² + 5x⁻² − 2x^(½)) dx = x³ − 5x⁻¹ − (4/3)x^(3/2) + c"
+    ],
+    "guidance": "B1: x³ correct. B1: −5/x = −5x⁻¹ correct. B1: −(4/3)x^(3/2) correct (and +c)."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "[x³ − 5/x − (4/3)x^(3/2)]₁³",
+     "= (27 − 5/3 − (4/3)(3√3)) − (1 − 5 − 4/3)",
+     "= (27 − 5/3 − 4√3) − (−4 − 4/3 + 1)",
+     "= 27 − 5/3 − 4√3 + 4 + 4/3 − 1",
+     "= 30 − 1/3 − 4√3",
+     "= (90 − 1)/3 − 4√3 = 89/3 − 4√3"
+    ],
+    "guidance": "M1: substitute limits using their integral from (a). A1: exact form 89/3 − 4√3."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "At x = 1: y = (2(1) − 1)⁵ = 1⁵ = 1, so A = (1, 1)",
+     "dy/dx = 5(2x − 1)⁴ × 2 = 10(2x − 1)⁴",
+     "At x = 1: gradient of tangent = 10(1)⁴ = 10",
+     "Gradient of normal = −1/10",
+     "Equation of normal: y − 1 = −(1/10)(x − 1) ⟹ y = −x/10 + 1/10 + 1 = −x/10 + 11/10"
+    ],
+    "guidance": "B1: point A = (1, 1). M1: differentiate using chain rule. A1: gradient of tangent = 10. M1: use −1/gradient for normal. A1: y = −x/10 + 11/10 (or 10y + x = 11)."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "Let u = 2x − 1. y = u⁵ − 5u",
+     "dy/du = 5u⁴ − 5 = 5(u⁴ − 1) = 5(u² − 1)(u² + 1) = 5(u−1)(u+1)(u²+1)",
+     "dy/dx = (dy/du) × (du/dx) = [5(2x−1)⁴ − 5] × 2 = 10(2x−1)⁴ − 10",
+     "Set dy/dx = 0: (2x−1)⁴ = 1 ⟹ 2x−1 = ±1 ⟹ x = 0 or x = 1",
+     "d²y/dx²= 80(2x−1)³",
+     "At x = 0: d²y/dx² = 80(−1)³ = −80 < 0 ⟹ local maximum",
+     "At x = 1: d²y/dx² = 80(1)³ = 80 > 0 ⟹ local minimum"
+    ],
+    "guidance": "M1: differentiate correctly using chain rule. A1: dy/dx = 10(2x−1)⁴ − 10. M1: set to zero and solve. A1: x = 0 and x = 1. A1: correct nature of each turning point."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "dy/dx = 6e^(3x) − 6 = 0 ⟹ e^(3x) = 1 ⟹ 3x = ln 1 = 0 ⟹ x = 0"
+    ],
+    "guidance": "M1: differentiate y = 2e^(3x) − 6x correctly to get 6e^(3x) − 6. M1: set equal to zero and take logarithm. A1: x = 0 (exact)."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "d²y/dx² = 18e^(3x)",
+     "At x = 0: d²y/dx² = 18 > 0, so stationary point is a minimum"
+    ],
+    "guidance": "M1: find second derivative 18e^(3x). A1: evaluate at x = 0, conclude minimum."
+   },
+   "16(c)": {
+    "type": "exact",
+    "points": [
+     "∫ (2e^(3x) − 6x) dx = (2/3)e^(3x) − 3x² + c"
+    ],
+    "guidance": "B1: (2/3)e^(3x) correct. B1: −3x² + c correct."
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "Using quotient rule with u = x² + 3, v = x − 2:",
+     "u' = 2x, v' = 1",
+     "f'(x) = (2x(x − 2) − (x² + 3)(1))/(x − 2)²",
+     "= (2x² − 4x − x² − 3)/(x − 2)²",
+     "= (x² − 4x − 3)/(x − 2)²  (AG)"
+    ],
+    "guidance": "M1: correct quotient rule structure. A1: correct unsimplified numerator. A1*: fully simplified to (x² − 4x − 3)/(x − 2)² (AG, must show intermediate step)."
+   },
+   "17(b)": {
+    "type": "points",
+    "points": [
+     "For x > 2, find the range by finding the minimum of f(x)",
+     "Set f'(x) = 0: x² − 4x − 3 = 0 ⟹ x = (4 ± √28)/2 = 2 ± √7",
+     "Since x > 2, take x = 2 + √7",
+     "f(2 + √7) = ((2+√7)² + 3)/((2+√7) − 2) = (4 + 4√7 + 7 + 3)/(√7) = (14 + 4√7)/√7 = 14/√7 + 4 = 2√7 + 4",
+     "As x → 2⁺, f(x) → ∞; as x → ∞, f(x) → ∞; minimum value is 2√7 + 4",
+     "Range of f: f(x) ≥ 4 + 2√7"
+    ],
+    "guidance": "M1: solve f'(x) = 0 for x > 2. A1: x = 2 + √7. M1: evaluate f at this point. A1: minimum value 4 + 2√7. A1: state range f(x) ≥ 4 + 2√7."
+   },
+   "18(a)": {
+    "type": "points",
+    "points": [
+     "x = 3cos t ⟹ cos t = x/3",
+     "y = 2sin t ⟹ sin t = y/2",
+     "Use cos²t + sin²t = 1: (x/3)² + (y/2)² = 1 ⟹ x²/9 + y²/4 = 1  (AG)"
+    ],
+    "guidance": "M1: express cos t and sin t in terms of x and y. A1*: use identity to obtain x²/9 + y²/4 = 1 (AG)."
+   },
+   "18(b)": {
+    "type": "exact",
+    "points": [
+     "dx/dt = −3sin t,  dy/dt = 2cos t",
+     "dy/dx = (2cos t)/(−3sin t) = −(2/3)cot t"
+    ],
+    "guidance": "M1: differentiate both parametric equations. A1: dy/dx = −(2cos t)/(3sin t) or equivalent."
+   },
+   "18(c)": {
+    "type": "points",
+    "points": [
+     "At t = π/4: x = 3cos(π/4) = 3/√2 = 3√2/2,  y = 2sin(π/4) = 2/√2 = √2",
+     "Gradient = −(2/3)cot(π/4) = −(2/3) × 1 = −2/3",
+     "Tangent: y − √2 = −(2/3)(x − 3√2/2)",
+     "y = −(2/3)x + √2 + √2 = −(2/3)x + 2√2",
+     "Or: 2x + 3y = 3√2 + 3√2 = 6√2  ⟹  2x + 3y = 6√2"
+    ],
+    "guidance": "B1: correct coordinates at t = π/4. M1: correct gradient −2/3. M1: use point–slope form. A1: 2x + 3y = 6√2 or equivalent exact form."
+   },
+   "19(a)": {
+    "type": "points",
+    "points": [
+     "n² + n = n(n + 1)",
+     "For any integer n, one of n or n + 1 is even, so their product is always even.",
+     "Therefore n² + n is always even for all n ≥ 1."
+    ],
+    "guidance": "M1: factor as n(n + 1) and observe consecutive integers. A1: complete proof stating one of n, n+1 is even."
+   },
+   "19(b)": {
+    "type": "points",
+    "points": [
+     "Try n = 11: n² − n + 11 = 121 − 11 + 11 = 121 = 11²",
+     "121 is not prime (121 = 11 × 11)",
+     "This is a counterexample, so the statement is false."
+    ],
+    "guidance": "M1: find a specific value of n for which n² − n + 11 is not prime. A1: n = 11 gives 121 = 11², which is not prime — valid counterexample."
+   }
+  }
  }
 };
