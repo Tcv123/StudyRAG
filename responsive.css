@@ -124,3 +124,35 @@ pre { max-width: 100%; overflow-x: auto; }
   /* Frosted-glass cards need an adjusted shimmer */
   .preview-card { background: var(--surface); }
 }
+
+/* ── 6. Explicit dark/light — user toggle overrides system preference ─────── */
+/* html[data-theme="dark"] has specificity (0,1,1) which beats :root (0,1,0),
+   so it always wins regardless of which stylesheet defined the light values.
+   theme.js sets this attribute synchronously before first paint.             */
+
+html[data-theme="dark"] {
+  --bg: #0F1B2D; --surface: #162035; --surface2: #1C2A42; --surface3: #243350;
+  --border: #2C3F5C; --border-hover: #3B82F6;
+  --text: #E2ECFB; --muted: #7B98BF; --muted2: #506A8A;
+  --accent: #3B82F6; --accent-dark: #60A5FA;
+  --accent-dim: rgba(59,130,246,0.15); --accent-glow: rgba(59,130,246,0.28);
+  --red: #F87171; --red-bg: rgba(248,113,113,0.12); --red-border: rgba(248,113,113,0.28); --red-text: #FCA5A5;
+  --amber: #FBBF24; --amber-bg: rgba(251,191,36,0.12); --amber-border: rgba(251,191,36,0.28); --amber-text: #FDE68A;
+  --green: #4ADE80; --green-bg: rgba(74,222,128,0.12); --green-border: rgba(74,222,128,0.28); --green-text: #86EFAC;
+}
+html[data-theme="dark"] .orb { opacity: 0.5; }
+html[data-theme="dark"] body::before { opacity: 0.4; }
+html[data-theme="dark"] nav { background: rgba(22,32,53,0.92); }
+html[data-theme="dark"] .preview-card { background: var(--surface); }
+
+/* Force light — overrides system dark preference when user chose light */
+html[data-theme="light"] {
+  --bg: #EAF2FC; --surface: #FFFFFF; --surface2: #F0F6FD; --surface3: #DBE8F6;
+  --border: #B8D0E8; --border-hover: #2563EB;
+  --text: #0B1E3F; --muted: #445F85; --muted2: #7891B0;
+  --accent: #2563EB; --accent-dark: #1D4ED8;
+  --accent-dim: rgba(37,99,235,0.1); --accent-glow: rgba(37,99,235,0.2);
+  --red: #DC2626; --red-bg: rgba(220,38,38,0.07); --red-border: rgba(220,38,38,0.18); --red-text: #B91C1C;
+  --amber: #D97706; --amber-bg: rgba(217,119,6,0.07); --amber-border: rgba(217,119,6,0.18); --amber-text: #B45309;
+  --green: #16A34A; --green-bg: rgba(22,163,74,0.07); --green-border: rgba(22,163,74,0.18); --green-text: #15803D;
+}
