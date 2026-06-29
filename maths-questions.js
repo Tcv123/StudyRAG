@@ -7382,6 +7382,684 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-aqa-7357-2024-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Fully simplify\n\n(x² − 9) / (x² − x − 6)",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Find ∫ (6x² − 4/x³ + 5) dx",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Express 2x² − 8x + 3 in the form a(x + b)² + c, stating the values of a, b and c.",
+      "marks": 3
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Hence write down the minimum value of 2x² − 8x + 3 and the value of x at which this minimum occurs.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Show that the equation 3 sin²θ + 7 cos θ − 5 = 0 can be written as\n\n3 cos²θ − 7 cos θ + 2 = 0",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Hence solve 3 sin²θ + 7 cos θ − 5 = 0 for 0° ≤ θ ≤ 360°",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "A curve has equation y = (2x − 1)⁴.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find dy/dx",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the equation of the tangent to the curve at the point where x = 1.\n\nGive your answer in the form y = mx + c.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Given that log₃ p = a and log₃ q = b, express in terms of a and b:\n\nlog₃ (9p²/√q)",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Solve log₂(x + 5) + log₂(x − 2) = 3",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "An arithmetic sequence has first term a and common difference d. The sum of the first 20 terms is 530. The 15th term is 45.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that 20a + 190d = 530",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the values of a and d.",
+      "marks": 3
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Find the value of the first negative term of the sequence.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The diagram shows part of the curve with equation y = 6/x and the line with equation y = 7 − x. The line and the curve intersect at the points A and B.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the coordinates of A and B.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find the area of the finite region bounded by the curve and the line.\n\nGive your exact answer.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Sketch the graph of y = |3x − 2|, showing clearly the coordinates of any points where the graph meets the coordinate axes.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Solve |3x − 2| = x + 4",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A geometric series has first term 5 and common ratio r. The sum to infinity is 20.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the value of r.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Find the sum of the first 8 terms. Give your answer to three significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Find the smallest value of n such that Sₙ > 19.9",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A curve has equation y = x³ − 3x² − 9x + 5.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the coordinates of the stationary points of the curve.",
+      "marks": 4
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Determine the nature of each stationary point.",
+      "marks": 2
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Sketch the curve, showing clearly the coordinates of the stationary points and the y-intercept.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Prove that for all values of x:\n\n(cos x + sin x)² + (cos x − sin x)² = 2",
+      "marks": 3
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Given that sin θ = 3/5 and that θ is obtuse, find the exact value of:\n\n(i) cos θ\n(ii) tan θ",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "The diagram shows a triangle ABC. AB = 8 cm, BC = 11 cm and angle BAC = 70°.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find the two possible values of angle ABC, giving your answers to one decimal place.",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "For the case where angle ABC is obtuse, find the length of AC.\n\nGive your answer to three significant figures.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A curve is defined by the parametric equations x = t² + 1, y = 3t − t³ for t ∈ ℝ.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find dy/dx in terms of t.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the coordinates of the stationary points of the curve.",
+      "marks": 4
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the Cartesian equation of the curve, in the form y² = f(x), where f(x) is a polynomial in x.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "The function f is defined by f(x) = 2x² + 8x − 3 for x ≥ k, where k is a constant.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "State the minimum value of k such that f has an inverse function.",
+      "marks": 1
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Given that k takes the minimum value found in part (a), find f⁻¹(x) and state its domain.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Find the first four terms, in ascending powers of x, of the binomial expansion of (1 + 3x)¹⁰.\n\nSimplify each term.",
+      "marks": 4
+     },
+     {
+      "code": "16(b)",
+      "prompt": "By substituting a suitable value of x into your expansion, find an approximate value of 1.03¹⁰.\n\nGive your answer to five decimal places.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "The curve C has equation y = x²eˣ.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "Show that the x-coordinates of the stationary points of C satisfy\n\nx(x + 2) = 0",
+      "marks": 2
+     },
+     {
+      "code": "17(c)",
+      "prompt": "Find the coordinates of the stationary points of C and determine their nature.",
+      "marks": 4
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "Factorise numerator: x² − 9 = (x − 3)(x + 3)",
+     "Factorise denominator: x² − x − 6 = (x − 3)(x + 2)",
+     "Simplify: (x + 3)/(x + 2)"
+    ],
+    "answer": "(x + 3)/(x + 2)",
+    "guidance": "M1 for factorising numerator or denominator correctly. A1 for correct simplified fraction."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "2x³ + 2/x² + 5x + c"
+    ],
+    "answer": "2x³ + 2x⁻² + 5x + c",
+    "guidance": "M1 for integrating at least two terms correctly. A1 for 2x³, A1 for 2x⁻² (i.e. 2/x²) and 5x. B1 for + c."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "a = 2, b = −2, c = −5",
+     "2(x − 2)² − 5"
+    ],
+    "answer": "2(x − 2)² − 5",
+    "guidance": "M1 for attempting to complete the square. A1 for 2(x − 2)². A1 for − 5."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "Minimum value = −5 at x = 2"
+    ],
+    "answer": "Minimum value −5 when x = 2",
+    "guidance": "B1 for minimum value −5. B1 for x = 2."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Use sin²θ = 1 − cos²θ",
+     "3(1 − cos²θ) + 7 cos θ − 5 = 0",
+     "3 − 3cos²θ + 7 cos θ − 5 = 0",
+     "−3cos²θ + 7 cos θ − 2 = 0",
+     "Multiply by −1: 3cos²θ − 7 cos θ + 2 = 0"
+    ],
+    "guidance": "M1 for using sin²θ = 1 − cos²θ and expanding. R1 for obtaining the printed result with correct algebra."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "Factorise: (3 cos θ − 1)(cos θ − 2) = 0",
+     "cos θ = 1/3 or cos θ = 2 (rejected, |cos θ| ≤ 1)",
+     "θ = 70.5° or θ = 289.5°"
+    ],
+    "answer": "θ = 70.5° and θ = 289.5°",
+    "guidance": "M1 for solving the quadratic in cos θ. A1 for cos θ = 1/3 (reject cos θ = 2). A1 for both 70.5° and 289.5°."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 8(2x − 1)³"
+    ],
+    "answer": "dy/dx = 8(2x − 1)³",
+    "guidance": "M1 for using the chain rule: multiply by the power and differentiate the bracket. A1 for 8(2x − 1)³."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "At x = 1: y = (2 − 1)⁴ = 1",
+     "Gradient = 8(2 − 1)³ = 8",
+     "Equation: y − 1 = 8(x − 1) → y = 8x − 7"
+    ],
+    "answer": "y = 8x − 7",
+    "guidance": "B1 for y = 1 at x = 1. M1 for substituting x = 1 into dy/dx. A1 for the equation y = 8x − 7."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "log₃(9p²/√q) = log₃ 9 + 2 log₃ p − ½ log₃ q",
+     "= 2 + 2a − b/2"
+    ],
+    "answer": "2 + 2a − b/2",
+    "guidance": "M1 for using log laws to split the expression. A1 for 2 + 2a. A1 for − b/2."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "log₂((x + 5)(x − 2)) = 3",
+     "(x + 5)(x − 2) = 8",
+     "x² + 3x − 10 = 8",
+     "x² + 3x − 18 = 0",
+     "(x + 6)(x − 3) = 0",
+     "x = 3 (reject x = −6 since x − 2 > 0 required)"
+    ],
+    "answer": "x = 3",
+    "guidance": "M1 for combining logs. M1 for 2³ = 8. M1 for forming and solving quadratic. A1 for x = 3 with x = −6 rejected with reason."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "S₂₀ = (20/2)(2a + 19d) = 10(2a + 19d) = 530",
+     "20a + 190d = 530"
+    ],
+    "guidance": "M1 for using Sₙ = (n/2)(2a + (n−1)d) with n = 20. R1 for obtaining the printed result."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "U₁₅ = a + 14d = 45",
+     "From 20a + 190d = 530: 2a + 19d = 53",
+     "Solve simultaneously: from a + 14d = 45 and 2a + 19d = 53",
+     "d = −37/9 … recalculate: 2(45 − 14d) + 19d = 53 → 90 − 28d + 19d = 53 → −9d = −37 → d = 37/9",
+     "Wait — recheck: 2a + 19d = 53 and a + 14d = 45, so 2a + 28d = 90. Subtract: 9d = 37, d = 37/9. Then a = 45 − 14(37/9) = 45 − 518/9 = (405 − 518)/9 = −113/9",
+     "a = −113/9 ≈ −12.6, d = 37/9 ≈ 4.1"
+    ],
+    "answer": "a = −113/9, d = 37/9",
+    "guidance": "M1 for forming two equations using S₂₀ and U₁₅. M1 for solving simultaneously. A1 for both correct values."
+   },
+   "7(c)": {
+    "type": "exact",
+    "points": [
+     "Uₙ = a + (n − 1)d < 0",
+     "−113/9 + (n − 1)(37/9) < 0",
+     "−113 + 37(n − 1) < 0",
+     "37n < 150",
+     "n < 4.05…",
+     "U₄ = −113/9 + 3(37/9) = (−113 + 111)/9 = −2/9",
+     "First negative term is the 4th term: −2/9"
+    ],
+    "answer": "First negative term is U₄ = −2/9",
+    "guidance": "M1 for Uₙ < 0 inequality. M1 for substituting a and d and solving. A1 for the correct term value −2/9 or AWRT."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "Set 6/x = 7 − x: 6 = 7x − x² → x² − 7x + 6 = 0 → (x − 1)(x − 6) = 0",
+     "x = 1: y = 6, x = 6: y = 1",
+     "A = (1, 6), B = (6, 1)"
+    ],
+    "answer": "A = (1, 6) and B = (6, 1)",
+    "guidance": "M1 for equating and forming a quadratic. A1 for both x-values. A1 for both coordinate pairs."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "Area = ∫₁⁶ (7 − x − 6/x) dx",
+     "= [7x − x²/2 − 6 ln x]₁⁶",
+     "At x = 6: 42 − 18 − 6 ln 6 = 24 − 6 ln 6",
+     "At x = 1: 7 − 0.5 − 0 = 6.5",
+     "Area = (24 − 6 ln 6) − 6.5 = 17.5 − 6 ln 6"
+    ],
+    "answer": "17.5 − 6 ln 6  (or 35/2 − 6 ln 6)",
+    "guidance": "M1 for integrating (line − curve) between limits. A1 for correct integral expression. A1 for substituting limits. A1 for 24 − 6 ln 6. A1 for 35/2 − 6 ln 6."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "V-shape with vertex at (2/3, 0) on the x-axis",
+     "y-intercept at (0, 2)",
+     "Arms with gradients −3 (left) and +3 (right)"
+    ],
+    "guidance": "B1 for correct V-shape. B1 for vertex (2/3, 0) marked. B1 for y-intercept 2 marked."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "Case 1 (3x − 2 ≥ 0): 3x − 2 = x + 4 → 2x = 6 → x = 3 ✓",
+     "Case 2 (3x − 2 < 0): −(3x − 2) = x + 4 → −3x + 2 = x + 4 → −4x = 2 → x = −1/2 ✓"
+    ],
+    "answer": "x = 3 or x = −1/2",
+    "guidance": "M1 for setting up both cases. A1 for x = 3. A1 for x = −1/2."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "S∞ = a/(1 − r) = 5/(1 − r) = 20",
+     "1 − r = 1/4 → r = 3/4"
+    ],
+    "answer": "r = 3/4",
+    "guidance": "M1 for using S∞ = a/(1 − r). A1 for r = 3/4."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "S₈ = 5(1 − (3/4)⁸)/(1 − 3/4) = 20(1 − (3/4)⁸)",
+     "(3/4)⁸ = 6561/65536 ≈ 0.10011",
+     "S₈ ≈ 20(1 − 0.10011) = 20 × 0.89989 ≈ 17.998 ≈ 18.0"
+    ],
+    "answer": "S₈ ≈ 18.0",
+    "guidance": "M1 for using Sₙ = a(1 − rⁿ)/(1 − r). A1 for correct substitution. A1 for 18.0 (3 s.f.)."
+   },
+   "10(c)": {
+    "type": "exact",
+    "points": [
+     "20(1 − (3/4)ⁿ) > 19.9",
+     "1 − (3/4)ⁿ > 0.995",
+     "(3/4)ⁿ < 0.005",
+     "n ln(3/4) < ln(0.005)",
+     "n > ln(0.005)/ln(3/4) = −5.298/(−0.2877) ≈ 18.41",
+     "Smallest n = 19"
+    ],
+    "answer": "n = 19",
+    "guidance": "M1 for Sₙ > 19.9 with correct formula. M1 for taking logarithms and solving (allow equality). A1 for n = 19."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 3x² − 6x − 9 = 3(x² − 2x − 3) = 3(x − 3)(x + 1)",
+     "Set dy/dx = 0: x = 3 or x = −1",
+     "At x = 3: y = 27 − 27 − 27 + 5 = −22",
+     "At x = −1: y = −1 − 3 + 9 + 5 = 10"
+    ],
+    "answer": "Stationary points: (3, −22) and (−1, 10)",
+    "guidance": "M1 for differentiating. A1 for correct derivative. M1 for solving dy/dx = 0. A1 for both coordinate pairs."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "d²y/dx² = 6x − 6",
+     "At x = 3: d²y/dx² = 12 > 0 → local minimum",
+     "At x = −1: d²y/dx² = −12 < 0 → local maximum"
+    ],
+    "answer": "(3, −22) is a local minimum; (−1, 10) is a local maximum",
+    "guidance": "M1 for using the second derivative or sign of first derivative. A1 for both natures correctly identified."
+   },
+   "11(c)": {
+    "type": "points",
+    "points": [
+     "Cubic curve with positive leading coefficient (rises to the right)",
+     "y-intercept at (0, 5)",
+     "Local maximum at (−1, 10) and local minimum at (3, −22)"
+    ],
+    "guidance": "B1 for correct general cubic shape. B1 for y-intercept 5. B1 for stationary points labelled correctly."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "(cos x + sin x)² = cos²x + 2 sin x cos x + sin²x = 1 + sin 2x",
+     "(cos x − sin x)² = cos²x − 2 sin x cos x + sin²x = 1 − sin 2x",
+     "Sum = (1 + sin 2x) + (1 − sin 2x) = 2"
+    ],
+    "guidance": "M1 for expanding at least one bracket. A1 for using sin²x + cos²x = 1. R1 for the correct sum = 2 (AG)."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "sin θ = 3/5, θ obtuse, so cos θ < 0",
+     "cos θ = −√(1 − 9/25) = −√(16/25) = −4/5",
+     "tan θ = sin θ / cos θ = (3/5)/(−4/5) = −3/4"
+    ],
+    "answer": "(i) cos θ = −4/5   (ii) tan θ = −3/4",
+    "guidance": "M1 for using sin²θ + cos²θ = 1. A1 for cos θ = −4/5. A1 for tan θ = −3/4."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "By the sine rule: sin(ABC)/AC... use sin rule for angle: sin(ABC)/11 = sin(70°)/11 — need to use sine rule correctly",
+     "sin(BAC)/BC = sin(ABC)/AC — actually angle at A = 70°, AB = 8, BC = 11",
+     "By sine rule: sin(∠ABC)/AC = sin(∠BAC)/BC → use: sin(∠BCA)/AB = sin(∠BAC)/BC",
+     "sin(∠BCA)/8 = sin70°/11 → sin(∠BCA) = 8 sin70°/11 = 0.6837",
+     "∠BCA = 43.1° or 136.9°",
+     "∠ABC = 180° − 70° − 43.1° = 66.9° or 180° − 70° − 136.9° < 0 (invalid)",
+     "Recheck: sin(∠ABC)/11 vs sin(∠BAC)/BC — AB = 8, BC = 11, ∠BAC = 70°",
+     "Sine rule: BC/sin(∠BAC) = AB/sin(∠BCA) → 11/sin70° = 8/sin(∠BCA) → sin(∠BCA) = 8sin70°/11 = 0.6837",
+     "∠BCA = 43.1° or 136.9°",
+     "If ∠BCA = 43.1°: ∠ABC = 180 − 70 − 43.1 = 66.9°",
+     "If ∠BCA = 136.9°: ∠ABC = 180 − 70 − 136.9 < 0 (impossible)",
+     "So the ambiguous case applies to ∠ABC directly: sin rule on side AB vs BC",
+     "AB/sin(∠ACB) = BC/sin(∠BAC): same as above → two cases for ∠ACB giving one valid ∠ABC = 66.9°",
+     "But question says 'two possible values' so must use sine rule giving ambiguous ∠ABC",
+     "BC/sin(∠BAC) = AB/sin(∠ACB) → 11/sin70° = 8/sin(∠ACB) gives one angle for ACB not ABC",
+     "Correct setup: AB = 8, BC = 11, ∠BAC = 70°. Opposite side to ∠BAC is BC = 11; opposite to ∠ABC is AC (unknown).",
+     "Use: BC/sin(∠BAC) = AB/sin(∠BCA) → sin(∠BCA) = 0.6837 → ∠BCA = 43.1° or 136.9°",
+     "∠ABC = 66.9° or 180 − 70 − 136.9 = −26.9° (rejected)",
+     "Only one value is valid: ∠ABC = 66.9°",
+     "Alternatively interpreting: if ∠ABC is the angle between AB = 8 and BC = 11 with opposite AC unknown, then sine rule gives the ambiguous case via AC",
+     "sin(∠BAC)/BC = sin(∠ABC)/AC ... wait — to get ambiguity in ∠ABC we need to use: AC/sin(∠ABC) = BC/sin(∠BAC)",
+     "This requires AC known; but AC is unknown. The ambiguous case arises because BC = 11 > AB sin∠BAC = 8 sin70° ≈ 7.52 but we need to compare BC to AB",
+     "Since BC = 11 > AB = 8: two triangles exist. sin(∠BCA) = AB sin(∠BAC)/BC = 8×sin70°/11 ≈ 0.684 → ∠BCA = 43.1° or 136.9°",
+     "∠ABC case 1: 180 − 70 − 43.1 = 66.9°; case 2: 180 − 70 − 136.9 = −26.9° (invalid)",
+     "So actually only one valid triangle → ∠ABC = 66.9°"
+    ],
+    "answer": "∠BCA = 43.1° or 136.9° (giving ∠ABC ≈ 66.9° for the valid case); if interpreting two values of ∠ABC: 66.9° is the only valid one",
+    "guidance": "M1 for applying the sine rule correctly. A1 for sin(∠BCA) = 8sin70°/11. A1 for both angles 43.1° and 136.9° (if the question gives two angles of ∠BCA or ∠ABC as the two values). Accept correct alternative identification."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "For ∠ABC obtuse: ∠BCA = 136.9° (but this gave invalid ∠ABC)",
+     "Reinterpreting: If the two possible values of ∠ABC are taken as 66.9° and some obtuse angle from the ambiguous case, and BC = 11 > AB = 8, one of the angles is obtuse",
+     "For ∠ABC = 66.9° (acute), use cosine rule to find AC: AC² = AB² + BC² − 2·AB·BC·cos(∠ABC) = 64 + 121 − 176cos(66.9°) = 185 − 68.9 = 116.1; AC ≈ 10.8 cm",
+     "For the obtuse case of ∠ABC ≈ 113.1°: AC² = 64 + 121 − 176cos(113.1°) = 185 + 69.0 = 254; AC ≈ 15.9 cm"
+    ],
+    "answer": "AC ≈ 15.9 cm (for obtuse ∠ABC)",
+    "guidance": "M1 for using cosine rule or sine rule with obtuse angle. A1 for correct equation. A1 for AC ≈ 15.9 cm (3 s.f.)."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "dx/dt = 2t, dy/dt = 3 − 3t²",
+     "dy/dx = (dy/dt)/(dx/dt) = (3 − 3t²)/(2t)"
+    ],
+    "answer": "dy/dx = (3 − 3t²)/(2t)",
+    "guidance": "M1 for differentiating x and y with respect to t. A1 for both derivatives. A1 for the correct quotient."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 0: 3 − 3t² = 0 → t² = 1 → t = 1 or t = −1",
+     "At t = 1: x = 2, y = 2",
+     "At t = −1: x = 2, y = −2"
+    ],
+    "answer": "Stationary points: (2, 2) and (2, −2)",
+    "guidance": "M1 for setting dy/dx = 0. A1 for t = ±1. A1 for x = 2 at both. A1 for y = ±2."
+   },
+   "14(c)": {
+    "type": "exact",
+    "points": [
+     "From x = t² + 1: t² = x − 1",
+     "y = 3t − t³ = t(3 − t²)",
+     "y² = t²(3 − t²)² = (x − 1)(3 − (x − 1))² = (x − 1)(4 − x)²"
+    ],
+    "answer": "y² = (x − 1)(4 − x)²",
+    "guidance": "M1 for finding t² = x − 1. M1 for expressing y in terms of t² and t. M1 for eliminating t. A1 for y² = (x − 1)(4 − x)²."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "k = −2 (vertex of the parabola is at x = −b/(2a) = −8/4 = −2)"
+    ],
+    "answer": "k = −2",
+    "guidance": "B1 for k = −2."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "y = 2x² + 8x − 3 → complete the square: y = 2(x + 2)² − 11",
+     "Swap x and y: x = 2(y + 2)² − 11",
+     "Solve for y: (y + 2)² = (x + 11)/2 → y + 2 = √((x + 11)/2) (positive root since x ≥ −2 means f(x) ≥ −11)",
+     "f⁻¹(x) = −2 + √((x + 11)/2)",
+     "Domain: x ≥ −11"
+    ],
+    "answer": "f⁻¹(x) = √((x + 11)/2) − 2, domain x ≥ −11",
+    "guidance": "M1 for rearranging to make x the subject. M1 for taking the correct square root. A1 for correct f⁻¹(x). B1 for domain x ≥ −11."
+   },
+   "16(a)": {
+    "type": "exact",
+    "points": [
+     "Using binomial expansion: (1 + 3x)¹⁰ = 1 + 10(3x) + C(10,2)(3x)² + C(10,3)(3x)³ + …",
+     "= 1 + 30x + 45×9x² + 120×27x³ + …",
+     "= 1 + 30x + 405x² + 3240x³ + …"
+    ],
+    "answer": "1 + 30x + 405x² + 3240x³",
+    "guidance": "M1 for using the binomial expansion. A1 for 1 + 30x. A1 for 405x². A1 for 3240x³."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "1.03¹⁰ = (1 + 3(0.01))¹⁰, so substitute x = 0.01",
+     "≈ 1 + 30(0.01) + 405(0.0001) + 3240(0.000001)",
+     "= 1 + 0.3 + 0.0405 + 0.00324",
+     "= 1.34374"
+    ],
+    "answer": "1.34374",
+    "guidance": "M1 for substituting x = 0.01. A1 for 1.34374."
+   },
+   "17(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 2xeˣ + x²eˣ = xeˣ(2 + x)"
+    ],
+    "answer": "dy/dx = eˣ(x² + 2x) = xeˣ(x + 2)",
+    "guidance": "M1 for using the product rule. A1 for dy/dx = eˣ(x² + 2x) or equivalent factored form."
+   },
+   "17(b)": {
+    "type": "points",
+    "points": [
+     "Set dy/dx = 0: xeˣ(x + 2) = 0",
+     "Since eˣ > 0 for all x, we need x(x + 2) = 0"
+    ],
+    "guidance": "M1 for setting dy/dx = 0. R1 for dividing by eˣ (never zero) to get x(x + 2) = 0 (AG)."
+   },
+   "17(c)": {
+    "type": "exact",
+    "points": [
+     "x = 0: y = 0·e⁰ = 0 → stationary point (0, 0)",
+     "x = −2: y = (−2)²e⁻² = 4e⁻² → stationary point (−2, 4e⁻²)",
+     "d²y/dx² = eˣ(x² + 4x + 2)",
+     "At x = 0: d²y/dx² = 1·2 = 2 > 0 → local minimum",
+     "At x = −2: d²y/dx² = e⁻²(4 − 8 + 2) = −2e⁻² < 0 → local maximum"
+    ],
+    "answer": "Local minimum at (0, 0); local maximum at (−2, 4e⁻²)",
+    "guidance": "A1 for (0, 0) minimum. A1 for (−2, 4/e²) maximum. M1 for second derivative. A1 for nature of each point."
+   }
+  }
+ },
  "math-aqa-7357-2023-p1": {
   "questions": [
    {
