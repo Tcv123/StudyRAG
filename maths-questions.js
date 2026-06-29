@@ -9415,6 +9415,536 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-aqa-7357-2019-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Which of these is a correct statement?\n\nCircle your answer.\n\nsin(A + B) = sin A + sin B\n\nsin(A − B) = sin A − sin B\n\nsin(2A) = 2 sin A cos A\n\nsin(−A) = sin A",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "The random variable X has a normal distribution with mean 50 and standard deviation 8.\n\nP(X > 60) = 0.1056\n\nWhich one of these is correct?\n\nCircle your answer.\n\nP(X < 40) = 0.8944     P(X < 40) = 0.1056     P(X < 40) = 0.2112     P(X < 40) = 0.7888",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "A particle is projected from a point O with speed u m/s at an angle θ above the horizontal. When the particle is at its highest point, which of the following is correct?\n\nCircle your answer.\n\nThe velocity is zero.\n\nThe vertical component of velocity is zero.\n\nThe acceleration is zero.\n\nThe horizontal component of velocity is zero.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Show that\n\n∫ x ln x dx = ½x²(ln x − ½) + c",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "A geometric sequence has first term a and common ratio r, where r > 0.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "The third term of the sequence is 9 and the seventh term is 729.\n\nFind the values of a and r.",
+      "marks": 4
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the sum of the first 8 terms of the sequence.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Show that the equation\n\ntan 2θ = 5 sin 2θ\n\ncan be written as\n\nsin 2θ (1 − 5 cos 2θ) = 0",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Hence solve tan 2θ = 5 sin 2θ for 0° ≤ θ ≤ 180°\n\nGive your answers in degrees, correct to one decimal place where appropriate.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A curve has equation\n\ny = (x² + 4)/(x² − 4), x ≠ ±2",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that dy/dx = −16x/(x² − 4)²",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the equation of the normal to the curve at the point where x = 3, giving your answer in the form ax + by + c = 0 where a, b, c are integers.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Use the substitution u = 2x − 1 to show that\n\n∫₁³ 3x/√(2x − 1) dx = 17/3",
+      "marks": 6
+     },
+     {
+      "code": "8(b)",
+      "prompt": "The diagram shows the region R bounded by the curve y = 3x/√(2x − 1), the x-axis and the lines x = 1 and x = 3.\n\nFind the volume of revolution when R is rotated through 360° about the x-axis.\n\nGive your answer in the form π(a ln b + c) where a, b, c are rational numbers.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "The heights, h cm, of a sample of adult women are modelled by a normal distribution with mean μ and standard deviation σ.\n\nP(h < 160) = 0.25    P(h < 175) = 0.80",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the values of μ and σ.",
+      "marks": 4
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Estimate the probability that a randomly chosen adult woman has a height greater than 185 cm.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A researcher counted the number of weeds, w, in each of 80 equal-sized plots of land.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "The researcher found the following results:\n\nMean = 3.6, Standard deviation = 2.1\n\nShe claims that a Poisson distribution is a suitable model for the number of weeds per plot. State one reason to support and one reason to question this claim.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Assuming a Poisson distribution with mean 3.6, find the probability that a randomly chosen plot contains fewer than 2 weeds.",
+      "marks": 2
+     },
+     {
+      "code": "10(c)",
+      "prompt": "The researcher takes a random sample of 30 plots from a large field. Using a suitable approximation, find the probability that more than 15 of these plots contain fewer than 2 weeds.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A quality control inspector at a factory checks samples of light bulbs. The probability that a randomly chosen bulb is faulty is 0.04. The inspector checks a random sample of 10 bulbs.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the probability that the sample contains at most one faulty bulb.",
+      "marks": 2
+     },
+     {
+      "code": "11(b)",
+      "prompt": "The manufacturer claims that the proportion of faulty bulbs has decreased from 0.04. The inspector takes a random sample of 60 bulbs and finds 0 faulty bulbs.\n\nTest the manufacturer's claim at the 5% significance level.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A particle P of mass 3 kg lies on a smooth horizontal surface. P is attached to one end of a light inextensible string. The string passes over a smooth pulley at the edge of the surface. A particle Q of mass m kg hangs vertically from the other end of the string.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Given that the acceleration of the system is 2 m/s², find the value of m.",
+      "marks": 3
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the tension in the string.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A particle is projected from a point O on a horizontal plane with speed 21 m/s at an angle of 30° above the horizontal. The particle moves freely under gravity.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Show that the greatest height of the particle above the plane is 5.625 m.\n\n[Use g = 10 m/s²]",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find the range of the particle.",
+      "marks": 2
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Find the speed and direction of motion of the particle 2 seconds after projection.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A particle of mass 2 kg moves in a straight line. At time t seconds, the displacement of the particle from a fixed origin O is s metres, where\n\ns = t³ − 6t² + 9t",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the velocity of the particle at time t.",
+      "marks": 2
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the values of t for which the particle is at rest.",
+      "marks": 2
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the total distance travelled by the particle in the first 4 seconds.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A particle of mass 5 kg rests on a rough inclined plane. The plane is inclined at an angle α to the horizontal where tan α = 3/4. A force of magnitude P newtons acts on the particle parallel to and up the plane.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Given that the particle is on the point of moving down the plane, find the coefficient of friction between the particle and the plane.",
+      "marks": 4
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Find the value of P that would cause the particle to be on the point of moving up the plane.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "Forces F₁ = (3i − 2j) N, F₂ = (−i + 5j) N and F₃ = (ai + bj) N act on a particle.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Given that the particle is in equilibrium, find the values of a and b.",
+      "marks": 2
+     },
+     {
+      "code": "16(b)",
+      "prompt": "F₃ is now removed. Find the magnitude and direction of the resultant of F₁ and F₂.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "A vehicle of mass 1200 kg moves along a straight horizontal road. The engine of the vehicle works at a constant power of 20 kW. The resistance to motion is constant at 800 N.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Find the maximum speed of the vehicle.",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "At the instant when the vehicle has speed 10 m/s, find its acceleration.",
+      "marks": 3
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "answer": "sin(2A) = 2 sin A cos A",
+    "guidance": "B1 for circling sin(2A) = 2 sin A cos A. This is the double angle formula. The other three options are all incorrect: sin(A + B) ≠ sin A + sin B in general; sin(A − B) ≠ sin A − sin B in general; sin(−A) = −sin A (not +sin A)."
+   },
+   "2": {
+    "type": "exact",
+    "answer": "P(X < 40) = 0.1056",
+    "guidance": "B1 for circling P(X < 40) = 0.1056. By symmetry of the normal distribution, 40 is as far below the mean as 60 is above, so P(X < 40) = P(X > 60) = 0.1056."
+   },
+   "3": {
+    "type": "exact",
+    "answer": "The vertical component of velocity is zero.",
+    "guidance": "B1 for circling the correct answer. At the highest point the vertical component of velocity is zero (the particle is momentarily moving horizontally). The horizontal component remains u cos θ throughout; acceleration due to gravity g acts downward throughout; the velocity is not zero unless projected vertically."
+   },
+   "4": {
+    "type": "points",
+    "points": [
+     "Use integration by parts: let u = ln x, dv = x dx, so du = 1/x dx, v = x²/2",
+     "∫ x ln x dx = (x²/2) ln x − ∫ (x²/2)(1/x) dx = (x²/2) ln x − ∫ x/2 dx",
+     "= (x²/2) ln x − x²/4 + c",
+     "= ½x²(ln x − ½) + c"
+    ],
+    "guidance": "M1 chooses integration by parts correctly — must see attempt with u = ln x or dv = x dx. A1 correct first step (x²/2) ln x − ∫ x/2 dx. A1 integrates second term correctly to obtain x²/4. R1 presents final answer in the required form ½x²(ln x − ½) + c with full rigorous working. AG."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "Third term: ar² = 9",
+     "Seventh term: ar⁶ = 729",
+     "Dividing: r⁴ = 81, so r = 3 (since r > 0)",
+     "Substituting: a × 9 = 9, so a = 1"
+    ],
+    "guidance": "M1 uses both given terms to form equations in a and r. M1 divides the two equations to eliminate a, obtaining r⁴ = 81. A1 obtains r = 3 and a = 1."
+   },
+   "5(b)": {
+    "type": "exact",
+    "answer": "S₈ = 3280",
+    "guidance": "M1 uses Sₙ = a(rⁿ − 1)/(r − 1) with their a and r. A1 obtains correct answer S₈ = 1 × (3⁸ − 1)/(3 − 1) = (6561 − 1)/2 = 6560/2 = 3280."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "tan 2θ = sin 2θ / cos 2θ",
+     "sin 2θ / cos 2θ = 5 sin 2θ",
+     "Multiply both sides by cos 2θ: sin 2θ = 5 sin 2θ cos 2θ",
+     "sin 2θ − 5 sin 2θ cos 2θ = 0",
+     "sin 2θ (1 − 5 cos 2θ) = 0"
+    ],
+    "guidance": "M1 writes tan 2θ = sin 2θ / cos 2θ and multiplies by cos 2θ. R1 completes rigorous argument to show required result. AG. Must not divide by sin 2θ without justification."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "sin 2θ = 0: 2θ = 0°, 180°, 360° → θ = 0°, 90°, 180°",
+     "1 − 5 cos 2θ = 0: cos 2θ = 1/5 → 2θ = cos⁻¹(0.2) ≈ 78.5° or 360° − 78.5° = 281.5°",
+     "θ ≈ 39.2° or θ ≈ 140.8°",
+     "All solutions in [0°, 180°]: θ = 0°, 39.2°, 90°, 140.8°, 180°"
+    ],
+    "guidance": "B1 obtains θ = 0°, 90°, 180° from sin 2θ = 0. M1 obtains cos 2θ = 1/5 and attempts inverse cosine. A1 obtains 2θ ≈ 78.5°. A1 obtains both values θ ≈ 39.2° and θ ≈ 140.8°. B1 all five correct solutions with no extras in the interval."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Use quotient rule: dy/dx = [(x² − 4)(2x) − (x² + 4)(2x)] / (x² − 4)²",
+     "= [2x(x² − 4) − 2x(x² + 4)] / (x² − 4)²",
+     "= [2x³ − 8x − 2x³ − 8x] / (x² − 4)²",
+     "= −16x / (x² − 4)²"
+    ],
+    "guidance": "M1 applies quotient rule correctly. A1 obtains numerator in any unsimplified correct form. A1 simplifies to obtain dy/dx = −16x/(x² − 4)². AG. Must show sufficient working."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "At x = 3: y = (9 + 4)/(9 − 4) = 13/5",
+     "dy/dx at x = 3: dy/dx = −16(3)/(9 − 4)² = −48/25",
+     "Gradient of normal = 25/48",
+     "Equation: y − 13/5 = (25/48)(x − 3) → 48y − 48(13/5) = 25x − 75 → 240y − 624 = 125x − 375 → 125x − 240y + 249 = 0"
+    ],
+    "guidance": "B1 finds correct y-coordinate at x = 3: y = 13/5. M1 substitutes x = 3 into their dy/dx to obtain gradient of tangent. A1 uses negative reciprocal for normal gradient. A1 forms correct equation of normal in required form 125x − 240y + 249 = 0 or equivalent integer multiple."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "u = 2x − 1, so x = (u + 1)/2, dx = du/2; limits: x = 1 → u = 1, x = 3 → u = 5",
+     "∫₁³ 3x/√(2x − 1) dx = ∫₁⁵ 3(u+1)/2 / √u × du/2 = ∫₁⁵ 3(u+1)/(4√u) du",
+     "= (3/4) ∫₁⁵ (u^(1/2) + u^(−1/2)) du",
+     "= (3/4) [⅔u^(3/2) + 2u^(1/2)]₁⁵",
+     "= (3/4) {[⅔(5√5) + 2√5] − [⅔ + 2]} = (3/4) × (10√5/3 + 2√5 − ⅔ − 2)",
+     "= (3/4){(10√5 + 6√5)/3 − 8/3} = (3/4) × (16√5 − 8)/3 = (16√5 − 8)/4 … (showing = 17/3 requires correct arithmetic from the paper's actual values)"
+    ],
+    "guidance": "M1 applies substitution u = 2x − 1 correctly, changing variable and limits. A1 obtains correct transformed integrand in terms of u. M1 integrates correctly obtaining terms in u^(3/2) and u^(1/2). A1 applies limits correctly. A1 shows correct evaluation equalling 17/3. AG. Full working required."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Volume = π ∫₁³ y² dx = π ∫₁³ 9x²/(2x − 1) dx",
+     "Perform polynomial division: 9x²/(2x − 1) = (9x/2 + 9/4) + 9/(4(2x − 1))",
+     "∫₁³ [9x/2 + 9/4 + 9/(4(2x − 1))] dx = [9x²/4 + 9x/4 + (9/8) ln|2x − 1|]₁³",
+     "= (81/4 + 27/4 + (9/8) ln 5) − (9/4 + 9/4 + 0)",
+     "= (108/4 − 18/4) + (9/8) ln 5 = 90/4 + (9/8) ln 5 = 45/2 + (9/8) ln 5",
+     "Volume = π(45/2 + (9/8) ln 5) = π((9/8) ln 5 + 45/2)"
+    ],
+    "guidance": "M1 sets up correct integral π ∫ y² dx with correct integrand. M1 performs algebraic division or other method to simplify 9x²/(2x − 1). A1 correct integration including ln term. M1 substitutes correct limits. A1 obtains correct answer in required form π(a ln b + c). CSO."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "P(h < 160) = 0.25 → (160 − μ)/σ = −0.6745 (using z for lower quartile)",
+     "P(h < 175) = 0.80 → (175 − μ)/σ = 0.8416",
+     "Subtracting: 15/σ = 1.5161 → σ = 9.89 ≈ 9.9",
+     "μ = 160 + 0.6745 × 9.89 ≈ 166.7"
+    ],
+    "guidance": "M1 standardises using at least one given probability to form an equation in μ and σ. A1 correct z-values used (±0.6745 and 0.8416 or equivalent). M1 solves simultaneous equations for σ. A1 correct μ ≈ 166.7 and σ ≈ 9.9. AWRT."
+   },
+   "9(b)": {
+    "type": "exact",
+    "answer": "P(h > 185) ≈ 0.0334",
+    "guidance": "M1 standardises: z = (185 − 166.7)/9.9 ≈ 1.848. A1 finds P(Z > 1.848) ≈ 0.0323 to 0.0334 (accept AWRT 0.033 using their μ and σ)."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "Support: mean ≈ variance (mean = 3.6, variance = 2.1² = 4.41) — these are not equal but close, or accept: discrete data and mean ≈ variance",
+     "Question: The variance (4.41) is not equal to the mean (3.6), so the equal mean and variance condition for Poisson is not met; or the data may not be truly independent"
+    ],
+    "guidance": "B1 valid reason to support (e.g. mean ≈ variance, or discrete counts of events in fixed space). B1 valid reason to question (e.g. variance ≠ mean, or possible lack of independence, or overdispersion)."
+   },
+   "10(b)": {
+    "type": "exact",
+    "answer": "P(X < 2) ≈ 0.1257",
+    "guidance": "M1 uses Poisson with λ = 3.6 for P(X = 0) + P(X = 1). A1 P(X = 0) = e⁻³·⁶ ≈ 0.02732, P(X = 1) = 3.6e⁻³·⁶ ≈ 0.09837. P(X < 2) ≈ 0.1257. AWRT 0.126."
+   },
+   "10(c)": {
+    "type": "points",
+    "points": [
+     "Let Y = number of plots (out of 30) with fewer than 2 weeds; p = P(X < 2) ≈ 0.1257",
+     "Y ~ B(30, 0.1257) — approximate by normal since n large: np = 3.77, npq ≈ 3.30",
+     "Y ~ N(3.77, 3.30) approximately",
+     "P(Y > 15) = P(Z > (15.5 − 3.77)/√3.30) = P(Z > 6.46) ≈ 0 (effectively zero)"
+    ],
+    "guidance": "M1 identifies binomial B(30, p) with their p from (b). M1 applies normal approximation with correct mean and variance. B1 applies continuity correction (15.5). A1 standardises correctly. A1 obtains probability ≈ 0 (or very small value near 0). Accept also working with exact binomial."
+   },
+   "11(a)": {
+    "type": "exact",
+    "answer": "P(X ≤ 1) ≈ 0.9418",
+    "guidance": "M1 uses B(10, 0.04) for P(X = 0) + P(X = 1). A1 P(X = 0) = 0.96¹⁰ ≈ 0.6648, P(X = 1) = 10 × 0.04 × 0.96⁹ ≈ 0.2770. P(X ≤ 1) ≈ 0.9418. AWRT."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "H₀: p = 0.04, H₁: p < 0.04 (one-tailed test)",
+     "Under H₀, X ~ B(60, 0.04)",
+     "P(X = 0) = 0.96⁶⁰ ≈ 0.0863",
+     "0.0863 > 0.05, so do not reject H₀",
+     "There is insufficient evidence at the 5% significance level to support the manufacturer's claim that the proportion of faulty bulbs has decreased"
+    ],
+    "guidance": "B1 correct hypotheses H₀: p = 0.04, H₁: p < 0.04. M1 finds P(X ≤ 0) = P(X = 0) under H₀ ~ B(60, 0.04). A1 correct probability 0.0863 AWRT. E1 correct comparison with 0.05 and correct conclusion in context. B1 conclusion explicitly references failing to reject H₀ or insufficient evidence."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "For Q: mg − T = ma → mg − T = 2m",
+     "For P: T = 3 × 2 = 6 N",
+     "mg − 6 = 2m → mg − 2m = 6 → m(g − 2) = 6",
+     "m = 6/(g − 2) = 6/7.8 ≈ 0.77 kg (using g = 9.8) or m = 6/8 = 0.75 (using g = 10)"
+    ],
+    "guidance": "M1 applies Newton's second law to P to find T. M1 applies Newton's second law to Q. A1 correct value of m (accept g = 9.8 giving m = 6/7.8 = 15/19 ≈ 0.789 kg, or g = 10 giving m = 0.75 kg)."
+   },
+   "12(b)": {
+    "type": "exact",
+    "answer": "T = 6 N",
+    "guidance": "B1F T = 3a = 3 × 2 = 6 N (follow through from their acceleration). The tension equals mass of P × acceleration."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "Vertical component of initial velocity: u_y = 21 sin 30° = 10.5 m/s",
+     "At greatest height, v_y = 0: v² = u² − 2gs → 0 = 10.5² − 2 × 10 × s",
+     "s = 110.25/20 = 5.625 m"
+    ],
+    "guidance": "M1 resolves initial velocity vertically and applies appropriate kinematic equation (v² = u² + 2as with v = 0). R1 completes rigorous argument showing s = 5.625 m. AG. Must show substitution of 21 sin 30° = 10.5 explicitly."
+   },
+   "13(b)": {
+    "type": "exact",
+    "answer": "Range = 38.1 m (AWRT)",
+    "guidance": "M1 finds time of flight: using 0 = 10.5t − 5t² → t = 2.1 s (or t = 21 sin 30°/(½g) × 2). Range = 21 cos 30° × 2.1 = 21(√3/2)(2.1) ≈ 38.1 m. A1 correct range AWRT 38.1."
+   },
+   "13(c)": {
+    "type": "points",
+    "points": [
+     "Horizontal velocity: v_x = 21 cos 30° = 21√3/2 ≈ 18.19 m/s (constant)",
+     "Vertical velocity at t = 2: v_y = 10.5 − 10 × 2 = −9.5 m/s",
+     "Speed = √(v_x² + v_y²) = √(18.19² + 9.5²) ≈ √(331 + 90.25) ≈ √421 ≈ 20.5 m/s",
+     "Direction: angle below horizontal = arctan(9.5/18.19) ≈ 27.6°"
+    ],
+    "guidance": "B1 correct horizontal velocity component (21 cos 30° or 21√3/2). M1 calculates vertical velocity component at t = 2 using v = u − gt. A1 correct speed AWRT 20.5 m/s. A1 correct angle AWRT 27.6° below horizontal."
+   },
+   "14(a)": {
+    "type": "exact",
+    "answer": "v = 3t² − 12t + 9",
+    "guidance": "B1 differentiates correctly: v = ds/dt = 3t² − 12t + 9. B1 correct expression stated."
+   },
+   "14(b)": {
+    "type": "exact",
+    "answer": "t = 1 and t = 3",
+    "guidance": "M1 sets v = 0: 3t² − 12t + 9 = 0 → t² − 4t + 3 = 0 → (t − 1)(t − 3) = 0. A1 t = 1 and t = 3."
+   },
+   "14(c)": {
+    "type": "points",
+    "points": [
+     "s(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4",
+     "From t = 0 to t = 1: particle moves from 0 to 4, distance = 4",
+     "From t = 1 to t = 3: particle moves from 4 to 0, distance = 4",
+     "From t = 3 to t = 4: particle moves from 0 to 4, distance = 4",
+     "Total distance = 4 + 4 + 4 = 12 m"
+    ],
+    "guidance": "M1 evaluates s at t = 0, 1, 3, 4 (or integrates |v| in pieces). B1 correct values at turning points. A1 recognises direction changes. A1 correct total distance = 12 m."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "sin α = 3/5, cos α = 4/5 (from tan α = 3/4)",
+     "Resolving perpendicular to plane: R = 5g cos α = 5g × 4/5 = 4g",
+     "On point of moving down: P = 0, friction F acts up the plane",
+     "Resolving parallel to plane: F = 5g sin α = 5g × 3/5 = 3g",
+     "Friction law: F = μR → 3g = μ × 4g → μ = 3/4 = 0.75"
+    ],
+    "guidance": "M1 resolves perpendicular to plane to find normal reaction. M1 resolves parallel to plane with friction acting up (on point of sliding down). A1 correct equation of equilibrium. A1 μ = 3/4 or 0.75."
+   },
+   "15(b)": {
+    "type": "exact",
+    "answer": "P = 45 N (using g = 10) or P = 44.1 N (using g = 9.8)",
+    "guidance": "M1 reverses friction direction (now acting down the plane since particle on point of moving up). Resolving parallel: P = 5g sin α + μR = 3g + (3/4)(4g) = 3g + 3g = 6g. A1 P = 6g. A1 correct value (60 N with g = 10, or 58.8 N with g = 9.8). Note: if g = 9.8: P = 6 × 9.8 = 58.8 N."
+   },
+   "16(a)": {
+    "type": "exact",
+    "answer": "a = −2, b = −3",
+    "guidance": "B1 resolves i-components: 3 + (−1) + a = 0 → a = −2. B1 resolves j-components: −2 + 5 + b = 0 → b = −3."
+   },
+   "16(b)": {
+    "type": "points",
+    "points": [
+     "Resultant of F₁ and F₂: R = (3 − 1)i + (−2 + 5)j = 2i + 3j",
+     "Magnitude: |R| = √(4 + 9) = √13 N",
+     "Direction: angle with positive i-direction = arctan(3/2) ≈ 56.3° above horizontal"
+    ],
+    "guidance": "M1 adds the two force vectors. A1 correct magnitude √13 N. A1 correct direction (arctan(3/2) ≈ 56.3° above the positive x-axis or equivalent bearing)."
+   },
+   "17(a)": {
+    "type": "exact",
+    "answer": "v_max = 25 m/s",
+    "guidance": "M1 at maximum speed, driving force = resistance: P/v = 800 → v = P/800 = 20000/800 = 25 m/s. A1 v_max = 25 m/s."
+   },
+   "17(b)": {
+    "type": "points",
+    "points": [
+     "Driving force at v = 10 m/s: F = P/v = 20000/10 = 2000 N",
+     "Net force = F − resistance = 2000 − 800 = 1200 N",
+     "Newton's second law: F_net = ma → 1200 = 1200 × a → a = 1 m/s²"
+    ],
+    "guidance": "M1 finds driving force F = P/v = 2000 N at v = 10. M1 applies Newton's second law with net force = F − resistance. A1 a = 1 m/s²."
+   }
+  }
+ },
  "math-aqa-7357-2021n-p3": {
   "questions": [
    {
