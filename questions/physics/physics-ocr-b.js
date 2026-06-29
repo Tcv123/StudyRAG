@@ -73,7 +73,7 @@ const PHYSICS_OCR_B_QUESTIONS = {
     ],
     red: [
       { q: 'The equation for the period of a mass–spring system is T = 2π√(m/k). A student measures m = 0.500 ± 0.005 kg and T = 1.40 ± 0.02 s. What is the percentage uncertainty in k?', options: ['1%','2.9%','3.9%','5.9%'], answer: 2 },
-      { q: 'A student plots ln(I) against V for a filament lamp and obtains a curve rather than a straight line. What does this indicate?', options: ['The data should be replotted as I against V²','There is a systematic error in the ammeter','The resistance changes with temperature so the relationship is not exponential','The relationship is I = I₀ e^(V)'], answer: 2 },
+      { q: 'A student plots ln(I) against V for a filament lamp and obtains a curve rather than a straight line. What does this indicate?', options: ['The data should be replotted as I against V²','There is a systematic error in the ammeter','The resistance changes with temperature so the relationship is not exponential','The relationship is I = I₀ ln(V)'], answer: 2 },
       { q: 'An equation is proposed: F = 6πηrv, where F is force (N), r is radius (m), and v is velocity (m s⁻¹). What must the units of η be for the equation to be homogeneous?', options: ['kg m⁻¹ s⁻¹','kg m s⁻¹','kg m⁻² s⁻¹','N m⁻² s'], answer: 0 },
       { q: 'Two vectors of magnitude 5 N and 12 N act on a point. Which of the following is NOT a possible magnitude of their resultant?', options: ['18 N','17 N','13 N','7 N'], answer: 0 },
       { q: 'A student uses dimensional analysis to check E = ½mv² + mgh. Both terms have dimensions of:', options: ['kg m s⁻²','kg m² s⁻²','kg m s⁻¹','kg m² s⁻¹'], answer: 1 },
