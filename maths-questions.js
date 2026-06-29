@@ -17085,5 +17085,345 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1: standardise both limits using their μ and σ. A1: awrt 0.563 (follow through from their μ and σ)."
    }
   }
+ },
+ "math-edx-9ma0-2023-p32": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "A particle moves along a straight line. The displacement, s metres, of the particle from a fixed point O at time t seconds is given by s = t³ − 6t² + 9t,  t ≥ 0.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find the velocity of the particle at time t seconds.",
+      "marks": 2
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Find the values of t at which the particle is instantaneously at rest.",
+      "marks": 2
+     },
+     {
+      "code": "1(c)",
+      "prompt": "Find the total distance travelled by the particle in the first 4 seconds.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A car of mass 1200 kg travels along a straight horizontal road. The engine of the car produces a constant driving force. The car experiences a constant resistance to motion of 800 N. The car accelerates from rest and reaches a speed of 20 m s⁻¹ in 25 seconds.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find the driving force produced by the engine.",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find the power output of the engine when the car is travelling at 20 m s⁻¹.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "Two particles A and B have masses 3m and m respectively. The particles are connected by a light inextensible string that passes over a smooth fixed pulley. The system is released from rest with both particles hanging freely.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Show that the acceleration of the system is g/2.",
+      "marks": 3
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the tension in the string in terms of m and g.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A uniform rod AB has length 4 m and weight 60 N. The rod rests horizontally on two smooth supports, one at A and one at a point C on the rod, where AC = 3 m. A particle of weight W newtons is attached to the rod at B.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "By taking moments about A, or otherwise, find the reaction at C.",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the value of W.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "A particle is projected from a point O on a horizontal plane with speed 28 m s⁻¹ at an angle α above the horizontal, where tan α = 3/4. The particle moves freely under gravity. (Take g = 9.8 m s⁻²)",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find the greatest height above the plane reached by the particle.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the horizontal range of the particle.",
+      "marks": 3
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Find the speed of the particle and the angle its velocity makes with the horizontal when t = 2 s.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A particle of mass 2 kg is in equilibrium on a rough inclined plane. The plane makes an angle of 30° with the horizontal. A horizontal force of magnitude P newtons acts on the particle. The coefficient of friction between the particle and the plane is μ. The particle is on the point of sliding up the plane.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Draw a diagram showing all the forces acting on the particle.",
+      "marks": 1
+     },
+     {
+      "code": "6(b)",
+      "prompt": "By resolving forces parallel and perpendicular to the inclined plane, show that\nP(cos 30° − μ sin 30°) = 2g(sin 30° + μ cos 30°)",
+      "marks": 4
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Given that μ = 1/√3, find the value of P. Give your answer in the form k√3 where k is a rational number.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "At time t = 0 a particle P leaves the origin O and moves in a straight line. The velocity of P, v m s⁻¹, at time t seconds is modelled by\nv = 12t − 3t²,  0 ≤ t ≤ 4\nv = 0,           t > 4",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Find the maximum velocity of P and the value of t at which it occurs.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the displacement of P from O at t = 4.",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Sketch the velocity–time graph for P for 0 ≤ t ≤ 6, labelling clearly the values at the axes.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "Two small balls A and B are moving along the same straight line on a smooth horizontal surface. Ball A, of mass 3 kg, is moving with velocity 5 m s⁻¹. Ball B, of mass 2 kg, is moving in the opposite direction with velocity 2 m s⁻¹. The balls collide. After the collision, A has velocity 1 m s⁻¹ in its original direction.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the velocity of B after the collision.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find the magnitude of the impulse exerted on A during the collision.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "v = ds/dt = 3t² − 12t + 9"
+    ],
+    "guidance": "M1: differentiate s with respect to t. A1: obtain v = 3t² − 12t + 9. (2 marks)"
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "Set v = 0: 3t² − 12t + 9 = 0 ⇒ t² − 4t + 3 = 0",
+     "(t − 1)(t − 3) = 0 ⇒ t = 1 or t = 3"
+    ],
+    "guidance": "M1: set their v = 0 and solve. A1: both t = 1 and t = 3. (2 marks)"
+   },
+   "1(c)": {
+    "type": "exact",
+    "points": [
+     "s(0) = 0,  s(1) = 1 − 6 + 9 = 4,  s(3) = 27 − 54 + 27 = 0,  s(4) = 64 − 96 + 36 = 4",
+     "Distance from t = 0 to 1: |4 − 0| = 4",
+     "Distance from t = 1 to 3: |0 − 4| = 4",
+     "Distance from t = 3 to 4: |4 − 0| = 4",
+     "Total distance = 4 + 4 + 4 = 12 m"
+    ],
+    "guidance": "M1: evaluate s at t = 0, 1, 3, 4 (or use calculus to find distances in each segment). M1: correct strategy — sum of magnitudes of displacement changes between consecutive turning points and t = 4. A1: total distance = 12 m. (3 marks)"
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "Acceleration: a = (20 − 0)/25 = 0.8 m s⁻²",
+     "Newton's second law: F − 800 = 1200 × 0.8 = 960",
+     "F = 1760 N"
+    ],
+    "guidance": "M1: use v = u + at to find acceleration. M1: apply Newton's second law horizontally. A1: F = 1760 N. (3 marks)"
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "Power = Force × velocity = 1760 × 20 = 35 200 W = 35.2 kW"
+    ],
+    "guidance": "M1: use P = Fv with their F and v = 20. A1: P = 35 200 W (or 35.2 kW). (2 marks)"
+   },
+   "3(a)": {
+    "type": "points",
+    "points": [
+     "For particle A (mass 3m, moving down): 3mg − T = 3ma  … (1)",
+     "For particle B (mass m, moving up):   T − mg = ma    … (2)",
+     "Add (1) and (2): 2mg = 4ma ⇒ a = g/2"
+    ],
+    "guidance": "M1: apply Newton's second law to each particle separately. A1: correct equation for each particle. R1: combine equations to obtain a = g/2. AG — rigorous argument required. (3 marks)"
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "Substitute a = g/2 into equation (2): T − mg = m(g/2)",
+     "T = mg + mg/2 = 3mg/2"
+    ],
+    "guidance": "M1: substitute a = g/2 into either equation of motion. A1: T = 3mg/2. (2 marks)"
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "Taking moments about A for the whole rod (weight acts at midpoint, 2 m from A):",
+     "R_C × 3 = 60 × 2 + W × 4",
+     "Resolve vertically: R_A + R_C = 60 + W"
+    ],
+    "guidance": "M1: take moments about A with at least two moment terms correct. A1: correct moment equation R_C × 3 = 60 × 2 + W × 4, giving R_C = (120 + 4W)/3. (2 marks)"
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "For the rod not to lift off at A, R_A ≥ 0",
+     "If the rod is just resting (standard equilibrium, taking moments about C):",
+     "Taking moments about C: R_A × 3 = 60 × (3 − 2) + W × (4 − 3) … correction: weight of rod acts at 2 m from A, which is (3 − 2) = 1 m to the left of C; weight W acts at B, 1 m to the right of C",
+     "Moments about C: R_A × 3 = 60 × 1 − W × 1",
+     "For R_A = 0 (on the point of tilting): 0 = 60 − W ⇒ W = 60 N",
+     "Or using the earlier moment equation about A: R_C = (120 + 4W)/3; with R_A = 0, R_C = 60 + W, so (120 + 4W)/3 = 60 + W ⇒ 120 + 4W = 180 + 3W ⇒ W = 60 N"
+    ],
+    "guidance": "M1: take moments about C (or use the two equations from part (a)) to set up an equation for W. A1: W = 60 N. (2 marks)"
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "tan α = 3/4 ⇒ sin α = 3/5, cos α = 4/5",
+     "Vertical component of velocity: uᵧ = 28 × (3/5) = 16.8 m s⁻¹",
+     "At greatest height, vertical velocity = 0: 0 = 16.8² − 2(9.8)H",
+     "H = 16.8²/(2 × 9.8) = 282.24/19.6 = 14.4 m"
+    ],
+    "guidance": "M1: resolve initial velocity vertically — uᵧ = 28 sin α. M1: use v² = u² − 2gH with v = 0. A1: H = 14.4 m. (3 marks)"
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "Horizontal component of velocity: uₓ = 28 × (4/5) = 22.4 m s⁻¹",
+     "Time of flight: use vertical displacement = 0",
+     "0 = 16.8t − ½(9.8)t² = t(16.8 − 4.9t)",
+     "t = 16.8/4.9 = 24/7 ≈ 3.4286 s  (t ≠ 0)",
+     "Range = uₓ × t = 22.4 × (24/7) = 22.4 × 3.4286… = 76.8 m"
+    ],
+    "guidance": "M1: find horizontal component uₓ = 28 cos α. M1: set vertical displacement = 0 and solve for time of flight. A1: t = 24/7 s. A1: range = 76.8 m. (4 marks)"
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "At t = 2: horizontal velocity = 22.4 m s⁻¹ (constant)",
+     "Vertical velocity: vᵧ = 16.8 − 9.8 × 2 = 16.8 − 19.6 = −2.8 m s⁻¹",
+     "Speed = √(22.4² + 2.8²) = √(501.76 + 7.84) = √509.6 = 22.574… ≈ 22.6 m s⁻¹",
+     "Angle below horizontal: tan θ = 2.8/22.4 = 1/8 ⇒ θ = arctan(0.125) ≈ 7.1°"
+    ],
+    "guidance": "M1: find vertical velocity at t = 2 using vᵧ = uᵧ − gt. A1: vᵧ = −2.8 m s⁻¹. M1: use Pythagoras to find speed. A1: speed = √509.6 ≈ 22.6 m s⁻¹ and angle ≈ 7.1° below horizontal. (4 marks)"
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "Forces on particle: weight 2g N vertically downward, normal reaction N perpendicular to plane (pointing away from plane), friction F along the plane (pointing down the plane, as particle on point of sliding up), horizontal force P"
+    ],
+    "guidance": "B1: diagram showing all four forces correctly directed: weight 2g downward, N perpendicular to incline, friction down the slope (opposing impending motion up), P horizontal. (1 mark)"
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "Resolve perpendicular to plane: N = 2g cos 30° + P sin 30°",
+     "Resolve parallel to plane (taking up as positive, particle on point of sliding up so friction acts down the plane):",
+     "P cos 30° = 2g sin 30° + F",
+     "With F = μN: P cos 30° = 2g sin 30° + μ(2g cos 30° + P sin 30°)",
+     "P cos 30° − μP sin 30° = 2g sin 30° + 2μg cos 30°",
+     "P(cos 30° − μ sin 30°) = 2g(sin 30° + μ cos 30°)  ✓"
+    ],
+    "guidance": "M1: resolve perpendicular to the plane correctly. M1: resolve parallel to the plane correctly. M1: use F = μN (limiting friction condition). R1: combine to obtain the printed result. AG. (4 marks)"
+   },
+   "6(c)": {
+    "type": "exact",
+    "points": [
+     "With μ = 1/√3: cos 30° = √3/2, sin 30° = 1/2",
+     "cos 30° − μ sin 30° = √3/2 − (1/√3)(1/2) = √3/2 − 1/(2√3) = (3 − 1)/(2√3) = 2/(2√3) = 1/√3",
+     "sin 30° + μ cos 30° = 1/2 + (1/√3)(√3/2) = 1/2 + 1/2 = 1",
+     "P(1/√3) = 2g(1)",
+     "P = 2g√3 = 2 × 9.8 × √3 = 19.6√3 N  (so k = 19.6)"
+    ],
+    "guidance": "M1: substitute μ = 1/√3 and trig values into the result from (b). M1: simplify each bracket. A1: correct simplification of each side. A1: P = 19.6√3 N. (4 marks)"
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "Differentiate v: dv/dt = 12 − 6t",
+     "Set dv/dt = 0: 12 − 6t = 0 ⇒ t = 2",
+     "Maximum velocity: v(2) = 12(2) − 3(4) = 24 − 12 = 12 m s⁻¹"
+    ],
+    "guidance": "M1: differentiate v to get acceleration and set to zero. A1: t = 2. A1: v_max = 12 m s⁻¹. (3 marks)"
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "Displacement = ∫₀⁴ (12t − 3t²) dt = [6t² − t³]₀⁴",
+     "= 6(16) − 64 = 96 − 64 = 32 m"
+    ],
+    "guidance": "M1: integrate v with respect to t. A1: antiderivative = 6t² − t³. A1: displacement = 32 m. (3 marks)"
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "Graph starts at origin (0, 0)",
+     "Rises to maximum of 12 m s⁻¹ at t = 2",
+     "Returns to 0 at t = 4 (smooth curve, parabolic shape)",
+     "Remains at v = 0 for t > 4, labelled clearly up to t = 6"
+    ],
+    "guidance": "B1: correct shape — smooth curve from (0,0) to maximum at t = 2 and back to 0 at t = 4, with axis values 12 and t = 2, 4 labelled. B1: horizontal line at v = 0 from t = 4 to t = 6 shown. (2 marks)"
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "Conservation of momentum (taking A's original direction as positive):",
+     "3(5) + 2(−2) = 3(1) + 2v_B",
+     "15 − 4 = 3 + 2v_B",
+     "2v_B = 8 ⇒ v_B = 4 m s⁻¹  (in A's original direction)"
+    ],
+    "guidance": "M1: apply conservation of linear momentum with correct signs. M1: correct equation 11 = 3 + 2v_B. A1: v_B = 4 m s⁻¹. (3 marks)"
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "Impulse on A = change in momentum of A = m_A(v_A − u_A) = 3(1 − 5) = 3(−4) = −12 N s",
+     "Magnitude of impulse = 12 N s"
+    ],
+    "guidance": "M1: impulse = m(v − u) applied to A. A1: magnitude = 12 N s. (2 marks)"
+   },
+  }
  }
 };
