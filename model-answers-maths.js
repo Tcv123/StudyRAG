@@ -2132,6 +2132,88 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-aqa-7357-2024-p1::17(c)": "From x(x + 2) = 0: x = 0 or x = −2.\nAt x = 0: y = 0²·e⁰ = 0. Point (0, 0).\nAt x = −2: y = (−2)²e⁻² = 4e⁻² = 4/e².\nNature — use d²y/dx²:\nd²y/dx² = d/dx[eˣ(x² + 2x)] = eˣ(x² + 2x) + eˣ(2x + 2) = eˣ(x² + 4x + 2).\nAt x = 0: d²y/dx² = e⁰(0 + 0 + 2) = 2 > 0 → local minimum at (0, 0).\nAt x = −2: d²y/dx² = e⁻²(4 − 8 + 2) = −2e⁻² < 0 → local maximum at (−2, 4/e²).",
 
+ "math-aqa-7357-2024-p2::1": "Assume for contradiction that there is a greatest odd integer; call it N.\nThen N + 2 is also an integer, and N + 2 > N.\nSince N is odd, N = 2m + 1 for some integer m, so N + 2 = 2m + 3 = 2(m + 1) + 1, which is also odd.\nThis contradicts N being the greatest odd integer.\nTherefore no greatest odd integer exists. ∎",
+
+ "math-aqa-7357-2024-p2::2(a)": "gf(x) = g(f(x)) = g(3x − 2) = (3x − 2)² + 1.\nExpand: (3x − 2)² = 9x² − 12x + 4.\nSo gf(x) = 9x² − 12x + 4 + 1 = 9x² − 12x + 5.",
+
+ "math-aqa-7357-2024-p2::2(b)": "Set gf(x) = 26: 9x² − 12x + 5 = 26.\n9x² − 12x − 21 = 0.\nDivide by 3: 3x² − 4x − 7 = 0.\nFactorise: (3x − 7)(x + 1) = 0.\nx = 7/3 or x = −1.",
+
+ "math-aqa-7357-2024-p2::3": "y = x³ − 6x² + 5.\ndy/dx = 3x² − 12x.\nd²y/dx² = 6x − 12.\nFor concavity: d²y/dx² < 0 ⇒ 6x − 12 < 0 ⇒ x < 2.",
+
+ "math-aqa-7357-2024-p2::4(a)": "For a geometric sequence the ratio between consecutive terms is constant:\nk/(k + 4) = (2k − 15)/k.\nCross-multiply: k² = (k + 4)(2k − 15) = 2k² − 15k + 8k − 60 = 2k² − 7k − 60.\nRearranging: 0 = k² − 7k − 60.\nFactorise: (k − 12)(k + 5) = 0 ⇒ k = 12 or k = −5.\nSince k is a positive constant, k = 12.",
+
+ "math-aqa-7357-2024-p2::4(b)": "With k = 12: first term = k + 4 = 16, second term = k = 12.\nCommon ratio r = 12/16 = 3/4.",
+
+ "math-aqa-7357-2024-p2::4(c)": "First term a = 16, common ratio r = 3/4 (|r| < 1).\nSum to infinity S∞ = a/(1 − r) = 16/(1 − 3/4) = 16/(1/4) = 64.",
+
+ "math-aqa-7357-2024-p2::5(a)": "Strip width h = (5 − 1)/4 = 1.\ny-values at x = 1, 2, 3, 4, 5:\ny₀ = √(ln 1) = 0,  y₁ = √(ln 2) ≈ 0.8326,  y₂ = √(ln 3) ≈ 1.0481,  y₃ = √(ln 4) ≈ 1.1774,  y₄ = √(ln 5) ≈ 1.2686.\nTrapezium rule: Area ≈ (h/2)[y₀ + y₄ + 2(y₁ + y₂ + y₃)]\n= (1/2)[0 + 1.2686 + 2(0.8326 + 1.0481 + 1.1774)]\n= (1/2)[1.2686 + 2(3.0581)]\n= (1/2)(1.2686 + 6.1162) = (1/2)(7.3848) = 3.692.",
+
+ "math-aqa-7357-2024-p2::5(b)": "The graph of y = √(ln x) is concave upward on [1, 5] (the curve bends away from the x-axis), so each trapezium lies above the curve. The trapezium rule gives an overestimate.",
+
+ "math-aqa-7357-2024-p2::6(a)": "Write R sin(θ + α) = R sin θ cos α + R cos θ sin α.\nComparing with 5 cos θ + 12 sin θ: R cos α = 12 and R sin α = 5.\nR = √(12² + 5²) = √(144 + 25) = √169 = 13.\ntan α = 5/12 ⇒ α = arctan(5/12) = 22.6° (to 1 d.p.).",
+
+ "math-aqa-7357-2024-p2::6(b)": "13 sin(θ + 22.6°) = 8 ⇒ sin(θ + 22.6°) = 8/13.\narcsin(8/13) = 37.98°.\nFor 0° ≤ θ ≤ 360°, θ + 22.6° is in [22.6°, 382.6°].\nSolutions: θ + 22.6° = 37.98° or θ + 22.6° = 180° − 37.98° = 142.02°.\nθ = 15.4° or θ = 119.4°.",
+
+ "math-aqa-7357-2024-p2::6(c)": "Maximum value of 5 cos θ + 12 sin θ = R = 13.\nOccurs when sin(θ + 22.6°) = 1, i.e. θ + 22.6° = 90° ⇒ θ = 67.4°.",
+
+ "math-aqa-7357-2024-p2::7(a)": "Integrate by parts: let u = x, dv = sin 2x dx.\nThen du = dx, v = −½ cos 2x.\n∫ x sin 2x dx = −(x/2) cos 2x − ∫ −½ cos 2x dx\n= −(x/2) cos 2x + ½ ∫ cos 2x dx\n= −(x/2) cos 2x + (1/4) sin 2x + c.",
+
+ "math-aqa-7357-2024-p2::7(b)": "∫₀^(π/4) x sin 2x dx = [−(x/2) cos 2x + (1/4) sin 2x]₀^(π/4).\nAt x = π/4: −(π/8) cos(π/2) + (1/4) sin(π/2) = −(π/8)(0) + (1/4)(1) = 1/4.\nAt x = 0: 0 + 0 = 0.\nThe exact value is 1/4.",
+
+ "math-aqa-7357-2024-p2::8(a)": "X ~ N(45, 8²).\nP(X > 50) = P(Z > (50 − 45)/8) = P(Z > 0.625) = 1 − Φ(0.625).\nUsing tables: Φ(0.625) ≈ 0.7340, so P(X > 50) = 1 − 0.7340 = 0.266.",
+
+ "math-aqa-7357-2024-p2::8(b)": "P(X < a) = 0.2 ⇒ (a − 45)/8 = Φ⁻¹(0.2) = −0.8416.\na = 45 + 8(−0.8416) = 45 − 6.733 = 38.3 (3 s.f.).",
+
+ "math-aqa-7357-2024-p2::9(a)": "Frequency densities (frequency ÷ class width):\n[10, 20): 12/10 = 1.2;  [20, 30): 25/10 = 2.5;  [30, 40): 28/10 = 2.8;  [40, 50): 11/10 = 1.1;  [50, 70): 4/20 = 0.2.\nDraw a histogram with class boundaries on the horizontal axis and frequency density on the vertical axis, using these heights.",
+
+ "math-aqa-7357-2024-p2::9(b)": "Using class midpoints (15, 25, 35, 45, 60):\nΣfx = 12×15 + 25×25 + 28×35 + 11×45 + 4×60 = 180 + 625 + 980 + 495 + 240 = 2520.\nMean = 2520/80 = 31.5 cm.",
+
+ "math-aqa-7357-2024-p2::9(c)": "Σfx² = 12×225 + 25×625 + 28×1225 + 11×2025 + 4×3600\n= 2700 + 15625 + 34300 + 22275 + 14400 = 89300.\nVariance = 89300/80 − 31.5² = 1116.25 − 992.25 = 124.\nStandard deviation = √124 ≈ 11.1 cm.",
+
+ "math-aqa-7357-2024-p2::10(a)": "X ~ B(5, 0.35).\nP(X = 2) = C(5, 2)(0.35)²(0.65)³ = 10 × 0.1225 × 0.274625 = 0.336 (3 s.f.).",
+
+ "math-aqa-7357-2024-p2::10(b)": "P(X ≥ 3) = P(X = 3) + P(X = 4) + P(X = 5).\nP(X = 3) = C(5,3)(0.35)³(0.65)² = 10 × 0.042875 × 0.4225 = 0.18115.\nP(X = 4) = C(5,4)(0.35)⁴(0.65) = 5 × 0.015006 × 0.65 = 0.04877.\nP(X = 5) = (0.35)⁵ = 0.00525.\nP(X ≥ 3) = 0.18115 + 0.04877 + 0.00525 = 0.235 (3 s.f.).",
+
+ "math-aqa-7357-2024-p2::10(c)": "E(X) = np = 5 × 0.35 = 1.75 days.",
+
+ "math-aqa-7357-2024-p2::11(a)": "T = ab^x.\nTaking logs (base 10): log T = log(ab^x) = log a + log b^x = log a + x log b. ∎",
+
+ "math-aqa-7357-2024-p2::11(b)": "Comparing log T = log a + x log b with log T = 3.14 − 0.021x:\nlog a = 3.14 ⇒ a = 10^(3.14) ≈ 1380 (3 s.f.).\nlog b = −0.021 ⇒ b = 10^(−0.021) ≈ 0.952 (3 s.f.).",
+
+ "math-aqa-7357-2024-p2::11(c)": "Substitute x = 60 into the regression equation:\nlog T = 3.14 − 0.021 × 60 = 3.14 − 1.26 = 1.88.\nT = 10^(1.88) ≈ 75.9 minutes.",
+
+ "math-aqa-7357-2024-p2::11(d)": "b = 0.952 means that for each 1 °C increase in temperature, the reaction time is multiplied by 0.952 — i.e. the time decreases by approximately 4.8% per degree Celsius rise in temperature.",
+
+ "math-aqa-7357-2024-p2::12(a)": "Drawing without replacement from 5 red and 3 blue:\nP(all 3 red) = (5/8) × (4/7) × (3/6) = 60/336 = 5/28.",
+
+ "math-aqa-7357-2024-p2::12(b)": "P(at least one blue) = 1 − P(all red) = 1 − 5/28 = 23/28.",
+
+ "math-aqa-7357-2024-p2::12(c)": "P(exactly 2 blue) = C(3,2)×C(5,1)/C(8,3) = 3×5/56 = 15/56.\nP(at least 1 blue) = 23/28 = 46/56.\nP(exactly 2 blue | at least 1 blue) = (15/56)/(46/56) = 15/46.",
+
+ "math-aqa-7357-2024-p2::13(a)": "H₀: p = 0.5 (the coin is fair).\nH₁: p > 0.5 (the coin is biased towards heads).",
+
+ "math-aqa-7357-2024-p2::13(b)": "Under H₀: X ~ B(20, 0.5).\nP(X ≥ 14) = 1 − P(X ≤ 13).\nFrom binomial tables: P(X ≤ 13) = 0.9423, so P(X ≥ 14) = 0.0577.\nSince 0.0577 > 0.05, we do not reject H₀.\nConclusion: there is insufficient evidence at the 5% significance level to conclude that the coin is biased towards heads.",
+
+ "math-aqa-7357-2024-p2::13(c)": "Find the smallest integer c such that P(X ≥ c) ≤ 0.05 under B(20, 0.5).\nP(X ≥ 15) = 1 − P(X ≤ 14) = 1 − 0.9793 = 0.0207 < 0.05.\nP(X ≥ 14) = 0.0577 > 0.05.\nThe critical region is X ≥ 15.",
+
+ "math-aqa-7357-2024-p2::14(a)": "Let u = 2x + 1, so x = (u − 1)/2 and dx = du/2.\n∫ x(2x + 1)⁵ dx = ∫ ((u − 1)/2) · u⁵ · (du/2) = (1/4)∫(u⁶ − u⁵) du\n= (1/4)[u⁷/7 − u⁶/6] + c\n= (2x + 1)⁷/28 − (2x + 1)⁶/24 + c.",
+
+ "math-aqa-7357-2024-p2::14(b)": "Evaluate [(2x + 1)⁷/28 − (2x + 1)⁶/24]₀¹.\nAt x = 1: u = 3, so 3⁷/28 − 3⁶/24 = 2187/28 − 729/24.\nCommon denominator 168: 13122/168 − 5103/168 = 8019/168.\nAt x = 0: u = 1, so 1/28 − 1/24 = 6/168 − 7/168 = −1/168.\nIntegral = 8019/168 − (−1/168) = 8020/168 = 1003/21.",
+
+ "math-aqa-7357-2024-p2::15(a)": "P(X > 185) = 0.10 ⇒ (185 − μ)/σ = 1.2816, i.e. 185 − μ = 1.2816σ.\nP(X < 165) = 0.25 ⇒ (165 − μ)/σ = −0.6745, i.e. 165 − μ = −0.6745σ.",
+
+ "math-aqa-7357-2024-p2::15(b)": "Subtract the second equation from the first:\n(185 − μ) − (165 − μ) = 1.2816σ − (−0.6745σ)\n20 = 1.9561σ ⇒ σ = 20/1.9561 = 10.2 cm (1 d.p.).\nSubstitute back: μ = 185 − 1.2816 × 10.2 = 185 − 13.1 = 171.9 cm (1 d.p.).",
+
+ "math-aqa-7357-2024-p2::16(a)": "y = (4x² − 1)/(2x − 1). Apply the quotient rule with u = 4x² − 1, v = 2x − 1:\ndy/dx = (u′v − uv′)/v² = (8x(2x − 1) − 2(4x² − 1))/(2x − 1)².\nNumerator: 16x² − 8x − 8x² + 2 = 8x² − 8x + 2.\nHence dy/dx = (8x² − 8x + 2)/(2x − 1)². ∎",
+
+ "math-aqa-7357-2024-p2::16(b)": "Set dy/dx = 0: 8x² − 8x + 2 = 0 ⇒ 4x² − 4x + 1 = 0 ⇒ (2x − 1)² = 0 ⇒ x = 1/2.\nHowever, x = 1/2 makes the denominator of y zero, so x = 1/2 is not in the domain of C.\nThe curve has no stationary point.\n(Note: y = (4x² − 1)/(2x − 1) = (2x + 1)(2x − 1)/(2x − 1) = 2x + 1 for x ≠ 1/2, a straight line.)",
+
+ "math-aqa-7357-2024-p2::16(c)": "Since the curve has no stationary point (the only candidate x = 1/2 is outside the domain), there is no stationary point whose nature can be determined.",
+
+ "math-aqa-7357-2024-p2::17(a)": "∫₁² (3/x − 2) dx = [3 ln x − 2x]₁².\nAt x = 2: 3 ln 2 − 4.\nAt x = 1: 3 ln 1 − 2 = 0 − 2 = −2.\nValue = (3 ln 2 − 4) − (−2) = 3 ln 2 − 4 + 2 = 3 ln 2 − 2. ∎",
+
+ "math-aqa-7357-2024-p2::17(b)": "The student's reasoning is invalid because f(x) = 3/x − 2 has a discontinuity at x = 0, which lies inside the interval [−1, 1]. The integral ∫₋₁¹ f(x) dx is an improper integral (the integrand is undefined at x = 0), and improper integrals of this type diverge — they cannot be evaluated by ordinary symmetry arguments. The integral does not exist (or is divergent), so the claim that it equals 0 is wrong.",
+
  "math-edx-9ma0-2018-p1::10(b)": "H is maximum when e^(0.1sin(0.25t)) is maximum, i.e. when sin(0.25t) = 1.\nH_max = 5e^(0.1) ≈ 5.53 m.",
 
  "math-edx-9ma0-2018-p1::10(c)": "Maximum occurs when sin(0.25t) = 1 ⟹ 0.25t = π/2 + 2nπ.\nFirst maximum: t = 2π ≈ 6.28 s.\nSecond maximum: 0.25T = π/2 + 2π = 5π/2 ⟹ T = 10π ≈ 31.4 s.",
