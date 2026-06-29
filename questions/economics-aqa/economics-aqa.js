@@ -14,7 +14,7 @@ const ECONOMICS_AQA_QUESTIONS = {
       { q: 'Which of the following is a factor of production?', options: ['Money', 'Shares', 'Land', 'Profit'], answer: 2 },
       { q: 'The reward for enterprise as a factor of production is:', options: ['Wages', 'Rent', 'Interest', 'Profit'], answer: 3 },
       { q: 'A point inside the PPF indicates:', options: ['Full employment of resources', 'Inefficient use of resources', 'Economic growth', 'Unattainable output'], answer: 1 },
-      { q: 'Which statement about free goods is correct?', options: ['They have an opportunity cost', 'They are scarce', 'They have no opportunity cost', 'They are always tangible'], answer: 2 },
+      { q: 'Which statement about free goods is correct?', options: ['They have an opportunity cost', 'They are scarce', 'They have no opportunity cost', 'They are provided free of charge by the government'], answer: 2 },
       { q: 'Normative economics is concerned with:', options: ['Statements of fact', 'Value judgements about what ought to be', 'Testable hypotheses', 'Statistical analysis'], answer: 1 },
       { q: 'A positive economic statement is one that:', options: ['Is always true', 'Can be tested against evidence', 'Expresses an opinion', 'Recommends policy'], answer: 1 },
       { q: 'Capital as a factor of production refers to:', options: ['Money in a bank', 'Financial assets', 'Man-made aids to production', 'Natural resources'], answer: 2 },

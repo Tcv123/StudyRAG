@@ -21,7 +21,7 @@ const MATHS_AQA_QUESTIONS = {
       { q: 'The sum of two odd numbers is always:', options: ['Even', 'Odd', 'Prime', 'A multiple of 4'], answer: 0 },
       { q: 'If \\(a\\) and \\(b\\) are both even, then \\(a + b\\) is:', options: ['Even', 'Odd', 'Could be either', 'Prime'], answer: 0 },
       { q: 'A rational number can be expressed as:', options: ['\\(\\frac{a}{b}\\) where \\(a, b\\) are integers and \\(b \\neq 0\\)', 'A non-terminating non-repeating decimal', 'The square root of a prime', '\\(\\pi \\times n\\) for integer \\(n\\)'], answer: 0 },
-      { q: 'Which of these numbers is irrational?', options: ['\\(\\sqrt{3}\\)', '\\(\\frac{22}{7}\\)', '\\(0.\\overline{3}\\)', '\\(\\sqrt{4}\\)'], answer: 0 },
+      { q: 'Which of these numbers is irrational?', options: ['\\(\\sqrt{3}\\)', '\\(\\frac{22}{7}\\)', '\\(0.\\overline{3}\\)', '\\(\\sqrt{9}\\)'], answer: 0 },
     ],
     amber: [
       { q: 'Prove algebraically: the sum of squares of any two consecutive odd numbers is even. What is the correct expansion of \\((2n+1)^2 + (2n+3)^2\\)?', options: ['\\(8n^2 + 16n + 10\\)', '\\(4n^2 + 8n + 10\\)', '\\(8n^2 + 8n + 4\\)', '\\(4n^2 + 16n + 10\\)'], answer: 0 },

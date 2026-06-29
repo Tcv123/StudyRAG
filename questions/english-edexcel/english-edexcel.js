@@ -17,7 +17,7 @@ const ENGLISH_EDEXCEL_QUESTIONS = {
       { q: 'What is an "accent"?', options: ['Vocabulary differences','Pronunciation patterns of a speaker or group','Grammatical rules','A type of punctuation'], answer: 1 },
       { q: 'What does "RP" stand for?', options: ['Regional Pronunciation','Received Pronunciation','Rapid Pronunciation','Reading Paper'], answer: 1 },
       { q: 'RP is traditionally associated with…', options: ['Only Liverpool','High social prestige and BBC broadcasting','Only Wales','Children'], answer: 1 },
-      { q: 'What is "Standard English"?', options: ['A regional dialect','The variety of English recognised for formal, educational and official use','An accent','A slang form'], answer: 1 },
+      { q: 'What is "Standard English"?', options: ['A regional dialect','The variety of English recognised for formal, educational and official use','An accent','The dialect spoken natively in the South East of England only'], answer: 1 },
       { q: 'Standard English and RP are…', options: ['The same thing','Different: Standard English is a dialect; RP is an accent','Only written','Only spoken'], answer: 1 },
       { q: 'What is meant by "register"?', options: ['A type of accent','The level of formality and appropriateness to context','An individual\'s speech','A grammar book'], answer: 1 },
       { q: 'Which of these is a UK regional dialect?', options: ['Geordie','Spanglish','Creole','AAVE'], answer: 0 },
