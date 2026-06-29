@@ -7618,5 +7618,592 @@ window.MATHS_QUESTIONS = {
     "guidance": "B1 states both hypotheses correctly for one-tailed test with p = 0.42. M1 states/uses correct model B(35, 0.42). A1 P(X ≥ 18) AWFW [0.168, 0.17] or critical value 19 or critical region X ≥ 19. M1 compares P(X ≥ 18) with 0.10 (or critical region with 18). A1 infers H₀ not rejected. R1 concludes correctly in context. R1 requires M1A1M1A1 as minimum."
    }
   }
+ },
+ "math-aqa-7357-2021n-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "State the set of values of x which satisfies the inequality\n\n(x − 3)(2x − 7) > 0\n\nTick (✓) one box.\n\nx : −7/2 < x < 3\nx : x < −3 or x > 7/2\nx : x < −7/2 or x > 3\nx : −3 < x < 7/2",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Given that y = ln(5x)\n\nfind dy/dx\n\nCircle your answer.\n\ndy/dx = 1/x     dy/dx = 1/(5x)     dy/dx = 5/x     dy/dx = ln 5",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "A geometric sequence has a sum to infinity of −3\n\nA second sequence is formed by multiplying each term of the original sequence by −2\n\nWhat is the sum to infinity of the new sequence?\n\nCircle your answer.\n\n−6     −3     6     The sum to infinity does not exist",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Millie is attempting to use proof by contradiction to show that the result of multiplying an irrational number by a non-zero rational number is always an irrational number.\n\nSelect the assumption she should make to start her proof.\n\nTick (✓) one box.\n\nEvery irrational multiplied by a non-zero rational is irrational.\nEvery irrational multiplied by a non-zero rational is rational.\nThere exists a non-zero rational and an irrational whose product is irrational.\nThere exists a non-zero rational and an irrational whose product is rational.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The line L has equation 3y − 4x = 21. The point P has coordinates (15, 2).",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find the equation of the line perpendicular to L which passes through P.",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Hence, find the shortest distance from P to L.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "The ninth term of an arithmetic series is 3. The sum of the first n terms of the series is Sₙ and S₂₁ = 42.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the first term and common difference of the series.",
+      "marks": 4
+     },
+     {
+      "code": "6(b)",
+      "prompt": "A second arithmetic series has first term −18 and common difference 3/4.\n\nThe sum of the first n terms of this series is Tₙ.\n\nFind the value of n such that Tₙ = Sₙ",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "The equation x² = x³ − x + 3 has a single solution, x = α.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "By considering a suitable change of sign, show that α lies between 1.5 and 1.6",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Show that the equation x² = x³ − x + 3 can be rearranged into the form\n\nx² = x − 1 + 3/x",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Use the iterative formula\n\nxₙ₊₁ = √(xₙ − 1 + 3/xₙ)\n\nwith x₁ = 1.5, to find x₂, x₃ and x₄, giving your answers to four decimal places.",
+      "marks": 2
+     },
+     {
+      "code": "7(d)",
+      "prompt": "Hence, deduce an interval of width 0.001 in which α lies.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Given that 9 sin²y + sin 2y = 8\n\nshow that 8 cot²y − 2 cot y − 1 = 0",
+      "marks": 4
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Hence, solve 9 sin²y + sin 2y = 8 in the interval 0 < y < 2π\n\nGive your answers to two decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Solve 9 sin²(2x − π/4) + sin(4x − π/2) = 8 in the interval 0 < x < π/2\n\nGive your answers to one decimal place.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "The table below shows the annual global production of plastics, P, measured in millions of tonnes per year, for six selected years:\n\nYear: 1980, 1985, 1990, 1995, 2000, 2005\nP: 75, 94, 120, 156, 206, 260\n\nIt is thought that P can be modelled by P = A × 10^(kt) where t is the number of years after 1980 and A and k are constants.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Show algebraically that the graph of log₁₀ P against t should be linear.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)(i)",
+      "prompt": "Complete the table below.\n\nt:         0     5     10     15     20     25\nlog₁₀ P: 1.88  1.97   2.08         2.31\n\n(Two values are missing: at t = 15 and at t = 25.)",
+      "marks": 1
+     },
+     {
+      "code": "9(b)(ii)",
+      "prompt": "Plot log₁₀ P against t, and draw a line of best fit for the data.",
+      "marks": 2
+     },
+     {
+      "code": "9(c)(i)",
+      "prompt": "Hence, show that k is approximately 0.02",
+      "marks": 2
+     },
+     {
+      "code": "9(c)(ii)",
+      "prompt": "Find the value of A.",
+      "marks": 1
+     },
+     {
+      "code": "9(d)",
+      "prompt": "Using the model with k = 0.02, predict the number of tonnes of annual global production of plastics in 2030.",
+      "marks": 2
+     },
+     {
+      "code": "9(e)",
+      "prompt": "Using the model with k = 0.02, predict the year in which P first exceeds 8000",
+      "marks": 3
+     },
+     {
+      "code": "9(f)",
+      "prompt": "Give a reason why it may be inappropriate to use the model to make predictions about future annual global production of plastics.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Given that y = tan x, use the quotient rule to show that dy/dx = sec²x",
+      "marks": 3
+     },
+     {
+      "code": "10(b)",
+      "prompt": "The region enclosed by the curve y = tan²x and the horizontal line which intersects the curve at x = −π/4 and x = π/4 is shaded.\n\nShow that the area of the shaded region is π − 2.\n\nFully justify your answer.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "A curve, C, passes through the point with coordinates (1, 6).\n\nThe gradient of C is given by dy/dx = (1/6)(xy)²\n\nShow that C intersects the coordinate axes at exactly one point and state the coordinates of this point.\n\nFully justify your answer.",
+      "marks": 8
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "The equation of a curve is (x + y)² = 4y + 2x + 8. The curve intersects the positive x-axis at the point P.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Show that the gradient of the curve at P is −3/2",
+      "marks": 6
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the equation of the normal to the curve at P, giving your answer in the form ax + by = c, where a, b and c are integers.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "P(x) = 125x³ + 150x² + 55x + 6",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Use the factor theorem to prove that (5x + 1) is a factor of P(x).",
+      "marks": 2
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Factorise P(x) completely.",
+      "marks": 3
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Hence, prove that 250n³ + 300n² + 110n + 12 is a multiple of 12 when n is a positive whole number.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The curve C is defined for t ≥ 0 by the parametric equations x = t² + t and y = 4t² − t³.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the gradient of C at the point where it intersects the positive x-axis.",
+      "marks": 5
+     },
+     {
+      "code": "14(b)(i)",
+      "prompt": "The area A enclosed between C and the x-axis is given by A = ∫₀ᵇ y dx\n\nFind the value of b.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)(ii)",
+      "prompt": "Use the substitution y = 4t² − t³ to show that\n\nA = ∫₀⁴ (4t² + 7t³ − 2t⁴) dt",
+      "marks": 3
+     },
+     {
+      "code": "14(b)(iii)",
+      "prompt": "Find the value of A.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Show that for small values of x,\n\nsin x − sin x cos 2x ≈ 2x³",
+      "marks": 3
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Hence, show that the area between the graph with equation y = √(8(sin x − sin x cos 2x)), the positive x-axis and the line x = 0.25 can be approximated by\n\nArea ≈ 2ᵐ × 5ⁿ\n\nwhere m and n are integers to be found.",
+      "marks": 4
+     },
+     {
+      "code": "15(c)(i)",
+      "prompt": "Explain why ∫₆.₃^6.4 2x³ dx is not a suitable approximation for ∫₆.₃^6.4 (sin x − sin x cos 2x) dx",
+      "marks": 1
+     },
+     {
+      "code": "15(c)(ii)",
+      "prompt": "Explain how ∫₆.₃^6.4 (sin x − sin x cos 2x) dx may be approximated by ∫ₐᵇ 2x³ dx for suitable values of a and b.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "answers": {
+   "1": {
+    "type": "exact",
+    "answer": "x : x < −7/2 or x > 3",
+    "guidance": "B1 ticks the correct box."
+   },
+   "2": {
+    "type": "exact",
+    "answer": "dy/dx = 1/x",
+    "guidance": "B1 circles the correct answer."
+   },
+   "3": {
+    "type": "exact",
+    "answer": "6",
+    "guidance": "R1 circles the correct answer. The new sequence has sum to infinity = −3 × (−2) = 6."
+   },
+   "4": {
+    "type": "exact",
+    "answer": "There exists a non-zero rational and an irrational whose product is rational.",
+    "guidance": "R1 ticks the correct box. This is the correct assumption for a proof by contradiction."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "Uses the negative reciprocal of the gradient of L (gradient of L is 4/3, so perpendicular gradient is −3/4)",
+     "Obtains correct equation of perpendicular line through P(15, 2): 4y + 3x = 53  (or equivalent, e.g. y = −3x/4 + 53/4)"
+    ],
+    "guidance": "M1 uses negative reciprocal to obtain line with correct gradient. A1 obtains correct equation ACF (ISW once ACF seen)."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "Begins to solve 3y − 4x = 21 and their 4y + 3x = 53 simultaneously (elimination of one variable)",
+     "Finds the point of intersection: (3, 11)",
+     "Uses the distance formula between (15, 2) and their point of intersection",
+     "Shortest distance = 15"
+    ],
+    "guidance": "M1 begins simultaneous equations. M1 uses distance formula. M1 evaluates distance between (15,2) and intersection point. A1 obtains 15 (CAO). Typical solution: y = 11, x = 3; distance = √(12² + 9²) = √225 = 15."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "Forms equation a + 8d = 3 (9th term = 3)",
+     "Forms equation 21(2a + 20d)/2 = 42, i.e. a + 10d = 2 (sum of 21 terms = 42)",
+     "Solves simultaneous equations to find a = 7, d = −0.5"
+    ],
+    "guidance": "B1 obtains a + 8d = 3. B1 obtains 21(2a + 20d)/2 = 42. M1 eliminates one variable. A1 correct a = 7 and d = −0.5."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "Obtains at least one correct expression for Sₙ or Tₙ (FT their a, d for Sₙ)",
+     "Equates Sₙ and Tₙ and solves to find a non-zero value of n",
+     "n = 41"
+    ],
+    "guidance": "B1F at least one correct unsimplified expression. M1 equates and finds non-zero n. R1 deduces n = 41. Typical: n(14 − 0.5(n−1))/2 = n(−36 + 0.75(n−1))/2 → n = 0 or 41, hence n = 41."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Rearranges to f(x) = x³ − x² + x − 3 = 0 and evaluates f(x) at least once in [1.5, 1.6]",
+     "f(1.5) = −0.375 < 0 and f(1.6) = 0.136 > 0; change of sign implies α lies between 1.5 and 1.6"
+    ],
+    "guidance": "M1 rearranges and evaluates f(x) at least once in [1.5, 1.6]. R1 completes argument with correct evaluation either side of root and reference to change of sign."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "Divides x² = x³ − x + 3 by x to isolate x² term",
+     "Obtains x² = x − 1 + 3/x (three terms need not be in given order)"
+    ],
+    "guidance": "M1 isolates x³ or divides by x and cancels terms. R1 completes argument to show the given result."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "x₂ = 1.5811",
+     "x₃ = 1.5743",
+     "x₄ = 1.5748"
+    ],
+    "guidance": "M1 obtains any one correct value to at least 3 decimal places. A1 obtains x₂, x₃ and x₄ correct to 4 decimal places."
+   },
+   "7(d)": {
+    "type": "exact",
+    "answer": "1.574 ≤ α ≤ 1.575",
+    "guidance": "R1 states an interval of correct width 0.001 containing both 1.5743 and 1.5748. Condone strict inequalities."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Recalls and uses sin 2y = 2 sin y cos y to rewrite: 9 sin²y + 2 sin y cos y = 8",
+     "Divides through by sin²y (or cos²y) and uses cot²y + 1 = cosec²y",
+     "Obtains 9 + 2 cot y = 8 cosec²y = 8(cot²y + 1)",
+     "Rearranges to give 8 cot²y − 2 cot y − 1 = 0  (AG)"
+    ],
+    "guidance": "B1 recalls sin 2y = 2 sin y cos y. M1 uses cot²y + 1 = cosec²y (condone sign error). M1 divides through by cos²y or sin²y. R1 completes rearrangement to achieve given result."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Solves 8 cot²y − 2 cot y − 1 = 0 to get cot y = −1/4 or cot y = 1/2 (i.e. tan y = −4 or tan y = 2)",
+     "y ≈ 1.11, 1.82, 4.25, 4.96"
+    ],
+    "guidance": "M1 solves to give cot y or tan y values. A1 obtains two correct values of y. A1 all four solutions AWRT 1.11, 1.82, 4.25, 4.96 with no additional solutions in interval."
+   },
+   "8(c)": {
+    "type": "points",
+    "points": [
+     "Sets 2x − π/4 equal to at least one of their solutions from 8(b)",
+     "x ≈ 0.9 and x ≈ 1.3"
+    ],
+    "guidance": "M1 sets 2x − π/4 = their solution(s). A1 correct values AWRT 0.9 and 1.3 (from 0.94627... and 1.30006...). ISW once correct answers seen."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Takes log₁₀ of both sides: log₁₀ P = log₁₀(A × 10^(kt))",
+     "Simplifies: log₁₀ P = log₁₀ A + kt",
+     "This is of the form log₁₀ P = kt + c (linear in t), so the graph is linear (AG)"
+    ],
+    "guidance": "M1 takes log₁₀ of both sides. A1 obtains log₁₀ P = log₁₀ A + log₁₀ 10^(kt). R1 completes rigorous argument to show log₁₀ P = log₁₀ A + kt."
+   },
+   "9(b)(i)": {
+    "type": "exact",
+    "answer": "t = 15: log₁₀ P = 2.19;  t = 25: log₁₀ P = 2.41",
+    "guidance": "B1 completes table correctly with both values."
+   },
+   "9(b)(ii)": {
+    "type": "points",
+    "points": [
+     "Plots at least four points correctly (allow ±1 small square)",
+     "Draws a ruled line of best fit from t = 0 to t = 25 or better"
+    ],
+    "guidance": "M1 plots at least four points correctly. A1 draws ruled line of best fit."
+   },
+   "9(c)(i)": {
+    "type": "points",
+    "points": [
+     "Calculates the gradient of the line of best fit using two points",
+     "k ≈ (2.41 − 1.88)/25 ≈ 0.0212 ≈ 0.02  (AG)"
+    ],
+    "guidance": "M1 calculates gradient using line of best fit or two table values. R1 obtains a value of k which rounds to 0.02."
+   },
+   "9(c)(ii)": {
+    "type": "exact",
+    "answer": "A = 75",
+    "guidance": "B1F infers A = 75 (from the data at t = 0, P = 75, or from 10^(their y-intercept))."
+   },
+   "9(d)": {
+    "type": "points",
+    "points": [
+     "Substitutes t = 50 into P = 75 × 10^(0.02t)",
+     "P = 75 × 10^(1) = 750 million tonnes"
+    ],
+    "guidance": "M1 substitutes t = 50 into P = A × 10^(0.02t). A1F obtains 750 million tonnes (FT their A in range 70 < A < 90)."
+   },
+   "9(e)": {
+    "type": "points",
+    "points": [
+     "Forms equation 75 × 10^(0.02t) = 8000 (or inequality) and solves for t",
+     "t = log₁₀(8000/75) / 0.02 ≈ 101.4",
+     "Year = 1980 + 101 + 1 = 2082"
+    ],
+    "guidance": "M1 forms equation using their model = 8000. A1F t AWFW [97.44, 102.90]. A1F interprets as year 2082 (integer part of t + 1980 + 1, provided t > 50)."
+   },
+   "9(f)": {
+    "type": "exact",
+    "answer": "The model is based on past data and it may be inappropriate to extrapolate far into the future; for example, the global production of plastics may decrease due to environmental pressures.",
+    "guidance": "E1 gives a reason in context why the model will be inappropriate, e.g. global production may decrease; not appropriate to extrapolate; exponential growth is unrealistic indefinitely."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "Recalls tan x = sin x / cos x",
+     "Applies the quotient rule: d/dx(tan x) = (cos x · cos x − (−sin x) · sin x) / cos²x",
+     "Simplifies using sin²x + cos²x = 1: = (sin²x + cos²x)/cos²x = 1/cos²x = sec²x  (AG)"
+    ],
+    "guidance": "B1 recalls tan x = sin x/cos x. M1 uses correct quotient rule (condone sign error in differentiation of sin/cos). R1 completes rigorous argument using sin²x + cos²x = 1 explicitly."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "Sets up integral: area under curve = ∫₋π/4^(π/4) tan²x dx",
+     "Uses tan²x = sec²x − 1 to write integrand in integrable form",
+     "Integrates: [tan x − x]₋π/4^(π/4) = (1 − π/4) − (−1 + π/4) = 2 − π/2",
+     "Area of enclosing rectangle = 2 × tan²(π/4) = 2 × 1 = 2 (width π/2, height 1)",
+     "Area of shaded region = 2 − (2 − π/2) = π − 2  (AG)"
+    ],
+    "guidance": "M1 writes integral of form ∫tan²x dx or ∫(1−tan²x)dx. M1 uses tan²x + 1 = sec²x. A1F integrates Asec²x + B. B1 forms expression for area of rectangle. R1 completes rigorous argument to show π − 2."
+   },
+   "11": {
+    "type": "points",
+    "points": [
+     "Separates variables: ∫ y⁻² dy = ∫ x²/6 dx",
+     "Integrates both sides: −y⁻¹ = x³/18 + c",
+     "Substitutes (1, 6): −1/6 = 1/18 + c → c = −2/9",
+     "Equation: −y⁻¹ = x³/18 − 2/9",
+     "y⁻¹ is undefined at y = 0, so C does not intersect the x-axis",
+     "Substitutes x = 0: −y⁻¹ = −2/9 → y = 9/2 = 4.5",
+     "C intersects the coordinate axes at exactly one point: (0, 4.5)"
+    ],
+    "guidance": "M1 separates variables to form ∫Ay² dy = ∫Bx² dx. M1 integrates one integral correctly. A1 correct integrated equation. M1 substitutes (1,6) to find c. E1F explains y ≠ 0 (y⁻¹ undefined). M1 substitutes x = 0. A1 y = 4.5. R1 correctly deduces exactly one intersection at (0, 4.5) and states C does not intersect x-axis."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "Substitutes y = 0 to find x: x² = 2x + 8 → x = 4 (positive x-axis, ignoring x = −2)",
+     "Differentiates implicitly: 2(x+y)(1 + dy/dx) = 4 dy/dx + 2",
+     "Obtains correct differentiated equation",
+     "Substitutes x = 4, y = 0: 8(1 + dy/dx) = 4 dy/dx + 2 → 4 dy/dx = −6",
+     "dy/dx = −3/2  (AG)"
+    ],
+    "guidance": "M1 substitutes y = 0 to form equation for x. A1 x = 4. M1 expands and uses chain/product rule for (x+y)² term. B1 uses implicit differentiation correctly for 4y. A1 correct differentiated equation. R1 substitutes x = 4, y = 0 and obtains −3/2."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "Uses gradient of normal = 2/3 at P(4, 0)",
+     "Equation of normal: 2x − 3y = 8"
+    ],
+    "guidance": "M1 uses gradient 2/3 with y = 0 and x = 4 to form equation. A1F obtains 2x − 3y = 8."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "Substitutes x = −1/5 into P(x): 125(−1/5)³ + 150(−1/5)² + 55(−1/5) + 6 = −1 + 6 − 11 + 6 = 0",
+     "Since P(−1/5) = 0, by the factor theorem (5x + 1) is a factor of P(x)"
+    ],
+    "guidance": "M1 substitutes x = −1/5 and evaluates (must show −1/5 correctly cubed and squared). R1 completes factor theorem argument."
+   },
+   "13(b)": {
+    "type": "exact",
+    "answer": "P(x) = (5x + 1)(5x + 2)(5x + 3)",
+    "guidance": "M1 obtains quadratic factor of form 25x² + bx + 6. M1 obtains second linear factor. A1 correct complete factorisation (5x+1)(5x+2)(5x+3)."
+   },
+   "13(c)": {
+    "type": "points",
+    "points": [
+     "250n³ + 300n² + 110n + 12 = 2(125n³ + 150n² + 55n + 6) = 2(5n+1)(5n+2)(5n+3)",
+     "(5n+1), (5n+2) and (5n+3) are three consecutive positive whole numbers for any positive whole number n",
+     "Among any three consecutive integers, one must be divisible by 3 and at least one by 2; combined with the factor of 2 outside, this gives a factor of 2 × 2 × 3 = 12, so the expression is a multiple of 12"
+    ],
+    "guidance": "M1 deduces 250n³+300n²+110n+12 = 2(5n+1)(5n+2)(5n+3) (FT their factors). R1 explains three consecutive whole numbers contain multiple of 3 and multiple of 2. R1 completes argument: 2 × 2 × 3 = 12 so expression is multiple of 12."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "Sets y = 0: 4t² − t³ = 0 → t = 0 or t = 4; uses t = 4 (positive x-axis)",
+     "Differentiates: dy/dt = 8t − 3t²,  dx/dt = 2t + 1",
+     "At t = 4: dy/dt = 32 − 48 = −16,  dx/dt = 9",
+     "dy/dx = (dy/dt)/(dx/dt) = −16/9"
+    ],
+    "guidance": "M1 sets y = 0 and uses non-zero t. B1 dy/dt = 8t − 3t². B1 dx/dt = 2t + 1. M1 uses chain rule dy/dx = (dy/dt)/(dx/dt) with their t. A1 −16/9."
+   },
+   "14(b)(i)": {
+    "type": "exact",
+    "answer": "b = 20",
+    "guidance": "B1F deduces b = 20 (from x = t² + t at t = 4: x = 16 + 4 = 20)."
+   },
+   "14(b)(ii)": {
+    "type": "points",
+    "points": [
+     "Substitutes dx = (2t + 1) dt",
+     "A = ∫₀⁴ (4t² − t³)(2t + 1) dt = ∫₀⁴ (8t³ + 4t² − 2t⁴ − t³) dt = ∫₀⁴ (4t² + 7t³ − 2t⁴) dt  (AG)",
+     "Justifies t = 4 when x = 20"
+    ],
+    "guidance": "M1 substitutes dx/dt = 2t+1. A1F correct substitution for y and dx. R1 completes rigorous argument including justification of limits."
+   },
+   "14(b)(iii)": {
+    "type": "exact",
+    "answer": "A = 1856/15  (≈ 123.7)",
+    "guidance": "B1 evaluates A = 1856/15 or AWRT 124."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "Uses small angle approximation: sin x ≈ x",
+     "Replaces cos 2x with 1 − (2x)²/2 = 1 − 2x²",
+     "sin x − sin x cos 2x ≈ x − x(1 − 2x²) = x − x + 2x³ = 2x³  (AG)"
+    ],
+    "guidance": "B1 uses sin x ≈ x at least once. M1 replaces cos 2x with 1 − (2x)²/2. R1 completes rigorous argument. Condone '=' instead of '≈'."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "Sets up integral: Area ≈ ∫₀^0.25 √(8 × 2x³) dx = ∫₀^0.25 4x^(3/2) dx",
+     "Integrates: [4 × (2/5)x^(5/2)]₀^0.25 = [8x^(5/2)/5]₀^0.25",
+     "Evaluates: (8/5) × (0.25)^(5/2) = (8/5) × (1/2)⁵ = (8/5) × (1/32) = 1/(4×5) = 2⁻² × 5⁻¹",
+     "Area ≈ 2⁻² × 5⁻¹, so m = −2, n = −1"
+    ],
+    "guidance": "M1 forms integral of form ∫₀^0.25 y dx where y is their √(8×2x³). M1 simplifies integrand to Bx^(3/2). A1F integrates correctly. R1 substitutes limits and obtains correct form 2ᵐ × 5ⁿ with m = −2, n = −1."
+   },
+   "15(c)(i)": {
+    "type": "exact",
+    "answer": "The approximation sin x − sin x cos 2x ≈ 2x³ is only valid for small values of x, and 6.3 and 6.4 are not small.",
+    "guidance": "E1 explains that the limits 6.3 and 6.4 are not small values."
+   },
+   "15(c)(ii)": {
+    "type": "points",
+    "points": [
+     "sin x − sin x cos 2x is periodic with period 2π, so the integral over [6.3, 6.4] equals the integral over [6.3 − 2π, 6.4 − 2π]",
+     "Use a = 6.3 − 2π ≈ 0.017 and b = 6.4 − 2π ≈ 0.117, which are small values where the approximation is valid"
+    ],
+    "guidance": "E1 explains that sin x − sin x cos 2x is periodic (period 2π) so integral over different equivalent interval gives same value. R1 deduces a = 6.3 − 2π ≈ 0.017 and b = 6.4 − 2π ≈ 0.117."
+   }
+  }
  }
 };
