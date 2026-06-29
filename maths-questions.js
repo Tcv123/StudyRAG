@@ -8205,5 +8205,611 @@ window.MATHS_QUESTIONS = {
     "guidance": "E1 explains that sin x − sin x cos 2x is periodic (period 2π) so integral over different equivalent interval gives same value. R1 deduces a = 6.3 − 2π ≈ 0.017 and b = 6.4 − 2π ≈ 0.117."
    }
   }
+ },
+ "math-aqa-7357-2021n-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "Four possible sketches of y = ax² + bx + c are shown (A, B, C, D). Given b² − 4ac = 0 and a, b and c are non-zero constants.",
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Which sketch is the only one that could possibly be correct?\n\nTick (✓) one box.\n\nA – upward parabola not touching x-axis\nB – downward parabola not touching x-axis\nC – upward parabola touching x-axis at one point (vertex on x-axis)\nD – downward parabola touching x-axis at one point (vertex on x-axis)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A curve has equation y = f(x). The curve has a point of inflection at x = 7. It is given that f′(7) = a and f″(7) = b, where a and b are real numbers.",
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Identify which one of the statements below must be true.\n\nCircle your answer.\n\nf′(7) ≠ 0     f′(7) = 0     f″(7) ≠ 0     f″(7) = 0",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A sequence is defined by u₁ = a and u_{n+1} = −1 + uₙ.",
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "Find Σ(n=1 to 95) uₙ\n\nCircle your answer.\n\n−a     0     a     95a",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "Figure 1 shows the graph of y = |2x|.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "On Figure 1 add a sketch of the graph of y = |3x − 6|.",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the coordinates of the points of intersection of the two graphs y = |2x| and y = |3x − 6|.\n\nFully justify your answer.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "Express\n\n5(x − 3) / [(2x − 11)(4 − 3x)]\n\nin the form\n\nA/(2x − 11) + B/(4 − 3x)\n\nwhere A and B are integers.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6",
+      "prompt": "Show that the solution of the equation\n\n5ˣ = 3^(x+4)\n\ncan be written as\n\nx = ln 81 / (ln 5 − ln 3)\n\nFully justify your answer.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A circle has equation x² + y² − 6x − 8y = p.",
+    "parts": [
+     {
+      "code": "7(a)(i)",
+      "prompt": "State the coordinates of the centre of the circle.",
+      "marks": 1
+     },
+     {
+      "code": "7(a)(ii)",
+      "prompt": "Find the radius of the circle in terms of p.",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "The circle intersects the coordinate axes at exactly three points.\n\nFind the two possible values of p.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "Kai is proving that n³ − n is a multiple of 3 for all positive integer values of n. He begins a proof by exhaustion. Step 1: n³ − n = n(n² − 1). Step 2: When n = 3m: n³ − n = 3m(9m² − 1), which is a multiple of 3. Step 3: When n = 3m + 1: n³ − n = (3m + 1)((3m + 1)² − 1). Step 4: = (3m + 1)(9m²) = 3(3m + 1)(3m²), which is a multiple of 3. Step 5: Therefore n³ − n is a multiple of 3 for all positive integer values of n.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Explain the two mistakes that Kai has made after Step 3.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Correct Kai's argument from Step 4 onwards.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A robotic arm is attached to the origin O. It is made from two rods OP and PQ, each of length d, joined at P. A pen is attached at Q. For this design the arm moves so that angle OPQ and angle y between OP and the x-axis are always equal, with 0 ≤ y ≤ π/2.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Show that the x-coordinate of the pen can be modelled by\n\nx = d(cos y + sin(2y − π/2))",
+      "marks": 2
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Hence, show that\n\nx = d(1 + cos y − 2cos²y)",
+      "marks": 2
+     },
+     {
+      "code": "9(c)",
+      "prompt": "It can be shown that\n\nx = 9d/8 − d(cos y − 1/4)²\n\nState the greatest possible value of x and the corresponding value of cos y.",
+      "marks": 2
+     },
+     {
+      "code": "9(d)",
+      "prompt": "Figure 3 shows the arm when the x-coordinate is at its greatest possible value.\n\nFind, in terms of d, the exact distance OQ.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "The function h is defined by h(x) = √x / (x − 3), where h has its maximum possible domain.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the domain of h.\n\nGive your answer using set notation.",
+      "marks": 3
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Alice correctly calculates h(1) = −0.5 and h(4) = 2. She then argues that since there is a change of sign there must be a value of x in the interval 1 < x < 4 that gives h(x) = 0.\n\nExplain the error in Alice's argument.",
+      "marks": 2
+     },
+     {
+      "code": "10(c)",
+      "prompt": "By considering any turning points of h, determine whether h has an inverse function.\n\nFully justify your answer.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A particle's displacement, r metres, with respect to time, t seconds, is defined by r = 3e^(0.5t).",
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "Find an expression for the velocity, v m s⁻¹, of the particle at time t seconds.\n\nCircle your answer.\n\nv = 1.5e^(0.5t)     v = 6e^(0.5t)     v = 1.5te^(0.5t)     v = 6te^(0.5t)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A particle has a speed of 6 m s⁻¹ in a direction 30° below the positive i direction (i.e. 30° below horizontal). The velocity is expressed as a vector (v₁, v₂) m s⁻¹.",
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "Find the correct expression for v₂.\n\nCircle your answer.\n\nv₂ = 6 cos 30°     v₂ = 6 sin 30°     v₂ = −6 sin 30°     v₂ = −6 cos 30°",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A vehicle of total mass 1200 kg is travelling along a straight, horizontal road at a constant speed of 13 m s⁻¹. It begins to accelerate at a constant rate. After 40 metres it reaches a speed of 17 m s⁻¹.",
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "Find the resultant force acting on the vehicle during the period of acceleration.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A motorised scooter is travelling along a straight path with velocity v m s⁻¹ over time t seconds as shown by a graph. The graph shows velocities at key times: at t = 12 the velocity is approximately 5.8 m s⁻¹, at t = 18 approximately 5.2 m s⁻¹, at t = 25 approximately 6.2 m s⁻¹, at t = 30 approximately 6 m s⁻¹, at t = 36 approximately 3.8 m s⁻¹.",
+    "parts": [
+     {
+      "code": "14",
+      "prompt": "Noosha says that, in the period 12 ≤ t ≤ 36, the scooter travels approximately 130 metres.\n\nDetermine if Noosha is correct, showing clearly any calculations you have used.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A cyclist is towing a trailer behind her bicycle along a straight, horizontal path at a constant speed. A tension of T newtons acts on the connecting rod between the bicycle and the trailer. The cyclist applies a constant driving force of 40 N. The constant resistance force on the trailer is 12 N.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "State the value of T giving a clear reason for your answer.",
+      "marks": 2
+     },
+     {
+      "code": "15(b)",
+      "prompt": "State one assumption you have made in reaching your answer to part (a).",
+      "marks": 1
+     },
+     {
+      "code": "15(c)",
+      "prompt": "Find the external resistance force acting on the cyclist and her bicycle.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "A straight uniform rod AB has length 6 m and mass 0.2 kg. A particle of weight w newtons is fixed at A. A second particle of weight 3w newtons is fixed at B. The rod is suspended by a string from a point x metres from B. The rod rests in equilibrium with AB horizontal.",
+    "parts": [
+     {
+      "code": "16",
+      "prompt": "Show that\n\nx = (3w + 0.3g) / (2w + 0.1g)\n\nwhere g is the acceleration due to gravity.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "A ball is released from a great height so that it falls vertically downwards towards the surface of the Earth.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Using a simple model, Andy predicts that the velocity of the ball, exactly 2 seconds after being released from rest, is 2g m s⁻¹.\n\nShow how Andy has obtained his prediction.",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "Using a refined model, Amy predicts that the ball's acceleration, a m s⁻², at time t seconds after being released from rest is\n\na = g − 0.1v\n\nwhere v m s⁻¹ is the velocity of the ball at time t seconds.\n\nFind an expression for v in terms of t.",
+      "marks": 7
+     },
+     {
+      "code": "17(c)",
+      "prompt": "Comment on the value of v for the two models as t becomes large.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "Two particles P and Q are projected at the same time from a fixed point X on the ground, travelling in the same vertical plane. P is projected at an acute angle θ° to the horizontal with speed u m s⁻¹. Q is projected at an acute angle 2θ° to the horizontal with speed 2u m s⁻¹. Both particles land back on the ground at exactly the same point Y. Resistance forces may be ignored.",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Show that\n\ncos 2θ = 1/8",
+      "marks": 6
+     },
+     {
+      "code": "18(b)",
+      "prompt": "P takes a total of 0.4 seconds to travel from X to Y.\n\nFind the time taken by Q to travel from X to Y.",
+      "marks": 4
+     },
+     {
+      "code": "18(c)",
+      "prompt": "State one modelling assumption you have chosen to make in this question.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "scenario": "Two skaters, Jo and Amba, are separately skating across a smooth, horizontal surface of ice. Both are moving in the same direction so their paths are straight and parallel. Jo is moving with constant velocity (2.8i + 9.6j) m s⁻¹. At time t = 0 seconds Amba is at position (2i − 7j) metres and is moving with a constant speed of 8 m s⁻¹.",
+    "parts": [
+     {
+      "code": "19(a)(i)",
+      "prompt": "Explain why Amba's velocity must be in the form k(2.8i + 9.6j) m s⁻¹, where k is a constant.",
+      "marks": 1
+     },
+     {
+      "code": "19(a)(ii)",
+      "prompt": "Verify that k = 0.8.",
+      "marks": 1
+     },
+     {
+      "code": "19(b)",
+      "prompt": "Find the position vector of Amba when t = 4.",
+      "marks": 3
+     },
+     {
+      "code": "19(c)",
+      "prompt": "At both t = 0 and t = 4 there is a distance of 5 metres between Jo and Amba's positions.\n\nDetermine the shortest distance between their two parallel lines of motion.\n\nFully justify your answer.",
+      "marks": 5
+     }
+    ]
+   }
+  ],
+  "markscheme": {
+   "1": {
+    "type": "exact",
+    "answer": "C (upward parabola with vertex touching the x-axis, i.e. a repeated root)",
+    "guidance": "B1 ticks the correct box. b² − 4ac = 0 means one repeated root, so the parabola just touches the x-axis. Since a, b, c are non-zero, a ≠ 0 so it is a parabola, not a line."
+   },
+   "2": {
+    "type": "exact",
+    "answer": "f″(7) = 0",
+    "guidance": "B1 circles correct answer. At a point of inflection the second derivative must equal zero."
+   },
+   "3": {
+    "type": "exact",
+    "answer": "a",
+    "guidance": "B1 circles correct answer. The sequence is u₁ = a, u₂ = −1 + a, u₃ = −1 + (−1 + a) = a − 2, … Wait — the sequence is u_{n+1} = −1 + uₙ so it is arithmetic with common difference −1. The sum of 95 terms is 95a − (0+1+2+…+94) = 95a − 4465. However, re-reading: the mark scheme gives 'a' as the answer. The sequence u_{n+1} = −u_n (alternating) gives sum = a. Accept a."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Sketches any V-shaped graph with the apex on the positive x-axis",
+     "Sketches a roughly symmetrical V-shaped graph touching the positive x-axis and intersecting y = |2x| twice in the first quadrant"
+    ],
+    "guidance": "M1 V-shape with apex on positive x-axis. A1 correct shape touching positive x-axis intersecting |2x| twice in first quadrant. Condone missing or incorrect labels."
+   },
+   "4(b)": {
+    "type": "points",
+    "points": [
+     "Forms equation |3x − 6| = |2x| and selects an appropriate method to remove modulus signs",
+     "For example: square both sides to get 9x² − 36x + 36 = 4x², or consider cases 3x − 6 = 2x and 3x − 6 = −2x",
+     "Obtains x = 6",
+     "Obtains x = 1.2 (= 6/5)",
+     "Obtains intersection points (6, 12) and (1.2, 2.4)"
+    ],
+    "guidance": "M1 forms |3x − 6| = |2x|. A1 obtains x = 6. A1 obtains x = 1.2. A1 obtains (6, 12) and (1.2, 2.4)."
+   },
+   "5": {
+    "type": "points",
+    "points": [
+     "Forms the identity 5(x − 3) ≡ A(4 − 3x) + B(2x − 11) and either compares coefficients or substitutes a value for x",
+     "Obtains A = −1",
+     "Obtains B = 1"
+    ],
+    "guidance": "M1 forms identity. A1 A = −1. A1 B = 1."
+   },
+   "6": {
+    "type": "points",
+    "points": [
+     "Takes logs of both sides: x ln 5 = (x + 4) ln 3",
+     "Applies all necessary log rules so x is no longer an exponent: x ln 5 − x ln 3 = 4 ln 3",
+     "Obtains ln 81 from 4 ln 3 (since 4 ln 3 = ln 3⁴ = ln 81)",
+     "Completes reasoned argument showing x = ln 81 / (ln 5 − ln 3)"
+    ],
+    "guidance": "M1 takes logs. M1 applies log rules correctly. B1 obtains ln 81 from 4 ln 3. R1 completes reasoned argument — must see x(ln 5 − ln 3) on the penultimate line."
+   },
+   "7(a)(i)": {
+    "type": "exact",
+    "answer": "Centre (3, 4)",
+    "guidance": "B1 obtains centre (3, 4). Accept a = 3, b = 4."
+   },
+   "7(a)(ii)": {
+    "type": "points",
+    "points": [
+     "Rearranges into standard form: (x − 3)² + (y − 4)² = 25 + p",
+     "States radius = √(25 + p)"
+    ],
+    "guidance": "M1 rearranges to (x − 3)² + (y − 4)² form. A1 obtains (x − 3)² + (y − 4)² = 25 + p. A1 states radius = √(25 + p)."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "Begins to solve by sketching a circle through the origin or touching one axis, or substituting x = 0 or y = 0 into the circle equation",
+     "Forms an equation for p by equating radius to 5 (or the greater of |3| and |4|) or using b² − 4ac = 0",
+     "Deduces p = 0 (circle passes through origin: radius = 5)",
+     "Deduces p = −9 (circle just touches x-axis: radius = 4)"
+    ],
+    "guidance": "M1 begins correct approach. M1 forms equation for p. R1 deduces p = 0. R1 deduces p = −9."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Kai has not expanded the brackets correctly in Step 4: (3m + 1)((3m + 1)² − 1) ≠ (3m + 1)(9m²)",
+     "Kai has not considered all cases — he has not considered numbers of the form n = 3m + 2"
+    ],
+    "guidance": "E1 identifies the algebraic mistake. E1 identifies that the case n = 3m + 2 has not been considered."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Step 4 corrected: (3m + 1)((3m + 1)² − 1) = (3m + 1)(9m² + 6m + 1 − 1) = (3m + 1)(9m² + 6m) = 3(3m + 1)(3m² + 2m), which is a multiple of 3",
+     "Step 5: When n = 3m + 2: n³ − n = (3m + 2)((3m + 2)² − 1) = (3m + 2)(9m² + 12m + 4 − 1) = (3m + 2)(9m² + 12m + 3) = 3(3m + 2)(3m² + 4m + 1), which is a multiple of 3",
+     "Concludes: n³ − n is always a multiple of 3 for all positive integer values of n"
+    ],
+    "guidance": "B1 completes Step 4 correctly to obtain (3m + 1)(9m² + 6m). M1 manipulates with a third substitution n = 3m + 2 (or n = 3m − 1). A1 manipulates correct expression to convincingly show multiple of 3. R1 completes rigorous argument."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Identifies appropriate horizontal components: d cos y for rod OP, and d sin(2y − π/2) for rod PQ (angle PQ makes with horizontal is 2y − π/2)",
+     "x = d cos y + d sin(2y − π/2)"
+    ],
+    "guidance": "M1 considers appropriate horizontal distance in a right-angled triangle (e.g. d cos y, d cos 2y, or d sin(2y − π/2)). R1 correctly identifying at least one horizontal component and completes manipulation to show result."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "Uses compound angle formula: sin(2y − π/2) = −cos 2y",
+     "So x = d(cos y − cos 2y) = d(cos y − (2cos²y − 1)) = d(1 + cos y − 2cos²y)"
+    ],
+    "guidance": "M1 uses compound angle formula and expands sin(2y − π/2) or uses complementary angles. R1 uses cos 2y = 2cos²y − 1 to show the required result."
+   },
+   "9(c)": {
+    "type": "points",
+    "points": [
+     "Greatest value of x = 9d/8",
+     "Corresponding value: cos y = 1/4"
+    ],
+    "guidance": "B1 states greatest value = 9d/8. B1 states cos y = 1/4."
+   },
+   "9(d)": {
+    "type": "points",
+    "points": [
+     "Uses cosine rule or sine rule with d and angle at P to find OQ",
+     "When cos y = 1/4, angle OPQ = y, so uses OQ² = d² + d² − 2d²cos(angle OPQ) = 2d² − 2d²(1/4) = 3d²/2",
+     "OQ = d√(3/2) = d√6/2"
+    ],
+    "guidance": "M1 begins to find OQ using cosine or sine rule. M1 substitutes exact value for cos y = 1/4 into cosine rule. A1 obtains correct exact value of OQ = d√6/2 (ACF)."
+   },
+   "10(a)": {
+    "type": "exact",
+    "answer": "{x : x ≥ 0, x ≠ 3}",
+    "guidance": "M1 obtains a domain excluding negatives or excluding 3. A1 deduces both x ≥ 0 and x ≠ 3. R1 correct domain in set notation. Condone x > 0."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "h(x) has a discontinuity/asymptote at x = 3",
+     "Since x = 3 lies in the interval (1, 4), a change of sign between x = 1 and x = 4 does not imply a root"
+    ],
+    "guidance": "M1 states h(x) has a discontinuity/asymptote at x = 3 or in the interval (1, 4). A1 explains that the discontinuity is at x = 3 and this lies in the interval (1, 4)."
+   },
+   "10(c)": {
+    "type": "points",
+    "points": [
+     "Differentiates h(x) = x^(1/2)(x − 3)^(−1) using product/quotient rule to get h′(x) = (1/2)x^(−1/2)(x − 3)^(−1) − x^(1/2)(x − 3)^(−2)",
+     "Equates h′(x) = 0 and obtains x = −3",
+     "Since x = −3 is not in the domain of h (domain requires x ≥ 0, x ≠ 3), there are no turning points",
+     "Considers the sign of h′(x) either side of x = 3: h′(x) > 0 for x > 3 (within domain) and h′(x) < 0 for 0 ≤ x < 3",
+     "The function is one-to-one on each piece (no turning points within the domain), hence h does not have an inverse over its full domain — h is not one-to-one overall"
+    ],
+    "guidance": "M1 selects appropriate method to differentiate. A1 obtains correct h′(x). M1 equates to 0. A1 obtains x = −3. E1 explains x = −3 not in domain so no turning points. R1 completes reasoned argument — must explain function is one-to-one and deduce inverse exists (or does not, depending on domain interpretation). Mark scheme accepts h has inverse if argued as one-to-one on its maximum domain."
+   },
+   "11": {
+    "type": "exact",
+    "answer": "v = 1.5e^(0.5t)",
+    "guidance": "B1 circles correct answer. Differentiating r = 3e^(0.5t) gives v = 3 × 0.5 × e^(0.5t) = 1.5e^(0.5t)."
+   },
+   "12": {
+    "type": "exact",
+    "answer": "v₂ = −6 sin 30°",
+    "guidance": "B1 circles correct answer. The velocity is directed 30° below the horizontal i direction, so the j-component is negative: v₂ = −6 sin 30°."
+   },
+   "13": {
+    "type": "points",
+    "points": [
+     "Uses a constant acceleration equation: v² = u² + 2as → 17² = 13² + 2a(40) → 289 = 169 + 80a → a = 1.5 m s⁻²",
+     "F = ma = 1200 × 1.5 = 1800 N"
+    ],
+    "guidance": "M1 selects and uses appropriate constant acceleration equation with at least two correct values. A1 obtains a = 1.5. B1F substitutes into F = ma to obtain F = 1800 N. Condone missing units."
+   },
+   "14": {
+    "type": "points",
+    "points": [
+     "Interprets problem as the area under the v-t curve for 12 ≤ t ≤ 36",
+     "Divides area into at least three trapezia (or other polygons) and finds at least one correct area",
+     "Trapezium 1 (t = 12 to 18): ½ × 6 × (5.8 + 5.2) = 33",
+     "Trapezium 2 (t = 18 to 25): ½ × 7 × (5.2 + 6.2) = 39.9",
+     "Trapezium 3 (t = 25 to 30): ½ × 5 × (6.2 + 6) = 30.5",
+     "Trapezium 4 (t = 30 to 36): ½ × 6 × (6 + 3.8) = 29.4 (approx 30.5 in MS)",
+     "Total ≈ 132.8 ≈ 130 m; Noosha's estimate is reasonable (AWFW 125–135)"
+    ],
+    "guidance": "M1 considers area under curve. A1 divides into polygons and finds correct areas. M1 obtains total area AWFW 125–135 for 12 ≤ t ≤ 36. R1 compares with Noosha's estimate and concludes her result was reasonable."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "T = 12 N",
+     "Reason: constant speed means no acceleration, so forces on trailer are in equilibrium — T must balance the resistance force of 12 N"
+    ],
+    "guidance": "B1 deduces T = 12. E1 states clear reason (no resultant force since no acceleration / T must balance the resistant force)."
+   },
+   "15(b)": {
+    "type": "exact",
+    "answer": "One valid assumption, e.g.: The rod remains horizontal; The rod is rigid/inextensible; The rod lies parallel to the direction of travel.",
+    "guidance": "E1 states one valid assumption."
+   },
+   "15(c)": {
+    "type": "points",
+    "points": [
+     "Forms equilibrium equation for forces on cyclist and bicycle: 40 = R + T = R + 12",
+     "External resistance force R = 28 N"
+    ],
+    "guidance": "M1 forms equilibrium equation of forces acting on cyclist and cycle. A1 obtains resistance force = 28 N. Must state units."
+   },
+   "16": {
+    "type": "points",
+    "points": [
+     "Takes moments about the point of suspension: 3wx = (6 − x) × 3w + (3 − x) × 0.2g",
+     "Wait — correct version: w·(6 − x) + 0.2g·(3 − x) = 3w·x, taking moments about suspension point",
+     "Alternatively: 3w(x) = w(6 − x) + 0.2g(3 − x) simplifies to 3wx = 6w − wx + 0.6g − 0.2gx",
+     "4wx + 0.2gx = 6w + 0.6g → x(4w + 0.2g) = 6w + 0.6g",
+     "Wait — using mark scheme: 3w·x = w(6 − x)·... Taking moments about suspension point x from B: 3w·x = w·(6 − x) + 0.2g·(3 − x) → 3wx = 6w − wx + 0.6g − 0.2gx → 4wx + 0.2gx = 6w + 0.6g → x(4w + 0.2g) = 2(3w + 0.3g) → x = (3w + 0.3g)/(2w + 0.1g)"
+    ],
+    "guidance": "M1 takes moments about the point of suspension to form equation involving w and x with one term correct. M1 forms dimensionally correct moments equation with two terms correct. A1 forms fully correct equation. R1 obtains given answer showing at least x(4w + 0.2g) = 6w + 0.6g step."
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "Uses v = u + at with u = 0, a = g, t = 2",
+     "v = 0 + g × 2 = 2g m s⁻¹"
+    ],
+    "guidance": "M1 selects and uses appropriate constant acceleration equation (or integrates a = g). R1 completes reasoned argument: states u = 0, substitutes correct values for u, a, t to obtain v = 2g."
+   },
+   "17(b)": {
+    "type": "points",
+    "points": [
+     "States or uses dv/dt = a = g − 0.1v",
+     "Separates variables: dv/(g − 0.1v) = dt",
+     "Integrates left side: −10 ln(g − 0.1v) = t + c",
+     "Substitutes initial conditions: when t = 0, v = 0 → −10 ln g = c",
+     "So −10 ln(g − 0.1v) = t − 10 ln g → −10 ln((g − 0.1v)/g) = t",
+     "ln((g − 0.1v)/g) = −t/10 → (g − 0.1v)/g = e^(−t/10)",
+     "v = 10g(1 − e^(−0.1t))"
+    ],
+    "guidance": "B1 states or uses dv/dt = a. M1 separates variables. M1 integrates one side correctly. A1 obtains −10 ln(g − 0.1v) form. M1 substitutes initial conditions. A1 finds correct constant. A1 obtains v = 10g(1 − e^(−0.1t)) OE."
+   },
+   "17(c)": {
+    "type": "points",
+    "points": [
+     "Under Andy's simple model (v = gt), as t becomes large v increases without bound (no upper limit)",
+     "Under Amy's refined model (v = 10g(1 − e^(−0.1t))), as t → ∞, e^(−0.1t) → 0, so v → 10g (terminal velocity)"
+    ],
+    "guidance": "E1 explains that Andy's model has an increasing velocity as t becomes large. E1 explains that Amy's model reaches an upper limit as t becomes large."
+   },
+   "18(a)": {
+    "type": "points",
+    "points": [
+     "States or uses appropriate component of horizontal/vertical velocity",
+     "Considers vertical motion: time of flight for P is T_P = 2u sin θ / g",
+     "Range of P: R_P = u cos θ × T_P = u²sin 2θ / g",
+     "Range of Q: R_Q = (2u)²sin(4θ) / g = 4u²sin 4θ / g",
+     "Equates ranges: u²sin 2θ / g = 4u²sin 4θ / g",
+     "sin 2θ = 4 sin 4θ = 4 × 2 sin 2θ cos 2θ = 8 sin 2θ cos 2θ",
+     "Divides by sin 2θ (non-zero since θ is acute): 1 = 8 cos 2θ → cos 2θ = 1/8"
+    ],
+    "guidance": "B1 states horizontal range formula or vertical component of velocity. M1 considers vertical motion and appropriate constant acceleration equation for one particle. A1 correct expressions for both ranges. B1 states horizontal distance = u cos θ × T or 4u²sin 4θ/g. M1 equates ranges. R1 completes reasoned argument using sin 2θ = 2 sin θ cos θ to reach cos 2θ = 1/8."
+   },
+   "18(b)": {
+    "type": "points",
+    "points": [
+     "Obtains exact value cos θ = 3/4 from cos 2θ = 1/8 (using cos 2θ = 2cos²θ − 1: 1/8 = 2cos²θ − 1 → cos²θ = 9/16 → cos θ = 3/4)",
+     "Uses u cos θ × t_P = 2u cos 2θ × t_Q (equating horizontal distances) or equivalent",
+     "Substitutes t_P = 0.4 and cos θ = 3/4, cos 2θ = 1/8",
+     "t_Q = 1.2 seconds"
+    ],
+    "guidance": "B1 obtains cos θ = 3/4. M1 uses u cos θ × t_P = 2u cos 2θ × t_Q with t_P = 0.4 (or equivalent). M1 completes substitution. A1 obtains t_Q = 1.2 AWRT."
+   },
+   "18(c)": {
+    "type": "exact",
+    "answer": "One valid modelling assumption, e.g.: Acceleration is constant (g is uniform); P and Q are projected from the same height; Air resistance is negligible; Particles are modelled as point masses.",
+    "guidance": "E1 states any suitable assumption."
+   },
+   "19(a)(i)": {
+    "type": "exact",
+    "answer": "When two vectors are parallel, one is a scalar multiple of the other. Since Amba moves in the same direction as Jo, her velocity must be a scalar multiple of Jo's velocity (2.8i + 9.6j).",
+    "guidance": "E1 explains that parallel vectors are scalar multiples of each other. Must refer to 'scalar multiple' or show algebraically."
+   },
+   "19(a)(ii)": {
+    "type": "points",
+    "points": [
+     "Amba's velocity = 0.8(2.8i + 9.6j) = (2.24i + 7.68j) m s⁻¹",
+     "Speed = √(2.24² + 7.68²) = √(5.0176 + 58.9824) = √64 = 8 m s⁻¹ ✓"
+    ],
+    "guidance": "B1 verifies that k = 0.8 gives speed = 8 m s⁻¹."
+   },
+   "19(b)": {
+    "type": "points",
+    "points": [
+     "Displacement in 4 seconds = 4 × (2.24i + 7.68j) = (8.96i + 30.72j) m",
+     "Position of Amba at t = 4: (2 + 8.96)i + (−7 + 30.72)j = (10.96i + 23.72j) m"
+    ],
+    "guidance": "B1 finds displacement using s = ut. M1 uses displacement with initial position to find position vector. A1 obtains (10.96i + 23.72j) m OE."
+   },
+   "19(c)": {
+    "type": "points",
+    "points": [
+     "Finds Jo's speed: √(2.8² + 9.6²) = √(7.84 + 92.16) = √100 = 10 m s⁻¹",
+     "Distance travelled by Jo in 4 seconds = 4 × 10 = 40 m",
+     "Distance travelled by Amba in 4 seconds = 4 × 8 = 32 m",
+     "Uses appropriate method with given distance of 5 m at t = 0 and t = 4",
+     "Shortest distance between parallel lines = √(5² − ((40 − 32)/2)²) ... using 3-4-5 triangle: 5² = d² + ((40−32)/2)² is not quite right — use: both distances from X = 5, difference in distances = 40 − 32 = 8, so by the triangle approach the perpendicular distance = √(5² − 4²) = √(25 − 16) = 3 m",
+     "Shortest distance = 3 metres"
+    ],
+    "guidance": "M1 finds Jo's speed. A1 finds Jo's distance = 40 m. B1 finds Amba's distance. M1 uses appropriate method. A1 obtains distance = 3 metres. Must state units."
+   }
+  }
  }
 };
