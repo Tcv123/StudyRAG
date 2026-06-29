@@ -18,7 +18,7 @@ const GEOGRAPHY_OCR_QUESTIONS = {
       { q: 'Which type of erosion involves rocks scraping along the river bed?', options: ['Hydraulic action', 'Attrition', 'Abrasion', 'Solution'], answer: 2 },
       { q: 'What is a levee?', options: ['A type of dam', 'A raised bank along a river formed by deposition', 'A waterfall', 'An underground river'], answer: 1 },
       { q: 'What does concordant coastline mean?', options: ['Rock layers run parallel to the coast', 'Rock layers run perpendicular to the coast', 'The coast has many bays', 'The coast is eroding quickly'], answer: 0 },
-      { q: 'What is a stack?', options: ['A pile of sediment', 'An isolated pillar of rock off the coast', 'A type of cave', 'A sand dune'], answer: 1 },
+      { q: 'What is a stack?', options: ['A pile of sediment', 'An isolated pillar of rock off the coast', 'A type of cave', 'A wave-cut platform'], answer: 1 },
       { q: 'Which process moves material along a beach in a zigzag pattern?', options: ['Traction', 'Saltation', 'Longshore drift', 'Suspension'], answer: 2 },
       { q: 'What is the drainage basin?', options: ['The area of land drained by a river and its tributaries', 'The mouth of a river', 'A lake formed by a dam', 'The deepest part of a river'], answer: 0 },
       { q: 'What is the watershed?', options: ['A large waterfall', 'The boundary of a drainage basin', 'The point where two rivers meet', 'The source of a river'], answer: 1 },

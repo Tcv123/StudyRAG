@@ -9,7 +9,7 @@ const ECONOMICS_EDEXCEL_B_QUESTIONS = {
       { q: 'At equilibrium in a competitive market:', options: ['There is excess demand', 'There is excess supply', 'Quantity demanded equals quantity supplied', 'Price is at its highest level'], answer: 2 },
       { q: 'If price elasticity of demand (PED) equals -0.5, demand is:', options: ['Price elastic', 'Price inelastic', 'Unitary elastic', 'Perfectly elastic'], answer: 1 },
       { q: 'Which factor would make demand more price elastic?', options: ['The good is a necessity', 'There are many close substitutes', 'The good takes a small proportion of income', 'There is brand loyalty'], answer: 1 },
-      { q: 'Producer surplus is:', options: ['The difference between selling price and the minimum price a producer would accept', 'Total revenue minus total cost', 'The area below the demand curve', 'The profit maximising output'], answer: 0 },
+      { q: 'Producer surplus is:', options: ['The difference between selling price and the minimum price a producer would accept', 'Total revenue minus total cost', 'The area below the demand curve', 'The total fixed costs of production'], answer: 0 },
       { q: 'A positive income elasticity of demand indicates:', options: ['An inferior good', 'A normal good', 'A Giffen good', 'A complementary good'], answer: 1 },
       { q: 'Cross elasticity of demand (XED) between two substitutes is:', options: ['Negative', 'Zero', 'Positive', 'Infinite'], answer: 2 },
       { q: 'What happens to equilibrium price when demand increases and supply remains constant?', options: ['Price falls', 'Price rises', 'Price stays the same', 'Price becomes indeterminate'], answer: 1 },
