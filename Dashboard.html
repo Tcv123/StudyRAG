@@ -1772,6 +1772,7 @@ function renderRecentActivity(topicRows, medals, profile) {
   }
 
   events.sort((a, b) => b.time - a.time);
+  events.splice(7);
 
   if (events.length === 0) {
     container.innerHTML = `<div class="activity-item"><div class="activity-dot" style="background:var(--border);"></div><div><div class="activity-text" style="color:var(--muted);">No activity yet — complete a diagnostic to get started!</div></div></div>`;
