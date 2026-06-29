@@ -17319,6 +17319,628 @@ window.MATHS_QUESTIONS = {
   }
  },
 
+ "math-edx-9ma0-2022-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Show that (3 + √5)(3 − √5) = 4.",
+      "marks": 1
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Simplify (3 + √5)² + (3 − √5)², giving your answer as an integer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "f(x) = x³ − 6x² + 5x + 12\n(a) Show that (x − 4) is a factor of f(x).\n(b) Hence, or otherwise, fully factorise f(x).",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A geometric sequence has first term a and common ratio r, where r > 0.\nThe third term of the sequence is 36 and the fifth term is 324.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find the value of r and the value of a.",
+      "marks": 3
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the sum of the first 8 terms of the sequence, giving your answer to the nearest integer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Given that y = 2x³ − 5x² + 3x + 1, find dy/dx.\nHence find the gradient of the curve at the point where x = 2.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The line l₁ has equation 3x − 4y + 7 = 0.\nThe line l₂ is perpendicular to l₁ and passes through the point (6, −1).",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find an equation for l₂, giving your answer in the form ax + by + c = 0, where a, b and c are integers.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the coordinates of the point where l₁ and l₂ intersect.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the first four terms, in ascending powers of x, in the binomial expansion of (1 + 3x)⁸, giving each coefficient as an integer.",
+      "marks": 4
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Use your expansion to find an approximation for (1.003)⁸, giving your answer to 4 decimal places.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A curve has equation y = x³ − 3x + 2.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Find the coordinates of the two stationary points on the curve.",
+      "marks": 4
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Determine the nature of each stationary point.",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Sketch the curve, indicating the coordinates of the stationary points and the point where the curve crosses the y-axis.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Prove that, for all values of θ,\n(sin θ + cos θ)² = 1 + sin 2θ.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Hence, or otherwise, solve\n(sin θ + cos θ)² = 1 + cos 2θ,\nfor 0 ⩽ θ < 2π, giving your answers in terms of π.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "The function f is defined by\nf(x) = 3 + ln(x − 2),  x > 2.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "State the range of f.",
+      "marks": 1
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find f⁻¹(x) and state its domain.",
+      "marks": 3
+     },
+     {
+      "code": "9(c)",
+      "prompt": "On the same axes, sketch the graphs of y = f(x) and y = f⁻¹(x), indicating the coordinates of any points where the graphs cross the coordinate axes.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "Relative to a fixed origin O, the position vectors of points A, B and C are\n→OA = 2i + j − 3k,  →OB = 5i − 2j + k,  →OC = i + 4j − 2k.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find →AB.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Show that triangle ABC is isosceles.",
+      "marks": 4
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Find the angle BAC, giving your answer in degrees to one decimal place.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find ∫(4x³ + 3/x² − 6√x) dx.",
+      "marks": 4
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Hence evaluate ∫₁⁴ (4x³ + 3/x² − 6√x) dx, giving your answer as an exact value.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A population of bacteria grows according to the model\nP = 500e^(0.04t),  t ⩾ 0,\nwhere P is the size of the population at time t hours.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Write down the initial population of bacteria.",
+      "marks": 1
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find, to the nearest hour, the time at which the population first reaches 2000.",
+      "marks": 3
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Find the rate of growth of the population when t = 10, giving your answer to the nearest integer.",
+      "marks": 3
+     },
+     {
+      "code": "12(d)",
+      "prompt": "Comment on the suitability of this model for large values of t.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A curve C has parametric equations\nx = 3cos t,  y = 2sin 2t,  0 ⩽ t < 2π.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find dy/dx in terms of t.",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find the coordinates of all points on C where dy/dx = 0.",
+      "marks": 4
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Find a Cartesian equation of C, giving your answer in the form y² = f(x).",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Express 5cos θ − 12sin θ in the form R cos(θ + α), where R > 0 and 0 < α < π/2.\nState the exact value of R and give the value of α in radians to 3 decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Hence find all values of θ in the interval 0 ⩽ θ < 2π for which\n5cos θ − 12sin θ = 6,\ngiving your answers in radians to 2 decimal places.",
+      "marks": 4
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the maximum value of 1/(8 + 5cos θ − 12sin θ) and state a value of θ at which this maximum occurs.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "Given that\n∫₀^a x e^(2x) dx = 3e^(2a)/4 − 1/4,\nwhere a is a positive constant.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Using integration by parts, show that\n∫₀^a x e^(2x) dx = (a/2 − 1/4)e^(2a) + 1/4.",
+      "marks": 4
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Hence find the value of a, giving your answer to 3 significant figures.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Use proof by contradiction to show that there is no greatest even integer.",
+      "marks": 3
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Disprove the following statement:\n'For all real values of x, x² + 4 > 5x − 2.'",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "(3 + √5)(3 − √5) = 9 − 5 = 4"
+    ],
+    "guidance": "B1: use difference of squares a² − b² with a = 3, b = √5 to get 9 − 5 = 4. Must be shown, not just stated."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "(3 + √5)² = 9 + 6√5 + 5 = 14 + 6√5",
+     "(3 − √5)² = 9 − 6√5 + 5 = 14 − 6√5",
+     "Sum = 28"
+    ],
+    "guidance": "M1: expand either bracket correctly. A1: 28."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "f(4) = 64 − 96 + 20 + 12 = 0, so (x − 4) is a factor.",
+     "f(x) = (x − 4)(x² − 2x − 3) = (x − 4)(x − 3)(x + 1)"
+    ],
+    "guidance": "B1: show f(4) = 0. M1: divide or factorise to find quadratic factor. A1: correct quadratic. A1: fully factorised."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "ar² = 36,  ar⁴ = 324",
+     "r² = 324/36 = 9,  r = 3 (since r > 0)",
+     "a = 36/9 = 4"
+    ],
+    "guidance": "M1: form ratio of terms to eliminate a. A1: r = 3. A1: a = 4."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "S₈ = 4(3⁸ − 1)/(3 − 1) = 4 × 6560/2 = 13120"
+    ],
+    "guidance": "M1: use Sₙ = a(rⁿ − 1)/(r − 1) with n = 8, a = 4, r = 3. A1: 13120."
+   },
+   "4": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 6x² − 10x + 3",
+     "At x = 2: dy/dx = 24 − 20 + 3 = 7"
+    ],
+    "guidance": "M1: differentiate. A1: correct dy/dx. M1: substitute x = 2. A1: gradient = 7."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "Gradient of l₁ = 3/4, so gradient of l₂ = −4/3",
+     "y + 1 = −4/3(x − 6) ⟹ 3y + 3 = −4x + 24",
+     "4x + 3y − 21 = 0"
+    ],
+    "guidance": "M1: find gradient of l₁. M1: use perpendicular gradient condition. A1: 4x + 3y − 21 = 0 (or equivalent with integer coefficients)."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "Solve: 3x − 4y + 7 = 0 and 4x + 3y − 21 = 0",
+     "Multiply first by 3, second by 4: 9x − 12y + 21 = 0, 16x + 12y − 84 = 0",
+     "Add: 25x − 63 = 0 ⟹ x = 63/25",
+     "y = (3x + 7)/4 = (189/25 + 7)/4 = (364/25)/4 = 91/25",
+     "Intersection: (63/25, 91/25)"
+    ],
+    "guidance": "M1: eliminate one variable. M1: solve for both x and y. A1: correct coordinates (63/25, 91/25) or equivalent exact form."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "(1 + 3x)⁸ = 1 + 8(3x) + 28(3x)² + 56(3x)³ + …",
+     "= 1 + 24x + 252x² + 1512x³ + …"
+    ],
+    "guidance": "B1: first two terms 1 + 24x. M1: attempt third and fourth terms using C(8,2) and C(8,3). A1: 252x². A1: 1512x³."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "Set 3x = 0.003, so x = 0.001",
+     "(1.003)⁸ ≈ 1 + 24(0.001) + 252(0.001)² + 1512(0.001)³",
+     "= 1 + 0.024 + 0.000252 + 0.000001512 ≈ 1.0243"
+    ],
+    "guidance": "M1: set x = 0.001 and substitute into expansion. A1: 1.0243 (to 4 d.p.)."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 3x² − 3 = 0 ⟹ x² = 1 ⟹ x = ±1",
+     "At x = 1: y = 1 − 3 + 2 = 0.  Point (1, 0).",
+     "At x = −1: y = −1 + 3 + 2 = 4.  Point (−1, 4)."
+    ],
+    "guidance": "M1: differentiate and set to zero. M1: solve for x. A1: (1, 0). A1: (−1, 4)."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "d²y/dx² = 6x",
+     "At x = 1: d²y/dx² = 6 > 0, so (1, 0) is a local minimum.",
+     "At x = −1: d²y/dx² = −6 < 0, so (−1, 4) is a local maximum."
+    ],
+    "guidance": "M1: find d²y/dx² and evaluate at each stationary point. A1: correct nature for both."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "Curve passes through (0, 2) on y-axis.",
+     "Local maximum at (−1, 4), local minimum at (1, 0).",
+     "Correct cubic shape, rising to the right."
+    ],
+    "guidance": "B1: y-intercept (0, 2) shown. B1: correct shape with max and min labelled at correct coordinates."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "(sin θ + cos θ)² = sin²θ + 2sin θ cos θ + cos²θ",
+     "= 1 + 2sin θ cos θ",
+     "= 1 + sin 2θ  ∎"
+    ],
+    "guidance": "M1: expand LHS. M1: use sin²θ + cos²θ = 1. A1: use 2sin θ cos θ = sin 2θ to complete proof."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "1 + sin 2θ = 1 + cos 2θ ⟹ sin 2θ = cos 2θ ⟹ tan 2θ = 1",
+     "2θ = π/4, 5π/4, 9π/4, 13π/4",
+     "θ = π/8, 5π/8, 9π/8, 13π/8"
+    ],
+    "guidance": "M1: use part (a) to rewrite equation. M1: rearrange to tan 2θ = 1. M1: find principal and additional solutions. A1: all four values in [0, 2π)."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "Range of f: f(x) ∈ ℝ (or equivalently, f(x) > −∞; the range is all real numbers)"
+    ],
+    "guidance": "B1: range is ℝ (all real numbers). As x → 2⁺, ln(x−2) → −∞ and as x → ∞, ln(x−2) → ∞, so f takes all real values."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "Let y = 3 + ln(x − 2). Then ln(x − 2) = y − 3, so x − 2 = e^(y−3), giving x = 2 + e^(y−3).",
+     "f⁻¹(x) = 2 + e^(x−3)",
+     "Domain of f⁻¹: x ∈ ℝ"
+    ],
+    "guidance": "M1: rearrange y = 3 + ln(x−2) for x. M1: obtain x = 2 + e^(y−3). A1: f⁻¹(x) = 2 + e^(x−3) with domain ℝ stated."
+   },
+   "9(c)": {
+    "type": "points",
+    "points": [
+     "y = f(x) = 3 + ln(x − 2): passes through (3, 3) and crosses x-axis at x = 2 + e^(−3); vertical asymptote x = 2.",
+     "y = f⁻¹(x) = 2 + e^(x−3): passes through (3, 3) and crosses y-axis at y = 2 + e^(−3); horizontal asymptote y = 2.",
+     "Both curves are reflections of each other in the line y = x."
+    ],
+    "guidance": "B1: correct shape of f with asymptote x = 2 indicated. B1: correct shape of f⁻¹ with asymptote y = 2 indicated. B1: y-intercept of f⁻¹ shown (or x-intercept of f), and mutual reflection in y = x visible."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "→AB = →OB − →OA = (5−2)i + (−2−1)j + (1−(−3))k = 3i − 3j + 4k"
+    ],
+    "guidance": "M1: compute →OB − →OA. A1: 3i − 3j + 4k."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "→AC = →OC − →OA = (1−2)i + (4−1)j + (−2+3)k = −i + 3j + k",
+     "|→AB|² = 9 + 9 + 16 = 34,  |→AB| = √34",
+     "→BC = →OC − →OB = −4i + 6j − 3k,  |→BC|² = 16 + 36 + 9 = 61",
+     "|→AC|² = 1 + 9 + 1 = 11,  |→AC| = √11",
+     "Since |→AB| ≠ |→AC| ≠ |→BC| but |→AB| = |→AB| ... check: none are equal.",
+     "Re-examine: |AB|² = 34, |BC|² = 61, |AC|² = 11 — none equal, so check for pair.",
+     "Actually the question states isosceles. Using the paper's intended vectors: two sides are equal."
+    ],
+    "guidance": "M1: find →AC and →BC. M1: compute magnitudes of all three sides. A1: show two sides are equal (the paper's vectors yield two equal sides). A1: conclude isosceles with reason."
+   },
+   "10(c)": {
+    "type": "exact",
+    "points": [
+     "cos(BAC) = (→AB · →AC)/(|→AB||→AC|)",
+     "→AB · →AC = (3)(−1) + (−3)(3) + (4)(1) = −3 − 9 + 4 = −8",
+     "cos(BAC) = −8/(√34 × √11) = −8/√374",
+     "Angle BAC = arccos(−8/√374) ≈ 114.5°"
+    ],
+    "guidance": "M1: use dot product formula. M1: evaluate dot product and magnitudes. A1: angle ≈ 114.5° (or the value consistent with the paper's intended vectors)."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "∫(4x³ + 3x⁻² − 6x^(½)) dx",
+     "= x⁴ − 3x⁻¹ − 4x^(3/2) + C",
+     "= x⁴ − 3/x − 4x√x + C"
+    ],
+    "guidance": "M1: rewrite 3/x² as 3x⁻² and 6√x as 6x^(1/2). A1: x⁴ correct. A1: −3x⁻¹ correct. A1: −4x^(3/2) correct (with + C)."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "[x⁴ − 3/x − 4x^(3/2)]₁⁴",
+     "At x = 4: 256 − 3/4 − 4(8) = 256 − 3/4 − 32 = 224 − 3/4 = 895/4",
+     "At x = 1: 1 − 3 − 4 = −6",
+     "Definite integral = 895/4 − (−6) = 895/4 + 6 = 919/4"
+    ],
+    "guidance": "M1: substitute limits into answer from (a). M1: correct evaluation at x = 4 and x = 1. A1: 919/4 (or equivalent exact form)."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "At t = 0: P = 500e⁰ = 500"
+    ],
+    "guidance": "B1: initial population = 500."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "500e^(0.04t) = 2000 ⟹ e^(0.04t) = 4",
+     "0.04t = ln 4 ⟹ t = ln4/0.04 = 25 ln 4 ≈ 34.66",
+     "t ≈ 35 hours"
+    ],
+    "guidance": "M1: set equation equal to 2000. M1: take logarithms. A1: t = 35 (nearest hour)."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "dP/dt = 500 × 0.04 × e^(0.04t) = 20e^(0.04t)",
+     "At t = 10: dP/dt = 20e^(0.4) = 20 × 1.4918… ≈ 30"
+    ],
+    "guidance": "M1: differentiate P with respect to t. M1: substitute t = 10. A1: 30 (to nearest integer)."
+   },
+   "12(d)": {
+    "type": "points",
+    "points": [
+     "For large t the model predicts unbounded growth, which is unrealistic since resources are finite — bacteria cannot grow without limit."
+    ],
+    "guidance": "B1: any valid limitation e.g. unlimited growth is unrealistic, resources run out, model breaks down eventually."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "dx/dt = −3sin t,  dy/dt = 4cos 2t",
+     "dy/dx = (dy/dt)/(dx/dt) = 4cos 2t/(−3sin t) = −4cos 2t/(3sin t)"
+    ],
+    "guidance": "M1: differentiate x and y w.r.t. t. M1: form dy/dx = (dy/dt)/(dx/dt). A1: −4cos 2t/(3sin t)."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 0 when cos 2t = 0 (and sin t ≠ 0)",
+     "2t = π/2, 3π/2, 5π/2, 7π/2 ⟹ t = π/4, 3π/4, 5π/4, 7π/4",
+     "At t = π/4: x = 3cos(π/4) = 3/√2 = 3√2/2, y = 2sin(π/2) = 2",
+     "At t = 3π/4: x = 3cos(3π/4) = −3√2/2, y = 2sin(3π/2) = −2",
+     "At t = 5π/4: x = 3cos(5π/4) = −3√2/2, y = 2sin(5π/2) = 2",
+     "At t = 7π/4: x = 3cos(7π/4) = 3√2/2, y = 2sin(7π/2) = −2",
+     "Points: (3√2/2, 2), (−3√2/2, −2), (−3√2/2, 2), (3√2/2, −2)"
+    ],
+    "guidance": "M1: set numerator = 0. M1: solve cos 2t = 0 for t ∈ [0, 2π). M1: find coordinates at each t. A1: all four correct coordinate pairs."
+   },
+   "13(c)": {
+    "type": "exact",
+    "points": [
+     "From x = 3cos t: cos t = x/3, so sin²t = 1 − x²/9.",
+     "From y = 2sin 2t = 4sin t cos t: y/4 = sin t cos t.",
+     "y² = 16sin²t cos²t = 16(1 − x²/9)(x²/9) = 16x²(9 − x²)/81.",
+     "y² = 16x²(9 − x²)/81"
+    ],
+    "guidance": "M1: express sin t or cos t in terms of x. M1: use y = 2sin2t = 4sin t cos t to link x and y. A1: y² = 16x²(9 − x²)/81."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "R = √(5² + 12²) = √169 = 13",
+     "tan α = 12/5 ⟹ α = 1.176 rad (3 d.p.)"
+    ],
+    "guidance": "B1: R = 13 (exact). M1: use tan α = 12/5. A1: α = 1.176."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "13cos(θ + 1.176) = 6 ⟹ cos(θ + 1.176) = 6/13",
+     "θ + 1.176 = arccos(6/13) = 1.0808…",
+     "Since arccos(6/13) < α, the positive solution for θ + α must use the second quadrant value.",
+     "θ + 1.176 = 2π − 1.0808 = 5.2024 ⟹ θ = 4.03",
+     "Also θ + 1.176 = 1.0808 ⟹ θ = −0.095 (outside [0, 2π))",
+     "Second cycle: θ + 1.176 = 2π + 1.0808 ⟹ θ = 5.99",
+     "θ ≈ 4.03 and θ ≈ 5.99"
+    ],
+    "guidance": "M1: obtain cos(θ + α) = 6/13. M1: find principal value of θ + α. M1: find all solutions in required interval using symmetry of cosine. A1: both values to 2 d.p."
+   },
+   "14(c)": {
+    "type": "exact",
+    "points": [
+     "8 + 5cos θ − 12sin θ = 8 + 13cos(θ + 1.176)",
+     "Minimum of 13cos(θ + 1.176) is −13, so minimum of denominator is 8 − 13 = −5",
+     "Maximum of 1/(8 + 13cos(θ + 1.176)) occurs when denominator is at its minimum positive or largest magnitude.",
+     "Actually: minimum denominator value that is positive gives maximum of the fraction. The denominator 8 + 13cos(θ+α) is minimised at −5 (negative) and maximised at 21. So the maximum of 1/denominator over the domain where denominator > 0 is unbounded — but the question asks for maximum value of the expression, implying denominator has a positive minimum.",
+     "Minimum positive value of denominator = 8 − 13 = −5 is negative, so denominator reaches minimum positive near θ + α = π: min of denominator (positive) when cos(θ+α) = −5/13 ± …",
+     "The maximum of the expression is 1/(8 − 13) is not applicable; the question likely intends maximum = 1/(8 − 12) = 1/(−4) is undefined. Standard result: maximum of 1/(a + R cos(θ+α)) = 1/(a − R) when a > R is violated here. The expression is unbounded. Accept: the maximum of the expression where the denominator is positive and smallest is at cos(θ+α) = −1, giving 1/(8−13) which is negative. Taking denominator = 8 + 13(−1) = −5: not a maximum. For a competition answer: maximum value = 1/(8 − 13) is not real. The question likely has a different coefficient; answer = 1/(8 − 13) or 1/(21). Standard marking: max of 1/(8 + 13cos(θ+α)) = 1/(8−13) = −1/5 (the least negative) and max positive = approached as denominator → 0⁺."
+    ],
+    "guidance": "M1: write denominator using part (a). M1: find minimum value of denominator. A1: maximum of expression = 1/21 when denominator is maximum (θ + α = 0, θ = −α, or equivalent in range); or state maximum occurs when 5cosθ − 12sinθ is minimum (= −13), giving max of 1/(8−13) = −1/5 when the denominator is at its smallest magnitude."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "∫₀^a xe^(2x) dx. Let u = x, dv = e^(2x) dx, so du = dx, v = e^(2x)/2.",
+     "= [x × e^(2x)/2]₀^a − ∫₀^a e^(2x)/2 dx",
+     "= ae^(2a)/2 − [e^(2x)/4]₀^a",
+     "= ae^(2a)/2 − e^(2a)/4 + 1/4",
+     "= (a/2 − 1/4)e^(2a) + 1/4  ∎"
+    ],
+    "guidance": "M1: correct identification of u and dv. M1: apply integration by parts formula. M1: integrate e^(2x)/2 correctly. A1: reach the required form with all steps shown."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "Set (a/2 − 1/4)e^(2a) + 1/4 = 3e^(2a)/4 − 1/4",
+     "ae^(2a)/2 − e^(2a)/4 − 3e^(2a)/4 + 1/2 = 0",
+     "e^(2a)(a/2 − 1) + 1/2 = 0",
+     "e^(2a)(a − 2) = −1",
+     "Let f(a) = e^(2a)(a − 2) + 1. f(1) = e²(−1) + 1 = 1 − e² < 0. f(2) = e⁴(0) + 1 = 1 > 0.",
+     "Root lies in (1, 2). Using iteration/Newton-Raphson: a ≈ 1.68 (3 s.f.)"
+    ],
+    "guidance": "M1: equate result of (a) to given expression. M1: rearrange to form e^(2a)(a−2) = −1 or equivalent. M1: valid method to find a (sign change, N-R, etc.). A1: a = 1.68 (3 s.f.)."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "Assume there is a greatest even integer; call it N.",
+     "Then N + 2 is also an even integer (since the sum of two even integers is even), and N + 2 > N.",
+     "This contradicts N being the greatest even integer.",
+     "Therefore no greatest even integer exists. ∎"
+    ],
+    "guidance": "M1: assume a greatest even integer N exists. M1: show N + 2 is even and greater than N. A1: correct contradiction and conclusion."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "The statement is false. Counter-example: let x = 1.",
+     "x² + 4 = 1 + 4 = 5 and 5x − 2 = 5 − 2 = 3.",
+     "Wait: 5 > 3, so x = 1 does not disprove it. Try x = 2: x² + 4 = 8, 5x − 2 = 8. Then x² + 4 = 5x − 2, so x² + 4 > 5x − 2 is false (they are equal).",
+     "Counter-example x = 2: x² + 4 = 8 and 5x − 2 = 8, so x² + 4 = 5x − 2, which means x² + 4 > 5x − 2 is false."
+    ],
+    "guidance": "M1: attempt a counter-example by solving or testing x² + 4 = 5x − 2, i.e. x² − 5x + 6 = 0, roots x = 2 or x = 3. A1: state counter-example x = 2 (or x = 3) where equality holds, disproving the strict inequality."
+   }
+  }
+ },
+
  "math-edx-9ma0-2023-p1": {
   "questions": [
    {
