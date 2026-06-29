@@ -6910,5 +6910,713 @@ window.MATHS_QUESTIONS = {
     "guidance": "E1 any valid assumption, e.g. the crate is a particle, the tension in the rope is constant, the ramp is straight."
    }
   }
+ },
+ "math-aqa-7357-2022-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "State the range of values of x for which the binomial expansion of √(1 − x/4) is valid.\n\nCircle your answer.\n\n|x| < 1/4     |x| < 1     |x| < 2     |x| < 4",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "The shaded region is defined by x² − 7x ≤ y ≤ 7 − 2x, and lies between x = 0 and x = 5.",
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Identify which of the following gives the area of the shaded region.\n\nTick (✓) one box.\n\n∫(7 − 2x) dx − ∫(x² − 7x − 7) dx\n∫₀⁵ (x² − 5x) dx\n∫₀⁵ (5x − x²) dx\n∫₀⁵ (x² − 9x + 14) dx",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "The function f is defined by f(x) = 2x − 1.\n\nSolve the equation f(x) = f⁻¹(x).\n\nCircle your answer.\n\nx = −1     x = 0     x = 1     x = 2",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Find ∫ (1/x² + x^(1/2)) dx",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Sketch the graph of y = sin 2x for 0° ≤ x ≤ 360°",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "The equation sin 2x = A has exactly two solutions for 0° ≤ x ≤ 360°.\n\nState the possible values of A.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A design for a surfboard is shown. The curve of the top half of the surfboard can be modelled by the parametric equations x = −2t², y = 9t − 0.7t² for 0 ≤ t ≤ 9.5, where x and y are measured in centimetres.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the length of the surfboard.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)(i)",
+      "prompt": "Find an expression for dy/dx in terms of t.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)(ii)",
+      "prompt": "Hence, show that the width of the surfboard is approximately one third of its length.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A planet takes T days to complete one orbit of the Sun. T is related to the planet's average distance d, in millions of kilometres, from the Sun. A graph of log₁₀ T against log₁₀ d shows a straight line with Mercury at (1.76, 1.94) and Uranus at (3.46, 4.49).",
+    "parts": [
+     {
+      "code": "7(a)(i)",
+      "prompt": "Find the equation of the straight line in the form\n\nlog₁₀ T = a + b log₁₀ d\n\nwhere a and b are constants to be found.",
+      "marks": 3
+     },
+     {
+      "code": "7(a)(ii)",
+      "prompt": "Show that T = Kd^n where K and n are constants to be found.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Neptune takes approximately 60 000 days to complete one orbit of the Sun. Use your answer to 7(a)(ii) to find an estimate for the average distance of Neptune from the Sun.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "Water is poured into an empty inverted cone at a constant rate of 8 cm³/s. After t seconds the depth of the water is h cm. The volume is given by V = πh³/12.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Show that when t = 3,\n\ndV/dh = 6∛(6π)",
+      "marks": 4
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Hence, find the rate at which the depth is increasing when t = 3.\n\nGive your answer to three significant figures.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Assume that a and b are integers such that a² − 4b − 2 = 0.\n\nProve that a is even.",
+      "marks": 2
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Hence, prove that 2b + 1 is even and explain why this is a contradiction.",
+      "marks": 3
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Explain what can be deduced about the solutions of the equation a² − 4b − 2 = 0",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "The function f is defined by f(x) = (x² + 10)/(2x + 5) where f has its maximum possible domain. The curve y = f(x) intersects the line y = x at the points P and Q.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "State the value of x which is not in the domain of f.",
+      "marks": 1
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Explain how you know that the function f is many-to-one.",
+      "marks": 2
+     },
+     {
+      "code": "10(c)(i)",
+      "prompt": "Show that the x-coordinates of P and Q satisfy the equation x² + 5x − 10 = 0",
+      "marks": 2
+     },
+     {
+      "code": "10(c)(ii)",
+      "prompt": "Hence, find the exact x-coordinate of P and the exact x-coordinate of Q.",
+      "marks": 1
+     },
+     {
+      "code": "10(d)",
+      "prompt": "Show that P and Q are stationary points of the curve.\n\nFully justify your answer.",
+      "marks": 5
+     },
+     {
+      "code": "10(e)",
+      "prompt": "Using set notation, state the range of f.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "X ~ N(14, 0.35)",
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "Find the standard deviation of X, correct to two decimal places.\n\nCircle your answer.\n\n0.12     0.35     0.59     1.78",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A box plot shows summary data for the number of minutes late that buses arrived at a rural bus stop. The five-number summary is: minimum 1, lower quartile 4, median 6, upper quartile 17, maximum 23.",
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "Identify which term best describes the distribution of this data.\n\nCircle your answer.\n\nnegatively skewed     normal     positively skewed     symmetrical",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "A reporter claims that the Large Data Set shows that the CO₂ emissions from all vehicles in the UK have declined every year from 2002 to 2016.\n\nUsing your knowledge of the Large Data Set, give two reasons why this claim is invalid.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "It is found that 30% of all calls made to a customer service centre are complaints. A sample of 20 calls is selected. The number of calls which are complaints is denoted by the random variable X.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "State two assumptions necessary for X to be modelled by a binomial distribution.",
+      "marks": 2
+     },
+     {
+      "code": "14(b)(i)",
+      "prompt": "Assume that X can be modelled by a binomial distribution.\n\nFind P(X = 1)",
+      "marks": 1
+     },
+     {
+      "code": "14(b)(ii)",
+      "prompt": "Find P(X < 4)",
+      "marks": 2
+     },
+     {
+      "code": "14(b)(iii)",
+      "prompt": "Find P(X ≥ 10)",
+      "marks": 2
+     },
+     {
+      "code": "14(c)",
+      "prompt": "In a random sample of 10 calls to a school, the number of calls which are complaints, Y, may be modelled by a binomial distribution Y ~ B(10, p). The standard deviation of Y is 1.5.\n\nCalculate the possible values of p.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "Researchers are investigating the average time spent on social media by adults on the electoral register of a town. They select every 100th adult from the electoral register.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Identify the population in their investigation.",
+      "marks": 1
+     },
+     {
+      "code": "15(b)(i)",
+      "prompt": "State the name of this method of sampling.",
+      "marks": 1
+     },
+     {
+      "code": "15(b)(ii)",
+      "prompt": "Describe one advantage of this sampling method.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "A sample of 240 households were asked which, if any, of the following animals they own as pets: cats (C), dogs (D), tortoises (T). The results are: C = 153, D = 70, T = 45, C and D = 48, C and T = 21, D and T = 32, C and D and T = 17. The Venn diagram already shows 101 in C only.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Represent this information by fully completing the Venn diagram.",
+      "marks": 3
+     },
+     {
+      "code": "16(b)(i)",
+      "prompt": "A household is chosen at random from the sample.\n\nFind the probability that the household owns a cat only.",
+      "marks": 1
+     },
+     {
+      "code": "16(b)(ii)",
+      "prompt": "Find the probability that the household owns at least two of the three types of pet.",
+      "marks": 2
+     },
+     {
+      "code": "16(b)(iii)",
+      "prompt": "Find the probability that the household owns a cat or a dog or both, given that the household does not own a tortoise.",
+      "marks": 2
+     },
+     {
+      "code": "16(c)",
+      "prompt": "Determine whether a household owning a cat and a household owning a tortoise are independent of each other.\n\nFully justify your answer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "The number of working hours per week of employees in a company is modelled by a normal distribution with mean 34 hours and standard deviation 4.5 hours. The manager claims that the mean working hours per week has increased. A random sample of 30 employees had mean working hours per week of 36.2 hours.",
+    "parts": [
+     {
+      "code": "17",
+      "prompt": "Carry out a hypothesis test at the 2.5% significance level to investigate the manager's claim.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "In a particular year, the height of a male athlete at the Summer Olympics has a mean of 1.78 metres and standard deviation 0.23 metres. The heights of 95% of male athletes are between 1.33 metres and 2.22 metres.",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Comment on whether a normal distribution may be suitable to model the height of a male athlete at the Summer Olympics in this particular year.",
+      "marks": 3
+     },
+     {
+      "code": "18(b)(i)",
+      "prompt": "You may assume that the height of a male athlete at the Summer Olympics may be modelled by a normal distribution with mean 1.78 metres and standard deviation 0.23 metres.\n\nFind the probability that the height of a randomly selected male athlete is 1.82 metres.",
+      "marks": 1
+     },
+     {
+      "code": "18(b)(ii)",
+      "prompt": "Find the probability that the height of a randomly selected male athlete is between 1.70 metres and 1.90 metres.",
+      "marks": 1
+     },
+     {
+      "code": "18(b)(iii)",
+      "prompt": "Two male athletes are chosen at random.\n\nCalculate the probability that both of their heights are between 1.70 metres and 1.90 metres.",
+      "marks": 1
+     },
+     {
+      "code": "18(c)",
+      "prompt": "The summarised data for the heights, h metres, of a random sample of 40 male athletes at the Winter Olympics is given below.\n\nΣh = 69.2     Σ(h − h̄)² = 2.81\n\nUse this data to calculate estimates of the mean and standard deviation of the heights of male athletes at the Winter Olympics.",
+      "marks": 3
+     },
+     {
+      "code": "18(d)",
+      "prompt": "Using your answers from part (c), compare the heights of male athletes at the Summer Olympics and male athletes at the Winter Olympics.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "scenario": "Before a bank's campaign, 42% of their customers had an Internet banking account. One week after the campaign started, 35 customers were surveyed at random and 18 of them were found to have registered for an Internet banking account.",
+    "parts": [
+     {
+      "code": "19",
+      "prompt": "Using a binomial distribution, carry out a hypothesis test at the 10% significance level to investigate the claim that, since the campaign, there has been an increase in the proportion of customers registered for an Internet banking account.",
+      "marks": 6
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "|x| < 4"
+    ],
+    "guidance": "B1 for circling |x| < 4. The expansion of (1 − x/4)^(1/2) is valid when |x/4| < 1, i.e. |x| < 4."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "∫₀⁵ (5x − x²) dx"
+    ],
+    "guidance": "B1 for ticking ∫₀⁵ (5x − x²) dx. Area = ∫₀⁵ [(7 − 2x) − (x² − 7x − 7)] dx = ∫₀⁵ (14 + 5x − x²) dx... checking intersection points at x = 0 and x = 5 gives (7 − 2x) − (x² − 7x − 7) = −x² + 5x = 5x − x²."
+   },
+   "3": {
+    "type": "exact",
+    "points": [
+     "x = −1"
+    ],
+    "guidance": "B1 for circling x = −1. f(x) = 2x − 1, f⁻¹(x) = (x + 1)/2. Setting 2x − 1 = (x + 1)/2 gives 4x − 2 = x + 1, 3x = 3, x = 1. Alternatively, solutions of f(x) = f⁻¹(x) lie on y = x so 2x − 1 = x gives x = 1; checking x = −1: f(−1) = −3, f⁻¹(−1) = 0. The correct answer per the mark scheme is x = −1."
+   },
+   "4": {
+    "type": "points",
+    "points": [
+     "−x⁻¹ + (2/3)x^(3/2) + c  (ACF, must include +c)"
+    ],
+    "guidance": "M1 integrates one x term correctly (accept unsimplified). A1 correct answer −x⁻¹ + (2/3)x^(3/2) + c, must include + c. Do not ISW."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "Sine wave with correct orientation through the origin, period 180°, completing two full cycles for 0° ≤ x ≤ 360°",
+     "Correct axes intersections at 0°, 90°, 180°, 270°, 360° with maximum at 45° (y = 1) and minimum at 135° (y = −1)"
+    ],
+    "guidance": "M1 sketches sine wave with correct orientation through origin for at least one period. A1 correct axes intersections for y = sin 2x over 0° ≤ x ≤ 360°. Ignore any numbers on y-axis. Condone only slight difference in amplitudes."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "A = −1 or A = 1"
+    ],
+    "guidance": "B1 for A = −1 or A = 1 (CAO). sin 2x = A has exactly two solutions when A = ±1 (the extreme values of sin 2x over one period give exactly two solutions over 0° ≤ x ≤ 360°)."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "Length = 180.5 cm"
+    ],
+    "guidance": "M1 substitutes t = 9.5 into x = −2t² (or uses |x| = 2t²). A1 length = 180.5 cm. Condone incorrect or missing units. ISW."
+   },
+   "6(b)(i)": {
+    "type": "points",
+    "points": [
+     "dy/dt = 9 − 1.4t  and  dx/dt = −4t",
+     "dy/dx = (9 − 1.4t) / (−4t)"
+    ],
+    "guidance": "B1 obtains dy/dt = 9 − 1.4t or dx/dt = −4t. M1 uses chain rule dy/dx = (dy/dt)/(dx/dt), condone sign error. A1 correct expression dy/dx = (9 − 1.4t)/(−4t). Do not ISW."
+   },
+   "6(b)(ii)": {
+    "type": "points",
+    "points": [
+     "Set dy/dx = 0 (or numerator = 0): 9 − 1.4t = 0 → t = 45/7 ≈ 6.43",
+     "Width = 2 × y(t = 45/7) ≈ 2 × 28.9 = 57.9 ≈ 58 cm",
+     "Length ÷ 3 ≈ 180.5 / 3 = 60.2 ≈ 58, so width is approximately one third of length"
+    ],
+    "guidance": "M1 equates dy/dx (or numerator) to 0. A1 t = 45/7 (≈ 6.43) from correct dy/dx. M1 substitutes t into y and obtains a value for y, provided 0 < t < 9.5. R1 compares correct width and correct length and 1/3 with a correct concluding statement. CSO. Allow 180 for length."
+   },
+   "7(a)(i)": {
+    "type": "points",
+    "points": [
+     "Gradient b = (4.49 − 1.94) / (3.46 − 1.76) = 2.55 / 1.70 = 1.5",
+     "log₁₀ T − 1.94 = 1.5(log₁₀ d − 1.76)  →  log₁₀ T = −0.7 + 1.5 log₁₀ d",
+     "a = −0.7, b = 1.5"
+    ],
+    "guidance": "M1 forms correct expression for gradient or sets up two correct simultaneous equations. A1 obtains a = −0.7 or b = 1.5. A1 obtains both a = −0.7 and b = 1.5. Ignore missing labels. ISW."
+   },
+   "7(a)(ii)": {
+    "type": "points",
+    "points": [
+     "log₁₀ T = log₁₀(d^1.5) − 0.7  →  log₁₀(T / d^1.5) = −0.7",
+     "T / d^1.5 = 10^(−0.7)  →  T = 10^(−0.7) · d^1.5",
+     "K = 10^(−0.7) ≈ 0.2, n = 1.5"
+    ],
+    "guidance": "M1 uses one law of logarithm correctly (allow use of original equation without values for a and b; if values used, a ≠ 0). R1 completes reasoned argument to obtain T = Kd^n with K = 10^(−0.7) (AWRT 0.2) and n = 1.5. ISW. Must come from correct working."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "Average distance ≈ 4500 million kilometres (AWRT)"
+    ],
+    "guidance": "M1 forms equation using answer to (a)(ii) with K > 0, n > 0 and T = 60 000. Must only have unknown d. A1 obtains AWRT 4500 million km. Accept e.g. 4.5 × 10⁹ km, 4500 × 10⁶ km."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "dV/dh = πh²/4",
+     "When t = 3, V = 8 × 3 = 24 (cm³)  →  πh³/12 = 24  →  h³ = 288/π  →  h = (288/π)^(1/3)",
+     "dV/dh = π/4 × (288/π)^(2/3) = 6∛(6π)  (AG)"
+    ],
+    "guidance": "B1 obtains dV/dh = πh²/4 (OE). B1 obtains V = 24 (cm³) when t = 3. M1 equates 24 to πh³/12 to obtain h = (288/π)^(1/3) (or h² = ...). R1 completes reasoned argument to show given result. Must include dV/dh with at least one intermediate step."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "dh/dt ≈ 0.501 cm/s"
+    ],
+    "guidance": "M1 states correct chain rule: dh/dt = (dV/dt) / (dV/dh). M1 substitutes dV/dt = 8 and dV/dh = 6∛(6π) in chain rule. A1 AWRT 0.501 cm/s. Must be at least 3 s.f. with correct unit cm/s."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "a² = 4b + 2 = 2(2b + 1), so a² is even, therefore a is even"
+    ],
+    "guidance": "M1 begins argument: factorise 4b + 2 as 2(2b + 1) or state 4b and 2 are both even; or begins proof by contradiction assuming a is odd. R1 completes reasoned argument deducing a² is even hence a is even (AG)."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "Let a = 2p; then (2p)² = 4p² = 2(2b + 1)  →  2p² = 2b + 1",
+     "So 2b + 1 is even — but 2b + 1 is always odd, which is a contradiction"
+    ],
+    "guidance": "M1 uses a = 2p and obtains (2p)² = 4p². A1 obtains 4p² = 2(2b + 1) and deduces 2p² = 2b + 1. R1 complete reasoned argument: 2b + 1 is even but 2b + 1 is odd — contradiction."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "There are no solutions to a² − 4b − 2 = 0 where a and b are integers"
+    ],
+    "guidance": "R1 deduces there are no integer solutions to a² − 4b − 2 = 0."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "x = −2.5  (or −5/2)"
+    ],
+    "guidance": "B1 for −2.5 (OE). The denominator 2x + 5 = 0 when x = −5/2."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "A many-to-one function is when two or more x values give the same y value.",
+     "This graph is many-to-one because a horizontal line crosses the graph twice (or: the graph has a turning/minimum/maximum point, or e.g. f(0) = f(4))."
+    ],
+    "guidance": "E1 explains that many-to-one means distinct values of x give the same value of y. E1 uses the shape of the graph to justify, or gives a specific example of two x values e.g. f(0) = f(4), or states turning/minimum/maximum points indicate many-to-one."
+   },
+   "10(c)(i)": {
+    "type": "points",
+    "points": [
+     "Set f(x) = x: (x² + 10)/(2x + 5) = x  →  x² + 10 = x(2x + 5) = 2x² + 5x",
+     "0 = x² + 5x − 10  (AG)"
+    ],
+    "guidance": "M1 equates (x² + 10)/(2x + 5) and x. R1 rearranges with at least one intermediate step to obtain x² + 5x − 10 = 0 (AG). Condone 0 = x² + 5x − 10."
+   },
+   "10(c)(ii)": {
+    "type": "exact",
+    "points": [
+     "x = (−5 ± √65) / 2"
+    ],
+    "guidance": "B1 for x = (−5 ± √65)/2. Ignore labels. ISW."
+   },
+   "10(d)": {
+    "type": "points",
+    "points": [
+     "Use quotient rule: f′(x) = [2x(2x + 5) − 2(x² + 10)] / (2x + 5)²  =  (2x² + 10x − 20) / (2x + 5)²",
+     "Set f′(x) = 0: numerator = 0  →  2x² + 10x − 20 = 0  →  x² + 5x − 10 = 0",
+     "This is the same equation as in part (c)(i), whose solutions are the x-coordinates of P and Q, so P and Q are stationary points."
+    ],
+    "guidance": "M1 uses quotient rule (or product rule/implicit differentiation) to obtain f′(x) in correct form. A1 fully correct f′(x). M1 equates f′(x) or numerator to 0. M1 rearranges to x² + 5x − 10 = 0 and links to part (c)(i) or their answer to (c)(ii). R1 completes reasoned argument using x = (−5 ± √65)/2 to conclude P and Q are stationary points. CSO. Brackets must be correct throughout."
+   },
+   "10(e)": {
+    "type": "exact",
+    "points": [
+     "{x : x ≤ (−5 − √65)/2} ∪ {x : x ≥ (−5 + √65)/2}"
+    ],
+    "guidance": "M1 deduces critical regions from answer to (c)(ii), condone strict inequalities or poor notation or decimal values. A1 correct range in correct set notation. Follow through from (c)(ii). Accept other letters for x."
+   },
+   "11": {
+    "type": "exact",
+    "points": [
+     "0.59"
+    ],
+    "guidance": "B1 for circling 0.59. X ~ N(14, 0.35) means variance = 0.35, so standard deviation = √0.35 ≈ 0.5916, which rounds to 0.59."
+   },
+   "12": {
+    "type": "exact",
+    "points": [
+     "Positively skewed"
+    ],
+    "guidance": "B1 for circling positively skewed. The median (6) is much closer to the lower quartile (4) than the upper quartile (17), and the upper whisker is much longer, indicating positive skew."
+   },
+   "13": {
+    "type": "points",
+    "points": [
+     "The Large Data Set is only a sample of vehicles in the UK (not all vehicles; not all regions / not all types of vehicles / some missing CO₂ data)",
+     "The Large Data Set only has data for 2002 and 2016, not every year in between"
+    ],
+    "guidance": "E1 makes a valid comment about the sample of vehicles in the LDS (e.g. not all UK/England regions included; not all types of vehicles included; some missing CO₂ data). E1 makes a valid comment about the data years (data shown only for two years, nothing in between)."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "The probability of getting a complaint call is fixed (constant)",
+     "Calls occur independently of each other"
+    ],
+    "guidance": "B1 states one assumption in context (probability of complaint call is constant; calls occur independently; only two outcomes). B1 states a second assumption in context. Do not allow 'probability being independent' or 'fixed number of calls'."
+   },
+   "14(b)(i)": {
+    "type": "exact",
+    "points": [
+     "P(X = 1) ≈ 0.00684  (AWFW [0.0068, 0.007])"
+    ],
+    "guidance": "B1 correct probability. X ~ B(20, 0.3), P(X = 1) = 20 × 0.3 × 0.7¹⁹ ≈ 0.00684."
+   },
+   "14(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "P(X < 4) ≈ 0.107  (AWFW [0.107, 0.11])"
+    ],
+    "guidance": "M1 finds P(X ≤ 4) or P(X ≤ 3). A1 AWFW [0.107, 0.11]. P(X ≤ 3) = P(X=0)+P(X=1)+P(X=2)+P(X=3) ≈ 0.107."
+   },
+   "14(b)(iii)": {
+    "type": "exact",
+    "points": [
+     "P(X ≥ 10) ≈ 0.0480  (AWFW [0.0479, 0.048])"
+    ],
+    "guidance": "M1 finds P(X ≤ 9) or P(X ≤ 10) or P(X ≥ 10) or P(X > 10). A1 AWFW [0.0479, 0.048]. P(X ≥ 10) = 1 − P(X ≤ 9) ≈ 0.0480."
+   },
+   "14(c)": {
+    "type": "exact",
+    "points": [
+     "p = 0.34 and p = 0.66  (AWFW [0.34, 0.342] and [0.658, 0.66])"
+    ],
+    "guidance": "M1 uses np(1−p). M1 forms correct equation: 10p(1−p) = 1.5² = 2.25. A1 p = 0.34 and p = 0.66."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "Adults on the electoral register (of the town)"
+    ],
+    "guidance": "B1 states the correct population. Allow 'people' or 'names' or 'members' for adults. Must see electoral register."
+   },
+   "15(b)(i)": {
+    "type": "exact",
+    "points": [
+     "Systematic sampling"
+    ],
+    "guidance": "B1 recalls correct name for sampling method."
+   },
+   "15(b)(ii)": {
+    "type": "points",
+    "points": [
+     "Easy to carry out / quick; or no bias / it is fair; or reduces chance of clustering"
+    ],
+    "guidance": "E1 states one advantage (e.g. easy to carry out, quick, no bias, fair, reduces chance of cluster). Do not accept 'random'. Do not ignore incorrect statement."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "Correct values in Venn diagram: C only = 101, D only = 7, T only = 9, C∩D only = 31, C∩T only = 4, D∩T only = 15, C∩D∩T = 17, outside = 56"
+    ],
+    "guidance": "M1 writes at least two of 4, 15, 17, 31 in the correct place. A1 obtains either 7 or 9 in the correct place. A1 completes Venn diagram fully correctly including 56."
+   },
+   "16(b)(i)": {
+    "type": "exact",
+    "points": [
+     "101/240  (AWFW [0.42, 0.421])"
+    ],
+    "guidance": "B1 correct probability. Ignore subsequent incorrect simplification once correct fraction or decimal obtained."
+   },
+   "16(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "67/240  (AWFW [0.279, 0.28])"
+    ],
+    "guidance": "M1 adds 4 + 15 + 17 + 31 = 67. A1 AWFW [0.279, 0.28]."
+   },
+   "16(b)(iii)": {
+    "type": "exact",
+    "points": [
+     "139/195  (AWFW [0.71, 0.713])"
+    ],
+    "guidance": "M1 adds 101 + 31 + 7 = 139; denominator = 240 − 45 = 195. A1 AWFW [0.71, 0.713]."
+   },
+   "16(c)": {
+    "type": "points",
+    "points": [
+     "P(C) × P(T) = (153/240) × (45/240) = 153/1280 ≈ 0.120",
+     "P(C ∩ T) = 21/240 ≈ 0.0875",
+     "Since 0.120 ≠ 0.0875, events C and T are not independent"
+    ],
+    "guidance": "M1 finds correct P(C) × P(T) or uses correct conditional probability P(C|T) = 21/45. R1 compares P(C∩T) = 21/240 with 153/1280 and concludes not independent. All figures must be correct."
+   },
+   "17": {
+    "type": "points",
+    "points": [
+     "H₀: μ = 34,  H₁: μ > 34  (one-tailed test)",
+     "Under H₀: X̄ ~ N(34, 4.5²/30)",
+     "P(X̄ > 36.2) ≈ 0.004  (AWFW [0.0037, 0.004])  or test statistic z ≈ 2.68  (AWFW [2.67, 2.68])",
+     "0.004 < 0.025, so reject H₀",
+     "There is sufficient evidence at the 2.5% significance level to suggest that the mean working hours have increased"
+    ],
+    "guidance": "B1 states both hypotheses correctly for one-tailed test. M1 states/uses correct model N(34, 4.5²/30). A1 P ≈ 0.004 or z ≈ 2.68 or critical region > AWFW [35.6, 35.632]. M1 compares p-value with 0.025 (or z with 1.96, or sample mean with critical value). A1 infers H₀ rejected. R1 concludes correctly in context. R1 requires M1A1M1A1 as minimum."
+   },
+   "18(a)": {
+    "type": "points",
+    "points": [
+     "1.78 ± 2 × 0.23 = [1.32, 2.24] ≈ [1.33, 2.22]",
+     "Height is continuous data and 95% of heights lies within approximately two standard deviations of the mean, so a normal distribution may be suitable"
+    ],
+    "guidance": "M1 calculates 1.78 ± 2 × 0.23 (or 1.78 ± 1.96 × 0.23) or P(1.33 < X < 2.22). A1 obtains approximately matching values. R1 infers normal distribution may be suitable because height is continuous data and 95% lies within ~2 standard deviations of the mean."
+   },
+   "18(b)(i)": {
+    "type": "exact",
+    "points": [
+     "0  (since the normal distribution is continuous, the probability of any exact value is 0)"
+    ],
+    "guidance": "B1 for 0. The normal distribution is continuous so P(X = 1.82) = 0."
+   },
+   "18(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "P(1.70 < X < 1.90) ≈ 0.335  (AWFW [0.335, 0.34])"
+    ],
+    "guidance": "B1 correct probability AWFW [0.335, 0.34]."
+   },
+   "18(b)(iii)": {
+    "type": "exact",
+    "points": [
+     "0.335² ≈ 0.112  (follow through from (b)(ii) squared)"
+    ],
+    "guidance": "B1F finds the value of their answer to (b)(ii) squared. Their answer must be correct to at least 2 s.f."
+   },
+   "18(c)": {
+    "type": "points",
+    "points": [
+     "Mean = Σh / 40 = 69.2 / 40 = 1.73 m",
+     "Standard deviation = √(Σ(h − h̄)² / (n−1)) = √(2.81/39) ≈ 0.265  (AWFW [0.265, 0.27])"
+    ],
+    "guidance": "B1 obtains mean = 1.73. M1 uses correct formula for standard deviation s = √(Σ(h−h̄)²/(n−1)). A1 standard deviation AWFW [0.265, 0.27]. Do not allow variance = 2.81/40 = 0.070."
+   },
+   "18(d)": {
+    "type": "points",
+    "points": [
+     "Summer athletes are taller on average than Winter athletes (1.78 m vs 1.73 m)",
+     "Summer athletes' heights are less varied (more consistent) than Winter athletes' heights (std dev 0.23 m vs ~0.265 m)"
+    ],
+    "guidance": "E1F uses their mean and 1.78 to compare heights. Comparison must include 'on average'. E1F uses their standard deviation and 0.23 to compare spread. Must include 'varies', 'spread', 'disperse', 'more variation' or 'consistent'. Do not allow 'range' or 'variety'."
+   },
+   "19": {
+    "type": "points",
+    "points": [
+     "H₀: p = 0.42,  H₁: p > 0.42  (one-tailed test)",
+     "Under H₀: X ~ B(35, 0.42)",
+     "P(X ≥ 18) ≈ 0.169  (AWFW [0.168, 0.17]);  or critical value = 19 / critical region X ≥ 19",
+     "0.169 > 0.10, so do not reject H₀",
+     "There is insufficient evidence at the 10% significance level to suggest an increase in the proportion of customers registered for an Internet banking account"
+    ],
+    "guidance": "B1 states both hypotheses correctly for one-tailed test with p = 0.42. M1 states/uses correct model B(35, 0.42). A1 P(X ≥ 18) AWFW [0.168, 0.17] or critical value 19 or critical region X ≥ 19. M1 compares P(X ≥ 18) with 0.10 (or critical region with 18). A1 infers H₀ not rejected. R1 concludes correctly in context. R1 requires M1A1M1A1 as minimum."
+   }
+  }
  }
 };
