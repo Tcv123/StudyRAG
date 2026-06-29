@@ -556,6 +556,9 @@ function renderEmpty(buttonHtml) {
 }
 
 function renderDone() {
+  if (typeof window.showToast === 'function' && totalCount > 0) {
+    window.showToast('Session complete — ' + totalCount + ' card' + (totalCount !== 1 ? 's' : '') + ' reviewed ✓');
+  }
   document.getElementById('content').innerHTML = `
     <div class="study-head">
       <div class="study-head-left">
@@ -698,6 +701,14 @@ document.addEventListener('keydown', e => {
     e.preventDefault();
     const flipped = document.getElementById('card')?.classList.contains('flipped');
     speak(flipped ? 'back' : 'front');
+  } else if (e.key === '1') {
+    const b = document.getElementById('gAgain'); if (b && !b.disabled) { e.preventDefault(); b.click(); }
+  } else if (e.key === '2') {
+    const b = document.getElementById('gHard');  if (b && !b.disabled) { e.preventDefault(); b.click(); }
+  } else if (e.key === '3') {
+    const b = document.getElementById('gGood');  if (b && !b.disabled) { e.preventDefault(); b.click(); }
+  } else if (e.key === '4') {
+    const b = document.getElementById('gEasy');  if (b && !b.disabled) { e.preventDefault(); b.click(); }
   }
 });
 
@@ -835,7 +846,7 @@ async function saveAddCard() {
       // the empty state if this was the first card).
       await loadDeck();
     } else {
-      alert('Card added to your "My ' + (window.FLASHCARDS_TOPICS_FOR?.(SUBJECT, BOARD)?.find(t => t.num === TOPIC_ID)?.name || TOPIC_ID) + '" deck.');
+      if (typeof window.showToast === 'function') window.showToast('Card saved to your deck 🃏');
     }
   } catch (e) {
     console.error(e);
@@ -851,5 +862,6 @@ async function logout(){ await supabaseClient.auth.signOut(); window.location='.
 
 load();
 </script>
+<script src="../ui-enhancements.js"></script>
 </body>
 </html>

@@ -168,7 +168,54 @@
       </div>
     </div>
     <div id="pageBody">
-      <div class="subjects-grid" id="subjectsGrid"></div>
+      <div class="subjects-grid" id="subjectsGrid">
+        <!-- skeleton cards shown while data loads -->
+        <div class="subject-card" style="pointer-events:none;" aria-hidden="true">
+          <div class="card-top">
+            <div class="skeleton" style="width:52px;height:52px;border-radius:14px;flex-shrink:0;"></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+              <div class="skeleton" style="height:18px;width:68%;"></div>
+              <div class="skeleton" style="height:13px;width:42%;"></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div class="skeleton" style="height:12px;"></div>
+            <div class="skeleton" style="height:12px;width:80%;"></div>
+            <div class="skeleton" style="height:12px;width:55%;"></div>
+          </div>
+          <div class="card-footer"><div class="skeleton" style="height:22px;width:96px;border-radius:20px;"></div></div>
+        </div>
+        <div class="subject-card" style="pointer-events:none;" aria-hidden="true">
+          <div class="card-top">
+            <div class="skeleton" style="width:52px;height:52px;border-radius:14px;flex-shrink:0;"></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+              <div class="skeleton" style="height:18px;width:75%;"></div>
+              <div class="skeleton" style="height:13px;width:50%;"></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div class="skeleton" style="height:12px;"></div>
+            <div class="skeleton" style="height:12px;width:70%;"></div>
+            <div class="skeleton" style="height:12px;width:45%;"></div>
+          </div>
+          <div class="card-footer"><div class="skeleton" style="height:22px;width:110px;border-radius:20px;"></div></div>
+        </div>
+        <div class="subject-card" style="pointer-events:none;" aria-hidden="true">
+          <div class="card-top">
+            <div class="skeleton" style="width:52px;height:52px;border-radius:14px;flex-shrink:0;"></div>
+            <div style="flex:1;display:flex;flex-direction:column;gap:8px;">
+              <div class="skeleton" style="height:18px;width:60%;"></div>
+              <div class="skeleton" style="height:13px;width:38%;"></div>
+            </div>
+          </div>
+          <div style="display:flex;flex-direction:column;gap:8px;">
+            <div class="skeleton" style="height:12px;"></div>
+            <div class="skeleton" style="height:12px;width:85%;"></div>
+            <div class="skeleton" style="height:12px;width:60%;"></div>
+          </div>
+          <div class="card-footer"><div class="skeleton" style="height:22px;width:80px;border-radius:20px;"></div></div>
+        </div>
+      </div>
     </div>
   </main>
 </div>
@@ -229,10 +276,13 @@ async function load() {
   const grid = document.getElementById('subjectsGrid');
 
   if (!list.length) {
-    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--muted);">
-      <div style="font-size:40px;margin-bottom:12px;">🃏</div>
-      <div style="font-family:var(--font-display);font-size:20px;margin-bottom:8px;">No subjects yet</div>
-      <div style="font-size:14px;">Go to <a href="auth/setup.html" style="color:var(--accent-dark);">setup</a> to add your subjects.</div>
+    grid.innerHTML = `<div style="grid-column:1/-1;text-align:center;padding:80px 20px;">
+      <div style="font-size:56px;margin-bottom:16px;line-height:1;">🃏</div>
+      <div style="font-family:var(--font-display);font-size:22px;color:var(--text);margin-bottom:8px;">No subjects yet</div>
+      <div style="font-size:14px;color:var(--muted);max-width:340px;margin:0 auto 24px;line-height:1.6;">
+        Add your subjects to unlock exam-board-specific flashcards with spaced repetition.
+      </div>
+      <a href="auth/setup.html" style="display:inline-flex;align-items:center;gap:8px;padding:12px 22px;background:var(--accent);color:#fff;border-radius:10px;font-weight:600;font-size:14px;text-decoration:none;box-shadow:0 4px 14px rgba(37,99,235,0.25);">✏️ Add your subjects</a>
     </div>`;
     return;
   }
@@ -328,5 +378,6 @@ load();
 </div>
 
   <script src="fit-to-screen.js"></script>
+  <script src="ui-enhancements.js"></script>
 </body>
 </html>
