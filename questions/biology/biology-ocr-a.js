@@ -39,7 +39,7 @@ const BIOLOGY_OCR_A_QUESTIONS = {
       { q: 'An experiment yields overlapping error bars between two means. What does this suggest?', options: ['The experiment failed','The standard deviations are wrong','The difference is statistically significant','The difference is not statistically significant'], answer: 3 },
       { q: 'A student uses a t-test and obtains p = 0.03. What conclusion should be drawn?', options: ['The experiment should be repeated','There is no significant difference','There is a significant difference (p < 0.05) so the null','The null hypothesis is accepted'], answer: 2 },
       { q: 'Why might a large sample size and random selection together improve the validity of ecological fieldwork?', options: ['They make the work faster','Large samples reduce the effect of anomalies and random','They reduce equipment needed','They eliminate all errors'], answer: 1 },
-      { q: 'Evaluate the use of a Spearman rank correlation coefficient in analysing biological data.', options: ['It shows causation between two variables','It measures the strength and direction of association','It only works for normally distributed data','It replaces the need for repeats'], answer: 1 },
+      { q: 'Evaluate the use of a Spearman rank correlation coefficient in analysing biological data.', options: ['It shows causation between two variables','It measures the strength and direction of association','It only works for normally distributed data','It can only be used with large datasets'], answer: 1 },
     ],
   },
 
