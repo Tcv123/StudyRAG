@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
   <link rel="icon" type="image/svg+xml" href="../favicon.svg">
@@ -411,6 +411,13 @@ const THRESHOLD = { green: 8, amber: 4 };
 /*  Build 5 questions: 2 Green + 2 Amber + 1 Red
     At least 1 MUST be written; the rest are MCQ.
     The written slot is assigned to a random tier. */
+function normalizeAnswer(q) {
+  if (typeof q.answer === 'string' && Array.isArray(q.options)) {
+    const idx = q.options.indexOf(q.answer);
+    return { ...q, answer: idx >= 0 ? idx : 0 };
+  }
+  return q;
+}
 function buildQuestionSet(mcq, written) {
   const w = written || { green: [], amber: [], red: [] };
 
@@ -431,12 +438,12 @@ function buildQuestionSet(mcq, written) {
       selected.push(...wq);
       // Fill the rest of this tier with MCQ
       if (count > 1 && mcq[tier]) {
-        selected.push(...pick(mcq[tier], count - 1).map(q => ({ ...q, type: 'mcq', tier })));
+        selected.push(...pick(mcq[tier], count - 1).map(q => normalizeAnswer({ ...q, type: 'mcq', tier })));
       }
     } else {
       // All MCQ for this tier
       if (mcq[tier]) {
-        selected.push(...pick(mcq[tier], count).map(q => ({ ...q, type: 'mcq', tier })));
+        selected.push(...pick(mcq[tier], count).map(q => normalizeAnswer({ ...q, type: 'mcq', tier })));
       }
     }
   }

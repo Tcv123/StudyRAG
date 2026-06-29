@@ -21,7 +21,7 @@ const MATHS_AQA_QUESTIONS = {
       { q: 'The sum of two odd numbers is always:', options: ['Even', 'Odd', 'Prime', 'A multiple of 4'], answer: 0 },
       { q: 'If \\(a\\) and \\(b\\) are both even, then \\(a + b\\) is:', options: ['Even', 'Odd', 'Could be either', 'Prime'], answer: 0 },
       { q: 'A rational number can be expressed as:', options: ['\\(\\frac{a}{b}\\) where \\(a, b\\) are integers and \\(b \\neq 0\\)', 'A non-terminating non-repeating decimal', 'The square root of a prime', '\\(\\pi \\times n\\) for integer \\(n\\)'], answer: 0 },
-      { q: 'Which of these numbers is irrational?', options: ['\\(\\sqrt{3}\\)', '\\(\\frac{22}{7}\\)', '\\(0.\\overline{3}\\)', '\\(\\sqrt{4}\\)'], answer: 0 },
+      { q: 'Which of these numbers is irrational?', options: ['\\(\\sqrt{3}\\)', '\\(\\frac{22}{7}\\)', '\\(0.\\overline{3}\\)', '\\(\\sqrt{9}\\)'], answer: 0 },
     ],
     amber: [
       { q: 'Prove algebraically: the sum of squares of any two consecutive odd numbers is even. What is the correct expansion of \\((2n+1)^2 + (2n+3)^2\\)?', options: ['\\(8n^2 + 16n + 10\\)', '\\(4n^2 + 8n + 10\\)', '\\(8n^2 + 8n + 4\\)', '\\(4n^2 + 16n + 10\\)'], answer: 0 },
@@ -111,7 +111,7 @@ const MATHS_AQA_QUESTIONS = {
       { q: 'Solve \\(|2x - 1| = |x + 3|\\).', options: ['\\(x = 4\\) or \\(x = -\\frac{2}{3}\\)','\\(x = 4\\) only','\\(x = -\\frac{2}{3}\\) only','\\(x = 2\\) or \\(x = -3\\)'], answer: 0 },
       { q: 'The function \\(f(x) = \\frac{ax + b}{cx + d}\\) satisfies \\(ff(x) = x\\). What condition must hold?', options: ['\\(a + d = 0\\)','\\(a = d\\)','\\(ad - bc = 1\\)','\\(b = c\\)'], answer: 0 },
       { q: 'If \\(f(x) = x^2 - 2x + 3\\), for what domain does \\(f^{-1}\\) exist and what is the range of \\(f^{-1}\\)?', options: ['All real \\(x\\), range is all reals','\\(x \\geq 0\\), range is \\(y \\geq 3\\)','\\(x \\geq 1\\), range of \\(f^{-1}\\) is \\(y \\geq 1\\)','\\(x \\leq 1\\), range is \\(y \\leq 1\\)'], answer: 2 },
-      { q: 'Solve \\(\\frac{x+1}{x-2} \\leq \\frac{3}{x+1}\\) for \\(x \\neq 2, x \\neq -1\\).', options: ['\\(x \\leq 1\\) or \\(x > 5\\)','Not listed — this requires sign analysis of \\(\\frac{x^2-x-5}{(x-2)(x+1)} \\leq 0\\)','\\(-1 < x < 2\\)','\\(-1 < x \\leq 1\\) or \\(2 < x \\leq 5\\) (after careful analysis)'], answer: 3 },
+      { q: 'Solve \\(\\frac{x+1}{x-2} \\leq \\frac{3}{x+1}\\) for \\(x \\neq 2, x \\neq -1\\).', options: ['\\(x \\leq 1\\) or \\(x > 5\\)','\\(-1 < x < 2\\) or \\(x > 5\\)','\\(-1 < x < 2\\)','\\(-1 < x \\leq 1\\) or \\(2 < x \\leq 5\\)'], answer: 3 },
       { q: 'The graph of \\(y = af(bx + c) + d\\) involves the transformations applied in which order?', options: ['Horizontal stretch, vertical stretch, translations last','Horizontal translation, horizontal stretch, vertical stretch, vertical translation','All transformations are applied simultaneously','Vertical stretch, vertical translation, horizontal stretch, horizontal translation'], answer: 1 },
       { q: 'Given \\(f(x) = \\frac{x^2 - 1}{x^2 + 1}\\), find the range of \\(f\\).', options: ['\\(-1 \\leq f(x) < 1\\)','\\(0 \\leq f(x) < 1\\)','\\(-1 < f(x) \\leq 1\\)','\\(f(x) \\geq 0\\)'], answer: 0 },
       { q: 'Decompose \\(\\frac{4x^2 + x + 1}{(x-1)(x^2+x+1)}\\) into partial fractions.', options: ['\\(\\frac{2}{x-1} + \\frac{2x-1}{x^2+x+1}\\)','\\(\\frac{1}{x-1} + \\frac{3x+2}{x^2+x+1}\\)','\\(\\frac{4}{x-1} + \\frac{1}{x^2+x+1}\\)','\\(\\frac{2}{x-1} + \\frac{2x+1}{x^2+x+1}\\)'], answer: 3 },
@@ -497,7 +497,7 @@ const MATHS_AQA_QUESTIONS = {
     ],
     amber: [
       { q: 'Use Newton-Raphson with \\(f(x) = x^2 - 3\\), \\(f\'(x) = 2x\\), and \\(x_0 = 2\\). Find \\(x_1\\).', options: ['\\(\\frac{7}{4}\\)', '\\(\\frac{3}{2}\\)', '\\(\\frac{5}{3}\\)', '\\(\\frac{11}{6}\\)'], answer: 0 },
-      { q: 'The equation \\(x^5 - 5x + 3 = 0\\) has a root near \\(x = 1\\). Using Newton-Raphson, \\(x_1 = \\)', options: ['\\(1 - \\frac{-1}{0} \\to\\) fails because we need to recalculate. Actually \\(f(1) = -1\\), \\(f\'(1) = 0\\). Newton-Raphson fails here.', '\\(x_1\\) cannot be found since \\(f\'(1) = 0\\)', '\\(x_1 = 0\\)', '\\(x_1 = 2\\)'], answer: 1 },
+      { q: 'The equation \\(x^5 - 5x + 3 = 0\\) has a root near \\(x = 1\\). Using Newton-Raphson, \\(x_1 = \\)', options: ['\\(x_1 = 1.25\\)', '\\(x_1\\) cannot be found since \\(f\'(1) = 0\\)', '\\(x_1 = 0\\)', '\\(x_1 = 2\\)'], answer: 1 },
       { q: 'The iteration \\(x_{n+1} = \\frac{1}{2}(x_n + \\frac{3}{x_n})\\) converges to:', options: ['\\(\\sqrt{3}\\)', '3', '\\(\\frac{3}{2}\\)', '1.5'], answer: 0 },
       { q: 'Estimate \\(\\int_0^1 e^{x^2} dx\\) using the trapezium rule with 4 strips.', options: ['Approximately 1.464', 'Approximately 1.000', 'Approximately 2.000', 'Approximately 1.718'], answer: 0 },
       { q: 'The equation \\(x = 2\\sin x\\) has a non-zero root. Starting with \\(x_0 = 2\\), the iteration \\(x_{n+1} = 2\\sin(x_n)\\) gives \\(x_1 \\approx\\):', options: ['1.819', '0.909', '1.414', '2.000'], answer: 0 },

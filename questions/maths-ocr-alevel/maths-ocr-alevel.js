@@ -12,7 +12,7 @@ const MATHS_OCR_ALEVEL_QUESTIONS = {
     name: 'Proof',
     green: [
       { q: 'Which of these is a valid type of proof?', options: ['Proof by deduction','Proof by exhaustion','Proof by contradiction','All of the above'], answer: 3 },
-      { q: 'Proof by counter-example shows:', options: ['A statement is always true','A statement is false by providing a single example','A statement is conditional','That the statement holds for all cases'], answer: 1 },
+      { q: 'Proof by counter-example shows:', options: ['A statement is probably false but not definitively','A statement is false by providing a single example','A statement is conditional on certain inputs','That the statement fails only for extreme values'], answer: 1 },
       { q: 'The statement "n² is odd ⇔ n is odd" is proven using:', options: ['Exhaustion','Deduction of both directions','Contradiction in one direction','Induction'], answer: 1 },
       { q: 'Which proof technique assumes the opposite is true and derives a contradiction?', options: ['Deduction','Exhaustion','Contradiction','Direct'], answer: 2 },
       { q: 'In proof by exhaustion we:', options: ['Show every case of a finite set satisfies the statement','Prove by induction','Use a counter-example','Derive a contradiction'], answer: 0 },

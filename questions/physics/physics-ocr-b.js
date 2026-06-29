@@ -48,12 +48,12 @@ const PHYSICS_OCR_B_QUESTIONS = {
   'B2': {
     name: 'Fundamental Data Analysis',
     green: [
-      { q: 'What is the SI unit of mass?', options: ['gram','kilogram','tonne','pound'], answer: 1 },
+      { q: 'What is the SI unit of mass?', options: ['gram','kilogram','tonne','milligram'], answer: 1 },
       { q: 'What prefix represents 10⁻³?', options: ['micro','milli','centi','kilo'], answer: 1 },
       { q: 'How many metres are in 1 km?', options: ['100','1 000','10 000','1 000 000'], answer: 1 },
       { q: 'What is the SI unit of time?', options: ['minute','hour','second','millisecond'], answer: 2 },
       { q: 'What does the prefix "mega" represent?', options: ['10³','10⁶','10⁹','10¹²'], answer: 1 },
-      { q: 'Express 0.0035 m in millimetres.', options: ['0.35 mm','3.5 mm','35 mm','350 mm'], answer: 1 },
+      { q: 'Express 0.0035 m in millimetres.', options: ['0.35 mm','3.5 mm','35 mm','0.035 mm'], answer: 1 },
       { q: 'What is a derived SI unit?', options: ['A unit that is one of the seven base units','A unit expressed as a combination of base units','A unit used only in engineering','A non-standard unit'], answer: 1 },
       { q: 'Which of the following is a vector quantity?', options: ['Speed','Mass','Temperature','Velocity'], answer: 3 },
       { q: 'What is the SI unit of force?', options: ['Joule','Watt','Newton','Pascal'], answer: 2 },
@@ -73,7 +73,7 @@ const PHYSICS_OCR_B_QUESTIONS = {
     ],
     red: [
       { q: 'The equation for the period of a mass–spring system is T = 2π√(m/k). A student measures m = 0.500 ± 0.005 kg and T = 1.40 ± 0.02 s. What is the percentage uncertainty in k?', options: ['1%','2.9%','3.9%','5.9%'], answer: 2 },
-      { q: 'A student plots ln(I) against V for a filament lamp and obtains a curve rather than a straight line. What does this indicate?', options: ['The data should be replotted as I against V²','There is a systematic error in the ammeter','The resistance changes with temperature so the relationship is not exponential','The relationship is I = I₀ e^(V)'], answer: 2 },
+      { q: 'A student plots ln(I) against V for a filament lamp and obtains a curve rather than a straight line. What does this indicate?', options: ['The data should be replotted as I against V²','There is a systematic error in the ammeter','The resistance changes with temperature so the relationship is not exponential','The relationship is I = I₀ ln(V)'], answer: 2 },
       { q: 'An equation is proposed: F = 6πηrv, where F is force (N), r is radius (m), and v is velocity (m s⁻¹). What must the units of η be for the equation to be homogeneous?', options: ['kg m⁻¹ s⁻¹','kg m s⁻¹','kg m⁻² s⁻¹','N m⁻² s'], answer: 0 },
       { q: 'Two vectors of magnitude 5 N and 12 N act on a point. Which of the following is NOT a possible magnitude of their resultant?', options: ['18 N','17 N','13 N','7 N'], answer: 0 },
       { q: 'A student uses dimensional analysis to check E = ½mv² + mgh. Both terms have dimensions of:', options: ['kg m s⁻²','kg m² s⁻²','kg m s⁻¹','kg m² s⁻¹'], answer: 1 },
@@ -91,7 +91,7 @@ const PHYSICS_OCR_B_QUESTIONS = {
       { q: 'What is meant by the focal length of a converging lens?', options: ['The distance from the lens to the image','The distance from the lens to the focal point for parallel rays','The radius of curvature of the lens','The thickness of the lens at its centre'], answer: 1 },
       { q: 'What quantity does a potential divider circuit divide?', options: ['Current','Resistance','Voltage','Power'], answer: 2 },
       { q: 'What is the Young modulus a measure of?', options: ['The strength of a material','The stiffness of a material','The hardness of a material','The density of a material'], answer: 1 },
-      { q: 'Stress is defined as:', options: ['Force × area','Force / area','Extension / original length','Force × extension'], answer: 1 },
+      { q: 'Stress is defined as:', options: ['Force × cross-sectional area','Force / area','Extension / original length','Force / original length'], answer: 1 },
       { q: 'Strain is defined as:', options: ['Force per unit area','Extension divided by original length','Stress divided by Young modulus','Energy per unit volume'], answer: 1 },
       { q: 'What is the unit of the Young modulus?', options: ['N','N m','Pa','J'], answer: 2 },
       { q: 'In a digital signal, the number of bits per sample determines the:', options: ['Sampling rate','Resolution of the signal','Frequency of the signal','Bandwidth'], answer: 1 },

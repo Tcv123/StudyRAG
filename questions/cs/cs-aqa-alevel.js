@@ -20,7 +20,7 @@ const CS_AQA_ALEVEL_QUESTIONS = {
       { q: 'A local variable has scope limited to:', options: ['The program as a whole','The block or subroutine where it is declared','The operating system session','Its containing file only'], answer: 1 },
       { q: 'What is the result of 7 MOD 3?', options: ['2','1','3','0'], answer: 1 },
       { q: 'What is the result of 7 DIV 3 (integer division)?', options: ['2','2.33','1','3'], answer: 0 },
-      { q: 'In programming, a constant is:', options: ['A variable whose value changes over time','An identifier bound to a value that cannot be reassigned','Always an integer','A function parameter'], answer: 1 },
+      { q: 'In programming, a constant is:', options: ['A variable whose value changes over time','An identifier bound to a value that cannot be reassigned','Must be declared at runtime','A function parameter'], answer: 1 },
       { q: 'Which of these is NOT a valid identifier in most programming languages?', options: ['total_score','_count','2names','firstName'], answer: 2 },
       { q: 'Exception handling is used to:', options: ['Increase program speed','Catch and respond to runtime errors gracefully','Prevent compilation errors','Remove the need for testing'], answer: 1 },
       { q: 'Which statement about parameters is correct?', options: ['Pass-by-value copies the argument','Pass-by-value lets the function modify the original','Pass-by-reference always copies data','Parameters must always be integers'], answer: 0 },
@@ -58,7 +58,7 @@ const CS_AQA_ALEVEL_QUESTIONS = {
     ],
     red: [
       { q: 'Consider a class hierarchy with virtual dispatch. A base pointer calls a virtual method. The implementation chosen depends on:', options: ['The static (declared) type of the pointer','The dynamic (runtime) type of the object pointed to','The order of class declarations','The number of parameters'], answer: 1 },
-      { q: 'Tail call optimisation (TCO) is valuable because:', options: ['It always speeds up I/O','It allows tail-recursive calls to reuse the current stack frame, preventing stack overflow for deep recursion','It parallelises the function','It replaces recursion with iteration at compile time in all languages'], answer: 1 },
+      { q: 'Tail call optimisation (TCO) is valuable because:', options: ['It always speeds up I/O','It allows tail-recursive calls to reuse the current stack frame, preventing stack overflow for deep recursion','It parallelises the function','It converts all recursive calls into heap-allocated continuations'], answer: 1 },
       { q: 'A programming language uses pass-by-reference for all parameters. Which consequence is guaranteed?', options: ['Aliasing: modifying a parameter inside a function affects the caller\'s variable','Parameters cannot be reassigned','Functions are always pure','Recursion is disallowed'], answer: 0 },
       { q: 'Given the Liskov Substitution Principle, which design choice is safest?', options: ['Subclasses weaken preconditions and strengthen postconditions inherited from a parent','Subclasses strengthen preconditions','Subclasses break parent invariants','Subclasses return unrelated types'], answer: 0 },
       { q: 'A closure in a functional language captures:', options: ['Only global variables','The lexical environment in which it was defined, including free variable bindings','Only integer parameters','The compiler flags'], answer: 1 },

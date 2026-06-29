@@ -7,6 +7,7 @@
   <title>RAG Learning — Practice Questions</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
@@ -542,6 +543,14 @@
 
     <div class="topics-body" id="topicsList" style="display:none;">
       <button onclick="showSubjectCards()" style="background:none;border:none;cursor:pointer;padding:8px 16px;color:var(--accent-dark);font-size:13px;font-weight:500;text-align:left;display:flex;align-items:center;gap:6px;">← Back to subjects</button>
+      <div style="padding:4px 14px 8px;position:relative;">
+        <span style="position:absolute;left:24px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:13px;">🔍</span>
+        <input id="topicSearch" type="search" placeholder="Filter topics…"
+          style="width:100%;padding:7px 10px 7px 30px;border:1px solid var(--border);border-radius:8px;background:var(--surface2);color:var(--text);font-family:var(--font-body);font-size:13px;transition:border-color 0.15s;"
+          onfocus="this.style.borderColor='var(--border-hover)'"
+          onblur="this.style.borderColor='var(--border)'"
+          oninput="filterTopics(this.value)">
+      </div>
       <!-- populated dynamically based on selected subject -->
     </div>
   </div>
@@ -1706,8 +1715,16 @@ async function selectSubject(key) {
     return;
   }
 
-  // Build topic buttons (keep the back button)
-  let html = `<button onclick="showSubjectCards()" style="background:none;border:none;cursor:pointer;padding:8px 16px;color:var(--accent-dark);font-size:13px;font-weight:500;text-align:left;display:flex;align-items:center;gap:6px;">← Back to subjects</button>`;
+  // Build topic buttons (keep the back button + search box)
+  let html = `<button onclick="showSubjectCards()" style="background:none;border:none;cursor:pointer;padding:8px 16px;color:var(--accent-dark);font-size:13px;font-weight:500;text-align:left;display:flex;align-items:center;gap:6px;">← Back to subjects</button>
+  <div style="padding:4px 14px 8px;position:relative;">
+    <span style="position:absolute;left:24px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:13px;">🔍</span>
+    <input id="topicSearch" type="search" placeholder="Filter topics…"
+      style="width:100%;padding:7px 10px 7px 30px;border:1px solid var(--border);border-radius:8px;background:var(--surface2);color:var(--text);font-family:var(--font-body);font-size:13px;transition:border-color 0.15s;"
+      onfocus="this.style.borderColor='var(--border-hover)'"
+      onblur="this.style.borderColor='var(--border)'"
+      oninput="filterTopics(this.value)">
+  </div>`;
 
   config.sections.forEach(sec => {
     html += `<div class="paper-label">${sec.label}</div>`;
@@ -1734,6 +1751,25 @@ async function selectSubject(key) {
     if (!enrolledSet.has(rowKey)) return;
     const dot = document.getElementById(`rag-${row.topic}`);
     if (dot) dot.classList.add(row.rag_status);
+  });
+}
+
+function filterTopics(q) {
+  const lower = q.toLowerCase().trim();
+  document.querySelectorAll('.topic-btn').forEach(btn => {
+    const name = btn.querySelector('.topic-name');
+    const match = !lower || (name && name.textContent.toLowerCase().includes(lower));
+    btn.style.display = match ? '' : 'none';
+  });
+  // Hide section labels when all their topics are filtered out
+  document.querySelectorAll('.paper-label').forEach(lbl => {
+    let next = lbl.nextElementSibling;
+    let anyVisible = false;
+    while (next && !next.classList.contains('paper-label')) {
+      if (next.classList.contains('topic-btn') && next.style.display !== 'none') anyVisible = true;
+      next = next.nextElementSibling;
+    }
+    lbl.style.display = anyVisible || !lower ? '' : 'none';
   });
 }
 

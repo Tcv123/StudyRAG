@@ -12,7 +12,7 @@ const BIOLOGY_OCR_B_GCSE_QUESTIONS = {
     name: 'What is the genome and what does it do?',
     green: [
       { q: 'What is a gene?', options: ['A protein','A short section of DNA that codes for a protein','A chromosome','A type of cell'], answer: 1 },
-      { q: 'Where is DNA found in a eukaryotic cell?', options: ['Cytoplasm','Cell membrane','Nucleus','Mitochondria only'], answer: 2 },
+      { q: 'Where is DNA found in a eukaryotic cell?', options: ['Cytoplasm','Ribosome','Nucleus','Mitochondria only'], answer: 2 },
       { q: 'What shape is a DNA molecule?', options: ['A single straight strand','A double helix','A circle','A branched tree'], answer: 1 },
       { q: 'How many strands does a DNA molecule have?', options: ['1','2','3','4'], answer: 1 },
       { q: 'What does the term "genome" mean?', options: ['One gene','All the genetic material of an organism','One chromosome','Half the DNA in a cell'], answer: 1 },
@@ -45,7 +45,7 @@ const BIOLOGY_OCR_B_GCSE_QUESTIONS = {
       { q: 'Why is sequencing the human genome useful in medicine?', options: ['It can identify genes linked to disease','It changes a person\'s DNA','It removes mutations automatically','It replaces drugs'], answer: 0 },
       { q: 'How does a gene control a characteristic such as eye colour?', options: ['It directly produces the colour','It codes for proteins (e.g. pigments) that produce the characteristic','It heats the eye','It produces water'], answer: 1 },
       { q: 'Why is it important that DNA replication is accurate?', options: ['So daughter cells receive identical genetic information','To make energy','To produce sweat','To form bones'], answer: 0 },
-      { q: 'In a Punnett square, the gametes from each parent are written along the…', options: ['Top and side','Bottom only','Diagonal','Centre'], answer: 0 },
+      { q: 'In a Punnett square, the gametes from each parent are written along the…', options: ['Top and side','Bottom only','Inside the grid cells','Centre of each row'], answer: 0 },
       { q: 'Which of the following best describes a recessive allele?', options: ['Always shown when present','Only shown when both alleles are recessive','Shown when only one is present','Cannot be inherited'], answer: 1 },
       { q: 'A genotype Bb produces brown eyes. What does this tell us about B and b?', options: ['B is dominant over b','b is dominant over B','They blend','They cancel out'], answer: 0 },
       { q: 'Genotype refers to…', options: ['The physical features of an organism','The combination of alleles an organism has','Only its sex','The number of cells'], answer: 1 },
@@ -55,7 +55,7 @@ const BIOLOGY_OCR_B_GCSE_QUESTIONS = {
       { q: 'Why is the genome of every human very similar but not identical?', options: ['Only ~0.1% of bases differ between people','It is exactly identical','We share none of our DNA','Genomes change randomly every day'], answer: 0 },
     ],
     red: [
-      { q: 'A scientist sequences a tumour and finds a single base substitution in a gene that controls cell division. Which is most likely?', options: ['No effect at all','The mutation could change a critical amino acid, altering the protein and disrupting normal cell-cycle control','The cell becomes a different species','The DNA disappears'], answer: 1 },
+      { q: 'A scientist sequences a tumour and finds a single base substitution in a gene that controls cell division. Which is most likely?', options: ['No effect at all','The mutation could change a critical amino acid, altering the protein and disrupting normal cell-cycle control','The mutation reverses itself automatically','The DNA disappears'], answer: 1 },
       { q: 'A genome study shows two identical twins have slightly different DNA in some skin cells. Why is this most likely?', options: ['They are not actually twins','Somatic mutations have accumulated during life in different cells','Their DNA is from different parents','They have switched genomes'], answer: 1 },
       { q: 'A new drug works for one patient but not for another with the same disease. Which area of biology might explain this?', options: ['Cell wall biology','Pharmacogenomics — variation in genes affecting drug metabolism','Photosynthesis','Mineral cycles'], answer: 1 },
       { q: 'A researcher claims a single gene fully determines intelligence. Which statement best evaluates this claim?', options: ['It is correct because all traits are single-gene','It is unlikely; intelligence is a complex polygenic trait influenced by many genes and environment','Genes do not affect behaviour','Intelligence is unrelated to the brain'], answer: 1 },
