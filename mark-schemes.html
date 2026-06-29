@@ -102,6 +102,10 @@
 
     /* Question text */
     .mc-question { font-size: 14.5px; line-height: 1.7; color: var(--text); margin-bottom: 16px; padding: 13px 16px; background: var(--surface2); border-radius: 9px; border-left: 3px solid var(--accent); }
+    /* MCQ options list */
+    .mc-options { display: flex; flex-direction: column; gap: 6px; margin-top: 10px; }
+    .mc-option { display: flex; align-items: center; gap: 10px; padding: 7px 12px; background: var(--surface); border: 1px solid var(--border); border-radius: 7px; font-size: 13.5px; line-height: 1.5; }
+    .mc-option-label { font-weight: 700; font-size: 12px; color: var(--muted2); min-width: 18px; text-align: center; background: var(--surface2); border: 1px solid var(--border); border-radius: 4px; padding: 1px 5px; }
 
     /* Points list */
     .ms-points-list { display: flex; flex-direction: column; gap: 6px; margin-bottom: 14px; }
@@ -387,10 +391,26 @@ function renderMsCard(part, paperKey, paperId) {
   const officialPts = (ms && msType === 'points') ? (ms.points || []) : [];
   const effectivePts = officialPts.length ? officialPts : customPts;
 
-  // ── Question ──
-  const promptHtml = part.prompt
-    ? `<div class="mc-question">${esc(part.prompt)}</div>`
-    : '';
+  // ── Question — split off Options: into a clean labelled list ──
+  let promptHtml = '';
+  if (part.prompt) {
+    const optMarker = part.prompt.indexOf('\nOptions:');
+    if (optMarker !== -1) {
+      const questionText = part.prompt.slice(0, optMarker);
+      const optRaw = part.prompt.slice(optMarker + 9).trim(); // after "\nOptions:"
+      // Split on semicolons, 3+ spaces, or commas followed by space (try longest delimiter first)
+      let opts = optRaw.split(/\s{3,}/).map(s => s.trim()).filter(Boolean);
+      if (opts.length < 2) opts = optRaw.split(/;\s+/).map(s => s.trim()).filter(Boolean);
+      if (opts.length < 2) opts = optRaw.split(/,\s+/).map(s => s.trim()).filter(Boolean);
+      const labels = ['A', 'B', 'C', 'D', 'E'];
+      const optionsHtml = opts.map((o, i) =>
+        `<div class="mc-option"><span class="mc-option-label">${labels[i] || (i+1)}</span>${esc(o)}</div>`
+      ).join('');
+      promptHtml = `<div class="mc-question">${esc(questionText)}<div class="mc-options">${optionsHtml}</div></div>`;
+    } else {
+      promptHtml = `<div class="mc-question">${esc(part.prompt)}</div>`;
+    }
+  }
 
   // ── Mark scheme points ──
   let pointsHtml = '';
@@ -625,6 +645,8 @@ function buildPicker(userSubs) {
         return (a.p.paperCode || '').localeCompare(b.p.paperCode || '');
       });
     sorted.forEach(({ p, pi }) => {
+      // For maths papers (printOnly, no inline parts), only show if question data is loaded
+      if (!p.parts && p.printOnly && !(window.MATHS_QUESTIONS && window.MATHS_QUESTIONS[p.id])) return;
       const o = document.createElement('option');
       o.value = pi;
       const parts = [p.year, p.paperCode, p.title || p.label].filter(Boolean);
