@@ -1771,6 +1771,94 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-ocr-h240-2022-p2::19(a)": "n² + n = n(n + 1).\nFor any integer n, the two consecutive integers n and n + 1 are of opposite parity (one even, one odd).\nTherefore their product n(n + 1) is always even.\nHence n² + n is always even for all n ≥ 1.",
 
- "math-ocr-h240-2022-p2::19(b)": "Try n = 11: n² − n + 11 = 121 − 11 + 11 = 121 = 11².\n121 is not prime (it equals 11 × 11).\nThis is a counterexample to the statement, so the statement is false."
+ "math-ocr-h240-2022-p2::19(b)": "Try n = 11: n² − n + 11 = 121 − 11 + 11 = 121 = 11².\n121 is not prime (it equals 11 × 11).\nThis is a counterexample to the statement, so the statement is false.",
+
+ "math-ocr-h240-2022-p3::1(a)": "Differentiate: dy/dx = 3x² − 12x + 5.\nSet dy/dx = 0: 3x² − 12x + 5 = 0.\nUsing the quadratic formula: x = (12 ± √(144 − 60))/6 = (12 ± √84)/6 = (6 ± √21)/3.\nSo x₁ = (6 − √21)/3 ≈ 0.472 and x₂ = (6 + √21)/3 ≈ 3.528.\nSubstituting back into y = x³ − 6x² + 5x + 12 gives the y-coordinates.\nAt x₁ ≈ 0.472: y ≈ (0.472)³ − 6(0.472)² + 5(0.472) + 12 ≈ 0.105 − 1.336 + 2.360 + 12 ≈ 13.13.\nAt x₂ ≈ 3.528: y ≈ (3.528)³ − 6(3.528)² + 5(3.528) + 12 ≈ 43.93 − 74.69 + 17.64 + 12 ≈ −1.12.\nStationary points: approximately (0.472, 13.1) and (3.528, −1.12) (or exact: ((6−√21)/3, f((6−√21)/3)) and ((6+√21)/3, f((6+√21)/3))).",
+
+ "math-ocr-h240-2022-p3::1(b)": "Second derivative: d²y/dx² = 6x − 12.\nAt x₁ = (6 − √21)/3 ≈ 0.472: d²y/dx² = 6(0.472) − 12 = 2.832 − 12 = −9.17 < 0, so this is a local maximum.\nAt x₂ = (6 + √21)/3 ≈ 3.528: d²y/dx² = 6(3.528) − 12 = 21.17 − 12 = 9.17 > 0, so this is a local minimum.",
+
+ "math-ocr-h240-2022-p3::2(a)": "Write 5sinθ − 12cosθ = Rsin(θ − α) = R(sinθcosα − cosθsinα).\nMatching coefficients: Rcosα = 5 and Rsinα = 12.\nR = √(5² + 12²) = √(25 + 144) = √169 = 13.\ntanα = 12/5, so α = arctan(12/5) = 1.176 radians (3 d.p.).\nTherefore 5sinθ − 12cosθ = 13sin(θ − 1.176).",
+
+ "math-ocr-h240-2022-p3::2(b)": "From part (a): 13sin(θ − 1.176) = 6, so sin(θ − 1.176) = 6/13.\nLet φ = θ − 1.176. Then sinφ = 6/13, so φ = arcsin(6/13) = 0.4759… rad or φ = π − 0.4759… = 2.6657… rad (in [0, 2π]).\nFirst solution: θ = 0.4759 + 1.176 = 1.652 ≈ 1.65 rad.\nSecond solution: θ = 2.6657 + 1.176 = 3.842 ≈ 3.84 rad.\nBoth lie in [0, 2π], so θ ≈ 1.65 and θ ≈ 3.84 (3 s.f.).",
+
+ "math-ocr-h240-2022-p3::2(c)": "Maximum value of 13sin(θ − 1.176) is 13, occurring when sin(θ − 1.176) = 1.\nθ − 1.176 = π/2, so θ = π/2 + 1.176 = 1.5708 + 1.176 = 2.747 ≈ 2.75 (3 s.f.).\nMaximum value = 13, occurring at θ ≈ 2.75.",
+
+ "math-ocr-h240-2022-p3::3(a)": "Evaluate f(3): f(3) = 2(27) + 3(9) − 23(3) − 12 = 54 + 27 − 69 − 12 = 0.\nSince f(3) = 0, by the Factor Theorem (x − 3) is a factor of f(x).",
+
+ "math-ocr-h240-2022-p3::3(b)": "Divide f(x) = 2x³ + 3x² − 23x − 12 by (x − 3):\n2x³ + 3x² − 23x − 12 = (x − 3)(2x² + 9x + 4).\nFactorise the quadratic 2x² + 9x + 4: find two numbers multiplying to 2 × 4 = 8 and adding to 9 — these are 1 and 8: 2x² + x + 8x + 4 = x(2x + 1) + 4(2x + 1) = (2x + 1)(x + 4).\nTherefore f(x) = (x − 3)(2x + 1)(x + 4).",
+
+ "math-ocr-h240-2022-p3::3(c)": "From f(x) = (x − 3)(2x + 1)(x + 4) = 0:\nx = 3, x = −½, or x = −4.",
+
+ "math-ocr-h240-2022-p3::4(a)": "Set v = 0: 3t² − 14t + 8 = 0.\nFactorise: (3t − 2)(t − 4) = 0.\nt = 2/3 s and t = 4 s.",
+
+ "math-ocr-h240-2022-p3::4(b)": "Acceleration a = dv/dt = 6t − 14.\nAt t = 2/3: a = 6(2/3) − 14 = 4 − 14 = −10 m s⁻².\nAt t = 4: a = 6(4) − 14 = 24 − 14 = 10 m s⁻².",
+
+ "math-ocr-h240-2022-p3::4(c)": "Integrate v to get displacement x: x = ∫(3t² − 14t + 8) dt = t³ − 7t² + 8t + C.\nAt t = 0, x = 0 ⇒ C = 0, so x = t³ − 7t² + 8t.\nAt t = 4: x(4) = 64 − 112 + 32 = −16 m.\nThe displacement from the origin is −16 m (16 m in the negative direction).",
+
+ "math-ocr-h240-2022-p3::4(d)": "P changes direction when v = 0, at t = 2/3 and t = 4.\nCompute positions: x(0) = 0; x(2/3) = (2/3)³ − 7(2/3)² + 8(2/3) = 8/27 − 28/9 + 16/3 = 8/27 − 84/27 + 144/27 = 68/27 m; x(4) = −16 m.\nDistance from t = 0 to t = 2/3: |68/27 − 0| = 68/27 m.\nDistance from t = 2/3 to t = 4: |−16 − 68/27| = |−432/27 − 68/27| = 500/27 m.\nTotal distance = 68/27 + 500/27 = 568/27 ≈ 21.0 m.",
+
+ "math-ocr-h240-2022-p3::5(a)": "AB = OB − OA = (4i − j + 3k) − (2i + 5j − k) = 2i − 6j + 4k.",
+
+ "math-ocr-h240-2022-p3::5(b)": "|AB| = √(2² + (−6)² + 4²) = √(4 + 36 + 16) = √56 = 2√14.\nUnit vector = AB/|AB| = (1/(2√14))(2i − 6j + 4k) = (1/√14)(i − 3j + 2k).",
+
+ "math-ocr-h240-2022-p3::5(c)": "OC = OA + 2·AB = (2i + 5j − k) + 2(2i − 6j + 4k) = (2 + 4)i + (5 − 12)j + (−1 + 8)k = 6i − 7j + 7k.",
+
+ "math-ocr-h240-2022-p3::6(a)": "Differentiate with respect to θ: dx/dθ = −4sinθ and dy/dθ = 6cos2θ.\nBy the chain rule: dy/dx = (dy/dθ)/(dx/dθ) = 6cos2θ/(−4sinθ) = −(3cos2θ)/(2sinθ).",
+
+ "math-ocr-h240-2022-p3::6(b)": "Set dy/dx = 0: cos2θ = 0 (provided sinθ ≠ 0).\n2θ = π/2, 3π/2, 5π/2, 7π/2 in [0, 4π], so θ = π/4, 3π/4, 5π/4, 7π/4.\nAt each θ, sinθ ≠ 0, so all are valid.\nCoordinates:\nθ = π/4: x = 4cos(π/4) = 2√2, y = 3sin(π/2) = 3 → (2√2, 3).\nθ = 3π/4: x = 4cos(3π/4) = −2√2, y = 3sin(3π/2) = −3 → (−2√2, −3).\nθ = 5π/4: x = 4cos(5π/4) = −2√2, y = 3sin(5π/2) = 3 → (−2√2, 3).\nθ = 7π/4: x = 4cos(7π/4) = 2√2, y = 3sin(7π/2) = −3 → (2√2, −3).\nThe four points are (±2√2, ±3).",
+
+ "math-ocr-h240-2022-p3::6(c)": "From x = 4cosθ: cosθ = x/4.\nUse y = 3sin2θ = 6sinθcosθ, so y² = 36sin²θcos²θ = 36(1 − cos²θ)cos²θ.\nSubstitute cosθ = x/4: y² = 36(1 − x²/16)(x²/16) = (36x²/16)(1 − x²/16) = (9x²/4)(16 − x²)/16.\ny² = 9x²(16 − x²)/64.",
+
+ "math-ocr-h240-2022-p3::7(a)": "Since x > ½ we have 2x − 1 > 0, and ln can take any real value as its argument ranges over (0, ∞). The range of f is ℝ (all real numbers).",
+
+ "math-ocr-h240-2022-p3::7(b)": "Let y = ln(2x − 1). Then eʸ = 2x − 1, so x = (eʸ + 1)/2.\nSwapping variables: f⁻¹(x) = (eˣ + 1)/2.\nThe domain of f⁻¹ equals the range of f, which is x ∈ ℝ.",
+
+ "math-ocr-h240-2022-p3::7(c)": "gf(x) = g(ln(2x − 1)) = e^(ln(2x−1)) + 3 = (2x − 1) + 3 = 2x + 2.",
+
+ "math-ocr-h240-2022-p3::7(d)": "Set gf(x) = 10: 2x + 2 = 10 ⇒ 2x = 8 ⇒ x = 4.\nCheck domain: x = 4 > ½ ✓.\nAnswer: x = 4.00 (3 s.f.).",
+
+ "math-ocr-h240-2022-p3::8(a)": "The diagram shows the particle with three forces: weight 3g N acting vertically downward, tension T₁ acting along the string that makes 30° with the vertical (upward and to the left), and tension T₂ acting along the string that makes 45° with the vertical on the other side (upward and to the right).",
+
+ "math-ocr-h240-2022-p3::8(b)": "Resolve horizontally (taking right as positive):\nT₂sin45° − T₁sin30° = 0 ⇒ T₂/√2 = T₁/2 ⇒ T₁ = T₂√2.\nResolve vertically:\nT₁cos30° + T₂cos45° = 3g\nT₂√2 × (√3/2) + T₂ × (1/√2) = 3g\nT₂(√6/2 + 1/√2) = 3g\nT₂(√6/2 + √2/2) = 3g\nT₂(√6 + √2)/2 = 3g\nT₂ = 6g/(√6 + √2) = 6 × 9.8/(2.449 + 1.414) = 58.8/3.863 ≈ 15.2 N.\nT₁ = T₂√2 ≈ 15.2 × 1.414 ≈ 21.5 N.\nTension in 30° string: T₁ ≈ 21.5 N. Tension in 45° string: T₂ ≈ 15.2 N.",
+
+ "math-ocr-h240-2022-p3::9(a)": "The curve meets the x-axis where y = 0: 5xe^(−2x) = 0. Since e^(−2x) > 0 for all x, we need 5x = 0, giving x = 0 only.\nThe curve meets the x-axis only at the origin O = (0, 0).\n(Note: A is taken as the turning point or the problem considers the region under the curve for x ≥ 0 up to infinity.)",
+
+ "math-ocr-h240-2022-p3::9(b)": "dy/dx = d/dx[5xe^(−2x)]. Using the product rule with u = 5x and v = e^(−2x):\ndy/dx = 5e^(−2x) + 5x(−2e^(−2x)) = 5e^(−2x)(1 − 2x).\nSet dy/dx = 0: since e^(−2x) > 0, we need 1 − 2x = 0 ⇒ x = 1/2.\ny = 5(1/2)e^(−2×1/2) = (5/2)e^(−1) = 5/(2e).\nStationary point: (1/2, 5/(2e)).",
+
+ "math-ocr-h240-2022-p3::9(c)": "Integrate ∫₀^∞ 5xe^(−2x) dx using integration by parts.\nLet u = 5x and dv = e^(−2x)dx, so du = 5 dx and v = −(1/2)e^(−2x).\n∫5xe^(−2x)dx = −(5x/2)e^(−2x) − ∫(−5/2)e^(−2x)dx = −(5x/2)e^(−2x) − (5/4)e^(−2x) + C = −(5e^(−2x)/4)(2x + 1) + C.\nEvaluate from 0 to ∞:\nAs x → ∞: e^(−2x)(2x + 1) → 0 (exponential decay dominates).\nAt x = 0: −(5/4)(1)(1) = −5/4.\nArea = [−(5e^(−2x)/4)(2x + 1)]₀^∞ = 0 − (−5/4) = 5/4.",
+
+ "math-ocr-h240-2022-p3::10(a)": "Let R_A and R_C be the reactions at A and C respectively. The rod has mass 4 kg, length 3 m, with support at A (x = 0) and support at C (x = 2 m from A). The particle of mass m kg is at B (x = 3 m from A).\nThe centre of mass of the rod is at x = 1.5 m from A, which is 0.5 m to the left of C.\nTake moments about C (anticlockwise positive):\nR_A × 2 = 4g × 0.5 − mg × 1\n(The rod's weight 4g acts 0.5 m to the left of C, creating an anticlockwise moment about C; the particle weight mg acts 1 m to the right of C, creating a clockwise moment; R_A acts 2 m to the left of C, anticlockwise.)\nWait — correcting signs: taking moments about C with clockwise as positive:\nmg × 1 = R_A × 2 + 4g × (−0.5)? Let me redo carefully.\nClockwise moments about C: mg × 1 (particle at B, 1 m to right of C).\nAnticlockwise moments about C: R_A × 2 (reaction at A, 2 m to left of C) + 4g × 0 (no — rod centre is 0.5 m to LEFT of C, so rod weight is anticlockwise about C? No — weight acts downward at 0.5 m LEFT of C, which is anticlockwise when A is to the left).\nActually: R_A acts upward at A (2 m left of C) → anticlockwise; 4g acts downward at rod centre (0.5 m left of C) → clockwise? No — a downward force to the LEFT of a pivot tends to rotate anticlockwise. So 4g at 0.5 m left of C is anticlockwise. mg at 1 m right of C is clockwise.\nFor equilibrium: R_A × 2 + 4g × 0.5 = mg × 1\n2R_A = mg − 2g = g(m − 2)\nR_A = g(m − 2)/2.",
+
+ "math-ocr-h240-2022-p3::10(b)": "The rod is about to tilt about C when the reaction at A becomes zero (A lifts off).\nSet R_A = 0: g(m − 2)/2 = 0 ⇒ m − 2 = 0 ⇒ m = 2 kg.",
+
+ "math-ocr-h240-2022-p3::11(a)": "Using u₂ = au₁ + b: 11 = 5a + b — equation (1).\nUsing u₃ = au₂ + b: 23 = 11a + b — equation (2).\nSubtract (1) from (2): 12 = 6a ⇒ a = 2.\nSubstitute back: b = 11 − 5(2) = 11 − 10 = 1.\nSo a = 2 and b = 1.",
+
+ "math-ocr-h240-2022-p3::11(b)": "Fixed point L satisfies L = aL + b = 2L + 1.\nL − 2L = 1 ⇒ −L = 1 ⇒ L = −1.",
+
+ "math-ocr-h240-2022-p3::11(c)": "We have uₙ₊₁ − L = (auₙ + b) − (aL + b) = a(uₙ − L).\nSo the sequence (uₙ − L) is geometric with common ratio a.\nBy induction: uₙ − L = aⁿ⁻¹(u₁ − L).\nWith L = −1, a = 2, u₁ = 5: uₙ − (−1) = 2ⁿ⁻¹(5 − (−1)) = 6 × 2ⁿ⁻¹.\nTherefore uₙ = −1 + 6 × 2ⁿ⁻¹.",
+
+ "math-ocr-h240-2022-p3::12(a)": "Net driving force = 2800 − 400 = 2400 N.\nNewton's second law: F = ma ⇒ 2400 = 1200a ⇒ a = 2 m s⁻².",
+
+ "math-ocr-h240-2022-p3::12(b)": "Using v² = u² + 2as with u = 0, a = 2, s = 150:\nv² = 0 + 2(2)(150) = 600 ⇒ v = √600 = 10√6 ≈ 24.5 m s⁻¹.",
+
+ "math-ocr-h240-2022-p3::12(c)": "On the slope, an additional force opposes motion: component of weight = mg sinα = 1200 × 9.8 × (1/15) = 784 N.\nNet force = 2800 − 400 − 784 = 1616 N.\na = 1616/1200 = 1.347 m s⁻² ≈ 1.35 m s⁻² (3 s.f.).",
+
+ "math-ocr-h240-2022-p3::13(a)": "Write (3x + 1)/((x + 1)(2x + 1)) = A/(x + 1) + B/(2x + 1).\nMultiply both sides by (x + 1)(2x + 1): 3x + 1 = A(2x + 1) + B(x + 1).\nSet x = −1: −2 = A(−1) ⇒ A = 2.\nSet x = −½: −½ = B(½) ⇒ B = −1.\nTherefore (3x + 1)/((x + 1)(2x + 1)) = 2/(x + 1) − 1/(2x + 1).",
+
+ "math-ocr-h240-2022-p3::13(b)": "∫₀¹ [2/(x + 1) − 1/(2x + 1)] dx = [2ln|x + 1| − ½ln|2x + 1|]₀¹.\nAt x = 1: 2ln2 − ½ln3.\nAt x = 0: 2ln1 − ½ln1 = 0.\nExact value = 2ln2 − ½ln3 = ln4 − ln(√3) = ln(4/√3) = ln(4√3/3).",
+
+ "math-ocr-h240-2022-p3::14(a)": "Take A downward as positive. Equations of motion:\nFor A (mass 5 kg): 5g − T = 5a — (1)\nFor B (mass 3 kg): T − 3g = 3a — (2)\nAdd: 2g = 8a ⇒ a = g/4 = 9.8/4 = 2.45 m s⁻².\nFrom (2): T = 3g + 3a = 3(9.8) + 3(2.45) = 29.4 + 7.35 = 36.75 N.\nAcceleration = 2.45 m s⁻², Tension = 36.75 N.",
+
+ "math-ocr-h240-2022-p3::14(b)": "Speed when A hits ground (starting from rest over 0.8 m):\nv² = u² + 2as = 0 + 2(2.45)(0.8) = 3.92 ⇒ v = √3.92 ≈ 1.98 m s⁻¹.\nAfter A hits, string goes slack. B continues upward at 1.98 m s⁻¹ with only gravity decelerating it (a = −g = −9.8 m s⁻²).\nUsing v² = u² + 2as with v = 0:\n0 = 3.92 − 2(9.8)s ⇒ s = 3.92/19.6 = 0.2 m.\nB travels a further 0.2 m before coming to rest.",
+
+ "math-ocr-h240-2022-p3::15(a)": "Use the quotient rule with u = x² − 1 and v = x² + 1:\ndy/dx = (u′v − uv′)/v² = (2x(x² + 1) − (x² − 1)(2x))/(x² + 1)².\nNumerator = 2x(x² + 1) − 2x(x² − 1) = 2x[(x² + 1) − (x² − 1)] = 2x × 2 = 4x.\nTherefore dy/dx = 4x/(x² + 1)².",
+
+ "math-ocr-h240-2022-p3::15(b)": "At x = 1: y = (1 − 1)/(1 + 1) = 0/2 = 0. Point is (1, 0).\nGradient of tangent at x = 1: dy/dx = 4(1)/(1 + 1)² = 4/4 = 1.\nGradient of normal = −1/1 = −1.\nEquation of normal through (1, 0) with gradient −1:\ny − 0 = −1(x − 1) ⇒ y = −x + 1 ⇒ x + y = 1.",
+
+ "math-ocr-h240-2022-p3::16(a)": "Initial vertical component: uy = 18sin40° = 18 × 0.6428 = 11.57 m s⁻¹.\nAt greatest height, vertical velocity = 0. Using v² = uy² − 2gh:\n0 = (11.57)² − 2(9.8)h ⇒ h = 133.9/19.6 = 6.83 m (3 s.f.).",
+
+ "math-ocr-h240-2022-p3::16(b)": "Time to greatest height: t₁ = uy/g = 11.57/9.8 = 1.181 s.\nTotal time of flight (lands at same level): T = 2t₁ = 2.362 s.\nHorizontal component: ux = 18cos40° = 18 × 0.7660 = 13.79 m s⁻¹.\nRange = ux × T = 13.79 × 2.362 = 32.6 m (3 s.f.).",
+
+ "math-ocr-h240-2022-p3::16(c)": "At greatest height, vertical velocity = 0. The speed equals the horizontal component only:\nSpeed = 18cos40° = 13.8 m s⁻¹ (3 s.f.)."
 
 };
