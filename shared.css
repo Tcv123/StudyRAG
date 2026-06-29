@@ -1,0 +1,50 @@
+/* ==========================================================================
+   shared.css — canonical CSS custom properties for RAG Learning
+   Link this BEFORE page-specific <style> blocks so individual pages can
+   override specific tokens while inheriting the rest from here.
+   responsive.css (linked last) handles dark-mode overrides and layout fixes.
+   ========================================================================== */
+
+:root {
+  /* Palette */
+  --bg:           #EAF2FC;
+  --surface:      #FFFFFF;
+  --surface2:     #F0F6FD;
+  --surface3:     #DBE8F6;
+  --border:       #B8D0E8;
+  --border-hover: #2563EB;
+
+  /* Text */
+  --text:         #0B1E3F;
+  --muted:        #445F85;
+  --muted2:       #7891B0;
+
+  /* Accent (blue) */
+  --accent:       #2563EB;
+  --accent-dark:  #1D4ED8;
+  --accent-dim:   rgba(37,99,235,0.1);
+  --accent-glow:  rgba(37,99,235,0.22);
+
+  /* RAG */
+  --red:          #DC2626;
+  --red-bg:       rgba(220,38,38,0.08);
+  --red-border:   rgba(220,38,38,0.18);
+  --red-text:     #B91C1C;
+
+  --amber:        #D97706;
+  --amber-bg:     rgba(217,119,6,0.08);
+  --amber-border: rgba(217,119,6,0.2);
+  --amber-text:   #B45309;
+
+  --green:        #16A34A;
+  --green-bg:     rgba(22,163,74,0.08);
+  --green-border: rgba(22,163,74,0.2);
+  --green-text:   #15803D;
+
+  /* Typography */
+  --font-display: 'DM Serif Display', serif;
+  --font-body:    'DM Sans', sans-serif;
+
+  /* Layout */
+  --sidebar-w:    240px;
+}

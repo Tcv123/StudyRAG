@@ -7,6 +7,7 @@
   <title>RAG Learning — Notes</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="subjects-config.js"></script>
@@ -278,10 +279,33 @@
       </div>
     </div>
 
+    <div style="margin-bottom:20px;max-width:360px;position:relative;">
+      <span style="position:absolute;left:11px;top:50%;transform:translateY(-50%);color:var(--muted);pointer-events:none;font-size:14px;">🔍</span>
+      <input id="notesSearch" type="search" placeholder="Filter subjects…"
+        style="width:100%;padding:9px 14px 9px 34px;border:1px solid var(--border);border-radius:10px;background:var(--surface);color:var(--text);font-family:var(--font-body);font-size:14px;transition:border-color 0.15s;"
+        onfocus="this.style.borderColor='var(--border-hover)'"
+        onblur="this.style.borderColor='var(--border)'"
+        oninput="filterNotes(this.value)">
+    </div>
+
     <div class="subjects-grid" id="subjectsGrid">
       <!-- populated by JS -->
     </div>
   </main>
+
+  <script>
+    function filterNotes(q) {
+      const lower = q.toLowerCase().trim();
+      let visible = 0;
+      document.querySelectorAll('#subjectsGrid > *').forEach(card => {
+        const match = !lower || card.textContent.toLowerCase().includes(lower);
+        card.style.display = match ? '' : 'none';
+        if (match) visible++;
+      });
+      const sub = document.getElementById('pageSubTitle');
+      if (sub && lower) sub.textContent = visible + ' result' + (visible !== 1 ? 's' : '');
+    }
+  </script>
 
 </div>
 
