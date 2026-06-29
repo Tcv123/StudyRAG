@@ -156,7 +156,7 @@ const FM_AQA_MCQ = {
       { q: 'If \\(\\alpha,\\beta,\\gamma\\) are roots of \\(x^3-2x^2+x-3=0\\), find \\(\\alpha^2+\\beta^2+\\gamma^2\\).', options: ['2','1','\\(-1\\)','4'], answer: 0 },
       { q: 'The equation \\(x^3-4x+1=0\\) has roots \\(\\alpha,\\beta,\\gamma\\). Find an equation with roots \\(2\\alpha,2\\beta,2\\gamma\\).', options: ['\\(x^3-16x+8=0\\)','\\(x^3-8x+2=0\\)','\\(x^3-8x+1=0\\)','\\(8x^3-16x+1=0\\)'], answer: 0 },
       { q: 'Decompose \\(\\dfrac{5x+1}{(x+1)(2x-1)}\\).', options: ['\\(\\dfrac{4/3}{x+1}+\\dfrac{7/3}{2x-1}\\)','\\(\\dfrac{2}{x+1}+\\dfrac{3}{2x-1}\\)','\\(\\dfrac{1}{x+1}+\\dfrac{2}{2x-1}\\)','\\(\\dfrac{5}{x+1}-\\dfrac{1}{2x-1}\\)'], answer: 0 },
-      { q: 'Solve \\(\\dfrac{x-1}{x+2}>2\\).', options: ['\\(x<-5\\) or \\(x>-2\\) — wait, let me check: rearranging gives \\(\\frac{x-1-2(x+2)}{x+2}>0\\) i.e. \\(\\frac{-x-5}{x+2}>0\\)','\\(-5<x<-2\\)','\\(x>-2\\)','\\(x<-5\\)'], answer: 1 },
+      { q: 'Solve \\(\\dfrac{x-1}{x+2}>2\\).', options: ['\\(x<-5\\) or \\(x>-2\\)','\\(-5<x<-2\\)','\\(x>-2\\)','\\(x<-5\\)'], answer: 1 },
       { q: 'Solve \\(|3x-1|<|x+3|\\).', options: ['\\(-\\frac{1}{2}<x<2\\)','\\(x<-\\frac{1}{2}\\) or \\(x>2\\)','\\(-2<x<\\frac{1}{2}\\)','All real \\(x\\)'], answer: 0 },
       { q: 'For roots \\(\\alpha,\\beta\\) of \\(x^2-5x+6=0\\), find \\(\\frac{1}{\\alpha}+\\frac{1}{\\beta}\\).', options: ['\\(5/6\\)','\\(6/5\\)','\\(5\\)','\\(1\\)'], answer: 0 },
       { q: 'Express \\(\\dfrac{x^2+3x+5}{(x+1)(x+2)}\\) in partial fractions after appropriate preparation.', options: ['\\(1+\\dfrac{3}{x+1}-\\dfrac{1}{x+2}\\)','\\(\\dfrac{3}{x+1}+\\dfrac{1}{x+2}\\)','\\(1+\\dfrac{1}{x+1}+\\dfrac{3}{x+2}\\)','\\(x+\\dfrac{1}{x+1}\\)'], answer: 0 },
