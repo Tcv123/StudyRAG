@@ -24183,5 +24183,615 @@ window.MATHS_QUESTIONS = {
     "guidance": "B1: correct hypotheses H₀: μ = 25, H₁: μ ≠ 25. M1: standardise correctly using σ² = 10.26 and n = 36. A1: test statistic z ≈ 2.06. B1: critical value ±1.96 for two-tailed 5% test. A1: correct conclusion in context — reject H₀, evidence population mean differs from 25 cm."
    }
   }
+ },
+
+ "math-ocr-h240-2021a-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find ∫(6x² − 5/x² + 4√x) dx.",
+      "marks": 4
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Hence evaluate ∫₁⁴ (6x² − 5/x² + 4√x) dx, giving your answer as an exact value.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A particle P moves in a straight line. At time t seconds, the velocity of P is v m s⁻¹, where v = 3t² − 12t + 5, t ≥ 0.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find the values of t at which P is instantaneously at rest.",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find the acceleration of P when t = 3.",
+      "marks": 2
+     },
+     {
+      "code": "2(c)",
+      "prompt": "Find the distance travelled by P in the first 4 seconds.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Show that the equation 2sin²θ + 3cosθ = 0 can be written as 2cos²θ − 3cosθ − 2 = 0.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Hence solve 2sin²θ + 3cosθ = 0 for 0° ≤ θ ≤ 360°.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "The curve C has equation y = x³ − 6x² + 5.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the coordinates of the stationary points of C.",
+      "marks": 4
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Determine the nature of each stationary point.",
+      "marks": 2
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find the equation of the normal to C at the point where x = 1.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "Two forces F₁ and F₂ act on a particle. F₁ = (3i − 5j) N and F₂ = (−1i + 2j) N.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find the resultant force R = F₁ + F₂.",
+      "marks": 1
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the magnitude of R.",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Find the angle that R makes with the unit vector i, giving your answer to 1 decimal place.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Express 3x² − 18x + 29 in the form a(x − b)² + c, where a, b and c are integers.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Hence, or otherwise, write down the minimum value of 3x² − 18x + 29 and the value of x at which it occurs.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A particle of mass 5 kg lies on a rough horizontal plane. A horizontal force of magnitude P newtons is applied to the particle. The coefficient of friction between the particle and the plane is 0.3. Given that the particle is on the point of moving,",
+    "parts": [
+     {
+      "code": "7",
+      "prompt": "find the value of P. (Take g = 9.8 m s⁻².)",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the first four terms, in ascending powers of x, of the binomial expansion of (1 + 2x)⁸.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Use your expansion to find an approximation to (1.02)⁸, giving your answer to 4 significant figures.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A particle is projected from a point O on a horizontal plane with speed 28 m s⁻¹ at an angle of 30° above the horizontal. (Take g = 9.8 m s⁻².)",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the maximum height reached by the particle above the plane.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find the range of the particle, i.e. the horizontal distance from O at which the particle lands.",
+      "marks": 4
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Find the speed of the particle when it is at a height of 5 m above the plane on its way up.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "f(x) = (4x² + 7x − 2)/((x + 2)(2x − 1)(x + 1))",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Express f(x) in partial fractions.",
+      "marks": 4
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Hence find ∫f(x) dx.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A box of mass 3 kg is held at rest on a smooth plane inclined at 25° to the horizontal. The box is attached to a light inextensible string which passes over a smooth pulley fixed at the top of the inclined plane. The other end of the string is attached to a particle of mass m kg hanging freely. (Take g = 9.8 m s⁻².)",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Given that the system is in equilibrium, find the value of m.",
+      "marks": 3
+     },
+     {
+      "code": "11(b)",
+      "prompt": "The string is now cut. Find the acceleration of the box as it slides down the plane.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Prove that (tan θ + cot θ)² ≡ sec²θ + cosec²θ.",
+      "marks": 3
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Hence, or otherwise, solve the equation (tan θ + cot θ)² = 9 for 0° < θ < 360°, giving your answers to 1 decimal place.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A curve has equation y = e^(2x) + 3e^(−x) − 4.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Show that the curve crosses the x-axis at x = 0.",
+      "marks": 1
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Show that the equation e^(2x) + 3e^(−x) − 4 = 0 can be written as e^(3x) − 4e^x + 3 = 0.",
+      "marks": 2
+     },
+     {
+      "code": "13(c)",
+      "prompt": "By substituting u = eˣ, or otherwise, find all the values of x for which e^(2x) + 3e^(−x) − 4 = 0. Give any non-zero answers to 3 significant figures.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "Two cars A and B travel along a straight road. At time t = 0, car A is at rest at a point O and car B passes O, travelling in the same direction as A, with speed 15 m s⁻¹. Car A accelerates from rest with constant acceleration 2.5 m s⁻². Car B travels at constant speed 15 m s⁻¹.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the time at which A and B have the same speed.",
+      "marks": 2
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the distance between A and B at the time when they have the same speed.",
+      "marks": 3
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the time at which A overtakes B.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Given that log₂ p = a and log₂ q = b, express log₂(p³/√q) in terms of a and b.",
+      "marks": 3
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Solve the equation log₂(4x + 3) − log₂(x − 1) = 3, giving your answer as an exact fraction.",
+      "marks": 4
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "∫(6x² − 5x⁻² + 4x^(1/2)) dx",
+     "= 2x³ + 5x⁻¹ + (8/3)x^(3/2) + c",
+     "= 2x³ + 5/x + (8/3)x^(3/2) + c"
+    ],
+    "guidance": "M1: attempt to integrate each term (power of x increases by 1). A1: 2x³ correct. A1: 5/x or 5x⁻¹ correct (signs and coefficient). A1: (8/3)x^(3/2) correct with + c."
+   },
+   "1(b)": {
+    "type": "points",
+    "points": [
+     "Substitute limits 4 and 1 into answer from (a)",
+     "[2x³ + 5/x + (8/3)x^(3/2)]₁⁴",
+     "= (128 + 5/4 + 64/3) − (2 + 5 + 8/3)",
+     "= 129¼ + 64/3 − 7 − 8/3",
+     "= 122¼ + 56/3",
+     "= 489/4 + 56/3 = 1467/12 + 224/12 = 1691/12"
+    ],
+    "guidance": "M1: substitute limits correctly into their answer from (a) and subtract. A1: exact answer 1691/12 (or equivalent exact form). Accept 140 11/12."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "Set 3t² − 12t + 5 = 0",
+     "t = (12 ± √(144 − 60))/6 = (12 ± √84)/6",
+     "t = (12 ± 2√21)/6 = (6 ± √21)/3",
+     "t = (6 − √21)/3 ≈ 0.472 s  and  t = (6 + √21)/3 ≈ 3.528 s"
+    ],
+    "guidance": "M1: set v = 0 and attempt to solve quadratic. M1: use quadratic formula or factorise correctly. A1: both values of t correct (exact or to 3 s.f.)."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "a = dv/dt = 6t − 12",
+     "At t = 3: a = 18 − 12 = 6 m s⁻²"
+    ],
+    "guidance": "M1: differentiate v to get a = 6t − 12. A1: a = 6 m s⁻²."
+   },
+   "2(c)": {
+    "type": "points",
+    "points": [
+     "s = ∫₀⁴ v dt = ∫₀⁴ (3t² − 12t + 5) dt = [t³ − 6t² + 5t]₀⁴",
+     "= (64 − 96 + 20) − 0 = −12",
+     "The particle changes direction at t₁ = (6 − √21)/3 and t₂ = (6 + √21)/3",
+     "s₁ = ∫₀^(t₁) v dt; s₂ = ∫_(t₁)^(t₂) v dt (negative); s₃ = ∫_(t₂)^4 v dt",
+     "Distance = |s₁| + |s₂| + |s₃|"
+    ],
+    "guidance": "M1: integrate v to find displacement. M1: recognise particle changes direction at their roots from (a) and calculate at least two sub-integrals. A1: correct evaluation of each section. A1: total distance (adds magnitudes). Accept answer in surd form or to 3 s.f."
+   },
+   "3(a)": {
+    "type": "points",
+    "points": [
+     "Use sin²θ = 1 − cos²θ:",
+     "2(1 − cos²θ) + 3cosθ = 0",
+     "2 − 2cos²θ + 3cosθ = 0",
+     "Multiply through by −1: 2cos²θ − 3cosθ − 2 = 0"
+    ],
+    "guidance": "M1: substitute sin²θ = 1 − cos²θ. A1: correct manipulation to reach 2cos²θ − 3cosθ − 2 = 0."
+   },
+   "3(b)": {
+    "type": "points",
+    "points": [
+     "2cos²θ − 3cosθ − 2 = 0",
+     "(2cosθ + 1)(cosθ − 2) = 0",
+     "cosθ = −1/2 or cosθ = 2 (no solution since |cosθ| ≤ 1)",
+     "cosθ = −1/2 ⟹ θ = 120° or θ = 240°"
+    ],
+    "guidance": "M1: factorise or use quadratic formula in cosθ. A1: cosθ = −½ (reject cosθ = 2). A1: θ = 120° and θ = 240°."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "dy/dx = 3x² − 12x",
+     "Set 3x² − 12x = 0 ⟹ 3x(x − 4) = 0",
+     "x = 0 or x = 4",
+     "At x = 0: y = 5; at x = 4: y = 64 − 96 + 5 = −27",
+     "Stationary points: (0, 5) and (4, −27)"
+    ],
+    "guidance": "M1: differentiate correctly. M1: set equal to zero and solve. A1: x = 0 and x = 4. A1: both y-coordinates correct."
+   },
+   "4(b)": {
+    "type": "points",
+    "points": [
+     "d²y/dx² = 6x − 12",
+     "At x = 0: d²y/dx² = −12 < 0, so (0, 5) is a local maximum",
+     "At x = 4: d²y/dx² = 24 − 12 = 12 > 0, so (4, −27) is a local minimum"
+    ],
+    "guidance": "M1: find d²y/dx² and evaluate at each stationary point (or use sign of dy/dx either side). A1: correct nature for both points."
+   },
+   "4(c)": {
+    "type": "points",
+    "points": [
+     "At x = 1: y = 1 − 6 + 5 = 0, so point is (1, 0)",
+     "dy/dx at x = 1: 3(1) − 12(1) = −9",
+     "Gradient of normal = 1/9",
+     "Normal: y − 0 = (1/9)(x − 1)  ⟹  y = (x − 1)/9  or  9y = x − 1"
+    ],
+    "guidance": "B1: y-coordinate at x = 1 is 0. M1: find gradient of tangent at x = 1 using derivative. M1: use negative reciprocal for normal gradient. A1: correct equation of normal."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "R = (2i − 3j) N"
+    ],
+    "guidance": "B1: correct vector addition giving R = (2i − 3j) N."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "|R| = √(2² + (−3)²) = √(4 + 9) = √13 N"
+    ],
+    "guidance": "M1: use Pythagoras on components. A1: √13 (or 3.61 N to 3 s.f.)."
+   },
+   "5(c)": {
+    "type": "points",
+    "points": [
+     "tanα = |−3|/2 = 3/2",
+     "α = arctan(3/2) ≈ 56.3° below the positive i direction",
+     "Angle below i: 56.3° (bearing/angle from i measured clockwise)"
+    ],
+    "guidance": "M1: use tan with correct components. A1: 56.3° (allow −56.3° with clear statement of direction)."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "3x² − 18x + 29 = 3(x² − 6x) + 29",
+     "= 3((x − 3)² − 9) + 29",
+     "= 3(x − 3)² − 27 + 29",
+     "= 3(x − 3)² + 2"
+    ],
+    "guidance": "M1: take out factor of 3 and attempt completing the square. A1: 3(x − 3)². A1: + 2 correct."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "Minimum value is 2, occurring at x = 3"
+    ],
+    "guidance": "B1ft: minimum value = 2 (their c). B1ft: at x = 3 (their b)."
+   },
+   "7": {
+    "type": "points",
+    "points": [
+     "Normal reaction: R = 5 × 9.8 = 49 N",
+     "Friction force (at point of motion): F = μR = 0.3 × 49 = 14.7 N",
+     "At point of moving, P = F = 14.7 N"
+    ],
+    "guidance": "B1: R = 49 N. M1: use F = μR. A1: P = 14.7 N."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "(1 + 2x)⁸ = 1 + 8(2x) + 28(2x)² + 56(2x)³ + …",
+     "= 1 + 16x + 112x² + 448x³ + …"
+    ],
+    "guidance": "M1: use binomial coefficients C(8,0), C(8,1), C(8,2), C(8,3). A1: 1 + 16x. A1: + 112x² + 448x³."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "(1.02)⁸ = (1 + 2(0.01))⁸, so x = 0.01",
+     "≈ 1 + 16(0.01) + 112(0.01)² + 448(0.01)³",
+     "= 1 + 0.16 + 0.0112 + 0.000448",
+     "= 1.172 (to 4 s.f.)"
+    ],
+    "guidance": "M1: substitute x = 0.01 into expansion. A1: 1.172 (accept 1.172 to 4 s.f.)."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Vertical component of initial velocity: u_y = 28 sin 30° = 14 m s⁻¹",
+     "At maximum height v_y = 0: v_y² = u_y² − 2gH",
+     "0 = 196 − 2(9.8)H ⟹ H = 196/19.6 = 10 m"
+    ],
+    "guidance": "M1: identify vertical component = 28 sin 30°. M1: use v² = u² − 2gh with v = 0. A1: H = 10 m."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "Time of flight T: vertical displacement = 0",
+     "0 = 14T − ½(9.8)T² = T(14 − 4.9T)",
+     "T = 14/4.9 = 20/7 s",
+     "Horizontal component: u_x = 28 cos 30° = 28 × (√3/2) = 14√3 m s⁻¹",
+     "Range = u_x × T = 14√3 × 20/7 = 40√3 ≈ 69.3 m"
+    ],
+    "guidance": "M1: use vertical equation with s = 0. M1: solve for T. B1: horizontal component = 14√3. A1: Range = 40√3 m (or 69.3 m to 3 s.f.)."
+   },
+   "9(c)": {
+    "type": "points",
+    "points": [
+     "Find vertical velocity at height 5 m: v_y² = 14² − 2(9.8)(5) = 196 − 98 = 98, so v_y = √98 = 7√2 m s⁻¹",
+     "Horizontal velocity remains u_x = 14√3 m s⁻¹",
+     "Speed = √(v_x² + v_y²) = √((14√3)² + (7√2)²) = √(588 + 98) = √686 = 7√14 ≈ 26.2 m s⁻¹"
+    ],
+    "guidance": "M1: use v² = u² − 2as vertically to find v_y. A1: v_y² = 98. B1: horizontal speed unchanged = 14√3. A1: speed = 7√14 m s⁻¹ or 26.2 m s⁻¹."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "f(x) = A/(x + 2) + B/(2x − 1) + C/(x + 1)",
+     "4x² + 7x − 2 = A(2x − 1)(x + 1) + B(x + 2)(x + 1) + C(x + 2)(2x − 1)",
+     "x = −2: 16 − 14 − 2 = A(−5)(−1) ⟹ 0 = 5A ⟹ A = 0",
+     "x = 1/2: 1 + 7/2 − 2 = B(5/2)(3/2) ⟹ 5/2 = 15B/4 ⟹ B = 2/3",
+     "x = −1: 4 − 7 − 2 = C(1)(−3) ⟹ −5 = −3C ⟹ C = 5/3",
+     "f(x) = 2/(3(2x − 1)) + 5/(3(x + 1))"
+    ],
+    "guidance": "M1: correct partial fraction form. M1: multiply through and substitute values or compare coefficients. A1: A = 0. A1: B = 2/3 and C = 5/3."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "∫f(x) dx = ∫[2/(3(2x − 1)) + 5/(3(x + 1))] dx",
+     "= (1/3)ln|2x − 1| + (5/3)ln|x + 1| + c"
+    ],
+    "guidance": "M1: integrate each partial fraction term. A1: (1/3)ln|2x − 1| correct. A1: (5/3)ln|x + 1| + c correct."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "Resolve forces on box along the plane: T = 3g sin 25°",
+     "= 3 × 9.8 × sin 25°",
+     "= 12.43 N",
+     "For hanging particle in equilibrium: T = mg",
+     "m = T/g = 12.43/9.8 = 1.27 kg"
+    ],
+    "guidance": "M1: resolve weight component of box along plane. A1: T = 3g sin 25° = 12.43 N. M1: equate to mg for particle. A1: m = 1.27 kg (to 3 s.f.)."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "String cut, plane smooth, only force along plane is component of weight down the slope",
+     "Newton's 2nd Law: 3g sin 25° = 3a",
+     "a = g sin 25° = 9.8 × sin 25° = 4.14 m s⁻²"
+    ],
+    "guidance": "M1: apply Newton's 2nd law along the plane with no tension. A1: a = g sin 25°. A1: a = 4.14 m s⁻² (to 3 s.f.)."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "(tanθ + cotθ)² = tan²θ + 2tanθ·cotθ + cot²θ",
+     "= tan²θ + 2(1) + cot²θ  (since tanθ·cotθ = 1)",
+     "= (sec²θ − 1) + 2 + (cosec²θ − 1)",
+     "= sec²θ + cosec²θ"
+    ],
+    "guidance": "M1: expand the square. B1: use tanθ·cotθ = 1. M1: use tan²θ = sec²θ − 1 and cot²θ = cosec²θ − 1. A1: correct completion."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "sec²θ + cosec²θ = 9",
+     "1/cos²θ + 1/sin²θ = 9",
+     "(sin²θ + cos²θ)/(sin²θ cos²θ) = 9",
+     "1/(sin²θ cos²θ) = 9",
+     "sin²θ cos²θ = 1/9",
+     "sin²(2θ)/4 = 1/9  ⟹  sin²(2θ) = 4/9  ⟹  sin(2θ) = ±2/3",
+     "2θ = arcsin(2/3), 180° − arcsin(2/3), 180° + arcsin(2/3), 360° − arcsin(2/3), …",
+     "arcsin(2/3) ≈ 41.81°",
+     "2θ = 41.8°, 138.2°, 221.8°, 318.2°  (in 0° < 2θ < 720°)",
+     "θ = 20.9°, 69.1°, 110.9°, 159.1°  (and +180° each: 200.9°, 249.1°, 290.9°, 339.1°)"
+    ],
+    "guidance": "M1: use identity from (a) and write as single fraction in sinθ cosθ. M1: use sin2θ = 2sinθcosθ so (sinθcosθ)² = sin²2θ/4. M1: solve sin(2θ) = ±2/3 for the full range. A2: all 8 correct angles (−1 each error)."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "At x = 0: y = e⁰ + 3e⁰ − 4 = 1 + 3 − 4 = 0 ✓"
+    ],
+    "guidance": "B1: substitute x = 0 and show result is 0."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "Multiply e^(2x) + 3e^(−x) − 4 = 0 throughout by eˣ:",
+     "e^(3x) + 3 − 4eˣ = 0",
+     "Hence e^(3x) − 4eˣ + 3 = 0"
+    ],
+    "guidance": "M1: multiply through by eˣ. A1: correct rearrangement."
+   },
+   "13(c)": {
+    "type": "points",
+    "points": [
+     "Let u = eˣ (u > 0): u³ − 4u + 3 = 0",
+     "Try u = 1: 1 − 4 + 3 = 0 ✓, so (u − 1) is a factor",
+     "u³ − 4u + 3 = (u − 1)(u² + u − 3)",
+     "u = 1 ⟹ eˣ = 1 ⟹ x = 0",
+     "u² + u − 3 = 0 ⟹ u = (−1 ± √13)/2",
+     "u must be positive: u = (−1 + √13)/2 ≈ 1.303",
+     "x = ln((−1 + √13)/2) ≈ 0.265",
+     "(The other root u = (−1 − √13)/2 < 0, rejected)"
+    ],
+    "guidance": "M1: substitute u = eˣ to get cubic in u. M1: identify u = 1 as root and factorise. A1: (u − 1)(u² + u − 3). M1: solve quadratic, rejecting negative root. A1: x = 0 and x = ln((√13 − 1)/2) = 0.265 (to 3 s.f.)."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "Speed of A: v_A = 2.5t",
+     "Set equal to B's speed: 2.5t = 15",
+     "t = 6 s"
+    ],
+    "guidance": "M1: write v_A = 2.5t and set equal to 15. A1: t = 6 s."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "At t = 6: distance of A from O: s_A = ½(2.5)(6²) = ½(2.5)(36) = 45 m",
+     "Distance of B from O: s_B = 15 × 6 = 90 m",
+     "Distance between them: 90 − 45 = 45 m"
+    ],
+    "guidance": "M1: calculate distance for each car at t = 6. A1: s_A = 45 m, s_B = 90 m. A1: separation = 45 m."
+   },
+   "14(c)": {
+    "type": "points",
+    "points": [
+     "A overtakes B when s_A = s_B:",
+     "½(2.5)t² = 15t",
+     "1.25t² = 15t",
+     "1.25t² − 15t = 0",
+     "t(1.25t − 15) = 0",
+     "t = 0 (start) or t = 15/1.25 = 12 s",
+     "A overtakes B at t = 12 s"
+    ],
+    "guidance": "M1: write equations for s_A and s_B. M1: set s_A = s_B and solve. A1: t = 12 s (reject t = 0). A1: confirm this is overtaking (A was behind for 0 < t < 12)."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "log₂(p³/√q) = log₂(p³) − log₂(√q)",
+     "= 3log₂p − ½log₂q",
+     "= 3a − b/2"
+    ],
+    "guidance": "M1: use log(p³/√q) = log p³ − log √q. M1: use power laws. A1: 3a − b/2."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "log₂(4x + 3) − log₂(x − 1) = 3",
+     "log₂((4x + 3)/(x − 1)) = 3",
+     "(4x + 3)/(x − 1) = 2³ = 8",
+     "4x + 3 = 8(x − 1) = 8x − 8",
+     "11 = 4x",
+     "x = 11/4"
+    ],
+    "guidance": "M1: combine logarithms using quotient law. M1: convert to exponential form. M1: solve linear equation. A1: x = 11/4."
+   }
+  }
  }
 };
