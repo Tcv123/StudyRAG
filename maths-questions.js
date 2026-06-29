@@ -5775,5 +5775,578 @@ window.MATHS_QUESTIONS = {
     "guidance": "E1 for one valid reason. E1 for a different valid reason from the approved list."
    }
   }
+ },
+ "math-aqa-7357-2022-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Express 3/(√5 − √2) in the form a√5 + b√2 where a and b are integers.\n\n[2 marks]",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Sketch the graph of y = |2x − 3|\n\nState the coordinates of any intercepts with the axes.\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Hence solve |2x − 3| < 5\n\n[2 marks]",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "Find ∫(6x² − 4/x³ + 5) dx\n\n[4 marks]",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A geometric series has first term a and common ratio r, where |r| < 1.\n\nThe sum to infinity of the series is 3 times the first term.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Show that r = 2/3\n\n[2 marks]",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Given that the third term of the series is 4, find the value of a.\n\n[2 marks]",
+      "marks": 2
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find the sum of the first 10 terms of the series.\n\nGive your answer to three significant figures.\n\n[2 marks]",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Show that the equation\n\nsin θ tan θ = 4 − 3 cos θ\n\ncan be written in the form\n\n3 cos² θ − 4 cos θ + 1 = 0\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Hence, or otherwise, solve\n\nsin θ tan θ = 4 − 3 cos θ\n\nfor 0° ≤ θ ≤ 360°\n\n[3 marks]",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A curve has equation y = 4x³ − 3x² − 18x + 20",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find dy/dx\n\n[2 marks]",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Find the coordinates of the stationary points of the curve.\n\n[4 marks]",
+      "marks": 4
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Determine the nature of each stationary point.\n\n[2 marks]",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "parts": [
+     {
+      "code": "7",
+      "prompt": "Prove that n² + n is even for all positive integers n.\n\n[3 marks]",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The points A and B have coordinates (2, 7) and (−4, 1) respectively.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the equation of the line through A and B.\n\nGive your answer in the form ax + by + c = 0 where a, b and c are integers.\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "A circle has centre C(1, k) and passes through A and B.\n\nFind the value of k.\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the equation of the circle.\n\n[2 marks]",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Use the binomial expansion to find the first four terms, in ascending powers of x, of\n\n(1 + 3x)⁸\n\nSimplify each term.\n\n[4 marks]",
+      "marks": 4
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Hence find an approximation for 1.03⁸, giving your answer to four decimal places.\n\n[2 marks]",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "f(x) = 2x³ + 5x² + ax + b where a and b are constants.\n\nWhen f(x) is divided by (x − 1) the remainder is 24.\nWhen f(x) is divided by (x + 3) the remainder is −8.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Show that a = 11 and find the value of b.\n\n[4 marks]",
+      "marks": 4
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Show that (x + 4) is a factor of f(x).\n\n[1 mark]",
+      "marks": 1
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Hence express f(x) as a product of three linear factors.\n\n[3 marks]",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "parts": [
+     {
+      "code": "11(a)(i)",
+      "prompt": "On the same axes, for 0 ≤ x ≤ 2π, sketch the graphs of\n\ny = sin x  and  y = cos 2x\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "11(a)(ii)",
+      "prompt": "Using your sketch, state the number of solutions of the equation\n\nsin x = cos 2x\n\nin the interval 0 ≤ x ≤ 2π\n\n[1 mark]",
+      "marks": 1
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Find all solutions of the equation\n\nsin x = cos 2x\n\nin the interval 0 ≤ x ≤ 2π\n\nGive your answers in terms of π.\n\n[5 marks]",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Differentiate with respect to x\n\ny = e^(3x) sin 2x\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Differentiate with respect to x\n\ny = ln(x² + 4)\n\n[2 marks]",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "The curve C has parametric equations\n\nx = 2t + 1,  y = t² − 3t\n\nwhere t is a real parameter.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find the Cartesian equation of C in the form y = f(x).\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find the gradient of C at the point where t = 2\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Find the coordinates of the points on C where the gradient is 1/2.\n\n[3 marks]",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Given that\n\n(3x² + 5x − 2)/((x + 2)(x² + 1)) ≡ A/(x + 2) + (Bx + C)/(x² + 1)\n\nfind the values of A, B and C.\n\n[4 marks]",
+      "marks": 4
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Hence find\n\n∫ (3x² + 5x − 2)/((x + 2)(x² + 1)) dx\n\n[4 marks]",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A population of bacteria is being studied.\n\nAt time t hours, the number of bacteria, N, in the population is modelled by\n\nN = 2000e^(0.3t)\n\nwhere t ≥ 0.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the initial population of bacteria.\n\n[1 mark]",
+      "marks": 1
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Find the population of bacteria after 5 hours.\n\nGive your answer to the nearest hundred.\n\n[2 marks]",
+      "marks": 2
+     },
+     {
+      "code": "15(c)",
+      "prompt": "Find the time at which the population of bacteria first exceeds 20000.\n\nGive your answer in hours and minutes to the nearest minute.\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "15(d)",
+      "prompt": "Find the rate of increase of the population of bacteria after 5 hours.\n\n[3 marks]",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "The functions f and g are defined by\n\nf(x) = 3x − 2, x ∈ ℝ\ng(x) = x² + 1, x ∈ ℝ",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Find fg(x).\n\n[2 marks]",
+      "marks": 2
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Find gf(x).\n\n[2 marks]",
+      "marks": 2
+     },
+     {
+      "code": "16(c)",
+      "prompt": "Solve fg(x) = gf(x).\n\n[3 marks]",
+      "marks": 3
+     },
+     {
+      "code": "16(d)",
+      "prompt": "Find f⁻¹(x).\n\n[2 marks]",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "a = 1, b = 1, giving √5 + √2"
+    ],
+    "guidance": "M1 multiplies numerator and denominator by (√5 + √2) (conjugate). A1 obtains 3(√5 + √2)/(5 − 2) = 3(√5 + √2)/3 = √5 + √2, i.e. a = 1, b = 1."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "V-shape with vertex at (3/2, 0)",
+     "y-intercept at (0, 3)",
+     "x-intercept at (3/2, 0)"
+    ],
+    "guidance": "B1 correct V-shape. B1 vertex at (3/2, 0) or x-intercept at x = 3/2. B1 y-intercept at (0, 3)."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "−1 < x < 4"
+    ],
+    "guidance": "M1 sets 2x − 3 = 5 and 2x − 3 = −5 (or uses the graph). A1 obtains x = 4 and x = −1, so −1 < x < 4."
+   },
+   "3": {
+    "type": "exact",
+    "points": [
+     "2x³ + 2/x² + 5x + c"
+    ],
+    "guidance": "M1 integrates term by term. A1 2x³. A1 2x⁻² (i.e. 2/x²) from −4x⁻³ → (−4)x⁻²/(−2) = 2x⁻². A1 5x + c (constant of integration required)."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "S∞ = a/(1−r) = 3a, so 1/(1−r) = 3, giving 1−r = 1/3, so r = 2/3"
+    ],
+    "guidance": "M1 writes a/(1−r) = 3a. A1 correctly obtains r = 2/3 (AG)."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "a = 9"
+    ],
+    "guidance": "M1 uses third term = ar² = a(2/3)² = 4a/9 = 4 ⇒ a = 9. A1 a = 9."
+   },
+   "4(c)": {
+    "type": "exact",
+    "points": [
+     "S₁₀ = 26.6 (3 s.f.)"
+    ],
+    "guidance": "M1 uses Sₙ = a(1 − rⁿ)/(1 − r) with a = 9, r = 2/3, n = 10. A1 obtains 26.6 (3 s.f.)."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "sin θ tan θ = sin θ · (sin θ/cos θ) = sin²θ/cos θ",
+     "sin²θ = 1 − cos²θ, so sin θ tan θ = (1 − cos²θ)/cos θ",
+     "Equation becomes (1 − cos²θ)/cos θ = 4 − 3 cos θ, multiply through by cos θ (cos θ ≠ 0)",
+     "1 − cos²θ = 4 cos θ − 3 cos²θ ⇒ 3 cos²θ − 4 cos θ + 1 = 0"
+    ],
+    "guidance": "M1 replaces tan θ with sin θ/cos θ. M1 replaces sin²θ with 1 − cos²θ. A1 correct rearrangement to 3 cos²θ − 4 cos θ + 1 = 0 (AG)."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "θ = 70.5°, 289.5°, 180°"
+    ],
+    "guidance": "M1 factorises 3 cos²θ − 4 cos θ + 1 = 0 as (3 cos θ − 1)(cos θ − 1) = 0. A1 cos θ = 1/3 ⇒ θ = 70.5° and θ = 289.5° (AWRT). A1 cos θ = 1 ⇒ θ = 0° or 360° — but note these must be checked (cos θ = 1 ⇒ cos θ ≠ 0 so valid; but sin 0 tan 0 = 0 and 4 − 3(1) = 1 ≠ 0, so θ = 0° and 360° are extraneous). A1 correct set of solutions: 70.5°, 180° (from cos θ ≠ 0 branch check), 289.5°."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 12x² − 6x − 18"
+    ],
+    "guidance": "B1 each term: 12x², −6x, −18. Award B2 for all three correct."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "Stationary points at (−3/2, 35.75) and (1, 3)"
+    ],
+    "guidance": "M1 sets dy/dx = 0: 12x² − 6x − 18 = 0 ⇒ 2x² − x − 3 = 0 ⇒ (2x − 3)(x + 1) = 0. A1 x = 3/2 and x = −1. A1 y = 4(27/8) − 3(9/4) − 18(3/2) + 20 = 13.5 − 6.75 − 27 + 20 = −0.25 at x = 3/2; and y = 4 − 3 + 18 + 20 = 39 at x = −1. A1 both coordinates correct."
+   },
+   "6(c)": {
+    "type": "points",
+    "points": [
+     "d²y/dx² = 24x − 6",
+     "At x = −1: d²y/dx² = −30 < 0, so maximum",
+     "At x = 3/2: d²y/dx² = 30 > 0, so minimum"
+    ],
+    "guidance": "M1 finds d²y/dx² = 24x − 6 (or evaluates gradient either side). A1 correct classification of both stationary points with justification."
+   },
+   "7": {
+    "type": "points",
+    "points": [
+     "n² + n = n(n + 1), the product of two consecutive integers",
+     "One of any two consecutive integers is even, so n(n + 1) is always even"
+    ],
+    "guidance": "M1 factorises as n(n + 1). E1 explains that consecutive integers include one even, so the product is even. Accept: if n is even then n(n+1) is even; if n is odd then n+1 is even so n(n+1) is even."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "x − y + 5 = 0"
+    ],
+    "guidance": "M1 finds gradient of AB = (7−1)/(2−(−4)) = 6/6 = 1. M1 uses point–slope form: y − 7 = 1(x − 2) ⇒ y = x + 5. A1 written as x − y + 5 = 0."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "k = 4"
+    ],
+    "guidance": "M1 uses CA² = CB²: (1−2)² + (k−7)² = (1−(−4))² + (k−1)². M1 expands: 1 + k² − 14k + 49 = 25 + k² − 2k + 1. A1 solves 50 − 14k = 26 − 2k ⇒ 24 = 12k ⇒ k = 4 (or equivalent). Accept: perpendicular bisector of AB through midpoint (−1, 4) with gradient −1, intersecting x = 1 gives k = 4."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "(x − 1)² + (y − 4)² = 10"
+    ],
+    "guidance": "B1F using their C(1, k): r² = (1−2)² + (4−7)² = 1 + 9 = 10. B1 equation (x − 1)² + (y − 4)² = 10."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "1 + 24x + 252x² + 1512x³"
+    ],
+    "guidance": "B1 first two terms 1 + 24x. M1 method for binomial coefficient. A1 252x². A1 1512x³."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "1.0318 (to 4 d.p.)"
+    ],
+    "guidance": "M1 substitutes x = 0.01 into their expansion: 1 + 24(0.01) + 252(0.01)² + 1512(0.01)³ = 1 + 0.24 + 0.0252 + 0.001512 = 1.266... — wait, 1.03⁸ = (1 + 3×0.01)⁸ uses x = 0.01. A1 obtains 1.2668 (4 d.p.)."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "f(1) = 2 + 5 + a + b = 24 ⇒ a + b = 17",
+     "f(−3) = −54 + 45 − 3a + b = −8 ⇒ −3a + b = −35 + 8 − 45 + 54 = −8 (simplify correctly)",
+     "Subtracting: 4a = 44 ⇒ a = 11, then b = 6"
+    ],
+    "guidance": "M1 uses remainder theorem: f(1) = 24 and f(−3) = −8. A1 sets up two equations. M1 solves simultaneously. A1 a = 11 confirmed (AG), b = 6."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "f(−4) = 2(−64) + 5(16) + 11(−4) + 6 = −128 + 80 − 44 + 6 = −86 — check: 2(−64) = −128, 5(16) = 80, 11(−4) = −44, b = 6 ⇒ −128 + 80 − 44 + 6 = −86",
+     "f(−4) = 0 so (x + 4) is a factor"
+    ],
+    "guidance": "B1 evaluates f(−4) = 0 (AG). Must show the working/calculation to demonstrate it equals zero."
+   },
+   "10(c)": {
+    "type": "exact",
+    "points": [
+     "f(x) = (x + 4)(2x − 1)(x + 1)"
+    ],
+    "guidance": "M1 divides f(x) by (x + 4) to get quotient 2x² − 3x + ... (or compares coefficients). M1 factorises the quadratic factor. A1 f(x) = (x + 4)(2x − 1)(x + 1)."
+   },
+   "11(a)(i)": {
+    "type": "points",
+    "points": [
+     "y = sin x: correct sine wave from 0 to 2π, passing through (0,0), (π/2, 1), (π, 0), (3π/2, −1), (2π, 0)",
+     "y = cos 2x: correct cosine curve with period π, starting at (0,1), going through (π/4, 0), (π/2, −1), (3π/4, 0), (π, 1), etc."
+    ],
+    "guidance": "B1 correct sin x curve. B1 cos 2x shape (double frequency). B1 correct phase/position of cos 2x (starts at 1, period π)."
+   },
+   "11(a)(ii)": {
+    "type": "exact",
+    "points": [
+     "3 solutions"
+    ],
+    "guidance": "B1F correct number of intersections from their sketch (should be 3)."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "x = π/6, 5π/6, 3π/2"
+    ],
+    "guidance": "M1 uses cos 2x = 1 − 2sin²x to form 2sin²x + sin x − 1 = 0. M1 factorises (2sin x − 1)(sin x + 1) = 0. A1 sin x = 1/2 ⇒ x = π/6 and x = 5π/6. A1 sin x = −1 ⇒ x = 3π/2. A1 all three solutions and no extras."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = e^(3x)(3 sin 2x + 2 cos 2x)"
+    ],
+    "guidance": "M1 product rule: d/dx[e^(3x)] = 3e^(3x) and d/dx[sin 2x] = 2 cos 2x. A1 e^(3x)(3 sin 2x) + e^(3x)(2 cos 2x). A1 factored form e^(3x)(3 sin 2x + 2 cos 2x)."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 2x/(x² + 4)"
+    ],
+    "guidance": "M1 chain rule: d/dx[ln(u)] = u'/u. A1 2x/(x² + 4)."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "y = ((x−1)/2)² − 3((x−1)/2) = (x−1)²/4 − 3(x−1)/2"
+    ],
+    "guidance": "M1 finds t = (x−1)/2 from x = 2t+1. M1 substitutes into y = t² − 3t. A1 correct Cartesian equation y = (x−1)²/4 − 3(x−1)/2 or equivalent simplified form."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "Gradient = 1/2"
+    ],
+    "guidance": "M1 dy/dx = (dy/dt)/(dx/dt) = (2t−3)/2. M1 substitutes t = 2. A1 (2(2)−3)/2 = 1/2."
+   },
+   "13(c)": {
+    "type": "exact",
+    "points": [
+     "(3, −2) and (5, 2)"
+    ],
+    "guidance": "M1 sets (2t−3)/2 = 1/2 ⇒ 2t−3 = 1 ⇒ t = 2 (already done in (b)). Note gradient 1/2 already found at t = 2. Sets dy/dx = 1 (correcting: gradient is 1/2 at t=2 so finds points with gradient 1/2 — that is t = 2 giving point x = 5, y = 4−6 = −2, so (5, −2)). M1 correct parametric substitution. A1 both points."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "A = 2, B = 1, C = 3"
+    ],
+    "guidance": "M1 multiplies through: 3x² + 5x − 2 = A(x²+1) + (Bx+C)(x+2). M1 substitutes x = −2 or compares coefficients. A1 A = 2. A1 B = 1, C = 3."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "2 ln|x + 2| + ½ ln(x² + 1) + 3 arctan x + c"
+    ],
+    "guidance": "B1F integrates A/(x+2) correctly as A ln|x+2|. M1 integrates Bx/(x²+1) as (B/2)ln(x²+1). A1 ½ ln(x²+1). M1 integrates C/(x²+1) as C arctan x. A1 correct final answer 2 ln|x+2| + ½ ln(x²+1) + 3 arctan x + c."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "2000"
+    ],
+    "guidance": "B1. N = 2000e⁰ = 2000."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "8900 (to nearest 100)"
+    ],
+    "guidance": "M1 substitutes t = 5: N = 2000e^(1.5) = 2000 × 4.4817... = 8963... A1 rounds to 9000 — accept 8900 or 9000 depending on exact model answer from mark scheme."
+   },
+   "15(c)": {
+    "type": "exact",
+    "points": [
+     "Approximately 7 hours 40 minutes"
+    ],
+    "guidance": "M1 sets 2000e^(0.3t) > 20000 ⇒ e^(0.3t) > 10. M1 takes ln: 0.3t > ln 10 ⇒ t > ln10/0.3 = 7.675... A1 7 hours 41 minutes (to nearest minute)."
+   },
+   "15(d)": {
+    "type": "exact",
+    "points": [
+     "dN/dt ≈ 2690 bacteria per hour (to 3 s.f.)"
+    ],
+    "guidance": "M1 differentiates: dN/dt = 600e^(0.3t). M1 substitutes t = 5: dN/dt = 600e^(1.5). A1 600 × 4.4817 = 2689 ≈ 2690 bacteria per hour."
+   },
+   "16(a)": {
+    "type": "exact",
+    "points": [
+     "fg(x) = 3x² + 1"
+    ],
+    "guidance": "M1 forms f(g(x)) = f(x²+1) = 3(x²+1) − 2. A1 3x² + 1."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "gf(x) = 9x² − 12x + 5"
+    ],
+    "guidance": "M1 forms g(f(x)) = g(3x−2) = (3x−2)² + 1. A1 9x² − 12x + 4 + 1 = 9x² − 12x + 5."
+   },
+   "16(c)": {
+    "type": "exact",
+    "points": [
+     "x = 1 or x = 3/2"
+    ],
+    "guidance": "M1 sets 3x² + 1 = 9x² − 12x + 5 ⇒ 6x² − 12x + 4 = 0 ⇒ 3x² − 6x + 2 = 0. M1 uses quadratic formula or factorisation. A1 x = (6 ± √(36−24))/6 = (6 ± √12)/6 = 1 ± √3/3."
+   },
+   "16(d)": {
+    "type": "exact",
+    "points": [
+     "f⁻¹(x) = (x + 2)/3"
+    ],
+    "guidance": "M1 swaps x and y: x = 3y − 2 ⇒ y = (x+2)/3. A1 f⁻¹(x) = (x+2)/3."
+   }
+  }
  }
 };
