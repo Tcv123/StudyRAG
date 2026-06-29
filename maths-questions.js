@@ -19043,8 +19043,7 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1: energy conservation. M1: equate KE at slack to EPE at release. A1: v = √(4.5) = (3/√2) m s⁻¹ ≈ 2.12 m s⁻¹."
    }
   }
- }
-},
+ },
  "math-ocr-h240-2018-p1": {
   "questions": [
    {
