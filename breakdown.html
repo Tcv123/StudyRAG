@@ -622,13 +622,6 @@
 
     <!-- ─── Past Papers panel ─── -->
     <div class="tab-panel" id="panel-pastpapers">
-      <div style="display:flex;align-items:center;justify-content:space-between;gap:12px;background:var(--surface);border:1px solid var(--border);border-left:3px solid var(--accent);border-radius:12px;padding:13px 18px;margin-bottom:20px;flex-wrap:wrap;">
-        <div>
-          <div style="font-weight:600;font-size:14px;color:var(--text);">Want to attempt papers interactively?</div>
-          <div style="font-size:13px;color:var(--muted);margin-top:2px;">Browse and attempt past papers with a built-in timer, question stepper and mark tracker.</div>
-        </div>
-        <a href="past-papers.html" style="display:inline-flex;align-items:center;gap:7px;padding:9px 18px;background:var(--accent);color:#fff;border-radius:9px;font-size:13.5px;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;">📄 Try it</a>
-      </div>
       <div id="pastPapersBody">
         <div style="padding:40px 20px;text-align:center;color:var(--muted);font-size:14px;">Loading past papers…</div>
       </div>
@@ -2444,6 +2437,7 @@ function renderPastPapersChecklist(subjects) {
         <span style="font-family:var(--font-display);font-size:16px;">${subj.icon || '📄'} ${subj.name}</span>
         <span style="font-size:11px;font-weight:600;color:var(--accent-dark);background:var(--accent-dim);padding:2px 10px;border-radius:999px;">${board.board}</span>
         <span style="margin-left:auto;font-size:13px;color:var(--muted);">${donePapers}/${totalPapers} done</span>
+        <a href="past-papers.html" style="display:inline-flex;align-items:center;gap:5px;padding:4px 12px;background:var(--accent);color:#fff;border-radius:7px;font-size:12px;font-weight:600;text-decoration:none;white-space:nowrap;flex-shrink:0;">▶ Try it</a>
       </div>`;
       // Progress bar
       html += `<div style="height:4px;background:var(--surface3);"><div style="height:4px;width:${pct}%;background:${progressColor};transition:width 0.3s;"></div></div>`;
