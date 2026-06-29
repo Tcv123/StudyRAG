@@ -11270,7 +11270,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "7(b)",
       "prompt": "Hence solve 5cos²θ + 3sinθ = 3 for 0 ≤ θ < 360°, giving your answers in degrees.",
-      "marks": 4
+      "marks": 3
      }
     ]
    },
@@ -11410,7 +11410,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "14(b)",
       "prompt": "Hence use algebraic integration to find the exact area of R.",
-      "marks": 5
+      "marks": 4
      }
     ]
    },
