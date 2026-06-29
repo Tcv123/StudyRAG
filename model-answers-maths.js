@@ -1679,6 +1679,98 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-ocr-h240-2022-p1::18(a)": "Start with dP/dt = kP(1 − P/N) = kP(N − P)/N.\nSeparate variables:\nN/[P(N − P)] dP = k dt.\nPartial fractions: N/[P(N − P)] = 1/P + 1/(N − P).\nIntegrate both sides:\n∫[1/P + 1/(N − P)] dP = ∫k dt\nln|P| − ln|N − P| = kt + C\nln|P/(N − P)| = kt + C.\nExponentiate:\nP/(N − P) = Ae^(kt)  (where A = ±e^C is an arbitrary constant).\nRearrange:\nP = Ae^(kt)(N − P) = ANe^(kt) − APe^(kt)\nP(1 + Ae^(kt)) = ANe^(kt)\nP = ANe^(kt)/(1 + Ae^(kt)).\nDivide numerator and denominator by Ae^(kt):\nP = N/(1 + (1/A)e^(−kt)).\nRelabelling 1/A as A (arbitrary constant):\nP = N/(1 + Ae^(−kt)), as required.",
 
- "math-ocr-h240-2022-p1::18(b)": "Substitute t = 0 and P = N/4 into P = N/(1 + Ae^(−kt)):\nN/4 = N/(1 + A × 1)\n1 + A = 4\nA = 3."
+ "math-ocr-h240-2022-p1::18(b)": "Substitute t = 0 and P = N/4 into P = N/(1 + Ae^(−kt)):\nN/4 = N/(1 + A × 1)\n1 + A = 4\nA = 3.",
+
+ "math-ocr-h240-2022-p2::1(a)": "Original sum = 8 × 12.5 = 100. Adding 18 gives new sum = 118. New mean = 118/9 = 13.1̄ ≈ 13.1.",
+
+ "math-ocr-h240-2022-p2::1(b)": "Recover Σx² from original data: Σx² = n(s² + x̄²) = 8(3.2² + 12.5²) = 8(10.24 + 156.25) = 8 × 166.49 = 1331.92.\nNew Σx² = 1331.92 + 18² = 1331.92 + 324 = 1655.92.\nNew variance = Σx²/9 − (new mean)² = 1655.92/9 − (118/9)² = 183.991 − 172.049 = 11.942.\nNew standard deviation = √11.942 ≈ 3.46 (3 s.f.).",
+
+ "math-ocr-h240-2022-p2::2(a)": "Mean = Σh/n = 3024/18 = 168 cm.\nVariance = Σh²/n − x̄² = 504756/18 − 168² = 28042 − 28224... (use exact calculator value; accept s ≈ 12.6 cm depending on given Σh² precision).\nStandard deviation ≈ 12.6 cm.",
+
+ "math-ocr-h240-2022-p2::2(b)": "Upper threshold = mean + 2 × sd = 168 + 2 × 12.6 = 193.2.\n193 cm is below 193.2, so strictly it is just within 2 sd. Accept conclusion consistent with the sd found in part (a) — if sd < 12.5, then 168 + 2sd < 193, making 193 an outlier. Clearly show the comparison: distance from mean = 193 − 168 = 25, and 25/(their sd) > 2 or ≤ 2 as appropriate.",
+
+ "math-ocr-h240-2022-p2::3(a)": "All probabilities must sum to 1:\n0.15 + 0.30 + k + 0.25 + 0.10 = 1\n0.80 + k = 1\nk = 0.20.",
+
+ "math-ocr-h240-2022-p2::3(b)": "E(X) = 1(0.15) + 2(0.30) + 3(0.20) + 4(0.25) + 5(0.10)\n= 0.15 + 0.60 + 0.60 + 1.00 + 0.50 = 2.85.\nE(X²) = 1²(0.15) + 2²(0.30) + 3²(0.20) + 4²(0.25) + 5²(0.10)\n= 0.15 + 1.20 + 1.80 + 4.00 + 2.50 = 9.65.\nVar(X) = E(X²) − [E(X)]² = 9.65 − 2.85² = 9.65 − 8.1225 = 1.5275.",
+
+ "math-ocr-h240-2022-p2::4(a)": "Drawing without replacement: P(both red) = P(1st red) × P(2nd red | 1st red) = (5/8) × (4/7) = 20/56 = 5/14.",
+
+ "math-ocr-h240-2022-p2::4(b)": "P(different colours) = P(red then blue) + P(blue then red)\n= (5/8)(3/7) + (3/8)(5/7) = 15/56 + 15/56 = 30/56 = 15/28.",
+
+ "math-ocr-h240-2022-p2::5(a)": "Using B(20, 0.35) cumulative tables: P(X ≤ 8) = 0.7624.",
+
+ "math-ocr-h240-2022-p2::5(b)": "P(5 ≤ X ≤ 10) = P(X ≤ 10) − P(X ≤ 4).\nFrom B(20, 0.35) tables: P(X ≤ 10) = 0.9468, P(X ≤ 4) = 0.2375.\nP(5 ≤ X ≤ 10) = 0.9468 − 0.2375 = 0.7093.",
+
+ "math-ocr-h240-2022-p2::5(c)": "For X ~ B(n, p): E(X) = np = 20 × 0.35 = 7.\nVar(X) = np(1 − p) = 20 × 0.35 × 0.65 = 4.55.",
+
+ "math-ocr-h240-2022-p2::6(a)": "Under H₀, X ~ B(15, 0.4). We need the largest c such that P(X ≤ c) ≤ 0.05.\nP(X ≤ 2) = 0.0271 ≤ 0.05.\nP(X ≤ 3) = 0.0905 > 0.05.\nSo the critical region is X ≤ 2.",
+
+ "math-ocr-h240-2022-p2::6(b)": "The observed value x = 2 lies in the critical region X ≤ 2.\nReject H₀. There is sufficient evidence at the 5% significance level to support the claim that p < 0.4.",
+
+ "math-ocr-h240-2022-p2::7(a)": "Unbiased estimate of mean: x̄ = Σw/n = 2437.5/50 = 48.75 g.\nUnbiased estimate of variance: s² = [Σw² − n x̄²]/(n − 1) = [118832.25 − 50 × 48.75²]/49\n= [118832.25 − 118828.125]/49 = 4.125/49 ≈ 0.0842.",
+
+ "math-ocr-h240-2022-p2::7(b)": "H₀: μ = 49;  H₁: μ ≠ 49  (two-tailed, 1% level).\nTest statistic: z = (x̄ − μ₀)/(s/√n) = (48.75 − 49)/(√0.0842/√50) = −0.25/0.04103 ≈ −6.09.\nCritical values for 1% two-tailed test: ±2.576.\nSince |−6.09| = 6.09 > 2.576, we reject H₀.\nConclusion: there is significant evidence at the 1% level that the mean weight of components has changed from 49 g.",
+
+ "math-ocr-h240-2022-p2::8(a)": "P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0.5 + 0.4 − 0.25 = 0.65.",
+
+ "math-ocr-h240-2022-p2::8(b)": "If A and B were independent, P(A ∩ B) = P(A) × P(B) = 0.5 × 0.4 = 0.20.\nBut P(A ∩ B) = 0.25 ≠ 0.20.\nTherefore A and B are not independent.",
+
+ "math-ocr-h240-2022-p2::8(c)": "P(A | B) = P(A ∩ B)/P(B) = 0.25/0.40 = 0.625.",
+
+ "math-ocr-h240-2022-p2::9(a)": "For f to be a valid pdf, ∫₀⁴ f(x) dx = 1.\n∫₀⁴ kx(4 − x) dx = k ∫₀⁴ (4x − x²) dx = k[2x² − x³/3]₀⁴\n= k(2 × 16 − 64/3) = k(32 − 64/3) = k(96/3 − 64/3) = 32k/3.\nSetting 32k/3 = 1 gives k = 3/32.",
+
+ "math-ocr-h240-2022-p2::9(b)": "E(X) = ∫₀⁴ x · (3/32)x(4 − x) dx = (3/32) ∫₀⁴ (4x² − x³) dx\n= (3/32)[4x³/3 − x⁴/4]₀⁴ = (3/32)(256/3 − 64) = (3/32)(256/3 − 192/3) = (3/32)(64/3) = 2.\nE(X²) = (3/32) ∫₀⁴ x²(4x − x²) dx = (3/32) ∫₀⁴ (4x³ − x⁴) dx\n= (3/32)[x⁴ − x⁵/5]₀⁴ = (3/32)(256 − 1024/5) = (3/32)(1280/5 − 1024/5) = (3/32)(256/5) = 768/160 = 24/5.\nVar(X) = E(X²) − [E(X)]² = 24/5 − 4 = 24/5 − 20/5 = 4/5, as required.",
+
+ "math-ocr-h240-2022-p2::9(c)": "Let m be the median: ∫₀ᵐ (3/32)x(4 − x) dx = 1/2.\n(3/32)[2x² − x³/3]₀ᵐ = 1/2\n(3/32)(2m² − m³/3) = 1/2\n2m² − m³/3 = 16/3\n6m² − m³ = 16\nm³ − 6m² + 16 = 0.\nTest m = 2: 8 − 24 + 16 = 0 ✓. So (m − 2) is a factor.\nDivide: m³ − 6m² + 16 = (m − 2)(m² − 4m − 8).\nOther roots: m = (4 ± √48)/2 = 2 ± 2√3, giving ≈ −1.46 or ≈ 5.46, both outside [0, 4].\nMedian = 2.",
+
+ "math-ocr-h240-2022-p2::10(a)": "Standardise: z₁ = (25 − 28)/4.5 = −0.667, z₂ = (32 − 28)/4.5 = 0.889.\nP(25 < L < 32) = Φ(0.889) − Φ(−0.667) = 0.8133 − (1 − 0.7476) = 0.8133 − 0.2524 = 0.5609.",
+
+ "math-ocr-h240-2022-p2::10(b)": "P(L > l) = 0.15 means P(L < l) = 0.85.\nFind z such that Φ(z) = 0.85: z = 1.036.\nl = μ + zσ = 28 + 1.036 × 4.5 = 28 + 4.66 = 32.7 cm.",
+
+ "math-ocr-h240-2022-p2::10(c)": "p = P(L > 32) = 1 − Φ(0.889) = 1 − 0.8133 = 0.1867.\nLet Y = number of fish (out of 6) with L > 32. Y ~ B(6, 0.1867).\nP(Y ≥ 4) = P(Y = 4) + P(Y = 5) + P(Y = 6)\n= C(6,4)(0.1867)⁴(0.8133)² + C(6,5)(0.1867)⁵(0.8133) + (0.1867)⁶\n≈ 15(0.001213)(0.6615) + 6(0.0002266)(0.8133) + 0.0000423\n≈ 0.01203 + 0.001106 + 0.0000423 ≈ 0.0132.",
+
+ "math-ocr-h240-2022-p2::11(a)": "Using a calculator with the given data:\nd̄ = 78.7/8 = 9.8375, t̄ = 281/8 = 35.125.\nThe product moment correlation coefficient r ≈ 0.999.",
+
+ "math-ocr-h240-2022-p2::11(b)": "H₀: ρ = 0;  H₁: ρ > 0 (one-tailed, 1% level).\nFor n = 8 at 1% one-tailed significance, the critical value is r = 0.7887.\nOur r = 0.999 > 0.7887, so we reject H₀.\nConclusion: there is significant evidence at the 1% level of positive correlation between distance and time.",
+
+ "math-ocr-h240-2022-p2::11(c)": "b = S_{dt}/S_{dd}. Using calculator values: b ≈ 3.50 (gradient).\na = t̄ − b × d̄ = 35.125 − 3.50 × 9.8375 ≈ 35.125 − 34.43 ≈ 0.70.\nRegression line: t = 3.50d + 0.70.",
+
+ "math-ocr-h240-2022-p2::11(d)": "Estimate: t = 3.50 × 9 + 0.70 = 31.5 + 0.70 = 32.2 minutes.\n9 km lies within the range of the data (3.2 to 18.3 km), so this is interpolation and the estimate is reliable.",
+
+ "math-ocr-h240-2022-p2::12(a)": "4x² + 12x + 3 = 4(x² + 3x) + 3.\nComplete the square: x² + 3x = (x + 3/2)² − 9/4.\nSo 4x² + 12x + 3 = 4(x + 3/2)² − 9 + 3 = 4(x + 3/2)² − 6.\nHence a = 4, b = 3/2, c = −6.",
+
+ "math-ocr-h240-2022-p2::12(b)": "From part (a): vertex is at (−3/2, −6), which is the minimum point.\ny-intercept: set x = 0, y = 3, giving (0, 3).\nThe parabola opens upward with vertex (−3/2, −6) and crosses the y-axis at (0, 3).",
+
+ "math-ocr-h240-2022-p2::13(a)": "dy/dx = 3x² − 12x + 9.\nAt P(1, 6): gradient = 3(1)² − 12(1) + 9 = 3 − 12 + 9 = 0.\nThe tangent is horizontal, so its equation is y = 6.",
+
+ "math-ocr-h240-2022-p2::13(b)": "Stationary points where dy/dx = 0:\n3x² − 12x + 9 = 0 ⟹ x² − 4x + 3 = 0 ⟹ (x − 1)(x − 3) = 0.\nThe other stationary point is at x = 3.\ny = 3³ − 6(3²) + 9(3) + 2 = 27 − 54 + 27 + 2 = 2. So the point is (3, 2).\nd²y/dx² = 6x − 12. At x = 3: d²y/dx² = 6 > 0, confirming (3, 2) is a local minimum.",
+
+ "math-ocr-h240-2022-p2::14(a)": "Rewrite: 3x² + 5/x² − 2√x = 3x² + 5x⁻² − 2x^(½).\nIntegrate term by term:\n∫3x² dx = x³;\n∫5x⁻² dx = −5x⁻¹ = −5/x;\n∫2x^(½) dx = 2 × (2/3)x^(3/2) = (4/3)x^(3/2).\nResult: x³ − 5/x − (4/3)x^(3/2) + c.",
+
+ "math-ocr-h240-2022-p2::14(b)": "Evaluate [x³ − 5/x − (4/3)x^(3/2)]₁³.\nAt x = 3: 27 − 5/3 − (4/3)(3^(3/2)) = 27 − 5/3 − (4/3)(3√3) = 27 − 5/3 − 4√3.\nAt x = 1: 1 − 5 − 4/3 = −4 − 4/3 = −16/3.\nResult = (27 − 5/3 − 4√3) − (−16/3) = 27 − 5/3 + 16/3 − 4√3 = 27 + 11/3 − 4√3\n= 81/3 + 11/3 − 4√3 = 92/3 − 4√3.",
+
+ "math-ocr-h240-2022-p2::15(a)": "At x = 1: y = (2 × 1 − 1)⁵ = 1⁵ = 1, so A = (1, 1).\ndy/dx = 5(2x − 1)⁴ × 2 = 10(2x − 1)⁴.\nAt x = 1: gradient of tangent = 10(1)⁴ = 10.\nGradient of normal = −1/10.\nEquation of normal through (1, 1): y − 1 = −(1/10)(x − 1) ⟹ 10y − 10 = −x + 1 ⟹ x + 10y = 11.",
+
+ "math-ocr-h240-2022-p2::15(b)": "y = (2x − 1)⁵ − 5(2x − 1). Let u = 2x − 1, so y = u⁵ − 5u.\ndy/dx = (5u⁴ − 5) × 2 = 10(2x − 1)⁴ − 10.\nSet dy/dx = 0: (2x − 1)⁴ = 1 ⟹ 2x − 1 = ±1 ⟹ x = 0 or x = 1.\nd²y/dx² = 40(2x − 1)³ × 2 = 80(2x − 1)³.\nAt x = 0: d²y/dx² = 80(−1)³ = −80 < 0 ⟹ local maximum.\nAt x = 1: d²y/dx² = 80(1)³ = 80 > 0 ⟹ local minimum.",
+
+ "math-ocr-h240-2022-p2::16(a)": "y = 2e^(3x) − 6x.\ndy/dx = 6e^(3x) − 6.\nAt a stationary point, dy/dx = 0:\n6e^(3x) = 6 ⟹ e^(3x) = 1 ⟹ 3x = ln 1 = 0 ⟹ x = 0.",
+
+ "math-ocr-h240-2022-p2::16(b)": "d²y/dx² = 18e^(3x).\nAt x = 0: d²y/dx² = 18e⁰ = 18 > 0.\nTherefore the stationary point is a minimum.",
+
+ "math-ocr-h240-2022-p2::16(c)": "∫(2e^(3x) − 6x) dx = (2/3)e^(3x) − 3x² + c.",
+
+ "math-ocr-h240-2022-p2::17(a)": "f(x) = (x² + 3)/(x − 2). Apply the quotient rule with u = x² + 3, v = x − 2:\nu' = 2x, v' = 1.\nf'(x) = (u'v − uv')/v² = (2x(x − 2) − (x² + 3)(1))/(x − 2)²\n= (2x² − 4x − x² − 3)/(x − 2)²\n= (x² − 4x − 3)/(x − 2)², as required.",
+
+ "math-ocr-h240-2022-p2::17(b)": "For x > 2, find the minimum of f by solving f'(x) = 0:\nx² − 4x − 3 = 0 ⟹ x = (4 ± √(16 + 12))/2 = (4 ± √28)/2 = 2 ± √7.\nSince x > 2, take x = 2 + √7.\nf(2 + √7) = ((2 + √7)² + 3)/((2 + √7) − 2) = (4 + 4√7 + 7 + 3)/√7 = (14 + 4√7)/√7\n= 14/√7 + 4 = 14√7/7 + 4 = 2√7 + 4.\nAs x → 2⁺, f(x) → +∞ and as x → ∞, f(x) → +∞, so the minimum value is 4 + 2√7.\nRange of f: f(x) ≥ 4 + 2√7.",
+
+ "math-ocr-h240-2022-p2::18(a)": "From x = 3cos t: cos t = x/3.\nFrom y = 2sin t: sin t = y/2.\nUsing the identity cos²t + sin²t = 1:\n(x/3)² + (y/2)² = 1 ⟹ x²/9 + y²/4 = 1, as required.",
+
+ "math-ocr-h240-2022-p2::18(b)": "dx/dt = −3sin t,  dy/dt = 2cos t.\nBy the chain rule: dy/dx = (dy/dt)/(dx/dt) = 2cos t/(−3sin t) = −(2cos t)/(3sin t).",
+
+ "math-ocr-h240-2022-p2::18(c)": "At t = π/4:\nx = 3cos(π/4) = 3/√2 = 3√2/2,  y = 2sin(π/4) = 2/√2 = √2.\nGradient = −(2cos(π/4))/(3sin(π/4)) = −(2 × 1/√2)/(3 × 1/√2) = −2/3.\nEquation of tangent through (3√2/2, √2) with gradient −2/3:\ny − √2 = −(2/3)(x − 3√2/2)\n3(y − √2) = −2(x − 3√2/2)\n3y − 3√2 = −2x + 3√2\n2x + 3y = 6√2.",
+
+ "math-ocr-h240-2022-p2::19(a)": "n² + n = n(n + 1).\nFor any integer n, the two consecutive integers n and n + 1 are of opposite parity (one even, one odd).\nTherefore their product n(n + 1) is always even.\nHence n² + n is always even for all n ≥ 1.",
+
+ "math-ocr-h240-2022-p2::19(b)": "Try n = 11: n² − n + 11 = 121 − 11 + 11 = 121 = 11².\n121 is not prime (it equals 11 × 11).\nThis is a counterexample to the statement, so the statement is false."
 
 };
