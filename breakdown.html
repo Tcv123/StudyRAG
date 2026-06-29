@@ -13,6 +13,8 @@
   <script src="study-tracker.js"></script>
   <script src="predicted-grade.js"></script>
   <script src="nav-gating.js"></script>
+  <script src="papers-config.js"></script>
+  <script src="subjects-config.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -514,6 +516,7 @@
       <button class="section-nav-btn"        data-tab="practice"   onclick="setTab('practice')"><span>✦</span> Practice progress</button>
       <button class="section-nav-btn"        data-tab="exams"      onclick="setTab('exams')"><span>📅</span> Upcoming exams</button>
       <button class="section-nav-btn"        data-tab="flashcards" onclick="setTab('flashcards')" id="tabFlashcards" style="display:none;"><span>🃏</span> Flashcards</button>
+      <button class="section-nav-btn"        data-tab="pastpapers" onclick="setTab('pastpapers')"><span>📄</span> Past papers</button>
     </div>
 
     <!-- ─── Summary panel (default) ─── -->
@@ -614,6 +617,13 @@
     <div class="tab-panel" id="panel-flashcards">
       <div id="flashcardsBody">
         <div style="padding:40px 20px;text-align:center;color:var(--muted);font-size:14px;">Loading flashcards…</div>
+      </div>
+    </div>
+
+    <!-- ─── Past Papers panel ─── -->
+    <div class="tab-panel" id="panel-pastpapers">
+      <div id="pastPapersBody">
+        <div style="padding:40px 20px;text-align:center;color:var(--muted);font-size:14px;">Loading past papers…</div>
       </div>
     </div>
   </main>
@@ -2018,6 +2028,7 @@ async function load() {
   renderTopics();
   renderPracticeCarousel();
   renderFlashcardsBreakdown(user, profile, subjects || []);
+  renderPastPapersChecklist(subjects || []);
 }
 
 function renderSubjectOverview() {
@@ -2353,6 +2364,145 @@ function cancelSignOut(){document.getElementById('signoutOverlay').classList.rem
 async function logout() {
   await supabaseClient.auth.signOut();
   window.location = 'auth/login.html';
+}
+
+function renderPastPapersChecklist(subjects) {
+  const wrap = document.getElementById('pastPapersBody');
+  if (!wrap) return;
+
+  const allPapers = window.SUBJECTS || [];
+
+  // Normalise board names the same way past-papers.html does.
+  function normBoard(b) {
+    const n = String(b || '').toLowerCase().replace(/\s*\([^)]*\)/g, '').trim();
+    return n === 'ocr' ? 'ocr a' : n;
+  }
+
+  // Build a set of user boards per subject from the loaded subjects.
+  const userMap = new Map();
+  (subjects || []).forEach(s => {
+    if (!userMap.has(s.subject)) userMap.set(s.subject, new Set());
+    userMap.get(s.subject).add(s.exam_board);
+  });
+
+  if (!userMap.size) {
+    wrap.innerHTML = `<div class="fc-empty">
+      <div class="fc-empty-icon">📄</div>
+      <div style="font-family:var(--font-display);font-size:17px;color:var(--text);margin-bottom:4px;">No subjects yet</div>
+      <div style="font-size:13px;">Add subjects in <a href="auth/setup.html" style="color:var(--accent-dark);">setup</a> to see past papers here.</div>
+    </div>`;
+    return;
+  }
+
+  // Filter papers-config.js data to only the user's subjects + boards.
+  const filtered = allPapers
+    .map(subj => {
+      const userBoards = userMap.get(subj.name);
+      if (!userBoards) return null;
+      const boards = (subj.boards || [])
+        .filter(b => {
+          const match = [...userBoards].some(ub => normBoard(ub) === normBoard(b.board));
+          return match && Array.isArray(b.papers) && b.papers.length;
+        });
+      return boards.length ? { ...subj, boards } : null;
+    })
+    .filter(Boolean);
+
+  if (!filtered.length) {
+    wrap.innerHTML = `<div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;padding:32px 20px;text-align:center;color:var(--muted);font-size:14px;">
+      No past papers available for your subjects and boards yet. Check back soon.
+    </div>`;
+    return;
+  }
+
+  let html = `<div style="font-family:var(--font-display);font-size:18px;margin-bottom:16px;">Past papers checklist</div>`;
+  html += `<div style="font-size:13px;color:var(--muted);margin-bottom:20px;">Tick off papers as you complete them. Progress is saved in your browser.</div>`;
+
+  filtered.forEach(subj => {
+    subj.boards.forEach(board => {
+      const totalPapers = board.papers.length;
+      const donePapers = board.papers.filter(p => {
+        try {
+          const stored = JSON.parse(localStorage.getItem(`paperAttempt.${p.id}`) || 'null');
+          return stored && stored.status === 'completed';
+        } catch (_) { return false; }
+      }).length;
+
+      const pct = totalPapers ? Math.round(donePapers / totalPapers * 100) : 0;
+      const progressColor = pct === 100 ? 'var(--green)' : pct > 0 ? 'var(--amber)' : 'var(--border)';
+
+      html += `<div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:16px;overflow:hidden;">`;
+      // Subject + board header
+      html += `<div style="padding:14px 18px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+        <span style="font-family:var(--font-display);font-size:16px;">${subj.icon || '📄'} ${subj.name}</span>
+        <span style="font-size:11px;font-weight:600;color:var(--accent-dark);background:var(--accent-dim);padding:2px 10px;border-radius:999px;">${board.board}</span>
+        <span style="margin-left:auto;font-size:13px;color:var(--muted);">${donePapers}/${totalPapers} done</span>
+      </div>`;
+      // Progress bar
+      html += `<div style="height:4px;background:var(--surface3);"><div style="height:4px;width:${pct}%;background:${progressColor};transition:width 0.3s;"></div></div>`;
+      // Paper rows
+      html += `<div style="padding:10px 14px 14px;display:flex;flex-direction:column;gap:6px;">`;
+      board.papers.forEach(p => {
+        let done = false;
+        try {
+          const stored = JSON.parse(localStorage.getItem(`paperAttempt.${p.id}`) || 'null');
+          done = stored && stored.status === 'completed';
+        } catch (_) {}
+        const checkId = `pp-chk-${p.id}`;
+        html += `<label for="${checkId}" style="display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:9px;border:1px solid ${done ? 'var(--green)' : 'var(--border)'};background:${done ? 'rgba(22,163,74,0.05)' : 'var(--surface2)'};cursor:pointer;transition:border-color 0.15s,background 0.15s;" onmouseover="this.style.borderColor='var(--accent)'" onmouseout="this.style.borderColor='${done ? 'var(--green)' : 'var(--border)'}'">
+          <input type="checkbox" id="${checkId}" ${done ? 'checked' : ''} style="width:16px;height:16px;accent-color:var(--green);flex-shrink:0;cursor:pointer;" onchange="togglePaperDone('${p.id}', this)">
+          <span style="flex:1;font-size:13.5px;color:var(--text);${done ? 'text-decoration:line-through;color:var(--muted);' : ''}">${p.paperName}${p.paperCode ? ` <span style="font-size:11px;color:var(--muted2);margin-left:4px;">${p.paperCode}</span>` : ''}</span>
+          <span style="font-size:12px;color:var(--muted2);white-space:nowrap;">${p.year || ''}</span>
+          <a href="paper-attempt.html?id=${encodeURIComponent(p.id)}" style="font-size:12px;font-weight:500;color:var(--accent-dark);text-decoration:none;background:var(--accent-dim);padding:3px 9px;border-radius:6px;white-space:nowrap;flex-shrink:0;" onclick="event.stopPropagation()">▶ Open</a>
+        </label>`;
+      });
+      html += `</div></div>`;
+    });
+  });
+
+  wrap.innerHTML = html;
+}
+
+function togglePaperDone(paperId, checkbox) {
+  try {
+    const key = `paperAttempt.${paperId}`;
+    if (checkbox.checked) {
+      const existing = JSON.parse(localStorage.getItem(key) || 'null') || {};
+      localStorage.setItem(key, JSON.stringify({ ...existing, status: 'completed' }));
+    } else {
+      const existing = JSON.parse(localStorage.getItem(key) || 'null') || {};
+      delete existing.status;
+      if (Object.keys(existing).length) {
+        localStorage.setItem(key, JSON.stringify(existing));
+      } else {
+        localStorage.removeItem(key);
+      }
+    }
+    // Update the row styling live
+    const label = checkbox.closest('label');
+    if (label) {
+      label.style.borderColor = checkbox.checked ? 'var(--green)' : 'var(--border)';
+      label.style.background = checkbox.checked ? 'rgba(22,163,74,0.05)' : 'var(--surface2)';
+      const nameSpan = label.querySelector('span[style*="flex:1"]');
+      if (nameSpan) {
+        nameSpan.style.textDecoration = checkbox.checked ? 'line-through' : '';
+        nameSpan.style.color = checkbox.checked ? 'var(--muted)' : 'var(--text)';
+      }
+      // Update progress bar and counter in the parent card
+      const card = label.closest('div[style*="border-radius:14px"]');
+      if (card) {
+        const checks = card.querySelectorAll('input[type=checkbox]');
+        const total = checks.length;
+        const done = [...checks].filter(c => c.checked).length;
+        const pct = total ? Math.round(done / total * 100) : 0;
+        const color = pct === 100 ? 'var(--green)' : pct > 0 ? 'var(--amber)' : 'var(--border)';
+        const bar = card.querySelector('div[style*="height:4px;width"]');
+        if (bar) { bar.style.width = pct + '%'; bar.style.background = color; }
+        const counter = card.querySelector('span[style*="margin-left:auto"]');
+        if (counter) counter.textContent = `${done}/${total} done`;
+      }
+    }
+  } catch (_) {}
 }
 
 load();
