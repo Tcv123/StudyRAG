@@ -315,7 +315,7 @@
     }
 
     /* ── STAT CARDS ── */
-    .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
+    .stats-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
 
     .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; transition: border-color 0.15s, box-shadow 0.15s; box-shadow: 0 1px 4px rgba(37,99,235,0.07); }
     .stat-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 14px rgba(37,99,235,0.12); }
@@ -350,7 +350,7 @@
     .content-grid { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
 
     /* ── SUBJECT PROGRESS CARDS ── */
-    .subjects-progress-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0; align-items: start; grid-auto-rows: auto; }
+    .subjects-progress-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-bottom: 0; align-items: start; grid-auto-rows: auto; }
 
     .subj-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -466,7 +466,9 @@
 
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    @media (max-width: 1100px) { .content-grid { grid-template-columns: 1fr; } .stats-row { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 1300px) { .stats-row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (max-width: 1100px) { .content-grid { grid-template-columns: 1fr; } .stats-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 900px)  { .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
     @media (max-width: 768px) {
       .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; }
