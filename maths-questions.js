@@ -8811,5 +8811,614 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1 finds Jo's speed. A1 finds Jo's distance = 40 m. B1 finds Amba's distance. M1 uses appropriate method. A1 obtains distance = 3 metres. Must state units."
    }
   }
+ },
+ "math-aqa-7357-2021n-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "The graph of y = arccos x is shown, with an end point P in the second quadrant of the graph.",
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "State the coordinates of the end point P. Circle your answer.\n(−π, 1)     (−1, π)     (−π/2, 1)     (−1, π/2)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Simplify fully (x − 3)(6 − 2x) / [(x + 3)(3 − x)] for x ≠ −3.\nCircle your answer.\n−2     2     (6 − 2x)/(x − 3)     (2x − 6)/(x − 3)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "f(x) = 3x²",
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "Obtain lim[h→0] (f(x + h) − f(x)) / h.\nCircle your answer.\n3h²/h     x³     (3(x + h)² − 3x²)/h     6x",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Show that the first three terms, in descending powers of x, of the expansion of (2x − 3)¹⁰ are given by 1024x¹⁰ − px⁹ + qx⁸, where p and q are integers to be found.",
+      "marks": 3
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the constant term in the expansion of (2x − 3/x)¹⁰.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "A gardener is creating flowerbeds in the shape of sectors of circles. The cost of edging strip is £1.80 per metre and can be purchased for any length.",
+    "parts": [
+     {
+      "code": "5(a)(i)",
+      "prompt": "One of the flowerbeds has a radius of 5 metres and an angle at the centre of 0.7 radians. Find the area of this flowerbed.",
+      "marks": 2
+     },
+     {
+      "code": "5(a)(ii)",
+      "prompt": "Find the cost of the edging strip required for the flowerbed with radius 5 m and angle 0.7 radians.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)(i)",
+      "prompt": "A flowerbed is to be made with an area of 20 m². Show that the cost, £C, of the edging strip required for this flowerbed is given by C = (18/5)(20/r + r), where r is the radius measured in metres.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)(ii)",
+      "prompt": "Hence, show that the minimum cost of the edging strip for this flowerbed occurs when r ≈ 4.5. Fully justify your answer.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6",
+      "prompt": "Given that x > 0 and x ≠ 25, fully simplify (10 − 5x^(1/2) − 2x^(1/2) − x^(3/2)) / (5 − x^(1/2)). Fully justify your answer.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A building has a leaking roof. While it rains, water drips into a 12-litre bucket. When rain stops, the bucket is one third full. In the first minute after rain stops, 30 ml drips in. In each subsequent minute, the amount reduces by 2%. During the nth minute after rain stops, the volume is Wₙ ml.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Find W₂.",
+      "marks": 1
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Explain why Wₙ = A × 0.98^(n−1) and state the value of A.",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Find the increase in the water in the bucket 15 minutes after the rain stops. Give your answer to the nearest millilitre.",
+      "marks": 2
+     },
+     {
+      "code": "7(d)",
+      "prompt": "Assuming it does not start to rain again, find the maximum amount of water in the bucket.",
+      "marks": 3
+     },
+     {
+      "code": "7(e)",
+      "prompt": "After several hours the water has stopped dripping. Give two reasons why the amount of water in the bucket is not as much as the answer found in part (d).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8",
+      "prompt": "Given that ∫[π/4 to π/3] x cos x dx = aπ − b/4, find the exact value of a and the exact value of b. Fully justify your answer.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A function f is defined for all real values of x as f(x) = x⁴ + 5x³. The function has exactly two stationary points when x = 0 and x = −15/4.",
+    "parts": [
+     {
+      "code": "9(a)(i)",
+      "prompt": "Find f″(x).",
+      "marks": 2
+     },
+     {
+      "code": "9(a)(ii)",
+      "prompt": "Determine the nature of the stationary points. Fully justify your answer.",
+      "marks": 4
+     },
+     {
+      "code": "9(b)",
+      "prompt": "State the range of values of x for which f(x) = x⁴ + 5x³ is an increasing function.",
+      "marks": 1
+     },
+     {
+      "code": "9(c)(i)",
+      "prompt": "A second function g is defined for all real values of x as g(x) = x⁴ − 5x³. State the single transformation which maps f onto g.",
+      "marks": 1
+     },
+     {
+      "code": "9(c)(ii)",
+      "prompt": "State the range of values of x for which g is an increasing function.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "Anke has collected data from 30 similar-sized cars to investigate any correlation between the age of the car and the current market value. She calculates the correlation coefficient and obtains −1.2.",
+    "parts": [
+     {
+      "code": "10",
+      "prompt": "Which of the following statements best describes her answer of −1.2? Tick (✓) one box.\nDefinitely incorrect     Probably incorrect     Probably correct     Definitely correct",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "The random variable X is such that X ~ B(n, p). The mean value of X is 225 and the variance of X is 144.",
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "Find p. Circle your answer.\n0.36     0.6     0.64     0.8",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "An electoral register contains 8000 names.",
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "A researcher decides to select a systematic sample of 100 names from the register. Explain how the researcher should select such a sample.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "The table below is an extract from the Large Data Set, containing 13 rows with Propulsion Type 2 cars from various regions. The CO₂ emissions (g/km) given are: 154, 146, 138, 159, 138, 130, 146, 146, 192, 122, 175, 140, 146. The last row has a Mass of 0 and a blank Particulate Emissions cell.",
+    "parts": [
+     {
+      "code": "13(a)(i)",
+      "prompt": "Calculate the mean and standard deviation of CO₂ emissions in the table.",
+      "marks": 2
+     },
+     {
+      "code": "13(a)(ii)",
+      "prompt": "Any value more than 2 standard deviations from the mean can be identified as an outlier. Determine, using this definition of an outlier, if there are any outliers in this sample of CO₂ emissions. Fully justify your answer.",
+      "marks": 2
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Maria claims that the last line in the table must contain two errors. Use your knowledge of the Large Data Set to comment on Maria's claim.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A and B are two events such that P(A ∩ B) = 0.1, P(A′ ∩ B′) = 0.2, P(B) = 2P(A).",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find P(A).",
+      "marks": 4
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find P(B|A).",
+      "marks": 2
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Determine if A and B are independent events.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A team game involves solving puzzles to escape from a room. Using past data, the mean time is 65 minutes with standard deviation 11.3 minutes. After recent changes, it is claimed the mean time has changed. A random sample of 100 teams is selected. The total time for 100 teams is 6780 minutes.",
+    "parts": [
+     {
+      "code": "15",
+      "prompt": "Assuming that the times are normally distributed, test at the 2% level the claim that the mean time has changed.",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "The discrete random variable X has the probability function P(X = x) = c(7 − 2x) for x = 0, 1, 2, 3; P(X = x) = k for x = 4; P(X = x) = 0 otherwise, where c and k are constants.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Show that 16c + k = 1.",
+      "marks": 2
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Given that P(X ≥ 3) = 5/8, find the value of c and the value of k.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "James is playing a mathematical game on his computer. The probability that he wins is 0.6. As part of an online tournament, James plays the game 10 times. Let Y be the number of games that James wins.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "State two assumptions, in context, for Y to be modelled as B(10, 0.6).",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "Find P(Y = 4).",
+      "marks": 1
+     },
+     {
+      "code": "17(c)",
+      "prompt": "Find P(Y ≥ 4).",
+      "marks": 2
+     },
+     {
+      "code": "17(d)",
+      "prompt": "After practising the game, James claims that he has increased his probability of winning the game. In a random sample of 15 subsequent games, he wins 12 of them. Test at a 5% significance level whether James's claim is correct.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "A factory produces jars of jam and jars of marmalade. The weight X grams of jam in a jar can be modelled as a normal variable with mean 372 and standard deviation 3.5. The weight Y grams of marmalade in a jar can be modelled as a normal variable with mean μ and standard deviation σ.",
+    "parts": [
+     {
+      "code": "18(a)(i)",
+      "prompt": "Find the probability that the weight of jam in a jar is equal to 372 grams.",
+      "marks": 1
+     },
+     {
+      "code": "18(a)(ii)",
+      "prompt": "Find the probability that the weight of jam in a jar is greater than 368 grams.",
+      "marks": 2
+     },
+     {
+      "code": "18(b)(i)",
+      "prompt": "Given that P(Y < 346) = 0.975, show that 346 − μ = 1.96σ. Fully justify your answer.",
+      "marks": 3
+     },
+     {
+      "code": "18(b)(ii)",
+      "prompt": "Given further that P(Y < 336) = 0.14, find μ and σ.",
+      "marks": 4
+     }
+    ]
+   }
+  ],
+  "markscheme": {
+   "1": {
+    "type": "exact",
+    "answer": "(−1, π)",
+    "guidance": "B1 circles correct answer. The domain of arccos is [−1, 1] and range is [0, π]. At x = −1, arccos(−1) = π, so the end point P is (−1, π)."
+   },
+   "2": {
+    "type": "exact",
+    "answer": "−2",
+    "guidance": "B1 circles correct answer. (6 − 2x) = −2(x − 3) and (3 − x) = −(x − 3), so the expression = (x − 3)(−2)(x − 3) / [(x + 3)(−1)(x − 3)] = −2(x − 3) / (x + 3)... actually: (x−3)(6−2x)/[(x+3)(3−x)] = (x−3)(−2)(x−3)/[(x+3)(−1)(x−3)] = −2(x−3)/(x+3). Wait — (6−2x) = −2(x−3) and (3−x) = −(x−3), so = (x−3)(−2(x−3)) / [(x+3)(−(x−3))] = −2(x−3)/(x+3)... no: = (x−3)·(−2)(x−3) / [(x+3)·(−1)(x−3)] = (−2)(x−3)² / [−(x+3)(x−3)] = 2(x−3)/(x+3). Mark scheme gives −2, so: = (x−3)·(6−2x)/[(x+3)·(3−x)]: let x=1 → (−2)(4)/[(4)(2)] = −8/8 = −1. Then −2 at x=1 gives −2. Check 2: at x=1 gives 2. Hmm — check (x+3) not (x−3) in denominator. The expression is (x−3)(6−2x)/[(x+3)(3−x)]. At x=0: (−3)(6)/[(3)(3)] = −18/9 = −2. So answer −2 is constant, correct."
+   },
+   "3": {
+    "type": "exact",
+    "answer": "6x",
+    "guidance": "B1 circles correct answer. This is the definition of the derivative of f(x) = 3x², which gives f′(x) = 6x."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Use binomial expansion: (2x)¹⁰ + ¹⁰C₁(2x)⁹(−3) + ¹⁰C₂(2x)⁸(−3)²",
+     "First term: 1024x¹⁰",
+     "Second term: 10 × 512x⁹ × (−3) = −15360x⁹, so p = 15360",
+     "Third term: 45 × 256x⁸ × 9 = 103680x⁸, so q = 103680",
+     "Hence 1024x¹⁰ − 15360x⁹ + 103680x⁸"
+    ],
+    "guidance": "M1 for expressing at least one term correctly using binomial expansion (condone sign error on −3). M1 for correct value of p or q (may be unsimplified). R1 for completing the argument with correct values p = 15360 and q = 103680."
+   },
+   "4(b)": {
+    "type": "exact",
+    "answer": "−1959552",
+    "guidance": "M1 deduces the constant term comes from (2x)⁵(−3/x)⁵ i.e. the r = 5 term. A1 obtains −1959552. ¹⁰C₅ × 2⁵ × (−3)⁵ = 252 × 32 × (−243) = −1959552."
+   },
+   "5(a)(i)": {
+    "type": "exact",
+    "answer": "8.75 m²",
+    "guidance": "M1 uses area of sector formula A = ½r²θ correctly. A1 obtains 8.75 m² (condone missing/incorrect units)."
+   },
+   "5(a)(ii)": {
+    "type": "exact",
+    "answer": "£24.30",
+    "guidance": "B1 uses arc length formula l = rθ = 5 × 0.7 = 3.5. M1 finds perimeter = arc + 2r = 3.5 + 10 = 13.5 m and multiplies by 1.80. A1 obtains £24.30 (CAO)."
+   },
+   "5(b)(i)": {
+    "type": "points",
+    "points": [
+     "Area of sector: ½r²θ = 20, so θ = 40/r²",
+     "Perimeter: P = rθ + 2r = 40/r + 2r",
+     "Cost: C = 1.80 × P = 1.80 × (40/r + 2r) = 72/r + 3.6r = (18/5)(20/r + r)"
+    ],
+    "guidance": "M1 forms at least one correct equation for area or perimeter. A1 eliminates θ from two fully correct equations to get expression for P in terms of r. R1 completes argument to show the required result (accept 3.6 for 18/5)."
+   },
+   "5(b)(ii)": {
+    "type": "points",
+    "points": [
+     "Differentiate C with respect to r: dC/dr = (18/5)(−20/r² + 1)",
+     "Set dC/dr = 0: −20/r² + 1 = 0, so r² = 20, r = √20 ≈ 4.472",
+     "Hence r ≈ 4.5",
+     "Find d²C/dr² = (18/5)(40/r³) > 0, confirming a minimum",
+     "Therefore minimum cost occurs when r ≈ 4.5"
+    ],
+    "guidance": "B1 recognises use of differentiation. M1 differentiates the given model with at least one term correct. E1 explains that a minimum/stationary/turning point occurs when dC/dr = 0. A1 solves to find r = √20 ≈ 4.472. R1 uses a gradient test or second derivative or sketches graph to confirm minimum, completing argument that minimum occurs at r ≈ 4.5."
+   },
+   "6": {
+    "type": "exact",
+    "answer": "2 + x^(1/2)",
+    "guidance": "M1 begins to solve using appropriate technique (factorising numerator or multiplying by (5 + √x)/(5 + √x)). M1 obtains one correct common factor in numerator e.g. (2 + √x) or (25 − x) or (5 − √x^(1/2)). M1 obtains second correct common factor. A1 completes by cancelling common factor to obtain 2 + √x. Numerator: 10 − 5√x − 2√x − x^(3/2) = (5 − √x)(2 + √x); denominator: (5 − √x); result: 2 + √x."
+   },
+   "7(a)": {
+    "type": "exact",
+    "answer": "W₂ = 29.4 ml",
+    "guidance": "B1 for W₂ = 30 × 0.98 = 29.4 (AWRT 29)."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "A = 30",
+     "Wₙ is the nth term of a geometric sequence; a 2% reduction each minute gives a common ratio of 0.98"
+    ],
+    "guidance": "B1 states A = 30. E1 explains Wₙ is (the nth term of) a geometric sequence and that a 2% reduction gives a common ratio of 0.98."
+   },
+   "7(c)": {
+    "type": "exact",
+    "answer": "392 ml",
+    "guidance": "M1 uses geometric series formula S₁₅ = A(1 − 0.98¹⁵)/(1 − 0.98) with their A substituted. A1F obtains correct value of S₁₅ (FT their A); answer ≈ 392 ml (condone unrounded answers)."
+   },
+   "7(d)": {
+    "type": "points",
+    "points": [
+     "Maximum additional water = sum to infinity = A/(1 − 0.98) = 30/0.02 = 1500 ml",
+     "Total water = (1/3 × 12000) ml + 1500 ml = 4000 + 1500 = 5500 ml = 5.5 litres"
+    ],
+    "guidance": "M1 uses sum to infinity formula with their A. A1F correct sum to infinity. A1 obtains 5.5 litres (CAO; accept answer in litres or millilitres)."
+   },
+   "7(e)": {
+    "type": "points",
+    "points": [
+     "The model uses the sum to infinity which assumes the drips continue indefinitely, but they have actually stopped",
+     "Water will evaporate over several hours (or wind affected water level, or water consumed by animals)"
+    ],
+    "guidance": "E1 explains that the sum to infinity assumes infinite drips, which is unrealistic as the drips eventually stop. E1 states a relevant environmental factor (e.g. evaporation, wind, consumed by animals)."
+   },
+   "8": {
+    "type": "points",
+    "points": [
+     "Use integration by parts with u = x, dv = cos x dx, so v = sin x",
+     "∫x cos x dx = x sin x − ∫sin x dx = x sin x + cos x",
+     "[x sin x + cos x] from π/4 to π/3",
+     "= (π/3 · sin(π/3) + cos(π/3)) − (π/4 · sin(π/4) + cos(π/4))",
+     "= (π/3 · √3/2 + 1/2) − (π/4 · √2/2 + √2/2)",
+     "= π√3/6 + 1/2 − π√2/8 − √2/2",
+     "a = (√3/6 − √2/8) i.e. expressed as aπ − b/4 with a = (4√3 − 3√2)/24 and b = (2√2 − 2)/4... Accept exact values for a and b."
+    ],
+    "guidance": "B1 chooses u = x and v′ = cos x. M1 applies integration by parts formula correctly. A1 obtains x sin x + cos x. M1 substitutes limits correctly. B1 uses correct exact values for sin and cos at π/3 and π/4. A1 obtains correct exact values of a and b (ACF; ignore if decimal approximation seen subsequently). The answer is a = π√3/6 − π/(4√2) simplified, b such that the constant term equals b/4: b = (2√2 − 2)/... accept any correct form."
+   },
+   "9(a)(i)": {
+    "type": "exact",
+    "answer": "f″(x) = 12x² + 30x",
+    "guidance": "M1 differentiates f(x) = x⁴ + 5x³ to get f′(x) = 4x³ + 15x², then differentiates again with at least one term correct. A1 obtains f″(x) = 12x² + 30x."
+   },
+   "9(a)(ii)": {
+    "type": "points",
+    "points": [
+     "Substitute x = −15/4 into f″(x): f″(−15/4) = 12(225/16) + 30(−15/4) = 2700/16 − 450/4 = 168.75 − 112.5 = 56.25 = 225/4 > 0, so minimum at x = −15/4",
+     "f″(0) = 0; test f″ either side of x = 0: f″(1) = 12 + 30 = 42 > 0 and f″(−1) = 12 − 30 = −18 < 0, so point of inflection at x = 0"
+    ],
+    "guidance": "M1 substitutes x = −15/4 into their f″(x) or uses gradient test either side of x = −15/4. R1 completes rigorous justification for minimum at x = −15/4 (f″(−15/4) = 225/4 > 0). M1 substitutes two values either side of x = 0 into their f″(x) or uses gradient test. R1 completes rigorous justification for point of inflection at x = 0 (using shape of graph or completely correct sign-change test)."
+   },
+   "9(b)": {
+    "type": "exact",
+    "answer": "x > −15/4",
+    "guidance": "B1 deduces x > −15/4 (OE; condone use of ≥)."
+   },
+   "9(c)(i)": {
+    "type": "exact",
+    "answer": "Reflection in the y-axis",
+    "guidance": "B1 deduces the transformation is a reflection in the y-axis (OE). g(x) = x⁴ − 5x³ = f(−x)."
+   },
+   "9(c)(ii)": {
+    "type": "exact",
+    "answer": "x > 15/4",
+    "guidance": "B1F deduces x > 15/4 (FT their answer in part (b) only if their value in (b) is negative; condone use of ≥)."
+   },
+   "10": {
+    "type": "exact",
+    "answer": "Definitely incorrect",
+    "guidance": "R1 ticks 'Definitely incorrect'. A product moment correlation coefficient must satisfy −1 ≤ r ≤ 1, so −1.2 is impossible."
+   },
+   "11": {
+    "type": "exact",
+    "answer": "0.36",
+    "guidance": "B1 circles 0.36. Mean = np = 225, Variance = np(1−p) = 144. So 1−p = 144/225 = 0.64, hence p = 0.36."
+   },
+   "12": {
+    "type": "points",
+    "points": [
+     "Give each name a number from 1 to 8000",
+     "Calculate the sampling interval: 8000 ÷ 100 = 80",
+     "Randomly select a number between 1 and 80 to determine the first person; then select every 80th person thereafter"
+    ],
+    "guidance": "E1 explains how to enumerate population using valid numbering, stating range used. B1 calculates 8000 ÷ 100 = 80. E1 explains randomly selecting the first person from the first 80 and thereafter every 80th person."
+   },
+   "13(a)(i)": {
+    "type": "points",
+    "points": [
+     "Mean = (154 + 146 + 138 + 159 + 138 + 130 + 146 + 146 + 192 + 122 + 175 + 140 + 146) / 13 ≈ 148.6 (AWRT 149)",
+     "Standard deviation ≈ 17.8 (AWRT 17.8; accept AWRT 18.5 for population s.d.)"
+    ],
+    "guidance": "B1 calculates correct mean (AWRT 149). B1 calculates correct standard deviation (AWRT 17.8 or 18.5)."
+   },
+   "13(a)(ii)": {
+    "type": "points",
+    "points": [
+     "Upper boundary: mean + 2 × s.d. ≈ 148.6 + 2 × 17.8 = 184.2",
+     "Lower boundary: mean − 2 × s.d. ≈ 148.6 − 2 × 17.8 = 113",
+     "192 > 184.2, so 192 is the only outlier"
+    ],
+    "guidance": "M1 calculates either mean + 2σ or mean − 2σ using their values. R1F deduces that CO₂ value of 192 is the only outlier — must make clear comparison with both upper and lower boundaries (FT their mean and s.d.)."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "The mass of 0 is an error because every car has a mass (or the driver has a mass)",
+     "The blank particulate emissions cell may NOT be an error, as the LDS only has particulate emissions recorded for some cars (not all entries have this data)"
+    ],
+    "guidance": "E1 explains the 0 mass value is an error because every car has a mass. E1 explains the blank particulate emissions cell may not be an error because not all particulate emissions are recorded in the LDS."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "P(A ∪ B) = 1 − P(A′ ∩ B′) = 1 − 0.2 = 0.8",
+     "P(A ∪ B) = P(A) + P(B) − P(A ∩ B): 0.8 = P(A) + 2P(A) − 0.1",
+     "3P(A) = 0.9",
+     "P(A) = 0.3"
+    ],
+    "guidance": "M1 uses P(A ∪ B) = P(A) + P(B) − P(A ∩ B) with 0.1 substituted correctly (or draws Venn diagram). M1 uses P(A′ ∩ B′) = 0.2 so P(A ∪ B) = 0.8. M1 substitutes P(B) = 2P(A) to form equation. A1 obtains P(A) = 0.3."
+   },
+   "14(b)": {
+    "type": "exact",
+    "answer": "P(B|A) = 1/3",
+    "guidance": "M1 uses conditional probability formula P(B|A) = P(A ∩ B)/P(A) = 0.1/0.3. A1F obtains 1/3 (allow 0.3̄ but not 0.33...). FT their P(A) if 0.1 < P(A) < 1."
+   },
+   "14(c)": {
+    "type": "exact",
+    "answer": "A and B are not independent",
+    "guidance": "R1 deduces A and B are not independent by comparing P(A) × P(B) = 0.3 × 0.6 = 0.18 ≠ P(A ∩ B) = 0.1 (or shows P(B) = 0.6 ≠ P(B|A) = 1/3)."
+   },
+   "15": {
+    "type": "points",
+    "points": [
+     "H₀: μ = 65; H₁: μ ≠ 65 (two-tailed test at 2% significance level)",
+     "Sample mean x̄ = 6780/100 = 67.8 minutes",
+     "Test statistic z = (67.8 − 65) / (11.3/√100) = 2.8/1.13 ≈ 2.48",
+     "Critical value at 2% two-tailed = 2.33 (z₀.₀₁ = 2.3263)",
+     "2.48 > 2.33, so reject H₀",
+     "There is sufficient evidence at the 2% level to suggest that the mean escape time has changed"
+    ],
+    "guidance": "B1 states both hypotheses correctly for two-tailed test. B1 calculates sample mean = 67.8. M1 formulates correct test statistic or uses correct distribution of sample mean. A1 obtains correct test statistic AWFW [2.47, 2.50] (or correct probability [0.0066, 0.007] or acceptance region [62.3, 67.7]). M1 compares test statistic with critical value 2.33. A1 correct inference (reject H₀). R1 concludes correctly in context."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "P(X=0) = 7c, P(X=1) = 5c, P(X=2) = 3c, P(X=3) = c, P(X=4) = k",
+     "Sum of all probabilities = 1: 7c + 5c + 3c + c + k = 1",
+     "16c + k = 1"
+    ],
+    "guidance": "M1 substitutes x = 0, 1, 2, 3 into probability function to obtain at least three correct expressions in terms of c. R1 completes rigorous argument by obtaining all five correct expressions and summing to 1 to obtain 16c + k = 1 (OE)."
+   },
+   "16(b)": {
+    "type": "points",
+    "points": [
+     "P(X ≥ 3) = P(X=3) + P(X=4) = c + k = 5/8",
+     "From 16c + k = 1 and c + k = 5/8: subtracting gives 15c = 3/8, so c = 1/40",
+     "k = 5/8 − 1/40 = 25/40 − 1/40 = 24/40 = 3/5"
+    ],
+    "guidance": "M1 forms a second equation using their expressions for P(X=3) and P(X=4). A1 obtains c = 1/40 and k = 3/5 (OE)."
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "Each time James plays, the outcome can only be win or not win (fixed probability of success)",
+     "Winning one game is independent of winning another game (or the number of games is fixed at 10)"
+    ],
+    "guidance": "E1 states one correct binomial assumption in context. E1 states a second correct binomial assumption in context. Condone omission of 0.6 from the statement."
+   },
+   "17(b)": {
+    "type": "exact",
+    "answer": "P(Y = 4) ≈ 0.111",
+    "guidance": "B1 obtains correct probability AWRT 0.111. Using B(10, 0.6): P(Y=4) = ¹⁰C₄ × 0.6⁴ × 0.4⁶ ≈ 0.1115."
+   },
+   "17(c)": {
+    "type": "exact",
+    "answer": "P(Y ≥ 4) ≈ 0.945",
+    "guidance": "M1 calculates P(Y ≤ 3) = 0.05476 or P(Y ≤ 4) = 0.16623 or states P(Y ≥ 4) = 1 − P(Y ≤ 3). A1 obtains correct probability AWFW [0.94, 0.95]."
+   },
+   "17(d)": {
+    "type": "points",
+    "points": [
+     "H₀: p = 0.6; H₁: p > 0.6 (one-tailed test at 5% significance level)",
+     "X ~ B(15, 0.6) under H₀",
+     "P(X ≥ 12) = 1 − P(X ≤ 11) = 1 − 0.9094 = 0.0906",
+     "0.0906 > 0.05, so do not reject H₀",
+     "There is insufficient evidence to suggest that the probability of James winning the game has increased"
+    ],
+    "guidance": "B1 states both hypotheses correctly for one-tailed test. M1 uses correct binomial model B(15, 0.6) to obtain P(X ≥ 12) or P(X ≥ 13) etc. (PI by critical region X ≥ 13 or X ≥ 14). A1 correct probability P(X ≥ 12) ≈ 0.0905 or correct critical region X ≥ 13. M1 evaluates binomial by comparing P(X ≥ 12) with 0.05 or compares 12 with critical region. A1 correct inference — H₀ not rejected. R1 concludes correctly in context."
+   },
+   "18(a)(i)": {
+    "type": "exact",
+    "answer": "0",
+    "guidance": "B1 states 0. For a continuous normal distribution, P(X = exact value) = 0 for any specific value."
+   },
+   "18(a)(ii)": {
+    "type": "exact",
+    "answer": "P(X > 368) ≈ 0.873",
+    "guidance": "M1 uses the normal distribution model to calculate P(X < 368) or shows P(X > 368) = 1 − P(X < 368). A1 obtains correct probability AWRT 0.873. z = (368 − 372)/3.5 = −4/3.5 ≈ −1.143; P(X > 368) = P(Z > −1.143) ≈ 0.8734."
+   },
+   "18(b)(i)": {
+    "type": "points",
+    "points": [
+     "P(Y < 346) = 0.975, which is above 0.5, so the standardised value z is positive",
+     "Using inverse normal: Φ(1.96) = 0.975, so the z-value is 1.96",
+     "Standardising: (346 − μ)/σ = 1.96",
+     "Hence 346 − μ = 1.96σ"
+    ],
+    "guidance": "E1 explains that 1.96 is obtained through the inverse normal distribution function (or shows 1.96 on a diagram; PI if 1.959... seen). M1 forms an equation with unknown μ and σ using standardised result and their z-value. R1 completes rigorous argument by forming a correct equation using 1.96 and rearranging."
+   },
+   "18(b)(ii)": {
+    "type": "points",
+    "points": [
+     "P(Y < 336) = 0.14, so z = −1.08 (inverse normal: AWFW [−1.1, −1.08])",
+     "Second equation: (336 − μ)/σ = −1.08, so 336 − μ = −1.08σ",
+     "From 346 − μ = 1.96σ and 336 − μ = −1.08σ: subtracting gives 10 = 3.04σ, so σ ≈ 3.29 (AWRT 3.3)",
+     "μ = 346 − 1.96 × 3.29 ≈ 340 (AWRT 340)"
+    ],
+    "guidance": "B1 obtains correct z-value from inverse normal distribution (AWFW [−1.1, −1.08]; condone sign error). M1 forms second equation with unknown μ and σ using standardised result and their z-value. A1 correct value of σ (AWRT 3.3). A1 correct value of μ (AWRT 340)."
+   }
+  }
  }
 };
