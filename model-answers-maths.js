@@ -2058,6 +2058,80 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-edx-9ma0-2018-p1::10(a)": "Separate variables: (1/H)dH = cos(0.25t)/40 dt.\nIntegrate both sides: ln H = (1/40) × 4sin(0.25t) + c = (1/10)sin(0.25t) + c.\nAt t = 0, H = 5: ln 5 = 0 + c ⟹ c = ln 5.\nln H − ln 5 = (1/10)sin(0.25t) ⟹ ln(H/5) = (1/10)sin(0.25t) ⟹ H = 5e^(0.1sin(0.25t)), as required.",
 
+ "math-aqa-7357-2024-p1::1": "Factorise the numerator: x² − 9 = (x − 3)(x + 3). Factorise the denominator: x² − x − 6 = (x − 3)(x + 2). Cancel the common factor (x − 3): result is (x + 3)/(x + 2).",
+
+ "math-aqa-7357-2024-p1::2": "Rewrite 4/x³ = 4x⁻³. Integrate term by term:\n∫(6x² − 4x⁻³ + 5) dx = 2x³ − (4x⁻²)/(−2) + 5x + c = 2x³ + 2x⁻² + 5x + c.\nIn fraction form: 2x³ + 2/x² + 5x + c.",
+
+ "math-aqa-7357-2024-p1::3(a)": "Factor out 2: 2(x² − 4x) + 3. Complete the square inside the bracket: x² − 4x = (x − 2)² − 4. So the expression becomes 2((x − 2)² − 4) + 3 = 2(x − 2)² − 8 + 3 = 2(x − 2)² − 5.\nHence a = 2, b = −2, c = −5.",
+
+ "math-aqa-7357-2024-p1::3(b)": "From part (a), y = 2(x − 2)² − 5. Since (x − 2)² ≥ 0, the minimum occurs when (x − 2)² = 0, i.e. x = 2. The minimum value is −5.",
+
+ "math-aqa-7357-2024-p1::4(a)": "Use the identity sin²θ = 1 − cos²θ:\n3(1 − cos²θ) + 7 cos θ − 5 = 0\n3 − 3cos²θ + 7 cos θ − 5 = 0\n−3cos²θ + 7 cos θ − 2 = 0.\nMultiply through by −1: 3cos²θ − 7 cos θ + 2 = 0, as required.",
+
+ "math-aqa-7357-2024-p1::4(b)": "Factorise 3cos²θ − 7 cos θ + 2 = 0:\n(3 cos θ − 1)(cos θ − 2) = 0.\nSo cos θ = 1/3 or cos θ = 2. Since |cos θ| ≤ 1, reject cos θ = 2.\ncos θ = 1/3: θ = arccos(1/3) ≈ 70.5°, and in the range [0°, 360°] the second solution is 360° − 70.5° = 289.5°.\nAnswer: θ = 70.5° and θ = 289.5°.",
+
+ "math-aqa-7357-2024-p1::5(a)": "y = (2x − 1)⁴. By the chain rule: dy/dx = 4(2x − 1)³ × 2 = 8(2x − 1)³.",
+
+ "math-aqa-7357-2024-p1::5(b)": "At x = 1: y = (2(1) − 1)⁴ = 1⁴ = 1. So the point is (1, 1).\nGradient at x = 1: dy/dx = 8(2(1) − 1)³ = 8(1)³ = 8.\nTangent: y − 1 = 8(x − 1) → y = 8x − 8 + 1 = 8x − 7.",
+
+ "math-aqa-7357-2024-p1::6(a)": "log₃(9p²/√q) = log₃ 9 + log₃ p² − log₃ q^(1/2)\n= 2 + 2 log₃ p − ½ log₃ q\n= 2 + 2a − b/2.",
+
+ "math-aqa-7357-2024-p1::6(b)": "Use log addition law: log₂((x + 5)(x − 2)) = 3.\nSo (x + 5)(x − 2) = 2³ = 8.\nExpand: x² + 3x − 10 = 8 → x² + 3x − 18 = 0.\nFactorise: (x + 6)(x − 3) = 0, giving x = 3 or x = −6.\nReject x = −6 (since x − 2 = −8 < 0 is not in the domain of log).\nAnswer: x = 3.",
+
+ "math-aqa-7357-2024-p1::7(a)": "The sum formula is S₂₀ = (20/2)(2a + 19d) = 10(2a + 19d).\nSetting this equal to 530: 10(2a + 19d) = 530 → 2a + 19d = 53 → 20a + 190d = 530, as required.",
+
+ "math-aqa-7357-2024-p1::7(b)": "The 15th term is U₁₅ = a + 14d = 45 … (1).\nFrom part (a): 2a + 19d = 53 … (2).\nFrom (1): a = 45 − 14d. Substitute into (2): 2(45 − 14d) + 19d = 53 → 90 − 28d + 19d = 53 → −9d = −37 → d = 37/9.\nThen a = 45 − 14(37/9) = 45 − 518/9 = (405 − 518)/9 = −113/9.\nSo a = −113/9 and d = 37/9.",
+
+ "math-aqa-7357-2024-p1::7(c)": "The nth term is Uₙ = a + (n − 1)d = −113/9 + (n − 1)(37/9) = (−113 + 37(n − 1))/9 = (37n − 150)/9.\nFor the first negative term: 37n − 150 < 0 → n < 150/37 ≈ 4.054.\nSo the first negative term is U₄ = (37(4) − 150)/9 = (148 − 150)/9 = −2/9.\nThe value of the first negative term is −2/9.",
+
+ "math-aqa-7357-2024-p1::8(a)": "Set 6/x = 7 − x: multiply both sides by x (x ≠ 0): 6 = 7x − x² → x² − 7x + 6 = 0 → (x − 1)(x − 6) = 0.\nSo x = 1 or x = 6.\nAt x = 1: y = 6. At x = 6: y = 1.\nA = (1, 6) and B = (6, 1).",
+
+ "math-aqa-7357-2024-p1::8(b)": "Area = ∫₁⁶ (line − curve) dx = ∫₁⁶ (7 − x − 6/x) dx.\nIntegrate: [7x − x²/2 − 6 ln x]₁⁶.\nAt x = 6: 42 − 18 − 6 ln 6 = 24 − 6 ln 6.\nAt x = 1: 7 − 1/2 − 6 ln 1 = 6.5 − 0 = 13/2.\nArea = (24 − 6 ln 6) − 13/2 = 24 − 13/2 − 6 ln 6 = 35/2 − 6 ln 6.",
+
+ "math-aqa-7357-2024-p1::9(a)": "y = |3x − 2| is a V-shape. The vertex is where 3x − 2 = 0, i.e. x = 2/3, so the vertex is (2/3, 0). The y-intercept is at x = 0: y = |−2| = 2, giving (0, 2). The left arm has gradient −3 and the right arm has gradient +3. Mark (2/3, 0) on the x-axis and (0, 2) on the y-axis.",
+
+ "math-aqa-7357-2024-p1::9(b)": "Case 1 (3x − 2 ≥ 0, i.e. x ≥ 2/3): 3x − 2 = x + 4 → 2x = 6 → x = 3. Check: 3 ≥ 2/3 ✓.\nCase 2 (3x − 2 < 0, i.e. x < 2/3): −(3x − 2) = x + 4 → 2 − 3x = x + 4 → −4x = 2 → x = −1/2. Check: −1/2 < 2/3 ✓.\nSolutions: x = 3 or x = −1/2.",
+
+ "math-aqa-7357-2024-p1::10(a)": "S∞ = a/(1 − r) = 5/(1 − r) = 20.\nSolve: 1 − r = 5/20 = 1/4, so r = 3/4.",
+
+ "math-aqa-7357-2024-p1::10(b)": "S₈ = a(1 − r⁸)/(1 − r) = 5(1 − (3/4)⁸)/(1/4) = 20(1 − (3/4)⁸).\n(3/4)⁸ = 6561/65536 ≈ 0.10011.\nS₈ ≈ 20(0.89989) ≈ 17.998 ≈ 18.0 (3 s.f.).",
+
+ "math-aqa-7357-2024-p1::10(c)": "Sₙ > 19.9: 20(1 − (3/4)ⁿ) > 19.9 → 1 − (3/4)ⁿ > 0.995 → (3/4)ⁿ < 0.005.\nTake logarithms: n ln(3/4) < ln(0.005).\nSince ln(3/4) < 0, divide and flip inequality: n > ln(0.005)/ln(3/4) = (−5.2983)/(−0.2877) ≈ 18.42.\nSmallest integer n = 19.",
+
+ "math-aqa-7357-2024-p1::11(a)": "Differentiate: dy/dx = 3x² − 6x − 9 = 3(x² − 2x − 3) = 3(x − 3)(x + 1).\nSet dy/dx = 0: x = 3 or x = −1.\nAt x = 3: y = 27 − 27 − 27 + 5 = −22. At x = −1: y = −1 − 3 + 9 + 5 = 10.\nStationary points: (3, −22) and (−1, 10).",
+
+ "math-aqa-7357-2024-p1::11(b)": "Second derivative: d²y/dx² = 6x − 6.\nAt x = 3: d²y/dx² = 12 > 0, so (3, −22) is a local minimum.\nAt x = −1: d²y/dx² = −12 < 0, so (−1, 10) is a local maximum.",
+
+ "math-aqa-7357-2024-p1::11(c)": "Sketch a cubic with positive leading coefficient (rises to +∞ on the right, falls to −∞ on the left). Mark: y-intercept (0, 5), local maximum (−1, 10) and local minimum (3, −22). The curve crosses the x-axis three times (once near x ≈ −2.6, once between x = 0 and x = 1, and once near x ≈ 4.7).",
+
+ "math-aqa-7357-2024-p1::12(a)": "Expand each bracket:\n(cos x + sin x)² = cos²x + 2 sin x cos x + sin²x = 1 + sin 2x.\n(cos x − sin x)² = cos²x − 2 sin x cos x + sin²x = 1 − sin 2x.\nAdding: (1 + sin 2x) + (1 − sin 2x) = 2. Hence the identity holds.",
+
+ "math-aqa-7357-2024-p1::12(b)": "Given sin θ = 3/5 and θ is obtuse (90° < θ < 180°).\n(i) cos²θ = 1 − sin²θ = 1 − 9/25 = 16/25. Since θ is obtuse, cos θ < 0, so cos θ = −4/5.\n(ii) tan θ = sin θ / cos θ = (3/5)/(−4/5) = −3/4.",
+
+ "math-aqa-7357-2024-p1::13(a)": "Using the sine rule: BC/sin(∠BAC) = AB/sin(∠BCA).\n11/sin 70° = 8/sin(∠BCA) → sin(∠BCA) = 8 sin 70°/11 = 8(0.9397)/11 ≈ 0.6834.\n∠BCA = 43.1° or 180° − 43.1° = 136.9°.\nGiving ∠ABC = 180° − 70° − 43.1° = 66.9° or ∠ABC = 180° − 70° − 136.9° = −26.9° (impossible).\nSo there is one valid triangle with ∠ABC = 66.9°. If the question intends the two possible values of ∠BCA: 43.1° and 136.9°.",
+
+ "math-aqa-7357-2024-p1::13(b)": "For the case with ∠BCA = 136.9°, the angle ∠ABC = 180° − 70° − 136.9° is negative, which is impossible as shown. The obtuse angle in the ambiguous case is ∠BCA = 136.9°.\nUsing the sine rule to find AC: AC/sin(∠ABC) = BC/sin(∠BAC).\nWith ∠ABC ≈ 66.9°: AC = 11 sin(66.9°)/sin(70°) = 11(0.9191)/0.9397 ≈ 10.76 ≈ 10.8 cm.\nIf the obtuse case gives ∠BCA = 136.9° and a different ∠ABC, find AC accordingly.",
+
+ "math-aqa-7357-2024-p1::14(a)": "x = t² + 1, y = 3t − t³.\ndx/dt = 2t, dy/dt = 3 − 3t².\nBy the chain rule: dy/dx = (dy/dt)/(dx/dt) = (3 − 3t²)/(2t).",
+
+ "math-aqa-7357-2024-p1::14(b)": "Set dy/dx = 0: (3 − 3t²)/(2t) = 0 → 3 − 3t² = 0 → t² = 1 → t = 1 or t = −1.\nAt t = 1: x = 1 + 1 = 2, y = 3 − 1 = 2. Point (2, 2).\nAt t = −1: x = 1 + 1 = 2, y = −3 + 1 = −2. Point (2, −2).\nStationary points: (2, 2) and (2, −2).",
+
+ "math-aqa-7357-2024-p1::14(c)": "From x = t² + 1: t² = x − 1.\ny = t(3 − t²) = t(3 − (x − 1)) = t(4 − x).\nSquare: y² = t²(4 − x)² = (x − 1)(4 − x)².\nCartesian equation: y² = (x − 1)(4 − x)².",
+
+ "math-aqa-7357-2024-p1::15(a)": "The function f(x) = 2x² + 8x − 3 is a parabola with vertex at x = −b/(2a) = −8/4 = −2. For f to have an inverse it must be one-to-one, so we restrict to one side of the vertex. The minimum value of k is k = −2.",
+
+ "math-aqa-7357-2024-p1::15(b)": "With k = −2, f(x) = 2x² + 8x − 3 for x ≥ −2. Complete the square: f(x) = 2(x + 2)² − 11.\nLet y = 2(x + 2)² − 11. Rearrange: (x + 2)² = (y + 11)/2. Since x ≥ −2, take the positive square root: x + 2 = √((y + 11)/2), so x = −2 + √((y + 11)/2).\nSwap x and y: f⁻¹(x) = −2 + √((x + 11)/2).\nDomain: x ≥ −11 (the range of f when x ≥ −2 is y ≥ −11).",
+
+ "math-aqa-7357-2024-p1::16(a)": "Binomial expansion of (1 + 3x)¹⁰:\nTerm 1: 1.\nTerm 2: C(10,1)(3x)¹ = 10 × 3x = 30x.\nTerm 3: C(10,2)(3x)² = 45 × 9x² = 405x².\nTerm 4: C(10,3)(3x)³ = 120 × 27x³ = 3240x³.\nFirst four terms: 1 + 30x + 405x² + 3240x³.",
+
+ "math-aqa-7357-2024-p1::16(b)": "1.03¹⁰ = (1 + 0.03)¹⁰ = (1 + 3(0.01))¹⁰. Substitute x = 0.01 into the expansion:\n≈ 1 + 30(0.01) + 405(0.01)² + 3240(0.01)³\n= 1 + 0.3 + 405(0.0001) + 3240(0.000001)\n= 1 + 0.3 + 0.0405 + 0.00324\n= 1.34374.\n1.03¹⁰ ≈ 1.34374.",
+
+ "math-aqa-7357-2024-p1::17(a)": "y = x²eˣ. Using the product rule with u = x² and v = eˣ:\ndy/dx = 2xeˣ + x²eˣ = eˣ(2x + x²) = xeˣ(x + 2).",
+
+ "math-aqa-7357-2024-p1::17(b)": "Set dy/dx = 0: xeˣ(x + 2) = 0. Since eˣ > 0 for all real x, we can divide by eˣ to get x(x + 2) = 0, as required.",
+
+ "math-aqa-7357-2024-p1::17(c)": "From x(x + 2) = 0: x = 0 or x = −2.\nAt x = 0: y = 0²·e⁰ = 0. Point (0, 0).\nAt x = −2: y = (−2)²e⁻² = 4e⁻² = 4/e².\nNature — use d²y/dx²:\nd²y/dx² = d/dx[eˣ(x² + 2x)] = eˣ(x² + 2x) + eˣ(2x + 2) = eˣ(x² + 4x + 2).\nAt x = 0: d²y/dx² = e⁰(0 + 0 + 2) = 2 > 0 → local minimum at (0, 0).\nAt x = −2: d²y/dx² = e⁻²(4 − 8 + 2) = −2e⁻² < 0 → local maximum at (−2, 4/e²).",
+
  "math-edx-9ma0-2018-p1::10(b)": "H is maximum when e^(0.1sin(0.25t)) is maximum, i.e. when sin(0.25t) = 1.\nH_max = 5e^(0.1) ≈ 5.53 m.",
 
  "math-edx-9ma0-2018-p1::10(c)": "Maximum occurs when sin(0.25t) = 1 ⟹ 0.25t = π/2 + 2nπ.\nFirst maximum: t = 2π ≈ 6.28 s.\nSecond maximum: 0.25T = π/2 + 2π = 5π/2 ⟹ T = 10π ≈ 31.4 s.",
