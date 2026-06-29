@@ -124,6 +124,9 @@
 
     .tab-panel { display: none; }
     .tab-panel.active { display: block; }
+    details.pp-subject > summary .pp-chev { transition: transform 0.18s; }
+    details.pp-subject[open] > summary .pp-chev { transform: rotate(180deg); }
+    details.pp-subject > summary::-webkit-details-marker { display: none; }
 
     /* ── FLASHCARDS BREAKDOWN ── */
     .fc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
@@ -2441,13 +2444,14 @@ function renderPastPapersChecklist(subjects) {
       const pct = totalPapers ? Math.round(donePapers / totalPapers * 100) : 0;
       const progressColor = pct === 100 ? 'var(--green)' : pct > 0 ? 'var(--amber)' : 'var(--border)';
 
-      html += `<div style="background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:16px;overflow:hidden;">`;
-      // Subject + board header
-      html += `<div style="padding:14px 18px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+      html += `<details class="pp-subject" style="background:var(--surface);border:1px solid var(--border);border-radius:14px;margin-bottom:16px;overflow:hidden;" open>`;
+      // Subject + board header (acts as the toggle)
+      html += `<summary style="padding:14px 18px 12px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-wrap:wrap;cursor:pointer;list-style:none;user-select:none;" onmouseover="this.style.background='var(--surface2)'" onmouseout="this.style.background=''">
         <span style="font-family:var(--font-display);font-size:16px;">${subj.icon || '📄'} ${subj.name}</span>
         <span style="font-size:11px;font-weight:600;color:var(--accent-dark);background:var(--accent-dim);padding:2px 10px;border-radius:999px;">${board.board}</span>
         <span style="margin-left:auto;font-size:13px;color:var(--muted);">${donePapers}/${totalPapers} done</span>
-      </div>`;
+        <span style="width:22px;height:22px;display:flex;align-items:center;justify-content:center;border-radius:6px;background:var(--surface2);border:1px solid var(--border);color:var(--muted);font-size:11px;flex-shrink:0;transition:transform 0.18s;" class="pp-chev">▾</span>
+      </summary>`;
       // Progress bar
       html += `<div style="height:4px;background:var(--surface3);"><div style="height:4px;width:${pct}%;background:${progressColor};transition:width 0.3s;"></div></div>`;
 
@@ -2488,7 +2492,7 @@ function renderPastPapersChecklist(subjects) {
         });
         html += `</div>`;
       });
-      html += `</div></div>`;
+      html += `</div></details>`;
     });
   });
 
