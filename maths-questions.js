@@ -16598,5 +16598,492 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1: expand the integrand. M1: use cos²2t = ½(1 + cos4t). M1: integrate and evaluate. A1: 3π/2."
    }
   }
+ },
+ "math-edx-9ma0-2023-p31": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "A researcher is studying the relationship between daily mean wind speed (knots) and daily mean temperature (°C) for Hurn in August 2015, using the large data set.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "State the meaning of the term 'population' in the context of statistical sampling.",
+      "marks": 1
+     },
+     {
+      "code": "1(b)",
+      "prompt": "The researcher takes a random sample of 8 days from August 2015 at Hurn and records the daily mean wind speed, w knots, and daily mean temperature, t °C, for each day.\nThe following statistics are calculated from the sample:\nΣw = 68    Σt = 148    Σw² = 736    Σt² = 2862    Σwt = 1200    n = 8\n\nCalculate the product moment correlation coefficient for these data.",
+      "marks": 2
+     },
+     {
+      "code": "1(c)",
+      "prompt": "Stating your hypotheses clearly, test at the 5% level of significance whether there is evidence of a negative correlation between daily mean wind speed and daily mean temperature for Hurn in August 2015.",
+      "marks": 3
+     },
+     {
+      "code": "1(d)",
+      "prompt": "The researcher claims that the results of this test can be applied to all locations and all months in the large data set. Give one reason why this claim may not be valid.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "The Venn diagram shows three events A, B and C where\nP(A) = 0.4,  P(B) = 0.3,  P(A ∩ B) = 0.1,  P(C) = 0.2,  P(A ∩ C) = 0.08,  P(B ∩ C) = 0.06,  P(A ∩ B ∩ C) = 0.02",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Show that P(A ∪ B ∪ C) = 0.76",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find P(A | B ∪ C).",
+      "marks": 2
+     },
+     {
+      "code": "2(c)",
+      "prompt": "Determine whether A and C are independent. Justify your answer.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A discrete random variable X has the probability distribution shown in the table below.\n\nx:      1      2      3      4\nP(X=x): 0.1   0.2   0.4   0.3",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find E(X) and Var(X).",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find P(X > E(X)).",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "The number of customers arriving at a post office during a randomly chosen 5-minute interval follows a Poisson distribution with mean 3.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the probability that exactly 2 customers arrive in a randomly chosen 5-minute interval.",
+      "marks": 1
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the probability that fewer than 4 customers arrive in a randomly chosen 5-minute interval.",
+      "marks": 2
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find the probability that more than 7 customers arrive in a randomly chosen 10-minute interval.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "A continuous random variable X has cumulative distribution function\nF(x) = 0                        x < 1\nF(x) = k(x³ − 1)               1 ⩽ x ⩽ 2\nF(x) = 1                        x > 2",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Show that k = 1/7.",
+      "marks": 1
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the probability density function f(x) of X, stating clearly the values of x for which it is defined.",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Find E(X).",
+      "marks": 2
+     },
+     {
+      "code": "5(d)",
+      "prompt": "Find the median of X.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "The masses of apples from an orchard are normally distributed with mean 180 g and standard deviation 25 g.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the probability that a randomly chosen apple has a mass greater than 200 g.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Find the probability that a randomly chosen apple has a mass between 150 g and 210 g.",
+      "marks": 1
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Apples with a mass less than d grams are classified as 'small'. Given that 10% of apples are classified as small, find the value of d to the nearest gram.",
+      "marks": 2
+     },
+     {
+      "code": "6(d)",
+      "prompt": "A box of 6 apples is selected at random. Find the probability that more than 2 of the apples have a mass greater than 200 g.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A biased six-sided die is rolled. The probability of rolling a 6 is p. The die is rolled 20 times.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "State the distribution of X, the number of 6s in 20 rolls, giving the values of any parameters.",
+      "marks": 1
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Given that p = 0.25, find P(X ⩽ 3).",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Using a 1% significance level, test whether there is evidence that p > 1/6.\nIn 20 rolls of the die, 7 sixes were observed. State your hypotheses clearly and show all your working.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "A researcher records the height, h cm, and the foot length, f cm, for a random sample of 10 adults. The data are coded using x = h − 170 and y = f − 25.\nThe following summary statistics are calculated:\nΣx = 12    Σy = −3    Σx² = 542    Σy² = 47.6    Σxy = 137.8",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find Sₓₓ, Sᵧᵧ and Sₓᵧ.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find the equation of the regression line of y on x in the form y = a + bx.",
+      "marks": 2
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Hence write down the equation of the regression line of f on h.",
+      "marks": 1
+     },
+     {
+      "code": "8(d)",
+      "prompt": "Interpret the gradient of the regression line of f on h in context.",
+      "marks": 1
+     },
+     {
+      "code": "8(e)",
+      "prompt": "Predict the foot length of an adult with height 176 cm. Comment on the reliability of this prediction.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "The weights of suitcases checked in at an airport are normally distributed with mean μ kg and standard deviation σ kg.\nIt is known that 30% of suitcases weigh more than 22 kg and 15% weigh less than 14 kg.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Write down two simultaneous equations involving μ and σ.",
+      "marks": 1
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Hence find the values of μ and σ, giving your answers to one decimal place.",
+      "marks": 2
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Find the probability that a randomly selected suitcase weighs between 16 kg and 24 kg.",
+      "marks": 1
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "The population is the complete set of all daily observations (all days in the large data set / all days at all locations)"
+    ],
+    "guidance": "B1: a correct contextual definition — the collection of all items/individuals of interest; must be contextualised (not just 'all the data')."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "Sᵥᵥ = 736 − 68²/8 = 736 − 578 = 158",
+     "Sₜₜ = 2862 − 148²/8 = 2862 − 2738 = 124",
+     "Sᵥₜ = 1200 − (68 × 148)/8 = 1200 − 1258 = −58",
+     "r = −58/√(158 × 124) = −58/√19592 = −58/139.97… = −0.4144… ≈ −0.414"
+    ],
+    "guidance": "M1: correct formula for at least one of Sᵥᵥ, Sₜₜ, Sᵥₜ. M1: correct substitution into r = Sᵥₜ/√(SᵥᵥSₜₜ). A1: r = awrt −0.414."
+   },
+   "1(c)": {
+    "type": "points",
+    "points": [
+     "H₀: ρ = 0,  H₁: ρ < 0  (one-tailed test)",
+     "Critical value at 5% significance level, n = 8: −0.5494",
+     "Since r = −0.414 > −0.5494 (not in critical region), do not reject H₀",
+     "There is insufficient evidence of a negative correlation between wind speed and temperature"
+    ],
+    "guidance": "B1: both hypotheses stated in terms of ρ with correct direction. M1: compare r with the correct critical value for n = 8, one-tailed 5%. A1: correct critical value −0.5494. A1: correct conclusion in context."
+   },
+   "1(d)": {
+    "type": "points",
+    "points": [
+     "The relationship between wind speed and temperature may differ by location/month",
+     "The sample was only taken from Hurn in August — other locations / seasons may behave differently"
+    ],
+    "guidance": "B1: any valid reason — e.g. different locations have different climates; August is summer so seasonal variation not accounted for; or the sample may not be representative of other months/locations."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "P(A ∪ B ∪ C) = P(A) + P(B) + P(C) − P(A ∩ B) − P(A ∩ C) − P(B ∩ C) + P(A ∩ B ∩ C)",
+     "= 0.4 + 0.3 + 0.2 − 0.1 − 0.08 − 0.06 + 0.02",
+     "= 0.76 ✓"
+    ],
+    "guidance": "M1: use inclusion-exclusion formula with all 7 terms. A1*: reach 0.76 with all values correct (show calculation)."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "P(B ∪ C) = P(B) + P(C) − P(B ∩ C) = 0.3 + 0.2 − 0.06 = 0.44",
+     "P(A ∩ (B ∪ C)) = P(A ∩ B) + P(A ∩ C) − P(A ∩ B ∩ C) = 0.1 + 0.08 − 0.02 = 0.16",
+     "P(A | B ∪ C) = 0.16/0.44 = 4/11 ≈ 0.364"
+    ],
+    "guidance": "M1: find P(B ∪ C) correctly. M1: find P(A ∩ (B ∪ C)) correctly using inclusion-exclusion on the intersections. A1: 4/11 or awrt 0.364."
+   },
+   "2(c)": {
+    "type": "points",
+    "points": [
+     "P(A) × P(C) = 0.4 × 0.2 = 0.08",
+     "P(A ∩ C) = 0.08",
+     "Since P(A ∩ C) = P(A) × P(C), events A and C are independent"
+    ],
+    "guidance": "M1: calculate P(A) × P(C). A1: correct conclusion that they are independent since 0.08 = 0.08."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "E(X) = 1(0.1) + 2(0.2) + 3(0.4) + 4(0.3) = 0.1 + 0.4 + 1.2 + 1.2 = 2.9",
+     "E(X²) = 1(0.1) + 4(0.2) + 9(0.4) + 16(0.3) = 0.1 + 0.8 + 3.6 + 4.8 = 9.3",
+     "Var(X) = E(X²) − [E(X)]² = 9.3 − 2.9² = 9.3 − 8.41 = 0.89"
+    ],
+    "guidance": "M1: correct method for E(X) — multiply each value by probability and sum. A1: E(X) = 2.9. M1: correct method for E(X²). A1: Var(X) = 0.89."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "E(X) = 2.9, so P(X > 2.9) = P(X ⩾ 3) = P(X = 3) + P(X = 4) = 0.4 + 0.3 = 0.7"
+    ],
+    "guidance": "B1ft: 0.7 (follow through their E(X); accept correct answer based on their E(X))."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "X ~ Po(3)",
+     "P(X = 2) = e⁻³ × 3²/2! = 9e⁻³/2 = 0.2240 (awrt 0.224)"
+    ],
+    "guidance": "M1: use correct Poisson formula with λ = 3, x = 2. A1: awrt 0.224."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "P(X < 4) = P(X ⩽ 3) = P(X=0) + P(X=1) + P(X=2) + P(X=3)",
+     "= e⁻³(1 + 3 + 4.5 + 4.5) = 13e⁻³ = 0.6472 (awrt 0.647)"
+    ],
+    "guidance": "M1: attempt P(X ⩽ 3) = sum of P(X = 0) to P(X = 3) with λ = 3. A1: awrt 0.647."
+   },
+   "4(c)": {
+    "type": "exact",
+    "points": [
+     "In 10 minutes, Y ~ Po(6)",
+     "P(Y > 7) = 1 − P(Y ⩽ 7)",
+     "P(Y ⩽ 7) = e⁻⁶(1 + 6 + 18 + 36 + 54 + 64.8 + 64.8 + 55.54…) = 0.7440",
+     "P(Y > 7) = 1 − 0.7440 = 0.2560 (awrt 0.256)"
+    ],
+    "guidance": "B1: state Y ~ Po(6). M1: calculate 1 − P(Y ⩽ 7) with λ = 6. A1: awrt 0.256."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "F(2) = 1: k(2³ − 1) = 1 ⇒ 7k = 1 ⇒ k = 1/7 ✓"
+    ],
+    "guidance": "B1*: substitute x = 2 into F(x) and set equal to 1 to conclude k = 1/7."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "f(x) = F'(x) = (3x²)/7,    1 ⩽ x ⩽ 2",
+     "f(x) = 0 otherwise"
+    ],
+    "guidance": "M1: differentiate F(x) = (x³ − 1)/7. A1: f(x) = 3x²/7 for 1 ⩽ x ⩽ 2 with f(x) = 0 elsewhere stated (or clear from context)."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "E(X) = ∫₁² x · (3x²/7) dx = (3/7)∫₁² x³ dx",
+     "= (3/7)[x⁴/4]₁² = (3/7)(16/4 − 1/4) = (3/7)(15/4) = 45/28 ≈ 1.607"
+    ],
+    "guidance": "M1: set up ∫x·f(x) dx with their f(x). M1: correct integration. A1: 45/28 or awrt 1.61."
+   },
+   "5(d)": {
+    "type": "exact",
+    "points": [
+     "F(m) = 0.5: (m³ − 1)/7 = 0.5 ⇒ m³ − 1 = 3.5 ⇒ m³ = 4.5",
+     "m = 4.5^(1/3) = ∛4.5 ≈ 1.651"
+    ],
+    "guidance": "M1: set F(m) = 0.5 and solve for m. M1: correct algebraic rearrangement to m³ = 4.5. A1: m = ∛4.5 or awrt 1.65."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "X ~ N(180, 25²)",
+     "P(X > 200) = P(Z > (200 − 180)/25) = P(Z > 0.8) = 1 − Φ(0.8) = 1 − 0.7881 = 0.2119"
+    ],
+    "guidance": "M1: standardise with μ = 180, σ = 25. A1: awrt 0.212."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "P(150 < X < 210) = P((150−180)/25 < Z < (210−180)/25) = P(−1.2 < Z < 1.2)",
+     "= 2Φ(1.2) − 1 = 2(0.8849) − 1 = 0.7698 (awrt 0.770)"
+    ],
+    "guidance": "M1: standardise both limits. A1: awrt 0.770."
+   },
+   "6(c)": {
+    "type": "exact",
+    "points": [
+     "P(X < d) = 0.10 ⇒ (d − 180)/25 = −1.2816",
+     "d = 180 − 1.2816 × 25 = 180 − 32.04 = 147.96 ≈ 148 g"
+    ],
+    "guidance": "M1: use inverse Normal — P(Z < z) = 0.1 ⇒ z = −1.2816 (awrt −1.28). M1: correct equation (d − 180)/25 = their z. A1: d = 148 (nearest gram)."
+   },
+   "6(d)": {
+    "type": "exact",
+    "points": [
+     "Let p = P(X > 200) = 0.2119; Y ~ B(6, 0.2119)",
+     "P(Y > 2) = 1 − P(Y ⩽ 2) = 1 − [P(Y=0) + P(Y=1) + P(Y=2)]",
+     "P(Y=0) = (0.7881)⁶ = 0.2401",
+     "P(Y=1) = 6(0.2119)(0.7881)⁵ = 0.3856 (approx)",
+     "P(Y=2) = 15(0.2119)²(0.7881)⁴ = 0.2579 (approx)",
+     "P(Y > 2) = 1 − 0.2401 − 0.3856 − 0.2579 ≈ 0.116"
+    ],
+    "guidance": "M1: identify binomial with n = 6, p = their P(X > 200). M1: correct expression for 1 − P(Y ⩽ 2). A1: awrt 0.116 (allow follow-through from their p)."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "X ~ B(20, p)"
+    ],
+    "guidance": "B1: state X ~ B(20, p) (must identify binomial with parameters n = 20 and p)."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "X ~ B(20, 0.25)",
+     "P(X ⩽ 3) = P(X=0) + P(X=1) + P(X=2) + P(X=3)",
+     "= 0.7500²⁰ cumulative … = 0.2252 (awrt 0.225)"
+    ],
+    "guidance": "M1: attempt P(X ⩽ 3) using B(20, 0.25). A1: awrt 0.225."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "H₀: p = 1/6,  H₁: p > 1/6",
+     "Under H₀: X ~ B(20, 1/6)",
+     "P(X ⩾ 7) = 1 − P(X ⩽ 6)",
+     "P(X ⩽ 6) = 0.9538 (from tables or calculation)",
+     "P(X ⩾ 7) = 1 − 0.9538 = 0.0462",
+     "0.0462 > 0.01, so do not reject H₀",
+     "There is insufficient evidence at the 1% level to conclude that p > 1/6"
+    ],
+    "guidance": "B1: H₀: p = 1/6 and H₁: p > 1/6 in terms of p. M1: calculate P(X ⩾ 7) under B(20, 1/6). A1: P(X ⩾ 7) = awrt 0.0462. A1: correct comparison with 0.01. A1: correct conclusion in context referencing 'insufficient evidence'."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "Sₓₓ = Σx² − (Σx)²/n = 542 − 12²/10 = 542 − 14.4 = 527.6",
+     "Sᵧᵧ = Σy² − (Σy)²/n = 47.6 − (−3)²/10 = 47.6 − 0.9 = 46.7",
+     "Sₓᵧ = Σxy − (Σx)(Σy)/n = 137.8 − (12)(−3)/10 = 137.8 + 3.6 = 141.4"
+    ],
+    "guidance": "M1: correct use of at least one coding formula. A1: all three values correct: Sₓₓ = 527.6, Sᵧᵧ = 46.7, Sₓᵧ = 141.4. B1: (any two correct earns M1A0 in a generous mark; all three for full marks)."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "b = Sₓᵧ/Sₓₓ = 141.4/527.6 = 0.2680 (awrt 0.268)",
+     "x̄ = 12/10 = 1.2,  ȳ = −3/10 = −0.3",
+     "a = ȳ − bx̄ = −0.3 − 0.2680 × 1.2 = −0.3 − 0.3216 = −0.6216 (awrt −0.622)",
+     "y = −0.622 + 0.268x"
+    ],
+    "guidance": "M1: b = their Sₓᵧ/Sₓₓ. A1: b = awrt 0.268. M1: find a using a = ȳ − bx̄. A1: correct regression line (awrt coefficients)."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "Since x = h − 170 and y = f − 25:",
+     "f − 25 = −0.622 + 0.268(h − 170)",
+     "f = 25 − 0.622 + 0.268h − 45.56 = 0.268h − 21.18",
+     "f = 0.268h − 21.2 (awrt)"
+    ],
+    "guidance": "M1: substitute coding back: y + 25 and x + 170 into their regression line. A1: correct equation for f in terms of h."
+   },
+   "8(d)": {
+    "type": "points",
+    "points": [
+     "For each additional 1 cm in height, the foot length increases by approximately 0.268 cm (on average)"
+    ],
+    "guidance": "B1: correct interpretation of the gradient in context — must reference both height and foot length and give the direction and magnitude."
+   },
+   "8(e)": {
+    "type": "points",
+    "points": [
+     "f = 0.268 × 176 − 21.18 = 47.17 − 21.18 ≈ 25.99 ≈ 26.0 cm",
+     "176 cm is within the range of the sample data, so interpolation; the prediction is likely to be reliable"
+    ],
+    "guidance": "M1: substitute h = 176 into their regression line for f. A1: awrt 26.0 cm (follow through). B1: comment on reliability — 176 is within the data range so prediction is reliable (interpolation, not extrapolation)."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "P(X > 22) = 0.30 ⇒ (22 − μ)/σ = 0.5244",
+     "P(X < 14) = 0.15 ⇒ (14 − μ)/σ = −1.0364",
+     "Equations: 22 − μ = 0.5244σ   and   14 − μ = −1.0364σ"
+    ],
+    "guidance": "B1: first equation — standardise correctly using z = 0.5244 (awrt 0.524). B1: second equation — standardise correctly using z = −1.0364 (awrt −1.036)."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "Subtract equations: 22 − 14 = 0.5244σ + 1.0364σ = 1.5608σ",
+     "σ = 8/1.5608 = 5.1257… ≈ 5.1",
+     "μ = 22 − 0.5244 × 5.1 = 22 − 2.67 = 19.33 ≈ 19.3"
+    ],
+    "guidance": "M1: subtract equations to eliminate μ and solve for σ. A1: σ = awrt 5.1. A1: μ = awrt 19.3."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "P(16 < X < 24) = P((16 − 19.3)/5.1 < Z < (24 − 19.3)/5.1)",
+     "= P(−0.647 < Z < 0.922)",
+     "= Φ(0.922) − (1 − Φ(0.647))",
+     "= 0.8217 − (1 − 0.7412) = 0.8217 − 0.2588 = 0.5629 (awrt 0.563)"
+    ],
+    "guidance": "M1: standardise both limits using their μ and σ. A1: awrt 0.563 (follow through from their μ and σ)."
+   }
+  }
  }
 };
