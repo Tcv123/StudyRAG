@@ -9945,6 +9945,593 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-aqa-7357-2019-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "f(x) = arcsin x\n\nState the maximum possible domain of f\n\nTick (✓) one box.\n\n{x ∈ ℝ : −1 ≤ x ≤ 1}\n{x ∈ ℝ : −π/2 ≤ x ≤ π/2}\n{x ∈ ℝ : −π ≤ x ≤ π}\n{x ∈ ℝ : −90 ≤ x ≤ 90}",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Find the value of 100! / (98! × 3!)\n\nCircle your answer.\n\n50/147     1650     3300     161700",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "Given u₁ = 1, determine which one of the formulae below defines an increasing sequence for n ≥ 1\n\nCircle your answer.\n\nu_{n+1} = 1 + 1/u_n\n\nu_n = 2 − 0.9^(n−1)\n\nu_{n+1} = −1 + 0.5u_n\n\nu_n = 0.9^(n−1)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Sketch the region defined by the inequalities\n\ny ≤ (1 − 2x)(x + 3)  and  y − x ≤ 3\n\nClearly indicate your region by shading it in and labelling it R.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "A circle has equation x² + y² − 6x − 8y = 264. AB is a chord of the circle. The angle at the centre of the circle, subtended by AB, is 0.9 radians.",
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "Find the area of the minor segment shaded on the diagram.\n\nGive your answer to three significant figures.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "The three sides of a right-angled triangle have lengths a, b and c, where a, b, c ∈ ℤ.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "State an example where a, b and c are all even.",
+      "marks": 1
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Prove that it is not possible for all of a, b and c to be odd.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Express (4x + 3) / (x − 1)² in the form A/(x − 1) + B/(x − 1)²",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Show that\n\n∫₃⁴ (4x + 3)/(x − 1)² dx = p + ln q\n\nwhere p and q are rational numbers.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "A student is conducting an experiment in a laboratory to investigate how quickly liquids cool to room temperature. A beaker containing a hot liquid at an initial temperature of 75 °C cools so that the temperature, θ °C, of the liquid at time t minutes can be modelled by the equation θ = 5(4 + λe^(−kt)) where λ and k are constants. After 2 minutes the temperature falls to 68 °C.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the temperature of the liquid after 15 minutes.\n\nGive your answer to three significant figures.",
+      "marks": 7
+     },
+     {
+      "code": "8(b)(i)",
+      "prompt": "Find the room temperature of the laboratory, giving a reason for your answer.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)(ii)",
+      "prompt": "Find the time taken in minutes for the liquid to cool to 1 °C above the room temperature of the laboratory.",
+      "marks": 2
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Explain why the model might need to be changed if the experiment was conducted in a different place.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A curve has equation x²y² + xy⁴ = 12",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Prove that the curve does not intersect the coordinate axes.",
+      "marks": 2
+     },
+     {
+      "code": "9(b)(i)",
+      "prompt": "Show that dy/dx = −(2xy + y³) / (2x² + 4xy²)",
+      "marks": 5
+     },
+     {
+      "code": "9(b)(ii)",
+      "prompt": "Prove that the curve has no stationary points.",
+      "marks": 4
+     },
+     {
+      "code": "9(b)(iii)",
+      "prompt": "In the case when x > 0, find the equation of the tangent to the curve when y = 1",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A scatter diagram shows data points that are spread from upper-left to lower-right with a moderately close linear pattern, indicating a negative trend.",
+    "parts": [
+     {
+      "code": "10",
+      "prompt": "Which of the options below best describes the correlation shown in the diagram?\n\nTick (✓) one box.\n\nmoderate positive\nstrong positive\nmoderate negative\nstrong negative",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "Lenny is one of a team of people interviewing shoppers in a town centre. He is asked to survey 50 women between the ages of 18 and 29.\n\nIdentify the name of this type of sampling.\n\nCircle your answer.\n\nsimple random     stratified     quota     systematic",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "Amelia decides to analyse the heights of members of her school rowing club. The heights of a random sample of 10 rowers are: Jess 162, Nell 169, Liv 172, Neve 156, Ann 146, Tori 161, Maya 159, Kath 164, Darcy 157, Jen 160 (all in cm).",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Any value more than 2 standard deviations from the mean may be regarded as an outlier.\n\nVerify that Ann's height is an outlier.\n\nFully justify your answer.",
+      "marks": 4
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Amelia thinks she may have written down Ann's height incorrectly.\n\nIf Ann's height were discarded, state with a reason what, if any, difference this would make to the mean and standard deviation.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "Patrick is practising his skateboarding skills. On each day, he has 30 attempts at performing a difficult trick. Every time he attempts the trick, there is a probability of 0.2 that he will fall off his skateboard. Assume that the number of times he falls off on any given day may be modelled by a binomial distribution.",
+    "parts": [
+     {
+      "code": "13(a)(i)",
+      "prompt": "Find the mean number of times he falls off in a day.",
+      "marks": 1
+     },
+     {
+      "code": "13(a)(ii)",
+      "prompt": "Find the variance of the number of times he falls off in a day.",
+      "marks": 1
+     },
+     {
+      "code": "13(b)(i)",
+      "prompt": "Find the probability that, on a particular day, he falls off exactly 10 times.",
+      "marks": 2
+     },
+     {
+      "code": "13(b)(ii)",
+      "prompt": "Find the probability that, on a particular day, he falls off 5 or more times.",
+      "marks": 3
+     },
+     {
+      "code": "13(c)(i)",
+      "prompt": "Patrick has 30 attempts to perform the trick on each of 5 consecutive days.\n\nCalculate the probability that he will fall off his skateboard at least 5 times on each of the 5 days.",
+      "marks": 2
+     },
+     {
+      "code": "13(c)(ii)",
+      "prompt": "Explain why it may be unrealistic to use the same value of 0.2 for the probability of falling off for all 5 days.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A survey was conducted into the health of 120 teachers. The survey recorded whether or not they had suffered from a range of four health issues in the past year. Their physical exercise level was categorised as low, medium or high. 50 teachers had a low exercise level, 40 had a medium exercise level and 30 had a high exercise level. Results: Back trouble: Low 14, Medium 7, High 10. Stress: Low 38, Medium 14, High 5. Depression: Low 9, Medium 2, High 1. Headache/Migraine: Low 4, Medium 5, High 5.",
+    "parts": [
+     {
+      "code": "14(a)(i)",
+      "prompt": "Find the probability that a randomly selected teacher suffers from back trouble and has a high exercise level.",
+      "marks": 1
+     },
+     {
+      "code": "14(a)(ii)",
+      "prompt": "Find the probability that a randomly selected teacher suffers from depression.",
+      "marks": 2
+     },
+     {
+      "code": "14(a)(iii)",
+      "prompt": "Find the probability that a randomly selected teacher suffers from stress, given that they have a low exercise level.",
+      "marks": 2
+     },
+     {
+      "code": "14(b)",
+      "prompt": "For teachers in the survey with a low exercise level, explain why the events 'suffers from back trouble' and 'suffers from stress' are not mutually exclusive.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "Jamal, a farmer, claims that the larger the rainfall, the greater the yield of wheat from his farm. He decides to investigate his claim, at the 5% level of significance. He measures the rainfall in centimetres and the yield in kilograms for a random sample of ten years. He correctly calculates the product moment correlation coefficient between rainfall and yield for his sample to be 0.567. Critical values for n = 10: 1-tailed 5% → 0.549; 2-tailed 5% → 0.632.",
+    "parts": [
+     {
+      "code": "15",
+      "prompt": "Determine what Jamal's conclusion to his investigation should be, justifying your answer.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "The graph below shows the amount of salt, in grams, purchased per person per week in England between 2001–02 and 2014, based upon the Large Data Set.\n\nMeera believes that the amount of salt consumed by people decreased greatly during this period. Gemma says that this is not the case.\n\nUsing your knowledge of the Large Data Set, give two reasons why Gemma may be correct.",
+      "marks": 2
+     },
+     {
+      "code": "16(b)",
+      "prompt": "It is known that the mean amount of sugar purchased per person in England in 2014 was 78.9 grams, with a standard deviation of 25.0 grams.\n\nIn 2018, a sample of 918 people had a mean of 80.4 grams of sugar purchased per person.\n\nInvestigate, at the 5% level of significance, whether the mean amount of sugar purchased per person in England has changed between 2014 and 2018.\n\nAssume that the survey data is a random sample taken from a normal distribution and that the standard deviation has remained the same.",
+      "marks": 6
+     },
+     {
+      "code": "16(c)",
+      "prompt": "Another test is performed to determine whether the mean amount of fat purchased per person has changed between 2014 and 2018.\n\nAt the 10% significance level, the null hypothesis is rejected.\n\nWith reference to the 10% significance level, explain why it is not necessarily true that there has been a change.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "Elizabeth's Bakery makes brownies. It is known that the mass, X grams, of a brownie may be modelled by a normal distribution. 10% of the brownies have a mass less than 30 grams. 80% of the brownies have a mass greater than 32.5 grams.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Find the mean and standard deviation of X.",
+      "marks": 7
+     },
+     {
+      "code": "17(b)(i)",
+      "prompt": "Find P(X ≠ 35)",
+      "marks": 1
+     },
+     {
+      "code": "17(b)(ii)",
+      "prompt": "Find P(X < 35)",
+      "marks": 2
+     },
+     {
+      "code": "17(c)",
+      "prompt": "Brownies are baked in batches of 13.\n\nCalculate the probability that, in a batch of brownies, no more than 3 brownies are less than 35 grams.\n\nYou may assume that the masses of brownies are independent of each other.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "answers": {
+   "1": {
+    "type": "exact",
+    "answer": "{x ∈ ℝ : −1 ≤ x ≤ 1}",
+    "guidance": "B1 ticks the correct response. The domain of arcsin is −1 ≤ x ≤ 1."
+   },
+   "2": {
+    "type": "exact",
+    "answer": "1650",
+    "guidance": "B1 circles correct response. 100!/(98! × 3!) = (100 × 99)/(3 × 2 × 1) = 9900/6 = 1650."
+   },
+   "3": {
+    "type": "exact",
+    "answer": "u_n = 2 − 0.9^(n−1)",
+    "guidance": "B1 circles correct response. u_n = 2 − 0.9^(n−1) is increasing: u₁ = 1, u₂ = 1.9, u₃ = 1.19... converging up to 2."
+   },
+   "4": {
+    "type": "points",
+    "points": [
+     "Sketch quadratic y = (1 − 2x)(x + 3) = −2x² − 5x + 3, opening downward, roots at x = −3 and x = 0.5, y-intercept at (0, 3)",
+     "Sketch straight line y = x + 3, passing through (−3, 0) and (0, 3)",
+     "Shade the region R below the parabola and below (or on) the line, labelling it R"
+    ],
+    "guidance": "M1 draws quadratic curve in correct orientation (opening downward) with two x-axis intersections. A1 labels correct intersection points −3 and 0.5 and y-intercept 3. A1F draws correct straight line through (−3, 0) and (0, 3) and shades the correct region R."
+   },
+   "5": {
+    "type": "points",
+    "points": [
+     "Complete the square: (x − 3)² − 9 + (y − 4)² − 16 = 264 → (x − 3)² + (y − 4)² = 289, so radius r = 17",
+     "Area of sector = ½r²θ = ½ × 17² × 0.9 = ½ × 289 × 0.9 = 130.05",
+     "Area of triangle = ½r² sin θ = ½ × 289 × sin 0.9 = ½ × 289 × 0.7833 ≈ 113.19",
+     "Area of segment = 130.05 − 113.19 ≈ 16.9"
+    ],
+    "guidance": "M1 finds radius by completing the square (PI by correct r = 17 or r² = 289). A1 deduces r = 17. M1 finds area of sector using ½r²θ with r = 17. M1 finds area of triangle using ½r² sin θ. A1 obtains area of segment AWRT 16.9."
+   },
+   "6(a)": {
+    "type": "exact",
+    "answer": "e.g. a = 6, b = 8, c = 10",
+    "guidance": "B1 states any valid even Pythagorean triple, e.g. (6, 8, 10) or (8, 6, 10) or any scalar multiple of (3, 4, 5) that is all-even."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "Assume for contradiction that a, b and c are all odd; write a = 2m + 1, b = 2n + 1 for integers m, n",
+     "By Pythagoras: a² + b² = c² → (2m+1)² + (2n+1)² = c²",
+     "(2m+1)² + (2n+1)² = 4m² + 4m + 1 + 4n² + 4n + 1 = 2(2m² + 2m + 2n² + 2n + 1)",
+     "This is even, so c² is even, hence c is even — contradiction since we assumed c is odd",
+     "Therefore it is not possible for all three to be odd"
+    ],
+    "guidance": "B1 begins proof by assuming at least two sides are odd and defines them algebraically with different unknowns. M1 applies Pythagoras with at least two odd sides. R1 completes rigorous argument to prove the result. CSO."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Write 4x + 3 ≡ A(x − 1) + B",
+     "Substituting x = 1: B = 7",
+     "Substituting x = 0: 3 = −A + B = −A + 7, so A = 4",
+     "Result: 4/(x − 1) + 7/(x − 1)²"
+    ],
+    "guidance": "B1 forms the identity 4x + 3 ≡ A(x − 1) + B. M1 uses substitution or comparison of coefficients to find A or B. A1 correct A = 4 and B = 7."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "∫[4/(x−1) + 7/(x−1)²] dx = [4 ln(x−1) − 7/(x−1)] + C",
+     "Evaluate from 3 to 4: [4 ln 3 − 7/3] − [4 ln 2 − 7/2]",
+     "= 4 ln(3/2) + 7/6",
+     "= ln(81/16) + 7/6",
+     "So p = 7/6 and q = 81/16"
+    ],
+    "guidance": "M1 integrates expression (at least one term correct). A1F integrates fully correctly to form A ln(x−1) − B/(x−1) (FT their A and B). M1 substitutes limits correctly. M1 uses at least one law of logarithms. R1 completes argument to obtain p = 7/6 and q = 81/16 with no subsequent incorrect working. AG."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "At t = 0, θ = 75: 75 = 5(4 + λ) → λ = 11",
+     "At t = 2, θ = 68: 68 = 5(4 + 11e^(−2k)) → e^(−2k) = 48/55 → k = −½ ln(48/55) ≈ 0.0681",
+     "At t = 15: θ = 5(4 + 11e^(−0.0681 × 15)) ≈ 5(4 + 11 × 0.357) ≈ 39.8 °C"
+    ],
+    "guidance": "M1 substitutes t = 0, θ = 75 to find λ. A1 λ = 11. M1 substitutes t = 2, θ = 68 with their λ. M1 solves for k. A1 k AWRT 0.07. M1 substitutes t = 15 with their λ and k. A1 temperature AWRT 39.8 (°C)."
+   },
+   "8(b)(i)": {
+    "type": "points",
+    "points": [
+     "Room temperature = 20 °C",
+     "As t → ∞, e^(−kt) → 0, so θ → 5 × 4 = 20; the temperature predicted by the model approaches room temperature as t increases"
+    ],
+    "guidance": "B1 states correct room temperature 20 °C. E1 explains that as t gets large the temperature predicted by the model approaches room temperature (i.e. the exponential term vanishes)."
+   },
+   "8(b)(ii)": {
+    "type": "exact",
+    "answer": "t ≈ 59 minutes",
+    "guidance": "M1 sets θ = 21 (room temperature + 1 = 21) and solves: 5(4 + 11e^(−kt)) = 21 → e^(−kt) = 1/55 → t = ln(55)/k ≈ 58.87. A1 AWRT 59 minutes. ISW."
+   },
+   "8(c)": {
+    "type": "points",
+    "points": [
+     "The room temperature in a different place may be different, so the model (which has room temperature baked in as 20 °C) would need to be adjusted"
+    ],
+    "guidance": "E1 identifies that the room temperature (or equivalently the cooling rate) may be different in a different place, so the constants in the model would need to change."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "If x = 0: 0²y² + 0·y⁴ = 0 ≠ 12, so the curve does not pass through any point with x = 0",
+     "If y = 0: x²·0² + x·0⁴ = 0 ≠ 12, so the curve does not pass through any point with y = 0",
+     "Therefore the curve does not intersect either coordinate axis"
+    ],
+    "guidance": "E1 demonstrates by substitution that x = 0 or y = 0 gives LHS = 0 ≠ 12. R1 completes rigorous argument concluding the curve does not intersect either axis."
+   },
+   "9(b)(i)": {
+    "type": "points",
+    "points": [
+     "Differentiate implicitly: 2xy² + 2x²y(dy/dx) + y⁴ + 4xy³(dy/dx) = 0",
+     "Collect dy/dx terms: dy/dx(2x²y + 4xy³) = −2xy² − y⁴",
+     "dy/dx = −(2xy² + y⁴) / (2x²y + 4xy³)",
+     "Factor: dy/dx = −y²(2x + y²) / [y(2x² + 4xy²)] = −(2xy + y³) / (2x² + 4xy²)"
+    ],
+    "guidance": "M1 uses implicit differentiation. M1 applies product rule on LHS (at least one pair of terms correct). A1 differentiates curve fully correctly. M1 collects dy/dx terms and factorises. R1 completes convincing argument by factorising y then simplifying to reach the given result. AG."
+   },
+   "9(b)(ii)": {
+    "type": "points",
+    "points": [
+     "For stationary points, set dy/dx = 0: 2xy + y³ = 0 → y(2x + y²) = 0",
+     "Since y ≠ 0 (curve doesn't intersect axes), 2x + y² = 0 → y² = −2x",
+     "Substitute y² = −2x into curve equation: x²(−2x) + x(−2x)² = −2x³ + 4x³ = 2x³",
+     "Wait: x²y² + xy⁴ = x²(−2x) + x(−2x)² = −2x³ + x(4x²) = −2x³ + 4x³ = 2x³",
+     "But this must equal 12, so 2x³ = 12 → x³ = 6 → x = ∛6. Then y² = −2∛6 < 0 — impossible over ℝ",
+     "Therefore the curve has no stationary points"
+    ],
+    "guidance": "M1 sets dy/dx = 0 giving 2xy + y³ = 0. A1 obtains y² = −2x. M1 substitutes into curve equation. R1 completes convincing argument — since −x²y² = 12 leads to a contradiction (left side negative), there are no stationary points."
+   },
+   "9(b)(iii)": {
+    "type": "points",
+    "points": [
+     "Substitute y = 1 into curve: x²(1) + x(1) = 12 → x² + x − 12 = 0 → (x + 4)(x − 3) = 0",
+     "Since x > 0, x = 3",
+     "dy/dx at (3, 1): −(2·3·1 + 1³)/(2·9 + 4·3·1) = −(6 + 1)/(18 + 12) = −7/30",
+     "Tangent: y − 1 = −(7/30)(x − 3)"
+    ],
+    "guidance": "M1 substitutes y = 1 into curve to obtain correct quadratic. R1 deduces x = 3 (since x > 0). M1 substitutes x = 3, y = 1 into dy/dx expression. A1 obtains correct equation of tangent in any correct form. ISW."
+   },
+   "10": {
+    "type": "exact",
+    "answer": "strong negative",
+    "guidance": "B1 ticks 'strong negative'. The scatter diagram shows points clustered close to a downward-sloping line."
+   },
+   "11": {
+    "type": "exact",
+    "answer": "quota",
+    "guidance": "B1 circles 'quota'. Quota sampling is used when the interviewer is told to survey a specific number from a defined category."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "Mean x̄ = (162 + 169 + 172 + 156 + 146 + 161 + 159 + 164 + 157 + 160)/10 = 1606/10 = 160.6 cm",
+     "Standard deviation sd = 6.8 (or population sd ≈ 6.8)",
+     "x̄ − 2 × sd = 160.6 − 2 × 6.8 = 160.6 − 13.6 = 147.0",
+     "Ann's height is 146 < 147, so Ann is an outlier"
+    ],
+    "guidance": "B1 correct mean (accept 161). B1 correct standard deviation (accept 7.2 or better). M1 calculates x̄ − 2 × sd (accept 146.2). R1F compares 146 with their calculation and correctly concludes Ann is an outlier."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "The mean would increase, because Ann's height (146 cm) is below the mean, so removing it increases the mean (to approximately 162.2 cm)",
+     "The standard deviation would decrease, because Ann is an outlier and removing her makes the data less spread out (decreases to approximately 5.03)"
+    ],
+    "guidance": "B1 states mean would increase with a valid reason (Ann's value is below the mean / lowest value removed). B1 states standard deviation would decrease with a valid reason (data less spread / outlier removed)."
+   },
+   "13(a)(i)": {
+    "type": "exact",
+    "answer": "Mean = 6",
+    "guidance": "B1 mean = np = 30 × 0.2 = 6."
+   },
+   "13(a)(ii)": {
+    "type": "exact",
+    "answer": "Variance = 4.8",
+    "guidance": "B1 variance = np(1 − p) = 30 × 0.2 × 0.8 = 4.8."
+   },
+   "13(b)(i)": {
+    "type": "exact",
+    "answer": "P(X = 10) ≈ 0.0355",
+    "guidance": "M1 uses binomial formula C(30,10) × 0.2¹⁰ × 0.8²⁰ or P(X ≤ 10) − P(X ≤ 9). A1 correct probability AWFW [0.035, 0.036]."
+   },
+   "13(b)(ii)": {
+    "type": "points",
+    "points": [
+     "P(X ≥ 5) = 1 − P(X ≤ 4)",
+     "P(X ≤ 4) = 0.255 (using B(30, 0.2))",
+     "P(X ≥ 5) = 1 − 0.255 = 0.745"
+    ],
+    "guidance": "M1 calculates P(X ≤ 4) = 0.255 or P(X ≤ 5) = 0.4275. M1 states P(X ≥ 5) = 1 − P(X ≤ 4) and subtracts. A1 correct probability AWFW [0.74, 0.75]."
+   },
+   "13(c)(i)": {
+    "type": "exact",
+    "answer": "P ≈ 0.229",
+    "guidance": "M1 raises their P(X ≥ 5) to the power of 5: 0.745⁵ ≈ 0.229. A1F correct probability AWRT 0.229 (FT their 0.745)."
+   },
+   "13(c)(ii)": {
+    "type": "points",
+    "points": [
+     "The probability of falling off may change over the 5 days as Patrick improves with practice, so the same value 0.2 would not be appropriate for all 5 days"
+    ],
+    "guidance": "E1 gives valid reason — probability may change as Patrick improves, or external factors may change the probability over the 5-day period."
+   },
+   "14(a)(i)": {
+    "type": "exact",
+    "answer": "P = 10/120 = 1/12",
+    "guidance": "B1 correct probability 10/120 (or equivalent). High exercise level back trouble count is 10 out of 120 total."
+   },
+   "14(a)(ii)": {
+    "type": "exact",
+    "answer": "P = 12/120 = 1/10",
+    "guidance": "M1 finds total number for depression: 9 + 2 + 1 = 12. A1 correct probability 12/120."
+   },
+   "14(a)(iii)": {
+    "type": "exact",
+    "answer": "P = 38/50 = 19/25",
+    "guidance": "M1 uses conditional probability P(stress | low exercise). A1 correct probability 38/50 — of the 50 low-exercise teachers, 38 suffered from stress."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "Among the 50 low-exercise teachers, 14 suffer from back trouble and 38 suffer from stress, giving 14 + 38 = 52",
+     "Since 52 > 50, some teachers must suffer from both conditions simultaneously",
+     "Therefore the two events are not mutually exclusive"
+    ],
+    "guidance": "M1 shows that 14 + 38 = 52 > 50 (or that 14/50 + 38/50 > 1). R1 concludes correctly that the events are not mutually exclusive since there is overlap."
+   },
+   "15": {
+    "type": "points",
+    "points": [
+     "This is a one-tailed test (Jamal claims larger rainfall → greater yield, i.e. positive correlation)",
+     "Critical value at 5% for a one-tailed test with n = 10 is 0.549",
+     "Since 0.567 > 0.549, reject H₀",
+     "There is sufficient evidence at the 5% level to support Jamal's claim that there is positive correlation between rainfall and yield"
+    ],
+    "guidance": "B1 identifies correct critical value 0.549 (one-tailed 5%, n = 10). M1 compares 0.567 with their critical value chosen from the table. R1F makes correct inference — there is sufficient evidence of positive correlation (FT their critical value)."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "The y-axis has no scale (or does not start at zero), so the apparent decrease is exaggerated and misleading",
+     "The data shows salt purchased as a separate food item, not total salt consumed — people may consume salt hidden in processed foods which is not captured here"
+    ],
+    "guidance": "E1 correct reason involving the y-axis (no scale / does not start at zero). E1 correct reason involving the distinction between salt purchased and salt consumed."
+   },
+   "16(b)": {
+    "type": "points",
+    "points": [
+     "H₀: μ = 78.9,  H₁: μ ≠ 78.9  (two-tailed test)",
+     "Test statistic z = (80.4 − 78.9) / (25.0/√918) = 1.5 / 0.825 ≈ 1.82",
+     "Critical value for two-tailed 5% test: z = 1.96",
+     "Since 1.82 < 1.96, do not reject H₀",
+     "There is insufficient evidence to suggest that the mean amount of sugar purchased per person has changed between 2014 and 2018"
+    ],
+    "guidance": "B1 states both hypotheses correctly for two-tailed test. M1 formulates correct test statistic. A1 correct test statistic 1.82 (or probability 0.0345/0.0691, or acceptance region [77.3, 80.5]). M1 compares 1.82 with 1.96. A1 infers H₀ accepted. E1 correct conclusion in context — insufficient evidence of change."
+   },
+   "16(c)": {
+    "type": "points",
+    "points": [
+     "At the 10% significance level there is a 10% probability of rejecting H₀ even when it is true (Type I error)",
+     "So there is a 10% chance of concluding a change has occurred when in fact it has not"
+    ],
+    "guidance": "E1 explains the role of the significance level in rejecting H₀ in error (accept 'Type I error'). E1 states there is a 10% chance of this occurring."
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "P(X < 30) = 0.1 → (30 − μ)/σ = −1.2816",
+     "P(X > 32.5) = 0.8 → P(X < 32.5) = 0.2 → (32.5 − μ)/σ = −0.8416",
+     "Subtract equations: 2.5/σ = 0.4400 → σ = 2.5/0.44 ≈ 5.68",
+     "μ = 30 + 1.2816 × 5.68 ≈ 37.3"
+    ],
+    "guidance": "B1 obtains either correct z-value (AWFW [−1.29, −1.28] or [−0.85, −0.84]). M1 forms equation with unknown μ and σ using standardised z-value for 0.1. M1 forms equation using z-value for 0.8. A1 both equations correct. M1 solves simultaneously. A1 σ AWFW (5.2, 5.9). A1 μ AWFW (37.1, 37.5)."
+   },
+   "17(b)(i)": {
+    "type": "exact",
+    "answer": "P(X ≠ 35) = 1",
+    "guidance": "B1 states correct probability 1. Since X is continuous, P(X = any specific value) = 0, so P(X ≠ 35) = 1."
+   },
+   "17(b)(ii)": {
+    "type": "exact",
+    "answer": "P(X < 35) ≈ 0.344",
+    "guidance": "M1 uses their μ and σ to find P(X < 35) — standardise: z = (35 − 37.3)/5.68 ≈ −0.405. A1F correct probability ≈ 0.344 (FT their μ and σ; if μ ∈ (37.1, 37.5) and σ ∈ (5.2, 5.9), answer in (0.31, 0.37))."
+   },
+   "17(c)": {
+    "type": "exact",
+    "answer": "P(Y ≤ 3) ≈ 0.294",
+    "guidance": "M1 identifies binomial Y ~ B(13, their p) where p = their P(X < 35) ≈ 0.344. A1F correct probability P(Y ≤ 3) ≈ 0.294 (FT their p; if p ∈ (0.31, 0.37) answer ∈ [0.23, 0.39])."
+   }
+  }
+ },
  "math-aqa-7357-2021n-p3": {
   "questions": [
    {
