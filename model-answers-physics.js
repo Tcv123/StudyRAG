@@ -171,6 +171,9 @@ n = N/N_A = 1.724 × 10²⁵ / 6.02 × 10²³ = 28.6 mol
 
 The amount of gas in the container is 28.6 mol.`,
   "phys-aqa-7408-2022-p2::02.4": `For the same fixed mass of ideal gas, pV = nRT = constant (at constant temperature). At temperature 2T, pV = 2nRT, so the product pV is doubled. This means the graph is a rectangular hyperbola (p ∝ 1/V) but at twice the value of pV compared to temperature T. On the graph, draw a curve of the same shape as the original (p × V = constant), but shifted outward — passing through points where p and V values are each scaled so that their product is twice as large. The new curve lies above and to the right of the original curve, with the same shape (rectangular hyperbola).`,
+  "phys-aqa-7408-2022-p2::03.1": `The excess electrons are located on the outer surface of the sphere.
+
+In a conducting material, electrons are free to move. The excess electrons all carry the same (negative) charge and therefore repel each other. They redistribute themselves on the surface of the conductor, moving as far from each other as possible. Since the sphere is a conductor in electrostatic equilibrium, the electric field inside must be zero. If any electrons were in the interior, they would experience a net force (due to mutual repulsion) and would move, which contradicts equilibrium. Therefore, all the excess electrons reside on the outer surface of the sphere, spread uniformly across it.`,
   "phys-aqa-7408-2022-p3::03.1": `One problem with using callipers to measure the diameter of the putty cylinder: the callipers may compress or deform the soft putty when they are closed around it, giving a reading that is smaller than the actual diameter. (Putty is soft and deformable, so the jaws of the callipers distort the sample.)`,
   "phys-aqa-7408-2022-p2::03.2": `E = −ΔV/Δr (magnitude: E = ΔV/Δr)
 
