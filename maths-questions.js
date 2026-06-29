@@ -5783,8 +5783,8 @@ window.MATHS_QUESTIONS = {
     "parts": [
      {
       "code": "1",
-      "prompt": "Express 3/(√5 − √2) in the form a√5 + b√2 where a and b are integers.\n\n[2 marks]",
-      "marks": 2
+      "prompt": "A curve is defined by the parametric equations x = cos θ and y = sin θ where 0 ≤ θ ≤ 2π.\n\nWhich of the options shown below is a Cartesian equation for this curve?\n\nCircle your answer.\n\ny/x = tan θ     x² + y² = 1     x² − y² = 1     x²y² = 1",
+      "marks": 1
      }
     ]
    },
@@ -5792,14 +5792,9 @@ window.MATHS_QUESTIONS = {
     "number": 2,
     "parts": [
      {
-      "code": "2(a)",
-      "prompt": "Sketch the graph of y = |2x − 3|\n\nState the coordinates of any intercepts with the axes.\n\n[3 marks]",
-      "marks": 3
-     },
-     {
-      "code": "2(b)",
-      "prompt": "Hence solve |2x − 3| < 5\n\n[2 marks]",
-      "marks": 2
+      "code": "2",
+      "prompt": "A periodic sequence is defined by uₙ = (−1)ⁿ\n\nState the period of the sequence.\n\nCircle your answer.\n\n−1     0     1     2",
+      "marks": 1
      }
     ]
    },
@@ -5808,29 +5803,19 @@ window.MATHS_QUESTIONS = {
     "parts": [
      {
       "code": "3",
-      "prompt": "Find ∫(6x² − 4/x³ + 5) dx\n\n[4 marks]",
-      "marks": 4
+      "prompt": "The curve y = log₄ x is transformed by a stretch, scale factor 2, parallel to the y-axis.\n\nState the equation of the curve after it has been transformed.\n\nCircle your answer.\n\ny = ½ log₄ x     y = 2 log₄ x     y = log₄ 2x     y = log₈ x",
+      "marks": 1
      }
     ]
    },
    {
     "number": 4,
-    "scenario": "A geometric series has first term a and common ratio r, where |r| < 1.\n\nThe sum to infinity of the series is 3 times the first term.",
+    "scenario": "The graph of y = f(x) where f(x) = ax² + bx + c is shown (a downward-opening parabola).",
     "parts": [
      {
-      "code": "4(a)",
-      "prompt": "Show that r = 2/3\n\n[2 marks]",
-      "marks": 2
-     },
-     {
-      "code": "4(b)",
-      "prompt": "Given that the third term of the series is 4, find the value of a.\n\n[2 marks]",
-      "marks": 2
-     },
-     {
-      "code": "4(c)",
-      "prompt": "Find the sum of the first 10 terms of the series.\n\nGive your answer to three significant figures.\n\n[2 marks]",
-      "marks": 2
+      "code": "4",
+      "prompt": "Which of the following shows the graph of y = f′(x)?\n\nTick (✓) one box.\n\n[Four graph options shown]",
+      "marks": 1
      }
     ]
    },
@@ -5838,35 +5823,24 @@ window.MATHS_QUESTIONS = {
     "number": 5,
     "parts": [
      {
-      "code": "5(a)",
-      "prompt": "Show that the equation\n\nsin θ tan θ = 4 − 3 cos θ\n\ncan be written in the form\n\n3 cos² θ − 4 cos θ + 1 = 0\n\n[3 marks]",
-      "marks": 3
-     },
-     {
-      "code": "5(b)",
-      "prompt": "Hence, or otherwise, solve\n\nsin θ tan θ = 4 − 3 cos θ\n\nfor 0° ≤ θ ≤ 360°\n\n[3 marks]",
+      "code": "5",
+      "prompt": "Find an equation of the tangent to the curve y = (x − 2)⁴ at the point where x = 0.",
       "marks": 3
      }
     ]
    },
    {
     "number": 6,
-    "scenario": "A curve has equation y = 4x³ − 3x² − 18x + 20",
     "parts": [
      {
       "code": "6(a)",
-      "prompt": "Find dy/dx\n\n[2 marks]",
+      "prompt": "Find the first two terms, in ascending powers of x, of the binomial expansion of\n\n(1 − x²/2)^(1/2)",
       "marks": 2
      },
      {
       "code": "6(b)",
-      "prompt": "Find the coordinates of the stationary points of the curve.\n\n[4 marks]",
+      "prompt": "Hence, for small values of x, show that\n\nsin(4x) + √(cos x) ≈ A + Bx + Cx²\n\nwhere A, B and C are constants to be found.",
       "marks": 4
-     },
-     {
-      "code": "6(c)",
-      "prompt": "Determine the nature of each stationary point.\n\n[2 marks]",
-      "marks": 2
      }
     ]
    },
@@ -5875,188 +5849,200 @@ window.MATHS_QUESTIONS = {
     "parts": [
      {
       "code": "7",
-      "prompt": "Prove that n² + n is even for all positive integers n.\n\n[3 marks]",
+      "prompt": "Sketch the graph of y = cot(x − π/2) for 0 ≤ x ≤ 2π.",
       "marks": 3
      }
     ]
    },
    {
     "number": 8,
-    "scenario": "The points A and B have coordinates (2, 7) and (−4, 1) respectively.",
+    "scenario": "The lines L₁ and L₂ are parallel.\n\nL₁ has equation 5x + 3y = 15\nL₂ has equation 5x + 3y = 83\n\nL₁ intersects the y-axis at point P. Q is the point on L₂ closest to P.",
     "parts": [
      {
-      "code": "8(a)",
-      "prompt": "Find the equation of the line through A and B.\n\nGive your answer in the form ax + by + c = 0 where a, b and c are integers.\n\n[3 marks]",
-      "marks": 3
+      "code": "8(a)(i)",
+      "prompt": "Find the coordinates of Q.",
+      "marks": 5
      },
      {
-      "code": "8(b)",
-      "prompt": "A circle has centre C(1, k) and passes through A and B.\n\nFind the value of k.\n\n[3 marks]",
-      "marks": 3
+      "code": "8(a)(ii)",
+      "prompt": "Hence show that PQ = k√34, where k is an integer to be found.",
+      "marks": 2
      },
      {
-      "code": "8(c)",
-      "prompt": "Find the equation of the circle.\n\n[2 marks]",
+      "code": "8(b)(i)",
+      "prompt": "A circle C has centre (a, −17).\n\nL₁ and L₂ are both tangents to C.\n\nFind a.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)(ii)",
+      "prompt": "Find the equation of C.",
       "marks": 2
      }
     ]
    },
    {
     "number": 9,
+    "scenario": "The first three terms of an arithmetic sequence are given by 2x + 5, 5x + 1, 6x + 7.",
     "parts": [
      {
       "code": "9(a)",
-      "prompt": "Use the binomial expansion to find the first four terms, in ascending powers of x, of\n\n(1 + 3x)⁸\n\nSimplify each term.\n\n[4 marks]",
-      "marks": 4
+      "prompt": "Show that x = 5 is the only value which gives an arithmetic sequence.",
+      "marks": 3
      },
      {
-      "code": "9(b)",
-      "prompt": "Hence find an approximation for 1.03⁸, giving your answer to four decimal places.\n\n[2 marks]",
-      "marks": 2
+      "code": "9(b)(i)",
+      "prompt": "Write down the value of the first term of the sequence.",
+      "marks": 1
+     },
+     {
+      "code": "9(b)(ii)",
+      "prompt": "Find the value of the common difference of the sequence.",
+      "marks": 1
+     },
+     {
+      "code": "9(c)",
+      "prompt": "The sum of the first N terms is Sₙ where Sₙ < 100 000 and Sₙ₊₁ > 100 000.\n\nFind the value of N.",
+      "marks": 4
      }
     ]
    },
    {
     "number": 10,
-    "scenario": "f(x) = 2x³ + 5x² + ax + b where a and b are constants.\n\nWhen f(x) is divided by (x − 1) the remainder is 24.\nWhen f(x) is divided by (x + 3) the remainder is −8.",
+    "scenario": "A sector of a circle OAB has radius r. C lies on OB such that AC ⊥ OB. The angle AOB = θ radians.",
     "parts": [
      {
       "code": "10(a)",
-      "prompt": "Show that a = 11 and find the value of b.\n\n[4 marks]",
+      "prompt": "Given the area of triangle OAC is half the area of sector OAB, show that\n\nθ = sin 2θ",
       "marks": 4
      },
      {
       "code": "10(b)",
-      "prompt": "Show that (x + 4) is a factor of f(x).\n\n[1 mark]",
+      "prompt": "Use a suitable change of sign to show that a solution to θ = sin 2θ lies in the interval (π/5, 2π/5).",
+      "marks": 2
+     },
+     {
+      "code": "10(c)(i)",
+      "prompt": "Using θ₁ = π/5 as a first approximation, apply the Newton-Raphson method twice to find θ₃.\n\nGive your answer to three decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "10(c)(ii)",
+      "prompt": "Explain how a more accurate approximation for θ can be found using the Newton-Raphson method.",
       "marks": 1
      },
      {
-      "code": "10(c)",
-      "prompt": "Hence express f(x) as a product of three linear factors.\n\n[3 marks]",
-      "marks": 3
+      "code": "10(c)(iii)",
+      "prompt": "Explain why using θ₁ = π/6 as a first approximation in the Newton-Raphson method does not lead to a solution for θ.",
+      "marks": 2
      }
     ]
    },
    {
     "number": 11,
+    "scenario": "The polynomial p(x) = x³ + (b + 2)x² + 2(b + 2)x + 8 where b is a constant.",
     "parts": [
      {
-      "code": "11(a)(i)",
-      "prompt": "On the same axes, for 0 ≤ x ≤ 2π, sketch the graphs of\n\ny = sin x  and  y = cos 2x\n\n[3 marks]",
+      "code": "11(a)",
+      "prompt": "Use the factor theorem to prove that (x + 2) is a factor of p(x) for all values of b.",
       "marks": 3
      },
      {
-      "code": "11(a)(ii)",
-      "prompt": "Using your sketch, state the number of solutions of the equation\n\nsin x = cos 2x\n\nin the interval 0 ≤ x ≤ 2π\n\n[1 mark]",
-      "marks": 1
+      "code": "11(b)(i)",
+      "prompt": "The graph of y = p(x) meets the x-axis at exactly two points.\n\nSketch a possible graph of y = p(x).",
+      "marks": 3
      },
      {
-      "code": "11(b)",
-      "prompt": "Find all solutions of the equation\n\nsin x = cos 2x\n\nin the interval 0 ≤ x ≤ 2π\n\nGive your answers in terms of π.\n\n[5 marks]",
-      "marks": 5
+      "code": "11(b)(ii)",
+      "prompt": "Given p(x) can be written as p(x) = (x + 2)(x² + bx + 4), find the value of b.\n\nFully justify your answer.",
+      "marks": 4
      }
     ]
    },
    {
     "number": 12,
+    "scenario": "A geometric sequence has first term 1 and common ratio 1/2.",
     "parts": [
      {
-      "code": "12(a)",
-      "prompt": "Differentiate with respect to x\n\ny = e^(3x) sin 2x\n\n[3 marks]",
-      "marks": 3
+      "code": "12(a)(i)",
+      "prompt": "Find the sum to infinity of the sequence.",
+      "marks": 2
+     },
+     {
+      "code": "12(a)(ii)",
+      "prompt": "Hence, or otherwise, evaluate\n\n∑ (sin 30°)ⁿ  (n = 1 to ∞)",
+      "marks": 2
      },
      {
       "code": "12(b)",
-      "prompt": "Differentiate with respect to x\n\ny = ln(x² + 4)\n\n[2 marks]",
-      "marks": 2
+      "prompt": "Find the smallest positive exact value of θ, in radians, which satisfies\n\n∑ (cos θ)ⁿ = 2 − √2  (n = 0 to ∞)",
+      "marks": 4
      }
     ]
    },
    {
     "number": 13,
-    "scenario": "The curve C has parametric equations\n\nx = 2t + 1,  y = t² − 3t\n\nwhere t is a real parameter.",
+    "scenario": "Figure 2 shows the vertical cross-section of a cave entrance. The entrance joins the floor at O and P. Garry models the shape using x² + y² = a√x − y, where a is a constant and x, y are horizontal and vertical distances in metres from O.",
     "parts": [
      {
       "code": "13(a)",
-      "prompt": "Find the Cartesian equation of C in the form y = f(x).\n\n[3 marks]",
-      "marks": 3
+      "prompt": "The distance OP is 16 metres.\n\nFind the value of a that Garry should use in the model.",
+      "marks": 2
      },
      {
       "code": "13(b)",
-      "prompt": "Find the gradient of C at the point where t = 2\n\n[3 marks]",
-      "marks": 3
+      "prompt": "Show that the maximum height of the cave above OP is approximately 10.5 metres.",
+      "marks": 6
      },
      {
       "code": "13(c)",
-      "prompt": "Find the coordinates of the points on C where the gradient is 1/2.\n\n[3 marks]",
-      "marks": 3
+      "prompt": "Suggest one limitation of the model Garry has used.",
+      "marks": 1
      }
     ]
    },
    {
     "number": 14,
+    "scenario": "The region bounded by the curve y = (2x − 8) ln x and the x-axis is shaded (between x = 1 and x = 4).",
     "parts": [
      {
       "code": "14(a)",
-      "prompt": "Given that\n\n(3x² + 5x − 2)/((x + 2)(x² + 1)) ≡ A/(x + 2) + (Bx + C)/(x² + 1)\n\nfind the values of A, B and C.\n\n[4 marks]",
-      "marks": 4
+      "prompt": "Use the trapezium rule with 5 ordinates to find an estimate for the area of the shaded region.\n\nGive your answer correct to 3 significant figures.",
+      "marks": 3
      },
      {
       "code": "14(b)",
-      "prompt": "Hence find\n\n∫ (3x² + 5x − 2)/((x + 2)(x² + 1)) dx\n\n[4 marks]",
-      "marks": 4
+      "prompt": "Show that the exact area is given by 32 ln 2 − 33/2.\n\nFully justify your answer.",
+      "marks": 6
      }
     ]
    },
    {
     "number": 15,
-    "scenario": "A population of bacteria is being studied.\n\nAt time t hours, the number of bacteria, N, in the population is modelled by\n\nN = 2000e^(0.3t)\n\nwhere t ≥ 0.",
     "parts": [
      {
-      "code": "15(a)",
-      "prompt": "Find the initial population of bacteria.\n\n[1 mark]",
+      "code": "15(a)(i)",
+      "prompt": "Given that y = cosec θ, express y in terms of sin θ.",
       "marks": 1
      },
      {
-      "code": "15(b)",
-      "prompt": "Find the population of bacteria after 5 hours.\n\nGive your answer to the nearest hundred.\n\n[2 marks]",
-      "marks": 2
-     },
-     {
-      "code": "15(c)",
-      "prompt": "Find the time at which the population of bacteria first exceeds 20000.\n\nGive your answer in hours and minutes to the nearest minute.\n\n[3 marks]",
+      "code": "15(a)(ii)",
+      "prompt": "Hence, prove that dy/dθ = −cosec θ cot θ.",
       "marks": 3
      },
      {
-      "code": "15(d)",
-      "prompt": "Find the rate of increase of the population of bacteria after 5 hours.\n\n[3 marks]",
-      "marks": 3
-     }
-    ]
-   },
-   {
-    "number": 16,
-    "scenario": "The functions f and g are defined by\n\nf(x) = 3x − 2, x ∈ ℝ\ng(x) = x² + 1, x ∈ ℝ",
-    "parts": [
-     {
-      "code": "16(a)",
-      "prompt": "Find fg(x).\n\n[2 marks]",
-      "marks": 2
-     },
-     {
-      "code": "16(b)",
-      "prompt": "Find gf(x).\n\n[2 marks]",
-      "marks": 2
-     },
-     {
-      "code": "16(c)",
-      "prompt": "Solve fg(x) = gf(x).\n\n[3 marks]",
+      "code": "15(a)(iii)",
+      "prompt": "Show that √(y² − 1) / y = cos θ  for 0 < θ < π/2",
       "marks": 3
      },
      {
-      "code": "16(d)",
-      "prompt": "Find f⁻¹(x).\n\n[2 marks]",
-      "marks": 2
+      "code": "15(b)(i)",
+      "prompt": "Use the substitution x = 2 cosec u to show that\n\n∫ 1/(x²√(x²−4)) dx  (for x > 2)\n\ncan be written as ∫ k sin u du, where k is a constant to be found.",
+      "marks": 6
+     },
+     {
+      "code": "15(b)(ii)",
+      "prompt": "Hence, show that\n\n∫ 1/(x²√(x²−4)) dx = √(x²−4) / (4x) + c  (for x > 2)\n\nwhere c is a constant.",
+      "marks": 3
      }
     ]
    }
@@ -6065,287 +6051,286 @@ window.MATHS_QUESTIONS = {
    "1": {
     "type": "exact",
     "points": [
-     "a = 1, b = 1, giving √5 + √2"
+     "x² + y² = 1"
     ],
-    "guidance": "M1 multiplies numerator and denominator by (√5 + √2) (conjugate). A1 obtains 3(√5 + √2)/(5 − 2) = 3(√5 + √2)/3 = √5 + √2, i.e. a = 1, b = 1."
+    "guidance": "B1 for circling the correct answer. cos²θ + sin²θ = 1, so x² + y² = 1."
    },
-   "2(a)": {
-    "type": "points",
-    "points": [
-     "V-shape with vertex at (3/2, 0)",
-     "y-intercept at (0, 3)",
-     "x-intercept at (3/2, 0)"
-    ],
-    "guidance": "B1 correct V-shape. B1 vertex at (3/2, 0) or x-intercept at x = 3/2. B1 y-intercept at (0, 3)."
-   },
-   "2(b)": {
+   "2": {
     "type": "exact",
     "points": [
-     "−1 < x < 4"
+     "2"
     ],
-    "guidance": "M1 sets 2x − 3 = 5 and 2x − 3 = −5 (or uses the graph). A1 obtains x = 4 and x = −1, so −1 < x < 4."
+    "guidance": "B1 for circling 2. The sequence is −1, 1, −1, 1, ... so it repeats every 2 terms."
    },
    "3": {
     "type": "exact",
     "points": [
-     "2x³ + 2/x² + 5x + c"
+     "y = 2 log₄ x"
     ],
-    "guidance": "M1 integrates term by term. A1 2x³. A1 2x⁻² (i.e. 2/x²) from −4x⁻³ → (−4)x⁻²/(−2) = 2x⁻². A1 5x + c (constant of integration required)."
+    "guidance": "R1 for circling the correct answer. A stretch scale factor 2 parallel to the y-axis replaces y with y/2, giving y/2 = log₄ x, i.e. y = 2 log₄ x."
    },
-   "4(a)": {
-    "type": "points",
-    "points": [
-     "S∞ = a/(1−r) = 3a, so 1/(1−r) = 3, giving 1−r = 1/3, so r = 2/3"
-    ],
-    "guidance": "M1 writes a/(1−r) = 3a. A1 correctly obtains r = 2/3 (AG)."
-   },
-   "4(b)": {
+   "4": {
     "type": "exact",
     "points": [
-     "a = 9"
+     "The graph of the linear function f′(x) with negative gradient crossing the x-axis"
     ],
-    "guidance": "M1 uses third term = ar² = a(2/3)² = 4a/9 = 4 ⇒ a = 9. A1 a = 9."
+    "guidance": "R1 for ticking the correct box. f(x) = ax² + bx + c with a < 0 (downward parabola) gives f′(x) = 2ax + b, a straight line with negative gradient."
    },
-   "4(c)": {
+   "5": {
     "type": "exact",
     "points": [
-     "S₁₀ = 26.6 (3 s.f.)"
+     "y = −32x + 16"
     ],
-    "guidance": "M1 uses Sₙ = a(1 − rⁿ)/(1 − r) with a = 9, r = 2/3, n = 10. A1 obtains 26.6 (3 s.f.)."
-   },
-   "5(a)": {
-    "type": "points",
-    "points": [
-     "sin θ tan θ = sin θ · (sin θ/cos θ) = sin²θ/cos θ",
-     "sin²θ = 1 − cos²θ, so sin θ tan θ = (1 − cos²θ)/cos θ",
-     "Equation becomes (1 − cos²θ)/cos θ = 4 − 3 cos θ, multiply through by cos θ (cos θ ≠ 0)",
-     "1 − cos²θ = 4 cos θ − 3 cos²θ ⇒ 3 cos²θ − 4 cos θ + 1 = 0"
-    ],
-    "guidance": "M1 replaces tan θ with sin θ/cos θ. M1 replaces sin²θ with 1 − cos²θ. A1 correct rearrangement to 3 cos²θ − 4 cos θ + 1 = 0 (AG)."
-   },
-   "5(b)": {
-    "type": "exact",
-    "points": [
-     "θ = 70.5°, 289.5°, 180°"
-    ],
-    "guidance": "M1 factorises 3 cos²θ − 4 cos θ + 1 = 0 as (3 cos θ − 1)(cos θ − 1) = 0. A1 cos θ = 1/3 ⇒ θ = 70.5° and θ = 289.5° (AWRT). A1 cos θ = 1 ⇒ θ = 0° or 360° — but note these must be checked (cos θ = 1 ⇒ cos θ ≠ 0 so valid; but sin 0 tan 0 = 0 and 4 − 3(1) = 1 ≠ 0, so θ = 0° and 360° are extraneous). A1 correct set of solutions: 70.5°, 180° (from cos θ ≠ 0 branch check), 289.5°."
+    "guidance": "B1 differentiates to obtain dy/dx = 4(x−2)³. M1 substitutes x = 0 to get gradient = −32, and finds y = 16 at x = 0. A1 obtains y = −32x + 16."
    },
    "6(a)": {
     "type": "exact",
     "points": [
-     "dy/dx = 12x² − 6x − 18"
+     "1 − x²/4"
     ],
-    "guidance": "B1 each term: 12x², −6x, −18. Award B2 for all three correct."
+    "guidance": "M1 expands (1 − x²/2)^(1/2) using binomial: 1 + (1/2)(−x²/2) + ... A1 obtains 1 − x²/4 (ignore further terms)."
    },
    "6(b)": {
     "type": "exact",
     "points": [
-     "Stationary points at (−3/2, 35.75) and (1, 3)"
+     "A = 1, B = 4, C = −1/4"
     ],
-    "guidance": "M1 sets dy/dx = 0: 12x² − 6x − 18 = 0 ⇒ 2x² − x − 3 = 0 ⇒ (2x − 3)(x + 1) = 0. A1 x = 3/2 and x = −1. A1 y = 4(27/8) − 3(9/4) − 18(3/2) + 20 = 13.5 − 6.75 − 27 + 20 = −0.25 at x = 3/2; and y = 4 − 3 + 18 + 20 = 39 at x = −1. A1 both coordinates correct."
-   },
-   "6(c)": {
-    "type": "points",
-    "points": [
-     "d²y/dx² = 24x − 6",
-     "At x = −1: d²y/dx² = −30 < 0, so maximum",
-     "At x = 3/2: d²y/dx² = 30 > 0, so minimum"
-    ],
-    "guidance": "M1 finds d²y/dx² = 24x − 6 (or evaluates gradient either side). A1 correct classification of both stationary points with justification."
+    "guidance": "M1 uses small angle approximation sin(4x) ≈ 4x. M1 uses cos x ≈ 1 − x²/2, then applies expansion from (a): √(cos x) ≈ 1 − x²/4. M1 combines: sin(4x) + √(cos x) ≈ 4x + 1 − x²/4. R1 concludes A = 1, B = 4, C = −1/4."
    },
    "7": {
     "type": "points",
     "points": [
-     "n² + n = n(n + 1), the product of two consecutive integers",
-     "One of any two consecutive integers is even, so n(n + 1) is always even"
+     "Three branches of a cotangent curve shifted π/2 to the right",
+     "Asymptotes at x = 0, x = π, x = 2π",
+     "Curve passes through approximately (π/4, 1), (π/2, 0), (3π/4, −1) in first period"
     ],
-    "guidance": "M1 factorises as n(n + 1). E1 explains that consecutive integers include one even, so the product is even. Accept: if n is even then n(n+1) is even; if n is odd then n+1 is even so n(n+1) is even."
+    "guidance": "B1 correct shape of one branch of cot(x − π/2). M1 three branches visible within [0, 2π]. A1 correct positions with asymptotes at 0, π, 2π clearly indicated."
    },
-   "8(a)": {
+   "8(a)(i)": {
     "type": "exact",
     "points": [
-     "x − y + 5 = 0"
+     "Q = (10, 11)"
     ],
-    "guidance": "M1 finds gradient of AB = (7−1)/(2−(−4)) = 6/6 = 1. M1 uses point–slope form: y − 7 = 1(x − 2) ⇒ y = x + 5. A1 written as x − y + 5 = 0."
+    "guidance": "B1 obtains P = (0, 5) from L₁. M1 finds the line through P perpendicular to L₁ and L₂ (gradient 3/5): equation y − 5 = (3/5)x, i.e. 3x − 5y + 25 = 0. A1 correct equation of PQ. M1 solves simultaneously with 5x + 3y = 83. A1 obtains Q = (10, 11)."
    },
-   "8(b)": {
+   "8(a)(ii)": {
     "type": "exact",
     "points": [
-     "k = 4"
+     "k = 2, so PQ = 2√34"
     ],
-    "guidance": "M1 uses CA² = CB²: (1−2)² + (k−7)² = (1−(−4))² + (k−1)². M1 expands: 1 + k² − 14k + 49 = 25 + k² − 2k + 1. A1 solves 50 − 14k = 26 − 2k ⇒ 24 = 12k ⇒ k = 4 (or equivalent). Accept: perpendicular bisector of AB through midpoint (−1, 4) with gradient −1, intersecting x = 1 gives k = 4."
+    "guidance": "M1 uses distance formula: PQ² = (10−0)² + (11−5)² = 100 + 36 = 136 = 4 × 34. R1 concludes PQ = 2√34, so k = 2."
    },
-   "8(c)": {
+   "8(b)(i)": {
     "type": "exact",
     "points": [
-     "(x − 1)² + (y − 4)² = 10"
+     "a = 20"
     ],
-    "guidance": "B1F using their C(1, k): r² = (1−2)² + (4−7)² = 1 + 9 = 10. B1 equation (x − 1)² + (y − 4)² = 10."
+    "guidance": "M1 finds the midline between L₁ and L₂: 5x + 3y = 49 (midpoint of 15 and 83). M1 substitutes y = −17: 5a − 51 = 49 ⇒ 5a = 100. R1 obtains a = 20."
+   },
+   "8(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "(x − 20)² + (y + 17)² = 34"
+    ],
+    "guidance": "M1 finds radius as half the distance between the parallel lines: distance between L₁ and L₂ is |83−15|/√(25+9) = 68/√34 = 2√34; radius = √34. A1 equation (x − 20)² + (y + 17)² = 34."
    },
    "9(a)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "1 + 24x + 252x² + 1512x³"
+     "For an arithmetic sequence, the common difference is constant, so (5x+1) − (2x+5) = (6x+7) − (5x+1)",
+     "3x − 4 = x + 6",
+     "2x = 10, so x = 5 is the only solution"
     ],
-    "guidance": "B1 first two terms 1 + 24x. M1 method for binomial coefficient. A1 252x². A1 1512x³."
+    "guidance": "M1 forms correct equation from equal differences. A1 correct equation 3x − 4 = x + 6. R1 solves to x = 5 and states it is the only solution."
    },
-   "9(b)": {
+   "9(b)(i)": {
     "type": "exact",
     "points": [
-     "1.0318 (to 4 d.p.)"
+     "First term = 15"
     ],
-    "guidance": "M1 substitutes x = 0.01 into their expansion: 1 + 24(0.01) + 252(0.01)² + 1512(0.01)³ = 1 + 0.24 + 0.0252 + 0.001512 = 1.266... — wait, 1.03⁸ = (1 + 3×0.01)⁸ uses x = 0.01. A1 obtains 1.2668 (4 d.p.)."
+    "guidance": "B1. Substitutes x = 5: 2(5) + 5 = 15."
+   },
+   "9(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "Common difference = 11"
+    ],
+    "guidance": "B1. d = (5x+1) − (2x+5) = 3(5) − 4 = 11."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "N = 133"
+    ],
+    "guidance": "M1 forms Sₙ = N(2a + (N−1)d)/2 = N(30 + 11(N−1))/2. M1 sets up inequality or equation Sₙ = 100 000. A1 obtains N = 133.9... (solving quadratic). A1 concludes N = 133."
    },
    "10(a)": {
     "type": "points",
     "points": [
-     "f(1) = 2 + 5 + a + b = 24 ⇒ a + b = 17",
-     "f(−3) = −54 + 45 − 3a + b = −8 ⇒ −3a + b = −35 + 8 − 45 + 54 = −8 (simplify correctly)",
-     "Subtracting: 4a = 44 ⇒ a = 11, then b = 6"
+     "Area of sector OAB = (1/2)r²θ",
+     "AC = r sin θ, OC = r cos θ, so area of triangle OAC = (1/2)(r cos θ)(r sin θ) = (r²/2) sin θ cos θ",
+     "Condition: (r²/2) sin θ cos θ = (1/2) × (1/2)r²θ, so 2 sin θ cos θ = θ",
+     "Using double angle: sin 2θ = θ"
     ],
-    "guidance": "M1 uses remainder theorem: f(1) = 24 and f(−3) = −8. A1 sets up two equations. M1 solves simultaneously. A1 a = 11 confirmed (AG), b = 6."
+    "guidance": "B1 area of sector = (1/2)r²θ. M1 expresses area of triangle OAC using trig. B1 area of triangle = (r²/2)sin θ cos θ. R1 correct manipulation using double angle formula to reach θ = sin 2θ (AG)."
    },
    "10(b)": {
     "type": "points",
     "points": [
-     "f(−4) = 2(−64) + 5(16) + 11(−4) + 6 = −128 + 80 − 44 + 6 = −86 — check: 2(−64) = −128, 5(16) = 80, 11(−4) = −44, b = 6 ⇒ −128 + 80 − 44 + 6 = −86",
-     "f(−4) = 0 so (x + 4) is a factor"
+     "Let f(θ) = θ − sin 2θ",
+     "f(π/5) ≈ 0.6283 − sin(2π/5) ≈ 0.6283 − 0.9511 ≈ −0.323 < 0",
+     "f(2π/5) ≈ 1.2566 − sin(4π/5) ≈ 1.2566 − 0.5878 ≈ 0.669 > 0",
+     "Change of sign ⇒ root lies in (π/5, 2π/5)"
     ],
-    "guidance": "B1 evaluates f(−4) = 0 (AG). Must show the working/calculation to demonstrate it equals zero."
+    "guidance": "M1 evaluates f(θ) = θ − sin 2θ at both endpoints with correct numerical values (to 1 s.f. at least). R1 states change of sign and concludes root lies in the interval."
    },
-   "10(c)": {
+   "10(c)(i)": {
     "type": "exact",
     "points": [
-     "f(x) = (x + 4)(2x − 1)(x + 1)"
+     "θ₃ ≈ 1.041"
     ],
-    "guidance": "M1 divides f(x) by (x + 4) to get quotient 2x² − 3x + ... (or compares coefficients). M1 factorises the quadratic factor. A1 f(x) = (x + 4)(2x − 1)(x + 1)."
+    "guidance": "B1 f′(θ) = 1 − 2cos 2θ. M1 applies Newton-Raphson: θₙ₊₁ = θₙ − (θₙ − sin 2θₙ)/(1 − 2cos 2θₙ). A1 obtains θ₃ AWRT 1.041."
    },
-   "11(a)(i)": {
+   "10(c)(ii)": {
     "type": "points",
     "points": [
-     "y = sin x: correct sine wave from 0 to 2π, passing through (0,0), (π/2, 1), (π, 0), (3π/2, −1), (2π, 0)",
-     "y = cos 2x: correct cosine curve with period π, starting at (0,1), going through (π/4, 0), (π/2, −1), (3π/4, 0), (π, 1), etc."
+     "More iterations of the Newton-Raphson method can be applied to obtain a more accurate approximation"
     ],
-    "guidance": "B1 correct sin x curve. B1 cos 2x shape (double frequency). B1 correct phase/position of cos 2x (starts at 1, period π)."
+    "guidance": "E1 states that repeating / applying more iterations of the Newton-Raphson method gives a more accurate result."
    },
-   "11(a)(ii)": {
+   "10(c)(iii)": {
+    "type": "points",
+    "points": [
+     "f′(π/6) = 1 − 2cos(π/3) = 1 − 2(1/2) = 0",
+     "The derivative is zero at θ₁ = π/6, so the Newton-Raphson formula is undefined (division by zero) at this point"
+    ],
+    "guidance": "E1 states f′(π/6) = 0. E1 explains the formula is undefined / the tangent is horizontal so does not cross the x-axis / method fails at a stationary point."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "p(−2) = (−2)³ + (b+2)(−2)² + 2(b+2)(−2) + 8",
+     "= −8 + 4(b+2) − 4(b+2) + 8 = 0"
+    ],
+    "guidance": "M1 substitutes x = −2 into p(x). A1 shows p(−2) = 0 with clear numerical evaluation. R1 states by the factor theorem, (x+2) is a factor for all values of b."
+   },
+   "11(b)(i)": {
+    "type": "points",
+    "points": [
+     "A cubic curve with correct orientation (positive leading coefficient)",
+     "Crossing the x-axis at one point (x = −2) and touching/bouncing at a second point on the positive x-axis"
+    ],
+    "guidance": "B1 correct general cubic shape. M1 curve meets x-axis at exactly two points. A1 correctly shows x = −2 as a single root and a positive repeated root, with y-intercept at 8."
+   },
+   "11(b)(ii)": {
     "type": "exact",
     "points": [
-     "3 solutions"
+     "b = −4"
     ],
-    "guidance": "B1F correct number of intersections from their sketch (should be 3)."
+    "guidance": "M1 uses discriminant of x² + bx + 4 equal to zero for a repeated root: b² − 16 = 0, so b = ±4. R1 identifies possible values b = ±4. M1 rejects b = 4 (e.g. because b = 4 gives (x+2)³ which only has one distinct root, but the sketch shows the double root is not at x = −2, or because b = 4 means x² + 4x + 4 = (x+2)² giving only one x-intercept at x = −2). R1 concludes b = −4."
    },
-   "11(b)": {
+   "12(a)(i)": {
     "type": "exact",
     "points": [
-     "x = π/6, 5π/6, 3π/2"
+     "S∞ = 2"
     ],
-    "guidance": "M1 uses cos 2x = 1 − 2sin²x to form 2sin²x + sin x − 1 = 0. M1 factorises (2sin x − 1)(sin x + 1) = 0. A1 sin x = 1/2 ⇒ x = π/6 and x = 5π/6. A1 sin x = −1 ⇒ x = 3π/2. A1 all three solutions and no extras."
+    "guidance": "M1 uses S = a/(1−r) with a = 1, r = 1/2. A1 S∞ = 1/(1−1/2) = 2."
    },
-   "12(a)": {
+   "12(a)(ii)": {
     "type": "exact",
     "points": [
-     "dy/dx = e^(3x)(3 sin 2x + 2 cos 2x)"
+     "1"
     ],
-    "guidance": "M1 product rule: d/dx[e^(3x)] = 3e^(3x) and d/dx[sin 2x] = 2 cos 2x. A1 e^(3x)(3 sin 2x) + e^(3x)(2 cos 2x). A1 factored form e^(3x)(3 sin 2x + 2 cos 2x)."
+    "guidance": "M1 identifies sin 30° = 1/2 so the series has a = 1/2 and r = 1/2 (sum from n=1). A1 sum = (1/2)/(1−1/2) = 1."
    },
    "12(b)": {
     "type": "exact",
     "points": [
-     "dy/dx = 2x/(x² + 4)"
+     "θ = 3π/4"
     ],
-    "guidance": "M1 chain rule: d/dx[ln(u)] = u'/u. A1 2x/(x² + 4)."
+    "guidance": "M1 uses sum of geometric series: 1/(1−cos θ) = 2 − √2 (series from n=0 with a=1, r=cos θ). M1 solves 1−cos θ = 1/(2−√2); rationalises: 1/(2−√2) × (2+√2)/(2+√2) = (2+√2)/2, so cos θ = 1 − (2+√2)/2 = −√2/2. A1 cos θ = −√2/2. R1 obtains θ = 3π/4."
    },
    "13(a)": {
     "type": "exact",
     "points": [
-     "y = ((x−1)/2)² − 3((x−1)/2) = (x−1)²/4 − 3(x−1)/2"
+     "a = 64"
     ],
-    "guidance": "M1 finds t = (x−1)/2 from x = 2t+1. M1 substitutes into y = t² − 3t. A1 correct Cartesian equation y = (x−1)²/4 − 3(x−1)/2 or equivalent simplified form."
+    "guidance": "M1 substitutes y = 0 and x = 16 into x² + y² = a√x − y. A1 256 = a × 4 ⇒ a = 64."
    },
    "13(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "Gradient = 1/2"
+     "Differentiate x² + y² = 64√x − y implicitly: 2x + 2y(dy/dx) = 32/√x − dy/dx",
+     "Set dy/dx = 0: 2x = 32/√x ⇒ x^(3/2) = 16 ⇒ x = 16^(2/3) ≈ 6.350",
+     "Substitute back into the model to find y ≈ 10.51 metres"
     ],
-    "guidance": "M1 dy/dx = (dy/dt)/(dx/dt) = (2t−3)/2. M1 substitutes t = 2. A1 (2(2)−3)/2 = 1/2."
+    "guidance": "B1 correct implicit differentiation of 2y(dy/dx) or −dy/dx term. M1 differentiates all four terms correctly. A1F correct differentiated equation. M1 sets dy/dx = 0. M1 substitutes x-value into model to find y. R1 obtains y AWRT 10.51 and concludes ≈ 10.5 metres."
    },
    "13(c)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "(3, −2) and (5, 2)"
+     "The cave entrance is unlikely to be perfectly smooth / may have an irregular shape that the model cannot capture"
     ],
-    "guidance": "M1 sets (2t−3)/2 = 1/2 ⇒ 2t−3 = 1 ⇒ t = 2 (already done in (b)). Note gradient 1/2 already found at t = 2. Sets dy/dx = 1 (correcting: gradient is 1/2 at t=2 so finds points with gradient 1/2 — that is t = 2 giving point x = 5, y = 4−6 = −2, so (5, −2)). M1 correct parametric substitution. A1 both points."
+    "guidance": "E1 any valid limitation, e.g. the entrance is not perfectly smooth; the model doesn't account for irregularities; assumes a perfect mathematical curve."
    },
    "14(a)": {
     "type": "exact",
     "points": [
-     "A = 2, B = 1, C = 3"
+     "Estimate ≈ 5.28 (3 s.f.)"
     ],
-    "guidance": "M1 multiplies through: 3x² + 5x − 2 = A(x²+1) + (Bx+C)(x+2). M1 substitutes x = −2 or compares coefficients. A1 A = 2. A1 B = 1, C = 3."
+    "guidance": "M1 evaluates y at x = 1, 1.75, 2.5, 3.25, 4 (h = 0.75). A1 correct y-values (y₁=0, y₂≈−2.518, y₃≈−2.749, y₄≈−1.768, y₅=0). A1 applies trapezium rule correctly: (0.75/2)(0 + 0 + 2(−2.518 − 2.749 − 1.768)) ≈ −5.28; area = 5.28 (3 s.f.)."
    },
    "14(b)": {
-    "type": "exact",
+    "type": "points",
     "points": [
-     "2 ln|x + 2| + ½ ln(x² + 1) + 3 arctan x + c"
+     "Use integration by parts with u = ln x and dv = (2x−8) dx, giving v = x²−8x",
+     "∫(2x−8) ln x dx = (x²−8x) ln x − ∫(x²−8x)(1/x) dx = (x²−8x) ln x − ∫(x−8) dx",
+     "= (x²−8x) ln x − x²/2 + 8x",
+     "Evaluate from 1 to 4: [(16−32) ln 4 − 8 + 32] − [(1−8)(0) − 1/2 + 8]",
+     "= −16 ln 4 + 24 − 7.5 = −32 ln 2 + 16.5 (below x-axis)",
+     "Area = |integral| = 32 ln 2 − 33/2"
     ],
-    "guidance": "B1F integrates A/(x+2) correctly as A ln|x+2|. M1 integrates Bx/(x²+1) as (B/2)ln(x²+1). A1 ½ ln(x²+1). M1 integrates C/(x²+1) as C arctan x. A1 correct final answer 2 ln|x+2| + ½ ln(x²+1) + 3 arctan x + c."
+    "guidance": "M1 sets up integration by parts correctly. M1 applies IBP to obtain (x²−8x) ln x − ∫(x−8) dx. A1 correct integrated expression. M1 substitutes limits. R1 obtains 33/2 − 32 ln 2 or 32 ln 2 − 33/2 correctly. E1 explains the sign change because the region is below the x-axis."
    },
-   "15(a)": {
+   "15(a)(i)": {
     "type": "exact",
     "points": [
-     "2000"
+     "y = 1/sin θ  or  y = (sin θ)⁻¹"
     ],
-    "guidance": "B1. N = 2000e⁰ = 2000."
+    "guidance": "B1 states y = (sin θ)⁻¹ or 1/sin θ. (sin⁻¹ scores B0.)"
    },
-   "15(b)": {
-    "type": "exact",
+   "15(a)(ii)": {
+    "type": "points",
     "points": [
-     "8900 (to nearest 100)"
+     "dy/dθ = d/dθ[(sin θ)⁻¹] = −(sin θ)⁻² × cos θ",
+     "= −cos θ/sin²θ = −(cos θ/sin θ) × (1/sin θ) = −cot θ × cosec θ = −cosec θ cot θ"
     ],
-    "guidance": "M1 substitutes t = 5: N = 2000e^(1.5) = 2000 × 4.4817... = 8963... A1 rounds to 9000 — accept 8900 or 9000 depending on exact model answer from mark scheme."
+    "guidance": "M1 applies chain rule to obtain ±k(sin θ)⁻² cos θ. A1 obtains −(sin θ)⁻² cos θ. R1 completes rigorous argument showing this equals −cosec θ cot θ."
    },
-   "15(c)": {
-    "type": "exact",
+   "15(a)(iii)": {
+    "type": "points",
     "points": [
-     "Approximately 7 hours 40 minutes"
+     "√(y²−1)/y = √(cosec²θ−1)/cosec θ",
+     "Using cot²θ = cosec²θ−1: = cot θ / cosec θ",
+     "= (cos θ/sin θ) × sin θ = cos θ"
     ],
-    "guidance": "M1 sets 2000e^(0.3t) > 20000 ⇒ e^(0.3t) > 10. M1 takes ln: 0.3t > ln 10 ⇒ t > ln10/0.3 = 7.675... A1 7 hours 41 minutes (to nearest minute)."
+    "guidance": "B1 substitutes y = cosec θ. M1 uses cosec²θ − 1 = cot²θ. R1 simplifies correctly to show the expression equals cos θ (AG)."
    },
-   "15(d)": {
+   "15(b)(i)": {
     "type": "exact",
     "points": [
-     "dN/dt ≈ 2690 bacteria per hour (to 3 s.f.)"
+     "k = −1/4"
     ],
-    "guidance": "M1 differentiates: dN/dt = 600e^(0.3t). M1 substitutes t = 5: dN/dt = 600e^(1.5). A1 600 × 4.4817 = 2689 ≈ 2690 bacteria per hour."
+    "guidance": "B1 dx/du = −2 cosec u cot u. M1 makes complete substitution. A1 correct integrand before simplification. M1 uses cosec²u − 1 = cot²u under the square root. A1F obtains k sin u du. R1 obtains k = −1/4."
    },
-   "16(a)": {
-    "type": "exact",
+   "15(b)(ii)": {
+    "type": "points",
     "points": [
-     "fg(x) = 3x² + 1"
+     "∫ −(1/4) sin u du = (1/4) cos u + c",
+     "Use result from 15(a)(iii): cos u = √(x²−4)/(x) × (1/2)... i.e. with x = 2 cosec u, cos u = √(cosec²u−1)/cosec u = √(x²/4−1)/(x/2) = √(x²−4)/x",
+     "So integral = (1/4) × √(x²−4)/x + c = √(x²−4)/(4x) + c"
     ],
-    "guidance": "M1 forms f(g(x)) = f(x²+1) = 3(x²+1) − 2. A1 3x² + 1."
-   },
-   "16(b)": {
-    "type": "exact",
-    "points": [
-     "gf(x) = 9x² − 12x + 5"
-    ],
-    "guidance": "M1 forms g(f(x)) = g(3x−2) = (3x−2)² + 1. A1 9x² − 12x + 4 + 1 = 9x² − 12x + 5."
-   },
-   "16(c)": {
-    "type": "exact",
-    "points": [
-     "x = 1 or x = 3/2"
-    ],
-    "guidance": "M1 sets 3x² + 1 = 9x² − 12x + 5 ⇒ 6x² − 12x + 4 = 0 ⇒ 3x² − 6x + 2 = 0. M1 uses quadratic formula or factorisation. A1 x = (6 ± √(36−24))/6 = (6 ± √12)/6 = 1 ± √3/3."
-   },
-   "16(d)": {
-    "type": "exact",
-    "points": [
-     "f⁻¹(x) = (x + 2)/3"
-    ],
-    "guidance": "M1 swaps x and y: x = 3y − 2 ⇒ y = (x+2)/3. A1 f⁻¹(x) = (x+2)/3."
+    "guidance": "B1 integrates ∫ sin u du to obtain −cos u. M1 uses result from (a)(iii) to express cos u back in terms of x. R1 completes argument correctly to obtain √(x²−4)/(4x) + c (AG)."
    }
   }
  }
