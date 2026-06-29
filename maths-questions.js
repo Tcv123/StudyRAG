@@ -21482,5 +21482,754 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1 set numerator = 0 and find y in terms of x. M1 substitute into the curve equation. M1 solve for x. A1 both x-values. A1 both complete coordinate pairs."
    }
   }
+ },
+ "math-ocr-h240-2019-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "The ages, in years, of 9 teachers at a school are:\n26  27  30  32  36  39  44  48  58",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find the median and the interquartile range of these ages.",
+      "marks": 3
+     },
+     {
+      "code": "1(b)",
+      "prompt": "State, giving a brief reason, whether a normal distribution would be an appropriate model for the ages of the teachers.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "It is given that ∫₀ᵃ (6x² − 4x + 3) dx = 7a, where a > 0.",
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Find the value of a.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A curve has equation y = 3x² − 12x + 7.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Express 3x² − 12x + 7 in the form a(x + b)² + c, where a, b and c are constants.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the coordinates of the vertex of the curve.",
+      "marks": 1
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Find the set of values of x for which 3x² − 12x + 7 < 0, giving your answer in surd form.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "In a game, a player rolls two fair dice simultaneously and records the sum of the two scores. If the sum is 8 or more the player wins. If the sum is less than 8 the player loses.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the probability that the player wins on any given roll.",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "A player plays the game 10 times. Find the probability that the player wins more than 4 times.",
+      "marks": 2
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find the expected number of wins in 10 games.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "f(x) = 2cos x − x,  0 ≤ x ≤ π.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Show that the equation f(x) = 0 has a root in the interval [1, 1.1].",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Use the iterative formula xₙ₊₁ = arccos(xₙ/2), starting with x₁ = 1, to find the root correct to 2 decimal places. Show all iterations clearly.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A sample of 80 students sat a test. The marks, x, were summarised as follows:\n∑x = 3680,  ∑x² = 181 060.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Calculate the mean and standard deviation of the marks.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "A student scored 72 in the test. Calculate the number of standard deviations this mark is above the mean.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "The probability distribution of a discrete random variable X is given by:\nP(X = r) = kr(r + 1),  r = 1, 2, 3, 4.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that k = 1/40.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find E(X) and Var(X).",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The curve C has parametric equations\nx = 2t + 1,  y = t² + 3t − 4.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the coordinates of the points where C crosses the x-axis.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find dy/dx in terms of t.",
+      "marks": 2
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the equation of the tangent to C at the point where t = 1, giving your answer in the form y = mx + c.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "At a factory, the lengths of rods produced are normally distributed with mean μ cm and standard deviation σ cm. It is given that 10% of rods are shorter than 19.6 cm and 5% of rods are longer than 24.9 cm.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Write down two equations involving μ and σ.",
+      "marks": 2
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find the values of μ and σ.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A curve has equation y = (3x − 1)/(x² + 2).",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Show that dy/dx = (−3x² + 2x + 6)/(x² + 2)².",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Find the x-coordinates of the stationary points of the curve, giving your answers in surd form.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A hypothesis test is carried out at the 5% significance level. A coin is tossed 20 times and X is the number of heads. It is claimed the coin is biased towards heads.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Write down the null and alternative hypotheses for this test.",
+      "marks": 1
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Find the critical region for X.",
+      "marks": 3
+     },
+     {
+      "code": "11(c)",
+      "prompt": "The coin is tossed 20 times and 15 heads are obtained. State the conclusion of the test. Justify your answer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "The region R is bounded by the curve y = √(4x + 1), the x-axis, and the lines x = 0 and x = 2.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Use the trapezium rule with 4 strips of equal width to find an approximate value for the area of R. Give your answer to 3 decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the exact area of R.",
+      "marks": 3
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Calculate the percentage error in the approximation found in part (a).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A researcher records the heights, h cm, and weights, w kg, of a random sample of 10 adults. The data are summarised as:\n∑h = 1720,  ∑w = 756,  ∑h² = 296 872,  ∑w² = 57 730,  ∑hw = 130 256.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Calculate the product moment correlation coefficient.",
+      "marks": 2
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Carry out a hypothesis test at the 5% significance level to determine whether there is evidence of positive correlation between height and weight. State your hypotheses clearly.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "f(x) = 4/(x − 1) − 3/(x + 2),  x ≠ 1,  x ≠ −2.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Show that f(x) = (x + 11)/((x − 1)(x + 2)).",
+      "marks": 2
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find ∫ f(x) dx, giving your answer in the form a ln|x − 1| + b ln|x + 2| + c.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A particle moves in a straight line. At time t seconds, the displacement, s metres, from a fixed point O is given by\ns = t³ − 6t² + 9t,  t ≥ 0.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the velocity and acceleration of the particle at time t.",
+      "marks": 2
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Find the times at which the particle is at rest.",
+      "marks": 2
+     },
+     {
+      "code": "15(c)",
+      "prompt": "Find the total distance travelled by the particle in the first 4 seconds.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "It is given that, for all values of x,\n2x³ + 7x² + 2x − 3 ≡ (Ax + B)(x + 1)(x + 3) + C(x + 1) + D.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Find the values of A, B, C and D.",
+      "marks": 3
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Hence find ∫ (2x³ + 7x² + 2x − 3)/((x + 1)(x + 3)) dx.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "A manufacturer produces components. The probability that any component is defective is 0.04, independently of all others. Components are packed in boxes of 25.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Find the probability that a box contains at most 2 defective components.",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "Find the probability that a box contains exactly 1 defective component.",
+      "marks": 2
+     },
+     {
+      "code": "17(c)",
+      "prompt": "A quality control inspector checks 5 boxes. Find the probability that exactly 3 boxes each contain exactly 1 defective component.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "The curve C has equation y = x³ − 3x² − 9x + 2.",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 1
+     },
+     {
+      "code": "18(b)",
+      "prompt": "Find the coordinates of the stationary points of C and determine their nature.",
+      "marks": 4
+     },
+     {
+      "code": "18(c)",
+      "prompt": "Sketch the curve C, marking clearly the coordinates of the stationary points and the y-intercept.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "Order already given: 26 27 30 32 36 39 44 48 58",
+     "Median = 36 (5th value)",
+     "Lower quartile Q₁ = 28.5 (mean of 27 and 30)",
+     "Upper quartile Q₃ = 46 (mean of 44 and 48)",
+     "IQR = Q₃ − Q₁ = 46 − 28.5 = 17.5"
+    ],
+    "guidance": "B1 median = 36. M1 attempt quartiles. A1 IQR = 17.5."
+   },
+   "1(b)": {
+    "type": "explanation",
+    "points": [
+     "The data is positively skewed (mean > median or the upper half is more spread than the lower half)",
+     "A normal distribution is symmetric, so it is not an appropriate model"
+    ],
+    "guidance": "B1 correct conclusion. B1 valid reason referencing skewness or asymmetry."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "∫₀ᵃ (6x² − 4x + 3) dx = [2x³ − 2x² + 3x]₀ᵃ = 2a³ − 2a² + 3a",
+     "Set equal to 7a: 2a³ − 2a² + 3a = 7a",
+     "2a³ − 2a² − 4a = 0",
+     "2a(a² − a − 2) = 0",
+     "2a(a − 2)(a + 1) = 0",
+     "a = 0, a = 2, or a = −1",
+     "Since a > 0: a = 2"
+    ],
+    "guidance": "M1 integrate. A1 correct integral. M1 form equation. M1 factorise. A1 a = 2."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "3x² − 12x + 7 = 3(x² − 4x) + 7",
+     "= 3((x − 2)² − 4) + 7",
+     "= 3(x − 2)² − 12 + 7",
+     "= 3(x − 2)² − 5"
+    ],
+    "guidance": "M1 correct method to complete the square. A1 3(x − 2)² − 5."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "Vertex is at minimum of 3(x − 2)² − 5",
+     "Vertex: (2, −5)"
+    ],
+    "guidance": "B1 ft from part (a)."
+   },
+   "3(c)": {
+    "type": "exact",
+    "points": [
+     "Solve 3(x − 2)² − 5 < 0",
+     "(x − 2)² < 5/3",
+     "|x − 2| < √(5/3)",
+     "2 − √(5/3) < x < 2 + √(5/3)",
+     "Simplify: √(5/3) = √15/3",
+     "2 − √15/3 < x < 2 + √15/3"
+    ],
+    "guidance": "M1 solve = 0 to get critical values. A1 both critical values in surd form. A1 correct inequality."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "Total outcomes = 36",
+     "Sum ≥ 8: (2,6),(3,5),(3,6),(4,4),(4,5),(4,6),(5,3),(5,4),(5,5),(5,6),(6,2),(6,3),(6,4),(6,5),(6,6) = 15 outcomes",
+     "P(win) = 15/36 = 5/12"
+    ],
+    "guidance": "M1 list or count favourable outcomes. A1 5/12."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "X ~ B(10, 5/12)",
+     "P(X > 4) = 1 − P(X ≤ 4)",
+     "P(X ≤ 4) = ∑ᵣ₌₀⁴ C(10,r)(5/12)ʳ(7/12)^(10−r)",
+     "P(X ≤ 4) ≈ 0.5765",
+     "P(X > 4) ≈ 1 − 0.5765 = 0.4235 (3 s.f.)"
+    ],
+    "guidance": "M1 identify correct binomial. M1 correct method for P(X > 4). A1 awrt 0.424."
+   },
+   "4(c)": {
+    "type": "exact",
+    "points": [
+     "E(X) = np = 10 × 5/12 = 50/12 = 25/6 ≈ 4.17"
+    ],
+    "guidance": "B1 cao."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "f(1) = 2cos(1) − 1 = 2(0.5403) − 1 = 0.0806 > 0",
+     "f(1.1) = 2cos(1.1) − 1.1 = 2(0.4536) − 1.1 = −0.1928 < 0",
+     "Sign change and f is continuous, so root lies in [1, 1.1]"
+    ],
+    "guidance": "M1 evaluate f at both endpoints. A1 correct values, sign change identified and conclusion."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "Rearrange 2cos x = x to give x = arccos(x/2)",
+     "x₁ = 1",
+     "x₂ = arccos(1/2) = 1.0472",
+     "x₃ = arccos(1.0472/2) = arccos(0.5236) = 1.0221",
+     "x₄ = arccos(1.0221/2) = arccos(0.5111) = 1.0289",
+     "Converging to ≈ 1.03 (2 d.p.)"
+    ],
+    "guidance": "M1 correct iterative formula. M1 at least 3 iterations shown. A1 root = 1.03."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "Mean x̄ = ∑x/n = 3680/80 = 46",
+     "Variance = ∑x²/n − x̄² = 181060/80 − 46² = 2263.25 − 2116 = 147.25",
+     "Standard deviation = √147.25 = 12.135 ≈ 12.1 (3 s.f.)"
+    ],
+    "guidance": "B1 mean = 46. M1 correct formula for variance. A1 sd ≈ 12.1."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "z = (72 − 46)/12.135 = 26/12.135 ≈ 2.14 standard deviations above the mean"
+    ],
+    "guidance": "M1 correct method. A1 ft their mean and sd."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "∑P(X = r) = 1: k(1×2 + 2×3 + 3×4 + 4×5) = 1",
+     "k(2 + 6 + 12 + 20) = 1",
+     "40k = 1",
+     "k = 1/40"
+    ],
+    "guidance": "M1 sum probabilities to 1. A1 show k = 1/40."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "E(X) = ∑r × P(X=r) = (1/40)(1×2 + 2×6 + 3×12 + 4×20)",
+     "= (1/40)(2 + 12 + 36 + 80) = 130/40 = 13/4 = 3.25",
+     "E(X²) = (1/40)(1×2 + 4×6 + 9×12 + 16×20) = (1/40)(2 + 24 + 108 + 320) = 454/40 = 11.35",
+     "Var(X) = E(X²) − (E(X))² = 11.35 − (3.25)² = 11.35 − 10.5625 = 0.7875"
+    ],
+    "guidance": "M1 use E(X) = ∑rP(X=r). A1 E(X) = 3.25. M1 use Var = E(X²) − (E(X))². A1 E(X²). A1 Var(X) = 63/80 or 0.7875."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "Set y = 0: t² + 3t − 4 = 0",
+     "(t + 4)(t − 1) = 0 ⇒ t = −4 or t = 1",
+     "When t = −4: x = 2(−4) + 1 = −7, so (−7, 0)",
+     "When t = 1: x = 2(1) + 1 = 3, so (3, 0)"
+    ],
+    "guidance": "M1 set y = 0 and solve for t. A1 both t-values. A1 both coordinate pairs."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "dx/dt = 2,  dy/dt = 2t + 3",
+     "dy/dx = (dy/dt)/(dx/dt) = (2t + 3)/2"
+    ],
+    "guidance": "M1 correct chain rule. A1 (2t + 3)/2."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "At t = 1: x = 3, y = 1 + 3 − 4 = 0. Point is (3, 0)",
+     "Gradient = (2(1) + 3)/2 = 5/2",
+     "Equation: y − 0 = (5/2)(x − 3)",
+     "y = (5/2)x − 15/2"
+    ],
+    "guidance": "B1 correct point. M1 find gradient. A1 correct equation."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "P(X < 19.6) = 0.10 ⇒ (19.6 − μ)/σ = −1.2816",
+     "P(X > 24.9) = 0.05 ⇒ (24.9 − μ)/σ = 1.6449"
+    ],
+    "guidance": "B1 each correct equation with z-values (allow ±0.01 tolerance)."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "Two equations: μ − 1.2816σ = 19.6  and  μ + 1.6449σ = 24.9",
+     "Subtract: (1.2816 + 1.6449)σ = 24.9 − 19.6 = 5.3",
+     "2.9265σ = 5.3 ⇒ σ = 5.3/2.9265 ≈ 1.811",
+     "μ = 19.6 + 1.2816 × 1.811 ≈ 19.6 + 2.320 ≈ 21.92"
+    ],
+    "guidance": "M1 solve simultaneous equations. A1 σ ≈ 1.81. A1 μ ≈ 21.9."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "Use quotient rule with u = 3x − 1, v = x² + 2",
+     "u′ = 3, v′ = 2x",
+     "dy/dx = (3(x² + 2) − (3x − 1)(2x))/(x² + 2)²",
+     "Numerator: 3x² + 6 − 6x² + 2x = −3x² + 2x + 6",
+     "dy/dx = (−3x² + 2x + 6)/(x² + 2)²  ∎"
+    ],
+    "guidance": "M1 quotient rule. A1 correct numerator before simplification. A1 show given result."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "Set −3x² + 2x + 6 = 0 ⇒ 3x² − 2x − 6 = 0",
+     "x = (2 ± √(4 + 72))/6 = (2 ± √76)/6 = (1 ± √19)/3"
+    ],
+    "guidance": "M1 set numerator = 0. M1 apply quadratic formula. A1 x = (1 ± √19)/3."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "H₀: p = 0.5",
+     "H₁: p > 0.5"
+    ],
+    "guidance": "B1 both hypotheses correctly stated."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "X ~ B(20, 0.5) under H₀",
+     "Find smallest c such that P(X ≥ c) ≤ 0.05",
+     "P(X ≥ 13) = 1 − P(X ≤ 12) = 1 − 0.8684 = 0.1316 > 0.05",
+     "P(X ≥ 14) = 1 − P(X ≤ 13) = 1 − 0.9423 = 0.0577 > 0.05",
+     "P(X ≥ 15) = 1 − P(X ≤ 14) = 1 − 0.9793 = 0.0207 < 0.05",
+     "Critical region: X ≥ 15"
+    ],
+    "guidance": "M1 use B(20, 0.5). M1 find relevant probabilities. A1 critical region X ≥ 15."
+   },
+   "11(c)": {
+    "type": "explanation",
+    "points": [
+     "X = 15 ≥ 15, so X is in the critical region",
+     "Reject H₀. There is sufficient evidence at the 5% significance level that the coin is biased towards heads"
+    ],
+    "guidance": "B1 correct comparison with critical region. B1 correct conclusion in context."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "h = (2 − 0)/4 = 0.5. x-values: 0, 0.5, 1, 1.5, 2",
+     "y-values: y₀ = √1 = 1, y₁ = √3 ≈ 1.7321, y₂ = √5 ≈ 2.2361, y₃ = √7 ≈ 2.6458, y₄ = √9 = 3",
+     "Trapezium rule: (0.5/2)(y₀ + 2y₁ + 2y₂ + 2y₃ + y₄)",
+     "= 0.25(1 + 3.4641 + 4.4721 + 5.2915 + 3) = 0.25 × 17.2277 = 4.307 (3 d.p.)"
+    ],
+    "guidance": "B1 correct strip width. M1 correct trapezium rule structure. A1 awrt 4.307."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "∫₀² √(4x + 1) dx = ∫₀² (4x + 1)^(1/2) dx",
+     "= [(4x + 1)^(3/2) / (3/2 × 4)]₀² = [(4x + 1)^(3/2)/6]₀²",
+     "= (9^(3/2))/6 − (1^(3/2))/6 = 27/6 − 1/6 = 26/6 = 13/3"
+    ],
+    "guidance": "M1 correct method of integration (reverse chain rule). A1 correct integral. A1 exact value 13/3."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "Exact area = 13/3 ≈ 4.3333",
+     "Error = |4.307 − 4.333| = 0.026",
+     "Percentage error = (0.026/4.333) × 100 ≈ 0.60%"
+    ],
+    "guidance": "M1 correct percentage error formula. A1 ft answer."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "n = 10, ∑h = 1720, ∑w = 756",
+     "Sₕₕ = ∑h² − (∑h)²/n = 296872 − 1720²/10 = 296872 − 295840 = 1032",
+     "Sᵥᵥ = ∑w² − (∑w)²/n = 57730 − 756²/10 = 57730 − 57153.6 = 576.4",
+     "Sₕᵥ = ∑hw − (∑h)(∑w)/n = 130256 − (1720 × 756)/10 = 130256 − 130032 = 224",
+     "r = Sₕᵥ / √(Sₕₕ × Sᵥᵥ) = 224 / √(1032 × 576.4) = 224 / √594844.8 = 224 / 771.26 ≈ 0.290"
+    ],
+    "guidance": "M1 correct formulae for Sₕₕ, Sᵥᵥ, Sₕᵥ. A1 at least two correct. A1 r ≈ 0.290."
+   },
+   "13(b)": {
+    "type": "explanation",
+    "points": [
+     "H₀: ρ = 0  H₁: ρ > 0 (one-tailed test)",
+     "Critical value for n = 10 at 5% significance level (one-tail): r_crit = 0.5494",
+     "Calculated r ≈ 0.290 < 0.5494",
+     "Do not reject H₀. There is insufficient evidence at the 5% significance level of positive correlation between height and weight"
+    ],
+    "guidance": "B1 correct hypotheses. B1 correct critical value. M1 correct comparison. A1 correct conclusion in context."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "4/(x−1) − 3/(x+2) = (4(x+2) − 3(x−1)) / ((x−1)(x+2))",
+     "= (4x + 8 − 3x + 3) / ((x−1)(x+2))",
+     "= (x + 11) / ((x−1)(x+2))  ∎"
+    ],
+    "guidance": "M1 combine fractions with correct common denominator. A1 correct numerator and conclusion."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "Write (x + 11)/((x−1)(x+2)) = A/(x−1) + B/(x+2)",
+     "x + 11 = A(x+2) + B(x−1)",
+     "x = 1: 12 = 3A ⇒ A = 4",
+     "x = −2: 9 = −3B ⇒ B = −3",
+     "∫ f(x) dx = ∫ (4/(x−1) − 3/(x+2)) dx = 4 ln|x−1| − 3 ln|x+2| + c"
+    ],
+    "guidance": "M1 partial fractions. A1 A = 4, B = −3. M1 integrate. A1 4 ln|x−1| − 3 ln|x+2| + c."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "v = ds/dt = 3t² − 12t + 9",
+     "a = dv/dt = 6t − 12"
+    ],
+    "guidance": "B1 correct v. B1 correct a."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "Set v = 0: 3t² − 12t + 9 = 0 ⇒ 3(t² − 4t + 3) = 0 ⇒ 3(t−1)(t−3) = 0",
+     "t = 1 s and t = 3 s"
+    ],
+    "guidance": "M1 set v = 0 and solve. A1 both values."
+   },
+   "15(c)": {
+    "type": "exact",
+    "points": [
+     "s(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4",
+     "From t=0 to t=1: moves from s=0 to s=4, distance = 4 m",
+     "From t=1 to t=3: moves from s=4 to s=0, distance = 4 m",
+     "From t=3 to t=4: moves from s=0 to s=4, distance = 4 m",
+     "Total distance = 4 + 4 + 4 = 12 m"
+    ],
+    "guidance": "M1 find s at t = 0, 1, 3, 4. A1 correct values. M1 sum absolute displacements. A1 12 m."
+   },
+   "16(a)": {
+    "type": "exact",
+    "points": [
+     "Expand (Ax + B)(x+1)(x+3) + C(x+1) + D",
+     "x = −1: 2(−1) + 7(1) + 2(−1) − 3 = −2 + 7 − 2 − 3 = 0 = C(0) + D ⇒ D = 0",
+     "x = −3: 2(−27) + 7(9) + 2(−3) − 3 = −54 + 63 − 6 − 3 = 0 = C(−2) + D ⇒ C(−2) = 0 ⇒ C = 0",
+     "So 2x³ + 7x² + 2x − 3 = (Ax + B)(x+1)(x+3)",
+     "Expand: (Ax+B)(x²+4x+3) = Ax³ + 4Ax² + 3Ax + Bx² + 4Bx + 3B",
+     "Compare x³: A = 2. Compare constant: 3B = −3 ⇒ B = −1",
+     "Check x²: 4A + B = 8 − 1 = 7 ✓",
+     "A = 2, B = −1, C = 0, D = 0"
+    ],
+    "guidance": "M1 substitute x = −1 and x = −3. A1 C = D = 0. M1 compare coefficients. A1 A = 2, B = −1."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "∫ (2x³ + 7x² + 2x − 3)/((x+1)(x+3)) dx = ∫ (2x − 1) dx  (since C = D = 0)",
+     "Wait — need to perform polynomial division first since degree of numerator ≥ degree of denominator:",
+     "(2x − 1)(x+1)(x+3) = (2x−1)(x²+4x+3) = 2x³ + 8x² + 6x − x² − 4x − 3 = 2x³ + 7x² + 2x − 3  ✓",
+     "So the integrand simplifies to (2x − 1), but we must divide by (x+1)(x+3):",
+     "∫ (2x−1) dx is only valid if we cancel; actually the identity shows the numerator factors as (2x−1)(x+1)(x+3)",
+     "Therefore: ∫ (2x³+7x²+2x−3)/((x+1)(x+3)) dx = ∫ (2x − 1) dx = x² − x + c"
+    ],
+    "guidance": "M1 use result of part (a) to simplify. M1 integrate. A1 x² − x + c."
+   },
+   "17(a)": {
+    "type": "exact",
+    "points": [
+     "X ~ B(25, 0.04)",
+     "P(X ≤ 2) = P(X=0) + P(X=1) + P(X=2)",
+     "P(X=0) = (0.96)^25 = 0.3604",
+     "P(X=1) = 25(0.04)(0.96)^24 = 0.3754",
+     "P(X=2) = C(25,2)(0.04)²(0.96)^23 = 300(0.0016)(0.96)^23 = 0.1877",
+     "P(X ≤ 2) = 0.3604 + 0.3754 + 0.1877 = 0.9235"
+    ],
+    "guidance": "M1 identify correct binomial. M1 correct method. A1 awrt 0.924."
+   },
+   "17(b)": {
+    "type": "exact",
+    "points": [
+     "P(X=1) = 25 × 0.04 × (0.96)^24 = 0.3754"
+    ],
+    "guidance": "M1 correct formula. A1 awrt 0.375."
+   },
+   "17(c)": {
+    "type": "exact",
+    "points": [
+     "Let p₁ = P(X=1) ≈ 0.3754. Let Y = number of boxes with exactly 1 defective.",
+     "Y ~ B(5, p₁)",
+     "P(Y = 3) = C(5,3)(0.3754)³(1 − 0.3754)² = 10 × 0.05284 × 0.3901 = 0.2062"
+    ],
+    "guidance": "M1 identify second binomial with p from part (b). M1 correct calculation. A1 awrt 0.206."
+   },
+   "18(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 3x² − 6x − 9"
+    ],
+    "guidance": "B1 cao."
+   },
+   "18(b)": {
+    "type": "exact",
+    "points": [
+     "Set dy/dx = 0: 3x² − 6x − 9 = 0 ⇒ 3(x² − 2x − 3) = 0 ⇒ 3(x−3)(x+1) = 0",
+     "x = 3 or x = −1",
+     "y(3) = 27 − 27 − 27 + 2 = −25. Point: (3, −25)",
+     "y(−1) = −1 − 3 + 9 + 2 = 7. Point: (−1, 7)",
+     "d²y/dx² = 6x − 6",
+     "At x = 3: d²y/dx² = 12 > 0 ⇒ local minimum at (3, −25)",
+     "At x = −1: d²y/dx² = −12 < 0 ⇒ local maximum at (−1, 7)"
+    ],
+    "guidance": "M1 set dy/dx = 0. M1 solve. A1 both x-values. A1 both y-values. A1 correct nature of both points."
+   },
+   "18(c)": {
+    "type": "explanation",
+    "points": [
+     "Sketch of cubic with positive leading coefficient",
+     "Local maximum at (−1, 7) marked",
+     "Local minimum at (3, −25) marked",
+     "y-intercept at (0, 2) marked",
+     "Curve crosses x-axis in 3 places (all three roots real since max > 0 and min < 0)"
+    ],
+    "guidance": "B1 correct shape (cubic, correct orientation). B1 stationary points correctly labelled. B1 y-intercept (0, 2) marked."
+   }
+  }
  }
 };
