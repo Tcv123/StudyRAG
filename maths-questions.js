@@ -27135,5 +27135,625 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1 set up definite integral; M1 integrate; A1 = 11/16."
    }
   }
+ },
+ "math-ocr-h240-2023-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Expand (1 + 3x)^(−2) in ascending powers of x, up to and including the term in x³. State the range of values of x for which the expansion is valid.",
+      "marks": 4
+     },
+     {
+      "code": "1(b)",
+      "prompt": "By substituting a suitable value of x into your answer to part (a), find an approximation to (1.003)^(−2). Give your answer to 6 decimal places.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A particle P moves in a straight line. At time t seconds after the start of motion, the displacement of P from a fixed point O is s metres, where s = t³ − 6t² + 9t.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find the velocity of P at time t seconds.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find the values of t for which P is instantaneously at rest.",
+      "marks": 2
+     },
+     {
+      "code": "2(c)",
+      "prompt": "Find the total distance travelled by P in the first 4 seconds.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A curve has equation y = x² ln x.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the x-coordinate of the stationary point of the curve, giving your answer in exact form.",
+      "marks": 3
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Determine the nature of the stationary point.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "Two forces F₁ and F₂ act on a particle. F₁ = (3i − 2j) N and F₂ = (pi + qj) N where p and q are constants. The resultant of F₁ and F₂ has magnitude 5√2 N and acts in the direction of the vector (i + j).",
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Find the values of p and q.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "Relative to a fixed origin O, the position vectors of points A and B are (2i + j − 3k) and (5i − 2j + k) respectively.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find the vector AB.",
+      "marks": 1
+     },
+     {
+      "code": "5(b)",
+      "prompt": "The line l passes through A and has direction vector (2i − j + 2k). Find the position vector of the point on l that is closest to B.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A particle of mass 5 kg is held at rest on a rough plane inclined at 30° to the horizontal. The coefficient of friction between the particle and the plane is μ. A force of magnitude P newtons acts on the particle up the line of greatest slope of the plane.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Given that the particle is on the point of moving down the plane, find the value of P in terms of μ.",
+      "marks": 4
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Given instead that μ = 0.4 and the particle is on the point of moving up the plane, find the value of P.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "f(x) = (5x + 1) / ((x + 1)(2x − 1))",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Express f(x) in partial fractions.",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Hence find ∫f(x) dx.",
+      "marks": 3
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Hence find ∫₁² f(x) dx, giving your answer in the form ln k where k is a rational number.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "A particle is projected from a point O on horizontal ground with speed 28 m s⁻¹ at an angle of 30° above the horizontal.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the greatest height above the ground reached by the particle.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find the time at which the particle lands.",
+      "marks": 3
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the horizontal range of the particle.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "The function f is defined by f(x) = 3/(2 − e^x), x ∈ ℝ, x < ln 2.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the range of f.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find f⁻¹(x), stating its domain.",
+      "marks": 4
+     },
+     {
+      "code": "9(c)",
+      "prompt": "On the same axes, sketch the graphs of y = f(x) and y = f⁻¹(x), labelling any asymptotes and any points where the graphs cross the coordinate axes.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A car of mass 1200 kg moves along a straight horizontal road. The engine of the car works at a constant rate of 20 kW. The resistance to motion has constant magnitude 800 N.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the maximum speed of the car.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "At the instant when the car has speed 10 m s⁻¹, find the acceleration of the car.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "With respect to a fixed origin O, a particle moves so that at time t seconds its position vector r metres is given by r = (t³ − 3t)i + (2t² − 4)j, t ≥ 0.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the velocity of the particle at time t.",
+      "marks": 2
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Find the speed of the particle when t = 2.",
+      "marks": 3
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Find the value of t when the particle is moving parallel to the vector i.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "The curve C has equation y = (2x − 1) / √(x² + 3), x ∈ ℝ.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Show that dy/dx = (x + 6) / (x² + 3)^(3/2).",
+      "marks": 4
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Hence determine the range of y on the curve C.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A particle of mass 3 kg moves under the action of a single force F newtons. At time t seconds the acceleration of the particle is a = (4t − 2)i + 6j m s⁻². When t = 0 the particle has velocity (−2i + j) m s⁻¹.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find the velocity of the particle at time t.",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find the force F when t = 1.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A curve is defined implicitly by x² + xy + y² = 7.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Show that dy/dx = −(2x + y) / (x + 2y).",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the coordinates of all points on the curve where the tangent is parallel to the y-axis.",
+      "marks": 4
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the gradient of the curve at the points found in part (b).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "Two particles A and B are connected by a light inextensible string passing over a smooth light pulley fixed at the edge of a smooth horizontal table. Particle A, of mass 2 kg, lies on the table. Particle B, of mass 3 kg, hangs freely. The system is released from rest.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the acceleration of the system.",
+      "marks": 4
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Find the tension in the string.",
+      "marks": 2
+     },
+     {
+      "code": "15(c)",
+      "prompt": "After the system has been moving for 2 seconds, the string breaks. Find the speed of particle B at the moment the string breaks, and describe the subsequent motion of each particle.",
+      "marks": 4
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "(1 + 3x)^(−2) = 1 + (−2)(3x) + (−2)(−3)/2!(3x)² + (−2)(−3)(−4)/3!(3x)³ + …",
+     "= 1 − 6x + 27x² − 108x³ + …",
+     "Valid for |3x| < 1, i.e. |x| < 1/3"
+    ],
+    "answer": "1 − 6x + 27x² − 108x³; valid for |x| < 1/3",
+    "guidance": "M1 for correct binomial structure with n = −2. A1 for first two terms 1 − 6x. A1 for 27x². A1 for −108x³ and correct validity statement |x| < 1/3."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "Use x = 0.001: (1.003)^(−2) ≈ 1 − 6(0.001) + 27(0.001)² − 108(0.001)³",
+     "= 1 − 0.006 + 0.000027 − 0.000000108 = 0.994027"
+    ],
+    "answer": "0.994027",
+    "guidance": "M1 for substituting x = 0.001 into their expansion. A1 for 0.994027 (to 6 d.p.)."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "v = ds/dt = 3t² − 12t + 9"
+    ],
+    "answer": "v = 3t² − 12t + 9",
+    "guidance": "B1 for differentiating s. A1 for 3t² − 12t + 9."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "Set 3t² − 12t + 9 = 0 ⟹ t² − 4t + 3 = 0 ⟹ (t − 1)(t − 3) = 0",
+     "t = 1 and t = 3"
+    ],
+    "answer": "t = 1 and t = 3",
+    "guidance": "M1 for setting their v = 0 and solving. A1 for t = 1 and t = 3."
+   },
+   "2(c)": {
+    "type": "points",
+    "points": [
+     "s(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4",
+     "Distance = |s(1) − s(0)| + |s(3) − s(1)| + |s(4) − s(3)| = 4 + 4 + 4 = 12 m"
+    ],
+    "answer": "12 m",
+    "guidance": "M1 for evaluating s at t = 0,1,3,4. A1 for all four values. M1 for summing |increments|. A1 for 12 m."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 2x ln x + x²·(1/x) = 2x ln x + x = x(2 ln x + 1)"
+    ],
+    "answer": "dy/dx = x(2 ln x + 1)",
+    "guidance": "M1 for product rule. A1 for 2x ln x + x (or x(2 ln x + 1))."
+   },
+   "3(b)": {
+    "type": "points",
+    "points": [
+     "Set x(2 ln x + 1) = 0; since x > 0: 2 ln x + 1 = 0 ⟹ ln x = −1/2 ⟹ x = e^(−1/2)"
+    ],
+    "answer": "x = e^(−1/2) = 1/√e",
+    "guidance": "M1 for setting dy/dx = 0. M1 for solving ln x = k. A1 for x = 1/√e."
+   },
+   "3(c)": {
+    "type": "points",
+    "points": [
+     "d²y/dx² = 2 ln x + 3; at x = 1/√e: 2(−1/2) + 3 = 2 > 0 ⟹ minimum"
+    ],
+    "answer": "Minimum",
+    "guidance": "M1 for d²y/dx² and substituting their x. A1 for correct conclusion 'minimum' with valid reason."
+   },
+   "4": {
+    "type": "points",
+    "points": [
+     "Resultant = (3+p)i + (−2+q)j; direction (i+j): components equal so 3+p = −2+q",
+     "Magnitude = 5√2: (3+p)² + (−2+q)² = 50; with q−p=5: 2(3+p)² = 50 ⟹ 3+p = 5",
+     "p = 2, q = 7"
+    ],
+    "answer": "p = 2, q = 7",
+    "guidance": "M1 for direction condition giving p − q = −5. M1 for magnitude condition. A1 for p = 2. A1 for q = 7."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "AB = OB − OA = 3i − 3j + 4k"
+    ],
+    "answer": "AB = 3i − 3j + 4k",
+    "guidance": "B1 for 3i − 3j + 4k."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "General point on l: P = (2+2t)i + (1−t)j + (−3+2t)k",
+     "BP = P − B = (2t−3)i + (t+3)j + (2t−4)k — wait, B = 5i−2j+k so vector from B to general point on l: (2+2t−5)i+(1−t+2)j+(−3+2t−1)k = (2t−3)i+(3−t)j+(2t−4)k",
+     "Perpendicular to d=(2,−1,2): 2(2t−3)+(−1)(3−t)+2(2t−4)=0",
+     "4t−6−3+t+4t−8=0 ⟹ 9t=17 ⟹ t=17/9",
+     "Closest point: (2+34/9)i+(1−17/9)j+(−3+34/9)k = (52/9)i+(−8/9)j+(7/9)k"
+    ],
+    "answer": "(52i − 8j + 7k)/9",
+    "guidance": "M1 for writing general point on l. M1 for vector from general point to B. M1 for dot product with direction = 0. A1 for t = 17/9. A1 for position vector (52/9)i−(8/9)j+(7/9)k."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "R = 5g cos30° = 5g(√3/2)",
+     "On point of moving down: friction acts up the slope, P + μR = 5g sin30°",
+     "P = 5g/2 − μ·5g√3/2 = (5g/2)(1 − √3μ)"
+    ],
+    "answer": "P = (5g/2)(1 − √3μ)",
+    "guidance": "M1 for R = 5g cos30°. M1 for resolving along slope with friction up. A1 for R correct. A1 for P = (5g/2)(1−√3μ)."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "R = 5×9.8×(√3/2) ≈ 42.44 N; F = 0.4R ≈ 16.97 N",
+     "Friction acts down slope (opposing upward motion): P = 5g sin30° + F = 24.5 + 16.97 ≈ 41.5 N"
+    ],
+    "answer": "P ≈ 41.5 N",
+    "guidance": "M1 for R. M1 for resolving along slope with friction down. A1 for P ≈ 41.5 N (accept 41.4−41.5 or exact (5g/2)(1+0.4√3))."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "(5x+1)/((x+1)(2x−1)) = A/(x+1) + B/(2x−1)",
+     "x=−1: −4 = −3A ⟹ A = 4/3",
+     "x=1/2: 7/2 = (3/2)B ⟹ B = 7/3"
+    ],
+    "answer": "4/(3(x+1)) + 7/(3(2x−1))",
+    "guidance": "M1 for correct setup. A1 for A = 4/3. A1 for B = 7/3."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "∫f(x)dx = (4/3)ln|x+1| + (7/6)ln|2x−1| + C"
+    ],
+    "answer": "(4/3)ln|x+1| + (7/6)ln|2x−1| + C",
+    "guidance": "M1 for integrating ln form. A1 for (4/3)ln|x+1|. A1 for (7/6)ln|2x−1|."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "[(4/3)ln|x+1|+(7/6)ln|2x−1|]₁²",
+     "x=2: (4/3)ln3+(7/6)ln3 = (5/2)ln3",
+     "x=1: (4/3)ln2+(7/6)ln1 = (4/3)ln2",
+     "Result = (5/2)ln3−(4/3)ln2 = ln(3^(5/2)/2^(4/3))"
+    ],
+    "answer": "ln(3^(5/2) / 2^(4/3))",
+    "guidance": "M1 for substituting limits. A1 for correct exact answer in form ln k."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "u_y = 28sin30° = 14 m/s; at max height v_y = 0",
+     "0 = 14² − 2(9.8)h ⟹ h = 196/19.6 = 10 m"
+    ],
+    "answer": "10 m",
+    "guidance": "M1 for v² = u² − 2gs with vertical component and v = 0. A1 for h = 10 m."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "0 = 14t − 4.9t² ⟹ t(14 − 4.9t) = 0",
+     "t = 14/4.9 = 20/7 ≈ 2.86 s"
+    ],
+    "answer": "t = 20/7 s",
+    "guidance": "M1 for s = 0 vertically. M1 for solving for non-zero t. A1 for t = 20/7 or awrt 2.86 s."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "u_x = 28cos30° = 14√3 m/s; Range = 14√3 × 20/7 = 40√3 m"
+    ],
+    "answer": "40√3 m",
+    "guidance": "M1 for horizontal distance = u_x × T. A1 for 40√3 or awrt 69.3 m."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "x < ln2 ⟹ e^x < 2 ⟹ 2 − e^x ∈ (0, 2)",
+     "f(x) = 3/(2−e^x): as x→−∞, f→3/2; as x→ln2⁻, f→+∞",
+     "Range: f(x) > 3/2"
+    ],
+    "answer": "f(x) > 3/2",
+    "guidance": "M1 for considering limits. A1 for range (3/2, ∞)."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "y = 3/(2−e^x) ⟹ e^x = 2−3/y ⟹ x = ln(2−3/y)",
+     "f⁻¹(x) = ln(2−3/x); domain x > 3/2"
+    ],
+    "answer": "f⁻¹(x) = ln(2 − 3/x), domain x > 3/2",
+    "guidance": "M1 for rearranging. A1 for f⁻¹. B1 for domain. A1 for linking to range of f."
+   },
+   "9(c)": {
+    "type": "points",
+    "points": [
+     "f(x): increasing, y-intercept (0, 3), VA x = ln2, HA y = 3/2",
+     "f⁻¹(x): reflection in y = x, x-intercept (3, 0), VA x = 3/2, HA y = ln2",
+     "Both curves drawn with correct shapes and asymptotes labelled"
+    ],
+    "answer": "Sketch with both curves, asymptotes, and intercepts correctly labelled",
+    "guidance": "B1 for f(x) correct shape. B1 for y-intercept (0,3) and asymptotes. B1 for f⁻¹ correct shape. B1 for x-intercept (3,0) and asymptotes."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "At max speed: driving force = resistance",
+     "20000/v = 800 ⟹ v = 25 m/s"
+    ],
+    "answer": "25 m s⁻¹",
+    "guidance": "M1 for equating P/v to resistance. A1 for v = 25 m/s."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "F = 20000/10 = 2000 N",
+     "F − R = ma: 2000 − 800 = 1200a ⟹ a = 1 m/s²"
+    ],
+    "answer": "a = 1 m s⁻²",
+    "guidance": "M1 for F = P/v. M1 for Newton's 2nd law. A1 for a = 1 m/s²."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "v = dr/dt = (3t² − 3)i + 4tj"
+    ],
+    "answer": "v = (3t² − 3)i + 4tj",
+    "guidance": "B1 for differentiating each component. A1 for (3t²−3)i + 4tj."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "At t=2: v = 9i + 8j",
+     "Speed = √(81+64) = √145 m/s"
+    ],
+    "answer": "√145 m s⁻¹",
+    "guidance": "M1 for substituting t=2. M1 for |v|. A1 for √145."
+   },
+   "11(c)": {
+    "type": "points",
+    "points": [
+     "Parallel to i: j-component = 0: 4t = 0 ⟹ t = 0"
+    ],
+    "answer": "t = 0",
+    "guidance": "M1 for j-component = 0. A1 for t = 0. A1 for confirming only solution for t ≥ 0."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "Quotient rule: u = 2x−1, v = (x²+3)^(1/2); u' = 2, v' = x/(x²+3)^(1/2)",
+     "dy/dx = [2(x²+3)^(1/2) − (2x−1)·x·(x²+3)^(−1/2)] / (x²+3)",
+     "= [2(x²+3) − x(2x−1)] / (x²+3)^(3/2) = (x+6)/(x²+3)^(3/2) ✓"
+    ],
+    "answer": "dy/dx = (x+6)/(x²+3)^(3/2) (shown)",
+    "guidance": "M1 for quotient rule. A1 for unsimplified numerator. M1 for multiplying by (x²+3)^(1/2). A1* for (x+6)/(x²+3)^(3/2)."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "dy/dx = 0 at x = −6 (minimum); at x→±∞, y→±2 (approaching but not reaching ±2)",
+     "At x = −6: y = (−13)/√39 = −13/√39 = −13√39/39",
+     "Range: −13/√39 ≤ y < 2"
+    ],
+    "answer": "−13/√39 ≤ y < 2",
+    "guidance": "M1 for finding stationary point. A1 for minimum value −13/√39. M1 for asymptotic analysis. A1 for range −13/√39 ≤ y < 2."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "v = ∫a dt = (2t²−2t)i + 6tj + C",
+     "At t=0, v = −2i+j: C = −2i+j",
+     "v = (2t²−2t−2)i + (6t+1)j"
+    ],
+    "answer": "v = (2t² − 2t − 2)i + (6t + 1)j",
+    "guidance": "M1 for integrating a. A1 for correct integral. A1 for applying initial condition."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "At t=1: a = 2i+6j",
+     "F = 3a = 6i+18j N"
+    ],
+    "answer": "(6i + 18j) N",
+    "guidance": "M1 for a at t=1. M1 for F = ma. A1 for F = 6i+18j N."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "2x + y + x(dy/dx) + 2y(dy/dx) = 0",
+     "(x+2y)(dy/dx) = −(2x+y)",
+     "dy/dx = −(2x+y)/(x+2y) ✓"
+    ],
+    "answer": "dy/dx = −(2x+y)/(x+2y) (shown)",
+    "guidance": "M1 for implicit differentiation of xy. A1 for correct full expression. A1* for rearranging correctly."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "Tangent parallel to y-axis: denominator = 0, x+2y = 0 ⟹ x = −2y",
+     "Substitute: 4y²−2y²+y² = 3y² = 7 ⟹ y = ±√(7/3)",
+     "Points: (−2√(7/3), √(7/3)) and (2√(7/3), −√(7/3))"
+    ],
+    "answer": "(−2√(7/3), √(7/3)) and (2√(7/3), −√(7/3))",
+    "guidance": "M1 for x+2y=0. M1 for substituting into curve. A1 for y²=7/3. A1 for both coordinate pairs."
+   },
+   "14(c)": {
+    "type": "exact",
+    "points": [
+     "The tangent is parallel to the y-axis at these points, so the gradient (dy/dx) is undefined."
+    ],
+    "answer": "Gradient is undefined (vertical tangent) at both points",
+    "guidance": "B1 for 'undefined' or 'infinite' with reason. B1 for applying to both points."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "For the system: net force = 3g, total mass = 5 kg",
+     "3g = 5a ⟹ a = 3g/5 = 5.88 m/s²"
+    ],
+    "answer": "a = 3g/5 ≈ 5.88 m s⁻²",
+    "guidance": "M1 for Newton's 2nd law for system. A1 for net force = 3g. A1 for 5a = 3g. A1 for a = 5.88 m/s²."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "For A: T = 2a = 2 × 5.88 = 11.76 N"
+    ],
+    "answer": "T = 11.76 N",
+    "guidance": "M1 for Newton's 2nd law for one particle. A1 for T = 11.76 N."
+   },
+   "15(c)": {
+    "type": "points",
+    "points": [
+     "Speed after 2s: v = at = 5.88 × 2 = 11.76 m/s",
+     "After string breaks: A moves at constant 11.76 m/s on smooth table (no horizontal force)",
+     "B has only weight acting: accelerates downward at g = 9.8 m/s²"
+    ],
+    "answer": "Speed = 11.76 m/s; A moves at constant speed; B accelerates down at g",
+    "guidance": "M1 for v = at. A1 for 11.76 m/s. B1 for A constant velocity. B1 for B free fall under gravity."
+   }
+  }
  }
+
 };
