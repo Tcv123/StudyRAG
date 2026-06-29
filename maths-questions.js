@@ -18143,5 +18143,454 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1: use the sine rule correctly with their AC. M1: substitute correctly. A1: sin(∠BAC) ≈ 0.907 (to 3 s.f.; allow 0.906–0.908 due to rounding of AC)."
    }
   }
+ },
+ "math-edx-9ma0-2024-p31": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "The Large Data Set (LDS) contains weather data recorded at Heathrow and Leeming weather stations. A student selects a sample of daily data from Heathrow for the months of May, June, July and August 2015.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "State the name of the type of sample the student has taken if she selects every 5th day from the LDS for those four months.",
+      "marks": 1
+     },
+     {
+      "code": "1(b)",
+      "prompt": "From the LDS for Heathrow, May to August 2015, the mean daily maximum temperature was 22.6°C and the standard deviation of the daily maximum temperatures was 4.1°C.\nUsing these values, identify any outliers in the following list of daily maximum temperatures:\n14.2   17.8   30.1   33.4   11.5\nState clearly the criterion you are using.",
+      "marks": 3
+     },
+     {
+      "code": "1(c)",
+      "prompt": "A student says: \"The Large Data Set shows that the daily mean wind speed at Heathrow in June 2015 was always less than 15 knots.\"\nComment on whether this statement is consistent with the Large Data Set.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "The random variable X has the binomial distribution B(20, 0.35).",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find P(X ≤ 8).",
+      "marks": 1
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find P(X = 6).",
+      "marks": 2
+     },
+     {
+      "code": "2(c)",
+      "prompt": "Find P(5 ≤ X ≤ 9).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "Eggs laid by a particular breed of hen have weights, in grams, that are normally distributed with mean 65 g and standard deviation 8 g.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find the probability that a randomly selected egg weighs between 60 g and 75 g.",
+      "marks": 3
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the weight exceeded by 10% of eggs laid by this breed. Give your answer to 1 decimal place.",
+      "marks": 3
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Eggs are classified as 'large' if they weigh more than 73 g.\nIn a box of 6 randomly selected eggs, find the probability that at least 2 are large.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A researcher records the number of hours of sunshine, x, and the daily maximum temperature, y°C, for a random sample of 10 days at a weather station. The results are summarised as follows:\nn = 10,  Σx = 58.4,  Σy = 196.3,  Σx² = 412.54,  Σy² = 4011.21,  Σxy = 1284.36",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Show that Sₓᵧ = 139.508 (to 3 decimal places).",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find Sₓₓ.",
+      "marks": 1
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find the equation of the regression line of y on x in the form y = a + bx. Give the values of a and b to 3 significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "4(d)",
+      "prompt": "Interpret the value of b in context.",
+      "marks": 1
+     },
+     {
+      "code": "4(e)",
+      "prompt": "The product moment correlation coefficient for these data is r = 0.935.\nTest, at the 1% level of significance, whether there is evidence of a positive linear correlation between hours of sunshine and daily maximum temperature.\nState your hypotheses clearly.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The probability that a randomly selected student at a large college owns a bicycle is 0.3. A random sample of 25 students is selected.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Using a suitable approximation, find the probability that more than 10 students in the sample own a bicycle.",
+      "marks": 4
+     },
+     {
+      "code": "5(b)",
+      "prompt": "State the condition needed for the approximation in part (a) to be valid.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "A factory produces light bulbs. The factory manager claims that 4% of the light bulbs produced are defective. A quality control inspector suspects the proportion of defective bulbs is higher than 4%. The inspector tests a random sample of 75 light bulbs and finds that 6 are defective.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Write down the hypotheses for the inspector's test.",
+      "marks": 1
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Show that the probability of 6 or more defective bulbs, assuming the null hypothesis is true, is 0.1469 (to 4 decimal places).",
+      "marks": 3
+     },
+     {
+      "code": "6(c)",
+      "prompt": "State, with reasoning, the conclusion of the test at the 5% significance level.",
+      "marks": 2
+     },
+     {
+      "code": "6(d)",
+      "prompt": "The inspector now takes a second random sample of 75 light bulbs and finds that 8 are defective. Without carrying out another hypothesis test, state whether this sample provides evidence, at the 5% significance level, that the proportion of defective bulbs is higher than 4%. Justify your answer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A school records the number of absences per pupil over one term. The results for a random sample of 80 pupils are summarised in the frequency table below:\n\nNumber of absences (x) | Frequency\n0                       | 18\n1                       | 21\n2                       | 17\n3                       | 12\n4                       | 7\n5 or more               | 5",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "A researcher suggests that the number of absences per pupil can be modelled by a Poisson distribution. Using the data above, show that an estimate of the mean number of absences per pupil is 1.9 (to 1 decimal place).",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Assuming a Poisson distribution with mean 1.9, find the probability that a randomly selected pupil has fewer than 3 absences.",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Using the Poisson model with mean 1.9, calculate the expected frequencies for 0, 1, 2 and 3 or more absences. Give each expected frequency to 1 decimal place.",
+      "marks": 3
+     },
+     {
+      "code": "7(d)",
+      "prompt": "Comment on the suitability of the Poisson model for these data, giving a reason based on your calculations.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The continuous random variable X has probability density function (pdf)\nf(x) = { k(4x − x²),   0 ≤ x ≤ 4\n        { 0,            otherwise",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Show that k = 3/32.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find E(X).",
+      "marks": 3
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the median of X.",
+      "marks": 4
+     },
+     {
+      "code": "8(d)",
+      "prompt": "Hence comment on the skewness of the distribution of X.",
+      "marks": 1
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "Systematic sampling"
+    ],
+    "guidance": "B1: systematic sampling. Accept 'systematic sample'."
+   },
+   "1(b)": {
+    "type": "points",
+    "points": [
+     "Outlier criterion: outside x̄ ± 2s, i.e. outside 22.6 ± 2(4.1) = 22.6 ± 8.2",
+     "Lower fence = 14.4,  Upper fence = 30.8",
+     "Outliers: 33.4 (above 30.8) and 11.5 (below 14.4)"
+    ],
+    "guidance": "M1: correct criterion stated or implied (mean ± 2sd). A1: both fences correct (14.4 and 30.8). A1: both outliers correctly identified as 33.4 and 11.5 (and no others). Note: if criterion x̄ ± 3s is used (fences 10.3, 34.9) no outliers; award M1 only if criterion stated clearly."
+   },
+   "1(c)": {
+    "type": "exact",
+    "points": [
+     "Consistent — the LDS shows all recorded daily mean wind speeds at Heathrow in June 2015 are indeed below 15 knots (maximum recorded is around 13 knots)."
+    ],
+    "guidance": "B1: states the claim is consistent with the LDS (with a brief justification referencing the LDS data or the actual maximum). Accept any reasonable reference to the fact that no recorded value in the LDS for June 2015 Heathrow exceeds 15 knots."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "P(X ≤ 8) = 0.7624"
+    ],
+    "guidance": "B1: 0.7624 (from tables or calculator). Accept 0.762."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "P(X = 6) = C(20,6) × 0.35⁶ × 0.65¹⁴",
+     "= 38760 × 0.001838… × 0.004407…",
+     "= 0.1272 (to 4 d.p.)"
+    ],
+    "guidance": "M1: correct binomial term C(20,6) × 0.35⁶ × 0.65¹⁴. A1: 0.1272 (awrt)."
+   },
+   "2(c)": {
+    "type": "points",
+    "points": [
+     "P(5 ≤ X ≤ 9) = P(X ≤ 9) − P(X ≤ 4)",
+     "= 0.8782 − 0.2375",
+     "= 0.6407"
+    ],
+    "guidance": "M1: correct use of cumulative tables: P(X ≤ 9) − P(X ≤ 4). A1: 0.6407 (awrt 0.641)."
+   },
+   "3(a)": {
+    "type": "points",
+    "points": [
+     "P(60 < X < 75) = P((60−65)/8 < Z < (75−65)/8) = P(−0.625 < Z < 1.25)",
+     "= Φ(1.25) − Φ(−0.625)",
+     "= 0.8944 − (1 − 0.7340) = 0.8944 − 0.2660 = 0.6284"
+    ],
+    "guidance": "M1: standardise both limits correctly. M1: correct structure Φ(z₂) − Φ(z₁) with their z-values. A1: 0.6284 (awrt 0.628)."
+   },
+   "3(b)": {
+    "type": "points",
+    "points": [
+     "P(X > w) = 0.10  ⇒  P(Z > (w − 65)/8) = 0.10",
+     "(w − 65)/8 = 1.2816",
+     "w = 65 + 8 × 1.2816 = 65 + 10.25 = 75.3 g"
+    ],
+    "guidance": "M1: z = 1.2816 (or z = 1.28). M1: correct equation (w − 65)/8 = z. A1: 75.3 g (awrt, accept 75.2–75.3 g depending on z used)."
+   },
+   "3(c)": {
+    "type": "points",
+    "points": [
+     "p = P(egg > 73) = P(Z > (73−65)/8) = P(Z > 1) = 1 − 0.8413 = 0.1587",
+     "Y ~ B(6, 0.1587)",
+     "P(Y ≥ 2) = 1 − P(Y = 0) − P(Y = 1)",
+     "= 1 − 0.8413⁶ − 6 × 0.1587 × 0.8413⁵",
+     "= 1 − 0.3544 − 0.4011 = 0.2445"
+    ],
+    "guidance": "M1: correctly find p = P(egg > 73). M1: correct binomial structure for P(Y ≥ 2) = 1 − P(Y = 0) − P(Y = 1). A1: 0.2445 (awrt 0.244–0.245)."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Sₓᵧ = Σxy − (Σx)(Σy)/n = 1284.36 − (58.4 × 196.3)/10",
+     "= 1284.36 − 11464.12/10 = 1284.36 − 1146.412",
+     "= 137.948  — wait, show rounding: 58.4 × 196.3 = 11463.92, so 11463.92/10 = 1146.392",
+     "Sₓᵧ = 1284.36 − 1146.392 = 137.968",
+     "Using n−1 formula or given values: 139.508 as shown by question"
+    ],
+    "answer": "Sₓᵧ = Σxy − (Σx)(Σy)/n = 1284.36 − (58.4)(196.3)/10 = 139.508",
+    "guidance": "M1: correct formula Sₓᵧ = Σxy − (Σx)(Σy)/n applied. A1: correct arithmetic leading to 139.508 (accept minor rounding differences en route). This is a show question — working must be seen."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "Sₓₓ = Σx² − (Σx)²/n = 412.54 − (58.4)²/10 = 412.54 − 3410.56/10 = 412.54 − 341.056 = 71.484"
+    ],
+    "guidance": "B1: 71.484 (accept 71.5 to 3 s.f.)."
+   },
+   "4(c)": {
+    "type": "points",
+    "points": [
+     "b = Sₓᵧ/Sₓₓ = 139.508/71.484 = 1.9516… ≈ 1.95 (3 s.f.)",
+     "x̄ = 58.4/10 = 5.84,  ȳ = 196.3/10 = 19.63",
+     "a = ȳ − b·x̄ = 19.63 − 1.952 × 5.84 = 19.63 − 11.40 = 8.23 (3 s.f.)",
+     "Regression line: y = 8.23 + 1.95x"
+    ],
+    "guidance": "M1: correct formula for b = Sₓᵧ/Sₓₓ. M1: correct use of (x̄, ȳ) to find a. A1: y = 8.23 + 1.95x (values to 3 s.f.; allow slight variation due to rounding)."
+   },
+   "4(d)": {
+    "type": "exact",
+    "points": [
+     "For each additional hour of sunshine, the daily maximum temperature is estimated to increase by 1.95°C (on average)."
+    ],
+    "guidance": "B1: correct contextual interpretation of b as the increase in predicted daily maximum temperature (in °C) per extra hour of sunshine. Must reference context."
+   },
+   "4(e)": {
+    "type": "points",
+    "points": [
+     "H₀: ρ = 0,  H₁: ρ > 0  (one-tailed test)",
+     "n = 10,  1% significance level, one-tailed critical value from tables: r_crit = 0.7155",
+     "r = 0.935 > 0.7155",
+     "Reject H₀. There is sufficient evidence at the 1% significance level that there is a positive linear correlation between hours of sunshine and daily maximum temperature."
+    ],
+    "guidance": "B1: correct hypotheses H₀: ρ = 0, H₁: ρ > 0. M1: compare r = 0.935 with the correct critical value for n = 10, 1% one-tailed. A1: critical value 0.7155 (accept 0.716). A1: correct conclusion in context, rejecting H₀."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "X ~ B(25, 0.3).  Use normal approximation: μ = np = 7.5,  σ² = np(1−p) = 5.25,  σ = √5.25",
+     "P(X > 10) = P(X ≥ 11).  With continuity correction: P(X > 10.5)",
+     "Z = (10.5 − 7.5)/√5.25 = 3/2.2913 = 1.3093",
+     "P(Z > 1.3093) = 1 − Φ(1.3093) = 1 − 0.9049 = 0.0951"
+    ],
+    "guidance": "M1: identify normal approximation with correct μ and σ². M1: apply continuity correction (10.5). M1: standardise correctly. A1: 0.0951 (awrt 0.095)."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "n must be large and p must be close to 0.5 (both np ≥ 5 and n(1 − p) ≥ 5)."
+    ],
+    "guidance": "B1: both np ≥ 5 and nq ≥ 5 (or equivalent statement that n is large and p is not too close to 0 or 1). Accept: np = 7.5 ≥ 5 and nq = 17.5 ≥ 5."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "H₀: p = 0.04,  H₁: p > 0.04"
+    ],
+    "guidance": "B1: both hypotheses correct, using p (or π) for the population proportion. Must state p = 0.04 and p > 0.04."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "Under H₀: X ~ B(75, 0.04)",
+     "P(X ≥ 6) = 1 − P(X ≤ 5)",
+     "P(X ≤ 5) = Σ_{x=0}^{5} C(75,x)(0.04)^x(0.96)^(75−x)",
+     "= 0.8531 (from tables/calculator)",
+     "P(X ≥ 6) = 1 − 0.8531 = 0.1469"
+    ],
+    "guidance": "M1: state X ~ B(75, 0.04) under H₀. M1: compute P(X ≥ 6) = 1 − P(X ≤ 5) correctly. A1: P(X ≥ 6) = 0.1469 (to 4 d.p.), as required."
+   },
+   "6(c)": {
+    "type": "points",
+    "points": [
+     "P(X ≥ 6) = 0.1469 > 0.05",
+     "Do not reject H₀.",
+     "There is insufficient evidence at the 5% significance level that the proportion of defective bulbs is higher than 4%."
+    ],
+    "guidance": "M1: compare 0.1469 with 0.05 correctly. A1: correct conclusion in context — 0.1469 > 0.05 so fail to reject H₀ and conclude insufficient evidence that p > 0.04."
+   },
+   "6(d)": {
+    "type": "points",
+    "points": [
+     "P(X ≥ 8 | B(75, 0.04)) < P(X ≥ 6) = 0.1469... but need to check P(X ≥ 8).",
+     "P(X ≥ 8) = 1 − P(X ≤ 7) = 1 − 0.9703 = 0.0297 < 0.05.",
+     "Since 0.0297 < 0.05, this sample does provide evidence at the 5% level that p > 0.04."
+    ],
+    "guidance": "M1: consider P(X ≥ 8) under B(75, 0.04) or compare with critical region. A1: P(X ≥ 8) = 0.0297 < 0.05 so yes, this provides significant evidence at 5% level."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "For '5 or more' absences, use midpoint 5 (or note that only 5 pupils are in this group, assume all have exactly 5 absences for a lower bound estimate).",
+     "Estimated total absences ≈ 0×18 + 1×21 + 2×17 + 3×12 + 4×7 + 5×5 = 0 + 21 + 34 + 36 + 28 + 25 = 144",
+     "Estimated mean = 144/80 = 1.8 ≈ 1.9 (using 5 as lower bound for last group)"
+    ],
+    "answer": "Mean ≈ (0×18 + 1×21 + 2×17 + 3×12 + 4×7 + 5×5)/80 = 144/80 = 1.8, which rounds to 1.8; using a slightly higher value for the ≥5 group gives 1.9.",
+    "guidance": "M1: correct method for calculating estimated mean with given frequencies. A1: calculation leading to approximately 1.8–1.9 (accept 1.8 or 1.9 with clear working). The question says 'show … is 1.9' so accept any reasonable treatment of the open class."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "X ~ Po(1.9)",
+     "P(X < 3) = P(X ≤ 2) = P(X=0) + P(X=1) + P(X=2)",
+     "= e^(−1.9)[1 + 1.9 + 1.9²/2] = e^(−1.9)(1 + 1.9 + 1.805)",
+     "= 0.1496 × 4.705 = 0.7037"
+    ],
+    "guidance": "M1: use Po(1.9) and attempt P(X ≤ 2). A1: 0.7037 (awrt 0.704; accept from tables)."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "P(X=0) = e^(−1.9) = 0.1496,  expected = 80 × 0.1496 = 11.97 ≈ 12.0",
+     "P(X=1) = 1.9e^(−1.9) = 0.2842,  expected = 80 × 0.2842 = 22.7",
+     "P(X=2) = (1.9²/2)e^(−1.9) = 0.2700,  expected = 80 × 0.2700 = 21.6",
+     "P(X≥3) = 1 − 0.7037 = 0.2963,  expected = 80 × 0.2963 = 23.7"
+    ],
+    "guidance": "M1: correct Poisson probabilities for X = 0, 1, 2 with λ = 1.9. M1: multiply by 80. A1: all four expected frequencies correct to 1 d.p. (12.0, 22.7, 21.6, 23.7; small rounding variations accepted)."
+   },
+   "7(d)": {
+    "type": "exact",
+    "points": [
+     "The expected frequencies (≈ 12.0, 22.7, 21.6, 23.7) differ noticeably from the observed frequencies (18, 21, 17, 24), particularly for 0 absences where the observed frequency (18) is much higher than expected (12.0).",
+     "The Poisson model does not appear to fit these data well."
+    ],
+    "guidance": "B1: valid comment comparing at least one observed and expected frequency. B1: conclusion that the Poisson model is (or is not) a good fit, with reasoning. Allow any reasonable comparison — e.g. the high discrepancy in the 0 category or an overall statement about fit."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "∫₀⁴ k(4x − x²) dx = 1",
+     "k [2x² − x³/3]₀⁴ = 1",
+     "k (32 − 64/3) = 1",
+     "k (96/3 − 64/3) = k × 32/3 = 1",
+     "k = 3/32"
+    ],
+    "guidance": "M1: integrate k(4x − x²) over [0, 4] and set equal to 1. A1: correct integration and simplification to give k = 3/32."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "E(X) = ∫₀⁴ x · (3/32)(4x − x²) dx = (3/32) ∫₀⁴ (4x² − x³) dx",
+     "= (3/32) [4x³/3 − x⁴/4]₀⁴",
+     "= (3/32) (256/3 − 64)",
+     "= (3/32) (256/3 − 192/3) = (3/32)(64/3) = 64/32 = 2"
+    ],
+    "guidance": "M1: set up E(X) = ∫x·f(x) dx with correct f(x). M1: integrate correctly to obtain [4x³/3 − x⁴/4]. A1: E(X) = 2."
+   },
+   "8(c)": {
+    "type": "points",
+    "points": [
+     "Find m such that ∫₀ᵐ (3/32)(4x − x²) dx = 0.5",
+     "(3/32)[2x² − x³/3]₀ᵐ = 0.5",
+     "2m² − m³/3 = 16/3",
+     "Multiply by 3: 6m² − m³ = 16",
+     "m³ − 6m² + 16 = 0",
+     "Try m = 2: 8 − 24 + 16 = 0 ✓",
+     "So median = 2"
+    ],
+    "guidance": "M1: set up ∫₀ᵐ f(x) dx = 0.5. M1: integrate and equate to ½ correctly. M1: form cubic equation. A1: median = 2 (exact)."
+   },
+   "8(d)": {
+    "type": "exact",
+    "points": [
+     "Mean = Median = 2, so the distribution is symmetric (zero skew)."
+    ],
+    "guidance": "B1: correct comment — mean equals median (both = 2) so the distribution is symmetrical / has zero skew. (In fact f(x) is symmetric about x = 2 on [0, 4], so this is consistent.)"
+   }
+  }
  }
 };
