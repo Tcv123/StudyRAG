@@ -1521,6 +1521,76 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-ocr-h240-2021a-p2::15(a)": "Sample mean: h̄ = Σh/n = 939.6/36 = 26.1 cm.\nSample variance: s² = (Σh² − n·h̄²)/(n − 1) = (24 858.76 − 36 × 26.1²)/35.\n36 × 26.1² = 36 × 681.21 = 24 523.56.\ns² = (24 858.76 − 24 523.56)/35 = 335.20/35 ≈ 9.577.\nRounded (or using slightly different rounding): s² ≈ 10.26 as required.\nThis establishes h̄ = 26.1 and s² ≈ 10.26.",
 
- "math-ocr-h240-2021a-p2::15(b)": "Hypotheses: H₀: μ = 25, H₁: μ ≠ 25 (two-tailed test).\nAssume σ² = 10.26 and n = 36.\nUnder H₀: X̄ ~ N(25, 10.26/36) = N(25, 0.285).\nTest statistic: z = (h̄ − 25)/√(10.26/36) = (26.1 − 25)/√0.285 = 1.1/0.5339 ≈ 2.06.\nCritical values for two-tailed 5% test: z = ±1.96.\nSince |2.06| > 1.96, we reject H₀.\nConclusion: there is sufficient evidence at the 5% significance level to conclude that the mean height of the population differs from 25 cm."
+ "math-ocr-h240-2021a-p2::15(b)": "Hypotheses: H₀: μ = 25, H₁: μ ≠ 25 (two-tailed test).\nAssume σ² = 10.26 and n = 36.\nUnder H₀: X̄ ~ N(25, 10.26/36) = N(25, 0.285).\nTest statistic: z = (h̄ − 25)/√(10.26/36) = (26.1 − 25)/√0.285 = 1.1/0.5339 ≈ 2.06.\nCritical values for two-tailed 5% test: z = ±1.96.\nSince |2.06| > 1.96, we reject H₀.\nConclusion: there is sufficient evidence at the 5% significance level to conclude that the mean height of the population differs from 25 cm.",
+
+ "math-ocr-h240-2021a-p3::1(a)": "Rewrite: 6x² − 5/x² + 4√x = 6x² − 5x⁻² + 4x^(1/2).\nIntegrate term by term:\n∫6x² dx = 2x³,\n∫−5x⁻² dx = 5x⁻¹ = 5/x,\n∫4x^(1/2) dx = 4 · x^(3/2)/(3/2) = (8/3)x^(3/2).\nAnswer: 2x³ + 5/x + (8/3)x^(3/2) + c.",
+
+ "math-ocr-h240-2021a-p3::1(b)": "Evaluate [2x³ + 5/x + (8/3)x^(3/2)]₁⁴.\nAt x = 4: 2(64) + 5/4 + (8/3)(8) = 128 + 5/4 + 64/3.\nAt x = 1: 2(1) + 5/1 + (8/3)(1) = 2 + 5 + 8/3 = 7 + 8/3.\nDifference: (128 + 5/4 + 64/3) − (7 + 8/3) = 121 + 5/4 + 56/3.\nConvert to twelfths: 121 = 1452/12, 5/4 = 15/12, 56/3 = 224/12.\nTotal = (1452 + 15 + 224)/12 = 1691/12.",
+
+ "math-ocr-h240-2021a-p3::2(a)": "Set v = 0: 3t² − 12t + 5 = 0.\nUsing the quadratic formula: t = (12 ± √(144 − 60))/6 = (12 ± √84)/6 = (12 ± 2√21)/6 = (6 ± √21)/3.\nt₁ = (6 − √21)/3 ≈ 0.47 s and t₂ = (6 + √21)/3 ≈ 3.53 s.\nBoth values are positive so both are valid.",
+
+ "math-ocr-h240-2021a-p3::2(b)": "Differentiate to get acceleration: a = dv/dt = 6t − 12.\nAt t = 3: a = 6(3) − 12 = 18 − 12 = 6 m s⁻².",
+
+ "math-ocr-h240-2021a-p3::2(c)": "The displacement function is s = t³ − 6t² + 5t (integrating v, taking s = 0 at t = 0).\nThe particle changes direction at t₁ = (6 − √21)/3 ≈ 0.4727 s and t₂ = (6 + √21)/3 ≈ 3.5273 s.\nSegment 1 (0 to t₁): s(t₁) = t₁³ − 6t₁² + 5t₁. With t₁ ≈ 0.4727: s ≈ 0.1057 − 1.3407 + 2.3635 ≈ 1.128 m (particle moves forward).\nSegment 2 (t₁ to t₂): s(t₂) − s(t₁). s(t₂) ≈ 3.5273³ − 6(3.5273)² + 5(3.5273) ≈ 43.879 − 74.677 + 17.637 ≈ −13.161. Change = −13.161 − 1.128 = −14.289 m (particle moves back, |distance| = 14.289 m).\nSegment 3 (t₂ to 4): s(4) = 64 − 96 + 20 = −12. Change = −12 − (−13.161) = 1.161 m (particle moves forward).\nTotal distance = 1.128 + 14.289 + 1.161 ≈ 16.6 m.",
+
+ "math-ocr-h240-2021a-p3::3(a)": "Start with 2sin²θ + 3cosθ = 0.\nReplace sin²θ using the identity sin²θ = 1 − cos²θ:\n2(1 − cos²θ) + 3cosθ = 0\n2 − 2cos²θ + 3cosθ = 0.\nMultiply throughout by −1:\n2cos²θ − 3cosθ − 2 = 0, as required.",
+
+ "math-ocr-h240-2021a-p3::3(b)": "Factorise 2cos²θ − 3cosθ − 2 = 0:\n(2cosθ + 1)(cosθ − 2) = 0.\nSo cosθ = −1/2 or cosθ = 2.\nSince −1 ≤ cosθ ≤ 1, cosθ = 2 gives no solution.\ncosθ = −1/2 ⟹ θ = 120° or θ = 240° (in the range 0° ≤ θ ≤ 360°).",
+
+ "math-ocr-h240-2021a-p3::4(a)": "Differentiate: dy/dx = 3x² − 12x.\nSet dy/dx = 0: 3x(x − 4) = 0, so x = 0 or x = 4.\nAt x = 0: y = 0 − 0 + 5 = 5. Stationary point (0, 5).\nAt x = 4: y = 64 − 96 + 5 = −27. Stationary point (4, −27).",
+
+ "math-ocr-h240-2021a-p3::4(b)": "Second derivative: d²y/dx² = 6x − 12.\nAt x = 0: d²y/dx² = −12 < 0, so (0, 5) is a local maximum.\nAt x = 4: d²y/dx² = 24 − 12 = 12 > 0, so (4, −27) is a local minimum.",
+
+ "math-ocr-h240-2021a-p3::4(c)": "At x = 1: y = 1 − 6 + 5 = 0. Point is (1, 0).\nGradient of tangent: dy/dx|_{x=1} = 3(1)² − 12(1) = 3 − 12 = −9.\nGradient of normal = −1/(−9) = 1/9.\nEquation of normal: y − 0 = (1/9)(x − 1)\ny = (x − 1)/9, or equivalently 9y = x − 1.",
+
+ "math-ocr-h240-2021a-p3::5(a)": "R = F₁ + F₂ = (3i − 5j) + (−1i + 2j) = (3 − 1)i + (−5 + 2)j = 2i − 3j N.",
+
+ "math-ocr-h240-2021a-p3::5(b)": "Magnitude: |R| = √(2² + (−3)²) = √(4 + 9) = √13 ≈ 3.61 N.",
+
+ "math-ocr-h240-2021a-p3::5(c)": "The angle α below the positive i-direction satisfies tanα = 3/2 (taking the magnitude of the j-component).\nα = arctan(3/2) ≈ 56.3°.\nR makes an angle of 56.3° below the positive i-direction (i.e. −56.3° from i, or the bearing/direction is 56.3° clockwise from i).",
+
+ "math-ocr-h240-2021a-p3::6(a)": "3x² − 18x + 29.\nFactor out 3 from the x terms: 3(x² − 6x) + 29.\nComplete the square inside: x² − 6x = (x − 3)² − 9.\nSo: 3((x − 3)² − 9) + 29 = 3(x − 3)² − 27 + 29 = 3(x − 3)² + 2.\nThus a = 3, b = 3, c = 2.",
+
+ "math-ocr-h240-2021a-p3::6(b)": "From the completed square form 3(x − 3)² + 2:\nSince (x − 3)² ≥ 0 for all x, the minimum value is 2, achieved when x − 3 = 0, i.e. x = 3.\nMinimum value = 2 at x = 3.",
+
+ "math-ocr-h240-2021a-p3::7": "The normal reaction: R = 5g = 5 × 9.8 = 49 N.\nMaximum (limiting) friction: F = μR = 0.3 × 49 = 14.7 N.\nAt the point of moving, the applied force equals the friction force:\nP = 14.7 N.",
+
+ "math-ocr-h240-2021a-p3::8(a)": "Using the binomial expansion (1 + u)ⁿ with u = 2x, n = 8:\n(1 + 2x)⁸ = 1 + C(8,1)(2x) + C(8,2)(2x)² + C(8,3)(2x)³ + …\n= 1 + 8(2x) + 28(4x²) + 56(8x³) + …\n= 1 + 16x + 112x² + 448x³ + …",
+
+ "math-ocr-h240-2021a-p3::8(b)": "(1.02)⁸ = (1 + 2 × 0.01)⁸, so substitute x = 0.01:\n≈ 1 + 16(0.01) + 112(0.01)² + 448(0.01)³\n= 1 + 0.16 + 112(0.0001) + 448(0.000001)\n= 1 + 0.16 + 0.0112 + 0.000448\n= 1.171648 ≈ 1.172 (to 4 s.f.).",
+
+ "math-ocr-h240-2021a-p3::9(a)": "Initial vertical velocity: u_y = 28 sin 30° = 28 × 0.5 = 14 m s⁻¹.\nAt maximum height, v_y = 0. Using v² = u² − 2gH:\n0 = 14² − 2(9.8)H ⟹ 19.6H = 196 ⟹ H = 10 m.\nThe maximum height is 10 m.",
+
+ "math-ocr-h240-2021a-p3::9(b)": "Initial horizontal velocity: u_x = 28 cos 30° = 28 × (√3/2) = 14√3 m s⁻¹.\nTime of flight T: use vertical displacement = 0 (lands on horizontal plane).\n0 = u_y T − ½gT² = T(14 − 4.9T) ⟹ T = 14/4.9 = 20/7 s.\nRange = u_x × T = 14√3 × 20/7 = 40√3 ≈ 69.3 m.",
+
+ "math-ocr-h240-2021a-p3::9(c)": "At height h = 5 m on the way up, find the vertical speed:\nv_y² = u_y² − 2gh = 196 − 2(9.8)(5) = 196 − 98 = 98 ⟹ v_y = √98 = 7√2 m s⁻¹.\nThe horizontal speed is unchanged: v_x = 14√3 m s⁻¹.\nResultant speed: v = √(v_x² + v_y²) = √((14√3)² + (7√2)²) = √(588 + 98) = √686 = 7√14 ≈ 26.2 m s⁻¹.",
+
+ "math-ocr-h240-2021a-p3::10(a)": "Write f(x) = A/(x + 2) + B/(2x − 1) + C/(x + 1).\nMultiply through by (x + 2)(2x − 1)(x + 1):\n4x² + 7x − 2 = A(2x − 1)(x + 1) + B(x + 2)(x + 1) + C(x + 2)(2x − 1).\nSubstitute x = −2: 16 − 14 − 2 = A(−5)(−1) ⟹ 0 = 5A ⟹ A = 0.\nSubstitute x = 1/2: 4(1/4) + 7/2 − 2 = B(5/2)(3/2) ⟹ 1 + 3.5 − 2 = (15/4)B ⟹ 2.5 = (15/4)B ⟹ B = 2/3.\nSubstitute x = −1: 4 − 7 − 2 = C(1)(−3) ⟹ −5 = −3C ⟹ C = 5/3.\nSo f(x) = 2/(3(2x − 1)) + 5/(3(x + 1)).",
+
+ "math-ocr-h240-2021a-p3::10(b)": "∫f(x) dx = ∫[2/(3(2x − 1)) + 5/(3(x + 1))] dx.\nFor the first term: ∫2/(3(2x − 1)) dx = (2/3) × (1/2)ln|2x − 1| = (1/3)ln|2x − 1|.\nFor the second term: ∫5/(3(x + 1)) dx = (5/3)ln|x + 1|.\nAnswer: (1/3)ln|2x − 1| + (5/3)ln|x + 1| + c.",
+
+ "math-ocr-h240-2021a-p3::11(a)": "The box is on a smooth inclined plane at 25°. Resolve forces on the box along the plane:\nT − 3g sin 25° = 0 (equilibrium) ⟹ T = 3 × 9.8 × sin 25° = 29.4 × 0.4226 ≈ 12.42 N.\nFor the hanging particle in equilibrium: T = mg ⟹ m = T/g = 12.42/9.8 ≈ 1.27 kg.",
+
+ "math-ocr-h240-2021a-p3::11(b)": "After the string is cut, only the component of the box's weight along the slope acts (plane is smooth, no tension, no friction).\nNewton's 2nd law along the plane (taking down-slope as positive):\n3g sin 25° = 3a ⟹ a = g sin 25° = 9.8 × sin 25° ≈ 9.8 × 0.4226 ≈ 4.14 m s⁻².\nThe box accelerates down the plane at 4.14 m s⁻².",
+
+ "math-ocr-h240-2021a-p3::12(a)": "Expand the left side:\n(tanθ + cotθ)² = tan²θ + 2·tanθ·cotθ + cot²θ.\nSince tanθ·cotθ = (sinθ/cosθ)·(cosθ/sinθ) = 1, the middle term is 2.\nUse Pythagorean identities: tan²θ = sec²θ − 1 and cot²θ = cosec²θ − 1.\n= (sec²θ − 1) + 2 + (cosec²θ − 1) = sec²θ + cosec²θ, as required.",
+
+ "math-ocr-h240-2021a-p3::12(b)": "From part (a): sec²θ + cosec²θ = 9.\nWrite as 1/cos²θ + 1/sin²θ = 9 ⟹ (sin²θ + cos²θ)/(sin²θ cos²θ) = 9 ⟹ 1/(sin²θ cos²θ) = 9.\nSo sin²θ cos²θ = 1/9.\nUsing sin2θ = 2sinθ cosθ: (sin2θ/2)² = 1/9 ⟹ sin²2θ = 4/9 ⟹ sin2θ = ±2/3.\narcsin(2/3) ≈ 41.81°.\nFor sin2θ = 2/3 in 0° < 2θ < 720°: 2θ = 41.8°, 138.2°, 401.8°, 498.2°, giving θ = 20.9°, 69.1°, 200.9°, 249.1°.\nFor sin2θ = −2/3 in 0° < 2θ < 720°: 2θ = 221.8°, 318.2°, 581.8°, 678.2°, giving θ = 110.9°, 159.1°, 290.9°, 339.1°.\nSolutions: θ = 20.9°, 69.1°, 110.9°, 159.1°, 200.9°, 249.1°, 290.9°, 339.1° (all to 1 d.p.).",
+
+ "math-ocr-h240-2021a-p3::13(a)": "Substitute x = 0: y = e^(2×0) + 3e^(−0) − 4 = e⁰ + 3e⁰ − 4 = 1 + 3 − 4 = 0.\nSince y = 0 at x = 0, the curve crosses the x-axis at x = 0.",
+
+ "math-ocr-h240-2021a-p3::13(b)": "Start with e^(2x) + 3e^(−x) − 4 = 0.\nMultiply every term by eˣ (which is always positive, so the equation is equivalent):\ne^(2x)·eˣ + 3e^(−x)·eˣ − 4eˣ = 0\ne^(3x) + 3e⁰ − 4eˣ = 0\ne^(3x) + 3 − 4eˣ = 0\nRearranging: e^(3x) − 4eˣ + 3 = 0, as required.",
+
+ "math-ocr-h240-2021a-p3::13(c)": "Let u = eˣ (so u > 0). The equation becomes u³ − 4u + 3 = 0.\nTest u = 1: 1 − 4 + 3 = 0 ✓, so (u − 1) is a factor.\nDivide: u³ − 4u + 3 = (u − 1)(u² + u − 3).\nFrom u − 1 = 0: u = 1 ⟹ eˣ = 1 ⟹ x = 0.\nFrom u² + u − 3 = 0: u = (−1 ± √(1 + 12))/2 = (−1 ± √13)/2.\nu = (−1 + √13)/2 ≈ 1.3028 > 0 ✓ ⟹ x = ln((√13 − 1)/2) ≈ 0.265.\nu = (−1 − √13)/2 ≈ −2.3028 < 0 ✗ (rejected since eˣ > 0).\nSolutions: x = 0 and x = ln((√13 − 1)/2) ≈ 0.265 (to 3 s.f.).",
+
+ "math-ocr-h240-2021a-p3::14(a)": "Speed of A at time t: v_A = 0 + 2.5t = 2.5t.\nB travels at constant speed 15 m s⁻¹.\nSet equal: 2.5t = 15 ⟹ t = 6 s.\nA and B have the same speed at t = 6 s.",
+
+ "math-ocr-h240-2021a-p3::14(b)": "At t = 6:\nDistance of A from O: s_A = ½ × 2.5 × 6² = ½ × 2.5 × 36 = 45 m.\nDistance of B from O: s_B = 15 × 6 = 90 m.\nDistance between A and B: 90 − 45 = 45 m.",
+
+ "math-ocr-h240-2021a-p3::14(c)": "A overtakes B when s_A = s_B:\n½ × 2.5 × t² = 15t\n1.25t² = 15t\n1.25t² − 15t = 0\nt(1.25t − 15) = 0\nt = 0 or t = 15/1.25 = 12 s.\nt = 0 is the start (B is at O, A just starts), so A overtakes B at t = 12 s.",
+
+ "math-ocr-h240-2021a-p3::15(a)": "Using log laws:\nlog₂(p³/√q) = log₂(p³) − log₂(q^(1/2))\n= 3log₂p − (1/2)log₂q\n= 3a − b/2.",
+
+ "math-ocr-h240-2021a-p3::15(b)": "Combine the logs using the quotient law:\nlog₂((4x + 3)/(x − 1)) = 3.\nConvert to exponential form:\n(4x + 3)/(x − 1) = 2³ = 8.\nSolve: 4x + 3 = 8(x − 1) = 8x − 8 ⟹ 3 + 8 = 8x − 4x ⟹ 11 = 4x ⟹ x = 11/4.\nCheck: x = 11/4 > 1 ✓ (so x − 1 > 0 and 4x + 3 > 0, valid).\nAnswer: x = 11/4."
 
 };
