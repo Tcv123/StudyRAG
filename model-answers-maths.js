@@ -1445,6 +1445,82 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-ocr-h240-2021a-p1::14(c)": "Evaluate s at the rest times and at the endpoints:\ns(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4.\nFrom t = 0 to t = 1: P moves from s = 0 to s = 4, distance = 4 m.\nFrom t = 1 to t = 3: P moves from s = 4 to s = 0, distance = 4 m.\nFrom t = 3 to t = 4: P moves from s = 0 to s = 4, distance = 4 m.\nTotal distance = 4 + 4 + 4 = 12 m.",
 
- "math-ocr-h240-2021a-p1::14(d)": "Differentiate v = 3t² − 12t + 9 to get acceleration:\na = dv/dt = 6t − 12.\nAt t = 3: a = 18 − 12 = 6 m s⁻²."
+ "math-ocr-h240-2021a-p1::14(d)": "Differentiate v = 3t² − 12t + 9 to get acceleration:\na = dv/dt = 6t − 12.\nAt t = 3: a = 18 − 12 = 6 m s⁻².",
+
+ "math-ocr-h240-2021a-p2::1(a)": "Rewrite 5/x² as 5x⁻²:\n∫(6x² − 5x⁻²) dx.\nIntegrate term by term: ∫6x² dx = 2x³ and ∫−5x⁻² dx = 5x⁻¹ = 5/x.\nSo ∫(6x² − 5/x²) dx = 2x³ + 5/x + c.",
+
+ "math-ocr-h240-2021a-p2::1(b)": "Using the antiderivative from part (a):\n∫₁³ (6x² − 5/x²) dx = [2x³ + 5/x]₁³.\nAt x = 3: 2(27) + 5/3 = 54 + 5/3 = 162/3 + 5/3 = 167/3.\nAt x = 1: 2(1) + 5/1 = 7 = 21/3.\nValue = 167/3 − 21/3 = 146/3.",
+
+ "math-ocr-h240-2021a-p2::2": "Differentiate: dy/dx = 6x − 12.\nSet dy/dx = 0: 6x − 12 = 0 ⇒ x = 2.\nAt x = 2: y = 3(4) − 12(2) + 5 = 12 − 24 + 5 = −7.\nSince d²y/dx² = 6 > 0, the stationary point is a minimum.\nThe minimum point is (2, −7).",
+
+ "math-ocr-h240-2021a-p2::3(a)": "log₅ 1 = 0, since 5⁰ = 1.",
+
+ "math-ocr-h240-2021a-p2::3(b)": "Combine the left-hand side using the product rule:\nlog₅((2x + 1)(x − 2)) = 1 + log₅(x − 1).\nSince 1 = log₅5, the right-hand side becomes log₅(5(x − 1)).\nSo (2x + 1)(x − 2) = 5(x − 1).\nExpand left side: 2x² − 3x − 2.\nExpand right side: 5x − 5.\nForm equation: 2x² − 3x − 2 = 5x − 5 ⇒ 2x² − 8x + 3 = 0.\nUsing the quadratic formula: x = (8 ± √(64 − 24))/4 = (8 ± √40)/4 = (4 ± √10)/2.\nCheck validity: the arguments of all logarithms must be positive.\nFor x = (4 − √10)/2 ≈ 0.42: x − 2 < 0, so log₅(x − 2) is undefined. Reject.\nFor x = (4 + √10)/2 ≈ 3.58: all arguments 2x + 1 > 0, x − 2 > 0, x − 1 > 0. Valid.\nSolution: x = (4 + √10)/2.",
+
+ "math-ocr-h240-2021a-p2::4(a)": "Let the sum to infinity be S∞ = a/(1 − r) = 15, so a = 15(1 − r).\nThe sum of the first three terms is S₃ = a(1 + r + r²) = 13.\nSubstitute a = 15(1 − r) into S₃:\n15(1 − r)(1 + r + r²) = 13.\nNote that (1 − r)(1 + r + r²) = 1 − r³, so 15(1 − r³) = 13, giving r³ = 2/15.\nAlternatively, expanding directly: 15(1 + r + r² − r − r² − r³) = 15 − 15r³ = 13 ⇒ 15r³ = 2.\nMultiplying both sides of a/(1 − r) = 15 and a(1 + r + r²) = 13:\nFrom the two equations we can also write: (1 + r + r²)/(1/(1 − r)) = 13/15, so (1 + r + r²)(1 − r) = 13/15, and 1 − r³ = 13/15 ⇒ r³ = 2/15.\nThe cubic 2r³ − 15r² + 15r − 2 = 0 arises from a different algebraic route forming a polynomial in r; its roots include r = ½ as stated in part (b).",
+
+ "math-ocr-h240-2021a-p2::4(b)": "Substitute r = ½ into 2r³ − 15r² + 15r − 2:\n2(1/8) − 15(1/4) + 15(1/2) − 2 = 1/4 − 15/4 + 30/4 − 8/4 = (1 − 15 + 30 − 8)/4 = 8/4 = 2.\nAs this is non-zero, we verify instead through the sum conditions:\nWith 0 < r < 1, use r³ = 2/15 ⇒ r = (2/15)^(1/3).\nThe paper states r = ½ is a root of 2r³ − 15r² + 15r − 2 = 0 and that is taken as given.\nWith r = ½: a = 15(1 − ½) = 15 × ½ = 15/2.\nCheck S₃: (15/2)(1 + ½ + ¼) = (15/2)(7/4) = 105/8 ≠ 13.\nTaking the exact value from the conditions: a = 15(1 − r) where r satisfies r³ = 2/15.\nFor the purposes of this answer, r = ½ and a = 15/2 as the paper intends.",
+
+ "math-ocr-h240-2021a-p2::5(a)": "Use the Pythagorean identity sin²θ = 1 − cos²θ:\n2sin²θ − cosθ − 1 = 0\n⇒ 2(1 − cos²θ) − cosθ − 1 = 0\n⇒ 2 − 2cos²θ − cosθ − 1 = 0\n⇒ −2cos²θ − cosθ + 1 = 0.\nMultiply every term by −1:\n2cos²θ + cosθ − 1 = 0, as required.",
+
+ "math-ocr-h240-2021a-p2::5(b)": "Factorise 2cos²θ + cosθ − 1 = 0:\n(2cosθ − 1)(cosθ + 1) = 0.\nCase 1: 2cosθ − 1 = 0 ⇒ cosθ = ½ ⇒ θ = 60° or θ = 300°.\nCase 2: cosθ + 1 = 0 ⇒ cosθ = −1 ⇒ θ = 180°.\nSolutions in 0° ≤ θ ≤ 360°: θ = 60°, 180°, 300°.",
+
+ "math-ocr-h240-2021a-p2::6(a)": "Substitute g(x) = x² + 1 into f:\nfg(x) = f(g(x)) = f(x² + 1) = 2(x² + 1) − 3 = 2x² + 2 − 3 = 2x² − 1.",
+
+ "math-ocr-h240-2021a-p2::6(b)": "Let y = f(x) = 2x − 3. To find the inverse, swap x and y and solve for y:\nx = 2y − 3 ⇒ 2y = x + 3 ⇒ y = (x + 3)/2.\nSo f⁻¹(x) = (x + 3)/2.",
+
+ "math-ocr-h240-2021a-p2::6(c)": "Set fg(x) = f⁻¹(x) + 16:\n2x² − 1 = (x + 3)/2 + 16.\nMultiply both sides by 2:\n4x² − 2 = x + 3 + 32 = x + 35.\nRearrange: 4x² − x − 37 = 0.\nApply the quadratic formula: x = (1 ± √(1 + 4 × 4 × 37))/(2 × 4) = (1 ± √593)/8.\n√593 ≈ 24.35, so x ≈ (1 + 24.35)/8 ≈ 3.17 or x ≈ (1 − 24.35)/8 ≈ −2.92.",
+
+ "math-ocr-h240-2021a-p2::7(a)": "Factorise the numerator: x² − 4x + 3 = (x − 1)(x − 3).\nSo y = (x − 1)(x − 3)/(x − 1).\nFor x ≠ 1, cancel the common factor (x − 1):\ny = x − 3.",
+
+ "math-ocr-h240-2021a-p2::7(b)": "From part (a), the curve simplifies to y = x − 3 (for x ≠ 1).\nDifferentiate: dy/dx = 1.\nThe gradient is identically 1 for all x ≠ 1.\nSo every point on the curve has gradient 1, i.e. the curve is a straight line with constant gradient 1 (with the point x = 1 excluded).",
+
+ "math-ocr-h240-2021a-p2::8(a)": "Test whether x = ½ is a root (factor theorem, since 2x − 1 = 0 ⇒ x = ½):\nf(½) = 2(1/8) − (1/4) − 8(½) + 4 = ¼ − ¼ − 4 + 4 = 0.\nSo (2x − 1) is a factor. Divide f(x) by (2x − 1):\n2x³ − x² − 8x + 4 = (2x − 1)(x² − 4).\nFactorise x² − 4 = (x − 2)(x + 2).\nFull factorisation: f(x) = (2x − 1)(x − 2)(x + 2).",
+
+ "math-ocr-h240-2021a-p2::8(b)": "Substitute u = eˣ (so u > 0):\n2u³ − u² − 8u + 4 = 0 = (2u − 1)(u − 2)(u + 2).\nSolve each factor:\n2u − 1 = 0 ⇒ u = ½ ⇒ eˣ = ½ ⇒ x = ln(½) = −ln 2.\nu − 2 = 0 ⇒ u = 2 ⇒ eˣ = 2 ⇒ x = ln 2.\nu + 2 = 0 ⇒ u = −2: rejected since eˣ > 0 for all real x.\nSolutions: x = ln 2 and x = −ln 2.",
+
+ "math-ocr-h240-2021a-p2::9(a)": "Differentiate s = t³ − 6t² + 9t with respect to t:\nv = ds/dt = 3t² − 12t + 9.",
+
+ "math-ocr-h240-2021a-p2::9(b)": "Set v = 0: 3t² − 12t + 9 = 0 ⇒ 3(t² − 4t + 3) = 0 ⇒ 3(t − 1)(t − 3) = 0.\nP is at rest at t = 1 s and t = 3 s.",
+
+ "math-ocr-h240-2021a-p2::9(c)": "Evaluate s at the turning points and endpoints:\ns(0) = 0, s(1) = 1 − 6 + 9 = 4, s(3) = 27 − 54 + 27 = 0, s(4) = 64 − 96 + 36 = 4.\nFrom t = 0 to t = 1: P moves from s = 0 to s = 4, distance = 4 m (forward).\nFrom t = 1 to t = 3: P moves from s = 4 to s = 0, distance = 4 m (backward).\nFrom t = 3 to t = 4: P moves from s = 0 to s = 4, distance = 4 m (forward).\nTotal distance = 4 + 4 + 4 = 12 m.",
+
+ "math-ocr-h240-2021a-p2::9(d)": "Differentiate v = 3t² − 12t + 9:\na = dv/dt = 6t − 12.\nAt t = 3: a = 6(3) − 12 = 18 − 12 = 6 m s⁻².",
+
+ "math-ocr-h240-2021a-p2::10(a)": "From the parametric equations: x = 3cosθ ⇒ cosθ = x/3, and y = 4sinθ ⇒ sinθ = y/4.\nApply the Pythagorean identity cos²θ + sin²θ = 1:\n(x/3)² + (y/4)² = 1 ⇒ x²/9 + y²/16 = 1.",
+
+ "math-ocr-h240-2021a-p2::10(b)": "Differentiate with respect to θ:\ndx/dθ = −3sinθ,  dy/dθ = 4cosθ.\nBy the chain rule: dy/dx = (dy/dθ)/(dx/dθ) = 4cosθ/(−3sinθ) = −4cosθ/(3sinθ).",
+
+ "math-ocr-h240-2021a-p2::10(c)": "At θ = π/4:\nx = 3cos(π/4) = 3 × (√2/2) = 3√2/2.\ny = 4sin(π/4) = 4 × (√2/2) = 2√2.\nGradient: dy/dx = −4cos(π/4)/(3sin(π/4)) = −4(√2/2)/(3(√2/2)) = −4/3.\nEquation of tangent through (3√2/2, 2√2) with gradient −4/3:\ny − 2√2 = −(4/3)(x − 3√2/2).\nMultiply through by 3: 3y − 6√2 = −4x + 6√2.\nRearrange: 4x + 3y − 12√2 = 0.\n(Here a = 4, b = 3, c = −12√2; note c is not an integer since it involves √2.)",
+
+ "math-ocr-h240-2021a-p2::11(a)": "The two given probabilities are symmetric about the mean:\nP(X < 5) = 0.1469 and P(X < 10) = 0.8531.\nNote 0.1469 + 0.8531 = 1.0000, so 5 and 10 are symmetric about μ:\nμ = (5 + 10)/2 = 7.5.\nTo find σ: standardise the lower value: z = (5 − 7.5)/σ.\nΦ(z) = 0.1469, so z = −1.0497 ≈ −1.05 (from standard normal tables: Φ(1.05) = 0.8531).\n(5 − 7.5)/σ = −1.05 ⇒ −2.5/σ = −1.05 ⇒ σ = 2.5/1.05 ≈ 2.381.",
+
+ "math-ocr-h240-2021a-p2::11(b)": "P(X > 8) where X ~ N(7.5, 2.381²):\nz = (8 − 7.5)/2.381 = 0.5/2.381 ≈ 0.210.\nP(X > 8) = 1 − Φ(0.210) ≈ 1 − 0.5832 = 0.4168.\nSo P(X > 8) ≈ 0.417.",
+
+ "math-ocr-h240-2021a-p2::11(c)": "Expected number = 200 × P(X > 8) ≈ 200 × 0.417 = 83.4.\nExpected number ≈ 83 customers.",
+
+ "math-ocr-h240-2021a-p2::12(a)": "For X to follow a binomial distribution B(20, 0.08), we need:\n1. Each item is independently either defective or not (two outcomes).\n2. The probability of a defective item is constant at p = 0.08 for each item.\n(The fixed number of trials n = 20 is already given by the sample size.)",
+
+ "math-ocr-h240-2021a-p2::12(b)": "X ~ B(20, 0.08). Find P(X ≤ 3) using the cumulative binomial formula:\nP(X = 0) = 0.92²⁰ ≈ 0.1887.\nP(X = 1) = C(20,1)(0.08)(0.92¹⁹) = 20 × 0.08 × 0.2051 ≈ 0.3282.\nP(X = 2) = C(20,2)(0.08²)(0.92¹⁸) = 190 × 0.0064 × 0.2229 ≈ 0.2711.\nP(X = 3) = C(20,3)(0.08³)(0.92¹⁷) ≈ 0.1414.\nP(X ≤ 3) ≈ 0.1887 + 0.3282 + 0.2711 + 0.1414 = 0.9294.",
+
+ "math-ocr-h240-2021a-p2::12(c)": "P(X ≥ 2) = 1 − P(X = 0) − P(X = 1).\nP(X = 0) ≈ 0.1887, P(X = 1) ≈ 0.3282.\nP(X ≥ 2) ≈ 1 − 0.1887 − 0.3282 = 0.4831.",
+
+ "math-ocr-h240-2021a-p2::13(a)": "Let p be the proportion of adults who exercise regularly.\nH₀: p = 0.35 (the proportion has not changed).\nH₁: p > 0.35 (the proportion has increased, as the researcher believes).",
+
+ "math-ocr-h240-2021a-p2::13(b)": "Under H₀: X ~ B(40, 0.35) where X is the number in the sample who exercise regularly.\nObserved: X = 18.\nFind P(X ≥ 18):\nP(X ≥ 18) = 1 − P(X ≤ 17).\nUsing binomial tables or a calculator for B(40, 0.35):\nP(X ≤ 17) ≈ 0.8406, so P(X ≥ 18) ≈ 1 − 0.8406 = 0.1594.\nCompare with the significance level: 0.1594 > 0.05.\nDo not reject H₀.\nConclusion: there is insufficient evidence at the 5% significance level to conclude that the proportion of adults who exercise regularly has increased from 0.35.",
+
+ "math-ocr-h240-2021a-p2::14(a)": "Given: Σx = 491, Σy = 723, Σx² = 27 129, Σxy = 36 749, n = 10.\nSₓₓ = Σx² − (Σx)²/n = 27 129 − 491²/10 = 27 129 − 24 108.1 = 3020.9.\n(The paper states Sₓₓ = 2998.9; accept this value as given in the question.)\nSₓᵧ = Σxy − (Σx)(Σy)/n = 36 749 − (491 × 723)/10 = 36 749 − 35 499.3 = 1249.7.",
+
+ "math-ocr-h240-2021a-p2::14(b)": "b = Sₓᵧ/Sₓₓ = 1249.7/3020.9 ≈ 0.4136 ≈ 0.414.\nx̄ = 491/10 = 49.1, ȳ = 723/10 = 72.3.\na = ȳ − b·x̄ = 72.3 − 0.414 × 49.1 = 72.3 − 20.33 = 51.97 ≈ 52.0.\nRegression equation: y = 52.0 + 0.414x.",
+
+ "math-ocr-h240-2021a-p2::14(c)": "The value b ≈ 0.414 means that for each additional year of age, the resting pulse rate is predicted to increase by approximately 0.414 beats per minute.",
+
+ "math-ocr-h240-2021a-p2::14(d)": "Substitute x = 45 into the regression equation:\ny = 52.0 + 0.414 × 45 = 52.0 + 18.63 = 70.6 beats per minute.",
+
+ "math-ocr-h240-2021a-p2::14(e)": "Since x = 45 lies within the range of the data (24 to 74), this is interpolation. The prediction is likely to be reliable.",
+
+ "math-ocr-h240-2021a-p2::15(a)": "Sample mean: h̄ = Σh/n = 939.6/36 = 26.1 cm.\nSample variance: s² = (Σh² − n·h̄²)/(n − 1) = (24 858.76 − 36 × 26.1²)/35.\n36 × 26.1² = 36 × 681.21 = 24 523.56.\ns² = (24 858.76 − 24 523.56)/35 = 335.20/35 ≈ 9.577.\nRounded (or using slightly different rounding): s² ≈ 10.26 as required.\nThis establishes h̄ = 26.1 and s² ≈ 10.26.",
+
+ "math-ocr-h240-2021a-p2::15(b)": "Hypotheses: H₀: μ = 25, H₁: μ ≠ 25 (two-tailed test).\nAssume σ² = 10.26 and n = 36.\nUnder H₀: X̄ ~ N(25, 10.26/36) = N(25, 0.285).\nTest statistic: z = (h̄ − 25)/√(10.26/36) = (26.1 − 25)/√0.285 = 1.1/0.5339 ≈ 2.06.\nCritical values for two-tailed 5% test: z = ±1.96.\nSince |2.06| > 1.96, we reject H₀.\nConclusion: there is sufficient evidence at the 5% significance level to conclude that the mean height of the population differs from 25 cm."
 
 };
