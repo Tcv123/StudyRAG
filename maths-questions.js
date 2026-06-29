@@ -1975,6 +1975,649 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-aqa-7357-2024-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Find the coefficient of x in the expansion of\n\n(4x³ − 5x² + 3x − 2)(x⁵ + 4x + 1)\n\nCircle your answer.\n\n−5     −2     7     11",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "The function f is defined by f(x) = eˣ + 1 for x ∈ ℝ\n\nFind an expression for f⁻¹(x)\n\nTick (✓) one box.\n\nf⁻¹(x) = ln(x − 1)\n\nf⁻¹(x) = ln(x) − 1\n\nf⁻¹(x) = eˣ⁻¹ + 1\n\nf⁻¹(x) = x − 1 / e",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "The expression\n\n(12x² + 3x + 7) / (3x − 5)\n\ncan be written as Ax + B + C/(3x − 5)\n\nState the value of A\n\nCircle your answer.\n\n3     4     7     9",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "One of the diagrams below shows the graph of y = arccos x\n\nIdentify the graph of y = arccos x\n\nTick (✓) one box.\n\n[Four graphs shown. The correct graph starts at (−1, π), passes through (0, π/2) and ends at (1, 0).]",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "Solve the equation\n\nsin²x = 1\n\nfor 0° < x < 360°",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6",
+      "prompt": "Use the chain rule to find dy/dx when y = (x³ + 5x)⁷",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "parts": [
+     {
+      "code": "7",
+      "prompt": "Show that\n\n(3 + √(8n)) / (1 + √(2n))\n\ncan be written as\n\n(4n − 3 + √(2n)) / (2n − 1)\n\nwhere n is a positive integer.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find the first three terms, in ascending powers of x, in the expansion of\n\n(2 + kx)⁵\n\nwhere k is a positive constant.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Hence, given that the coefficient of x is four times the coefficient of x², find the value of k",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Show that, for small values of θ measured in radians,\n\ncos 4θ + 2 sin 3θ − tan 2θ ≈ A + Bθ + Cθ²\n\nwhere A, B and C are constants to be found.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Use your answer to part (a) to find an approximation for\n\ncos 0.28 + 2 sin 0.21 − tan 0.14\n\nGive your answer to three decimal places.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "An arithmetic sequence has 300 terms.\n\nThe first term of the sequence is −7 and the last term is 32\n\nFind the sum of the 300 terms.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "A school holds a raffle at its summer fair.\n\nThere are nine prizes.\n\nThe total value of the prizes is £1260\n\nThe values of the prizes form an arithmetic sequence.\n\nThe top prize has the highest value, and the bottom prize has the least value.\n\nThe value of the top prize is six times the value of the bottom prize.\n\nFind the value of the top prize.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "f(x) = x(x − a)(x − 6) where 0 < a < 6",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Sketch the graph of y = f(x) on the axes provided.",
+      "marks": 3
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Sketch the graph of y = f(−2x) on the axes provided.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "The terms, uₙ, of a periodic sequence are defined by u₁ = 3 and uₙ₊₁ = −6/uₙ",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Find u₂, u₃ and u₄",
+      "marks": 2
+     },
+     {
+      "code": "12(b)",
+      "prompt": "State the period of the sequence.",
+      "marks": 1
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Find the value of Σuₙ from n = 1 to 101",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "P(x) = 4x³ + 8x² + 11x + 4",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Use the factor theorem to show that (2x + 1) is a factor of P(x)",
+      "marks": 2
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Express P(x) in the form\n\nP(x) = (2x + 1)(ax² + bx + c)\n\nwhere a, b and c are constants to be found.",
+      "marks": 2
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Given that n is a positive integer, use your answer to part (b) to explain why 4n³ + 8n² + 11n + 4 is never prime.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The equation x³ = e^(6−2x) has a single solution, x = α",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "By considering a suitable change of sign, show that α lies between 0 and 4",
+      "marks": 2
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Show that the equation x³ = e^(6−2x) can be rearranged to give\n\nx = 3 − (3/2) ln x",
+      "marks": 3
+     },
+     {
+      "code": "14(c)(i)",
+      "prompt": "Use the iterative formula\n\nxₙ₊₁ = 3 − (3/2) ln xₙ\n\nwith x₁ = 4, to find x₂, x₃ and x₄\n\nGive your answers to three decimal places.",
+      "marks": 2
+     },
+     {
+      "code": "14(c)(ii)",
+      "prompt": "On the given diagram showing y = 3 − (3/2) ln x and y = x, draw a staircase or cobweb diagram to show how convergence takes place.\n\nLabel, on the x-axis, the positions of x₂, x₃ and x₄",
+      "marks": 2
+     },
+     {
+      "code": "14(c)(iii)",
+      "prompt": "Explain why the iterative formula xₙ₊₁ = 3 − (3/2) ln xₙ fails to converge to α when the starting value is x₁ = 0",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Show that the expression\n\nsin 2θ · cosec θ + cos 2θ · sec θ\n\ncan be written as\n\n4 cos θ − sec θ\n\nwhere sin θ ≠ 0 and cos θ ≠ 0",
+      "marks": 4
+     },
+     {
+      "code": "15(b)(i)",
+      "prompt": "A student attempts to solve sin 2θ · cosec θ + cos 2θ · sec θ = 3 for 0° ≤ θ ≤ 360°\n\nThey use the result from part (a) and obtain cos θ = 1 or cos θ = −0.25 in Step 4.\n\nExplain why the student should reject one of their values for cos θ in Step 4.",
+      "marks": 1
+     },
+     {
+      "code": "15(b)(ii)",
+      "prompt": "State the correct solutions to the equation\n\nsin 2θ · cosec θ + cos 2θ · sec θ = 3 for 0° ≤ θ ≤ 360°",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "A 1.5 metre length of pipe has a symmetrical cross-section. The cross-section is described by a curve where x and y are measured in centimetres. The following values are given:\nx: 0, 0.4, 0.8, 1.2, 1.6, 2\ny: −3, −2.943, −2.752, −2.353, −1.572, 0",
+    "parts": [
+     {
+      "code": "16",
+      "prompt": "Use the trapezium rule, with the values shown in the table, to find the best estimate for the volume of the pipe.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "The function f is defined by f(x) = |x| + 1 for x ∈ ℝ\nThe function g is defined by g(x) = ln x where g has its greatest possible domain.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Using set notation, state the range of f",
+      "marks": 2
+     },
+     {
+      "code": "17(b)",
+      "prompt": "State the domain of g",
+      "marks": 1
+     },
+     {
+      "code": "17(c)(i)",
+      "prompt": "The composite function h is given by h(x) = gf(x) for x ∈ ℝ\n\nWrite down an expression for h(x) in terms of x",
+      "marks": 1
+     },
+     {
+      "code": "17(c)(ii)",
+      "prompt": "Determine if h has an inverse.\n\nFully justify your answer.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Use a suitable substitution to show that\n\n∫₀⁴ (4x + 1)(2x + 1)^(1/2) dx\n\ncan be written as\n\n(1/2) ∫₁⁹ (2u^(3/2) − u^(1/2)) du\n\nwhere a is a constant to be found.",
+      "marks": 5
+     },
+     {
+      "code": "18(b)",
+      "prompt": "Hence, or otherwise, show that\n\n∫₀⁴ (4x + 1)(2x + 1)^(1/2) dx = 1322/15",
+      "marks": 4
+     },
+     {
+      "code": "18(c)",
+      "prompt": "A graph has the equation y = (4x + 1)√(2x + 1)\n\nA student uses four rectangles of equal width, all drawn under the curve, to approximate the area under the graph between x = 0 and x = 4. The total area of the four rectangles is A.\n\nThe student improves the approximation by increasing the number of rectangles used.\n\nExplain why the value of the student's improved approximation will be greater than A, but less than 1322/15",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "parts": [
+     {
+      "code": "19",
+      "prompt": "A curve has equation\n\ny³e^(2x) + 2y − 16x = k\n\nwhere k is a constant.\n\nThe curve has a stationary point on the y-axis.\n\nDetermine the value of k",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 20,
+    "scenario": "A gardener stores rainwater in a cylindrical container of height 130 cm. The hose is attached 5 cm from the bottom. At time t minutes, the depth h cm decreases at a rate proportional to (h − 5). Initially h = 130 and dh/dt = −1.5.",
+    "parts": [
+     {
+      "code": "20(a)",
+      "prompt": "Show that\n\ndh/dt = −0.012(h − 5)",
+      "marks": 3
+     },
+     {
+      "code": "20(b)",
+      "prompt": "Solve the differential equation\n\ndh/dt = −0.012(h − 5)\n\nto find an expression for h in terms of t",
+      "marks": 5
+     },
+     {
+      "code": "20(c)",
+      "prompt": "Find the time taken for the container to be half empty.\n\nGive your answer to the nearest minute.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": ["−5"],
+    "guidance": "B1 for circling −5. The coefficient of x comes from (3x)(1) + (−2)(4x) = 3x − 8x = −5x."
+   },
+   "2": {
+    "type": "exact",
+    "points": ["f⁻¹(x) = ln(x − 1)"],
+    "guidance": "B1 for ticking the first box. If y = eˣ + 1 then x = ln(y − 1), so f⁻¹(x) = ln(x − 1)."
+   },
+   "3": {
+    "type": "exact",
+    "points": ["4"],
+    "guidance": "B1 for circling 4. Polynomial long division of (12x² + 3x + 7) by (3x − 5) gives 4x as leading term, so A = 4."
+   },
+   "4": {
+    "type": "exact",
+    "points": ["Bottom-right graph (domain [−1,1], range [0,π])"],
+    "guidance": "B1 for ticking the bottom-right box. y = arccos x has domain [−1,1] and range [0,π], passing through (−1,π), (0,π/2), (1,0)."
+   },
+   "5": {
+    "type": "points",
+    "points": [
+     "Obtain sin x = ±1 or cos x = 0 (M1)",
+     "Obtain 90° or 270° (A1)",
+     "Obtain both 90° and 270° and no other values in range (A1)"
+    ],
+    "guidance": "M1 for obtaining sin x = 1 or cos x = 0 (condone radians or values outside range). A1 for 90 or 270. A1 for both 90 and 270 and no other values in range."
+   },
+   "6": {
+    "type": "points",
+    "points": [
+     "Use chain rule to obtain 7(x³ + 5x)⁶ · f(x) or g(x) · (3x² + 5) where f(x) and g(x) are polynomials of degree ≥ 1 (M1)",
+     "Obtain 7(3x² + 5)(x³ + 5x)⁶ (A1)"
+    ],
+    "guidance": "M1 for applying chain rule in correct direction. A1 for 7(3x² + 5)(x³ + 5x)⁶ OE. ISW."
+   },
+   "7": {
+    "type": "points",
+    "points": [
+     "Simplify √(8n) to 2√(2n) (B1)",
+     "Multiply by (1 − √(2n))/(1 − √(2n)) or (√(2n) − 1)/(√(2n) − 1) (M1)",
+     "Obtain correct single fraction with denominator 1 − √(2n) or √(2n) − 1 (A1)",
+     "Complete reasoned argument to obtain (4n − 3 + √(2n))/(√(2n) − 1) (R1)"
+    ],
+    "guidance": "B1 simplifies √8n = 2√(2n). M1 multiplies by conjugate. A1 correct fraction. R1 completes argument to obtain required form AG."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Obtain correct constant term 32 (B1)",
+     "Obtain 5·16·kx or 10·8·(kx)² term (M1)",
+     "Obtain 32 + 80kx + 80k²x² (A1)"
+    ],
+    "guidance": "B1 for correct constant 32. M1 for correct method for x or x² term (condone coefficient errors). A1 for complete correct first three terms 32 + 80kx + 80k²x². No ISW."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Form equation: their 80k = 4 × their 80k² (M1)",
+     "Deduce k = 1/4 (rejecting k = 0 since k is positive) (A1)"
+    ],
+    "guidance": "M1 for forming equation Ak = 4Bk². A1 for k = 1/4 with justification for rejecting k = 0 (since k > 0 given). Justification of rejection not required if positive constant condition used."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Substitute at least one small angle identity correctly into cos 4θ + 2 sin 3θ − tan 2θ (M1)",
+     "Obtain a correct expression in terms of θ (A1)",
+     "Complete argument to obtain 1 + 4θ − 8θ² so A = 1, B = 4, C = −8 (R1)"
+    ],
+    "guidance": "M1 for substituting at least one small angle approximation. A1 correct intermediate expression. R1 complete argument to show 1 + 4θ − 8θ²."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "Substitute θ = 0.07 into their 1 + 4θ − 8θ² (M1)",
+     "Obtain AWRT 1.241 (A1)"
+    ],
+    "guidance": "M1 for substituting θ = 0.07 (from noting angles 0.28 = 4×0.07, 0.21 = 3×0.07, 0.14 = 2×0.07). A1 for AWRT 1.241. CSO."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "Use Sₙ = n/2 · (a + l) with n = 300, a = −7, l = 32 (M1)",
+     "Obtain 3750 (A1)"
+    ],
+    "guidance": "M1 for correct substitution into Sₙ formula (condone n = 299 or 301 and d ≈ 0.13). A1 for 3750."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "Form equation using S₉ = 1260, e.g. 9(a + l)/2 = 1260 (M1)",
+     "Form equation using relationship between highest and least values, e.g. l = 6a (M1)",
+     "Obtain and solve an equation in one variable (M1)",
+     "Obtain top prize = £240 (A1)"
+    ],
+    "guidance": "M1 for S₉ equation. M1 for top/bottom relationship. M1 for solving. A1 for £240 with correct units. CAO."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "Draw cubic graph with exactly two turning points, correct orientation passing through origin and positive x-axis at two points (M1)",
+     "Draw fully correct sketch with x-axis intercepts correctly labelled a and 6 (A1, R1)"
+    ],
+    "guidance": "M1 for cubic of correct shape through origin and two positive x-intercepts. A1 for correct orientation. R1 for x-intercepts labelled a and 6. Ignore y-axis labelling."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "Draw cubic of correct orientation passing through origin and negative x-axis at two points, or describe reflection in y-axis and stretch of scale factor 1/2 in x-direction (M1)",
+     "Draw fully correct sketch with x-axis intercepts correctly labelled −a/2 and −3 (R1)"
+    ],
+    "guidance": "M1 for correct orientation through origin with two negative x-intercepts. R1 for intercepts labelled −a/2 and −3."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "Substitute u₁ = 3 into −6/uₙ to get u₂ = −2 (M1)",
+     "Obtain u₂ = −2, u₃ = 3, u₄ = −2 (A1)"
+    ],
+    "guidance": "M1 PI by u₂ = −2. A1 for all three correct. Condone missing labels if order is obvious."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": ["2"],
+    "guidance": "B1 for stating period = 2."
+   },
+   "12(c)": {
+    "type": "points",
+    "points": [
+     "Show that pairs of consecutive terms sum to 1, or consider sum of 3s and sum of −2s (M1)",
+     "Deduce Σuₙ = 53 (R1)"
+    ],
+    "guidance": "M1 for identifying the pairing structure (50 pairs each summing to 1, plus final term u₁₀₁ = 3). R1 for deducing sum = 50×1 + 3 = 53."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "Substitute x = −1/2 into P(x) and obtain zero (M1)",
+     "Complete factor theorem argument: show P(−1/2) = 0 and state (2x + 1) is a factor (R1)"
+    ],
+    "guidance": "M1 for P(−1/2) with −1/2 correctly bracketed (or further step showing correct evaluation). R1 for completing argument stating (2x+1) is a factor OE."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "Obtain two correct coefficients of 2x² + 3x + 4 (M1)",
+     "Obtain P(x) = (2x + 1)(2x² + 3x + 4) (A1)"
+    ],
+    "guidance": "M1 for two correct coefficients. A1 for complete correct factorisation."
+   },
+   "13(c)": {
+    "type": "points",
+    "points": [
+     "Begin argument explaining that (2n + 1) ≥ 1 or (2n² + 3n + 4) ≥ 1 (M1)",
+     "State that both (2n + 1) > 1 and (2n² + 3n + 4) > 1 so both are integers not equal to 1, hence 4n³ + 8n² + 11n + 4 is never prime (R1)"
+    ],
+    "guidance": "M1 for beginning argument about one factor > 1. R1 for completing argument showing both factors > 1 so product cannot be prime."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "Rearrange to f(x) = x³ − e^(6−2x) = 0 and evaluate at least once in [0,4] (M1)",
+     "Show f(0) < 0 and f(4) > 0 (or correct evaluations) and conclude α lies between 0 and 4 (R1)"
+    ],
+    "guidance": "M1 for equating to zero and evaluating in interval [0,4]. R1 for correct evaluations (f(0) = −e⁶ ≈ −403 < 0; f(4) = 64 − e⁻² ≈ 63.86 > 0) and conclusion. Evaluations correct to at least 2 s.f."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "Use natural logs to correctly remove exponential: ln x³ = 6 − 2x (M1)",
+     "Use log rule or cube roots to remove power of 3: 3 ln x = 6 − 2x (M1)",
+     "Complete reasoned argument to show x = 3 − (3/2) ln x (R1)"
+    ],
+    "guidance": "M1 for taking logs correctly. M1 for applying power rule. R1 for completing argument AG."
+   },
+   "14(c)(i)": {
+    "type": "points",
+    "points": [
+     "Obtain any correct value to at least 3 d.p. (M1)",
+     "Obtain x₂ = 0.921, x₃ = 3.124, x₄ = 1.291 all to 3 d.p. (A1)"
+    ],
+    "guidance": "M1 PI by any correct value. A1 for x₂ = AWRT 0.921, x₃ = AWRT 3.124, x₄ = AWRT 1.291 (exact: x₂ = 0.92055…, x₃ = 3.12416…, x₄ = 1.29125…)."
+   },
+   "14(c)(ii)": {
+    "type": "points",
+    "points": [
+     "Draw correct cobweb diagram (M1)",
+     "Show positions of x₂, x₃ and x₄ on the x-axis (A1)"
+    ],
+    "guidance": "M1 for correct cobweb (condone missing vertical line at x = 4). A1 for positions of x₂, x₃, x₄ on x-axis (accept correct values AWRT 0.92, 3.12, 1.29)."
+   },
+   "14(c)(iii)": {
+    "type": "exact",
+    "points": ["ln 0 has no value (x₂ cannot be evaluated)"],
+    "guidance": "E1 for explaining that ln 0 has no value, or that y is undefined. OE."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "Recall identity sin 2θ = 2 sin θ cos θ and a correct identity for cos 2θ (B1)",
+     "Substitute A sin θ cos θ and a correct identity for cos 2θ (condoning sign errors in cos 2θ) (M1)",
+     "Simplify B sin θ · cosec θ to B, or D cos² θ · sec θ to D cos θ (M1)",
+     "Complete reasoned argument to obtain 4 cos θ − sec θ (R1)"
+    ],
+    "guidance": "B1 for sin 2θ = 2 sin θ cos θ and correct cos 2θ identity. M1 for substitution. M1 for simplification step. R1 for completing argument AG."
+   },
+   "15(b)(i)": {
+    "type": "exact",
+    "points": ["cos θ = 1 should be rejected because cosec θ is undefined when sin θ = 0 (i.e. when cos θ = 1)"],
+    "guidance": "E1 for explaining cosec θ undefined when cos θ = 1 (sin θ = 0), so this value must be rejected. OE."
+   },
+   "15(b)(ii)": {
+    "type": "exact",
+    "points": ["θ = 104.5°, 255.5°"],
+    "guidance": "B1 for both 104.5° and 255.5°. CAO."
+   },
+   "16": {
+    "type": "points",
+    "points": [
+     "Use symmetry of the curve (doubling area from x = 0 to x = 2, or considering full cross-section from x = −2 to x = 2) (M1)",
+     "State or use h = 0.4 (B1)",
+     "Substitute correct y values to obtain (0.4/2)(3 + 0 + 2(2.943 + 2.752 + 2.353 + 1.572)) = 4.448 (M1)",
+     "Obtain total area ≈ 8.896 (A1)",
+     "Obtain volume ≈ 1300 cm³ (must include units) (A1)"
+    ],
+    "guidance": "M1 for symmetry. B1 for h = 0.4. M1 for correct trapezium rule substitution. A1 for ≈ 8.896. A1 for AWRT 1300 cm³ or AWRT 0.0013 m³ with units."
+   },
+   "17(a)": {
+    "type": "points",
+    "points": [
+     "Deduce correct region, e.g. f(x) ≥ 1 or y ≥ 1 (M1)",
+     "Obtain correct answer in set notation, e.g. {y : y ≥ 1} or [1, ∞) (A1)"
+    ],
+    "guidance": "M1 for deducing f(x) ≥ 1 (condone f(x) > 1). A1 for correct set notation: {y : y ≥ 1}, {x : x ≥ 1}, {f(x) : f(x) ≥ 1}, or [1, ∞)."
+   },
+   "17(b)": {
+    "type": "exact",
+    "points": ["{x : x > 0} or (0, ∞)"],
+    "guidance": "B1 for x > 0 OE. Accept y : y > 0 but not y ≥ 0."
+   },
+   "17(c)(i)": {
+    "type": "exact",
+    "points": ["h(x) = ln(|x| + 1)"],
+    "guidance": "B1 for ln(|x| + 1). Accept ln|x + 1|. ISW."
+   },
+   "17(c)(ii)": {
+    "type": "points",
+    "points": [
+     "State that h does not have an inverse AND state that h is not one-to-one (many-to-one) (E1)",
+     "Explain why h is not one-to-one, e.g. give two x values with the same output such as h(1) = h(−1) = ln 2, or sketch showing horizontal line meeting curve twice (E1)"
+    ],
+    "guidance": "E1 for stating no inverse and that h is not one-to-one. E1 for justification (e.g. h(1) = h(−1) = ln 2, or f is many-to-one)."
+   },
+   "18(a)": {
+    "type": "points",
+    "points": [
+     "Select substitution u = 2x + 1 and differentiate to get du = 2 dx (B1)",
+     "Use result to replace dx in the integral (M1)",
+     "Make complete substitution: 4x + 1 = 2u − 1 and write integrand in terms of u (M1)",
+     "Obtain correct lower limit for substitution, a = 1 (M1)",
+     "Complete reasoned argument to show result with a = 1 (R1)"
+    ],
+    "guidance": "B1 for selecting u = 2x + 1. M1 for using du to replace dx. M1 for complete substitution leading to integrand of form A(2u − k)u^(1/2). M1 for correct lower limit. R1 for complete argument AG."
+   },
+   "18(b)": {
+    "type": "points",
+    "points": [
+     "Integrate to obtain (4u^(5/2))/5 − (2u^(3/2))/3 or equivalent (M1)",
+     "Obtain (1/2)[(4u^(5/2))/5 − (2u^(3/2))/3] (A1)",
+     "Substitute limits explicitly into integrated expression of the form Au^(5/2) − Bu^(3/2) (M1)",
+     "Complete argument to show the given result 1322/15 with no unrecovered slips (R1)"
+    ],
+    "guidance": "M1 for integrating to get u^(5/2) and u^(3/2) terms. A1 for correct integrated expression. M1 for substituting limits. R1 for completing argument AG."
+   },
+   "18(c)": {
+    "type": "points",
+    "points": [
+     "Explain that increasing number of rectangles gives increased value so improved approximation > A (E1)",
+     "Explain that rectangles are always underestimates (curve is increasing) so no matter how many rectangles, total < 1322/15 (E1)"
+    ],
+    "guidance": "E1 for greater than A explanation. E1 for less than 1322/15 explanation (underestimate as rectangles lie under increasing curve). AG."
+   },
+   "19": {
+    "type": "points",
+    "points": [
+     "Use implicit differentiation with Ay² dy/dx or dy/dx seen (M1)",
+     "Use product rule on y³e²ˣ to obtain Ay²e²ˣ dy/dx + By³e²ˣ (M1)",
+     "Obtain 3y²e²ˣ dy/dx + 2y³e²ˣ + 2 dy/dx − 16 = 0 (A1)",
+     "Substitute dy/dx = 0 and x = 0 to obtain y value (M1)",
+     "Obtain y = 2 (A1)",
+     "Substitute x = 0 and y = 2 into y³e²ˣ + 2y − 16x (M1)",
+     "Deduce k = 12 (R1)"
+    ],
+    "guidance": "M1 for implicit diff with Ay² dy/dx. M1 for product rule on y³e²ˣ. A1 for correct differentiated equation. M1 for substituting dy/dx = 0, x = 0. A1 for y = 2. M1 for substituting to find k. R1 for k = 12."
+   },
+   "20(a)": {
+    "type": "points",
+    "points": [
+     "Model rate of change using dh/dt = −k(h − 5) (M1)",
+     "Substitute h = 130 and dh/dt = −1.5 to find k = 0.012 (M1)",
+     "Complete argument with no sign slips to show dh/dt = −0.012(h − 5) (R1)"
+    ],
+    "guidance": "M1 for setting up dh/dt = k(h − 5). M1 for substituting initial conditions. R1 for completing argument AG."
+   },
+   "20(b)": {
+    "type": "points",
+    "points": [
+     "Separate variables to get ∫ 1/(h−5) dh = ∫ −0.012 dt (M1)",
+     "Integrate at least one side correctly (M1)",
+     "Obtain ln(h − 5) = −0.012t + c (A1)",
+     "Use t = 0, h = 130 to find constant: A = 125 (M1)",
+     "Obtain h = 5 + 125e^(−0.012t) (A1)"
+    ],
+    "guidance": "M1 for separating variables. M1 for integrating one side. A1 for correct integrated equation (condone missing +c). M1 for using t=0, h=130. A1 for h = 5 + 125e^(−0.012t) OE."
+   },
+   "20(c)": {
+    "type": "points",
+    "points": [
+     "Use h = 65 in their answer from part (b) (M1)",
+     "Obtain AWRT 61 minutes (A1)"
+    ],
+    "guidance": "M1 for substituting h = 65 (half full means h = 130/2 = 65). A1 for AWRT 61 minutes (accept 62). Must include units."
+   }
+  }
+ },
  "math-edx-9ma0-2024-p1": {
   "questions": [
    {
