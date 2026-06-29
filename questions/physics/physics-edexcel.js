@@ -2,11 +2,11 @@ const PHYSICS_EDEXCEL_QUESTIONS = {
   'T1': {
     name: 'Working as a Physicist',
     green: [
-      { q: 'What is the SI base unit of mass?', options: ['gram', 'kilogram', 'tonne', 'pound'], answer: 'B' },
+      { q: 'What is the SI base unit of mass?', options: ['gram', 'kilogram', 'tonne', 'milligram'], answer: 'B' },
       { q: 'What does the prefix "mega" represent?', options: ['10³', '10⁶', '10⁹', '10¹²'], answer: 'B' },
       { q: 'What does the prefix "nano" represent?', options: ['10⁻³', '10⁻⁶', '10⁻⁹', '10⁻¹²'], answer: 'C' },
       { q: 'Which of the following is a SI base unit?', options: ['newton', 'joule', 'ampere', 'volt'], answer: 'C' },
-      { q: 'How many significant figures are in the value 0.00340?', options: ['2', '3', '5', '6'], answer: 'B' },
+      { q: 'How many significant figures are in the value 0.00340?', options: ['2', '3', '4', '5'], answer: 'B' },
       { q: 'What is the SI unit of temperature?', options: ['celsius', 'kelvin', 'fahrenheit', 'rankine'], answer: 'B' },
       { q: 'What does the prefix "micro" represent?', options: ['10⁻²', '10⁻³', '10⁻⁶', '10⁻⁹'], answer: 'C' },
       { q: 'Which instrument would be most appropriate for measuring the diameter of a wire?', options: ['ruler', 'measuring tape', 'micrometer', 'trundle wheel'], answer: 'C' },

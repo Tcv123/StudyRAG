@@ -40,7 +40,7 @@ const PHYSICS_OCR_A_QUESTIONS = {
       { q: 'A log-log graph of y against x gives a straight line with gradient 2 and y-intercept ln(3). What is the relationship?', options: ['y = 2x + 3','y = 3x²','y = 3e^(2x)','y = 2 ln(x) + 3'], answer: 1 },
       { q: 'An experiment to measure the speed of sound gives results: 338, 342, 340, 339, 341 m s⁻¹. The true value is 343 m s⁻¹. What can be said about the data?', options: ['High accuracy, low precision','Low accuracy, high precision','High accuracy, high precision','Low accuracy, low precision'], answer: 1 },
       { q: 'In an experiment, the percentage uncertainty in radius r is 3%. If the quantity being calculated is V = (4/3)πr³, what is the percentage uncertainty in V?', options: ['9%','27%','3%','6%'], answer: 0 },
-      { q: 'A student evaluates an experiment and finds the percentage difference from the accepted value is 1.5%, but the total percentage uncertainty is 5%. What should they conclude?', options: ['The random error is 5%','The experiment is invalid','The systematic error is 1.5%','The result is consistent with the accepted value since the'], answer: 3 },
+      { q: 'A student evaluates an experiment and finds the percentage difference from the accepted value is 1.5%, but the total percentage uncertainty is 5%. What should they conclude?', options: ['The random error is 5%','The experiment is invalid','The systematic error is 1.5%','The result is consistent with the accepted value since 1.5% lies within the 5% uncertainty'], answer: 3 },
     ],
   },
 

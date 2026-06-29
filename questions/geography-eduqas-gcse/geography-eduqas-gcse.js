@@ -151,7 +151,7 @@ const GEOGRAPHY_EDUQAS_QUESTIONS = {
       { q: 'Why is till unsorted and angular?', options: ['A. Deposited directly by ice with no water sorting', 'B. Deposited by rivers with sorting', 'C. Deposited by wind', 'D. Formed by chemical weathering'], answer: 0 },
       { q: 'Hanging valleys often form what feature today?', options: ['A. Waterfalls', 'B. Ox-bow lakes', 'C. Deltas', 'D. Levees'], answer: 0 },
       { q: 'Why are eskers composed of sorted sand and gravel?', options: ['A. Deposited by meltwater streams under the ice', 'B. Deposited directly by glaciers', 'C. Formed by freeze-thaw', 'D. Formed by wind'], answer: 0 },
-      { q: 'Why does freeze-thaw produce scree slopes?', options: ['A. Angular fragments accumulate at the base of cliffs', 'B. Rivers deposit rounded pebbles', 'C. Wind rounds the fragments', 'D. Ice directly deposits them'], answer: 0 },
+      { q: 'Why does freeze-thaw produce scree slopes?', options: ['A. Angular fragments accumulate at the base of cliffs', 'B. Rivers deposit smooth boulders', 'C. Wind rounds the fragments', 'D. Ice directly deposits them'], answer: 0 },
       { q: 'Why are tourists attracted to Snowdonia?', options: ['A. Dramatic glaciated scenery, walking, climbing', 'B. Tropical beaches', 'C. Desert landscapes', 'D. Volcanoes'], answer: 0 },
       { q: 'Which conflict is common in Snowdonia National Park?', options: ['A. Tourism vs farming and conservation', 'B. Deep mining vs fishing', 'C. Oil drilling vs tourism', 'D. Shipping vs tourism'], answer: 0 },
       { q: 'Which land use is traditional and threatened by tourism in Snowdonia?', options: ['A. Sheep farming', 'B. Rice farming', 'C. Oil extraction', 'D. Coffee growing'], answer: 0 },

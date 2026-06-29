@@ -20,7 +20,7 @@ const GEOGRAPHY_EDEXCEL_QUESTIONS = {
       { q: 'What does VEI stand for?', options: ['Volcanic Energy Index', 'Volcanic Explosivity Index', 'Volcanic Eruption Indicator', 'Volcano Effect Index'], answer: 1 },
       { q: 'The Ring of Fire is located around which ocean?', options: ['Atlantic', 'Indian', 'Pacific', 'Arctic'], answer: 2 },
       { q: 'What type of plate boundary creates mid-ocean ridges?', options: ['Destructive', 'Constructive', 'Conservative', 'Collision'], answer: 1 },
-      { q: 'What is a hotspot in tectonic terms?', options: ['A volcanic area fed by a mantle plume', 'The epicentre of an earthquake', 'A geothermal power station', 'A gap between tectonic plates'], answer: 0 },
+      { q: 'What is a hotspot in tectonic terms?', options: ['A volcanic area fed by a mantle plume', 'The epicentre of an earthquake', 'A region of unusually high geothermal heat flux at a destructive boundary', 'A gap between tectonic plates'], answer: 0 },
       { q: 'Which of these is a secondary effect of a volcanic eruption?', options: ['Lava flow', 'Ash fall', 'Famine due to crop destruction', 'Pyroclastic flow'], answer: 2 },
     ],
     amber: [

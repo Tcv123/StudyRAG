@@ -8,6 +8,7 @@
   <title>RAG Learning — Dashboard</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
   <script src="subjects-config.js"></script>
@@ -315,7 +316,7 @@
     }
 
     /* ── STAT CARDS ── */
-    .stats-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; margin-bottom: 16px; }
+    .stats-row { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 10px; margin-bottom: 16px; }
 
     .stat-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 18px 20px; transition: border-color 0.15s, box-shadow 0.15s; box-shadow: 0 1px 4px rgba(37,99,235,0.07); }
     .stat-card:hover { border-color: var(--border-hover); box-shadow: 0 4px 14px rgba(37,99,235,0.12); }
@@ -350,7 +351,7 @@
     .content-grid { display: grid; grid-template-columns: 1fr 280px; gap: 16px; }
 
     /* ── SUBJECT PROGRESS CARDS ── */
-    .subjects-progress-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-bottom: 0; align-items: start; grid-auto-rows: auto; }
+    .subjects-progress-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(180px, 1fr)); gap: 10px; margin-bottom: 0; align-items: start; grid-auto-rows: auto; }
 
     .subj-card {
       background: var(--surface); border: 1px solid var(--border);
@@ -448,9 +449,8 @@
     .streak-label { font-size: 13px; color: var(--muted); margin-top: 4px; }
     .streak-days  { display: flex; justify-content: center; gap: 6px; margin-top: 14px; }
     .day-dot { width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 10px; font-weight: 600; }
-    .day-done  { background: var(--amber-bg);  border: 1px solid var(--amber-border); color: var(--amber-text); }
-    .day-today { background: var(--amber);      color: #fff; }
     .day-done  { background: var(--green);      color: #fff; }
+    .day-today { background: var(--amber);      color: #fff; }
     .day-empty  { background: var(--surface2);   border: 1px solid var(--border);       color: var(--muted2); }
     .day-missed { background: rgba(239,68,68,0.12); border: 1px solid rgba(239,68,68,0.3); color: #EF4444; }
 
@@ -467,7 +467,9 @@
 
     @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
-    @media (max-width: 1100px) { .content-grid { grid-template-columns: 1fr; } .stats-row { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 1300px) { .stats-row { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+    @media (max-width: 1100px) { .content-grid { grid-template-columns: 1fr; } .stats-row { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+    @media (max-width: 900px)  { .stats-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
 
     @media (max-width: 768px) {
       .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; }
@@ -546,12 +548,12 @@
 
     <div class="nav-section" style="margin-top:8px;">
       <div class="nav-label">Premium</div>
-      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
-      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
-      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
-      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
-      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
-      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing.html" style="opacity:0.65;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing.html" style="opacity:0.65;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing.html" style="opacity:0.65;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing.html" style="opacity:0.65;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing.html" style="opacity:0.65;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing.html" style="opacity:0.65;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
     </div>
 
     <div class="nav-section" style="margin-top:8px;">
@@ -584,9 +586,7 @@
         </div>
       </div>
       <div class="topbar-right">
-        <a href="auth/setup.html" class="settings-link">✏️ Edit setup</a>
         <div class="help-btn" onclick="document.getElementById('helpOverlay').classList.add('active')" title="How it works">?</div>
-        <div class="notif-btn">🔔</div>
       </div>
     </div>
 
@@ -676,27 +676,27 @@
 
     <!-- Quick stats -->
     <div class="stats-row">
-      <div class="stat-card" style="cursor:pointer;" onclick="window.location='Dashboard.html#diagnostic'">
+      <div class="stat-card" style="cursor:pointer;" onclick="switchView('Diagnostic', document.querySelector('.nav-item[onclick*=Diagnostic]'))">
         <div class="stat-label">Topics covered</div>
         <div class="stat-value" id="statTopics">–</div>
         <div class="stat-sub" id="statTopicsSub">loading…</div>
       </div>
-      <div class="stat-card" style="cursor:pointer;" onclick="window.location='Dashboard.html#diagnostic'">
+      <div class="stat-card" style="cursor:pointer;" onclick="switchView('Diagnostic', document.querySelector('.nav-item[onclick*=Diagnostic]'))">
         <div class="stat-label">Green topics</div>
         <div class="stat-value" id="statGreen" style="color:var(--green);">–</div>
         <div class="stat-sub">confident &amp; ready</div>
       </div>
-      <div class="stat-card" style="cursor:pointer;" onclick="window.location='Dashboard.html#diagnostic'">
+      <div class="stat-card" style="cursor:pointer;" onclick="switchView('Diagnostic', document.querySelector('.nav-item[onclick*=Diagnostic]'))">
         <div class="stat-label">Amber topics</div>
         <div class="stat-value" id="statAmber" style="color:var(--amber);">–</div>
         <div class="stat-sub">almost there</div>
       </div>
-      <div class="stat-card" style="cursor:pointer;" onclick="window.location='Dashboard.html#diagnostic'">
+      <div class="stat-card" style="cursor:pointer;" onclick="switchView('Diagnostic', document.querySelector('.nav-item[onclick*=Diagnostic]'))">
         <div class="stat-label">Red topics</div>
         <div class="stat-value" id="statRed" style="color:var(--red);">–</div>
         <div class="stat-sub">need attention</div>
       </div>
-      <div class="stat-card">
+      <div class="stat-card" style="cursor:pointer;" onclick="switchView('Diagnostic', document.querySelector('.nav-item[onclick*=Diagnostic]'))">
         <div class="stat-label">Not tested</div>
         <div class="stat-value" id="statPending" style="color:var(--muted2);">–</div>
         <div class="stat-sub">not yet diagnosed</div>
@@ -746,8 +746,8 @@
         <div class="panel">
           <div class="panel-title">Study streak</div>
           <div class="streak-display">
-            <div class="streak-num" id="streakNum">🔥 0</div>
-            <div class="streak-label" id="streakLabel">days in a row</div>
+            <div class="streak-num" id="streakNum" style="visibility:hidden;">🔥 0</div>
+            <div class="streak-label" id="streakLabel" style="visibility:hidden;">days in a row</div>
           </div>
           <div class="streak-days" id="streakDots"></div>
           <div id="streakGoalLabel" style="text-align:center;margin-top:8px;font-size:11px;color:var(--muted);">
@@ -982,18 +982,40 @@ function fillClass(status) {
   return { red: 'fill-red', amber: 'fill-amber', green: 'fill-green' }[status] || 'fill-pending';
 }
 
-function renderSubjectsRow(subjects) {
+function renderSubjectsRow(subjects, topicRows) {
   const el = document.getElementById('subjectsRowScroll');
   if (!subjects.length) {
     el.innerHTML = `<p class="no-data-msg">No subjects yet. <a href="auth/setup.html">Add your subjects</a> to get started.</p>`;
     return;
   }
-  el.innerHTML = subjects.map(s => `
-    <div class="subj-info-card">
+  // Build per-subject RAG from topicRows
+  const byKey = {};
+  (topicRows || []).forEach(t => {
+    const k = `${t.subject}_${t.exam_board}`;
+    if (!byKey[k]) byKey[k] = [];
+    byKey[k].push(t);
+  });
+  el.innerHTML = subjects.map(s => {
+    const topics = byKey[`${s.subject}_${s.exam_board}`] || [];
+    let rag = 'pending';
+    if (topics.length > 0) {
+      const green = topics.filter(t => t.rag_status === 'green').length;
+      const red   = topics.filter(t => t.rag_status === 'red').length;
+      const gPct  = green / topics.length;
+      const rPct  = red   / topics.length;
+      rag = gPct >= 0.7 ? 'green' : rPct >= 0.4 ? 'red' : 'amber';
+    }
+    const ragClass = { green: 'rag-green', amber: 'rag-amber', red: 'rag-red', pending: 'rag-pending' }[rag];
+    const tagClass = { green: 'tag-green', amber: 'tag-amber', red: 'tag-red', pending: 'tag-pending' }[rag];
+    const tagLabel = { green: 'Green', amber: 'Amber', red: 'Red', pending: 'Pending' }[rag];
+    return `
+    <div class="subj-info-card ${ragClass}">
       <div class="subj-info-emoji">${s.emoji || '📚'}</div>
       <div class="subj-info-name">${s.subject}</div>
       <div class="subj-info-board">${s.exam_board}</div>
-    </div>`).join('');
+      <span class="rag-tag ${tagClass}">${tagLabel}</span>
+    </div>`;
+  }).join('');
 }
 
 function renderMedals(earnedIds) {
@@ -1625,7 +1647,7 @@ async function load() {
 
 
   // Rows
-  renderSubjectsRow(subjectList);
+  renderSubjectsRow(subjectList, topicRows);
   const existingMedalIds = (medals || []).map(m => m.medal_id);
   const allMedalIds = await checkAndAwardMedals(user, topicRows, subjectList, existingMedalIds);
   renderMedals(allMedalIds);
@@ -1801,10 +1823,14 @@ function renderStreak(count, lastDate) {
     validCount = 0;
   }
 
-  document.getElementById('streakNum').textContent   = `🔥 ${validCount}`;
+  const streakNumEl = document.getElementById('streakNum');
+  const streakLblEl = document.getElementById('streakLabel');
+  streakNumEl.textContent   = `🔥 ${validCount}`;
+  streakLblEl.textContent   = validCount === 1 ? 'day in a row' : 'days in a row';
+  streakNumEl.style.visibility = '';
+  streakLblEl.style.visibility = '';
   const statStreakEl = document.getElementById('statStreak');
   if (statStreakEl) statStreakEl.textContent = `🔥 ${validCount}`;
-  document.getElementById('streakLabel').textContent = validCount === 1 ? 'day in a row' : 'days in a row';
 
   const days = ['S','M','T','W','T','F','S'];
   const dots = document.getElementById('streakDots');

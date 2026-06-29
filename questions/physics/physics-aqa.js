@@ -11,7 +11,7 @@ const PHYSICS_AQA_QUESTIONS = {
   '3.1': {
     name: 'Measurements and Their Errors',
     green: [
-      { q: 'What is the SI base unit of mass?', options: ['gram','kilogram','tonne','pound'], answer: 1 },
+      { q: 'What is the SI base unit of mass?', options: ['gram','kilogram','tonne','milligram'], answer: 1 },
       { q: 'What is the SI base unit of temperature?', options: ['Celsius','Fahrenheit','kelvin','joule'], answer: 2 },
       { q: 'What is the SI base unit of electric current?', options: ['volt','coulomb','ohm','ampere'], answer: 3 },
       { q: 'What does the prefix "mega" represent?', options: ['10³','10⁶','10⁹','10¹²'], answer: 1 },
@@ -137,7 +137,7 @@ const PHYSICS_AQA_QUESTIONS = {
       { q: 'What is the wavelength of a wave?', options: ['The time for one complete oscillation','The minimum distance between two points in phase','The maximum displacement','The number of waves per second'], answer: 1 },
       { q: 'What is the amplitude of a wave?', options: ['The distance between crests','The maximum displacement from the equilibrium position','The speed of the wave','The frequency of the wave'], answer: 1 },
       { q: 'Which equation relates wave speed, frequency, and wavelength?', options: ['v = f/λ','v = fλ','v = λ/f','f = vλ'], answer: 1 },
-      { q: 'What is a transverse wave?', options: ['A wave where oscillations are parallel to the direction of travel','A wave where oscillations are perpendicular to the direction of travel','A wave that cannot travel through a vacuum','A wave with no amplitude'], answer: 1 },
+      { q: 'What is a transverse wave?', options: ['A wave where oscillations are parallel to the direction of travel','A wave where oscillations are perpendicular to the direction of travel','A wave that cannot travel through a vacuum','A wave that can only be produced mechanically'], answer: 1 },
       { q: 'What is a longitudinal wave?', options: ['A wave where oscillations are perpendicular to the direction of travel','A wave where oscillations are parallel to the direction of travel','A wave that requires no medium','A wave that only travels through solids'], answer: 1 },
       { q: 'Which of these is a transverse wave?', options: ['Sound in air','Ultrasound','Light','Longitudinal waves on a spring'], answer: 2 },
       { q: 'Which of these is a longitudinal wave?', options: ['Light','Radio waves','Sound','Water surface waves'], answer: 2 },
