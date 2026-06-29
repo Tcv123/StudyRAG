@@ -24854,7 +24854,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "4(a)",
       "prompt": "Find dy/dx.",
-      "marks": 2
+      "marks": 1
      },
      {
       "code": "4(b)",
@@ -24884,7 +24884,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "5(c)",
       "prompt": "On a sketch, indicate the vertex of the curve y = 3x² − 12x + 7 and state the equation of its axis of symmetry.",
-      "marks": 2
+      "marks": 1
      }
     ]
    },
@@ -24895,7 +24895,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "6(a)",
       "prompt": "Find the values of p and q.",
-      "marks": 4
+      "marks": 3
      },
      {
       "code": "6(b)",
@@ -24951,7 +24951,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "9(b)",
       "prompt": "In this question you must show detailed reasoning.\nSolve the equation log₃(5x − 2) − log₃(x + 1) = 2.",
-      "marks": 4
+      "marks": 3
      }
     ]
    },
@@ -24962,7 +24962,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "10(a)",
       "prompt": "Find the equation of the perpendicular bisector of AB.",
-      "marks": 4
+      "marks": 3
      },
      {
       "code": "10(b)",
@@ -25008,7 +25008,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "12(c)",
       "prompt": "Find the x-coordinate of the stationary point of g(x) = x² e^(3x), other than x = 0.",
-      "marks": 2
+      "marks": 1
      }
     ]
    },
@@ -25024,7 +25024,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "13(b)",
       "prompt": "Find the area of the region enclosed between the curve y = 4/x and the line y = 5 − x.",
-      "marks": 5
+      "marks": 4
      }
     ]
    },
@@ -25040,7 +25040,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "14(b)",
       "prompt": "Show that tan(A − B) = −16/63.",
-      "marks": 3
+      "marks": 2
      }
     ]
    },
@@ -25050,12 +25050,12 @@ window.MATHS_QUESTIONS = {
      {
       "code": "15(a)",
       "prompt": "Use the trapezium rule with 4 strips to find an approximation to ∫₀² √(1 + x³) dx, giving your answer to 3 decimal places.",
-      "marks": 4
+      "marks": 3
      },
      {
       "code": "15(b)",
       "prompt": "Explain whether your answer to part (a) is an overestimate or underestimate.",
-      "marks": 2
+      "marks": 1
      }
     ]
    },
@@ -25066,12 +25066,12 @@ window.MATHS_QUESTIONS = {
      {
       "code": "16(a)",
       "prompt": "Find the range of f.",
-      "marks": 2
+      "marks": 1
      },
      {
       "code": "16(b)",
       "prompt": "Find f⁻¹(x), stating its domain.",
-      "marks": 4
+      "marks": 3
      },
      {
       "code": "16(c)",
@@ -25092,12 +25092,12 @@ window.MATHS_QUESTIONS = {
      {
       "code": "17(b)",
       "prompt": "Find the coordinates of the stationary points on C.",
-      "marks": 3
+      "marks": 2
      },
      {
       "code": "17(c)",
       "prompt": "Find the equation of the tangent to C at the point where t = 2.",
-      "marks": 3
+      "marks": 2
      }
     ]
    },
@@ -25108,12 +25108,12 @@ window.MATHS_QUESTIONS = {
      {
       "code": "18(a)",
       "prompt": "By means of a substitution or otherwise, show that the general solution of the differential equation can be written as P = N/(1 + Ae^(−kt)), where A is an arbitrary constant.",
-      "marks": 6
+      "marks": 5
      },
      {
       "code": "18(b)",
       "prompt": "Initially (when t = 0), P = N/4. Find the value of A.",
-      "marks": 2
+      "marks": 1
      }
     ]
    }

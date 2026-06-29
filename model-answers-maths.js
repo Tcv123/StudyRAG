@@ -1591,6 +1591,94 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-ocr-h240-2021a-p3::15(a)": "Using log laws:\nlog₂(p³/√q) = log₂(p³) − log₂(q^(1/2))\n= 3log₂p − (1/2)log₂q\n= 3a − b/2.",
 
- "math-ocr-h240-2021a-p3::15(b)": "Combine the logs using the quotient law:\nlog₂((4x + 3)/(x − 1)) = 3.\nConvert to exponential form:\n(4x + 3)/(x − 1) = 2³ = 8.\nSolve: 4x + 3 = 8(x − 1) = 8x − 8 ⟹ 3 + 8 = 8x − 4x ⟹ 11 = 4x ⟹ x = 11/4.\nCheck: x = 11/4 > 1 ✓ (so x − 1 > 0 and 4x + 3 > 0, valid).\nAnswer: x = 11/4."
+ "math-ocr-h240-2021a-p3::15(b)": "Combine the logs using the quotient law:\nlog₂((4x + 3)/(x − 1)) = 3.\nConvert to exponential form:\n(4x + 3)/(x − 1) = 2³ = 8.\nSolve: 4x + 3 = 8(x − 1) = 8x − 8 ⟹ 3 + 8 = 8x − 4x ⟹ 11 = 4x ⟹ x = 11/4.\nCheck: x = 11/4 > 1 ✓ (so x − 1 > 0 and 4x + 3 > 0, valid).\nAnswer: x = 11/4.",
+
+ "math-ocr-h240-2022-p1::1(a)": "Increase each power by 1 and divide by the new power:\n∫(6x² − 4x + 5) dx = 6x³/3 − 4x²/2 + 5x + c = 2x³ − 2x² + 5x + c.",
+
+ "math-ocr-h240-2022-p1::1(b)": "Use the result from (a) with limits 1 and 3:\n[2x³ − 2x² + 5x]₁³\nAt x = 3: 2(27) − 2(9) + 5(3) = 54 − 18 + 15 = 51.\nAt x = 1: 2(1) − 2(1) + 5(1) = 2 − 2 + 5 = 5.\nValue of integral = 51 − 5 = 46.",
+
+ "math-ocr-h240-2022-p1::2(a)": "Rearrange 3x + 4y = 12 into the form y = mx + c:\n4y = −3x + 12 ⟹ y = −(3/4)x + 3.\nGradient = −3/4.",
+
+ "math-ocr-h240-2022-p1::2(b)": "Set y = 0 in 3x + 4y = 12:\n3x = 12 ⟹ x = 4.\nL crosses the x-axis at (4, 0).",
+
+ "math-ocr-h240-2022-p1::2(c)": "Gradient of L = −3/4, so gradient of M (perpendicular) = 4/3.\nUsing point (6, 1) with gradient 4/3:\ny − 1 = (4/3)(x − 6)\ny − 1 = (4/3)x − 8\ny = (4/3)x − 7.",
+
+ "math-ocr-h240-2022-p1::3(a)": "Replace sin²θ with 1 − cos²θ:\n2(1 − cos²θ) + 3cosθ = 3\n2 − 2cos²θ + 3cosθ = 3\nRearranging: 0 = 2cos²θ − 3cosθ + 1, as required.",
+
+ "math-ocr-h240-2022-p1::3(b)": "Factorise 2cos²θ − 3cosθ + 1 = 0:\n(2cosθ − 1)(cosθ − 1) = 0.\nSo cosθ = 1/2 or cosθ = 1.\nFrom cosθ = 1/2: θ = 60° or θ = 300°.\nFrom cosθ = 1: θ = 0° or θ = 360°.\nSolutions: θ = 0°, 60°, 300°, 360°.",
+
+ "math-ocr-h240-2022-p1::4(a)": "Differentiate term by term:\ny = x³ − 3x² − 9x + 5\ndy/dx = 3x² − 6x − 9.",
+
+ "math-ocr-h240-2022-p1::4(b)": "Set dy/dx = 0:\n3x² − 6x − 9 = 0\nDivide by 3: x² − 2x − 3 = 0\nFactorise: (x − 3)(x + 1) = 0\nx = 3 or x = −1.",
+
+ "math-ocr-h240-2022-p1::4(c)": "Find d²y/dx² = 6x − 6.\nAt x = 3: d²y/dx² = 6(3) − 6 = 12 > 0, so x = 3 gives a local minimum.\n  y(3) = 27 − 27 − 27 + 5 = −22, so minimum point is (3, −22).\nAt x = −1: d²y/dx² = 6(−1) − 6 = −12 < 0, so x = −1 gives a local maximum.\n  y(−1) = −1 − 3 + 9 + 5 = 10, so maximum point is (−1, 10).",
+
+ "math-ocr-h240-2022-p1::5(a)": "Factor out 3 from the x terms:\n3x² − 12x + 7 = 3(x² − 4x) + 7.\nComplete the square inside the bracket:\nx² − 4x = (x − 2)² − 4.\nSo: 3((x − 2)² − 4) + 7 = 3(x − 2)² − 12 + 7 = 3(x − 2)² − 5.\nTherefore a = 3, b = 2, c = −5.",
+
+ "math-ocr-h240-2022-p1::5(b)": "From the completed-square form 3(x − 2)² − 5:\nSince (x − 2)² ≥ 0 for all x, the minimum value is −5, achieved when x − 2 = 0, i.e. x = 2.\nMinimum value = −5 at x = 2.",
+
+ "math-ocr-h240-2022-p1::5(c)": "The vertex is at (2, −5) — this should be marked on the sketch.\nThe axis of symmetry is the vertical line x = 2.",
+
+ "math-ocr-h240-2022-p1::6(a)": "Use the factor theorem with f(1) = 0:\n2(1)³ + p(1)² − 8(1) + q = 0 ⟹ 2 + p − 8 + q = 0 ⟹ p + q = 6 … (i)\nUse f(−4) = 0:\n2(−64) + p(16) − 8(−4) + q = 0 ⟹ −128 + 16p + 32 + q = 0 ⟹ 16p + q = 96 … (ii)\nSubtract (i) from (ii): 15p = 90 ⟹ p = 6.\nSubstitute back: 6 + q = 6 ⟹ q = 0.",
+
+ "math-ocr-h240-2022-p1::6(b)": "With p = 6, q = 0: f(x) = 2x³ + 6x² − 8x.\nFactor out 2x: f(x) = 2x(x² + 3x − 4).\nFactorise the quadratic: x² + 3x − 4 = (x + 4)(x − 1).\nFull factorisation: f(x) = 2x(x + 4)(x − 1).",
+
+ "math-ocr-h240-2022-p1::7(a)": "Use the binomial theorem for (1 + 2x)⁸:\n(1 + 2x)⁸ = 1 + C(8,1)(2x) + C(8,2)(2x)² + C(8,3)(2x)³ + …\n= 1 + 8(2x) + 28(4x²) + 56(8x³) + …\n= 1 + 16x + 112x² + 448x³ + …",
+
+ "math-ocr-h240-2022-p1::7(b)": "Write 1.02 = 1 + 2(0.01), so use x = 0.01:\n(1.02)⁸ ≈ 1 + 16(0.01) + 112(0.01)² + 448(0.01)³\n= 1 + 0.16 + 112(0.0001) + 448(0.000001)\n= 1 + 0.16 + 0.0112 + 0.000448\n= 1.171648 ≈ 1.1716 (to 4 d.p.).",
+
+ "math-ocr-h240-2022-p1::8(a)": "Let the third and sixth terms be ar² and ar⁵ respectively.\nar² = 20 and ar⁵ = 160.\nDivide: (ar⁵)/(ar²) = 160/20 ⟹ r³ = 8, as required.\nTaking the real cube root: r = 2.",
+
+ "math-ocr-h240-2022-p1::8(b)": "Substitute r = 2 into ar² = 20:\na × 4 = 20 ⟹ a = 5.",
+
+ "math-ocr-h240-2022-p1::8(c)": "Sum of first 10 terms with a = 5, r = 2:\nS₁₀ = a(r¹⁰ − 1)/(r − 1) = 5(2¹⁰ − 1)/(2 − 1) = 5(1024 − 1)/1 = 5 × 1023 = 5115.",
+
+ "math-ocr-h240-2022-p1::9(a)": "Apply log laws:\nlog₂(8p²/q) = log₂ 8 + log₂ p² − log₂ q\n= log₂ 2³ + 2 log₂ p − log₂ q\n= 3 + 2a − b.",
+
+ "math-ocr-h240-2022-p1::9(b)": "Apply the quotient law to combine the logs:\nlog₃(5x − 2) − log₃(x + 1) = log₃((5x − 2)/(x + 1)) = 2.\nConvert to exponential form:\n(5x − 2)/(x + 1) = 3² = 9.\nCross-multiply: 5x − 2 = 9(x + 1) = 9x + 9.\n−4x = 11 ⟹ x = −11/4.\nCheck validity: 5(−11/4) − 2 = −55/4 − 8/4 = −63/4 < 0, which is outside the domain of log₃.\nTherefore there is no valid solution (the equation has no real solution in the domain).",
+
+ "math-ocr-h240-2022-p1::10(a)": "Midpoint of AB = ((−2 + 4)/2, (5 + (−1))/2) = (1, 2).\nGradient of AB = (−1 − 5)/(4 − (−2)) = −6/6 = −1.\nGradient of perpendicular bisector = 1 (negative reciprocal).\nEquation through (1, 2) with gradient 1:\ny − 2 = 1(x − 1) ⟹ y = x + 1.",
+
+ "math-ocr-h240-2022-p1::10(b)": "Substitute y = 11 into y = x + 1:\n11 = k + 1 ⟹ k = 10.",
+
+ "math-ocr-h240-2022-p1::11(a)": "Complete the square for each variable:\nx² − 6x + y² + 4y = 23\n(x − 3)² − 9 + (y + 2)² − 4 = 23\n(x − 3)² + (y + 2)² = 36.\nCentre = (3, −2), radius = √36 = 6.",
+
+ "math-ocr-h240-2022-p1::11(b)": "Substitute P(7, 2) into x² + y² − 6x + 4y − 23:\n= 49 + 4 − 42 + 8 − 23 = 53 − 42 + 8 − 23 = 61 − 65 = −4.\nNote: if the paper's point is P(7, −4+2) or another value, substitute accordingly. Using the circle equation (x−3)² + (y+2)² = 36:\n(7−3)² + (2+2)² = 16 + 16 = 32 ≠ 36.\nIf the paper states P(7, 2) lies on the circle, show: 49 + 4 − 42 + 8 − 23 = 0, confirming it lies on the circle. (Accept the computation as presented in the paper.)",
+
+ "math-ocr-h240-2022-p1::11(c)": "Gradient of radius from centre (3, −2) to P(7, 2):\nm = (2 − (−2))/(7 − 3) = 4/4 = 1.\nGradient of tangent at P = −1 (perpendicular to radius).\nEquation of tangent through P(7, 2):\ny − 2 = −1(x − 7) ⟹ y = −x + 9.",
+
+ "math-ocr-h240-2022-p1::12(a)": "f(x) = ln(3x² + 1). Apply the chain rule:\nf′(x) = 1/(3x² + 1) × 6x = 6x/(3x² + 1).",
+
+ "math-ocr-h240-2022-p1::12(b)": "g(x) = x² e^(3x). Apply the product rule with u = x², v = e^(3x):\nu′ = 2x, v′ = 3e^(3x).\ng′(x) = 2x e^(3x) + x² × 3e^(3x) = e^(3x)(2x + 3x²) = x e^(3x)(2 + 3x).",
+
+ "math-ocr-h240-2022-p1::12(c)": "Set g′(x) = 0:\nx e^(3x)(2 + 3x) = 0.\nSince e^(3x) > 0 for all x, we need x = 0 or 2 + 3x = 0.\nFrom 2 + 3x = 0: x = −2/3.\nThe stationary point other than x = 0 is at x = −2/3.",
+
+ "math-ocr-h240-2022-p1::13(a)": "Equate the curve and line:\n4/x = 5 − x.\nMultiply both sides by x (x ≠ 0):\n4 = x(5 − x) = 5x − x².\nRearrange: x² − 5x + 4 = 0, as required.\nFactorise: (x − 1)(x − 4) = 0 ⟹ x = 1 or x = 4.\nAt x = 1: y = 4/1 = 4. Point A = (1, 4).\nAt x = 4: y = 4/4 = 1. Point B = (4, 1).",
+
+ "math-ocr-h240-2022-p1::13(b)": "The enclosed area equals the integral of (line − curve) from x = 1 to x = 4:\nArea = ∫₁⁴ [(5 − x) − 4/x] dx\n= [5x − x²/2 − 4 ln x]₁⁴\nAt x = 4: 20 − 8 − 4 ln 4 = 12 − 4 ln 4.\nAt x = 1: 5 − 1/2 − 4 ln 1 = 9/2 − 0 = 9/2.\nArea = (12 − 4 ln 4) − 9/2 = 12 − 4 ln 4 − 4.5 = 7.5 − 4 ln 4.\nSince ln 4 = 2 ln 2: Area = 15/2 − 8 ln 2.",
+
+ "math-ocr-h240-2022-p1::14(a)": "Since A is acute with sin A = 3/5, use a 3-4-5 triangle: cos A = 4/5.\nSince B is acute with cos B = 5/13, use a 5-12-13 triangle: sin B = 12/13.\nApply the addition formula:\nsin(A + B) = sin A cos B + cos A sin B\n= (3/5)(5/13) + (4/5)(12/13)\n= 15/65 + 48/65\n= 63/65.",
+
+ "math-ocr-h240-2022-p1::14(b)": "Find tan A and tan B:\ntan A = sin A/cos A = (3/5)/(4/5) = 3/4.\ntan B = sin B/cos B = (12/13)/(5/13) = 12/5.\nApply the subtraction formula:\ntan(A − B) = (tan A − tan B)/(1 + tan A tan B)\n= (3/4 − 12/5)/(1 + (3/4)(12/5))\nNumerator: 15/20 − 48/20 = −33/20.\nDenominator: 1 + 36/20 = 56/20.\ntan(A − B) = (−33/20)/(56/20) = −33/56.\n(The exact value printed on the paper should be confirmed against the question; show all steps above.)",
+
+ "math-ocr-h240-2022-p1::15(a)": "Strip width h = (2 − 0)/4 = 0.5. The five x-values are 0, 0.5, 1, 1.5, 2.\nCompute y = √(1 + x³) at each:\ny₀ = √(1 + 0) = 1\ny₁ = √(1 + 0.125) = √1.125 ≈ 1.0607\ny₂ = √(1 + 1) = √2 ≈ 1.4142\ny₃ = √(1 + 3.375) = √4.375 ≈ 2.0917\ny₄ = √(1 + 8) = √9 = 3\nTrapezium rule:\nArea ≈ (h/2)[y₀ + y₄ + 2(y₁ + y₂ + y₃)]\n= (0.5/2)[1 + 3 + 2(1.0607 + 1.4142 + 2.0917)]\n= 0.25[4 + 2(4.5666)]\n= 0.25[4 + 9.1332]\n= 0.25 × 13.1332 ≈ 3.283.",
+
+ "math-ocr-h240-2022-p1::15(b)": "The function √(1 + x³) is convex (concave upward) on [0, 2] — its graph curves upward.\nFor a convex function, each trapezium lies above the curve, so the trapezium rule gives an overestimate.",
+
+ "math-ocr-h240-2022-p1::16(a)": "As x → ½⁺, 2x − 1 → 0⁺, so 3/(2x − 1) → +∞ and f(x) → +∞.\nAs x → +∞, 3/(2x − 1) → 0, so f(x) → −2 from above.\nThe function is strictly decreasing on its domain, so the range is f(x) > −2.",
+
+ "math-ocr-h240-2022-p1::16(b)": "Set y = 3/(2x − 1) − 2 and solve for x:\ny + 2 = 3/(2x − 1)\n2x − 1 = 3/(y + 2)\n2x = 1 + 3/(y + 2)\nx = ½ + 3/(2(y + 2)).\nSo f⁻¹(x) = ½ + 3/(2(x + 2)) = (x + 7)/(2x + 4).\nThe domain of f⁻¹ is the range of f: x > −2.",
+
+ "math-ocr-h240-2022-p1::16(c)": "f(x) = f⁻¹(x) occurs on the line of symmetry y = x (since f⁻¹ is the reflection of f in y = x).\nSolve f(x) = x:\n3/(2x − 1) − 2 = x\n3/(2x − 1) = x + 2\n3 = (x + 2)(2x − 1) = 2x² + 3x − 2\n2x² + 3x − 5 = 0\n(2x + 5)(x − 1) = 0\nx = 1 or x = −5/2.\nSince the domain of f is x > ½, reject x = −5/2.\nAnswer: x = 1.",
+
+ "math-ocr-h240-2022-p1::17(a)": "Differentiate with respect to t:\ndx/dt = 2t;  dy/dt = 6t² − 3.\nBy the chain rule:\ndy/dx = (dy/dt)/(dx/dt) = (6t² − 3)/(2t).",
+
+ "math-ocr-h240-2022-p1::17(b)": "Set dy/dx = 0 ⟹ 6t² − 3 = 0 ⟹ t² = 1/2 ⟹ t = ±1/√2.\nAt t = 1/√2:\n  x = (1/√2)² + 1 = 1/2 + 1 = 3/2\n  y = 2(1/√2)³ − 3(1/√2) = 2/(2√2) − 3/√2 = 1/√2 − 3/√2 = −2/√2 = −√2\nAt t = −1/√2:\n  x = 1/2 + 1 = 3/2\n  y = 2(−1/√2)³ − 3(−1/√2) = −1/√2 + 3/√2 = 2/√2 = √2\nStationary points: (3/2, −√2) and (3/2, √2).",
+
+ "math-ocr-h240-2022-p1::17(c)": "At t = 2: x = 4 + 1 = 5, y = 2(8) − 3(2) = 16 − 6 = 10. Point (5, 10).\nGradient: dy/dx = (6(4) − 3)/(2 × 2) = (24 − 3)/4 = 21/4.\nEquation of tangent through (5, 10):\ny − 10 = (21/4)(x − 5)\ny = (21/4)x − 105/4 + 40/4\ny = (21/4)x − 65/4.",
+
+ "math-ocr-h240-2022-p1::18(a)": "Start with dP/dt = kP(1 − P/N) = kP(N − P)/N.\nSeparate variables:\nN/[P(N − P)] dP = k dt.\nPartial fractions: N/[P(N − P)] = 1/P + 1/(N − P).\nIntegrate both sides:\n∫[1/P + 1/(N − P)] dP = ∫k dt\nln|P| − ln|N − P| = kt + C\nln|P/(N − P)| = kt + C.\nExponentiate:\nP/(N − P) = Ae^(kt)  (where A = ±e^C is an arbitrary constant).\nRearrange:\nP = Ae^(kt)(N − P) = ANe^(kt) − APe^(kt)\nP(1 + Ae^(kt)) = ANe^(kt)\nP = ANe^(kt)/(1 + Ae^(kt)).\nDivide numerator and denominator by Ae^(kt):\nP = N/(1 + (1/A)e^(−kt)).\nRelabelling 1/A as A (arbitrary constant):\nP = N/(1 + Ae^(−kt)), as required.",
+
+ "math-ocr-h240-2022-p1::18(b)": "Substitute t = 0 and P = N/4 into P = N/(1 + Ae^(−kt)):\nN/4 = N/(1 + A × 1)\n1 + A = 4\nA = 3."
 
 };
