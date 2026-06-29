@@ -6333,5 +6333,582 @@ window.MATHS_QUESTIONS = {
     "guidance": "B1 integrates ∫ sin u du to obtain −cos u. M1 uses result from (a)(iii) to express cos u back in terms of x. R1 completes argument correctly to obtain √(x²−4)/(4x) + c (AG)."
    }
   }
+ },
+ "math-aqa-7357-2022-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "A circle has centre (4, −5) and radius 6\n\nWhich of the following is an equation of the circle?\n\nTick (✓) one box.\n\n(x − 4)² + (y + 5)² = 6\n(x + 4)² + (y − 5)² = 6\n(x − 4)² + (y + 5)² = 36\n(x + 4)² + (y − 5)² = 36",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "It is given that ∫₀⁶ f(x) dx = 20 and ∫₃⁶ f(x) dx = −10\n\nFind the value of ∫₀³ f(x) dx\n\nCircle your answer.\n\n−30     −10     10     30",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "A circle has equation (x − 5)² + (y − 13)² = 16\n\nFind the radius of the circle.\n\nCircle your answer.\n\n4     12     16     256",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "In triangle ABC, AC = 6.1 cm, BC = 8.7 cm and angle ABC = 38°. AB is the shortest side of the triangle.",
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Find the largest angle of triangle ABC.\n\nGive your answer to the nearest degree.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Given that\n\n(2 + 5x)⁴ = A + 160x + Bx² + 1000x³ + 625x⁴\n\nfind the values of A and B.",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Show that\n\n(2 + 5x)⁴ − (2 − 5x)⁴ = Cx + Dx³\n\nwhere C and D are constants to be found.",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Hence find\n\n∫ [(2 + 5x)⁴ − (2 − 5x)⁴] dx",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "Asif uses the following method to find the last digit of a square number:\n\n\"The last digit of n² equals the sum of the digits of n\"\n\nFor example, 24² = 576 and 2 + 4 = 6 ✓\n\nClaire's method: only look at the last digit of n to determine the last digit of n².",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Give a counter-example to show that Asif's method does not always work.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Using Claire's method, determine the last digit of 23456789²",
+      "marks": 1
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Using Claire's method, use proof by exhaustion to show that no square number has a last digit of 8.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "Triangle OPQ is isosceles with OQ = OP. Points P and Q lie on the curve with equation y = 15 − x². Q has coordinates (q, 0) where q > 0. PQ is parallel to the x-axis.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that the area, A, of triangle OPQ is given by\n\nA = 15q − q³   for 0 < q < c\n\nwhere c is a value to be found.",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the exact maximum area of triangle OPQ.\n\nFully justify your answer.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Sketch the graph of y = x^(1/2)",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "The graph of y = x^(1/2) can be transformed to the graph of y = 9x^(1/2) by a single stretch.\n\nBeth says the stretch is in the y-direction.\nPaul says the stretch is in the x-direction.\n\nDetermine whether Beth is correct, Paul is correct, both are correct, or neither is correct.\n\nYou must give a reason for your answer.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9",
+      "prompt": "Given that log₂(x³) − log₂(y²) = 9\n\nshow that x = Ay^p where A is an integer and p is a rational number.\n\nState the values of A and p.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A greenhouse contains 900 tomato plants. Initially 25 plants are damaged. The number of damaged plants increases by 32% each day. The number of damaged plants at time t days is modelled by x = A × Bᵗ.",
+    "parts": [
+     {
+      "code": "10(a)(i)",
+      "prompt": "Find the total number of damaged plants after 5 days.",
+      "marks": 3
+     },
+     {
+      "code": "10(a)(ii)",
+      "prompt": "Explain why this model is not realistic in the long term.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)(i)",
+      "prompt": "A refined model for the rate of change of the number of damaged plants is\n\ndx/dt = x(900 − x)/2700\n\nShow that\n\n∫[A/x + B/(900 − x)] dx = ∫ 1 dt\n\nwhere A and B are positive integers to be found.",
+      "marks": 3
+     },
+     {
+      "code": "10(b)(ii)",
+      "prompt": "Hence find t in terms of x.",
+      "marks": 5
+     },
+     {
+      "code": "10(b)(iii)",
+      "prompt": "Hence find the number of days until half the plants are damaged.\n\nGive your answer to the nearest day.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "A vehicle on the Moon has a mass of 212 kg and a weight of 345 N.\n\nCalculate the gravitational acceleration on the Moon.\n\nCircle your answer.\n\n1.63 m s⁻²     1.84 m s⁻²     0.614 m s⁻²     4.89 m s⁻²",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "A car accelerates uniformly from u m s⁻¹ to 4u m s⁻¹ in 5 seconds.\n\nExpress the acceleration in terms of u.\n\nCircle your answer.\n\n0.2u     0.4u     0.6u     0.8u",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A ball is projected from a point on horizontal ground with speed 7 m s⁻¹ at an angle θ above the horizontal. The maximum height reached by the ball is h metres. Use g = 9.8 m s⁻².",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Show that h = 2.5 sin²θ",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Given that 0 ≤ θ ≤ 60°, find the maximum value of h.",
+      "marks": 2
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Nisha claims that if the ball were larger then the maximum height would be greater.\n\nState, with a reason, whether Nisha is correct.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A uniform rod AB has length 160 mm. The rod is placed horizontally with its midpoint resting on a support. A £2 coin of diameter 28 mm and mass 12 g is placed on the rod with the curved edge of the coin directly above point A. A load of mass m grams is hung from point B by a string.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Given that the rod is in equilibrium, find the value of m.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "State one assumption made about the £2 coin in part (a).",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A particle moves along a straight line. The velocity-time graph for the motion for 0 ≤ t ≤ 15 is shown. The particle starts at rest. The total displacement over 0 ≤ t ≤ 15 is −7 m.",
+    "parts": [
+     {
+      "code": "15",
+      "prompt": "Find the next time after t = 0 when the velocity is zero.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "Particle P has initial position vector (−4i − 5j) m and constant acceleration (3i − 4j) m s⁻². Particle Q travels in a straight line, passing through the points with position vectors (i − j) m and (10i + cj) m.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Given that the path of P is parallel to the path of Q, show that c = −13.",
+      "marks": 4
+     },
+     {
+      "code": "16(b)(i)",
+      "prompt": "Find an expression for the position vector of P at time t seconds.",
+      "marks": 1
+     },
+     {
+      "code": "16(b)(ii)",
+      "prompt": "Hence prove that the paths of P and Q are not collinear.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "A particle moves so that its position vector at time t seconds is\n\nr = eᵗ cos(t) i + eᵗ sin(t) j",
+    "parts": [
+     {
+      "code": "17",
+      "prompt": "Show that the magnitude of the acceleration of the particle at time t seconds is 2eᵗ m s⁻².\n\nFully justify your answer.",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "An object is suspended from the ceiling by two strings. The shorter string has length 0.8 m and is attached to the ceiling at point A. The longer string has length 1.2 m and is attached to the ceiling at point B. The object hangs 0.6 m below the ceiling.",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Show that the tension in the shorter string is more than 30% greater than the tension in the longer string.",
+      "marks": 4
+     },
+     {
+      "code": "18(b)",
+      "prompt": "Given that the tension in the longer string is 2g N, find the mass of the object.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "scenario": "A rough ramp has length 10 m and is inclined at 25° to the horizontal. A crate of mass 20 kg is pulled up the ramp by a rope parallel to the ramp. The tension in the rope is 230 N. The crate accelerates at 1.2 m s⁻² up the ramp. Use g = 9.8 m s⁻².",
+    "parts": [
+     {
+      "code": "19(a)",
+      "prompt": "Find the coefficient of friction between the crate and the ramp.",
+      "marks": 7
+     },
+     {
+      "code": "19(b)(i)",
+      "prompt": "The crate starts from rest at point O and takes 3.8 seconds to reach the top of the ramp.\n\nFind the distance OA, where A is the point at the bottom of the ramp.",
+      "marks": 3
+     },
+     {
+      "code": "19(b)(ii)",
+      "prompt": "State one assumption, other than ignoring air resistance, made about the crate in part (b)(i).",
+      "marks": 1
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "(x − 4)² + (y + 5)² = 36"
+    ],
+    "guidance": "B1 for ticking (x − 4)² + (y + 5)² = 36. Centre (4, −5) gives (x − 4)² + (y − (−5))² and radius 6 gives r² = 36."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "30"
+    ],
+    "guidance": "B1 for circling 30. ∫₀³ f(x) dx = ∫₀⁶ f(x) dx − ∫₃⁶ f(x) dx = 20 − (−10) = 30."
+   },
+   "3": {
+    "type": "exact",
+    "points": [
+     "4"
+    ],
+    "guidance": "B1 for circling 4. The equation is (x − 5)² + (y − 13)² = 16 = 4², so radius = 4."
+   },
+   "4": {
+    "type": "exact",
+    "points": [
+     "119° (AWRT)"
+    ],
+    "guidance": "M1 uses the sine rule: sin(BAC)/8.7 = sin 38°/6.1. A1 angle BAC ≈ 61.4° (or 118.6° — resolves ambiguous case). R1 deduces the largest angle: since AB is the shortest side, angle ACB is the largest; 180° − 38° − 61.4° ≈ 80.6° or uses 118.6° to get 180° − 38° − 118.6°... Check: with the obtuse solution angle BAC ≈ 118.6°, angle ACB = 180° − 38° − 118.6° = 23.4°, so angle BAC is largest = 119° (AWRT)."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "A = 16, B = 600"
+    ],
+    "guidance": "B1 A = 16 (constant term = 2⁴ = 16). B1 B = 600 (x² term: C(4,2) × 2² × 5² = 6 × 4 × 25 = 600)."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "C = 320, D = 2000"
+    ],
+    "guidance": "M1 writes (2−5x)⁴ = 16 − 160x + 600x² − 1000x³ + 625x⁴ and subtracts: odd powers survive, even powers cancel. R1 obtains (2+5x)⁴ − (2−5x)⁴ = 320x + 2000x³, so C = 320, D = 2000 (AG)."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "160x² + 500x⁴ + c"
+    ],
+    "guidance": "M1 integrates 320x + 2000x³ term by term. A1 160x² + 500x⁴ + c (constant of integration required)."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "A counter-example where the last digit of n² does not equal the digit sum of n, e.g. n = 13: 13² = 169 (last digit 9), digit sum = 1 + 3 = 4 ≠ 9"
+    ],
+    "guidance": "M1 attempts a counter-example. R1 correctly shows that the last digit of n² ≠ digit sum of n (must state both the last digit and the digit sum explicitly)."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "1"
+    ],
+    "guidance": "B1. Last digit of 23456789 is 9. 9² = 81, so last digit is 1."
+   },
+   "6(c)": {
+    "type": "points",
+    "points": [
+     "0² → last digit 0; 1² → 1; 2² → 4; 3² → 9; 4² → 6; 5² → 5; 6² → 6; 7² → 9; 8² → 4; 9² → 1",
+     "The possible last digits of square numbers are {0, 1, 4, 5, 6, 9} — none is 8",
+     "Therefore no square number has last digit 8"
+    ],
+    "guidance": "M1 systematically checks all digits 0–9. R1 correct conclusion that 8 never appears, so no square ends in 8 (AG)."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Q = (q, 0) lies on y = 15 − x², so height of triangle = y-coordinate of PQ = 15 − q²",
+     "By symmetry P = (−q, 0), so base PQ = 2q",
+     "Area A = ½ × base × height = ½ × 2q × (15 − q²) = 15q − q³",
+     "Valid for 0 < q < √15, so c = √15"
+    ],
+    "guidance": "M1 identifies height = 15 − q² (using the curve equation). R1 base = 2q (by symmetry). B1 c = √15 and correct area formula A = 15q − q³ (AG)."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "Maximum area = 10√5"
+    ],
+    "guidance": "E1 differentiates: dA/dq = 15 − 3q². M1 sets dA/dq = 0: q² = 5, so q = √5 (taking positive root). A1 q = √5. M1 substitutes: A = 15√5 − (√5)³ = 15√5 − 5√5 = 10√5. A1 10√5. E1 justifies maximum: d²A/dq² = −6q < 0 at q = √5 (or checks sign change of dA/dq)."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Sketch in first quadrant only, passing through origin, increasing and concave down",
+     "Correct shape with no part below x-axis or to the left of y-axis"
+    ],
+    "guidance": "M1 correct general shape (increasing curve in first quadrant). A1 passes through origin with correct concavity."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Both are correct",
+     "y-direction stretch with scale factor 9: y → 9y gives 9x^(1/2) ✓",
+     "x-direction stretch with scale factor 1/81: x → x/81 gives (x/81)^(1/2) = x^(1/2)/9 — that gives 1/9, not 9. Actually x-direction stretch with scale factor 1/81 gives y = (x × 81)^(1/2)... Re-check: stretch in x-direction with scale factor k replaces x with x/k, so y = (x/k)^(1/2) = x^(1/2)/√k. For this to equal 9x^(1/2): 1/√k = 9 → k = 1/81. So stretch in x-direction with scale factor 1/81 also works.",
+     "Both Beth and Paul are correct"
+    ],
+    "guidance": "M1 considers both stretches with appropriate scale factors. A1 correctly identifies both as valid. R1 gives correct scale factors (y-direction: sf 9; x-direction: sf 1/81) and concludes both are correct."
+   },
+   "9": {
+    "type": "exact",
+    "points": [
+     "x = 8y^(2/3)  (A = 8, p = 2/3)"
+    ],
+    "guidance": "B1 uses log laws: log₂(x³/y²) = 9. M1 x³/y² = 2⁹ = 512, so x³ = 512y². A1 x = (512)^(1/3) × y^(2/3) = 8y^(2/3). R1 states A = 8 (integer) and p = 2/3 (rational)."
+   },
+   "10(a)(i)": {
+    "type": "exact",
+    "points": [
+     "101 plants (accept 100)"
+    ],
+    "guidance": "B1 model: x = 25 × 1.32ᵗ. M1 substitutes t = 5: x = 25 × 1.32⁵. A1 ≈ 100.2, so 101 plants (condone 100 if rounded down)."
+   },
+   "10(a)(ii)": {
+    "type": "points",
+    "points": [
+     "The model predicts the number of damaged plants grows without bound, but there are only 900 plants, so eventually the model gives more than 900 damaged plants which is impossible"
+    ],
+    "guidance": "E1 references the finite total of 900 plants. E1 explains the model is unbounded / exceeds 900 in the long term."
+   },
+   "10(b)(i)": {
+    "type": "exact",
+    "points": [
+     "A = 3, B = 3"
+    ],
+    "guidance": "B1 separates variables: 2700/[x(900−x)] dx = dt. M1 partial fractions: 2700/[x(900−x)] = A/x + B/(900−x); multiply through: 2700 = A(900−x) + Bx. Set x=0: A = 3. Set x=900: B = 3. R1 concludes A = 3, B = 3 (AG)."
+   },
+   "10(b)(ii)": {
+    "type": "exact",
+    "points": [
+     "t = 3 ln(35x / (900 − x))"
+    ],
+    "guidance": "M1 integrates: ∫[3/x + 3/(900−x)] dx = 3 ln x − 3 ln(900−x) + c = t. M1 applies initial condition: at t = 0, x = 25, so c = −3 ln 25 + 3 ln 875 = 3 ln 35. A1 correct expression with constant. M1 combines logarithms. A1 t = 3 ln(35x/(900−x)) or equivalent."
+   },
+   "10(b)(iii)": {
+    "type": "exact",
+    "points": [
+     "11 days (AWRT)"
+    ],
+    "guidance": "M1 substitutes x = 450: t = 3 ln(35 × 450/450) = 3 ln 35 ≈ 10.67. A1 11 days (to nearest day)."
+   },
+   "11": {
+    "type": "exact",
+    "points": [
+     "1.63 m s⁻²"
+    ],
+    "guidance": "B1 g = W/m = 345/212 ≈ 1.63 m s⁻²."
+   },
+   "12": {
+    "type": "exact",
+    "points": [
+     "0.6u"
+    ],
+    "guidance": "B1 a = (4u − u)/5 = 3u/5 = 0.6u."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "Vertical component of initial velocity = 7 sin θ",
+     "At maximum height, vertical velocity = 0; use v² = u² + 2as: 0 = (7 sin θ)² − 2 × 9.8 × h",
+     "h = 49 sin²θ / 19.6 = 2.5 sin²θ"
+    ],
+    "guidance": "B1 vertical component = 7 sin θ. M1 uses v² = u² + 2as with v = 0 and a = −9.8. R1 obtains h = 2.5 sin²θ (AG)."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "Maximum h = 15/8 m (= 1.875 m, AWRT 1.88)"
+    ],
+    "guidance": "M1 in range 0 ≤ θ ≤ 60°, sin²θ is maximised at θ = 60°: h = 2.5 sin²60° = 2.5 × (3/4) = 15/8. A1 exact value 15/8 m (or 1.875 m, accept AWRT 1.88)."
+   },
+   "13(c)": {
+    "type": "points",
+    "points": [
+     "Nisha is incorrect. The ball is modelled as a particle, so its size does not affect the motion. (Alternatively: a larger ball experiences greater air resistance, which would reduce the maximum height.)"
+    ],
+    "guidance": "E1 states Nisha is incorrect with a valid reason referencing the particle model or air resistance."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "m = 9.9 g"
+    ],
+    "guidance": "M1 takes moments about the midpoint (80 mm from each end). Coin's centre is 14 mm from A (radius = 14 mm), so 80 − 14 = 66 mm from midpoint. M1 moment equation: 12 × 66 = m × 80. A1 m = 792/80 = 9.9 g."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "The coin is uniform (so its weight acts through its centre / centre of mass is at the geometric centre)"
+    ],
+    "guidance": "E1 any valid assumption about the coin, e.g. it is uniform, it is a particle, the rod does not bend under the coin."
+   },
+   "15": {
+    "type": "exact",
+    "points": [
+     "t = 8.25 s (AWRT)"
+    ],
+    "guidance": "B1 identifies the areas under the v–t graph. B1 sets up equation: area above axis − area below axis = −7 m. M1 solves for the unknown time. A1 obtains t = 8.25 s (or exact equivalent)."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "Direction vector of Q's path: (10i + cj) − (i − j) = 9i + (c+1)j",
+     "Direction vector of P's acceleration (hence path): 3i − 4j",
+     "For parallel paths: (c+1)/9 = −4/3, so c + 1 = −12, c = −13"
+    ],
+    "guidance": "M1 finds direction vector of Q: 9i + (c+1)j. A1 sets proportional to 3i − 4j. M1 forms equation (c+1)/9 = −4/3. A1 obtains c = −13 (AG)."
+   },
+   "16(b)(i)": {
+    "type": "exact",
+    "points": [
+     "r = (−4 + 1.5t²)i + (−5 − 2t²)j  metres"
+    ],
+    "guidance": "B1 r = r₀ + ½at² = (−4i − 5j) + ½t²(3i − 4j) = (−4 + 1.5t²)i + (−5 − 2t²)j (particle starts from rest so no ut term, or u = 0 assumed)."
+   },
+   "16(b)(ii)": {
+    "type": "points",
+    "points": [
+     "Suppose P's path passes through (i − j): then −4 + 1.5t² = 1 → t² = 10/3, and −5 − 2t² = −1 → t² = −2",
+     "These are inconsistent (t² cannot equal both 10/3 and −2), so P never passes through (i − j)",
+     "Therefore the paths are parallel but not collinear"
+    ],
+    "guidance": "M1 attempts to find t such that P's position equals a known point on Q's path. A1 obtains two inconsistent equations for t². R1 concludes the paths are not collinear (AG)."
+   },
+   "17": {
+    "type": "points",
+    "points": [
+     "v = dr/dt = (eᵗcos t − eᵗsin t)i + (eᵗsin t + eᵗcos t)j",
+     "a = dv/dt = (eᵗcos t − eᵗsin t − eᵗsin t − eᵗcos t)i + (eᵗsin t + eᵗcos t + eᵗcos t − eᵗsin t)j = −2eᵗsin t · i + 2eᵗcos t · j",
+     "|a| = √((−2eᵗsin t)² + (2eᵗcos t)²) = √(4e²ᵗsin²t + 4e²ᵗcos²t) = √(4e²ᵗ) = 2eᵗ"
+    ],
+    "guidance": "M1 differentiates r to obtain v using product rule on each component. M1 differentiates v to obtain a. A1 correct a = −2eᵗsin t · i + 2eᵗcos t · j. M1 computes |a|². M1 uses sin²t + cos²t = 1. A1 |a|² = 4e²ᵗ. R1 concludes |a| = 2eᵗ (AG)."
+   },
+   "18(a)": {
+    "type": "points",
+    "points": [
+     "Angle that shorter string (0.8 m) makes with ceiling: cos θ_A = 0.6/0.8... wait, the string hangs 0.6 m below ceiling. Angle with vertical: sin α = horizontal/hypotenuse. Use Pythagoras: horizontal component from A = √(0.8² − 0.6²) = √(0.64−0.36) = √0.28. So cos(angle with ceiling) = 0.6/0.8.",
+     "Angle that longer string (1.2 m) makes with ceiling: cos θ_B = 0.6/1.2 = 0.5, so θ_B = 60°.",
+     "For shorter string: cos θ_A = 0.6/0.8 = 0.75, so θ_A ≈ 41.41°.",
+     "Horizontal equilibrium: T_A cos(90°−θ_A) = T_B cos(90°−θ_B), i.e. T_A sin α_A = T_B sin α_B where α is angle from vertical.",
+     "T_A/T_B = sin α_B / sin α_A. sin α_A = √(1−0.75²)/... Recalculate: angle with ceiling θ: T_A sinθ_A = T_B sinθ_B (horizontal). T_A/T_B = sinθ_B/sinθ_A = sin60°/sin(arccos(0.75)) = (√3/2)/(√(1−9/16)) = (√3/2)/(√7/4) = 2√3/√7 ≈ 1.309 > 1.3"
+    ],
+    "guidance": "B1 finds angle for shorter string: cos θ_A = 0.6/0.8. B1 finds angle for longer string: cos θ_B = 0.6/1.2 = 0.5. M1 uses horizontal equilibrium T_A sin θ_A = T_B sin θ_B (where θ is angle with ceiling). R1 shows T_A/T_B = sin θ_B/sin θ_A > 1.3, hence shorter string tension is more than 30% greater (AG)."
+   },
+   "18(b)": {
+    "type": "exact",
+    "points": [
+     "m ≈ 3 kg (AWRT)"
+    ],
+    "guidance": "B1 T_B = 2g N. M1 T_A = 2g × (sin θ_B/sin θ_A) = 2g × (T_A/T_B ratio from part (a)). M1 vertical equilibrium: mg = T_A cos θ_A + T_B cos θ_B (resolving vertically, using angles with ceiling... or with vertical). A1 m ≈ 3 kg (correct numerical answer)."
+   },
+   "19(a)": {
+    "type": "exact",
+    "points": [
+     "μ ≈ 0.69"
+    ],
+    "guidance": "B1 normal reaction R = 20g cos 25°. B1 friction force F = μR. B1 weight component along slope = 20g sin 25°. M1 Newton's second law along slope: 230 − 20g sin 25° − μ × 20g cos 25° = 20 × 1.2. M1 substitutes and rearranges for μ. A1 correct numerical value. A1 μ ≈ 0.69 (3 s.f.)."
+   },
+   "19(b)(i)": {
+    "type": "exact",
+    "points": [
+     "OA ≈ 1.34 m (AWRT 1.3 m)"
+    ],
+    "guidance": "M1 uses s = ut + ½at² with u = 0, a = 1.2, t = 3.8: s = ½ × 1.2 × 3.8² = 8.664 m. A1 distance travelled up ramp = 8.664 m. A1 OA = 10 − 8.664 ≈ 1.34 m (AWRT)."
+   },
+   "19(b)(ii)": {
+    "type": "points",
+    "points": [
+     "The crate is modelled as a particle (or: the rope remains parallel to the ramp throughout)"
+    ],
+    "guidance": "E1 any valid assumption, e.g. the crate is a particle, the tension in the rope is constant, the ramp is straight."
+   }
+  }
  }
 };
