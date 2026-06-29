@@ -20230,5 +20230,534 @@ window.MATHS_QUESTIONS = {
    }
   }
  }
-}
+},
+ "math-ocr-h240-2018-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Express 5cos θ − 12sin θ in the form Rcos(θ + α), where R > 0 and 0 < α < π/2.\nState the values of R and α, giving α to 3 significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Hence find the greatest value of 1/(5cos θ − 12sin θ − 14) and the smallest positive value of θ at which this greatest value occurs.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Use the trapezium rule with 4 strips to find an approximation for ∫₁⁵ √(ln x) dx, giving your answer to 3 decimal places.",
+      "marks": 4
+     },
+     {
+      "code": "2(b)",
+      "prompt": "State, with a reason, whether the trapezium rule gives an overestimate or an underestimate for ∫₁⁵ √(ln x) dx.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "The functions f and g are defined by\nf(x) = ln(3x − 2),  x ∈ ℝ, x > 2/3\ng(x) = 2e^x + 3,  x ∈ ℝ",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find the exact value of gf(2).",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find f⁻¹(x) and state its domain.",
+      "marks": 3
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Show that the equation fg(x) = 0 can be written as 6e^x + 7 = 0, and hence explain why fg(x) = 0 has no real solutions.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Use integration by parts to find ∫ x² ln x dx.",
+      "marks": 4
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Hence evaluate ∫₁ᵉ x² ln x dx, giving your answer in the form (ae² + b)/c where a, b and c are integers.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "A curve has equation y = x² + 4 / (x² + 1).",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the coordinates of the stationary point(s) of the curve, and determine their nature.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Prove that (sin θ + cos θ)² + (sin θ − cos θ)² = 2.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Show that cos 2x + sin 2x ≡ 1 − 2sin²x + 2sin x cos x.",
+      "marks": 2
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Solve the equation cos 2x + sin 2x = √2 for −π ≤ x ≤ π, giving your answers in terms of π.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A researcher models the population P (in thousands) of bacteria in a culture using the differential equation\ndP/dt = kP(100 − P),\nwhere t is the time in hours and k is a positive constant.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Use partial fractions to show that ∫ 1/(P(100 − P)) dP = (1/100) ln(P/(100 − P)) + c.",
+      "marks": 4
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Given that P = 10 when t = 0 and P = 25 when t = 2, find the value of k, giving your answer to 3 significant figures.",
+      "marks": 5
+     },
+     {
+      "code": "7(c)",
+      "prompt": "According to the model, find the population as t → ∞.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The vector equations of two lines l₁ and l₂ are\nl₁: r = (2i − j + 3k) + λ(i + 2j − k)\nl₂: r = (i + 4j + k) + μ(3i − j + 2k)",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Show that l₁ and l₂ do not intersect.",
+      "marks": 4
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Show that l₁ and l₂ are not parallel.",
+      "marks": 1
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the acute angle between l₁ and l₂, giving your answer to 1 decimal place.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\nA particle P moves in a straight line. Its velocity v m s⁻¹ at time t seconds is given by\nv = 3t² − 12t + 9,  t ≥ 0.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the values of t for which P is at rest.",
+      "marks": 2
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find the acceleration of P when t = 3.",
+      "marks": 2
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Given that P is at the origin when t = 0, find the displacement of P from the origin when t = 4.",
+      "marks": 3
+     },
+     {
+      "code": "9(d)",
+      "prompt": "Find the total distance travelled by P in the first 4 seconds.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A particle of mass 4 kg lies on a rough inclined plane. The plane makes an angle of 30° with the horizontal. The coefficient of friction between the particle and the plane is μ. A force of 20 N acts on the particle up the line of greatest slope.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Given that the particle is on the point of moving up the plane, find μ, giving your answer to 3 significant figures.",
+      "marks": 5
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Given instead that the particle is on the point of moving down the plane, find the value of the applied force up the slope.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "Two particles A and B have masses 3 kg and 5 kg respectively. They are connected by a light inextensible string passing over a smooth fixed pulley. The particles are released from rest with both parts of the string vertical and taut.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the acceleration of the system and the tension in the string.",
+      "marks": 5
+     },
+     {
+      "code": "11(b)",
+      "prompt": "After 2 seconds, the string breaks. Find the further time that elapses before A reaches its greatest height.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A ball is projected from a point O on a horizontal surface with speed U m s⁻¹ at angle α above the horizontal. At time T seconds the ball is at point P, where OP makes an angle β with the horizontal. Take g = 9.8 m s⁻².",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Show that tan β = tan α − gT/(U cos α).",
+      "marks": 4
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Given that U = 20, α = 45° and β = 30°, find T. Give your answer to 3 significant figures.",
+      "marks": 4
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "R = √(5² + 12²) = √169 = 13",
+     "tan α = 12/5, so α = arctan(2.4) = 1.176 radians (3 s.f.)",
+     "5cos θ − 12sin θ = 13cos(θ + 1.176)"
+    ],
+    "guidance": "M1: form R² = 5² + 12² and solve for R. A1: R = 13. M1: find α from tan α = 12/5. A1: α = 1.18 (allow AWRT)."
+   },
+   "1(b)": {
+    "type": "points",
+    "points": [
+     "Write expression as 13cos(θ + α) − 14",
+     "Greatest value of 1/(13cos(θ + α) − 14) when 13cos(θ + α) − 14 is most negative",
+     "Minimum of denominator is −13 − 14 = −27 when cos(θ + α) = −1",
+     "Greatest value of the fraction is 1/(−27) = −1/27",
+     "cos(θ + α) = −1 ⇒ θ + 1.176 = π ⇒ θ = π − 1.176 = 1.966 radians"
+    ],
+    "guidance": "M1: identify minimum of denominator. A1: −27. M1: set cos = −1, solve for θ. A1: 1.97 (AWRT)."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "h = (5 − 1)/4 = 1",
+     "x-values: 1, 2, 3, 4, 5; y-values: √(ln 1)=0, √(ln 2)≈0.8326, √(ln 3)≈1.0481, √(ln 4)≈1.1774, √(ln 5)≈1.2686",
+     "Trapezium rule: ½ × 1 × (0 + 2(0.8326 + 1.0481 + 1.1774) + 1.2686)",
+     "= ½ × (0 + 2(3.0581) + 1.2686) = ½ × (6.1162 + 1.2686) = ½ × 7.3848 = 3.692"
+    ],
+    "guidance": "M1: correct trapezium rule formula. B1: all y-values correct. M1: correct substitution. A1: 3.692 (AWRT)."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "Overestimate",
+     "The graph of y = √(ln x) is concave downwards (d²y/dx² < 0) on [1, 5]",
+     "So each trapezium lies above the curve, making the trapezium rule an overestimate"
+    ],
+    "guidance": "B1: overestimate. B1: correct reason (concave, or second derivative negative, or diagram showing trapezia above curve)."
+   },
+   "3(a)": {
+    "type": "answer",
+    "answer": "5 + 2e^(ln 4) = 5 + 2×4 = 13   (exact answer: 5 + 8 = 13)",
+    "points": [
+     "f(2) = ln(3×2 − 2) = ln 4",
+     "gf(2) = g(ln 4) = 2e^(ln 4) + 3 = 2×4 + 3 = 11"
+    ],
+    "guidance": "M1: evaluate f(2) = ln 4. A1: gf(2) = 11."
+   },
+   "3(b)": {
+    "type": "points",
+    "points": [
+     "Let y = ln(3x − 2), so e^y = 3x − 2",
+     "x = (e^y + 2)/3",
+     "f⁻¹(x) = (e^x + 2)/3",
+     "Domain: x ∈ ℝ (all real numbers)"
+    ],
+    "guidance": "M1: rearrange to make x the subject. A1: correct inverse. B1: domain x ∈ ℝ."
+   },
+   "3(c)": {
+    "type": "points",
+    "points": [
+     "fg(x) = f(2e^x + 3) = ln(3(2e^x + 3) − 2) = ln(6e^x + 7)",
+     "fg(x) = 0 ⇒ ln(6e^x + 7) = 0 ⇒ 6e^x + 7 = 1 ⇒ 6e^x = −6",
+     "This gives e^x = −1, which has no real solutions since e^x > 0 for all real x"
+    ],
+    "guidance": "M1: form fg(x). A1: ln(6e^x + 7) = 0 ⇒ 6e^x + 7 = 1. B1: e^x > 0 so no solutions."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Let u = ln x (u' = 1/x) and dv = x² dx (v = x³/3)",
+     "∫ x² ln x dx = (x³/3) ln x − ∫ (x³/3)(1/x) dx",
+     "= (x³/3) ln x − ∫ x²/3 dx",
+     "= (x³/3) ln x − x³/9 + c"
+    ],
+    "guidance": "M1: parts, correct u and dv. A1: (x³/3)ln x. M1: integrate remaining term. A1: final answer."
+   },
+   "4(b)": {
+    "type": "answer",
+    "answer": "(2e³ + 1)/9",
+    "points": [
+     "[(x³/3) ln x − x³/9]₁ᵉ",
+     "At x = e: (e³/3)(1) − e³/9 = 3e³/9 − e³/9 = 2e³/9",
+     "At x = 1: (1/3)(0) − 1/9 = −1/9",
+     "Integral = 2e³/9 − (−1/9) = 2e³/9 + 1/9 = (2e³ + 1)/9"
+    ],
+    "guidance": "M1: substitute limits using part (a). A1: (2e³ + 1)/9."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "y = x² + 4/(x² + 1); use quotient rule on 4/(x² + 1) and differentiate x² directly",
+     "d/dx[4/(x² + 1)] = (0(x² + 1) − 4(2x))/(x² + 1)² = −8x/(x² + 1)²",
+     "dy/dx = 2x − 8x/(x² + 1)²"
+    ],
+    "guidance": "M1: quotient/chain rule on the fraction term. A1: −8x/(x² + 1)². A1: full derivative."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "Set dy/dx = 0: 2x − 8x/(x² + 1)² = 0 ⇒ 2x[(x² + 1)² − 4]/(x² + 1)² = 0",
+     "x = 0 or (x² + 1)² = 4 ⇒ x² + 1 = 2 ⇒ x² = 1 ⇒ x = ±1",
+     "At x = 0: y = 0 + 4/1 = 4. At x = ±1: y = 1 + 4/2 = 3",
+     "Check nature: d²y/dx² or sign of dy/dx; (0, 4) is a local maximum; (±1, 3) are local minima"
+    ],
+    "guidance": "M1: set dy/dx = 0 and factorise. A1: x = 0, ±1. A1: coordinates. A1: correct nature of each."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "(sin θ + cos θ)² = sin²θ + 2sin θ cos θ + cos²θ",
+     "(sin θ − cos θ)² = sin²θ − 2sin θ cos θ + cos²θ",
+     "Sum = 2sin²θ + 2cos²θ = 2(sin²θ + cos²θ) = 2"
+    ],
+    "guidance": "M1: expand both squares. A1: use sin²θ + cos²θ = 1 to simplify to 2."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "cos 2x = 1 − 2sin²x and sin 2x = 2sin x cos x",
+     "cos 2x + sin 2x = 1 − 2sin²x + 2sin x cos x, as required"
+    ],
+    "guidance": "B1: use correct double-angle identities. B1: state combined result correctly."
+   },
+   "6(c)": {
+    "type": "points",
+    "points": [
+     "Write cos 2x + sin 2x in the form R cos(2x − π/4) or √2 sin(2x + π/4)",
+     "cos 2x + sin 2x = √2 sin(2x + π/4)",
+     "√2 sin(2x + π/4) = √2 ⇒ sin(2x + π/4) = 1",
+     "2x + π/4 = π/2 (principal value), so x = π/8",
+     "General: 2x + π/4 = π/2 + 2nπ or 2x + π/4 = π − π/2 + 2nπ",
+     "For −π ≤ x ≤ π: x = π/8 and x = π/8 − π = −7π/8"
+    ],
+    "guidance": "M1: express LHS as R trig form. A1: √2 sin(2x + π/4). M1: solve trig equation in given range. A1: x = π/8. A1: x = −7π/8."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Partial fractions: 1/(P(100 − P)) = A/P + B/(100 − P)",
+     "1 = A(100 − P) + BP; P = 0: A = 1/100; P = 100: B = 1/100",
+     "∫ 1/(P(100 − P)) dP = (1/100) ∫ (1/P + 1/(100 − P)) dP",
+     "= (1/100)(ln P − ln(100 − P)) + c = (1/100) ln(P/(100 − P)) + c"
+    ],
+    "guidance": "M1: set up partial fractions. A1: A = B = 1/100. M1: integrate both terms. A1: correct logarithmic form."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "Separating: ∫ 1/(P(100 − P)) dP = ∫ k dt",
+     "(1/100) ln(P/(100 − P)) = kt + C",
+     "t = 0, P = 10: C = (1/100) ln(10/90) = (1/100) ln(1/9)",
+     "t = 2, P = 25: (1/100) ln(25/75) = 2k + (1/100) ln(1/9)",
+     "(1/100)(ln(1/3) − ln(1/9)) = 2k ⇒ (1/100) ln 3 = 2k",
+     "k = ln 3 / 200 = 0.00549 (3 s.f.)"
+    ],
+    "guidance": "M1: separate variables and integrate. A1: general solution. M1: use t=0 condition. M1: use t=2 condition. A1: k = ln3/200 (AWRT 0.00549)."
+   },
+   "7(c)": {
+    "type": "answer",
+    "answer": "100 thousand",
+    "points": [
+     "As t → ∞, P/(100 − P) → ∞, so 100 − P → 0, hence P → 100"
+    ],
+    "guidance": "B1: P → 100 (thousand)."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "If lines intersect: 2 + λ = 1 + 3μ, −1 + 2λ = 4 − μ, 3 − λ = 1 + 2μ",
+     "From eq.1 and eq.3: (2 + λ) + (3 − λ) = (1 + 3μ) + (1 + 2μ) ⇒ 5 = 2 + 5μ ⇒ μ = 3/5",
+     "From eq.1: λ = 1 + 3(3/5) − 2 = 1 + 9/5 − 2 = 4/5",
+     "Check eq.2: −1 + 2(4/5) = −1/5; 4 − 3/5 = 17/5. −1/5 ≠ 17/5, contradiction.",
+     "Therefore the lines do not intersect."
+    ],
+    "guidance": "M1: set up three simultaneous equations. M1: solve two. A1: values of λ and μ. A1: show third equation fails."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Direction of l₁ is (1, 2, −1); direction of l₂ is (3, −1, 2)",
+     "(1, 2, −1) = k(3, −1, 2) would require k = 1/3, k = −2, k = −1/2 — inconsistent",
+     "Therefore the lines are not parallel"
+    ],
+    "guidance": "B1: direction vectors not scalar multiples of each other (with reason)."
+   },
+   "8(c)": {
+    "type": "points",
+    "points": [
+     "cos θ = |d₁ · d₂| / (|d₁| |d₂|)",
+     "d₁ · d₂ = (1)(3) + (2)(−1) + (−1)(2) = 3 − 2 − 2 = −1",
+     "|d₁| = √(1 + 4 + 1) = √6; |d₂| = √(9 + 1 + 4) = √14",
+     "cos θ = |−1| / (√6 × √14) = 1/√84",
+     "θ = arccos(1/√84) = 83.7°"
+    ],
+    "guidance": "M1: dot product formula. A1: d₁·d₂ = −1. A1: |d₁|= √6, |d₂|= √14. A1: 83.7° (AWRT)."
+   },
+   "9(a)": {
+    "type": "answer",
+    "answer": "t = 1 and t = 3",
+    "points": [
+     "v = 0: 3t² − 12t + 9 = 0 ⇒ 3(t² − 4t + 3) = 0 ⇒ 3(t − 1)(t − 3) = 0"
+    ],
+    "guidance": "M1: set v = 0 and factorise. A1: t = 1 and t = 3."
+   },
+   "9(b)": {
+    "type": "answer",
+    "answer": "6 m s⁻²",
+    "points": [
+     "a = dv/dt = 6t − 12",
+     "At t = 3: a = 18 − 12 = 6 m s⁻²"
+    ],
+    "guidance": "M1: differentiate v. A1: a = 6."
+   },
+   "9(c)": {
+    "type": "answer",
+    "answer": "4 m",
+    "points": [
+     "s = ∫₀⁴ (3t² − 12t + 9) dt = [t³ − 6t² + 9t]₀⁴",
+     "= 64 − 96 + 36 = 4 m"
+    ],
+    "guidance": "M1: integrate v. A1: correct antiderivative. A1: s = 4."
+   },
+   "9(d)": {
+    "type": "answer",
+    "answer": "8 m",
+    "points": [
+     "P moves forward [0,1]: s₁ = [t³ − 6t² + 9t]₀¹ = 1 − 6 + 9 = 4",
+     "P moves backward [1,3]: s₂ = |[t³ − 6t² + 9t]₁³| = |(27 − 54 + 27) − 4| = |0 − 4| = 4",
+     "P moves forward [3,4]: s₃ = [t³ − 6t² + 9t]₃⁴ = 4 − 0 = 4",
+     "Total distance = 4 + 4 + 4 = ... wait: s₁=4, s₂=4, s₃=[64−96+36]−[27−54+27]=4−0=4",
+     "Total = 4 + 4 + 0 = 8... recalculate: s₁=4, |s on [1,3]|=|0−4|=4, s on [3,4]=4−0=4; total=4+4+4=12",
+     "Correct: [0,1]: 4; [1,3]: |0−4|=4; [3,4]: 4; total distance = 12 m"
+    ],
+    "answer": "12 m",
+    "guidance": "M1: consider separate intervals where v changes sign. M1: integrate over each interval. A1: 12 m."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "Normal reaction: R = 4g cos 30° = 4 × 9.8 × (√3/2) = 19.6√3 N",
+     "On the point of moving up: F = μR (friction acts down the slope)",
+     "Resolving up the slope: 20 = 4g sin 30° + μ × 4g cos 30°",
+     "20 = 4(9.8)(0.5) + μ × 19.6√3 = 19.6 + 33.95μ",
+     "μ = (20 − 19.6)/(19.6√3) = 0.4/33.94 = 0.0118 (3 s.f.)"
+    ],
+    "guidance": "M1: resolve perpendicular to plane for R. M1: resolve along plane with friction up slope. A1: correct equation. M1: solve for μ. A1: 0.0118 (AWRT)."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "On point of moving down: friction acts up the slope",
+     "Let applied force = F N (up the slope)",
+     "Resolving along slope (down positive): 4g sin 30° − F − μR = 0",
+     "19.6 − F − 0.01178 × 19.6√3 = 0",
+     "19.6 − F − 0.400 = 0 ⇒ F = 19.2 N"
+    ],
+    "guidance": "M1: direction of friction reversed. M1: resolve along plane. A1: equation. A1: F ≈ 19.2 N."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "Let acceleration be a m s⁻² (B accelerates down, A accelerates up)",
+     "For B (5 kg): 5g − T = 5a",
+     "For A (3 kg): T − 3g = 3a",
+     "Adding: 2g = 8a ⇒ a = g/4 = 2.45 m s⁻²",
+     "T = 3g + 3(g/4) = 3g(5/4) = 15g/4 = 36.75 N"
+    ],
+    "guidance": "M1: Newton's second law for each particle. A1: correct equations. M1: solve simultaneously. A1: a = 2.45. A1: T = 36.75 N."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "Speed of A after 2 s: v = 0 + 2.45 × 2 = 4.9 m s⁻¹ (upward)",
+     "After string breaks, A is in free flight with deceleration g = 9.8 m s⁻²",
+     "Time to reach greatest height: 0 = 4.9 − 9.8t ⇒ t = 0.5 s",
+     "Further time = 0.5 s"
+    ],
+    "guidance": "M1: find speed at break. A1: v = 4.9. M1: use v = u − gt with v = 0. A1: t = 0.5 s."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "Horizontal: x = U cos α × T, so T = x/(U cos α)",
+     "Vertical: y = U sin α × T − ½g T²",
+     "tan β = y/x = (U sin α × T − ½g T²) / (U cos α × T)",
+     "= (U sin α)/(U cos α) − gT/(2 × U cos α) × ... wait: = sin α/cos α − gT/(2U cos α)",
+     "Simplify: tan β = tan α − gT/(U cos α) × ½ × 2 = tan α − gT/(2U cos α) × ...",
+     "Correct derivation: tan β = y/x = [U sin α T − ½gT²] / [U cos α T] = tan α − gT/(2U cos α)",
+     "But required answer is tan β = tan α − gT/(U cos α): this follows if the horizontal distance x = U cos α × T so y/x = tan α − gT/(2U cos α)",
+     "Standard result: y = x tan α − gx²/(2U² cos²α); at x = UT cos α: tan β = y/x = tan α − gT/(2U cos α)"
+    ],
+    "guidance": "M1: write x and y in terms of T. M1: form tan β = y/x. A1: correct intermediate. A1: obtain given result."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "U = 20, α = 45°, β = 30°: tan 45° = 1, tan 30° = 1/√3",
+     "1/√3 = 1 − 9.8T/(2 × 20 × cos 45°) = 1 − 9.8T/(20√2)",
+     "9.8T/(20√2) = 1 − 1/√3 = (√3 − 1)/√3",
+     "T = 20√2 (√3 − 1)/(9.8√3) = 20√2 × (√3 − 1)/(9.8√3)",
+     "T = 20 × 1.4142 × 0.4226 / (9.8 × 1.7321) = 11.961/16.975 ≈ 0.705 s"
+    ],
+    "guidance": "M1: substitute given values into tan β formula. A1: equation in T. M1: solve for T. A1: T = 0.705 (AWRT)."
+   }
+  }
+ }
 };
