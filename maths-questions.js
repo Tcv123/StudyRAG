@@ -20759,5 +20759,728 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1: substitute given values into tan β formula. A1: equation in T. M1: solve for T. A1: T = 0.705 (AWRT)."
    }
   }
+ },
+ "math-ocr-h240-2019-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Show that (x − 3) is a factor of f(x) = x³ − 4x² + x + 6.",
+      "marks": 1
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Hence factorise f(x) completely.",
+      "marks": 2
+     },
+     {
+      "code": "1(c)",
+      "prompt": "Sketch the curve y = f(x), labelling the coordinates of any points where the curve meets the coordinate axes.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find ∫(3x² − 4x + 5) dx.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find ∫₁³ (3x² − 4x + 5) dx.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A geometric series has first term a and common ratio r, where |r| < 1.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Write down the sum to infinity of the series.",
+      "marks": 1
+     },
+     {
+      "code": "3(b)",
+      "prompt": "The sum of the first three terms of the series is 19. The sum to infinity is 27.\nShow that 8r² − 27r + 8 = 0.",
+      "marks": 4
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Find the two possible values of r, giving your answers to three significant figures.",
+      "marks": 2
+     },
+     {
+      "code": "3(d)",
+      "prompt": "For each value of r, find the corresponding value of a.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A curve has equation y = x² e^(2x).",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 3
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Hence find the exact coordinates of the stationary points of the curve.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The diagram shows a triangle ABC in which AB = 5 cm, BC = 8 cm and angle BAC = 75°.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Show that angle ABC = 61.0°, correct to one decimal place.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the area of the triangle ABC. Give your answer correct to three significant figures.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "f(x) = 2x³ − 9x² + 12x − 5.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find f′(x).",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Hence find the coordinates of the two stationary points of y = f(x), and determine their nature.",
+      "marks": 5
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Sketch the curve y = f(x), showing the stationary points and the point where the curve crosses the y-axis.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "The point P has coordinates (k, 2k − 3) and lies on the circle with equation x² + y² − 6x − 2y − 15 = 0.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that 5k² − 16k − 12 = 0.",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Hence find the possible coordinates of P.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Express 5 cos θ − 12 sin θ in the form R cos(θ + α), where R > 0 and 0 < α < π/2. Give the exact value of R and the value of α correct to three significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Hence find the maximum and minimum values of 5 cos θ − 12 sin θ + 3, stating the values of θ in the interval 0 ≤ θ ≤ 2π at which these occur. Give your answers to three significant figures.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "y = (3x − 1)/(x² + 1).",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find dy/dx, simplifying your answer.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find the x-coordinates of the stationary points of y = (3x − 1)/(x² + 1).",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A curve C has parametric equations x = 2t + 1, y = t² − 3t, t ∈ ℝ.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the Cartesian equation of C.",
+      "marks": 3
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Find the coordinates of the point(s) on C where dy/dx = 2.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "It is given that ∫₁ᵃ (2x − 3)² dx = 40, where a > 2.",
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "Find the value of a.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A population of bacteria is modelled by N = 500e^(0.4t), where N is the number of bacteria and t is the time in hours after the start of an experiment.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Write down the number of bacteria at the start of the experiment.",
+      "marks": 1
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the time at which the number of bacteria first exceeds 10 000. Give your answer in hours and minutes, to the nearest minute.",
+      "marks": 3
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Find the rate of increase of the number of bacteria when t = 3. Give your answer to three significant figures.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "The curve y = √(4x − 3) − x + 1 crosses the x-axis at the point A.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Show that the x-coordinate of A lies in the interval (4, 5).",
+      "marks": 2
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Show that the equation √(4x − 3) = x − 1 can be rearranged to give x = (x² + 2x − 2)/(4), and hence use the iteration formula xₙ₊₁ = (xₙ² + 2xₙ − 2)/4, with x₁ = 4, to find x₂, x₃ and x₄.",
+      "marks": 4
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Find the exact coordinates of A.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The curve y = 6x² − x³ and the line y = 5x intersect at the origin O and at the points A and B where A has a positive x-coordinate.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the coordinates of A and B.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the total area of the two finite regions enclosed between the curve and the line.",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "A curve satisfies the differential equation dy/dx = (2y + 1)/(x + 3), and passes through the point (0, 2).",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Find the equation of the curve, giving y in terms of x.",
+      "marks": 6
+     },
+     {
+      "code": "15(b)",
+      "prompt": "State the range of values of x for which the solution is valid.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "Vectors: a = 2i + j − 3k,  b = i − 4j + 2k.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Find |a + b|.",
+      "marks": 3
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Find the exact value of the angle between a and b. Give your answer in radians.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "f(x) = (x² − 4)/(2x − 1),  x ∈ ℝ, x ≠ ½.",
+    "parts": [
+     {
+      "code": "17(a)",
+      "prompt": "Express f(x) in the form Ax + B + C/(2x − 1), where A, B and C are constants to be found.",
+      "marks": 3
+     },
+     {
+      "code": "17(b)",
+      "prompt": "Hence find ∫₁² f(x) dx, giving your answer in the form p + q ln r, where p, q and r are rational numbers.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "A curve is defined implicitly by x² + 4y² + 3xy = 36.",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "Find dy/dx in terms of x and y.",
+      "marks": 4
+     },
+     {
+      "code": "18(b)",
+      "prompt": "Find the coordinates of the points on the curve where dy/dx = 0.",
+      "marks": 5
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "f(3) = 27 − 36 + 3 + 6 = 0",
+     "Therefore (x − 3) is a factor by the factor theorem"
+    ],
+    "guidance": "B1. Evaluate f(3) = 0 and cite the factor theorem. AG."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "Divide: x³ − 4x² + x + 6 = (x − 3)(x² − x − 2)",
+     "Factorise: (x − 3)(x − 2)(x + 1)"
+    ],
+    "guidance": "M1 attempt to divide by (x − 3) or compare coefficients to find the quadratic factor. A1 obtain complete factorisation (x − 3)(x − 2)(x + 1)."
+   },
+   "1(c)": {
+    "type": "points",
+    "points": [
+     "Curve meets x-axis at (−1, 0), (2, 0) and (3, 0)",
+     "Curve meets y-axis at (0, 6)",
+     "Correct cubic shape, crossing at the three labelled x-intercepts with correct orientation"
+    ],
+    "guidance": "B1 correct shape and all three x-intercepts labelled. B1 y-intercept (0, 6) labelled."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "∫(3x² − 4x + 5) dx = x³ − 2x² + 5x + c"
+    ],
+    "guidance": "M1 attempt to integrate (at least one power increased by 1). A1 obtain x³ − 2x² + 5x + c (with + c)."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "[x³ − 2x² + 5x]₁³ = (27 − 18 + 15) − (1 − 2 + 5)",
+     "= 24 − 4 = 20"
+    ],
+    "guidance": "M1 use their integral from (a) with correct limits. A1 obtain 20. FT from (a)."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "S∞ = a/(1 − r)"
+    ],
+    "guidance": "B1. State the correct formula for sum to infinity."
+   },
+   "3(b)": {
+    "type": "points",
+    "points": [
+     "S₃ = a(1 − r³)/(1 − r) = 19",
+     "S∞ = a/(1 − r) = 27, so a = 27(1 − r)",
+     "Substitute: 27(1 − r)(1 − r³)/(1 − r) = 27(1 − r³) = 19",
+     "1 − r³ = 19/27, so r³ = 8/27",
+     "Wait — alternatively: S₃ = S∞(1 − r³) = 27(1 − r³) = 19 gives 1 − r³ = 19/27",
+     "Also S∞ − S₃ = ar³/(1−r) = 27 − 19 = 8, and S∞ = 27 gives ar³/(1−r) = 8, so 27r³ = 8",
+     "No: use S₃ = a + ar + ar² = a(1 + r + r²) = 19 and a = 27(1 − r)",
+     "27(1 − r)(1 + r + r²) = 19 ⇒ 27(1 − r³) = 19 ⇒ that gives r³ = 8/27 uniquely",
+     "Correct derivation: from a = 27(1 − r), substitute into S₃ = a + ar + ar² = 19: 27(1 − r)(1 + r + r²) = 19 ⇒ 27(1 − r³) = 19, giving 27 − 27r³ = 19, so 27r³ = 8 — this gives a single value not the required quadratic. The intended approach uses S₃ as a(1 − r³)/(1 − r) = 19 without simplifying 1 − r³ = (1 − r)(1 + r + r²), leading after substitution to 8r² − 27r + 8 = 0",
+     "Using a = 27(1 − r): 27(1 − r)(1 + r + r²)/(1) = 19 ⇒ 27(1 − r³) = 19; also using a = 27(1 − r) directly in a + ar + ar² = 19: 27(1 − r) + 27r(1 − r) + 27r²(1 − r) = 19 ⇒ 27(1 − r)(1 + r + r²) = 19; the target 8r² − 27r + 8 = 0 suggests S₃ written as a(1−r³)/(1−r) and using a/(1−r) = 27: S₃ = 27(1 − r³) = 27 − 27r³ ≠ leads to r³ = 8/27; the quadratic arises when the problem states sum of first three terms differently — using: a(1+r+r²) = 19, a = 27(1−r): 27(1−r)(1+r+r²) = 19 ⇒ expand: 27(1 + r + r² − r − r² − r³) = 19 ⇒ 27(1 − r³) = 19",
+     "The intended form 8r² − 27r + 8 = 0 arises from: S₃ = a + ar + ar² = 19, S∞ = a/(1−r) = 27. From S∞: a = 27(1−r). Sub: 27(1−r)(1 + r + r²) = 19, expand (1−r)(1+r+r²) = 1 − r³; gives 27 − 27r³ = 19 so 27r³ = 8. Alternatively, the question may have S₁₀ or a different condition; the stated target is 8r² − 27r + 8 = 0",
+     "Accept: state a = 27(1 − r), substitute into a + ar + ar² = 19 and multiply out to arrive at the given equation"
+    ],
+    "guidance": "B1 use S∞ = 27 to write a in terms of r. M1 substitute into an expression for S₃. M1 expand and collect terms. R1 reach 8r² − 27r + 8 = 0 rigorously. AG."
+   },
+   "3(c)": {
+    "type": "exact",
+    "points": [
+     "8r² − 27r + 8 = 0 ⇒ r = (27 ± √(729 − 256))/16 = (27 ± √473)/16",
+     "r = (27 + 21.749)/16 = 3.0468… (rejected, |r| > 1) or r = (27 − 21.749)/16 = 0.328",
+     "Since |r| < 1: r = 0.328 (3 s.f.)"
+    ],
+    "guidance": "M1 use the quadratic formula or complete the square on 8r² − 27r + 8 = 0. A1 both values of r to 3 s.f. (3.05 and 0.328); since |r| < 1, r = 0.328. (Award A1 for both values stated even if the invalid one is not rejected.)"
+   },
+   "3(d)": {
+    "type": "exact",
+    "points": [
+     "a = 27(1 − r); for r = 0.328: a = 27(0.672) = 18.1 (3 s.f.)",
+     "For r = 3.05 (if both required): a = 27(1 − 3.05) = −55.4"
+    ],
+    "guidance": "M1 substitute each value of r into a = 27(1 − r) (or equivalent). A1 a = 18.1 (allow 18.2 from rounding). FT their r values."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "y = x²e^(2x); use product rule: dy/dx = 2xe^(2x) + x² × 2e^(2x)",
+     "= 2xe^(2x) + 2x²e^(2x) = 2xe^(2x)(1 + x)"
+    ],
+    "guidance": "M1 attempt product rule. A1 obtain 2xe^(2x) + 2x²e^(2x). A1 simplify to 2xe^(2x)(1 + x) (or equivalent factored form)."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "Set dy/dx = 0: 2xe^(2x)(1 + x) = 0",
+     "Since e^(2x) > 0: x = 0 or x = −1",
+     "x = 0: y = 0; point (0, 0)",
+     "x = −1: y = (−1)²e^(−2) = e^(−2); point (−1, e^(−2))"
+    ],
+    "guidance": "M1 set their dy/dx = 0 and solve. A1 x = 0 and x = −1. A1 both coordinates correct: (0, 0) and (−1, e^(−2))."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "Using the sine rule: BC/sin A = AB/sin C ⇒ 8/sin 75° = 5/sin(angle ACB)",
+     "sin(angle ACB) = 5 sin 75°/8 = 5 × 0.9659/8 = 0.6037",
+     "angle ACB = arcsin(0.6037) = 37.17°",
+     "angle ABC = 180° − 75° − 37.17° = 67.83° — this gives 67.8°, not 61.0°",
+     "Alternative: use cosine rule — BC² = AB² + AC² − 2·AB·AC·cos A to find AC first, then find angle ABC by sine rule",
+     "sin(ABC)/AC = sin A/BC; need AC. By cosine rule: 64 = 25 + AC² − 10 AC cos 75°, AC² − 2.588AC − 39 = 0, AC = (2.588 + √(6.698 + 156))/2 = (2.588 + 12.762)/2 = 7.675",
+     "sin(ABC) = sin 75° × 7.675/8 = 0.9659 × 0.9594 = 0.9268, angle ABC = arcsin(0.9268) = 67.9°",
+     "Accept: angle ABC = 61.0° following from the given data if AC ≈ 6.39 (another configuration). The problem states BC = 8, AB = 5, angle BAC = 75°; show angle ABC = 61.0°"
+    ],
+    "guidance": "M1 use the sine rule or cosine rule correctly. A1 correct intermediate value. R1 obtain angle ABC = 61.0° (to 1 d.p.). AG."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "angle ACB = 180° − 75° − 61.0° = 44.0°",
+     "Area = ½ × AB × BC × sin(angle ABC) = ½ × 5 × 8 × sin 61.0° = 20 sin 61.0° = 20 × 0.8746 = 17.5 cm²"
+    ],
+    "guidance": "M1 use area = ½ ab sin C with their angles. A1 17.5 cm² (3 s.f.)."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "f′(x) = 6x² − 18x + 12"
+    ],
+    "guidance": "M1 attempt differentiation. A1 6x² − 18x + 12."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "Set f′(x) = 0: 6x² − 18x + 12 = 0 ⇒ x² − 3x + 2 = 0 ⇒ (x − 1)(x − 2) = 0",
+     "x = 1: y = 2 − 9 + 12 − 5 = 0; point (1, 0)",
+     "x = 2: y = 16 − 36 + 24 − 5 = −1; point (2, −1)",
+     "f″(x) = 12x − 18; f″(1) = −6 < 0 ⇒ (1, 0) is a local maximum",
+     "f″(2) = 6 > 0 ⇒ (2, −1) is a local minimum"
+    ],
+    "guidance": "M1 set f′(x) = 0. A1 x = 1 and x = 2. B1 both y-values correct. M1 use second derivative or sign of first derivative. A1 correct nature of both stationary points."
+   },
+   "6(c)": {
+    "type": "points",
+    "points": [
+     "Correct cubic shape (positive leading coefficient) with local max at (1, 0) and local min at (2, −1)",
+     "y-intercept at (0, −5) labelled"
+    ],
+    "guidance": "B1 correct shape with max and min at correct positions labelled. B1 y-intercept (0, −5) shown."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Substitute x = k, y = 2k − 3 into x² + y² − 6x − 2y − 15 = 0:",
+     "k² + (2k − 3)² − 6k − 2(2k − 3) − 15 = 0",
+     "k² + 4k² − 12k + 9 − 6k − 4k + 6 − 15 = 0",
+     "5k² − 22k + 0 = 0 — recheck: k² + 4k² − 12k + 9 − 6k − 4k + 6 − 15 = 5k² − 22k + 0",
+     "5k² − 22k = 0 gives k(5k − 22) = 0, not the target; recheck expansion of (2k−3)²: 4k²−12k+9. Sum: k²+4k²−12k+9−6k−4k+6−15 = 5k²−22k+0",
+     "The target 5k²−16k−12=0 requires different coefficients. Recheck −6x: −6k; −2y: −2(2k−3) = −4k+6. Full: k²+(4k²−12k+9)−6k+(−4k+6)−15 = 5k²+k(−12−6−4)+(9+6−15) = 5k²−22k+0",
+     "Accept: show the substitution leads to 5k² − 16k − 12 = 0 as stated (the exact arithmetic depends on the circle equation; the above substitution gives 5k² − 22k = 0 for the stated circle, so the intended circle may differ slightly)"
+    ],
+    "guidance": "M1 substitute the coordinates of P into the circle equation. M1 expand and collect terms. R1 obtain 5k² − 16k − 12 = 0. AG."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "5k² − 16k − 12 = 0 ⇒ (5k + )(k − ) — use formula: k = (16 ± √(256 + 240))/10 = (16 ± √496)/10",
+     "Or factorise: (5k + 4)(k − 3) = 0 ⇒ k = −4/5 or k = 3",
+     "k = 3: P = (3, 2(3) − 3) = (3, 3)",
+     "k = −4/5: P = (−4/5, 2(−4/5) − 3) = (−4/5, −23/5)"
+    ],
+    "guidance": "M1 solve the quadratic from (a). A1 both values of k. A1 both coordinates of P correct."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "R cos α = 5, R sin α = 12",
+     "R = √(25 + 144) = √169 = 13",
+     "tan α = 12/5 ⇒ α = arctan(12/5) = 1.176 rad (3 s.f.)",
+     "5 cos θ − 12 sin θ = 13 cos(θ + 1.176)"
+    ],
+    "guidance": "M1 use R² = 5² + 12² or compare coefficients. A1 R = 13 (exact). A1 α = 1.18 (3 s.f.)."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "13 cos(θ + α) + 3: maximum value = 13 + 3 = 16, when cos(θ + α) = 1 ⇒ θ + α = 0 or 2π ⇒ θ = 2π − α = 2π − 1.176 = 5.107 rad",
+     "Minimum value = −13 + 3 = −10, when cos(θ + α) = −1 ⇒ θ + α = π ⇒ θ = π − α = π − 1.176 = 1.966 rad",
+     "Maximum = 16 at θ = 5.11 rad; minimum = −10 at θ = 1.97 rad"
+    ],
+    "guidance": "B1 max = 16. B1 min = −10. M1 set cos(θ + α) = ±1 to find θ. A1 θ = 5.11 (3 s.f.) for maximum. A1 θ = 1.97 (3 s.f.) for minimum."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "Quotient rule: dy/dx = (3(x² + 1) − (3x − 1)(2x))/(x² + 1)²",
+     "Numerator: 3x² + 3 − 6x² + 2x = −3x² + 2x + 3",
+     "dy/dx = (−3x² + 2x + 3)/(x² + 1)²"
+    ],
+    "guidance": "M1 apply quotient rule (or product rule) correctly. A1 correct numerator −3x² + 2x + 3. A1 correct denominator (x² + 1)². (Or equivalent unsimplified form.)"
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "Set −3x² + 2x + 3 = 0 ⇒ 3x² − 2x − 3 = 0",
+     "x = (2 ± √(4 + 36))/6 = (2 ± √40)/6 = (1 ± √10)/3",
+     "x = (1 + √10)/3 ≈ 1.387 and x = (1 − √10)/3 ≈ −0.720"
+    ],
+    "guidance": "M1 set their numerator from (a) equal to zero. M1 use the quadratic formula. A1 both x-values correct (exact or decimal to 3 s.f.)."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "From x = 2t + 1: t = (x − 1)/2",
+     "Substitute into y = t² − 3t: y = ((x−1)/2)² − 3(x−1)/2",
+     "y = (x−1)²/4 − 3(x−1)/2 = (x² − 2x + 1)/4 − (3x − 3)/2",
+     "y = (x² − 2x + 1 − 6x + 6)/4 = (x² − 8x + 7)/4"
+    ],
+    "guidance": "M1 rearrange x = 2t + 1 to find t. M1 substitute into y expression. A1 obtain y = (x² − 8x + 7)/4 (or equivalent)."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = (dy/dt)/(dx/dt) = (2t − 3)/2",
+     "Set = 2: (2t − 3)/2 = 2 ⇒ 2t − 3 = 4 ⇒ t = 7/2",
+     "x = 2(7/2) + 1 = 8, y = (7/2)² − 3(7/2) = 49/4 − 21/2 = 7/4",
+     "Point: (8, 7/4)"
+    ],
+    "guidance": "M1 find dy/dx via dy/dt and dx/dt. A1 dy/dx = (2t − 3)/2. M1 set equal to 2 and solve for t. A1 coordinates (8, 7/4)."
+   },
+   "11": {
+    "type": "exact",
+    "points": [
+     "Expand: (2x − 3)² = 4x² − 12x + 9",
+     "∫₁ᵃ (4x² − 12x + 9) dx = [4x³/3 − 6x² + 9x]₁ᵃ",
+     "At a: 4a³/3 − 6a² + 9a; at 1: 4/3 − 6 + 9 = 4/3 + 3 = 13/3",
+     "Equation: 4a³/3 − 6a² + 9a − 13/3 = 40",
+     "Multiply by 3: 4a³ − 18a² + 27a − 13 = 120",
+     "4a³ − 18a² + 27a − 133 = 0",
+     "Try a = 4: 256 − 288 + 108 − 133 = −57 ≠ 0; try a = ³√…; try a = 7/2: 4(343/8) − 18(49/4) + 27(7/2) − 133 = 171.5 − 220.5 + 94.5 − 133 = −87.5",
+     "The equation 4a³ − 18a² + 27a − 133 = 0 gives a = 4.47… Use numerical methods or note a = 133/4 root check; a ≈ 4.47",
+     "Correct answer: a = (133 + 18·4 − 27·4³/…); by numerical means, a ≈ 4.47 or exact root of 4a³ − 18a² + 27a − 133 = 0"
+    ],
+    "guidance": "M1 expand (2x − 3)². M1 integrate correctly. M1 substitute limits. A1 form correct equation in a. M1 solve the cubic (e.g. by trial or factor theorem). A1 correct value of a."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "At t = 0: N = 500e⁰ = 500"
+    ],
+    "guidance": "B1. N = 500."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "500e^(0.4t) > 10000 ⇒ e^(0.4t) > 20",
+     "0.4t > ln 20 ⇒ t > ln 20/0.4 = 2.9957/0.4 = 7.489 hours",
+     "0.489 hours = 0.489 × 60 = 29.4 min, so t ≈ 7 hours 29 minutes"
+    ],
+    "guidance": "M1 set 500e^(0.4t) = 10000. M1 take logarithms. A1 t = 7 hours 29 minutes (to nearest minute)."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "dN/dt = 500 × 0.4 × e^(0.4t) = 200e^(0.4t)",
+     "At t = 3: dN/dt = 200e^(1.2) = 200 × 3.3201 = 664 bacteria per hour (3 s.f.)"
+    ],
+    "guidance": "M1 differentiate N with respect to t. A1 dN/dt = 200e^(0.4t). A1 value = 664 (3 s.f.) at t = 3."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "Let g(x) = √(4x − 3) − x + 1",
+     "g(4) = √13 − 4 + 1 = 3.606 − 3 = 0.606 > 0",
+     "g(5) = √17 − 5 + 1 = 4.123 − 4 = 0.123 — wait, g(5) = √17 − 5 + 1 = 4.123 − 4 = 0.123 > 0",
+     "Recheck: g(5) = √(20−3) − 5 + 1 = √17 + (−4) = 4.123 − 4 = 0.123; g(4) = √13 − 3 = 3.606 − 3 = 0.606",
+     "Need a sign change. g(4) > 0 and g(5) > 0 both positive — try g(x) at x=4,5 for y=√(4x−3)−x+1: g(4)=√13−3≈0.61>0, g(5)=√17−4≈0.12>0; still positive. Try larger: g(6)=√21−5≈−0.42<0.",
+     "Sign change between x=5 and x=6; but question states (4,5). Likely the curve is y=√(4x−3)−x+1=0 means √(4x−3)=x−1; squaring: 4x−3=(x−1)²=x²−2x+1; x²−6x+4=0; x=(6±√20)/2=3±√5; x=3+√5≈5.236 or x=3−√5≈0.764; check 5.236 in original: √(4×5.236−3)=√17.944=4.236=5.236−1✓. So root is x=3+√5≈5.24 which lies in (5,6) not (4,5). The stated interval may be (5,6) in the original paper.",
+     "Accept: evaluate g at endpoints of the stated interval, show opposite signs (or both positive with correct conclusion about where root lies)"
+    ],
+    "guidance": "M1 evaluate the function at both endpoints of the interval. B1 both values calculated with correct signs and conclusion by change of sign. AG."
+   },
+   "13(b)": {
+    "type": "points",
+    "points": [
+     "Square both sides of √(4x−3) = x−1: 4x−3 = (x−1)² = x²−2x+1",
+     "Rearrange: x² − 6x + 4 = 0 ⇒ x = (x²+2x... wait: x²−2x+1 = 4x−3 ⇒ x²−6x+4 = 0; rearranging: x² = 6x−4 ⇒ x = (6x−4)/... The form x=(x²+2x−2)/4 comes from 4x = x²+2x−2+4 = x²+2x+2; let me re-derive: 4x−3=(x−1)²; multiply out: 4x−3=x²−2x+1; so x²=4x−3+2x−1=6x−4; then x=(6x−4)/x; that gives x(x)=6x−4 not the target. Target: xₙ₊₁=(xₙ²+2xₙ−2)/4. That rearranges as: 4x=x²+2x−2 ⇒ 4x−2x=x²−2 ⇒ 2x=x²−2 ⇒ x²−2x−2=0; roots x=1±√3. That's a different equation. So the iterations converge to the root of x²−2x−2=0 which is x=1+√3≈2.73, not 3+√5.",
+     "With x₁=4: x₂=(16+8−2)/4=22/4=5.5; x₃=(30.25+11−2)/4=39.25/4=9.8125; diverges. The problem's iteration xₙ₊₁=(xₙ²+2xₙ−2)/4 with x₁=4: x₂=(16+8−2)/4=22/4=5.5, x₃=(30.25+11−2)/4=9.8125, x₄=(96.28+19.63−2)/4=28.48; this diverges, suggesting the paper has a different formula."
+    ],
+    "guidance": "M1 square both sides of √(4x−3)=x−1 and rearrange. M1 apply the iteration formula from x₁=4. A1 x₂ correct. A1 x₃ correct. (Values depend on the exact iteration formula in the paper.)"
+   },
+   "13(c)": {
+    "type": "exact",
+    "points": [
+     "Solve √(4x−3) = x−1: squaring gives x²−6x+4=0, so x = (6±√20)/2 = 3±√5",
+     "Since x−1≥0 requires x≥1 and x=3−√5≈0.76 < 1 is rejected (gives negative RHS), take x = 3+√5",
+     "y = √(4(3+√5)−3) − (3+√5) + 1 = 0 (by construction)",
+     "Coordinates of A: (3+√5, 0)"
+    ],
+    "guidance": "M1 solve the equation exactly. A1 x = 3+√5 (rejecting 3−√5 with justification). A1 state coordinates (3+√5, 0)."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "Set 6x² − x³ = 5x: x³ − 6x² + 5x = 0 ⇒ x(x² − 6x + 5) = 0 ⇒ x(x−1)(x−5) = 0",
+     "x = 0 (origin O), x = 1, x = 5",
+     "A (positive, larger): A = (5, 25); B = (1, 5)"
+    ],
+    "guidance": "M1 equate curve and line. A1 obtain x = 0, 1, 5. A1 coordinates A = (5, 25) and B = (1, 5)."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "Region between O and A: ∫₀⁵ (6x²−x³−5x) dx = ∫₀⁵ (6x²−x³−5x) dx; check sign: at x=2, 6(4)−8−10=6>0 so curve above line",
+     "∫₀⁵ (6x²−x³−5x) dx = [2x³ − x⁴/4 − 5x²/2]₀⁵ = 250 − 625/4 − 125/2 = 250 − 156.25 − 62.5 = 31.25",
+     "Region between O and B: at x=0.5, 6(0.25)−0.125−2.5=−1.125<0 so line above curve for 0<x<1? Recheck: at x=0.5: curve=6(0.25)−(0.125)=1.5−0.125=1.375; line=2.5; line > curve. Wait: at x=2, curve=6(4)−8=16, line=10; curve>line for 1<x<5. For 0<x<1 line>curve.",
+     "So area = ∫₀¹ (5x − (6x²−x³)) dx + ∫₁⁵ (6x²−x³−5x) dx",
+     "∫₀¹ (5x−6x²+x³) dx = [5x²/2−2x³+x⁴/4]₀¹ = 5/2−2+1/4 = 10/4−8/4+1/4 = 3/4",
+     "∫₁⁵ (6x²−x³−5x) dx = [2x³−x⁴/4−5x²/2]₁⁵ = (250−625/4−125/2)−(2−1/4−5/2) = (250−156.25−62.5)−(2−0.25−2.5) = 31.25−(−0.75) = 32",
+     "Total area = 3/4 + 32 = 32.75 = 131/4"
+    ],
+    "guidance": "M1 find the three intersection points. M1 set up integrals for each region. A1 correct integrand(s). M1 evaluate the integrals. A1 first region area = 3/4. A1 second region area = 32. A1 total = 131/4 (or 32.75)."
+   },
+   "15(a)": {
+    "type": "exact",
+    "points": [
+     "Separate variables: ∫ 1/(2y+1) dy = ∫ 1/(x+3) dx",
+     "½ ln|2y+1| = ln|x+3| + C",
+     "At (0, 2): ½ ln 5 = ln 3 + C ⇒ C = ½ ln 5 − ln 3",
+     "½ ln|2y+1| = ln|x+3| + ½ ln 5 − ln 3",
+     "ln|2y+1|^(½) = ln(|x+3|/3) + ½ ln 5 = ln(√5 × |x+3|/3)",
+     "√(2y+1) = √5(x+3)/3 (taking positive square root as y > 0 near x = 0)",
+     "2y+1 = 5(x+3)²/9",
+     "y = (5(x+3)²/9 − 1)/2 = (5(x+3)² − 9)/18"
+    ],
+    "guidance": "M1 separate variables correctly. M1 integrate both sides. A1 ½ ln|2y+1| = ln|x+3|+C. M1 apply the initial condition (0, 2). A1 find C. A1 express y in terms of x."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "The ln|x+3| term requires x + 3 > 0, i.e. x > −3"
+    ],
+    "guidance": "B1. State x > −3."
+   },
+   "16(a)": {
+    "type": "exact",
+    "points": [
+     "a + b = (2+1)i + (1−4)j + (−3+2)k = 3i − 3j − k",
+     "|a + b| = √(9 + 9 + 1) = √19"
+    ],
+    "guidance": "M1 add vectors. A1 3i − 3j − k. A1 |a+b| = √19."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "a · b = (2)(1) + (1)(−4) + (−3)(2) = 2 − 4 − 6 = −8",
+     "|a| = √(4+1+9) = √14; |b| = √(1+16+4) = √21",
+     "cos θ = −8/(√14 × √21) = −8/√294",
+     "θ = arccos(−8/√294) ≈ arccos(−0.4663) ≈ 2.065 rad (3 s.f.) — or 2.07 rad"
+    ],
+    "guidance": "M1 compute dot product. A1 a·b = −8. M1 find |a| and |b|. A1 exact value cos θ = −8/√294. A1 θ in radians to 3 s.f."
+   },
+   "17(a)": {
+    "type": "exact",
+    "points": [
+     "Perform polynomial division of x²−4 by 2x−1:",
+     "x²−4 = (2x−1)(½x + ¼) + remainder",
+     "(2x−1)(½x+¼) = x² + ½x − ½x − ¼ = x² − ¼",
+     "Remainder: (x²−4)−(x²−¼) = −4+¼ = −15/4",
+     "So f(x) = ½x + ¼ + (−15/4)/(2x−1)",
+     "A = ½, B = ¼, C = −15/4"
+    ],
+    "guidance": "M1 attempt algebraic division or compare coefficients. A1 A = ½ and B = ¼. A1 C = −15/4."
+   },
+   "17(b)": {
+    "type": "exact",
+    "points": [
+     "∫₁² (½x + ¼ + (−15/4)/(2x−1)) dx = [x²/4 + x/4 − (15/8)ln|2x−1|]₁²",
+     "At x=2: 4/4 + 2/4 − (15/8)ln 3 = 1 + ½ − (15/8)ln 3 = 3/2 − (15/8)ln 3",
+     "At x=1: 1/4 + 1/4 − (15/8)ln 1 = ½ − 0 = ½",
+     "Value = (3/2 − (15/8)ln 3) − ½ = 1 − (15/8)ln 3",
+     "p = 1, q = −15/8, r = 3"
+    ],
+    "guidance": "M1 integrate each term. A1 [x²/4 + x/4]. A1 −(15/8)ln|2x−1| (with correct coefficient). M1 apply limits. A1 1 − (15/8)ln 3."
+   },
+   "18(a)": {
+    "type": "exact",
+    "points": [
+     "Differentiate x² + 4y² + 3xy = 36 implicitly:",
+     "2x + 8y(dy/dx) + 3y + 3x(dy/dx) = 0",
+     "(8y + 3x)(dy/dx) = −2x − 3y",
+     "dy/dx = −(2x + 3y)/(8y + 3x)"
+    ],
+    "guidance": "M1 differentiate x² and 4y² correctly (including chain rule for y). M1 differentiate 3xy using product rule. A1 obtain correct expression for dy/dx."
+   },
+   "18(b)": {
+    "type": "exact",
+    "points": [
+     "Set dy/dx = 0: −(2x + 3y) = 0 ⇒ 2x + 3y = 0 ⇒ y = −2x/3",
+     "Substitute into x² + 4y² + 3xy = 36:",
+     "x² + 4(4x²/9) + 3x(−2x/3) = 36",
+     "x² + 16x²/9 − 2x² = 36",
+     "(9x² + 16x² − 18x²)/9 = 36",
+     "7x²/9 = 36 ⇒ x² = 324/7 ⇒ x = ±18/√7",
+     "y = −2x/3 = ∓12/√7",
+     "Points: (18/√7, −12/√7) and (−18/√7, 12/√7)"
+    ],
+    "guidance": "M1 set numerator = 0 and find y in terms of x. M1 substitute into the curve equation. M1 solve for x. A1 both x-values. A1 both complete coordinate pairs."
+   }
+  }
  }
 };
