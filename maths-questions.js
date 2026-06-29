@@ -8754,6 +8754,563 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-aqa-7357-2024-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Use proof by contradiction to show that √3 is irrational.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "The vectors a and b are defined as a = 2i − j + 3k and b = i + 4j − 2k.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find a · b.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Find |a × b|, the magnitude of the cross product of a and b.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A curve C is defined by y = x³ e^(−2x) for x ≥ 0.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 3
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the x-coordinates of the stationary points of C.",
+      "marks": 3
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Determine the nature of each stationary point.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Use implicit differentiation to find dy/dx for the curve x² + 3xy + y² = 11.",
+      "marks": 4
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find the equation of the tangent to the curve at the point (1, 2).",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "Use the substitution x = 3 sin θ to find the exact value of\n\n∫₀^(3/2) √(9 − x²) dx",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Express f(x) = (5x + 1)/((2x − 1)(x + 2)) in partial fractions.",
+      "marks": 4
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Hence find ∫ (5x + 1)/((2x − 1)(x + 2)) dx.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "The differential equation dy/dx = 2y(1 − y) is used to model a population, where y is the proportion of the population that is infected, 0 < y < 1.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Using partial fractions, show that\n\n∫ 1/(y(1 − y)) dy = ln|y/(1 − y)| + c",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Given that y = 0.1 when x = 0, solve the differential equation, expressing y in terms of x.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Show that the equation x³ + 4x − 6 = 0 has a root between x = 1 and x = 2.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Use Newton-Raphson with x₀ = 1.2 to find a better approximation to this root, giving your answer to 3 decimal places.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A particle of mass 3 kg is on a rough inclined plane at angle 30° to the horizontal. The coefficient of friction between the particle and the plane is μ. The particle is on the point of sliding down the plane.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Draw a force diagram showing all the forces acting on the particle.",
+      "marks": 1
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Show that μ = 1/√3.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A ball is projected from ground level with speed 20 m s⁻¹ at an angle of 40° above the horizontal. Take g = 9.8 m s⁻².",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the maximum height reached by the ball.",
+      "marks": 3
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Find the horizontal range of the ball.",
+      "marks": 4
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Find the speed of the ball 2 seconds after projection.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A particle moves in a straight line. At time t seconds, the velocity of the particle is v m s⁻¹, where\n\nv = 3t² − 12t + 9.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the acceleration of the particle when t = 3.",
+      "marks": 2
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Find the times when the particle is at rest.",
+      "marks": 3
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Find the total distance travelled by the particle in the first 3 seconds.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "Two particles A and B are connected by a light inextensible string passing over a smooth fixed pulley. A has mass 5 kg and B has mass 3 kg. The particles are released from rest.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Find the acceleration of the system.",
+      "marks": 4
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the tension in the string.",
+      "marks": 2
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Find the force exerted on the pulley.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A uniform rod AB of mass 4 kg and length 2 m rests horizontally on two supports. One support is at end A and the other is 0.5 m from end B.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find the reactions at each support.",
+      "marks": 5
+     },
+     {
+      "code": "13(b)",
+      "prompt": "A particle of mass m kg is placed at B. Given that the rod is about to tilt about the support 0.5 m from B, find the value of m.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "Particle P has position vector r = (t² − 2)i + (3t − t³)j at time t seconds, where distances are in metres.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the velocity of P when t = 1.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the value of t for which the particle is moving parallel to the vector i.",
+      "marks": 3
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the acceleration of P when t = 2.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "points",
+    "points": [
+     "Assume √3 is rational, so √3 = p/q where p, q are integers with no common factors (in lowest terms).",
+     "Then 3 = p²/q², so p² = 3q².",
+     "Hence p² is divisible by 3, so p is divisible by 3. Write p = 3k.",
+     "Then 9k² = 3q², so q² = 3k², meaning q is also divisible by 3.",
+     "This contradicts p and q having no common factors. Hence √3 is irrational. ∎"
+    ],
+    "guidance": "M1 for assuming rational form p/q in lowest terms. M1 for p² = 3q² and deducing 3|p. M1 for writing p = 3k and deducing 3|q. R1 for identifying contradiction."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "a · b = (2)(1) + (−1)(4) + (3)(−2) = 2 − 4 − 6 = −8"
+    ],
+    "answer": "−8",
+    "guidance": "M1 for correct dot product formula. A1 for −8."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "a × b = |i  j  k; 2 −1 3; 1 4 −2|",
+     "= i((−1)(−2) − (3)(4)) − j((2)(−2) − (3)(1)) + k((2)(4) − (−1)(1))",
+     "= i(2 − 12) − j(−4 − 3) + k(8 + 1)",
+     "= −10i + 7j + 9k",
+     "|a × b| = √(100 + 49 + 81) = √230"
+    ],
+    "answer": "√230",
+    "guidance": "M1 for setting up determinant. A1 for each component (i, j, k). M1 for magnitude calculation. A1 for √230."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "Use product rule: u = x³, v = e^(−2x), so u′ = 3x², v′ = −2e^(−2x).",
+     "dy/dx = 3x² e^(−2x) + x³(−2e^(−2x)) = e^(−2x)(3x² − 2x³) = x²e^(−2x)(3 − 2x)"
+    ],
+    "answer": "dy/dx = x²e^(−2x)(3 − 2x)",
+    "guidance": "M1 for product rule. A1 for correct differentiation of each factor. A1 for factorised form."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 0: x²e^(−2x)(3 − 2x) = 0",
+     "Since e^(−2x) > 0 always, we need x² = 0 or 3 − 2x = 0.",
+     "x = 0 or x = 3/2"
+    ],
+    "answer": "x = 0 and x = 3/2",
+    "guidance": "M1 for setting dy/dx = 0. A1 for x = 0. A1 for x = 3/2."
+   },
+   "3(c)": {
+    "type": "points",
+    "points": [
+     "Find d²y/dx² or use sign analysis of dy/dx.",
+     "For x slightly less than 0: dy/dx = (small positive)(positive) > 0. For x slightly more than 0: dy/dx = (small positive)(positive) > 0. The sign does not change at x = 0, so x = 0 is a point of inflection.",
+     "For x < 3/2: (3 − 2x) > 0, so dy/dx > 0. For x > 3/2: (3 − 2x) < 0, so dy/dx < 0. Sign changes from + to − at x = 3/2, so x = 3/2 is a local maximum.",
+     "y(3/2) = (3/2)³ e^(−3) = (27/8)e^(−3)"
+    ],
+    "guidance": "M1 for sign-change analysis (or second derivative test). A1 for x = 0 is point of inflection with valid reason. A1 A1 for x = 3/2 is maximum with valid reason."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "Differentiate implicitly with respect to x:",
+     "2x + 3y + 3x(dy/dx) + 2y(dy/dx) = 0",
+     "dy/dx(3x + 2y) = −2x − 3y",
+     "dy/dx = −(2x + 3y)/(3x + 2y)"
+    ],
+    "answer": "dy/dx = −(2x + 3y)/(3x + 2y)",
+    "guidance": "M1 for differentiating x² and y² terms. M1 for correct product rule on 3xy. A1 for collecting dy/dx terms. A1 for correct final expression."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "At (1, 2): dy/dx = −(2 + 6)/(3 + 4) = −8/7",
+     "Tangent: y − 2 = −(8/7)(x − 1)",
+     "7y − 14 = −8x + 8",
+     "8x + 7y = 22"
+    ],
+    "answer": "8x + 7y = 22",
+    "guidance": "M1 for substituting (1, 2) into dy/dx. A1 for gradient −8/7. A1 for correct equation of tangent."
+   },
+   "5": {
+    "type": "exact",
+    "points": [
+     "x = 3 sin θ, dx = 3 cos θ dθ. √(9 − x²) = √(9 − 9sin²θ) = 3 cos θ.",
+     "Limits: x = 0 ⇒ θ = 0; x = 3/2 ⇒ sin θ = 1/2 ⇒ θ = π/6.",
+     "∫₀^(π/6) 3 cos θ · 3 cos θ dθ = 9∫₀^(π/6) cos²θ dθ",
+     "= 9∫₀^(π/6) (1 + cos 2θ)/2 dθ = (9/2)[θ + sin 2θ/2]₀^(π/6)",
+     "= (9/2)[π/6 + sin(π/3)/2] = (9/2)[π/6 + (√3/2)/2] = (9/2)[π/6 + √3/4]",
+     "= 3π/4 + 9√3/8"
+    ],
+    "answer": "3π/4 + 9√3/8",
+    "guidance": "M1 for substitution x = 3 sin θ and changing dx. M1 for correct limits. M1 for using cos²θ = (1 + cos 2θ)/2. A1 for correct integration. A1 for correct limits substitution. A1 A1 for exact answer 3π/4 + 9√3/8."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "(5x + 1)/((2x − 1)(x + 2)) ≡ A/(2x − 1) + B/(x + 2)",
+     "5x + 1 = A(x + 2) + B(2x − 1)",
+     "x = 1/2: 5/2 + 1 = A(5/2) ⇒ 7/2 = 5A/2 ⇒ A = 7/5... let x = −2: −10 + 1 = B(−5) ⇒ B = 9/5",
+     "Recheck x = 1/2: 7/2 = A(5/2) ⇒ A = 7/5.",
+     "Answer: 7/(5(2x − 1)) + 9/(5(x + 2))"
+    ],
+    "answer": "7/(5(2x − 1)) + 9/(5(x + 2))",
+    "guidance": "M1 for correct partial fraction form. M1 for substituting roots. A1 for A = 7/5. A1 for B = 9/5."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "∫ [7/(5(2x − 1)) + 9/(5(x + 2))] dx",
+     "= (7/10) ln|2x − 1| + (9/5) ln|x + 2| + c"
+    ],
+    "answer": "(7/10) ln|2x − 1| + (9/5) ln|x + 2| + c",
+    "guidance": "M1 for integrating each partial fraction. A1 for (7/10) ln|2x − 1|. A1 for (9/5) ln|x + 2| + c."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "1/(y(1 − y)) = A/y + B/(1 − y)",
+     "1 = A(1 − y) + By.",
+     "y = 0: A = 1. y = 1: B = 1.",
+     "∫ [1/y + 1/(1 − y)] dy = ln|y| − ln|1 − y| + c = ln|y/(1 − y)| + c (AG)"
+    ],
+    "guidance": "M1 for partial fractions with A = B = 1. M1 for integrating both terms. A1 for combining into ln|y/(1 − y)| + c."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "Separate variables: ∫ 1/(y(1 − y)) dy = ∫ 2 dx",
+     "ln|y/(1 − y)| = 2x + C",
+     "At x = 0, y = 0.1: ln(0.1/0.9) = C ⇒ C = ln(1/9)",
+     "ln|y/(1 − y)| = 2x + ln(1/9)",
+     "y/(1 − y) = (1/9)e^(2x)",
+     "y = (1/9)e^(2x)(1 − y) ⇒ y(1 + (1/9)e^(2x)) = (1/9)e^(2x)",
+     "y = e^(2x)/(9 + e^(2x))"
+    ],
+    "answer": "y = e^(2x)/(9 + e^(2x))",
+    "guidance": "M1 for separating variables. M1 for integrating both sides. A1 for finding C using initial conditions. M1 for rearranging. A1 for correct explicit form."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Let f(x) = x³ + 4x − 6.",
+     "f(1) = 1 + 4 − 6 = −1 < 0.",
+     "f(2) = 8 + 8 − 6 = 10 > 0.",
+     "Since f is continuous and f(1) < 0 < f(2), by the intermediate value theorem there is a root between 1 and 2."
+    ],
+    "guidance": "M1 for evaluating f(1) and f(2) with correct values. A1 for sign-change conclusion citing continuity."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "f(x) = x³ + 4x − 6, f′(x) = 3x² + 4.",
+     "x₁ = x₀ − f(x₀)/f′(x₀) = 1.2 − f(1.2)/f′(1.2).",
+     "f(1.2) = 1.728 + 4.8 − 6 = 0.528.",
+     "f′(1.2) = 3(1.44) + 4 = 4.32 + 4 = 8.32.",
+     "x₁ = 1.2 − 0.528/8.32 = 1.2 − 0.063 = 1.137"
+    ],
+    "answer": "x₁ ≈ 1.137",
+    "guidance": "M1 for correct Newton-Raphson formula with f and f′. A1 for f(1.2) and f′(1.2). A1 for x₁ = 1.137 (3 d.p.)."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Forces: Weight W = 3g = 29.4 N acting vertically downward at centre of mass.",
+     "Normal reaction N perpendicular to the inclined surface.",
+     "Friction F acting up the slope (opposing tendency to slide down)."
+    ],
+    "guidance": "B1 for correct diagram with all three forces correctly labelled and directed."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "Resolve perpendicular to plane: N = 3g cos 30° = 3g(√3/2).",
+     "Resolve along the plane (on point of sliding down, friction acts up): F = 3g sin 30° = 3g(1/2).",
+     "On the point of sliding: F = μN.",
+     "μ = F/N = (3g/2)/(3g√3/2) = (3g/2) × (2/(3g√3)) = 1/√3. ∎"
+    ],
+    "guidance": "M1 for resolving perpendicular and along plane. A1 for N and F. M1 for F = μN. A1 for μ = 1/√3."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "Vertical component of velocity: uy = 20 sin 40° ≈ 12.856 m s⁻¹.",
+     "At maximum height, vy = 0: vy² = uy² − 2g·H.",
+     "0 = (20 sin 40°)² − 2(9.8)H.",
+     "H = (20 sin 40°)²/(2 × 9.8) = 165.32/19.6 ≈ 8.43 m"
+    ],
+    "answer": "H ≈ 8.43 m",
+    "guidance": "M1 for resolving vertically. M1 for using vy² = uy² − 2gH with vy = 0. A1 for H ≈ 8.43 m."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "Time of flight: total time T = 2uy/g = 2(20 sin 40°)/9.8 = 2(12.856)/9.8 ≈ 2.624 s.",
+     "Horizontal component: ux = 20 cos 40° ≈ 15.321 m s⁻¹.",
+     "Range = ux × T = 15.321 × 2.624 ≈ 40.2 m"
+    ],
+    "answer": "Range ≈ 40.2 m",
+    "guidance": "M1 for finding time of flight using vertical motion. M1 for horizontal component. A1 M1 A1 for correct range calculation."
+   },
+   "10(c)": {
+    "type": "exact",
+    "points": [
+     "At t = 2: vx = 20 cos 40° ≈ 15.321 m s⁻¹ (constant).",
+     "vy = 20 sin 40° − 9.8(2) = 12.856 − 19.6 = −6.744 m s⁻¹.",
+     "Speed = √(vx² + vy²) = √(15.321² + 6.744²) = √(234.73 + 45.48) = √280.21 ≈ 16.7 m s⁻¹"
+    ],
+    "answer": "≈ 16.7 m s⁻¹",
+    "guidance": "M1 for horizontal component. M1 for vertical component using v = u − gt. M1 for speed using Pythagoras. A1 for ≈ 16.7 m s⁻¹."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "a = dv/dt = 6t − 12.",
+     "At t = 3: a = 18 − 12 = 6 m s⁻²"
+    ],
+    "answer": "6 m s⁻²",
+    "guidance": "M1 for differentiating v. A1 for a = 6 m s⁻² at t = 3."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "v = 0: 3t² − 12t + 9 = 0 ⇒ t² − 4t + 3 = 0 ⇒ (t − 1)(t − 3) = 0.",
+     "t = 1 s and t = 3 s"
+    ],
+    "answer": "t = 1 s and t = 3 s",
+    "guidance": "M1 for setting v = 0. A1 for t = 1. A1 for t = 3."
+   },
+   "11(c)": {
+    "type": "exact",
+    "points": [
+     "v > 0 for 0 ≤ t < 1, v < 0 for 1 < t < 3.",
+     "Distance from t = 0 to t = 1: ∫₀¹ (3t² − 12t + 9) dt = [t³ − 6t² + 9t]₀¹ = 1 − 6 + 9 = 4 m.",
+     "Distance from t = 1 to t = 3: |∫₁³ (3t² − 12t + 9) dt| = |[t³ − 6t² + 9t]₁³|",
+     "= |(27 − 54 + 27) − (1 − 6 + 9)| = |0 − 4| = 4 m.",
+     "Total distance = 4 + 4 = 8 m"
+    ],
+    "answer": "8 m",
+    "guidance": "M1 for identifying intervals. M1 for integrating v. A1 for each section distance (4 m, 4 m). A1 for total = 8 m."
+   },
+   "12(a)": {
+    "type": "exact",
+    "points": [
+     "For the system, applying Newton's second law:",
+     "5g − T = 5a (for mass A going down)",
+     "T − 3g = 3a (for mass B going up)",
+     "Adding: 2g = 8a ⇒ a = g/4 = 9.8/4 = 2.45 m s⁻²"
+    ],
+    "answer": "a = 2.45 m s⁻²",
+    "guidance": "M1 for equations of motion for each particle. M1 for adding equations. A1 for a = g/4. A1 for a = 2.45 m s⁻²."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "T = 3g + 3a = 3(9.8) + 3(2.45) = 29.4 + 7.35 = 36.75 N"
+    ],
+    "answer": "T = 36.75 N",
+    "guidance": "M1 for substituting a into one equation. A1 for T = 36.75 N."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "Force on pulley = 2T = 2 × 36.75 = 73.5 N (directed downward toward the string)"
+    ],
+    "answer": "73.5 N",
+    "guidance": "M1 for recognising force = 2T. A1 for 73.5 N."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "Let reactions at A and at the support 0.5 m from B be R_A and R_B respectively. Distance from A to the second support = 2 − 0.5 = 1.5 m.",
+     "Moments about A: R_B × 1.5 = 4g × 1 ⇒ R_B = 4g/1.5 = 8g/3 ≈ 26.1 N.",
+     "Resolve vertically: R_A + R_B = 4g ⇒ R_A = 4g − 8g/3 = 4g/3 ≈ 13.1 N"
+    ],
+    "answer": "R_A = 4g/3 ≈ 13.1 N, R_B = 8g/3 ≈ 26.1 N",
+    "guidance": "M1 for moments equation. A1 for R_B. M1 for vertical resolution. A1 for R_A. A1 for both values (allow g = 9.8)."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "About to tilt means R_A = 0 and the rod is on the verge of rotating about the support 0.5 m from B.",
+     "Taking moments about the support 0.5 m from B:",
+     "mg × 0.5 = 4g × (1.5 − 1) = 4g × 0.5",
+     "0.5m = 2 ⇒ m = 4 kg"
+    ],
+    "answer": "m = 4 kg",
+    "guidance": "M1 for moments about the right support with R_A = 0. M1 for setting up equation. A1 for m = 4 kg."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "v = dr/dt = (2t)i + (3 − 3t²)j.",
+     "At t = 1: v = 2i + (3 − 3)j = 2i + 0j = 2i"
+    ],
+    "answer": "v = 2i (m s⁻¹)",
+    "guidance": "M1 for differentiating position vector. A1 for v = 2ti + (3 − 3t²)j. A1 for v = 2i at t = 1."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "Parallel to i means j component of velocity = 0.",
+     "3 − 3t² = 0 ⇒ t² = 1 ⇒ t = 1 (taking t > 0)"
+    ],
+    "answer": "t = 1 s",
+    "guidance": "M1 for setting j component of v to zero. A1 for t = 1."
+   },
+   "14(c)": {
+    "type": "exact",
+    "points": [
+     "a = dv/dt = 2i − 6tj.",
+     "At t = 2: a = 2i − 12j (m s⁻²)"
+    ],
+    "answer": "a = 2i − 12j (m s⁻²)",
+    "guidance": "M1 for differentiating velocity. A1 for a = 2i − 12j at t = 2."
+   }
+  }
+ },
  "math-aqa-7357-2023-p1": {
   "questions": [
    {

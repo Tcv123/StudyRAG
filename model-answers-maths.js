@@ -2214,6 +2214,68 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-aqa-7357-2024-p2::17(b)": "The student's reasoning is invalid because f(x) = 3/x − 2 has a discontinuity at x = 0, which lies inside the interval [−1, 1]. The integral ∫₋₁¹ f(x) dx is an improper integral (the integrand is undefined at x = 0), and improper integrals of this type diverge — they cannot be evaluated by ordinary symmetry arguments. The integral does not exist (or is divergent), so the claim that it equals 0 is wrong.",
 
+ "math-aqa-7357-2024-p3::1": "Assume for contradiction that √3 is rational. Then √3 = p/q where p, q are integers with no common factors (in lowest terms).\nSquaring: 3 = p²/q², so p² = 3q².\nHence 3 | p², which implies 3 | p (since 3 is prime). Write p = 3k.\nThen 9k² = 3q², so q² = 3k², meaning 3 | q.\nBut then p and q are both divisible by 3, contradicting the assumption that they share no common factors.\nTherefore √3 is irrational. ∎",
+
+ "math-aqa-7357-2024-p3::2(a)": "a · b = (2)(1) + (−1)(4) + (3)(−2)\n= 2 − 4 − 6\n= −8.",
+
+ "math-aqa-7357-2024-p3::2(b)": "Compute a × b using the determinant:\na × b = |i   j   k |\n        |2  −1   3 |\n        |1   4  −2 |\n\ni component: (−1)(−2) − (3)(4) = 2 − 12 = −10\nj component: −[(2)(−2) − (3)(1)] = −(−4 − 3) = 7\nk component: (2)(4) − (−1)(1) = 8 + 1 = 9\n\nSo a × b = −10i + 7j + 9k.\n|a × b| = √(100 + 49 + 81) = √230.",
+
+ "math-aqa-7357-2024-p3::3(a)": "y = x³ e^(−2x). Apply the product rule with u = x³ and v = e^(−2x):\nu′ = 3x², v′ = −2e^(−2x).\ndy/dx = 3x² e^(−2x) + x³(−2e^(−2x))\n= e^(−2x)(3x² − 2x³)\n= x²e^(−2x)(3 − 2x).",
+
+ "math-aqa-7357-2024-p3::3(b)": "Set dy/dx = 0:\nx²e^(−2x)(3 − 2x) = 0.\nSince e^(−2x) > 0 for all x, we need x² = 0 or 3 − 2x = 0.\nx = 0  or  x = 3/2.",
+
+ "math-aqa-7357-2024-p3::3(c)": "Use sign analysis of dy/dx = x²e^(−2x)(3 − 2x).\n\nAt x = 0: x² = 0 but check values either side — dy/dx ≥ 0 on both sides (since x² ≥ 0 and 3 − 2x > 0 near 0). The sign does not change, so x = 0 is a point of inflection.\n\nAt x = 3/2:\n— For x slightly less than 3/2: (3 − 2x) > 0 ⇒ dy/dx > 0.\n— For x slightly greater than 3/2: (3 − 2x) < 0 ⇒ dy/dx < 0.\nSign changes from + to −, so x = 3/2 is a local maximum.\nMaximum value: y = (3/2)³ e^(−3) = (27/8)e^(−3).",
+
+ "math-aqa-7357-2024-p3::4(a)": "Differentiate x² + 3xy + y² = 11 implicitly with respect to x:\n2x + 3y + 3x(dy/dx) + 2y(dy/dx) = 0.\nCollect dy/dx terms:\ndy/dx(3x + 2y) = −2x − 3y.\ndy/dx = −(2x + 3y)/(3x + 2y).",
+
+ "math-aqa-7357-2024-p3::4(b)": "At (1, 2): dy/dx = −(2(1) + 3(2))/(3(1) + 2(2)) = −(2 + 6)/(3 + 4) = −8/7.\nTangent at (1, 2) with gradient −8/7:\ny − 2 = −(8/7)(x − 1)\n7y − 14 = −8x + 8\n8x + 7y = 22.",
+
+ "math-aqa-7357-2024-p3::5": "Use the substitution x = 3 sin θ, so dx = 3 cos θ dθ.\n√(9 − x²) = √(9 − 9sin²θ) = 3 cos θ  (taking positive root since cos θ ≥ 0 for 0 ≤ θ ≤ π/6).\n\nChange limits: x = 0 ⇒ θ = 0;  x = 3/2 ⇒ sin θ = 1/2 ⇒ θ = π/6.\n\n∫₀^(3/2) √(9 − x²) dx = ∫₀^(π/6) 3 cos θ · 3 cos θ dθ = 9∫₀^(π/6) cos²θ dθ\n= (9/2)∫₀^(π/6) (1 + cos 2θ) dθ\n= (9/2)[θ + sin 2θ/2]₀^(π/6)\n= (9/2)[π/6 + sin(π/3)/2 − 0]\n= (9/2)[π/6 + (√3/2)/2]\n= (9/2)[π/6 + √3/4]\n= 3π/4 + 9√3/8.",
+
+ "math-aqa-7357-2024-p3::6(a)": "Write (5x + 1)/((2x − 1)(x + 2)) ≡ A/(2x − 1) + B/(x + 2).\n5x + 1 = A(x + 2) + B(2x − 1).\n\nSubstitute x = 1/2: 5/2 + 1 = A(5/2) ⇒ 7/2 = 5A/2 ⇒ A = 7/5.\nSubstitute x = −2: −10 + 1 = B(−5) ⇒ B = 9/5.\n\nAnswer: 7/(5(2x − 1)) + 9/(5(x + 2)).",
+
+ "math-aqa-7357-2024-p3::6(b)": "∫ (5x + 1)/((2x − 1)(x + 2)) dx = ∫ [7/(5(2x − 1)) + 9/(5(x + 2))] dx\n= (7/10) ln|2x − 1| + (9/5) ln|x + 2| + c.",
+
+ "math-aqa-7357-2024-p3::7(a)": "Write 1/(y(1 − y)) = A/y + B/(1 − y).\n1 = A(1 − y) + By.\ny = 0: A = 1.  y = 1: B = 1.\nSo 1/(y(1 − y)) = 1/y + 1/(1 − y).\n\n∫ [1/y + 1/(1 − y)] dy = ln|y| − ln|1 − y| + c = ln|y/(1 − y)| + c. ∎",
+
+ "math-aqa-7357-2024-p3::7(b)": "Separate variables: (1/(y(1 − y))) dy = 2 dx.\nIntegrate both sides: ln|y/(1 − y)| = 2x + C.\n\nApply initial condition y = 0.1 when x = 0:\nln(0.1/0.9) = C ⇒ C = ln(1/9).\n\nSo ln(y/(1 − y)) = 2x + ln(1/9).\nTake exponentials: y/(1 − y) = (1/9)e^(2x).\n\nSolve for y:\ny = (1/9)e^(2x)(1 − y)\ny + (y/9)e^(2x) = (1/9)e^(2x)\ny(1 + (1/9)e^(2x)) = (1/9)e^(2x)\ny = (1/9)e^(2x) / (1 + (1/9)e^(2x)) = e^(2x) / (9 + e^(2x)).",
+
+ "math-aqa-7357-2024-p3::8(a)": "Let f(x) = x³ + 4x − 6.\nf(1) = 1 + 4 − 6 = −1 < 0.\nf(2) = 8 + 8 − 6 = 10 > 0.\nSince f is continuous (it is a polynomial) and f(1) < 0 < f(2), by the intermediate value theorem there is a root between x = 1 and x = 2.",
+
+ "math-aqa-7357-2024-p3::8(b)": "f(x) = x³ + 4x − 6,  f′(x) = 3x² + 4.\nNewton-Raphson: x₁ = x₀ − f(x₀)/f′(x₀).\n\nAt x₀ = 1.2:\nf(1.2) = (1.2)³ + 4(1.2) − 6 = 1.728 + 4.8 − 6 = 0.528.\nf′(1.2) = 3(1.44) + 4 = 4.32 + 4 = 8.32.\nx₁ = 1.2 − 0.528/8.32 = 1.2 − 0.06346… ≈ 1.137.",
+
+ "math-aqa-7357-2024-p3::9(a)": "Force diagram for the 3 kg particle on the 30° incline:\n— Weight W = 3g N acting vertically downward through the centre of mass.\n— Normal reaction N perpendicular to the inclined surface (pointing away from the surface).\n— Friction force F acting up the slope (opposing the tendency to slide down).",
+
+ "math-aqa-7357-2024-p3::9(b)": "Resolve perpendicular to the plane:\nN = 3g cos 30° = 3g(√3/2).\n\nResolve parallel to the plane (particle on point of sliding down, so friction acts up):\nF = 3g sin 30° = 3g(1/2).\n\nOn the point of sliding, F = μN:\nμ = F/N = (3g/2) / (3g√3/2) = (3g/2) × (2/(3g√3)) = 1/√3. ∎",
+
+ "math-aqa-7357-2024-p3::10(a)": "Resolve velocities: ux = 20 cos 40°,  uy = 20 sin 40° ≈ 12.856 m s⁻¹.\nAt maximum height the vertical velocity is zero; using vy² = uy² − 2gH:\n0 = (20 sin 40°)² − 2(9.8)H.\nH = (20 sin 40°)² / (2 × 9.8) = (12.856)² / 19.6 ≈ 165.27/19.6 ≈ 8.43 m.",
+
+ "math-aqa-7357-2024-p3::10(b)": "Time to reach maximum height: t_up = uy/g = 12.856/9.8 ≈ 1.312 s.\nTotal time of flight: T = 2t_up ≈ 2.624 s.\nHorizontal component (constant): ux = 20 cos 40° ≈ 15.321 m s⁻¹.\nRange = ux × T ≈ 15.321 × 2.624 ≈ 40.2 m.",
+
+ "math-aqa-7357-2024-p3::10(c)": "At t = 2 s:\nHorizontal velocity: vx = 20 cos 40° ≈ 15.321 m s⁻¹ (unchanged).\nVertical velocity: vy = 20 sin 40° − 9.8 × 2 = 12.856 − 19.6 = −6.744 m s⁻¹.\nSpeed = √(vx² + vy²) = √(15.321² + 6.744²) = √(234.73 + 45.48) = √280.21 ≈ 16.7 m s⁻¹.",
+
+ "math-aqa-7357-2024-p3::11(a)": "a = dv/dt = 6t − 12.\nAt t = 3: a = 6(3) − 12 = 18 − 12 = 6 m s⁻².",
+
+ "math-aqa-7357-2024-p3::11(b)": "Set v = 0: 3t² − 12t + 9 = 0 ⇒ t² − 4t + 3 = 0 ⇒ (t − 1)(t − 3) = 0.\nParticle is at rest at t = 1 s and t = 3 s.",
+
+ "math-aqa-7357-2024-p3::11(c)": "v = 3t² − 12t + 9 = 3(t − 1)(t − 3).\nv > 0 for 0 ≤ t < 1 (moving in positive direction).\nv < 0 for 1 < t < 3 (moving in negative direction).\n\nDisplacement in each phase:\ns = ∫ v dt = t³ − 6t² + 9t + C.\n\nFrom t = 0 to t = 1:\nDistance = [t³ − 6t² + 9t]₀¹ = (1 − 6 + 9) − 0 = 4 m.\n\nFrom t = 1 to t = 3:\nDisplacement = [t³ − 6t² + 9t]₁³ = (27 − 54 + 27) − (1 − 6 + 9) = 0 − 4 = −4 m.\nDistance = |−4| = 4 m.\n\nTotal distance = 4 + 4 = 8 m.",
+
+ "math-aqa-7357-2024-p3::12(a)": "Let a be the acceleration of the system and T the tension.\nFor A (mass 5 kg, moving down): 5g − T = 5a … (1)\nFor B (mass 3 kg, moving up): T − 3g = 3a … (2)\nAdding (1) and (2): 2g = 8a ⇒ a = g/4 = 9.8/4 = 2.45 m s⁻².",
+
+ "math-aqa-7357-2024-p3::12(b)": "From equation (2): T = 3g + 3a = 3(9.8) + 3(2.45) = 29.4 + 7.35 = 36.75 N.",
+
+ "math-aqa-7357-2024-p3::12(c)": "The string pulls on the pulley with tension T on each side.\nForce on pulley = 2T = 2 × 36.75 = 73.5 N.",
+
+ "math-aqa-7357-2024-p3::13(a)": "Let reactions at A and at the support 0.5 m from B (i.e. 1.5 m from A) be R_A and R_C respectively.\nThe rod has length 2 m and uniform mass 4 kg, so weight 4g acts at the midpoint (1 m from A).\n\nTake moments about A:\nR_C × 1.5 = 4g × 1\nR_C = 4g/1.5 = 8g/3 ≈ 26.1 N.\n\nResolve vertically: R_A + R_C = 4g\nR_A = 4g − 8g/3 = 4g/3 ≈ 13.1 N.",
+
+ "math-aqa-7357-2024-p3::13(b)": "The rod tilts about the support 0.5 m from B (i.e. 1.5 m from A) when R_A = 0.\nAt this point, taking moments about the support at 1.5 m from A:\nClockwise moment from mass m at B (0.5 m from support) = mg × 0.5.\nAnticlockwise moment from rod's weight at midpoint (0.5 m from support on the other side) = 4g × 0.5.\n\nFor tipping: mg × 0.5 = 4g × 0.5\nm = 4 kg.",
+
+ "math-aqa-7357-2024-p3::14(a)": "Differentiate r with respect to t:\nv = dr/dt = 2t i + (3 − 3t²) j.\n\nAt t = 1: v = 2(1) i + (3 − 3(1)²) j = 2i + 0j = 2i m s⁻¹.",
+
+ "math-aqa-7357-2024-p3::14(b)": "For motion parallel to i, the j component of velocity must be zero:\n3 − 3t² = 0 ⇒ t² = 1 ⇒ t = 1 s  (taking the positive value).",
+
+ "math-aqa-7357-2024-p3::14(c)": "Differentiate v to get acceleration:\na = dv/dt = 2i − 6t j.\nAt t = 2: a = 2i − 12j m s⁻².",
+
  "math-edx-9ma0-2018-p1::10(b)": "H is maximum when e^(0.1sin(0.25t)) is maximum, i.e. when sin(0.25t) = 1.\nH_max = 5e^(0.1) ≈ 5.53 m.",
 
  "math-edx-9ma0-2018-p1::10(c)": "Maximum occurs when sin(0.25t) = 1 ⟹ 0.25t = π/2 + 2nπ.\nFirst maximum: t = 2π ≈ 6.28 s.\nSecond maximum: 0.25T = π/2 + 2π = 5π/2 ⟹ T = 10π ≈ 31.4 s.",
