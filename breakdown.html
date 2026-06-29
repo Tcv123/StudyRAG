@@ -2027,8 +2027,15 @@ async function load() {
   renderBreakdownExams(subjects || []);
   renderTopics();
   renderPracticeCarousel();
-  renderFlashcardsBreakdown(user, profile, subjects || []);
+  await renderFlashcardsBreakdown(user, profile, subjects || []);
   renderPastPapersChecklist(subjects || []);
+
+  // Restore the saved tab now that all panels (including flashcards) are ready.
+  const VALID_TABS = ['summary','topics','practice','exams','flashcards','pastpapers'];
+  try {
+    const saved = sessionStorage.getItem('breakdown_tab');
+    setTab(VALID_TABS.includes(saved) ? saved : 'summary');
+  } catch (_) { setTab('summary'); }
 }
 
 function renderSubjectOverview() {
@@ -2293,14 +2300,6 @@ function setTab(name) {
   try { sessionStorage.setItem('breakdown_tab', name); } catch (_) {}
 }
 
-// Restore the last active tab on load.
-(function () {
-  const VALID = ['summary','topics','practice','exams','flashcards','pastpapers'];
-  try {
-    const saved = sessionStorage.getItem('breakdown_tab');
-    if (saved && VALID.includes(saved)) setTab(saved);
-  } catch (_) {}
-})();
 
 let practiceCarouselIdx = 0;
 
