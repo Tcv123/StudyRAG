@@ -19,7 +19,7 @@ const ENGLISH_AQA_QUESTIONS = {
       { q: 'What does "morphology" examine?', options: ['How words are built from smaller units (morphemes)','Speech sounds','The visual design of a text','Paragraph structure'], answer: 0 },
       { q: 'Which term refers to the study of how sentences are constructed from words and phrases?', options: ['Phonology','Syntax','Lexis','Discourse'], answer: 1 },
       { q: 'What are "prosodic features"?', options: ['Features of handwriting','Features of stress, intonation and rhythm in speech','Types of punctuation','Rhyme schemes'], answer: 1 },
-      { q: 'Which of the following is a bound morpheme?', options: ['"dog"','"run"','"-ing"','"car"'], answer: 2 },
+      { q: 'Which of the following is a bound morpheme?', options: ['"dog"','"-ing"','"run"','"blue"'], answer: 1 },
       { q: 'What is a phoneme?', options: ['A written letter','The smallest unit of sound that distinguishes meaning','A sentence fragment','A paragraph break'], answer: 1 },
       { q: 'Which of these is an example of a declarative sentence?', options: ['"Shut the door."','"Is the door shut?"','"The door is shut."','"What a slam!"'], answer: 2 },
       { q: 'What is an "interrogative"?', options: ['A statement','A question','A command','An exclamation'], answer: 1 },

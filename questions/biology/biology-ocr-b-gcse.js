@@ -45,7 +45,7 @@ const BIOLOGY_OCR_B_GCSE_QUESTIONS = {
       { q: 'Why is sequencing the human genome useful in medicine?', options: ['It can identify genes linked to disease','It changes a person\'s DNA','It removes mutations automatically','It replaces drugs'], answer: 0 },
       { q: 'How does a gene control a characteristic such as eye colour?', options: ['It directly produces the colour','It codes for proteins (e.g. pigments) that produce the characteristic','It heats the eye','It produces water'], answer: 1 },
       { q: 'Why is it important that DNA replication is accurate?', options: ['So daughter cells receive identical genetic information','To make energy','To produce sweat','To form bones'], answer: 0 },
-      { q: 'In a Punnett square, the gametes from each parent are written along the…', options: ['Top and side','Bottom only','Diagonal','Centre'], answer: 0 },
+      { q: 'In a Punnett square, the gametes from each parent are written along the…', options: ['Top and side','Bottom only','Inside the grid cells','Centre of each row'], answer: 0 },
       { q: 'Which of the following best describes a recessive allele?', options: ['Always shown when present','Only shown when both alleles are recessive','Shown when only one is present','Cannot be inherited'], answer: 1 },
       { q: 'A genotype Bb produces brown eyes. What does this tell us about B and b?', options: ['B is dominant over b','b is dominant over B','They blend','They cancel out'], answer: 0 },
       { q: 'Genotype refers to…', options: ['The physical features of an organism','The combination of alleles an organism has','Only its sex','The number of cells'], answer: 1 },

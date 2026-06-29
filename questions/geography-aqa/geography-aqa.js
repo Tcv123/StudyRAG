@@ -75,7 +75,7 @@ const GEOGRAPHY_AQA_QUESTIONS = {
       { q: 'What is hydraulic action?', options: ['Rocks scraping the shore platform','The force of waves compressing air into cracks in rock','Dissolving of rock by acids','Rocks colliding and becoming smaller'], answer: 1 },
       { q: 'What is longshore drift?', options: ['Vertical movement of water on a beach','The movement of sediment along the coast by wave action','Tidal currents flowing offshore','Wind erosion of cliff faces'], answer: 1 },
       { q: 'What type of wave is associated with deposition?', options: ['Destructive wave','Constructive wave','Tsunami','Tidal wave'], answer: 1 },
-      { q: 'What is a spit?', options: ['A narrow ridge of sand extending from the coastline into the sea','A steep coastal cliff','An offshore island','A rock pool'], answer: 0 },
+      { q: 'What is a spit?', options: ['A narrow ridge of sand extending from the coastline into the sea','A wave-cut platform exposed at low tide','An offshore island','A headland formed by differential erosion'], answer: 0 },
       { q: 'What is the fetch of a wave?', options: ['The height of a wave','The distance of open water over which wind blows to generate waves','The speed at which a wave breaks','The depth of water at the shore'], answer: 1 },
       { q: 'What is abrasion in coastal erosion?', options: ['Dissolving of limestone by weak acids','Rocks carried by waves scraping against cliffs','Air being forced into cracks','Waves removing loose material'], answer: 1 },
       { q: 'What is attrition?', options: ['Rocks being dissolved by sea water','Rocks carried by waves colliding and becoming smaller and rounder','Waves compressing air in rock cracks','Cliff collapse due to saturation'], answer: 1 },
