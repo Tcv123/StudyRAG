@@ -663,8 +663,11 @@ function buildPicker(userSubs) {
       if (!hasInlineParts && !hasMathsData) return;
       const o = document.createElement('option');
       o.value = pi;
-      // Use paperName but strip everything after " — " to keep it short (e.g. "Paper 1 — Pure Mathematics 1" → "Paper 1")
-      const shortName = (p.paperName || p.title || p.label || '').split(/\s+[—–-]\s+/)[0].trim();
+      // For "Paper 1 — Pure Mathematics 1" use "Paper 1"; for code-first names
+      // like "Y420 — Core Pure" use the description after the dash.
+      const rawName = p.paperName || p.title || p.label || '';
+      const parts = rawName.split(/\s+[—–-]\s+/);
+      const shortName = parts.length > 1 && /^paper\b/i.test(parts[0]) ? parts[0].trim() : (parts[parts.length - 1] || rawName).trim();
       const label = [p.year, shortName].filter(Boolean).join(' · ');
       o.textContent = label || `Paper ${pi + 1}`;
       pickPaper.appendChild(o);
