@@ -651,8 +651,10 @@ function buildPicker(userSubs) {
       if (!hasInlineParts && !hasMathsData) return;
       const o = document.createElement('option');
       o.value = pi;
-      const parts = [p.year, p.paperCode, p.title || p.label].filter(Boolean);
-      o.textContent = parts.length ? parts.join(' · ') : `Paper ${pi + 1}`;
+      // Use paperName but strip everything after " — " to keep it short (e.g. "Paper 1 — Pure Mathematics 1" → "Paper 1")
+      const shortName = (p.paperName || p.title || p.label || '').split(/\s+[—–-]\s+/)[0].trim();
+      const label = [p.year, shortName].filter(Boolean).join(' · ');
+      o.textContent = label || `Paper ${pi + 1}`;
       pickPaper.appendChild(o);
     });
     pickPaper.disabled = false;
