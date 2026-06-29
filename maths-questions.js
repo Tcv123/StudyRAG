@@ -4438,5 +4438,659 @@ window.MATHS_QUESTIONS = {
     "guidance": "M1 attempt P(X ≥ \"50\") using B(200, 1/5) for their \"49\"+1 (allow P(X<50)=0.95…). M1 attempt P(X ≥ \"49\") for their \"49\" (allow P(X<49)=0.93…). A1 smallest value of X is 50 (condone X ≥ 50; dependent on both method marks). SCB1 for correct answer with no/insufficient working (max 1/3)."
    }
   }
+ },
+ "math-aqa-7357-2024-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "One of the equations below is the equation of a circle.\n\nIdentify this equation.\n\nTick (✓) one box.\n\n(x + 1)² − (y + 2)² = −36\n\n(x + 1)² − (y + 2)² = 36\n\n(x + 1)² + (y + 2)² = −36\n\n(x + 1)² + (y + 2)² = 36",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "The graph of y = f(x) intersects the x-axis at (−3, 0), (0, 0) and (2, 0). The shaded region A (between x = −3 and x = 0) has an area of 189. The shaded region B (between x = 0 and x = 2) has an area of 64.",
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Find the value of ∫₋₃² f(x) dx\n\nCircle your answer.\n\n−253     −125     125     253",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "Solve the inequality\n\n(1 − x)(x − 4) < 0\n\nTick (✓) one box.\n\n{x : x < 1} ∩ {x : x > 4}\n\n{x : x < 1} ∪ {x : x > 4}\n\n{x : x < 1} ∩ {x : x ≥ 4}\n\n{x : x < 1} ∪ {x : x ≥ 4}",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "Use logarithms to solve the equation\n\n5^(x − 2) = 71570\n\nGive your answer to two decimal places.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5",
+      "prompt": "Given that\n\ny = x³ / sin x\n\nfind dy/dx",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6",
+      "prompt": "It is given that\n\n(2 sin θ + 3 cos θ)² + (6 sin θ − cos θ)² = 30\n\nand that θ is obtuse.\n\nFind the exact value of sin θ.\n\nFully justify your answer.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "On the first day of each month, Kate pays £50 into a savings account. Interest is paid on the total amount in the account on the last day of each month at a rate of 0.2%. At the end of the nth month, the total amount of money in Kate's savings account is £Tₙ. Kate correctly calculates:\nT₁ = 50 × 1.002 = 50.10\nT₂ = (T₁ + 50) × 1.002 = 50 × 1.002² + 50 × 1.002 ≈ 100.30",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that T₃ is given by\n\nT₃ = 50 × 1.002³ + 50 × 1.002² + 50 × 1.002",
+      "marks": 1
+     },
+     {
+      "code": "7(b)(i)",
+      "prompt": "Kate uses her method to correctly calculate how much money she can expect to have in her savings account at the end of 10 years.\n\nFind the amount of money Kate expects to have in her savings account at the end of 10 years.",
+      "marks": 3
+     },
+     {
+      "code": "7(b)(ii)",
+      "prompt": "The amount of money in Kate's savings account at the end of 10 years may not be the amount she has correctly calculated.\n\nExplain why.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "A zookeeper models the median mass of infant monkeys born at their zoo, up to the age of 2 years, by the formula y = a + b log₁₀ x, where y is the median mass in kilograms, x is age in months and a and b are constants. The data used:\nAge in months (x): 3, 24\nMedian mass (y): 6.4, 12",
+    "parts": [
+     {
+      "code": "8(a)(i)",
+      "prompt": "The zookeeper uses the data for monkeys aged 3 months to write the correct equation\n\n6.4 = a + b log₁₀ 3\n\nUse the data for monkeys aged 24 months to write a second equation.",
+      "marks": 1
+     },
+     {
+      "code": "8(a)(ii)",
+      "prompt": "Show that\n\nb = 5.6 / log₁₀ 8",
+      "marks": 3
+     },
+     {
+      "code": "8(a)(iii)",
+      "prompt": "Find the value of a.\n\nGive your answer to two decimal places.",
+      "marks": 1
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Use a suitable value for x to determine whether the model can be used to predict the median mass of monkeys less than one week old.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9(a)(i)",
+      "prompt": "Find the binomial expansion of (1 + 3x)⁻¹ up to and including the term in x²",
+      "marks": 2
+     },
+     {
+      "code": "9(a)(ii)",
+      "prompt": "Show that the first three terms in the binomial expansion of\n\n1 / (2 − 3x)\n\nform a geometric sequence and state the common ratio.",
+      "marks": 5
+     },
+     {
+      "code": "9(b)",
+      "prompt": "It is given that\n\n36x / ((1 + 3x)(2 − 3x)) ≡ P / (2 − 3x) + Q / (1 + 3x)\n\nwhere P and Q are integers.\n\nFind the value of P and the value of Q",
+      "marks": 3
+     },
+     {
+      "code": "9(c)(i)",
+      "prompt": "Using your answers to parts (a) and (b), find the binomial expansion of\n\n12x / ((1 + 3x)(2 − 3x))\n\nup to and including the term in x²",
+      "marks": 2
+     },
+     {
+      "code": "9(c)(ii)",
+      "prompt": "Find the range of values of x for which the binomial expansion of\n\n12x / ((1 + 3x)(2 − 3x))\n\nis valid.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10",
+      "prompt": "The function f is defined by\n\nf(x) = x² + 2 cos x   for −π ≤ x ≤ π\n\nDetermine whether the curve with equation y = f(x) has a point of inflection at the point where x = 0\n\nFully justify your answer.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A teacher asks students to make statements about the interval 3 < k < 4.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "A student states that 3 is the smallest value of k in the interval 3 < k < 4\n\nExplain the error in the student's statement.",
+      "marks": 1
+     },
+     {
+      "code": "11(b)(i)",
+      "prompt": "The student's teacher says there is no smallest value of k in the interval 3 < k < 4. The teacher gives the following correct proof:\n\nStep 1: Assume there is a smallest number in the interval 3 < k < 4 and let this smallest number be x\nStep 2: let y = (3 + x) / 2\nStep 3: 3 < y < x which is a contradiction.\nStep 4: Therefore, there is no smallest number in interval 3 < k < 4\n\nExplain the contradiction stated in Step 3",
+      "marks": 1
+     },
+     {
+      "code": "11(b)(ii)",
+      "prompt": "Prove that there is no largest value of k in the interval 3 < k < 4",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "Two constant forces act on a particle of mass 2 kilograms so that it moves forward in a straight line. The forces are: a forward driving force of 10 newtons and a resistance force of 4 newtons.",
+    "parts": [
+     {
+      "code": "12",
+      "prompt": "Find the acceleration of the particle.\n\nCircle your answer.\n\n2 m s⁻²     3 m s⁻²     5 m s⁻²     12 m s⁻²",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "A car starting from rest moves forward in a straight line. The motion of the car is modelled by a velocity–time graph.",
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "One of the following assumptions about the motion of the car is implied by the graph.\n\nIdentify this assumption.\n\nTick (✓) one box.\n\nThe car never accelerates.\n\nThe acceleration of the car is always positive.\n\nThe acceleration of the car can change instantaneously.\n\nThe acceleration of the car is never constant.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The displacement, r metres, of a particle at time t seconds is r = 6t − 2t²",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the value of r when t = 4",
+      "marks": 1
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Determine the range of values of t for which the displacement is positive.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "Two forces F₁ and F₂ are acting on a particle of mass 3 kilograms.\n\nF₁ = [a, 23] newtons and F₂ = [4, b] newtons, where a and b are constants.\n\nThe particle has an acceleration of [4b, a] m s⁻²",
+    "parts": [
+     {
+      "code": "15",
+      "prompt": "Find the value of a and the value of b",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "Use g = 9.8 m s⁻². An apple tree stands on horizontal ground. Two apples hang at rest from different branches. The vertical distance between the two apples is d centimetres. At the same instant both apples begin to fall freely under gravity. The first apple hits the ground after 0.5 seconds. The second apple hits the ground 0.1 seconds later.",
+    "parts": [
+     {
+      "code": "16",
+      "prompt": "Show that d is approximately 54",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 17,
+    "scenario": "A uniform rod of length 2L metres and mass m kilograms rests horizontally in equilibrium on two fixed supports at points A and B. A lies at a distance x metres from one end of the rod. B lies at a distance (x + 0.1) metres from the other end of the rod. The reaction force at B is twice the reaction force at A.",
+    "parts": [
+     {
+      "code": "17",
+      "prompt": "Show that\n\nL − x = k\n\nwhere k is a constant to be found.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 18,
+    "scenario": "A particle is moving in a straight line through the origin O. The displacement of the particle, r metres, from O, at time t seconds is given by r = p + 2t − qe^(−0.2t), where p and q are constants.",
+    "parts": [
+     {
+      "code": "18(a)",
+      "prompt": "When t = 3, the acceleration of the particle is −1.8 m s⁻²\n\nShow that q ≈ 82",
+      "marks": 5
+     },
+     {
+      "code": "18(b)",
+      "prompt": "The particle has an initial displacement of 5 metres.\n\nFind the value of p\n\nGive your answer to two significant figures.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 19,
+    "scenario": "Use g = 9.8 m s⁻². A toy shoots balls upwards with an initial velocity of 7 m s⁻¹. The advertisement for this toy claims the balls can reach a maximum height of 2.5 metres from the ground.",
+    "parts": [
+     {
+      "code": "19(a)(i)",
+      "prompt": "Suppose that the toy shoots the balls vertically upwards.\n\nVerify the claim in the advertisement.",
+      "marks": 2
+     },
+     {
+      "code": "19(a)(ii)",
+      "prompt": "State two modelling assumptions you have made in verifying this claim.",
+      "marks": 2
+     },
+     {
+      "code": "19(b)",
+      "prompt": "In fact the toy shoots the balls anywhere between 0 and 11 degrees from the vertical.\n\nThe range of maximum heights, h metres, above the ground which can be reached by the balls may be expressed as\n\nk < h ≤ 2.5\n\nFind the value of k",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 20,
+    "scenario": "Two particles P and Q are moving in separate straight lines across a smooth horizontal surface. P moves with constant velocity (3i + 4j) m s⁻¹. Q moves from position vector (5i − 7j) metres to position vector (14i + 5j) metres during a 3 second period. A third particle R moves with a constant speed of 4 m s⁻¹ in a straight line across the same surface. P and R move along lines that intersect at a fixed point X. P passes through X exactly 2 seconds after R passes through X. P and R are exactly 13 metres apart 3 seconds after R passes through X.",
+    "parts": [
+     {
+      "code": "20(a)",
+      "prompt": "Show that P and Q move along parallel lines.",
+      "marks": 3
+     },
+     {
+      "code": "20(b)",
+      "prompt": "Stevie says: \"Q is also moving with a constant velocity of (3i + 4j) m s⁻¹\"\n\nExplain why Stevie may be incorrect.",
+      "marks": 1
+     },
+     {
+      "code": "20(c)",
+      "prompt": "Show that P and R move along perpendicular lines.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 21,
+    "scenario": "Two heavy boxes, M and N, are connected securely by a length of rope. The mass of M is 50 kg and the mass of N is 80 kg. M is placed near the bottom of a rough slope inclined at 60° above the horizontal. The rope is passed over a smooth pulley at the top end of the slope so that N hangs with the rope vertical, running parallel to the line of greatest slope. When the boxes are released, M moves up the slope as N descends, with acceleration a m s⁻². The tension in the rope is T newtons.",
+    "parts": [
+     {
+      "code": "21(a)",
+      "prompt": "Explain why the equation of motion for N is\n\n80g − T = 80a",
+      "marks": 1
+     },
+     {
+      "code": "21(b)",
+      "prompt": "Show that the normal reaction force between M and the slope is 25g newtons.",
+      "marks": 1
+     },
+     {
+      "code": "21(c)",
+      "prompt": "The coefficient of friction, μ, between the slope and M is such that 0 ≤ μ ≤ 1\n\nShow that\n\na ≥ (11 − 5√3)g / 26",
+      "marks": 6
+     },
+     {
+      "code": "21(d)",
+      "prompt": "State one modelling assumption you have made throughout this question.",
+      "marks": 1
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "(x + 1)² + (y + 2)² = 36"
+    ],
+    "guidance": "B1 for ticking the 4th box. A circle equation requires a sum of squares on the left and a positive constant on the right: (x + 1)² + (y + 2)² = 36."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "125"
+    ],
+    "guidance": "B1 for circling 125. The integral from −3 to 2 = integral from −3 to 0 + integral from 0 to 2. Region A (−3 to 0) is above the x-axis so contributes +189; region B (0 to 2) is below the x-axis so contributes −64. Total = 189 − 64 = 125."
+   },
+   "3": {
+    "type": "exact",
+    "points": [
+     "{x : x < 1} ∪ {x : x > 4}"
+    ],
+    "guidance": "B1 for ticking the 1st box. (1 − x)(x − 4) < 0 means the product is negative. The roots are x = 1 and x = 4. The quadratic (expanded: −x² + 5x − 4) opens downward, so the product is negative outside the roots: x < 1 or x > 4, i.e. {x : x < 1} ∪ {x : x > 4}."
+   },
+   "4": {
+    "type": "exact",
+    "points": [
+     "x ≈ 1900.23"
+    ],
+    "guidance": "B1 takes logs of both sides (PI by x − 2 = log₅ 71570). M1 uses log Aⁿ = n log A. R1 completes reasoned argument using logarithms to obtain AWRT 1900. x − 2 = log₅ 71570 = ln 71570 / ln 5, so x = 2 + log₅ 71570 ≈ 1900.23."
+   },
+   "5": {
+    "type": "exact",
+    "points": [
+     "dy/dx = (3x² sin x − x³ cos x) / sin² x"
+    ],
+    "guidance": "B1 differentiates x³ and sin x to obtain 3x² and cos x. M1 uses the quotient rule and obtains numerator of the form Ax² sin x − Bx³ cos x. A1 obtains (3x² sin x − x³ cos x) / sin² x. ACF (e.g. product rule form also accepted)."
+   },
+   "6": {
+    "type": "points",
+    "points": [
+     "Expand both brackets: (2 sin θ + 3 cos θ)² + (6 sin θ − cos θ)² = 4 sin²θ + 12 sin θ cos θ + 9 cos²θ + 36 sin²θ − 12 sin θ cos θ + cos²θ = 40 sin²θ + 10 cos²θ",
+     "Use sin²θ + cos²θ = 1 to eliminate cos²θ: 40 sin²θ + 10(1 − sin²θ) = 30, giving 30 sin²θ = 20, so sin²θ = 2/3",
+     "sin θ = ±√(2/3) = ±√6/3",
+     "Since θ is obtuse, sin θ > 0, so sin θ = √6/3"
+    ],
+    "guidance": "M1 A1 expands both brackets correctly. M1 uses sin²θ + cos²θ = 1 to eliminate cos²θ or sin²θ. M1 A1 obtains sin θ = ±√6/3. R1F completes reasoned argument to obtain sin θ = √6/3 and explains why the negative root is rejected (θ obtuse so sin θ > 0). FT their sin²θ = k where 0 < k < 1."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "T₃ = (T₂ + 50) × 1.002 = (50 × 1.002² + 50 × 1.002 + 50) × 1.002 = 50 × 1.002³ + 50 × 1.002² + 50 × 1.002"
+    ],
+    "guidance": "R1 obtains 50 × 1.002³ + 50 × 1.002² + 50 × 1.002 with the intermediate step (50 × 1.002² + 50 × 1.002 + 50) × 1.002 or better seen."
+   },
+   "7(b)(i)": {
+    "type": "exact",
+    "points": [
+     "£6787 (or £6787.15 or £6787.16)"
+    ],
+    "guidance": "M1 models the total as the sum to n terms of a geometric sequence (a = 50.1, r = 1.002, n = 120). A1 forms the correct expression T₁₂₀ = 50.1(1 − 1.002¹²⁰) / (1 − 1.002). A1 obtains £6787, £6787.15 or £6787.16."
+   },
+   "7(b)(ii)": {
+    "type": "points",
+    "points": [
+     "The interest rate is unlikely to remain fixed for the whole 10 years (or: may have needed to withdraw some amount, or: may change the monthly payments)"
+    ],
+    "guidance": "E1 makes a reasonable comment in context, e.g. the interest rate is unlikely to remain fixed, or Kate may need to withdraw money, or the monthly payment may change."
+   },
+   "8(a)(i)": {
+    "type": "exact",
+    "points": [
+     "12 = a + b log₁₀ 24"
+    ],
+    "guidance": "B1 obtains 12 = a + b log₁₀ 24. ISW."
+   },
+   "8(a)(ii)": {
+    "type": "points",
+    "points": [
+     "Subtract the two equations to eliminate a: 12 − 6.4 = b log₁₀ 24 − b log₁₀ 3 = b log₁₀(24/3) = b log₁₀ 8",
+     "Therefore b = 5.6 / log₁₀ 8"
+    ],
+    "guidance": "M1 eliminates a to obtain an equation in b. M1 obtains b log₁₀ 8 from b log₁₀ 24 − b log₁₀ 3. R1 completes a reasoned argument to show b = 5.6 / log₁₀ 8. Must include log₁₀(24/3) OE. AG."
+   },
+   "8(a)(iii)": {
+    "type": "exact",
+    "points": [
+     "a ≈ 3.44"
+    ],
+    "guidance": "B1 obtains AWRT 3.44. Substitute b = 5.6/log₁₀ 8 and x = 3 into 6.4 = a + b log₁₀ 3 to find a."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Substitute x = 0.25 (one week old = 1/4 month) into y = 3.44 + 6.2 log₁₀ 0.25 ≈ −0.29",
+     "The model predicts a negative median mass, so it cannot be used to predict the median mass of monkeys less than one week old"
+    ],
+    "guidance": "M1 substitutes a value for 0 < x ≤ 0.25 into the model with their a and b ≈ 6.2, obtaining a correct negative y-value (or substitutes x = 0 and states y is undefined, or substitutes y = 0 to get x ≈ 0.28). R1 completes reasoned argument concluding the model cannot be used for monkeys less than one week old."
+   },
+   "9(a)(i)": {
+    "type": "exact",
+    "points": [
+     "1 − 3x + 9x²"
+    ],
+    "guidance": "M1 obtains 1 + (−1)(3x) + (−1)(−2)(3x)²/2! with at least two terms correct. A1 obtains 1 − 3x + 9x²."
+   },
+   "9(a)(ii)": {
+    "type": "points",
+    "points": [
+     "Write 1/(2 − 3x) = (2 − 3x)⁻¹ = 2⁻¹(1 − 3x/2)⁻¹",
+     "Expand (1 − 3x/2)⁻¹: 1 + (3x/2) + (3x/2)² + … = 1 + 3x/2 + 9x²/4",
+     "So 1/(2 − 3x) ≈ (1/2)(1 + 3x/2 + 9x²/4) = 1/2 + 3x/4 + 9x²/8",
+     "The three terms 1/2, 3x/4, 9x²/8 form a geometric sequence with common ratio 3x/2"
+    ],
+    "guidance": "B1 writes fraction as (2 − 3x)⁻¹. M1 factorises to obtain 2⁻¹(1 − 3x/2)⁻¹. M1 expands (1 − 3x/2)⁻¹ correctly (condone one sign error). R1 completes correct argument to show 1/(2−3x) ≈ 1/2 + 3x/4 + 9x²/8. B1 states common ratio is 3x/2."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "P = 8, Q = −4"
+    ],
+    "guidance": "M1 uses a valid method to find P or Q (substitution of x = −1/3 or x = 2/3, or comparison of coefficients). A1 obtains P = 8. A1 obtains Q = −4. From 36x = P(1 + 3x) + Q(2 − 3x): let x = 2/3 gives 24 = 3P so P = 8; let x = −1/3 gives −12 = 3Q so Q = −4."
+   },
+   "9(c)(i)": {
+    "type": "exact",
+    "points": [
+     "6x − 9x²"
+    ],
+    "guidance": "M1 multiplies their P by their expansion in (a)(ii) and multiplies their Q by their expansion in (a)(i) (condone a sign error). A1 obtains 6x − 9x². Using 12x/((1+3x)(2−3x)) = (1/3)[8/(2−3x) − 4/(1+3x)], multiply the expansions: (1/3)[8(1/2 + 3x/4 + 9x²/8) − 4(1 − 3x + 9x²)] = (1/3)(4 + 6x + 9x²/1 − 4 + 12x − 36x²) ... actually = 18x − 27x² (from P·expansion + Q·expansion), then note question has 12x not 36x, so divide by 3 to get 6x − 9x²."
+   },
+   "9(c)(ii)": {
+    "type": "exact",
+    "points": [
+     "|x| < 1/3"
+    ],
+    "guidance": "R1 deduces |x| < 1/3. The expansions of (1 + 3x)⁻¹ and (2 − 3x)⁻¹ are valid for |3x| < 1 and |3x/2| < 1 respectively; the binding constraint is |3x| < 1, i.e. |x| < 1/3. ACF."
+   },
+   "10": {
+    "type": "points",
+    "points": [
+     "f′(x) = 2x − 2 sin x",
+     "f″(x) = 2 − 2 cos x",
+     "f″(0) = 2 − 2 cos 0 = 0",
+     "f″(x) does not change sign either side of x = 0 (e.g. f″(−0.1) = f″(0.1) ≈ 9.99 × 10⁻³ > 0)",
+     "Therefore the curve does not have a point of inflection at x = 0"
+    ],
+    "guidance": "M1 differentiates to obtain 2x − 2 sin x. A1 M1 differentiates again to obtain 2 − 2 cos x. R1 concludes f″(0) = 0 and tests the sign of f″(x) either side of x = 0 (or deduces f″(x) ≥ 0 for all x). Must complete a reasoned argument to conclude y = f(x) does not have a point of inflection at x = 0."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "3 is not in the interval 3 < k < 4 (the interval is open, so 3 is excluded)"
+    ],
+    "guidance": "E1 explains that 3 is not in the interval (open interval, strict inequality). OE."
+   },
+   "11(b)(i)": {
+    "type": "points",
+    "points": [
+     "y = (3 + x)/2 is between 3 and x (i.e. 3 < y < x), which contradicts the assumption that x is the smallest value in the interval"
+    ],
+    "guidance": "E1 explains that 3 < y < x, which contradicts the definition of x as the smallest value in (3, 4)."
+   },
+   "11(b)(ii)": {
+    "type": "points",
+    "points": [
+     "Step 1: Assume there is a largest number in the interval 3 < k < 4 and let this largest number be x",
+     "Step 2: Let y = (x + 4) / 2",
+     "Step 3: x < y < 4 which is a contradiction (y is in the interval and larger than x)",
+     "Step 4: Therefore, there is no largest value in 3 < k < 4"
+    ],
+    "guidance": "B1 assumes there is a largest value in (3, 4). B1 constructs a value y in (3, 4) which is greater than x (must reference x before this step). E1 states x < y < 4 which is a contradiction. R1 concludes there is no largest value in (3, 4). CSO."
+   },
+   "12": {
+    "type": "exact",
+    "points": [
+     "3 m s⁻²"
+    ],
+    "guidance": "B1 for circling 3 m s⁻². Net force = 10 − 4 = 6 N. a = F/m = 6/2 = 3 m s⁻²."
+   },
+   "13": {
+    "type": "exact",
+    "points": [
+     "The acceleration of the car can change instantaneously."
+    ],
+    "guidance": "B1 for ticking the 3rd box. A velocity–time graph with sharp corners (changes in gradient) implies the acceleration can change instantaneously."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "r = −8"
+    ],
+    "guidance": "B1 obtains −8. r = 6(4) − 2(4²) = 24 − 32 = −8."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "0 < t < 3"
+    ],
+    "guidance": "M1 forms an equation or inequality comparing 6t − 2t² with 0 (PI by 6t = 2t², 6t > 2t², or finding t = 0 and t = 3). A1 obtains 0 < t < 3. OE."
+   },
+   "15": {
+    "type": "exact",
+    "points": [
+     "a = 8, b = 1"
+    ],
+    "guidance": "B1 obtains resultant force vector (a + 4, b + 23). M1 uses F = ma with m = 3 and a = (4b, a). M1 obtains two linear simultaneous equations a + 4 = 12b and b + 23 = 3a. A1 obtains a = 8 and b = 1."
+   },
+   "16": {
+    "type": "points",
+    "points": [
+     "First apple: s₁ = ½g(0.5)² = ½(9.8)(0.25) = 1.225 m",
+     "Second apple: s₂ = ½g(0.6)² = ½(9.8)(0.36) = 1.764 m",
+     "d = s₂ − s₁ = 0.539 m = 53.9 cm ≈ 54 cm"
+    ],
+    "guidance": "B1 forms correct constant acceleration equation for first apple with t = 0.5 (condone u not shown). M1 forms constant acceleration equation for second apple with t = 0.6. M1 finds the difference in heights. R1 completes reasoned argument to show d ≈ 54. Must see 53.9 or 0.539. AG."
+   },
+   "17": {
+    "type": "points",
+    "points": [
+     "Let reaction at A be R, so reaction at B is 2R",
+     "Take moments about A: distance from A to centre of rod = L − x; distance from A to B = 2L − (2x + 0.1)",
+     "(L − x)mg = (2L − 2x − 0.1) × 2R (moments), and R + 2R = mg (vertical equilibrium) gives R = mg/3",
+     "Substitute: (L − x)(mg) = (2L − 2x − 0.1)(2mg/3), simplify to get L − x = 0.2",
+     "So k = 0.2"
+    ],
+    "guidance": "B1 forms a dimensionally correct moment in L and x (e.g. (L − x)R or (L − (x + 0.1))2R). M1 forms dimensionally correct moments equation with at least one term correct. A1 obtains a fully correct equation in L and x only. R1 completes reasoned argument to obtain L − x = 0.2 (k = 0.2). Must show expansion of all brackets before the final answer."
+   },
+   "18(a)": {
+    "type": "points",
+    "points": [
+     "Differentiate r to get v = dr/dt = 2 + 0.2qe^(−0.2t)",
+     "Differentiate again to get a = d²r/dt² = −0.04qe^(−0.2t)",
+     "Substitute t = 3 and a = −1.8: −1.8 = −0.04q e^(−0.6)",
+     "q = 1.8 / (0.04 e^(−0.6)) = 45 / e^(−0.6) ≈ 81.995 ≈ 82"
+    ],
+    "guidance": "M1 uses v = dr/dt to obtain an expression for v with one term correct. A1 obtains v = 2 + 0.2qe^(−0.2t). A1 obtains a = −0.04qe^(−0.2t). M1 substitutes t = 3 and a = −1.8 into their expression for a. R1 completes reasoned argument and concludes q ≈ 82. Must show either a correct expression for q or q = 81.9…. AG."
+   },
+   "18(b)": {
+    "type": "exact",
+    "points": [
+     "p ≈ 87"
+    ],
+    "guidance": "M1 substitutes t = 0, r = 5 and their q into r = p + 2t − qe^(−0.2t): 5 = p − 82e⁰ = p − 82. A1 obtains AWRT 87."
+   },
+   "19(a)(i)": {
+    "type": "points",
+    "points": [
+     "Use v² = u² + 2as with v = 0, u = 7, a = −9.8: 0 = 49 − 2(9.8)h",
+     "h = 49/19.6 = 2.5 m, confirming the claim is correct"
+    ],
+    "guidance": "M1 substitutes three of the four values (v = 0, u = 7, a = −9.8, s = 2.5) into v² = u² + 2as (condone inconsistent signs). R1 completes reasoned argument to obtain the correct fourth value and concludes the claim is correct. AG."
+   },
+   "19(a)(ii)": {
+    "type": "points",
+    "points": [
+     "No air resistance",
+     "The ball is a particle (or: ball is shot from ground level)"
+    ],
+    "guidance": "E1 + E1. States two valid assumptions from: no air resistance; the ball is a particle; the ball is shot from the ground. Two distinct valid assumptions required."
+   },
+   "19(b)": {
+    "type": "exact",
+    "points": [
+     "k ≈ 2.4"
+    ],
+    "guidance": "B1 states or uses 7 cos 11° for the vertical component of velocity. M1 uses v² = u² + 2as with u = their vertical component, v = 0 and a = −9.8. A1 obtains 0 = 49 cos² 11° − 2(9.8)k. A1 obtains AWRT 2.4."
+   },
+   "20(a)": {
+    "type": "points",
+    "points": [
+     "Displacement of Q = (14i + 5j) − (5i − 7j) = 9i + 12j = 3(3i + 4j)",
+     "This is a scalar multiple of P's velocity direction (3i + 4j), so P and Q move along parallel lines"
+    ],
+    "guidance": "M1 subtracts the two given position vectors for Q (condone either order). A1 obtains 9i + 12j (ACF). R1 completes reasoned argument to show 9i + 12j = 3(3i + 4j) and concludes P and Q move along parallel lines."
+   },
+   "20(b)": {
+    "type": "points",
+    "points": [
+     "Constant velocity is not the same as average velocity (Q's speed may change / Q could accelerate)"
+    ],
+    "guidance": "E1 states that constant velocity is not the same as average velocity, or that Q's speed may change, or that Q could accelerate."
+   },
+   "20(c)": {
+    "type": "points",
+    "points": [
+     "Speed of P = |3i + 4j| = √(9 + 16) = 5 m s⁻¹",
+     "R's speed is 4 m s⁻¹, so 1 second before P passes X, R is 4 m from X; distance from X to R = 4 × 1 = 4 m... (actually at t = 3 after R passes X, R has gone 4 × 3 = 12 m from X)",
+     "P passes X 2 s after R, so at t = 3 (after R), t = 1 (after P). P is 5 × 1 = 5 m from X",
+     "Distance XR = 12 m, distance XP = 5 m, distance PR = 13 m",
+     "5² + 12² = 25 + 144 = 169 = 13², so by the converse of Pythagoras, angle PXR = 90°, therefore P and R move along perpendicular lines"
+    ],
+    "guidance": "B1 obtains 12 m for distance from X to R (4 × 3). B1 obtains 5 m s⁻¹ for speed of P (|3i + 4j|). M1 calculates distance travelled by P using their speed and t = 1 (condone t = 2). A1 identifies 5, 12 and 13 as a Pythagorean triple (or correctly applies cosine rule). R1 completes reasoned argument that PXR is a right-angled triangle and concludes P and R move along perpendicular lines."
+   },
+   "21(a)": {
+    "type": "points",
+    "points": [
+     "80g − T is the resultant force on N (weight down, tension up). By F = ma: 80g − T = 80a"
+    ],
+    "guidance": "E1 states that the resultant force is 80g − T and states F = ma."
+   },
+   "21(b)": {
+    "type": "points",
+    "points": [
+     "Resolve perpendicular to the slope: R = 50g cos 60° = 50g × ½ = 25g newtons"
+    ],
+    "guidance": "B1 states 50g cos 60° = 25g. OE."
+   },
+   "21(c)": {
+    "type": "points",
+    "points": [
+     "Friction force F = μR = 25gμ (opposing motion, so acting down the slope on M)",
+     "Equation of motion for M parallel to slope: T − 50g sin 60° − 25gμ = 50a",
+     "Eliminate T using 80g − T = 80a, i.e. T = 80g − 80a:",
+     "80g − 80a − 50g sin 60° − 25gμ = 50a",
+     "80g − 50g(√3/2) − 25gμ = 130a",
+     "a = g(80 − 25√3 − 25μ) / 130 = g(16 − 5√3 − 5μ) / 26",
+     "Since 0 ≤ μ ≤ 1, the minimum occurs at μ = 1: a ≥ g(16 − 5√3 − 5) / 26 = g(11 − 5√3) / 26"
+    ],
+    "guidance": "B1 resolves parallel to slope to obtain 50g sin 60° or better. B1 obtains ±μ × 25g for friction (or states μ = 1 and obtains 25g). M1 forms three- or four-term equation of motion for M using F = ma parallel to slope. A1 obtains single correct equation or inequality with μ. M1 eliminates T using the equation in 21(a). R1 completes reasoned argument to show a ≥ (11 − 5√3)g/26 with clear reason for using μ = 1. AG."
+   },
+   "21(d)": {
+    "type": "points",
+    "points": [
+     "The rope is light (has no mass) / rope is inextensible / pulley is fixed / no air resistance"
+    ],
+    "guidance": "E1 states any one valid assumption, e.g. rope is light, rope is inextensible, pulley is fixed, no air resistance."
+   }
+  }
  }
 };
