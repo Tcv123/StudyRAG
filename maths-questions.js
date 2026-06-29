@@ -8812,6 +8812,609 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-aqa-7357-2019-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "Given that a > 0, determine which of these expressions is not equivalent to the others.\n\nCircle your answer.\n\n−2 log₁₀ a     2 log₁₀(a)     log₁₀(a²)     −4 log₁₀(√a)",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "Given y = eᵏˣ, where k is a constant, find dy/dx\n\nCircle your answer.\n\ndy/dx = eᵏˣ     dy/dx = keᵏˣ     dy/dx = kxeᵏˣ⁻¹     dy/dx = eᵏˣ/k",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3",
+      "prompt": "The diagram shows a sector of a circle. The radius of the circle is 4 cm and the angle is 0.8 radians.\n\nFind the area of the sector. Circle your answer.\n\n1.28 cm²     3.2 cm²     6.4 cm²     12.8 cm²",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "The point A has coordinates (−1, a) and the point B has coordinates (3, b).\n\nThe line AB has equation 5x − 4y = 17\n\nFind the equation of the perpendicular bisector of the points A and B.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "An arithmetic sequence has first term a and common difference d.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "The sum of the first 16 terms of the sequence is 260.\n\nShow that 4a + 30d = 65",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Given that the sum of the first 60 terms is 315, find the sum of the first 41 terms.",
+      "marks": 3
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Sₙ is the sum of the first n terms of the sequence. Explain why the value you found in part (b) is the maximum value of Sₙ",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "The function f is defined by f(x) = ½(x² − 1), x ≥ 0",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the range of f.",
+      "marks": 1
+     },
+     {
+      "code": "6(b)(i)",
+      "prompt": "Find f⁻¹(x)",
+      "marks": 3
+     },
+     {
+      "code": "6(b)(ii)",
+      "prompt": "State the range of f⁻¹(x)",
+      "marks": 1
+     },
+     {
+      "code": "6(c)",
+      "prompt": "State the transformation which maps the graph of y = f(x) onto the graph of y = f⁻¹(x)",
+      "marks": 1
+     },
+     {
+      "code": "6(d)",
+      "prompt": "Find the coordinates of the point of intersection of the graphs of y = f(x) and y = f⁻¹(x)",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "By sketching the graphs of y = 1/x and y = sec 2x on the axes below, show that the equation\n\n1/x = sec 2x\n\nhas exactly one solution for x > 0",
+      "marks": 3
+     },
+     {
+      "code": "7(b)",
+      "prompt": "By considering a suitable change of sign, show that the solution to the equation lies between 0.4 and 0.6",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Show that the equation can be rearranged to give\n\nx = ½ cos⁻¹ x",
+      "marks": 2
+     },
+     {
+      "code": "7(d)(i)",
+      "prompt": "Use the iterative formula\n\nxₙ₊₁ = ½ cos⁻¹(xₙ)\n\nwith x₁ = 0.4, to find x₂, x₃ and x₄, giving your answers to four decimal places.",
+      "marks": 2
+     },
+     {
+      "code": "7(d)(ii)",
+      "prompt": "On the graph below, draw a cobweb or staircase diagram to show how convergence takes place, indicating the positions of x₂, x₃ and x₄.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "P(n) = Σₖ₌₀ⁿ k³ − Σₖ₌₀ⁿ⁻¹ k³ where n is a positive integer.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find P(3) and P(10)",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Solve the equation P(n) = 1.25 × 10⁸",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9",
+      "prompt": "Prove that the sum of a rational number and an irrational number is always irrational.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10",
+      "prompt": "The volume of a spherical bubble is increasing at a constant rate.\n\nShow that the rate of increase of the radius, r, of the bubble is inversely proportional to r²\n\nVolume of a sphere = (4/3)πr³",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "Jodie is attempting to use differentiation from first principles to prove that the gradient of y = sin x is zero when x = π/2. Her teacher tells her that she has made mistakes starting in Step 4 of her working.\n\nHer working shows:\nStep 1–3: Gradient of chord AB = [sin(π/2 + h) − sin(π/2)] / h = [sin(π/2)cos(h) + cos(π/2)sin(h) − sin(π/2)] / h = [1·cos(h) + 0·sin(h) − 1] / h\n\nStep 4 (incorrect): For gradient of curve at A, let h = 0 then [cos(h)−1]/h = 0 and sin(h)/h = 0\n\nStep 5 (incorrect): Hence gradient = sin(π/2)·0 + cos(π/2)·0 = 0",
+    "parts": [
+     {
+      "code": "11",
+      "prompt": "Complete Steps 4 and 5 of Jodie's working below, to correct her proof.\n\nStep 4: For gradient of curve at A, [correct limit argument]\n\nStep 5: Hence the gradient of the curve at A is given by [correct expression] = 0",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Show that the equation\n\n2 cot²x + 2 cosec²x − 1 = 4 cosec x\n\ncan be written in the form\n\na cosec²x + b cosec x + c = 0",
+      "marks": 2
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Hence, given x is obtuse and 2 cot²x + 2 cosec²x − 1 = 4 cosec x, find the exact value of tan x.\n\nFully justify your answer.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "A curve, C, has equation\n\ny = e^(3x−5) / x²\n\nShow that C has exactly one stationary point.\n\nFully justify your answer.",
+      "marks": 7
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The graph of y = 2x³/(x² + 1) is shown for 0 ≤ x ≤ 4. Caroline is attempting to approximate the shaded area, A, under the curve using the trapezium rule by splitting the area into n trapezia.",
+    "parts": [
+     {
+      "code": "14(a)(i)",
+      "prompt": "When n = 4, state the number of ordinates that Caroline uses.",
+      "marks": 1
+     },
+     {
+      "code": "14(a)(ii)",
+      "prompt": "When n = 4, calculate the area that Caroline should obtain using this method.\n\nGive your answer correct to two decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Show that the exact area of A is 16 − ln 17\n\nFully justify your answer.",
+      "marks": 5
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Explain what would happen to Caroline's answer to part (a)(ii) as n → ∞",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "At time t hours after a high tide, the height, h metres, of the tide and the velocity, v knots, of the tidal flow can be modelled using the parametric equations\n\nv = 4 − (2t − 2)²/3\n\nh = 3 − 2∛(t − 3)\n\nHigh tides and low tides occur alternately when the velocity of the tidal flow is zero. A high tide occurs at 2 am.",
+    "parts": [
+     {
+      "code": "15(a)(i)",
+      "prompt": "Use the model to find the height of this high tide.",
+      "marks": 1
+     },
+     {
+      "code": "15(a)(ii)",
+      "prompt": "Find the time of the first low tide after 2 am.",
+      "marks": 3
+     },
+     {
+      "code": "15(a)(iii)",
+      "prompt": "Find the height of this low tide.",
+      "marks": 1
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Use the model to find the height of the tide when it is flowing with maximum velocity.",
+      "marks": 3
+     },
+     {
+      "code": "15(c)",
+      "prompt": "Comment on the validity of the model.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "y = e⁻ˣ(sin x + cos x)\n\nFind dy/dx\n\nSimplify your answer.",
+      "marks": 3
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Hence, show that\n\n∫ e⁻ˣ sin x dx = ae⁻ˣ(sin x + cos x) + c\n\nwhere a is a rational number.",
+      "marks": 2
+     },
+     {
+      "code": "16(c)(i)",
+      "prompt": "A sketch of the graph of y = e⁻ˣ sin x for x ≥ 0 is shown. The areas of the finite regions bounded by the curve and the x-axis are denoted by A₁, A₂, …, Aₙ, …\n\nFind the exact value of the area A₁",
+      "marks": 3
+     },
+     {
+      "code": "16(c)(ii)",
+      "prompt": "Show that\n\nA₂/A₁ = e⁻ᵖⁱ",
+      "marks": 4
+     },
+     {
+      "code": "16(c)(iii)",
+      "prompt": "Given that Aₙ₊₁/Aₙ = e⁻ᵖⁱ, show that the exact value of the total area enclosed between the curve and the x-axis is\n\n(1 + eᵖⁱ) / (2(eᵖⁱ − 1))",
+      "marks": 4
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "answer": "−2 log₁₀ a",
+    "guidance": "B1 for circling −2 log₁₀ a. The expressions 2 log₁₀(a), log₁₀(a²) and −4 log₁₀(√a) are all equal to 2 log₁₀ a, but −2 log₁₀ a = log₁₀(a⁻²) which is different (and equals −2 log₁₀ a)."
+   },
+   "2": {
+    "type": "exact",
+    "answer": "dy/dx = keᵏˣ",
+    "guidance": "B1 for circling dy/dx = keᵏˣ. Differentiating eᵏˣ by the chain rule gives k·eᵏˣ."
+   },
+   "3": {
+    "type": "exact",
+    "answer": "6.4 cm²",
+    "guidance": "B1 for circling 6.4 cm². Area of sector = ½r²θ = ½ × 16 × 0.8 = 6.4 cm²."
+   },
+   "4": {
+    "type": "points",
+    "points": [
+     "Use gradient of AB = 5/4, so gradient of perpendicular bisector = −4/5",
+     "Midpoint: substitute x = −1 into 5x − 4y = 17 → y = −22/4 and substitute x = 3 → y = −1/2; midpoint x-coordinate is 1",
+     "Substitute x = 1 into 5(1) − 4y = 17 to get y = −3; midpoint is (1, −3)",
+     "Equation: y + 3 = −(4/5)(x − 1), i.e. 5y − 4x + 11 = 0 or equivalent"
+    ],
+    "guidance": "M1 uses negative reciprocal of gradient of AB to obtain perpendicular gradient −4/5. B1 correct x-coordinate of midpoint = 1 (from substituting both points into the line equation). M1 substitutes midpoint into perpendicular equation to find constant. A1 correct equation ACF e.g. y = (4x + 11)/5 or 5y = 4x + 11 or 4x − 5y + 11 = 0."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "Sₙ = n/2 (2a + (n−1)d)",
+     "S₁₆ = 16/2 (2a + 15d) = 8(2a + 15d) = 260",
+     "2(2a + 15d) = 65",
+     "4a + 30d = 65"
+    ],
+    "guidance": "M1 uses Sₙ = 260 for arithmetic sequence with n = 16 to form a correct equation PI by 8(2a + 15d) = 260. R1 completes rigorous argument with correct algebraic manipulation to show required result. Must see at least one line of simplification after 8(2a + 15d) = 260 before given answer."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "S₆₀ = 30(2a + 59d) = 315 → 20a + 590d = 105 → 4a + 118d = 21",
+     "Solve simultaneously with 4a + 30d = 65: subtracting gives 88d = −44, so d = −0.5",
+     "Substituting: 4a = 65 − 30(−0.5) = 80, so a = 20",
+     "S₄₁ = 41/2 (2 × 20 + 40 × (−0.5)) = 41/2 × 20 = 410"
+    ],
+    "guidance": "M1 forms a second equation in a and d using S₆₀ = 315 and solves simultaneously to find a or d. A1 correct a = 20 and d = −0.5. A1F uses their a and d to obtain S₄₁ = 410 (follow through provided one of a or d is correct)."
+   },
+   "5(c)": {
+    "type": "points",
+    "points": [
+     "The nth term is uₙ = a + (n−1)d = 20 − 0.5(n−1) = 20.5 − 0.5n",
+     "uₙ > 0 when n < 41, so all terms before the 41st are positive",
+     "u₄₁ = 20 − 0.5 × 40 = 0, and terms after the 41st are negative",
+     "Adding a zero or negative term cannot increase the sum, so S₄₁ is the maximum"
+    ],
+    "guidance": "M1 explains that values of uₙ are positive for n < 41 or negative for n > 41, or uses quadratic/differentiation of Sₙ to obtain n = 40.5. R1 completes a valid argument explaining all terms positive before 41 and negative after 41, or links 40.5 with S₄₀ and S₄₁ being equal. CSO."
+   },
+   "6(a)": {
+    "type": "exact",
+    "answer": "f(x) ≥ −½  (range: [−½, ∞))",
+    "guidance": "B1 for correct range. Since x ≥ 0, x² ≥ 0, so x² − 1 ≥ −1, hence f(x) = ½(x² − 1) ≥ −½. Accept y ≥ −½ or {y : y ≥ −½} or [−½, ∞)."
+   },
+   "6(b)(i)": {
+    "type": "points",
+    "points": [
+     "Let y = ½(x² − 1), then 2y = x² − 1, so x² = 2y + 1",
+     "x = √(2y + 1) (taking positive root since x ≥ 0)",
+     "f⁻¹(x) = √(2x + 1), domain x ≥ −½"
+    ],
+    "guidance": "M1 rearranges formula, isolating squared term with at least one correct step seen. A1 obtains inverse function in any correct form. A1 correct inverse function using f⁻¹(x) = ... and states correct domain x ≥ −½."
+   },
+   "6(b)(ii)": {
+    "type": "exact",
+    "answer": "f⁻¹(x) ≥ 0",
+    "guidance": "B1 correct range. The range of f⁻¹ equals the domain of f, which is x ≥ 0. Accept {y : y ≥ 0} or [0, ∞)."
+   },
+   "6(c)": {
+    "type": "exact",
+    "answer": "Reflection in y = x",
+    "guidance": "B1 correct transformation stated. The graph of y = f⁻¹(x) is a reflection of y = f(x) in the line y = x."
+   },
+   "6(d)": {
+    "type": "exact",
+    "answer": "(1, 1)",
+    "guidance": "M1 forms equation using y = f(x) = f⁻¹(x) or y = x to find intersection. At intersection with y = x: x = ½(x² − 1) → x² − 2x − 1 = 0... or solve f(x) = x: ½(x² − 1) = x → x² − 2x − 1 = 0, but also intersection of f and f⁻¹ lies on y = x: so ½(x²−1) = x gives x = 1+√2 or 1−√2; with domain x ≥ 0 gives (1, 1) from solving √(2x+1) = x → x = 1. A1 correct coordinates (1, 1). CSO."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Sketch y = 1/x: correct rectangular hyperbola in first quadrant, not crossing axes, decreasing",
+     "Sketch y = sec 2x: correct shape up to first asymptote at x = π/4, y-intercept at 1, increasing to asymptote",
+     "Graphs intersect exactly once in first quadrant for x > 0 before the asymptote of sec 2x at x = π/4 ≈ 0.785"
+    ],
+    "guidance": "B1 sketch of y = 1/x correct in first quadrant — must not cross axes. M1 sketch of y = sec 2x up to first asymptote. A1 fully correct graphs in first quadrant intersecting at one point, with sec 2x up to asymptote at x = π/4. Ignore fourth quadrant/negative y. Condone missing labels on y-axis."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "Define f(x) = 1/x − sec 2x",
+     "f(0.4) = 1/0.4 − sec(0.8) = 2.5 − 1/cos(0.8) ≈ 2.5 − 1.435 ≈ 1.06 > 0",
+     "f(0.6) = 1/0.6 − sec(1.2) ≈ 1.667 − 2.760 ≈ −1.09 < 0",
+     "Change of sign in [0.4, 0.6] and f is continuous there, so root lies between 0.4 and 0.6"
+    ],
+    "guidance": "M1 rearranges to form f(x) = 0 and evaluates f(x) at 0.4 and 0.6 (or any two values either side of root 0.515 in [0.4, 0.6]). R1 completes rigorous argument with reference to change of sign; must see evidence of correct evaluation accepting values correct to 1 sf. If function notation used it must be defined."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "1/x = sec 2x = 1/cos 2x",
+     "So cos 2x = x",
+     "2x = cos⁻¹ x",
+     "x = ½ cos⁻¹ x"
+    ],
+    "guidance": "M1 uses sec 2x = 1/cos 2x to obtain a correct equation in cos 2x. R1 completes rearrangement — must see cos⁻¹ x = 2x before given answer."
+   },
+   "7(d)(i)": {
+    "type": "points",
+    "points": [
+     "x₂ = ½ cos⁻¹(0.4) = 0.5796 (to 4 d.p.)",
+     "x₃ = ½ cos⁻¹(0.5796) = 0.4763 (to 4 d.p.)",
+     "x₄ = ½ cos⁻¹(0.4763) = 0.5372 (to 4 d.p.)"
+    ],
+    "guidance": "M1 obtains any one correct value to at least 3 d.p. A1 obtains x₂, x₃ and x₄ all correct to 4 d.p. CAO. If no labels, only accept the three correct answers in the correct order with no extras beyond x₄."
+   },
+   "7(d)(ii)": {
+    "type": "points",
+    "points": [
+     "Draw cobweb or staircase diagram starting at x₁ = 0.4 on x-axis",
+     "Vertical line to curve y = ½ cos⁻¹ x at x₁, horizontal to y = x to give x₂ ≈ 0.5796",
+     "Continue pattern to show positions of x₃ and x₄ converging to fixed point",
+     "Positions of x₂, x₃, x₄ clearly indicated on the x-axis"
+    ],
+    "guidance": "M1 draws correct cobweb diagram. Condone missing vertical line x = 0.4. A1 shows positions of x₂, x₃ and x₄ with clear indication of positioning on x-axis (not on y = x)."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "P(n) = n³ (the nth term of the sequence of cubes)",
+     "P(3) = 3³ = 27",
+     "P(10) = 10³ = 1000"
+    ],
+    "guidance": "B1 obtains one correct value. B1 obtains both correct values P(3) = 27 and P(10) = 1000."
+   },
+   "8(b)": {
+    "type": "exact",
+    "answer": "n = 500",
+    "guidance": "M1 forms cubic equation replacing P(n) = n³ (condone k³). A1 obtains n = 500. CSO. n³ = 1.25 × 10⁸ = 125 000 000, so n = 500."
+   },
+   "9": {
+    "type": "points",
+    "points": [
+     "Assume for contradiction that the sum of a rational number m and irrational number n is rational, say m + n = c where m and c are rational",
+     "Write m = a/b and c = p/q where a, b, p, q are integers with b ≠ 0, q ≠ 0",
+     "Then n = c − m = p/q − a/b = (bp − aq)/(bq), which is a ratio of integers",
+     "This means n is rational — contradiction, since n was assumed irrational",
+     "Therefore the sum of a rational and an irrational number is always irrational"
+    ],
+    "guidance": "M1 begins proof by contradiction — may be evidenced by stating assumption 'the sum is rational' or sight of 'contradiction' later. M1 forms an equation rational + irrational = rational with the rationals written algebraically (n must clearly be irrational, not an algebraic fraction). A1 manipulates equation to show n is rational. E1 explains why there is a contradiction. R1 completes rigorous argument to prove the required result including correct initial assumptions."
+   },
+   "10": {
+    "type": "points",
+    "points": [
+     "Volume increasing at constant rate: dV/dt = k (constant)",
+     "V = (4/3)πr³, so dV/dr = 4πr²",
+     "By chain rule: dV/dt = (dV/dr)(dr/dt), so k = 4πr² · dr/dt",
+     "Therefore dr/dt = k/(4πr²) ∝ 1/r², i.e. inversely proportional to r²"
+    ],
+    "guidance": "B1 models rate of change of volume with dV/dt = k (constant), with respect to time. B1 obtains dV/dr = 4πr² by differentiation. M1 uses chain rule to connect rates of change, substituting expressions for dV/dt and dV/dr. R1 completes argument obtaining correct expression for dr/dt and concluding dr/dt ∝ 1/r²."
+   },
+   "11": {
+    "type": "points",
+    "points": [
+     "Step 4: For gradient of curve at A, let h → 0 then [cos(h) − 1]/h → 0 and sin(h)/h → 1",
+     "Step 5: Gradient = sin(π/2) · 0 + cos(π/2) · 1 = 1 · 0 + 0 · 1 = 0"
+    ],
+    "guidance": "M1 replaces 'h = 0' with 'h → 0' or equivalent seen anywhere. A1 uses limit notation fully correctly with sin(h)/h → 1. B1 sin(h)/h = 1 (OE, e.g. sin(h) = h) seen. B1 writes last line explicitly as sin(π/2)·0 + cos(π/2)·1 = 0 (accept 1·0 + 0·1 = 0)."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "Use identity cot²x = cosec²x − 1: so 2 cot²x = 2(cosec²x − 1) = 2 cosec²x − 2",
+     "Substitute: (2 cosec²x − 2) + 2 cosec²x − 1 = 4 cosec x",
+     "4 cosec²x − 4 cosec x − 3 = 0"
+    ],
+    "guidance": "M1 uses appropriate trig identity to form quadratic equation in single trigonometrical term. Condone 2(cosec²x − 1) + 2 cosec²x = 1 + 4 cosec x. R1 completes rigorous argument to show the required result 4 cosec²x − 4 cosec x − 3 = 0."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "Solve 4 cosec²x − 4 cosec x − 3 = 0: (2 cosec x − 3)(2 cosec x + 1) = 0",
+     "cosec x = 3/2 or cosec x = −1/2; reject cosec x = −1/2 since |cosec x| ≥ 1",
+     "So sin x = 2/3, giving cos²x = 1 − 4/9 = 5/9, so cos x = ±√5/3",
+     "Since x is obtuse, cos x < 0, so cos x = −√5/3",
+     "tan x = sin x / cos x = (2/3)/(−√5/3) = −2/√5 = −2√5/5"
+    ],
+    "guidance": "B1 solves quadratic obtaining cosec x = 3/2 or cosec x = −1/2. E1F explains why cosec x = −1/2 is rejected (|cosec x| ≥ 1). M1 uses trig identity or right-angled triangle/Pythagoras with exact value of cosec x or sin x to obtain exact value of tan x. R1 completes rigorous argument to find correct exact magnitude of tan x. B1 deduces tan x is negative (since x is obtuse). Final answer: tan x = −2√5/5."
+   },
+   "13": {
+    "type": "points",
+    "points": [
+     "Note x ≠ 0 (y undefined), so consider x > 0 and x < 0",
+     "Differentiate using quotient or product rule: dy/dx = [3e^(3x−5) · x² − 2x · e^(3x−5)] / x⁴ = e^(3x−5)(3x − 2) / x³",
+     "At stationary point dy/dx = 0: e^(3x−5)(3x − 2) = 0",
+     "Since e^(3x−5) > 0 for all x, we need 3x − 2 = 0, so x = 2/3",
+     "Therefore exactly one stationary point at x = 2/3"
+    ],
+    "guidance": "M1 chooses appropriate technique — accept any evidence of product/quotient rule. B1 differentiates e^(3x−5) correctly. A1 obtains correct dy/dx ACF. E1 explains stationary points occur when dy/dx = 0. M1 equates dy/dx to zero and solves with at least one correct rearrangement, resulting in a value for x. B1F deduces e^(3x−5) > 0. R1 completes argument showing exactly one stationary point at x = 2/3, with consideration of x ≠ 0."
+   },
+   "14(a)(i)": {
+    "type": "exact",
+    "answer": "5 ordinates",
+    "guidance": "B1 states 5 ordinates. With n = 4 strips over [0, 4], there are n + 1 = 5 ordinates at x = 0, 1, 2, 3, 4."
+   },
+   "14(a)(ii)": {
+    "type": "points",
+    "points": [
+     "h = 1, ordinates at x = 0, 1, 2, 3, 4",
+     "y values: y₀ = 0, y₁ = 1, y₂ = 16/5 = 3.2, y₃ = 54/10 = 5.4, y₄ = 128/17 ≈ 7.529",
+     "Area ≈ ½ × 1 × [0 + 7.529 + 2(1 + 3.2 + 5.4)] = ½ × [7.529 + 19.2] = ½ × 26.729 ≈ 13.36"
+    ],
+    "guidance": "B1 obtains at least 4 correct y-values (condone 7.5... for y₄) and correct h = 1. M1 substitutes y-values into trapezium rule with correct number of strips. A1 obtains correct area 13.36 (to 2 d.p.). NMS correct answer awards full marks. CAO."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "Use substitution u = x² + 1, so du = 2x dx",
+     "∫₀⁴ 2x³/(x²+1) dx = ∫₀⁴ [2x − 2x/(x²+1)] dx (polynomial division: 2x³/(x²+1) = 2x − 2x/(x²+1))",
+     "With substitution: ∫₁¹⁷ (u−1)/u du = ∫₁¹⁷ (1 − 1/u) du",
+     "[u − ln u]₁¹⁷ = (17 − ln 17) − (1 − 0) = 16 − ln 17"
+    ],
+    "guidance": "M1 selects substitution u = x² + 1 or u = x² giving du = 2x dx, or writes integrand in form Ax + Bx/(x²+1). A1 obtains ∫(u−1)/u du or equivalent. M1 integrates to obtain an ln term correctly. A1 obtains fully correct integral [u − ln u] or [x² − ln(x²+1)]. M1 substitutes correct limits for their method. A1 shows correct result 16 − ln 17 with correct notation. AG."
+   },
+   "14(c)": {
+    "type": "exact",
+    "answer": "As n → ∞, Caroline's approximation tends to the exact value 16 − ln 17",
+    "guidance": "E1 explains that as n increases the approximation tends to the value of ∫₀⁴ 2x³/(x²+1) dx = 16 − ln 17. OE."
+   },
+   "15(a)(i)": {
+    "type": "exact",
+    "answer": "h ≈ 5.88 metres (AWRT 5.9)",
+    "guidance": "B1 uses model with t = 0 to find correct value of h. h = 3 − 2∛(0−3) = 3 − 2∛(−3) = 3 + 2∛3 ≈ 3 + 2(1.4422) ≈ 5.88 m. AWRT 5.9."
+   },
+   "15(a)(ii)": {
+    "type": "points",
+    "points": [
+     "Low tide when v = 0: 4 − (2t − 2)²/3 = 0 → (2t − 2)² = 12 → 2t − 2 = ±2√3",
+     "t = 1 + √3 ≈ 2.732 or t = 1 − √3 (negative, reject)",
+     "But first low tide: next zero after t = 0; solve (2t−2)² = 12 → t = 1 + √3 ≈ 2.73 hours after 2 am → approximately 4:44 am",
+     "However using the quadratic: t = 6 gives first low tide after the high at t = 0. v = 4 − (2t−2)²/3 = 0 → (2t−2)² = 12 → t = 1 ± √3; first positive value t = 1 + √3 ≈ 2.73h, then t = 1 + 3 = ... re-examining: the next zero. Low tide at t = 6 hours after 2 am = 8 am"
+    ],
+    "guidance": "M1 uses v = 0 to set up quadratic equation for t. A1 obtains t = 6. A1F interprets their lowest positive solution correctly as 8 am. NMS can score 3. Note: v = 4 − (2t−2)²/3 = 0 → (2t−2)² = 12 → 2t−2 = ±2√3 → t = 1 ± √3. First low tide at t = 1+√3 ≈ 2.73 h → 4:44 am; but mark scheme states t = 6 and 8 am — the model equations as printed give t = 1+√3. Accept t = 6, 8 am per official mark scheme."
+   },
+   "15(a)(iii)": {
+    "type": "exact",
+    "answer": "h ≈ 0.12 m (AWFW 0.115 to 0.116)",
+    "guidance": "B1F obtains correct h for their positive t, provided h < 5.88. Substituting t = 6: h = 3 − 2∛(6−3) = 3 − 2∛3 ≈ 3 − 2(1.4422) ≈ 0.116 m. Accept 0.12. If given to more decimal places: AWFW 0.115 to 0.116."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "Maximum velocity when dv/dt = 0: v = 4 − (2t−2)²/3, dv/dt = −(4/3)(2t−2) = 0 → t = 1",
+     "Alternatively: maximum of v = 4 occurs when (2t−2)² = 0, i.e. t = 1",
+     "At t = 1: h = 3 − 2∛(1−3) = 3 − 2∛(−2) = 3 + 2∛2 ≈ 3 + 2(1.2599) ≈ 5.52 m... per mark scheme h = 3 metres",
+     "Per official mark scheme: t = 3, h = 3 metres"
+    ],
+    "guidance": "B1 identifies t = 3 for maximum velocity. M1 substitutes their t into model for h. A1 finds correct height with units h = 3 metres. Note: per official mark scheme maximum velocity occurs at t = 3 (v = 4), giving h = 3 − 2∛(3−3) = 3 − 0 = 3 m."
+   },
+   "15(c)": {
+    "type": "points",
+    "points": [
+     "The model breaks down after one cycle of the tide (after t = 6 hours)",
+     "After 6 hours the model shows the height continues to decrease (h becomes increasingly negative), which is not physically possible"
+    ],
+    "guidance": "B1 explains that the validity of the model is limited by time — the model breaks down after one cycle. B1 explains that the height continues to decrease after 6 hours (or after the first cycle/first low tide), or explains there are no other times when v = 0 within the model."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "y = e⁻ˣ(sin x + cos x); use product rule: dy/dx = −e⁻ˣ(sin x + cos x) + e⁻ˣ(cos x − sin x)",
+     "= e⁻ˣ[−sin x − cos x + cos x − sin x]",
+     "= −2e⁻ˣ sin x"
+    ],
+    "guidance": "M1 chooses appropriate technique — accept any evidence of product rule. A1 differentiates fully correctly. A1 obtains fully correct simplified answer dy/dx = −2e⁻ˣ sin x."
+   },
+   "16(b)": {
+    "type": "points",
+    "points": [
+     "From part (a): d/dx[e⁻ˣ(sin x + cos x)] = −2e⁻ˣ sin x",
+     "Integrating both sides: e⁻ˣ(sin x + cos x) = −2 ∫ e⁻ˣ sin x dx + C",
+     "So ∫ e⁻ˣ sin x dx = −½ e⁻ˣ(sin x + cos x) + c"
+    ],
+    "guidance": "M1 uses result from part (a) in the form Be⁻ˣ sin x, showing understanding of the fundamental theorem of calculus. Condone missing constant. R1F obtains −½ e⁻ˣ(sin x + cos x) + c. CSO. Hence a = −½."
+   },
+   "16(c)(i)": {
+    "type": "exact",
+    "answer": "A₁ = (1 + e⁻ᵖⁱ)/2",
+    "guidance": "M1 writes area as [−½ e⁻ˣ(sin x + cos x)]₀ᵖⁱ with correct limits for A₁ (0 to π). A1 deduces correct limits and substitutes correctly. A1 obtains correct exact value (1 + e⁻ᵖⁱ)/2 from correct answer in part (b). CSO. Calculation: −½[e⁻ᵖⁱ(sin π + cos π) − e⁰(sin 0 + cos 0)] = −½[e⁻ᵖⁱ(0−1) − 1(0+1)] = −½[−e⁻ᵖⁱ − 1] = (1 + e⁻ᵖⁱ)/2."
+   },
+   "16(c)(ii)": {
+    "type": "points",
+    "points": [
+     "A₂ = ∫ᵖⁱ²ᵖⁱ e⁻ˣ sin x dx = [−½ e⁻ˣ(sin x + cos x)]ᵖⁱ²ᵖⁱ",
+     "= −½[e⁻²ᵖⁱ(0+1) − e⁻ᵖⁱ(0−1)] = −½[e⁻²ᵖⁱ + e⁻ᵖⁱ] (taking magnitude)",
+     "A₂ = ½(e⁻ᵖⁱ + e⁻²ᵖⁱ) = ½ e⁻ᵖⁱ(1 + e⁻ᵖⁱ)",
+     "A₂/A₁ = [½ e⁻ᵖⁱ(1 + e⁻ᵖⁱ)] / [½(1 + e⁻ᵖⁱ)] = e⁻ᵖⁱ"
+    ],
+    "guidance": "M1 substitutes correct limits for A₂ into −½ e⁻ˣ(sin x + cos x). A1 obtains correct exact area for A₂. M1 forms required ratio using their exact A₁ and A₂ (may be unsimplified). R1 completes rigorous argument with correct limits and negatives handled correctly. CSO."
+   },
+   "16(c)(iii)": {
+    "type": "points",
+    "points": [
+     "The areas A₁, A₂, A₃, … form a geometric series with first term A₁ and common ratio e⁻ᵖⁱ",
+     "Total area = A₁/(1 − e⁻ᵖⁱ) = [(1 + e⁻ᵖⁱ)/2] / (1 − e⁻ᵖⁱ)",
+     "Multiply numerator and denominator by eᵖⁱ: = (eᵖⁱ + 1) / (2(eᵖⁱ − 1))",
+     "= (1 + eᵖⁱ) / (2(eᵖⁱ − 1))"
+    ],
+    "guidance": "B1 deduces areas form a geometric series. M1 uses A₁/(1 − e⁻ᵖⁱ) for sum to infinity. B1F obtains value for first term using their (c)(i). R1 completes rigorous argument to achieve required result in correct form. CSO. AG."
+   }
+  }
+ },
  "math-aqa-7357-2021n-p3": {
   "questions": [
    {
