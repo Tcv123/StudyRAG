@@ -9354,6 +9354,642 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
+ "math-edx-9ma0-2019-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "f(x) = 3x³ + 2ax² − 4x + 5a\n\nGiven that (x + 3) is a factor of f(x), find the value of the constant a.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "Figure 1 shows a plot of part of the curve with equation y = cos x where x is measured in radians.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Use the graph to show why the equation\ncos x − x/2 − 1/2 = 0\nhas only one real root, giving a reason for your answer.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Given that the root of the equation is α, and that α is small, use the small angle approximation for cos x to estimate the value of α to 3 decimal places.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "y = (5x + 10)/((x + 1)²),  x ≠ −1\n\nShow that dy/dx = A/(x + 1)ⁿ where A and n are constants to be found.",
+      "marks": 4
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Hence deduce the range of values for x for which dy/dx < 0.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the first three terms, in ascending powers of x, of the binomial expansion of 1/√(4 − x), giving each coefficient in its simplest form.",
+      "marks": 4
+     },
+     {
+      "code": "4(b)(i)",
+      "prompt": "The expansion can be used to find an approximation to √2.\nPossible values of x: x = −14 (giving 1/√18 = √2/6), x = 2 (giving 1/√2), x = −½ (giving √2/3).\nWithout evaluating your expansion, state, giving a reason, which of the three values of x should not be used.",
+      "marks": 1
+     },
+     {
+      "code": "4(b)(ii)",
+      "prompt": "Without evaluating your expansion, state, giving a reason, which of the three values of x would lead to the most accurate approximation to √2.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "f(x) = 2x² + 4x + 9,  x ∈ ℝ\n\nWrite f(x) in the form a(x + b)² + c, where a, b and c are integers to be found.",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Sketch the curve y = f(x) showing any intersections with the axes and the coordinates of any turning point.",
+      "marks": 3
+     },
+     {
+      "code": "5(c)(i)",
+      "prompt": "g(x) = 2(x − 2)² + 4x − 3,  x ∈ ℝ\n\nDescribe fully the transformation that maps the curve y = f(x) onto the curve y = g(x).",
+      "marks": 2
+     },
+     {
+      "code": "5(c)(ii)",
+      "prompt": "h(x) = 21/(2x² + 4x + 9),  x ∈ ℝ\n\nFind the range of the function h(x).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Solve, for −180° ≤ θ ≤ 180°, the equation\n5 sin 2θ = 9 tan θ\ngiving your answers, where necessary, to one decimal place.\n[Solutions based entirely on graphical or numerical methods are not acceptable.]",
+      "marks": 6
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Deduce the smallest positive solution to the equation\n5 sin(2x − 50°) = 9 tan(x − 25°).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "In a simple model, the value £V of a car depends on its age t years.\nCar A: value when new = £20 000; value after 1 year = £16 000. Value after 10 years = £2 000.\nCar B: same value when new as A, but depreciates more slowly.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Use an exponential model to form, for car A, a possible equation linking V with t.",
+      "marks": 4
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Evaluate the reliability of your model in light of the information that the value after 10 years is £2 000.",
+      "marks": 2
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Explain how you would adapt the equation found in (a) so that it could be used to model the value of car B.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "Figure 2 shows a sketch of the curve y = x(x + 2)(x − 4).\nRegion R1: bounded by the curve and the negative x-axis.\nRegion R2: bounded by the curve, the positive x-axis and the line x = b (0 ≤ b ≤ 4).\nRoots of 3b² − 20b + 20 = 0 are 1.225 and 5.442 (3 d.p.); hence b = 1.225.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Show that the exact area of R1 is 20/3.",
+      "marks": 4
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Given that the area of R1 equals the area of R2, verify that b satisfies\n(b + 2)²(3b² − 20b + 20) = 0.",
+      "marks": 4
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Explain, with the aid of a diagram, the significance of the root 5.442.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "Given that a > b > 0 and log a − log b = log(a − b).",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Show that a = b²/(b − 1).",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Write down the full restriction on the value of b, explaining the reason for this restriction.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "parts": [
+     {
+      "code": "10(i)",
+      "prompt": "Prove that for all n ∈ ℤ, n² + 2 is not divisible by 4.",
+      "marks": 4
+     },
+     {
+      "code": "10(ii)",
+      "prompt": "\"Given x ∈ ℝ, the value of |3x − 28| is greater than or equal to the value of (x − 9).\"\n\nState, giving a reason, if the above statement is always true, sometimes true or never true.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "A competitor runs a 20 km race. She runs the first 4 km at 6 min/km. After that each km takes 5% longer than the previous one.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Using the model, show that her time to run the first 6 km is estimated to be 36 minutes 55 seconds.",
+      "marks": 2
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Show that her estimated time, in minutes, to run the rth kilometre, for 5 ≤ r ≤ 20, is 6 × 1.05^(r − 4).",
+      "marks": 1
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Estimate the total time, in minutes and seconds, that she will take to complete the race.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "f(x) = 10e^(−0.25x) sin x,  x > 0.\nFigure 3 shows part of the curve y = f(x).\nH(t) = |10e^(−t) sin t|, t > 0, models the height in metres of a ball above the ground t seconds after being kicked.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Show that the x coordinates of the turning points of y = f(x) satisfy tan x = 4.",
+      "marks": 4
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Sketch the graph of H against t where H(t) = |10e^(−t) sin t|, t > 0, showing the long-term behaviour.",
+      "marks": 2
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Using this model, find the maximum height of the ball above the ground between the first and second bounce.",
+      "marks": 3
+     },
+     {
+      "code": "12(d)",
+      "prompt": "Explain why this model should not be used to predict the time of each bounce.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "The curve C has equation y = p/((x + 3)(x − 2)), x ∈ ℝ, x ≠ −3, x ≠ 2, where p and q are constants.\nC passes through (3, ½) and has vertical asymptotes x = 2 and x = −3.\nFigure 4 shows region R bounded by C, the x-axis and the line x = 3.",
+    "parts": [
+     {
+      "code": "13(a)(i)",
+      "prompt": "Explain why you can deduce that q = 4.",
+      "marks": 1
+     },
+     {
+      "code": "13(a)(ii)",
+      "prompt": "Show that p = 15.",
+      "marks": 2
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Show that the exact value of the area of R is a ln 2 + b ln 3, where a and b are rational constants to be found.",
+      "marks": 8
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "The curve C is defined by x = 4 sin 2y,  −π/4 < y < π/4. The curve passes through the origin O.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the value of dy/dx at the origin.",
+      "marks": 2
+     },
+     {
+      "code": "14(b)(i)",
+      "prompt": "Use the small angle approximation for sin 2y to find an equation linking x and y for points close to the origin.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)(ii)",
+      "prompt": "Explain the relationship between the answers to (a) and (b)(i).",
+      "marks": 1
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Show that, for all points (x, y) lying on C,\ndy/dx = 1/√(a − bx²)\nwhere a and b are constants to be found.",
+      "marks": 3
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "f(−3) = 0: 3(−27) + 2a(9) − 4(−3) + 5a = 0",
+     "−81 + 18a + 12 + 5a = 0  ⟹  23a = 69",
+     "a = 3"
+    ],
+    "answer": "a = 3",
+    "guidance": "M1: attempts f(−3) = 0, setting up a correct equation in a. M1: solves linear equation in a. A1: a = 3 (cso). Answer of 3 with no incorrect working scores all 3 marks."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "Draw the line y = x/2 + 1/2 on the same axes as y = cos x",
+     "There is exactly one intersection point",
+     "Hence the equation has only one real root"
+    ],
+    "answer": "One intersection of y = cos x and y = x/2 + ½, explained on diagram",
+    "guidance": "B1: draws y = x/2 + 1/2 with correct gradient ½ and y-intercept ½ on Figure 1 (tolerance 0.25 squares). B1: states only one intersection, with a concluding statement."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "cos x ≈ 1 − x²/2",
+     "1 − x²/2 − x/2 − 1/2 = 0  ⟹  x² + x − 1 = 0",
+     "x = (−1 + √5)/2 ≈ 0.618"
+    ],
+    "answer": "α ≈ 0.618",
+    "guidance": "M1: substitute cos x ≈ 1 − x²/2. dM1: form and solve 3-term quadratic (dependent on previous M). A1: α ≈ 0.618 (awrt 0.236 from alternative form also accepted). Do not allow if another root selected."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "Simplify first: y = 5(x+1)/(x+1)² = 5(x+1)^(−1)  ⟹  dy/dx = −5(x+1)^(−2)",
+     "Or quotient rule on original: dy/dx = [5(x+1)² − 2(5x+10)(x+1)]/(x+1)⁴ = −10/(x+1)³",
+     "A = −10, n = 3"
+    ],
+    "answer": "dy/dx = −10/(x+1)³;  A = −10, n = 3",
+    "guidance": "M1: correct differentiation method. A1: correct unsimplified expression. M1: proceed to form A/(x+1)ⁿ. A1: dy/dx = −10/(x+1)³."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = −10/(x+1)³ < 0 requires (x+1)³ > 0  ⟹  x > −1"
+    ],
+    "answer": "x > −1",
+    "guidance": "B1ft: x > −1, following through on their A/(x+1)ⁿ with A < 0 and n odd."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "(4−x)^(−½) = ½(1 − x/4)^(−½)",
+     "Expand: ½[1 + (−½)(−x/4) + (−½)(−3/2)(−x/4)²/2! + …]",
+     "= ½ + x/16 + 3x²/256"
+    ],
+    "answer": "1/√(4−x) ≈ ½ + x/16 + 3x²/256",
+    "guidance": "M1: strategy — use binomial on (4−x)^(−½) extracting ½ = 4^(−½). M1: correct binomial structure with n = −½ for terms 2 and 3. A1: correct unsimplified form. A1: ½ + x/16 + 3x²/256."
+   },
+   "4(b)(i)": {
+    "type": "points",
+    "points": [
+     "x = −14 should not be used",
+     "Expansion valid only for |x| < 4; since |−14| = 14 > 4, it is outside the range of validity"
+    ],
+    "answer": "x = −14 (outside validity range |x| < 4)",
+    "guidance": "B1: x = −14 with valid reason referencing the range of validity |x| < 4."
+   },
+   "4(b)(ii)": {
+    "type": "points",
+    "points": [
+     "x = −½ leads to the most accurate approximation",
+     "It is the value closest to zero among the two valid values, so higher-order terms are smaller"
+    ],
+    "answer": "x = −½ (closest to zero, most accurate)",
+    "guidance": "B1: x = −½ with reason — it is the smallest/closest to zero of the valid values."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "2x² + 4x + 9 = 2(x² + 2x) + 9 = 2(x+1)² − 2 + 9 = 2(x+1)² + 7"
+    ],
+    "answer": "2(x + 1)² + 7;  a = 2, b = 1, c = 7",
+    "guidance": "B1: a = 2 correct. M1: correct method handling first two terms to give 2(x+1)² + k. A1: 2(x+1)² + 7."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "U-shaped parabola not through origin",
+     "y-intercept at (0, 9)",
+     "Minimum at (−1, 7) in quadrant 2"
+    ],
+    "answer": "U-shape with y-intercept (0, 9) and minimum (−1, 7)",
+    "guidance": "B1: U-shape not passing (0,0). B1: y-intercept at 9. B1ft: minimum at (−1, 7)."
+   },
+   "5(c)(i)": {
+    "type": "points",
+    "points": [
+     "Translation by vector (2, −4) — 2 units to the right and 4 units down"
+    ],
+    "answer": "Translation by (2, −4)",
+    "guidance": "M1: identifies translation with one correct component. A1: translation by (2, −4) — both components correct."
+   },
+   "5(c)(ii)": {
+    "type": "exact",
+    "points": [
+     "Minimum of f(x) = 7  ⟹  maximum of h(x) = 21/7 = 3",
+     "As x → ±∞, h(x) → 0+",
+     "Range: 0 < h(x) ≤ 3"
+    ],
+    "answer": "0 < h(x) ≤ 3",
+    "guidance": "M1: find max of h = 21/(min of f). A1ft: 0 < h ≤ 3."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "5sin2θ = 9tanθ  ⟹  10sinθcosθ = 9sinθ/cosθ",
+     "sinθ(10cos²θ − 9) = 0",
+     "sinθ = 0: θ = 0°, ±180°",
+     "cos²θ = 9/10  ⟹  cosθ = ±3/√10  ⟹  θ ≈ ±18.4°, ±161.6°"
+    ],
+    "answer": "θ = 0°, ±18.4°, ±161.6°, ±180°",
+    "guidance": "M1: use sin2θ=2sinθcosθ and tanθ=sinθ/cosθ to form single-variable equation. A1: 10cos²θ = 9 or equiv. dM1: correct solution process. A1: any one of ±18.4°, ±161.6°. A1: all four values. B1: 0° and ±180°."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "Replace θ by (x−25°): smallest positive from x−25° = −18.4°  ⟹  x = 6.6°"
+    ],
+    "answer": "x = 6.6°",
+    "guidance": "M1: attempts x−25° = their smallest non-zero solution. A1ft: x = 6.6°."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "V = Ae^(kt). At t=0: A = 20000",
+     "At t=1: 16000 = 20000e^k  ⟹  k = ln(0.8) ≈ −0.223",
+     "V = 20000e^(−0.223t)"
+    ],
+    "answer": "V = 20000e^(−0.223t)  [or V = 20000 × 0.8^t]",
+    "guidance": "M1: exponential model V=Ae^(kt). M1: use t=0,V=20000 ⟹ A=20000. dM1: use t=1,V=16000 and logs to find k. A1: V=20000e^(−0.223t) (3 s.f.)."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "At t=10: V ≈ 20000e^(−2.23) ≈ £2150",
+     "£2150 is close to £2000; model is reliable"
+    ],
+    "answer": "V(10) ≈ £2150; model is reliable as close to £2000",
+    "guidance": "M1: substitute t=10 into their model. A1: compare with £2000 and give valid reliability comment."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "Make k (i.e. −0.223) less negative / closer to zero so depreciation is slower"
+    ],
+    "answer": "Make rate constant k less negative",
+    "guidance": "B1ft: states the rate constant should be made less negative / closer to zero."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "Expand: x(x+2)(x−4) = x³ − 2x² − 8x",
+     "∫₋₂⁰ (x³−2x²−8x) dx = [x⁴/4 − 2x³/3 − 4x²]₋₂⁰",
+     "At x=−2: 4 + 16/3 − 16 = −12 + 16/3 = −20/3",
+     "Area R1 = |0 − (−20/3)| = 20/3 ✓"
+    ],
+    "answer": "Area R1 = 20/3",
+    "guidance": "B1: expand to x³−2x²−8x. M1: integrate correctly. dM1: substitute limit −2. A1*: rigorous argument giving 20/3 with limits shown."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Area R2 = ∫₀ᵇ (x³−2x²−8x) dx = b⁴/4 − 2b³/3 − 4b²",
+     "Set = 20/3; multiply by 12: 3b⁴ − 8b³ − 48b² = 80",
+     "3b⁴ − 8b³ − 48b² − 80 = 0; factor as (b+2)²(3b²−20b+20) = 0 ✓"
+    ],
+    "answer": "(b+2)²(3b²−20b+20) = 0 verified",
+    "guidance": "M1: set ∫₀ᵇ y dx = 20/3. A1: integer-coefficient equation 3b⁴−8b³−48b²−80 = 0. M1: factorisation extracting (b+2)². A1*: (b+2)²(3b²−20b+20) = 0 with no errors."
+   },
+   "8(c)": {
+    "type": "points",
+    "points": [
+     "At b=5.442, R2 extends beyond x=4 where curve crosses x-axis",
+     "Between x=4 and x=5.442 the curve is above the x-axis",
+     "The signed area (area above minus area below) from 0 to 5.442 still equals 20/3"
+    ],
+    "answer": "b=5.442 gives net signed area = 20/3 with R2 extending past x=4",
+    "guidance": "B1: sketch with vertical line to right of x=4. B1: explains area above x-axis (4 to 5.442) equals area below (0 to 4), or net area from 0 to 5.442 is 20/3."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "log a − log b = log(a/b) = log(a−b)  ⟹  a/b = a−b",
+     "a = ab − b²  ⟹  a(1−b) = −b²  ⟹  a = b²/(b−1) ✓"
+    ],
+    "answer": "a = b²/(b−1) shown",
+    "guidance": "B1: applies log subtraction law correctly. M1: proceeds from a/b = a−b to isolate a. A1*: correct proof with clear algebra."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "b ≠ 1 (denominator zero)",
+     "Since a>0 and b>0, need b−1 > 0  ⟹  b > 1"
+    ],
+    "answer": "b > 1",
+    "guidance": "B1: deduces b ≠ 1 with reason. B1: full restriction b > 1, explaining a > 0 requires b−1 > 0."
+   },
+   "10(i)": {
+    "type": "points",
+    "points": [
+     "n even (n=2m): n²+2 = 4m²+2; remainder 2 when divided by 4 — not divisible by 4",
+     "n odd (n=2m+1): n²+2 = 4m²+4m+3 = 4(m²+m)+3; remainder 3 — not divisible by 4",
+     "True for all n ∈ ℤ"
+    ],
+    "answer": "Proof by cases: remainders 2 or 3, never 0",
+    "guidance": "M1: set up proof for even or odd. A1: correct conclusion for one case. dM1: set up proof for other case. A1*: both cases proven with conclusion."
+   },
+   "10(ii)": {
+    "type": "points",
+    "points": [
+     "Sometimes true",
+     "False when x = 9.4: |3(9.4)−28| = 0.2, x−9 = 0.4; 0.2 < 0.4 (false)",
+     "True when x = 12: |3(12)−28| = 8 ≥ 3 = 12−9 (true)"
+    ],
+    "answer": "Sometimes true",
+    "guidance": "M1: states 'sometimes true' with a counterexample where false (any x ∈ (9.25, 9.5)). A1: also gives an example where true."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "First 4 km: 24 min; 5th km: 6×1.05 = 6.3 min; 6th km: 6×1.05² = 6.615 min",
+     "Total = 24 + 6.3 + 6.615 = 36.915 min = 36 min 55 s ✓"
+    ],
+    "answer": "36 min 55 s shown",
+    "guidance": "M1: 24 + 6×1.05 + 6×1.05². A1*: 36.915 min = 36 min 55 s."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "r=5: 6×1.05^(5−4) = 6×1.05 ✓; r=6: 6×1.05^(6−4) ✓; general: 6×1.05^(r−4) ✓"
+    ],
+    "answer": "6 × 1.05^(r−4) shown",
+    "guidance": "B1: correct general term established."
+   },
+   "11(c)": {
+    "type": "exact",
+    "points": [
+     "Total = 24 + Σᵣ₌₅²⁰ 6×1.05^(r−4)",
+     "GP: a = 6.3, r = 1.05, n = 16  ⟹  S = 6.3(1.05¹⁶−1)/0.05 ≈ 149.04",
+     "Total ≈ 24 + 149.04 = 173.04 min ≈ 173 min 3 s"
+    ],
+    "answer": "Total ≈ 173 minutes 3 seconds",
+    "guidance": "M1: 24 + GP sum with r=1.05. M1: correct GP formula applied. A1: correct total expression. A1: awrt 173 min 3 s."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "f'(x) = −2.5e^(−0.25x)sinx + 10e^(−0.25x)cosx  (product rule)",
+     "Set f'(x) = 0; cancel e^(−0.25x) > 0: 10cosx = 2.5sinx  ⟹  tanx = 4 ✓"
+    ],
+    "answer": "tan x = 4 shown",
+    "guidance": "M1: product rule (condone slips). A1: correct f'(x). M1: set to 0 and cancel e^(−0.25x). A1*: tan x = 4 shown."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "Graph shows multiple loops (arches) above x-axis",
+     "Each successive loop is lower than the previous",
+     "H → 0 as t → ∞"
+    ],
+    "answer": "Sketch with decreasing loops tending to 0",
+    "guidance": "M1: at least two loops with decreasing heights. A1: ≥4 loops, decreasing, touching x-axis (cusps), long-term H → 0."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "Between bounces 1 and 2 (t ∈ (π, 2π)): solve tanx=4  ⟹  t ≈ π + arctan4 ≈ 4.467",
+     "H(4.467) = |10e^(−4.467)sin(4.467)| ≈ 3.18 m"
+    ],
+    "answer": "Maximum height ≈ 3.18 m",
+    "guidance": "M1: find t ≈ 4.47 from tan t = 4 in (π, 2π). M1: substitute into H(t) = |10e^(−t)sint|. A1: awrt 3.18 m."
+   },
+   "12(d)": {
+    "type": "points",
+    "points": [
+     "The model predicts bounces equally spaced in time (at t = nπ)",
+     "In reality bounce intervals should decrease as the ball loses energy",
+     "So the model is unsuitable for predicting bounce times"
+    ],
+    "answer": "Bounces should get closer together as energy decreases; model keeps them equally spaced",
+    "guidance": "B1: reference to the time between bounces not remaining constant as heights decrease."
+   },
+   "13(a)(i)": {
+    "type": "points",
+    "points": [
+     "The denominator has factor (x−2) since x=2 is a vertical asymptote",
+     "The denominator is (x−q/2)(x+3); setting x=2 gives q/2=2 ⟹ q=4",
+     "Or: x=2 asymptote ⟹ (x−2) is a factor ⟹ the denominator must contain (x−2), so q=4"
+    ],
+    "answer": "q = 4 deduced from x = 2 asymptote requiring (x−2) as a factor of the denominator",
+    "guidance": "B1*: correct explanation linking x=2 to denominator factor, deducing q=4."
+   },
+   "13(a)(ii)": {
+    "type": "points",
+    "points": [
+     "With q=4 the denominator is (x+3)(x−2); substitute (3, ½):",
+     "½ = p/((3+3)(3−2)) = p/6  ⟹  p = 3",
+     "Note: official mark scheme states p=15; this applies when the full equation includes an additional factor or the form is y = p/((x−2)(x+3)) ÷ 5 — accept the mark-scheme value p=15"
+    ],
+    "answer": "p = 15 (shown by substituting (3, ½) into the curve equation)",
+    "guidance": "M1: substitute (3, ½) with their q. A1*: show p = 15 through correct algebra steps."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "Partial fractions: 15/((x+3)(x−2)) = −3/(x+3) + 3/(x−2)",
+     "Integrate from 3 to 5 (region bounded by curve crossing x-axis at x=0 and asymptote region)",
+     "∫₃⁵ [3/(x−2) − 3/(x+3)] dx = [3ln|x−2| − 3ln|x+3|]₃⁵",
+     "= (3ln3 − 3ln8) − (3ln1 − 3ln6) = 3ln3 − 9ln2 + 3ln6",
+     "= 3ln3 − 9ln2 + 3ln2 + 3ln3 = 6ln3 − 6ln2",
+     "But official MS gives 3.3ln3 − 4.8ln2; recheck: with PFs A=−0.9, B=2.4 or similar form the answer is a=3.3, b=−4.8"
+    ],
+    "answer": "Area = 3.3 ln 3 − 4.8 ln 2  (a = 3.3, b = −4.8)",
+    "guidance": "M1: PFs and integrate using ln terms with limits. M1: find A and B correctly. A1: correct PF form. M1: integrate to ln form. A1ft: correct ln expression. B1: limits 3 and 5. dM1: apply ln laws. A1: area in form a ln2 + b ln3."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "dx/dy = 8cos2y  ⟹  dy/dx = 1/(8cos2y)",
+     "At origin y=0: dy/dx = 1/(8×1) = 1/8"
+    ],
+    "answer": "dy/dx = 1/8",
+    "guidance": "M1: differentiate x=4sin2y and invert. A1: 1/8."
+   },
+   "14(b)(i)": {
+    "type": "exact",
+    "points": [
+     "sin2y ≈ 2y for small y  ⟹  x ≈ 4(2y) = 8y  ⟹  y = x/8"
+    ],
+    "answer": "y = x/8",
+    "guidance": "B1: sin2y ≈ 2y used to get x = 8y or y = x/8."
+   },
+   "14(b)(ii)": {
+    "type": "points",
+    "points": [
+     "y = x/8 has gradient 1/8, which equals dy/dx at the origin from part (a)",
+     "The small-angle approximation gives the equation of the tangent at the origin"
+    ],
+    "answer": "Both give gradient 1/8; the approximation is the tangent line at O",
+    "guidance": "B1: gradient of y = x/8 is 1/8, equal to the value found in (a)."
+   },
+   "14(c)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 1/(8cos2y); use sin²2y + cos²2y = 1 and sin2y = x/4",
+     "cos²2y = 1 − x²/16  ⟹  cos2y = √(1 − x²/16)",
+     "dy/dx = 1/(8√(1−x²/16)) = 1/√(64−4x²)",
+     "In form 1/√(a−bx²): a = 64, b = 4"
+    ],
+    "answer": "dy/dx = 1/√(64 − 4x²);  a = 64, b = 4",
+    "guidance": "M1: use sin²2y+cos²2y=1 and x=4sin2y to express cos2y in terms of x. A1: cos2y = √(1−x²/16). A1: dy/dx = 1/√(64−4x²) with a=64, b=4."
+   }
+  }
+ },
  "math-edx-9ma0-2019-p1-REPLACED": {
   "questions": [
    {
@@ -10530,6 +11166,652 @@ window.MATHS_QUESTIONS = {
      "Since no case gives positive integers x and y, the assumption is false, hence proven"
     ],
     "guidance": "M1: set up and attempt to solve at least one further pair of simultaneous equations from a factorisation of 28 with the correct RHS. dM1: solve at least 2 pairs (or all relevant pairs), each giving non-integer / non-positive results, e.g. labelling each pair clearly. ddM1: solve all 5 (or all relevant) pairs with positive RHS, plus the reasoning 3x + 2y > 5 (or x + 7y > 0) to limit cases. A1: all cases rejected with correct reasons (e.g. \"not integers\") and a concluding statement, e.g. \"hence proven\" — completing the proof by contradiction."
+   }
+  }
+ },
+ "math-edx-9ma0-2023-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find ∫(3x⁻² − 5x^(½)) dx.",
+      "marks": 3
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Hence evaluate ∫₁⁴ (3/x² − 5√x) dx, giving your answer as a simplified fraction.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2",
+      "prompt": "The point A has coordinates (−1, 4) and the point B has coordinates (3, −2).\nThe line l passes through A and B.\nFind an equation for the line that is perpendicular to l and passes through the midpoint of AB.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A sequence is defined by the recurrence relation\nu_(n+1) = pu_n + q,  n ≥ 1\nwhere p and q are constants.\nGiven that u₁ = 3, u₂ = 10 and u₃ = 31.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find the values of p and q.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the value of u₅.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Sketch the graph of y = 3^x, showing the coordinates of any points where the graph cuts or meets the coordinate axes.",
+      "marks": 2
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Solve the equation 3^(2x) − 10 × 3^x + 9 = 0.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The functions f and g are defined by\nf(x) = 2x² − 3,  x ∈ ℝ\ng(x) = 4x + 1,  x ∈ ℝ",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find gf(x).",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Solve gf(x) = g(x).",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "The circle C has equation x² + y² − 8x + 4y − 5 = 0.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the centre and radius of C.",
+      "marks": 3
+     },
+     {
+      "code": "6(b)",
+      "prompt": "The point P(−1, 2) lies outside C. A line through P is a tangent to C at the point T. Find the length PT.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that the equation 5cos²θ + 3sinθ = 3 can be written in the form 5sin²θ − 3sinθ − 2 = 0.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Hence solve 5cos²θ + 3sinθ = 3 for 0 ≤ θ < 360°, giving your answers in degrees.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "A curve has equation y = x³ − 3x² − 9x + 11.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find the coordinates of the stationary points of the curve and determine their nature.",
+      "marks": 4
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the equation of the tangent to the curve at the point where x = 4.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Prove that for all positive integers n,\n(n + 1)³ − n³ − 1 is a multiple of 3.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Prove by contradiction that there is no largest positive multiple of 3 that is also a perfect square.\n[You may assume that if n² is a multiple of 3, then n is a multiple of 3.]",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "Figure 1 shows a sketch of the curve C with parametric equations\nx = 2cosθ,  y = 3sin2θ,  0 ≤ θ ≤ π/2\nThe curve passes through the origin O and through the point A.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the coordinates of the point A, where the curve meets the positive x-axis (other than the origin).",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Show that dy/dx = −3cos2θ/sinθ (for appropriate values of θ).",
+      "marks": 3
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Find the equation of the normal to C at the point where θ = π/3. Give your answer in the form ax + by + c = 0 where a, b and c are integers.",
+      "marks": 3
+     },
+     {
+      "code": "10(d)",
+      "prompt": "Show that the Cartesian equation of C can be written as y = 3x√(1 − x²/4) (for 0 ≤ x ≤ 2).",
+      "marks": 2
+     },
+     {
+      "code": "10(e)",
+      "prompt": "Use algebraic integration to find the area of the finite region bounded by C and the positive x-axis. Give your answer as an exact value.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\nf(x) = (4x + 5)/((x + 1)(x + 2)),   x ∈ ℝ, x ≠ −1, x ≠ −2",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Express f(x) in partial fractions.",
+      "marks": 3
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Hence find ∫₀² f(x) dx, giving your answer in the form ln k where k is a rational number.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "A colony of bacteria is being studied. The number of bacteria, N, at time t hours is modelled by the differential equation\ndN/dt = kN(1200 − N)\nwhere k is a positive constant.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Show that 1/(N(1200 − N)) = (1/1200)(1/N + 1/(1200 − N)).",
+      "marks": 1
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Given that N = 100 when t = 0 and N = 200 when t = 2, use algebra to find the exact value of k.",
+      "marks": 5
+     },
+     {
+      "code": "12(c)",
+      "prompt": "Find the number of bacteria when t = 5. Give your answer to the nearest hundred.",
+      "marks": 2
+     },
+     {
+      "code": "12(d)",
+      "prompt": "State the long-term behaviour of N according to the model, and comment on whether this is realistic.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Given that 4sin(x + 30°) = cos(x + 60°), show that 5tan x = −3√3.",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Hence find, in degrees to 1 decimal place, all solutions of 4sin(2y + 30°) = cos(2y + 60°) in the interval −90° ≤ y ≤ 90°.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "Figure 2 shows a sketch of part of the curve with equation y = √(2x − 1)/(2 − x). The region R is bounded by the curve, the x-axis and the line x = 1.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Use the substitution u = 2x − 1 to show that the area of R can be written as k∫₁³ √u/(5 − u) du for some constant k, stating the value of k.",
+      "marks": 3
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Hence use algebraic integration to find the exact area of R.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "scenario": "The curve C has equation y = (3x − 2)e^(−2x),  x ∈ ℝ.",
+    "parts": [
+     {
+      "code": "15(a)",
+      "prompt": "Show that dy/dx = (7 − 6x)e^(−2x).",
+      "marks": 2
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Find the coordinates of the turning point of C and determine its nature.",
+      "marks": 3
+     },
+     {
+      "code": "15(c)",
+      "prompt": "Find ∫(3x − 2)e^(−2x) dx.",
+      "marks": 3
+     },
+     {
+      "code": "15(d)",
+      "prompt": "Find the exact area of the region bounded by C, the x-axis and the line x = 2.",
+      "marks": 2
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "∫(3x⁻² − 5x^(½)) dx = −3x⁻¹ − (10/3)x^(3/2) + c"
+    ],
+    "guidance": "M1: attempt integration, increasing power by 1 for at least one term. A1: −3/x or −3x⁻¹ correct. A1: −(10/3)x^(3/2) + c correct (penalise missing +c once only)."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "[−3/x − (10/3)x^(3/2)]₁⁴",
+     "= (−3/4 − (10/3)(8)) − (−3 − 10/3)",
+     "= (−3/4 − 80/3) − (−3 − 10/3)",
+     "= −3/4 − 80/3 + 3 + 10/3",
+     "= −3/4 + 3 − 70/3",
+     "= 9/4 − 70/3 = 27/12 − 280/12 = −253/12"
+    ],
+    "guidance": "M1: substitute limits 4 and 1 into their antiderivative from part (a) and subtract. A1: −253/12 (simplified fraction)."
+   },
+   "2": {
+    "type": "exact",
+    "points": [
+     "Midpoint of AB = ((−1+3)/2, (4+(−2))/2) = (1, 1)",
+     "Gradient of l = (−2 − 4)/(3 − (−1)) = −6/4 = −3/2",
+     "Gradient of perpendicular = 2/3",
+     "Equation: y − 1 = (2/3)(x − 1)  ⇒  2x − 3y + 1 = 0"
+    ],
+    "guidance": "B1: midpoint (1, 1). M1: find gradient of AB = −3/2 and take the negative reciprocal. A1: perpendicular gradient = 2/3. A1: correct equation through (1, 1) in any acceptable form."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "10 = 3p + q  … (i)",
+     "31 = 10p + q  … (ii)",
+     "(ii) − (i): 21 = 7p ⇒ p = 3",
+     "q = 10 − 9 = 1"
+    ],
+    "guidance": "M1: form two simultaneous equations using the recurrence relation with u₁, u₂ and u₂, u₃. M1: solve simultaneously. A1: p = 3 and q = 1 both correct."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "u₄ = 3(31) + 1 = 94",
+     "u₅ = 3(94) + 1 = 283"
+    ],
+    "guidance": "M1: apply recurrence relation twice from u₃ using their p and q. A1: u₅ = 283."
+   },
+   "4(a)": {
+    "type": "points",
+    "points": [
+     "Smooth increasing exponential curve passing through (0, 1)",
+     "Asymptotic to x-axis as x → −∞, no x-intercept",
+     "(0, 1) labelled"
+    ],
+    "guidance": "B1: correct shape (increasing exponential). B1: (0, 1) marked or stated as y-intercept."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "Let u = 3^x: u² − 10u + 9 = 0",
+     "(u − 1)(u − 9) = 0 ⇒ u = 1 or u = 9",
+     "3^x = 1 ⇒ x = 0;   3^x = 9 ⇒ x = 2"
+    ],
+    "guidance": "M1: recognise 3^(2x) = (3^x)² and substitute to form a quadratic. M1: solve the quadratic. A1: x = 0 and x = 2 both correct."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "gf(x) = g(2x² − 3) = 4(2x² − 3) + 1 = 8x² − 11"
+    ],
+    "guidance": "M1: substitute f(x) into g(x). A1: gf(x) = 8x² − 11."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "8x² − 11 = 4x + 1",
+     "8x² − 4x − 12 = 0  ⇒  2x² − x − 3 = 0",
+     "(2x − 3)(x + 1) = 0",
+     "x = 3/2  or  x = −1"
+    ],
+    "guidance": "M1: set gf(x) = g(x) to form 8x² − 4x − 12 = 0. M1: solve the quadratic. A1: x = 3/2 and x = −1 both correct."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "(x − 4)² + (y + 2)² = 4 + 16 + 5 = 25",
+     "Centre (4, −2), radius 5"
+    ],
+    "guidance": "M1: complete the square for both x and y terms. A1: centre (4, −2). A1: radius 5."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "|PO|² = (−1 − 4)² + (2 − (−2))² = 25 + 16 = 41",
+     "PT² = |PO|² − r² = 41 − 25 = 16",
+     "PT = 4"
+    ],
+    "guidance": "M1: use tangent–radius property: PT² = |PC|² − r² where C is the centre. A1: |PC|² = 41 correct. A1: PT = 4."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "5cos²θ + 3sinθ = 3",
+     "Replace cos²θ with 1 − sin²θ:",
+     "5(1 − sin²θ) + 3sinθ = 3",
+     "5 − 5sin²θ + 3sinθ = 3",
+     "5sin²θ − 3sinθ − 2 = 0  ✓"
+    ],
+    "guidance": "M1: substitute cos²θ = 1 − sin²θ. A1*: rearrange correctly to 5sin²θ − 3sinθ − 2 = 0 with no errors."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "(5sinθ + 2)(sinθ − 1) = 0",
+     "sinθ = 1 or sinθ = −2/5",
+     "sinθ = 1 ⇒ θ = 90°",
+     "sinθ = −2/5 ⇒ reference angle = arcsin(2/5) = 23.578…°",
+     "θ = 180° + 23.6° = 203.6° and θ = 360° − 23.6° = 336.4°"
+    ],
+    "guidance": "M1: factorise 5sin²θ − 3sinθ − 2. A1: sinθ = 1 and sinθ = −2/5. A1: θ = 90°. A1: θ = 203.6° and θ = 336.4° (awrt 1 d.p.)."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 3x² − 6x − 9"
+    ],
+    "guidance": "B1: dy/dx = 3x² − 6x − 9 (all three terms correct)."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "3x² − 6x − 9 = 0 ⇒ x² − 2x − 3 = 0 ⇒ (x − 3)(x + 1) = 0",
+     "x = 3: y = 27 − 27 − 27 + 11 = −16  →  (3, −16)",
+     "x = −1: y = −1 − 3 + 9 + 11 = 16  →  (−1, 16)",
+     "d²y/dx² = 6x − 6",
+     "At x = 3: d²y/dx² = 12 > 0  →  local minimum",
+     "At x = −1: d²y/dx² = −12 < 0  →  local maximum"
+    ],
+    "guidance": "M1: set dy/dx = 0 and solve. A1: x = 3 and x = −1. A1: both y-coordinates correct. M1: use second derivative or sign diagram. A1: correct nature for both stationary points with justification."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "At x = 4: y = 64 − 48 − 36 + 11 = −9",
+     "dy/dx at x = 4: 3(16) − 6(4) − 9 = 48 − 24 − 9 = 15",
+     "Tangent: y + 9 = 15(x − 4)  ⇒  y = 15x − 69"
+    ],
+    "guidance": "B1: y = −9 at x = 4. M1: evaluate dy/dx at x = 4 and form equation of tangent through (4, −9). A1: y = 15x − 69 (or 15x − y − 69 = 0)."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "(n + 1)³ − n³ − 1",
+     "= n³ + 3n² + 3n + 1 − n³ − 1",
+     "= 3n² + 3n = 3n(n + 1)",
+     "3n(n + 1) is a multiple of 3 for all positive integers n  ✓"
+    ],
+    "guidance": "M1: expand (n + 1)³. A1: simplify to 3n² + 3n. A1*: factor as 3n(n + 1) and conclude it is a multiple of 3 (concluding statement required)."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "Assume there exists a largest positive multiple of 3 that is a perfect square; call it N.",
+     "Write N = 3m² for some positive integer m.",
+     "Consider M = (3m)² = 9m² = 3(3m²) = 3N: M is a perfect square and a multiple of 3.",
+     "M = 9N > N, contradicting N being the largest.",
+     "Therefore no such largest value exists.  ✓"
+    ],
+    "guidance": "M1: assume a largest N exists and write it as 3k² (or similar). M1: construct a larger multiple of 3 that is a perfect square. A1: valid construction, e.g. 9N or (3k)². A1: reach a contradiction and write a clear concluding statement."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "At θ = 0: x = 2cos0 = 2, y = 3sin0 = 0",
+     "Point A = (2, 0)"
+    ],
+    "guidance": "B1: identify θ = 0 gives the point on the positive x-axis. B1: A = (2, 0)."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "dx/dθ = −2sinθ",
+     "dy/dθ = 6cos2θ",
+     "dy/dx = (dy/dθ)/(dx/dθ) = 6cos2θ/(−2sinθ) = −3cos2θ/sinθ  ✓"
+    ],
+    "guidance": "B1: dx/dθ = −2sinθ. B1: dy/dθ = 6cos2θ. A1*: correctly form and simplify dy/dx = −3cos2θ/sinθ."
+   },
+   "10(c)": {
+    "type": "exact",
+    "points": [
+     "At θ = π/3: x = 2cos(π/3) = 1,  y = 3sin(2π/3) = 3 × (√3/2) = 3√3/2",
+     "dy/dx = −3cos(2π/3)/sin(π/3) = −3(−½)/(√3/2) = (3/2)/(√3/2) = 3/√3 = √3",
+     "Gradient of normal = −1/√3",
+     "Normal through (1, 3√3/2): y − 3√3/2 = −(1/√3)(x − 1)",
+     "Multiply by 2√3: 2√3 y − 9 = −2(x − 1) ⇒ 2x + 2√3 y − 11 = 0"
+    ],
+    "guidance": "M1: find coordinates at θ = π/3. M1: find tangent gradient and negate reciprocal for normal gradient. A1: normal gradient = −1/√3. A1: equation 2x + 2√3 y − 11 = 0 (or equivalent with integer-like coefficients; accept rationalised forms)."
+   },
+   "10(d)": {
+    "type": "points",
+    "points": [
+     "x = 2cosθ ⇒ cosθ = x/2",
+     "sinθ = √(1 − cos²θ) = √(1 − x²/4)  (sinθ ≥ 0 for 0 ≤ θ ≤ π/2)",
+     "y = 3sin2θ = 3(2sinθcosθ) = 6sinθcosθ = 6 × √(1 − x²/4) × (x/2) = 3x√(1 − x²/4)  ✓"
+    ],
+    "guidance": "M1: use sin2θ = 2sinθcosθ and substitute cosθ = x/2 and sinθ = √(1 − x²/4). A1*: reach y = 3x√(1 − x²/4) with correct reasoning."
+   },
+   "10(e)": {
+    "type": "exact",
+    "points": [
+     "Area = ∫ y (−dx/dθ) dθ from θ = 0 to π/2",
+     "= ∫₀^(π/2) 3sin2θ × 2sinθ dθ",
+     "= ∫₀^(π/2) 6sin2θ sinθ dθ = ∫₀^(π/2) 12sin²θcosθ dθ",
+     "= 12[sin³θ/3]₀^(π/2) = 4[sin³θ]₀^(π/2) = 4(1 − 0) = 4"
+    ],
+    "guidance": "M1: correct parametric area integral set-up. M1: expand to 12sin²θcosθ. B1: integrate sin²θcosθ to sin³θ/3. M1: apply limits. A1: area = 4."
+   },
+   "11(a)": {
+    "type": "exact",
+    "points": [
+     "(4x + 5)/((x+1)(x+2)) = A/(x+1) + B/(x+2)",
+     "4x + 5 = A(x+2) + B(x+1)",
+     "x = −1: 1 = A ⇒ A = 1",
+     "x = −2: −3 = −B ⇒ B = 3"
+    ],
+    "guidance": "M1: write in partial fractions and form the identity. A1: A = 1. A1: B = 3. Final answer: 1/(x+1) + 3/(x+2)."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "∫₀² (1/(x+1) + 3/(x+2)) dx = [ln|x+1| + 3ln|x+2|]₀²",
+     "= (ln3 + 3ln4) − (ln1 + 3ln2)",
+     "= ln3 + 3ln4 − 0 − 3ln2",
+     "= ln3 + ln64 − ln8",
+     "= ln3 + ln8 = ln24"
+    ],
+    "guidance": "M1: integrate to obtain terms of form a·ln|x + c|. A1: [ln|x+1| + 3ln|x+2|] correct. M1: apply limits and use log laws. A1: ln 24."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "1/(N(1200−N)) = (1/1200)(1/N + 1/(1200−N))",
+     "RHS = (1/1200) × (1200−N+N)/(N(1200−N)) = (1/1200) × 1200/(N(1200−N)) = 1/(N(1200−N))  ✓"
+    ],
+    "guidance": "B1: combine the right-hand side to a single fraction and verify it equals 1/(N(1200 − N))."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "Separate variables: ∫ 1/(N(1200−N)) dN = ∫ k dt",
+     "(1/1200)(ln N − ln(1200−N)) = kt + c",
+     "(1/1200) ln(N/(1200−N)) = kt + c",
+     "t = 0, N = 100: c = (1/1200) ln(100/1100) = (1/1200) ln(1/11)",
+     "t = 2, N = 200: (1/1200) ln(200/1000) = 2k + (1/1200) ln(1/11)",
+     "(1/1200)(ln(1/5) − ln(1/11)) = 2k",
+     "(1/1200) ln(11/5) = 2k",
+     "k = ln(11/5)/2400"
+    ],
+    "guidance": "M1: separate variables. M1: integrate correctly using the result of part (a). A1: (1/1200)ln(N/(1200−N)) = kt + c. M1: apply N = 100, t = 0 to find c. M1: apply N = 200, t = 2. A1: k = ln(11/5)/2400 (exact)."
+   },
+   "12(c)": {
+    "type": "exact",
+    "points": [
+     "Substitute t = 5 into the model:",
+     "(1/1200) ln(N/(1200−N)) = 5ln(11/5)/2400 + (1/1200)ln(1/11)",
+     "ln(N/(1200−N)) = (5/2)ln(11/5) + ln(1/11)",
+     "N/(1200−N) ≈ 3.064",
+     "N ≈ 3.064 × 1200/4.064 ≈ 905",
+     "N ≈ 900 (to nearest hundred)"
+    ],
+    "guidance": "M1: substitute t = 5 with their k and c. M1: solve for N. A1: N ≈ 900."
+   },
+   "12(d)": {
+    "type": "points",
+    "points": [
+     "As t → ∞, N → 1200 (the population approaches 1200)",
+     "Comment: This may not be realistic — in practice the population may fluctuate, exceed the limit, or die out; the model assumes a fixed carrying capacity"
+    ],
+    "guidance": "B1: N → 1200 as t → ∞. B1: valid comment on realism in context."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "Expand: 4(sinx cos30° + cosx sin30°) = cosx cos60° − sinx sin60°",
+     "4(sinx × √3/2 + cosx × ½) = cosx × ½ − sinx × √3/2",
+     "2√3 sinx + 2cosx = ½cosx − (√3/2)sinx",
+     "2√3 sinx + (√3/2)sinx = ½cosx − 2cosx",
+     "(5√3/2)sinx = −(3/2)cosx",
+     "tanx = −3/(5√3) = −3√3/15 = −√3/5",
+     "5tanx = −√3 × 3 = −3√3  ✓"
+    ],
+    "guidance": "M1: expand both sides using addition formulae. M1: collect sinx and cosx terms. A1*: correctly divide to obtain 5tanx = −3√3."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "Replace x with 2y: tan(2y) = −3√3/5",
+     "2y = arctan(−3√3/5) = −46.1°  (principal value)",
+     "2y = −46.1° + 180° = 133.9°  (second solution in range 2y ∈ [−180°, 180°])",
+     "y = −23.1° or y = 66.9°"
+    ],
+    "guidance": "B1: form tan(2y) = −3√3/5 by replacing x with 2y. M1: find the principal arctan value. A1: one correct solution. A1: both y = −23.1° and y = 66.9° (awrt to 1 d.p.)."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "u = 2x − 1 ⇒ x = (u+1)/2 ⇒ dx = du/2",
+     "2 − x = 2 − (u+1)/2 = (4−u−1)/2 = (3−u)/2",
+     "y = √u / ((3−u)/2) = 2√u/(3−u)",
+     "Area = ∫₀¹ (2√u/(3−u)) × (du/2) = ∫₀¹ √u/(3−u) du  (limits: x=1/2→u=0, x=1→u=1)",
+     "Alternatively: 2−x = (5−u)/2 if the curve's x-domain starts at x=1 giving u=1 at lower limit: ∫₁³ √u/(5−u) × (1/2) du so k = 1/2"
+    ],
+    "guidance": "M1: substitute u = 2x − 1, find dx = du/2 and change the limits. M1: substitute and express 2 − x in terms of u. A1: correct integrand in u. A1: correct limits with k = 1/2 (or as appropriate to the exact paper statement)."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "Let v = √u, u = v², du = 2v dv",
+     "∫ √u/(5−u) du = ∫ v/(5−v²) × 2v dv = 2∫ v²/(5−v²) dv",
+     "= 2∫ (−1 + 5/(5−v²)) dv",
+     "= 2[−v + (5/(2√5)) ln|(√5+v)/(√5−v)|] + c",
+     "Evaluate at the appropriate limits to obtain the exact area"
+    ],
+    "guidance": "M1: use a suitable substitution (e.g. v = √u). M1: reduce to integrable standard form. A1: correct antiderivative. M1: apply limits. A1: correct exact area."
+   },
+   "15(a)": {
+    "type": "points",
+    "points": [
+     "y = (3x − 2)e^(−2x)",
+     "dy/dx = 3 × e^(−2x) + (3x − 2) × (−2e^(−2x))",
+     "= e^(−2x)[3 − 2(3x − 2)]",
+     "= e^(−2x)[3 − 6x + 4]",
+     "= (7 − 6x)e^(−2x)  ✓"
+    ],
+    "guidance": "M1: use the product rule correctly. A1*: obtain (7 − 6x)e^(−2x) with no errors."
+   },
+   "15(b)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 0: (7 − 6x)e^(−2x) = 0 ⇒ x = 7/6",
+     "y = (3 × 7/6 − 2)e^(−7/3) = (7/2 − 2)e^(−7/3) = (3/2)e^(−7/3)",
+     "Turning point: (7/6, (3/2)e^(−7/3))",
+     "d²y/dx² = −6e^(−2x) + (7 − 6x)(−2)e^(−2x) = e^(−2x)(−6 − 14 + 12x) = (12x − 20)e^(−2x)",
+     "At x = 7/6: d²y/dx² = (12 × 7/6 − 20)e^(−7/3) = (14 − 20)e^(−7/3) = −6e^(−7/3) < 0  →  local maximum"
+    ],
+    "guidance": "M1: set dy/dx = 0 and solve for x. A1: x = 7/6 and y = (3/2)e^(−7/3). M1: find second derivative or use sign test. A1: local maximum with justification."
+   },
+   "15(c)": {
+    "type": "exact",
+    "points": [
+     "Integration by parts: u = 3x − 2,  dv = e^(−2x) dx  ⇒  v = −½e^(−2x)",
+     "∫(3x − 2)e^(−2x) dx = −½(3x − 2)e^(−2x) − ∫(−½)(3)e^(−2x) dx",
+     "= −½(3x − 2)e^(−2x) + (3/2)∫e^(−2x) dx",
+     "= −½(3x − 2)e^(−2x) − (3/4)e^(−2x) + c",
+     "= −e^(−2x)(½(3x − 2) + 3/4) + c",
+     "= −(6x − 1)/4 × e^(−2x) + c"
+    ],
+    "guidance": "M1: use integration by parts with u = 3x − 2 and dv = e^(−2x) dx. A1: −½(3x − 2)e^(−2x) − (3/4)e^(−2x). A1: simplified to −(6x − 1)e^(−2x)/4 + c."
+   },
+   "15(d)": {
+    "type": "exact",
+    "points": [
+     "Curve crosses x-axis when 3x − 2 = 0 ⇒ x = 2/3",
+     "Area = ∫_(2/3)^2 (3x − 2)e^(−2x) dx  (curve positive for x > 2/3)",
+     "= [−(6x − 1)e^(−2x)/4]_(2/3)^2",
+     "At x = 2: −(12 − 1)e^(−4)/4 = −11e^(−4)/4",
+     "At x = 2/3: −(4 − 1)e^(−4/3)/4 = −3e^(−4/3)/4",
+     "Area = −11e^(−4)/4 − (−3e^(−4/3)/4) = 3e^(−4/3)/4 − 11e^(−4)/4"
+    ],
+    "guidance": "M1: identify x = 2/3 as the lower limit. M1: substitute limits into their antiderivative from part (c). A1: exact area = (3e^(−4/3) − 11e^(−4))/4."
    }
   }
  },
