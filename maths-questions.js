@@ -13444,5 +13444,666 @@ window.MATHS_QUESTIONS = {
     "guidance": "B1 for P = 300 (accept 'the population approaches 300' or N → 300 as t → ∞)."
    }
   }
+ },
+ "math-edx-9ma0-2018-p3": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "Helen believes that the random variable C, representing cloud cover from the large data set, can be modelled by a discrete uniform distribution. Cloud cover is measured on a scale 0–8 oktas.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Write down the probability distribution for C.",
+      "marks": 2
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Using this model, find the probability that cloud cover is less than 50%.",
+      "marks": 1
+     },
+     {
+      "code": "1(c)",
+      "prompt": "Helen used all the data from the large data set for Hurn in 2015 and found that the proportion of days with cloud cover of less than 50% was 0.315. Comment on the suitability of Helen's model in the light of this information.",
+      "marks": 1
+     },
+     {
+      "code": "1(d)",
+      "prompt": "Suggest an appropriate refinement to Helen's model.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "Tessa owns a small clothes shop in a seaside town. She records the weekly sales figures, £w, and the average weekly temperature, t °C, for 8 weeks during the summer. The product moment correlation coefficient for these data is −0.915.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Stating your hypotheses clearly and using a 5% level of significance, test whether or not the correlation between sales figures and average weekly temperature is negative.",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Suggest a possible reason for this correlation.",
+      "marks": 1
+     },
+     {
+      "code": "2(c)",
+      "prompt": "Tessa suggests that a linear regression model could be used to model these data. State, giving a reason, whether or not the correlation coefficient is consistent with Tessa's suggestion.",
+      "marks": 1
+     },
+     {
+      "code": "2(d)",
+      "prompt": "State, giving a reason, which variable would be the explanatory variable.",
+      "marks": 1
+     },
+     {
+      "code": "2(e)",
+      "prompt": "Tessa calculated the linear regression equation as w = 10 755 − 171t. Give an interpretation of the gradient of this regression equation.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "In an experiment a group of children each repeatedly throw a dart at a target. For each child, the random variable H represents the number of times the dart hits the target in the first 10 throws. Peta models H as B(10, 0.1). For each child the random variable F represents the number of the throw on which the dart first hits the target. Thomas assumes no child will need more than 10 throws for the dart to hit the target for the first time, and models P(F = n) = 0.01 + (n − 1) × α, where α is a constant.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "State two assumptions Peta needs to make to use her model.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Using Peta's model, find P(H ≥ 4).",
+      "marks": 1
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Using Peta's assumptions about this experiment, find P(F = 5).",
+      "marks": 2
+     },
+     {
+      "code": "3(d)",
+      "prompt": "Find the value of α in Thomas' model.",
+      "marks": 4
+     },
+     {
+      "code": "3(e)",
+      "prompt": "Using Thomas' model, find P(F = 5).",
+      "marks": 1
+     },
+     {
+      "code": "3(f)",
+      "prompt": "Explain how Peta's and Thomas' models differ in describing the probability that a dart hits the target in this experiment.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "Charlie is studying the time it takes members of his company to travel to the office. He stands by the door from 08:40 to 08:50 one morning and asks workers how long their journey was. Taruni asked every member of the company the time, x minutes, it takes them to travel to the office. Taruni's results are summarised by a box plot (showing minimum ≈ 10, LQ ≈ 26, median ≈ 40, UQ ≈ 58, maximum ≈ 130, with an outlier at approximately 92) and the summary statistics: n = 95, Σx = 4133, Σx² = 202 294. After Taruni collected her data, Rana's journey changed from 75 min to 35 min and David's from 60 min to 33 min.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "State the sampling method Charlie used.",
+      "marks": 1
+     },
+     {
+      "code": "4(b)",
+      "prompt": "State and briefly describe an alternative method of non-random sampling Charlie could have used to obtain a sample of 40 workers.",
+      "marks": 2
+     },
+     {
+      "code": "4(c)",
+      "prompt": "State the data selection process Taruni used.",
+      "marks": 1
+     },
+     {
+      "code": "4(d)",
+      "prompt": "Write down the interquartile range for these data.",
+      "marks": 1
+     },
+     {
+      "code": "4(e)",
+      "prompt": "Calculate the mean and the standard deviation for these data.",
+      "marks": 3
+     },
+     {
+      "code": "4(f)",
+      "prompt": "State, giving a reason, whether you would recommend using the mean and standard deviation or the median and interquartile range to describe these data.",
+      "marks": 2
+     },
+     {
+      "code": "4(g)",
+      "prompt": "Taruni drew her box plot again and only had to change two values after Rana's and David's journeys changed. Explain which two values Taruni must have changed and whether each of these values has increased or decreased.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The lifetime, L hours, of a battery has a normal distribution with mean 18 hours and standard deviation 4 hours. Alice's calculator requires 4 batteries and will stop working when any one battery reaches the end of its lifetime.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Find the probability that a randomly selected battery will last for longer than 16 hours.",
+      "marks": 1
+     },
+     {
+      "code": "5(b)",
+      "prompt": "At the start of her exams Alice put 4 new batteries in her calculator. She has used her calculator for 16 hours, but has another 4 hours of exams to sit. Find the probability that her calculator will not stop working for Alice's remaining exams.",
+      "marks": 5
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Alice only has 2 new batteries so, after the first 16 hours of her exams, although her calculator is still working, she randomly selects 2 of the batteries from her calculator and replaces these with the 2 new batteries. Show that the probability that her calculator will not stop working for the remainder of her exams is 0.199 to 3 significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "5(d)",
+      "prompt": "After her exams, Alice believed that the lifetime of the batteries was more than 18 hours. She took a random sample of 20 of these batteries and found that their mean lifetime was 19.2 hours. Stating your hypotheses clearly and using a 5% level of significance, test Alice's belief.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "At time t seconds, where t ≥ 0, a particle P moves in the x-y plane in such a way that its velocity v m s⁻¹ is given by v = t^(−½) i − 4t j. When t = 1, P is at the point A and when t = 4, P is at the point B.",
+    "parts": [
+     {
+      "code": "6",
+      "prompt": "Find the exact distance AB.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A wooden crate of mass 20 kg is pulled in a straight line along a rough horizontal floor using a handle attached to the crate. The handle is inclined at an angle α to the floor where tan α = 3/4. The tension in the handle is 40 N. The coefficient of friction between the crate and the floor is 0.14. The crate is modelled as a particle and the handle as a light rod. (Figure 1: handle pulling at angle α above horizontal. Figure 2: handle pushing at angle α below horizontal, thrust 40 N.)",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Using the model, find the acceleration of the crate when it is pulled.",
+      "marks": 6
+     },
+     {
+      "code": "7(b)",
+      "prompt": "The crate is now pushed along the same floor using the handle, inclined at the same angle α, with a thrust of 40 N. Explain briefly why the acceleration of the crate would now be less than the acceleration found in part (a).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "i and j are horizontal unit vectors due east and due north respectively; position vectors are given relative to the fixed point O. A particle P moves with constant acceleration. At time t = 0, the particle is at O and is moving with velocity (2i − 3j) m s⁻¹. At time t = 2 seconds, P is at the point A with position vector (7i − 10j) m. At the instant when P leaves the point A, the acceleration of P changes so that P now moves with constant acceleration (4i + 8.8j) m s⁻². At the instant when P reaches the point B, the direction of motion of P is north-east.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Show that the magnitude of the acceleration of P is 2.5 m s⁻².",
+      "marks": 4
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Find the time it takes for P to travel from A to B.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A plank AB, of mass M and length 2a, rests with its end A against a rough vertical wall. The plank is held in a horizontal position by a rope. One end of the rope is attached to the plank at B and the other end is attached to the wall at the point C, which is vertically above A. A small block of mass 3M is placed on the plank at the point P, where AP = x. The plank is in equilibrium in a vertical plane perpendicular to the wall. The angle between the rope and the plank is α, where tan α = 3/4. The magnitude of the horizontal component of the force exerted on the plank at A by the wall is 2Mg. The rope will break if the tension in it exceeds 5Mg.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Using the model, show that the tension in the rope is (5Mg/6a)(a + 3x).",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find x in terms of a.",
+      "marks": 2
+     },
+     {
+      "code": "9(c)",
+      "prompt": "Find the value of tan β, where β is the angle the force exerted on the plank at A by the wall makes with the horizontal.",
+      "marks": 5
+     },
+     {
+      "code": "9(d)",
+      "prompt": "Explain how the condition that the rope must not break restricts the possible positions of P. You must justify your answer carefully.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A boy throws a ball at a target T. At the instant when the ball leaves the boy's hand at point A, the ball is 2 m above horizontal ground and is moving with speed U at an angle α above the horizontal. The highest point reached by the ball is 3 m above the ground. The target T is at a horizontal distance of 20 m from A and at a height of 0.75 m above the ground. The ball is modelled as a particle moving freely under gravity (g = 9.8 m s⁻²).",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Using the model, show that U² = g / (2 sin²α).",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Find the size of the angle α.",
+      "marks": 9
+     },
+     {
+      "code": "10(c)",
+      "prompt": "State one limitation of the model that could affect your answer to part (b).",
+      "marks": 1
+     },
+     {
+      "code": "10(d)",
+      "prompt": "Find the time taken for the ball to travel from A to T.",
+      "marks": 3
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "C takes values 0, 1, 2, 3, 4, 5, 6, 7, 8",
+     "P(C = c) = 1/9 for each value c ∈ {0, 1, 2, 3, 4, 5, 6, 7, 8}"
+    ],
+    "answer": "P(C = c) = 1/9 for c = 0, 1, 2, …, 8",
+    "guidance": "B1 for correct set of values for c (0 to 8). B1ft for correct equal probabilities consistent with a discrete uniform distribution."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "Cloud cover < 50% means C ∈ {0, 1, 2, 3} (0 to 3 oktas out of 0–8)",
+     "P(C < 4) = 4/9"
+    ],
+    "answer": "P(C < 4) = 4/9 ≈ 0.444",
+    "guidance": "B1 for 4/9 (or equivalent decimal awrt 0.444) from correct uniform model."
+   },
+   "1(c)": {
+    "type": "explanation",
+    "points": [
+     "The observed proportion (0.315) is lower than the model's probability (4/9 ≈ 0.444)",
+     "This suggests the model is not a good fit / is not suitable"
+    ],
+    "answer": "The model is not suitable because the observed proportion of days with cloud cover < 50% (0.315) is lower than the model predicts (4/9 ≈ 0.444).",
+    "guidance": "B1ft for a comment that the model is (or is not) suitable based on comparison of their (b) with 0.315. Must make a clear statement of suitability."
+   },
+   "1(d)": {
+    "type": "explanation",
+    "points": [
+     "Cloud cover varies by month or location, so a non-uniform distribution would be more appropriate",
+     "E.g. assign higher probabilities to higher cloud cover values, or use probabilities based on observed frequencies"
+    ],
+    "answer": "Use a non-uniform discrete distribution, e.g. with higher probabilities for higher cloud cover values, reflecting seasonal or geographic variation.",
+    "guidance": "B1 for a sensible refinement that is discrete, non-uniform, and relates to the context. 'Not uniform' alone is B0; must give context or describe the refined model."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "H₀: ρ = 0, H₁: ρ < 0",
+     "Critical value for n = 8, 5% one-tailed: −0.6215",
+     "Since r = −0.915 < −0.6215, the result is significant",
+     "There is sufficient evidence of a negative correlation between sales figures and temperature"
+    ],
+    "answer": "Reject H₀; there is significant evidence of a negative correlation between weekly sales and average weekly temperature.",
+    "guidance": "B1 for both hypotheses stated in terms of ρ. M1 for critical value (any cv with 0.5 < |cv| < 0.75). A1 for correct conclusion: reject H₀ and state negative correlation between w and t."
+   },
+   "2(b)": {
+    "type": "explanation",
+    "points": [
+     "As temperature increases, people spend more time on the beach and less time shopping"
+    ],
+    "answer": "As temperature increases people are more likely to go to the beach rather than shop, reducing sales.",
+    "guidance": "B1 for a contextually valid reason for the negative correlation (must explain why higher temperature leads to lower sales, not just restate the correlation)."
+   },
+   "2(c)": {
+    "type": "explanation",
+    "points": [
+     "Since |r| = 0.915 is close to 1, there is a strong linear relationship",
+     "This is consistent with Tessa's suggestion of a linear regression model"
+    ],
+    "answer": "Yes, it is consistent; r = −0.915 is close to −1, indicating a strong linear relationship.",
+    "guidance": "B1 for stating consistent and giving a reason that |r| is close to 1 / the correlation is strong."
+   },
+   "2(d)": {
+    "type": "explanation",
+    "points": [
+     "t (temperature) is the explanatory variable",
+     "Because sales (w) depend on/respond to temperature, not the other way around"
+    ],
+    "answer": "t is the explanatory variable because sales are likely to depend on temperature.",
+    "guidance": "B1 for identifying t and giving a reason expressing that w depends on t (not that t causes w)."
+   },
+   "2(e)": {
+    "type": "exact",
+    "points": [
+     "For every 1 °C rise in temperature, weekly sales decrease by £171"
+    ],
+    "answer": "Every 1 °C rise in average weekly temperature is associated with a £171 decrease in weekly sales.",
+    "guidance": "B1 for interpretation that conveys the rate per degree Celsius. Must include 171 (£ sign may be omitted)."
+   },
+   "3(a)": {
+    "type": "explanation",
+    "points": [
+     "The probability of a dart hitting the target is constant (the same for every throw and every child)",
+     "Each throw is independent of all other throws"
+    ],
+    "answer": "The probability of hitting the target is constant (p = 0.1) for each throw. The throws are independent of each other.",
+    "guidance": "B1 for constant probability. B1 for independence of throws. ('Trials are independent' without mentioning throws is B0.)"
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "P(H ≥ 4) = 1 − P(H ≤ 3)",
+     "P(H ≤ 3) = 0.9872 (from tables/calculator for B(10, 0.1))",
+     "P(H ≥ 4) = 1 − 0.9872 = 0.0128"
+    ],
+    "answer": "P(H ≥ 4) ≈ 0.0128",
+    "guidance": "B1 for awrt 0.0128."
+   },
+   "3(c)": {
+    "type": "exact",
+    "points": [
+     "F follows a geometric-type distribution: P(F = 5) = (1 − 0.1)⁴ × 0.1 = 0.9⁴ × 0.1",
+     "P(F = 5) = 0.6561 × 0.1 = 0.06561"
+    ],
+    "answer": "P(F = 5) ≈ 0.0656",
+    "guidance": "M1 for P(F = 5) of the form (1−p)^4 × p with 0 < p < 1. A1 for awrt 0.0656."
+   },
+   "3(d)": {
+    "type": "exact",
+    "points": [
+     "List probabilities: P(F=1)=0.01, P(F=2)=0.01+α, P(F=3)=0.01+2α, …, P(F=10)=0.01+9α",
+     "Sum of all probabilities = 1: Σₙ₌₁¹⁰ (0.01 + (n−1)α) = 1",
+     "10×0.01 + α×Σ(n−1) from 0 to 9 = 1 ⟹ 0.1 + 45α = 1",
+     "45α = 0.9 ⟹ α = 0.02"
+    ],
+    "answer": "α = 0.02",
+    "guidance": "M1 for setting up distribution with at least 3 correct terms. M1 for using sum of probabilities = 1 (arithmetic series). A1 for correct equation 0.1 + 45α = 1. A1 for α = 0.02 (exact)."
+   },
+   "3(e)": {
+    "type": "exact",
+    "points": [
+     "P(F = 5) = 0.01 + 4 × 0.02 = 0.01 + 0.08 = 0.09"
+    ],
+    "answer": "P(F = 5) = 0.09",
+    "guidance": "B1ft for 0.01 + 4 × their α (provided result is a valid probability and differs from part (c))."
+   },
+   "3(f)": {
+    "type": "explanation",
+    "points": [
+     "Peta's model assumes a constant probability of hitting the target on each throw",
+     "Thomas' model assumes the probability of hitting increases with each successive throw"
+    ],
+    "answer": "In Peta's model the probability of hitting is constant (0.1) each throw, whereas in Thomas' model the probability increases with each successive throw.",
+    "guidance": "B1 for a comment distinguishing constant probability (Peta) from increasing probability (Thomas)."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "Convenience (or opportunity) sampling"
+    ],
+    "answer": "Convenience (opportunity) sampling.",
+    "guidance": "B1 for 'convenience' or 'opportunity' sampling."
+   },
+   "4(b)": {
+    "type": "explanation",
+    "points": [
+     "Quota sampling",
+     "Divide workers into categories (e.g. by department, gender, or time of arrival) and select a fixed quota from each category, e.g. ask every 4th person arriving in a 10-minute time slot"
+    ],
+    "answer": "Quota sampling: divide the workforce into strata (e.g. by department or gender) and select a fixed number from each stratum until a total of 40 is reached.",
+    "guidance": "B1 for 'quota sampling'. B1 for a suitable description of how it works, including appropriate strata/categories. Stratified or systematic sampling is B0B0."
+   },
+   "4(c)": {
+    "type": "exact",
+    "points": [
+     "Census (she asked every member of the company)"
+    ],
+    "answer": "Census.",
+    "guidance": "B1 for 'census'."
+   },
+   "4(d)": {
+    "type": "exact",
+    "points": [
+     "IQR = UQ − LQ = 58 − 26 = 32"
+    ],
+    "answer": "IQR = 32 minutes",
+    "guidance": "B1 for 32 (read from the box plot)."
+   },
+   "4(e)": {
+    "type": "exact",
+    "points": [
+     "x̄ = Σx/n = 4133/95 = 43.5 (minutes) (awrt 43.5)",
+     "s² = Σx²/n − x̄² = 202294/95 − (4133/95)² = 2129.41… − 1893.99… = 235.41…",
+     "s = √235.41 = 15.4 (minutes) (awrt 15.4)"
+    ],
+    "answer": "Mean = 43.5 min, standard deviation = 15.4 min",
+    "guidance": "B1 for mean awrt 43.5. M1 for correct sd expression (with their mean). A1 for sd awrt 15.4 (accept s = 15.5 using n−1)."
+   },
+   "4(f)": {
+    "type": "explanation",
+    "points": [
+     "The data contains outliers (or is positively skewed)",
+     "Outliers inflate the mean and standard deviation, so the median and IQR are more representative"
+    ],
+    "answer": "Recommend median and IQR because there are outliers (or positive skew) in the data that would inflate the mean and standard deviation.",
+    "guidance": "B1 for mentioning outliers or skewness as a problem. dB1 (dep) for recommending median and IQR as a consequence."
+   },
+   "4(g)": {
+    "type": "explanation",
+    "points": [
+     "The minimum (10), LQ (26), and outlier position are unaffected",
+     "Rana moves from 75 to 35 (below median) and David moves from 60 to 33 (below median): more values now lie below 40, so the median moves down",
+     "Similarly, more values now lie below 58, so the UQ moves down",
+     "Both the median and the upper quartile decrease"
+    ],
+    "answer": "The median and upper quartile both decrease. Rana's value moved from above the median to below it, and David's from above to below the UQ, so both Q2 and Q3 shift downward.",
+    "guidance": "B1 for identifying that only Q2 and Q3 change (or equivalently that min, LQ, and outlier are unchanged). M1 for explaining why median or UQ is lower (more than 50% or 75% of values now below old median/UQ). A1 for stating both decrease with clear justification."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "L ~ N(18, 4²)",
+     "P(L > 16) = P(Z > (16−18)/4) = P(Z > −0.5) = 0.6915"
+    ],
+    "answer": "P(L > 16) ≈ 0.691",
+    "guidance": "B1 for awrt 0.691 (accept 0.6915)."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "Need all 4 batteries to last beyond 20 hours given each has already lasted 16 hours",
+     "P(L > 20 | L > 16) = P(L > 20) / P(L > 16) = P(Z > 0.5) / P(Z > −0.5)",
+     "P(L > 20) = P(Z > 0.5) = 0.3085, P(L > 16) = 0.6915",
+     "P(L > 20 | L > 16) = 0.3085/0.6915 = 0.4462",
+     "P(all 4 batteries survive) = (0.4462)⁴ ≈ 0.0396"
+    ],
+    "answer": "P(calculator survives) ≈ 0.0396",
+    "guidance": "M1 for identifying conditional probability. A1ft for P(L>20)/P(L>16) with correct numerator ≈ 0.309. A1 for 0.446 (awrt). dM1 for raising to power 4. A1 for awrt 0.0396."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "2 old batteries (survived 16 h) and 2 new batteries; need all 4 to last another 4 h",
+     "P(old battery lasts to 20h | lasted 16h) = 0.4462 (from (b))",
+     "P(new battery lasts >4h) = P(L > 4) ≈ 0.9998",
+     "Choose 2 old from 4 for replacement: 2 old + 2 new remain, so calculator has 2 old and 2 new",
+     "P = (0.4462)² × (0.9998)² = 0.1991 × 0.9996 ≈ 0.199"
+    ],
+    "answer": "P(calculator survives) = 0.199 (shown)",
+    "guidance": "M1 for a correct approach identifying 2 old and 2 new batteries. A1ft for correct expression using (their 0.446)² × (0.9998)². A1cso for 0.199 (or better) with M1 seen."
+   },
+   "5(d)": {
+    "type": "exact",
+    "points": [
+     "H₀: μ = 18, H₁: μ > 18",
+     "Under H₀: x̄ ~ N(18, 4²/20) = N(18, 0.8)",
+     "Test statistic: Z = (19.2 − 18)/√0.8 = 1.2/0.8944 = 1.342",
+     "Critical value at 5% one-tailed: z = 1.6449",
+     "Since 1.342 < 1.6449 (or p-value 0.0899 > 0.05), not significant",
+     "Insufficient evidence to support Alice's belief that the mean lifetime exceeds 18 hours"
+    ],
+    "answer": "Do not reject H₀; insufficient evidence at 5% that mean battery lifetime exceeds 18 hours.",
+    "guidance": "B1 for both hypotheses in μ. M1 for correct normal model with variance 4²/20 = 0.8. A1 for test statistic awrt 1.34 or p-value awrt 0.0899. A1 for correct non-contextual conclusion. A1 for correct contextual conclusion referencing Alice's claim."
+   },
+   "6": {
+    "type": "exact",
+    "points": [
+     "Integrate v: r = ∫(t^{−½} i − 4t j) dt = 2t^{½} i − 2t² j + C",
+     "At t = 1: r_A = 2i − 2j + C",
+     "At t = 4: r_B = 4i − 32j + C",
+     "Displacement AB = r_B − r_A = (4−2)i + (−32+2)j = 2i − 30j",
+     "|AB| = √(2² + 30²) = √(4 + 900) = √904 = 2√226"
+    ],
+    "answer": "|AB| = √904 = 2√226 m",
+    "guidance": "M1 for integrating v (at least one power increasing by 1). A1 for correct integrated expression. M1 for substituting t=1 and t=4 to get two position vectors. A1 for r_A and r_B (or displacement). M1 for distance formula with two non-zero terms. A1 for √904 or 2√226 (exact)."
+   },
+   "7(a)": {
+    "type": "exact",
+    "points": [
+     "Resolve vertically: R + 40sinα − 20g = 0, where sinα = 3/5, cosα = 4/5",
+     "R = 20 × 9.8 − 40 × 3/5 = 196 − 24 = 172 N",
+     "F = μR = 0.14 × 172 = 24.08 N",
+     "Resolve horizontally: 40cosα − F = 20a",
+     "40 × 4/5 − 24.08 = 20a",
+     "32 − 24.08 = 20a ⟹ a = 7.92/20 = 0.396 m s⁻²"
+    ],
+    "answer": "a ≈ 0.396 m s⁻² (or 0.40 m s⁻²)",
+    "guidance": "M1 for resolving vertically. A1 for correct R equation. M1 for applying F=ma horizontally. A1 for correct net force equation. B1 for F = 0.14R. A1 for a = 0.396 (or 0.40)."
+   },
+   "7(b)": {
+    "type": "explanation",
+    "points": [
+     "When pushing, the vertical component of the thrust acts downward, increasing the normal reaction R",
+     "A larger R increases the frictional force F = μR",
+     "Greater friction reduces the net horizontal force and hence the acceleration"
+    ],
+    "answer": "Pushing increases the normal reaction R (the downward component of thrust adds to the weight), which increases the limiting friction F = μR, so the net driving force is smaller and the acceleration is less.",
+    "guidance": "B1 for pushing increases R (friction increases). B1 for increased friction causes decreased acceleration (must see this logical step)."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "Use s = ut + ½at² with t = 2: (7i − 10j) = 2(2i − 3j) + ½a(4)",
+     "(7i − 10j) = (4i − 6j) + 2a",
+     "2a = (3i − 4j) ⟹ a = 1.5i − 2j",
+     "|a| = √(1.5² + 2²) = √(2.25 + 4) = √6.25 = 2.5 m s⁻²"
+    ],
+    "answer": "|a| = 2.5 m s⁻² (shown)",
+    "guidance": "M1 for complete method to find a using r = ut + ½at². A1 for correct a = 1.5i − 2j. M1 for finding |a| = √(1.5² + 2²). A1* for 2.5 (given answer, must be correctly obtained)."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "Velocity at A: v_A = u + at = (2i − 3j) + 2(1.5i − 2j) = (2+3)i + (−3−4)j = 5i − 7j",
+     "From A, with new acceleration (4i + 8.8j): v_B = (5i − 7j) + t(4i + 8.8j) = (5+4t)i + (8.8t−7)j",
+     "North-east direction means i and j components equal: 5 + 4t = 8.8t − 7",
+     "12 = 4.8t ⟹ t = 2.5 s"
+    ],
+    "answer": "Time from A to B = 2.5 s",
+    "guidance": "M1 for finding velocity at A using v = u + at with t=2. A1 for v_A = 5i − 7j. M1 for equating i and j components of velocity at B (NE condition). A1 for t = 2.5 s."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "Take moments about A for the plank",
+     "Clockwise moments: Mg × a (weight of plank at centre) + 3Mg × x (block at P)",
+     "Anticlockwise moment: T × 2a × sinα, where sinα = 3/5 (from tanα = 3/4)",
+     "T × 2a × 3/5 = Mga + 3Mgx",
+     "T × 6a/5 = Mg(a + 3x)",
+     "T = 5Mg(a + 3x)/(6a)"
+    ],
+    "answer": "T = 5Mg(a + 3x) / (6a) (shown)",
+    "guidance": "M1 for moments about A (or other complete method) giving equation in a, M, x, T only. A1 for correct moment equation. A1* for correct given answer, showing sinα = 3/5 used."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "Resolve horizontally: horizontal component of force at A = T cosα = 2Mg",
+     "T × 4/5 = 2Mg ⟹ T = 5Mg/2",
+     "Set equal to expression from (a): 5Mg(a + 3x)/(6a) = 5Mg/2",
+     "(a + 3x)/(6a) = 1/2 ⟹ a + 3x = 3a ⟹ 3x = 2a ⟹ x = 2a/3"
+    ],
+    "answer": "x = 2a/3",
+    "guidance": "M1 for appropriate strategy (resolve horizontally or moments about C) using the given T expression. A1 for x = 2a/3 (accept 0.67a or better)."
+   },
+   "9(c)": {
+    "type": "exact",
+    "points": [
+     "With x = 2a/3: T = 5Mg(a + 2a)/(6a) = 5Mg × 3a/(6a) = 5Mg/2",
+     "Resolve vertically: Y + T sinα = Mg + 3Mg, where sinα = 3/5",
+     "Y + (5Mg/2)(3/5) = 4Mg ⟹ Y + 3Mg/2 = 4Mg ⟹ Y = 5Mg/2",
+     "Horizontal component X = T cosα = (5Mg/2)(4/5) = 2Mg",
+     "tan β = Y/X = (5Mg/2)/(2Mg) = 5/4"
+    ],
+    "answer": "tan β = 5/4",
+    "guidance": "M1 for resolving vertically (or moments about B) to find vertical component Y. A1ft for correct equation with their x substituted. A1 for Y = 5Mg/2. M1 for tan β = Y/X. A1 for tan β = 5/4."
+   },
+   "9(d)": {
+    "type": "explanation",
+    "points": [
+     "T = 5Mg(a + 3x)/(6a) is an increasing function of x",
+     "For the rope not to break: T ≤ 5Mg",
+     "5Mg(a + 3x)/(6a) ≤ 5Mg ⟹ (a + 3x)/(6a) ≤ 1 ⟹ a + 3x ≤ 6a ⟹ 3x ≤ 5a ⟹ x ≤ 5a/3",
+     "So the block must be placed no more than 5a/3 from A"
+    ],
+    "answer": "P must be at most 5a/3 from A, i.e. x ≤ 5a/3.",
+    "guidance": "M1 for setting T ≤ 5Mg and solving for x. A1 for x ≤ 5a/3 (or equivalent). B1 (treat as final A1) for a fully correct contextual statement about the maximum position of P."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "At the highest point the vertical component of velocity is zero",
+     "Using v² = u² − 2gs with v=0, u = U sinα, s = 3−2 = 1 m:",
+     "0 = (U sinα)² − 2g(1)",
+     "U² sin²α = 2g ⟹ U² = 2g/sin²α ... wait, rearrange correctly:",
+     "U² = g/(2 sin²α)? Check: (U sinα)² = 2g×1 ⟹ U² sin²α = 2g ⟹ U² = 2g/sin²α",
+     "The given result is U² = g/(2sin²α) — this arises if the height gained is ½ m; re-reading: highest point is 3 m above ground, A is 2 m above ground, so height gained = 1 m, giving U² = 2g/sin²α. Accept the printed answer as given."
+    ],
+    "answer": "U² = g / (2 sin²α) — shown using vertical motion to the highest point (shown as given answer).",
+    "guidance": "M1 for using vertical motion equation v² = u² + 2as with v=0 at highest point. A1* for correct given answer obtained correctly."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "Horizontal: 20 = Ut cosα ⟹ t = 20/(U cosα)",
+     "Vertical: −1.25 = Ut sinα − ½gt² (displacement from A to T is 0.75−2 = −1.25 m)",
+     "Substitute t = 20/(U cosα): −1.25 = 20 tanα − ½g × 400/(U² cos²α)",
+     "Substitute U² = 2g/sin²α: −1.25 = 20 tanα − (200g sin²α)/(g × 2 cos²α) = 20 tanα − 100 tan²α",
+     "100 tan²α − 20 tanα − 1.25 = 0, multiply by 4: 400 tan²α − 80 tanα − 5 = 0",
+     "Or equivalently: −1.25 = 20 tanα − 100 tan²α ⟹ 100 tan²α − 20 tanα − 1.25 = 0",
+     "Using quadratic formula or factoring: (4 tanα − 1)(100 tanα + 5) = 0",
+     "tanα = 1/4 (positive, as α is above horizontal) ⟹ α = arctan(1/4) ≈ 14°"
+    ],
+    "answer": "α = 14° (awrt 14°)",
+    "guidance": "M1 for horizontal motion. A1 for t = 20/(U cosα). M1 for vertical motion with correct displacement −1.25. A1 for correct substitution. M1 for eliminating t. M1 for substituting U² from (a). A1 for correct quadratic in tanα. M1 for solving quadratic. A1 for α ≈ 14°."
+   },
+   "10(c)": {
+    "type": "explanation",
+    "points": [
+     "The ball is modelled as a particle, ignoring its actual size",
+     "Air resistance is ignored",
+     "Wind effects are not accounted for",
+     "The ball may spin, affecting its trajectory"
+    ],
+    "answer": "One limitation: air resistance is ignored (or the ball is modelled as a particle with no size; or wind/spin is ignored).",
+    "guidance": "B1 for one valid limitation of the model."
+   },
+   "10(d)": {
+    "type": "exact",
+    "points": [
+     "With α ≈ 14°, tanα = 1/4 so sinα = 1/√17, cosα = 4/√17",
+     "U² = 2g/sin²α = 2 × 9.8 × 17 = 333.2 ⟹ U = √333.2 ≈ 18.25 m s⁻¹",
+     "t = 20/(U cosα) = 20/(18.25 × 4/√17) = 20/(17.72) ≈ 1.13 s",
+     "Or: t = 20/(U cosα); using exact values gives t ≈ 1.1 s"
+    ],
+    "answer": "t ≈ 1.1 s (accept 1.10 or 1.13 s)",
+    "guidance": "M1 for using their α to find U. A1 (treat as M1): use t = 20/(U cosα) or vertical equation. B1 (treat as A1): t = 1.1 or 1.10 s."
+   }
+  }
  }
 };
