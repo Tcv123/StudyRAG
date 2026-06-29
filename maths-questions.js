@@ -12836,5 +12836,613 @@ window.MATHS_QUESTIONS = {
     "guidance": "B1 for deducing lower value k = 7 (from substituting (5,2) or (1,2) into x+y=k, or from x² − 7x + (k−3) = 0 giving repeated root check). M1 for finding where x + y = k meets y = 6 − (x−3)² and forming a 3TQ. A1 for correct 3TQ x² − 7x + (k−3) = 0. M1 for using discriminant b² − 4ac ≥ 0 (or > 0) to find critical value. A1 for {k : 7 ≤ k < 61/4} in set notation (accept equivalent exact forms; 61/4 = 15.25)."
    }
   }
+ },
+ "math-edx-9ma0-2018-p2": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "A function g is defined by g(x) = (2x + 5)/(x − 3), x ∈ ℝ, x ≠ 3.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "Find gg(5).",
+      "marks": 2
+     },
+     {
+      "code": "1(b)",
+      "prompt": "State the range of g.",
+      "marks": 1
+     },
+     {
+      "code": "1(c)",
+      "prompt": "Find g⁻¹(x), stating its domain.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "Point A has position vector 2i + 3j − 4k, point B has position vector 4i − 2j + 3k, and point C has position vector ai + 5j − 2k where a < 0. D is the point such that vector AB = vector BD.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find the position vector of D.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Given that |AC| = 4, find the value of a.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Disprove the statement: \"If m and n are irrational numbers, where m ≠ n, then mn is also irrational.\" Use a counter-example.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "(i) Sketch the graph of y = |x| + 3. (ii) Hence explain why |x| + 3 ≥ |x + 3| for all real values of x.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4(i)",
+      "prompt": "Show that Σ(r = 1 to 16) of (3 + 5r + 2ʳ) = 131798.",
+      "marks": 4
+     },
+     {
+      "code": "4(ii)",
+      "prompt": "A sequence u₁, u₂, u₃, … is defined by u₁ = 2/3, u_{n+1} = 1/(3uₙ). Find the exact value of Σ(r = 1 to 100) uᵣ.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The equation 2x³ + x² − 1 = 0 has exactly one real root.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Show that for this equation the Newton-Raphson formula can be written as x_{n+1} = (4xₙ³ + xₙ² + 1) / (6xₙ² + 2xₙ).",
+      "marks": 3
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Using the formula in (a) with x₁ = 1, find the values of x₂ and x₃.",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Explain why the Newton-Raphson method cannot be used with x₁ = 0.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "f(x) = −3x³ + 8x² − 9x + 10, x ∈ ℝ.",
+    "parts": [
+     {
+      "code": "6(a)(i)",
+      "prompt": "Calculate f(2).",
+      "marks": 1
+     },
+     {
+      "code": "6(a)(ii)",
+      "prompt": "Write f(x) as a product of two algebraic factors.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Using your answer to (a)(ii), prove that there are exactly two real solutions to −3y⁶ + 8y⁴ − 9y² + 10 = 0.",
+      "marks": 2
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Deduce the number of real solutions, for 7π ≤ θ < 10π, to 3tan³θ − 8tan²θ + 9tanθ − 10 = 0.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "parts": [
+     {
+      "code": "7(i)",
+      "prompt": "Solve, for 0 ≤ x < π/2, the equation 4 sin x = sec x.",
+      "marks": 4
+     },
+     {
+      "code": "7(ii)",
+      "prompt": "Solve, for 0 ≤ θ < 360°, the equation 5sinθ − 5cosθ = 2, giving answers to one decimal place. (Solutions based entirely on graphical or numerical methods are not acceptable.)",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "Figure 1 shows the trajectory of a rugby ball. The height of the ball above the ground, H metres, is plotted against horizontal distance x metres from the kick. The ball reaches a maximum height of 12 metres and hits the ground 40 metres from the kick. The ball passes over a horizontal bar 3 metres above the ground.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Find a quadratic equation linking H with x that models this situation.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Use your equation to find the greatest horizontal distance of the bar from the kick.",
+      "marks": 3
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Give one limitation of the model.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "parts": [
+     {
+      "code": "9",
+      "prompt": "Given that θ is measured in radians, prove from first principles that d/dθ (cosθ) = −sinθ. You may assume the formula for cos(A ± B) and that as h → 0, sin(h)/h → 1 and (cos(h) − 1)/h → 0.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A spherical mint of radius 5 mm is sucked. Four minutes later the radius is 3 mm. In a simple model, the rate of decrease of the radius is inversely proportional to the square of the radius.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find an equation linking the radius of the mint and the time, defining your variables.",
+      "marks": 5
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Find the total time for the mint to completely dissolve, in minutes and seconds to the nearest second.",
+      "marks": 2
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Suggest one limitation of the model.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "(1 + 11x − 6x²) / ((x − 3)(1 − 2x)) ≡ A + B/(x − 3) + C/(1 − 2x).",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Find the values of the constants A, B and C.",
+      "marks": 4
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Let f(x) = (1 + 11x − 6x²) / ((x − 3)(1 − 2x)), x > 3. Using your answer to (a), prove that f(x) is a decreasing function.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Prove that 1 − cos2θ ≡ tanθ sin2θ, for θ ≠ (2n + 1)π/2, n ∈ ℤ.",
+      "marks": 3
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Hence solve, for −π/2 < x < π/2, the equation (sec²x − 5)(1 − cos2x) = 3tan²x sin2x. Give any non-exact answer to 3 decimal places.",
+      "marks": 6
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "Figure 2 shows part of curve C with equation y = x ln x, x > 0. The line l is the normal to C at the point P(e, e). The region R is bounded by the curve C, the line l and the x-axis.",
+    "parts": [
+     {
+      "code": "13",
+      "prompt": "Show that the exact area of R is Ae² + B where A and B are rational numbers to be found.",
+      "marks": 10
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A population of mice N, t months after the study starts, is modelled by N = 900 / (3 + 7e^{−0.25t}), t ∈ ℝ, t ≥ 0.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Find the number of mice at the start of the study.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Show that dN/dt = N(300 − N) / 1200.",
+      "marks": 4
+     },
+     {
+      "code": "14(c)",
+      "prompt": "The rate of growth is maximum after T months. Find T.",
+      "marks": 4
+     },
+     {
+      "code": "14(d)",
+      "prompt": "State the maximum number of mice P according to the model.",
+      "marks": 1
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "exact",
+    "points": [
+     "g(5) = (2·5 + 5)/(5 − 3) = 15/2",
+     "gg(5) = g(15/2) = (2·15/2 + 5)/(15/2 − 3) = (15 + 5)/(15/2 − 6/2) = 20/(9/2) = 40/9"
+    ],
+    "answer": "40/9 (or 4 4/9)",
+    "guidance": "M1 for finding g(5) = 15/2. A1 for gg(5) = 40/9."
+   },
+   "1(b)": {
+    "type": "exact",
+    "points": [
+     "g(x) = (2x+5)/(x−3) has horizontal asymptote y = 2 and is never equal to 2",
+     "Range: g(x) ∈ ℝ, g(x) ≠ 2"
+    ],
+    "answer": "g(x) ≠ 2 (or y ≠ 2)",
+    "guidance": "B1 for range g ≠ 2 (or equivalent, e.g. {g : g ∈ ℝ, g ≠ 2}). Allow y ≠ 2."
+   },
+   "1(c)": {
+    "type": "points",
+    "points": [
+     "Set y = (2x+5)/(x−3): y(x−3) = 2x+5 ⟹ xy − 3y = 2x + 5 ⟹ xy − 2x = 3y + 5",
+     "x(y − 2) = 3y + 5 ⟹ x = (3y + 5)/(y − 2)",
+     "g⁻¹(x) = (3x + 5)/(x − 2)",
+     "Domain: x ≠ 2 (i.e. x ∈ ℝ, x ≠ 2)"
+    ],
+    "answer": "g⁻¹(x) = (3x + 5)/(x − 2), domain x ≠ 2",
+    "guidance": "M1 for a complete method to find an inverse (swapping x and y, then rearranging). A1 for g⁻¹(x) = (3x+5)/(x−2). B1 for correct domain x ≠ 2 (follow-through on the range of g in part (b))."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "AB = OB − OA = (4−2)i + (−2−3)j + (3−(−4))k = 2i − 5j + 7k",
+     "BD = AB, so OD = OB + AB = (4i − 2j + 3k) + (2i − 5j + 7k) = 6i − 7j + 10k"
+    ],
+    "answer": "OD = 6i − 7j + 10k",
+    "guidance": "M1 for a complete method to find OD (e.g. OD = 2OB − OA). A1 for 6i − 7j + 10k (accept column vector)."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "AC = OC − OA = (a−2)i + (5−3)j + (−2−(−4))k = (a−2)i + 2j + 2k",
+     "|AC|² = (a−2)² + 4 + 4 = 16 ⟹ (a−2)² = 8",
+     "a − 2 = ±2√2 ⟹ a = 2 ± 2√2",
+     "Since a < 0, a = 2 − 2√2"
+    ],
+    "answer": "a = 2 − 2√2",
+    "guidance": "M1 for finding AC in terms of a. M1 for forming |AC|² = 16 and solving. A1 for a = 2 − 2√2 (rejecting a = 2 + 2√2 since a < 0)."
+   },
+   "3(a)": {
+    "type": "points",
+    "points": [
+     "Let m = √3, n = √12 (both irrational, m ≠ n)",
+     "mn = √3 × √12 = √36 = 6, which is rational",
+     "This is a counter-example, so the statement is false"
+    ],
+    "answer": "Counter-example: m = √3, n = √12 gives mn = 6 (rational); statement is false",
+    "guidance": "M1 for a valid attempt at a counter-example with both m and n irrational and m ≠ n. A1 for correct counter-example with mn shown to be rational. (Many other counter-examples are acceptable, e.g. m = √2, n = √8.)"
+   },
+   "3(b)": {
+    "type": "points",
+    "points": [
+     "(i) Correct sketch of y = |x| + 3: V-shape with vertex at (0, 3), both arms with gradient ±1",
+     "(ii) For x ≥ 0: |x| + 3 = x + 3 and |x + 3| = x + 3, so equality holds",
+     "For −3 ≤ x < 0: |x| + 3 = −x + 3 ≥ 3 and |x + 3| = x + 3 ≤ 3, so |x| + 3 ≥ |x + 3|",
+     "For x < −3: |x| + 3 = −x + 3 and |x + 3| = −(x + 3) = −x − 3, so |x| + 3 − |x + 3| = 6 > 0"
+    ],
+    "answer": "(i) V-shape, vertex (0, 3). (ii) Verified by case analysis for x ≥ 0, −3 ≤ x < 0 and x < −3.",
+    "guidance": "B1 for a correct sketch with vertex at (0, 3) and both arms shown. B1 for considering at least two regions and correctly showing the inequality. B1 for a complete, valid argument covering all cases."
+   },
+   "4(i)": {
+    "type": "points",
+    "points": [
+     "Σ(r=1 to 16) 3 = 3 × 16 = 48",
+     "Σ(r=1 to 16) 5r = 5 × (16 × 17)/2 = 5 × 136 = 680",
+     "Σ(r=1 to 16) 2ʳ = 2(2¹⁶ − 1)/(2 − 1) = 2¹⁷ − 2 = 131072 − 2 = 131070",
+     "Total = 48 + 680 + 131070 = 131798 ✓"
+    ],
+    "answer": "131798 (shown)",
+    "guidance": "M1 for attempting Σ3, Σ5r and Σ2ʳ separately. A1 for Σ3 = 48 and Σ5r = 680. M1 for using the geometric series formula for Σ2ʳ. A1 for 131070 and hence total 131798."
+   },
+   "4(ii)": {
+    "type": "points",
+    "points": [
+     "u₁ = 2/3, u₂ = 1/(3 × 2/3) = 1/2, u₃ = 1/(3 × 1/2) = 2/3 = u₁",
+     "Sequence is periodic with period 2: odd terms = 2/3, even terms = 1/2",
+     "Sum of one full cycle (2 terms) = 2/3 + 1/2 = 7/6",
+     "100 terms = 50 complete cycles: Σ = 50 × 7/6 = 350/6 = 175/3"
+    ],
+    "answer": "175/3",
+    "guidance": "M1 for finding at least u₂ and u₃ and identifying the periodic nature. A1 for sum of one cycle = 7/6. M1 for multiplying by 50 cycles. A1 for 175/3."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "f(x) = 2x³ + x² − 1, f'(x) = 6x² + 2x",
+     "x_{n+1} = xₙ − f(xₙ)/f'(xₙ) = xₙ − (2xₙ³ + xₙ² − 1)/(6xₙ² + 2xₙ)",
+     "= [xₙ(6xₙ² + 2xₙ) − (2xₙ³ + xₙ² − 1)] / (6xₙ² + 2xₙ)",
+     "= [6xₙ³ + 2xₙ² − 2xₙ³ − xₙ² + 1] / (6xₙ² + 2xₙ) = (4xₙ³ + xₙ² + 1)/(6xₙ² + 2xₙ) ✓"
+    ],
+    "answer": "x_{n+1} = (4xₙ³ + xₙ² + 1)/(6xₙ² + 2xₙ) (shown)",
+    "guidance": "M1 for correct differentiation f'(x) = 6x² + 2x. M1 for applying NR formula and combining over common denominator. A1* for completing the algebra to give the stated result with no errors."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "x₂ = (4(1)³ + (1)² + 1)/(6(1)² + 2(1)) = 6/8 = 3/4",
+     "x₃ = (4(3/4)³ + (3/4)² + 1)/(6(3/4)² + 2(3/4)) = (27/16 + 9/16 + 16/16)/(54/16 + 24/16) = (52/16)/(78/16) = 52/78 = 2/3"
+    ],
+    "answer": "x₂ = 3/4, x₃ = 2/3",
+    "guidance": "A1 for x₂ = 3/4 (or 0.75). A1 for x₃ = 2/3 (or awrt 0.667). Allow exact fractions or 3 s.f. decimal equivalents."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "f'(0) = 6(0)² + 2(0) = 0, so the tangent at x = 0 is horizontal",
+     "A horizontal tangent does not intersect the x-axis, so no next iterate exists"
+    ],
+    "answer": "f'(0) = 0, so the Newton-Raphson formula is undefined (division by zero)",
+    "guidance": "B1 for stating that f'(0) = 0 (or that the denominator is zero / the tangent is horizontal / the method fails at a stationary point)."
+   },
+   "6(a)(i)": {
+    "type": "exact",
+    "points": [
+     "f(2) = −3(8) + 8(4) − 9(2) + 10 = −24 + 32 − 18 + 10 = 0"
+    ],
+    "answer": "f(2) = 0",
+    "guidance": "B1 for f(2) = 0 (correct evaluation, must show working or state 0)."
+   },
+   "6(a)(ii)": {
+    "type": "points",
+    "points": [
+     "Since f(2) = 0, (x − 2) is a factor",
+     "f(x) = (x − 2)(−3x² + 2x − 5)"
+    ],
+    "answer": "f(x) = (x − 2)(−3x² + 2x − 5)",
+    "guidance": "M1 for attempting polynomial division or inspection using (x − 2) as a factor. A1 for (x − 2)(−3x² + 2x − 5) or equivalent form such as −(x − 2)(3x² − 2x + 5)."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "Substitute x = y²: −3y⁶ + 8y⁴ − 9y² + 10 = 0 becomes f(y²) = 0, i.e. (y² − 2)(−3y⁴ + 2y² − 5) = 0",
+     "y² − 2 = 0 ⟹ y = ±√2 (2 real solutions)",
+     "Discriminant of −3y⁴ + 2y² − 5 = 0: let u = y², then −3u² + 2u − 5 = 0 ⟹ discriminant = 4 − 60 = −56 < 0, no real roots",
+     "So exactly two real solutions: y = ±√2"
+    ],
+    "answer": "Exactly two real solutions: y = ±√2",
+    "guidance": "M1 for substituting y² = x (or x = y²) to relate equation to f(x). M1 for factorising using (a)(ii) and concluding on the quadratic factor. A1 for correctly showing discriminant of quadratic < 0 and stating exactly two real solutions."
+   },
+   "6(c)": {
+    "type": "exact",
+    "points": [
+     "Equation is equivalent to −f(tanθ) = 0, i.e. f(tanθ) = 0, with real solution tanθ = 2",
+     "tan has period π; range 7π ≤ θ < 10π spans exactly 3 complete periods",
+     "Each period contains exactly one solution tanθ = 2, so total = 3 solutions"
+    ],
+    "answer": "3",
+    "guidance": "B1 for 3 (must follow from valid reasoning about the period of tan and the range given)."
+   },
+   "7(i)": {
+    "type": "points",
+    "points": [
+     "4sinx = secx = 1/cosx ⟹ 4sinx cosx = 1 ⟹ 2sin2x = 1",
+     "sin2x = 1/2 ⟹ 2x = π/6 or 2x = 5π/6 (within 0 ≤ 2x < π)",
+     "x = π/12 or x = 5π/12"
+    ],
+    "answer": "x = π/12 and x = 5π/12",
+    "guidance": "M1 for multiplying through by cosx and using double angle to reach sin2x = k. A1 for sin2x = 1/2. M1 for solving sin2x = 1/2 for 2x in the correct range. A1 for both x = π/12 and x = 5π/12."
+   },
+   "7(ii)": {
+    "type": "points",
+    "points": [
+     "Write 5sinθ − 5cosθ = R sin(θ − α) where R = √(5² + 5²) = 5√2",
+     "tan α = 5/5 = 1 ⟹ α = 45°",
+     "5√2 sin(θ − 45°) = 2 ⟹ sin(θ − 45°) = 2/(5√2) = √2/5",
+     "θ − 45° = arcsin(√2/5) ≈ 16.4° or θ − 45° = 180° − 16.4° ≈ 163.6°",
+     "θ ≈ 61.4° or θ ≈ 208.6°"
+    ],
+    "answer": "θ ≈ 61.4° and θ ≈ 208.6°",
+    "guidance": "M1 for expressing 5sinθ − 5cosθ in the form R sin(θ − α). A1 for R = 5√2 and α = 45°. M1 for solving sin(θ − 45°) = 2/(5√2) for both solutions in range. A1 for each correct answer to 1 d.p."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Ball passes through (0, 0) and (40, 0); model as H = ax(x − 40)",
+     "Maximum at x = 20: H = 12 ⟹ 12 = a(20)(20 − 40) = a(20)(−20) = −400a ⟹ a = −3/100",
+     "H = (3/100)x(40 − x) or H = −(3/100)x(x − 40)"
+    ],
+    "answer": "H = (3/100)x(40 − x)",
+    "guidance": "M1 for using H = 0 at x = 0 and x = 40. M1 for using H = 12 at x = 20 to find a. A1 for H = (3/100)x(40 − x) (or equivalent)."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Set H = 3: (3/100)x(40 − x) = 3 ⟹ x(40 − x) = 100",
+     "x² − 40x + 100 = 0 ⟹ x = (40 ± √(1600 − 400))/2 = 20 ± √300 = 20 ± 10√3",
+     "Greatest horizontal distance: x = 20 + 10√3 ≈ 37.3 m"
+    ],
+    "answer": "x = 20 + 10√3 (≈ 37.3 m)",
+    "guidance": "M1 for setting H = 3 and rearranging to a quadratic. M1 for solving the quadratic correctly. A1 for x = 20 + 10√3 (exact or awrt 37.3; accept both solutions stated with the largest identified)."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "E.g. the ground is assumed to be flat/horizontal; the ball is modelled as a particle; air resistance is ignored; the ball starts at ground level"
+    ],
+    "answer": "Any one valid limitation, e.g. the ground is assumed to be level",
+    "guidance": "B1 for any sensible limitation of the quadratic model in context (e.g. ground is flat; no air resistance; ball treated as a particle; ball starts at ground level). Do not accept \"only approximate\" without explanation."
+   },
+   "9": {
+    "type": "points",
+    "points": [
+     "By definition: d/dθ (cosθ) = lim_{h→0} [cos(θ + h) − cosθ] / h",
+     "Using cos(A + B) = cosAcosB − sinAsinB: cos(θ + h) = cosθcosh − sinθsinh",
+     "[cos(θ+h) − cosθ]/h = [cosθ(cosh − 1) − sinθ sinh] / h = cosθ·(cosh−1)/h − sinθ·sinh/h",
+     "As h → 0: (cosh−1)/h → 0 and sinh/h → 1",
+     "Therefore d/dθ (cosθ) = cosθ·0 − sinθ·1 = −sinθ ✓"
+    ],
+    "answer": "d/dθ (cosθ) = −sinθ (shown)",
+    "guidance": "M1 for writing down the limit definition correctly. M1 for applying cos(A+B) to expand cos(θ+h). A1 for correct separation into cosθ·(cosh−1)/h and sinθ·sinh/h terms. A1* for applying both given limits correctly and concluding −sinθ with no errors or gaps."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "Let r be the radius (mm) and t be the time (minutes). Rate of decrease: dr/dt = −k/r²",
+     "Separate variables: r² dr = −k dt",
+     "Integrate: r³/3 = −kt + c",
+     "t = 0, r = 5: 125/3 = c",
+     "t = 4, r = 3: 27/3 = −4k + 125/3 ⟹ 9 = −4k + 125/3 ⟹ 4k = 125/3 − 27/3 = 98/3 ⟹ k = 49/6",
+     "Equation: r³/3 = −(49/6)t + 125/3, i.e. r³ = 125 − (49/2)t"
+    ],
+    "answer": "r³ = 125 − (49/2)t (where r is radius in mm, t is time in minutes)",
+    "guidance": "M1 for forming dr/dt = −k/r² (or equivalent). M1 for separating variables and integrating to reach r³/3 = −kt + c. A1 for correct constant c = 125/3. M1 for using second condition (t = 4, r = 3). A1 for k = 49/6 and final equation r³ = 125 − (49/2)t."
+   },
+   "10(b)": {
+    "type": "points",
+    "points": [
+     "r = 0: 0 = 125 − (49/2)t ⟹ t = 250/49",
+     "250/49 ≈ 5.1020 minutes = 5 minutes and 0.1020 × 60 ≈ 6.12 seconds",
+     "Total time ≈ 5 minutes 6 seconds"
+    ],
+    "answer": "5 minutes 6 seconds",
+    "guidance": "M1 for setting r = 0 in their equation and solving for t. A1 for 5 minutes 6 seconds (awrt; accept 5 min 6 s from t = 250/49)."
+   },
+   "10(c)": {
+    "type": "exact",
+    "points": [
+     "E.g. the mint may not remain spherical; the model ignores the mechanism by which the mint is sucked; rate may not be truly inversely proportional to r²"
+    ],
+    "answer": "Any one valid limitation, e.g. the mint may not stay spherical",
+    "guidance": "B1 for a valid contextual limitation. Do not accept vague statements without explanation."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "1 + 11x − 6x² ≡ A(x − 3)(1 − 2x) + B(1 − 2x) + C(x − 3)",
+     "x = 3: 1 + 33 − 54 = B(1 − 6) ⟹ −20 = −5B ⟹ B = 4",
+     "x = 1/2: 1 + 11/2 − 6/4 = C(1/2 − 3) ⟹ 5 = −(5/2)C ⟹ C = −2",
+     "Compare x² coefficients: −6 = −2A ⟹ A = 3"
+    ],
+    "answer": "A = 3, B = 4, C = −2",
+    "guidance": "M1 for multiplying through and substituting a suitable value (x = 3 or x = 1/2). A1 for B = 4. A1 for C = −2. M1 for comparing coefficients to find A. A1 for A = 3."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "f(x) = 3 + 4/(x − 3) − 2/(1 − 2x) from part (a)",
+     "f'(x) = −4/(x − 3)² − 4/(1 − 2x)²",
+     "For x > 3: (x − 3)² > 0 and (1 − 2x)² > 0, so both terms are negative",
+     "Therefore f'(x) < 0 for all x > 3, hence f is a decreasing function"
+    ],
+    "answer": "f'(x) = −4/(x−3)² − 4/(1−2x)² < 0 for x > 3 ⟹ f is decreasing",
+    "guidance": "M1 for differentiating their partial fractions from (a). A1 for f'(x) = −4/(x−3)² − 4/(1−2x)². M1 for explaining why each term is negative for x > 3. A1* for a complete, correct conclusion that f'(x) < 0 hence f is decreasing."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "RHS = tanθ sin2θ = (sinθ/cosθ)(2sinθcosθ) = 2sin²θ",
+     "Using cos2θ = 1 − 2sin²θ: 2sin²θ = 1 − cos2θ = LHS ✓"
+    ],
+    "answer": "1 − cos2θ ≡ tanθ sin2θ (shown)",
+    "guidance": "M1 for expanding tanθ sin2θ using sin2θ = 2sinθcosθ. A1 for reaching 2sin²θ. A1* for completing the proof using 1 − cos2θ = 2sin²θ with no errors."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "Using result from (a): 1 − cos2x = tanx sin2x, so equation becomes (sec²x − 5)tanx sin2x = 3tan²x sin2x",
+     "Case 1: sin2x = 0 ⟹ 2x = 0 ⟹ x = 0 (within −π/2 < x < π/2)",
+     "Case 2: sin2x ≠ 0, divide both sides by sin2x: (sec²x − 5)tanx = 3tan²x",
+     "If tanx ≠ 0: sec²x − 5 = 3tanx ⟹ 1 + tan²x − 5 = 3tanx ⟹ tan²x − 3tanx − 4 = 0",
+     "(tanx − 4)(tanx + 1) = 0 ⟹ tanx = 4 or tanx = −1",
+     "tanx = 4 ⟹ x = arctan4 ≈ 1.326 rad; tanx = −1 ⟹ x = −π/4",
+     "Solutions: x = 0, x = −π/4, x ≈ 1.326"
+    ],
+    "answer": "x = 0, x = −π/4, x ≈ 1.326",
+    "guidance": "M1 for substituting the identity from (a) into the equation. M1 for considering the case sin2x = 0 and finding x = 0. M1 for dividing by sin2x (non-zero case) and using sec²x = 1 + tan²x. A1 for tan²x − 3tanx − 4 = 0. M1 for solving the quadratic in tanx. A1 for all three solutions: x = 0, x = −π/4 (= −0.785), x = arctan4 ≈ 1.326."
+   },
+   "13": {
+    "type": "points",
+    "points": [
+     "dy/dx = lnx + 1; at P(e, e): gradient of tangent = 2, gradient of normal = −1/2",
+     "Normal l: y − e = −½(x − e) ⟹ y = −x/2 + 3e/2; meets x-axis at x = 3e",
+     "Curve y = xlnx meets x-axis at x = 1 (since 1·ln1 = 0)",
+     "Area under normal from x = e to x = 3e (triangle): ½ × base × height = ½ × 2e × e = e²",
+     "Area under curve from x = 1 to x = e: ∫₁ᵉ xlnx dx",
+     "IBP: ∫xlnx dx = (x²/2)lnx − ∫(x²/2)(1/x)dx = (x²lnx)/2 − x²/4",
+     "Evaluated 1 to e: (e²/2 · 1 − e²/4) − (0 − 1/4) = e²/4 + 1/4",
+     "Total area R = e²/4 + 1/4 + e² = 5e²/4 + 1/4",
+     "So A = 5/4, B = 1/4"
+    ],
+    "answer": "Area R = (5/4)e² + 1/4, so A = 5/4 and B = 1/4",
+    "guidance": "M1 for differentiating y = xlnx correctly. M1 for finding the normal equation and its x-intercept x = 3e. B1 for identifying x = 1 as the x-intercept of the curve. M1 for correctly identifying the region and setting up the area integral(s). M1 for integrating xlnx by parts with correct assignment. A1 for ∫₁ᵉ xlnx dx = e²/4 + 1/4. M1 for combining the triangle area with the integral. A1 for total area = 5e²/4 + 1/4. A1* for clearly stating A = 5/4, B = 1/4."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "t = 0: N = 900/(3 + 7e⁰) = 900/(3 + 7) = 900/10 = 90"
+    ],
+    "answer": "90 mice",
+    "guidance": "B1 for N = 90 (must substitute t = 0 or equivalent)."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "N = 900/(3 + 7e^{−0.25t}); let u = 3 + 7e^{−0.25t}, so N = 900/u",
+     "dN/dt = −900 · du/dt / u² where du/dt = −1.75e^{−0.25t}",
+     "dN/dt = 900 × 1.75e^{−0.25t} / (3 + 7e^{−0.25t})²",
+     "From N: e^{−0.25t} = (900/N − 3)/7 = (900 − 3N)/(7N)",
+     "N(300 − N)/1200 = N(300 − N)/1200; note 300 − N = 900/(3 + 7e^{−0.25t}) × ... verify algebraically",
+     "dN/dt = N²(3 + 7e^{−0.25t}) × 1.75e^{−0.25t} / 900 = N(300 − N)/1200 ✓"
+    ],
+    "answer": "dN/dt = N(300 − N)/1200 (shown)",
+    "guidance": "M1 for differentiating N with respect to t (using quotient or chain rule). A1 for correct dN/dt in terms of t. M1 for expressing e^{−0.25t} in terms of N and substituting. A1* for correct algebraic manipulation to reach N(300−N)/1200."
+   },
+   "14(c)": {
+    "type": "points",
+    "points": [
+     "dN/dt = N(300 − N)/1200 is maximised when d²N/dt² = 0, i.e. when d/dN[N(300−N)] = 0",
+     "d/dN[300N − N²] = 300 − 2N = 0 ⟹ N = 150",
+     "150 = 900/(3 + 7e^{−0.25T}) ⟹ 3 + 7e^{−0.25T} = 6 ⟹ e^{−0.25T} = 3/7",
+     "−0.25T = ln(3/7) ⟹ T = 4ln(7/3)"
+    ],
+    "answer": "T = 4ln(7/3) ≈ 3.37 months",
+    "guidance": "M1 for recognising dN/dt is max when N(300−N) is max, i.e. N = 150. A1 for N = 150. M1 for substituting N = 150 into the model and solving for T. A1 for T = 4ln(7/3) (or exact equivalent; awrt 3.37 if decimal)."
+   },
+   "14(d)": {
+    "type": "exact",
+    "points": [
+     "As t → ∞, e^{−0.25t} → 0, so N → 900/3 = 300"
+    ],
+    "answer": "P = 300",
+    "guidance": "B1 for P = 300 (accept 'the population approaches 300' or N → 300 as t → ∞)."
+   }
+  }
  }
 };
