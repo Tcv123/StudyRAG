@@ -18597,6 +18597,501 @@ window.MATHS_QUESTIONS = {
   }
  },
 
+ "math-edx-9ma0-2022-p31": {
+  "questions": [
+   {
+    "number": 1,
+    "scenario": "A researcher is investigating the time, in minutes, that people spend on social media each day. She takes a sample of 8 people from her workplace.",
+    "parts": [
+     {
+      "code": "1(a)",
+      "prompt": "State the sampling method used and give one reason why it may not be representative of the general population.",
+      "marks": 2
+     },
+     {
+      "code": "1(b)",
+      "prompt": "Suggest a more appropriate sampling method the researcher could use to investigate the time people in general spend on social media. Give a reason for your choice.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "The stem-and-leaf diagram below shows the ages, in years, of 15 members of a running club.\n\n3 | 2 5 7\n4 | 0 1 4 6 8\n5 | 1 3 5 9\n6 | 2 4 7\n\nKey: 3 | 2 represents 32 years.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Find the median and the interquartile range of the ages.",
+      "marks": 3
+     },
+     {
+      "code": "2(b)",
+      "prompt": "An outlier is defined as a value more than 1.5 × IQR above Q₃ or below Q₁. Identify any outliers in the data.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "The Venn diagram shows events A and B where P(A) = 0.45, P(B) = 0.35 and P(A ∩ B) = 0.15.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find P(A ∪ B).",
+      "marks": 1
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find P(A' ∩ B).",
+      "marks": 1
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Determine whether A and B are independent. Show your working.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "scenario": "A discrete random variable X has the distribution B(20, p).\nGiven that the mean of X is 5.",
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Find the value of p.",
+      "marks": 1
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Find P(X ≤ 7).",
+      "marks": 2
+     },
+     {
+      "code": "4(c)",
+      "prompt": "Find P(3 ≤ X ≤ 8).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "Past records show that 30% of adults in a town own a bicycle. A random sample of 25 adults is selected.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "State the distribution of the number of adults in the sample who own a bicycle, including values of any parameters.",
+      "marks": 1
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the probability that exactly 6 adults in the sample own a bicycle.",
+      "marks": 2
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Find the probability that fewer than 5 adults in the sample own a bicycle.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "The weights of bags of flour are normally distributed with mean 505 g and standard deviation 8 g.",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Find the probability that a randomly chosen bag of flour weighs more than 510 g.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Find the probability that a randomly chosen bag of flour weighs between 495 g and 515 g.",
+      "marks": 3
+     },
+     {
+      "code": "6(c)",
+      "prompt": "Given that 2% of bags are rejected for being underweight, find the minimum acceptable weight, giving your answer to the nearest gram.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A researcher believes that the proportion of people who prefer online shopping to in-store shopping is greater than 0.4. She surveys 20 people.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Write down suitable null and alternative hypotheses for a hypothesis test based on the researcher's belief.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Given that 12 of the 20 people surveyed prefer online shopping, carry out the hypothesis test at the 5% significance level. State your conclusion clearly.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The table below shows data collected on the number of hours of sunshine, x, and the number of ice creams sold, y, on 8 randomly selected days.\n\nΣx = 48,  Σy = 320,  Σx² = 318,  Σy² = 13760,  Σxy = 2060.",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Calculate the product moment correlation coefficient, r, for these data.",
+      "marks": 3
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Interpret the value of r in context.",
+      "marks": 1
+     },
+     {
+      "code": "8(c)",
+      "prompt": "Find the equation of the regression line of y on x, giving your answer in the form y = a + bx.",
+      "marks": 3
+     },
+     {
+      "code": "8(d)",
+      "prompt": "Use your regression equation to estimate the number of ice creams sold on a day with 7 hours of sunshine.",
+      "marks": 1
+     },
+     {
+      "code": "8(e)",
+      "prompt": "State, with a reason, whether it would be reliable to use the regression equation to estimate the number of ice creams sold on a day with 12 hours of sunshine.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "The continuous random variable X has the normal distribution N(μ, σ²).\nGiven that P(X > 75) = 0.0668 and P(X < 40) = 0.1587.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the value of μ and the value of σ.",
+      "marks": 5
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find P(40 < X < 75).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "A machine fills bottles with fruit juice. The volume of juice dispensed per bottle is normally distributed with mean μ ml and standard deviation 3 ml. The machine is set so that only 1% of bottles are underfilled (contain less than 500 ml).",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the value of μ, giving your answer to 1 decimal place.",
+      "marks": 3
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Following a service, the standard deviation changes to 4 ml but μ remains the same. Find the new percentage of underfilled bottles.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "In a study, 200 adults were asked how many portions of fruit and vegetables they eat per day. The results are shown in the table below.\n\nPortions (x): 0–1, 2–3, 4–5, 6+\nFrequency:    30,  80,  60,  30\n\nA doctor claims that fewer than 25% of adults eat 5 or fewer portions per day.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "State the null and alternative hypotheses for a test of the doctor's claim.",
+      "marks": 2
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Given that a sample of 18 adults is taken, find the critical region for a one-tailed test at the 5% significance level, stating the actual significance level.",
+      "marks": 4
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1(a)": {
+    "type": "points",
+    "points": [
+     "Opportunity / convenience sampling.",
+     "Reason: only workplace colleagues are sampled, so the sample does not represent the wider population (e.g. different age groups, occupations, lifestyles)."
+    ],
+    "answer": "Opportunity sampling; not representative because restricted to one workplace.",
+    "guidance": "B1: correct sampling method. B1: valid reason relating to lack of representativeness."
+   },
+   "1(b)": {
+    "type": "points",
+    "points": [
+     "Stratified random sampling (or systematic/quota sampling with justification).",
+     "Reason: ensures all groups (age, gender, employment status, etc.) are proportionally represented."
+    ],
+    "answer": "Stratified random sampling; ensures representative coverage of different groups.",
+    "guidance": "B1: appropriate method. B1: valid reason linked to representativeness."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "Order the 15 values: 32, 35, 37, 40, 41, 44, 46, 48, 51, 53, 55, 59, 62, 64, 67.",
+     "Median = 8th value = 48.",
+     "Q₁ = median of lower 7 = 4th value = 40.",
+     "Q₃ = median of upper 7 = 12th value = 59.",
+     "IQR = Q₃ − Q₁ = 59 − 40 = 19."
+    ],
+    "answer": "Median = 48, IQR = 19.",
+    "guidance": "B1: median = 48. M1: correct method for quartiles. A1: IQR = 19."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "Lower fence: Q₁ − 1.5 × IQR = 40 − 28.5 = 11.5. No values below 11.5.",
+     "Upper fence: Q₃ + 1.5 × IQR = 59 + 28.5 = 87.5. No values above 87.5.",
+     "There are no outliers."
+    ],
+    "answer": "No outliers.",
+    "guidance": "M1: calculate fences correctly. A1: no outliers identified."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "P(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0.45 + 0.35 − 0.15 = 0.65."
+    ],
+    "answer": "P(A ∪ B) = 0.65",
+    "guidance": "B1: 0.65."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "P(A' ∩ B) = P(B) − P(A ∩ B) = 0.35 − 0.15 = 0.20."
+    ],
+    "answer": "P(A' ∩ B) = 0.20",
+    "guidance": "B1: 0.20."
+   },
+   "3(c)": {
+    "type": "points",
+    "points": [
+     "For independence, P(A ∩ B) must equal P(A) × P(B).",
+     "P(A) × P(B) = 0.45 × 0.35 = 0.1575.",
+     "P(A ∩ B) = 0.15 ≠ 0.1575.",
+     "Therefore A and B are not independent."
+    ],
+    "answer": "Not independent: P(A ∩ B) = 0.15 ≠ P(A)P(B) = 0.1575.",
+    "guidance": "M1: calculate P(A) × P(B). A1: correct conclusion with reason."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "Mean of B(n, p) = np. So 20p = 5 ⟹ p = 1/4 = 0.25."
+    ],
+    "answer": "p = 0.25",
+    "guidance": "B1: p = 0.25."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "X ~ B(20, 0.25).",
+     "P(X ≤ 7) from tables or calculator ≈ 0.8982."
+    ],
+    "answer": "P(X ≤ 7) ≈ 0.8982",
+    "guidance": "M1: use B(20, 0.25). A1: 0.8982 (accept answers from tables or calculator)."
+   },
+   "4(c)": {
+    "type": "exact",
+    "points": [
+     "P(3 ≤ X ≤ 8) = P(X ≤ 8) − P(X ≤ 2).",
+     "P(X ≤ 8) ≈ 0.9591, P(X ≤ 2) ≈ 0.0913.",
+     "P(3 ≤ X ≤ 8) ≈ 0.9591 − 0.0913 = 0.8678."
+    ],
+    "answer": "P(3 ≤ X ≤ 8) ≈ 0.8678",
+    "guidance": "M1: P(X ≤ 8) − P(X ≤ 2). A1: 0.8678."
+   },
+   "5(a)": {
+    "type": "exact",
+    "points": [
+     "Let Y = number of adults who own a bicycle. Y ~ B(25, 0.3)."
+    ],
+    "answer": "Y ~ B(25, 0.3)",
+    "guidance": "B1: B(25, 0.3) stated."
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "P(Y = 6) = C(25,6) × 0.3⁶ × 0.7¹⁹ ≈ 0.1472."
+    ],
+    "answer": "P(Y = 6) ≈ 0.1472",
+    "guidance": "M1: correct binomial formula. A1: 0.1472."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "P(Y < 5) = P(Y ≤ 4) ≈ 0.0905."
+    ],
+    "answer": "P(Y < 5) ≈ 0.0905",
+    "guidance": "M1: P(Y ≤ 4). A1: 0.0905."
+   },
+   "6(a)": {
+    "type": "exact",
+    "points": [
+     "X ~ N(505, 8²).",
+     "P(X > 510) = P(Z > (510 − 505)/8) = P(Z > 0.625) = 1 − Φ(0.625) ≈ 1 − 0.7340 = 0.2660."
+    ],
+    "answer": "P(X > 510) ≈ 0.2660",
+    "guidance": "M1: standardise correctly. A1: 0.2660 (accept 0.266)."
+   },
+   "6(b)": {
+    "type": "exact",
+    "points": [
+     "P(495 < X < 515) = P((495−505)/8 < Z < (515−505)/8) = P(−1.25 < Z < 1.25).",
+     "= 2Φ(1.25) − 1 = 2(0.8944) − 1 = 0.7888."
+    ],
+    "answer": "P(495 < X < 515) ≈ 0.7888",
+    "guidance": "M1: standardise both limits. M1: use symmetry. A1: 0.7888."
+   },
+   "6(c)": {
+    "type": "exact",
+    "points": [
+     "P(X < m) = 0.02, so z = −2.0537 (from tables).",
+     "(m − 505)/8 = −2.0537.",
+     "m = 505 − 16.43 = 488.57 ≈ 489 g."
+    ],
+    "answer": "Minimum acceptable weight ≈ 489 g",
+    "guidance": "M1: identify z-value for 2% tail. M1: solve for m. A1: 489 g."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "H₀: p = 0.4",
+     "H₁: p > 0.4",
+     "where p is the probability that a randomly selected person prefers online shopping."
+    ],
+    "answer": "H₀: p = 0.4, H₁: p > 0.4",
+    "guidance": "B1: H₀: p = 0.4. B1: H₁: p > 0.4 (one-tailed)."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "Under H₀, X ~ B(20, 0.4).",
+     "P(X ≥ 12) = 1 − P(X ≤ 11) = 1 − 0.9435 = 0.0565.",
+     "0.0565 > 0.05, so we do not reject H₀.",
+     "Conclusion: there is insufficient evidence at the 5% significance level to support the claim that the proportion is greater than 0.4."
+    ],
+    "answer": "Do not reject H₀; insufficient evidence that proportion > 0.4.",
+    "guidance": "M1: use B(20, 0.4). M1: find P(X ≥ 12). A1: 0.0565. A1: correct conclusion in context."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "n = 8, Σx = 48, Σy = 320, Σx² = 318, Σy² = 13760, Σxy = 2060.",
+     "Sₓₓ = Σx² − (Σx)²/n = 318 − 48²/8 = 318 − 288 = 30.",
+     "Syy = Σy² − (Σy)²/n = 13760 − 320²/8 = 13760 − 12800 = 960.",
+     "Sₓy = Σxy − (Σx)(Σy)/n = 2060 − (48)(320)/8 = 2060 − 1920 = 140.",
+     "r = Sₓy / √(Sₓₓ × Syy) = 140 / √(30 × 960) = 140 / √28800 = 140 / 169.7 ≈ 0.825."
+    ],
+    "answer": "r ≈ 0.825",
+    "guidance": "M1: correct formulae for Sₓₓ, Syy, Sₓy. M1: substitute into r formula. A1: r ≈ 0.825."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "r ≈ 0.825 indicates a strong positive linear correlation between hours of sunshine and ice creams sold."
+    ],
+    "answer": "Strong positive linear correlation.",
+    "guidance": "B1: reference to strong, positive, and linear (or correlation) in context."
+   },
+   "8(c)": {
+    "type": "exact",
+    "points": [
+     "b = Sₓy / Sₓₓ = 140/30 = 14/3 ≈ 4.667.",
+     "x̄ = 48/8 = 6, ȳ = 320/8 = 40.",
+     "a = ȳ − b × x̄ = 40 − (14/3)(6) = 40 − 28 = 12.",
+     "Regression line: y = 12 + (14/3)x, i.e. y ≈ 12 + 4.67x."
+    ],
+    "answer": "y = 12 + (14/3)x (≈ 12 + 4.67x)",
+    "guidance": "M1: b = Sₓy/Sₓₓ. M1: find a using means. A1: y = 12 + (14/3)x."
+   },
+   "8(d)": {
+    "type": "exact",
+    "points": [
+     "x = 7: y = 12 + (14/3)(7) = 12 + 98/3 = 12 + 32.67 ≈ 44.7 ≈ 45 ice creams."
+    ],
+    "answer": "≈ 45 ice creams",
+    "guidance": "B1: 44.7 or 45 (accept any reasonable rounding)."
+   },
+   "8(e)": {
+    "type": "points",
+    "points": [
+     "Not reliable: x = 12 hours is outside the range of the data used to fit the regression line (extrapolation).",
+     "The regression equation may not be valid beyond the observed data range."
+    ],
+    "answer": "Not reliable — extrapolation beyond the data range.",
+    "guidance": "B1: extrapolation identified. B1: reason linked to data range."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "P(X > 75) = 0.0668 ⟹ P(Z > (75−μ)/σ) = 0.0668 ⟹ (75−μ)/σ = 1.5 (from tables).",
+     "P(X < 40) = 0.1587 ⟹ P(Z < (40−μ)/σ) = 0.1587 ⟹ (40−μ)/σ = −1.0.",
+     "Two equations: 75 − μ = 1.5σ and 40 − μ = −σ.",
+     "Subtract: 35 = 2.5σ ⟹ σ = 14.",
+     "μ = 40 + σ = 40 + 14 = 54."
+    ],
+    "answer": "μ = 54, σ = 14",
+    "guidance": "M1: standardise and use tables for each probability. M1: form two equations. M1: solve simultaneously. A1: σ = 14. A1: μ = 54."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "P(40 < X < 75) = P(X < 75) − P(X ≤ 40).",
+     "= (1 − 0.0668) − 0.1587 = 0.9332 − 0.1587 = 0.7745."
+    ],
+    "answer": "P(40 < X < 75) = 0.7745",
+    "guidance": "M1: use complement and subtraction. A1: 0.7745."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "P(X < 500) = 0.01, σ = 3.",
+     "(500 − μ)/3 = −2.3263 (z-value for 1% lower tail).",
+     "μ = 500 + 2.3263 × 3 = 500 + 6.979 ≈ 507.0 ml."
+    ],
+    "answer": "μ ≈ 507.0 ml",
+    "guidance": "M1: identify z = −2.3263 for 1% lower tail. M1: solve for μ. A1: 507.0 ml."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "New distribution: X ~ N(507.0, 4²).",
+     "P(X < 500) = P(Z < (500 − 507.0)/4) = P(Z < −1.75).",
+     "= 1 − Φ(1.75) = 1 − 0.9599 = 0.0401 ≈ 4.01%."
+    ],
+    "answer": "Approximately 4.01% of bottles are underfilled.",
+    "guidance": "M1: standardise with new σ = 4. A1: P(Z < −1.75). A1: 0.0401 (4.01%)."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "H₀: p = 0.25 (where p is the proportion eating 5 or fewer portions).",
+     "H₁: p < 0.25."
+    ],
+    "answer": "H₀: p = 0.25, H₁: p < 0.25",
+    "guidance": "B1: H₀: p = 0.25. B1: H₁: p < 0.25 (one-tailed, lower)."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "Under H₀, Y ~ B(18, 0.25).",
+     "Find largest c such that P(Y ≤ c) ≤ 0.05.",
+     "P(Y ≤ 1) = 0.0338, P(Y ≤ 2) = 0.0958.",
+     "Critical region: Y ≤ 1.",
+     "Actual significance level = P(Y ≤ 1) = 0.0338 (3.38%)."
+    ],
+    "answer": "Critical region: Y ≤ 1. Actual significance level = 3.38%.",
+    "guidance": "M1: use B(18, 0.25). M1: find P(Y ≤ 1) and P(Y ≤ 2). A1: critical region Y ≤ 1. A1: actual significance level 0.0338."
+   }
+  }
+ },
+
  "math-edx-9ma0-2023-p1": {
   "questions": [
    {

@@ -2368,6 +2368,64 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-edx-9ma0-2018-p1::14(b)": "(i) C is an inverted parabola arc with vertex at (3, 6) and endpoints at (1, 2) and (5, 2) (since −1 ≤ sint ≤ 1 gives 1 ≤ x ≤ 5).\n(ii) Since sint ∈ [−1, 1], the parametric equations restrict x to [1, 5]. The Cartesian equation y = 6−(x−3)² holds for all real x, so C only includes the arc where 1 ≤ x ≤ 5.",
 
- "math-edx-9ma0-2018-p1::14(c)": "Substitute y = k − x into y = 6 − (x−3)²:\nk − x = 6 − (x−3)² ⟹ (x−3)² − x + k − 6 = 0 ⟹ x² − 7x + (k−3) = 0.\nFor two distinct intersections: discriminant > 0: 49 − 4(k−3) > 0 ⟹ k < 61/4.\nAlso the intersections must lie on C (1 ≤ x ≤ 5). At the boundary x = 5 (or x = 1, by symmetry): k = x + y = 5 + 2 = 7. So k ≥ 7.\nFull range: {k : 7 ≤ k < 61/4}.
+ "math-edx-9ma0-2018-p1::14(c)": "Substitute y = k − x into y = 6 − (x−3)²:\nk − x = 6 − (x−3)² ⟹ (x−3)² − x + k − 6 = 0 ⟹ x² − 7x + (k−3) = 0.\nFor two distinct intersections: discriminant > 0: 49 − 4(k−3) > 0 ⟹ k < 61/4.\nAlso the intersections must lie on C (1 ≤ x ≤ 5). At the boundary x = 5 (or x = 1, by symmetry): k = x + y = 5 + 2 = 7. So k ≥ 7.\nFull range: {k : 7 ≤ k < 61/4}.",
+
+ "math-edx-9ma0-2022-p31::1(a)": "The sampling method is opportunity (convenience) sampling — she simply selects people available to her at her workplace.\n\nThis may not be representative of the general population because all participants come from the same workplace environment, which is likely to share similar demographics (age range, job type, work patterns) and social-media habits. People outside that workplace may have very different usage patterns.",
+
+ "math-edx-9ma0-2022-p31::1(b)": "A more appropriate method would be stratified random sampling.\n\nThe population would be divided into strata based on relevant characteristics such as age group or employment status. A random sample would then be taken from each stratum in proportion to its size in the population. This ensures all sections of the general population are fairly represented, making the sample more likely to reflect the true distribution of social-media usage times.",
+
+ "math-edx-9ma0-2022-p31::2(a)": "First write the 15 values in order:\n32, 35, 37, 40, 41, 44, 46, 48, 51, 53, 55, 59, 62, 64, 67.\n\nMedian (8th value) = 48 years.\n\nLower quartile Q₁ = median of the lower 7 values (positions 1–7):\n32, 35, 37, 40, 41, 44, 46 → Q₁ = 40.\n\nUpper quartile Q₃ = median of the upper 7 values (positions 9–15):\n51, 53, 55, 59, 62, 64, 67 → Q₃ = 59.\n\nInterquartile range = Q₃ − Q₁ = 59 − 40 = 19 years.",
+
+ "math-edx-9ma0-2022-p31::2(b)": "Using the rule: an outlier lies more than 1.5 × IQR above Q₃ or below Q₁.\n\n1.5 × IQR = 1.5 × 19 = 28.5.\n\nUpper fence: Q₃ + 28.5 = 59 + 28.5 = 87.5.\nLower fence: Q₁ − 28.5 = 40 − 28.5 = 11.5.\n\nAll 15 data values lie between 32 and 67, so none fall outside [11.5, 87.5].\n\nThere are no outliers.",
+
+ "math-edx-9ma0-2022-p31::3(a)": "Using the addition rule:\nP(A ∪ B) = P(A) + P(B) − P(A ∩ B) = 0.45 + 0.35 − 0.15 = 0.65.",
+
+ "math-edx-9ma0-2022-p31::3(b)": "The event A' ∩ B consists of outcomes in B but not in A:\nP(A' ∩ B) = P(B) − P(A ∩ B) = 0.35 − 0.15 = 0.20.",
+
+ "math-edx-9ma0-2022-p31::3(c)": "For A and B to be independent we need P(A ∩ B) = P(A) × P(B).\n\nP(A) × P(B) = 0.45 × 0.35 = 0.1575.\n\nBut P(A ∩ B) = 0.15 ≠ 0.1575.\n\nSince the condition is not satisfied, A and B are not independent.",
+
+ "math-edx-9ma0-2022-p31::4(a)": "For X ~ B(n, p), the mean is E(X) = np.\nHere np = 20p = 5, so p = 5/20 = 0.25.",
+
+ "math-edx-9ma0-2022-p31::4(b)": "X ~ B(20, 0.25).\n\nUsing cumulative binomial tables or a calculator:\nP(X ≤ 7) ≈ 0.8982.\n\n(Alternatively: sum P(X = k) for k = 0 to 7, where P(X = k) = C(20,k) × 0.25^k × 0.75^(20−k).)",
+
+ "math-edx-9ma0-2022-p31::4(c)": "P(3 ≤ X ≤ 8) = P(X ≤ 8) − P(X ≤ 2).\n\nFrom B(20, 0.25) tables:\nP(X ≤ 8) ≈ 0.9591\nP(X ≤ 2) ≈ 0.0913\n\nP(3 ≤ X ≤ 8) ≈ 0.9591 − 0.0913 = 0.8678.",
+
+ "math-edx-9ma0-2022-p31::5(a)": "Let Y be the number of adults in the sample who own a bicycle.\nSince each adult independently has probability 0.3 of owning a bicycle and the sample is random:\nY ~ B(25, 0.3).",
+
+ "math-edx-9ma0-2022-p31::5(b)": "P(Y = 6) = C(25, 6) × 0.3⁶ × 0.7¹⁹.\n\nC(25, 6) = 177100.\n0.3⁶ = 0.000729.\n0.7¹⁹ ≈ 0.001139.\n\nP(Y = 6) ≈ 177100 × 0.000729 × 0.001139 ≈ 0.1472.",
+
+ "math-edx-9ma0-2022-p31::5(c)": "P(Y < 5) = P(Y ≤ 4).\n\nFrom B(25, 0.3) cumulative tables:\nP(Y ≤ 4) ≈ 0.0905.",
+
+ "math-edx-9ma0-2022-p31::6(a)": "X ~ N(505, 8²).\n\nStandardise: Z = (X − 505)/8.\n\nP(X > 510) = P(Z > (510 − 505)/8) = P(Z > 0.625).\n\nUsing standard normal tables: Φ(0.625) ≈ 0.7340.\n\nP(Z > 0.625) = 1 − 0.7340 = 0.2660.",
+
+ "math-edx-9ma0-2022-p31::6(b)": "P(495 < X < 515) = P((495 − 505)/8 < Z < (515 − 505)/8)\n= P(−1.25 < Z < 1.25).\n\nBy symmetry of the normal distribution:\n= 2 × Φ(1.25) − 1 = 2 × 0.8944 − 1 = 0.7888.",
+
+ "math-edx-9ma0-2022-p31::6(c)": "We need to find m such that P(X < m) = 0.02.\n\nP(Z < z) = 0.02 ⟹ z = −2.0537 (from standard normal tables).\n\nSolve: (m − 505)/8 = −2.0537.\nm = 505 + 8 × (−2.0537) = 505 − 16.43 = 488.57.\n\nTo the nearest gram, the minimum acceptable weight is 489 g.",
+
+ "math-edx-9ma0-2022-p31::7(a)": "Let p be the probability that a randomly selected person prefers online shopping.\n\nH₀: p = 0.4\nH₁: p > 0.4\n\nThis is a one-tailed (upper) test.",
+
+ "math-edx-9ma0-2022-p31::7(b)": "Under H₀, X ~ B(20, 0.4), where X is the number of people in the sample who prefer online shopping.\n\nObserved value: X = 12.\n\nCalculate the p-value: P(X ≥ 12) = 1 − P(X ≤ 11).\n\nFrom B(20, 0.4) tables: P(X ≤ 11) ≈ 0.9435.\nSo P(X ≥ 12) = 1 − 0.9435 = 0.0565.\n\nSince 0.0565 > 0.05, we do not reject H₀.\n\nConclusion: There is insufficient evidence at the 5% significance level to support the researcher's belief that the proportion of people who prefer online shopping is greater than 0.4.",
+
+ "math-edx-9ma0-2022-p31::8(a)": "Given: n = 8, Σx = 48, Σy = 320, Σx² = 318, Σy² = 13760, Σxy = 2060.\n\nCompute the summary statistics:\nSₓₓ = Σx² − (Σx)²/n = 318 − 48²/8 = 318 − 288 = 30.\nSᵧᵧ = Σy² − (Σy)²/n = 13760 − 320²/8 = 13760 − 12800 = 960.\nSₓᵧ = Σxy − (Σx)(Σy)/n = 2060 − (48 × 320)/8 = 2060 − 1920 = 140.\n\nProduct moment correlation coefficient:\nr = Sₓᵧ / √(Sₓₓ Sᵧᵧ) = 140 / √(30 × 960) = 140 / √28800 = 140 / 169.71 ≈ 0.825.",
+
+ "math-edx-9ma0-2022-p31::8(b)": "r ≈ 0.825 indicates a strong positive linear correlation between the number of hours of sunshine (x) and the number of ice creams sold (y). As sunshine hours increase, ice cream sales tend to increase.",
+
+ "math-edx-9ma0-2022-p31::8(c)": "Regression line of y on x: y = a + bx.\n\nGradient: b = Sₓᵧ / Sₓₓ = 140/30 = 14/3 ≈ 4.667.\n\nMeans: x̄ = 48/8 = 6,  ȳ = 320/8 = 40.\n\nIntercept: a = ȳ − b x̄ = 40 − (14/3)(6) = 40 − 28 = 12.\n\nRegression line: y = 12 + (14/3)x  (or y ≈ 12 + 4.67x).",
+
+ "math-edx-9ma0-2022-p31::8(d)": "Substitute x = 7 into y = 12 + (14/3)x:\ny = 12 + (14/3)(7) = 12 + 98/3 = 12 + 32.67 ≈ 44.7.\n\nEstimated number of ice creams sold ≈ 45.",
+
+ "math-edx-9ma0-2022-p31::8(e)": "It would not be reliable to use the regression equation for x = 12 hours.\n\nReason: x = 12 is outside the range of the observed data used to fit the regression line. Using the equation beyond the data range is extrapolation, and there is no evidence that the linear relationship holds outside the observed range. The estimate may be unreliable.",
+
+ "math-edx-9ma0-2022-p31::9(a)": "Let X ~ N(μ, σ²).\n\nFrom P(X > 75) = 0.0668:\nP(Z > (75 − μ)/σ) = 0.0668.\nFrom tables: Φ(1.5) = 0.9332, so P(Z > 1.5) = 0.0668.\nTherefore (75 − μ)/σ = 1.5  … (1)\n\nFrom P(X < 40) = 0.1587:\nP(Z < (40 − μ)/σ) = 0.1587.\nFrom tables: Φ(−1.0) = 0.1587.\nTherefore (40 − μ)/σ = −1.0  … (2)\n\nFrom (1): 75 − μ = 1.5σ  ⟹  μ = 75 − 1.5σ.\nFrom (2): 40 − μ = −σ  ⟹  μ = 40 + σ.\n\nEquating: 75 − 1.5σ = 40 + σ  ⟹  35 = 2.5σ  ⟹  σ = 14.\nThen μ = 40 + 14 = 54.\n\nSo μ = 54 and σ = 14.",
+
+ "math-edx-9ma0-2022-p31::9(b)": "P(40 < X < 75) = P(X < 75) − P(X ≤ 40).\n\nP(X < 75) = 1 − P(X > 75) = 1 − 0.0668 = 0.9332.\nP(X ≤ 40) = 0.1587.\n\nP(40 < X < 75) = 0.9332 − 0.1587 = 0.7745.",
+
+ "math-edx-9ma0-2022-p31::10(a)": "X ~ N(μ, 3²) and P(X < 500) = 0.01.\n\nStandardise: P(Z < (500 − μ)/3) = 0.01.\n\nFrom standard normal tables: z = −2.3263 corresponds to a cumulative probability of 0.01.\n\nSo (500 − μ)/3 = −2.3263.\n500 − μ = −6.9789.\nμ = 500 + 6.9789 = 506.9789 ≈ 507.0 ml.",
+
+ "math-edx-9ma0-2022-p31::10(b)": "With the new parameters: X ~ N(507.0, 4²).\n\nP(X < 500) = P(Z < (500 − 507.0)/4) = P(Z < −7.0/4) = P(Z < −1.75).\n\nFrom tables: P(Z < −1.75) = 1 − Φ(1.75) = 1 − 0.9599 = 0.0401.\n\nThe new percentage of underfilled bottles is approximately 4.01%.",
+
+ "math-edx-9ma0-2022-p31::11(a)": "Let p be the proportion of adults who eat 5 or fewer portions of fruit and vegetables per day.\n\nH₀: p = 0.25\nH₁: p < 0.25\n\n(The doctor claims fewer than 25% eat 5 or fewer portions, so this is a one-tailed lower test.)",
+
+ "math-edx-9ma0-2022-p31::11(b)": "Under H₀, Y ~ B(18, 0.25), where Y is the number in the sample of 18 who eat 5 or fewer portions.\n\nWe need the largest c such that P(Y ≤ c) ≤ 0.05.\n\nCompute cumulative probabilities from B(18, 0.25):\nP(Y ≤ 0) = 0.75^18 ≈ 0.00564.\nP(Y ≤ 1) ≈ 0.0338.\nP(Y ≤ 2) ≈ 0.0958.\n\nSince P(Y ≤ 1) = 0.0338 ≤ 0.05 but P(Y ≤ 2) = 0.0958 > 0.05, the critical region is Y ≤ 1.\n\nActual significance level = P(Y ≤ 1) ≈ 0.0338 (i.e. 3.38%)."
 
 };
