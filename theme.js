@@ -22,6 +22,8 @@
     });
     var toggle = document.getElementById('toggleDarkMode');
     if (toggle) toggle.classList.toggle('on', dark);
+    var pill = document.getElementById('nightTogglePill');
+    if (pill) pill.classList.toggle('on', dark);
   }
 
   window.toggleDarkMode = function () {

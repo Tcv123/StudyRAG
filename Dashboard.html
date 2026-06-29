@@ -129,6 +129,13 @@
     .notif-btn, .help-btn { width: 36px; height: 36px; border-radius: 10px; background: var(--surface); border: 1px solid var(--border); display: flex; align-items: center; justify-content: center; cursor: pointer; font-size: 15px; transition: border-color 0.15s; box-shadow: 0 1px 4px rgba(37,99,235,0.1); }
     .notif-btn:hover, .help-btn:hover { border-color: var(--border-hover); }
     .help-btn { font-size: 16px; font-weight: 700; color: var(--accent-dark); }
+    .night-toggle-wrap { display: flex; align-items: center; gap: 8px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; padding: 0 12px 0 10px; height: 36px; cursor: pointer; box-shadow: 0 1px 4px rgba(37,99,235,0.1); transition: border-color 0.15s; user-select: none; }
+    .night-toggle-wrap:hover { border-color: var(--border-hover); }
+    .night-toggle-label { font-size: 12px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+    .night-toggle-pill { width: 32px; height: 18px; border-radius: 9px; background: var(--surface3); border: 1px solid var(--border); position: relative; transition: background 0.2s; flex-shrink: 0; }
+    .night-toggle-pill::after { content: ''; position: absolute; top: 2px; left: 2px; width: 12px; height: 12px; border-radius: 50%; background: var(--muted2); transition: transform 0.2s, background 0.2s; }
+    .night-toggle-pill.on { background: var(--accent); border-color: var(--accent); }
+    .night-toggle-pill.on::after { transform: translateX(14px); background: #fff; }
 
     /* ── HELP PANEL OVERLAY ── */
     .help-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; display: none; align-items: center; justify-content: center; animation: fadeIn 0.2s ease; }
@@ -589,7 +596,10 @@
         </div>
       </div>
       <div class="topbar-right">
-        <button class="help-btn" data-dark-toggle onclick="toggleDarkMode()" title="Toggle dark mode" style="font-size:17px;">🌙</button>
+        <div class="night-toggle-wrap" onclick="toggleDarkMode()" title="Toggle night mode">
+          <span class="night-toggle-label">Night mode</span>
+          <div class="night-toggle-pill" id="nightTogglePill"></div>
+        </div>
         <div class="help-btn" onclick="document.getElementById('helpOverlay').classList.add('active')" title="How it works">?</div>
       </div>
     </div>
