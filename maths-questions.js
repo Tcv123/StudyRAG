@@ -20325,8 +20325,7 @@ window.MATHS_QUESTIONS = {
     "guidance": "B1: state that 500 is not in the confidence interval. B1: conclude there is evidence the machine is not delivering the correct mean mass."
    }
   }
- }
-},
+ },
  "math-ocr-h240-2018-p3": {
   "questions": [
    {
