@@ -24219,7 +24219,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "2(c)",
       "prompt": "Find the distance travelled by P in the first 4 seconds.",
-      "marks": 4
+      "marks": 3
      }
     ]
    },
@@ -24255,7 +24255,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "4(c)",
       "prompt": "Find the equation of the normal to C at the point where x = 1.",
-      "marks": 4
+      "marks": 3
      }
     ]
    },
@@ -24338,7 +24338,7 @@ window.MATHS_QUESTIONS = {
      {
       "code": "9(c)",
       "prompt": "Find the speed of the particle when it is at a height of 5 m above the plane on its way up.",
-      "marks": 4
+      "marks": 3
      }
     ]
    },
