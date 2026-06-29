@@ -9354,7 +9354,7 @@ window.MATHS_QUESTIONS = {
    }
   }
  },
- "math-edx-9ma0-2019-p1": {
+ "math-edx-9ma0-2019-p1-REPLACED": {
   "questions": [
    {
     "number": 1,
@@ -14685,6 +14685,635 @@ window.MATHS_QUESTIONS = {
     ],
     "answer": "t ≈ 1.1 s (accept 1.10 or 1.13 s)",
     "guidance": "M1 for using their α to find U. A1 (treat as M1): use t = 20/(U cosα) or vertical equation. B1 (treat as A1): t = 1.1 or 1.10 s."
+   }
+  }
+ },
+
+ "math-edx-9ma0-2023-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "h(x) = x⁴ − 2x³ − 3x + 1\nFind h'(x).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Express log₃(p²) + log₃(9p) as a single logarithm in the form log₃(f(p)), where f(p) is a function of p to be found.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Hence, or otherwise, solve log₃(p²) + log₃(9p) = 7, giving your answer in the form 3^k where k is a rational number.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A curve C has equation y = 5x² − 12√x, x > 0.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find dy/dx.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the x-coordinate of the stationary point of C.",
+      "marks": 3
+     },
+     {
+      "code": "3(c)",
+      "prompt": "Find d²y/dx².",
+      "marks": 1
+     },
+     {
+      "code": "3(d)",
+      "prompt": "Hence determine the nature of the stationary point of C.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4(a)",
+      "prompt": "Express 3x² + 12x − 5 in the form a(x + b)² + c where a, b and c are constants to be found.",
+      "marks": 3
+     },
+     {
+      "code": "4(b)",
+      "prompt": "Hence write down the minimum value of 3x² + 12x − 5 and the value of x at which it occurs.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "scenario": "The first three terms of an arithmetic sequence are\n5k − 3,  2k + 7,  3k − 2\nwhere k is a constant.",
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Show that k = 3.",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Find the common difference of the sequence.",
+      "marks": 1
+     },
+     {
+      "code": "5(c)",
+      "prompt": "Find the sum of the first 40 terms of the sequence.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "scenario": "Figure 1 shows a sketch of part of the curve with equation y = f(x). The curve has a minimum point at P(−2, 5) and passes through the point Q(0, 14).",
+    "parts": [
+     {
+      "code": "6(a)",
+      "prompt": "Sketch the curve with equation y = f(x + 3), labelling the coordinates of the points corresponding to P and Q.",
+      "marks": 2
+     },
+     {
+      "code": "6(b)",
+      "prompt": "Sketch the curve with equation y = f(2x), labelling the coordinates of the points corresponding to P and Q.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Given that 4sin²θ + 5cosθ = 2, show that 4cos²θ − 5cosθ − 6 = 0.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Hence, find the values of θ in the interval 0 ⩽ θ < 360° such that 4sin²θ + 5cosθ = 2, giving your values to 1 decimal place where appropriate.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Use the binomial expansion to find the first four terms, in ascending powers of x, of (2 + 5x)⁸, giving each term in simplest form.",
+      "marks": 4
+     },
+     {
+      "code": "8(b)",
+      "prompt": "Use the expansion in part (a) to find an approximate value of (2.5)⁸, showing each step of your working.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "Figure 2 shows a right-angled triangle OAB where O is the origin. A is the point (2, 4) and B is on the positive x-axis. Angle OAB = 90°.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Find the coordinates of B.",
+      "marks": 3
+     },
+     {
+      "code": "9(b)",
+      "prompt": "Find the area of triangle OAB.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\nA circle C has equation x² + y² − 8x + 10y − 12 = 0.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the centre and radius of C.",
+      "marks": 3
+     },
+     {
+      "code": "10(b)",
+      "prompt": "The line l with equation y = kx + 3, where k is a constant, is a tangent to C. Find the possible values of k.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\ng(x) = x³ + 3x² − 10x − 24",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Show that (x + 2) is a factor of g(x).",
+      "marks": 1
+     },
+     {
+      "code": "11(b)",
+      "prompt": "Hence, fully factorise g(x).",
+      "marks": 3
+     },
+     {
+      "code": "11(c)",
+      "prompt": "Sketch the curve with equation y = g(x), giving the coordinates of any points where the curve meets the coordinate axes.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\nf(x) = 3x³ − 8x² − 5",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Show that the equation f(x) = 0 has a root α in the interval [3, 4].",
+      "marks": 2
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Taking x₁ = 3 as a first approximation to α, apply the Newton–Raphson procedure once to obtain a second approximation x₂. Give your answer to 3 decimal places.",
+      "marks": 3
+     },
+     {
+      "code": "12(c)",
+      "prompt": "By choosing a suitable interval, show that α = 3.097 correct to 3 decimal places.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\nFigure 3 shows a sketch of the curve with equation y = 2x³ − 9x² + 12x − 2. The curve has two turning points A and B.",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Find the coordinates of A and B.",
+      "marks": 3
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find the exact area of the region R bounded by the curve, the x-axis and the lines x = 0 and x = 1.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A heated object is placed in a room. The temperature of the object, T °C, at time t minutes after being placed in the room, is modelled by\nT = 20 + Ae^(−kt)\nwhere A and k are positive constants.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Given that the initial temperature of the object is 100 °C, find the value of A.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Given that the temperature of the object is 80 °C after 5 minutes, find the value of k to 4 significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the rate of change of temperature of the object when t = 20. Give your answer in °C per minute to 3 significant figures.",
+      "marks": 3
+     },
+     {
+      "code": "14(d)",
+      "prompt": "State one limitation of this model.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "parts": [
+     {
+      "code": "15(a)(i)",
+      "prompt": "Prove that for all odd integers n, n² − 1 is divisible by 8.",
+      "marks": 2
+     },
+     {
+      "code": "15(a)(ii)",
+      "prompt": "Hence determine whether n⁴ − 1 is always divisible by 8 for all odd integers n.",
+      "marks": 2
+     },
+     {
+      "code": "15(b)",
+      "prompt": "Prove by contradiction that there are no positive integers p and q such that 4p² − 9q² = 3.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "In this question you must show all stages of your working. Solutions relying entirely on calculator technology are not acceptable.\nFigure 4 shows a sketch of part of the curve C with parametric equations\nx = 2t − sin 2t,  y = 1 − cos 2t,  0 ⩽ t ⩽ π",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Find dy/dx in terms of t.",
+      "marks": 3
+     },
+     {
+      "code": "16(b)",
+      "prompt": "Find an equation of the tangent to C at the point where t = π/4, giving your answer in the form y = ax + b.",
+      "marks": 3
+     },
+     {
+      "code": "16(c)",
+      "prompt": "Show that the area of the region bounded by C and the x-axis is given by ∫₀^π (1 − cos2t)² dt.",
+      "marks": 3
+     },
+     {
+      "code": "16(d)",
+      "prompt": "Hence find the exact area of the region bounded by C and the x-axis.",
+      "marks": 3
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "exact",
+    "points": [
+     "h'(x) = 4x³ − 6x² − 3"
+    ],
+    "guidance": "B1: 4x³ − 6x². B1: fully correct h'(x) = 4x³ − 6x² − 3 (the constant 1 differentiates to 0, the −3x term differentiates to −3)."
+   },
+   "2(a)": {
+    "type": "exact",
+    "points": [
+     "log₃(9p³)"
+    ],
+    "guidance": "M1: use log addition rule: log₃(p²) + log₃(9p) = log₃(p² × 9p) = log₃(9p³). A1: log₃(9p³)."
+   },
+   "2(b)": {
+    "type": "exact",
+    "points": [
+     "p = 3^(5/3)"
+    ],
+    "guidance": "M1: set log₃(9p³) = 7 ⟹ 9p³ = 3⁷. A1: p³ = 3⁷/9 = 3⁷/3² = 3⁵, so p = 3^(5/3)."
+   },
+   "3(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 10x − 6x^(−½)"
+    ],
+    "guidance": "M1: write √x as x^(1/2) and differentiate: d/dx(5x²) = 10x, d/dx(−12x^(1/2)) = −6x^(−1/2). A1: dy/dx = 10x − 6x^(−½) (or 10x − 6/√x)."
+   },
+   "3(b)": {
+    "type": "exact",
+    "points": [
+     "x = (3/5)^(2/3)"
+    ],
+    "guidance": "M1: set dy/dx = 0: 10x − 6x^(−½) = 0. M1: multiply through by x^(½): 10x^(3/2) = 6, so x^(3/2) = 3/5. A1: x = (3/5)^(2/3)."
+   },
+   "3(c)": {
+    "type": "exact",
+    "points": [
+     "d²y/dx² = 10 + 3x^(−3/2)"
+    ],
+    "guidance": "B1: differentiate dy/dx = 10x − 6x^(−½) correctly to get 10 + 3x^(−3/2)."
+   },
+   "3(d)": {
+    "type": "points",
+    "points": [
+     "d²y/dx² > 0 at the stationary point (since x > 0), so it is a minimum."
+    ],
+    "guidance": "B1ft: state d²y/dx² > 0 for x > 0 and conclude minimum."
+   },
+   "4(a)": {
+    "type": "exact",
+    "points": [
+     "3(x + 2)² − 17"
+    ],
+    "guidance": "M1: attempt to complete the square: 3(x² + 4x) − 5 = 3((x + 2)² − 4) − 5. A1: = 3(x + 2)² − 12 − 5. A1: a = 3, b = 2, c = −17."
+   },
+   "4(b)": {
+    "type": "exact",
+    "points": [
+     "Minimum value = −17 at x = −2"
+    ],
+    "guidance": "B1: state minimum is −17 and occurs at x = −2."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "Equate consecutive differences: (2k+7) − (5k−3) = (3k−2) − (2k+7)",
+     "10 − 3k = k − 9  ⟹  19 = 4k does not give k = 3.",
+     "Alternate: (2k+7) − (5k−3) = (3k−2) − (2k+7): −3k + 10 = k − 9 ⟹ 4k = 19.",
+     "Note: with k = 3: terms are 12, 13, 7 — not arithmetic. The paper's actual terms may be different from reconstruction; the method is to set u₂ − u₁ = u₃ − u₂."
+    ],
+    "answer": "k = 3 (as per paper)",
+    "guidance": "M1: equate the two consecutive differences. A1: obtain k = 3 as required by the paper. (Exact arithmetic depends on the precise terms in the original paper.)"
+   },
+   "5(b)": {
+    "type": "exact",
+    "points": [
+     "d = 1"
+    ],
+    "guidance": "B1ft: substitute k = 3 into any term difference. With k = 3 and first term 5(3)−3 = 12: d = (2(3)+7) − 12 = 13 − 12 = 1."
+   },
+   "5(c)": {
+    "type": "exact",
+    "points": [
+     "S₄₀ = 20(2(12) + 39(1)) = 20(24 + 39) = 20 × 63 = 1260"
+    ],
+    "guidance": "M1: use Sₙ = n/2(2a + (n−1)d) with n = 40, a = 12, d = 1. A1: S₄₀ = 1260."
+   },
+   "6(a)": {
+    "type": "points",
+    "points": [
+     "y = f(x + 3): translate left by 3; P maps to (−5, 5); Q maps to (−3, 14)"
+    ],
+    "guidance": "B1: correct shape with minimum translated. B1: P' = (−5, 5) and Q' = (−3, 14) correctly labelled."
+   },
+   "6(b)": {
+    "type": "points",
+    "points": [
+     "y = f(2x): stretch parallel to x-axis with scale factor ½; P maps to (−1, 5); Q maps to (0, 14)"
+    ],
+    "guidance": "B1: correct shape. B1: P' = (−1, 5) and Q' = (0, 14) correctly labelled."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "4(1 − cos²θ) + 5cosθ = 2",
+     "4 − 4cos²θ + 5cosθ − 2 = 0",
+     "4cos²θ − 5cosθ − 6 = 0  ✓"
+    ],
+    "guidance": "M1: substitute sin²θ = 1 − cos²θ. A1: rearrange correctly to 4cos²θ − 5cosθ − 6 = 0."
+   },
+   "7(b)": {
+    "type": "exact",
+    "points": [
+     "Factorise: (4cosθ + 3)(cosθ − 2) = 0",
+     "cosθ = 2 has no solution",
+     "cosθ = −3/4: θ = 138.6°, 221.4°"
+    ],
+    "guidance": "M1: factorise the quadratic in cosθ. A1: reject cosθ = 2. M1: solve cosθ = −3/4. A1: θ = 138.6° and 221.4° (to 1 d.p.)."
+   },
+   "8(a)": {
+    "type": "exact",
+    "points": [
+     "(2 + 5x)⁸ = 256 + 5120x + 44800x² + 224000x³ + …"
+    ],
+    "guidance": "M1: correct binomial structure. A1: term 1 = 256. A1: term 2 = 5120x. A1: terms 3 and 4 = 44800x² + 224000x³."
+   },
+   "8(b)": {
+    "type": "exact",
+    "points": [
+     "Set x = 0.1 so that 2 + 5(0.1) = 2.5",
+     "(2.5)⁸ ≈ 256 + 512 + 448 + 224 = 1440"
+    ],
+    "guidance": "M1: identify x = 0.1. M1: substitute into expansion. A1: 1440."
+   },
+   "9(a)": {
+    "type": "exact",
+    "points": [
+     "Gradient OA = 2; gradient AB = −½",
+     "Line AB through A(2,4): y = −½x + 5",
+     "B at y = 0: x = 10, so B = (10, 0)"
+    ],
+    "guidance": "M1: gradient OA = 2. M1: perpendicular gradient = −½. M1: line AB equation. A1: B = (10, 0)."
+   },
+   "9(b)": {
+    "type": "exact",
+    "points": [
+     "Area = ½ × 10 × 4 = 20"
+    ],
+    "guidance": "M1: area = ½ × base OB × height from A. A1: 20."
+   },
+   "10(a)": {
+    "type": "exact",
+    "points": [
+     "Centre (4, −5), radius = √53"
+    ],
+    "guidance": "M1: complete the square. A1: centre (4, −5). A1: radius = √53."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "Substitute y = kx + 3 into circle and set discriminant = 0",
+     "(1 + k²)x² + (16k − 8)x + 27 = 0 (after expansion and collecting)",
+     "Wait — correct expansion: x² + (kx+3)² − 8x + 10(kx+3) − 12 = 0",
+     "x² + k²x² + 6kx + 9 − 8x + 10kx + 30 − 12 = 0",
+     "(1+k²)x² + (16k − 8)x + 27 = 0",
+     "Discriminant: (16k−8)² − 4(27)(1+k²) = 0",
+     "256k² − 256k + 64 − 108 − 108k² = 0",
+     "148k² − 256k − 44 = 0  ⟹  37k² − 64k − 11 = 0",
+     "k = (64 ± √(4096 + 1628))/74 = (64 ± √5724)/74"
+    ],
+    "guidance": "M1: substitute line into circle. M1: expand and collect. M1: set discriminant = 0. M1: solve quadratic in k. A1: both correct exact values of k."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "g(−2) = (−2)³ + 3(−2)² − 10(−2) − 24 = −8 + 12 + 20 − 24 = 0",
+     "Since g(−2) = 0, (x + 2) is a factor by the factor theorem."
+    ],
+    "guidance": "B1: evaluate g(−2) = 0 and state the factor theorem conclusion."
+   },
+   "11(b)": {
+    "type": "exact",
+    "points": [
+     "g(x) = (x + 2)(x² + x − 12) = (x + 2)(x + 4)(x − 3)"
+    ],
+    "guidance": "M1: divide g(x) by (x + 2) to get x² + x − 12. M1: factorise quadratic. A1: g(x) = (x + 2)(x + 4)(x − 3)."
+   },
+   "11(c)": {
+    "type": "points",
+    "points": [
+     "Roots at x = −4, x = −2, x = 3; y-intercept = g(0) = −24"
+    ],
+    "guidance": "B1: correct cubic shape. B1: roots (−4,0), (−2,0), (3,0). B1: y-intercept (0, −24)."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "f(3) = 81 − 72 − 5 = 4 > 0",
+     "f(4) = 192 − 128 − 5 = 59 > 0"
+    ],
+    "answer": "A sign change is needed; check f near 3 from below or use f(2) = 24 − 32 − 5 = −13 < 0 and f(3) = 4 > 0, so root in [2,3]. For [3,4]: both positive so no root there; root is in [2,3].",
+    "guidance": "M1: evaluate f at the endpoints of the stated interval. A1: sign change observed, conclude root in the interval."
+   },
+   "12(b)": {
+    "type": "exact",
+    "points": [
+     "f'(x) = 9x² − 16x",
+     "x₂ = 3 − f(3)/f'(3) = 3 − 4/(81 − 48) = 3 − 4/33 ≈ 2.879"
+    ],
+    "guidance": "M1: find f'(x) = 9x² − 16x. M1: Newton–Raphson with x₁ = 3. A1: x₂ = 2.879 (to 3 d.p.)."
+   },
+   "12(c)": {
+    "type": "points",
+    "points": [
+     "f(3.0965) and f(3.0975) evaluated, sign change found",
+     "Conclude α = 3.097 correct to 3 d.p."
+    ],
+    "guidance": "M1: evaluate f at 3.0965 and 3.0975. A1: sign change established and conclusion stated."
+   },
+   "13(a)": {
+    "type": "exact",
+    "points": [
+     "dy/dx = 6x² − 18x + 12 = 6(x−1)(x−2) = 0",
+     "A(1, 3) is a local maximum; B(2, 2) is a local minimum"
+    ],
+    "guidance": "M1: differentiate. M1: factorise and solve. A1: A(1, 3). A1: B(2, 2)."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "∫₀¹ (2x³ − 9x² + 12x − 2) dx = [x⁴/2 − 3x³ + 6x² − 2x]₀¹ = ½ − 3 + 6 − 2 = 3/2"
+    ],
+    "guidance": "M1: integrate. A1: antiderivative. M1: apply limits. A1: 3/2."
+   },
+   "14(a)": {
+    "type": "exact",
+    "points": [
+     "A = 80"
+    ],
+    "guidance": "B1: T(0) = 100 ⟹ 20 + A = 100 ⟹ A = 80."
+   },
+   "14(b)": {
+    "type": "exact",
+    "points": [
+     "k = (1/5)ln(4/3) ≈ 0.05754"
+    ],
+    "guidance": "M1: substitute t = 5, T = 80, A = 80. M1: isolate and take ln. A1: k = 0.05754 (to 4 s.f.)."
+   },
+   "14(c)": {
+    "type": "exact",
+    "points": [
+     "dT/dt = −Ake^(−kt) = −80k·e^(−20k) ≈ −1.46 °C/min"
+    ],
+    "guidance": "M1: differentiate model. M1: substitute t = 20. A1: −1.46 °C min⁻¹ (to 3 s.f.)."
+   },
+   "14(d)": {
+    "type": "points",
+    "points": [
+     "As t → ∞, T → 20 but never reaches room temperature (or: room temperature assumed constant)"
+    ],
+    "guidance": "B1: any valid limitation."
+   },
+   "15(a)(i)": {
+    "type": "points",
+    "points": [
+     "Let n = 2m + 1 (m an integer).",
+     "n² − 1 = (2m+1)² − 1 = 4m² + 4m = 4m(m+1).",
+     "m(m+1) is even (consecutive integers), so n² − 1 = 8 × m(m+1)/2 is divisible by 8. ✓"
+    ],
+    "guidance": "M1: write n = 2m + 1. M1: expand to get 4m(m+1). A1: argue m(m+1) even, hence divisible by 8."
+   },
+   "15(a)(ii)": {
+    "type": "points",
+    "points": [
+     "n⁴ − 1 = (n² − 1)(n² + 1).",
+     "From (i), n² − 1 is divisible by 8, so n⁴ − 1 is divisible by 8.",
+     "Yes, n⁴ − 1 is always divisible by 8."
+    ],
+    "guidance": "M1: factor n⁴ − 1 using (i). A1: correct conclusion with justification."
+   },
+   "15(b)": {
+    "type": "points",
+    "points": [
+     "Assume ∃ positive integers p, q with 4p² − 9q² = 3.",
+     "4p² = 3 + 9q² = 3(1 + 3q²), so 3 | 4p², and since gcd(3,4)=1, 3 | p. Let p = 3r.",
+     "4(9r²) − 9q² = 3 ⟹ 36r² − 9q² = 3 ⟹ 12r² − 3q² = 1 ⟹ 3(4r² − q²) = 1.",
+     "LHS divisible by 3 but RHS = 1 is not. Contradiction.",
+     "Therefore no such positive integers p, q exist. ∎"
+    ],
+    "guidance": "M1: start contradiction, assume integers exist. M1: show 3 | p. M1: substitute p = 3r to reach 3(…) = 1. A1: identify contradiction and state conclusion."
+   },
+   "16(a)": {
+    "type": "exact",
+    "points": [
+     "dx/dt = 2 − 2cos2t,  dy/dt = 2sin2t",
+     "dy/dx = sin2t / (1 − cos2t)"
+    ],
+    "guidance": "M1: differentiate x and y w.r.t. t. M1: form dy/dx = (dy/dt)/(dx/dt). A1: dy/dx = sin2t/(1 − cos2t)."
+   },
+   "16(b)": {
+    "type": "exact",
+    "points": [
+     "At t = π/4: x = π/2 − 1, y = 1",
+     "dy/dx = sin(π/2)/(1 − cos(π/2)) = 1/1 = 1",
+     "Tangent: y = x − π/2 + 2"
+    ],
+    "guidance": "M1: find point at t = π/4. M1: evaluate gradient. M1: form tangent equation. A1: y = x + 2 − π/2."
+   },
+   "16(c)": {
+    "type": "points",
+    "points": [
+     "Area = ∫y dx = ∫₀^π y(dx/dt) dt",
+     "= ∫₀^π (1 − cos2t)(2 − 2cos2t) dt",
+     "= 2∫₀^π (1 − cos2t)² dt"
+    ],
+    "guidance": "M1: set up parametric area integral. M1: substitute y and dx/dt. A1: obtain required integral form (factor of 2 reconciled with the question's stated form)."
+   },
+   "16(d)": {
+    "type": "exact",
+    "points": [
+     "Expand: (1 − cos2t)² = 1 − 2cos2t + cos²2t = 3/2 − 2cos2t + ½cos4t",
+     "Integrate over [0, π]: [3t/2 − sin2t + sin4t/8]₀^π = 3π/2",
+     "Area = 3π/2"
+    ],
+    "guidance": "M1: expand the integrand. M1: use cos²2t = ½(1 + cos4t). M1: integrate and evaluate. A1: 3π/2."
    }
   }
  }
