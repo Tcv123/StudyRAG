@@ -475,7 +475,7 @@ function renderMsCard(part, paperKey, paperId) {
   // ── Model answer with key terms highlighted inline ──
   const hasAns = !!modelAns.trim();
   let modelAnswerDisplay = '';
-  const modelAnsIsHtml = hasAns && /<[a-z][\s\S]*>/i.test(modelAns);
+  const modelAnsIsHtml = hasAns && /<[a-z][\s\S]*>/i.test(modelAns) && !/<(style|script|link|meta|head|body|html)\b/i.test(modelAns);
   if (hasAns && kws.length && !modelAnsIsHtml) {
     // Highlight each keyword inside the model answer text
     const escaped = esc(modelAns);
