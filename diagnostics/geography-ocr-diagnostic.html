@@ -142,6 +142,8 @@
     .model-answer-wrap { margin-top: 20px; background: rgba(245,158,11,0.07); border: 1px solid var(--amber-border); border-radius: 14px; overflow: hidden; }
     .model-answer-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--amber); padding: 12px 20px; border-bottom: 1px solid var(--amber-border); background: rgba(245,158,11,0.05); }
     .model-answer-text { padding: 18px 20px; font-size: 15px; font-weight: 400; color: var(--text); line-height: 1.75; white-space: pre-line; }
+    .marks-scheme-label { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: #22c55e; padding: 10px 20px; border-top: 1px solid rgba(34,197,94,0.2); background: rgba(34,197,94,0.05); }
+    .marks-scheme-text { padding: 14px 20px 18px; font-size: 14px; color: var(--text); line-height: 1.7; white-space: pre-line; border-top: 1px solid rgba(34,197,94,0.15); }
 
     .self-mark-row { display: flex; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
     .self-mark-btn { flex: 1; min-width: 140px; padding: 14px 16px; border-radius: 12px; border: 2px solid; font-family: var(--font-body); font-size: 15px; font-weight: 700; cursor: pointer; transition: all 0.15s; }
@@ -469,6 +471,7 @@ function renderWritten(q) {
       <div class="model-answer-wrap">
         <div class="model-answer-label">📋 Model Answer</div>
         <div class="model-answer-text">${q.modelAnswer}</div>
+        ${q.marks_scheme ? `<div class="marks-scheme-label">✅ Mark Scheme</div><div class="marks-scheme-text">${q.marks_scheme}</div>` : ''}
       </div>
       <div class="self-mark-row">
         <button class="self-mark-btn full"    onclick="selfMark('full')">✓ Full marks</button>
