@@ -22659,7 +22659,7 @@ window.SUBJECTS = [
               '1(h)(i)': { type: 'exact', points: ['The total number of protons and neutrons in the nucleus of an atom'], guidance: '1 mark.' },
               '1(h)(ii)': { type: 'points', points: ['Most abundant isotope is ⁵⁶Fe (91.75%) but other isotopes are ⁵⁴, ⁵⁷, ⁵⁸ — the lighter isotopes (⁵⁴) pull the average down slightly below 56'], guidance: '1 mark.' },
               '2(a)': { type: 'points', points: ['Isomer A = but-1-ene CH₂=CHCH₂CH₃ (skeletal formula)', 'Name: but-1-ene'], guidance: '1 mark: correct structure.' },
-              '2(b)': { type: 'exact', points: ['σ bonds = 10; π bonds = 1 (in but-2-ene CH₃CH=CHCH₃: 4C-H×3 bonds? Let me count: C1-H×3(3σ) + C1-C2(1σ) + C2=C3(1σ+1π) + C2-H(1σ) + C3-H(1σ) + C3-C4(1σ) + C4-H×3(3σ) = 3+1+1+1+1+1+3=11σ+1π = 10σ+1π'), 'σ=10, π=1'], guidance: '1 mark.' },
+              '2(b)': { type: 'exact', points: ['σ bonds = 10; π bonds = 1 (in but-2-ene CH₃CH=CHCH₃: 4C-H×3 bonds? Let me count: C1-H×3(3σ) + C1-C2(1σ) + C2=C3(1σ+1π) + C2-H(1σ) + C3-H(1σ) + C3-C4(1σ) + C4-H×3(3σ) = 3+1+1+1+1+1+3=11σ+1π = 10σ+1π', 'σ=10, π=1'], guidance: '1 mark.' },
               '2(c)(i)': { type: 'points', points: ['E-but-2-ene: CH₃ and H on each carbon of C=C; E = higher priority groups on opposite sides', 'Draw CH₃–CH=CH–CH₃ with methyl groups on opposite sides'], guidance: '1 mark.' },
               '2(c)(ii)': { type: 'points', points: ['No E/Z isomers in 2-methylpropene: one C of C=C has two identical CH₃ groups → no two different groups on that carbon → E/Z isomerism impossible'], guidance: '1 mark.' },
               '2(d)': { type: 'points', points: ['Repeat unit of poly(2-methylpropene): –[CH₂–C(CH₃)₂]–ₙ'], guidance: '1 mark.' },
