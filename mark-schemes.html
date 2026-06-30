@@ -654,6 +654,8 @@ function buildPicker(userSubs) {
 
   pickSubject.addEventListener('change', () => {
     const fi = pickSubject.value;
+    localStorage.setItem('ms_pickSubject', fi);
+    localStorage.removeItem('ms_pickPaper');
     pickPaper.innerHTML = '<option value="">— Select paper —</option>';
     pickPaper.disabled = true;
     if (fi === '') return;
@@ -693,6 +695,7 @@ function buildPicker(userSubs) {
   pickPaper.addEventListener('change', () => {
     const fi = pickSubject.value;
     const pi = pickPaper.value;
+    localStorage.setItem('ms_pickPaper', pi);
     if (pi === '') return;
     const entry = filtered[parseInt(fi)];
     const paper = entry.papers[parseInt(pi)];
@@ -773,6 +776,21 @@ function buildPicker(userSubs) {
       <div class="ms-figures-tip"><span class="tip-icon">📄</span><div class="tip-body"><strong>Have the question paper open alongside this.</strong> Many questions refer to figures, extracts, and data that only appear in the paper — you'll need it to make sense of the mark scheme.</div></div>
       <div class="questions-list">${questionsHtml}</div>`;
   });
+
+  // Restore saved dropdown selections after a page refresh
+  const savedSubject = localStorage.getItem('ms_pickSubject');
+  const savedPaper = localStorage.getItem('ms_pickPaper');
+  if (savedSubject !== null && pickSubject.querySelector(`option[value="${savedSubject}"]`)) {
+    pickSubject.value = savedSubject;
+    pickSubject.dispatchEvent(new Event('change'));
+    if (savedPaper !== null) {
+      // Papers are populated synchronously in the change handler, so we can restore immediately
+      if (pickPaper.querySelector(`option[value="${savedPaper}"]`)) {
+        pickPaper.value = savedPaper;
+        pickPaper.dispatchEvent(new Event('change'));
+      }
+    }
+  }
 }
 
 (async function () {
