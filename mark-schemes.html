@@ -764,38 +764,25 @@ function buildPicker(userSubs) {
 }
 
 (async function () {
-  const { data: { session } } = await supabaseClient.auth.getSession();
-  if (!session?.user) { location = 'auth/login.html'; return; }
-  const [{ data: { user } }, { data: profile }] = await Promise.all([
-    supabaseClient.auth.getUser(),
-    supabaseClient.from('profiles').select('*').eq('id', session.user.id).single()
-  ]);
-  if (!user) { location = 'auth/login.html'; return; }
-  const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
-  document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
-  document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
-  if (profile?.avatar_url) {
-    const av = document.getElementById('avatarInitials');
-    const img = document.createElement('img');
-    img.src = profile.avatar_url;
-    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
-    av.replaceChildren(img);
-  }
-  const tier = profile?.subscription_tier || 'free';
-  const status = profile?.subscription_status || 'active';
-  const exp = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
-  const isPro = tier !== 'free' && ['active','trialing'].includes(status) && (!exp || exp > new Date());
-  if (!isPro) {
-    document.getElementById('pageBody').innerHTML = `
-      <div class="lock-overlay">
-        <div class="lock-icon">🔒</div>
-        <div class="lock-title">Pro feature</div>
-        <div class="lock-msg">Mark schemes are available with a Pro subscription.</div>
-        <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
-      </div>`;
-    return;
-  }
-  // Load papers-config.js and model answers on demand (only after Pro confirmed)
+  // Load profile in background for sidebar — does not block content render.
+  supabaseClient.auth.getSession().then(({ data: { session } }) => {
+    if (!session?.user) return;
+    supabaseClient.from('profiles').select('first_name,last_name,avatar_url').eq('id', session.user.id).single()
+      .then(({ data: profile }) => {
+        if (!profile) return;
+        const fn = profile.first_name || ''; const ln = profile.last_name || '';
+        document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
+        document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
+        if (profile.avatar_url) {
+          const av = document.getElementById('avatarInitials');
+          const img = document.createElement('img');
+          img.src = profile.avatar_url;
+          img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+          av.replaceChildren(img);
+        }
+      });
+  });
+  // Load papers-config.js and model answers
   if (!window.SUBJECTS) {
     await new Promise((resolve, reject) => {
       const s = document.createElement('script');
@@ -823,9 +810,16 @@ function buildPicker(userSubs) {
     document.head.appendChild(s);
   })));
   // Fetch the user's chosen subjects and boards
-  const { data: userSubs } = await supabaseClient
-    .from('user_subjects').select('subject, exam_board').eq('user_id', user.id);
-  buildPicker(userSubs || []);
+  let userSubs = [];
+  try {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (session?.user) {
+      const { data } = await supabaseClient
+        .from('user_subjects').select('subject, exam_board').eq('user_id', session.user.id);
+      userSubs = data || [];
+    }
+  } catch (_) {}
+  buildPicker(userSubs);
 })();
 </script>
 <div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>

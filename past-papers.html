@@ -198,48 +198,26 @@
 
 <script>
 (async function () {
-  // ?demo=1 bypasses Supabase auth for local UI previews. Renders the page as
-  // if a Pro user were signed in. No backend calls behind this page anyway.
-  const DEMO = new URLSearchParams(location.search).get('demo') === '1';
-  let user = null, profile = null;
-  if (DEMO) {
-    user = { id: 'demo' };
-    profile = { first_name: 'Demo', last_name: 'User', subscription_tier: 'pro', subscription_status: 'active' };
-  } else {
-    const { data: { session } } = await supabaseClient.auth.getSession();
-    if (!session?.user) { location = 'auth/login.html'; return; }
+  // Load profile in background for sidebar — does not block content render.
+  let user = null;
+  supabaseClient.auth.getSession().then(({ data: { session } }) => {
+    if (!session?.user) return;
     user = session.user;
-    const [{ data: { user: verifiedUser } }, { data: p }] = await Promise.all([
-      supabaseClient.auth.getUser(),
-      supabaseClient.from('profiles').select('*').eq('id', user.id).single()
-    ]);
-    if (!verifiedUser) { location = 'auth/login.html'; return; }
-    profile = p;
-  }
-  const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
-  document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
-  document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
-  if (profile?.avatar_url) {
-    const av = document.getElementById('avatarInitials');
-    const img = document.createElement('img');
-    img.src = profile.avatar_url;
-    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
-    av.replaceChildren(img);
-  }
-  const tier = profile?.subscription_tier || 'free';
-  const status = profile?.subscription_status || 'active';
-  const exp = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
-  const isPro = tier !== 'free' && ['active','trialing'].includes(status) && (!exp || exp > new Date());
-  if (!isPro) {
-    document.getElementById('pageBody').innerHTML = `
-      <div class="lock-overlay">
-        <div class="lock-icon">🔒</div>
-        <div class="lock-title">Pro feature</div>
-        <div class="lock-msg">Past papers are available with a Pro subscription.</div>
-        <a class="lock-btn" href="pricing.html">✦ Upgrade to Pro</a>
-      </div>`;
-    return;
-  }
+    supabaseClient.from('profiles').select('first_name,last_name,avatar_url').eq('id', user.id).single()
+      .then(({ data: profile }) => {
+        if (!profile) return;
+        const fn = profile.first_name || ''; const ln = profile.last_name || '';
+        document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
+        document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
+        if (profile.avatar_url) {
+          const av = document.getElementById('avatarInitials');
+          const img = document.createElement('img');
+          img.src = profile.avatar_url;
+          img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+          av.replaceChildren(img);
+        }
+      });
+  });
 
   // ---------- Pro user: render the past-papers index ----------
   function esc(s) {
@@ -330,16 +308,16 @@
   }
 
   // ── Load the user's chosen subjects + boards so we can default the
-  //    listing to only their boards. Demo mode skips Supabase and shows
-  //    everything. A user with no subjects also gets the full list (so
-  //    fresh accounts see something useful rather than an empty page).
+  //    listing to only their boards. A user with no subjects also gets the
+  //    full list (so fresh accounts see something useful rather than an empty page).
   let userBoardsBySubject = null; // null = "no filter", show everything
-  if (!DEMO) {
-    try {
+  try {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (session?.user) {
       const { data: userSubs } = await supabaseClient
         .from('user_subjects')
         .select('subject, exam_board')
-        .eq('user_id', user.id);
+        .eq('user_id', session.user.id);
       if (Array.isArray(userSubs) && userSubs.length > 0) {
         userBoardsBySubject = new Map();
         for (const row of userSubs) {
@@ -347,8 +325,8 @@
           userBoardsBySubject.get(row.subject).add(row.exam_board);
         }
       }
-    } catch (_) { /* fall back to showing all */ }
-  }
+    }
+  } catch (_) { /* fall back to showing all */ }
 
   const subjects = window.SUBJECTS || [];
 
