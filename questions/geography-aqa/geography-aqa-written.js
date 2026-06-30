@@ -13,57 +13,77 @@ const GEOGRAPHY_AQA_WRITTEN = {
     green: [
       {
         q: 'State two inputs to a drainage basin water cycle.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: precipitation (rain/snow/sleet/hail). 1 mark: solar energy (drives evaporation/transpiration). Accept any two valid inputs (e.g. surface runoff from outside basin).',
+        tier: 'green',
         modelAnswer: `• Precipitation — rain, snow, sleet, or hail entering the basin from the atmosphere (1).\n• Solar energy — drives evaporation and transpiration processes within the basin (1).`
       },
       {
         q: 'State two ways in which carbon is transferred from the atmosphere to the biosphere.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: photosynthesis (plants absorb CO₂). 1 mark: absorption by oceans / marine organisms using dissolved CO₂. Accept any two valid atmosphere→biosphere transfers.',
+        tier: 'green',
         modelAnswer: `• Photosynthesis — plants absorb atmospheric CO₂ and convert it into organic compounds (1).\n• Absorption by the oceans — dissolved CO₂ is used by marine organisms (1).`
       },
       {
         q: 'Identify three stores in the water cycle.',
-        marks: 3, tier: 'green',
+        marks: 3,
+        marks_scheme: '1 mark each for any three valid stores: oceans, ice sheets/glaciers, groundwater, atmosphere, soil moisture, vegetation, rivers/lakes.',
+        tier: 'green',
         modelAnswer: `• Oceans — the largest store of water on Earth (1).\n• Ice sheets and glaciers — the largest store of freshwater (1).\n• Groundwater — water stored in pores and cracks in rock below the water table (1).\n(Also accept: atmosphere, soil moisture, vegetation, rivers/lakes.)`
       },
       {
         q: 'State what is meant by a positive feedback loop, with an example from the carbon cycle.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: initial change triggers further change in the same direction (amplifying). 1 mark: valid example, e.g. warming thaws permafrost → releases methane → further warming.',
+        tier: 'green',
         modelAnswer: `A positive feedback loop is where an initial change triggers further change in the same direction (1). Example: rising temperatures thaw permafrost, releasing methane, which causes further warming (1).`
       },
     ],
     amber: [
       {
         q: 'Explain how deforestation affects both the water and carbon cycles in a tropical drainage basin.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: reduced interception → increased surface runoff / reduced infiltration. 1 mark: reduced transpiration → less water returned to atmosphere. 1 mark: carbon release from burning/decomposition of trees. 1 mark: loss of carbon sink reduces CO₂ absorption.',
+        tier: 'amber',
         modelAnswer: `• Reduced interception — without the canopy, more rain reaches the ground directly, increasing surface runoff and reducing infiltration (1).\n• Reduced transpiration — fewer trees mean less water returned to the atmosphere, potentially reducing local rainfall (1).\n• Carbon release — burning or decomposition of felled trees releases stored carbon into the atmosphere as CO₂ (1).\n• Loss of carbon sink — the forest no longer absorbs CO₂ through photosynthesis, increasing atmospheric concentrations (1).`
       },
       {
         q: 'Describe and explain the shape of a storm hydrograph for an urbanised drainage basin.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: short lag time — impermeable surfaces speed runoff. 1 mark: steep rising limb — rapid transfer to channel. 1 mark: high peak discharge — most rainfall becomes surface runoff. 1 mark: steep falling limb — little groundwater storage to sustain baseflow.',
+        tier: 'amber',
         diagram: true,
         modelAnswer: `• Short lag time — impermeable surfaces (tarmac, concrete) prevent infiltration, so water reaches the river quickly via surface runoff and drains (1).\n• Steep rising limb — rapid transfer of water means discharge increases quickly after rainfall (1).\n• High peak discharge — most rainfall becomes surface runoff rather than being stored, increasing the volume reaching the channel (1).\n• Steep falling/recession limb — little water is stored in the ground to sustain base flow, so discharge falls quickly after the storm (1).\n(Sketch should show a narrow, peaked hydrograph compared to a broader rural one.)`
       },
       {
         q: 'Explain the role of the oceans in the global carbon cycle.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: oceans are largest active carbon sink (~25-30% of anthropogenic CO₂). 1 mark: biological pump — phytoplankton photosynthesis using dissolved CO₂. 1 mark: thermohaline circulation transfers carbon to deep ocean for long-term storage. 1 mark: marine organisms form shells/skeletons → carbon stored in sedimentary rock.',
+        tier: 'amber',
         modelAnswer: `• The oceans are the largest active carbon sink, absorbing approximately 25-30% of anthropogenic CO₂ emissions (1).\n• CO₂ dissolves in surface water and is used by phytoplankton in photosynthesis, forming the biological pump (1).\n• Thermohaline circulation transfers dissolved carbon to the deep ocean, storing it for centuries (1).\n• Marine organisms incorporate carbon into shells and skeletons; when they die, carbon settles to the ocean floor and may form sedimentary rock over geological time (1).`
       },
       {
         q: 'Explain how human activity has altered the balance of the global carbon cycle since industrialisation.',
-        marks: 5, tier: 'amber',
+        marks: 5,
+        marks_scheme: '1 mark: burning fossil fuels releases geological carbon as CO₂. 1 mark: deforestation reduces biosphere sink and releases stored carbon. 1 mark: agriculture — methane from livestock/rice paddies, soil carbon from ploughing. 1 mark: cement production releases CO₂ from limestone. 1 mark: net result — CO₂ risen from ~280 ppm to 420+ ppm, driving climate change.',
+        tier: 'amber',
         modelAnswer: `• Burning fossil fuels — transfers carbon from geological stores to the atmosphere as CO₂, at rates far exceeding natural processes (1).\n• Deforestation — reduces the capacity of the biosphere to absorb CO₂, while also releasing stored carbon through burning and decomposition (1).\n• Agriculture — rice paddies and livestock produce methane; ploughing releases soil carbon (1).\n• Cement production — releases CO₂ from heating limestone (1).\n• The net effect is a significant increase in atmospheric CO₂ from ~280 ppm pre-industrial to over 420 ppm, driving climate change (1).`
       },
     ],
     red: [
       {
         q: 'Evaluate the effectiveness of different strategies to manage the carbon cycle and reduce atmospheric CO₂.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of multiple strategies with well-supported judgement on overall effectiveness. Level 2 (3-4 marks): explains strengths and/or weaknesses of strategies with some comparison. Level 1 (1-2 marks): describes strategies with limited evaluation. Credit: afforestation, CCS, renewable energy, international agreements, reduced consumption; limitations of each; conclusion that combination needed.',
+        tier: 'red',
         modelAnswer: `• Afforestation — creates new carbon sinks but is limited by land availability, takes decades to mature, and is vulnerable to fire and disease (1).\n• Carbon capture and storage (CCS) — can reduce emissions from power stations but is expensive, energy-intensive, and not yet proven at scale (1).\n• Renewable energy transition — reduces fossil fuel emissions but faces challenges of intermittency, infrastructure costs, and political resistance (1).\n• International agreements (Paris Agreement) — set targets but enforcement is weak and compliance varies (1).\n• Reducing consumption — effective but politically difficult and requires global cooperation (1).\n• Conclusion: no single strategy is sufficient; a combination is needed, but the scale and urgency of the challenge mean current efforts are likely insufficient (1).`
       },
       {
         q: 'To what extent is the water cycle a closed system at the global scale? Discuss with reference to human impacts.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): nuanced discussion of closed vs open system distinction with specific human impacts and evaluative conclusion. Level 2 (3-4 marks): explains the closed/open system concept and gives relevant human impacts. Level 1 (1-2 marks): basic description of the water cycle or human impacts. Credit: global scale = closed (no water lost to space); basin scale = open; dams, abstraction, urbanisation, climate change altering store distribution.',
+        tier: 'red',
         modelAnswer: `• At the global scale, the water cycle is considered closed because no significant water enters or leaves the Earth system — the total volume remains constant (1).\n• Energy from the sun drives transfers between stores (evaporation, precipitation), but the matter (water) stays within the system boundary (1).\n• However, human activities alter the distribution between stores — dams redistribute storage; abstraction depletes aquifers; urbanisation changes runoff patterns (1).\n• At the drainage basin scale, the system is open — water enters as precipitation and leaves as river discharge or evapotranspiration (1).\n• Climate change alters the balance of stores — ice melt transfers water from the cryosphere to the oceans, changing sea levels (1).\n• Conclusion: while technically closed globally (no water lost to space), human disruption of stores and flows means the cycle's behaviour is increasingly modified by anthropogenic activity (1).`
       },
     ],
@@ -74,22 +94,30 @@ const GEOGRAPHY_AQA_WRITTEN = {
     green: [
       {
         q: 'State three types of coastal erosion.',
-        marks: 3, tier: 'green',
+        marks: 3,
+        marks_scheme: '1 mark each for any three: hydraulic action (wave compression of air into cracks), abrasion (sediment scraping rock), attrition (sediment particles colliding), corrosion/solution (chemical dissolving).',
+        tier: 'green',
         modelAnswer: `• Hydraulic action — the force of waves compressing air into rock cracks, widening them (1).\n• Abrasion — rocks carried by waves scraping against cliff faces and shore platforms (1).\n• Attrition — rocks carried by waves colliding with each other, becoming smaller and rounder (1).\n(Also accept: corrosion/solution — dissolving of rock by weak acids in seawater.)`
       },
       {
         q: 'State two differences between constructive and destructive waves.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: constructive = strong swash/weak backwash → deposition; destructive = weak swash/strong backwash → erosion. 1 mark: constructive = low, long, less frequent (6-8/min); destructive = tall, steep, more frequent (10-14/min).',
+        tier: 'green',
         modelAnswer: `• Constructive waves have a strong swash and weak backwash, leading to net deposition; destructive waves have a weak swash and strong backwash, leading to net erosion (1).\n• Constructive waves are low, long, and less frequent (6-8 per minute); destructive waves are tall, steep, and more frequent (10-14 per minute) (1).`
       },
       {
         q: 'State what is meant by longshore drift.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: movement of sediment along a coastline. 1 mark: waves approach at angle (swash), backwash returns perpendicular under gravity → zigzag sediment movement.',
+        tier: 'green',
         modelAnswer: `Longshore drift is the movement of sediment along a coastline (1). Waves approach at an angle determined by the prevailing wind, carrying sediment up the beach at that angle (swash), while backwash pulls material straight back down under gravity, resulting in a zigzag movement along the shore (1).`
       },
       {
         q: 'Identify two features of coastal deposition and state where they form.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark each for any two feature + location pairs: spit (coastline changes direction, sediment extends into open water); bar (spit extends across bay); tombolo (spit connects island to mainland); beach (sheltered bay).',
+        tier: 'green',
         modelAnswer: `• Spit — forms where the coastline changes direction; longshore drift continues to deposit sediment into open water (1).\n• Bar — forms when a spit grows across a bay, connecting two headlands and enclosing a lagoon (1).\n(Also accept: tombolo, beach, salt marsh.)`
       },
     ],
