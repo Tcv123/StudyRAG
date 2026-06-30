@@ -190,7 +190,7 @@
       <div class="placeholder">
         <div class="placeholder-icon">⏳</div>
         <div class="placeholder-title">Loading…</div>
-        <div class="placeholder-msg">Checking your subscription…</div>
+        <div class="placeholder-msg">Loading papers…</div>
       </div>
     </div>
   </main>
@@ -206,10 +206,14 @@
     user = { id: 'demo' };
     profile = { first_name: 'Demo', last_name: 'User', subscription_tier: 'pro', subscription_status: 'active' };
   } else {
-    const { data: { user: u } } = await supabaseClient.auth.getUser();
-    if (!u) { location = 'auth/login.html'; return; }
-    user = u;
-    const { data: p } = await supabaseClient.from('profiles').select('*').eq('id', user.id).single();
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session?.user) { location = 'auth/login.html'; return; }
+    user = session.user;
+    const [{ data: { user: verifiedUser } }, { data: p }] = await Promise.all([
+      supabaseClient.auth.getUser(),
+      supabaseClient.from('profiles').select('*').eq('id', user.id).single()
+    ]);
+    if (!verifiedUser) { location = 'auth/login.html'; return; }
     profile = p;
   }
   const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
