@@ -27471,6 +27471,180 @@ window.SUBJECTS = [
             totalMarks: 66, durationMins: 90,
             qpUrl: 'https://www.ocr.org.uk/Images/703819-question-paper-physical-systems.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/703980-mark-scheme-physical-systems.pdf',
+            markSchemes: {
+              '1(a)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate explanation of reasons for economic development in a named coastal landscape with clear case study reference. Considers a range of economic, physical and social factors. Well-structured response throughout.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant explanation of reasons for economic development. Limited range or development. Partial case study reference. Mostly logical structure.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points about coastal economic development. Limited or no case study. Little development or structure.' }
+              ], indicative: {
+                'Named case study required': 'Must name a specific coastal landscape (e.g. Chesil Beach, Jurassic Coast, Holderness, a named resort)',
+                'Physical factors': 'Accessible beaches, sheltered bays, dramatic cliffs — draw tourism; natural harbour — supports fishing/port; mineral resources — sand/gravel extraction',
+                'Economic development': 'Tourism (accommodation, attractions, transport); fishing industry; port/shipping; renewable energy (offshore wind)',
+                'Social/historical factors': 'Settlement heritage; cultural significance; existing infrastructure attracting further investment'
+              }},
+              '1(b)(i)': { type: 'points', points: [
+                'Order the 11 values from smallest to largest; the median is the 6th value',
+                'Show workings: rank values and identify the middle (6th) data point',
+                'Credit correct answer with correct working (2 marks); correct answer without working (1 mark)'
+              ], guidance: '2 marks: correct answer with working shown. 1 mark: correct answer without working or correct method with arithmetic error.' },
+              '1(b)(ii)': { type: 'points', points: [
+                'IQR = Upper Quartile (Q3) − Lower Quartile (Q1)',
+                'Q1 = median of lower half (3rd value of ranked data); Q3 = median of upper half (9th value)',
+                'Show subtraction Q3 − Q1 to obtain IQR',
+                'Credit correct answer with correct working (2 marks); correct answer without working (1 mark)'
+              ], guidance: '2 marks: correct IQR with working. 1 mark: correct method but arithmetic error, or correct answer without working.' },
+              '1(b)(iii)': { type: 'points', points: [
+                'State whether December value (9.4 m/sec) falls within, above, or below the IQR',
+                'Compare 9.4 m/sec to the calculated Q1 and Q3 boundaries',
+                'Interpret what this means: if above Q3 it is an unusually high wind month; if below Q1 it is unusually calm',
+                'Reference to the spread/variability shown by the IQR'
+              ], guidance: '1 mark per valid interpretive point, max 2. Must reference the IQR calculated in (b)(ii).' },
+              '1(c)': { type: 'points', points: [
+                'Identify landform A in Fig. 1 and name the process of material flow (e.g. longshore drift, mass movement, fluvial input)',
+                'Explain how the named flow of material (sediment, water) acts on the landform to form its shape',
+                'Make specific reference to Fig. 1 — describe visual evidence of the flow process at work',
+                'Link material flow to the distinctive characteristic of landform A shown in the photograph'
+              ], guidance: '1 mark: identifies a flow of material with reference to Fig. 1. 2 marks: explains how the flow influences formation. 3 marks: detailed explanation linking material flow to specific landform characteristic with clear Fig. 1 reference.' },
+              '1(d)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough discussion of the relative importance of geomorphic processes in forming coastal landforms. Sophisticated evaluation comparing multiple processes (erosion, deposition, mass movement, weathering). Well-argued conclusion about relative importance. Excellent specific knowledge with examples and data. Consistently logical structure.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear and accurate discussion of geomorphic processes in coastal landform formation. Good range of processes considered. Conclusion about relative importance. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant discussion of processes. May treat processes separately without comparing relative importance. Some specific examples. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic description of coastal processes or landforms. Little comparison or evaluation of relative importance. Limited structure.' }
+              ], indicative: {
+                'Erosional processes': 'Hydraulic action, abrasion, attrition, solution — form cliffs, wave-cut platforms, caves, arches, stacks; dominant where wave energy high and rock is resistant',
+                'Depositional processes': 'Longshore drift, constructive wave deposition — form beaches, spits, bars, tombolos, sand dunes; dominant where sediment supply high and wave energy lower',
+                'Mass movement': 'Rotational slumping, rockfall, mudflow — important in softer rock (London Clay) coastlines; contributes to cliff recession',
+                'Weathering': 'Salt crystallisation, freeze-thaw, biological weathering — weaken rock, enabling erosion; often underestimated',
+                'Relative importance argument': 'Wave erosion may be considered most important in shaping macro-scale features; but relative importance varies with geology, wave energy regime, and sediment supply; no single process dominates all coasts'
+              }},
+              '2(a)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate explanation of reasons for human activity in a named glaciated landscape with clear case study reference. Considers a range of economic, physical and social factors. Well-structured response.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant explanation of reasons for human activity. Limited range or development. Partial case study reference. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points about glaciated landscape activities. Limited or no case study. Little development.' }
+              ], indicative: {
+                'Named case study required': 'Must name a specific glaciated landscape (e.g. Lake District, Alps, Cairngorms, Patagonia)',
+                'Physical attractions': 'Dramatic scenery (aretes, corries, U-valleys), skiing terrain, wilderness; mineral resources',
+                'Economic activities': 'Tourism (walking, skiing, adventure tourism); hydroelectric power; forestry; farming on glacial soils',
+                'Social/accessibility': 'Heritage and culture; transport infrastructure enabling access; national park designation'
+              }},
+              '2(b)(i)': { type: 'points', points: [
+                'Order the 11 values; median is the 6th value in the ranked dataset',
+                'Show working: list ranked values and identify position 6',
+                '2 marks for correct answer with working; 1 mark for correct answer without working'
+              ], guidance: '2 marks: correct median with working. 1 mark: correct answer without working or correct method with error.' },
+              '2(b)(ii)': { type: 'points', points: [
+                'IQR = Q3 − Q1; identify Q1 (3rd value) and Q3 (9th value) from ranked data',
+                'Show subtraction to obtain IQR with correct values referenced',
+                '2 marks for correct IQR with working; 1 mark for correct method but error'
+              ], guidance: '2 marks: correct IQR with working shown. 1 mark: correct method with arithmetic error.' },
+              '2(b)(iii)': { type: 'points', points: [
+                'State whether December precipitation value falls within, above, or below the IQR',
+                'Compare to calculated Q1 and Q3 values',
+                'Interpret whether this is an unusually high or low precipitation month relative to the spread of data'
+              ], guidance: '1 mark per valid interpretive point, max 2. Must reference IQR from (b)(ii).' },
+              '2(c)': { type: 'points', points: [
+                'Identify landform B in Fig. 2 and name relevant flow of material (glacial till, meltwater, moraine)',
+                'Explain how the named flow of material influenced formation of the landform',
+                'Reference specific evidence in Fig. 2 showing the flow process',
+                'Link material flow to the distinctive shape/characteristic of landform B'
+              ], guidance: '3 marks: detailed explanation linking material flow to specific characteristic with Fig. 2 reference. 2 marks: explains how flow influences formation. 1 mark: identifies flow with Fig. 2 reference.' },
+              '2(d)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough discussion of the relative importance of geomorphic processes in forming glacial landforms. Sophisticated evaluation comparing erosion, deposition, meltwater processes and periglacial action. Well-argued conclusion. Excellent specific knowledge with examples. Consistently logical structure.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear and accurate discussion of multiple geomorphic processes. Good comparison. Conclusion about relative importance. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant discussion but may lack comparison of relative importance. Some specific examples. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic description of glacial processes or landforms. Little evaluation of relative importance. Limited structure.' }
+              ], indicative: {
+                'Erosional processes': 'Abrasion and plucking — form corries, aretes, U-shaped valleys, roches moutonnées; dominant under active temperate glaciers',
+                'Depositional processes': 'Till deposition — drumlins, moraines (terminal, lateral, medial, ground); fluvioglacial deposits — eskers, kames, outwash plains',
+                'Meltwater processes': 'Proglacial lakes, braided streams, eskers — often underestimated in significance',
+                'Periglacial processes': 'Freeze-thaw, solifluction, patterned ground — important beyond ice margins',
+                'Relative importance': 'Erosion most important for macro-landforms (valleys, corries); deposition most important for lowland landforms; relative importance depends on whether considering passive/active ice'
+              }},
+              '3(a)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate explanation of reasons for economic activity in a named dryland landscape. Considers a range of economic and physical factors with clear case study reference. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant explanation with partial case study reference. Limited range. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points. Limited or no case study. Little development.' }
+              ], indicative: {
+                'Named case study required': 'Must name a specific dryland landscape (e.g. Sahara, Atacama, Namib, Mojave, Australian outback)',
+                'Economic activities': 'Mineral extraction (oil, gas, phosphates, diamonds); solar energy; tourism (safari, desert tourism); pastoralism; irrigated agriculture',
+                'Physical enablers': 'Mineral deposits formed by past geological/climatic conditions; high solar radiation; seasonal water availability',
+                'Other factors': 'Government investment; technology enabling exploitation; transport infrastructure'
+              }},
+              '3(b)(i)': { type: 'points', points: [
+                'Order 11 values; median is 6th value',
+                'Show working with ranked data and identified position',
+                '2 marks for correct answer with working; 1 mark correct without working'
+              ], guidance: '2 marks: correct median with working. 1 mark: correct answer without working.' },
+              '3(b)(ii)': { type: 'points', points: [
+                'IQR = Q3 − Q1; Q1 = 3rd value, Q3 = 9th value in ranked dataset',
+                'Show subtraction',
+                '2 marks for correct IQR with working; 1 mark for correct method with error'
+              ], guidance: '2 marks: correct IQR with working. 1 mark: correct method with arithmetic error.' },
+              '3(b)(iii)': { type: 'points', points: [
+                'Compare December value (40 mm) to calculated Q1 and Q3',
+                'State whether it falls within, above or below the IQR',
+                'Interpret what this suggests about precipitation in that month relative to the spread of data'
+              ], guidance: '1 mark per valid interpretive point, max 2. Must reference IQR.' },
+              '3(c)': { type: 'points', points: [
+                'Identify landform C in Fig. 3 and name relevant flow of material (wind-borne sediment, water, mass movement)',
+                'Explain how the named flow influences formation of the specific landform',
+                'Reference evidence in Fig. 3',
+                'Link material flow to the distinctive characteristic of landform C'
+              ], guidance: '3 marks: detailed explanation with Fig. 3 reference. 2 marks: explanation of how flow influences formation. 1 mark: identifies flow with Fig. 3 reference.' },
+              '3(d)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough discussion of relative importance of geomorphic processes in dryland landform formation. Sophisticated evaluation of wind, water, mass movement and weathering. Well-argued conclusion. Excellent specific knowledge. Consistently logical.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear discussion of multiple processes. Good comparison. Conclusion about relative importance. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant discussion. May not adequately compare relative importance. Some specific examples. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic description of dryland processes. Little evaluation of relative importance. Limited structure.' }
+              ], indicative: {
+                'Wind (aeolian) processes': 'Deflation, abrasion, saltation — form yardangs, ventifacts, barchans, seif dunes, ergs; dominant in hyper-arid zones',
+                'Water processes': 'Flash floods despite low rainfall — form wadis, alluvial fans, pediments, bajadas; often underestimated',
+                'Mass movement': 'Rockfall, salt weathering — contribute to cliff faces and debris slopes in hot desert landscapes',
+                'Weathering': 'Salt crystallisation, thermal expansion, insolation weathering — break down rock surfaces to supply sediment',
+                'Relative importance': 'Historically wind overemphasised; water processes arguably equally or more important in episodic rainfall events; relative importance varies with aridity index'
+              }},
+              '4(a)(i)': { type: 'points', points: [
+                'Choropleth/colour-coded maps can conceal variation within areas — all of Alaska shown as single colour despite internal variation in snowmelt timing',
+                'Classification boundaries (colour breaks) are subjective — different breakpoints would show different patterns',
+                'Map shows change in days but does not show absolute snowmelt dates — cannot determine actual calendar dates of snowmelt',
+                'Spatial resolution may be limited — cannot show fine-scale variation in topographically complex areas',
+                'Data from 1999–2015 only — does not show longer-term trends or pre-satellite baseline'
+              ], guidance: '1 mark per valid limitation, max 3. Must be specific to Fig. 4 (map of spring snowmelt timing in Alaska).' },
+              '4(a)(ii)': { type: 'points', points: [
+                'Earlier snowmelt increases the period when liquid water is available, increasing surface runoff and stream discharge',
+                'Earlier snowmelt may shift peak runoff from summer to spring — altering the seasonal flow pattern (hydrograph shape)',
+                'More water available earlier in spring may increase soil moisture content, reducing infiltration capacity',
+                'Earlier snowmelt may increase evapotranspiration as temperatures are still rising — affecting water balance',
+                'Permafrost thaw (if associated) could alter drainage patterns — waterlogging or increased permeability'
+              ], guidance: '1 mark for identifying a change, 1 mark for explaining the effect on the water cycle. Max 2.' },
+              '4(a)(iii)': { type: 'points', points: [
+                'Earlier snowmelt exposes soil and vegetation sooner — extending the growing season and increasing CO₂ uptake by plants (photosynthesis)',
+                'Earlier permafrost thaw releases stored carbon as CO₂ and methane — acting as a positive feedback on climate change',
+                'Increased plant productivity in longer growing season sequesters more carbon in biomass',
+                'Warmer soil conditions accelerate decomposition of organic matter — releasing stored carbon to atmosphere'
+              ], guidance: '1 mark for identifying change, 1 mark for explaining the carbon cycle effect. Max 2.' },
+              '4(b)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [8, 10], criteria: 'Detailed and accurate examination of how temperature affects both flows and stores in the carbon cycle of tropical rainforest. Clear and specific understanding of multiple processes. Well-structured throughout.' },
+                { descriptor: 'Level 2', range: [5, 7], criteria: 'Some relevant examination of temperature effects on carbon cycle. May address flows OR stores but not both adequately. Some specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic points about carbon cycle or temperature. Limited application to tropical rainforest. Little structure.' }
+              ], indicative: {
+                'High temperature effect on flows': 'High year-round temperatures (25–28°C) drive rapid photosynthesis — GPP of TRF among highest globally (~3 kg C/m²/yr); high temperature accelerates decomposition (litter turnover <1 year vs decades in boreal)',
+                'High temperature effect on stores': 'Rapid nutrient cycling means little organic matter stored in soil (dystrophic soils); most carbon stored in living biomass (above-ground stocks ~200 tC/ha)',
+                'Temperature variation effects': 'Even small temperature increases accelerate respiration more than photosynthesis — risk of TRF becoming net carbon source; El Niño drought events reduce GPP and increase fire risk',
+                'Positive feedbacks': 'Higher temperatures → more evapotranspiration → more cloud formation locally → moderates temperature (negative feedback); but deforestation disrupts this'
+              }},
+              '4(c)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough assessment of the extent to which human factors enhance rather than disturb natural processes and stores in the water cycle. Sophisticated evaluation with specific examples and data. Well-argued conclusion. Consistently logical structure.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear and accurate assessment considering both enhancing and disturbing effects. Conclusion about extent. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant assessment but may focus only on disturbance or enhancement. Limited conclusion. Some specific knowledge. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic and largely descriptive. May describe human activities without adequate evaluation of whether they enhance or disturb. Limited structure.' }
+              ], indicative: {
+                'Activities that disturb': 'Deforestation — reduces interception and evapotranspiration; increases surface runoff and peak discharge; urbanisation — impermeable surfaces, flashy hydrographs; abstraction — lowers water table, reduces baseflow',
+                'Activities that might enhance natural processes': 'Afforestation increases interception and evapotranspiration stores; wetland restoration increases floodwater storage; managed aquifer recharge; permeable paving in urban areas',
+                'Scale and context': 'Enhancement often applies to localised restoration; global-scale human impacts are predominantly disturbing to natural cycles',
+                'Conclusion': 'Evidence suggests human activity predominantly disturbs natural water cycle processes; enhancement is possible but requires deliberate management intervention and is spatially limited'
+              }}
+            },
             questions: [
               { number: 1, scenario: 'Section A Option A — Coastal Landscapes. Table 1: mean monthly wind speed at a South African coastal location for 11 months (2019). Fig. 1: photograph of a coastal landscape in England showing landform A.', parts: [
                 { code: '1(a)', prompt: 'With reference to a case study of one coastal landscape that is being used by people, explain the reasons for the economic development taking place.', marks: 8 },
@@ -27510,6 +27684,117 @@ window.SUBJECTS = [
             totalMarks: 66, durationMins: 90,
             qpUrl: 'https://www.ocr.org.uk/Images/703821-question-paper-human-interactions.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/703981-mark-scheme-human-interactions.pdf',
+            markSchemes: {
+              '1(a)': { type: 'points', points: [
+                'Identify a specific piece of visual evidence in Fig. 1 (e.g. back-to-back terraced housing, cobbled streets, corner shop, factory chimney)',
+                'Explain how that specific evidence represents an inner city characteristic (high density housing, industrial legacy, mixed land use)',
+                'Link evidence to inner city features: crowded housing reflects rapid industrial urbanisation; lack of gardens reflects high density; aged building fabric reflects Victorian inner city development'
+              ], guidance: '1 mark: identifies a piece of evidence from Fig. 1. 2 marks: uses evidence to explain how it represents an inner city. 3 marks: detailed explanation linking specific evidence to inner city characteristics.' },
+              '1(b)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate suggestions of how social inequalities affect daily lives, with clear and developed use of evidence from Fig. 2. Considers multiple dimensions of daily life and clear contrast between LIDC and AC contexts. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant suggestions using Fig. 2 evidence. Limited range or development. Some contrast between contexts. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points about social inequality or daily life. Limited or no use of Fig. 2. Little development.' }
+              ], indicative: {
+                'From Fig. 2 evidence': 'Housing quality differences (materials, size, sanitation); infrastructure differences (roads, water supply); land use around settlements',
+                'Daily life impacts': 'Access to clean water — affects health, time spent collecting; housing quality — affects warmth, security, disease risk; access to services (schools, healthcare)',
+                'LIDC vs AC contrast': 'Niger settlement may lack piped water, paved roads, permanent structures; Netherlands settlement has infrastructure, formal housing, services',
+                'Inequality dimensions': 'Gender (women often bear water collection burden); age (children\'s health and education most affected); income (determines housing quality)'
+              }},
+              '1(c)': { type: 'points', points: [
+                'Flows of money and investment create or change physical infrastructure — new buildings, shops, transport links alter the visible character of a place',
+                'Investment changes the economic function of a place — factory investment creates industrial character; retail investment changes to commercial character',
+                'Investment attracts workers and residents — demographic changes shift the social character (age profile, skill level, ethnicity) of a place',
+                'Disinvestment and capital flight equally shape place profiles — deindustrialisation creates post-industrial place identity (derelict buildings, unemployment)',
+                'Named example: Canary Wharf — financial investment transformed East London docklands from industrial to global financial services hub',
+                'Named example: Detroit — disinvestment in car manufacturing led to population loss, urban decay and distinctive post-industrial place profile'
+              ], guidance: '1 mark per valid point, max 6. Credit specific place examples.' },
+              '1(d)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough assessment of the role of a range of players in placemaking for a named rebranded place. Sophisticated evaluation of different players\' contributions and relative importance. Well-argued conclusion. Excellent specific knowledge. Consistently logical structure.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear assessment of players in placemaking for a named place. Good range of players considered. Conclusion about roles. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant assessment but may focus on one or two players only. Named place present but limited development. Some specific knowledge. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic and largely descriptive. May describe rebranding without clearly assessing players\' roles. Limited structure.' }
+              ], indicative: {
+                'Named rebranded place required': 'E.g. Bilbao, Sheffield, Derry/Londonderry, Glasgow, Manchester, Bradford, Liverpool',
+                'Local government': 'Strategic planning, investment in infrastructure, designation of regeneration areas, planning permissions',
+                'Private sector': 'Developers, retailers, cultural institutions (Guggenheim Bilbao) — invest in new buildings and facilities',
+                'National government': 'Funding (Single Regeneration Budget, Enterprise Zones), national campaigns, City of Culture designation',
+                'Communities': 'Local residents\' involvement in placemaking; risk of community displacement if rebranding leads to gentrification',
+                'Media': 'Representation of rebranded place influences perceptions — may attract or deter investment and visitors'
+              }},
+              '2(a)(i)': { type: 'points', points: [
+                'Only shows relationship for selected countries — not representative of all countries; sampling bias',
+                'HDI is a composite index and may mask variation in specific dimensions (health, education, income separately)',
+                'Export of commercial services is a single trade measure — does not capture goods trade or total trade value',
+                'Cannot establish causation from scatter graph — only shows correlation; other variables confound the relationship',
+                'Outliers distort the apparent relationship — some countries may be anomalies due to specific circumstances (e.g. tax havens, oil exporters)'
+              ], guidance: '1 mark per valid limitation, max 2. Must be specific to Fig. 3.' },
+              '2(a)(ii)': { type: 'points', points: [
+                'Level of economic development — HICs have larger service sectors (finance, tourism, business services) enabling high commercial service exports',
+                'Geographical location — island/coastal nations may specialise in tourism services; financial centres (Singapore, Luxembourg) attract service trade',
+                'Historical legacy — former colonial powers retain service trade links with former colonies',
+                'Membership of trade blocs — EU members benefit from single market facilitating service trade',
+                'Political stability — unstable countries deter foreign investment in service industries'
+              ], guidance: '1 mark per factor identified, 1 mark for explanation. Max 5 (must address two factors).' },
+              '2(b)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate examination of interdependence between a named EDC and its trading partners. Clear case study with specific trade data. Considers multiple dimensions of interdependence. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant examination with partial case study reference. Limited range of interdependence aspects. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points about trade or interdependence. Limited case study. Little development.' }
+              ], indicative: {
+                'Named EDC required': 'E.g. China, India, Brazil, Mexico, South Africa',
+                'China example': 'China exports manufactured goods (electronics, machinery) to HICs; imports raw materials (iron ore from Brazil/Australia, oil from Middle East) — mutual dependence',
+                'India example': 'IT services exports to USA/UK create interdependence; outsourcing firms dependent on Indian skilled labour; India dependent on remittances and contracts',
+                'Interdependence dimensions': 'Financial (FDI flows), trade (goods and services), people (migration, remittances), knowledge (technology transfer)'
+              }},
+              '3(a)(i)': { type: 'points', points: [
+                'Only selected countries shown — not globally representative; sampling bias in country choice',
+                'HDI as a composite index may conceal variation in migration-related factors',
+                'International migration rate is a net figure — does not distinguish emigration from immigration or types of migration',
+                'Scatter graph cannot establish causation — other variables influence both migration rate and HDI',
+                'Point for a single year (2019) — does not show trends over time; migration rates fluctuate'
+              ], guidance: '1 mark per valid limitation, max 2. Must be specific to Fig. 4.' },
+              '3(a)(ii)': { type: 'points', points: [
+                'Level of economic development — HDI differences between origin and destination create economic push-pull factors',
+                'Conflict and instability — forced migration from conflict zones inflates migration rates regardless of HDI',
+                'Historical and colonial links — migration corridors established by colonial history persist (India–UK, Algeria–France)',
+                'Geographical factors — proximity to richer nations (Mexico–USA) enables migration; island nations may have lower rates due to cost',
+                'Government policy — open borders (EU freedom of movement) facilitate higher migration rates'
+              ], guidance: '1 mark per factor identified, 1 mark for explanation. Max 5 (must address two factors).' },
+              '3(b)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate examination of interdependence between a named EDC and countries connected by migrant flows. Clear case study with specific data. Considers multiple dimensions of interdependence. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant examination with partial case study. Limited range of interdependence aspects. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points about migration or interdependence. Limited case study. Little development.' }
+              ], indicative: {
+                'Named EDC required': 'E.g. Mexico, Philippines, India, China',
+                'Mexico–USA example': 'Mexico dependent on remittances ($35bn/year — >2% GDP); USA dependent on Mexican labour in agriculture, construction; brain drain vs labour supply',
+                'Philippines example': 'OFW (Overseas Filipino Workers) — remittances ~10% GDP; receiving nations (Middle East, USA) dependent on Filipino healthcare workers',
+                'Interdependence dimensions': 'Economic (remittances, labour supply), demographic (sending countries age, receiving countries gain workers), cultural (diaspora communities), political (bilateral agreements)'
+              }},
+              '4': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough discussion of the role of national government versus other organisations in global governance of human rights, with clear reference to one area of conflict. Sophisticated evaluation of multiple actors. Well-argued conclusion. Excellent specific knowledge. Consistently logical structure.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear discussion of national government role relative to other organisations. Named conflict context. Good range of actors considered. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant discussion but may focus only on national government or lack developed comparison. Named conflict present. Some specific knowledge. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic and largely descriptive. May describe human rights organisations without adequate evaluation. Limited structure.' }
+              ], indicative: {
+                'Named conflict area required': 'E.g. Syria, Yemen, Democratic Republic of Congo, Myanmar/Rohingya crisis, Israel-Palestine',
+                'National government role': 'Ratification and enforcement of human rights conventions; domestic legislation; war crimes prosecution; but also most common violators',
+                'IGOs': 'UN Human Rights Council, ICC, UNHCR — global oversight but limited enforcement power; Security Council vetoes limit action',
+                'NGOs': 'Amnesty International, Human Rights Watch — monitoring and reporting; advocacy; but no enforcement authority',
+                'Conclusion': 'National governments nominally most significant as signatories to conventions; but often the violators — IGOs and NGOs may be more practically significant in holding them accountable'
+              }},
+              '5': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough discussion of the role of national government versus other organisations in global governance of conflict, with clear reference to one area of conflict. Sophisticated evaluation of multiple actors. Well-argued conclusion. Excellent specific knowledge. Consistently logical structure.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear discussion of national government role relative to other organisations in conflict governance. Named conflict context. Good range of actors. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant discussion but may lack developed comparison or specific conflict context. Some specific knowledge. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic and largely descriptive. Limited evaluation of relative roles. Limited structure.' }
+              ], indicative: {
+                'Named conflict area required': 'E.g. Syria, South Sudan, Ukraine, Yemen, Libya',
+                'National government role': 'Direct military intervention; peace agreements; foreign policy; but also conflict instigators',
+                'UN and IGOs': 'UN Security Council resolutions, peacekeeping missions (UNMISS in South Sudan); arms embargoes; but veto power limits effectiveness',
+                'Regional organisations': 'African Union, NATO, ASEAN — regional security frameworks; may be more effective than global governance in some contexts',
+                'NGOs': 'Médecins Sans Frontières, ICRC — humanitarian response; neutral mediation in some conflicts',
+                'Conclusion': 'National governments are key actors — both causes and resolvers of conflict; but international governance provides essential frameworks even if imperfect'
+              }}
+            },
             questions: [
               { number: 1, scenario: 'Section A — Changing Spaces; Making Places. Fig. 1: TV set for Coronation Street (fictional inner city). Fig. 2: photographs of rural settlements in Niger (LIDC) and the Netherlands (AC).', parts: [
                 { code: '1(a)', prompt: 'Use one piece of evidence from Fig. 1 to explain how this informal representation of place represents an inner city area.', marks: 3 },
@@ -27540,6 +27825,256 @@ window.SUBJECTS = [
             totalMarks: 108, durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/703823-question-paper-geographical-debates.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/703982-mark-scheme-geographical-debates.pdf',
+            markSchemes: {
+              '1(a)': { type: 'points', points: [
+                'The diagram is a simplified model — does not show all components of the energy balance (e.g. regional variation)',
+                'Values given are global averages — conceals large spatial variation between equator and poles, land and ocean',
+                'Arrows/values may not be drawn to scale — visual impression of relative magnitudes may be misleading',
+                'Data represents a fixed snapshot — does not show how the energy balance changes with seasons or over time',
+                'Does not distinguish between shortwave and longwave radiation in a detailed way; simplified representation of feedbacks'
+              ], guidance: '1 mark per valid limitation specific to Fig. 1, max 3.' },
+              '1(b)': { type: 'points', points: [
+                'Water vapour is a greenhouse gas — absorbs outgoing longwave radiation and re-radiates it back to Earth\'s surface, enhancing the greenhouse effect',
+                'Higher atmospheric water vapour increases the opacity of the atmosphere to infrared radiation — less energy escapes to space',
+                'Water vapour acts as a positive feedback: higher temperatures → more evaporation → more water vapour → enhanced greenhouse effect → further warming',
+                'Water vapour contributes ~50% of the natural greenhouse effect — more than CO₂; its amplification is critical to climate sensitivity',
+                'Increased water vapour may alter cloud cover — low clouds have net cooling effect; high clouds have net warming effect; net impact complex',
+                'Greater water vapour increases latent heat in the atmosphere — drives more intense precipitation events and alters atmospheric circulation patterns'
+              ], guidance: '1 mark per valid point, max 6. Higher marks for developed explanations of mechanisms.' },
+              '2(a)': { type: 'points', points: [
+                'Map/chart covers only South and East Asia — cannot make global comparisons; regions outside this area excluded',
+                'Percentage of deaths from air pollution does not show absolute death numbers — a high percentage in a small population could mean fewer total deaths than a low percentage in a large population',
+                'Data from a single year (2017) — does not show trends or whether patterns are improving or worsening',
+                'Air pollution deaths may be underreported in countries with weaker health data collection (e.g. some South Asian LIDCs)',
+                'Does not distinguish between indoor and outdoor air pollution — two very different causes with different policy implications'
+              ], guidance: '1 mark per valid limitation specific to Fig. 2, max 3.' },
+              '2(b)': { type: 'points', points: [
+                'NCDs (e.g. cardiovascular disease, cancer, diabetes, COPD) reduce workforce productivity — workers miss days or are unable to work, reducing economic output',
+                'NCDs impose high healthcare costs on individuals and governments — diverting public spending from education and infrastructure',
+                'Long-term nature of NCDs means treatment costs accumulate over years — impoverishing households (catastrophic health expenditure)',
+                'NCDs disproportionately affect working-age adults in LIDCs/EDCs — greater economic impact per case than in HICs where treatment available',
+                'Social impacts: reduced quality of life; psychological burden on carers; family breakup due to financial pressure; stigma',
+                'NCDs reduce life expectancy — affects demographic dividend; loss of experienced workers and community members'
+              ], guidance: '1 mark per valid point, max 6. Credit both economic and social dimensions.' },
+              '3(a)': { type: 'points', points: [
+                'Relief map shows topography only — does not show ocean floor geology, sediment types, or biological features',
+                'Colour/shading scales may not be standardised — depth values may be approximate rather than precise',
+                'Map is a simplified 2D representation — cannot convey the true 3D complexity of mid-ocean ridges, trenches, and seamounts',
+                'Resolution may be insufficient to show smaller-scale features like hydrothermal vents or micro-topography',
+                'Does not show dynamic features — currents, temperature, salinity variation — which are also part of ocean basin character'
+              ], guidance: '1 mark per valid limitation specific to Fig. 3, max 3.' },
+              '3(b)': { type: 'points', points: [
+                'The North Atlantic Gyre is a large, clockwise circulation pattern driven by prevailing winds and the Coriolis effect',
+                'The Gulf Stream (North Atlantic Current) flows northeastward carrying warm tropical water to NW Europe, moderating UK and Scandinavian climates',
+                'Western boundary currents (Gulf Stream) are fast, narrow and deep; eastern boundary currents (Canary Current) are slow, broad and shallow — Western Intensification',
+                'The Coriolis effect deflects surface water to the right in the Northern Hemisphere — driving clockwise gyre circulation',
+                'Thermohaline circulation begins in the North Atlantic: cold, saline surface water sinks (North Atlantic Deep Water) initiating the global conveyor belt',
+                'Ekman transport drives surface water away from coastlines in some areas creating upwelling zones — bringing nutrient-rich deep water to the surface'
+              ], guidance: '1 mark per valid point, max 6. Credit specific named currents and processes.' },
+              '4(a)': { type: 'points', points: [
+                'Diagram may be a model/generalisation — does not show actual field boundaries of soil types; real soil distributions are more complex',
+                'Classification of soil types may not be internationally standardised — different taxonomies may classify the same soil differently',
+                'Map/diagram does not show soil depth, quality, fertility or pH — all critical for food security',
+                'Does not show how soil types are changing due to degradation, erosion or climate change',
+                'Cannot tell from map alone how soil type affects agricultural potential — needs additional context about climate and water availability'
+              ], guidance: '1 mark per valid limitation specific to Fig. 4, max 3.' },
+              '4(b)': { type: 'points', points: [
+                'Geographical pinchpoints are locations through which large volumes of food or key inputs must pass — making the food system vulnerable to disruption',
+                'Strait of Malacca, Suez Canal, Strait of Hormuz — key maritime chokepoints through which fertiliser, grain, and food commodities are shipped',
+                'Political instability at pinchpoints can rapidly drive up food prices globally — 2011 Arab Spring partly triggered by food price spikes linked to supply disruptions',
+                'Panama Canal — key route for grain exports from USA to Asia; drought reduced water levels in 2023, restricting transits',
+                'Pinchpoints exist also in commodity production: Ukraine and Russia produce ~30% of global wheat exports — conflict in 2022 created global food price crisis',
+                'Fertiliser pinchpoints: Belarus, Russia and China dominate potash/fertiliser production — sanctions or export restrictions can affect global food production'
+              ], guidance: '1 mark per valid point, max 6. Credit specific named pinchpoints with explanation.' },
+              '5(a)': { type: 'points', points: [
+                'Graph/chart may show economic cost in nominal terms — does not account for inflation; older disasters appear less costly in real terms',
+                'Economic cost data relies on insurance/government reporting — uninsured losses in LIDCs are systematically underreported',
+                'Does not show human cost (deaths, displacement) — economic cost alone is an incomplete picture of disaster impact',
+                'A single year\'s data or small time period may be misleading due to extreme events; one major catastrophe can dominate the data',
+                'Does not distinguish between direct economic damage and indirect losses (business interruption, tourism decline)'
+              ], guidance: '1 mark per valid limitation specific to Fig. 5, max 3.' },
+              '5(b)': { type: 'points', points: [
+                'Fossil record shows the same species of organisms on different continents (e.g. Glossopteris plant fossils in South America, Africa, India, Antarctica, Australia)',
+                'These identical fossils across now-separated continents can only be explained if the landmasses were once joined — allowing species to evolve in common environments',
+                'Mesosaurus (a freshwater reptile) found in South America and West Africa — could not have swum the Atlantic Ocean; must have lived in a connected landmass',
+                'Lystrosaurus fossils found in Africa, India and Antarctica — supports Gondwana supercontinent connection',
+                'Fossil evidence predates plate tectonic theory (Wegener 1912) — was one of the original lines of evidence for continental drift',
+                'Limitation: fossil evidence alone does not prove mechanism of movement — Wegener could not explain how continents moved'
+              ], guidance: '1 mark per valid point, max 6. Credit specific named fossils and locations.' },
+              '6': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed, accurate and thorough examination of how climate change may influence human activity in one named landscape system. Sophisticated integration of climate change science and human activity. Well-argued synoptic connections. Excellent specific knowledge. Consistently logical structure.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination of climate change influences on human activity in a named landscape. Good range of impacts. Some synoptic connections. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination but may lack clear landscape system or adequate climate change integration. Some specific knowledge. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points about climate change or human activity. Limited landscape system focus. Little synoptic connection.' }
+              ], indicative: {
+                'Named landscape system required': 'E.g. coastal, glaciated, dryland, tropical rainforest, arctic tundra',
+                'Climate change effects': 'Sea level rise (coastal); glacier retreat (glaciated); increased drought frequency (dryland); permafrost thaw (arctic)',
+                'Human activity impacts': 'Coastal: managed retreat, coastal defence; Glaciated: ski industry decline, changing tourism, hydropower variation; Dryland: pastoralism disruption, desertification pressure',
+                'Synoptic connections': 'Link to Paper 2 themes — migration from climate-vulnerable areas; trade in water-stressed regions; placemaking in rebranding climate-affected communities'
+              }},
+              '7': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how placemaking influences patterns of disease. Sophisticated synoptic connections between disease dilemmas and changing spaces/making places. Well-argued with specific examples. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good synoptic connection between placemaking and disease. Good range of examples. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination but limited synoptic connection or range of examples. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points about disease or places. Limited synoptic connection. Little structure.' }
+              ], indicative: {
+                'Placemaking and disease': 'Urban design (green space, air quality, active travel) affects NCD rates; housing quality affects respiratory disease, damp and mould; density affects communicable disease transmission',
+                'Rebranding and disease': 'Gentrification displaces lower-income groups to poorer housing — may increase health inequalities; regeneration improves housing stock and health outcomes',
+                'Informal settlements': 'Lack of clean water and sanitation in informal settlements drives cholera, typhoid, diarrhoeal disease; urban poverty concentrates in disease-prone environments',
+                'Scale connections': 'Global migration and trade bring diseases to new places; placemaking at local scale cannot fully mitigate global disease diffusion'
+              }},
+              '8': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how ocean alterations caused by climate change affect the water cycle. Sophisticated synoptic connections. Specific knowledge of ocean and water cycle processes. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good connection between ocean change and water cycle. Good range of processes. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination. Limited synoptic connection or range. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points. Limited connection between oceans and water cycle. Little structure.' }
+              ], indicative: {
+                'Ocean warming effects on water cycle': 'Warmer oceans increase evaporation rates — more water vapour enters atmosphere, intensifying precipitation in some areas; more energy drives more intense tropical storms',
+                'Sea level rise': 'Increases saline intrusion into groundwater; alters coastal hydrology; changes estuarine water balance',
+                'Thermohaline disruption': 'Freshwater input from melting ice dilutes salinity — potentially weakening AMOC; would alter heat distribution and precipitation patterns in NW Europe',
+                'Arctic changes': 'Reduced sea ice reduces albedo; increases ocean heat absorption; melting permafrost releases water to rivers; alters seasonal river discharge patterns'
+              }},
+              '9': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how food security risks influence patterns of social inequality. Sophisticated synoptic connections between food and place/inequality. Well-argued with specific examples. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good synoptic connections. Good range of examples. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination but limited synoptic connection. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points. Limited connection between food security and social inequality. Little structure.' }
+              ], indicative: {
+                'Food security and inequality': 'Food insecurity disproportionately affects lower-income households — food price rises hit poorest hardest; hunger concentrates in already disadvantaged communities',
+                'Geographic inequality': 'Food insecurity more severe in LIDCs and dryland/climate-vulnerable regions; within-country inequality — rural farmers vulnerable to crop failure; urban poor to price spikes',
+                'Gender inequality': 'Women and girls disproportionately affected by food insecurity — girls\' education disrupted first when household resources are stretched',
+                'Vicious cycle': 'Malnutrition reduces productivity and cognitive development — entrenching social inequality across generations'
+              }},
+              '10': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how tectonic hazard risks can alter patterns of international trade or global migration. Sophisticated synoptic connections. Well-argued with specific examples. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good synoptic connection between tectonic hazards and trade/migration. Good range. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination. Limited synoptic connection or range. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points. Limited connection. Little structure.' }
+              ], indicative: {
+                'Trade impacts': '2011 Tōhoku earthquake/tsunami disrupted Japanese manufacturing (Toyota, semiconductor supply chains) — global ripple effects; Fukushima affected Japanese energy imports; port damage disrupts trade routes',
+                'Migration impacts': 'Tectonic disasters trigger temporary and permanent migration — 2010 Haiti earthquake displaced 1.5 million people; long-term out-migration from disaster-prone areas',
+                'Risk and location': 'Industries/settlements avoid highest-risk zones — influencing trade geography; insurance costs affect investment decisions',
+                'Reconstruction trade': 'Post-disaster reconstruction increases imports of building materials, equipment — alters trade patterns temporarily'
+              }},
+              '11': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of adaptation as a response to climate change. Sophisticated evaluation of adaptation vs other responses (mitigation, geoengineering). Well-argued conclusion about effectiveness. Excellent specific knowledge with data and examples. Consistently logical structure. Quality of written communication high throughout.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear and accurate discussion of adaptation effectiveness. Good range of responses compared. Conclusion about relative effectiveness. Good specific knowledge. Mostly logical. Written communication generally clear.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may focus only on adaptation without adequate comparison to other responses, or lack specific knowledge. Limited conclusion. Partial structure. Some lapses in written communication.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic and largely descriptive. May describe adaptation strategies without adequate evaluation of effectiveness. Limited structure and written communication.' }
+              ], indicative: {
+                'Adaptation strategies': 'Managed coastal retreat, flood defences, drought-resistant crops, migration, early warning systems, urban green infrastructure',
+                'Why adaptation may be most effective': 'Mitigation requires global cooperation (Paris Agreement — inadequate commitments); even with mitigation, 1.5°C already likely locked in; adaptation addresses immediate needs of vulnerable communities',
+                'Why adaptation may not be most effective': 'Adaptation is reactive — does not address root cause; adaptation has limits (sea level rise beyond certain threshold cannot be adapted to); expensive and unequal (richer nations adapt better)',
+                'Mitigation comparison': 'Mitigation (renewable energy, emissions reduction) addresses cause; transition already accelerating',
+                'Geoengineering': 'Solar radiation management, carbon capture — speculative; ethical concerns',
+                'Conclusion': 'Both adaptation and mitigation necessary; adaptation most immediately effective for vulnerable communities but mitigation essential for long-term sustainability'
+              }},
+              '12': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of the influence of political organisations on the climate change debate. Sophisticated evaluation of political vs scientific, media and economic actors. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion of political organisations\' role relative to other actors. Good range of actors compared. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may focus on political actors without adequate comparison. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of climate change debate. Limited evaluation of actors\' roles. Limited structure.' }
+              ], indicative: {
+                'Political organisations': 'UNFCCC, IPCC (technically scientific but politically driven); COP summits (Paris 2015, Glasgow 2021); national governments — USA withdrawal from Paris Agreement under Trump; China as largest emitter',
+                'Scientific organisations': 'IPCC reports set the scientific agenda — but political actors shape policy response; scientific consensus vs political will',
+                'Media and public opinion': 'Media framing of climate debate — can amplify or undermine scientific consensus; social media activism (Greta Thunberg, Fridays for Future)',
+                'Economic actors': 'Fossil fuel industry lobbying against climate action; renewable energy sector advocates for transition; insurance industry supports adaptation',
+                'Conclusion': 'Political organisations highly influential but not most influential in all contexts — science provides evidence base; media shapes public opinion; economic interests often override political commitments'
+              }},
+              '13': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of the extent to which human factors are most influential in disease spread. Sophisticated evaluation weighing human vs physical factors with specific diseases and data. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation of human vs physical factors with specific disease examples. Good range. Conclusion about extent. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation but may focus on human factors without adequate consideration of physical factors. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of disease spread factors. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Human factors': 'Global migration and travel (COVID-19 rapid global spread); urbanisation and population density (TB, cholera); poverty and malnutrition; conflict (disrupting healthcare); deforestation increasing zoonotic spillover risk (Ebola)',
+                'Physical factors': 'Climate determining vector range (malaria — temperature limits Anopheles mosquito distribution); water availability (cholera); physical geography limiting access to healthcare',
+                'Interaction': 'Human activity modifies physical environment — climate change expanding disease ranges is driven by human GHG emissions; land use change brings humans into contact with wildlife reservoirs',
+                'Conclusion': 'Human factors increasingly dominant — but physical factors set the baseline conditions; interaction between both most important'
+              }},
+              '14': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of whether local-scale disease strategies are more effective than other scales. Sophisticated multi-scale analysis with specific disease examples. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation of local vs other scales with specific examples. Good range of strategies and scales. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation but may be scale-limited or lack specific disease examples. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of disease strategies. Little scale comparison. Limited structure.' }
+              ], indicative: {
+                'Local-scale strategies': 'Community health workers (Ethiopia HEP programme); local water and sanitation improvements; school-based vaccination; IRS (indoor residual spraying) for malaria',
+                'Why local may be most effective': 'Tailored to specific community needs; community trust and buy-in; fastest to implement; direct impact on transmission chain',
+                'National-scale strategies': 'National vaccination campaigns (smallpox eradication); national health systems; surveillance networks',
+                'Global-scale strategies': 'WHO coordination; PEPFAR HIV programme; Global Fund; drug research coordination',
+                'Conclusion': 'Local strategies are essential for implementation and trust, but global coordination (vaccine development, funding, surveillance) creates conditions for local strategies to succeed — no single scale is independently most effective'
+              }},
+              '15': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of whether ocean resources can only be successfully used with political involvement. Sophisticated evaluation of political, economic, and environmental dimensions. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion of political involvement in ocean resource use. Good range of resources and governance mechanisms. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may lack range of resources or governance mechanisms. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of ocean resources or governance. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Ocean resources requiring governance': 'Fish stocks (UNCLOS EEZs, regional fisheries management organisations); oil and gas (continental shelf claims); deep-sea minerals (International Seabed Authority); shipping lanes',
+                'Political involvement arguments': 'Tragedy of the commons — without governance, competitive over-exploitation (Grand Banks cod collapse); UNCLOS provides essential framework; international agreements needed for high seas',
+                'Limits of political involvement': 'IUU fishing persists despite governance; UNCLOS not ratified by USA; enforcement in high seas is weak; commercial pressure overcomes political intentions',
+                'Non-political governance': 'Market-based certification (Marine Stewardship Council); community-based fisheries management; industry self-regulation'
+              }},
+              '16': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of whether preventing ocean pollution is more important than protecting human economic activities. Sophisticated evaluation of environmental vs economic priorities with specific examples. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion of ocean pollution prevention vs economic protection. Good range of examples. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may lack balance or range of examples. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of ocean pollution or economic activities. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Ocean pollution types': 'Plastic (Great Pacific Garbage Patch); chemical runoff (agricultural nitrates creating dead zones); oil spills (Deepwater Horizon 2010); thermal and noise pollution',
+                'Economic activities at risk': 'Tourism (beach pollution); fisheries (plastic ingestion, chemical contamination); aquaculture',
+                'Why pollution prevention may be more important': 'Long-term economic productivity depends on healthy oceans; pollution damages the ecosystems that underpin economic activities; irreversibility of some pollution',
+                'Why economic activities may be prioritised': 'Livelihoods of millions depend on ocean industries; LEDCs particularly dependent on fishing for food security and income',
+                'Conclusion': 'False dichotomy — preventing pollution often protects economic activities in the long term; integration of environmental and economic governance is most effective'
+              }},
+              '17': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of the extent to which key players and strategies determine the future of food. Sophisticated evaluation of multiple players and strategies with specific examples. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation of players and strategies in food futures. Good range considered. Conclusion about extent. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation but may lack range of players or strategies. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of food players or strategies. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Key players': 'TNCs (Cargill, ADM, Bunge, Louis Dreyfus — control grain trade); national governments (subsidies, trade policy); IGOs (FAO, WTO, World Bank); NGOs (Oxfam, WFP); smallholder farmers',
+                'Strategies': 'Green Revolution (HYV seeds, irrigation, fertiliser); agroecology; precision agriculture; alternative proteins; food waste reduction; trade policy reform',
+                'Why players and strategies matter': 'Investment decisions determine which technologies scale up; trade agreements determine who can sell food where; subsidy regimes shape production incentives',
+                'Alternative factors': 'Physical geography (climate, soil, water); population growth; climate change — set constraints within which players operate; players cannot overcome all physical limits',
+                'Conclusion': 'Players and strategies are central but operate within physical and demographic constraints; specific strategies vary enormously in their effectiveness and equity implications'
+              }},
+              '18': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of the vulnerability of the global food system to shocks. Sophisticated analysis of multiple shock types and systemic vulnerabilities with specific examples. Well-argued conclusion about extent of vulnerability. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation of food system vulnerability with good range of shocks. Conclusion about extent. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation but may focus on one shock type or lack systemic analysis. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of food security or shocks. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Types of shocks': 'Climate (droughts, floods, heat stress on crops); conflict (Ukraine 2022 wheat crisis); disease (COVID-19 supply chain disruption; crop disease like wheat rust); energy price spikes affecting fertiliser costs',
+                'Systemic vulnerabilities': 'Concentration of production in few regions (Ukraine/Russia wheat, Thailand/Vietnam rice); just-in-time supply chains lack resilience; financialisation of food commodities amplifies price volatility',
+                'Resilience factors': 'Diversity of suppliers; strategic food reserves (China holds ~50% of global grain reserves); regional self-sufficiency efforts',
+                'Conclusion': 'Global food system is significantly vulnerable due to concentration and interconnection; but some resilience exists; vulnerability experienced most acutely by LIDCs and the poorest populations'
+              }},
+              '19': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of whether earthquake activity has greater landscape impact than volcanic activity. Sophisticated evaluation of both hazard types across multiple landscape dimensions. Well-argued conclusion. Excellent specific knowledge with data and examples. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion comparing earthquake and volcanic landscape impacts. Good range of examples. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may be imbalanced between hazard types. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of earthquake or volcanic impacts. Little comparison or evaluation. Limited structure.' }
+              ], indicative: {
+                'Earthquake landscape impacts': 'Ground shaking — surface rupture along fault lines; liquefaction of saturated sediments; tsunami generation (1964 Alaska, 2011 Tōhoku); landslide triggering; isostatic adjustment',
+                'Volcanic landscape impacts': 'Lava flow — new land creation (Hawaii); pyroclastic deposits — thick ash layers change topography; caldera collapse; lahar pathways; new island formation (Surtsey 1963)',
+                'Temporal dimension': 'Volcanic landscapes built over millennia of repeated eruptions — cumulative effect greater; earthquake impacts more instantaneous but less constructive',
+                'Scale comparison': 'Supervolcano eruptions (Yellowstone, Toba) would have global landscape impacts; largest earthquakes (Chile 1960, Mw 9.5) caused dramatic but more localised landscape change',
+                'Conclusion': 'Volcanic activity has greater long-term constructive landscape impact; earthquakes more dramatically and rapidly alter existing landscapes; both significant but for different reasons'
+              }},
+              '20': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of whether levels of economic development determine the impacts people experience from volcanic eruptions. Sophisticated evaluation of development vs other factors with specific eruption case studies. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion of development levels and volcanic impacts with specific case studies. Good range of factors. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may lack specific case studies or adequate consideration of other factors. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of volcanic eruptions or economic development. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Economic development and impacts': 'HICs have better monitoring, evacuation planning, emergency services (Iceland Eyjafjallajökull 2010 — no deaths despite major eruption); LIDCs lack resources for preparedness (DRC Nyiragongo 2002 — hundreds died)',
+                'Supporting the statement': 'Haiti vs Chile comparison; monitoring infrastructure availability; healthcare access post-eruption; reconstruction capacity',
+                'Challenging the statement': 'Physical characteristics of eruption (magnitude, type, explosivity) are crucial — even HICs cannot fully protect against Plinian eruption; proximity to populated areas; Ontake 2014 Japan — 63 deaths despite HIC status',
+                'Other factors': 'Population density around volcano; governance and corruption; physical geography (proximity to coast — tsunami risk)',
+                'Conclusion': 'Economic development is important but not determinative — physical hazard characteristics and population exposure also crucial; development reduces vulnerability but cannot eliminate risk'
+              }}
+            },
             questions: [
               { number: 1, scenario: 'Section A Topic 3.1 — Climate Change. Fig. 1: diagram showing the global energy balance.', parts: [
                 { code: '1(a)', prompt: 'Identify three limitations of Fig. 1 as a source of information about the global energy balance.', marks: 3 },
@@ -27613,6 +28148,184 @@ window.SUBJECTS = [
             totalMarks: 66, durationMins: 90,
             qpUrl: 'https://www.ocr.org.uk/Images/676789-question-paper-physical-systems.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/676971-mark-scheme-physical-systems.pdf',
+            markSchemes: {
+              '1(a)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate explanation of how coastal landscapes can be viewed as systems. Clearly addresses inputs, outputs, stores and flows with coastal-specific processes. Good range of examples. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant explanation of coastal systems. May address some components of the system without full integration. Some specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic description of coastal processes or features with limited systems framework. Little structure.' }
+              ], indicative: {
+                'Systems components': 'Inputs: solar energy (drives wind/waves), sediment (river, cliff erosion, aeolian), tidal energy; Stores: beaches, cliffs, dunes; Flows: longshore drift, wave transport; Outputs: sediment to offshore or beyond the system',
+                'Open system': 'Coastal system is open — matter and energy cross system boundary; sediment cells can be defined as sub-systems',
+                'Equilibrium': 'Dynamic equilibrium — sediment budget balance; positive/negative feedback (beach growth stabilises against erosion; cliff retreat increases sediment supply)',
+                'Human interference': 'Groynes disrupt sediment transport; coastal protection removes natural sediment cycling; affects system as a whole'
+              }},
+              '1(b)(i)': { type: 'points', points: [
+                'Scatter graph shows individual data points — can identify outliers and anomalies clearly',
+                'Shows precise values for each year — more informative than a bar chart or line graph for reading individual data points',
+                'Allows best-fit line to be drawn — facilitates identification and quantification of the trend'
+              ], guidance: '1 mark per valid advantage. Max 2 (question asks for one advantage but credit up to 2 if both are valid).' },
+              '1(b)(ii)': { type: 'points', points: [
+                'Describe the direction of the relationship: positive (as time increases, spending increases) or negative',
+                'Describe the strength: strong, moderate or weak correlation',
+                'Note any anomalies or years where spending deviates from the trend',
+                'Describe the overall pattern using data: reference to specific high/low spending years'
+              ], guidance: '1 mark per valid descriptive point, max 2. Must be specific to Fig. 1.' },
+              '1(b)(iii)': { type: 'points', points: [
+                'State the calculated correlation coefficient value (r) from the question or Figure 1',
+                'Compare to critical value at the appropriate significance level (usually 0.05 or 0.01) and degrees of freedom',
+                'State whether the relationship is statistically significant or not, and at what level',
+                'Interpret what this means: if significant, the relationship is unlikely to be due to chance'
+              ], guidance: '1 mark per valid step, max 3. Must reference Fig. 2 critical values table.' },
+              '1(b)(iv)': { type: 'points', points: [
+                'Increasing frequency and severity of coastal flooding and erosion over time has driven increased government spending on defences',
+                'Population and property values in coastal zones have increased — economic justification for greater investment in coastal protection',
+                'Rising sea levels associated with climate change have required more costly maintenance and upgrading of existing defences',
+                'Shifts in government policy — Shoreline Management Plans since 1990s formalising coastal defence investment decisions'
+              ], guidance: '1 mark for a valid reason, up to 2 marks for a well-developed reason. Max 2.' },
+              '1(c)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough evaluation of the extent to which long-term changes are more influential than short-term changes on coastal landscape systems. Sophisticated comparison of timescales with specific examples and data. Well-argued conclusion. Excellent specific knowledge. Consistently logical structure.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear evaluation comparing long-term and short-term changes. Good range of examples across timescales. Conclusion about extent. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant evaluation but may focus on one timescale or lack specific examples. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic description of changes to coastal landscapes. Little comparison of timescales. Limited structure.' }
+              ], indicative: {
+                'Long-term changes': 'Isostatic/eustatic sea level change over millennia — submerged forests (e.g. off Welsh coast); formation of rias and fjords from post-glacial flooding; tectonic activity; rock type inheritance',
+                'Short-term changes': 'Seasonal storm events — rapid cliff recession; individual storm surges — temporary beach reworking; tidal cycles — daily changes to foreshore',
+                'Which is more influential?': 'Long-term changes establish the fundamental framework (rock type, sea level position, sediment availability); short-term events drive immediate visible change but within limits set by long-term conditions',
+                'Examples': 'Holderness — rapid short-term retreat (1-2m/year) but within geological context set by glacial deposition of easily erodible till; Chesil Beach formed over ~10,000 years but shape modified by individual storms',
+                'Conclusion': 'Long-term changes establish the structural context within which short-term events operate; both are important at different scales of analysis'
+              }},
+              '2(a)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate explanation of how glaciated landscapes can be viewed as systems. Clearly addresses inputs, outputs, stores and flows with glaciated-specific processes. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant explanation with some system components. Some specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic description with limited systems framework. Little structure.' }
+              ], indicative: {
+                'Systems components': 'Inputs: precipitation (snow/ice), solar energy; Stores: ice sheets, glaciers, permafrost, snowfields; Flows: glacier movement (basal sliding, internal deformation), meltwater streams; Outputs: meltwater to rivers/sea, moraine deposition',
+                'Mass balance': 'Zone of accumulation (ablation < accumulation) and zone of ablation (ablation > accumulation); equilibrium line altitude; negative mass balance = glacier retreat',
+                'Feedback': 'Ice-albedo feedback — snow/ice reflects radiation, positive feedback as ice loss reduces albedo accelerating melting',
+                'Open system': 'Energy and matter enter and leave; glacial systems respond to climate change through mass balance adjustments'
+              }},
+              '2(b)(i)': { type: 'points', points: [
+                'Scatter graph shows individual data points clearly — allows identification of specific years and outliers',
+                'Allows best-fit line to be drawn — facilitates quantification of trend (correlation)',
+                'More precise than line graph for reading exact data values for individual data points'
+              ], guidance: '1 mark per valid advantage. Max 2.' },
+              '2(b)(ii)': { type: 'points', points: [
+                'Describe direction of relationship — positive or negative correlation',
+                'Describe strength — strong, moderate, weak',
+                'Note any anomalies or outlier years',
+                'Reference specific data values if possible'
+              ], guidance: '1 mark per valid descriptive point, max 2. Must be specific to Fig. 3.' },
+              '2(b)(iii)': { type: 'points', points: [
+                'State the calculated correlation coefficient (r)',
+                'Compare to critical value from Fig. 4 at the appropriate significance level and degrees of freedom',
+                'State conclusion about statistical significance',
+                'Interpret: if significant, relationship is unlikely due to chance'
+              ], guidance: '1 mark per valid step, max 3. Must reference Fig. 4.' },
+              '2(b)(iv)': { type: 'points', points: [
+                'Growing oil and gas industry in Alaska over time has required increasing pipeline maintenance expenditure to prevent environmental damage',
+                'Ageing pipeline infrastructure (Trans-Alaska Pipeline completed 1977) requires increasing maintenance investment over time',
+                'Climate change causes permafrost thaw — undermining pipeline foundations, requiring costly structural reinforcement',
+                'Stricter environmental regulations over time have required additional safety upgrades and monitoring systems'
+              ], guidance: '1-2 marks for a well-developed reason. Max 2.' },
+              '2(c)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough evaluation of the extent to which long-term changes are more influential than short-term changes on glaciated landscape systems. Sophisticated comparison with specific examples. Well-argued conclusion. Excellent specific knowledge. Consistently logical.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear evaluation comparing timescales for glaciated landscapes. Good examples. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant evaluation but may focus on one timescale. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic description of glacial change. Little timescale comparison. Limited structure.' }
+              ], indicative: {
+                'Long-term changes': 'Pleistocene glaciations over 100,000-year Milankovitch cycles created the fundamental glaciated landscape framework (corries, U-valleys, fjords); rock type and structure inherited from pre-glacial geology',
+                'Short-term changes': 'Seasonal ablation/accumulation cycles; jökulhlaups (glacial outburst floods) rapidly reshape proglacial areas; iceberg calving events; recent rapid retreat of modern glaciers',
+                'Which more influential?': 'Long-term changes created the defining landforms (Scottish Highlands, Alps, fjord coasts); short-term events modify existing forms rather than creating new ones',
+                'Contemporary context': 'Current rapid glacier retreat (short-term in context of Quaternary) is driven by anthropogenic climate change — showing short-term events can be transformative',
+                'Conclusion': 'Long-term changes have been more influential in creating the landscape framework; but current short-term anthropogenic change may rival long-term glaciation in its transformative effect'
+              }},
+              '3(a)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate explanation of how dryland landscapes can be viewed as systems. Clearly addresses inputs, outputs, stores and flows with dryland-specific processes. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant explanation with some system components. Some specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic description with limited systems framework. Little structure.' }
+              ], indicative: {
+                'Systems components': 'Inputs: insolation (very high), precipitation (low and episodic), wind energy; Stores: rock surfaces, dunes, alluvial fans, groundwater; Flows: aeolian transport, flash flood runoff, sediment creep; Outputs: sediment exported beyond system, evaporation',
+                'Energy and water balance': 'High potential evapotranspiration always exceeds precipitation — moisture deficit defines aridity; episodic water inputs drive episodic landscape change',
+                'Feedbacks': 'Vegetation loss reduces infiltration — more runoff increases erosion; desertification positive feedback',
+                'Open system': 'Sand and dust exported from Sahara across Atlantic to Amazon — demonstrates global connectivity of dryland systems'
+              }},
+              '3(b)(i)': { type: 'points', points: [
+                'Scatter graph shows individual data points — enables identification of specific years and anomalies',
+                'Allows best-fit line — facilitates trend identification and correlation quantification',
+                'More precise reading of exact values than bar chart or line graph'
+              ], guidance: '1 mark per valid advantage. Max 2.' },
+              '3(b)(ii)': { type: 'points', points: [
+                'Describe direction — positive or negative correlation between spending and time',
+                'Describe strength — strong, moderate, weak',
+                'Note anomalies',
+                'Reference specific data'
+              ], guidance: '1 mark per valid descriptive point, max 2. Must be specific to Fig. 5.' },
+              '3(b)(iii)': { type: 'points', points: [
+                'State calculated r value',
+                'Compare to critical value from Fig. 6 at appropriate significance level',
+                'State conclusion on statistical significance',
+                'Interpret meaning of significance/non-significance'
+              ], guidance: '1 mark per valid step, max 3. Must reference Fig. 6.' },
+              '3(b)(iv)': { type: 'points', points: [
+                'Growing population in western USA (especially cities like Las Vegas, Phoenix, Los Angeles) increases demand for water supply infrastructure investment',
+                'Prolonged drought conditions (Colorado River levels declining) have required increasing investment in water conservation and alternative supply strategies',
+                'Ageing water infrastructure requiring maintenance and replacement drives increased spending over time',
+                'Climate change projections drive proactive investment in water security measures'
+              ], guidance: '1-2 marks for a well-developed reason. Max 2.' },
+              '3(c)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough evaluation of whether long-term changes are more influential than short-term changes on dryland landscape systems. Sophisticated comparison with specific examples. Well-argued conclusion. Excellent specific knowledge. Consistently logical.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear evaluation comparing timescales in dryland context. Good examples. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant evaluation. May focus on one timescale. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic description of dryland change. Little timescale comparison. Limited structure.' }
+              ], indicative: {
+                'Long-term changes': 'Tectonic uplift created mountain barriers (rain shadow deserts — Atacama); Pleistocene pluvial periods left extensive wadi networks, lake beds and alluvial fans in now-arid Sahara; rock type inheritance from geological past',
+                'Short-term changes': 'Individual flash floods reshape wadis and alluvial fans rapidly; seasonal dust storms (Haboobs) rework dune fields; annual variation in dune migration rates',
+                'Which more influential?': 'Long-term tectonic and climatic history established the major landforms (pediments, ergs, hamadas); short-term episodic events modify these',
+                'Complication': 'In hyperarid zones, change rates are so slow that even long-term processes leave minimal visible evidence; short-term flash events may be more visually significant',
+                'Conclusion': 'Long-term changes established the fundamental dryland landscape context; short-term events drive episodic modification; relative importance depends on the specific dryland environment'
+              }},
+              '4(a)(i)': { type: 'points', points: [
+                'OS map is highly accurate and to a standardised scale — enables reliable measurement of distances, areas and spatial relationships',
+                'Uses standardised symbols and notation — facilitates comparison between different areas',
+                'Shows both physical and human features on the same map — enables integrated landscape analysis'
+              ], guidance: '1 mark per valid advantage of OS map as a technique. Max 2.' },
+              '4(a)(ii)': { type: 'points', points: [
+                'Scale is 1:50,000 (2 cm = 1 km)',
+                'Distance between 145124 and 155124 = 10 grid squares east = 10 × 1 km = 10 km',
+                'Accept 10 km (must show working or correct answer)'
+              ], guidance: '1 mark for correct answer (1 km). Must give distance in kilometres.' },
+              '4(a)(iii)': { type: 'points', points: [
+                'Area A may show different land use (woodland/scrub) increasing interception and evapotranspiration compared to Area B (open land/farmland)',
+                'Difference in drainage network density — one area may have more streams increasing surface water flow',
+                'Soil type differences between areas — one area may have more permeable soils favouring infiltration and reducing overland flow',
+                'Topography differences — slopes vs valley floors affect overland flow rates and water table depth',
+                'Urban surfaces in one area increase impermeable surfaces — reducing infiltration, increasing surface runoff'
+              ], guidance: '1 mark per reason identified, 1 mark for explanation linked to Fig. 7. Max 4 (two reasons, each developed).' },
+              '4(b)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [8, 10], criteria: 'Detailed and accurate examination of how the oil and gas industry affects the water cycle in Arctic tundra. Considers multiple effects across different water cycle components. Specific knowledge of Arctic context. Well-structured.' },
+                { descriptor: 'Level 2', range: [5, 7], criteria: 'Some relevant examination with some specific Arctic/oil and gas knowledge. May address limited range of effects. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic points about Arctic water cycle or oil/gas industry. Limited integration. Little structure.' }
+              ], indicative: {
+                'Infrastructure effects': 'Roads, pipelines, drilling pads compact and disturb permafrost — impedes drainage; creates thermokarst lakes; alters natural drainage patterns; increased runoff',
+                'Permafrost thaw': 'Waste heat from pipelines and buildings thaws permafrost — releasing stored water; creating areas of waterlogging and subsidence',
+                'Oil spills': 'Contaminate soil and groundwater — affect water quality; oil coats surfaces and alters infiltration rates',
+                'Climate warming effect': 'Oil and gas combustion contributes to warming — indirectly causes permafrost thaw and changes to Arctic water cycle',
+                'Seasonality changes': 'Infrastructure may alter snow accumulation patterns and melt timing; dust from roads darkens snow surfaces — accelerating spring melt'
+              }},
+              '4(c)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough assessment of the importance of carbon to humans. Sophisticated evaluation across multiple dimensions (energy, biology, industry, climate). Well-argued conclusion about relative importance. Excellent specific knowledge. Consistently logical.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear assessment of carbon importance to humans. Good range of dimensions. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant assessment. May focus on one dimension. Some specific knowledge. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic description of carbon\'s role. Little evaluation of importance. Limited structure.' }
+              ], indicative: {
+                'Biological importance': 'Carbon is the basis of all organic molecules — carbohydrates, proteins, lipids, DNA; life as we know it is carbon-based; photosynthesis fixes atmospheric carbon into food',
+                'Energy importance': 'Fossil fuels (coal, oil, gas) are carbon compounds — have powered industrial development; ~80% of global energy still from carbon fuels',
+                'Industrial importance': 'Steel production (coke); plastics and synthetic materials; pharmaceuticals; building materials',
+                'Climate importance': 'Atmospheric carbon (CO₂, CH₄) determines Earth\'s temperature through greenhouse effect — central to climate change debate; carbon cycle management increasingly important for human survival',
+                'Economic importance': 'Carbon markets (EU ETS); carbon offsets; carbon footprint of products',
+                'Conclusion': 'Carbon is perhaps the single most important element for human life and civilisation — both as the biological basis of life and as the energy source for modern economies; its management is now the central environmental challenge'
+              }}
+            },
             questions: [
               { number: 1, scenario: 'Section A Option A — Coastal Landscapes. Fig. 1: scatter graph of spending on coastal management vs time in England. Fig. 2: correlation coefficient and table of critical values for a significance test.', parts: [
                 { code: '1(a)', prompt: 'Explain how coastal landscapes can be viewed as systems.', marks: 8 },
@@ -27652,6 +28365,118 @@ window.SUBJECTS = [
             totalMarks: 66, durationMins: 90,
             qpUrl: 'https://www.ocr.org.uk/Images/676791-question-paper-human-interactions.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/676972-mark-scheme-human-interactions.pdf',
+            markSchemes: {
+              '1(a)': { type: 'points', points: [
+                'Identify a specific piece of evidence from Fig. 1 (the Lincolnshire Co-op advertisement) — e.g. a local project funded, community initiative described, or text about supporting local causes',
+                'Explain how this evidence shows local community groups shaping their place — e.g. investment in local green spaces, support for local food banks, funding of community events shapes the character and identity of the place',
+                'Link evidence to place shaping: community investment creates a sense of place, improves local services, or alters physical environment'
+              ], guidance: '1 mark: identifies evidence from Fig. 1. 2 marks: uses evidence to explain how community groups shape their place. 3 marks: detailed explanation linking specific evidence to place shaping mechanisms.' },
+              '1(b)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate examination of impacts of economic change in the dockland area, with well-developed use of evidence from Fig. 2 (both OS maps). Considers multiple impacts. Clear contrast between 1974 and 2016. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant examination with some use of Fig. 2 evidence. Limited range of impacts or limited contrast between maps. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points about economic change. Limited or no use of Fig. 2. Little development.' }
+              ], indicative: {
+                'From Fig. 2': '1974 map shows active docks (dock basins, warehouses, industrial land use); 2016 map shows residential development (housing, apartments), retail, leisure facilities, Canary Wharf-style offices',
+                'Physical changes': 'Dock basins infilled or converted to marinas/water features; warehouses demolished and replaced with housing and offices; new road/rail infrastructure (DLR)',
+                'Economic impacts': 'Deindustrialisation removed manual dock jobs (UK dock employment fell from 80,000 in 1967 to <5,000 by 1990); service sector jobs in finance, retail, tourism replaced industrial jobs',
+                'Social impacts': 'Original working-class dock communities displaced by gentrification; new professional population attracted; property values rose dramatically',
+                'Legacy issues': 'Remaining deprivation in surrounding areas not captured by Canary Wharf regeneration'
+              }},
+              '1(c)': { type: 'points', points: [
+                'Cultural characteristics such as language, religion, ethnic identity, arts and music can create a distinctive place identity recognisable to residents and visitors',
+                'Heritage and historical cultural legacy shape built environment — religious buildings (churches, mosques, synagogues), cultural quarter architecture',
+                'Cultural festivals and events create and reinforce place identity — Notting Hill Carnival shapes London identity; Edinburgh Festival shapes Scottish cultural place identity',
+                'Immigration and multicultural communities create diverse place identities — Brick Lane (Bangladeshi community), Chinatowns, Curry Mile in Manchester',
+                'Cultural industries attract investment and workers — "creative city" strategies use cultural capital to rebrand and attract economic activity',
+                'Language differences within a region shape place identity — Welsh language in Wales shapes a distinctive cultural geography'
+              ], guidance: '1 mark per valid point, max 6. Credit specific named examples of cultural characteristics and their place identity effects.' },
+              '1(d)': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough evaluation of whether education is the main influence on social inequality. Sophisticated evaluation of education vs other factors (income, health, ethnicity, geography) with specific examples. Well-argued conclusion. Excellent specific knowledge. Consistently logical.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear evaluation of education\'s role relative to other factors. Good range of factors. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant evaluation but may focus on education without adequate consideration of other influences. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic description of education and inequality. Little evaluation of extent. Limited structure.' }
+              ], indicative: {
+                'Education as main influence': 'Educational attainment strongly correlated with lifetime earnings; school quality differences between affluent and deprived areas entrench inequality; graduate premium vs non-graduate wage gap; PISA data shows clear link between education systems and inequality levels (Finland vs UK)',
+                'Other factors': 'Income/wealth (inheritance, housing wealth); ethnicity — ethnic pay gaps and labour market discrimination persist; geography — regional inequalities (North-South divide); health — poor health limits productivity; gender — pay gap and gendered occupational segregation',
+                'Interaction': 'Education quality is itself shaped by socio-economic background — poverty limits educational outcomes (hungry children, no quiet study space); education alone cannot overcome structural inequalities',
+                'Conclusion': 'Education is an important influence but not the main one — structural economic factors (wealth distribution, labour market) and identity characteristics (ethnicity, gender) also crucial; education mediates but does not determine inequality'
+              }},
+              '2': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough assessment of whether trade impacts are always beneficial for a named EDC. Sophisticated evaluation of both benefits and costs across economic, social and environmental dimensions. Well-argued conclusion. Excellent specific knowledge with data. Consistently logical.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear assessment of trade impacts (beneficial and harmful) for a named EDC. Good range of impacts. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant assessment but may be one-sided or lack named EDC. Some specific knowledge. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic and largely descriptive. May describe trade without adequate evaluation. Limited structure.' }
+              ], indicative: {
+                'Named EDC required': 'E.g. China, India, Brazil, Mexico, South Africa',
+                'Benefits': 'Export-led growth (China\'s manufacturing exports drove GDP growth of ~10%/year 2000-2010); employment creation in export industries; technology transfer; infrastructure investment from trade revenues',
+                'Costs': 'Environmental damage from resource extraction (Brazil deforestation for soy); poor labour conditions in export manufacturing (Bangladesh garment industry wages); dependency on commodity prices (Brazil coffee/soy vulnerability); terms of trade deterioration for commodity exporters',
+                'Uneven distribution': 'Benefits concentrated in urban areas/export zones; rural and informal sector workers may not benefit; income inequality may increase even as average incomes rise',
+                'Conclusion': 'Trade rarely always beneficial — benefits real but depend on type of trade, governance quality and who captures the gains; structural transformation needed for sustained development'
+              }},
+              '3': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [13, 16], criteria: 'Detailed, accurate and thorough assessment of whether migration impacts are always beneficial for a named EDC. Sophisticated evaluation of both benefits and costs across economic, social and environmental dimensions. Well-argued conclusion. Excellent specific knowledge with data. Consistently logical.' },
+                { descriptor: 'Level 3', range: [9, 12], criteria: 'Clear assessment of migration impacts (beneficial and harmful) for a named EDC. Good range. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [5, 8], criteria: 'Some relevant assessment but may be one-sided or lack named EDC. Some specific knowledge. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 4], criteria: 'Basic and largely descriptive. May describe migration without adequate evaluation. Limited structure.' }
+              ], indicative: {
+                'Named EDC required': 'E.g. Mexico, Philippines, India, China',
+                'Benefits': 'Remittances — Mexico receives ~$35bn/year (>2% GDP); Philippines remittances ~10% GDP; reduce poverty; fund education and healthcare; foreign exchange earnings',
+                'Costs': 'Brain drain — loss of skilled workers (doctors, nurses, engineers); demographic imbalance in sending communities; dependency on remittances rather than local development',
+                'Social costs/benefits': 'Family separation; children raised without parents; but improved household income funding education',
+                'Conclusion': 'Migration impacts are not always beneficial — remittances are significant but brain drain and social costs are real; outcomes depend on type of migration, skills level and governance of remittance use'
+              }},
+              '4(a)': { type: 'points', points: [
+                'Photograph shows a single moment in time — cannot show change over time or whether NGO assistance is ongoing',
+                'Staged or posed photographs may not represent typical NGO activity in the area — selection bias',
+                'Cannot determine from a photograph what is being said or agreed — only visual information available; no information on effectiveness',
+                'Shows only one village/location — cannot generalise about all NGO assistance in areas of human rights violation',
+                'People\'s expressions or body language may be misinterpreted — cultural context needed for accurate interpretation'
+              ], guidance: '1 mark per valid limitation specific to the photograph as a source, max 4.' },
+              '4(b)': { type: 'points', points: [
+                'Geographical barriers: remoteness of healthcare facilities — women in rural areas may travel long distances with limited transport, particularly in LIDCs',
+                'Financial barriers: cost of services, contraception or transport prevents access — particularly for women without independent income',
+                'Cultural/religious barriers: cultural norms that women must have husband\'s permission; religious opposition to contraception in some communities',
+                'Legal barriers: age restrictions, requirement for parental consent, criminalisation of abortion limits access',
+                'Information barriers: lack of education about available services and reproductive rights — particularly in areas of low female literacy',
+                'Provider barriers: shortage of female healthcare workers means women cannot access services in cultural contexts requiring same-gender providers'
+              ], guidance: '1 mark per obstacle identified, 1 mark for explaining how it limits access to reproductive health services. Max 5 (must address two obstacles).' },
+              '4(c)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate explanation of development opportunities created by global human rights governance for a named LIDC. Clear case study with specific evidence. Considers multiple dimensions of development. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant explanation with partial case study reference. Limited range of opportunities. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points. Limited or no case study. Little development.' }
+              ], indicative: {
+                'Named LIDC required': 'E.g. Ethiopia, Bangladesh, Myanmar, DRC, Afghanistan, Haiti',
+                'Development opportunities': 'Accountability mechanisms reduce corruption — improving use of aid and government resources; rule of law encourages investment; worker rights improve labour conditions and productivity',
+                'International support': 'Countries committing to human rights frameworks attract more development aid (EU human rights conditionality); NGO investment in healthcare, education, legal support',
+                'Women\'s rights': 'Gender equality improvements increase female workforce participation and education — significant development dividend (World Bank estimates closing gender gap could add ~$160trn to global wealth)',
+                'Conflict reduction': 'Human rights governance can reduce internal conflict — peace enables investment and development'
+              }},
+              '5(a)': { type: 'points', points: [
+                'Photograph shows a single moment in time — cannot show scale of refugee flow over time or whether assistance was sustained',
+                'Shows only one border point — cannot represent all NGO assistance along the entire border',
+                'Staged or selected photograph may not be representative of typical registration conditions',
+                'Cannot determine effectiveness of NGO assistance from a single image — only visual snapshot',
+                'Difficult to identify numbers of refugees or nature of their circumstances from photograph alone'
+              ], guidance: '1 mark per valid limitation specific to the photograph, max 4.' },
+              '5(b)': { type: 'points', points: [
+                'Internal conflict/civil war challenges territorial integrity — government loses control over parts of its territory (DRC, Libya, Somalia)',
+                'Separatist movements challenge sovereign state authority — demanding autonomy or independence (Kurdish question, Catalonia, South Sudan)',
+                'Terrorism and non-state armed groups operate across or within borders — undermining state control (ISIS across Syria/Iraq)',
+                'Economic migration pressures — mass cross-border migration challenges border control and territorial sovereignty',
+                'Cyber attacks on critical infrastructure or electoral processes — new form of sovereignty challenge without physical border crossing',
+                'Foreign intervention — military or political interference in domestic affairs (Russia in Ukraine, USA in Iraq) undermines territorial integrity'
+              ], guidance: '1 mark per type of challenge identified, 1 mark for explaining how it causes loss of territorial integrity. Max 5 (must address two types).' },
+              '5(c)': { type: 'levels', levels: [
+                { descriptor: 'Level 3', range: [6, 8], criteria: 'Detailed and accurate explanation of development opportunities from global governance of sovereignty/territorial integrity for a named LIDC. Clear case study with specific evidence. Multiple dimensions. Well-structured.' },
+                { descriptor: 'Level 2', range: [3, 5], criteria: 'Some relevant explanation with partial case study. Limited range of opportunities. Mostly logical.' },
+                { descriptor: 'Level 1', range: [1, 2], criteria: 'Basic points. Limited or no case study. Little development.' }
+              ], indicative: {
+                'Named LIDC required': 'E.g. South Sudan, DRC, Afghanistan, Mali, CAR, Haiti',
+                'South Sudan example': 'UNMISS (UN Mission in South Sudan) — peacekeeping supports territorial integrity; enables humanitarian aid delivery; creates conditions for economic reconstruction',
+                'Sovereignty governance opportunities': 'Recognition of sovereignty enables diplomatic relations and international trade access; WTO membership contingent on recognized sovereignty; aid flows to recognized states',
+                'Development created': 'Stability attracts FDI; reconstruction of infrastructure creates employment; humanitarian aid prevents development setbacks from conflict; rule of law enables property rights and investment'
+              }}
+            },
             questions: [
               { number: 1, scenario: 'Section A — Changing Spaces; Making Places. Fig. 1: advertisement for the Lincolnshire Co-op Community Champions scheme. Fig. 2: OS 1:50,000 map extracts of a dockland area in east London for 1974 and 2016.', parts: [
                 { code: '1(a)', prompt: 'Use one piece of evidence from Fig. 1 to explain how local community groups can shape the place in which they live.', marks: 3 },
@@ -27682,6 +28507,261 @@ window.SUBJECTS = [
             totalMarks: 108, durationMins: 150,
             qpUrl: 'https://www.ocr.org.uk/Images/676793-question-paper-geographical-debates.pdf',
             msUrl: 'https://www.ocr.org.uk/Images/676973-mark-scheme-geographical-debates.pdf',
+            markSchemes: {
+              '1(a)': { type: 'points', points: [
+                'Projected temperatures shown as global averages — conceals large regional variation (Arctic warming 3× faster than global average)',
+                'Projection lines show a range of scenarios (RCPs) — selecting which scenario to highlight is a value judgement that may mislead',
+                'Uncertainty bands may not be clearly shown — gives impression of false precision in future temperature predictions',
+                'Data only shows projected surface temperatures — does not show ocean heat content, sea level change, or regional climate impacts',
+                'Time period covered may be limited — does not show natural variability against which anthropogenic signal must be detected'
+              ], guidance: '1 mark per valid limitation specific to Fig. 1, max 3.' },
+              '1(b)': { type: 'points', points: [
+                'Named natural environment required: e.g. Arctic tundra, coral reefs, tropical rainforest, alpine environments, mangroves',
+                'Arctic tundra vulnerability: permafrost thaw releases stored methane (positive feedback); loss of ice-albedo effect; habitat loss for specialist species',
+                'Coral reefs: thermal stress causes bleaching (>1°C above seasonal maximum); ocean acidification weakens calcium carbonate skeletons; GBR experienced mass bleaching 2016, 2017, 2020, 2022',
+                'Tropical rainforest: drought stress during El Niño events; dieback risk if warming exceeds 4°C; loss of cloud cover reduces precipitation',
+                'Alpine environments: glacier retreat exposes bare rock; treeline migration upwards; loss of snow cover disrupts seasonal water supply',
+                'Vulnerability factors: rate of change exceeds adaptive capacity; irreversibility of ecosystem change; keystone species affected'
+              ], guidance: '1 mark per valid point, max 6. Must name a specific natural environment and explain vulnerability mechanisms.' },
+              '2(a)': { type: 'points', points: [
+                'Map/chart shows reported outbreaks only — significant underreporting in countries with poor surveillance systems (LIDCs) creates systematic bias',
+                'Shows number/distribution of outbreaks but not their severity — a single large outbreak has the same symbol as a minor cluster',
+                'Data reflects capacity to detect and report disease rather than true disease burden',
+                'Time period may be limited — seasonal variation and long-term trends not visible',
+                'Boundaries between countries create artificial spatial categories — disease spreads without regard to political boundaries'
+              ], guidance: '1 mark per valid limitation specific to Fig. 2, max 3.' },
+              '2(b)': { type: 'points', points: [
+                'Named disease and named country that experienced a natural hazard required: e.g. cholera in Haiti after 2010 earthquake; cholera in Mozambique after Cyclone Idai 2019; typhoid in Philippines after Typhoon Hainan 2013',
+                'Natural hazards destroy water and sanitation infrastructure — creating conditions for rapid cholera/typhoid spread through contaminated water',
+                'Displacement of populations into overcrowded camps facilitates disease transmission through close contact and shared facilities',
+                'Overwhelmed or destroyed health facilities cannot provide treatment, vaccinations or outbreak response — allowing disease to spread unchecked',
+                'Stress and malnutrition following disasters reduce immune function — increasing disease susceptibility in affected populations',
+                'Haiti cholera: UN peacekeepers introduced Vibrio cholerae; destroyed sanitation enabled rapid spread; 820,000 cases and 9,000+ deaths',
+                'Disease can persist long after the acute disaster phase — becoming endemic in the population'
+              ], guidance: '1 mark per valid point, max 6. Must name disease and country affected by natural hazard.' },
+              '3(a)': { type: 'points', points: [
+                'Data shows mass bleaching events but not the cause of bleaching at each location — temperature, pollution, and human activity all cause bleaching',
+                'Map/chart shows bleaching extent but not severity — a small bleaching event appears equal to catastrophic bleaching',
+                'Data reliant on survey coverage — remote reef areas may be unmonitored and bleaching events unreported',
+                'Bleaching is a temporary stress response — a map of bleaching events does not show recovery rates or long-term mortality',
+                'Spatial resolution may be insufficient — bleaching highly localised within reef systems'
+              ], guidance: '1 mark per valid limitation specific to Fig. 3, max 3.' },
+              '3(b)': { type: 'points', points: [
+                'Ocean acidification occurs as oceans absorb CO₂ from the atmosphere — CO₂ dissolves to form carbonic acid (H₂CO₃), reducing ocean pH',
+                'Lower pH reduces carbonate ion concentration — makes it harder for marine organisms to form calcium carbonate shells and skeletons',
+                'Corals, pteropods, and shellfish (mussels, oysters) cannot form strong enough shells — their larvae are particularly vulnerable',
+                'Coral reef degradation reduces habitat complexity — many fish species depend on coral reefs for feeding and spawning grounds; fish stocks decline',
+                'Acidification also affects fish behaviour directly — studies show impaired sensory ability and increased risk-taking in CO₂-enriched water',
+                'Weakened shells of pteropods (key food web species in cold oceans) reduces food availability for commercially important fish (salmon, herring)',
+                'Ocean acidification undermines the base of the food web (phytoplankton and zooplankton productivity) — cascading effects throughout fish stocks'
+              ], guidance: '1 mark per valid point, max 6. Credit chain of explanation from acidification to fish stock depletion.' },
+              '4(a)': { type: 'points', points: [
+                'Dryland areas shown may use a single classification when real soil types vary considerably within dryland regions',
+                'Map/diagram may not show soil degradation or quality — presence of a soil type does not indicate whether it is agriculturally productive',
+                'Resolution of soil mapping may be too coarse to show field-scale variation relevant to farmers',
+                'Does not show soil depth — thin soils over bedrock may be mapped the same as deep productive soils',
+                'Classification systems vary internationally — same soil type may be named differently in different countries, making comparison difficult'
+              ], guidance: '1 mark per valid limitation specific to Fig. 4, max 3.' },
+              '4(b)': { type: 'points', points: [
+                'Named extreme environment required: e.g. Arctic tundra, hot desert, high altitude (Andes, Himalayas), wetland/peatland',
+                'Arctic/tundra farming: permafrost makes deep cultivation impossible; very short growing season (60–90 days); nutrient-poor soils; extreme cold limits crop choice; indigenous communities use reindeer herding adapted to these conditions',
+                'Andean farming: thin soils at altitude (>3,500m above sea level); frost risk even in summer months; steep slopes requiring terracing (inca terraces — andenes); high UV radiation; traditional crops (quinoa, potato) adapted to altitude',
+                'Desert farming: water scarcity requires irrigation; extreme heat increases evapotranspiration; salinisation risk from irrigation; sand encroachment; oasis farming possible where groundwater accessible',
+                'Physical conditions should include: temperature regime, precipitation/water availability, soil characteristics, growing season length, frost risk, slope'
+              ], guidance: '1 mark per valid physical condition explained, max 6. Must name environment. Credit indigenous/adapted farming systems.' },
+              '5(a)': { type: 'points', points: [
+                'Data may focus on large documented eruptions — small eruptions and minor eruptive activity systematically underrepresented in historical record',
+                'Pre-20th century eruption data is incomplete — eruptions in remote areas were not recorded or poorly documented',
+                'Does not show the type of eruption (effusive vs explosive, VEI) — frequency and impact are conflated',
+                'Data may not distinguish between separate eruptive phases of the same volcano — multiple entries for one eruption or one entry for multiple events',
+                'Volcanic eruption data does not capture human impact — the same eruption may have very different effects depending on location and population'
+              ], guidance: '1 mark per valid limitation specific to Fig. 5, max 3.' },
+              '5(b)': { type: 'points', points: [
+                'The Park Model (also called the disaster-response curve) shows how quality of life changes before, during and after a disaster',
+                'Pre-disaster: quality of life at normal level; the model shows a threshold level below which quality of life falls during disaster',
+                'Immediate impact phase: quality of life drops sharply — deaths, injuries, destruction of infrastructure and services',
+                'Relief phase: emergency services, search and rescue, immediate food and water provision — slight improvement from worst point',
+                'Rehabilitation phase: restoration of basic services, temporary housing, utilities — quality of life gradually rises',
+                'Reconstruction phase: rebuilding infrastructure, housing, economy — quality of life may eventually exceed pre-disaster levels (improved building codes, better infrastructure)',
+                'The model can be modified: HICs recover more steeply; LIDCs may plateau at a lower level; secondary hazards (disease, aftershocks) cause secondary drops in quality of life'
+              ], guidance: '1 mark per valid point about the Park Model, max 6. Credit reference to phases, quality of life axis, and modifications.' },
+              '6': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how changes in the balance of anthropogenic emissions have been altered by international trade or global migration. Sophisticated synoptic connections. Specific knowledge of emission geography. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good synoptic connection. Good range of examples. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination but limited synoptic connection. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points. Limited connection. Little structure.' }
+              ], indicative: {
+                'Trade and emissions': 'Offshoring manufacturing to China/EDCs moved territorial emissions but not consumption emissions; UK\'s consumption-based emissions ~50% higher than territorial; trade allows HICs to claim falling emissions while driving production emissions elsewhere',
+                'Carbon leakage': 'Strict carbon regulations in EU cause carbon-intensive industries to relocate to areas with weaker regulations; global emissions may not fall',
+                'Migration and emissions': 'Migrants from LIDCs to HICs increase their carbon footprint substantially (adopting higher-consumption lifestyles); remittances fund consumption in sending countries; skilled migrant movement shifts low-carbon behaviour patterns',
+                'Synoptic connection': 'International trade fundamentally redistributed where emissions occur; consumption in HICs drives production emissions in EDCs'
+              }},
+              '7': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how physical factors in a named landscape system affect disease diffusion. Sophisticated synoptic integration. Specific knowledge. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good synoptic connection between landscape and disease diffusion. Named landscape system. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination. Limited synoptic connection or named landscape. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points. Limited connection. Little structure.' }
+              ], indicative: {
+                'Landscape types': 'Tropical rainforest — high humidity supports mosquito vectors (malaria, dengue); poor drainage creates breeding habitat; dense canopy limits UV penetration that kills pathogens',
+                'Dryland': 'Dust storms spread fungal spores (Coccidioidomycosis — Valley Fever in USA); water sources concentrate wildlife and disease transmission',
+                'Arctic tundra': 'Permafrost thaw releases ancient pathogens; warming temperatures expand range of tick-borne diseases (Lyme disease moving northward)',
+                'Coastal': 'Warm coastal waters support Vibrio bacteria (cholera); flooding events spread waterborne disease; sea level rise inundates sanitation infrastructure'
+              }},
+              '8': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how plastic accumulation in oceans influences representations of place. Sophisticated synoptic connection between ocean pollution and place/identity. Well-argued with specific examples. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good synoptic connection. Named places and examples. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination but limited synoptic connection. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points. Limited connection. Little structure.' }
+              ], indicative: {
+                'Negative place representations': 'Beaches covered in plastic waste — negative media representation damages tourism brand (Caribbean, SE Asian beach resorts); images of plastic-covered beaches circulate on social media reshaping place perception',
+                'Great Pacific Garbage Patch': 'Media coverage creates a place representation of a "plastic ocean" — influences public perception of ocean health globally; used by environmental NGOs to construct narrative of ocean crisis',
+                'Local identity': 'Coastal communities whose livelihoods depend on clean seas (fishing villages, beach resorts) experience identity challenges from plastic pollution association',
+                'Activist representations': 'The Plastic Ocean documentary (2016) created powerful place narrative; influenced consumer behaviour and policy'
+              }},
+              '9': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how food security strategies are affected by human rights or territorial integrity issues. Sophisticated synoptic connections. Specific examples. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good synoptic connections. Good range of examples. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination. Limited synoptic connection. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points. Limited connection. Little structure.' }
+              ], indicative: {
+                'Human rights and food strategies': 'Land rights — large-scale land acquisitions (land grabs) by TNCs or foreign states displace smallholder farmers from productive land; undermines local food security; violates land rights',
+                'Water rights': 'Diversion of shared rivers for irrigation (Nile basin dispute — Ethiopia GERD dam) creates downstream food security risks; territorial water rights conflict',
+                'Territorial integrity': 'Conflict zones cannot implement food security strategies — South Sudan, Yemen, DRC food crises linked to conflict; aid access blocked by territorial disputes',
+                'Trade routes': 'Disputes over territorial waters affect fishing rights and food trade routes; piracy (Somalia) disrupted regional food trade'
+              }},
+              '10': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [10, 12], criteria: 'Detailed and thorough examination of how volcanic eruptions influence the carbon cycle. Sophisticated synoptic connections between hazardous earth and carbon cycle processes. Specific knowledge. Consistently logical.' },
+                { descriptor: 'Level 3', range: [7, 9], criteria: 'Clear examination with good synoptic connections. Good range of carbon cycle effects. Mostly logical.' },
+                { descriptor: 'Level 2', range: [4, 6], criteria: 'Some relevant examination. Limited synoptic connection. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 3], criteria: 'Basic points. Limited carbon cycle connection. Little structure.' }
+              ], indicative: {
+                'CO₂ emissions': 'Volcanic eruptions release CO₂ from magma — global volcanic CO₂ emissions ~200-300 Tg/year (<<1% of human emissions); contributes to atmospheric carbon store',
+                'Sulphur and cooling': 'SO₂ from large eruptions forms aerosols reflecting sunlight — cooling effect temporarily reduces photosynthesis and carbon uptake; 1991 Pinatubo caused brief global CO₂ increase as plant growth slowed',
+                'Ash and nutrients': 'Volcanic ash weathers to release nutrients — stimulates plant growth and increased CO₂ uptake over longer term; fertile soils around volcanoes support dense vegetation',
+                'Ocean CO₂': 'Volcanic activity on ocean floor (hydrothermal vents) releases CO₂ into ocean — contributes to marine carbon cycling; limits of ocean uptake'
+              }},
+              '11': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of whether international responses to climate change will never work. Sophisticated evaluation of multiple international mechanisms with specific examples and data. Well-argued conclusion challenging or supporting the statement. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion of international climate responses with good range of examples. Conclusion about whether they will work. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may focus on failures without considering successes or vice versa. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of international climate responses. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Reasons responses may not work': 'Free-rider problem — countries benefit from others\' mitigation without contributing; US withdrawal from Paris Agreement; NDCs in Paris Agreement non-binding and insufficient (current pledges lead to ~2.5°C not 1.5°C); CBDR principle leads to disputes over who bears costs',
+                'Reasons responses can work': 'Montreal Protocol successfully eliminated CFCs — global ozone hole recovering; Paris Agreement engaged all major emitters including China and India; renewable energy costs fallen 90% — market transformation underway; EU ETS creating carbon pricing; green investment growing',
+                'Evidence of progress': 'Global clean energy investment surpassing fossil fuels (2023); coal power declining in Europe and N America; EV adoption accelerating',
+                'Conclusion': 'International responses have significant weaknesses but dismissing them entirely is too pessimistic; combination of international agreements, national policies and market forces is making progress; urgency requires faster action'
+              }},
+              '12': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough assessment of the success of mitigation strategies in cutting global GHG emissions. Sophisticated evaluation of multiple strategies across different scales with specific data. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear assessment of multiple mitigation strategies. Good range. Conclusion about overall success. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant assessment but may focus on limited strategies. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of mitigation strategies. Little assessment of success. Limited structure.' }
+              ], indicative: {
+                'Renewable energy': 'Solar and wind now cheapest electricity sources in most regions; global renewables capacity growing rapidly; but intermittency requires storage solutions',
+                'Carbon pricing': 'EU ETS covers ~40% of EU emissions; but price often too low to drive rapid decarbonisation; some sectors excluded',
+                'International agreements': 'Kyoto Protocol reduced emissions in participating countries; Paris Agreement — NDCs submitted but insufficient',
+                'Energy efficiency': 'Building insulation, LED lighting, efficient vehicles have reduced energy demand; cost-effective but requires investment',
+                'Structural change': 'Deindustrialisation in HICs reduced territorial emissions — but global emissions continue to rise',
+                'Success assessment': 'Significant progress in electricity sector (decarbonising); much less success in transport, agriculture, industry, aviation; global emissions still rising despite 30 years of effort — strategies partially successful but not sufficient'
+              }},
+              '13': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of whether LIDCs/EDCs can successfully mitigate and respond to communicable disease outbreaks. Sophisticated evaluation with specific named disease and country case studies. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation with specific disease/country examples. Good range of mitigation and response strategies assessed. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation but may lack specific case studies or adequate assessment of success. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of disease response in LIDCs. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Examples of relative success': 'West Africa Ebola 2014-16: community-based contact tracing; community engagement changed burial practices; WHO international support; eventually contained; Senegal controlled Ebola in 8 days in 2014 (strong surveillance system)',
+                'Challenges': 'Haiti cholera: weak water/sanitation infrastructure; poor healthcare capacity; slow international response; epidemic persisted for years',
+                'COVID-19 in LIDCs': 'Some LIDCs controlled COVID through early lockdowns (Vietnam, Rwanda); but others lacked vaccine access (vaccine nationalism by HICs)',
+                'Factors for success': 'Pre-existing disease surveillance; community trust; international funding (PEPFAR, Global Fund); coordination with WHO; political will and leadership',
+                'Conclusion': 'LIDCs/EDCs CAN mitigate and respond, but success depends on specific context — governance quality, existing health infrastructure, international support and type of disease'
+              }},
+              '14': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of whether there is a link between disease and levels of economic development. Sophisticated evaluation with specific diseases, data and country examples. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion of link between disease and development with specific examples. Good range. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion. May lack specific data or examples. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of disease in different development contexts. Little evaluation of link. Limited structure.' }
+              ], indicative: {
+                'Supporting the link': 'Communicable diseases disproportionate in LIDCs — malaria (99% of deaths in sub-Saharan Africa), HIV (71% of new infections in SSA), cholera endemic in areas of poor water/sanitation; DALYs from communicable disease much higher in LIDCs',
+                'NCDs increasing in EDCs': 'As countries develop, epidemiological transition shifts burden from communicable to non-communicable diseases (cardiovascular, cancer, diabetes); China, Brazil facing NCD crisis',
+                'Complications': 'NCDs increasingly common in all income levels — obesity/diabetes rising in LIDCs too; "double burden" — both communicable and NCD in same population',
+                'NCD in HICs': 'Mental health, dementia, cancer dominant in HICs — not absent from LIDCs but undercounted',
+                'Counter-examples': 'USA has worse health outcomes than many lower-income nations for some diseases (e.g. gun violence, obesity); Cuba has excellent health outcomes despite low income',
+                'Conclusion': 'Strong general link but not deterministic — quality of healthcare system, social protection, culture and lifestyle factors also crucial'
+              }},
+              '15': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of the extent to which oceans are vital to globalisation. Sophisticated evaluation across multiple dimensions with specific examples and data. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation of ocean role in globalisation. Good range of dimensions. Conclusion about extent. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation. May focus on trade without considering other dimensions. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of oceans and globalisation. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Why oceans are vital': '~90% of global trade by volume moves by sea; container shipping enabled mass globalisation of manufacturing from 1960s; submarine cables carry >99% of global internet traffic; ocean resources fuel global energy (offshore oil/gas)',
+                'Specific examples': 'China\'s Belt and Road Initiative includes maritime Silk Road; Malacca Strait handles ~25% of world trade; Atlantic slave trade and colonial trade routes shaped current global inequalities',
+                'Limits of the argument': 'Digital globalisation increasingly not ocean-dependent (financial flows, cultural products, services); air freight handles high-value goods; some supply chains regionalising',
+                'Alternative drivers': 'Digital infrastructure, trade agreements, FDI flows, geopolitical relationships — globalisation has multiple drivers beyond oceans',
+                'Conclusion': 'Oceans remain vital for goods trade and physical connectivity; but digital globalisation is increasingly ocean-independent; oceans are necessary but not sufficient for globalisation'
+              }},
+              '16': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of whether opportunities from ocean resource use are greater than the threats. Sophisticated evaluation with specific examples and data. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion of opportunities vs threats. Good range of resource types. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may be one-sided or lack range. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of ocean resources or threats. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Opportunities': 'Blue economy estimated at $2.5trn/year; offshore wind energy rapidly growing; aquaculture meeting growing protein demand; tourism revenue for small island states; pharmaceutical discovery from marine organisms; deep-sea minerals for EV transition',
+                'Threats from use': 'Overfishing — Grand Banks cod collapse; deep-sea trawling destroys benthic habitats; offshore oil spills (Deepwater Horizon); plastic pollution; noise pollution affecting cetaceans; acidification threatening ecosystem services',
+                'Governance gaps': 'High seas (>50% of ocean area) have minimal effective governance — exploitation without adequate protection',
+                'Conclusion': 'Opportunities are significant but poorly governed exploitation creates threats that may undermine long-term opportunity; integrated ocean governance needed to maximise sustainable opportunity'
+              }},
+              '17': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of whether economic factors are the main cause of spatial variation in global food security. Sophisticated evaluation of economic vs other factors with specific data. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation of economic factors vs others. Good range of factors. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation but may focus on economic factors without adequate consideration of others. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of food security variation. Little evaluation of factors. Limited structure.' }
+              ], indicative: {
+                'Economic factors': 'Income determines purchasing power — poorest quintile spend >50% income on food; terms of trade affect commodity-dependent LIDCs; access to credit for agricultural investment; infrastructure investment in food supply chains',
+                'Physical factors': 'Climate and soil type determine agricultural potential (Sahel vs US Midwest); water availability; natural disasters disrupting harvests',
+                'Political factors': 'Conflict disrupts food production and distribution (Yemen, DRC, South Sudan most food insecure countries are conflict-affected); government agricultural policies (subsidies, price controls)',
+                'Social factors': 'Gender inequality limits women farmers\' access to land, credit and training; population density; cultural food preferences',
+                'Conclusion': 'Economic factors are important but not the main cause in isolation — political stability, physical conditions and governance also crucial; in conflict zones, political factors may outweigh economic ones'
+              }},
+              '18': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of the extent to which globalisation is changing the food industry. Sophisticated analysis of multiple dimensions with specific examples and data. Well-argued conclusion about extent and nature of change. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation of globalisation\'s effect on the food industry. Good range of dimensions. Conclusion about extent. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation. May focus on one dimension. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of globalisation and food industry. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Global food chains': 'TNC dominance (Nestlé, Unilever, AB InBev) — global branding, standardisation, cost reduction through global sourcing; supermarket chains creating global supply networks',
+                'Dietary change': 'Western dietary patterns spreading to Asia, Africa — rising meat consumption, processed foods; loss of traditional food cultures (McDonaldisation); nutritional transition contributing to obesity pandemic',
+                'Trade and specialisation': 'Countries increasingly specialise in food commodities for export — Kenya flowers, Ecuador bananas; but increases food import dependency',
+                'Counter-trends': 'Food sovereignty movements; local and organic food growing; fair trade; slow food movement; farm-to-fork policies',
+                'Conclusion': 'Globalisation has profoundly changed the food industry — but counter-trends suggest it is not a uniform process; local food systems persist alongside global supply chains'
+              }},
+              '19': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough evaluation of whether mitigating vulnerability is the most effective tectonic hazard management strategy. Sophisticated evaluation of multiple strategies with specific case studies and data. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear evaluation of vulnerability mitigation vs other strategies. Good range of strategies compared. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant evaluation but may focus on one strategy type. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of tectonic hazard management. Little evaluation. Limited structure.' }
+              ], indicative: {
+                'Mitigating vulnerability': 'Building codes (Japan — strict seismic building codes dramatically reduce earthquake deaths vs similar magnitude events in Turkey); land use planning (avoiding building on known fault zones); community preparedness; evacuation routes',
+                'Other strategies': 'Prediction and monitoring (Japan earthquake early warning system — 80 seconds warning before shaking; Soufrière Hills Montserrat — effective volcanic monitoring); engineering solutions (base isolation, dampers); economic development (wealthier nations better able to respond)',
+                'Effectiveness of vulnerability mitigation': 'Haiti 2010 vs Chile 2010 comparison — similar magnitude but 300,000 vs 500 deaths illustrates role of vulnerability and building standards; social vulnerability (poverty, informal housing) more important than physical hazard magnitude in determining casualties',
+                'Limitations': 'Prediction remains elusive for earthquakes; engineering is expensive; cannot prevent hazard occurring',
+                'Conclusion': 'Mitigating vulnerability (particularly through building codes, land use planning and community preparedness) is arguably most effective as it operates regardless of hazard predictability; but multiple strategies needed'
+              }},
+              '20': { type: 'levels', levels: [
+                { descriptor: 'Level 4', range: [25, 33], criteria: 'Detailed, accurate and thorough discussion of whether earthquake hazards have greater impact on people than volcanic hazards. Sophisticated evaluation with specific case studies and data. Well-argued conclusion. Excellent specific knowledge. Consistently logical. High quality written communication.' },
+                { descriptor: 'Level 3', range: [17, 24], criteria: 'Clear discussion comparing earthquake and volcanic impacts on people. Good case studies. Conclusion. Good specific knowledge. Mostly logical.' },
+                { descriptor: 'Level 2', range: [9, 16], criteria: 'Some relevant discussion but may be imbalanced or lack specific case studies. Limited conclusion. Partial structure.' },
+                { descriptor: 'Level 1', range: [1, 8], criteria: 'Basic description of earthquake or volcanic impacts. Little comparison. Limited structure.' }
+              ], indicative: {
+                'Earthquake impacts': '2010 Haiti — 300,000 deaths; 2004 Indian Ocean tsunami — 230,000 deaths; Christchurch 2011 — economic costs NZ$40bn; instantaneous onset prevents effective warning and evacuation',
+                'Volcanic impacts': 'Montserrat Soufrière Hills — 19 deaths (effective monitoring/evacuation); but Nevado del Ruiz 1985 lahars killed 23,000 (poor governance); 1815 Tambora — indirect deaths from famine and climate effects estimated at 100,000+',
+                'Frequency comparison': 'Damaging earthquakes occur more frequently than large volcanic eruptions; larger global footprint of earthquake hazard zones',
+                'Predictability': 'Volcanic activity gives more warning — reducing human impact; earthquakes strike without effective advance warning',
+                'Scale of impact': 'Both can be catastrophic; secondary hazards from both types can cause greater impact than primary event (tsunami from earthquakes; lahars/pyroclastic flows from volcanoes)',
+                'Conclusion': 'Earthquake hazards generally have greater impact on people due to unpredictability and frequency; but specific volcanic events can be equally devastating; governance and preparedness moderate the impact of both'
+              }}
+            },
             questions: [
               { number: 1, scenario: 'Section A Topic 3.1 — Climate Change. Fig. 1: resource booklet source showing predicted global surface temperatures.', parts: [
                 { code: '1(a)', prompt: 'Identify three limitations of Fig. 1 as a source of information about predicted global surface temperatures.', marks: 3 },
