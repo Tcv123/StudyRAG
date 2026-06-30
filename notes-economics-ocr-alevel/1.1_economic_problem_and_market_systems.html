@@ -117,6 +117,7 @@ During the COVID-19 pandemic, the UK government spent over £370 billion on pand
   <text x="230" y="175" font-size="14" fill="#1a73e8" font-weight="600">PPF</text>
   <!-- Points -->
   <circle cx="200" cy="100" r="5" fill="#16a34a"/>
+  <rect x="208" y="83" width="70" height="15" fill="white" fill-opacity="0.9" rx="2"/>
   <text x="210" y="96" font-size="13" fill="#16a34a" font-weight="600">A (efficient)</text>
   <circle cx="120" cy="250" r="5" fill="#dc2626"/>
   <text x="130" y="248" font-size="13" fill="#dc2626" font-weight="600">B (inefficient)</text>
@@ -159,10 +160,14 @@ During the COVID-19 pandemic, the UK government spent over £370 billion on pand
   <text x="225" y="380" font-size="14" fill="#1a1a2e" text-anchor="middle" font-weight="600">Good X</text>
   <!-- Original PPF -->
   <path d="M 60,80 A 260,260 0 0 1 320,340" fill="none" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8,4"/>
-  <text x="75" y="83" font-size="12" fill="#94a3b8">PPF₁</text>
   <!-- New PPF (outward shift) -->
   <path d="M 60,50 A 290,290 0 0 1 350,340" fill="none" stroke="#16a34a" stroke-width="3"/>
-  <text x="75" y="48" font-size="12" fill="#16a34a" font-weight="600">PPF₂</text>
+  <!-- PPF₁ label inside the arc -->
+  <rect x="152" y="193" width="38" height="16" fill="white" fill-opacity="0.92" rx="2"/>
+  <text x="171" y="205" font-size="12" fill="#94a3b8" text-anchor="middle">PPF₁</text>
+  <!-- PPF₂ label outside both arcs -->
+  <rect x="272" y="122" width="38" height="16" fill="white" fill-opacity="0.92" rx="2"/>
+  <text x="291" y="134" font-size="12" fill="#16a34a" font-weight="600" text-anchor="middle">PPF₂</text>
   <!-- Arrow showing shift -->
   <line x1="185" y1="210" x2="225" y2="185" stroke="#16a34a" stroke-width="2" marker-end="url(#greenarrow)"/>
   <defs>
