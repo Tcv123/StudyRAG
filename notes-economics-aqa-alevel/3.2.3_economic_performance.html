@@ -95,36 +95,33 @@ China averaged roughly 10% annual GDP growth from 1980 to 2010 — the fastest s
 </div>
 
 <div class="diagram-box">
-<svg width="460" height="360" viewBox="0 0 460 360">
-  <line x1="70" y1="300" x2="420" y2="300" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="300" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,300 410,295 410,305" fill="#1a1a2e"/>
-  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
-  <text x="245" y="338" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Time</text>
-  <text x="24" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,170)">Real GDP</text>
-
-  <!-- Trend growth line -->
-  <line x1="80" y1="260" x2="410" y2="90" stroke="#94a3b8" stroke-width="2" stroke-dasharray="8,4"/>
-  <text x="380" y="78" font-size="12" fill="#94a3b8" font-weight="600">Trend (potential) GDP</text>
-
-  <!-- Business cycle wave -->
-  <path d="M 80,245 Q 120,210 155,160 Q 180,120 200,125 Q 225,140 250,190 Q 275,230 290,215 Q 310,185 340,130 Q 360,90 375,100 Q 395,120 410,130" stroke="#2563eb" stroke-width="2.5" fill="none"/>
-  <text x="413" y="145" font-size="12" fill="#2563eb" font-weight="600">Actual GDP</text>
-
-  <!-- Positive output gap region -->
-  <text x="155" y="105" font-size="11" fill="#dc2626" font-weight="600">Positive gap</text>
-  <text x="155" y="120" font-size="10" fill="#dc2626">(overheating)</text>
-
-  <!-- Negative output gap region -->
-  <text x="240" y="240" font-size="11" fill="#16a34a" font-weight="600">Negative gap</text>
-  <text x="240" y="255" font-size="10" fill="#16a34a">(spare capacity)</text>
-
-  <!-- Boom label -->
-  <text x="170" y="150" font-size="10" fill="#f59e0b" font-weight="600">Boom</text>
-  <!-- Recession label -->
-  <text x="250" y="205" font-size="10" fill="#f59e0b" font-weight="600">Recession</text>
-  <!-- Recovery label -->
-  <text x="340" y="115" font-size="10" fill="#f59e0b" font-weight="600">Recovery</text>
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="aperf0" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#aperf0)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#aperf0)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Time</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Real GDP</text>
+  <!-- trend line (potential GDP) -->
+  <line x1="85" y1="300" x2="450" y2="120" stroke="#374151" stroke-width="2" stroke-dasharray="8,4"/>
+  <text x="454" y="120" font-size="12" fill="#374151" text-anchor="start">Trend (potential) GDP</text>
+  <!-- actual GDP (wavy, above trend = positive gap, below = negative gap) -->
+  <path d="M85,300 C130,290 160,240 200,230 S250,200 280,185 S330,140 360,150 S410,140 450,120" fill="none" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="454" y="115" font-size="12" fill="#1d4ed8" text-anchor="start">Actual GDP</text>
+  <!-- Positive output gap zone (at right where actual > trend) -->
+  <polygon points="330,155 360,150 360,162 330,165" fill="#bbf7d0" opacity="0.6"/>
+  <text x="370" y="148" font-size="11" fill="#15803d" text-anchor="start">Positive gap</text>
+  <text x="370" y="161" font-size="11" fill="#15803d" text-anchor="start">(overheating)</text>
+  <!-- Negative gap zone (where actual < trend) -->
+  <polygon points="85,300 130,290 130,296 85,305" fill="#fecaca" opacity="0.6"/>
+  <text x="135" y="305" font-size="11" fill="#dc2626" text-anchor="start">Negative gap</text>
+  <text x="135" y="318" font-size="11" fill="#dc2626" text-anchor="start">(spare capacity)</text>
+  <text x="100" y="65" font-size="12" fill="#374151" text-anchor="start" font-weight="600">GDP</text>
+  <text x="100" y="79" font-size="11" fill="#374151" text-anchor="start">fluctuates around</text>
+  <text x="100" y="92" font-size="11" fill="#374151" text-anchor="start">trend growth</text>
 </svg>
 <div class="diagram-caption">Figure 1: The economic cycle showing positive and negative output gaps relative to trend GDP</div>
 </div>
@@ -159,43 +156,47 @@ China averaged roughly 10% annual GDP growth from 1980 to 2010 — the fastest s
 </ul>
 
 <div class="diagram-box">
-<svg width="460" height="380" viewBox="0 0 460 380">
-  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="320" x2="70" y2="40" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
-  <polygon points="70,40 65,50 75,50" fill="#1a1a2e"/>
-  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Real Output (Y)</text>
-  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Price Level</text>
-
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="aperf1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#aperf1)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#aperf1)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Real Output (Y)</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price Level</text>
+  <!-- LRAS vertical for reference -->
+  <line x1="380" y1="35" x2="380" y2="355" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="384" y="46" font-size="11" fill="#94a3b8" text-anchor="start">LRAS</text>
   <!-- SRAS -->
-  <path d="M 90,280 Q 200,240 300,150 Q 360,80 400,45" stroke="#2563eb" stroke-width="2.5" fill="none"/>
-  <text x="405" y="43" font-size="13" fill="#2563eb" font-weight="700">SRAS</text>
-
+  <line x1="85" y1="320" x2="450" y2="100" stroke="#d97706" stroke-width="2.5"/>
+  <text x="454" y="100" font-size="12" fill="#d97706" text-anchor="start">SRAS</text>
   <!-- AD1 -->
-  <path d="M 120,80 Q 220,180 370,290" stroke="#dc2626" stroke-width="2.5" fill="none"/>
-  <text x="375" y="290" font-size="13" fill="#dc2626" font-weight="700">AD₁</text>
-
-  <!-- AD2 shifted right -->
-  <path d="M 180,70 Q 280,160 410,260" stroke="#dc2626" stroke-width="2.5" fill="none" stroke-dasharray="8,4"/>
-  <text x="413" y="258" font-size="13" fill="#dc2626" font-weight="600">AD₂</text>
-
+  <line x1="85" y1="80" x2="430" y2="330" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="434" y="330" font-size="12" fill="#7c3aed" text-anchor="start">AD₁</text>
+  <!-- AD2 (shifted right) -->
+  <line x1="145" y1="80" x2="470" y2="295" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="474" y="295" font-size="12" fill="#7c3aed" text-anchor="start">AD₂</text>
   <!-- E1 -->
-  <circle cx="245" cy="195" r="4" fill="#374151"/>
-  <line x1="70" y1="195" x2="245" y2="195" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="50" y="199" font-size="11" fill="#374151">PL₁</text>
-
-  <!-- E2 (higher price, slightly more output) -->
-  <circle cx="305" cy="145" r="4" fill="#374151"/>
-  <line x1="70" y1="145" x2="305" y2="145" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="50" y="149" font-size="11" fill="#374151">PL₂</text>
-
-  <!-- Arrow showing mainly price increase -->
-  <line x1="55" y1="190" x2="55" y2="152" stroke="#dc2626" stroke-width="2.5" marker-end="url(#arrR)"/>
-  <defs><marker id="arrR" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#dc2626"/></marker></defs>
-
-  <text x="140" y="100" font-size="12" fill="#dc2626" font-weight="600">Demand-pull:</text>
-  <text x="140" y="115" font-size="11" fill="#dc2626">AD rises near full capacity</text>
-  <text x="140" y="130" font-size="11" fill="#dc2626">→ mainly price increase</text>
+  <circle cx="258" cy="205" r="5" fill="#1e293b"/>
+  <text x="240" y="202" font-size="12" fill="#1e293b" text-anchor="end">E₁</text>
+  <line x1="60" y1="258" x2="205" y2="205" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="258" y1="205" x2="258" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="209" font-size="11" fill="#94a3b8" text-anchor="end">PL₁</text>
+  <text x="255" y="378" font-size="11" fill="#94a3b8" text-anchor="middle">Y₁</text>
+  <!-- E2 -->
+  <circle cx="300" cy="173" r="5" fill="#dc2626"/>
+  <text x="305" y="169" font-size="12" fill="#dc2626" text-anchor="start">E₂</text>
+  <line x1="60" y1="300" x2="173" y2="173" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="300" y1="173" x2="300" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="177" font-size="12" fill="#dc2626" text-anchor="end">PL₂</text>
+  <text x="297" y="378" font-size="12" fill="#dc2626" text-anchor="middle">Y₂</text>
+  <!-- AD shift arrow -->
+  <path d="M295,230 L335,230" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#aperf1)"/>
+  <text x="295" y="225" font-size="11" fill="#374151" text-anchor="start" font-weight="600">Demand-pull:</text>
+  <text x="295" y="238" font-size="11" fill="#374151" text-anchor="start">AD shifts right</text>
+  <text x="295" y="251" font-size="11" fill="#374151" text-anchor="start">↑ PL and ↑ Y</text>
 </svg>
 <div class="diagram-caption">Figure 2: Demand-pull inflation — AD shifts right when the economy is near capacity, causing mainly a rise in the price level</div>
 </div>
@@ -217,44 +218,48 @@ China averaged roughly 10% annual GDP growth from 1980 to 2010 — the fastest s
 </ul>
 
 <div class="diagram-box">
-<svg width="460" height="380" viewBox="0 0 460 380">
-  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="320" x2="70" y2="40" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
-  <polygon points="70,40 65,50 75,50" fill="#1a1a2e"/>
-  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Real Output (Y)</text>
-  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Price Level</text>
-
-  <!-- SRAS1 -->
-  <path d="M 90,280 Q 200,230 310,140 Q 370,80 400,50" stroke="#2563eb" stroke-width="2.5" fill="none"/>
-  <text x="405" y="48" font-size="13" fill="#2563eb" font-weight="700">SRAS₁</text>
-
-  <!-- SRAS2 shifted left -->
-  <path d="M 90,230 Q 170,185 260,110 Q 320,60 350,30" stroke="#2563eb" stroke-width="2.5" fill="none" stroke-dasharray="8,4"/>
-  <text x="355" y="28" font-size="13" fill="#2563eb" font-weight="600">SRAS₂</text>
-
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="aperf2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#aperf2)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#aperf2)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Real Output (Y)</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price Level</text>
+  <!-- LRAS -->
+  <line x1="330" y1="35" x2="330" y2="355" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="334" y="46" font-size="11" fill="#94a3b8" text-anchor="start">LRAS</text>
+  <!-- SRAS1 (original) -->
+  <line x1="85" y1="320" x2="450" y2="100" stroke="#d97706" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="454" y="100" font-size="12" fill="#d97706" text-anchor="start">SRAS₁</text>
+  <!-- SRAS2 (shifted left — cost-push) -->
+  <line x1="85" y1="255" x2="395" y2="55" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="399" y="55" font-size="12" fill="#dc2626" text-anchor="start">SRAS₂</text>
   <!-- AD -->
-  <path d="M 110,70 Q 210,165 380,300" stroke="#dc2626" stroke-width="2.5" fill="none"/>
-  <text x="385" y="300" font-size="13" fill="#dc2626" font-weight="700">AD</text>
-
+  <line x1="85" y1="75" x2="440" y2="320" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="444" y="320" font-size="12" fill="#7c3aed" text-anchor="start">AD</text>
   <!-- E1 -->
-  <circle cx="255" cy="185" r="4" fill="#374151"/>
-  <line x1="70" y1="185" x2="255" y2="185" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="255" y1="185" x2="255" y2="320" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="50" y="189" font-size="11" fill="#374151">PL₁</text>
-  <text x="248" y="336" font-size="11" fill="#374151">Y₁</text>
-
-  <!-- E2 (higher price, lower output = stagflation) -->
-  <circle cx="215" cy="150" r="4" fill="#374151"/>
-  <line x1="70" y1="150" x2="215" y2="150" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="215" y1="150" x2="215" y2="320" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="50" y="154" font-size="11" fill="#374151">PL₂</text>
-  <text x="208" y="336" font-size="11" fill="#374151">Y₂</text>
-
-  <!-- Stagflation label -->
-  <text x="280" y="100" font-size="12" fill="#7c3aed" font-weight="700">STAGFLATION</text>
-  <text x="280" y="116" font-size="11" fill="#7c3aed">Price level rises ↑</text>
-  <text x="280" y="131" font-size="11" fill="#7c3aed">Real output falls ↓</text>
+  <circle cx="258" cy="205" r="5" fill="#94a3b8"/>
+  <text x="240" y="202" font-size="12" fill="#94a3b8" text-anchor="end">E₁</text>
+  <line x1="60" y1="258" x2="205" y2="205" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="258" y1="205" x2="258" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="209" font-size="11" fill="#94a3b8" text-anchor="end">PL₁</text>
+  <text x="255" y="378" font-size="11" fill="#94a3b8" text-anchor="middle">Y₁</text>
+  <!-- E2 -->
+  <circle cx="222" cy="171" r="5" fill="#dc2626"/>
+  <text x="227" y="167" font-size="12" fill="#dc2626" text-anchor="start">E₂</text>
+  <line x1="60" y1="222" x2="171" y2="171" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="222" y1="171" x2="222" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="175" font-size="12" fill="#dc2626" text-anchor="end">PL₂</text>
+  <text x="219" y="378" font-size="12" fill="#dc2626" text-anchor="middle">Y₂</text>
+  <!-- shift arrow on SRAS -->
+  <path d="M280,175 L242,175" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#aperf2)"/>
+  <text x="115" y="100" font-size="11" fill="#374151" text-anchor="start" font-weight="600">Cost-push:</text>
+  <text x="115" y="113" font-size="11" fill="#374151" text-anchor="start">SRAS shifts left</text>
+  <text x="115" y="126" font-size="11" fill="#374151" text-anchor="start">↑ PL and ↓ Y</text>
+  <text x="115" y="139" font-size="11" fill="#dc2626" text-anchor="start">(Stagflation)</text>
 </svg>
 <div class="diagram-caption">Figure 3: Cost-push inflation — SRAS shifts left, causing the price level to rise while output falls (stagflation)</div>
 </div>
@@ -317,38 +322,41 @@ Japan experienced deflation or near-zero inflation for much of the 1990s-2010s a
 </ul>
 
 <div class="diagram-box">
-<svg width="460" height="380" viewBox="0 0 460 380">
-  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="320" x2="70" y2="40" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
-  <polygon points="70,40 65,50 75,50" fill="#1a1a2e"/>
-  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Unemployment Rate (%)</text>
-  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Inflation Rate (%)</text>
-
-  <!-- SRPC -->
-  <path d="M 100,70 Q 145,105 200,165 Q 260,230 330,275 Q 375,295 400,305" stroke="#2563eb" stroke-width="2.5" fill="none"/>
-  <text x="405" y="300" font-size="13" fill="#2563eb" font-weight="700">SRPC</text>
-
-  <!-- LRPC (vertical) -->
-  <line x1="230" y1="50" x2="230" y2="315" stroke="#dc2626" stroke-width="2.5"/>
-  <text x="238" y="48" font-size="13" fill="#dc2626" font-weight="700">LRPC</text>
-
-  <!-- NRU label -->
-  <text x="220" y="338" font-size="12" fill="#dc2626" font-weight="600">NRU</text>
-
-  <!-- Zero inflation line -->
-  <line x1="70" y1="230" x2="410" y2="230" stroke="#94a3b8" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="415" y="234" font-size="10" fill="#94a3b8">0%</text>
-
-  <!-- Point A: low unemployment, high inflation -->
-  <circle cx="135" cy="95" r="5" fill="#f59e0b"/>
-  <text x="90" y="88" font-size="11" fill="#f59e0b" font-weight="600">A</text>
-  <text x="90" y="75" font-size="10" fill="#f59e0b">Low U, High π</text>
-
-  <!-- Point B: high unemployment, low inflation -->
-  <circle cx="340" cy="280" r="5" fill="#f59e0b"/>
-  <text x="345" y="275" font-size="11" fill="#f59e0b" font-weight="600">B</text>
-  <text x="345" y="262" font-size="10" fill="#f59e0b">High U, Low π</text>
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="aperf3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#aperf3)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#aperf3)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Unemployment Rate (%)</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Inflation Rate (%)</text>
+  <!-- LRPC vertical at NRU -->
+  <line x1="280" y1="30" x2="280" y2="360" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="284" y="42" font-size="12" fill="#dc2626" text-anchor="start">LRPC</text>
+  <text x="284" y="55" font-size="11" fill="#dc2626" text-anchor="start">(vertical at</text>
+  <text x="284" y="68" font-size="11" fill="#dc2626" text-anchor="start">NRU/NAIRU)</text>
+  <!-- SRPC curve -->
+  <path d="M110,60 Q200,130 350,310" fill="none" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="354" y="310" font-size="12" fill="#1d4ed8" text-anchor="start">SRPC</text>
+  <!-- NRU marker -->
+  <line x1="280" y1="360" x2="280" y2="370" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="276" y="380" font-size="11" fill="#dc2626" text-anchor="middle">NRU</text>
+  <!-- zero inflation line -->
+  <line x1="60" y1="280" x2="490" y2="280" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="65" y="275" font-size="11" fill="#94a3b8" text-anchor="start">0%</text>
+  <!-- 2% inflation target line -->
+  <line x1="60" y1="220" x2="490" y2="220" stroke="#15803d" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="65" y="216" font-size="11" fill="#15803d" text-anchor="start">2% target</text>
+  <!-- Points on SRPC -->
+  <circle cx="155" cy="90" r="5" fill="#1e293b"/>
+  <text x="160" y="88" font-size="10" fill="#374151" text-anchor="start">A: Low U, High π</text>
+  <circle cx="310" cy="265" r="5" fill="#1e293b"/>
+  <text x="315" y="263" font-size="10" fill="#374151" text-anchor="start">B: High U, Low π</text>
+  <!-- trade-off arrow -->
+  <path d="M165,105 Q220,160 300,250" fill="none" stroke="#374151" stroke-width="1.2" stroke-dasharray="4,3" marker-end="url(#aperf3)"/>
+  <text x="220" y="175" font-size="10" fill="#374151" text-anchor="middle">Trade-off</text>
 </svg>
 <div class="diagram-caption">Figure 4: The Short-Run Phillips Curve (SRPC) shows the trade-off. The Long-Run Phillips Curve (LRPC) is vertical at the Natural Rate of Unemployment (NRU).</div>
 </div>

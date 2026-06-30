@@ -81,51 +81,50 @@
 <p>A negative production externality occurs when the production process imposes costs on third parties who are not compensated. The producer's private costs (MPC) are <strong>lower</strong> than the true social costs (MSC), so MSC > MPC. The firm does not bear the full cost of production, leading to <strong>overproduction</strong>.</p>
 
 <div class="diagram-box">
-<svg width="460" height="380" viewBox="0 0 460 380">
-  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="320" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
-  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
-  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Quantity</text>
-  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Costs / Benefits (£)</text>
-
-  <!-- MPC = Supply -->
-  <line x1="90" y1="290" x2="390" y2="80" stroke="#2563eb" stroke-width="2.5"/>
-  <text x="393" y="78" font-size="13" fill="#2563eb" font-weight="700">MPC (S)</text>
-
-  <!-- MSC (above MPC) -->
-  <line x1="90" y1="240" x2="390" y2="30" stroke="#dc2626" stroke-width="2.5"/>
-  <text x="393" y="30" font-size="13" fill="#dc2626" font-weight="700">MSC</text>
-
-  <!-- MPB = MSB = Demand -->
-  <line x1="90" y1="70" x2="390" y2="290" stroke="#16a34a" stroke-width="2.5"/>
-  <text x="393" y="290" font-size="13" fill="#16a34a" font-weight="700">MPB = MSB (D)</text>
-
-  <!-- Market equilibrium (MPC = MPB) -->
-  <circle cx="268" cy="175" r="5" fill="#2563eb"/>
-  <line x1="268" y1="175" x2="268" y2="320" stroke="#2563eb" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="258" y="336" font-size="12" fill="#2563eb" font-weight="600">Qm</text>
-
-  <!-- Social optimum (MSC = MSB) -->
-  <circle cx="238" cy="158" r="5" fill="#dc2626"/>
-  <line x1="238" y1="158" x2="238" y2="320" stroke="#dc2626" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="225" y="336" font-size="12" fill="#dc2626" font-weight="600">Q*</text>
-
-  <!-- Welfare loss triangle -->
-  <polygon points="238,158 268,175 268,137" fill="#dc2626" fill-opacity="0.15" stroke="#dc2626" stroke-width="1.5"/>
-  <text x="280" y="155" font-size="11" fill="#dc2626" font-weight="600">Welfare</text>
-  <text x="280" y="168" font-size="11" fill="#dc2626" font-weight="600">loss</text>
-
-  <!-- External cost bracket -->
-  <line x1="180" y1="200" x2="180" y2="152" stroke="#64748b" stroke-width="1.5"/>
-  <line x1="175" y1="200" x2="185" y2="200" stroke="#64748b" stroke-width="1.5"/>
-  <line x1="175" y1="152" x2="185" y2="152" stroke="#64748b" stroke-width="1.5"/>
-  <text x="118" y="178" font-size="11" fill="#64748b" font-weight="600">External cost</text>
-
-  <!-- Overproduction arrow -->
-  <line x1="240" y1="350" x2="266" y2="350" stroke="#dc2626" stroke-width="2" marker-end="url(#arrRed)"/>
-  <defs><marker id="arrRed" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#dc2626"/></marker></defs>
-  <text x="230" y="365" font-size="10" fill="#dc2626">Overproduction</text>
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="amf0" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#amf0)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#amf0)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Quantity</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price / Cost (£)</text>
+  <!-- welfare loss triangle -->
+  <polygon points="220,165 268,135 268,198" fill="#fecaca" stroke="#ef4444" stroke-width="1.2"/>
+  <!-- MPB=MSB -->
+  <line x1="85" y1="75" x2="450" y2="315" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="455" y="315" font-size="12" fill="#1d4ed8" text-anchor="start">MPB = MSB</text>
+  <!-- MPC (S) -->
+  <line x1="85" y1="315" x2="450" y2="95" stroke="#15803d" stroke-width="2.5"/>
+  <text x="455" y="95" font-size="12" fill="#15803d" text-anchor="start">MPC (S)</text>
+  <!-- MSC -->
+  <line x1="85" y1="255" x2="415" y2="35" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="418" y="35" font-size="12" fill="#dc2626" text-anchor="start">MSC</text>
+  <!-- external cost bracket at x=145 -->
+  <line x1="140" y1="218" x2="140" y2="271" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="135" y1="218" x2="145" y2="218" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="135" y1="271" x2="145" y2="271" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="102" y="248" font-size="11" fill="#6b7280" text-anchor="end">External</text>
+  <text x="102" y="261" font-size="11" fill="#6b7280" text-anchor="end">cost</text>
+  <!-- dashed verticals -->
+  <line x1="220" y1="165" x2="220" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="268" y1="198" x2="268" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="60" y1="220" x2="165" y2="165" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <!-- equilibrium dots -->
+  <circle cx="268" cy="198" r="5" fill="#15803d"/>
+  <circle cx="220" cy="165" r="5" fill="#dc2626"/>
+  <!-- axis labels -->
+  <text x="217" y="378" font-size="12" fill="#dc2626" text-anchor="middle">Q*</text>
+  <text x="268" y="378" font-size="12" fill="#15803d" text-anchor="middle">Qm</text>
+  <text x="52" y="169" font-size="12" fill="#dc2626" text-anchor="end">P*</text>
+  <!-- welfare loss label -->
+  <text x="290" y="148" font-size="11" fill="#dc2626" text-anchor="start">Welfare</text>
+  <text x="290" y="161" font-size="11" fill="#dc2626" text-anchor="start">loss</text>
+  <line x1="289" y1="155" x2="272" y2="163" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- overproduction -->
+  <text x="244" y="395" font-size="11" fill="#ef4444" text-anchor="middle">← Overproduction →</text>
 </svg>
 <div class="diagram-caption">Figure 1: Negative externality in production. The market overproduces at Qm. The socially optimal output is Q* (where MSC = MSB). The shaded triangle is the welfare loss.</div>
 </div>
@@ -153,51 +152,48 @@ A chemical factory produces goods for profit but also releases pollutants into t
 <p>A positive consumption externality occurs when consumption creates benefits for third parties who are not paying for them. MSB > MPB. This leads to <strong>underconsumption</strong> — the free market provides less than the socially optimal amount.</p>
 
 <div class="diagram-box">
-<svg width="460" height="380" viewBox="0 0 460 380">
-  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="320" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
-  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
-  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Quantity</text>
-  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Costs / Benefits (£)</text>
-
-  <!-- MPC = MSC = Supply -->
-  <line x1="90" y1="290" x2="390" y2="70" stroke="#2563eb" stroke-width="2.5"/>
-  <text x="393" y="68" font-size="13" fill="#2563eb" font-weight="700">MPC = MSC (S)</text>
-
-  <!-- MPB = Demand -->
-  <line x1="90" y1="90" x2="360" y2="290" stroke="#f59e0b" stroke-width="2.5"/>
-  <text x="363" y="290" font-size="13" fill="#f59e0b" font-weight="700">MPB (D)</text>
-
-  <!-- MSB (above MPB) -->
-  <line x1="130" y1="60" x2="400" y2="260" stroke="#16a34a" stroke-width="2.5"/>
-  <text x="403" y="260" font-size="13" fill="#16a34a" font-weight="700">MSB</text>
-
-  <!-- Market equilibrium (MPC = MPB) -->
-  <circle cx="238" cy="180" r="5" fill="#f59e0b"/>
-  <line x1="238" y1="180" x2="238" y2="320" stroke="#f59e0b" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="228" y="336" font-size="12" fill="#f59e0b" font-weight="600">Qm</text>
-
-  <!-- Social optimum (MSC = MSB) -->
-  <circle cx="272" cy="162" r="5" fill="#16a34a"/>
-  <line x1="272" y1="162" x2="272" y2="320" stroke="#16a34a" stroke-width="1" stroke-dasharray="5,3"/>
-  <text x="265" y="336" font-size="12" fill="#16a34a" font-weight="600">Q*</text>
-
-  <!-- Welfare loss triangle -->
-  <polygon points="238,180 272,162 272,192" fill="#16a34a" fill-opacity="0.15" stroke="#16a34a" stroke-width="1.5"/>
-  <text x="280" y="180" font-size="11" fill="#16a34a" font-weight="600">Welfare</text>
-  <text x="280" y="193" font-size="11" fill="#16a34a" font-weight="600">loss</text>
-
-  <!-- External benefit bracket -->
-  <line x1="160" y1="120" x2="160" y2="170" stroke="#64748b" stroke-width="1.5"/>
-  <line x1="155" y1="120" x2="165" y2="120" stroke="#64748b" stroke-width="1.5"/>
-  <line x1="155" y1="170" x2="165" y2="170" stroke="#64748b" stroke-width="1.5"/>
-  <text x="100" y="148" font-size="11" fill="#64748b" font-weight="600">External benefit</text>
-
-  <!-- Underconsumption arrow -->
-  <line x1="266" y1="350" x2="240" y2="350" stroke="#16a34a" stroke-width="2" marker-end="url(#arrGreen2)"/>
-  <defs><marker id="arrGreen2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#16a34a"/></marker></defs>
-  <text x="222" y="365" font-size="10" fill="#16a34a">Underconsumption</text>
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="amf1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#amf1)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#amf1)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Quantity</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price / Cost (£)</text>
+  <!-- welfare loss triangle (under-provision) -->
+  <polygon points="268,155 268,198 308,181" fill="#fecaca" stroke="#ef4444" stroke-width="1.2"/>
+  <!-- MPB (private demand) -->
+  <line x1="85" y1="75" x2="450" y2="315" stroke="#1d4ed8" stroke-width="2.5" stroke-dasharray="8,4"/>
+  <text x="455" y="315" font-size="12" fill="#1d4ed8" text-anchor="start">MPB (D)</text>
+  <!-- MSB (social demand, above MPB) -->
+  <line x1="85" y1="40" x2="450" y2="270" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="455" y="270" font-size="12" fill="#7c3aed" text-anchor="start">MSB</text>
+  <!-- MPC=MSC (supply) -->
+  <line x1="85" y1="315" x2="450" y2="95" stroke="#15803d" stroke-width="2.5"/>
+  <text x="455" y="95" font-size="12" fill="#15803d" text-anchor="start">MPC = MSC</text>
+  <!-- external benefit bracket at x=380 -->
+  <line x1="385" y1="155" x2="385" y2="200" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="380" y1="155" x2="390" y2="155" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="380" y1="200" x2="390" y2="200" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="392" y="181" font-size="11" fill="#6b7280" text-anchor="start">External</text>
+  <text x="392" y="194" font-size="11" fill="#6b7280" text-anchor="start">benefit</text>
+  <!-- dashed verticals/horizontals -->
+  <line x1="268" y1="155" x2="268" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="308" y1="181" x2="308" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="60" y1="268" x2="198" y2="198" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <!-- dots -->
+  <circle cx="268" cy="198" r="5" fill="#1d4ed8"/>
+  <circle cx="308" cy="181" r="5" fill="#15803d"/>
+  <!-- labels -->
+  <text x="264" y="378" font-size="12" fill="#1d4ed8" text-anchor="middle">Qm</text>
+  <text x="308" y="378" font-size="12" fill="#15803d" text-anchor="middle">Q*</text>
+  <text x="52" y="202" font-size="12" fill="#1d4ed8" text-anchor="end">Pm</text>
+  <text x="290" y="162" font-size="11" fill="#dc2626" text-anchor="start">Welfare</text>
+  <text x="290" y="175" font-size="11" fill="#dc2626" text-anchor="start">loss</text>
+  <line x1="289" y1="168" x2="275" y2="175" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="244" y="395" font-size="11" fill="#ef4444" text-anchor="middle">← Under-provision →</text>
 </svg>
 <div class="diagram-caption">Figure 2: Positive externality in consumption. The market underconsumes at Qm. The socially optimal level is Q* (where MSC = MSB).</div>
 </div>

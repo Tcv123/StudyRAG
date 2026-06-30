@@ -113,33 +113,39 @@
 <p>If France specialises in wine and England in cloth, total world output increases and both can consume beyond their PPFs through trade.</p>
 
 <div class="diagram-box">
-<svg viewBox="0 0 600 320" width="560" style="max-width:100%">
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
   <defs>
-    <marker id="arr1" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#333"/></marker>
+    <marker id="atrade0" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
   </defs>
-  <!-- Axes -->
-  <line x1="60" y1="270" x2="560" y2="270" stroke="#333" stroke-width="2" marker-end="url(#arr1)"/>
-  <line x1="60" y1="270" x2="60" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arr1)"/>
-  <text x="310" y="300" text-anchor="middle" font-size="13" fill="#333">Cloth (metres)</text>
-  <text x="18" y="145" text-anchor="middle" font-size="13" fill="#333" transform="rotate(-90,18,145)">Wine (bottles)</text>
-  <!-- France PPF -->
-  <line x1="60" y1="50" x2="210" y2="270" stroke="#1a73e8" stroke-width="2.5"/>
-  <circle cx="60" cy="50" r="4" fill="#1a73e8"/>
-  <circle cx="210" cy="270" r="4" fill="#1a73e8"/>
-  <text x="50" y="42" font-size="12" fill="#1a73e8" text-anchor="end">6</text>
-  <text x="210" y="288" font-size="12" fill="#1a73e8" text-anchor="middle">3</text>
-  <text x="105" y="135" font-size="13" fill="#1a73e8" font-weight="bold">France</text>
-  <!-- England PPF -->
-  <line x1="300" y1="123" x2="400" y2="270" stroke="#e74c3c" stroke-width="2.5"/>
-  <circle cx="300" cy="123" r="4" fill="#e74c3c"/>
-  <circle cx="400" cy="270" r="4" fill="#e74c3c"/>
-  <text x="290" y="118" font-size="12" fill="#e74c3c" text-anchor="end">2</text>
-  <text x="400" y="288" font-size="12" fill="#e74c3c" text-anchor="middle">2</text>
-  <text x="370" y="180" font-size="13" fill="#e74c3c" font-weight="bold">England</text>
-  <!-- Trading possibility (dashed) -->
-  <line x1="60" y1="50" x2="360" y2="270" stroke="#16a34a" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="230" y="140" font-size="12" fill="#16a34a" font-weight="bold">Trade possibility</text>
-  <text x="230" y="155" font-size="11" fill="#16a34a">(consumption beyond PPF)</text>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#atrade0)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#atrade0)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Cloth (metres)</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Wine (bottles)</text>
+  <!-- Country A PPF (has comparative advantage in wine) -->
+  <line x1="60" y1="100" x2="300" y2="360" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="305" y="360" font-size="12" fill="#dc2626" text-anchor="start">England</text>
+  <text x="305" y="373" font-size="11" fill="#dc2626" text-anchor="start">PPF</text>
+  <!-- Country B PPF (has comparative advantage in cloth) -->
+  <line x1="60" y1="180" x2="440" y2="360" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="444" y="360" font-size="12" fill="#1d4ed8" text-anchor="start">France</text>
+  <text x="444" y="373" font-size="11" fill="#1d4ed8" text-anchor="start">PPF</text>
+  <!-- Trade gain region -->
+  <text x="85" y="250" font-size="12" fill="#374151" text-anchor="start" font-weight="600">Comparative advantage:</text>
+  <text x="85" y="265" font-size="11" fill="#374151" text-anchor="start">Each country specialises in</text>
+  <text x="85" y="278" font-size="11" fill="#374151" text-anchor="start">the good with the lowest</text>
+  <text x="85" y="291" font-size="11" fill="#374151" text-anchor="start">opportunity cost.</text>
+  <text x="85" y="310" font-size="11" fill="#374151" text-anchor="start">Trade allows both to</text>
+  <text x="85" y="323" font-size="11" fill="#374151" text-anchor="start">consume beyond their PPF.</text>
+  <!-- axis endpoint labels -->
+  <text x="296" y="355" font-size="11" fill="#dc2626" text-anchor="end"></text>
+  <!-- Y-axis markers -->
+  <text x="52" y="104" font-size="11" fill="#dc2626" text-anchor="end">6</text>
+  <text x="52" y="184" font-size="11" fill="#1d4ed8" text-anchor="end">3</text>
+  <!-- X-axis markers -->
+  <text x="302" y="378" font-size="11" fill="#dc2626" text-anchor="middle">2</text>
+  <text x="440" y="378" font-size="11" fill="#1d4ed8" text-anchor="middle">6</text>
 </svg>
 <div class="diagram-caption">Figure 1: PPFs for France and England showing gains from trade</div>
 </div>
@@ -241,63 +247,55 @@
 </div>
 
 <div class="diagram-box">
-<svg viewBox="0 0 580 420" width="560" style="max-width:100%">
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
   <defs>
-    <marker id="arr2" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#333"/></marker>
+    <marker id="atrade1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
   </defs>
-  <!-- Axes -->
-  <line x1="60" y1="370" x2="540" y2="370" stroke="#333" stroke-width="2" marker-end="url(#arr2)"/>
-  <line x1="60" y1="370" x2="60" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arr2)"/>
-  <text x="300" y="408" text-anchor="middle" font-size="13" fill="#333">Quantity</text>
-  <text x="18" y="195" text-anchor="middle" font-size="13" fill="#333" transform="rotate(-90,18,195)">Price</text>
-
-  <!-- Domestic Supply -->
-  <line x1="80" y1="340" x2="480" y2="60" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="485" y="55" font-size="13" fill="#1a73e8" font-weight="bold">S(d)</text>
-
-  <!-- Domestic Demand -->
-  <line x1="80" y1="60" x2="480" y2="340" stroke="#e74c3c" stroke-width="2.5"/>
-  <text x="485" y="345" font-size="13" fill="#e74c3c" font-weight="bold">D</text>
-
-  <!-- World price line Pw -->
-  <line x1="60" y1="280" x2="520" y2="280" stroke="#16a34a" stroke-width="2"/>
-  <text x="525" y="284" font-size="12" fill="#16a34a" font-weight="bold">Pw</text>
-  <text x="52" y="284" font-size="11" fill="#16a34a" text-anchor="end">Pw</text>
-
-  <!-- World price + tariff Pw+t -->
-  <line x1="60" y1="240" x2="520" y2="240" stroke="#f59e0b" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="525" y="244" font-size="12" fill="#f59e0b" font-weight="bold">Pw+t</text>
-  <text x="52" y="244" font-size="11" fill="#f59e0b" text-anchor="end">Pw+t</text>
-
-  <!-- Quantity markers on x-axis -->
-  <!-- At Pw: Sd intersects at Q1, D intersects at Q4 -->
-  <!-- At Pw+t: Sd intersects at Q2, D intersects at Q3 -->
-  <line x1="147" y1="280" x2="147" y2="375" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="147" y="390" font-size="11" fill="#555" text-anchor="middle">Q1</text>
-
-  <line x1="192" y1="240" x2="192" y2="375" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="192" y="390" font-size="11" fill="#555" text-anchor="middle">Q2</text>
-
-  <line x1="388" y1="240" x2="388" y2="375" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="388" y="390" font-size="11" fill="#555" text-anchor="middle">Q3</text>
-
-  <line x1="433" y1="280" x2="433" y2="375" stroke="#999" stroke-width="1" stroke-dasharray="3,3"/>
-  <text x="433" y="390" font-size="11" fill="#555" text-anchor="middle">Q4</text>
-
-  <!-- Tariff revenue rectangle -->
-  <rect x="192" y="240" width="196" height="40" fill="#f59e0b" opacity="0.2" stroke="#f59e0b" stroke-width="1"/>
-  <text x="290" y="265" font-size="11" fill="#b45309" text-anchor="middle" font-weight="bold">Govt Revenue</text>
-
-  <!-- Welfare loss triangles shading -->
-  <polygon points="147,280 192,240 192,280" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
-  <text x="165" y="275" font-size="9" fill="#c0392b" font-weight="bold">DWL</text>
-
-  <polygon points="388,240 433,280 388,280" fill="#e74c3c" opacity="0.2" stroke="#e74c3c" stroke-width="1"/>
-  <text x="410" y="275" font-size="9" fill="#c0392b" font-weight="bold">DWL</text>
-
-  <!-- Tariff bracket -->
-  <line x1="55" y1="240" x2="55" y2="280" stroke="#f59e0b" stroke-width="2"/>
-  <text x="36" y="264" font-size="11" fill="#f59e0b" font-weight="bold">t</text>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#atrade1)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#atrade1)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Quantity</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price</text>
+  <!-- Domestic supply S(d) -->
+  <line x1="85" y1="340" x2="450" y2="80" stroke="#15803d" stroke-width="2.5"/>
+  <text x="454" y="80" font-size="12" fill="#15803d" text-anchor="start">S(d)</text>
+  <!-- Domestic demand D -->
+  <line x1="85" y1="80" x2="450" y2="330" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="454" y="330" font-size="12" fill="#1d4ed8" text-anchor="start">D</text>
+  <!-- World price Pw (lower line) -->
+  <line x1="60" y1="250" x2="480" y2="250" stroke="#374151" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="484" y="254" font-size="12" fill="#374151" text-anchor="start">Pw</text>
+  <!-- Pw+tariff line (higher) -->
+  <line x1="60" y1="190" x2="480" y2="190" stroke="#dc2626" stroke-width="2"/>
+  <text x="484" y="194" font-size="12" fill="#dc2626" text-anchor="start">Pw + t</text>
+  <!-- At Pw: Qs1 (domestic supply), Qd1 (domestic demand) -->
+  <!-- S(d) at y=250: 340-(x-85)*260/365=250 → x-85=90*365/260=126 → x=211 -->
+  <!-- D at y=250: 80+(x-85)*250/365=250 → x-85=170*365/250=248 → x=333 -->
+  <line x1="211" y1="250" x2="211" y2="360" stroke="#374151" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="333" y1="250" x2="333" y2="360" stroke="#374151" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <circle cx="211" cy="250" r="4" fill="#374151"/>
+  <circle cx="333" cy="250" r="4" fill="#374151"/>
+  <text x="208" y="378" font-size="11" fill="#374151" text-anchor="middle">Qs₁</text>
+  <text x="330" y="378" font-size="11" fill="#374151" text-anchor="middle">Qd₁</text>
+  <!-- At Pw+t: Qs2, Qd2 -->
+  <!-- S(d) at y=190: 340-(x-85)*260/365=190 → x-85=150*365/260=210.6 → x=296 -->
+  <!-- D at y=190: 80+(x-85)*250/365=190 → x-85=110*365/250=160.6 → x=246 -->
+  <line x1="246" y1="190" x2="246" y2="360" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="296" y1="190" x2="296" y2="360" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <circle cx="246" cy="190" r="4" fill="#dc2626"/>
+  <circle cx="296" cy="190" r="4" fill="#dc2626"/>
+  <text x="243" y="378" font-size="11" fill="#dc2626" text-anchor="middle">Qd₂</text>
+  <text x="293" y="378" font-size="11" fill="#dc2626" text-anchor="middle">Qs₂</text>
+  <!-- Government revenue rectangle -->
+  <rect x="246" y="190" width="50" height="60" fill="#fef9c3" opacity="0.8" stroke="#d97706" stroke-width="1"/>
+  <text x="260" y="224" font-size="10" fill="#d97706" text-anchor="start">Gov't</text>
+  <text x="260" y="235" font-size="10" fill="#d97706" text-anchor="start">revenue</text>
+  <!-- Welfare loss triangles -->
+  <polygon points="211,190 246,190 211,250" fill="#fecaca" opacity="0.7"/>
+  <polygon points="296,190 333,250 333,190" fill="#fecaca" opacity="0.7"/>
+  <text x="65" y="165" font-size="11" fill="#374151" text-anchor="start" font-weight="600">Tariff lifts price from Pw to Pw+t:</text>
+  <text x="65" y="178" font-size="10" fill="#374151" text-anchor="start">↑ Domestic production, ↓ Imports, ↑ Domestic price</text>
 </svg>
 <div class="diagram-caption">Figure 2: Effect of a tariff on an imported good</div>
 </div>
@@ -454,43 +452,47 @@ China joined the WTO in December 2001 after 15 years of negotiations. Effects: C
 <h3>Determination of Floating Exchange Rates</h3>
 
 <div class="diagram-box">
-<svg viewBox="0 0 520 380" width="500" style="max-width:100%">
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
   <defs>
-    <marker id="arr3" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#333"/></marker>
+    <marker id="atrade2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
   </defs>
-  <!-- Axes -->
-  <line x1="60" y1="330" x2="480" y2="330" stroke="#333" stroke-width="2" marker-end="url(#arr3)"/>
-  <line x1="60" y1="330" x2="60" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arr3)"/>
-  <text x="270" y="365" text-anchor="middle" font-size="13" fill="#333">Quantity of GBP</text>
-  <text x="18" y="175" text-anchor="middle" font-size="13" fill="#333" transform="rotate(-90,18,175)">Exchange rate (USD per GBP)</text>
-
-  <!-- Supply curve S1 -->
-  <line x1="100" y1="280" x2="420" y2="80" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="430" y="75" font-size="13" fill="#1a73e8" font-weight="bold">S(GBP)</text>
-
-  <!-- Demand curve D1 -->
-  <line x1="100" y1="80" x2="420" y2="280" stroke="#e74c3c" stroke-width="2.5"/>
-  <text x="430" y="285" font-size="13" fill="#e74c3c" font-weight="bold">D(GBP)</text>
-
-  <!-- Equilibrium -->
-  <circle cx="260" cy="180" r="5" fill="#333"/>
-  <line x1="60" y1="180" x2="260" y2="180" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
-  <line x1="260" y1="180" x2="260" y2="330" stroke="#999" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="52" y="184" font-size="11" fill="#555" text-anchor="end">e*</text>
-  <text x="260" y="348" font-size="11" fill="#555" text-anchor="middle">Q*</text>
-
-  <!-- Demand curve D2 (shifted right) -->
-  <line x1="170" y1="80" x2="480" y2="260" stroke="#e74c3c" stroke-width="2" stroke-dasharray="6,4"/>
-  <text x="482" y="255" font-size="12" fill="#e74c3c">D'</text>
-
-  <!-- New equilibrium -->
-  <circle cx="300" cy="152" r="4" fill="#16a34a"/>
-  <line x1="60" y1="152" x2="300" y2="152" stroke="#16a34a" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="52" y="156" font-size="11" fill="#16a34a" text-anchor="end">e'</text>
-  <text x="310" y="145" font-size="11" fill="#16a34a" font-weight="bold">Appreciation</text>
-
-  <!-- Arrow showing appreciation -->
-  <line x1="48" y1="176" x2="48" y2="158" stroke="#16a34a" stroke-width="2" marker-end="url(#arr3)"/>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#atrade2)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#atrade2)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Quantity of GBP</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Exchange rate (USD per GBP)</text>
+  <!-- S(GBP) -->
+  <line x1="85" y1="330" x2="450" y2="100" stroke="#15803d" stroke-width="2.5"/>
+  <text x="454" y="100" font-size="12" fill="#15803d" text-anchor="start">S(GBP)</text>
+  <!-- D(GBP) original -->
+  <line x1="85" y1="100" x2="420" y2="330" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="424" y="330" font-size="12" fill="#1d4ed8" text-anchor="start">D(GBP)</text>
+  <!-- D'(GBP) shifted right (appreciation) -->
+  <line x1="150" y1="100" x2="460" y2="305" stroke="#1d4ed8" stroke-width="2.5"/>
+  <text x="464" y="305" font-size="12" fill="#1d4ed8" text-anchor="start">D'(GBP)</text>
+  <!-- Original equilibrium E* -->
+  <!-- S/D intersection: 330-230/365*(x-85)=100+230/335*(x-85) 
+  → 230=(230/365+230/335)*(x-85)=(0.630+0.687)*(x-85)=1.317*(x-85) → x-85=174.6 → x=260 
+  y=330-0.630*175=330-110=220 -->
+  <circle cx="260" cy="220" r="5" fill="#94a3b8"/>
+  <text x="242" y="217" font-size="12" fill="#94a3b8" text-anchor="end">E*</text>
+  <line x1="60" y1="260" x2="220" y2="220" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="224" font-size="11" fill="#94a3b8" text-anchor="end">e*</text>
+  <line x1="260" y1="220" x2="260" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="257" y="378" font-size="11" fill="#94a3b8" text-anchor="middle">Q*</text>
+  <!-- New equilibrium E' after D shift right -->
+  <!-- Approx at x=310, y=183 -->
+  <circle cx="310" cy="183" r="5" fill="#1d4ed8"/>
+  <text x="315" y="179" font-size="12" fill="#1d4ed8" text-anchor="start">E'</text>
+  <line x1="60" y1="310" x2="183" y2="183" stroke="#1d4ed8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="187" font-size="11" fill="#1d4ed8" text-anchor="end">e'</text>
+  <!-- D shift arrow -->
+  <path d="M310,250 L355,250" fill="none" stroke="#1d4ed8" stroke-width="1.8" marker-end="url(#atrade2)"/>
+  <text x="135" y="100" font-size="11" fill="#374151" text-anchor="start" font-weight="600">Appreciation (e rises):</text>
+  <text x="135" y="113" font-size="11" fill="#374151" text-anchor="start">↑ Demand for £ → D shifts right</text>
+  <text x="135" y="126" font-size="11" fill="#374151" text-anchor="start">→ higher exchange rate</text>
+  <text x="135" y="139" font-size="11" fill="#374151" text-anchor="start">→ exports dearer, imports cheaper</text>
 </svg>
 <div class="diagram-caption">Figure 3: An increase in demand for GBP causes an appreciation (e* to e')</div>
 </div>
@@ -572,39 +574,36 @@ China joined the WTO in December 2001 after 15 years of negotiations. Effects: C
 </div>
 
 <div class="diagram-box">
-<svg viewBox="0 0 520 320" width="500" style="max-width:100%">
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
   <defs>
-    <marker id="arr4" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0 0, 8 3, 0 6" fill="#333"/></marker>
+    <marker id="atrade3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
   </defs>
-  <!-- Axes -->
-  <line x1="60" y1="180" x2="480" y2="180" stroke="#333" stroke-width="2" marker-end="url(#arr4)"/>
-  <line x1="60" y1="300" x2="60" y2="20" stroke="#333" stroke-width="2" marker-end="url(#arr4)"/>
-  <text x="300" y="310" text-anchor="middle" font-size="13" fill="#333">Time</text>
-  <text x="18" y="100" text-anchor="middle" font-size="13" fill="#333" transform="rotate(-90,18,100)">Current Account Balance</text>
-  <text x="480" y="172" font-size="11" fill="#999">0</text>
-
-  <!-- Starting deficit -->
-  <text x="52" y="210" font-size="10" fill="#999" text-anchor="end">Deficit</text>
-  <text x="52" y="165" font-size="10" fill="#999" text-anchor="end">Surplus</text>
-
-  <!-- J-curve path -->
-  <path d="M 80,200 Q 120,200 150,230 Q 180,260 210,250 Q 270,220 330,160 Q 400,90 460,70" fill="none" stroke="#1a73e8" stroke-width="3"/>
-
+  <line x1="60" y1="200" x2="490" y2="200" stroke="#374151" stroke-width="2" marker-end="url(#atrade3)"/>
+  <line x1="120" y1="380" x2="120" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#atrade3)"/>
+  <text x="275" y="410" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Time</text>
+  <text x="16" y="200" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,200)">Current Account Balance</text>
+  <!-- Zero line labels -->
+  <text x="65" y="205" font-size="12" fill="#374151" text-anchor="end">0</text>
+  <text x="90" y="100" font-size="11" fill="#15803d" text-anchor="middle">Surplus</text>
+  <text x="90" y="310" font-size="11" fill="#dc2626" text-anchor="middle">Deficit</text>
   <!-- Depreciation marker -->
-  <line x1="80" y1="195" x2="80" y2="300" stroke="#e74c3c" stroke-width="1.5" stroke-dasharray="5,3"/>
-  <text x="80" y="298" font-size="11" fill="#e74c3c" text-anchor="middle">Depreciation</text>
-
-  <!-- Labels -->
-  <text x="165" y="278" font-size="11" fill="#e74c3c" font-weight="bold">Worsens first</text>
-  <text x="145" y="292" font-size="10" fill="#e74c3c">(inelastic demand,</text>
-  <text x="145" y="304" font-size="10" fill="#e74c3c">higher import prices)</text>
-
-  <text x="370" y="62" font-size="11" fill="#16a34a" font-weight="bold">Then improves</text>
-  <text x="357" y="76" font-size="10" fill="#16a34a">(volumes adjust as</text>
-  <text x="357" y="88" font-size="10" fill="#16a34a">M-L condition met)</text>
-
-  <!-- Dot at start -->
-  <circle cx="80" cy="200" r="4" fill="#1a73e8"/>
+  <line x1="120" y1="50" x2="120" y2="380" stroke="#374151" stroke-width="1.5"/>
+  <text x="125" y="165" font-size="10" fill="#374151" text-anchor="start">Depreciation</text>
+  <text x="125" y="178" font-size="10" fill="#374151" text-anchor="start">occurs here</text>
+  <!-- J-curve path: starts at balance, dips into deficit, then rises above zero -->
+  <path d="M120,200 C150,200 175,240 210,275 S270,310 310,290 S380,250 420,175 S460,120 490,100" fill="none" stroke="#1d4ed8" stroke-width="3"/>
+  <!-- Zone labels -->
+  <text x="165" y="300" font-size="11" fill="#dc2626" text-anchor="start" font-weight="600">Worsens first</text>
+  <text x="165" y="313" font-size="10" fill="#dc2626" text-anchor="start">(inelastic demand,</text>
+  <text x="165" y="325" font-size="10" fill="#dc2626" text-anchor="start">import costs rise)</text>
+  <text x="370" y="175" font-size="11" fill="#15803d" text-anchor="start" font-weight="600">Then improves</text>
+  <text x="370" y="188" font-size="10" fill="#15803d" text-anchor="start">(volumes adjust,</text>
+  <text x="370" y="200" font-size="10" fill="#15803d" text-anchor="start">M-L condition met)</text>
+  <!-- dip label -->
+  <line x1="253" y1="305" x2="253" y2="200" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,3"/>
+  <text x="257" y="310" font-size="10" fill="#dc2626" text-anchor="start">Lowest point</text>
 </svg>
 <div class="diagram-caption">Figure 4: The J-Curve — current account worsens before improving after depreciation</div>
 </div>
