@@ -95,7 +95,10 @@
     .ms-legend-item { font-size: 13px; color: var(--muted); line-height: 1.5; display: flex; gap: 10px; align-items: baseline; }
     .ms-legend .part-ms-type { flex: 0 0 auto; min-width: 54px; text-align: center; background: var(--surface2); border: 1px solid var(--border); border-radius: 5px; padding: 3px 8px; color: var(--text); }
     .ms-legend .part-ms-type.type-exact { color: var(--accent-dark); border-color: rgba(37,99,235,0.3); background: var(--accent-dim); }
-    .ms-figures-tip { font-size: 13px; color: var(--muted); background: var(--surface); border: 1px solid var(--border); border-left: 3px solid var(--accent-dark); border-radius: 8px; padding: 11px 15px; margin-bottom: 20px; line-height: 1.5; }
+    .ms-figures-tip { font-size: 14px; color: var(--text); background: var(--accent-dim); border: 1.5px solid rgba(37,99,235,0.4); border-left: 5px solid var(--accent-dark); border-radius: 10px; padding: 14px 18px; margin-bottom: 24px; line-height: 1.6; display: flex; align-items: flex-start; gap: 12px; }
+    .ms-figures-tip .tip-icon { font-size: 22px; flex: 0 0 auto; margin-top: 1px; }
+    .ms-figures-tip .tip-body { flex: 1; }
+    .ms-figures-tip .tip-body strong { color: var(--accent-dark); }
     .part-arrow { color: var(--muted2); font-size: 12px; transition: transform 0.2s; display: inline-block; }
     .part-row.open .part-arrow { transform: rotate(180deg); }
     .part-row-body { display: none; border-top: 1px solid var(--border); padding: 20px 22px; background: var(--surface2); }
@@ -767,7 +770,7 @@ function buildPicker(userSubs) {
         <span class="ms-legend-item"><span class="part-ms-type">Levels</span> Banded, level-of-response marking — the whole answer is judged against level descriptors and placed in a band.</span>
         <span class="ms-legend-item"><span class="part-ms-type type-exact">Exact</span> A specific required answer (e.g. a value or calculation) — marks only for the correct response.</span>
       </div>
-      <div class="ms-figures-tip">📄 Many questions refer to figures, extracts, and data in the question paper — best to have the <strong>paper open alongside</strong> and work through it question by question.</div>
+      <div class="ms-figures-tip"><span class="tip-icon">📄</span><div class="tip-body"><strong>Have the question paper open alongside this.</strong> Many questions refer to figures, extracts, and data that only appear in the paper — you'll need it to make sense of the mark scheme.</div></div>
       <div class="questions-list">${questionsHtml}</div>`;
   });
 }
