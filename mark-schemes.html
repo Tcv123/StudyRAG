@@ -259,7 +259,7 @@
       <div class="placeholder">
         <div class="placeholder-icon">⏳</div>
         <div class="placeholder-title">Loading…</div>
-        <div class="placeholder-msg">Checking your account.</div>
+        <div class="placeholder-msg">Loading mark schemes…</div>
       </div>
     </div>
   </main>
@@ -764,10 +764,13 @@ function buildPicker(userSubs) {
 }
 
 (async function () {
-  const { data: { user } } = await supabaseClient.auth.getUser();
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session?.user) { location = 'auth/login.html'; return; }
+  const [{ data: { user } }, { data: profile }] = await Promise.all([
+    supabaseClient.auth.getUser(),
+    supabaseClient.from('profiles').select('*').eq('id', session.user.id).single()
+  ]);
   if (!user) { location = 'auth/login.html'; return; }
-  const { data: profile } = await supabaseClient
-    .from('profiles').select('*').eq('id', user.id).single();
   const fn = profile?.first_name || ''; const ln = profile?.last_name || '';
   document.getElementById('sidebarName').textContent = `${fn} ${ln}`.trim();
   document.getElementById('avatarInitials').textContent = ((fn[0]||'')+(ln[0]||'')).toUpperCase() || '?';
