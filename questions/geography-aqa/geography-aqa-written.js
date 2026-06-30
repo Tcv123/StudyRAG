@@ -124,35 +124,47 @@ const GEOGRAPHY_AQA_WRITTEN = {
     amber: [
       {
         q: 'Explain the formation of caves, arches, stacks, and stumps from a headland.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: hydraulic action/abrasion attacks weaknesses → cave. 1 mark: cave erodes through headland → arch. 1 mark: arch roof collapses → stack. 1 mark: stack base eroded and collapses → stump (visible at low tide).',
+        tier: 'amber',
         diagram: true,
         modelAnswer: `• Weaknesses (joints/faults) in the headland are attacked by hydraulic action and abrasion, forming a cave (1).\n• Continued erosion enlarges the cave until it breaks through the headland to form an arch (1).\n• The roof of the arch is undercut and weakened by erosion and weathering until it collapses, leaving an isolated column of rock — a stack (1).\n• The stack is further eroded at its base and eventually collapses to form a stump, visible only at low tide (1).\n(Diagram should show the sequence from headland → cave → arch → stack → stump.)`
       },
       {
         q: 'Explain why wave refraction concentrates erosion on headlands and deposition in bays.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: waves reach shallower water near headlands first. 1 mark: friction slows wave → bends/refracts around headland. 1 mark: energy concentrated on headland from multiple angles → increased erosion. 1 mark: energy spread over wider bay area → reduced power → deposition/beach.',
+        tier: 'amber',
         modelAnswer: `• As waves approach an irregular coastline, they reach the shallower water near headlands first (1).\n• Friction with the seabed slows the wave, causing it to bend (refract) and wrap around the headland (1).\n• This concentrates wave energy on the headland from multiple angles, increasing erosion (1).\n• In the bays between headlands, wave energy is spread over a wider area, reducing its power and allowing deposition to occur, forming beaches (1).`
       },
       {
         q: 'Describe how a coastal sediment cell operates as a system.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: self-contained section where sediment movement is independent of adjacent cells. 1 mark: inputs — cliff erosion, river deposition, offshore sources. 1 mark: transfers — longshore drift, tidal currents, wind. 1 mark: outputs — deep-water deposition, landform storage; balance of inputs/outputs determines erosion or accretion.',
+        tier: 'amber',
         modelAnswer: `• A sediment cell is a self-contained section of coast where sediment movement is largely independent of adjacent cells (1).\n• Inputs include sediment from cliff erosion, river deposition, and offshore sources (1).\n• Transfers include longshore drift, tidal currents, and wind transport moving sediment within the cell (1).\n• Outputs include sediment deposited in deep water, permanently stored in landforms, or lost to adjacent cells; the balance between inputs and outputs determines whether the coast is eroding or accreting (1).`
       },
       {
         q: 'Explain the factors that influence the rate of coastal cliff recession.',
-        marks: 5, tier: 'amber',
+        marks: 5,
+        marks_scheme: '1 mark: rock type — weak rocks (clay) erode faster than resistant rocks (granite). 1 mark: geological structure — joints/faults provide weaknesses for erosion. 1 mark: wave energy — longer fetch/stronger winds increase erosion rates. 1 mark: sub-aerial processes — weathering and mass movement weaken cliffs. 1 mark: human activity — coastal defences, drainage, vegetation removal.',
+        tier: 'amber',
         modelAnswer: `• Rock type — weak rocks like clay erode much faster than resistant rocks like granite (1).\n• Geological structure — joints, faults, and bedding planes provide weaknesses exploited by erosion (1).\n• Wave energy — longer fetch, stronger winds, and exposure to prevailing waves increase erosion rates (1).\n• Sub-aerial processes — weathering and mass movement weaken cliff faces, making them more vulnerable to wave attack (1).\n• Human activity — coastal defences, drainage, and vegetation removal can accelerate or reduce recession (1).`
       },
     ],
     red: [
       {
         q: 'Evaluate the advantages and disadvantages of hard and soft engineering approaches to coastal management.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of both approaches with supported conclusion on integrated management. Level 2 (3-4 marks): explains advantages and disadvantages of each approach. Level 1 (1-2 marks): describes approaches with limited evaluation. Credit: sea walls (effective but costly, reflects energy); groynes (traps sediment but starves downdrift); beach nourishment (natural appearance but costly maintenance); managed retreat (sustainable but land loss/contentious).',
+        tier: 'red',
         modelAnswer: `Hard engineering:\n• Sea walls provide effective protection but are expensive (£5000-10000/m), can be visually intrusive, and reflect wave energy (1).\n• Groynes trap sediment locally but starve downdrift areas of material, transferring the problem (1).\n• Rock armour absorbs wave energy but is expensive to transport and can be visually unattractive (1).\n\nSoft engineering:\n• Beach nourishment maintains natural appearance and tourism value but requires repeated replenishment and is costly over time (1).\n• Managed retreat works with natural processes and creates habitats but involves loss of land and is politically contentious for affected residents (1).\n• Conclusion: neither approach alone is ideal; integrated coastal zone management combining both, with consideration of the whole sediment cell, offers the most sustainable approach (1).`
       },
       {
         q: 'To what extent is climate change the greatest threat to UK coastal landscapes?',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): evaluates climate change against other threats with nuanced conclusion. Level 2 (3-4 marks): explains climate change threat and at least one other factor. Level 1 (1-2 marks): describes climate change impacts with limited comparison. Credit for: sea level rise, increased storm intensity, sub-aerial weathering; counter: geology as primary control, human development, hard engineering effects.',
+        tier: 'red',
         modelAnswer: `Arguments for:\n• Sea level rise increases flood risk and accelerates cliff erosion by raising the base of wave attack (1).\n• Increased storm frequency and intensity may increase wave energy and damage from storm surges (1).\n• Changed precipitation patterns may increase sub-aerial weathering and mass movement on coastal cliffs (1).\n\nArguments against:\n• Geological factors (rock type and structure) have always been the primary control on coastal erosion rates (1).\n• Human activities (coastal development, sediment extraction, hard engineering) significantly alter natural coastal processes (1).\n• Conclusion: climate change is a significant and growing threat but operates alongside, and often exacerbates, existing geological and human factors — its relative importance varies along different stretches of coast (1).`
       },
     ],
@@ -163,57 +175,77 @@ const GEOGRAPHY_AQA_WRITTEN = {
     green: [
       {
         q: 'State two primary effects and two secondary effects of a volcanic eruption.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: any one valid primary effect (pyroclastic flows, lava flows, ash fall roof collapse). 1 mark: any one valid secondary effect (lahars, crop failure, respiratory illness, air travel disruption).',
+        tier: 'green',
         modelAnswer: `Primary effects: pyroclastic flows destroying settlements; lava flows burying land; ash fall collapsing roofs (any 1 for 1 mark).\nSecondary effects: lahars from melting snow/ice mixing with ash; crop failure from ash covering farmland; respiratory illness from ash inhalation; disruption to air travel (any 1 for 1 mark).`
       },
       {
         q: 'State the difference between the focus and epicentre of an earthquake.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: focus = point within crust where earthquake originates / rock fractures. 1 mark: epicentre = point on surface directly above the focus / where shaking typically strongest.',
+        tier: 'green',
         modelAnswer: `• The focus is the point within the Earth's crust where the earthquake originates — where rock fractures and energy is released (1).\n• The epicentre is the point on the Earth's surface directly above the focus — typically where shaking is strongest (1).`
       },
       {
         q: 'State three conditions necessary for the formation of a tropical cyclone.',
-        marks: 3, tier: 'green',
+        marks: 3,
+        marks_scheme: '1 mark each for any three: SST ≥26.5°C to ~60m depth; latitude >5° from equator (Coriolis effect); low wind shear in upper atmosphere; atmospheric instability; moist air; pre-existing low-pressure disturbance.',
+        tier: 'green',
         modelAnswer: `• Sea surface temperatures of at least 26.5°C to a depth of ~60m to provide energy through evaporation (1).\n• Sufficient distance from the equator (typically >5° latitude) so that the Coriolis effect can cause rotation (1).\n• Low wind shear in the upper atmosphere to allow the storm structure to develop vertically (1).\n(Also accept: atmospheric instability, moist air, pre-existing low-pressure disturbance.)`
       },
       {
         q: 'State what is meant by the hazard risk equation.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: Risk = Hazard × Vulnerability ÷ Capacity to cope (correct formula). 1 mark: explanation — risk greater where hazards severe, populations vulnerable, and coping capacity low.',
+        tier: 'green',
         modelAnswer: `Risk = Hazard × Vulnerability ÷ Capacity to cope (1). This means that risk is greater where hazards are severe, populations are vulnerable, and the ability to prepare and respond is limited (1).`
       },
     ],
     amber: [
       {
         q: 'Explain why a magnitude 7 earthquake may cause more deaths in a developing country than in a developed country.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: poor building quality — no earthquake-resistant codes → structural collapse. 1 mark: limited infrastructure — emergency services, hospitals, transport slow rescue. 1 mark: less preparedness — fewer early warning systems, drills, education. 1 mark: fewer economic resources for recovery and reconstruction.',
+        tier: 'amber',
         modelAnswer: `• Building quality — developing countries may lack earthquake-resistant building codes, leading to structural collapse (1).\n• Infrastructure — limited emergency services, hospitals, and transport networks slow rescue and recovery (1).\n• Preparedness — less investment in education, early warning systems, and emergency drills means populations are less prepared (1).\n• Economic resources — fewer financial reserves for recovery and reconstruction prolong the disaster's impact (1).\n(Also accept: higher population density in vulnerable areas, corruption, governance issues.)`
       },
       {
         q: 'Explain how the Pressure and Release (PAR) model links vulnerability to disasters.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: disaster occurs when hazard impacts vulnerable people. 1 mark: root causes — poverty, inequality, poor governance create vulnerability. 1 mark: dynamic pressures — urbanisation, deforestation, population growth increase exposure. 1 mark: unsafe conditions — dangerous locations, fragile buildings, low income; hazard converts these into disaster.',
+        tier: 'amber',
         modelAnswer: `• The PAR model shows that disasters occur when a natural hazard impacts vulnerable people (1).\n• Root causes — underlying political and economic structures (e.g. poverty, inequality, poor governance) create vulnerability (1).\n• Dynamic pressures — urbanisation, deforestation, population growth, and lack of training increase exposure (1).\n• Unsafe conditions — dangerous locations, fragile buildings, low income, and limited preparedness result from these pressures; when the hazard strikes, these conditions turn the event into a disaster (1).`
       },
       {
         q: 'Describe the characteristics and hazards associated with different types of plate boundary.',
-        marks: 5, tier: 'amber',
+        marks: 5,
+        marks_scheme: '1 mark: constructive — plates diverge, basaltic magma, shield volcanoes, shallow earthquakes. 1 mark: destructive — subduction, explosive composite volcanoes, deep trenches, powerful earthquakes. 1 mark: collision — no subduction, fold mountains, no volcanism, shallow earthquakes. 1 mark: conservative — plates slide past, no volcanism, shallow powerful earthquakes (e.g. San Andreas). 1 mark: range of hazards named (earthquakes, tsunamis, pyroclastic flows, lahars, ash fall, lava flows).',
+        tier: 'amber',
         diagram: true,
         modelAnswer: `• Constructive (divergent) — plates move apart; basaltic magma rises to fill the gap; produces shield volcanoes with effusive eruptions and shallow earthquakes (1).\n• Destructive (convergent) — oceanic plate subducts beneath continental; produces explosive composite volcanoes, deep ocean trenches, and powerful earthquakes at various depths (1).\n• Collision — two continental plates collide; no subduction, so no volcanism; produces fold mountains and powerful shallow earthquakes (1).\n• Conservative (transform) — plates slide past each other; no volcanism; produces shallow but powerful earthquakes (e.g. San Andreas Fault) (1).\n• Hazards: earthquakes, tsunamis, volcanic eruptions (pyroclastic flows, lahars, ash fall, lava flows) depending on boundary type (1).\n(Diagram should show cross-sections of at least two boundary types.)`
       },
       {
         q: 'Explain how monitoring and prediction can reduce the impact of volcanic eruptions.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: seismometers detect increased earthquakes indicating magma movement. 1 mark: tiltmeters/GPS measure ground deformation as magma chamber swells. 1 mark: gas monitoring detects SO₂/CO₂ increases preceding eruptions. 1 mark: data enables warnings and evacuation, reducing casualties (though timing/scale remain hard to predict).',
+        tier: 'amber',
         modelAnswer: `• Seismometers detect increased earthquake activity beneath the volcano, indicating magma movement (1).\n• Tiltmeters and GPS measure ground deformation as the magma chamber swells (1).\n• Gas monitoring detects increases in SO₂ and CO₂ emissions, which often precede eruptions (1).\n• These data allow authorities to issue warnings and evacuate populations, reducing casualties — though the exact timing and scale of eruptions remain difficult to predict precisely (1).`
       },
     ],
     red: [
       {
         q: 'Evaluate the view that human factors are more important than physical factors in determining the impact of natural hazards.',
-        marks: 8, tier: 'red',
+        marks: 8,
+        marks_scheme: 'Level 3 (6-8 marks): evaluates both human and physical factors with comparative examples and supported judgement. Level 2 (3-5 marks): explains human and physical factors with some comparison. Level 1 (1-2 marks): describes factors with limited evaluation. Credit: human — development level, governance, preparedness; physical — magnitude, location, frequency; Haiti vs Christchurch comparison; hazard risk equation.',
+        tier: 'red',
         modelAnswer: `Arguments for human factors being more important:\n• Development level — wealthier countries invest in resistant infrastructure, early warning systems, and emergency services, dramatically reducing deaths (1).\n• Governance — effective land-use planning, building codes, and corruption-free institutions reduce vulnerability (1).\n• Preparedness — education and training programmes mean populations respond effectively to warnings (1).\n\nArguments for physical factors:\n• Magnitude — extremely powerful events (e.g. 2011 Japan tsunami, magnitude 9) overwhelm even the best-prepared societies (1).\n• Location — proximity to population centres and depth of earthquake focus significantly affect impact (1).\n• Frequency — areas experiencing frequent hazards may develop resilience, while rare but catastrophic events catch populations off guard (1).\n\nConclusion:\n• Both factors interact — the 2010 Haiti earthquake (magnitude 7, ~230,000 deaths) vs the 2011 Christchurch earthquake (magnitude 6.3, 185 deaths) illustrates how human factors amplify or reduce physical impacts (1).\n• Neither set of factors can be considered in isolation; the hazard risk equation (Risk = Hazard × Vulnerability / Capacity) demonstrates their interdependence (1).`
       },
       {
         q: 'Discuss the extent to which it is possible to live safely in areas at risk from tectonic hazards.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced discussion of arguments for and against safe living with evaluative conclusion. Level 2 (3-4 marks): explains at least two arguments on each side. Level 1 (1-2 marks): describes hazards or mitigation with limited discussion. Credit: earthquake-resistant buildings, monitoring/evacuation, early warning systems; unpredictability of earthquakes, mega-events overwhelming defences, economic necessity forcing hazardous living.',
+        tier: 'red',
         modelAnswer: `Arguments that safe living is possible:\n• Earthquake-resistant building design (base isolation, cross-bracing) significantly reduces structural collapse and deaths (1).\n• Monitoring technology allows volcanic eruptions to be forecast with increasing accuracy, enabling evacuation (1).\n• Education, drills, and early warning systems (e.g. Japan tsunami warning system) save lives (1).\n\nArguments that risk cannot be eliminated:\n• Earthquakes remain unpredictable in timing and precise location, limiting evacuation options (1).\n• Mega-events can overwhelm any preparation — the 2011 Japan tsunami breached flood defences designed for smaller events (1).\n• Many people live in hazardous areas out of economic necessity, cultural attachment, or lack of alternatives — the choice is not always rational or free (1).\n\n(Credit any well-supported evaluative conclusion.)`
       },
     ],
@@ -224,56 +256,76 @@ const GEOGRAPHY_AQA_WRITTEN = {
     green: [
       {
         q: 'State two differences between insider and outsider perspectives on a place.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: insiders have direct personal/emotional experience; outsiders experience secondarily through media or brief visits. 1 mark: insiders have nuanced knowledge; outsiders rely on stereotypes or simplified representations.',
+        tier: 'green',
         modelAnswer: `• Insiders have direct, personal, everyday experience of a place and emotional attachment; outsiders experience it secondarily through media, books, or brief visits (1).\n• Insiders may have more nuanced and detailed knowledge; outsiders may rely on stereotypes or simplified representations (1).`
       },
       {
         q: 'State what is meant by "sense of place".',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: subjective personal feelings/meanings/emotions associated with a location. 1 mark: shaped by personal experience, memory, culture, and physical characteristics of environment.',
+        tier: 'green',
         modelAnswer: `Sense of place refers to the subjective, personal feelings, meanings, and emotions that individuals or communities associate with a particular location (1). It is shaped by personal experiences, memories, culture, and the physical characteristics of the environment (1).`
       },
       {
         q: 'Identify three factors that shape the identity of a place.',
-        marks: 3, tier: 'green',
+        marks: 3,
+        marks_scheme: '1 mark each for any three: physical geography (landscape/climate), socio-economic characteristics (employment/housing/services), cultural factors (ethnicity/religion/traditions), historical events, architecture, political governance, media representation, demographic profile.',
+        tier: 'green',
         modelAnswer: `• Physical geography — landscape, climate, and natural features (1).\n• Socio-economic characteristics — employment, income levels, housing, and services (1).\n• Cultural factors — ethnicity, religion, traditions, and community networks (1).\n(Also accept: historical events, architecture, political governance, media representation, demographic profile.)`
       },
       {
         q: 'State two types of quantitative data and two types of qualitative data used in place studies.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: any two quantitative types (census data, house prices, unemployment rates, crime statistics). 1 mark: any two qualitative types (interviews, photographs, artistic representations, oral histories, diaries).',
+        tier: 'green',
         modelAnswer: `Quantitative: census population data; average house prices; unemployment rates; crime statistics (any 2 for 1 mark).\nQualitative: interviews with residents; photographs; artistic representations; oral histories; personal diaries (any 2 for 1 mark).`
       },
     ],
     amber: [
       {
         q: 'Explain how gentrification changes the character and identity of an urban area.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: physical improvement — renovated buildings, new cafes/shops/galleries. 1 mark: demographic change — wealthier younger professionals move in. 1 mark: economic change — rising property values/rents may displace lower-income residents. 1 mark: cultural identity shift — from original (working-class/multicultural) character to more affluent identity.',
+        tier: 'amber',
         modelAnswer: `• Physical improvement — buildings are renovated, new cafes, shops, and galleries open, changing the visual appearance of the area (1).\n• Demographic change — wealthier, often younger professionals move in, changing the social profile of the neighbourhood (1).\n• Economic change — property values and rents rise, potentially displacing lower-income residents who can no longer afford to live there (1).\n• Cultural identity shift — the area's character shifts from its original identity (e.g. working-class, multicultural) towards a more affluent one, which may be celebrated or contested by different groups (1).`
       },
       {
         q: 'Explain how media representations can create positive or negative perceptions of a place.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: positive coverage (culture/beauty/investment) attracts tourists and businesses. 1 mark: negative portrayals (crime/deprivation) stigmatise places and deter investment. 1 mark: social media amplifies representations rapidly. 1 mark: media is selective — gap between external perception and residents\' lived reality.',
+        tier: 'amber',
         modelAnswer: `• Positive media coverage (e.g. highlighting cultural events, scenic beauty, investment) can attract tourists, businesses, and new residents, boosting the local economy (1).\n• Negative media portrayals (e.g. focusing on crime, deprivation, anti-social behaviour) can stigmatise places, discouraging investment and reinforcing stereotypes (1).\n• Social media amplifies representations — viral images or reviews can rapidly shift perceptions for better or worse (1).\n• Media representations are selective and may not reflect the lived reality of residents, creating a gap between external perception and internal experience (1).`
       },
       {
         q: 'Explain why different groups of people may have contrasting experiences of the same place.',
-        marks: 5, tier: 'amber',
+        marks: 5,
+        marks_scheme: '1 mark: age — different priorities (nightlife vs safety/services). 1 mark: gender — differing safety perceptions and space use. 1 mark: ethnicity — racism or cultural community shapes attachment. 1 mark: socio-economic status — access to different services and living areas. 1 mark: length of residence — deep attachment vs excitement/alienation of newcomers.',
+        tier: 'amber',
         modelAnswer: `• Age — younger people may value nightlife and entertainment; older people may prioritise quiet, safety, and services (1).\n• Gender — women may feel less safe in certain areas at night; men may use different spaces more frequently (1).\n• Ethnicity — ethnic minority groups may experience racism or find cultural community, shaping their attachment to a place differently (1).\n• Socio-economic status — wealthy residents access different services and live in different areas than those in deprivation, experiencing contrasting realities in the same city (1).\n• Length of residence — long-term residents have deep attachment and knowledge; newcomers may experience excitement or alienation (1).`
       },
       {
         q: 'Describe how globalisation has changed the character of a named or located place you have studied.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: economic — international investment, chain stores replacing independents, new employment patterns. 1 mark: cultural — increased ethnic diversity, new cuisines/languages visible in streetscape. 1 mark: physical — new buildings/infrastructure linked to global investment. 1 mark: social — migration altering demographic profile, new communities forming. Credit any valid named/located example.',
+        tier: 'amber',
         modelAnswer: `(Credit any valid named/located example. Generic answer structure:)\n• Economic globalisation — international investment, chain stores replacing independent shops, new employment patterns (1).\n• Cultural globalisation — increased ethnic diversity, new cuisines, languages, and cultural practices visible in the streetscape (1).\n• Physical change — new buildings, infrastructure, or regeneration projects linked to global investment (1).\n• Social change — migration patterns altering demographic profile, new communities forming alongside existing ones (1).`
       },
     ],
     red: [
       {
         q: 'Evaluate the extent to which globalisation has created "placelessness" in the UK.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of placelessness arguments with reference to theory and supported conclusion. Level 2 (3-4 marks): explains both arguments with some evidence. Level 1 (1-2 marks): describes impacts with limited evaluation. Credit: clone towns/standardised architecture (Relph); local resistance — markets, heritage, independents; Massey\'s progressive sense of place; distinctive local identities surviving.',
+        tier: 'red',
         modelAnswer: `Arguments for placelessness:\n• Identical chain stores and branded environments on high streets across the UK create "clone towns" (1).\n• Standardised architecture, shopping centres, and commercial spaces reduce distinctiveness (1).\n• Edward Relph argued that mass culture and globalisation erode authentic sense of place (1).\n\nArguments against:\n• Local communities actively resist placelessness through markets, festivals, heritage conservation, and independent businesses (1).\n• Doreen Massey's "progressive sense of place" argues that global connections can enrich rather than destroy local identity (1).\n• Many places maintain strong distinctive identities rooted in history, landscape, accent, and local culture despite global influences (1).\n\n(Credit any well-supported evaluative conclusion.)`
       },
       {
         q: 'Discuss the extent to which quantitative data alone can accurately represent the character of a place.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): evaluates strengths and limitations of quantitative data with conclusion advocating mixed methods. Level 2 (3-4 marks): explains strengths and limitations with some comparison to qualitative. Level 1 (1-2 marks): describes quantitative data with limited evaluation. Credit: census objectivity, spatial analysis, replicability; cannot capture emotional/cultural dimensions; qualitative methods reveal lived experience and contested meanings.',
+        tier: 'red',
         modelAnswer: `Strengths of quantitative data:\n• Census data provides objective, comparable information on population, employment, and housing (1).\n• Statistics enable spatial analysis, mapping, and identification of trends over time (1).\n• Quantitative data is replicable and can be statistically tested (1).\n\nLimitations:\n• Numbers cannot capture the emotional, cultural, and experiential dimensions of a place — the "feel" and "atmosphere" (1).\n• Qualitative methods (interviews, photographs, oral histories) reveal diverse lived experiences and contested meanings that statistics miss (1).\n• Conclusion: quantitative data provides an essential foundation but only gives a partial picture; combining it with qualitative approaches creates a more holistic and authentic understanding of place character (1).`
       },
     ],
@@ -284,57 +336,77 @@ const GEOGRAPHY_AQA_WRITTEN = {
     green: [
       {
         q: 'State two characteristics of the Central Business District (CBD).',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: highest land values/building density with high-rise offices. 1 mark: major retail/commercial/entertainment functions with high pedestrian and traffic flows.',
+        tier: 'green',
         modelAnswer: `• Highest land values and building density, with many high-rise buildings and offices (1).\n• Major retail, commercial, and entertainment functions, with high pedestrian and traffic flows during working hours (1).`
       },
       {
         q: 'State what is meant by the "urban heat island" effect.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: urban areas are significantly warmer than surrounding rural areas. 1 mark: caused by heat-absorbing surfaces, waste heat from vehicles/buildings, reduced vegetation, canyon effect trapping heat.',
+        tier: 'green',
         modelAnswer: `The urban heat island effect is the phenomenon where urban areas are significantly warmer than surrounding rural areas (1). This is caused by heat-absorbing dark surfaces, heat released by vehicles, industry, and buildings, reduced vegetation, and the canyon effect of buildings trapping heat (1).`
       },
       {
         q: 'Identify three differences between brownfield and greenfield development sites.',
-        marks: 3, tier: 'green',
+        marks: 3,
+        marks_scheme: '1 mark: brownfield = previously developed; greenfield = not built on before. 1 mark: brownfield may need expensive decontamination; greenfield cheaper to prepare. 1 mark: brownfield reuses infrastructure and reduces sprawl; greenfield consumes countryside and increases car dependency.',
+        tier: 'green',
         modelAnswer: `• Brownfield sites are previously developed land; greenfield sites have not been built on before (1).\n• Brownfield sites may require expensive decontamination; greenfield sites are generally cheaper to prepare (1).\n• Brownfield development reuses existing infrastructure and reduces urban sprawl; greenfield development consumes countryside and may increase car dependency (1).`
       },
       {
         q: 'State two causes of urban sprawl.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: population growth increasing housing demand (especially larger properties). 1 mark: improved transport (motorways/rail) making commuting from urban fringe viable. Accept: preference for suburban living, land availability, planning policy.',
+        tier: 'green',
         modelAnswer: `• Population growth and increasing demand for housing, particularly larger properties with gardens (1).\n• Improved transport links (motorways, rail) making commuting from the urban fringe viable (1).\n(Also accept: preference for suburban living, land availability, planning policy.)`
       },
     ],
     amber: [
       {
         q: 'Explain how sustainable urban drainage systems (SUDS) can reduce flood risk in cities.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: permeable paving allows infiltration rather than runoff. 1 mark: green roofs absorb rainfall and slow runoff. 1 mark: swales/retention ponds store excess water and release slowly. 1 mark: mimic natural drainage, reducing peak flow and filtering pollutants.',
+        tier: 'amber',
         modelAnswer: `• Permeable paving allows rainwater to infiltrate into the ground rather than running off impermeable surfaces (1).\n• Green roofs absorb rainfall, reducing and slowing runoff reaching drains and rivers (1).\n• Swales and retention ponds store excess water temporarily, releasing it slowly to prevent overwhelming drainage systems (1).\n• By mimicking natural drainage processes, SUDS reduce peak flow in urban rivers and drains, lowering flood risk while also filtering pollutants and creating habitats (1).`
       },
       {
         q: 'Explain how the Burgess and Hoyt models describe urban land use patterns.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: Burgess — concentric zones outward from CBD (transition, working-class, middle-class suburbs, commuter). 1 mark: Burgess assumes equal access; land values decrease with distance from CBD. 1 mark: Hoyt — sectors/wedges along transport routes; industry follows railways/rivers, high-income extends outward. 1 mark: both are simplifications; developed for early 20th-century cities; modern cities more varied and polycentric.',
+        tier: 'amber',
         diagram: true,
         modelAnswer: `• Burgess concentric zone model — cities grow outward from the CBD in concentric rings: inner zone of transition (industry/poor housing), working-class housing, middle-class suburbs, and commuter zone (1).\n• This model assumes equal access in all directions and land values decreasing with distance from the CBD (1).\n• Hoyt sector model — land use develops in sectors (wedges) along transport routes rather than concentric rings; industry follows railways and rivers, while high-income housing extends along preferred routes (1).\n• Both models are simplifications of complex reality and were developed for early 20th-century US/UK cities; modern cities are more varied and polycentric (1).`
       },
       {
         q: 'Explain how urban regeneration can transform a post-industrial area.',
-        marks: 5, tier: 'amber',
+        marks: 5,
+        marks_scheme: '1 mark: physical transformation — derelict factories converted to housing/offices/cultural venues. 1 mark: economic change — new industries (creative/tech/service) replace manufacturing. 1 mark: social improvement — better housing/public spaces/services. 1 mark: flagship projects attract investment and media attention. 1 mark: risk of gentrification displacing original communities / widening inequality.',
+        tier: 'amber',
         modelAnswer: `• Physical transformation — derelict factories and warehouses are demolished or converted into new housing, offices, and cultural venues (1).\n• Economic change — new industries (creative, tech, service sector) replace manufacturing, creating different employment opportunities (1).\n• Social improvement — better housing, public spaces, and services can improve quality of life for residents (1).\n• Flagship projects — iconic buildings or developments (e.g. London Olympic Park, Salford Quays) attract investment and media attention (1).\n• However, regeneration can lead to gentrification, displacing original communities and widening inequality rather than addressing it (1).`
       },
       {
         q: 'Explain how urban areas can reduce their environmental impact through waste management strategies.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: recycling/composting reduces landfill volume and methane emissions. 1 mark: waste-to-energy incineration generates electricity and reduces landfill. 1 mark: reducing consumption/circular economy decreases total waste generation. 1 mark: improved collection, public education, and producer responsibility schemes increase recycling rates.',
+        tier: 'amber',
         modelAnswer: `• Recycling and composting reduce the volume of waste sent to landfill, conserving resources and reducing methane emissions (1).\n• Waste-to-energy incineration can generate electricity while reducing landfill volume, though air pollution must be controlled (1).\n• Reducing consumption and promoting reuse through circular economy initiatives decreases total waste generation (1).\n• Improved collection systems, public education, and producer responsibility schemes (e.g. packaging levies) drive behaviour change and increase recycling rates (1).`
       },
     ],
     red: [
       {
         q: 'Evaluate the extent to which urban regeneration schemes in the UK have successfully reduced socio-economic inequality.',
-        marks: 8, tier: 'red',
+        marks: 8,
+        marks_scheme: 'Level 3 (6-8 marks): evaluates success and failure with named examples and supported judgement. Level 2 (3-5 marks): explains arguments for and against with some evidence. Level 1 (1-2 marks): describes regeneration with limited evaluation. Credit: improved environment, new jobs, flagship investment (Salford Quays, Docklands); job mismatch, gentrification displacing communities, spatial inequality, profit-driven development.',
+        tier: 'red',
         modelAnswer: `Arguments for success:\n• Physical environments are improved — new housing, public spaces, and infrastructure replace derelict areas (1).\n• New employment opportunities are created in construction, retail, and service industries (1).\n• Flagship projects like Salford Quays and London Docklands have attracted billions in investment and thousands of jobs (1).\n\nArguments against:\n• Jobs created may not match the skills of existing residents, who may be displaced by rising property values (1).\n• Gentrification can widen inequality — new residents are often wealthier, while original communities are priced out (1).\n• Benefits may be concentrated spatially, with adjacent deprived areas seeing little improvement — a "trickle-down" effect often does not materialise (1).\n• Regeneration is often driven by property developers whose primary motive is profit, not equity (1).\n\nConclusion: regeneration improves physical environments but has a mixed record on inequality — without targeted social policies, it risks reinforcing rather than reducing deprivation (1).`
       },
       {
         q: 'Discuss whether sustainable urban living is achievable in major cities.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced discussion with named examples and evaluative conclusion. Level 2 (3-4 marks): explains arguments for and against with some evidence. Level 1 (1-2 marks): describes sustainable measures with limited discussion. Credit: green transport/compact design, green infrastructure, Freiburg/Curitiba examples; legacy infrastructure, growing populations, consumption-driven economic models.',
+        tier: 'red',
         modelAnswer: `Arguments for achievability:\n• Green transport (cycling, electric buses, metro systems), compact design, and mixed-use development can significantly reduce emissions (1).\n• Green infrastructure (parks, green roofs, SUDS) manages water, reduces heat islands, and supports biodiversity (1).\n• Examples like Freiburg (Germany) and Curitiba (Brazil) demonstrate that sustainable design is possible with political will (1).\n\nArguments against:\n• Major cities face legacy infrastructure, car dependency, and political constraints that slow change (1).\n• Growing populations increase resource demand, waste, and congestion despite efficiency gains (1).\n• True sustainability may be incompatible with the consumption-driven economic models that underpin urban economies (1).\n\n(Credit any well-supported evaluative conclusion.)`
       },
     ],
@@ -345,7 +417,9 @@ const GEOGRAPHY_AQA_WRITTEN = {
     green: [
       {
         q: 'State two differences between Malthus and Boserup theories of population and resources.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: Malthus — population outstrips food supply → famine; Boserup — population growth stimulates innovation to increase food production. 1 mark: Malthus — resources are a fixed limit; Boserup — human ingenuity can expand the resource base.',
+        tier: 'green',
         modelAnswer: `• Malthus argued that population grows faster than food supply, leading inevitably to famine and population checks; Boserup argued that population growth stimulates innovation to increase food production (1).\n• Malthus saw resources as a fixed limit; Boserup saw human ingenuity as capable of expanding the resource base (1).`
       },
       {
