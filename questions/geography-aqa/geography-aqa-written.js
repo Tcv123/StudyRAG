@@ -424,52 +424,70 @@ const GEOGRAPHY_AQA_WRITTEN = {
       },
       {
         q: 'State what is meant by "carrying capacity".',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: maximum population an environment can sustain indefinitely. 1 mark: determined by available resources, technology, and waste-absorbing capacity.',
+        tier: 'green',
         modelAnswer: `Carrying capacity is the maximum population that an environment or area can sustain indefinitely (1) given the available resources, technology, and waste-absorbing capacity (1).`
       },
       {
         q: 'Identify three characteristics of Stage 1 of the Demographic Transition Model.',
-        marks: 3, tier: 'green',
+        marks: 3,
+        marks_scheme: '1 mark: high birth rate (lack of contraception, high infant mortality, child labour). 1 mark: high death rate (disease, famine, poor sanitation, lack of medical care). 1 mark: low and fluctuating total population (births and deaths roughly balance).',
+        tier: 'green',
         modelAnswer: `• High birth rate — due to lack of contraception, high infant mortality, and need for child labour (1).\n• High death rate — due to disease, famine, poor sanitation, and lack of medical care (1).\n• Low and fluctuating total population — births and deaths roughly balance with occasional crises (1).`
       },
       {
         q: 'State what is meant by the "dependency ratio".',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: proportion of non-working-age population (under 15 and over 65) relative to working-age (15-64). 1 mark: high ratio = fewer workers supporting more dependents → pressure on services and economy.',
+        tier: 'green',
         modelAnswer: `The dependency ratio is the proportion of the population that is not of working age (under 15 and over 65) relative to the working-age population (15-64) (1). A high ratio means fewer workers supporting more dependents, putting pressure on services and the economy (1).`
       },
     ],
     amber: [
       {
         q: 'Explain how population growth affects food security in developing countries.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: increased demand strains agricultural systems already at capacity. 1 mark: land pressure → expansion into marginal lands → deforestation and soil degradation. 1 mark: water stress — irrigation depletes aquifers and rivers. 1 mark: lack of capital to invest in technology, storage, and distribution infrastructure.',
+        tier: 'amber',
         modelAnswer: `• Increased demand — more people require more food, straining agricultural systems that may already be at capacity (1).\n• Land pressure — population growth drives expansion into marginal lands, leading to deforestation, soil degradation, and reduced long-term productivity (1).\n• Water stress — growing populations increase demand for irrigation, depleting aquifers and rivers (1).\n• Economic constraints — developing countries may lack the capital to invest in agricultural technology, storage, and distribution infrastructure needed to feed growing populations (1).`
       },
       {
         q: 'Explain the causes and consequences of an ageing population in a developed country.',
-        marks: 5, tier: 'amber',
+        marks: 5,
+        marks_scheme: '1 mark: declining birth rates (contraception, career focus, high living costs). 1 mark: increasing life expectancy (better healthcare, nutrition, living standards). 1 mark: increased healthcare/social care costs. 1 mark: higher pension costs with smaller working-age population funding more retirees. 1 mark: labour shortages reducing economic output (unless offset by immigration/automation/later retirement).',
+        tier: 'amber',
         diagram: true,
         modelAnswer: `Causes:\n• Declining birth rates — due to contraception, career focus, and high living costs (1).\n• Increasing life expectancy — due to improved healthcare, nutrition, and living standards (1).\n(Population pyramid should show a narrow base and wide top.)\n\nConsequences:\n• Increased healthcare and social care costs — elderly populations require more medical services and residential care (1).\n• Higher pension costs — a smaller working-age population must fund a growing number of retirees (1).\n• Labour shortages — fewer workers may reduce economic output unless offset by immigration, automation, or raising the retirement age (1).`
       },
       {
         q: 'Explain how the ecological footprint measures the sustainability of human activity.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: area of biologically productive land/water required to produce resources consumed and absorb waste. 1 mark: compared against biocapacity (Earth\'s available productive area) to determine sustainability. 1 mark: if footprint exceeds biocapacity → living unsustainably, depleting natural capital. 1 mark: wealthy nations have much larger per-capita footprints, highlighting global inequality in resource consumption.',
+        tier: 'amber',
         modelAnswer: `• The ecological footprint measures the area of biologically productive land and water required to produce the resources consumed and absorb the waste generated by a population (1).\n• It is compared against biocapacity — the Earth's available biological productive area — to determine sustainability (1).\n• If a population's ecological footprint exceeds available biocapacity, it is living unsustainably and depleting natural capital (1).\n• Wealthy nations typically have much larger per-capita footprints than developing nations, highlighting global inequality in resource consumption (1).`
       },
       {
         q: 'Explain the environmental consequences of intensive agriculture on the global carbon and water cycles.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: carbon emissions from machinery, fertiliser production, and livestock (CO₂, methane, nitrous oxide). 1 mark: soil carbon loss from ploughing exposing organic matter to oxidation. 1 mark: water cycle disruption — irrigation depletes rivers/aquifers; deforestation reduces transpiration. 1 mark: water pollution — fertiliser runoff (eutrophication), pesticides contaminate groundwater.',
+        tier: 'amber',
         modelAnswer: `• Carbon emissions — machinery, fertiliser production, and livestock release significant greenhouse gases (CO₂, methane, nitrous oxide) (1).\n• Soil carbon loss — ploughing exposes soil organic matter to oxidation, releasing stored carbon (1).\n• Water cycle disruption — irrigation depletes rivers and aquifers; deforestation for farmland reduces transpiration and changes local rainfall patterns (1).\n• Water pollution — fertiliser runoff causes eutrophication, while pesticides contaminate groundwater and surface water (1).`
       },
     ],
     red: [
       {
         q: 'Evaluate the extent to which Malthusian theory remains relevant to understanding 21st-century population-resource challenges.',
-        marks: 8, tier: 'red',
+        marks: 8,
+        marks_scheme: 'Level 3 (6-8 marks): evaluates Malthus\'s relevance with evidence for and against, reaching a nuanced conclusion. Level 2 (3-5 marks): explains arguments for and against with some evidence. Level 1 (1-2 marks): describes Malthusian theory with limited evaluation. Credit: population growth, climate threats, water/soil limits (for); Green Revolution, demographic transition, distribution vs production (against); conclusion on environmental limits vs food production.',
+        tier: 'red',
         modelAnswer: `Arguments for relevance:\n• Global population continues to grow (approaching 10 billion by 2050), increasing pressure on finite resources (1).\n• Climate change threatens food production, echoing Malthus's warnings about resource limits (1).\n• Water scarcity, soil degradation, and biodiversity loss suggest environmental limits are being approached (1).\n\nArguments against:\n• The Green Revolution and technological innovation have vastly increased food production, as Boserup predicted (1).\n• Global famine has not occurred on the scale Malthus predicted — distribution problems, not production, cause most food insecurity (1).\n• Demographic transition shows that birth rates fall with development, meaning population growth is slowing in most regions (1).\n\nConclusion:\n• Malthus underestimated human innovation but correctly identified that resources are finite — the question is whether technology can keep pace with consumption (1).\n• The concept is most relevant when considering environmental limits (climate, biodiversity) rather than food production alone (1).`
       },
       {
         q: 'Discuss whether population policies or technological solutions are more effective in addressing the population-resource balance.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced comparison of both approaches with supported conclusion. Level 2 (3-4 marks): explains both approaches with some evaluation. Level 1 (1-2 marks): describes one or both approaches with limited comparison. Credit: anti-natalist policies (ethical concerns), female education (most effective/ethical), slow demographic effect; GM crops/precision agriculture/renewables (expand resource base), addresses symptoms not causes, unintended environmental consequences.',
+        tier: 'red',
         modelAnswer: `Population policies:\n• Anti-natalist policies (e.g. China's one-child policy) can reduce population growth but raise ethical concerns about reproductive rights and coercion (1).\n• Education and empowerment of women is the most effective and ethical way to reduce birth rates voluntarily (1).\n• Policies take decades to have a significant demographic effect (1).\n\nTechnological solutions:\n• GM crops, precision agriculture, desalination, and renewable energy can expand the resource base (1).\n• Technology addresses symptoms (production) rather than root causes (consumption and inequality) (1).\n• Technological solutions may have unintended environmental consequences (1).\n\n(Credit any well-supported evaluative conclusion comparing the two approaches.)`
       },
     ],
@@ -480,56 +498,76 @@ const GEOGRAPHY_AQA_WRITTEN = {
     green: [
       {
         q: 'State two differences between renewable and non-renewable energy resources.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: renewable (solar/wind/hydro) naturally replenished and inexhaustible; non-renewable (coal/oil/gas) finite and will be exhausted. 1 mark: renewables produce little/no greenhouse gases during operation; fossil fuels release significant CO₂ when burned.',
+        tier: 'green',
         modelAnswer: `• Renewable resources (e.g. solar, wind, hydro) are naturally replenished and will not run out; non-renewable resources (e.g. coal, oil, gas) are finite and will eventually be exhausted (1).\n• Renewable resources generally produce little or no greenhouse gas emissions during operation; non-renewable fossil fuels release significant CO₂ when burned (1).`
       },
       {
         q: 'State what is meant by "energy security".',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: uninterrupted availability of energy sources at an affordable price. 1 mark: reliable access to sufficient energy without excessive import dependence or vulnerability to supply disruptions.',
+        tier: 'green',
         modelAnswer: `Energy security is the uninterrupted availability of energy sources at an affordable price (1). A country has energy security when it can reliably access sufficient energy to meet current and future demand without excessive dependence on imports or vulnerability to supply disruptions (1).`
       },
       {
         q: 'Identify three factors that affect the global distribution of water resources.',
-        marks: 3, tier: 'green',
+        marks: 3,
+        marks_scheme: '1 mark each for any three: climate (rainfall patterns — arid regions receive less); physical geography (mountains, aquifer geology, river systems); population/demand (high density increases demand); economic development; infrastructure; pollution; seasonal variation.',
+        tier: 'green',
         modelAnswer: `• Climate — rainfall patterns determine water availability; arid regions receive far less precipitation (1).\n• Physical geography — mountains, aquifer geology, and river systems affect where water is stored and accessible (1).\n• Population and demand — high population density increases demand relative to supply (1).\n(Also accept: economic development, infrastructure, pollution, seasonal variation.)`
       },
       {
         q: 'State what is meant by "virtual water" and give one example.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: total volume of freshwater used to produce a good or service throughout its supply chain. 1 mark: valid example, e.g. 1 kg of beef ≈ 15,000 litres of virtual water.',
+        tier: 'green',
         modelAnswer: `Virtual water is the total volume of freshwater used to produce a good or service throughout its supply chain (1). Example: producing 1 kg of beef requires approximately 15,000 litres of virtual water for feed crops, drinking water, and processing (1).`
       },
     ],
     amber: [
       {
         q: 'Explain how geopolitical factors affect energy security.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: concentration of supply in politically unstable regions (Middle East, Russia) creates supply risk. 1 mark: political tensions/sanctions/conflicts disrupt supply (e.g. EU sanctions on Russian gas post-2022). 1 mark: transit dependency through chokepoints (Strait of Hormuz) vulnerable to disruption. 1 mark: resource nationalism — governments restrict exports or nationalise industries.',
+        tier: 'amber',
         modelAnswer: `• Concentration of supply — major oil and gas reserves are concentrated in politically unstable regions (Middle East, Russia), creating supply risk (1).\n• Political tensions — sanctions, conflicts, and trade disputes can disrupt supply or restrict access (e.g. EU sanctions on Russian gas after 2022) (1).\n• Transit dependency — pipelines and shipping routes pass through chokepoints (e.g. Strait of Hormuz) that could be disrupted (1).\n• Resource nationalism — governments may restrict exports or nationalise energy industries, reducing availability for importing countries (1).`
       },
       {
         q: 'Explain the environmental impacts of fossil fuel extraction and use.',
-        marks: 5, tier: 'amber',
+        marks: 5,
+        marks_scheme: '1 mark: climate change — burning releases CO₂/GHGs driving global warming. 1 mark: air pollution — particulates, SO₂, NOx cause respiratory disease and acid rain. 1 mark: water pollution — oil spills, fracking fluid, coal mine runoff pollute waterways. 1 mark: habitat destruction — mining/drilling/pipelines destroy ecosystems. 1 mark: landscape scarring from open-cast mining and extraction infrastructure.',
+        tier: 'amber',
         modelAnswer: `• Climate change — burning fossil fuels releases CO₂ and other greenhouse gases, driving global warming (1).\n• Air pollution — combustion produces particulates, SO₂, and NOx, causing respiratory disease and acid rain (1).\n• Water pollution — oil spills, fracking fluid contamination, and coal mine runoff pollute waterways and groundwater (1).\n• Habitat destruction — mining, drilling, and pipeline construction destroy ecosystems and displace wildlife (1).\n• Landscape scarring — open-cast mining and oil extraction infrastructure permanently alter landscapes (1).`
       },
       {
         q: 'Explain the challenges facing the global transition from fossil fuels to renewable energy.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: intermittency — solar/wind weather-dependent; storage technology still developing and costly. 1 mark: infrastructure — existing grids/vehicles/heating designed for fossil fuels; transition requires massive investment. 1 mark: economic/political resistance — fossil fuel industries employ millions and have political influence. 1 mark: scale — global demand is enormous; renewables currently supply only a fraction.',
+        tier: 'amber',
         modelAnswer: `• Intermittency — solar and wind energy are weather-dependent; large-scale storage technology is still developing and expensive (1).\n• Infrastructure — existing energy systems (grids, vehicles, heating) are designed around fossil fuels; transitioning requires massive investment (1).\n• Economic and political resistance — fossil fuel industries employ millions and have significant political influence; transition threatens jobs and profits (1).\n• Scale — global energy demand is enormous and growing; renewables currently supply only a fraction, making full replacement a multi-decade challenge (1).`
       },
       {
         q: 'Explain the concept of the "resource curse" with reference to a named example.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: resource-rich countries often experience slower growth, inequality, and weaker governance. 1 mark: resource revenue leads to corruption — elites capture wealth rather than investing in development. 1 mark: Dutch disease — resource sector crowds out other industries by inflating currency. 1 mark: named example, e.g. Nigeria — vast oil wealth but widespread poverty, corruption, Niger Delta environmental degradation.',
+        tier: 'amber',
         modelAnswer: `• The resource curse (or paradox of plenty) describes how countries rich in natural resources often experience slower economic growth, greater inequality, and weaker governance (1).\n• Revenue from resource extraction can lead to corruption, as elites capture wealth rather than investing in development (1).\n• Resource wealth can cause "Dutch disease" — the resource sector crowds out other industries by inflating the currency, making exports uncompetitive (1).\n• Example: Nigeria — despite vast oil wealth, much of the population lives in poverty due to corruption, environmental degradation in the Niger Delta, and dependence on oil revenues with little economic diversification (1).`
       },
     ],
     red: [
       {
         q: 'Evaluate the extent to which renewable energy can achieve global energy security.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation with evidence and conclusion on diversified energy mix. Level 2 (3-4 marks): explains arguments for and against with some evidence. Level 1 (1-2 marks): describes renewables with limited evaluation. Credit: inexhaustible/domestic supply, falling costs, low emissions; intermittency/storage limitations, scale of transition, regions lacking renewable resources or investment capacity.',
+        tier: 'red',
         modelAnswer: `Arguments for:\n• Renewables are inexhaustible and domestically available, reducing dependence on imports and geopolitical risk (1).\n• Costs have fallen dramatically — solar and wind are now cheaper than fossil fuels in many regions (1).\n• They produce negligible greenhouse gas emissions during operation, addressing climate change (1).\n\nArguments against:\n• Intermittency and storage challenges mean renewables alone cannot currently provide reliable baseload power (1).\n• The scale of transition required is enormous — existing infrastructure, political interests, and investment patterns create inertia (1).\n• Some regions lack suitable renewable resources or the economic capacity to invest in the transition (1).\n\n(Credit any well-supported evaluative conclusion acknowledging that a diversified energy mix is likely needed.)`
       },
       {
         q: 'Discuss whether resource scarcity will inevitably lead to conflict in the 21st century.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced discussion with examples and evaluative conclusion rejecting or qualifying inevitability. Level 2 (3-4 marks): explains arguments for and against with some evidence. Level 1 (1-2 marks): describes resource conflicts with limited discussion. Credit: water/energy/mineral competition intensifying, climate reducing availability, historical precedent; international cooperation/trade frameworks, technology reducing scarcity, peaceful negotiation examples (Mekong River Commission).',
+        tier: 'red',
         modelAnswer: `Arguments for inevitable conflict:\n• Competition for water (e.g. Nile Basin, Middle East), energy, and minerals is intensifying as demand grows (1).\n• Climate change is reducing resource availability in already-stressed regions, increasing tensions (1).\n• Historical precedent — resource competition has contributed to many conflicts (1).\n\nArguments against:\n• International cooperation, trade agreements, and institutions (UN, WTO) provide frameworks for peaceful resource sharing (1).\n• Technology can reduce scarcity through efficiency, substitution, and new sources (e.g. desalination, renewables) (1).\n• Many resource-stressed regions have resolved disputes peacefully through negotiation (e.g. Mekong River Commission) (1).\n\n(Credit any well-supported evaluative conclusion.)`
       },
     ],
@@ -540,56 +578,76 @@ const GEOGRAPHY_AQA_WRITTEN = {
     green: [
       {
         q: 'State two advantages of systematic sampling over random sampling.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: ensures even coverage of study area by selecting at regular intervals. 1 mark: straightforward to carry out in the field; avoids over- or under-representation of areas.',
+        tier: 'green',
         modelAnswer: `• Systematic sampling ensures even coverage of the study area by selecting samples at regular intervals (1).\n• It is straightforward to carry out in the field and ensures no areas are over- or under-represented (1).`
       },
       {
         q: 'State what is meant by a "hypothesis" in a geographical investigation.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: a testable statement or prediction about the expected outcome of an investigation. 1 mark: linked to geographical theory and states the expected relationship between variables.',
+        tier: 'green',
         modelAnswer: `A hypothesis is a testable statement or prediction about the expected outcome of an investigation (1). It should be clearly linked to geographical theory and state the expected relationship between variables (1).`
       },
       {
         q: 'Identify three types of data presentation technique used in geographical investigations.',
-        marks: 3, tier: 'green',
+        marks: 3,
+        marks_scheme: '1 mark each for any three: choropleth maps, scatter graphs, bar charts, line graphs, pie charts, proportional symbols, GIS maps, box plots, histograms.',
+        tier: 'green',
         modelAnswer: `• Choropleth maps — using shading to show spatial variation in data (1).\n• Scatter graphs — showing the relationship between two variables (1).\n• Bar charts — comparing quantities across categories (1).\n(Also accept: line graphs, pie charts, proportional symbols, GIS maps, box plots, histograms.)`
       },
       {
         q: 'State two ways a student can ensure the accuracy of their primary data collection.',
-        marks: 2, tier: 'green',
+        marks: 2,
+        marks_scheme: '1 mark: calibrate equipment and follow standardised measurement procedures. 1 mark: take repeated measurements at each sample point to reduce individual errors. Accept: appropriate equipment, careful recording, pilot study.',
+        tier: 'green',
         modelAnswer: `• Calibrating equipment correctly before use and following standardised measurement procedures (1).\n• Taking repeated measurements at each sample point to reduce the impact of individual errors (1).\n(Also accept: using appropriate equipment, recording data carefully, conducting a pilot study.)`
       },
     ],
     amber: [
       {
         q: 'Explain how the choice of sampling strategy can affect the reliability of fieldwork conclusions.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: random sampling avoids bias but may miss variations or cluster unrepresentatively. 1 mark: systematic sampling gives even coverage but may coincide with regular patterns skewing results. 1 mark: stratified sampling ensures all sub-groups/zones proportionally represented. 1 mark: inappropriate strategy produces unrepresentative data → inaccurate conclusions; selecting the right strategy is critical.',
+        tier: 'amber',
         modelAnswer: `• Random sampling avoids researcher bias in site selection but may miss important variations or cluster in unrepresentative areas (1).\n• Systematic sampling provides even coverage but may coincide with patterns that skew results (e.g. sampling every 10m on a regularly-spaced feature) (1).\n• Stratified sampling ensures all sub-groups or zones are proportionally represented, improving representativeness (1).\n• An inappropriate sampling strategy can produce unrepresentative data, leading to inaccurate conclusions that do not reflect the true pattern — selecting the right strategy for the investigation is critical (1).`
       },
       {
         q: 'Explain the purpose and application of the Spearman rank correlation coefficient in geographical fieldwork.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: measures strength and direction of relationship between two ranked variables (-1 to +1). 1 mark: +1 = strong positive correlation; -1 = strong negative; 0 = no correlation. 1 mark: tests hypotheses about relationships between variables (e.g. distance from coast vs temperature). 1 mark: result compared against critical values at chosen significance level (e.g. 0.05) to determine statistical significance.',
+        tier: 'amber',
         modelAnswer: `• It measures the strength and direction of the relationship between two ranked variables, producing a value between -1 and +1 (1).\n• Values close to +1 indicate a strong positive correlation; close to -1 indicate a strong negative correlation; close to 0 indicate no correlation (1).\n• It is used to test hypotheses about relationships (e.g. does distance from the coast correlate with temperature?) (1).\n• The result is compared against critical values at a chosen significance level (e.g. 0.05) to determine whether the relationship is statistically significant or could have occurred by chance (1).`
       },
       {
         q: 'Explain why evaluating the limitations of a fieldwork investigation is important.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: acknowledging limitations shows what data can and cannot show, adding credibility. 1 mark: identifies potential sources of error (equipment, timing, sample size) that may have affected results. 1 mark: demonstrates critical thinking about methodology and suggests improvements. 1 mark: allows readers to judge reliability/validity and places conclusions in appropriate context rather than over-claiming.',
+        tier: 'amber',
         modelAnswer: `• Acknowledging limitations demonstrates understanding of what the data can and cannot show, adding credibility to conclusions (1).\n• It helps identify potential sources of error (equipment, timing, sample size) that may have affected results (1).\n• Evaluation shows critical thinking about methodology and suggests how the investigation could be improved (1).\n• It allows the reader to judge the reliability and validity of findings, and places conclusions in appropriate context rather than over-claiming (1).`
       },
       {
         q: 'Explain how GIS can enhance the presentation and analysis of geographical fieldwork data.',
-        marks: 4, tier: 'amber',
+        marks: 4,
+        marks_scheme: '1 mark: multiple data layers overlaid on digital maps to reveal spatial patterns and relationships. 1 mark: choropleth maps, dot distribution maps, heat maps make patterns visually clear. 1 mark: spatial analysis (proximity, density mapping, buffering) enables hypothesis testing. 1 mark: comparison with secondary data (census, land use) on same platform enriches investigation.',
+        tier: 'amber',
         modelAnswer: `• GIS allows multiple data layers to be overlaid on digital maps, revealing spatial patterns and relationships that may not be visible in individual datasets (1).\n• Data can be presented as choropleth maps, dot distribution maps, or heat maps, making patterns clear and visually engaging (1).\n• GIS enables spatial analysis such as proximity analysis, density mapping, and buffering to test hypotheses (1).\n• It allows comparison with secondary data (e.g. census data, land use data) on the same platform, enriching the investigation (1).`
       },
     ],
     red: [
       {
         q: 'Evaluate the extent to which fieldwork evidence can reliably support geographical hypotheses.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): balanced evaluation of strengths and limitations with conclusion on partial but valuable evidence. Level 2 (3-4 marks): explains strengths and limitations with some comparison. Level 1 (1-2 marks): describes fieldwork with limited evaluation. Credit: first-hand data, systematic methods, statistical testing, mixed approaches; small sample sizes, limited time, researcher bias, inability to generalise from single locations.',
+        tier: 'red',
         modelAnswer: `Strengths:\n• First-hand data provides direct evidence of geographical processes in specific locations (1).\n• Systematic methods and statistical testing can demonstrate significant relationships (1).\n• Combining quantitative and qualitative approaches strengthens the evidence base (1).\n\nLimitations:\n• Small sample sizes, limited time, and restricted access may produce unrepresentative data (1).\n• Researcher bias in site selection, data collection, and interpretation can distort findings (1).\n• Conclusions from a single study location cannot necessarily be generalised to wider processes (1).\n\n(Credit any well-supported evaluative conclusion acknowledging that fieldwork provides valuable but necessarily partial evidence.)`
       },
       {
         q: 'Discuss the ethical challenges of conducting human geography fieldwork and how they can be addressed.',
-        marks: 6, tier: 'red',
+        marks: 6,
+        marks_scheme: 'Level 3 (5-6 marks): discusses multiple challenges and corresponding mitigations with evaluative conclusion. Level 2 (3-4 marks): explains at least two challenges and some mitigations. Level 1 (1-2 marks): describes one challenge with limited discussion. Credit: informed consent (power dynamics), privacy/sensitive data, researcher positionality/bias; mitigations — consent forms, anonymisation/data protection, reflexivity in write-up.',
+        tier: 'red',
         modelAnswer: `Challenges:\n• Informed consent — participants must understand and agree to involvement, but power dynamics (e.g. student-adult) may complicate this (1).\n• Privacy — questionnaires and interviews may reveal personal or sensitive information that must be protected (1).\n• Representation — the researcher's own background and biases shape what questions are asked and how responses are interpreted (1).\n\nMitigation strategies:\n• Clear consent forms explaining the purpose of research and how data will be used and stored (1).\n• Anonymisation of all data and responsible storage in compliance with data protection principles (1).\n• Reflexivity — the researcher should reflect on how their own positionality affects the investigation and acknowledge this in their write-up (1).`
       },
     ],
