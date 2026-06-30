@@ -27308,6 +27308,190 @@ window.SUBJECTS = [
             totalMarks: 128, durationMins: 135,
             qpUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-3/June%202022%20QP%20-%20Component%203%20Eduqas%20Geography%20A-level.pdf',
             msUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-3/June%202022%20MS%20-%20Component%203%20Eduqas%20Geography%20A-level.pdf',
+            markSchemes: {
+              '1': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[33,38], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[26,32], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[18,25], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[10,17], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,9], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Hazard profile characteristics': 'Magnitude, frequency, speed of onset, spatial extent, predictability — all shape the nature of the volcanic threat',
+                'Severity of impact': 'Death toll, economic damage, displacement — vary with eruption type (effusive vs explosive) and profile characteristics',
+                'Counter-argument': 'Vulnerability, coping capacity, land use near volcanoes, and population density may outweigh profile characteristics in determining impact severity',
+                'Named examples': 'e.g. Mount Pinatubo 1991 (predictable, evacuations reduced deaths); Nevado del Ruiz 1985 (lahars, poor warning = 23,000 deaths)',
+                'Conclusion': 'Balanced assessment of whether hazard profile or human factors are the key determinant of impact severity'
+              }},
+              '2': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[33,38], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[26,32], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[18,25], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[10,17], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,9], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Level of development': 'GDP, infrastructure quality, building standards, emergency services, insurance — all vary with development level and influence earthquake risk',
+                'Risk and vulnerability': 'Higher vulnerability in LICs/LMICs due to poor construction, corruption, informal settlements, limited preparedness',
+                'Counter-argument': 'Physical factors (proximity to plate boundary, magnitude, soil type/liquefaction) also key; some HICs suffer greatly (e.g. Japan 2011)',
+                'Named examples': 'e.g. Haiti 2010 (MIC, 230,000 deaths) vs Christchurch 2011 (HIC, 185 deaths) — similar magnitudes; contrasting outcomes',
+                'Conclusion': 'Development is a major but not sole factor; interaction with physical geography and governance is critical'
+              }},
+              '3': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Ecosystem goods and services': 'Provisioning (food, water, timber), regulating (climate, flood control), cultural (recreation) — underpin human well-being globally',
+                'Human dependence': 'Billions rely on ecosystem services for food security, clean water, livelihoods — especially in rural LICs',
+                'Human destruction': 'Deforestation (Amazon), overfishing, urbanisation, pollution, agriculture — humans are the primary driver of ecosystem degradation',
+                'Counter-argument': 'Some ecosystems recover; conservation efforts and sustainable management show human-ecosystem relationships can be positive',
+                'Conclusion': 'Both sides of the statement hold true — strong case that dependence and destruction coexist; extent varies by region and ecosystem type'
+              }},
+              '4': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Ecosystems at greater risk': 'Tropical rainforests (deforestation rates), coral reefs (bleaching, ocean acidification), wetlands (drainage for agriculture)',
+                'Reasons for differential risk': 'Location near human population centres, economic value of land, climate sensitivity, rate of environmental change',
+                'Less threatened ecosystems': 'Remote tundra, deep ocean — less accessible, fewer economic pressures, though climate change increasingly threatens even these',
+                'Named examples': 'Amazon rainforest (deforestation ~10,000 km2/yr); Great Barrier Reef (50% coral lost since 1995); UK lowland heathland (>80% lost since 1800)',
+                'Conclusion': 'Agreement justified — ecosystems differ markedly in risk level due to combinations of location, human pressure, and ecological sensitivity'
+              }},
+              '5': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Globalisation as driver': 'FDI (e.g. Tata, Infosys global expansion), outsourcing of manufacturing and services (IT sector), integration into global supply chains',
+                'Evidence for': 'India GDP growth 6-8% pa since 1991 liberalisation; IT exports ~$200bn; growing middle class linked to global trade',
+                'Alternative drivers': 'Domestic consumption, government policy (Make in India), green revolution legacy, demographic dividend, internal migration',
+                'Counter-evidence': 'Uneven growth — rural India less integrated into globalisation; informal economy large; some sectors grew independently',
+                'Conclusion': 'Globalisation significant but one of multiple drivers; domestic factors and government policy also crucial'
+              }},
+              '6': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Environmental damage from growth': 'Air pollution (Delhi AQI), Ganges pollution, deforestation for industry/agriculture, e-waste, groundwater depletion',
+                'Inevitability argument': 'Rapid industrialisation historically linked to environmental degradation (EKC theory); India prioritising growth over environment',
+                'Counter-argument': "India investing in renewables (solar capacity ~70GW+), environmental legislation, National Clean Air Programme, some companies adopting green practices",
+                'Scale of damage': "India among world's top CO2 emitters but per-capita low; some regions heavily polluted, others less affected",
+                'Conclusion': 'Damage has occurred but not inevitable — policy choices and technology can decouple growth from environmental harm to some degree'
+              }},
+              '7': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Globalisation as driver': 'Export-led growth model (SEZs, WTO accession 2001), FDI inflows, manufacturing integration into global supply chains (electronics, textiles)',
+                'Evidence for': "China GDP growth averaged ~10% pa 1980-2010; world's largest exporter; trade surplus with USA/EU; Shenzhen SEZ as model",
+                'Alternative drivers': 'State-led investment (Belt and Road), SOEs, domestic consumption growth, infrastructure spending, one-child policy effects on labour market',
+                'Counter-evidence': 'State control means globalisation is managed/selective; rural-urban inequality persists despite globalisation',
+                'Conclusion': 'Globalisation important but Chinese model is state-directed; domestic policy and investment equally significant drivers'
+              }},
+              '8': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Environmental damage': 'Severe air pollution (Beijing smog), river pollution (Yellow River), land degradation, desertification in north, rapid coal use',
+                'Inevitability argument': "Historical precedent (UK industrial revolution); China's coal dependency during growth phase; environmental regulation lagged behind growth",
+                'Counter-argument': 'China now world's largest investor in renewables; solar/wind capacity growing rapidly; afforestation programmes; environmental policy tightening',
+                'Scale of response': 'China pledged carbon neutrality by 2060; ecological civilisation concept embedded in policy; some cities improving air quality',
+                'Conclusion': 'Environmental damage was substantial but not entirely inevitable; recent policy shifts show decoupling is possible with political will'
+              }},
+              '9': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Social constraints': 'Gender inequality limiting female workforce participation; ethnic/tribal divisions causing instability; low education/literacy rates',
+                'Cultural constraints': 'Patriarchal systems, traditional land tenure, cultural attitudes to entrepreneurship or formal banking',
+                'Opportunities': 'Cultural diversity as tourism asset; diaspora remittances; community solidarity in informal sector; youthful demographics',
+                'Named examples': 'Nigeria — ethnic diversity linked to conflict but also cultural richness; Rwanda — post-genocide reconciliation enabling growth; South Africa — gender equality policy progress',
+                'Conclusion': 'Social/cultural factors are significant constraints in many contexts but also offer opportunities; economic and political factors often equally constraining'
+              }},
+              '10': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Negative environmental impacts': 'Mining pollution (DRC cobalt), agricultural expansion (deforestation), oil extraction (Niger Delta), urbanisation pressures',
+                'Inevitability argument': 'Development historically linked to environmental cost; weak regulation, corruption, reliance on resource extraction',
+                'Counter-argument': 'Sustainable agriculture growing; renewable energy projects (e.g. Kenya geothermal, Morocco solar); some sectors (mobile tech) low environmental impact',
+                'Variation by sector': 'Resource extraction highly damaging; services sector growth much less so; agriculture can be sustainably managed',
+                'Conclusion': 'Not inevitable for all sectors — significant variation; policy, technology, and governance choices determine environmental outcomes'
+              }},
+              '11': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Physical factors — distribution': 'Fossil fuel location (geological deposits), renewable energy potential (solar irradiance, wind speed, river flow, geothermal activity)',
+                'Physical factors — use': 'Climate affecting heating/cooling demand; terrain affecting hydropower; solar radiation determining solar viability',
+                'Limitations of physical factors': 'Geopolitics, TNCs, trade routes, technology transfer, economic development level all shape actual energy use patterns',
+                'Named examples': 'Middle East oil reserves (physical geology); Iceland geothermal (physical setting); Norway hydropower; vs Germany importing despite physical limits',
+                'Conclusion': 'Physical factors are foundational but human, economic, and political factors mediate their influence — cannot be considered in isolation'
+              }},
+              '12': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Energy efficiency as solution': 'Reduces demand, cuts emissions, cost-effective; smart grids, insulation, efficient appliances, industrial processes',
+                'Evidence for efficiency': 'IEA: efficiency improvements account for largest share of CO2 reductions in sustainable development scenarios',
+                'Other solutions': 'Renewable energy expansion, nuclear power, carbon capture and storage, demand management, behaviour change',
+                'Limitations of efficiency alone': 'Jevons paradox — efficiency gains may increase total consumption; not sufficient to meet climate targets alone',
+                'Conclusion': 'Efficiency is essential but cannot be the only solution; a portfolio of approaches including renewables and policy change is necessary'
+              }},
+              '13': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Sources of urban air pollution': 'Vehicle emissions, industry, domestic heating (coal/biomass), waste burning — vary by city and development level',
+                'Management strategies': 'Congestion charging (London), low emission zones, catalytic converters, renewable energy transition, urban greening, public transport',
+                'Success examples': 'London — SO2 reduction; Beijing — coal bans reducing winter smog; Mexico City — vehicle emission controls',
+                'Challenges to management': 'Economic costs, political will, rapid urbanisation in LICs, enforcement difficulties, transboundary pollution',
+                'Conclusion': 'Management is possible and has succeeded in some cities; extent depends on political will, wealth, and the specific pollutant targeted'
+              }},
+              '14': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Adaptation strategies': 'Sea defences, crop switching, managed retreat, heat action plans, drought-resistant varieties — adjusting to existing/future climate',
+                'Mitigation strategies': 'Renewable energy, reforestation, carbon trading, international agreements (Paris 2015) — reducing greenhouse gas emissions',
+                'Both needed': 'IPCC: even if emissions cut drastically, some warming locked in — adaptation essential; mitigation needed to prevent worst outcomes',
+                'Limitations': 'Adaptation costly for LICs; mitigation requires global cooperation; maladaptation risks; time lag between action and effect',
+                'Conclusion': 'Strong agreement with statement — adaptation and mitigation are complementary, not alternative, strategies; both roles are essential'
+              }},
+            },
             questions: [
               { number: 1, scenario: 'Section A — Theme 1: Tectonic Hazards (answer Q1 OR Q2)', parts: [
                 { code: '1', prompt: '\'The characteristics of the physical hazard profile are the key factors influencing the severity of impact of volcanic hazards.\' Discuss.', marks: 38, extended: true },
@@ -27496,6 +27680,190 @@ window.SUBJECTS = [
             totalMarks: 128, durationMins: 135,
             qpUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-3/June%202023%20QP%20-%20Component%203%20Eduqas%20Geography%20A-level.pdf',
             msUrl: 'https://pmt.physicsandmathstutor.com/download/Geography/A-level/Past-Papers/WJEC-England/Component-3/June%202023%20MS%20-%20Component%203%20Eduqas%20Geography%20A-level.pdf',
+            markSchemes: {
+              '1': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[33,38], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[26,32], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[18,25], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[10,17], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,9], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Prediction and monitoring': 'Seismographs, tiltmeters, gas sensors, satellite InSAR — provide warning time enabling evacuation (e.g. Pinatubo 1991)',
+                'Risk to life reduced by warning': 'Effective monitoring systems have enabled mass evacuations; fatalities at well-monitored volcanoes often relatively low',
+                'Counter-argument': 'Many volcanoes in LICs lack monitoring infrastructure; sudden eruptions (e.g. Ontake 2014, Japan — 63 deaths, no warning) still cause casualties',
+                'Named examples': 'Montserrat Soufriere Hills (ongoing monitoring, low deaths); Nyiragongo 2021 (DRC, rapid onset, 32 deaths, limited monitoring)',
+                'Conclusion': 'Risk to life has been reduced where monitoring exists but is far from eliminated globally — access to technology is unequal'
+              }},
+              '2': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[33,38], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[26,32], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[18,25], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[10,17], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,9], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Secondary hazards': 'Liquefaction, tsunami, landslides, fire, disease outbreak following earthquakes — often exceed primary shaking in impact',
+                'Evidence for secondary dominance': 'Japan 2011: tsunami caused >90% of 18,500 deaths; Haiti 2010: cholera outbreak killed thousands post-quake',
+                'Counter-argument': 'Primary shaking can be most deadly where building quality is poor (e.g. Sichuan 2008 — 87,000 deaths from building collapse)',
+                'Named examples': 'Kobe 1995 — fires as secondary hazard; Nepal 2015 — landslides blocking relief; Christchurch 2011 — liquefaction damaging infrastructure',
+                'Conclusion': 'Secondary hazards often generate most severe impacts but this varies by context; primary effects can dominate where infrastructure is weak'
+              }},
+              '3': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Physical factors on succession': 'Substrate type, water availability, light, temperature, wind exposure — drive primary and secondary succession stages',
+                'Human factors on succession': 'Grazing, burning, drainage, pollution, management practices — can arrest, reverse or accelerate succession (deflected climax)',
+                'Local scale examples': 'Sand dune succession (psammosere) interrupted by trampling; heathland maintained by burning preventing succession to woodland',
+                'Interaction of factors': 'Physical factors set potential for succession; human management determines actual trajectory — both must be evaluated together',
+                'Conclusion': 'Both physical and human factors shape succession; for local ecosystems human management is often the dominant contemporary influence'
+              }},
+              '4': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Growing threats to Arctic tundra': 'Climate change (warming 2-3x global average), permafrost thaw, oil/gas extraction, shipping, tourism, invasive species',
+                'Sustainable use challenges': 'Fragile soils and slow recovery rates; indigenous communities dependent on ecosystem; competing economic interests (energy vs conservation)',
+                'Existing sustainable use': 'Some indigenous practices (reindeer herding) sustainable; Arctic Council governance frameworks; protected area designations',
+                'Counter-argument': 'Sustainable use has been achieved in some areas; technology can reduce extraction impacts; international agreements limit some activities',
+                'Conclusion': 'Growing threats do make sustainable use increasingly challenging, especially given pace of climate change — but not yet impossible with strong governance'
+              }},
+              '5': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Water availability as constraint': 'Monsoon variability, groundwater depletion (Punjab), drought-prone regions (Rajasthan), river pollution limiting usable supply',
+                'Impact on development': 'Water stress limits agricultural productivity; industry and cities compete for scarce water; sanitation gaps reduce workforce health',
+                'Counter-argument': 'India has grown rapidly despite water stress; government investment in dams, irrigation, interlinking rivers; IT sector not water-dependent',
+                'Other physical constraints': 'Flooding, extreme heat, soil degradation — also constrain development; physical factors one of many constraints',
+                'Conclusion': 'Water availability is an increasingly serious constraint especially for agriculture and in drought-prone regions, but not the only or always the main constraint'
+              }},
+              '6': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Soft power definition': 'Attraction and persuasion through culture, values, foreign policy — Bollywood, yoga, democracy brand, diaspora networks',
+                'Evidence for soft power': 'Indian diaspora in USA/UK provides economic and diplomatic links; Bollywood global reach; India as model democracy for Global South',
+                'Limitations of soft power': 'Hard power (military, nuclear) and economic growth (trade, investment) arguably more significant for global importance; regional tensions limit soft power',
+                'Counter-argument': 'Economic hard power (FDI, trade with Africa) and geopolitical positioning (G20, BRICS) may be more important drivers of global influence',
+                'Conclusion': 'Soft power is increasingly significant and distinctive for India, but works alongside hard power and economic growth — not a standalone explanation'
+              }},
+              '7': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Water availability as constraint': 'Yellow River reduced flow, groundwater over-abstraction (North China Plain), seasonal drought in northern regions, water pollution',
+                'Impact on development': 'Agriculture in arid north constrained; coal/energy production requires water; cities facing water scarcity (Beijing, Tianjin)',
+                'South-North Water Diversion Project': 'Major engineering response; $48bn project — shows both scale of problem and state capacity to respond',
+                'Counter-argument': 'China has managed water constraints through engineering; industrial development less water-constrained; coastal regions less affected',
+                'Conclusion': 'Water availability is a serious and growing constraint especially in northern China, but state-directed engineering and industrial geography have limited its impact so far'
+              }},
+              '8': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Chinese soft power': 'Confucius Institutes (500+), Chinese language promotion, Belt and Road Initiative framing, cultural exports (film, sport), aid diplomacy',
+                'Evidence for significance': 'BRI connecting 150+ countries; growing influence in Africa, Central Asia through economic and cultural engagement',
+                'Limitations': 'Concerns about debt diplomacy and sovereignty undermine soft power; Xinjiang/Hong Kong issues damage global image; hard power (military) growing faster',
+                'Counter-argument': 'Hard economic power (trade dependency, investment) and military power (South China Sea) may be more significant than soft power for global importance',
+                'Conclusion': 'Soft power increasingly used by China but contested in effectiveness; hard power and economic dominance arguably more significant for enhancing global importance'
+              }},
+              '9': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Resources as vital for development': 'Oil revenues (Nigeria, Angola), minerals (DRC cobalt, Zambia copper), natural gas — provide export income and government revenue',
+                'Resource curse evidence': 'Dutch Disease — resource exports raise exchange rates, damaging other sectors; Nigeria oil wealth vs persistent poverty; DRC mineral wealth vs instability',
+                'Conflict linkage': 'Coltan in DRC linked to armed group funding; Niger Delta conflict over oil; South Sudan civil war partly resource-driven',
+                'Counter-examples': 'Botswana — diamonds managed well, development success; Rwanda — avoiding resource curse through diversification',
+                'Conclusion': 'Resources are vital but can lead to resource curse where governance is weak — outcomes depend on institutional quality, not resource presence alone'
+              }},
+              '10': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Desertification causes': 'Overgrazing, deforestation, population pressure, climate change reducing rainfall — Sahel region most affected',
+                'Strategies used': 'Great Green Wall (pan-African afforestation), farmer-managed natural regeneration (FMNR), terracing, sand dune stabilisation',
+                'Limited success evidence': 'Great Green Wall — only 15% complete after 15 years; deforestation continues in some areas; climate change undermining efforts',
+                'Success stories': 'FMNR in Niger — 5 million hectares re-greened; Tigray Ethiopia — successful restoration; Burkina Faso zaï planting pits',
+                'Conclusion': 'Strategies have had mixed success — community-led approaches (FMNR) more successful than large-scale top-down projects; climate change poses ongoing challenge'
+              }},
+              '11': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Environmental problems of fossil fuels': 'Climate change (CO2 emissions), air pollution (NOx, SOx), oil spills (Niger Delta, Deepwater Horizon), coal mining land degradation',
+                'Political/economic problems': 'Geopolitical tensions (Russia-Ukraine gas; Middle East oil); energy security; price volatility; wealth concentration in petrostates',
+                'Evidence for environmental dominance': 'IPCC: fossil fuels responsible for ~75% of global GHG emissions; air pollution kills 7 million/year (WHO)',
+                'Counter-argument': 'Energy sanctions, oil price shocks (1973, 2022), pipeline disputes show political/economic problems are highly significant and immediate',
+                'Conclusion': 'Both types of problem are severe and interconnected — environmental problems are long-term and existential, but political/economic problems are more immediately disruptive'
+              }},
+              '12': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Development and energy mix': 'HICs can afford cleaner, more diverse energy mixes; LICs reliant on biomass and coal; energy poverty links to development level',
+                'Other influencing factors': 'Physical geography (Norway hydro, Saudi Arabia oil), geopolitics (import dependency), TNCs, government policy, technology access',
+                'Named examples': 'Germany — HIC transitioning to renewables (Energiewende); Bangladesh — LIC developing solar home systems; France — nuclear regardless of development',
+                'Technology as decoupling factor': 'Falling renewable costs enabling LICs to leapfrog fossil fuels; development level less deterministic than historically',
+                'Conclusion': 'Development is a major influence on energy mix but is not deterministic — physical geography, policy choices, and technology are equally or more important in many cases'
+              }},
+              '13': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'Jet stream influence': 'Controls position of depressions and anticyclones over UK; meanders (Rossby waves) bring prolonged spells of wet/dry/cold/warm weather',
+                'Evidence for importance': 'Summer 2012 — persistent jet stream south of UK caused prolonged wetness; winter 2013-14 floods linked to jet stream position',
+                'Other influences': 'Atlantic Ocean (SSTs, ENSO teleconnections), North Atlantic Oscillation, Arctic Oscillation, synoptic systems (depressions, anticyclones)',
+                'Counter-argument': 'Jet stream itself is driven by temperature gradient between tropics and Arctic — climate change altering this; other teleconnections also significant',
+                'Conclusion': 'Jet stream variations are highly significant for UK weather but work as part of a complex system; other atmospheric and oceanic factors are also important'
+              }},
+              '14': { type: 'levels', levels: [
+                {descriptor:'Level 5', range:[40,45], criteria:'Comprehensive, balanced discussion with sophisticated evaluation. Excellent knowledge and understanding. Multiple named examples with specific data. Well-structured analytical argument throughout. Substantiated conclusion.'},
+                {descriptor:'Level 4', range:[32,39], criteria:'Thorough discussion with clear evaluation. Good range of knowledge and named examples. Logical structure with developed argument. Clear conclusion.'},
+                {descriptor:'Level 3', range:[22,31], criteria:'Clear discussion with some evaluation. Relevant knowledge and some specific examples. Mostly logical structure. Partial conclusion.'},
+                {descriptor:'Level 2', range:[12,21], criteria:'Some relevant discussion with limited evaluation. Some knowledge but limited examples. Partial structure.'},
+                {descriptor:'Level 1', range:[1,11], criteria:'Basic relevant points with little or no evaluation. Limited knowledge. Little structure.'}
+              ], indicative: {
+                'High-pressure hazards': 'Droughts, heatwaves, air pollution episodes (temperature inversions), frost hollows, freezing fog — all associated with anticyclones',
+                'Increasingly difficult to manage': 'Climate change intensifying heatwaves (UK 40C+ 2022); longer drought periods; ageing infrastructure not designed for extremes',
+                'Management approaches': 'Heatwave action plans (NHS), hosepipe bans, drought orders, urban greening to reduce UHI, irrigation restrictions',
+                'Counter-argument': 'Some management has improved (better heatwave warnings since 2003 European heatwave); drought management frameworks more sophisticated',
+                'Conclusion': 'Management is improving but climate change is raising the frequency and severity of high-pressure hazards faster than management capacity is developing'
+              }},
+            },
             questions: [
               { number: 1, scenario: 'Section A — Theme 1: Tectonic Hazards (answer Q1 OR Q2)', parts: [
                 { code: '1', prompt: '\'Most volcanic eruptions pose little risk to life, as it is possible to predict, monitor and warn people of their hazardous impacts.\' Discuss.', marks: 38, extended: true },
