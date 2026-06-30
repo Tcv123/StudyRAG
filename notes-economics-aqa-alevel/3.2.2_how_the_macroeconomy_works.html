@@ -49,46 +49,45 @@
 </div>
 
 <div class="diagram-box">
-<svg width="460" height="340" viewBox="0 0 460 340">
-  <defs>
-    <marker id="aBlk" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto"><polygon points="0,0 8,3 0,6" fill="#1a1a2e"/></marker>
-    <marker id="aGrn" markerWidth="8" markerHeight="6" refX="4" refY="6" orient="auto"><polygon points="0,0 4,6 8,0" fill="#16a34a"/></marker>
-    <marker id="aRed" markerWidth="8" markerHeight="6" refX="4" refY="0" orient="auto"><polygon points="0,6 4,0 8,6" fill="#dc2626"/></marker>
-  </defs>
-
-  <!-- Households -->
-  <rect x="30" y="130" width="130" height="60" rx="10" fill="#2563eb"/>
-  <text x="95" y="165" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Households</text>
-
-  <!-- Firms -->
-  <rect x="300" y="130" width="130" height="60" rx="10" fill="#16a34a"/>
-  <text x="365" y="165" text-anchor="middle" font-size="14" fill="white" font-weight="bold">Firms</text>
-
-  <!-- Top flow: Factor services → -->
-  <path d="M 160,140 Q 230,90 300,140" fill="none" stroke="#1a1a2e" stroke-width="2" marker-end="url(#aBlk)"/>
-  <text x="230" y="85" text-anchor="middle" font-size="11" fill="#1a1a2e" font-weight="600">Factor services (labour, capital)</text>
-
-  <!-- Bottom flow: Goods/services ← -->
-  <path d="M 300,180 Q 230,230 160,180" fill="none" stroke="#1a1a2e" stroke-width="2" marker-end="url(#aBlk)"/>
-  <text x="230" y="245" text-anchor="middle" font-size="11" fill="#1a1a2e" font-weight="600">Goods and services</text>
-
-  <!-- Income flow (dashed, left-pointing) -->
-  <path d="M 295,148 Q 230,115 165,148" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aBlk)"/>
-  <text x="230" y="110" text-anchor="middle" font-size="10" fill="#7c3aed">← Income (wages, rent, interest, profit)</text>
-
-  <!-- Spending flow (dashed, right-pointing) -->
-  <path d="M 165,172 Q 230,205 295,172" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#aBlk)"/>
-  <text x="230" y="218" text-anchor="middle" font-size="10" fill="#7c3aed">Spending (consumption) →</text>
-
-  <!-- INJECTIONS (top) -->
-  <rect x="120" y="10" width="220" height="35" rx="6" fill="#16a34a" fill-opacity="0.1" stroke="#16a34a" stroke-width="1.5"/>
-  <text x="230" y="32" text-anchor="middle" font-size="12" fill="#16a34a" font-weight="700">INJECTIONS: Investment (I) + Gov't Spending (G) + Exports (X)</text>
-  <line x1="230" y1="45" x2="230" y2="80" stroke="#16a34a" stroke-width="2" marker-end="url(#aGrn)"/>
-
-  <!-- WITHDRAWALS (bottom) -->
-  <rect x="120" y="278" width="220" height="35" rx="6" fill="#dc2626" fill-opacity="0.1" stroke="#dc2626" stroke-width="1.5"/>
-  <text x="230" y="300" text-anchor="middle" font-size="12" fill="#dc2626" font-weight="700">WITHDRAWALS: Savings (S) + Tax (T) + Imports (M)</text>
-  <line x1="230" y1="255" x2="230" y2="278" stroke="#dc2626" stroke-width="2" marker-end="url(#aRed)"/>
+<svg viewBox="0 0 520 400" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <!-- Households box -->
+  <rect x="160" y="40" width="200" height="60" rx="6" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+  <text x="260" y="75" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="600">HOUSEHOLDS</text>
+  <!-- Firms box -->
+  <rect x="160" y="300" width="200" height="60" rx="6" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+  <text x="260" y="335" font-size="13" fill="#15803d" text-anchor="middle" font-weight="600">FIRMS</text>
+  <!-- Factor market (left side) arrows -->
+  <!-- Labour/factors flow: households→firms (down left) -->
+  <path d="M160,70 C80,70 80,330 160,330" fill="none" stroke="#374151" stroke-width="2" marker-end="url(#amacro0)"/>
+  <text x="50" y="205" font-size="11" fill="#374151" text-anchor="middle" font-weight="600">Factor</text>
+  <text x="50" y="218" font-size="11" fill="#374151" text-anchor="middle">services</text>
+  <text x="50" y="231" font-size="11" fill="#374151" text-anchor="middle">(labour,</text>
+  <text x="50" y="244" font-size="11" fill="#374151" text-anchor="middle">capital)</text>
+  <!-- Income flow: firms→households (up right) -->
+  <path d="M360,330 C440,330 440,70 360,70" fill="none" stroke="#d97706" stroke-width="2" marker-end="url(#amacro0)"/>
+  <text x="472" y="205" font-size="11" fill="#d97706" text-anchor="middle" font-weight="600">Income</text>
+  <text x="472" y="218" font-size="11" fill="#d97706" text-anchor="middle">(wages,</text>
+  <text x="472" y="231" font-size="11" fill="#d97706" text-anchor="middle">profit,</text>
+  <text x="472" y="244" font-size="11" fill="#d97706" text-anchor="middle">rent)</text>
+  <!-- Product market -->
+  <!-- Goods flow: firms→households (up, middle) -->
+  <path d="M260,300 L260,145" fill="none" stroke="#15803d" stroke-width="1.8" stroke-dasharray="7,4" marker-end="url(#amacro0)"/>
+  <!-- Spending flow: households→firms (down, slightly right) -->
+  <path d="M270,145 L270,300" fill="none" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="7,4" marker-end="url(#amacro0)"/>
+  <text x="215" y="200" font-size="11" fill="#15803d" text-anchor="end">Goods &</text>
+  <text x="215" y="213" font-size="11" fill="#15803d" text-anchor="end">services</text>
+  <text x="285" y="200" font-size="11" fill="#dc2626" text-anchor="start">Spending</text>
+  <text x="285" y="213" font-size="11" fill="#dc2626" text-anchor="start">(C)</text>
+  <!-- Injections -->
+  <rect x="100" y="285" width="55" height="44" rx="4" fill="#dcfce7" stroke="#15803d" stroke-width="1.2"/>
+  <text x="127" y="303" font-size="9" fill="#15803d" text-anchor="middle" font-weight="600">Injections</text>
+  <text x="127" y="314" font-size="9" fill="#15803d" text-anchor="middle">I + G + X</text>
+  <text x="127" y="325" font-size="9" fill="#15803d" text-anchor="middle">↑ income</text>
+  <!-- Withdrawals -->
+  <rect x="365" y="285" width="55" height="44" rx="4" fill="#fef9c3" stroke="#d97706" stroke-width="1.2"/>
+  <text x="392" y="303" font-size="9" fill="#d97706" text-anchor="middle" font-weight="600">Leakages</text>
+  <text x="392" y="314" font-size="9" fill="#d97706" text-anchor="middle">S + T + M</text>
+  <text x="392" y="325" font-size="9" fill="#d97706" text-anchor="middle">↓ income</text>
 </svg>
 <div class="diagram-caption">Figure 1: The circular flow of income with injections (J) and withdrawals (W)</div>
 </div>
@@ -131,17 +130,23 @@
 <p>The AD curve shows the relationship between the <strong>general price level</strong> and the <strong>total quantity of real output demanded</strong>. It slopes downward from left to right.</p>
 
 <div class="diagram-box">
-<svg width="460" height="380" viewBox="0 0 460 380">
-  <line x1="70" y1="320" x2="420" y2="320" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="320" x2="70" y2="40" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,320 410,315 410,325" fill="#1a1a2e"/>
-  <polygon points="70,40 65,50 75,50" fill="#1a1a2e"/>
-  <text x="245" y="358" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Real Output (Y)</text>
-  <text x="24" y="180" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,180)">Price Level (PL)</text>
-
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="amacro1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#amacro1)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#amacro1)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Real Output (Y)</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price Level (PL)</text>
   <!-- AD curve -->
-  <path d="M 100,70 Q 200,160 380,290" stroke="#dc2626" stroke-width="3" fill="none"/>
-  <text x="385" y="290" font-size="14" fill="#dc2626" font-weight="700">AD</text>
+  <line x1="110" y1="60" x2="440" y2="320" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="444" y="320" font-size="13" fill="#7c3aed" text-anchor="start">AD</text>
+  <!-- note on components -->
+  <text x="120" y="105" font-size="12" fill="#374151" text-anchor="start" font-weight="600">AD = C + I + G + (X−M)</text>
+  <text x="120" y="121" font-size="11" fill="#374151" text-anchor="start">↑ C, I, G, X or ↓ M → AD shifts right</text>
+  <text x="120" y="135" font-size="11" fill="#374151" text-anchor="start">↓ C, I, G, X or ↑ M → AD shifts left</text>
 </svg>
 <div class="diagram-caption">Figure 2: The aggregate demand curve slopes downward — a lower price level is associated with higher real output demanded</div>
 </div>
@@ -269,44 +274,42 @@ Russia's invasion of Ukraine in February 2022 caused natural gas prices to spike
 </ol>
 
 <div class="diagram-box">
-<svg width="460" height="400" viewBox="0 0 460 400">
-  <line x1="70" y1="340" x2="420" y2="340" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="340" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,340 410,335 410,345" fill="#1a1a2e"/>
-  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
-  <text x="245" y="378" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Real Output (Y)</text>
-  <text x="24" y="190" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,24,190)">Price Level (PL)</text>
-
-  <!-- SRAS -->
-  <path d="M 90,280 Q 200,230 310,140 Q 370,80 400,45" stroke="#2563eb" stroke-width="2.5" fill="none"/>
-  <text x="405" y="43" font-size="13" fill="#2563eb" font-weight="700">SRAS</text>
-
-  <!-- Classical LRAS (vertical) -->
-  <line x1="330" y1="40" x2="330" y2="335" stroke="#16a34a" stroke-width="3"/>
-  <text x="340" y="45" font-size="13" fill="#16a34a" font-weight="700">LRAS</text>
-  <text x="325" y="358" font-size="12" fill="#16a34a" font-weight="600">Yfe</text>
-
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="amacro2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#amacro2)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#amacro2)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Real Output (Y)</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price Level (PL)</text>
+  <!-- LRAS (vertical) -->
+  <line x1="300" y1="30" x2="300" y2="360" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="304" y="42" font-size="12" fill="#dc2626" text-anchor="start">LRAS</text>
+  <!-- SRAS (upward sloping) -->
+  <line x1="85" y1="310" x2="450" y2="115" stroke="#d97706" stroke-width="2.5"/>
+  <text x="454" y="115" font-size="12" fill="#d97706" text-anchor="start">SRAS</text>
   <!-- AD1 -->
-  <path d="M 110,80 Q 210,170 370,300" stroke="#dc2626" stroke-width="2.5" fill="none"/>
-  <text x="375" y="300" font-size="13" fill="#dc2626" font-weight="700">AD₁</text>
-
+  <line x1="85" y1="75" x2="450" y2="330" stroke="#7c3aed" stroke-width="2.5" stroke-dasharray="7,4"/>
+  <text x="454" y="330" font-size="12" fill="#7c3aed" text-anchor="start">AD₁</text>
   <!-- AD2 (shifted right) -->
-  <path d="M 170,70 Q 270,155 410,280" stroke="#dc2626" stroke-width="2" fill="none" stroke-dasharray="8,4"/>
-  <text x="413" y="278" font-size="13" fill="#dc2626" font-weight="600">AD₂</text>
-
-  <!-- Equilibrium E1 -->
-  <circle cx="250" cy="195" r="5" fill="#374151"/>
-  <text x="235" y="188" font-size="12" fill="#374151" font-weight="600">E₁</text>
-
-  <!-- Equilibrium E2 -->
-  <circle cx="305" cy="150" r="5" fill="#374151"/>
-  <text x="290" y="143" font-size="12" fill="#374151" font-weight="600">E₂</text>
-
-  <!-- Price level lines -->
-  <line x1="70" y1="195" x2="250" y2="195" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="55" y="199" font-size="11" fill="#374151">PL₁</text>
-  <line x1="70" y1="150" x2="305" y2="150" stroke="#94a3b8" stroke-width="1" stroke-dasharray="4,3"/>
-  <text x="55" y="154" font-size="11" fill="#374151">PL₂</text>
+  <line x1="145" y1="75" x2="490" y2="300" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="480" y="295" font-size="12" fill="#7c3aed" text-anchor="start">AD₂</text>
+  <!-- E1 equilibrium -->
+  <circle cx="278" cy="212" r="5" fill="#1e293b"/>
+  <text x="256" y="207" font-size="12" fill="#1e293b" text-anchor="end">E₁</text>
+  <line x1="60" y1="278" x2="212" y2="212" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="278" y1="212" x2="278" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="216" font-size="11" fill="#94a3b8" text-anchor="end">PL₁</text>
+  <text x="275" y="378" font-size="12" fill="#dc2626" text-anchor="middle">Yfe</text>
+  <!-- Short-run E2 after AD shift: AD2/SRAS: 310-0.507*(x-85)=75+0.685*(x-85)+60 → approx x=320 -->
+  <circle cx="320" cy="172" r="5" fill="#d97706"/>
+  <text x="325" y="168" font-size="12" fill="#d97706" text-anchor="start">E₂</text>
+  <line x1="60" y1="320" x2="172" y2="172" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="176" font-size="11" fill="#94a3b8" text-anchor="end">PL₂</text>
+  <!-- AD shift arrow -->
+  <path d="M310,195 L350,195" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#amacro2)"/>
 </svg>
 <div class="diagram-caption">Figure 3: The AD/AS model with Classical (vertical) LRAS. An increase in AD from AD₁ to AD₂ causes both output and the price level to rise in the short run.</div>
 </div>

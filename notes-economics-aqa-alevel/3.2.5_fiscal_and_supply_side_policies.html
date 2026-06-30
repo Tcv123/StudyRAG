@@ -236,53 +236,47 @@
 </ul>
 
 <div class="diagram-box">
-<svg width="500" height="340" viewBox="0 0 500 340">
-  <!-- Axes -->
-  <line x1="70" y1="280" x2="460" y2="280" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="280" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
   <defs>
-    <marker id="arr1" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#1a1a2e"/></marker>
-    <marker id="arrGreen" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#555"/></marker>
+    <marker id="apol0" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
   </defs>
-  <line x1="460" y1="280" x2="460" y2="280" stroke="#1a1a2e" stroke-width="2" marker-end="url(#arr1)"/>
-  <polygon points="460,280 450,275 450,285" fill="#1a1a2e"/>
-  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
-  <text x="270" y="310" text-anchor="middle" font-size="13" fill="#1a1a2e">Real GDP (Y)</text>
-  <text x="22" y="155" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,22,155)">Price Level (PL)</text>
-
-  <!-- SRAS curve -->
-  <path d="M 100,240 Q 200,200 300,140 Q 370,90 420,50" stroke="#f59e0b" stroke-width="2.5" fill="none"/>
-  <text x="425" y="50" font-size="12" fill="#f59e0b" font-weight="bold">SRAS</text>
-
-  <!-- AD1 -->
-  <path d="M 120,60 Q 200,140 350,260" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
-  <text x="355" y="265" font-size="12" fill="#1a73e8" font-weight="bold">AD1</text>
-
-  <!-- AD2 (shifted right — expansionary) -->
-  <path d="M 180,60 Q 260,140 410,260" stroke="#22c55e" stroke-width="2.5" fill="none"/>
-  <text x="415" y="258" font-size="12" fill="#22c55e" font-weight="bold">AD2</text>
-
-  <!-- Shift arrow -->
-  <line x1="240" y1="155" x2="300" y2="155" stroke="#555" stroke-width="1.5" marker-end="url(#arrGreen)"/>
-  <text x="245" y="145" font-size="10" fill="#555">Expansionary</text>
-  <text x="245" y="170" font-size="10" fill="#555">fiscal policy</text>
-
-  <!-- Equilibria dashed lines -->
-  <!-- E1: intersection of AD1 and SRAS approx (250, 165) -->
-  <circle cx="250" cy="165" r="4" fill="#1a73e8"/>
-  <text x="240" y="158" font-size="11" fill="#1a73e8" font-weight="bold">E1</text>
-  <line x1="250" y1="165" x2="250" y2="280" stroke="#1a73e8" stroke-width="1" stroke-dasharray="5,4"/>
-  <line x1="70" y1="165" x2="250" y2="165" stroke="#1a73e8" stroke-width="1" stroke-dasharray="5,4"/>
-  <text x="245" y="295" font-size="10" fill="#1a73e8">Y1</text>
-  <text x="50" y="168" font-size="10" fill="#1a73e8">PL1</text>
-
-  <!-- E2: intersection of AD2 and SRAS approx (320, 120) -->
-  <circle cx="320" cy="120" r="4" fill="#22c55e"/>
-  <text x="325" y="115" font-size="11" fill="#22c55e" font-weight="bold">E2</text>
-  <line x1="320" y1="120" x2="320" y2="280" stroke="#22c55e" stroke-width="1" stroke-dasharray="5,4"/>
-  <line x1="70" y1="120" x2="320" y2="120" stroke="#22c55e" stroke-width="1" stroke-dasharray="5,4"/>
-  <text x="315" y="295" font-size="10" fill="#22c55e">Y2</text>
-  <text x="50" y="123" font-size="10" fill="#22c55e">PL2</text>
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#apol0)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#apol0)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Real GDP (Y)</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price Level (PL)</text>
+  <!-- LRAS -->
+  <line x1="340" y1="30" x2="340" y2="360" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="344" y="42" font-size="12" fill="#dc2626" text-anchor="start">LRAS</text>
+  <!-- SRAS -->
+  <line x1="85" y1="320" x2="450" y2="100" stroke="#d97706" stroke-width="2.5"/>
+  <text x="454" y="100" font-size="12" fill="#d97706" text-anchor="start">SRAS</text>
+  <!-- AD1 (original) -->
+  <line x1="85" y1="80" x2="400" y2="315" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="404" y="315" font-size="12" fill="#7c3aed" text-anchor="start">AD₁</text>
+  <!-- AD2 (shifted right by fiscal expansion) -->
+  <line x1="150" y1="80" x2="460" y2="290" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="464" y="290" font-size="12" fill="#7c3aed" text-anchor="start">AD₂</text>
+  <!-- E1 at SRAS/AD1 -->
+  <circle cx="258" cy="202" r="5" fill="#94a3b8"/>
+  <text x="240" y="199" font-size="12" fill="#94a3b8" text-anchor="end">E₁</text>
+  <line x1="60" y1="258" x2="202" y2="202" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="258" y1="202" x2="258" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="206" font-size="11" fill="#94a3b8" text-anchor="end">PL₁</text>
+  <text x="255" y="378" font-size="11" fill="#94a3b8" text-anchor="middle">Y₁</text>
+  <!-- E2 at SRAS/AD2 -->
+  <circle cx="300" cy="170" r="5" fill="#7c3aed"/>
+  <text x="305" y="166" font-size="12" fill="#7c3aed" text-anchor="start">E₂</text>
+  <line x1="60" y1="300" x2="170" y2="170" stroke="#7c3aed" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="300" y1="170" x2="300" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="174" font-size="11" fill="#7c3aed" text-anchor="end">PL₂</text>
+  <text x="297" y="378" font-size="11" fill="#7c3aed" text-anchor="middle">Y₂</text>
+  <!-- AD shift arrow -->
+  <path d="M295,240 L335,240" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#apol0)"/>
+  <text x="120" y="100" font-size="11" fill="#374151" text-anchor="start" font-weight="600">Expansionary fiscal policy:</text>
+  <text x="120" y="113" font-size="11" fill="#374151" text-anchor="start">↑ G or ↓ T → AD shifts right</text>
+  <text x="120" y="126" font-size="11" fill="#374151" text-anchor="start">→ ↑ Y and ↑ PL (short run)</text>
 </svg>
 <div class="diagram-caption">Figure 1: Expansionary fiscal policy shifts AD from AD1 to AD2, increasing real GDP from Y1 to Y2 but raising the price level from PL1 to PL2</div>
 </div>
@@ -402,50 +396,34 @@ The UK government's Coronavirus Job Retention Scheme (furlough) paid 80% of empl
 </div>
 
 <div class="diagram-box">
-<svg width="460" height="320" viewBox="0 0 460 320">
-  <!-- Axes -->
-  <line x1="60" y1="270" x2="420" y2="270" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="60" y1="270" x2="60" y2="30" stroke="#1a1a2e" stroke-width="2"/>
-  <polygon points="420,270 410,265 410,275" fill="#1a1a2e"/>
-  <polygon points="60,30 55,40 65,40" fill="#1a1a2e"/>
-  <text x="240" y="300" text-anchor="middle" font-size="13" fill="#1a1a2e">Tax Rate (%)</text>
-  <text x="20" y="150" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,20,150)">Tax Revenue (&pound;)</text>
-
-  <!-- 0% and 100% labels -->
-  <text x="65" y="286" font-size="11" fill="#555">0%</text>
-  <text x="405" y="286" font-size="11" fill="#555">100%</text>
-
-  <!-- Laffer curve -->
-  <path d="M 65,268 Q 140,160 240,68 Q 340,160 415,268" stroke="#1a73e8" stroke-width="3" fill="none"/>
-
-  <!-- Revenue-maximising point -->
-  <circle cx="240" cy="68" r="5" fill="#ef4444"/>
-  <line x1="240" y1="68" x2="240" y2="270" stroke="#ef4444" stroke-width="1" stroke-dasharray="5,4"/>
-  <line x1="60" y1="68" x2="240" y2="68" stroke="#ef4444" stroke-width="1" stroke-dasharray="5,4"/>
-  <text x="248" y="55" font-size="11" fill="#ef4444" font-weight="bold">Revenue-maximising rate (t*)</text>
-  <text x="40" y="62" font-size="10" fill="#ef4444">R*</text>
-
-  <!-- Shaded regions labels -->
-  <text x="135" y="185" font-size="11" fill="#22c55e" font-weight="600">Normal</text>
-  <text x="135" y="200" font-size="11" fill="#22c55e" font-weight="600">range</text>
-  <text x="310" y="185" font-size="11" fill="#f59e0b" font-weight="600">Prohibitive</text>
-  <text x="310" y="200" font-size="11" fill="#f59e0b" font-weight="600">range</text>
-
-  <!-- Arrows -->
-  <text x="105" y="225" font-size="10" fill="#22c55e">Higher rate =</text>
-  <text x="105" y="238" font-size="10" fill="#22c55e">more revenue</text>
-  <text x="300" y="225" font-size="10" fill="#f59e0b">Higher rate =</text>
-  <text x="300" y="238" font-size="10" fill="#f59e0b">LESS revenue</text>
-
-  <!-- Points A and B -->
-  <circle cx="160" cy="140" r="4" fill="#22c55e"/>
-  <text x="150" y="133" font-size="11" fill="#22c55e" font-weight="bold">A</text>
-  <circle cx="340" cy="160" r="4" fill="#f59e0b"/>
-  <text x="345" y="155" font-size="11" fill="#f59e0b" font-weight="bold">B</text>
-
-  <!-- Horizontal dashed line connecting A and B to show same revenue -->
-  <line x1="60" y1="150" x2="160" y2="140" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
-  <line x1="60" y1="150" x2="340" y2="160" stroke="#94a3b8" stroke-width="1" stroke-dasharray="3,3"/>
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
+  <defs>
+    <marker id="apol1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
+  </defs>
+  <line x1="60" y1="370" x2="490" y2="370" stroke="#374151" stroke-width="2" marker-end="url(#apol1)"/>
+  <line x1="60" y1="370" x2="60" y2="25" stroke="#374151" stroke-width="2" marker-end="url(#apol1)"/>
+  <text x="275" y="408" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Tax Rate (%)</text>
+  <text x="16" y="200" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,200)">Tax Revenue (£)</text>
+  <!-- Laffer curve (inverted U) -->
+  <path d="M60,370 Q270,60 480,370" fill="none" stroke="#dc2626" stroke-width="3"/>
+  <!-- peak at t* -->
+  <line x1="270" y1="65" x2="270" y2="370" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <circle cx="270" cy="65" r="6" fill="#dc2626"/>
+  <text x="274" y="62" font-size="12" fill="#dc2626" text-anchor="start">Peak revenue R*</text>
+  <text x="266" y="388" font-size="12" fill="#374151" text-anchor="middle">t* (optimal rate)</text>
+  <!-- 0% and 100% marks -->
+  <text x="65" y="388" font-size="12" fill="#374151" text-anchor="start">0%</text>
+  <text x="478" y="388" font-size="12" fill="#374151" text-anchor="end">100%</text>
+  <!-- zones -->
+  <text x="130" y="250" font-size="11" fill="#374151" text-anchor="start" font-weight="600">Normal range:</text>
+  <text x="130" y="263" font-size="11" fill="#374151" text-anchor="start">↑ tax rate →</text>
+  <text x="130" y="276" font-size="11" fill="#374151" text-anchor="start">↑ revenue</text>
+  <text x="340" y="250" font-size="11" fill="#374151" text-anchor="start" font-weight="600">Prohibitive range:</text>
+  <text x="340" y="263" font-size="11" fill="#374151" text-anchor="start">↑ tax rate →</text>
+  <text x="340" y="276" font-size="11" fill="#374151" text-anchor="start">↓ revenue</text>
+  <text x="340" y="289" font-size="11" fill="#374151" text-anchor="start">(reduced incentive)</text>
 </svg>
 <div class="diagram-caption">Figure 2: The Laffer Curve — at 0% and 100% tax rates, revenue is zero. Points A and B may generate similar revenue despite very different tax rates. Beyond t*, rate increases are counterproductive.</div>
 </div>
@@ -502,42 +480,48 @@ President Reagan cut the top US income tax rate from 70% to 50% (and later to 28
 </ol>
 
 <div class="diagram-box">
-<svg width="500" height="340" viewBox="0 0 500 340">
-  <!-- Axes -->
-  <line x1="70" y1="280" x2="460" y2="280" stroke="#1a1a2e" stroke-width="2"/>
-  <line x1="70" y1="280" x2="70" y2="30" stroke="#1a1a2e" stroke-width="2"/>
+<svg viewBox="0 0 520 415" xmlns="http://www.w3.org/2000/svg" width="520" style="max-width:100%;background:#fff;border-radius:6px" font-family="system-ui,-apple-system,sans-serif">
   <defs>
-    <marker id="arrShift2" markerWidth="8" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#555"/></marker>
+    <marker id="apol2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L8,3 L0,6 z" fill="#374151"/>
+    </marker>
   </defs>
-  <polygon points="460,280 450,275 450,285" fill="#1a1a2e"/>
-  <polygon points="70,30 65,40 75,40" fill="#1a1a2e"/>
-  <text x="270" y="310" text-anchor="middle" font-size="13" fill="#1a1a2e">Real Output (Y)</text>
-  <text x="22" y="155" text-anchor="middle" font-size="13" fill="#1a1a2e" transform="rotate(-90,22,155)">Price Level</text>
-
-  <!-- AD curve -->
-  <path d="M 130,70 Q 220,150 360,260" stroke="#ef4444" stroke-width="2.5" fill="none"/>
-  <text x="365" y="260" font-size="12" fill="#ef4444" font-weight="bold">AD</text>
-
-  <!-- SRAS (upward sloping) -->
-  <path d="M 100,240 Q 200,190 300,130 Q 370,85 420,50" stroke="#f59e0b" stroke-width="2" fill="none"/>
-  <text x="425" y="48" font-size="12" fill="#f59e0b" font-weight="bold">SRAS</text>
-
-  <!-- LRAS1 (classical vertical) -->
-  <line x1="270" y1="45" x2="270" y2="275" stroke="#1a73e8" stroke-width="2.5"/>
-  <text x="255" y="40" font-size="12" fill="#1a73e8" font-weight="bold">LRAS<tspan font-size="9" dy="3">1</tspan></text>
-
+  <line x1="60" y1="360" x2="490" y2="360" stroke="#374151" stroke-width="2" marker-end="url(#apol2)"/>
+  <line x1="60" y1="360" x2="60" y2="15" stroke="#374151" stroke-width="2" marker-end="url(#apol2)"/>
+  <text x="275" y="398" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif">Real Output (Y)</text>
+  <text x="16" y="190" font-size="13" fill="#1e293b" text-anchor="middle" font-weight="600" font-family="system-ui,-apple-system,sans-serif" transform="rotate(-90,16,190)">Price Level (PL)</text>
+  <!-- LRAS1 -->
+  <line x1="240" y1="30" x2="240" y2="360" stroke="#dc2626" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="220" y="42" font-size="12" fill="#dc2626" text-anchor="end">LRAS₁</text>
   <!-- LRAS2 (shifted right) -->
-  <line x1="360" y1="45" x2="360" y2="275" stroke="#22c55e" stroke-width="2.5"/>
-  <text x="345" y="40" font-size="12" fill="#22c55e" font-weight="bold">LRAS<tspan font-size="9" dy="3">2</tspan></text>
-
-  <!-- Arrow showing shift -->
-  <line x1="288" y1="140" x2="342" y2="140" stroke="#555" stroke-width="2" marker-end="url(#arrShift2)"/>
-  <text x="290" y="128" font-size="10" fill="#555">Supply-side</text>
-  <text x="290" y="155" font-size="10" fill="#555">improvement</text>
-
-  <!-- Labels for Y -->
-  <text x="262" y="295" font-size="11" fill="#1a73e8">Y<tspan font-size="8" dy="2">1</tspan></text>
-  <text x="352" y="295" font-size="11" fill="#22c55e">Y<tspan font-size="8" dy="2">2</tspan></text>
+  <line x1="380" y1="30" x2="380" y2="360" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="384" y="42" font-size="12" fill="#dc2626" text-anchor="start">LRAS₂</text>
+  <!-- SRAS1 -->
+  <line x1="85" y1="320" x2="390" y2="110" stroke="#d97706" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="85" y="115" font-size="12" fill="#d97706" text-anchor="start">SRAS₁</text>
+  <!-- SRAS2 (shifted right) -->
+  <line x1="160" y1="320" x2="460" y2="110" stroke="#d97706" stroke-width="2.5"/>
+  <text x="460" y="115" font-size="12" fill="#d97706" text-anchor="start">SRAS₂</text>
+  <!-- AD -->
+  <line x1="85" y1="75" x2="450" y2="320" stroke="#7c3aed" stroke-width="2.5"/>
+  <text x="454" y="320" font-size="12" fill="#7c3aed" text-anchor="start">AD</text>
+  <!-- E1 (old equilibrium at LRAS1) -->
+  <circle cx="240" cy="186" r="5" fill="#94a3b8"/>
+  <text x="222" y="183" font-size="12" fill="#94a3b8" text-anchor="end">E₁</text>
+  <line x1="60" y1="240" x2="186" y2="186" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="190" font-size="11" fill="#94a3b8" text-anchor="end">PL₁</text>
+  <text x="236" y="378" font-size="11" fill="#94a3b8" text-anchor="middle">Y₁</text>
+  <!-- E2 at LRAS2/AD intersection -->
+  <circle cx="380" cy="281" r="5" fill="#1e293b"/>
+  <text x="385" y="277" font-size="12" fill="#1e293b" text-anchor="start">E₂</text>
+  <line x1="60" y1="380" x2="281" y2="281" stroke="#1e293b" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="285" font-size="11" fill="#1e293b" text-anchor="end">PL₂</text>
+  <text x="376" y="378" font-size="11" fill="#1e293b" text-anchor="middle">Y₂</text>
+  <!-- shift arrow -->
+  <path d="M260,100 L360,100" fill="none" stroke="#dc2626" stroke-width="1.8" marker-end="url(#apol2)"/>
+  <text x="120" y="100" font-size="11" fill="#374151" text-anchor="start" font-weight="600">Supply-side improvement:</text>
+  <text x="120" y="113" font-size="11" fill="#374151" text-anchor="start">↑ Productive capacity → LRAS right</text>
+  <text x="120" y="126" font-size="11" fill="#374151" text-anchor="start">↑ Y and ↓ PL (sustainable growth)</text>
 </svg>
 <div class="diagram-caption">Figure 3: Successful supply-side policies shift LRAS from LRAS<sub>1</sub> to LRAS<sub>2</sub>, increasing the economy's productive potential from Y<sub>1</sub> to Y<sub>2</sub> and enabling non-inflationary growth</div>
 </div>
