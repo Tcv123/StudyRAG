@@ -296,18 +296,22 @@ Russia's invasion of Ukraine in February 2022 caused natural gas prices to spike
   <!-- AD2 (shifted right) -->
   <line x1="145" y1="75" x2="490" y2="300" stroke="#7c3aed" stroke-width="2.5"/>
   <text x="480" y="295" font-size="12" fill="#7c3aed" text-anchor="start">AD₂</text>
-  <!-- E1 equilibrium -->
-  <circle cx="278" cy="212" r="5" fill="#1e293b"/>
-  <text x="256" y="207" font-size="12" fill="#1e293b" text-anchor="end">E₁</text>
-  <line x1="60" y1="278" x2="212" y2="212" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
-  <line x1="278" y1="212" x2="278" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
-  <text x="52" y="216" font-size="11" fill="#94a3b8" text-anchor="end">PL₁</text>
-  <text x="275" y="378" font-size="12" fill="#dc2626" text-anchor="middle">Yfe</text>
-  <!-- Short-run E2 after AD shift: AD2/SRAS: 310-0.507*(x-85)=75+0.685*(x-85)+60 → approx x=320 -->
-  <circle cx="320" cy="172" r="5" fill="#d97706"/>
-  <text x="325" y="168" font-size="12" fill="#d97706" text-anchor="start">E₂</text>
-  <line x1="60" y1="320" x2="172" y2="172" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
-  <text x="52" y="176" font-size="11" fill="#94a3b8" text-anchor="end">PL₂</text>
+  <!-- E1 equilibrium: SRAS∩AD1 at x=276, y=208 -->
+  <circle cx="276" cy="208" r="5" fill="#1e293b"/>
+  <text x="254" y="203" font-size="12" fill="#1e293b" text-anchor="end">E₁</text>
+  <line x1="60" y1="208" x2="276" y2="208" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="276" y1="208" x2="276" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="212" font-size="11" fill="#94a3b8" text-anchor="end">PL₁</text>
+  <text x="276" y="378" font-size="12" fill="#1e293b" text-anchor="middle">Y₁</text>
+  <!-- Yfe label at LRAS (x=300) -->
+  <text x="300" y="378" font-size="12" fill="#dc2626" text-anchor="middle">Yfe</text>
+  <!-- E2: SRAS∩AD2 at x=316, y=187 -->
+  <circle cx="316" cy="187" r="5" fill="#d97706"/>
+  <text x="321" y="183" font-size="12" fill="#d97706" text-anchor="start">E₂</text>
+  <line x1="60" y1="187" x2="316" y2="187" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <line x1="316" y1="187" x2="316" y2="360" stroke="#94a3b8" stroke-width="1.2" stroke-dasharray="5,4"/>
+  <text x="52" y="191" font-size="11" fill="#94a3b8" text-anchor="end">PL₂</text>
+  <text x="316" y="378" font-size="12" fill="#d97706" text-anchor="middle">Y₂</text>
   <!-- AD shift arrow -->
   <path d="M310,195 L350,195" fill="none" stroke="#7c3aed" stroke-width="1.8" marker-end="url(#amacro2)"/>
 </svg>
