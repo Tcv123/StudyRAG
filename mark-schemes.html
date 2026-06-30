@@ -391,7 +391,8 @@ function renderMsCard(part, paperKey, paperId) {
        ((window.FM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.PHYSICS_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
        ((window.BIO_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
-       ((window.CHEM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
+       ((window.CHEM_MODEL_ANSWERS || {})[paperId + '::' + partCode]) ||
+       ((window.ECON_MODEL_ANSWERS || {})[paperId + '::' + partCode]) || '')
     : '';
   const modelAns   = preWritten || getModelAnswer(paperKey, partCode);
   const officialPts = (ms && msType === 'points') ? (ms.points || []) : [];
@@ -470,14 +471,20 @@ function renderMsCard(part, paperKey, paperId) {
   // ── Model answer with key terms highlighted inline ──
   const hasAns = !!modelAns.trim();
   let modelAnswerDisplay = '';
-  if (hasAns && kws.length) {
+  const modelAnsIsHtml = hasAns && /<[a-z][\s\S]*>/i.test(modelAns);
+  if (hasAns && kws.length && !modelAnsIsHtml) {
     // Highlight each keyword inside the model answer text
     const escaped = esc(modelAns);
     const safeParts = kws.filter(k => k.length >= 4).map(k => k.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'));
     if (safeParts.length) {
       const pattern = new RegExp('\\b(' + safeParts.join('|') + ')\\b', 'gi');
       modelAnswerDisplay = escaped.replace(pattern, '<mark class="kw-highlight">$1</mark>');
+    } else {
+      modelAnswerDisplay = escaped;
     }
+  } else if (hasAns && modelAnsIsHtml) {
+    // HTML/SVG model answer — render as-is (economics diagrams, formatted answers)
+    modelAnswerDisplay = modelAns;
   } else if (hasAns) {
     modelAnswerDisplay = esc(modelAns);
   }
@@ -802,6 +809,7 @@ function buildPicker(userSubs) {
     ['PHYSICS_MODEL_ANSWERS', 'model-answers-physics.js'],
     ['BIO_MODEL_ANSWERS', 'model-answers-biology.js'],
     ['CHEM_MODEL_ANSWERS', 'model-answers-chemistry.js'],
+    ['ECON_MODEL_ANSWERS', 'model-answers-economics.js'],
   ].map(([flag, src]) => window[flag] ? Promise.resolve() : new Promise((resolve) => {
     const s = document.createElement('script');
     s.src = src;
