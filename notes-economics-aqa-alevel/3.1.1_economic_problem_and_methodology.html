@@ -152,30 +152,30 @@ The HS2 high-speed rail project was originally budgeted at £37 billion but cost
   <text x="235" y="340" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Consumer Goods</text>
   <text x="22" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,22,170)">Capital Goods</text>
 
-  <!-- PPF Curve — clean quarter-circle arc -->
-  <path d="M 70,60 Q 75,290 380,300" stroke="#1a73e8" stroke-width="3" fill="none"/>
+  <!-- PPF Curve — true quarter-circle arc centred at axis origin (70,300) r=240 -->
+  <path d="M 70,60 A 240,240 0 0 1 310,300" stroke="#1a73e8" stroke-width="3" fill="none"/>
 
   <!-- Shaded area inside PPF -->
-  <path d="M 70,60 Q 75,290 380,300 L 70,300 Z" fill="#1a73e8" fill-opacity="0.04"/>
+  <path d="M 70,60 A 240,240 0 0 1 310,300 L 70,300 Z" fill="#1a73e8" fill-opacity="0.04"/>
 
-  <!-- PPF label -->
-  <text x="260" y="225" font-size="14" fill="#1a73e8" font-weight="bold" transform="rotate(-38,260,225)">PPF</text>
+  <!-- PPF label (near arc midpoint at 45°: ~240,130) -->
+  <text x="238" y="132" font-size="14" fill="#1a73e8" font-weight="bold" transform="rotate(-45,238,132)">PPF</text>
 
-  <!-- Point A — on the curve (efficient) -->
-  <circle cx="150" cy="115" r="6" fill="#22c55e"/>
-  <text x="162" y="108" font-size="13" font-weight="600" fill="#22c55e">A (efficient)</text>
+  <!-- Point A — on the curve at angle 70° (152, 74) -->
+  <circle cx="152" cy="74" r="6" fill="#22c55e"/>
+  <text x="164" y="67" font-size="13" font-weight="600" fill="#22c55e">A (efficient)</text>
 
-  <!-- Point B — inside the curve (inefficient) -->
+  <!-- Point B — inside the curve (dist=120 < 240 ✓) -->
   <circle cx="160" cy="220" r="6" fill="#f59e0b"/>
   <text x="172" y="225" font-size="13" font-weight="600" fill="#f59e0b">B (inefficient)</text>
 
-  <!-- Point C — outside the curve (unattainable) -->
+  <!-- Point C — outside the curve (dist=306 > 240 ✓) -->
   <circle cx="310" cy="110" r="6" fill="#ef4444"/>
   <text x="322" y="105" font-size="13" font-weight="600" fill="#ef4444">C (unattainable)</text>
 
   <!-- Axis intercept labels -->
   <text x="55" y="58" font-size="12" fill="#64748b" text-anchor="end">Max</text>
-  <text x="382" y="318" font-size="12" fill="#64748b" text-anchor="middle">Max</text>
+  <text x="314" y="318" font-size="12" fill="#64748b" text-anchor="middle">Max</text>
 </svg>
 <div class="diagram-caption">Figure 1: The Production Possibility Frontier — the curved boundary shows all efficient combinations of two goods</div>
 </div>
@@ -205,13 +205,13 @@ The HS2 high-speed rail project was originally budgeted at £37 billion but cost
   <text x="235" y="340" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Consumer Goods</text>
   <text x="22" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,22,170)">Capital Goods</text>
 
-  <!-- Original PPF -->
-  <path d="M 70,80 Q 75,275 340,300" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
-  <text x="220" y="215" font-size="13" fill="#1a73e8" font-weight="600" transform="rotate(-40,220,215)">PPF₁</text>
+  <!-- Original PPF — arc centred at (70,300) r=220 -->
+  <path d="M 70,80 A 220,220 0 0 1 290,300" stroke="#1a73e8" stroke-width="2.5" fill="none"/>
+  <text x="202" y="204" font-size="13" fill="#1a73e8" font-weight="600" transform="rotate(-45,202,204)">PPF₁</text>
 
-  <!-- Shifted PPF (outward — economic growth) -->
-  <path d="M 70,50 Q 80,280 390,300" stroke="#22c55e" stroke-width="2.5" fill="none" stroke-dasharray="8,4"/>
-  <text x="280" y="195" font-size="13" fill="#22c55e" font-weight="600" transform="rotate(-35,280,195)">PPF₂</text>
+  <!-- Shifted PPF outward — arc centred at (70,300) r=250 -->
+  <path d="M 70,50 A 250,250 0 0 1 320,300" stroke="#22c55e" stroke-width="2.5" fill="none" stroke-dasharray="8,4"/>
+  <text x="253" y="178" font-size="13" fill="#22c55e" font-weight="600" transform="rotate(-45,253,178)">PPF₂</text>
 
   <!-- Arrow showing shift -->
   <line x1="210" y1="185" x2="260" y2="165" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrowGrey)"/>
@@ -301,28 +301,29 @@ In the 1960s, South Korea and Ghana had similar GDP per capita (around $155). So
   <text x="235" y="340" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e">Healthcare</text>
   <text x="22" y="170" text-anchor="middle" font-size="14" font-weight="600" fill="#1a1a2e" transform="rotate(-90,22,170)">Defence</text>
 
-  <!-- PPF Curve -->
-  <path d="M 70,60 Q 75,290 380,300" stroke="#1a73e8" stroke-width="3" fill="none"/>
+  <!-- PPF Curve — arc centred at (70,300) r=240 -->
+  <path d="M 70,60 A 240,240 0 0 1 310,300" stroke="#1a73e8" stroke-width="3" fill="none"/>
 
-  <!-- Point X -->
-  <circle cx="130" cy="98" r="6" fill="#2563eb"/>
-  <text x="142" y="93" font-size="13" font-weight="600" fill="#2563eb">X</text>
+  <!-- Point X on arc at x=130, y=68 -->
+  <circle cx="130" cy="68" r="6" fill="#2563eb"/>
+  <text x="142" y="63" font-size="13" font-weight="600" fill="#2563eb">X</text>
 
-  <!-- Point Y -->
-  <circle cx="260" cy="210" r="6" fill="#dc2626"/>
-  <text x="272" y="205" font-size="13" font-weight="600" fill="#dc2626">Y</text>
+  <!-- Point Y on arc at x=260, y=153 -->
+  <circle cx="260" cy="153" r="6" fill="#dc2626"/>
+  <text x="272" y="148" font-size="13" font-weight="600" fill="#dc2626">Y</text>
 
   <!-- Dashed lines showing trade-off -->
-  <line x1="130" y1="98" x2="130" y2="300" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,4"/>
-  <line x1="130" y1="98" x2="70" y2="98" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,4"/>
-  <line x1="260" y1="210" x2="260" y2="300" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,4"/>
-  <line x1="260" y1="210" x2="70" y2="210" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="70" y1="68" x2="130" y2="68" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="130" y1="68" x2="130" y2="300" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="70" y1="153" x2="260" y2="153" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="260" y1="153" x2="260" y2="300" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,4"/>
 
-  <!-- Arrow along PPF -->
-  <path d="M 140,105 Q 190,140 250,205" stroke="#64748b" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowGrey)"/>
-  <text x="205" y="145" font-size="11" fill="#64748b">Moving from X to Y:</text>
-  <text x="205" y="160" font-size="11" fill="#64748b">More healthcare,</text>
-  <text x="205" y="175" font-size="11" fill="#64748b">less defence</text>
+  <!-- Arrow along PPF from X to Y -->
+  <path d="M 138,75 Q 190,100 253,148" stroke="#64748b" stroke-width="1.5" fill="none" stroke-dasharray="4,3" marker-end="url(#arrowGrey)"/>
+  <rect x="163" y="100" width="120" height="45" fill="white" fill-opacity="0.85" rx="2"/>
+  <text x="223" y="113" font-size="11" fill="#64748b" text-anchor="middle">Moving from X to Y:</text>
+  <text x="223" y="127" font-size="11" fill="#64748b" text-anchor="middle">More healthcare,</text>
+  <text x="223" y="141" font-size="11" fill="#64748b" text-anchor="middle">less defence</text>
 </svg>
 <div class="diagram-caption">Figure 3: Moving along the PPF from X to Y — the opportunity cost of more healthcare is the defence spending given up</div>
 </div>
