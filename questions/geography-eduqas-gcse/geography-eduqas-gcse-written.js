@@ -14,12 +14,14 @@ const GEOGRAPHY_EDUQAS_WRITTEN = {
       {
         q: 'State two processes of coastal erosion.',
         marks: 2, tier: 'green',
-        modelAnswer: `• Hydraulic action — the force of waves compressing air into cracks in rocks, breaking them apart (1).\n• Abrasion — waves hurl sediment against the cliff face, wearing it away like sandpaper (1).\n(Also accept: attrition — rocks colliding and becoming smaller and rounder; corrosion/solution — weak acids in seawater dissolving rock such as limestone.)`
+        modelAnswer: `• Hydraulic action — the force of waves compressing air into cracks in rocks, breaking them apart (1).\n• Abrasion — waves hurl sediment against the cliff face, wearing it away like sandpaper (1).\n(Also accept: attrition — rocks colliding and becoming smaller and rounder; corrosion/solution — weak acids in seawater dissolving rock such as limestone.)`,
+        marks_scheme: '1 mark: hydraulic action — force of waves compressing air into cracks. 1 mark: abrasion — waves hurling sediment against cliff face.'
       },
       {
         q: 'Identify two landforms created by coastal deposition.',
         marks: 2, tier: 'green',
-        modelAnswer: `• Beach — an accumulation of sand or shingle deposited between the low-tide and high-tide marks (1).\n• Spit — a long narrow ridge of sand or shingle extending from the coast, formed where longshore drift continues past a change in the coastline direction (1).\n(Also accept: bar, tombolo, sand dune system.)`
+        modelAnswer: `• Beach — an accumulation of sand or shingle deposited between the low-tide and high-tide marks (1).\n• Spit — a long narrow ridge of sand or shingle extending from the coast, formed where longshore drift continues past a change in the coastline direction (1).\n(Also accept: bar, tombolo, sand dune system.)`,
+        marks_scheme: '1 mark: beach — accumulation of sand or shingle between tide marks. 1 mark: spit — narrow ridge extending from coast where longshore drift passes a change in direction.'
       },
       {
         q: 'State what is meant by longshore drift.',
