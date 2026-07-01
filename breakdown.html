@@ -1585,7 +1585,7 @@ function renderTopics() {
       const safeId      = t.id.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
       const safeName    = t.name.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
       const tipHtml = showTip
-        ? `<div class="topic-tip clickable" onclick="openFeedbackPanel('${safeSubject}','${safeBoard}','${safeId}','${safeName}',event)">Personalised feedback available <span class="pro-tag">PRO</span></div>`
+        ? `<div class="topic-tip clickable" onclick="event.stopPropagation();event.preventDefault();openFeedbackPanel('${safeSubject}','${safeBoard}','${safeId}','${safeName}',event)">Personalised feedback available <span class="pro-tag">PRO</span></div>`
         : '';
       html += `
         <a class="topic-card" href="${t.page}?topic=${t.id}">
