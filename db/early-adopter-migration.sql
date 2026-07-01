@@ -3,20 +3,24 @@
 -- Grants 3 months of Premium to the first 50 users who sign up.
 -- ────────────────────────────────────────────────────────────────────────────
 
--- 1. Add premium columns to profiles (safe to re-run)
+-- 1. Add early adopter + premium columns (safe to re-run)
 ALTER TABLE public.profiles
-  ADD COLUMN IF NOT EXISTS is_early_adopter BOOLEAN NOT NULL DEFAULT FALSE,
-  ADD COLUMN IF NOT EXISTS premium_until     TIMESTAMPTZ;
+  ADD COLUMN IF NOT EXISTS is_early_adopter       BOOLEAN   NOT NULL DEFAULT FALSE,
+  ADD COLUMN IF NOT EXISTS premium_until          TIMESTAMPTZ,
+  ADD COLUMN IF NOT EXISTS subscription_tier      TEXT      DEFAULT 'free',
+  ADD COLUMN IF NOT EXISTS subscription_status    TEXT      DEFAULT 'active',
+  ADD COLUMN IF NOT EXISTS subscription_expires_at TIMESTAMPTZ;
 
--- 2. Force-update ALL current users to early adopter + 3 months premium
---    (bypasses RLS because this runs as postgres in the SQL editor)
+-- 2. Force-update ALL current users to pro_monthly for 3 months
 UPDATE public.profiles
 SET
-  is_early_adopter = TRUE,
-  premium_until    = NOW() + INTERVAL '3 months'
-WHERE is_early_adopter = FALSE OR premium_until IS NULL;
+  is_early_adopter        = TRUE,
+  premium_until           = NOW() + INTERVAL '3 months',
+  subscription_tier       = 'pro_monthly',
+  subscription_status     = 'active',
+  subscription_expires_at = NOW() + INTERVAL '3 months';
 
--- 3. RPC: count how many early-adopter slots have been claimed (used by landing page counter)
+-- 3. RPC: count early-adopter slots claimed (used by landing page live counter)
 CREATE OR REPLACE FUNCTION public.count_early_adopters()
 RETURNS INTEGER
 LANGUAGE sql
@@ -28,7 +32,7 @@ AS $$
 $$;
 GRANT EXECUTE ON FUNCTION public.count_early_adopters() TO anon, authenticated;
 
--- 4. Trigger function: auto-grant premium to the first 50 new sign-ups
+-- 4. Trigger: auto-grant pro to the first 50 new sign-ups
 CREATE OR REPLACE FUNCTION public.grant_early_adopter_premium()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -40,14 +44,16 @@ DECLARE
 BEGIN
   SELECT COUNT(*) INTO current_count FROM public.profiles WHERE is_early_adopter = TRUE;
   IF current_count < 50 THEN
-    NEW.is_early_adopter := TRUE;
-    NEW.premium_until    := NOW() + INTERVAL '3 months';
+    NEW.is_early_adopter        := TRUE;
+    NEW.premium_until           := NOW() + INTERVAL '3 months';
+    NEW.subscription_tier       := 'pro_monthly';
+    NEW.subscription_status     := 'active';
+    NEW.subscription_expires_at := NOW() + INTERVAL '3 months';
   END IF;
   RETURN NEW;
 END;
 $$;
 
--- 5. Attach trigger to profiles
 DROP TRIGGER IF EXISTS trg_grant_early_adopter ON public.profiles;
 CREATE TRIGGER trg_grant_early_adopter
   BEFORE INSERT ON public.profiles
