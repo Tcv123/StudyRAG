@@ -575,6 +575,41 @@
     .medal-name { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
     .medal-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
 
+    /* ── EARLY ADOPTER BANNER ── */
+    .early-banner {
+      position: relative; z-index: 10;
+      background: linear-gradient(90deg, #7c3aed 0%, #2563eb 100%);
+      color: #fff; text-align: center;
+      padding: 10px 20px;
+      font-size: 13.5px; font-weight: 500; letter-spacing: 0.01em;
+      display: flex; align-items: center; justify-content: center; gap: 10px;
+      flex-wrap: wrap;
+    }
+    .early-banner .eb-star { font-size: 16px; }
+    .early-banner strong { font-weight: 700; }
+    .early-banner .eb-pill {
+      background: rgba(255,255,255,0.22); border: 1px solid rgba(255,255,255,0.35);
+      border-radius: 20px; padding: 2px 10px;
+      font-size: 12px; font-weight: 700; letter-spacing: 0.04em;
+      display: inline-flex; align-items: center; gap: 5px;
+    }
+    .early-banner .eb-pill .eb-count {
+      font-variant-numeric: tabular-nums;
+    }
+    .eb-pill-loading { opacity: 0.6; }
+
+    /* Hero early-adopter nudge */
+    .ea-nudge {
+      margin-top: 16px;
+      display: inline-flex; align-items: center; gap: 8px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.10), rgba(37,99,235,0.10));
+      border: 1px solid rgba(124,58,237,0.28);
+      border-radius: 10px; padding: 9px 14px;
+      font-size: 13px; color: #5b21b6;
+    }
+    .ea-nudge strong { color: #4c1d95; font-weight: 700; }
+    .ea-nudge .ea-spots { font-variant-numeric: tabular-nums; }
+
     /* CTA */
     .cta { position: relative; z-index: 1; padding: 88px 0; }
     .cta-box {
@@ -718,6 +753,16 @@
   });
 </script>
 
+<!-- Early Adopter Banner -->
+<div class="early-banner" id="earlyBanner">
+  <span class="eb-star">⭐</span>
+  <span><strong>Early adopter offer:</strong> The first 50 users to sign up get <strong>3 months of Premium free</strong></span>
+  <span class="eb-pill eb-pill-loading" id="earlyBannerPill">
+    <span id="earlyBannerCount">—</span>
+    <span>spots left</span>
+  </span>
+</div>
+
 <!-- Hero -->
 <section class="hero">
   <div class="hero-wrap">
@@ -728,6 +773,9 @@
       <div class="hero-btns">
         <a href="auth/register.html" class="btn btn-blue">Create free account</a>
         <a href="auth/login.html" class="btn btn-white">Sign in</a>
+      </div>
+      <div class="ea-nudge" id="heroEaNudge">
+        🎁 <span><strong><span class="ea-spots" id="heroEaCount">50</span> spots</strong> left — sign up now for a free month of Premium</span>
       </div>
     </div>
     <div class="hero-right">
@@ -1056,7 +1104,8 @@
   <div class="wrap">
     <div class="cta-box">
       <h2>Ready to revise smarter?</h2>
-      <p>Create a free account and know exactly what to study — no guessing, no wasted time.</p>
+      <p>Create a free account and know exactly what to study — no guessing, no wasted time.<br>
+      <strong style="color:var(--accent-dark)">⭐ First 50 sign-ups get 3 months of Premium free</strong> — <span id="ctaEaCount">spots still available!</span></p>
       <div class="cta-btns">
         <a href="auth/register.html" class="btn btn-blue">Create free account</a>
         <a href="auth/login.html" class="btn btn-white">Sign in</a>
@@ -1066,6 +1115,47 @@
 </div>
 
   <script src="fit-to-screen.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
+  <script src="supabase-config.js"></script>
+  <script>
+    (async function () {
+      const EARLY_LIMIT = 50;
+      try {
+        const { data, error } = await supabaseClient.rpc('count_early_adopters');
+        if (error) throw error;
+        const taken = data ?? 0;
+        const left  = Math.max(0, EARLY_LIMIT - taken);
+
+        // Banner pill
+        const pill  = document.getElementById('earlyBannerPill');
+        const count = document.getElementById('earlyBannerCount');
+        if (pill && count) {
+          pill.classList.remove('eb-pill-loading');
+          count.textContent = left;
+          if (left === 0) {
+            document.getElementById('earlyBanner').style.background = 'linear-gradient(90deg,#6b7280,#374151)';
+            pill.textContent = 'Offer closed';
+          }
+        }
+
+        // Hero nudge
+        const heroCount = document.getElementById('heroEaCount');
+        const heroNudge = document.getElementById('heroEaNudge');
+        if (heroCount) heroCount.textContent = left;
+        if (heroNudge && left === 0) heroNudge.style.display = 'none';
+
+        // CTA line
+        const ctaEl = document.getElementById('ctaEaCount');
+        if (ctaEl) {
+          ctaEl.textContent = left > 0
+            ? left + ' spot' + (left === 1 ? '' : 's') + ' still available!'
+            : 'Offer now closed.';
+        }
+      } catch (e) {
+        // Silently fail — static defaults already show in the HTML
+      }
+    })();
+  </script>
 
 <footer style="position:relative;z-index:1;border-top:1px solid var(--border);background:var(--surface);padding:28px 40px;">
   <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
