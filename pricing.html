@@ -276,12 +276,23 @@
       <a href="pricing.html" class="nav-anchor active">Pricing</a>
       <a href="support.html" class="nav-anchor">Support</a>
     </div>
-    <div class="nav-right">
+    <div class="nav-right" id="navRight">
       <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
       <a href="auth/register.html" class="nav-btn nav-fill">Register</a>
     </div>
   </div>
 </nav>
+<script>
+  (async () => {
+    try {
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (session) {
+        document.getElementById('navRight').innerHTML =
+          '<a href="Dashboard.html" class="nav-btn nav-fill">Go to Dashboard</a>';
+      }
+    } catch(e) {}
+  })();
+</script>
 
 <!-- Page header -->
 <section class="page-header">

@@ -221,7 +221,7 @@
       <a href="pricing.html" class="nav-anchor">Pricing</a>
       <a href="support.html" class="nav-anchor active">Support</a>
     </div>
-    <div class="nav-right">
+    <div class="nav-right" id="navRight">
       <a href="auth/login.html" class="nav-btn nav-ghost">Sign in</a>
       <a href="auth/register.html" class="nav-btn nav-fill">Register</a>
     </div>
@@ -304,6 +304,19 @@
   </div>
 </section>
 
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script>
+    (async () => {
+      try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (session) {
+          document.getElementById('navRight').innerHTML =
+            '<a href="Dashboard.html" class="nav-btn nav-fill">Go to Dashboard</a>';
+        }
+      } catch(e) {}
+    })();
+  </script>
   <script src="fit-to-screen.js"></script>
 <footer style="position:relative;z-index:1;border-top:1px solid var(--border);background:var(--surface);padding:28px 40px;">
   <div style="max-width:960px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;">
