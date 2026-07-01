@@ -845,8 +845,7 @@ async function confirmResetStreak() {
 // A pg_cron job (see supabase-config.js) purges auth.users 7 days later; ON DELETE CASCADE
 // foreign keys remove everything else. There is no way to cancel or recover the account.
 async function confirmDeleteAccount() {
-  if (!confirm('This will permanently delete your account and all data. Continue?')) return;
-  if (!confirm('Last chance — this cannot be undone. Delete your account?')) return;
+  if (!confirm('This will permanently delete your account and all data. This cannot be undone.')) return;
 
   const { error } = await supabaseClient.rpc('request_account_deletion');
   if (error) {
@@ -855,7 +854,7 @@ async function confirmDeleteAccount() {
   }
 
   await supabaseClient.auth.signOut();
-  window.location = 'index.html';
+  window.location = 'auth/login.html';
 }
 
 // ── Logout ──
