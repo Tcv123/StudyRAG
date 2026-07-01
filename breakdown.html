@@ -15,8 +15,7 @@
   <script src="nav-gating.js"></script>
   <script src="papers-config.js"></script>
   <script src="subjects-config.js"></script>
-  <script src="flashcards-config.js"></script>
-  <script src="practice-bank-config.js"></script>
+
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -321,45 +320,6 @@
     .topic-info { flex: 1; min-width: 0; }
     .topic-name { font-size: 14px; font-weight: 500; }
     .topic-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-    .topic-tip { font-size: 11.5px; margin-top: 4px; font-style: italic; line-height: 1.4; color: var(--muted2); display: flex; align-items: center; gap: 5px; }
-    .pro-tag { font-size: 9px; font-weight: 700; color: var(--amber); background: var(--amber-bg); border: 1px solid var(--amber-border); padding: 1px 6px; border-radius: 10px; font-style: normal; }
-    .topic-tip.clickable { cursor: pointer; }
-    .topic-tip.clickable:hover { color: var(--accent-dark); text-decoration: underline; }
-
-    /* ── Inline AI feedback panel ── */
-    .fbp-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: flex-end; justify-content: center; z-index: 300; padding: 0 0 0 var(--sidebar-w); }
-    .fbp-overlay.active { display: flex; }
-    .fbp-sheet { background: var(--surface); border-radius: 20px 20px 0 0; width: 100%; max-width: 760px; max-height: 88vh; overflow-y: auto; padding: 28px 28px 36px; animation: fbpSlideUp 0.25s cubic-bezier(0.16,1,0.3,1); box-shadow: 0 -8px 40px rgba(11,30,63,0.18); }
-    @keyframes fbpSlideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
-    .fbp-head { display: flex; align-items: flex-start; justify-content: space-between; margin-bottom: 22px; }
-    .fbp-title { font-family: var(--font-display); font-size: 20px; }
-    .fbp-sub { font-size: 12px; color: var(--muted); margin-top: 2px; }
-    .fbp-close { background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; width: 32px; height: 32px; cursor: pointer; font-size: 13px; color: var(--muted); display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.15s; }
-    .fbp-close:hover { color: var(--text); border-color: var(--muted2); }
-    .fbp-label { font-size: 10px; font-weight: 700; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; }
-    .fbp-qbox { background: var(--surface2); border: 1px solid var(--border); border-left: 4px solid var(--accent); border-radius: 10px; padding: 16px 18px; font-size: 14.5px; line-height: 1.65; margin-bottom: 10px; display: flex; gap: 14px; align-items: flex-start; }
-    .fbp-qtext { flex: 1; min-width: 0; font-style: italic; color: var(--text); }
-    .fbp-marks { display: inline-flex; padding: 3px 10px; background: var(--accent-dim); color: var(--accent-dark); border: 1px solid var(--accent); border-radius: 999px; font-size: 11px; font-weight: 600; white-space: nowrap; flex-shrink: 0; }
-    .fbp-pill-btn { display: inline-flex; align-items: center; gap: 6px; padding: 6px 12px; background: var(--surface2); border: 1px solid var(--border); border-radius: 999px; font-size: 12px; color: var(--muted); cursor: pointer; font-family: var(--font-body); transition: all 0.15s; }
-    .fbp-pill-btn:hover { border-color: var(--accent); color: var(--accent-dark); }
-    .fbp-textarea { width: 100%; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; padding: 14px 16px; font-size: 14px; line-height: 1.75; min-height: 160px; font-family: var(--font-body); color: var(--text); resize: vertical; }
-    .fbp-textarea:focus { outline: none; border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
-    .fbp-submit { display: inline-flex; align-items: center; gap: 7px; padding: 10px 20px; background: var(--accent); color: #fff; border: none; border-radius: 10px; font-weight: 600; font-size: 14px; cursor: pointer; font-family: var(--font-body); transition: background 0.15s; }
-    .fbp-submit:hover { background: var(--accent-dark); }
-    .fbp-submit:disabled { opacity: 0.5; cursor: not-allowed; }
-    .fbp-result-score { display: flex; align-items: center; gap: 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 12px; padding: 16px 20px; margin-bottom: 16px; }
-    .fbp-result-num { font-family: var(--font-display); font-size: 30px; line-height: 1; }
-    .fbp-result-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 14px; }
-    .fbp-result-box { border-radius: 10px; padding: 14px; }
-    .fbp-result-box.good { background: var(--green-bg); border: 1px solid var(--green-border); }
-    .fbp-result-box.improve { background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); }
-    .fbp-result-box-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 8px; }
-    .fbp-result-box.good .fbp-result-box-label { color: var(--green); }
-    .fbp-result-box.improve .fbp-result-box-label { color: var(--accent-dark); }
-    @media (max-width: 768px) {
-      .fbp-overlay { padding: 0; }
-      .fbp-result-grid { grid-template-columns: 1fr; }
-    }
 
     .topic-rag { width: 12px; height: 12px; border-radius: 50%; flex-shrink: 0; }
     .topic-rag.green { background: var(--green); box-shadow: 0 0 6px rgba(22,163,74,0.4); }
@@ -1579,21 +1539,12 @@ function renderTopics() {
       <div class="subject-topics collapsed" id="topics${sIdx}">`;
 
     group.topics.forEach(t => {
-      const showTip = t.rag !== 'pending';
-      const safeSubject = t.subject.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-      const safeBoard   = t.board.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-      const safeId      = t.id.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-      const safeName    = t.name.replace(/\\/g,'\\\\').replace(/'/g,"\\'");
-      const tipHtml = showTip
-        ? `<div class="topic-tip clickable" onclick="event.stopPropagation();event.preventDefault();openFeedbackPanel('${safeSubject}','${safeBoard}','${safeId}','${safeName}',event)">Personalised feedback available <span class="pro-tag">PRO</span></div>`
-        : '';
       html += `
         <a class="topic-card" href="${t.page}?topic=${t.id}">
           <div class="topic-num ${t.rag}">${t.id}</div>
           <div class="topic-info">
             <div class="topic-name">${t.name}</div>
             <div class="topic-sub">${t.sub}</div>
-            ${tipHtml}
           </div>
           <div class="topic-rag ${t.rag}"></div>
           <div class="topic-arrow">→</div>
@@ -1605,149 +1556,6 @@ function renderTopics() {
   }
 
   list.innerHTML = html;
-}
-
-// ── Inline AI feedback panel ──────────────────────────────────────
-let _fbp = { subject: '', board: '', topicId: '', topicName: '', questions: [], qIdx: 0 };
-
-async function openFeedbackPanel(subject, board, topicId, topicName, event) {
-  event.stopPropagation();
-  if (localStorage.getItem('rag_is_pro') !== 'true') { location.href = 'pricing.html'; return; }
-
-  _fbp = { subject, board, topicId, topicName, questions: [], qIdx: 0 };
-
-  document.getElementById('fbpTopicName').textContent = topicName;
-  document.getElementById('fbpQuestionText').textContent = 'Loading question…';
-  document.getElementById('fbpMarksBadge').textContent = '— marks';
-  document.getElementById('fbpAnswerTA').value = '';
-  document.getElementById('fbpWordCount').textContent = '0 words';
-  document.getElementById('fbpResultSection').style.display = 'none';
-  document.getElementById('fbpResultBody').innerHTML = '';
-  document.getElementById('fbpSubmitBtn').disabled = false;
-  document.getElementById('fbpSubmitBtn').textContent = 'Get feedback →';
-  document.getElementById('fbpOverlay').classList.add('active');
-  document.body.style.overflow = 'hidden';
-
-  const subjectKey = `${subject}_${board}`;
-  try { await window.loadAiFeedbackBundle?.(subjectKey); } catch (_) {}
-  let qs = window.getAiFeedbackTopicQuestions?.(subjectKey, topicId) || [];
-  if (!qs.length) {
-    try { await window.loadPracticeBundle?.(subjectKey); } catch (_) {}
-    qs = window.getPracticeTopicQuestions?.(subjectKey, topicId) || [];
-  }
-  _fbp.questions = qs;
-  _renderFbQuestion();
-}
-
-function closeFeedbackPanel() {
-  document.getElementById('fbpOverlay').classList.remove('active');
-  document.body.style.overflow = '';
-}
-
-function nextFbQuestion() {
-  _fbp.qIdx++;
-  _renderFbQuestion();
-  document.getElementById('fbpAnswerTA').value = '';
-  document.getElementById('fbpWordCount').textContent = '0 words';
-  document.getElementById('fbpResultSection').style.display = 'none';
-}
-
-function _renderFbQuestion() {
-  const qs = _fbp.questions;
-  if (!qs.length) {
-    document.getElementById('fbpQuestionText').innerHTML = '<em style="color:var(--muted2);">No questions available for this topic yet.</em>';
-    document.getElementById('fbpMarksBadge').textContent = '— marks';
-    return;
-  }
-  const q = qs[_fbp.qIdx % qs.length];
-  document.getElementById('fbpQuestionText').textContent = q.q;
-  const m = q.marks || 0;
-  document.getElementById('fbpMarksBadge').textContent = `${m} mark${m === 1 ? '' : 's'}`;
-}
-
-function updateFbWordCount() {
-  const words = document.getElementById('fbpAnswerTA').value.trim().split(/\s+/).filter(Boolean).length;
-  document.getElementById('fbpWordCount').textContent = `${words} word${words === 1 ? '' : 's'}`;
-}
-
-async function submitFbAnswer() {
-  const answer = document.getElementById('fbpAnswerTA').value.trim();
-  const qs = _fbp.questions;
-  if (!answer || !qs.length) return;
-  const q = qs[_fbp.qIdx % qs.length];
-
-  const btn = document.getElementById('fbpSubmitBtn');
-  btn.disabled = true;
-  btn.textContent = 'Marking…';
-
-  const resultSection = document.getElementById('fbpResultSection');
-  const resultBody    = document.getElementById('fbpResultBody');
-  resultSection.style.display = 'block';
-  resultBody.innerHTML = '<div style="padding:24px;text-align:center;color:var(--muted);font-size:13px;">Reading your answer against the mark scheme…</div>';
-  resultSection.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
-  try {
-    const { data: { session } } = await supabaseClient.auth.getSession();
-    if (!session?.access_token) throw new Error('Not signed in.');
-    const lvl = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-    const level = (lvl === 'a-level' || lvl === 'as' || lvl === 'alevel') ? 'alevel' : 'gcse';
-
-    const resp = await fetch('/api/mark-essay', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json', 'Authorization': `Bearer ${session.access_token}` },
-      body: JSON.stringify({
-        question: q.q, answer,
-        marks: q.marks || 12,
-        subject: _fbp.subject, board: _fbp.board, level,
-        topicName: _fbp.topicName,
-      }),
-    });
-    if (!resp.ok) throw new Error(`Server returned ${resp.status}.`);
-    const data = await resp.json();
-    _renderFbResult(data);
-  } catch (err) {
-    resultBody.innerHTML = `<div style="padding:20px;color:var(--red);font-size:13px;">Couldn't mark your answer — ${err.message}</div>`;
-  } finally {
-    btn.disabled = false;
-    btn.textContent = 'Get feedback →';
-  }
-}
-
-function _renderFbResult(fb) {
-  const { awarded, total, band, strengths = [], improvements = [], summary } = fb || {};
-  const pct   = total > 0 ? Math.round((awarded / total) * 100) : 0;
-  const color  = pct >= 70 ? 'var(--green)' : pct >= 40 ? 'var(--amber)' : 'var(--red)';
-  const sHtml  = strengths.length
-    ? strengths.map(s => `<li style="margin-bottom:5px;">${s}</li>`).join('')
-    : '<li style="color:var(--muted2);font-style:italic;">—</li>';
-  const iHtml  = improvements.length
-    ? improvements.map(s => `<li style="margin-bottom:5px;">${s}</li>`).join('')
-    : '<li style="color:var(--muted2);font-style:italic;">—</li>';
-
-  document.getElementById('fbpResultBody').innerHTML = `
-    <div class="fbp-result-score">
-      <div style="text-align:center;min-width:72px;">
-        <div class="fbp-result-num" style="color:${color};">${awarded}<span style="font-size:15px;color:var(--muted2);"> / ${total}</span></div>
-        <div style="font-size:11px;color:var(--muted);margin-top:2px;">${pct}%</div>
-      </div>
-      <div>
-        <div style="font-size:10px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted2);margin-bottom:2px;">Band</div>
-        <div style="font-family:var(--font-display);font-size:18px;margin-bottom:4px;">${band || '—'}</div>
-        <div style="font-size:13px;color:var(--muted);line-height:1.5;">${summary || ''}</div>
-      </div>
-    </div>
-    <div class="fbp-result-grid">
-      <div class="fbp-result-box good">
-        <div class="fbp-result-box-label">✓ Strengths</div>
-        <ul style="margin:0;padding-left:16px;font-size:13px;line-height:1.6;">${sHtml}</ul>
-      </div>
-      <div class="fbp-result-box improve">
-        <div class="fbp-result-box-label">→ How to improve</div>
-        <ul style="margin:0;padding-left:16px;font-size:13px;line-height:1.6;">${iHtml}</ul>
-      </div>
-    </div>
-    <button class="fbp-pill-btn" onclick="nextFbQuestion()">Try another question →</button>
-    <div style="margin-top:10px;font-size:11px;color:var(--muted2);">AI-estimated · not an official mark · verify against your specification</div>`;
 }
 
 function sparkClass(pct) {
@@ -2750,47 +2558,6 @@ function togglePaperDone(paperId, checkbox) {
 load();
 </script>
 <div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
-
-<!-- ── AI FEEDBACK PANEL ── -->
-<div class="fbp-overlay" id="fbpOverlay" onclick="if(event.target===this)closeFeedbackPanel()">
-  <div class="fbp-sheet" id="fbpSheet">
-    <div class="fbp-head">
-      <div>
-        <div class="fbp-title" id="fbpTopicName"></div>
-        <div class="fbp-sub">AI-marked practice feedback</div>
-      </div>
-      <button class="fbp-close" onclick="closeFeedbackPanel()">✕</button>
-    </div>
-
-    <!-- Question -->
-    <div style="margin-bottom:20px;">
-      <div class="fbp-label">Question</div>
-      <div class="fbp-qbox">
-        <div class="fbp-qtext" id="fbpQuestionText">Loading…</div>
-        <span class="fbp-marks" id="fbpMarksBadge">— marks</span>
-      </div>
-      <button class="fbp-pill-btn" id="fbpNextQBtn" onclick="nextFbQuestion()">🔄 Another question</button>
-    </div>
-
-    <!-- Answer -->
-    <div style="margin-bottom:20px;">
-      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;">
-        <div class="fbp-label" style="margin:0;">Your answer</div>
-        <div style="font-size:11px;color:var(--muted2);" id="fbpWordCount">0 words</div>
-      </div>
-      <textarea class="fbp-textarea" id="fbpAnswerTA" placeholder="Write your answer here…" oninput="updateFbWordCount()"></textarea>
-      <div style="margin-top:12px;">
-        <button class="fbp-submit" id="fbpSubmitBtn" onclick="submitFbAnswer()">Get feedback →</button>
-      </div>
-    </div>
-
-    <!-- Result -->
-    <div id="fbpResultSection" style="display:none;">
-      <div class="fbp-label">Feedback</div>
-      <div id="fbpResultBody"></div>
-    </div>
-  </div>
-</div>
 
 <!-- ── SIGN-OUT CONFIRM MODAL ── -->
 <div class="signout-overlay" id="signoutOverlay" onclick="if(event.target===this)cancelSignOut()">
