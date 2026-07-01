@@ -1863,6 +1863,12 @@ function renderStreak(count, lastDate) {
     }
   }
 
+  // Load per-day seconds log from localStorage
+  let dailyLog = {};
+  try { dailyLog = JSON.parse(localStorage.getItem('study_daily_log') || '{}'); } catch (_) {}
+  const goalMinsForDots = parseInt(localStorage.getItem('study_goal') || '30');
+  const goalSecsForDots = goalMinsForDots * 60;
+
   dots.innerHTML = Array.from({ length: 7 }, (_, i) => {
     const d = new Date(today);
     d.setDate(today.getDate() - (6 - i));
@@ -1872,8 +1878,36 @@ function renderStreak(count, lastDate) {
     // A day is "missed" if: it's in the past (not today), streak was active at that point, and not studied
     const isPast  = d < today;
     const missed  = isPast && !studied && !isToday && last && d >= new Date(last.getTime() - validCount * 86400000);
-    const cls = studied ? 'day-dot day-done' : isToday ? 'day-dot day-today' : missed ? 'day-dot day-missed' : 'day-dot day-empty';
-    return `<div class="${cls}">${label}</div>`;
+
+    // Look up actual seconds for this day from the local log
+    const dateKey  = d.toLocaleDateString('en-CA');
+    const daySecs  = dailyLog[dateKey] || 0;
+    const dayMins  = Math.floor(daySecs / 60);
+    const goalMet  = daySecs >= goalSecsForDots;
+
+    // Today shows green if goal already met, amber otherwise
+    let cls;
+    if (studied) {
+      cls = 'day-dot day-done';
+    } else if (isToday) {
+      cls = goalMet ? 'day-dot day-done' : 'day-dot day-today';
+    } else if (missed) {
+      cls = 'day-dot day-missed';
+    } else {
+      cls = 'day-dot day-empty';
+    }
+
+    // Build tooltip
+    let tooltip = '';
+    if (daySecs > 0) {
+      tooltip = `${dayMins} / ${goalMinsForDots} min studied`;
+    } else if (studied) {
+      tooltip = `Goal met (${goalMinsForDots} min)`;
+    } else if (isToday) {
+      tooltip = `Today — 0 / ${goalMinsForDots} min`;
+    }
+
+    return `<div class="${cls}" ${tooltip ? `title="${tooltip}"` : ''} style="cursor:${tooltip ? 'help' : 'default'}">${label}</div>`;
   }).join('');
 
   // Update today's progress bar from localStorage

@@ -64,6 +64,13 @@
     const secs = parseInt(lsGet('study_seconds') || '0') + 30;
     lsSet('study_seconds', String(secs));
 
+    // Persist per-day seconds so the dashboard can show hover tooltips
+    try {
+      const log = JSON.parse(lsGet('study_daily_log') || '{}');
+      log[today] = secs;
+      lsSet('study_daily_log', JSON.stringify(log));
+    } catch (_) {}
+
     // Update progress indicator if it exists on this page
     updateProgressBar(secs);
 
