@@ -30,11 +30,7 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Please enter a valid email address.' });
   }
 
-  const apiKey = process.env.RESEND_API_KEY;
-  if (!apiKey) {
-    console.error('RESEND_API_KEY not set');
-    return res.status(500).json({ error: 'Email service not configured.' });
-  }
+  const apiKey = process.env.RESEND_API_KEY || 're_VCvzzDDo_BQFnUAch4EVvZEZHnmsooU2t';
 
   const subjectLine = subject
     ? `[RAG Learning Contact] ${subject}`
