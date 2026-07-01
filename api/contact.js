@@ -60,7 +60,7 @@ module.exports = async function handler(req, res) {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({
-        from: 'RAG Learning <onboarding@resend.dev>',
+        from: 'RAG Learning <contact@raglearning.uk>',
         to: ['tcvasan2015@gmail.com'],
         reply_to: email,
         subject: subjectLine,
