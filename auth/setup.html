@@ -1047,10 +1047,12 @@ async function save() {
       .eq('id', user.id);
     writeErr = error;
   } else {
-    // No row yet — insert one and seed name/email from the signup metadata.
+    // No row yet — upsert so that a race condition or sequence clash on
+    // profile_number doesn't leave the user with a hard error; on conflict
+    // with the primary key (id) we update the same fields as the update path.
     const { error } = await supabaseClient
       .from('profiles')
-      .insert({
+      .upsert({
         id: user.id,
         email: user.email,
         first_name: user.user_metadata?.first_name || '',
@@ -1058,7 +1060,7 @@ async function save() {
         level: selectedLevel,
         setup_complete: true,
         avatar_url: selectedAvatarUrl
-      });
+      }, { onConflict: 'id' });
     writeErr = error;
   }
 
