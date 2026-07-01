@@ -180,6 +180,31 @@
     .info-rows { display: flex; flex-direction: column; gap: 14px; margin-bottom: 18px; }
 
     /* ── ROW 1: LEVEL BANNER ── */
+    /* ── EARLY ADOPTER PREMIUM BANNER ── */
+    .ea-premium-banner {
+      display: flex; align-items: center; gap: 14px;
+      background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%);
+      border-radius: 14px; padding: 16px 20px;
+      color: #fff; margin-bottom: 14px;
+      box-shadow: 0 4px 20px rgba(124,58,237,0.28);
+      position: relative;
+    }
+    .ea-premium-banner .ea-icon { font-size: 28px; flex-shrink: 0; }
+    .ea-premium-banner .ea-body { flex: 1; }
+    .ea-premium-banner .ea-title {
+      font-size: 15px; font-weight: 700; margin-bottom: 2px;
+    }
+    .ea-premium-banner .ea-sub {
+      font-size: 13px; opacity: 0.88; line-height: 1.4;
+    }
+    .ea-premium-banner .ea-dismiss {
+      background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.3);
+      color: #fff; border-radius: 8px; padding: 5px 12px;
+      font-size: 12px; font-weight: 600; cursor: pointer;
+      white-space: nowrap; flex-shrink: 0;
+    }
+    .ea-premium-banner .ea-dismiss:hover { background: rgba(255,255,255,0.28); }
+
     .level-banner {
       background: linear-gradient(135deg, #2E7BAE 0%, #2563EB 100%);
       border-radius: 14px; padding: 16px 22px;
@@ -616,6 +641,17 @@
 
     <!-- ══ DASHBOARD VIEW ══════════════════════════════════════════════ -->
     <div class="view active" id="viewDashboard">
+
+    <!-- Early adopter premium banner (shown only to early adopters, dismissable) -->
+    <div class="ea-premium-banner" id="eaPremiumBanner" style="display:none;">
+      <span class="ea-icon">⭐</span>
+      <div class="ea-body">
+        <div class="ea-title">You've got 3 months of Premium — free!</div>
+        <div class="ea-sub">You were one of our first 50 users. Enjoy full Premium access for 3 months, on us.</div>
+      </div>
+      <button class="ea-dismiss" onclick="dismissEaPremiumBanner()">Got it</button>
+    </div>
+
     <!-- ══ INFO ROWS ══════════════════════════════════════════════════ -->
     <div class="info-rows">
 
@@ -1063,6 +1099,16 @@ function renderLevel(level) {
 
 // Mirrors is_pro_user() in supabase-flashcards-migration.sql — swap the
 // "Unlock Pro" CTA card for a "You're on Pro" panel when the row says so.
+function dismissEaPremiumBanner() {
+  const banner = document.getElementById('eaPremiumBanner');
+  if (banner) banner.style.display = 'none';
+  try {
+    if (window.currentUserId) {
+      localStorage.setItem(`ea_banner_dismissed_${window.currentUserId}`, '1');
+    }
+  } catch (e) {}
+}
+
 function renderPlanCta(profile) {
   const tier      = profile?.subscription_tier   || 'free';
   const status    = profile?.subscription_status || 'active';
@@ -1631,6 +1677,14 @@ async function load() {
 
   // Plan CTA — swap to "You're on Pro" for active subscribers
   renderPlanCta(profile);
+
+  // Early-adopter premium banner — show once per user (dismissed permanently via localStorage)
+  if (profile?.is_early_adopter) {
+    const dismissKey = `ea_banner_dismissed_${user.id}`;
+    if (!localStorage.getItem(dismissKey)) {
+      document.getElementById('eaPremiumBanner').style.display = 'flex';
+    }
+  }
 
   // Build set of current subject keys to filter old data
   const currentSubjectKeys = new Set((subjects || []).map(s => `${s.subject}_${s.exam_board}`));
