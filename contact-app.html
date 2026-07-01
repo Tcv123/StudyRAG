@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Contact — RAG Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EAF2FC;
+      --surface: #FFFFFF;
+      --surface2: #F0F6FD;
+      --surface3: #DBE8F6;
+      --border: #B8D0E8;
+      --border-hover: #2563EB;
+      --text: #0B1E3F;
+      --muted: #445F85;
+      --muted2: #7891B0;
+      --accent: #2563EB;
+      --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1);
+      --accent-glow: rgba(37,99,235,0.2);
+      --red: #DC2626;
+      --red-bg: rgba(220,38,38,0.07);
+      --red-border: rgba(220,38,38,0.18);
+      --red-text: #B91C1C;
+      --green: #16A34A;
+      --amber: #D97706;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; min-height: 100vh; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 24px 0; position: fixed;
+      top: 0; left: 0; bottom: 0; z-index: 10;
+      box-shadow: 2px 0 16px rgba(37,99,235,0.08);
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
+    .logo-img { width: 24px; height: 24px; flex-shrink: 0; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted);
+      cursor: pointer; transition: all 0.15s; text-decoration: none;
+      border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body);
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* ── SIGN-OUT MODAL ── */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); text-align: center; animation: signoutPop 0.22s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes signoutPop { from { opacity: 0; transform: scale(0.94) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-bg); border: 1px solid var(--red-border); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--red-text); margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display); font-size: 22px; color: var(--text); margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; border: 1px solid transparent; }
+    .signout-btn.cancel { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .signout-btn.cancel:hover { background: var(--surface3); border-color: var(--border-hover); }
+    .signout-btn.confirm { background: var(--red); color: #fff; }
+    .signout-btn.confirm:hover { background: var(--red-text); }
+
+    /* ── MAIN ── */
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; display: flex; flex-direction: column; align-items: flex-start; }
+
+    /* ── FORM CARD ── */
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 20px; padding: 40px 40px;
+      width: 100%; max-width: 560px;
+      box-shadow: 0 4px 20px rgba(11,30,63,0.06);
+    }
+    .back-link { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; color: var(--muted); text-decoration: none; margin-bottom: 24px; transition: color 0.15s; }
+    .back-link:hover { color: var(--accent-dark); }
+    .card-tag { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 8px; }
+    .card-title { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.02em; line-height: 1.2; margin-bottom: 6px; }
+    .card-sub { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 28px; }
+
+    .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .form-group { display: flex; flex-direction: column; gap: 6px; margin-bottom: 16px; }
+    label { font-size: 13px; font-weight: 600; color: var(--text); }
+    input, textarea, select {
+      width: 100%; padding: 11px 14px;
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 10px; font-family: var(--font-body); font-size: 14px; color: var(--text);
+      outline: none; transition: border-color 0.15s, box-shadow 0.15s;
+      -webkit-appearance: none;
+    }
+    input:focus, textarea:focus, select:focus { border-color: var(--accent); box-shadow: 0 0 0 3px var(--accent-dim); }
+    input::placeholder, textarea::placeholder { color: var(--muted2); }
+    textarea { resize: vertical; min-height: 130px; line-height: 1.6; }
+
+    .submit-btn {
+      width: 100%; padding: 14px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; border: none; border-radius: 12px;
+      font-family: var(--font-body); font-size: 15px; font-weight: 600;
+      cursor: pointer; transition: all 0.15s;
+      box-shadow: 0 4px 14px var(--accent-glow); margin-top: 8px;
+    }
+    .submit-btn:hover:not(:disabled) { filter: brightness(1.05); transform: translateY(-1px); }
+    .submit-btn:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+    .msg { display: none; border-radius: 10px; padding: 13px 16px; font-size: 14px; margin-top: 14px; }
+    .msg.error { display: block; background: rgba(220,38,38,0.07); border: 1px solid rgba(220,38,38,0.18); color: #B91C1C; }
+    .msg.success { display: block; background: rgba(22,163,74,0.07); border: 1px solid rgba(22,163,74,0.2); color: #15803D; }
+
+    .success-screen { display: none; text-align: center; padding: 20px 0; }
+    .success-icon { width: 56px; height: 56px; border-radius: 50%; background: rgba(22,163,74,0.1); border: 1px solid rgba(22,163,74,0.2); display: flex; align-items: center; justify-content: center; font-size: 26px; margin: 0 auto 20px; }
+    .success-screen h3 { font-family: var(--font-display); font-size: 22px; margin-bottom: 8px; }
+    .success-screen p { font-size: 14px; color: var(--muted); line-height: 1.6; margin-bottom: 24px; }
+    .success-screen a { display: inline-block; padding: 10px 22px; background: var(--accent-dim); color: var(--accent-dark); border-radius: 10px; font-size: 13px; font-weight: 600; text-decoration: none; transition: background 0.15s; }
+    .success-screen a:hover { background: rgba(37,99,235,0.15); }
+
+    /* mobile sidebar */
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(11,30,63,0.4); z-index: 9; }
+    .mobile-overlay.active { display: block; }
+    .mobile-menu-btn { display: none; font-size: 20px; cursor: pointer; color: var(--muted); margin-right: 12px; }
+
+    @media (max-width: 900px) {
+      .sidebar { transform: translateX(-100%); transition: transform 0.25s; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; }
+      .mobile-menu-btn { display: inline-block; }
+    }
+    @media (max-width: 600px) { .card { padding: 28px 20px; } .form-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { .main { padding: 20px 16px; } }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo">
+      <img src="favicon.svg" alt="RAG Learning" class="logo-img" />
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">🚦</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item active" href="support-app.html"><span class="nav-icon">✉️</span> Contact us</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">?</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeSidebar()"></div>
+
+  <!-- Main -->
+  <main class="main">
+    <div class="card">
+      <a class="back-link" href="support-app.html">← Back to support</a>
+
+      <div id="formSection">
+        <div class="card-tag">Get in touch</div>
+        <div class="card-title">Send us a message</div>
+        <p class="card-sub">Fill in the form below and we'll get back to you within a day.</p>
+
+        <form id="contactForm" novalidate>
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="name">Your name</label>
+              <input type="text" id="name" name="name" placeholder="Alex Smith" required>
+            </div>
+            <div class="form-group">
+              <label for="email">Your email</label>
+              <input type="email" id="email" name="email" placeholder="alex@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="subject">Subject</label>
+            <select id="subject" name="subject">
+              <option value="">Select a topic…</option>
+              <option value="General question">General question</option>
+              <option value="Bug report">Bug or error</option>
+              <option value="Content issue">Content issue (notes / questions)</option>
+              <option value="Account issue">Account or login issue</option>
+              <option value="Billing">Billing / Pro subscription</option>
+              <option value="Feature request">Feature request</option>
+              <option value="Other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" placeholder="Describe your question or issue…" required></textarea>
+          </div>
+
+          <div id="errMsg" class="msg"></div>
+          <button type="submit" class="submit-btn" id="submitBtn">Send message</button>
+        </form>
+      </div>
+
+      <div class="success-screen" id="successScreen">
+        <div class="success-icon">✓</div>
+        <h3>Message sent!</h3>
+        <p>Thanks for reaching out. We'll get back to you within a day.</p>
+        <a href="support-app.html">Back to support</a>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Sign-out modal -->
+<div class="signout-overlay" id="signoutOverlay">
+  <div class="signout-modal">
+    <div class="signout-icon">⏻</div>
+    <div class="signout-title">Sign out?</div>
+    <div class="signout-msg">You'll need to sign back in to access your dashboard and progress.</div>
+    <div class="signout-actions">
+      <button class="signout-btn cancel" onclick="document.getElementById('signoutOverlay').classList.remove('active')">Cancel</button>
+      <button class="signout-btn confirm" onclick="doSignOut()">Sign out</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('mobileOverlay').classList.remove('active');
+  }
+  function confirmSignOut() { document.getElementById('signoutOverlay').classList.add('active'); }
+  function doSignOut() { supabaseClient.auth.signOut().then(() => { location.href = 'auth/login.html'; }); }
+
+  // Pre-fill email from session
+  (async () => {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session) { location.href = 'auth/login.html'; return; }
+    const { data: profile } = await supabaseClient.from('profiles').select('first_name, last_name, avatar_url').eq('id', session.user.id).single();
+    const firstName = profile?.first_name || '';
+    const lastName  = profile?.last_name  || '';
+    document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim() || session.user.email;
+    const av = document.getElementById('avatarInitials');
+    if (profile?.avatar_url) {
+      const img = document.createElement('img'); img.src = profile.avatar_url; img.alt = '';
+      img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+      av.replaceChildren(img);
+    } else {
+      av.textContent = ((firstName[0]||'')+(lastName[0]||'')).toUpperCase() || '?';
+    }
+    // Pre-fill name and email if available
+    if (firstName || lastName) document.getElementById('name').value = `${firstName} ${lastName}`.trim();
+    if (session.user.email) document.getElementById('email').value = session.user.email;
+  })();
+
+  const form = document.getElementById('contactForm');
+  const errMsg = document.getElementById('errMsg');
+  const submitBtn = document.getElementById('submitBtn');
+
+  function showError(msg) { errMsg.textContent = msg; errMsg.className = 'msg error'; }
+  function clearError() { errMsg.textContent = ''; errMsg.className = 'msg'; }
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault(); clearError();
+    const name = form.name.value.trim();
+    const email = form.email.value.trim();
+    const subject = form.subject.value;
+    const message = form.message.value.trim();
+    if (!name) return showError('Please enter your name.');
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return showError('Please enter a valid email address.');
+    if (!message) return showError('Please enter a message.');
+    submitBtn.disabled = true; submitBtn.textContent = 'Sending…';
+    try {
+      const res = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email, subject, message }),
+      });
+      const data = await res.json();
+      if (!res.ok) { showError(data.error || 'Something went wrong. Please try again.'); submitBtn.disabled = false; submitBtn.textContent = 'Send message'; return; }
+      document.getElementById('formSection').style.display = 'none';
+      document.getElementById('successScreen').style.display = 'block';
+    } catch {
+      showError('Network error. Please check your connection and try again.');
+      submitBtn.disabled = false; submitBtn.textContent = 'Send message';
+    }
+  });
+</script>
+</body>
+</html>

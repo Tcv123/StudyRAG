@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Pricing — RAG Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EAF2FC;
+      --surface: #FFFFFF;
+      --surface2: #F0F6FD;
+      --surface3: #DBE8F6;
+      --border: #B8D0E8;
+      --border-hover: #2563EB;
+      --text: #0B1E3F;
+      --muted: #445F85;
+      --muted2: #7891B0;
+      --accent: #2563EB;
+      --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1);
+      --accent-glow: rgba(37,99,235,0.2);
+      --red: #DC2626;
+      --red-bg: rgba(220,38,38,0.07);
+      --red-border: rgba(220,38,38,0.18);
+      --red-text: #B91C1C;
+      --amber: #D97706;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    .app { display: flex; min-height: 100vh; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 24px 0; position: fixed;
+      top: 0; left: 0; bottom: 0; z-index: 10;
+      box-shadow: 2px 0 16px rgba(37,99,235,0.08);
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
+    .logo-img { width: 24px; height: 24px; flex-shrink: 0; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted);
+      cursor: pointer; transition: all 0.15s; text-decoration: none;
+      border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body);
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 13px; font-weight: 500; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* ── SIGN-OUT MODAL ── */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); text-align: center; animation: signoutPop 0.22s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes signoutPop { from { opacity: 0; transform: scale(0.94) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-bg); border: 1px solid var(--red-border); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--red-text); margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display); font-size: 22px; color: var(--text); margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; border: 1px solid transparent; }
+    .signout-btn.cancel { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .signout-btn.cancel:hover { background: var(--surface3); border-color: var(--border-hover); }
+    .signout-btn.confirm { background: var(--red); color: #fff; }
+    .signout-btn.confirm:hover { background: var(--red-text); }
+
+    /* ── MAIN ── */
+    .main { margin-left: var(--sidebar-w); flex: 1; padding: 40px 44px; }
+
+    /* ── PRICING CONTENT ── */
+    .page-header { text-align: center; margin-bottom: 40px; }
+    .pill {
+      display: inline-flex; align-items: center; gap: 7px;
+      padding: 5px 13px; border-radius: 20px;
+      background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2);
+      font-size: 12px; font-weight: 500; color: var(--accent-dark);
+      margin-bottom: 16px;
+    }
+    .pill-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); animation: pulse 2s infinite; }
+    .page-header h1 { font-family: var(--font-display); font-size: clamp(28px, 3.5vw, 42px); letter-spacing: -0.03em; line-height: 1.1; margin-bottom: 12px; }
+    .page-header h1 em { color: var(--accent); font-style: normal; }
+    .page-sub { font-size: 15px; color: var(--muted); line-height: 1.7; max-width: 500px; margin: 0 auto; }
+
+    .billing-toggle-wrap { display: flex; justify-content: center; margin-bottom: 28px; }
+    .billing-toggle {
+      display: inline-flex; gap: 4px;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 999px; padding: 5px;
+      box-shadow: 0 2px 8px rgba(37,99,235,0.06);
+    }
+    .cycle-btn {
+      background: transparent; border: none; cursor: pointer;
+      padding: 9px 18px; border-radius: 999px;
+      font-family: var(--font-body); font-size: 12.5px; font-weight: 600;
+      letter-spacing: 0.04em; color: var(--muted); transition: all 0.15s;
+      display: inline-flex; align-items: center; gap: 7px;
+    }
+    .cycle-btn:hover { color: var(--text); }
+    .cycle-btn.active { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; box-shadow: 0 2px 10px var(--accent-glow); }
+    .cycle-save { font-size: 10.5px; padding: 2px 7px; border-radius: 999px; background: var(--accent-dim); color: var(--accent-dark); font-weight: 600; }
+    .cycle-btn.active .cycle-save { background: rgba(255,255,255,0.22); color: #fff; }
+
+    .pricing-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 860px; margin: 0 auto; }
+
+    .plan-card { background: var(--surface); border: 1px solid var(--border); border-radius: 20px; padding: 32px 30px; position: relative; overflow: hidden; display: flex; flex-direction: column; }
+    .plan-card.pro {
+      background: radial-gradient(ellipse at 20% 0%, rgba(37,99,235,0.08) 0%, transparent 55%), linear-gradient(155deg, var(--surface) 0%, #F6FBFE 100%);
+      border-color: var(--border-hover); box-shadow: 0 16px 48px rgba(37,99,235,0.12);
+    }
+    .plan-card.pro::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: linear-gradient(90deg, var(--accent), var(--accent-dark)); }
+    .plan-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; padding: 4px 11px; border-radius: 20px; align-self: flex-start; margin-bottom: 14px; }
+    .plan-badge.free { color: var(--muted); background: var(--surface2); border: 1px solid var(--border); }
+    .plan-badge.pop { color: #fff; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); box-shadow: 0 2px 10px var(--accent-glow); }
+    .plan-name { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.02em; line-height: 1; margin-bottom: 12px; }
+    .plan-name em { color: var(--accent); font-style: normal; }
+    .plan-price { display: flex; align-items: baseline; gap: 4px; margin-bottom: 4px; }
+    .plan-price-amount { font-family: var(--font-display); font-size: 40px; line-height: 1; }
+    .plan-price-period { font-size: 14px; color: var(--muted); }
+    .plan-sub { font-size: 12px; color: var(--muted); margin-bottom: 24px; }
+    .plan-features { list-style: none; display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; flex-grow: 1; }
+    .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 13px; color: var(--text); line-height: 1.5; }
+    .plan-check { width: 18px; height: 18px; border-radius: 50%; flex-shrink: 0; background: var(--accent-dim); color: var(--accent-dark); display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; margin-top: 1px; }
+    .plan-btn { width: 100%; justify-content: center; }
+    .plan-foot { font-size: 12px; color: var(--muted); text-align: center; margin-top: 12px; }
+
+    .btn { display: inline-flex; align-items: center; padding: 12px 24px; border-radius: 10px; font-family: var(--font-body); font-size: 14px; font-weight: 600; text-decoration: none; border: none; cursor: pointer; transition: all 0.2s; }
+    .btn-blue { background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; box-shadow: 0 4px 14px var(--accent-glow); }
+    .btn-blue:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); }
+    .btn-white { background: var(--surface); color: var(--text); border: 1px solid var(--border); }
+    .btn-white:hover { border-color: var(--border-hover); }
+
+    /* medals */
+    .section { padding: 48px 0; border-top: 1px solid var(--border); margin-top: 48px; }
+    .section-tag { font-size: 11px; font-weight: 600; color: var(--accent); letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 10px; }
+    .section-h { font-family: var(--font-display); font-size: clamp(22px, 2.5vw, 30px); letter-spacing: -0.02em; margin-bottom: 8px; }
+    .section-p { font-size: 14px; color: var(--muted); line-height: 1.7; max-width: 480px; margin-bottom: 28px; }
+    .medals-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; }
+    .medal-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 18px; text-align: center; transition: border-color 0.15s, transform 0.15s; }
+    .medal-card:hover { border-color: var(--border-hover); transform: translateY(-2px); }
+    .medal-card.gold { background: linear-gradient(135deg, rgba(217,119,6,0.07), rgba(217,119,6,0.02)); border-color: rgba(217,119,6,0.22); }
+    .medal-emoji { font-size: 28px; margin-bottom: 9px; }
+    .medal-name { font-size: 13px; font-weight: 600; margin-bottom: 5px; }
+    .medal-desc { font-size: 12px; color: var(--muted); line-height: 1.5; }
+
+    /* mobile sidebar */
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(11,30,63,0.4); z-index: 9; }
+    .mobile-overlay.active { display: block; }
+    .mobile-menu-btn { display: none; font-size: 20px; cursor: pointer; color: var(--muted); margin-right: 12px; }
+
+    @keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: 0.35; } }
+
+    @media (max-width: 900px) {
+      .sidebar { transform: translateX(-100%); transition: transform 0.25s; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; }
+      .mobile-menu-btn { display: inline-block; }
+    }
+    @media (max-width: 760px) { .pricing-grid { grid-template-columns: 1fr; } .medals-grid { grid-template-columns: 1fr 1fr; } }
+    @media (max-width: 520px) { .main { padding: 20px 16px; } .medals-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar" id="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo">
+      <img src="favicon.svg" alt="RAG Learning" class="logo-img" />
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">🚦</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="support-app.html"><span class="nav-icon">✉️</span> Contact us</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">?</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="mobile-overlay" id="mobileOverlay" onclick="closeSidebar()"></div>
+
+  <!-- Main -->
+  <main class="main">
+    <div style="display:flex;align-items:center;margin-bottom:32px;">
+      <div class="mobile-menu-btn" onclick="document.getElementById('sidebar').classList.add('open');document.getElementById('mobileOverlay').classList.add('active');">☰</div>
+      <div>
+        <div style="font-family:var(--font-display);font-size:26px;letter-spacing:-0.02em;">Pricing</div>
+        <div style="font-size:13px;color:var(--muted);margin-top:2px;">Choose the plan that works for you</div>
+      </div>
+    </div>
+
+    <!-- Billing toggle -->
+    <div class="billing-toggle-wrap">
+      <div class="billing-toggle" role="tablist" aria-label="Billing cycle">
+        <button type="button" class="cycle-btn active" data-plan="monthly" role="tab" aria-selected="true">Monthly</button>
+        <button type="button" class="cycle-btn" data-plan="biannual" role="tab" aria-selected="false">
+          6 months <span class="cycle-save">–5%</span>
+        </button>
+        <button type="button" class="cycle-btn" data-plan="annual" role="tab" aria-selected="false">
+          Annual <span class="cycle-save">–20%</span>
+        </button>
+      </div>
+    </div>
+
+    <div class="pricing-grid">
+      <!-- Free -->
+      <div class="plan-card">
+        <span class="plan-badge free">Always free</span>
+        <div class="plan-name">Free</div>
+        <div class="plan-price">
+          <span class="plan-price-amount">£0</span>
+          <span class="plan-price-period">/ forever</span>
+        </div>
+        <div class="plan-sub">For every UK student. No card needed.</div>
+        <ul class="plan-features">
+          <li><span class="plan-check">✓</span> Spec-matched notes for every supported subject</li>
+          <li><span class="plan-check">✓</span> 10-question diagnostic per topic</li>
+          <li><span class="plan-check">✓</span> Full RAG tracking &amp; progress dashboard</li>
+          <li><span class="plan-check">✓</span> Core practice-question bank</li>
+          <li><span class="plan-check">✓</span> Streaks, medals &amp; study tracker</li>
+          <li><span class="plan-check">✓</span> Works on desktop, tablet &amp; mobile</li>
+        </ul>
+        <a href="Dashboard.html" class="btn btn-white plan-btn">Go to Dashboard</a>
+        <div class="plan-foot">You're on this plan</div>
+      </div>
+
+      <!-- Pro -->
+      <div class="plan-card pro">
+        <span class="plan-badge pop">Most popular</span>
+        <div class="plan-name">RAG <em>Pro</em></div>
+        <div class="plan-price">
+          <span class="plan-price-amount" id="proPriceAmount">£9.99</span>
+          <span class="plan-price-period" id="proPricePeriod">/ month</span>
+        </div>
+        <div class="plan-sub" id="proPriceSub">7-day free trial · cancel any time</div>
+        <ul class="plan-features">
+          <li><span class="plan-check">✓</span> Unlimited practice questions across every topic</li>
+          <li><span class="plan-check">✓</span> AI tutor — instant explanations on any question</li>
+          <li><span class="plan-check">✓</span> Full past-paper archive with examiner-style marking</li>
+          <li><span class="plan-check">✓</span> Predicted grade tracker &amp; weekly progress insights</li>
+          <li><span class="plan-check">✓</span> Custom study plans around your exam timetable</li>
+          <li><span class="plan-check">✓</span> Downloadable PDF notes for offline revision</li>
+          <li><span class="plan-check">✓</span> Priority support &amp; ad-free experience</li>
+        </ul>
+        <button type="button" class="btn btn-blue plan-btn" id="proCtaBtn" data-plan="monthly">
+          Start 7-day free trial
+        </button>
+        <div class="plan-foot">Cancel any time · No card charged during trial</div>
+      </div>
+    </div>
+
+    <!-- Medals -->
+    <div class="section">
+      <div class="section-tag">Milestones</div>
+      <div class="section-h">Earn medals along the way</div>
+      <p class="section-p">Both plans include our streaks, medals and milestone system — small wins that make daily revision feel worth showing up for.</p>
+      <div class="medals-grid">
+        <div class="medal-card"><div class="medal-emoji">🥇</div><div class="medal-name">First Green</div><div class="medal-desc">Get your first topic rated green</div></div>
+        <div class="medal-card"><div class="medal-emoji">🔥</div><div class="medal-name">On Fire</div><div class="medal-desc">Study 7 days in a row</div></div>
+        <div class="medal-card"><div class="medal-emoji">📚</div><div class="medal-name">Subject Master</div><div class="medal-desc">All topics in one subject green</div></div>
+        <div class="medal-card"><div class="medal-emoji">⚡</div><div class="medal-name">Perfect Score</div><div class="medal-desc">10/10 on a diagnostic</div></div>
+        <div class="medal-card"><div class="medal-emoji">📈</div><div class="medal-name">Moving Up</div><div class="medal-desc">Move 5 topics up a colour</div></div>
+        <div class="medal-card gold"><div class="medal-emoji">🏆</div><div class="medal-name">All Clear</div><div class="medal-desc">Every topic across all subjects is green</div></div>
+      </div>
+    </div>
+  </main>
+</div>
+
+<!-- Sign-out modal -->
+<div class="signout-overlay" id="signoutOverlay">
+  <div class="signout-modal">
+    <div class="signout-icon">⏻</div>
+    <div class="signout-title">Sign out?</div>
+    <div class="signout-msg">You'll need to sign back in to access your dashboard and progress.</div>
+    <div class="signout-actions">
+      <button class="signout-btn cancel" onclick="document.getElementById('signoutOverlay').classList.remove('active')">Cancel</button>
+      <button class="signout-btn confirm" onclick="doSignOut()">Sign out</button>
+    </div>
+  </div>
+</div>
+
+<script>
+  function closeSidebar() {
+    document.getElementById('sidebar').classList.remove('open');
+    document.getElementById('mobileOverlay').classList.remove('active');
+  }
+  function confirmSignOut() { document.getElementById('signoutOverlay').classList.add('active'); }
+  function doSignOut() { supabaseClient.auth.signOut().then(() => { location.href = 'auth/login.html'; }); }
+
+  const PLAN_DETAILS = {
+    monthly:  { amount: '£9.99',  period: '/ month',    sub: '7-day free trial · cancel any time' },
+    biannual: { amount: '£56.94', period: '/ 6 months', sub: '7-day free trial · £9.49/mo effective · save 5%' },
+    annual:   { amount: '£95.90', period: '/ year',     sub: '7-day free trial · £7.99/mo effective · save 20%' },
+  };
+
+  const cycleBtns = document.querySelectorAll('.cycle-btn');
+  const proCtaBtn = document.getElementById('proCtaBtn');
+  const amountEl  = document.getElementById('proPriceAmount');
+  const periodEl  = document.getElementById('proPricePeriod');
+  const subEl     = document.getElementById('proPriceSub');
+
+  function setPlan(plan) {
+    const d = PLAN_DETAILS[plan]; if (!d) return;
+    amountEl.textContent = d.amount; periodEl.textContent = d.period; subEl.textContent = d.sub;
+    proCtaBtn.dataset.plan = plan;
+    cycleBtns.forEach(b => { const a = b.dataset.plan === plan; b.classList.toggle('active', a); b.setAttribute('aria-selected', a ? 'true' : 'false'); });
+  }
+
+  cycleBtns.forEach(b => b.addEventListener('click', () => setPlan(b.dataset.plan)));
+  const initialPlan = new URLSearchParams(location.search).get('plan');
+  if (initialPlan && PLAN_DETAILS[initialPlan]) setPlan(initialPlan);
+
+  proCtaBtn.addEventListener('click', async () => {
+    const plan = proCtaBtn.dataset.plan || 'monthly';
+    const originalLabel = proCtaBtn.textContent;
+    try {
+      proCtaBtn.disabled = true; proCtaBtn.textContent = 'Loading…';
+      const { data: { session } } = await supabaseClient.auth.getSession();
+      if (!session) { window.location = `auth/register.html?plan=${plan}`; return; }
+      const resp = await fetch('/api/create-checkout-session', {
+        method: 'POST',
+        headers: { 'Authorization': `Bearer ${session.access_token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ plan }),
+      });
+      const data = await resp.json();
+      if (!resp.ok) { if (data.error === 'already_subscribed') { window.location = 'settings.html'; return; } throw new Error(data.error || 'checkout_failed'); }
+      window.location = data.url;
+    } catch (err) {
+      console.error(err);
+      alert('Sorry, something went wrong starting checkout. Please try again.');
+      proCtaBtn.disabled = false; proCtaBtn.textContent = originalLabel;
+    }
+  });
+
+  // Load user
+  (async () => {
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session) { location.href = 'auth/login.html'; return; }
+    const { data: profile } = await supabaseClient.from('profiles').select('first_name, last_name, avatar_url').eq('id', session.user.id).single();
+    const firstName = profile?.first_name || '';
+    const lastName  = profile?.last_name  || '';
+    document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim() || session.user.email;
+    const av = document.getElementById('avatarInitials');
+    if (profile?.avatar_url) {
+      const img = document.createElement('img'); img.src = profile.avatar_url; img.alt = '';
+      img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+      av.replaceChildren(img);
+    } else {
+      av.textContent = ((firstName[0]||'')+(lastName[0]||'')).toUpperCase() || '?';
+    }
+  })();
+</script>
+</body>
+</html>
