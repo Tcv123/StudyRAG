@@ -27409,7 +27409,7 @@ window.SUBJECTS = [
               ], indicative: {
                 'Environmental damage': 'Severe air pollution (Beijing smog), river pollution (Yellow River), land degradation, desertification in north, rapid coal use',
                 'Inevitability argument': "Historical precedent (UK industrial revolution); China's coal dependency during growth phase; environmental regulation lagged behind growth",
-                'Counter-argument': 'China now world's largest investor in renewables; solar/wind capacity growing rapidly; afforestation programmes; environmental policy tightening',
+                'Counter-argument': "China now world's largest investor in renewables; solar/wind capacity growing rapidly; afforestation programmes; environmental policy tightening",
                 'Scale of response': 'China pledged carbon neutrality by 2060; ecological civilisation concept embedded in policy; some cities improving air quality',
                 'Conclusion': 'Environmental damage was substantial but not entirely inevitable; recent policy shifts show decoupling is possible with political will'
               }},
