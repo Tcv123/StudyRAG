@@ -137,24 +137,33 @@
     .night-toggle-pill.on::after { transform: translateX(18px); background: #fff; }
 
     /* ── HELP PANEL OVERLAY ── */
-    .help-overlay { position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 999; display: none; align-items: center; justify-content: center; animation: fadeIn 0.2s ease; }
+    .help-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.5); backdrop-filter: blur(4px); z-index: 999; display: none; align-items: center; justify-content: center; animation: fadeIn 0.2s ease; padding: 20px; }
     .help-overlay.active { display: flex; }
     .help-panel {
-      background: var(--surface); border-radius: 20px; padding: 32px 28px;
-      max-width: 520px; width: 90%; box-shadow: 0 20px 60px rgba(0,0,0,0.15);
-      position: relative; animation: slideUp 0.3s ease;
+      background: var(--surface); border-radius: 24px; padding: 36px 32px 28px;
+      max-width: 560px; width: 100%; box-shadow: 0 24px 64px rgba(11,30,63,0.18);
+      position: relative; animation: slideUp 0.3s cubic-bezier(0.16,1,0.3,1); max-height: 92vh; overflow-y: auto;
     }
-    @keyframes slideUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-    .help-panel-title { font-family: var(--font-display); font-size: 22px; margin-bottom: 6px; }
-    .help-panel-sub { font-size: 14px; color: var(--muted); margin-bottom: 20px; line-height: 1.5; }
-    .help-panel-close { position: absolute; top: 16px; right: 18px; background: none; border: none; font-size: 18px; cursor: pointer; color: var(--muted); padding: 4px; }
-    .help-panel-close:hover { color: var(--text); }
-    .help-steps { display: flex; flex-direction: column; gap: 14px; margin-bottom: 20px; }
-    .help-step { display: flex; gap: 14px; align-items: flex-start; }
-    .help-step-num { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.2); display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 14px; color: var(--accent-dark); flex-shrink: 0; }
-    .help-step-text { font-size: 14px; line-height: 1.6; padding-top: 5px; }
-    .help-goal { font-size: 14px; color: var(--accent-dark); font-weight: 600; text-align: center; padding: 14px; background: var(--accent-dim); border-radius: 12px; }
-    .help-cta { display: block; width: 100%; margin-top: 18px; padding: 13px 20px; border: none; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 14px rgba(37,99,235,0.22); transition: transform 0.15s, box-shadow 0.15s; }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(24px); } to { opacity: 1; transform: translateY(0); } }
+    .help-panel-close { position: absolute; top: 16px; right: 18px; background: var(--surface2); border: 1px solid var(--border); border-radius: 8px; width: 30px; height: 30px; display: flex; align-items: center; justify-content: center; font-size: 14px; cursor: pointer; color: var(--muted); transition: all 0.15s; }
+    .help-panel-close:hover { background: var(--surface3); color: var(--text); }
+    .help-header { margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border); }
+    .help-badge { display: inline-flex; align-items: center; gap: 6px; font-size: 11px; font-weight: 600; color: var(--accent-dark); letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 10px; }
+    .help-panel-title { font-family: var(--font-display); font-size: 26px; letter-spacing: -0.02em; margin-bottom: 8px; line-height: 1.2; }
+    .help-panel-sub { font-size: 14px; color: var(--muted); line-height: 1.6; }
+    .help-steps { display: flex; flex-direction: column; gap: 0; margin-bottom: 20px; }
+    .help-step { display: flex; gap: 16px; align-items: flex-start; padding: 16px 0; border-bottom: 1px solid var(--surface3); }
+    .help-step:last-child { border-bottom: none; }
+    .help-step-icon { width: 38px; height: 38px; border-radius: 12px; background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.15); display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
+    .help-step-body { flex: 1; padding-top: 2px; }
+    .help-step-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 4px; }
+    .help-step-desc { font-size: 13px; color: var(--muted); line-height: 1.6; }
+    .help-step-tag { display: inline-block; margin-top: 5px; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; background: var(--accent-dim); color: var(--accent-dark); }
+    .help-feedback-box { background: var(--surface2); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; margin-bottom: 18px; }
+    .help-feedback-box p { font-size: 13px; color: var(--muted); line-height: 1.6; margin-bottom: 10px; }
+    .help-feedback-box a { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; font-weight: 600; color: var(--accent-dark); text-decoration: none; }
+    .help-feedback-box a:hover { text-decoration: underline; }
+    .help-cta { display: block; width: 100%; padding: 14px 20px; border: none; border-radius: 12px; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; font-family: var(--font-body); font-size: 15px; font-weight: 600; cursor: pointer; box-shadow: 0 4px 14px rgba(37,99,235,0.22); transition: transform 0.15s, box-shadow 0.15s; }
     .help-cta:hover { transform: translateY(-1px); box-shadow: 0 6px 20px rgba(37,99,235,0.3); }
 
     .settings-link { display: flex; align-items: center; gap: 6px; padding: 7px 14px; background: var(--surface); border: 1px solid var(--border); border-radius: 10px; font-size: 13px; color: var(--muted); text-decoration: none; transition: all 0.15s; }
@@ -2935,29 +2944,52 @@ load().then(() => {
 <!-- Help Panel Overlay -->
 <div class="help-overlay" id="helpOverlay" onclick="if(event.target===this)dismissWelcome()">
   <div class="help-panel">
-    <button class="help-panel-close" onclick="dismissWelcome()">✕</button>
-    <div class="help-panel-title">👋 Welcome to RAG Learning</div>
-    <div class="help-panel-sub">Start with a diagnostic — it'll pinpoint your weak topics so your revision targets what actually matters.</div>
+    <button class="help-panel-close" onclick="dismissWelcome()" title="Close">✕</button>
+
+    <div class="help-header">
+      <div class="help-badge">👋 Getting started</div>
+      <div class="help-panel-title">Welcome to RAG Learning</div>
+      <div class="help-panel-sub">Here's how to make the most of your revision — follow these steps and you'll know exactly what to focus on from day one.</div>
+    </div>
+
     <div class="help-steps">
       <div class="help-step">
-        <div class="help-step-num">1</div>
-        <div class="help-step-text"><strong>Take a diagnostic (highly recommended)</strong> — open the <strong>Diagnostic</strong> tab and work through the topics for each subject. It gives you a personalised red/amber/green map of what to prioritise. Your notes and practice questions are unlocked from day one, but skipping the diagnostic means revising blind.</div>
+        <div class="help-step-icon">🩺</div>
+        <div class="help-step-body">
+          <div class="help-step-title">Take a diagnostic</div>
+          <div class="help-step-desc">Open the <strong>Diagnostic</strong> tab and work through topics for each subject. It builds a personalised red / amber / green map of exactly what to prioritise — skipping it means revising blind.</div>
+          <span class="help-step-tag">Highly recommended first step</span>
+        </div>
       </div>
       <div class="help-step">
-        <div class="help-step-num">2</div>
-        <div class="help-step-text">Check your <strong>Breakdown</strong> page to see which topics came back red or amber — those are the ones that need the most work.</div>
+        <div class="help-step-icon">📊</div>
+        <div class="help-step-body">
+          <div class="help-step-title">Review your Breakdown</div>
+          <div class="help-step-desc">Head to the <strong>Breakdown</strong> page to see which topics are red or amber. These are the ones that need the most attention — focus your revision here first.</div>
+        </div>
       </div>
       <div class="help-step">
-        <div class="help-step-num">3</div>
-        <div class="help-step-text">Use <strong>Notes</strong> and <strong>Practice Questions</strong> to drill your weak topics — they're available anytime, but the diagnostic tells you where to start.</div>
+        <div class="help-step-icon">📝</div>
+        <div class="help-step-body">
+          <div class="help-step-title">Study with Notes & Practice</div>
+          <div class="help-step-desc">Use <strong>Notes</strong> to read up on weak topics and <strong>Practice Questions</strong> to test yourself. Both are available from day one — the diagnostic just tells you where to start.</div>
+        </div>
       </div>
       <div class="help-step">
-        <div class="help-step-num">4</div>
-        <div class="help-step-text">Re-do diagnostics to update your RAG colours as you improve.</div>
+        <div class="help-step-icon">🔁</div>
+        <div class="help-step-body">
+          <div class="help-step-title">Re-take diagnostics as you improve</div>
+          <div class="help-step-desc">Re-run diagnostics regularly to update your RAG colours. Watch your reds turn amber, and your ambers turn green. The goal: everything green before exam day.</div>
+        </div>
       </div>
     </div>
-    <div class="help-goal">The goal is to get every topic green and feel confident heading into your exams. 💪</div>
-    <button class="help-cta" onclick="dismissWelcome()">Got it — let's go →</button>
+
+    <div class="help-feedback-box">
+      <p>We're always working to make RAG Learning better. All feedback is welcome — good or bad. If something isn't working, feels confusing, or you have an idea, we'd love to hear it.</p>
+      <a href="/contact.html">✉️ Send us a message →</a>
+    </div>
+
+    <button class="help-cta" onclick="dismissWelcome()">Got it — let's start revising →</button>
   </div>
 </div>
 
