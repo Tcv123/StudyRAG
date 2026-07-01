@@ -600,13 +600,14 @@
 
     /* Hero early-adopter nudge */
     .ea-nudge {
-      margin-top: 16px;
-      display: inline-flex; align-items: center; gap: 8px;
-      background: linear-gradient(135deg, rgba(124,58,237,0.10), rgba(37,99,235,0.10));
-      border: 1px solid rgba(124,58,237,0.28);
-      border-radius: 10px; padding: 9px 14px;
-      font-size: 13px; color: #5b21b6;
+      margin-top: 20px;
+      display: inline-flex; align-items: center; gap: 10px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(37,99,235,0.10));
+      border: 1px solid rgba(124,58,237,0.32);
+      border-radius: 12px; padding: 13px 18px;
+      font-size: 15px; color: #5b21b6; line-height: 1.4;
     }
+    .ea-nudge .ea-icon { font-size: 20px; flex-shrink: 0; }
     .ea-nudge strong { color: #4c1d95; font-weight: 700; }
     .ea-nudge .ea-spots { font-variant-numeric: tabular-nums; }
 
@@ -775,7 +776,8 @@
         <a href="auth/login.html" class="btn btn-white">Sign in</a>
       </div>
       <div class="ea-nudge" id="heroEaNudge">
-        🎁 <span><strong><span class="ea-spots" id="heroEaCount">50</span> spots</strong> left — sign up now for a free month of Premium</span>
+        <span class="ea-icon">🎁</span>
+        <span><strong><span class="ea-spots" id="heroEaCount">50</span> of 50 spots left</strong> — sign up now and get <strong>3 months of Premium free</strong></span>
       </div>
     </div>
     <div class="hero-right">
@@ -1141,7 +1143,7 @@
         // Hero nudge
         const heroCount = document.getElementById('heroEaCount');
         const heroNudge = document.getElementById('heroEaNudge');
-        if (heroCount) heroCount.textContent = left;
+        if (heroCount) heroCount.textContent = left + ' of 50';
         if (heroNudge && left === 0) heroNudge.style.display = 'none';
 
         // CTA line
