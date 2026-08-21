@@ -71,6 +71,18 @@
         "dev"
       ],
       "port": 5173
+    },
+    {
+      "name": "distress-demo-file",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8090",
+        "--directory",
+        "/Users/tharun/Desktop/Distress Dection Engine/dist"
+      ],
+      "port": 8090
     }
   ]
 }
