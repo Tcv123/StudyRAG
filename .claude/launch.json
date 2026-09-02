@@ -46,43 +46,6 @@
       ],
       "port": 8000,
       "autoPort": true
-    },
-    {
-      "name": "distress-api",
-      "runtimeExecutable": "/Users/tharun/Desktop/Distress Dection Engine/backend/.venv/bin/python",
-      "runtimeArgs": [
-        "-m",
-        "uvicorn",
-        "app.main:app",
-        "--port",
-        "8000",
-        "--app-dir",
-        "/Users/tharun/Desktop/Distress Dection Engine/backend"
-      ],
-      "port": 8000
-    },
-    {
-      "name": "distress-dashboard",
-      "runtimeExecutable": "npm",
-      "runtimeArgs": [
-        "--prefix",
-        "/Users/tharun/Desktop/Distress Dection Engine/frontend",
-        "run",
-        "dev"
-      ],
-      "port": 5173
-    },
-    {
-      "name": "distress-demo-file",
-      "runtimeExecutable": "python3",
-      "runtimeArgs": [
-        "-m",
-        "http.server",
-        "8090",
-        "--directory",
-        "/Users/tharun/Desktop/Distress Dection Engine/dist"
-      ],
-      "port": 8090
     }
   ]
 }
