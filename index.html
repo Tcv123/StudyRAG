@@ -757,7 +757,7 @@
 <!-- Early Adopter Banner -->
 <div class="early-banner" id="earlyBanner">
   <span class="eb-star">⭐</span>
-  <span><strong>Early adopter offer:</strong> The first 50 users to sign up get <strong>3 months of Premium free</strong></span>
+  <span><strong>Early adopter offer:</strong> The first 100 users to sign up get <strong>3 months of Premium free</strong></span>
   <span class="eb-pill eb-pill-loading" id="earlyBannerPill">
     <span id="earlyBannerCount">—</span>
     <span>spots left</span>
@@ -777,7 +777,7 @@
       </div>
       <div class="ea-nudge" id="heroEaNudge">
         <span class="ea-icon">🎁</span>
-        <span><strong><span class="ea-spots" id="heroEaCount">50</span> spots left</strong> — sign up now and get <strong>3 months of Premium free</strong></span>
+        <span><strong><span class="ea-spots" id="heroEaCount">100</span> spots left</strong> — sign up now and get <strong>3 months of Premium free</strong></span>
       </div>
     </div>
     <div class="hero-right">
@@ -1107,7 +1107,7 @@
     <div class="cta-box">
       <h2>Ready to revise smarter?</h2>
       <p>Create a free account and know exactly what to study — no guessing, no wasted time.<br>
-      <strong style="color:var(--accent-dark)">⭐ First 50 sign-ups get 3 months of Premium free</strong> — <span id="ctaEaCount">spots still available!</span></p>
+      <strong style="color:var(--accent-dark)">⭐ First 100 sign-ups get 3 months of Premium free</strong> — <span id="ctaEaCount">spots still available!</span></p>
       <div class="cta-btns">
         <a href="auth/register.html" class="btn btn-blue">Create free account</a>
         <a href="auth/login.html" class="btn btn-white">Sign in</a>
@@ -1121,7 +1121,7 @@
   <script src="supabase-config.js"></script>
   <script>
     (async function () {
-      const EARLY_LIMIT = 50;
+      const EARLY_LIMIT = 100;
       try {
         const { data, error } = await supabaseClient.rpc('count_early_adopters');
         if (error) throw error;
@@ -1143,7 +1143,7 @@
         // Hero nudge
         const heroCount = document.getElementById('heroEaCount');
         const heroNudge = document.getElementById('heroEaNudge');
-        if (heroCount) heroCount.textContent = left + ' of 50';
+        if (heroCount) heroCount.textContent = left + ' of 100';
         if (heroNudge && left === 0) heroNudge.style.display = 'none';
 
         // CTA line
