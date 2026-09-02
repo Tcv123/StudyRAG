@@ -1123,9 +1123,9 @@
     (async function () {
       const EARLY_LIMIT = 100;
       try {
-        const { count, error } = await supabaseClient.from('profiles').select('*', { count: 'exact', head: true });
+        const { data, error } = await supabaseClient.rpc('count_early_adopters');
         if (error) throw error;
-        const taken = count ?? 0;
+        const taken = data ?? 0;
         const left  = Math.max(0, EARLY_LIMIT - taken);
 
         // Banner pill

@@ -28,11 +28,11 @@ STABLE
 SECURITY DEFINER
 SET search_path = public
 AS $$
-  SELECT COUNT(*)::INTEGER FROM public.profiles WHERE is_early_adopter = TRUE;
+  SELECT COUNT(*)::INTEGER FROM public.profiles;
 $$;
 GRANT EXECUTE ON FUNCTION public.count_early_adopters() TO anon, authenticated;
 
--- 4. Trigger: auto-grant pro to the first 50 new sign-ups
+-- 4. Trigger: auto-grant pro to the first 100 new sign-ups
 CREATE OR REPLACE FUNCTION public.grant_early_adopter_premium()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -42,8 +42,8 @@ AS $$
 DECLARE
   current_count INTEGER;
 BEGIN
-  SELECT COUNT(*) INTO current_count FROM public.profiles WHERE is_early_adopter = TRUE;
-  IF current_count < 50 THEN
+  SELECT COUNT(*) INTO current_count FROM public.profiles;
+  IF current_count < 100 THEN
     NEW.is_early_adopter        := TRUE;
     NEW.premium_until           := NOW() + INTERVAL '3 months';
     NEW.subscription_tier       := 'pro_monthly';
