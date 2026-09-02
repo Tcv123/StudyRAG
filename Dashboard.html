@@ -1128,9 +1128,27 @@ function renderPlanCta(profile) {
   const trialing  = status === 'trialing';
 
   if (titleEl) titleEl.textContent = trialing ? `✨ Free trial active` : `✨ You're on Pro`;
+
+  let expiryLine = '';
+  if (expiresAt) {
+    const msLeft  = expiresAt - new Date();
+    const daysLeft = Math.ceil(msLeft / (1000 * 60 * 60 * 24));
+    if (daysLeft <= 0) {
+      expiryLine = ' · Expires today';
+    } else if (daysLeft === 1) {
+      expiryLine = ' · 1 day left';
+    } else if (daysLeft < 30) {
+      expiryLine = ` · ${daysLeft} days left`;
+    } else {
+      const months = Math.floor(daysLeft / 30);
+      const rem    = daysLeft % 30;
+      expiryLine   = rem > 0 ? ` · ${months}mo ${rem}d left` : ` · ${months} month${months > 1 ? 's' : ''} left`;
+    }
+  }
+
   if (subEl)   subEl.textContent   = trialing
-    ? `${planLabel} — full access during your 7-day trial.`
-    : `${planLabel} — full access to past papers, AI feedback, and mark schemes.`;
+    ? `${planLabel} — full access during your 7-day trial${expiryLine}.`
+    : `${planLabel} — full access to past papers, AI feedback, and mark schemes${expiryLine}.`;
   if (btnEl)   { btnEl.textContent = 'Manage plan'; btnEl.onclick = () => { window.location = 'settings.html'; }; }
 }
 
