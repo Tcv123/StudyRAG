@@ -20,6 +20,11 @@
  *   -- If the profiles table already exists, add the avatar column:
  *   ALTER TABLE profiles ADD COLUMN IF NOT EXISTS avatar_url TEXT;
  *
+ *   -- Counter behind the Hat Trick / Flawless medals (3 and 10 perfect
+ *   -- diagnostics). user_medals is a set, so it can't count repeats.
+ *   -- See db/migrations/2026-09-03-medal-fixes.sql
+ *   ALTER TABLE profiles ADD COLUMN IF NOT EXISTS perfect_diagnostics INTEGER NOT NULL DEFAULT 0;
+ *
  *   -- 1b. Avatars storage bucket (run this in the SQL editor too)
  *   INSERT INTO storage.buckets (id, name, public)
  *     VALUES ('avatars', 'avatars', true)

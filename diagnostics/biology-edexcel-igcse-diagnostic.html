@@ -8,6 +8,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
+  <script src="../medals-engine.js"></script>
   <script src="../study-tracker.js"></script>
   <script src="../questions/biology-edexcel-igcse/biology-edexcel-igcse.js"></script>
   <script src="../questions/biology-edexcel-igcse/biology-edexcel-igcse-written.js"></script>
@@ -820,7 +821,7 @@ async function saveResult(rag, results) {
   const { data: existing } = await supabaseClient
     .from('topic_progress')
     .select('id')
-    .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'Edexcel').eq('topic', topicKey)
+    .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'Edexcel IGCSE').eq('topic', topicKey)
     .maybeSingle();
 
   if (existing) {
@@ -829,13 +830,13 @@ async function saveResult(rag, results) {
       .eq('id', existing.id);
   } else {
     await supabaseClient.from('topic_progress')
-      .insert({ user_id: user.id, subject: 'Computer Science', exam_board: 'OCR', topic: topicKey, rag_status: rag, updated_at: now });
+      .insert({ user_id: user.id, subject: 'Biology', exam_board: 'Edexcel IGCSE', topic: topicKey, rag_status: rag, updated_at: now });
   }
 
   // Recalculate subject-level RAG
   const { data: allTopics } = await supabaseClient
     .from('topic_progress').select('rag_status')
-    .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'Edexcel');
+    .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'Edexcel IGCSE');
 
   if (allTopics && allTopics.length > 0) {
     const total = allTopics.length;
@@ -843,17 +844,12 @@ async function saveResult(rag, results) {
     const red   = allTopics.filter(t => t.rag_status === 'red').length;
     const subjRag = (green / total) >= 0.7 ? 'green' : (red / total) >= 0.4 ? 'red' : 'amber';
     await supabaseClient.from('user_subjects').update({ rag_status: subjRag })
-      .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'Edexcel');
+      .eq('user_id', user.id).eq('subject', 'Biology').eq('exam_board', 'Edexcel IGCSE');
   }
 
-  // Check perfect_score medal — all questions answered correctly
-  if (rag === 'green' && results.every(r => r.pts > 0)) {
-    const { data: existing } = await supabaseClient.from('user_medals')
-      .select('id').eq('user_id', user.id).eq('medal_id', 'perfect_score').maybeSingle();
-    if (!existing) {
-      await supabaseClient.from('user_medals').insert({ user_id: user.id, medal_id: 'perfect_score' });
-    }
-  }
+  // Per-run medals (perfect score, all three tiers correct) — shared logic
+  // lives in medals-engine.js so every diagnostic awards identically.
+  await awardDiagnosticMedals(user, results, rag);
 }
 
 /* ═══════════════════════════════════════
