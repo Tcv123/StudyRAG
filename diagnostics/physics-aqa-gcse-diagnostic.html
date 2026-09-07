@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
+  <script src="../medals-engine.js"></script>
   <script src="../study-tracker.js"></script>
   <script src="../nav-gating.js"></script>
   <script src="../questions/physics-aqa-gcse/physics-aqa-gcse.js"></script>
@@ -849,14 +850,9 @@ async function saveResult(rag, results) {
       .eq('user_id', user.id).eq('subject', 'Physics').eq('exam_board', 'AQA');
   }
 
-  // Check perfect_score medal — all questions answered correctly
-  if (rag === 'green' && results.every(r => r.pts > 0)) {
-    const { data: existing } = await supabaseClient.from('user_medals')
-      .select('id').eq('user_id', user.id).eq('medal_id', 'perfect_score').maybeSingle();
-    if (!existing) {
-      await supabaseClient.from('user_medals').insert({ user_id: user.id, medal_id: 'perfect_score' });
-    }
-  }
+  // Per-run medals (perfect score, all three tiers correct) — shared logic
+  // lives in medals-engine.js so every diagnostic awards identically.
+  await awardDiagnosticMedals(user, results, rag);
 }
 
 /* ═══════════════════════════════════════

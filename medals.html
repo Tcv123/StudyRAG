@@ -11,6 +11,7 @@
   <script src="supabase-config.js"></script>
   <script src="study-tracker.js"></script>
   <script src="medals-data.js"></script>
+  <script src="medals-engine.js"></script>
   <script src="nav-gating.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -333,9 +334,10 @@ async function load() {
   queueMicrotask(() => { if (profile?.avatar_url) { const _av = document.getElementById('avatarInitials'), _img = document.createElement('img'); _img.src = profile.avatar_url; _img.alt = ''; _img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;'; _av.replaceChildren(_img); } });
   document.getElementById('avatarInitials').textContent = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
 
-  // Load earned medals
-  const { data: medals } = await supabaseClient.from('user_medals').select('medal_id').eq('user_id', user.id);
-  const earnedIds = new Set((medals || []).map(m => m.medal_id));
+  // Run the full medal check before rendering. This page used to only read
+  // user_medals, so anything earned since the last Dashboard visit showed as
+  // locked — finish a diagnostic, come straight here, and nothing appeared.
+  const earnedIds = await loadAndCheckMedals(user);
 
   renderPage(earnedIds);
 }
