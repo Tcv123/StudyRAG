@@ -266,9 +266,11 @@ $$;
 
 -- The only door into a class for a student.
 --
--- Every failure raises the same generic message. Distinguishing "no such
--- code" from "that class is full" would turn this into a way to probe which
--- codes exist, which is exactly what the no-read-on-classes rule is for.
+-- A bad code raises a deliberately vague error and is logged against the
+-- rate limit, so this can't be used to probe which codes exist. A full class
+-- does say so plainly: it leaks only that some code is real, the rate limit
+-- already makes guessing hopeless, and the alternative is a teacher being
+-- told their students "can't find the class" when it is simply full.
 create or replace function public.join_class(p_code text)
 returns table (class_id uuid, class_name text, subject text,
                exam_board text, teacher_name text)
@@ -316,12 +318,14 @@ begin
       c.level, coalesce(me.level, 'not set');
   end if;
 
+  -- Already a member? Fall through to the ON CONFLICT below, so rejoining a
+  -- full class you are already in still works.
   select count(*) into n_members from public.class_members where class_members.class_id = c.id;
   if n_members >= c.max_students
      and not exists (select 1 from public.class_members m
                       where m.class_id = c.id and m.student_id = me.id) then
-    insert into public.class_join_attempts (student_id) values (me.id);
-    raise exception 'No class found with that code.';
+    raise exception 'That class is full (% of % places taken). Ask your teacher to make room.',
+      n_members, c.max_students;
   end if;
 
   insert into public.class_members (class_id, student_id)
