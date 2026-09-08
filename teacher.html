@@ -95,6 +95,12 @@
     .flag { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--amber-bg, rgba(217,119,6,0.1)); color: var(--amber-text, #B45309); white-space: nowrap; }
     .section-head { font-family: var(--font-display); font-size: 19px; margin: 4px 0 14px; letter-spacing: -0.01em; }
 
+    .att-row .mini-bar { display: flex; width: 110px; height: 8px; border-radius: 5px; overflow: hidden; background: var(--surface3); flex-shrink: 0; }
+    .att-row .mini-bar span { display: block; height: 100%; }
+    .att-row .att-num { font-size: 12px; color: var(--muted); width: 54px; text-align: right; white-space: nowrap; }
+    .class-bar { display: flex; height: 8px; border-radius: 5px; overflow: hidden; background: var(--surface3); margin-bottom: 14px; }
+    .class-bar span { display: block; height: 100%; }
+
     /* ── CLASS CARDS ── */
     .class-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
     .class-card {
@@ -361,66 +367,7 @@ async function load() {
   // the attention panel. Both are extra round trips that nothing above
   // depends on, so they finish in their own time.
   if (window.syncTeacherSubjects) window.syncTeacherSubjects();
-  loadAttention();
-}
-
-/* Students worth a look, across every class. Same three signals the class
- * page uses — gone quiet, lots of red, low average — and it names which one
- * fired, because "hasn't logged in for 12 days" and "scores are falling"
- * need completely different conversations. */
-async function loadAttention() {
-  const live = classes.filter(c => !c.archived);
-  if (!live.length) return;
-
-  const results = await Promise.all(live.map(async c => {
-    const [rosterRes, heatRes] = await Promise.all([
-      supabaseClient.rpc('class_roster',  { p_class_id: c.id }),
-      supabaseClient.rpc('class_heatmap', { p_class_id: c.id })
-    ]);
-    const heat = heatRes.data || [];
-    return (rosterRes.data || []).map(st => {
-      const theirs = heat.filter(h => h.student_id === st.student_id);
-      const reds   = theirs.filter(h => h.measured_rag === 'red').length;
-      const scored = theirs.filter(h => h.avg_pct != null);
-      const avg    = scored.length ? scored.reduce((a, b) => a + b.avg_pct, 0) / scored.length : null;
-      const days   = st.last_active
-        ? Math.floor((Date.now() - new Date(st.last_active).getTime()) / 86400000) : null;
-
-      let reason = null;
-      if (days == null)              reason = 'No activity yet';
-      else if (days > 10)            reason = `Quiet ${days} days`;
-      else if (reds >= 3)            reason = `${reds} red topics`;
-      else if (avg != null && avg < 45) reason = `Averaging ${Math.round(avg)}%`;
-
-      return reason ? { name: st.student_name, klass: c, reason, days: days ?? 999 } : null;
-    }).filter(Boolean);
-  }));
-
-  const flagged = results.flat().sort((a, b) => b.days - a.days);
-  const box = document.getElementById('attention');
-  if (!box) return;
-
-  if (!flagged.length) {
-    box.innerHTML = `
-      <div class="panel">
-        <h2>Everyone's keeping up</h2>
-        <p class="panel-sub" style="margin:0;">No one across your classes is quiet, dropping or stacking up red topics.</p>
-      </div>`;
-    return;
-  }
-
-  box.innerHTML = `
-    <div class="panel">
-      <h2>Worth a look</h2>
-      <p class="panel-sub">${flagged.length} student${flagged.length === 1 ? '' : 's'} across your classes. The flag says what to check, not how worried to be.</p>
-      ${flagged.slice(0, 12).map(f => `
-        <a class="att-row" href="class.html?id=${encodeURIComponent(f.klass.id)}">
-          <span class="att-name">${escapeHtml(f.name || 'Unnamed')}</span>
-          <span class="att-class">${escapeHtml(f.klass.name)}</span>
-          <span class="flag">${escapeHtml(f.reason)}</span>
-        </a>`).join('')}
-      ${flagged.length > 12 ? `<p class="panel-sub" style="margin:14px 0 0;">and ${flagged.length - 12} more.</p>` : ''}
-    </div>`;
+  loadInsights();
 }
 
 function memberCount(c) {
@@ -428,7 +375,7 @@ function memberCount(c) {
 }
 
 function render() {
-  const el = document.getElementById('content');
+  const el  = document.getElementById('content');
   const sub = document.getElementById('pageSub');
   const live     = classes.filter(c => !c.archived);
   const archived = classes.filter(c =>  c.archived);
@@ -439,13 +386,14 @@ function render() {
       <div class="empty">
         <div class="empty-emoji">🧑‍🏫</div>
         <h2>Create your first class</h2>
-        <p>You'll get a join code to share. Once students join, you'll see a live view of which topics are red across the whole group — and who needs a nudge.</p>
+        <p>You'll get a join code to share. Once students join, you'll see which topics
+        are red across the whole group — and who needs a nudge.</p>
         <button class="btn btn-primary" onclick="openCreate()">＋ New class</button>
       </div>`;
     return;
   }
 
-  const total = live.reduce((n, c) => n + memberCount(c), 0);
+  const total    = live.reduce((n, c) => n + memberCount(c), 0);
   const subjects = new Set(live.map(c => `${c.subject}|${c.exam_board}`)).size;
   sub.textContent = `${live.length} class${live.length === 1 ? '' : 'es'} · ${total} student${total === 1 ? '' : 's'}`;
 
@@ -456,6 +404,7 @@ function render() {
         <div class="class-emoji">${SUBJECTS_CONFIG.emojiFor(c.subject) || '📚'}</div>
         <div class="class-name">${escapeHtml(c.name)}</div>
         <div class="class-meta">${escapeHtml(c.subject)} · ${escapeHtml(c.exam_board)} · ${levelLabel(c.level)}</div>
+        ${muted ? '' : `<div class="class-bar" id="bar-${c.id}"></div>`}
         <div class="class-foot">
           <span class="code-chip">${muted ? 'Archived' : escapeHtml(c.join_code)}</span>
           <span class="member-count">${n} student${n === 1 ? '' : 's'}</span>
@@ -463,12 +412,16 @@ function render() {
       </a>`;
   };
 
+  // statAttention and the two panels are filled in by loadInsights() once the
+  // per-class data arrives; they are placeholders until then.
   const stats = live.length ? `
     <div class="stats">
       <div class="stat"><div class="stat-value">${live.length}</div><div class="stat-label">Class${live.length === 1 ? '' : 'es'}</div></div>
       <div class="stat"><div class="stat-value">${total}</div><div class="stat-label">Student${total === 1 ? '' : 's'}</div></div>
       <div class="stat"><div class="stat-value">${subjects}</div><div class="stat-label">Spec${subjects === 1 ? '' : 's'} you teach</div></div>
+      <div class="stat"><div class="stat-value" id="statAttention">–</div><div class="stat-label">Worth a look</div></div>
     </div>
+    <div id="teachNext"></div>
     <div id="attention"></div>
     <div class="section-head">Your classes</div>` : '';
 
@@ -483,6 +436,204 @@ function render() {
       <div class="class-grid">${archived.map(c => card(c, true)).join('')}</div>` : '');
 }
 
+/* One pass over every class, feeding the whole dashboard: which topics are
+ * red across the group, who needs chasing, and a RAG bar per class card.
+ *
+ * Roster and heatmap are fetched once per class and reused for all three —
+ * they were already being fetched for the attention list alone. */
+async function loadInsights() {
+  const live = classes.filter(c => !c.archived);
+  if (!live.length) return;
+
+  const per = await Promise.all(live.map(async c => {
+    const [rosterRes, heatRes, topics] = await Promise.all([
+      supabaseClient.rpc('class_roster',  { p_class_id: c.id }),
+      supabaseClient.rpc('class_heatmap', { p_class_id: c.id }),
+      loadTopics(c.subject, c.exam_board, c.level)
+    ]);
+    return { c, roster: rosterRes.data || [], heat: heatRes.data || [], topics };
+  }));
+
+  renderTeachNext(per);
+  renderAttention(per);
+  renderClassBars(per);
+}
+
+/* The reddest topics across every class the teacher takes. Measured reds
+ * count hardest — a score is evidence, a self-rating is a guess — and topics
+ * nobody has attempted are excluded entirely: that is a blind spot, not a
+ * weakness, and mixing the two would have teachers reteaching material the
+ * class may already be fine on. */
+function renderTeachNext(per) {
+  const rows = [];
+
+  for (const { c, roster, heat, topics } of per) {
+    if (!roster.length) continue;
+    for (const t of topics) {
+      let mRed = 0, sRed = 0, mAmber = 0, sAmber = 0, seen = 0;
+      for (const st of roster) {
+        const h = heat.find(x => x.student_id === st.student_id && x.topic === t.id);
+        if (!h) continue;
+        seen++;
+        if (h.measured_rag === 'red')        mRed++;
+        else if (h.measured_rag === 'amber') mAmber++;
+        else if (!h.measured_rag && h.self_rag === 'red')   sRed++;
+        else if (!h.measured_rag && h.self_rag === 'amber') sAmber++;
+      }
+      if (!seen) continue;
+      const score = mRed * 3 + sRed * 2 + mAmber * 1.5 + sAmber;
+      if (score > 0) rows.push({ klass: c, topic: t, mRed, sRed, mAmber, sAmber, seen, score });
+    }
+  }
+
+  rows.sort((a, b) => b.score - a.score);
+  const box = document.getElementById('teachNext');
+  if (!box) return;
+
+  if (!rows.length) {
+    box.innerHTML = `
+      <div class="panel">
+        <h2>Nothing red yet</h2>
+        <p class="panel-sub" style="margin:0;">Once your students work through diagnostics and practice
+        questions, the topics they're struggling with will be ranked here.</p>
+      </div>`;
+    return;
+  }
+
+  box.innerHTML = `
+    <div class="panel">
+      <h2>Teach this next</h2>
+      <p class="panel-sub">Ranked across all your classes, weighted towards topics where we have real
+      scores rather than self-ratings. Topics nobody has attempted aren't counted.</p>
+      ${rows.slice(0, 8).map(r => {
+        const red = r.mRed + r.sRed, amber = r.mAmber + r.sAmber;
+        const pct = n => `${(100 * n / Math.max(1, r.seen)).toFixed(1)}%`;
+        return `
+          <a class="att-row" href="class.html?id=${encodeURIComponent(r.klass.id)}">
+            <span class="att-name">${escapeHtml(r.topic.name)}</span>
+            <span class="att-class">${escapeHtml(r.klass.name)}</span>
+            <span class="mini-bar">
+              ${red   ? `<span style="width:${pct(red)};background:var(--red)"></span>` : ''}
+              ${amber ? `<span style="width:${pct(amber)};background:var(--amber)"></span>` : ''}
+            </span>
+            <span class="att-num">${red} red</span>
+          </a>`;
+      }).join('')}
+    </div>`;
+}
+
+/* Three independent signals, and the flag says which one fired — "hasn't
+ * logged in for 12 days" and "scores are falling" need completely different
+ * conversations, so a single blended score would hide the useful part. */
+function renderAttention(per) {
+  const flagged = [];
+
+  for (const { c, roster, heat } of per) {
+    for (const st of roster) {
+      const theirs = heat.filter(h => h.student_id === st.student_id);
+      const reds   = theirs.filter(h => h.measured_rag === 'red').length;
+      const scored = theirs.filter(h => h.avg_pct != null);
+      const avg    = scored.length ? scored.reduce((a, b) => a + b.avg_pct, 0) / scored.length : null;
+      const days   = st.last_active
+        ? Math.floor((Date.now() - new Date(st.last_active).getTime()) / 86400000) : null;
+
+      let reason = null;
+      if (days == null)                 reason = 'No activity yet';
+      else if (days > 10)               reason = `Quiet ${days} days`;
+      else if (reds >= 3)               reason = `${reds} red topics`;
+      else if (avg != null && avg < 45) reason = `Averaging ${Math.round(avg)}%`;
+
+      if (reason) flagged.push({ name: st.student_name, klass: c, reason, days: days ?? 999 });
+    }
+  }
+
+  flagged.sort((a, b) => b.days - a.days);
+  const box = document.getElementById('attention');
+  if (!box) return;
+
+  const statEl = document.getElementById('statAttention');
+  if (statEl) statEl.textContent = flagged.length;
+
+  if (!flagged.length) {
+    box.innerHTML = `
+      <div class="panel">
+        <h2>Everyone's keeping up</h2>
+        <p class="panel-sub" style="margin:0;">No one across your classes is quiet, dropping or stacking up red topics.</p>
+      </div>`;
+    return;
+  }
+
+  box.innerHTML = `
+    <div class="panel">
+      <h2>Worth a look</h2>
+      <p class="panel-sub">${flagged.length} student${flagged.length === 1 ? '' : 's'} across your classes. The flag says what to check, not how worried to be.</p>
+      ${flagged.slice(0, 10).map(f => `
+        <a class="att-row" href="class.html?id=${encodeURIComponent(f.klass.id)}">
+          <span class="att-name">${escapeHtml(f.name || 'Unnamed')}</span>
+          <span class="att-class">${escapeHtml(f.klass.name)}</span>
+          <span class="flag">${escapeHtml(f.reason)}</span>
+        </a>`).join('')}
+      ${flagged.length > 10 ? `<p class="panel-sub" style="margin:14px 0 0;">and ${flagged.length - 10} more.</p>` : ''}
+    </div>`;
+}
+
+/* A RAG bar on each class card, so a teacher can see which class is
+ * struggling without opening any of them. */
+function renderClassBars(per) {
+  for (const { c, roster, heat, topics } of per) {
+    const el = document.getElementById(`bar-${c.id}`);
+    if (!el) continue;
+
+    let red = 0, amber = 0, green = 0, none = 0;
+    for (const st of roster) {
+      for (const t of topics) {
+        const h = heat.find(x => x.student_id === st.student_id && x.topic === t.id);
+        const rag = h && (h.measured_rag || h.self_rag);
+        if (rag === 'red') red++; else if (rag === 'amber') amber++;
+        else if (rag === 'green') green++; else none++;
+      }
+    }
+    const total = Math.max(1, red + amber + green + none);
+    const w = n => `${(100 * n / total).toFixed(2)}%`;
+    el.innerHTML = `
+      <span style="width:${w(red)};background:var(--red)"></span>
+      <span style="width:${w(amber)};background:var(--amber)"></span>
+      <span style="width:${w(green)};background:var(--green)"></span>
+      <span style="width:${w(none)};background:var(--surface3)"></span>`;
+  }
+}
+
+/* Topic list for a class, resolved against the CLASS's level rather than the
+ * viewer's — the bank loaders in practice-bank-config.js read
+ * localStorage.cached_level, which says nothing about the class being shown. */
+function loadScriptOnce(src) {
+  return new Promise((resolve, reject) => {
+    if (document.querySelector(`script[src="${src}"]`)) return resolve();
+    const el = document.createElement('script');
+    el.src = src; el.onload = resolve;
+    el.onerror = () => reject(new Error('load failed'));
+    document.head.appendChild(el);
+  });
+}
+
+async function loadTopics(subject, board, level) {
+  const suffix = (level === 'a-level' || level === 'as') ? 'alevel' : 'gcse';
+  const base   = `${subject}_${board}`;
+  const pick   = map => (map[`${base}|${suffix}`] !== undefined ? map[`${base}|${suffix}`] : map[base]);
+
+  const files = pick(window.PRACTICE_BUNDLE_MAP || {});
+  if (!files) return [];
+  try { for (const f of files) await loadScriptOnce(f); } catch { return []; }
+
+  const getter = pick(window.PRACTICE_GLOBAL_MAP || {});
+  const bank = typeof getter === 'function' ? getter() : null;
+  if (!bank) return [];
+
+  return Object.keys(bank).map(id => ({
+    id,
+    name: (!Array.isArray(bank[id]) && bank[id]?.name) ? bank[id].name : id
+  }));
+}
 
 /* ── Create class ─────────────────────────────────────────────────────── */
 function buildSubjectPickers() { refreshSubjects(); }
