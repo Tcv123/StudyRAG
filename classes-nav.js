@@ -35,7 +35,6 @@
     #${SECTION_ID} .cn-text { min-width: 0; flex: 1; }
     #${SECTION_ID} .cn-name { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     #${SECTION_ID} .cn-sub { display: block; font-size: 11px; color: var(--muted2); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    #${SECTION_ID} .cn-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); flex-shrink: 0; align-self: center; margin-left: 6px; }
   `;
 
   /* Pages in subfolders (flashcards/, diagnostics/, subject-notes/) need to
@@ -82,22 +81,20 @@
     return sidebar.querySelector('.sidebar-bottom');
   }
 
-  function render(classes, outstanding) {
+  function render(classes) {
     const here = location.pathname.split('/').pop();
     const currentId = here === 'class.html'
       ? new URLSearchParams(location.search).get('id') : null;
 
     const rows = classes.map(c => {
-      const n = outstanding[c.class_id] || 0;
       const active = c.class_id === currentId ? ' active' : '';
       return `
         <a class="nav-item cn-item${active}" href="${BASE}class.html?id=${encodeURIComponent(c.class_id)}">
           <span class="nav-icon">${esc(emojiFor(c.subject))}</span>
           <span class="cn-text">
             <span class="cn-name">${esc(c.name)}</span>
-            <span class="cn-sub">${n ? `${n} to do` : esc(c.teacher_name || 'Your teacher')}</span>
+            <span class="cn-sub">${esc(c.teacher_name || 'Your teacher')}</span>
           </span>
-          ${n ? '<span class="cn-dot" title="Work set"></span>' : ''}
         </a>`;
     }).join('');
 
@@ -130,23 +127,14 @@
 
     if (typeof supabaseClient === 'undefined') return;
 
-    const [{ data: classes, error }, { data: work }] = await Promise.all([
-      supabaseClient.rpc('my_classes'),
-      supabaseClient.rpc('my_assignments')
-    ]);
+    const { data: classes, error } = await supabaseClient.rpc('my_classes');
 
     // Signed out, or the classroom migration hasn't been applied — either
     // way there is nothing useful to show, so take the section back out
     // rather than leaving an empty heading.
     if (error) { section.remove(); return; }
 
-    const outstanding = {};
-    for (const w of (work || [])) {
-      if (w.done_topics >= w.total_topics) continue;
-      outstanding[w.class_id] = (outstanding[w.class_id] || 0) + 1;
-    }
-
-    section.innerHTML = render(classes || [], outstanding);
+    section.innerHTML = render(classes || []);
   }
 
   window.installClassesNav = install;
