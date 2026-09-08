@@ -12,6 +12,7 @@
   <script src="supabase-config.js"></script>
   <script src="subjects-config.js"></script>
   <script src="practice-bank-config.js"></script>
+  <script src="teacher-subjects-sync.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -46,6 +47,7 @@
     .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
     .nav-icon { font-size: 15px; width: 20px; text-align: center; flex-shrink: 0; }
     .nav-item .nav-sub { display: block; font-size: 11px; color: var(--muted2); margin-top: 1px; }
+    .pro-tag { margin-left: auto; font-size: 10px; color: var(--amber); font-weight: 600; }
     .nav-item-stack { display: flex; align-items: flex-start; }
     .sidebar-bottom { margin-top: auto; padding: 16px 16px 0; border-top: 1px solid var(--border); }
     .user-chip { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; background: var(--surface2); }
@@ -71,6 +73,27 @@
     .btn-primary:disabled { opacity: 0.55; cursor: not-allowed; transform: none; }
     .btn-outline { background: var(--surface); color: var(--muted); border: 1px solid var(--border); }
     .btn-outline:hover { border-color: var(--accent); color: var(--accent-dark); }
+
+    /* ── DASHBOARD STATS ── */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 14px; margin-bottom: 24px; }
+    .stat { background: var(--surface); border: 1px solid var(--border); border-radius: 13px; padding: 18px 20px; }
+    .stat-value { font-family: var(--font-display); font-size: 28px; color: var(--text); line-height: 1.1; }
+    .stat-label { font-size: 12px; color: var(--muted); margin-top: 6px; }
+
+    .panel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px 24px; margin-bottom: 24px; }
+    .panel h2 { font-family: var(--font-display); font-size: 19px; letter-spacing: -0.01em; margin-bottom: 4px; }
+    .panel-sub { font-size: 13px; color: var(--muted); margin-bottom: 16px; line-height: 1.5; }
+    .att-row {
+      display: flex; align-items: center; gap: 12px;
+      padding: 11px 8px; border-bottom: 1px solid var(--border);
+      font-size: 13px; text-decoration: none; color: inherit; border-radius: 8px;
+    }
+    .att-row:last-child { border-bottom: none; }
+    .att-row:hover { background: var(--surface2); }
+    .att-name { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .att-class { font-size: 12px; color: var(--muted2); white-space: nowrap; }
+    .flag { font-size: 11px; font-weight: 600; padding: 3px 9px; border-radius: 20px; background: var(--amber-bg, rgba(217,119,6,0.1)); color: var(--amber-text, #B45309); white-space: nowrap; }
+    .section-head { font-family: var(--font-display); font-size: 19px; margin: 4px 0 14px; letter-spacing: -0.01em; }
 
     /* ── CLASS CARDS ── */
     .class-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 16px; }
@@ -179,13 +202,23 @@
 
     <div class="nav-section">
       <div class="nav-label">Menu</div>
-      <a class="nav-item active" href="teacher.html"><span class="nav-icon">🧑‍🏫</span> Your classes</a>
+      <a class="nav-item active" href="teacher.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
     </div>
 
     <div class="nav-section" style="margin-top:8px;">
       <div class="nav-label">Classes</div>
       <div id="sidebarClasses"></div>
       <a class="nav-item" onclick="openCreate()"><span class="nav-icon">＋</span> New class</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">🃏</span> Flashcards <span class="pro-tag">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📄</span> Past papers <span class="pro-tag">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📋</span> Mark schemes <span class="pro-tag">PRO</span></a>
     </div>
 
     <div class="nav-section" style="margin-top:8px;">
@@ -209,7 +242,7 @@
     <div class="topbar">
       <div>
         <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
-        <div class="page-title">Your classes</div>
+        <div class="page-title" id="greeting">Dashboard</div>
         <div class="page-sub" id="pageSub">Loading…</div>
       </div>
       <button class="btn btn-primary" onclick="openCreate()">＋ New class</button>
@@ -295,6 +328,9 @@ let classes = [];
   if (profile?.account_type !== 'teacher') { window.location = 'Dashboard.html'; return; }
 
   const fn = profile.first_name || '', ln = profile.last_name || '';
+  const hour = new Date().getHours();
+  const greet = hour < 12 ? 'Good morning' : hour < 18 ? 'Good afternoon' : 'Good evening';
+  document.getElementById('greeting').textContent = `${greet}, ${fn || 'there'} 👋`;
   document.getElementById('sidebarName').textContent = (fn + ' ' + ln).trim() || 'Teacher';
   document.getElementById('avatarInitials').textContent = ((fn[0] || '') + (ln[0] || '')).toUpperCase() || '?';
   if (profile.avatar_url) {
@@ -329,6 +365,71 @@ async function load() {
   classes = data || [];
   renderSidebar();
   render();
+
+  // Keep Notes / Practice / Breakdown usable for this teacher, and fill in
+  // the attention panel. Both are extra round trips that nothing above
+  // depends on, so they finish in their own time.
+  if (window.syncTeacherSubjects) window.syncTeacherSubjects();
+  loadAttention();
+}
+
+/* Students worth a look, across every class. Same three signals the class
+ * page uses — gone quiet, lots of red, low average — and it names which one
+ * fired, because "hasn't logged in for 12 days" and "scores are falling"
+ * need completely different conversations. */
+async function loadAttention() {
+  const live = classes.filter(c => !c.archived);
+  if (!live.length) return;
+
+  const results = await Promise.all(live.map(async c => {
+    const [rosterRes, heatRes] = await Promise.all([
+      supabaseClient.rpc('class_roster',  { p_class_id: c.id }),
+      supabaseClient.rpc('class_heatmap', { p_class_id: c.id })
+    ]);
+    const heat = heatRes.data || [];
+    return (rosterRes.data || []).map(st => {
+      const theirs = heat.filter(h => h.student_id === st.student_id);
+      const reds   = theirs.filter(h => h.measured_rag === 'red').length;
+      const scored = theirs.filter(h => h.avg_pct != null);
+      const avg    = scored.length ? scored.reduce((a, b) => a + b.avg_pct, 0) / scored.length : null;
+      const days   = st.last_active
+        ? Math.floor((Date.now() - new Date(st.last_active).getTime()) / 86400000) : null;
+
+      let reason = null;
+      if (days == null)              reason = 'No activity yet';
+      else if (days > 10)            reason = `Quiet ${days} days`;
+      else if (reds >= 3)            reason = `${reds} red topics`;
+      else if (avg != null && avg < 45) reason = `Averaging ${Math.round(avg)}%`;
+
+      return reason ? { name: st.student_name, klass: c, reason, days: days ?? 999 } : null;
+    }).filter(Boolean);
+  }));
+
+  const flagged = results.flat().sort((a, b) => b.days - a.days);
+  const box = document.getElementById('attention');
+  if (!box) return;
+
+  if (!flagged.length) {
+    box.innerHTML = `
+      <div class="panel">
+        <h2>Everyone's keeping up</h2>
+        <p class="panel-sub" style="margin:0;">No one across your classes is quiet, dropping or stacking up red topics.</p>
+      </div>`;
+    return;
+  }
+
+  box.innerHTML = `
+    <div class="panel">
+      <h2>Worth a look</h2>
+      <p class="panel-sub">${flagged.length} student${flagged.length === 1 ? '' : 's'} across your classes. The flag says what to check, not how worried to be.</p>
+      ${flagged.slice(0, 12).map(f => `
+        <a class="att-row" href="class.html?id=${encodeURIComponent(f.klass.id)}">
+          <span class="att-name">${escapeHtml(f.name || 'Unnamed')}</span>
+          <span class="att-class">${escapeHtml(f.klass.name)}</span>
+          <span class="flag">${escapeHtml(f.reason)}</span>
+        </a>`).join('')}
+      ${flagged.length > 12 ? `<p class="panel-sub" style="margin:14px 0 0;">and ${flagged.length - 12} more.</p>` : ''}
+    </div>`;
 }
 
 function memberCount(c) {
@@ -354,6 +455,7 @@ function render() {
   }
 
   const total = live.reduce((n, c) => n + memberCount(c), 0);
+  const subjects = new Set(live.map(c => `${c.subject}|${c.exam_board}`)).size;
   sub.textContent = `${live.length} class${live.length === 1 ? '' : 'es'} · ${total} student${total === 1 ? '' : 's'}`;
 
   const card = (c, muted) => {
@@ -370,7 +472,16 @@ function render() {
       </a>`;
   };
 
-  el.innerHTML =
+  const stats = live.length ? `
+    <div class="stats">
+      <div class="stat"><div class="stat-value">${live.length}</div><div class="stat-label">Class${live.length === 1 ? '' : 'es'}</div></div>
+      <div class="stat"><div class="stat-value">${total}</div><div class="stat-label">Student${total === 1 ? '' : 's'}</div></div>
+      <div class="stat"><div class="stat-value">${subjects}</div><div class="stat-label">Spec${subjects === 1 ? '' : 's'} you teach</div></div>
+    </div>
+    <div id="attention"></div>
+    <div class="section-head">Your classes</div>` : '';
+
+  el.innerHTML = stats +
     (live.length
       ? `<div class="class-grid">${live.map(c => card(c, false)).join('')}</div>`
       : `<div class="empty"><div class="empty-emoji">📦</div><h2>No active classes</h2>
@@ -523,6 +634,11 @@ async function logout() {
 document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeCreate();
 });
+
+// classes-nav.js points "New class" here from every other page.
+if (location.hash === '#new-class') {
+  window.addEventListener('load', () => setTimeout(openCreate, 120));
+}
 </script>
 </body>
 </html>
