@@ -371,9 +371,19 @@ function renderTeacher() {
       </div>
       <div class="code-box">
         <div class="code-label">Join code</div>
-        <div class="code-value">${esc(klass.join_code)}</div>
+        <div class="code-value" id="codeValue">${esc(klass.join_code)}</div>
+        <div style="display:flex;gap:6px;margin-top:10px;justify-content:center;">
+          <button class="link-btn" id="copyCodeBtn" onclick="copyJoinCode()">Copy</button>
+          <button class="link-btn" onclick="rotateCode()">New code</button>
+        </div>
       </div>
     </div>
+    ${klass.archived ? `
+      <div class="card" style="border-color:var(--amber-border);background:var(--amber-bg);">
+        <b>This class is archived.</b> The join code no longer works and it's hidden
+        from your class list. Everything below still works.
+        <div style="margin-top:12px;"><button class="btn btn-outline" onclick="setArchived(false)">Reopen class</button></div>
+      </div>` : ''}
 
     <div class="tabs">
       <button class="tab ${tab === 'overview' ? 'active' : ''}" data-tab="overview" onclick="setTab('overview')">Overview</button>
@@ -697,7 +707,14 @@ function renderStudents() {
             <div style="text-align:right;"><button class="link-btn" onclick="removeStudent('${esc(st.student_id)}','${esc(st.student_name)}')">Remove</button></div>
           </div>`;
       }).join('')}
-    </div>`;
+    </div>
+
+    ${klass.archived ? '' : `
+      <div class="card">
+        <h2>Finished with this class?</h2>
+        <p class="card-sub">Archiving stops the join code working and takes it off your list. Nothing is deleted and you can reopen it — use this at the end of a year rather than deleting.</p>
+        <button class="btn btn-danger" onclick="setArchived(true)">Archive ${esc(klass.name)}</button>
+      </div>`}`;
 }
 
 function showTopic(topicId) {
@@ -766,6 +783,52 @@ function showStudent(studentId) {
       ${section('Not started', h => !effectiveRag(h))}
       <p class="muted-note">Scores and topic colours only. Written answers and AI feedback stay private to the student.</p>
     </div>`;
+}
+
+/* Rotating replaces the code and nothing else — existing members keep their
+ * membership. One leak shouldn't cost thirty students their place; the
+ * teacher removes the strangers from the roster instead. */
+async function rotateCode() {
+  if (!confirm(
+    `Generate a new join code for ${klass.name}?\n\n` +
+    `The old code stops working immediately, so anyone who hasn't joined yet ` +
+    `will need the new one. Students already in the class stay in.`
+  )) return;
+
+  const { data, error } = await supabaseClient.rpc('rotate_join_code', { p_class_id: CLASS_ID });
+  if (error) { alert('Could not change the code: ' + error.message); return; }
+
+  klass.join_code = data;
+  document.getElementById('codeValue').textContent = data;
+}
+
+async function copyJoinCode() {
+  const btn = document.getElementById('copyCodeBtn');
+  try {
+    await navigator.clipboard.writeText(klass.join_code);
+    btn.textContent = 'Copied';
+    setTimeout(() => { btn.textContent = 'Copy'; }, 1600);
+  } catch {
+    btn.textContent = 'Press ⌘C';
+  }
+}
+
+/* Archiving is the reversible version of deleting: the code stops working
+ * and the class leaves the teacher's list, but every membership and all the
+ * data stays, so an archived class can be reopened intact. */
+async function setArchived(on) {
+  if (on && !confirm(
+    `Archive ${klass.name}?\n\n` +
+    `The join code stops working and it leaves your class list. Nothing is ` +
+    `deleted — you can reopen it any time.`
+  )) return;
+
+  const { error } = await supabaseClient
+    .from('classes').update({ archived: on }).eq('id', CLASS_ID);
+  if (error) { alert('Could not update: ' + error.message); return; }
+
+  klass.archived = on;
+  await loadTeacher();
 }
 
 async function removeStudent(studentId, name) {
