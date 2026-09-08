@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
+  <script src="post-auth.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -238,14 +239,9 @@
     return;
   }
 
-  // Decide destination: setup if profile incomplete, dashboard otherwise
-  const { data: profile } = await supabaseClient
-    .from('profiles')
-    .select('setup_complete')
-    .eq('id', session.user.id)
-    .maybeSingle();
-
-  const target = profile?.setup_complete ? '../Dashboard.html' : 'setup.html';
+  // Decide destination: teachers to their class area, students to setup if
+  // their profile is incomplete, dashboard otherwise.
+  const target = await POST_AUTH.routeAfterAuth(session.user);
 
   statusText.textContent = 'Redirecting…';
   setTimeout(() => { window.location = target; }, 800);
