@@ -10,6 +10,7 @@
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
+  <script src="classes-nav.js"></script>
   <script src="subjects-config.js"></script>
   <script src="practice-bank-config.js"></script>
   <script src="diagnostics-pages.js"></script>
@@ -22,7 +23,45 @@
     }
     a { color: inherit; }
 
-    .wrap { max-width: 1180px; margin: 0 auto; padding: 28px 28px 64px; }
+    /* ── APP SHELL (matches Dashboard.html / teacher.html) ── */
+    .app { display: flex; min-height: 100vh; }
+
+    .sidebar {
+      width: var(--sidebar-w, 232px); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; padding: 24px 0;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 10;
+      box-shadow: 2px 0 16px rgba(37,99,235,0.08);
+      overflow-y: auto;
+    }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; text-decoration: none; color: inherit; }
+    .logo-img { width: 24px; height: 24px; flex-shrink: 0; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; color: var(--text); }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 8px; font-size: 13px;
+      color: var(--muted); cursor: pointer; transition: all 0.12s; text-decoration: none;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { font-size: 15px; width: 20px; text-align: center; flex-shrink: 0; }
+    .nav-item.stacked { align-items: flex-start; }
+    .nav-item .nav-stack { min-width: 0; }
+    .nav-item .nav-main { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .nav-item .nav-sub { display: block; font-size: 11px; color: var(--muted2); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .pro-tag { margin-left: auto; font-size: 10px; color: var(--amber); font-weight: 600; }
+
+    .sidebar-bottom { margin-top: auto; padding: 16px 16px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; background: var(--surface2); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; cursor: pointer; color: var(--muted); font-size: 13px; transition: all 0.12s; }
+    .logout-btn:hover { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+
+    .main { flex: 1; margin-left: var(--sidebar-w, 232px); padding: 28px 32px 64px; min-width: 0; }
 
     .back {
       display: inline-flex; align-items: center; gap: 6px;
@@ -31,6 +70,16 @@
       transition: all 0.15s;
     }
     .back:hover { background: var(--accent-dim); color: var(--accent-dark); }
+
+    .mobile-menu-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px; box-shadow: 0 1px 4px rgba(37,99,235,0.1);
+      margin-bottom: 14px;
+    }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+    .mobile-overlay.active { display: block; }
 
     /* ── HEADER ── */
     .head { display: flex; align-items: flex-start; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 24px; }
@@ -169,8 +218,13 @@
 
     /* Below tablet the grid is unusable — the ranked list is the useful part
        anyway, so hide the matrix rather than shrink it into noise. */
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 16px 14px 48px; }
+    }
     @media (max-width: 820px) {
-      .wrap { padding: 18px 14px 48px; }
       .grid-scroll, .tab[data-tab="grid"] { display: none; }
       .topic-row { grid-template-columns: 1fr 90px; }
       .topic-row .topic-count { display: none; }
@@ -182,9 +236,20 @@
   <script src="theme.js"></script>
 </head>
 <body>
-<div class="wrap" id="root">
-  <div class="empty"><div class="big">⏳</div>Loading…</div>
+<div class="app">
+  <!-- Sidebar is rendered once we know whether the viewer is the teacher or
+       a member — the two need completely different navigation. -->
+  <aside class="sidebar" id="sidebar"></aside>
+
+  <main class="main">
+    <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
+    <div id="root">
+      <div class="empty"><div class="big">⏳</div>Loading…</div>
+    </div>
+  </main>
 </div>
+
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
 
 <script>
 const CLASS_ID = new URLSearchParams(location.search).get('id');
@@ -274,20 +339,128 @@ async function loadTopics(subject, board, level) {
 })();
 
 function fail(message) {
+  renderSidebar([]);
   document.getElementById('root').innerHTML =
     `<a class="back" href="Dashboard.html">← Back</a>
      <div class="empty"><div class="big">🔒</div><b>${esc(message)}</b></div>`;
 }
 
+/* ═══ Sidebar ═════════════════════════════════════════════════════════
+ *
+ * Mirrors Dashboard.html for students and teacher.html for teachers, so
+ * this page sits inside the app rather than beside it. `classList` is the
+ * other classes the viewer can reach — their own memberships, or the classes
+ * they teach.
+ * ════════════════════════════════════════════════════════════════════════ */
+function renderSidebar(classList) {
+  const fn = profile?.first_name || '', ln = profile?.last_name || '';
+  const initials = ((fn[0] || '') + (ln[0] || '')).toUpperCase() || '?';
+  const home = isTeacher ? 'teacher.html' : 'Dashboard.html';
+
+  const others = (classList || []).map(c => `
+    <a class="nav-item stacked ${c.id === CLASS_ID ? 'active' : ''}" href="class.html?id=${encodeURIComponent(c.id)}">
+      <span class="nav-icon">${esc(subjEmoji(c.subject))}</span>
+      <span class="nav-stack">
+        <span class="nav-main">${esc(c.name)}</span>
+        <span class="nav-sub">${esc(c.sub || '')}</span>
+      </span>
+    </a>`).join('');
+
+  const studentMenu = `
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">🚦</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📆</span> Revision timetable <span class="pro-tag">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">🃏</span> Flashcards <span class="pro-tag">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📜</span> Test history <span class="pro-tag">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">🤖</span> AI feedback <span class="pro-tag">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📄</span> Past papers <span class="pro-tag">PRO</span></a>
+      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📋</span> Mark schemes <span class="pro-tag">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="contact-app.html"><span class="nav-icon">✉️</span> Contact us</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>`;
+
+  const teacherMenu = `
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="teacher.html"><span class="nav-icon">🧑‍🏫</span> Your classes</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Classes</div>
+      ${others}
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="contact-app.html"><span class="nav-icon">✉️</span> Contact us</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>`;
+
+  document.getElementById('sidebar').innerHTML = `
+    <a href="${home}" class="sidebar-logo">
+      <img src="favicon.svg" alt="RAG Learning" class="logo-img" />
+      <div class="logo-text">RAG Learning</div>
+    </a>
+    ${isTeacher ? teacherMenu : studentMenu}
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer">${esc(initials)}</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer">
+          <div class="user-name">${esc((fn + ' ' + ln).trim() || 'Account')}</div>
+        </div>
+        <button class="logout-btn" onclick="logout()" title="Sign out">⏻</button>
+      </div>
+    </div>`;
+
+  // The teacher's list is classes they own; the shared script's list is
+  // classes you've joined. Only one of them belongs on this page.
+  const sb = document.getElementById('sidebar');
+  if (isTeacher) {
+    sb.dataset.classesNav = 'manual';
+  } else {
+    delete sb.dataset.classesNav;
+    window.installClassesNav?.();
+  }
+
+  if (profile?.avatar_url) {
+    const av = document.getElementById('avatarInitials'), img = document.createElement('img');
+    img.src = profile.avatar_url; img.alt = '';
+    img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+    av.replaceChildren(img);
+  }
+}
+
+async function logout() {
+  await supabaseClient.auth.signOut();
+  location = 'auth/login.html';
+}
+
 /* ═══ TEACHER ═════════════════════════════════════════════════════════ */
 async function loadTeacher() {
-  const [rosterRes, heatRes, topicList, assignRes, progRes] = await Promise.all([
+  const [rosterRes, heatRes, topicList, assignRes, progRes, mineRes] = await Promise.all([
     supabaseClient.rpc('class_roster',  { p_class_id: CLASS_ID }),
     supabaseClient.rpc('class_heatmap', { p_class_id: CLASS_ID }),
     loadTopics(klass.subject, klass.exam_board, klass.level),
     supabaseClient.from('assignments').select('*')
       .eq('class_id', CLASS_ID).order('created_at', { ascending: false }),
-    supabaseClient.rpc('class_assignment_progress', { p_class_id: CLASS_ID })
+    supabaseClient.rpc('class_assignment_progress', { p_class_id: CLASS_ID }),
+    supabaseClient.from('classes').select('id, name, subject, exam_board, archived')
+      .eq('archived', false).order('created_at', { ascending: false })
   ]);
 
   roster        = rosterRes.data || [];
@@ -295,6 +468,10 @@ async function loadTeacher() {
   topics        = topicList;
   assignments   = assignRes.data || [];
   assignProgress = progRes.data  || [];
+
+  renderSidebar((mineRes.data || []).map(c => ({
+    id: c.id, name: c.name, subject: c.subject, sub: c.exam_board
+  })));
 
   // The bank may not exist for this spec yet. Fall back to whatever topics
   // the students' own data mentions, so the page still says something.
@@ -853,6 +1030,8 @@ async function loadStudent() {
     loadTopics(klass.subject, klass.exam_board, klass.level),
     supabaseClient.rpc('my_assignments')
   ]);
+
+  renderSidebar([]);   // classes-nav.js fills in the Classes section
 
   const prog = progRes.data || [], atts = attRes.data || [];
   const work = (workRes.data || []).filter(w => w.class_id === CLASS_ID);

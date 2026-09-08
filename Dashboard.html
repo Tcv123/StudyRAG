@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
+  <script src="classes-nav.js"></script>
   <script src="subjects-config.js"></script>
   <script src="medals-data.js"></script>
   <script src="medals-engine.js"></script>
@@ -118,11 +119,6 @@
     .signout-btn.confirm:hover { background: var(--red-text); }
 
     /* ── CLASSES (sidebar + join modal) ── */
-    .class-nav-item { align-items: flex-start; }
-    .class-nav-item .class-nav-text { min-width: 0; }
-    .class-nav-item .class-nav-name { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .class-nav-item .class-nav-teacher { display: block; font-size: 11px; color: var(--muted2); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
-    .class-nav-item .work-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); margin-left: auto; flex-shrink: 0; align-self: center; }
 
     .join-input {
       width: 100%; padding: 14px 16px; text-align: center;
@@ -623,15 +619,6 @@
       <a class="nav-item" onclick="switchView('Diagnostic', this)"><span class="nav-icon">🚦</span> Diagnostic</a>
       <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
       <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
-    </div>
-
-    <!-- Classes sits above Premium on purpose: joining a class is core, not
-         a paid extra. The section always renders, even with no classes, so
-         "Join a class" is always reachable. -->
-    <div class="nav-section" style="margin-top:8px;">
-      <div class="nav-label">Classes</div>
-      <div id="sidebarClasses"></div>
-      <a class="nav-item" onclick="openJoinClass()"><span class="nav-icon">＋</span> Join a class</a>
     </div>
 
     <div class="nav-section" style="margin-top:8px;">
@@ -1413,11 +1400,6 @@ async function load() {
   document.getElementById('avatarInitials').textContent =
     ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
   if (profile?.avatar_url) { const _av = document.getElementById('avatarInitials'), _img = document.createElement('img'); _img.src = profile.avatar_url; _img.alt = ''; _img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;'; _av.replaceChildren(_img); }
-
-  // Classes sidebar. Deliberately not awaited — it is one extra round trip
-  // and nothing else on the page depends on it, so it fills in on its own
-  // rather than holding up the greeting.
-  renderMyClasses();
 
   // Level banner (also cache for next visit so there's no default flash)
   renderLevel(level);
@@ -2706,54 +2688,10 @@ function showDiagTopics(key) {
   list.innerHTML = html;
 }
 
-/* ── CLASSES ─────────────────────────────────────────────────────────────
- *
- * my_classes() is a SECURITY DEFINER function, not a table read. Students
- * have no select policy on `classes` at all — if they did, the same policy
- * that lets them look up one class by code would let them list every class
- * and join code in the database. class_members alone gives them nothing but
- * a bare class_id, so this function is the only way to resolve a membership
- * into a name and a teacher.
- * ──────────────────────────────────────────────────────────────────────── */
-async function renderMyClasses() {
-  const box = document.getElementById('sidebarClasses');
-  if (!box) return;
-
-  const [{ data, error }, { data: work }] = await Promise.all([
-    supabaseClient.rpc('my_classes'),
-    supabaseClient.rpc('my_assignments')
-  ]);
-  if (error || !data?.length) { box.innerHTML = ''; return; }
-
-  // Outstanding work per class. Shown as a count on the class itself rather
-  // than a separate to-do list — it's the same nudge with nowhere new to look.
-  const outstanding = {};
-  for (const w of (work || [])) {
-    if (w.done_topics >= w.total_topics) continue;
-    outstanding[w.class_id] = (outstanding[w.class_id] || 0) + 1;
-  }
-
-  box.innerHTML = data.map(c => {
-    const n = outstanding[c.class_id] || 0;
-    return `
-    <a class="nav-item class-nav-item" href="class.html?id=${encodeURIComponent(c.class_id)}">
-      <span class="nav-icon">${escClass(emojiForSubject(c.subject))}</span>
-      <span class="class-nav-text">
-        <span class="class-nav-name">${escClass(c.name)}</span>
-        <span class="class-nav-teacher">${n ? `${n} to do` : escClass(c.teacher_name || 'Your teacher')}</span>
-      </span>
-      ${n ? '<span class="work-dot" title="Work set"></span>' : ''}
-    </a>`;
-  }).join('');
-}
-
-function emojiForSubject(name) {
-  return (window.SUBJECTS_CONFIG?.emojiFor(name)) || '📚';
-}
-
-function escClass(s) {
-  return String(s ?? '').replace(/[&<>"']/g, ch =>
-    ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[ch]));
+// classes-nav.js links here from every other page, since the join modal
+// lives on the dashboard.
+if (location.hash === '#join-class') {
+  document.addEventListener('DOMContentLoaded', () => setTimeout(openJoinClass, 60));
 }
 
 function openJoinClass() {
