@@ -70,16 +70,21 @@
 
     /* profiles.level decides which spec every page resolves — GCSE Physics
        and A-Level Physics are different topic lists behind the same
-       subject+board. A teacher has one profile level but may teach both, so
-       this follows their most recent class and the notes/practice pages show
-       that level's material. Known limitation: a teacher covering two levels
-       sees one of them until they switch it in settings. */
-    const newest = (classes || [])[classes.length - 1];
-    if (newest && profile.level !== newest.level) {
-      await supabaseClient.from('profiles').update({ level: newest.level }).eq('id', user.id);
-      try { localStorage.setItem('cached_level', newest.level); } catch (e) {}
-    } else if (newest) {
-      try { localStorage.setItem('cached_level', newest.level); } catch (e) {}
+       subject+board.
+
+       Only correct it when it is wrong. A teacher covering two levels picks
+       between them with the switcher in the sidebar, and that choice writes
+       profiles.level; if this ran unconditionally on every page load it
+       would immediately undo them. So: leave it alone whenever it already
+       matches a level they teach, and otherwise fall back to their most
+       recent class. */
+    const levels = [...new Set((classes || []).map(c => c.level))];
+    if (levels.length && !levels.includes(profile.level)) {
+      const fallback = classes[classes.length - 1].level;
+      await supabaseClient.from('profiles').update({ level: fallback }).eq('id', user.id);
+      try { localStorage.setItem('cached_level', fallback); } catch (e) {}
+    } else if (profile.level) {
+      try { localStorage.setItem('cached_level', profile.level); } catch (e) {}
     }
 
     return [...wanted.values()].map(c => ({

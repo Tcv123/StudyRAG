@@ -13,6 +13,7 @@
   <script src="subjects-config.js"></script>
   <script src="practice-bank-config.js"></script>
   <script src="teacher-subjects-sync.js"></script>
+  <script src="classes-nav.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -47,7 +48,6 @@
     .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
     .nav-icon { font-size: 15px; width: 20px; text-align: center; flex-shrink: 0; }
     .nav-item .nav-sub { display: block; font-size: 11px; color: var(--muted2); margin-top: 1px; }
-    .pro-tag { margin-left: auto; font-size: 10px; color: var(--amber); font-weight: 600; }
     .nav-item-stack { display: flex; align-items: flex-start; }
     .sidebar-bottom { margin-top: auto; padding: 16px 16px 0; border-top: 1px solid var(--border); }
     .user-chip { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; background: var(--surface2); }
@@ -194,7 +194,7 @@
 <body>
 <div class="app">
 
-  <aside class="sidebar" data-classes-nav="manual">
+  <aside class="sidebar">
     <a href="teacher.html" class="sidebar-logo" style="text-decoration:none;color:inherit;">
       <img src="favicon.svg" alt="RAG Learning" class="logo-img" />
       <div class="logo-text">RAG Learning</div>
@@ -203,22 +203,8 @@
     <div class="nav-section">
       <div class="nav-label">Menu</div>
       <a class="nav-item active" href="teacher.html"><span class="nav-icon">⊞</span> Dashboard</a>
-      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
       <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
       <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
-    </div>
-
-    <div class="nav-section" style="margin-top:8px;">
-      <div class="nav-label">Classes</div>
-      <div id="sidebarClasses"></div>
-      <a class="nav-item" onclick="openCreate()"><span class="nav-icon">＋</span> New class</a>
-    </div>
-
-    <div class="nav-section" style="margin-top:8px;">
-      <div class="nav-label">Premium</div>
-      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">🃏</span> Flashcards <span class="pro-tag">PRO</span></a>
-      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📄</span> Past papers <span class="pro-tag">PRO</span></a>
-      <a class="nav-item" href="pricing-app.html" style="opacity:0.65;"><span class="nav-icon">📋</span> Mark schemes <span class="pro-tag">PRO</span></a>
     </div>
 
     <div class="nav-section" style="margin-top:8px;">
@@ -363,7 +349,6 @@ async function load() {
   }
 
   classes = data || [];
-  renderSidebar();
   render();
 
   // Keep Notes / Practice / Breakdown usable for this teacher, and fill in
@@ -492,13 +477,6 @@ function render() {
       <div class="class-grid">${archived.map(c => card(c, true)).join('')}</div>` : '');
 }
 
-function renderSidebar() {
-  document.getElementById('sidebarClasses').innerHTML = classes.filter(c => !c.archived).map(c => `
-    <a class="nav-item nav-item-stack" href="class.html?id=${encodeURIComponent(c.id)}">
-      <span class="nav-icon">${SUBJECTS_CONFIG.emojiFor(c.subject) || '📚'}</span>
-      <span>${escapeHtml(c.name)}<span class="nav-sub">${memberCount(c)} student${memberCount(c) === 1 ? '' : 's'}</span></span>
-    </a>`).join('');
-}
 
 /* ── Create class ─────────────────────────────────────────────────────── */
 function buildSubjectPickers() { refreshSubjects(); }
