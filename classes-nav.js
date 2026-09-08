@@ -1,7 +1,8 @@
 /* ═══════════════════════════════════════
-   CLASSES SIDEBAR SECTION
+   ROLE-AWARE CLASSES NAV
    ────────────────────────────────────────
-   Injects the "Classes" nav section into whatever sidebar the page has.
+   Injects the "Classes" nav section into whatever sidebar the page has, and
+   adjusts the surrounding nav for teachers.
 
    Every app page in this project carries its own hand-written copy of the
    sidebar markup — there is no layout template. Adding a nav section by
@@ -16,6 +17,12 @@
 
    It inserts itself before the Premium section — classes are core, not a
    paid extra — falling back to Account, then the end of the nav.
+
+   For a TEACHER the same section lists the classes they own rather than
+   ones they joined, "Join a class" becomes "New class", Dashboard points at
+   teacher.html, and student-only entries (Edit subjects, Diagnostic, Medals)
+   are dropped — a teacher isn't sitting the exam. Everything else in the nav
+   is left exactly as the page wrote it, so both roles see one layout.
 
    Safe to load on a page where the user is signed out or in no classes: it
    renders the "Join a class" entry only, and nothing at all if there is no
@@ -81,7 +88,7 @@
     return sidebar.querySelector('.sidebar-bottom');
   }
 
-  function render(classes) {
+  function render(classes, isTeacher) {
     const here = location.pathname.split('/').pop();
     const currentId = here === 'class.html'
       ? new URLSearchParams(location.search).get('id') : null;
@@ -93,15 +100,41 @@
           <span class="nav-icon">${esc(emojiFor(c.subject))}</span>
           <span class="cn-text">
             <span class="cn-name">${esc(c.name)}</span>
-            <span class="cn-sub">${esc(c.teacher_name || 'Your teacher')}</span>
+            <span class="cn-sub">${esc(c.sub)}</span>
           </span>
         </a>`;
     }).join('');
 
-    return `
-      <div class="nav-label">Classes</div>
-      ${rows}
-      <a class="nav-item" href="${BASE}Dashboard.html#join-class"><span class="nav-icon">＋</span> Join a class</a>`;
+    const cta = isTeacher
+      ? `<a class="nav-item" href="${BASE}teacher.html#new-class"><span class="nav-icon">＋</span> New class</a>`
+      : `<a class="nav-item" href="${BASE}Dashboard.html#join-class"><span class="nav-icon">＋</span> Join a class</a>`;
+
+    return `<div class="nav-label">Classes</div>${rows}${cta}`;
+  }
+
+  /* Retarget the nav the host page wrote for a student. Done by rewriting
+     what is already there rather than replacing the sidebar, so each page
+     keeps its own styling and active state. */
+  function adaptForTeacher(sidebar) {
+    const items = [...sidebar.querySelectorAll('.nav-item')];
+
+    for (const el of items) {
+      const label = el.textContent.trim().toLowerCase();
+      const href  = el.getAttribute('href') || '';
+
+      // A teacher isn't revising for an exam of their own.
+      if (label.startsWith('edit subjects') || label.startsWith('diagnostic') || label.startsWith('medals')) {
+        el.remove();
+        continue;
+      }
+      if (href.includes('Dashboard.html')) {
+        el.setAttribute('href', BASE + 'teacher.html');
+      }
+    }
+
+    // The logo goes home to the teacher's own home.
+    const logo = sidebar.querySelector('.sidebar-logo');
+    if (logo && logo.getAttribute('href')) logo.setAttribute('href', BASE + 'teacher.html');
   }
 
   async function install() {
@@ -127,14 +160,43 @@
 
     if (typeof supabaseClient === 'undefined') return;
 
-    const { data: classes, error } = await supabaseClient.rpc('my_classes');
+    const { data: { user } } = await supabaseClient.auth.getUser();
+    if (!user) { section.remove(); return; }
+
+    const { data: profile } = await supabaseClient
+      .from('profiles').select('account_type').eq('id', user.id).maybeSingle();
+    const isTeacher = profile?.account_type === 'teacher';
+
+    let classes, error;
+    if (isTeacher) {
+      // Classes they OWN. RLS already scopes this to teacher_id = auth.uid().
+      const res = await supabaseClient.from('classes')
+        .select('id, name, subject, exam_board, archived')
+        .eq('archived', false).order('created_at');
+      error = res.error;
+      classes = (res.data || []).map(c => ({
+        class_id: c.id, name: c.name, subject: c.subject, sub: c.exam_board
+      }));
+      adaptForTeacher(sidebar);
+      // Notes / Practice / Breakdown all read user_subjects. A teacher who
+      // lands on one of them directly has never passed through teacher.html,
+      // so reconcile here too rather than only on their dashboard.
+      if (window.syncTeacherSubjects) window.syncTeacherSubjects();
+    } else {
+      const res = await supabaseClient.rpc('my_classes');
+      error = res.error;
+      classes = (res.data || []).map(c => ({
+        class_id: c.class_id, name: c.name, subject: c.subject,
+        sub: c.teacher_name || 'Your teacher'
+      }));
+    }
 
     // Signed out, or the classroom migration hasn't been applied — either
     // way there is nothing useful to show, so take the section back out
     // rather than leaving an empty heading.
     if (error) { section.remove(); return; }
 
-    section.innerHTML = render(classes || []);
+    section.innerHTML = render(classes, isTeacher);
   }
 
   window.installClassesNav = install;
