@@ -12,6 +12,7 @@
   <script src="supabase-config.js"></script>
   <script src="subjects-config.js"></script>
   <script src="practice-bank-config.js"></script>
+  <script src="diagnostics-pages.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html, body {
@@ -190,6 +191,7 @@ const CLASS_ID = new URLSearchParams(location.search).get('id');
 
 let me = null, profile = null, klass = null, isTeacher = false;
 let roster = [], heatmap = [], topics = [];
+let assignments = [], assignProgress = [];
 let tab = 'overview';
 
 /* ═══ Topic list ═══════════════════════════════════════════════════════
@@ -279,15 +281,20 @@ function fail(message) {
 
 /* ═══ TEACHER ═════════════════════════════════════════════════════════ */
 async function loadTeacher() {
-  const [rosterRes, heatRes, topicList] = await Promise.all([
+  const [rosterRes, heatRes, topicList, assignRes, progRes] = await Promise.all([
     supabaseClient.rpc('class_roster',  { p_class_id: CLASS_ID }),
     supabaseClient.rpc('class_heatmap', { p_class_id: CLASS_ID }),
-    loadTopics(klass.subject, klass.exam_board, klass.level)
+    loadTopics(klass.subject, klass.exam_board, klass.level),
+    supabaseClient.from('assignments').select('*')
+      .eq('class_id', CLASS_ID).order('created_at', { ascending: false }),
+    supabaseClient.rpc('class_assignment_progress', { p_class_id: CLASS_ID })
   ]);
 
-  roster  = rosterRes.data || [];
-  heatmap = heatRes.data   || [];
-  topics  = topicList;
+  roster        = rosterRes.data || [];
+  heatmap       = heatRes.data   || [];
+  topics        = topicList;
+  assignments   = assignRes.data || [];
+  assignProgress = progRes.data  || [];
 
   // The bank may not exist for this spec yet. Fall back to whatever topics
   // the students' own data mentions, so the page still says something.
@@ -371,6 +378,7 @@ function renderTeacher() {
     <div class="tabs">
       <button class="tab ${tab === 'overview' ? 'active' : ''}" data-tab="overview" onclick="setTab('overview')">Overview</button>
       <button class="tab ${tab === 'grid'     ? 'active' : ''}" data-tab="grid"     onclick="setTab('grid')">Grid</button>
+      <button class="tab ${tab === 'work'     ? 'active' : ''}" data-tab="work"     onclick="setTab('work')">Work${assignments.length ? ` (${assignments.length})` : ''}</button>
       <button class="tab ${tab === 'students' ? 'active' : ''}" data-tab="students" onclick="setTab('students')">Students</button>
     </div>
 
@@ -387,9 +395,12 @@ function setTab(t) {
 
 function renderTab() {
   const body = document.getElementById('tabBody');
-  if (!roster.length) { body.innerHTML = emptyClass(); return; }
+  // Work is the one tab that still makes sense with an empty roster — a
+  // teacher can set the baseline diagnostic before anyone has joined.
+  if (!roster.length && tab !== 'work') { body.innerHTML = emptyClass(); return; }
   if (tab === 'overview') body.innerHTML = renderOverview();
   if (tab === 'grid')     body.innerHTML = renderGrid();
+  if (tab === 'work')     body.innerHTML = renderWork();
   if (tab === 'students') body.innerHTML = renderStudents();
 }
 
@@ -399,11 +410,174 @@ function emptyClass() {
       <div class="empty">
         <div class="big">📋</div>
         <b>No students yet</b><br>
-        Share the join code <b>${esc(klass.join_code)}</b> with your class.
-        Once they join, set a diagnostic so this page has something to show —
-        otherwise every topic starts grey.
+        Share the join code <b>${esc(klass.join_code)}</b> with your class.<br><br>
+        Then set a baseline diagnostic — otherwise this page stays grey until
+        students happen to revise on their own.
+        <div style="margin-top:18px;"><button class="btn btn-outline" onclick="setTab('work')">Set work</button></div>
       </div>
     </div>`;
+}
+
+/* ═══ WORK ════════════════════════════════════════════════════════════
+ *
+ * Completion is derived, not recorded — see the migration's design note.
+ * A student counts as having done an assigned topic if they have a
+ * topic_progress row or a practice attempt for it stamped after the
+ * assignment was set, whether or not they came via the link.
+ * ════════════════════════════════════════════════════════════════════════ */
+function renderWork() {
+  const diagPage = window.diagnosticPageFor?.(klass.subject, klass.exam_board, klass.level);
+
+  return `
+    <div class="card">
+      <div class="detail-head">
+        <div>
+          <h2>Work set</h2>
+          <p class="card-sub" style="margin:0;">A student counts as done once they've covered the topic — however they got there.</p>
+        </div>
+        <button class="btn btn-outline" onclick="openAssign()">＋ Set work</button>
+      </div>
+
+      ${!assignments.length ? `
+        <div class="empty">
+          <div class="big">🚦</div>
+          <b>Nothing set yet</b><br>
+          A baseline diagnostic is the fastest way to fill this class's grid —
+          twenty minutes, and every topic gets a colour.
+          ${diagPage ? '' : '<br><br>We don\'t have a diagnostic for this spec yet, so practice topics are the option here.'}
+        </div>` : assignments.map(a => renderAssignment(a)).join('')}
+    </div>`;
+}
+
+function renderAssignment(a) {
+  const rows  = assignProgress.filter(p => p.assignment_id === a.id);
+  const done  = rows.filter(p => p.done).length;
+  const total = rows.length;
+  const pct   = total ? Math.round(100 * done / total) : 0;
+  const names = topicNamesFor(a.topics);
+  const over  = a.due_at && new Date(a.due_at) < new Date();
+
+  return `
+    <div style="border:1px solid var(--border);border-radius:11px;padding:16px;margin-bottom:12px;">
+      <div class="detail-head" style="margin-bottom:10px;">
+        <div style="min-width:0;">
+          <div style="font-size:14px;font-weight:600;">
+            ${a.kind === 'diagnostic' ? '🚦 Diagnostic' : '✦ Practice'} · ${a.topics.length} topic${a.topics.length === 1 ? '' : 's'}
+            ${a.due_at ? `<span class="flag ${over ? '' : 'ok'}" style="margin-left:8px;">${over ? 'Overdue' : 'Due'} ${fmtDate(a.due_at)}</span>` : ''}
+          </div>
+          <div class="card-sub" style="margin:4px 0 0;">${esc(names.join(' · '))}</div>
+          ${a.note ? `<div class="card-sub" style="margin:6px 0 0;font-style:italic;">"${esc(a.note)}"</div>` : ''}
+        </div>
+        <button class="link-btn" onclick="deleteAssignment('${esc(a.id)}')">Delete</button>
+      </div>
+
+      <div class="bar" style="height:8px;">
+        <span class="b-green" style="width:${pct}%"></span>
+        <span class="b-none" style="width:${100 - pct}%"></span>
+      </div>
+      <div class="card-sub" style="margin:8px 0 0;">
+        ${done} of ${total} done${total && done < total ? ` — waiting on ${esc(rows.filter(p => !p.done).map(p => firstWord(p.student_name)).slice(0, 6).join(', '))}${rows.filter(p => !p.done).length > 6 ? '…' : ''}` : ''}
+      </div>
+    </div>`;
+}
+
+function topicNamesFor(ids) {
+  return ids.map(id => topics.find(t => t.id === id)?.name || id);
+}
+
+function openAssign() {
+  const diagPage = window.diagnosticPageFor?.(klass.subject, klass.exam_board, klass.level);
+  document.getElementById('tabBody').insertAdjacentHTML('afterbegin', `
+    <div class="card" id="assignCard">
+      <div class="detail-head">
+        <h2>Set work</h2>
+        <button class="btn btn-outline" onclick="renderTab()">Cancel</button>
+      </div>
+
+      <p class="card-sub">Pick the topics. Students see it on their dashboard, and it ticks off as they cover each one.</p>
+
+      <div style="display:flex;gap:10px;margin-bottom:16px;flex-wrap:wrap;">
+        <label class="chip" style="cursor:pointer;">
+          <input type="radio" name="akind" value="diagnostic" ${diagPage ? 'checked' : 'disabled'}> 🚦 Diagnostic
+        </label>
+        <label class="chip" style="cursor:pointer;">
+          <input type="radio" name="akind" value="practice" ${diagPage ? '' : 'checked'}> ✦ Practice questions
+        </label>
+        ${diagPage ? '' : '<span class="card-sub" style="margin:0;align-self:center;">No diagnostic exists for this spec.</span>'}
+      </div>
+
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:12px;flex-wrap:wrap;">
+        <button class="btn btn-outline" onclick="toggleAllTopics(true)">Select all</button>
+        <button class="btn btn-outline" onclick="toggleAllTopics(false)">Clear</button>
+        <span class="card-sub" style="margin:0;">All topics = a full baseline. A few = focused follow-up.</span>
+      </div>
+
+      <div class="chip-list" id="topicPicker" style="margin-bottom:18px;">
+        ${topics.map(t => `
+          <label class="chip" style="cursor:pointer;">
+            <input type="checkbox" class="tpick" value="${esc(t.id)}"> ${esc(t.name)}
+          </label>`).join('')}
+      </div>
+
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:flex-end;">
+        <div>
+          <div class="card-sub" style="margin:0 0 6px;">Due (optional)</div>
+          <input type="date" id="aDue" style="padding:9px 12px;border:1px solid var(--border);border-radius:9px;background:var(--surface2);font-family:inherit;color:var(--text);">
+        </div>
+        <div style="flex:1;min-width:200px;">
+          <div class="card-sub" style="margin:0 0 6px;">Note (optional)</div>
+          <input type="text" id="aNote" maxlength="280" placeholder="e.g. before Friday's lesson"
+                 style="width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:9px;background:var(--surface2);font-family:inherit;color:var(--text);">
+        </div>
+      </div>
+
+      <p class="muted-note" id="assignMsg"></p>
+      <div style="margin-top:14px;">
+        <button class="btn btn-outline" id="assignBtn" onclick="saveAssignment()"
+                style="background:var(--accent);color:#fff;border-color:var(--accent);">Set work</button>
+      </div>
+    </div>`);
+  document.getElementById('assignCard').scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+function toggleAllTopics(on) {
+  document.querySelectorAll('.tpick').forEach(cb => { cb.checked = on; });
+}
+
+async function saveAssignment() {
+  const btn  = document.getElementById('assignBtn');
+  const msg  = document.getElementById('assignMsg');
+  const picked = [...document.querySelectorAll('.tpick:checked')].map(cb => cb.value);
+
+  if (!picked.length) { msg.textContent = 'Pick at least one topic.'; return; }
+  if (picked.length > 40) { msg.textContent = 'That is more than 40 topics — narrow it down.'; return; }
+
+  const due  = document.getElementById('aDue').value;
+  const note = document.getElementById('aNote').value.trim();
+  const kind = document.querySelector('input[name="akind"]:checked')?.value || 'practice';
+
+  btn.disabled = true; btn.textContent = 'Setting…';
+  const { error } = await supabaseClient.from('assignments').insert({
+    class_id: CLASS_ID,
+    kind,
+    topics: picked,
+    note: note || null,
+    // Due dates are a day, not an instant — end of that day locally.
+    due_at: due ? new Date(due + 'T23:59:59').toISOString() : null
+  });
+  btn.disabled = false; btn.textContent = 'Set work';
+
+  if (error) { msg.textContent = 'Could not set that: ' + error.message; return; }
+  tab = 'work';
+  await loadTeacher();
+}
+
+async function deleteAssignment(id) {
+  if (!confirm('Delete this piece of work? Students stop seeing it.')) return;
+  const { error } = await supabaseClient.from('assignments').delete().eq('id', id);
+  if (error) { alert('Could not delete: ' + error.message); return; }
+  tab = 'work';
+  await loadTeacher();
 }
 
 function renderOverview() {
@@ -605,7 +779,7 @@ async function removeStudent(studentId, name) {
 
 /* ═══ STUDENT ═════════════════════════════════════════════════════════ */
 async function loadStudent() {
-  const [progRes, attRes, topicList] = await Promise.all([
+  const [progRes, attRes, topicList, workRes] = await Promise.all([
     supabaseClient.from('topic_progress')
       .select('topic, rag_status, updated_at')
       .eq('user_id', me.id).eq('subject', klass.subject).eq('exam_board', klass.exam_board),
@@ -613,10 +787,12 @@ async function loadStudent() {
       .select('topic, pct, taken_at')
       .eq('user_id', me.id).eq('subject', klass.subject).eq('exam_board', klass.exam_board)
       .order('taken_at', { ascending: false }),
-    loadTopics(klass.subject, klass.exam_board, klass.level)
+    loadTopics(klass.subject, klass.exam_board, klass.level),
+    supabaseClient.rpc('my_assignments')
   ]);
 
   const prog = progRes.data || [], atts = attRes.data || [];
+  const work = (workRes.data || []).filter(w => w.class_id === CLASS_ID);
   topics = topicList.length ? topicList
     : [...new Set([...prog.map(p => p.topic), ...atts.map(a => a.topic)])].map(id => ({ id, name: id }));
 
@@ -653,6 +829,8 @@ async function loadStudent() {
       </div>
     </div>
 
+    ${renderStudentWork(work)}
+
     <div class="card">
       <h2>What ${esc(firstWord(klass.teacher_name) || 'your teacher')} can see</h2>
       <p class="card-sub">Exactly this — your topic colours and practice scores for ${esc(klass.subject)}. Not your written answers, not your AI feedback, and nothing from your other subjects.</p>
@@ -667,6 +845,56 @@ async function loadStudent() {
       <h2>Leave this class</h2>
       <p class="card-sub">Your teacher stops seeing your work straight away. Nothing of yours is deleted, and you can rejoin with the code.</p>
       <button class="btn btn-danger" onclick="leaveClass()">Leave ${esc(klass.name)}</button>
+    </div>`;
+}
+
+/* Work set for this student, with a link straight into the first topic they
+ * still owe. Practice has no topic deep-link yet, so those land on the
+ * practice page and the student picks the topic themselves. */
+function renderStudentWork(work) {
+  if (!work.length) return '';
+
+  return `
+    <div class="card">
+      <h2>Set by ${esc(firstWord(klass.teacher_name) || 'your teacher')}</h2>
+      <p class="card-sub">This ticks off automatically as you cover each topic — there's nothing to hand in.</p>
+      ${work.map(w => {
+        const remaining = w.total_topics - w.done_topics;
+        const complete  = remaining <= 0;
+        const over      = w.due_at && new Date(w.due_at) < new Date() && !complete;
+        const pct       = w.total_topics ? Math.round(100 * w.done_topics / w.total_topics) : 0;
+        const names     = topicNamesFor(w.topics);
+        const nextId    = w.topics[Math.min(w.done_topics, w.topics.length - 1)];
+        const page      = w.kind === 'diagnostic'
+          ? window.diagnosticPageFor?.(w.subject, w.exam_board, w.level)
+          : 'practice.html';
+        const href = w.kind === 'diagnostic' && page
+          ? `${page}?topic=${encodeURIComponent(nextId)}`
+          : 'practice.html';
+
+        return `
+          <div style="border:1px solid var(--border);border-radius:11px;padding:16px;margin-bottom:12px;">
+            <div class="detail-head" style="margin-bottom:10px;">
+              <div style="min-width:0;">
+                <div style="font-size:14px;font-weight:600;">
+                  ${w.kind === 'diagnostic' ? '🚦 Diagnostic' : '✦ Practice questions'}
+                  ${complete ? '<span class="flag ok" style="margin-left:8px;">Done</span>'
+                    : w.due_at ? `<span class="flag" style="margin-left:8px;">${over ? 'Overdue' : 'Due'} ${fmtDate(w.due_at)}</span>` : ''}
+                </div>
+                <div class="card-sub" style="margin:4px 0 0;">${esc(names.join(' · '))}</div>
+                ${w.note ? `<div class="card-sub" style="margin:6px 0 0;font-style:italic;">"${esc(w.note)}"</div>` : ''}
+              </div>
+              ${complete ? '' : `<a class="btn btn-outline" href="${esc(href)}" style="text-decoration:none;white-space:nowrap;">Start</a>`}
+            </div>
+            <div class="bar" style="height:8px;">
+              <span class="b-green" style="width:${pct}%"></span>
+              <span class="b-none" style="width:${100 - pct}%"></span>
+            </div>
+            <div class="card-sub" style="margin:8px 0 0;">
+              ${w.done_topics} of ${w.total_topics} topics covered${complete ? '' : ` — ${remaining} to go`}
+            </div>
+          </div>`;
+      }).join('')}
     </div>`;
 }
 

@@ -122,6 +122,7 @@
     .class-nav-item .class-nav-text { min-width: 0; }
     .class-nav-item .class-nav-name { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     .class-nav-item .class-nav-teacher { display: block; font-size: 11px; color: var(--muted2); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    .class-nav-item .work-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--amber); margin-left: auto; flex-shrink: 0; align-self: center; }
 
     .join-input {
       width: 100%; padding: 14px 16px; text-align: center;
@@ -2718,17 +2719,32 @@ async function renderMyClasses() {
   const box = document.getElementById('sidebarClasses');
   if (!box) return;
 
-  const { data, error } = await supabaseClient.rpc('my_classes');
+  const [{ data, error }, { data: work }] = await Promise.all([
+    supabaseClient.rpc('my_classes'),
+    supabaseClient.rpc('my_assignments')
+  ]);
   if (error || !data?.length) { box.innerHTML = ''; return; }
 
-  box.innerHTML = data.map(c => `
+  // Outstanding work per class. Shown as a count on the class itself rather
+  // than a separate to-do list — it's the same nudge with nowhere new to look.
+  const outstanding = {};
+  for (const w of (work || [])) {
+    if (w.done_topics >= w.total_topics) continue;
+    outstanding[w.class_id] = (outstanding[w.class_id] || 0) + 1;
+  }
+
+  box.innerHTML = data.map(c => {
+    const n = outstanding[c.class_id] || 0;
+    return `
     <a class="nav-item class-nav-item" href="class.html?id=${encodeURIComponent(c.class_id)}">
       <span class="nav-icon">${escClass(emojiForSubject(c.subject))}</span>
       <span class="class-nav-text">
         <span class="class-nav-name">${escClass(c.name)}</span>
-        <span class="class-nav-teacher">${escClass(c.teacher_name || 'Your teacher')}</span>
+        <span class="class-nav-teacher">${n ? `${n} to do` : escClass(c.teacher_name || 'Your teacher')}</span>
       </span>
-    </a>`).join('');
+      ${n ? '<span class="work-dot" title="Work set"></span>' : ''}
+    </a>`;
+  }).join('');
 }
 
 function emojiForSubject(name) {
