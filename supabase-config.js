@@ -103,7 +103,7 @@
  *     id         UUID PRIMARY KEY DEFAULT gen_random_uuid(),
  *     user_id    UUID REFERENCES profiles(id) ON DELETE CASCADE,
  *     medal_id   TEXT NOT NULL,
- *     earned_at  TIMESTAMPTZ DEFAULT NOW(),
+ *     created_at TIMESTAMPTZ DEFAULT NOW(),   -- named earned_at in older drafts; live column is created_at
  *     UNIQUE (user_id, medal_id)
  *   );
  *   ALTER TABLE user_medals ENABLE ROW LEVEL SECURITY;
