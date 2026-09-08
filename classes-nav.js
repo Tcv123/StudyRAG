@@ -164,12 +164,20 @@
        - The whole Premium section: those upsells are aimed at students. */
   const TEACHER_HIDES = ['breakdown', 'diagnostic', 'medals', 'edit subjects'];
 
+  /* The visible words of a nav item, without its emoji icon or PRO badge.
+     el.textContent alone yields "📊 Breakdown", which matches nothing. */
+  function itemLabel(el) {
+    const clone = el.cloneNode(true);
+    clone.querySelectorAll('.nav-icon, .pro-tag').forEach(n => n.remove());
+    return clone.textContent.trim().toLowerCase();
+  }
+
   /* Retarget the nav the host page wrote for a student. Done by rewriting
      what is already there rather than replacing the sidebar, so each page
      keeps its own styling and active state. */
   function adaptForTeacher(sidebar) {
     for (const el of [...sidebar.querySelectorAll('.nav-item')]) {
-      const label = el.textContent.trim().toLowerCase();
+      const label = itemLabel(el);
       const href  = el.getAttribute('href') || '';
 
       if (TEACHER_HIDES.some(h => label.startsWith(h))) { el.remove(); continue; }
@@ -187,6 +195,34 @@
     const logo = sidebar.querySelector('.sidebar-logo');
     if (logo && logo.getAttribute('href')) logo.setAttribute('href', BASE + 'teacher.html');
   }
+
+  /* Pages that only make sense for someone sitting the exam. Hiding them
+     from the nav isn't enough — a teacher who reloads, bookmarks, or follows
+     an old link lands on the student dashboard and sees "Your subjects",
+     medals and a revision progress report that will always read zero. */
+  const STUDENT_ONLY = ['dashboard.html', 'breakdown.html', 'medals.html'];
+
+  const ROLE_KEY = 'cached_account_type';
+
+  function redirectIfStudentPage() {
+    const here = location.pathname.split('/').pop().toLowerCase();
+    if (!STUDENT_ONLY.includes(here)) return false;
+    location.replace(BASE + 'teacher.html');
+    return true;
+  }
+
+  /* The authoritative check needs two round trips (session, then profile), by
+     which time the student dashboard has already painted. Remembering the
+     role locally lets the redirect happen before anything renders.
+
+     Only ever used to redirect, never to grant anything — and teacher.html
+     clears it when it finds a non-teacher, so a stale value costs one bounce
+     rather than an endless loop. */
+  (function redirectEarly() {
+    let cached = null;
+    try { cached = localStorage.getItem(ROLE_KEY); } catch (e) {}
+    if (cached === 'teacher') redirectIfStudentPage();
+  })();
 
   async function install() {
     const sidebar = document.querySelector('.sidebar');
@@ -218,6 +254,7 @@
       .from('profiles').select('account_type, level').eq('id', user.id).maybeSingle();
     const isTeacher = profile?.account_type === 'teacher';
     CURRENT_LEVEL = profile?.level || null;
+    try { localStorage.setItem(ROLE_KEY, isTeacher ? 'teacher' : 'student'); } catch (e) {}
 
     let classes, error;
     if (isTeacher) {
@@ -230,6 +267,7 @@
         class_id: c.id, name: c.name, subject: c.subject,
         sub: c.exam_board, level: c.level
       }));
+      if (redirectIfStudentPage()) return;
       adaptForTeacher(sidebar);
       // Notes / Practice / Breakdown all read user_subjects. A teacher who
       // lands on one of them directly has never passed through teacher.html,

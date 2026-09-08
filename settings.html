@@ -784,6 +784,7 @@ async function saveProfile() {
     // than leaving them on a sidebar that no longer matches their account.
     if (typeChanged) {
       loadedAccountType = accountType;
+      try { localStorage.setItem('cached_account_type', accountType); } catch (e) {}
       showMsg(msg, 'success', 'Account type changed. Taking you to your new home page…');
       setTimeout(() => {
         window.location = accountType === 'teacher' ? 'teacher.html' : 'Dashboard.html';
@@ -881,6 +882,7 @@ async function confirmDeleteAccount() {
     return;
   }
 
+  try { localStorage.removeItem('cached_account_type'); } catch (e) {}
   await supabaseClient.auth.signOut();
   window.location = 'auth/login.html';
 }
@@ -889,6 +891,7 @@ async function confirmDeleteAccount() {
 function confirmSignOut(){document.getElementById('signoutOverlay').classList.add('active');}
 function cancelSignOut(){document.getElementById('signoutOverlay').classList.remove('active');}
 async function logout() {
+  try { localStorage.removeItem('cached_account_type'); } catch (e) {}
   await supabaseClient.auth.signOut();
   window.location = 'auth/login.html';
 }
