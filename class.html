@@ -429,6 +429,7 @@ function renderSidebar() {
 }
 
 async function logout() {
+  try { localStorage.removeItem('cached_account_type'); } catch (e) {}
   await supabaseClient.auth.signOut();
   location = 'auth/login.html';
 }

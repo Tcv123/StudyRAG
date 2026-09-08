@@ -2759,6 +2759,7 @@ document.addEventListener('keydown', e => {
   cancelSignOut();
 });
 async function logout() {
+  try { localStorage.removeItem('cached_account_type'); } catch (e) {}
   await supabaseClient.auth.signOut();
   window.location = 'auth/login.html';
 }

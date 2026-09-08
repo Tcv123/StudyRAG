@@ -311,7 +311,13 @@ let classes = [];
 
   // A student who lands here has nothing to see — this page only ever shows
   // classes you own, and students cannot own any.
-  if (profile?.account_type !== 'teacher') { window.location = 'Dashboard.html'; return; }
+  if (profile?.account_type !== 'teacher') {
+    // Clear the cached role first, or classes-nav.js will bounce them
+    // straight back here on the next page and the two will loop.
+    try { localStorage.setItem('cached_account_type', 'student'); } catch (e) {}
+    window.location = 'Dashboard.html';
+    return;
+  }
 
   const fn = profile.first_name || '', ln = profile.last_name || '';
   const hour = new Date().getHours();
@@ -605,6 +611,7 @@ function escapeHtml(s) {
 }
 
 async function logout() {
+  try { localStorage.removeItem('cached_account_type'); } catch (e) {}
   await supabaseClient.auth.signOut();
   window.location = 'auth/login.html';
 }
