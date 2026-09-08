@@ -42,6 +42,15 @@
     #${SECTION_ID} .cn-text { min-width: 0; flex: 1; }
     #${SECTION_ID} .cn-name { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
     #${SECTION_ID} .cn-sub { display: block; font-size: 11px; color: var(--muted2); margin-top: 1px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+    #${SECTION_ID} .cn-levels { display: flex; gap: 3px; margin: 8px 8px 2px; }
+    #${SECTION_ID} .cn-lvl {
+      flex: 1; padding: 5px 0; font: inherit; font-size: 11px; font-weight: 600;
+      border: 1px solid var(--border); background: var(--surface2); color: var(--muted2);
+      border-radius: 7px; cursor: pointer; transition: all 0.12s;
+    }
+    #${SECTION_ID} .cn-lvl:hover { color: var(--text); }
+    #${SECTION_ID} .cn-lvl.on { background: var(--accent-dim); border-color: var(--accent); color: var(--accent-dark); }
+    #${SECTION_ID} .cn-hint { font-size: 10px; color: var(--muted2); margin: 0 8px 4px; line-height: 1.35; }
   `;
 
   /* Pages in subfolders (flashcards/, diagnostics/, subject-notes/) need to
@@ -56,6 +65,19 @@
   }
 
   const BASE = basePath();
+
+  let CURRENT_LEVEL = null;
+
+  /* Switching level rewrites profiles.level, which is what every page reads
+     to pick a spec. Reload rather than re-render: the topic lists, question
+     banks and diagnostic pages are all chosen at page load. */
+  window.setTeachingLevel = async function (level) {
+    const { data: { user } } = await supabaseClient.auth.getUser();
+    if (!user) return;
+    await supabaseClient.from('profiles').update({ level }).eq('id', user.id);
+    try { localStorage.setItem('cached_level', level); } catch (e) {}
+    location.reload();
+  };
 
   function esc(s) {
     return String(s ?? '').replace(/[&<>"']/g, c =>
@@ -105,31 +127,60 @@
         </a>`;
     }).join('');
 
+    /* Notes, Practice and Breakdown all resolve their spec from
+       profiles.level — one field, but a teacher can be covering GCSE and
+       A-Level at once. So when their classes span more than one level, give
+       them a control to say which one they're looking at. Teachers on a
+       single level never see it: their profile level is already right. */
+    let levelSwitch = '';
+    if (isTeacher) {
+      const levels = [...new Set(classes.map(c => c.level).filter(Boolean))];
+      if (levels.length > 1) {
+        const order = ['gcse', 'as', 'a-level'];
+        const label = { gcse: 'GCSE', as: 'AS', 'a-level': 'A-Level' };
+        levelSwitch = `
+          <div class="cn-hint">Showing notes &amp; questions for</div>
+          <div class="cn-levels">
+            ${order.filter(l => levels.includes(l)).map(l => `
+              <button type="button" class="cn-lvl${l === CURRENT_LEVEL ? ' on' : ''}"
+                      onclick="window.setTeachingLevel('${l}')">${label[l]}</button>`).join('')}
+          </div>`;
+      }
+    }
+
     const cta = isTeacher
       ? `<a class="nav-item" href="${BASE}teacher.html#new-class"><span class="nav-icon">＋</span> New class</a>`
       : `<a class="nav-item" href="${BASE}Dashboard.html#join-class"><span class="nav-icon">＋</span> Join a class</a>`;
 
-    return `<div class="nav-label">Classes</div>${rows}${cta}`;
+    return `<div class="nav-label">Classes</div>${rows}${cta}${levelSwitch}`;
   }
+
+  /* Everything a teacher has no use for. All of these are about revising for
+     an exam you are sitting yourself:
+       - Breakdown, Diagnostic, Medals: a report on the viewer's own progress,
+         which for a teacher is permanently empty. Their equivalent is the
+         class page.
+       - Edit subjects: a teacher's subjects come from the classes they own.
+       - The whole Premium section: those upsells are aimed at students. */
+  const TEACHER_HIDES = ['breakdown', 'diagnostic', 'medals', 'edit subjects'];
 
   /* Retarget the nav the host page wrote for a student. Done by rewriting
      what is already there rather than replacing the sidebar, so each page
      keeps its own styling and active state. */
   function adaptForTeacher(sidebar) {
-    const items = [...sidebar.querySelectorAll('.nav-item')];
-
-    for (const el of items) {
+    for (const el of [...sidebar.querySelectorAll('.nav-item')]) {
       const label = el.textContent.trim().toLowerCase();
       const href  = el.getAttribute('href') || '';
 
-      // A teacher isn't revising for an exam of their own.
-      if (label.startsWith('edit subjects') || label.startsWith('diagnostic') || label.startsWith('medals')) {
-        el.remove();
-        continue;
-      }
-      if (href.includes('Dashboard.html')) {
-        el.setAttribute('href', BASE + 'teacher.html');
-      }
+      if (TEACHER_HIDES.some(h => label.startsWith(h))) { el.remove(); continue; }
+      if (href.includes('Dashboard.html')) el.setAttribute('href', BASE + 'teacher.html');
+    }
+
+    for (const sec of [...sidebar.querySelectorAll('.nav-section')]) {
+      const label = (sec.querySelector('.nav-label')?.textContent || '').trim().toLowerCase();
+      if (label === 'premium') sec.remove();
+      // A section left with nothing but its heading looks broken.
+      else if (label && !sec.querySelector('.nav-item')) sec.remove();
     }
 
     // The logo goes home to the teacher's own home.
@@ -164,18 +215,20 @@
     if (!user) { section.remove(); return; }
 
     const { data: profile } = await supabaseClient
-      .from('profiles').select('account_type').eq('id', user.id).maybeSingle();
+      .from('profiles').select('account_type, level').eq('id', user.id).maybeSingle();
     const isTeacher = profile?.account_type === 'teacher';
+    CURRENT_LEVEL = profile?.level || null;
 
     let classes, error;
     if (isTeacher) {
       // Classes they OWN. RLS already scopes this to teacher_id = auth.uid().
       const res = await supabaseClient.from('classes')
-        .select('id, name, subject, exam_board, archived')
+        .select('id, name, subject, exam_board, level, archived')
         .eq('archived', false).order('created_at');
       error = res.error;
       classes = (res.data || []).map(c => ({
-        class_id: c.id, name: c.name, subject: c.subject, sub: c.exam_board
+        class_id: c.id, name: c.name, subject: c.subject,
+        sub: c.exam_board, level: c.level
       }));
       adaptForTeacher(sidebar);
       // Notes / Practice / Breakdown all read user_subjects. A teacher who
