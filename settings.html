@@ -422,6 +422,16 @@
           <div class="form-hint">Email cannot be changed</div>
         </div>
       </div>
+      <div class="form-row">
+        <div class="form-label">Account type</div>
+        <div class="form-value">
+          <select class="form-select" id="accountType">
+            <option value="student">Student — track my own revision</option>
+            <option value="teacher">Teacher — see how my class is doing</option>
+          </select>
+          <div class="form-hint">Changes which pages you see. Nothing you've already saved is deleted.</div>
+        </div>
+      </div>
       <div class="btn-row">
         <button class="btn btn-primary" id="saveProfileBtn" onclick="saveProfile()">Save changes</button>
       </div>
@@ -536,6 +546,7 @@
 
 <script>
 let currentUser = null;
+let loadedAccountType = 'student';   // what was on the profile at page load
 let studyGoal = 30;
 let currentAvatarUrl = null;
 let currentAvatarStyle = 'fun-emoji';
@@ -639,6 +650,8 @@ async function load() {
   document.getElementById('firstName').value  = firstName;
   document.getElementById('lastName').value   = lastName;
   document.getElementById('emailField').value = user.email;
+  loadedAccountType = profile?.account_type === 'teacher' ? 'teacher' : 'student';
+  document.getElementById('accountType').value = loadedAccountType;
 
   // Avatar picker — detect the saved style so its tab is pre-selected
   currentAvatarUrl = profile?.avatar_url || null;
@@ -745,9 +758,11 @@ async function saveProfile() {
 
   const firstName = document.getElementById('firstName').value.trim();
   const lastName  = document.getElementById('lastName').value.trim();
+  const accountType = document.getElementById('accountType').value;
+  const typeChanged = accountType !== loadedAccountType;
 
   const { error, data, count } = await supabaseClient.from('profiles')
-    .update({ first_name: firstName, last_name: lastName })
+    .update({ first_name: firstName, last_name: lastName, account_type: accountType })
     .eq('id', currentUser.id)
     .select();
 
@@ -761,6 +776,17 @@ async function saveProfile() {
     showMsg(msg, 'success', 'Profile updated successfully.');
     document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim();
     document.getElementById('avatarInitials').textContent = ((firstName[0] || '') + (lastName[0] || '')).toUpperCase() || '?';
+
+    // Account type decides which pages exist for this user, and the nav is
+    // rendered at page load — so send them somewhere that makes sense rather
+    // than leaving them on a sidebar that no longer matches their account.
+    if (typeChanged) {
+      loadedAccountType = accountType;
+      showMsg(msg, 'success', 'Account type changed. Taking you to your new home page…');
+      setTimeout(() => {
+        window.location = accountType === 'teacher' ? 'teacher.html' : 'Dashboard.html';
+      }, 1200);
+    }
   }
 }
 

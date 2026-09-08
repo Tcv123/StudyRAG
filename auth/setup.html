@@ -1116,9 +1116,14 @@ async function save() {
 
   // Load existing profile and subjects
   const [{ data: profile }, { data: existingSubjects }] = await Promise.all([
-    supabaseClient.from('profiles').select('level, avatar_url').eq('id', user.id).single(),
+    supabaseClient.from('profiles').select('level, avatar_url, account_type').eq('id', user.id).single(),
     supabaseClient.from('user_subjects').select('*').eq('user_id', user.id)
   ]);
+
+  // This whole page asks for subjects, current grades and target grades —
+  // none of which apply to someone who isn't sitting the exam. Teachers who
+  // land here (bookmark, "Edit subjects" link) go to their class area.
+  if (profile?.account_type === 'teacher') { window.location = '../teacher.html'; return; }
 
   // Avatar — pre-populate if saved, otherwise show the picker with no selection
   if (profile?.avatar_url) {
