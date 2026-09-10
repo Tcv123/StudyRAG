@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 3.1 — Models &amp; Quantities</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.1 Models &amp; Quantities</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Mechanics — spec refs p31–p35</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> The vocabulary of simplifying assumptions in mechanics, the particle model, and the SI base and derived units used throughout the Mechanics component.
+</div>
+
+<h2>1. Why model?</h2>
+
+<p>Real situations are too complicated to analyse exactly. A <strong>model</strong> strips away detail judged unimportant, leaving something tractable. The conclusions are then only as good as the assumptions — which is why the specification asks you to state them, and to consider refining them.</p>
+
+<h2>2. The language of modelling assumptions</h2>
+
+<p>MEI names these words explicitly (spec ref p31).</p>
+
+<table>
+  <tr><th>Assumption</th><th>Means</th><th>Consequence</th></tr>
+  <tr><td><strong>Particle</strong></td><td>Mass but negligible size</td><td>All forces act at one point; rotation is ignored</td></tr>
+  <tr><td><strong>Light</strong></td><td>Negligible mass</td><td>The object's weight can be ignored; tension is constant along a light string</td></tr>
+  <tr><td><strong>Smooth</strong></td><td>No friction</td><td>No frictional force at the surface or pulley</td></tr>
+  <tr><td><strong>Rough</strong></td><td>Friction present</td><td>A frictional force must be included</td></tr>
+  <tr><td><strong>Inextensible</strong></td><td>Cannot stretch</td><td>Connected particles share the same magnitude of acceleration</td></tr>
+  <tr><td><strong>Uniform</strong></td><td>Mass evenly distributed</td><td>The weight acts at the geometric centre</td></tr>
+  <tr><td><strong>Thin</strong></td><td>Negligible thickness</td><td>Treated as a line or a lamina</td></tr>
+  <tr><td><strong>Rigid</strong></td><td>Does not bend or deform</td><td>Its shape is fixed under load</td></tr>
+  <tr><td><strong>Long term</strong></td><td>After a long time has elapsed</td><td>Transient behaviour has died away</td></tr>
+</table>
+
+<div class="exam-tip">
+Two of these do specific work in pulley problems. <strong>Light</strong> means the tension is the same throughout the string; <strong>smooth</strong> means the pulley does not change it either, so the tension is equal on both sides. <strong>Inextensible</strong> is what lets you write one acceleration for both particles.
+</div>
+
+<h3>When the particle model breaks down</h3>
+
+<p>Modelling a car as a particle is fine when its size is small compared with the distances involved. It is not fine when rotation or the distribution of mass matters — a ladder against a wall, a spinning ball, or a bridge cable whose length is the whole point of the problem. Those need a rigid body.</p>
+
+<h2>3. SI base quantities</h2>
+
+<table>
+  <tr><th>Quantity</th><th>Unit</th><th>Symbol</th></tr>
+  <tr><td>Length</td><td>metre</td><td>m</td></tr>
+  <tr><td>Time</td><td>second</td><td>s</td></tr>
+  <tr><td>Mass</td><td>kilogram</td><td>kg</td></tr>
+</table>
+
+<h2>4. Derived quantities</h2>
+
+<table>
+  <tr><th>Quantity</th><th>Unit</th><th>In base units</th></tr>
+  <tr><td>Velocity</td><td>m s\(^{-1}\)</td><td>m s\(^{-1}\)</td></tr>
+  <tr><td>Acceleration</td><td>m s\(^{-2}\)</td><td>m s\(^{-2}\)</td></tr>
+  <tr><td>Force, weight</td><td>newton (N)</td><td>kg m s\(^{-2}\)</td></tr>
+  <tr><td>Moment</td><td>newton metre (N m)</td><td>kg m\(^2\) s\(^{-2}\)</td></tr>
+</table>
+
+<div class="exam-tip">
+A moment is quoted in <strong>N m</strong>, never in joules, even though the base units coincide. The units distinguish a turning effect from an energy.
+</div>
+
+<h3>Conversions</h3>
+
+<div class="example">
+<strong>Worked example.</strong> Convert 36 km h\(^{-1}\) to m s\(^{-1}\).
+$$\frac{36\,000 \text{ m}}{3600 \text{ s}} = 10 \text{ m s}^{-1}$$
+<p>Going the other way, 5 m s\(^{-1}\) is 18 km h\(^{-1}\). A mass of 200 g is 0.2 kg.</p>
+</div>
+
+<h2>5. Mass and weight</h2>
+
+<div class="definition">
+<strong>Mass</strong> is a scalar measured in kilograms and is a property of the object. <strong>Weight</strong> is the <em>force</em> of gravity on it, a vector measured in newtons:
+$$W = mg$$
+</div>
+
+<div class="example">
+A mass of 5 kg has weight \(5 \times 9.8 = 49\) N. A mass of 2 kg hanging at rest from a light string produces a tension of 19.6 N.
+</div>
+
+<p>Taken to the Moon, the object's <strong>mass is unchanged</strong> but its weight falls, because \(g\) is smaller there.</p>
+
+<h3>The value of \(g\)</h3>
+
+<div class="exam-tip">
+The acceleration due to gravity is <strong>not</strong> a universal constant — it depends on location. On Earth it is modelled as constant, and the specification states that <strong>unless otherwise specified, examinations use \(g = 9.8\)</strong>. Using 10 introduces a systematic error of about 2%.
+</div>
+
+<p>The inverse square law for gravitation is <strong>excluded</strong> from this specification.</p>
+
+<h2>6. Scalars and vectors</h2>
+
+<table>
+  <tr><th>Scalars</th><th>Vectors</th></tr>
+  <tr><td>Mass, time, distance, speed</td><td>Displacement, velocity, acceleration, force, weight</td></tr>
+</table>
+
+<div class="exam-tip">
+Getting the units wrong is a guaranteed mark loss and is easy to catch: an acceleration quoted in kg, or a force in kilograms, should stop you immediately. Check the units of every answer.
+</div>
+
+<h2>7. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Confusing mass with weight, or quoting a weight in kilograms.</li>
+  <li>Using \(g = 10\) when the specification says 9.8.</li>
+  <li>Quoting a moment in joules.</li>
+  <li>Applying the particle model where rotation or mass distribution matters.</li>
+  <li>Forgetting to convert km h\(^{-1}\) to m s\(^{-1}\) before using a formula.</li>
+  <li>Leaving modelling assumptions unstated when the question asks for them.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

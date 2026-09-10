@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 3.6 — Newton's Laws of Motion</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.6 Newton's Laws of Motion</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Mechanics — spec refs n1–n7</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Newton's three laws, forming the equation of motion for a particle, and applying it to connected particles such as pulley systems and trains.
+</div>
+
+<h2>1. The three laws</h2>
+
+<div class="definition">
+<strong>First law.</strong> An object continues in a state of rest or uniform motion in a straight line unless it is acted on by a resultant force.
+</div>
+
+<div class="definition">
+<strong>Second law.</strong> A resultant force \(\mathbf{F}\) acting on an object of fixed mass \(m\) gives the object an acceleration \(\mathbf{a}\) given by
+$$\mathbf{F} = m\mathbf{a}$$
+</div>
+
+<div class="definition">
+<strong>Third law.</strong> When one object exerts a force on another, there is always a reaction equal in magnitude and opposite in direction to the acting force.
+</div>
+
+<div class="exam-tip">
+The \(\mathbf{F}\) in \(\mathbf{F}=m\mathbf{a}\) is the <strong>resultant</strong> of all forces, not any single one. Substituting just the applied force, and ignoring friction or weight, is the most common structural error in this topic.
+</div>
+
+<h2>2. The equation of motion</h2>
+
+<p>Writing the equation of motion means applying the second law to a particular body in a particular direction (spec refs n2, n3). The method:</p>
+
+<ol>
+  <li>Draw a force diagram for the body.</li>
+  <li>Choose a positive direction — usually the direction of acceleration.</li>
+  <li>Resolve in that direction and set the total equal to \(ma\).</li>
+</ol>
+
+<div class="example">
+<strong>Worked example.</strong> A resultant force of 20 N acts on a 4 kg mass.
+$$a = \frac{F}{m} = \frac{20}{4} = 5 \text{ m s}^{-2}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A car of mass 1000 kg has a driving force of 3000 N and resistance 1000 N.
+$$3000 - 1000 = 1000a \Longrightarrow a = 2 \text{ m s}^{-2}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A 5 kg body falls against air resistance of 19 N, with \(g=9.8\).
+$$5(9.8) - 19 = 5a \Longrightarrow 49 - 19 = 5a \Longrightarrow a = 6 \text{ m s}^{-2}$$
+</div>
+
+<p>Equilibrium is simply the special case \(a = 0\), which recovers the condition that the resultant force is zero.</p>
+
+<h3>In two dimensions</h3>
+
+<p>The second law is a vector equation, so it may be applied component by component (n7).</p>
+
+<div class="example">
+<strong>Worked example.</strong> A resultant force \(6\mathbf{i}+8\mathbf{j}\) N acts on a 2 kg particle.
+$$\mathbf{a} = 3\mathbf{i}+4\mathbf{j} \text{ m s}^{-2}, \qquad |\mathbf{a}| = 5 \text{ m s}^{-2}$$
+</div>
+
+<div class="exam-tip">
+Problems involving <strong>variable mass</strong> are excluded from this specification, so \(m\) may always be treated as constant.
+</div>
+
+<h2>3. Lifts and apparent weight</h2>
+
+<p>For a person of mass \(m\) in a lift, the forces are the normal reaction \(R\) upwards and the weight \(mg\) downwards.</p>
+
+<table>
+  <tr><th>Lift motion</th><th>Equation</th><th>Reaction</th></tr>
+  <tr><td>Accelerating upwards at \(a\)</td><td>\(R - mg = ma\)</td><td>Greater than the weight</td></tr>
+  <tr><td>Accelerating downwards at \(a\)</td><td>\(mg - R = ma\)</td><td>Less than the weight</td></tr>
+  <tr><td>Constant velocity</td><td>\(R = mg\)</td><td>Equal to the weight</td></tr>
+</table>
+
+<div class="example">
+<strong>Worked example.</strong> A 70 kg passenger in a lift accelerating upwards at 2 m s\(^{-2}\), with \(g=9.8\).
+$$R = m(g+a) = 70(11.8) = 826 \text{ N}$$
+</div>
+
+<div class="exam-tip">
+A lift <em>descending</em> but <em>decelerating</em> has its acceleration directed <strong>upwards</strong>, so the reaction exceeds the weight. Read the direction of the acceleration, not the direction of travel.
+</div>
+
+<h2>4. Newton's third law properly understood</h2>
+
+<div class="exam-tip">
+A third-law pair acts on <strong>two different bodies</strong>. A book resting on a table: the normal reaction from the table on the book and the book's weight both act on the <em>book</em>, so they are <strong>not</strong> a third-law pair — they merely happen to be equal here because the book is in equilibrium. The true partner of the book's weight is the gravitational pull of the book on the Earth.
+</div>
+
+<p>The test is simple: if two forces act on the same object, they cannot be a third-law pair.</p>
+
+<h2>5. Connected particles</h2>
+
+<p>A system may be modelled as a set of connected particles — pulley systems, trains, tow ropes (n4, n5).</p>
+
+<p>Two standard assumptions do the work:</p>
+<ul>
+  <li><strong>Light, inextensible string</strong>: the tension is the same throughout, and both particles have accelerations of equal magnitude.</li>
+  <li><strong>Smooth pulley</strong>: the tension is unchanged in passing over it, so it is equal on both sides.</li>
+</ul>
+
+<h3>Two strategies</h3>
+
+<table>
+  <tr><th>Approach</th><th>Use it to find</th><th>Why</th></tr>
+  <tr><td>Whole system as one body</td><td>The acceleration</td><td>Internal tensions cancel, leaving only external forces</td></tr>
+  <tr><td>Each particle separately</td><td>The tension or coupling force</td><td>Internal forces appear explicitly</td></tr>
+</table>
+
+<div class="example">
+<strong>Worked example.</strong> Masses of 5 kg and 3 kg hang from a light inextensible string over a smooth pulley, with \(g=9.8\).
+<p>For the 5 kg mass, taking downwards as positive: \(5g - T = 5a\).</p>
+<p>For the 3 kg mass, taking upwards as positive: \(T - 3g = 3a\).</p>
+<p>Adding eliminates \(T\):</p>
+$$2g = 8a \Longrightarrow a = \frac{2(9.8)}{8} = 2.45 \text{ m s}^{-2}$$
+<p>Substituting back: \(T = 3(9.8 + 2.45) = 36.75\) N.</p>
+</div>
+
+<div class="exam-tip">
+Check the tension against the <em>other</em> equation: \(T = 5(9.8-2.45) = 36.75\) N. Agreement confirms the arithmetic. Note also that the tension lies <strong>between</strong> the two weights, 29.4 N and 49 N — if yours does not, something is wrong.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A 4 kg block on a smooth table is connected over a smooth pulley to a 2 kg hanging mass.
+<p>Whole system: the only external driving force is the hanging weight, \(2g\), acting on a total mass of 6 kg:</p>
+$$2(9.8) = 6a \Longrightarrow a = 3.27 \text{ m s}^{-2} \text{ (3 s.f.)}$$
+<p>For the block alone, \(T = 4a = 13.1\) N.</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> An engine of mass 20 000 kg pulls a carriage of mass 10 000 kg with a total driving force of 45 000 N and no resistance. Find the coupling force.
+<p>Whole system: \(45\,000 = 30\,000a\), so \(a = 1.5\) m s\(^{-2}\).</p>
+<p>Carriage alone: the coupling force is the only force on it, so \(T = 10\,000 \times 1.5 = 15\,000\) N.</p>
+</div>
+
+<div class="exam-tip">
+Take moments — figuratively — over which body to isolate. To find an internal force, always write the equation for the body on <strong>one side</strong> of it, choosing whichever has fewer forces acting.
+</div>
+
+<h2>6. Terminal velocity</h2>
+
+<p>A falling body meets resistance that grows with speed. When the resistance equals the weight, the resultant force is zero, the acceleration becomes zero, and the speed stops increasing — the <strong>terminal velocity</strong>. It is approached asymptotically rather than reached at a definite instant.</p>
+
+<h2>7. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Using a single force rather than the resultant in \(F=ma\).</li>
+  <li>Identifying a book's weight and the table's reaction as a third-law pair.</li>
+  <li>Using different accelerations for particles joined by an inextensible string.</li>
+  <li>Assuming different tensions either side of a smooth pulley.</li>
+  <li>Confusing mass and weight in the equation of motion.</li>
+  <li>Choosing inconsistent positive directions for the two particles.</li>
+  <li>Trying to find an internal tension from the whole-system equation, where it has cancelled.</li>
+  <li>Reading the direction of travel instead of the direction of acceleration in a lift problem.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

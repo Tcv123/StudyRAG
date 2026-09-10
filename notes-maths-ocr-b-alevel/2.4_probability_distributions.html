@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 2.4 — Probability Distributions</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.4 Probability Distributions</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Statistics — spec refs R1–R13</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Discrete random variables and probability functions, the binomial distribution as a model, the Normal distribution including standardising and the continuity correction, and judging when each model is appropriate.
+</div>
+
+<h2>1. Discrete random variables</h2>
+
+<div class="definition">
+A <strong>discrete random variable</strong> \(X\) takes separate values with given probabilities. Capital \(X\) denotes the variable; lower-case \(x\) or \(r\) denotes a particular value (spec ref R6).
+</div>
+
+<p>A probability function may be given algebraically or in a table. Every valid distribution satisfies</p>
+$$\sum \mathrm{P}(X=x) = 1$$
+
+<div class="example">
+<strong>Worked example.</strong> \(\mathrm{P}(X=x) = kx\) for \(x = 1,2,3,4\). Find \(k\).
+$$k(1+2+3+4) = 10k = 1 \Longrightarrow k = 0.1$$
+</div>
+
+<p>A <strong>discrete uniform</strong> distribution is one in which all outcomes are equally likely — the score on a fair die, for instance.</p>
+
+<h2>2. The binomial distribution</h2>
+
+<div class="definition">
+\(X \sim \mathrm{B}(n,p)\) counts the number of successes in \(n\) trials. The symbol \(\sim\) is read "has the distribution".
+</div>
+
+<h3>When a binomial model applies</h3>
+
+<p>The specification lists the conditions explicitly (R1):</p>
+<ul>
+  <li>The trial is conducted a <strong>fixed</strong> number of times.</li>
+  <li>There are exactly <strong>two</strong> outcomes, "success" and "failure".</li>
+  <li>The probability of success is the <strong>same</strong> each time.</li>
+  <li>The trials are <strong>independent</strong> of one another.</li>
+</ul>
+
+<p>Writing \(q = 1-p\), the probability of exactly \(r\) successes is</p>
+$$\mathrm{P}(X=r) = \binom{n}{r}p^r q^{\,n-r}$$
+
+<div class="example">
+<strong>Worked example.</strong> \(X \sim \mathrm{B}(10,0.4)\). Find \(\mathrm{P}(X=3)\).
+$$\binom{10}{3}(0.4)^3(0.6)^7 = 120 \times 0.064 \times 0.0279936 \approx 0.215$$
+</div>
+
+<h3>Mean and expected frequencies</h3>
+$$\text{mean} = np$$
+
+<div class="example">
+For \(X\sim\mathrm{B}(20,0.3)\) the mean is \(20\times0.3 = 6\). In 50 trials with \(p=0.2\), the expected number of successes is 10.
+</div>
+
+<div class="exam-tip">
+Use the complement for "at least one": \(\mathrm{P}(X\ge1) = 1-\mathrm{P}(X=0) = 1-q^n\). For \(X\sim\mathrm{B}(5,0.2)\) this is \(1-0.8^5\).
+</div>
+
+<div class="exam-tip">
+A binomial model <strong>fails</strong> when sampling without replacement from a small population, because the probability of success changes between trials. It remains a reasonable <em>approximation</em> when the population is very large relative to the sample.
+</div>
+
+<h2>3. The Normal distribution</h2>
+
+<div class="definition">
+\(X \sim \mathrm{N}(\mu, \sigma^2)\) describes a continuous variable whose distribution is symmetric and bell-shaped, with mean \(\mu\) and standard deviation \(\sigma\).
+</div>
+
+<p>Note that the second parameter is the <strong>variance</strong>. For \(\mathrm{N}(100, 25)\) the standard deviation is 5, not 25.</p>
+
+<h3>Properties of the curve</h3>
+
+<ul>
+  <li>Symmetric about \(\mu\), where the mean, median and mode coincide.</li>
+  <li>The total area under the curve is 1, and area represents <strong>probability</strong>.</li>
+  <li>\(\mathrm{P}(X &gt; \mu) = 0.5\).</li>
+  <li>The <strong>points of inflection</strong> lie at \(\mu \pm \sigma\), one standard deviation either side of the mean (R11).</li>
+  <li>Roughly 68% of values lie within one standard deviation of the mean, and about 95% within two.</li>
+</ul>
+
+<h3>Standardising</h3>
+$$Z = \frac{X-\mu}{\sigma}, \qquad Z \sim \mathrm{N}(0,1)$$
+
+<div class="example">
+<strong>Worked example.</strong> \(X\sim\mathrm{N}(60,16)\). Find the \(z\)-value for \(X=68\).
+<p>Here \(\sigma = \sqrt{16} = 4\), so \(z = \dfrac{68-60}{4} = 2\).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> \(X\sim\mathrm{N}(80,25)\). Find \(X\) when \(z = -1.6\).
+$$X = 80 + (-1.6)(5) = 72$$
+</div>
+
+<h3>Linear transformations</h3>
+
+<p>A linear transformation of a Normal variable is again Normal (R10). If \(Y = aX + b\) then</p>
+$$\text{mean of } Y = a\mu + b, \qquad \text{variance of } Y = a^2\sigma^2$$
+
+<div class="example">
+<strong>Worked example.</strong> \(X\sim\mathrm{N}(50,16)\) and \(Y = 3X+2\).
+$$\text{mean} = 3(50)+2 = 152, \qquad \text{variance} = 3^2 \times 16 = 144$$
+<p>So \(Y \sim \mathrm{N}(152,144)\).</p>
+</div>
+
+<div class="exam-tip">
+The multiplier is <strong>squared</strong> in the variance but not in the mean, and the additive constant \(b\) affects the mean only — shifting a distribution does not change its spread.
+</div>
+
+<h2>4. The continuity correction</h2>
+
+<div class="definition">
+When a <strong>continuous</strong> Normal distribution is used to model <strong>discrete</strong> data, each integer is treated as covering the interval half a unit either side. This adjustment is the <strong>continuity correction</strong> (R8).
+</div>
+
+<table>
+  <tr><th>Discrete statement</th><th>Normal equivalent</th></tr>
+  <tr><td>\(\mathrm{P}(X \le 10)\)</td><td>\(\mathrm{P}(X &lt; 10.5)\)</td></tr>
+  <tr><td>\(\mathrm{P}(X &lt; 10)\)</td><td>\(\mathrm{P}(X &lt; 9.5)\)</td></tr>
+  <tr><td>\(\mathrm{P}(X \ge 12)\)</td><td>\(\mathrm{P}(X &gt; 11.5)\)</td></tr>
+  <tr><td>\(\mathrm{P}(X &gt; 12)\)</td><td>\(\mathrm{P}(X &gt; 12.5)\)</td></tr>
+  <tr><td>\(\mathrm{P}(X = 12)\)</td><td>\(\mathrm{P}(11.5 &lt; X &lt; 12.5)\)</td></tr>
+</table>
+
+<div class="exam-tip">
+Decide the direction by asking which integers the statement should <strong>include</strong>. \(\mathrm{P}(X\ge12)\) must include 12, so the boundary goes below it, at 11.5. Sketching the discrete bars against the curve settles it every time.
+</div>
+
+<p>MEI expects you to <em>recognise from the shape</em> of a binomial distribution when a Normal approximation is reasonable — a roughly symmetric, bell-shaped histogram. Learning a formal list of conditions for the approximation is not required by this specification.</p>
+
+<h2>5. Choosing and criticising a model</h2>
+
+<p>Modelling with probability includes recognising when the binomial or Normal model is <strong>not</strong> appropriate (R13).</p>
+
+<table>
+  <tr><th>Situation</th><th>Model</th><th>Why</th></tr>
+  <tr><td>Number of heads in 20 tosses</td><td>Binomial</td><td>Fixed trials, two outcomes, constant \(p\), independent</td></tr>
+  <tr><td>Number of sixes in 30 rolls</td><td>\(\mathrm{B}(30,\tfrac16)\)</td><td>Same conditions hold</td></tr>
+  <tr><td>Heights of adults</td><td>Normal</td><td>Continuous, symmetric, clustered about a mean</td></tr>
+  <tr><td>Drawing from a small bag without replacement</td><td>Neither cleanly</td><td>\(p\) changes between trials</td></tr>
+  <tr><td>Markedly skewed data</td><td>Not Normal</td><td>The Normal curve is symmetric</td></tr>
+</table>
+
+<div class="exam-tip">
+Criticising a model means examining whether its <strong>assumptions</strong> hold in the given context — not recalculating. Say which condition is doubtful and why it matters.
+</div>
+
+<h2>6. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Reading the second Normal parameter as the standard deviation instead of the variance.</li>
+  <li>Forgetting to square the multiplier when transforming a variance.</li>
+  <li>Applying the continuity correction in the wrong direction.</li>
+  <li>Using a binomial model where the probability of success changes between trials.</li>
+  <li>Forgetting the \(\binom{n}{r}\) coefficient in the binomial formula.</li>
+  <li>Computing \(\mathrm{P}(X \ge 1)\) term by term instead of using \(1 - q^n\).</li>
+  <li>Placing the points of inflection anywhere other than \(\mu \pm \sigma\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

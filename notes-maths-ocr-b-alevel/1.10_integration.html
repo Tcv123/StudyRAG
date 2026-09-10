@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.10 — Integration</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.10 Integration</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs c20–c33 (Calculus)</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Integration as the reverse of differentiation and as area, the standard integrals, the three techniques — substitution, by parts and partial fractions — and definite integration for areas between curves.
+</div>
+
+<h2>1. Integration as the reverse of differentiation</h2>
+
+$$\int x^n\,\mathrm{d}x = \frac{x^{n+1}}{n+1} + c \qquad (n \neq -1)$$
+
+<p>The <strong>constant of integration</strong> \(c\) is essential for an indefinite integral: differentiating any constant gives zero, so the original constant cannot be recovered.</p>
+
+<p>The excluded case \(n=-1\) is covered separately:</p>
+$$\int \frac1x\,\mathrm{d}x = \ln|x| + c$$
+
+<div class="exam-tip">
+The modulus in \(\ln|x|\) matters — it allows the result to apply for negative \(x\) as well. Dropping it is a standard deduction.
+</div>
+
+<h2>2. Standard integrals</h2>
+
+<table>
+  <tr><th>\(f(x)\)</th><th>\(\int f(x)\,\mathrm{d}x\)</th></tr>
+  <tr><td>\(x^n\ (n\neq-1)\)</td><td>\(\dfrac{x^{n+1}}{n+1}+c\)</td></tr>
+  <tr><td>\(\dfrac1x\)</td><td>\(\ln|x|+c\)</td></tr>
+  <tr><td>\(\mathrm{e}^x\)</td><td>\(\mathrm{e}^x+c\)</td></tr>
+  <tr><td>\(\mathrm{e}^{kx}\)</td><td>\(\dfrac{\mathrm{e}^{kx}}{k}+c\)</td></tr>
+  <tr><td>\(\cos x\)</td><td>\(\sin x + c\)</td></tr>
+  <tr><td>\(\sin x\)</td><td>\(-\cos x + c\)</td></tr>
+  <tr><td>\(\sec^2 x\)</td><td>\(\tan x + c\)</td></tr>
+  <tr><td>\(\tan x\)</td><td>\(\ln|\sec x| + c\)</td></tr>
+</table>
+
+<div class="exam-tip">
+Note the sign asymmetry: differentiating \(\cos\) introduces a minus, and so does integrating \(\sin\). \(\int \sin x\,\mathrm{d}x = -\cos x + c\) is the one people write without the minus.
+</div>
+
+<h2>3. Definite integration and area</h2>
+
+<div class="definition">
+The <strong>Fundamental Theorem of Calculus</strong> connects the two views of integration:
+$$\int_a^b f(x)\,\mathrm{d}x = \big[F(x)\big]_a^b = F(b)-F(a)$$
+where \(F'(x)=f(x)\).
+</div>
+
+<p>No constant of integration is needed for a definite integral — it cancels in the subtraction.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Evaluate \(\displaystyle\int_1^3 (2x+1)\,\mathrm{d}x\).
+$$\big[x^2+x\big]_1^3 = (9+3)-(1+1) = 10$$
+</div>
+
+<div class="exam-tip">
+A region <strong>below</strong> the \(x\)-axis contributes a negative amount. If a curve crosses the axis within the limits, split the integral at the crossing and add the <em>magnitudes</em>, or the positive and negative parts will cancel and understate the area.
+</div>
+
+<h3>Area between two curves</h3>
+$$\text{Area} = \int_a^b \big(y_{\text{upper}} - y_{\text{lower}}\big)\,\mathrm{d}x$$
+
+<div class="example">
+<strong>Worked example.</strong> Find the area enclosed between \(y=x^2\) and \(y=2x\).
+<p>They meet where \(x^2=2x\), i.e. \(x=0\) and \(x=2\). Between these the line is above the parabola:</p>
+$$\int_0^2 (2x-x^2)\,\mathrm{d}x = \left[x^2-\frac{x^3}{3}\right]_0^2 = 4-\frac83 = \frac43$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find the area between \(y=4-x^2\) and the \(x\)-axis, between its roots.
+<p>Roots at \(x=\pm2\):</p>
+$$\int_{-2}^{2}(4-x^2)\,\mathrm{d}x = \left[4x-\frac{x^3}{3}\right]_{-2}^{2} = \left(8-\tfrac83\right)-\left(-8+\tfrac83\right) = \frac{32}{3}$$
+</div>
+
+<h2>4. Integration by substitution</h2>
+
+<p>Reverse of the chain rule. Choose \(u\) so that \(\mathrm{d}u\) absorbs the remaining factor.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\displaystyle\int 2x\,\mathrm{e}^{x^2}\,\mathrm{d}x\).
+<p>Let \(u=x^2\), so \(\mathrm{d}u = 2x\,\mathrm{d}x\):</p>
+$$\int \mathrm{e}^{u}\,\mathrm{d}u = \mathrm{e}^{u}+c = \mathrm{e}^{x^2}+c$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\displaystyle\int (2x+1)^5\,\mathrm{d}x\).
+<p>Let \(u=2x+1\), so \(\mathrm{d}u = 2\,\mathrm{d}x\):</p>
+$$\tfrac12\int u^5\,\mathrm{d}u = \frac{u^6}{12}+c = \frac{(2x+1)^6}{12}+c$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\displaystyle\int \frac{1}{x\ln x}\,\mathrm{d}x\).
+<p>Let \(u = \ln x\), so \(\mathrm{d}u = \tfrac1x\,\mathrm{d}x\):</p>
+$$\int \frac{1}{u}\,\mathrm{d}u = \ln|u|+c = \ln|\ln x|+c$$
+</div>
+
+<div class="exam-tip">
+For a <strong>definite</strong> integral, either change the limits to match \(u\), or substitute back to \(x\) before applying the original limits. Applying the \(x\)-limits to a \(u\)-expression is a serious and common error.
+</div>
+
+<h3>The standard pattern</h3>
+$$\int \frac{f'(x)}{f(x)}\,\mathrm{d}x = \ln|f(x)| + c$$
+
+<div class="example">
+<strong>Worked example.</strong> \(\displaystyle\int_0^1 \frac{2x}{x^2+1}\,\mathrm{d}x = \Big[\ln(x^2+1)\Big]_0^1 = \ln 2\)
+</div>
+
+<h2>5. Integration by parts</h2>
+
+$$\int u\,\frac{\mathrm{d}v}{\mathrm{d}x}\,\mathrm{d}x = uv - \int v\,\frac{\mathrm{d}u}{\mathrm{d}x}\,\mathrm{d}x$$
+
+<p>Reverse of the product rule. Choose \(u\) to be the part that <strong>simplifies</strong> when differentiated.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\displaystyle\int x\mathrm{e}^x\,\mathrm{d}x\).
+<p>Take \(u=x\) (differentiates to 1) and \(\tfrac{\mathrm{d}v}{\mathrm{d}x}=\mathrm{e}^x\):</p>
+$$x\mathrm{e}^x - \int \mathrm{e}^x\,\mathrm{d}x = x\mathrm{e}^x - \mathrm{e}^x + c = \mathrm{e}^x(x-1)+c$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\displaystyle\int \ln x\,\mathrm{d}x\).
+<p>Write the integrand as \(1 \times \ln x\), and take \(u = \ln x\), \(\tfrac{\mathrm{d}v}{\mathrm{d}x} = 1\):</p>
+$$x\ln x - \int x \cdot \tfrac1x\,\mathrm{d}x = x\ln x - x + c$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\displaystyle\int x^2\mathrm{e}^x\,\mathrm{d}x\).
+<p>Parts once gives \(x^2\mathrm{e}^x - \int 2x\mathrm{e}^x\,\mathrm{d}x\). Applying parts a <strong>second</strong> time to the remaining integral:</p>
+$$x^2\mathrm{e}^x - \left(2x\mathrm{e}^x - 2\mathrm{e}^x\right) + c = \mathrm{e}^x\left(x^2-2x+2\right)+c$$
+</div>
+
+<div class="exam-tip">
+For \(\ln x\), the trick is to treat it as \(1 \times \ln x\) — there is no other way to start, since \(\ln x\) has no elementary antiderivative on its own. For \(\int \mathrm{e}^x\sin x\,\mathrm{d}x\), applying parts twice returns the original integral, which you then solve for algebraically.
+</div>
+
+<h2>6. Integration using partial fractions</h2>
+
+<p>Split the fraction first, then integrate each simple term.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\displaystyle\int \frac{2x+3}{(x+1)(x+2)}\,\mathrm{d}x\).
+<p>In partial fractions this is \(\dfrac{1}{x+1}+\dfrac{1}{x+2}\), so the integral is</p>
+$$\ln|x+1| + \ln|x+2| + c$$
+</div>
+
+<h2>7. Trigonometric integrals via identities</h2>
+
+<p>Powers of sine and cosine are handled by converting them with a double angle identity.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\displaystyle\int \cos^2 x\,\mathrm{d}x\).
+<p>Use \(\cos^2 x = \tfrac12(1+\cos 2x)\):</p>
+$$\tfrac12\int (1+\cos 2x)\,\mathrm{d}x = \tfrac12\left(x + \tfrac{\sin 2x}{2}\right)+c$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Evaluate \(\displaystyle\int_0^{\pi/2}\sin x\cos x\,\mathrm{d}x\).
+<p>Since \(\sin x\cos x = \tfrac12\sin 2x\):</p>
+$$\tfrac12\int_0^{\pi/2}\sin 2x\,\mathrm{d}x = \tfrac12\left[-\tfrac{\cos 2x}{2}\right]_0^{\pi/2} = \tfrac14\big(1+1\big) = \tfrac12$$
+</div>
+
+<h2>8. Choosing a method</h2>
+
+<table>
+  <tr><th>Integrand looks like</th><th>Method</th></tr>
+  <tr><td>A power, or a standard form</td><td>Direct</td></tr>
+  <tr><td>Inner function with its derivative alongside</td><td>Substitution</td></tr>
+  <tr><td>\(\dfrac{f'(x)}{f(x)}\)</td><td>Straight to \(\ln|f(x)|\)</td></tr>
+  <tr><td>Product of unlike functions, e.g. \(x\mathrm{e}^x\), \(x\sin x\), \(\ln x\)</td><td>By parts</td></tr>
+  <tr><td>Algebraic fraction with a factorisable denominator</td><td>Partial fractions</td></tr>
+  <tr><td>Even powers of \(\sin\) or \(\cos\)</td><td>Double angle identity</td></tr>
+</table>
+
+<h2>9. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Omitting \(+c\) on an indefinite integral.</li>
+  <li>Dropping the modulus in \(\ln|x|\).</li>
+  <li>Applying \(\dfrac{x^{n+1}}{n+1}\) when \(n=-1\).</li>
+  <li>Letting positive and negative areas cancel when a curve crosses the axis.</li>
+  <li>Applying \(x\)-limits to a \(u\)-expression after substituting.</li>
+  <li>Choosing \(u\) in parts so that it becomes <em>more</em> complicated on differentiating.</li>
+  <li>Integrating \(\sin x\) to \(\cos x\) without the minus.</li>
+  <li>Subtracting the curves the wrong way round for an area, giving a negative answer.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

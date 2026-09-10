@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 2.5 — Statistical Hypothesis Testing</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.5 Statistical Hypothesis Testing</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Statistics — spec refs H1–H11</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> The language and logic of hypothesis testing, tests on a binomial probability, the distribution of the sample mean and tests on a population mean using the Normal distribution, and using a given correlation coefficient to make an inference.
+</div>
+
+<h2>1. The language</h2>
+
+<table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td><strong>Null hypothesis \(H_0\)</strong></td><td>The default assumption being tested — always an equality.</td></tr>
+  <tr><td><strong>Alternative hypothesis \(H_1\)</strong></td><td>What is concluded if \(H_0\) is rejected.</td></tr>
+  <tr><td><strong>Test statistic</strong></td><td>The quantity calculated from the sample and compared against the critical value.</td></tr>
+  <tr><td><strong>Significance level</strong></td><td>The probability of incorrectly rejecting \(H_0\).</td></tr>
+  <tr><td><strong>Critical region</strong></td><td>The values of the test statistic that lead to rejection. Also called the rejection region.</td></tr>
+  <tr><td><strong>Acceptance region</strong></td><td>The values for which \(H_0\) is not rejected.</td></tr>
+  <tr><td><strong>Critical value</strong></td><td>The boundary of the critical region.</td></tr>
+  <tr><td><strong>p-value</strong></td><td>The probability of a result at least as extreme as the one observed, assuming \(H_0\) is true.</td></tr>
+</table>
+
+<div class="exam-tip">
+Hypotheses are always statements about a <strong>population parameter</strong> — \(p\) or \(\mu\) — never about the sample. Writing \(H_0: \bar{x} = 50\) is wrong; it must be \(H_0: \mu = 50\).
+</div>
+
+<h2>2. One-tailed or two-tailed?</h2>
+
+<table>
+  <tr><th>Wording</th><th>Test</th><th>\(H_1\)</th></tr>
+  <tr><td>"biased towards heads", "has increased"</td><td>One-tailed</td><td>\(p &gt; 0.5\)</td></tr>
+  <tr><td>"has decreased", "is less effective"</td><td>One-tailed</td><td>\(p &lt; 0.5\)</td></tr>
+  <tr><td>"is biased", "has changed"</td><td>Two-tailed</td><td>\(p \neq 0.5\)</td></tr>
+</table>
+
+<p>For a two-tailed test at the \(\alpha\) level, the probability is split between the tails — so a 5% two-tailed test uses 2.5% in each tail.</p>
+
+<div class="exam-tip">
+The word that decides this is whether a <strong>direction</strong> is specified. "Biased" alone gives no direction and demands a two-tailed test; "biased towards heads" gives one.
+</div>
+
+<h2>3. The logic of the test</h2>
+
+<ol>
+  <li>State \(H_0\) and \(H_1\) in terms of a population parameter.</li>
+  <li>Assume \(H_0\) is true.</li>
+  <li>Calculate how likely the observed result — or something more extreme — would be under that assumption.</li>
+  <li>If that probability is below the significance level, the result is unlikely under \(H_0\), so <strong>reject</strong> \(H_0\).</li>
+  <li>If not, there is <strong>insufficient evidence</strong> to reject \(H_0\).</li>
+  <li>State the conclusion in the <strong>context</strong> of the original question.</li>
+</ol>
+
+<div class="exam-tip">
+Never write "accept \(H_0\)". Failing to reject is not proof of truth — it means the evidence was not strong enough. Similarly, rejecting \(H_0\) gives <strong>evidence</strong>, never proof. Both phrasings are penalised.
+</div>
+
+<div class="definition">
+The significance level is the probability of <strong>incorrectly rejecting</strong> a true null hypothesis (spec ref H3). A 5% level means that, if \(H_0\) is true, there is at most a 5% chance of wrongly rejecting it.
+</div>
+
+<h2>4. Binomial hypothesis tests</h2>
+
+<p>Here \(H_0\) takes the form \(p = \text{a particular value}\), and the test statistic is the observed number of successes (H4–H6).</p>
+
+<div class="example">
+<strong>Worked example.</strong> A coin is suspected of being biased towards heads. Set up the test.
+$$H_0: p = 0.5, \qquad H_1: p &gt; 0.5$$
+<p>One-tailed, since a direction is specified. Reject \(H_0\) if the probability of getting at least the observed number of heads is below the significance level.</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A test at the 5% level gives a p-value of 0.032. State the conclusion.
+<p>Since \(0.032 &lt; 0.05\), reject \(H_0\). There is evidence at the 5% level to support the alternative hypothesis, stated in context.</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> The same test gives a p-value of 0.08.
+<p>Since \(0.08 &gt; 0.05\), do not reject \(H_0\). There is insufficient evidence at the 5% level.</p>
+</div>
+
+<div class="exam-tip">
+Because the binomial distribution is <strong>discrete</strong>, the probability of landing in the rejection region is usually <em>less</em> than the intended significance level, and only rarely equal to it. MEI notes this explicitly and states that learners are not tested on the distinction — but it explains why critical regions look slightly "off".
+</div>
+
+<h2>5. The distribution of the sample mean</h2>
+
+<div class="definition">
+For random samples of size \(n\) drawn from \(\mathrm{N}(\mu,\sigma^2)\), the sample mean is itself Normally distributed (H7):
+$$\bar{X} \sim \mathrm{N}\!\left(\mu, \frac{\sigma^2}{n}\right)$$
+so its standard deviation is \(\dfrac{\sigma}{\sqrt{n}}\).
+</div>
+
+<div class="example">
+For \(X \sim \mathrm{N}(100,36)\) and samples of size 9, the sample mean has variance \(\tfrac{36}{9} = 4\) and standard deviation 2.
+</div>
+
+<p>The <strong>Central Limit Theorem</strong> extends this: for a large sample, the sample mean is approximately Normal <em>even when the population is not</em>. This is what allows a Normal test on a mean in many practical situations.</p>
+
+<div class="exam-tip">
+Notice that increasing \(n\) shrinks \(\dfrac{\sigma}{\sqrt{n}}\). A larger sample makes the sample mean cluster more tightly around \(\mu\), so genuine differences become easier to detect.
+</div>
+
+<h2>6. Testing a population mean</h2>
+
+<p>Valid when the population variance is known, or is unknown but the sample is large (H8). The significance level will be given.</p>
+
+$$z = \frac{\bar{x}-\mu}{\sigma/\sqrt{n}}$$
+
+<div class="example">
+<strong>Worked example.</strong> A sample of 25 from \(\mathrm{N}(\mu,100)\) has mean 44. Test \(H_0: \mu = 40\) against \(H_1: \mu &gt; 40\) at the 5% level.
+<p>Under \(H_0\), \(\bar{X} \sim \mathrm{N}\!\left(40, \tfrac{100}{25}\right) = \mathrm{N}(40,4)\), so the standard deviation is 2.</p>
+$$z = \frac{44-40}{2} = 2$$
+<p>The one-tailed 5% critical value is 1.645. Since \(2 &gt; 1.645\), the result lies in the critical region: reject \(H_0\). There is evidence at the 5% level that the population mean exceeds 40.</p>
+</div>
+
+<div class="exam-tip">
+A Normal test on a mean is <strong>not</strong> valid with a small sample and an unknown population variance — with \(n=8\) and \(\sigma\) unknown, neither condition is met.
+</div>
+
+<h2>7. Correlation</h2>
+
+<p>Correlation measures how close data points lie to a straight line; a <strong>rank</strong> correlation coefficient measures it between the ranks rather than the raw values (H10).</p>
+
+<p>For a correlation test, the null hypothesis is that there is <strong>no correlation</strong> (or no association) in the population. You compare a <em>given</em> coefficient against a given critical value or p-value and draw the inference (H11).</p>
+
+<div class="exam-tip">
+<strong>What is excluded.</strong> Calculating a correlation coefficient is not required, and neither is knowing the names of particular coefficients. Questions supply the coefficient and indicate whether correlation or association is being tested. "Association" refers to a more general relationship than a straight-line one.
+</div>
+
+<div class="exam-tip">
+A significant correlation still does not establish <strong>causation</strong>. A third variable may drive both — the standard example being hot weather driving both ice cream sales and drownings.
+</div>
+
+<h2>8. Interpreting results honestly</h2>
+
+<ul>
+  <li>The significance level must be chosen <strong>before</strong> the data are examined.</li>
+  <li>Lowering the level from 5% to 1% demands stronger evidence and makes rejection harder.</li>
+  <li>A result significant at 5% but not at 1% has a p-value between 0.01 and 0.05.</li>
+  <li>Running many tests at the 5% level on data with no real effect will still produce false positives — about 1 in every 20.</li>
+</ul>
+
+<h2>9. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Writing hypotheses about the sample statistic rather than the population parameter.</li>
+  <li>Using a one-tailed test when no direction is specified.</li>
+  <li>Forgetting to halve the significance level for each tail in a two-tailed test.</li>
+  <li>Writing "accept \(H_0\)" or claiming something is "proved".</li>
+  <li>Dividing by \(\sigma\) instead of \(\dfrac{\sigma}{\sqrt{n}}\) when testing a mean.</li>
+  <li>Omitting the conclusion in context.</li>
+  <li>Using a Normal test with a small sample and unknown variance.</li>
+  <li>Choosing the significance level after seeing the result.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

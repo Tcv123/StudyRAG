@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 3.7 — Rigid Bodies</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.7 Rigid Bodies</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Mechanics — spec refs F13–F16</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Moments of forces, the two conditions for a rigid body to be in equilibrium, the weight acting through the centre of mass, and problems involving rods and laminas resting on supports.
+</div>
+
+<div class="exam-tip">
+<strong>The scope of this section.</strong> MEI restricts it to bodies modelled as <em>possibly non-uniform</em> <strong>rods</strong> and <strong>rectangular laminas</strong>, with <strong>coplanar</strong> forces acting <strong>perpendicular</strong> to the rod or to an edge of the lamina. A <strong>vector treatment of moments</strong> and finding the <strong>centre of mass of a composite body</strong> are both <strong>excluded</strong>.
+</div>
+
+<h2>1. Why a rigid body is different</h2>
+
+<p>A particle has no size, so all forces act at one point and can only produce translation. A <strong>rigid body</strong> has extent, so where a force is applied matters: a system of forces can have a <strong>turning effect</strong> (spec ref F15).</p>
+
+<h2>2. Moments</h2>
+
+<div class="definition">
+The <strong>moment</strong> of a force about a point is
+$$\text{moment} = \text{force} \times \text{perpendicular distance from the point}$$
+measured in <strong>newton metres (N m)</strong>.
+</div>
+
+<p>A moment has a sense of rotation — clockwise or anticlockwise — which is why the direction must be stated or a sign convention adopted.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A force of 12 N acts perpendicular to a rod, 0.5 m from the pivot.
+$$\text{moment} = 12 \times 0.5 = 6 \text{ N m}$$
+</div>
+
+<div class="example">
+A 15 N force at 2 m gives a moment of 30 N m; a 40 N force at 3 m gives 120 N m.
+</div>
+
+<div class="exam-tip">
+A force acting <strong>through</strong> the pivot has zero moment about it, because its perpendicular distance is zero. This is what makes the choice of pivot so useful — see §5.
+</div>
+
+<p>Although N m and joules share base units, a moment is always quoted in <strong>N m</strong>, never in joules.</p>
+
+<h2>3. Equilibrium of a rigid body</h2>
+
+<div class="definition">
+A rigid body is in equilibrium when <strong>both</strong> conditions hold (F14):
+<ol>
+  <li>The resultant force is zero.</li>
+  <li>The sum of the moments about any one point is zero.</li>
+</ol>
+</div>
+
+<p>Two conditions means two kinds of equation — resolving, and taking moments. For a body under parallel vertical forces this gives:</p>
+
+$$\text{total upward force} = \text{total downward force}$$
+$$\text{total clockwise moment} = \text{total anticlockwise moment}$$
+
+<div class="exam-tip">
+Both conditions are needed. A body can have zero resultant force yet still rotate — two equal and opposite forces applied at different points along a rod produce no net force but a definite turning effect.
+</div>
+
+<p>Because the sum of the moments is zero about <strong>any</strong> point once the body is in equilibrium, you may choose whichever point is most convenient.</p>
+
+<h2>4. Weight and the centre of mass</h2>
+
+<div class="definition">
+For the purpose of calculating its moment, the weight of a body may be taken to act through a single point — its <strong>centre of mass</strong> (F16).
+</div>
+
+<ul>
+  <li>For a <strong>uniform</strong> rod, the centre of mass is at the <strong>midpoint</strong>. A uniform rod of length \(2a\) has its weight acting \(a\) from either end.</li>
+  <li>For a <strong>uniform rectangular lamina</strong>, it is at the intersection of the diagonals.</li>
+  <li>For a <strong>non-uniform</strong> rod, it is <em>not</em> at the midpoint. It will either be given, or found from symmetry, or found by taking moments.</li>
+</ul>
+
+<h2>5. Choosing the pivot</h2>
+
+<div class="exam-tip">
+This is the single most useful technique in the topic. Take moments about a point through which an <strong>unknown force acts</strong> — that force then has zero moment and disappears from the equation, leaving one unknown instead of two.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A uniform plank of weight 200 N and length 4 m rests on supports at each end, with a 100 N load at its midpoint. Find each reaction.
+<p>By symmetry the two reactions are equal. Resolving vertically:</p>
+$$R_1 + R_2 = 200 + 100 = 300 \Longrightarrow R_1 = R_2 = 150 \text{ N}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A light rod is pivoted at its centre. A 30 N weight hangs 2 m from the pivot. At what distance must a 40 N weight hang on the other side to balance it?
+$$30 \times 2 = 40 \times d \Longrightarrow d = 1.5 \text{ m}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A uniform rod of weight 60 N and length 4 m is hinged at \(A\) and held horizontal by a vertical string at \(B\). Find the tension and the vertical force at the hinge.
+<p>Taking moments about \(A\) eliminates the hinge force. The weight acts at the midpoint, 2 m from \(A\):</p>
+$$T \times 4 = 60 \times 2 \Longrightarrow T = 30 \text{ N}$$
+<p>Resolving vertically: the hinge force is \(60 - 30 = 30\) N upwards.</p>
+</div>
+
+<h2>6. Non-uniform rods</h2>
+
+<p>When the rod is non-uniform, the position of the centre of mass becomes the unknown, and moments are used to locate it.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A non-uniform rod \(AB\) of length 4 m and weight 50 N rests horizontally on supports at \(A\) and \(B\). The reaction at \(A\) is 20 N. Find the distance of the centre of mass from \(A\).
+<p>Resolving vertically: \(R_A + R_B = 50\), so \(R_B = 30\) N.</p>
+<p>Taking moments about \(A\), with the centre of mass at distance \(x\):</p>
+$$50x = 30 \times 4 = 120 \Longrightarrow x = 2.4 \text{ m}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A non-uniform rod of weight 80 N and length 5 m rests on supports at its ends, with reactions 30 N and 50 N. Find the centre of mass from the 30 N end.
+$$80x = 50 \times 5 = 250 \Longrightarrow x = 3.125 \text{ m}$$
+</div>
+
+<div class="exam-tip">
+Notice the pattern: the centre of mass sits <strong>closer to the larger reaction</strong>. Use that as a sanity check — an answer placing it nearer the smaller reaction is wrong.
+</div>
+
+<h2>7. Tipping</h2>
+
+<div class="definition">
+A body resting on two supports is on the point of <strong>tipping</strong> about one of them when the reaction at the <em>other</em> support falls to <strong>zero</strong>.
+</div>
+
+<p>That condition converts a tipping question into an ordinary moments problem: set the far reaction to zero and take moments about the remaining support.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A uniform plank of length 6 m and weight 300 N rests on supports 1 m from each end, so the supports are at 1 m and 5 m. A child of weight 200 N stands at one end. Find the reaction at the nearer support.
+<p>Taking moments about the far support at 5 m, with the child at 0 m and the weight at the centre, 3 m:</p>
+$$R \times 4 = 300 \times 2 + 200 \times 5 = 600 + 1000 = 1600 \Longrightarrow R = 400 \text{ N}$$
+</div>
+
+<h2>8. Setting out a solution</h2>
+
+<ol>
+  <li>Draw the rod or lamina with <strong>every</strong> force marked, including the weight at the centre of mass.</li>
+  <li>Resolve vertically to relate the reactions to the total load.</li>
+  <li>Take moments about a well-chosen point to eliminate an unknown.</li>
+  <li>Solve, then sanity-check the magnitudes and positions.</li>
+</ol>
+
+<p>For a body in equilibrium under vertical forces there are two independent equations available, so at most two unknowns can be found.</p>
+
+<h2>9. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Using the distance along the force rather than the <strong>perpendicular</strong> distance.</li>
+  <li>Forgetting the weight, or placing it at the midpoint of a <em>non-uniform</em> rod.</li>
+  <li>Using only the moments condition and forgetting to resolve, or the reverse.</li>
+  <li>Choosing a pivot that leaves two unknowns in the equation.</li>
+  <li>Mixing clockwise and anticlockwise moments without a consistent sign convention.</li>
+  <li>Quoting a moment in joules.</li>
+  <li>Setting the wrong reaction to zero in a tipping problem — it is the one at the support the body lifts away from.</li>
+  <li>Attempting a vector treatment of moments, or a composite centre of mass, both of which are off-specification.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

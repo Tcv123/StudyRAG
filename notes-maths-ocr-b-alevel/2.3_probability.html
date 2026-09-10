@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 2.3 — Probability</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.3 Probability</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Statistics — spec refs u1–u7</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Calculating probabilities in a finite sample space, mutually exclusive and independent events, the addition and multiplication rules, Venn and tree diagrams, and conditional probability including the reverse case.
+</div>
+
+<h2>1. Basic probability</h2>
+
+<p>For equally likely outcomes,</p>
+$$\mathrm{P}(A) = \frac{\text{number of favourable outcomes}}{\text{total number of outcomes}}$$
+
+<p>Every probability satisfies \(0 \le \mathrm{P}(A) \le 1\). An impossible event has probability 0; a certain event has probability 1.</p>
+
+<h3>Complementary events</h3>
+
+<div class="definition">
+\(A'\) is the event "not \(A\)", and
+$$\mathrm{P}(A') = 1 - \mathrm{P}(A)$$
+</div>
+
+<div class="exam-tip">
+For "at least one" questions, the complement is almost always faster. \(\mathrm{P}(\text{at least one six in two rolls}) = 1 - \mathrm{P}(\text{no sixes}) = 1 - \left(\tfrac56\right)^2 = \tfrac{11}{36}\), which is far quicker than listing the cases.
+</div>
+
+<h3>Expected frequency</h3>
+$$\text{expected frequency} = n\,\mathrm{P}(A)$$
+
+<div class="example">
+In 200 trials of an event with probability 0.15, the expected frequency is \(200 \times 0.15 = 30\).
+</div>
+
+<h2>2. Notation and diagrams</h2>
+
+<table>
+  <tr><th>Notation</th><th>Meaning</th></tr>
+  <tr><td>\(A \cap B\)</td><td>\(A\) <strong>and</strong> \(B\) both occur</td></tr>
+  <tr><td>\(A \cup B\)</td><td>\(A\) <strong>or</strong> \(B\) (or both) occurs</td></tr>
+  <tr><td>\(A'\)</td><td>\(A\) does not occur</td></tr>
+  <tr><td>\(\mathrm{P}(A \mid B)\)</td><td>The probability of \(A\) <strong>given that</strong> \(B\) has occurred</td></tr>
+</table>
+
+<p>Three diagram types support the calculations: <strong>tree diagrams</strong> for successive events, <strong>Venn diagrams</strong> for overlapping events (up to three, in this specification), and <strong>sample space</strong> or <strong>two-way tables</strong> for enumerating outcomes.</p>
+
+<h2>3. Mutually exclusive events</h2>
+
+<div class="definition">
+Two events are <strong>mutually exclusive</strong> if they cannot both occur:
+$$\mathrm{P}(A \cap B) = 0, \qquad \mathrm{P}(A \cup B) = \mathrm{P}(A) + \mathrm{P}(B)$$
+</div>
+
+<h2>4. Independent events</h2>
+
+<div class="definition">
+Two events are <strong>independent</strong> if the occurrence of one does not affect the probability of the other:
+$$\mathrm{P}(A \cap B) = \mathrm{P}(A)\,\mathrm{P}(B)$$
+Equivalently, \(\mathrm{P}(A\mid B) = \mathrm{P}(A)\) (spec ref u7).
+</div>
+
+<div class="exam-tip">
+Mutually exclusive and independent are <strong>different, and generally incompatible</strong>. If \(A\) and \(B\) are mutually exclusive with non-zero probabilities, then knowing \(B\) happened tells you \(A\) definitely did not — so they cannot be independent. Assuming that "can't happen together" implies independence is a serious conceptual error.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A machine has three independent components, each working with probability 0.9.
+$$\mathrm{P}(\text{all three work}) = 0.9^3 = 0.729$$
+$$\mathrm{P}(\text{at least one fails}) = 1 - 0.729 = 0.271$$
+</div>
+
+<h2>5. The general addition rule</h2>
+
+<p>For <em>any</em> two events (u5):</p>
+$$\mathrm{P}(A \cup B) = \mathrm{P}(A) + \mathrm{P}(B) - \mathrm{P}(A \cap B)$$
+
+<p>The subtraction avoids double-counting the overlap.</p>
+
+<div class="example">
+<strong>Worked example.</strong> \(\mathrm{P}(A)=0.4\), \(\mathrm{P}(B)=0.5\), \(\mathrm{P}(A\cap B)=0.2\).
+$$\mathrm{P}(A\cup B) = 0.4+0.5-0.2 = 0.7$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Drawing one card from a standard pack, find \(\mathrm{P}(\text{king or heart})\).
+$$\frac{4}{52} + \frac{13}{52} - \frac{1}{52} = \frac{16}{52}$$
+<p>The king of hearts is subtracted because it belongs to both.</p>
+</div>
+
+<h2>6. Conditional probability</h2>
+
+$$\mathrm{P}(A \mid B) = \frac{\mathrm{P}(A \cap B)}{\mathrm{P}(B)}$$
+
+<p>Rearranged, this gives the multiplication rule \(\mathrm{P}(A \cap B) = \mathrm{P}(B)\,\mathrm{P}(A \mid B)\), which is exactly what a tree diagram encodes: multiply along the branches.</p>
+
+<div class="example">
+<strong>Worked example.</strong> \(\mathrm{P}(A)=0.5\), \(\mathrm{P}(B)=0.4\), \(\mathrm{P}(A\cup B)=0.7\). Find \(\mathrm{P}(A\mid B)\).
+<p>First \(\mathrm{P}(A\cap B) = 0.5+0.4-0.7 = 0.2\), so</p>
+$$\mathrm{P}(A\mid B) = \frac{0.2}{0.4} = 0.5$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A bag holds 5 red and 3 blue balls. Two are drawn without replacement. Find \(\mathrm{P}(\text{exactly one red})\).
+<p>Two orders are possible:</p>
+$$\mathrm{P}(RB) = \frac58 \times \frac37 = \frac{15}{56}, \qquad \mathrm{P}(BR) = \frac38 \times \frac57 = \frac{15}{56}$$
+$$\mathrm{P}(\text{exactly one red}) = \frac{30}{56} = \frac{15}{28}$$
+</div>
+
+<div class="exam-tip">
+"Without replacement" changes the denominator at the second draw, and often the numerator too — the events are <strong>not</strong> independent. "With replacement" leaves both unchanged.
+</div>
+
+<h3>Reverse conditional probability</h3>
+
+<p>Given \(\mathrm{P}(B \mid A)\) and asked for \(\mathrm{P}(A \mid B)\), work from the definition (u6). Building a tree diagram and totalling the relevant branches is usually the cleanest route.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A screening test is 95% accurate in both directions, and 1% of the population has the condition. A person tests positive — what is the probability they have it?
+<p>Two ways to test positive:</p>
+$$\mathrm{P}(\text{condition and positive}) = 0.01 \times 0.95 = 0.0095$$
+$$\mathrm{P}(\text{no condition and positive}) = 0.99 \times 0.05 = 0.0495$$
+$$\mathrm{P}(\text{positive}) = 0.0095 + 0.0495 = 0.059$$
+$$\mathrm{P}(\text{condition} \mid \text{positive}) = \frac{0.0095}{0.059} \approx 0.161$$
+</div>
+
+<div class="exam-tip">
+That result is worth pausing on: despite a 95% accurate test, roughly <strong>84% of positives are false</strong>. Because the condition is rare, the many small false-positive rates among the healthy majority outweigh the true positives. This is the classic reason a conditional probability cannot be reversed by intuition.
+</div>
+
+<h3>Conditional probability from a restricted sample space</h3>
+
+<div class="example">
+<strong>Worked example.</strong> Three fair coins are tossed. Given that at least one head appears, find \(\mathrm{P}(\text{all three heads})\).
+<p>\(\mathrm{P}(\text{all heads}) = \tfrac18\) and \(\mathrm{P}(\text{at least one head}) = 1-\tfrac18 = \tfrac78\), so</p>
+$$\mathrm{P}(\text{all three} \mid \text{at least one}) = \frac{1/8}{7/8} = \frac17$$
+</div>
+
+<h2>7. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Adding probabilities for events that are not mutually exclusive, forgetting to subtract the overlap.</li>
+  <li>Multiplying probabilities for events that are not independent.</li>
+  <li>Treating "mutually exclusive" as though it meant "independent".</li>
+  <li>Keeping the same denominator on the second draw of a without-replacement problem.</li>
+  <li>Reversing a conditional probability by intuition rather than by calculation.</li>
+  <li>Forgetting that all branches from a node on a tree diagram must sum to 1.</li>
+  <li>Giving a probability outside \([0,1]\) and not noticing.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

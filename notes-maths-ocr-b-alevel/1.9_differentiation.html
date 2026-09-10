@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.9 — Differentiation</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.9 Differentiation</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs c1–c19 (Calculus)</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Differentiation from first principles, the standard derivatives, the product, quotient and chain rules, implicit and parametric differentiation, and applications — tangents and normals, stationary points, rates of change and optimisation.
+</div>
+
+<h2>1. The derivative</h2>
+
+<div class="definition">
+\(\dfrac{\mathrm{d}y}{\mathrm{d}x}\) is the <strong>rate of change</strong> of \(y\) with respect to \(x\) — geometrically, the gradient of the tangent to the curve.
+</div>
+
+<h3>From first principles</h3>
+$$f'(x) = \lim_{h\to 0}\frac{f(x+h)-f(x)}{h}$$
+
+<div class="example">
+<strong>Worked example.</strong> Differentiate \(y=x^2\) from first principles.
+$$\frac{(x+h)^2-x^2}{h} = \frac{x^2+2xh+h^2-x^2}{h} = \frac{2xh+h^2}{h} = 2x+h$$
+<p>Letting \(h \to 0\) gives \(\dfrac{\mathrm{d}y}{\mathrm{d}x} = 2x\).</p>
+</div>
+
+<div class="exam-tip">
+Cancel the \(h\) <strong>before</strong> taking the limit. Substituting \(h=0\) into the fraction first gives \(\tfrac00\), which is meaningless — the cancellation is the whole point of the method.
+</div>
+
+<h2>2. Standard derivatives</h2>
+
+<table>
+  <tr><th>\(y\)</th><th>\(\dfrac{\mathrm{d}y}{\mathrm{d}x}\)</th></tr>
+  <tr><td>\(x^n\)</td><td>\(nx^{n-1}\)</td></tr>
+  <tr><td>constant</td><td>\(0\)</td></tr>
+  <tr><td>\(\mathrm{e}^x\)</td><td>\(\mathrm{e}^x\)</td></tr>
+  <tr><td>\(\mathrm{e}^{kx}\)</td><td>\(k\mathrm{e}^{kx}\)</td></tr>
+  <tr><td>\(\ln x\)</td><td>\(\dfrac1x\)</td></tr>
+  <tr><td>\(\sin x\)</td><td>\(\cos x\)</td></tr>
+  <tr><td>\(\cos x\)</td><td>\(-\sin x\)</td></tr>
+  <tr><td>\(\tan x\)</td><td>\(\sec^2 x\)</td></tr>
+</table>
+
+<div class="exam-tip">
+The trigonometric derivatives hold only when \(x\) is in <strong>radians</strong>. This follows from \(\lim_{\theta\to0}\tfrac{\sin\theta}{\theta}=1\), which itself requires radians.
+</div>
+
+<p>Before differentiating, rewrite roots and fractions as powers: \(\sqrt{x} = x^{1/2}\) differentiates to \(\tfrac12 x^{-1/2}\); \(\tfrac1x = x^{-1}\) differentiates to \(-x^{-2}\).</p>
+
+<h2>3. The three rules</h2>
+
+<h3>Chain rule</h3>
+$$\frac{\mathrm{d}}{\mathrm{d}x}f\big(g(x)\big) = f'\big(g(x)\big)\cdot g'(x)$$
+
+<div class="example">
+Differentiate \(\sin 3x\): outer derivative \(\cos 3x\), inner derivative 3, giving \(3\cos 3x\).<br>
+Differentiate \((2x+1)^5\): \(5(2x+1)^4 \times 2 = 10(2x+1)^4\).<br>
+Differentiate \(\mathrm{e}^{x^2}\): \(\mathrm{e}^{x^2}\times 2x = 2x\mathrm{e}^{x^2}\).<br>
+Differentiate \(\ln(2x+1)\): \(\dfrac{1}{2x+1}\times 2 = \dfrac{2}{2x+1}\).
+</div>
+
+<h3>Product rule</h3>
+$$\frac{\mathrm{d}}{\mathrm{d}x}(uv) = u'v + uv'$$
+
+<div class="example">
+<strong>Worked example.</strong> Differentiate \(x^2\mathrm{e}^x\).
+<p>With \(u=x^2\), \(v=\mathrm{e}^x\): \(u'=2x\), \(v'=\mathrm{e}^x\), so</p>
+$$\frac{\mathrm{d}y}{\mathrm{d}x} = 2x\mathrm{e}^x + x^2\mathrm{e}^x = x\mathrm{e}^x(2+x)$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Differentiate \(x\ln x\).
+$$1 \times \ln x + x \times \tfrac1x = \ln x + 1$$
+</div>
+
+<h3>Quotient rule</h3>
+$$\frac{\mathrm{d}}{\mathrm{d}x}\left(\frac{u}{v}\right) = \frac{u'v-uv'}{v^2}$$
+
+<div class="example">
+<strong>Worked example.</strong> Differentiate \(\dfrac{x+1}{x-1}\).
+$$\frac{1(x-1)-(x+1)(1)}{(x-1)^2} = \frac{-2}{(x-1)^2}$$
+</div>
+
+<div class="exam-tip">
+The quotient rule has a <strong>minus</strong> and the order matters: \(u'v - uv'\), not \(uv' - u'v\). Getting them the wrong way round flips the sign of every answer.
+</div>
+
+<h2>4. Implicit differentiation</h2>
+
+<p>When \(y\) cannot be made the subject, differentiate both sides with respect to \(x\), applying the chain rule to every \(y\) term so that each contributes a factor \(\dfrac{\mathrm{d}y}{\mathrm{d}x}\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> For \(x^2+y^2=25\), find \(\dfrac{\mathrm{d}y}{\mathrm{d}x}\).
+$$2x + 2y\frac{\mathrm{d}y}{\mathrm{d}x} = 0 \Longrightarrow \frac{\mathrm{d}y}{\mathrm{d}x} = -\frac{x}{y}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> For \(x^3+y^3=6xy\), find \(\dfrac{\mathrm{d}y}{\mathrm{d}x}\).
+<p>The right-hand side needs the <strong>product rule</strong>:</p>
+$$3x^2 + 3y^2\frac{\mathrm{d}y}{\mathrm{d}x} = 6y + 6x\frac{\mathrm{d}y}{\mathrm{d}x}$$
+$$\frac{\mathrm{d}y}{\mathrm{d}x}\big(3y^2-6x\big) = 6y-3x^2 \Longrightarrow \frac{\mathrm{d}y}{\mathrm{d}x} = \frac{2y-x^2}{y^2-2x}$$
+</div>
+
+<h2>5. Parametric differentiation</h2>
+
+$$\frac{\mathrm{d}y}{\mathrm{d}x} = \frac{\mathrm{d}y/\mathrm{d}t}{\mathrm{d}x/\mathrm{d}t}$$
+
+<div class="example">
+<strong>Worked example.</strong> For \(x=t^2\), \(y=t^3\): \(\dfrac{\mathrm{d}x}{\mathrm{d}t}=2t\), \(\dfrac{\mathrm{d}y}{\mathrm{d}t}=3t^2\), so \(\dfrac{\mathrm{d}y}{\mathrm{d}x} = \dfrac{3t^2}{2t} = \dfrac{3t}{2}\).
+</div>
+
+<div class="exam-tip">
+For the <strong>second</strong> derivative you cannot simply differentiate again with respect to \(t\). Use
+$$\frac{\mathrm{d}^2y}{\mathrm{d}x^2} = \frac{\mathrm{d}}{\mathrm{d}t}\!\left(\frac{\mathrm{d}y}{\mathrm{d}x}\right) \div \frac{\mathrm{d}x}{\mathrm{d}t}$$
+</div>
+
+<h2>6. Tangents, normals and stationary points</h2>
+
+<p>At a point where the gradient is \(m\), the <strong>tangent</strong> has gradient \(m\) and the <strong>normal</strong> has gradient \(-\tfrac1m\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find the tangent to \(y=x^2\) at \((2,4)\).
+<p>\(\dfrac{\mathrm{d}y}{\mathrm{d}x} = 2x = 4\), so \(y-4 = 4(x-2)\), i.e. \(y = 4x-4\).</p>
+</div>
+
+<h3>Classifying stationary points</h3>
+
+<p>Stationary points occur where \(\dfrac{\mathrm{d}y}{\mathrm{d}x} = 0\). Then:</p>
+
+<table>
+  <tr><th>Second derivative</th><th>Nature</th></tr>
+  <tr><td>\(\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2} &gt; 0\)</td><td>Minimum</td></tr>
+  <tr><td>\(\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2} &lt; 0\)</td><td>Maximum</td></tr>
+  <tr><td>\(\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2} = 0\)</td><td>Inconclusive — test the sign of the gradient either side</td></tr>
+</table>
+
+<div class="example">
+<strong>Worked example.</strong> Find and classify the stationary points of \(y=x^3-3x\).
+$$\frac{\mathrm{d}y}{\mathrm{d}x} = 3x^2-3 = 0 \Longrightarrow x = \pm 1$$
+<p>Points \((1,-2)\) and \((-1,2)\). Since \(\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2} = 6x\), at \(x=1\) it is \(6&gt;0\) (minimum) and at \(x=-1\) it is \(-6&lt;0\) (maximum).</p>
+</div>
+
+<div class="exam-tip">
+A zero second derivative does <strong>not</strong> prove a point of inflection. For \(y=x^4\) at the origin, \(\dfrac{\mathrm{d}^2y}{\mathrm{d}x^2}=0\) yet the point is a minimum. A genuine inflection needs the second derivative to <em>change sign</em>.
+</div>
+
+<h2>7. Connected rates of change and optimisation</h2>
+
+<p>Rates link through the chain rule, for example \(\dfrac{\mathrm{d}V}{\mathrm{d}t} = \dfrac{\mathrm{d}V}{\mathrm{d}r}\times\dfrac{\mathrm{d}r}{\mathrm{d}t}\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> A sphere has \(V=\tfrac43\pi r^3\) and \(\dfrac{\mathrm{d}r}{\mathrm{d}t}=2\). Find \(\dfrac{\mathrm{d}V}{\mathrm{d}t}\).
+$$\frac{\mathrm{d}V}{\mathrm{d}r} = 4\pi r^2 \Longrightarrow \frac{\mathrm{d}V}{\mathrm{d}t} = 4\pi r^2 \times 2 = 8\pi r^2$$
+</div>
+
+<p>For an optimisation problem: write the quantity to be optimised in terms of <strong>one</strong> variable using any constraint, differentiate, set to zero, and justify the nature of the stationary point.</p>
+
+<div class="exam-tip">
+Optimisation answers routinely lose the last mark for not <strong>justifying</strong> that the stationary point is the maximum or minimum required, and for not answering the question actually asked (often the value of the quantity, not the value of \(x\)).
+</div>
+
+<h2>8. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Substituting \(h=0\) before cancelling in a first-principles derivation.</li>
+  <li>Reversing the order in the quotient rule.</li>
+  <li>Forgetting the inner derivative in the chain rule.</li>
+  <li>Omitting \(\dfrac{\mathrm{d}y}{\mathrm{d}x}\) when differentiating a \(y\) term implicitly.</li>
+  <li>Missing the product rule on a term like \(6xy\) in an implicit equation.</li>
+  <li>Inverting the parametric fraction.</li>
+  <li>Differentiating trigonometric functions with the calculator or the working in degrees.</li>
+  <li>Concluding "point of inflection" from a zero second derivative alone.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>
