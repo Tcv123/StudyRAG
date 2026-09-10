@@ -1091,6 +1091,426 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
   },
 
+  '3.1': {
+    name: 'Models & Quantities',
+    green: [
+      { q: 'In mechanics, modelling an object as a "particle" means treating it as:', options: ['Having mass but no size','Having size but no mass','Being perfectly rigid','Being frictionless'], answer: 0 }, // p32
+      { q: 'The modelling assumption "light" means the object:', options: ['Has negligible mass','Has negligible size','Cannot stretch','Is smooth'], answer: 0 }, // p31
+      { q: 'The modelling assumption "smooth" means:', options: ['There is no friction','There is no air resistance','The mass is negligible','The object cannot stretch'], answer: 0 }, // p31
+      { q: 'The modelling assumption "inextensible" means the object:', options: ['Cannot stretch','Has no mass','Has no friction','Has uniform density'], answer: 0 }, // p31
+      { q: 'The modelling assumption "uniform" means:', options: ['Mass is evenly distributed throughout','The object cannot bend','There is no friction','The object is light'], answer: 0 }, // p31
+      { q: 'The modelling assumption "rigid" means the object:', options: ['Does not bend or deform','Has no mass','Is smooth','Is inextensible'], answer: 0 }, // p31
+      { q: 'The SI base unit of length is the:', options: ['Metre','Centimetre','Kilometre','Newton'], answer: 0 }, // p33
+      { q: 'The SI base unit of mass is the:', options: ['Kilogram','Gram','Newton','Tonne'], answer: 0 }, // p33
+      { q: 'The SI base unit of time is the:', options: ['Second','Minute','Hour','Hertz'], answer: 0 }, // p33
+      { q: 'The SI unit of velocity is:', options: ['m s⁻¹','m s⁻²','N','kg m'], answer: 0 }, // p34
+      { q: 'The SI unit of acceleration is:', options: ['m s⁻²','m s⁻¹','N','kg'], answer: 0 }, // p34
+      { q: 'The SI unit of force is the:', options: ['Newton (N)','Kilogram (kg)','Joule (J)','Pascal (Pa)'], answer: 0 }, // p34
+      { q: 'The SI unit of moment is the:', options: ['Newton metre (N m)','Newton (N)','Joule (J)','Metre (m)'], answer: 0 }, // p35
+      { q: 'Weight is:', options: ['A force, measured in newtons','A mass, measured in kilograms','A distance','A speed'], answer: 0 }, // p34
+      { q: 'Mass is measured in kilograms and weight in:', options: ['Newtons','Kilograms','Metres','Seconds'], answer: 0 }, // p34
+      { q: 'The modelling assumption "thin" is applied to an object whose:', options: ['Thickness is negligible','Mass is negligible','Surface is frictionless','Length is negligible'], answer: 0 }, // p31
+      { q: 'Modelling a car as a particle is reasonable when:', options: ['Its size is small compared with the distances involved','It is turning sharply','Its rotation matters','It is at rest'], answer: 0 }, // p32
+      { q: 'A modelling assumption is used in order to:', options: ['Simplify a real situation enough to analyse it mathematically','Make the answer exactly correct','Avoid using units','Remove all forces'], answer: 0 }, // p31
+      { q: 'The unit N m is used for:', options: ['Moment','Force','Velocity','Mass'], answer: 0 }, // p35
+      { q: 'A quantity derived from the base quantities of length, mass and time is called a:', options: ['Derived quantity','Base quantity','Scalar only','Vector only'], answer: 0 }, // p34
+    ],
+    amber: [
+      { q: 'A string modelled as "light and inextensible" has:', options: ['Negligible mass and a fixed length','Mass but a fixed length','Negligible mass and variable length','Friction and mass'], answer: 0 }, // p31
+      { q: 'Modelling a pulley as "smooth" means:', options: ['The tension is the same on both sides of the string','The pulley has no mass','The string cannot stretch','The system is in equilibrium'], answer: 0 }, // p31
+      { q: 'A 5 kg mass has weight, taking g = 9.8, of:', options: ['49 N','5 N','0.51 N','9.8 N'], answer: 0 }, // p34
+      { q: 'Unless otherwise specified, in examinations the value of g should be taken as:', options: ['9.8','10','9.81','9'], answer: 0 }, // F2
+      { q: 'Modelling a bridge cable as a particle would be inappropriate because:', options: ['Its length and the distribution of its mass are essential to the problem','It has no weight','It is smooth','It is rigid'], answer: 0 }, // p32
+      { q: 'The weight of an object of mass m is:', options: ['mg newtons','m newtons','g newtons','m/g newtons'], answer: 0 }, // p34
+      { q: 'A modelling assumption of "no air resistance" is least reasonable for:', options: ['A feather falling a long distance','A dense ball falling a short distance','A block sliding on ice','A stationary mass'], answer: 0 }, // p31
+      { q: 'The unit of force, the newton, is equivalent in base units to:', options: ['kg m s⁻²','kg m s⁻¹','kg m² s⁻²','kg s⁻²'], answer: 0 }, // p34
+      { q: 'A mass of 200 g expressed in SI base units is:', options: ['0.2 kg','200 kg','2 kg','0.002 kg'], answer: 0 }, // p33
+      { q: 'A speed of 36 km h⁻¹ expressed in m s⁻¹ is:', options: ['10','36','3.6','360'], answer: 0 }, // p33
+      { q: 'The assumption "the rod is uniform" allows you to take its weight as acting:', options: ['At its midpoint','At one end','At the pivot','Nowhere'], answer: 0 }, // p31
+      { q: 'A "long term" modelling assumption refers to:', options: ['Behaviour after a long time has elapsed','A long object','A large force','A heavy object'], answer: 0 }, // p31
+      { q: 'Refining a model generally means:', options: ['Removing a simplifying assumption to improve realism','Adding more assumptions','Ignoring the data','Changing the units'], answer: 0 }, // p31
+      { q: 'A quantity of 15 N m describes a:', options: ['Moment','Force','Velocity','Mass'], answer: 0 }, // p35
+      { q: 'Which of these is a vector quantity?', options: ['Velocity','Speed','Mass','Time'], answer: 0 }, // p34
+      { q: 'Which of these is a scalar quantity?', options: ['Mass','Force','Velocity','Acceleration'], answer: 0 }, // p34
+      { q: 'A tension of 20 N in a light inextensible string over a smooth pulley is:', options: ['The same throughout the string','Different on each side','Zero','Equal to the weight'], answer: 0 }, // p31
+      { q: 'The mass of an object taken to the Moon:', options: ['Stays the same, although its weight changes','Changes, although its weight stays the same','Becomes zero','Doubles'], answer: 0 }, // p34
+      { q: 'Modelling a ladder as a "uniform rigid rod" assumes:', options: ['Evenly distributed mass and no bending','Negligible mass','No friction','Variable length'], answer: 0 }, // p31
+      { q: 'A force of 1 N gives a mass of 1 kg an acceleration of:', options: ['1 m s⁻²','9.8 m s⁻²','1 m s⁻¹','0'], answer: 0 }, // p34
+    ],
+    red: [
+      { q: 'A 2 kg mass hangs at rest from a light inextensible string. Taking g = 9.8, the tension is:', options: ['19.6 N','2 N','9.8 N','0 N'], answer: 0 }, // p34
+      { q: 'An answer given as "the acceleration is 3 kg" is wrong because:', options: ['Acceleration has units m s⁻², not kg','The number is too small','Acceleration cannot be positive','Acceleration is a scalar'], answer: 0 }, // p34
+      { q: 'Which modelling assumption is being dropped when air resistance is introduced into a projectile model?', options: ['That the only force acting after release is weight','That the projectile is a particle','That gravity is constant','That the ground is horizontal'], answer: 0 }, // y1
+      { q: 'A speed of 5 m s⁻¹ expressed in km h⁻¹ is:', options: ['18','50','1.39','0.3'], answer: 0 }, // p33
+      { q: 'Modelling a train as a set of connected particles rather than one particle is necessary when:', options: ['The forces in the couplings between carriages are required','The train moves in a straight line','Friction is negligible','The train is at rest'], answer: 0 }, // n4
+      { q: 'Taking g = 10 rather than 9.8 in a calculation will:', options: ['Introduce a small systematic error of about 2%','Give an exactly correct answer','Make no difference','Change the units'], answer: 0 }, // F2
+      { q: 'The quantity kg m s⁻² is dimensionally equivalent to:', options: ['A force','An acceleration','A moment','A velocity'], answer: 0 }, // p34
+      { q: 'A moment of 12 N m could arise from:', options: ['A force of 4 N acting perpendicular to a rod 3 m from the pivot','A force of 12 N acting at the pivot','A mass of 12 kg','A force of 3 N at 3 m'], answer: 0 }, // p35
+      { q: 'The assumption that a string is inextensible is essential in a connected-particle problem because it ensures that:', options: ['Both particles have the same magnitude of acceleration','The tension is zero','The pulley is smooth','The masses are equal'], answer: 0 }, // n4
+      { q: 'Stating modelling assumptions matters because:', options: ['The validity of the conclusions depends on them holding in the real situation','It lengthens the answer','It removes the need for units','It guarantees the answer is exact'], answer: 0 }, // p31
+    ],
+  },
+
+  '3.2': {
+    name: 'Kinematics in 1 Dimension',
+    green: [
+      { q: 'Displacement differs from distance in that displacement:', options: ['Is a vector, so it has direction as well as magnitude','Is always larger','Is measured in seconds','Cannot be negative'], answer: 0 }, // k2
+      { q: 'Speed is:', options: ['The magnitude of velocity','A vector quantity','The gradient of a velocity-time graph','Always negative'], answer: 0 }, // k3
+      { q: 'The gradient of a displacement-time graph gives:', options: ['Velocity','Acceleration','Distance','Time'], answer: 0 }, // k4
+      { q: 'The area under a velocity-time graph gives:', options: ['Displacement','Acceleration','Speed','Force'], answer: 0 }, // k4
+      { q: 'The gradient of a velocity-time graph gives:', options: ['Acceleration','Displacement','Distance travelled','Speed'], answer: 0 }, // k4
+      { q: 'Which constant-acceleration formula does NOT involve displacement?', options: ['v = u + at','s = ut + ½at²','v² = u² + 2as','s = ½(u + v)t'], answer: 0 }, // k6
+      { q: 'The formula s = ut + ½at² gives:', options: ['Displacement in terms of initial velocity, acceleration and time','Velocity in terms of time','Acceleration','Average speed'], answer: 0 }, // k6
+      { q: 'The formula v² = u² + 2as does NOT involve:', options: ['Time','Displacement','Acceleration','Initial velocity'], answer: 0 }, // k6
+      { q: 'Average speed is calculated as:', options: ['Distance travelled ÷ elapsed time','Displacement ÷ elapsed time','Final velocity ÷ 2','Acceleration × time'], answer: 0 }, // k1
+      { q: 'Average velocity is calculated as:', options: ['Overall displacement ÷ elapsed time','Distance travelled ÷ elapsed time','(u + v)/2 always','Acceleration × time'], answer: 0 }, // k1
+      { q: 'On a displacement-time graph, constant velocity appears as:', options: ['A straight line','A curve','A horizontal line at zero','A vertical line'], answer: 0 }, // k4
+      { q: 'A body starting "from rest" has initial velocity:', options: ['0','Its maximum value','Equal to the acceleration','Undefined'], answer: 0 }, // k6
+      { q: 'For a body moving in the positive direction, negative acceleration means it is:', options: ['Slowing down','Speeding up','At rest','Reversing immediately'], answer: 0 }, // k3
+      { q: 'On a velocity-time graph, a horizontal line represents:', options: ['Constant velocity','Constant acceleration','Zero displacement','Increasing speed'], answer: 0 }, // k4
+      { q: 'The constant acceleration (suvat) formulae may be used only when:', options: ['The acceleration is constant','The velocity is constant','The motion is vertical','The body starts from rest'], answer: 0 }, // k6
+      { q: 'Distance travelled compared with the magnitude of displacement is:', options: ['Always greater than or equal to it','Always less than it','Always equal to it','Unrelated'], answer: 0 }, // k2
+      { q: 'The units of acceleration are:', options: ['m s⁻²','m s⁻¹','m','s'], answer: 0 }, // k1
+      { q: 'A body momentarily at rest has:', options: ['Velocity zero, though its acceleration need not be zero','Both velocity and acceleration zero','Acceleration zero only','Constant velocity'], answer: 0 }, // k3
+      { q: 'Position differs from displacement in that position is measured:', options: ['From a fixed origin','From the starting point only','Always in metres','As a scalar'], answer: 0 }, // k2
+      { q: 'If velocity is the derivative of displacement, then acceleration is:', options: ['The derivative of velocity','The integral of velocity','The derivative of distance','The integral of displacement'], answer: 0 }, // k5
+    ],
+    amber: [
+      { q: 'A particle starts from rest and accelerates at 2 m s⁻² for 5 s. Its final velocity is:', options: ['10 m s⁻¹','2 m s⁻¹','25 m s⁻¹','5 m s⁻¹'], answer: 0 }, // k6
+      { q: 'For that same particle, the displacement after 5 s is:', options: ['25 m','10 m','50 m','5 m'], answer: 0 }, // k6
+      { q: 'A stone is dropped from rest. Taking g = 9.8, its speed after 2 s is:', options: ['19.6 m s⁻¹','9.8 m s⁻¹','4.9 m s⁻¹','39.2 m s⁻¹'], answer: 0 }, // k6
+      { q: 'For that same stone, the distance fallen in 2 s is:', options: ['19.6 m','9.8 m','39.2 m','4.9 m'], answer: 0 }, // k6
+      { q: 'A car travelling at 20 m s⁻¹ decelerates uniformly at 4 m s⁻² to rest. The time taken is:', options: ['5 s','4 s','80 s','2 s'], answer: 0 }, // k6
+      { q: 'For that same car, the distance travelled while stopping is:', options: ['50 m','100 m','40 m','25 m'], answer: 0 }, // k6
+      { q: 'A body has u = 5 m s⁻¹ and accelerates at 3 m s⁻² over 10 m. Its final speed is closest to:', options: ['9.22 m s⁻¹','8.50 m s⁻¹','35.0 m s⁻¹','6.40 m s⁻¹'], answer: 0 }, // k6
+      { q: 'A car slows from 30 m s⁻¹ to rest in 6 s. Its acceleration is:', options: ['−5 m s⁻²','5 m s⁻²','−180 m s⁻²','−0.2 m s⁻²'], answer: 0 }, // k6
+      { q: 'For s = t³ − 3t, the velocity at t = 2 is:', options: ['9','2','6','12'], answer: 0 }, // k5
+      { q: 'A body travels 100 m north then 100 m south in 40 s. Its average velocity is:', options: ['0 m s⁻¹','5 m s⁻¹','2.5 m s⁻¹','200 m s⁻¹'], answer: 0 }, // k1
+      { q: 'For that same journey, the average speed is:', options: ['5 m s⁻¹','0 m s⁻¹','2.5 m s⁻¹','10 m s⁻¹'], answer: 0 }, // k1
+      { q: 'A body accelerates uniformly from 10 to 30 m s⁻¹ in 4 s. The distance covered is:', options: ['80 m','40 m','120 m','20 m'], answer: 0 }, // k6
+      { q: 'A ball thrown vertically upwards reaches its maximum height when:', options: ['Its velocity is zero','Its acceleration is zero','Its speed is greatest','It returns to the thrower'], answer: 0 }, // k6
+      { q: 'A stone falls from rest through 45 m. Taking g = 9.8, the time taken is closest to:', options: ['3.03 s','4.59 s','9.18 s','2.14 s'], answer: 0 }, // k6
+      { q: 'On a velocity-time graph, area below the time axis represents:', options: ['Displacement in the negative direction','Distance travelled forwards','Zero displacement','Acceleration'], answer: 0 }, // k4
+      { q: 'Two cars travel in the same direction at 30 and 20 m s⁻¹. The velocity of the first relative to the second is:', options: ['10 m s⁻¹','50 m s⁻¹','−10 m s⁻¹','600 m s⁻¹'], answer: 0 }, // k1
+      { q: 'Given a = dv/dt, velocity is obtained from acceleration by:', options: ['Integrating with respect to time','Differentiating with respect to time','Multiplying by time','Dividing by time'], answer: 0 }, // k5
+      { q: 'A velocity-time graph is a straight line through the origin. This indicates:', options: ['Constant acceleration from rest','Constant velocity','Zero acceleration','Deceleration'], answer: 0 }, // k4
+      { q: 'The magnitude of acceleration differs from acceleration in that the magnitude:', options: ['Is never negative','Includes direction','Is measured in m s⁻¹','Is always zero'], answer: 0 }, // k3
+      { q: 'A trapezium on a velocity-time graph with parallel sides 4 and 10 and width 6 represents a displacement of:', options: ['42 m','60 m','24 m','84 m'], answer: 0 }, // k4
+    ],
+    red: [
+      { q: 'For s = t³ − 6t² + 9t, the particle is instantaneously at rest at:', options: ['t = 1 and t = 3','t = 0 and t = 3','t = 2 only','t = 1 only'], answer: 0 }, // k5
+      { q: 'For that same motion between t = 0 and t = 4, the total distance travelled is:', options: ['12 m','4 m','8 m','0 m'], answer: 0 }, // k5
+      { q: 'For that same motion between t = 0 and t = 4, the displacement is:', options: ['4 m','12 m','0 m','8 m'], answer: 0 }, // k5
+      { q: 'A ball is thrown vertically upwards at 14.7 m s⁻¹. Taking g = 9.8, its maximum height above the point of projection is:', options: ['11.025 m','14.7 m','22.05 m','7.35 m'], answer: 0 }, // k6
+      { q: 'A particle has acceleration a = 6t and velocity 2 m s⁻¹ when t = 0. Its velocity at time t is:', options: ['3t² + 2','6t + 2','3t²','2t³ + 2'], answer: 0 }, // k5
+      { q: 'A body travels at 12 m s⁻¹ for 5 s then decelerates uniformly to rest over the next 4 s. The total distance is:', options: ['84 m','60 m','108 m','48 m'], answer: 0 }, // k4
+      { q: 'The suvat formulae cannot be applied to a body whose acceleration is a = 6t because:', options: ['The acceleration is not constant, so calculus is needed instead','Time is negative','The units are wrong','The body is at rest'], answer: 0 }, // k5
+      { q: 'A particle moves so that its velocity changes sign during the interval considered. Its distance travelled is found by:', options: ['Splitting the interval at the instant of zero velocity and adding the magnitudes','Integrating velocity over the whole interval','Taking the final displacement','Averaging the velocities'], answer: 0 }, // k5
+      { q: 'A stone thrown down at 5 m s⁻¹ from a height falls for 2 s. Taking g = 9.8, the distance fallen is:', options: ['29.6 m','19.6 m','9.8 m','24.6 m'], answer: 0 }, // k6
+      { q: 'For a body with constant acceleration, the average velocity over an interval equals:', options: ['½(u + v), the mean of the initial and final velocities','The final velocity','The maximum velocity','Zero'], answer: 0 }, // k6
+    ],
+  },
+
+  '3.3': {
+    name: 'Kinematics in 2 Dimensions',
+    green: [
+      { q: 'The position vector r of a particle gives its position:', options: ['Relative to a fixed origin','Relative to its starting point only','As a scalar distance','At time zero only'], answer: 0 }, // k9
+      { q: 'In two dimensions, velocity is obtained from position by:', options: ['Differentiating r with respect to t','Integrating r with respect to t','Dividing r by t','Multiplying r by t'], answer: 0 }, // k10
+      { q: 'Acceleration is obtained from velocity by:', options: ['Differentiating v with respect to t','Integrating v with respect to t','Dividing v by t','Taking the magnitude of v'], answer: 0 }, // k10
+      { q: 'The speed of a particle with velocity v is:', options: ['|v|, the magnitude of v','The i-component of v','v itself','The direction of v'], answer: 0 }, // k9
+      { q: 'The distance of a particle from the origin is:', options: ['|r|','|v|','|a|','r itself'], answer: 0 }, // k9
+      { q: 'The vector form of v = u + at applies when:', options: ['The acceleration is constant','The velocity is constant','The motion is in one dimension','The particle is at rest'], answer: 0 }, // k10
+      { q: 'The position of B relative to A is given by:', options: ['r_B − r_A','r_A − r_B','r_A + r_B','|r_B| − |r_A|'], answer: 0 }, // k9
+      { q: 'A two-dimensional velocity is commonly written in terms of:', options: ['The unit vectors i and j','A single scalar','Degrees only','The unit vector k only'], answer: 0 }, // k10
+      { q: 'Average velocity in two dimensions is:', options: ['Overall displacement ÷ elapsed time','Distance travelled ÷ elapsed time','The mean of the speeds','Always zero'], answer: 0 }, // k9
+      { q: 'Velocity is obtained from acceleration by:', options: ['Integrating with respect to time','Differentiating with respect to time','Multiplying by time only','Taking the magnitude'], answer: 0 }, // k10
+      { q: 'If the acceleration of a particle is zero, its path is:', options: ['A straight line travelled at constant velocity','A parabola','A circle','Undefined'], answer: 0 }, // k10
+      { q: 'Motion in the i and j directions under constant acceleration can be treated:', options: ['Independently, component by component','Only together','Only using scalars','Only in one dimension'], answer: 0 }, // k10
+      { q: 'The Cartesian equation of the path of a particle is found by:', options: ['Eliminating t between the component equations','Differentiating twice','Integrating the speed','Taking the magnitude of r'], answer: 0 }, // k11
+      { q: 'Distance travelled along a curved path is:', options: ['Generally greater than the distance from the starting point','Always equal to the displacement','Always less than the displacement','Always zero'], answer: 0 }, // k9
+      { q: 'The direction of motion of a particle at an instant is given by the direction of:', options: ['Its velocity vector','Its position vector','Its acceleration vector','The origin'], answer: 0 }, // k9
+      { q: 'The magnitude of the vector 3i + 4j is:', options: ['5','7','12','25'], answer: 0 }, // k9
+      { q: 'The vector form of s = ut + ½at² gives:', options: ['Displacement as a vector','Speed as a scalar','Acceleration','Time'], answer: 0 }, // k10
+      { q: 'The velocity of A relative to B is:', options: ['v_A − v_B','v_B − v_A','v_A + v_B','|v_A| − |v_B|'], answer: 0 }, // k10
+      { q: 'A particle is at the origin when its position vector equals:', options: ['The zero vector','Its velocity','Its acceleration','i + j'], answer: 0 }, // k9
+      { q: 'Displacement in two dimensions is:', options: ['A vector from the start point to the end point','The length of the path travelled','Always positive','A scalar'], answer: 0 }, // k9
+    ],
+    amber: [
+      { q: 'A particle has r = 3t i + t² j. Its velocity is:', options: ['3i + 2t j','3t i + 2t j','3i + t² j','6t j'], answer: 0 }, // k10
+      { q: 'For that same particle, the speed at t = 2 is:', options: ['5','7','4','3'], answer: 0 }, // k10
+      { q: 'For that same particle, the acceleration is:', options: ['2j','3i','2t j','0'], answer: 0 }, // k10
+      { q: 'For that same particle, the Cartesian equation of its path is:', options: ['y = x²/9','y = x²','y = 3x²','y = x/3'], answer: 0 }, // k11
+      { q: 'A particle has r = 2t i + (t² − 1) j. Its path has Cartesian equation:', options: ['y = x²/4 − 1','y = x² − 1','y = 4x² − 1','y = x/2 − 1'], answer: 0 }, // k11
+      { q: 'A particle has a = 2i + 6t j and v = i at t = 0. Its velocity at time t is:', options: ['(1 + 2t)i + 3t² j','2t i + 3t² j','(1 + 2t)i + 6t j','2i + 6t j'], answer: 0 }, // k10
+      { q: 'A has velocity 5i + 2j and B has velocity 3i − j. The velocity of A relative to B is:', options: ['2i + 3j','8i + j','−2i − 3j','2i + j'], answer: 0 }, // k10
+      { q: 'A has position 3i + 4j and B has position 7i + j. The position of B relative to A is:', options: ['4i − 3j','−4i + 3j','10i + 5j','4i + 3j'], answer: 0 }, // k9
+      { q: 'For that same pair, the distance between A and B is:', options: ['5','7','25','1'], answer: 0 }, // k9
+      { q: 'A particle starts at 2i + j with constant velocity 3i − j. Its position at t = 4 is:', options: ['14i − 3j','12i − 4j','5i','14i + 5j'], answer: 0 }, // k10
+      { q: 'Two particles collide when:', options: ['Their position vectors are equal at the same instant','Their velocities are equal','Their speeds are equal','Their accelerations are equal'], answer: 0 }, // k10
+      { q: 'A velocity of 6i + 8j has magnitude and direction:', options: ['10, at 53.1° above the i-direction','14, at 53.1°','10, at 36.9°','48, at 53.1°'], answer: 0 }, // k9
+      { q: 'A particle moves with constant velocity. Its path is:', options: ['A straight line','A parabola','A circle','A curve of unknown shape'], answer: 0 }, // k10
+      { q: 'For constant acceleration in two dimensions, s = ½(u + v)t is:', options: ['Valid, applied as a vector equation','Only valid in one dimension','Never valid','Valid only for zero acceleration'], answer: 0 }, // k10
+      { q: 'A particle has velocity 4i − 3j. Its speed is:', options: ['5','1','7','25'], answer: 0 }, // k9
+      { q: 'A particle has r = (t² − 4t)i + 3t j. It crosses the j-axis when:', options: ['t = 0 or t = 4','t = 4 only','t = 2','Never'], answer: 0 }, // k11
+      { q: 'A particle has u = 2i, a = j and moves for 4 s. Its displacement is:', options: ['8i + 8j','8i + 4j','2i + 8j','8i + 16j'], answer: 0 }, // k10
+      { q: 'Two particles have the same velocity vector. The velocity of one relative to the other is:', options: ['The zero vector','Twice the velocity','Undefined','Their sum'], answer: 0 }, // k10
+      { q: 'Vectors r, v and a for a particle moving in a plane all have:', options: ['Two components each','One component each','Three components each','No components'], answer: 0 }, // k9
+      { q: 'A particle with a = 0 and u = 3i − 4j travels for 5 s. The distance from its starting point is:', options: ['25','5','15','20'], answer: 0 }, // k10
+    ],
+    red: [
+      { q: 'A particle has r = t² i + (2t − t²) j. Its velocity is zero:', options: ['At no time, since the i-component 2t vanishes only at t = 0 where the j-component is 2','At t = 1','At t = 2','At all times'], answer: 0 }, // k10
+      { q: 'A has position (t + 1)i + 2t j and B has position (3t − 1)i + (t + 1) j. They collide when:', options: ['t = 1, since both position vectors equal 2i + 2j','t = 2','t = 0','They never collide'], answer: 0 }, // k10
+      { q: 'A particle has r = 4t i + (3t − 5t²) j. Its path is:', options: ['A parabola','A straight line','A circle','A hyperbola'], answer: 0 }, // k11
+      { q: 'A particle has a = 6t i − 2j, with v = 0 and r = 0 at t = 0. Its position at time t is:', options: ['t³ i − t² j','3t² i − 2t j','2t³ i − t² j','t³ i − 2t² j'], answer: 0 }, // k10
+      { q: 'A boat steers with velocity 4i and the current is 3j. The resultant velocity has magnitude:', options: ['5','7','1','12'], answer: 0 }, // k10
+      { q: 'Two ships have constant velocities. The distance between them is least when:', options: ['The relative position vector is shortest, found by minimising its magnitude','Their speeds are equal','Their velocities are equal','They are at the origin'], answer: 0 }, // k10
+      { q: 'For a particle with r = (2t)i + (t²)j, the average velocity between t = 0 and t = 2 is:', options: ['2i + 2j','2i + 4j','4i + 4j','i + j'], answer: 0 }, // k9
+      { q: 'A particle projected with u = 5i + 12j has initial speed:', options: ['13','17','7','60'], answer: 0 }, // k9
+      { q: 'For a particle moving with constant acceleration a from initial velocity u, the vector form v = u + at shows that:', options: ['The change in velocity is always parallel to a','The speed is constant','The path is a straight line','The acceleration varies'], answer: 0 }, // k10
+      { q: 'A particle has r = (t − 2)i + (t² − 4)j. It passes through the origin when:', options: ['t = 2','t = 0','t = −2','Never'], answer: 0 }, // k11
+    ],
+  },
+
+  '3.4': {
+    name: 'Projectiles',
+    green: [
+      { q: 'In standard projectile modelling, the horizontal acceleration is:', options: ['Zero','g downwards','g upwards','Variable'], answer: 0 }, // y1
+      { q: 'In standard projectile modelling, the vertical acceleration is:', options: ['g downwards','Zero','g upwards','Variable'], answer: 0 }, // y1
+      { q: 'At its maximum height, a projectile has:', options: ['Zero vertical velocity','Zero horizontal velocity','Zero speed','Zero acceleration'], answer: 0 }, // y2
+      { q: 'Throughout the flight, the horizontal component of velocity is:', options: ['Constant','Increasing','Decreasing','Zero'], answer: 0 }, // y1
+      { q: 'The path of a projectile under standard modelling assumptions is:', options: ['A parabola','A straight line','A circle','A hyperbola'], answer: 0 }, // y4
+      { q: 'Which is a standard modelling assumption for projectile motion?', options: ['There is no air resistance','Air resistance is proportional to speed','The projectile is a rigid body','Gravity varies with height'], answer: 0 }, // y1
+      { q: 'Standard projectile modelling treats the projectile as:', options: ['A particle','A uniform rod','A rigid lamina','A light string'], answer: 0 }, // y1
+      { q: 'For a projectile launched at speed u and angle θ, the horizontal component of the initial velocity is:', options: ['u cos θ','u sin θ','u tan θ','u'], answer: 0 }, // y1
+      { q: 'For that same projectile, the vertical component of the initial velocity is:', options: ['u sin θ','u cos θ','u tan θ','u'], answer: 0 }, // y1
+      { q: 'On level ground, the range of a projectile is greatest when the angle of projection is:', options: ['45°','30°','60°','90°'], answer: 0 }, // y2
+      { q: 'A ball thrown horizontally has initial vertical velocity:', options: ['0','g','u','u sin θ'], answer: 0 }, // y1
+      { q: 'Unless otherwise specified, the value of g used in examinations is:', options: ['9.8','10','9.81','9'], answer: 0 }, // F2
+      { q: 'Horizontal and vertical motion of a projectile are treated:', options: ['Independently','Only together','As one scalar equation','As a circular motion'], answer: 0 }, // y1
+      { q: 'For projection and landing at the same height, the speed on landing equals:', options: ['The speed of projection','Zero','Twice the speed of projection','Half the speed of projection'], answer: 0 }, // y2
+      { q: 'Calculations involving air resistance are:', options: ['Excluded from this specification','Required for all projectiles','Required only at A Level','Required only for heavy objects'], answer: 0 }, // y1
+      { q: 'The vertical motion of a projectile is an example of:', options: ['Motion with constant acceleration','Motion with constant velocity','Circular motion','Motion with zero acceleration'], answer: 0 }, // y1
+      { q: 'The assumption that gravity always acts in the same direction is reasonable when:', options: ['The horizontal distance travelled is small','The projectile is heavy','The speed is large','The angle is 45°'], answer: 0 }, // y1
+      { q: 'The time of flight of a projectile on level ground is:', options: ['Twice the time taken to reach maximum height','Equal to the time to maximum height','Independent of the angle','Always 1 second'], answer: 0 }, // y2
+      { q: 'The direction of a projectile’s velocity at its highest point is:', options: ['Horizontal','Vertical','At 45°','Undefined'], answer: 0 }, // y2
+      { q: 'The Cartesian equation of a projectile path is obtained by:', options: ['Eliminating t between the horizontal and vertical component equations','Differentiating the speed','Integrating the acceleration twice with respect to x','Taking the magnitude of the velocity'], answer: 0 }, // y4
+    ],
+    amber: [
+      { q: 'A projectile is launched at 20 m s⁻¹ at 30° to the horizontal. Its initial horizontal component is closest to:', options: ['17.3 m s⁻¹','10.0 m s⁻¹','20.0 m s⁻¹','11.5 m s⁻¹'], answer: 0 }, // y1
+      { q: 'For that same projectile, the initial vertical component is:', options: ['10.0 m s⁻¹','17.3 m s⁻¹','20.0 m s⁻¹','5.0 m s⁻¹'], answer: 0 }, // y1
+      { q: 'For that same projectile, taking g = 9.8, the time to reach maximum height is closest to:', options: ['1.02 s','2.04 s','0.51 s','1.77 s'], answer: 0 }, // y2
+      { q: 'For that same projectile, the maximum height above the point of projection is closest to:', options: ['5.10 m','10.2 m','2.55 m','15.3 m'], answer: 0 }, // y2
+      { q: 'For that same projectile on level ground, the time of flight is closest to:', options: ['2.04 s','1.02 s','4.08 s','3.06 s'], answer: 0 }, // y2
+      { q: 'For that same projectile on level ground, the range is closest to:', options: ['35.4 m','17.7 m','20.4 m','70.7 m'], answer: 0 }, // y2
+      { q: 'A ball is thrown horizontally at 15 m s⁻¹ from a height of 20 m. Taking g = 9.8, the time to reach the ground is closest to:', options: ['2.02 s','1.43 s','4.08 s','2.86 s'], answer: 0 }, // y2
+      { q: 'For that same ball, the horizontal distance travelled before landing is closest to:', options: ['30.3 m','21.4 m','15.0 m','61.2 m'], answer: 0 }, // y2
+      { q: 'For a projectile launched at speed u and angle θ, the time of flight on level ground is:', options: ['2u sin θ / g','u sin θ / g','2u cos θ / g','u / g'], answer: 0 }, // y2
+      { q: 'For that same projectile, the maximum height is:', options: ['u² sin²θ / (2g)','u² sin θ / (2g)','u² / (2g)','u sin θ / g'], answer: 0 }, // y2
+      { q: 'For that same projectile, the range on level ground is:', options: ['u² sin 2θ / g','u² sin θ / g','2u² sin θ / g','u² cos θ / g'], answer: 0 }, // y2
+      { q: 'At time t, the vertical component of a projectile’s velocity is:', options: ['u sin θ − gt','u sin θ + gt','u cos θ − gt','−gt'], answer: 0 }, // y2
+      { q: 'At time t, the horizontal displacement of a projectile is:', options: ['u cos θ · t','u sin θ · t','u cos θ · t − ½gt²','u t'], answer: 0 }, // y2
+      { q: 'At time t, the vertical displacement of a projectile is:', options: ['u sin θ · t − ½gt²','u sin θ · t','u cos θ · t − ½gt²','−½gt²'], answer: 0 }, // y2
+      { q: 'A stone dropped from rest and a stone thrown horizontally from the same height:', options: ['Reach the ground at the same time','Reach the ground at different times','Travel the same horizontal distance','Have the same speed on landing'], answer: 0 }, // y1
+      { q: 'A projectile launched at 40 m s⁻¹ at 90° to the horizontal, taking g = 9.8, reaches a maximum height of about:', options: ['81.6 m','40.0 m','163 m','20.4 m'], answer: 0 }, // y2
+      { q: 'For a projectile on level ground, the angle of the velocity on landing compared with the angle of projection is:', options: ['Equal in magnitude but below the horizontal','Steeper','Shallower','Always 45°'], answer: 0 }, // y2
+      { q: 'Two projectiles launched at the same speed at 30° and 60° on level ground have:', options: ['The same range','The same maximum height','The same time of flight','Nothing in common'], answer: 0 }, // y2
+      { q: 'The initial speed of a projectile can be found given:', options: ['Its range and angle of projection on level ground','Its mass only','The value of g only','Its colour'], answer: 0 }, // y3
+      { q: 'A projectile is launched and lands at a lower level than its start. Compared with level ground, its time of flight is:', options: ['Longer','Shorter','The same','Zero'], answer: 0 }, // y2
+    ],
+    red: [
+      { q: 'The Cartesian equation of a projectile path launched from the origin at speed u and angle θ is:', options: ['y = x tan θ − gx²/(2u² cos²θ)','y = x tan θ − gx²/(2u²)','y = x tan θ + gx²/(2u² cos²θ)','y = x sin θ − gx²/2'], answer: 0 }, // y4
+      { q: 'On level ground, two distinct angles of projection give the same range. If one is 25°, the other is:', options: ['65°','35°','45°','75°'], answer: 0 }, // y2
+      { q: 'A projectile launched at speed u at 45° on level ground has range:', options: ['u²/g','u²/(2g)','2u²/g','u²/(4g)'], answer: 0 }, // y2
+      { q: 'A ball is projected at 25 m s⁻¹ at 36.9° (so sin θ = 0.6). Taking g = 9.8, its maximum height is closest to:', options: ['11.5 m','22.9 m','5.7 m','31.9 m'], answer: 0 }, // y2
+      { q: 'A projectile reaches a given height twice during its flight because:', options: ['The quadratic in t for vertical displacement has two roots, on the way up and on the way down','Gravity reverses','The horizontal velocity changes','The path is circular'], answer: 0 }, // y2
+      { q: 'For a projectile launched from a height h above level ground, the time of flight is found by solving:', options: ['−h = u sin θ · t − ½gt², taking the positive root','h = u sin θ · t','t = 2u sin θ / g','h = ½gt² only'], answer: 0 }, // y2
+      { q: 'Introducing air resistance into a projectile model would generally:', options: ['Reduce both the range and the maximum height','Increase the range','Leave the path a parabola','Have no effect'], answer: 0 }, // y1
+      { q: 'A projectile must clear a wall of height 3 m at horizontal distance 20 m. The check required is:', options: ['Substitute x = 20 into the path equation and confirm y > 3','Confirm the range exceeds 20 m only','Confirm the maximum height exceeds 3 m only','Confirm the angle exceeds 45°'], answer: 0 }, // y4
+      { q: 'The speed of a projectile at time t is found from its components as:', options: ['√((u cos θ)² + (u sin θ − gt)²)','u cos θ + u sin θ − gt','u − gt','u cos θ only'], answer: 0 }, // y2
+      { q: 'A projectile launched at 30° with range 50 m on level ground, taking g = 9.8, has initial speed closest to:', options: ['23.8 m s⁻¹','15.6 m s⁻¹','35.0 m s⁻¹','49.0 m s⁻¹'], answer: 0 }, // y3
+    ],
+  },
+
+  '3.5': {
+    name: 'Forces',
+    green: [
+      { q: 'The weight of an object acts:', options: ['Vertically downwards','Vertically upwards','Perpendicular to the surface','Along the direction of motion'], answer: 0 }, // F1
+      { q: 'The normal reaction acts:', options: ['Perpendicular to the surface of contact','Along the surface','Vertically downwards always','In the direction of motion'], answer: 0 }, // F1
+      { q: 'Tension in a string:', options: ['Pulls on the objects at each end','Pushes the objects apart','Acts perpendicular to the string','Is always zero'], answer: 0 }, // F1
+      { q: 'A thrust (or compression) in a rod:', options: ['Pushes the objects at each end apart','Pulls them together','Acts perpendicular to the rod','Equals the weight'], answer: 0 }, // F1
+      { q: 'A frictional force acts:', options: ['Along the surface, opposing relative motion or tendency to move','Perpendicular to the surface','Vertically downwards','In the direction of motion'], answer: 0 }, // F1
+      { q: 'A surface described as "smooth" has:', options: ['No friction','Large friction','A normal reaction of zero','No weight'], answer: 0 }, // F1
+      { q: 'A surface described as "rough" means:', options: ['There may be a frictional force','There is no normal reaction','The object cannot move','Weight is negligible'], answer: 0 }, // F1
+      { q: 'A particle is in equilibrium if and only if:', options: ['The resultant of the forces acting on it is zero','Its weight is zero','It is at rest at the origin','Friction is zero'], answer: 0 }, // F5
+      { q: 'The weight of a body of mass m is:', options: ['mg newtons','m newtons','g newtons','mg kilograms'], answer: 0 }, // F1
+      { q: 'Force is:', options: ['A vector quantity measured in newtons','A scalar quantity measured in newtons','A scalar measured in kilograms','A vector measured in kilograms'], answer: 0 }, // F1
+      { q: 'The value of the normal reaction:', options: ['Depends on the other forces acting','Always equals the weight','Is always zero','Is always mg cos θ'], answer: 0 }, // F1
+      { q: 'The acceleration due to gravity g is:', options: ['Not a universal constant, but often modelled as constant on Earth','A universal constant everywhere','A force','Measured in newtons'], answer: 0 }, // F2
+      { q: 'A force diagram should show:', options: ['All the forces acting on the body','Only the weight','Only the applied force','The velocity'], answer: 0 }, // F3
+      { q: 'A driving force is:', options: ['The forward force produced by an engine','A resistance to motion','The normal reaction','The weight'], answer: 0 }, // F1
+      { q: 'Air resistance is an example of:', options: ['A resistance force opposing motion','A driving force','A normal reaction','A tension'], answer: 0 }, // F1
+      { q: 'Concurrent forces are forces that:', options: ['All act through the same point','Are all equal','Are all parallel','Sum to zero'], answer: 0 }, // F4
+      { q: 'Vectors representing a set of forces in equilibrium:', options: ['Sum to zero and can be drawn as a closed figure','Sum to the weight','Form an open polygon','Are all parallel'], answer: 0 }, // F8
+      { q: 'Resolving a force means:', options: ['Writing it as components in two chosen perpendicular directions','Adding it to another force','Removing it','Finding its moment'], answer: 0 }, // F6
+      { q: 'An internal force in a system is one that acts:', options: ['Between parts of the system','From outside the system','Only at the surface','Only vertically'], answer: 0 }, // F3
+      { q: 'A body resting on a horizontal table experiences a normal reaction that is:', options: ['Vertically upwards','Vertically downwards','Horizontal','Zero'], answer: 0 }, // F1
+    ],
+    amber: [
+      { q: 'A 5 kg block rests on a horizontal table with no other vertical forces. Taking g = 9.8, the normal reaction is:', options: ['49 N','5 N','9.8 N','24.5 N'], answer: 0 }, // F1
+      { q: 'For a body on a plane inclined at θ, the component of weight along the plane is:', options: ['mg sin θ','mg cos θ','mg tan θ','mg'], answer: 0 }, // F6
+      { q: 'For that same body, the component of weight perpendicular to the plane is:', options: ['mg cos θ','mg sin θ','mg tan θ','mg'], answer: 0 }, // F6
+      { q: 'The relationship between friction F, coefficient μ and normal reaction R is:', options: ['F ≤ μR','F = μR always','F ≥ μR','F = R/μ'], answer: 0 }, // F10
+      { q: 'When a body is on the point of sliding, the friction is:', options: ['Limiting, so F = μR','Zero','Greater than μR','Equal to the weight'], answer: 0 }, // F10
+      { q: 'With μ = 0.4 and R = 50 N, the maximum possible frictional force is:', options: ['20 N','125 N','50 N','0.4 N'], answer: 0 }, // F10
+      { q: 'A force of 20 N acts at 30° above the horizontal. Its horizontal component is closest to:', options: ['17.3 N','10.0 N','20.0 N','11.5 N'], answer: 0 }, // F6
+      { q: 'For that same force, the vertical component is:', options: ['10.0 N','17.3 N','20.0 N','5.0 N'], answer: 0 }, // F6
+      { q: 'A 10 kg block on a plane inclined at 30°. Taking g = 9.8, the component of weight down the plane is:', options: ['49 N','84.9 N','98 N','56.6 N'], answer: 0 }, // F6
+      { q: 'For that same block, the normal reaction perpendicular to the plane is closest to:', options: ['84.9 N','49 N','98 N','56.6 N'], answer: 0 }, // F6
+      { q: 'The angle of friction λ satisfies:', options: ['tan λ = μ','sin λ = μ','cos λ = μ','λ = μ'], answer: 0 }, // F11
+      { q: 'The coefficient of friction μ:', options: ['Has no units','Is measured in newtons','Is measured in kg','Is always greater than 1'], answer: 0 }, // F10
+      { q: 'Two perpendicular forces of 3 N and 4 N have a resultant of magnitude:', options: ['5 N','7 N','1 N','12 N'], answer: 0 }, // F4
+      { q: 'A force given as 3i + 4j newtons has magnitude:', options: ['5 N','7 N','12 N','25 N'], answer: 0 }, // F4
+      { q: 'Pressing down on a block on a horizontal surface:', options: ['Increases the normal reaction and so the maximum friction','Decreases the normal reaction','Leaves the normal reaction unchanged','Removes friction'], answer: 0 }, // F1
+      { q: 'For a body in equilibrium on an inclined plane, it is usually easiest to resolve:', options: ['Parallel and perpendicular to the plane','Horizontally and vertically only','Along the weight only','In no particular direction'], answer: 0 }, // F6
+      { q: 'A person stands in a lift accelerating upwards. The normal reaction on them is:', options: ['Greater than their weight','Less than their weight','Equal to their weight','Zero'], answer: 0 }, // F1
+      { q: 'For a body in equilibrium, resolving in any direction gives:', options: ['A total component of zero in that direction','A total equal to the weight','A total equal to mg sin θ','No information'], answer: 0 }, // F5
+      { q: 'A block on a smooth plane inclined at 30° is released. Taking g = 9.8, its acceleration down the plane is:', options: ['4.9 m s⁻²','9.8 m s⁻²','8.49 m s⁻²','2.45 m s⁻²'], answer: 0 }, // F6
+      { q: 'Friction acts on a stationary block being pushed but not moving. Its magnitude equals:', options: ['The applied force, up to the limiting value μR','μR always','Zero','The weight'], answer: 0 }, // F10
+    ],
+    red: [
+      { q: 'A block rests on a rough plane inclined at angle θ with coefficient of friction μ. It remains at rest provided:', options: ['tan θ ≤ μ','tan θ ≥ μ','sin θ ≤ μ','cos θ ≤ μ'], answer: 0 }, // F11
+      { q: 'A 4 kg block on a rough horizontal surface has μ = 0.25. Taking g = 9.8, the horizontal force needed to make it start to slide is closest to:', options: ['9.8 N','39.2 N','2.45 N','19.6 N'], answer: 0 }, // F10
+      { q: 'Pulling a block along a horizontal surface with a force at an angle above the horizontal:', options: ['Reduces the normal reaction and so reduces the friction','Increases the normal reaction','Leaves friction unchanged','Removes the weight'], answer: 0 }, // F10
+      { q: 'A block in limiting equilibrium on a rough inclined plane has friction acting:', options: ['Up the plane, opposing the tendency to slide down','Down the plane','Perpendicular to the plane','Vertically upwards'], answer: 0 }, // F10
+      { q: 'Three concurrent forces hold a particle in equilibrium. Drawn head-to-tail they form:', options: ['A closed triangle','An open path','A straight line always','A circle'], answer: 0 }, // F8
+      { q: 'A 2 kg block on a rough plane inclined at 20° with μ = 0.5. Taking g = 9.8, the block:', options: ['Remains at rest, since tan 20° ≈ 0.364 < 0.5','Slides down','Accelerates up the plane','Is in limiting equilibrium'], answer: 0 }, // F11
+      { q: 'The inverse square law for gravitation is:', options: ['Excluded from this specification','Required for all force problems','Used to find the normal reaction','Used to find friction'], answer: 0 }, // F2
+      { q: 'A body hangs in equilibrium from two strings at different angles. The number of independent equations obtained by resolving is:', options: ['Two, one in each of two perpendicular directions','One','Three','Four'], answer: 0 }, // F9
+      { q: 'A crate is pushed at constant velocity across a rough floor. The applied horizontal force equals:', options: ['The frictional force, since the acceleration is zero','The weight','The normal reaction','Zero'], answer: 0 }, // F9
+      { q: 'A lift descends and decelerates to rest. During the deceleration, the normal reaction on a passenger is:', options: ['Greater than their weight','Less than their weight','Equal to their weight','Zero'], answer: 0 }, // F1
+    ],
+  },
+
+  '3.6': {
+    name: "Newton's Laws of Motion",
+    green: [
+      { q: "Newton's first law states that an object continues at rest or in uniform motion in a straight line unless:", options: ['It is acted on by a resultant force','Its mass changes','It is on a rough surface','Gravity acts on it'], answer: 0 }, // n1
+      { q: "Newton's second law is expressed as:", options: ['F = ma, where F is the resultant force','F = mv','F = m/a','F = ma², where a is speed'], answer: 0 }, // n1
+      { q: "Newton's third law states that when one object exerts a force on another:", options: ['There is a reaction equal in magnitude and opposite in direction','The reaction is smaller','There is no reaction','The reaction acts on the same object'], answer: 0 }, // n1
+      { q: 'The equation of motion for a particle is:', options: ["The application of Newton's second law to that particle",'A kinematics graph','The definition of weight','A statement of equilibrium only'], answer: 0 }, // n2
+      { q: 'Rearranging F = ma gives acceleration as:', options: ['a = F/m','a = mF','a = m/F','a = F − m'], answer: 0 }, // n3
+      { q: 'If the resultant force on a body is zero, the body:', options: ['Remains at rest or continues at constant velocity','Must be at rest','Must be accelerating','Has zero mass'], answer: 0 }, // n1
+      { q: 'Doubling the resultant force on a fixed mass:', options: ['Doubles the acceleration','Halves the acceleration','Leaves acceleration unchanged','Doubles the mass'], answer: 0 }, // n3
+      { q: 'Doubling the mass while keeping the resultant force fixed:', options: ['Halves the acceleration','Doubles the acceleration','Leaves acceleration unchanged','Doubles the force'], answer: 0 }, // n3
+      { q: 'The two forces in a Newton\'s third law pair act:', options: ['On different objects','On the same object','In the same direction','Only when moving'], answer: 0 }, // n1
+      { q: 'For two particles connected by a light inextensible string, the magnitudes of their accelerations are:', options: ['Equal','In the ratio of their masses','Always zero','Unrelated'], answer: 0 }, // n4
+      { q: 'For a light inextensible string over a smooth pulley, the tension is:', options: ['The same throughout the string','Different on each side','Equal to the total weight','Zero'], answer: 0 }, // n4
+      { q: 'A body in free fall, ignoring resistance, has acceleration:', options: ['g downwards','Zero','g upwards','Depending on its mass'], answer: 0 }, // n3
+      { q: "Newton's second law applied in two dimensions is:", options: ['A vector equation, so it may be applied component by component','A scalar equation only','Not applicable','Valid only when a = 0'], answer: 0 }, // n7
+      { q: 'When a whole system is treated as one body, internal forces:', options: ['Cancel in pairs and can be ignored','Must be added twice','Become external','Double'], answer: 0 }, // n4
+      { q: 'Problems involving variable mass are:', options: ['Excluded from this specification','Required at A Level','Required at AS Level','Required for pulleys'], answer: 0 }, // n3
+      { q: 'The F in F = ma must be:', options: ['The resultant of all forces acting','Any one of the forces','The weight only','The largest force'], answer: 0 }, // n3
+      { q: 'Equilibrium is the special case of the equation of motion in which:', options: ['a = 0','m = 0','F is largest','v = 0 only'], answer: 0 }, // n3
+      { q: 'A train made of an engine and carriages may be modelled as:', options: ['A set of connected particles','A single rigid lamina','A projectile','A light string'], answer: 0 }, // n4
+      { q: 'The weight of a body of mass m used in an equation of motion is:', options: ['mg','m','g','m/g'], answer: 0 }, // n3
+      { q: 'An external force on a system is one exerted:', options: ['By something outside the system','Between parts of the system','Only by gravity','Only by friction'], answer: 0 }, // n4
+    ],
+    amber: [
+      { q: 'A resultant force of 20 N acts on a mass of 4 kg. The acceleration is:', options: ['5 m s⁻²','80 m s⁻²','0.2 m s⁻²','16 m s⁻²'], answer: 0 }, // n3
+      { q: 'A mass of 2 kg accelerates at 3 m s⁻². The resultant force is:', options: ['6 N','1.5 N','0.67 N','5 N'], answer: 0 }, // n3
+      { q: 'For a person of mass m in a lift accelerating upwards at a, the equation of motion is:', options: ['R − mg = ma','mg − R = ma','R + mg = ma','R = mg'], answer: 0 }, // n3
+      { q: 'For that same person in a lift accelerating downwards at a, the equation is:', options: ['mg − R = ma','R − mg = ma','R + mg = ma','R = 0'], answer: 0 }, // n3
+      { q: 'Two masses m₁ > m₂ hang over a smooth pulley. Their common acceleration is:', options: ['(m₁ − m₂)g/(m₁ + m₂)','(m₁ + m₂)g/(m₁ − m₂)','m₁g/m₂','g'], answer: 0 }, // n5
+      { q: 'A 3 kg block is pulled along a smooth horizontal surface by a force of 12 N. Its acceleration is:', options: ['4 m s⁻²','36 m s⁻²','0.25 m s⁻²','9.8 m s⁻²'], answer: 0 }, // n3
+      { q: 'For a block of mass m on a rough surface pulled by force P, the equation of motion is:', options: ['P − μR = ma','P + μR = ma','P = ma','μR = ma'], answer: 0 }, // n3
+      { q: 'A car of mass 1000 kg has a driving force of 3000 N and resistance 1000 N. Its acceleration is:', options: ['2 m s⁻²','3 m s⁻²','4 m s⁻²','1 m s⁻²'], answer: 0 }, // n3
+      { q: 'A book rests on a table. The reaction to the book\'s weight, in the third-law sense, is:', options: ['The gravitational pull of the book on the Earth','The normal reaction from the table','The weight of the table','Friction'], answer: 0 }, // n1
+      { q: 'A body of mass 5 kg falls with air resistance 19 N. Taking g = 9.8, its acceleration is closest to:', options: ['6.0 m s⁻²','9.8 m s⁻²','3.8 m s⁻²','13.6 m s⁻²'], answer: 0 }, // n3
+      { q: 'A resultant force 6i + 8j N acts on a 2 kg particle. Its acceleration has magnitude:', options: ['5 m s⁻²','10 m s⁻²','20 m s⁻²','2.5 m s⁻²'], answer: 0 }, // n7
+      { q: 'A body reaches terminal velocity when:', options: ['The resistance equals the weight, so the resultant force is zero','The weight becomes zero','The acceleration equals g','It stops falling'], answer: 0 }, // n3
+      { q: 'For connected particles, writing an equation for the whole system is useful because:', options: ['The internal tension cancels, leaving only external forces','It gives the tension directly','It removes the weight','Acceleration disappears'], answer: 0 }, // n4
+      { q: 'To find the tension in a connecting string, you should:', options: ['Write the equation of motion for one particle separately','Use the whole system only','Ignore the acceleration','Set the tension to zero'], answer: 0 }, // n5
+      { q: 'A train of total mass 50 000 kg accelerates at 0.2 m s⁻² with resistance 5000 N. The driving force is:', options: ['15 000 N','10 000 N','5000 N','20 000 N'], answer: 0 }, // n4
+      { q: 'A lift moving upwards at constant velocity exerts on a passenger a normal reaction that is:', options: ['Equal to their weight','Greater than their weight','Less than their weight','Zero'], answer: 0 }, // n3
+      { q: 'A 2 kg particle on a smooth plane inclined at 30° has acceleration down the plane, taking g = 9.8, of:', options: ['4.9 m s⁻²','9.8 m s⁻²','2.45 m s⁻²','8.49 m s⁻²'], answer: 0 }, // n3
+      { q: 'A car decelerates under a resistance of 2000 N with mass 800 kg. Its deceleration is:', options: ['2.5 m s⁻²','0.4 m s⁻²','4 m s⁻²','1.6 m s⁻²'], answer: 0 }, // n3
+      { q: 'Applying F = ma to a body requires the mass to be:', options: ['Constant, since variable mass is excluded here','Changing','Zero','Equal to the weight'], answer: 0 }, // n3
+      { q: 'A particle is in equilibrium under three forces. Applying F = ma gives:', options: ['Resultant force zero, since a = 0','Resultant force mg','a = g','Nothing useful'], answer: 0 }, // n3
+    ],
+    red: [
+      { q: 'Masses of 5 kg and 3 kg hang over a smooth pulley. Taking g = 9.8, the acceleration is:', options: ['2.45 m s⁻²','4.9 m s⁻²','1.225 m s⁻²','9.8 m s⁻²'], answer: 0 }, // n5
+      { q: 'For that same system, the tension in the string is:', options: ['36.75 N','49 N','29.4 N','24.5 N'], answer: 0 }, // n5
+      { q: 'A 4 kg block on a smooth table is connected over a smooth pulley to a 2 kg hanging mass. Taking g = 9.8, the acceleration is closest to:', options: ['3.27 m s⁻²','4.9 m s⁻²','1.63 m s⁻²','9.8 m s⁻²'], answer: 0 }, // n5
+      { q: 'For that same system, the tension is closest to:', options: ['13.1 N','19.6 N','26.1 N','6.5 N'], answer: 0 }, // n5
+      { q: 'An engine of mass 20 000 kg pulls a carriage of mass 10 000 kg with total driving force 45 000 N and no resistance. The force in the coupling is:', options: ['15 000 N','45 000 N','30 000 N','22 500 N'], answer: 0 }, // n5
+      { q: 'A student says "the table pushes up on the book and the book\'s weight pushes down, so these are a third-law pair". This is wrong because:', options: ['A third-law pair acts on two different bodies, but both of these act on the book','The forces are unequal','Weight is not a force','The book is not moving'], answer: 0 }, // n1
+      { q: 'A 70 kg passenger is in a lift accelerating upwards at 2 m s⁻². Taking g = 9.8, the normal reaction is:', options: ['826 N','686 N','140 N','546 N'], answer: 0 }, // n3
+      { q: 'A particle of mass 0.5 kg has resultant force 3i − 4j N. Its acceleration is:', options: ['6i − 8j m s⁻²','1.5i − 2j m s⁻²','3i − 4j m s⁻²','10 m s⁻²'], answer: 0 }, // n7
+      { q: 'A 1200 kg car travelling at 20 m s⁻¹ brakes to rest in 40 m. The constant braking force required is:', options: ['6000 N','3000 N','12 000 N','600 N'], answer: 0 }, // n3
+      { q: 'In a connected-particle problem, the assumption that the pulley is smooth is needed so that:', options: ['The tension is the same on both sides of the string','The accelerations differ','The string can stretch','The masses are equal'], answer: 0 }, // n4
+    ],
+  },
+
+  '3.7': {
+    name: 'Rigid Bodies',
+    green: [
+      { q: 'The moment of a force about a point is measured in:', options: ['N m','N','m s⁻²','J'], answer: 0 }, // F13
+      { q: 'The moment of a force about a point equals:', options: ['Force × perpendicular distance from the point','Force × time','Force ÷ distance','Force + distance'], answer: 0 }, // F13
+      { q: 'A force of 12 N acts perpendicular to a rod, 0.5 m from the pivot. The moment about the pivot is:', options: ['6 N m','24 N m','12 N m','0.5 N m'], answer: 0 }, // F13
+      { q: 'A rigid body is in equilibrium when:', options: ['The resultant force is zero and the sum of the moments about any one point is zero','The resultant force is zero only','The sum of moments about the centre of mass is zero only','All forces act through a single point'], answer: 0 }, // F14
+      { q: 'A system of forces can have a turning effect on:', options: ['A rigid body','A particle only','A light string','A smooth surface'], answer: 0 }, // F15
+      { q: 'For the purpose of calculating its moment, the weight of a body acts through:', options: ['Its centre of mass','One end','The pivot','The point of application of the largest force'], answer: 0 }, // F16
+      { q: 'For a uniform rod, the centre of mass is at:', options: ['Its midpoint','One end','A quarter of the way along','The pivot'], answer: 0 }, // F16
+      { q: 'A force acting through the pivot has a moment about that pivot of:', options: ['Zero','Its full magnitude','Half its magnitude','Infinity'], answer: 0 }, // F13
+      { q: 'Moments are described as clockwise or anticlockwise because:', options: ['A turning effect has a sense of rotation','Forces are scalars','Distance has direction','Moments are always positive'], answer: 0 }, // F15
+      { q: 'A rigid body is one that:', options: ['Does not bend or deform','Has no mass','Is frictionless','Cannot rotate'], answer: 0 }, // F14
+      { q: 'A lamina is:', options: ['A flat body whose thickness is negligible','A rod','A light string','A particle'], answer: 0 }, // F13
+      { q: 'Increasing the perpendicular distance from the pivot, with the force unchanged:', options: ['Increases the moment','Decreases the moment','Leaves the moment unchanged','Reverses the moment'], answer: 0 }, // F13
+      { q: 'Although N m and J have the same base units, moment is quoted in:', options: ['N m, to distinguish it from energy','J','N','m'], answer: 0 }, // F13
+      { q: 'For a body in equilibrium, taking moments about a point gives:', options: ['Total clockwise moment equals total anticlockwise moment','Total moment equals the weight','Total moment equals mg','No information'], answer: 0 }, // F14
+      { q: 'In this specification, the forces considered in moments problems are:', options: ['Coplanar and perpendicular to the rod or edge','In three dimensions','Always parallel to the rod','Always at 45°'], answer: 0 }, // F13
+      { q: 'The bodies considered in this section are:', options: ['Rods and rectangular laminas, possibly non-uniform','Spheres only','Particles only','Any shape'], answer: 0 }, // F13
+      { q: 'A seesaw balances when:', options: ['The moments about the pivot are equal and opposite','The masses are equal','The distances are equal','The weights are zero'], answer: 0 }, // F14
+      { q: 'When taking moments, a sensible choice of pivot is a point:', options: ['Through which an unknown force acts, eliminating it','As far away as possible','At the centre of mass always','Outside the body'], answer: 0 }, // F14
+      { q: 'Equilibrium of a rigid body requires how many types of condition?', options: ['Two — forces and moments','One — forces only','One — moments only','Three'], answer: 0 }, // F14
+      { q: 'A force of 15 N acts perpendicular to a rod at 2 m from the pivot. Its moment is:', options: ['30 N m','7.5 N m','17 N m','13 N m'], answer: 0 }, // F13
+    ],
+    amber: [
+      { q: 'A light rod is pivoted at its centre. A 30 N weight hangs 2 m from the pivot on one side. A 40 N weight balances it at a distance of:', options: ['1.5 m','2.5 m','1.0 m','2.0 m'], answer: 0 }, // F14
+      { q: 'A uniform rod of weight 100 N and length 6 m rests on supports at its two ends. Each reaction is:', options: ['50 N','100 N','25 N','60 N'], answer: 0 }, // F16
+      { q: 'A uniform rod of length 2L has its weight acting at a distance from one end of:', options: ['L','2L','L/2','0'], answer: 0 }, // F16
+      { q: 'For a rigid body in equilibrium, the sum of the moments is zero about:', options: ['Any point you choose','The centre of mass only','A support only','The midpoint only'], answer: 0 }, // F14
+      { q: 'A uniform plank of weight 200 N and length 4 m rests on supports at each end, with a 100 N load at its midpoint. Each reaction is:', options: ['150 N','100 N','300 N','200 N'], answer: 0 }, // F14
+      { q: 'Taking moments about a support is useful because:', options: ['The reaction at that support has zero moment there','It doubles the moment','It removes the weight','It makes the body uniform'], answer: 0 }, // F14
+      { q: 'Two children of weights 300 N and 500 N sit on a seesaw pivoted at its centre. If the lighter sits 2 m from the pivot, the heavier must sit at:', options: ['1.2 m','1.5 m','3.33 m','2.0 m'], answer: 0 }, // F14
+      { q: 'For a non-uniform rod, the centre of mass:', options: ['Is not at the midpoint and must be given or found','Is always at the midpoint','Does not exist','Is at one end'], answer: 0 }, // F16
+      { q: 'A rod rests on two supports. The sum of the two reactions equals:', options: ['The total downward force on the rod','Half the weight','Twice the weight','Zero'], answer: 0 }, // F14
+      { q: 'A 40 N force acts perpendicular to a 3 m rod at its far end from the pivot. The moment is:', options: ['120 N m','13.3 N m','43 N m','37 N m'], answer: 0 }, // F13
+      { q: 'A uniform beam is supported at one end and held by a vertical force at the other. Taking moments about the supported end eliminates:', options: ['The reaction at that end','The weight','The applied force','Nothing'], answer: 0 }, // F14
+      { q: 'For a body in equilibrium under parallel vertical forces, resolving vertically gives:', options: ['Total upward force equals total downward force','Total moment equals zero','The centre of mass','The pivot position'], answer: 0 }, // F14
+      { q: 'Finding the centre of mass of a composite body is:', options: ['Excluded from this specification','Required at A Level','Required at AS Level','Required for laminas only'], answer: 0 }, // F16
+      { q: 'A vector treatment of moments is:', options: ['Excluded from this specification','Required for rods','Required for laminas','Required in three dimensions'], answer: 0 }, // F13
+      { q: 'In moments questions, the centre of mass may be found:', options: ['From symmetry, from the information given, or by taking moments','Only by integration','Only by experiment','Never'], answer: 0 }, // F16
+      { q: 'A uniform rectangular lamina has its centre of mass:', options: ['At the intersection of its diagonals','At one corner','At the midpoint of one edge','Outside the lamina'], answer: 0 }, // F16
+      { q: 'A rod pivoted at one end with a load at the other requires, to stay horizontal:', options: ['An additional force providing a balancing moment','No additional force','Zero weight','A smooth pivot only'], answer: 0 }, // F14
+      { q: 'Doubling both the force and its distance from the pivot changes the moment by a factor of:', options: ['4','2','1','1/2'], answer: 0 }, // F13
+      { q: 'A rigid body under a single non-zero force applied away from its centre of mass will:', options: ['Not be in equilibrium, since both the resultant force and the moment are non-zero','Be in equilibrium','Only translate','Only rotate'], answer: 0 }, // F14
+      { q: 'The reaction at a support becomes zero when the body:', options: ['Is on the point of tipping about the other support','Is uniform','Is horizontal','Has zero weight'], answer: 0 }, // F14
+    ],
+    red: [
+      { q: 'A non-uniform rod AB of length 4 m and weight 50 N rests horizontally on supports at A and B. The reaction at A is 20 N. The centre of mass is, from A:', options: ['2.4 m','1.6 m','2.0 m','2.5 m'], answer: 0 }, // F16
+      { q: 'A uniform plank of length 6 m and weight 300 N rests on supports 1 m from each end. A child of weight 200 N stands at one end. The reaction at the nearer support is:', options: ['400 N','250 N','150 N','350 N'], answer: 0 }, // F14
+      { q: 'A uniform rod of weight W and length 2a rests on a support at distance a/2 from one end. It will tip about that support unless:', options: ['An additional force provides a balancing moment','The rod is light','The support is smooth','The rod is vertical'], answer: 0 }, // F14
+      { q: 'A uniform beam of weight 400 N and length 8 m is supported at one end and at a point 6 m from that end. The reaction at the far support is closest to:', options: ['267 N','200 N','133 N','400 N'], answer: 0 }, // F14
+      { q: 'A rod is in equilibrium under three vertical forces. The number of independent equations available is:', options: ['Two — one resolving, one taking moments','One','Three','Four'], answer: 0 }, // F14
+      { q: 'A non-uniform rod of weight 80 N and length 5 m rests on supports at its ends, with reactions 30 N and 50 N. Its centre of mass is, from the 30 N end:', options: ['3.125 m','1.875 m','2.5 m','2.0 m'], answer: 0 }, // F16
+      { q: 'A plank overhangs a support. A person walking out along the overhang causes tipping when:', options: ['The anticlockwise moment about the support exceeds the clockwise moment','Their weight exceeds the plank\'s weight','The plank becomes non-uniform','The reaction doubles'], answer: 0 }, // F14
+      { q: 'Taking moments about two different points for a body in equilibrium gives:', options: ['Two valid equations, though they may not be independent of the resolving equation','Contradictory results','Only one equation','No information'], answer: 0 }, // F14
+      { q: 'A uniform rod of weight 60 N and length 4 m is hinged at A and held horizontal by a vertical string at B. The tension in the string is:', options: ['30 N','60 N','120 N','15 N'], answer: 0 }, // F14
+      { q: 'For that same rod, the vertical force at the hinge A is:', options: ['30 N upwards','60 N upwards','30 N downwards','Zero'], answer: 0 }, // F14
+    ],
+  },
+
 };
 
 if (typeof module !== 'undefined') { module.exports = MATHS_OCR_B_ALEVEL_QUESTIONS; }

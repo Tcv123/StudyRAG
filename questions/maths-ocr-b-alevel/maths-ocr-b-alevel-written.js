@@ -224,6 +224,90 @@ const MATHS_OCR_B_ALEVEL_WRITTEN = {
     ],
   },
 
+  '3.1': {
+    green: [
+      { q: 'Explain what is meant by modelling an object as a particle, and state one situation in which this assumption would be unreasonable.', marks: 3, marks_scheme: '1 mark: a particle has mass but negligible size. 1 mark: so all forces may be taken to act at a single point and rotation is ignored. 1 mark: any reasonable situation where size or rotation matters, e.g. a ladder leaning against a wall, or a spinning ball.' },
+    ],
+    amber: [
+      { q: 'A string in a pulley problem is described as "light and inextensible" and the pulley as "smooth". Explain what each of these three assumptions allows you to deduce.', marks: 4, marks_scheme: '1 mark: light means the string has negligible mass. 1 mark: so the tension is unchanged along its length. 1 mark: inextensible means the connected particles have accelerations of equal magnitude. 1 mark: smooth means there is no friction at the pulley, so the tension is the same on both sides.' },
+    ],
+    red: [
+      { q: 'A speed is quoted as 36 km h⁻¹. Convert it to SI base units, showing your working, and state the SI unit of force in terms of base units.', marks: 4, marks_scheme: '1 mark: 36 km = 36000 m and 1 hour = 3600 s. 1 mark: divide to obtain 36000/3600. 1 mark: speed = 10 m s⁻¹. 1 mark: the newton is equivalent to kg m s⁻².' },
+    ],
+  },
+
+  '3.2': {
+    green: [
+      { q: 'A particle starts from rest and accelerates uniformly at 2 m s⁻² for 5 s. Find its final velocity and the distance travelled.', marks: 4, marks_scheme: '1 mark: use v = u + at with u = 0. 1 mark: v = 10 m s⁻¹. 1 mark: use s = ut + ½at². 1 mark: s = 25 m.' },
+    ],
+    amber: [
+      { q: 'A car travelling at 20 m s⁻¹ decelerates uniformly at 4 m s⁻² until it stops. Find the time taken and the distance travelled.', marks: 4, marks_scheme: '1 mark: use v = u + at with v = 0, u = 20, a = −4. 1 mark: t = 5 s. 1 mark: use s = ½(u + v)t or v² = u² + 2as. 1 mark: s = 50 m.' },
+    ],
+    red: [
+      { q: 'A particle moves so that its displacement from the origin is s = t³ − 6t² + 9t metres at time t seconds. Find the times at which it is instantaneously at rest, and the total distance travelled between t = 0 and t = 4.', marks: 6, marks_scheme: '1 mark: differentiate to get v = 3t² − 12t + 9. 1 mark: set v = 0 and factorise to 3(t − 1)(t − 3) = 0. 1 mark: at rest at t = 1 and t = 3. 1 mark: evaluate s at t = 0, 1, 3, 4 giving 0, 4, 0, 4. 1 mark: recognise the direction reverses, so add the magnitudes 4 + 4 + 4. 1 mark: total distance = 12 m (note the displacement is only 4 m).' },
+    ],
+  },
+
+  '3.3': {
+    green: [
+      { q: 'A particle has position vector r = 3t i + t² j. Find its velocity and its speed when t = 2.', marks: 4, marks_scheme: '1 mark: differentiate to get v = 3i + 2t j. 1 mark: at t = 2, v = 3i + 4j. 1 mark: speed = √(3² + 4²). 1 mark: speed = 5.' },
+    ],
+    amber: [
+      { q: 'A particle has position vector r = 2t i + (t² − 1) j. Find the Cartesian equation of its path and describe the curve.', marks: 4, marks_scheme: '1 mark: write x = 2t and y = t² − 1. 1 mark: rearrange to t = x/2. 1 mark: substitute to give y = x²/4 − 1. 1 mark: describe as a parabola.' },
+    ],
+    red: [
+      { q: 'Particle A has position vector (t + 1)i + 2t j and particle B has position vector (3t − 1)i + (t + 1)j. Show that they collide, and state the time and position of the collision.', marks: 5, marks_scheme: '1 mark: equate the i-components, t + 1 = 3t − 1. 1 mark: solve to give t = 1. 1 mark: equate the j-components, 2t = t + 1, also giving t = 1. 1 mark: state that both components agree at the same time, so a collision occurs at t = 1. 1 mark: substitute to find the position 2i + 2j.' },
+    ],
+  },
+
+  '3.4': {
+    green: [
+      { q: 'State three standard modelling assumptions used for projectile motion.', marks: 3, marks_scheme: '1 mark: there is no air resistance. 1 mark: the projectile is modelled as a particle. 1 mark: gravity is constant in magnitude and always acts in the same direction (accept either as the third).' },
+    ],
+    amber: [
+      { q: 'A ball is projected at 20 m s⁻¹ at 30° above the horizontal from level ground. Taking g = 9.8, find the maximum height reached and the time of flight.', marks: 5, marks_scheme: '1 mark: vertical component of initial velocity = 20 sin 30° = 10 m s⁻¹. 1 mark: at maximum height the vertical velocity is zero, so use v² = u² + 2as. 1 mark: maximum height = 10²/(2 × 9.8) = 5.10 m (3 s.f.). 1 mark: time of flight = 2u sin θ/g. 1 mark: time of flight = 20/9.8 = 2.04 s (3 s.f.).' },
+    ],
+    red: [
+      { q: 'A projectile is launched from the origin at speed u and angle θ. Derive the Cartesian equation of its path, and hence explain why the path is a parabola.', marks: 6, marks_scheme: '1 mark: horizontal displacement x = u cos θ · t. 1 mark: vertical displacement y = u sin θ · t − ½gt². 1 mark: rearrange the first to t = x/(u cos θ). 1 mark: substitute into the second. 1 mark: obtain y = x tan θ − gx²/(2u² cos²θ). 1 mark: this is a quadratic in x with a negative x² coefficient, so the path is a parabola.' },
+    ],
+  },
+
+  '3.5': {
+    green: [
+      { q: 'A block of mass 5 kg rests on a rough horizontal surface with coefficient of friction 0.4. Taking g = 9.8, find the normal reaction and the maximum possible frictional force.', marks: 4, marks_scheme: '1 mark: resolve vertically, R = mg. 1 mark: R = 49 N. 1 mark: maximum friction = μR. 1 mark: maximum friction = 0.4 × 49 = 19.6 N.' },
+    ],
+    amber: [
+      { q: 'A 10 kg block rests on a plane inclined at 30° to the horizontal. Taking g = 9.8, find the components of its weight parallel and perpendicular to the plane.', marks: 4, marks_scheme: '1 mark: weight = 10 × 9.8 = 98 N. 1 mark: component parallel to the plane = 98 sin 30°. 1 mark: parallel component = 49 N. 1 mark: perpendicular component = 98 cos 30° = 84.9 N (3 s.f.).' },
+    ],
+    red: [
+      { q: 'A block rests on a rough plane inclined at angle θ with coefficient of friction μ. Show that it remains at rest provided tan θ ≤ μ.', marks: 5, marks_scheme: '1 mark: resolve perpendicular to the plane, R = mg cos θ. 1 mark: resolve parallel to the plane, the component tending to move the block is mg sin θ. 1 mark: for equilibrium this must not exceed limiting friction, so mg sin θ ≤ μR. 1 mark: substitute R to give mg sin θ ≤ μ mg cos θ. 1 mark: divide by mg cos θ (positive for 0 < θ < 90°) to obtain tan θ ≤ μ.' },
+    ],
+  },
+
+  '3.6': {
+    green: [
+      { q: "State Newton's three laws of motion.", marks: 3, marks_scheme: '1 mark: an object continues at rest or in uniform motion in a straight line unless acted on by a resultant force. 1 mark: a resultant force F on an object of fixed mass m gives acceleration a with F = ma. 1 mark: when one object exerts a force on another, there is a reaction equal in magnitude and opposite in direction.' },
+    ],
+    amber: [
+      { q: 'A car of mass 1000 kg has a driving force of 3000 N and experiences a resistance of 1000 N. Find its acceleration.', marks: 3, marks_scheme: '1 mark: resultant force = 3000 − 1000. 1 mark: resultant = 2000 N. 1 mark: apply F = ma to give a = 2000/1000 = 2 m s⁻².' },
+    ],
+    red: [
+      { q: 'Masses of 5 kg and 3 kg hang from the ends of a light inextensible string passing over a smooth pulley. Taking g = 9.8, find the acceleration of the system and the tension in the string.', marks: 6, marks_scheme: '1 mark: equation of motion for the 5 kg mass, 5g − T = 5a. 1 mark: equation of motion for the 3 kg mass, T − 3g = 3a. 1 mark: add the equations to eliminate T, giving 2g = 8a. 1 mark: a = 2.45 m s⁻². 1 mark: substitute back into either equation. 1 mark: T = 3(9.8 + 2.45) = 36.75 N.' },
+    ],
+  },
+
+  '3.7': {
+    green: [
+      { q: 'A force of 12 N acts perpendicular to a rod at a point 0.5 m from a pivot. Find the moment of the force about the pivot, stating the units.', marks: 2, marks_scheme: '1 mark: moment = force × perpendicular distance = 12 × 0.5. 1 mark: moment = 6 N m.' },
+    ],
+    amber: [
+      { q: 'A uniform plank of weight 200 N and length 4 m rests horizontally on supports at each end, with a load of 100 N at its midpoint. Find the reaction at each support.', marks: 4, marks_scheme: '1 mark: state that by symmetry the two reactions are equal. 1 mark: resolve vertically, R₁ + R₂ = 200 + 100 = 300. 1 mark: so each reaction is 150 N. 1 mark: confirm by taking moments about one support, which gives the same result.' },
+    ],
+    red: [
+      { q: 'A non-uniform rod AB of length 4 m and weight 50 N rests horizontally on supports at A and B. The reaction at A is 20 N. Find the distance of the centre of mass from A.', marks: 5, marks_scheme: '1 mark: resolve vertically, R_A + R_B = 50. 1 mark: R_B = 30 N. 1 mark: take moments about A, letting the centre of mass be x from A. 1 mark: 50x = 30 × 4 = 120. 1 mark: x = 2.4 m from A.' },
+    ],
+  },
+
 };
 
 if (typeof module !== 'undefined') { module.exports = MATHS_OCR_B_ALEVEL_WRITTEN; }
