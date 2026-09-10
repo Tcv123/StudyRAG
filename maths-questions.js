@@ -3,6 +3,565 @@
 // Merged into each paper in mark-schemes.html at selection time.
 // Key: paperId (from papers-config.js).
 window.MATHS_QUESTIONS = {
+ "math-ocr-h640-2025-p1": {
+ "questions": [
+  {
+   "number": 1,
+   "parts": [
+    {
+     "code": "1(a)",
+     "prompt": "Sketch the function y = |2x − 3|.",
+     "marks": 2
+    },
+    {
+     "code": "1(b)",
+     "prompt": "In this question you must show detailed reasoning. Solve the equation |2x − 3| = 4 − x.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "parts": [
+    {
+     "code": "2",
+     "prompt": "Express (7x − 25)/((x − 1)(x − 4)²) in partial fractions.",
+     "marks": 4
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "parts": [
+    {
+     "code": "3(a)",
+     "prompt": "Evaluate the sum of 1/r from r = 1 to 4, giving your answer as a fraction in its lowest terms.",
+     "marks": 1
+    },
+    {
+     "code": "3(b)",
+     "prompt": "Write the sum 1 + 3 + 5 + 7 + 9 in a similar way to the series in part (a).",
+     "marks": 2
+    },
+    {
+     "code": "3(c)",
+     "prompt": "Explain why the sum to infinity of 1 + 3 + 5 + 7 + 9 + … is not well defined.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "scenario": "The diagram shows part of a circle with centre O and radius 5 cm, passing through A and B. The length AB is 5 cm. The shaded region is the major sector.",
+   "parts": [
+    {
+     "code": "4",
+     "prompt": "Calculate the area of the shaded region.",
+     "marks": 4
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "scenario": "A uniform rectangular lamina ABCD has mass 0.12 kg, with AB = 11 cm and AD = 20 cm. It is held by a smooth hinge at A. A horizontal force of magnitude P N is applied at B so that the lamina is in equilibrium in a vertical plane with AD horizontal.",
+   "parts": [
+    {
+     "code": "5",
+     "prompt": "Show that P is 1.07 to 3 significant figures.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "scenario": "A car travels along a straight horizontal road. Its velocity-time graph joins (0, 3) to (5, 3) and then (5, 3) to (15, −2). The car is later attached to a caravan by a light inextensible horizontal tow bar. The car and caravan accelerate at 1.5 m s⁻², the masses are 1400 kg and 900 kg, the driving force on the car is D N, the tension in the tow bar is T N, and the resistances are 400 N and 450 N respectively.",
+   "parts": [
+    {
+     "code": "6(a)",
+     "prompt": "Calculate the total distance travelled by the car in the first 15 s.",
+     "marks": 3
+    },
+    {
+     "code": "6(b)",
+     "prompt": "Write down the equations of motion for the car and the caravan separately.",
+     "marks": 2
+    },
+    {
+     "code": "6(c)",
+     "prompt": "Calculate the values of D and T.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "parts": [
+    {
+     "code": "7",
+     "prompt": "In this question you must show detailed reasoning. Show that the area of the finite region enclosed by the curves y = x² − 7x + 2 and y = 14 − 9x − x² is 125/3.",
+     "marks": 7
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "parts": [
+    {
+     "code": "8(a)",
+     "prompt": "Determine the two values of k for which the line y = 3x + 5 is a tangent to the curve y = k − kx − x².",
+     "marks": 4
+    },
+    {
+     "code": "8(b)",
+     "prompt": "These values of k define two curves of the form y = k − kx − x². Determine the coordinates of the point of intersection of these two curves.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "scenario": "A student models the orbital period of four of Jupiter's moons using T = k dⁿ, where T is the orbital period in Earth days and d is the semi-major axis in km. Plotting log₁₀T against log₁₀d gives a line of best fit with gradient 1.504 and intercept −8.215 on the log₁₀T axis.",
+   "parts": [
+    {
+     "code": "9(a)",
+     "prompt": "Show that the equation T = k dⁿ can be rewritten in the form log₁₀T = log₁₀k + n log₁₀d.",
+     "marks": 1
+    },
+    {
+     "code": "9(b)",
+     "prompt": "Determine values of k and n that are consistent with this information.",
+     "marks": 3
+    },
+    {
+     "code": "9(c)",
+     "prompt": "The student predicts the orbital period for the moon Thebe, which has semi-major axis 221900 km. An encyclopedia gives 0.6761 Earth days. Comment on the suitability of the student's equation to model the orbital period of Thebe.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "scenario": "The diagram shows part of the graph of y = e^(x²)/(x + 1), defined for x > −1.",
+   "parts": [
+    {
+     "code": "10(a)",
+     "prompt": "Find an expression for dy/dx.",
+     "marks": 3
+    },
+    {
+     "code": "10(b)",
+     "prompt": "Determine the range of values of x where the gradient of the function is negative.",
+     "marks": 3
+    },
+    {
+     "code": "10(c)",
+     "prompt": "Use the trapezium rule with 4 strips to estimate the area of the region bounded by the curve, the axes and the line x = 1.",
+     "marks": 3
+    },
+    {
+     "code": "10(d)",
+     "prompt": "Determine whether the estimate in part (c) is an under- or over-estimate. Give a reason for your answer.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "scenario": "A curve is defined implicitly by (2x + y)(y − 1) = 6.",
+   "parts": [
+    {
+     "code": "11(a)",
+     "prompt": "Show that dy/dx = 2(1 − y)/(2y + 2x − 1).",
+     "marks": 4
+    },
+    {
+     "code": "11(b)",
+     "prompt": "Find the equation of the normal to the curve at the point (2, 2).",
+     "marks": 3
+    },
+    {
+     "code": "11(c)",
+     "prompt": "Show that there is no point on the curve at which the tangent is parallel to the x-axis.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "scenario": "In this question x and y are the horizontal and upwards vertical directions respectively. An astronaut on the moon explores the motion of a ball.",
+   "parts": [
+    {
+     "code": "12(a)",
+     "prompt": "The astronaut drops a ball from rest from 1 m above the surface. It takes 1.1 s to hit the surface. Calculate the value of the acceleration due to the moon's gravity, correct to 3 significant figures.",
+     "marks": 2
+    },
+    {
+     "code": "12(b)",
+     "prompt": "The astronaut hits the ball from the surface with initial velocity 25 m s⁻¹ at 40° above the horizontal. Taking the origin as the point of projection, determine the equation of the trajectory in the form y = f(x), with each coefficient correct to 3 significant figures.",
+     "marks": 4
+    },
+    {
+     "code": "12(c)",
+     "prompt": "The edge of the crater is 40 m away horizontally and 15 m above the point of projection. Determine whether the ball goes over the crater's edge.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "scenario": "The displacement r m of a parachutist t s after opening their parachute is modelled by r = (50t, 280 + 5t − 280e^(−0.16t)), where the x-direction is horizontal and the y-direction is vertically downwards.",
+   "parts": [
+    {
+     "code": "13(a)",
+     "prompt": "Calculate the distance from the parachutist's initial position that the model predicts after 10 s.",
+     "marks": 3
+    },
+    {
+     "code": "13(b)",
+     "prompt": "Find a vector expression for the velocity of the parachutist according to the model.",
+     "marks": 3
+    },
+    {
+     "code": "13(c)",
+     "prompt": "Determine what velocity the model predicts for large values of t.",
+     "marks": 2
+    },
+    {
+     "code": "13(d)",
+     "prompt": "Parachutists usually land travelling approximately vertically. Explain a factor that should be included in the model to better reflect this.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "scenario": "In this question the i and j vectors are horizontal and vertically upward respectively. A particle of mass 5 kg is at rest on a rough horizontal shelf, with coefficient of friction μ between the particle and the shelf.",
+   "parts": [
+    {
+     "code": "14(a)",
+     "prompt": "A force P = 9i + 20j N acts on the particle, which is on the point of sliding along the shelf. Determine the value of μ.",
+     "marks": 5
+    },
+    {
+     "code": "14(b)",
+     "prompt": "The force P is removed and one end of the shelf is lifted so that it is inclined at α° to the horizontal. The particle is on the point of sliding down the shelf. Show that α = 17.2 to 3 significant figures.",
+     "marks": 4
+    },
+    {
+     "code": "14(c)",
+     "prompt": "The particle is projected up the shelf with an initial speed of 5 m s⁻¹. Given that it remains in contact with the shelf, determine the time after projection at which the particle first comes to rest.",
+     "marks": 6
+    }
+   ]
+  }
+ ],
+ "markSchemes": {
+  "1(a)": {
+   "type": "points",
+   "points": [
+    "V-shaped graph, approximately symmetric about a vertical mirror line, drawn for positive and negative x",
+    "Single vertex at (1.5, 0), with (0, 3) seen"
+   ],
+   "guidance": "B1 for the V shape, which must cover positive and negative values of x. B1 for the vertex and the y-intercept."
+  },
+  "1(b)": {
+   "type": "points",
+   "points": [
+    "Two correct linear equations: 2x − 3 = 4 − x and 2x − 3 = −(4 − x)",
+    "Attempt to solve at least one, for example 3x = 7",
+    "x = 7/3 or x = −1, both values seen"
+   ],
+   "guidance": "B1 for the two equations equating 2x − 3 to ±(4 − x). M1 attempts to solve at least one equation. A1 both values seen. Alternatively square both sides to give 3x² − 4x − 7 = 0 and solve."
+  },
+  "2": {
+   "type": "points",
+   "points": [
+    "Set up A/(x − 1) + B/(x − 4) + C/(x − 4)² — the repeated factor needs two terms",
+    "Clear the denominator: 7x − 25 = A(x − 4)² + B(x − 1)(x − 4) + C(x − 1)",
+    "Substitute x = 4 to give C = 1, and x = 1 to give A = −2",
+    "Equate coefficients of x² to give B = 2, so the answer is −2/(x − 1) + 2/(x − 4) + 1/(x − 4)²"
+   ],
+   "guidance": "M1 sets up partial fractions of the correct form. M1 clears the denominator for their form with at least two fractions; not dependent on the first M1. M1 uses at least one value of x leading to a constant; allow equating coefficients instead. A1 the fully correct expression must be seen. If the form A/(x−1) + (Bx+C)/(x−4)² is used, award M0 then up to M1 M1 and SC B1."
+  },
+  "3(a)": {
+   "type": "exact",
+   "points": [
+    "1 + 1/2 + 1/3 + 1/4 = 25/12"
+   ],
+   "guidance": "B1 must be in lowest terms; allow 2 1/12."
+  },
+  "3(b)": {
+   "type": "points",
+   "points": [
+    "The sum of (2r − 1) from r = 1 to 5, or the sum of (2r + 1) from r = 0 to 4",
+    "Correct limits shown in sigma notation, with brackets"
+   ],
+   "guidance": "M1 correct function to generate odd numbers; condone missing brackets. A1 correct limits using sigma notation, brackets must be seen."
+  },
+  "3(c)": {
+   "type": "points",
+   "points": [
+    "The series is increasing, so the sequence of partial sums diverges and there is no well-defined sum to infinity"
+   ],
+   "guidance": "B1 explains that the sum gets bigger the more terms are added, so the sum to infinity is not a number. Allow 'it is a divergent sequence' or 'the sequence is not convergent'. Do not allow merely 'it is constantly increasing' or 'it is an arithmetic sequence'."
+  },
+  "4": {
+   "type": "points",
+   "points": [
+    "Triangle OAB is equilateral, so angle AOB = π/3",
+    "Angle in the major sector is 2π − π/3 = 5π/3",
+    "Area of major sector = ½r²θ = ½ × 5² × 5π/3",
+    "Area = 125π/6 = 65.4 cm² (3 s.f.)"
+   ],
+   "guidance": "B1 for the angle, which may be implied by 1/6 or 5/6 seen. M1 uses their angle AOB to find the major sector angle. M1 uses the sector formula with their θ. A1 accept awrt 65.4 or 65.5. Alternatively find the minor sector area 25π/6 and subtract from 25π."
+  },
+  "5": {
+   "type": "points",
+   "points": [
+    "Take moments about A: 0.1 × 0.12g = 0.11P",
+    "Correct moment of the weight about A, using half of AD = 0.1 m",
+    "P = 1.0691 = 1.07 (3 s.f.)"
+   ],
+   "guidance": "M1 attempt to calculate a moment of at least one force about any point; do not award for oblique distances used without resolving. A1 correct moment of the weight about A. A1 AG — 1.07 obtained from a correct total moment equation. Allow full credit for taking moments about another point where the correct force at the hinge is seen."
+  },
+  "6(a)": {
+   "type": "points",
+   "points": [
+    "v = 0 when t = 11 s",
+    "Distance = 5 × 3 + ½ × 6 × 3 + ½ × 4 × 2, taking the area below the axis as positive",
+    "Total distance = 15 + 9 + 4 = 28 m"
+   ],
+   "guidance": "B1 for t = 11, which may be implied by t = 6 used in a suvat equation. M1 attempt to find the area between the graph and the t-axis; allow ±2 for the height of the triangle below the axis. A1 cao."
+  },
+  "6(b)": {
+   "type": "points",
+   "points": [
+    "Car: D − T − 400 = 1400 × 1.5",
+    "Caravan: T − 450 = 900 × 1.5"
+   ],
+   "guidance": "B1 B1. No extra forces; allow a used for 1.5, in any form."
+  },
+  "6(c)": {
+   "type": "points",
+   "points": [
+    "From the caravan equation, T = 1350 + 450 = 1800",
+    "Add the equations, or use the whole system: D − 850 = 2300 × 1.5",
+    "D = 4300"
+   ],
+   "guidance": "B1 cao for T. M1 solving their equations leading to a value for D; allow the whole-system equation. A1 cao for D."
+  },
+  "7": {
+   "type": "points",
+   "points": [
+    "Eliminate y: x² − 7x + 2 = 14 − 9x − x²",
+    "2x² + 2x − 12 = 0, factorising to (x + 3)(x − 2) = 0",
+    "x = −3 and x = 2",
+    "Integrate the difference: the integral from −3 to 2 of (12 − 2x − 2x²) dx",
+    "Correct indefinite integral 12x − x² − 2x³/3",
+    "Substitute the limits and subtract",
+    "Area = 125/3"
+   ],
+   "guidance": "M1 attempt to eliminate y. B1 correct three-term quadratic or factors. A1 both values. M1* attempts to integrate either function or their difference; allow a sign error or interchanged limits. A1 correct indefinite integral. M1(dep) substitution of their limits and subtraction seen. A1 AG from fully correct working; allow if −125/3 is found and the sign change is justified."
+  },
+  "8(a)": {
+   "type": "points",
+   "points": [
+    "Set 3x + 5 = k − kx − x² and solve simultaneously",
+    "Collect terms: x² + x(k + 3) + (5 − k) = 0",
+    "Tangency means equal roots, so the discriminant is zero: (k + 3)² − 4(5 − k) = 0",
+    "k² + 10k − 11 = 0, giving k = −11 and k = 1"
+   ],
+   "guidance": "M1 attempts to solve simultaneously. M1 collects terms and must see = 0; may be implied by a correct discriminant. M1 forms the discriminant of their equation and equates to zero. A1 cao. Alternatively use dy/dx = −k − 2x = 3 at the point of contact and form a quadratic in k or in x."
+  },
+  "8(b)": {
+   "type": "points",
+   "points": [
+    "Set the two curves equal: −11 + 11x − x² = 1 − x − x²",
+    "x = 1",
+    "Point of intersection (1, −1)"
+   ],
+   "guidance": "M1 uses their values of k and attempts to solve simultaneously. A1 for x. A1 for the coordinates. Note that any values of k give the same point of intersection, which still earns full credit."
+  },
+  "9(a)": {
+   "type": "points",
+   "points": [
+    "log₁₀T = log₁₀k + log₁₀dⁿ, which simplifies to log₁₀T = log₁₀k + n log₁₀d"
+   ],
+   "guidance": "B1 uses the laws of logarithms to split into two terms and then simplify the second. This line must be seen. AG."
+  },
+  "9(b)": {
+   "type": "points",
+   "points": [
+    "The gradient gives n = 1.504",
+    "The intercept gives log₁₀k = −8.215",
+    "k = 10^(−8.215) = 6.10 × 10⁻⁹"
+   ],
+   "guidance": "B1 allow n = 1.5 or better. M1 for the intercept relationship, seen or implied. A1 allow awrt 6.1 × 10⁻⁹. If two data points from the table are used instead, award SC1 for n and SC1 for k in the range 5.159 × 10⁻⁹ to 7.076 × 10⁻⁹."
+  },
+  "9(c)": {
+   "type": "points",
+   "points": [
+    "Using the model with d = 221900 predicts T = 0.669 Earth days",
+    "This is close to the given value of 0.6761, which suggests the model is suitable"
+   ],
+   "guidance": "M1 uses the model to predict. A1FT an appropriate comment based on the similarity of their correct value and the given value; follow through their k. Do not accept a comment implying the model should give an exact match. Alternatively compare log values."
+  },
+  "10(a)": {
+   "type": "points",
+   "points": [
+    "d/dx of e^(x²) is 2x e^(x²)",
+    "Apply the quotient rule with u = e^(x²) and v = x + 1",
+    "dy/dx = e^(x²)(2x² + 2x − 1)/(x + 1)²"
+   ],
+   "guidance": "B1 correct derivative of e^(x²) seen. M1 uses the quotient rule with their du/dx and dv/dx. A1 fully correct, in any form. Also allow the product rule with (x + 1)⁻¹."
+  },
+  "10(b)": {
+   "type": "points",
+   "points": [
+    "The gradient is negative when 2x² + 2x − 1 < 0, since the denominator and e^(x²) are always positive",
+    "The critical value (−1 + √3)/2 = 0.366 seen",
+    "−1 < x < (−1 + √3)/2"
+   ],
+   "guidance": "M1 simplifies the problem to a quadratic inequality, following through their dy/dx. B1 for the critical value. A1 or equivalent; do not allow ⩽ in the final answer. Note the lower bound comes from the domain x > −1."
+  },
+  "10(c)": {
+   "type": "points",
+   "points": [
+    "Ordinates at x = 0, 0.25, 0.5, 0.75, 1 are 1, 0.851596, 0.856017, 1.002888, 1.359141",
+    "Total f(0) + 2(f(0.25) + f(0.5) + f(0.75)) + f(1) = 7.78014",
+    "Area ≈ ½ × 0.25 × 7.78014 = 0.9725"
+   ],
+   "guidance": "M1 uses five values with the correct x-values in an attempt at the trapezium rule; also allow the total area of four separate trapezia. B1 for h/2 = 0.125, seen or implied. A1 for the value."
+  },
+  "10(d)": {
+   "type": "points",
+   "points": [
+    "An over-estimate, because the curve is concave upwards so each chord lies above it"
+   ],
+   "guidance": "B1. Also allow an explanation involving the extra area under the chord that is not in the region — for example 'the trapezia go over the curve'. Note that 'because the curve is convex' alone scores B0, as does 'there are gaps between the trapezia and the graph'."
+  },
+  "11(a)": {
+   "type": "points",
+   "points": [
+    "Differentiate both sides, with the right-hand side zero",
+    "Use the product rule on the left: (2 + dy/dx)(y − 1) + (2x + y)(dy/dx) = 0",
+    "Collect terms: (2y + 2x − 1)(dy/dx) + 2y − 2 = 0",
+    "dy/dx = 2(1 − y)/(2y + 2x − 1)"
+   ],
+   "guidance": "M1 attempt to differentiate both sides, with RHS = 0 seen or implied. M1 attempt to use the product rule on the left; not dependent on the first M1. M1 collects terms; independent of the previous M marks. A1 convincing argument including RHS = 0 seen. AG."
+  },
+  "11(b)": {
+   "type": "points",
+   "points": [
+    "At (2, 2), dy/dx = 2(1 − 2)/(4 + 4 − 1) = −2/7",
+    "The gradient of the normal is 7/2",
+    "y − 2 = (7/2)(x − 2), that is y = 3.5x − 5"
+   ],
+   "guidance": "B1 for the gradient, seen or implied. B1FT for the normal gradient, following through their dy/dx. B1 for the equation in any form."
+  },
+  "11(c)": {
+   "type": "points",
+   "points": [
+    "A tangent parallel to the x-axis needs dy/dx = 0, so 2(1 − y) = 0",
+    "y = 1",
+    "But then (y − 1) = 0, so the equation gives 0 = 6, which is impossible"
+   ],
+   "guidance": "M1 equates dy/dx to zero and attempts to solve; award if 2 − 2y = 0 is seen. B1 for y = 1. A1 clear evidence that this is impossible, for example 0 ≠ 6 seen."
+  },
+  "12(a)": {
+   "type": "points",
+   "points": [
+    "Use s = ut + ½at² with s = −1, u = 0 and t = 1.1",
+    "a = −1.65 m s⁻² (3 s.f.)"
+   ],
+   "guidance": "M1 allow sign errors. A1 must be to 3 s.f.; allow a = 1.65."
+  },
+  "12(b)": {
+   "type": "points",
+   "points": [
+    "Horizontal: x = 25 cos 40° × t, so t = x/(25 cos 40°)",
+    "Vertical: y = 25 sin 40° × t + ½at², using the moon's value of a",
+    "Substitute the expression for t into the vertical equation",
+    "y = 0.839x − 0.00225x²"
+   ],
+   "guidance": "B1 for the horizontal equation or equivalent. M1 forms the equation of motion in the vertical direction; do not allow if g = 9.8 is used here or later. M1 substitutes the expression for t. A1 cao, with coefficients to 3 s.f."
+  },
+  "12(c)": {
+   "type": "points",
+   "points": [
+    "When x = 40, y = 30.0 which is greater than 15",
+    "So the ball goes over the crater's edge"
+   ],
+   "guidance": "M1 uses their model with x = 40; 29.72 if fully exact values are used. A1 conclusion based on correct working, with no follow through from a wrong part (b). Alternatively solve y = 15 to give x = 18.8 and 354, and note that 40 lies between them."
+  },
+  "13(a)": {
+   "type": "points",
+   "points": [
+    "At t = 10, r = (500, 280 + 50 − 280e^(−1.6))",
+    "The vertical component is 273.47, so use Pythagoras on 500 and 273.47",
+    "Distance = 569.9 m"
+   ],
+   "guidance": "M1 finds the displacement as a vector or as two separate components. M1 Pythagoras used. A1 must be a scalar answer."
+  },
+  "13(b)": {
+   "type": "points",
+   "points": [
+    "Differentiate each component with respect to t",
+    "The horizontal component of velocity is 50",
+    "v = (50, 5 + 44.8e^(−0.16t))"
+   ],
+   "guidance": "M1 attempt to differentiate at least one component. A1 one correct component. A1 both correct components given as a vector."
+  },
+  "13(c)": {
+   "type": "points",
+   "points": [
+    "For large t, e^(−0.16t) tends to 0",
+    "So the velocity tends to (50, 5)"
+   ],
+   "guidance": "B1 either value seen. B1 allow a vector, or both components with the horizontal and vertical clearly identified. Do not allow if the final answer is a scalar."
+  },
+  "13(d)": {
+   "type": "points",
+   "points": [
+    "The model should include a resistance acting in the horizontal direction, so that the horizontal velocity decays to zero"
+   ],
+   "guidance": "B1 must indicate that the resistance has a horizontal component. Do not accept 'air resistance' on its own. SC1 for 'a factor e^(−kt) should be included' or similar."
+  },
+  "14(a)": {
+   "type": "points",
+   "points": [
+    "Horizontal component gives the friction F = 9",
+    "Resolve vertically: R − 5g + 20 = 0",
+    "R = 5g − 20 = 29",
+    "On the point of sliding, F = μR",
+    "μ = 9/29 = 0.310 (3 s.f.)"
+   ],
+   "guidance": "B1 for F = 9, seen or implied. M1 vertical equation involving the weight and the 20, but not the 9; allow sign errors. A1 correct equation for R. M1 uses their F and R to evaluate μ. A1FT following their R and F; the final answer must be positive."
+  },
+  "14(b)": {
+   "type": "points",
+   "points": [
+    "Resolve perpendicular to the slope: R₁ = 5g cos α",
+    "Resolve parallel to the slope: F₁ = 5g sin α",
+    "On the point of sliding, F₁ = μR₁ so tan α = μ = 9/29",
+    "α = arctan(9/29) = 17.2° (3 s.f.)"
+   ],
+   "guidance": "B1 B1 for the two resolutions; allow sin/cos interchange if consistent. M1 allow for a fraction simplifying to 0.310 or better, following through their μ. A1 AG — must follow from μ correctly calculated in part (a)."
+  },
+  "14(c)": {
+   "type": "points",
+   "points": [
+    "Correct weight term along the slope: 5g sin 17.2°",
+    "Friction term μ × 5g cos 17.2°, acting down the slope as the particle moves up",
+    "Newton's second law up the slope: −(5g sin 17.2° + μ5g cos 17.2°) = 5a",
+    "a = −5.81 m s⁻²",
+    "Use v = u + at with v = 0 and u = 5",
+    "t = 0.862 s"
+   ],
+   "guidance": "B1 correct weight term. B1FT friction term, following through their μ. M1 formulates the equation of motion with their weight; allow sign errors and no extra forces. A1 for the acceleration. M1 suvat equation leading to a value for t. A1FT following their acceleration; using α = arctan(9/29) exactly gives 0.8607."
+  }
+ }
+},
  "math-ocr-h640-2024-p3": {
  "questions": [
   {
