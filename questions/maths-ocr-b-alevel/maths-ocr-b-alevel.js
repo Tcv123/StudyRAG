@@ -791,6 +791,306 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
   },
 
+  '2.1': {
+    name: 'Sampling',
+    green: [
+      { q: 'A population in statistics means:', options: ['The entire group being studied','Only the people in a country','A sample of 100','The largest subgroup'], answer: 0 }, // p21
+      { q: 'A sample is:', options: ['A subset of the population','The whole population','A summary statistic','A biased group'], answer: 0 }, // p21
+      { q: 'In simple random sampling:', options: ['Every sample of the required size is equally likely to be selected','The first items in a list are chosen','Groups are sampled whole','Volunteers come forward'], answer: 0 }, // p23
+      { q: 'Opportunity sampling means selecting:', options: ['Whoever is conveniently available','Every kth member of a list','Proportionally from subgroups','Whole clusters at random'], answer: 0 }, // p24
+      { q: 'Systematic sampling means selecting:', options: ['Every kth member from an ordered list','Whoever is available','Volunteers','Whole groups'], answer: 0 }, // p24
+      { q: 'Stratified sampling means:', options: ['Sampling each subgroup in proportion to its size in the population','Sampling only one subgroup','Choosing volunteers','Choosing every kth item'], answer: 0 }, // p24
+      { q: 'Quota sampling means:', options: ['Selecting until a set number from each category is reached','Selecting randomly from a list','Sampling whole clusters','Using a census'], answer: 0 }, // p24
+      { q: 'Cluster sampling means:', options: ['Dividing the population into groups and sampling whole groups','Sampling every kth item','Sampling proportionally by subgroup','Asking for volunteers'], answer: 0 }, // p24
+      { q: 'A self-selected sample consists of:', options: ['Those who choose to take part','Those chosen at random','Every kth person','A stratified subset'], answer: 0 }, // p24
+      { q: 'A census collects data from:', options: ['The whole population','A random sample','A single cluster','Volunteers only'], answer: 0 }, // p21
+      { q: 'A sample mean is often used as:', options: ['An estimate of the population mean','The exact population mean','A measure of spread','A significance level'], answer: 0 }, // p22
+      { q: 'Bias in sampling means:', options: ['The sampling method systematically favours certain outcomes','The sample is small','The data are continuous','The mean is large'], answer: 0 }, // p25
+      { q: 'Two different samples from the same population:', options: ['May lead to different conclusions','Must give identical results','Are always biased','Must be the same size'], answer: 0 }, // p22
+      { q: 'A sampling frame is:', options: ['A list of all members of the population from which the sample is drawn','The size of the sample','The margin of error','The set of results obtained'], answer: 0 }, // p23
+      { q: 'A main reason for sampling rather than taking a census is:', options: ['Cost and time','Greater accuracy','It removes all bias','It is always required by law'], answer: 0 }, // p25
+      { q: 'In general, increasing the sample size:', options: ['Makes estimates of population quantities more reliable','Increases bias','Has no effect','Reduces the population'], answer: 0 }, // p22
+      { q: 'A quantity calculated from a sample is called:', options: ['A statistic','A parameter','A population','A census'], answer: 0 }, // p22
+      { q: 'A quantity describing the whole population is called:', options: ['A parameter','A statistic','A sample','An outlier'], answer: 0 }, // p22
+      { q: 'Random number generators are used in sampling to:', options: ['Select members without favouring any particular ones','Increase the sample size','Remove outliers','Calculate the mean'], answer: 0 }, // p23
+      { q: 'Using a sample to draw a conclusion about the population is called:', options: ['Inference','Enumeration','Stratification','Cleaning'], answer: 0 }, // p22
+    ],
+    amber: [
+      { q: 'A researcher selects every 10th name from an alphabetical register. This is:', options: ['Systematic sampling','Simple random sampling','Stratified sampling','Cluster sampling'], answer: 0 }, // p24
+      { q: 'A school has 600 girls and 400 boys. A sample of 50 contains 30 girls and 20 boys. This is:', options: ['Stratified sampling','Quota sampling','Cluster sampling','Opportunity sampling'], answer: 0 }, // p24
+      { q: 'A journalist interviews the first 30 people leaving a station. This is:', options: ['Opportunity sampling','Simple random sampling','Systematic sampling','Stratified sampling'], answer: 0 }, // p24
+      { q: 'An online poll is answered by readers who choose to respond. The main problem is:', options: ['The sample is self-selected and likely to be biased towards those with strong views','The sample is too random','The population is too small','There is no sampling frame needed'], answer: 0 }, // p25
+      { q: 'A town is divided into 20 districts and 3 whole districts are surveyed. This is:', options: ['Cluster sampling','Stratified sampling','Systematic sampling','Quota sampling'], answer: 0 }, // p24
+      { q: 'A school of 1200 students has 300 in Year 12. In a stratified sample of 80, the number from Year 12 should be:', options: ['20','30','40','15'], answer: 0 }, // p24
+      { q: 'The main advantage of stratified over simple random sampling is that it:', options: ['Ensures each subgroup is represented in proportion to its size','Is always cheaper','Removes the need for a sampling frame','Guarantees no bias at all'], answer: 0 }, // p25
+      { q: 'A disadvantage of opportunity sampling is that:', options: ['It is unlikely to be representative of the population','It requires a full sampling frame','It is very time-consuming','It needs random numbers'], answer: 0 }, // p25
+      { q: 'The main difference between quota and stratified sampling is that quota sampling:', options: ['Does not select within each category at random','Uses larger samples','Requires a sampling frame','Is always unbiased'], answer: 0 }, // p24
+      { q: 'Simple random sampling requires:', options: ['A complete sampling frame','A stratified population','Volunteers','A large budget'], answer: 0 }, // p23
+      { q: 'An incomplete sampling frame is a problem because:', options: ['Some members of the population can never be selected, introducing bias','It makes the sample too large','It changes the population mean','It prevents calculation of the median'], answer: 0 }, // p25
+      { q: 'Non-response bias arises when:', options: ['Those who do not respond differ systematically from those who do','The sample is too small','Random numbers are reused','The population is finite'], answer: 0 }, // p25
+      { q: 'Systematic sampling can go wrong if the ordered list:', options: ['Has a repeating pattern matching the sampling interval','Is alphabetical','Is very long','Contains no duplicates'], answer: 0 }, // p25
+      { q: 'A census is most appropriate when:', options: ['The population is small and accessible','The population is very large','Testing destroys the item','Time is short'], answer: 0 }, // p25
+      { q: 'A census would be unsuitable for testing the lifetime of light bulbs because:', options: ['Testing destroys every bulb','Bulbs are too cheap','The population is too small','Bulbs are not random'], answer: 0 }, // p25
+      { q: 'The sample variance is used as:', options: ['An estimate of the population variance','A measure of bias','The population mean','A significance level'], answer: 0 }, // p22
+      { q: 'A large data set is issued in advance of the examination so that learners:', options: ['Become familiar with its contexts and can interpret related data more confidently','Can memorise every value','Need not revise statistics','Can avoid using a calculator'], answer: 0 }, // LDS
+      { q: 'In the examination, learners working with the large data set:', options: ['Will not have a printout, though selected data or summary statistics may be given','Must bring a full printout','May use the internet','Are given the whole data set'], answer: 0 }, // LDS
+      { q: 'A conclusion drawn from a sample applies to the population only:', options: ['With some uncertainty, since the sample may not be representative','With certainty','If the sample is small','If the data are categorical'], answer: 0 }, // p22
+      { q: 'Choosing an appropriate sampling technique depends mainly on:', options: ['The context, the available sampling frame and practical constraints','The mean of the data','The number of outliers','The significance level'], answer: 0 }, // p25
+    ],
+    red: [
+      { q: 'A college has 480 in Year 12 and 320 in Year 13. For a stratified sample of 120, the numbers from each year should be:', options: ['72 and 48','60 and 60','70 and 50','80 and 40'], answer: 0 }, // p24
+      { q: 'A factory samples every 12th item from a production line where a fault recurs on every 12th item. The sample will:', options: ['Either always or never include faulty items, badly misrepresenting the fault rate','Be perfectly representative','Be a simple random sample','Have no bias'], answer: 0 }, // p25
+      { q: 'A supermarket surveys shoppers on a Tuesday morning about weekly spending. The most serious criticism is that:', options: ['Tuesday-morning shoppers may differ systematically from the full customer population','The sample size is unknown','Spending is continuous data','The mean cannot be found'], answer: 0 }, // p25
+      { q: 'Two researchers take independent random samples from the same population and obtain different means. This shows that:', options: ['Sample statistics vary between samples; neither is necessarily wrong','One researcher made an error','The population has no mean','The sampling was biased'], answer: 0 }, // p22
+      { q: 'A researcher wants opinions from a population spread over a very large area with a limited travel budget. The most practical method is:', options: ['Cluster sampling, since whole areas can be surveyed cheaply','Simple random sampling across the whole area','A full census','Systematic sampling of the national register'], answer: 0 }, // p25
+      { q: 'Quadrupling the sample size reduces the standard deviation of the sample mean by a factor of:', options: ['2','4','16','No change'], answer: 0 }, // p22
+      { q: 'A sample is drawn from a telephone directory to estimate national opinion. The most serious source of bias is that:', options: ['People without listed landlines cannot be selected at all','The directory is alphabetical','The sample is too large','Telephone numbers are discrete'], answer: 0 }, // p25
+      { q: 'A "self-selected sample is always useless" claim is too strong because:', options: ['It may still be informative if its limitations are recognised and stated','Self-selection removes bias','It is a form of random sampling','It always matches the population'], answer: 0 }, // p25
+      { q: 'From September 2026, students on a two-year AS/A Level Mathematics B (MEI) programme use:', options: ['A single large data set','Three large data sets in rotation','A different data set each year','No data set'], answer: 0 }, // LDS
+      { q: 'A sampling method is described as unbiased when:', options: ['It does not systematically favour any particular outcomes','It always gives the correct answer','The sample equals the population','The sample is large'], answer: 0 }, // p25
+    ],
+  },
+
+  '2.2': {
+    name: 'Data Presentation & Interpretation',
+    green: [
+      { q: 'Shoe colour is an example of which type of data?', options: ['Categorical','Discrete','Continuous','Ranked'], answer: 0 }, // D1
+      { q: 'The number of cars passing a point is an example of:', options: ['Discrete data','Continuous data','Categorical data','Ranked data'], answer: 0 }, // D1
+      { q: 'The height of a plant is an example of:', options: ['Continuous data','Discrete data','Categorical data','Ranked data'], answer: 0 }, // D1
+      { q: 'In a histogram, the quantity proportional to frequency is the:', options: ['Area of each bar','Height of each bar','Width of each bar','Perimeter of each bar'], answer: 0 }, // D2
+      { q: 'A frequency chart differs from a histogram in that it has:', options: ['Equal width bars and frequency on the vertical axis','Unequal width bars','No vertical axis','Area proportional to frequency'], answer: 0 }, // D1
+      { q: 'The median of a data set is:', options: ['The middle value when the data are in order','The most common value','The arithmetic average','The largest value'], answer: 0 }, // D10
+      { q: 'The mode of a data set is:', options: ['The most frequently occurring value','The middle value','The average','The range'], answer: 0 }, // D10
+      { q: 'The midrange is calculated as:', options: ['(minimum + maximum)/2','The middle value','The most common value','The sum divided by n'], answer: 0 }, // D10
+      { q: 'The range of a data set is:', options: ['Maximum − minimum','Q3 − Q1','The middle value','The standard deviation'], answer: 0 }, // D11
+      { q: 'The interquartile range is:', options: ['Q3 − Q1','Maximum − minimum','The median','Twice the standard deviation'], answer: 0 }, // D11
+      { q: 'A box-and-whisker diagram displays:', options: ['Median, quartiles and extreme values','Only the mean','Only the mode','Frequency density'], answer: 0 }, // D1
+      { q: 'A dot plot represents frequency using:', options: ['Stacks of dots in lines','Bars of varying width','Sectors of a circle','A single line'], answer: 0 }, // D1
+      { q: 'A scatter diagram is used to display:', options: ['Bivariate data','Single-variable categorical data','Frequency densities','Ranked data only'], answer: 0 }, // D6
+      { q: 'Standard deviation is a measure of:', options: ['Spread','Central tendency','Correlation','Frequency'], answer: 0 }, // D12
+      { q: 'The variance is equal to:', options: ['The square of the standard deviation','The square root of the standard deviation','The range squared','Twice the standard deviation'], answer: 0 }, // D12
+      { q: 'Positive correlation means that as one variable increases, the other:', options: ['Tends to increase','Tends to decrease','Stays constant','Becomes categorical'], answer: 0 }, // D6
+      { q: 'An outlier is an item of data that is:', options: ['Inconsistent with the rest of the data','Always the largest value','Always an error','The median'], answer: 0 }, // D13
+      { q: 'A pie chart is most suitable for showing:', options: ['Proportions of a whole for categorical data','Continuous grouped data','Correlation','Cumulative frequency'], answer: 0 }, // D1
+      { q: 'A stem-and-leaf diagram has the advantage that:', options: ['The original data values are retained','It shows correlation','It needs no key','It uses area for frequency'], answer: 0 }, // D1
+      { q: 'The arithmetic mean is calculated as:', options: ['The sum of the values divided by how many there are','The middle value','The most common value','The largest minus the smallest'], answer: 0 }, // D10
+    ],
+    amber: [
+      { q: 'The sample variance s² is calculated by dividing Sxx by:', options: ['n − 1','n','n + 1','n²'], answer: 0 }, // D12
+      { q: 'One accepted criterion identifies an outlier as a value at least:', options: ['2 standard deviations from the mean','1 standard deviation from the mean','3 standard deviations from the mean','half a standard deviation from the mean'], answer: 0 }, // D13
+      { q: 'The other accepted criterion identifies an outlier as a value at least:', options: ['1.5 × IQR beyond the nearer quartile','1.5 × IQR beyond the median','2 × IQR beyond the mean','1 × IQR beyond the nearer quartile'], answer: 0 }, // D13
+      { q: 'In a histogram, the height of each bar represents:', options: ['Frequency density, that is frequency ÷ class width','Frequency','Cumulative frequency','Relative position'], answer: 0 }, // D2
+      { q: 'In comparative pie charts, the quantity made proportional to frequency is the:', options: ['Area of the circle','Radius of the circle','Circumference','Angle only'], answer: 0 }, // D1
+      { q: 'Extrapolation from a regression line may not be justified because:', options: ['The relationship may not continue beyond the range of the data','It is always arithmetically wrong','Regression lines have no gradient','The data become categorical'], answer: 0 }, // D6
+      { q: 'A strong correlation between two variables does NOT establish that:', options: ['One variable causes the other','The points lie close to a line','There is an association','The data are bivariate'], answer: 0 }, // D7
+      { q: 'For markedly skewed data, the most appropriate measure of central tendency is usually the:', options: ['Median','Mean','Midrange','Range'], answer: 0 }, // D10
+      { q: 'A weighted mean is appropriate when:', options: ['The groups being combined are of different sizes','All values are equal','The data are categorical','There are outliers'], answer: 0 }, // D10
+      { q: 'Adding a constant 5 to every value in a data set:', options: ['Increases the mean by 5 and leaves the standard deviation unchanged','Increases both the mean and the standard deviation by 5','Leaves the mean unchanged','Multiplies the standard deviation by 5'], answer: 0 }, // D12
+      { q: 'Multiplying every value in a data set by 3:', options: ['Multiplies both the mean and the standard deviation by 3','Multiplies the mean by 3 and leaves the standard deviation unchanged','Multiplies the variance by 3','Leaves the mean unchanged'], answer: 0 }, // D12
+      { q: 'Compared with the median, the mean is:', options: ['More affected by an extreme outlier','Less affected by an extreme outlier','Equally affected','Never affected'], answer: 0 }, // D10
+      { q: 'A scatter diagram showing points scattered with no pattern indicates:', options: ['Little or no correlation between the variables','Strong positive correlation','Strong negative correlation','A causal relationship'], answer: 0 }, // D6
+      { q: 'Interpolation means estimating a value:', options: ['Within the range of the observed data','Beyond the range of the observed data','From a different data set','Without any data'], answer: 0 }, // D6
+      { q: 'As the size of an unbiased sample increases, diagrams representing it:', options: ['Become more representative of the theoretical probability distribution','Become less representative','Are unaffected','Become categorical'], answer: 0 }, // D5
+      { q: 'For grouped continuous data with unequal class widths, the correct diagram is a:', options: ['Histogram','Bar chart','Pie chart','Vertical line chart'], answer: 0 }, // D1
+      { q: 'Data cleaning includes dealing with:', options: ['Missing data, errors and outliers','Only outliers','Only the mean','Only categorical data'], answer: 0 }, // D14
+      { q: 'A cumulative frequency diagram is most directly used to estimate:', options: ['The median and quartiles','The mode','The variance','The correlation'], answer: 0 }, // D1
+      { q: 'The standard deviation of a set of lengths measured in cm has units of:', options: ['cm','cm²','No units','cm⁻¹'], answer: 0 }, // D12
+      { q: 'A vertical line chart is most appropriate for:', options: ['Discrete numerical data','Continuous grouped data','Categorical data with unequal groups','Bivariate data'], answer: 0 }, // D1
+    ],
+    red: [
+      { q: 'A data set has mean 50 and standard deviation 4. Using the 2-standard-deviation criterion, an outlier is any value:', options: ['Below 42 or above 58','Below 46 or above 54','Below 40 or above 60','Above 58 only'], answer: 0 }, // D13
+      { q: 'A data set has Q1 = 20 and Q3 = 32. Using the 1.5 × IQR criterion, an outlier is any value:', options: ['Below 2 or above 50','Below 8 or above 44','Below 14 or above 38','Below 5 or above 47'], answer: 0 }, // D13
+      { q: 'Two comparative pie charts represent frequencies 50 and 200, with area proportional to frequency. The ratio of their radii is:', options: ['1 : 2','1 : 4','1 : 16','2 : 1'], answer: 0 }, // D1
+      { q: 'In a histogram, a bar of width 5 has frequency density 3. Its frequency is:', options: ['15','5','3','0.6'], answer: 0 }, // D2
+      { q: 'For a data set of 10 values with Σx = 200 and Sxx = 360, the sample standard deviation is:', options: ['√40 ≈ 6.32','√36 = 6.00','√360 ≈ 18.97','40'], answer: 0 }, // D12
+      { q: 'In a box plot, the median sits much closer to Q1 than to Q3. This indicates:', options: ['Positive skew','Negative skew','Symmetry','No spread'], answer: 0 }, // D1
+      { q: 'A regression line is quoted in a question. The specification expects learners to:', options: ['Interpret it, including interpolation and extrapolation, rather than calculate its equation','Calculate its equation from raw data','Derive it algebraically','Prove it is a best fit'], answer: 0 }, // D6
+      { q: 'A correlation coefficient is given in a question. The specification expects learners to:', options: ['Use it to make an inference, not to calculate it or name it','Calculate it from the raw data','Name the particular coefficient used','Prove its properties'], answer: 0 }, // H10
+      { q: 'An item recorded as a height of 1750 cm in a set of adult heights should be treated as:', options: ['A likely data-entry error, to be corrected or removed with justification','A genuine value to keep unchanged','The median','Missing data'], answer: 0 }, // D14
+      { q: 'Removing a genuine outlier from a data set without justification is poor practice because:', options: ['It discards real information and can distort the conclusions','It always lowers the mean','It changes the units','It makes the data categorical'], answer: 0 }, // D14
+    ],
+  },
+
+  '2.3': {
+    name: 'Probability',
+    green: [
+      { q: 'For equally likely outcomes, the probability of an event is:', options: ['Favourable outcomes ÷ total outcomes','Total outcomes ÷ favourable outcomes','Always 1/2','The number of favourable outcomes'], answer: 0 }, // u-basic
+      { q: 'The complementary event of A is written:', options: ["A′, the event \"not A\"",'A ∩ B','A ∪ B','P(A)'], answer: 0 }, // u-basic
+      { q: 'P(A′) equals:', options: ['1 − P(A)','P(A)','1 + P(A)','0'], answer: 0 }, // u-basic
+      { q: 'The probability of rolling a 3 on a fair six-sided die is:', options: ['1/6','1/3','1/2','3/6'], answer: 0 }, // u-basic
+      { q: 'All probabilities lie in the interval:', options: ['0 to 1 inclusive','−1 to 1','0 to 100','1 to 6'], answer: 0 }, // u-basic
+      { q: 'The expected frequency of an event with probability p in n trials is:', options: ['np','n/p','p/n','n + p'], answer: 0 }, // u-basic
+      { q: 'Two events are mutually exclusive if they:', options: ['Cannot both occur','Always both occur','Are independent','Have equal probability'], answer: 0 }, // u1
+      { q: 'For mutually exclusive events A and B, P(A or B) equals:', options: ['P(A) + P(B)','P(A) × P(B)','P(A) − P(B)','P(A)/P(B)'], answer: 0 }, // u2
+      { q: 'Two events are independent if:', options: ['The occurrence of one does not affect the probability of the other','They cannot both occur','They have the same probability','They are complementary'], answer: 0 }, // u1
+      { q: 'For independent events A and B, P(A and B) equals:', options: ['P(A) × P(B)','P(A) + P(B)','P(A) − P(B)','P(A|B)'], answer: 0 }, // u3
+      { q: 'A tree diagram is most useful for:', options: ['Showing successive events and their probabilities','Displaying continuous data','Finding the median','Calculating variance'], answer: 0 }, // u-basic
+      { q: 'A Venn diagram is used to show:', options: ['How events overlap','Frequency density','Correlation','Cumulative frequency'], answer: 0 }, // u5
+      { q: 'The probability of an impossible event is:', options: ['0','1','1/2','Undefined'], answer: 0 }, // u-basic
+      { q: 'The probability of a certain event is:', options: ['1','0','1/2','100'], answer: 0 }, // u-basic
+      { q: 'The probability of getting a head on a fair coin toss is:', options: ['1/2','1/4','1','0'], answer: 0 }, // u-basic
+      { q: 'A sample space is:', options: ['The set of all possible outcomes','The set of favourable outcomes','A single outcome','A probability'], answer: 0 }, // u-basic
+      { q: 'The notation A ∩ B means:', options: ['A and B both occur','A or B occurs','A does not occur','A given B'], answer: 0 }, // u5
+      { q: 'The notation A ∪ B means:', options: ['A or B (or both) occurs','A and B both occur','Neither occurs','A given B'], answer: 0 }, // u5
+      { q: 'Drawing a card at random from a standard 52-card pack, P(a heart) is:', options: ['1/4','1/13','1/52','1/2'], answer: 0 }, // u-basic
+      { q: 'The notation P(A|B) means:', options: ['The probability of A given that B has occurred','The probability of A and B','The probability of A or B','The probability of B given A'], answer: 0 }, // u6
+    ],
+    amber: [
+      { q: 'For any two events, P(A ∪ B) equals:', options: ['P(A) + P(B) − P(A ∩ B)','P(A) + P(B)','P(A) × P(B)','P(A) − P(B)'], answer: 0 }, // u5
+      { q: 'For mutually exclusive events, P(A ∩ B) equals:', options: ['0','1','P(A)P(B)','P(A) + P(B)'], answer: 0 }, // u4
+      { q: 'The conditional probability formula is P(A|B) =', options: ['P(A ∩ B)/P(B)','P(A ∩ B)/P(A)','P(A)P(B)','P(A ∪ B)/P(B)'], answer: 0 }, // u6
+      { q: 'Events A and B are independent precisely when:', options: ['P(A|B) = P(A)','P(A|B) = P(B)','P(A ∩ B) = 0','P(A ∪ B) = 1'], answer: 0 }, // u7
+      { q: 'A bag holds 4 red and 6 blue balls. Two are drawn without replacement. P(both red) is:', options: ['2/15','4/25','1/5','8/45'], answer: 0 }, // u3
+      { q: 'A fair coin is tossed three times. P(exactly two heads) is:', options: ['3/8','1/8','1/2','1/4'], answer: 0 }, // u3
+      { q: 'P(A) = 0.4, P(B) = 0.5 and A, B are independent. P(A ∩ B) is:', options: ['0.2','0.9','0.1','0.45'], answer: 0 }, // u3
+      { q: 'P(A) = 0.4, P(B) = 0.5, P(A ∩ B) = 0.2. Then P(A ∪ B) is:', options: ['0.7','0.9','0.5','0.3'], answer: 0 }, // u5
+      { q: 'Two fair dice are rolled. P(total of 7) is:', options: ['1/6','1/12','1/36','5/36'], answer: 0 }, // u-basic
+      { q: 'A card is drawn from a standard pack. P(a king or a heart) is:', options: ['16/52','17/52','4/52','13/52'], answer: 0 }, // u5
+      { q: 'If P(A|B) = P(A), the events A and B are:', options: ['Independent','Mutually exclusive','Complementary','Certain'], answer: 0 }, // u7
+      { q: 'Mutually exclusive events with non-zero probabilities are:', options: ['Never independent','Always independent','Sometimes independent','Complementary'], answer: 0 }, // u4
+      { q: 'Venn diagrams in this specification are used for at most:', options: ['Three events','Two events','Four events','Any number of events'], answer: 0 }, // u5
+      { q: 'A box holds 3 faulty and 7 working items. One is chosen at random. P(faulty) is:', options: ['0.3','0.7','0.1','0.37'], answer: 0 }, // u-basic
+      { q: 'P(A) = 0.6 and P(B|A) = 0.5. Then P(A ∩ B) is:', options: ['0.3','1.1','0.83','0.1'], answer: 0 }, // u6
+      { q: 'In 200 trials of an event with probability 0.15, the expected frequency is:', options: ['30','15','200','1.5'], answer: 0 }, // u-basic
+      { q: 'Two cards are drawn with replacement from a pack. P(both hearts) is:', options: ['1/16','1/17','1/4','1/52'], answer: 0 }, // u3
+      { q: 'A two-way table is useful for calculating:', options: ['Conditional probabilities','Standard deviation','Frequency density','Regression lines'], answer: 0 }, // u6
+      { q: 'A fair die is rolled twice. P(at least one six) is:', options: ['11/36','1/3','1/36','25/36'], answer: 0 }, // u-basic
+      { q: 'If A and B are independent, then A′ and B are:', options: ['Also independent','Mutually exclusive','Dependent','Complementary'], answer: 0 }, // u7
+    ],
+    red: [
+      { q: 'P(A) = 0.5, P(B) = 0.4, P(A ∪ B) = 0.7. Then P(A|B) equals:', options: ['0.5','0.4','0.2','0.8'], answer: 0 }, // u6
+      { q: 'A test is 95% accurate and 1% of a population has the disease. For a positive result, the probability of actually having the disease is closest to:', options: ['0.16','0.95','0.99','0.05'], answer: 0 }, // u6
+      { q: 'Given P(B|A), P(A) and P(B), finding P(A|B) is an example of:', options: ['Reverse conditional probability','Mutual exclusivity','Independence testing','Expected frequency'], answer: 0 }, // u6
+      { q: 'Three fair coins are tossed. Given that at least one head appears, P(all three are heads) is:', options: ['1/7','1/8','1/3','1/2'], answer: 0 }, // u6
+      { q: 'A bag holds 5 red and 3 blue balls. Two are drawn without replacement. P(exactly one red) is:', options: ['15/28','5/14','3/28','9/28'], answer: 0 }, // u3
+      { q: 'For events with P(A) = 0.3, P(B) = 0.5, and A, B mutually exclusive, P(A|B) equals:', options: ['0','0.15','0.6','0.8'], answer: 0 }, // u4
+      { q: 'A machine has three independent components each working with probability 0.9. P(all three work) is:', options: ['0.729','0.9','0.27','0.999'], answer: 0 }, // u3
+      { q: 'For the same machine, P(at least one component fails) is:', options: ['0.271','0.1','0.729','0.3'], answer: 0 }, // u3
+      { q: 'If P(A ∩ B) = P(A)P(B) and both probabilities are non-zero, then A and B:', options: ['Are independent but not mutually exclusive','Are mutually exclusive','Are complementary','Cannot both occur'], answer: 0 }, // u4
+      { q: 'A student argues that because two events cannot happen together they must be independent. This is:', options: ['Wrong — mutual exclusivity and independence are different, and generally incompatible','Correct','Correct only for fair dice','Correct if the probabilities are equal'], answer: 0 }, // u4
+    ],
+  },
+
+  '2.4': {
+    name: 'Probability Distributions',
+    green: [
+      { q: 'For X ~ B(n, p), the mean of X is:', options: ['np','npq','p/n','n/p'], answer: 0 }, // R4
+      { q: 'Which is NOT required for a binomial model?', options: ['The trials are carried out in a fixed order','A fixed number of trials','Exactly two outcomes per trial','The probability of success is the same each trial'], answer: 0 }, // R1
+      { q: 'The notation X ~ B(n, p) means X:', options: ['Has the binomial distribution with parameters n and p','Is Normally distributed','Is a constant','Has mean n'], answer: 0 }, // R1
+      { q: 'In a binomial distribution, q is defined as:', options: ['1 − p','p − 1','np','p/n'], answer: 0 }, // R2
+      { q: 'The symbol ~ in X ~ B(n, p) is read as:', options: ['"has the distribution"','"is approximately"','"is proportional to"','"tends to"'], answer: 0 }, // R1
+      { q: 'A discrete random variable is conventionally written using:', options: ['A capital letter such as X','A lower-case letter only','A Greek letter','A number'], answer: 0 }, // R6
+      { q: 'For a discrete random variable, the sum of all the probabilities is:', options: ['1','0','n','p'], answer: 0 }, // R6
+      { q: 'A discrete uniform distribution is one in which:', options: ['All outcomes are equally likely','Outcomes become more likely in order','There are exactly two outcomes','The mean is zero'], answer: 0 }, // R7
+      { q: 'The Normal distribution is written:', options: ['X ~ N(μ, σ²)','X ~ B(μ, σ)','X ~ N(n, p)','X ~ U(a, b)'], answer: 0 }, // R8
+      { q: 'The graph of a Normal distribution is:', options: ['Symmetric and bell-shaped','Skewed to the right','Rectangular','A straight line'], answer: 0 }, // R9
+      { q: 'The line of symmetry of a Normal curve is located at:', options: ['The mean','One standard deviation above the mean','Zero','The mode only, which differs from the mean'], answer: 0 }, // R11
+      { q: 'The area under a Normal curve represents:', options: ['Probability','Frequency density','The mean','The standard deviation'], answer: 0 }, // R9
+      { q: 'The total area under any Normal curve is:', options: ['1','0','μ','σ'], answer: 0 }, // R9
+      { q: 'The standard Normal distribution is:', options: ['N(0, 1)','N(1, 0)','N(0, 0)','N(1, 1)'], answer: 0 }, // R10
+      { q: 'For X ~ B(20, 0.3), the mean is:', options: ['6','20','0.3','14'], answer: 0 }, // R4
+      { q: 'The expected frequency of successes in n trials with probability p is:', options: ['np','n/p','p','n − p'], answer: 0 }, // R5
+      { q: 'A binomial distribution arises when the trials are:', options: ['Independent of one another','Dependent on one another','Continuous','Infinite in number'], answer: 0 }, // R1
+      { q: 'For a Normal distribution, the mean, median and mode are:', options: ['All equal','All different','In the ratio 1:2:3','Undefined'], answer: 0 }, // R9
+      { q: 'The parameter σ in N(μ, σ²) is the:', options: ['Standard deviation','Variance','Mean','Sample size'], answer: 0 }, // R8
+      { q: 'A binomial random variable counts:', options: ['The number of successes in a fixed number of trials','The time until the first success','A continuous measurement','The mean of a sample'], answer: 0 }, // R1
+    ],
+    amber: [
+      { q: 'X ~ B(10, 0.4). P(X = 3) is closest to:', options: ['0.215','0.121','0.382','0.045'], answer: 0 }, // R3
+      { q: 'A continuity correction is needed when:', options: ['A continuous Normal distribution models discrete data','A discrete distribution models continuous data','The sample size is small','The mean equals the variance'], answer: 0 }, // R8
+      { q: 'To standardise a Normal variable X, you calculate:', options: ['Z = (X − μ)/σ','Z = (X − σ)/μ','Z = X/σ','Z = (X + μ)/σ'], answer: 0 }, // R10
+      { q: 'X ~ B(12, 0.25). The mean of X is:', options: ['3','12','0.25','9'], answer: 0 }, // R4
+      { q: 'In 50 trials with probability of success 0.2, the expected number of successes is:', options: ['10','40','0.2','50'], answer: 0 }, // R5
+      { q: 'For X ~ B(8, 0.5), P(X = 0) equals:', options: ['(0.5)⁸','0','0.5','8 × 0.5'], answer: 0 }, // R3
+      { q: 'Modelling the number of heads in 20 coin tosses is appropriate with:', options: ['A binomial distribution','A Normal distribution only','A discrete uniform distribution','No distribution'], answer: 0 }, // R1
+      { q: 'A Normal model may be inappropriate when the data are:', options: ['Markedly skewed','Symmetric','Continuous','Large in number'], answer: 0 }, // R8
+      { q: 'If X ~ N(μ, σ²) and Y = aX + b, then Y is:', options: ['Normally distributed with mean aμ + b','Binomially distributed','Not a standard distribution','Uniformly distributed'], answer: 0 }, // R10
+      { q: 'For a Normal distribution, approximately what percentage of values lie within one standard deviation of the mean?', options: ['68%','95%','50%','99.7%'], answer: 0 }, // R9
+      { q: 'For a Normal distribution, approximately what percentage of values lie within two standard deviations of the mean?', options: ['95%','68%','99.7%','50%'], answer: 0 }, // R9
+      { q: 'X ~ B(5, 0.2). P(X ≥ 1) equals:', options: ['1 − 0.8⁵','0.8⁵','5 × 0.2','0.2⁵'], answer: 0 }, // R3
+      { q: 'Using a Normal model for a discrete count X, P(X ≤ 10) becomes:', options: ['P(X < 10.5)','P(X < 10)','P(X < 9.5)','P(X < 11)'], answer: 0 }, // R8
+      { q: 'As the sample size increases, a histogram of samples drawn from a Normal population:', options: ['Tends towards the Normal curve','Becomes rectangular','Becomes skewed','Is unaffected'], answer: 0 }, // R9
+      { q: 'For X ~ N(100, 25), the standard deviation is:', options: ['5','25','10','100'], answer: 0 }, // R8
+      { q: 'X ~ N(60, 16). The value of Z corresponding to X = 68 is:', options: ['2','0.5','8','4'], answer: 0 }, // R10
+      { q: 'A probability function given in a table must satisfy:', options: ['All probabilities non-negative and summing to 1','All probabilities equal','A mean of zero','Exactly two outcomes'], answer: 0 }, // R6
+      { q: 'The number of sixes in 30 rolls of a fair die is modelled by:', options: ['B(30, 1/6)','B(6, 1/30)','N(30, 1/6)','A discrete uniform distribution'], answer: 0 }, // R1
+      { q: 'A binomial model would be inappropriate for drawing balls from a bag without replacement because:', options: ['The probability of success changes between trials','There are more than two outcomes','The trials are continuous','The number of trials is not fixed'], answer: 0 }, // R1
+      { q: 'For X ~ N(μ, σ²), P(X > μ) equals:', options: ['0.5','1','0','0.68'], answer: 0 }, // R9
+    ],
+    red: [
+      { q: 'X ~ N(50, 16) and Y = 3X + 2. Then Y has distribution:', options: ['N(152, 144)','N(152, 48)','N(152, 16)','N(150, 144)'], answer: 0 }, // R10
+      { q: 'For X ~ N(μ, σ²), the points of inflection of the Normal curve lie at:', options: ['μ ± σ','μ ± 2σ','μ only','μ ± σ²'], answer: 0 }, // R11
+      { q: 'X ~ B(20, 0.5) is approximated by a Normal distribution. Using a continuity correction, P(X ≥ 12) becomes:', options: ['P(X > 11.5)','P(X > 12.5)','P(X > 12)','P(X > 11)'], answer: 0 }, // R8
+      { q: 'The random variable X has P(X = x) = kx for x = 1, 2, 3, 4. The value of k is:', options: ['0.1','0.25','1','0.4'], answer: 0 }, // R6
+      { q: 'X ~ N(80, 25). The value of X corresponding to Z = −1.6 is:', options: ['72','88','78.4','76'], answer: 0 }, // R10
+      { q: 'A model assumes a binomial distribution for the number of defective items in a large batch sampled without replacement. This is:', options: ['Acceptable as an approximation when the batch is very large relative to the sample','Exactly correct','Never acceptable','Only correct for p = 0.5'], answer: 0 }, // R13
+      { q: 'X ~ N(0, 1). Then P(Z < −1.2) equals:', options: ['1 − P(Z < 1.2)','P(Z < 1.2)','P(Z > 1.2) − 1','0.5 + P(Z < 1.2)'], answer: 0 }, // R10
+      { q: 'Critiquing a probability model means:', options: ['Examining whether its assumptions are reasonable in the given context','Recalculating the mean','Increasing the sample size','Removing outliers'], answer: 0 }, // R13
+      { q: 'Two independent Normal variables are added. Their sum is:', options: ['Normally distributed','Binomially distributed','Uniformly distributed','Not a standard distribution'], answer: 0 }, // R10
+      { q: 'For X ~ B(n, p), doubling n while keeping p fixed changes the mean to:', options: ['2np','np','np/2','4np'], answer: 0 }, // R4
+    ],
+  },
+
+  '2.5': {
+    name: 'Statistical Hypothesis Testing',
+    green: [
+      { q: 'The null hypothesis H₀ is:', options: ['The default assumption being tested','The conclusion you hope to reach','Always false','The significance level'], answer: 0 }, // H1
+      { q: 'The alternative hypothesis H₁ states:', options: ['What is believed if the null hypothesis is rejected','The same as H₀','The sample size','The p-value'], answer: 0 }, // H1
+      { q: 'The significance level of a test is:', options: ['The probability of incorrectly rejecting the null hypothesis','The probability H₀ is true','The sample size','The test statistic'], answer: 0 }, // H3
+      { q: 'The critical region is also known as the:', options: ['Rejection region','Acceptance region','Confidence interval','Sample space'], answer: 0 }, // H1
+      { q: 'If the test statistic falls in the acceptance region, you:', options: ['Do not reject the null hypothesis','Reject the null hypothesis','Accept the alternative hypothesis','Repeat the test'], answer: 0 }, // H6
+      { q: 'A 1-tail test is used when the alternative hypothesis specifies:', options: ['A change in one particular direction','A change in either direction','No change','Two populations'], answer: 0 }, // H2
+      { q: 'A 2-tail test is used when the alternative hypothesis specifies:', options: ['A change in either direction','An increase only','A decrease only','No change'], answer: 0 }, // H2
+      { q: 'The p-value is:', options: ['The probability of a result at least as extreme as the one observed, assuming H₀','The probability H₀ is true','The significance level','The sample proportion'], answer: 0 }, // H1
+      { q: 'If the p-value is less than the significance level, you:', options: ['Reject the null hypothesis','Do not reject the null hypothesis','Increase the sample size','Change the hypotheses'], answer: 0 }, // H5
+      { q: 'For a binomial hypothesis test, H₀ takes the form:', options: ['p = a particular value','p > a particular value','p ≠ a particular value','n = a particular value'], answer: 0 }, // H4
+      { q: 'The test statistic is:', options: ['The quantity calculated from the sample and compared with the critical value','The null hypothesis','The population mean','The significance level'], answer: 0 }, // H1
+      { q: 'A hypothesis test uses a sample in order to:', options: ['Make an inference about the population','Describe only the sample','Remove outliers','Calculate a regression line'], answer: 0 }, // H3
+      { q: 'A critical value marks the boundary of the:', options: ['Critical region','Sample','Population','Confidence level'], answer: 0 }, // H1
+      { q: 'Hypotheses are always stated in terms of:', options: ['A population parameter','A sample statistic','The test statistic','The p-value'], answer: 0 }, // H4
+      { q: 'A conclusion to a hypothesis test should always be:', options: ['Stated in the context of the original problem','Given as "accept H₀"','Purely numerical','Left implicit'], answer: 0 }, // H5
+      { q: 'A significance level of 5% means the critical region has probability:', options: ['At most 0.05 under H₀','0.95 under H₀','0.05 under H₁','Exactly 0.5'], answer: 0 }, // H3
+      { q: 'Correlation measures:', options: ['How close data points lie to a straight line','The gradient of the regression line','The spread of one variable','The sample size'], answer: 0 }, // H10
+      { q: 'A rank correlation coefficient measures correlation between:', options: ['The ranks of the data','The raw data values','Two categorical variables','The residuals'], answer: 0 }, // H10
+      { q: 'For a test on a population mean, H₀ takes the form:', options: ['μ = a particular value','x̄ = a particular value','σ = a particular value','n = a particular value'], answer: 0 }, // H8
+      { q: 'Never rejecting the null hypothesis when it is false is a failure to detect:', options: ['A real effect','An outlier','A sampling frame','A critical value'], answer: 0 }, // H3
+    ],
+    amber: [
+      { q: 'A coin is suspected of being biased towards heads. The hypotheses are:', options: ['H₀: p = 0.5, H₁: p > 0.5, one-tailed','H₀: p = 0.5, H₁: p ≠ 0.5, two-tailed','H₀: p > 0.5, H₁: p = 0.5','H₀: p = 0.5, H₁: p < 0.5'], answer: 0 }, // H2
+      { q: 'A coin is suspected of being biased, without saying in which direction. The test should be:', options: ['Two-tailed, with H₁: p ≠ 0.5','One-tailed, with H₁: p > 0.5','One-tailed, with H₁: p < 0.5','Not a hypothesis test'], answer: 0 }, // H2
+      { q: 'For random samples of size n drawn from N(μ, σ²), the sample mean has distribution:', options: ['N(μ, σ²/n)','N(μ, σ²)','N(μ/n, σ²)','N(nμ, nσ²)'], answer: 0 }, // H7
+      { q: 'The standard deviation of the sample mean for samples of size n is:', options: ['σ/√n','σ/n','σ√n','σ'], answer: 0 }, // H7
+      { q: 'For X ~ N(100, 36) and samples of size 9, the sample mean has standard deviation:', options: ['2','4','6','36'], answer: 0 }, // H7
+      { q: 'The Central Limit Theorem allows a Normal test for a mean when:', options: ['The sample is large, even if the population is not Normal','The sample is small','The population is binomial only','The variance is unknown and the sample is small'], answer: 0 }, // H7
+      { q: 'A test for a single mean using the Normal distribution is valid when:', options: ['The population variance is known, or unknown with a large sample','The sample size is 2','The data are categorical','The variance is always unknown'], answer: 0 }, // H8
+      { q: 'In a binomial test at the 5% level, the observed p-value is 0.032. The conclusion is:', options: ['Reject H₀, since 0.032 < 0.05','Do not reject H₀','Accept H₁ with certainty','The test is invalid'], answer: 0 }, // H5
+      { q: 'In a binomial test at the 5% level, the observed p-value is 0.08. The conclusion is:', options: ['There is insufficient evidence to reject H₀','Reject H₀','H₀ is proved true','The test is invalid'], answer: 0 }, // H5
+      { q: 'For a two-tailed test at the 5% level, each tail carries a probability of:', options: ['0.025','0.05','0.1','0.5'], answer: 0 }, // H2
+      { q: 'The acceptance region consists of those values of the test statistic for which:', options: ['H₀ is not rejected','H₀ is rejected','H₁ is proved','The p-value is zero'], answer: 0 }, // H6
+      { q: 'Writing "accept H₀" is discouraged because:', options: ['Failing to reject H₀ is not proof that it is true','H₀ is always false','It is too long','It changes the significance level'], answer: 0 }, // H5
+      { q: 'Reducing the significance level from 5% to 1% makes rejecting H₀:', options: ['Harder, requiring stronger evidence','Easier','Impossible','Unaffected'], answer: 0 }, // H3
+      { q: 'A given correlation coefficient is compared with a critical value in order to:', options: ['Infer whether there is correlation in the population','Calculate the regression line','Find the mean','Identify outliers'], answer: 0 }, // H11
+      { q: 'For a correlation test, the null hypothesis is usually that in the population there is:', options: ['No correlation','Perfect correlation','Negative correlation','A causal relationship'], answer: 0 }, // H11
+      { q: 'The specification requires learners to know the names of particular correlation coefficients:', options: ['False — names are not required','True for all coefficients','True for rank coefficients only','True only at A Level'], answer: 0 }, // H10
+      { q: 'In a test of H₀: μ = 50 against H₁: μ > 50, a sample mean of 47 would:', options: ['Give no evidence at all against H₀ in the stated direction','Lead to rejection of H₀','Prove H₀','Require a two-tailed test'], answer: 0 }, // H8
+      { q: 'A binomial test uses n = 20 and H₀: p = 0.3. The test statistic is:', options: ['The observed number of successes','The sample mean','The significance level','The p-value'], answer: 0 }, // H4
+      { q: 'A significance level must be chosen:', options: ['Before the data are examined','After seeing the result','From the p-value','From the sample mean'], answer: 0 }, // H3
+      { q: '"Association" differs from "correlation" in that association refers to:', options: ['A more general relationship between the variables','A straight-line relationship only','A causal link','Identical values'], answer: 0 }, // H11
+    ],
+    red: [
+      { q: 'A sample of 25 is drawn from N(μ, 100). Under H₀: μ = 40, the sample mean has distribution:', options: ['N(40, 4)','N(40, 100)','N(40, 20)','N(40, 2)'], answer: 0 }, // H7
+      { q: 'For that test, a sample mean of 44 gives a test statistic z of:', options: ['2','4','0.4','1'], answer: 0 }, // H8
+      { q: 'A result is significant at the 5% level but not at the 1% level. This means the p-value lies:', options: ['Between 0.01 and 0.05','Below 0.01','Above 0.05','Exactly at 0.05'], answer: 0 }, // H5
+      { q: 'For a binomial test the probability of the test statistic falling in the rejection region is:', options: ['Usually less than the intended significance level, because the distribution is discrete','Exactly the significance level','Always greater than the significance level','Always zero'], answer: 0 }, // H3
+      { q: 'A researcher runs 20 independent tests at the 5% level on data with no real effect. The expected number of significant results is:', options: ['1','0','5','20'], answer: 0 }, // H3
+      { q: 'A significant correlation between ice cream sales and drownings does not establish causation because:', options: ['A third variable such as hot weather may influence both','Correlation coefficients are unreliable','The sample was too large','The test was two-tailed'], answer: 0 }, // H11
+      { q: 'A test of H₀: p = 0.4 against H₁: p ≠ 0.4 at the 10% level uses critical regions in:', options: ['Both tails, each with probability at most 0.05','One tail with probability 0.10','Both tails, each with probability 0.10','Neither tail'], answer: 0 }, // H2
+      { q: 'Increasing the sample size in a test for a mean, with everything else fixed:', options: ['Reduces the standard deviation of the sample mean, making real differences easier to detect','Increases the standard deviation of the sample mean','Has no effect on the test','Raises the significance level'], answer: 0 }, // H7
+      { q: 'The conclusion "the coin is definitely biased" after rejecting H₀ at the 5% level is wrong because:', options: ['A hypothesis test gives evidence, never proof','The significance level was too high','Two tails were used','The sample was random'], answer: 0 }, // H5
+      { q: 'A hypothesis test for a mean uses the Normal distribution with an unknown population variance and a sample of size 8. This is:', options: ['Not valid here, since the sample is small and the variance unknown','Always valid','Valid because n > 5','Valid only for a two-tailed test'], answer: 0 }, // H8
+    ],
+  },
+
 };
 
 if (typeof module !== 'undefined') { module.exports = MATHS_OCR_B_ALEVEL_QUESTIONS; }
