@@ -431,6 +431,126 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
   },
 
+  '1.8': {
+    name: 'Exponentials & Logarithms',
+    green: [
+      { q: 'The value of log_a a is:', options: ['1','0','a','Undefined'], answer: 0 }, // E5
+      { q: 'The value of log_a 1 is:', options: ['0','1','a','Undefined'], answer: 0 }, // E5
+      { q: 'log(xy) is equal to:', options: ['log x + log y','log x × log y','log x − log y','x log y'], answer: 0 }, // E4
+      { q: 'log(x/y) is equal to:', options: ['log x − log y','log x / log y','log x + log y','log(x − y)'], answer: 0 }, // E4
+      { q: 'log(xᵏ) is equal to:', options: ['k log x','(log x)ᵏ','k + log x','log k × log x'], answer: 0 }, // E4
+      { q: 'The value of ln e is:', options: ['1','0','e','Undefined'], answer: 0 }, // E10
+      { q: 'The value of e⁰ is:', options: ['1','0','e','Undefined'], answer: 0 }, // E8
+      { q: 'For a > 0, the graph of y = aˣ always passes through:', options: ['(0, 1)','(1, 0)','(0, 0)','(1, 1)'], answer: 0 }, // E1
+      { q: 'The function ln x is the inverse of:', options: ['eˣ','x²','1/x','10ˣ'], answer: 0 }, // E10
+      { q: 'The value of log₂ 8 is:', options: ['3','4','2','8'], answer: 0 }, // E2
+      { q: 'Solve 2ˣ = 16.', options: ['x = 4','x = 8','x = 2','x = 16'], answer: 0 }, // E6
+      { q: 'The value of log₁₀ 100 is:', options: ['2','10','100','1'], answer: 0 }, // E2
+      { q: 'The graph of y = ln x has a vertical asymptote at:', options: ['x = 0','x = 1','y = 0','x = e'], answer: 0 }, // E3
+      { q: 'To 3 decimal places, e is approximately:', options: ['2.718','3.142','1.414','2.303'], answer: 0 }, // E8
+      { q: 'The gradient of the curve y = e^(kx) is:', options: ['ke^(kx)','e^(kx)','kx·e^(kx)','e^(kx)/k'], answer: 0 }, // E9
+      { q: 'Solve eˣ = 1.', options: ['x = 0','x = 1','x = e','No solution'], answer: 0 }, // E6
+      { q: 'The value of log₃ 9 is:', options: ['2','3','9','1/2'], answer: 0 }, // E2
+      { q: 'For all real x, the value of eˣ is:', options: ['Always positive','Always negative','Sometimes zero','Always greater than 1'], answer: 0 }, // E8
+      { q: 'The value of ln 1 is:', options: ['0','1','e','Undefined'], answer: 0 }, // E5
+      { q: 'Written in logarithmic form, 2⁵ = 32 becomes:', options: ['log₂ 32 = 5','log₅ 32 = 2','log₃₂ 2 = 5','log₂ 5 = 32'], answer: 0 }, // E2
+    ],
+    amber: [
+      { q: 'Solve 2^(x+1) = 32.', options: ['x = 4','x = 5','x = 16','x = 3'], answer: 0 }, // E6
+      { q: 'Solve 3ˣ = 20, giving your answer to 3 decimal places.', options: ['x = 2.727','x = 6.667','x = 1.301','x = 3.044'], answer: 0 }, // E6
+      { q: 'Solve log₂ x + log₂(x − 2) = 3.', options: ['x = 4','x = 2','x = 8','x = 4 or x = −2'], answer: 0 }, // E4
+      { q: 'To reduce y = axⁿ to linear form, take logarithms to obtain:', options: ['log y = log a + n log x','log y = a + nx','y = log a + n log x','log y = n log a + log x'], answer: 0 }, // E7
+      { q: 'To reduce y = abˣ to linear form, take logarithms to obtain:', options: ['log y = log a + x log b','log y = log a + b log x','y = log a + x log b','log y = a log b + x'], answer: 0 }, // E7
+      { q: 'Solve ln x = 3.', options: ['x = e³','x = 3e','x = ln 3','x = 3'], answer: 0 }, // E6
+      { q: 'The change of base rule states log_a b equals:', options: ['log b / log a','log a / log b','log a × log b','log(b − a)'], answer: 0 }, // E4
+      { q: 'Solve e^(2x) = 7.', options: ['x = ½ln 7','x = ln 7','x = 2 ln 7','x = ln 3.5'], answer: 0 }, // E6
+      { q: 'Solve log_x 16 = 2.', options: ['x = 4','x = 8','x = 16','x = 32'], answer: 0 }, // E2
+      { q: 'For the model y = 5e^(−0.2t), the value of y at t = 0 is:', options: ['5','0','0.2','1'], answer: 0 }, // E11
+      { q: 'As t → ∞, the model y = 5e^(−0.2t) tends to:', options: ['0','5','∞','0.2'], answer: 0 }, // E11
+      { q: 'Solve 2 ln x = ln 9 for x > 0.', options: ['x = 3','x = 9','x = 4.5','x = 81'], answer: 0 }, // E4
+      { q: 'Solve 5^(2x) = 5^(x+3).', options: ['x = 3','x = 1','x = 5','x = 1.5'], answer: 0 }, // E6
+      { q: 'The value of (log 8)/(log 2) is:', options: ['3','4','6','0.25'], answer: 0 }, // E4
+      { q: 'A quantity grows so that dy/dx is proportional to y. Its graph is:', options: ['Exponential','Quadratic','Linear','Logarithmic'], answer: 0 }, // E11
+      { q: 'A quantity satisfies dy/dx proportional to x. Its graph is:', options: ['Quadratic','Exponential','Linear','Logarithmic'], answer: 0 }, // E11
+      { q: 'Solve eˣ − 5e^(−x) = 4.', options: ['x = ln 5','x = ln 4','x = ln 5 or x = 0','x = −ln 5'], answer: 0 }, // E6
+      { q: 'The horizontal asymptote of y = 2 + e^(−x) is:', options: ['y = 2','y = 0','y = 1','x = 2'], answer: 0 }, // E3
+      { q: 'Under continuous compound interest, an amount P after time t at rate r is:', options: ['Pe^(rt)','P(1 + r)ᵗ','P + rt','Pe^(r/t)'], answer: 0 }, // E11
+      { q: 'For radioactive decay N = N₀e^(−kt), the half-life satisfies:', options: ['e^(−kt) = 1/2','e^(−kt) = 2','kt = 2','N = 0'], answer: 0 }, // E11
+    ],
+    red: [
+      { q: 'Experimental data plotted as log y against log x gives a straight line of gradient n and intercept log a. The relationship is:', options: ['y = axⁿ','y = abˣ','y = a + nx','y = aeⁿˣ'], answer: 0 }, // E7
+      { q: 'Solve 3^(2x) − 4·3ˣ + 3 = 0.', options: ['x = 0 or x = 1','x = 1 or x = 3','x = 0 only','x = 1 only'], answer: 0 }, // E6
+      { q: 'Solve ln(x + 1) − ln(x − 1) = ln 3.', options: ['x = 2','x = 3','x = 1','x = 4'], answer: 0 }, // E4
+      { q: 'Experimental data plotted as log y against x gives a straight line. The relationship is of the form:', options: ['y = abˣ','y = axⁿ','y = a + bx','y = a ln x'], answer: 0 }, // E7
+      { q: 'The inverse of the function y = 3e^(2x) is:', options: ['y = ½ln(x/3)','y = ln(x/3)','y = 3 ln(x/2)','y = ½ln(3x)'], answer: 0 }, // E10
+      { q: 'A population model P = P₀e^(kt) is criticised because:', options: ['It grows without limit, ignoring resource constraints','It cannot model growth','It requires P₀ = 0','It is always decreasing'], answer: 0 }, // E11
+      { q: 'Solve 2ˣ = 3^(x−1), giving x in terms of logarithms.', options: ['x = ln 3/(ln 3 − ln 2)','x = ln 2/(ln 3 − ln 2)','x = ln 3/ln 2','x = ln 6'], answer: 0 }, // E6
+      { q: 'If N = N₀e^(−kt) has half-life 5, then k equals:', options: ['(ln 2)/5','5 ln 2','(ln 5)/2','1/5'], answer: 0 }, // E11
+      { q: 'Solve log₄ x = 3/2.', options: ['x = 8','x = 6','x = 64','x = 2'], answer: 0 }, // E2
+      { q: 'The curve y = ln(x − 2) crosses the x-axis at:', options: ['(3, 0)','(2, 0)','(1, 0)','(0, 0)'], answer: 0 }, // E3
+    ],
+  },
+
+  '1.9': {
+    name: 'Differentiation',
+    green: [
+      { q: 'The derivative of xⁿ is:', options: ['nxⁿ⁻¹','xⁿ⁻¹','nxⁿ','xⁿ/n'], answer: 0 }, // c1
+      { q: 'The derivative of 3x² is:', options: ['6x','3x','6x²','x³'], answer: 0 }, // c1
+      { q: 'The derivative of a constant is:', options: ['0','1','The constant','Undefined'], answer: 0 }, // c1
+      { q: 'The derivative of eˣ is:', options: ['eˣ','xeˣ⁻¹','eˣ/x','xeˣ'], answer: 0 }, // c-exp
+      { q: 'The derivative of ln x is:', options: ['1/x','ln x','x','1/ln x'], answer: 0 }, // c-exp
+      { q: 'The derivative of sin x (x in radians) is:', options: ['cos x','−cos x','−sin x','sec²x'], answer: 0 }, // c-trig
+      { q: 'The derivative of cos x (x in radians) is:', options: ['−sin x','sin x','−cos x','cosec²x'], answer: 0 }, // c-trig
+      { q: 'At a stationary point, dy/dx equals:', options: ['0','1','∞','The y-value'], answer: 0 }, // c-app
+      { q: 'If d²y/dx² > 0 at a stationary point, the point is a:', options: ['Minimum','Maximum','Point of inflection','Discontinuity'], answer: 0 }, // c-app
+      { q: 'If d²y/dx² < 0 at a stationary point, the point is a:', options: ['Maximum','Minimum','Point of inflection','Discontinuity'], answer: 0 }, // c-app
+      { q: 'The derivative of 5x is:', options: ['5','5x','0','x'], answer: 0 }, // c1
+      { q: 'The derivative of x³ − 2x is:', options: ['3x² − 2','3x² − 2x','x² − 2','3x³ − 2'], answer: 0 }, // c1
+      { q: 'The chain rule states that the derivative of f(g(x)) is:', options: ["f'(g(x))·g'(x)","f'(x)·g'(x)","f'(g'(x))","f(g'(x))"], answer: 0 }, // c-rules
+      { q: 'The product rule states that the derivative of uv is:', options: ["u'v + uv'","u'v'","u'v − uv'","(uv)'"], answer: 0 }, // c-rules
+      { q: 'The quotient rule states that the derivative of u/v is:', options: ["(u'v − uv')/v²","(u'v + uv')/v²","u'/v'","(uv' − u'v)/v²"], answer: 0 }, // c-rules
+      { q: 'Differentiation from first principles uses the limit as h → 0 of:', options: ['(f(x + h) − f(x))/h','(f(x + h) + f(x))/h','f(x + h) − f(x)','f(x)/h'], answer: 0 }, // c-first
+      { q: 'The derivative of e^(kx) is:', options: ['ke^(kx)','e^(kx)','e^(kx)/k','kxe^(kx)'], answer: 0 }, // c-exp
+      { q: 'dy/dx represents:', options: ['The rate of change of y with respect to x','The value of y','The area under the curve','The y-intercept'], answer: 0 }, // c1
+      { q: 'The derivative of √x is:', options: ['1/(2√x)','2√x','√x/2','1/√x'], answer: 0 }, // c1
+      { q: 'A function is increasing on an interval when:', options: ['dy/dx > 0 there','dy/dx < 0 there','dy/dx = 0 there','d²y/dx² > 0 there'], answer: 0 }, // c-app
+    ],
+    amber: [
+      { q: 'Differentiate x²eˣ.', options: ['2xeˣ + x²eˣ','2xeˣ','x²eˣ','2xeˣ − x²eˣ'], answer: 0 }, // c-rules
+      { q: 'Differentiate sin 3x.', options: ['3cos 3x','cos 3x','−3cos 3x','3sin 3x'], answer: 0 }, // c-rules
+      { q: 'Differentiate ln(2x + 1).', options: ['2/(2x + 1)','1/(2x + 1)','1/(2x)','2 ln(2x + 1)'], answer: 0 }, // c-rules
+      { q: 'The stationary points of y = x³ − 3x occur at:', options: ['x = 1 and x = −1','x = 0 only','x = 3 and x = −3','x = √3 and x = −√3'], answer: 0 }, // c-app
+      { q: 'Differentiate (x + 1)/(x − 1).', options: ['−2/(x − 1)²','2/(x − 1)²','1/(x − 1)²','−2/(x + 1)²'], answer: 0 }, // c-rules
+      { q: 'For x² + y² = 25, implicit differentiation gives dy/dx =', options: ['−x/y','x/y','−y/x','y/x'], answer: 0 }, // c-imp
+      { q: 'For the parametric curve x = t², y = t³, dy/dx equals:', options: ['3t/2','3t²/2t','2t/3t²','3t²'], answer: 0 }, // c-par
+      { q: 'The derivative of tan x is:', options: ['sec²x','−cosec²x','sec x tan x','cot x'], answer: 0 }, // c-trig
+      { q: 'Differentiate e^(x²).', options: ['2xe^(x²)','e^(x²)','x²e^(x²)','2e^(x²)'], answer: 0 }, // c-rules
+      { q: 'The gradient of the normal to a curve at a point where dy/dx = m is:', options: ['−1/m','m','1/m','−m'], answer: 0 }, // c-app
+      { q: 'Differentiate x ln x.', options: ['ln x + 1','1/x','ln x','x + ln x'], answer: 0 }, // c-rules
+      { q: 'Differentiate cos²x.', options: ['−sin 2x','2cos x','−2cos x','sin 2x'], answer: 0 }, // c-rules
+      { q: 'Differentiate (2x + 1)⁵.', options: ['10(2x + 1)⁴','5(2x + 1)⁴','2(2x + 1)⁴','10(2x + 1)⁵'], answer: 0 }, // c-rules
+      { q: 'A point of inflection on y = f(x) requires that:', options: ["f''(x) = 0 and f'' changes sign there","f'(x) = 0 only","f''(x) > 0","f(x) = 0"], answer: 0 }, // c-app
+      { q: 'Differentiate 1/x.', options: ['−1/x²','1/x²','ln x','−1/x'], answer: 0 }, // c1
+      { q: 'If displacement is s(t), the velocity is:', options: ['ds/dt','d²s/dt²','∫s dt','s/t'], answer: 0 }, // c-app
+      { q: 'The equation of the tangent to y = x² at (2, 4) is:', options: ['y = 4x − 4','y = 4x + 4','y = 2x','y = 4x'], answer: 0 }, // c-app
+      { q: 'Differentiate x³ ln x.', options: ['3x² ln x + x²','3x² ln x','x² + 3x²','3x² ln x + x³'], answer: 0 }, // c-rules
+      { q: 'The rate of change of the area A of a circle with respect to its radius r is:', options: ['2πr','πr²','2π','πr'], answer: 0 }, // c-app
+      { q: 'Differentiate sin x cos x.', options: ['cos 2x','−sin 2x','cos²x','sin 2x'], answer: 0 }, // c-rules
+    ],
+    red: [
+      { q: 'Differentiating y = x² from first principles, the expression ((x + h)² − x²)/h simplifies before the limit to:', options: ['2x + h','2x','h','2xh + h²'], answer: 0 }, // c-first
+      { q: 'For x³ + y³ = 6xy, implicit differentiation gives dy/dx =', options: ['(2y − x²)/(y² − 2x)','(x² − 2y)/(y² − 2x)','(2y − x²)/(2x − y²)','(y² − 2x)/(2y − x²)'], answer: 0 }, // c-imp
+      { q: 'The stationary point of y = xe^(−x) occurs at:', options: ['x = 1','x = 0','x = −1','x = e'], answer: 0 }, // c-app
+      { q: 'Differentiate ln(sec x).', options: ['tan x','sec x','cot x','sec x tan x'], answer: 0 }, // c-rules
+      { q: 'The curve y = x⁴ has f″(0) = 0 at the origin, yet the origin is:', options: ['A minimum, since f″ does not change sign','A point of inflection','A maximum','A discontinuity'], answer: 0 }, // c-app
+      { q: 'A sphere of radius r has volume V = (4/3)πr³. If dr/dt = 2, then dV/dt equals:', options: ['8πr²','4πr²','(8/3)πr²','4πr³'], answer: 0 }, // c-app
+      { q: 'For the parametric curve x = 2t, y = t², the second derivative d²y/dx² equals:', options: ['1/2','t/2','2','t'], answer: 0 }, // c-par
+      { q: 'Differentiate xˣ for x > 0.', options: ['xˣ(1 + ln x)','x·xˣ⁻¹','xˣ ln x','xˣ'], answer: 0 }, // c-rules
+      { q: 'A closed cylinder has fixed volume V. Its surface area is minimised when:', options: ['The height equals the diameter','The height equals the radius','The radius is 1','The height is twice the diameter'], answer: 0 }, // c-app
+      { q: 'Differentiate sin²x cos x.', options: ['2 sin x cos²x − sin³x','2 sin x cos x','−sin³x','2 sin x cos²x'], answer: 0 }, // c-rules
+    ],
+  },
+
 };
 
 if (typeof module !== 'undefined') { module.exports = MATHS_OCR_B_ALEVEL_QUESTIONS; }
