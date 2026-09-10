@@ -3,6 +3,600 @@
 // Merged into each paper in mark-schemes.html at selection time.
 // Key: paperId (from papers-config.js).
 window.MATHS_QUESTIONS = {
+ "math-ocr-h640-2024-p1": {
+  "questions": [
+   {
+    "number": 1,
+    "parts": [
+     {
+      "code": "1",
+      "prompt": "A student states that (x + 1)² ⩾ x² + 1 for all values of x. Using a counter example, show that the student is wrong.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 2,
+    "scenario": "A car of mass 1400 kg pulls a trailer of mass 400 kg along a straight horizontal road. The engine of the car produces a driving force of 6000 N. A resistance of 800 N acts on the car. A resistance of 300 N acts on the trailer. The tow-bar between the car and the trailer is light and horizontal.",
+    "parts": [
+     {
+      "code": "2(a)",
+      "prompt": "Draw a force diagram showing all the horizontal forces on the car and the trailer.",
+      "marks": 2
+     },
+     {
+      "code": "2(b)",
+      "prompt": "Calculate the acceleration of the car and trailer.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 3,
+    "scenario": "A particle hangs at the end of a string. A horizontal force of magnitude F N acting on the particle holds it in equilibrium so that the string makes an angle of 20° with the vertical, as shown in the diagram. The tension in the string is 12 N.",
+    "parts": [
+     {
+      "code": "3(a)",
+      "prompt": "Find the value of F.",
+      "marks": 2
+     },
+     {
+      "code": "3(b)",
+      "prompt": "Find the mass of the particle.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 4,
+    "parts": [
+     {
+      "code": "4",
+      "prompt": "The vectors v₁ and v₂ are defined by v₁ = 2ai + bj and v₂ = bi − 3j, where a and b are constants. Given that 3v₁ + 2v₂ = 22i − 9j, find the values of a and b.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 5,
+    "parts": [
+     {
+      "code": "5(a)",
+      "prompt": "Make y the subject of the formula log₁₀(y − k) = 2x log₁₀ 2, where k is a positive constant.",
+      "marks": 2
+     },
+     {
+      "code": "5(b)",
+      "prompt": "Sketch the graph of y against x.",
+      "marks": 3
+     }
+    ]
+   },
+   {
+    "number": 6,
+    "parts": [
+     {
+      "code": "6",
+      "prompt": "Given that f(x) = 2x² + 3, show from first principles that f′(x) = 4x.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 7,
+    "scenario": "A rectangular book ABCD rests on a smooth horizontal table. The length of AB is 28 cm and the length of AD is 18 cm. Five forces act on the book: 4 N at A in the direction AD; 5 N at B in the direction BC; 3 N at B in the direction BA; 9 N at D in the direction DA; 3 N at D in the direction DC.",
+    "parts": [
+     {
+      "code": "7(a)",
+      "prompt": "Show that the resultant of the forces acting on the book has zero magnitude.",
+      "marks": 2
+     },
+     {
+      "code": "7(b)",
+      "prompt": "Find the total moment of the forces about the centre of the book. Give your answer in N m.",
+      "marks": 3
+     },
+     {
+      "code": "7(c)",
+      "prompt": "Describe how the book will move under the action of these forces.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 8,
+    "scenario": "The equation of a curve is y = 4 sin 2x + cos 2x, where x is in radians. (Note: the printed paper shows the region bounded by this curve, the axes and the line x = 0.1.)",
+    "parts": [
+     {
+      "code": "8(a)",
+      "prompt": "Show that, for small values of x, y ≈ 2 + 2x − 4x².",
+      "marks": 2
+     },
+     {
+      "code": "8(b)",
+      "prompt": "In this question you must show detailed reasoning. Use the approximation in part (a) to estimate the area of the region bounded by the curve, the axes and the line x = 0.1.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 9,
+    "scenario": "A child throws a pebble of mass 40 g vertically downwards with a speed of 6 m s⁻¹ from a point 0.8 m above a sandy beach.",
+    "parts": [
+     {
+      "code": "9(a)",
+      "prompt": "Calculate the speed at which the pebble hits the beach.",
+      "marks": 2
+     },
+     {
+      "code": "9(b)",
+      "prompt": "The pebble travels 3 cm through the sand before coming to rest. Find the magnitude of the resistance force of the sand on the pebble, assuming it is constant. Give your answer correct to 3 significant figures.",
+      "marks": 5
+     }
+    ]
+   },
+   {
+    "number": 10,
+    "scenario": "Zac is measuring the growth of a culture of bacteria. The initial area of the culture is 8 cm². The area one day later is 8.8 cm². At first Zac uses a model A = a + bt, where A cm² is the area t days after he begins measuring.",
+    "parts": [
+     {
+      "code": "10(a)",
+      "prompt": "Find the values of a and b that best model the initial area and the area one day later.",
+      "marks": 2
+     },
+     {
+      "code": "10(b)",
+      "prompt": "Calculate the value of t for which the model predicts an area of 15 cm².",
+      "marks": 1
+     },
+     {
+      "code": "10(c)",
+      "prompt": "Zac notices the area increases by 10% each day. Explain why this model may not be suitable after the first day.",
+      "marks": 1
+     },
+     {
+      "code": "10(d)",
+      "prompt": "Zac decides to use a different model, A = Pe^(kt). Find the values of P and k that best model the initial area and the area one day later.",
+      "marks": 3
+     },
+     {
+      "code": "10(e)",
+      "prompt": "Calculate the value of t for which the area reaches 15 cm² according to this model.",
+      "marks": 2
+     },
+     {
+      "code": "10(f)",
+      "prompt": "Explain why this model may not be suitable for large values of t.",
+      "marks": 1
+     }
+    ]
+   },
+   {
+    "number": 11,
+    "scenario": "The first three terms of a geometric sequence are 5k − 2, 3k − 6 and k + 2, where k is a constant.",
+    "parts": [
+     {
+      "code": "11(a)",
+      "prompt": "Show that k satisfies the equation k² − 11k + 10 = 0.",
+      "marks": 3
+     },
+     {
+      "code": "11(b)",
+      "prompt": "When k takes the smaller of the two possible values, find the sum of the first 20 terms of the sequence.",
+      "marks": 3
+     },
+     {
+      "code": "11(c)",
+      "prompt": "When k takes the larger of the two possible values, find the sum to infinity of the sequence.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 12,
+    "scenario": "In this question the unit vectors i and j are in the x- and y-directions respectively. The velocity v m s⁻¹ of a particle is given by v = 3i + (6t² − 5)j. The initial position of the particle is 7j m.",
+    "parts": [
+     {
+      "code": "12(a)",
+      "prompt": "Find an expression for the position vector of the particle at time t s.",
+      "marks": 4
+     },
+     {
+      "code": "12(b)",
+      "prompt": "Find the Cartesian equation of the path of the particle.",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 13,
+    "scenario": "The curve with equation y = px + 8/x² + q, where p and q are constants, has a stationary point at (2, 7).",
+    "parts": [
+     {
+      "code": "13(a)",
+      "prompt": "Determine the values of p and q.",
+      "marks": 5
+     },
+     {
+      "code": "13(b)",
+      "prompt": "Find d²y/dx².",
+      "marks": 1
+     },
+     {
+      "code": "13(c)",
+      "prompt": "Hence determine the nature of the stationary point at (2, 7).",
+      "marks": 2
+     }
+    ]
+   },
+   {
+    "number": 14,
+    "scenario": "A man runs at a constant speed of 4 m s⁻¹ along a straight horizontal road. A woman standing on a bridge throws a ball with initial speed u m s⁻¹ at α° above the horizontal at the instant the man passes directly below her. The man catches the ball 2.4 s later, when it is 3.6 m below the point of projection.",
+    "parts": [
+     {
+      "code": "14(a)",
+      "prompt": "Explain what it means that the ball is modelled as a particle.",
+      "marks": 1
+     },
+     {
+      "code": "14(b)",
+      "prompt": "Find the vertical component of the ball's initial velocity.",
+      "marks": 2
+     },
+     {
+      "code": "14(c)",
+      "prompt": "Find the value of u and the value of α.",
+      "marks": 4
+     }
+    ]
+   },
+   {
+    "number": 15,
+    "parts": [
+     {
+      "code": "15",
+      "prompt": "The circle x² + y² + 2x − 14y + 25 = 0 has its centre at the point C. The line 7y = x + 25 intersects the circle at points A and B. Prove that triangle ABC is a right-angled triangle.",
+      "marks": 9
+     }
+    ]
+   },
+   {
+    "number": 16,
+    "scenario": "A block of mass m kg rests on rough horizontal ground. The coefficient of friction between the block and the ground is μ. A force of magnitude T N is applied at an angle θ radians above the horizontal and the block slides without tilting or lifting.",
+    "parts": [
+     {
+      "code": "16(a)",
+      "prompt": "Show that the acceleration of the block is given by (T cos θ − μ(mg − T sin θ))/m.",
+      "marks": 4
+     },
+     {
+      "code": "16(b)",
+      "prompt": "For a fixed value of T the acceleration is greatest when θ = α. Find an expression for α in terms of μ.",
+      "marks": 3
+     }
+    ]
+   }
+  ],
+  "markSchemes": {
+   "1": {
+    "type": "points",
+    "points": [
+     "Use a negative value or zero, e.g. x = 0",
+     "(0 + 1)² = 1 and 0² + 1 = 1, so the two sides are equal",
+     "Equality contradicts the strict inequality claimed, so the statement is false"
+    ],
+    "guidance": "M1 for using a negative value or zero. A1 for an explicit comparison between correct values, in words or symbols."
+   },
+   "2(a)": {
+    "type": "points",
+    "points": [
+     "Driving force 6000 N and the common tow-bar tension T shown and labelled",
+     "Both resistances (800 N on the car, 300 N on the trailer) correct and labelled, with no extra horizontal forces"
+    ],
+    "guidance": "B1 for the driving force and common tension correct and labelled — allow T₁ and T₂ if later equated, and ignore any vertical forces. B1 for both resistances correct with no extras."
+   },
+   "2(b)": {
+    "type": "points",
+    "points": [
+     "Newton's second law for the whole system: 6000 − 800 − 300 = 1800a",
+     "Correct use of the total mass 1800 kg with the resultant force",
+     "a = 2.72 m s⁻² (3 s.f.)"
+    ],
+    "guidance": "M1 attempt to find the resultant horizontal force, all forces included and no extras, allowing sign errors. M1 applies N2L with their total mass and their resultant — do not allow weight used instead of mass. A1 cao. Alternatively apply N2L to car and trailer separately and eliminate T."
+   },
+   "3(a)": {
+    "type": "points",
+    "points": [
+     "Resolve horizontally: F = 12 sin 20°",
+     "F = 4.10 N"
+    ],
+    "guidance": "M1 resolving horizontally — allow sin/cos interchange, and allow if F = T sin 20° or similar is seen. A1 www."
+   },
+   "3(b)": {
+    "type": "points",
+    "points": [
+     "Resolve vertically: mg = 12 cos 20°",
+     "Equate the weight to their component of tension and divide by g",
+     "m = 1.15 kg"
+    ],
+    "guidance": "M1 resolve to find the vertical component of the tension, allowing sin/cos interchange if consistent with part (a). M1 equating weight to their component and dividing by g. A1 cao."
+   },
+   "4": {
+    "type": "points",
+    "points": [
+     "3(2ai + bj) + 2(bi − 3j) = 22i − 9j",
+     "Equate coefficients: 6a + 2b = 22 and 3b − 6 = −9",
+     "a = 4",
+     "b = −2"
+    ],
+    "guidance": "M1 attempt to scalar multiply v₁ and add v₂ — allow a vector expression or two separate components. M1 equate coefficients of i and j to form two equations. A1 A1 cao for each value."
+   },
+   "5(a)": {
+    "type": "points",
+    "points": [
+     "log₁₀(y − k) = log₁₀(2^(2x))",
+     "y = k + 2^(2x)"
+    ],
+    "guidance": "M1 correct use of one of the laws of logarithms — award if 2^(2x) is seen, or if (y − k) = 10^(2x log 2). A1 the left-hand side must be y =."
+   },
+   "5(b)": {
+    "type": "points",
+    "points": [
+     "General exponential shape correct, with positive and negative values of x used",
+     "y-intercept at k + 1 on the positive y-axis",
+     "Horizontal asymptote at y = k"
+    ],
+    "guidance": "B1 general shape — follow through on their exponential from (a). B1 y-intercept at k + 1, follow through provided it is in terms of k. B1 asymptote at k; the horizontal line need not be drawn provided the intention is clear."
+   },
+   "6": {
+    "type": "points",
+    "points": [
+     "Form (f(x + h) − f(x))/h = (2(x + h)² + 3 − (2x² + 3))/h",
+     "Expand the numerator: (2x² + 4xh + 2h² + 3 − 2x² − 3)/h",
+     "Simplify to 4x + 2h",
+     "As h → 0, f′(x) = 4x"
+    ],
+    "guidance": "M1 uses the given function in the formula, allowing a slip such as missing brackets. M1 attempt to simplify the numerator. A1 correct expression with no h in the denominator, from fully correct working. A1 AG — correct use of the limit as h → 0."
+   },
+   "7(a)": {
+    "type": "points",
+    "points": [
+     "Total in the AB direction is 3 − 3 = 0, and in the AD direction 4 + 5 − 9 = 0",
+     "So the resultant force is zero"
+    ],
+    "guidance": "M1 considers forces in each direction. A1 AG — allow a clear statement of zero force in two perpendicular directions. Do not allow 'equilibrium' on its own; 3 = 3 and 4 + 5 = 9 is not sufficient without comment."
+   },
+   "7(b)": {
+    "type": "points",
+    "points": [
+     "Take moments anticlockwise about the centre (in N cm)",
+     "−4 × 14 + 5 × 14 − 3 × 9 + 9 × 14 − 3 × 9 combining all five forces",
+     "Total = −86 N cm = −0.86 N m"
+    ],
+    "guidance": "B1 at least one moment about the centre or any corner. M1 combines the moments of all five forces about the centre, allowing only sign errors. A1 allow 0.86 N m clockwise, but not −0.86 N m clockwise. Do not allow −86 N cm as the final answer."
+   },
+   "7(c)": {
+    "type": "points",
+    "points": [
+     "The book will rotate",
+     "Clockwise about the centre of mass"
+    ],
+    "guidance": "B1 allow turn or spin, but not move, tilt or flip. B1 allow 'there is a clockwise moment' for the second mark."
+   },
+   "8(a)": {
+    "type": "points",
+    "points": [
+     "Use sin x ≈ x and cos x ≈ 1 − x²/2 in the expression",
+     "4 sin 2x + cos 2x ≈ 4x·... giving y ≈ 2 + 2x − 4x²"
+    ],
+    "guidance": "M1 uses both given small angle approximations — must see the linear term and the (2x)²/2 term; condone missing brackets. Also allow clear use of cos 2x = 1 − 2sin²x with sin x ≈ x. A1 AG, convincing argument reaching the given answer."
+   },
+   "8(b)": {
+    "type": "points",
+    "points": [
+     "Set up the integral of the approximation from 0 to 0.1",
+     "Integrate 2 + 2x − 4x² term by term",
+     "Substitute the limits",
+     "Area ≈ 0.24"
+    ],
+    "guidance": "M1 attempts to integrate the expression in powers of x — must be seen. A1 correct integration. M1 substitutes the limits. A1 accept awrt 0.24. Alternatively the trapezium rule may be used on the approximating function: M1 for the rule, A1 for the correct h/2, A1 for at least three correct ordinates, A1 for awrt 0.24."
+   },
+   "9(a)": {
+    "type": "points",
+    "points": [
+     "Use v² = u² + 2as with s = 0.8, u = 6, a = 9.8",
+     "v = √51.68 = 7.19 m s⁻¹"
+    ],
+    "guidance": "M1 allow for a suvat equation leading to a value for v or v², allowing sign errors. A1 allow even if the sign of u does not match the signs of s and a."
+   },
+   "9(b)": {
+    "type": "points",
+    "points": [
+     "Use v² = u² + 2as with s = 0.03, u² = 51.68, v = 0",
+     "a = −861.3 m s⁻²",
+     "Newton's second law for the pebble, downwards positive: 0.04g − R = 0.04a",
+     "Fully correct equation with the weight included",
+     "R = 34.8 N (3 s.f.)"
+    ],
+    "guidance": "M1 suvat leading to a value for a; allow s = 3 used, follow through their (a), allow sign errors. A1 need not be evaluated. M1 use of N2L allowing one error or omission. A1 fully correct equation, follow through their acceleration, weight must be included. A1 must be rounded to 3 s.f.; accept 34.8 or 34.9 only."
+   },
+   "10(a)": {
+    "type": "points",
+    "points": [
+     "When t = 0, A = 8, so a = 8",
+     "When t = 1, A = 8.8, so b = 0.8"
+    ],
+    "guidance": "B1 B1. Allow embedded in A = 8 + 0.8t."
+   },
+   "10(b)": {
+    "type": "exact",
+    "points": [
+     "15 = 8 + 0.8t, so t = 8.75"
+    ],
+    "guidance": "B1. Allow 'after 9 days' or equivalent. Follow through their values from (a)."
+   },
+   "10(c)": {
+    "type": "points",
+    "points": [
+     "The model is linear so predicts the same increase each day, whereas a 10% increase gives larger increases as the culture grows"
+    ],
+    "guidance": "B1. Must indicate the mismatch between the linear model and the exponential observed results, either in general terms or for a particular day."
+   },
+   "10(d)": {
+    "type": "points",
+    "points": [
+     "A = Pe^(kt) with t = 0 gives P = 8",
+     "When t = 1, 8.8 = 8e^k",
+     "k = ln 1.1 = 0.0953 (3 s.f.)"
+    ],
+    "guidance": "B1 cao for P. M1 forming an equation for k using t = 1 and A = 8.8, follow through their value of P. A1 allow ln 1.1 or a decimal to at least 2 s.f."
+   },
+   "10(e)": {
+    "type": "points",
+    "points": [
+     "15 = 8e^(t ln 1.1), so t = ln(15/8) / ln 1.1",
+     "t = 6.60"
+    ],
+    "guidance": "M1 correct use of logarithms in an attempt to solve the indicial equation; similarly for 15 = 8 × 1.1^t. A1 follow through their P and k."
+   },
+   "10(f)": {
+    "type": "points",
+    "points": [
+     "The model predicts unlimited growth, which is not possible in a finite laboratory culture"
+    ],
+    "guidance": "B1. Must refer to growth being unbounded or to a limit on the available space or nutrients."
+   },
+   "11(a)": {
+    "type": "points",
+    "points": [
+     "If geometric then r = (3k − 6)/(5k − 2)",
+     "Equate the two expressions for r: (3k − 6)/(5k − 2) = (k + 2)/(3k − 6)",
+     "Expand to 9k² − 36k + 36 = 5k² + 8k − 4, giving k² − 11k + 10 = 0"
+    ],
+    "guidance": "M1 allow instead r = (k + 2)/(3k − 6) or r² = (k + 2)/(5k − 2) in any form. M1 forms an equation in k which need not be simplified. A1 AG."
+   },
+   "11(b)": {
+    "type": "points",
+    "points": [
+     "Solve k² − 11k + 10 = 0 to give k = 1 or k = 10",
+     "When k = 1 the sequence is 3, −3, 3, −3, … so r = −1",
+     "The sum of 20 terms is 0"
+    ],
+    "guidance": "M1 solves the quadratic to give at least one root. M1 evaluating the terms of the sequence when k = 1. A1 cao. Alternatively use S₂₀ = 3(1 − (−1)²⁰)/(1 − (−1)) = 0."
+   },
+   "11(c)": {
+    "type": "points",
+    "points": [
+     "When k = 10 the sequence is 48, 24, 12, … so a = 48 and r = 1/2",
+     "S∞ = 48/(1 − 1/2) = 96"
+    ],
+    "guidance": "B1 identifies the first term and common ratio. B1 cao."
+   },
+   "12(a)": {
+    "type": "points",
+    "points": [
+     "r = ∫(3i + (6t² − 5)j) dt",
+     "r = 3t i + (2t³ − 5t)j + c",
+     "When t = 0, r = 7j, so c = 7j",
+     "r = 3t i + (2t³ − 5t + 7)j"
+    ],
+    "guidance": "M1 attempt to integrate the velocity, either as a vector or as two separate components. A1 condone a missing constant. M1 evaluates the constant. A1 must be in vector form, with correct vector notation."
+   },
+   "12(b)": {
+    "type": "points",
+    "points": [
+     "x = 3t and y = 2t³ − 5t + 7, so t = x/3",
+     "y = 2(x/3)³ − 5(x/3) + 7"
+    ],
+    "guidance": "M1 attempt to eliminate t from the parametric equations. A1 follow through their (a); ignore subsequent working."
+   },
+   "13(a)": {
+    "type": "points",
+    "points": [
+     "dy/dx = p − 16x⁻³",
+     "Set the derivative to zero and substitute x = 2: p − 16 × 2⁻³ = 0",
+     "p = 2",
+     "Use the point (2, 7): 7 = 2p + 8/4 + q, so p + 2q... giving 2p + q = 5",
+     "q = 1"
+    ],
+    "guidance": "M1 uses negative powers to find the derivative — a term in x⁻³ is needed. M1 equates their derivative to zero and solves using x = 2. A1 for p. M1 uses the given coordinates to link p and q. A1 follow through their p."
+   },
+   "13(b)": {
+    "type": "exact",
+    "points": [
+     "d²y/dx² = 48x⁻⁴ = 48/x⁴"
+    ],
+    "guidance": "B1. Allow even from wrong values of p and q."
+   },
+   "13(c)": {
+    "type": "points",
+    "points": [
+     "At (2, 7), d²y/dx² = 48 × 2⁻⁴ = 3 > 0",
+     "Since the second derivative is positive, the stationary point is a minimum"
+    ],
+    "guidance": "M1 substitutes x = 2 into their (b); need not be fully evaluated. Also allow arguing that 48x⁻⁴ is always positive. Do not allow the gradient evaluated either side. A1 clear statement using the positivity of the second derivative, follow through their second derivative."
+   },
+   "14(a)": {
+    "type": "points",
+    "points": [
+     "The size and shape of the ball are neglected, so it is treated as a point mass"
+    ],
+    "guidance": "B1. A sensible comment equivalent to 'the object is modelled as a point mass'. Do not allow a statement that mixes correct and incorrect ideas."
+   },
+   "14(b)": {
+    "type": "points",
+    "points": [
+     "Vertical motion with s = −3.6, a = −9.8, t = 2.4 in s = uᵧt + ½at²",
+     "−3.6 = 2.4uᵧ − 4.9 × 2.4², giving uᵧ = 10.26 m s⁻¹"
+    ],
+    "guidance": "M1 use of a suvat equation with s = −3.6 leading to a value for uᵧ, allowing sign errors. A1 cao."
+   },
+   "14(c)": {
+    "type": "points",
+    "points": [
+     "The horizontal velocity of the ball equals the velocity of the man, so u cos α = 4",
+     "u = √(4² + 10.26²) = 11.01 m s⁻¹",
+     "tan α = 10.26/4",
+     "α = 68.7°"
+    ],
+    "guidance": "B1 for the horizontal velocity. B1 follow through their (b). M1 A1 also allow from solving u cos α = 4 or u sin α = 10.26; follow through their (b) and their horizontal velocity."
+   },
+   "15": {
+    "type": "points",
+    "points": [
+     "Complete the square: (x + 1)² + (y − 7)² = 25",
+     "So C is the point (−1, 7)",
+     "Solve the line and circle simultaneously, substituting x = 7y − 25",
+     "Simplify to 50y² − 350y + 600 = 0",
+     "y = 3 and y = 4",
+     "A and B are (−4, 3) and (3, 4)",
+     "Gradients of AC and BC are 4/3 and −3/4",
+     "The product of the gradients is −1, so AC and BC are perpendicular",
+     "Therefore triangle ABC is right-angled"
+    ],
+    "guidance": "M1 attempts to complete the square for either the x or the y terms. A1 correct coordinates of the centre. M1 attempt to solve the equations simultaneously. M1 simplifies to an equation with two roots, allowing arithmetic errors. A1 for the roots. A1 follow through for the coordinates. M1 A1 attempt at and correct values for both gradients (not OA or OB). A1 clear argument based on perpendicular lines, www. Alternatively use Pythagoras: AB² = 50, AC² = BC² = 25, so AC² + BC² = AB²."
+   },
+   "16(a)": {
+    "type": "points",
+    "points": [
+     "Resolve vertically: R = mg − T sin θ",
+     "The block slides, so friction F = μR = μ(mg − T sin θ)",
+     "Newton's second law horizontally: T cos θ − μ(mg − T sin θ) = ma",
+     "a = (T cos θ − μ(mg − T sin θ))/m"
+    ],
+    "guidance": "B1 must be explicit — may be seen on the diagram; allow R + T sin θ = mg if F = μ(mg − T sin θ) is also seen. M1 uses F = μR with their R. M1 applies N2L horizontally with all forces. A1 AG."
+   },
+   "16(b)": {
+    "type": "points",
+    "points": [
+     "Write the numerator as T(cos θ + μ sin θ) − μmg",
+     "This is greatest when cos θ + μ sin θ is greatest, which occurs at tan θ = μ",
+     "α = arctan μ"
+    ],
+    "guidance": "M1 recognises that the acceleration is greatest when cos θ + μ sin θ is greatest. M1 uses the R sin/R cos form or differentiates and sets the derivative to zero. A1 α = arctan μ (equivalently tan α = μ)."
+   }
+  }
+ },
  "math-aqa-7357-2018-p1": {
   "questions": [
    {
