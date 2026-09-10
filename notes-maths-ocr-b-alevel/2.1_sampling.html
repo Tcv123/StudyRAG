@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 2.1 — Sampling</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.1 Sampling</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Statistics — spec refs p21–p25</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> The distinction between a population and a sample, the six named sampling techniques, how to select and evaluate a method for a given problem, sources of bias, and the role of the large data set.
+</div>
+
+<h2>1. Population and sample</h2>
+
+<table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td><strong>Population</strong></td><td>The entire group being studied.</td></tr>
+  <tr><td><strong>Sample</strong></td><td>A subset of the population, used to draw conclusions about it.</td></tr>
+  <tr><td><strong>Census</strong></td><td>Data collected from every member of the population.</td></tr>
+  <tr><td><strong>Sampling frame</strong></td><td>A list of all population members, from which the sample is drawn.</td></tr>
+  <tr><td><strong>Parameter</strong></td><td>A numerical property of the <em>population</em>.</td></tr>
+  <tr><td><strong>Statistic</strong></td><td>A numerical property calculated from a <em>sample</em>.</td></tr>
+</table>
+
+<p>A sample statistic is used as an <strong>estimate</strong> of the corresponding population parameter — the sample mean estimating the population mean, the sample variance estimating the population variance (spec ref p22).</p>
+
+<h3>Census or sample?</h3>
+
+<table>
+  <tr><th></th><th>Census</th><th>Sample</th></tr>
+  <tr><td>Accuracy</td><td>Complete, no sampling error</td><td>Subject to sampling variation</td></tr>
+  <tr><td>Cost and time</td><td>High</td><td>Low</td></tr>
+  <tr><td>Practicality</td><td>Impossible if testing is destructive</td><td>Always possible</td></tr>
+</table>
+
+<div class="exam-tip">
+The destructive-testing point is the one that reliably earns a mark: you cannot census the lifetime of light bulbs, because testing every bulb destroys the entire stock.
+</div>
+
+<h2>2. Sampling techniques</h2>
+
+<p>MEI names six (p23, p24). Any other technique will be explained in the question.</p>
+
+<table>
+  <tr><th>Technique</th><th>Method</th><th>Strength</th><th>Weakness</th></tr>
+  <tr><td><strong>Simple random</strong></td><td>Every sample of the required size is equally likely</td><td>Unbiased</td><td>Needs a complete sampling frame</td></tr>
+  <tr><td><strong>Systematic</strong></td><td>Every \(k\)th member of an ordered list</td><td>Simple, spreads across the list</td><td>Fails if the list has a matching periodic pattern</td></tr>
+  <tr><td><strong>Stratified</strong></td><td>Sample each subgroup in proportion to its size</td><td>Represents every subgroup</td><td>Subgroup sizes must be known</td></tr>
+  <tr><td><strong>Quota</strong></td><td>Select until a set number in each category is filled</td><td>No sampling frame needed</td><td>Selection within categories is not random</td></tr>
+  <tr><td><strong>Cluster</strong></td><td>Divide into groups, sample whole groups</td><td>Cheap over a wide area</td><td>Clusters may not represent the population</td></tr>
+  <tr><td><strong>Self-selected</strong></td><td>Participants volunteer</td><td>Easy and cheap</td><td>Strongly biased towards those with strong views</td></tr>
+</table>
+
+<p><strong>Opportunity sampling</strong> — taking whoever is conveniently available — is also named. It is quick but unlikely to represent the population.</p>
+
+<div class="exam-tip">
+Quota and stratified sampling are the pair most often confused. Both fix the numbers from each category; the difference is that stratified sampling then selects <strong>at random</strong> within each stratum, while quota sampling does not.
+</div>
+
+<h3>Stratified sample calculations</h3>
+
+<div class="example">
+<strong>Worked example.</strong> A school has 480 students in Year 12 and 320 in Year 13. Describe a stratified sample of 120.
+<p>Total 800, so the sampling fraction is \(\dfrac{120}{800} = 0.15\).</p>
+$$\text{Year 12: } 480 \times 0.15 = 72, \qquad \text{Year 13: } 320 \times 0.15 = 48$$
+<p>Then select 72 and 48 students <strong>at random</strong> within each year group.</p>
+</div>
+
+<div class="exam-tip">
+Two marks are commonly dropped here: not saying that selection within each stratum is random, and rounding each stratum independently so the totals no longer add to the required sample size.
+</div>
+
+<h2>3. Bias</h2>
+
+<div class="definition">
+A sampling method is <strong>biased</strong> if it systematically favours certain outcomes, so the sample is not representative.
+</div>
+
+<table>
+  <tr><th>Source</th><th>How it arises</th></tr>
+  <tr><td>Incomplete sampling frame</td><td>Some members can never be selected — a telephone directory omits those without listed landlines.</td></tr>
+  <tr><td>Non-response</td><td>Those who do not reply differ systematically from those who do.</td></tr>
+  <tr><td>Self-selection</td><td>Volunteers tend to hold stronger views than the population.</td></tr>
+  <tr><td>Time or place of sampling</td><td>Tuesday-morning shoppers differ from the full customer base.</td></tr>
+  <tr><td>Systematic periodicity</td><td>Sampling every 12th item when a fault recurs every 12th item.</td></tr>
+  <tr><td>Leading questions</td><td>The wording pushes respondents towards an answer.</td></tr>
+</table>
+
+<div class="example">
+<strong>Worked example.</strong> A supermarket surveys shoppers on a Tuesday morning to estimate mean weekly spending. Criticise the method.
+<p>Only shoppers available on a weekday morning can be selected, which under-represents people in full-time work — a group whose spending patterns may differ systematically. Non-response from those in a hurry compounds it. A better design samples across several days, times of day and stores.</p>
+</div>
+
+<div class="exam-tip">
+When asked to criticise, name the source of bias, say <strong>who is over- or under-represented</strong>, and explain why that distorts the estimate. A bare statement that the sample "is biased" is not enough.
+</div>
+
+<h2>4. Sampling variability</h2>
+
+<p>Different samples from the same population give different results (p22). Two researchers taking independent random samples and obtaining different means have not made an error — that variation is inherent.</p>
+
+<p>Larger samples give more reliable estimates: the standard deviation of the sample mean is \(\dfrac{\sigma}{\sqrt{n}}\), so <strong>quadrupling</strong> the sample size halves it. Note that increasing the sample size reduces <em>variability</em> but does nothing about <em>bias</em> — a badly designed large sample is still badly designed.</p>
+
+<h2>5. The large data set</h2>
+
+<p>A large data set (LDS) is issued in advance and is intended to be explored in class using a spreadsheet or statistical software, so that its contexts become familiar.</p>
+
+<ul>
+  <li>Questions in the Statistics component assume familiarity with those contexts.</li>
+  <li>In the examination there is <strong>no printout</strong>, though selected data or summary statistics may be given in the paper.</li>
+  <li>Familiarity is intended to give a material advantage, allowing questions that would be too demanding in an unfamiliar setting.</li>
+  <li>From September 2026, all students on a two-year AS/A Level programme use a <strong>single</strong> large data set, replacing the earlier rotation of three.</li>
+</ul>
+
+<div class="exam-tip">
+The point of the LDS is <em>context</em>, not memorised numbers. Know what the variables mean, what units they use, how they were collected, and what would count as a plausible value — not individual entries.
+</div>
+
+<h2>6. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Confusing a parameter (population) with a statistic (sample).</li>
+  <li>Describing stratified sampling without mentioning random selection within strata.</li>
+  <li>Rounding stratum sizes so they no longer sum to the sample size.</li>
+  <li>Confusing quota with stratified sampling.</li>
+  <li>Saying a sample "is biased" without identifying who is misrepresented.</li>
+  <li>Claiming a larger sample removes bias — it reduces variability only.</li>
+  <li>Treating differences between two random samples as an error.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

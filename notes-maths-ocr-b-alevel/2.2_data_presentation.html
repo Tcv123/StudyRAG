@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 2.2 — Data Presentation &amp; Interpretation</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.2 Data Presentation &amp; Interpretation</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Statistics — spec refs D1–D14</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Types of data and the diagrams that suit them, measures of central tendency and spread, variance and standard deviation, identifying outliers, cleaning data, and interpreting scatter diagrams and correlation.
+</div>
+
+<h2>1. Types of data</h2>
+
+<table>
+  <tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+  <tr><td><strong>Categorical</strong></td><td>Labels, not numbers</td><td>Eye colour</td></tr>
+  <tr><td><strong>Discrete</strong></td><td>Numerical, taking separate values</td><td>Number of cars</td></tr>
+  <tr><td><strong>Continuous</strong></td><td>Numerical, any value in a range</td><td>Height</td></tr>
+  <tr><td><strong>Ranked</strong></td><td>Ordered positions rather than values</td><td>Finishing places</td></tr>
+</table>
+
+<h2>2. Diagrams</h2>
+
+<table>
+  <tr><th>Diagram</th><th>Suited to</th><th>Note</th></tr>
+  <tr><td>Bar chart</td><td>Categorical</td><td>Bars separated; height is frequency</td></tr>
+  <tr><td>Vertical line chart</td><td>Discrete numerical</td><td>Lines rather than bars</td></tr>
+  <tr><td>Dot plot</td><td>Small data sets</td><td>Stacks of dots represent frequency</td></tr>
+  <tr><td>Histogram</td><td>Continuous, grouped</td><td><strong>Area</strong> is proportional to frequency</td></tr>
+  <tr><td>Frequency chart</td><td>Grouped, equal widths</td><td>Equal-width bars; vertical axis is <strong>frequency</strong></td></tr>
+  <tr><td>Pie chart</td><td>Proportions of a whole</td><td>Comparative pie charts have <strong>area</strong> proportional to frequency</td></tr>
+  <tr><td>Stem-and-leaf</td><td>Small sets</td><td>Retains the original values; needs a key</td></tr>
+  <tr><td>Box plot</td><td>Comparing distributions</td><td>Shows median, quartiles and extremes</td></tr>
+  <tr><td>Cumulative frequency</td><td>Estimating median and quartiles</td><td>Plot against upper class boundaries</td></tr>
+</table>
+
+<div class="exam-tip">
+The <strong>histogram versus frequency chart</strong> distinction is specific to MEI and is examined. A histogram may have unequal class widths and uses frequency density; a frequency chart has equal widths and plots frequency itself.
+</div>
+
+<h3>Histograms</h3>
+$$\text{frequency density} = \frac{\text{frequency}}{\text{class width}}, \qquad \text{frequency} = \text{density} \times \text{width}$$
+
+<div class="example">
+<strong>Worked example.</strong> A histogram bar has width 5 and frequency density 3. Its frequency is \(5\times3 = 15\).
+</div>
+
+<h3>Comparative pie charts</h3>
+
+<p>When two pie charts represent data sets of different sizes, the <strong>areas</strong> are made proportional to the total frequencies. Since area \(\propto r^2\), the radii are proportional to \(\sqrt{\text{frequency}}\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> Two data sets have totals 50 and 200. The ratio of radii is \(\sqrt{50}:\sqrt{200} = 1:2\), not \(1:4\).
+</div>
+
+<h2>3. Measures of central tendency</h2>
+
+<table>
+  <tr><th>Measure</th><th>Definition</th><th>When to prefer it</th></tr>
+  <tr><td><strong>Mean</strong></td><td>\(\bar{x} = \dfrac{\sum x}{n}\)</td><td>Symmetric data with no outliers</td></tr>
+  <tr><td><strong>Median</strong></td><td>Middle value in order</td><td>Skewed data, or when outliers are present</td></tr>
+  <tr><td><strong>Mode</strong></td><td>Most frequent value</td><td>Categorical data</td></tr>
+  <tr><td><strong>Midrange</strong></td><td>\(\dfrac{\text{min}+\text{max}}{2}\)</td><td>Quick summary; very sensitive to extremes</td></tr>
+</table>
+
+<p>A <strong>weighted mean</strong> is appropriate when combining groups of different sizes — for example using populations as weights.</p>
+
+<div class="exam-tip">
+MEI states that the focus is on <strong>interpretation rather than calculation</strong>. Expect to be asked which average is appropriate and why, more often than to compute one by hand.
+</div>
+
+<h2>4. Measures of spread</h2>
+
+<table>
+  <tr><th>Measure</th><th>Definition</th></tr>
+  <tr><td>Range</td><td>Maximum \(-\) minimum</td></tr>
+  <tr><td>Interquartile range</td><td>\(Q_3 - Q_1\)</td></tr>
+  <tr><td>Percentiles</td><td>Values below which a given percentage falls</td></tr>
+  <tr><td>Variance</td><td>\(s^2 = \dfrac{S_{xx}}{n-1}\)</td></tr>
+  <tr><td>Standard deviation</td><td>\(s = \sqrt{s^2}\)</td></tr>
+</table>
+
+<p>where</p>
+$$S_{xx} = \sum (x_i - \bar{x})^2$$
+
+<div class="exam-tip">
+The <strong>sample</strong> variance divides by \(n-1\), not \(n\). This is what makes it an unbiased estimator of the population variance. Dividing by \(n\) is the standard error and produces a value that is slightly too small.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A data set of 10 values has \(\sum x = 200\) and \(S_{xx} = 360\).
+$$\bar{x} = \frac{200}{10} = 20, \qquad s^2 = \frac{360}{9} = 40, \qquad s = \sqrt{40} \approx 6.32$$
+</div>
+
+<p>Standard deviation carries the same units as the data; variance carries their square.</p>
+
+<h3>Effect of transforming the data</h3>
+
+<table>
+  <tr><th>Transformation</th><th>Mean</th><th>Standard deviation</th></tr>
+  <tr><td>Add a constant \(c\)</td><td>Increases by \(c\)</td><td><strong>Unchanged</strong></td></tr>
+  <tr><td>Multiply by \(k\)</td><td>Multiplied by \(k\)</td><td>Multiplied by \(|k|\)</td></tr>
+</table>
+
+<div class="exam-tip">
+Adding a constant shifts every value equally, so the <em>spread about the mean</em> is untouched. This is worth stating explicitly when justifying the answer.
+</div>
+
+<h2>5. Outliers</h2>
+
+<div class="definition">
+An <strong>outlier</strong> is an item inconsistent with the rest of the data. MEI gives two accepted criteria (spec ref D13): a value at least <strong>2 standard deviations</strong> from the mean, <em>or</em> at least <strong>1.5 × IQR</strong> beyond the nearer quartile.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Mean 50, standard deviation 4. By the first criterion, outliers are values below \(50-8 = 42\) or above \(50+8 = 58\).
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> \(Q_1 = 20\), \(Q_3 = 32\), so \(\text{IQR} = 12\) and \(1.5\times\text{IQR} = 18\). Outliers are values below \(20-18 = 2\) or above \(32+18 = 50\).
+</div>
+
+<div class="exam-tip">
+State which criterion you are using. The two do not always agree, and a question that gives you quartiles is signalling the IQR rule while one giving a standard deviation signals the other.
+</div>
+
+<h2>6. Cleaning data</h2>
+
+<p>Cleaning covers missing values, errors and outliers (D14).</p>
+
+<ul>
+  <li>An impossible value — an adult height recorded as 1750 cm — is a data-entry error and should be corrected or removed, with the reason stated.</li>
+  <li>A genuine extreme value should generally be <strong>kept</strong>: it is real information, and discarding it distorts the conclusions.</li>
+  <li>Missing data should be acknowledged, not silently ignored.</li>
+</ul>
+
+<div class="exam-tip">
+Removing an outlier requires <strong>justification</strong>. "It looked wrong" is not a reason; "it is physically impossible for an adult height" is.
+</div>
+
+<h2>7. Bivariate data and correlation</h2>
+
+<p>A <strong>scatter diagram</strong> displays paired observations. Correlation measures how closely the points lie to a straight line (H10).</p>
+
+<table>
+  <tr><th>Pattern</th><th>Description</th></tr>
+  <tr><td>Points rising left to right</td><td>Positive correlation</td></tr>
+  <tr><td>Points falling left to right</td><td>Negative correlation</td></tr>
+  <tr><td>No pattern</td><td>Little or no correlation</td></tr>
+</table>
+
+<div class="exam-tip">
+<strong>Correlation does not imply causation.</strong> Ice cream sales and drownings correlate strongly, but neither causes the other — hot weather drives both. Always consider a possible third variable.
+</div>
+
+<h3>Regression lines</h3>
+
+<p>A line or curve of best fit lets you estimate one variable from the other.</p>
+
+<ul>
+  <li><strong>Interpolation</strong> — estimating within the range of the data. Generally reliable.</li>
+  <li><strong>Extrapolation</strong> — estimating beyond it. Not justified, since the relationship may not continue.</li>
+</ul>
+
+<div class="exam-tip">
+<strong>What this specification does and does not require.</strong> You are expected to <em>interpret</em> a regression line or other best-fit model, including judging interpolation and extrapolation — but <strong>calculating</strong> the equation of a regression line is excluded. Likewise, you use a <em>given</em> correlation coefficient to make an inference; calculating one, and knowing the names of particular coefficients, are both excluded. A <strong>rank</strong> correlation coefficient measures correlation between the ranks rather than the raw values.
+</div>
+
+<h2>8. Sample size and shape</h2>
+
+<p>Diagrams from unbiased samples become more representative of the underlying theoretical distribution as the sample grows (D5). Tossing a fair coin, the proportion of heads moves steadily closer to 50% as the number of tosses increases.</p>
+
+<h2>9. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Dividing by \(n\) instead of \(n-1\) for the sample variance.</li>
+  <li>Treating a histogram's bar height as the frequency.</li>
+  <li>Making the radius, rather than the area, proportional to frequency in comparative pie charts.</li>
+  <li>Claiming causation from correlation.</li>
+  <li>Extrapolating beyond the data without noting that it is unjustified.</li>
+  <li>Attempting to calculate a regression line or correlation coefficient, which is off-specification.</li>
+  <li>Removing an outlier without justification.</li>
+  <li>Giving standard deviation in squared units.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

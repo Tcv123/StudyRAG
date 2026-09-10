@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 3.5 — Forces</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.5 Forces</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Mechanics — spec refs F1–F12</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Identifying and representing the forces acting on a body, resolving forces into components, the conditions for equilibrium, and friction including limiting friction and the angle of friction.
+</div>
+
+<h2>1. The named forces</h2>
+
+<p>MEI lists the vocabulary explicitly (spec ref F1).</p>
+
+<table>
+  <tr><th>Force</th><th>Description</th><th>Direction</th></tr>
+  <tr><td><strong>Weight</strong></td><td>Gravitational pull, \(W = mg\)</td><td>Vertically downwards</td></tr>
+  <tr><td><strong>Normal reaction</strong></td><td>Contact force from a surface</td><td>Perpendicular to the surface</td></tr>
+  <tr><td><strong>Tension</strong></td><td>Pull in a string or rod</td><td>Along the string, pulling inwards</td></tr>
+  <tr><td><strong>Thrust / compression</strong></td><td>Push in a rod</td><td>Along the rod, pushing outwards</td></tr>
+  <tr><td><strong>Friction</strong></td><td>Resists relative sliding</td><td>Along the surface, opposing motion or the tendency to move</td></tr>
+  <tr><td><strong>Resistance</strong></td><td>Air resistance, drag</td><td>Opposing motion</td></tr>
+  <tr><td><strong>Driving force</strong></td><td>Produced by an engine</td><td>Direction of motion</td></tr>
+</table>
+
+<div class="exam-tip">
+The normal reaction is <strong>not</strong> automatically equal to the weight. Its value depends on the other forces present: pressing down on a block increases it, pulling upwards at an angle reduces it, and on an inclined plane it is \(mg\cos\theta\).
+</div>
+
+<p>A string can only <strong>pull</strong>; a rod can pull (tension) or push (thrust).</p>
+
+<h2>2. Force diagrams</h2>
+
+<p>Every mechanics problem should begin with a diagram showing <strong>all</strong> the forces on the body — and only those on that body (F3).</p>
+
+<p>An <strong>internal</strong> force acts between parts of a system; an <strong>external</strong> force acts from outside. When a whole system is treated as one body, internal forces cancel in pairs and can be ignored — but they reappear the moment you consider one part on its own.</p>
+
+<h2>3. Resolving forces</h2>
+
+<p>A force \(F\) at angle \(\theta\) to a chosen direction has components \(F\cos\theta\) along it and \(F\sin\theta\) perpendicular to it (F6).</p>
+
+<div class="example">
+<strong>Worked example.</strong> A force of 20 N acts at \(30^\circ\) above the horizontal.
+$$\text{horizontal: } 20\cos30^\circ = 17.3 \text{ N}, \qquad \text{vertical: } 20\sin30^\circ = 10 \text{ N}$$
+</div>
+
+<h3>Choosing directions</h3>
+
+<div class="exam-tip">
+On an inclined plane, resolve <strong>parallel and perpendicular to the plane</strong>, not horizontally and vertically. That choice puts the normal reaction along one axis and the friction along the other, so each equation contains fewer unknowns.
+</div>
+
+<p>For a body on a plane inclined at \(\theta\):</p>
+
+$$\text{component of weight down the plane} = mg\sin\theta$$
+$$\text{component perpendicular to the plane} = mg\cos\theta$$
+
+<div class="example">
+<strong>Worked example.</strong> A 10 kg block rests on a plane inclined at \(30^\circ\), with \(g = 9.8\).
+<p>Weight \(= 98\) N, so the component down the plane is \(98\sin30^\circ = 49\) N and the normal reaction is \(98\cos30^\circ = 84.9\) N.</p>
+</div>
+
+<div class="exam-tip">
+\(\sin\) goes with the component <strong>along</strong> the slope and \(\cos\) with the one <strong>perpendicular</strong> to it. Checking a limiting case settles it: at \(\theta = 0\) the plane is flat, the component along it should vanish, and \(\sin 0 = 0\) — correct.
+</div>
+
+<h2>4. Equilibrium</h2>
+
+<div class="definition">
+A particle is in <strong>equilibrium</strong> if and only if the resultant of the forces acting on it is zero (F5, F7). Equivalently, resolving in <em>any</em> direction gives a total of zero.
+</div>
+
+<p>In practice, resolve in two perpendicular directions to obtain two independent equations, and solve for the unknowns (F9).</p>
+
+<p>Vectors representing forces in equilibrium sum to the zero vector, so drawn head to tail they form a <strong>closed polygon</strong> — a closed triangle for three forces (F8).</p>
+
+<div class="example">
+<strong>Worked example.</strong> A crate is pushed at constant velocity across a rough floor. What is the applied horizontal force?
+<p>Constant velocity means zero acceleration, so the body is in equilibrium horizontally: the applied force exactly equals the frictional force.</p>
+</div>
+
+<h2>5. Friction</h2>
+
+<div class="definition">
+For a body on a rough surface with coefficient of friction \(\mu\) and normal reaction \(R\):
+$$F \le \mu R$$
+Friction takes whatever value is needed to prevent motion, up to a maximum of \(\mu R\).
+</div>
+
+<p>When the body is on the point of sliding, the friction is at that maximum — <strong>limiting friction</strong>, \(F = \mu R\). The coefficient \(\mu\) has no units.</p>
+
+<div class="example">
+<strong>Worked example.</strong> With \(\mu = 0.4\) and \(R = 50\) N, the maximum possible frictional force is \(0.4\times50 = 20\) N. A horizontal push of 15 N produces a frictional force of 15 N and no motion; a push of 25 N exceeds the maximum, so the block slides.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A 4 kg block on a rough horizontal surface has \(\mu = 0.25\), with \(g=9.8\). Find the force needed to start it sliding.
+$$R = 4(9.8) = 39.2 \text{ N}, \qquad F = 0.25 \times 39.2 = 9.8 \text{ N}$$
+</div>
+
+<div class="exam-tip">
+Use \(F = \mu R\) <strong>only</strong> when the body is moving or on the point of moving. For a stationary body not yet at that point, friction equals the applied force, whatever that happens to be — using \(\mu R\) there gives the wrong answer.
+</div>
+
+<h3>The angle of friction</h3>
+
+<p>The angle of friction \(\lambda\) satisfies \(\tan\lambda = \mu\).</p>
+
+<h3>Sliding on a slope</h3>
+
+<div class="example">
+<strong>Worked example.</strong> Show that a block on a rough plane inclined at \(\theta\) stays at rest provided \(\tan\theta \le \mu\).
+<p>Perpendicular to the plane: \(R = mg\cos\theta\).</p>
+<p>Parallel to the plane, the component tending to move the block is \(mg\sin\theta\). For equilibrium this cannot exceed limiting friction:</p>
+$$mg\sin\theta \le \mu R = \mu mg\cos\theta$$
+<p>Dividing by \(mg\cos\theta\), which is positive for \(0 &lt; \theta &lt; 90^\circ\):</p>
+$$\tan\theta \le \mu$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A block sits on a rough plane at \(20^\circ\) with \(\mu = 0.5\). Does it slide?
+<p>\(\tan20^\circ \approx 0.364 &lt; 0.5\), so it remains at rest.</p>
+</div>
+
+<p>Note that the result is independent of the mass — a heavier block is held by proportionally more friction.</p>
+
+<div class="exam-tip">
+Friction on a block in limiting equilibrium on a slope acts <strong>up</strong> the plane, opposing the tendency to slide down. Drawing it downwards is a common diagram error that reverses the whole solution.
+</div>
+
+<h3>Pulling at an angle</h3>
+
+<div class="exam-tip">
+Pulling a block with a force angled <em>above</em> the horizontal reduces the normal reaction, and therefore reduces the maximum friction — which is why pulling a heavy case is easier than pushing it, since pushing downwards at an angle increases \(R\) instead.
+</div>
+
+<h2>6. Gravity</h2>
+
+<p>The acceleration due to gravity is not a universal constant but depends on location; on Earth it is modelled as constant, and examinations use \(g = 9.8\) unless stated otherwise (F2). The <strong>inverse square law for gravitation is excluded</strong> from this specification.</p>
+
+<h2>7. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Assuming the normal reaction always equals the weight.</li>
+  <li>Swapping \(\sin\) and \(\cos\) when resolving on an inclined plane.</li>
+  <li>Using \(F = \mu R\) for a body that is stationary and not on the point of moving.</li>
+  <li>Drawing friction in the direction of motion rather than opposing it.</li>
+  <li>Omitting a force from the diagram — usually the normal reaction or the weight.</li>
+  <li>Resolving horizontally and vertically on a slope, creating unnecessary algebra.</li>
+  <li>Treating equilibrium as meaning "at rest" — constant velocity also qualifies.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

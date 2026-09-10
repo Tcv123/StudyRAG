@@ -1301,7 +1301,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'For that same projectile, taking g = 9.8, the time to reach maximum height is closest to:', options: ['1.02 s','2.04 s','0.51 s','1.77 s'], answer: 0 }, // y2
       { q: 'For that same projectile, the maximum height above the point of projection is closest to:', options: ['5.10 m','10.2 m','2.55 m','15.3 m'], answer: 0 }, // y2
       { q: 'For that same projectile on level ground, the time of flight is closest to:', options: ['2.04 s','1.02 s','4.08 s','3.06 s'], answer: 0 }, // y2
-      { q: 'For that same projectile on level ground, the range is closest to:', options: ['35.4 m','17.7 m','20.4 m','70.7 m'], answer: 0 }, // y2
+      { q: 'For that same projectile on level ground, the range is closest to:', options: ['35.3 m','17.7 m','20.4 m','70.7 m'], answer: 0 }, // y2
       { q: 'A ball is thrown horizontally at 15 m s⁻¹ from a height of 20 m. Taking g = 9.8, the time to reach the ground is closest to:', options: ['2.02 s','1.43 s','4.08 s','2.86 s'], answer: 0 }, // y2
       { q: 'For that same ball, the horizontal distance travelled before landing is closest to:', options: ['30.3 m','21.4 m','15.0 m','61.2 m'], answer: 0 }, // y2
       { q: 'For a projectile launched at speed u and angle θ, the time of flight on level ground is:', options: ['2u sin θ / g','u sin θ / g','2u cos θ / g','u / g'], answer: 0 }, // y2

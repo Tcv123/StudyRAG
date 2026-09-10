@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 3.4 — Projectiles</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.4 Projectiles</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Mechanics — spec refs y1–y4</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Motion under gravity in a vertical plane — the modelling assumptions, the component equations, maximum height, range and time of flight, finding the initial velocity, and the Cartesian equation of the trajectory.
+</div>
+
+<h2>1. The modelling assumptions</h2>
+
+<p>The specification states these explicitly (spec ref y1):</p>
+
+<ul>
+  <li>There is <strong>no air resistance</strong>.</li>
+  <li>The projectile is a <strong>particle</strong>.</li>
+  <li>The horizontal distance travelled is small enough that gravity always acts in the <strong>same direction</strong>.</li>
+  <li>The vertical distance travelled is small enough that gravity is <strong>constant</strong> in magnitude.</li>
+</ul>
+
+<div class="exam-tip">
+Calculations involving air resistance are <strong>excluded</strong> from this specification. You may be asked to comment on the effect of introducing it — generally reducing both range and maximum height, and destroying the symmetry of the path — but not to compute with it.
+</div>
+
+<h2>2. The central idea</h2>
+
+<div class="definition">
+Horizontal and vertical motion are <strong>independent</strong>. Horizontally there is no acceleration, so the velocity is constant. Vertically the acceleration is \(g\) downwards, so the constant acceleration formulae apply. Time is the only quantity shared between them.
+</div>
+
+<p>For a projectile launched at speed \(u\) at angle \(\theta\) to the horizontal:</p>
+
+<table>
+  <tr><th></th><th>Horizontal</th><th>Vertical (upwards positive)</th></tr>
+  <tr><td>Initial velocity</td><td>\(u\cos\theta\)</td><td>\(u\sin\theta\)</td></tr>
+  <tr><td>Acceleration</td><td>\(0\)</td><td>\(-g\)</td></tr>
+  <tr><td>Velocity at time \(t\)</td><td>\(u\cos\theta\)</td><td>\(u\sin\theta - gt\)</td></tr>
+  <tr><td>Displacement at time \(t\)</td><td>\(u\cos\theta\,t\)</td><td>\(u\sin\theta\,t - \tfrac12 gt^2\)</td></tr>
+</table>
+
+<div class="exam-tip">
+Resolve the initial velocity into components <strong>before</strong> doing anything else, and set out horizontal and vertical working in separate columns. Most errors in this topic come from mixing the two.
+</div>
+
+<h2>3. Key results</h2>
+
+<p>For projection and landing at the <strong>same level</strong>:</p>
+
+$$\text{time of flight } T = \frac{2u\sin\theta}{g}$$
+$$\text{maximum height } H = \frac{u^2\sin^2\theta}{2g}$$
+$$\text{range } R = \frac{u^2\sin 2\theta}{g}$$
+
+<p>The maximum height occurs when the vertical component of velocity is zero — at exactly half the time of flight, by symmetry.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A ball is projected at 20 m s\(^{-1}\) at \(30^\circ\) from level ground, with \(g = 9.8\).
+<p>Components: \(u\cos30^\circ = 17.3\) m s\(^{-1}\) and \(u\sin30^\circ = 10\) m s\(^{-1}\).</p>
+$$\text{time to highest point} = \frac{10}{9.8} = 1.02 \text{ s}$$
+$$H = \frac{10^2}{2(9.8)} = 5.10 \text{ m}$$
+$$T = 2(1.02) = 2.04 \text{ s}, \qquad R = \frac{u^2\sin 2\theta}{g} = \frac{400\sin 60^\circ}{9.8} = 35.3 \text{ m}$$
+</div>
+
+<div class="exam-tip">
+Work from the <strong>exact</strong> expression wherever possible. Multiplying the rounded values \(17.3 \times 2.04\) gives 35.3 as well here, but compounding rounded intermediates through a longer calculation drifts the final figure — carry full accuracy and round once, at the end.
+</div>
+
+<h3>Maximum range</h3>
+
+<p>Since \(R = \dfrac{u^2\sin2\theta}{g}\) and \(\sin2\theta\) is greatest when \(2\theta = 90^\circ\), the range is maximised at \(\theta = 45^\circ\), giving \(R_{\max} = \dfrac{u^2}{g}\).</p>
+
+<div class="exam-tip">
+Because \(\sin2\theta = \sin(180^\circ-2\theta)\), two different angles give the <strong>same</strong> range — \(\theta\) and \(90^\circ-\theta\). If \(25^\circ\) achieves a range, so does \(65^\circ\). Questions frequently exploit this.
+</div>
+
+<h2>4. Horizontal projection</h2>
+
+<p>A body projected horizontally has \(u\sin\theta = 0\), so its initial vertical velocity is zero and it falls exactly as if dropped.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A ball is thrown horizontally at 15 m s\(^{-1}\) from a height of 20 m.
+<p>Vertically, \(20 = \tfrac12(9.8)t^2\), so \(t^2 = 4.082\) and \(t = 2.02\) s.</p>
+<p>Horizontally, \(x = 15 \times 2.02 = 30.3\) m.</p>
+</div>
+
+<div class="exam-tip">
+A ball thrown horizontally and one simply dropped from the same height hit the ground at the <strong>same time</strong>. Horizontal motion has no effect on the vertical fall — a favourite examiner point.
+</div>
+
+<h2>5. Projection from a height</h2>
+
+<p>When the landing point is below the launch point, the flight is longer than the level-ground formula predicts. Taking upwards as positive and the launch as the origin, landing at depth \(h\) means the vertical displacement is \(-h\):</p>
+
+$$-h = u\sin\theta\,t - \tfrac12 gt^2$$
+
+<p>Solve this quadratic for \(t\) and take the positive root.</p>
+
+<div class="exam-tip">
+The negative sign on \(h\) is the whole difficulty. Being consistent about the positive direction — and stating it — prevents the sign error that otherwise wrecks the answer.
+</div>
+
+<h2>6. Velocity and speed during flight</h2>
+
+<p>At time \(t\) the components are \(u\cos\theta\) horizontally and \(u\sin\theta - gt\) vertically, so</p>
+
+$$\text{speed} = \sqrt{(u\cos\theta)^2 + (u\sin\theta-gt)^2}$$
+
+<p>and the direction of motion is found from the ratio of the components.</p>
+
+<p>At the highest point the vertical component is zero, so the velocity is <strong>horizontal</strong> and the speed is \(u\cos\theta\) — not zero.</p>
+
+<p>For level ground, the speed on landing equals the speed of projection, and the angle below the horizontal equals the angle of projection above it.</p>
+
+<h2>7. The Cartesian equation of the trajectory</h2>
+
+<p>Eliminating \(t\) between the components (y4):</p>
+
+$$x = u\cos\theta\,t \Longrightarrow t = \frac{x}{u\cos\theta}$$
+
+<p>Substituting into the vertical equation:</p>
+
+$$y = x\tan\theta - \frac{gx^2}{2u^2\cos^2\theta}$$
+
+<p>This is a quadratic in \(x\) with a negative coefficient of \(x^2\), confirming that the path is a <strong>parabola</strong>.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A projectile must clear a wall 3 m high at a horizontal distance of 20 m. What must be checked?
+<p>Substitute \(x = 20\) into the trajectory equation and confirm that the resulting \(y\) exceeds 3.</p>
+</div>
+
+<div class="exam-tip">
+Checking that the <em>range</em> exceeds 20 m, or that the <em>maximum height</em> exceeds 3 m, is not sufficient — the projectile might be too low at that particular horizontal distance. It is the height <strong>at \(x=20\)</strong> that matters.
+</div>
+
+<h2>8. Finding the initial velocity</h2>
+
+<p>Given enough information — typically the range and angle, or two points on the path — the launch speed can be recovered (y3).</p>
+
+<div class="example">
+<strong>Worked example.</strong> A projectile launched at \(30^\circ\) has range 50 m on level ground, with \(g = 9.8\).
+$$50 = \frac{u^2\sin 60^\circ}{9.8} \Longrightarrow u^2 = \frac{50 \times 9.8}{0.866} \Longrightarrow u = 23.8 \text{ m s}^{-1} \text{ (3 s.f.)}$$
+</div>
+
+<h2>9. Two heights, two times</h2>
+
+<p>A projectile passes any given height (below its maximum) <strong>twice</strong> — once rising, once falling. The vertical displacement equation is a quadratic in \(t\), and its two roots are exactly those two instants. Both are valid answers unless the question restricts to one.</p>
+
+<h2>10. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Using \(u\) rather than its components in the vertical equations.</li>
+  <li>Applying gravity to the horizontal motion.</li>
+  <li>Taking the speed at the highest point to be zero — only the <em>vertical component</em> vanishes.</li>
+  <li>Sign errors when projecting from a height above the landing point.</li>
+  <li>Giving only one root when a projectile passes a height twice.</li>
+  <li>Forgetting the second angle that produces the same range.</li>
+  <li>Checking the range or maximum height instead of the height at the obstacle's distance.</li>
+  <li>Working in degrees or radians inconsistently between resolving and calculating.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

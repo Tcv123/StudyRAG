@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 3.3 — Kinematics in 2 Dimensions</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.3 Kinematics in 2 Dimensions</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Mechanics — spec refs k9–k11</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Extending kinematics to two dimensions using vectors — position, velocity and acceleration as vector functions of time, the vector forms of the constant acceleration formulae, relative position and velocity, and finding the Cartesian equation of a path.
+</div>
+
+<h2>1. Vector kinematics</h2>
+
+<p>In two dimensions each quantity becomes a vector with \(\mathbf{i}\) and \(\mathbf{j}\) components (spec ref k9).</p>
+
+<table>
+  <tr><th>Quantity</th><th>Symbol</th><th>Relationship</th></tr>
+  <tr><td>Position</td><td>\(\mathbf{r}\)</td><td>Measured from a fixed origin</td></tr>
+  <tr><td>Velocity</td><td>\(\mathbf{v}\)</td><td>\(\mathbf{v} = \dfrac{\mathrm{d}\mathbf{r}}{\mathrm{d}t}\)</td></tr>
+  <tr><td>Acceleration</td><td>\(\mathbf{a}\)</td><td>\(\mathbf{a} = \dfrac{\mathrm{d}\mathbf{v}}{\mathrm{d}t}\)</td></tr>
+</table>
+
+<p>Going the other way, \(\mathbf{v} = \int \mathbf{a}\,\mathrm{d}t\) and \(\mathbf{r} = \int \mathbf{v}\,\mathrm{d}t\), each with a vector constant of integration fixed by the initial conditions.</p>
+
+<p>Differentiation and integration act <strong>component by component</strong>, which is what makes two-dimensional motion tractable: the \(\mathbf{i}\) and \(\mathbf{j}\) directions behave independently.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A particle has \(\mathbf{r} = 3t\,\mathbf{i} + t^2\,\mathbf{j}\). Find its velocity, speed at \(t=2\), and acceleration.
+$$\mathbf{v} = 3\mathbf{i} + 2t\,\mathbf{j}$$
+<p>At \(t=2\), \(\mathbf{v} = 3\mathbf{i}+4\mathbf{j}\), so the speed is \(|\mathbf{v}| = \sqrt{9+16} = 5\).</p>
+$$\mathbf{a} = 2\mathbf{j}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A particle has \(\mathbf{a} = 2\mathbf{i} + 6t\,\mathbf{j}\) and \(\mathbf{v} = \mathbf{i}\) at \(t=0\). Find \(\mathbf{v}\) at time \(t\).
+$$\mathbf{v} = \int (2\mathbf{i}+6t\,\mathbf{j})\,\mathrm{d}t = 2t\,\mathbf{i} + 3t^2\,\mathbf{j} + \mathbf{c}$$
+<p>At \(t=0\), \(\mathbf{v}=\mathbf{i}\), so \(\mathbf{c} = \mathbf{i}\) and</p>
+$$\mathbf{v} = (1+2t)\mathbf{i} + 3t^2\,\mathbf{j}$$
+</div>
+
+<div class="exam-tip">
+<strong>Speed</strong> is the magnitude of the velocity vector, so it is a scalar: \(|\mathbf{v}| = \sqrt{v_1^2+v_2^2}\). Quoting a "speed" as a vector loses the mark.
+</div>
+
+<h2>2. Distance and displacement in two dimensions</h2>
+
+<ul>
+  <li><strong>Distance from</strong> the origin at time \(t\) is \(|\mathbf{r}|\).</li>
+  <li><strong>Displacement</strong> between two times is the difference of the position vectors.</li>
+  <li><strong>Distance travelled</strong> is the length of the path, generally greater than the magnitude of the displacement.</li>
+</ul>
+
+<div class="example">
+<strong>Worked example.</strong> For \(\mathbf{r} = 2t\,\mathbf{i} + t^2\,\mathbf{j}\), find the average velocity between \(t=0\) and \(t=2\).
+<p>Displacement \(= (4\mathbf{i}+4\mathbf{j}) - \mathbf{0} = 4\mathbf{i}+4\mathbf{j}\), over 2 seconds:</p>
+$$\text{average velocity} = 2\mathbf{i}+2\mathbf{j}$$
+</div>
+
+<h2>3. Constant acceleration in vector form</h2>
+
+<p>The suvat formulae carry over directly, with vectors in place of scalars (k10):</p>
+
+$$\mathbf{v} = \mathbf{u} + \mathbf{a}t$$
+$$\mathbf{s} = \mathbf{u}t + \tfrac12\mathbf{a}t^2$$
+$$\mathbf{s} = \mathbf{v}t - \tfrac12\mathbf{a}t^2$$
+$$\mathbf{s} = \tfrac12(\mathbf{u}+\mathbf{v})t$$
+
+<div class="example">
+<strong>Worked example.</strong> A particle has \(\mathbf{u} = 2\mathbf{i}\) and \(\mathbf{a} = \mathbf{j}\). Find its displacement after 4 s.
+$$\mathbf{s} = 2\mathbf{i}(4) + \tfrac12\mathbf{j}(16) = 8\mathbf{i} + 8\mathbf{j}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A particle starts at \(2\mathbf{i}+\mathbf{j}\) with constant velocity \(3\mathbf{i}-\mathbf{j}\). Find its position at \(t=4\).
+$$\mathbf{r} = (2\mathbf{i}+\mathbf{j}) + 4(3\mathbf{i}-\mathbf{j}) = 14\mathbf{i} - 3\mathbf{j}$$
+</div>
+
+<div class="exam-tip">
+Because \(\mathbf{v} = \mathbf{u}+\mathbf{a}t\), the <strong>change</strong> in velocity is always parallel to the acceleration. With zero acceleration the velocity is constant and the path is a straight line.
+</div>
+
+<h2>4. Relative position and relative velocity</h2>
+
+$$\text{position of } B \text{ relative to } A = \mathbf{r}_B - \mathbf{r}_A$$
+$$\text{velocity of } A \text{ relative to } B = \mathbf{v}_A - \mathbf{v}_B$$
+
+<div class="example">
+<strong>Worked example.</strong> \(A\) is at \(3\mathbf{i}+4\mathbf{j}\) and \(B\) at \(7\mathbf{i}+\mathbf{j}\).
+<p>Position of \(B\) relative to \(A\) is \(4\mathbf{i}-3\mathbf{j}\), and the distance between them is \(\sqrt{16+9} = 5\).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> \(A\) has velocity \(5\mathbf{i}+2\mathbf{j}\) and \(B\) has \(3\mathbf{i}-\mathbf{j}\). The velocity of \(A\) relative to \(B\) is
+$$(5-3)\mathbf{i} + (2-(-1))\mathbf{j} = 2\mathbf{i}+3\mathbf{j}$$
+</div>
+
+<h3>Collisions</h3>
+
+<div class="definition">
+Two particles <strong>collide</strong> when their position vectors are equal <em>at the same instant</em> — that is, both components agree for a single common value of \(t\).
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> \(A\) has \(\mathbf{r}_A = (t+1)\mathbf{i}+2t\,\mathbf{j}\) and \(B\) has \(\mathbf{r}_B = (3t-1)\mathbf{i}+(t+1)\mathbf{j}\). Do they collide?
+<p>Equating \(\mathbf{i}\) components: \(t+1 = 3t-1\), so \(t=1\).</p>
+<p>Equating \(\mathbf{j}\) components: \(2t = t+1\), so \(t=1\).</p>
+<p>Both give the same time, so they collide at \(t=1\), at the point \(2\mathbf{i}+2\mathbf{j}\).</p>
+</div>
+
+<div class="exam-tip">
+You must check <strong>both</strong> components and confirm they give the <em>same</em> \(t\). If the two components give different times, the paths cross but the particles are never there together — no collision.
+</div>
+
+<p>The distance between two particles is least when the magnitude of the relative position vector is minimised, which is found by writing that magnitude as a function of \(t\) and minimising it.</p>
+
+<h2>5. The Cartesian equation of the path</h2>
+
+<p>Eliminate \(t\) between the component equations (k11).</p>
+
+<div class="example">
+<strong>Worked example.</strong> \(\mathbf{r} = 3t\,\mathbf{i}+t^2\,\mathbf{j}\).
+<p>Here \(x = 3t\) and \(y = t^2\), so \(t = \tfrac{x}{3}\) and</p>
+$$y = \frac{x^2}{9}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> \(\mathbf{r} = 4t\,\mathbf{i} + (3t-5t^2)\mathbf{j}\).
+<p>\(x = 4t\) gives \(t = \tfrac{x}{4}\), so</p>
+$$y = \frac{3x}{4} - \frac{5x^2}{16}$$
+<p>a parabola — the signature of motion under constant acceleration perpendicular to the initial velocity.</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> For \(\mathbf{r} = (t-2)\mathbf{i}+(t^2-4)\mathbf{j}\), when does the particle pass through the origin?
+<p>The \(\mathbf{i}\) component vanishes at \(t=2\); the \(\mathbf{j}\) component vanishes at \(t = \pm 2\). Both are zero at \(t=2\), so it passes through the origin then.</p>
+</div>
+
+<h2>6. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Reporting a speed as a vector rather than its magnitude.</li>
+  <li>Omitting the vector constant of integration.</li>
+  <li>Subtracting relative position or velocity the wrong way round.</li>
+  <li>Concluding a collision from the \(\mathbf{i}\) components alone.</li>
+  <li>Confusing distance from the origin with distance travelled.</li>
+  <li>Applying constant-acceleration formulae when the acceleration is a function of \(t\).</li>
+  <li>Eliminating \(t\) from the harder component and introducing a spurious square root.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

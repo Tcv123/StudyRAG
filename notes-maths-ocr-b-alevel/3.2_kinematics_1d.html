@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 3.2 — Kinematics in 1 Dimension</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.2 Kinematics in 1 Dimension</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Mechanics — spec refs k1–k8</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> The precise vocabulary of motion in a straight line, motion graphs and what their gradients and areas mean, the constant acceleration formulae, and the use of calculus when acceleration is not constant.
+</div>
+
+<h2>1. The vocabulary — and why it matters</h2>
+
+<p>MEI distinguishes several pairs that are casually treated as synonyms (spec refs k1–k3).</p>
+
+<table>
+  <tr><th>Scalar</th><th>Vector</th><th>Distinction</th></tr>
+  <tr><td><strong>Distance travelled</strong></td><td><strong>Displacement</strong></td><td>Total path length vs net change of position, with direction</td></tr>
+  <tr><td><strong>Speed</strong></td><td><strong>Velocity</strong></td><td>Magnitude only vs magnitude and direction</td></tr>
+  <tr><td><strong>Magnitude of acceleration</strong></td><td><strong>Acceleration</strong></td><td>Never negative vs signed</td></tr>
+</table>
+
+<p><strong>Position</strong> is measured from a fixed origin; <strong>displacement</strong> is the change in position from a starting point.</p>
+
+<div class="example">
+<strong>Worked example.</strong> A body travels 100 m north then 100 m south in 40 s.
+$$\text{average speed} = \frac{200}{40} = 5 \text{ m s}^{-1}, \qquad \text{average velocity} = \frac{0}{40} = 0$$
+</div>
+
+$$\text{average speed} = \frac{\text{distance travelled}}{\text{elapsed time}}, \qquad \text{average velocity} = \frac{\text{overall displacement}}{\text{elapsed time}}$$
+
+<h2>2. Motion graphs</h2>
+
+<table>
+  <tr><th>Graph</th><th>Gradient gives</th><th>Area underneath gives</th></tr>
+  <tr><td>Displacement-time</td><td>Velocity</td><td>No meaning</td></tr>
+  <tr><td>Velocity-time</td><td>Acceleration</td><td>Displacement</td></tr>
+  <tr><td>Acceleration-time</td><td>—</td><td>Change in velocity</td></tr>
+</table>
+
+<ul>
+  <li>A straight line on a displacement-time graph means constant velocity.</li>
+  <li>A horizontal line on a velocity-time graph means constant velocity; a straight sloping line means constant acceleration.</li>
+  <li>Area <strong>below</strong> the time axis on a velocity-time graph is displacement in the negative direction.</li>
+</ul>
+
+<div class="example">
+<strong>Worked example.</strong> A trapezium on a velocity-time graph has parallel sides 4 and 10 and width 6. The displacement is
+$$\tfrac12(4+10)\times 6 = 42 \text{ m}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A body travels at 12 m s\(^{-1}\) for 5 s, then decelerates uniformly to rest over the next 4 s. Find the total distance.
+<p>Rectangle: \(12\times5 = 60\). Triangle: \(\tfrac12\times12\times4 = 24\). Total 84 m.</p>
+</div>
+
+<div class="exam-tip">
+For <strong>distance travelled</strong> rather than displacement, treat any area below the axis as positive. Adding signed areas gives displacement; adding magnitudes gives distance.
+</div>
+
+<h2>3. The constant acceleration formulae</h2>
+
+<p>With \(u\) initial velocity, \(v\) final velocity, \(a\) acceleration, \(s\) displacement and \(t\) time:</p>
+
+$$v = u + at$$
+$$s = ut + \tfrac12 at^2$$
+$$s = vt - \tfrac12 at^2$$
+$$s = \tfrac12(u+v)t$$
+$$v^2 = u^2 + 2as$$
+
+<p>Each omits one variable, so choose the one that avoids the quantity you neither know nor want. The fifth omits \(t\); the first omits \(s\).</p>
+
+<div class="exam-tip">
+These apply <strong>only</strong> when the acceleration is constant. If acceleration is given as a function of time, they are invalid and calculus is required.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A particle starts from rest and accelerates at 2 m s\(^{-2}\) for 5 s.
+$$v = 0 + 2(5) = 10 \text{ m s}^{-1}, \qquad s = 0 + \tfrac12(2)(25) = 25 \text{ m}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A car travelling at 20 m s\(^{-1}\) decelerates uniformly at 4 m s\(^{-2}\) to rest.
+$$0 = 20 - 4t \Longrightarrow t = 5 \text{ s}, \qquad s = \tfrac12(20+0)(5) = 50 \text{ m}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A body has \(u = 5\) m s\(^{-1}\) and accelerates at 3 m s\(^{-2}\) over 10 m.
+$$v^2 = 25 + 2(3)(10) = 85 \Longrightarrow v = 9.22 \text{ m s}^{-1} \text{ (3 s.f.)}$$
+</div>
+
+<h3>Vertical motion under gravity</h3>
+
+<p>Taking \(g = 9.8\) and being consistent about the positive direction:</p>
+
+<div class="example">
+<strong>Worked example.</strong> A stone is dropped from rest. After 2 s,
+$$v = 9.8(2) = 19.6 \text{ m s}^{-1}, \qquad s = \tfrac12(9.8)(4) = 19.6 \text{ m}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A stone falls from rest through 45 m. Find the time.
+$$45 = \tfrac12(9.8)t^2 \Longrightarrow t^2 = 9.184 \Longrightarrow t = 3.03 \text{ s (3 s.f.)}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A ball is thrown vertically upwards at 14.7 m s\(^{-1}\). Find the maximum height.
+<p>At the highest point \(v = 0\):</p>
+$$0 = 14.7^2 - 2(9.8)s \Longrightarrow s = \frac{216.09}{19.6} = 11.025 \text{ m}$$
+</div>
+
+<div class="exam-tip">
+Fix the positive direction at the start and keep it. If upwards is positive, then \(a = -9.8\) throughout — including on the way up, at the top, and on the way down. The acceleration never changes; only the velocity does.
+</div>
+
+<h2>4. Calculus for variable acceleration</h2>
+
+<p>When acceleration is not constant, differentiate to go down the chain and integrate to go up (k5):</p>
+
+$$v = \frac{\mathrm{d}s}{\mathrm{d}t}, \qquad a = \frac{\mathrm{d}v}{\mathrm{d}t} = \frac{\mathrm{d}^2s}{\mathrm{d}t^2}$$
+$$v = \int a\,\mathrm{d}t, \qquad s = \int v\,\mathrm{d}t$$
+
+<div class="example">
+<strong>Worked example.</strong> For \(s = t^3 - 3t\), find the velocity at \(t=2\).
+$$v = 3t^2-3 \Longrightarrow v(2) = 12-3 = 9 \text{ m s}^{-1}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A particle has \(a = 6t\) and velocity 2 m s\(^{-1}\) at \(t=0\).
+$$v = \int 6t\,\mathrm{d}t = 3t^2 + c, \qquad v(0)=2 \Rightarrow c = 2$$
+$$v = 3t^2+2$$
+</div>
+
+<div class="exam-tip">
+The constant of integration is fixed by the initial condition. Omitting it, or forgetting to apply the condition, is the standard error in these questions.
+</div>
+
+<h3>Distance travelled when the direction reverses</h3>
+
+<div class="example">
+<strong>Worked example.</strong> For \(s = t^3-6t^2+9t\), find the times at rest and the total distance travelled from \(t=0\) to \(t=4\).
+$$v = 3t^2-12t+9 = 3(t-1)(t-3) = 0 \Longrightarrow t = 1 \text{ and } t = 3$$
+<p>Evaluating the displacement at the key times:</p>
+$$s(0)=0, \quad s(1)=4, \quad s(3)=0, \quad s(4)=4$$
+<p>The particle moves forward 4 m, back 4 m, then forward 4 m again. So the <strong>distance travelled</strong> is 12 m, while the <strong>displacement</strong> is only 4 m.</p>
+</div>
+
+<div class="exam-tip">
+Whenever the velocity changes sign inside the interval, split at those instants and add the magnitudes. Integrating straight through gives the displacement, not the distance — and the question usually wants the distance.
+</div>
+
+<h2>5. Relative velocity in one dimension</h2>
+
+<p>The velocity of \(A\) relative to \(B\) is \(v_A - v_B\). Two cars travelling the same way at 30 and 20 m s\(^{-1}\) have a relative velocity of 10 m s\(^{-1}\) — which is why the gap closes slowly despite both moving quickly.</p>
+
+<h2>6. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Using the suvat formulae when the acceleration is not constant.</li>
+  <li>Changing the sign of \(g\) partway through a vertical motion problem.</li>
+  <li>Giving displacement when the question asks for distance travelled.</li>
+  <li>Omitting the constant of integration, or not applying the initial condition.</li>
+  <li>Confusing the gradient and the area of a velocity-time graph.</li>
+  <li>Assuming acceleration is zero at the highest point of a vertical throw — the velocity is zero, not the acceleration.</li>
+  <li>Reporting a negative distance.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.8 — Exponentials &amp; Logarithms</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.8 Exponentials &amp; Logarithms</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs E1–E11</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Exponential and logarithmic functions and their graphs, the laws of logarithms, the special role of \(\mathrm{e}\) and \(\ln\), reducing power and exponential laws to linear form, and exponential growth and decay models together with their limitations.
+</div>
+
+<h2>1. Exponential functions</h2>
+
+<p>For \(a &gt; 0\), the graph of \(y = a^x\) passes through \((0,1)\), is always positive, and has the \(x\)-axis as a horizontal asymptote (spec ref E1).</p>
+
+<ul>
+  <li>\(a &gt; 1\): increasing (growth).</li>
+  <li>\(0 &lt; a &lt; 1\): decreasing (decay).</li>
+</ul>
+
+<h2>2. Logarithms as inverses</h2>
+
+<div class="definition">
+\(\log_a x\) is the <strong>inverse</strong> of \(a^x\):
+$$x = a^y \iff y = \log_a x \qquad (a&gt;0,\ x&gt;0)$$
+</div>
+
+<p>Because they are inverses, the graph of \(y=\log_a x\) is the reflection of \(y=a^x\) in \(y=x\): it passes through \((1,0)\), is defined only for \(x&gt;0\), and has the \(y\)-axis as a <strong>vertical</strong> asymptote (E3).</p>
+
+<div class="example">
+<strong>Converting between forms.</strong> \(2^5 = 32\) becomes \(\log_2 32 = 5\). \(\log_3 9 = 2\) becomes \(3^2 = 9\).
+</div>
+
+<h2>3. Laws of logarithms</h2>
+
+$$\log_a(xy) = \log_a x + \log_a y$$
+$$\log_a\!\left(\frac{x}{y}\right) = \log_a x - \log_a y$$
+$$\log_a(x^k) = k\log_a x$$
+
+<p>Two values follow immediately (E5):</p>
+$$\log_a a = 1, \qquad \log_a 1 = 0$$
+
+<p>The power law covers \(k=-1\) and \(k=\tfrac12\), so \(\log_a\!\left(\tfrac1x\right) = -\log_a x\) and \(\log_a \sqrt{x} = \tfrac12\log_a x\).</p>
+
+<h3>Change of base</h3>
+$$\log_a b = \frac{\log b}{\log a}$$
+
+<div class="exam-tip">
+There is no law for \(\log(x+y)\). Writing \(\log(x+y) = \log x + \log y\) is wrong — the addition law applies to a <strong>product</strong> inside the logarithm, not a sum.
+</div>
+
+<h2>4. Solving exponential equations</h2>
+
+<p>Take logarithms of both sides, then use the power law to bring the unknown down (E6).</p>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(3^x = 20\).
+$$x\log 3 = \log 20 \Longrightarrow x = \frac{\log 20}{\log 3} = 2.727 \text{ (3 d.p.)}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(\log_2 x + \log_2(x-2) = 3\).
+$$\log_2\big(x(x-2)\big) = 3 \Longrightarrow x^2-2x = 8 \Longrightarrow (x-4)(x+2)=0$$
+<p>So \(x=4\) or \(x=-2\). But \(\log_2(x-2)\) requires \(x&gt;2\), so \(x=-2\) is rejected: \(x = 4\).</p>
+</div>
+
+<div class="exam-tip">
+Always check solutions against the domain of the logarithm. A logarithm of a negative number or zero is undefined, and a rejected root that is left in costs the final mark.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(\mathrm{e}^x - 5\mathrm{e}^{-x} = 4\).
+<p>Let \(u = \mathrm{e}^x\). Multiplying through by \(u\):</p>
+$$u^2 - 4u - 5 = 0 \Longrightarrow (u-5)(u+1) = 0$$
+<p>\(u = \mathrm{e}^x\) is always positive, so \(u=-1\) is impossible. Then \(\mathrm{e}^x = 5\), giving \(x = \ln 5\).</p>
+</div>
+
+<h2>5. \(\mathrm{e}\) and the natural logarithm</h2>
+
+<div class="definition">
+\(\mathrm{e} \approx 2.718\) is the base for which the gradient of \(y=\mathrm{e}^x\) equals \(\mathrm{e}^x\) itself. More generally the gradient of \(\mathrm{e}^{kx}\) is \(k\mathrm{e}^{kx}\) (E9).
+</div>
+
+<p>That property is exactly why the exponential model suits so many situations: whenever a quantity grows at a rate proportional to its current size, the solution is an exponential.</p>
+
+<p>\(\ln x\) means \(\log_{\mathrm{e}} x\), the inverse of \(\mathrm{e}^x\) (E10). So \(\ln \mathrm{e} = 1\), \(\ln 1 = 0\), and:</p>
+$$\mathrm{e}^{\ln x} = x, \qquad \ln(\mathrm{e}^x) = x$$
+
+<h2>6. Reducing to linear form</h2>
+
+<p>Two standard laws can be turned into straight lines by taking logarithms, so that experimental data can be used to estimate the parameters (E7).</p>
+
+<table>
+  <tr><th>Law</th><th>Take logs to get</th><th>Plot</th><th>Gradient</th><th>Intercept</th></tr>
+  <tr><td>\(y = ax^n\)</td><td>\(\log y = \log a + n\log x\)</td><td>\(\log y\) against \(\log x\)</td><td>\(n\)</td><td>\(\log a\)</td></tr>
+  <tr><td>\(y = ab^x\)</td><td>\(\log y = \log a + x\log b\)</td><td>\(\log y\) against \(x\)</td><td>\(\log b\)</td><td>\(\log a\)</td></tr>
+</table>
+
+<div class="exam-tip">
+The distinction is which axis carries a logarithm. A <strong>power</strong> law needs \(\log\)–\(\log\); an <strong>exponential</strong> law needs \(\log y\) against plain \(x\). If a log–log plot gives a straight line, the relationship is a power law.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Data plotted as \(\log y\) against \(\log x\) give a straight line with gradient 1.5 and vertical intercept 0.6. Find the law.
+<p>The form is \(y = ax^n\) with \(n = 1.5\) and \(\log a = 0.6\), so \(a = 10^{0.6} \approx 3.98\), giving \(y \approx 3.98\,x^{1.5}\).</p>
+</div>
+
+<h2>7. Growth and decay models</h2>
+
+<p>The standard models (E11):</p>
+$$\text{growth: } N = N_0\mathrm{e}^{kt}, \qquad \text{decay: } N = N_0\mathrm{e}^{-kt} \quad (k&gt;0)$$
+
+<p>\(N_0\) is the initial value, at \(t=0\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> A substance decays as \(N = N_0\mathrm{e}^{-kt}\) with half-life 5. Find \(k\).
+<p>At \(t=5\) the amount is halved:</p>
+$$\mathrm{e}^{-5k} = \tfrac12 \Longrightarrow -5k = \ln\tfrac12 = -\ln 2 \Longrightarrow k = \frac{\ln 2}{5}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> For \(y = 5\mathrm{e}^{-0.2t}\), state the initial value and the long-term value.
+<p>At \(t=0\), \(y=5\). As \(t\to\infty\), \(\mathrm{e}^{-0.2t}\to 0\), so \(y \to 0\).</p>
+</div>
+
+<p>Other contexts named in the specification include continuous compound interest, \(P\mathrm{e}^{rt}\), and drug concentration decay.</p>
+
+<h3>Limitations and refinements</h3>
+
+<div class="exam-tip">
+MEI explicitly asks for <strong>criticism</strong> of these models. Standard points: unlimited exponential growth ignores finite resources, so a population model needs a carrying capacity; a decay model tending to zero may be unrealistic if some background level persists; and the constant \(k\) may not stay constant over long periods.
+</div>
+
+<h2>8. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Inventing a law for \(\log(x+y)\).</li>
+  <li>Failing to reject a root that makes a logarithm undefined.</li>
+  <li>Forgetting that \(\mathrm{e}^x\) is always positive when solving a disguised quadratic.</li>
+  <li>Confusing which quantities to plot for a power law versus an exponential law.</li>
+  <li>Reading the intercept of a log-linear plot as \(a\) rather than \(\log a\).</li>
+  <li>Writing the asymptote of \(y=\ln x\) as \(y=0\) — it is \(x=0\).</li>
+  <li>Losing the minus sign in a decay exponent.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.13 — Vectors</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.13 Vectors</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs v1–v7</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Vectors in two and three dimensions — notation, addition and scalar multiplication, magnitude and direction, position vectors and distances — and their use in geometric problems and in resolving forces.
+</div>
+
+<div class="exam-tip">
+<strong>Not in this specification:</strong> the scalar (dot) product, and the vector equation of a line. Both appear in other A-Level Mathematics specifications but are <em>not</em> part of H640, so questions here will not require them. Angles between vectors are handled by trigonometry, not by a dot product.
+</div>
+
+<h2>1. Notation and language</h2>
+
+<table>
+  <tr><th>Term</th><th>Meaning</th></tr>
+  <tr><td><strong>Scalar</strong></td><td>A quantity with magnitude only — mass, time, speed.</td></tr>
+  <tr><td><strong>Vector</strong></td><td>A quantity with magnitude <em>and</em> direction — displacement, velocity, force.</td></tr>
+  <tr><td><strong>Modulus / magnitude</strong></td><td>The size of a vector, written \(|\mathbf{a}|\) or \(a\).</td></tr>
+  <tr><td><strong>Unit vector</strong></td><td>A vector of magnitude 1.</td></tr>
+  <tr><td><strong>Position vector</strong></td><td>The vector from the origin to a point.</td></tr>
+  <tr><td><strong>Equal vectors</strong></td><td>Same magnitude and same direction — position is irrelevant.</td></tr>
+  <tr><td><strong>Parallel vectors</strong></td><td>One is a scalar multiple of the other.</td></tr>
+  <tr><td><strong>Collinear points</strong></td><td>Points lying on the same straight line.</td></tr>
+</table>
+
+<p>Vectors are printed in <strong>bold</strong> and handwritten underlined. In component form, in two dimensions:</p>
+$$\mathbf{a} = a_1\mathbf{i} + a_2\mathbf{j} = \begin{pmatrix} a_1 \\ a_2\end{pmatrix}$$
+
+<p>and in three dimensions the unit vector \(\mathbf{k}\) is added along the \(z\)-axis (spec ref v7):</p>
+$$\mathbf{a} = a_1\mathbf{i} + a_2\mathbf{j} + a_3\mathbf{k}$$
+
+<h2>2. Arithmetic with vectors</h2>
+
+<p>Addition and subtraction work component by component, and a scalar multiple scales the magnitude while preserving direction (reversing it if the scalar is negative).</p>
+
+<div class="example">
+<strong>Worked example.</strong> With \(\mathbf{a} = 4\mathbf{i}+\mathbf{j}\) and \(\mathbf{b} = \mathbf{i}-2\mathbf{j}\):
+$$\mathbf{a}+\mathbf{b} = 5\mathbf{i}-\mathbf{j}, \qquad \mathbf{a}-\mathbf{b} = 3\mathbf{i}+3\mathbf{j}, \qquad 3\mathbf{a} = 12\mathbf{i}+3\mathbf{j}$$
+</div>
+
+<p>Geometrically, addition is the triangle (or parallelogram) rule: place the vectors nose to tail, and the resultant runs from the start of the first to the end of the last.</p>
+
+<h2>3. Magnitude and direction</h2>
+
+$$|\mathbf{a}| = \sqrt{a_1^2+a_2^2} \qquad \text{(2D)}, \qquad |\mathbf{a}| = \sqrt{a_1^2+a_2^2+a_3^2} \qquad \text{(3D)}$$
+
+<div class="example">
+<strong>Worked example.</strong> \(|3\mathbf{i}+4\mathbf{j}| = \sqrt{9+16} = 5\); \(\ |2\mathbf{i}-3\mathbf{j}+6\mathbf{k}| = \sqrt{4+9+36} = 7\).
+</div>
+
+<h3>Unit vectors</h3>
+<p>To find a unit vector in the direction of \(\mathbf{a}\), divide by its magnitude:</p>
+$$\hat{\mathbf{a}} = \frac{\mathbf{a}}{|\mathbf{a}|}$$
+
+<div class="example">
+<strong>Worked example.</strong> A unit vector in the direction of \(6\mathbf{i}-8\mathbf{j}\): the magnitude is 10, so \(\hat{\mathbf{a}} = 0.6\mathbf{i}-0.8\mathbf{j}\).
+</div>
+
+<h3>Magnitude-direction form</h3>
+
+<p>In two dimensions a vector may be given by its magnitude \(r\) and the angle \(\theta\) it makes with the positive \(x\)-axis (v3):</p>
+$$a_1 = r\cos\theta, \qquad a_2 = r\sin\theta, \qquad r = \sqrt{a_1^2+a_2^2}, \qquad \tan\theta = \frac{a_2}{a_1}$$
+
+<div class="example">
+<strong>Worked example.</strong> Express \(3\mathbf{i}+3\mathbf{j}\) in magnitude-direction form.
+<p>\(r = \sqrt{18} = 3\sqrt2\) and \(\tan\theta = 1\), so \(\theta = 45^\circ\).</p>
+</div>
+
+<div class="exam-tip">
+\(\arctan\) always returns an angle in the first or fourth quadrant. For a vector such as \((-3,-4)\), which points into the <strong>third</strong> quadrant, the calculator gives \(53.1^\circ\) and you must add \(180^\circ\) to get \(233.1^\circ\). Always sketch the vector before quoting a direction.
+</div>
+
+<h2>4. Position vectors and distance</h2>
+
+<p>If \(A\) and \(B\) have position vectors \(\mathbf{a}\) and \(\mathbf{b}\), then</p>
+$$\overrightarrow{AB} = \mathbf{b}-\mathbf{a}$$
+
+<p>and the distance between them is \(|\mathbf{b}-\mathbf{a}|\) (v4, v5).</p>
+
+<div class="example">
+<strong>Worked example.</strong> \(A(2,1)\) and \(B(6,4)\). Then \(\overrightarrow{AB} = 4\mathbf{i}+3\mathbf{j}\) and \(|AB| = \sqrt{16+9} = 5\).
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> \(A(2,-1,4)\) and \(B(5,3,0)\). Then \(\overrightarrow{AB} = 3\mathbf{i}+4\mathbf{j}-4\mathbf{k}\), so \(|AB| = \sqrt{9+16+16} = \sqrt{41}\).
+</div>
+
+<div class="exam-tip">
+The order matters: \(\overrightarrow{AB} = \mathbf{b}-\mathbf{a}\), "destination minus start". Reversing it gives a vector of the same magnitude in the opposite direction — harmless for a distance, fatal for a direction.
+</div>
+
+<h3>Midpoints and division of a line</h3>
+
+<p>The midpoint of \(AB\) has position vector \(\tfrac12(\mathbf{a}+\mathbf{b})\). More generally, the point dividing \(AB\) in the ratio \(m:n\) has position vector</p>
+$$\frac{n\mathbf{a}+m\mathbf{b}}{m+n}$$
+
+<div class="example">
+<strong>Worked example.</strong> \(P\) divides \(AB\) in the ratio \(2:1\). Then \(\overrightarrow{OP} = \mathbf{a} + \tfrac23(\mathbf{b}-\mathbf{a}) = \tfrac{\mathbf{a}+2\mathbf{b}}{3}\).
+</div>
+
+<h2>5. Geometric problems</h2>
+
+<h3>Proving points collinear</h3>
+
+<div class="example">
+<strong>Worked example.</strong> \(A\), \(B\), \(C\) have position vectors \(\mathbf{i}+\mathbf{j}\), \(3\mathbf{i}+5\mathbf{j}\), \(5\mathbf{i}+9\mathbf{j}\). Show they are collinear.
+$$\overrightarrow{AB} = 2\mathbf{i}+4\mathbf{j}, \qquad \overrightarrow{BC} = 2\mathbf{i}+4\mathbf{j}$$
+<p>\(\overrightarrow{BC}\) is a scalar multiple of \(\overrightarrow{AB}\) (here equal to it), so the two are parallel; since they share the point \(B\), the three points are collinear.</p>
+</div>
+
+<div class="exam-tip">
+Parallel alone is not enough — two parallel vectors can lie on different lines. You must also state the <strong>common point</strong>. That sentence is what completes the proof.
+</div>
+
+<h3>Parallel vectors in three dimensions</h3>
+
+<div class="example">
+<strong>Worked example.</strong> Find \(\lambda\) so that \(2\mathbf{i}+4\mathbf{j}+\lambda\mathbf{k}\) is parallel to \(\mathbf{i}+2\mathbf{j}+3\mathbf{k}\).
+<p>The first must be a scalar multiple of the second. Comparing \(\mathbf{i}\) components gives the factor 2, so \(\lambda = 2\times 3 = 6\).</p>
+</div>
+
+<h3>Shapes</h3>
+<p>In a parallelogram \(OACB\) with \(\overrightarrow{OA}=\mathbf{a}\) and \(\overrightarrow{OB}=\mathbf{b}\), the diagonal is \(\overrightarrow{OC} = \mathbf{a}+\mathbf{b}\). The centroid of a triangle with vertices \(\mathbf{a}\), \(\mathbf{b}\), \(\mathbf{c}\) has position vector \(\tfrac13(\mathbf{a}+\mathbf{b}+\mathbf{c})\).</p>
+
+<h2>6. Vectors and forces</h2>
+
+<p>The specification explicitly includes using vectors in context, "including problems involving forces", and interpreting the sum of force vectors as the <strong>resultant</strong> force (v6). This is the bridge into Mechanics.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Forces \(3\mathbf{i}+2\mathbf{j}\) and \(-\mathbf{i}+4\mathbf{j}\) act on a particle. Find the resultant.
+$$(3-1)\mathbf{i} + (2+4)\mathbf{j} = 2\mathbf{i}+6\mathbf{j}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Forces \(\mathbf{F}_1 = 2\mathbf{i}+3\mathbf{j}\), \(\mathbf{F}_2 = -5\mathbf{i}+\mathbf{j}\) and \(\mathbf{F}_3\) hold a particle in equilibrium. Find \(\mathbf{F}_3\).
+<p>Equilibrium means the vector sum is zero, so</p>
+$$\mathbf{F}_3 = -(\mathbf{F}_1+\mathbf{F}_2) = -(-3\mathbf{i}+4\mathbf{j}) = 3\mathbf{i}-4\mathbf{j}$$
+</div>
+
+<h2>7. A useful inequality</h2>
+
+<p>For any two vectors, the magnitude of the sum depends on their directions:</p>
+$$\big||\mathbf{a}|-|\mathbf{b}|\big| \;\le\; |\mathbf{a}+\mathbf{b}| \;\le\; |\mathbf{a}|+|\mathbf{b}|$$
+
+<p>So if \(|\mathbf{a}|=5\) and \(|\mathbf{b}|=12\), then \(|\mathbf{a}+\mathbf{b}|\) lies between 7 and 17 — reaching 17 only when they point the same way, and 7 only when they oppose.</p>
+
+<div class="exam-tip">
+Magnitudes do <strong>not</strong> simply add: \(|\mathbf{a}+\mathbf{b}| \neq |\mathbf{a}|+|\mathbf{b}|\) in general. Adding the magnitudes is one of the most frequent vector errors.
+</div>
+
+<h2>8. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Writing \(\overrightarrow{AB} = \mathbf{a}-\mathbf{b}\) instead of \(\mathbf{b}-\mathbf{a}\).</li>
+  <li>Adding magnitudes instead of adding vectors and then taking the magnitude.</li>
+  <li>Quoting an \(\arctan\) angle without checking the quadrant.</li>
+  <li>Proving two vectors parallel and stopping, without stating the common point, in a collinearity proof.</li>
+  <li>Forgetting the third component when computing a magnitude in three dimensions.</li>
+  <li>Treating a scalar multiple as changing direction when the scalar is positive — it does not.</li>
+  <li>Reaching for a dot product, which is not part of this specification.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.12 — Numerical Methods</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.12 Numerical Methods</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs e1–e5, c34–c35</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Locating roots by change of sign and the circumstances in which that fails, fixed point iteration with staircase and cobweb diagrams, the Newton-Raphson method and its failures, and the trapezium rule with a justified over- or under-estimate.
+</div>
+
+<h2>1. Why numerical methods</h2>
+
+<p>Most equations have no exact algebraic solution. Numerical methods produce an <strong>approximation</strong> to a stated accuracy, and part of the skill is knowing when they can be trusted.</p>
+
+<h2>2. Locating a root by change of sign</h2>
+
+<div class="definition">
+If \(f\) is continuous on \([a,b]\) and \(f(a)\) and \(f(b)\) have <strong>opposite signs</strong>, then \(f(x)=0\) has at least one root in \((a,b)\) (spec ref e1).
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Show that \(x^3-2x-5=0\) has a root between 2 and 3.
+$$f(2) = 8-4-5 = -1, \qquad f(3) = 27-6-5 = 16$$
+<p>\(f\) changes sign and is continuous on \([2,3]\), so a root lies in that interval.</p>
+</div>
+
+<div class="exam-tip">
+State <strong>all three</strong> parts: both function values, the fact that the sign changes, and that \(f\) is continuous. The continuity clause is the one usually omitted, and it is what makes the argument valid.
+</div>
+
+<h3>Showing a root to a given accuracy</h3>
+
+<div class="example">
+<strong>Worked example.</strong> Show that a root is 1.86 correct to 2 decimal places.
+<p>Test the <strong>bounds of the rounding interval</strong>: evaluate \(f(1.855)\) and \(f(1.865)\). A sign change between them means the root lies in \([1.855, 1.865)\), and every value there rounds to 1.86.</p>
+</div>
+
+<h3>When change of sign fails</h3>
+
+<table>
+  <tr><th>Situation</th><th>What goes wrong</th><th>Example</th></tr>
+  <tr><td>Repeated root — the curve touches the axis</td><td>No sign change despite a root</td><td>\(f(x)=(x-2)^2\)</td></tr>
+  <tr><td>Vertical asymptote in the interval</td><td>Sign change but no root</td><td>\(f(x)=\dfrac{1}{x-2}\), with \(f(1)=-1\), \(f(3)=1\)</td></tr>
+  <tr><td>Several roots in the interval</td><td>Signs at the ends may agree, hiding them all</td><td>Two roots between the endpoints</td></tr>
+</table>
+
+<div class="exam-tip">
+The asymptote case is the subtle one: \(f(1)\) and \(f(3)\) genuinely have opposite signs for \(\tfrac{1}{x-2}\), yet there is no root at all. The discontinuity, not a root, causes the change — which is exactly why continuity must be stated.
+</div>
+
+<h2>3. Fixed point iteration</h2>
+
+<p>Rearrange \(f(x)=0\) into the form \(x = g(x)\), then iterate \(x_{n+1} = g(x_n)\) from a starting value (e3).</p>
+
+<div class="example">
+<strong>Worked example.</strong> Rearrange \(x^3-x-4=0\) for iteration.
+<p>One rearrangement: \(x^3 = x+4\), so \(x = \sqrt[3]{x+4}\), giving</p>
+$$x_{n+1} = \sqrt[3]{x_n+4}$$
+</div>
+
+<div class="exam-tip">
+The <strong>same</strong> equation can be rearranged in several ways, and they do not all behave alike — one may converge while another diverges from the same starting value. Convergence depends on the rearrangement, not only on the equation.
+</div>
+
+<h3>Convergence and the diagrams</h3>
+
+<p>Near a root, the iteration converges when \(|g'(x)| &lt; 1\) and diverges when \(|g'(x)| &gt; 1\). The behaviour has a standard picture drawn between \(y=g(x)\) and \(y=x\):</p>
+
+<table>
+  <tr><th>Diagram</th><th>Occurs when</th><th>Appearance</th></tr>
+  <tr><td><strong>Staircase</strong></td><td>\(g'(x) &gt; 0\)</td><td>Steps approach the root from one side</td></tr>
+  <tr><td><strong>Cobweb</strong></td><td>\(g'(x) &lt; 0\)</td><td>Spirals inwards, alternating either side of the root</td></tr>
+</table>
+
+<h3>Finding the limit</h3>
+
+<div class="example">
+<strong>Worked example.</strong> To what does \(x_{n+1} = \sqrt{x_n+2}\) converge?
+<p>At the limit \(L\), both \(x_{n+1}\) and \(x_n\) equal \(L\):</p>
+$$L = \sqrt{L+2} \Longrightarrow L^2-L-2=0 \Longrightarrow (L-2)(L+1)=0$$
+<p>The terms are positive, so \(L=2\).</p>
+</div>
+
+<h2>4. The Newton-Raphson method</h2>
+
+$$x_{n+1} = x_n - \frac{f(x_n)}{f'(x_n)}$$
+
+<p>Geometrically, follow the <strong>tangent</strong> at the current point down to where it meets the \(x\)-axis, and take that as the next estimate (e4).</p>
+
+<div class="example">
+<strong>Worked example.</strong> Apply Newton-Raphson to \(f(x)=x^3-5\) from \(x_0=2\).
+$$f(2)=3, \qquad f'(x)=3x^2 \Rightarrow f'(2)=12$$
+$$x_1 = 2 - \frac{3}{12} = 1.75$$
+<p>A second iteration: \(f(1.75)=0.359375\) and \(f'(1.75)=9.1875\), so</p>
+$$x_2 = 1.75 - \frac{0.359375}{9.1875} = 1.7109 \text{ (4 d.p.)}$$
+<p>Compare \(\sqrt[3]{5} = 1.7100\) — two steps already give three-figure accuracy.</p>
+</div>
+
+<div class="exam-tip">
+Newton-Raphson converges much faster than a simple iteration: near a simple root the error is roughly <strong>squared</strong> at each step, so the number of correct digits approximately doubles.
+</div>
+
+<h3>When Newton-Raphson fails</h3>
+
+<ul>
+  <li><strong>\(f'(x_n) = 0\)</strong> — the tangent is horizontal and never meets the axis; the method breaks down entirely.</li>
+  <li><strong>Starting near a stationary point</strong> — the tangent is nearly horizontal, so the next estimate is thrown far away, possibly converging to a different root or diverging.</li>
+  <li><strong>Poor starting value</strong> — convergence is only guaranteed sufficiently close to the root.</li>
+</ul>
+
+<div class="exam-tip">
+Both failures are best explained with a <strong>sketch</strong> showing the tangent. A description that says "it fails" without showing why the tangent misbehaves rarely earns the marks.
+</div>
+
+<h2>5. The trapezium rule</h2>
+
+<div class="definition">
+For \(n\) strips of width \(h = \dfrac{b-a}{n}\) with ordinates \(y_0, y_1, \dots, y_n\):
+$$\int_a^b y\,\mathrm{d}x \approx \frac{h}{2}\Big[y_0 + y_n + 2\big(y_1+y_2+\dots+y_{n-1}\big)\Big]$$
+</div>
+
+<p>Note that \(n\) strips need \(n+1\) ordinates. The first and last are counted once; every interior one is doubled.</p>
+
+<div class="example">
+<strong>Worked example.</strong> With 4 strips over the interval from 1 to 3, the strip width is
+$$h = \frac{3-1}{4} = 0.5$$
+requiring ordinates at \(x = 1,\ 1.5,\ 2,\ 2.5,\ 3\).
+</div>
+
+<h3>Over- or under-estimate</h3>
+
+<p>Each trapezium is formed by a <strong>chord</strong> joining two points on the curve. Whether that chord lies above or below the curve settles the direction of the error (spec ref c34).</p>
+
+<table>
+  <tr><th>Curve on the interval</th><th>Chords lie</th><th>Trapezium rule gives</th></tr>
+  <tr><td>Concave upwards</td><td>Above the curve</td><td>An <strong>over</strong>-estimate</td></tr>
+  <tr><td>Concave downwards</td><td>Below the curve</td><td>An <strong>under</strong>-estimate</td></tr>
+</table>
+
+<div class="exam-tip">
+Justify the direction by referring to the <strong>shape</strong> — "the curve is concave upwards on this interval, so each chord lies above it and the estimate is too large". Simply asserting "overestimate" with no reason scores nothing.
+</div>
+
+<p>Halving the strip width reduces the error by a factor of roughly 4.</p>
+
+<h3>Rectangle bounds</h3>
+
+<p>Sums of rectangles give upper and lower <strong>bounds</strong> on the area (c35). For a monotonic function, rectangles drawn using left-hand and right-hand ordinates bracket the true value between them.</p>
+
+<h2>6. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Omitting the continuity condition when arguing from a change of sign.</li>
+  <li>Testing the rounded value itself rather than the bounds of the rounding interval.</li>
+  <li>Confusing the number of strips with the number of ordinates.</li>
+  <li>Doubling the first and last ordinates in the trapezium rule.</li>
+  <li>Asserting over- or under-estimate without referring to the concavity.</li>
+  <li>Writing the Newton-Raphson formula with the fraction inverted.</li>
+  <li>Working in the wrong calculator mode when \(f\) involves trigonometric functions.</li>
+  <li>Assuming any rearrangement \(x=g(x)\) will converge.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>
