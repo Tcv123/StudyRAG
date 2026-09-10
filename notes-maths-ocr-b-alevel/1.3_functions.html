@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.3 — Functions</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.3 Functions</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs f1–f5, factor theorem</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Polynomials and the factor theorem, then the language of functions — domain, range, composition, inverses — and the modulus function together with inequalities involving it.
+</div>
+
+<h2>1. Polynomials</h2>
+
+<div class="definition">
+A <strong>polynomial</strong> in \(x\) is a sum of terms \(a_nx^n + a_{n-1}x^{n-1} + \dots + a_1x + a_0\) where the powers are non-negative integers. The <strong>degree</strong> is the highest power present.
+</div>
+
+<p>Multiplying polynomials adds their degrees: degree 2 times degree 3 gives degree 5.</p>
+
+<h3>The factor theorem</h3>
+
+<div class="definition">
+If \(f(a) = 0\) then \((x-a)\) is a <strong>factor</strong> of \(f(x)\) — and conversely.
+</div>
+
+<p>The closely related <strong>remainder theorem</strong> says the remainder on dividing \(f(x)\) by \((x-a)\) is \(f(a)\). A remainder of zero is exactly what "is a factor" means.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Show that \((x+3)\) is a factor of \(f(x) = x^3+2x^2-5x-6\), and factorise completely.
+<p>The factor \((x+3)\) corresponds to \(a=-3\):</p>
+$$f(-3) = -27 + 18 + 15 - 6 = 0$$
+<p>so \((x+3)\) is a factor. Dividing gives</p>
+$$f(x) = (x+3)(x^2-x-2) = (x+3)(x-2)(x+1)$$
+</div>
+
+<div class="exam-tip">
+For \((x+3)\) you substitute \(x = -3\), not \(x = 3\). The sign slip here is extremely common — the factor \((x-a)\) means testing \(+a\), so \((x+3) = (x-(-3))\) means testing \(-3\).
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Given that \((x-2)\) is a factor of \(x^3 + ax^2 - 5x + 6\), find \(a\).
+$$f(2) = 8 + 4a - 10 + 6 = 4 + 4a = 0 \Longrightarrow a = -1$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Fully factorise \(x^3 - 3x + 2\).
+<p>Try small values: \(f(1) = 1-3+2 = 0\), so \((x-1)\) is a factor. Dividing gives \(x^2+x-2 = (x+2)(x-1)\), so</p>
+$$x^3-3x+2 = (x-1)^2(x+2)$$
+<p>a <strong>repeated</strong> root at \(x=1\) — the curve touches the axis there rather than crossing.</p>
+</div>
+
+<div class="exam-tip">
+When hunting for a first factor, test the divisors of the constant term (\(\pm1, \pm2, \pm3, \pm6\) for a constant of 6). Testing random values wastes time.
+</div>
+
+<h2>2. The language of functions</h2>
+
+<div class="definition">
+A <strong>function</strong> assigns exactly one output to each input. The <strong>domain</strong> is the set of permitted inputs; the <strong>range</strong> is the set of outputs actually produced.
+</div>
+
+<table>
+  <tr><th>Type</th><th>Meaning</th><th>Example</th></tr>
+  <tr><td><strong>One-to-one</strong></td><td>Each output comes from exactly one input</td><td>\(f(x)=2x+1\)</td></tr>
+  <tr><td><strong>Many-to-one</strong></td><td>Different inputs can share an output</td><td>\(f(x)=x^2\)</td></tr>
+</table>
+
+<p>Restrictions on a domain usually come from two sources: you cannot divide by zero, and you cannot take the square root of a negative number.</p>
+
+<table>
+  <tr><th>Function</th><th>Natural domain</th><th>Range</th></tr>
+  <tr><td>\(f(x)=x^2\)</td><td>All real \(x\)</td><td>\(f(x) \ge 0\)</td></tr>
+  <tr><td>\(f(x)=\sqrt{x-3}\)</td><td>\(x \ge 3\)</td><td>\(f(x) \ge 0\)</td></tr>
+  <tr><td>\(f(x)=\dfrac1x\)</td><td>\(x \neq 0\)</td><td>\(f(x) \neq 0\)</td></tr>
+  <tr><td>\(f(x)=\mathrm{e}^x\)</td><td>All real \(x\)</td><td>\(f(x) &gt; 0\)</td></tr>
+</table>
+
+<div class="example">
+<strong>Worked example.</strong> Find the range of \(f(x)=x^2-4x+7\) for real \(x\).
+<p>Complete the square: \(f(x) = (x-2)^2 + 3\). Since \((x-2)^2 \ge 0\), the least value is 3, so the range is \(f(x) \ge 3\).</p>
+</div>
+
+<div class="exam-tip">
+Completing the square is the standard route to the range of a quadratic. Reading the range off a rough sketch without it is where marks are lost.
+</div>
+
+<h2>3. Composite functions</h2>
+
+<div class="definition">
+\(\mathrm{fg}(x)\) means \(f\big(g(x)\big)\) — apply \(g\) <strong>first</strong>, then \(f\).
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> \(f(x)=2x+3\) and \(g(x)=x^2\). Find \(\mathrm{fg}(x)\) and \(\mathrm{gf}(x)\).
+$$\mathrm{fg}(x) = f(x^2) = 2x^2+3$$
+$$\mathrm{gf}(x) = g(2x+3) = (2x+3)^2$$
+</div>
+
+<div class="exam-tip">
+Composition is <strong>not</strong> commutative: \(\mathrm{fg} \neq \mathrm{gf}\) in general, as above. The inner function is the one written next to the \(x\).
+</div>
+
+<p>A composite \(\mathrm{gf}\) exists only if the range of \(f\) lies inside the domain of \(g\). If \(f\) can output a negative number and \(g\) involves a square root, the composite fails for those inputs.</p>
+
+<h2>4. Inverse functions</h2>
+
+<div class="definition">
+The <strong>inverse</strong> \(f^{-1}\) reverses \(f\): if \(f(a)=b\) then \(f^{-1}(b)=a\). An inverse exists precisely when \(f\) is <strong>one-to-one</strong>.
+</div>
+
+<p>Method: write \(y = f(x)\), rearrange to make \(x\) the subject, then swap the letters.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find the inverse of \(f(x) = \dfrac{2x+1}{x-3}\).
+$$y = \frac{2x+1}{x-3} \Longrightarrow y(x-3) = 2x+1 \Longrightarrow yx - 3y = 2x + 1$$
+$$x(y-2) = 3y+1 \Longrightarrow x = \frac{3y+1}{y-2}$$
+$$f^{-1}(x) = \frac{3x+1}{x-2}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> \(f(x)=x^2-4x\) with domain \(x \ge 2\). Find \(f^{-1}\).
+<p>Complete the square: \(y = (x-2)^2 - 4\), so \((x-2)^2 = y+4\) and \(x - 2 = \pm\sqrt{y+4}\).</p>
+<p>The domain \(x \ge 2\) forces the <strong>positive</strong> root, so \(f^{-1}(x) = 2 + \sqrt{x+4}\).</p>
+</div>
+
+<div class="exam-tip">
+Restricting the domain is what makes a many-to-one function invertible — \(x^2\) has no inverse over all the reals, but does for \(x \ge 0\). When you take a square root during the rearrangement, use the given domain to decide the sign.
+</div>
+
+<p>Two useful facts: the domain and range <strong>swap</strong> between \(f\) and \(f^{-1}\), and the graph of \(y=f^{-1}(x)\) is the reflection of \(y=f(x)\) in the line \(y=x\). Consequently any intersection of a function with its inverse lies on \(y=x\).</p>
+
+<h2>5. The modulus function</h2>
+
+<div class="definition">
+\(|x|\) is the <strong>magnitude</strong> of \(x\), ignoring sign:
+$$|x| = \begin{cases} x & x \ge 0\\ -x & x &lt; 0\end{cases}$$
+</div>
+
+<p>The graph of \(y=|x|\) is a V with its vertex at the origin. More generally \(y=|x-a|\) has its vertex at \((a,0)\).</p>
+
+<h3>Two graph transformations</h3>
+
+<table>
+  <tr><th>Graph</th><th>How to construct it from \(y=f(x)\)</th></tr>
+  <tr><td>\(y = |f(x)|\)</td><td>Reflect the parts <em>below</em> the \(x\)-axis up into it. Nothing else moves.</td></tr>
+  <tr><td>\(y = f(|x|)\)</td><td>Keep the \(x \ge 0\) part and reflect it in the \(y\)-axis, discarding the original \(x &lt; 0\) part.</td></tr>
+</table>
+
+<div class="exam-tip">
+These two are routinely confused. \(|f(x)|\) acts on the <strong>output</strong>, so it folds the graph upwards. \(f(|x|)\) acts on the <strong>input</strong>, so it makes the graph symmetric about the \(y\)-axis.
+</div>
+
+<h3>Modulus equations</h3>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(|2x-1| = 5\).
+<p>Either \(2x-1 = 5\), giving \(x=3\); or \(2x-1 = -5\), giving \(x=-2\).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(|x-1| = |x+3|\).
+<p>Squaring both sides (safe, as both are non-negative):</p>
+$$x^2-2x+1 = x^2+6x+9 \Longrightarrow -8x = 8 \Longrightarrow x = -1$$
+<p>Geometrically, \(x=-1\) is the point equidistant from 1 and \(-3\).</p>
+</div>
+
+<h3>Modulus inequalities</h3>
+
+<table>
+  <tr><th>Inequality</th><th>Equivalent to</th></tr>
+  <tr><td>\(|x| &lt; a\) &nbsp;(for \(a&gt;0\))</td><td>\(-a &lt; x &lt; a\)</td></tr>
+  <tr><td>\(|x| &gt; a\) &nbsp;(for \(a&gt;0\))</td><td>\(x &lt; -a\) or \(x &gt; a\)</td></tr>
+</table>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(|x+2| &gt; 3\).
+<p>Either \(x+2 &gt; 3\), giving \(x &gt; 1\); or \(x+2 &lt; -3\), giving \(x &lt; -5\). So \(x &lt; -5\) or \(x &gt; 1\).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(|2x-3| &lt; |x|\).
+<p>Both sides are non-negative, so squaring is valid:</p>
+$$4x^2 - 12x + 9 &lt; x^2 \Longrightarrow 3x^2 - 12x + 9 &lt; 0 \Longrightarrow x^2-4x+3 &lt; 0$$
+$$(x-1)(x-3) &lt; 0 \Longrightarrow 1 &lt; x &lt; 3$$
+</div>
+
+<div class="exam-tip">
+Squaring is the reliable method when <strong>both</strong> sides are non-negative — which is automatic when both are moduli. It is <em>not</em> safe when one side could be negative, e.g. \(|x| &lt; x-4\); there, split into cases instead.
+</div>
+
+<h2>6. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Testing \(x = +3\) for the factor \((x+3)\) instead of \(x=-3\).</li>
+  <li>Reading \(\mathrm{fg}(x)\) as "\(f\) first" — it is \(g\) first.</li>
+  <li>Claiming an inverse exists for a many-to-one function without restricting the domain.</li>
+  <li>Taking the wrong sign of the square root when finding an inverse, ignoring the given domain.</li>
+  <li>Swapping the effects of \(|f(x)|\) and \(f(|x|)\).</li>
+  <li>Solving \(|2x-1| = 5\) with only the positive case, losing the second root.</li>
+  <li>Squaring a modulus inequality where one side may be negative.</li>
+  <li>Giving the range of a quadratic from a sketch rather than by completing the square.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

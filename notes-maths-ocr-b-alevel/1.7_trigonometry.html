@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.7 — Trigonometry</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.7 Trigonometry</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs t1–t3, compound angles</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Exact values and the unit circle, the sine and cosine rules, radians with arc and sector formulae, the reciprocal functions and Pythagorean identities, compound and double angle formulae, the \(R\sin(x\pm\alpha)\) form, and small angle approximations.
+</div>
+
+<h2>1. Exact values</h2>
+
+<p>These must be known, not derived under exam pressure.</p>
+
+<table>
+  <tr><th>\(\theta\)</th><th>\(0\)</th><th>\(30^\circ = \tfrac{\pi}{6}\)</th><th>\(45^\circ = \tfrac{\pi}{4}\)</th><th>\(60^\circ = \tfrac{\pi}{3}\)</th><th>\(90^\circ = \tfrac{\pi}{2}\)</th></tr>
+  <tr><td>\(\sin\theta\)</td><td>\(0\)</td><td>\(\tfrac12\)</td><td>\(\tfrac{\sqrt2}{2}\)</td><td>\(\tfrac{\sqrt3}{2}\)</td><td>\(1\)</td></tr>
+  <tr><td>\(\cos\theta\)</td><td>\(1\)</td><td>\(\tfrac{\sqrt3}{2}\)</td><td>\(\tfrac{\sqrt2}{2}\)</td><td>\(\tfrac12\)</td><td>\(0\)</td></tr>
+  <tr><td>\(\tan\theta\)</td><td>\(0\)</td><td>\(\tfrac{1}{\sqrt3}\)</td><td>\(1\)</td><td>\(\sqrt3\)</td><td>undefined</td></tr>
+</table>
+
+<h2>2. Radians, arcs and sectors</h2>
+
+<div class="definition">
+One <strong>radian</strong> is the angle subtended at the centre by an arc equal in length to the radius. \(\pi\) radians \(= 180^\circ\).
+</div>
+
+<p>For a sector of radius \(r\) subtending angle \(\theta\) <strong>in radians</strong>:</p>
+$$\text{arc length } s = r\theta, \qquad \text{sector area } A = \tfrac12 r^2\theta$$
+
+<div class="example">
+<strong>Worked example.</strong> Find the arc length and sector area for \(r=6\), \(\theta = \tfrac{\pi}{3}\).
+$$s = 6 \times \tfrac{\pi}{3} = 2\pi, \qquad A = \tfrac12 (36)\left(\tfrac{\pi}{3}\right) = 6\pi$$
+</div>
+
+<div class="exam-tip">
+These two formulae require <strong>radians</strong>. Substituting degrees gives an answer wrong by a factor of about 57. If a question is set in radians, keep your calculator in radian mode throughout.
+</div>
+
+<h2>3. Sine and cosine rules; area</h2>
+
+$$\frac{a}{\sin A} = \frac{b}{\sin B} = \frac{c}{\sin C}, \qquad a^2 = b^2+c^2-2bc\cos A, \qquad \text{Area} = \tfrac12 ab\sin C$$
+
+<p>Use the <strong>cosine rule</strong> when you have three sides, or two sides and the angle between them. Use the <strong>sine rule</strong> otherwise.</p>
+
+<div class="exam-tip">
+The sine rule has an <strong>ambiguous case</strong>: given two sides and a non-included angle, \(\sin\theta = k\) has two solutions in \(0^\circ\) to \(180^\circ\), namely \(\theta\) and \(180^\circ - \theta\). Check whether both give a valid triangle.
+</div>
+
+<h2>4. Graphs and periodicity</h2>
+
+<table>
+  <tr><th>Function</th><th>Period</th><th>Range</th></tr>
+  <tr><td>\(\sin x\)</td><td>\(2\pi\)</td><td>\(-1 \le y \le 1\)</td></tr>
+  <tr><td>\(\cos x\)</td><td>\(2\pi\)</td><td>\(-1 \le y \le 1\)</td></tr>
+  <tr><td>\(\tan x\)</td><td>\(\pi\)</td><td>all real values; asymptotes at \(\tfrac{\pi}{2} + k\pi\)</td></tr>
+</table>
+
+<p>Symmetries worth knowing: \(\sin(-\theta) = -\sin\theta\) (odd), \(\cos(-\theta) = \cos\theta\) (even).</p>
+
+<h2>5. Solving trigonometric equations</h2>
+
+<p>The calculator gives one value — the <strong>principal value</strong>. Every other solution in the range must be found from the symmetry of the graph.</p>
+
+<table>
+  <tr><th>Equation</th><th>Second solution in \([0, 2\pi)\)</th></tr>
+  <tr><td>\(\sin x = k\)</td><td>\(\pi - x\)</td></tr>
+  <tr><td>\(\cos x = k\)</td><td>\(2\pi - x\)</td></tr>
+  <tr><td>\(\tan x = k\)</td><td>\(x + \pi\)</td></tr>
+</table>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(\sin x = \tfrac{\sqrt3}{2}\) for \(0 \le x &lt; 2\pi\).
+<p>Principal value \(x = \tfrac{\pi}{3}\). Second solution \(\pi - \tfrac{\pi}{3} = \tfrac{2\pi}{3}\). So \(x = \tfrac{\pi}{3}\) or \(\tfrac{2\pi}{3}\).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(\cos x = -\tfrac12\) for \(0 \le x &lt; 2\pi\).
+<p>\(x = \tfrac{2\pi}{3}\) or \(\tfrac{4\pi}{3}\).</p>
+</div>
+
+<h3>Equations in a multiple angle</h3>
+
+<div class="exam-tip">
+For \(\sin 2x = k\) over \(0^\circ \le x &lt; 360^\circ\), <strong>widen the range first</strong>: \(2x\) runs over \(0^\circ\) to \(720^\circ\). Solve for \(2x\) across that doubled range, then halve every answer. Halving first loses half the solutions.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(\sin 2x = 0.5\) for \(0^\circ \le x &lt; 360^\circ\).
+<p>Let \(u = 2x\), so \(0^\circ \le u &lt; 720^\circ\). Then</p>
+$$u = 30^\circ,\ 150^\circ,\ 390^\circ,\ 510^\circ$$
+<p>Halving: \(x = 15^\circ,\ 75^\circ,\ 195^\circ,\ 255^\circ\) — four solutions.</p>
+</div>
+
+<h2>6. Reciprocal functions and Pythagorean identities</h2>
+
+$$\sec\theta = \frac{1}{\cos\theta}, \qquad \operatorname{cosec}\theta = \frac{1}{\sin\theta}, \qquad \cot\theta = \frac{1}{\tan\theta} = \frac{\cos\theta}{\sin\theta}$$
+
+<p>From \(\sin^2\theta + \cos^2\theta = 1\), dividing by \(\cos^2\theta\) and then by \(\sin^2\theta\) gives:</p>
+
+$$1 + \tan^2\theta = \sec^2\theta, \qquad 1 + \cot^2\theta = \operatorname{cosec}^2\theta$$
+
+<div class="exam-tip">
+\(\sec\) goes with \(\cos\) and \(\operatorname{cosec}\) with \(\sin\) — note the mismatch of first letters, which is exactly why it is misremembered. Look at the <strong>third</strong> letter: se<strong>c</strong> → <strong>c</strong>os.
+</div>
+
+<h2>7. Compound and double angle formulae</h2>
+
+$$\sin(A \pm B) = \sin A\cos B \pm \cos A \sin B$$
+$$\cos(A \pm B) = \cos A\cos B \mp \sin A \sin B$$
+$$\tan(A \pm B) = \frac{\tan A \pm \tan B}{1 \mp \tan A \tan B}$$
+
+<div class="exam-tip">
+Note the sign flip in the cosine formula: \(\cos(A+B)\) uses a <strong>minus</strong>. This is the most commonly misquoted identity in the topic.
+</div>
+
+<p>Setting \(B=A\) gives the double angle formulae:</p>
+
+$$\sin 2\theta = 2\sin\theta\cos\theta$$
+$$\cos 2\theta = \cos^2\theta - \sin^2\theta = 2\cos^2\theta - 1 = 1 - 2\sin^2\theta$$
+$$\tan 2\theta = \frac{2\tan\theta}{1-\tan^2\theta}$$
+
+<div class="exam-tip">
+The three forms of \(\cos 2\theta\) are not interchangeable in practice — <strong>choose the one that matches the rest of the equation</strong>. If the equation also contains \(\sin\theta\), use \(1-2\sin^2\theta\) so everything is in one function.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Solve \(3\cos 2x + \sin x = 2\) for \(0 \le x &lt; 2\pi\).
+<p>Choose \(\cos 2x = 1-2\sin^2 x\) to match the \(\sin x\):</p>
+$$3(1-2\sin^2 x) + \sin x = 2 \Longrightarrow 6\sin^2 x - \sin x - 1 = 0$$
+$$(3\sin x + 1)(2\sin x - 1) = 0$$
+<p>So \(\sin x = \tfrac12\), giving \(x = \tfrac{\pi}{6}, \tfrac{5\pi}{6}\); or \(\sin x = -\tfrac13\), giving \(x = 3.481, 5.943\) radians (3 d.p.).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Simplify \(\dfrac{1-\cos 2\theta}{\sin 2\theta}\).
+$$\frac{1-(1-2\sin^2\theta)}{2\sin\theta\cos\theta} = \frac{2\sin^2\theta}{2\sin\theta\cos\theta} = \frac{\sin\theta}{\cos\theta} = \tan\theta$$
+</div>
+
+<h2>8. The \(R\sin(x \pm \alpha)\) form</h2>
+
+<div class="definition">
+Any expression \(a\sin x + b\cos x\) can be written as a <strong>single</strong> trigonometric function:
+$$a\sin x + b\cos x = R\sin(x+\alpha), \qquad R = \sqrt{a^2+b^2}, \qquad \tan\alpha = \frac{b}{a}$$
+</div>
+
+<p>This form makes maxima, minima and solutions immediate: the expression ranges between \(-R\) and \(R\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> Express \(3\sin x + 4\cos x\) as \(R\sin(x+\alpha)\), and state its maximum.
+$$R = \sqrt{3^2+4^2} = 5, \qquad \tan\alpha = \tfrac43 \Longrightarrow \alpha = 0.927 \text{ rad (3 s.f.)}$$
+$$3\sin x + 4\cos x = 5\sin(x + 0.927)$$
+<p>The maximum is \(5\), attained when \(\sin(x+\alpha) = 1\).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find the maximum of \(5\sin x + 12\cos x\).
+<p>\(R = \sqrt{25+144} = 13\), so the maximum is 13 and the minimum is \(-13\).</p>
+</div>
+
+<h2>9. Small angle approximations</h2>
+
+<p>For small \(\theta\) <strong>measured in radians</strong>:</p>
+$$\sin\theta \approx \theta, \qquad \tan\theta \approx \theta, \qquad \cos\theta \approx 1 - \frac{\theta^2}{2}$$
+
+<p>A consequence used repeatedly in calculus:</p>
+$$\lim_{\theta \to 0}\frac{\sin\theta}{\theta} = 1$$
+
+<div class="exam-tip">
+These hold only in radians. They are also the reason the derivative of \(\sin x\) is \(\cos x\) <em>only</em> when \(x\) is in radians — which is why all calculus with trigonometric functions is done in radians.
+</div>
+
+<h2>10. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Leaving the calculator in the wrong mode — degrees when the question is in radians, or the reverse.</li>
+  <li>Giving only the principal value and missing the other solutions in the range.</li>
+  <li>Halving before solving in a multiple-angle equation, losing half the answers.</li>
+  <li>Writing \(\cos(A+B) = \cos A\cos B + \sin A\sin B\) — the sign is minus.</li>
+  <li>Pairing \(\sec\) with \(\sin\) instead of \(\cos\).</li>
+  <li>Choosing a form of \(\cos 2\theta\) that leaves two different trigonometric functions in the equation.</li>
+  <li>Using \(s=r\theta\) or \(A=\tfrac12 r^2\theta\) with \(\theta\) in degrees.</li>
+  <li>Applying small angle approximations to angles in degrees.</li>
+  <li>Dividing an equation by \(\cos x\) and silently losing the solutions where \(\cos x = 0\).</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

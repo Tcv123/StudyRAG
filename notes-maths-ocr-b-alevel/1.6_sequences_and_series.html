@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.6 — Sequences &amp; Series</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.6 Sequences &amp; Series</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs s1, binomial expansion</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Arithmetic and geometric sequences and series, sigma notation, recurrence relations and limits, and the binomial expansion — both for a positive integer index and for negative or fractional indices, where a validity condition applies.
+</div>
+
+<h2>1. Sequences and notation</h2>
+
+<p>A <strong>sequence</strong> is an ordered list of terms; a <strong>series</strong> is what you get when you add them. The \(n\)th term is written \(u_n\).</p>
+
+<h3>Sigma notation</h3>
+$$\sum_{k=1}^{n} u_k = u_1 + u_2 + \dots + u_n$$
+
+<p>The letter below is the starting index, the number above is the last. Two standard results:</p>
+$$\sum_{k=1}^{n} k = \frac{n(n+1)}{2}, \qquad \sum_{k=1}^{n} (2k-1) = n^2$$
+
+<div class="example">
+<strong>Worked example.</strong> Write \(3+6+9+\dots+30\) in sigma notation.
+$$\sum_{k=1}^{10} 3k$$
+</div>
+
+<h3>Recurrence relations</h3>
+
+<div class="definition">
+A <strong>recurrence relation</strong> defines each term from the previous one, together with a starting value — for example \(u_{n+1} = u_n + 3\) with \(u_1 = 2\).
+</div>
+
+<p>If the sequence converges to a limit \(L\), then replacing both \(u_{n+1}\) and \(u_n\) by \(L\) gives an equation for \(L\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find the limit of \(u_{n+1} = \sqrt{2+u_n}\).
+$$L = \sqrt{2+L} \Longrightarrow L^2 = 2 + L \Longrightarrow L^2 - L - 2 = 0 \Longrightarrow (L-2)(L+1)=0$$
+<p>The terms are positive, so \(L=2\) (rejecting \(L=-1\)).</p>
+</div>
+
+<div class="exam-tip">
+Always check the rejected root against the context. A limit of a sequence of square roots cannot be negative, and saying so explicitly is worth a mark.
+</div>
+
+<h2>2. Arithmetic sequences and series</h2>
+
+<div class="definition">
+An <strong>arithmetic</strong> sequence has a constant <strong>common difference</strong> \(d\) between consecutive terms.
+</div>
+
+$$u_n = a + (n-1)d, \qquad S_n = \frac{n}{2}\big(2a + (n-1)d\big) = \frac{n}{2}(a + l)$$
+
+<p>where \(a\) is the first term and \(l\) the last.</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find the sum of the first 20 terms with \(a=3\), \(d=5\).
+$$S_{20} = \frac{20}{2}\big(2(3) + 19(5)\big) = 10(6+95) = 1010$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> How many terms are in \(5, 9, 13, \dots, 101\)?
+$$a + (n-1)d = 101 \Longrightarrow 5 + 4(n-1) = 101 \Longrightarrow n-1 = 24 \Longrightarrow n = 25$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> An arithmetic sequence has 5th term 17 and 10th term 32. Find \(a\) and \(d\).
+<p>The gap between the 5th and 10th terms is \(5d = 32-17 = 15\), so \(d=3\). Then \(a = 17 - 4(3) = 5\).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> An arithmetic series has \(a=20\), \(d=-3\). For which \(n\) is \(S_n\) greatest?
+<p>The sum grows while the terms are positive. \(u_n = 20 - 3(n-1) &gt; 0\) gives \(23 &gt; 3n\), so \(n &lt; 7.67\). At \(n=7\) the term is \(20-18 = 2\) (still positive); at \(n=8\) it is \(-1\). So \(S_n\) is greatest at \(n=7\).</p>
+</div>
+
+<div class="exam-tip">
+"\(n\)th term" and "sum to \(n\) terms" are constantly mixed up under time pressure. Read the question twice: \(u_n\) is a single term, \(S_n\) is a running total.
+</div>
+
+<h2>3. Geometric sequences and series</h2>
+
+<div class="definition">
+A <strong>geometric</strong> sequence has a constant <strong>common ratio</strong> \(r\): each term is the previous one multiplied by \(r\).
+</div>
+
+$$u_n = ar^{\,n-1}, \qquad S_n = \frac{a(1-r^n)}{1-r} \quad (r \neq 1)$$
+
+<div class="example">
+<strong>Worked example.</strong> For \(a=2\), \(r=3\), find \(S_5\).
+$$S_5 = \frac{2(1-3^5)}{1-3} = \frac{2(1-243)}{-2} = 242$$
+</div>
+
+<h3>Sum to infinity</h3>
+
+<div class="definition">
+If \(|r| &lt; 1\) the series <strong>converges</strong> and
+$$S_\infty = \frac{a}{1-r}$$
+If \(|r| \ge 1\) it <strong>diverges</strong> and no sum to infinity exists.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find the sum to infinity of \(8 + 4 + 2 + \dots\).
+<p>Here \(a=8\) and \(r=\tfrac12\), and \(|r|&lt;1\), so</p>
+$$S_\infty = \frac{8}{1-\tfrac12} = 16$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> A geometric series has \(S_\infty = 3a\). Find \(r\).
+$$\frac{a}{1-r} = 3a \Longrightarrow \frac{1}{1-r} = 3 \Longrightarrow 1-r = \tfrac13 \Longrightarrow r = \tfrac23$$
+</div>
+
+<div class="exam-tip">
+State the condition \(|r|&lt;1\) whenever you use \(S_\infty\). MEI mark schemes award a mark for it, and using the formula on a divergent series produces a plausible-looking but meaningless number.
+</div>
+
+<h2>4. Binomial expansion: positive integer index</h2>
+
+$$(1+x)^n = 1 + nx + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!}x^3 + \dots$$
+
+<p>Equivalently, using binomial coefficients,</p>
+$$(a+b)^n = \sum_{r=0}^{n} \binom{n}{r} a^{\,n-r} b^{\,r}$$
+
+<p>For a positive integer \(n\) the expansion <strong>terminates</strong>, giving exactly \(n+1\) terms. The coefficients are the rows of Pascal's triangle; \(\binom{n}{0} = \binom{n}{n} = 1\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> Find the coefficient of \(x^3\) in \((1+2x)^5\).
+<p>The required term is \(\binom{5}{3}(2x)^3 = 10 \times 8x^3 = 80x^3\), so the coefficient is 80.</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find the coefficient of \(x^2\) in \((2+x)^6\).
+$$\binom{6}{2}\,2^{4}\,x^2 = 15 \times 16 x^2 = 240x^2$$
+</div>
+
+<div class="exam-tip">
+When the bracket is \((1+2x)\) or \((2+x)\), the whole term must be raised to the power — \((2x)^3 = 8x^3\), not \(2x^3\). Forgetting to cube the 2 is the standard error.
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find the coefficient of \(x^3\) in \((1+x)(1+2x)^4\).
+<p>First expand \((1+2x)^4 = 1 + 8x + 24x^2 + 32x^3 + 16x^4\).</p>
+<p>Terms in \(x^3\) come from \(1 \times 32x^3\) and \(x \times 24x^2\):</p>
+$$32 + 24 = 56$$
+</div>
+
+<h2>5. Binomial expansion: negative and fractional index</h2>
+
+<div class="definition">
+For any real \(n\), the same series formula holds, but the expansion is <strong>infinite</strong> and valid only when \(|x| &lt; 1\):
+$$(1+x)^n = 1 + nx + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!}x^3 + \dots$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Expand \((1+x)^{1/2}\) as far as the term in \(x^2\).
+$$1 + \tfrac12 x + \frac{\tfrac12\left(-\tfrac12\right)}{2}x^2 = 1 + \frac{x}{2} - \frac{x^2}{8}$$
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Expand \((1+3x)^{-2}\) as far as the term in \(x^2\).
+$$1 + (-2)(3x) + \frac{(-2)(-3)}{2}(3x)^2 = 1 - 6x + 3(9x^2) = 1 - 6x + 27x^2$$
+</div>
+
+<h3>The validity condition</h3>
+
+<p>The expansion of \((1+ax)^n\) for non-integer \(n\) is valid when \(|ax| &lt; 1\), that is \(|x| &lt; \dfrac{1}{|a|}\).</p>
+
+<div class="example">
+<strong>Worked example.</strong> State the validity of the expansion of \((1+2x)^{1/2}\).
+<p>Valid for \(|2x| &lt; 1\), i.e. \(|x| &lt; \tfrac12\).</p>
+</div>
+
+<div class="exam-tip">
+The validity condition is worth its own mark and is very often omitted. It is \(|x| &lt; \tfrac{1}{|a|}\), <strong>not</strong> \(|x|&lt;1\), whenever the bracket contains a coefficient on \(x\).
+</div>
+
+<h3>Approximations</h3>
+
+<div class="example">
+<strong>Worked example.</strong> Use the expansion of \((1+x)^{1/2}\) to approximate \(\sqrt{1.02}\).
+<p>Take \(x = 0.02\):</p>
+$$\sqrt{1.02} \approx 1 + \frac{0.02}{2} - \frac{(0.02)^2}{8} = 1 + 0.01 - 0.00005 = 1.00995$$
+</div>
+
+<div class="exam-tip">
+For a bracket not starting with 1, factorise first: \(\sqrt{4+x} = 2\left(1+\tfrac{x}{4}\right)^{1/2}\). Applying the series directly to \((4+x)^{1/2}\) is invalid.
+</div>
+
+<h2>6. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Confusing \(u_n\) with \(S_n\).</li>
+  <li>Using \(S_\infty\) without checking, or without stating, that \(|r|&lt;1\).</li>
+  <li>Forgetting to raise the coefficient as well as \(x\): \((2x)^3 = 8x^3\).</li>
+  <li>Omitting the validity condition for a non-integer index, or giving \(|x|&lt;1\) when it should be \(|x|&lt;\tfrac{1}{|a|}\).</li>
+  <li>Applying the infinite series to a bracket not of the form \((1+\dots)\) without factorising first.</li>
+  <li>Off-by-one errors in the number of terms: \(u_n = a+(n-1)d\), not \(a+nd\).</li>
+  <li>Missing one of the contributing terms when a binomial is multiplied by another bracket.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>

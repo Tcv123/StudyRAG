@@ -88,7 +88,7 @@ const MATHS_OCR_B_ALEVEL_WRITTEN = {
       { q: 'Express 3 sin x + 4 cos x in the form R sin(x + α), where R > 0 and 0 < α < π/2. Hence state the maximum value of the expression.', marks: 5, marks_scheme: '1 mark: R = √(3² + 4²). 1 mark: R = 5. 1 mark: tan α = 4/3. 1 mark: α = 0.927 radians (3 s.f.). 1 mark: maximum value is 5, occurring when sin(x + α) = 1.' },
     ],
     red: [
-      { q: 'Solve 3 cos 2x + sin x = 2 for 0 ≤ x < 2π.', marks: 6, marks_scheme: '1 mark: use cos 2x = 1 − 2sin²x. 1 mark: substitute to get 3 − 6sin²x + sin x = 2. 1 mark: rearrange to 6sin²x − sin x − 1 = 0. 1 mark: factorise (3 sin x + 1)(2 sin x − 1) = 0. 1 mark: sin x = 1/2 gives x = π/6, 5π/6. 1 mark: sin x = −1/3 gives x = 3.481, 5.944 radians (3 d.p.).' },
+      { q: 'Solve 3 cos 2x + sin x = 2 for 0 ≤ x < 2π.', marks: 6, marks_scheme: '1 mark: use cos 2x = 1 − 2sin²x. 1 mark: substitute to get 3 − 6sin²x + sin x = 2. 1 mark: rearrange to 6sin²x − sin x − 1 = 0. 1 mark: factorise (3 sin x + 1)(2 sin x − 1) = 0. 1 mark: sin x = 1/2 gives x = π/6, 5π/6. 1 mark: sin x = −1/3 gives x = 3.481, 5.943 radians (3 d.p.).' },
     ],
   },
 

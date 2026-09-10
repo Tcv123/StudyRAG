@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>RAG Learning — OCR B (MEI) 1.4 — Graphs</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css">
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/auto-render.min.js"></script>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #fff; color: #1a1a2e; line-height: 1.7; padding: 40px 20px; }
+  .container { max-width: 800px; margin: 0 auto; }
+  h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 10px; margin-bottom: 30px; }
+  h2 { font-size: 1.5rem; color: #1e3a5f; margin: 35px 0 15px 0; border-left: 4px solid #2563eb; padding-left: 12px; }
+  h3 { font-size: 1.2rem; color: #2563eb; margin: 20px 0 10px 0; }
+  p { margin-bottom: 12px; }
+  ul, ol { margin: 10px 0 15px 25px; }
+  li { margin-bottom: 6px; }
+  table { width: 100%; border-collapse: collapse; margin: 15px 0; font-size: 0.95rem; }
+  th, td { border: 1px solid #cbd5e1; padding: 10px 12px; text-align: left; }
+  th { background: #e8eef6; color: #1e3a5f; font-weight: 600; }
+  tr:nth-child(even) { background: #f8fafc; }
+  .definition { background: #e8f0fe; border-left: 4px solid #2563eb; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .exam-tip { background: #fff8e1; border-left: 4px solid #f59e0b; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .example { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; border-radius: 6px; margin: 15px 0; }
+  .spec-ref { color: #64748b; font-style: italic; font-size: 0.95rem; margin-bottom: 20px; }
+  .equation { background: #f1f5f9; border-radius: 6px; padding: 12px 18px; margin: 12px 0; font-size: 1.1rem; text-align: center; }
+  pre { background: #0f172a; color: #e2e8f0; padding: 14px 18px; border-radius: 6px; margin: 14px 0; overflow-x: auto; font-family: "Cascadia Code", Consolas, Menlo, monospace; font-size: 0.92rem; line-height: 1.55; }
+  pre .ln { color: #94a3b8; }
+  pre .cm { color: #fbbf24; }
+  svg text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+</style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.4 Graphs</h1>
+<p class="spec-ref">Mathematics B (MEI) — OCR B — A-Level (H640) — Pure Mathematics — spec refs g1–g2</p>
+
+<div class="definition">
+<strong>What this topic covers.</strong> Sketching standard curves and identifying their key features — intercepts, turning points, asymptotes — and the four graph transformations, including the vector notation MEI uses for translations.
+</div>
+
+<h2>1. What a sketch must show</h2>
+
+<p>A sketch is not a plot. It need not be to scale, but it must be <em>correct</em> in every labelled feature. Examiners look for:</p>
+
+<ul>
+  <li><strong>Intercepts</strong> — set \(x=0\) for the \(y\)-intercept, \(y=0\) for the \(x\)-intercepts.</li>
+  <li><strong>Asymptotes</strong> — drawn as dashed lines and labelled with their equations.</li>
+  <li><strong>Turning points</strong> — where relevant.</li>
+  <li><strong>Behaviour at the extremes</strong> — what happens as \(x \to \pm\infty\).</li>
+  <li><strong>Correct shape</strong> at repeated roots.</li>
+</ul>
+
+<h2>2. Standard curves</h2>
+
+<table>
+  <tr><th>Curve</th><th>Shape and key features</th></tr>
+  <tr><td>\(y = x^2\)</td><td>Parabola, minimum at the origin, symmetric about the \(y\)-axis.</td></tr>
+  <tr><td>\(y = x^3\)</td><td>Increasing everywhere, point of inflection at the origin, symmetric about the origin.</td></tr>
+  <tr><td>\(y = x^4\)</td><td>Like a parabola but flatter near the origin; minimum at the origin.</td></tr>
+  <tr><td>\(y = \dfrac1x\)</td><td>Hyperbola in two opposite quadrants; asymptotes \(x=0\) and \(y=0\).</td></tr>
+  <tr><td>\(y = \dfrac{1}{x^2}\)</td><td>Always positive; asymptotes \(x=0\) and \(y=0\).</td></tr>
+  <tr><td>\(y = \sqrt{x}\)</td><td>Starts at the origin, defined only for \(x \ge 0\), increasing and flattening.</td></tr>
+  <tr><td>\(y = \mathrm{e}^x\)</td><td>Always positive, through \((0,1)\), asymptote \(y=0\) to the left.</td></tr>
+  <tr><td>\(y = \ln x\)</td><td>Defined for \(x&gt;0\), through \((1,0)\), asymptote \(x=0\).</td></tr>
+  <tr><td>\(y = |x|\)</td><td>V-shape with vertex at the origin.</td></tr>
+</table>
+
+<h2>3. Polynomial curves and repeated roots</h2>
+
+<p>Factorised form tells you almost everything. A polynomial of degree \(n\) has at most \(n\) real roots and at most \(n-1\) turning points.</p>
+
+<table>
+  <tr><th>Factor</th><th>Behaviour at that root</th></tr>
+  <tr><td>\((x-a)\)</td><td><strong>Crosses</strong> the axis straight through.</td></tr>
+  <tr><td>\((x-a)^2\)</td><td><strong>Touches</strong> the axis and turns back — a minimum or maximum sitting on the axis.</td></tr>
+  <tr><td>\((x-a)^3\)</td><td>Crosses, but <strong>flattens</strong> at the crossing (point of inflection).</td></tr>
+</table>
+
+<div class="example">
+<strong>Worked example.</strong> Sketch \(y = x^2(x-2)\).
+<p>Roots at \(x=0\) (repeated, so the curve touches) and \(x=2\) (single, so it crosses). It is a cubic with positive leading coefficient, so \(y \to -\infty\) as \(x\to-\infty\) and \(y \to +\infty\) as \(x\to+\infty\). The curve comes up from the bottom left, touches the axis at the origin, dips, then crosses at \(x=2\).</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> Find where \(y=(x+1)(x-2)(x-4)\) crosses the axes.
+<p>\(x\)-intercepts at \(x=-1,\,2,\,4\). For the \(y\)-intercept set \(x=0\): \(y = (1)(-2)(-4) = 8\), so \((0,8)\).</p>
+</div>
+
+<h2>4. Asymptotes</h2>
+
+<div class="definition">
+An <strong>asymptote</strong> is a line the curve approaches arbitrarily closely without meeting (at least in the limit).
+</div>
+
+<ul>
+  <li><strong>Vertical:</strong> where the denominator is zero and the numerator is not. For \(y = \dfrac{1}{x-3}\), the asymptote is \(x=3\).</li>
+  <li><strong>Horizontal:</strong> found from the behaviour as \(x \to \pm\infty\). For \(y = \dfrac{x}{x-1}\), dividing top and bottom by \(x\) gives \(\dfrac{1}{1-1/x} \to 1\), so \(y=1\).</li>
+  <li><strong>Oblique (slant):</strong> arises when the numerator's degree is one more than the denominator's. For \(y = \dfrac{x^2+1}{x} = x + \dfrac1x\), the term \(\tfrac1x \to 0\), so the curve approaches \(y=x\).</li>
+</ul>
+
+<div class="example">
+<strong>Worked example.</strong> State the asymptotes of \(y = \dfrac{2}{x+1} - 3\).
+<p>Vertical: \(x = -1\). As \(x \to \pm\infty\), the fraction tends to 0, so the horizontal asymptote is \(y = -3\).</p>
+</div>
+
+<div class="exam-tip">
+A curve <em>may</em> cross a horizontal or oblique asymptote — the asymptote only describes behaviour far out. It can never cross a vertical asymptote, because the function is undefined there.
+</div>
+
+<div class="exam-tip">
+Watch for a cancelling factor. In \(y = \dfrac{x^2-1}{x-1} = x+1\) there is no asymptote at \(x=1\) — instead there is a <strong>hole</strong> in the line, because the function is undefined at that single point.
+</div>
+
+<h2>5. Transformations</h2>
+
+<p>Four transformations, and the crucial split between those acting on the <strong>output</strong> (outside the function) and those acting on the <strong>input</strong> (inside).</p>
+
+<table>
+  <tr><th>Transformation</th><th>Effect on \(y=f(x)\)</th><th>Acts on</th></tr>
+  <tr><td>\(y = f(x) + a\)</td><td>Translation \(a\) units <strong>up</strong></td><td>Output</td></tr>
+  <tr><td>\(y = f(x + a)\)</td><td>Translation \(a\) units <strong>left</strong></td><td>Input</td></tr>
+  <tr><td>\(y = af(x)\)</td><td>Stretch, factor \(a\), parallel to the \(y\)-axis</td><td>Output</td></tr>
+  <tr><td>\(y = f(ax)\)</td><td>Stretch, factor \(\tfrac1a\), parallel to the \(x\)-axis</td><td>Input</td></tr>
+  <tr><td>\(y = -f(x)\)</td><td>Reflection in the \(x\)-axis</td><td>Output</td></tr>
+  <tr><td>\(y = f(-x)\)</td><td>Reflection in the \(y\)-axis</td><td>Input</td></tr>
+</table>
+
+<div class="exam-tip">
+Everything <strong>inside</strong> the bracket behaves in the way you do not expect: \(f(x+2)\) moves the graph <em>left</em>, and \(f(2x)\) <em>halves</em> the width. Everything outside behaves as expected. This single rule resolves most transformation errors.
+</div>
+
+<h3>Vector notation for translations</h3>
+
+<p>MEI writes a translation as a column vector. The graph \(y = f(x-2) + 5\) is the graph of \(y=f(x)\) translated by</p>
+
+$$\begin{pmatrix} 2 \\ 5 \end{pmatrix}$$
+
+<p>that is, 2 units in the positive \(x\)-direction and 5 in the positive \(y\)-direction. Note the sign: \(f(x-2)\) shifts <em>right</em> by 2.</p>
+
+<h3>Tracking a point</h3>
+
+<div class="example">
+<strong>Worked example.</strong> \(y=f(x)\) has a maximum at \((2,5)\). Find the maximum of \(y = 3f(x+1) - 2\).
+<p>Work through the transformations in order:</p>
+<ul>
+  <li>\(f(x+1)\): translate 1 left, so \(x\) becomes \(2-1 = 1\).</li>
+  <li>\(3f(\cdot)\): stretch factor 3 vertically, so \(y\) becomes \(5 \times 3 = 15\).</li>
+  <li>\(-2\): translate 2 down, so \(y\) becomes \(13\).</li>
+</ul>
+<p>The maximum is at \((1, 13)\).</p>
+</div>
+
+<h3>Order of combined transformations</h3>
+
+<div class="example">
+<strong>Worked example.</strong> Describe \(y = 2f(3x-6)\) as a sequence of transformations.
+<p>First rewrite the inside in factorised form: \(3x-6 = 3(x-2)\), so \(y = 2f\big(3(x-2)\big)\).</p>
+<ul>
+  <li>Translate 2 units in the positive \(x\)-direction.</li>
+  <li>Stretch parallel to the \(x\)-axis, factor \(\tfrac13\).</li>
+  <li>Stretch parallel to the \(y\)-axis, factor 2.</li>
+</ul>
+</div>
+
+<div class="exam-tip">
+Always factorise the inside first. Reading \(f(3x-6)\) as "translate 6 then stretch \(\tfrac13\)" gives the wrong graph, because the stretch would also scale the translation. Writing \(3(x-2)\) makes the correct order unambiguous.
+</div>
+
+<h2>6. Intersections and roots</h2>
+
+<p>The number of real solutions of \(f(x) = g(x)\) is the number of intersections of \(y=f(x)\) and \(y=g(x)\). Sketching both curves often answers "how many solutions" far faster than algebra.</p>
+
+<div class="example">
+<strong>Worked example.</strong> How many real solutions does \(x^3-3x = k\) have when \(-2 &lt; k &lt; 2\)?
+<p>The curve \(y=x^3-3x\) has turning points where \(3x^2-3=0\), i.e. \(x=\pm1\), giving a local maximum at \((-1,2)\) and a local minimum at \((1,-2)\). A horizontal line \(y=k\) strictly between \(-2\) and \(2\) cuts the curve three times.</p>
+</div>
+
+<div class="example">
+<strong>Worked example.</strong> How many times do \(y=\mathrm{e}^x\) and \(y=x+1\) meet?
+<p>Exactly once, at \(x=0\). The line is the tangent to the exponential curve at that point, and \(\mathrm{e}^x \ge x+1\) everywhere.</p>
+</div>
+
+<h2>7. Symmetry</h2>
+
+<table>
+  <tr><th>Condition</th><th>Symmetry</th><th>Example</th></tr>
+  <tr><td>\(f(-x) = f(x)\)</td><td>Symmetric about the \(y\)-axis (even)</td><td>\(y = x^2\), \(y=\cos x\)</td></tr>
+  <tr><td>\(f(-x) = -f(x)\)</td><td>Symmetric about the origin (odd)</td><td>\(y = x^3\), \(y=\sin x\)</td></tr>
+</table>
+
+<h2>8. Common pitfalls</h2>
+
+<div class="exam-tip">
+<ul>
+  <li>Translating the wrong way for \(f(x+a)\) — it moves <strong>left</strong>, not right.</li>
+  <li>Using stretch factor \(a\) instead of \(\tfrac1a\) for \(f(ax)\).</li>
+  <li>Failing to factorise the inside before describing a combined transformation, so the order comes out wrong.</li>
+  <li>Drawing a curve crossing a <em>vertical</em> asymptote.</li>
+  <li>Missing that a repeated factor makes the curve touch rather than cross the axis.</li>
+  <li>Missing a cancelling factor and inventing an asymptote where there is only a hole.</li>
+  <li>Leaving asymptotes unlabelled, or omitting intercepts, on a sketch that asks for key features.</li>
+</ul>
+</div>
+
+</div>
+<script>
+  renderMathInElement(document.body, {
+    delimiters: [{left: '$$', right: '$$', display: true},{left: '\\(', right: '\\)', display: false}],
+  });
+</script>
+</body>
+</html>
