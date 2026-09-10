@@ -58,6 +58,7 @@
     'Mathematics_AQA':              ['questions/maths-aqa/maths-aqa-practice.js'],
     'Mathematics_OCR|gcse':         ['questions/maths-ocr-gcse/maths-ocr-gcse-practice.js'],
     'Mathematics_OCR|alevel':       ['questions/maths-ocr-alevel/maths-ocr-alevel-practice.js'],
+    'Mathematics_OCR B|alevel':     ['questions/maths-ocr-b-alevel/maths-ocr-b-alevel-practice.js'],
     'Mathematics_Edexcel': [
       'questions/maths-edexcel/w-P1-P11.js',
       'questions/maths-edexcel/w-P12-P21.js',
@@ -129,6 +130,7 @@
     'Mathematics_AQA': () => typeof MATHS_AQA_PRACTICE !== 'undefined' ? MATHS_AQA_PRACTICE : null,
     'Mathematics_OCR|gcse': () => typeof MATHS_OCR_PRACTICE !== 'undefined' ? MATHS_OCR_PRACTICE : null,
     'Mathematics_OCR|alevel': () => typeof MATHS_OCR_ALEVEL_PRACTICE !== 'undefined' ? MATHS_OCR_ALEVEL_PRACTICE : null,
+    'Mathematics_OCR B|alevel': () => typeof MATHS_OCR_B_ALEVEL_PRACTICE !== 'undefined' ? MATHS_OCR_B_ALEVEL_PRACTICE : null,
     'Mathematics_Edexcel': () => typeof MATHS_EDEXCEL_PRACTICE !== 'undefined' ? MATHS_EDEXCEL_PRACTICE : null,
     'Further Mathematics_Edexcel': () => typeof FM_EDEXCEL_PRACTICE !== 'undefined' ? FM_EDEXCEL_PRACTICE : null,
     'Further Mathematics_AQA': () => typeof FM_AQA_PRACTICE !== 'undefined' ? FM_AQA_PRACTICE : null,
