@@ -92,6 +92,78 @@ const MATHS_OCR_B_ALEVEL_WRITTEN = {
     ],
   },
 
+  '1.8': {
+    green: [
+      { q: 'Solve 3^(x) = 20, giving your answer to 3 decimal places.', marks: 3, marks_scheme: '1 mark: take logarithms of both sides, x log 3 = log 20. 1 mark: x = log 20 / log 3. 1 mark: x = 2.727 (3 d.p.).' },
+    ],
+    amber: [
+      { q: 'Solve log₂ x + log₂(x − 2) = 3.', marks: 4, marks_scheme: '1 mark: combine using the addition law to give log₂(x(x − 2)) = 3. 1 mark: x² − 2x = 8. 1 mark: solve x² − 2x − 8 = 0 to give x = 4 or x = −2. 1 mark: reject x = −2 since the logarithm requires x > 2; x = 4.' },
+    ],
+    red: [
+      { q: 'Experimental data are believed to satisfy y = axⁿ. Explain how a graph may be used to estimate a and n, and state which quantities should be plotted.', marks: 5, marks_scheme: '1 mark: take logarithms of both sides. 1 mark: log y = log a + n log x. 1 mark: state this is linear in log x. 1 mark: plot log y (vertical) against log x (horizontal). 1 mark: gradient gives n and the vertical intercept gives log a, so a = 10^(intercept).' },
+    ],
+  },
+
+  '1.9': {
+    green: [
+      { q: 'Differentiate y = 3x³ − 4x² + 5x − 7.', marks: 2, marks_scheme: '1 mark: apply the power rule term by term. 1 mark: dy/dx = 9x² − 8x + 5.' },
+    ],
+    amber: [
+      { q: 'Find the coordinates of the stationary points of y = x³ − 3x and determine their nature.', marks: 5, marks_scheme: '1 mark: dy/dx = 3x² − 3. 1 mark: set to zero to give x = 1 and x = −1. 1 mark: corresponding points (1, −2) and (−1, 2). 1 mark: d²y/dx² = 6x. 1 mark: at x = 1 second derivative is 6 > 0 so minimum; at x = −1 it is −6 < 0 so maximum.' },
+    ],
+    red: [
+      { q: 'Differentiate y = x² from first principles.', marks: 4, marks_scheme: '1 mark: state the definition as the limit as h → 0 of ((x + h)² − x²)/h. 1 mark: expand the numerator to 2xh + h². 1 mark: divide by h to give 2x + h. 1 mark: take the limit as h → 0 to obtain dy/dx = 2x.' },
+    ],
+  },
+
+  '1.10': {
+    green: [
+      { q: 'Evaluate ∫ from 1 to 3 of (2x + 1) dx.', marks: 3, marks_scheme: '1 mark: antiderivative x² + x. 1 mark: substitute the limits, (9 + 3) − (1 + 1). 1 mark: value 10.' },
+    ],
+    amber: [
+      { q: 'Find the area enclosed between the curve y = x² and the line y = 2x.', marks: 5, marks_scheme: '1 mark: find intersections by solving x² = 2x, giving x = 0 and x = 2. 1 mark: set up ∫ from 0 to 2 of (2x − x²) dx. 1 mark: antiderivative x² − x³/3. 1 mark: substitute limits to give 4 − 8/3. 1 mark: area = 4/3.' },
+    ],
+    red: [
+      { q: 'Find ∫x²eˣ dx.', marks: 6, marks_scheme: '1 mark: apply integration by parts with u = x², dv = eˣ dx. 1 mark: obtain x²eˣ − ∫2xeˣ dx. 1 mark: apply parts a second time to ∫2xeˣ dx with u = 2x. 1 mark: obtain 2xeˣ − ∫2eˣ dx. 1 mark: ∫2eˣ dx = 2eˣ. 1 mark: answer eˣ(x² − 2x + 2) + c.' },
+    ],
+  },
+
+  '1.11': {
+    green: [
+      { q: 'Solve the differential equation dy/dx = 6x², given that y = 4 when x = 1.', marks: 3, marks_scheme: '1 mark: integrate to give y = 2x³ + c. 1 mark: substitute x = 1, y = 4 to give 4 = 2 + c. 1 mark: c = 2, so y = 2x³ + 2.' },
+    ],
+    amber: [
+      { q: 'Solve dy/dx = xy given that y = 1 when x = 0.', marks: 5, marks_scheme: '1 mark: separate the variables to give (1/y) dy = x dx. 1 mark: integrate both sides. 1 mark: ln y = x²/2 + c. 1 mark: substitute x = 0, y = 1 to give c = 0. 1 mark: y = e^(x²/2).' },
+    ],
+    red: [
+      { q: "A body cools according to Newton's law of cooling, dθ/dt = −k(θ − 20), where θ is in °C. Given θ = 100 when t = 0, solve the equation and state the long-term temperature.", marks: 6, marks_scheme: '1 mark: separate to give dθ/(θ − 20) = −k dt. 1 mark: integrate to ln(θ − 20) = −kt + c. 1 mark: rearrange to θ − 20 = Ae^(−kt). 1 mark: substitute t = 0, θ = 100 to give A = 80. 1 mark: θ = 20 + 80e^(−kt). 1 mark: as t → ∞ the exponential tends to 0, so the long-term temperature is 20 °C (the surrounding temperature).' },
+    ],
+  },
+
+  '1.12': {
+    green: [
+      { q: 'Using the Newton-Raphson method with f(x) = x³ − 5 and x₀ = 2, carry out one iteration.', marks: 3, marks_scheme: "1 mark: f(2) = 3 and f'(2) = 12. 1 mark: apply x₁ = 2 − 3/12. 1 mark: x₁ = 1.75." },
+    ],
+    amber: [
+      { q: 'Show that the equation x³ − 2x − 5 = 0 has a root between x = 2 and x = 3.', marks: 3, marks_scheme: '1 mark: evaluate f(2) = 8 − 4 − 5 = −1. 1 mark: evaluate f(3) = 27 − 6 − 5 = 16. 1 mark: f changes sign and f is continuous on [2, 3], so there is a root in the interval.' },
+    ],
+    red: [
+      { q: 'Explain two distinct circumstances in which a change of sign method fails to locate a root correctly, giving an example of each.', marks: 6, marks_scheme: '1 mark: first case — the curve touches the x-axis without crossing it. 1 mark: example such as f(x) = (x − 2)², where f never changes sign despite a root at x = 2. 1 mark: explanation that a repeated root produces no sign change. 1 mark: second case — a vertical asymptote in the interval. 1 mark: example such as f(x) = 1/(x − 2), where f(1) = −1 and f(3) = 1. 1 mark: explanation that the sign change is caused by the discontinuity, not a root. (Accept as an alternative second case: several roots in the interval, so signs at the endpoints agree.)' },
+    ],
+  },
+
+  '1.13': {
+    green: [
+      { q: 'Find the magnitude of the vector a = 2i − 3j + 6k.', marks: 2, marks_scheme: '1 mark: |a|² = 4 + 9 + 36 = 49. 1 mark: |a| = 7.' },
+    ],
+    amber: [
+      { q: 'The points A and B have position vectors 2i + j and 6i + 4j. Find the vector AB, its magnitude, and a unit vector in the direction of AB.', marks: 5, marks_scheme: '1 mark: AB = b − a. 1 mark: AB = 4i + 3j. 1 mark: |AB|² = 16 + 9 = 25. 1 mark: |AB| = 5. 1 mark: unit vector = (4i + 3j)/5, i.e. 0.8i + 0.6j.' },
+    ],
+    red: [
+      { q: 'The points A, B and C have position vectors i + j, 3i + 5j and 5i + 9j. Show that A, B and C are collinear.', marks: 4, marks_scheme: '1 mark: AB = b − a = 2i + 4j. 1 mark: BC = c − b = 2i + 4j. 1 mark: state that BC is a scalar multiple of AB (here BC = AB), so the vectors are parallel. 1 mark: since AB and BC are parallel and share the common point B, the three points are collinear.' },
+    ],
+  },
+
 };
 
 if (typeof module !== 'undefined') { module.exports = MATHS_OCR_B_ALEVEL_WRITTEN; }

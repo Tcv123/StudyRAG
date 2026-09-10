@@ -551,6 +551,246 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
   },
 
+  '1.10': {
+    name: 'Integration',
+    green: [
+      { q: 'For n ≠ −1, ∫xⁿ dx equals:', options: ['xⁿ⁺¹/(n + 1) + c','nxⁿ⁻¹ + c','xⁿ/n + c','xⁿ⁺¹ + c'], answer: 0 }, // c20
+      { q: '∫(1/x) dx equals:', options: ['ln|x| + c','1/x² + c','x ln x + c','−1/x² + c'], answer: 0 }, // c-int
+      { q: '∫eˣ dx equals:', options: ['eˣ + c','xeˣ + c','eˣ/x + c','e^(x+1)/(x+1) + c'], answer: 0 }, // c-int
+      { q: '∫cos x dx equals:', options: ['sin x + c','−sin x + c','cos x + c','−cos x + c'], answer: 0 }, // c-int
+      { q: '∫sin x dx equals:', options: ['−cos x + c','cos x + c','sin x + c','−sin x + c'], answer: 0 }, // c-int
+      { q: 'An indefinite integral requires:', options: ['A constant of integration','Limits','A substitution','A derivative'], answer: 0 }, // c20
+      { q: '∫2x dx equals:', options: ['x² + c','2x² + c','2 + c','x²/2 + c'], answer: 0 }, // c20
+      { q: 'A definite integral of a positive function represents:', options: ['The area between the curve and the x-axis','The gradient','The turning point','The derivative'], answer: 0 }, // c-area
+      { q: 'Integration is the reverse process of:', options: ['Differentiation','Factorising','Substitution','Taking logarithms'], answer: 0 }, // c20
+      { q: '∫k dx, where k is a constant, equals:', options: ['kx + c','k + c','kx²/2 + c','0'], answer: 0 }, // c20
+      { q: '∫x² dx equals:', options: ['x³/3 + c','2x + c','x³ + c','3x³ + c'], answer: 0 }, // c20
+      { q: 'If a region lies below the x-axis, its definite integral is:', options: ['Negative','Positive','Zero','Undefined'], answer: 0 }, // c-area
+      { q: '∫e^(kx) dx equals:', options: ['e^(kx)/k + c','ke^(kx) + c','e^(kx) + c','e^(kx)/x + c'], answer: 0 }, // c-int
+      { q: 'Swapping the limits of a definite integral:', options: ['Changes its sign','Leaves it unchanged','Doubles it','Makes it zero'], answer: 0 }, // c-area
+      { q: 'The value of ∫ from 0 to 1 of x dx is:', options: ['1/2','1','0','2'], answer: 0 }, // c-area
+      { q: '∫3x² dx equals:', options: ['x³ + c','3x³ + c','6x + c','x³/3 + c'], answer: 0 }, // c20
+      { q: '∫(1/x²) dx equals:', options: ['−1/x + c','1/x + c','ln|x²| + c','−2/x³ + c'], answer: 0 }, // c20
+      { q: '∫sec²x dx equals:', options: ['tan x + c','sec x + c','cot x + c','−tan x + c'], answer: 0 }, // c-int
+      { q: 'The Fundamental Theorem of Calculus links:', options: ['Differentiation and integration as inverse processes','Areas and gradients of straight lines','Limits and sequences','Vectors and matrices'], answer: 0 }, // c-ftc
+      { q: 'The value of ∫ from 1 to 3 of (2x + 1) dx is:', options: ['10','12','8','14'], answer: 0 }, // c-area
+    ],
+    amber: [
+      { q: '∫(2x + 1)⁵ dx equals:', options: ['(2x + 1)⁶/12 + c','(2x + 1)⁶/6 + c','10(2x + 1)⁴ + c','(2x + 1)⁶/2 + c'], answer: 0 }, // c-sub
+      { q: '∫x e^(x²) dx equals:', options: ['½e^(x²) + c','e^(x²) + c','2xe^(x²) + c','x²e^(x²)/2 + c'], answer: 0 }, // c-sub
+      { q: '∫x eˣ dx equals:', options: ['eˣ(x − 1) + c','eˣ(x + 1) + c','x²eˣ/2 + c','xeˣ + c'], answer: 0 }, // c-parts
+      { q: '∫1/(2x + 1) dx equals:', options: ['½ln|2x + 1| + c','ln|2x + 1| + c','2 ln|2x + 1| + c','−1/(2x + 1)² + c'], answer: 0 }, // c-sub
+      { q: 'The area enclosed between y = x and y = x² from x = 0 to x = 1 is:', options: ['1/6','1/2','1/3','1'], answer: 0 }, // c-area
+      { q: '∫sin 2x dx equals:', options: ['−½cos 2x + c','−2cos 2x + c','½cos 2x + c','2cos 2x + c'], answer: 0 }, // c-sub
+      { q: 'The value of ∫ from 0 to π of sin x dx is:', options: ['2','0','1','π'], answer: 0 }, // c-area
+      { q: 'The integration by parts formula is:', options: ['∫u dv = uv − ∫v du','∫u dv = uv + ∫v du','∫uv dx = ∫u dx ∫v dx','∫u dv = u∫dv'], answer: 0 }, // c-parts
+      { q: 'For ∫2x(x² + 1)³ dx the natural substitution is:', options: ['u = x² + 1','u = 2x','u = x³','u = (x² + 1)³'], answer: 0 }, // c-sub
+      { q: 'To integrate cos²x, the useful identity is:', options: ['cos²x = ½(1 + cos 2x)','cos²x = 1 − sin²x only','cos 2x = 2 sin x cos x','cos²x = ½(1 − cos 2x)'], answer: 0 }, // c-sub
+      { q: 'The value of ∫ from 0 to 2 of (3x² + 2x) dx is:', options: ['12','8','10','16'], answer: 0 }, // c-area
+      { q: '∫tan x dx equals:', options: ['ln|sec x| + c','ln|cos x| + c','sec²x + c','−ln|sec x| + c'], answer: 0 }, // c-int
+      { q: '∫(x + 1)/x dx equals:', options: ['x + ln|x| + c','ln|x + 1| + c','x²/2 + x + c','1 + ln|x| + c'], answer: 0 }, // c-int
+      { q: 'The value of ∫ from −1 to 1 of x³ dx is:', options: ['0','1/2','2','1/4'], answer: 0 }, // c-area
+      { q: 'The definite integral of a rate of change over an interval gives:', options: ['The total change in the quantity','The average rate','The maximum value','The gradient'], answer: 0 }, // c-app
+      { q: 'To integrate 5/((x + 1)(x − 4)), the first step is:', options: ['Express it in partial fractions','Substitute u = x + 1','Integrate by parts','Use the chain rule'], answer: 0 }, // c-pf
+      { q: '∫cos 3x dx equals:', options: ['⅓sin 3x + c','3 sin 3x + c','−⅓sin 3x + c','sin 3x + c'], answer: 0 }, // c-sub
+      { q: 'When a substitution is used in a definite integral, you must also:', options: ['Change the limits to match the new variable','Double the answer','Add a constant of integration','Swap the limits'], answer: 0 }, // c-sub
+      { q: '∫(3x + 2)⁴ dx equals:', options: ['(3x + 2)⁵/15 + c','(3x + 2)⁵/5 + c','12(3x + 2)³ + c','(3x + 2)⁵/3 + c'], answer: 0 }, // c-sub
+      { q: 'The area between the curve y = 4 − x² and the x-axis, between its roots, is:', options: ['32/3','16/3','8','16'], answer: 0 }, // c-area
+    ],
+    red: [
+      { q: '∫ln x dx equals:', options: ['x ln x − x + c','1/x + c','x ln x + c','(ln x)²/2 + c'], answer: 0 }, // c-parts
+      { q: '∫x²eˣ dx requires integration by parts applied:', options: ['Twice','Once','Three times','Not at all'], answer: 0 }, // c-parts
+      { q: 'The value of ∫ from 0 to π/2 of sin x cos x dx is:', options: ['1/2','1','0','1/4'], answer: 0 }, // c-sub
+      { q: '∫1/(x ln x) dx equals:', options: ['ln|ln x| + c','(ln x)²/2 + c','1/ln x + c','x ln x + c'], answer: 0 }, // c-sub
+      { q: 'Expressing (2x + 3)/((x + 1)(x + 2)) in partial fractions gives:', options: ['1/(x + 1) + 1/(x + 2)','1/(x + 1) − 1/(x + 2)','2/(x + 1) + 1/(x + 2)','3/(x + 1) − 1/(x + 2)'], answer: 0 }, // c-pf
+      { q: '∫sin³x dx is best handled by writing sin³x as:', options: ['sin x(1 − cos²x), then substituting u = cos x','(sin x)³ and using the power rule','½(1 − cos 2x) sin x only','3 sin x − sin 3x directly'], answer: 0 }, // c-sub
+      { q: '∫eˣ sin x dx is evaluated by:', options: ['Integrating by parts twice and solving for the original integral','A single substitution','Partial fractions','The power rule'], answer: 0 }, // c-parts
+      { q: 'The area enclosed between y = x² and y = 2x is:', options: ['4/3','8/3','2','2/3'], answer: 0 }, // c-area
+      { q: 'The value of ∫ from 1 to e of (1/x) dx is:', options: ['1','e','e − 1','0'], answer: 0 }, // c-int
+      { q: 'Using the substitution u = x² + 1, the integral ∫ from 0 to 1 of 2x/(x² + 1) dx becomes ∫ from 1 to 2 of (1/u) du, giving:', options: ['ln 2','ln 3','1','2 ln 2'], answer: 0 }, // c-sub
+    ],
+  },
+
+  '1.11': {
+    name: 'Differential Equations',
+    green: [
+      { q: 'The differential equation dy/dt = ky models:', options: ['Exponential growth or decay','Linear growth','Simple harmonic motion','Constant velocity'], answer: 0 }, // c-de
+      { q: 'To solve a separable equation dy/dx = f(x)g(y), you first:', options: ['Separate the variables and integrate both sides','Differentiate both sides','Substitute y = 0','Use the product rule'], answer: 0 }, // c-de
+      { q: 'A general solution of a differential equation contains:', options: ['An arbitrary constant','No constants','Only numbers','A second derivative'], answer: 0 }, // c-de
+      { q: 'To obtain a particular solution you need:', options: ['An initial or boundary condition','A second differential equation','A substitution','A limit'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = 2x.', options: ['y = x² + c','y = 2 + c','y = x²','y = 2x² + c'], answer: 0 }, // c-de
+      { q: 'An equation involving only dy/dx and not higher derivatives is called:', options: ['First order','Second order','Linear','Homogeneous'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = 3.', options: ['y = 3x + c','y = 3 + c','y = 3x','y = x³ + c'], answer: 0 }, // c-de
+      { q: 'If a quantity decreases at a rate proportional to its amount, then:', options: ['dy/dt = −ky with k > 0','dy/dt = ky with k > 0','dy/dt = k','dy/dt = 0'], answer: 0 }, // c-de
+      { q: 'The solution of dy/dx = y is:', options: ['y = Aeˣ','y = x + c','y = Ax','y = ln x + c'], answer: 0 }, // c-de
+      { q: 'The solution of dP/dt = kP with P = P₀ at t = 0 is:', options: ['P = P₀e^(kt)','P = P₀ + kt','P = P₀kt','P = kP₀t²'], answer: 0 }, // c-de
+      { q: "Newton's law of cooling states that the rate of cooling is proportional to:", options: ['The excess temperature over the surroundings','The time elapsed','The square of the temperature','The mass only'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = 1/x for x > 0.', options: ['y = ln x + c','y = −1/x² + c','y = 1/x + c','y = x ln x + c'], answer: 0 }, // c-de
+      { q: 'If dy/dx = 0 for all x, then y is:', options: ['Constant','Linear in x','Exponential','Zero'], answer: 0 }, // c-de
+      { q: 'In dy/dt = ky, the variable t is the:', options: ['Independent variable','Dependent variable','Constant of integration','Rate'], answer: 0 }, // c-de
+      { q: 'The equation dy/dx = x/y is:', options: ['Separable','Not separable','Second order','Linear with constant coefficients'], answer: 0 }, // c-de
+      { q: 'If v is velocity and t is time, dv/dt represents:', options: ['Acceleration','Displacement','Speed','Distance'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = eˣ.', options: ['y = eˣ + c','y = xeˣ + c','y = eˣ/x + c','y = e^(x+1) + c'], answer: 0 }, // c-de
+      { q: 'In an exponential decay model, the constant k is:', options: ['Positive, with a minus sign in the equation','Always negative in the solution exponent only','Zero','Undefined'], answer: 0 }, // c-de
+      { q: 'Forming a differential equation from a worded problem means:', options: ['Translating the stated rate of change into an equation','Solving for y directly','Drawing a graph','Finding a limit'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = cos x.', options: ['y = sin x + c','y = −sin x + c','y = cos x + c','y = −cos x + c'], answer: 0 }, // c-de
+    ],
+    amber: [
+      { q: 'Solve dy/dx = xy given y = 1 when x = 0.', options: ['y = e^(x²/2)','y = eˣ','y = x²/2 + 1','y = e^(x²)'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = y/x for x > 0.', options: ['y = Ax','y = A/x','y = A ln x','y = Aeˣ'], answer: 0 }, // c-de
+      { q: 'Solve dN/dt = −kN with N = N₀ at t = 0.', options: ['N = N₀e^(−kt)','N = N₀ − kt','N = N₀e^(kt)','N = N₀/kt'], answer: 0 }, // c-de
+      { q: "Newton's law of cooling is written as:", options: ['dθ/dt = −k(θ − θ₀)','dθ/dt = −kθ²','dθ/dt = k','dθ/dt = −kt'], answer: 0 }, // c-de
+      { q: 'Solve dy/dt = 3y given y = 5 when t = 0.', options: ['y = 5e^(3t)','y = 3e^(5t)','y = 5 + 3t','y = 15t'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = y cos x.', options: ['y = Ae^(sin x)','y = A sin x','y = Ae^(cos x)','y = A + sin x'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = eˣ/y.', options: ['y² = 2eˣ + c','y = eˣ + c','y² = eˣ + c','y = 2eˣ + c'], answer: 0 }, // c-de
+      { q: 'The equation dy/dt = k(A − y) describes a quantity that:', options: ['Approaches the limiting value A','Grows without limit','Decays to zero','Oscillates'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = 2xy².', options: ['−1/y = x² + c','y = x² + c','1/y = x² + c','y² = x² + c'], answer: 0 }, // c-de
+      { q: 'For radioactive decay dN/dt = −kN, the half-life T satisfies:', options: ['kT = ln 2','kT = 2','T = k/2','kT = 1'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = x²y.', options: ['y = Ae^(x³/3)','y = Ae^(x²)','y = x³/3 + c','y = Ax³'], answer: 0 }, // c-de
+      { q: 'A logistic model is preferred to dP/dt = kP because:', options: ['It includes a carrying capacity that limits growth','It is easier to solve','It has no constants','It always decreases'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = (1 + y)/x for x > 0.', options: ['1 + y = Ax','y = Ax','1 + y = A ln x','y = x + c'], answer: 0 }, // c-de
+      { q: 'Water drains from a tank so that dV/dt = −k√V. This equation is:', options: ['Separable, giving √V as a linear function of t','Not separable','Second order','Linear in V'], answer: 0 }, // c-de
+      { q: 'If dy/dx = k(y − 5) and y > 5 with k > 0, then y:', options: ['Increases away from 5','Decreases towards 5','Stays constant','Oscillates about 5'], answer: 0 }, // c-de
+      { q: 'The statement "the rate of growth is proportional to the square of the population" becomes:', options: ['dP/dt = kP²','dP/dt = kP','dP/dt = k√P','dP/dt = 2kP'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = 6x² given y = 4 when x = 1.', options: ['y = 2x³ + 2','y = 2x³','y = 2x³ + 4','y = 6x³ + 4'], answer: 0 }, // c-de
+      { q: 'Separating dy/dx = y² sin x gives:', options: ['∫y⁻² dy = ∫sin x dx','∫y² dy = ∫sin x dx','∫y dy = ∫sin x dx','∫dy = ∫y² sin x dx'], answer: 0 }, // c-de
+      { q: 'In the model dθ/dt = −k(θ − 20) with θ = 100 at t = 0, the solution is:', options: ['θ = 20 + 80e^(−kt)','θ = 100e^(−kt)','θ = 20 + 100e^(−kt)','θ = 80 + 20e^(−kt)'], answer: 0 }, // c-de
+      { q: 'The long-term value predicted by θ = 20 + 80e^(−kt) with k > 0 is:', options: ['20','100','80','0'], answer: 0 }, // c-de
+    ],
+    red: [
+      { q: 'To solve the logistic equation dy/dx = y(1 − y), the required technique is:', options: ['Separate and use partial fractions on 1/(y(1 − y))','Integrate by parts','Substitute u = y²','Use the product rule'], answer: 0 }, // c-de
+      { q: 'Solve x dy/dx + y = 0.', options: ['xy = c','y = cx','y = c − x','x + y = c'], answer: 0 }, // c-de
+      { q: 'A body falls subject to dv/dt = g − kv. Its terminal velocity is:', options: ['g/k','gk','k/g','0'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = y tan x.', options: ['y = A sec x','y = A cos x','y = A tan x','y = A sin x'], answer: 0 }, // c-de
+      { q: 'Solve (1 + x²) dy/dx = xy.', options: ['y = A√(1 + x²)','y = A(1 + x²)','y = A ln(1 + x²)','y = Ae^(x²)'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = (x + 1)/(y − 2).', options: ['(y − 2)² = x² + 2x + c','(y − 2)² = 2x² + c','y − 2 = x² + 2x + c','y² = x² + c'], answer: 0 }, // c-de
+      { q: 'In dv/dt = g − kv, the approach to terminal velocity is:', options: ['Exponential, never exactly reaching it in finite time','Linear','Instantaneous','Oscillatory'], answer: 0 }, // c-de
+      { q: 'A criticism of the model dP/dt = kP for a real population is that:', options: ['It predicts unbounded growth, ignoring finite resources','It cannot be solved','It requires P < 0','It has no initial condition'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = e^(x−y).', options: ['e^y = eˣ + c','y = eˣ + c','e^(−y) = eˣ + c','y = e^(x−y) + c'], answer: 0 }, // c-de
+      { q: 'A tank holds 100 litres of brine. If salt enters at a constant rate and the well-mixed solution leaves at the same volumetric rate, the amount of salt S satisfies an equation of the form:', options: ['dS/dt = a − bS','dS/dt = aS','dS/dt = a','dS/dt = −bS²'], answer: 0 }, // c-de
+    ],
+  },
+
+  '1.12': {
+    name: 'Numerical Methods',
+    green: [
+      { q: 'If f is continuous and f(a) and f(b) have opposite signs, then in the interval (a, b) there is:', options: ['At least one root of f(x) = 0','Exactly one root','No root','A turning point'], answer: 0 }, // e1
+      { q: 'The Newton-Raphson formula is:', options: ["x₍ₙ₊₁₎ = xₙ − f(xₙ)/f'(xₙ)","x₍ₙ₊₁₎ = xₙ + f(xₙ)/f'(xₙ)","x₍ₙ₊₁₎ = f(xₙ)/f'(xₙ)","x₍ₙ₊₁₎ = xₙ − f'(xₙ)/f(xₙ)"], answer: 0 }, // e4
+      { q: 'A fixed point iteration requires the equation to be rearranged into the form:', options: ['x = g(x)','f(x) = 0','y = mx + c','g(x) = 0'], answer: 0 }, // e3
+      { q: 'The trapezium rule is used to find an approximate value of:', options: ['A definite integral','A derivative','A root','A limit'], answer: 0 }, // c34
+      { q: 'Increasing the number of strips in the trapezium rule generally:', options: ['Improves the accuracy','Reduces the accuracy','Has no effect','Changes the sign'], answer: 0 }, // c34
+      { q: 'Staircase and cobweb diagrams are used to illustrate:', options: ['The behaviour of a fixed point iteration','The trapezium rule','Integration by parts','Differentiation from first principles'], answer: 0 }, // e3
+      { q: 'A numerical iteration applied to an equation:', options: ['May converge to a root or may diverge','Always converges','Always diverges','Gives an exact answer'], answer: 0 }, // e5
+      { q: 'For n strips over the interval from a to b, the strip width h is:', options: ['(b − a)/n','(b − a)n','(a + b)/n','n/(b − a)'], answer: 0 }, // c34
+      { q: 'The Newton-Raphson method requires knowledge of:', options: ["The derivative f'(x)","The second derivative only",'The integral of f','No extra information'], answer: 0 }, // e4
+      { q: 'A root of f(x) = 0 corresponds to a point where the graph of y = f(x):', options: ['Meets the x-axis','Meets the y-axis','Has a maximum','Has an asymptote'], answer: 0 }, // e1
+      { q: 'Any iterative method requires:', options: ['A starting value','Two derivatives','An exact solution','A definite integral'], answer: 0 }, // e3
+      { q: 'A change of sign method may fail if the curve:', options: ['Touches the x-axis without crossing it','Crosses the x-axis once','Is a straight line','Has a positive gradient'], answer: 0 }, // e2
+      { q: 'Numerical methods generally produce:', options: ['An approximation to a specified accuracy','An exact answer','A general formula','A proof'], answer: 0 }, // e1
+      { q: 'Using n strips, the number of ordinates needed for the trapezium rule is:', options: ['n + 1','n','n − 1','2n'], answer: 0 }, // c34
+      { q: 'If f(1) < 0 and f(2) > 0 for a continuous f, a root lies in:', options: ['(1, 2)','(0, 1)','(2, 3)','No interval'], answer: 0 }, // e1
+      { q: 'Summing the areas of rectangles under a curve gives:', options: ['A bound on the area under the curve','The exact area','The gradient','A root'], answer: 0 }, // c35
+      { q: 'Geometrically, one Newton-Raphson step follows:', options: ['The tangent at the current point to where it meets the x-axis','The chord between two points','A vertical line','The normal to the curve'], answer: 0 }, // e4
+      { q: 'A change of sign method can also fail if, in the interval, the function has:', options: ['A vertical asymptote','A single root','A constant value','A minimum above the axis'], answer: 0 }, // e2
+      { q: 'An iteration is said to converge when successive iterates:', options: ['Get arbitrarily close to a fixed value','Alternate in sign','Increase without limit','Repeat exactly'], answer: 0 }, // e5
+      { q: 'Locating an interval containing a root is usually done:', options: ['Before starting an iterative method, to give a starting value','After the iteration converges','Instead of any iteration','Only for linear equations'], answer: 0 }, // e1
+    ],
+    amber: [
+      { q: 'For f(x) = x³ − 5 and x₀ = 2, one Newton-Raphson iteration gives x₁ =', options: ['1.75','2.25','1.5','1.6'], answer: 0 }, // e4
+      { q: 'The equation x³ − x − 4 = 0 can be rearranged for iteration as:', options: ['x = (x + 4)^(1/3)','x = x³ − 4','x = 4/x³','x = x³ + 4'], answer: 0 }, // e3
+      { q: 'For f(x) = x³ − 2x − 5, a root lies in the interval:', options: ['(2, 3), since f(2) = −1 and f(3) = 16','(0, 1)','(1, 2)','(3, 4)'], answer: 0 }, // e1
+      { q: 'The iteration x₍ₙ₊₁₎ = √(xₙ + 2) converges to:', options: ['2','1','4','−1'], answer: 0 }, // e3
+      { q: 'For f(x) = x² − 2 and x₀ = 1, one Newton-Raphson iteration gives x₁ =', options: ['1.5','0.5','2','1.25'], answer: 0 }, // e4
+      { q: 'The Newton-Raphson method fails at a point where:', options: ["f'(xₙ) = 0","f(xₙ) = 0",'xₙ is negative','f is increasing'], answer: 0 }, // e5
+      { q: 'The trapezium rule applied to a curve that is concave upwards gives:', options: ['An overestimate of the integral','An underestimate of the integral','The exact value','A negative value'], answer: 0 }, // c34
+      { q: 'The trapezium rule applied to a curve that is concave downwards gives:', options: ['An underestimate of the integral','An overestimate of the integral','The exact value','Zero'], answer: 0 }, // c34
+      { q: 'Using 4 strips over the interval from 1 to 3, the strip width h is:', options: ['0.5','0.25','2','4'], answer: 0 }, // c34
+      { q: 'A change of sign search over an interval containing two roots may:', options: ['Detect no sign change and so miss both roots','Always find both','Always find one','Give an exact answer'], answer: 0 }, // e2
+      { q: 'A fixed point iteration x = g(x) converges near a root when, approximately:', options: ["|g'(x)| < 1 near the root","|g'(x)| > 1 near the root","g'(x) = 0 exactly","g(x) = 0"], answer: 0 }, // e5
+      { q: 'A cobweb diagram (rather than a staircase) arises when, near the root:', options: ["g'(x) is negative","g'(x) is positive","g'(x) = 1",'g is constant'], answer: 0 }, // e3
+      { q: 'For an increasing function, rectangles drawn using left-hand ordinates give:', options: ['A lower bound for the area','An upper bound for the area','The exact area','A negative area'], answer: 0 }, // c35
+      { q: 'The equation eˣ = 3 − x has a root in the interval:', options: ['(0, 1)','(1, 2)','(−1, 0)','(2, 3)'], answer: 0 }, // e1
+      { q: 'The trapezium rule formula for n strips is approximately:', options: ['(h/2)[y₀ + yₙ + 2(y₁ + … + y₍ₙ₋₁₎)]','h[y₀ + y₁ + … + yₙ]','(h/3)[y₀ + 4y₁ + yₙ]','h(y₀ + yₙ)'], answer: 0 }, // c34
+      { q: 'Rearranging x² − x − 3 = 0 as x = 3/(x − 1) is valid provided:', options: ['x ≠ 1','x > 0','x is an integer','x < 3'], answer: 0 }, // e3
+      { q: 'To show a root is 1.86 correct to 2 decimal places, you check the sign of f at:', options: ['1.855 and 1.865','1.86 only','1.8 and 1.9','1.85 and 1.86'], answer: 0 }, // e1
+      { q: 'If an iteration produces values increasing without limit, the iteration has:', options: ['Diverged','Converged','Found a root','Reached machine precision'], answer: 0 }, // e5
+      { q: 'A different rearrangement of the same equation into x = g(x) may:', options: ['Converge when another rearrangement diverges','Always give the same behaviour','Never converge','Change the roots'], answer: 0 }, // e3
+      { q: 'Applying Newton-Raphson to f(x) = x² − a gives the iteration:', options: ['x₍ₙ₊₁₎ = ½(xₙ + a/xₙ)','x₍ₙ₊₁₎ = xₙ − a','x₍ₙ₊₁₎ = a/xₙ','x₍ₙ₊₁₎ = 2xₙ − a'], answer: 0 }, // e4
+    ],
+    red: [
+      { q: 'For f(x) = (x − 2)², a change of sign method applied around x = 2 fails because:', options: ['The curve touches the x-axis without crossing, so f never changes sign','The function is discontinuous','There is no root','The derivative is undefined'], answer: 0 }, // e2
+      { q: 'For f(x) = 1/(x − 2), the values f(1) = −1 and f(3) = 1 change sign, yet:', options: ['There is no root — the sign change is caused by a vertical asymptote','There is a root at x = 2','The method has converged','f is continuous throughout'], answer: 0 }, // e2
+      { q: 'For f(x) = x³ − 5 with x₀ = 2, two Newton-Raphson iterations give x₂ ≈', options: ['1.7109','1.7500','1.6980','1.7320'], answer: 0 }, // e4
+      { q: 'Newton-Raphson typically converges faster than a simple fixed point iteration because its error is:', options: ['Roughly squared at each step near a simple root','Halved at each step','Constant','Increasing'], answer: 0 }, // e4
+      { q: 'If a fixed point iteration has |g′(x)| > 1 near the root, then the iteration:', options: ['Diverges away from the root','Converges quickly','Converges slowly','Finds a different root'], answer: 0 }, // e5
+      { q: 'Halving the strip width in the trapezium rule reduces the error by a factor of roughly:', options: ['4','2','8','16'], answer: 0 }, // c34
+      { q: 'Newton-Raphson started very close to a stationary point of f may:', options: ['Jump far away, converging to a different root or diverging','Always converge to the nearest root','Fail to start','Give an exact answer'], answer: 0 }, // e5
+      { q: 'To justify that a trapezium estimate is an overestimate, you should state that on the interval the curve is:', options: ['Concave upwards, so each chord lies above the curve','Increasing','Positive','Differentiable'], answer: 0 }, // c34
+      { q: 'The iteration x₍ₙ₊₁₎ = (xₙ + 4)^(1/3) applied to x³ − x − 4 = 0 converges because near the root:', options: ["|g'(x)| < 1","|g'(x)| > 1","g'(x) = 1",'g is linear'], answer: 0 }, // e5
+      { q: 'Upper and lower rectangle sums for a monotonic function on an interval:', options: ['Bracket the true value of the integral','Both overestimate it','Both underestimate it','Are equal'], answer: 0 }, // c35
+    ],
+  },
+
+  '1.13': {
+    name: 'Vectors',
+    green: [
+      { q: 'The magnitude of the vector a = 3i + 4j is:', options: ['5','7','12','25'], answer: 0 }, // v3
+      { q: 'The position vector of the point (2, 3) is:', options: ['2i + 3j','3i + 2j','i + j','2i − 3j'], answer: 0 }, // v4
+      { q: 'For points A and B with position vectors a and b, the vector AB equals:', options: ['b − a','a − b','a + b','(a + b)/2'], answer: 0 }, // v4
+      { q: 'A unit vector is a vector whose magnitude is:', options: ['1','0','Any positive number','Its direction'], answer: 0 }, // v1
+      { q: 'Multiplying a vector by the scalar 3:', options: ['Triples its magnitude and keeps its direction','Triples its direction','Rotates it','Leaves it unchanged'], answer: 0 }, // v2
+      { q: 'Vectors are added by:', options: ['Adding corresponding components','Multiplying components','Adding magnitudes only','Adding directions only'], answer: 0 }, // v2
+      { q: 'In printed work, vectors are conventionally shown in:', options: ['Bold type','Italic type','Capital letters','Brackets only'], answer: 0 }, // v1
+      { q: 'Two non-zero vectors are parallel if one is:', options: ['A scalar multiple of the other','Equal to the other','Perpendicular to the other','Of the same magnitude'], answer: 0 }, // v1
+      { q: 'The magnitude of the vector a is written:', options: ['|a| or a','a²','1/a','−a'], answer: 0 }, // v1
+      { q: 'The zero vector has:', options: ['Zero magnitude and no defined direction','Magnitude 1','Infinite magnitude','A direction along i'], answer: 0 }, // v1
+      { q: 'The magnitude of the vector 5i is:', options: ['5','1','25','0'], answer: 0 }, // v3
+      { q: 'The vectors i and j are unit vectors directed along:', options: ['The x-axis and y-axis respectively','The y-axis and x-axis respectively','Any two directions','The line y = x'], answer: 0 }, // v1
+      { q: 'Extending vector work to three dimensions introduces the unit vector:', options: ['k, along the z-axis','l, along the x-axis','m, along the y-axis','n, along the origin'], answer: 0 }, // v7
+      { q: 'Two vectors are equal when they have:', options: ['The same magnitude and the same direction','The same magnitude only','The same direction only','The same starting point'], answer: 0 }, // v1
+      { q: 'Vector addition is commutative, meaning:', options: ['a + b = b + a','a + b = a − b','a + b = 0','ab = ba'], answer: 0 }, // v2
+      { q: 'The magnitude of 6i + 8j is:', options: ['10','14','48','100'], answer: 0 }, // v3
+      { q: 'Points that lie on the same straight line are described as:', options: ['Collinear','Coplanar','Parallel','Perpendicular'], answer: 0 }, // v1
+      { q: 'The magnitude of −a compared with the magnitude of a is:', options: ['Equal','Negative','Larger','Zero'], answer: 0 }, // v2
+      { q: 'The sum of vectors representing forces is interpreted as:', options: ['The resultant force','The average force','The friction','The moment'], answer: 0 }, // v6
+      { q: 'A vector written in column form (3, −2) is equivalent to:', options: ['3i − 2j','−2i + 3j','3i + 2j','2i − 3j'], answer: 0 }, // v1
+    ],
+    amber: [
+      { q: 'The magnitude of a = 2i − 3j + 6k is:', options: ['7','11','41','5'], answer: 0 }, // v7
+      { q: 'A unit vector in the direction of 3i + 4j is:', options: ['(3i + 4j)/5','(3i + 4j)/7','3i + 4j','(4i + 3j)/5'], answer: 0 }, // v3
+      { q: 'For A(1, 2) and B(4, 6), the vector AB and its magnitude are:', options: ['3i + 4j, magnitude 5','5i + 8j, magnitude 9','3i + 4j, magnitude 7','−3i − 4j, magnitude 5'], answer: 0 }, // v4
+      { q: 'The vector 2i + kj is parallel to 4i + 6j when k equals:', options: ['3','2','6','12'], answer: 0 }, // v1
+      { q: 'The position vector of the midpoint of AB, where A and B have position vectors a and b, is:', options: ['(a + b)/2','(b − a)/2','a + b','(a − b)/2'], answer: 0 }, // v4
+      { q: 'In magnitude-direction form, 3i + 3j has magnitude and direction:', options: ['3√2 at 45° above the x-axis','3 at 45°','6 at 45°','3√2 at 60°'], answer: 0 }, // v3
+      { q: 'The distance between the points (1, 2, 3) and (4, 6, 3) is:', options: ['5','7','9','25'], answer: 0 }, // v7
+      { q: 'A vector of magnitude 10 at 30° above the x-axis has components:', options: ['10cos30° i + 10sin30° j','10sin30° i + 10cos30° j','10i + 30j','5i + 5√3 j only'], answer: 0 }, // v3
+      { q: 'The magnitude of i + 2j + 2k is:', options: ['3','5','9','7'], answer: 0 }, // v7
+      { q: 'If a = 4i + j and b = i − 2j, then a − b equals:', options: ['3i + 3j','5i − j','3i − j','−3i − 3j'], answer: 0 }, // v2
+      { q: 'Two forces 3i + 2j and −i + 4j act on a particle. Their resultant is:', options: ['2i + 6j','4i − 2j','2i − 2j','−3i + 8j'], answer: 0 }, // v6
+      { q: 'A unit vector in the direction of 2i − j + 2k is:', options: ['(2i − j + 2k)/3','(2i − j + 2k)/5','(2i − j + 2k)/9','2i − j + 2k'], answer: 0 }, // v7
+      { q: 'Multiplying a vector by −1:', options: ['Reverses its direction and keeps its magnitude','Reverses its magnitude','Leaves it unchanged','Makes it a unit vector'], answer: 0 }, // v2
+      { q: 'Points A, B and C are collinear if:', options: ['AB is a scalar multiple of BC','AB equals BC','|AB| = |BC|','AB + BC = 0'], answer: 0 }, // v1
+      { q: 'If the position vectors of A and B are 2i + j and 6i + 4j, then |AB| equals:', options: ['5','7','3','25'], answer: 0 }, // v5
+      { q: 'The resultant of three forces is zero when:', options: ['Their vector sum is the zero vector','Their magnitudes are equal','They are parallel','Each is a unit vector'], answer: 0 }, // v6
+      { q: 'The vector 6i − 8j written as a unit vector is:', options: ['0.6i − 0.8j','0.8i − 0.6j','6i − 8j','0.6i + 0.8j'], answer: 0 }, // v3
+      { q: 'The magnitude of the vector from (0, 0, 0) to (2, 3, 6) is:', options: ['7','11','9','5'], answer: 0 }, // v7
+      { q: 'If a = 3i − j and b = λ(3i − j), then a and b are:', options: ['Parallel for every non-zero λ','Equal for every λ','Perpendicular','Never parallel'], answer: 0 }, // v1
+      { q: 'For a vector with components (−3, 4), the angle it makes with the positive x-axis lies in:', options: ['The second quadrant','The first quadrant','The third quadrant','The fourth quadrant'], answer: 0 }, // v3
+    ],
+    red: [
+      { q: 'A, B and C have position vectors i + j, 3i + 5j and 5i + 9j. These points are:', options: ['Collinear, since AB = 2i + 4j and BC = 2i + 4j','Not collinear','The vertices of a right angle','Coincident'], answer: 0 }, // v1
+      { q: 'The point P divides AB in the ratio 2:1, where A and B have position vectors a and b. The position vector of P is:', options: ['(a + 2b)/3','(2a + b)/3','(a + b)/2','2b − a'], answer: 0 }, // v4
+      { q: 'A vector has components (−3, −4). Its magnitude and direction from the positive x-axis are:', options: ['5, at 180° + 53.1° = 233.1°','5, at 53.1°','7, at 233.1°','5, at 126.9°'], answer: 0 }, // v3
+      { q: 'OACB is a parallelogram with OA = a and OB = b. The vector OC equals:', options: ['a + b','a − b','b − a','(a + b)/2'], answer: 0 }, // v2
+      { q: 'The value of λ for which 2i + 4j + λk is parallel to i + 2j + 3k is:', options: ['6','3','2','12'], answer: 0 }, // v7
+      { q: 'Three forces F₁ = 2i + 3j, F₂ = −5i + j and F₃ act on a particle in equilibrium. F₃ equals:', options: ['3i − 4j','−3i + 4j','3i + 4j','−7i − 2j'], answer: 0 }, // v6
+      { q: 'The centroid of a triangle with vertices at position vectors a, b and c has position vector:', options: ['(a + b + c)/3','(a + b + c)/2','a + b + c','(a + b)/2'], answer: 0 }, // v4
+      { q: 'If |a| = 5 and |b| = 12, the magnitude of a + b:', options: ['Lies between 7 and 17 inclusive, depending on their directions','Is always 17','Is always 13','Is always 7'], answer: 0 }, // v2
+      { q: 'For A(2, −1, 4) and B(5, 3, 0), the distance AB is:', options: ['√41','√29','7','√61'], answer: 0 }, // v7
+      { q: 'M is the midpoint of BC in triangle ABC with position vectors a, b, c. The vector AM equals:', options: ['(b + c)/2 − a','(b + c)/2 + a','(b − c)/2 − a','a − (b + c)/2'], answer: 0 }, // v4
+    ],
+  },
+
 };
 
 if (typeof module !== 'undefined') { module.exports = MATHS_OCR_B_ALEVEL_QUESTIONS; }
