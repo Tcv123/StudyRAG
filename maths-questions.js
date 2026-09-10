@@ -3,6 +3,496 @@
 // Merged into each paper in mark-schemes.html at selection time.
 // Key: paperId (from papers-config.js).
 window.MATHS_QUESTIONS = {
+ "math-ocr-h640-2024-p3": {
+ "questions": [
+  {
+   "number": 1,
+   "parts": [
+    {
+     "code": "1",
+     "prompt": "Solve the inequality x/5 > 6 − x.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "parts": [
+    {
+     "code": "2(a)",
+     "prompt": "The function f is defined by f(x) = √(1 + 2x) for x ⩾ −1/2. Find an expression for f⁻¹(x) and state the domain of this inverse function.",
+     "marks": 3
+    },
+    {
+     "code": "2(b)",
+     "prompt": "Explain why g(x) = 1 + x², with domain all real numbers, has no inverse function.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "scenario": "The diagram shows the curve y = x⁵ and the square OABC, where A, B and C are (1, 0), (1, 1) and (0, 1). The curve cuts the square into two parts.",
+   "parts": [
+    {
+     "code": "3",
+     "prompt": "In this question you must show detailed reasoning. Show that (area to left of curve) ÷ (area below curve) = 5.",
+     "marks": 4
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "parts": [
+    {
+     "code": "4",
+     "prompt": "In this question you must show detailed reasoning. Determine the exact value of 1/(√2 + 1) + 1/(√3 + √2) + 1/(2 + √3).",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "parts": [
+    {
+     "code": "5",
+     "prompt": "In this question you must show detailed reasoning. Using the substitution u = x + 1, find the value of the positive integer c such that the integral from c to c + 4 of x/(x + 1)² dx equals ln 3 − 1/3.",
+     "marks": 6
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "parts": [
+    {
+     "code": "6",
+     "prompt": "In this question you must show detailed reasoning. Solve the equation tan x − 3 cot x = 2 for values of x in the interval 0° ⩽ x ⩽ 360°.",
+     "marks": 5
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "parts": [
+    {
+     "code": "7",
+     "prompt": "Prove that sin 8θ tan 4θ + cos 8θ = 1.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "parts": [
+    {
+     "code": "8(a)",
+     "prompt": "Express cos x + √3 sin x in the form R sin(x + α), where R > 0 and 0 < α < π/2. Give R and α in exact form. In this question you must show detailed reasoning.",
+     "marks": 4
+    },
+    {
+     "code": "8(b)",
+     "prompt": "Hence solve the equation cos x + √3 sin x = √3 for values of x in the interval −π ⩽ x ⩽ π. Give the roots in exact form.",
+     "marks": 4
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "scenario": "This question is about the equation f(x) = 0, where f(x) = x⁴ − x − 1/(3x − 2). Fig. 9.1 shows the curve y = f(x). Figs 9.2 and 9.3 show spreadsheets being used to search for roots.",
+   "parts": [
+    {
+     "code": "9(a)",
+     "prompt": "Show, by calculation, that the equation f(x) = 0 has a root between x = 1 and x = 2.",
+     "marks": 2
+    },
+    {
+     "code": "9(b)",
+     "prompt": "Fig. 9.2 shows values x = 1.5, 1.25 and 1.125 with f(x) = 3.1625, 0.619977679 and −0.250466087. Write down a suitable number to use as the next value of x in the spreadsheet.",
+     "marks": 1
+    },
+    {
+     "code": "9(c)",
+     "prompt": "Determine a root of the equation f(x) = 0. Give your answer correct to 1 decimal place.",
+     "marks": 1
+    },
+    {
+     "code": "9(d)(i)",
+     "prompt": "Fig. 9.3 searches between 0 and 1. Explain why it looks from rows 2 and 3 of the spreadsheet as if there is a root between 0 and 1.",
+     "marks": 1
+    },
+    {
+     "code": "9(d)(ii)",
+     "prompt": "Explain why this process will not find a root between 0 and 1.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "scenario": "The diagram shows the curve y = f(x), which has stationary points near x = −2, x = 0 and x = 2.",
+   "parts": [
+    {
+     "code": "10",
+     "prompt": "Sketch the graph of the gradient function y = f′(x) on the copy of the diagram in the Printed Answer Booklet.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "scenario": "Fig. 11.1 shows the curve y = g(x), where g(x) = x sin x + cos x, together with the curve of its gradient function, for −2π ⩽ x ⩽ 2π. Fig. 11.2 shows part of the curve y = 1 − x cos x.",
+   "parts": [
+    {
+     "code": "11(a)",
+     "prompt": "Show that the x-coordinates of the points on the curve y = g(x) where the gradient is 1 satisfy the equation cos x − 1/x = 0.",
+     "marks": 3
+    },
+    {
+     "code": "11(b)",
+     "prompt": "Use the Newton-Raphson method with a suitable starting value to find the smallest positive x-coordinate of a point on the curve y = x sin x + cos x where the gradient is 1. Write down the iteration you use, the starting value, and the solution correct to 4 decimal places.",
+     "marks": 4
+    },
+    {
+     "code": "11(c)",
+     "prompt": "Explain why x₁ = 3 is not a suitable starting value for the Newton-Raphson method in part (b).",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "scenario": "The diagram shows the curve with parametric equations x = 2 + sin 2θ, y = 2 cos θ + cos 2θ, for 0 ⩽ θ < 2π.",
+   "parts": [
+    {
+     "code": "12(a)",
+     "prompt": "In this question you must show detailed reasoning. Determine the exact coordinates of all the stationary points on the curve.",
+     "marks": 8
+    },
+    {
+     "code": "12(b)",
+     "prompt": "Write down the equation of the line of symmetry of the curve.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article concerns the points at which tangents, and normals, to a quadratic curve intersect. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "13",
+     "prompt": "Substitute appropriate values of t₁ and t₂ to verify that t₁t₂ gives the correct value for the y-coordinate of the point of intersection of the tangents at the points A and B in Fig. C1.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article concerns the points at which tangents, and normals, to a quadratic curve intersect. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "14",
+     "prompt": "Substitute appropriate values of t₁ and t₂ to verify that the expression t₁² + t₂² + t₁t₂ + 1/2 gives the correct value for the y-coordinate of the point of intersection of the normals at the points A and B in Fig. C2.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article concerns the points at which tangents, and normals, to a quadratic curve intersect. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "15(a)",
+     "prompt": "Show that, for the curve y = ax² + bx + c, the equation of the tangent at the point with x-coordinate t is y = (2at + b)x − at² + c.",
+     "marks": 3
+    },
+    {
+     "code": "15(b)",
+     "prompt": "Hence show that for the curve y = ax² + bx + c, the tangents at two points P and Q cross at a point whose x-coordinate equals the mean of the x-coordinates of P and Q, as given in lines 11 to 14.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article concerns the points at which tangents, and normals, to a quadratic curve intersect. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "16",
+     "prompt": "Show that a((x_P + x_Q)/2)² + b((x_P + x_Q)/2) + c − a((x_P − x_Q)/2)² is equivalent to a x_P x_Q + b((x_P + x_Q)/2) + c, as given in lines 15 and 16.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article concerns the points at which tangents, and normals, to a quadratic curve intersect. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "17",
+     "prompt": "Show that, for the curve y = x², the equation of the normal at the point (t, t²) is y = −x/(2t) + t² + 1/2, as given in line 27.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 18,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article concerns the points at which tangents, and normals, to a quadratic curve intersect. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "18",
+     "prompt": "A student investigates the intersection points of tangents to the curve y = 6x² − 7x + 1, drawing tangents at pairs of points whose x-coordinates differ by 5. Find the equation of the curve that all the intersection points lie on.",
+     "marks": 2
+    }
+   ]
+  }
+ ],
+ "markSchemes": {
+  "1": {
+   "type": "points",
+   "points": [
+    "An initial step collecting all the x terms on one side, for example 6x/5 > 6 or x > 30 − 5x",
+    "x > 5"
+   ],
+   "guidance": "M1 an initial step getting all terms in x on one side; allow incorrect inequality signs. A1 correct completion."
+  },
+  "2(a)": {
+   "type": "points",
+   "points": [
+    "y = √(1 + 2x) so y² = 1 + 2x",
+    "f⁻¹(x) = (x² − 1)/2",
+    "The domain is x ⩾ 0"
+   ],
+   "guidance": "M1 starting to work through the inverse processes; allow swapping x and y at any stage. A1 for the expression, or equivalent such as x²/2 − 1/2. B1 for the domain — B0 if written as y ⩾ 0."
+  },
+  "2(b)": {
+   "type": "points",
+   "points": [
+    "g is many-to-one, so it has no inverse"
+   ],
+   "guidance": "E1. Allow 'is not one-to-one' or an example such as x = 2 and x = −2 giving the same value of g(x). Note that 'g(x) is one-to-many' does not score."
+  },
+  "3": {
+   "type": "points",
+   "points": [
+    "Area below the curve = the integral from 0 to 1 of x⁵ dx",
+    "Area below = [x⁶/6] from 0 to 1 = 1/6",
+    "Area to the left = 1 − 1/6 = 5/6",
+    "Ratio = (5/6) ÷ (1/6) = 5"
+   ],
+   "guidance": "M1 any correct expression for the area below the curve; condone a missing dx but limits are required. A1. M1 for 1 minus their area below, or the integral of y^(1/5) with respect to y. E1 convincing completion to the given answer, dependent on the previous three marks."
+  },
+  "4": {
+   "type": "points",
+   "points": [
+    "Rationalise each denominator, for example multiply the first by (√2 − 1)/(√2 − 1)",
+    "(√2 − 1) + (√3 − √2) + (2 − √3) = 2 − 1 = 1"
+   ],
+   "guidance": "M1 rationalising denominators — at least one example of multiplying by a conjugate. A1 convincing completion including all steps, with denominators of 1 or better. The telescoping is what makes the value exact."
+  },
+  "5": {
+   "type": "points",
+   "points": [
+    "u = x + 1 so du = dx",
+    "The integral becomes that of (u − 1)/u² with respect to u",
+    "Integrate to ln u + 1/u",
+    "Correct integral in terms of c: ln(c + 5) − ln(c + 1) + 1/(c + 5) − 1/(c + 1)",
+    "Solve (c + 5)/(c + 1) = 3, or the corresponding equation from the fractional part",
+    "c = 1, checked in the other equation"
+   ],
+   "guidance": "M1 for du = dx or equivalent. M1 for using the substitution; do not award if dx is still present. M1 attempt to integrate their expression, which must involve ln u or a power of u. A1 correct integral in terms of c. M1 attempting to solve either resulting equation. A1 www — c = 1 and checking the solution in the other equation."
+  },
+  "6": {
+   "type": "points",
+   "points": [
+    "Multiply through by tan x to give tan²x − 3 = 2 tan x",
+    "Rearrange to tan²x − 2 tan x − 3 = 0",
+    "Factorise (tan x − 3)(tan x + 1) = 0, so tan x = 3 or tan x = −1",
+    "Any two roots correct",
+    "x = 71.6°, 135°, 251.6°, 315° with no extras"
+   ],
+   "guidance": "M1^ multiplying through by tan x. M1^ all three terms of the quadratic on one side. M1* solving the quadratic to obtain both values of tan x; allow one error in method. A1^ any two roots correct, dependent on M2^. A1* all roots with no additional solutions, dependent on M1*. Alternatively write tan x as sin x / cos x and factorise."
+  },
+  "7": {
+   "type": "points",
+   "points": [
+    "Use sin 2A = 2 sin A cos A on sin 8θ, giving 2 sin 4θ cos 4θ tan 4θ + cos 8θ",
+    "Use tan A = sin A / cos A, giving 2 sin²4θ + cos 8θ",
+    "Use cos 2A = 1 − 2 sin²A so that 2 sin²4θ + 1 − 2 sin²4θ = 1"
+   ],
+   "guidance": "M1 use of the double angle formula — using it means more than just quoting it. M1 use of tan A = sin A / cos A; the identities may be applied in any order. A1 use of any correct identity for cos 2A and convincing completion. Small angle approximations score M0. Working it through as an equation with the '= 1' already present is not convincing."
+  },
+  "8(a)": {
+   "type": "points",
+   "points": [
+    "cos x + √3 sin x = R sin(x + α), so R cos α = √3 and R sin α = 1",
+    "tan α = 1/√3",
+    "α = π/6",
+    "R² = 4 so R = 2"
+   ],
+   "guidance": "M1 M0 if R is missing, though the next M mark is still available; must be in terms of α. M1 allow equivalent methods using their values of sin and cos. A1 dependent on M2. B1 for R = 2, seen or implied anywhere."
+  },
+  "8(b)": {
+   "type": "points",
+   "points": [
+    "Use part (a): 2 sin(x + π/6) = √3",
+    "sin(x + π/6) = √3/2",
+    "x + π/6 = π/3 or 2π/3",
+    "x = π/6 and x = π/2"
+   ],
+   "guidance": "M1 use of their result from (a). M1 a value for a trig function following the first step. M1 at least one value for their x + π/6; condone working in degrees to this point. A1 both roots correct in radians only; A0 if there are extra roots. Candidates who square both sides must discard erroneous solutions — maximum M3A0 if they do, M2A0 if they do not."
+  },
+  "9(a)": {
+   "type": "points",
+   "points": [
+    "f(1) = −1",
+    "f(2) = 13.75, so there is a change of sign and hence a root between 1 and 2"
+   ],
+   "guidance": "B1 for finding f(1) or f(2). B1 completion to show the change of sign, with explanation."
+  },
+  "9(b)": {
+   "type": "points",
+   "points": [
+    "Any value between 1.125 and 1.25"
+   ],
+   "guidance": "B1 any value in this range; candidates may give the range itself."
+  },
+  "9(c)": {
+   "type": "points",
+   "points": [
+    "f(1.15) = −0.09, so the root is 1.2 to 1 decimal place"
+   ],
+   "guidance": "B1 cao, justified by their calculations, which need not use 1.15."
+  },
+  "9(d)(i)": {
+   "type": "points",
+   "points": [
+    "There is a change of sign between the two rows"
+   ],
+   "guidance": "E1. B0 for incorrect mathematics, such as implying a y-intercept."
+  },
+  "9(d)(ii)": {
+   "type": "points",
+   "points": [
+    "The function is undefined at x = 2/3, and the spreadsheet is homing in on that discontinuity rather than a root"
+   ],
+   "guidance": "E1. Accept 'discontinuous' or 'asymptote' for 'undefined'. Also allow reference to Fig. 9.1 showing only one root, or to the f(x) values in the table diverging."
+  },
+  "10": {
+   "type": "points",
+   "points": [
+    "Zeros at 0 and close to −2 and 2, and no others",
+    "Rotational symmetry about the origin",
+    "General shape correct"
+   ],
+   "guidance": "B1 for the zeros. B1 for the rotational symmetry — mark the intent. B1 for the general shape; the actual gradient values may be wrong."
+  },
+  "11(a)": {
+   "type": "points",
+   "points": [
+    "Differentiate: dy/dx = sin x + x cos x − sin x = x cos x",
+    "Set their dy/dx = 1, giving x cos x = 1",
+    "Divide by x to reach cos x − 1/x = 0"
+   ],
+   "guidance": "B1 for the differentiation; allow x cos x or the unsimplified sin x + x cos x − sin x. M1 for x cos x = 1 from their derivative. A1 convincing completion to the given answer. If there is no differentiation the M1 is not available."
+  },
+  "11(b)": {
+   "type": "points",
+   "points": [
+    "Differentiate f(x) = 1/x − cos x to give f′(x) = −1/x² + sin x",
+    "Iteration x₍ₙ₊₁₎ = xₙ − (1/xₙ − cos xₙ)/(−1/xₙ² + sin xₙ), with subscripts shown",
+    "A suitable starting value, for example 5",
+    "x = 4.9172"
+   ],
+   "guidance": "M1 differentiation — look for a power of x and a term in sin x or cos x, with at least one term correct. A1 for the iteration; the subscripts are needed. M1 a suitable starting value — anything from 3.6 to 6.1 works, and other values that converge should also be credited. A1 awrt 4.9172; intermediate iterations need not be shown."
+  },
+  "11(c)": {
+   "type": "points",
+   "points": [
+    "At x = 3 the gradient is close to zero, so the next iterate is thrown a long way from the root, or the iteration converges to a different root"
+   ],
+   "guidance": "B1 explanation referring to the gradient of the curve or to convergence to a different root. Not sufficient to say only that it is close to another root."
+  },
+  "12(a)": {
+   "type": "points",
+   "points": [
+    "Differentiate y with respect to θ: dy/dθ = −2 sin θ − 2 sin 2θ",
+    "Set dy/dθ = 0 and use the double angle formula: sin θ + 2 sin θ cos θ = 0",
+    "Factorise: sin θ(1 + 2 cos θ) = 0",
+    "So sin θ = 0 or cos θ = −1/2",
+    "θ = 0, 2π/3, π, 4π/3",
+    "Stationary points (2, 3) and (2, −1)",
+    "and (2 − √3/2, −3/2)",
+    "and (2 + √3/2, −3/2)"
+   ],
+   "guidance": "M1 for differentiating y with respect to θ, which may appear as part of dy/dx. M1 for setting the derivative to zero and using a double angle formula. M1* all on one side and factorised. DM1 at least one trig value. A1 A1 for at least two then all four values of θ. A1 A1 for at least two then all four coordinate pairs, www, in exact form with no extras."
+  },
+  "12(b)": {
+   "type": "exact",
+   "points": [
+    "x = 2"
+   ],
+   "guidance": "B1."
+  },
+  "13": {
+   "type": "points",
+   "points": [
+    "With t₁ = 1 and t₂ = −3, t₁t₂ = 1 × −3 = −3, which is the y-coordinate shown"
+   ],
+   "guidance": "B1 convincingly showing that the formula gives −3."
+  },
+  "14": {
+   "type": "points",
+   "points": [
+    "With t₁ = 1 and t₂ = −3, t₁² + t₂² + t₁t₂ + 1/2 = 1 + 9 − 3 + 0.5 = 7.5, which is the y-coordinate shown"
+   ],
+   "guidance": "B1 convincingly showing that the formula gives 7.5."
+  },
+  "15(a)": {
+   "type": "points",
+   "points": [
+    "dy/dx = 2ax + b, so the gradient at x = t is 2at + b",
+    "Use the straight line form y − (at² + bt + c) = (2at + b)(x − t)",
+    "Expand and simplify to y = (2at + b)x − at² + c"
+   ],
+   "guidance": "M1 for the derivative; allow 2at + b. M1 use of a form of the equation of a straight line with their gradient at x = t. A1 convincing completion to the correct result. Alternatively set the line equal to the curve and show a(x − t)² = 0, so the line touches at x = t."
+  },
+  "15(b)": {
+   "type": "points",
+   "points": [
+    "Set the two tangent equations equal, using distinct parameter values",
+    "Collect the terms in x: (2a x_P − 2a x_Q)x = a x_P² − a x_Q²",
+    "Factorise the difference of two squares and cancel to give x = (x_P + x_Q)/2"
+   ],
+   "guidance": "M1 use of the tangent formula with distinct values of t; condone alternative notation for the coordinates. M1 getting the terms in x on one side. A1 convincing completion to the given result."
+  },
+  "16": {
+   "type": "points",
+   "points": [
+    "Collect the terms in a and expand the squared brackets",
+    "Use the difference of two squares so that the a terms give a x_P x_Q, leaving a x_P x_Q + b((x_P + x_Q)/2) + c"
+   ],
+   "guidance": "M1 dealing with the a terms convincingly, by collecting terms with factor a and expanding. A1 squaring the brackets or demonstrating the difference of two squares, giving a convincing completion to the given result."
+  },
+  "17": {
+   "type": "points",
+   "points": [
+    "dy/dx = 2x, so the gradient of the curve at (t, t²) is 2t",
+    "The gradient of the normal is −1/(2t)",
+    "y − t² = −(1/(2t))(x − t), which rearranges to y = −x/(2t) + t² + 1/2"
+   ],
+   "guidance": "M1 for the derivative; accept 2t. M1 for use of the negative reciprocal. A1 for convincingly reaching the given result — any error seen is A0. Alternatively verify that the given line passes through (t, t²) and has gradient −1/(2t)."
+  },
+  "18": {
+   "type": "points",
+   "points": [
+    "Use the result from the article: subtract a d²/4 with a = 6 and d = 5, so y = 6x² − 7x + 1 − 6 × 25/4",
+    "y = 6x² − 7x − 36.5"
+   ],
+   "guidance": "M1 use of the result from line 19 of the article. A1 or equivalent, such as −73/2. Accept a fully correct solution by an alternative method; ignore subsequent working after a correct answer."
+  }
+ }
+},
  "math-ocr-h640-2024-p2": {
  "questions": [
   {
