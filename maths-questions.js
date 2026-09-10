@@ -3,6 +3,618 @@
 // Merged into each paper in mark-schemes.html at selection time.
 // Key: paperId (from papers-config.js).
 window.MATHS_QUESTIONS = {
+ "math-ocr-h640-2024-p2": {
+ "questions": [
+  {
+   "number": 1,
+   "parts": [
+    {
+     "code": "1",
+     "prompt": "Calculate the exact distance between the points (2, −1) and (6, 1). Give your answer in the form a√b, where a and b are prime numbers.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "parts": [
+    {
+     "code": "2",
+     "prompt": "The equation of a curve is y = eˣ. The curve is subject to a translation by the vector (0, −3) and a stretch of scale factor 2 parallel to the y-axis. Write down the equation of the new curve.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "scenario": "A histogram shows the amount spent on electricity, in pounds, in a sample of households in March 2023. The classes span £50 to £100 with frequency densities 0.5, 3.2, 1.8, 1.4 and 0.2.",
+   "parts": [
+    {
+     "code": "3(a)",
+     "prompt": "Describe the shape of the distribution.",
+     "marks": 1
+    },
+    {
+     "code": "3(b)",
+     "prompt": "A total of 16 households each spent between £60 and £65 on electricity. Determine how many households were in the sample altogether.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "parts": [
+    {
+     "code": "4(a)",
+     "prompt": "Sketch the graph of y = sin 2θ for 0 ⩽ θ ⩽ 2π.",
+     "marks": 2
+    },
+    {
+     "code": "4(b)",
+     "prompt": "Solve the equation sin 2θ = −1/2 for 0 ⩽ θ ⩽ 2π.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "scenario": "M is the event that an A-level student selected at random studies mathematics and C is the event that they study chemistry. P(M) = 0.42, P(C) = 0.36 and P(M and C) = 0.24. These are shown in a two-way table.",
+   "parts": [
+    {
+     "code": "5(a)",
+     "prompt": "Complete the copy of the two-way table.",
+     "marks": 2
+    },
+    {
+     "code": "5(b)",
+     "prompt": "Calculate the probability that a student selected at random does not study chemistry given that they do not study mathematics.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "scenario": "The discrete random variable X has P(X = x) equal to 0.2, a, 3a and 0.4 for x = 0, 1, 2 and 3 respectively.",
+   "parts": [
+    {
+     "code": "6(a)",
+     "prompt": "Calculate the value of the constant a.",
+     "marks": 1
+    },
+    {
+     "code": "6(b)",
+     "prompt": "A single value of X is chosen at random. Find the probability that the value is an odd number.",
+     "marks": 1
+    },
+    {
+     "code": "6(c)",
+     "prompt": "Two independent values of X are chosen at random. Calculate the probability that the total of the two values is 3.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "scenario": "A sequence is defined by the recurrence relation u₍ₖ₊₁₎ = uₖ + 5 with u₁ = −2.",
+   "parts": [
+    {
+     "code": "7(a)",
+     "prompt": "Write down the values of u₂, u₃ and u₄.",
+     "marks": 1
+    },
+    {
+     "code": "7(b)",
+     "prompt": "Explain whether this sequence is divergent or convergent.",
+     "marks": 1
+    },
+    {
+     "code": "7(c)",
+     "prompt": "Determine the value of u₃₀.",
+     "marks": 2
+    },
+    {
+     "code": "7(d)",
+     "prompt": "Determine the value of the sum of uₖ from k = 1 to 30.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "parts": [
+    {
+     "code": "8",
+     "prompt": "The equation of a curve is y = 2x³ + 3mx² − 9mx + 4. Determine the range of values of m for which the curve has no stationary values.",
+     "marks": 6
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "scenario": "A teacher is investigating how pupils travel to and from school, and decides to collect a sample of size 60. The numbers of students in Years 7 to 11 are 86, 105, 107, 101 and 101.",
+   "parts": [
+    {
+     "code": "9(a)",
+     "prompt": "The teacher lives in a village 10 miles from the school. Explain how collecting a sample which just consists of pupils who live in the same village as the teacher might introduce bias.",
+     "marks": 1
+    },
+    {
+     "code": "9(b)",
+     "prompt": "The teacher decides to use proportional stratified sampling. Calculate the number of pupils in the sample who are in Year 9.",
+     "marks": 2
+    },
+    {
+     "code": "9(c)",
+     "prompt": "The teacher generates a sample of 10 pupils from the 86 in Year 7 by listing them alphabetically and selecting the first name and every ninth name thereafter. Explain whether this method will generate a simple random sample.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "parts": [
+    {
+     "code": "10(a)",
+     "prompt": "Determine the first three terms in ascending powers of x of the binomial expansion of (8 + 3x)^(1/3).",
+     "marks": 4
+    },
+    {
+     "code": "10(b)",
+     "prompt": "State the range of values of x for which this expansion is valid.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "scenario": "A householder investigates the relationship between his monthly cost of gas and his monthly cost of electricity, presenting a random sample on a scatter diagram. One point represents a month when he was away on holiday for three weeks.",
+   "parts": [
+    {
+     "code": "11(a)",
+     "prompt": "Circle the point which represents the month when the householder was most likely to have been away on holiday for three weeks.",
+     "marks": 1
+    },
+    {
+     "code": "11(b)",
+     "prompt": "With reference to the diagram, describe the relationship between the cost of gas and the cost of electricity.",
+     "marks": 1
+    },
+    {
+     "code": "11(c)",
+     "prompt": "Spearman's rank correlation coefficient for this sample is 0.4359 and the associated p-value is 0.09195. Determine whether there is any evidence to suggest, at the 5% level, that there is any association between the monthly cost of gas and the monthly cost of electricity.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "parts": [
+    {
+     "code": "12",
+     "prompt": "A survey in 2021 showed that 10% of British adults were vegetarians. A dietitian believes the proportion may have changed and conducts a hypothesis test at the 5% level. In a random sample of 112 adults there are 19 vegetarians. Carry out the hypothesis test to determine whether there is any evidence to support the dietitian's belief.",
+     "marks": 7
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "parts": [
+    {
+     "code": "13",
+     "prompt": "Determine the coordinates of the turning points on the curve with equation y² + xy + x² − x = 1.",
+     "marks": 9
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "scenario": "The pre-release material contains medical data for 103 women and 97 men. A boxplot represents the weights in kg of 101 of the women, with minimum 41.4, lower quartile 57.7, median 69.5, upper quartile 82.05 and maximum 132.2.",
+   "parts": [
+    {
+     "code": "14(a)",
+     "prompt": "Use your knowledge of the pre-release material to give a reason why the weights of all 103 women were not included in the diagram.",
+     "marks": 1
+    },
+    {
+     "code": "14(b)",
+     "prompt": "Determine the range of values in which any outliers lie.",
+     "marks": 3
+    },
+    {
+     "code": "14(c)",
+     "prompt": "Use your knowledge of the pre-release material to explain whether these outliers should be removed from any further analysis of the data.",
+     "marks": 1
+    },
+    {
+     "code": "14(d)",
+     "prompt": "The median weight of men in the sample was 79.9 kg. Explain what may be inferred by comparing the median weight of men with the median weight of women.",
+     "marks": 1
+    },
+    {
+     "code": "14(e)",
+     "prompt": "The mean and standard deviation are 82.69 kg and 19.98 kg for men, and 72.5 kg and 19.95 kg for women. Use this information to make two inferences about the distribution of the weights of men compared with that of women.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "scenario": "Bottles of Fizzipop nominally contain 330 ml of drink. A researcher collects a random sample of 55 bottles, with n = 55, Σx = 18535 and Σx² = 6247066.6. A histogram of the sample with equal class intervals is roughly symmetric and unimodal.",
+   "parts": [
+    {
+     "code": "15(a)(i)",
+     "prompt": "Calculate the mean volume of drink in a bottle of Fizzipop.",
+     "marks": 1
+    },
+    {
+     "code": "15(a)(ii)",
+     "prompt": "Show that the standard deviation of the volume of drink in a bottle of Fizzipop is 3.78 ml.",
+     "marks": 1
+    },
+    {
+     "code": "15(b)",
+     "prompt": "Explain why the researcher decides that the Normal distribution is a suitable model for the volume of drink in a bottle of Fizzipop.",
+     "marks": 2
+    },
+    {
+     "code": "15(c)",
+     "prompt": "Use your answers to parts (a) and (b) to determine the expected number of bottles which contain less than 330 ml in a random sample of 100 bottles.",
+     "marks": 3
+    },
+    {
+     "code": "15(d)",
+     "prompt": "To comply with new regulations, no more than 1% of bottles should contain less than 330 ml. The mean is increased and the standard deviation is unaltered. Determine the minimum mean volume which should ensure the regulations are met, to 3 significant figures.",
+     "marks": 3
+    },
+    {
+     "code": "15(e)",
+     "prompt": "The mean volume is set to 340 ml. A quality control manager suspects it may have reduced and collects a random sample of 100 bottles, finding a sample mean of 339.37 ml. Assuming the standard deviation is unaltered, conduct a hypothesis test at the 5% level to determine whether there is evidence that the mean volume is less than 340 ml.",
+     "marks": 7
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "parts": [
+    {
+     "code": "16",
+     "prompt": "In this question you must show detailed reasoning. Find the particular solution of the differential equation dy/dx = 9y/((x − 1)(x + 2)), given that x = 2 when y = 16.",
+     "marks": 12
+    }
+   ]
+  }
+ ],
+ "markSchemes": {
+  "1": {
+   "type": "points",
+   "points": [
+    "(6 − 2)² + (1 − −1)² seen, as a sum of two squares",
+    "Distance = √20 = 2√5"
+   ],
+   "guidance": "M1 must be the sum of two squares, and may be implied by the correct answer or by (±4)² + (±2)². A1 cao — mark the final answer. B2 for a correct answer unsupported."
+  },
+  "2": {
+   "type": "points",
+   "points": [
+    "2eˣ seen, or −3 seen in the exponent",
+    "y = 2e^(x−3)"
+   ],
+   "guidance": "M1 for example 2eˣ − 3 or e^(x−3). A1 must be an equation. B2 for the correct answer with no working."
+  },
+  "3(a)": {
+   "type": "exact",
+   "points": [
+    "Positively skewed"
+   ],
+   "guidance": "B1."
+  },
+  "3(b)": {
+   "type": "points",
+   "points": [
+    "10 × 0.5 + 5 × 3.2 + 5 × 1.8 + 10 × 1.4 + 20 × 0.2 or equivalent",
+    "Total = 48 households"
+   ],
+   "guidance": "M1 allow one incorrect class width or one incorrect frequency density; may be implied by 5 + 16 + 9 + 14 + 4. A1 allow SCB1 for a correct answer unsupported."
+  },
+  "4(a)": {
+   "type": "points",
+   "points": [
+    "Sine wave with two complete cycles between 0 and 2π",
+    "All correct with amplitude 1"
+   ],
+   "guidance": "M1 two complete cycles, clear from labelling; condone waves of unequal amplitude or length, and allow labelling to override poor sketching. A1 all correct with amplitude 1; ignore any graph outside [0, 2π]."
+  },
+  "4(b)": {
+   "type": "points",
+   "points": [
+    "Either −π/12 or −5π/12 seen, or either 7π/6 or 11π/6 seen, from sin⁻¹(−1/2)",
+    "Two correct values",
+    "θ = 7π/12, 11π/12, 19π/12, 23π/12"
+   ],
+   "guidance": "M1 from use of sin⁻¹(−1/2); decimals correct to 2 d.p. or better. A1 for two correct values (awrt 1.833, 2.880, 4.974, 6.021). A1 all four correct with no extras in the interval. If M0A0A0, allow SCB1 for two correct answers in degrees or SCB2 for all four (105, 165, 285, 345)."
+  },
+  "5(a)": {
+   "type": "points",
+   "points": [
+    "Entries 0.12, 0.18, 0.64 and 0.58 completed correctly",
+    "P(M′ and C′) = 0.46"
+   ],
+   "guidance": "B1 for the bold entries. B1 for 0.46."
+  },
+  "5(b)": {
+   "type": "points",
+   "points": [
+    "their 0.46 ÷ their 0.58",
+    "23/29 = 0.793 (3 s.f.)"
+   ],
+   "guidance": "M1 must use values from their table, with 0 < their 0.46 < their 0.58 < 1. A1FT."
+  },
+  "6(a)": {
+   "type": "exact",
+   "points": [
+    "a = 0.1"
+   ],
+   "guidance": "B1."
+  },
+  "6(b)": {
+   "type": "exact",
+   "points": [
+    "0.5"
+   ],
+   "guidance": "B1FT their 0.1 + 0.4, provided 0 < their a < their 3a < 1."
+  },
+  "6(c)": {
+   "type": "points",
+   "points": [
+    "0.2 × 0.4 or their 3a × their a seen",
+    "2 × (0.2 × 0.4 + their 3a × their a)",
+    "0.22"
+   ],
+   "guidance": "B1 for 0.2 × 0.4 or 0.3 × 0.1. M1 allow omission of the factor 2; may be implied by 0.11. A1."
+  },
+  "7(a)": {
+   "type": "exact",
+   "points": [
+    "u₂ = 3, u₃ = 8, u₄ = 13"
+   ],
+   "guidance": "B1. B0 if wrongly attributed."
+  },
+  "7(b)": {
+   "type": "points",
+   "points": [
+    "Divergent, because the difference between consecutive terms is not decreasing"
+   ],
+   "guidance": "E1. Allow: divergent because the terms are not tending to a finite limit, or because the terms tend to infinity. Do not allow: divergent because not convergent, or because the terms get bigger."
+  },
+  "7(c)": {
+   "type": "points",
+   "points": [
+    "u₃₀ = −2 + (30 − 1) × 5 used",
+    "u₃₀ = 143"
+   ],
+   "guidance": "M1 a must be one of u₀ to u₄ in the AP and d must be 5; allow a correct full list of terms. A1 must see at least −2 + 29 × 5. If M0, allow SCB1 for 143 not fully supported."
+  },
+  "7(d)": {
+   "type": "points",
+   "points": [
+    "S₃₀ = (30/2)(−2 + their 143), or (30/2)(2 × (−2) + 29 × 5)",
+    "S₃₀ = 2115"
+   ],
+   "guidance": "M1 a must be −2 and d must be 5; allow the sum of a full correct list. A1 must see at least 15 × (−2 + their 143). If M0, allow SCB1 for 2115 not fully supported."
+  },
+  "8": {
+   "type": "points",
+   "points": [
+    "Differentiate: dy/dx = 6x² + 6mx − 9m",
+    "All terms correct",
+    "Discriminant (6m)² − 4 × 6 × (−9m) seen",
+    "Set the discriminant less than zero: 36m² + 216m < 0",
+    "Critical values 0 and −6 identified",
+    "−6 < m < 0"
+   ],
+   "guidance": "M1* differentiation of all four terms with three differentiated correctly. A1 all correct. M1dep* discriminant for their coefficients. M1 dependent on obtaining the discriminant from their derivative; M0 for using > 0 or ⩾ 0. A1 for the critical values. A1 the inequality must be strict."
+  },
+  "9(a)": {
+   "type": "points",
+   "points": [
+    "The sample would probably not include any pupils who cycle or walk to school, so it is biased towards certain methods of transport"
+   ],
+   "guidance": "B1 must refer to at least one of the given modes of transport."
+  },
+  "9(b)": {
+   "type": "points",
+   "points": [
+    "(107/500) × 60",
+    "13 pupils"
+   ],
+   "guidance": "M1 allow a slip in calculating 500 if it is clearly their sum of all pupils; may be implied by 12.84. A1 B2 for 13 unsupported."
+  },
+  "9(c)": {
+   "type": "points",
+   "points": [
+    "Not a simple random sample, because every possible sample does not have an equal probability of being selected"
+   ],
+   "guidance": "B1. Allow: because it is not possible to select every possible sample, or because every pupil is not equally likely to be selected. Do not allow: because it is systematic sampling."
+  },
+  "10(a)": {
+   "type": "points",
+   "points": [
+    "8^(1/3) = 2 seen",
+    "1 + (1/3)(3x/8) + [(1/3)(1/3 − 1)/2!](3x/8)² + …",
+    "Expansion of the bracket as 1 + x/8 − x²/64",
+    "2 + x/4 − x²/32"
+   ],
+   "guidance": "B1 for 8^(1/3) or 2. M1 two of the first three terms correct; must see substitution for the third term. A1 may be unsimplified. A1 all three terms correct; ignore extra terms."
+  },
+  "10(b)": {
+   "type": "exact",
+   "points": [
+    "|x| < 8/3, that is −8/3 < x < 8/3"
+   ],
+   "guidance": "B1FT their (1 + (a/b)x). Allow non-strict inequalities; mark the final answer."
+  },
+  "11(a)": {
+   "type": "points",
+   "points": [
+    "The point with low gas cost and low electricity cost circled, away from the main cluster"
+   ],
+   "guidance": "B1."
+  },
+  "11(b)": {
+   "type": "points",
+   "points": [
+    "Weak positive association, or weak positive correlation"
+   ],
+   "guidance": "B1. Allow: as the cost of electricity increases, the cost of gas increases."
+  },
+  "11(c)": {
+   "type": "points",
+   "points": [
+    "Compare 0.09195 with 0.025 (two-tailed at the 5% level)",
+    "0.09195 > 0.025",
+    "Insufficient evidence at the 5% level to suggest any association between the cost of gas and the cost of electricity"
+   ],
+   "guidance": "M1 allow 'p-value > 0.05'. A1 allow p-value > 0.025. A1 A0 if it refers to correlation rather than association; dependent on the previous A1."
+  },
+  "12": {
+   "type": "points",
+   "points": [
+    "H₀: p = 0.1 and H₁: p ≠ 0.1",
+    "p is the probability that a British adult selected at random is a vegetarian",
+    "Find P(X ⩾ 19) using B(112, 0.1)",
+    "P(X ⩾ 19) = 0.0153",
+    "Compare their 0.0153 with 0.025 for a two-tailed test",
+    "Reject H₀ (do not write 'accept H₀')",
+    "Sufficient evidence at the 5% level to suggest that the probability an adult is vegetarian is not 0.10"
+   ],
+   "guidance": "B1 hypotheses; allow equivalent in words but do not allow percentages. B1 definition of p. M1* P(X ⩾ k) found using B(112, 0.1) for k = 18, 19 or 20; M0 for P(X = 19). A1 for the probability. M1dep* correct comparison with 0.025. A1FT. A1 dependent on all other marks except the second B1; do not allow 'conclude' or 'prove' instead of 'suggest'. Alternatively use the critical region X ⩽ 4 ∪ X ⩾ 19, or a Normal approximation N(11.2, 10.08) with a continuity correction."
+  },
+  "13": {
+   "type": "points",
+   "points": [
+    "Differentiate y² implicitly to 2y(dy/dx) using the chain rule",
+    "Differentiate xy to y + x(dy/dx) using the product rule",
+    "Complete the differentiation with + 2x − 1 = 0",
+    "Substitute dy/dx = 0 to give y + 2x − 1 = 0",
+    "Eliminate x or y using that relation",
+    "Obtain 3x² − 4x = 0 or 3y² + 2y − 5 = 0",
+    "x = 0 and x = 4/3",
+    "y = 1 and y = −5/3",
+    "Turning points (0, 1) and (4/3, −5/3)"
+   ],
+   "guidance": "B1 chain rule. B1 product rule. B1 remaining terms; may be awarded if '= 0' is seen later. M1 substitution of dy/dx = 0, dependent on at least one B mark. M1 elimination of x or y, dependent on at least one B mark. A1 for the quadratic. M1 values from their quadratic. M1 values found by substitution. A1 A0 if extra points appear in the final answer; dependent on fully correct working. Note that substituting into the original equation may generate the extra points y = −1 or 1/3."
+  },
+  "14(a)": {
+   "type": "points",
+   "points": [
+    "Not all the data were available for those women, so they could not be included"
+   ],
+   "guidance": "B1 large data set advantage. Must refer to data not being available, or to #N/A."
+  },
+  "14(b)": {
+   "type": "points",
+   "points": [
+    "57.7 − 1.5 × (82.05 − 57.7) or 82.05 + 1.5 × (82.05 − 57.7) seen",
+    "Outliers lie below 21.175 or above 118.575",
+    "Since there are none in the lower tail, all outliers lie in (118.575, 132.2]"
+   ],
+   "guidance": "M1 for the calculation. A1 given to 1 d.p. or better; both regions needed. A1 allow between 118.6 and 132.2, with strict or non-strict inequalities."
+  },
+  "14(c)": {
+   "type": "points",
+   "points": [
+    "They should not be removed, since there is no reason to doubt that the data are genuine or to suspect they were misrecorded"
+   ],
+   "guidance": "B1 large data set advantage."
+  },
+  "14(d)": {
+   "type": "points",
+   "points": [
+    "A typical man is heavier than a typical woman, since 79.9 > 69.5"
+   ],
+   "guidance": "B1. Allow 'an average man is heavier than an average woman'. Do not allow the unqualified 'men are heavier than women'."
+  },
+  "14(e)": {
+   "type": "points",
+   "points": [
+    "The mean weight for men is greater, so the distribution for men is located about 10 kg further along the scale",
+    "The standard deviations are approximately equal, so the dispersion of weights is similar for men and women"
+   ],
+   "guidance": "B1 must refer to the mean or average. B1 must refer to the standard deviation or variance."
+  },
+  "15(a)(i)": {
+   "type": "exact",
+   "points": [
+    "Mean = 18535/55 = 337 ml"
+   ],
+   "guidance": "B1."
+  },
+  "15(a)(ii)": {
+   "type": "points",
+   "points": [
+    "s = √[(6247066.6 − 55 × 337²)/54] = √14.289 = 3.78 ml"
+   ],
+   "guidance": "B1 AG. Must see substitution of at least three of 6247066.6, 337, 55 and 54."
+  },
+  "15(b)": {
+   "type": "points",
+   "points": [
+    "The distribution is approximately symmetrical and bell-shaped",
+    "It is unimodal and the data are continuous"
+   ],
+   "guidance": "E1 E1 — allow any two valid reasons."
+  },
+  "15(c)": {
+   "type": "points",
+   "points": [
+    "Find P(X < 330) from N(337, 3.78²)",
+    "Multiply by 100",
+    "Expected number = 3.2 bottles (awrt)"
+   ],
+   "guidance": "M1 may be implied by 0.032; note z = (330 − 337)/3.78 = −1.85. M1 for × 100. A1 awrt 3.2 www — mark the final answer."
+  },
+  "15(d)": {
+   "type": "points",
+   "points": [
+    "z = ±2.3263 seen",
+    "their z = (330 − μ)/3.78",
+    "μ = 338.79, so the minimum mean is 339 ml (3 s.f.)"
+   ],
+   "guidance": "B1 to 2 or more d.p. M1 for the equation. A1 must be correct to 3 s.f.; A0 for μ ⩾ 339 or μ > 339. Alternatively use a calculator to bracket the critical value between 338 and 339."
+  },
+  "15(e)": {
+   "type": "points",
+   "points": [
+    "H₀: μ = 340 and H₁: μ < 340",
+    "μ is the population mean volume of drink in a bottle",
+    "The sample mean is distributed as N(340, 3.78²/100)",
+    "P(X̄ < 339.37) = 0.0477 to 0.048",
+    "Compare their 0.048 with 0.05",
+    "Reject H₀ (do not write 'accept H₀')",
+    "Sufficient evidence at the 5% level to suggest that the mean volume is less than 340 ml"
+   ],
+   "guidance": "B1 hypotheses; do not allow X̄ or X, but allow another symbol if defined as the population mean. B1 definition of μ. M1* for the distribution of the sample mean. A1 for the probability. M1dep* correct comparison with 0.05. A1FT. A1 dependent on all other marks except the second B1; do not allow 'conclude' or 'prove' instead of 'suggest'. Alternatively use the critical value X̄ = 339.378, or z = −1.667 compared with −1.645."
+  },
+  "16": {
+   "type": "points",
+   "points": [
+    "Separate the variables: ∫dy/y = ∫9 dx/((x − 1)(x + 2))",
+    "Set up partial fractions A/(x − 1) + B/(x + 2)",
+    "One of the two partial fractions correct",
+    "9/((x − 1)(x + 2)) = 3/(x − 1) − 3/(x + 2)",
+    "Integrate to ln y = A ln(x − 1) + B ln(x + 2) + c",
+    "ln y = 3 ln(x − 1) − 3 ln(x + 2) + c, including the constant",
+    "Substitute x = 2 and y = 16: ln 16 = 3 ln 1 − 3 ln 4 + c",
+    "c = 5 ln 4 = ln 1024",
+    "Combine the right-hand side into a single logarithm",
+    "ln y = ln[1024(x − 1)³/(x + 2)³]",
+    "Exponentiate both sides correctly",
+    "y = 1024(x − 1)³/(x + 2)³"
+   ],
+   "guidance": "M1 separation of variables; condone omission of integral signs or of dx and dy, and allow one slip. M1 partial fractions, allowing one sign error. A1 A1 one term then all correct. M1* any correct logarithmic integral, follow through their A and B. A1 all three terms including + c. M1dep* substitution of (2, 16). A1 exact equivalents only. M1 correctly combines into a single logarithm, with their + c correctly incorporated. A1 all correct. M1 correctly exponentiates. A1 all correct; must see 'y =' at some stage."
+  }
+ }
+},
  "math-ocr-h640-2024-p1": {
   "questions": [
    {
