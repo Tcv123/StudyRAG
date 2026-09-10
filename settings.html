@@ -302,9 +302,24 @@
     @media (max-width: 480px) {
       .main { padding: 12px 10px; }
     }
+    /* ── ROLE-SCOPED BLOCKS ──
+       Settings is one page for both roles. Anything marked data-role only
+       exists for that account type; the rest is shared. The role is taken
+       from the cached value before first paint and corrected by load() once
+       the profile comes back, so a teacher never sees a student's streak
+       controls flash past on the way in. */
+    html[data-role="teacher"] [data-role="student"],
+    html[data-role="student"] [data-role="teacher"] { display: none; }
   </style>
   <link rel="stylesheet" href="responsive.css">
   <script src="theme.js"></script>
+  <script>
+    // Default to student: the cache is only ever a hint, and load() overwrites it.
+    try {
+      document.documentElement.dataset.role =
+        localStorage.getItem('cached_account_type') === 'teacher' ? 'teacher' : 'student';
+    } catch (e) { document.documentElement.dataset.role = 'student'; }
+  </script>
 </head>
 <body>
 <div class="app">
@@ -356,10 +371,10 @@
   <main class="main">
     <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
     <div class="page-title">⚙ Settings</div>
-    <div class="page-sub">Manage your profile, preferences, and account.</div>
+    <div class="page-sub" id="pageSub">Manage your profile, preferences, and account.</div>
 
-    <!-- ── YOUR PLAN ── -->
-    <div class="settings-section">
+    <!-- ── YOUR PLAN (students only — the Pro upsell is aimed at people sitting the exam) ── -->
+    <div class="settings-section" data-role="student">
       <div class="section-title"><span class="section-icon">💳</span> Your plan</div>
       <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
         <div id="planCard" style="flex:1;min-width:200px;padding:16px 20px;border-radius:12px;border:1.5px solid var(--border);background:var(--surface2);">
@@ -452,9 +467,12 @@
       <div class="msg" id="passwordMsg"></div>
     </div>
 
-    <!-- ── STUDY PREFERENCES ── -->
+    <!-- ── PREFERENCES ──
+         Night mode is for everyone. The daily study goal only means something
+         to someone with their own streak, so a teacher gets the control they
+         actually need instead: which level Notes and Practice resolve to. -->
     <div class="settings-section">
-      <div class="section-title"><span class="section-icon">📚</span> Study preferences</div>
+      <div class="section-title"><span class="section-icon" id="prefsIcon">📚</span> <span id="prefsTitle">Study preferences</span></div>
       <div class="toggle-row">
         <div class="toggle-info">
           <div class="toggle-label">Night mode</div>
@@ -462,6 +480,10 @@
         </div>
         <button class="toggle" id="toggleDarkMode" onclick="toggleDarkMode()"></button>
       </div>
+      <!-- Each role's rows sit in their own wrapper so ".form-row:last-child"
+           still lands on the last row the viewer can actually see — otherwise
+           the visible last row keeps a divider with nothing under it. -->
+      <div data-role="student">
       <div class="form-row">
         <div class="form-label">Daily study goal</div>
         <div class="form-value">
@@ -476,36 +498,93 @@
           <div class="form-hint">Used for your daily streak progress bar</div>
         </div>
       </div>
+      </div>
+
+      <div data-role="teacher">
+      <div class="form-row">
+        <div class="form-label">Teaching level</div>
+        <div class="form-value">
+          <div class="goal-pills" id="levelPills"></div>
+          <div class="form-hint">Which spec Notes and Practice questions are shown at</div>
+          <div class="msg" id="levelMsg"></div>
+        </div>
+      </div>
+      </div>
     </div>
 
     <!-- ── NOTIFICATIONS ── -->
     <div class="settings-section">
       <div class="section-title"><span class="section-icon">🔔</span> Notifications</div>
+      <div data-role="student">
       <div class="toggle-row">
         <div class="toggle-info">
           <div class="toggle-label">Study reminders</div>
           <div class="toggle-desc">Get a reminder if you haven't studied today</div>
         </div>
-        <button class="toggle" id="toggleReminders" onclick="toggleSetting(this)"></button>
+        <button class="toggle" id="toggleReminders" data-key="notif_reminders" onclick="toggleSetting(this)"></button>
       </div>
       <div class="toggle-row">
         <div class="toggle-info">
           <div class="toggle-label">Streak alerts</div>
           <div class="toggle-desc">Get notified when your streak is about to break</div>
         </div>
-        <button class="toggle" id="toggleStreak" onclick="toggleSetting(this)"></button>
+        <button class="toggle" id="toggleStreak" data-key="notif_streak" onclick="toggleSetting(this)"></button>
       </div>
       <div class="toggle-row">
         <div class="toggle-info">
           <div class="toggle-label">New content updates</div>
           <div class="toggle-desc">Get notified when new topics or questions are added</div>
         </div>
-        <button class="toggle" id="toggleContent" onclick="toggleSetting(this)"></button>
+        <button class="toggle" id="toggleContent" data-key="notif_content" onclick="toggleSetting(this)"></button>
+      </div>
+      </div>
+
+      <div data-role="teacher">
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">New students</div>
+          <div class="toggle-desc">Get notified when someone joins one of your classes</div>
+        </div>
+        <button class="toggle" id="toggleJoins" data-key="notif_class_joins" onclick="toggleSetting(this)"></button>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Weekly class summary</div>
+          <div class="toggle-desc">A Monday digest of how each class is getting on</div>
+        </div>
+        <button class="toggle" id="toggleWeekly" data-key="notif_weekly_summary" onclick="toggleSetting(this)"></button>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Red topic alerts</div>
+          <div class="toggle-desc">Get notified when a topic goes red across a class</div>
+        </div>
+        <button class="toggle" id="toggleRed" data-key="notif_red_topics" onclick="toggleSetting(this)"></button>
+      </div>
       </div>
     </div>
 
-    <!-- ── PROGRESS & DATA ── -->
-    <div class="settings-section">
+    <!-- ── YOUR CLASSES (teachers) — the counterpart to a student's progress card ── -->
+    <div class="settings-section" data-role="teacher">
+      <div class="section-title"><span class="section-icon">🧑‍🏫</span> Your classes</div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label" id="classesSummary">Loading…</div>
+          <div class="toggle-desc" id="classesDetail">Classes you own, and the students in them</div>
+        </div>
+        <button class="btn btn-outline" onclick="location.href='teacher.html'">Manage classes</button>
+      </div>
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Subjects you teach</div>
+          <div class="toggle-desc" id="teachSubjects">Taken from your classes — create a class to add a subject</div>
+        </div>
+        <button class="btn btn-outline" onclick="location.href='teacher.html#new-class'">New class</button>
+      </div>
+    </div>
+
+    <!-- ── PROGRESS & DATA (students only — a teacher has no RAG progress or streak of their own) ── -->
+    <div class="settings-section" data-role="student">
       <div class="section-title"><span class="section-icon">📊</span> Progress & data</div>
       <div class="toggle-row">
         <div class="toggle-info">
@@ -654,6 +733,7 @@ async function load() {
   document.getElementById('emailField').value = user.email;
   loadedAccountType = profile?.account_type === 'teacher' ? 'teacher' : 'student';
   document.getElementById('accountType').value = loadedAccountType;
+  applyRole(loadedAccountType);
 
   // Avatar picker — detect the saved style so its tab is pre-selected
   currentAvatarUrl = profile?.avatar_url || null;
@@ -668,13 +748,93 @@ async function load() {
   studyGoal = parseInt(localStorage.getItem('study_goal') || '30');
   renderGoalPills();
 
-  // Notification toggles from localStorage
-  if (localStorage.getItem('notif_reminders') === 'true')
-    document.getElementById('toggleReminders').classList.add('on');
-  if (localStorage.getItem('notif_streak') === 'true')
-    document.getElementById('toggleStreak').classList.add('on');
-  if (localStorage.getItem('notif_content') === 'true')
-    document.getElementById('toggleContent').classList.add('on');
+  // Notification toggles from localStorage — both roles' toggles carry a
+  // data-key, so this covers whichever set is on screen.
+  document.querySelectorAll('.toggle[data-key]').forEach(el => {
+    el.classList.toggle('on', localStorage.getItem(el.dataset.key) === 'true');
+  });
+
+  if (loadedAccountType === 'teacher') initTeacher(profile);
+}
+
+// ── Role ──
+// Swaps the page between the two account types. Sections and rows marked
+// data-role are shown or hidden by CSS off the <html> attribute; the few
+// labels that differ in wording are set here.
+function applyRole(role) {
+  document.documentElement.dataset.role = role;
+  try { localStorage.setItem('cached_account_type', role); } catch (e) {}
+
+  const teacher = role === 'teacher';
+  document.getElementById('pageSub').textContent = teacher
+    ? 'Manage your profile, teaching preferences, and account.'
+    : 'Manage your profile, preferences, and account.';
+  document.getElementById('prefsTitle').textContent = teacher ? 'Teaching preferences' : 'Study preferences';
+  document.getElementById('prefsIcon').textContent  = teacher ? '🎓' : '📚';
+}
+
+// ── Teacher ──
+const LEVEL_ORDER = ['gcse', 'as', 'a-level'];
+const LEVEL_LABEL = { gcse: 'GCSE', as: 'AS', 'a-level': 'A-Level' };
+let teachingLevel = null;
+
+// The classes a teacher owns are the source for both teacher-only panels:
+// which levels they can switch between, and the summary of their classes.
+// One query, same shape teacher.html uses; RLS already scopes it to them.
+async function initTeacher(profile) {
+  teachingLevel = profile?.level || null;
+  renderLevelPills([]);
+
+  const { data, error } = await supabaseClient
+    .from('classes')
+    .select('subject, exam_board, level, archived, class_members(count)');
+  if (error) return;
+
+  const all  = data || [];
+  const live = all.filter(c => !c.archived);
+  renderLevelPills(live);
+  renderClassSummary(live, all.length - live.length);
+}
+
+// Notes, Practice and Breakdown all resolve their spec from profiles.level.
+// Offer the levels this teacher actually covers; if they have no classes yet,
+// offer all three so the setting still works before the first class exists.
+function renderLevelPills(live) {
+  const present = LEVEL_ORDER.filter(l => live.some(c => c.level === l));
+  const levels  = present.length ? present : LEVEL_ORDER;
+  document.getElementById('levelPills').innerHTML = levels.map(l =>
+    `<div class="goal-pill${l === teachingLevel ? ' active' : ''}" onclick="setTeachingLevelPref('${l}')">${LEVEL_LABEL[l]}</div>`
+  ).join('');
+}
+
+async function setTeachingLevelPref(level) {
+  const msg = document.getElementById('levelMsg');
+  const { error } = await supabaseClient.from('profiles').update({ level }).eq('id', currentUser.id);
+  if (error) { showMsg(msg, 'error', 'Could not save: ' + error.message); return; }
+
+  teachingLevel = level;
+  try { localStorage.setItem('cached_level', level); } catch (e) {}
+  document.querySelectorAll('#levelPills .goal-pill').forEach(p =>
+    p.classList.toggle('active', p.textContent === LEVEL_LABEL[level]));
+  showMsg(msg, 'success', `Notes and Practice now show ${LEVEL_LABEL[level]}.`);
+}
+
+function renderClassSummary(live, archivedCount) {
+  const students = live.reduce((n, c) => n + (c.class_members?.[0]?.count ?? 0), 0);
+  const plural = (n, word) => `${n} ${word}${n === 1 ? '' : 's'}`;
+
+  document.getElementById('classesSummary').textContent = live.length
+    ? `${live.length === 1 ? '1 class' : live.length + ' classes'} · ${plural(students, 'student')}`
+    : 'No classes yet';
+  const archivedLabel = archivedCount === 1 ? '1 archived class' : `${archivedCount} archived classes`;
+  document.getElementById('classesDetail').textContent = live.length
+    ? (archivedCount ? `${archivedLabel} not shown` : 'All active')
+    : 'Create a class to get a join code to share with your students';
+
+  const specs = [...new Set(live.map(c => `${c.subject} (${c.exam_board})`))];
+  document.getElementById('teachSubjects').textContent = specs.length
+    ? specs.join(', ')
+    : 'Taken from your classes — create a class to add a subject';
 }
 
 // ── Avatar ──
@@ -826,7 +986,8 @@ function setGoal(mins) {
 }
 
 function renderGoalPills() {
-  document.querySelectorAll('.goal-pill').forEach(p => {
+  // Scoped to #goalPills — the teacher level pills reuse the same class.
+  document.querySelectorAll('#goalPills .goal-pill').forEach(p => {
     const val = parseInt(p.textContent);
     const mins = p.textContent.includes('hour')
       ? (p.textContent.includes('1.5') ? 90 : p.textContent.includes('2') ? 120 : 60)
@@ -838,11 +999,7 @@ function renderGoalPills() {
 // ── Toggles ──
 function toggleSetting(el) {
   el.classList.toggle('on');
-  const id = el.id;
-  const key = id === 'toggleReminders' ? 'notif_reminders'
-            : id === 'toggleStreak'    ? 'notif_streak'
-            : 'notif_content';
-  localStorage.setItem(key, el.classList.contains('on') ? 'true' : 'false');
+  if (el.dataset.key) localStorage.setItem(el.dataset.key, el.classList.contains('on') ? 'true' : 'false');
 }
 
 // ── Reset progress ──

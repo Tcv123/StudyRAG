@@ -30,7 +30,7 @@
   // also have a SUBJECT_TOPICS entry in practice.html — otherwise the
   // practice page will show a "Topics coming soon" placeholder card.
   const boards = {
-    'Mathematics':         ['AQA', 'OCR', 'Edexcel'],
+    'Mathematics':         ['AQA', 'OCR', 'Edexcel', 'OCR B'],
     'Further Mathematics': ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
     'Chemistry':           ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
     'Biology':             ['AQA', 'Edexcel', 'Edexcel IGCSE', 'Edexcel A', 'Edexcel B', 'OCR A', 'OCR B'],
