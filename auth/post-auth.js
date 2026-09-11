@@ -25,15 +25,36 @@
    * ignoreDuplicates keeps this from overwriting anything on later logins,
    * so a user who changes their name or switches account type in settings
    * keeps that change. */
-  async function ensureProfile(user) {
-    if (!user) return;
-    await supabaseClient.from('profiles').upsert({
+  async function ensureProfile(user, { attempts = 3 } = {}) {
+    if (!user) return false;
+
+    const row = {
       id:           user.id,
       first_name:   user.user_metadata?.first_name || '',
       last_name:    user.user_metadata?.last_name  || '',
       email:        user.email,
       account_type: user.user_metadata?.account_type === 'teacher' ? 'teacher' : 'student'
-    }, { onConflict: 'id', ignoreDuplicates: true });
+    };
+
+    /* This used to be a single fire-and-forget upsert whose result was
+     * discarded. When it failed — a dropped request, a blocked connection,
+     * a tab closed mid-flight — nothing noticed and nothing retried, so the
+     * user ended up confirmed in auth.users with no profiles row and no
+     * early-adopter grant. 14 accounts were lost that way between May and
+     * September 2026. Retry, and tell the caller whether it worked. */
+    let lastErr = null;
+    for (let attempt = 1; attempt <= attempts; attempt++) {
+      const { error } = await supabaseClient
+        .from('profiles')
+        .upsert(row, { onConflict: 'id', ignoreDuplicates: true });
+
+      if (!error) return true;
+      lastErr = error;
+      if (attempt < attempts) await new Promise(r => setTimeout(r, 300 * attempt));
+    }
+
+    console.error('[post-auth] could not create profiles row for', user.id, lastErr);
+    return false;
   }
 
   /* Where this user should land, as a path relative to /auth/.
