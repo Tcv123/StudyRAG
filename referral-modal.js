@@ -307,6 +307,11 @@
     show(user);
   }
 
+  /* Exposed so admin-attribution.html can label the bars from the same list
+   * the modal offers — one source of truth, so a renamed option can never
+   * show up as a raw slug on the chart. */
+  window.REFERRAL_SOURCES = SOURCES;
+
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', maybeAsk);
   } else {
