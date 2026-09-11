@@ -27,6 +27,17 @@
   const CACHE_MS    = 30 * 60 * 1000;   // same 30 minutes nav-gating uses
   const SECTION_ID  = 'admin-nav-section';
 
+  // Absolute URL of the folder admin-nav.js sits in, which is the site root.
+  // Read from the script's own src because location.pathname cannot tell a
+  // site served from a domain root (raglearning.uk/Dashboard.html) apart from
+  // one served under a subpath (tcv123.github.io/StudyRAG/Dashboard.html) —
+  // counting path segments gets the subpath case wrong by one level.
+  const ROOT = (function () {
+    const el  = document.currentScript
+             || document.querySelector('script[src$="admin-nav.js"]');
+    return el && el.src ? el.src.replace(/[^/]*$/, '') : '/';
+  })();
+
   // ── Phase 1: optimistic render from cache ───────────────────────
   // Only an account that has already passed the Postgres check can have
   // a fresh `true` here, so this is never shown to a normal user.
@@ -92,7 +103,6 @@
     if (!sidebar) return;                               // page has no sidebar
     if (document.getElementById(SECTION_ID)) return;    // already there
 
-    const prefix = '../'.repeat(depthFromRoot());
     const here   = (location.pathname.split('/').pop() || '').toLowerCase()
                      .replace(/\.html$/, '');           // Vercel cleanUrls drops .html
 
@@ -107,7 +117,7 @@
 
     const link = document.createElement('a');
     link.className = 'nav-item' + (here === 'admin' ? ' active' : '');
-    link.href = prefix + 'admin.html';
+    link.href = ROOT + 'admin.html';
     link.style.cursor = 'pointer';
 
     const icon = document.createElement('span');
@@ -130,12 +140,5 @@
   function removeSection() {
     const el = document.getElementById(SECTION_ID);
     if (el) el.remove();
-  }
-
-  // /Dashboard.html -> 0, /flashcards/subject.html -> 1. Same helper as
-  // nav-gating.js, kept local so neither file depends on the other.
-  function depthFromRoot() {
-    const parts = location.pathname.replace(/\\/g, '/').split('/').filter(Boolean);
-    return Math.max(0, parts.length - 1);
   }
 })();
