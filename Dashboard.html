@@ -58,7 +58,10 @@
       padding: 24px 0;
       position: fixed; top: 0; left: 0; bottom: 0; z-index: 10;
       box-shadow: 2px 0 16px rgba(37,99,235,0.08);
+      overflow-y: auto;
     }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
 
     .sidebar-logo {
       display: flex; align-items: center; gap: 10px;
