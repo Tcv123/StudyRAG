@@ -2817,8 +2817,17 @@ function welcomeKey() {
 function maybeShowWelcome() {
   const key = welcomeKey();
   if (!key || localStorage.getItem(key)) return;
-  const overlay = document.getElementById('helpOverlay');
-  if (overlay) overlay.classList.add('active');
+
+  // Queue behind the referral question rather than stacking on top of it —
+  // a brand new account is owed both, and two modals at once reads as a bug.
+  // Resolves immediately for anyone who has already answered. The fallback
+  // keeps the old behaviour if referral-modal.js is ever not loaded.
+  const gate = window.REFERRAL_MODAL ? window.REFERRAL_MODAL.whenSettled
+                                     : Promise.resolve();
+  gate.then(() => {
+    const overlay = document.getElementById('helpOverlay');
+    if (overlay) overlay.classList.add('active');
+  });
 }
 
 function dismissWelcome() {

@@ -46,6 +46,18 @@
     { slug: 'other',         emoji: '✏️', label: 'Somewhere else'     }
   ];
 
+  /* Resolves once this modal is out of the way — either because it was
+   * answered and dismissed, or because it was never needed. Anything else
+   * that wants to greet a new user (the Getting Started panel on the
+   * Dashboard) waits on this instead of racing it, so the two never stack.
+   *
+   * Created synchronously, before any await, because the page's own script
+   * reads it during its first pass. If the user closes the tab without
+   * answering it simply never resolves, which is the point — the referral
+   * question is forced, so nothing queued behind it should appear either. */
+  var settle;
+  var whenSettled = new Promise(function (resolve) { settle = resolve; });
+
   function lsGet(k) { try { return localStorage.getItem(k); } catch (_) { return null; } }
   function lsSet(k, v) { try { localStorage.setItem(k, v); } catch (_) {} }
 
@@ -242,6 +254,7 @@
     });
 
     function close() {
+      settle();
       backdrop.classList.remove('rfm-in');
       document.body.style.overflow = prevOverflow;
       document.removeEventListener('keydown', trap, true);
@@ -286,12 +299,12 @@
 
   // ── ENTRY ─────────────────────────────────────────────────────────
   async function maybeAsk() {
-    if (typeof supabaseClient === 'undefined') return;
-    if (lsGet(CACHE_KEY) === 'true') return;
+    if (typeof supabaseClient === 'undefined') return settle();
+    if (lsGet(CACHE_KEY) === 'true')           return settle();
 
     var session = await supabaseClient.auth.getSession();
     var user = session?.data?.session?.user;
-    if (!user) return;
+    if (!user) return settle();
 
     var res = await supabaseClient
       .from('user_attribution')
@@ -301,8 +314,8 @@
 
     /* A failed read must not prompt someone who already answered, so any
      * error means stay quiet and try again on the next page load. */
-    if (res.error) { console.warn('[referral-modal] lookup failed', res.error); return; }
-    if (res.data)  { lsSet(CACHE_KEY, 'true'); return; }
+    if (res.error) { console.warn('[referral-modal] lookup failed', res.error); return settle(); }
+    if (res.data)  { lsSet(CACHE_KEY, 'true'); return settle(); }
 
     show(user);
   }
@@ -311,6 +324,10 @@
    * the modal offers — one source of truth, so a renamed option can never
    * show up as a raw slug on the chart. */
   window.REFERRAL_SOURCES = SOURCES;
+
+  /* Queue behind the referral question:
+   *     window.REFERRAL_MODAL.whenSettled.then(showMyThing) */
+  window.REFERRAL_MODAL = { whenSettled: whenSettled };
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', maybeAsk);
