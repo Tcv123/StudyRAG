@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Admin — RAG Learning</title>
+
+  <!--
+    PRIVATE PAGE. Reachable by anyone who types the URL — the file is in a
+    public repo and served statically, so there is no such thing as hiding
+    it. It is gated twice over instead:
+
+      1. This page checks is_admin() and shows a locked panel otherwise.
+         Cosmetic. Anyone can read this JS and skip past it.
+      2. The real gate is in Postgres. Every figure below arrives from a
+         SECURITY DEFINER function that re-checks is_admin itself, so a
+         non-admin who forces the panel open gets a page of empty lists.
+
+    A non-admin who lands here is itself logged, via log_security_event.
+
+    EVERYTHING USER-AUTHORED IS WRITTEN WITH textContent, NEVER innerHTML.
+    One of the signals on this page exists to surface profile names that
+    contain <script> tags — rendering those as HTML would hand the attacker
+    the admin session they were fishing for.
+
+    Schema: db/migrations/2026-09-11-admin-security.sql
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg); color: var(--text);
+      font-family: var(--font-body, 'DM Sans', sans-serif);
+      font-size: 15px; -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: 940px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .back {
+      display: inline-block; margin-bottom: 28px;
+      color: var(--muted); text-decoration: none; font-size: 14px;
+    }
+    .back:hover { color: var(--accent); }
+
+    h1 { font-family: var(--font-display, serif); font-size: 32px; line-height: 1.15; }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 6px; max-width: 640px; line-height: 1.6; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 24px 26px 22px; margin-top: 24px;
+    }
+    .card-head { display: flex; align-items: baseline; gap: 12px; flex-wrap: wrap; margin-bottom: 18px; }
+    .card-title { font-size: 13px; font-weight: 600; letter-spacing: .04em;
+                  text-transform: uppercase; color: var(--muted); }
+    .card-note { font-size: 12.5px; color: var(--muted2); }
+
+    /* ── Summary tiles ── */
+    .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 12px; }
+    .tile {
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 12px; padding: 16px 18px;
+    }
+    .tile-num { font-family: var(--font-display, serif); font-size: 30px; line-height: 1.1; }
+    .tile-label { color: var(--muted); font-size: 12.5px; margin-top: 4px; }
+    .tile.alarm { background: var(--red-bg); border-color: var(--red-border); }
+    .tile.alarm .tile-num { color: var(--red-text); }
+
+    /* ── Signal / event rows ── */
+    .item {
+      border-top: 1px solid var(--border);
+      padding: 15px 0;
+      display: grid; grid-template-columns: 1fr auto; gap: 14px; align-items: start;
+    }
+    .item:first-of-type { border-top: none; padding-top: 0; }
+    .item:last-child { padding-bottom: 0; }
+
+    .item-head { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; margin-bottom: 5px; }
+    .item-title { font-size: 14.5px; font-weight: 500; }
+    .item-detail { font-size: 13.5px; color: var(--muted); line-height: 1.55; word-break: break-word; }
+    .item-meta { font-size: 12px; color: var(--muted2); margin-top: 5px; }
+
+    .chip {
+      display: inline-block; padding: 2px 8px; border-radius: 999px;
+      font-size: 11px; font-weight: 600; white-space: nowrap;
+    }
+    .chip.high   { background: var(--red-bg);    color: var(--red-text);    }
+    .chip.medium { background: var(--amber-bg);  color: var(--amber-text);  }
+    .chip.low    { background: var(--surface3);  color: var(--muted);       }
+    .chip.proof  { background: var(--green-bg);  color: var(--green-text);  }
+    .chip.hint   { background: var(--surface3);  color: var(--muted);       }
+
+    .actions { display: flex; flex-direction: column; gap: 6px; align-items: flex-end; }
+
+    button.act {
+      font-family: inherit; font-size: 12.5px; cursor: pointer;
+      padding: 6px 12px; border-radius: 8px; white-space: nowrap;
+      background: var(--surface2); color: var(--text);
+      border: 1px solid var(--border);
+      transition: background .12s, border-color .12s;
+    }
+    button.act:hover:not(:disabled) { background: var(--surface3); border-color: var(--border-hover); }
+    button.act:disabled { opacity: .5; cursor: default; }
+    button.act.danger { background: var(--red-bg); color: var(--red-text); border-color: var(--red-border); }
+
+    .toggle { display: flex; gap: 6px; margin-left: auto; }
+    .toggle button {
+      font-family: inherit; font-size: 12.5px; cursor: pointer;
+      padding: 5px 11px; border-radius: 999px;
+      background: transparent; color: var(--muted);
+      border: 1px solid var(--border);
+    }
+    .toggle button[aria-pressed="true"] {
+      background: var(--accent-dim); color: var(--accent-dark);
+      border-color: transparent; font-weight: 500;
+    }
+
+    .empty { color: var(--muted); font-size: 14px; }
+    .good  { color: var(--green-text); font-size: 14px; }
+
+    .links { display: flex; gap: 10px; flex-wrap: wrap; }
+    .links a {
+      text-decoration: none; font-size: 13.5px;
+      padding: 9px 14px; border-radius: 10px;
+      background: var(--surface2); border: 1px solid var(--border); color: var(--text);
+    }
+    .links a:hover { border-color: var(--border-hover); color: var(--accent-dark); }
+
+    .locked { text-align: center; padding: 80px 20px; }
+    .locked h2 { font-family: var(--font-display, serif); font-size: 24px; margin-bottom: 8px; }
+    .locked p  { color: var(--muted); font-size: 14px; }
+
+    @media (max-width: 620px) {
+      .item { grid-template-columns: 1fr; }
+      .actions { flex-direction: row; align-items: center; justify-content: flex-start; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="wrap" id="wrap" hidden>
+    <a class="back" href="Dashboard.html">← Dashboard</a>
+
+    <h1>Admin</h1>
+    <p class="sub">
+      Abuse signals, the incident log, and the accounts you have flagged.
+      Everything here is read through functions that check your admin flag
+      in Postgres — opening this page without that flag shows you nothing.
+    </p>
+
+    <!-- ── Counts ── -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">At a glance</div></div>
+      <div class="tiles" id="tiles"><p class="empty">Loading…</p></div>
+    </div>
+
+    <!-- ── Live signals ── -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Signals</div>
+        <div class="card-note">
+          Recomputed from live data each time you open this page, so it covers
+          activity from before any of this logging existed.
+        </div>
+      </div>
+      <div id="signals"><p class="empty">Loading…</p></div>
+    </div>
+
+    <!-- ── Incident log ── -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Incident log</div>
+        <div class="card-note">Append-only. Marking one reviewed stamps it, it never deletes it.</div>
+        <div class="toggle">
+          <button id="tabOpen" aria-pressed="true"  onclick="setFilter(true)">Open</button>
+          <button id="tabAll"  aria-pressed="false" onclick="setFilter(false)">All</button>
+        </div>
+      </div>
+      <div id="events"><p class="empty">Loading…</p></div>
+    </div>
+
+    <!-- ── Flagged accounts ── -->
+    <div class="card">
+      <div class="card-head">
+        <div class="card-title">Flagged accounts</div>
+        <div class="card-note">
+          A note to yourself. Flagging does not suspend anyone or block sign-in —
+          acting on a flag stays a decision you make by hand.
+        </div>
+      </div>
+      <div id="flagged"><p class="empty">Loading…</p></div>
+    </div>
+
+    <!-- ── Other admin pages ── -->
+    <div class="card">
+      <div class="card-head"><div class="card-title">Elsewhere</div></div>
+      <div class="links">
+        <a href="admin-attribution.html">Where people come from →</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="locked" id="locked" hidden>
+    <h2>Not available</h2>
+    <p>This page is for administrators.</p>
+    <p style="margin-top:18px;"><a class="back" href="Dashboard.html">← Back to dashboard</a></p>
+  </div>
+
+  <script src="theme.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    var onlyOpen = true;
+
+    // ── DOM helpers ─────────────────────────────────────────────────
+    // el() only ever sets textContent. Nothing on this page builds markup
+    // from a string, because half the point of the page is showing you text
+    // that other people wrote and some of it is trying to be markup.
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text !== undefined && text !== null) n.textContent = String(text);
+      return n;
+    }
+
+    function clear(node) { while (node.firstChild) node.removeChild(node.firstChild); }
+
+    function when(ts) {
+      if (!ts) return 'unknown date';
+      var d = new Date(ts);
+      return d.toLocaleString('en-GB', {
+        day: 'numeric', month: 'short', year: 'numeric',
+        hour: '2-digit', minute: '2-digit'
+      });
+    }
+
+    var SEVERITY_RANK = { high: 0, medium: 1, low: 2 };
+
+    // Human-readable names for the machine-readable `kind` slugs the SQL
+    // returns. An unknown kind falls back to the slug rather than blank —
+    // adding a signal to the migration should not silently produce a row
+    // with no title here.
+    var KIND_LABELS = {
+      privilege_escalation:        'Privilege escalation',
+      privileged_insert_blocked:   'Privilege escalation',
+      privilege_escalation_blocked:'Privilege escalation',
+      impossible_score:            'Impossible score',
+      instant_full_marks:          'Instant full marks',
+      bulk_attempts:               'Bulk submissions',
+      unbacked_pro:                'Unbacked Pro tier',
+      injected_markup:             'Markup in a name',
+      injected_markup_class:       'Markup in a class name',
+      signup_burst:                'Sign-up burst',
+      join_code_guessing:          'Join-code guessing',
+      spam_feedback:               'Spam in feedback',
+      admin_page_denied:           'Admin page opened by a non-admin',
+      pro_page_denied:             'Pro page opened without Pro',
+      account_flagged:             'Account flagged',
+      account_unflagged:           'Account unflagged'
+    };
+
+    function labelFor(kind) { return KIND_LABELS[kind] || kind; }
+
+    // ── Summary tiles ───────────────────────────────────────────────
+    function renderSummary(s) {
+      var host = document.getElementById('tiles');
+      clear(host);
+
+      if (!s) {
+        host.appendChild(el('p', 'empty', 'Could not load — check the migration has been run.'));
+        return;
+      }
+
+      [
+        { n: s.open_events,   label: 'open events',        alarm: Number(s.open_events) > 0 },
+        { n: s.high_events,   label: 'open and high',      alarm: Number(s.high_events) > 0 },
+        { n: s.events_7d,     label: 'events this week',   alarm: false },
+        { n: s.flagged_users, label: 'flagged accounts',   alarm: false },
+        { n: s.total_users,   label: 'accounts total',     alarm: false }
+      ].forEach(function (t) {
+        var tile = el('div', 'tile' + (t.alarm ? ' alarm' : ''));
+        tile.appendChild(el('div', 'tile-num', t.n === null || t.n === undefined ? '—' : t.n));
+        tile.appendChild(el('div', 'tile-label', t.label));
+        host.appendChild(tile);
+      });
+    }
+
+    // ── Signals ─────────────────────────────────────────────────────
+    function renderSignals(rows) {
+      var host = document.getElementById('signals');
+      clear(host);
+
+      if (!rows.length) {
+        host.appendChild(el('p', 'good', 'Nothing is tripping any of the checks right now.'));
+        return;
+      }
+
+      rows.sort(function (a, b) {
+        var d = (SEVERITY_RANK[a.severity] ?? 3) - (SEVERITY_RANK[b.severity] ?? 3);
+        if (d !== 0) return d;
+        return new Date(b.last_seen || 0) - new Date(a.last_seen || 0);
+      });
+
+      rows.forEach(function (r) {
+        var item = el('div', 'item');
+        var main = el('div');
+
+        var head = el('div', 'item-head');
+        head.appendChild(el('span', 'chip ' + (r.severity || 'low'), r.severity || 'low'));
+        head.appendChild(el('span', 'item-title', r.headline || labelFor(r.kind)));
+
+        // Only the escalation signal is written by Postgres itself. Everything
+        // else is a pattern match over ordinary data and can have innocent
+        // explanations, so the two are labelled differently.
+        var proven = r.kind === 'privilege_escalation';
+        head.appendChild(el('span', 'chip ' + (proven ? 'proof' : 'hint'),
+                            proven ? 'confirmed' : 'heuristic'));
+        main.appendChild(head);
+
+        if (r.detail) main.appendChild(el('div', 'item-detail', r.detail));
+
+        var meta = el('div', 'item-meta');
+        meta.textContent = (r.who || 'unknown') + ' · last seen ' + when(r.last_seen)
+                         + ' · ' + labelFor(r.kind);
+        main.appendChild(meta);
+
+        item.appendChild(main);
+
+        var actions = el('div', 'actions');
+        if (r.user_id) {
+          var flagBtn = el('button', 'act danger', 'Flag account');
+          flagBtn.onclick = function () { flagUser(r.user_id, r.headline || r.kind, flagBtn); };
+          actions.appendChild(flagBtn);
+        }
+        item.appendChild(actions);
+
+        host.appendChild(item);
+      });
+    }
+
+    // ── Incident log ────────────────────────────────────────────────
+    function renderEvents(rows) {
+      var host = document.getElementById('events');
+      clear(host);
+
+      if (!rows.length) {
+        host.appendChild(el('p', onlyOpen ? 'good' : 'empty',
+          onlyOpen ? 'No unreviewed events.' : 'Nothing logged yet.'));
+        return;
+      }
+
+      rows.forEach(function (r) {
+        var item = el('div', 'item');
+        var main = el('div');
+
+        var head = el('div', 'item-head');
+        head.appendChild(el('span', 'chip ' + (r.severity || 'low'), r.severity || 'low'));
+        head.appendChild(el('span', 'item-title', labelFor(r.kind)));
+        head.appendChild(el('span', 'chip ' + (r.source === 'db-trigger' ? 'proof' : 'hint'),
+                            r.source === 'db-trigger' ? 'from the database' : 'reported by a browser'));
+        if (r.reviewed_at) head.appendChild(el('span', 'chip low', 'reviewed'));
+        main.appendChild(head);
+
+        // JSON.stringify, then textContent. The detail blob holds whatever
+        // value the user tried to write, which is attacker-controlled.
+        if (r.detail && Object.keys(r.detail).length) {
+          main.appendChild(el('div', 'item-detail', JSON.stringify(r.detail)));
+        }
+
+        var meta = el('div', 'item-meta');
+        meta.textContent = (r.who || 'unknown') + ' · ' + when(r.occurred_at)
+                         + (r.resolution ? ' · ' + r.resolution : '');
+        main.appendChild(meta);
+
+        item.appendChild(main);
+
+        var actions = el('div', 'actions');
+        if (!r.reviewed_at) {
+          var btn = el('button', 'act', 'Mark reviewed');
+          btn.onclick = function () { reviewEvent(r.id, btn); };
+          actions.appendChild(btn);
+        }
+        if (r.user_id) {
+          var flagBtn = el('button', 'act danger', 'Flag account');
+          flagBtn.onclick = function () { flagUser(r.user_id, labelFor(r.kind), flagBtn); };
+          actions.appendChild(flagBtn);
+        }
+        item.appendChild(actions);
+
+        host.appendChild(item);
+      });
+    }
+
+    // ── Flagged accounts ────────────────────────────────────────────
+    function renderFlagged(rows) {
+      var host = document.getElementById('flagged');
+      clear(host);
+
+      if (!rows.length) {
+        host.appendChild(el('p', 'empty', 'No accounts flagged.'));
+        return;
+      }
+
+      rows.forEach(function (r) {
+        var item = el('div', 'item');
+        var main = el('div');
+
+        var head = el('div', 'item-head');
+        head.appendChild(el('span', 'item-title', r.who || r.email || 'unnamed'));
+        main.appendChild(head);
+
+        if (r.flag_reason) main.appendChild(el('div', 'item-detail', r.flag_reason));
+        main.appendChild(el('div', 'item-meta',
+          (r.email || 'no email on file') + ' · flagged ' + when(r.flagged_at)));
+
+        item.appendChild(main);
+
+        var actions = el('div', 'actions');
+        var btn = el('button', 'act', 'Remove flag');
+        btn.onclick = function () { unflagUser(r.user_id, btn); };
+        actions.appendChild(btn);
+        item.appendChild(actions);
+
+        host.appendChild(item);
+      });
+    }
+
+    // ── Actions ─────────────────────────────────────────────────────
+    async function reviewEvent(id, btn) {
+      btn.disabled = true;
+      btn.textContent = 'Saving…';
+      var res = await supabaseClient.rpc('admin_review_security_event', {
+        p_event_id: id, p_resolution: 'reviewed'
+      });
+      if (res.error || res.data === false) {
+        console.error(res.error);
+        btn.disabled = false;
+        btn.textContent = 'Mark reviewed';
+        return;
+      }
+      await loadEvents();
+      await loadSummary();
+    }
+
+    async function flagUser(userId, reason, btn) {
+      var note = window.prompt('Why is this account being flagged?', reason || '');
+      if (note === null) return;
+
+      btn.disabled = true;
+      btn.textContent = 'Flagging…';
+
+      var res = await supabaseClient.rpc('admin_flag_user', {
+        p_user_id: userId, p_reason: note
+      });
+
+      btn.disabled = false;
+      btn.textContent = 'Flag account';
+
+      if (res.error) { console.error(res.error); return; }
+      // false comes back when the target is another admin, or the row is gone.
+      if (res.data === false) { btn.textContent = 'Cannot flag'; return; }
+
+      await Promise.all([loadFlagged(), loadEvents(), loadSummary()]);
+    }
+
+    async function unflagUser(userId, btn) {
+      btn.disabled = true;
+      btn.textContent = 'Removing…';
+      var res = await supabaseClient.rpc('admin_unflag_user', { p_user_id: userId });
+      if (res.error) {
+        console.error(res.error);
+        btn.disabled = false;
+        btn.textContent = 'Remove flag';
+        return;
+      }
+      await Promise.all([loadFlagged(), loadEvents(), loadSummary()]);
+    }
+
+    window.setFilter = function (open) {
+      onlyOpen = open;
+      document.getElementById('tabOpen').setAttribute('aria-pressed', open ? 'true' : 'false');
+      document.getElementById('tabAll').setAttribute('aria-pressed', open ? 'false' : 'true');
+      loadEvents();
+    };
+
+    // ── Loaders ─────────────────────────────────────────────────────
+    async function loadSummary() {
+      var res = await supabaseClient.rpc('admin_security_summary');
+      if (res.error) { console.error(res.error); renderSummary(null); return; }
+      renderSummary((res.data || [])[0] || null);
+    }
+
+    async function loadSignals() {
+      var res = await supabaseClient.rpc('admin_security_signals');
+      if (res.error) {
+        console.error(res.error);
+        var host = document.getElementById('signals');
+        clear(host);
+        host.appendChild(el('p', 'empty', 'Could not load — check the migration has been run.'));
+        return;
+      }
+      renderSignals(res.data || []);
+    }
+
+    async function loadEvents() {
+      var res = await supabaseClient.rpc('admin_security_events', {
+        p_limit: 200, p_only_open: onlyOpen
+      });
+      if (res.error) {
+        console.error(res.error);
+        var host = document.getElementById('events');
+        clear(host);
+        host.appendChild(el('p', 'empty', 'Could not load — check the migration has been run.'));
+        return;
+      }
+      renderEvents(res.data || []);
+    }
+
+    async function loadFlagged() {
+      var res = await supabaseClient.rpc('admin_flagged_users');
+      if (res.error) { console.error(res.error); return; }
+      renderFlagged(res.data || []);
+    }
+
+    // ── Gate ────────────────────────────────────────────────────────
+    async function init() {
+      var session = await supabaseClient.auth.getSession();
+      var user = session?.data?.session?.user;
+      if (!user) { location.href = 'auth/login.html'; return; }
+
+      var admin = await supabaseClient.rpc('is_admin');
+
+      if (admin.error || admin.data !== true) {
+        document.getElementById('locked').hidden = false;
+        // Someone signed in who is not an admin just opened the admin URL.
+        // Worth a low-severity line in the log — it is the first thing a
+        // person pokes at. Rate limited server-side, and failing here must
+        // never break the locked panel, so the result is ignored.
+        try { await supabaseClient.rpc('log_security_event', {
+          p_kind: 'admin_page_denied',
+          p_detail: { path: location.pathname }
+        }); } catch (e) {}
+        return;
+      }
+
+      document.getElementById('wrap').hidden = false;
+      await Promise.all([loadSummary(), loadSignals(), loadEvents(), loadFlagged()]);
+    }
+
+    init();
+  })();
+  </script>
+</body>
+</html>
