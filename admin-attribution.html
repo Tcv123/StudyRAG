@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Attribution — RAG Learning</title>
+
+  <!--
+    PRIVATE PAGE. Not linked from any nav, noindex, and gated twice over:
+
+      1. This page checks profiles.is_admin and refuses to render otherwise.
+         That is cosmetic — anyone can read the JS and skip it.
+      2. The real gate is in the database. attribution_breakdown() and
+         attribution_feedback() are SECURITY DEFINER and re-check is_admin
+         themselves, so a non-admin who opens this file gets empty arrays
+         back no matter what the client does. RLS on user_attribution stays
+         owner-only throughout.
+
+    Schema: db/migrations/2026-09-11-referral-attribution.sql
+  -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="shared.css">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-config.js"></script>
+  <script src="referral-modal.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg); color: var(--text);
+      font-family: var(--font-body, 'DM Sans', sans-serif);
+      font-size: 15px; -webkit-font-smoothing: antialiased;
+    }
+
+    .wrap { max-width: 840px; margin: 0 auto; padding: 48px 24px 80px; }
+
+    .back {
+      display: inline-block; margin-bottom: 28px;
+      color: var(--muted); text-decoration: none; font-size: 14px;
+    }
+    .back:hover { color: var(--accent); }
+
+    h1 { font-family: var(--font-display, serif); font-size: 32px; line-height: 1.15; }
+    .sub { color: var(--muted); font-size: 14px; margin-top: 6px; }
+
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 26px 26px 22px; margin-top: 24px;
+    }
+    .card-title { font-size: 13px; font-weight: 600; letter-spacing: .04em;
+                  text-transform: uppercase; color: var(--muted); margin-bottom: 20px; }
+
+    /* ── Hero figure ── */
+    .hero { display: flex; align-items: baseline; gap: 12px; }
+    .hero-num { font-family: var(--font-display, serif); font-size: 52px; line-height: 1; }
+    .hero-label { color: var(--muted); font-size: 14px; }
+
+    /* ── Ranked bars ──────────────────────────────────────────────
+       One hue, sorted high to low. Not a pie: nine channels become
+       nine unlabelled slivers, and comparing arc angles is the thing
+       people are measurably worst at. Length off a common baseline
+       is the thing they are best at.                                */
+    .bars { display: flex; flex-direction: column; gap: 2px; }
+
+    .row {
+      display: grid; grid-template-columns: 148px 1fr auto;
+      align-items: center; gap: 14px;
+      padding: 7px 8px; margin: 0 -8px; border-radius: 8px;
+      transition: background .12s;
+    }
+    .row:hover { background: var(--surface2); }
+
+    .row-label {
+      font-size: 14px; white-space: nowrap;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .row-emoji { margin-right: 7px; }
+
+    .track {
+      height: 14px; border-radius: 4px;
+      background: var(--surface3); overflow: hidden;
+    }
+    .fill {
+      height: 100%; border-radius: 4px; background: var(--accent);
+      width: 0; transition: width .5s cubic-bezier(.22,.8,.3,1);
+    }
+
+    .row-val { font-size: 14px; font-variant-numeric: tabular-nums; white-space: nowrap; }
+    .row-pct { color: var(--muted); margin-left: 7px; }
+
+    @media (max-width: 560px) {
+      .row { grid-template-columns: 110px 1fr auto; gap: 10px; }
+      .row-label { font-size: 13px; }
+    }
+
+    /* ── Feedback ── */
+    .fb { border-top: 1px solid var(--border); padding: 16px 0; }
+    .fb:first-of-type { border-top: none; padding-top: 0; }
+    .fb:last-child { padding-bottom: 0; }
+    .fb-meta { font-size: 12px; color: var(--muted2); margin-bottom: 6px; }
+    .fb-chip {
+      display: inline-block; padding: 2px 8px; border-radius: 999px;
+      background: var(--accent-dim); color: var(--accent-dark);
+      font-size: 11px; font-weight: 600; margin-right: 8px;
+    }
+    .fb-text { font-size: 14.5px; line-height: 1.6; white-space: pre-wrap; }
+
+    .empty { color: var(--muted); font-size: 14px; }
+    .locked { text-align: center; padding: 80px 20px; }
+    .locked h2 { font-family: var(--font-display, serif); font-size: 24px; margin-bottom: 8px; }
+  </style>
+</head>
+<body>
+  <div class="wrap" id="wrap" hidden>
+    <a class="back" href="Dashboard.html">← Dashboard</a>
+
+    <h1>Where people come from</h1>
+    <p class="sub" id="sub">Answers to “How did you hear about us?”, collected once per account at first sign-in.</p>
+
+    <div class="card">
+      <div class="hero">
+        <span class="hero-num" id="total">—</span>
+        <span class="hero-label">answers so far</span>
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">By channel</div>
+      <div class="bars" id="bars"><p class="empty">Loading…</p></div>
+    </div>
+
+    <div class="card">
+      <div class="card-title">Feedback</div>
+      <div id="feedback"><p class="empty">Loading…</p></div>
+    </div>
+  </div>
+
+  <div class="wrap locked" id="locked" hidden>
+    <h2>Not your page</h2>
+    <p class="sub">This view is for admins only.</p>
+    <p style="margin-top:18px"><a class="back" href="Dashboard.html">← Back to Dashboard</a></p>
+  </div>
+
+  <link rel="stylesheet" href="responsive.css">
+  <script src="theme.js"></script>
+  <script>
+  (function () {
+    'use strict';
+
+    /* Slug → display label, taken from referral-modal.js so the two can
+     * never drift. An unrecognised slug (an option removed from the modal
+     * after people had already picked it) still shows, as its raw slug —
+     * dropping those rows would quietly change the totals. */
+    function labelFor(slug) {
+      var list = window.REFERRAL_SOURCES || [];
+      for (var i = 0; i < list.length; i++) {
+        if (list[i].slug === slug) return list[i];
+      }
+      return { slug: slug, emoji: '•', label: slug };
+    }
+
+    function el(tag, cls, text) {
+      var n = document.createElement(tag);
+      if (cls) n.className = cls;
+      if (text != null) n.textContent = text;
+      return n;
+    }
+
+    function renderBars(rows) {
+      var host = document.getElementById('bars');
+      host.textContent = '';
+
+      if (!rows.length) {
+        host.appendChild(el('p', 'empty', 'No answers yet. The first one lands as soon as somebody logs in.'));
+        return;
+      }
+
+      /* Scale to the biggest bar, not to the total — with nine channels a
+       * total-scaled chart leaves every bar a stub. The percentage beside
+       * each row carries the share. */
+      var max = rows.reduce(function (m, r) { return Math.max(m, r.responses); }, 0);
+
+      rows.forEach(function (r) {
+        var meta = labelFor(r.source);
+        var row  = el('div', 'row');
+
+        var label = el('div', 'row-label');
+        var em = el('span', 'row-emoji', meta.emoji);
+        em.setAttribute('aria-hidden', 'true');
+        label.appendChild(em);
+        label.appendChild(document.createTextNode(meta.label));
+
+        var track = el('div', 'track');
+        var fill  = el('div', 'fill');
+        track.appendChild(fill);
+
+        var val = el('div', 'row-val', String(r.responses));
+        val.appendChild(el('span', 'row-pct', r.pct + '%'));
+
+        row.title = meta.label + ' — ' + r.responses + ' answer' + (r.responses === 1 ? '' : 's') + ', ' + r.pct + '% of all';
+        row.appendChild(label);
+        row.appendChild(track);
+        row.appendChild(val);
+        host.appendChild(row);
+
+        requestAnimationFrame(function () {
+          fill.style.width = Math.max(2, (r.responses / max) * 100) + '%';
+        });
+      });
+    }
+
+    function renderFeedback(rows) {
+      var host = document.getElementById('feedback');
+      host.textContent = '';
+
+      if (!rows.length) {
+        host.appendChild(el('p', 'empty', 'Nobody has left feedback yet. It is optional, so expect this to fill slowly.'));
+        return;
+      }
+
+      rows.forEach(function (r) {
+        var box  = el('div', 'fb');
+        var meta = el('div', 'fb-meta');
+
+        var chip = el('span', 'fb-chip', labelFor(r.source).label);
+        meta.appendChild(chip);
+        meta.appendChild(document.createTextNode(
+          new Date(r.answered_at).toLocaleDateString('en-GB', {
+            day: 'numeric', month: 'short', year: 'numeric'
+          })
+        ));
+
+        box.appendChild(meta);
+        box.appendChild(el('div', 'fb-text', r.feedback));
+        host.appendChild(box);
+      });
+    }
+
+    async function load() {
+      var session = await supabaseClient.auth.getSession();
+      var user = session?.data?.session?.user;
+      if (!user) { location.href = 'auth/login.html'; return; }
+
+      var prof = await supabaseClient
+        .from('profiles').select('is_admin').eq('id', user.id).maybeSingle();
+
+      if (!prof.data?.is_admin) {
+        document.getElementById('locked').hidden = false;
+        return;
+      }
+      document.getElementById('wrap').hidden = false;
+
+      var res = await Promise.all([
+        supabaseClient.rpc('attribution_breakdown'),
+        supabaseClient.rpc('attribution_feedback')
+      ]);
+
+      var breakdown = res[0], feedback = res[1];
+
+      if (breakdown.error) {
+        console.error(breakdown.error);
+        document.getElementById('bars').textContent = 'Could not load — check the migration has been run.';
+        return;
+      }
+
+      var rows = breakdown.data || [];
+      var total = rows.reduce(function (t, r) { return t + Number(r.responses); }, 0);
+      document.getElementById('total').textContent = total;
+
+      renderBars(rows.map(function (r) {
+        return { source: r.source, responses: Number(r.responses), pct: Number(r.pct) };
+      }));
+
+      if (feedback.error) console.error(feedback.error);
+      renderFeedback(feedback.data || []);
+    }
+
+    load();
+  })();
+  </script>
+</body>
+</html>
