@@ -1010,7 +1010,9 @@ async function confirmResetProgress() {
   if (!confirm('Are you sure? This will delete ALL your diagnostic results and RAG colours. This cannot be undone.')) return;
   const msg = document.getElementById('dataMsg');
 
-  await supabaseClient.from('topic_progress').delete().eq('user_id', currentUser.id);
+  // __rawFrom bypasses the level scoping in supabase-config.js on purpose:
+  // the confirm dialog promises to delete ALL results, across both levels.
+  await supabaseClient.__rawFrom('topic_progress').delete().eq('user_id', currentUser.id);
   await supabaseClient.from('user_subjects').update({ rag_status: 'pending' }).eq('user_id', currentUser.id);
 
   showMsg(msg, 'success', 'All progress has been reset.');
