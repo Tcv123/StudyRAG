@@ -183,3 +183,153 @@ const SUPABASE_URL     = "https://tfpnagnjnzmlgbnqeiwr.supabase.co";
 const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRmcG5hZ25qbnptbGdibnFlaXdyIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzQyNjc0OTMsImV4cCI6MjA4OTg0MzQ5M30.OFGP03V0r68LMFb2N3oZTSohp3ARK78b2_1PunRLV8k";
 
 const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+// ─────────────────────────────────────────────────────────────────────────────
+// topic_progress level compatibility layer
+//
+// WHY: topic_progress rows are identified by (user_id, subject, exam_board,
+// topic) with no level, so a student moving GCSE -> A-Level on the same
+// subject+board hits the same row and their GCSE result is overwritten.
+// 11 subject+board pairs exist at both levels (CS OCR, CS AQA, Maths OCR,
+// Biology AQA/OCR A/OCR B, Physics AQA/Edexcel/OCR A/OCR B, Geography Eduqas).
+//
+// WHAT: this transparently scopes every topic_progress query by level:
+//   - reads/updates/deletes get .eq('level', <current level>)
+//   - inserts/upserts get level added to the payload
+//
+// It is deliberately tolerant of the column not existing yet. It probes once
+// per page load and becomes a no-op if topic_progress has no `level` column,
+// so it is safe to deploy BEFORE the migration is run and needs no follow-up
+// change after. Once the column exists it starts scoping automatically.
+//
+// Queries filtered by primary key (.eq('id', ...)) are left alone — they are
+// already unique.
+//
+// Migration: migrations/2026-09-11_topic_progress_level.sql
+// ─────────────────────────────────────────────────────────────────────────────
+(function () {
+  var TABLE = 'topic_progress';
+  var probe = null;
+
+  // Mirrors _lvSuffix() in medals-engine.js — keep the two in step.
+  function currentLevel() {
+    var l = null;
+    try { l = localStorage.getItem('cached_level'); } catch (e) {}
+    l = String(l || 'gcse').toLowerCase();
+    return (l === 'a-level' || l === 'as') ? 'alevel' : 'gcse';
+  }
+
+  // Does topic_progress have a `level` column? Probed once, cached for the page.
+  function hasLevelColumn(client) {
+    if (!probe) {
+      probe = Promise.resolve(
+        client.__rawFrom(TABLE).select('level').limit(1)
+      ).then(function (res) {
+        return !(res && res.error);
+      }).catch(function () {
+        return false;
+      });
+    }
+    return probe;
+  }
+
+  function withLevel(payload, lvl) {
+    if (Array.isArray(payload)) {
+      return payload.map(function (r) { return withLevel(r, lvl); });
+    }
+    if (payload && typeof payload === 'object' && payload.level === undefined) {
+      var copy = {};
+      for (var k in payload) if (Object.prototype.hasOwnProperty.call(payload, k)) copy[k] = payload[k];
+      copy.level = lvl;
+      return copy;
+    }
+    return payload;
+  }
+
+  // Wrap a PostgrestFilterBuilder so the level filter is appended lazily, at
+  // execution time — after all the caller's own .eq() calls have been made.
+  function wrapFilter(builder, client, state) {
+    return new Proxy(builder, {
+      get: function (target, prop, recv) {
+        var value = Reflect.get(target, prop, recv);
+
+        if (prop === 'then') {
+          return function (onOk, onErr) {
+            return hasLevelColumn(client).then(function (ok) {
+              var q = target;
+              if (ok && !state.hasLevelFilter && !state.byPrimaryKey) {
+                q = target.eq('level', currentLevel());
+                state.hasLevelFilter = true;
+              }
+              return q.then(onOk, onErr);
+            }, onErr);
+          };
+        }
+
+        if (typeof value === 'function') {
+          return function () {
+            if (prop === 'eq') {
+              if (arguments[0] === 'id') state.byPrimaryKey = true;
+              if (arguments[0] === 'level') state.hasLevelFilter = true;
+            }
+            if (prop === 'in' && arguments[0] === 'id') state.byPrimaryKey = true;
+            var out = value.apply(target, arguments);
+            // .eq/.order/.limit return the same builder; .single()/.maybeSingle()
+            // return a thenable too — keep wrapping so `then` stays intercepted.
+            if (out && typeof out === 'object' && typeof out.then === 'function') {
+              return wrapFilter(out, client, state);
+            }
+            return out;
+          };
+        }
+        return value;
+      }
+    });
+  }
+
+  function wrapQueryBuilder(qb, client) {
+    return new Proxy(qb, {
+      get: function (target, prop, recv) {
+        var value = Reflect.get(target, prop, recv);
+        if (typeof value !== 'function') return value;
+
+        // Writes: the payload must carry the level, and it has to be decided
+        // before the request is built — so defer the whole call until the probe
+        // resolves. Nothing in the app chains .select() onto a write, so a
+        // plain thenable is enough here.
+        if (prop === 'insert' || prop === 'upsert') {
+          return function () {
+            var args = Array.prototype.slice.call(arguments);
+            return {
+              then: function (onOk, onErr) {
+                return hasLevelColumn(client).then(function (ok) {
+                  if (ok) args[0] = withLevel(args[0], currentLevel());
+                  return Promise.resolve(value.apply(target, args)).then(onOk, onErr);
+                }, onErr);
+              },
+              catch: function (onErr) { return this.then(undefined, onErr); }
+            };
+          };
+        }
+
+        // Reads and scoped writes: filters are appended lazily by wrapFilter.
+        if (prop === 'select' || prop === 'update' || prop === 'delete') {
+          return function () {
+            var out = value.apply(target, arguments);
+            return wrapFilter(out, client, { hasLevelFilter: false, byPrimaryKey: false });
+          };
+        }
+
+        return function () { return value.apply(target, arguments); };
+      }
+    });
+  }
+
+  if (typeof supabaseClient !== 'undefined' && supabaseClient && !supabaseClient.__rawFrom) {
+    supabaseClient.__rawFrom = supabaseClient.from.bind(supabaseClient);
+    supabaseClient.from = function (table) {
+      var qb = supabaseClient.__rawFrom(table);
+      return table === TABLE ? wrapQueryBuilder(qb, supabaseClient) : qb;
+    };
+  }
+})();
