@@ -2,6 +2,17 @@
   "version": "0.0.1",
   "configurations": [
     {
+      "name": "rfm-harness",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "8791"
+      ],
+      "port": 8791,
+      "autoPort": false
+    },
+    {
       "name": "PowerShell static server",
       "runtimeExecutable": "powershell",
       "runtimeArgs": [
