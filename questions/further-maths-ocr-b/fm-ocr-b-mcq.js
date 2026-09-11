@@ -44,7 +44,7 @@ const FM_OCR_B_MCQ = {
   ],
   amber: [
     { q: 'Simplify \\(\\dfrac{1+i}{1-i}\\).', options: ['\\(1\\)', '\\(-i\\)', '\\(1-i\\)', '\\(i\\)'], answer: 3 },
-    { q: 'Solve \\(z^2 + 2z + 5 = 0\\).', options: ['\\(-1\\pm2i\\)', '\\(1\\pm2i\\)', '\\(-2\\pm i\\)', '\\(-1\\pm2i\\)'], answer: 0 },
+    { q: 'Solve \\(z^2 + 2z + 5 = 0\\).', options: ['\\(-1\\pm2i\\)', '\\(1\\pm2i\\)', '\\(-2\\pm i\\)', '\\(-1\\pm4i\\)'], answer: 0 },
     { q: 'Write \\(1 + i\\sqrt{3}\\) in modulus-argument form.', options: ['\\(2e^{i\\pi/6}\\)', '\\(e^{i\\pi/3}\\)', '\\(\\sqrt{2}e^{i\\pi/4}\\)', '\\(2e^{i\\pi/3}\\)'], answer: 3 },
     { q: 'By de Moivre: \\((\\cos\\theta+i\\sin\\theta)^4=\\)', options: ['\\(\\cos^4\\theta+i\\sin^4\\theta\\)', '\\(4\\cos\\theta+4i\\sin\\theta\\)', '\\(\\cos4\\theta-i\\sin4\\theta\\)', '\\(\\cos 4\\theta+i\\sin 4\\theta\\)'], answer: 3 },
     { q: 'If \\(2+3i\\) is a root of a real polynomial, another root is:', options: ['\\(-2-3i\\)', '\\(-2+3i\\)', '\\(3+2i\\)', '\\(2-3i\\)'], answer: 3 },
@@ -93,7 +93,7 @@ const FM_OCR_B_MCQ = {
     { q: 'A plane has normal vector \\(\\mathbf{n}\\). Its equation: \\(\\mathbf{r}\\cdot\\mathbf{n}=\\)', options: ['\\(0\\)', '\\(|\\mathbf{n}|\\)', '\\(\\mathbf{n}\\cdot\\mathbf{n}\\)', '\\(d\\) (constant)'], answer: 3 },
   ],
   amber: [
-    { q: '\\((2,0,1)\\times(1,1,0)=\\)', options: ['\\((0,0,2)\\)', '\\((2,1,0)\\)', '\\((-1,1,2)\\)', '\\((-1,1,2)\\)'], answer: 2, explanation: '(0·0−1·1, −(2·0−1·1), 2·1−0·1) = (−1, 1, 2)' },
+    { q: '\\((2,0,1)\\times(1,1,0)=\\)', options: ['\\((0,0,2)\\)', '\\((2,1,0)\\)', '\\((-1,1,2)\\)', '\\((1,-1,2)\\)'], answer: 2, explanation: '(0·0−1·1, −(2·0−1·1), 2·1−0·1) = (−1, 1, 2)' },
     { q: 'Scalar triple product \\(\\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c})\\) represents:', options: ['Area', 'Length', 'Angle', 'Volume of parallelepiped'], answer: 3 },
     { q: 'Three vectors are coplanar iff their scalar triple product is:', options: ['Unit', 'Positive', 'Negative', 'Zero'], answer: 3 },
     { q: 'Angle between line \\(\\mathbf{d}\\) and plane normal \\(\\mathbf{n}\\) is \\(\\alpha\\); angle between line and plane is:', options: ['\\(\\alpha\\)', '\\(\\pi-\\alpha\\)', '\\(2\\alpha\\)', '\\(\\pi/2-\\alpha\\)'], answer: 3 },
@@ -294,7 +294,7 @@ const FM_OCR_B_MCQ = {
     { q: 'If \\(P=Fv\\) and \\(F=ma+R\\), on level track:', options: ['\\(a=v\\)', '\\(P=\\text{const}\\)', '\\(R=0\\)', '\\(P/v-R=ma\\)'], answer: 3 },
   ],
   red: [
-    { q: 'Car mass \\(m=1000\\), power \\(P=20\\) kW, resistance \\(R=500\\) N. At \\(v=20\\) m/s, acceleration:', options: ['\\(1\\) m/s²','\\(0\\) m/s²','\\(0.5\\) m/s²','\\(0.5\\) m/s²'], answer: 3, explanation: 'F=1000 N, net=500, a=0.5' },
+    { q: 'Car mass \\(m=1000\\), power \\(P=20\\) kW, resistance \\(R=500\\) N. At \\(v=20\\) m/s, acceleration:', options: ['\\(1\\) m/s²', '\\(0\\) m/s²', '\\(0.25\\) m/s²', '\\(0.5\\) m/s²'], answer: 3, explanation: 'F=1000 N, net=500, a=0.5' },
     { q: 'Elastic string modulus \\(\\lambda\\), natural length \\(\\ell_0\\), extension \\(x\\). EPE:', options: ['\\(\\lambda x\\)','\\(\\lambda x/\\ell_0\\)','\\(\\lambda x^2/\\ell_0\\)','\\(\\lambda x^2/(2\\ell_0)\\)'], answer: 3 },
     { q: 'Energy lost to friction = ', options: ['Friction × acceleration','0 (always)','\\(\\mu R\\)','Friction force × distance traveled'], answer: 3 },
     { q: 'Pulling with force at angle \\(\\theta\\) above horizontal: horizontal work:', options: ['\\(F\\sin\\theta\\cdot s\\)','\\(Fs\\)','\\(Fs/\\cos\\theta\\)','\\(F\\cos\\theta\\cdot s\\)'], answer: 3 },
@@ -386,7 +386,7 @@ const FM_OCR_B_MCQ = {
   ],
   amber: [
     { q: 'For \\(X\\sim B(n,p)\\): \\(E(X)=\\)', options: ['\\(p\\)', '\\(nq\\)', '\\(n(1-p)\\)', '\\(np\\)'], answer: 3 },
-    { q: 'For \\(X\\sim B(n,p)\\): \\(\\operatorname{Var}(X)=\\)', options: ['\\(n^2p\\)', '\\(np\\)', '\\(np\\)', '\\(np(1-p)\\)'], answer: 3 },
+    { q: 'For \\(X\\sim B(n,p)\\): \\(\\operatorname{Var}(X)=\\)', options: ['\\(n^2p\\)', '\\(np\\)', '\\(np^2\\)', '\\(np(1-p)\\)'], answer: 3 },
     { q: 'For independent \\(X,Y\\): \\(\\operatorname{Var}(X-Y)=\\)', options: ['\\(\\operatorname{Var}(X)-\\operatorname{Var}(Y)\\)', '\\(|\\operatorname{Var}(X)-\\operatorname{Var}(Y)|\\)', '0', '\\(\\operatorname{Var}(X)+\\operatorname{Var}(Y)\\)'], answer: 3 },
     { q: '\\(X\\) uniform on \\(\\{1,\\ldots,n\\}\\): \\(E(X)=\\)', options: ['\\(n/2\\)', '\\(1\\)', '\\(n\\)', '\\((n+1)/2\\)'], answer: 3 },
     { q: 'Uniform on \\(\\{1,\\ldots,n\\}\\): \\(\\operatorname{Var}(X)=\\)', options: ['\\(n/2\\)', '\\((n+1)/12\\)', '\\(n^2/12\\)', '\\((n^2-1)/12\\)'], answer: 3 },

@@ -186,7 +186,7 @@ const FM_OCR_MCQ = {
     { q: 'The plane through \\((1,0,0),(0,1,0),(0,0,1)\\) has equation:', options: ['\\(x^2+y^2+z^2=1\\)', '\\(x-y+z=1\\)', '\\(xyz=1\\)', '\\(x+y+z=1\\)'], answer: 3 },
     { q: 'For two lines to intersect in 3D, they must be:', options: ['Skew', 'Perpendicular', 'Parallel', 'Coplanar and non-parallel'], answer: 3 },
     { q: 'Lines \\(\\mathbf{d}_1=(1,2,-1)\\) and \\(\\mathbf{d}_2=(2,4,-2)\\) are:', options: ['Skew', 'Perpendicular', 'Intersecting', 'Parallel'], answer: 3, explanation: 'd₂=2d₁' },
-    { q: 'Foot of perpendicular from \\(A(1,0,1)\\) to line \\(\\mathbf{r}=t(1,1,1)^T\\): parameter \\(t=\\)', options: ['\\(t=1\\)', '\\(t=1/3\\)', '\\(t=1\\)', '\\(t=2/3\\)'], answer: 3, explanation: '(t−1,t,t−1)·(1,1,1)=0 → 3t−2=0 → t=2/3' },
+    { q: 'Foot of perpendicular from \\(A(1,0,1)\\) to line \\(\\mathbf{r}=t(1,1,1)^T\\): parameter \\(t=\\)', options: ['\\(t=1\\)', '\\(t=1/3\\)', '\\(t=3/2\\)', '\\(t=2/3\\)'], answer: 3, explanation: '(t−1,t,t−1)·(1,1,1)=0 → 3t−2=0 → t=2/3' },
     { q: 'Volume of parallelepiped spanned by \\(\\mathbf{a},\\mathbf{b},\\mathbf{c}\\):', options: ['\\(|\\mathbf{a}+\\mathbf{b}+\\mathbf{c}|\\)', '\\(|\\mathbf{a}\\times\\mathbf{b}|\\cdot|\\mathbf{c}|\\)', '\\(\\mathbf{a}\\cdot\\mathbf{b}\\cdot\\mathbf{c}\\)', '\\(|\\mathbf{a}\\cdot(\\mathbf{b}\\times\\mathbf{c})|\\)'], answer: 3 },
   ],
   red: [
@@ -343,7 +343,7 @@ const FM_OCR_MCQ = {
     { q: 'For \\(n=1\\), \\(\\frac{n(n+1)}{2}=\\)', options: ['0', '3', '2', '1'], answer: 3 },
   ],
   amber: [
-    { q: 'Inductive step for \\(\\sum_{r=1}^{n}2^r=2^{n+1}-2\\): add \\(2^{k+1}\\) to get:', options: ['\\(2^{k+2}-2\\)', '\\(2^{k+2}+2\\)', '\\(2^{k+1}-2\\)', '\\(2^{k+2}-2\\)'], answer: 0, explanation: '(2^{k+1}−2)+2^{k+1}=2^{k+2}−2 ✓' },
+    { q: 'Inductive step for \\(\\sum_{r=1}^{n}2^r=2^{n+1}-2\\): add \\(2^{k+1}\\) to get:', options: ['\\(2^{k+2}-2\\)', '\\(2^{k+2}+2\\)', '\\(2^{k+1}-2\\)', '\\(2^{k+1}+2\\)'], answer: 0, explanation: '(2^{k+1}−2)+2^{k+1}=2^{k+2}−2 ✓' },
     { q: 'Show \\(4^n-1\\) divisible by 3. Key step: \\(4^{k+1}-1=4(4^k-1)+3\\). This works because:', options: ['4 divides 3', '3 is prime', '4 is even', '\\(4^k-1\\) divisible by 3 (IH) and 3 divisible by 3'], answer: 3 },
     { q: 'Inductive step for matrix \\(\\begin{pmatrix}2&1\\\\0&1\\end{pmatrix}^n=\\begin{pmatrix}2^n&2^n-1\\\\0&1\\end{pmatrix}\\): top-right entry of \\(k+1\\) step:', options: ['\\(2^k\\)', '\\(2^{k+1}-2\\)', '\\(2^k-1\\)', '\\(2(2^k-1)+1=2^{k+1}-1\\)'], answer: 3 },
     { q: 'To prove \\(7^n-1\\) divisible by 6: \\(7^{k+1}-1=7(7^k-1)+6\\). Divisible by 6 because:', options: ['7 is odd', '7>1', '7 and 6 share a factor', '\\(7^k-1\\) div by 6 (IH) and \\(6\\) div by 6'], answer: 3 },
@@ -408,11 +408,11 @@ const FM_OCR_MCQ = {
     { q: 'The median \\(m\\) satisfies:', options: ['\\(f(m)=1/2\\)', '\\(F(m)=E(X)\\)', '\\(F(m)=0\\)', '\\(F(m)=1/2\\)'], answer: 3 },
   ],
   amber: [
-    { q: '\\(f(x)=3x^2\\) for \\(0\\leq x\\leq1\\). Find \\(E(X)\\).', options: ['\\(1/2\\)', '\\(3/4\\)', '\\(1/3\\)', '\\(3/4\\)'], answer: 1, explanation: '∫₀¹ 3x³ dx = 3/4' },
+    { q: '\\(f(x)=3x^2\\) for \\(0\\leq x\\leq1\\). Find \\(E(X)\\).', options: ['\\(1/2\\)', '\\(3/4\\)', '\\(1/3\\)', '\\(2/3\\)'], answer: 1, explanation: '∫₀¹ 3x³ dx = 3/4' },
     { q: '\\(f(x)=cx\\) for \\(0\\leq x\\leq2\\). Find \\(c\\).', options: ['\\(2\\)', '\\(1/4\\)', '\\(4\\)', '\\(1/2\\)'], answer: 3, explanation: '∫₀² cx dx=2c=1→c=1/2' },
-    { q: 'Find \\(P(1<X<2)\\) for \\(f(x)=\\frac{1}{4}x\\) on \\(0\\leq x\\leq4\\).', options: ['\\(1/4\\)', '\\(3/8\\)', '\\(1/2\\)', '\\(3/8\\)'], answer: 3, explanation: '∫₁² x/4 dx = [x²/8]₁² = 4/8−1/8=3/8' },
+    { q: 'Find \\(P(1<X<2)\\) for \\(f(x)=\\frac{1}{4}x\\) on \\(0\\leq x\\leq4\\).', options: ['\\(1/4\\)', '\\(3/8\\)', '\\(1/2\\)', '\\(5/8\\)'], answer: 1, explanation: '∫₁² x/4 dx = [x²/8]₁² = 4/8−1/8=3/8' },
     { q: 'The CDF of \\(X\\sim\\text{Exp}(2)\\) is:', options: ['\\(2e^{-2x}\\)', '\\(e^{-2x}\\)', '\\(1+e^{-2x}\\)', '\\(1-e^{-2x}\\)'], answer: 3 },
-    { q: '\\(E(X^2)\\) for \\(X\\sim U[0,2]\\):', options: ['\\(1\\)', '\\(2\\)', '\\(4/3\\)', '\\(4/3\\)'], answer: 3, explanation: '∫₀² x²·(1/2)dx = [x³/6]₀² = 4/3' },
+    { q: '\\(E(X^2)\\) for \\(X\\sim U[0,2]\\):', options: ['\\(1\\)', '\\(2\\)', '\\(2/3\\)', '\\(4/3\\)'], answer: 3, explanation: '∫₀² x²·(1/2)dx = [x³/6]₀² = 4/3' },
     { q: 'If \\(f(x)=\\frac{1}{2}\\sin x\\) on \\([0,\\pi]\\), the median satisfies \\(\\int_0^m\\frac{1}{2}\\sin x\\,dx=\\frac{1}{2}\\). So \\(m=\\)', options: ['\\(\\pi/4\\)', '\\(\\pi/3\\)', '\\(2\\pi/3\\)', '\\(\\pi/2\\)'], answer: 3, explanation: '[-½cos x]₀^m = ½(1−cos m)=½ → cos m=0 → m=π/2' },
   ],
   red: [
@@ -459,7 +459,7 @@ const FM_OCR_MCQ = {
     { q: 'The \\(\\chi^2\\) goodness-of-fit test compares:', options: ['Two sample means', 'Population means and variances', 'Two variances', 'Observed frequencies with theoretical (expected) frequencies'], answer: 3 },
   ],
   amber: [
-    { q: 'A 2×2 table has row totals 30,20 and column totals 25,25 (\\(n=50\\)). \\(E_{11}=\\)', options: ['\\(12\\)', '\\(10\\)', '\\(15\\)', '\\(15\\)'], answer: 3, explanation: '30×25/50=15' },
+    { q: 'A 2×2 table has row totals 30,20 and column totals 25,25 (\\(n=50\\)). \\(E_{11}=\\)', options: ['\\(12\\)', '\\(10\\)', '\\(20\\)', '\\(15\\)'], answer: 3, explanation: '30×25/50=15' },
     { q: 'If the \\(\\chi^2\\) statistic exceeds the critical value, we:', options: ['Accept \\(H_0\\)', 'Accept \\(H_1\\) with certainty', 'Increase the sample size', 'Reject \\(H_0\\) (evidence of association/poor fit)'], answer: 3 },
     { q: '\\(\\chi^2\\) test with 5% significance level, 3 df: critical value \\(\\approx7.815\\). If \\(X^2=9.2\\):', options: ['Insufficient evidence to reject \\(H_0\\)', 'Accept \\(H_0\\)', '\\(p=0.05\\)', 'Reject \\(H_0\\)'], answer: 3 },
     { q: 'When expected frequencies are too small, a common remedy is to:', options: ['Increase significance level', 'Use a different table', 'Use a \\(z\\)-test instead', 'Combine adjacent cells'], answer: 3 },
@@ -516,7 +516,7 @@ const FM_OCR_MCQ = {
     { q: 'Stokes\' law: drag \\(F=6\\pi\\eta r v\\). Dimensions of viscosity \\(\\eta\\):', options: ['\\(M L^{-1} T\\)', '\\(M L T^{-2}\\)', '\\(M L^{-2} T^{-1}\\)', '\\(M L^{-1} T^{-1}\\)'], answer: 3, explanation: '[η]=[F]/([r][v])=MLT^{-2}/(L·LT^{-1})=ML^{-1}T^{-1}' },
     { q: 'Speed of sound \\(c\\) depends on density \\(\\rho\\) and bulk modulus \\(K\\) (dims \\(ML^{-1}T^{-2}\\)). \\(c\\propto\\)', options: ['\\(\\rho K\\)', '\\(\\sqrt{\\rho/K}\\)', '\\(\\rho/K\\)', '\\(\\sqrt{K/\\rho}\\)'], answer: 3 },
     { q: 'Reynolds number (dimensionless): \\(Re=\\rho v L/\\eta\\). Check: \\([\\rho v L/\\eta]=\\)', options: ['\\(ML T^{-1}\\)', '\\(M L^{-1} T^{-1}\\)', '\\(L T^{-1}\\)', 'Dimensionless ✓'], answer: 3 },
-    { q: 'Power = Force × velocity. Dimensions of power:', options: ['\\(MLT^{-2}\\)', '\\(ML^2T^{-3}\\)', '\\(ML^2T^{-2}\\)', '\\(ML^2T^{-3}\\)'], answer: 1, explanation: '[P]=[F][v]=MLT^{-2}·LT^{-1}=ML^2T^{-3}' },
+    { q: 'Power = Force × velocity. Dimensions of power:', options: ['\\(MLT^{-2}\\)', '\\(ML^2T^{-3}\\)', '\\(ML^2T^{-2}\\)', '\\(ML^{-1}T^{-3}\\)'], answer: 1, explanation: '[P]=[F][v]=MLT^{-2}·LT^{-1}=ML^2T^{-3}' },
   ],
   red: [
     { q: 'A formula \\(v^2=u^2+2as\\) is dimensionally consistent because:', options: ['All numbers are equal','Speed and distance have same dims','LHS and RHS both have dims \\(M\\)','Both sides have dimensions \\(L^2T^{-2}\\)'], answer: 3 },
@@ -564,8 +564,8 @@ const FM_OCR_MCQ = {
     { q: 'Units of momentum:', options: ['J', 'N·s⁻¹', 'W', 'kg·m·s⁻¹ (or N·s)'], answer: 3 },
   ],
   amber: [
-    { q: 'Ball of mass 2kg at 5 m/s hits stationary ball 3kg, \\(e=0.5\\). Find speeds after collision.', options: ['v₁=0.5, v₂=3', 'v₁=1, v₂=2', 'v₁=2, v₂=1', 'v₁=0.5, v₂=3'], answer: 0, explanation: '2(5)=2v₁+3v₂; e:v₂-v₁=0.5(5)=2.5 → v₂-v₁=2.5, 2v₁+3v₂=10 → v₁=0.5, v₂=3' },
-    { q: 'A ball drops from height \\(h\\), bounces with \\(e=0.6\\). Height of first bounce:', options: ['\\(0.6h\\)', '\\(0.216h\\)', '\\(0.36h\\)', '\\(0.36h\\)'], answer: 3, explanation: 'Speed before=√(2gh), after=0.6√(2gh). New height=(0.6)²h=0.36h' },
+    { q: 'Ball of mass 2kg at 5 m/s hits stationary ball 3kg, \\(e=0.5\\). Find speeds after collision.', options: ['v₁=0.5, v₂=3', 'v₁=1, v₂=2', 'v₁=2, v₂=1', 'v₁=0, v₂=10/3'], answer: 0, explanation: '2(5)=2v₁+3v₂; e:v₂-v₁=0.5(5)=2.5 → v₂-v₁=2.5, 2v₁+3v₂=10 → v₁=0.5, v₂=3' },
+    { q: 'A ball drops from height \\(h\\), bounces with \\(e=0.6\\). Height of first bounce:', options: ['\\(0.6h\\)', '\\(0.216h\\)', '\\(0.16h\\)', '\\(0.36h\\)'], answer: 3, explanation: 'Speed before=√(2gh), after=0.6√(2gh). New height=(0.6)²h=0.36h' },
     { q: 'An oblique collision: for a smooth sphere, normal impulse acts along the:', options: ['Tangent to sphere', 'Direction of motion', 'Vertical', 'Line of centres'], answer: 3 },
     { q: 'Total KE before elastic collision of equal masses (one stationary) equals total KE after. In this case the objects:', options: ['Both stop', 'Move with equal speed', 'Bounce back', 'Exchange velocities'], answer: 3 },
     { q: 'For 3 spheres A, B, C in a line, after A→B, B→C, is it possible for A to hit B again?', options: ['Always', 'Never', 'Only if e=1', 'Only if \\(e_1>e_2\\) (first coefficient > second)'], answer: 3 },
@@ -590,9 +590,9 @@ const FM_OCR_MCQ = {
     { q: 'On a banked road (no friction), the normal reaction provides:', options: ['Braking force', 'Weight component', 'Tangential force', 'Centripetal force (horizontal component)'], answer: 3 },
   ],
   amber: [
-    { q: 'Object on string of length 0.5m completes 4 rev/s. Speed =', options: ['\\(2\\pi\\) m/s', '\\(4\\pi\\) m/s', '\\(2\\pi\\) m/s', '\\(4\\pi\\) m/s'], answer: 3, explanation: 'v=ωr=2π(4)(0.5)=4π m/s' },
+    { q: 'Object on string of length 0.5m completes 4 rev/s. Speed =', options: ['\\(2\\pi\\) m/s', '\\(8\\pi\\) m/s', '\\(\\pi\\) m/s', '\\(4\\pi\\) m/s'], answer: 3, explanation: 'v=ωr=2π(4)(0.5)=4π m/s' },
     { q: 'Particle on smooth banked road, radius \\(r\\), banking angle \\(\\theta\\). Ideal speed:', options: ['\\(\\sqrt{rg\\cos\\theta}\\)', '\\(\\sqrt{rg/\\tan\\theta}\\)', '\\(rg\\tan\\theta\\)', '\\(\\sqrt{rg\\tan\\theta}\\)'], answer: 3 },
-    { q: 'Minimum speed at top of vertical circle of radius \\(r\\) (string):', options: ['\\(0\\)', '\\(\\sqrt{2gr}\\)', '\\(\\sqrt{2gr}\\)', '\\(\\sqrt{gr}\\)'], answer: 3, explanation: 'At top: mg+T=mv²/r; min when T=0 → v=√(gr)' },
+    { q: 'Minimum speed at top of vertical circle of radius \\(r\\) (string):', options: ['\\(0\\)', '\\(\\sqrt{2gr}\\)', '\\(\\sqrt{5gr}\\)', '\\(\\sqrt{gr}\\)'], answer: 3, explanation: 'At top: mg+T=mv²/r; min when T=0 → v=√(gr)' },
     { q: 'A particle moves on inside of a smooth sphere radius \\(R\\). At point where radius makes angle \\(\\theta\\) with vertical (top), normal reaction \\(N+mg\\cos\\theta=mv^2/R\\). For contact to be maintained:', options: ['\\(v<0\\)', '\\(N=0\\)', '\\(v>0\\) only', '\\(N\\geq0\\) (surface can only push)'], answer: 3 },
     { q: 'For circular motion: work done by centripetal force in one complete revolution:', options: ['\\(2\\pi r F\\)', '\\(\\pi r^2 F\\)', '\\(rF\\)', '\\(0\\) (force perpendicular to displacement)'], answer: 3 },
   ],
@@ -620,7 +620,7 @@ const FM_OCR_MCQ = {
     { q: 'Energy in SHM: total energy \\(E=\\)', options: ['\\(\\frac{1}{2}m\\omega^2x^2\\)', '\\(\\frac{1}{2}m\\omega a\\)', '\\(m\\omega^2a\\)', '\\(\\frac{1}{2}m\\omega^2a^2\\)'], answer: 3 },
     { q: 'KE + PE = constant in SHM. KE = \\(\\frac{1}{2}m\\omega^2(a^2-x^2)\\). PE = \\(\\frac{1}{2}m\\omega^2x^2\\). At \\(x=a/2\\): fraction of total that is KE =', options: ['\\(1/2\\)', '\\(1/4\\)', '\\(3/8\\)', '\\(3/4\\)'], answer: 3, explanation: 'KE=½mω²(a²−a²/4)=(3/4)·(½mω²a²)=3/4 of total' },
     { q: 'Spring-mass system: \\(\\omega=\\sqrt{k/m}\\). If spring constant doubles:', options: ['\\(\\omega\\) halves', '\\(\\omega\\) quarters', '\\(\\omega\\) is unchanged', '\\(\\omega\\) increases by \\(\\sqrt{2}\\)'], answer: 3 },
-    { q: 'A particle performing SHM passes through equilibrium with speed 4 m/s and has period 2s. Amplitude =', options: ['\\(4/\\pi\\) m', '\\(2/\\pi\\) m', '\\(\\pi\\) m', '\\(4/\\pi\\) m'], answer: 0, explanation: 'v_max=aω=a(2π/2)=aπ=4 → a=4/π' },
+    { q: 'A particle performing SHM passes through equilibrium with speed 4 m/s and has period 2s. Amplitude =', options: ['\\(4/\\pi\\) m', '\\(2/\\pi\\) m', '\\(\\pi\\) m', '\\(8/\\pi\\) m'], answer: 0, explanation: 'v_max=aω=a(2π/2)=aπ=4 → a=4/π' },
   ],
   red: [
     { q: 'Damped SHM: \\(\\ddot{x}+2k\\dot{x}+\\omega_0^2x=0\\). For underdamping (\\(k<\\omega_0\\)), solution is:', options: ['\\(e^{-kt}(A\\cos\\beta t+B\\sin\\beta t)\\)','\\(e^{-kt}(Ax+B)\\)','\\((Ax+B)e^{\\omega_0 t}\\)','\\(Ae^{-k_1t}+Be^{-k_2t}\\) with real \\(k_1,k_2\\)'], answer: 0, explanation: 'β=√(ω₀²−k²)' },
@@ -713,7 +713,7 @@ const FM_OCR_MCQ = {
   green: [
     { q: 'A zero-sum game means:', options: ['All payoffs are zero', 'Both players have equal payoffs', 'Game lasts zero rounds', 'One player\'s gain is the other\'s loss'], answer: 3 },
     { q: 'The payoff matrix is written from \\(\\rule{0.5cm}{0.4pt}\\) perspective:', options: ['Both players equally', 'Player B (column)', 'The game designer', 'Player A (row)'], answer: 3 },
-    { q: 'Row player uses the \\(\\rule{0.5cm}{0.4pt}\\) strategy to maximise their minimum payoff:', options: ['Maximin', 'Minimax', 'Random', 'Maximin'], answer: 0, explanation: 'Row player: MAXIMIN (maximise the minimum)' },
+    { q: 'Row player uses the \\(\\rule{0.5cm}{0.4pt}\\) strategy to maximise their minimum payoff:', options: ['Maximin', 'Minimax', 'Random', 'Dominated'], answer: 0, explanation: 'Row player: MAXIMIN (maximise the minimum)' },
     { q: 'Column player uses the \\(\\rule{0.5cm}{0.4pt}\\) strategy to minimise their maximum loss:', options: ['Maximin', 'Dominance', 'Random', 'Minimax'], answer: 3 },
     { q: 'A saddle point is where maximin \\(=\\) minimax. The game is called:', options: ['Unfair', 'Random', 'Unstable', 'Strictly determined'], answer: 3 },
     { q: 'A dominated strategy is one where another strategy:', options: ['Has a higher variance', 'Is more complex', 'Requires randomness', 'Always gives a worse (or equal) outcome'], answer: 3 },
@@ -745,7 +745,7 @@ const FM_OCR_MCQ = {
   amber: [
     { q: 'Solve \\(u_{n+1}=3u_n\\), \\(u_1=2\\). Then \\(u_n=\\)', options: ['\\(2\\cdot3^{n-1}\\)', '\\(3^n\\)', '\\(2n+3\\)', '\\(3n-1\\)'], answer: 0, explanation: 'u_n=Ca^{n-1}·u_1=2·3^{n-1}' },
     { q: 'Auxiliary equation of \\(u_{n+2}-5u_{n+1}+6u_n=0\\) has roots \\(m=2,3\\). General solution:', options: ['\\(A\\cdot2^n-B\\cdot3^n\\)', '\\(A(2+3)^n\\)', '\\(An+B\\)', '\\(A\\cdot2^n+B\\cdot3^n\\)'], answer: 3 },
-    { q: 'Particular solution of \\(u_{n+1}-2u_n=4\\) (try \\(u_n^*=k\\) constant):', options: ['\\(k=2\\)', '\\(k=4\\)', '\\(k=-4\\)', '\\(k=-4\\)'], answer: 3, explanation: 'k-2k=4 → -k=4 → k=-4' },
+    { q: 'Particular solution of \\(u_{n+1}-2u_n=4\\) (try \\(u_n^*=k\\) constant):', options: ['\\(k=2\\)', '\\(k=4\\)', '\\(k=-2\\)', '\\(k=-4\\)'], answer: 3, explanation: 'k-2k=4 → -k=4 → k=-4' },
     { q: 'The Fibonacci sequence golden ratio \\(\\phi=\\frac{1+\\sqrt{5}}{2}\\approx1.618\\) appears because it is a root of:', options: ['\\(m^2-m+1=0\\)', '\\(m^2+m-1=0\\)', '\\(m^2+m+1=0\\)', '\\(m^2-m-1=0\\)'], answer: 3 },
     { q: 'If \\(u_{n+2}=3u_{n+1}-2u_n\\) with \\(u_1=1,u_2=3\\): auxiliary roots are \\(1,2\\). General solution: \\(u_n=A\\cdot1^n+B\\cdot2^n=A+B\\cdot2^n\\). Using initial conditions \\(A+2B=3, A+B=1\\): \\(B=\\)', options: ['\\(B=1\\)', '\\(B=-1\\)', '\\(B=3\\)', '\\(B=2\\)'], answer: 3, explanation: 'A+2B=3, A+B=1 → B=2' },
     { q: 'The recurrence \\(u_{n+2}-4u_{n+1}+4u_n=0\\) has repeated root \\(m=2\\). General solution:', options: ['\\(A\\cdot2^{n+1}+B\\cdot4^n\\)', '\\(A+B\\cdot2^n\\)', '\\(An\\cdot2^n\\)', '\\((An+B)\\cdot2^n\\)'], answer: 3 },
