@@ -3,6 +3,1787 @@
 // Merged into each paper in mark-schemes.html at selection time.
 // Key: paperId (from papers-config.js).
 window.MATHS_QUESTIONS = {
+ "math-ocr-h640-2018-p3": {
+ "questions": [
+  {
+   "number": 1,
+   "scenario": "Triangle ABC is shown in Fig. 1, with AB = 32 cm, AC = 14 cm and angle BAC = 85°.",
+   "parts": [
+    {
+     "code": "1",
+     "prompt": "Find the perimeter of triangle ABC.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "scenario": "The curve y = x³ − 2x is translated by the vector (1, −4).",
+   "parts": [
+    {
+     "code": "2",
+     "prompt": "Write down the equation of the translated curve.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "scenario": "Fig. 3 shows a circle with centre O and radius 1 unit. Points A and B lie on the circle with angle AOB = θ radians. C lies on AO, and BC is perpendicular to AO.",
+   "parts": [
+    {
+     "code": "3",
+     "prompt": "Show that, when θ is small, AC ≈ ½θ².",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "scenario": "In this question you must show detailed reasoning. A curve has equation y = x − 5 + 1/(x − 2). The curve is shown in Fig. 4.",
+   "parts": [
+    {
+     "code": "4(i)",
+     "prompt": "Determine the coordinates of the stationary points on the curve.",
+     "marks": 5
+    },
+    {
+     "code": "4(ii)",
+     "prompt": "Determine the nature of each stationary point.",
+     "marks": 3
+    },
+    {
+     "code": "4(iii)",
+     "prompt": "Write down the equation of the vertical asymptote.",
+     "marks": 1
+    },
+    {
+     "code": "4(iv)",
+     "prompt": "Deduce the set of values of x for which the curve is concave upwards.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "scenario": "A social media website launched on 1 January 2017. The owners report the number of users, n, at the start of each month, and believe the relationship between n and the number of months after launch, t, can be modelled by n = a × 2^(kt), where a and k are constants. Fig. 5 shows a plot of t against log₁₀n for the first seven months, with the point at t = 1 being 1 February 2017; the points lie close to a straight line with intercept about 1 and gradient about 0.33.",
+   "parts": [
+    {
+     "code": "5(i)",
+     "prompt": "Show that, according to the model, the graph of log₁₀n against t is a straight line.",
+     "marks": 2
+    },
+    {
+     "code": "5(ii)",
+     "prompt": "Find estimates of the values of a and k.",
+     "marks": 4
+    },
+    {
+     "code": "5(iii)",
+     "prompt": "The owners wanted to know the date on which they would report that the website had half a million users. Use the model to estimate this date.",
+     "marks": 4
+    },
+    {
+     "code": "5(iv)",
+     "prompt": "Give a reason why the model may not be appropriate for large values of t.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "parts": [
+    {
+     "code": "6",
+     "prompt": "Find the constant term in the expansion of (x² + 1/x)¹⁵.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "scenario": "In this question you must show detailed reasoning. Fig. 7 shows the curve y = 5x − x². The line y = 4 − kx crosses the curve y = 5x − x² on the x-axis and at one other point.",
+   "parts": [
+    {
+     "code": "7",
+     "prompt": "Determine the coordinates of this other point.",
+     "marks": 8
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "scenario": "A curve has parametric equations x = t/(1 + t³) and y = t²/(1 + t³), where t ≠ −1.",
+   "parts": [
+    {
+     "code": "8(i)",
+     "prompt": "In this question you must show detailed reasoning. Determine the gradient of the curve at the point where t = 1.",
+     "marks": 5
+    },
+    {
+     "code": "8(ii)",
+     "prompt": "Verify that the cartesian equation of the curve is x³ + y³ = xy.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "scenario": "The function f(x) = e^x/(1 − e^x) is defined on the domain x ∈ ℝ, x ≠ 0.",
+   "parts": [
+    {
+     "code": "9(i)",
+     "prompt": "Find f⁻¹(x).",
+     "marks": 3
+    },
+    {
+     "code": "9(ii)",
+     "prompt": "Write down the range of f⁻¹(x).",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "scenario": "Point A has position vector (a, b, 0) where a and b can vary, point B has position vector (4, 2, 0) and point C has position vector (2, 4, 2), all written as column vectors. ABC is an isosceles triangle with AC = AB.",
+   "parts": [
+    {
+     "code": "10(i)",
+     "prompt": "Show that a − b + 1 = 0.",
+     "marks": 4
+    },
+    {
+     "code": "10(ii)",
+     "prompt": "Determine the position vector of A such that triangle ABC has minimum area.",
+     "marks": 6
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article is about the inequality of arithmetic and geometric means. Line 8 states that a + b ≥ 2√(ab) for a, b ≥ 0; lines 5 and 6 outline the stages of a proof that (a + b)/2 ≥ √(ab); Fig. C1.3 shows a semicircle with a right angle at D, where lines 23 and 24 give angle CDA = θ and h = √(ab); and lines 31–32 state that the square has the smallest perimeter of all rectangles with the same area. Questions cite line numbers in that article, so read it alongside these questions. Line 8 states that a + b ≥ 2√(ab) for a, b ≥ 0.",
+   "parts": [
+    {
+     "code": "11(i)",
+     "prompt": "Explain why the result cannot be extended to apply when one of the numbers a and b is positive and the other is negative.",
+     "marks": 1
+    },
+    {
+     "code": "11(ii)",
+     "prompt": "Explain why the result cannot be extended to apply when both numbers a and b are negative.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article is about the inequality of arithmetic and geometric means. Line 8 states that a + b ≥ 2√(ab) for a, b ≥ 0; lines 5 and 6 outline the stages of a proof that (a + b)/2 ≥ √(ab); Fig. C1.3 shows a semicircle with a right angle at D, where lines 23 and 24 give angle CDA = θ and h = √(ab); and lines 31–32 state that the square has the smallest perimeter of all rectangles with the same area. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "12",
+     "prompt": "Lines 5 and 6 outline the stages in a proof that (a + b)/2 ≥ √(ab). Starting from (a − b)² ≥ 0, give a detailed proof of the inequality of arithmetic and geometric means.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article is about the inequality of arithmetic and geometric means. Line 8 states that a + b ≥ 2√(ab) for a, b ≥ 0; lines 5 and 6 outline the stages of a proof that (a + b)/2 ≥ √(ab); Fig. C1.3 shows a semicircle with a right angle at D, where lines 23 and 24 give angle CDA = θ and h = √(ab); and lines 31–32 state that the square has the smallest perimeter of all rectangles with the same area. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "13",
+     "prompt": "Consider a geometric sequence in which all the terms are positive real numbers. Show that, for any three consecutive terms of this sequence, the middle one is the geometric mean of the other two.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article is about the inequality of arithmetic and geometric means. Line 8 states that a + b ≥ 2√(ab) for a, b ≥ 0; lines 5 and 6 outline the stages of a proof that (a + b)/2 ≥ √(ab); Fig. C1.3 shows a semicircle with a right angle at D, where lines 23 and 24 give angle CDA = θ and h = √(ab); and lines 31–32 state that the square has the smallest perimeter of all rectangles with the same area. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "14(i)",
+     "prompt": "In Fig. C1.3, angle CBD = θ. Show that angle CDA is also θ, as given in line 23.",
+     "marks": 2
+    },
+    {
+     "code": "14(ii)",
+     "prompt": "Prove that h = √(ab), as given in line 24.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "scenario": "Section B refers to the article on the Insert, a separate document published with the paper. The article is about the inequality of arithmetic and geometric means. Line 8 states that a + b ≥ 2√(ab) for a, b ≥ 0; lines 5 and 6 outline the stages of a proof that (a + b)/2 ≥ √(ab); Fig. C1.3 shows a semicircle with a right angle at D, where lines 23 and 24 give angle CDA = θ and h = √(ab); and lines 31–32 state that the square has the smallest perimeter of all rectangles with the same area. Questions cite line numbers in that article, so read it alongside these questions.",
+   "parts": [
+    {
+     "code": "15",
+     "prompt": "It is given in lines 31–32 that the square has the smallest perimeter of all rectangles with the same area. Using this fact, prove by contradiction that among rectangles of a given perimeter 4L, the square with side L has the largest area.",
+     "marks": 3
+    }
+   ]
+  }
+ ],
+ "markSchemes": {
+  "1": {
+   "type": "points",
+   "points": [
+    "Use the cosine rule to find BC: BC² = 32² + 14² − 2 × 32 × 14 cos 85°",
+    "BC² = 1141.9…, so BC = 33.8 cm",
+    "Perimeter = 33.79 + 32 + 14 = 79.8 cm"
+   ],
+   "guidance": "M1 for use of the cosine rule to find BC. A1 for BC = 33.8 (33.79…). A1 for the perimeter 79.8; accept 80 provided 3 or more s.f. are seen as BC."
+  },
+  "2": {
+   "type": "points",
+   "points": [
+    "A translation by (1, −4) replaces x by (x − 1) and subtracts 4 from y",
+    "y = (x − 1)³ − 2(x − 1) − 4"
+   ],
+   "guidance": "B1 for both factors (x − 1). B1 for the −4. Note the expanded form is y = x³ − 3x² + x − 3; 'y =' must be seen for 2 marks; isw after a correct answer."
+  },
+  "3": {
+   "type": "points",
+   "points": [
+    "OC = cos θ since OB = 1 and angle BOC = θ",
+    "AC = AO − OC = 1 − cos θ",
+    "For small θ, cos θ ≈ 1 − θ²/2",
+    "AC ≈ 1 − (1 − θ²/2) = ½θ²"
+   ],
+   "guidance": "M1 for AC = 1 − cos θ, or cos θ = 1 − AC; allow AC = AO − OC with OC = cos θ. E1 for a convincing completion. Given answer."
+  },
+  "4(i)": {
+   "type": "points",
+   "points": [
+    "Differentiate: dy/dx = 1 − 1/(x − 2)²",
+    "At a stationary point 1 − 1/(x − 2)² = 0, so (x − 2)² = 1",
+    "x − 2 = ±1, giving x = 1 and x = 3",
+    "When x = 1, y = 1 − 5 − 1 = −5; when x = 3, y = 3 − 5 + 1 = −1",
+    "The stationary points are (1, −5) and (3, −1)"
+   ],
+   "guidance": "M1 for an attempt to differentiate with one term correct, and A1 for the correct derivative. M1 for setting their derivative equal to zero. A1 for both values of x. A1 for both values of y, following through their x."
+  },
+  "4(ii)": {
+   "type": "points",
+   "points": [
+    "Differentiate again: d²y/dx² = 2/(x − 2)³",
+    "At x = 3, d²y/dx² = 2 > 0, so (3, −1) is a minimum",
+    "At x = 1, d²y/dx² = −2 < 0, so (1, −5) is a maximum"
+   ],
+   "guidance": "M1 for the second derivative. A1 for the minimum at x = 3 and A1 for the maximum at x = 1. Alternatively consider the gradient either side of each stationary point: M1 for the consideration, A1 for correct gradients above and below each turning point, A1 for correct convincing conclusions, possibly with sketches."
+  },
+  "4(iii)": {
+   "type": "exact",
+   "points": [
+    "x = 2"
+   ],
+   "guidance": "B1."
+  },
+  "4(iv)": {
+   "type": "exact",
+   "points": [
+    "x > 2"
+   ],
+   "guidance": "A1, following through their part (iii) if the region is to the right of their x value — note d²y/dx² = 2/(x − 2)³ is positive exactly when x > 2."
+  },
+  "5(i)": {
+   "type": "points",
+   "points": [
+    "Take logs to base 10 of n = a × 2^(kt)",
+    "log₁₀n = log₁₀a + kt log₁₀2",
+    "This has the form y = mx + c with log₁₀n as y and t as x, so the graph is a straight line"
+   ],
+   "guidance": "M1 for log₁₀n = log₁₀a + kt log₁₀2; allow t log 2^k. E1 for identifying this as the equation of a straight line. Given answer."
+  },
+  "5(ii)": {
+   "type": "points",
+   "points": [
+    "Draw a reasonable line of best fit by eye; its intercept is about 1 and its gradient about 0.33",
+    "The intercept is log₁₀a ≈ 1, so a ≈ 10",
+    "The gradient is k log₁₀2 ≈ 0.33, so k ≈ 0.33/0.301 ≈ 1.1"
+   ],
+   "guidance": "B1 for a reasonable line of best fit drawn by eye, with intercept c satisfying 0.9 < c < 1.2. M1 for a suitable method leading to a value for a, for example using the intercept, giving 0.9 < log a < 1.2 and so 7.4 < a < 15.85. M1 for a suitable method leading to a value for k, such as k log₁₀2 = gradient ≈ 0.33. A1 for k in the range 0 < k < 1.25 and a in the range 7.4 < a < 15.85. Candidates may use two points from the line, or condone use of two given points. If a gradient of exactly 1/3 is used, k = 1.1073…"
+  },
+  "5(iii)": {
+   "type": "points",
+   "points": [
+    "Set n = 500 000: 500 000 = 10 × 2^(1.1t)",
+    "1.1t log 2 = log 50 000",
+    "t = 14.2",
+    "t = 14 corresponds to 1 March 2018, so rounding up the date is 1 April 2018"
+   ],
+   "guidance": "M1 for the correct substitution. A1 for the value of t, following through their a and k. M1 for the translation into a date. A1 for 1/4/18, rounding up. For k = 1.10730936…, t = 14.1, giving the same answer."
+  },
+  "5(iv)": {
+   "type": "points",
+   "points": [
+    "The data cover only a short time scale, so extrapolating far beyond it is unreliable — and there will not be enough people in the world for such growth to continue"
+   ],
+   "guidance": "E1 for a suitable reason."
+  },
+  "6": {
+   "type": "points",
+   "points": [
+    "The general term is ¹⁵Cᵣ(x²)^(15−r)(1/x)^r",
+    "For a constant term the powers of x must cancel: 2(15 − r) − r = 0, so r = 10",
+    "The term is ¹⁵C₅(x²)⁵(1/x)¹⁰",
+    "= 3003"
+   ],
+   "guidance": "M1 for identifying the term with (x²)⁵(1/x)¹⁰ — this must be seen. A1 for 3003."
+  },
+  "7": {
+   "type": "points",
+   "points": [
+    "The curve meets the x-axis where 5x − x² = 0, that is x(5 − x) = 0, so x = 0 or x = 5",
+    "The line y = 4 − kx does not pass through the origin, so the crossing point on the x-axis is x = 5",
+    "At (5, 0): 0 = 4 − 5k, so k = 4/5",
+    "Set the line equal to the curve: 4 − (4/5)x = 5x − x²",
+    "Rearrange: 5x² − 29x + 20 = 0",
+    "Factorise: (5x − 4)(x − 5) = 0, so x = 4/5 (the other point)",
+    "y = 4 − (4/5)(4/5) = 84/25, so the point is (4/5, 84/25)"
+   ],
+   "guidance": "M1 for the factorisation and A1 for finding 5. E1 for the rejection of the origin as the crossing point, which may come later. M1 for using y = 4 − kx with (5, 0) and A1 for k = 4/5. M1 for equating the line and the curve. M1 for solving the resulting quadratic. A1 for (4/5, 84/25) or equivalent — note 84/25 = 3.36."
+  },
+  "8(i)": {
+   "type": "points",
+   "points": [
+    "Use the quotient rule: dx/dt = [(1 + t³) − t(3t²)]/(1 + t³)² = (1 − 2t³)/(1 + t³)²",
+    "dy/dt = [2t(1 + t³) − t²(3t²)]/(1 + t³)² = (2t − t⁴)/(1 + t³)²",
+    "dy/dx = (dy/dt)/(dx/dt) = (2t − t⁴)/(1 − 2t³)",
+    "When t = 1: dy/dx = (2 − 1)/(1 − 2)",
+    "= −1"
+   ],
+   "guidance": "M1 for use of the quotient rule — this may be gained for dy/dt if dx/dt is not seen; allow ±. A1 for dx/dt correct. A1 for dy/dt correct. M1 for substituting into their dy/dx, dependent on the earlier M1. A1 for −1."
+  },
+  "8(ii)": {
+   "type": "points",
+   "points": [
+    "x³ + y³ = t³/(1 + t³)³ + t⁶/(1 + t³)³ = (t³ + t⁶)/(1 + t³)³",
+    "Factorise the numerator: t³(1 + t³)/(1 + t³)³",
+    "= t³/(1 + t³)²",
+    "And xy = [t/(1 + t³)][t²/(1 + t³)] = t³/(1 + t³)², which is the same, so x³ + y³ = xy"
+   ],
+   "guidance": "M1 for the expression for the left-hand side. M1 for factorising. A1 for the completion of the argument. Given answer."
+  },
+  "9(i)": {
+   "type": "points",
+   "points": [
+    "Set y = e^x/(1 − e^x) and clear the fraction: y(1 − e^x) = e^x",
+    "y = e^x(1 + y), so e^x = y/(1 + y)",
+    "Take logs: x = ln(y/(1 + y))",
+    "f⁻¹(x) = ln(x/(1 + x))"
+   ],
+   "guidance": "M1 for clearing the fractions. A1 for the expression for e^x. A1 for f⁻¹(x) = ln(x/(1 + x)); condone 'y =' and condone no brackets or modulus. x and y may be interchanged at any stage."
+  },
+  "9(ii)": {
+   "type": "exact",
+   "points": [
+    "f⁻¹(x) ≠ 0"
+   ],
+   "guidance": "B1 — the domain of f excludes x = 0, so the range of f⁻¹ excludes 0. Allow y ≠ 0 but not x ≠ 0."
+  },
+  "10(i)": {
+   "type": "points",
+   "points": [
+    "AC = C − A = (2 − a, 4 − b, 2) and AB = B − A = (4 − a, 2 − b, 0)",
+    "AC = AB gives (4 − a)² + (2 − b)² = (2 − a)² + (4 − b)² + 4",
+    "Expand: 16 − 8a + a² + 4 − 4b + b² = 4 − 4a + a² + 16 − 8b + b² + 4",
+    "Simplify: 4a − 4b + 4 = 0, so a − b + 1 = 0"
+   ],
+   "guidance": "M1 for forming vectors for the sides AB and AC, implied by the next M1. M1 for use of AB = AC. M1 for expanding. A1 for a convincing completion. Given answer."
+  },
+  "10(ii)": {
+   "type": "points",
+   "points": [
+    "BC is fixed, so the area is least when the perpendicular distance from A to BC is least",
+    "Let D be the midpoint of BC, which has position vector (3, 3, 1)",
+    "Since AB = AC, AD is perpendicular to BC, and AD = (3 − a, 3 − b, 1) = (3 − a, 2 − a, 1) using b = a + 1",
+    "Area = ½ × AD × BC = (2√3/2)√((3 − a)² + (2 − a)² + 1)",
+    "Complete the square: √3 × √(2((a − 2.5)² + 0.75))",
+    "This is least when a = 2.5, so b = 3.5",
+    "The position vector of A is (2.5, 3.5, 0)"
+   ],
+   "guidance": "B1 for the midpoint (3, 3, 1); alternatively, if clearly minimising AC or AB, M1 for the relevant vector using a and b, which may be implied by the second M1. M1 for finding the relevant vector in terms of a or b only. M1 for an expression for AD or AD², a correct method but which may have errors; candidates may use the area being proportional to AD, AC or AB without calculating an expression for the area. M1 for completing the square, or for differentiating AD, AD², AC, AB, AC² or AB². A1 for a = 2.5. A1 for the position vector (2.5, 3.5, 0)."
+  },
+  "11(i)": {
+   "type": "points",
+   "points": [
+    "If one of a and b is negative then ab is negative, so √(ab) is not a real number — the geometric mean cannot be calculated"
+   ],
+   "guidance": "E1."
+  },
+  "11(ii)": {
+   "type": "points",
+   "points": [
+    "If both a and b are negative then a + b is negative, while √(ab) is positive",
+    "So the arithmetic mean is less than the geometric mean and the inequality fails"
+   ],
+   "guidance": "E1; allow 'the arithmetic mean will be negative'."
+  },
+  "12": {
+   "type": "points",
+   "points": [
+    "Start from (a − b)² ≥ 0, so a² − 2ab + b² ≥ 0",
+    "Hence a² + b² ≥ 2ab",
+    "Add 2ab to each side: a² + 2ab + b² ≥ 4ab, that is (a + b)² ≥ 4ab",
+    "Take square roots (a, b ≥ 0): a + b ≥ √(4ab) = 2√(ab)",
+    "Divide by 2: (a + b)/2 ≥ √(ab)"
+   ],
+   "guidance": "B1 for squaring the bracket. B1 for adding 2ab to each side. B1 for taking the square root and completing correctly."
+  },
+  "13": {
+   "type": "points",
+   "points": [
+    "Let three consecutive terms of the geometric sequence be c/r, c and cr, where all terms are positive",
+    "The geometric mean of the first and last is √((c/r) × cr)",
+    "= √(c²) = c, since c > 0",
+    "This is the middle term, as required"
+   ],
+   "guidance": "B1 for expressions for three consecutive terms of a GP in any correct form. M1 for an expression for the geometric mean of the first and last terms in any correct form, following through their terms. E1 for the correct completion. Given answer."
+  },
+  "14(i)": {
+   "type": "points",
+   "points": [
+    "In triangle BCD the angle at C is 90°, so angle BDC = 90° − θ",
+    "ADB is the angle in a semicircle, so angle ADB = 90°",
+    "Therefore angle CDA = 90° − angle BDC = 90° − (90° − θ) = θ"
+   ],
+   "guidance": "M1 for angle BDC = 90 − θ, including the reason. E1 for the reason that angle ADB = 90° as it is the angle in a semicircle — the answer is given, so the mark is for the reason. The reasons can be given in either order."
+  },
+  "14(ii)": {
+   "type": "points",
+   "points": [
+    "In triangle ACD, tan θ = h/b",
+    "In triangle BCD, tan θ = a/h",
+    "Equate: a/h = h/b",
+    "So h² = ab and h = √(ab)"
+   ],
+   "guidance": "M1 for at least one correct expression for tan θ. E1 for setting the expressions equal and completing correctly to the given answer. Alternatively note triangle ACD is similar to triangle DBC. Given answer."
+  },
+  "15": {
+   "type": "points",
+   "points": [
+    "Suppose that, for the given perimeter 4L, there is a rectangle which is larger in area than the square of side L",
+    "By the given fact, there is a square with the same area as this rectangle but a smaller perimeter, so its side is less than L",
+    "But the square of side L has perimeter 4L and, being larger, its area would exceed that of the rectangle",
+    "This contradicts the assumption, so the square of side L must have the largest area of all rectangles of perimeter 4L"
+   ],
+   "guidance": "M1 for setting up a statement for contradiction. A1 for the use of the statement in lines 31–32. A1 for the completion to the correct conclusion, including the contradiction."
+  }
+ }
+},
+ "math-ocr-h640-2018-p2": {
+ "questions": [
+  {
+   "number": 1,
+   "parts": [
+    {
+     "code": "1",
+     "prompt": "Show that √27 + √192 = a√b, where a and b are prime numbers to be determined.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "parts": [
+    {
+     "code": "2",
+     "prompt": "Solve the inequality |2x + 1| < 5.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "scenario": "The probability that Chipping FC win a league football match is P(W) = 0.4, and the probability that they lose is P(L) = 0.3.",
+   "parts": [
+    {
+     "code": "3(i)",
+     "prompt": "Calculate the probability that Chipping FC fail to win each of their next two league football matches.",
+     "marks": 1
+    },
+    {
+     "code": "3(ii)",
+     "prompt": "Explain why P(W) + P(L) ≠ 1.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "scenario": "A survey of the number of cars per household in a certain village gave: 0 cars in 8 households, 1 car in 22, 2 cars in 31, 3 cars in 27 and 4 cars in 7.",
+   "parts": [
+    {
+     "code": "4(i)",
+     "prompt": "Calculate the mean number of cars per household.",
+     "marks": 1
+    },
+    {
+     "code": "4(ii)",
+     "prompt": "Calculate the standard deviation of the number of cars per household.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "scenario": "The curve y = f(x) is the reflection of the curve y = 3^x in the line y = x.",
+   "parts": [
+    {
+     "code": "5(i)(A)",
+     "prompt": "Sketch the graph of y = 3^x.",
+     "marks": 1
+    },
+    {
+     "code": "5(i)(B)",
+     "prompt": "Give the coordinates of any intercepts.",
+     "marks": 1
+    },
+    {
+     "code": "5(ii)",
+     "prompt": "Find f(x).",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "parts": [
+    {
+     "code": "6(i)",
+     "prompt": "Express 7 cos x − 24 sin x in the form R cos(x + α), where 0 < α < π/2.",
+     "marks": 3
+    },
+    {
+     "code": "6(ii)",
+     "prompt": "Write down the range of the function f(x) = 12 + 7 cos x − 24 sin x for 0 ≤ x ≤ 2π.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "parts": [
+    {
+     "code": "7",
+     "prompt": "Find the integral of (4√x − 6/x³) with respect to x.",
+     "marks": 4
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "scenario": "Every morning before breakfast Laura and Mike play a game of chess. The probability that Laura wins is 0.7, and the outcome of any game is independent of the others.",
+   "parts": [
+    {
+     "code": "8(i)",
+     "prompt": "Calculate the probability that, in the next 20 games, Laura wins exactly 14 games.",
+     "marks": 2
+    },
+    {
+     "code": "8(ii)",
+     "prompt": "Calculate the probability that, in the next 20 games, Laura wins at least 14 games.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "scenario": "At the end of each school term all the science classes in year 10 at North End College are given a test. The marks out of 100 achieved by set 1 are shown in a stem and leaf diagram: 3 | 5; 4 | 0 9; 5 | 2 3 6; 6 | 0 1 3 5 6; 7 | 0 1 2 5 6 8 9 9; 8 | 3 4 6 6 8 8 9; 9 | 5 5 5 6 7. Benson's mark is 35, and a student whose mark is an outlier in the lower tail is moved down to set 2.",
+   "parts": [
+    {
+     "code": "9(i)",
+     "prompt": "Describe the shape of the distribution.",
+     "marks": 1
+    },
+    {
+     "code": "9(ii)",
+     "prompt": "The teacher for set 1 claimed that a typical student in his class achieved a mark of 95. How did he justify this statement?",
+     "marks": 1
+    },
+    {
+     "code": "9(iii)",
+     "prompt": "Another teacher said that the average mark in set 1 is 76. How did she justify this statement?",
+     "marks": 1
+    },
+    {
+     "code": "9(iv)",
+     "prompt": "Determine whether Benson is moved down to set 2.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "scenario": "The screenshot in Fig. 10 shows the probability distribution for the continuous random variable X, where X ~ N(μ, σ²). The area of each of the unshaded regions under the curve is 0.025; the lower boundary of the shaded region is at 16.452 and the upper boundary is at 21.548.",
+   "parts": [
+    {
+     "code": "10(i)",
+     "prompt": "Calculate the value of μ.",
+     "marks": 1
+    },
+    {
+     "code": "10(ii)",
+     "prompt": "Calculate the value of σ².",
+     "marks": 3
+    },
+    {
+     "code": "10(iii)(A)",
+     "prompt": "Y is the random variable given by Y = 4X + 5. Write down the distribution of Y.",
+     "marks": 3
+    },
+    {
+     "code": "10(iii)(B)",
+     "prompt": "Find P(Y > 90).",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "scenario": "The discrete random variable X takes the values 0, 1, 2, 3, 4 and 5 with probabilities given by P(X = x) = k(x + 1)(6 − x). In one half-term Ben attends school on 40 days, and this distribution is used to model X, the number of lessons per day in which Ben receives a gold star for excellent work.",
+   "parts": [
+    {
+     "code": "11(i)",
+     "prompt": "Find the value of k.",
+     "marks": 2
+    },
+    {
+     "code": "11(ii)",
+     "prompt": "Find the probability that Ben receives no gold stars on each of the first 3 days of the half-term and two gold stars on each of the next 2 days.",
+     "marks": 2
+    },
+    {
+     "code": "11(iii)",
+     "prompt": "Find the expected number of days in the half-term on which Ben receives no gold stars.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "scenario": "You must show detailed reasoning in this question. In the summer of 2017 in England a large number of candidates sat GCSE examinations in both mathematics and English. 56% of these candidates achieved at least level 4 in mathematics, 80% achieved at least level 4 in English, and 14% did not achieve at least level 4 in either subject.",
+   "parts": [
+    {
+     "code": "12",
+     "prompt": "Determine whether achieving level 4 or above in English and achieving level 4 or above in mathematics were independent events.",
+     "marks": 5
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "scenario": "Each weekday Keira drives to work with her son Kaito, always setting off at 8.00 a.m. She models her journey time, x minutes, by X ~ N(15, 4). Over a long period she notes that her journey takes less than 14 minutes on 7% of journeys and more than 18 minutes on 31% of journeys. Kaito believes the variance is correct but the mean is not. Keira later buys a new car; her mean journey time over a random sample of n days is 16 minutes, and using the refined model a hypothesis test to see if her mean journey time has changed is significant at the 5% level.",
+   "parts": [
+    {
+     "code": "13(i)",
+     "prompt": "Investigate whether Keira's model is a good fit for the data.",
+     "marks": 3
+    },
+    {
+     "code": "13(ii)",
+     "prompt": "Find, correct to two significant figures, the value of the mean that Keira should use in a refined model which does fit the data.",
+     "marks": 2
+    },
+    {
+     "code": "13(iii)",
+     "prompt": "Determine the smallest possible value of n.",
+     "marks": 5
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "scenario": "The pre-release material includes data on unemployment rates in different countries. A sample has been taken in which all countries are in Europe; the grouped data (Fig. 14.1) are 0–: 15, 5–: 21, 10–: 5, 15–: 5, 20–: 2, 35–50: 2. A cumulative frequency curve generated from these data by a spreadsheet is shown in Fig. 14.2. Hodge used Fig. 14.2 to estimate the median unemployment rate and obtained 5.0, whereas the correct value for this sample is 6.9. Fig. 14.3 is a scatter diagram of life expectancy at birth against unemployment rate for the 47 countries in the sample for which both are available; the product moment correlation coefficient is −0.2607 and the associated p-value for n = 47 is 0.0383. The unemployment rate in Kosovo is 35.3 but no life expectancy data is available.",
+   "parts": [
+    {
+     "code": "14(i)(A)",
+     "prompt": "There is a systematic error in the diagram. Identify this error and state how it affects Hodge's estimate.",
+     "marks": 2
+    },
+    {
+     "code": "14(i)(B)",
+     "prompt": "There is another factor which has affected Hodge's estimate. Identify this factor and state how it affects Hodge's estimate.",
+     "marks": 2
+    },
+    {
+     "code": "14(ii)",
+     "prompt": "Use your knowledge of the pre-release material to give another reason why any estimation of the median unemployment rate in Europe may be unreliable.",
+     "marks": 1
+    },
+    {
+     "code": "14(iii)",
+     "prompt": "Use your knowledge of the pre-release material to explain why it is very unlikely that the sample has been randomly selected from the pre-release material.",
+     "marks": 1
+    },
+    {
+     "code": "14(iv)",
+     "prompt": "Does this information suggest that there is an association between unemployment rate and life expectancy at birth in countries in Europe?",
+     "marks": 2
+    },
+    {
+     "code": "14(v)",
+     "prompt": "Hodge uses spreadsheet tools to obtain the equation of a line of best fit for this data. Is it reasonable to use Hodge's line of best fit to estimate life expectancy at birth in Kosovo?",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 15,
+   "scenario": "You must show detailed reasoning in this question. The equation of a curve is y³ − xy + 4√x = 4.",
+   "parts": [
+    {
+     "code": "15",
+     "prompt": "Find the gradient of the curve at each of the points where y = 1.",
+     "marks": 9
+    }
+   ]
+  },
+  {
+   "number": 16,
+   "scenario": "In the first year of a course an A-level student, Aaishah, has a mathematics test each week, and the night before each test she revises for t hours. Her percentage mark p may be modelled by p = A − B(t − C)², where A, B and C are constants. However much she revises, her maximum mark is achieved when she does 2 hours revision, and this maximum mark is 62; she had a mark of 22 when she did no revision. She later works through problems for a total of t hours over the three nights before a test, and proposes p = 22 + 68(1 − e^(−0.8t)). For the next three tests she recorded t = 1, 3, 5 with p = 59, 84, 89.",
+   "parts": [
+    {
+     "code": "16(i)",
+     "prompt": "Find the values of A, B and C.",
+     "marks": 3
+    },
+    {
+     "code": "16(ii)",
+     "prompt": "According to the model, if Aaishah revises for 45 minutes on the night before the test, what mark will she achieve?",
+     "marks": 2
+    },
+    {
+     "code": "16(iii)",
+     "prompt": "What is the maximum amount of time that Aaishah could have spent revising for the model to work?",
+     "marks": 2
+    },
+    {
+     "code": "16(iv)",
+     "prompt": "Verify that the data in Fig. 16 is consistent with the new formula.",
+     "marks": 2
+    },
+    {
+     "code": "16(v)",
+     "prompt": "Aaishah's tutor advises her to spend a minimum of twelve hours working through problems in future. Determine whether or not this is good advice.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 17,
+   "scenario": "The variables x and y satisfy dy/dx = y(x² − 8x + 9)/((x + 1)(x − 2)²), and y = 16 when x = 3.",
+   "parts": [
+    {
+     "code": "17(i)",
+     "prompt": "Express (x² − 8x + 9)/((x + 1)(x − 2)²) in partial fractions.",
+     "marks": 5
+    },
+    {
+     "code": "17(ii)",
+     "prompt": "Express y in terms of x.",
+     "marks": 7
+    }
+   ]
+  }
+ ],
+ "markSchemes": {
+  "1": {
+   "type": "points",
+   "points": [
+    "√27 = √9 × √3 = 3√3 and √192 = √64 × √3 = 8√3",
+    "3√3 + 8√3 = 11√3, so a = 11 and b = 3"
+   ],
+   "guidance": "M1 for 3√3 or 8√3 seen. A1 for 11√3 — both 11 and 3 are prime as required."
+  },
+  "2": {
+   "type": "points",
+   "points": [
+    "|2x + 1| < 5 means −5 < 2x + 1 < 5",
+    "−6 < 2x < 4",
+    "−3 < x < 2"
+   ],
+   "guidance": "M1 for −5 < 2x + 1 < 5, or −(2x + 1) < 5 and 2x + 1 < 5, or (2x + 1)² < 25. A1 for −3 and 2 identified. A1 for −3 < x < 2; allow 'x > −3 and x < 2'. If M0, allow B1 for either condition identified."
+  },
+  "3(i)": {
+   "type": "points",
+   "points": [
+    "P(not win) = 1 − 0.4 = 0.6",
+    "P(fail to win both) = 0.6² = 0.36"
+   ],
+   "guidance": "B1."
+  },
+  "3(ii)": {
+   "type": "points",
+   "points": [
+    "A match can also be drawn, so P(draw) ≠ 0",
+    "Winning and losing are not exhaustive outcomes, so their probabilities need not sum to 1"
+   ],
+   "guidance": "B1 for any comment which identifies that other outcomes are possible."
+  },
+  "4(i)": {
+   "type": "exact",
+   "points": [
+    "2.03 cars per household"
+   ],
+   "guidance": "B1 for 2.031578947… rounded to two or more s.f.; isw, by calculator. Allow 2.0, 2.03 or 2.032."
+  },
+  "4(ii)": {
+   "type": "exact",
+   "points": [
+    "1.08 (1.076)"
+   ],
+   "guidance": "B1 for 1.076367330… rounded to two or more s.f.; isw, by calculator. Allow 1.1, 1.08 or 1.076. Note this is the sample standard deviation, using the divisor n − 1."
+  },
+  "5(i)(A)": {
+   "type": "points",
+   "points": [
+    "An increasing exponential curve lying entirely above the x-axis",
+    "It is close to the x-axis for large negative x and rises steeply for positive x"
+   ],
+   "guidance": "B1 for the correct shape in both quadrants; condone the curve touching the x-axis, but not cutting it."
+  },
+  "5(i)(B)": {
+   "type": "exact",
+   "points": [
+    "(0, 1)"
+   ],
+   "guidance": "B1 — do not allow just y = 1."
+  },
+  "5(ii)": {
+   "type": "exact",
+   "points": [
+    "f(x) = log₃x"
+   ],
+   "guidance": "B1; allow (log x)/(log 3) or equivalent. Reflecting y = 3^x in y = x gives the inverse function."
+  },
+  "6(i)": {
+   "type": "points",
+   "points": [
+    "R = √(7² + 24²) = 25",
+    "tan α = 24/7, so α = 1.287 radians",
+    "7 cos x − 24 sin x = 25 cos(x + 1.29)"
+   ],
+   "guidance": "B1 for R = 25. M1 for tan⁻¹(24/7), sin⁻¹(24/25) or cos⁻¹(7/25). A1 for α = 1.28700221759 rounded to two or more s.f. Note 73.739795° rounded to two or more s.f. may imply M1A0, since the answer must be in radians."
+  },
+  "6(ii)": {
+   "type": "points",
+   "points": [
+    "7 cos x − 24 sin x = 25 cos(x + 1.29) takes all values from −25 to 25 over the interval",
+    "So f(x) = 12 + 25 cos(x + 1.29) ranges from 12 − 25 to 12 + 25",
+    "−13 ≤ f(x) ≤ 37"
+   ],
+   "guidance": "M1 for 12 ± their 25, or one of −13 and 37 identified. A1 for −13 ≤ f(x) ≤ 37; allow 'from −13 to 37 inclusive'. A0 if the inequality is strict."
+  },
+  "7": {
+   "type": "points",
+   "points": [
+    "Write in index form: ∫(4x^(1/2) − 6x⁻³) dx",
+    "Integrate: 4x^(3/2)/(3/2) − 6x⁻²/(−2)",
+    "= (8/3)x^(3/2) + 3x⁻² + c"
+   ],
+   "guidance": "M1 for a term of the form kx^(3/2). M1 for a term of the form kx⁻². A1 for (8/3)x^(3/2) or +3x⁻² seen. A1 for the fully correct expression including + c; isw."
+  },
+  "8(i)": {
+   "type": "points",
+   "points": [
+    "The number of wins is B(20, 0.7)",
+    "P(X = 14) = ²⁰C₁₄(0.7)¹⁴(0.3)⁶",
+    "= 0.192"
+   ],
+   "guidance": "M1 for use of B(20, 0.7), seen or implied. A1 for 0.191638982753… rounded to two or more d.p.; isw, by calculator. Allow 0.1916, 0.192 or 0.19."
+  },
+  "8(ii)": {
+   "type": "points",
+   "points": [
+    "P(X ≥ 14) = 1 − P(X ≤ 13)",
+    "P(X ≤ 13) = 0.39199",
+    "P(X ≥ 14) = 0.608"
+   ],
+   "guidance": "M1 for P(X ≤ 13) found, seen or implied — note 0.391990188187. A1 for 0.608009811813… rounded to two or more d.p.; isw, by calculator. Allow 0.6080, 0.608 or 0.61. M0 if P(X = 13) is used. If M0, allow SC1 for 1 − P(X ≤ 14) = 0.41637083 rounded to two or more d.p."
+  },
+  "9(i)": {
+   "type": "exact",
+   "points": [
+    "Negative skew"
+   ],
+   "guidance": "B1."
+  },
+  "9(ii)": {
+   "type": "points",
+   "points": [
+    "He used the mode — 95 occurs three times, more often than any other mark"
+   ],
+   "guidance": "B1 for '(used) the mode'."
+  },
+  "9(iii)": {
+   "type": "points",
+   "points": [
+    "She used the median — with 31 marks the median is the 16th value, which is 76"
+   ],
+   "guidance": "B1 for '(used) the median'."
+  },
+  "9(iv)": {
+   "type": "points",
+   "points": [
+    "The lower quartile is 61 and the upper quartile is 88, so the interquartile range is 27",
+    "Outlier boundary: Q₁ − 1.5(Q₃ − Q₁) = 61 − 1.5 × 27 = 20.5",
+    "35 > 20.5, so 35 is not an outlier and Benson does not move down to set 2"
+   ],
+   "guidance": "M1 for 61 − 1.5 × (88 − 61). A1 for 20.5 < 35 with the conclusion that he does not move. Alternatively use the mean ± 2 standard deviations: 73.61 − 2 × 17.03 = 39.6 > 35, so 35 is an outlier and he does move to set 2. Allow, for example, 'only marks below 20.5 (or 39.6) would lead to a move down' plus a correct conclusion."
+  },
+  "10(i)": {
+   "type": "points",
+   "points": [
+    "The distribution is symmetrical about the mean, so μ is the midpoint of 16.452 and 21.548",
+    "μ = 19"
+   ],
+   "guidance": "B1."
+  },
+  "10(ii)": {
+   "type": "points",
+   "points": [
+    "Each unshaded tail has area 0.025, so the boundaries are at z = ±1.96",
+    "1.96 = (21.548 − 19)/σ",
+    "σ = 1.3",
+    "σ² = 1.69"
+   ],
+   "guidance": "M1 for 1.96 = (21.548 − 19)/σ, or −1.96 = (16.452 − 19)/σ; it may be implied by the final answer. A1 for σ = awrt 1.3. A1 for σ² = awrt 1.69; allow B3 for awrt 1.69 unsupported. M0 if z = 2 is used."
+  },
+  "10(iii)(A)": {
+   "type": "points",
+   "points": [
+    "For Y = 4X + 5, E(Y) = 4 × 19 + 5 = 81",
+    "Var(Y) = 4² × 1.69 = 27.04, so the standard deviation is 4 × 1.3 = 5.2",
+    "Y ~ N(81, 5.2²)"
+   ],
+   "guidance": "M1 for 4 × their 19 + 5. M1 for 4² × their 1.69, or σ = 4 × their 1.3. A1 for N(81, 5.2²) or equivalent — note the variance is 27.04."
+  },
+  "10(iii)(B)": {
+   "type": "exact",
+   "points": [
+    "0.0417"
+   ],
+   "guidance": "B1 for 0.04175, 0.0417 or 0.042, by calculator. The unrounded value is 0.0417462427103."
+  },
+  "11(i)": {
+   "type": "points",
+   "points": [
+    "The probabilities sum to 1",
+    "k(1×6 + 2×5 + 3×4 + 4×3 + 5×2 + 6×1) = 1",
+    "k(6 + 10 + 12 + 12 + 10 + 6) = 56k = 1, so k = 1/56"
+   ],
+   "guidance": "M1 for the equation; allow one slip in the arithmetic. A1 for k = 1/56; isw. B2 if unsupported."
+  },
+  "11(ii)": {
+   "type": "points",
+   "points": [
+    "P(X = 0) = 6k and P(X = 2) = 12k",
+    "The days are independent, so the probability is (6k)³ × (12k)²",
+    "With k = 1/56 this is 243/4302592 = 0.0000565"
+   ],
+   "guidance": "M1 for (6 × k)³ × (12 × k)² or equivalent seen, following through their k. A1 for 243/4302592, or 0.000056477584 rounded to two or more s.f."
+  },
+  "11(iii)": {
+   "type": "points",
+   "points": [
+    "P(no gold stars on a day) = 6k = 6/56",
+    "Expected number of days = 40 × 6/56",
+    "= 4.29 days"
+   ],
+   "guidance": "M1 for 40 × 6k, following through their k. A1 for 4.286, 4.29 or 4.3; mark the final answer."
+  },
+  "12": {
+   "type": "points",
+   "points": [
+    "Let A be achieving level 4+ in maths and B achieving level 4+ in English",
+    "P(A ∪ B) = 1 − 0.14 = 0.86, and P(A ∪ B) = P(A) + P(B) − P(A ∩ B)",
+    "0.86 = 0.56 + 0.80 − P(A ∩ B), so P(A ∩ B) = 0.5",
+    "For independence we would need P(A) × P(B) = P(A ∩ B)",
+    "P(A) × P(B) = 0.56 × 0.80 = 0.448",
+    "0.448 ≠ 0.5, so the events are not independent"
+   ],
+   "guidance": "M1 for use of a contingency table, a Venn diagram or the addition law — 0.56, 0.8 and 0.14 must be correctly placed. A1 for P(A ∩ B) = 0.5. M1 for P(A) × P(B) = 0.56 × 0.80, or for P(A|B) = 0.5/0.80. A1 for 0.448 seen, or 0.625 seen. A1 for the conclusion that they are not independent. The first M1A1 may be awarded for working with percentages, and an equivalent argument based on showing A′ and B′ not independent is allowed."
+  },
+  "13(i)": {
+   "type": "points",
+   "points": [
+    "Using X ~ N(15, 4), P(X < 14) = 0.3085 and P(X > 18) = 0.0668",
+    "The observed figures are 7% and 31%",
+    "0.3085 is far from 0.07 and 0.0668 is far from 0.31, so the model is not a good fit"
+   ],
+   "guidance": "M1 for the calculation of P(X < 14) and P(X > 18). A1 for 0.3085 and 0.0668 to 1 s.f. or better. A1 for the conclusion that the figures do not support the model — the second A1 is only available if the first A1 is awarded. Alternatively solve −1.476 = (14 − μ)/σ and 0.496 = (18 − μ)/σ simultaneously to give μ ≈ 17 and σ ≈ 2.02, which is not close to the model; allow SC2 for showing the model is not a good fit for either value with all working correct."
+  },
+  "13(ii)": {
+   "type": "points",
+   "points": [
+    "Φ⁻¹(0.07) = −1.476, so −1.476 = (14 − μ)/2, giving μ = 16.95",
+    "Alternatively Φ⁻¹(0.69) = 0.496 gives (18 − μ)/2 = 0.496 and μ = 17.008",
+    "So μ = 17 to 2 significant figures"
+   ],
+   "guidance": "M1 for the correct equation using Φ⁻¹(0.07) or Φ⁻¹(0.69). A1 for μ = 17. Alternatively argue that since the variance is assumed correct, the mean must be as far above the midpoint as it was previously below it: 16 + 1 = 17. If M0, allow B2 for 17 unsupported."
+  },
+  "13(iii)": {
+   "type": "points",
+   "points": [
+    "This is a two-tailed test at the 5% level, so the critical value is z = ±1.96",
+    "For the result to be significant, (16 − 17)/(2/√n) < −1.96",
+    "Rearrange: √n > 2 × 1.96 = 3.92",
+    "n > 15.3664",
+    "So the smallest possible value is n = 16"
+   ],
+   "guidance": "B1 for z = ±1.96 used. M1 for the correct inequality using their μ; allow method marks only if another z-value such as −1.645 is used. M1 for isolating √n. A1 for n > 15.3664 to 15.4. A1 for n = 16 cao — the previous A1 must be awarded for the award of the final A1. All marks are available if = is used instead of an inequality throughout, but withhold the final A1 if the inequality runs the wrong way throughout."
+  },
+  "14(i)(A)": {
+   "type": "points",
+   "points": [
+    "The cumulative frequencies have been plotted against the mid-points of the class intervals instead of the upper class boundaries",
+    "This shifts the curve to the left, so it reduces Hodge's estimate — by about 2.5"
+   ],
+   "guidance": "B1 for identifying the mis-plotting at the centre of each class. B1 for stating that it reduces the estimate (by 2.5) or equivalent."
+  },
+  "14(i)(B)": {
+   "type": "points",
+   "points": [
+    "Grouped data has been used rather than the raw data",
+    "Grouping has slightly reduced the error introduced by the mis-plotting, since the actual error is less than 2.5"
+   ],
+   "guidance": "B1 for identifying that grouped data has been used, or that Hodge used the graph instead of the raw data. B1 for the effect on the estimate."
+  },
+  "14(ii)": {
+   "type": "points",
+   "points": [
+    "Percentage unemployment is often only an estimate in the source data, so any median calculated from it is unreliable"
+   ],
+   "guidance": "E1 or equivalent; allow 'data on percentage unemployment is not available for all countries in Europe'."
+  },
+  "14(iii)": {
+   "type": "points",
+   "points": [
+    "The pre-release material contains many countries from outside Europe, so a genuinely random sample would be very unlikely to contain only European countries"
+   ],
+   "guidance": "E1."
+  },
+  "14(iv)": {
+   "type": "points",
+   "points": [
+    "The product moment correlation coefficient is −0.2607, suggesting weak negative correlation",
+    "The p-value 0.0383 is less than 0.05, so at the 5% level there is evidence of negative association",
+    "However at the 1% level it would not be significant"
+   ],
+   "guidance": "B1 for negative correlation or association, which may be embedded. B1 for the comparison of the p-value with 0.05, 0.01 or another appropriate significance level, with a supporting comment. If B0B0, allow SC2 for a comment on no significant association justified by comparison of the p-value with an appropriate significance level such as 0.025."
+  },
+  "14(v)": {
+   "type": "points",
+   "points": [
+    "No — even though 35.3 is within the range of the data, the scatter is weak, there is a large gap in the data near that value, and the point would be an outlier, so a line of best fit is inappropriate"
+   ],
+   "guidance": "E1; allow an explanation based on the value for Kosovo being an outlier or on it lying in the large gap in the scatter."
+  },
+  "15": {
+   "type": "points",
+   "points": [
+    "Substitute y = 1 into y³ − xy + 4√x = 4: 1 − x + 4√x = 4",
+    "So x − 4√x + 3 = 0, that is (√x − 1)(√x − 3) = 0",
+    "√x = 1 or 3, so x = 1 or x = 9",
+    "Differentiate implicitly: 3y²(dy/dx) − [x(dy/dx) + y] + 2/√x = 0",
+    "At (1, 1): 3(dy/dx) − (dy/dx) − 1 + 2 = 0, so dy/dx = −1/2",
+    "At (9, 1): 3(dy/dx) − 9(dy/dx) − 1 + 2/3 = 0, so dy/dx = −1/18"
+   ],
+   "guidance": "M1 for the substitution of y = 1 and A1 for a correct equation in x. A1 for x = 1 and 9. A1 for the term 3y²(dy/dx). B1 for the product rule on the xy term. M1 for the fully differentiated equation; allow one sign error. A1 for the correct implicit equation. M1 for substituting y = 1 and their x = 1 or x = 9, dependent on at least two terms correct on the left-hand side following differentiation. A1 for m = −1/2 at (1, 1) and A1 for m = −1/18 at (9, 1); allow −0.0555… to 2 s.f. or better."
+  },
+  "16(i)": {
+   "type": "points",
+   "points": [
+    "The maximum occurs when (t − C)² = 0, that is at t = 2, so C = 2",
+    "The maximum value is A, so A = 62",
+    "When t = 0, p = 22: 22 = 62 − B(0 − 2)², so 4B = 40 and B = 10"
+   ],
+   "guidance": "B1 for C = 2, since the maximum is when t = 2. B1 for A = 62, since the maximum is when (t − 2)² = 0. B1 for B = 10, from substitution of 22, 62 and 2."
+  },
+  "16(ii)": {
+   "type": "points",
+   "points": [
+    "45 minutes is t = 0.75",
+    "p = 62 − 10(0.75 − 2)² = 62 − 10 × 1.5625",
+    "p = 46.375, so about 46"
+   ],
+   "guidance": "M1 for substituting 0.75 into p = 62 − 10(t − 2)², following through their 2, 62 and 10. A1 for 46; allow 46.375 rounded to two or more s.f."
+  },
+  "16(iii)": {
+   "type": "points",
+   "points": [
+    "The model breaks down when the predicted mark becomes negative, so set 62 − 10(t − 2)² = 0",
+    "(t − 2)² = 6.2, so t = 2 + √6.2",
+    "t = 4.49 hours, that is about 4 hours 29 minutes"
+   ],
+   "guidance": "M1 for setting their 62 − 10(t − 2)² = 0; allow ≥ 0 or > 0. A1 for 4 hours 29 minutes or 4 hours 30 minutes; allow 4.49 or 4.5 hours. Note t = 2 + √6.2."
+  },
+  "16(iv)": {
+   "type": "points",
+   "points": [
+    "Substitute t = 1: p = 22 + 68(1 − e^(−0.8)) = 59.4, close to the recorded 59",
+    "Substitute t = 3: p = 83.8, close to 84",
+    "Substitute t = 5: p = 88.8, close to 89",
+    "So the data are consistent with the new formula"
+   ],
+   "guidance": "M1 for substitution of t = 1, 3 and 5. A1 for awrt 59.4, 83.8 and 88.8 found with a supporting comment that they are approximately the same as the values in the table. If M0, allow SC1 for two values correctly found and shown to be consistent, or for a supporting comment."
+  },
+  "16(v)": {
+   "type": "points",
+   "points": [
+    "As t becomes large, e^(−0.8t) → 0 and p → 90; at t = 12, p = 89.995",
+    "At t = 5 the model already predicts p = 89",
+    "So the extra seven hours gain less than one mark — this is not good advice"
+   ],
+   "guidance": "B1 for p → 90 as t becomes large, or p = 89.99539… at t = 12 rounded to two or more s.f. B1 for the comparison with the value of p at t = 5 and the conclusion; alternatively note the model predicts p = 90 for any t ≥ 7 so it is not good advice."
+  },
+  "17(i)": {
+   "type": "points",
+   "points": [
+    "The repeated factor needs two terms: A/(x + 1) + B/(x − 2) + C/(x − 2)²",
+    "x² − 8x + 9 = A(x − 2)² + B(x + 1)(x − 2) + C(x + 1)",
+    "x = 2 gives −3 = 3C, so C = −1",
+    "x = −1 gives 18 = 9A, so A = 2",
+    "Comparing coefficients of x²: 1 = A + B, so B = −1",
+    "The answer is 2/(x + 1) − 1/(x − 2) − 1/(x − 2)²"
+   ],
+   "guidance": "B1 for the correct form of the partial fractions, which may be seen later. M1 for clearing the denominators. A1 for each of A = 2, B = −1 and C = −1."
+  },
+  "17(ii)": {
+   "type": "points",
+   "points": [
+    "Separate the variables: ∫(1/y) dy = ∫(x² − 8x + 9)/((x + 1)(x − 2)²) dx",
+    "Use the partial fractions from part (i)",
+    "ln|y| = 2 ln|x + 1| − ln|x − 2| + 1/(x − 2) + c",
+    "Substitute y = 16 and x = 3: ln 16 = 2 ln 4 − ln 1 + 1 + c, so c = −1",
+    "ln|y| = ln[(x + 1)²/(x − 2)] + 1/(x − 2) − 1",
+    "Exponentiate: y = [(x + 1)²/(x − 2)] e^(1/(x − 2)) e⁻¹, that is y = [(x + 1)²/(x − 2)] e^((3 − x)/(x − 2))"
+   ],
+   "guidance": "M1* for the separation of variables; allow omission of the integral signs and/or of dy and dx. M1* for use of their partial fractions in the integration; allow one sign error and/or one coefficient error. A1 for any correct natural log integral on the right-hand side and A1 for the 1/(x − 2) term — these two A marks are only available following the award of both M marks. M1dep* for substituting y = 16 and x = 3; the expression must include + c and at least one natural log term, and this may be awarded after exponentiating (note c = −1). M1 for correctly exponentiating both sides of their equation. A1 for y = [(x + 1)²/(x − 2)]e^((3 − x)/(x − 2)) or equivalent. Condone the use of brackets instead of modulus signs."
+  }
+ }
+},
+ "math-ocr-h640-2018-p1": {
+ "questions": [
+  {
+   "number": 1,
+   "parts": [
+    {
+     "code": "1",
+     "prompt": "Show that (x − 2) is a factor of 3x³ − 8x² + 3x + 2.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 2,
+   "parts": [
+    {
+     "code": "2",
+     "prompt": "By considering a change of sign, show that the equation e^x − 5x³ = 0 has a root between 0 and 1.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 3,
+   "scenario": "In this question you must show detailed reasoning.",
+   "parts": [
+    {
+     "code": "3",
+     "prompt": "Solve the equation sec²θ + 2 tan θ = 4 for 0° ≤ θ < 360°.",
+     "marks": 4
+    }
+   ]
+  },
+  {
+   "number": 4,
+   "scenario": "Rory pushes a box of mass 2.8 kg across a rough horizontal floor against a resistance of 19 N. Rory applies a constant horizontal force. The box accelerates from rest to 1.2 m s⁻¹ as it travels 1.8 m.",
+   "parts": [
+    {
+     "code": "4(i)",
+     "prompt": "Calculate the acceleration of the box.",
+     "marks": 2
+    },
+    {
+     "code": "4(ii)",
+     "prompt": "Find the magnitude of the force that Rory applies.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 5,
+   "scenario": "The position vector r metres of a particle at time t seconds is given by r = (12t − 2t²)i + (t² − 6t + 11)j.",
+   "parts": [
+    {
+     "code": "5(i)",
+     "prompt": "Find an expression for the velocity of the particle at time t.",
+     "marks": 2
+    },
+    {
+     "code": "5(ii)",
+     "prompt": "Determine whether the particle is ever stationary.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 6,
+   "scenario": "Aleela and Baraka are saving to buy a car. Aleela saves £50 in the first month and increases the amount she saves by £20 each month. Baraka also saves £50 in the first month, but the amount he saves each month is 12% more than the amount he saved in the previous month.",
+   "parts": [
+    {
+     "code": "6(i)",
+     "prompt": "Calculate how much Aleela saves in two years.",
+     "marks": 2
+    },
+    {
+     "code": "6(ii)",
+     "prompt": "Explain why the amounts Baraka saves each month form a geometric sequence.",
+     "marks": 1
+    },
+    {
+     "code": "6(iii)",
+     "prompt": "Determine whether Baraka saves more in two years than Aleela.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 7,
+   "scenario": "A rod of length 2 m hangs vertically in equilibrium. Parallel horizontal forces of 30 N and 50 N are applied to the top and bottom, and the rod is held in place by a horizontal force F N applied x m below the top of the rod, as shown in Fig. 7.",
+   "parts": [
+    {
+     "code": "7(i)",
+     "prompt": "Find the value of F.",
+     "marks": 1
+    },
+    {
+     "code": "7(ii)",
+     "prompt": "Find the value of x.",
+     "marks": 2
+    }
+   ]
+  },
+  {
+   "number": 8,
+   "parts": [
+    {
+     "code": "8(i)",
+     "prompt": "Show that 8 sin²x cos²x can be written as 1 − cos 4x.",
+     "marks": 3
+    },
+    {
+     "code": "8(ii)",
+     "prompt": "Hence find the integral of sin²x cos²x with respect to x.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 9,
+   "scenario": "A pebble is thrown horizontally at 14 m s⁻¹ from a window which is 5 m above horizontal ground. The pebble goes over a fence 2 m high, d m away from the window. The origin is on the ground directly below the window, with the x-axis horizontal in the direction of throw and the y-axis vertically upwards.",
+   "parts": [
+    {
+     "code": "9(i)",
+     "prompt": "Find the time the pebble takes to reach the ground.",
+     "marks": 3
+    },
+    {
+     "code": "9(ii)",
+     "prompt": "Find the cartesian equation of the trajectory of the pebble.",
+     "marks": 4
+    },
+    {
+     "code": "9(iii)",
+     "prompt": "Find the range of possible values for d.",
+     "marks": 3
+    }
+   ]
+  },
+  {
+   "number": 10,
+   "scenario": "Fig. 10 shows the graph of y = (k − x) ln x, where k is a constant with k > 1.",
+   "parts": [
+    {
+     "code": "10",
+     "prompt": "Find, in terms of k, the area of the finite region between the curve and the x-axis.",
+     "marks": 8
+    }
+   ]
+  },
+  {
+   "number": 11,
+   "scenario": "Fig. 11 shows two blocks at rest, connected by a light inextensible string which passes over a smooth pulley. Block A of mass 4.7 kg rests on a smooth plane inclined at 60° to the horizontal, and Block B of mass 4 kg rests on a rough plane inclined at 25° to the horizontal. On either side of the pulley the string is parallel to a line of greatest slope, and Block B is on the point of sliding up the plane.",
+   "parts": [
+    {
+     "code": "11(i)",
+     "prompt": "Show that the tension in the string is 39.9 N correct to 3 significant figures.",
+     "marks": 2
+    },
+    {
+     "code": "11(ii)",
+     "prompt": "Find the coefficient of friction between the rough plane and Block B.",
+     "marks": 5
+    }
+   ]
+  },
+  {
+   "number": 12,
+   "scenario": "Fig. 12 shows the circle (x − 1)² + (y + 1)² = 25, the line y = (3/4)x − 8 and the tangent to the circle at the point A (5, 2). D is the point of intersection of the line y = (3/4)x − 8 and the tangent at A.",
+   "parts": [
+    {
+     "code": "12(i)",
+     "prompt": "Write down the coordinates of C, the centre of the circle.",
+     "marks": 1
+    },
+    {
+     "code": "12(ii)(A)",
+     "prompt": "Show that the line y = (3/4)x − 8 is a tangent to the circle.",
+     "marks": 4
+    },
+    {
+     "code": "12(ii)(B)",
+     "prompt": "Find the coordinates of B, the point where the line y = (3/4)x − 8 touches the circle.",
+     "marks": 1
+    },
+    {
+     "code": "12(iii)",
+     "prompt": "Prove that ADBC is a square.",
+     "marks": 3
+    },
+    {
+     "code": "12(iv)",
+     "prompt": "The point E is the lowest point on the circle. Find the area of the sector ECB.",
+     "marks": 5
+    }
+   ]
+  },
+  {
+   "number": 13,
+   "scenario": "The function f(x) is defined by f(x) = ∛(27 − 8x³). Jenny uses her calculator to tabulate f(x) and f′(x): at x = 0, 0.25, 0.5, 0.75, 1, 1.25, 1.5 the values of f(x) are 3, 2.9954, 2.9625, 2.8694, 2.6684, 2.2490, 0 and the values of f′(x) are 0, −0.056, −0.228, −0.547, −1.124, −1.977, ERROR. The calculator gives 2.921 174 38 for the integral of ∛(27 − 8x³) from 0 to 1, and the graph of y = f(x) is shown in Fig. 13.",
+   "parts": [
+    {
+     "code": "13(i)",
+     "prompt": "Use calculus to find an expression for f′(x) and hence explain why the calculator gives an error for f′(1.5).",
+     "marks": 3
+    },
+    {
+     "code": "13(ii)",
+     "prompt": "Find the first three terms of the binomial expansion of f(x).",
+     "marks": 3
+    },
+    {
+     "code": "13(iii)",
+     "prompt": "Jenny integrates the first three terms of the binomial expansion of f(x) to estimate the value of the integral of ∛(27 − 8x³) from 0 to 1. Explain why Jenny's method is valid in this case.",
+     "marks": 2
+    },
+    {
+     "code": "13(iv)",
+     "prompt": "Use the trapezium rule with 4 strips to obtain an estimate for the integral of ∛(27 − 8x³) from 0 to 1.",
+     "marks": 3
+    },
+    {
+     "code": "13(v)",
+     "prompt": "Explain why the trapezium rule gives an underestimate.",
+     "marks": 1
+    }
+   ]
+  },
+  {
+   "number": 14,
+   "scenario": "The velocity of a car, v m s⁻¹ at time t seconds, is being modelled. Initially the car has velocity 5 m s⁻¹ and it accelerates to 11.4 m s⁻¹ in 4 seconds. In model A the acceleration is assumed to be uniform; model A is then refined so that the velocity remains constant once the car reaches 17.8 m s⁻¹. In model B the velocity is given by v = 5 + 0.6t² − 0.05t³ for 0 ≤ t ≤ 8 and v = 17.8 for 8 < t ≤ 20.",
+   "parts": [
+    {
+     "code": "14(i)",
+     "prompt": "Find an expression for the velocity of the car at time t using model A.",
+     "marks": 3
+    },
+    {
+     "code": "14(ii)",
+     "prompt": "Explain why model A is not appropriate in the long term.",
+     "marks": 1
+    },
+    {
+     "code": "14(iii)",
+     "prompt": "Sketch a velocity-time graph for the motion of the car using the refined model, making clear the time at which the acceleration changes.",
+     "marks": 3
+    },
+    {
+     "code": "14(iv)",
+     "prompt": "Calculate the displacement of the car in the first 20 seconds according to this refined model.",
+     "marks": 3
+    },
+    {
+     "code": "14(v)",
+     "prompt": "Show that model B gives an appropriate value for v when t = 4.",
+     "marks": 1
+    },
+    {
+     "code": "14(vi)",
+     "prompt": "Explain why the value of the acceleration immediately before the velocity becomes constant is likely to mean that model B is a better model than model A.",
+     "marks": 3
+    },
+    {
+     "code": "14(vii)",
+     "prompt": "Show that model B gives the same value as model A for the displacement at time 20 s.",
+     "marks": 3
+    }
+   ]
+  }
+ ],
+ "markSchemes": {
+  "1": {
+   "type": "points",
+   "points": [
+    "Substitute x = 2 into 3x³ − 8x² + 3x + 2",
+    "f(2) = 3 × 8 − 8 × 4 + 3 × 2 + 2 = 24 − 32 + 6 + 2",
+    "= 0, so by the factor theorem (x − 2) is a factor"
+   ],
+   "guidance": "M1 for the substitution; function notation need not be used. A1 — zero must be seen. E1 for the reason. Alternatively divide algebraically to obtain f(x) = (x − 2)(3x² − 2x − 1): M1 for the division as far as 3x², A1 for the correct quotient, E1 for 'no remainder so (x − 2) is a factor'. Given answer."
+  },
+  "2": {
+   "type": "points",
+   "points": [
+    "When x = 0: e⁰ − 5 × 0³ = 1, which is positive",
+    "When x = 1: e¹ − 5 × 1³ = e − 5 = −2.28, which is negative",
+    "The function is continuous and there is a change of sign, so there is a root between 0 and 1"
+   ],
+   "guidance": "M1 for attempting to evaluate the function at both values. E1 for the conclusion from correct values. Given answer."
+  },
+  "3": {
+   "type": "points",
+   "points": [
+    "Use sec²θ = 1 + tan²θ: (1 + tan²θ) + 2 tan θ = 4",
+    "tan²θ + 2 tan θ − 3 = 0",
+    "Factorise: (tan θ − 1)(tan θ + 3) = 0",
+    "tan θ = 1 gives θ = 45° and 225°",
+    "tan θ = −3 gives θ = 108.4° and 288.4°"
+   ],
+   "guidance": "M1 for using an appropriate trig identity — an attempt must be made to reach an equation in only one trig function. M1 for showing an algebraic method for solving their quadratic. A1 for any two correct values of θ. A1 for all correct values with no extras in the interval; ignore values outside the required interval."
+  },
+  "4(i)": {
+   "type": "points",
+   "points": [
+    "Use v² = u² + 2as with u = 0, v = 1.2 and s = 1.8",
+    "1.2² = 2 × a × 1.8",
+    "a = 0.4 m s⁻²"
+   ],
+   "guidance": "M1 for using a suitable suvat equation leading to a value for a. A1 for 0.4 m s⁻²."
+  },
+  "4(ii)": {
+   "type": "points",
+   "points": [
+    "Newton's second law: F − 19 = 2.8a",
+    "F = 19 + 2.8 × 0.4 = 20.12",
+    "F = 20.1 N (3 s.f.)"
+   ],
+   "guidance": "M1 for using Newton's second law with all terms present. A1 for 20.12; allow 20 N following through their a."
+  },
+  "5(i)": {
+   "type": "points",
+   "points": [
+    "Differentiate each component with respect to t",
+    "v = dr/dt = (12 − 4t)i + (2t − 6)j"
+   ],
+   "guidance": "M1 for an attempt to differentiate at least one coefficient. A1 — vector notation must be used."
+  },
+  "5(ii)": {
+   "type": "points",
+   "points": [
+    "The particle is stationary when both components of velocity are zero",
+    "12 − 4t = 0 gives t = 3, and 2t − 6 = 0 also gives t = 3",
+    "Both components are zero at t = 3, so the particle is stationary at t = 3"
+   ],
+   "guidance": "M1 for equating at least one component of their vector velocity to zero. E1 — the conclusion must be argued from two zero components. Do not allow M1 for solving 12 − 4t = 2t − 6 unless at least one zero is subsequently established."
+  },
+  "6(i)": {
+   "type": "points",
+   "points": [
+    "An arithmetic sequence with a = 50 and d = 20, over 24 months",
+    "S₂₄ = (24/2)(2 × 50 + 23 × 20)",
+    "= 12 × 560 = £6720"
+   ],
+   "guidance": "M1 for using an appropriate formula for the sum of an arithmetic sequence with a = 50 and d = 20; allow the total written out in full. A1 for £6720; allow full credit for any correct method."
+  },
+  "6(ii)": {
+   "type": "points",
+   "points": [
+    "Each month's amount is 12% more than the previous month's, so each term is the previous term multiplied by 1.12",
+    "A constant multiplier means the amounts form a geometric sequence, with a = 50 and r = 1.12"
+   ],
+   "guidance": "E1 — a clear argument must include the value 1.12."
+  },
+  "6(iii)": {
+   "type": "points",
+   "points": [
+    "A geometric sequence with a = 50 and r = 1.12, over 24 months",
+    "S₂₄ = 50(1.12²⁴ − 1)/(1.12 − 1)",
+    "= £5907.76",
+    "This is less than Aleela's £6720, so Baraka does not save more"
+   ],
+   "guidance": "M1 for using an appropriate formula for the sum of a geometric sequence with a = 50 and r = 1.12; allow the total written out in full. A1 for £5907.76; allow any suitable rounding. E1 for the comparison, following through their values, dependent on earning the M marks in parts (i) and (iii)."
+  },
+  "7(i)": {
+   "type": "points",
+   "points": [
+    "For equilibrium the horizontal forces must balance",
+    "F = 30 + 50 = 80 N"
+   ],
+   "guidance": "B1 cao."
+  },
+  "7(ii)": {
+   "type": "points",
+   "points": [
+    "Take moments about the top of the rod",
+    "Fx = 50 × 2",
+    "80x = 100, so x = 1.25 m"
+   ],
+   "guidance": "M1 for taking moments about the top of the rod, or any other suitable point; all necessary terms must be present and each term must be a product of a force and a length. A1 for x = 1.25 m cao."
+  },
+  "8(i)": {
+   "type": "points",
+   "points": [
+    "Use sin²x = ½(1 − cos 2x) and cos²x = ½(1 + cos 2x)",
+    "8 sin²x cos²x = 2(1 − cos 2x)(1 + cos 2x) = 2(1 − cos²2x)",
+    "Use cos²2x = ½(1 + cos 4x): = 2 − (1 + cos 4x)",
+    "= 1 − cos 4x"
+   ],
+   "guidance": "M1 for using a double angle formula. M1 for a second use of a double angle formula. E1 — clearly shown. Allow any other valid sequence of identities; for example 8 sin²x cos²x = 2(2 sin x cos x)² = 2 sin²2x = 1 − cos 4x. Given answer."
+  },
+  "8(ii)": {
+   "type": "points",
+   "points": [
+    "From part (i), sin²x cos²x = (1 − cos 4x)/8",
+    "∫sin²x cos²x dx = (1/8)∫(1 − cos 4x) dx",
+    "= (1/8)(x − ¼ sin 4x) + c",
+    "= x/8 − (1/32) sin 4x + c"
+   ],
+   "guidance": "M1 for an attempt to integrate both terms. A1 for ¼ sin 4x seen or implied. A1 for all correct — the + c must be included."
+  },
+  "9(i)": {
+   "type": "points",
+   "points": [
+    "Vertical motion: u = 0, a = −9.8, s = −5",
+    "s = ut + ½at²: −5 = −4.9t²",
+    "t = √(10/9.8) = 1.01 s"
+   ],
+   "guidance": "B1 for using u = 0 in the vertical direction to model the horizontal projection, seen or implied. M1 for using suvat equation(s) to find t; allow sign errors and an incorrect value for u. A1 — the answer must follow from working where the signs are consistent."
+  },
+  "9(ii)": {
+   "type": "points",
+   "points": [
+    "Horizontal: x = 14t",
+    "Vertical: y = 5 − 4.9t²",
+    "Eliminate t using t = x/14",
+    "y = 5 − 4.9(x/14)² = 5 − x²/40"
+   ],
+   "guidance": "B1 for x = 14t and B1 for y = 5 − 4.9t², each of which may be implied. M1 for an attempt to eliminate t. A1 in any form."
+  },
+  "9(iii)": {
+   "type": "points",
+   "points": [
+    "The pebble must still be above 2 m when it reaches the fence: set y = 2",
+    "5 − x²/40 = 2, so x²/40 = 3 and x² = 120",
+    "x = √120 = 10.95",
+    "So 0 < d < 11.0 m"
+   ],
+   "guidance": "M1 for using their equation of trajectory with y = 2. A1 for x = 10.95 — it must be 11.0 or better. E1 for the conclusion; allow 'the fence must be less than 10.95 m from the origin', following through their value. Alternatively find t = 0.782 when y = 2 and then x = 14 × 0.782. SC2 for d < √80, SC1 for d = √80."
+  },
+  "10": {
+   "type": "points",
+   "points": [
+    "The curve crosses the x-axis when (k − x) ln x = 0, so x = k or x = 1",
+    "Area = ∫ from 1 to k of (k − x) ln x dx",
+    "Integrate by parts with u = ln x and dv/dx = k − x, so v = kx − ½x²",
+    "Area = [(kx − ½x²) ln x] from 1 to k − ∫ from 1 to k of (1/x)(kx − ½x²) dx",
+    "The second integral simplifies to ∫(k − ½x) dx = [kx − ¼x²]",
+    "Area = [(kx − ½x²) ln x − (kx − ¼x²)] from 1 to k",
+    "= ((k² − ½k²)ln k − (k² − ¼k²)) − ((k − ½)ln 1 − (k − ¼))",
+    "= ½k² ln k − ¾k² + k − ¼"
+   ],
+   "guidance": "M1 for attempting to solve y = 0 and A1 for both roots. M1 for using integration by parts with u = ln x and dv/dx = k − x clearly argued, and A1 for the correct expression; allow it without limits. M1 for simplifying the integrand of the second integral, and A1 for the second part correct. M1dep for using the limits, dependent on the M mark for integration by parts. A1 for ½k² ln k − ¾k² + k − ¼ cao."
+  },
+  "11(i)": {
+   "type": "points",
+   "points": [
+    "Block A is on a smooth plane, so the tension balances the component of its weight down the plane",
+    "T = 4.7g sin 60°",
+    "= 39.889… = 39.9 N (3 s.f.)"
+   ],
+   "guidance": "B1 for the component of weight 4.7g sin 60°, awarded if seen. E1 — it must be clear that 39.9 N is the tension and not just a component of weight. Given answer."
+  },
+  "11(ii)": {
+   "type": "points",
+   "points": [
+    "Resolve perpendicular to the rough plane: N = 4g cos 25°",
+    "Block B is on the point of sliding up, so friction acts down the plane",
+    "Resolve up the slope: T − F − 4g sin 25° = 0",
+    "On the point of sliding, F = μN = μ × 4g cos 25°",
+    "μ = (4.7g sin 60° − 4g sin 25°)/(4g cos 25°)",
+    "μ = 0.656 (3 s.f.)"
+   ],
+   "guidance": "B1 for N = 4g cos 25°; it need not be evaluated here (≈ 35.5). M1 for resolving up the slope, allowing only sign errors, and A1 for the correct equation; F need not be evaluated here (≈ 23.3). M1 for using F = μN; do not allow F ≤ μN unless = is used subsequently, and follow through their values. A1 for 0.656 — note the answer is 0.657 if the rounded 39.9 is used for T."
+  },
+  "12(i)": {
+   "type": "exact",
+   "points": [
+    "C is (1, −1)"
+   ],
+   "guidance": "B1 cao."
+  },
+  "12(ii)(A)": {
+   "type": "points",
+   "points": [
+    "Substitute y = (3/4)x − 8 into the circle equation",
+    "(x − 1)² + ((3/4)x − 8 + 1)² = 25",
+    "Expand and collect terms: x² − 8x + 16 = 0",
+    "This is (x − 4)² = 0, a repeated root — equivalently the discriminant is (−8)² − 4 × 1 × 16 = 0",
+    "A repeated root means the line meets the circle exactly once, so it is a tangent"
+   ],
+   "guidance": "M1 for attempting to eliminate one variable. M1 for attempting to expand and collect terms to obtain a three-term quadratic expression, and A1 for a correct three-term quadratic. A1 for a clear argument from the repeated root or zero discriminant. Alternatively substitute x = (4y + 32)/3 to obtain y² + 10y + 25 = 0. Given answer."
+  },
+  "12(ii)(B)": {
+   "type": "exact",
+   "points": [
+    "B is (4, −5)"
+   ],
+   "guidance": "B1 cao — x = 4 from the repeated root, then y = −5."
+  },
+  "12(iii)": {
+   "type": "points",
+   "points": [
+    "A radius is perpendicular to a tangent, so angle CAD = angle CBD = 90°",
+    "Gradient of AC = (2 − (−1))/(5 − 1) = 3/4 and gradient of BC = ((−1) − (−5))/(1 − 4) = −4/3",
+    "These are negative reciprocals, so AC is perpendicular to BC and angle ACB = 90°",
+    "Three right angles make ADBC a rectangle, and AC = BC = 5 since both are radii",
+    "A rectangle with two adjacent sides equal is a square, so ADBC is a square"
+   ],
+   "guidance": "B1 for one or other of the right angles at A and B. B1 for the perpendicularity of AC and BC, establishing the rectangle. B1 for the complete proof — AC = BC = radius, or AD = BD as equal tangents. Allow up to B1, B1 for any two of these three pieces of evidence; allow the final B1 only when the proof is complete and clearly argued. Given answer."
+  },
+  "12(iv)": {
+   "type": "points",
+   "points": [
+    "E is the lowest point on the circle, so E is (1, −6)",
+    "In the right-angled triangle with C (1, −1) and B (4, −5), angle BCE = arctan(3/4) = 0.6435 radians",
+    "Alternatively use the cosine rule in triangle BCE with BE = √10 and CB = CE = 5",
+    "Area of sector = ½r²θ = ½ × 25 × 0.6435",
+    "= 8.04"
+   ],
+   "guidance": "B1 for E being the point (1, −6), which may be implied. M1 for forming a right-angled triangle and using arctan, and A1 for the angle 0.6435; alternatively use the cosine rule in triangle BCE, or trigonometry in triangle BCM where M is the midpoint of BE. M1dep for using the sector area formula. A1 for 8.04, following through their angle BCE."
+  },
+  "13(i)": {
+   "type": "points",
+   "points": [
+    "f(x) = (27 − 8x³)^(1/3), so by the chain rule f′(x) = (1/3)(27 − 8x³)^(−2/3) × (−24x²)",
+    "= −8x²/(27 − 8x³)^(2/3)",
+    "When x = 1.5, 27 − 8 × 1.5³ = 0, so f′(1.5) = −8 × 1.5²/0",
+    "This requires dividing by zero, which the calculator cannot do"
+   ],
+   "guidance": "M1 for using the chain rule and A1 for the derivative; allow it unsimplified. E1 — it is sufficient to say 'can't divide by zero' or equivalent."
+  },
+  "13(ii)": {
+   "type": "points",
+   "points": [
+    "Take the 27 outside: (27 − 8x³)^(1/3) = 27^(1/3)(1 − (8/27)x³)^(1/3) = 3(1 − (8/27)x³)^(1/3)",
+    "Expand: 3[1 + (1/3)(−8x³/27) + ((1/3)(−2/3)/2!)(−8x³/27)² + …]",
+    "= 3 − 8x³/27 − 64x⁶/2187 + …"
+   ],
+   "guidance": "B1 for dealing with the 27 correctly. M1 for using the binomial expansion substantially correctly. A1 for 3 − 8x³/27 − 64x⁶/2187 cao."
+  },
+  "13(iii)": {
+   "type": "points",
+   "points": [
+    "The binomial expansion is valid for |(8/27)x³| < 1, that is |x| < 1.5",
+    "The limits of the integral are 0 and 1, which lie completely inside this interval, so the expansion is valid throughout the range of integration"
+   ],
+   "guidance": "B1 for the validity condition; allow it unsimplified, but correct modulus notation or equivalent must be used. E1 — the answer must indicate that the limits of the integral lie in the interval for which the expansion is valid."
+  },
+  "13(iv)": {
+   "type": "points",
+   "points": [
+    "With 4 strips, h = 0.25 and the y-values are 3, 2.9954, 2.9625, 2.8694 and 2.6684",
+    "Trapezium rule: (0.25/2)[3 + 2.6684 + 2(2.9954 + 2.9625 + 2.8694)]",
+    "= 0.125 × 23.3224",
+    "= 2.9153"
+   ],
+   "guidance": "B1 for h = 0.25 used. M1 for the sum in the bracket; condone one slip. A1 for 2.92 or better. Values from candidates' own calculators may differ in the last decimal place."
+  },
+  "13(v)": {
+   "type": "points",
+   "points": [
+    "The curve is concave downwards over this interval, so each chord lies below the curve",
+    "There is area between the curve and the top of each trapezium, so some area is missing from the estimate"
+   ],
+   "guidance": "E1 for any sensible explanation; for example 'the trapezia are under the curve'. Note that 'the curve is concave downwards' on its own is not quite enough."
+  },
+  "14(i)": {
+   "type": "points",
+   "points": [
+    "Model A assumes uniform acceleration, with u = 5, v = 11.4 and t = 4",
+    "a = (v − u)/t = (11.4 − 5)/4 = 1.6 m s⁻²",
+    "v = 5 + 1.6t"
+   ],
+   "guidance": "M1 for using a suvat equation leading to a value for a. A1 for a = 1.6 in any form. A1 for v = 5 + 1.6t, following through their a."
+  },
+  "14(ii)": {
+   "type": "points",
+   "points": [
+    "The model has the car accelerating indefinitely, so the velocity would become unrealistically large"
+   ],
+   "guidance": "E1."
+  },
+  "14(iii)": {
+   "type": "points",
+   "points": [
+    "The velocity reaches 17.8 when 5 + 1.6t = 17.8, that is t = 8",
+    "Draw a straight line from (0, 5) rising to (8, 17.8)",
+    "Then a horizontal line at v = 17.8 from t = 8 onwards"
+   ],
+   "guidance": "B1 for the calculation or the point on the graph labelled at t = 8. G1 for two line segments with one horizontal. G1 for the axes labelled, with (0, 5) and the constant speed 17.8 clear on the vertical scale; mark intent for 17.8, allowing for a linear scale beyond 17.8."
+  },
+  "14(iv)": {
+   "type": "points",
+   "points": [
+    "Divide the area under the graph into a trapezium and a rectangle",
+    "Trapezium (0 to 8): ½(5 + 17.8) × 8 = 91.2 m",
+    "Rectangle (8 to 20): 12 × 17.8 = 213.6 m",
+    "Total displacement = 91.2 + 213.6 = 304.8 m"
+   ],
+   "guidance": "M1 for dividing the area into sections. A1 for 91.2, which may be implied by a correct total. A1 for 304.8 m, following through their distance for the first 8 s. Note 213.6 must be added to another distance."
+  },
+  "14(v)": {
+   "type": "points",
+   "points": [
+    "When t = 4, v = 5 + 0.6 × 4² − 0.05 × 4³",
+    "= 5 + 9.6 − 3.2 = 11.4 m s⁻¹, which matches the given value"
+   ],
+   "guidance": "B1; allow without comment."
+  },
+  "14(vi)": {
+   "type": "points",
+   "points": [
+    "Differentiate model B: dv/dt = 1.2t − 0.15t²",
+    "When t = 8: dv/dt = 1.2 × 8 − 0.15 × 64 = 9.6 − 9.6 = 0",
+    "The acceleration is zero just as the velocity becomes constant, so the car reaches its maximum speed smoothly — whereas model A has a sudden change of acceleration from 1.6 to 0 at t = 8"
+   ],
+   "guidance": "M1 for the differentiation; it need not be simplified. A1 — acceleration must be mentioned. E1 — the answer must compare with model A. The final mark can be awarded independently for a statement about the change in acceleration, as long as it is supported by some numerical evidence."
+  },
+  "14(vii)": {
+   "type": "points",
+   "points": [
+    "Displacement for 0 ≤ t ≤ 8 is ∫ from 0 to 8 of (5 + 0.6t² − 0.05t³) dt",
+    "= [5t + 0.2t³ − 0.0125t⁴] from 0 to 8 = 40 + 102.4 − 51.2 = 91.2 m",
+    "This is the same as model A for the first 8 s",
+    "For 8 < t ≤ 20 both models give 12 × 17.8 = 213.6 m, so the total is 304.8 m in each case"
+   ],
+   "guidance": "M1 for the correct integral and A1 for 91.2 m, by calculator; allow for the correct definite integral stated and a calculator used. E1 for the comparison — the argument must consider the motion up to t = 20. Given answer."
+  }
+ }
+},
  "math-ocr-h640-2019-p3": {
  "questions": [
   {
