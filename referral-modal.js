@@ -19,6 +19,12 @@
    it by hand cannot dodge the modal for long either — a different browser
    has no flag and asks again.
 
+   Two questions: the source (required, one tap) and free-text feedback
+   (optional, revealed only once a source is picked so the first decision
+   stays a single tap). Both land in one write-once row, so feedback is
+   captured at first sign-in only — a recurring prompt would need its own
+   append-only table.
+
    Schema: db/migrations/2026-09-11-referral-attribution.sql
 ═══════════════════════════════════════════════════════════════════ */
 (function () {
@@ -85,6 +91,15 @@
       'font:inherit;font-size:14px;}',
       '.rfm-detail:focus{outline:none;border-color:var(--accent);}',
 
+      '.rfm-fb{margin-top:18px;}',
+      '.rfm-fb[hidden]{display:none;}',
+      '.rfm-fb-label{display:block;font-size:13px;font-weight:500;margin-bottom:7px;}',
+      '.rfm-fb-hint{color:var(--muted);font-weight:400;}',
+      '.rfm-fb textarea{width:100%;min-height:74px;resize:vertical;padding:12px 14px;',
+      'border-radius:11px;border:1.5px solid var(--border);background:var(--surface);',
+      'color:var(--text);font:inherit;font-size:14px;line-height:1.5;}',
+      '.rfm-fb textarea:focus{outline:none;border-color:var(--accent);}',
+
       '.rfm-submit{width:100%;margin-top:20px;padding:14px;border:none;border-radius:11px;',
       'background:var(--accent);color:#fff;font:inherit;font-size:15px;font-weight:600;',
       'cursor:pointer;transition:background .15s,opacity .15s;}',
@@ -131,6 +146,31 @@
     detail.placeholder = 'Where did you find us?';
     detail.hidden = true;
 
+    /* Revealed with the rest of step two, once a source is chosen. Optional
+     * on purpose — the modal is forced, and forcing prose out of someone who
+     * has nothing to say only buys you junk rows. */
+    var fbWrap = document.createElement('div');
+    fbWrap.className = 'rfm-fb';
+    fbWrap.hidden = true;
+
+    var fbLabel = document.createElement('label');
+    fbLabel.className = 'rfm-fb-label';
+    fbLabel.setAttribute('for', 'rfm-feedback');
+    fbLabel.textContent = 'Any feedback for us? ';
+
+    var fbHint = document.createElement('span');
+    fbHint.className = 'rfm-fb-hint';
+    fbHint.textContent = '(optional)';
+    fbLabel.appendChild(fbHint);
+
+    var feedback = document.createElement('textarea');
+    feedback.id = 'rfm-feedback';
+    feedback.maxLength = 1000;
+    feedback.placeholder = 'Anything at all — what you are hoping for, what is missing, what is broken.';
+
+    fbWrap.appendChild(fbLabel);
+    fbWrap.appendChild(feedback);
+
     var submit = document.createElement('button');
     submit.className = 'rfm-submit';
     submit.type = 'button';
@@ -164,6 +204,7 @@
           b.setAttribute('aria-pressed', b === btn ? 'true' : 'false');
         });
         detail.hidden = src.slug !== 'other';
+        fbWrap.hidden = false;
         if (src.slug === 'other') detail.focus();
         submit.disabled = false;
         error.hidden = true;
@@ -179,10 +220,12 @@
       error.hidden = true;
 
       var text = detail.value.trim();
+      var note = feedback.value.trim();
       supabaseClient.from('user_attribution').insert({
         user_id:       user.id,
         source:        selected,
-        source_detail: (selected === 'other' && text) ? text.slice(0, 120) : null
+        source_detail: (selected === 'other' && text) ? text.slice(0, 120) : null,
+        feedback:      note ? note.slice(0, 1000) : null
       }).then(function (res) {
         /* 23505 is a unique violation — another tab already answered. That is
          * the desired end state, so treat it exactly like a success. */
@@ -210,7 +253,9 @@
     function trap(e) {
       if (e.key === 'Escape') { e.preventDefault(); e.stopPropagation(); return; }
       if (e.key !== 'Tab') return;
-      var focusable = card.querySelectorAll('button:not(:disabled), input:not([hidden])');
+      var focusable = card.querySelectorAll(
+        'button:not(:disabled), input:not([hidden]), .rfm-fb:not([hidden]) textarea'
+      );
       if (!focusable.length) return;
       var first = focusable[0];
       var last  = focusable[focusable.length - 1];
@@ -222,6 +267,7 @@
     card.appendChild(sub);
     card.appendChild(grid);
     card.appendChild(detail);
+    card.appendChild(fbWrap);
     card.appendChild(error);
     card.appendChild(submit);
     backdrop.appendChild(card);
