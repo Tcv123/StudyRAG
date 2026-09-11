@@ -209,7 +209,7 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
       },
       {
         q: 'The law of total probability states that \\(P(A) =\\)',
-        options: ['\\(P(A|B)P(B) + P(A|B\')P(B\')\\)', '\\(P(A|B) + P(A|B\')\\)', '\\(P(A \\cap B) + P(A \\cap B\')\\)', 'Both A and C above'],
+        options: ['\\(P(A|B)P(B) + P(A|B\')P(B\')\\)', '\\(P(A|B) + P(A|B\')\\)', '\\(P(A \\cap B) \\times P(A \\cap B\')\\)', '\\(P(A|B)P(A) + P(A|B\')P(A)\\)'],
         answer: 0
       },
       {

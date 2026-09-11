@@ -11,7 +11,7 @@ const EDEXCEL_MCQ_S1_S5 = {
     // --- GREEN (12) ---
     { tier: 'green', q: 'What is a population in statistics?', options: ['The entire group being studied', 'A subset selected for study', 'The mean of the data', 'The sampling frame only'], answer: 0 },
     { tier: 'green', q: 'What is a census?', options: ['A survey of every member of the population', 'A random sample of 10% of the population', 'A method of stratified sampling', 'A list of all sampling units'], answer: 0 },
-    { tier: 'green', q: 'Which sampling method requires a complete sampling frame?', options: ['Simple random sampling', 'Quota sampling', 'Opportunity sampling', 'None of the above'], answer: 0 },
+    { tier: 'green', q: 'Which sampling method requires a complete sampling frame?', options: ['Simple random sampling','Quota sampling','Opportunity sampling','Snowball sampling'], answer: 0 },
     { tier: 'green', q: 'In systematic sampling with N = 400 and n = 20, what is the sampling interval k?', options: ['20', '400', '8', '40'], answer: 0 },
     { tier: 'green', q: 'A school has 300 boys and 200 girls. A stratified sample of 50 is needed. How many boys should be selected?', options: ['30', '20', '25', '15'], answer: 0 },
     { tier: 'green', q: 'Which sampling method is most likely to produce a biased sample?', options: ['Opportunity sampling', 'Stratified sampling', 'Simple random sampling', 'Systematic sampling'], answer: 0 },
