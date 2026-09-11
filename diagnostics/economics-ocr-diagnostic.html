@@ -226,7 +226,23 @@ const THRESHOLD = { green: 8, amber: 4 };
 
 function normalizeAnswer(q) {
   if (typeof q.answer === 'string' && Array.isArray(q.options)) {
-    const idx = q.options.indexOf(q.answer);
+    const raw = q.answer.trim();
+    // 1. exact option text
+    let idx = q.options.indexOf(q.answer);
+    // 2. option text ignoring surrounding whitespace
+    if (idx < 0) idx = q.options.findIndex(o => String(o).trim() === raw);
+    // 3. a letter naming the option position, e.g. 'B' -- banks such as
+    //    physics-edexcel store answers this way, and without this branch
+    //    every question silently collapsed to option A.
+    if (idx < 0 && /^[A-Za-z]$/.test(raw)) {
+      const li = raw.toUpperCase().charCodeAt(0) - 65;
+      if (li >= 0 && li < q.options.length) idx = li;
+    }
+    // 4. a numeric string index, e.g. '2'
+    if (idx < 0 && /^\d+$/.test(raw)) {
+      const ni = parseInt(raw, 10);
+      if (ni >= 0 && ni < q.options.length) idx = ni;
+    }
     return { ...q, answer: idx >= 0 ? idx : 0 };
   }
   return q;
