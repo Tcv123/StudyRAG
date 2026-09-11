@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../supabase-config.js"></script>
+  <script src="post-auth.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -294,7 +295,7 @@
         <span id="successEmail"></span>
       </div>
 
-      <a href="setup.html" class="btn btn-primary" style="display:block;text-decoration:none;text-align:center;">Set up your profile</a>
+      <a href="setup.html" id="successCta" class="btn btn-primary" style="display:block;text-decoration:none;text-align:center;">Set up your profile</a>
     </div>
 
     <p id="msg" class="msg"></p>
@@ -349,6 +350,21 @@ form.onsubmit = async (e) => {
     verifyBtn.disabled    = false;
     verifyBtn.textContent = 'Verify & Continue';
     return;
+  }
+
+  /* The OTP has established a session, so the profiles row must be created
+   * here exactly as register.html does it. This page used to skip that step
+   * entirely and hard-code setup.html as the destination, which left anyone
+   * confirming through this route with no profiles row (so no early-adopter
+   * Premium) and sent teachers into the student setup flow. */
+  const { data: { user } } = await supabaseClient.auth.getUser();
+  if (user) {
+    await POST_AUTH.ensureProfile(user);
+    const cta = document.getElementById('successCta');
+    cta.href = await POST_AUTH.destination(user);
+    if (user.user_metadata?.account_type === 'teacher') {
+      cta.textContent = 'Set up your first class';
+    }
   }
 
   form.style.display = 'none';
