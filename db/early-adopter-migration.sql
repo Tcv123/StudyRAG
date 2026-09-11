@@ -1,6 +1,6 @@
 -- ── EARLY ADOPTER MIGRATION ────────────────────────────────────────────────
 -- Run this in your Supabase SQL editor.
--- Grants 3 months of Premium to the first 50 users who sign up.
+-- Grants 3 months of Premium to the first 150 users who sign up.
 -- ────────────────────────────────────────────────────────────────────────────
 
 -- 1. Add early adopter + premium columns (safe to re-run)
@@ -32,7 +32,7 @@ AS $$
 $$;
 GRANT EXECUTE ON FUNCTION public.count_early_adopters() TO anon, authenticated;
 
--- 4. Trigger: auto-grant pro to the first 100 new sign-ups
+-- 4. Trigger: auto-grant pro to the first 150 new sign-ups
 CREATE OR REPLACE FUNCTION public.grant_early_adopter_premium()
 RETURNS TRIGGER
 LANGUAGE plpgsql
@@ -43,7 +43,7 @@ DECLARE
   current_count INTEGER;
 BEGIN
   SELECT COUNT(*) INTO current_count FROM public.profiles;
-  IF current_count < 100 THEN
+  IF current_count < 150 THEN
     NEW.is_early_adopter        := TRUE;
     NEW.premium_until           := NOW() + INTERVAL '3 months';
     NEW.subscription_tier       := 'pro_monthly';

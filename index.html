@@ -785,7 +785,7 @@
 <!-- Early Adopter Banner -->
 <div class="early-banner" id="earlyBanner">
   <span class="eb-star">⭐</span>
-  <span><strong>Early adopter offer:</strong> The first 100 users to sign up get <strong>3 months of Premium free</strong></span>
+  <span><strong>Early adopter offer:</strong> The first 150 users to sign up get <strong>3 months of Premium free</strong></span>
   <span class="eb-pill eb-pill-loading" id="earlyBannerPill">
     <span id="earlyBannerCount">—</span>
     <span>spots left</span>
@@ -805,7 +805,7 @@
       </div>
       <div class="ea-nudge" id="heroEaNudge">
         <span class="ea-icon">🎁</span>
-        <span><strong><span class="ea-spots" id="heroEaCount">100</span> spots left</strong> — sign up now and get <strong>3 months of Premium free</strong></span>
+        <span><strong><span class="ea-spots" id="heroEaCount">150</span> spots left</strong> — sign up now and get <strong>3 months of Premium free</strong></span>
       </div>
     </div>
     <div class="hero-right">
@@ -1180,7 +1180,7 @@
   <script src="supabase-config.js"></script>
   <script>
     (async function () {
-      const EARLY_LIMIT = 100;
+      const EARLY_LIMIT = 150;
       try {
         const { data, error } = await supabaseClient.rpc('count_early_adopters');
         if (error) throw error;
@@ -1202,7 +1202,7 @@
         // Hero nudge
         const heroCount = document.getElementById('heroEaCount');
         const heroNudge = document.getElementById('heroEaNudge');
-        if (heroCount) heroCount.textContent = left + ' of 100';
+        if (heroCount) heroCount.textContent = left + ' of 150';
         if (heroNudge && left === 0) heroNudge.style.display = 'none';
 
         // CTA line
