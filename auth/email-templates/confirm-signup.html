@@ -3,6 +3,9 @@
   Paste the contents of this file into:
     Supabase Dashboard → Authentication → Email Templates → "Confirm signup"
   Supabase will substitute {{ .Token }} and {{ .SiteURL }} at send time.
+  Note: .SiteURL is the Site URL set in Authentication -> URL Configuration,
+  which currently ends in a trailing slash - hence "{{ .SiteURL }}auth/verify.html"
+  with no leading slash of its own.
 -->
 <!DOCTYPE html>
 <html lang="en">
@@ -84,7 +87,7 @@
               <table role="presentation" cellpadding="0" cellspacing="0" border="0">
                 <tr>
                   <td style="border-radius:10px;background:#2563EB;background-image:linear-gradient(135deg,#2563EB,#1D4ED8);box-shadow:0 4px 14px rgba(37,99,235,0.2);">
-                    <a href="{{ .SiteURL }}/auth/verify.html"
+                    <a href="{{ .SiteURL }}auth/verify.html"
                        style="display:inline-block;padding:14px 36px;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;font-size:15px;font-weight:600;color:#FFFFFF;text-decoration:none;border-radius:10px;">
                       Enter code on website
                     </a>
