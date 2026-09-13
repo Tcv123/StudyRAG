@@ -11,6 +11,13 @@
   "functions": {
     "api/mark-essay.js":             { "maxDuration": 60 },
     "api/generate-model-answer.js":  { "maxDuration": 60 },
-    "api/mark-against-scheme.js":    { "maxDuration": 60 }
-  }
+    "api/mark-against-scheme.js":    { "maxDuration": 60 },
+    "api/cron/setup-reminder.js":    { "maxDuration": 60 }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/setup-reminder",
+      "schedule": "0 16 * * *"
+    }
+  ]
 }
