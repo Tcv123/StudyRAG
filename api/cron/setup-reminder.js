@@ -97,7 +97,7 @@ module.exports = async function handler(req, res) {
   let sent = 0, failed = 0, skipped = 0;
 
   for (const user of due) {
-    const { data: claimed, error: claimErr } = await supabaseAdmin
+    const { data: token, error: claimErr } = await supabaseAdmin
       .rpc('claim_setup_reminder', { p_user_id: user.user_id });
 
     if (claimErr) {
@@ -105,10 +105,13 @@ module.exports = async function handler(req, res) {
       failed++;
       continue;
     }
-    if (!claimed) { skipped++; continue; }
+    /* Null means another run already has this one. The token doubles as the
+     * claim result precisely so there is no window where we have permission
+     * to send but no way to offer an unsubscribe. */
+    if (!token) { skipped++; continue; }
 
     try {
-      const providerId = await sendReminder(resendKey, user);
+      const providerId = await sendReminder(resendKey, user, token);
       await supabaseAdmin.rpc('mark_setup_reminder_sent', {
         p_user_id: user.user_id,
         p_provider_id: providerId
@@ -136,17 +139,31 @@ module.exports = async function handler(req, res) {
 
 /* ── Resend ──────────────────────────────────────────────────────────── */
 
-async function sendReminder(apiKey, user) {
+async function sendReminder(apiKey, user, token) {
   const siteUrl = (process.env.SITE_URL || 'https://raglearning.uk').replace(/\/+$/, '');
   const setupUrl = `${siteUrl}/auth/setup`;
   const from = process.env.REMINDER_FROM || 'RAG Learning <hello@raglearning.uk>';
+
+  /* Two routes to the same opt-out. The page is for the link in the body and
+   * asks before acting, because mail scanners follow GET links on their own.
+   * The header pair is what makes Gmail and Apple Mail render their native
+   * Unsubscribe button next to the sender name — worth having on its own
+   * terms, since people who can't find an opt-out press Spam instead, and
+   * that costs the whole sending domain. RFC 8058 requires the one-click
+   * target be a POST, so scanners can't trip it. */
+  const unsubPage = `${siteUrl}/unsubscribe?t=${token}`;
+  const unsubPost = `${siteUrl}/api/unsubscribe?t=${token}`;
 
   const payload = {
     from,
     to: [user.email],
     subject: 'Your RAG Learning dashboard is still empty',
-    html: reminderHtml(user.first_name, setupUrl, siteUrl),
-    text: reminderText(user.first_name, setupUrl)
+    html: reminderHtml(user.first_name, setupUrl, siteUrl, unsubPage),
+    text: reminderText(user.first_name, setupUrl, unsubPage),
+    headers: {
+      'List-Unsubscribe': `<${unsubPost}>, <${unsubPage}>`,
+      'List-Unsubscribe-Post': 'List-Unsubscribe=One-Click'
+    }
   };
 
   if (process.env.REMINDER_REPLY_TO) {
@@ -177,7 +194,7 @@ async function sendReminder(apiKey, user) {
  * literals for the same reason — an email cannot read a stylesheet.
  * ──────────────────────────────────────────────────────────────────────── */
 
-function reminderHtml(firstName, setupUrl, siteUrl) {
+function reminderHtml(firstName, setupUrl, siteUrl, unsubUrl) {
   const greeting = firstName ? `Hi ${escHtml(firstName)},` : 'Hi there,';
 
   return `
@@ -216,6 +233,8 @@ function reminderHtml(firstName, setupUrl, siteUrl) {
           <a href="${siteUrl}" style="color:#445F85;">raglearning.uk</a>.
           It's a one&#8209;off — if you've changed your mind, just ignore it and we
           won't email you about this again.
+          You can also <a href="${unsubUrl}" style="color:#445F85;">unsubscribe</a>
+          to be sure.
         </p>
       </td>
     </tr>
@@ -223,7 +242,7 @@ function reminderHtml(firstName, setupUrl, siteUrl) {
 </div>`.trim();
 }
 
-function reminderText(firstName, setupUrl) {
+function reminderText(firstName, setupUrl, unsubUrl) {
   const greeting = firstName ? `Hi ${firstName},` : 'Hi there,';
 
   return [
@@ -241,7 +260,8 @@ function reminderText(firstName, setupUrl) {
     '--',
     "You're getting this because you created an account at raglearning.uk.",
     "It's a one-off - if you've changed your mind, just ignore it and we won't",
-    'email you about this again.'
+    'email you about this again. You can also unsubscribe to be sure:',
+    unsubUrl
   ].join('\n');
 }
 

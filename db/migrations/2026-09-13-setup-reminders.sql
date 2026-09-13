@@ -57,7 +57,22 @@ create table if not exists public.setup_reminders (
   provider_id text
 );
 
+-- Added separately so this file stays re-runnable against a table created
+-- by an earlier version of it.
+alter table public.setup_reminders
+  add column if not exists unsubscribe_token uuid not null default gen_random_uuid();
+alter table public.setup_reminders
+  add column if not exists unsubscribed_at timestamptz;
+
+create unique index if not exists setup_reminders_unsubscribe_token_key
+  on public.setup_reminders (unsubscribe_token);
+
 alter table public.setup_reminders enable row level security;
+
+-- The global opt-out. Null means subscribed, which makes every existing row
+-- correct without a backfill.
+alter table public.profiles
+  add column if not exists email_opt_out_at timestamptz;
 
 
 -- ───────────────────────────────────────────────────────────────────────
@@ -110,6 +125,10 @@ as $fn$
           'student'
         ) <> 'teacher'
 
+    -- asked us to stop
+    and p.email_opt_out_at is null
+    and r.unsubscribed_at is null
+
     -- genuinely has not set up
     and coalesce(p.setup_complete, false) = false
     and not exists (
@@ -136,14 +155,19 @@ $fn$;
 -- only updates rows that are still unsent and under the attempt cap, so a
 -- claim on an already-sent user returns no row and therefore false.
 -- ───────────────────────────────────────────────────────────────────────
+-- Returns the unsubscribe token on a successful claim, or null if this user
+-- was already claimed by another run. The token has to come back from here
+-- rather than from pending_setup_reminders() because the row it lives on
+-- does not exist until this insert creates it. A retry after a failed send
+-- returns the same token, so a token never goes stale mid-flight.
 create or replace function public.claim_setup_reminder(p_user_id uuid)
-returns boolean
+returns uuid
 language plpgsql
 security definer
 set search_path = public
 as $fn$
 declare
-  claimed boolean;
+  token uuid;
 begin
   insert into public.setup_reminders as r (user_id, claimed_at, attempts)
   values (p_user_id, now(), 1)
@@ -152,9 +176,9 @@ begin
          attempts   = r.attempts + 1
    where r.sent_at is null
      and r.attempts < 3
-  returning true into claimed;
+  returning r.unsubscribe_token into token;
 
-  return coalesce(claimed, false);
+  return token;
 end;
 $fn$;
 
@@ -193,6 +217,48 @@ $fn$;
 
 
 -- ───────────────────────────────────────────────────────────────────────
+-- 3b. Unsubscribe
+--
+-- Looks up the opaque token from the email and records the opt-out in both
+-- places: on profiles, where it is global and survives this table being
+-- cleared, and on the reminder row itself, which is the only place it can
+-- land if the user's profiles row was never created.
+--
+-- Returns true for a token it recognises, including one that has already
+-- been used. Someone who clicks unsubscribe twice should be told they are
+-- unsubscribed, not shown an error. False means the token is not real.
+--
+-- Deliberately no "resubscribe": there is nothing to resubscribe to. The
+-- only mail this gates is a one-off nudge they have now said no to.
+-- ───────────────────────────────────────────────────────────────────────
+create or replace function public.unsubscribe_by_token(p_token uuid)
+returns boolean
+language plpgsql
+security definer
+set search_path = public
+as $fn$
+declare
+  target uuid;
+begin
+  update public.setup_reminders
+     set unsubscribed_at = coalesce(unsubscribed_at, now())
+   where unsubscribe_token = p_token
+  returning user_id into target;
+
+  if target is null then
+    return false;
+  end if;
+
+  update public.profiles
+     set email_opt_out_at = coalesce(email_opt_out_at, now())
+   where id = target;
+
+  return true;
+end;
+$fn$;
+
+
+-- ───────────────────────────────────────────────────────────────────────
 -- 4. Lock the doors
 --
 -- These read auth.users and every student's email address. Only the
@@ -203,11 +269,13 @@ revoke all on function public.pending_setup_reminders(integer, interval, interva
 revoke all on function public.claim_setup_reminder(uuid)                          from public, anon, authenticated;
 revoke all on function public.mark_setup_reminder_sent(uuid, text)                from public, anon, authenticated;
 revoke all on function public.fail_setup_reminder(uuid, text)                     from public, anon, authenticated;
+revoke all on function public.unsubscribe_by_token(uuid)                           from public, anon, authenticated;
 
 grant execute on function public.pending_setup_reminders(integer, interval, interval) to service_role;
 grant execute on function public.claim_setup_reminder(uuid)                          to service_role;
 grant execute on function public.mark_setup_reminder_sent(uuid, text)                to service_role;
 grant execute on function public.fail_setup_reminder(uuid, text)                     to service_role;
+grant execute on function public.unsubscribe_by_token(uuid)                           to service_role;
 
 
 -- ───────────────────────────────────────────────────────────────────────
