@@ -33,6 +33,11 @@
   <link rel="stylesheet" href="shared.css">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="supabase-config.js"></script>
+  <!-- The standard sidebar's three helpers: Classes section, Pro unlocking,
+       and the Admin item (which marks itself active on this page). -->
+  <script src="classes-nav.js"></script>
+  <script src="nav-gating.js"></script>
+  <script src="admin-nav.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -43,7 +48,81 @@
       font-size: 15px; -webkit-font-smoothing: antialiased;
     }
 
-    .wrap { max-width: 940px; margin: 0 auto; padding: 48px 24px 80px; }
+    .app { display: flex; min-height: 100vh; }
+
+    /* ── SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column; padding: 24px 0;
+      position: fixed; top: 0; left: 0; bottom: 0; z-index: 10;
+      box-shadow: 2px 0 16px rgba(37,99,235,0.08);
+      overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+    .sidebar-logo { display: flex; align-items: center; gap: 10px; padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px; }
+    .logo-img { width: 24px; height: 24px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; color: var(--text); }
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 12px; border-radius: 8px; font-size: 13px; font-weight: 400;
+      color: var(--muted); cursor: pointer; transition: all 0.12s; text-decoration: none;
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { font-size: 15px; width: 20px; text-align: center; }
+    .sidebar-bottom { margin-top: auto; padding: 16px 16px 0; border-top: 1px solid var(--border); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 8px; border-radius: 10px; background: var(--surface2); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(135deg, var(--accent), var(--accent-dark)); color: #fff; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name { font-size: 12px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: 1px solid var(--border); border-radius: 6px; padding: 4px 8px; cursor: pointer; color: var(--muted); font-size: 13px; transition: all 0.12s; }
+    .logout-btn:hover { background: var(--red-bg); color: var(--red); border-color: var(--red-border); }
+
+    /* ── SIGN-OUT CONFIRM MODAL ── */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface); border: 1px solid var(--border); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); text-align: center; animation: signoutPop 0.22s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes signoutPop { from { opacity: 0; transform: scale(0.94) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-bg); border: 1px solid var(--red-border); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--red-text); margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display); font-size: 22px; color: var(--text); margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: var(--font-body); cursor: pointer; transition: all 0.15s; border: 1px solid transparent; }
+    .signout-btn.cancel { background: var(--surface2); color: var(--text); border-color: var(--border); }
+    .signout-btn.cancel:hover { background: var(--surface3); border-color: var(--border-hover); }
+    .signout-btn.confirm { background: var(--red); color: #fff; }
+    .signout-btn.confirm:hover { background: var(--red-text); }
+
+    /* ── MAIN ── */
+    /* The sidebar owns the left margin now, so .wrap only centres the column
+       it used to pad itself. */
+    .main { flex: 1; margin-left: var(--sidebar-w); padding: 32px 36px 48px; }
+    .topbar { display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 0; }
+
+    .wrap { max-width: 940px; margin: 0 auto; }
+
+    /* ── MOBILE ── */
+    .mobile-menu-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px; box-shadow: 0 1px 4px rgba(37,99,235,0.1);
+    }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+    .mobile-overlay.active { display: block; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .sidebar { transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0; padding: 16px 14px; }
+    }
+    @media (max-width: 480px) {
+      .main { padding: 12px 10px; }
+    }
 
     .back {
       display: inline-block; margin-bottom: 28px;
@@ -143,11 +222,63 @@
       .actions { flex-direction: row; align-items: center; justify-content: flex-start; }
     }
   </style>
+  <link rel="stylesheet" href="responsive.css">
 </head>
 <body>
+<div class="app">
+
+  <aside class="sidebar">
+    <a href="Dashboard.html" class="sidebar-logo" style="text-decoration:none;color:inherit;cursor:pointer;">
+      <img src="favicon.svg" alt="RAG Learning" class="logo-img" />
+      <div class="logo-text">RAG Learning</div>
+    </a>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item" href="notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="Dashboard.html#diagnostic"><span class="nav-icon">🚦</span> Diagnostic</a>
+      <a class="nav-item" href="medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:var(--amber);font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="contact-app.html"><span class="nav-icon">✉️</span> Contact us</a>
+      <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <!-- admin-nav.js appends the Admin item here, above this chip, and
+         marks it active because this page is admin.html. -->
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">–</div>
+        <div class="user-info" onclick="location.href='settings.html'" style="cursor:pointer" title="Account settings">
+          <div class="user-name" id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
+    </div>
 
   <div class="wrap" id="wrap" hidden>
-    <a class="back" href="Dashboard.html">← Dashboard</a>
 
     <h1>Admin</h1>
     <p class="sub">
@@ -214,7 +345,32 @@
     <p style="margin-top:18px;"><a class="back" href="Dashboard.html">← Back to dashboard</a></p>
   </div>
 
+  </main>
+</div>
+
+<div class="mobile-overlay" onclick="document.querySelector('.sidebar').classList.remove('open');this.classList.remove('active');"></div>
+
+<!-- ── SIGN-OUT CONFIRM MODAL ── -->
+<div class="signout-overlay" id="signoutOverlay" onclick="if(event.target===this)cancelSignOut()">
+  <div class="signout-modal" role="dialog" aria-modal="true" aria-labelledby="signoutTitle">
+    <div class="signout-icon">&#x23FB;</div>
+    <div class="signout-title" id="signoutTitle">Sign out?</div>
+    <div class="signout-msg">Are you sure you want to sign out? You'll need to log back in to access your notes, diagnostics and practice.</div>
+    <div class="signout-actions">
+      <button class="signout-btn cancel" onclick="cancelSignOut()">Cancel</button>
+      <button class="signout-btn confirm" onclick="logout()">Sign out</button>
+    </div>
+  </div>
+</div>
+
   <script src="theme.js"></script>
+  <script>
+  // The user chip's buttons call these inline, so they have to be global.
+  // Everything else on this page stays inside the IIFE below.
+  function confirmSignOut(){ document.getElementById('signoutOverlay').classList.add('active'); }
+  function cancelSignOut(){ document.getElementById('signoutOverlay').classList.remove('active'); }
+  async function logout(){ await supabaseClient.auth.signOut(); window.location = 'auth/login.html'; }
+  </script>
   <script>
   (function () {
     'use strict';
@@ -531,11 +687,39 @@
       renderFlagged(res.data || []);
     }
 
+    // ── Sidebar identity ─────────────────────────────────────
+    // Name and avatar only. Failing here must never take the page down with
+    // it, so init() fires this without awaiting and swallows the rejection.
+    async function fillSidebar(user) {
+      var res     = await supabaseClient.from('profiles')
+                      .select('first_name, last_name, avatar_url')
+                      .eq('id', user.id).single();
+      var profile = res.data || {};
+      var first   = profile.first_name || '';
+      var last    = profile.last_name  || '';
+
+      document.getElementById('sidebarName').textContent =
+        (first + ' ' + last).trim() || 'Account';
+
+      var av = document.getElementById('avatarInitials');
+      if (profile.avatar_url) {
+        var img = document.createElement('img');
+        img.src = profile.avatar_url;
+        img.alt = '';
+        img.style.cssText = 'width:100%;height:100%;border-radius:50%;object-fit:cover;display:block;';
+        av.replaceChildren(img);
+      } else {
+        av.textContent = ((first[0] || '') + (last[0] || '')).toUpperCase() || '?';
+      }
+    }
+
     // ── Gate ────────────────────────────────────────────────────────
     async function init() {
       var session = await supabaseClient.auth.getSession();
       var user = session?.data?.session?.user;
       if (!user) { location.href = 'auth/login.html'; return; }
+
+      fillSidebar(user).catch(function () {});
 
       var admin = await supabaseClient.rpc('is_admin');
 

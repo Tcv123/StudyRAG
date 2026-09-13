@@ -1,6 +1,6 @@
 /* ═══════════════════════════════════════════════════════════════════
-   ADMIN NAV — adds the Admin item to the bottom of the left sidebar,
-   for admin accounts only.
+   ADMIN NAV — adds the Admin section to the bottom of the left sidebar,
+   for admin accounts only. One item per admin page.
 
    Drop <script src="admin-nav.js"></script> (or "../admin-nav.js" for
    pages inside subfolders) AFTER supabase-config.js on any page with
@@ -26,6 +26,12 @@
   const EXPIRES_KEY = 'rag_is_admin_expires_at';
   const CACHE_MS    = 30 * 60 * 1000;   // same 30 minutes nav-gating uses
   const SECTION_ID  = 'admin-nav-section';
+
+  // The admin pages, in sidebar order. Adding one is a line here.
+  const ITEMS = [
+    { file: 'admin.html',             icon: '🛡',  label: 'Admin'       },
+    { file: 'admin-attribution.html', icon: '📈', label: 'Attribution' }
+  ];
 
   // Absolute URL of the folder admin-nav.js sits in, which is the site root.
   // Read from the script's own src because location.pathname cannot tell a
@@ -115,20 +121,24 @@
     label.className = 'nav-label';
     label.textContent = 'Admin';
 
-    const link = document.createElement('a');
-    link.className = 'nav-item' + (here === 'admin' ? ' active' : '');
-    link.href = ROOT + 'admin.html';
-    link.style.cursor = 'pointer';
-
-    const icon = document.createElement('span');
-    icon.className = 'nav-icon';
-    icon.textContent = '🛡';
-
-    link.appendChild(icon);
-    link.appendChild(document.createTextNode(' Admin'));
-
     section.appendChild(label);
-    section.appendChild(link);
+
+    ITEMS.forEach(function (item) {
+      const slug = item.file.replace(/\.html$/, '');
+
+      const link = document.createElement('a');
+      link.className = 'nav-item' + (here === slug ? ' active' : '');
+      link.href = ROOT + item.file;
+      link.style.cursor = 'pointer';
+
+      const icon = document.createElement('span');
+      icon.className = 'nav-icon';
+      icon.textContent = item.icon;
+
+      link.appendChild(icon);
+      link.appendChild(document.createTextNode(' ' + item.label));
+      section.appendChild(link);
+    });
 
     // Last thing in the nav list, above the avatar/sign-out chip. On pages
     // with no .sidebar-bottom it simply goes last.
