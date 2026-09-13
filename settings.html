@@ -785,15 +785,16 @@ async function load() {
   // data-key, so this covers whichever set is on screen.
   // These lived in localStorage until 2026-09-13, which made them per-device
   // and invisible to any sender. On the first load after the migration, import
-  // whatever this browser had so an explicit "off" is not silently discarded,
-  // then stamp the row so the import never runs again. A key the user never
-  // touched takes the column default rather than localStorage's accidental
-  // absent-means-off.
+  // whatever this browser had so an explicit choice is not discarded, then
+  // stamp the row so the import never runs again.
+  //
+  // Absent reads as off, which is both localStorage's old behaviour and the
+  // column default, so nobody sees a toggle move on their next visit — the
+  // only thing this carries across is someone who actively turned one on.
   if (profile && !profile.notif_prefs_set_at) {
     const imported = { notif_prefs_set_at: new Date().toISOString() };
     NOTIF_KEYS.forEach(key => {
-      const saved = localStorage.getItem(key);
-      imported[key] = saved === null ? true : saved === 'true';
+      imported[key] = localStorage.getItem(key) === 'true';
     });
 
     const { error: importErr } = await supabaseClient
@@ -809,10 +810,11 @@ async function load() {
     }
   }
 
-  // !== false so a column that does not exist yet reads as on, rather than
-  // showing every toggle off on a database that has not been migrated.
+  // === true, so a column that does not exist yet reads as off. On an
+  // unmigrated database that shows every toggle off, which is the honest
+  // picture: nothing is subscribed, because there is nowhere to record it.
   document.querySelectorAll('.toggle[data-key]').forEach(el => {
-    el.classList.toggle('on', profile?.[el.dataset.key] !== false);
+    el.classList.toggle('on', profile?.[el.dataset.key] === true);
   });
 
   // Email opt-out is real state on the profiles row, not localStorage. Null
