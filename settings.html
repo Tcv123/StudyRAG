@@ -187,6 +187,11 @@
     }
     .toggle.on { background: var(--accent); }
     .toggle.on::after { transform: translateX(18px); }
+    .toggle:disabled { opacity: 0.4; cursor: default; }
+    .notif-gated {
+      font-size: 12px; color: var(--muted); font-style: italic;
+      margin: -4px 0 14px 0;
+    }
 
     /* ── AVATAR PICKER ── */
     .avatar-current {
@@ -519,6 +524,21 @@
     <!-- ── NOTIFICATIONS ── -->
     <div class="settings-section">
       <div class="section-title"><span class="section-icon">🔔</span> Notifications</div>
+
+      <!-- The master switch, deliberately above the kinds it governs. It has
+           no data-key because it is not one of the six: email_opt_out_at is
+           "stop emailing me", the rest are "which kinds", and a sender that
+           reads the kinds without checking this one would mail someone who
+           explicitly unsubscribed. -->
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Emails from us</div>
+          <div class="toggle-desc">Occasional reminders, like a nudge to finish setting up your account. Password resets and billing emails are separate and always send.</div>
+        </div>
+        <button class="toggle" id="toggleEmails" onclick="toggleEmails(this)"></button>
+      </div>
+      <div class="notif-gated" id="notifGated" hidden>Emails are off, so none of the below will be sent.</div>
+
       <div data-role="student">
       <div class="toggle-row">
         <div class="toggle-info">
@@ -566,19 +586,7 @@
         <button class="toggle" id="toggleRed" data-key="notif_red_topics" onclick="toggleSetting(this)"></button>
       </div>
       </div>
-
-      <!-- Shown to both roles, and the only toggle on this page that leaves
-           the browser: the others are localStorage, this one is a column the
-           day-3 reminder cron reads. Deliberately not given a data-key, or
-           the localStorage loop in load() would overwrite its real state. -->
-      <div class="toggle-row">
-        <div class="toggle-info">
-          <div class="toggle-label">Emails from us</div>
-          <div class="toggle-desc">Occasional reminders, like a nudge to finish setting up your account. Password resets and billing emails are separate and always send.</div>
-        </div>
-        <button class="toggle" id="toggleEmails" onclick="toggleEmails(this)"></button>
-      </div>
-      <div class="msg" id="emailPrefMsg"></div>
+      <div class="msg" id="notifMsg"></div>
     </div>
 
     <!-- ── YOUR CLASSES (teachers) — the counterpart to a student's progress card ── -->
@@ -655,6 +663,14 @@ const AVATAR_STYLES = [
   { id: 'thumbs',    name: 'Thumbs' },
 ];
 const AVATAR_SEEDS = ['Aria','Max','Luna','Zoe','Felix','Nova','Kai','Mia','Leo','Ivy','Owen','Sage','Remy','Juno','Elio','Poppy'];
+
+// The notification toggles. Each entry is both the data-key on the button and
+// the profiles column it writes to, so the two cannot drift apart — see
+// db/migrations/2026-09-13-notification-prefs.sql.
+const NOTIF_KEYS = [
+  'notif_reminders', 'notif_streak', 'notif_content',
+  'notif_class_joins', 'notif_weekly_summary', 'notif_red_topics'
+];
 
 function avatarUrlFor(style, seed) {
   return `https://api.dicebear.com/9.x/${style}/svg?seed=${encodeURIComponent(seed)}`;
@@ -767,14 +783,43 @@ async function load() {
 
   // Notification toggles from localStorage — both roles' toggles carry a
   // data-key, so this covers whichever set is on screen.
+  // These lived in localStorage until 2026-09-13, which made them per-device
+  // and invisible to any sender. On the first load after the migration, import
+  // whatever this browser had so an explicit "off" is not silently discarded,
+  // then stamp the row so the import never runs again. A key the user never
+  // touched takes the column default rather than localStorage's accidental
+  // absent-means-off.
+  if (profile && !profile.notif_prefs_set_at) {
+    const imported = { notif_prefs_set_at: new Date().toISOString() };
+    NOTIF_KEYS.forEach(key => {
+      const saved = localStorage.getItem(key);
+      imported[key] = saved === null ? true : saved === 'true';
+    });
+
+    const { error: importErr } = await supabaseClient
+      .from('profiles').update(imported).eq('id', user.id);
+
+    if (importErr) {
+      // Almost certainly the migration has not been applied yet. Leave the
+      // toggles reading their defaults rather than half-importing.
+      console.warn('[settings] notification prefs not imported:', importErr.message);
+    } else {
+      profile = { ...profile, ...imported };
+      NOTIF_KEYS.forEach(key => { try { localStorage.removeItem(key); } catch (e) {} });
+    }
+  }
+
+  // !== false so a column that does not exist yet reads as on, rather than
+  // showing every toggle off on a database that has not been migrated.
   document.querySelectorAll('.toggle[data-key]').forEach(el => {
-    el.classList.toggle('on', localStorage.getItem(el.dataset.key) === 'true');
+    el.classList.toggle('on', profile?.[el.dataset.key] !== false);
   });
 
   // Email opt-out is real state on the profiles row, not localStorage. Null
   // means subscribed, so a profile that predates the column reads as on.
-  document.getElementById('toggleEmails')
-    .classList.toggle('on', !profile?.email_opt_out_at);
+  const emailsOn = !profile?.email_opt_out_at;
+  document.getElementById('toggleEmails').classList.toggle('on', emailsOn);
+  applyEmailMaster(emailsOn);
 
   if (loadedAccountType === 'teacher') initTeacher(profile);
 }
@@ -1019,9 +1064,43 @@ function renderGoalPills() {
 }
 
 // ── Toggles ──
-function toggleSetting(el) {
-  el.classList.toggle('on');
-  if (el.dataset.key) localStorage.setItem(el.dataset.key, el.classList.contains('on') ? 'true' : 'false');
+//
+// Writes the matching profiles column. The switch moves first so it feels
+// instant and moves back if the write fails — a toggle that looks saved but
+// is not is worse than one that visibly refuses, because nobody checks twice.
+//
+// The column name comes from the data-key attribute, which is safe for the
+// reason set out in 2026-09-13-notification-prefs.sql: RLS confines the write
+// to the user's own row, and guard_profile_privileges() reverts and logs any
+// attempt at a privilege column. The allowlist below is for legibility.
+async function toggleSetting(el) {
+  const key = el.dataset.key;
+  if (!NOTIF_KEYS.includes(key)) return;
+
+  const msg = document.getElementById('notifMsg');
+  const turningOn = !el.classList.contains('on');
+
+  el.classList.toggle('on', turningOn);
+  el.disabled = true;
+
+  const { error } = await supabaseClient
+    .from('profiles')
+    .update({ [key]: turningOn, notif_prefs_set_at: new Date().toISOString() })
+    .eq('id', currentUser.id);
+
+  el.disabled = false;
+
+  if (error) {
+    el.classList.toggle('on', !turningOn);
+    showMsg(msg, 'error', 'Could not save that: ' + error.message);
+  }
+}
+
+// "Emails from us" governs all six, so when it is off they are shown as
+// inert rather than left looking like live choices that do nothing.
+function applyEmailMaster(on) {
+  document.querySelectorAll('.toggle[data-key]').forEach(el => { el.disabled = !on; });
+  document.getElementById('notifGated').hidden = on;
 }
 
 // Email opt-out. Unlike the toggles above this writes to the database, because
@@ -1033,7 +1112,7 @@ function toggleSetting(el) {
 // outcome worth engineering against here: they would not check again, and the
 // next email would look like we ignored them.
 async function toggleEmails(el) {
-  const msg = document.getElementById('emailPrefMsg');
+  const msg = document.getElementById('notifMsg');
   const subscribing = !el.classList.contains('on');
 
   el.classList.toggle('on', subscribing);
@@ -1052,6 +1131,7 @@ async function toggleEmails(el) {
     return;
   }
 
+  applyEmailMaster(subscribing);
   showMsg(msg, 'success', subscribing
     ? 'Emails on. We will only send the occasional one.'
     : 'Emails off. Your account is unchanged.');
