@@ -642,9 +642,6 @@
       <a class="nav-item" href="auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
       <a class="nav-item" href="contact-app.html"><span class="nav-icon">✉️</span> Contact us</a>
       <a class="nav-item" href="settings.html"><span class="nav-icon">⚙</span> Settings</a>
-      <!-- Unhidden by load() for admins only. Hiding it is convenience, not
-           security — the page's data is gated inside Postgres. -->
-      <a class="nav-item" id="navAdmin" href="admin-attribution.html" hidden><span class="nav-icon">📈</span> Attribution</a>
     </div>
 
     <div class="sidebar-bottom">
@@ -1381,7 +1378,6 @@ async function load() {
   if (authErr || !user) { window.location = 'auth/login.html'; return; }
   window.currentUserId = user.id;
   maybeShowWelcome();
-  revealAdminNav(user.id);
 
   // Load all data in parallel
   const sixtyDaysAgo = new Date(Date.now() - 60 * 86400000).toISOString();
@@ -2812,18 +2808,6 @@ document.addEventListener('click', e => {
     document.body.classList.add('page-leaving');
   }
 });
-
-// ── Admin-only nav link ───────────────────────────────────────────────
-// Its own query rather than waiting on the main profile fetch below, so the
-// link appears with the rest of the sidebar instead of popping in late. Any
-// error just leaves it hidden.
-async function revealAdminNav(userId) {
-  try {
-    const { data } = await supabaseClient
-      .from('profiles').select('is_admin').eq('id', userId).maybeSingle();
-    if (data?.is_admin) document.getElementById('navAdmin').hidden = false;
-  } catch (_) { /* stay hidden */ }
-}
 
 // ── Getting Started: auto-open modal on first visit per user ───────────
 function welcomeKey() {
