@@ -566,6 +566,19 @@
         <button class="toggle" id="toggleRed" data-key="notif_red_topics" onclick="toggleSetting(this)"></button>
       </div>
       </div>
+
+      <!-- Shown to both roles, and the only toggle on this page that leaves
+           the browser: the others are localStorage, this one is a column the
+           day-3 reminder cron reads. Deliberately not given a data-key, or
+           the localStorage loop in load() would overwrite its real state. -->
+      <div class="toggle-row">
+        <div class="toggle-info">
+          <div class="toggle-label">Emails from us</div>
+          <div class="toggle-desc">Occasional reminders, like a nudge to finish setting up your account. Password resets and billing emails are separate and always send.</div>
+        </div>
+        <button class="toggle" id="toggleEmails" onclick="toggleEmails(this)"></button>
+      </div>
+      <div class="msg" id="emailPrefMsg"></div>
     </div>
 
     <!-- ── YOUR CLASSES (teachers) — the counterpart to a student's progress card ── -->
@@ -757,6 +770,11 @@ async function load() {
   document.querySelectorAll('.toggle[data-key]').forEach(el => {
     el.classList.toggle('on', localStorage.getItem(el.dataset.key) === 'true');
   });
+
+  // Email opt-out is real state on the profiles row, not localStorage. Null
+  // means subscribed, so a profile that predates the column reads as on.
+  document.getElementById('toggleEmails')
+    .classList.toggle('on', !profile?.email_opt_out_at);
 
   if (loadedAccountType === 'teacher') initTeacher(profile);
 }
@@ -1004,6 +1022,39 @@ function renderGoalPills() {
 function toggleSetting(el) {
   el.classList.toggle('on');
   if (el.dataset.key) localStorage.setItem(el.dataset.key, el.classList.contains('on') ? 'true' : 'false');
+}
+
+// Email opt-out. Unlike the toggles above this writes to the database, because
+// the thing that honours it is a cron job that never sees this browser — see
+// db/migrations/2026-09-13-setup-reminders.sql.
+//
+// The switch moves first so it feels instant, and moves back if the write
+// fails. Showing someone "unsubscribed" when nothing was saved is the one
+// outcome worth engineering against here: they would not check again, and the
+// next email would look like we ignored them.
+async function toggleEmails(el) {
+  const msg = document.getElementById('emailPrefMsg');
+  const subscribing = !el.classList.contains('on');
+
+  el.classList.toggle('on', subscribing);
+  el.disabled = true;
+
+  const { error } = await supabaseClient
+    .from('profiles')
+    .update({ email_opt_out_at: subscribing ? null : new Date().toISOString() })
+    .eq('id', currentUser.id);
+
+  el.disabled = false;
+
+  if (error) {
+    el.classList.toggle('on', !subscribing);
+    showMsg(msg, 'error', 'Could not save that: ' + error.message);
+    return;
+  }
+
+  showMsg(msg, 'success', subscribing
+    ? 'Emails on. We will only send the occasional one.'
+    : 'Emails off. Your account is unchanged.');
 }
 
 // ── Reset progress ──
