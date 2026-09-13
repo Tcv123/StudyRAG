@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <title>Unsubscribe — RAG Learning</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #EAF2FC;
+      --surface:     #FFFFFF;
+      --border:      #B8D0E8;
+      --text:        #0B1E3F;
+      --muted:       #445F85;
+      --muted2:      #7891B0;
+      --accent:      #2563EB;
+      --accent-dark: #1D4ED8;
+      --green-text:  #15803D;
+      --red-text:    #B91C1C;
+      --font-display: 'DM Serif Display', serif;
+      --font-body:    'DM Sans', sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg:      #0B1622;
+        --surface: #12202F;
+        --border:  #23364B;
+        --text:    #E8F0F9;
+        --muted:   #A8BED6;
+        --muted2:  #7891B0;
+        --green-text: #4ADE80;
+        --red-text:   #F87171;
+      }
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      line-height: 1.6;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 40px 36px;
+      max-width: 460px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .brand {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--accent);
+      letter-spacing: 0.02em;
+      margin-bottom: 22px;
+    }
+
+    h1 {
+      font-family: var(--font-display);
+      font-size: 26px;
+      font-weight: 400;
+      line-height: 1.3;
+      margin-bottom: 12px;
+    }
+
+    p { color: var(--muted); font-size: 15px; }
+    p + p { margin-top: 12px; }
+
+    button {
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 600;
+      color: #FFFFFF;
+      background: var(--accent);
+      border: none;
+      border-radius: 9px;
+      padding: 13px 28px;
+      margin-top: 26px;
+      cursor: pointer;
+      transition: background 0.15s ease;
+    }
+    button:hover:not(:disabled) { background: var(--accent-dark); }
+    button:disabled { opacity: 0.6; cursor: default; }
+
+    .foot {
+      margin-top: 26px;
+      padding-top: 20px;
+      border-top: 1px solid var(--border);
+      font-size: 13px;
+      color: var(--muted2);
+    }
+    .foot a { color: var(--muted); }
+
+    .done  h1 { color: var(--green-text); }
+    .error h1 { color: var(--red-text); }
+
+    .retry { margin-top: 14px; font-size: 14px; color: var(--red-text); }
+
+    [hidden] { display: none !important; }
+  </style>
+</head>
+<body>
+
+  <main class="card" id="card">
+    <div class="brand">RAG Learning</div>
+
+    <!-- Nothing happens until this button is pressed. The link in the email
+         is a GET, and mail scanners follow those on their own — so the page
+         asks first and the actual opt-out is a POST. -->
+    <section id="ask">
+      <h1>Stop reminder emails?</h1>
+      <p>We'll stop emailing you about finishing your account setup.</p>
+      <button type="button" id="confirm">Unsubscribe</button>
+      <p id="retry" class="retry" hidden></p>
+    </section>
+
+    <section id="done" hidden>
+      <h1>You're unsubscribed</h1>
+      <p>We won't email you about setting up your account again.</p>
+      <p>Your account is untouched — nothing has been deleted, and you can
+         sign in and pick your subjects whenever you like.</p>
+    </section>
+
+    <section id="error" hidden>
+      <h1>This link isn't valid</h1>
+      <p id="error-detail">It may have been copied incompletely. Try clicking
+         the link in the email again.</p>
+    </section>
+
+    <div class="foot">
+      <a href="/">raglearning.uk</a> &middot; <a href="/contact">Contact us</a>
+    </div>
+  </main>
+
+<script>
+(function () {
+  'use strict';
+
+  var ask    = document.getElementById('ask');
+  var done   = document.getElementById('done');
+  var error  = document.getElementById('error');
+  var detail = document.getElementById('error-detail');
+  var button = document.getElementById('confirm');
+  var retry  = document.getElementById('retry');
+  var card   = document.getElementById('card');
+
+  var token = new URLSearchParams(window.location.search).get('t') || '';
+
+  function show(section, cls) {
+    ask.hidden = done.hidden = error.hidden = true;
+    section.hidden = false;
+    card.className = 'card' + (cls ? ' ' + cls : '');
+  }
+
+  if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$/i.test(token)) {
+    show(error, 'error');
+    return;
+  }
+
+  button.addEventListener('click', async function () {
+    button.disabled = true;
+    button.textContent = 'Unsubscribing…';
+    retry.hidden = true;
+
+    try {
+      var response = await fetch('/api/unsubscribe', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ token: token })
+      });
+
+      if (response.ok) {
+        show(done, 'done');
+        return;
+      }
+
+      var body = await response.json().catch(function () { return {}; });
+      if (body.error) detail.textContent = body.error;
+      show(error, 'error');
+    } catch (err) {
+      /* Offline, or the request never landed. Nothing was changed, so keep
+         them on this screen with the button live rather than swapping in a
+         dead-end page — the retry is the whole point. */
+      button.disabled = false;
+      button.textContent = 'Unsubscribe';
+      retry.textContent = 'Could not reach the server. Please try again.';
+      retry.hidden = false;
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
