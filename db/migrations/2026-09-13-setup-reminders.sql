@@ -71,6 +71,11 @@ alter table public.setup_reminders enable row level security;
 
 -- The global opt-out. Null means subscribed, which makes every existing row
 -- correct without a backfill.
+--
+-- settings.html writes this directly under the "own profile" RLS policy — it
+-- is a preference, not a privilege, so guard_profile_privileges() in
+-- 2026-09-11-admin-security.sql leaves it alone. The unsubscribe link writes
+-- it too, via unsubscribe_by_token() below, for people who are not signed in.
 alter table public.profiles
   add column if not exists email_opt_out_at timestamptz;
 
