@@ -12,6 +12,14 @@ const EXAM_DATES = {
     { paper: 'Paper 1 — On-screen', date: '2026-06-10', time: 'PM', duration: '2h 30m' },
     { paper: 'Paper 2 — Written', date: '2026-06-17', time: 'AM', duration: '2h' },
   ],
+  // Politics is A-Level only. These are the MAY/JUNE 2027 dates from AQA's own
+  // key-dates page for 7152 — 2027 because the 2026 series has already been sat.
+  // Every other entry in this file is still 2026 and therefore in the past.
+  'Politics_AQA|alevel': [
+    { paper: 'Paper 1 — Government and Politics of the UK', date: '2027-05-12', time: 'AM', duration: '2h' },
+    { paper: 'Paper 2 — Government and Politics of the USA & Comparative', date: '2027-05-24', time: 'PM', duration: '2h' },
+    { paper: 'Paper 3 — Political Ideas', date: '2027-06-15', time: 'PM', duration: '2h' },
+  ],
   'Computer Science_AQA|alevel': [
     { paper: 'Paper 1 — On-screen Programming', date: '2026-06-11', time: 'AM', duration: '2h 30m' },
     { paper: 'Paper 2 — Written Theory', date: '2026-06-18', time: 'PM', duration: '2h 30m' },
