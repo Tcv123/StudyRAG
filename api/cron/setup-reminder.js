@@ -57,12 +57,26 @@ module.exports = async function handler(req, res) {
     return res.status(401).json({ error: 'Unauthorized' });
   }
 
+  /* Past the bearer check, so the caller is the cron or someone holding
+   * CRON_SECRET. Naming the missing variable is safe here and saves an
+   * afternoon of guessing — the generic message above stays generic
+   * precisely because it is reachable without the secret. */
   const supabaseUrl = process.env.SUPABASE_URL;
   const serviceKey  = process.env.SUPABASE_SERVICE_ROLE_KEY;
   const resendKey   = process.env.RESEND_API_KEY;
-  if (!supabaseUrl || !serviceKey || !resendKey) {
-    console.error('[setup-reminder] missing Supabase or Resend configuration');
-    return res.status(500).json({ error: 'Not configured' });
+
+  const missing = [
+    ['SUPABASE_URL', supabaseUrl],
+    ['SUPABASE_SERVICE_ROLE_KEY', serviceKey],
+    ['RESEND_API_KEY', resendKey]
+  ].filter(([, value]) => !value).map(([name]) => name);
+
+  if (missing.length) {
+    console.error('[setup-reminder] missing env vars:', missing.join(', '));
+    return res.status(500).json({
+      error: 'Not configured',
+      missing
+    });
   }
 
   const supabaseAdmin = createClient(supabaseUrl, serviceKey, {
