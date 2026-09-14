@@ -181,6 +181,7 @@
     'Geography_Edexcel':           ['questions/geography-edexcel/geography-edexcel-ai-feedback.js'],
     'Geography_Eduqas|alevel':     ['questions/geography-eduqas-alevel/geography-eduqas-alevel-ai-feedback.js'],
     'Geography_OCR':               ['questions/geography-ocr/geography-ocr-ai-feedback.js'],
+    'Politics_AQA|alevel':         ['questions/politics/politics-aqa-alevel-ai-feedback.js'],
   };
 
   const AI_FEEDBACK_MAP = {
@@ -219,6 +220,7 @@
     'Geography_Edexcel':        () => typeof GEOGRAPHY_EDEXCEL_AI_FEEDBACK !== 'undefined' ? GEOGRAPHY_EDEXCEL_AI_FEEDBACK : null,
     'Geography_Eduqas|alevel':  () => typeof GEOGRAPHY_EDUQAS_ALEVEL_AI_FEEDBACK !== 'undefined' ? GEOGRAPHY_EDUQAS_ALEVEL_AI_FEEDBACK : null,
     'Geography_OCR':            () => typeof GEOGRAPHY_OCR_AI_FEEDBACK !== 'undefined' ? GEOGRAPHY_OCR_AI_FEEDBACK : null,
+    'Politics_AQA|alevel':      () => typeof POLITICS_AQA_AI_FEEDBACK !== 'undefined' ? POLITICS_AQA_AI_FEEDBACK : null,
   };
 
   const _loadedScripts = new Set();
