@@ -44,7 +44,7 @@
     'Psychology':          ['AQA', 'Edexcel', 'OCR'],
     'Sociology':           ['AQA', 'OCR', 'Eduqas'],
     'Business Studies':    ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
-    'Politics':            ['AQA', 'Edexcel'],
+    'Politics':            ['AQA', 'Edexcel', 'Eduqas'],
     'French':              ['AQA', 'Edexcel', 'Eduqas'],
     'German':              ['AQA', 'Edexcel', 'Eduqas'],
     'Spanish':             ['AQA', 'Edexcel', 'Eduqas'],

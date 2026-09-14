@@ -28,6 +28,11 @@
  * Manual dry run (safe — sends nothing, claims nothing):
  *   curl -H "Authorization: Bearer $CRON_SECRET" \
  *        https://raglearning.uk/api/cron/setup-reminder?dry=1
+ *
+ * Send one copy to yourself, to see it in a real inbox before it reaches
+ * anybody. Writes nothing and claims nobody, so the real run is unaffected:
+ *   curl -H "Authorization: Bearer $CRON_SECRET" \
+ *        "https://raglearning.uk/api/cron/setup-reminder?preview=1&to=you@example.com"
  */
 
 const crypto = require('crypto');
@@ -43,6 +48,12 @@ const DAILY_CAP = 40;
 const SEND_GAP_MS = 550;
 
 const sleep = ms => new Promise(r => setTimeout(r, ms));
+
+/* Preview emails carry this instead of a real unsubscribe token. It resolves
+ * to nothing, so the unsubscribe page correctly reports an invalid link —
+ * which is the honest outcome, since there is no subscription behind a
+ * preview to cancel. Test the real unsubscribe flow from a real send. */
+const PREVIEW_TOKEN = '00000000-0000-0000-0000-000000000000';
 
 module.exports = async function handler(req, res) {
   /* ── Who's calling ──────────────────────────────────────────────────
@@ -84,6 +95,34 @@ module.exports = async function handler(req, res) {
   });
 
   const dryRun = req.query?.dry === '1' || req.query?.dry === 'true';
+
+  /* ── Preview ─────────────────────────────────────────────────────────
+   * One copy of the real email to an address you name, so it can be read in
+   * an actual inbox before it reaches a student. Touches no rows and claims
+   * nobody, so a preview never costs a real recipient their reminder.
+   *
+   * Nothing in the body is caller-supplied — no name parameter, no subject
+   * override, no template injection. If CRON_SECRET ever leaked, the worst
+   * this offers is your own setup reminder sent to the wrong address, rather
+   * than an attacker-authored email leaving a domain people trust. */
+  if (req.query?.preview === '1' || req.query?.preview === 'true') {
+    const to = String(req.query?.to || '').trim();
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(to)) {
+      return res.status(400).json({ error: 'Pass a valid ?to= address.' });
+    }
+
+    try {
+      const providerId = await sendReminder(
+        resendKey,
+        { email: to, first_name: '' },
+        PREVIEW_TOKEN
+      );
+      return res.status(200).json({ preview: true, to, providerId });
+    } catch (err) {
+      console.error('[setup-reminder] preview send failed:', err.message);
+      return res.status(502).json({ error: err.message });
+    }
+  }
 
   /* ── Who's due ──────────────────────────────────────────────────────── */
   const { data: pending, error: pendingErr } = await supabaseAdmin
