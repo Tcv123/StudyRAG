@@ -11,21 +11,23 @@
     PRIVATE PAGE. Same shape and same gate as admin.html and
     admin-attribution.html: it asks is_admin() and shows nothing otherwise.
 
-    Unlike those two, there is nothing behind this page to protect — the
-    findings are static and live in FINDINGS below, not in the database.
-    The gate is here so the bug list is not casually readable by students,
-    not because it guards anything a determined reader could not get from
-    the source. Treat it as a notebook, not a secret.
+    The list lives in public.bug_reports, and the real gate is the RLS on
+    that table — is_admin() there, not here. The check in this page only
+    decides what to draw; a non-admin who edits their way past it gets an
+    empty list back from Postgres.
 
-    WHERE THIS CAME FROM. A full-site audit on 14 September 2026: every page
-    walked signed-in as a student and as a teacher, every diagnostic and API
-    route read, every internal link and all 546 past-paper links resolved.
+    SEEDED FROM a full-site audit on 14 September 2026: every page walked
+    signed-in as a student and as a teacher, every diagnostic and API route
+    read, every internal link and all 546 past-paper links resolved.
     "Verified live" means it was reproduced in the browser or measured
-    against the live database; "code" means it was read from source.
+    against the live database; "from source" means it was read in the code.
 
-    KEEPING IT CURRENT. Edit FINDINGS. Set status to 'fixed' when one lands
-    rather than deleting it — the counts at the top are derived, and the
+    ADDING AND RANKING happen here rather than in a redeploy. Rank is a
+    plain ascending integer; reordering renumbers the list and writes back
+    only what changed. Mark things fixed rather than deleting them — the
     record of what was wrong is worth more than a short list.
+
+    Schema: db/migrations/2026-09-14-bug-reports.sql
   -->
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -39,6 +41,10 @@
   <script src="referral-modal.js"></script>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    /* .addform sets display:flex, and an author rule beats the UA sheet's
+       [hidden] { display:none } at equal specificity — so say it here. */
+    [hidden] { display: none !important; }
 
     html, body { min-height: 100%; background: var(--bg); color: var(--text);
                  font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
@@ -165,6 +171,57 @@
                color: var(--text); text-decoration: none; font-size: 14px; transition: all .12s; }
     .links a:hover { border-color: var(--border-hover); background: var(--surface2); }
 
+
+    /* ── Row actions ─────────────────────────────────────────────
+       Real buttons, not clickable divs — the audit this page records
+       has a finding about exactly that (A-09).                      */
+    .bug-acts { display: flex; gap: 6px; margin-left: auto; flex-wrap: wrap; }
+    .act {
+      font-family: var(--font-body); font-size: 11px; font-weight: 500;
+      padding: 3px 9px; border-radius: 7px; cursor: pointer;
+      background: var(--surface2); color: var(--muted);
+      border: 1px solid var(--border); transition: all .12s; line-height: 1.5;
+    }
+    .act:hover { border-color: var(--border-hover); color: var(--text); }
+    .act.danger:hover { background: var(--red-bg); color: var(--red-text); border-color: var(--red-border); }
+    .act:focus-visible, .filter:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+
+    .filter.primary { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .filter.primary:hover { background: var(--accent-dark); color: #fff; }
+
+    /* ── Add form ── */
+    .addform { display: flex; flex-direction: column; gap: 14px; }
+    .grid2 { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+    .field { display: flex; flex-direction: column; gap: 5px; }
+    .field > span { font-size: 12px; font-weight: 600; color: var(--muted); }
+    .field > span em { font-style: normal; font-weight: 400; color: var(--muted2); }
+    .field input, .field select, .field textarea {
+      font-family: var(--font-body); font-size: 14px; color: var(--text);
+      background: var(--surface2); border: 1px solid var(--border);
+      border-radius: 9px; padding: 9px 11px; width: 100%; transition: border-color .12s;
+    }
+    .field textarea { resize: vertical; line-height: 1.55; }
+    .field input:focus, .field select:focus, .field textarea:focus {
+      outline: none; border-color: var(--border-hover);
+    }
+    .field input::placeholder, .field textarea::placeholder { color: var(--muted2); }
+
+    .form-actions { display: flex; gap: 10px; justify-content: flex-end; }
+    .btn {
+      font-family: var(--font-body); font-size: 14px; font-weight: 500;
+      padding: 10px 18px; border-radius: 10px; cursor: pointer;
+      border: 1px solid var(--border); transition: all .12s;
+    }
+    .btn.ghost { background: var(--surface2); color: var(--text); }
+    .btn.ghost:hover { border-color: var(--border-hover); }
+    .btn.solid { background: var(--accent); border-color: var(--accent); color: #fff; }
+    .btn.solid:hover { background: var(--accent-dark); }
+    .btn:disabled { opacity: .55; cursor: default; }
+
+    .form-msg { font-size: 13px; border-radius: 9px; padding: 9px 12px; }
+    .form-msg.good { color: var(--green-text); background: var(--green-bg); border: 1px solid var(--green-border); }
+    .form-msg.bad  { color: var(--red-text);   background: var(--red-bg);   border: 1px solid var(--red-border); }
+
     @media (max-width: 860px) {
       .sidebar { transform: translateX(-100%); transition: transform .2s; }
       .sidebar.open { transform: translateX(0); }
@@ -229,8 +286,13 @@
       <div class="mobile-menu-btn" onclick="document.querySelector('.sidebar').classList.add('open');document.querySelector('.mobile-overlay').classList.add('active');">☰</div>
       <div>
         <h1 id="pageTitle">Known bugs</h1>
-        <p class="sub" id="pageSub">Findings from the full-site audit on 14 September 2026. Graded on our own traffic light: red means a student or a payment silently gets nothing, amber means the app states something untrue, green is polish.</p>
+        <p class="sub" id="pageSub">Anything wrong with the app, worst first. Graded on our own traffic light: red means a student or a payment silently gets nothing, amber means the app states something untrue, green is polish.</p>
       </div>
+    </div>
+
+    <!-- Shown until the admin check comes back, so the page is never blank. -->
+    <div class="card" id="loading">
+      <p class="empty">Loading…</p>
     </div>
 
     <div id="content" hidden>
@@ -244,8 +306,60 @@
           <button class="filter" type="button" data-sev="green" aria-pressed="true">Green</button>
           <span class="filter-sep" aria-hidden="true"></span>
           <button class="filter" type="button" id="showFixed" aria-pressed="false">Show fixed</button>
+          <span class="filter-sep" aria-hidden="true"></span>
+          <button class="filter primary" type="button" id="addToggle" aria-expanded="false">+ Add a bug</button>
         </div>
       </div>
+
+      <form class="card addform" id="addForm" hidden>
+        <div class="card-title">New bug</div>
+        <div class="grid2">
+          <label class="field">
+            <span>Title</span>
+            <input id="fTitle" type="text" maxlength="200" required placeholder="What goes wrong, in one line">
+          </label>
+          <label class="field">
+            <span>Reference</span>
+            <input id="fRef" type="text" maxlength="24" required placeholder="B-01">
+          </label>
+          <label class="field">
+            <span>Severity</span>
+            <select id="fSev">
+              <option value="red">Red — silently gets nothing</option>
+              <option value="amber" selected>Amber — states something untrue</option>
+              <option value="green">Green — polish</option>
+            </select>
+          </label>
+          <label class="field">
+            <span>How it was found</span>
+            <select id="fVerified">
+              <option value="live">Reproduced live</option>
+              <option value="code" selected>Read from source</option>
+            </select>
+          </label>
+        </div>
+        <label class="field">
+          <span>Where it lives</span>
+          <input id="fArea" type="text" placeholder="Dashboard.html:1858 · medals-engine.js">
+        </label>
+        <label class="field">
+          <span>What happens</span>
+          <textarea id="fDetail" rows="3" placeholder="Enough for someone who has not seen it to understand"></textarea>
+        </label>
+        <label class="field">
+          <span>Evidence <em>optional</em></span>
+          <textarea id="fEvidence" rows="3" placeholder="Measurements, console output, a diff — shown verbatim"></textarea>
+        </label>
+        <label class="field">
+          <span>Fix</span>
+          <textarea id="fFix" rows="2" placeholder="What to do about it"></textarea>
+        </label>
+        <p class="form-msg" id="formMsg" hidden></p>
+        <div class="form-actions">
+          <button type="button" class="btn ghost" id="addCancel">Cancel</button>
+          <button type="submit" class="btn solid" id="addSave">Add bug</button>
+        </div>
+      </form>
 
       <div class="list" id="list"></div>
 
@@ -290,272 +404,23 @@ async function logout() {
   'use strict';
 
   /* ═══════════════════════════════════════════════════════════════
-     THE LIST.
+     The list lives in public.bug_reports, not in this file — see
+     db/migrations/2026-09-14-bug-reports.sql. Everything here is a
+     view over it, so adding a bug is a row rather than a redeploy.
 
-     id      short stable handle, used in commit messages
-     sev     'red' | 'amber' | 'green'
-     status  'open' | 'fixed'   — set 'fixed', do not delete
-     how     'live' (reproduced in the browser / measured against the
-             live database) or 'code' (read from source)
-     where   the files it lives in
-     what    what actually goes wrong, for someone who has not seen it
-     ev      optional measurement, shown verbatim
-     fix     what to do about it
+     RANK is a plain ascending integer, lowest first, seeded in tens.
+     Reordering renumbers the whole open list 10, 20, 30 … and writes
+     back only the rows whose number actually changed. Swapping two
+     neighbours would be fewer writes but goes wrong the moment two
+     rows share a rank, which nothing stops.
+
+     The admin gate is enforced by RLS on the table. The check below
+     only decides what to draw.
      ═══════════════════════════════════════════════════════════════ */
-  var FINDINGS = [
-
-    /* ── RED ─────────────────────────────────────────────────── */
-    {
-      id: 'R-01', sev: 'red', status: 'fixed', how: 'live',
-      where: 'model-answers-maths.js:2091',
-      title: 'A missing quote mark took all 1,917 maths model answers off the site',
-      what: 'One value was missing its closing double quote, so the whole 638 KB file failed to parse. It was the only file in the repo that failed node --check. Mark Schemes showed no model answer for any maths question, and nothing reported a problem: the loader treats failure as non-fatal, and the lookup falls back to an empty string, which is indistinguishable from "no model answer for this question".',
-      ev: 'CS_MODEL_ANSWERS       332 entries\nFM_MODEL_ANSWERS       482 entries\nPHYSICS_MODEL_ANSWERS 1012 entries\nMATHS_MODEL_ANSWERS   undefined',
-      fix: 'Fixed 14 Sep 2026 — quote added, 1,917 entries load again. Worth adding node --check over the data files to CI; one line would have caught it the day it landed.'
-    },
-    {
-      id: 'R-02', sev: 'red', status: 'open', how: 'live',
-      where: 'api/create-checkout-session.js · api/stripe-webhook.js · settings.html:690',
-      title: 'The paid Stripe path writes to four columns that do not exist',
-      what: 'The rest of the app reads subscription_tier / subscription_status / subscription_expires_at. Only the Stripe files use pro_status, pro_plan, pro_current_period_end and stripe_subscription_id, none of which are on the live profiles table. So: checkout creates a brand new Stripe customer every attempt and the already_subscribed guard can never fire; success_url points at /auth/subscription-success.html, which does not exist, so the customer pays and lands on a 404; the webhook update fails, logs, and still returns 200 so Stripe never retries; and Settings keeps saying "Free".',
-      ev: 'pro_status              column profiles.pro_status does not exist\npro_plan                column profiles.pro_plan does not exist\npro_current_period_end  column ... does not exist\nstripe_subscription_id  column ... does not exist\nsubscription_tier       ok',
-      fix: 'Point the three Stripe files at the subscription_* columns the rest of the app already uses, and create the two redirect pages. The webhook should return non-200 when the profile write fails, so Stripe retries.'
-    },
-    {
-      id: 'R-03', sev: 'red', status: 'fixed', how: 'live',
-      where: 'db/migrations/2026-09-14-join-class-status.sql · Dashboard.html:2782',
-      title: 'Students were told their class join failed, after it had succeeded',
-      what: 'The client half of the change shipped and the SQL half did not, so join_class still returned five columns with no ok field. Dashboard.html branches on !joined.ok, so every join showed an error — while the student was quietly added to the class. The same migration also fixes class_join_attempts, which had been empty since it was created because the old function logged the attempt and then raised, rolling the log row back. The join-code rate limit had therefore never worked.',
-      ev: 'UI said:      "Could not join that class. Try again in a moment."\nclass_members: joined_at 2026-09-14T12:40:24Z   <- it worked',
-      fix: 'Fixed 14 Sep 2026 — migration applied. Verified: success screen renders, and a bad code is refused on the 11th attempt in 15 minutes, so the rate limit is live.'
-    },
-    {
-      id: 'R-04', sev: 'red', status: 'fixed', how: 'live',
-      where: 'teacher-subjects-sync.js · settings.html:458',
-      title: 'Switching to a teacher account deleted the student’s subjects and grades',
-      what: 'The sync reconciled user_subjects to exactly the classes owned, deleting everything else — under a label reading "Changes which pages you see. Nothing you’ve already saved is deleted." A student with four subjects who switched to teacher and made one class was left with one row, and even that had lost both grades. Switching back restored nothing.',
-      ev: 'before   Mathematics/AQA C-A, Computer Science/AQA C-A,\n         Biology/AQA C-A, Further Mathematics/Edexcel C-A\nafter    Mathematics/AQA   current_grade null   target_grade null',
-      fix: 'Fixed 14 Sep 2026 — a row is now only deleted when it matches a subject+board this teacher has had a class for (archived included, so we know the sync created it) AND carries no grades. Covered by five scenario tests.'
-    },
-    {
-      id: 'R-05', sev: 'red', status: 'open', how: 'live',
-      where: 'pricing-app.html:279',
-      title: 'The in-app pricing page tells Pro users they are on Free',
-      what: '"You’re on this plan" is static markup on the Free card; the page never reads the user’s subscription at all. A Pro user sees themselves as Free and is offered "Start 7-day free trial", which posts to create-checkout-session. The only thing between them and a second subscription is the already_subscribed guard, which is broken by R-02.',
-      ev: 'profile   subscription_tier pro_monthly - status active - expires 2026-12-14\npage      Free card -> "You’re on this plan"\n          Pro card  -> "Start 7-day free trial"',
-      fix: 'Read the subscription on load and swap which card says "You’re on this plan". nav-gating.js already has the exact isPro() logic to reuse.'
-    },
-    {
-      id: 'R-06', sev: 'red', status: 'open', how: 'live',
-      where: 'live profiles schema · supabase-config.js',
-      title: 'Deleting an account leaves every row behind, and the email with it',
-      what: 'supabase-config.js documents every user-scoped table as REFERENCES profiles(id) ON DELETE CASCADE, and the whole deletion design rests on it. The live tables have no such constraint — and it is absent, not misconfigured: NO ACTION would have refused the parent delete, and SET NULL would have nulled user_id so RLS stopped returning the rows. For a real student using Settings, subjects, RAG progress, medals and their attribution row stay in the database alongside a live auth.users record holding their email. user_medals and user_attribution also accepted a delete and removed nothing, so their RLS has no DELETE policy.',
-      ev: '              auth      profiles  subjects  progress  medals  attribution\nteacher       signs in  GONE      1         1         13      1\nstudent 1     signs in  GONE      1         0         2       0\nstudent 2     signs in  GONE      1         0         2       0',
-      fix: 'Add the missing foreign keys, then re-check end to end with one throwaway account: deleting from Settings should leave nothing in any user-scoped table and no auth.users row. Audit the RLS delete policies in the same pass.'
-    },
-
-    /* ── AMBER ───────────────────────────────────────────────── */
-    {
-      id: 'A-01', sev: 'amber', status: 'open', how: 'live',
-      where: 'medals-engine.js:84 · Dashboard.html:1858 · breakdown.html:651 · notes.html:428 · practice.html · flashcards-config.js',
-      title: 'Six topic lists, and 16 of 46 subject/board combinations disagree',
-      what: 'How many topics a spec has is written down six times and the copies have drifted. The Practice page renders "Mathematics - Diagnostic 1/17 - AQA - 1/12 tested" on a single card. Computer Science AQA GCSE and Biology OCR B GCSE can never reach 100%, so their completion medals can never fire. Further Maths Edexcel has no Dashboard entry, so its Diagnostics card reads "Coming soon" despite having notes, 17 topics in Breakdown and its own model-answer bank.',
-      ev: 'subject_board                  medals dash brkd notes pract cards\nMathematics_AQA                    17   17   17    12    12    12\nComputer Science_AQA|alevel        10   10   12    10    10    10\nComputer Science_AQA|gcse          12    8    -     8     8     8\nBiology_OCR B|gcse                 22   23   23     -    23     -\nFurther Mathematics_Edexcel        17    -   17    17    17    17',
-      fix: 'Promote one list to a shared config the way subjects-config.js already works, and have the other five import it.'
-    },
-    {
-      id: 'A-02', sev: 'amber', status: 'open', how: 'live',
-      where: 'exam-dates-config.js · Dashboard.html:945 · breakdown.html:1798',
-      title: 'The exam timetable is last year’s, so "Upcoming exams" shows exams already sat',
-      what: 'Only the May/June 2026 series is in the config, with a note to update it every year. Every new sign-up is now revising for summer 2027. The Dashboard opens on June 2026 with every paper marked "Done", because it looks for the first exam month at or after today and, finding none, falls back to the most recent past month. Breakdown instead says "No upcoming exams. Add subjects in setup to see exam dates here." — blaming the user for a data problem. revision-timetable.html never reads EXAM_DATES at all, so the Pro feature sold as "study plans built around your exam timetable" is not wired to it.',
-      fix: 'Add the 2027 dates, then make the fallback say "no exams scheduled yet" rather than opening on a past month, so next September degrades gracefully.'
-    },
-    {
-      id: 'A-03', sev: 'amber', status: 'open', how: 'code',
-      where: 'diagnostics/*.html — all 47',
-      title: 'The RAG threshold is a fixed number, but the maximum score is random',
-      what: 'The written question replaces one MCQ of a randomly chosen tier and is always worth 3, so the maximum obtainable score changes run to run — while the green threshold stays at an absolute 8. A student who drops exactly one amber MCQ scores 9 and goes green in one case, 7 and goes amber in another. Same performance, different rating, decided by Math.random().',
-      ev: 'written lands on green -> max 11   green needs 8/11 = 73%\nwritten lands on amber -> max 10   green needs 8/10 = 80%\nwritten lands on red   -> max  9   green needs 8/9  = 89%',
-      fix: 'Make THRESHOLD a fraction of the achievable maximum, or stop randomising which tier the written question replaces.'
-    },
-    {
-      id: 'A-04', sev: 'amber', status: 'open', how: 'live',
-      where: 'questions/maths-aqa/* · questions/physics/* · questions/maths-edexcel/* · questions/further-maths-edexcel/*',
-      title: '2,471 mark schemes print a literal backslash-n instead of breaking lines',
-      what: 'Mark schemes render as one run-on paragraph with visible escape characters. The CSS is fine — .mark-scheme-text already has white-space: pre-line. The data is double-escaped, holding backslash-n as two characters rather than a newline. That is effectively all of Maths AQA practice and all of Physics Edexcel.',
-      ev: '1265  questions/maths-aqa/maths-aqa-practice.js\n 838  questions/physics/physics-edexcel-practice.js\n 326  questions/physics/physics-edexcel-written.js\n  42  nine further maths-edexcel and further-maths files',
-      fix: 'Repair the data; the CSS already handles real newlines. Leave papers-config.js and questions/cs/cs-ocr-alevel-written.js alone — their sequences are deliberate Python samples and ASCII tree art.'
-    },
-    {
-      id: 'A-05', sev: 'amber', status: 'open', how: 'code',
-      where: 'papers-config.js — OCR A Chemistry',
-      title: 'Seven mark schemes state a different answer than the one marked correct',
-      what: 'Of the 415 multiple-choice mark schemes, 16 contain visible working-out a student should never see ("Hmm", "Wait:", "Let me recalculate", "Let me trust official") and 7 of those conclude on a different letter than points[] records. A student who gets one of these right is told they are wrong, and the explanation visibly argues with itself.',
-      ev: 'D vs "Answer C"   C vs "Answer B"   D vs "Answer B"   A vs "Answer B"\nB vs "Answer C"   C vs "Answer B"   D vs "Answer B"',
-      fix: 'Review those 16 by hand, then add a build check that flags any guidance string containing "Hmm", "Wait", "Actually" or "Let me re-".'
-    },
-    {
-      id: 'A-06', sev: 'amber', status: 'open', how: 'code',
-      where: 'auth/forgot-password.html:242',
-      title: 'Password reset sends people back to the form they came from',
-      what: 'vercel.json sets cleanUrls, so in production the path has no .html extension. The reset link is built by string-replacing an extension that is not there, so redirectTo comes out as the forgot-password page itself. The recovery token lands in the hash of a page with nothing to consume it, and the user cannot set a new password.',
-      ev: 'pathname.replace(/forgot-password\\.html$/, …)\nproduction pathname   /auth/forgot-password   -> regex never matches',
-      fix: 'Build the URL from the directory instead: pathname.replace(/[^/]*$/, ’’) + ’reset-password.html’ — which is what settings.html:1035 already does correctly.'
-    },
-    {
-      id: 'A-07', sev: 'amber', status: 'open', how: 'live',
-      where: 'Dashboard.html:2732',
-      title: '"Join a class" in the sidebar does not open anything',
-      what: 'The sidebar link is /Dashboard.html#join-class on every page, and it is the only way into the join flow. Loading that URL directly leaves the overlay hidden. There is also no hashchange listener, so clicking it while already on the Dashboard changes the hash and does nothing. Calling openJoinClass() by hand works, so it is only the entry point that is broken.',
-      fix: 'Call it directly rather than through a DOMContentLoaded that may already have fired, and add a hashchange handler for the same-page case.'
-    },
-    {
-      id: 'A-08', sev: 'amber', status: 'open', how: 'live',
-      where: 'inline styles across 14 files · predicted-grade.js GRADE_COLOUR',
-      title: 'Dark mode: 74 pieces of text on the Dashboard alone fail contrast',
-      what: 'The CSS custom properties are re-tuned properly for dark. The problem is roughly 87 colours hardcoded as hex in inline style attributes and JS template literals, which bypass the tokens and stay light-theme. predicted-grade.js is the highest-leverage fix: it hardcodes the whole grade palette and injects it inline, so every predicted-grade badge is light-theme green on a dark card. Separately, --muted2 is too dim for body text in dark mode.',
-      ev: '2.58  #506A8A  a stat value          needs 4.5\n2.80  #059669  "Done" exam chip      needs 4.5\n2.88  #B45309  "Diagnostic 0/10"     needs 4.5\n3.02  #15803D  the predicted grade   needs 4.5\n\nhardcoded: #D97706 x51  #DC2626 x12  #16A34A x8\n           #B45309 x7   #15803D x5   #059669 x4',
-      fix: 'Route those inline colours through the existing custom properties.'
-    },
-    {
-      id: 'A-09', sev: 'amber', status: 'open', how: 'live',
-      where: 'auth/setup.html · auth/register.html · most app pages',
-      title: 'The setup wizard cannot be used with a keyboard',
-      what: 'An accessibility-tree read of setup.html returns eight unnamed generic nodes — no buttons, no radios, no labels. Level cards, subject cards, board pills and grade chips are all div onclick with no role, no tabindex and no accessible name. Registration’s Student/Teacher selector has the same problem, so a keyboard or screen-reader user may not be able to choose Teacher at all. The teacher’s New-class dialog uses real select elements and reads perfectly.',
-      ev: 'tabindex      0 occurrences in the entire site\nrole="..."    12 at most on any one page\ndiv onclick   Dashboard 16 - settings 13 - mark-schemes 7 - class 7',
-      fix: 'Do the signup and setup path first — it is the only path every user must complete. Real button and radio elements would fix most of it without changing the design.'
-    },
-    {
-      id: 'A-10', sev: 'amber', status: 'open', how: 'live',
-      where: 'index.html — #earlyBanner',
-      title: 'The early-adopter banner is invisible on every screen size',
-      what: 'The banner is position:relative at the top of the document with z-index 10. The nav is position:fixed, 65px tall, z-index 100, and nothing offsets the page for it. The live spots-left counter is writing into an element nobody can see. The separate hero nudge is visible and fine.',
-      ev: 'desktop 1280px   banner 42px tall, 42px covered, fully hidden\nmobile   375px   118px tall, first 65px covered — the headline is gone',
-      fix: 'Move the banner inside the fixed nav stack, or pad the body by the nav height.'
-    },
-    {
-      id: 'A-11', sev: 'amber', status: 'open', how: 'live',
-      where: 'features.html · pricing.html · subjects.html · support.html · contact.html',
-      title: 'Five of six marketing pages lose their header nav on mobile',
-      what: 'At 375px the nav links are hidden and there is no hamburger to bring them back — only Sign in and Register survive. index.html has a mobile menu; the other five do not. The footer rescues it partially, but Home and Subjects have no mobile route at all once you have landed on one of those pages.',
-      fix: 'Port index.html’s mobile menu to the other five.'
-    },
-    {
-      id: 'A-12', sev: 'amber', status: 'open', how: 'live',
-      where: 'fit-to-screen.js',
-      title: 'The whole page shrinks to 25% when innerWidth reports 0',
-      what: 'There is no guard for a zero viewport, so 0 / content clamps straight to MIN_ZOOM. Browsers report innerWidth 0 in a hidden, backgrounded or detached tab, and the page stays at quarter size until a resize event happens to fire.',
-      ev: 'measured on notes.html: { innerWidth: 0, zoom: "0.25", sidebarLeft: -60 }',
-      fix: 'if (!view) return;'
-    },
-    {
-      id: 'A-13', sev: 'amber', status: 'open', how: 'code',
-      where: 'classes-nav.js:114 and :208',
-      title: 'The teacher guard on student-only pages never fires in production',
-      what: 'The last path segment is compared against dashboard.html, breakdown.html and medals.html. Under cleanUrls that segment has no extension, so a teacher who reloads or follows an old link lands on the student dashboard and sees a progress report that will always read zero — the exact case the comment above it says it exists to prevent. admin-nav.js:112 strips the extension for this reason; classes-nav.js was never updated. Line 114 has the same bug more mildly: the current class never highlights in the sidebar.',
-      fix: 'Copy admin-nav.js’s .replace(/\\.html$/, ’’) into both comparisons.'
-    },
-    {
-      id: 'A-14', sev: 'amber', status: 'open', how: 'live',
-      where: 'papers-config.js:22234, :22359, :22476',
-      title: 'Three past-paper mark schemes 404',
-      what: 'All 546 unique paper links were resolved; 543 are fine. The three failures are OCR A Chemistry June 2022 — the question papers still resolve, only the mark schemes moved.',
-      fix: 'Re-source the three URLs from OCR. The full link check takes about 40 seconds, so it is worth running on a schedule.'
-    },
-
-    /* ── GREEN ───────────────────────────────────────────────── */
-    {
-      id: 'G-01', sev: 'green', status: 'open', how: 'code',
-      where: 'every public page',
-      title: 'The public site has no SEO or link-sharing metadata at all',
-      what: 'Every link shared in WhatsApp, Discord or iMessage — how students actually pass things around — renders as a bare URL with no preview card. For a product whose acquisition is word of mouth plus search, this is probably the highest-value item on the list.',
-      ev: 'meta description   0 on index, features, pricing, subjects, support, contact\nOpen Graph cards   0 anywhere\nrel=canonical      0 anywhere\nrobots.txt         missing\nsitemap.xml        missing',
-      fix: 'Add descriptions and OG tags per page, a canonical, a robots.txt and a sitemap.'
-    },
-    {
-      id: 'G-02', sev: 'green', status: 'open', how: 'code',
-      where: 'index.html · features.html · pricing.html · pricing-app.html',
-      title: 'The site promises 10-question diagnostics and delivers 5',
-      what: 'Four marketing pages say ten questions per topic, split 3 green / 3 amber / 4 red, and the Perfect Score medal is described as 10/10. Every one of the 47 diagnostics hardcodes "This diagnostic has 5 questions" and builds 2 green, 2 amber, 1 red. medals-data.js gets it right — only the marketing pages say ten.',
-      fix: 'Either build the diagnostics up to ten questions or correct the copy. The copy is the cheaper half.'
-    },
-    {
-      id: 'G-03', sev: 'green', status: 'open', how: 'code',
-      where: 'index.html',
-      title: '"No self-reporting needed" — but the written question is self-marked',
-      what: 'The written question is worth 3 of the 9 to 11 available points, 27 to 33% of the diagnostic, and the student marks it themselves. That is a reasonable design; it just is not what the landing page claims.',
-      fix: 'Reword to something like "you mark one written answer against the model answer; the rest is automatic".'
-    },
-    {
-      id: 'G-04', sev: 'green', status: 'open', how: 'live',
-      where: 'diagnostics/*.html — 45 of 47',
-      title: 'A full-marks written answer is always coloured amber',
-      what: 'The chip class forces every written result to amber regardless of score, so full marks look identical to a partial answer. The r.pts >= W.green half of the condition is also dead logic: W.green is 1 and every correct MCQ scores at least 1.',
-      ev: 'cls = r.pts > 0 ? (r.pts >= W.green && r.type !== ’written’ ? ’hit-green’\n                                                        : ’hit-amber’) : ’miss’;',
-      fix: 'Colour the written chip by level: full marks green, partial amber, missed grey.'
-    },
-    {
-      id: 'G-05', sev: 'green', status: 'open', how: 'live',
-      where: 'settings.html · Dashboard.html',
-      title: 'Free early adopters are told they are on a £9.99/month plan',
-      what: 'The early-adopter grant sets subscription_tier to pro_monthly, so with no payment at all Settings shows "RAG Pro (Monthly) - £9.99/month" and the Dashboard shows "RAG Pro - Monthly". "Manage plan" posts to create-portal-session, which 404s with no_customer because there is no Stripe customer.',
-      fix: 'Render the comp as something like "Early adopter — Premium free until 14 Dec 2026", and hide Manage plan when stripe_customer_id is null.'
-    },
-    {
-      id: 'G-06', sev: 'green', status: 'open', how: 'live',
-      where: 'referral-modal.js',
-      title: '"How did you hear about us?" is skipped for everyone after the first user on a browser',
-      what: 'Completion is recorded under the global localStorage key rag_referral_done, with no user id — while the welcome modal correctly scopes its own key per user. School and library machines silently lose attribution for everyone after user one.',
-      fix: 'Key it per user, the way rag_welcome_seen_<uid> already is.'
-    },
-    {
-      id: 'G-07', sev: 'green', status: 'open', how: 'code',
-      where: 'db/early-adopter-migration.sql',
-      title: '"First 150 users" is enforced with a live row count',
-      what: 'Both count_early_adopters() and the grant trigger use SELECT COUNT(*) FROM profiles — the number of profiles that exist right now, not the number of people who have ever claimed the offer. Delete an account and a slot reopens, and the landing-page counter ticks back up.',
-      fix: 'Count claimed grants (is_early_adopter = true) rather than live profiles, or keep a separate counter.'
-    },
-    {
-      id: 'G-08', sev: 'green', status: 'open', how: 'live',
-      where: 'ai-feedback.html:862 and :968 · paper-attempt.html:1844',
-      title: 'AI Feedback shows the user raw server HTML when marking fails',
-      what: 'The error path concatenates the first 300 characters of the response body into the message, so any non-JSON error page — a 502 or 504 from the function, a CDN error — lands in front of the student as markup. The contact form gets this right.',
-      ev: '"Couldn’t mark this answer — Server returned 501:\n <!DOCTYPE HTML> <html lang="en"> <head>"',
-      fix: 'Show a fixed message per status code and keep the body for the console.'
-    },
-    {
-      id: 'G-09', sev: 'green', status: 'open', how: 'live',
-      where: 'auth/setup.html:1142',
-      title: 'Setup never highlights the level a returning user already picked',
-      what: 'The level index map still has three entries (gcse 0, as 1, a-level 2) but only two level cards exist, so levelCards[2] is undefined and nothing is marked selected. It currently looks fine only by accident of hover styling — and if an AS card is ever added, the wrong card will light up.',
-      fix: 'Match on the card’s own level value rather than a positional index.'
-    },
-    {
-      id: 'G-10', sev: 'green', status: 'open', how: 'code',
-      where: 'index.html:1169, :1205 · six page footers',
-      title: 'Three early-adopter numbers on one landing page, two of them wrong',
-      what: 'The banner and EARLY_LIMIT say 150, the hero hardcodes "of 150" instead of reading EARLY_LIMIT, and the closing CTA still says "First 100 sign-ups". The footers of index, features, pricing, subjects, support and contact also still read 2025.',
-      fix: 'Read EARLY_LIMIT everywhere, drop the stale 100, and make the year dynamic.'
-    },
-    {
-      id: 'G-11', sev: 'green', status: 'open', how: 'live',
-      where: 'auth/setup.html · subjects.html · index.html · teacher.html',
-      title: 'GCSE is sold, built, and unreachable',
-      what: 'The repo ships 15+ GCSE diagnostics and many GCSE note sets, and the homepage roadmap says GCSE Computer Science, Biology and Geography are already live. But setup offers only A Level — GCSE is a disabled "Coming soon" card and AS Level is absent entirely, though profiles.level accepts it and predicted-grade.js has AS boundaries. subjects.html says GCSE is coming soon, contradicting the homepage. Meanwhile the teacher’s New-class dialog offers GCSE, AS and five subjects students cannot select, so a teacher can create a class nobody can match.',
-      fix: 'Decide which is true and make the three pages agree. If GCSE is close, opening setup is the smallest change with the biggest reach.'
-    },
-    {
-      id: 'G-12', sev: 'green', status: 'open', how: 'live',
-      where: 'various',
-      title: 'Smaller things worth a sweep',
-      what: 'Individually minor, collectively the texture a prospective customer notices.',
-      ev: '- four titles double the brand: "RAG Learning - Features - RAG Learning"\n  (features, pricing, subjects, support; the -app variants are correct)\n- the signup email links to raglearning.uk//auth/verify.html (double slash) —\n  the live Supabase template has drifted from the repo copy\n- "PREDICTED A* - Above target" after one topic out of 17; low confidence is\n  conveyed only by opacity 0.72 and a hover tooltip, invisible on touch\n- Dashboard says A Level = "Year 13, Ages 17-18"; setup says "Years 12 & 13"\n- DASH_SUBJ_EMOJI and SUBJ_EMOJI are 9-entry copies of the 18-entry map in\n  subjects-config.js, on pages that already load subjects-config.js\n- Maths AQA and Further Maths Edexcel have no flashcards at all\n- past papers stop at June 2024 (Maths AQA) and June 2023 (CS, Biology)\n- subjects.html renders French, German and Spanish with no icon\n- ai-feedback-mockup.html and flashcard-demo.html are dev artifacts deployed\n  publicly with no noindex\n- index.html lists Maths on 3 boards and Further Maths on "OCR";\n  subjects-config.js has Maths on 4 and Further Maths on "OCR A"\n- the referral modal has no close button and ignores Escape and backdrop clicks\n- no per-user rate limit on the AI endpoints; Pro-gating limits the blast\n  radius, but one Pro account can run up unbounded Groq spend',
-      fix: 'Pick these off whenever a related file is open.'
-    }
-  ];
 
   var SEV_ORDER = { red: 0, amber: 1, green: 2 };
   var state = { red: true, amber: true, green: true, showFixed: false };
+  var bugs = [];
 
   function el(tag, cls, text) {
     var n = document.createElement(tag);
@@ -564,19 +429,37 @@ async function logout() {
     return n;
   }
 
+  /* Fixed rows sink, then rank ascending, then severity as a tie-break.
+     Comparing the statuses directly (a.status !== b.status ? -1 : 1) looks
+     equivalent and is not: any value that is neither 'open' nor 'fixed'
+     makes it claim both a < b and b < a, which is not a total order and
+     sorts unpredictably. Map to a number and subtract. */
+  function sunk(b) { return b.status === 'fixed' ? 1 : 0; }
+
+  function sorted(list) {
+    return list.slice().sort(function (a, b) {
+      if (sunk(a) !== sunk(b)) return sunk(a) - sunk(b);
+      if (a.rank !== b.rank)   return a.rank - b.rank;
+      return SEV_ORDER[a.severity] - SEV_ORDER[b.severity];
+    });
+  }
+
+  function visible() {
+    return sorted(bugs)
+      .filter(function (b) { return state[b.severity]; })
+      .filter(function (b) { return state.showFixed || b.status !== 'fixed'; });
+  }
+
   function renderTally() {
     var host = document.getElementById('tally');
     host.textContent = '';
-
-    var open = FINDINGS.filter(function (f) { return f.status !== 'fixed'; });
-    var cells = [
-      { cls: 't-red',   n: open.filter(function (f) { return f.sev === 'red';   }).length, lbl: 'Red open'   },
-      { cls: 't-amber', n: open.filter(function (f) { return f.sev === 'amber'; }).length, lbl: 'Amber open' },
-      { cls: 't-green', n: open.filter(function (f) { return f.sev === 'green'; }).length, lbl: 'Green open' },
-      { cls: 't-done',  n: FINDINGS.filter(function (f) { return f.status === 'fixed'; }).length, lbl: 'Fixed' }
-    ];
-
-    cells.forEach(function (c) {
+    var open = bugs.filter(function (b) { return b.status !== 'fixed'; });
+    [
+      { cls: 't-red',   n: open.filter(function (b) { return b.severity === 'red';   }).length, lbl: 'Red open'   },
+      { cls: 't-amber', n: open.filter(function (b) { return b.severity === 'amber'; }).length, lbl: 'Amber open' },
+      { cls: 't-green', n: open.filter(function (b) { return b.severity === 'green'; }).length, lbl: 'Green open' },
+      { cls: 't-done',  n: bugs.filter(function (b) { return b.status === 'fixed'; }).length,   lbl: 'Fixed'      }
+    ].forEach(function (c) {
       var cell = el('div', 'tally-cell ' + c.cls);
       cell.appendChild(el('div', 'tally-num', String(c.n)));
       cell.appendChild(el('div', 'tally-lbl', c.lbl));
@@ -584,30 +467,52 @@ async function logout() {
     });
   }
 
-  function renderOne(f) {
-    var card = el('article', 'bug ' + f.sev + (f.status === 'fixed' ? ' fixed' : ''));
+  function actionBtn(label, title, handler, cls) {
+    var b = el('button', 'act' + (cls ? ' ' + cls : ''), label);
+    b.type = 'button';
+    b.title = title;
+    b.setAttribute('aria-label', title);
+    b.addEventListener('click', handler);
+    return b;
+  }
+
+  function renderOne(bug, idx, list) {
+    var card = el('article', 'bug ' + bug.severity + (bug.status === 'fixed' ? ' fixed' : ''));
 
     var meta = el('div', 'bug-meta');
-    meta.appendChild(el('span', 'bug-id', f.id));
-    meta.appendChild(el('span', 'pill ' + f.sev, f.sev));
-    if (f.status === 'fixed') meta.appendChild(el('span', 'pill done', 'Fixed'));
-    meta.appendChild(el('span', 'tagish', f.how === 'live' ? 'verified live' : 'from source'));
+    meta.appendChild(el('span', 'bug-id', bug.ref));
+    meta.appendChild(el('span', 'pill ' + bug.severity, bug.severity));
+    if (bug.status === 'fixed') meta.appendChild(el('span', 'pill done', 'Fixed'));
+    meta.appendChild(el('span', 'tagish', bug.verified === 'live' ? 'verified live' : 'from source'));
+
+    var acts = el('div', 'bug-acts');
+    acts.appendChild(actionBtn('↑', 'Move up', function () { move(bug, -1); }));
+    acts.appendChild(actionBtn('↓', 'Move down', function () { move(bug, 1); }));
+    acts.appendChild(actionBtn(
+      bug.status === 'fixed' ? 'Reopen' : 'Mark fixed',
+      bug.status === 'fixed' ? 'Reopen this bug' : 'Mark this bug fixed',
+      function () { setStatus(bug, bug.status === 'fixed' ? 'open' : 'fixed'); }
+    ));
+    acts.appendChild(actionBtn('Delete', 'Delete this bug', function () { remove(bug); }, 'danger'));
+    meta.appendChild(acts);
     card.appendChild(meta);
 
-    card.appendChild(el('h2', 'bug-title', f.title));
-    card.appendChild(el('div', 'bug-where', f.where));
-    card.appendChild(el('p', 'bug-what', f.what));
+    card.appendChild(el('h2', 'bug-title', bug.title));
+    if (bug.area)   card.appendChild(el('div', 'bug-where', bug.area));
+    if (bug.detail) card.appendChild(el('p', 'bug-what', bug.detail));
 
-    if (f.ev) {
+    if (bug.evidence) {
       var ev = el('div', 'bug-ev');
-      ev.appendChild(el('pre', null, f.ev));
+      ev.appendChild(el('pre', null, bug.evidence));
       card.appendChild(ev);
     }
 
-    var fix = el('p', 'bug-fix');
-    fix.appendChild(el('b', null, f.status === 'fixed' ? 'Done' : 'Fix'));
-    fix.appendChild(document.createTextNode(f.fix));
-    card.appendChild(fix);
+    if (bug.fix) {
+      var fix = el('p', 'bug-fix');
+      fix.appendChild(el('b', null, bug.status === 'fixed' ? 'Done' : 'Fix'));
+      fix.appendChild(document.createTextNode(bug.fix));
+      card.appendChild(fix);
+    }
 
     return card;
   }
@@ -615,27 +520,144 @@ async function logout() {
   function render() {
     var host = document.getElementById('list');
     host.textContent = '';
-
-    var rows = FINDINGS
-      .filter(function (f) { return state[f.sev]; })
-      .filter(function (f) { return state.showFixed || f.status !== 'fixed'; })
-      .sort(function (a, b) {
-        if (a.status !== b.status) return a.status === 'fixed' ? 1 : -1;
-        if (SEV_ORDER[a.sev] !== SEV_ORDER[b.sev]) return SEV_ORDER[a.sev] - SEV_ORDER[b.sev];
-        return a.id.localeCompare(b.id);
-      });
+    var rows = visible();
 
     if (!rows.length) {
       var none = el('div', 'card');
-      none.appendChild(el('p', 'empty', 'Nothing matches those filters.'));
+      none.appendChild(el('p', 'empty', bugs.length
+        ? 'Nothing matches those filters.'
+        : 'No bugs recorded. Add the first one above.'));
       host.appendChild(none);
       return;
     }
-
-    rows.forEach(function (f) { host.appendChild(renderOne(f)); });
+    rows.forEach(function (b, i) { host.appendChild(renderOne(b, i, rows)); });
   }
 
-  function wireFilters() {
+  function flash(msg, bad) {
+    var n = document.getElementById('formMsg');
+    n.textContent = msg;
+    n.className = 'form-msg' + (bad ? ' bad' : ' good');
+    n.hidden = false;
+    if (!bad) setTimeout(function () { n.hidden = true; }, 2600);
+  }
+
+  /* ── Writes ──────────────────────────────────────────────────── */
+
+  async function move(bug, dir) {
+    /* Reorder inside the open list only — a fixed row has no useful
+       position, and letting it push open ones around would be noise. */
+    var list = sorted(bugs).filter(function (b) { return b.status === bug.status; });
+    var i = list.findIndex(function (b) { return b.id === bug.id; });
+    var j = i + dir;
+    if (i === -1 || j < 0 || j >= list.length) return;
+
+    list.splice(j, 0, list.splice(i, 1)[0]);
+
+    var changed = [];
+    list.forEach(function (b, n) {
+      var want = (n + 1) * 10;
+      if (b.rank !== want) { b.rank = want; changed.push({ id: b.id, rank: want }); }
+    });
+    if (!changed.length) return;
+
+    render();
+    var res = await supabaseClient.from('bug_reports').upsert(changed);
+    if (res.error) { flash('Could not save that order: ' + res.error.message, true); await refresh(); }
+  }
+
+  async function setStatus(bug, status) {
+    bug.status = status;
+    renderTally(); render();
+    var res = await supabaseClient.from('bug_reports').update({ status: status }).eq('id', bug.id);
+    if (res.error) { flash('Could not update that: ' + res.error.message, true); await refresh(); }
+  }
+
+  async function remove(bug) {
+    if (!window.confirm('Delete ' + bug.ref + '? This cannot be undone — use "Mark fixed" if you just want it out of the way.')) return;
+    var res = await supabaseClient.from('bug_reports').delete().eq('id', bug.id);
+    if (res.error) { flash('Could not delete that: ' + res.error.message, true); return; }
+    bugs = bugs.filter(function (b) { return b.id !== bug.id; });
+    renderTally(); render();
+  }
+
+  function nextRef() {
+    var n = 1;
+    var taken = {};
+    bugs.forEach(function (b) {
+      taken[b.ref] = true;
+      var m = /^B-(\d+)$/.exec(b.ref);
+      if (m) n = Math.max(n, parseInt(m[1], 10) + 1);
+    });
+    var ref;
+    do { ref = 'B-' + String(n++).padStart(2, '0'); } while (taken[ref]);
+    return ref;
+  }
+
+  async function addBug(e) {
+    e.preventDefault();
+    var btn = document.getElementById('addSave');
+    var title = document.getElementById('fTitle').value.trim();
+    var ref   = document.getElementById('fRef').value.trim();
+    if (!title) { flash('Give it a title.', true); return; }
+    if (!ref)   { flash('Give it a reference.', true); return; }
+
+    btn.disabled = true; btn.textContent = 'Adding…';
+    var maxRank = bugs.reduce(function (m, b) { return Math.max(m, b.rank); }, 0);
+
+    var res = await supabaseClient.from('bug_reports').insert({
+      ref:      ref,
+      title:    title,
+      severity: document.getElementById('fSev').value,
+      // The column defaults to 'open', but say it so the object we hold
+      // locally is right even if the insert's select() ever stops echoing it.
+      status:   'open',
+      verified: document.getElementById('fVerified').value,
+      area:     document.getElementById('fArea').value.trim()     || null,
+      detail:   document.getElementById('fDetail').value.trim()   || null,
+      evidence: document.getElementById('fEvidence').value.trim() || null,
+      fix:      document.getElementById('fFix').value.trim()      || null,
+      rank:     maxRank + 10
+    }).select();
+
+    btn.disabled = false; btn.textContent = 'Add bug';
+
+    if (res.error) {
+      flash(/duplicate|unique/i.test(res.error.message)
+        ? 'There is already a bug with reference ' + ref + '.'
+        : 'Could not add that: ' + res.error.message, true);
+      return;
+    }
+
+    bugs = bugs.concat(res.data || []);
+    document.getElementById('addForm').reset();
+    document.getElementById('fRef').value = nextRef();
+    flash('Added ' + ref + '.');
+    renderTally(); render();
+  }
+
+  /* ── Reads ───────────────────────────────────────────────────── */
+
+  async function refresh() {
+    var res = await supabaseClient
+      .from('bug_reports')
+      .select('id, ref, title, severity, status, verified, area, detail, evidence, fix, rank')
+      .order('rank', { ascending: true });
+
+    if (res.error) {
+      document.getElementById('list').textContent = '';
+      var c = el('div', 'card');
+      c.appendChild(el('p', 'empty', /does not exist|schema cache/i.test(res.error.message)
+        ? 'The bug_reports table is not there yet — run db/migrations/2026-09-14-bug-reports.sql in the Supabase SQL editor.'
+        : 'Could not load the list: ' + res.error.message));
+      document.getElementById('list').appendChild(c);
+      return false;
+    }
+    bugs = res.data || [];
+    renderTally(); render();
+    return true;
+  }
+
+  function wire() {
     document.querySelectorAll('#filters .filter[data-sev]').forEach(function (btn) {
       btn.addEventListener('click', function () {
         var sev = btn.dataset.sev;
@@ -644,15 +666,33 @@ async function logout() {
         render();
       });
     });
+
     var fixedBtn = document.getElementById('showFixed');
     fixedBtn.addEventListener('click', function () {
       state.showFixed = !state.showFixed;
       fixedBtn.setAttribute('aria-pressed', String(state.showFixed));
       render();
     });
+
+    var form = document.getElementById('addForm');
+    var toggle = document.getElementById('addToggle');
+    toggle.addEventListener('click', function () {
+      var open = form.hidden;
+      form.hidden = !open;
+      toggle.setAttribute('aria-expanded', String(open));
+      if (open) {
+        document.getElementById('fRef').value = nextRef();
+        document.getElementById('fTitle').focus();
+      }
+    });
+    document.getElementById('addCancel').addEventListener('click', function () {
+      form.hidden = true;
+      toggle.setAttribute('aria-expanded', 'false');
+      document.getElementById('formMsg').hidden = true;
+    });
+    form.addEventListener('submit', addBug);
   }
 
-  /* Sidebar identity — same as admin.html / admin-attribution.html. */
   async function loadSidebar(userId) {
     var res = await supabaseClient
       .from('profiles').select('first_name, last_name, avatar_url')
@@ -679,9 +719,9 @@ async function logout() {
 
     loadSidebar(user.id);
 
-    /* is_admin() is the app-wide check — SECURITY DEFINER, keyed to
-     * auth.uid(), the same one admin-nav.js and admin.html use. */
     var gate = await supabaseClient.rpc('is_admin');
+    document.getElementById('loading').hidden = true;
+
     if (gate.error || gate.data !== true) {
       document.getElementById('pageTitle').textContent = 'Not your page';
       document.getElementById('pageSub').textContent = 'This view is for admins only.';
@@ -690,9 +730,8 @@ async function logout() {
     }
 
     document.getElementById('content').hidden = false;
-    renderTally();
-    wireFilters();
-    render();
+    wire();
+    await refresh();
   }
 
   load();
