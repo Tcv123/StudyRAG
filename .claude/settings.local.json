@@ -88,5 +88,30 @@
       "Bash(node _apply_signout_modal.js)",
       "Bash(xargs grep *)"
     ]
+  },
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME/.claude/hooks/studyrag-autopush-ask.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "\"$HOME/.claude/hooks/studyrag-autopush-stop.sh\"",
+            "timeout": 60,
+            "statusMessage": "Auto-pushing to GitHub..."
+          }
+        ]
+      }
+    ]
   }
 }
