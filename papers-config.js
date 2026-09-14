@@ -29359,6 +29359,20 @@ window.SUBJECTS = [
         ],
       }
     ]
+  },
+  {
+    name: 'Politics', icon: '🏛️',
+    boards: [
+      {
+        board: 'AQA',
+        specCode: '7152',
+        // AQA does not publish stable per-paper PDF URLs for Politics — the
+        // assessment-resources page IS the official entry point, so this board
+        // has no `papers` list and surfaces as a single card. Every paper here
+        // is 77 raw marks: 9-mark and 25-mark questions only.
+        officialPageUrl: 'https://www.aqa.org.uk/subjects/politics/a-level/politics-7152/assessment-resources',
+      }
+    ]
   }
 ];
 
