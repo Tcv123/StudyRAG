@@ -2765,20 +2765,32 @@ async function lookupClass() {
 
   btn.disabled = false; btn.textContent = 'Join';
 
-  if (error) {
-    // join_class raises readable messages by design — wrong code, full class,
-    // level mismatch — so show what it actually said rather than a generic
-    // failure the student can't act on. Postgres prefixes them, hence the trim.
+  // join_class stopped raising in 2026-09-14-join-class-status.sql. Every
+  // outcome — wrong code, rate limited, wrong level, full class — arrives as
+  // a row with ok and message, because a raise would have rolled back the
+  // class_join_attempts row the rate limit is counting. So `error` here is
+  // now a genuine transport or permission failure, not a rejected join.
+  const joined = Array.isArray(data) ? data[0] : data;
+
+  if (error || !joined) {
+    console.warn('join_class failed', error);
     msg.className = 'join-msg error';
-    msg.textContent = error.message.replace(/^.*?:\s*/, '') || 'Could not join that class.';
+    msg.textContent = 'Could not join that class. Try again in a moment.';
     return;
   }
 
-  const joined  = Array.isArray(data) ? data[0] : data;
-  const teacher = joined?.teacher_name?.trim() || 'Your teacher';
+  if (!joined.ok) {
+    // Written by the function and safe to show as-is — the wrong-code message
+    // is deliberately vague so it cannot be used to probe which codes exist.
+    msg.className = 'join-msg error';
+    msg.textContent = joined.message || 'Could not join that class.';
+    return;
+  }
 
-  document.getElementById('joinedName').textContent        = joined?.class_name || 'Joined';
-  document.getElementById('joinedTeacher').textContent     = `${joined?.subject || ''} · ${joined?.exam_board || ''}`;
+  const teacher = joined.teacher_name?.trim() || 'Your teacher';
+
+  document.getElementById('joinedName').textContent        = joined.class_name || 'Joined';
+  document.getElementById('joinedTeacher').textContent     = `${joined.subject || ''} · ${joined.exam_board || ''}`;
   document.getElementById('joinedTeacherName').textContent = teacher;
   document.getElementById('joinStepCode').style.display = 'none';
   document.getElementById('joinStepDone').style.display = 'block';
