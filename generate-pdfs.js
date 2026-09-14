@@ -19,6 +19,7 @@ const SUBJECT_MAP = {
   geography: 'Geography',
   maths: 'Maths',
   physics: 'Physics',
+  politics: 'Politics',
 };
 const BOARD_MAP  = { aqa: 'AQA', edexcel: 'Edexcel', ocr: 'OCR', eduqas: 'Eduqas' };
 const LEVEL_MAP  = { gcse: 'GCSE', alevel: 'A-Level' };
