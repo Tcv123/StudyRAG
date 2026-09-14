@@ -117,9 +117,19 @@ function titleFromFilename(file) {
 }
 
 (async () => {
+  // Optional CLI filter: `node generate-pdfs.js notes-politics-aqa-alevel` builds
+  // only that folder. With no argument, behaviour is unchanged (all folders).
+  const only = process.argv[2];
+
   const folders = fs.readdirSync(ROOT)
     .filter(f => /^notes-/.test(f))
-    .filter(f => fs.statSync(path.join(ROOT, f)).isDirectory());
+    .filter(f => fs.statSync(path.join(ROOT, f)).isDirectory())
+    .filter(f => !only || f.includes(only));
+
+  if (only && folders.length === 0) {
+    console.error(`No notes-* folder matched "${only}".`);
+    process.exit(1);
+  }
 
   const jobs = [];
   for (const folder of folders) {
