@@ -899,6 +899,7 @@
 
 
 <script src="exam-dates-config.js"></script>
+<script src="exam-dates.js"></script>
 <script>
 // ── Exam calendar (matches breakdown.html so the two views don't drift) ──
 const DASH_SUBJ_COLOR  = {'Computer Science':'#06B6D4','Mathematics':'#8B5CF6','Further Mathematics':'#D946EF','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6','English Language':'#DC2626'};
@@ -911,7 +912,7 @@ let _dashCalMonths = [];
 let _dashCalYear;
 let _dashCalMonth;
 
-function renderExamDates(subjects) {
+async function renderExamDates(subjects, level) {
   const grid = document.getElementById('examDatesGrid');
   const row  = document.getElementById('examDatesRow');
   const nav  = document.getElementById('examCalNav');
@@ -920,14 +921,15 @@ function renderExamDates(subjects) {
   const now = new Date();
   _dashCalExams = [];
 
-  (subjects || []).forEach(s => {
-    const dates = EXAM_DATES[`${s.subject}_${s.exam_board}`];
-    if (!dates) return;
-    dates.forEach(d => {
-      const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
-      const diffDays = Math.ceil((examDate - now) / 86400000);
-      _dashCalExams.push({ ...d, subject: s.subject, board: s.exam_board, emoji: DASH_SUBJ_EMOJI[s.subject] || '📚', examDate, diffDays });
-    });
+  // ExamDates.load asks Postgres first and falls back to EXAM_DATES.
+  // It also resolves the '|gcse' / '|alevel' keys, which the old direct
+  // lookup here never did — see exam-dates.js. Never throws.
+  const dates = await window.ExamDates.load(subjects || [], level);
+
+  dates.forEach(d => {
+    const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
+    const diffDays = Math.ceil((examDate - now) / 86400000);
+    _dashCalExams.push({ ...d, emoji: DASH_SUBJ_EMOJI[d.subject] || '📚', examDate, diffDays });
   });
 
   if (!_dashCalExams.length) { if (row) row.style.display = 'none'; return; }
@@ -1468,7 +1470,7 @@ async function load() {
   renderMedals(allMedalIds);
   renderSubjectsProgress(subjectList, topicRows, recentAttempts || [], level);
   renderDiagnosticList(subjectList, topicRows);
-  try { renderExamDates(subjectList); } catch(e) { console.error('Exam dates error:', e); }
+  renderExamDates(subjectList, level).catch(e => console.error('Exam dates error:', e));
   renderRecentActivity(topicRows, medals || [], profile);
 
   // Streak
