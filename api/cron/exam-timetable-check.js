@@ -53,6 +53,11 @@
 const crypto = require('crypto');
 const { createClient } = require('@supabase/supabase-js');
 
+/* Shared with the admin paste box — one implementation of the date-format
+ * handling, because having two would mean fixing every ambiguity twice.
+ * See exam-timetable-parse.js. */
+const { parseDelimited } = require('../../exam-timetable-parse.js');
+
 /* Four board pages, each fetched once. Vercel gives this function 60s
  * (vercel.json); a slow board should cost us one source, not the run. */
 const FETCH_TIMEOUT_MS = 12000;
@@ -313,9 +318,9 @@ function stripTags(html) {
  * layout moves between years. Adding a parser for them would produce rows
  * that look authoritative and are wrong in ways nobody checks — the exact
  * failure this whole design is built to avoid. The admin page's paste box
- * runs this same function over a table copied out of the board's PDF or
- * spreadsheet, which takes half a minute once a year and puts a human eye
- * on the data at the moment it enters the system.
+ * runs the same parseDelimited over a table copied out of the board's PDF
+ * or spreadsheet, which takes half a minute once a year and puts a human
+ * eye on the data at the moment it enters the system.
  *
  * Everything this returns is a suggestion. The review page shows every row
  * for checking before any of it becomes an exam date.
@@ -331,112 +336,6 @@ function parseDocument(url, bytes) {
     };
   }
   return parseDelimited(bytes.toString('utf8'));
-}
-
-/* Shared by the cron and by the admin paste box, which is why it takes text
- * and not a file. Accepts comma, tab or pipe separation — a table pasted out
- * of a PDF usually arrives tab-separated, out of Excel always does. */
-function parseDelimited(text) {
-  const lines = String(text).split(/\r?\n/).map(l => l.trim()).filter(Boolean);
-  if (!lines.length) return { rows: [], note: 'Nothing to parse.' };
-
-  const rows = [];
-  let skipped = 0;
-
-  for (const line of lines) {
-    const cells = splitRow(line);
-    if (cells.length < 2) { skipped++; continue; }
-
-    const joined = cells.join(' ');
-
-    /* A row is only a row if it carries a date. Headers, footnotes, page
-     * numbers and board marketing all fail this and are counted as skipped
-     * rather than guessed at. */
-    const date = findDate(joined);
-    if (!date) { skipped++; continue; }
-
-    rows.push({
-      entry_code: (joined.match(/\b([A-Z0-9]{4,6}\s?\/\s?[0-9A-Z]{1,3})\b/) || [])[1]?.replace(/\s/g, '') || null,
-      title:      cells.find(c => /[a-z]{4}/i.test(c) && !/^\d/.test(c)) || cells[0],
-      exam_date:  date,
-      session:    /\bpm\b|afternoon/i.test(joined) ? 'PM' : 'AM',
-      duration:   (joined.match(/\b(\d{1,2}\s?h(?:\s?\d{1,2}\s?m)?|\d{1,3}\s?min(?:ute)?s?)\b/i) || [])[1] || null,
-      raw:        cells
-    });
-  }
-
-  return {
-    rows,
-    note: rows.length
-      ? `Parsed ${rows.length} row${rows.length === 1 ? '' : 's'}`
-        + (skipped ? `, skipped ${skipped} line${skipped === 1 ? '' : 's'} with no date in them.` : '.')
-        + ' Every row needs checking before approval.'
-      : `Found no rows with a date in them across ${lines.length} line${lines.length === 1 ? '' : 's'}.`
-  };
-}
-
-/* Quoted CSV cells can contain the delimiter, and paper titles genuinely do
- * ("Paper 3 — Pure, Statistics and Mechanics"). Pick the delimiter from the
- * line, then split on it outside quotes. */
-function splitRow(line) {
-  const delim = line.includes('\t') ? '\t'
-              : line.includes('|')  ? '|'
-              : ',';
-
-  const cells = [];
-  let cur = '', inQuotes = false;
-
-  for (let i = 0; i < line.length; i++) {
-    const ch = line[i];
-    if (ch === '"') {
-      if (inQuotes && line[i + 1] === '"') { cur += '"'; i++; }  // escaped ""
-      else inQuotes = !inQuotes;
-    } else if (ch === delim && !inQuotes) {
-      cells.push(cur.trim()); cur = '';
-    } else {
-      cur += ch;
-    }
-  }
-  cells.push(cur.trim());
-  return cells.filter(c => c !== '');
-}
-
-/* Returns an ISO date or null. UK boards write dates day-first, so 05/06 is
- * the 5th of June and never the 6th of May — an American reading of that
- * column would move an exam by a month without looking wrong anywhere. */
-const MONTHS = {
-  jan: 1, feb: 2, mar: 3, apr: 4, may: 5, jun: 6,
-  jul: 7, aug: 8, sep: 9, oct: 10, nov: 11, dec: 12
-};
-
-function findDate(text) {
-  /* "Wednesday 10 June 2027" / "10 Jun 27" */
-  let m = text.match(/\b(\d{1,2})\s+([A-Za-z]{3,9})\.?\s+(\d{4}|\d{2})\b/);
-  if (m) {
-    const month = MONTHS[m[2].slice(0, 3).toLowerCase()];
-    if (month) return iso(fullYear(m[3]), month, m[1]);
-  }
-
-  /* "10/06/2027" or "10-06-2027" — day first. */
-  m = text.match(/\b(\d{1,2})[/\-.](\d{1,2})[/\-.](\d{4}|\d{2})\b/);
-  if (m) return iso(fullYear(m[3]), +m[2], +m[1]);
-
-  /* "2027-06-10" — already ISO, which is the only unambiguous one. */
-  m = text.match(/\b(\d{4})-(\d{2})-(\d{2})\b/);
-  if (m) return iso(+m[1], +m[2], +m[3]);
-
-  return null;
-}
-
-function fullYear(y) {
-  const n = parseInt(y, 10);
-  return n < 100 ? 2000 + n : n;
-}
-
-function iso(year, month, day) {
-  if (!(month >= 1 && month <= 12) || !(day >= 1 && day <= 31)) return null;
-  if (!(year >= 2024 && year <= 2099)) return null;
-  return `${year}-${String(month).padStart(2, '0')}-${String(day).padStart(2, '0')}`;
 }
 
 
@@ -651,7 +550,3 @@ function escHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
-
-/* The admin paste box posts here rather than duplicating the parser in the
- * browser — one implementation, one set of date-format bugs to fix. */
-module.exports.parseDelimited = parseDelimited;

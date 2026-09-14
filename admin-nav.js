@@ -28,11 +28,26 @@
   const SECTION_ID  = 'admin-nav-section';
 
   // The admin pages, in sidebar order. Adding one is a line here.
+  //
+  // `onlyWhen` names a Postgres function returning a count. The item is
+  // hidden entirely while that count is zero, and carries the number as a
+  // badge when it is not. Exam dates is the only such item: the timetable
+  // watch has something to say roughly once a year, and a permanent link
+  // to a page that says "nothing waiting" eleven months running is a link
+  // you stop seeing — which is the one month it matters.
   const ITEMS = [
     { file: 'admin.html',             icon: '🛡',  label: 'Admin'       },
     { file: 'admin-attribution.html', icon: '📈', label: 'Attribution' },
-    { file: 'admin-bugs.html',        icon: '🐞', label: 'Known bugs'  }
+    { file: 'admin-bugs.html',        icon: '🐞', label: 'Known bugs'  },
+    { file: 'admin-exam-dates.html',  icon: '📅', label: 'Exam dates',
+      onlyWhen: 'pending_timetable_findings' }
   ];
+
+  // Counts from the most recent async pass, keyed by the onlyWhen name.
+  // Empty on first paint, which is why a conditional item never appears in
+  // the optimistic render — better a late arrival than a badge showing a
+  // number from the last page you were on.
+  const counts = {};
 
   // Absolute URL of the folder admin-nav.js sits in, which is the site root.
   // Read from the script's own src because location.pathname cannot tell a
@@ -90,7 +105,27 @@
 
     const admin = data === true;
     cache(admin);
-    if (admin) injectSection(); else removeSection();
+
+    if (!admin) { removeSection(); return; }
+
+    // Ask for each conditional item's count before drawing, so the section
+    // is built once rather than reflowing as answers trickle in. These are
+    // SECURITY DEFINER counters that return 0 to a non-admin, so a failure
+    // here hides the item rather than exposing one.
+    const conditional = ITEMS.filter(i => i.onlyWhen);
+    await Promise.all(conditional.map(async item => {
+      try {
+        const res = await supabaseClient.rpc(item.onlyWhen);
+        counts[item.onlyWhen] = res.error ? 0 : (parseInt(res.data, 10) || 0);
+      } catch (e) {
+        counts[item.onlyWhen] = 0;
+      }
+    }));
+
+    // Rebuild rather than patch: the optimistic pass may already have drawn
+    // the section without the conditional items in it.
+    removeSection();
+    injectSection();
   }
 
   function cache(admin) {
@@ -126,6 +161,12 @@
 
     ITEMS.forEach(function (item) {
       const slug = item.file.replace(/\.html$/, '');
+      const count = item.onlyWhen ? (counts[item.onlyWhen] || 0) : null;
+
+      // Hidden while there is nothing to look at — unless you are standing
+      // on the page, in which case removing its own nav item would leave
+      // the sidebar with no highlight and look like a bug.
+      if (item.onlyWhen && count === 0 && here !== slug) return;
 
       const link = document.createElement('a');
       link.className = 'nav-item' + (here === slug ? ' active' : '');
@@ -138,6 +179,16 @@
 
       link.appendChild(icon);
       link.appendChild(document.createTextNode(' ' + item.label));
+
+      if (count) {
+        const badge = document.createElement('span');
+        badge.textContent = String(count);
+        badge.style.cssText = 'margin-left:auto;font-size:10px;font-weight:600;'
+                            + 'background:var(--amber);color:#fff;border-radius:99px;'
+                            + 'padding:1px 6px;';
+        link.appendChild(badge);
+      }
+
       section.appendChild(link);
     });
 

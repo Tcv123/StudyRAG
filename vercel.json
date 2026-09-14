@@ -12,12 +12,17 @@
     "api/mark-essay.js":             { "maxDuration": 60 },
     "api/generate-model-answer.js":  { "maxDuration": 60 },
     "api/mark-against-scheme.js":    { "maxDuration": 60 },
-    "api/cron/setup-reminder.js":    { "maxDuration": 60 }
+    "api/cron/setup-reminder.js":    { "maxDuration": 60 },
+    "api/cron/exam-timetable-check.js": { "maxDuration": 60 }
   },
   "crons": [
     {
       "path": "/api/cron/setup-reminder",
       "schedule": "0 16 * * *"
+    },
+    {
+      "path": "/api/cron/exam-timetable-check",
+      "schedule": "0 9 1 * *"
     }
   ]
 }
