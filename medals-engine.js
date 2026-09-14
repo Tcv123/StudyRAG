@@ -104,7 +104,10 @@ const TOPIC_TOTAL = (function () {
     for (const key in SUBJECT_TOPIC_KEY) {
       const slug  = SUBJECT_TOPIC_KEY[key];
       const entry = diag[key];
-      if (entry && entry.topics) out[slug] = entry.topics.length;
+      // examinedTotal wins where a spec offers optional topics a student
+      // cannot all sit (Politics: one of five ideologies). Without it the
+      // denominator counts topics nobody can ever complete.
+      if (entry && entry.topics) out[slug] = entry.examinedTotal || entry.topics.length;
     }
   }
   return out;

@@ -87,6 +87,7 @@
       'questions/further-maths-ocr-b/fm-ocr-b-written.js',
       'questions/further-maths-ocr-b/fm-ocr-b-practice.js',
     ],
+    'Politics_AQA|alevel':          ['questions/politics/politics-aqa-alevel-practice.js'],
     'English Language_AQA':         ['questions/english-aqa/english-aqa-practice.js'],
     'English Language_Edexcel':     ['questions/english-edexcel/english-edexcel-practice.js'],
   };
@@ -136,6 +137,7 @@
     'Further Mathematics_AQA': () => typeof FM_AQA_PRACTICE !== 'undefined' ? FM_AQA_PRACTICE : null,
     'Further Mathematics_OCR A': () => typeof FM_OCR_PRACTICE !== 'undefined' ? FM_OCR_PRACTICE : null,
     'Further Mathematics_OCR B': () => typeof FM_OCR_B_PRACTICE !== 'undefined' ? FM_OCR_B_PRACTICE : null,
+    'Politics_AQA|alevel': () => typeof POLITICS_AQA_PRACTICE !== 'undefined' ? POLITICS_AQA_PRACTICE : null,
     'English Language_AQA': () => typeof ENGLISH_AQA_PRACTICE !== 'undefined' ? ENGLISH_AQA_PRACTICE : null,
     'English Language_Edexcel': () => typeof ENGLISH_EDEXCEL_PRACTICE !== 'undefined' ? ENGLISH_EDEXCEL_PRACTICE : null,
   };
