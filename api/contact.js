@@ -9,6 +9,13 @@
  *
  * The "from" address must be a domain you've verified in Resend.
  * During testing you can use onboarding@resend.dev as the from address.
+ *
+ * This used to fall back to a key written into the source. That key was
+ * therefore published — this repo is public — and had to be revoked. It also
+ * hid its own absence: the form kept working with RESEND_API_KEY unset, so
+ * nobody noticed the variable had never been added, and the first endpoint
+ * that genuinely needed it (api/cron/setup-reminder.js) failed with no
+ * obvious cause. A missing key now fails immediately and loudly in the logs.
  */
 
 module.exports = async function handler(req, res) {
@@ -30,7 +37,15 @@ module.exports = async function handler(req, res) {
     return res.status(400).json({ error: 'Please enter a valid email address.' });
   }
 
-  const apiKey = process.env.RESEND_API_KEY || 're_VCvzzDDo_BQFnUAch4EVvZEZHnmsooU2t';
+  const apiKey = process.env.RESEND_API_KEY;
+  if (!apiKey) {
+    /* Deliberately vague to the caller. This endpoint is public and
+     * unauthenticated, so it must not report which piece of configuration is
+     * missing — unlike the cron route, which only answers to CRON_SECRET and
+     * can afford to name the variable. The detail goes to the log instead. */
+    console.error('[contact] RESEND_API_KEY is not set — cannot send');
+    return res.status(500).json({ error: 'Failed to send message. Please try again.' });
+  }
 
   const subjectLine = subject
     ? `[RAG Learning Contact] ${subject}`
