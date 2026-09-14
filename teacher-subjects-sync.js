@@ -13,9 +13,22 @@
    work untouched. Deriving from classes (rather than asking at onboarding)
    also means the two can never drift apart.
 
-   Rows are reconciled, not blindly inserted: subjects for classes that have
-   been deleted or archived are removed again. Only ever touches the caller's
-   own rows, and only for account_type = 'teacher'.
+   Rows are reconciled, not blindly inserted: a subject whose class has been
+   archived is removed again. Only ever touches the caller's own rows, and only
+   for account_type = 'teacher'.
+
+   WHAT IT WILL NOT TOUCH. An account can be a student first and a teacher
+   afterwards, and that student's subjects live in the same table. This used to
+   reconcile the table to exactly the set of classes owned, which deleted every
+   subject the person had chosen in setup — grades and targets with it — the
+   moment they flipped the switch in Settings, under a label promising that
+   nothing saved would be deleted. A row is now only ever deleted when BOTH of
+   these hold:
+     - it matches a subject+board this teacher has had a class for, archived
+       ones included, so we know this sync is what created it; and
+     - it carries no current_grade or target_grade, which this sync never
+       writes and setup.html always does.
+   Anything else is somebody's own revision record and is left alone.
 
    Load AFTER supabase-config.js on teacher-facing pages. Exposes
    window.syncTeacherSubjects() -> Promise<[{subject, exam_board, level}]>.
@@ -33,21 +46,37 @@
       .from('profiles').select('account_type, level').eq('id', user.id).maybeSingle();
     if (profile?.account_type !== 'teacher') return [];
 
+    /* Archived classes are fetched too. They are not "wanted" — an archived
+       class should not keep its subject alive — but they ARE proof that this
+       sync is the thing that put that subject there, which is what makes the
+       delete below safe. Classes are only ever archived, never hard-deleted
+       (class.html:815), so this set never loses a class it needs to remember. */
     const { data: classes, error } = await supabaseClient
-      .from('classes').select('subject, exam_board, level, created_at')
-      .eq('archived', false).order('created_at');
+      .from('classes').select('subject, exam_board, level, archived, created_at')
+      .order('created_at');
     if (error) return [];
+
+    const active = (classes || []).filter(c => !c.archived);
 
     // One row per subject+board. Level isn't stored on user_subjects, so a
     // teacher covering the same subject at two levels collapses to one row —
     // see the note on profiles.level below.
     const wanted = new Map();
-    for (const c of (classes || [])) {
+    for (const c of active) {
       wanted.set(`${c.subject}|${c.exam_board}`, c);
     }
 
+    /* Every subject+board this teacher has ever had a class for. A user_subjects
+       row outside this set was not created here — it belongs to the student this
+       account used to be — and must be left alone. */
+    const everTaught = new Set(
+      (classes || []).map(c => `${c.subject}|${c.exam_board}`)
+    );
+
     const { data: existing } = await supabaseClient
-      .from('user_subjects').select('id, subject, exam_board').eq('user_id', user.id);
+      .from('user_subjects')
+      .select('id, subject, exam_board, current_grade, target_grade')
+      .eq('user_id', user.id);
 
     const have = new Map((existing || []).map(r => [`${r.subject}|${r.exam_board}`, r]));
 
@@ -61,8 +90,13 @@
         rag_status: 'pending'
       }));
 
+    /* Grades are the second guard, for the one case everTaught cannot see: a
+       student who studied Maths AQA, later taught a Maths AQA class, then
+       archived it. The key is in everTaught, but the row is still theirs. */
+    const isOurs = r => r.current_grade == null && r.target_grade == null;
+
     const toRemove = [...have.entries()]
-      .filter(([k]) => !wanted.has(k))
+      .filter(([k, r]) => !wanted.has(k) && everTaught.has(k) && isOurs(r))
       .map(([, r]) => r.id);
 
     if (toAdd.length)    await supabaseClient.from('user_subjects').insert(toAdd);
@@ -78,9 +112,9 @@
        would immediately undo them. So: leave it alone whenever it already
        matches a level they teach, and otherwise fall back to their most
        recent class. */
-    const levels = [...new Set((classes || []).map(c => c.level))];
+    const levels = [...new Set(active.map(c => c.level))];
     if (levels.length && !levels.includes(profile.level)) {
-      const fallback = classes[classes.length - 1].level;
+      const fallback = active[active.length - 1].level;
       await supabaseClient.from('profiles').update({ level: fallback }).eq('id', user.id);
       try { localStorage.setItem('cached_level', fallback); } catch (e) {}
     } else if (profile.level) {
