@@ -82,7 +82,33 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_Edexcel': 'english-edexcel',
 };
 
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-a-gcse': 6, 'physics-ocr-b': 6, 'physics-ocr-b-gcse': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-aqa-gcse': 7, 'biology-edexcel-gcse': 9, 'biology-edexcel-igcse': 21, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-a-gcse': 15, 'biology-ocr-b': 6, 'biology-ocr-b-gcse': 22, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-ocr-b-alevel': 25, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11, 'politics-aqa-alevel': 28 };
+/* Counts per spec, keyed by the slug SUBJECT_TOPIC_KEY maps to.
+ *
+ * This used to be typed out by hand alongside DIAG_TOPICS, and the two
+ * disagreed on five specs — Maths AQA said 17 here and 12 in the question
+ * bank; Politics had already drifted to 28 against 32 within a day of being
+ * added. A count that is maintained separately from the list it counts will
+ * always end up doing that, so it is derived now.
+ *
+ * The literal below is only a fallback, for two cases:
+ *   - a page that does not load topics-config.js
+ *   - a subject with practice content but no diagnostic yet, so no entry in
+ *     DIAG_TOPICS to count (Biology Edexcel IGCSE is the one today)
+ * Anything DIAG_TOPICS does describe overrides it. */
+const TOPIC_TOTAL_FALLBACK = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-a-gcse': 6, 'physics-ocr-b': 6, 'physics-ocr-b-gcse': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-aqa-gcse': 7, 'biology-edexcel-gcse': 9, 'biology-edexcel-igcse': 21, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-a-gcse': 15, 'biology-ocr-b': 6, 'biology-ocr-b-gcse': 22, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-ocr-b-alevel': 25, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11, 'politics-aqa-alevel': 28 };
+
+const TOPIC_TOTAL = (function () {
+  const out = Object.assign({}, TOPIC_TOTAL_FALLBACK);
+  const diag = (typeof window !== 'undefined') && window.DIAG_TOPICS;
+  if (diag) {
+    for (const key in SUBJECT_TOPIC_KEY) {
+      const slug  = SUBJECT_TOPIC_KEY[key];
+      const entry = diag[key];
+      if (entry && entry.topics) out[slug] = entry.topics.length;
+    }
+  }
+  return out;
+})();
 
 /* ═══════════════════════════════════════
    WRITING MEDALS
