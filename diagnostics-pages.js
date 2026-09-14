@@ -64,7 +64,8 @@
     'Physics_OCR A':                 'diagnostics/physics-ocr-a-diagnostic.html',
     'Physics_OCR A|gcse':            'diagnostics/physics-ocr-a-gcse-diagnostic.html',
     'Physics_OCR B':                 'diagnostics/physics-ocr-b-diagnostic.html',
-    'Physics_OCR B|gcse':            'diagnostics/physics-ocr-b-gcse-diagnostic.html',  };
+    'Physics_OCR B|gcse':            'diagnostics/physics-ocr-b-gcse-diagnostic.html',
+    'Politics_AQA|alevel':           'diagnostics/politics-aqa-alevel-diagnostic.html',  };
 
   /* Resolve against an EXPLICIT level rather than localStorage, so a teacher
      viewing an A-Level class doesn't get the GCSE paper because their own

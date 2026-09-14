@@ -47,6 +47,7 @@ const SUBJECT_TOPIC_KEY = {
   'Physics_OCR B': 'physics-ocr-b',
   'Physics_OCR B|gcse': 'physics-ocr-b-gcse',
   'Economics_AQA': 'economics-aqa',
+  'Politics_AQA|alevel': 'politics-aqa-alevel',
   'Economics_Edexcel A': 'economics-edexcel-a',
   'Economics_OCR': 'economics-ocr',
   'Economics_Edexcel B': 'economics-edexcel-b',
@@ -81,7 +82,7 @@ const SUBJECT_TOPIC_KEY = {
   'English Language_Edexcel': 'english-edexcel',
 };
 
-const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-a-gcse': 6, 'physics-ocr-b': 6, 'physics-ocr-b-gcse': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-aqa-gcse': 7, 'biology-edexcel-gcse': 9, 'biology-edexcel-igcse': 21, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-a-gcse': 15, 'biology-ocr-b': 6, 'biology-ocr-b-gcse': 22, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-ocr-b-alevel': 25, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11 };
+const TOPIC_TOTAL = { 'cs-ocr': 11, 'cs-ocr-alevel': 8, 'cs-aqa-gcse': 12, 'cs-aqa-alevel': 10, 'physics-edexcel': 13, 'physics-edexcel-gcse': 15, 'physics-aqa': 8, 'physics-aqa-gcse': 8, 'physics-ocr-a': 6, 'physics-ocr-a-gcse': 6, 'physics-ocr-b': 6, 'physics-ocr-b-gcse': 6, 'economics-aqa': 10, 'economics-edexcel-a': 8, 'economics-ocr': 8, 'economics-edexcel-b': 8, 'chemistry-aqa': 6, 'chemistry-edexcel': 6, 'chemistry-ocr-a': 6, 'chemistry-ocr-b': 6, 'biology-aqa': 8, 'biology-aqa-gcse': 7, 'biology-edexcel-gcse': 9, 'biology-edexcel-igcse': 21, 'biology-edexcel-a': 8, 'biology-edexcel-b': 8, 'biology-ocr-a': 6, 'biology-ocr-a-gcse': 15, 'biology-ocr-b': 6, 'biology-ocr-b-gcse': 22, 'geography-aqa': 8, 'geography-edexcel': 8, 'geography-ocr': 8, 'geography-eduqas-gcse': 12, 'geography-eduqas-alevel': 10, 'maths-aqa': 17, 'maths-ocr-gcse': 19, 'maths-ocr-alevel': 12, 'maths-ocr-b-alevel': 25, 'maths-edexcel': 36, 'further-maths-edexcel': 17, 'further-maths-aqa': 9, 'further-maths-ocr': 25, 'further-maths-ocr-b': 25, 'english-aqa': 11, 'english-edexcel': 11, 'politics-aqa-alevel': 28 };
 
 /* ═══════════════════════════════════════
    WRITING MEDALS

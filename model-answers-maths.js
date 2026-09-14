@@ -2088,7 +2088,7 @@ window.MATHS_MODEL_ANSWERS = {
 
  "math-ocr-h240-2023-p3::15(b)": "Apply Newton's second law to particle A (mass 2 kg, acceleration 5.88 m s⁻²):\nT = 2a = 2 × 5.88 = 11.76 N.\n(Check with B: 3g − T = 3a ⟹ 29.4 − 11.76 = 17.64 = 3 × 5.88 ✓)",
 
- "math-ocr-h240-2023-p3::15(c)": "Speed after 2 s: v = at = 5.88 × 2 = 11.76 m s⁻¹.\nAfter the string breaks:\n– Particle A: the table is smooth, so no horizontal force acts on A. A continues to move at a constant velocity of 11.76 m s⁻¹.\n– Particle B: the string is gone, so only gravity acts. B falls freely under gravity, accelerating downward at g = 9.8 m s⁻².,
+ "math-ocr-h240-2023-p3::15(c)": "Speed after 2 s: v = at = 5.88 × 2 = 11.76 m s⁻¹.\nAfter the string breaks:\n– Particle A: the table is smooth, so no horizontal force acts on A. A continues to move at a constant velocity of 11.76 m s⁻¹.\n– Particle B: the string is gone, so only gravity acts. B falls freely under gravity, accelerating downward at g = 9.8 m s⁻².",
 
   "math-edx-9ma0-2018-p1::1": "For small θ (radians): sin 3θ ≈ 3θ and cos 4θ ≈ 1 − (4θ)²/2 = 1 − 8θ².\nSubstitute:\n(1 − cos 4θ) / (2 sin 3θ · θ) ≈ (1 − (1 − 8θ²)) / (2 × 3θ × θ) = 8θ² / (6θ²) = 4/3.",
 

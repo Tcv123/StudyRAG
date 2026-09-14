@@ -68,7 +68,6 @@
     'Psychology',
     'Sociology',
     'Business Studies',
-    'Politics',
   ];
 
   function isComingSoonAlevel(subjectName, level) {
