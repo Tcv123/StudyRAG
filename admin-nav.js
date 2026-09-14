@@ -30,7 +30,8 @@
   // The admin pages, in sidebar order. Adding one is a line here.
   const ITEMS = [
     { file: 'admin.html',             icon: '🛡',  label: 'Admin'       },
-    { file: 'admin-attribution.html', icon: '📈', label: 'Attribution' }
+    { file: 'admin-attribution.html', icon: '📈', label: 'Attribution' },
+    { file: 'admin-bugs.html',        icon: '🐞', label: 'Known bugs'  }
   ];
 
   // Absolute URL of the folder admin-nav.js sits in, which is the site root.
