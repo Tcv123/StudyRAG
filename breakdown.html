@@ -13,6 +13,7 @@
   <script src="teacher-subjects-sync.js"></script>
   <script src="classes-nav.js"></script>
   <script src="exam-dates-config.js"></script>
+  <script src="exam-dates.js"></script>
   <script src="study-tracker.js"></script>
   <script src="predicted-grade.js"></script>
   <script src="nav-gating.js"></script>
@@ -1078,7 +1079,8 @@ function renderSummaryBar(green, amber, red, pending) {
     <div class="summary-seg pending" style="width:${pct(pending)}%"></div>`;
 }
 
-// EXAM_DATES loaded from exam-dates-config.js (see <script> tag above)
+// Exam dates come from window.ExamDates (exam-dates.js): the exam_dates
+// table first, EXAM_DATES in exam-dates-config.js as the fallback.
 
 const SUBJ_COLOR  = {'Computer Science':'#06B6D4','Mathematics':'#8B5CF6','Further Mathematics':'#D946EF','Biology':'#22C55E','Chemistry':'#F59E0B','Physics':'#3B82F6','Economics':'#EC4899','Geography':'#14B8A6','English Language':'#DC2626','Politics':'#A16207'};
 const BOARD_COLOR = {'AQA':'#7C3AED','OCR':'#0369A1','Edexcel':'#B45309','Edexcel A':'#B45309','Edexcel B':'#92400E','OCR A':'#0E7490','OCR B':'#0F766E','Eduqas':'#047857'};
@@ -1091,21 +1093,22 @@ let _calMonth = 0;
 
 let _calMonths = []; // [{year, month}] — only months with exams
 
-function renderBreakdownExams(subjects) {
+async function renderBreakdownExams(subjects) {
   const row = document.getElementById('breakdownExamRow');
   if (!row) return;
 
   const now = new Date();
   _calExams = [];
 
-  (subjects || []).forEach(s => {
-    const dates = EXAM_DATES[`${s.subject}_${s.exam_board}`];
-    if (!dates) return;
-    dates.forEach(d => {
-      const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
-      const diffDays = Math.ceil((examDate - now) / 86400000);
-      if (diffDays >= 0) _calExams.push({ ...d, subject: s.subject, board: s.exam_board, emoji: SUBJ_EMOJI[s.subject]||'📚', examDate, diffDays });
-    });
+  // ExamDates.load asks Postgres first and falls back to EXAM_DATES.
+  // It also resolves the '|gcse' / '|alevel' keys, which the old direct
+  // lookup here never did — see exam-dates.js. Never throws.
+  const dates = await window.ExamDates.load(subjects || [], BD_LEVEL);
+
+  dates.forEach(d => {
+    const examDate = new Date(d.date + 'T' + (d.time === 'AM' ? '09:00' : '13:30') + ':00');
+    const diffDays = Math.ceil((examDate - now) / 86400000);
+    if (diffDays >= 0) _calExams.push({ ...d, emoji: SUBJ_EMOJI[d.subject]||'📚', examDate, diffDays });
   });
 
   const empty = document.getElementById('examsEmpty');
@@ -1372,7 +1375,7 @@ async function load() {
 
   renderSummaryBar(green, amber, red, pending);
   renderSubjectOverview();
-  renderBreakdownExams(subjects || []);
+  renderBreakdownExams(subjects || []).catch(e => console.error('Exam dates error:', e));
   renderTopics();
   renderPracticeCarousel();
   await renderFlashcardsBreakdown(user, profile, subjects || []);
