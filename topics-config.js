@@ -855,6 +855,12 @@
       label: 'Politics — AQA',
       emoji: '🏛️',
       page: 'diagnostics/politics-aqa-alevel-diagnostic.html',
+      /* Students sit only ONE of the five optional ideologies (3.4-3.8), so all
+         32 topics are offered but only 28 can ever be tested by any one student.
+         Counting 32 would leave four topics permanently untested and make every
+         progress bar and completion medal unreachable. medals-engine.js reads
+         this in preference to topics.length. */
+      examinedTotal: 28,
       topics: [
         { id: '1.1', name: 'The Constitution', sub: 'Sources, nature, reform since 1997' },
         { id: '1.2', name: 'Parliament', sub: 'Commons, Lords, scrutiny, legislation' },

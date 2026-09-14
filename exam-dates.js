@@ -66,16 +66,34 @@
     const base = `${subject}_${board}`;
     const lvl  = normaliseLevel(level);
 
-    /* Suffixed first. A subject that publishes both a GCSE and an
-     * A-Level key must never fall through to the other one's dates —
-     * that would be worse than showing nothing, so the bare key is only
-     * consulted when no suffixed key exists at all for this subject and
-     * board. */
+    /* exam-dates-config.js has two shapes, and the rule below only makes
+     * sense once both are on the table:
+     *
+     *   'Biology_AQA'        A-Level    ← bare keys are always A-Level
+     *   'Biology_AQA|gcse'   GCSE
+     *   'Mathematics_OCR|gcse'  \  a few subjects spell out both levels
+     *   'Mathematics_OCR|alevel' /  and have no bare key at all
+     *
+     * So a '|gcse' key existing tells you nothing about where that
+     * subject's A-Level dates live — for Biology AQA they are in the bare
+     * key, for Maths OCR they are in '|alevel'. Treating the presence of
+     * any suffixed key as "this subject is fully levelled" blanks the
+     * A-Level calendar for Biology AQA, Biology OCR A and Physics AQA.
+     * Ask for the level you want, then fall back; do not infer.
+     *
+     * All twenty-nine bare keys were checked against their durations,
+     * paper names and unit codes (Y540, Y420) to confirm this. Give any
+     * new GCSE entry the '|gcse' suffix — a bare GCSE key would silently
+     * be read as A-Level. */
     if (lvl && EXAM_DATES[`${base}|${lvl}`]) return EXAM_DATES[`${base}|${lvl}`];
 
-    const hasLevelledSibling =
-      EXAM_DATES[`${base}|gcse`] || EXAM_DATES[`${base}|alevel`];
-    if (hasLevelledSibling) return [];
+    /* No GCSE key for this subject and board means the config has no GCSE
+     * dates for it, and the bare key belongs to somebody else. OCR
+     * Computer Science is the case that prompted this: J277 students were
+     * shown the H446 timetable, a fortnight out, which would have had them
+     * revising to the wrong day. An empty calendar is a gap a student can
+     * see and ask about. A full one that is wrong is not. */
+    if (lvl === 'gcse') return [];
 
     return EXAM_DATES[base] || [];
   }
