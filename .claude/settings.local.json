@@ -88,19 +88,5 @@
       "Bash(node _apply_signout_modal.js)",
       "Bash(xargs grep *)"
     ]
-  },
-  "hooks": {
-    "Stop": [
-      {
-        "hooks": [
-          {
-            "type": "command",
-            "command": "{ if [ -n \"$(git status --porcelain)\" ]; then git add -A && git commit -m \"Auto-push: $(date +%Y-%m-%d\\ %H:%M)\"; fi; BRANCH=$(git rev-parse --abbrev-ref HEAD); git push origin \"$BRANCH\"; if [ \"$BRANCH\" != \"main\" ]; then git fetch origin main && git push origin HEAD:main; fi; } 2>/dev/null || true",
-            "timeout": 60,
-            "statusMessage": "Auto-pushing to GitHub..."
-          }
-        ]
-      }
-    ]
   }
 }
