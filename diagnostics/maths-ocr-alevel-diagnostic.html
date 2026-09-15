@@ -333,7 +333,7 @@ async function init() {
   document.title = `RAG Learning — Diagnostic ${topicKey}`;
   document.getElementById('topicBadge').textContent = `${topicKey} — ${mcqData.name}`;
 
-  const storeKey = `diag_maths_aqa_${topicKey}`;
+  const storeKey = `diag_maths_ocr_alevel_${topicKey}`;
   const saved = sessionStorage.getItem(storeKey);
   if (saved) {
     try { questions = JSON.parse(saved); } catch(e) { questions = null; }
@@ -760,7 +760,7 @@ async function renderResult() {
   renderMath();
 
   await saveResult(rag, results);
-  sessionStorage.removeItem(`diag_maths_aqa_${topicKey}`);
+  sessionStorage.removeItem(`diag_maths_ocr_alevel_${topicKey}`);
   document.getElementById('savingRow').style.display = 'none';
   document.getElementById('resultActions').style.display = 'flex';
 }
