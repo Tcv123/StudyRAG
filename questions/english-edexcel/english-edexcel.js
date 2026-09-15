@@ -425,7 +425,7 @@ const ENGLISH_EDEXCEL_QUESTIONS = {
       { q: 'A strong application of Cameron\'s argument to a text is to…', options: ['Only count features','Only note grammar','Only describe the speaker','Question the gender binary itself, noting within-gender'], answer: 3 },
       { q: 'A politician uses hedges + inclusive "we" + rhetorical questions. BEST framework?', options: ['Integration of Lakoff\'s features with Cameron\'s critique','Only deficit','Only dominance','Only phonology'], answer: 0 },
       { q: 'In analysing a workplace transcript for gender, candidates should consider…', options: ['Power roles + genre + community of practice + communicative goals','Only sex','Only grammar','Only phonology'], answer: 0 },
-      { q: 'Evaluate: "Gendered language is a product of biology, not socialisation."', options: ['No — cross-cultural and historical variation strongly','Yes','No — gender is irrelevant','Yes'], answer: 0 },
+      { q: 'Evaluate: "Gendered language is a product of biology, not socialisation."', options: ['No — cross-cultural and historical variation strongly','Yes','No — gender is irrelevant','Partly — socialisation merely reinforces biology'], answer: 0 },
       { q: 'Why is the category "women" itself problematic in linguistic research?', options: ['It homogenises enormous internal variation (class, ethnicity','It is perfect','It is not used','Only men exist'], answer: 0 },
       { q: 'Tabloid adjectives like "shrill", "bossy" for female public figures exemplify…', options: ['Formal register only','Covert sexism / gendered representation via lexical choice','Neutral description','Phonological features'], answer: 1 },
       { q: 'Analysing a tag question with Lakoff, Holmes and Cameron reveals…', options: ['Only syntax','Only one reading','Three different readings — weakness, facilitation','Only lexis'], answer: 2 },
@@ -543,7 +543,7 @@ const ENGLISH_EDEXCEL_QUESTIONS = {
       { q: 'Which of these is a feature of a "power-neutral" register?', options: ['Balanced turn-taking + reciprocal politeness + shared decision-making','One-sided imperative','Only passive','Only Latinate lexis'], answer: 0 },
     ],
     red: [
-      { q: 'Evaluate: "Powerful language is always formal and Latinate." Is this fully correct?', options: ['Yes','No — power can also be enacted through informality','Yes','Only formal'], answer: 1 },
+      { q: 'Evaluate: "Powerful language is always formal and Latinate." Is this fully correct?', options: ['Yes','No — power can also be enacted through informality','Only Latinate lexis','Only formal'], answer: 1 },
       { q: 'Analyse "Mistakes were made" as a power move.', options: ['Only grammar','Only lexis','Passive + nominalisation hides the agent; responsibility evaded','Only phonology'], answer: 2 },
       { q: 'Why do top-band answers on power ALWAYS cite Fairclough?', options: ['Unnecessary','Only Skinner','Only Lakoff','CDA is the foundational framework; naming him anchors'], answer: 3 },
       { q: 'Evaluate: "All language involves power relations."', options: ['Partial — only political','Only legal','No — some is neutral','Yes — every interaction positions speakers relative to each other'], answer: 3 },
