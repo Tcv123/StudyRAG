@@ -1817,13 +1817,28 @@ function toggleStatDropdown(filter) {
   };
 
   let topicItems = [];
-  for (const [key, diagData] of Object.entries(DIAG_TOPICS)) {
+  // ragMap is keyed by the plain board name the database stores ("Edexcel"),
+  // but a third of the DIAG_TOPICS keys carry a "|alevel" / "|gcse" variant
+  // suffix, so reading the map with the raw registry key never matched and
+  // every suffixed spec vanished from this panel. Resolve the one variant
+  // that belongs to this student's level — the same levelLookup breakdown.html
+  // uses — and read the map with the unsuffixed base key it was built from.
+  // Deduping on the base matters: eleven bases have two variants, and taking
+  // both would list every topic twice, once under the wrong level's names
+  // and page links.
+  const seenBase = new Set();
+  for (const key of Object.keys(DIAG_TOPICS)) {
+    const baseKey = key.split('|')[0];
+    if (seenBase.has(baseKey)) continue;
+    seenBase.add(baseKey);
+    const diagData = window.levelLookup(DIAG_TOPICS, baseKey);
+    if (!diagData) continue;
     diagData.topics.forEach(t => {
-      const rag = ragMap[`${key}_${t.id}`] || null;
+      const rag = ragMap[`${baseKey}_${t.id}`] || null;
       if (filter === 'all' && rag) {
-        topicItems.push({ ...t, rag, subject: diagData.label, page: diagData.page, key });
+        topicItems.push({ ...t, rag, subject: diagData.label, page: diagData.page, key: baseKey });
       } else if (filter !== 'all' && rag === filter) {
-        topicItems.push({ ...t, rag, subject: diagData.label, page: diagData.page, key });
+        topicItems.push({ ...t, rag, subject: diagData.label, page: diagData.page, key: baseKey });
       }
     });
   }
