@@ -898,5 +898,19 @@
     },
   };
 
+  /* The number of topics a student can actually SIT, which is not always the
+     number the spec offers. Politics AQA lists 32 but examines 28, because a
+     student picks one of five optional ideologies — so counting topics.length
+     leaves four permanently untested and caps every progress bar below 100%.
+
+     Every curriculum denominator must go through this. medals-engine.js
+     already did, which is why it awarded "Century - test 100% of your topics"
+     to a student the Dashboard was still showing as "4 not tested". */
+  function examinedTotalFor(entry) {
+    if (!entry || !entry.topics) return 0;
+    return entry.examinedTotal || entry.topics.length;
+  }
+
   window.DIAG_TOPICS = DIAG_TOPICS;
+  window.TOPICS_EXAMINED_TOTAL = examinedTotalFor;
 })();

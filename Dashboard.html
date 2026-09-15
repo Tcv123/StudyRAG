@@ -1444,7 +1444,7 @@ async function load() {
   let tAllTopics = 0;
   (subjects || []).forEach(s => {
     const diagData = _lvLookup(DIAG_TOPICS, `${s.subject}_${s.exam_board}`);
-    if (diagData) tAllTopics += diagData.topics.length;
+    if (diagData) tAllTopics += window.TOPICS_EXAMINED_TOTAL(diagData);
   });
   const tPending = Math.max(0, tAllTopics - tTotal);
 
@@ -1910,7 +1910,7 @@ function showDiagSubjectCards() {
     const key = `${s.subject}_${s.exam_board}`;
     const diagData = _lvLookup(DIAG_TOPICS, key);
     const emoji = diagData?.emoji || s.emoji || '📚';
-    const totalTopics = diagData ? diagData.topics.length : 0;
+    const totalTopics = window.TOPICS_EXAMINED_TOTAL(diagData);
 
     // Count RAG
     let green = 0, amber = 0, red = 0;
