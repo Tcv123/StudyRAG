@@ -30,8 +30,13 @@
   if (root) { root.SUBJECT_GRID = api; }
 })(typeof window !== 'undefined' ? window : null, function () {
 
-  // Marketing shortens the two maths subjects; everything else matches config.
-  const DISPLAY = { 'Mathematics': 'Maths', 'Further Mathematics': 'Further Maths' };
+  // Tile labels per level, where they differ from the config name. A-Level
+  // shortens the two maths subjects; GCSE spells Mathematics out, which is how
+  // the GCSE section has always read. Anything not listed uses its config name.
+  const DISPLAY_BY_LEVEL = {
+    alevel: { 'Mathematics': 'Maths', 'Further Mathematics': 'Further Maths' },
+    gcse: {},
+  };
 
   // Reading order per level. A-Level keeps the established sciences-first
   // order; GCSE is left empty because subjects-config's own gcseSubjectNames
@@ -62,6 +67,7 @@
   // Ordered [{ name, display, icon, boards, soon }] for the given level.
   function subjectsFor(config, level) {
     const order = ORDER_BY_LEVEL[level] || [];
+    const display = DISPLAY_BY_LEVEL[level] || {};
     const names = config.getSubjectsFor(level).map(s => s.name);
     const soon = names.filter(n => config.isComingSoonAlevel(n, level));
     const live = names.filter(n => !soon.includes(n));
@@ -70,7 +76,7 @@
       .concat(soon);
     return ordered.map(n => ({
       name: n,
-      display: DISPLAY[n] || n,
+      display: display[n] || n,
       icon: ICON_HTML[n] || config.emojiFor(n),
       boards: config.getBoardsFor(n, level).join(' · '),
       soon: config.isComingSoonAlevel(n, level),
@@ -116,5 +122,5 @@
     }
   }
 
-  return { DISPLAY, ORDER_BY_LEVEL, ICON_HTML, subjectsFor, tilesHtml, render };
+  return { DISPLAY_BY_LEVEL, ORDER_BY_LEVEL, ICON_HTML, subjectsFor, tilesHtml, render };
 });
