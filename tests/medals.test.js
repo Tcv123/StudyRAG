@@ -105,6 +105,9 @@ function loadEngine(state) {
     Date, Math, JSON, Set, Map, Array, Object, Promise, isNaN, window: {},
   };
   vm.createContext(ctx);
+  // The real level helper, not a stub — medals-engine.js delegates its
+  // level-suffix lookups to it, and a copy here could drift from the browser.
+  vm.runInContext(fs.readFileSync(path.join(ROOT, 'level-config.js'), 'utf8'), ctx);
   vm.runInContext(fs.readFileSync(path.join(ROOT, 'medals-data.js'), 'utf8'), ctx);
   vm.runInContext(fs.readFileSync(path.join(ROOT, 'medals-engine.js'), 'utf8'), ctx);
   // Top-level `const` lives in the script's lexical scope, not on the context
