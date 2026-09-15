@@ -277,7 +277,7 @@
           <li><span class="plan-check">✓</span> Works on desktop, tablet &amp; mobile</li>
         </ul>
         <a href="Dashboard.html" class="btn btn-white plan-btn">Go to Dashboard</a>
-        <div class="plan-foot">You're on this plan</div>
+        <div class="plan-foot" id="freeFoot">You're on this plan</div>
       </div>
 
       <!-- Pro -->
@@ -301,7 +301,7 @@
         <button type="button" class="btn btn-blue plan-btn" id="proCtaBtn" data-plan="monthly">
           Start 7-day free trial
         </button>
-        <div class="plan-foot">Cancel any time · No card charged during trial</div>
+        <div class="plan-foot" id="proFoot">Cancel any time · No card charged during trial</div>
       </div>
     </div>
 
@@ -367,6 +367,8 @@
   if (initialPlan && PLAN_DETAILS[initialPlan]) setPlan(initialPlan);
 
   proCtaBtn.addEventListener('click', async () => {
+    // Already subscribed — send them to manage it rather than buy it twice.
+    if (proCtaBtn.dataset.manage === 'true') { window.location = 'settings.html'; return; }
     const plan = proCtaBtn.dataset.plan || 'monthly';
     const originalLabel = proCtaBtn.textContent;
     try {
@@ -388,11 +390,46 @@
     }
   });
 
+  /* Which card says "You're on this plan".
+   *
+   * That line used to be static markup on the Free card, and this page never
+   * read the subscription at all — so a Pro user was told they were on Free
+   * and invited to start a trial they already had. The only thing between
+   * them and a second subscription was the already_subscribed guard in
+   * create-checkout-session.js, which was itself broken.
+   *
+   * Same isPro test as nav-gating.js, settings.html and the API. */
+  function isPro(p) {
+    if (!p) return false;
+    const tier    = p.subscription_tier   || 'free';
+    const state   = p.subscription_status || '';
+    const expires = p.subscription_expires_at ? new Date(p.subscription_expires_at) : null;
+    return tier !== 'free'
+      && ['active', 'trialing'].includes(state)
+      && (!expires || expires > new Date());
+  }
+
+  function showCurrentPlan(profile) {
+    const freeFoot = document.getElementById('freeFoot');
+    const proFoot  = document.getElementById('proFoot');
+    if (!isPro(profile)) return;                 // Free card already says it
+
+    freeFoot.textContent = 'Everything here is included in Pro';
+
+    const trialing = profile.subscription_status === 'trialing';
+    proFoot.textContent = trialing ? "You're on this plan — trial" : "You're on this plan";
+    proFoot.style.fontWeight = '600';
+
+    proCtaBtn.textContent = 'Manage your plan';
+    proCtaBtn.dataset.manage = 'true';
+  }
+
   // Load user
   (async () => {
     const { data: { session } } = await supabaseClient.auth.getSession();
     if (!session) { location.href = 'auth/login.html'; return; }
-    const { data: profile } = await supabaseClient.from('profiles').select('first_name, last_name, avatar_url').eq('id', session.user.id).single();
+    const { data: profile } = await supabaseClient.from('profiles').select('first_name, last_name, avatar_url, subscription_tier, subscription_status, subscription_expires_at').eq('id', session.user.id).single();
+    showCurrentPlan(profile);
     const firstName = profile?.first_name || '';
     const lastName  = profile?.last_name  || '';
     document.getElementById('sidebarName').textContent = `${firstName} ${lastName}`.trim() || session.user.email;

@@ -19,6 +19,18 @@ function readRawBody(req) {
   });
 }
 
+/* Stripe's plan nickname -> the value profiles.subscription_tier carries.
+ * Anything not 'free' counts as Pro everywhere in the app; the specific
+ * value only decides the label Settings shows. */
+function mapTier(plan) {
+  switch (plan) {
+    case 'annual':   return 'pro_annual';
+    case 'biannual': return 'pro_biannual';
+    case 'monthly':  return 'pro_monthly';
+    default:         return 'pro_monthly';
+  }
+}
+
 function mapStatus(stripeStatus) {
   switch (stripeStatus) {
     case 'trialing':            return 'trialing';
@@ -44,6 +56,20 @@ async function resolveUserId(subscription) {
   }
 }
 
+/* Write the subscription onto the profile.
+ *
+ * This used to update pro_status, pro_plan, pro_current_period_end and
+ * stripe_subscription_id. None of those columns exist on profiles, so every
+ * update failed — and because the failure was only logged and the handler
+ * still returned 200, Stripe treated the webhook as delivered and never
+ * retried. A customer could pay, and nothing anywhere recorded it.
+ *
+ * The columns the rest of the app reads are subscription_tier,
+ * subscription_status and subscription_expires_at. Those are what we write.
+ *
+ * Throws on failure rather than logging and moving on, so the handler can
+ * answer Stripe with a 500 and get the delivery retried.
+ */
 async function syncSubscriptionToProfile(subscription) {
   const userId = await resolveUserId(subscription);
   if (!userId) {
@@ -51,25 +77,32 @@ async function syncSubscriptionToProfile(subscription) {
     return;
   }
 
-  const plan = subscription.metadata?.plan || null;
+  const status = mapStatus(subscription.status);
   const periodEnd = subscription.current_period_end
     ? new Date(subscription.current_period_end * 1000).toISOString()
     : null;
 
+  /* A subscription that has lapsed is not a downgrade to a cheaper tier, it
+   * is no subscription — and isPro() everywhere keys off tier !== 'free', so
+   * leaving the tier set would keep Pro switched on for a cancelled account. */
+  const live = status === 'active' || status === 'trialing' || status === 'past_due';
+
   const update = {
-    stripe_subscription_id: subscription.id,
-    stripe_customer_id: subscription.customer,
-    pro_status: mapStatus(subscription.status),
-    pro_current_period_end: periodEnd,
+    stripe_customer_id:      subscription.customer,
+    subscription_tier:       live ? mapTier(subscription.metadata?.plan) : 'free',
+    subscription_status:     status,
+    subscription_expires_at: periodEnd,
   };
-  if (plan) update.pro_plan = plan;
 
   const { error } = await supabaseAdmin
     .from('profiles')
     .update(update)
     .eq('id', userId);
 
-  if (error) console.error('profile sync error:', error);
+  if (error) {
+    console.error('profile sync error:', error, 'user', userId, 'sub', subscription.id);
+    throw new Error('profile sync failed: ' + error.message);
+  }
 }
 
 module.exports = async function handler(req, res) {
@@ -124,6 +157,9 @@ module.exports = async function handler(req, res) {
     }
     return res.status(200).json({ received: true });
   } catch (err) {
+    /* 500 on purpose. Stripe retries a non-2xx for up to three days, which is
+     * the only thing standing between a transient database problem and a paid
+     * subscription that the app never hears about. */
     console.error('webhook handler error:', err);
     return res.status(500).send('internal_error');
   }

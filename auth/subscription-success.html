@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: blob: https:; connect-src 'self' https://*.supabase.co wss://*.supabase.co; base-uri 'self'; form-action 'self'">
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+  <title>RAG Learning — Subscription Confirmed</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../supabase-config.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EAF2FC;
+      --surface: #FFFFFF;
+      --surface2: #F0F6FD;
+      --border: #B8D0E8;
+      --text: #0B1E3F;
+      --muted: #445F85;
+      --muted2: #7891B0;
+      --accent: #2563EB;
+      --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1);
+      --accent-glow: rgba(37,99,235,0.2);
+      --green: #16A34A;
+      --green-bg: rgba(22,163,74,0.08);
+      --green-border: rgba(22,163,74,0.25);
+      --red: #DC2626;
+      --red-bg: rgba(220,38,38,0.07);
+      --red-border: rgba(220,38,38,0.18);
+      --red-text: #B91C1C;
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+    }
+
+    html, body {
+      min-height: 100%; height: 100%;
+      background: var(--bg);
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image:
+        linear-gradient(rgba(37,99,235,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(37,99,235,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none; z-index: 0;
+    }
+
+    .layout {
+      position: relative; z-index: 1;
+      min-height: 100vh;
+      display: flex; align-items: center; justify-content: center;
+      padding: 48px 24px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 56px 44px;
+      width: 100%; max-width: 440px;
+      text-align: center;
+      box-shadow: 0 4px 32px rgba(37,99,235,0.12);
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .logo {
+      display: flex; align-items: center; justify-content: center; gap: 8px;
+      margin-bottom: 32px;
+    }
+
+    .logo-img { width: 24px; height: 24px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+
+    .logo-name {
+      font-family: var(--font-display);
+      font-size: 18px; color: var(--text); letter-spacing: -0.01em;
+    }
+
+    .check-circle {
+      width: 80px; height: 80px;
+      border-radius: 50%;
+      background: var(--green-bg);
+      border: 2px solid var(--green-border);
+      margin: 0 auto 24px;
+      display: flex; align-items: center; justify-content: center;
+      animation: pop 0.5s cubic-bezier(0.34, 1.56, 0.64, 1) 0.2s both;
+    }
+
+    .check-circle svg {
+      width: 40px; height: 40px;
+      color: var(--green);
+      stroke-dasharray: 50;
+      stroke-dashoffset: 50;
+      animation: draw 0.5s ease 0.5s forwards;
+    }
+
+    .title {
+      font-family: var(--font-display);
+      font-size: 28px; color: var(--text);
+      letter-spacing: -0.02em; margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 15px; color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 28px;
+    }
+
+    .status {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 13px; color: var(--muted);
+      padding: 10px 16px;
+      background: var(--surface2);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+    }
+
+    .spinner {
+      width: 14px; height: 14px;
+      border: 2px solid var(--border);
+      border-top-color: var(--accent);
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 24px;
+      margin-top: 20px;
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff;
+      border: none; border-radius: 10px;
+      font-family: var(--font-body); font-size: 14px; font-weight: 600;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.2s;
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }
+
+    .btn:hover { transform: translateY(-1px); box-shadow: 0 6px 20px var(--accent-glow); }
+
+    .error-box {
+      margin-top: 20px;
+      padding: 12px 16px;
+      background: var(--red-bg);
+      border: 1px solid var(--red-border);
+      border-radius: 10px;
+      font-size: 13px;
+      color: var(--red-text);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(16px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes pop {
+      0%   { transform: scale(0); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    @keyframes draw {
+      to { stroke-dashoffset: 0; }
+    }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+  </style>
+</head>
+<body>
+<!--
+  Where Stripe sends a customer after a successful checkout.
+
+  This page did not exist until 2026-09-15. create-checkout-session.js has
+  always pointed success_url here, so every customer who paid was handed a
+  404 at the exact moment they needed telling the payment had worked.
+
+  It deliberately does NOT decide whether the payment succeeded. Stripe's
+  webhook is what writes the subscription onto the profile, and it can land
+  a second or two after the redirect. So this polls the profile for a short
+  while and says plainly which of the two it is seeing, rather than claiming
+  success it has not observed or failure that has not happened.
+-->
+<div class="layout">
+  <div class="card">
+    <div class="logo">
+      <img src="../favicon.svg" alt="RAG Learning" class="logo-img" />
+      <div class="logo-name">RAG Learning</div>
+    </div>
+
+    <div class="check-circle">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <div class="title">You're on Pro</div>
+    <p class="subtitle" id="subtitle">Thanks — your payment went through. Your trial starts now and you won't be charged for 7 days.</p>
+
+    <div class="status" id="status">
+      <div class="spinner"></div>
+      <span id="statusText">Switching your account over…</span>
+    </div>
+
+    <div id="doneWrap" style="display:none;">
+      <a href="../Dashboard.html" class="btn">Go to your dashboard</a>
+    </div>
+
+    <div id="slowWrap" style="display:none;">
+      <div class="error-box" id="slowMsg"></div>
+      <a href="../Dashboard.html" class="btn">Go to your dashboard</a>
+    </div>
+  </div>
+</div>
+
+<script>
+(async () => {
+  const status   = document.getElementById('status');
+  const statusEl = document.getElementById('statusText');
+  const subtitle = document.getElementById('subtitle');
+  const doneWrap = document.getElementById('doneWrap');
+  const slowWrap = document.getElementById('slowWrap');
+  const slowMsg  = document.getElementById('slowMsg');
+
+  function isPro(p) {
+    if (!p) return false;
+    const tier    = p.subscription_tier   || 'free';
+    const state   = p.subscription_status || '';
+    const expires = p.subscription_expires_at ? new Date(p.subscription_expires_at) : null;
+    return tier !== 'free'
+      && ['active', 'trialing'].includes(state)
+      && (!expires || expires > new Date());
+  }
+
+  const { data: { session } } = await supabaseClient.auth.getSession();
+  if (!session?.user) { location.href = 'login.html'; return; }
+
+  /* The webhook usually wins this race, but not always, and a customer who
+     has just paid should never be told "you are on the free plan". Poll for
+     about fifteen seconds, then say honestly that it is still settling. */
+  for (let attempt = 0; attempt < 10; attempt++) {
+    const { data: profile } = await supabaseClient
+      .from('profiles')
+      .select('subscription_tier, subscription_status, subscription_expires_at')
+      .eq('id', session.user.id)
+      .maybeSingle();
+
+    if (isPro(profile)) {
+      try {
+        localStorage.setItem('rag_is_pro', 'true');
+        localStorage.removeItem('rag_pro_expires_at');
+      } catch (e) {}
+      status.style.display   = 'none';
+      doneWrap.style.display = 'block';
+      return;
+    }
+    await new Promise(r => setTimeout(r, 1500));
+  }
+
+  status.style.display   = 'none';
+  subtitle.textContent   = 'Your payment went through.';
+  slowMsg.textContent    = 'Stripe has taken the payment, but your account has not switched over yet — that can take a minute. Open your dashboard and it should be there. If it still says Free in five minutes, contact us and we will sort it out.';
+  slowWrap.style.display = 'block';
+})();
+</script>
+</body>
+</html>
