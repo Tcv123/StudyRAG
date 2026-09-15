@@ -22,7 +22,7 @@
 // explicit level always wins.
 function _lvSuffix(level) {
   const l = (level || localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  return (l === 'a-level' || l === 'as') ? 'alevel' : 'gcse';
+  return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
 }
 function _lvLookup(map, base, level) {
   const keyed = map[`${base}|${_lvSuffix(level)}`];

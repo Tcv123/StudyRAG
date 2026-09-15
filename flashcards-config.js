@@ -594,7 +594,7 @@
   // Helpers — mirror notes.html's lookup semantics
   function currentLevelSuffix() {
     const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-    return (l === 'a-level' || l === 'as') ? 'alevel' : 'gcse';
+    return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
   }
 
   function topicsFor(subject, board) {
