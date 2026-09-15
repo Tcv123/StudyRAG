@@ -8,7 +8,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600;700&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-  <script src="dev-fake-backend.js"></script>
   <script src="level-config.js"></script>
   <script src="supabase-config.js"></script>
   <script src="topics-config.js"></script>
@@ -702,6 +701,17 @@ function toggleSection(idx) {
 }
 
 let allTopicData = [];
+
+/* Optional topics a student cannot all sit (Politics: one of five ideologies)
+   are excluded from the denominator, so "not tested" can reach zero and the
+   page stops contradicting the medal engine. */
+function examinedFor(sub) {
+  return window.TOPICS_EXAMINED_TOTAL(
+    _lvLookup(DIAG_TOPICS, `${sub.subject}_${sub.board || sub.exam_board}`));
+}
+function examinedAcrossAll() {
+  return allSubjectData.reduce((n, sub) => n + examinedFor(sub), 0);
+}
 let allSubjectData = [];
 let practiceHistory = [];
 let BD_LEVEL = 'gcse';   // 'gcse' | 'as' | 'a-level' — drives predicted-grade boundaries
@@ -729,7 +739,8 @@ function selectSubject(key) {
   const green = subTopics.filter(t => t.rag === 'green').length;
   const amber = subTopics.filter(t => t.rag === 'amber').length;
   const red = subTopics.filter(t => t.rag === 'red').length;
-  const pending = subTopics.filter(t => t.rag === 'pending').length;
+  const subMeta = allSubjectData.find(x => x.label === key);
+  const pending = Math.max(0, (subMeta ? examinedFor(subMeta) : subTopics.length) - (green + amber + red));
   const tested = green + amber + red;
 
   document.getElementById('statTotal').textContent = tested;
@@ -1362,7 +1373,7 @@ async function load() {
   const green = allTopicData.filter(t => t.rag === 'green').length;
   const amber = allTopicData.filter(t => t.rag === 'amber').length;
   const red = allTopicData.filter(t => t.rag === 'red').length;
-  const pending = allTopicData.filter(t => t.rag === 'pending').length;
+  const pending = Math.max(0, examinedAcrossAll() - (green + amber + red));
 
   document.getElementById('statTotal').textContent = tested;
   document.getElementById('statTotalSub').textContent =
