@@ -615,16 +615,43 @@ function buildPicker(userSubs) {
 
   // Filter allSubjects to only ones the user takes, and find their board entry
   const filtered = [];
+  const linksOnly = [];
   allSubjects.forEach(subj => {
     const userBoard = userBoardFor[subj.name.trim().toLowerCase()];
     if (!userBoard) return;
     const boardEntry = (subj.boards || []).find(b => boardMatches(b.board, userBoard));
-    if (!boardEntry || !(boardEntry.papers || []).length) return;
+    if (!boardEntry) return;
+    if (!(boardEntry.papers || []).length) {
+      // No reproducible paper structure (AQA publishes no per-paper PDFs for
+      // some specs, e.g. Politics 7152) — send the student to the board's own
+      // mark schemes rather than leaving a picker that can never be satisfied.
+      if (boardEntry.officialPageUrl) {
+        linksOnly.push({ subjectName: subj.name, board: boardEntry.board,
+                         specCode: boardEntry.specCode, url: boardEntry.officialPageUrl });
+      }
+      return;
+    }
     filtered.push({ subjectName: subj.name, board: boardEntry.board, papers: boardEntry.papers });
   });
 
+  const linksOnlyHtml = linksOnly.map(l => `
+    <div class="picker-card" style="margin-top:16px;">
+      <div class="picker-card-title">${esc(l.subjectName)} · ${esc(l.board)}${l.specCode ? ' ' + esc(l.specCode) : ''}</div>
+      <div style="font-size:13.5px;color:var(--muted);line-height:1.6;">
+        This spec has no per-question mark schemes in the app — the board
+        publishes them itself.
+        <div style="margin-top:10px;">
+          <a href="${esc(l.url)}" target="_blank" rel="noopener noreferrer"
+             style="color:var(--accent-dark);font-weight:600;">
+            Open ${esc(l.board)} mark schemes →
+          </a>
+        </div>
+      </div>
+    </div>`).join('');
+
   if (!filtered.length) {
-    document.getElementById('pageBody').innerHTML = `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">No papers found</div><div class="placeholder-msg">No past papers are available yet for your chosen subjects and boards. Try visiting the Past Papers section.</div></div>`;
+    document.getElementById('pageBody').innerHTML = linksOnlyHtml ||
+      `<div class="placeholder"><div class="placeholder-icon">📋</div><div class="placeholder-title">No papers found</div><div class="placeholder-msg">No past papers are available yet for your chosen subjects and boards. Try visiting the Past Papers section.</div></div>`;
     return;
   }
 
@@ -655,7 +682,7 @@ function buildPicker(userSubs) {
       </div>
     </div>`;
 
-  document.getElementById('pageBody').innerHTML = pickerHtml;
+  document.getElementById('pageBody').innerHTML = pickerHtml + linksOnlyHtml;
 
   const pickSubject = document.getElementById('pickSubject');
   const pickPaper = document.getElementById('pickPaper');

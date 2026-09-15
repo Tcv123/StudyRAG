@@ -435,7 +435,48 @@
         </section>`;
     });
 
-    if (!attemptable.length) {
+    // Boards with an official-page link but no attemptable papers. AQA does
+    // not publish stable per-paper PDFs for every spec (Politics 7152 is one),
+    // so the board's assessment-resources page IS the destination. Without
+    // this the subject renders as "no past papers wired up yet" even though
+    // there is somewhere to send the student.
+    const linksOnly = subjects
+      .map(s => {
+        let bs = (s.boards || []).filter(b => b.officialPageUrl && !(b.papers || []).length);
+        if (userBoardsBySubject) {
+          const userBoards = userBoardsBySubject.get(s.name);
+          bs = (userBoards && userBoards.size > 0)
+            ? bs.filter(b => boardMatches(userBoards, b.board))
+            : [];
+        }
+        return { ...s, boards: bs };
+      })
+      .filter(s => s.boards.length > 0);
+
+    linksOnly.forEach(subj => {
+      html += `
+        <section class="subject-section">
+          <div class="subject-head">
+            <div class="subject-title">${subj.icon || ''} ${esc(subj.name)}</div>
+            <div class="subject-meta">official papers</div>
+          </div>
+          ${subj.boards.map(b => `
+            <div class="intro-card" style="margin-top:16px;margin-bottom:0;">
+              <span class="official-tag">Official</span>
+              <strong>${esc(b.board)}${b.specCode ? ' ' + esc(b.specCode) : ''}</strong> —
+              past papers and mark schemes are published on the board's own
+              assessment resources page.
+              <div style="margin-top:12px;">
+                <a href="${esc(b.officialPageUrl)}" target="_blank" rel="noopener noreferrer"
+                   style="color:var(--accent-dark);font-weight:600;">
+                  Open ${esc(b.board)} assessment resources →
+                </a>
+              </div>
+            </div>`).join('')}
+        </section>`;
+    });
+
+    if (!attemptable.length && !linksOnly.length) {
       // Distinguish the two empty states: "filter matched nothing" vs
       // "really no papers wired up". The first one is way more common
       // for a Maths student visiting today (CS is the only fully-wired
