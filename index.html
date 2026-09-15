@@ -922,7 +922,7 @@
     <div class="section-tag">Subjects &amp; boards</div>
     <div class="section-h">Every major UK subject, every major board</div>
     <p class="section-p">Content is built board-by-board so specifications, terminology and past-paper style match exactly what you'll sit in the exam hall. Subjects marked <em>Soon</em> are next in the build queue.</p>
-    <div class="grid-4">
+    <div class="grid-4" data-subject-grid="alevel">
       <div class="subject-tile">
         <div class="subject-icon" aria-hidden="true">🧬</div>
         <div class="subject-name">Biology</div>
@@ -1213,6 +1213,8 @@
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js"></script>
   <script src="level-config.js"></script>
   <script src="supabase-config.js"></script>
+  <script src="subjects-config.js"></script>
+  <script src="subject-grid.js"></script>
   <script>
     (async function () {
       const EARLY_LIMIT = 150;
