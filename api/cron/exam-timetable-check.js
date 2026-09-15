@@ -550,3 +550,8 @@ function escHtml(str) {
     .replace(/>/g, '&gt;')
     .replace(/"/g, '&quot;');
 }
+
+/* Exported for scripts/check-timetable-sources.js, which runs the same link
+ * detection against the live board pages without needing CRON_SECRET, the
+ * database or a deploy. Checking a URL should not require production. */
+module.exports.findTimetableLinks = findTimetableLinks;
