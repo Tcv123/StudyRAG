@@ -71,9 +71,7 @@
      viewing an A-Level class doesn't get the GCSE paper because their own
      account happens to be set to GCSE. */
   function diagnosticPageFor(subject, board, level) {
-    const suffix = (level === 'a-level' || level === 'as') ? 'alevel' : 'gcse';
-    const base   = `${subject}_${board}`;
-    return DIAGNOSTIC_PAGES[`${base}|${suffix}`] || DIAGNOSTIC_PAGES[base] || null;
+    return window.levelLookup(DIAGNOSTIC_PAGES, `${subject}_${board}`, level) || null;
   }
 
   window.DIAGNOSTIC_PAGES   = DIAGNOSTIC_PAGES;

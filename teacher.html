@@ -643,9 +643,8 @@ function loadScriptOnce(src) {
 }
 
 async function loadTopics(subject, board, level) {
-  const suffix = (level === 'a-level' || level === 'as') ? 'alevel' : 'gcse';
   const base   = `${subject}_${board}`;
-  const pick   = map => (map[`${base}|${suffix}`] !== undefined ? map[`${base}|${suffix}`] : map[base]);
+  const pick   = map => window.levelLookup(map, base, level);
 
   const files = pick(window.PRACTICE_BUNDLE_MAP || {});
   if (!files) return [];
@@ -694,9 +693,7 @@ function refreshBoards() {
 function hasQuestionBank(subject, board, level) {
   const map = window.PRACTICE_BUNDLE_MAP;
   if (!map) return true;                       // config not loaded — don't cry wolf
-  const suffix = (level === 'a-level' || level === 'as') ? 'alevel' : 'gcse';
-  const base   = `${subject}_${board}`;
-  return Boolean(map[`${base}|${suffix}`] || map[base]);
+  return Boolean(window.levelLookup(map, `${subject}_${board}`, level));
 }
 
 function checkCoverage() {

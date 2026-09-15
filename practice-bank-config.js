@@ -238,15 +238,9 @@
     });
   }
 
-  function lvSuffix() {
-    const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-    return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
-  }
-
-  function lvLookup(map, base) {
-    const keyed = map[`${base}|${lvSuffix()}`];
-    return keyed !== undefined ? keyed : map[base];
-  }
+  // Defined once in supabase-config.js, which every page loads first.
+  const lvSuffix = (level) => window.levelSuffix(level);
+  const lvLookup = (map, base) => window.levelLookup(map, base);
 
   function loadPracticeBundle(subjectKey) {
     if (_bundlePromises[subjectKey]) return _bundlePromises[subjectKey];

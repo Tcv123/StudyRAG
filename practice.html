@@ -605,14 +605,9 @@ let activeSubjectKey = null;
 ═══════════════════════════════════════ */
 
 
-function _lvSuffix() {
-  const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
-}
-function _lvLookup(map, base) {
-  const keyed = map[`${base}|${_lvSuffix()}`];
-  return keyed !== undefined ? keyed : map[base];
-}
+// Defined once in supabase-config.js, which every page loads first.
+const _lvSuffix = (level)     => window.levelSuffix(level);
+const _lvLookup = (map, base) => window.levelLookup(map, base);
 
 
 function getPracticeData(topicKey) {

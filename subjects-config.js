@@ -71,7 +71,7 @@
   ];
 
   function isComingSoonAlevel(subjectName, level) {
-    if (level !== 'a-level' && level !== 'as' && level !== 'alevel') return false;
+    if (window.levelSuffix(level || '') !== 'alevel') return false;
     return comingSoonAlevel.includes(subjectName);
   }
 
@@ -114,10 +114,11 @@
 
   function getBoardsFor(subjectName, level) {
     let list = boards[subjectName] || [];
-    if ((level === 'a-level' || level === 'as') && noEdexcelAlevel.includes(subjectName)) {
+    const isAlevel = window.levelSuffix(level || '') === 'alevel';
+    if (isAlevel && noEdexcelAlevel.includes(subjectName)) {
       list = list.filter(b => b !== 'Edexcel');
     }
-    if (level === 'a-level' || level === 'as') {
+    if (isAlevel) {
       const banned = gcseOnlyBoards[subjectName] || [];
       if (banned.length) list = list.filter(b => !banned.includes(b));
     }

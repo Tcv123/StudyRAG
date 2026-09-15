@@ -314,10 +314,8 @@ function isProProfile(p) {
     && ['active','trialing'].includes(status)
     && (!expires || expires > new Date());
 }
-function levelFromCache() {
-  const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  return (l === 'a-level' || l === 'alevel' || l === 'as') ? 'alevel' : 'gcse';
-}
+// Defined once in supabase-config.js, which every page loads first.
+const levelFromCache = () => window.levelSuffix();
 function escapeHtml(s) {
   return String(s || '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 }
