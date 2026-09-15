@@ -36,13 +36,34 @@ module.exports = async function handler(req, res) {
     const priceId = PRICE_IDS[plan];
     if (!priceId) return res.status(400).json({ error: 'invalid_plan' });
 
-    const { data: profile } = await supabaseAdmin
+    /* subscription_tier / subscription_status / subscription_expires_at are
+     * the columns this app actually has. This used to select pro_status,
+     * which does not exist on profiles — PostgREST returned an error, the
+     * error was discarded along with the row, and `profile` came back null.
+     * Two things followed from that: the already-subscribed guard below could
+     * never fire, and stripe_customer_id was never found, so every attempt
+     * created a fresh Stripe customer for the same person. */
+    const { data: profile, error: profileErr } = await supabaseAdmin
       .from('profiles')
-      .select('stripe_customer_id, email, first_name, last_name, pro_status')
+      .select('stripe_customer_id, email, first_name, last_name, subscription_tier, subscription_status, subscription_expires_at')
       .eq('id', user.id)
       .single();
 
-    if (profile?.pro_status === 'active' || profile?.pro_status === 'trialing') {
+    if (profileErr) {
+      console.error('create-checkout-session: could not read profile', profileErr);
+      return res.status(500).json({ error: 'profile_unavailable' });
+    }
+
+    // Same test as nav-gating.js and settings.html — keep the three in step.
+    const expiresAt = profile?.subscription_expires_at
+      ? new Date(profile.subscription_expires_at)
+      : null;
+    const alreadyPro =
+      (profile?.subscription_tier || 'free') !== 'free' &&
+      ['active', 'trialing'].includes(profile?.subscription_status || '') &&
+      (!expiresAt || expiresAt > new Date());
+
+    if (alreadyPro) {
       return res.status(409).json({ error: 'already_subscribed' });
     }
 
@@ -74,6 +95,9 @@ module.exports = async function handler(req, res) {
       client_reference_id: user.id,
       success_url: `${origin}/auth/subscription-success.html?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${origin}/auth/subscription-cancel.html`,
+      // Both pages exist. They did not until 2026-09-15, so every customer
+      // who paid was redirected to a 404 at the one moment they most needed
+      // reassurance that the payment had worked.
     };
 
     if (TAX_ENABLED) {

@@ -711,9 +711,18 @@ function renderPlanCard(profile) {
     return;
   }
 
-  // Pro user — show the active plan, hide the upgrade prompt
-  const planLabel = tier === 'pro_annual' ? 'RAG Pro (Annual)' : 'RAG Pro (Monthly)';
-  const planPrice = tier === 'pro_annual' ? '£95.90/year (£7.99/mo)' : '£9.99/month';
+  // Pro user — show the active plan, hide the upgrade prompt.
+  // pro_biannual arrives from the six-month price on pricing-app.html; before
+  // 2026-09-15 it fell through to the monthly branch and a customer paying
+  // £56.94 every six months was told they were on £9.99/month.
+  const PLANS = {
+    pro_annual:   { label: 'RAG Pro (Annual)',   price: '£95.90/year (£7.99/mo)'    },
+    pro_biannual: { label: 'RAG Pro (6 months)', price: '£56.94/6 months (£9.49/mo)' },
+    pro_monthly:  { label: 'RAG Pro (Monthly)',  price: '£9.99/month'                },
+  };
+  const plan      = PLANS[tier] || PLANS.pro_monthly;
+  const planLabel = plan.label;
+  const planPrice = plan.price;
   const trialing  = status === 'trialing';
 
   nameEl.textContent = trialing ? `${planLabel} — Trial` : planLabel;
