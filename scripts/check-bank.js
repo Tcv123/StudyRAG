@@ -82,6 +82,10 @@ function scriptName(ch) {
 /* What the diagnostic draws from each tier — see buildQuestionSet(). */
 const DRAW = { green: 2, amber: 2, red: 1 };
 
+/* The difficulty vocabulary. Some banks put a qualification level in the
+   same `tier` field (AS / A2), which is a different thing entirely. */
+const TIERS = ['green', 'amber', 'red'];
+
 function candidateBanks() {
   const out = [];
   const dir = path.join(ROOT, 'questions');
@@ -160,6 +164,79 @@ function modalShape(bank) {
   return { shape: best, agreeing: bestN, total: Object.keys(bank).length };
 }
 
+/* Written banks: no options, so the checks are about completeness and
+   internal consistency. A question whose `tier` disagrees with the array
+   it sits in is the one that actually bites — buildQuestionSet() picks by
+   array and the page then displays q.tier, so the student is shown a
+   difficulty and a mark tariff that do not match the question they were
+   given. Mark tariffs are compared against each bank's own modal tariff
+   per tier, because they legitimately differ between exam boards. */
+function checkWritten(bank) {
+  const errors = [], warnings = [];
+  let questions = 0;
+
+  // Modal marks per tier, established from the bank itself.
+  const seen = { green: {}, amber: {}, red: {} };
+  for (const topic of Object.values(bank)) {
+    for (const tier of ['green', 'amber', 'red']) {
+      for (const q of topic[tier] || []) {
+        if (typeof q.marks === 'number') seen[tier][q.marks] = (seen[tier][q.marks] || 0) + 1;
+      }
+    }
+  }
+  const modal = {};
+  for (const tier of ['green', 'amber', 'red']) {
+    let best = null, bestN = 0;
+    for (const [m, n] of Object.entries(seen[tier])) if (n > bestN) { best = Number(m); bestN = n; }
+    modal[tier] = best;
+  }
+
+  for (const [id, topic] of Object.entries(bank)) {
+    for (const tier of ['green', 'amber', 'red']) {
+      const qs = topic[tier];
+      if (!Array.isArray(qs)) { warnings.push(`${id} ${tier}: missing`); continue; }
+      questions += qs.length;
+
+      qs.forEach((q, i) => {
+        const at = `${id} ${tier}[${i}]`;
+        if (!q.q || typeof q.q !== 'string') errors.push(`${at}: no question text`);
+        if (typeof q.marks !== 'number') errors.push(`${at}: no mark tariff`);
+        /* Two field names are in use for the thing a student self-marks
+           against: modelAnswer (7089 questions) and marks_scheme (525,
+           in the CS banks). Either satisfies this.
+
+           This checks PRESENCE only, deliberately. Two earlier versions
+           used a length floor to catch stub answers and both were wrong:
+           at 80 characters it reported most GCSE short answers, and even
+           at 15 it reported "LT⁻¹ [B1]", which is a complete answer to a
+           1-mark dimensional analysis question. Answer length tracks the
+           mark tariff, not quality, and a floor that accommodates a
+           1-mark answer is too low to catch anything worth catching. */
+        const answer = q.modelAnswer || q.marks_scheme;
+        if (typeof answer !== 'string' || !answer.trim()) {
+          errors.push(`${at}: no model answer or mark scheme to self-mark against`);
+        }
+
+        /* Only compare tier against the array when the bank is using the
+           green/amber/red vocabulary. chemistry-ocr-b-written.js stores
+           AS and A2 in this field — a qualification level, not a
+           difficulty — and flagging those as mismatches was wrong. */
+        if (q.tier && TIERS.includes(q.tier) && q.tier !== tier) {
+          errors.push(`${at}: tier field says "${q.tier}" but it sits in the ${tier} array — the page will show the wrong difficulty and tariff`);
+        }
+        if (modal[tier] != null && typeof q.marks === 'number' && q.marks !== modal[tier]) {
+          warnings.push(`${at}: ${q.marks} marks, rest of this bank's ${tier} tier is ${modal[tier]}`);
+        }
+        const stray = String(q.q).match(WRONG_SCRIPT);
+        if (stray) errors.push(`${at}: question contains ${JSON.stringify(stray[0])} — ${scriptName(stray[0])} in an English question`);
+      });
+    }
+  }
+
+  const tariffs = ['green', 'amber', 'red'].map(t => modal[t] ?? '?').join('/');
+  return { errors, warnings, questions, tariffs };
+}
+
 const args  = process.argv.slice(2);
 const files = args.length ? args.map(f => path.resolve(f)) : candidateBanks();
 
@@ -176,8 +253,26 @@ for (const file of files) {
   }
 
   const kind = bankKind(bank);
-  if (kind !== 'mcq') {
-    if (args.length) console.log(`skip ${rel}  (${kind} bank — no options to check)`);
+
+  if (kind === 'empty') {
+    if (args.length) console.log(`skip ${rel}  (no questions found)`);
+    continue;
+  }
+
+  if (kind === 'written') {
+    const { errors, warnings, questions, tariffs } = checkWritten(bank);
+    const summary = `${Object.keys(bank).length} topics, ${questions} questions, ${tariffs}`;
+    if (errors.length) {
+      console.log(`FAIL ${rel}  (written: ${summary})`);
+      for (const e of errors.slice(0, 12)) console.log(`       ${e}`);
+      if (errors.length > 12) console.log(`       ... and ${errors.length - 12} more`);
+      failed++;
+    } else {
+      console.log(`${warnings.length ? 'warn' : 'ok  '} ${rel}  (written: ${summary})`);
+    }
+    for (const w of warnings.slice(0, 6)) console.log(`       warn: ${w}`);
+    if (warnings.length > 6) console.log(`       warn: ... and ${warnings.length - 6} more`);
+    if (warnings.length) warned++;
     continue;
   }
 
