@@ -29,31 +29,32 @@ const GRID = require(path.join(ROOT, 'subject-grid.js'));
 const CONFIG = global.window.SUBJECTS_CONFIG;
 
 const PAGES = ['index.html', 'subjects.html'];
-const LEVEL = 'alevel';
-const OPEN = '<div class="grid-4" data-subject-grid="' + LEVEL + '">';
+const LEVELS = ['alevel', 'gcse'];   // a page may carry either, both, or neither
+const openTag = (level) => `<div class="grid-4" data-subject-grid="${level}">`;
 
-let wrote = 0;
+let wrote = 0, grids = 0;
 for (const page of PAGES) {
   const file = path.join(ROOT, page);
   let html = fs.readFileSync(file, 'utf8');
+  const before = html;
 
-  const start = html.indexOf(OPEN);
-  if (start === -1) {
-    console.error(`  ✗ ${page}: no ${OPEN} found — add the data-subject-grid attribute first`);
-    process.exit(1);
-  }
-  const bodyStart = start + OPEN.length;
-  const end = html.indexOf('\n    </div>', bodyStart);
-  if (end === -1) {
-    console.error(`  ✗ ${page}: could not find the end of the grid`);
-    process.exit(1);
+  for (const level of LEVELS) {
+    const OPEN = openTag(level);
+    const start = html.indexOf(OPEN);
+    if (start === -1) continue;            // this page has no grid for that level
+    const bodyStart = start + OPEN.length;
+    const end = html.indexOf('\n    </div>', bodyStart);
+    if (end === -1) {
+      console.error(`  ✗ ${page}: could not find the end of the ${level} grid`);
+      process.exit(1);
+    }
+    html = html.slice(0, bodyStart) + '\n' + GRID.tilesHtml(CONFIG, level) + html.slice(end);
+    grids++;
   }
 
-  const tiles = GRID.tilesHtml(CONFIG, LEVEL);
-  const next = html.slice(0, bodyStart) + '\n' + tiles + html.slice(end);
-  if (next !== html) { fs.writeFileSync(file, next); wrote++; console.log(`  ✓ ${page} updated`); }
+  if (html !== before) { fs.writeFileSync(file, html); wrote++; console.log(`  ✓ ${page} updated`); }
   else { console.log(`  · ${page} already current`); }
 }
 
-const n = GRID.subjectsFor(CONFIG, LEVEL).length;
-console.log(`\n${wrote ? wrote + ' page(s) rewritten' : 'nothing to do'} — ${n} A-Level subjects.`);
+const counts = LEVELS.map(l => `${GRID.subjectsFor(CONFIG, l).length} ${l}`).join(', ');
+console.log(`\n${wrote ? wrote + ' page(s) rewritten' : 'nothing to do'} — ${grids} grid(s); ${counts}.`);
