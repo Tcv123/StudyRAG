@@ -768,8 +768,10 @@ function renderSubjectCards() {
     const green = topics.filter(t => t.rag === 'green').length;
     const amber = topics.filter(t => t.rag === 'amber').length;
     const red = topics.filter(t => t.rag === 'red').length;
-    const pending = topics.filter(t => t.rag === 'pending').length;
-    const total = topics.length;
+    // Optional topics a student cannot all sit are excluded from the total.
+    const total = window.TOPICS_EXAMINED_TOTAL(
+      _lvLookup(DIAG_TOPICS, `${s.subject}_${s.board}`)) || topics.length;
+    const pending = Math.max(0, total - (green + amber + red));
     const tested = green + amber + red;
 
     let ragClass = 'rag-pending';
@@ -1401,11 +1403,12 @@ function renderSubjectOverview() {
 
   wrap.innerHTML = allSubjectData.map(s => {
     const topics = allTopicData.filter(t => t.subject === s.subject && t.board === s.board);
-    const total = topics.length;
     const g = topics.filter(t => t.rag === 'green').length;
     const a = topics.filter(t => t.rag === 'amber').length;
     const r = topics.filter(t => t.rag === 'red').length;
-    const p = topics.filter(t => t.rag === 'pending').length;
+    const total = window.TOPICS_EXAMINED_TOTAL(
+      _lvLookup(DIAG_TOPICS, `${s.subject}_${s.exam_board || s.board}`)) || topics.length;
+    const p = Math.max(0, total - (g + a + r));
 
     const pct = v => total ? ((v / total) * 100).toFixed(1) : 0;
     const segs = total ? `

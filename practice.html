@@ -1740,7 +1740,10 @@ function showSubjectCards() {
         </div>`;
     }
 
-    const totalTopics = config.sections.reduce((sum, sec) => sum + sec.topics.length, 0);
+    // DIAG_PAGE carries the examined total, which excludes optional topics a
+    // student cannot all sit; the section sum counts everything the spec lists.
+    const totalTopics = _lvLookup(DIAG_PAGE, `${s.subject}_${s.exam_board}`)?.total
+      || config.sections.reduce((sum, sec) => sum + sec.topics.length, 0);
 
     // Count RAG for this subject
     const subjProgress = progressData.filter(p => p.subject === s.subject && p.exam_board === s.exam_board);
