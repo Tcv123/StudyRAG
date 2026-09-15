@@ -47,10 +47,9 @@
   const RAG_WEIGHT = { green: 0.90, amber: 0.55, red: 0.20 };
 
   function bandsForLevel(level) {
-    const l = (level || '').toLowerCase();
-    if (l === 'a-level' || l === 'alevel') return ALEVEL_BANDS;
-    if (l === 'as')      return AS_BANDS;
-    return GCSE_BANDS;
+    const l = String(level || '').toLowerCase();
+    if (l === 'as') return AS_BANDS;   // AS has its own boundaries
+    return window.levelSuffix(l || '') === 'alevel' ? ALEVEL_BANDS : GCSE_BANDS;
   }
 
   function gradeFromPct(pct, bands) {

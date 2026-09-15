@@ -591,16 +591,10 @@
     ],
   };
 
-  // Helpers — mirror notes.html's lookup semantics
-  function currentLevelSuffix() {
-    const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-    return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
-  }
-
+  // Suffixed key wins, then the unsuffixed base. levelLookup is defined once
+  // in supabase-config.js, which every page loads first.
   function topicsFor(subject, board) {
-    const base = `${subject}|${board}`;
-    const key = `${base}|${currentLevelSuffix()}`;
-    return FLASHCARDS_TOPICS[key] || FLASHCARDS_TOPICS[base] || null;
+    return window.levelLookup(FLASHCARDS_TOPICS, `${subject}|${board}`) || null;
   }
 
   // Card background palette (white + user's 4 picks)

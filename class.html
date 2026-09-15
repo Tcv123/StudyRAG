@@ -280,9 +280,7 @@ let tab = 'overview';
  * class they are looking at, and would silently draw GCSE topics for an
  * A-Level class. So resolve the bundle against the class's level instead.
  * ════════════════════════════════════════════════════════════════════════ */
-function levelSuffix(level) {
-  return (level === 'a-level' || level === 'as') ? 'alevel' : 'gcse';
-}
+const levelSuffix = (level) => window.levelSuffix(level);
 
 function lookupForLevel(map, subject, board, level) {
   const base   = `${subject}_${board}`;

@@ -20,14 +20,11 @@
 // fall back to the level cached by the Dashboard. Falling back to 'gcse' for
 // an A-Level student would silently pick the wrong topic counts, so an
 // explicit level always wins.
-function _lvSuffix(level) {
-  const l = (level || localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
-}
-function _lvLookup(map, base, level) {
-  const keyed = map[`${base}|${_lvSuffix(level)}`];
-  return keyed !== undefined ? keyed : map[base];
-}
+// Defined once in supabase-config.js, which every page loads first.
+// `level || undefined` preserves this file's documented fallback: a falsy
+// level here means "not supplied", so the cached level is used.
+const _lvSuffix = (level)            => window.levelSuffix(level || undefined);
+const _lvLookup = (map, base, level) => window.levelLookup(map, base, level || undefined);
 
 // ── Subject → topic key mapping ──────────────────────────────────────────
 // Key format: "SubjectName_Board"  →  topic_progress.subject value

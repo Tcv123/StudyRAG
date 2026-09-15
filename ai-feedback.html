@@ -815,11 +815,6 @@
     feedbackPanel.scrollIntoView({ behavior: 'smooth', block: 'start' });
   }
 
-  function levelSuffix() {
-    const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-    return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
-  }
-
   // ---------- Shared model-answer fetcher ----------
   // Used by both the Show-model button (standalone) and the auto-show after
   // Mark finishes (appended below the feedback). Returns the text + marks; the
@@ -842,7 +837,7 @@
         command:   currentQuestion.command || state.command,
         subject:   state.subject,
         board:     state.board,
-        level:     levelSuffix(),
+        level:     window.levelSuffix(),
         topicName: currentQuestion._topicName || state.topic,
       }),
     });
@@ -942,7 +937,7 @@
           studentAnswer: text,
           subject:       state.subject,
           board:         state.board,
-          level:         levelSuffix(),
+          level:         window.levelSuffix(),
           topicName:     currentQuestion._topicName || state.topic,
         }),
       });

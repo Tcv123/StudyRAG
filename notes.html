@@ -367,14 +367,9 @@
 // Key is "Subject|Board" — notes are board-specific
 // Subjects with distinct A-Level content add a "|alevel" suffix variant
 // (currently only Computer Science OCR).
-function _lvSuffix() {
-  const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
-}
-function _lvLookup(map, base) {
-  const keyed = map[`${base}|${_lvSuffix()}`];
-  return keyed !== undefined ? keyed : map[base];
-}
+// Defined once in supabase-config.js, which every page loads first.
+const _lvSuffix = (level)     => window.levelSuffix(level);
+const _lvLookup = (map, base) => window.levelLookup(map, base);
 // Maps "Subject|Board" (+ optional "|alevel" variant) → diagnostic info.
 // `url`   — diagnostic page (one page per subject, takes ?topic=<id>)
 // `total` — number of topics in the subject's diagnostic (for the nudge chip)

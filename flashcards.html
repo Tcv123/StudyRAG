@@ -298,8 +298,7 @@ async function load() {
   // don't bleed into each other when topic IDs collide.
   // Use head:true count queries (one per subject) — fetching all rows hit
   // Supabase's 1000-row cap and silently zeroed out subjects beyond it.
-  const cachedLevel = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  const dbLevel = (cachedLevel === 'a-level' || cachedLevel === 'alevel' || cachedLevel === 'as') ? 'alevel' : 'gcse';
+  const dbLevel = window.levelSuffix();
   const counts = {};
   await Promise.all(list.map(async s => {
     const { count } = await supabaseClient

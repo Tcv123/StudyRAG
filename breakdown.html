@@ -642,14 +642,9 @@
 </div>
 
 <script>
-function _lvSuffix() {
-  const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
-}
-function _lvLookup(map, base) {
-  const keyed = map[`${base}|${_lvSuffix()}`];
-  return keyed !== undefined ? keyed : map[base];
-}
+// Defined once in supabase-config.js, which every page loads first.
+const _lvSuffix = (level)     => window.levelSuffix(level);
+const _lvLookup = (map, base) => window.levelLookup(map, base);
 /* DIAG_TOPICS lives in topics-config.js, loaded above — one copy shared
    with breakdown.html, checked against the question banks by
    scripts/check-topics.js. It used to be restated here, and the two copies
@@ -1495,8 +1490,7 @@ async function renderFlashcardsBreakdown(user, profile, subjects) {
 
   // Map cached level → DB level the same way flashcards.html does, so GCSE
   // and A-level cards don't bleed into each other when topic IDs collide.
-  const cachedLevel = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  const dbLevel = (cachedLevel === 'a-level' || cachedLevel === 'alevel' || cachedLevel === 'as') ? 'alevel' : 'gcse';
+  const dbLevel = window.levelSuffix();
 
   // System-card counts per subject+board (head:true to avoid 1k row cap).
   const systemCounts = {};
