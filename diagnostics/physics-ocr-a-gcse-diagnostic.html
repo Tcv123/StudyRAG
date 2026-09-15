@@ -547,7 +547,7 @@ async function init() {
   document.getElementById('topicBadge').textContent = `${topicKey} — ${mcqData.name}`;
 
   // Persist questions across refresh so the same set reappears
-  const storeKey = `diag_${topicKey}`;
+  const storeKey = `diag_physics_ocr_a_gcse_${topicKey}`;
   const saved = sessionStorage.getItem(storeKey);
   if (saved) {
     try { questions = JSON.parse(saved); } catch(e) { questions = null; }
@@ -824,7 +824,7 @@ async function renderResult() {
   `;
 
   await saveResult(rag, results);
-  sessionStorage.removeItem(`diag_${topicKey}`);
+  sessionStorage.removeItem(`diag_physics_ocr_a_gcse_${topicKey}`);
   document.getElementById('savingRow').style.display = 'none';
   document.getElementById('resultActions').style.display = 'flex';
 }
