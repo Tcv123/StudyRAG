@@ -130,6 +130,15 @@
     .subject-icon { font-size: 22px; }
     .subject-name { font-size: 14px; font-weight: 600; color: var(--text); }
     .subject-boards { font-size: 11px; color: var(--muted); line-height: 1.5; }
+    /* A-Level subjects in subjects-config.js flagged coming-soon: shown so the
+       roadmap is visible, dimmed so they are not mistaken for live content. */
+    .subject-tile.soon { opacity: 0.62; }
+    .subject-tile.soon:hover { opacity: 0.8; }
+    .soon-tag {
+      display: inline-block; margin-left: 6px; padding: 2px 7px;
+      font-size: 9px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
+      color: #fff; background: #f59e0b; border-radius: 10px; vertical-align: middle;
+    }
     .board-chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 28px; justify-content: center; }
     .board-chip {
       font-size: 12px; font-weight: 500; color: var(--muted);
@@ -223,7 +232,7 @@
   <div class="wrap">
     <div class="section-tag">A Level coverage</div>
     <div class="section-h">A Level subjects</div>
-    <p class="section-p">Each subject has dedicated notes, diagnostics and practice content per exam board — so switching boards doesn't mean starting over.</p>
+    <p class="section-p">Each subject has dedicated notes, diagnostics and practice content per exam board — so switching boards doesn't mean starting over. Subjects marked <em>Soon</em> are next in the build queue.</p>
     <div class="grid-4">
       <div class="subject-tile">
         <div class="subject-icon" aria-hidden="true">🧬</div>
@@ -243,12 +252,12 @@
       <div class="subject-tile">
         <div class="subject-icon" aria-hidden="true">🔢</div>
         <div class="subject-name">Maths</div>
-        <div class="subject-boards">AQA · Edexcel · OCR</div>
+        <div class="subject-boards">AQA · OCR · Edexcel · OCR B</div>
       </div>
       <div class="subject-tile">
         <div class="subject-icon" aria-hidden="true">∑</div>
         <div class="subject-name">Further Maths</div>
-        <div class="subject-boards">AQA · Edexcel · OCR · OCR B</div>
+        <div class="subject-boards">AQA · Edexcel · OCR A · OCR B</div>
       </div>
       <div class="subject-tile">
         <div class="subject-icon" aria-hidden="true">💻</div>
@@ -263,6 +272,31 @@
       <div class="subject-tile">
         <div class="subject-icon" aria-hidden="true">🌍</div>
         <div class="subject-name">Geography</div>
+        <div class="subject-boards">AQA · Edexcel · Eduqas · OCR</div>
+      </div>
+      <div class="subject-tile">
+        <div class="subject-icon" aria-hidden="true">🏛️</div>
+        <div class="subject-name">Politics</div>
+        <div class="subject-boards">AQA</div>
+      </div>
+      <div class="subject-tile soon">
+        <div class="subject-icon" aria-hidden="true">📝</div>
+        <div class="subject-name">English Language<span class="soon-tag">Soon</span></div>
+        <div class="subject-boards">AQA · Edexcel · OCR · Eduqas</div>
+      </div>
+      <div class="subject-tile soon">
+        <div class="subject-icon" aria-hidden="true">🧠</div>
+        <div class="subject-name">Psychology<span class="soon-tag">Soon</span></div>
+        <div class="subject-boards">AQA · Edexcel · OCR</div>
+      </div>
+      <div class="subject-tile soon">
+        <div class="subject-icon" aria-hidden="true">👥</div>
+        <div class="subject-name">Sociology<span class="soon-tag">Soon</span></div>
+        <div class="subject-boards">AQA · OCR · Eduqas</div>
+      </div>
+      <div class="subject-tile soon">
+        <div class="subject-icon" aria-hidden="true">💼</div>
+        <div class="subject-name">Business Studies<span class="soon-tag">Soon</span></div>
         <div class="subject-boards">AQA · Edexcel · OCR · Eduqas</div>
       </div>
     </div>
