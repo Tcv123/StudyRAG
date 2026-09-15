@@ -103,8 +103,15 @@ const TOPIC_TOTAL = (function () {
       const entry = diag[key];
       // examinedTotal wins where a spec offers optional topics a student
       // cannot all sit (Politics: one of five ideologies). Without it the
-      // denominator counts topics nobody can ever complete.
-      if (entry && entry.topics) out[slug] = entry.examinedTotal || entry.topics.length;
+      // denominator counts topics nobody can ever complete. The rule lives in
+      // topics-config.js, which is loaded wherever DIAG_TOPICS is — the
+      // inline fallback only covers a caller that somehow has one but not the
+      // other, and must stay identical to it.
+      if (entry && entry.topics) {
+        out[slug] = window.TOPICS_EXAMINED_TOTAL
+          ? window.TOPICS_EXAMINED_TOTAL(entry)
+          : (entry.examinedTotal || entry.topics.length);
+      }
     }
   }
   return out;
