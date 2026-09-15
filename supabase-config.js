@@ -216,7 +216,7 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     var l = null;
     try { l = localStorage.getItem('cached_level'); } catch (e) {}
     l = String(l || 'gcse').toLowerCase();
-    return (l === 'a-level' || l === 'as') ? 'alevel' : 'gcse';
+    return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
   }
 
   // Does topic_progress have a `level` column? Probed once, cached for the page.

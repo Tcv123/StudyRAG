@@ -644,7 +644,7 @@
 <script>
 function _lvSuffix() {
   const l = (localStorage.getItem('cached_level') || 'gcse').toLowerCase();
-  return (l === 'a-level' || l === 'as') ? 'alevel' : 'gcse';
+  return (l === 'a-level' || l === 'as' || l === 'alevel') ? 'alevel' : 'gcse';
 }
 function _lvLookup(map, base) {
   const keyed = map[`${base}|${_lvSuffix()}`];

@@ -71,7 +71,7 @@
   ];
 
   function isComingSoonAlevel(subjectName, level) {
-    if (level !== 'a-level' && level !== 'as') return false;
+    if (level !== 'a-level' && level !== 'as' && level !== 'alevel') return false;
     return comingSoonAlevel.includes(subjectName);
   }
 

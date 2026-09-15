@@ -48,7 +48,7 @@
 
   function bandsForLevel(level) {
     const l = (level || '').toLowerCase();
-    if (l === 'a-level') return ALEVEL_BANDS;
+    if (l === 'a-level' || l === 'alevel') return ALEVEL_BANDS;
     if (l === 'as')      return AS_BANDS;
     return GCSE_BANDS;
   }
