@@ -38,7 +38,7 @@
     'Physics':             ['AQA', 'Edexcel', 'OCR A', 'OCR B'],
     'Economics':           ['AQA', 'Edexcel A', 'Edexcel B', 'OCR'],
     'Geography':           ['AQA', 'Edexcel', 'Eduqas', 'OCR'],
-    'Politics':            ['AQA'],
+    'Politics':            ['AQA', 'Edexcel'],
     'English Language':    ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
     'English Literature':  ['AQA', 'Edexcel', 'OCR', 'Eduqas'],
     'History':             ['AQA', 'Edexcel', 'OCR', 'Eduqas'],

@@ -608,6 +608,13 @@
   </style>
   <link rel="stylesheet" href="responsive.css">
   <script src="theme.js"></script>
+  <style>
+    .diag-subj-route {
+      font-size: 12px; opacity: .8; margin-top: 2px;
+      cursor: pointer; display: inline-block;
+    }
+    .diag-subj-route:hover { opacity: 1; text-decoration: underline; }
+  </style>
 </head>
 <body>
 <div class="app">
@@ -1750,6 +1757,31 @@ function updateStreakProgress() {
 
 // ── Stat card dropdown ──────────────────────────────────────────────────
 let _cachedTopicRows = [];
+
+/* Move a subject to the next choice in an option group and persist it.
+   Cycling rather than opening a dialog keeps this to one tap for the only
+   case that exists (a two-way choice); revisit if a group ever has more
+   than three choices. Progress against the route being left is NOT
+   deleted — the topic ids differ between routes, so those rows simply
+   stop being counted and reappear intact if the student switches back. */
+async function cycleRoute(subject, board, groupKey) {
+  const row = diagSubjectList.find(x => x.subject === subject && x.exam_board === board);
+  const entry = _lvLookup(DIAG_TOPICS, `${subject}_${board}`);
+  const group = entry && (entry.optionGroups || []).find(g => g.key === groupKey);
+  if (!row || !group) return;
+
+  const current = (row.options || {})[groupKey];
+  const i = group.choices.findIndex(c => c.value === current);
+  const next = group.choices[(i + 1) % group.choices.length].value;
+
+  const options = Object.assign({}, row.options, { [groupKey]: next });
+  const { error } = await supabaseClient
+    .from('user_subjects').update({ options }).eq('id', row.id);
+  if (error) { console.error('Could not save route choice:', error.message); return; }
+
+  row.options = options;   // keep the cached row in step so the re-render is correct
+  showDiagSubjectCards();
+}
 let _activeStatFilter = null;
 
 const TOPIC_TIPS = {
@@ -1833,7 +1865,10 @@ function toggleStatDropdown(filter) {
     seenBase.add(baseKey);
     const diagData = window.levelLookup(DIAG_TOPICS, baseKey);
     if (!diagData) continue;
-    diagData.topics.forEach(t => {
+    /* Match the student's row for this spec so an unchosen Component 3
+       route is excluded; a user_subjects row gives only subject and board. */
+    const row = diagSubjectList.find(x => `${x.subject}_${x.exam_board}` === baseKey);
+    window.TOPICS_VISIBLE(diagData, row && row.options).forEach(t => {
       const rag = ragMap[`${baseKey}_${t.id}`] || null;
       if (filter === 'all' && rag) {
         topicItems.push({ ...t, rag, subject: diagData.label, page: diagData.page, key: baseKey });
@@ -1920,16 +1955,38 @@ function showDiagSubjectCards() {
     return;
   }
 
+  /* Specs offering alternative ROUTES (see optionGroups in topics-config.js)
+     show the chosen route here, and let the student change it. Edexcel
+     Politics Component 3 is the only one so far: 3A (USA) or 3B (Global),
+     never both. A student who has not chosen sees every topic, so the
+     prompt matters — without a choice six topics stay untested forever. */
+  function routeLine(diagData, s) {
+    const groups = (diagData && diagData.optionGroups) || [];
+    if (!groups.length) return '';
+    const opts = s.options || {};
+    return groups.map(g => {
+      const chosen = g.choices.find(c => c.value === opts[g.key]);
+      const text = chosen
+        ? chosen.label
+        : `<span style="opacity:.8">Choose your ${g.label.toLowerCase()}</span>`;
+      return `<div class="diag-subj-route" onclick="event.stopPropagation();cycleRoute('${s.subject}','${s.exam_board}','${g.key}')"
+                   title="Click to change">${text} ✎</div>`;
+    }).join('');
+  }
+
   cardsEl.innerHTML = diagSubjectList.map(s => {
     const key = `${s.subject}_${s.exam_board}`;
     const diagData = _lvLookup(DIAG_TOPICS, key);
     const emoji = diagData?.emoji || s.emoji || '📚';
     const totalTopics = window.TOPICS_EXAMINED_TOTAL(diagData);
+    // Only the topics this student can sit — a Component 3 route they did
+    // not choose would otherwise sit here permanently untested.
+    const visibleTopics = window.TOPICS_VISIBLE(diagData, s.options);
 
     // Count RAG
     let green = 0, amber = 0, red = 0;
     if (diagData) {
-      diagData.topics.forEach(t => {
+      visibleTopics.forEach(t => {
         const rag = diagRagMap[`${key}_${t.id}`];
         if (rag === 'green') green++;
         else if (rag === 'amber') amber++;
@@ -1963,6 +2020,7 @@ function showDiagSubjectCards() {
         <div class="diag-subj-info">
           <div class="diag-subj-name">${s.subject}</div>
           <div class="diag-subj-board">${s.exam_board} · ${tested}/${totalTopics} topics tested</div>
+          ${routeLine(diagData, s)}
           <div class="diag-subj-stats">${pills}</div>
         </div>
         <div class="diag-subj-arrow">→</div>
@@ -1986,7 +2044,7 @@ function showDiagTopics(key) {
     <span>${diagData.emoji}</span> ${diagData.label}
   </div>`;
 
-  html += diagData.topics.map(t => {
+  html += window.TOPICS_VISIBLE(diagData, s.options).map(t => {
     const rag = diagRagMap[`${key}_${t.id}`] || '';
     const ragLabel = rag ? rag.charAt(0).toUpperCase() + rag.slice(1) : 'Not tested';
     return `
