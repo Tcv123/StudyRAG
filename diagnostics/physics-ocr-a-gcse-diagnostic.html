@@ -412,6 +412,18 @@ const THRESHOLD = { green: 8, amber: 4 };
 /*  Build 5 questions: 2 Green + 2 Amber + 1 Red
     At least 1 MUST be written; the rest are MCQ.
     The written slot is assigned to a random tier. */
+function shuffleOptions(q) {
+  // Options are stored with the answer in a fixed position (mostly B), so
+  // showing them in file order hands students the answer.
+  if (typeof q.answer !== 'number' || !Array.isArray(q.options)) return q;
+  const order = q.options.map((_, i) => i);
+  for (let i = order.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [order[i], order[j]] = [order[j], order[i]];
+  }
+  return { ...q, options: order.map(i => q.options[i]), answer: order.indexOf(q.answer) };
+}
+
 function normalizeAnswer(q) {
   if (typeof q.answer === 'string' && Array.isArray(q.options)) {
     const raw = q.answer.trim();
@@ -455,12 +467,12 @@ function buildQuestionSet(mcq, written) {
       selected.push(...wq);
       // Fill the rest of this tier with MCQ
       if (count > 1 && mcq[tier]) {
-        selected.push(...pick(mcq[tier], count - 1).map(q => normalizeAnswer({ ...q, type: 'mcq', tier })));
+        selected.push(...pick(mcq[tier], count - 1).map(q => shuffleOptions(normalizeAnswer({ ...q, type: 'mcq', tier }))));
       }
     } else {
       // All MCQ for this tier
       if (mcq[tier]) {
-        selected.push(...pick(mcq[tier], count).map(q => normalizeAnswer({ ...q, type: 'mcq', tier })));
+        selected.push(...pick(mcq[tier], count).map(q => shuffleOptions(normalizeAnswer({ ...q, type: 'mcq', tier }))));
       }
     }
   }
