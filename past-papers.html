@@ -245,6 +245,9 @@
   // inside starts collapsed — the user clicks a year to reveal its papers.
   function boardBlockHtml(board, openByDefault) {
     if (!Array.isArray(board.papers) || !board.papers.length) return '';
+    // Some boards give year as a number (Geography: year: 2023), others as a
+    // series label ('June 2023'). Everything below treats it as a string.
+    const papers = board.papers.map(p => ({ ...p, year: String(p.year ?? '') }));
     // Sort papers by year then by paper code so the most-recent sitting
     // is at the top. For sittings in the same year favour "June" > "Autumn"
     // > "November" so AQA/OCR Nov-2021 (COVID sittings) sort BELOW June-2022.
@@ -257,7 +260,7 @@
       const paperRank = (p.paperCode || '').match(/\/0?(\d+)/) ? -parseInt(RegExp.$1, 10) : 0;
       return year * 100 + monthRank + paperRank * 0.01;
     };
-    const orderedPapers = [...board.papers].sort((a, b) => sortKey(b) - sortKey(a));
+    const orderedPapers = [...papers].sort((a, b) => sortKey(b) - sortKey(a));
 
     // Group into series, preserving the most-recent-first order.
     const seriesOrder = [];

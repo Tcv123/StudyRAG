@@ -61,6 +61,14 @@
     'Biology': ['Edexcel IGCSE'],
   };
 
+  // Boards that are A-Level-only for a given subject (hidden at GCSE).
+  // Biology "Edexcel A"/"Edexcel B" are the 9BN0/9BI0 A-Level specs, and
+  // Maths "OCR B" is the MEI A-Level spec — none has a GCSE equivalent.
+  const alevelOnlyBoards = {
+    'Biology':     ['Edexcel A', 'Edexcel B'],
+    'Mathematics': ['OCR B'],
+  };
+
   // Subjects that are visible at A-Level / AS but not yet ready — render
   // as locked "Coming soon" cards on the picker and on subject pages.
   const comingSoonAlevel = [
@@ -120,6 +128,9 @@
     }
     if (isAlevel) {
       const banned = gcseOnlyBoards[subjectName] || [];
+      if (banned.length) list = list.filter(b => !banned.includes(b));
+    } else {
+      const banned = alevelOnlyBoards[subjectName] || [];
       if (banned.length) list = list.filter(b => !banned.includes(b));
     }
     return list;
