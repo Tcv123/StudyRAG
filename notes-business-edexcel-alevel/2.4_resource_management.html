@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 2.4 — Resource Management</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .thinker { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .thinker { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.4 Resource Management</h1>
+<p class="spec-ref">Business &mdash; Edexcel (9BS0) &mdash; Theme 2: Managing business activities</p>
+
+<p>Resource management is the operations topic of the course: how businesses turn inputs into outputs efficiently and to the right quality. It covers methods of production, productivity and efficiency, capacity utilisation, stock control (including just-in-time and lean production) and quality management. The unifying idea is <strong>competitiveness</strong>: a firm that produces at lower unit cost, with less waste and higher quality than its rivals, can either charge lower prices or earn higher margins. Every section of this topic can be linked back to unit costs and to the competitive advantage ideas in 1.1.3.</p>
+
+<div class="definition">
+<strong>Production</strong> &mdash; the process of converting inputs (land, labour, capital, enterprise) into outputs (goods and services).<br>
+<strong>Productivity</strong> &mdash; output per unit of input per time period, e.g. output per worker per week.<br>
+<strong>Efficiency</strong> &mdash; producing at minimum average (unit) cost.<br>
+<strong>Labour-intensive production</strong> &mdash; production that uses a high proportion of labour relative to capital.<br>
+<strong>Capital-intensive production</strong> &mdash; production that uses a high proportion of machinery and technology relative to labour.<br>
+<strong>Capacity</strong> &mdash; the maximum output a business can produce in a period with its existing resources.<br>
+<strong>Buffer stock</strong> &mdash; the minimum level of stock held as a safety margin against unexpected demand or late deliveries.<br>
+<strong>Just in time (JIT)</strong> &mdash; a stock management system in which materials arrive exactly when needed, so little or no stock is held.<br>
+<strong>Lean production</strong> &mdash; an approach that aims to minimise all forms of waste in production.<br>
+<strong>Quality</strong> &mdash; meeting or exceeding customer expectations; a product that is fit for purpose.
+</div>
+
+<h2>2.4.1 Production, productivity and efficiency</h2>
+
+<h3>a) Methods of production</h3>
+<table>
+<tr><th>Method</th><th>Description</th><th>Advantages</th><th>Disadvantages</th><th>Examples</th></tr>
+<tr><td><strong>Job</strong></td><td>One-off, unique products made to the customer's specification</td><td>Meets exact customer needs; premium prices; motivating, skilled work</td><td>High unit costs; skilled labour needed; slow; no economies of scale</td><td>Wedding dresses, bespoke furniture, Crossrail tunnels, architect-designed houses</td></tr>
+<tr><td><strong>Batch</strong></td><td>A group of identical products made together, then the process switches to a different batch</td><td>Some economies of scale; variety possible; flexible</td><td>Downtime when changing between batches; stock of each batch must be stored</td><td>Bakeries, paint in different colours, clothing in sizes</td></tr>
+<tr><td><strong>Flow</strong></td><td>Continuous production of standardised products along a production line</td><td>Very low unit costs; high output; consistent quality; automation</td><td>High set-up cost; inflexible; breakdown stops the whole line; repetitive work demotivates</td><td>Cars (Nissan Sunderland), soft drinks, oil refining</td></tr>
+<tr><td><strong>Cell</strong></td><td>Production split into self-contained teams (cells), each making a complete product or component</td><td>Teamwork and ownership improve motivation (Mayo, Herzberg) and quality; more flexible than flow</td><td>Reorganisation and training costs; depends on teams working well</td><td>Used within lean manufacturers (e.g. Toyota-style plants, aerospace components)</td></tr>
+</table>
+<p>The choice depends on the size of the market, the degree of customisation customers want, the firm's finance and its technology. Many businesses combine methods: mass customisation uses flexible technology to produce personalised products at near flow-production cost (e.g. customised trainers ordered online).</p>
+
+<h3>b) Productivity</h3>
+<p><code>Labour productivity = Output per period &divide; Number of employees</code></p>
+<p><strong>Worked example.</strong> A factory produces 12,000 units a month with 40 workers: productivity = 12,000 &divide; 40 = <strong>300 units per worker per month</strong>. Each worker costs &pound;2,400 a month, so <strong>unit labour cost</strong> = 2,400 &divide; 300 = &pound;8.00. If new equipment raises output to 12,800 units with the same workforce, productivity = 320 and unit labour cost falls to 2,400 &divide; 320 = <strong>&pound;7.50</strong> (a 6.25% fall).</p>
+<p>Productivity can also be measured for capital (output per machine hour) or per unit of any input.</p>
+
+<p><strong>Factors influencing productivity:</strong></p>
+<ul>
+<li><strong>Technology and capital equipment</strong> &mdash; modern, well-maintained machinery.</li>
+<li><strong>Skills and training</strong> of the workforce.</li>
+<li><strong>Motivation</strong> &mdash; motivated workers work harder and waste less (link to 1.4.4).</li>
+<li><strong>Management and organisation</strong> &mdash; efficient processes, layout and scheduling; lean techniques.</li>
+<li><strong>Quality of inputs</strong> &mdash; poor materials cause rework.</li>
+<li><strong>Working conditions</strong> and the level of investment.</li>
+</ul>
+
+<p><strong>Link between productivity and competitiveness:</strong> higher productivity &rarr; lower unit labour costs &rarr; the firm can cut prices to gain market share or keep prices and earn higher margins &rarr; more profit to reinvest. Productivity only improves competitiveness if it is not offset by higher wages or lower quality. The UK's weak productivity growth since 2008 compared with the US is often cited as a reason for its sluggish wage growth.</p>
+
+<h3>c) Efficiency</h3>
+<p>Efficiency means producing at the <strong>minimum average cost</strong>. Productivity is one contributor, but efficiency also depends on the price of inputs, waste, and capacity utilisation.</p>
+<p><strong>Factors influencing efficiency:</strong> economies of scale; productivity; capacity utilisation; waste and stock levels; the cost of inputs (materials, energy, wages); technology; management and processes.</p>
+
+<table>
+<tr><th></th><th>Labour-intensive production</th><th>Capital-intensive production</th></tr>
+<tr><td><strong>Features</strong></td><td>Relies mainly on people</td><td>Relies mainly on machinery and automation</td></tr>
+<tr><td><strong>Advantages</strong></td><td>Flexible; lower set-up costs; suited to personalised products and services; human judgement</td><td>Low unit costs at high volume; consistent quality; can run 24/7; fewer labour issues</td></tr>
+<tr><td><strong>Disadvantages</strong></td><td>Higher unit costs at volume; wage rises (e.g. National Living Wage increases) hit costs; inconsistency</td><td>High initial investment and maintenance; inflexible; breakdowns halt output; high fixed costs raise the break-even point</td></tr>
+<tr><td><strong>Examples</strong></td><td>Hairdressing, care homes, handmade goods, fruit picking</td><td>Car manufacturing, Ocado's robotic warehouses, chemical plants</td></tr>
+</table>
+
+<h2>2.4.2 Capacity utilisation</h2>
+
+<h3>a) Calculation</h3>
+<p><code>Capacity utilisation (%) = Current output &divide; Maximum possible output &times; 100</code></p>
+<p><strong>Worked example.</strong> A hotel has 120 rooms; on average 90 are occupied each night. Capacity utilisation = 90 &divide; 120 &times; 100 = <strong>75%</strong>.</p>
+<p><strong>Effect on unit costs:</strong> a factory has monthly fixed costs of &pound;60,000 and capacity of 12,000 units. At 9,000 units (75%), fixed cost per unit = &pound;6.67; at 11,400 units (95%), it falls to &pound;5.26. Higher utilisation spreads fixed costs over more units, lowering average cost.</p>
+
+<h3>b) Implications of under- and over-utilisation</h3>
+<table>
+<tr><th>Under-utilisation (low %)</th><th>Over-utilisation (near or at 100%)</th></tr>
+<tr><td>High fixed cost per unit, so lower margins or uncompetitive prices</td><td>Low unit costs</td></tr>
+<tr><td>Idle staff and machinery; low morale and job-security fears</td><td>Staff under pressure; overtime costs; stress and absenteeism</td></tr>
+<tr><td>Poor image (an empty restaurant deters customers)</td><td>No time for maintenance; breakdowns; quality may slip</td></tr>
+<tr><td>Spare capacity allows the firm to take on sudden orders</td><td>Cannot accept new orders; customers turned away to rivals</td></tr>
+</table>
+<p>Most businesses aim for around 85&ndash;90%: high enough for low unit costs, with some flexibility to meet unexpected demand and carry out maintenance.</p>
+
+<h3>c) Ways of improving capacity utilisation</h3>
+<ul>
+<li><strong>Increase output / sales</strong> (raise the numerator): more marketing, price cuts in quiet periods (off-peak pricing, happy hours), new markets, subcontracting work <em>in</em> from other firms, producing own-label goods for retailers.</li>
+<li><strong>Reduce capacity</strong> (lower the denominator): rationalisation &mdash; closing a factory or branch, selling machinery, reducing shifts, leasing out space. Reduces costs but is hard to reverse if demand recovers, and may mean redundancies.</li>
+<li>If over-utilised: <strong>subcontract</strong> work out, increase capacity through investment, or raise prices to ration demand.</li>
+</ul>
+
+<h2>2.4.3 Stock control</h2>
+
+<h3>a) Interpretation of a stock control diagram</h3>
+
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Stock control diagram</text>
+  <line x1="80" y1="40" x2="80" y2="290" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="80" y1="290" x2="660" y2="290" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="18" y="46" font-size="11" fill="#1a1a2e">Stock (units)</text>
+  <text x="600" y="325" font-size="11" fill="#1a1a2e">Time (weeks)</text>
+  <text x="74" y="94" text-anchor="end" font-size="10" fill="#374151">500</text>
+  <text x="74" y="214" text-anchor="end" font-size="10" fill="#374151">200</text>
+  <text x="74" y="254" text-anchor="end" font-size="10" fill="#374151">100</text>
+  <text x="74" y="294" text-anchor="end" font-size="10" fill="#374151">0</text>
+  <text x="267" y="306" text-anchor="middle" font-size="10" fill="#374151">4</text>
+  <text x="453" y="306" text-anchor="middle" font-size="10" fill="#374151">8</text>
+  <text x="640" y="306" text-anchor="middle" font-size="10" fill="#374151">12</text>
+  <line x1="80" y1="90" x2="640" y2="90" stroke="#7c3aed" stroke-dasharray="6,4"/>
+  <text x="645" y="94" font-size="10" fill="#7c3aed">Maximum</text>
+  <line x1="80" y1="210" x2="640" y2="210" stroke="#dc2626" stroke-dasharray="6,4"/>
+  <text x="645" y="214" font-size="10" fill="#dc2626">Re-order level</text>
+  <rect x="80" y="250" width="560" height="40" fill="#fee2e2" opacity="0.6"/>
+  <line x1="80" y1="250" x2="640" y2="250" stroke="#b45309" stroke-dasharray="6,4"/>
+  <text x="645" y="262" font-size="10" fill="#b45309">Buffer stock</text>
+  <polyline points="80,90 267,250 267,90 453,250 453,90 640,250" fill="none" stroke="#2563eb" stroke-width="3"/>
+  <line x1="220" y1="210" x2="220" y2="300" stroke="#374151" stroke-dasharray="2,2"/>
+  <line x1="220" y1="275" x2="267" y2="275" stroke="#374151" stroke-width="1.5"/>
+  <text x="243" y="270" text-anchor="middle" font-size="9" fill="#374151">Lead time</text>
+  <text x="178" y="203" text-anchor="middle" font-size="9" fill="#374151">Order placed</text>
+  <line x1="280" y1="250" x2="280" y2="90" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="286" y="170" font-size="9" fill="#16a34a">Re-order quantity (400)</text>
+</svg>
+
+<p>Reading the diagram (example figures):</p>
+<ul>
+<li><strong>Maximum stock level</strong> &mdash; 500 units: the most the business wants to hold (limited by storage space and cost).</li>
+<li><strong>Buffer (minimum) stock</strong> &mdash; 100 units: stock should not fall below this.</li>
+<li><strong>Usage rate</strong> &mdash; the slope of the line: stock falls from 500 to 100 in 4 weeks, so usage = 400 &divide; 4 = <strong>100 units per week</strong>.</li>
+<li><strong>Lead time</strong> &mdash; the time between placing an order and its delivery: 1 week.</li>
+<li><strong>Re-order level</strong> &mdash; the stock level at which a new order is placed: buffer + (usage &times; lead time) = 100 + (100 &times; 1) = <strong>200 units</strong>.</li>
+<li><strong>Re-order quantity</strong> &mdash; the amount ordered each time: maximum &minus; buffer = 500 &minus; 100 = <strong>400 units</strong>.</li>
+</ul>
+<p>The diagram is a simplification: real usage is not constant, and deliveries can be late. If a delivery is late or demand surges, stock falls into the buffer; if the buffer is exhausted, there is a <strong>stock-out</strong>.</p>
+
+<h3>b) Buffer stocks</h3>
+<p>Buffer stock protects against unexpected increases in demand and late or faulty deliveries. Its size depends on the reliability of suppliers, the variability of demand, the cost of a stock-out (lost sales, a halted production line) and the cost of holding stock. Many firms raised buffer stocks after the supply-chain disruption of 2021&ndash;22 (a shift from &ldquo;just in time&rdquo; to &ldquo;just in case&rdquo;).</p>
+
+<h3>c) Implications of poor stock control</h3>
+<table>
+<tr><th>Too much stock</th><th>Too little stock</th></tr>
+<tr><td>High storage, insurance and security costs</td><td>Stock-outs: lost sales and customers going to rivals</td></tr>
+<tr><td>Cash tied up in stock (poor liquidity &mdash; link to 2.3.2)</td><td>Production halted; idle workers and machines</td></tr>
+<tr><td>Risk of waste, damage, theft and obsolescence (perishables, fashion, technology)</td><td>Damage to reputation; missed delivery deadlines and penalty clauses</td></tr>
+<tr><td>Opportunity cost of the money tied up</td><td>Emergency orders at higher prices; lost bulk-buying discounts</td></tr>
+</table>
+
+<h3>d) Just in time (JIT) management of stock</h3>
+<p>Under JIT, materials and components are delivered exactly when they are needed for production, and goods are produced only when ordered (&ldquo;pull&rdquo; production), so little or no buffer stock is held. Pioneered by Toyota.</p>
+<table>
+<tr><th>Advantages</th><th>Disadvantages</th></tr>
+<tr><td>Lower storage costs; less space needed</td><td>Very dependent on reliable suppliers; any disruption halts production</td></tr>
+<tr><td>Improves liquidity &mdash; cash not tied up in stock</td><td>Lose bulk-buying discounts; higher ordering and delivery costs</td></tr>
+<tr><td>Less waste from damaged or obsolete stock</td><td>Cannot meet sudden surges in demand</td></tr>
+<tr><td>Forces quality: defective parts cannot be tolerated</td><td>Requires sophisticated IT and close supplier relationships</td></tr>
+</table>
+<p><strong>Example of the risk:</strong> in 2018 KFC closed most of its UK restaurants for several days after switching delivery contractor to DHL left branches without chicken. The global semiconductor shortage of 2021 halted car production lines that ran on JIT.</p>
+
+<h3>e) Waste minimisation</h3>
+<p>Lean thinking identifies several forms of waste: overproduction, waiting time, unnecessary transport, over-processing, excess inventory, unnecessary movement, and defects. Minimising waste reduces costs and environmental impact. Techniques include JIT, Kaizen, better layout, preventive maintenance, recycling offcuts, and reducing packaging.</p>
+
+<h3>f) Competitive advantage from lean production</h3>
+<ul>
+<li><strong>Lower unit costs</strong> &mdash; less stock, less waste, fewer defects: the firm can undercut rivals or earn higher margins.</li>
+<li><strong>Higher quality</strong> &mdash; built-in quality and continuous improvement.</li>
+<li><strong>Faster response and shorter lead times</strong> &mdash; quicker new product development and delivery.</li>
+<li><strong>Flexibility</strong> &mdash; able to produce a wider variety in smaller batches.</li>
+<li><strong>Motivated workforce</strong> &mdash; empowered teams contribute ideas.</li>
+</ul>
+<p>Evaluation: lean production requires cultural change, training and strong supplier relationships, and makes the firm more vulnerable to disruption. It suits stable demand and reliable supply chains better than volatile ones.</p>
+
+<h2>2.4.4 Quality management</h2>
+
+<h3>a) Quality: control, assurance, circles, TQM</h3>
+<table>
+<tr><th>Approach</th><th>How it works</th><th>Advantages</th><th>Disadvantages</th></tr>
+<tr><td><strong>Quality control</strong></td><td>Inspection of products at the end of (or during) production by inspectors, to detect and remove faults</td><td>Faulty goods are stopped before reaching customers; simple</td><td>Detects rather than prevents faults; waste and rework are costly; workers may not take responsibility for quality</td></tr>
+<tr><td><strong>Quality assurance</strong></td><td>Setting and meeting quality standards at every stage of production to prevent faults; often certified (e.g. ISO 9001)</td><td>Prevents faults; less waste; accreditation reassures customers</td><td>Costly to set up; bureaucratic paperwork; relies on staff following procedures</td></tr>
+<tr><td><strong>Quality circles</strong></td><td>Small groups of workers meet regularly to identify and solve quality problems</td><td>Uses workers' knowledge; motivating (Mayo, Herzberg); practical solutions</td><td>Time away from production; ideas may be ignored by managers, causing frustration</td></tr>
+<tr><td><strong>Total Quality Management (TQM)</strong></td><td>A culture in which every employee is responsible for quality; everyone has an &ldquo;internal customer&rdquo;; zero defects as the goal</td><td>Quality becomes part of the culture; fewer defects; stronger reputation</td><td>Requires long-term commitment, training and cultural change; benefits take time; may become a slogan</td></tr>
+</table>
+
+<h3>b) Continuous improvement (Kaizen)</h3>
+<p>Kaizen (Japanese for &ldquo;change for the better&rdquo;) is a philosophy of making frequent small improvements to products and processes, driven by ideas from all employees. Toyota receives large numbers of suggestions from employees, most of them small. <strong>Advantages:</strong> low-cost, low-risk incremental gains that accumulate; engages staff. <strong>Limitations:</strong> it may not deliver the radical change needed when markets shift sharply; improvements eventually diminish; requires a supportive culture.</p>
+
+<h3>c) Competitive advantage from quality management</h3>
+<ul>
+<li>Stronger brand reputation and customer loyalty; ability to charge premium prices (lower PED).</li>
+<li>Lower costs through fewer defects, returns, complaints and warranty claims.</li>
+<li>Better reviews online, which drive sales.</li>
+<li>Easier to win B2B contracts that require accreditation.</li>
+</ul>
+<p>Poor quality is costly: product recalls (such as the tens of millions of vehicles recalled worldwide over Takata airbags) and reputational damage can far exceed the savings of cutting corners.</p>
+
+<div class="exam-tip">
+In operations questions, always connect to <strong>unit costs, quality and competitiveness</strong>, and to the business in the extract. For instance: raising capacity utilisation from 70% to 90% spreads fixed costs, lowering unit costs; but a small bakery with seasonal demand may need spare capacity at Christmas. The evaluation lies in &ldquo;what kind of business is this, and what do its customers value?&rdquo;
+</div>
+
+<h2>Common mistakes</h2>
+<ul>
+<li>Confusing productivity (output per input) with production (total output) &mdash; output can rise while productivity falls if many workers are added.</li>
+<li>Confusing productivity with efficiency.</li>
+<li>Assuming 100% capacity utilisation is ideal.</li>
+<li>Reading the re-order level as the point at which stock arrives &mdash; it is when the order is <em>placed</em>.</li>
+<li>Describing quality control and quality assurance as the same thing: control inspects (detects); assurance prevents.</li>
+<li>Recommending JIT for any business without considering supplier reliability.</li>
+</ul>
+
+<h2>Quick recall</h2>
+<ul>
+<li>Production methods: job, batch, flow, cell</li>
+<li>Labour productivity = output &divide; workers; higher productivity &rarr; lower unit labour cost &rarr; competitiveness</li>
+<li>Efficiency = minimum average cost; labour- versus capital-intensive</li>
+<li>Capacity utilisation = current output &divide; maximum output &times; 100; aim around 85&ndash;90%</li>
+<li>Improve CU: raise sales or reduce capacity (rationalise); over-utilised: subcontract, invest</li>
+<li>Stock diagram: maximum, buffer, re-order level, re-order quantity, lead time, usage rate</li>
+<li>JIT: lower costs and better liquidity versus supply-chain risk</li>
+<li>Lean production minimises waste; Kaizen = continuous small improvements</li>
+<li>Quality control (inspect) &rarr; assurance (prevent) &rarr; circles (worker groups) &rarr; TQM (everyone's responsibility)</li>
+</ul>
+
+</div>
+</body>
+</html>

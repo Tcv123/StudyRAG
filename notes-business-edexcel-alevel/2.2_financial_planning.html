@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 2.2 — Financial Planning</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .thinker { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .thinker { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>2.2 Financial Planning</h1>
+<p class="spec-ref">Business &mdash; Edexcel (9BS0) &mdash; Theme 2: Managing business activities</p>
+
+<p>Financial planning is about looking ahead: forecasting sales, understanding how costs behave as output changes, calculating how much must be sold to break even, and setting budgets to control spending. It is the most calculation-heavy topic in Theme 2 and regularly supplies 4-mark &ldquo;calculate&rdquo; questions on Paper 2 (revenue, costs, contribution, break-even, margin of safety, variances). The evaluation skill is to recognise that every one of these tools rests on <strong>forecasts and assumptions</strong> &mdash; a break-even point is only as reliable as the price and cost figures that go into it.</p>
+
+<div class="definition">
+<strong>Sales forecast</strong> &mdash; a prediction of future sales volume or value over a given period.<br>
+<strong>Sales volume</strong> &mdash; the number of units sold.<br>
+<strong>Sales revenue</strong> &mdash; the value of sales: selling price &times; quantity sold.<br>
+<strong>Fixed costs</strong> &mdash; costs that do not change with the level of output in the short run (rent, salaries, insurance).<br>
+<strong>Variable costs</strong> &mdash; costs that change in direct proportion to output (raw materials, packaging, piece-rate wages).<br>
+<strong>Contribution</strong> &mdash; the amount each unit sold contributes towards fixed costs and then profit: selling price &minus; variable cost per unit.<br>
+<strong>Break-even point</strong> &mdash; the level of output at which total revenue equals total costs, so the business makes neither profit nor loss.<br>
+<strong>Margin of safety</strong> &mdash; the amount by which actual (or forecast) sales exceed break-even sales.<br>
+<strong>Budget</strong> &mdash; a financial plan for the future, setting targets for revenue and/or expenditure over a period.<br>
+<strong>Variance</strong> &mdash; the difference between a budgeted figure and the actual figure.
+</div>
+
+<h2>2.2.1 Sales forecasting</h2>
+
+<h3>a) Purpose of sales forecasts</h3>
+<ul>
+<li><strong>Production and operations planning</strong> &mdash; how much to produce, stock to hold and capacity required.</li>
+<li><strong>Staffing (workforce planning)</strong> &mdash; how many staff to recruit, when to take on seasonal workers.</li>
+<li><strong>Financial planning</strong> &mdash; the basis of cash-flow forecasts, budgets and break-even analysis; supports applications for finance.</li>
+<li><strong>Marketing</strong> &mdash; setting targets and planning promotions.</li>
+</ul>
+<p>Methods range from extrapolating past trends (moving averages, covered quantitatively in 3.3) to market research and expert opinion.</p>
+
+<h3>b) Factors affecting sales forecasts</h3>
+<ul>
+<li><strong>Consumer trends</strong> &mdash; changes in tastes and fashions (e.g. the shift to plant-based foods, the rise of weight-loss drugs affecting snack sales), which may not continue past patterns.</li>
+<li><strong>Economic variables</strong> &mdash; incomes, inflation, interest rates, unemployment, exchange rates, the business cycle. A product with a high YED will be especially sensitive (link to 1.2.5 and 2.5.1).</li>
+<li><strong>Actions of competitors</strong> &mdash; new entrants, price cuts, new products or promotional campaigns can take sales away unexpectedly.</li>
+</ul>
+
+<h3>c) Difficulties of sales forecasting</h3>
+<ul>
+<li>The future is uncertain; past data may not predict the future, especially in dynamic markets.</li>
+<li>New businesses and new products have no past data to use.</li>
+<li>External shocks (a pandemic, a heatwave, a supply crisis) cannot be predicted.</li>
+<li>Research used for forecasting may be biased or based on small samples.</li>
+<li>Over-optimism, particularly from entrepreneurs seeking finance.</li>
+</ul>
+<p><strong>Consequences of an inaccurate forecast:</strong> overestimates lead to excess stock, wasted production, unnecessary staff and cash-flow problems; underestimates lead to stock-outs, lost sales and disappointed customers.</p>
+
+<h2>2.2.2 Sales, revenue and costs</h2>
+
+<h3>a) Sales volume and sales revenue</h3>
+<p><code>Sales revenue = Selling price &times; Quantity sold</code> &nbsp; &nbsp; <code>Sales volume = Sales revenue &divide; Selling price</code></p>
+<p><strong>Worked example:</strong> a bakery sells 4,800 loaves a month at &pound;2.50. Revenue = 4,800 &times; 2.50 = <strong>&pound;12,000</strong>. If monthly revenue from cakes is &pound;6,300 at &pound;3.50 each, volume = 6,300 &divide; 3.50 = <strong>1,800 cakes</strong>.</p>
+
+<h3>b) Fixed and variable costs</h3>
+<p><code>Total variable costs = Variable cost per unit &times; Output</code></p>
+<p><code>Total costs = Fixed costs + Total variable costs</code></p>
+<p><code>Profit = Total revenue &minus; Total costs</code></p>
+<p><strong>Worked example:</strong> the bakery's fixed costs are &pound;5,500 a month; each loaf costs &pound;0.90 in variable costs. At 4,800 loaves: TVC = 4,800 &times; 0.90 = &pound;4,320; TC = 5,500 + 4,320 = &pound;9,820; profit = 12,000 &minus; 9,820 = <strong>&pound;2,180</strong>.</p>
+<p>Some costs are <strong>semi-variable</strong> (e.g. a phone bill with a fixed line rental plus call charges). Fixed costs are fixed only in the short run and only within a range of output: expanding beyond current capacity requires new premises, creating a step in fixed costs. <strong>Average (unit) cost</strong> = total cost &divide; output = 9,820 &divide; 4,800 = &pound;2.05 per loaf; it falls as output rises because fixed costs are spread over more units.</p>
+
+<h2>2.2.3 Break-even</h2>
+
+<h3>a) Contribution</h3>
+<p><code>Contribution per unit = Selling price &minus; Variable cost per unit</code></p>
+<p><code>Total contribution = Contribution per unit &times; Units sold</code> (or total revenue &minus; total variable costs)</p>
+<p><code>Profit = Total contribution &minus; Fixed costs</code></p>
+
+<h3>b) and c) Break-even point</h3>
+<p>At break-even: <code>Total fixed costs + Total variable costs = Total revenue</code></p>
+<p>Using contribution: <code>Break-even output = Fixed costs &divide; Contribution per unit</code></p>
+
+<p><strong>Worked example.</strong> A company makes phone cases. Selling price &pound;25; variable cost &pound;10 per unit; fixed costs &pound;30,000 per month; forecast sales 2,600 units per month.</p>
+<ul>
+<li>Contribution per unit = 25 &minus; 10 = <strong>&pound;15</strong></li>
+<li>Break-even = 30,000 &divide; 15 = <strong>2,000 units</strong> (break-even revenue = 2,000 &times; &pound;25 = &pound;50,000)</li>
+<li>Check: at 2,000 units, TR = &pound;50,000; TC = 30,000 + (2,000 &times; 10) = &pound;50,000 &#10003;</li>
+<li>Profit at 2,600 units = (2,600 &times; 15) &minus; 30,000 = 39,000 &minus; 30,000 = <strong>&pound;9,000</strong></li>
+</ul>
+
+<p><strong>What-if calculations:</strong></p>
+<ul>
+<li><strong>Price rise to &pound;28:</strong> contribution = &pound;18; break-even = 30,000 &divide; 18 = 1,666.7, so <strong>1,667 units</strong> (always round <em>up</em> &mdash; 1,666 units would still make a small loss).</li>
+<li><strong>Variable cost rises to &pound;12:</strong> contribution = &pound;13; break-even = 30,000 &divide; 13 = 2,307.7, so <strong>2,308 units</strong>.</li>
+<li><strong>Target profit of &pound;12,000:</strong> required output = (fixed costs + target profit) &divide; contribution = (30,000 + 12,000) &divide; 15 = <strong>2,800 units</strong>.</li>
+</ul>
+
+<h3>d) Margin of safety</h3>
+<p><code>Margin of safety = Actual (or forecast) sales &minus; Break-even sales</code></p>
+<p>In the example: 2,600 &minus; 2,000 = <strong>600 units</strong> (or &pound;15,000 of revenue). As a percentage of sales: 600 &divide; 2,600 &times; 100 = <strong>23.1%</strong> &mdash; sales could fall by 23.1% before the business made a loss. Note that profit = margin of safety &times; contribution per unit (600 &times; &pound;15 = &pound;9,000).</p>
+
+<h3>e) Interpretation of break-even charts</h3>
+
+<svg viewBox="0 0 720 340" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:720px;margin:20px auto;display:block;">
+  <text x="360" y="22" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">Break-even chart: phone cases (per month)</text>
+  <line x1="80" y1="40" x2="80" y2="290" stroke="#1a1a2e" stroke-width="2"/>
+  <line x1="80" y1="290" x2="660" y2="290" stroke="#1a1a2e" stroke-width="2"/>
+  <text x="20" y="46" font-size="11" fill="#1a1a2e">Costs/</text>
+  <text x="20" y="60" font-size="11" fill="#1a1a2e">revenue &#163;</text>
+  <text x="560" y="325" font-size="11" fill="#1a1a2e">Output (units)</text>
+  <text x="74" y="306" text-anchor="middle" font-size="10" fill="#374151">0</text>
+  <text x="220" y="306" text-anchor="middle" font-size="10" fill="#374151">1,000</text>
+  <text x="360" y="306" text-anchor="middle" font-size="10" fill="#374151">2,000</text>
+  <text x="500" y="306" text-anchor="middle" font-size="10" fill="#374151">3,000</text>
+  <text x="640" y="306" text-anchor="middle" font-size="10" fill="#374151">4,000</text>
+  <text x="74" y="222" text-anchor="end" font-size="10" fill="#374151">30k</text>
+  <text x="74" y="174" text-anchor="end" font-size="10" fill="#374151">50k</text>
+  <text x="74" y="54" text-anchor="end" font-size="10" fill="#374151">100k</text>
+  <line x1="80" y1="218" x2="640" y2="218" stroke="#6b7280" stroke-width="2"/>
+  <text x="600" y="232" font-size="11" fill="#6b7280">Fixed costs</text>
+  <line x1="80" y1="218" x2="640" y2="122" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="585" y="148" font-size="11" font-weight="bold" fill="#dc2626">Total costs</text>
+  <line x1="80" y1="290" x2="640" y2="50" stroke="#2563eb" stroke-width="2.5"/>
+  <text x="520" y="84" font-size="11" font-weight="bold" fill="#2563eb">Total revenue</text>
+  <circle cx="360" cy="170" r="5" fill="#1a1a2e"/>
+  <line x1="360" y1="170" x2="360" y2="290" stroke="#1a1a2e" stroke-dasharray="3,3"/>
+  <text x="300" y="160" font-size="11" font-weight="bold" fill="#1a1a2e">Break-even</text>
+  <line x1="444" y1="140" x2="444" y2="290" stroke="#16a34a" stroke-dasharray="3,3"/>
+  <line x1="360" y1="275" x2="444" y2="275" stroke="#16a34a" stroke-width="2"/>
+  <text x="402" y="268" text-anchor="middle" font-size="10" fill="#16a34a">Margin of safety</text>
+  <text x="444" y="286" text-anchor="middle" font-size="10" fill="#16a34a">Sales 2,600</text>
+  <text x="150" y="245" font-size="11" fill="#dc2626">Loss</text>
+  <text x="560" y="110" font-size="11" fill="#16a34a">Profit</text>
+</svg>
+
+<p>Reading the chart: the <strong>fixed-cost line</strong> is horizontal; the <strong>total-cost line</strong> starts at the fixed-cost level (at zero output, total cost = fixed cost) and rises with variable costs; the <strong>total-revenue line</strong> starts at the origin. Where TR crosses TC is the break-even point. To the left the vertical gap between TC and TR is the <strong>loss</strong>; to the right it is the <strong>profit</strong>. The horizontal distance from break-even to actual sales is the <strong>margin of safety</strong>.</p>
+<p><strong>Effects of changes on the chart:</strong> a price rise makes the TR line steeper, so break-even falls; a rise in variable cost makes the TC line steeper, so break-even rises; a rise in fixed costs shifts the FC and TC lines up in parallel, so break-even rises.</p>
+
+<h3>f) Limitations of break-even analysis</h3>
+<ul>
+<li>Assumes all output is sold and there is no stock build-up.</li>
+<li>Assumes a single selling price, whereas firms discount and sell at different prices to different customers.</li>
+<li>Assumes variable costs per unit are constant; in reality bulk-buying discounts reduce them and overtime raises them.</li>
+<li>Assumes fixed costs are fixed at all output levels, ignoring step changes.</li>
+<li>Difficult to use for firms selling many products, where fixed costs must be allocated between products.</li>
+<li>Only as good as the data: forecasts of sales, prices and costs may be wrong.</li>
+<li>A static model: it shows a single point in time in a dynamic market.</li>
+</ul>
+<p><strong>Value despite limitations:</strong> it is quick and simple, useful for &ldquo;what if&rdquo; scenarios, an essential part of a business plan, and it shows how risky a venture is through the margin of safety.</p>
+
+<div class="exam-tip">
+Round break-even output <strong>up</strong> to the next whole unit. Always state units (&ldquo;2,000 phone cases per month&rdquo;), and for a margin-of-safety question give the figure in units and, if useful, as a percentage. In evaluation, a small margin of safety is the key sign of vulnerability &mdash; link it to the context (e.g. a new competitor opening nearby).
+</div>
+
+<h2>2.2.4 Budgets</h2>
+
+<h3>a) Purpose of budgets</h3>
+<ul>
+<li><strong>Planning</strong> &mdash; forces managers to think ahead about revenue and spending.</li>
+<li><strong>Control</strong> &mdash; actual performance can be compared with the budget and corrective action taken.</li>
+<li><strong>Coordination</strong> &mdash; ensures departments work towards the same objectives and do not overspend in total.</li>
+<li><strong>Motivation</strong> &mdash; budget holders have targets and responsibility (delegated budgets &mdash; links to Herzberg).</li>
+<li><strong>Allocation of resources</strong> &mdash; directs money to priorities.</li>
+<li><strong>Accountability</strong> &mdash; managers are responsible for their budgets.</li>
+</ul>
+<p>Types include <strong>income (revenue) budgets</strong>, <strong>expenditure (cost) budgets</strong> and <strong>profit budgets</strong> (income minus expenditure).</p>
+
+<h3>b) Types of budget</h3>
+<table>
+<tr><th></th><th>Historical figures (incremental)</th><th>Zero-based</th></tr>
+<tr><td><strong>Method</strong></td><td>Based on last year's budget, adjusted (e.g. +3% for inflation)</td><td>Every budget starts from zero; each item of spending must be justified afresh</td></tr>
+<tr><td><strong>Advantages</strong></td><td>Quick, simple, cheap; based on real past experience; stable</td><td>Eliminates wasteful spending carried over from past years; resources allocated to current priorities; managers must think about value for money</td></tr>
+<tr><td><strong>Disadvantages</strong></td><td>Builds in past inefficiencies; ignores changes in the market; encourages &ldquo;spend it or lose it&rdquo; behaviour</td><td>Time-consuming and costly; requires skilled managers; may cause conflict between departments; hard for activities whose benefits are hard to measure (e.g. training)</td></tr>
+</table>
+
+<h3>c) Variance analysis</h3>
+<p><code>Variance = Actual figure &minus; Budgeted figure</code></p>
+<ul>
+<li><strong>Favourable (F)</strong> &mdash; the variance increases profit: revenue higher than budgeted, or costs lower than budgeted.</li>
+<li><strong>Adverse (A)</strong> &mdash; the variance reduces profit: revenue lower than budgeted, or costs higher than budgeted.</li>
+</ul>
+
+<table>
+<tr><th>Item (&pound;, one month)</th><th>Budget</th><th>Actual</th><th>Variance</th></tr>
+<tr><td>Sales revenue</td><td>50,000</td><td>46,000</td><td>4,000 A</td></tr>
+<tr><td>Materials</td><td>20,000</td><td>18,500</td><td>1,500 F</td></tr>
+<tr><td>Wages</td><td>12,000</td><td>12,800</td><td>800 A</td></tr>
+<tr><td>Marketing</td><td>3,000</td><td>3,000</td><td>0</td></tr>
+<tr><td><strong>Total costs</strong></td><td>35,000</td><td>34,300</td><td>700 F</td></tr>
+<tr><td><strong>Profit</strong></td><td>15,000</td><td>11,700</td><td><strong>3,300 A</strong></td></tr>
+</table>
+<p><strong>Interpreting it:</strong> the profit shortfall comes mainly from lower sales. The favourable materials variance is not necessarily good news &mdash; it may simply reflect lower output because sales were lower (or cheaper, lower-quality materials). The adverse wages variance despite lower sales needs investigating (overtime? a pay rise?). A variance tells managers <em>where</em> to look, not <em>why</em> it happened.</p>
+
+<p>Variances can also be expressed as a percentage of budget: revenue 4,000 &divide; 50,000 &times; 100 = 8% adverse.</p>
+
+<h3>d) Difficulties of budgeting</h3>
+<ul>
+<li>Budgets are based on forecasts that may be inaccurate, especially in dynamic markets or for new businesses.</li>
+<li>External changes (inflation, as in 2022&ndash;23 when energy and material costs rose sharply) can make budgets unrealistic quickly.</li>
+<li>Inflexible budgets may prevent managers responding to opportunities.</li>
+<li>Budget setting takes time; imposed budgets demotivate, while negotiated budgets may be padded (&ldquo;budgetary slack&rdquo;).</li>
+<li>Departments may compete for resources, and managers may spend unused budget at year-end to avoid a cut next year.</li>
+<li>Focus on hitting short-term budget targets can damage long-term investment.</li>
+</ul>
+
+<h2>Common mistakes</h2>
+<ul>
+<li>Calculating break-even as fixed costs &divide; selling price (it is &divide; contribution).</li>
+<li>Rounding break-even down instead of up.</li>
+<li>Labelling a lower-than-budgeted cost as adverse &mdash; lower costs are favourable.</li>
+<li>Assuming a favourable variance is always good news.</li>
+<li>Confusing contribution with profit: contribution must first cover fixed costs.</li>
+<li>Drawing the TC line from the origin rather than from the fixed-cost level.</li>
+</ul>
+
+<h2>Quick recall</h2>
+<ul>
+<li>Sales forecasts: plan production, staff, finance; affected by consumer trends, economic variables, competitors; hard to get right</li>
+<li>Revenue = price &times; quantity; TC = FC + (VC per unit &times; output)</li>
+<li>Contribution per unit = price &minus; variable cost per unit</li>
+<li>Break-even = fixed costs &divide; contribution per unit (round up)</li>
+<li>Margin of safety = actual sales &minus; break-even sales; profit = MoS &times; contribution per unit</li>
+<li>Required output for a target profit = (FC + target profit) &divide; contribution</li>
+<li>Break-even limitations: single price, constant VC, all output sold, fixed FC, forecasts</li>
+<li>Budgets: plan, control, coordinate, motivate; historical versus zero-based</li>
+<li>Variance = actual &minus; budget; favourable raises profit, adverse lowers it</li>
+</ul>
+
+</div>
+</body>
+</html>

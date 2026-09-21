@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 1.1 — Meeting Customer Needs</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .thinker { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .thinker { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.1 Meeting Customer Needs</h1>
+<p class="spec-ref">Business &mdash; Edexcel (9BS0) &mdash; Theme 1: Marketing and people</p>
+
+<p>This topic opens Theme 1 and is examined on Paper 1 and, synoptically, on Paper 3. It is about how a business finds out what customers want and then places itself in a market so that customers choose it over rivals. Almost every question in this area turns on one idea: a business only succeeds if it understands <strong>its particular market</strong> &mdash; its size, its growth, its competitors and its customers &mdash; better than its rivals do. Generic answers about &ldquo;doing market research&rdquo; score poorly; answers that use the figures and the firm in the extract score well.</p>
+
+<div class="definition">
+<strong>Market</strong> &mdash; any place or mechanism where buyers and sellers come together to exchange goods and services.<br>
+<strong>Mass market</strong> &mdash; a large market selling standardised products to a wide range of customers, e.g. soft drinks, supermarket groceries.<br>
+<strong>Niche market</strong> &mdash; a small, clearly defined segment of a larger market with specific needs, e.g. vegan protein bars, left-handed golf clubs.<br>
+<strong>Market size</strong> &mdash; the total sales of all firms in a market, measured by value (&pound;) or volume (units).<br>
+<strong>Market share</strong> &mdash; one firm's (or brand's) sales as a percentage of total market sales.<br>
+<strong>Brand</strong> &mdash; a name, symbol or design that identifies a product and distinguishes it from rivals.<br>
+<strong>Dynamic market</strong> &mdash; a market that is constantly changing in size, customer tastes, technology and competition.<br>
+<strong>Risk</strong> &mdash; a future outcome whose likelihood can be estimated or measured.<br>
+<strong>Uncertainty</strong> &mdash; a future outcome whose likelihood cannot be measured because it is unpredictable.
+</div>
+
+<h2>1.1.1 The market</h2>
+
+<h3>a) Mass markets and niche markets</h3>
+
+<table>
+<tr><th></th><th>Mass market</th><th>Niche market</th></tr>
+<tr><td><strong>Size</strong></td><td>Large; high sales volume</td><td>Small; low sales volume</td></tr>
+<tr><td><strong>Product</strong></td><td>Standardised, appealing to the average customer</td><td>Specialised, meeting a specific need</td></tr>
+<tr><td><strong>Price and margin</strong></td><td>Low prices, low unit margins; profit comes from volume</td><td>Premium prices, high unit margins</td></tr>
+<tr><td><strong>Costs</strong></td><td>Economies of scale reduce unit costs</td><td>Few scale economies; higher unit costs</td></tr>
+<tr><td><strong>Competition</strong></td><td>Intense, often between a few large firms</td><td>Fewer direct rivals, at least initially</td></tr>
+<tr><td><strong>Promotion</strong></td><td>National TV, digital and outdoor campaigns</td><td>Targeted: specialist media, social media, influencers</td></tr>
+<tr><td><strong>Examples</strong></td><td>Coca-Cola, Tesco, Ford Puma</td><td>Morgan Motor Company, Grenade protein bars (at launch), Brompton folding bikes</td></tr>
+</table>
+
+<p><strong>Advantages of niche marketing:</strong> less competition, customer loyalty, ability to charge a premium, a route in for small firms without scale. <strong>Disadvantages:</strong> small potential sales, vulnerability to a change in the niche's tastes, and &mdash; if the niche proves profitable &mdash; the risk that a large firm enters and uses its scale to undercut the specialist. Many niches grow into mass markets (plant-based milk moved from health-food shops to every supermarket), which changes the strategy the original firm needs.</p>
+
+<h3>Market size and market share</h3>
+<p><code>Market share (%) = (Sales of one firm &divide; Total market sales) &times; 100</code></p>
+<p><code>Market growth (%) = ((Market size this year &minus; Market size last year) &divide; Market size last year) &times; 100</code></p>
+
+<p><strong>Worked example.</strong> The UK market for premium dog food was worth &pound;800m in 2024 and &pound;880m in 2025. PetPro's sales rose from &pound;96m to &pound;101.2m.</p>
+<ul>
+<li>Market growth = (880 &minus; 800) &divide; 800 &times; 100 = <strong>10%</strong></li>
+<li>PetPro share 2024 = 96 &divide; 800 &times; 100 = <strong>12%</strong></li>
+<li>PetPro share 2025 = 101.2 &divide; 880 &times; 100 = <strong>11.5%</strong></li>
+<li>PetPro's sales grew by 5.4% ((101.2 &minus; 96) &divide; 96 &times; 100) &mdash; but the market grew faster, so its <strong>share fell</strong>.</li>
+</ul>
+
+<div class="exam-tip">
+Rising sales do not mean rising market share. Whenever an extract gives both firm and market figures, calculate both growth rates and compare them &mdash; it is a quick application mark and frequently the key analytical point: the firm is growing but losing ground to competitors.
+</div>
+
+<p><strong>Why market size and share matter:</strong> a large or growing market offers more potential revenue and justifies investment; a high share gives bargaining power with suppliers and retailers, economies of scale and brand recognition, and signals market leadership to customers. Market share is also a key measure of performance relative to competitors, whereas sales figures alone can be flattered by a growing market.</p>
+
+<h3>Brands in mass and niche markets</h3>
+<p>In mass markets, brands help a firm stand out among many similar products and allow it to charge slightly more than own-label alternatives (Heinz versus supermarket own-brand beans). In niche markets, a brand signals specialism and authenticity and supports premium pricing. Brands are covered in depth in 1.3.2.</p>
+
+<h3>b) Dynamic markets</h3>
+<ul>
+<li><strong>Online retailing</strong> &mdash; internet sales now account for roughly a quarter of UK retail sales (ONS), up from under 10% in 2012, with a spike to over a third during the 2020&ndash;21 lockdowns. It lowers barriers to entry (a small business can sell nationally via Etsy, Amazon Marketplace or its own Shopify site), increases price transparency and reduces the need for expensive high-street premises. It has also contributed to the collapse of retailers slow to adapt, such as Wilko (administration 2023) and Debenhams (2021, brand bought by Boohoo).</li>
+<li><strong>How markets change</strong> &mdash; through changes in consumer tastes (demand for low- and no-alcohol drinks), technology (streaming replacing DVDs), demographics (an ageing population), incomes, legislation (the ban on disposable vapes from June 2025) and competition.</li>
+<li><strong>Innovation and market growth</strong> &mdash; new products can create or expand markets: smartphones created the app market; air fryers became one of the fastest-growing UK small-appliance categories after 2021 as energy prices rose.</li>
+<li><strong>Adapting to change</strong> &mdash; businesses must monitor their market and respond: new products, new channels (click and collect), new pricing, or repositioning. Firms that fail to adapt lose share &mdash; Blockbuster's failure to move into streaming is the standard case; HMV survived by repositioning around vinyl and pop-culture merchandise.</li>
+</ul>
+
+<h3>c) How competition affects the market</h3>
+<ul>
+<li><strong>Prices</strong> &mdash; more competitors push prices down and reduce profit margins (Aldi and Lidl's growth forced price cuts and price-matching from Tesco and Sainsbury's).</li>
+<li><strong>Quality and choice</strong> &mdash; firms improve products and service to win customers.</li>
+<li><strong>Innovation</strong> &mdash; competition forces continual new product development.</li>
+<li><strong>Costs</strong> &mdash; firms are pressured to cut costs and become more efficient to protect margins.</li>
+<li><strong>Marketing spend</strong> &mdash; more promotion is needed to maintain share.</li>
+</ul>
+<p>From the customer's point of view competition is usually beneficial; from the business's point of view it lowers profitability unless the firm can differentiate itself.</p>
+
+<h3>d) The difference between risk and uncertainty</h3>
+<table>
+<tr><th>Risk</th><th>Uncertainty</th></tr>
+<tr><td>Can be measured or estimated using data &mdash; e.g. the proportion of new products that fail, the probability of a supplier delivering late</td><td>Cannot be measured because the event is unpredictable &mdash; e.g. a pandemic, a war, a sudden change in government policy</td></tr>
+<tr><td>Can be managed: market research, test marketing, insurance, contingency plans</td><td>Can only be prepared for in general terms: flexibility, cash reserves, diversification</td></tr>
+<tr><td>Example: a café can estimate how many sales it loses on rainy days</td><td>Example: the 2022 energy price shock after Russia's invasion of Ukraine</td></tr>
+</table>
+
+<div class="exam-tip">
+Do not use &ldquo;risk&rdquo; and &ldquo;uncertainty&rdquo; interchangeably. The distinction is whether the probability can be quantified. Market research reduces <em>risk</em>; it cannot remove <em>uncertainty</em>.
+</div>
+
+<h2>1.1.2 Market research</h2>
+
+<h3>a) Product and market orientation</h3>
+<table>
+<tr><th></th><th>Product orientation</th><th>Market orientation</th></tr>
+<tr><td><strong>Starting point</strong></td><td>What the business can make well; technical excellence</td><td>What customers want, found through market research</td></tr>
+<tr><td><strong>Strengths</strong></td><td>Genuine innovation (customers cannot ask for what they cannot imagine); strong quality reputation</td><td>Lower risk of failure; products match needs; quick response to change</td></tr>
+<tr><td><strong>Weaknesses</strong></td><td>Risk of making something nobody wants; slower to respond to changing tastes</td><td>Research is costly; may produce incremental rather than breakthrough products</td></tr>
+<tr><td><strong>Examples</strong></td><td>Dyson (engineering-led), pharmaceutical research</td><td>Tesco (Clubcard data), fast fashion (Zara, Shein)</td></tr>
+</table>
+<p>In practice most firms blend the two: Apple is often called product-oriented, yet it researches heavily and designs around user experience. An <strong>asset-led</strong> approach is a middle position, building on existing strengths (brand, skills) while meeting market needs.</p>
+
+<h3>b) Primary and secondary research</h3>
+<table>
+<tr><th></th><th>Primary (field) research</th><th>Secondary (desk) research</th></tr>
+<tr><td><strong>Definition</strong></td><td>New data collected first-hand for a specific purpose</td><td>Data that already exists, collected for another purpose</td></tr>
+<tr><td><strong>Methods / sources</strong></td><td>Questionnaires, interviews, focus groups, observation, test marketing, trials</td><td>ONS data, Mintel/Kantar reports, trade press, competitors' accounts, internal sales records, government publications</td></tr>
+<tr><td><strong>Advantages</strong></td><td>Specific and up to date; confidential to the firm</td><td>Cheap or free; quick; often large samples</td></tr>
+<tr><td><strong>Disadvantages</strong></td><td>Expensive and time-consuming; risk of bias</td><td>May be out of date or not specific; available to rivals</td></tr>
+</table>
+
+<p><strong>Quantitative data</strong> is numerical and statistically analysable (e.g. 62% of respondents would pay &pound;3 or more). <strong>Qualitative data</strong> concerns opinions, feelings and motives (e.g. why customers prefer a brand), usually from focus groups or in-depth interviews. Quantitative data tells a firm <em>what</em> and <em>how many</em>; qualitative tells it <em>why</em>.</p>
+
+<p>The specification says research is used to:</p>
+<ul>
+<li><strong>Identify and anticipate customer needs and wants</strong> &mdash; spotting gaps and trends before rivals do.</li>
+<li><strong>Quantify likely demand</strong> &mdash; estimating sales volume to plan production, staffing and finance, and to support a business plan.</li>
+<li><strong>Gain insight into consumer behaviour</strong> &mdash; understanding how, when, where and why people buy, to shape the marketing mix.</li>
+</ul>
+
+<h3>c) Limitations of market research: sample size and bias</h3>
+<ul>
+<li><strong>Sample size</strong> &mdash; the larger the sample, the more representative and reliable the results (greater confidence), but the greater the cost. A survey of 30 friends tells a start-up little about a national market.</li>
+<li><strong>Sampling bias</strong> &mdash; the sample does not represent the target market (surveying only people in one town centre on a weekday morning).</li>
+<li><strong>Questionnaire bias</strong> &mdash; leading or ambiguous questions.</li>
+<li><strong>Respondent bias</strong> &mdash; people say what they think the researcher wants to hear or overstate their intention to buy.</li>
+<li><strong>Interviewer bias</strong> &mdash; the interviewer's manner influences answers.</li>
+<li><strong>Other limitations</strong> &mdash; cost and time, data quickly going out of date in dynamic markets, and difficulty researching genuinely new products.</li>
+</ul>
+
+<h3>d) Use of ICT to support market research</h3>
+<ul>
+<li><strong>Websites</strong> &mdash; analytics tools track visitors, pages viewed, time on site, basket abandonment and conversion rates; A/B testing compares two versions of a page. Cheap, real-time and based on actual behaviour rather than stated intentions.</li>
+<li><strong>Social networking</strong> &mdash; &ldquo;social listening&rdquo; monitors what customers say about a brand on TikTok, Instagram and X; polls and comments provide free, fast qualitative feedback. But users are not representative of all customers, and loud voices can distort the picture.</li>
+<li><strong>Databases</strong> &mdash; loyalty schemes (Tesco Clubcard, Nectar, Boots Advantage) record every purchase, allowing targeted offers and analysis of buying patterns. Must comply with UK GDPR and the Data Protection Act 2018; customers increasingly worry about how data is used.</li>
+</ul>
+
+<h3>e) Market segmentation</h3>
+<div class="definition"><strong>Market segmentation</strong> &mdash; dividing a market into identifiable groups of customers with similar characteristics or needs, so that the marketing mix can be targeted at them.</div>
+<table>
+<tr><th>Method</th><th>Basis</th><th>Example</th></tr>
+<tr><td>Demographic</td><td>Age, gender, ethnicity, family life-cycle stage</td><td>Saga targets the over-50s</td></tr>
+<tr><td>Geographic</td><td>Region, country, urban/rural</td><td>Regional product ranges; different menus by country</td></tr>
+<tr><td>Income / socio-economic</td><td>Income, occupation, social class (A, B, C1, C2, D, E)</td><td>Waitrose (ABC1) versus Aldi's broad appeal</td></tr>
+<tr><td>Psychographic / lifestyle</td><td>Values, interests, attitudes</td><td>Gym chains targeting fitness enthusiasts</td></tr>
+<tr><td>Behavioural</td><td>Usage rate, loyalty, benefits sought</td><td>Frequent-flyer tiers</td></tr>
+</table>
+<p><strong>Benefits:</strong> better-targeted marketing and less waste; products that fit needs more closely; identification of under-served segments. <strong>Drawbacks:</strong> research cost, more complex product ranges, and segments that are too small to be profitable.</p>
+
+<h2>1.1.3 Market positioning</h2>
+
+<h3>a) Market mapping</h3>
+<p>A <strong>market map</strong> (perceptual map) plots brands on two axes representing features customers consider important &mdash; for example price (low&ndash;high) and quality (basic&ndash;luxury), or traditional&ndash;modern. It is used to:</p>
+<ul>
+<li>identify <strong>gaps</strong> in the market;</li>
+<li>identify <strong>direct competitors</strong> (brands clustered close together);</li>
+<li>decide how to <strong>position or reposition</strong> a product.</li>
+</ul>
+<p><strong>Limitations:</strong> only two variables are shown, whereas customers weigh many; positions are often based on the manager's perception rather than customer research; and a gap may exist because there is <strong>no demand</strong> there (low price, high quality may simply be impossible to supply profitably).</p>
+
+<div class="exam-tip">
+A gap on a market map is an opportunity only if research shows there is enough demand there to be profitable. Saying &ldquo;there is a gap so the firm should enter it&rdquo; is an unsupported assertion; asking whether the gap is profitable is evaluation.
+</div>
+
+<h3>b) Competitive advantage of a product or service</h3>
+<div class="definition"><strong>Competitive advantage</strong> &mdash; a feature that allows a business to outperform its rivals by offering customers better value, either through lower prices or through a product or service they value more highly.</div>
+<p>Sources include lower costs (Ryanair), superior quality, strong brand, innovation, patents, customer service (John Lewis historically), location and convenience. A competitive advantage matters only if it is <strong>sustainable</strong> &mdash; hard for rivals to copy.</p>
+
+<h3>c) The purpose of product differentiation</h3>
+<p><strong>Product differentiation</strong> is the extent to which customers see a product as different from its rivals. Its purpose is to:</p>
+<ul>
+<li>make the product stand out and give customers a reason to choose it;</li>
+<li>reduce price elasticity of demand, so the firm can charge higher prices without losing many customers;</li>
+<li>build customer loyalty and repeat purchase;</li>
+<li>reduce direct competition on price.</li>
+</ul>
+<p>Differentiation can be real (a genuinely different design or feature) or perceived (brand image). Examples: Innocent (brand personality), Tony's Chocolonely (ethical sourcing mission), Gymshark (community built through social media).</p>
+
+<h3>d) Adding value to products/services</h3>
+<p><code>Value added = Selling price &minus; Cost of bought-in materials and components</code></p>
+<p><strong>Worked example:</strong> a coffee shop sells a latte for &pound;3.80; the coffee, milk and cup cost &pound;0.65. Value added = &pound;3.15 per cup. Note that value added is <strong>not profit</strong>: wages, rent and other overheads must still be paid out of it.</p>
+<p>Ways to add value: branding, design, quality, convenience (delivery, 24-hour opening), customer service, USPs, packaging, and the experience surrounding the product (Apple stores).</p>
+
+<h2>Common mistakes</h2>
+<ul>
+<li>Confusing market <em>size</em> with market <em>share</em>, or treating sales growth as share growth.</li>
+<li>Stating that niche markets are &ldquo;always profitable&rdquo; &mdash; small volumes may not cover fixed costs.</li>
+<li>Treating secondary data as unreliable by definition; ONS data is often more reliable than a small primary survey.</li>
+<li>Describing all research methods rather than judging which is appropriate for the business in the extract (a small start-up versus a multinational).</li>
+<li>Confusing value added with profit.</li>
+</ul>
+
+<div class="exam-tip">
+How Edexcel rewards this topic: <strong>Knowledge</strong> is a precise definition (e.g. market orientation); <strong>Application</strong> is using the business, product and numbers in the extract; <strong>Analysis</strong> is a developed chain of cause and effect (research &rarr; better understanding of segment &rarr; targeted mix &rarr; higher conversion &rarr; higher revenue); <strong>Evaluation</strong> weighs the argument (cost of research against the value of the information, &ldquo;it depends on&rdquo; the market's dynamism, the firm's budget, the quality of the sample) and reaches a supported judgement.
+</div>
+
+<h2>Quick recall</h2>
+<ul>
+<li>Market share = firm sales &divide; market sales &times; 100; compare firm growth against market growth</li>
+<li>Mass = volume, scale, low margin; niche = specialist, premium, vulnerable to larger entrants</li>
+<li>Dynamic markets: online retailing, changing tastes, innovation, need to adapt</li>
+<li>Risk can be measured; uncertainty cannot</li>
+<li>Product orientation starts with the product; market orientation starts with the customer</li>
+<li>Primary = new, specific, costly; secondary = existing, cheap, may be dated; quantitative = what/how many; qualitative = why</li>
+<li>Limitations: sample size, sampling/questionnaire/respondent bias, cost, time</li>
+<li>ICT: websites (analytics), social media (listening), databases (loyalty cards, GDPR)</li>
+<li>Market map: gaps, competitors, positioning &mdash; but a gap may have no demand</li>
+<li>Differentiation reduces price elasticity; value added = price &minus; bought-in costs, not profit</li>
+</ul>
+
+</div>
+</body>
+</html>
