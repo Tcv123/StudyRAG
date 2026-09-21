@@ -28601,6 +28601,16 @@ window.SUBJECTS = [
                 'Conclusion': 'Economic development is important but not determinative — physical hazard characteristics and population exposure also crucial; development reduces vulnerability but cannot eliminate risk'
               }}
             },
+            // Candidates study two of the five options (3.1–3.5) and answer
+            // each section for those two; in Section C, one essay (A or B) per option.
+            choices: [
+              { choose: 2, options: [['1(a)', '1(b)'], ['2(a)', '2(b)'], ['3(a)', '3(b)'], ['4(a)', '4(b)'], ['5(a)', '5(b)']],
+                instruction: 'Section A: answer the questions for your TWO chosen options (two of Questions 1–5).' },
+              { choose: 2, options: ['6', '7', '8', '9', '10'],
+                instruction: 'Section B: answer the questions for your TWO chosen options (two of Questions 6–10).' },
+              { choose: 2, options: ['11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
+                instruction: 'Section C: for each of your TWO chosen options, answer ONE essay — option A or option B (two of Questions 11–20).' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A Topic 3.1 — Climate Change. Fig. 1: diagram showing the global energy balance.', parts: [
                 { code: '1(a)', prompt: 'Identify three limitations of Fig. 1 as a source of information about the global energy balance.', marks: 3 },
@@ -29288,6 +29298,16 @@ window.SUBJECTS = [
                 'Conclusion': 'Earthquake hazards generally have greater impact on people due to unpredictability and frequency; but specific volcanic events can be equally devastating; governance and preparedness moderate the impact of both'
               }}
             },
+            // Candidates study two of the five options (3.1–3.5) and answer
+            // each section for those two; in Section C, one essay (A or B) per option.
+            choices: [
+              { choose: 2, options: [['1(a)', '1(b)'], ['2(a)', '2(b)'], ['3(a)', '3(b)'], ['4(a)', '4(b)'], ['5(a)', '5(b)']],
+                instruction: 'Section A: answer the questions for your TWO chosen options (two of Questions 1–5).' },
+              { choose: 2, options: ['6', '7', '8', '9', '10'],
+                instruction: 'Section B: answer the questions for your TWO chosen options (two of Questions 6–10).' },
+              { choose: 2, options: ['11', '12', '13', '14', '15', '16', '17', '18', '19', '20'],
+                instruction: 'Section C: for each of your TWO chosen options, answer ONE essay — option A or option B (two of Questions 11–20).' },
+            ],
             questions: [
               { number: 1, scenario: 'Section A Topic 3.1 — Climate Change. Fig. 1: resource booklet source showing predicted global surface temperatures.', parts: [
                 { code: '1(a)', prompt: 'Identify three limitations of Fig. 1 as a source of information about predicted global surface temperatures.', marks: 3 },
@@ -29506,6 +29526,7 @@ window.SUBJECTS = [
             questions: [
               {
                 number: 1,
+                choose: 1,
                 parts: [
                   { code: '1(a)', prompt: "Using the source, evaluate the view that opinion polls bring more disadvantages than advantages to elections and referendums.\n\n[Source 1 concerns the use of opinion polls in UK politics \u2014 an extract from a House of Lords report on their impact, alongside a more positive view of polling from Peter Kellner in the Evening Standard.]\n\nIn your answer you must analyse and evaluate only the information presented in the source.", marks: 30 },
                   { code: '1(b)', prompt: "Using the source, evaluate the view that MPs should always follow their party's manifesto commitments.\n\n[Source 2 depicts two letters printed in a newspaper giving differing opinions on the importance and scope of party manifestos.]\n\nIn your answer you must analyse and evaluate only the information presented in the source.", marks: 30 },
@@ -29513,6 +29534,7 @@ window.SUBJECTS = [
               },
               {
                 number: 2,
+                choose: 1,
                 parts: [
                   { code: '2(a)', prompt: "Evaluate the view that the emergence of multiple parties in the UK means that the Westminster electoral system must be changed.\n\nYou must consider this view and the alternative to this view in a balanced way.", marks: 30 },
                   { code: '2(b)', prompt: "Evaluate the view that the influence of the media in politics is exaggerated.\n\nYou must consider this view and the alternative to this view in a balanced way.", marks: 30 },
@@ -29520,6 +29542,7 @@ window.SUBJECTS = [
               },
               {
                 number: 3,
+                choose: 1,
                 parts: [
                   { code: '3(a)', prompt: "To what extent is liberalism more concerned with society than with the economy?\n\nYou must use appropriate thinkers you have studied to support your answer and consider both differing views in a balanced way.", marks: 24 },
                   { code: '3(b)', prompt: "To what extent is there more to unite than to divide the New Right from One Nation conservatives?\n\nYou must use appropriate thinkers you have studied to support your answer and consider differing views in a balanced way.", marks: 24 },
@@ -29544,9 +29567,15 @@ window.SUBJECTS = [
             durationMins: 120,
             qpUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Politics/2017/Exam-materials/9PL0_02_que_20211008.pdf',
             msUrl: 'https://qualifications.pearson.com/content/dam/pdf/A-Level/Politics/2017/Exam-materials/9PL0_02_rms_20211216.pdf',
+            // Section C: one question on one ideology, from Questions 3–7.
+            choices: [
+              { choose: 1, options: ['3(a)', '3(b)', '4(a)', '4(b)', '5(a)', '6(a)', '7(a)'],
+                instruction: 'Section C: answer ONE question, from Questions 3–7.' },
+            ],
             questions: [
               {
                 number: 1,
+                choose: 1,
                 parts: [
                   { code: '1(a)', prompt: "Using the source, evaluate the view that the royal prerogative gives the executive excessive power.\n\nIn your answer you must analyse and evaluate only the information presented in the source.", marks: 30 },
                   { code: '1(b)', prompt: "Using the source, evaluate the view that the Supreme Court has too much influence over the other branches of government.\n\nIn your answer you must analyse and evaluate only the information presented in the source.", marks: 30 },
@@ -29554,6 +29583,7 @@ window.SUBJECTS = [
               },
               {
                 number: 2,
+                choose: 1,
                 parts: [
                   { code: '2(a)', prompt: "Evaluate the view that devolution has been good for Wales and Scotland but not for England and Northern Ireland.\n\nIn your answer you should draw on relevant knowledge and understanding of the study of Component 1: UK Politics and Core Political Ideas.\n\nYou must consider this view and the alternative to this view in a balanced way.", marks: 30 },
                   { code: '2(b)', prompt: "Evaluate the view that since 2010 the executive has dominated Parliament.\n\nIn your answer you should draw on relevant knowledge and understanding of the study of Component 1: UK Politics and Core Political Ideas.\n\nYou must consider this view and the alternative to this view in a balanced way.", marks: 30 },
@@ -29618,6 +29648,7 @@ window.SUBJECTS = [
             questions: [
               {
                 number: 1,
+                choose: 1,
                 parts: [
                   { code: '1(a)', prompt: "Examine the different natures of the US and UK Constitutions.", marks: 12 },
                   { code: '1(b)', prompt: "Examine the features of the US and UK Supreme Courts designed to ensure independence from political influence.", marks: 12 },
@@ -29631,6 +29662,7 @@ window.SUBJECTS = [
               },
               {
                 number: 3,
+                choose: 2,
                 parts: [
                   { code: '3(a)', prompt: "Evaluate the view that the main factors affecting voting behaviour in Congress are the divisions within and between the political parties.\n\nYou must consider this view and the alternative to this view in a balanced way.", marks: 30 },
                   { code: '3(b)', prompt: "Evaluate the view that the growth in presidential power has led to a corresponding decline in federalism.\n\nYou must consider this view and the alternative to this view in a balanced way.", marks: 30 },
@@ -29659,6 +29691,7 @@ window.SUBJECTS = [
             questions: [
               {
                 number: 1,
+                choose: 1,
                 parts: [
                   { code: '1(a)', prompt: "Examine the criticisms that have been made of both the International Criminal Court and the special UN tribunals.", marks: 12 },
                   { code: '1(b)', prompt: "Examine the differences between the role and significance of NATO and the role and significance of the UN.", marks: 12 },
@@ -29672,6 +29705,7 @@ window.SUBJECTS = [
               },
               {
                 number: 3,
+                choose: 2,
                 parts: [
                   { code: '3(a)', prompt: "Evaluate the view that the EU has become a superpower, comparable with the United States.\n\nYou must consider this view and the alternative to this view in a balanced way.", marks: 30 },
                   { code: '3(b)', prompt: "Evaluate the view that environmental issues have received greater attention than economic issues in global politics.\n\nYou must consider this view and the alternative to this view in a balanced way.", marks: 30 },
@@ -29902,6 +29936,10 @@ window.findPaper = function (id) {
 window.paperParts = function (paper) {
   if (!paper || !Array.isArray(paper.questions)) return [];
   const ms = paper.markSchemes || {};
+  const choiceByCode = {};
+  window.paperChoiceGroups(paper).forEach(g => g.options.forEach(codes => codes.forEach(c => {
+    choiceByCode[c] = { group: g.id, choose: g.choose, optionCount: g.options.length, instruction: g.instruction };
+  })));
   const out = [];
   paper.questions.forEach(q => {
     (q.parts || []).forEach(p => {
@@ -29910,9 +29948,95 @@ window.paperParts = function (paper) {
         questionNumber: q.number,
         scenario: q.scenario || '',
         scenarioFigures: q.scenarioFigures || [],
-        markScheme: ms[p.code] || null
+        markScheme: ms[p.code] || null,
+        choice: choiceByCode[p.code] || null
       });
     });
   });
   return out;
+};
+
+// ---------- Optional ("answer N of") questions ----------
+// Two backwards-compatible ways to mark a choice in a paper:
+//   question-level:  { number: 1, choose: 1, parts: [1(a), 1(b)] }
+//     → answer `choose` of this question's parts (each part is one option).
+//   paper-level:     choices: [{ choose: 1, options: ['3(a)', '3(b)', '4(a)'],
+//                               instruction: 'Answer ONE question from Section C' }]
+//     → for choices that span questions. An option is a part code, or an
+//       array of codes answered together (e.g. ['1(a)', '1(b)']).
+// Parts outside any group are compulsory, as before. Only the best `choose`
+// options in a group count, so unanswered alternatives cost nothing.
+const CHOICE_WORDS = ['', 'ONE', 'TWO', 'THREE', 'FOUR', 'FIVE'];
+window.paperChoiceGroups = function (paper) {
+  if (!paper || !Array.isArray(paper.questions)) return [];
+  const marksByCode = {};
+  paper.questions.forEach(q => (q.parts || []).forEach(p => { marksByCode[p.code] = p.marks || 0; }));
+  const groups = [];
+  paper.questions.forEach(q => {
+    if (q.choose > 0 && (q.parts || []).length > q.choose) {
+      groups.push({ choose: q.choose, options: q.parts.map(p => [p.code]), instruction: q.chooseInstruction });
+    }
+  });
+  (paper.choices || []).forEach(c => {
+    if (c && c.choose > 0 && Array.isArray(c.options)) {
+      groups.push({ choose: c.choose, options: c.options.map(o => Array.isArray(o) ? o : [o]), instruction: c.instruction });
+    }
+  });
+  return groups.map((g, i) => {
+    const optionMarks = g.options.map(codes => codes.reduce((s, c) => s + (marksByCode[c] || 0), 0));
+    const maxMarks = optionMarks.slice().sort((a, b) => b - a).slice(0, g.choose).reduce((s, m) => s + m, 0);
+    const optionLabels = g.options.map(codes => codes.length > 1 ? `${codes[0]}–${codes[codes.length - 1]}` : codes[0]);
+    const n = CHOICE_WORDS[g.choose] || String(g.choose);
+    const instruction = g.instruction || (g.options.length === 2 && g.choose === 1
+      ? `Answer EITHER ${optionLabels[0]} OR ${optionLabels[1]}.`
+      : `Answer ${n} of ${optionLabels.slice(0, -1).join(', ')} and ${optionLabels[optionLabels.length - 1]}.`);
+    return { id: i, choose: g.choose, options: g.options, optionMarks, maxMarks, instruction };
+  });
+};
+
+// Maximum marks the extracted parts can earn once choices are applied.
+// Without choice groups this is the plain sum of part marks.
+window.paperMaxMarks = function (paper, questions) {
+  const groups = window.paperChoiceGroups(paper);
+  const inScope = new Set();
+  (questions || paper.questions || []).forEach(q => (q.parts || []).forEach(p => inScope.add(p.code)));
+  const grouped = new Set(groups.flatMap(g => g.options.flat()));
+  let total = 0;
+  (paper.questions || []).forEach(q => (q.parts || []).forEach(p => {
+    if (inScope.has(p.code) && !grouped.has(p.code)) total += p.marks || 0;
+  }));
+  groups.forEach(g => {
+    // Restrict to the options that fall in scope (e.g. one question card).
+    const marks = g.options
+      .map((codes, i) => codes.some(c => inScope.has(c)) ? g.optionMarks[i] : null)
+      .filter(m => m != null)
+      .sort((a, b) => b - a);
+    total += marks.slice(0, g.choose).reduce((s, m) => s + m, 0);
+  });
+  return total;
+};
+
+// Score a set of per-part marks ({ code: number|null }) against the paper's
+// choice rules. Returns { scored, counted: Set of codes that contributed }.
+window.scorePaperMarks = function (paper, marksByCode) {
+  const groups = window.paperChoiceGroups(paper);
+  const grouped = new Set(groups.flatMap(g => g.options.flat()));
+  const val = c => Number.isFinite(marksByCode[c]) ? marksByCode[c] : 0;
+  const counted = new Set();
+  let scored = 0;
+  Object.keys(marksByCode).forEach(c => {
+    if (!grouped.has(c)) { scored += val(c); counted.add(c); }
+  });
+  groups.forEach(g => {
+    const ranked = g.options
+      .map((codes, i) => ({ codes, i, total: codes.reduce((s, c) => s + val(c), 0),
+                           marked: codes.some(c => Number.isFinite(marksByCode[c])) }))
+      .sort((a, b) => (b.total - a.total) || (b.marked - a.marked) || (a.i - b.i));
+    ranked.slice(0, g.choose).forEach(o => {
+      if (!o.marked) return;
+      scored += o.total;
+      o.codes.forEach(c => counted.add(c));
+    });
+  });
+  return { scored, counted };
 };
