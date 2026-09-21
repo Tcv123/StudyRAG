@@ -33,8 +33,8 @@
         way. Greek and maths symbols are NOT flagged — H₂O, λ, →, √ and Ω
         are ordinary content in the science and maths banks.
 
-     5. THE LENGTH TELL — whether the correct answer is the longest
-        option. Writing a full evaluative answer and three brisk
+     5. THE LENGTH TELL — whether the correct answer is strictly the
+        longest option, in every tier. Writing a full evaluative answer and three brisk
         distractors is the natural way to write a red-tier question, and
         it produces a tier a student can score on without reading the
         subject at all. Reported per topic; a failure only above the
@@ -398,13 +398,18 @@ for (const file of files) {
     const mine = counts.join('/');
     if (shape && mine !== shape) warnings.push(`${id}: tiers ${mine}, rest of this bank is ${shape}`);
 
-    const red = (topic.red || []).filter(q => Array.isArray(q.options) && resolveAnswer(q) >= 0);
-    const tell = red.filter(q => {
-      const longest = Math.max(...q.options.map(o => String(o).length));
-      return String(q.options[resolveAnswer(q)]).length === longest;
-    }).length;
-    if (red.length && tell / red.length > TELL_LIMIT) {
-      warnings.push(`${id} red: correct answer is the longest option in ${tell} of ${red.length}`);
+    // A tie with a distractor is not a tell (1215 / 1689 / 1832 / 1066), so
+    // the answer counts only when it is strictly longer than every other option.
+    for (const tier of TIERS) {
+      const qs = (topic[tier] || []).filter(q => Array.isArray(q.options) && resolveAnswer(q) >= 0);
+      const tell = qs.filter(q => {
+        const a = resolveAnswer(q);
+        const len = String(q.options[a]).length;
+        return q.options.every((o, j) => j === a || String(o).length < len);
+      }).length;
+      if (qs.length && tell / qs.length > TELL_LIMIT) {
+        warnings.push(`${id} ${tier}: correct answer is the longest option in ${tell} of ${qs.length}`);
+      }
     }
   }
 
