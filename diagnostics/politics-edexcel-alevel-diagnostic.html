@@ -831,7 +831,7 @@ async function renderResult() {
   `;
 
   await saveResult(rag, results);
-  sessionStorage.removeItem(`diag_${topicKey}`);
+  sessionStorage.removeItem(`diag_politics_edexcel_alevel_${topicKey}`);
   document.getElementById('savingRow').style.display = 'none';
   document.getElementById('resultActions').style.display = 'flex';
 }
