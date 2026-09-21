@@ -399,7 +399,7 @@ const POLITICS_EDEXCEL_WRITTEN = {
       {
         q: 'Distinguish between revolutionary and evolutionary socialism.',
         marks: 4, tier: 'green',
-        modelAnswer: `• Revolutionary socialism holds that capitalism cannot be reformed because the state and its institutions serve capitalist interests, so it must be overthrown — associated with Marx, Engels and Luxemburg.\n• Evolutionary socialism holds that capitalism can be transformed gradually through existing democratic institutions, using the franchise, parliament and administration — associated with Webb and the Fabians.\n• The disagreement is ostensibly about means but becomes one about ends: gradualists accept working within structures revolutionaries regard as the problem, which shapes what each is willing to settle for.\n• The Fabian doctrine of "the inevitability of gradualism" expresses the evolutionary position.`
+        modelAnswer: `• Revolutionary socialism holds that capitalism cannot be reformed because the state and its institutions serve capitalist interests, so it must be overthrown — associated with Marx, Engels and Luxemburg.\n• Evolutionary socialism holds that capitalism can be transformed gradually through existing democratic institutions, using the franchise, parliament and administration — associated with Webb and the Fabians.\n• The disagreement is ostensibly about means but becomes one about ends: gradualists accept working within structures revolutionaries regard as the problem, which shapes what each is willing to settle for.\n• The Fabian doctrine of "the inevitability of gradualness" expresses the evolutionary position.`
       },
       {
         q: 'Identify two socialist thinkers on the Edexcel specification and state one key idea of each.',
