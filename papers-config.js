@@ -29875,6 +29875,8626 @@ window.SUBJECTS = [
         ],
       }
     ]
+  },
+  {
+    name: 'Business Studies', icon: '💼',
+    boards: [
+      {
+        board: 'Edexcel',
+        specCode: '9BS0',
+        officialPageUrl: 'https://qualifications.pearson.com/en/qualifications/edexcel-a-levels/business-2015.coursematerials.html',
+        /* EVERY URL BELOW WAS VERIFIED BY CONTENT TYPE, NOT BY STATUS CODE
+           (September 2026). Pearson's server returns HTTP 200 with an HTML
+           error page for files that do not exist - a probe of an invented
+           9bs0-02-rms-20990815.pdf came back 200/206 text/html. The test used
+           was content_type == application/pdf AND leading bytes %PDF
+           (curl -sL -A "Mozilla/5.0" -r 0-7). No URL here was guessed: every
+           filename was read from the document list the course-materials page
+           itself loads (Exam materials, 174 items), then verified.
+
+           UNLIKE POLITICS, Pearson publishes 9BS0 QUESTION PAPERS openly for
+           every A-level series from June 2017 to June 2025 (from 2023 the QP
+           PDF includes the source booklet), so every paper below has qpUrl,
+           msUrl, questions and markSchemes. June 2026 materials exist but sit
+           under /content/dam/secure/ (centre login) and are omitted, as are the
+           Paper 3 pre-release context documents. There was no June 2020 or
+           June 2021 exam; the autumn series are listed by Pearson as
+           October 2020 and November 2021. June 2016 materials are AS (8BS0)
+           only - the first A-level sitting was June 2017. The sample
+           assessment materials (one combined PDF, no series) are on the
+           specification tab, not here.
+
+           Each paper is 100 marks over 2 hours. Papers 1 and 2 are two
+           50-mark data-response questions, each 4 + 4 + 10 + 12 + 20 (the 4s
+           are calculations or 'Explain'); Paper 3 is two 50-mark questions on
+           the pre-released context, each 8 + 10 + 12 + 20. Level bands are
+           copied from each paper's own scheme because they are not uniform:
+           most 10-mark questions band Level 3 as 5-6 and Level 4 as 7-10, but
+           the second 10-mark question on Paper 2 in 2017-2022 uses 5-7 and
+           8-10. markSchemes are condensed from the official scheme only. */
+        papers: [
+          {
+            id: "business-edexcel-9bs0-2025-p1",
+            year: "June 2025",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-que-20250515.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-rms-20250814.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D. Timpson Ltd, established 1865, repairs shoes, cuts keys, repairs mobile phones and watches, offering while-you-wait services on the High Street and in supermarkets; it keeps expanding with new stores, mostly in supermarket car parks, and became a private limited company in 1960. Extract A (Trustpilot reviews of Timpson, average 3.8, 6,489 total responses): 5-star 5,838; 4-star 175; 3-star 86; 2-star 175; 1-star 215. Extract C: chairman James Timpson describes 'upside down' management - investing in colleagues' happiness and a culture of kindness; only two rules (put the money in the till and look the part); colleagues' loyalty and passion are the most valuable asset; the firm paid for an employee's grandchildren's garden play area and a family trip to Disneyland Paris; about 10% of the workforce are ex-offenders, risk-assessed and described as loyal, productive and hardworking. Extract D: Johnsons is a national dry cleaner with over 200 UK stores, competing with local dry cleaners, combining first-class customer care with expert fabric advice; branches employ 2-3 staff whose only training is a one-day induction (serving customers, till usage, services offered); specialist items go to the Excellence Centre in Rugby, whose textile technicians have unparalleled expertise.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the data in Extract A, calculate the percentage of responses that rated Timpson Ltd 3 stars and above. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Explain one possible benefit to Timpson Ltd of using quantitative market research data.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the likely consequences of Timpson Ltd continuing to operate as a private limited company.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the likely consequences of Timpson Ltd treating its staff as an asset.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Johnsons' objective is to maintain high levels of customer service in its stores. In order to do this, Johnsons could either prioritise on-the-job training or off-the-job training.",
+                    prompt: "Evaluate these two options and recommend which one Johnsons should choose to maintain its customer service.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-I. Extract E: line chart of the monthly sugar price in US cents per lb, 2024 to 2025 (axis 18-24 cents; the MS treats the change as a fall in cost, shifting cola supply to the right). Extract F: Indian soft-drinks market (Rupees billions): 2023 non-carbonated 902, carbonated 475; 2028 forecast non-carbonated 1384, carbonated 602. Extract G: Fever-Tree, a UK start-up from 2004 selling premium tonic and now 14 flavoured mixers, exports to India (targeting Mumbai and Delhi), using market research on local regulations, food safety, labelling, import-export laws, tariffs and duties; it builds relationships with local bartenders and chefs; Indian consumers prefer local ingredients; a growing middle class and premium cocktail culture; it could set up a production facility in India to overcome tariffs. Extract H: Coca-Cola entered India in 1956; in 2004 a bottling plant was forced to close after protests over alleged groundwater contamination and water shortages; it now uses independent Indian bottling partners, local retailers and suppliers, creating jobs; The Coca-Cola Foundation supports education, economic empowerment, recycling and disaster relief. Extract I: Indian per capita soft-drink consumption 4-5 litres a year vs 30 litres global average; Campa Cola sells 200 ml for 10 rupees, half the price of Coca-Cola or Pepsi, with a limited range but investing in bottling capacity; Coca-Cola's brands include Thums Up, Maaza and Kinley; its rural sales have grown and it prices at 10, 20 or 50 rupees for easy cash transactions; it also aims to sell more to middle-class urban markets at premium prices.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the data in Extract E, draw a supply and demand diagram to show the possible impact of the change in the price of sugar between 2024 and 2025, on the market for cola drinks.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the data in Extract F, calculate the difference in the predicted percentage change of sales of non-carbonated and carbonated drinks in India between 2023 and 2028. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the factors that might affect the success of a business, such as Fever-Tree, entering a new market such as India.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the possible impact of multinationals, such as Coca-Cola, on the local economy of India.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Coca-Cola aims to increase its market share of the Indian soft drinks market. In order to do this, it could either focus on the pricing of its products or improving its ethical behaviour.",
+                    prompt: "Evaluate these two options and recommend which one is most suitable for increasing Coca-Cola's market share in India.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): calculating a percentage, i.e. part (smaller value)/whole (larger value) x 100",
+                  "Application (1): number of ratings 3 stars and above = 5838 (5 stars) + 175 (4 stars) + 86 (3 stars) = 6099",
+                  "Application (1): percentage calculation 6099/6489 x 100",
+                  "Application (1): = 93.99%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1, QS9. NB: if the only answer given is 93.99% or 93.99 award 4 marks. If the only answer given is 94% or 93.98, award 3 marks.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): knowledge of quantitative market research data, e.g. quantitative market research data is numerical data",
+                  "Application (up to 2): e.g. Trustpilot star rating; 6489 responses with an average of 3.8 stars out of 5",
+                  "Analysis (1): e.g. Timpson can quickly calculate and analyse this ratings data to help identify customers' perceptions of the business",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A private limited company is owned by shareholders with limited liability; new shareholders can only be invited by existing shareholders.",
+                  "Positive consequences": "Shareholders, including Timpson family members, have limited liability so losses are limited to their share capital; share capital gives Timpson additional capital to invest in new services such as dry cleaning; the company is legally separate from its owners and continues to exist if ownership changes - in Timpson's case ownership continued in the family.",
+                  "Potential counterbalance": "Capital is still limited compared with a plc - shareholders must approach other possible shareholders for more capital; limited companies must comply with strict legal rules on ownership and publishing financial information, adding bureaucracy costs compared with a partnership; legal separation can reduce decision-making flexibility for the board compared with a sole trader or partnership, so decisions on new services or finance may take longer. Candidates may start with negatives and counterbalance with positives.",
+                  "Potential judgement": "Remaining private is a natural part of Timpson's growth into markets beyond key cutting, balancing extra share capital with family control; alternatively it restricts growth through limited access to share capital - Timpson could grow faster, e.g. in dry cleaning, by becoming a plc and raising capital on the stock market.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Treating staff as an asset means treating workers as a resource to be invested in and developed so they provide the best return for the business.",
+                  "Consequences of treating staff as an asset": "'Upside down' management makes workers' happiness the leadership's main concern, so consulted workers are more motivated and deliver high customer service; employing ex-offenders widens the recruitment pool and builds Timpson's reputation as a progressive employer, possibly raising sales; staff who feel valued are less likely to leave, take time off or strike; rewards such as a grandchildren's play area are an investment in well-being so staff work harder and give great customer service.",
+                  "Potential counterbalance": "Treating staff as an asset is expensive, especially in the short term (e.g. a family trip to Disneyland) and the cost may not be recovered through improved motivation; recruiting ex-offenders carries financial and non-financial risks, e.g. more training needed; such spending may reduce the ability to offer pay rises or reduce profit. Responses may argue consequences are negative with benefits as counterbalance.",
+                  "Potential judgement": "As Timpson's model is based on services such as key cutting and shoe repair, great customer service is crucial, so valuing staff through involvement in decisions and financial support should improve service and customer satisfaction; however staff costs are likely to be Timpson's largest cost, treating staff as an asset brings no guarantee they will not leave, and raising basic wages for all staff might be better.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; Quantitative and/or qualitative information is/are used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; Quantitative and/or qualitative information is/are introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "On-the-job training is where employees are trained while carrying out an activity, usually at their place of work; off-the-job training trains employees away from the job at a different location.",
+                  "Option 1 - On-the-job training": "Staff learn customer service while serving customers in branch, observing experienced colleagues; mentoring by experienced colleagues gives new staff confidence they follow company procedures; avoids the financial and time costs of an external college or trainer; new employees may feel more valued learning in their location from day one, and learning directly from colleagues suits Johnsons' first-class customer care and expert fabric advice.",
+                  "Option 2 - Off-the-job training": "More complex services are done at the Rugby Excellence Centre, so off-the-job training may be more effective for learning about specific textiles and their care; less disruptive to in-store customer service as experienced colleagues are not diverted; meeting new employees from other branches builds culture and confidence, especially for those new to dry cleaning; may lead to industry-recognised qualifications supporting professional development.",
+                  "Potential judgement": "On-the-job training is likely more appropriate for customer-facing staff learning service skills from experienced colleagues; off-the-job training (e.g. at the Excellence Centre) may suit more technical jobs involving chemicals and specific dry-cleaning techniques, and improves understanding of services that staff can communicate to customers.",
+                  "MOPS recommendation": "Market - as an unusual national dry cleaner, off-the-job training lets expert trainers train staff from around the country in one place for consistency; Objectives - first-class service is best maintained by training new colleagues in branch with experienced staff; Products/services - varied technical services may be learnt more quickly off the job without disrupting stores; Situation - to keep its national service reputation, on-the-job training while dealing with customers develops skills quickly and effectively.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): correctly constructing supply and demand curves",
+                  "Knowledge (1): correctly labelling axes, price and quantity",
+                  "Application (1): correctly interpreting the shift in the supply curve to the right",
+                  "Analysis (1): showing the original and new equilibrium and consequences on the quantity and price axes",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (as printed in the MS tariff line; the MS body allocates up to 2 Knowledge, 1 Application, 1 Analysis). QS3: construct and interpret a range of standard graphical forms.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): percentage change = difference/original x 100",
+                  "Application: percentage change in non-carbonated sales = (1384 - 902)/902 x 100 = 53.44%",
+                  "Application: percentage change in carbonated sales = (602 - 475)/475 x 100 = 26.74%",
+                  "Application: difference = 26.70%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS2, QS9. NB: if the only answer given is 26.70% or 26.70 award 4 marks.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Entering a new market means selling a product or service to a different country, or a different market within a country.",
+                  "Factors that might lead to successful market entry": "Fever-Tree may have a competitive advantage from specialised flavours or a brand built in the UK; complying with Indian food standards, labelling and import-export laws reduces the cost of entry; considering Indian tastes (a polycentric approach) could raise sales in a unique and growing market.",
+                  "Potential counterbalance": "Success may rest on meeting UK tastes not shared by Indian consumers; exporting the existing range could be expensive due to transport and distribution costs; tariffs would add to costs and reduce profitability; FDI in an Indian production facility needs large upfront investment that may be hard to finance.",
+                  "Potential judgement": "India is a growing market with rising GDP per capita and disposable income, so it may be best to export from the UK initially, building the brand and creating mixers for Indian cocktail tastes; however entry is risky for the brand and adapting products to local tastes and locally produced spices could add costs and reduce profitability.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A multinational operates in more than one country, with a head office in its home country co-ordinating decisions.",
+                  "Positive impacts": "Using local bottlers raises revenues for local firms; Indian workers gain jobs in the supply chain that may be better paid than at local drinks makers; FDI creates local multiplier effects at wholesalers and distributors; jobs near bottling plants, especially where there are few other major employers; consumers gain wider choice and availability.",
+                  "Potential counterbalance": "Coca-Cola has been criticised for damaging the local environment, e.g. water use affecting drinking water; stakeholder conflict between local soft-drink suppliers and Coca-Cola's supply chain, e.g. over distribution; more competition for local drinks makers and possible local labour shortages; profits may be repatriated rather than reinvested, e.g. in local infrastructure.",
+                  "Potential judgement": "Likely beneficial overall - the cost of distributing drinks means Coca-Cola needs facilities in India, increasing availability and choice; or overall negative through environmental damage, disrupted water supplies, pollution and congestion from distribution.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; Quantitative and/or qualitative information is/are used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; Quantitative and/or qualitative information is/are introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - Pricing": "Price is a marketing-mix element; Coca-Cola could adapt pricing to lower Indian incomes, especially rural, using 10, 20 and 50 rupee price points; pricing reflecting rural/urban income and competitive differences could maximise sales in all markets; different Indian tastes mean adapted pricing could raise volume; changing price is easier than changing the whole production and business model to be ethical, and a small revenue cut may establish the brand before further price changes.",
+                  "Option 2 - Improving ethical behaviour": "The brand was damaged by its unethical manufacturing and environmental impact on launch, so improving ethics would improve image and long-run sales through non-price competition; paying local bottlers a fair price improves supply-chain relations and sets labour standards; labelling and ingredients could reflect Indian consumers' priorities; ethical behaviour reduces stakeholder conflict and costs such as fines by meeting local environmental and ingredient regulations.",
+                  "Potential judgement": "Coca-Cola already uses flexible pricing - premium, aspirational prices in high-income urban centres such as Mumbai and lower prices in rural cash-based areas; alternatively ethics may work better for an American multinational whose brand was damaged and may be distrusted by older consumers - more expensive short term (fair prices to bottlers and distributors) but improved reputation and fewer fines reduce costs and raise market share.",
+                  "MOPS recommendation": "Market - price competition from Campa Cola suggests cutting prices; Objectives - to raise market share when less price-competitive, adapt price in different Indian markets to raise volume; Products/services - after past unethical behaviour, ethical bottling and distribution may be best; Situation - ethical behaviour improves relations with suppliers and governments, raising brand reputation and sales over time.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2025-p2",
+            year: "June 2025",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-que-20250521.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-rms-20250814.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D. Stylideas Ltd: in 2011 Tom Pellereau won The Apprentice and business angel Alan Sugar invested £250 000; each owns 50% of the shares. It produces and sells luxury cosmetic products (skincare, nailcare, teeth whitening); rapid success, 2024 sales turnover over £5 million, 14 staff. Extract B (Statement of Financial Position 2024, £m): Stock (inventory) 1.39; Receivables 1.03; Cash 0.12; Current liabilities 1.56. Extract C: Tom is CEO and Innovations Director; employees work in specific functions (marketing, operations, finance), allowing a role culture; best seller is a makeup brush cleaner and dryer at £29.99 (over 2 million sold), so he now has a sales director, an operations director and a marketing team and can focus on innovation; won Gold for the Business Innovation Award (London Business Awards 2023) and its LED face mask was a 2024 Beauty Awards winner; new products include a £54.99 beauty fridge selling 250 units a week, anti-wrinkle and anti-ageing devices, innovative mirrors and reusable cotton pads; sells via its website and retailers such as Boots, Superdrug and Amazon; most sales in the UK but also distributes in France, Germany and Italy. Extract D: UK GDP grew 0.9% in late 2024 vs 0.4% in 2023, driven by the large service sector, but consumer demand and business investment were weaker than expected; Germany, France and Italy faced recession; US grew 2.3%; the Bank of England halved its 2025 growth forecast to 0.75%, though other forecasters (NIESR) were more optimistic.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Explain one benefit to Tom Pellereau of using a business angel as a source of finance.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using the data in Extract B, calculate the acid test ratio for Stylideas Ltd in 2024 to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess whether Stylideas Ltd's distinctive capability of innovation is the main reason for its success.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the likely effects on Stylideas Ltd of changes in the UK business cycle.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "As Stylideas Ltd grows, Tom Pellereau is considering whether to change its current role culture to a power culture to maintain the business' success.",
+                    prompt: "Evaluate these two options and recommend which one Tom Pellereau should choose to maintain the business' success.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H. Extract E: Beiersdorf is a German multinational plc making personal-care products, employing 20,000 people in more than 160 countries, controlled by Michael Herz who owns 50.49% of the shares; its Hamburg headquarters and manufacturing centre supplies businesses such as Tesco in UK and European markets; best-selling brand Nivea benefits from high consumer trust based on quality and is a global brand with consistent names, products and packaging. Extract F: the UK men's skincare market has grown around 5% a year and is forecast to be worth £750m by 2025; market shares: Bulldog 20%, L'Oreal 15%, Nivea 12%, Clinique 10%; trends include natural and organic products, environmentally friendly packaging and products tailored to skin types. Extract G: euro to £1 exchange rate June 2024 to January 2025 (axis 1.15-1.21 euros per £); per the MS, the rate changed from 1.15 euros per £ in August 2024 to 1.21 euros per £ in December 2024. Extract H: in 2023 Beiersdorf invested almost 300 million euros - its largest ever production-site investment - in a new Leipzig factory meeting the highest environmental and technological standards, using semi-automated and automated tube filling and labelling machines to reduce human error and improve quality, with capacity of up to 450 million products a year (production from September 2023) and a system enabling faster, more standardised, automated global processes.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Explain one reason why quality is a source of competitive advantage for Nivea.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    preamble: "The average price for a Nivea product is £10.",
+                    prompt: "Using the data in Extract F, calculate Nivea's predicted sales volume in 2025. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    preamble: "Tesco imports Nivea products that are manufactured in Germany.",
+                    prompt: "Using the data in Extract G, and any other relevant information, assess the effect on Tesco of the change in the £ exchange rate from August to December 2024.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the importance of capital-intensive production for Beiersdorf's new factory.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "When making business decisions, Beiersdorf's Chief Executive believes that Beiersdorf should focus only on its shareholders. Other Directors argue that Beiersdorf should consider all its stakeholders.",
+                    prompt: "Evaluate these two options and recommend which one Beiersdorf should choose when making business decisions.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): a business angel is an individual who invests money in exchange for a stake in the business, OR the entrepreneur will have access to mentoring and support as well as finance to set up a business",
+                  "Application (up to 2): Sir Alan Sugar invested £250 000; owned with 50% of the shares each; this allowed Tom to launch his beauty brand",
+                  "Analysis (1): this has led to Stylideas having rapid success through having the finance to develop a range of different cosmetic products",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): acid test ratio = (current assets - inventory)/current liabilities",
+                  "Application (1): current assets 2.54 (1.39 + 1.03 + 0.12) - 1.39 = 1.15",
+                  "Application (1): 1.15/1.56",
+                  "Application (1): = 0.74 or 0.74:1",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1. NB: if the only answer given is 0.74 or 0.74:1 award 4 marks. If the only answer given is 0.7 award 3 marks.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A distinctive capability is a skill or attribute possessed by a business which provides a competitive advantage; innovation is the creation, development and implementation of a new product, process or service.",
+                  "Reasons for innovation": "Success comes from several market-leading products such as the makeup brush cleaner and dryer (over 2 million sold); Gold Business Innovation Award and the 2024 Beauty Award for its LED face mask may have promoted the brand; constant new products (anti-wrinkle and anti-ageing devices, innovative mirrors, sustainable makeup products) build loyalty among existing customers and attract new ones.",
+                  "Potential counterbalance": "Success may be due to brand/reputation - the marketing team may have built a strong image through social media influencer recommendations; or to relationships with retailers - a wide distribution network through Boots, Superdrug and Amazon.",
+                  "Potential judgement": "Innovation is the main reason because unique designs can be protected by patents, preventing copying; but other factors such as product quality, shown by the 2023 and 2024 awards, also matter.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A business cycle is a period of expansion and contraction in economic activity, measured by changes in indicators such as GDP.",
+                  "Positive effects": "GDP grew 0.9% in 2024 vs 0.4% in 2023 and is forecast at 0.75% in 2025, suggesting slow recovery and rising incomes; greater spending power may raise demand for Stylideas products; growth came from the service sector, of which health and beauty retail is part, so sales revenue may rise; health and beauty products may be income elastic luxuries, so rising GDP should increase sales.",
+                  "Potential counterbalance": "The Bank of England halved its 2025 forecast to 0.75%, which may lower consumer confidence and cause switching to cheaper alternatives; weaker than expected consumer demand and investment mean Stylideas may be reluctant to take on staff or invest in new products; lower UK growth may mean it needs more sales in countries whose economies are stable or growing.",
+                  "Potential judgement": "Stylideas may experience negative effects at this stage of the cycle with UK GDP growth under 1%; the extent depends on how it responds, e.g. developing cheaper beauty products for different segments.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; Quantitative and/or qualitative information is/are used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; Quantitative and/or qualitative information is/are introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A role culture sees the organisation as a system of interlocking roles, each member having a clearly defined function and responsibilities; a power culture has a central source/individual of power responsible for decision making.",
+                  "Option 1 - Role culture": "Stylideas now has 14 staff specialising in marketing, operations and finance, so employees know exactly what is expected and follow well-defined procedures; after rapid growth since 2011 (turnover over £5 million in 2024) a role culture enables efficient management and avoids diseconomies of scale; but role culture is often bureaucratic and rigid, stifling flexibility as staff consider only their own role.",
+                  "Option 2 - Power culture": "Tom would make all decisions, speeding up decision making in a dynamic market; in a competitive health and beauty market it could respond quickly to trends and develop innovative products such as sustainable makeup before larger rivals, gaining first-mover advantage; but it can lead to favouritism and lack of objectivity, with Tom ignoring employees' views.",
+                  "Potential judgement": "Adopt a role culture so that, as the business expands, Tom can delegate functions to specialists and focus on strategic decisions; or a power culture so Tom retains control of how the brand develops in other countries through a centralised approach.",
+                  "MOPS recommendation": "Market - competitive market with large brands such as Revlon and L'Oreal; first-mover advantage needs quick new products (e.g. eco-friendly); Objectives - with a 14-strong workforce, role culture enables well-managed, efficient expansion; Products/services - award-winning innovative products; power culture keeps Tom in control of innovation; Situation - Tom's main strength is invention, so a role culture lets him focus on new products by delegating to staff with more expertise.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): quality refers to how well a product or service does what it is intended to do, OR Nivea may benefit from an improved reputation and brand loyalty",
+                  "Application (up to 2): e.g. the Nivea brand benefits from high levels of consumer trust; Nivea is a global brand with consistent names/products/packaging",
+                  "Analysis (1): e.g. this could give it a competitive advantage, as consumers would trust the brand and encourage repeat sales",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): sales volume is the number of units sold, OR sales revenue/selling price",
+                  "Application (1): sales revenue = £750m x 0.12 = £90m",
+                  "Application (1): sales volume = £90m/£10",
+                  "Application (1): = 9 million units",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1. NB: if the only answer given is 9 million units award 4 marks. If incorrect unit given award 3 marks, e.g. £9 million.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "An exchange rate is the value of one currency compared to another; between August and December 2024 the rate changed from 1.15 euros: £1 to 1.21 euros: £1.",
+                  "Positive effects": "The £ has appreciated against the euro, making imports to the UK cheaper; Tesco's cost of importing Nivea products from Germany falls, which could allow it to cut prices; lower Nivea prices may raise sales and possibly market share.",
+                  "Potential counterbalance": "The UK market is competitive and other supermarkets also benefit from lower Nivea import costs; Nivea is only one of many products Tesco sells, so the saving is likely to be small.",
+                  "Potential judgement": "As exchange rates fluctuate regularly, Tesco will probably not change Nivea prices but benefit from lower costs and possibly higher profits; the £ appreciated by only 0.06 euros, an insignificant fall in cost, so quality, brand image and marketing may have a greater effect on sales.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response. Marks for application and analysis include up to 2 marks for quantitative skills (QS9). The 10-mark levels in this MS require quantitative and qualitative information.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Capital intensive is when products are mainly produced by machines and robots.",
+                  "Reasons why it is important": "Automated tube filling and labelling machines could reduce labour costs, and greater efficiency may raise profit margins; less chance of human error gives better quality and less wastage; semi-automated and automated fill lines give production flexibility, allowing 450 million products a year.",
+                  "Potential counterbalance": "High initial set-up costs of 300 million euros may require substantial finance; breakdowns are costly - machines have high fixed costs, and falling capacity utilisation raises unit costs as fixed costs are spread over lower output; large-scale standard production may make it hard to customise packaging for special offers.",
+                  "Potential judgement": "Important because lower unit costs of Nivea personal care products keep prices competitive; but other factors such as high customer service and producing and delivering orders on time may also be important.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; Quantitative and/or qualitative information is/are used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; Quantitative and/or qualitative information is/are introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "The shareholder approach is that a business should focus purely on shareholder returns in its decisions/objectives; the stakeholder approach considers all stakeholders in its decisions/objectives.",
+                  "Option 1 - Shareholder approach": "Michael Herz owns 50.49% of the shares and would expect a return through dividends and a rising share price; good returns may attract new investors whose funds are needed for new products and manufacturing facilities in a competitive market; but decisions may focus on short-term returns such as dividends rather than investment, damaging long-term growth.",
+                  "Option 2 - Stakeholder approach": "With 20 000 employees in more than 160 countries, well-paid secure jobs and good working conditions could bring effective employer-employee relations; responding to trends for natural and organic products and environmentally friendly packaging could improve reputation and brand loyalty; as a multinational with significant effects on local communities, providing jobs and protecting the environment may build a good reputation.",
+                  "Potential judgement": "Focus on shareholders, as the main purpose of a business is to generate good profits to retain existing shareholders and attract investors; or focus on stakeholders to gain improved employee performance and consumer loyalty.",
+                  "MOPS recommendation": "Market - competitive personal-care market with rivals such as L'Oreal and Clinique; shareholder focus could increase profits and competitiveness; Objectives - to remain a leading global business, stakeholder focus builds reputation attracting employees, customers and suppliers; Products/services - shareholder focus may generate profits to reinvest in new products (best-selling brand Nivea); Situation - as a multinational affecting many stakeholders, a socially responsible approach may also attract ethical investors.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2025-p3",
+            year: "June 2025",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-que-20250610.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-rms-20250814.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-C (pre-release context: music recording, distribution and live performance industries). Extract A: Universal Music Group (UMG) is the world's largest music label with 33.90% market share, followed by Sony Music Entertainment 26.91%, Indies 23.21% and Warner Music Group 15.98%; artists include Taylor Swift, Kendrick Lamar, Elton John and Sabrina Carpenter, and UMG receives a proportion of each artist's sales; 2024 revenue rose 14.4%, helped by Taylor Swift's The Tortured Poets Department (255,515 physical copies in the UK); AI using UMG-owned artist material and TikTok's global influence on music consumption are challenges. Extract B: Rough Trade is an independent record store with 7 shops in cities including London and Liverpool; its owners are happy to remain small and avoid areas with a strong independent record shop; they recognise 5 or 6 cities where a new store could open. Year ending 31 December 2022: Sales Revenue £14 348 884, Gross Profit £5 210 500, Operating Profit £528 330; cost of sales and operating expenses both increased significantly in 2022. Staff are paid well above the minimum wage, with a good working environment and a profit bonus; UK vinyl market share rose to 8.4% (from 7%); sales of books and turntables also increased. Extract C: the industry's focus is shifting to emerging markets; labels such as UMG brought Western music through international marketing of global artists, but regional scenes (K-pop, Reggaeton, Afrobeats) are taking on global sounds; sales of local artists such as Tiara Andini (Indonesia) and Chris Mj (Chile) are expected to grow; Spotify and Apple Music were late to emerging markets, allowing local services such as JioSaavn in India to give easy access to local music and help local artists become superstars, though lacking global presence; European and North American artists are turning to local sounds to differentiate.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using SWOT analysis, assess two threats to Universal Music Group (UMG).",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Assess the reasons why Rough Trade Records may choose to stay small.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Using the data in Extract B, and profitability ratios, assess the ways in which Rough Trade Records could improve its profitability.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "Universal Music Group has the business objective of profit maximisation. To achieve this, it is considering following either an ethnocentric or polycentric approach to its global marketing strategy.",
+                    prompt: "Evaluate these two options and recommend which one is most likely to achieve profit maximisation for UMG.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G. Extract D: the End of the Road festival is an annual English festival of independent rock and folk music; founder Simon Taffe thought 'I could do this', researched for two weeks, was refused by venues except Larmer Tree on the Wiltshire/Dorset border; the first festival (September 2006) cost £150 000, funded by selling his house and loans; slow ticket sales despite advertising led him to drive around the country leafleting festivals; first-year loss £35 000 (he was 25 and still had his decorating business), second-year loss £50 000, roughly profitable by year four; in 2024, 15 000 people attended, with six stages in fields, woodland and Victorian gardens. Extract E: FreeFill reusable cup scheme charges £1 per cup to reduce single-use plastic and recyclable waste; the festival donates some income to clean water projects and promotes and financially supports War Child. Extract F: Leeds and Reading attract almost 200 000 fans between them; smaller festivals sell 5 000-20 000 tickets and face competition and rising costs; 192 of 600 festivals operating in 2019 have closed, including the Secret Garden Party (July 2024), whose founder said publishing ticket prices early commits you to a price and budget, a huge risk, with incredibly tight margins; yet Green Man sold out in two hours for 2025 and Kendal Calling has record sales, with a general boom in summer events; sponsorship matters (Wilderness is sponsored by Audi), otherwise ticket prices would need to rise. Extract G (2025 weekend adult ticket price; capacity): End of the Road £240, 15 000; Reading £250, 105 000; Latitude £308, 45 000; Isle of Wight £289.95, 60 000; Green Man £275, 25 000.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Assess two entrepreneurial motives that Simon Taffe might have had when setting up the End of the Road festival.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Assess the likely importance of Corporate Social Responsibility to the organisers of the End of the Road festival.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the likely impact of the competitive environment on the End of the Road festival.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "In 2024, the End of the Road festival sold all available tickets. To improve the sales revenue of the festival in 2025, the organisers are considering either increasing ticket prices or increasing the capacity of the festival.",
+                    prompt: "Using the data in Extract D, F and G, evaluate these two options and recommend which one is most likely to improve sales revenue.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors including supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding; chains of reasoning showing cause(s) and/or effects, but may be assertions or incomplete; an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "In SWOT analysis, a threat is a negative factor outside a business' control that impacts on its possible future success.",
+                  Threats: "Technology and changes in music distribution, e.g. via social media such as TikTok, may mean UMG loses royalties usually paid for playing its artists' material; competitors such as Sony Music could threaten its market leadership by signing more successful artists or selling more from existing artists; AI may use copyrighted material owned by UMG and its artists, reducing potential revenue.",
+                  "Possible counterbalance": "UMG's revenue rose 14.4% in 2024, suggesting its artists' sales are increasing so the social media threat may not be having a large impact; Taylor Swift's album sold 255,515 physical copies in the UK, showing buyers still want the latest albums by high-profile artists.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "An SME has fewer than 250 employees; rather than pursue growth, some businesses choose to remain small.",
+                  "Reasons to stay small": "Rough Trade may wish to offer a more personal service - selling physical music such as vinyl and CDs, being small helps it know its customers and give high customer service; the owners may not aim for profit maximisation, e.g. they do not want to take sales from other independent record retailers by opening stores in competitors' locations; physical music is now a niche market, which can be profitable and more possible when small, with higher margins per sale than a mass-market strategy.",
+                  "Possible counterbalance": "The owners recognise other possible locations, so staying small may not be a long-term aim and it may be sacrificing revenue; staying small may limit market share and profits - its share rose to 8.4% from 7% and could rise further with more stores; it may limit development of books and turntables through lack of shop space and customers, reducing diversification.",
+                  "Possible judgement": "Although small, Rough Trade is a national business; given its recent sales and market share growth, its model gains from customer loyalty and staff knowledge and avoids growth problems such as over-trading and diseconomies of scale.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and calculations": "Profitability measures the ability of a business to generate profits from its activities. Gross profit margin = £5 210 500/£14 348 884 x 100 = 36.31%. Operating profit margin = £528 330/£14 348 884 x 100 = 3.68%.",
+                  "Ways to improve profitability": "Increase revenue from £14 348 884, e.g. by raising prices if demand is price inelastic for a small business selling niche music products; improve gross margin by reducing cost of sales (£9 138 384), e.g. finding cheaper suppliers of records and books; reduce operating expenses (£4 682 170) to improve operating margin, e.g. negotiating lower shop rents or limiting future profit-related pay.",
+                  "Possible counterbalance": "Raising prices risks lower sales and revenue as customers switch to other independents or online; cheaper suppliers may not exist as vinyl and recorded music supply may be limited; its policy of paying staff well (real living wage and profit share) makes cutting the wage bill unlikely, and rents may be fixed in the short term.",
+                  "Potential judgement": "Rising vinyl market share (7% to 8.4%) shows demand, so profitability could improve if cost of sales and expenses such as marketing did not rise as fast as other costs have; with its wish to stay small and pay living wages and profit-related pay, operating profit is unlikely to improve significantly, while gross profitability depends on sourcing lower-priced recorded music.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response. Marks for application and analysis include up to 4 marks for quantitative skills (QS1, QS8). NB: to access levels 3 and 4, students will need to demonstrate quantitative skills to support their judgement.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; Quantitative and/or qualitative information is/are used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; Quantitative and/or qualitative information is/are introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "An ethnocentric marketing strategy markets products or services in foreign markets the same way as in domestic markets; a polycentric approach markets different products to different international markets to recognise local tastes and needs.",
+                  "Option 1 - Ethnocentric approach": "UMG used this when first entering emerging markets, promoting global artists such as Elton John as in the USA or Europe, reducing risk and keeping costs lower as an extension of an existing strategy; offers economies of scale, e.g. bulk-buying advertising on international satellite TV; avoids the product development costs of signing, recording and promoting local acts who may be unknown outside their markets and hard for UMG to market effectively.",
+                  "Option 2 - Polycentric approach": "UMG could sign and promote local artists such as Chris MJ in Chile, appealing to local tastes and language, raising sales and, if costs are competitive, supporting profit maximisation; local streaming services such as JioSaavn have established local talent who can become superstars, so working with local artists could boost global market share; as streaming and emerging-market sales grow, a polycentric approach is more likely to raise profits than an out-of-date one-size-fits-all approach.",
+                  "Potential judgement": "Ethnocentric is the lower-risk, lower-cost option - marketing domestic acts such as Taylor Swift the same way worldwide keeps promotion costs down and builds on existing popularity, supported by influencers and platforms such as Spotify; polycentric is more likely to maximise profit by raising revenue from the rapid growth of local talent in emerging markets such as Indonesia and Chile.",
+                  "MOPS recommendation": "Market - the global market is more fragmented with streaming supporting local artists, favouring polycentric; Objectives - polycentric could raise revenue from locally successful artists to maximise profit; Products/services - ethnocentric could succeed given aspirational Western artists already signed (Taylor Swift, Sabrina Carpenter) at relatively low cost; Situation - 14.4% sales growth in 2024 based on one US artist's album suggests ethnocentric could continue to succeed.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors including supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding; chains of reasoning showing cause(s) and/or effects, but may be assertions or incomplete; an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "An entrepreneurial motive is the reason an entrepreneur has for setting up a new business; motives can be financial or non-financial.",
+                  "Possible motives": "Independence (non-financial) - Simon felt he could run his own festival and make his own business decisions; social entrepreneurship (non-financial) - an opportunity for a festival promoting environmental and social issues, attracting festivalgoers who care about these, as at other festivals such as Glastonbury; profit satisficing (financial) - accepting acceptable rather than maximised profits compared with larger events such as Reading or Glastonbury.",
+                  "Possible counterbalance": "Full independence may not be possible as success depends on links with suppliers, colleagues and bands; environmental and social issues may have become prominent only once the festival had a venue and brand image; at the start Simon was unlikely to be motivated by profit and more likely wanted to break even in the short term, which many festivals failed to do.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Corporate Social Responsibility is when a business voluntarily includes social and environmental objectives in its operations.",
+                  "CSR is valuable": "CSR is part of the festival's brand image, attracting customers through recycled materials and giving profits to War Child; it differentiates the festival from others criticised for environmental damage, such as abandoned tents after Glastonbury; it supports relationships with stakeholders such as the Larmer Tree village community and employees, e.g. by minimising waste and rubbish.",
+                  "Possible counterbalance": "Success depends more on the popularity of the bands performing than CSR; CSR adds costs, e.g. recyclable cups are likely dearer than single-use plastic; location and venue are likely more important - the rural woodland setting and convenience for customers in Wiltshire and Dorset compared with Latitude in Suffolk.",
+                  "Possible judgement": "CSR is likely valuable as its environmental and social policies are part of the event's 'green', sustainable image; but it is unlikely to be the main reason for attendance, so organisers will be more concerned with the quality and range of artists, which drives ticket demand and sales revenue.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "The competitive environment is the nature, size and range of competitors in a given business' market.",
+                  "Positive impact": "Rival festivals such as Green Man encourage innovation and efficiency, e.g. differentiating by signing artists of different genres; the success of national events such as Glastonbury and Reading raises awareness of festivals generally, increasing demand for smaller festivals' tickets; closures such as the Secret Garden Party reduce competition, so customers of closed events may look for alternatives.",
+                  "Potential counterbalance": "Competition restricts flexibility to raise prices - its price is only £10 below Reading, a larger event with potentially a wider range of artists; publishing prices early risks being undercut by rivals and losing sales, as happened to the Secret Garden Party; competing for acts, equipment and staff raises costs during peak summer weeks.",
+                  "Potential judgement": "Greater awareness from national media exposure and sponsorship could benefit smaller festivals not directly competing for Reading's customers, so the environment may be beneficial; alternatively the many closures show it is hard to compete, especially when large festivals like Glastonbury have national exposure and sponsorship deals smaller festivals cannot get.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; Quantitative and qualitative information is/are used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; Quantitative and qualitative information is/are introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and calculations": "Capacity utilisation = actual (attendance)/potential (capacity) x 100; 15 000 attendees from a capacity of 15 000 = 15 000/15 000 x 100 = 100%.",
+                  "Option 1 - Increasing ticket prices": "Higher prices could reduce demand so attendance falls to capacity level, assuming demand is relatively price elastic; if demand is inelastic and customers are not put off, total revenue rises; its price (£240) is below Isle of Wight (£289.95) and Green Man (£275), so there is scope to raise it, and the rise needed may be small given the festival's smaller size and lower profile.",
+                  "Option 2 - Increasing capacity": "Extending the venue, viewing and camping space beyond 15 000 allows more tickets to be sold, potentially raising revenue; End of the Road has 30% of Latitude's capacity, which has a similar rural woodland venue and target market, so it could grow without losing small-scale appeal; greater capacity may bring economies of scale, e.g. bulk renting crowd barriers or portable toilets and managerial economies from specialist staff; it could improve customer experience through shorter queues for food and drink, easier access to stages and faster entry and exit.",
+                  "Potential judgement": "Small capacity increases with a strict limit on ticket sales are likely to improve capacity utilisation, addressing the crowding of 2024, supporting future demand and lowering average costs through economies of scale; alternatively raising prices could reduce attendance and utilisation, with strict limits on ticket numbers, raising revenue without expansion costs and supporting objectives such as profit maximisation.",
+                  "MOPS recommendation": "Market - smaller festivals have been closing, so increased capacity and size could prevent a similar fate; Objectives - higher prices reduce over-utilisation more quickly if demand is elastic; Products/services - regular festivalgoers are likely to accept higher prices, so increased capacity would improve their experience and reduce over-capacity; Situation - as a small festival growing in popularity, raising prices to operate under the 100% utilisation of 2024 is likely to maintain its USP and success.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response. Marks for application and analysis include up to 4 marks for quantitative skills (QS8). NB: to access levels 3 and 4, students will need to demonstrate quantitative skills to support their judgement.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2024-p1",
+            year: "June 2024",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-que-20240515.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-rms-20240815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-C (Samsung). Extract A - Global smartphone shipments (millions), columns Q4 2021, Q1 2022, Q2 2022, Q3 2022, Q4 2022: Apple 81.5, 59.0, 46.5, 49.2, 70.0; Samsung 69.2, 74.5, 62.5, 64.3, 58.3; Xiaomi 45.0, 39.0, 39.5, 40.5, 33.2; Oppo 33.9, 30.9, 28.2, 29.5, 29.6; Vivo 29.3, 24.8, 25.5, 26.0, 23.4; Others 112.7, 98.1, 92.3, 92.4, 89.4; Total market 371.6, 326.3, 294.5, 301.9, 303.9. Extract B - Galaxy S23 launch: Dr Kye, head of Samsung's mobile business, intends to focus on the premium segment in developed markets and growth countries, noting a shift to luxury models in developing markets. Samsung struggles to compete with lower-priced Chinese rivals in the low-to-mid range. S23 models have advanced camera improvements and longer battery life. Premium-focused Apple has enjoyed record revenues from its iOS software, partly due to the appearance of its apps. The S23 Ultra with 1 terabyte of storage is priced at more than $1 600 in the USA, higher than competitors. Samsung has early success and a technology advantage in the niche foldable phone market (including a foldable phone designed for Chinese consumers); competition expected to intensify as Chinese rivals such as Huawei enter; the next development is predicted to be phones with two folds. Extract C - Leadership: Apple CEO Tim Cook lets everyone's talents contribute, keeps an open mind, convinces others to follow; staff feel involved in decisions and rewarded for creative insights. Huawei's Ren Zhengfei's military experience shaped a culture of well-defined goals, employee devotion and obedience; competitive pay, high uptake of share options, long-term perspective supporting motivated, productive, loyal employees.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the information in Extract A, calculate the difference in Samsung's global market share of smartphone shipments between Q4 2021 and Q4 2022. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Explain one way Samsung could use market mapping.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the importance of function in the design mix of Samsung's smartphones.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the likely usefulness of price skimming to Samsung's pricing strategy.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "The head of Samsung's mobile business, Dr Kye, has considered the leadership styles used at Apple and Huawei. Dr Kye is deciding the best approach in order to drive Samsung's future success, and is considering a broadly democratic or broadly paternalistic leadership style.",
+                    prompt: "Evaluate these two options and recommend which one is the most suitable to ensure Samsung's future success.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G (TV streaming). Extract D - On 1 September 2022 BT Group and Discovery Eurosport completed a 50:50 joint venture giving BT Sport's existing customers the rights to view Eurosport content, creating a stronger competitor to Sky Sports in the UK; combined rights include Premier League and Champions League football, cycling's Grand Tours and tennis Grand Slams. In 2022 BT Sport had 4 million subscribers and Eurosport about 157 million. Basic BT Sport subscription was £18 a month in the UK; Eurosport was €5.99 a month, converted to pounds, for UK customers. After the JV the price for both channels is £29.99 a month, including many additional Discovery channels. Discovery sees sport as a way to differentiate from Disney and Netflix. QP stem: in August 2022 the exchange rate was £1 to €1.19. Extract E - Monthly subscription prices for streaming services in India 2016-2022 (bar chart, Rs): Netflix launch price Rs 500 (2016), Netflix current price Rs 149 (2022); the MS working uses Rs 200 for Netflix in 2019; Amazon Prime Video and Disney+ also shown (lower prices; exact bar values not legible in extraction). Netflix had 0.35 million subscribers in 2016, 2 million in 2019 and 5.5 million by 2022, an increase of 175%. Extract F - Since 2021 streaming multinationals in India are expected to follow a government-drafted code of ethics requiring 'due caution and discretion' over content threatening security or foreign relations; the government may extend online-content legislation to TV streaming; the code requires accessibility for persons with disabilities, parental controls, and consideration of caste, race, gender, religion and sexuality. Extract G - Netflix spent $400m on Indian-made content in 2019-2020; critics said Netflix was slow on pricing, distribution and regional-language shows (e.g. Tamil); Amazon Prime Video was faster to offer regional-language content. In 2023, 46% of streamed drama programmes watched in India were on Disney+, only 5% made by Netflix. Disney+ has catered better to a mass-market audience; Netflix has not identified its target audience in India.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    preamble: "In August 2022, the exchange rate was £1 to €1.19. Eurosport was €5.99 a month for UK customers, with their payment charged in pounds (£).",
+                    prompt: "Using the information in Extract D, calculate the increase in the monthly subscription, in pounds (£), for UK customers watching both BT Sport and Eurosport after the joint venture. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the information in Extract E, calculate the price elasticity of demand for Netflix in India between 2019 and 2022. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the likely impact on BT Sport of its joint venture with Discovery Eurosport.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the importance of political influence as a factor in controlling multinational TV streaming services in India.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "To increase its market share in India, Netflix could adapt its marketing mix. It could do this either by adapting its pricing policy or adapting its product to the Indian market.",
+                    prompt: "Evaluate these two options and recommend which one Netflix should choose in order to improve its market share in India.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): market share = sales of one business / sales of whole market x 100",
+                  "Application (1): market share of global shipments Q4 2021 = 69.2/371.6 x 100 = 18.62%",
+                  "Application (1): market share of global shipments Q4 2022 = 58.3/303.9 x 100 = 19.18%",
+                  "Application (1): difference = 19.18 - 18.62 = (-)0.56%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS2, QS8, QS9. NB: if the only answer given is 0.56 or 0.56% award 4 marks. If the answer given is 0.6 award 3 marks.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): market mapping is the use of a grid to show two features of a market, such as price and quality; or knowledge of how a market map could be used, e.g. to identify competitors",
+                  "Application (up to 2): e.g. Samsung sells premium phones at up to $1 600 each; Chinese competitors are selling at the mid-to-low end of the market",
+                  "Analysis (1): e.g. market mapping helps Samsung to identify a gap in the market for future product launches, such as a two-fold phone, which may help it gain market share",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "The design mix is the way function, cost/economic manufacture and aesthetics are mixed to appeal to different target markets; function is the way the product performs, including its specifications and reliability.",
+                  "Importance of function": "What the phone can do, such as some models folding, gives customers a reason to buy; Samsung charges premium prices (S23 Ultra with 1TB storage at $1 600) so its phones must function well to justify the price.",
+                  "Potential counterbalance": "Aesthetics may matter more, as Apple has succeeded with software that looks good to customers; foldability is a growth area that is part of the aesthetic; Chinese rivals such as Huawei may gain advantage by focusing on economic manufacture/cost in the budget/mid-range market.",
+                  "Potential judgement": "Function (storage, battery life, camera performance) is more important because it differentiates Samsung from rivals such as Apple that may focus more on aesthetics; alternatively, focusing on aesthetics could differentiate Samsung from cheaper Chinese rivals such as Huawei that focus on cost.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Price skimming means initially charging a high price when a new product is launched, then moving to a lower price later.",
+                  "Usefulness of price skimming": "The $1 600 S23 Ultra could target early adopters wanting increased storage before other customers; customers seeing it as new and different may feel justified paying a premium, raising revenues; skimming suits a well-established, well-known business with an innovative product, such as Samsung's foldable phone.",
+                  "Potential counterbalance": "Skimming only works for products seen as new and different - it is questionable whether increased storage or foldability justify $1 600; it is only possible for a limited time as competitors such as Apple develop similar phones; penetration pricing might be more appropriate in a competitive, dynamic market.",
+                  "Potential judgement": "Skimming is a feature of dynamic markets such as consumer electronics where early adopters will pay more for recognised brands like Samsung and innovations such as high-performance cameras; however, with Apple and Huawei offering choice, higher prices may not be appropriate and competitive pricing may better support launches such as the S23.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; quantitative and/or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Democratic: "Democratic leaders listen to and consider others' opinions before deciding; Tim Cook at Apple appears democratic, promoting staff contributions and involvement, which may boost motivation and innovation; could create new product ideas and responsiveness to a dynamic smartphone market; delegation would free Dr Kye to focus on strategic leadership (e.g. market leadership) while trusting others with tasks such as marketing decisions; empowerment may improve motivation and loyalty and reduce key workers such as software developers leaving for rivals like Huawei.",
+                  Paternalistic: "Paternalistic leaders consult and consider others' opinions but take responsibility for all decisions and keep a high degree of control; Ren Zhengfei's approach at Huawei appears successful with devoted employees, a model if Dr Kye wants more control; top-down communication gives consistency and clarity, helpful for the S23 Ultra launch and brand strength; two-way communication means big decisions such as a two-fold phone would be discussed with senior leaders; workers feel supported by certainty, and with competitive pay (as at Huawei) this can produce productive, loyal employees.",
+                  "Potential judgement": "Learning from competitors could support Samsung's sales: in a dynamic, competitive market the ideas and creativity of democratic leadership may support innovations such as the foldable phone, and Tim Cook still convinces others to follow his lead so some control remains; alternatively, paternalistic leadership may offer the best balance between control and staff involvement, as at Huawei where staff are obedient and well rewarded.",
+                  "MOPS recommendation": "Market - the dynamic smartphone market needs a range of staff views, supported by democratic leadership. Objectives - to build market share, democratic leadership may empower productive, quality-focused workers. Products/services - sales driven by price and reliability may be supported by the consistency of a paternalistic approach. Situation - facing Apple in premium and Huawei in mid/low range, an effective competitive strategy may be better supported by a paternalistic approach.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): an exchange rate is the value of one currency in terms of another currency",
+                  "Application (1): €5.99/1.19 = £5.03361 (£5.03)",
+                  "Application (1): £5.03 + £18 = £23.03361 (£23.03)",
+                  "Application (1): £29.99 - £23.03 = £6.96",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS8, QS9. NB: if the only answer given is £6.96 award 4 marks. If the answer is not given to 2 decimal places, award 3 marks. Award 3 marks if 6.96 is given.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): price elasticity of demand = % change in quantity demanded / % change in price",
+                  "Application (1): % change in quantity demanded = +175%",
+                  "Application (1): % change in price = (149 - 200)/200 x 100 = -25.5%",
+                  "Application (1): PED = 175/-25.5 = (-)6.86",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS7, QS8, QS9. NB: if the only answer given is -6.86 or 6.86 award 4 marks. If the only answer given is -6.8, -6.9, 6.8 or 6.9 award 3 marks. If the answer is -6.86%, award 3 marks. The 2019 Netflix price of Rs 200 is read from the Extract E chart (per MS working).",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A joint venture is a separate business created by two or more businesses, involving shared ownership, returns and risks.",
+                  "Positive impact": "Allows BT to spread risk, e.g. gaining subscribers in markets such as France if UK subscribers fall; BT Sport and Discovery Eurosport remain separate, so BT can decide programming outside sport independently; helps BT compete more effectively with Sky Sports in the UK with a wider range of sports such as cycling and tennis.",
+                  "Potential counterbalance": "Reasons for the JV may not last, e.g. sports may lose popularity so fewer new subscriptions; possible clash of objectives and imbalance of expertise between managers, causing disagreements over broadcasting contracts or price plans; the combined price of £29.99 is higher than the previous £18, so BT may lose subscribers unwilling to pay more.",
+                  "Potential judgement": "The JV is likely to make both packages more attractive in the UK and mainland Europe due to the wider range of sport, such as Premier League football in Europe; however it may benefit Discovery Eurosport more (add-on entertainment packages, wider customer base), and tennis and cycling may not be enough to attract customers away from Sky Sports.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Political influence is the way government policies, laws and beliefs can affect the actions of a multinational; multinationals can be controlled by political influence, legal controls, pressure groups and social media.",
+                  "Importance of political influence": "In India it derives from the code of conduct requiring streaming businesses such as Netflix to exercise 'due caution and discretion'; content is limited on issues such as national security and religious tolerance, so Netflix and Amazon may need to adapt content, adding to costs; political influence may extend to fines on businesses that do not comply with the guidelines, affecting costs and reputation of multinationals such as Disney and Amazon.",
+                  "Potential counterbalance": "Legal influence may matter more as it has the force of law - extending online-content law to TV may limit Netflix's ability to produce or adapt shows, reducing subscriptions; pressure groups (e.g. over religion or caste) may exert more control, affecting subscriptions for programmes on social issues; social media pressure could provoke negative consumer responses to new shows, damaging reputation and expansion.",
+                  "Potential judgement": "Political pressure can have a big impact if it restricts output and adaptation, making programmes less innovative and restricting growth in an emerging market; however, the code applies to all TV businesses in India so does not disadvantage one company, and social media control may be more impactful because it can target one brand, e.g. Amazon.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; quantitative and/or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Adapt pricing": "Price is what is charged for a Netflix subscription (Rs 149 in 2022); the cut from Rs 500 to Rs 149 brought Netflix closer to rivals Amazon and Disney, important as all three are foreign businesses using competitive pricing; Disney has the lowest price, suggesting Netflix could cut further, and lower Indian wages mean it cannot charge US-level prices; India's growing middle class may afford more than one subscription so Netflix should not be over five times rivals' prices, as it was in 2016; further cuts could help penetrate the mass market, with lower production costs helping maintain profit.",
+                  "Adapt product": "Netflix's product is its streaming service; India is a large market with many languages such as Tamil and Hindi, so adapting programmes could increase subscriptions and market share relative to Amazon; adapting content helps satisfy the government code on religion and culture without limiting output; other genres such as news and quiz shows could be adapted; Netflix could exploit India's large domestic entertainment industry's actors and producers.",
+                  "Potential judgement": "Adapting price is likely to support market share growth, as price reductions since 2016 appear to have helped raise subscriber numbers by 175%, and Netflix is still the most expensive foreign streamer so there is scope to cut further; alternatively, adapting programmes to local languages has worked for Amazon and there are likely to be many local niches Netflix could serve.",
+                  "MOPS recommendation": "Market - Netflix is behind Amazon in subscribers and is still the most expensive, so focusing on lowest price may be better. Objectives - short-term market share gains may come from aggressive price cutting to attract subscribers who can also choose domestic Indian services. Products/services - Indian subscribers may want American/European content with lower production costs, supporting a lower price. Situation - adapting content is a long-term project that could succeed in a large, diverse market, but short-term market share needs may require price cuts.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2024-p2",
+            year: "June 2024",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-que-20240522.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-rms-20240815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (Vidsy). Extract A - Vidsy is a digital marketing company creating video adverts for social media platforms such as Snapchat and TikTok. Founded in 2014 by Alex Morris, Archie Campbell and Gerard Keeley, who manage the company and own 60% of the shares. It employs a global community of over 7,000 digital creators; for each campaign it selects specific creative teams working online via its platform, each managed from its London or New York office. Clients include Coca-Cola, Unilever and L'Oreal. Turnover rose from £220 000 in 2015 to £6.9m in 2021. Mission statement: 'We're on a mission to build the global creative ecosystem for brands and creators to thrive on digital, together.' Extract B - selected financial information 2021 (£m): Gross profit 3.47; Expenses 2.55; Non-current liabilities 0.31; Shareholders funds 15.00. Extract C - Labour turnover in the technology sector, reasons for changing employers (bar chart): Better pay 71%, Better working conditions 47%, More responsibility 32%, Able to express creativity 26%; other reasons shown (threat of redundancy, shorter commute, relocation, part of start-up culture, leave tech industry, other) with values from 2% to 20% (exact pairings not legible in extraction). Extract D - In October 2021 Vidsy obtained £12m from venture capitalist Access Entertainment for expansion and platform development; its President Danny Cohen joined Vidsy's Board, saying the digital advertising market is growing at extraordinary speed and Vidsy will continue to grow rapidly.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Explain one benefit to Vidsy of having a mission statement.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using the data in Extract B, calculate Vidsy's return on capital employed (ROCE) for 2021. State your answer to two decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess whether Vidsy's directors should focus purely on shareholder returns in the company's business decisions.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess whether offering financial rewards is the best way for Vidsy to reduce its labour turnover.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Vidsy's directors wish to expand into the US market. To achieve this, the directors are considering whether to finance this expansion either by using retained profit or external finance.",
+                    prompt: "Evaluate these two options and recommend which one Vidsy's directors should choose to finance the company's expansion into the US market.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H (Tesla). Extract E - Tesla is an American multinational designing and manufacturing electric vehicles. In 2021 it had the most worldwide sales of battery electric vehicles, a 21% market share; in 2023 it was the world's most valuable vehicle manufacturer by share value. Sales revenue rose from $53.82bn in 2021 to $81.46bn in 2022; operating profit was $6.53bn in 2021 and $13.65bn in 2022. Elon Musk is the largest shareholder and Chief Executive. Product range: Model S, Model 3, Model X, Model Y; the Model 3 is the all-time bestselling plug-in electric car and in June 2021 became the first electric car to sell 1 million units. Cybertruck production started in 2023. Extract F - Tesla's factories achieve high capacity utilisation; it produced 1.37m vehicles in 2022, a 47% increase on 2021; it combines traditional manufacturing, advanced robotics (welding, painting, assembly) and just-in-time stock management, with a focus on lean production. Extract G - Tesla emphasises a task culture encouraging employees to develop solutions to current and emerging problems; employees must respond rapidly to market trends; design teams must match or exceed rivals' products; production workers are encouraged to suggest productivity and quality improvements; continuous innovation and R&D. Extract H - The global electric truck market was valued at $392m in 2020, projected to reach $3 862m by 2030; volume forecast to rise from 101,499 trucks in 2022 to 1,067,985 by 2030; dominated by Volvo, Mercedes and Ford. Growth drivers: government initiatives, stronger emissions regulation, falling battery costs; hindered by lack of charging infrastructure and high truck prices.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the information in Extract E, calculate the difference in the operating profit margin between 2022 and 2021. State your answer to two decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Explain one benefit to Tesla of its factories achieving high levels of capacity utilisation.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the importance of Tesla having a task culture for its continued success.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the value of lean production as a source of competitive advantage for Tesla.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Elon Musk has set the objective of increasing Tesla's market share of the electric vehicle market. To achieve this objective, Elon Musk is considering whether to focus on market penetration of the electric car market or product development through electric trucks.",
+                    prompt: "Evaluate these two options and recommend which one Elon Musk should choose to achieve the objective of increasing Tesla's market share.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of a mission statement, e.g. a brief description of a business' overall aim and strategic vision; or identification of a relevant benefit, such as giving employees a common focus",
+                  "Application (up to 2): e.g. Vidsy selects specific creative teams from the 7,000 global digital creators; brands such as Coca-Cola and L'Oreal understand Vidsy's mission; quote from the mission statement",
+                  "Analysis (1): e.g. the mission statement provides Vidsy's creators with a sense of direction and an understanding of the company's values and goals in order to achieve its strategic vision",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): ROCE = operating profit / capital employed x 100",
+                  "Application (1): operating profit = 3.47m - 2.55m = 0.92m",
+                  "Application (1): capital employed = 0.31m + 15m = 15.31m",
+                  "Application (1): ROCE = 0.92/15.31 x 100 = 6.01%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1. NB: if the only answer given is 6.01% award 4 marks. If the only answer given is 6.01 or 6.0 award 3 marks.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Shareholder returns are the rewards shareholders expect from a company, such as good dividends and an increasing share price.",
+                  "Shareholder returns": "The founders own 60% and manage the business, expecting good returns as reward for risk and hard work; venture capitalist Access Entertainment invested £12m for shares and expects a good return; Vidsy may wish to raise more finance by selling shares, and high returns could attract potential shareholders.",
+                  "Possible counterbalance": "Focusing on shareholders may conflict with creators expecting high pay and good conditions, adding to costs; paying good dividends may mean less profit reinvested in the digital platform needed in a dynamic technology market; prestigious customers such as Coca-Cola and Unilever expect high service levels, which may add to costs and reduce shareholder returns.",
+                  "Potential judgement": "Vidsy should focus purely on shareholder returns as shareholders own the business and may be considered the most important stakeholder; alternatively, it depends on whether shareholders are long-termist and will accept lower dividends now to finance growth that may generate large future profits.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Labour turnover is the proportion/percentage of workers that leave in a given time period.",
+                  "Financial rewards": "71% of tech employees left to seek higher pay, so Vidsy needs competitive salaries; team bonuses for meeting campaign deadlines could reduce the likelihood of creators leaving; key employees such as software designers could be retained with share options linking rewards to the business's future success.",
+                  "Possible counterbalance": "More responsibility (32%) and being able to express creativity (26%) are key reasons for turnover, so empowerment and encouraging creativity may be priorities; working in teams may be a more important reason to stay, encouraging idea-sharing and good relationships; rapid growth may create promotion opportunities in the London and New York offices.",
+                  "Potential judgement": "Financial rewards may be the best way given 71% cite pay and talented creators are in high demand, so competitive salaries and bonuses could stop them leaving for rivals such as Google; alternatively, non-financial rewards such as better working conditions (47%), empowerment, creativity and working on campaigns for prestigious clients like Coca-Cola may be more effective.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; quantitative and/or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Arguments for retained profit": "Revenue grew from £220,000 in 2015 to £6.9m in 2021 (a 3036% increase) and operating profit in 2021 was £0.93m, so retained profit could fund US expansion if costs are controlled; the three founders own 60% and may prefer retained profit to keep control; it is readily available with no interest, so expansion could be quick and cost effective.",
+                  "Arguments for external finance": "Access Entertainment has already invested £12m and may invest further, a significant sum compared with operating profit of £0.93m; as a company Vidsy can sell shares that do not have to be repaid, attractive given its rapid growth; Vidsy is low geared (0.31/15.31 x 100 = 2.02%), so bank loans may be easy to obtain as it is low risk.",
+                  "Possible recommendations": "Retained profit lets the owners manage the expansion and avoid losing control of their 60% stake; or external finance, because in a digital advertising market growing at extraordinary speed Vidsy could raise greater amounts to exploit opportunities.",
+                  "MOPS recommendation": "Market - dynamic, rapidly growing digital advertising market with prestigious clients shows Vidsy can generate the retained profit needed. Objectives - ambitious plans to expand in the US and develop its platform could be achieved with external finance such as from Access Entertainment. Product - high-quality adverts for Snapchat/TikTok users with potentially high margins can generate retained profit quickly. Situation - rapid expansion since 2014 with offices in London and New York and 7,000 creators; external finance such as share capital may provide the larger funds required.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response. MS quotes operating profit as £0.93m in 1(e) (1(b) working gives £0.92m).",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): operating profit margin = operating profit / revenue x 100",
+                  "Application (1): 2021 operating profit margin = 6.53bn/53.82bn x 100 = 12.13% (12.13303605%)",
+                  "Application (1): 2022 operating profit margin = 13.65bn/81.46bn x 100 = 16.76% (16.7566904%)",
+                  "Application (1): difference = 16.76% - 12.13% = 4.63%, or 16.7566904% - 12.13303605% = 4.62%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1. NB: if the only answer given is 4.63%, 4.63, 4.62% or 4.62 award 4 marks. If the answer given is 4.6% or 4.6 award 3 marks.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of capacity utilisation = current output / maximum possible output x 100; or identification of a benefit of high capacity utilisation such as lower unit costs or more efficient use of resources",
+                  "Application (up to 2): e.g. Tesla produced 1.37m vehicles in 2022, a 47% increase on 2021; Tesla's factories employ lean production techniques such as JIT",
+                  "Analysis (1): e.g. high capacity utilisation means the fixed costs of Tesla's factories are spread over more units of production, resulting in lower unit costs per vehicle",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Task culture is an organisational culture which places the emphasis on individual projects and small teams.",
+                  "Task culture": "Tesla has an innovative problem-solving culture; design teams generate ideas for new products such as the Cybertruck, leading to better decisions and cutting-edge products; project teams responding rapidly to market trends may give competitive advantage over rivals such as Nissan; production workers suggesting improvements and working in small teams may improve motivation (Mayo).",
+                  "Possible counterbalance": "Teams may have competing interests (e.g. Model 3 versus Model X), causing lack of co-operation; constant pressure for new ideas may stress production workers who prefer to just make cars, raising absenteeism and labour turnover; team conflict may slow decisions and responses to market changes such as developing electric trucks.",
+                  "Potential judgement": "Task culture is important as the electric vehicle market becomes more competitive, emphasising teamwork to match or exceed rivals' products; alternatively, as Tesla expands a role culture with specific responsibilities such as quality management could create a more organised, efficient workforce.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Lean production is an approach to management focusing on cutting out waste whilst ensuring quality; competitive advantage is a feature of a business and/or its products that enables it to compete effectively with rivals.",
+                  "Value of lean production": "Kaizen (continuous improvement) suits Tesla's innovative problem-solving culture and could improve quality and productivity; JIT could reduce stockholding costs with components delivered exactly when needed; advanced robotics should raise productivity and give more consistent quality, reducing defective vehicles.",
+                  "Possible counterbalance": "Lean production may require costly additional training of production workers; JIT depends on reliable suppliers, which may be difficult with four car models plus the Cybertruck; employees may not support the higher expectations placed on them, such as generating waste-reduction ideas (Kaizen).",
+                  "Potential judgement": "Lean production is a source of competitive advantage, having enabled the efficient production behind the 47% increase between 2021 and 2022; alternatively, advantage may come more from innovative design and effective marketing, since all car manufacturers use lean techniques.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; quantitative and/or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Market penetration": "Ansoff: increasing sales of an existing product in an existing market; Tesla's reputation rests on cars such as the Model 3, the all-time bestselling plug-in electric car and first to sell 1 million units (June 2021); with a 21% market share in 2021 it can exploit market leadership through wider distribution (more showrooms, website sales); efficient factories with advanced robotics and high capacity utilisation may give lower unit costs passed on as lower prices; less risky as an established brand that understands its market.",
+                  "Product development": "Ansoff: selling a new product to an existing market; the electric truck market is forecast to grow from $392m in 2020 to $3 862m by 2030; the Cybertruck launched in 2023 shows Tesla can exploit its innovation capability in this growing market; selling more than one product spreads risk if the electric car market declines; the truck market is more niche and may be less competitive, offering higher margins on the Cybertruck than the Model 3.",
+                  "Possible recommendations": "Market penetration, because the electric car mass market offers more potential (e.g. Model 3 sold 1m vehicles compared with a total electric truck market volume of 101,499); or product development, attracting B2B customers such as Amazon and DHL alongside existing B2C car buyers and raising share in both markets.",
+                  "MOPS recommendation": "Market - Tesla leads a growing, increasingly competitive mass market; electric trucks could offer a less competitive market. Objectives - as the most valuable car manufacturer aiming to raise EV market share, Tesla can exploit its strength through market penetration. Product - competitive advantage from understanding its EV customers supports market penetration. Situation - rapid expansion (1.37m vehicles in 2022, up 47%) and the Cybertruck launch mean product development could make Tesla a leader in both car and truck markets.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2024-p3",
+            year: "June 2024",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-que-20240607.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-rms-20240815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Context: clothing retail and manufacturing industries. Section A: Extracts A-C. Extract A - Vinted Ltd, founded in Lithuania in 2008 by Milda Mitkute and Justas Janauskas (still major shareholders), operates across Europe and the USA and recently raised €250m in share capital to fund expansion into new markets. It has 45 million users buying and selling clothes on its platform; sellers pay no fees until items sell, then Vinted takes a percentage of the selling price. It uses trends such as affordable fashion and online channels, and is part of the circular economy (recycling and re-selling goods to prolong usage sustainably). It plans to let sellers sell for a charity of their choice; in the UK charity shops (e.g. British Heart Foundation) are a significant channel for used goods. Extract B - Global fashion trends 2023: (1) resale - the secondhand clothing market will grow three times faster than the overall global clothing market; 70% of customers say it is easier to shop secondhand than five years ago; resale helps affordability as incomes are squeezed. (2) Sustainability - fast-fashion brands criticised for manufacturing methods and long global supply chains; 42% of global customers prefer eco-friendly and sustainable products. (3) Brick-and-mortar - 22% of online returns are because products look different in reality, driving brands back to traditional retail; 50% of customers look online and buy in store, 50% view in store and buy online. Extract C - Value of textile exports ($bn, 2020): China 275.76; Vietnam 38.91; Bangladesh 37.26; India 29.72; Turkey 28.52; Rest of Asia 87.89; Europe 151.88; US 22.15; Africa less than 20; Australasia less than 10. Brands were attracted to China by a large labour force, low labour costs, manufacturing technology and high quality; factories concentrated in coastal port cities; Shein is based in China. Mango's chief executive Toni Ruiz is considering buying less from China and more local sourcing. Average Chinese factory wages doubled between 2013 and 2021; Chinese products are less competitive once shipping costs are included; supply chain traceability matters after reported labour abuses in China. Many brands are moving production to Turkey, which has a customs agreement with the EU and a free trade agreement with the UK, easy access to raw materials such as cotton, and a skilled workforce protected by strong labour laws; Hugo Boss and Zara already produce there.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Assess two financial consequences of Vinted operating as a private limited company.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Assess whether the global clothing market could be considered a dynamic market.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the importance of business ethics to the success of Vinted.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "Clothing retailer Mango aims to deliver the latest fashion trends to its UK customers. It is reviewing the source of its clothing inventory (stock). It is considering two options, either continue to use suppliers from China, or change to suppliers based in Turkey.",
+                    prompt: "Using the data in Extract C, evaluate these two options and recommend which one is likely to support Mango's aim of delivering the latest fashion trends to UK customers.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G (Jonathan Trumbull Ltd). Extract D - Founded in Norwich in 1971 by John and Roger Kingsley; John's son David Kingsley is a director and manager, one of 20 staff. Owns three stores: Trumbull (traditional menswear), Ginger (high-end women's fashion) and Hatters (contemporary fashion). Estimated expansion costs for one store: £25 000 to £30 000. Stores sell classic and casual wear for adults on a range of incomes, from brands including Armani, Tom Ford and Moschino. The website cost about £2 000 to set up and stocks additional labels (e.g. suits and formalwear) not in stores; its IT stock system is managed by Swan Retail (integrated ordering, stock management and accounting). Expanding e-commerce could cost 30% more than the original set-up cost. Norwich is the largest city in the East of England, a main regional shopping centre, regularly voted a top five UK retail destination. Extract E - Ginger has moved back to its original premises in Timberhill after a spell in the Trumbull store; store manager Beckie Kingsley, David's daughter, is likely to be his successor; Timberhill has community spirit and thriving independent shops that share ideas, and customers welcomed the return. Extract F - Statement of financial position (2022; 2021): Fixed assets £30 683; £30 568. Inventory £639 340; £687 560. Receivables £13 518; £45 171. Cash £491 844; £299 732. Total current assets £1 144 702; £1 032 463. Creditors due within 12 months £345 824; £417 974. Extract G - In 2023 multinational Urban Outfitters announced a store in Chantry Place, Norwich's biggest shopping mall; founded 1970 in the USA with more than 200 stores in North America and Europe; sells on-trend women's and men's clothes, shoes, hats, bags and handpicked vintage (Urban Renewal). Its online sales rose 150% in 2022 but it is also opening stores, which act as showrooms letting customers touch and feel products, with varied loft-style layouts.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Assess two factors that could influence the demand for new clothing sold by Jonathan Trumbull Ltd.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Assess the importance of scenario planning for Jonathan Trumbull Ltd.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Using the data in Extract F, and liquidity ratios, assess whether Jonathan Trumbull Ltd's liquidity position has improved from 2021 to 2022.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "To compete with new businesses, such as Urban Outfitters, Jonathan Trumbull Ltd is considering either improving its physical stores in Norwich or expanding its online sales.",
+                    prompt: "Using the data in Extracts D to G, evaluate these two options and recommend which one will help Jonathan Trumbull Ltd compete effectively.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors including supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A private limited company is a business owned by shareholders that have limited liability.",
+                  "Financial consequences": "Vinted raised €250m by selling additional shares to investors invited by existing shareholders to fund expansion into new markets; existing shareholders control who can buy new shares, increasing financial control and preventing a takeover by rivals such as Alibaba; limited liability is less risky for shareholders such as Milda Mitkute and Justas Janauskas than, say, a partnership, as they are not responsible for the debts if the business fails.",
+                  "Possible counterbalance": "Vinted cannot sell shares on the stock market, so raising share capital is limited to existing shareholders and those they invite; new shareholders who helped raise €250m become part owners and expect dividends; private limited companies face additional costs of preparing accounts and having them externally audited.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Dynamic markets are those that are constantly changing.",
+                  "Arguments for the global clothing market being dynamic": "The second-hand market is growing three times faster than the overall market, showing changing demand; online retail continues to grow with technology such as eBay providing new ways to buy; customers' concern for sustainability is making retailers review supply chains; tastes and fashions change, requiring dynamic responses in stock ordering and marketing.",
+                  "Possible counterbalance": "The continued importance of physical stores suggests the impact of technology such as online sales is limited; changes in tastes may be cyclical and predictable, limiting their impact; some changes such as resale are re-emerging previous trends, reducing their dynamic nature.",
+                  "Possible judgement": "The market is dynamic because tastes and fashions change and technology such as online selling and resale marketplaces is still changing how customers buy; alternatively it is changing gradually rather than dynamically, with second-hand demand and sustainability seen as a reaction to previous change.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Business ethics involve moral principles that determine how a business operates.",
+                  "Importance of business ethics": "Environmental sustainability is central to Vinted's model of a platform for buying and selling second-hand clothing; it has exploited the circular-economy trend, particularly among younger consumers; its planned charitable selling shows ethics are seen as key to success; 42% of customers see eco-friendly and sustainable products as important, and Vinted taps into this.",
+                  "Potential counterbalance": "Success may relate more to the convenience and accessibility of online marketplaces; price matters to customers in challenging economic times, and second-hand buying keeps prices down; there is no information on the percentage Vinted charges, which could be high, suggesting a profit focus; other ethical aspects such as treatment of staff may not be important to its success.",
+                  "Possible judgement": "Consumers are increasingly concerned about sustainability given problems caused by fast fashion, so an ethical approach is central to Vinted's success; alternatively Vinted simply provides an online marketplace and charges sellers, succeeding because it satisfies a trend in methods of buying and selling rather than because it supports sustainable purchasing.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; quantitative and/or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Factors that influence the location of production include costs, productivity and regulation.",
+                  "Option 1 - China": "China is the world leader in textile exports ($275.76bn in 2020), showing experience and expertise, possibly why Mango sources there; traditionally low labour costs can be passed on as lower prices, letting Mango charge low prices or keep high margins; manufacturing technology gives high-quality, reliable clothing and productivity; coastal location and good transport infrastructure allow quick, efficient delivery to markets such as the UK; the speed and efficiency of Chinese suppliers makes delivering the latest trends more likely than a less experienced location.",
+                  "Option 2 - Turkey": "Turkey's free trade agreement with the UK avoids tariffs, keeping Mango's costs down; geographical proximity reduces transport costs and time, letting Mango respond to changing trends more quickly; strong labour laws mean less worker exploitation than in some Chinese factories, improving Mango's brand image; Chinese wages doubled between 2013 and 2021, making Turkey relatively more attractive.",
+                  "Possible recommendation": "Moving to Turkey may best meet customers' need for the latest trends given proximity, the customs union and skilled workers, and it addresses sustainability and ethical concerns; alternatively China remains the world leader ($275.76bn in 2020) with developed infrastructure, technology and capacity, and fast-fashion brands such as Shein respond to UK consumer needs while based in China.",
+                  "MOPS recommendation": "Market - greater customer awareness of ethics and sustainability makes Turkey more attractive. Objectives - targeting customers wanting the latest trends needs quick manufacture and transport, favouring Turkey. Product - clothing and textiles are one of China's most successful exports, so its expertise keeps it a good location. Situation - Mango already uses Chinese suppliers, and reliability and experience may matter more given other market changes such as online selling.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors including supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Demand measures the amount of a good or service that people are willing and able to buy at a given price.",
+                  "Factors influencing demand": "Changes in consumer income - falling incomes could reduce demand, especially for designer labels such as Armani or Tom Ford; price - high prices for labels such as Armani may limit demand; price and availability of substitutes/competition, such as second-hand or re-sold clothing like Urban Renewal; fashions, tastes and preferences - businesses such as H&M may gain as they respond faster; marketing, such as retailer location and promotion.",
+                  "Possible counterbalance": "Income may not be a big factor as Jonathan Trumbull sells at different price points for different incomes; price may not affect demand for luxury brands such as Tom Ford where brand image matters more; second-hand purchases may be made in addition to new purchases; fashion and tastes may matter more for segments such as younger customers than for products such as suits.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Scenario planning is the process of anticipating possible changes in a business' situation and then devising ways of dealing with them.",
+                  "Importance of scenario planning": "Succession planning matters for a small family business - David Kingsley may retire soon and need a successor such as his daughter Beckie; a plan for failure of the IT stock and accounting system managed by Swan Retail helps ensure orders arrive on time and sales are recorded; it helps predict market trends and responses to new competitors such as Urban Outfitters.",
+                  "Possible counterbalance": "With only 20 staff the business can respond quickly without detailed plans; it is difficult to plan for all eventualities, and surviving over 50 years suggests it has met many challenges; scenarios such as IT failure are dealt with by Swan Retail, which likely has its own plans and back-up.",
+                  "Potential judgement": "As a family business of over 50 years scenario planning has likely been important, especially succession with directorships passed down the Kingsley family and Beckie likely to succeed; alternatively it is better suited to larger businesses facing serious threats such as natural disasters, while Jonathan Trumbull's market changes are likely gradual.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding, recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and calculations": "Liquidity measures the ease with which assets can be turned into cash and used immediately. Current ratio = current assets/current liabilities: 2022 = 1 144 702/345 824 = 3.31; 2021 = 1 032 463/417 974 = 2.47. Acid test = (current assets - stock)/current liabilities: 2022 = 505 362/345 824 = 1.46; 2021 = 344 903/417 974 = 0.83.",
+                  "Liquidity position has improved": "The current ratio improved from 2.47 in 2021 to 3.31 in 2022; the acid test improved from a dangerous 0.83 in 2021 (relying on stock, the least liquid current asset) to 1.46 in 2022.",
+                  "Possible counterbalance": "A current ratio above 2 in both years suggests more stock than optimal, which may not regain its value if unsold as fashion goes out of trend; the high cash holding in 2022 (£491 844) could earn more elsewhere, e.g. an interest-bearing account; no data from earlier years or competitors to interpret the figures accurately.",
+                  "Potential judgement": "On both ratios liquidity improved between 2021 and 2022 because payables (current liabilities) fell and cash rose; however it is unclear whether it improved relative to earlier years or similar retailers, and stock is still a large proportion of current assets, a risk as the least liquid current asset.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response. Marks for application and analysis include up to 6 marks for quantitative skills (QS1, QS8).",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; quantitative and/or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Physical stores are visited by customers in person to buy directly; online sales involve customers buying from a website or app and having products delivered.",
+                  "Option 1 - Developing physical stores": "Three stores give face-to-face customer service, a model successful for over 50 years; customers can see and try before buying, which research identifies as important and is why Urban Outfitters is opening stores; developing one store costs £25 000-£30 000, small relative to cash of £491 844 in 2022; displays act as point-of-sale marketing; three stores already target different segments; Ginger's return to Timberhill shows the value of face-to-face custom and location; Norwich is a regional retail destination so a store presence is important.",
+                  "Option 2 - Expanding online sales": "Online sales have been a growth area for Urban Outfitters, meeting needs for convenience and choice; Jonathan Trumbull already sells a wider range online, so it would expand existing capabilities; expansion would cost about £2 600, only about 5% of cash deposits; it could reach customers outside Norwich, nationally and overseas; lower fixed costs such as rent and salaries than extending or acquiring shops; with three Norwich stores already, few more customers can be gained from store expansion unless in another city or town.",
+                  "Potential judgement": "Focus on physical stores given its success as an independent traditional retailer, relatively low expansion costs, and the chance to compete with Urban Outfitters through differentiation and customer service; or expand online, as Urban Outfitters grew online sales 150% alongside stores, and failing to do so risks losing sales and offering only a narrow local range, with £2 600 much cheaper than store expansion.",
+                  "MOPS recommendation": "Market - customers expect both online and physical stores; as a successful local physical retailer it should expand its stores. Objectives - to survive and compete with Urban Outfitters it needs to grow online sales, selling clothing not available in store. Product - concern about clothes not looking or fitting as expected online makes the physical store, with trying on and personal service, more important. Situation - a new multinational competitor sells online and in stores but may target a different market, so online expansion may be the lowest cost option.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2023-p1",
+            year: "June 2023",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-que-20230524.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-rms-20230817.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-C (Deliveroo). Extract A - UK average income and Deliveroo orders: UK average income 2020 £31 487, 2021 £31 285, % change -0.64%; Deliveroo orders 2020 74.5m, 2021 148.8m, % change 99.73%. Extract B - Working for food delivery apps: riders are mainly paid a fee per delivery, often plus commission; some employers reward riders for introducing new workers; flexible hours are an attraction but 'time is money' and jobs are insecure. Work is standardised from app order to delivery; deliveries are monitored online by managers and riders who miss a specified time may have 50% of the order value deducted. Training and development are rare; riders buy their own bikes, equipment and uniforms. Customer ratings are the only performance measure, though factors outside the rider's control (e.g. taste of the food) affect them. Some businesses use weekly rewards; others use job rotation for career progression. Extract C - Marketing and Deliveroo: apps such as Deliveroo and Uber Eats deliver for local restaurants and major chains. Marketing Director Emily Kraftman said research showed 'food happiness', a moment of joy, plus trust and reliability give the best brand image. Deliveroo targeted 'switchers' from Uber Eats and Just Eat and aimed to balance national branding with winning in every neighbourhood. It launched an emotional branding campaign (TV, billboards, radio, digital, Twitch, Waze, Acast). YouGov BrandIndex data showed brand awareness doubled from 3.1% to 6.6%, but Deliveroo was worse than all app-based competitors on quality, satisfaction, impression and reputation.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the data in Extract A, explain one way demand for online food deliveries is affected by income elasticity of demand.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Explain one reason food delivery apps, such as Deliveroo, pay their workers commission.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the likely importance of emotional branding to Deliveroo.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the likely value of secondary market research data to Deliveroo's marketing.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "In order to improve the motivation of delivery riders, Deliveroo could adopt the motivation theories of FW Taylor or Frederick Herzberg.",
+                    prompt: "Evaluate these two options and recommend which one is more likely to improve the motivation of Deliveroo's delivery riders.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G (computer games / Sony PlayStation). Extract D - estimated effects of price changes on quantity demanded for games consoles, 2004: PlayStation 2 change in price 0.59%, change in quantity demanded -2.10%; Xbox change in price 1.47%, change in quantity demanded -4.47%. Extract E - Globalisation in the games market: in 2020 China's market was worth about $24.4bn and the US's $23.6bn, followed by Japan, South Korea, Germany and the UK. Consoles and games were once made in countries such as Japan and China and shipped worldwide, targeting small local niches with country versions; producers now release games globally in many languages at the same time. About 2.2 billion people played games in 2020, helped by mobile gaming, online communities (a US gamer can play Call of Duty with a friend in Japan), digital distribution and cloud storage. Global niche markets have grown with digital distribution, e.g. Sukeban Games develops visual novels where players make decisions and solve puzzles. Extract F - Japan country data: government health expenditure per person $3 506; education expenditure per person $1 235; corruption ranking 19th; innovation ranking 13th; competitiveness ranking 6th; unemployment 2.7%; average wage $41 352. Extract G - PlayStation 5: in Japanese culture the circle means yes/correct and the cross means wrong; Sony's 1994 controller used these symbols, but elsewhere the meanings differ, so for 25 years and three generations Sony adapted the button functions by market, and global users grew beyond 100 million. Sony is now considering standardising the buttons on the PS5 in all markets as it goes head-to-head with Microsoft's new console.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the data in Extract D, calculate the difference in Price Elasticity of Demand for PlayStation 2 and the Xbox. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Explain one reason why global niche markets may be important to a games developer, such as Sukeban Games.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Using the data in Extract F, assess Sony's decision to manufacture the PlayStation 5 in Japan.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "There are several factors that have contributed to increased globalisation, including transport and communication.",
+                    prompt: "Assess the likely importance of transport and communication for the increased globalisation of the computer games market.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Sony could have either produced a standardised controller for sales in all countries or adapted the controller to the culture of local markets in order to maximise PlayStation 5's sales.",
+                    prompt: "Evaluate these two options and recommend which one Sony should have taken to maximise PlayStation 5's sales.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): YED = % change in quantity demanded / % change in income; YED measures the responsiveness of demand to a change in income",
+                  "Application (up to 2): YED = 99.73 / -0.64 (1) = -155.83 or 155/156 (1); or quantity demanded increases by 99.73% (1) as income falls by 0.64% (1)",
+                  "Analysis (1): e.g. Deliveroo orders are inferior goods - as incomes fall demand for the service rises; or orders are highly income elastic (greater than 1); or orders rise as consumers substitute/switch from restaurant meals to takeaways",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1. QS7: interpret values of price and income elasticity of demand. NB: correct YED answer only (-155.83 / -155 / -156) = 3 marks (application plus implied knowledge of the calculation).",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): commission is a payment to a worker based on a percentage of the value of sales",
+                  "Application (up to 2): e.g. Deliveroo riders deliver food to customers; customers rate their delivery on the Deliveroo app; food delivery",
+                  "Analysis (1): e.g. workers are possibly incentivised to accept more valuable orders if payment is calculated on the value of the delivery; workers are incentivised to deliver more orders to earn more commission in total; Deliveroo benefits from customers receiving food more quickly as workers try to earn more commission",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Emotional branding is the creation of brands that appeal to customers' emotional nature rather than their logical side.",
+                  "Importance of emotional branding": "Research found 'food happiness' was important to customers and their choice of app, so linking marketing to happiness could improve Deliveroo's brand image and increase sales; moving away from a functional approach helped raise brand awareness from 3.1% to 6.6%.",
+                  "Potential counterbalance": "Despite this, 93.4% are not aware of Deliveroo; other factors such as quality, satisfaction, impression and reputation may matter more to the brand; customers may care more about other elements of the marketing mix such as the price of food and deliveries or availability of deliveries.",
+                  "Potential judgement": "Takeaways bring happiness and may be consumed socially, so emotional branding can build loyalty; however the market is highly competitive with Just Eat and Uber Eats offering very similar services, so other considerations such as delivery prices are likely to be more important to customers.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Secondary market research data is collected by another business or organisation but used by the business in question.",
+                  "Secondary research data is valuable": "Often easily available and relatively inexpensive compared with primary research such as Deliveroo collating its own customers' views; YouGov BrandIndex is a specialist with experience and expertise in data collection; other secondary sources such as news websites and online sales trend information are readily accessible.",
+                  "Potential counterbalance": "Specialists do not guarantee accuracy and inaccurate data could lead to unsuitable marketing decisions; rivals such as Uber Eats and McDelivery can access similar data so no advantage is gained; YouGov BrandIndex may charge high prices, adding to marketing costs.",
+                  "Potential judgement": "The research used relates specifically to customers' reaction to Deliveroo's changed marketing, so it has some specific advantages of primary research with less time and effort; but if spending on a new campaign, primary research such as a focus group might be more valuable to collect accurate, actionable information.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - Taylor": "Scientific management breaks a job into constituent parts to find the most efficient way of working, and food delivery is standardised (order, collection, delivery) and needs to be quick; Taylor held workers are motivated by money, which fits the pay-per-delivery and commission model; the ratings system can further motivate good service; the simple, generally unskilled nature of the work, done for financial reward, makes extending financial motivation suitable.",
+                  "Option 2 - Herzberg": "Money is a hygiene factor and not enough to get the best out of workers; training and development would give recognition and growth (motivators); job security is a missing hygiene factor, so long-term contracts/guaranteed jobs could help; ratings based on factors outside the rider's control are demotivating, causing lost status and lack of satisfaction; motivators such as job rotation would add variety, improving motivation, customer service and repeat orders.",
+                  "Potential judgement": "Food delivery is low skilled and done by workers primarily motivated by money, often balancing gig jobs, so enhancing performance-based pay and efficient delivery via IT supports Taylor; alternatively, dissatisfaction with working conditions driven by customer needs causes demotivation, so keeping current pay as a hygiene factor while adding motivators such as training, promotion opportunities and responsibility for company equipment is likely to improve motivation and service.",
+                  "MOPS recommendation": "Market - competitive, 'time is money', so financial rewards per Taylor are best; Objectives - growth, and research shows customers care about quality as well as speed, which valued riders (hygiene factors satisfied) are more likely to offer; Products/services - delivery has little customer engagement and speed/reliability matter most, so organising and paying staff for optimal speed is best; Situation - the 'moment of joy' matters, so a rider who feels valued through promotion and training is likely to enhance service.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): PED = percentage change in quantity demanded / percentage change in price",
+                  "Application (1): PlayStation 2 PED = (-)2.10 / 0.59 = (-)3.56",
+                  "Application (1): Xbox PED = (-)4.47 / 1.47 = (-)3.04",
+                  "Application (1): difference = (-)3.56 - (-)3.04 = (-)0.52",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS7 and QS9. NB: if the only answer given is -0.52 or 0.52 award 4 marks. If the answer is not rounded to 2 decimal places, or is given as -0.52% or 0.52%, award 3 marks.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): global market niches are smaller, specialised parts of a global market / customers' specific needs in more than one country are not met by the global mass market",
+                  "Application (up to 2): e.g. fans of visual novels around the world; visual novels can be distributed digitally; players make decisions and solve puzzles",
+                  "Analysis (1): e.g. the niche for visual novels in one country might be too small to provide sufficient revenue; combined niches of several countries can be served by online distribution, reducing cost per sale; a premium price can be charged to global niche customers, increasing revenue",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1. (MS spells the developer 'Subekan'.)",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Reasons for locating in Japan": "Health spending of $3 506 per person may make workers more productive and reliable; education spending of $1 235 per person and 13th innovation ranking suggest strengths in new ideas and efficient working; the $41 352 average wage matters less if manufacturing is capital intensive; Sony is Japanese with a history of making consoles there, so has skills and expertise; since 2022 Japan has been in the RCEP trading bloc, possibly reducing costs of trading with members such as China.",
+                  "Potential counterbalance": "The $41 352 average wage is high and adds to costs; 2.7% unemployment means fewer available workers and higher wages may be needed to attract them; PS5 is a global product with standardised parts, so locations such as Europe or North America closer to big markets might be better.",
+                  "Potential judgement": "Sony's close cultural links to Japan and the need to compete with Microsoft make using the expertise and technological skills of an educated Japanese workforce important for top quality; but higher labour costs affect profits and skilled workers elsewhere, closer to PS5's markets, could reduce transport costs.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. QS9: interpret, apply and analyse information in written, graphical and numerical forms. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Globalisation is the process by which economies and cultures have been drawn deeper together and become more interconnected through networks of trade and the rapid spread of technology.",
+                  "Reasons for transport and communication": "Technology and the internet, e.g. mobile devices, have reduced the cost of distributing games worldwide; economic growth in countries such as China increased market size and, helped by technology and communication, led to simultaneous multi-language releases; broadband growth lets players in the US and Japan play and discuss the same game, increasing opportunities to sell worldwide; containerisation improved transport of products such as consoles.",
+                  "Potential counterbalance": "Reduced trade barriers made it cheaper to distribute physical games to economies including India and China; economic growth and larger middle classes in India and China drove demand rather than availability alone; government controls such as limits on internet access in China limit the impact; outside China the major markets (US, UK, Germany) are concentrated, so true globalisation may not have occurred.",
+                  "Potential judgement": "Before improved transport and communications games targeted small local markets, and the low-cost internet made global distribution happen; alternatively, increased disposable income in developing economies such as China created the demand, without which there would be no revenue even if delivery means existed.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "In support of standardising the controller": "Standardised controllers allow standardised global marketing (ethnocentric), reducing marketing costs and giving customers a single globalised product; manufacturing/assembly costs should be lower with standardised machinery; Japan is likely a small share of 100 million global users so sales are less likely to be damaged; high brand loyalty in Japan makes switching to Microsoft Xbox less likely; price, playability and games available are likely more important purchase factors.",
+                  "In support of adapting the product": "Strong cultural factors in Japan may require continued adaptation, as confusion over changed controls could damage reputation and PS5 sales (geocentric/polycentric approach); adaptation is part of PlayStation's USP in its home market and likely drove sales since launch; younger consumers used to the symbols' meanings at school may find playability affected, damaging brand image; existing manufacturing and training systems for adapting PlayStations for Japan can be reused without much disruption.",
+                  "Potential judgement": "Standardisation is best due to reduced costs in a globalised market where Microsoft is unlikely to adapt products, and manufacturing the PS5 in Japan already shows loyalty to the home country; alternatively, adaptation is part of the USP, strong cultural understanding of the X button means standardising could reduce loyalty and sales in Japan, and adapting contributed to past success.",
+                  "MOPS recommendation": "Market - Microsoft likely sells a standardised console focused on playability and price, so PlayStation should do the same; Objectives - sales maximisation in the global market means adapting for Japan alone is probably unnecessary; Products/services - the controller symbols are iconic and unique in Japanese society, so adapting supports brand image and home-country links; Situation - manufacturing the PS5 in Japan keeps home-country links strong, so adaptation is not needed to maintain loyalty.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2023-p2",
+            year: "June 2023",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-que-20230608.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-rms-20230817.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (Brompton Bicycle Ltd). Extract A - founder Andrew Ritchie created prototypes in 1975; Brompton has over 1,450 official dealers in cities such as London, New York, Tokyo and Shanghai, a global reputation for design excellence and innovation, and exports are 68% of bicycle sales. Stores employ qualified sales staff giving expert advice, stock spares and accessories and have a servicing workshop. The bikes are foldable; designers constantly improve the bike, accessories and production processes. Each bike is hand made by a skilled worker at the London factory, making it tough and unique; each worker is trained for 18 months and stamps their own 'signature' on each bike they work on. Extract B - employment and production data: 2019 production workers 150, bikes produced 48,956; 2020 production workers 184, bikes produced 59,052. Extract C - line graph of the US dollar to the £ exchange rate, January 2020 - December 2021 (axis $1.05-$1.45; the MS reads it as about $1.15 = £1 in April 2020 and $1.38 = £1 in April 2021). Extract D - Brompton's growth strategy is based on takeovers; sales growth has averaged 20% a year for four years but this caused problems obtaining enough supplies of some components. CEO Will Butler-Adams: it could acquire businesses making complementary accessories such as clothing and helmets; it is heading for 30% a year growth, employed another 100 people in 2021, and new specialist workers (e.g. the paint shop) improve product quality.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Explain one reason why Brompton might use job production.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using the data in Extract B, calculate the change in labour productivity between 2019 and 2020. State your answer to two decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess whether the distinctive capability of innovation is the main reason that Brompton has a competitive advantage.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Using the data in Extract C, assess the effect on Brompton's sales of the change in the US dollar to the £, between April 2020 and April 2021.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Brompton has set itself the objective of expansion. It is considering two options to expand, either by organic or inorganic growth.",
+                    prompt: "Evaluate these two options and recommend which one is the best for Brompton to achieve its objective of expansion.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H (Peloton). Extract E - Peloton is the world's largest online fitness provider with over 5.9 million members in 2021, earning income from expensive equipment (exercise bikes, treadmills) and a monthly subscription for streamed instructor-led classes. Between 2020 and 2021 sales rose by 172% and it gained more than a million new members, but demand caused delays in production and delivery of equipment. By end-2021 sales of bikes and treadmills (60% of revenue) had fallen 17% due to lower-priced rivals and consumers returning to gyms; Peloton cut bike prices by 20% and launched a membership app with classes not needing Peloton equipment. Extract F - Statement of Comprehensive Income 2021 ($m): revenue 4021.80; cost of sales 2569.80; expenses 1639.80; gross profit margin for 2020 32.35%. Extract G - after a costly treadmill recall, warehouse staff found paint flaking on bikes priced $1,495-$2,495 made in Taiwan; executives concealed the corrosion and still sold them. The US Consumer Product Safety Commission requires notification of defects that 'could create a substantial product hazard or an unreasonable risk of serious injury or death'. Low inventories from a supply chain crisis; some workers felt pressured to approve rusty bikes. With a falling share price in 2022 Peloton announced 2,800 job losses, co-founder John Foley resigned as CEO, and it planned to cut a further $800m from annual costs. Extract H - the world online fitness market was $6,046m in 2019 and predicted to be $59,231m by 2027 (average annual growth 33.1%); streaming via fitness apps dominates, and sensors in smartphones and smartwatches let consumers track progress towards health goals.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Explain one likely problem experienced by Peloton due to its rapid growth.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the data in Extract F, calculate the difference in Peloton's gross profit margin between 2020 and 2021. State your answer to two decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess one likely effect of consumer protection legislation on Peloton.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess whether cutting costs is the best way to improve Peloton's profit.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "When reviewing Peloton's corporate strategy, its Chief Executive has identified technology as the most important PESTLE factor to prioritise. Other directors consider prioritising social factors as more important.",
+                    prompt: "Evaluate these two PESTLE factors and recommend which one Peloton should prioritise when developing its future corporate strategy.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): job production is where items are made individually",
+                  "Application (up to 2): e.g. each worker has a 'signature' which they stamp on the parts of the bike they work on; Brompton bikes are unique because they are foldable",
+                  "Analysis (1): this enables Brompton to add value to its bikes because consumers may be prepared to pay higher prices for a quality bike",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): labour productivity = output / number of workers (may be implied)",
+                  "Application (1): labour productivity 2019 = 48956 / 150 = 326.37",
+                  "Application (1): labour productivity 2020 = 59052 / 184 = 320.93",
+                  "Application (1): difference = 326.37 - 320.93 = 5.44",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1: calculate, use and understand ratios, averages and fractions. NB: if the only answer given is 5.44 or -5.44 award 4 marks; if the only answer given is 5.4 award 3 marks.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A distinctive capability is a skill or attribute possessed by a business; innovation is the creation, development and implementation of a new product, process or service.",
+                  "Innovation as a source of competitive advantage": "A global reputation for design excellence of its folding bike gives a USP and strong brand image; designers constantly improving the bike, accessories and processes may lead to further innovation and better quality and efficiency; record sales growth averaging 20% for four years suggests brand loyalty and new customers in cities such as Tokyo and Shanghai, with design and innovation possibly key reasons.",
+                  "Possible counterbalance": "Advantage may come from reputation, e.g. excellent customer service with qualified sales staff and a wide range of spares and accessories attracting customers from rivals such as Halfords; 18 months' training and job production may give a motivated workforce and good employer-employee relations (architecture); a widespread distribution network of over 1,450 dealers lets it reach more customers than competitors.",
+                  "Potential judgement": "Innovation is the main reason because the unique foldable design can be protected by a patent, preventing copying; innovation is an important USP giving differentiation, but in the long run product quality and customer service may be more important.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "An exchange rate is the price of one currency in terms of another.",
+                  "Possible effects": "Between April 2020 and April 2021 the rate changed from $1.15 = £1 to $1.38 = £1, so the £ appreciated against the $; this may reduce Brompton's US sales as bikes become more expensive for US consumers in cities such as New York; exports are 68% of sales, so if the US is a major export market the effect could be significant.",
+                  "Possible counterbalance": "Cheaper import prices if Brompton buys components/accessories from US suppliers could allow more competitive prices; its reputation for design excellence and foldable USP may mean US consumers still pay the higher price; falling US sales could be offset by sales in markets such as Tokyo and Shanghai, especially if exchange rates there are more favourable.",
+                  "Potential judgement": "The £ has only appreciated by $0.23, so US prices may rise only slightly and sales may be unaffected; if US demand is price elastic, the change could be negative as consumers buy from cheaper domestic manufacturers.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. QS3: construct and interpret a range of standard graphical forms. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Arguments for organic growth": "Organic (internal) growth is expansion from within, e.g. extending the product range or number of business units and locations; it is less risky and gradual, and Brompton has grown consistently this way since 1975; building on its strengths of innovation and design excellence it has increased capacity and opened stores worldwide; record 20% sales growth over four years may have generated the income to finance further organic growth.",
+                  "Arguments for inorganic growth": "Inorganic (external) growth is expansion by merger or takeover; the CEO is considering acquiring makers of complementary accessories such as clothing and helmets, which could rapidly raise revenue per customer as each buys a bike plus accessories; takeovers of businesses with specialist knowledge bring new ideas, as shown by quality improving after new specialist paint shop workers joined.",
+                  "Possible recommendations": "Organic growth maintains a culture of craftsmanship and design excellence, whereas takeovers could cause a clash of cultures, low morale and a fall in quality; alternatively inorganic growth, since rapid growth has caused shortages of components, and backward vertical integration could solve this and enable the projected 30% a year growth.",
+                  "MOPS responses": "Market - a mass market but the foldable USP targets a niche of commuters and city dwellers, and inorganic growth could attract a wider range of customers; Objectives - expansion via overseas bike sales and income from complementary goods such as clothing supports inorganic growth; Product - high quality, hand made, design excellence, so maintaining the USP supports organic growth; Situation - steady growth since 1975 and record recent growth predicted to continue supports organic growth.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): identifying a problem due to rapid growth, e.g. overtrading / poor internal communication / loss of strategic direction / diseconomies of scale, or knowledge of rapid growth",
+                  "Application (up to 2): e.g. Peloton's sales rose by 172% between 2020 and 2021; delays in production and delivery of equipment to the one million new members",
+                  "Analysis (1): this could lead to dissatisfied customers who are unable to participate in the online classes",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): gross profit margin = gross profit / revenue x 100",
+                  "Application (1): gross profit = 4021.80 - 2569.80 = 1452",
+                  "Application (1): gross profit margin 2021 = 1452 / 4021.80 x 100 = 36.10%",
+                  "Application (1): difference between 2020 (32.35%) and 2021 (36.10%) = 3.75%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1: calculate, use and understand ratios, averages and fractions. NB: if the only answer given is 3.75% or 3.75 award 4 marks; if the only answer given is 3.7%, 3.7 or -3.75 award 3 marks.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Consumer legislation is designed to protect consumers from poor-quality products and poor business practices.",
+                  Effects: "Costs may rise from replacing corroded bikes and/or refunding customers $1,495-$2,495 per bike; reputation may suffer if Peloton fails to comply, e.g. by selling faulty bikes; it may be fined by the US Consumer Product Safety Commission because the bikes 'could create a substantial product hazard or an unreasonable risk of serious injury or death'.",
+                  "Possible counterbalance": "Costs may not increase if it avoids fines and refunds for poor-quality bikes; ensuring bikes meet legislation could improve reputation and regain lost sales; legislation may force Peloton to solve the corrosion problem by working with its Taiwanese supplier on quality.",
+                  "Potential judgement": "In the short term the effects may be negative as meeting standards raises costs; in the long term Peloton should benefit, as meeting standards reduces costs such as refunds and fines from the US Product Safety Commission.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Profit is the difference between total revenue and total costs.",
+                  "Cutting costs": "2,800 job losses save wages and national insurance, raising profit if revenue is similar; cutting $800m from annual costs means fewer sales are needed to break even; lower costs may enable the 20% bike price cut, attracting more equipment buyers and subscribers and raising revenue; with bike and treadmill sales down 17% partly due to cheaper rivals, lower costs may allow more competitive subscription prices and increased sales.",
+                  "Possible counterbalance": "Using inferior components may reduce product quality, damaging reputation and losing customers; cutting 2,800 jobs may damage morale, e.g. less motivated instructors giving poorer classes, so subscribers switch to competitors; profit may instead be improved by new revenue sources such as the membership app for classes without expensive equipment, attracting price-sensitive customers.",
+                  "Potential judgement": "Cutting costs may be best as it could make Peloton more efficient and focused on its core competency of high-quality online classes in the long run; alternatively revenue generation may be best as the market is expected to grow 33.1% by 2027 and Peloton's well-known brand can attract customers through the new app, price reductions and promotional campaigns.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "PESTLE factors are the political, economic, social, technological, legal and environmental influences that can affect business strategy.",
+                  "Technological factors": "Fitness apps have widened the market, which is growing from $6,046m in 2019 to a predicted $59,231m by 2027, so Peloton may need technological innovation to stay competitive; smartphone and smartwatch ownership helps distribution to a wider audience (over a million new members 2020-2021); virtual fitness sensors let consumers track progress, motivating them to keep subscriptions rather than pay personal trainers; new equipment such as rowing machines could attract customers and add income, as 60% of revenue currently comes from bikes and treadmills.",
+                  "Social factors": "Greater awareness of the benefits of exercise underpins predicted 33.1% market growth to 2027; consumers may prefer the convenience of streaming classes at home, especially with more home working; activities aimed at new target markets such as an older demographic who prefer exercising at home; health-conscious consumers with busy lives or family commitments who lack time for the gym could be targeted with a wide variety of classes.",
+                  "Potential recommendation": "Prioritise technology because subscription apps, specialised equipment and widespread smartphone ownership are fundamental to the business model and it must keep developing products and services to stay competitive; or prioritise social factors because the market is dynamic and increasingly competitive and Peloton must respond to changing lifestyles, e.g. flexible/home working giving people time for online classes.",
+                  "MOPS responses": "Market - a dynamic, increasingly competitive mass market, so awareness of technological developments is needed to retain customers or grow share; Objectives - raising revenue and profitability requires responding to changing expectations such as home working; Product - largest provider with specialist equipment and streamed classes, a competitive advantage to emphasise; Situation - bike and treadmill sales fell 17% in 2021 with losses to cheaper rivals and quality/delivery problems, so it must respond better to customer needs with competitive prices and quality.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2023-p3",
+            year: "June 2023",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-que-20230615.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-rms-20230817.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Pre-release context: the UK car market. Section A: Extracts A-C. Extract A - UK car sales down in March 2022: weakest March for new car sales since 1998; sales fell 14.3% to 243 479 (SMMT). Despite manufacturers forecasting high orders for Q1 2022, supply chain shortages, especially semiconductors and car body paint, limited supply; March is normally the busiest month as buyers want the latest number plate. Fluctuating exchange rates, rising energy and fuel costs and manufacturer price wars could affect demand. A bar chart shows March new car sales 2006-2022 (scale to 600,000), with 2022 at 243,479. Extract B - Growth of electric car sales: 39 315 battery electric vehicles (BEVs) sold in March 2022, up 78.7%, the highest monthly BEV volume ever and more than the whole of 2019; diesel and petrol sales declined. JIT stock control is used in the manufacture of most cars, including electric and hybrid vehicles, whose market share rose from 21.4% in 2021 to 34.1% in 2022. Table (March 2021 sales / March 2022 sales / change % / share 2021 % / share 2022 %): Diesel 30 730 / 13 736 / -55.3 / 10.8 / 5.6; Petrol 137 557 / 102 349 / -25.6 / 48.4 / 42.0; BEV 22 003 / 39 315 / 78.7 / 7.7 / 16.1; PHEV 17 330 / 16 037 / -7.5 / 6.1 / 6.6; HEV 21 599 / 27 737 / 28.4 / 7.6 / 11.4; Other 54 745 / 44 305 / -19.1 / 19.3 / 18.2; Total 283 964 / 243 479 / -14.3. Extract C - UK car industry forecast: despite strong order books and FDI at foreign-owned companies such as Jaguar Land Rover (West Midlands) and Toyota (Derby), supply constraints prevent full recovery; semiconductor shortages and political/economic uncertainty remain. Grants for BEV buyers until at least March 2023 and lower running costs benefit buyers. SMMT's Mike Hawes called March sales deeply disappointing, urged government support for consumers facing rising costs, and said electric car sales growth must be sustained to meet the UK's net zero timetable.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Assess two factors which might affect the accuracy of UK new car sales forecasts.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using the data in Extracts A and B, assess the importance of just in time (JIT) management of stock for UK car manufacturers.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the likely impact of increased foreign direct investment (FDI) on the growth of businesses in the UK car industry.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "Porter's Strategic Matrix suggests that a car manufacturer can grow the sales of its electric cars by either focusing on differentiation or cost leadership.",
+                    prompt: "Evaluate these two options and recommend which one is the most important for the successful growth in sales of its electric cars.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-H (German Automotive, Derby). Extract D - Ian Essex has owned German Automotive (GA) since October 2006; it positions itself as an 'alternative to using a main dealer', offering guaranteed mechanical work that does not invalidate warranties. Ian is a Mercedes-trained technician and mechanic; GA uses only manufacturer-approved parts, offers pick-up and drop-off, and quotes prices on average 20% below main dealers. Turnover grew from £187 000 in 2007 to £1 200 000 in 2021. Extract E - staff grew from three in October 2006 to 10 by November 2021 (Company Director, Service Manager, Vehicle Technicians, Receptionists); staff are paid more than at the main German dealers (Audi, Mercedes, BMW, Volkswagen); employees give a caring, quality service, so advertising and marketing costs fell from £25 000 in the first year to just over £12 000 in 2021; free loan cars are provided. Over the next five years GA plans to invest in new technology and equipment, which should demonstrate CSR by keeping up with demand for electric vehicles. Extract F - genuine parts (mirrors, wheels, electrical equipment) are supplied by German manufacturers such as Audi or Volkswagen to UK franchised dealers; original equipment parts meet manufacturer specification, may be made in the UK and may be better quality (e.g. tyres, car mats, roof rails). Extract G - line graph of the euro to pound (£) exchange rate, 2014-2022 (axis 0.70-0.94); the MS cites about £0.86 per euro in 2020 and 94p per euro in 2019. Extract H - remuneration, GA vs BMW Derby: Company Director basic salary £60 000 plus profit share (BMW unknown); Service Manager £45 000 plus commission vs £40 000; Vehicle Technicians £28-38 000 plus bonuses vs £25-34 000; Receptionists £12-£17 per hour vs £10-£15 per hour.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the data in Extracts D and E, assess how two entrepreneurial roles may have led to the success of German Automotive (GA).",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Assess the likely importance of corporate social responsibility (CSR) as an influence on German Automotive's (GA) business decisions.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Using the data in Extracts F and G, assess the likely impact of movements in the UK exchange rate to German Automotive's (GA) profit.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "Ian Essex identified two ways to improve employee performance at German Automotive (GA). He could either use financial or non-financial techniques.",
+                    prompt: "Evaluate these two options and recommend which one might best improve employee performance at German Automotive (GA).",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors including supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding; chains of reasoning presented showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Sales forecasts are estimates of future sales, usually based on previous sales figures, market surveys or managerial estimates.",
+                  "Factors reducing accuracy": "Changing consumer trends (fashion for electric cars), economic variables (supply chain shortages, rising fuel costs) and competitors' actions (e.g. potential price wars between Audi and BMW); higher interest rates raise the cost of buying a car on a loan, possibly reducing demand below forecast; government grants make electric cars more affordable, possibly giving higher than expected sales.",
+                  "Possible counterbalance": "Forecasts may be accurate as they are based on previous sales, and market research on changing car tastes (diesel to petrol, fuel to electric, 4x4s to smaller cars) can help; past data such as the 78.7% rise in BEV sales 2021-2022 and experienced managers adjusting for market intelligence are a useful guide; results from focus groups, product trials or test marketing at Jaguar can be extrapolated to improve accuracy.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Importance of JIT": "Manufacturers need not hold large stocks of components (tyres, seats, windscreens) as these arrive when needed; companies like Jaguar can respond flexibly to special orders or changes in demand (BEV sales rose from 22,003 in 2021 to 39,315 in 2022); holding less stock saves warehouse costs and frees plant space to increase capacity; liquidity may improve as large volumes of components (tyres, seats, semiconductors) need not be bought.",
+                  "Possible counterbalance": "Deliveries for the 39,315 electric cars in March 2022 (up 78.7%) are likely to be more frequent, depending on close manufacturer-supplier relationships so components are not late; buying small amounts of batteries, tyres, seats or windscreens may lose purchasing economies of scale, raising unit costs; shortages of key components such as semiconductors, which might otherwise have been bought in bulk, can disrupt costly production.",
+                  "Possible judgement": "JIT may save storage costs but is only as good as the suppliers; it is clearly important because supplies of key components such as semiconductors are crucial to manufacturing all cars.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Marks for application and analysis include up to 2 marks for quantitative skills (QS8: use and interpret quantitative and non-quantitative information to make decisions; QS9: interpret, apply and analyse information in written, graphical and numerical form). Level 0 = a completely inaccurate response.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "FDI occurs when companies with a head office in one country set up factories, offices or distribution outlets in another country; it can also be external growth.",
+                  "Positive impacts": "It may create manufacturing jobs in regions like the West Midlands, raising local incomes and fuelling car sales and revenue in the longer term; it may reduce imports, e.g. Toyota cars made in Derby, possibly lowering prices, improving choice and raising demand for UK-made Toyotas; UK businesses in the car supply chain may benefit from supplying companies like Jaguar with components.",
+                  "Potential counterbalance": "Profits may be repatriated to the home country (e.g. Japan or India), denying the UK government tax revenue; Japanese business culture might harm UK business culture and affect productivity in UK plants; local communities and the environment may suffer pollution and congestion from manufacturing or transporting cars; car manufacturing is capital intensive so FDI may not create many jobs.",
+                  "Possible judgement": "FDI would be positive where a region has a strong reputation for skills such as engineering, e.g. Derby, and is essential for UK car manufacture; but the foreign investor may withdraw if wages become too expensive or a lack of trade agreements makes the UK less attractive, e.g. Jaguar building more facilities in its home country of India.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Differentiation involves making products or services more attractive and distinct from competing products; cost leadership is seeking lower costs to allow lower prices and so increase sales and revenue.",
+                  Differentiation: "Effective use of the design mix, e.g. higher mileage range per charge or more aesthetically pleasing cars; effective sales and after-sales service through premium dealerships (e.g. Tesla) making customers feel valued; close customer relationships and market research, e.g. knowing customers value battery-life guarantees; marketing to communicate USPs (distinctive brands such as Polestar, cheaper running costs, quiet engine) in a competitive market; but differentiation may prove too costly given R&D needs, e.g. longer-mileage batteries.",
+                  "Cost leadership": "Larger-scale BEV production reduces average costs so manufacturers like VW can sell at lower, more affordable prices; lowering costs without changing prices raises margins, funding investment in BEV technology; JIT in BEV production reduces stock-holding costs and improves quality; capital-intensive investment in technology such as CAD/CAM may improve efficiency and lower manufacturing costs.",
+                  "Possible recommendation": "Differentiation may be better given the importance of how a car looks and functions, and competitors can copy cost-saving techniques through matching investment or outsourcing; cost leadership may be more effective as the electric car market becomes more competitive and price-conscious consumers require efficient producers charging affordable prices.",
+                  "MOPS recommendations": "Market - high-income customers with long-term views may be attracted by differentiation; Objectives - a government-supported net zero timetable may favour differentiation to meet environmental objectives; Product - lower BEV running costs may matter to consumers facing a higher cost of living; Situation - rising energy and fuel costs may determine which option is better, especially if real incomes fall.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors including supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding; chains of reasoning presented showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "An entrepreneur organises a business venture by combining the other factors of production (land, labour and capital); roles include creating and setting up a business, running a business, innovation, overcoming barriers, and anticipating risk and uncertainty.",
+                  "Roles leading to success": "Creating and setting up a business - Ian set up GA in 2006 building on his experience as a Mercedes technician and mechanic; risk of failure reduced by offering prices 20% below main dealers for work that does not invalidate warranties, improving customer confidence; running and expanding the business through using manufacturer-approved parts and offering pick-up and drop-off, helping win customers from main dealers.",
+                  "Possible counterbalance": "Access to finance may have been a barrier at start-up given lenders' need for security and the costs of premises, equipment and three staff; offering prices 20% below main dealers as a new business may have risked overtrading; growth from three to 10 employees suggests the business developed to meet increased demand; the fall in marketing budget from £25 000 to just over £12 000 suggests repeat custom and word of mouth enabled Ian to expand GA.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Marks for application and analysis include up to 2 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "CSR involves paying attention to the impact of the company's actions on social and environmental issues and on a range of stakeholders.",
+                  "Evidence CSR is important": "Staff are paid more than at alternative German dealers such as BMW (receptionists £12-17 vs £10-15 per hour), which may help explain growth from 3 to 10 staff and turnover rising from £187 000 to £1 200 000 between 2007 and 2021; investing in technology for electric vehicles suggests working to reduce the environmental impact of car emissions; the caring personal service and free loan cars suggest ethical behaviour towards lower-income customers with limited budgets.",
+                  "Possible counterbalance": "Ian likely set up GA in 2006 to increase his income from profits rather than a wage at Mercedes, suggesting CSR is less important to his decisions; planned investment in technology and equipment suggests market trends matter more to Ian than environmental issues.",
+                  "Potential judgement": "Despite its growth and implied profit increases (turnover up over 600%), GA appears to be more than a means of increasing the owner's income, given that Ian pays staff more than BMW.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information; supported throughout by relevant and effective use of the business behaviour/context, showing an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; analytical perspectives presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information; supported throughout by use of the business behaviour/context, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Exchange rates are the price of one currency in terms of another, e.g. in 2020 1 euro averaged £0.86.",
+                  "Possible effects": "If the euro appreciates against the pound (e.g. 2019, when 94p was needed to buy a euro), Audi or Volkswagen genuine parts imported by GA's suppliers (mirrors, wheels, electronic equipment) may cost more; GA may raise its prices of imported parts such as wheels to UK customers, suffering lower sales and/or reduced profits.",
+                  "Possible counterbalance": "If GA can use original equipment parts made in the UK (car mats, roof rails), euro appreciation would not affect its costs, so prices need not rise; GA's loyal customers may still buy genuine Audi and Volkswagen parts at higher prices so profits may not suffer.",
+                  "Potential judgement": "It depends on the size of the exchange rate movement (say 3% compared with 30%) and how far GA passes on cost increases to customers; if cars themselves are imported from Germany, higher VW and Audi prices may reduce the number of vehicles GA services in the longer term despite its 20% saving compared with German car dealers.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Marks for application and analysis include up to 3 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements, with full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding; supported throughout by use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Financial incentives are monetary rewards to improve motivation and achievement (piecework, commission, bonuses, profit sharing, performance related pay); non-financial techniques include delegation, consultation, empowerment, team working, flexible working, job enrichment, job rotation and job enlargement.",
+                  "Financial incentives": "Service managers earn £5 000 more than at BMW Derby and receptionists about £2 per hour more, which may raise productivity and make staff feel valued, though duties may be more demanding; service manager commission may encourage more bookings but risks overtrading, disappointed customers and lost profit; technicians paid by productivity (£28-£38 000) have an incentive to be productive (Taylor) but quality and reputation may suffer; bonuses may motivate and retain technicians, lowering recruitment costs (Maslow); the director's profit share links pay to overall performance, but external factors such as recession affect profits.",
+                  "Non-financial techniques": "Delegation gives staff like the service manager responsibility, encouraging initiative (Herzberg); empowerment lets employees make decisions on vehicle loans without a manager, raising a receptionist's morale (Maslow); team working gives technicians reassurance, confidence and job satisfaction (Mayo); flexible working gives receptionists more control over hours and job satisfaction, though they could take advantage and be less productive.",
+                  "Potential judgement": "GA is small with only 10 staff, so non-financial techniques such as job rotation may matter more as staff perform a range of tasks, bringing variety and reducing boredom; people and organisations vary so no one approach guarantees motivation, and a technician supporting a family may simply prefer bonuses to increase take-home pay.",
+                  "MOPS recommendations": "Market - repeat customers valuing service quality favour long-term staff valued through non-financial techniques such as delegation; Objectives - maximising performance may favour financial incentives like bonuses linked to quality of workmanship; Product - GA's caring reputation may stem from how Ian views staff, so non-financial techniques may better retain skilled employees; Situation - recession may raise servicing demand and staff may want higher earnings, making financial incentives more attractive in the short run.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Marks for application and analysis include up to 2 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2022-p1",
+            year: "June 2022",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-que-20220526.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-rms-20220818.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-C. Extract A: line graph of the price of one gram of gold on world markets in euros, 6 December 2019 to 5 January 2020 (axis 42.0-45.0 EUR), showing a rise over the period; gold is one of the raw materials used in making luxury watches. Extract B: the luxury watch market. Some of the fastest growing firms are PLCs, e.g. Swatch (owns Omega and Tiffany), which follows 'affordable luxury for all' and aims to grow through expensive new product development, more stock, stores and sales. Private limited companies such as Rolex can limit production, need not answer to shareholders demanding growth, restrict the range and build exclusivity, charging over £10 000 for some models. Customers research the best price; some stores offer champagne and extra attention, but research suggests customers feel the item itself is the luxury experience. Online sales are growing in three areas: direct from brands such as Rolex; retailers offering lower prices (buying at up to 50% below recommended selling price) who make the highest sales; and pre-owned watch sellers. Extract C: Hans Wilsdorf, born 1881, aged 24 took a risk to make a modern wristwatch for men when wristwatches were seen as women's jewellery. He invented the name Rolex (short, easy to pronounce in every language, memorable) and registered the trademark within days. Operations moved to Geneva in 1919; he inspired the best Swiss craftsmen and engineers, believed Rolex must 'think and act differently from the rest', insisted on quality and saw marketing as communicating the brand's reputation. Rolex is now a private limited company owned by the Hans Wilsdorf Foundation, created before he died in 1960.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the data in Extract A, draw a supply and demand diagram to show the possible impact of the change in the price of gold, between 6 December 2019 and 5 January 2020, on the luxury watch market.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Explain one way in which product orientation is important to Rolex.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the importance of creativity as a characteristic of the entrepreneur Hans Wilsdorf.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the likely importance of distribution (place) in Rolex's marketing mix.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "In order to remain competitive in the luxury watch market, Rolex could become a public limited company or remain a private limited company.",
+                    prompt: "Evaluate these two options and recommend which one is more likely to support Rolex remaining competitive in the luxury watch market.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G. Extract D: worldwide sports footwear sales ($bn), 2016/2017/2018: Nike 19.9/21.1/22.3; Adidas 10.7/14.9/14.6; Asics 2.8/3.0/2.9; Puma 1.7/2.4/2.5; Under Armour 1.0/1.0/1.1. Sales of all other sports footwear brands in 2018 = $16.7bn. Extract E: chart of populations of ASEAN member states 2008-2018 (Cambodia, Indonesia, Laos, Malaysia, Myanmar, Philippines, Singapore, Thailand, Vietnam). Extract F: ASEAN, founded 1967, promotes free trade between members by reducing trade barriers; in 2010 it joined China in the ASEAN-China free trade area, reducing tariffs on 70% of goods. Indonesia has over 260 million people, a large young workforce, a stable growing economy and increasing urbanisation that eases the cost of doing business; firms such as Nike manufacture there and sell to its growing middle class. The government has released policy packages since September 2015 to ease business costs and increase FDI. Nike, Toyota, Nestle, LG and Samsung have factories there, benefiting from low labour costs and relatively skilled workers; but land shortages make new facilities difficult and expensive. Extract G: Nike mass produces in low-wage economies (Indonesia, Thailand, Vietnam) close to materials such as textiles and rubber. In 2016 Nike partnered with Flex in North America to differentiate its products; NikeID custom orders previously took up to four weeks. Nike aims to cut design-to-delivery from weeks to days by making orders of one using laser cutting technology that allows one-off production.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the data in Extract D, calculate Nike's market share of worldwide sports footwear in 2018. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Explain one way foreign direct investment (FDI) affects businesses in Indonesia.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess one effect on Nike of Indonesia being a member of the ASEAN trading bloc.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the possible impact of multinationals, such as Nike, on the economy of Indonesia.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Nike is aiming to achieve competitive advantage in the global sports footwear market. In order to do this Nike could focus on cost competitiveness or differentiation.",
+                    prompt: "Evaluate these two options and recommend which one is most suitable for Nike to maintain its global competitiveness.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): correctly constructing supply and demand curves",
+                  "Knowledge (1): correctly labelling axes, price and quantity",
+                  "Application (1): correctly interpreting the shift in the supply curve to the left",
+                  "Analysis (1): drawing the original and new equilibrium on the quantity and price axes",
+                ],
+                guidance: "4 marks: Knowledge 2, Application 1, Analysis 1. QS3: construct and interpret a range of standard graphical forms.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of product orientation or one way it is important, e.g. the business concentrates on the production process and designing the product, then tries to sell it to the customer; or it reduces the need to carry out market research",
+                  "Application (up to 2): e.g. Rolex focuses on quality in marketing; products made by skilled craftspeople; Rolex has built a global reputation for luxury",
+                  "Analysis (1): e.g. this approach is important because customers purchase on the basis of this quality and brand image, rather than Rolex adapting to customers' needs",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Importance of creativity": "Creativity is essential as entrepreneurs need new ideas to create/maintain competitive advantage. Wilsdorf designed a man's watch when no other business provided these, selling to a new market initially without competitors. Creativity also produced the brand name, easy to pronounce in any language, allowing quick impact in markets around the world.",
+                  "Potential counterbalance": "Risk-taking might be more important, as there may have been good commercial reasons for men's watches being uncommon, so launching one was a risk. Initiative might be more important, e.g. deciding to hire craftsmen and focus on quality rather than mass producing a cheaper product.",
+                  "Potential judgement": "Creativity was likely most important when Wilsdorf was developing the first Rolex watches and their key design features, as these had not been devised or marketed before. Once the luxury design was clear and watches sold, other characteristics such as perseverance in the face of experienced jewellers and competitor entrepreneurs would likely be more important.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Distribution is concerned with getting products to the right place for customers at the right time.",
+                  "Distribution is important": "It gives customers choice, e.g. buying directly from the manufacturer or through an intermediary such as an authorised stockist; retailers tempt customers with in-store offers such as champagne at launch events; Rolex may need a range of channels to compete with luxury brands expanding rapidly into online sales.",
+                  "Potential counterbalance": "Distribution is less important than product design - Rolex is associated with quality and customers feel the purchase itself is enough of an experience; less important than brand reputation (promotion), as the image of precision and luxury keeps sales going while customers trust it; less important than price, as the high price suggests high quality.",
+                  "Potential judgement": "The market is competitive, with Omega and Tiffany and authorised dealers selling online, so Rolex may need to focus on these channels to succeed. Alternatively, Rolex's reputation for quality and luxury built over 140 years means customers who relate to the brand will find a way to buy, being more concerned with status and exclusivity, so distribution is of limited importance.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - become a PLC": "A PLC has limited liability and shares publicly traded on the stock market. Main benefit is increased access to capital to grow into new markets and invest more in online sales. It raises the public profile, reassuring customers and investors, and could help challenge competitors such as Swatch since Wilsdorf's death. New product development (R&D, different raw materials) is expensive and could be financed by new share capital.",
+                  "Option 2 - remain a private limited company": "Wilsdorf set up the Foundation to keep ownership limited and controlled and prevent Rolex ever being owned by another business. Private companies can still raise share capital, but new shareholders must be approved by existing owners (the Wilsdorf Foundation). Rolex need not please public shareholders by growing, so can focus on exclusivity and quality to compete. Rolex succeeds on classic designs and features customers trust, so NPD and the finance a PLC brings are less needed.",
+                  "Potential judgement": "The market is changing rapidly and some of the fastest growing firms are PLCs; since Wilsdorf's death becoming a PLC is more likely and would raise capital to stay competitive. Alternatively, Rolex has stayed close to its founder's values and the Foundation was set up to keep it private; this gives control to focus on design and quality and differentiate without the pressure for profitability often required by PLC shareholders.",
+                  MOPS: "Market: Rolex focuses on quality and individual design so does not require additional share capital from being a PLC. Objectives: to maintain its market position while owned by the Wilsdorf Foundation. Products/services: the market is changing with growing online sales and discounters; Omega and others have developed competing products that require capital. Situation: Rolex has moved on since Wilsdorf's death in 1960, so this may be a good point to reconsider ownership and becoming a PLC may be best.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): market share = value of sales of business (Nike) / total value of whole market x 100",
+                  "Application: Nike sales in 2018 = $22.3bn",
+                  "Application: total worldwide sports footwear sales = $22.3 + $14.6 + $2.9 + $2.5 + $1.1 + $16.7 = $60.1bn",
+                  "Application: 22.3 / 60.1 x 100 = 37.10%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS2 (percentages) and QS9 (interpret information). Answer of 37.10% = 4 marks. Answer not rounded to 2 decimal places = 3 marks. Answer not indicating % = 3 marks.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): FDI is when a business with head office in one country sets up factories, offices etc in another country; or knowledge of how businesses are affected, e.g. increased demand, increased land prices, technology transfer, increased sales",
+                  "Application (up to 2): e.g. Indonesian textile and rubber businesses benefit from increased demand; lower costs for Indonesian retailers of sportswear/cars/electrical goods; increased land prices as FDI buys local land; increased competition for other sportswear brands in Indonesia; technology transfer to Indonesian businesses",
+                  "Analysis (1): e.g. Indonesian retailers/suppliers will see increased sales, which may lead to higher profit due to lower costs",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A trading bloc is a group of economies that agree to reduce trade barriers such as regulation, tariffs and quotas on trade between members.",
+                  "Effects on Nike": "Locating in Indonesia gives Nike free trade with markets totalling over 600 million people, lowering costs and increasing revenue opportunities. Suppliers from other ASEAN states (e.g. rubber from Malaysia) face lower costs, lowering import costs for Indonesian businesses. The ASEAN-China free trade area opens easier, cheaper sales to China, the world's second largest economy with a growing middle class.",
+                  "Potential counterbalance": "Competitors such as Adidas located in other ASEAN countries gain the same benefits in Indonesia, threatening Nike's profits and competitiveness. Consumers in other ASEAN countries may lack sufficient disposable income. Membership may not matter if Nike's main aim is low production costs, shipping shoes back to main markets in Europe and North America.",
+                  "Potential judgement": "The benefit depends on the intended destination of products: if sold in fast-growing ASEAN markets Nike benefits; if competitors use free trade to sell cheaply in Indonesia, or Nike ships finished shoes back to established markets, the benefits of membership are slim.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Positive impacts": "Buying land and building factories may create construction and supply-chain jobs with positive multiplier effects; Nike workers may earn at or above average wages and spend locally; suppliers of textiles or rubber benefit; more employment raises tax revenue for local/national government to spend on e.g. healthcare and education; Nike's techniques, machinery and equipment can transfer technology and skills, improving local firms' productivity and quality.",
+                  "Potential counterbalance": "Multinationals can worsen land shortages in urban Indonesia, raising costs for local firms wanting to expand; supplier benefits depend on Nike using local rather than imported supplies; lower health and safety and employment laws may be exploited, keeping local wages low; Nike's use of local textiles might limit supply and raise prices for other Indonesian firms; industrialisation could damage the environment, e.g. pollution.",
+                  "Potential judgement": "The impact is likely positive if Nike respects the local economy, pays a fair wage, upholds or exceeds local laws avoiding 'sweatshop labour' and uses local suppliers. If Nike focuses on low wages and low regulation and uses suppliers outside Indonesia, the impact is likely more negative, so the Indonesian Government has a key role in supporting investment while ensuring compliance with laws and collecting appropriate taxes.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - cost competitiveness": "Locating in countries such as Indonesia reduces operating costs such as rent and labour; savings can be passed on as lower prices or kept to improve profit margins. As market leader ($22.3bn sales in 2018) Nike may maintain leadership by being able to cut prices relative to Adidas and Asics, especially if expanding into less developed economies with lower incomes and more price-sensitive customers. Higher profits may give higher dividends and confidence for future shareholder investment.",
+                  "Option 2 - differentiation": "Nike Flex lets customers customise shoes and receive them promptly, which could boost sales and build brand image so customers pay a premium price. Nike's brand is already strong as global leader, so innovation can boost image and add value to sales of all its products. Customers may already be used to customising via NikeID, so Flex lets Nike develop and expand this competitive advantage.",
+                  "Potential judgement": "Cost competitiveness could benefit lower-income markets but is unlikely to be pursued globally, since the brand is built on quality and image, especially in developed North American and European markets (which may be saturated); cost leadership is more likely to succeed linked to low prices in developing markets like Indonesia. Differentiation has been part of Nike's image from inception, so Flex builds brand loyalty through personal designs and shorter lead times, which competitors such as Adidas may not have; Nike might focus Flex on established markets and sell standard products in emerging markets.",
+                  MOPS: "Market: Nike is global leader through branding and differentiation; Flex extends this. Objectives: shareholders may expect growth, with the greatest opportunity in lower-income developing markets, so cost competitiveness may matter to charge competitive prices. Products/services: a huge global market with many multinational brands; differentiating through Flex lets Nike grow sales and keep loyalty. Situation: investment in Indonesia and ASEAN is likely cost-driven, but more to raise profitability for shareholders than to cut prices.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2022-p2",
+            year: "June 2022",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-que-20220610.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-rms-20220818.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D. Extract A: easyJet plc annual report 2020 (£m): non-current liabilities 2 748; total equity 1 899. easyJet plc's gearing for 2019 was 45.67%. Extract B: in 2019 budget airline Flybmi and Thomas Cook collapsed. The aviation industry faces rising costs; aircraft are expensive assets with few alternative uses, limiting ability to cut capacity in lean periods; fuel is around a third of total costs and fluctuates. Delayed flights, cramped seating, inconvenient times and poor service are common complaints shared on social media, damaging budget airlines' reputations. A new generation of budget airlines challenging easyJet and Ryanair has created huge overcapacity, pushing prices down. Extract C: line graph of jet fuel price ($/barrel), November 2013 - November 2020 (the MS reads it as about $37 per barrel in November 2015 rising to nearly $97 in July 2018). Extract D: easyJet plc is a low-cost European airline, seventh largest in the world, with 342 aircraft and 48 million customers across 35 countries and 154 airports. In 2019 it launched easyJet holidays (flights plus hotels); 97% of customers travel for leisure; best price guarantee and full refund if cancelled at least 28 days before departure. 94% of customers are concerned about the environmental impact of air travel; its sustainability strategy aims for net zero carbon by working with manufacturers on electric and hydrogen powered aircraft, avoiding reliance on fuels that cannot be stored long. Travel restrictions in 2020 caused capacity utilisation to fall from 91.5% in 2019 to 87.2%.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the data from Extract A, calculate the difference in the gearing ratio for easyJet plc between 2019 and 2020. You should state the difference to two decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Explain one effect on easyJet plc of the reduced capacity utilisation of its aircraft in 2020.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess, with reference to Porter's five forces, whether the 'bargaining power of buyers' represents the most significant external influence on easyJet plc.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess whether the change in price of jet fuel between November 2015 and July 2018 may have affected easyJet plc's management of its working capital.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "EasyJet plc wishes to improve its profitability. To achieve this, easyJet plc is considering either purchasing a new fleet of electric and hydrogen powered aircraft or focusing on increasing its market share of the package holiday market.",
+                    prompt: "Evaluate these two options and recommend which one is more suitable for easyJet plc to improve its profitability.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H. Extract E: Bluebells is a seven-bedroom bed and breakfast guesthouse in Keswick, Cumbria, owned and run by Les and Liz Miller, open March to November, all rooms en suite, free WiFi; opened 2006 with an excellent reputation and consistent 5* reviews on sites such as TripAdvisor. The Keswick accommodation market is competitive (guesthouses, hotels, self-catering) and seasonal, with most tourists visiting May-September. Bluebells reinvests 50% of profits each year (e.g. new windows, fuel-efficient boiler). The owners emphasise financial planning, including historical budgeting and careful cash-flow management. Extract F: room occupancy 2019 (% of rooms occupied): March 30, April 45, May 70, June 70, July 90, August 90, September 70, October 50, November 30. Extract G: revenue per room per night £84; variable costs per room per night £34; annual fixed costs £30 000. Extract H: the Lake District attracts visitors spending over £1bn a year. City breaks are increasingly popular and rural destinations such as North Wales and the Peak District market themselves aggressively; online travel agents such as Booking.com give consumers more choice and competitive prices. Cumbria has not enjoyed the growth of other UK destinations and is far more dependent on tourism than most of the UK.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the information in Extract F, calculate the three period moving averages for the percentage of rooms occupied for the periods March to May and June to August to two decimal places, stating the difference between these moving averages. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the information in Extract G, calculate how many rooms need to be occupied each month for the business to break-even.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the value of historical budgeting to Les and Liz in their financial planning for Bluebells.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the usefulness of SWOT analysis for Bluebells' continued success.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Liz and Les have set themselves the objective of managing Bluebells' finances more effectively. They are considering whether to focus more on improving cash flow or increasing profit.",
+                    prompt: "Evaluate these two options and recommend which one is more suitable for Liz and Les to achieve this objective.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): gearing = non-current liabilities / capital employed x 100",
+                  "Application (1): 2020 capital employed = 2748 + 1899 = 4647",
+                  "Application (1): 2020 gearing = 2748 / 4647 x 100 = 59.13%",
+                  "Application (1): difference = 59.13% - 45.67% = 13.46%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1: ratios, averages and fractions. NB: if the only answer given is 13.46% or 13.46 award 4 marks; if the answer given is 13.5% or 13.5 award 3 marks.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): capacity utilisation is a measure of the extent to which the productive capacity of a business is being used",
+                  "Application (up to 2): e.g. capacity utilisation fell from 91.5% in 2019 to 87.2% in 2020; there are more empty seats on each plane",
+                  "Analysis (1): e.g. fixed costs are spread over fewer passengers, resulting in higher unit/average costs",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Porter's five forces: rivalry amongst existing competitors, threat of substitutes, potential new entrants, bargaining power of suppliers (and of buyers).",
+                  "Significance of bargaining power of buyers": "Consumers have a wide choice of budget airlines such as Ryanair and can switch if rivals charge lower prices; there are alternatives to air travel (road, rail, ferry) affecting customer retention; consumers can share bad experiences on social media, causing widespread bad publicity.",
+                  "Possible counterbalance": "Power of suppliers - fuel is around a third of total costs, so budget airlines may suffer lower profit margins; existing competition such as Ryanair and Jet2 may reduce sales/market share; threat of new entrants ('the rise of a new generation of budget airlines') enabled by low barriers to entry.",
+                  "Potential judgement": "Buyer power is the most significant because complaints can damage easyJet's reputation, losing sales and market share; alternatively, the increasingly dynamic market with existing rivals and new entrants could be most significant, as it has given buyers more choice.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and data": "Jet fuel rose from $37 per barrel in November 2015 to nearly $97 per barrel in July 2018. Working capital = current assets - current liabilities. QS3 and QS9 assessed.",
+                  "Negative effects": "Rising fuel prices increase cash outflows for a fleet of 342 aircraft, possibly reducing working capital; to reduce outflows easyJet may buy less fuel, limiting its ability to fly to all 35 countries; higher fuel costs may force price rises, reducing demand and cash inflows and hence working capital.",
+                  "Possible counterbalance": "As the world's 7th largest airline it may negotiate lower fuel prices, reducing outflows; it may obtain more favourable credit terms, delaying payment; it could switch to just in time, buying smaller quantities of fuel to limit the effect on working capital.",
+                  "Potential judgement": "Fuel rose by $60 per barrel and is around a third of total costs with no alternative, so the effect on working capital would be significant; easyJet could improve working capital management by offering customers incentives to pay for flights earlier, speeding cash inflows.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Arguments for electric and hydrogen powered aircraft": "94% of customers are concerned with the environmental impact of air travel; it could give a USP over rivals such as Ryanair and Jet2 and fits the aim to lead the industry through its sustainability strategy; consumers may pay higher prices if they feel they make a positive environmental impact; jet fuel (a third of total costs) would no longer be needed.",
+                  "Arguments for increasing package holiday market share": "Cheaper than a new fleet, which is a significant capital investment (Ansoff: market penetration); easyJet is the seventh largest airline (342 aircraft, 48 million customers, 35 countries, 154 airports) with a well-known reputation, making share gains more likely; 97% of customers travel for leisure and could be targeted to buy a package rather than just a flight; best price guarantee and full refund (28 days) may attract customers after travel-restriction disruption.",
+                  "Possible recommendations": "Choose the new fleet despite high initial cost, as long-term energy cost savings and customers' willingness to pay higher prices could improve profitability; or, given its established reputation, focus on package holiday market share as cheaper and less risky in the short term.",
+                  MOPS: "Market: dynamic and competitive (Ryanair, easyJet in budget; BA, Virgin Atlantic long-haul), so hydrogen aircraft could create a USP. Objectives: improve profitability; 97% leisure customers could be sold higher priced package holidays. Product: low-cost European airline; electric/hydrogen planes could keep packages competitively priced given lower long-term running costs. Situation: falling passenger numbers from travel restrictions; in the short run consumers may be keen to book packages they could not take in 2020.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of moving averages, e.g. total of 3 months divided by 3",
+                  "Application (1): March-May = 30 + 45 + 70 = 145 / 3 = 48.33%",
+                  "Application (1): June-August = 70 + 90 + 90 = 250 / 3 = 83.33%",
+                  "Analysis (1): difference = 83.33 - 48.33 = 35%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1. QS1. NB: if the only answer given is 35% or 35 award 4 marks; if the candidate states -35% or -35 award 3 marks.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): break-even = fixed costs / contribution per unit",
+                  "Application (1): contribution per room = £84 - £34 = £50",
+                  "Application (1): monthly fixed cost = £30 000 / 12 = £2 500",
+                  "Application (1): break-even = 2 500 / 50 = 50 rooms per month",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS5. Award 4 marks if the only answer is 50. Alternative: annual break-even = £30 000 / 50 = 600 rooms (3 marks); monthly = 600 / 12 = 50 rooms (4 marks). If candidate divides by 9 months (open months): monthly fixed cost = 30 000 / 9 = 333.33 (3 marks); break-even = 333.33 / 50 = 67 rooms (4 marks); 66.67 rooms (3 marks).",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [8, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 7],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Historical budgeting: a budget based upon previous financial figures.",
+                  "Reasons why it is valuable": "Bluebells has operated since 2006, so has 16 years of previous figures; the owners' experience of the accommodation market should make figures accurate; as a small business, historical budgeting is easier and quicker for Les and Liz.",
+                  "Possible counterbalance": "In a competitive market with many guesthouses, hotels and self-catering options, figures could change rapidly year to year; zero based budgeting may be more valuable as it forces justification of each area, possibly more accurate given market changes.",
+                  "Potential judgement": "As a small family business with many other tasks, historical budgeting is likely more valuable because it is convenient and quick; but it may not be valuable given competition in Keswick, which may mean the variable cost per room rises above the current £34.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Note the level ranges in this MS for 2(c) are 1-2, 3-4, 5-7, 8-10. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "SWOT analysis is a strategic planning technique used to identify a business's strengths, weaknesses, opportunities and threats.",
+                  "Reasons why it is useful": "Strengths such as excellent reputation and 5* reviews can counter threats and exploit opportunities; weaknesses as a small business run by Les and Liz (e.g. lack of expertise and finance compared to larger competitors) can be identified and addressed; opportunities from online travel agents (Booking.com) and review sites (TripAdvisor) can be exploited; threats from other guesthouses, hotels and self-catering can be identified and countered.",
+                  "Possible counterbalance": "The owners may lack knowledge and experience to do SWOT effectively; the competitive, fast-changing UK holiday market may be hard to reflect; SWOT has an opportunity cost - time could be spent on more useful activities such as offering more facilities.",
+                  "Potential judgement": "SWOT is useful for strategic decisions, letting Les and Liz focus on key influences such as technological developments and increased competition; but in a fast-changing tourism market decisions based on it may quickly become outdated, limiting its usefulness.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Cash flow is the movement of cash into and out of a business over time; sufficient funds are essential to pay day-to-day expenses. Profit is total revenue minus total costs, a reward for the risk of investing.",
+                  "Arguments for improving cash flow": "Seasonal business with most inflows May-September, so must generate enough to survive the off season; closed December-February, giving negative cash flow then; the owners already emphasise financial planning and careful working capital management, recognising the importance of liquidity; as a small business it may have limited reserves and only a small overdraft facility.",
+                  "Arguments for increasing profit": "In a competitive market profits fund investment in marketing, e.g. a well designed website, and retained profit is cheaper than a bank loan; Bluebells reinvests 50% of profits to improve efficiency (new windows, fuel efficient boiler); in the long term it needs consistent funds to reinvest to stay successful; profit rewards Les and Liz for their risk.",
+                  "Potential recommendation": "In the short term improve cash flow to build a summer surplus to survive the winter, especially as a small business in an increasingly competitive and fast-changing market; alternatively reinvest profits to maintain its excellent reputation and high standard of facilities to keep attracting customers.",
+                  MOPS: "Market: competitive accommodation market with rivals in Keswick plus city breaks and other rural destinations. Objectives: careful financial planning, possibly including cash flow and profit targets, and maintaining its excellent reputation. Product: good quality at a competitive price; holiday demand may have positive income elasticity. Situation: well established since 2006, good reputation, occupancy consistently above its break-even target.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2022-p3",
+            year: "June 2022",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-que-20220617.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-rms-20220818.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (context: international sports events industry). Extract A: Durban withdrew from staging the 2022 Commonwealth Games over financial and practical concerns; Edmonton and Liverpool also bid, but the Commonwealth Games Foundation chose Birmingham, the UK's second biggest city. Over 1,000 people will be recruited (administration, planning, marketing, security); recruitment and training led by Gi Group, a world leader in HR management, providing selection, training and on-the-job support, and career development for staff from August 2022 after the Games. Extract B: Alexander Athletics Stadium (Perry Park): planning permission January 2020; three stands demolished and rebuilt with British steelwork; £184m scheme on budget for completion spring 2022. After the Games it becomes a hub for health, wellbeing, sport, academic and community activity in a £500m City of Birmingham Regeneration Scheme. Capacity about 30,000 spectators per session during the Games, then a permanent 18,000 - the largest permanent UK facility able to host international athletics; home of Birchfield Harriers. Extract C: capital funding (£m): Alexander Stadium redevelopment 184 (Central Government and Sport England £112m, Birmingham City Council £27m, Local Enterprise Partnership £20m, West Midlands Authority £25m); Sandwell Aquatics Centre, Smethwick (new build) 73; Smithfield Arena (new build) 64; Coventry Stadium adaptations 32; NEC adaptations 25; other sites and infrastructure 400 (Sport England, business partners/sponsorships); total 778. Extract D: CEO Ian Reid: new business partnerships are needed; the Games will boost jobs and investment and promote Birmingham's reputation. Vision: embrace the youth, diversity, humanity and pride of the region and the 76 Commonwealth countries; inspire communities and athletes to live happier, healthier lives; drive sustainable economic growth creating opportunities through trade, investment, jobs and skills; transform local communities with new and improved homes, facilities and transport links.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Assess two types of staff training that might be used by the Gi Group for the 2022 Commonwealth Games.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Assess the importance of capacity utilisation during the Commonwealth Games.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the factors that may have led to Birmingham, UK being chosen as the location for the 2022 Commonwealth Games.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "Ian Reid believes that the Commonwealth Games' Directors' objectives should be to prioritise jobs and investment when making business decisions. However, others have suggested that the objectives should meet the needs of all stakeholders.",
+                    prompt: "Using the data in Extracts A to D, evaluate these two objectives and recommend which is more appropriate for the 2022 Commonwealth Games' Directors.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H. Extract E: Northfield Cycles (NC), Birmingham, founded 1996 by semi-professional cyclist Richard Tranter; retailer, repairs and servicing centre. In 1996 unemployment was rising with the closure of the Rover plant at Longbridge; NC flourished on cheap overheads and demand from locals on low incomes swapping cars for bikes. Sales grew from 20 bikes a week to 20 a day in summer 2012 (boosted by Bradley Wiggins and London Olympics success); average £40,000 of bikes per week; phenomenal growth in 2019 due to UK Government schemes and closure of competitor Action Bikes. Extract F: sells brands such as Giant, Scott, GT and Raleigh; 95% of bikes, helmets, clothing and equipment made in China, Taiwan, Vietnam and Malaysia, 5% from Europe (mostly Germany). Most bikes priced £900-£1100 but range £90 to £24,000. Product life cycle of a high performance Giant bike can be as short as 12 months, so discounts are common. Extract G: June 2019 Cycle To Work scheme lets employers fund bikes and equipment up to £10,000 including e-bikes, to cut congestion, commute times, travel costs and air pollution. 2020 Fix Your Bike scheme saves customers up to £50 on repairs. Extract H: in April 2020 architects Slaters Ltd prepared expansion plans. Plan A: remove walls to extend the shop by 25 m2 and upgrade the basement into a repairs workshop; NPV £4,989 at 10%. Plan B: rear extension adding 40 m2 and a complete refit of the basement as a high-tech workshop including e-bikes. Net cash flows (£000s), Year 0-5: Plan A (12), 3, 4, 5, 6, 5; Plan B (60), 12, 15, 20, 26, 28. Discount factors at 10%: Year 1 0.909, Year 2 0.826, Year 3 0.751, Year 4 0.683, Year 5 0.621.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Assess two pricing strategies Richard could use at Northfield Cycles.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Assess the likely effects of protectionism on Northfield Cycles.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    preamble: "Other than trade protectionism, Northfield Cycles future success could depend on other external influences.",
+                    prompt: "Assess the significance of other external influences on the future success of Northfield Cycles.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Using the data in Extracts E to H, Payback and NPV investment appraisal methods, evaluate Plan A and Plan B expansion plans and recommend which one might be better for Northfield Cycles.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Induction training": "To familiarise the 1,000 new employees with operations; for all staff given the health and safety implications of the event and the need to become effective quickly.",
+                  "Off-the-job training": "More likely at first, as the Games take place only during a fortnight in summer 2022; likely to be professionally led by Gi Group, a world leader in human resource management.",
+                  "On-the-job training": "More effective as employees learn as they work alongside existing 'experts', e.g. admin, marketing, security.",
+                  "Possible counterbalance": "Induction may be too general and not related to specific roles, e.g. customer service at the event, so not effective for a wide range of roles; off-the-job training can be more costly given a 1,000 workforce over two weeks; experienced workers giving on-the-job training may be too busy dealing with 30,000 spectators per session.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Three levels: 1-2, 3-5, 6-8. Level 0 = a completely inaccurate response.",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Capacity utilisation measures the percentage of full capacity used at any one time; Alexander Stadium's spectator capacity is 30,000 (set by seating and health and safety legislation).",
+                  "Why it is important": "Average fixed costs such as cleaning and security fall as spectator numbers rise, reducing unit costs and making the stadium more cost effective; the Games are a once in a lifetime opportunity, so filling 30,000 seats at each session is vital to maximise ticket and merchandise revenue; packed stadiums add atmosphere and enjoyment.",
+                  "Possible counterbalance": "30,000 spectators may strain catering, disappointing spectators unable to get food or drink in breaks; cleaning/security teams may be overworked, raising health and safety risks.",
+                  "Possible judgement": "Depends on adaptability of facilities and staffing and preparation for popular events such as the men's 100m final; operating below capacity may leave some costs uncovered in less popular events, e.g. fixed catering costs such as heating and salaries.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Assessment of a country/city as a location can depend on workforce skills and availability, infrastructure, government incentives, ease of doing business, political stability and likely return on investment.",
+                  "Application to Birmingham and the UK": "As the UK's second biggest city Birmingham can better supply the 1,000 workforce; UK Government subsidises hosting (e.g. £112m towards the Alexander Stadium) and local councils fund venues (e.g. Sandwell Council - £73m Aquatics Centre); central location with excellent road, rail and airport links; resources already exist, e.g. the redeveloped Alexander Stadium.",
+                  "Potential counterbalance": "Assumes Birmingham can fill 1,000 vacancies with suitably skilled applicants; infrastructure may not cope with athletes and spectators from 76 Commonwealth countries; local residents may oppose extra congestion/pollution; data limitations - other countries such as Canada may have offered more generous support.",
+                  "Possible judgement": "Hosting is an opportunity to 'drive sustainable economic growth... jobs and skills', so a location needing this was important and Birmingham may have warranted the choice; but it depends whether the Games actually transform local communities and deliver new homes and facilities, or cause bottlenecks and poor returns on investment, as with Glasgow and Manchester.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Stakeholders are people or groups with an interest in the actions of a business: owners, employees, customers (spectators), suppliers, local community, pressure groups (Sport England), local (Sandwell) and central government.",
+                  "Directors' objectives of jobs and investment": "Government expects a return on its investment (e.g. £112m towards the stadium); given the £778m capital cost alone directors would prioritise recovering capital cost; opportunities to make profits (e.g. hospitality and catering), especially welcome in an economic downturn; longer-term returns from continued use of venues such as the 18,000 capacity stadium.",
+                  "Other stakeholder objectives": "Legacy of events such as the London Olympics shows hosting encourages regeneration through new housing and better infrastructure; Birchfield Harriers and the local sports community gain improved facilities; councillors may see athletes as role models for healthy living; an opportunity to upgrade UK venues to host international events.",
+                  "Possible recommendation": "Conflicts between stakeholders are inevitable; the 'shareholders' here are the public sector bodies that funded the Games, so longer-term benefits to the UK economy and Birmingham community are needed; key stakeholders' interests must be kept in mind or the Games might not have happened given potential lack of funding from government and councils.",
+                  MOPS: "Market: extra visitors give smaller businesses opportunities, linking to jobs and investment. Objectives: the vision and mission is about meeting a range of stakeholders' needs, which helped Birmingham be chosen. Product: improved/new facilities (Sandwell Aquatics Centre) benefit athletes short term and the Sandwell community longer term. Situation: growing obesity and sedentary lifestyles mean the Games can promote local participation in sport.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Marks for application and analysis include up to 4 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Pricing strategies: cost-plus, competitive, skimming, psychological. Choice depends on PED, USPs, differentiation, competition, brand strength, product life cycle stage, costs and the need to make a profit.",
+                  "Suitable for Northfield Cycles": "Competitive pricing to compete with rivals like Action Bikes and retain or gain customers; skimming for well known brands like Giant as new bikes launch every year, targeting high-income enthusiasts who want the latest model at over £1100; cost-plus to cover costs, keeping bikes affordable for low-income customers while ensuring profit given low overheads.",
+                  "Possible counterbalance": "Action Bikes has closed so competition is less of a consideration; high performance Giant bikes may be a small fraction of sales, so skimming is inappropriate for most local, possibly low-income, customers; unemployment may no longer be high and, with UK Government schemes, costs or PED may be less appropriate for setting price.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Three levels: 1-2, 3-5, 6-8. Level 0 = a completely inaccurate response.",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Protectionism includes tariffs, quotas and other barriers such as legislation, administrative checks or domestic subsidies.",
+                  "Does affect": "NC imports all its stock, especially from the Far East, so tariffs could raise purchasing costs; quotas could restrict supply, disappointing customers and reducing sales volume and revenue; Chinese Government subsidies could make Chinese bikes cheaper than Taiwanese or German ones, possibly reducing choice long term as those suppliers go out of business.",
+                  "Possible counterbalance": "Depends whether importers or suppliers like Giant absorb extra tariff costs; bikes from Germany would face no tariffs under the post-Brexit trade deal, so prices need not rise.",
+                  "Potential judgement": "If protectionism raises prices and price is the main determinant of demand, sales may suffer; if quality and functionality matter more (e.g. Giant), sales and revenue may not suffer significantly.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "External influences can be economic (inflation, exchange rates, interest rates, taxation and government spending, uncertainty), legislation (consumer protection, health and safety) or the competitive environment.",
+                  "Significance to NC's future success": "The Cycle To Work scheme effectively reduces bike prices to employees, increasing demand; lower Bank of England interest rates could let people borrow cheaply to buy more expensive e-bikes; consumer protection legislation requires bikes as described and fit for purpose, and compliance protects Richard's reputation and avoids extra distribution and replacement costs.",
+                  "Possible counterbalance": "Not all consumers can access Cycle To Work (they may not be qualifying employees), so sales may rise only marginally; low interest rates may have limited effect as consumers may buy second-hand or repair old bikes using the Fix Your Bike scheme.",
+                  "Potential judgement": "Impact depends on the economic climate - if unemployment is still high in Northfield people may lack income for bikes averaging £900-£1100; many NC bikes may be luxury goods, e.g. high performance Giant bikes, so competitors' prices matter less.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Calculations: "Payback: Plan A 3 years; Plan B 3.5 years. Discounted cash flows (£): Plan A 2727, 3304, 3755, 4098, 3105 = 16989 less capital cost 12000 = NPV 4989; Plan B 10908, 12390, 15020, 17758, 17388 = 73464 less 60000 = NPV 13464. ARR: Plan A 18.3%, Plan B 13.67%.",
+                  "Plan A": "Pays back in 3 years not 3.5, so less interest if borrowed or 6 months less opportunity cost if retained profit used; generates an extra £11,000 net cash flow beyond year 3 that could fund extra stock to keep up with market changes; net cash flows start to fall by year 5 (£5,000), possibly reflecting a shift to e-bikes that Richard may not easily repair given premises limitations; ARR 18.3% vs 13.67%; capital cost £12,000 vs £60,000 for Plan B, which represents a bigger opportunity cost.",
+                  "Plan B": "NPV of £13,464 vs £4,989, significantly above £0, indicating lower risk; extra £41,000 net cash flow beyond year 3 could fund stock; larger premises and up to date equipment future-proof servicing of e-bikes; but forecasts may be optimistic, assuming more space sells more and more expensive bikes plus more servicing - the more variables predicted, the more vulnerable to change.",
+                  "Possible recommendations": "Plan A in the immediate term as it is relatively inexpensive, less ambitious and less damaging to cash flow - walk before you run given the economic climate and market dynamics; Plan B over the longer term given overall profit effects, possibly funding a 'sister shop' elsewhere in Birmingham.",
+                  MOPS: "Market: success may depend on a new competitor entering and whether cycling stays popular. Objectives: cheaper Plan A may be preferred as extra sales may not cover the extra £48,000 capital cost profitably. Product: Plan B depends on availability of high performance e-bike stock. Situation: choice may depend on the business climate and UK Government support for e-bikes.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Marks for application and analysis include up to 6 marks for quantitative skills (QS7, QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2021-p1",
+            year: "Autumn 2021",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_01_que_20211008.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_01_rms_20211216.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-C (UK sweets market; Bon Bon's). Extract A - UK sweet market revenue, actual and projected (GBP m): 2015 1 995; 2016 2 128; 2017 2 282; 2018 2 388; 2019 2 456; 2020 2 528; 2021 2 620; 2022 2 680; 2023 2 734. Extract B - bags of sugar-based sweets remain popular in independent convenience stores; sales could rise with 'better-for-you' options and dedicated space for kids' sweets; sweets are often impulse buys and consumers buy little and often; in 2018 GBP 445m of sweets were sold in convenience stores out of a total UK sweet market of GBP 2 388m; independent stores can stock smaller niche brands to differentiate as consumers switch to cheaper own-brand sweets. Extract C - Bon Bon's (founded 2007, led by Mark Rowntree) is a confectionery wholesaler supplying Belgian chocolates, boiled sweets, specialist liquorices and children's sweets such as 'Traffic Light Lollies' and 'Candy Necklaces', repackaged by hand in small quantities and interesting packaging; it supplies hundreds of high-quality independent retailers (farm shops, delicatessens, tourist attractions such as The British Museum, Tower of London and Stonehenge) and provides display units to recreate a traditional sweet shop. In 2018 it opened an additional Yorkshire site to be used as a distribution warehouse; 85 staff. Rowntree: 'Although we want to grow, we don't have mass market ambitions.' Stem to 1(a): in 2018 sugar-free sweets were 3% of total sales revenue; in 2023 forecast to be 5%.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    preamble: "In 2018, the value of the UK market for sugar-free sweets was 3% of total sales revenue. In 2023, it is forecast to be 5% of total sales revenue.",
+                    prompt: "Using the data in Extract A, calculate the change in value of sugar-free sweets sales predicted between 2018 and 2023. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Explain one way in which a business such as Bon Bon's adds value to the products it sells.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess a likely trade-off for Bon Bon's of not having 'mass market ambition.'",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "Bon Bon's has identified 'Traffic Light Lollies' as being a 'dog' in its product portfolio.",
+                    prompt: "Assess the possible consequences for Bon Bon's continuing to sell 'Traffic Light Lollies'.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Bon Bon's is currently a business to business (B2B) company with an objective to increase profitability. To do this, Bon Bon's could either increase sales as a B2B company, or become a business to customer (B2C) company.",
+                    prompt: "Evaluate these two options and recommend which one is more likely to improve Bon Bon's profitability.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G (multinationals in Brazil). Extract D - total number of McDonald's restaurants in Brazil, franchise owned / McDonald's owned: 2012 198/533; 2013 229/583; 2014 252/614; 2015 268/615; 2016 318/584; 2017 350/579; 2018 384/584. Extract E - Taco Bell opened its first Rio de Janeiro location, joining an already crowded market; its Director of Operations says operating on a larger scale reduces the cost of inputs and services; goal of up to 200 locations by 2027; sells Tex-Mex dishes such as the 'Crunchwrap Supreme' and 'XXL Grilled Stuft Burrito' but has added local flavour (e.g. the local drink mate in Sao Paulo); all Brazilian branches currently company-owned, franchising being considered. Extract F - line graph of the Brazilian Real to US dollar exchange rate, Jan 2018 to Apr 2019 (axis R3 to R4.4). Extract G - food and beverage multinationals account for 10% of Brazil's economic output and employ 1.6 million people (Nestle employs 21,000 and trains 7,000 apprentices under 30); in 2006 the Brazilian government introduced regulations to curb obesity: warning advertising on foods high in sugar, salt and saturated fats, marketing restrictions on sugary drinks aimed at children, and a ban on brands such as Pepsi and KFC sponsoring sports and cultural events. Brazilian business Citrosuco exports 50% of orange juice exported to the USA (a USD 1.4 billion market), selling to Tropicana (owned by PepsiCo). A 2015 report by pressure group Supply Cha!nge criticised working conditions in the Brazilian orange juice industry (high pesticide use, unsafe conditions and deaths, workers unpaid for weeks and trapped in debt).",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the data in Extract D, calculate the percentage growth in the total McDonald's restaurants operating in Brazil, between 2012 and 2018. State your answer to 2 decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Explain how one of Ansoff's generic strategies might be applied to Taco Bell's decision to enter the Brazilian market.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Using the data from Extract F, assess the impact of the exchange rate movements between January 2019 and April 2019 on the total costs of a business, such as Tropicana, which imports to the USA from Brazil.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess whether legal controls are the most effective way of controlling the actions of multinational companies in countries, such as Brazil.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Taco Bell entered the Brazilian market in 2018, with limited success. To increase sales, Taco Bell could either adopt a polycentric, or an ethnocentric approach to marketing.",
+                    prompt: "Evaluate these two options and recommend which one is most suitable for Taco Bell to increase its sales in Brazil.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): change in value of sales = 2023 value - 2018 value",
+                  "Application: 3% of GBP 2 388m = GBP 71.64m",
+                  "Application: 5% of GBP 2 734m = GBP 136.7m",
+                  "Application: difference in value = GBP 136.7m - GBP 71.64m = GBP 65.06m",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (QS2 percentages and percentage changes; QS9 interpret information). If the only answer given is GBP 65.06m award 4 marks; if the answer is not given to 2 decimal places award 3 marks.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): adding value is the process of turning factor inputs into something that will sell for more than it costs; developing a USP is one way to add value",
+                  "Application (up to 2): e.g. hand-packed confectionery; traditional flavours",
+                  "Analysis (1): e.g. this gives retailers/customers greater convenience and as a result they may be prepared to pay a higher price to Bon Bon's",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A trade-off is a situation where having more of one thing leads to having less of something else.",
+                  Arguments: "By not having mass market ambition Bon Bon's potentially sacrifices the additional sales it could make selling to a wider range of retailers such as supermarkets; a niche marketing approach could lead to lower total costs/profits for the business.",
+                  "Potential counterbalance": "Not having mass market ambitions can give a strong brand image as a niche provider of traditional sweets to specialised retailers, which could lead to higher profit margins per sale; the mass market for sweets is likely to be more competitive, so rather than a negative trade-off this could be a positive strategy for future growth.",
+                  "Potential judgement": "All businesses face trade-offs; for a small business like Bon Bon's the trade-off could be positive as it allows focus on the needs of niche customers like shops in tourist attractions; however, the UK sweet market is growing and avoiding the mass market could limit future growth.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A dog in the Boston Matrix is a product that has a low share of a low growth market.",
+                  "Consequences of continuing": "Including dogs such as Traffic Light lollies in the portfolio attracts some customers to purchase Bon Bon's products, which could lead to additional sales of other products; dogs do not need an increase in marketing - their low sales can be accepted and Bon Bon's could focus on other sweets such as Candy Necklaces.",
+                  "Potential counterbalance": "Traffic Light lollies may still require increased marketing, possibly sales promotions or discounts, to boost sales; continuing to package and sell them could divert valuable funds away from a growing segment such as 'better-for-you' sweets (problem child), potentially giving a lower market share than Bon Bon's might otherwise have.",
+                  "Potential judgement": "Despite poor sales in a low growth market, Traffic Light lollies might still be an important part of the portfolio providing cash inflow, particularly if they are prominent in the 'old sweet shop' image of the retail spaces; alternatively Bon Bon's would be much better to focus on growing markets such as sugar-free sweets (problem child), which could provide greater cash inflows and justify the marketing needed to raise awareness.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are developed; quantitative and/or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - increase B2B sales": "B2B is where a company sells its products to another business (e.g. to shops at tourist attractions). Profitability may improve by using existing marketing channels and securing bulk purchases from retailers, giving purchasing economies of scale and lower unit costs; Bon Bon's knows its current retailers and can extend the model to others such as department stores; the new distribution warehouse should improve delivery reliability, enhancing reputation and winning contracts; packing in larger quantities may allow greater automation, increasing efficiency and reducing unit costs; selling B2C would require new retail space or online ordering facilities, adding to fixed costs in the short term.",
+                  "Option 2 - become B2C": "B2C is where a company targets its products at individual customers. Customers often buy on emotional involvement and in response to promotion and branding, which a nostalgic, traditional brand could exploit by retailing directly; the UK sweet market is forecast to grow to GBP 2 734m by 2023, so revenue could rise from growing consumer demand; Extract B suggests convenience store sales are important, so there is scope to open similar small-scale outlets; once distribution (shops or online) is decided, B2C profit margins are higher because there are fewer intermediaries taking a share of the profits.",
+                  "Potential judgement": "Bon Bon's is an established B2B company with a growing reputation and has just invested in a new distribution centre, so it makes sense to continue supplying current retail customers such as Stonehenge, who buy in bulk, allowing economies of scale; becoming B2C could be less profitable in the short term because distribution networks must be set up, but in the long term selling directly online could raise sales and profitability, since some costs like the distribution centre are already accounted for - it depends on the success of the marketing needed to make the brand known to customers.",
+                  MOPS: "Market: the market is growing, with opportunity for increased profitability via B2B or B2C; supplying current niches may avoid powerful international brands such as Nestle. Objectives: Bon Bon's has no mass market ambitions, so greater profitability could best be achieved by continuing B2B sales and reducing costs. Products/services: a niche business focused on traditional sweets; the internet offers a way to sell directly and increase sales while remaining niche. Situation: the 2018 distribution centre is geared to supplying existing retailers, so profitability may be improved by making it work as efficiently as possible and driving down average costs.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): total McDonald's = franchise owned + McDonald's owned",
+                  "Application: 198 + 533 = 731 (2012); 384 + 584 = 968 (2018)",
+                  "Application: 968 - 731 = 237",
+                  "Application: 237 / 731 x 100 = 32.42% growth",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (QS2 percentages and percentage change; QS9 interpret information). If the only answer given is 32.42% award 4 marks; if the answer is not rounded to 2 decimal places award 3 marks.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): knowledge of Ansoff's strategies - market development, market penetration, product development, diversification",
+                  "Application (up to 2): American business Taco Bell is entering the Brazilian market; it is selling Tex-Mex dishes already sold in the USA",
+                  "Analysis (1): Taco Bell is selling existing products, e.g. market development is potentially more risky than market penetration, as the new market is not familiar to the business",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Exchange rates measure the value of one currency in terms of another, e.g. the US dollar to the Brazilian Real.",
+                  "Impact on costs": "Between January and April 2019 the US dollar appreciated against the Real, making Brazilian exports such as orange juice cheaper for US businesses such as Tropicana to import; in October 2018 the Real appreciated, which would have made exports from Brazil more expensive for US customers; a constantly changing rate affects Tropicana's costs and makes planning more difficult.",
+                  "Potential counterbalance": "The changes between January and April 2019 were relatively small (between R3.8 and R4), so the effects on Tropicana's costs might be small; we need to know what proportion of Tropicana's costs come from orange prices - other costs such as wages might be more important.",
+                  "Potential judgement": "The cost of oranges could be a significant portion of Tropicana's total costs; the effect of the Real's movement will depend on the proportion of its orange juice imported from Brazil - the higher the proportion, the greater the likely impact.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Marks for application and analysis include up to two marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Legal controls include the use of legislation and government policies; multinationals can also be controlled through political influence, pressure groups and social media.",
+                  "Arguments for legal controls": "The Brazilian government has used legal controls on advertising and selling sugary and fatty foods, which could limit KFC and Pepsi's ability to increase sales or force them to change product contents and marketing; legal controls are often expedient and easily enforced rather than relying on other stakeholders' behaviour; social media campaigns can be unsuccessful and a multinational's resources may exceed a pressure group's, so messages are countered by the strong brand image of KFC or Pepsi.",
+                  "Potential counterbalance": "Legal controls only work if enforced - corruption in an economy such as Brazil's may mean laws on food ingredients are not fully enforced; pressure groups such as Supply Cha!nge can be more effective by highlighting the plight of orange juice workers, damaging the reputation of businesses such as Tropicana and forcing changes in HR approach; social media campaigns sharing how workers are treated on orange farms could damage a multinational's reputation in Brazil and internationally.",
+                  "Potential judgement": "Multinationals care about their image in new markets because it affects their image worldwide, so legal controls can be successful in limiting damage and maximising benefits; however, multinationals operate in many markets and can pull out of Brazil to concentrate elsewhere, disappointing consumers of aspirational brands, which may mean no control method will affect their actions.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are developed; quantitative and/or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - polycentric approach": "Polycentric approaches consider each host country unique and adapt the marketing mix to maximise sales. Taco Bell has adapted to local tastes by including Brazilian drinks such as mate, encouraging Brazilians to try the restaurant; it could adapt other elements such as place, e.g. focusing on city-centre locations rather than roadsides as in the USA, since Brazil is an urbanised developing country; however this approach is often expensive because extensive market research may be needed to identify specific tastes rather than transferring the US model.",
+                  "Option 2 - ethnocentric approach": "The business approaches the world primarily from the perspective of its own culture; products and marketing are not adapted. Taco Bell sells the same Tex-Mex dishes (Crunchwrap Supreme, XXL Grilled Stuft Burrito) as in the US - if successful there they may succeed in Brazil; in a 'crowded' market it could differentiate itself from competitors such as McDonald's; it could be more profitable more quickly with less need to design new flavours and adapt production; tacos could have lower fat and salt than other fast food, making compliance with Brazil's fast-food laws more likely.",
+                  "Potential judgement": "Polycentric models have worked well for businesses such as McDonald's, and as Taco Bell wants to expand, adapting at least products to local tastes may help maximise sales rather than put off customers unsure about Tex-Mex; alternatively Tex-Mex is Taco Bell's USP and should be central to its marketing in Brazil, with no need to adapt the US model because customers may want something different from what is currently available.",
+                  MOPS: "Market: the Brazilian fast-food market is crowded with brands such as McDonald's, so an ethnocentric approach could differentiate Taco Bell. Objectives: growth is more easily achieved by being ethnocentric, selling familiar products marketed in a familiar way, freeing finance for expansion. Products/services: Tex-Mex may be too unfamiliar for Brazil, so a polycentric approach may suit, and if larger competitors such as McDonald's use it, it may be worth copying. Situation: Taco Bell has only just entered Brazil and is considering franchising, so an ethnocentric approach may ensure brand consistency across new franchises.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2021-p2",
+            year: "Autumn 2021",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_02_que_20211014.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_02_rms_20211216.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (Pura Cosmetics; Unilever/Dermalogica). Extract A - Rose Dyson founded Pura Cosmetics while studying for her GCSEs in 2015, spotting a gap for ethical cosmetics at affordable prices. It uses batch production to make 12 lip balms and 10 lip scrubs in flavours such as raspberry and gingerbread; it has its own factory, shop and online store and supplies 30 small retailers that order small quantities, giving them one month's trade credit; it hopes to supply national chains such as Boots. Rose has won awards and received advice from Karen Brady and Deborah Meaden (venture capitalist, 'Dragon's Den'). Since 2018 Rose works full time on the business; objective: rapidly expand output from 6,000 to 15,000 units per month and increase sales turnover by 300% in the next year. Extract B - break-even chart for Pura Cosmetics: monthly output of lip balm 0-6 (000s), revenue/costs GBP 0-30 000, showing fixed costs, total costs and total revenue lines (per the MS: total revenue GBP 30 000 at 6 000 units; variable costs GBP 6 000 at 6 000 units). Extract C - Unilever takes over Dermalogica (natural-ingredient skin care, e.g. aloe vera, sold in over 80 countries) for a reported GBP 500m, into its prestige brand division; Paul Polman praised its reputation among skin care professionals and global distribution; Unilever (owner of Dove) aims to increase personal care from 37% to 66% of total worldwide sales; founder Jane Wurwand said the takeover will provide resources to expand globally and increase brand awareness. Extract D - Pura Cosmetics cash-flow forecast (GBP): Nov / Dec / Jan - cash inflows 31 500 / 31 500 / 63 000; cash outflows 26 300 / 43 500 / 22 700; net cash-flow 5 200 / (12 000) / 40 300; opening balance 3 000 / 8 200 / (3 800); closing balance 8 200 / (3 800) / 36 500.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Explain one likely reason why Pura Cosmetics chooses to use batch production.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using Extract B, calculate the contribution per unit of one lip balm. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the value of venture capital as an external method of finance for Pura Cosmetics.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the extent to which Unilever may benefit from its takeover of Dermalogica.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Pura Cosmetics has set the objective of managing its cash-flow more effectively. To achieve this, it is considering two options; either to increase its overdraft facility or to reduce the credit period given to its retail customers.",
+                    prompt: "Evaluate these two options and recommend which one Pura Cosmetics should choose in order to achieve the objective of managing its cash-flow more effectively.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H (Buy it Direct). Extract E - Buy it Direct, one of the UK's largest online retailers (est. 1999), employs over 250 staff across Huddersfield, Barnsley and the East Midlands; it is split into divisions, each responsible for managing its own budget, whose heads report directly to the Chief Executive. It began selling computers and electronics, then kitchen appliances, televisions and furniture; it offers competitive prices and high customer service (a call centre giving product advice and arranging installation), holds a wider range of stock than competitors, sells premium brands (Bosch, Zanussi) and lower-priced own brands, and imports a significant proportion of products from China. Extract F - target payback of 3 years for all investment projects, including a new bathroom division costing an estimated GBP 700 000; net cash-flow (GBP 000s): year 1 200; year 2 200; year 3 200; year 4 200. Extract G - line graph of UK interest rates 2016-2021 (2021 estimated); per the MS, rates fell from 0.75% in 2019 to 0.1% in 2021. Extract H - UK major domestic appliances market growing at just 0.5% due to a slowing housing market and wavering consumer confidence; most purchases replace broken appliances; price and speed of delivery are key; innovation and smart technology tempt some to trade up but only a small proportion will pay more; style and design with price or quality decide brand choice. Stem to 2(d): the new Operations Director must install a new IT system for the warehouses within 45 weeks. Network diagram activities: A identify problem (2 weeks); B consult with software supplier (4); C recruit staff (6); D staff training (8); E discuss IT solution (1); F order equipment from suppliers (9); G implementation and testing (18). Per the MS, the critical path is C, D, F, G = 41 weeks, with float of 16 weeks on each of A, B and E.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Explain one reason why the head of each division of Buy it Direct is responsible for managing its own budget.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    preamble: "The Chief Executive has calculated the new bathroom project will not meet its payback target of three years.",
+                    prompt: "Using the data in Extract F, calculate the difference in the payback period compared to the Chief Executive's target. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Using the data in Extract G and your own business knowledge, assess the likely effects of the changes in interest rates between 2019 and 2021 on Buy it Direct.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "Buy it Direct's new Operations Director is in charge of installing a new IT system for the warehouses. This project must be completed within 45 weeks. The Operations Director has produced the following network diagram: Activity A: Identify problem; Activity B: Consult with software supplier; Activity C: Recruit staff; Activity D: Staff training; Activity E: Discuss IT solution; Activity F: Order equipment from suppliers; Activity G: Implementation and testing.",
+                    prompt: "Assess the likely value of Critical Path Analysis (CPA) for the effective management of the installation of the new IT system.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Buy it Direct has set the objective of increasing its sales revenue. It is considering two options, either to adopt a strategy of market penetration in the UK Electrical Household Appliance market or diversification.",
+                    prompt: "Evaluate these two options and recommend which one is most likely to achieve Buy it Direct's objective of increasing its sales revenue.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): batch production is a manufacturing process in which components or goods are produced in groups (batches); the knowledge mark can also be awarded for a valid reason, e.g. suitable for businesses that produce a range of products",
+                  "Application (up to 2): Pura Cosmetics produces a range of 12 lip balms and 10 lip scrubs; they come in a range of flavours such as raspberry and gingerbread; it wants to increase output from 6,000 to 15,000 units per month / increase sales turnover by 300%",
+                  "Analysis (1): batch production could be the most efficient method because Pura Cosmetics produces a wide range of products; batch production is flexible, so it may be able to increase output to meet any sudden increase in demand for products such as gingerbread lip balm",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): contribution per unit = selling price per unit - variable cost per unit",
+                  "Application (1): selling price = GBP 30,000 / 6 000 = GBP 5",
+                  "Application (1): variable cost per unit at 6 000 units = GBP 6,000 / 6 000 = GBP 1",
+                  "Application (1): contribution per unit of one lip balm = GBP 5 - GBP 1 = GBP 4",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (QS5 cost, revenue and break-even; QS9 interpret information). If the only answer given is GBP 4 award 4 marks; if the answer given is 4 (no GBP sign) award 3 marks.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Venture capital is a method of external finance where funding is provided by an investor in exchange for a share in the business.",
+                  "Arguments for venture capital": "As a new business Pura Cosmetics may struggle to obtain bank finance because banks may see it as high risk; Rose lacks experience and may benefit from the advice of Deborah Meaden; rapid expansion may need additional finance and expertise which a venture capitalist could provide.",
+                  "Possible counterbalance": "Rose will have to give up some control in exchange for finance; she will have to share profits with the venture capitalist, which may reduce retained profits and limit expansion plans; split ownership and control could lead to disagreements about how to run the business.",
+                  "Potential judgement": "Pura Cosmetics appears to have great potential, so a venture capitalist may provide the capital and guidance to continue expanding successfully, which may not be available from other sources; alternatively Rose has developed the business on her own and may be able to finance it through retained profits, avoiding loss of ownership and control.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A takeover occurs when one business acquires a majority shareholding of another business.",
+                  "Benefits for Unilever": "Dermalogica is an established brand with a well-known reputation and well developed global distribution links, which may enable Unilever to increase its share of the health and beauty market; Unilever may gain economies of scale such as purchasing (ingredients such as aloe vera) and managerial (Dermalogica managers' knowledge of skincare), reducing unit costs.",
+                  "Possible counterbalance": "High initial cost of GBP 500 million may reduce short-term profits; diseconomies of scale may arise, e.g. Dermalogica employees demotivated by working for a much bigger business, reducing productivity; Dermalogica is a niche business with an outstanding reputation among skin care professionals, which may be damaged by being taken over by a multinational as products become more mass market.",
+                  "Potential judgement": "The takeover may help Unilever achieve its objective of raising personal care to 66% of worldwide sales, given Dermalogica sells in over 80 countries; Unilever may only benefit if it maintains the strengths of Dermalogica's business model and retains its culture to avoid damaging the brand among skincare professionals.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are developed; quantitative and/or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Cash flow is the movement of money into and out of a business.",
+                  "Option 1 - overdraft facility": "Rapid expansion to 15,000 units per month may bring significant cash outflows (bigger factory, more raw materials, more staff), so an increased overdraft could provide additional working capital to pay for these, avoid over-trading and running out of cash; with a forecast negative balance of GBP 3,800 in December, an overdraft may enable it to keep trading without damaging relationships with retailers by reducing their credit period.",
+                  "Option 2 - reduce credit period": "Pura Cosmetics currently offers its 30 retailers one month's credit; reducing this may improve net cash flow as cash is received more quickly; with a forecast negative balance of GBP 3,800 in December, it could receive more of the GBP 63,000 inflows otherwise received in January, avoiding any overdraft and interest charges; this avoids overdraft interest costs that would add to the GBP 22,700 outflows in January.",
+                  "Possible recommendations": "Increase the overdraft because it could be easy to arrange with the bank and may provide additional finance at crucial times rather than all the time (e.g. ordering extra stock before Christmas); or reduce the trade credit period, which would not be a significant issue because the 30 small retailers only order small amounts of stock, so the value of their orders may not be high.",
+                  MOPS: "Market: large, competitive cosmetics market dominated by multinationals such as Unilever and L'Oreal, where Pura Cosmetics has identified a gap for ethical products. Objectives: rapid expansion to 15,000 units a month and a 300% increase in sales. Product: USP of ethical products at accessible prices; a niche operator. Situation: relatively new and niche with great potential and an impressive entrepreneur, but still vulnerable and may face challenges as it expands.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): a budget is a financial plan of income and expenditure; reasons for budgets may include setting targets, motivating staff and measuring performance",
+                  "Application (2): Buy it Direct is split into different divisions such as computers, electrical appliances and furniture; the head of each division reports directly to Buy it Direct's Chief Executive",
+                  "Analysis (1): this may act as a motivator because each head of division is trusted to set their own budgets; it enables the Chief Executive to set targets for each division and monitor its performance",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): payback is the length of time a project will take to make the amount of money spent on it",
+                  "Application (1): net cash-flow for 3 years is GBP 600,000",
+                  "Application (1): payback = 3 years plus GBP 100,000 / GBP 200,000 x 12 = 3 years and 6 months",
+                  "Application (1): the difference is 6 months longer than the 3-year target",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (QS6 investment appraisal). If the only answer given is 6 months award 4 marks.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [8, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 7],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Interest rates are the reward for saving and lending or the cost of borrowing, expressed as a percentage of the money saved or borrowed.",
+                  "Positive effects on Buy it Direct": "Rates fell from 0.75% in 2019 to 0.1% in 2021, so lower borrowing costs may allow more competitive prices; lower borrowing costs may encourage investment in projects such as the bathroom division; demand for household appliances and consumer electronics is likely to increase as consumers are attracted by cheaper credit finance deals.",
+                  "Possible counterbalance": "Lower rewards for savers may reduce some consumers' ability to buy expensive items such as household appliances, reducing demand; lower rates may depreciate the pound, raising the cost of electrical products imported from China and forcing price rises; UK rivals also benefit from lower rates, so Buy it Direct's sales may not increase.",
+                  "Potential judgement": "The fall in interest rates is only 0.65% between 2019 and 2021, so it may have only a limited effect on Buy it Direct.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3 (QS8, QS9). Note this MS prints Level 3 as 5-7 and Level 4 as 8-10. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Critical path analysis is the process of planning the sequence of activities in a project to discover the most efficient and quickest way of completing it while ensuring all stages are finished.",
+                  "Potential value of CPA": "CPA allows activities to be scheduled simultaneously, completing the project in 41 weeks, 4 weeks ahead of the 45-week target; the critical path C, D, F and G can be identified; float for non-critical activities can be found, e.g. A (18-2-0 = 16 weeks), B (22-4-2 = 16 weeks) and E (23-1-6 = 16 weeks); CPA helps manage cash flow, e.g. equipment suppliers do not have to be paid until week 23.",
+                  "Potential limitations": "Accuracy of figures - the Operations Director is new and may lack experience, so the project may take longer than 41 weeks; unexpected events such as teething problems with new equipment could delay the project beyond 45 weeks; CPA may encourage a focus on speed rather than quality, e.g. insufficient time for staff training (activity D).",
+                  "Potential judgement": "CPA is a valuable planning tool for such an important project, since any delay could cause significant problems for an e-commerce business whose customers expect prompt delivery; its value depends on actual implementation of each activity, e.g. recruitment and training may take longer than expected, in which case CPA is simply a planning tool.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4 (QS8, QS9). MS includes a completed CPA diagram (critical path C-D-F-G, 41 weeks; node earliest start times 0, 6, 14, 23, 41); diagram only partly legible in extraction. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are developed; quantitative and/or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - market penetration": "Selling existing products in an existing market, considered the least risky strategy by Ansoff. As one of the largest UK online retailers Buy it Direct may gain purchasing and marketing economies of scale and lower unit costs; by continuing online it can sell more of its existing range (e.g. Bosch and Zanussi) to a wider range of existing customers, increasing revenue through higher volume; it has consistently developed new products (kitchen appliances, televisions, furniture) successfully, so there is little need to diversify.",
+                  "Option 2 - diversification": "New products to a new market, considered by Ansoff more risky than market penetration but potentially more rewarding with opportunities to sell to a greater range of markets. Buy it Direct has expanded by consistently offering new products (from computers and electronics to kitchen appliances, televisions and furniture), proving it can take these risks and succeed; new products such as bathrooms widen the range offered and may increase overall revenue; the UK electrical household appliance market grew by only 0.5% due to a slowing housing market and wavering confidence, so new products could enable entry to faster-growing markets.",
+                  "Potential recommendation": "Choose market penetration because Buy it Direct has significant competitive advantages over rivals such as Currys - a wider product range, competitive prices, high customer service and the convenience of ordering online; or choose diversification so the business is not dependent on one product market, and new products such as bathrooms may give a USP over other online retailers, attracting new customers and increasing revenue.",
+                  MOPS: "Market: the UK household electrical appliance sector is a mass market dominated by e-commerce retailers such as Amazon and AO.com and high street retailers such as Currys/PC World. Objectives: increase sales revenue. Product: a wide range including computers, electronics, domestic appliances, televisions and furniture, with a possible new bathroom division. Situation: a successful, well-established business operating since 1999, employing 250 staff and expanding.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2021-p3",
+            year: "Autumn 2021",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_que_20211019.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_rms_20211216.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Context: the UK fast food/take-away and restaurant industry. Section A: Extracts A-D. Extract A - McDonald's opened its first UK restaurant in Woolwich in 1974; in 2016 it added GBP 540 million in revenue to the Greater London economy; 82% of London restaurants are owned and operated by 24 franchisees (local entrepreneurs), the rest by the corporate group (McOpCo); it invests in skills, local causes and kids' football; 183 restaurants across London employing 15,000 people; in the UK over 1,250 restaurants employing just over 115,000 people, over 80% operated by franchisees; over 38,000 restaurants worldwide. Extract B - Jamie Oliver's closed all but three of 25 UK restaurants with the loss of 1,000 jobs after calling in administrators; Jamie's Italian launched in 2008 to disrupt mid-market high street dining with great value, higher quality ingredients and best-in-class animal welfare; the KPMG administrator described the casual dining trading environment as the toughest he had seen, with rising costs and weak consumer confidence. Extract C - hospitality faced an 'obvious crisis' without government support; shops, restaurants, cafes, pubs, bars and cinemas were first to feel the 2020 recession; in March 2020 the Chancellor pledged a GBP 330 billion package including tax cuts, grants and loans. UK corporation tax rates 2009-2019 (%): 28, 28, 26, 24, 23, 21, 20, 20, 19, 19, 19. Extract D - Mindful Chef, founded 2015 by three school friends, London-based, 27 employees, delivers healthy recipe boxes with locally sourced, high quality ingredients; 178% increase in sales in 2019, nearly two million meals, annual sales GBP 10 million; could become second in the UK behind market leader Gousto in a recipe box market forecast to double over the next 10 years; long-term options: a global merger with US company Blue Apron or a joint venture with French supermarket chain Auchan to help secure customers in France.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using Extract A, assess two likely reasons why US fast food companies such as McDonald's choose to locate restaurants in the UK.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Assess the possible limitations of secondary market research to restaurant chain companies, such as Jamie Oliver's.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Using the data in Extracts B and C, assess the likely effects of decreases in UK corporation tax rates in March 2020 on UK restaurants chains, such as Jamie Oliver's.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Using the data in Extract D and your own knowledge of business, evaluate and recommend whether Mindful Chef should seek a joint venture with Auchan, France or seek a global merger with companies such as Blue Apron, US.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-G (The Wonky Table Ltd). Extract E - a restaurant in the Cathedral Quarter of Derby city centre offering plain and simple dining with a contemporary twist, using locally sourced produce; opened December 2010 with start-up capital of GBP 75 000; operates from leased premises; family-run, owned and managed by Holly and Andy, with 2 full-time and 12 part-time staff; became a private limited company in 2012 to secure funds to grow; popular Movie Theme Nights and Vegetarian Evenings. Extract F - management structure (March 2020): managers Holly and Andy; a Head Chef responsible for two assistant cooks and two other kitchen staff; a Front of House Manager responsible for eight waiting staff; assistants undertake regular job rotation to understand each other's roles. Extract G - 2021 expansion options. Upstairs renovation: extend covers from 24 to 48 at a cost of GBP 14 000, boosting sales from more customers and private party bookings; seating and tables must be ordered by July 2021 for installation in the second and third weeks of August 2021 (usually less busy); Andy suggests also replacing lighting with LED and redecorating at an extra GBP 6 000. External catering: buffet lunches, celebration dinners and conference catering for local businesses (accountants, estate agents, solicitors, premium hair salons); requires closing for two weeks in December to build an additional kitchen at the rear, estimated cost GBP 8 000.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Assess two suitable external methods of finance that could have been used by Andy and Holly for The Wonky Table start-up capital in 2010.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    preamble: "Holly and Andy are considering creating a mission statement for The Wonky Table.",
+                    prompt: "Assess the potential benefits to The Wonky Table of having a mission statement.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the likely value of flexible working to small family-owned restaurants, such as The Wonky Table.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "Holly and Andy are considering ways to increase profits. They could either extend their premises upstairs or offer external catering to local businesses.",
+                    prompt: "Using the data in Extract G and SWOT analysis, evaluate each option and recommend to Holly and Andy which one might be better for them to increase profits.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Reasons to locate in the UK - sales growth": "Might boost revenues given over 1,250 UK restaurants and therefore more customers; the US market might be saturated, limiting potential sales growth.",
+                  "Reasons to locate in the UK - franchisees": "The UK has people with the right skills and entrepreneurial qualities to be successful franchisees, which should help boost profits.",
+                  "Possible counterbalance": "Assumes the same consumer tastes and preferences as US citizens in order to ensure sales; franchisees might increase costs given the need to source supplies locally, such as bread buns and meat for burgers, reducing potential profits.",
+                },
+                guidance: "8 marks. The MS header for 1(a) prints 'Knowledge 2, Application 2, Analysis 3, Evaluation 3', which sums to 10 and appears to be a misprint; the other 8-mark question, 2(a), is Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Limitations of secondary research": "Can be expensive to purchase, e.g. market intelligence reports (Mintel reports cost in excess of GBP 1,000); difficult to guarantee accuracy, currency (e.g. Wikipedia) and lack of bias; as a private limited company Jamie Oliver's information such as company accounts could be accessed by rivals such as Leon; tends to be general rather than specific to Jamie Oliver's, so behaviours of loyal customers may not be represented.",
+                  "Possible counterbalance": "Available immediately and often relatively inexpensive or free; the eating out market is dynamic so up-to-date instant information may be crucial when planning changes to operations or menus (e.g. growth in demand for vegan food), whereas primary research takes time; rivals in casual dining (e.g. Leon) are mainly private or public limited companies, so their accounts are available for comparison.",
+                  "Possible judgement": "Depends on the purpose of the data - e.g. to discover disposable incomes of potential customers it would have made sense to use free Government (National Statistics) research.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Corporation tax is the imposition of compulsory levies/charges on businesses' profits by governments.",
+                  "Benefits of decreases in corporation tax": "If rates fall from 19% (2019) more profit may be retained, giving cafes and restaurants funds to invest (e.g. surviving competitors to Jamie's Italian); extra revenues could support staff development and training to help recover from loss of trade caused by the pandemic.",
+                  "Potential counterbalance": "Unless businesses are making a profit the cut has no direct positive effect, especially for those already closed like Jamie Oliver's; what matters most is having customers and sales to generate the revenue to cover costs.",
+                  "Possible judgement": "The UK Government's recent trend is to support hospitality to reduce unemployment and social tensions and improve mental health and well-being so that the economy does not decline in the longer term; however it depends on the size of the tax cut - here very little - so investment in hospitality is less likely to be boosted.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Marks for application and analysis include up to 2 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are developed; quantitative and/or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and data": "In 2019 Mindful Chef sales rose 178% to GBP 10m from nearly two million meals; joint ventures involve a collaborative relationship with a local producer to reduce risks of not knowing the market; global mergers occur when two businesses from different countries join together, a form of inorganic growth.",
+                  "Joint venture": "Helps Mindful Chef understand French culture and consumer preferences to get the marketing mix right; a global merger may lead to job losses at both firms through duplication of roles and delayering; assuming Blue Apron and Mindful Chef have the same reputation for healthy recipe boxes, demand would already be there; merging with other recipe firms might be ineffective because of different corporate cultures or working practices, leading to diminishing returns/diseconomies.",
+                  "Global merger": "US culture and consumer preferences are similar to the UK's, whereas a joint venture is usually a way to overcome unfamiliar culture, tastes and language barriers; a merger might give economies of scale, reducing average costs and enabling further investment from increased profits; it may pool resources, technology and know-how, which is critical in dynamic, costly markets given the rate of change of consumer tastes.",
+                  "Possible recommendation": "A joint venture may better spread risk as Mindful Chef and Auchan retain distinctive capabilities in their own markets while sharing product or consumer knowledge; a global merger might give the capacity and finance to fund growth in an increasingly competitive industry dominated by market leader Gousto.",
+                  MOPS: "Market: may offer smaller businesses opportunities to collaborate on smaller-scale/niche production to avoid direct competition from companies like Gousto. Objectives: in highly competitive markets profit may be key, so merging to keep costs down and revenues up (e.g. from advertising) could increase profits and investment funds. Product: demand for recipe boxes must reflect local tastes and preferences, which a merger could sacrifice. Situation: recipe box sales are predicted to grow at the expense of home cooking, so future revenues may enable survival and a global merger may not be necessary in the longer term.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Marks for application and analysis include up to 4 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Start-up capital is the initial funds required to open a new business, usually to cover advance rent, legal costs, initial staff wages, etc.",
+                  Methods: "Family and friends - usually no extra cost or low interest because family members may wish the restaurant to succeed; business angels or venture capitalists - may also provide advice/expertise useful to new owners Holly and Andy; bank loan - does not confer ownership or control, allowing more independence in decisions such as where to get food supplies from.",
+                  "Possible counterbalance": "Family and friends may not be able to provide the GBP 75 000 needed, a significant sum to find/risk for a new restaurant; venture capitalists will expect a share of profits for their investment and advice and may take some control of operations; a bank loan depends on the interest charged - if high because the bank sees the loan as risky, higher repayments could reduce profitability.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A mission statement is a set of guiding principles often used to steer stakeholders towards achieving a business's aims and objectives.",
+                  Benefits: "With 14 staff, a mission statement can support a shared vision of quality and increase customer satisfaction; the 12 less skilled 'assistants' may need a collective approach, creating a shared culture that enables high customer service across its 24 covers; a common understanding of aims may motivate staff and support induction of new and temporary staff, common in an industry known for high staff turnover and seasonal/casual staff.",
+                  "Possible counterbalance": "Mission statements are often criticised as window dressing to create the 'right image', which may not fool customers if the food is poor; an unrealistic mission statement can demotivate employees unable to meet its demands, e.g. full-time managers (Front of House, Head Chef) attempting over-ambitious things such as weddings.",
+                  "Potential judgement": "As a small business with only 14 staff, a mission statement could be effective if written and agreed with staff, creating a shared sense of purpose and culture; mission statements may be seen as a waste of time and money and a PR exercise, but this is less likely in a business dealing directly with paying customers, given The Wonky Table's charming and unique reputation.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Flexible working entails movement away from fixed tasks, normal working hours and locations, e.g. zero hours contracts, homeworking, part-time.",
+                  "Value of flexible working": "Greater ability to vary ways of working to control costs, e.g. part-time contracts for waiting staff so they are less likely to be paid during quiet periods; changing duties (implied by job rotation) can motivate staff, improving productivity, reducing labour turnover or increasing customer service; job rotation multi-skills assistants so staff can cover absences, e.g. waiting staff able to work in the kitchen.",
+                  "Possible counterbalance": "Some work does not lend itself to flexible working, e.g. the more specialist, highly skilled Front of House Manager and Head Chef roles - letting assistants do these may prevent The Wonky Table offering its quality food; job rotation may simply swap one low-skilled boring job for another and may not raise motivation in the longer term.",
+                  "Potential judgement": "Restaurants tend to suffer high labour turnover, so job rotation may motivate staff and make them less likely to leave, avoiding extra recruitment and training costs; however part-time working may prevent staff developing skills to gain promotion, acting as a disincentive and encouraging them to leave for another restaurant in Derby.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are developed; quantitative and/or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Quantitative points": "Covers double to 48, suggesting sales could double, but this assumes the restaurant always operates at full capacity; the renovation plan is GBP 12,000 more expensive than the external catering plan, but the additional costs may provide more revenue in the long run.",
+                  "Upstairs renovation (SWOT)": "Strength: doing more of the same for 24 more customers keeps the same 'plain and simple dining with a contemporary twist' product. Weakness: more expensive (GBP 12,000 more) and more immediate (July-August 2021), possibly causing short-term cash-flow problems - how long to recover the GBP 20,000 costs, and a bank loan would add interest and repayments. Opportunity: redecoration might encourage private party bookings, boosting revenue from hire fees, party food and alcohol. Threat: delayed furniture in August could disrupt trade in the busier winter months, reducing turnover and profits.",
+                  "External catering (SWOT)": "Strength: less disruptive, with closure in two December weeks when customers are otherwise busy Christmas shopping, so lost revenue may be lower. Weakness: staff may lack external catering experience, requiring extra training time and costs, especially for conferences. Opportunity: market development spreads risk through new business customers in Derby. Threat: clients may want food and menus offered by competitors, adding costs for extra supplies and storage and possibly losing economies of scale from bulk ingredient purchasing.",
+                  "Possible recommendations": "Renovation is market penetration - continuing what it has done for 10 years with potentially twice as many customers - whereas external catering is riskier market development or even diversification; external catering could build on its reputation for high-quality, locally sourced food in another market, especially if local business owners have already eaten there, giving competitive advantage through differentiation (Porter).",
+                  MOPS: "Market: success of option 2 depends on other external caterers in Derby; experienced, reputable competitors might make option 1 safer. Objectives: the cheaper option 2 may be preferred as there is no guarantee extra renovation sales will cover the extra GBP 8,000 costs and still be profitable. Product: external catering may require more food than can practically be sourced locally, losing the USP. Situation: depends on the business climate and the capabilities of Holly, Andy and key staff such as the Head Chef - if they have the right skills, external catering may prove more profitable in the longer term.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Marks for application and analysis include up to 4 marks for quantitative skills (QS8, QS9). MS figures as printed: renovation GBP 12,000 more expensive (GBP 20,000 total vs GBP 8,000); MOPS Objectives refers to 'extra GBP 8,000 costs'. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2020-p1",
+            year: "Autumn 2020",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_01_que_20201009.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_01_msc_20201217.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-C. Extract A - basic hourly wage at UK supermarkets, June 2018 (£): Aldi 8.85; Lidl 8.75; Morrisons 8.70; Asda 8.67; Marks and Spencer 8.50; Tesco 8.02; Sainsbury 8.00; Iceland 7.83. Extract B - Tesco, Britain's biggest supermarket chain, is launching Jack's, its own brand of discount stores, to take on German discounters Aldi and Lidl, which have been increasing UK market share. Jack's stresses 'Britishness' (eight out of 10 products grown, reared or made in Britain) and aims to be the 'cheapest in town', helped by Tesco's scale and Jack's lower operating cost. Store layout copies Aldi and Lidl, with a central 'When it's Gone, it's Gone' promotion section of 24 baskets and 48 products. All advertising will be local, using leaflets, with promotions tailored to the local community. Extract C - Aldi staff mentioned 'work-life balance' in about 200 employee reviews and 'long hours' in 110. Staff and store managers complain of being pushed to exhaustion, no reward or praise, a 'leadership culture built on threats and pressure', and Area Managers who do not listen; some want a bigger say in how Aldi operates. Others praise great pay and benefits, responsibility, learning and a good car.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the data in Extract A, calculate the percentage increase in the hourly wage that Tesco would have to pay its staff to match Aldi's. State your answer to two decimal places.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Explain one business objective Tesco might be aiming to achieve by launching its Jack's stores.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the likely benefits to Jack's if it only advertises locally using leaflets.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the likely impact on Aldi's recruitment and selection costs if staff choose to leave due to poor working conditions.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "To improve customer satisfaction, Aldi has identified the need to focus on employee performance. This could be achieved by Aldi focusing on financial incentives or non-financial techniques.",
+                    prompt: "Evaluate these two options and recommend which one Aldi should use to improve customer satisfaction.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G. Extract D - estimated price elasticity of demand (PED) of car brands: Audi -4.63; Ford -2.75; Land Rover -6.75; Suzuki -1.64; Toyota -2.65; Volkswagen -2.31. Extract E - current and projected global ridesharing users (millions), 2015-2021: 207.38, 272.68, 338.00, 399.09, 453.42, 500.17, 539.49. Ridesharing is a passenger travelling in a private vehicle driven by its owner for a fee, arranged via a website or app. Extract F - Ola, an Indian ridesharing business, competes with American-owned Uber. Ola's strength is local knowledge: it always accepted cash (Uber took nearly two years to do so), its app supports nine regional languages for drivers (only 10% of Indians speak English), it offers premium, low-cost and car-pooling services, and its auto rickshaws (with their own safety standards) succeed in smaller cities. After exiting China, Uber said it would divert a 'significant portion' of its planned $1 billion marketing budget to India, prompting calls from Indian businesses for laws to limit investment by non-Indian businesses. In the USA Uber faced a sexual harassment allegation, a founder caught swearing at a driver, trade union demands for drivers' basic rights (drivers are classed as independent contractors without overtime or health insurance), allegations of routine overcharging, and a lawsuit over too few wheelchair-accessible vehicles. Extract G - Ford and Indian car maker Mahindra have signed a three-year deal to develop a new SUV for India with a Ford body and badge on a Mahindra-made chassis. Ford may gain economies of scale and a lower cost structure; Mahindra gains Ford's engineering knowledge and support in global emerging markets, including Ford's manufacturing and distribution network.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "In 2019 the price of a Ford Endeavour rose from 30m Rupee to 30.9m Rupee. Using this data and the information from Extract D, calculate the percentage change in quantity demanded for the Ford Endeavour in 2019. State your answer to two decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Explain one way the Indian government might use legislation to protect the Indian ridesharing market from non-Indian businesses.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the likely future growth of ridesharing businesses in an emerging economy, such as India.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the likely consequences for Ford of its joint venture with Mahindra.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Uber aims to become the market leader in Indian ridesharing. To achieve this Uber could either focus on adapting its service to the needs of Indian consumers or improve its business ethics.",
+                    prompt: "Evaluate these two options and recommend which one Uber should choose to become market leader.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): difference in hourly wage between Aldi and Tesco = Aldi wage - Tesco wage",
+                  "Application: difference in hourly wage = £8.85 - £8.02 = £0.83",
+                  "Application: £8.02 with a 10.35% (1.1035) increase = £8.85",
+                  "Application: percentage change = £0.83 / £8.02 x 100 = 10.35%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS2, QS9. NB: if the answer given is 10.35 award 4 marks; if the answer is not rounded to 2 decimal places award 3 marks.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of a business objective, e.g. a business objective is a specific goal; profit maximisation is an example of a business objective",
+                  "Application (up to 2): contextualised examples, e.g. increase market share by being 'cheapest'; sales maximisation by the 'When it's Gone, it's Gone' sales offer",
+                  "Analysis (1): e.g. Tesco is aiming to increase its market share by targeting price-sensitive customers who have been shopping at Lidl and Aldi due to their budget prices",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and benefits": "Advertising is paid-for communication used to raise customer awareness of products, services and brands. Local leaflets save Jack's money through lower production and distribution costs than national TV or newspapers; offers tailored to the local community are likely to be more effective as they meet local needs, e.g. local tastes and trends in food and drink.",
+                  "Potential counterbalance": "Leaflets might not be particularly effective (MS bullet refers to customers' memories); leaflets may promote groceries customers are not interested in and are difficult to target.",
+                  "Potential judgement": "For a business trying to minimise costs a low-cost technique seems sensible; but for a new Tesco brand and concept it may not attract enough customers to Jack's stores; Jack's could instead advertise locally via other media such as billboards, as used by Aldi and Lidl.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 3. Level 0 = a completely inaccurate response. MS counterbalance bullet on customers' memories is incomplete in the original text.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and impact": "Working conditions are the physical surroundings, the atmosphere of the workplace and how staff are treated by managers. Unhappy staff lack motivation so productivity and customer service may suffer, raising costs (e.g. more staff needed); many unhappy staff leaving adds to recruitment costs such as advertising posts for cashiers or store managers.",
+                  "Potential counterbalance": "Aldi staff are likely to be low skilled with enough potential workers in the community to replace leavers; stores may not need large numbers of staff and leavers may be easily replaced given the relatively high wages; leavers give an opportunity to recruit staff willing and able to tolerate long hours.",
+                  "Potential judgement": "Leavers impose replacement costs, and the Aldi model relies on low costs to offer low prices; however there is no evidence workers are actually leaving despite complaints about hours, so costs may not rise.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application to business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - financial incentives": "Aldi's basic hourly wage (£8.85) is the highest of all supermarkets (Extract A) and may make long hours worthwhile; Taylor stressed money as a motivator for simple, broken-down tasks such as check-out work; good pay satisfies Maslow's basic needs; performance bonuses linked to customer service and feedback; profit share for managers as Aldi expands so they promote customer satisfaction.",
+                  "Option 2 - non-financial techniques": "Working conditions (Herzberg hygiene factor), especially hours, affect some employees negatively - improving them could motivate staff to help customers; extend valued fringe benefits such as company cars to other managers; flexible working with teams covering long opening hours so staff are refreshed; greater consultation between store and area managers so store managers feel valued.",
+                  "Potential judgement": "Staff comments suggest non-financial techniques are the priority since some are unhappy despite the highest wage - e.g. job rotation across product sections could widen experience and help answer queries; alternatively work at Aldi is mainly a source of income, so bonuses or performance-related pay linked to customer satisfaction reviews could work, though incentives depend on the level of employee (store managers may prefer promotion or share options).",
+                  MOPS: "Market: Aldi already pays the highest wage so non-financial techniques such as consultation may matter more. Objectives: growth driven by low prices favours lower-cost non-financial methods such as job rotation. Products/services: few employees per branch, so consultation may directly improve customer satisfaction. Situation: a successful, growing business whose staff may respond to profit share, feeling part of its success.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): PED = % change in quantity demanded / % change in price",
+                  "Application: % change in price = 0.9 / 30 x 100 = 3",
+                  "Application: (-)2.75 x 3",
+                  "Application: = (-)8.25% change in quantity demanded",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS2, QS7, QS9. NB: if the answer given is 8.25 award 4 marks; if the answer is not rounded to 2 decimal places award 3 marks. If the answer is expressed in alternative units, e.g. 8.25m, award 3 marks.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): e.g. protectionism means policies used by a government to protect domestic businesses by making foreign-owned products less attractive; legislation is the collective name for laws and regulations used by governments to restrict certain activities; legislation is protectionist when framed to give an advantage to a domestic business",
+                  "Application (up to 2): e.g. there were calls to limit the level of foreign investment by foreign multinationals into Indian markets; safety rules specific to the Indian market, e.g. those governing auto rickshaws",
+                  "Analysis (1): e.g. ridesharing cannot be protected by tariffs or quotas as it is not a traded product, so legislation is a potential option if the Indian government wanted to protect Ola and similar businesses",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Arguments for growth": "GDP per capita in India is growing quickly, raising disposable income to spend on ridesharing; rising literacy lets customers use ridesharing apps easily; developed-economy markets may be saturated so emerging economies offer Ola and Uber rapid growth; users are forecast to reach 539.49m in 2021, much of the growth likely in emerging markets such as India.",
+                  "Potential counterbalance": "Large, especially rural, areas still have high poverty, limiting growth; a huge range of languages can create communication barriers in a service business; infrastructure such as roads and mobile communication/internet may not be reliable enough.",
+                  "Potential judgement": "Ridesharing is likely to keep growing as a cheap alternative to car ownership for consumers with limited disposable income; further growth depends on incomes and urban travel demand continuing to grow, and may be limited if substitutes such as car ownership or public transport grow.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 3. Level 0 = a completely inaccurate response. Marks for application and analysis include up to two marks for quantitative skills (QS9).",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and benefits for Ford": "A joint venture may be a one-off/temporary arrangement or lasting collaboration; this deal is for three years with no change of ownership, controlled by legal agreement. Ford is likely to gain sales as Mahindra knows the Indian market and has workers familiar with it; Ford may gain economies of scale and a lower cost structure from Mahindra's plants while Mahindra gets Ford's engineering expertise in SUVs; as an American brand associated with 'Western lifestyles', Ford may appeal to aspirational Indian consumers.",
+                  "Potential counterbalance": "Different visions may cause disagreements over strategy such as pricing and marketing; consumers may be confused, and brand strength diluted (Mahindra is established in India, Ford less so); aims may diverge (Mahindra budget sales, Ford higher socio-economic groups); Mahindra may use transferred knowledge and technology to compete with Ford once the venture ends.",
+                  "Potential judgement": "Likely to benefit Ford by cutting manufacturing costs through Mahindra's chassis, making cars more affordable and price competitive in a relatively low-income market; alternatively the main benefit may go to Mahindra through the Ford brand and SUV expertise, depending on how far the two agree on overall strategy for the three years.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application to business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - adapting its service to India": "India's huge population has diverse languages, customs and tastes; adapting (e.g. recruiting staff fluent in local languages, appropriate pricing for Indian cities) would reach a wide market and compete with Ola; alternatively ridesharing does not differ between markets so Uber could reuse US/UK strategies such as adaptive pricing and app-based interaction; Ola has already adapted (cash, multilingual drivers, auto rickshaws), so Uber may need to differentiate in other ways, such as reliability.",
+                  "Option 2 - improving business ethics": "Business ethics are the moral principles that may or may not guide decisions; Uber has been criticised for its treatment of staff and customers, so improving could differentiate it from Ola; customers want safety - drivers well-rested and paid fairly; good pay attracts better drivers who make fewer mistakes; being ethical may cost less than adapting as Indian labour standards and compliance costs may be lower; but lower standards may make ethics less of an issue as customers may care more about cheap, reliable service.",
+                  "Potential judgement": "Customers' primary concern is likely to be cheap, reliable ridesharing, so adapting (a reliable, accessible app for weaker networks, drivers speaking local languages, accepting cash) may be most successful; alternatively ethics shapes perceptions, Uber may lose customers to Ola without improving, and as a 'Western' brand it could use an ethical (e.g. environmental) stance to differentiate itself.",
+                  MOPS: "Market: massive and diverse, so adapting to different income levels may matter more. Objectives: to raise market share, adapting to language groups could attract customers quickly. Products/services: ridesharing needs trust, so better ethics may attract customers who want to feel safe. Situation: Uber has experience adapting in many markets, and most ethical questions arose in the US and may be less applicable in India.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2020-p2",
+            year: "Autumn 2020",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_02_que_20201015.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-msc-20201217.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-C. Extract A - Tended Ltd is a fast-growing technology start-up in Lincoln, UK, founded by young entrepreneur Leo Scott Smith, the main shareholder. Its 'Tended Protect' is a wrist-worn personal safety device that uses artificial intelligence to learn and detect 'abnormalities' such as a fall or strong impact; if the user does not respond to a safety check it alerts a nominated emergency contact with GPS location, health and activity information and opens live audio. Tended aims to increase its market share of the global wearable technology market. It gained £50 000 from Enterprise Loans (a subsidiary of the government's British Business Bank) to develop the product, create jobs, market it and fulfil initial orders. Extract B - Tended grew from one member of staff to 10 in eight months; it had difficulties raising finance, ran out of cash on a few occasions and faced development issues that took months to fix, but staff pulled together as a team, worked into the early hours, constantly innovated and took risks, staying agile. Extract C - CCS Insight forecasts 411 million smart wearables worth $34 billion sold in 2020 (sales of $14 billion in 2019); wrist-based devices dominate, with half of wearable sales from them and smartwatches making up 50%; falling consumer interest in smartphones means many companies are chasing this market. Decision tree: New smartwatch - cost (£500 000); success 0.2 = £5 million, failure 0.8 = £1 million; net gain £1.3 million. Marketing campaign - cost (£360 000); success 0.6 = £3 million, failure 0.4 = (£50 000).",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Explain one financial reason why Leo Scott Smith decided to establish Tended Ltd as a private limited company.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    preamble: "Tended Ltd has constructed the decision tree below to help it decide whether to develop a new smartwatch or launch a new marketing campaign. The net gain for the new smartwatch is £1.3 million.",
+                    prompt: "Using the data in the decision tree, calculate the net gain for the marketing campaign. State your answer to two decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the likely value of a business plan to Tended Ltd.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the extent to which the problems of rapid growth may have been managed by Tended Ltd.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "To achieve its aim of increasing its market share of the global wearable technology market, Tended Ltd could produce a new smartwatch or launch a marketing campaign for 'Tended Protect'.",
+                    prompt: "Evaluate these two options and recommend which one is most suitable for Tended Ltd to achieve its aim of increasing its market share.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G. Extract D - Sports Direct, the British sportswear retailer controlled by billionaire Mike Ashley, has bought House of Fraser for £90 million; Ashley wants to make it 'the Harrods of the High Street' and Sports Direct the 'Selfridges of Sport'. Buying significant shareholdings in other retailers (e.g. Debenhams, French Connection) is part of his strategy but not always successful - Sports Direct reported an £85 million loss from its Debenhams investment. Extract E - Sports Direct plc (including House of Fraser) Annual Report 2018, £million: Revenue 3 359.5; Cost of sales 2 024.4; Selling, distribution and administrative expenses 1 156.1. Extract F - UK retail trends: online purchases are almost 20% of retail sales, growing at 10 times the rate of physical store sales in the first half of 2018, when 4,400 stores closed; rising costs, technological disruption and changing consumer behaviour are forcing structural change; there will be fewer shops but the role of the store is changing, with innovation such as cashless supermarkets and better customer service. Extract G - Guardian and BBC investigations found working conditions at the Shirebrook warehouse like a 'modern-day Victorian workhouse': pay below the minimum wage, workers fearing bosses, security checks and feeling forced to work when ill. Staff lost 15 minutes' pay for being one minute late and could be dismissed under a 'six strikes' system (e.g. too long in the toilet, a day off sick). Sports Direct admitted mistakes and is reviewing its Human Resource strategies.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Explain one benefit Sports Direct could gain from conducting a SWOT analysis.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the information in Extract E, calculate the operating profit margin for Sports Direct in 2018. State your answer to two decimal places. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the usefulness of a sales forecast for Sports Direct.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the likely consequences for Sports Direct of its corporate culture.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Sports Direct aims to reduce the labour turnover of its workforce. To achieve this, it could introduce an employee share ownership scheme or implement an empowerment strategy.",
+                    prompt: "Evaluate these two options and recommend which one is most suitable for Sports Direct to achieve its aim of reducing labour turnover.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): a definition, e.g. a business with limited liability which issues shares that are not available to the general public as a means of raising finance; OR a financial reason, e.g. limited liability may encourage potential investors because it protects their personal assets",
+                  "Application (up to 2): e.g. Tended Ltd is a small, young and rapidly expanding business; it needs funds to develop the 'Tended Protect'; it operates in the dynamic and competitive 'wearable technology' market",
+                  "Analysis (1): e.g. it is easier for Tended Ltd to raise finance by selling shares privately to develop and expand the business",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding that net gain = expected value - initial cost (this can be implied)",
+                  "Application: marketing campaign 0.6 x £3 million = £1.8 million; 0.4 x -£50 000 = -£20 000",
+                  "Application: expected value = £1.8 million - £20 000 = £1.78 million",
+                  "Application: net gain = £1.78 million - £360 000 = £1.42 million",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS3, QS8. NB: award 4 marks if the candidate only states £1.42m/1.42 million; award only 3 marks if the candidate only states £1.4m/1.4 million.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A business plan details how the business plans to develop over time, including elements such as a cash-flow forecast and profit forecast.",
+                  "Value of a business plan": "Lets an investor assess the scale of risk, which is high for a start-up like Tended, so a loan application is more likely to succeed; it may have helped secure the £50 000 Enterprise Loans funding; it reduces risk by forcing the entrepreneur to consider factors that could make the idea succeed or fail, such as high competition in wearable technology.",
+                  "Possible counterbalance": "Producing a plan takes time with a significant opportunity cost, e.g. product development time; Leo Scott Smith is young and may lack the knowledge and experience to produce an accurate plan, especially in a dynamic market.",
+                  "Potential judgement": "As Tended is expanding rapidly and may need more finance, a plan may be essential for attracting future investment; but as a relatively small business it may raise finance from family and friends who may not require a detailed plan.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Problems of rapid growth such as diseconomies of scale, communication and overtrading.",
+                  "Ways the problems have been managed": "Good leadership may have overcome communication difficulties (employees pulled together as a team); overtrading eased by the £50 000 loan from Enterprise Loans; development issues, such as creating new products like a smartwatch, addressed by securing the necessary funding.",
+                  "Possible counterbalance": "Short-term communication and co-ordination may still be a problem after growth from one to 10 staff in eight months; Tended may still struggle with overtrading as it had difficulty raising finance and cash-flow problems on a few occasions; longer-term issues such as bigger premises and more suppliers for new products may not be managed.",
+                  "Potential judgement": "Tended has survived and overcome the problems as it keeps innovating and staying agile through careful planning and effective management of the workload; but it may not overcome them all because Leo Scott Smith is young and may lack experience of managing a bigger workforce.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application to business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - new smartwatch": "Ansoff product development; demand may rise as consumers lose interest in smartphones and smartwatches are expected to be 50% of wearable sales; market predicted to be worth $34 billion in 2020; constant innovation and risk-taking may give first-mover advantage; small and agile, so can respond quickly; per the decision tree the smartwatch could generate £1 million (as stated in the MS); but higher risk as the market is dominated by powerful rivals such as Apple and Samsung.",
+                  "Option 2 - marketing campaign": "Net gain estimated at £1.42 million versus £1.3 million for the smartwatch; Ansoff market penetration - a safer option focusing on the existing product and market; Tended Protect's USP as a wearable personal safety device may give competitive advantage over rivals such as Fitbit; rapid growth suggests popularity, so a campaign could raise share through greater sales and wider distribution; but it may be a niche product with limited opportunities to grow share.",
+                  "Possible recommendations": "Choose the smartwatch as possibly the quickest way to raise market share, developing it faster than larger, less agile rivals; or choose the marketing campaign because Tended has quickly established itself in the personal safety niche and should grow share there rather than compete with Apple and Samsung.",
+                  MOPS: "Market: dynamic and rapidly growing, dominated by giants but with opportunities for smaller firms. Objectives: increase share of the global wearables market; established quickly and growing rapidly. Product: USP of a wrist-worn AI safety device; innovative, highly skilled workforce able to adapt quickly. Situation: ambitious and expanding rapidly; a marketing campaign could support future growth of Tended Protect and raise market share.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Marks for application and analysis include up to 4 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response. Note: the decision tree shows the smartwatch outcomes as success 0.2 = £5 million and failure 0.8 = £1 million; the MS indicative bullet saying it 'could generate revenue of £1 million if it is a success' is reproduced as printed.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): knowledge of SWOT, e.g. internal strengths/internal weaknesses/external opportunities/external threats; OR a benefit, e.g. enables the business to gain a better understanding of its internal strengths, weaknesses and external opportunities and threats",
+                  "Application (up to 2): e.g. internal strength - sales revenue of £3 359.5 million in 2018; internal weakness - lost £85 million from its investment in Debenhams; external opportunity - buying House of Fraser to transform it into 'the Harrods of the High Street'; external threat - growth in online sales (growing at 10x the rate of physical store sales)",
+                  "Analysis (1): e.g. SWOT analysis is key to planning Sports Direct's strategy for achieving its aim to be the 'Selfridges of Sport', because it can use its strengths to exploit opportunities",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): operating profit margin = operating profit / sales revenue x 100",
+                  "Application: gross profit = 3 359.5 - 2 024.4 = 1 335.1",
+                  "Application: operating profit = 1 335.1 - 1 156.1 = 179",
+                  "Application: operating profit margin = 179 / 3 359.5 x 100 = 5.33%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1. NB: award 4 marks if the candidate only states 5.33%; award 3 marks if not accurate to 2 decimal places; award 3 marks if the candidate fails to add %, e.g. 5.33; award 2 marks if the candidate calculates operating profit of 179 (MS wording: 'calculates operating 179 as this suggests that they have calculated gross profit').",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [8, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 7],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A sales forecast is a prediction of the expected level of sales volume/revenue for a future period.",
+                  "Potential usefulness": "Plan how many stores are needed to become the 'Selfridges of Sport'; with online purchases almost 20% of retail sales, plan to expand online by increasing Shirebrook warehouse capacity and employing more staff; plan how much stock, such as sportswear, to order from suppliers such as Nike and Adidas.",
+                  "Potential limitations": "External factors such as the economy and social trends affect accuracy, e.g. consumer boycotts after bad publicity; the retail market is undergoing considerable structural change, making store forecasts inaccurate; past performance is no guarantee of the future.",
+                  "Potential judgement": "A useful planning tool - without it Sports Direct could run out of stock or lack warehouse staff; but moving into a new market via House of Fraser, with little knowledge of those customers' preferences, could make forecasts inaccurate.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Note the level ranges for this question in this MS are Level 3 = 5-7 and Level 4 = 8-10. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Corporate culture is the unwritten code that affects the attitudes and behaviour of employees within a business.",
+                  "Possible consequences": "Low morale from pay below the minimum wage, fear of bosses, security checks and feeling forced to work when ill; high labour turnover and poor productivity from low morale; bad publicity from the Guardian and BBC could lead consumers to boycott its products.",
+                  "Possible counterbalance": "The culture may force employees to be more productive and not take time off for fear of losing their jobs under the 'six strikes' system; consumers may still be attracted by low prices despite bad publicity; warehouse workers may be considered unskilled, so Sports Direct may see an autocratic leadership style as most effective.",
+                  "Potential judgement": "Reviewing its HR strategies may lead to better treatment of employees and avoid negative consequences; Sports Direct may argue its culture has contributed to its success through high efficiency, lower costs and lower prices.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application to business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Labour turnover measures the percentage of employees leaving a business over a period of time.",
+                  "Option 1 - employee share ownership": "A financial incentive where companies give shares to employees or sell them below market price; as HR strategies change it gives employees a direct interest in the business's success, so they may be less likely to leave and more likely to accept current practices; Sports Direct is profitable (operating profit £179 million in 2018); ambitious expansion ('Selfridges of Sport') means workers could benefit through dividends and a rising share price; but value depends on the number of shares owned and dividends received.",
+                  "Option 2 - empowerment": "A non-financial method giving employees more control over their day-to-day work; signals less autocratic management so workers may feel appreciated, improving morale especially at Shirebrook where workers fear bosses; many store and warehouse jobs are boring and repetitive, so more authority may raise interest and lower turnover; owners may prefer it as they would not have to share profits; but some employees may not want more responsibility and prefer to be told what to do.",
+                  "Potential recommendation": "Choose employee share ownership for improved commitment and loyalty through a direct financial interest; or choose empowerment because Sports Direct needs to repair its damaged reputation among workers caused by its current HR strategies.",
+                  MOPS: "Market: retail is undergoing rapid structural change; lower turnover may improve customer service and competitive advantage. Objectives: 'Selfridges of Sport' and House of Fraser mean targeting department-store customers with higher service expectations, served better by a stable, knowledgeable workforce. Product: competitive-price sportswear and a cost leadership strategy (Porter), so lower turnover cuts recruitment and selection costs. Situation: successful and ambitious but suffering bad publicity; better treatment may improve reputation and reduce turnover.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2020-p3",
+            year: "Autumn 2020",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_que_20201020.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-03-msc-20201217.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (context: the entertainment market). Extract A - Hamilton's West End debut, mega concerts by U2 and Guns N' Roses and the return of Star Wars boosted the UK live entertainment sector to a record £17bn revenue in 2017, forecast to grow by another £400m; revenue from live performances such as concerts or theatre reached £2.1bn and is expected to grow a further 7% in 2018 (Deloitte). Extract B - forecast UK consumer spending in 2022 (% change compared to 2018; pairings reconstructed from the chart layout): Traditional TV and home video £9bn (-1.7%); Video games £5bn (5.8%); Books £5bn (0.9%); Newspaper £2bn (-2.0%); OTT video £2bn (7.4%); Cinema £1.5bn (2.6%); Digital music streaming £1.4bn (18.9%); Magazines £1.3bn (-2.6%); VR £1.2bn (34.5%); Live music £1.2bn (0.3%); Digital music downloading £0.4bn (-24.1%). OTT ('over-the-top') is delivery of film and TV via the internet (e.g. Netflix, Amazon Prime) without a cable or satellite pay-TV subscription. Extract C - ITV Chief Executive Carolyn McCall says building a UK subscription video-on-demand service is a priority to compete with Netflix and Amazon. Netflix's core US market is close to saturation so international markets drive growth; Netflix has almost 10 million UK subscribers vs Sky's 9.6 million pay-TV and Amazon Prime Video's 7.3 million. ITV would keep programmes previously licensed to Netflix (e.g. Love Island). She says the best chance is for the public service broadcasters to join forces, but a joint venture between publicly-listed ITV, licence-fee-funded BBC and state-owned commercially funded Channel 4 is difficult due to different ownership structures and objectives. ITV has Britbox with the BBC, available only in the US; the BBC/Channel 4/ITV OTT service Kangaroo (2007) was blocked by the competition regulator in 2009. Netflix plans to raise $2bn to invest in new programmes; its streaming costs of $30bn exceed the annual revenue expected from 130 million users in 190 countries, with the US its largest market. Extract D - forecast UK advertising expenditure in 2020 (% change vs 2018, as legible from the chart): Internet advertising £15,170m (6.8%); Business-to-business £719m (4.8%); Out-of-home £689m (9.1%); Magazines £338m (4.8%); TV advertising £325m (8.9%); Newspaper £274m (1.8%); eSports £11m (25.3%).",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using a supply and demand diagram, assess two reasons why live entertainment business revenues in the UK might have increased in 2017.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    preamble: "Mark Maitland, Media and Entertainment Leader at PwC UK, suggested cinemas might make more use of opportunities to add value, such as providing luxury seats.",
+                    prompt: "Assess whether providing luxury seats is the best way for cinemas to increase added value.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Using the data in Extracts B and C, assess the extent to which saturated markets might stimulate a business such as Netflix to trade internationally.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "ITV could either join forces with the UK's other public broadcasters or operate on its own to offer a viable rival to Netflix for UK consumers.",
+                    prompt: "Using the data in Extracts A to D and your own business knowledge, evaluate these two options and recommend which one ITV should use to best rival Netflix.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H. Extract E - Derby Playhouse seemed doomed to close in 2008 amid shrinking council grants and low audiences; it was rescued by a takeover by the University of Derby in 2012 (the 'civic mindedness' of the then Vice-Chancellor) and became Derby Theatre. It operates day to day mainly thanks to an annual £795,000 Arts Council grant paid in quarterly instalments. Box office income varies through the year with performances and local competition from the Derby Live Arena and Derby's Guildhall. Bar and catering revenues average 50p to £3.50 per head from audiences of up to 575. Extract F - organisational structure (June 2018): Board of Trustees; Chief Executive and Executive Director (Rachael Thomas); below them roles including Creative Learning Director, Senior Producer, Head of Development, Head of Marketing, Head of Production, Technical Manager, Company Stage Manager, House Manager (Kat Richardson), Press and Marketing, with one vacancy. Staffing totals 50 full-time equivalents and six freelance managers; specialist management roles are often advertised through national media. Extract G - ethnicity profiles 2011: UK - White British 80%, White Irish 1%, White other 4%, Asian Indian 3%, Asian Pakistani 2%, Black African-Caribbean 3%, Other 7%; Derby - White British 75%, White Irish 1%, White other 3%, Asian Indian 4%, Asian Pakistani 6%, Black African-Caribbean 3%, Other 8%. Derby's 'White, other' group (including Eastern European migrants) was its third largest BME group and was estimated at 4.2% in 2016. Extract H - the National Theatre had 91% capacity in 2017-18, over 30% of tickets at £20 or less, 10 shows touring 36 towns and cities, a worldwide audience of 8 million and around 4,000 workers; it receives a £16.7m annual Arts Council England grant. Arts Council funding increasingly rewards diverse programming to overcome the label of theatres as 'white, middle-class institutions'. Public arts funding is 0.05% of government spending and returns £5 in taxes for every £1 invested.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Assess two ways Derby Theatre could improve its liquidity.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Assess the likely value of succession planning to Derby Theatre.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the likely value to Derby Theatre of producing and staging shows that recognise the cultural diversity of Derby's population.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "Pre-theatre dining has been unpopular at Derby Theatre. Catering Consultant Andrew Dean has argued that a refurbishment of its cafe and kitchens is required. In order to finance the £100 000 catering investment, Derby Theatre management is considering using either some of its £120 000 retained profit or a loan.",
+                    prompt: "Evaluate these two methods of finance and recommend which one might be most appropriate to finance the £100 000 catering investment at Derby Theatre.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding, applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Revenue is income from sales, determined by price multiplied by quantity actually sold.",
+                  "Reasons revenues increased": "More visitors to festivals, possibly due to better weather, so more spent on tickets and merchandise; new shows and performances released, e.g. Hamilton, attracting more customers who spend on tickets and refreshments.",
+                  "Possible counterbalance": "The summer weather of 2017 was poor, so attendances may have fallen but revenue rose because ticket prices could have increased, with demand relatively price inelastic for live shows featuring popular artists such as Ed Sheeran.",
+                  Diagram: "A supply and demand diagram showing a positive (rightward) shift in demand from D1 to D2, raising price and quantity; an arrow can be accepted as an alternative to D1 to D2.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Application and analysis include up to 2 marks for quantitative skills (QS3). NB: no use of a supply and demand diagram limits the mark to Level 3 - 6 marks. Level 0 = a completely inaccurate response.",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Added value is the difference between the price and the total cost of the inputs needed to create a product; it can be achieved by augmenting the core product, e.g. online booking facilities or larger luxury seats than standard seats.",
+                  "Benefits of luxury seating": "Cinemas can charge premium prices, boosting revenue and potentially profits; another source of revenue from refreshments such as soft drinks and chocolate; online bookings improve cash flow as ticket income is received in advance and non-refundable if customers do not attend.",
+                  "Possible counterbalance": "Revenue may not rise if demand is price elastic, and profits may not rise in the short run because of purchase and installation costs; some customers care more about the film on offer or other sources of added value such as hot food or confectionery.",
+                  "Possible judgement": "Luxury seating adds to the visitor experience, without which some customers may stay at home on their sofas and watch via OTT; but for new blockbusters, available only at the cinema, customers will come anyway so luxury seats are not needed.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Markets are saturated when the potential number of new customers is zero, so the only way to gain new customers is to move into new markets such as export markets - for US-based Netflix, the UK and Europe (a push factor).",
+                  Significance: "Opens revenue streams from countries like the UK (almost 10 million subscribers beyond the US), part of 130 million users in 190 countries; 2018-22 should give Netflix a share of £2bn extra revenue from the UK alone; OTT expected to grow 7.4% compared with traditional video falling 1.7%, helping make up for lower US growth.",
+                  "Potential counterbalance": "The US has over 300m people, so 10 million UK subscribers may not compensate much for a saturated home market; other conditions may have prompted trade, e.g. competition at home from Amazon; an efficiency drive to gain technical economies of scale (pull factor); extending the OTT product life cycle as developments such as AI may create alternatives.",
+                  "Possible judgement": "In dynamic, highly technological markets like OTT, spreading risk by seeking new customers in new markets may be crucial to survival; but the US probably accounts for most Netflix revenue, so product development to maintain domestic sales may matter more than overseas markets.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Application and analysis include up to 2 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application to business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Join forces": "A rival is a strong competitor offering the same product in the same market. Size may bring economies of scale and cheaper subscriptions than Netflix; pooling of resources, technology and know-how in a dynamic, costly market; BritBox in the US gives a template; sharing high set-up costs makes a viable rival more likely; ITV, Channel 4 and BBC have a reputation for popular 'must have' content, so demand already exists.",
+                  "Stand alone": "Combining may not work given Kangaroo (2007) was blocked by the competition regulator; different ownership and objectives (BBC publicly owned with welfare maximisation including education; ITV seeking profits for shareholders) may cause culture clashes and diseconomies; longer-term survival more likely as OTT revenue is expected to grow 7.4% while traditional TV and video falls 1.7%.",
+                  "Possible recommendation": "A joint venture might give the capacity and finance for VR developments, growing at 34.5% (Extract B), to ensure long-term survival; going alone, ITV could fund technological enhancements by extending share ownership or issuing more shares, whereas the BBC raising the licence fee is less likely given potential public outcry.",
+                  MOPS: "Market: highly competitive OTT market (Amazon, Netflix), so strength in numbers could bring economies of scale and lower average costs. Objectives: profitability matters more to commercial PSBs like Channel 4 and ITV; standing alone, keeping costs down and advertising revenue (TV advertising still up 8.9%, Extract D) could raise profits and investment funds. Product: OTT is expensive - Netflix has liabilities of more than $30bn not covered by annual revenue, so high gearing adds dividend and interest costs, possibly mitigated by ITV's advertising revenue. Situation: internet advertising (£15,170m) is predicted to be worth far more than TV advertising (£325m) in 2020, so revenues may not cover costs in a costly, dynamic market.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Application and analysis include up to 4 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response. The MOPS 'Product' line is partly missing from the cleaned text and was taken from the raw MS extraction.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding, applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Liquidity refers to day-to-day cash flow.",
+                  Ways: "Increase cash inflows by discounting performance tickets which, if price elasticity of demand is high, should increase revenue; increase other revenue such as advertising space in programmes, sponsorship, or loyalty/membership schemes giving regular revenue; reduce regular costs such as wages by using zero-hours contracts for catering staff to cut cash outflows.",
+                  "Possible counterbalance": "Competition from the Derby Live Arena may lead to a price war or rival promotions (e.g. buy one ticket get one free), reducing ticket sales and cash inflows; too much advertising in programmes may crowd out cast information or editorials and put audiences off buying programmes.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Succession planning is a human resourcing process for identifying and developing new leaders who can replace old leaders when they leave, retire or die.",
+                  "Value to Derby Theatre": "The theatre is labour intensive and a source of culture whose survival may depend on stable relationships between people such as actors, producers and directors; nurtures and retains talent as staff feel a sense of belonging and value self-actualisation opportunities, e.g. technical staff; avoids productivity loss from settling in new staff, e.g. mentoring by the Head of Marketing, or poor adjustment by a new House Manager replacing Kat Richardson.",
+                  "Potential counterbalance": "Some roles may be too specific and need hands-on experience (e.g. Creative Learning Director), so better filled externally through national advertisements in newspapers like the Guardian; outside appointments such as a Senior Producer may bring fresh, innovative ideas that attract new audiences and boost revenue.",
+                  "Possible judgement": "Some positions lend themselves to succession planning, e.g. Technical, as knowledge of Derby Theatre's stage lighting is specific; but succession planning has training costs (time off, course fees) that a small theatre with just 50 full-time staff may not afford or find practical, especially for freelance workers.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide-ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Cultural diversity in business is appreciating differences in individuals for staffing and gaining customers, based on gender, age, sex, ethnicity, sexual orientation and social status.",
+                  "Value to Derby Theatre": "A moral responsibility ('civic mindedness') as an art to employ people from different backgrounds reflecting society and the local community; Derby's 'White, other' population rose from 3% (2011) to 4.2% (2016) and Derby had a greater BME proportion than the UK (75% White British vs 80%), supporting recruitment or bigger audiences; helps ensure the £795,000 Arts Council funding continues or grows given criteria that encourage diverse programming.",
+                  "Possible counterbalance": "Diverse productions may be more expensive to stage (costume wardrobe, props, appropriate actors, different cafe menus); may not attract large audiences if shows appeal only to ethnic minorities, reducing ticket and programme revenue.",
+                  "Possible judgement": "Legislation such as the Equality Act encourages 'colour blind' casting, so adherence may prevent bad publicity and legal costs; but a theatre that nearly closed may need shows that draw audiences near its 575 capacity with bar and catering spend nearer £3.50 per head, which 'minority' productions may not achieve.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Application and analysis include up to 2 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application to business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Retained surpluses/profits are an internal source: total revenue minus total costs kept in the business rather than paid out as dividends, widely regarded as the long-term source for investment and expansion. A loan from a private investor is an external source, usually repayable after a fixed term of more than 12 months.",
+                  "Retained profits/surpluses": "No interest, so cheaper than loans; fewer conditions or external constraints such as a lender having a say in how the theatre operates; retains the 'civic mindedness' of staff; no risk of losing collateral; a lender may require a detailed business plan with cash-flow projections; loans may conflict with Arts Council grant conditions and affect the grant awarded.",
+                  "Loan from private investor": "Larger sums may be available beyond the £120,000 maximum if café and kitchen costs spiral; waiting for retained profit can mean losing opportunities; a private investor may offer expertise helping long-term survival of catering; once repaid the theatre keeps ownership and control; interest is usually fixed, so repayments are manageable if the café does well; using retained profit has opportunity costs, e.g. new lighting or staging.",
+                  "Possible recommendations": "Depends on the lender and repayment conditions - high interest and short repayment periods may make a loan too costly and impractical for a theatre already bailed out by the University of Derby in 2012; alternatively a private investor with an interest in theatre may offer expertise that helps ensure the survival of the catering and the theatre.",
+                  MOPS: "Market: competitive live entertainment in Derby (Guildhall, Derby Live Arena), so a loan plus lender expertise could differentiate the theatre. Objectives: a loan could push the theatre towards profit maximisation, detracting from its core purpose. Product: productions are increasingly expensive (e.g. laser lighting, authentic costumes) and may not be affordable from retained profits. Situation: depends on the economic climate - rising demand for the arts makes lenders more willing and offer longer terms.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Application and analysis include up to 2 marks for quantitative skills (QS8, QS9). Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2019-p1",
+            year: "June 2019",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_01_que_20190525.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-rms-20190815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-C, music streaming. Extract A: music streaming subscribers (millions), 2018-2020 forecast/projected: 2010 7.7; 2011 12.5; 2012 18.7; 2013 29.1; 2014 43.4; 2015 67.5; 2016 106.3; 2017 146.6; 2018 180.3; 2019 204.5; 2020 221.5. Between 2010 and 2011 subscribers grew by 62.34%. Extract B (Europe and North America 2017): consumers now stream rather than download and increasingly listen at home via Amazon Echo or Google Home. Five subscription services launched 2015-2017 and none made a profit, but Apple, Google and Amazon can afford to run music services at a loss. Product development is a feature of the market, e.g. Coldplay and Deadmau5 immersive VR music videos. Spotify (launched 2008) is the largest streaming service by users in the US and Europe; it is adding short video clips to playlists to tempt listeners to its new subscription video service because its streaming service continues to make losses. A typical streaming business pays over 70% of subscription revenue to record labels and publishers; video enables advertising revenue. In 2018 Spotify needed profits as it planned a stock market flotation. Apple Music signs artists such as U2 to stream exclusively for its 27 million subscribers. Extract C: streaming adopted more slowly in Asia; Asia generates only 14% of world digital music revenues but is growing; Asian mobile network operators include streaming in price plans, but some consumers may not pay high prices; copyright infringement is a problem - in 2016 one of Vietnam's three biggest streaming sites ceased trading.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    preamble: "Between 2010 and 2011, the number of music streaming subscribers grew by 62.34%.",
+                    prompt: "Using the data from Extract A, calculate, to 2 decimal places, the difference between percentage growth in 2010 to 2011 and that in 2019 to 2020. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using the data from Extract A and your knowledge of the product life cycle, explain one way in which the marketing of music streaming might be different in 2010 compared to 2019.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the likely consequences of stock market flotation for a business, such as Spotify.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the consequences to a business, such as Spotify, of operating in a dynamic market.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Spotify is aiming to extend the product life cycle of its music streaming business. Spotify could either focus on marketing strategies in existing markets, such as Europe and the USA, or expand into emerging markets, such as those in Asia.",
+                    prompt: "Evaluate these two options and recommend which one is most suitable for Spotify to extend the product life cycle of its music streaming business.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts D-G, the coffee market and Starbucks. Extract D (US coffee market 2016): consumers aged 40 to 59 63.2%; aged 60 and older 13.0%; aged 25 to 39 12.3%; exports 6.7%; aged 24 and younger 4.8% (secondary data from Industry Insider). Extract E (estimated change in USA population by age group, 2020-2040): under 24 -2.4%; 25 to 39 -1.3%; 40 to 59 -1.2%; 60 and over +4.9%. Extract F: Lavazza, a major business in Europe's coffee market for over 120 years, selling through small specialised outlets, has bought an 80% stake in Canada's Kicking Horse Coffee, which has a strong presence in the fast-growing organic and fairtrade segments; Lavazza says it is 'interested in NAFTA' and Kicking Horse 'fits well' in its brand portfolio. Under NAFTA members treat each other's goods, services and investors as their own; foreign investors buying a Canadian company have secure access to the USA and Mexico. Extract G: Starbucks' North Star initiative focuses North American employees on the customer experience. Some employees complain of high workloads, less support and reduced management, and understaffing because store and regional structures have been made flatter ('They cut our labour in half... Staff are simply treated as a cost'). Head of US Retail Kris Engskov: staff are the biggest asset and managers have great autonomy. US baristas are paid $9.50 an hour on average vs $8.49 at McDonald's; benefits include university tuition assistance, flexible working hours and discounted Starbucks shares.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Explain one limitation of secondary market research data, such as that presented in Extract D.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    preamble: "Consumers aged 40-59 years old are the largest age group in the USA coffee market.",
+                    prompt: "Using the data in Extract E, draw a demand and supply diagram to show the likely effects of the estimated change in population for the 40-59 age group on the USA coffee market.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the likely benefits to Lavazza of operating in the NAFTA trading bloc.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the likely importance to a business, such as Lavazza, of adapting its marketing mix to global markets.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Starbucks aims to improve employer-employee relations in its USA stores. To do this, Starbucks could either focus on changing its organisational structure, or extend its flexible working practices for employees.",
+                    prompt: "Evaluate these two options and recommend which one is the most suitable for Starbucks to improve its employer-employee relations.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): market growth = increase in sales / original sales x 100; difference in percentage growth = 2019-2020 percentage growth - 2010-2011 percentage growth",
+                  "Application: market growth 2019 to 2020 = 221.5m - 204.5m = 17m subscribers",
+                  "Application: percentage change = 17m / 204.5m x 100 = 8.31% (2dp)",
+                  "Application: difference in growth = 62.34% - 8.31% = 54.03 or 54.03% (2dp)",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS2, QS9. Answer 54.03 or 54.03% = 4 marks. If the candidate calculates the 2010-2011 change as 62.3376 and gives 54.02 or 54.02% = 4 marks. Answer not rounded to 2dp = 3 marks.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of the product life cycle, e.g. development, introduction, growth, maturity and decline",
+                  "Application (up to 2): e.g. 2010 is the development/growth stage; 2019 is the growth/maturity stage; marketing may focus more on raising awareness of the product in 2010",
+                  "Analysis (1): e.g. in 2019 marketing may focus on highlighting the difference between your product and competitors that have arrived since the introduction stage",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1. QS3, QS8.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Stock market flotation is when a company launches on the stock market by offering shares to the public.",
+                  "Consequences of flotation": "Spotify needs capital to invest in new products such as music video subscription services, and selling shares publicly is one way to raise it; its main competitors, Apple and Google, are large corporations with access to vast capital, so flotation may help Spotify compete more effectively.",
+                  "Potential counterbalance": "Spotify has not yet made a profit, so it may not attract sufficient investment and less finance may be raised; current owners/board are likely to lose some ownership/control to new investors, which may limit their ability to develop new products such as VR.",
+                  "Potential judgement": "The main consequence is the ability to raise a large amount of capital, allowing Spotify to compete with Apple and Google in the growing music streaming market.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Dynamic markets are those subject to rapid and fundamental change over a short time period.",
+                  "Consequences of a dynamic market": "New developments such as video subscriptions give Spotify opportunities to exploit new revenue streams and attract new customers; rapid change might let Spotify become more niche and target higher-end customers prepared to pay for immersive VR experiences; listening is moving from smartphones to home systems such as Amazon Echo and Google Home, creating new ways to compete and for customers to listen.",
+                  "Potential counterbalance": "Product changes (music, videos, VR) affect what Spotify offers and can increase product development costs; five services launched 2015-2017 made no profit, possibly because of the continuous marketing costs needed to compete with companies such as Apple.",
+                  "Potential judgement": "Apple and Google can operate streaming at a loss to gain subscribers whereas Spotify needs profit, so market research may be important for Spotify to keep pace with change; alternatively, Spotify has only been in the market since 2008 yet has the most users in Europe and the US, suggesting it understands the market.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical and coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments are fully developed; quantitative and/or qualitative information is used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning are presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "An extension strategy aims to prevent the decline stage of a product/service's sales in the medium-to-long term.",
+                  "Option 1 - existing markets (Europe/USA)": "New video experiences may add customers as pure streaming reaches maturity; early adopters of VR may have higher disposable income and lower price elasticity so will pay higher prices; US/European users have better access to technology, giving more opportunity to add value by linking streaming to video; as an established brand (since 2008) Spotify can build users while Apple creates new content, reducing costs and improving margins.",
+                  "Option 2 - emerging markets (Asia)": "New markets may give more growth than established markets with strong competition from Amazon and Google; Asia provides only 14% of world digital music revenue, so there are many potential customers; mobile network providers include streaming in price plans, offering access to many new customers; however, copyright infringement and price-sensitive consumers with lower disposable incomes may make growing subscriptions harder.",
+                  "Potential judgement": "Existing markets are the least risky as the Spotify brand is well known and trusted for new products such as immersive video; Asia's rapid growth is a bigger opportunity - market development in Ansoff's matrix - which despite higher risk side-steps Apple and Google, who may not be targeting these markets.",
+                  MOPS: "Market - fastest growth is in Asia, letting Spotify expand without changing an approach that works in Europe. Objectives - if growth, Asia may be best; if profit maximisation, high-margin products for Europe/North America may be best. Products/services - it is unclear that immersive video will be profitable, so extending the existing model to Asia may be least risky. Situation - the imminent flotation may make Spotify more cautious; focusing on one or two Asian countries might deliver growth that attracts investors.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of the limitations of secondary market research data, e.g. the data is collected by an organisation for general use",
+                  "Application (up to 2): contextualised example, e.g. data is from 2016; data is 3 years old; consumers aged 40-59 account for 63.2% of coffee consumption in the USA",
+                  "Analysis (1): explaining a limitation, e.g. the demographic information may have changed, potentially making it inaccurate/less useful",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1. QS9.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): correctly constructing supply and demand curves",
+                  "Knowledge (1): correctly labelling axes, price and quantity",
+                  "Application (1): correctly interpreting the shift in the demand curve to the left",
+                  "Analysis (1): drawing the original and new equilibrium on the quantity and price axes",
+                ],
+                guidance: "4 marks: Knowledge 2, Application 1, Analysis 1. QS3.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A trading bloc is a group of countries that trade freely with reduced or no tariffs and quotas on trade between businesses in these countries.",
+                  "Benefits to Lavazza": "Owning Kicking Horse gives Lavazza a Canadian-based business, allowing free access to the USA and Mexico; NAFTA has no common tariff structure - each member sets its own policy on imports from outside - so coffee beans may be imported more freely than with a common external tariff.",
+                  "Potential counterbalance": "Free trade means US businesses such as Starbucks compete with Lavazza in Canada and may limit competition through aggressive pricing and promotion; NAFTA may not be a large advantage because Lavazza supplies mainly specialist outlets rather than importing/exporting manufactured goods, so cost advantages may be smaller.",
+                  "Potential judgement": "NAFTA gives opportunities to expand from Canada into the US and Mexico, but Lavazza seems more focused on the niche organic/fair-trade segment in Canada in the short term, so may be less concerned with wider market access.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "The marketing mix is a plan for using the right blend of product, price, promotion and place in order to maximise sales.",
+                  "Importance of adapting the marketing mix": "Disposable incomes may be lower in some global markets such as Mexico, requiring a different pricing strategy from Italy and Europe; the product may be adapted towards organic and fair-trade coffee, a growth market in Canada.",
+                  "Potential counterbalance": "Kicking Horse 'fits well' in Lavazza's portfolio, suggesting the product may not need adapting; Lavazza has a successful marketing mix in Europe that may be transferable to Canada and other global markets.",
+                  "Potential judgement": "With 120 years' experience in similar developed European markets, marketing that works in Europe is likely to work in North America, particularly using its 'Europeanness' as a USP; alternatively, North America is a mature market with many existing businesses, so adapting the mix - especially differentiating the product on fair-trade/organic - is necessary to succeed.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical and coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments are fully developed; quantitative and/or qualitative information is used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning are presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - organisational structure": "An organisation structure shows who is answerable to whom and vertical/horizontal communication links. Flattening Starbucks' structures appears to have increased stress and workloads on managers, possibly reducing staff motivation; a taller structure (e.g. new supervisors) should improve communication as people know who to speak to. However, the way staff are managed may matter more than structure - if seen as a 'cost', motivation falls and staff are less open to initiatives such as North Star; staff numbers per outlet seem to be the main issue.",
+                  "Option 2 - flexible working": "Flexible working includes multi-skilling, part-time, temporary working and flexible hours; Starbucks already offers tuition assistance, flexible hours and discounted shares. Staff such as parents may be attracted, improving relations as personal circumstances are considered. However, flexible hours may make rotas harder for managers to organise, which both parties may resent; customer service suffers from too few workers per shift, which flexible working might help, but total hours available may matter more.",
+                  "Potential judgement": "North Star's problems seem related to how staff are managed and treated rather than organised; if flattening caused fewer staff per store, a return to a taller structure with better supervision is the main improvement. If the problem is insufficient colleagues at busy times, flexible working is more important, bringing staff in for busy periods such as breakfast and releasing them at quieter times.",
+                  MOPS: "Market - in a competitive market a flatter structure cuts costs to remain competitive. Objectives - North Star identified a need to improve staffing, so getting the structure right should improve relations. Products/services - coffee shop workers are often low-skilled with high labour turnover, so flexible working lets new staff fit in at times and roles to suit them. Situation - it appears to be the implementation of North Star causing problems, so if managed effectively the change in structure could work.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2019-p2",
+            year: "June 2019",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_02_que_20190604.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_02_rms_20190815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D, VisionSpring and Warby Parker. Extract A: VisionSpring is a social enterprise providing affordable glasses for people in developing countries such as India, improving job opportunities in rural areas. It supplies local small businesses that sell its glasses and trains the owners to conduct eye tests in local villages. Each pair costs VisionSpring £1 to make and deliver; the small business buys it for £2 and sells it for £4, so every step of the chain is profitable and the model is sustainable. Its current growth strategy is to reinvest profits, but it is considering loans from established businesses in developing countries such as ITC, an Indian tobacco company that supplies most village shops. Extract B (economic impact of a pair of VisionSpring glasses): price £4; estimated increased earnings per person per year £108; expected life of a pair of glasses 2 years. Extract C: Warby Parker was founded to sell designer glasses at a low price and be socially responsible, in an optical industry dominated by a few large companies keeping prices high. It designs and sells glasses directly online, offering higher-quality, better-looking prescription glasses at lower prices than larger rivals. Almost one billion people lack access to glasses; for every pair sold, another is given free to charities such as Sightsavers in developing countries. Extract D (world economic pyramid): high income market ($20 000+ a year) 0.5 billion people - where traditional optical companies focus, using a low-volume, high-profit-margin approach; middle income ($3 000-$20 000) 2 billion people; low income ($3 000 or less) 4 billion people - VisionSpring's target market, using a high-volume, low-profit-margin approach.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Explain one reason why businesses that sell VisionSpring's glasses may prefer to stay small.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    preamble: "For people in developing countries, purchasing a pair of VisionSpring glasses may be considered as an investment.",
+                    prompt: "Using the data in Extract B, calculate the average rate of return from purchasing a pair of glasses. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess VisionSpring's decision to finance its growth using retained profits.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess whether the decision to be a socially responsible business is likely to increase Warby Parker's profits.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Warby Parker's main corporate objective is to grow the business. The management is considering two options, either to develop a new range of contact lenses for the high income market, or to start selling glasses in the low income market.",
+                    prompt: "Evaluate these two options and recommend which one is most likely to achieve Warby Parker's main corporate objective.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-G, fashion retail. Extract E: designer Hardy Punglia launched his clothing range in Huddersfield with one shop and five designs; three years later he has over 100 designs, plans a second shop, hopes to supply other Yorkshire retailers and sells through ASOS. Cash flow forecast January-March 2020 (£): cash inflows 2 000 / 3 600 / 8 000; cash outflows 7 000 / 4 000 / 3 000; net cash flow (5 000) / (400) / 5 000; opening balance 2 000 / (3 000) / (3 400); closing balance (3 000) / (3 400) / 1 600. Extract F: Zara, a Spanish retailer with 650 stores in 50 countries and 12 factories in Spain and Portugal, supplies most stores using just in time (JIT). It constantly introduces new products in small quantities to create exclusivity; London customers visit a fashion store 4 times a year on average, Zara's customers 17 times. Zara 2016 (£m): budgeted sales revenue 20 900; actual sales revenue 23 310; budgeted total costs 16 204; actual total costs 18 226. Extract G: in May 2017 a fire at ASOS's Berlin warehouse damaged two million products worth £6m; ASOS's scenario plan was put into operation and German orders were fulfilled from Barnsley. In June 2014 a Barnsley fire destroyed about 20% of stock and cost £30m in lost sales, so ASOS missed its £1bn 2014 sales target; that fire disrupted business for three days, whereas after the Berlin fire the German and UK websites operated as normal. ASOS's share price dipped initially after the Berlin fire but soon recovered.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the data in Extract E, explain one way Hardy Punglia could use his cash flow forecast.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the data in Extract F, calculate the total profit variance for Zara in 2016. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the extent to which Zara's use of just in time (JIT) may have contributed to its success.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the usefulness of scenario planning to a business, such as ASOS.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Zara is planning to open another 200 stores and is considering the best way to maintain the quality of its clothes. Zara is considering using either quality control or total quality management (TQM).",
+                    prompt: "Evaluate these two options and recommend which one would be the best way for Zara to maintain the quality of its clothes.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): one reason why businesses selling VisionSpring glasses may prefer to stay small, e.g. flexibility in responding to customer needs; reduced risk of business failure",
+                  "Application (up to 2): two uses of context, e.g. shops selling glasses are located in rural areas; small business owners visit villages to conduct eye tests",
+                  "Analysis (1): e.g. local businesses may have greater knowledge of their customers' needs, so the small business owners can respond quickly by supplying glasses immediately if needed",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): ARR formula = average annual return / initial cost x 100 (can be implied)",
+                  "Application: total return = 216 - 4 = 212",
+                  "Application: average annual return = 212 / 2 = 106",
+                  "Application: ARR = 106 / 4 x 100 = 2650%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1, QS2, QS6. If the only answer given is 2650% award 4 marks.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Retained profit is a source of internal finance kept by the business rather than distributed to shareholders/owners.",
+                  "Arguments for retained profits": "The business model is profitable - VisionSpring makes £1 profit (100% mark-up) per pair; no interest is paid, reducing costs; VisionSpring keeps complete flexibility/control over how funds are used.",
+                  "Possible counterbalance": "An established business may immediately provide a larger loan than retained profits allow; retained profits can only be used once so are unavailable for other purposes such as contingency finance; ITC may have better knowledge of the Indian market, helping VisionSpring spend a loan more effectively.",
+                  "Potential judgement": "Retained profits are more likely to let VisionSpring adhere to its ethical values as a social enterprise, which ITC may not share; a loan from ITC may enable faster expansion and so achieve its aim of affordable glasses for developing countries more quickly.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A socially responsible business considers business ethics as a key influence on its strategic decisions.",
+                  "Positive effects": "Donating a pair to Sightsavers for every pair sold may improve reputation, leading to increased sales and brand loyalty; it may attract ethical investors and be seen as a good company to work for.",
+                  "Possible counterbalance": "Potential trade-off between ethics and profit because giving away a pair for each one sold incurs costs with no revenue; lower profit may reduce shareholder/owner returns.",
+                  "Potential judgement": "Social responsibility is a key USP differentiating Warby Parker from rivals, which could build loyalty, sales and profit; however customers may buy because of lower prices rather than social responsibility, and lower prices may mean smaller margins and reduced profits.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical and coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments are fully developed; quantitative and/or qualitative information is used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning are presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A corporate objective is a goal a business strives to achieve in order to meet its long-term aim.",
+                  "New range of contact lenses - arguments for": "Warby Parker's reputation for low-priced glasses may persuade customers to buy contact lenses; Ansoff classifies this as product development, which may target new customers; innovation in a new optical product may be a distinctive capability enhancing its appeal/reputation among high income customers.",
+                  "Sell glasses in the low income market - arguments for": "It already has a distinctive capability through its association with Sightsavers and designing its own glasses; the low income market is 4 billion people, giving greater sales volume potential (market development in Ansoff); its low prices and online availability could suit this market.",
+                  "Possible recommendations": "Contact lenses could give higher growth by applying its trusted reputation for high quality, low-price online products to existing and new high income customers; the low income market could give higher growth as it targets 4 billion people not served by other large optical businesses and online selling may be more accessible - however VisionSpring is already well established there.",
+                  MOPS: "Market - divided into high income (high margin, low volume) and low income (low margin, high volume). Objectives - the main objective is growth. Product - USP of low-priced designer glasses ordered online plus an ethical image. Situation - Warby Parker has successfully exploited a niche and has a good reputation in the high income market.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding the use of a cash flow forecast, e.g. he can estimate expected cash inflows/outflows over a period of time",
+                  "Application (up to 2): use of the forecast, e.g. negative net cash flows forecast in January (5 000) and February (400); negative closing balances in January (3 000) and February (3 400); Hardy Punglia is planning to expand his business",
+                  "Analysis (1): e.g. the forecast may enable him to arrange additional finance from his bank to cover the negative closing balances; it could be valuable when discussing the additional finance required for expansion with potential investors",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1. QS8, QS9.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): profit variance formula = actual profit - budgeted profit, or formula for cost or sales revenue variance (can be implied)",
+                  "Application: budgeted profit = £20 900m - £16 204m = £4 696m",
+                  "Application: actual profit = £23 310m - £18 226m = £5 084m",
+                  "Application: profit variance = £5 084m - £4 696m = £388m",
+                  "Alternative: sales revenue variance = £23 310m - £20 900m = £2 410m; cost variance = £18 226m - £16 204m = £2 022m; profit variance = £2 410m - £2 022m = £388m",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS5. If the only answer given is £388m/388m award 4 marks; if the only answer given is £388/388 award 3 marks.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Just in time organises operations so that items of stock arrive immediately before they are needed for production or sale.",
+                  "Reasons JIT has contributed to success": "Limited stock encourages customers to buy every visit; customers visit more often (17 times a year on average) so may buy more; limited stock may mean fewer unsold clothes, essential in the fast-changing (dynamic) fashion market.",
+                  "Possible counterbalance": "Running out of stock may frustrate customers and damage reputation; selling small amounts of different clothes may raise average costs such as distribution; purchasing economies of scale may be harder when buying a larger range in small quantities.",
+                  "Potential judgement": "JIT has contributed because regularly introducing new clothes in limited quantities attracts more frequent visits and sales; however success may be due to other factors such as product design and marketing.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Scenario planning is the process of anticipating possible changes in a business's situation and devising ways of dealing with them.",
+                  "Potential usefulness": "The Barnsley fire helped ASOS identify key risks, so it responded quickly to the Berlin fire and limited damage; disruption was short term as orders were fulfilled from Barnsley so sales did not suffer; the German and UK websites operated normally so online orders were fulfilled.",
+                  "Potential limitations": "ASOS still lost £6m of stock, so scenario planning cannot eliminate damage; opportunity cost of time and money spent identifying and mitigating risks, e.g. less for website development/TV advertising; fulfilling European orders from Barnsley would have increased costs.",
+                  "Potential judgement": "The plan was useful as its use after the Berlin fire helped the share price recover quickly, possibly reassuring investors; but ASOS cannot plan for all disasters, such as flood damage or its website being hacked, so scenario planning is more useful when risks can be identified and effective plans implemented.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical and coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments are fully developed; quantitative and/or qualitative information is used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning are presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Quality control uses quality inspectors to find faults, whereas TQM is a quality assurance system where quality is the responsibility of all employees.",
+                  "Quality control - arguments for": "Specifically trained inspectors can sample clothes to check standards, letting other employees focus on new designs; it is less costly as only a sample is checked in the Spanish and Portuguese factories, freeing resources for marketing/retail development as stores open; it is less time consuming, using existing inspectors and processes and reducing the need to train all staff across 850 stores in TQM.",
+                  "TQM - arguments for": "A right-first-time approach checking quality at every stage rather than a sample, which should eliminate defects; it may empower employees with motivational benefits as they are trusted to guarantee the quality of their own work; establishing a quality culture among new employees will prevent standards deteriorating as the business expands to 850 stores and adds factory staff.",
+                  "Potential recommendation": "In the short term quality control may be cheaper and quicker, needing fewer employees, which may get stock to stores quickly as the fashion market requires; TQM may ensure zero defects, reducing the number and cost of faulty returns, improving reputation in the short term and profits in the long term - vital as the customer base grows.",
+                  MOPS: "Market - fast-changing, dynamic fashion market competing with brands such as Topshop and H&M. Objectives - expand by opening another 200 stores. Product - reputation for innovation, constantly bringing out new products in limited supply to create exclusivity. Situation - a well-established, successful market leader generating impressive profits.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2019-p3",
+            year: "June 2019",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_que_20190608.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_rms_20190815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Pre-released context: the market for holidays in the UK and abroad, and UK-based businesses operating in these markets. Section A: Extracts A-D. Extract A (UK holiday trends 2017): ABTA research shows rising bookings for all-inclusive holidays, which offer value for money, ease of travel and a stress-free break; with the £ exchange rate and UK economy uncertain, all-inclusive holidays to destinations such as Mexico and South Africa are easier to budget for. Income elasticity of demand for holidays has increased for some UK tourists; some are switching from two-week beach holidays to short experiences such as city breaks or staycations. Extract B: Shanghai Disney opened June 2016 (first on the Chinese mainland, sixth worldwide) and welcomed its 10 millionth visitor by May 2017, helped by the popularity of American culture among young Chinese. The Shanghai government funded R&D and supplied the land; it is operated with Chinese company Fosun International. Expecting Chinese competition to intensify, it added Toy Story Land in 2018. Other western theme park firms are entering China because of its expanding middle class, e.g. a $7.4bn Universal Studios park in Beijing due 2020. Extract C: $US to £1: 2013 1.56, 2014 1.64, 2015 1.52, 2016 1.35, 2017 1.28; euro to £1: 1.18, 1.24, 1.38, 1.22, 1.14. Average holidays per UK adult per year 2013-17: UK holidays 1.9, 1.8, 1.7, 2.0, 2.1; holidays abroad 1.2, 1.2, 1.5, 1.4, 1.7; total 3.1, 3.0, 3.2, 3.4, 3.8. Extract D: Live the Adventure Ltd, a family business founded 1984, runs a leading UK activity centre in Shropshire (archery, caving, climbing, horse riding, paintballing) with a well-qualified permanent team plus seasonal employees; since 2010 it has run expedition holidays from a centre in Nepal (kayaking, rafting, trekking) and is considering winter activity holidays in Europe (skiing, snowboarding) to widen its customer base. Quarterly sales (£000s) [sales; 8-period total; 4-quarter moving average (trend); variation]: 2015 Q1 40; 2015 Q2 70; 2015 Q3 80, 490, 61.25, 18.75; 2015 Q4 50, 510, 63.75, -13.75; 2016 Q1 50, 530, 66.25, -16.25; 2016 Q2 80, 550, 68.75, 11.25; 2016 Q3 90, 570, 71.25, 18.75; 2016 Q4 60, 590, A, B; 2017 Q1 60, 610, C, D; 2017 Q2 90, 630, 78.75, 11.25; 2017 Q3 100; 2017 Q4 70. (Q1 = Jan-March ... Q4 = Oct-Dec.)",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the data in Extract A, assess two reasons why income elasticity of demand for holidays may be income elastic.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Assess the factors that might affect the success of a global business such as Disney when entering a new market such as China.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the extent to which movements in exchange rates might influence the holiday choices of UK consumers.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "Live the Adventure Ltd is deciding whether to expand its existing operations or to offer winter activity holidays in Europe in order to grow.",
+                    prompt: "Using the data in Extract D, calculate the values of A, B, C and D and, using other non-financial information, evaluate these two options. Recommend which one of these two options Live the Adventure Ltd should choose in order to grow.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H, airlines. Extract E: Ryanair boss Michael O'Leary got his entrepreneurial spirit from his father, who set up a range of businesses. Working at Southwest Airlines (the first low-cost airline) in Texas he learned its strategy of flying into secondary airports with lower landing fees, returning to Ireland as Ryanair Chief Executive in 1994. He considers himself abrasive, but also a visionary and humble; asked if he is cold-hearted and ruthless he said that in business terms he is: 'We must make money to survive. We must out-compete the competition'. Extract F: the CAA is taking action against Ryanair for failing to comply with regulations - flights were cancelled because pilot rotas were not planned correctly; Ryanair gave customers inaccurate information about their rights, falsely claimed it need not re-route passengers onto other airlines and refused refunds for meals, hotels and extra travel. Despite cancelling 20,000 flights in September 2017, passenger numbers rose 8% in October 2017 vs October 2016; Ryanair forecasts a €1.4bn profit after tax for the year to March 2018, even after €25m compensation payments; O'Leary said higher pay to attract and retain flight crew will add €100m to annual costs. Extract G: Monarch Airlines went into administration in September 2017. It failed to adapt quickly to the low-cost model popularised by easyJet and Ryanair, only switching from a charter airline to low-cost in 2009 when it was a tenth of Ryanair's size. It relied on Middle East tourism, which fell due to terror attacks in Tunisia and Egypt, the failed 2016 coup in Turkey and the Syrian civil war and migrant crisis; sterling depreciation greatly affected fuel and maintenance costs. In 2016 it agreed to lease new Boeing-737s to replace ageing Airbuses, cutting fuel and maintenance costs, but the first was not due until 2018. Owners Greybull Capital (paid £125m to acquire it in 2014 and £165m to rescue it in 2016) chose not to save it a third time. Extract H: in May 2017 Ryanair partnered Air Europa so its 130 million customers can book Air Europa long-haul flights on Ryanair.com - 20 routes from Madrid to North, Central and South America; main competitors Iberia and Vueling. GDP per capita 2016 ($) / GDP growth 2016 %: UK 43 200 / 1.8; Argentina 20 100 / (2.0); Brazil 15 200 / (4.2); Cuba 11 900 / (1.2); Mexico 18 900 / 2.3; USA 57 600 / 1.5.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Assess two difficulties for Michael O'Leary when developing from an entrepreneur to a leader.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Assess the likely effects of consumer protection legislation on a business, such as Ryanair.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess whether Monarch Airlines' business failure was due to internal causes.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "For long-haul flights to the Americas, Ryanair and Air Europa could use competitive pricing or a penetration pricing strategy to maximise profit.",
+                    prompt: "Evaluate these two pricing strategies and recommend which one should be used by Ryanair and Air Europa to maximise profit.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) are presented but may be assertions or incomplete; an attempt at an assessment is presented that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Income elasticity of demand (YED) measures the responsiveness of changes in demand to changes in consumer income.",
+                  "Reasons holidays may be income elastic": "Holidays are considered a luxury, making them income elastic, and holidays abroad are usually more expensive so even more income elastic; the bigger the share of income spent on holidays, the more income elastic; uncertainty can determine YED - a weaker pound could make overseas holidays more expensive and so increase YED.",
+                  "Possible counterbalance": "Demand depends on individual circumstances - holidays may be considered necessary (reduce stress), making demand less sensitive to income; demand varies by type of holiday - when incomes fall, demand for all-inclusive holidays may increase as total costs are more certain, as may demand for shorter holidays or staycations.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Marks for application and analysis include up to 4 marks for quantitative skills (QS7 interpret values of price and income elasticity of demand; QS9). Level 0 = a completely inaccurate response.",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Factors include levels and growth of disposable income, ease of doing business, infrastructure, political stability, government incentives, skills and availability of workforce, marketing strategies and a strong brand.",
+                  "Factors supporting success": "Higher disposable income in China makes visits more affordable; increased infrastructure is needed or transport bottlenecks could reduce sales; Disney is a well-known brand associated with fun and happiness, supporting immediate sales; working with a Chinese partner (Fosun International) with local knowledge should have helped with planning, politics and infrastructure issues.",
+                  "Possible counterbalance": "Short-term novelty may wear off so long-term sales could suffer, especially as other western theme parks or Chinese competitors grow; government incentives to encourage job creation may reduce set-up costs initially but may be withdrawn later; staff training may be expensive if Disney US managers are used to ensure a consistent company culture.",
+                  "Possible judgement": "Long-term success may depend on maintaining effective strategies such as extending the theme park's product life cycle through new rides (Toy Story Land).",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Exchange rates are the price of one currency in terms of another.",
+                  "Influence of exchange rates": "If the £ depreciates, holidays priced in euros and US dollars become effectively more expensive, e.g. booking a hotel in Spain; from 2014 to 2017 the £ depreciated against the $US while holidays abroad rose from 1.2 to 1.7, suggesting exchange rates do not necessarily affect demand for overseas holidays despite the loss in purchasing power of the £; UK holidays rose from 1.8 to 2.1, which might suggest depreciation causes more people to holiday in the UK instead.",
+                  "Potential counterbalance": "Increased consumer incomes may have compensated for the depreciation, so UK holidaymakers may still choose more expensive overseas holidays; technology has made it easier for consumers to budget for and book their own holidays; uncertainty and/or job losses may have raised demand for cheaper UK holidays.",
+                  "Possible judgement": "Exchange rates affect both the price of booking (hotels and flights priced in foreign currency) and costs during the holiday (meals), so have an impact; but price alone does not determine demand - climate, hotel quality, experiencing different culture/foods, learning a language, visiting family, demographic change and preference for shorter holidays may matter more.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical and coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments are fully developed; quantitative and qualitative information is used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are developed; quantitative and/or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning are presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Calculations: "A and C = 8-period total / 8: A (2016 Q4) = 590/8 = 73.75; C (2017 Q1) = 610/8 = 76.25. B and D = sales - four-quarter moving average: B (2016 Q4) = 60 - 73.75 = -13.75; D (2017 Q1) = 60 - 76.25 = -16.25.",
+                  "Offer winter activity holidays": "The business is seasonal, with lower sales in Q1 and Q4 than in Q2 and Q3, pulling the moving average below what it might otherwise be (e.g. by 18,750 for 2015 Q3); winter variations are both negative (2016 Q4 -13.75, 2017 Q1 -16.25) so winter holidays in Europe may be a better source of growth; they could even out cash inflows and give more regular activity; permanent staff could be better utilised rather than suffer under-used capacity in Shropshire; less need to appoint and train temporary staff, which might improve customer service and reputation and lower costs.",
+                  "Expand existing operations": "Sales rise for each same quarter over the three years, suggesting success, so there may be no need to smooth incomes - winter is compensated by summer; the moving average rises from £61,250 (2015 Q3) to £78,750 (2017 Q2) and from 71.25 (2016 Q3) to 73.75 to 76.25, showing an upward trend for existing operations; staffing costs could rise for winter sports as further training and higher pay may be needed to attract and retain the right personnel.",
+                  "Possible recommendation": "The data only refers to sales not costs, so we do not know about profits (or losses); if Live the Adventure can continue to expand in Shropshire and Nepal, the upward trend from £61,250 to £78,750 suggests focusing on the business that has worked since 1984; diversification into a new market may spread risk as past sales data for the UK and Nepal gives no guarantee of growth.",
+                  MOPS: "Market - winter holidays in Europe could bring more long-term growth from a bigger customer base and several sites such as the Pyrenees and Alps. Objectives - profitability and growth may be more likely by sticking with what it knows, gaining economies of scale and developing its loyal Shropshire customer base. Product - winter holidays are relatively expensive so may be less affordable in the current economic climate. Situation - with no current barriers to entry or exit (not having left the EU), it could gain a foothold in a potentially lucrative market with rising disposable incomes, e.g. from former Soviet Union countries such as Latvia.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Marks for application and analysis include up to 6 marks for quantitative skills (QS1 ratios, averages and fractions; QS8 use and interpret quantitative and non-quantitative information). Answers: A = 73.75, B = -13.75, C = 76.25, D = -16.25. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) are presented but may be assertions or incomplete; an attempt at an assessment is presented that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Entrepreneurs take risks and combine the factors of production (land, labour and capital) to set up a business/provide a product or service for profit; leadership is about inspiring and organising employees to achieve a common goal through delegation and authority.",
+                  Difficulties: "O'Leary would need to delegate and trust employees, balancing support with interfering, which he may not be prepared to do as he is driven by the need to compete; it might be difficult to move from his own ideas to accepting others' ideas, given he considers himself 'abrasive' and 'cold-hearted and ruthless' in business.",
+                  "Possible counterbalance": "Having worked at Southwest Airlines he may have seen the benefits of listening and keeping an open mind as other employees may have better ideas; he considers himself 'humble', so should be able to listen to employees' opinions in order to inspire.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Consumer protection legislation is aimed against unfair selling practices; consumers have basic legal rights if a product/service is misleadingly described, of unsatisfactory quality or unfit for purpose.",
+                  "Likely effects": "It applies to flight cancellations that are the airline's fault (pilot planning failure) and to passengers' additional costs; short-term costs - €25m compensation paid to passengers; long-term costs - higher pay for flight crew of €100m; if ignored, bookings may fall due to uncertainty and poor reputation from media coverage and CAA action.",
+                  "Potential counterbalance": "Budget airlines offer competitive prices so some passengers are not deterred - numbers rose 8% in October 2017 despite 20,000 cancellations in September 2017; flights are booked online in advance to secure cheaper fares, so demand is unlikely to suffer; it depends on competition from other budget airlines on routes and destinations - Ryanair may retain custom if this is poor.",
+                  "Possible judgement": "The effects have not been detrimental as profit of €1.4bn is forecast for March 2018, suggesting the compensation and recruitment costs caused by the legislation have been more than met by increased sales revenue.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment is presented using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Business failure can be caused by internal and/or external factors, which can be financial or non-financial.",
+                  "Internal causes": "Lack of long-term management planning delayed the switch to a budget airline until 2009, by which time Ryanair and easyJet dominated; failing to replace the ageing Airbuses before 2018 meant higher fuel and maintenance costs, reducing competitiveness; running two aircraft types during the switch to Boeing-737s may have raised maintenance and training costs; inability to learn from failure, having been bought by Greybull Capital in 2014 and rescued in 2016 for £165m; it may have ignored customer requirements such as more popular destinations, free seats for under-12s, credit card fees and online check-in.",
+                  "Possible counterbalance": "External factors were largely to blame - terror attacks and coups in destinations such as Tunisia and Turkey reduced bookings, passenger numbers and revenue; sterling depreciation raised fuel costs (priced in $), which could have damaged cash flow; much larger competitors such as Ryanair (Monarch was a tenth of its size) were more likely to benefit from economies of scale.",
+                  "Possible judgement": "Management may have needed a USP or product differentiation against budget airlines, which may not have been possible for an originally charter airline; external factors are unpredictable and could have been worse, e.g. if budget rivals had cut fares to 'safer' destinations like Spain.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Note: the MS gives the 2014 acquisition price as £25m, whereas Extract G states £125m. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical and coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments are fully developed; quantitative and/or qualitative information is used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate knowledge and understanding, supported by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question; arguments are developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning are presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Competitive pricing is charging what the market will bear, usually following a price leader; penetration pricing sets a low initial price, accepting limited short-term profits/losses to build market share before switching to a more profitable price. The Ryanair-Air Europa partnership might be seen as a product life cycle extension strategy or market development (Ansoff).",
+                  "Competitive pricing": "Strong competition from airlines such as Virgin Atlantic, which may have brand loyalty, means prices need to be comparable; Ryanair could differentiate through extra leg room, hot meals, free transfers or parking to raise passenger numbers and profits; GDP per capita in the US and UK is much higher than in Central and South America, so competitive prices may be charged; positive growth in the UK, Mexico and the US may mean rising incomes so overseas holidays (a luxury good) may still grow with competitive pricing.",
+                  "Penetration pricing": "UK consumers see Ryanair as the low-cost leader, so may see this as an opportunity to fly long-haul to destinations such as Mexico and Brazil; pricing below Iberia and Vueling should entice customers to try the flights and build the brand/sales; as the largest airline by passengers, Ryanair has economies of scale to lower costs and still profit; lower GDP per capita in Cuba and Brazil may mean lower operating costs (ground staff wages, landing fees); negative growth in Argentina, Brazil and Cuba may raise UK consumers' purchasing power, encouraging long-haul holidays with penetration pricing.",
+                  "Possible recommendations": "Competitive pricing may give higher profits as UK consumers may expect to pay more for long-haul in return for a better experience (food, entertainment, leg room); penetration pricing may not yield short-term profit but could establish Ryanair in UK long-haul, allowing prices to rise later to maximise profit.",
+                  MOPS: "Market - the increasingly competitive low-cost market, with rivals such as Vueling and Iberia, makes penetration pricing important to gain a foothold. Objectives - penetration may lower revenues initially but (assuming price elastic demand) shortfalls could be recovered once prices rise. Product - price competitively and gain customers through non-price factors such as better seats, meals and service. Situation - 2016 GDP growth in Argentina, Brazil, Cuba and Mexico averages -1.3, so flights should be priced competitively as incomes are not rising for potential passengers.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2018-p1",
+            year: "June 2018",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_01_que_20180608.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_01_rms_20180815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (UK fast food; Hot Chip). Extract A - Takeaway consumption and median income in the UK: 2013: average 140 takeaway meals consumed per year per person, median annual income for full-time employees £27 000; 2014: 144 meals, £27 195. Extract B - Eating behaviours at fast food restaurants (survey): concerns about healthiness of fast food have caused me to limit the amount I eat 31%; meal deals make me eat more than I usually would 22%; I have ordered healthier dishes 17%; I only eat gourmet burgers when I can afford it 13%; I have switched from fast food to gourmet burger restaurants 7%; none of these 35%. Extract C - Lord Somerleyton and Toby Marchant opened Hot Chip in Norwich in June 2013; within a year it won best chip shop in Norfolk. They plan a 'Hot Chip Saloon' targeting the late-night economy and say they need three to five successfully trading shops before becoming a national brand; they also hope to open a Hot Chip van after visiting Great Yarmouth chip stalls - visiting 30 to 40 East Anglian fish and chip shops they found as much as 50% of sales were just portions of chips. Hot Chip sales data showed chips and cheesy chips were initially most popular, but customers increasingly tried adventurous toppings (hot salt beef, gherkin relish, melting Swiss cheese, mustard mayonnaise). Extract D - Jerry Newman's 'My Secret Life on the McJob' describes Toxic, Mechanical, Relationship and Performance Managers in fast food; store culture depends on how employees are treated; he criticises the general lack of training and high employee turnover ('Training the Utterly Confused') and experts advise giving applicants a realistic preview of the job.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the data in Extract A, calculate, to 2 decimal places, the income elasticity of demand for takeaway meals. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using Extracts B and C, explain one way in which Hot Chip could change elements of its design mix to reflect eating behaviours at fast food restaurants.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the likely reasons for Hot Chip using mainly quantitative market research data.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "Creating and setting up a business is one role of an entrepreneur.",
+                    prompt: "Assess whether this is the most important role of an entrepreneur, such as Lord Somerleyton.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Hot Chip will employ a manager in each of its outlets. These managers could use a broadly autocratic or democratic leadership style.",
+                    prompt: "Evaluate these two options and recommend which is the most suitable leadership style for a business such as Hot Chip.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-G (manufacturing location; Ebac Ltd; Haier). Extract E - bar chart comparing average manufacturing costs in 2014 for the world's 25 largest exporting countries (index, China = 100), broken down into labour, natural gas, electricity and other costs, with countries ordered from largest to smallest exporter. Countries shown: China, United States, South Korea, Italy, Belgium, Canada, Mexico, India, Australia, Brazil, Indonesia, Sweden, Czech Republic, Germany, Japan, France, Netherlands, United Kingdom, Russia, Taiwan, Switzerland, Spain, Thailand, Poland, Austria (individual bar values are not legible in the text extraction; students need the original chart to count the countries above the UK). Extract F - Ebac Ltd is Europe's leading manufacturer of bottled water coolers and domestic dehumidifiers; privately owned, family-run company; Western European market leader for water coolers since the mid-1990s; employs over 200 people in the North East of the UK, where labour costs are below the UK average; 70% of turnover from sales to Continental Europe; in late 2015 began a £7m expansion to become the only UK-based maker of washing machines (filling the gap left when Indesit moved Hotpoint production to Italy), to be sold in the UK only; the Ebac Ltd Foundation (2012) commits all profits to reinvestment in the company and the community. Extract G - Haier, a China-based company worth $38 billion with upmarket brands in China, has held the largest worldwide market share in white goods since 2011; it rapidly introduces niche products such as the Tianzun air conditioner, a small low-energy washing machine for Chinese urban apartments (for hand-washing underclothes), mini-refrigerators for US college students (1997), wine refrigerators (2004) and extra-large washing machines for heavy robes in Pakistan; it is growing in the mass markets of the US, Europe and Japan dominated by multinationals such as Bosch and Whirlpool.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Using the data in Extract E, calculate the percentage of the world's top 25 exporting economies that have costs of production above those of the United Kingdom in 2014. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Explain how Ebac Ltd could benefit from exporting its products.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the likely consequences of Ebac Ltd continuing to operate as a private limited company.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the likely impact on Ebac Ltd of choosing the UK as a production location.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Haier is aiming to continue its global expansion in the white goods market. It could do this by focusing on either global niche markets or global mass markets for white goods.",
+                    prompt: "Evaluate these two options and recommend which approach is most suitable for Haier.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): income elasticity of demand = % change in quantity demanded / % change in income",
+                  "Application: % change in quantity demanded = (144 - 140 = 4) / 140 x 100 = 2.86% (2 d.p.)",
+                  "Application: % change in income = (£27 195 - £27 000 = 195) / 27 000 x 100 = 0.72% (2 d.p.)",
+                  "Application: YED = 2.86 / 0.72 = 3.97 (income elastic)",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS7, QS9. Answer may vary due to rounding method; all acceptable, e.g. 2.85714.../0.72222... = 3.96 (correct, 4 marks, even if working written as 2.85/0.72) or 2.9/0.7 = 4.14. 4 marks if the correct answer is stated without working.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of elements of the design mix - at least one of aesthetics, function, economic manufacture",
+                  "Application (up to 2): e.g. function - 31% of customers are concerned about the healthiness of fast food; aesthetics - Hot Chip could continue to develop alternative toppings such as Swiss cheese/gherkin relish; economic manufacture - using cheaper methods to produce chips",
+                  "Analysis (1): e.g. so Hot Chip could change the ingredients to make the chips healthier; so it could change the appearance of the chips with new toppings to make them more appealing; so it could pass on lower costs to customers in lower prices",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1. QS9.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Quantitative research data is numerical and often more easily collected and cheaper than qualitative research (e.g. brief questionnaires, visits to potential competitors); qualitative research finds out the motivations behind consumer behaviour.",
+                  "Likely reasons": "Quantitative data from Great Yarmouth stalls showed as much as 50% of sales were chips only, leading Lord Somerleyton to see a gap in the market for a chip-only fast food business; internal sales data showed chips alone were initially popular but customers then wanted more adventurous toppings.",
+                  "Potential counterbalance": "Qualitative data tends to be more in-depth and valuable, e.g. a focus group or consumer panel could suggest new toppings and identify taste trends in advance; taste is more accurately researched through interviews and customer feedback forms.",
+                  "Potential judgement": "For a new business such as Hot Chip, quantitative research is the most straightforward and cheapest given other set-up costs (fitting restaurants, sourcing ingredients); however qualitative data may be more valuable for a specialist niche where broad quantitative data (government statistics, competitors' sales) is less useful or accessible.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with developed chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Creating and setting up a business is the initial idea and risk of beginning a business, involving understanding consumer tastes and possibly raising finance; Lord Somerleyton spotted customer willingness to buy chip-only fast food based on high quality potatoes.",
+                  "Reasons why this is important": "He conducted small-sample research on fish and chip businesses in Great Yarmouth as part of set-up, and spotted an opportunity for a mobile outlet targeting a different market (late-night party-goers) from fixed outlets.",
+                  "Potential counterbalance": "Other roles include running and expanding the business, innovating, and anticipating risk and uncertainty; expansion to a national brand after 3-5 successful saloons requires sourcing finance for new properties and recruiting managers who share his vision; running the business means keeping existing customers happy and attracting new ones, e.g. the expanded toppings range.",
+                  "Potential judgement": "Setting up is an essential first step - without initial risk-taking there is no business, and the gap in the market must be researched and led by the entrepreneur; but this role matters mainly in the set-up period, and working with Toby, recruiting and leading staff become more important as branches open; importance depends on plans - national expansion raises the running/expanding role, while being content with a few outlets and moving to other ideas raises the creation role.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed and logical, coherent chains of reasoning, showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning are presented, but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted, but it will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - Autocratic leadership": "Decision-making kept with managers who direct subordinates with little consultation; suits fast-paced fast food where quick service is expected and staff have little time to consult (e.g. organising order processing); suits high staff turnover and limited training where workers need direction; as a new business with a unique product, owners may want managers to establish the culture and high service levels (accurate orders, quick service).",
+                  "Option 2 - Democratic leadership": "Decisions agreed by the majority with consultation between managers and subordinates; staff serving customers learn what is popular and can inform decisions on menus, rotas and flavours; Extract D suggests managers who train and listen to employees deliver higher customer service through open communication and a realistic job preview; staff recruited from other outlets can suggest procedures that work well, improving performance.",
+                  "Potential judgement": "Autocratic leadership may suit the first few months of a new saloon, giving stability and clarity and establishing Lord Somerleyton's culture and values; but Hot Chip differs from McDonalds - its menu is evolving and consulting employees from the start is likely to improve service and organisation; managers may combine styles, with the dominant one depending on Lord Somerleyton's priorities and the managers recruited.",
+                  "MOPS recommendation": "Market - high labour turnover suggests a democratic approach to make management posts attractive (empowerment); Objectives - survival of a new business suggests autocratic leadership for clarity, stability and clear culture; Product - an evolving menu means consulting employees motivates staff and helps customer service; Situation - lack of training in fast food (Newman) suggests an autocratic approach to instil correct work habits immediately.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): number of countries above UK / total number of countries x 100",
+                  "Application: identify the total number of countries as 25 (denominator)",
+                  "Application: identify that 12 of the economies in the top 25 have an index value above that of the UK",
+                  "Application: 12 / 25 x 100 = 48%",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS2, QS4, QS9. Award 4 marks if only 48% is stated.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): benefits include increased sales volume/sales revenue/customer base; or exporting means a product is produced in one country and sold to another",
+                  "Application (up to 2): Ebac exports 70% of its products (by revenue) to Continental Europe; manufactures in North East England; market leader in Western Europe for water coolers since the mid-1990s",
+                  "Analysis (1): exporting provides a larger market for a business such as Ebac selling specialist products like dehumidifiers, increasing potential sales revenues and providing opportunities for technical economies of scale",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A private limited company is a small to medium sized business usually run by the owning family; shares are sold to friends, family and business associates, may not be sold on the stock market, and existing shareholders control who becomes a new shareholder.",
+                  "Reasons for staying a private limited company": "As a specialist appliance supplier Ebac benefits from control of ownership, e.g. focusing its new washing machine solely on the UK; the Ebac Foundation reinvests profits into the business and community, which PLC shareholders demanding higher returns might not allow.",
+                  "Potential counterbalance": "Finance for expansion is more limited than for a PLC which can raise large sums through share issues, useful for washing machine expansion; a stock market listing may bring greater financial discipline (cutting costs, new revenue streams); the Foundation might be kept even as a PLC as part of the brand and community image.",
+                  "Potential judgement": "Ebac has grown successfully as a family-run private limited company specialising in niche markets; outside ownership is not needed and may detract from its community nature, while it keeps limited liability without loss of control; however expansion, especially into competitive mass markets such as washing machines where Haier operates, is likely to be limited by lack of access to finance from a small group of shareholders.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with developed chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Reasons for the UK as a production location": "Ebac employs 200 staff in the UK and has not followed competitors such as Indesit abroad; Extract E shows UK costs are higher than some but not as high as Italy, Germany and France; as of 2016 the UK is in the single European market, so exports to the EU face no tariffs, quotas or non-tariff barriers; North East labour costs are below the national average, reducing costs and improving profitability; producing washing machines in the UK for the UK market reduces transport costs and keeps Ebac close to customers.",
+                  "Potential counterbalance": "The UK still has some of the highest production costs of the 25 largest exporters, reducing margins or raising prices; Ebac is entering a global market dominated by Whirlpool and Bosch with lower average costs; the skills of its UK workers are widely available in places such as China, with infrastructure and ease of doing business; Brexit uncertainty over trade with the EU (70% of UK exports) may bring disruption, tariffs and safety standards.",
+                  "Potential judgement": "Ebac's commitment to the North East community (the Foundation) makes relocating difficult; its specialist products (dehumidifiers, water coolers) are less price-sensitive and customers value quality, which skilled North East staff provide better than cheaper locations such as China or Poland; but lower-cost rivals such as Haier mean the UK may suit specialist higher-priced products while mass market washing machines might be better produced in lower-cost locations such as China or Indonesia.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed and logical, coherent chains of reasoning, showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning are presented, but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted, but it will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - Global niche markets": "A global niche is a specialist segment of a global market with the marketing mix (for Haier, product design) adjusted to local needs; Haier has a history of success in niches (small low-energy washing machines in China, mini-refrigerators) and its market research identifies further niches (over-sized washing machines for Pakistan); niches bring higher profit margins as customers pay more to satisfy particular needs; they differentiate Haier from Bosch and Whirlpool, improving brand reputation and boosting sales of new products such as the Tianzun.",
+                  "Option 2 - Global mass markets": "The global mass market is much larger, increasing the chance of sales, especially as markets such as India expand; niches have limited sales volume, limiting long-term profitability despite higher margins; selling to niches demands costly research into local specialist needs, reducing margins; as a China-based business Haier has a production cost advantage over Whirlpool and Bosch, making competitive mass market supply possible.",
+                  "Potential judgement": "Niches let Haier establish itself globally without competing directly with established multinationals, but are limited in size and may not provide long-term growth; the Tianzun shows niches continue to evolve and product innovation could remain rewarding; overall it depends on the strength and adaptability of the Haier brand - if it can adapt its niche brand to the mass market and use low Chinese costs this may be the way forward, but if customers see Haier only as a niche supplier, mass market expansion may prove unsuccessful.",
+                  "MOPS recommendation": "Market - niches have loyal consumers and established brands, supporting penetration, but are limited in size; Objectives - global expansion implies growth in sales and revenue, and mass markets give more income streams; Product - with advancing technology a niche approach may be best as R&D costs may not be recouped so quickly from mass market sales (e.g. Tianzun); Situation - Haier could adapt the niche brand to the highly competitive mass market and capitalise on low costs in China.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2018-p2",
+            year: "June 2018",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_02_que_20180612.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-rms-20180815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (Mumtaz Food Group). Extract A - Mumtaz is an Asian food producer in Bradford, a private limited company owned and run by the Akbar family; established as a takeaway in 1979, it now owns three restaurants and food processing factories making ready meals; it has always used internal finance to establish and grow. Sales revenues around £25m; unlike rivals producing supermarket own-label ready meals, it sells most products under the Mumtaz premium brand; sold by Asda, Morrisons and Tesco and in more than 40 countries; the ready meals part of the Group is growing by 15-20% a year. In 2006 it launched Halal baby food; roughly half is bought by non-Muslim customers. It intends to continue organic growth, recently opened a second Bradford factory and is considering manufacturing in Asia. Extract B - Cost, sales and revenue data for a food producer: annual fixed costs £3m; selling price per unit £5; variable cost per unit £2; number of units sold 1.5m. Extract C - UK economic data 2016 and forecasts for 2020: economic growth (change in GDP) 0.5% -> 1%; inflation 1.2% -> 2.7%; unemployment 4.8% -> 6.5%; US$ to the £ exchange rate 1.23 -> 0.99. Extract D - The UK ready meals market grew by 2% in volume and value in 2016, helped by a trend towards premium products, convenience and more single-person households; supermarkets' own label products lead with a combined 68% market share (Tesco highest at 18%), offer different recipes to meet a wide range of tastes and rely heavily on price discounts and promotions for price-sensitive buyers; convenience and new product ranges are likely to drive sales.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Explain one reason Mumtaz has always used internal finance to establish and expand its business.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using the data in Extract B, calculate the margin of safety. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess whether expanding by organic growth was the right decision for Mumtaz.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Using the data in Extract C, assess the likely impact of the forecast changes in the UK economy on a business such as Mumtaz.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Mumtaz's aim is to become the UK's market leader in Asian ready meals. To achieve this, it could produce own label ready meals for supermarkets or focus on selling more Mumtaz premium brand name products.",
+                    prompt: "Evaluate these two options and recommend which is most suitable for Mumtaz to achieve its aim.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H (car industry). Extract E - MG Rover Group, the last UK-owned mass-production car manufacturer, failed in 2005; it did not produce new and improved cars, its brands (e.g. Triumph and Rover) competed with each other, the original Mini sold millions but never made much profit because of high production costs, and UK consumers increasingly preferred new foreign cars. Extract F - Production and wage cost data for a car manufacturer: monthly output 20,000 cars; number of production workers 400; labour cost per worker per month £2 000. Extract G - Toyota shareholders approved the issue of 50 million 'Model AA' shares, which must be held for five years, pay a guaranteed dividend rising each year, and can then be sold back at the purchase price or converted to ordinary shares; the aim is to raise $4 billion from long-term investors to invest in the car of the future; applications were about 10 times the amount on offer; managers see it as a response to short-termism, though some analysts criticise it for giving managers too much protection from shareholders. Extract H - VW aims to create 9,000 new jobs as it shifts to self-driving cars in 'the biggest modernisation programme' under new Chief Executive Matthias Müller, and has teamed up with Gett (an Uber rival) for a self-driving mobility service; in 2016 VW cut 30,000 jobs globally, partly due to falling popularity of diesel cars after a $15bn fine for cheating emission tests; the brand was already struggling with weak profitability, high labour costs and a complex organisational structure.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Explain one internal cause of the business failure of MG Rover Group.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the data in Extract F, calculate the monthly labour cost per car. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the likely effects of employee legislation on a business such as VW.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "Corporate timescales can be short-term or long-term.",
+                    prompt: "Assess Toyota's decision to issue 'Model AA' shares as a means of raising finance.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "VW's new Chief Executive has been given the aim of increasing the company's profitability. The two options VW is considering are to develop a new range of self-driving cars or to improve productivity.",
+                    prompt: "Evaluate these two options and recommend which is most suitable to achieve the aim of increasing profitability, for a business such as VW.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of internal finance - finance generated within the business/owner's capital, personal savings, retained profit - or giving a reason for using internal finance, e.g. retain control",
+                  "Application (up to 2): e.g. Mumtaz is a private limited company owned entirely by the Akbar family; high sales revenue and growth of ready meals indicate it can use retained profits; sales revenue of around £25m with ready meals growing 15-20% per year",
+                  "Analysis (1): e.g. internal finance is cheaper as there are no borrowing costs such as interest payments; internal finance enables the Akbar family to retain control of the business",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): margin of safety is the difference between actual output and break-even output; margin of safety = sales volume - break-even output",
+                  "Application: unit contribution = £5 - £2 = £3",
+                  "Application: break-even output = £3m / £3 = 1m units",
+                  "Application: margin of safety = 1.5m - 1m = 500,000 units",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS5, QS9. Can accept 0.5 million. Award 4 marks if the candidate only states 500,000 units; award only 3 marks if the candidate states/calculates 0.5.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with developed chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Organic growth occurs when a business expands internally and does not involve another business taking over or merging with it.",
+                  "Reasons for organic growth": "Mumtaz retains control, especially as a family-owned business; it maintains its existing management, structure and culture; it can plan and control growth, e.g. entering ready meals and Halal baby food and opening its own restaurants and factories.",
+                  "Possible counterbalance": "Organic growth is slower - Mumtaz has existed since 1979 and grown only gradually; it is limited, e.g. only expanding in the Asian food market; finance to fund it is limited as Mumtaz has only used internal finance.",
+                  "Potential judgement": "Right decision because it maintains control, which matters for a long-established business always owned by the Akbar family; not the right decision because Mumtaz may have been slower than competitors to grasp opportunities in the growing ready meals market.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with developed chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Economic growth is an increase in the output of goods and services over time; inflation measures the general rise in aggregate prices; unemployment is the % of the working population without a job and actively seeking work; the £/$ exchange rate is how many dollars can be exchanged for one pound.",
+                  Impacts: "Rising unemployment could hit Mumtaz's restaurants as customers cut back on meals out with lower disposable income; rising inflation (1.2% to 2.7%) may add to costs such as energy, reducing profit margins; a weaker £ (a fall of 24 cents between 2016 and 2020) could raise import costs, especially for ingredients priced in dollars.",
+                  "Possible counterbalance": "Rising unemployment may benefit ready meals as customers stay home and choose an 'affordable treat'; inflation may be passed on in higher prices with little impact as Mumtaz sells premium products; a weaker £ could benefit export sales, as ready meals are sold in more than 40 countries.",
+                  "Potential judgement": "Unemployment rising from 4.8% to 6.5% may hurt the restaurants as a luxury good, but may help by increasing availability of workers for the new Bradford factory; the impact may be negative for restaurants (more income elastic) but positive for ready meals, so the overall impact depends on which part of the business is bigger.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Marks for application and analysis include up to 2 marks for quantitative skills (QS9). Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed and logical, coherent chains of reasoning, showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning are presented, but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted, but it will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Arguments for producing own label ready meals for supermarkets": "The ready meals market grew by 2% in volume and value in 2016; supermarket own label has a combined 68% share (Tesco 18%) and Mumtaz already supplies Tesco, Asda and Morrisons; own label meets a wide range of tastes; Mumtaz has increased capacity to meet extra supermarket demand; higher demand may bring economies of scale and higher capacity utilisation, lowering unit costs and raising profitability and further expansion.",
+                  "Arguments for selling more Mumtaz premium brand name products": "Consumers are trending towards premium ready meals; future success may come from innovative new products and the Halal baby food range shows Mumtaz can develop them; Ansoff - market penetration, the least risky strategy; Porter - differentiation, giving competitive advantage through a USP of quality and authenticity; own label relies on price discounts and promotions, which focusing on the Mumtaz brand avoids, allowing higher prices.",
+                  "Possible recommendations": "Own label, because supermarkets hold 68% of the market and have greater distribution, helping Mumtaz become market leader in Asian ready meals; or the premium brand, because it is established and growing rapidly in UK supermarkets and abroad, is less risky as it is not dependent on a few supermarkets, and maintains competitive advantage through differentiation.",
+                  "MOPS recommendation": "Market - a growing market dominated by supermarket own brands suggests own label to become market leader; Objectives - an established premium reputation already supplying big supermarkets (e.g. Tesco 18%) suggests selling more Mumtaz brand products; Product - Mumtaz is innovative and new ranges drive sales, so own label offers more opportunities to sell a wider range; Situation - fast-growing ready meals (15-20% a year), exports to over 40 countries and plans to manufacture in Asia suggest focusing on the premium brand to build a global brand.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of an internal cause of business failure, e.g. machinery breakdown, cash flow problems",
+                  "Application (up to 2): e.g. failure to produce new and improved models; high production costs of the Mini",
+                  "Analysis (1): e.g. failure to produce new and improved models may lead to poor sales as customers prefer superior cars from foreign rivals; high production costs resulting from poor efficiency may lead to poor profit margins",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of labour productivity = output per month / number of workers",
+                  "Application: monthly labour productivity = 20,000 / 400 = 50 cars per worker",
+                  "Application: labour cost per car = £2,000 / 50",
+                  "Application: = £40",
+                  "Alternative method: total monthly labour costs = 400 x 2,000 = £800,000; labour cost per car = 800,000 / 20,000 = £40",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3. QS1, QS9. Award 4 marks if the candidate only states £40/40.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [8, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 7],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with developed chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Employee legislation ensures businesses comply with laws such as the national minimum wage, redundancy rights, equal opportunities and health and safety.",
+                  "Potential negative effects": "VW is cutting 30,000 jobs to reduce costs after the $15bn emissions fine, which may bring significant redundancy costs; creating 9,000 jobs for self-driving cars requires correct recruitment and selection procedures to avoid discrimination claims, making the process longer and more expensive; costs of complying with health and safety by ensuring safe working conditions in VW's factories.",
+                  "Possible counterbalance": "VW may restore its reputation by being seen as a good employer; it may gain favourable publicity and attract better quality candidates; complying with health and safety may bring fewer industrial accidents and improved employee morale.",
+                  "Potential judgement": "In the long term, complying with legislation may bring positive effects, helping VW restore its reputation with both employees and customers.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Note this mark scheme uses Level 3 = 5-7 and Level 4 = 8-10. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with developed chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Reasons for issuing AA shares (a long-term approach)": "Managers get more time to develop new cars because Model AA shares must be held for five years; Toyota aims to raise $4 billion for long-term investment in the car of the future (R&D, technology, staff development); shareholders could benefit from sustained profitability and a guaranteed annual dividend.",
+                  "Possible counterbalance": "Some shareholders may demand more immediate rewards, forcing managers to work more efficiently; shareholders may push managers to respond quickly to market changes (rising demand for hybrid and electric cars, criticism of diesel) to generate immediate returns; shareholders own the business and may expect good dividends and a rising share price each year.",
+                  "Potential judgement": "Toyota is in a highly competitive, dynamic market and must respond quickly to changing preferences, supporting the needs of short-term investors; but it needs long-term investors to fund assets such as robotics and plant to stay competitive in an innovative market; ultimately a long-term approach only works if shareholders are patient and accept the strategy.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed and logical, coherent chains of reasoning, showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning are presented, but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted, but it will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Arguments for developing a new range of self-driving cars": "The self-driving car market is predicted to grow and VW hopes to exploit this through its partnership with Gett; consumers may prefer self-driving cars for convenience; diesel cars are becoming less popular so VW moves away from a declining market; Ansoff - new product development, possibly gaining competitive advantage over rivals.",
+                  "Arguments for improving productivity": "Higher productivity may reduce unit costs by spreading fixed costs of labour or machinery over more units; lower unit costs allow more competitive prices and/or higher profit margins; car production is capital intensive so productivity may come from investment in new technology; with 30,000 jobs cut, VW may need to raise the productivity of its existing workforce to meet demand.",
+                  "Potential recommendation": "Self-driving cars could restore VW's brand image and attract customers, raising revenue by more than costs; improving productivity is essential because lower unit costs matter in a competitive industry with a possibly high PED; in the short term productivity is more important to restore profitability after the emissions scandal, while in the long term self-driving cars matter more given predicted industry changes.",
+                  "MOPS recommendation": "Market - the dynamic car market (rising popularity of electric and self-driving cars) suggests developing self-driving cars; Objectives - weak profitability means VW should improve productivity in the short term; Product - declining diesel popularity means VW must innovate with self-driving cars; Situation - VW 'needs a real shake-up' with high labour costs and a complex structure, so it should improve productivity first to generate profits for self-driving development.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2018-p3",
+            year: "June 2018",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_que_20180619.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_rms_20180815.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (the chocolate market). Extract A - Top 10 UK chocolate brands by revenue (£m), 52 weeks to 14/09/14 vs 52 weeks to 13/09/15: 1 Maltesers (Mars UK Ltd) 47.1 / 49.7; 2 Cadbury's Dairy Milk (Mondelēz International) 53.4 / 44.6; 3 Galaxy (Mars) 33.7 / 36.6; 4 Snickers (Mars) 33.8 / 35.0; 5 Mars Bar (Mars) 30.5 / 29.6; 6 M&Ms (Mars) 21.3 / 25.1; 7 CDM Buttons (Mondelēz) 23.4 / 23.7; 8 Twix (Mars) 24.4 / 22.9; 9 Twirl (Mondelēz) 20.7 / 22.5; 10 Kinder Surprise (Ferrero Ltd) 19.7 / 22.0. Extract B - Nestlé operates in 197 countries with 339 000 employees in roles from engineering, production and technical to R&D, finance, marketing and purchasing, some working across departments; it offers flexible hours rather than common start and finish times, working from home and a dog friendly office at Gatwick HQ. Extract C - Global dark chocolate sales are expected to rise from $34.25bn to $51.7bn by 2019 (average 9% a year) due to growing awareness of health benefits and rising demand in developing countries from higher incomes, changing eating habits and urbanisation; India is the fastest growing chocolate market, partly driven by dark chocolate such as a dark Kit Kat Senses; Europe 45% of the global dark chocolate market, Americas 32%, Asia-Pacific 12%, rest of world 11%. Extract D - Thorntons failed to revive its chocolate business despite more stores and supermarket sales; Ferrero International (global revenues over £8bn in 2015) bought Thorntons for £112m to expand in the UK, a market worth an estimated £6bn; another British chocolate business lost overseas (Cadbury and Green & Black's to Kraft/Mondelēz in 2010, Rowntree to Nestlé in 1988). In 2014 Ferrero bought the Oltan Group, the world's largest hazelnut processor (Trabzon, Turkey, previously family-owned, five production facilities exporting to the EU and globally, annual turnover £600m), for an undisclosed sum; hazelnuts are a key commodity for Ferrero Rocher, Nutella and Kinder Bueno.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Using the data in Extract A, assess two benefits of branding for a chocolate manufacturer, such as Mars UK Ltd.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Assess the likely value of having a flexible workforce for a business, such as Nestlé.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the importance of cultural and social factors that might affect the sales of dark chocolate in emerging economies, such as India.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "In 2014 Ferrero International took over the Oltan Group. In 2015 it took over Thorntons.",
+                    prompt: "Using the data in Extract D, evaluate these two takeovers and recommend which one is most likely to have affected the profits of Ferrero International.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H (Cadbury). Extract E - Cadbury has nearly $4bn in sales, forecast to grow to $6bn by 2020; history back to John Cadbury's Birmingham shop in 1824, first bar 1847, Dairy Milk 1905; over 200 products (Flake, Wispa, Buttons, Curly Wurly, Crème Egg mainly sold at Easter); sold in 40 countries and manufactured in 10. Extract F - Cadbury used Fairtrade cocoa (up to 200 000 farmers in countries such as Ghana and Ivory Coast earned a minimum of £1 600 per tonne) but in November 2016 switched to the Cocoa Life partnership, which does not apply the same price rules or guarantee other ingredients (nuts, sugar, raisins) are responsibly sourced; at the end of 2015 cheaper sultanas were added to Fruit & Nut alongside raisins; Mondelēz scrapped Christmas chocolate gifts to former employees to help plug the pension deficit; but it pledged all standard single-serving bars would contain under 250 calories by end-2015 in response to UK government voluntary anti-obesity policies. Extract G - Mondelēz and Unite agreed a £75m modernisation of Cadbury's Birmingham factory: over 200 people took voluntary redundancy by end-2016 (some packages over £100 000); four state-of-the-art lines replace six outdated ones; the 650 remaining staff will receive training and a 2% pay increase; it should help meet growing demand for Dairy Milk, Marvellous Creations and Oreo bars. Forecast returns - Year: net cash flow (£m), discount factor at 10%: 0: (75), 1.0; 1: 20, 0.909; 2: 25, 0.826; 3: 30, 0.751; 4: 22, 0.683; 5: 20, 0.621. Extract H - Competitive advantage diagram: cost competitiveness (cost leadership, economies of scale, productivity, outsourcing and offshoring) and differentiation (advertising and branding, reliability and reputation, quality and design, packaging and distribution).",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Assess two benefits of quality control for a business, such as Cadbury.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Assess the likely value of Corporate Social Responsibility to a business, such as Cadbury.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Using the data in Extract G, the Net Present Value (NPV) and Payback, assess Mondelēz International's investment in Cadbury's modernisation.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "Cost competitiveness and product differentiation are two key strategies to achieve global competitive advantage.",
+                    prompt: "Evaluate these two strategies and recommend which one would be better to achieve a global competitive advantage for a business, such as Cadbury.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning, showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding, applied accurately to the business and its context; chains of reasoning are presented, showing cause(s) and/or effect(s), but may be assertions or incomplete; an attempt at an assessment is presented that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Branding creates an image or name giving a product a recognisable, positive identity; more branding raises the probability of sales, aiding promotion and helping create, maintain and increase sales.",
+                  Benefits: "Mars UK Ltd achieves more sales by having more brands - 6 of the top 10 positions, £198.9m in 2015 (64% of the top 10 combined), stronger than 2014 when the same bars achieved £190.8m of £308m (62%); a well-known brand can be transferred to other products such as Mars milkshakes, raising sales further, or allow higher prices as consumers trust the quality (PED relatively price inelastic).",
+                  "Possible counterbalance": "Branding can be expensive - developing new products, changing production processes, packaging, advertising and marketing for products such as Mars bars; a problem with a single product (e.g. food poisoning) can damage the business's reputation and sales of its whole range.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Marks for application and analysis include up to 2 marks for quantitative skills (QS2, QS8). Level 0 = a completely inaccurate response.",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Flexible working is moving away from fixed tasks, working hours and locations; flexible hours may make it easier to recruit and retain staff.",
+                  "Value of flexible working": "Gives Nestlé flexibility in deploying staff while controlling costs; finance staff working from home may be more productive without travel time; flexible roles across departments let Nestlé match staffing to changes in chocolate demand; marketing staff at Gatwick HQ may be more motivated if they can bring their dog to work, raising productivity.",
+                  "Possible counterbalance": "Production staff are unlikely to work from home given machinery and plant; staff without dogs may resent those who bring them, affecting relations and productivity; dogs may be distracting; home workers may be less productive when not closely monitored (McGregor Theory X employees).",
+                  "Possible judgement": "Success depends on the nature of the business and the job - flexible working is less likely in engineering and production given practicalities such as changing from one chocolate bar to another on the production line.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with developed chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Culture is shared attitudes, values, customs and expectations; social differences arise when groups have different ways of communicating and ways of life, affecting product preferences and consumption; packaging and ingredients may need adapting to languages and climates or sales could suffer.",
+                  "Importance of cultural and social factors": "Changing eating habits in India (e.g. snacking) may raise demand for on-the-go foods like chocolate; rising incomes in emerging economies may raise demand for western products such as chocolate; Indian consumers appear to prefer dark chocolate (dark Kit Kat Senses), so production and sales should be targeted accordingly.",
+                  "Potential counterbalance": "Growing prosperity and incomes are more significant as chocolate is a luxury good for most Indian consumers; heavily branded chocolate such as Cadbury or Nestlé may be a status symbol, selling regardless of taste; mistakes from unintended meanings or poor translations are less common with globalisation.",
+                  "Possible judgement": "Businesses entering new markets must take time to know their target markets, possibly via partners, joint ventures, local agents or employees who understand the Indian chocolate market; tastes must be met in flavour, packaging and marketing - e.g. Bollywood celebrity endorsement combines respect for culture with promotion to raise sales.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed and logical, coherent chains of reasoning, showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning are presented, but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted, but it will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A takeover occurs when one business buys over half the shares in another business to gain control.",
+                  Thorntons: "Expediency - access to expertise, assets and resources to increase UK production without new plant or new staff; £112m is affordable given revenues over £8bn (1.4% of 2015 turnover), possibly maximising shareholder wealth; strategic access to high street stores in a UK market worth £6bn; a defensive move reducing luxury chocolate competitors; however Thorntons is struggling (stores may not cover costs, supermarket sales face Nestlé and Mars) and a takeover may not reverse this; the Oltan Group may well have cost more given its size and £600m turnover.",
+                  "Oltan Group": "Backward vertical integration with a supplier removes an intermediary profit mark-up, reducing costs; may give access to the Turkish market and other developing countries that import Oltan hazelnuts; longer-term profits may be higher as hazelnuts are key for Nutella, Kinder Bueno and luxury chocolates; may increase market dominance in nut chocolates, especially if the plant processed other nuts such as almonds or brazil nuts; however Ferrero may lack hazelnut processing expertise, leading to culture clashes and diseconomies of scale.",
+                  "Possible recommendation": "It depends on the nature of the takeovers - a hostile takeover may cause resentment among shareholders or employees, harming long-term profitability; if the Thorntons takeover was friendly and saved jobs or the business, it may be the better choice than Oltan, improving labour productivity and short-term profits.",
+                  "MOPS recommendation": "Market - in a competitive market against Nestlé and Mars another manufacturer may bring economies of scale and lower average costs; Objectives - taking over a supplier (Oltan) should cut production costs and raise profits; Product - hazelnuts are only one ingredient in a limited range, so cost savings may not be significant overall; Situation - with increasing international competition it may be less risky and more profitable long term to own ingredient suppliers, given Oltan's monopoly position and ability to charge rivals such as Nestlé high prices.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Marks for application and analysis include up to 2 marks for quantitative skills (QS2, QS8). Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning, showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding, applied accurately to the business and its context; chains of reasoning are presented, showing cause(s) and/or effect(s), but may be assertions or incomplete; an attempt at an assessment is presented that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Quality control refers to traditional methods of checking that final products are of a good enough standard, capable of doing what they were intended to do.",
+                  Benefits: "Sample inspections of chocolate shapes, taste and packaging before sale; prevents faulty chocolates such as misshapen, discoloured or damaged Wispas reaching customers, avoiding loss of reputation and falling sales of other chocolates like Flakes; avoids costly returns through retailers, particularly problematic for Easter gifts.",
+                  "Possible counterbalance": "Quality control does not find out why chocolates were misshapen or damaged, it only prevents faulty chocolates being sold (unlike TQM); it reinforces the idea that mistakes are unavoidable and may make production staff complacent, as finding faults is the quality controller's responsibility.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response.",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced and well contextualised, using quantitative and qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "CSR involves a business paying attention to the needs and preferences of all stakeholders, not just shareholders - including customer care, staff working conditions and pay, product quality and value for money, and environmental impact.",
+                  "Positive values of CSR": "Looking after employees (gift of chocolates, paying at least the living wage, housing and amenities like schools) and supporting the Government's voluntary obesity policies improves motivation and product quality; supporting social initiatives should improve Cadbury's reputation, making consumers more likely to buy.",
+                  "Potential counterbalance": "Financial considerations may matter more, e.g. using value for money ingredients (sultanas) in Fruit & Nut to cut costs; chocolate is often an impulse purchase so consumers may not discriminate on CSR; consumers seeking lower prices (e.g. in a recession) may be unaffected by dropping Fairtrade, and Cocoa Life beans or non-Fairtrade sugar may be better quality.",
+                  "Possible judgement": "CSR may reduce profitability through higher costs (cocoa farmers paid £1,600 per tonne), limiting product development and future choice; but CSR is a long-term approach that may improve long-term profitability in a highly competitive chocolate market by providing differentiation.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; a coherent and logical chain of reasoning, showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, and shows an awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported by relevant and effective use of the business behaviour/context; analytical perspectives are presented, with developed chains of reasoning, showing cause(s) and/or effect(s); an attempt at an assessment is presented, using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; chains of reasoning are presented, but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Quantitative - Payback": "Cumulative cash flows: year 1 = 20, year 2 = 45, year 3 = 75, so payback = exactly 3 years (workings not required).",
+                  "Quantitative - NPV": "DCF: 20 x 0.909 = 18.18; 25 x 0.826 = 20.65; 30 x 0.751 = 22.53; 22 x 0.683 = 15.03; 20 x 0.621 = 12.42; total 88.81; NPV = 88.81 - 75 = £13.81m (workings not required).",
+                  Analysis: "A 3-year payback is very favourable when capital investments often take 10 years or more; recovering the investment quickly lets later profits fund other investments such as new plants in emerging economies; a positive NPV of £13.81m at a 10% discount rate is very favourable, even allowing for training costs and 2% pay increases.",
+                  "Possible counterbalance": "All appraisal methods assume forecast cash flows are achieved - a new competitor or a cocoa shortage from drought in Africa could change this; a senior manager may have manipulated forecasts to promote the investment; 10% is high compared with the 0.25% base rate (2017), so a lower rate would give a higher NPV.",
+                  "Possible judgement": "Focusing on financial values may miss qualitative issues - corporate objectives, CSR, market position and long-term survival, helped by state-of-the-art production lines; given Cadbury sales of 4bn rising to 6bn by 2020, long consumer loyalty and growing demand for Dairy Milk, Oreos and Marvellous Creations, the investment is worthwhile.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Marks for application and analysis include up to 6 marks for quantitative skills (QS6, QS8, QS9). Payback = 3 years; NPV = +£13.81m; workings not required. Note the MS judgement bullet gives Cadbury sales as £4bn rising to £6bn whereas Extract E states $4bn and $6bn. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; well-developed and logical, coherent chains of reasoning, showing a range of cause(s) and/or effect(s), with arguments fully developed; quantitative and/or qualitative information used well to support judgements; a full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendation(s).",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding, supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so that cause(s) and/or consequence(s)/effect(s) are complete, showing an understanding of the question, with arguments well developed; quantitative or qualitative information is introduced in an attempt to support judgements, with a partial awareness of the validity and/or significance of competing arguments, and may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding, which are applied to the business example; arguments and chains of reasoning are presented, but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted, but it will not successfully show an awareness of the key features of business behaviour or business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted, but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Competitive advantage is a feature of a business and/or its products enabling it to compete effectively with rivals; cost-based advantage may come from purchasing economies of scale (cocoa beans, sugar) or mass marketing such as TV advertising; differentiation may come from chocolate quality via high value ingredients, batch production or hand-making by skilled staff.",
+                  "Cost competitiveness": "Adopting Cocoa Life instead of Fairtrade to save costs; offshoring to low-cost emerging economies (Argentina, Brazil, India) enabling price competitiveness for products like Dairy Milk; outsourcing some bars to low-cost labour countries such as Poland to offset higher ingredient costs from the fall in sterling; cost leadership pricing for price-sensitive segments, e.g. CDM multipacks for families on a budget; productivity gains from automation via the £75m Birmingham investment, e.g. 24-hour Crème Egg production before Easter.",
+                  "Product differentiation": "Building brand and reputation, e.g. promoting the Cocoa Life partnership with Ghana farmers (though less ethical than Fairtrade); improving quality with more cocoa solids and butter to justify premium prices and boost revenue above 4bn; ensuring reliability in taste, colour and safety (the 2006 salmonella outbreak cut some sales by up to 20%); augmenting the product, e.g. Cadbury World; advertising and promotion, e.g. £10m a year sponsorship of Coronation Street 1997-2006.",
+                  "Possible recommendations": "Depends on the economic climate/ownership (Mondelēz) - cost competitiveness may succeed as the market becomes more price-sensitive due to cocoa shortages or falling real incomes; as incomes in emerging economies such as India rise, differentiation may attract buyers of more indulgent chocolate, positioning Cadbury as a lifestyle product like Coca Cola.",
+                  "MOPS recommendation": "Market - an oligopoly dominated by Mars and Nestlé, so differentiation could extend choice and win sales in new markets like India and Brazil; Objectives - differentiation extends choice for impulse buys, so a range (Flake, Twirl, CDM) gives advantage over Mars; Product - rising world cocoa prices make cost competitiveness critical to offset costs against rivals like Nestlé; Situation - cost competitiveness may be more successful as markets become price-sensitive with cocoa shortages or falling real incomes.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2017-p1",
+            year: "June 2017",
+            paperName: "Paper 1 — Marketing, people and global businesses",
+            paperCode: "9BS0/01",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_01_que_20170613.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-01-msc-20170816-v-2.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (global airline industry). Extract A: bar chart of annual growth in global air traffic passenger demand (%): 2005 7.1, 2006 5.6, 2007 8.8, 2008 1.5, 2009 -1.4, 2010 8, 2011 6.3, 2012 5.3, 2013 5.7, 2014* 6, 2015* 6.7 (* = forecast). Air passenger numbers were forecast to be 3.5bn people in 2015 and 3.75bn people in 2016. Extract B: line graph of jet fuel price per gallon (July of each year, 2005-2015); the price peaked near $3.90 in 2008, stayed around $2.75-$3.25 from 2011 to mid-2014, then fell sharply to roughly $1.50-$1.80 in 2015 (values read from the chart). Extract C: Spirit Airlines, one of the fastest growing US airlines, operates fewer flights on routes that already have many competitors; its pricing is not simply undercutting but a radically different structure: lower fares, less legroom, additional charges for all extras (luggage, boarding pass printing); no travel agents - customers can only book online. Emirates, one of the fastest growing airlines in the Middle East and Europe, has clear market positioning: a better product than many competitors, a fantastic business class experience, high specification aircraft and exceptional customer service. Extract D: Rolls-Royce, a 107-year-old prestigious British engineering company employing 54,000 people (almost a third highly skilled engineers), suffered falling profits in 2015. New CEO Warren East removed a layer of experienced senior management; without it 'a week would be saved for every month it took to make a decision'. Demand for its large passenger aircraft engines is unchanged, but airlines using more fuel-efficient modern aircraft mean profits from spare parts and servicing have fallen significantly; sales of engines for corporate jets have declined sharply.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    preamble: "Air passenger numbers were forecast to grow from 3.5bn people in 2015 to 3.75bn people in 2016.",
+                    prompt: "Using the data from Extract A and the information above, calculate the difference in percentage growth in air passenger numbers between 2015 and 2016. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using the data from Extract B, draw a supply and demand diagram for airline tickets to show the likely effects of the change in jet fuel prices between 2014 and 2015.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the consequences to a business, such as Spirit Airlines, of only selling its tickets online.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess the likely importance of its market positioning to the success of a business, such as Emirates.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Despite Warren East's restructuring, Rolls-Royce still has a 'tall' organisational structure. Two options for the future of Rolls-Royce are to remain as a tall structure or to change to a flat organisational structure.",
+                    prompt: "Evaluate these two options and recommend which is most suitable for a business, such as Rolls-Royce.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-G (Pfizer, multinationals and Ireland). Extract E: in 2015 US healthcare business Pfizer announced a $160bn merger with Irish Botox maker Allergan plc, creating the world's largest drug producer and moving Pfizer's headquarters to Dublin, Ireland (an EU member); it also manufactures in Cork and Sligo. It was the biggest ever relocation of a US company's headquarters overseas to lower its taxes. The deal gave access to about 70 additional worldwide markets for specialist Allergan products (Botox, Alzheimer's drug Namenda, dry-eye medication Restasis). Job losses were not known. It was 166-year-old Pfizer's fourth merger/takeover in 15 years (after Warner-Lambert, Pharmacia and Wyeth). Pfizer made profits of $9.135bn in 2014. Global healthcare mergers exceeded $600bn in 2015, a record year. Extract F: top rate of corporation tax (% of profits), 2014 / 2015: Ireland 12.5 / 12.5; UK 21 / 20; USA 40 / 40; Asia average 21.91 / 21.96; EU average 21.34 / 22.25; Global average 23.64 / 23.72. Extract G: in 2015 Microsoft was Ireland's largest business (turnover EUR 19.8bn), one of seven multinationals in Ireland's top ten businesses (with Google, Dell, Oracle); only three Irish companies (e.g. CRH, DCC) were in the top ten. Multinationals bring knowledge and technology and increased competition, but evidence of direct effects in Ireland is mixed: positive impacts in software and pharmaceuticals and some evidence linking FDI to higher exports and productivity. Multinationals have affected Ireland's labour market, including average wages; high demand for high-skilled labour may cause skill shortages, notably in IT.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Explain how Pfizer could benefit from using a price skimming strategy.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the data in Extracts E and F, calculate the amount Pfizer would have saved in 2014 if it had paid corporation tax in Ireland, rather than the USA. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess the ways in which specialisation might give a business, such as Pfizer, a competitive advantage when trading internationally.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the likely impact on a business such as Pfizer, of a global merger with a business such as Allergan.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "The government of Ireland supports the location of multinationals, such as Pfizer, in their country if this benefits the local and national economy overall.",
+                    prompt: "Evaluate the likely impacts on the Irish economy of Pfizer locating there and recommend if the Irish government should have supported this decision or not.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of how to calculate percentage change = (number of people in 2016 - number of people in 2015) / number of people in 2015",
+                  "Application: market growth from 2015 to 2016 = 3.75bn - 3.5bn = 0.25bn people",
+                  "Application: percentage change = 0.25 / 3.5 x 100 = 7.14% (2dp)",
+                  "Application: percentage growth in air passenger demand in 2015 was 6.7% (Extract A), so difference = 7.14 - 6.7 = 0.44 percentage points",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (QS2, QS9). Accept 1 d.p., i.e. 0.4%. NB if the candidate only writes 0.44%, award 4 marks.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): correctly constructing supply and demand curves",
+                  "Knowledge (1): correctly labelling axes, price and quantity",
+                  "Application (1): correctly interpreting the shift in the supply curve to the right",
+                  "Analysis (1): drawing the original and new equilibrium and the consequences on the quantity and price axes",
+                ],
+                guidance: "4 marks: Knowledge 2, Application 1, Analysis 1 (QS3: construct and interpret a range of standard graphical forms).",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Selling online means tickets are purchased electronically via a website or application.",
+                  Consequences: "Costs of distributing tickets fall to virtually zero, letting Spirit cut fares or raise profit margins if prices stay the same; booking from home at any time is quicker and easier and customers can track price changes for the best price, which may raise sales volume; customers are less likely to expect the extra service of ticket agents or call centres, so operating costs should be lower.",
+                  "Potential counterbalance": "Customers do not gain the service a ticket agent offers, such as explaining additional costs in the ticket price, which may reduce sales; Spirit needs effective back-office support so online booking is reliable and secure, as there is no alternative method of purchase; not all potential customers are able or comfortable to pay online and may prefer an agent, reducing sales from this segment.",
+                  "Potential judgement": "Low-cost airlines such as Spirit rely on minimising operating costs to pass savings on in lower fares, and online sales are one of the simplest and most reliable ways to do this, which most customers expect; however faceless online systems that add charges (luggage, insurance) can contribute to poor customer service reputations, limiting customer numbers and market growth.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response. (First counterbalance bullet recovered from the raw MS text; it was dropped from the cleaned extraction.)",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Market positioning is an effort to influence consumer perception of a brand or product relative to competing brands, achieved through product differentiation and adding value.",
+                  "Importance of positioning": "Emirates positions at the higher price/higher quality end by investing in customer service and high quality aircraft; this lets it charge a premium price based on reputation and brand strength, possibly giving higher margins; it differentiates Emirates from competitors such as British Airways that emphasise lower prices, convenience or speed.",
+                  "Potential counterbalance": "Other factors matter, such as the routes offered, which must match customer requirements; speed and convenient flight times may matter more to some customers than quality aircraft and service; a luxury market position is vulnerable to external shocks such as war or recession, so factors such as security may be more important; ultimately ticket price may be most important, as tickets are a large share of travel budgets, especially for passengers paying for children or relatives.",
+                  "Potential judgement": "Positioning is very important because Emirates focuses on the business traveller, a competitive market differentiated on quality and service, where firms want employees to travel in comfort and arrive ready to work; but image and positioning are less important than practical considerations for many customers, e.g. leisure or long-haul family travellers concerned with price and schedule convenience.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments; may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or the business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - tall structure": "Many layers and a narrow span of control; may have evolved over 100+ years as functions such as parts and servicing were added; removed senior managers may have been experienced, so valuable expertise that could have improved profit may be lost; allows careful supervision of staff doing technical engineering tasks, minimising waste; clear lines of responsibility and accountability help identify those responsible for poor quality; horizontal communication often better with narrow spans, useful with different departments and 54,000 employees; clearer and more promotion opportunities can motivate workers starting in simple manufacturing tasks, raising productivity and loyalty.",
+                  "Option 2 - flatter structure": "Few layers and a wider span of control; shorter chain of command gives more effective vertical communication, making the organisation more responsive in a competitive market; faster decision-making with fewer management levels ('a week would be saved for every month it took to make a decision'); likely to reduce the total wage bill, helping profitability after poor 2015 profit performance; wider spans mean more delegation, allowing engineers to respond to customer needs where competitors are taking market share.",
+                  "Potential judgement": "The decision should depend on the reasons for restructuring - removing one layer is a small action in an organisation of Rolls-Royce's size; if cost-cutting and improving profitability are the short-term aim, the flatter structure should be followed, and East has hinted it would speed up decision-making; if East is more concerned with keeping control through closer supervision and accountability, a taller structure with narrow spans of control would be better.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of price skimming, e.g. setting a high price at the launch of a product to take advantage of those wanting to be the first people to purchase",
+                  "Application (up to 2): contextualised example, e.g. Pfizer sells healthcare products; customers will be prepared to pay a high price for new treatments in a new market; Pfizer sells some products that have a cosmetic element",
+                  "Analysis (1): developing a reason/cause/consequence of price skimming, e.g. price skimming will allow Pfizer to recover its relatively high R&D costs to enable a profit",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of how corporation tax is calculated, e.g. profit x corporation tax rate (%)",
+                  "Response version 1 (assumes $9.135bn is before tax) - Application: USA tax 2014 at 40% = $9.135bn x 40% = $3.654bn",
+                  "Application: Ireland tax 2014 at 12.5% = $9.135bn x 12.5% = $1.141875bn",
+                  "Application: saving = $3.654bn - $1.141875bn = $2.512125bn",
+                  "Alternative method for version 1: $9.135bn x 1.4 = $12.789bn, less $9.135bn = $3.654bn (USA); $9.135bn x 1.125 = $10.276875bn, less $9.135bn = $1.141875bn (Ireland); saving = $2.512125bn",
+                  "Response version 2 (assumes $9.135bn is after tax) - Application: before-tax profit = after-tax figure / (100% - tax rate %) x 100",
+                  "Application: USA: $9.135bn / 60 x 100 = $15.225bn before tax, so tax paid = $15.225bn - $9.135bn = $6.09bn",
+                  "Application: Ireland: $9.135bn / 87.5 x 100 = $10.44bn before tax, so tax paid = $10.44bn - $9.135bn = $1.305bn",
+                  "Application: saving = $6.09bn - $1.305bn = $4.785bn",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (QS2, QS9). Version 1: if answer given is $2.512125bn award 4 marks; accept any accurate version of $2.5bn to a range of decimal places. Version 2: accept any answer rounded correctly up to 1 d.p., i.e. $4.8bn or $4.79bn. (The MS as printed shows '$3.654 - $1.411875' in the version 1 subtraction, a typo for $1.141875; its alternative method prints $2.51225bn.)",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Specialisation means a business concentrates on a specific range of products or services.",
+                  "Arguments for": "The healthcare market is dominated by a few multinationals, as implied by the record year for global healthcare mergers in 2015; healthcare products are extremely specialised, needing large R&D and specialist employee skills, so firms may need to sell internationally to recover high R&D and labour costs; specialisation means Pfizer does not compete directly with the same product against businesses such as AstraZeneca in a national market, so it can charge a premium price and gain competitive advantage through differentiation.",
+                  "Potential counterbalance": "Specialisation makes Pfizer vulnerable to changes in market demand, e.g. sudden growth in health areas it is not involved in; R&D in pharmaceuticals is necessary but extremely expensive, and unsuccessful specialisation can hit profit if development costs are not recovered; international advantage can instead come from being the lowest cost producer, so Pfizer might focus on mass market products such as painkillers to benefit from lower average costs.",
+                  "Potential judgement": "Specialisation based on intense and expensive R&D is more likely to give Pfizer an international competitive advantage based on differentiation, given the nature of the products and the dynamic market.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A global merger is when companies from different countries combine assets and operations; Pfizer is based in the USA and Allergan in Ireland, part of the EU.",
+                  "Likely benefits": "Reduces Pfizer's corporation tax bill as Irish rates are much lower than US rates, increasing available profits; Ireland and the EU give new markets for Pfizer products, spreading risk or extending product life cycles of established drugs; once in the EU it can trade freely with all member states without trade restrictions, unlike exporting from America; maintains global competitiveness by using Allergan's existing infrastructure and supply contracts to enter new international markets more easily.",
+                  "Potential counterbalance": "Allergan is established in a different country and market that Pfizer may not fully understand, possibly requiring expensive market research; human resource implications including redundancies for duplicate roles; culture clashes over objectives or management styles may cause conflict over marketing strategies (Allergan focused on cosmetics, Pfizer on pharmaceuticals); the focus on a lower tax bill could damage the reputation of the new Pfizer and future sales.",
+                  "Potential judgement": "Short-term benefits from lower corporation tax, access to EU markets and new products such as Botox in which Allergan has expertise; longer-term difficulties from the ethical questions raised by its tax affairs and managing the new business without the diseconomies of scale often caused by global mergers.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments; may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or the business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Decision for": "Foreign multinationals bring skills and new technology not always present in Ireland, which can spill over to local firms through technological transfer, making them more innovative and productive; Dublin pharmacies could benefit from more competition among drug manufacturers, increasing choice and reducing prices in Ireland and the EU; a pharmaceutical business broadens the employment base beyond IT and building, reducing dependence on a few sectors; Cork-area supply chain businesses gain sales; recruitment of skilled staff may raise average wages, local spending and GDP; the government could gain corporation tax, VAT and other revenues.",
+                  "Decision against": "Irish businesses may not be able to match higher wages and lose the most able scientists and healthcare staff; skills shortages elsewhere in the Irish healthcare sector; Pfizer remains majority US-owned and may send profits back to shareholders abroad, so Ireland does not benefit from investment and spending in the long run; the economy is already dominated by multinationals such as Microsoft, increasing vulnerability to MNCs relocating at short notice without Irish businesses to replace them; Irish expertise is mainly in IT services, not pharmaceuticals, so Irish workers may not benefit.",
+                  "Potential judgements": "Support: gains in corporation tax revenue and potential employment, with tax revenue spent to support local firms, new specialisms and education and training, and the local supply chain benefiting from new demand. Oppose: Ireland is already overly dependent on multinationals and vulnerable to sudden relocation; Pfizer's decision appears based on reducing its tax bill, so it is very likely to leave (e.g. for Hungary with a 10% tax rate) as quickly as it arrived, hugely damaging consumers and Irish businesses.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2017-p2",
+            year: "June 2017",
+            paperName: "Paper 2 — Business activities, decisions and strategy",
+            paperCode: "9BS0/02",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_02_que_20170620.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9bs0-02-rms-20170816.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (Morrisons supermarket). Extract A: Morrisons' mission statement - more to Morrisons than just numbers; a business that believes in human, ethical and ecological values; fresh attitudes and firm principles; 'one team all sharing the same vision', respecting differences. Extract B: selected data from Morrisons' 2015 Annual Report (2015 GBPm / 2014 GBPm): Inventory 658 / 852; Debtors 239 / 316; Cash 241 / 261; Total current assets 1138 / 1429; Total current liabilities 2273 / 2873; Pre-tax profit 217 / 792. Extract C: 2015 market share %: Tesco 28.5, Asda 16.2, Sainsbury's 16.1, Morrisons 11.0, Co-operative food 5.9, Waitrose 5.2, Lidl 4.3, Aldi 5.6, Iceland 2.2, Others 5.0. Changes in market share in 2015: Tesco -1.7%, Asda -3%, Sainsbury's 1.1%, Morrisons -1%, Co-operative food 1%, Waitrose 2.1%, Aldi 17.6%, Lidl 17.9%, Iceland 3.2%. Extract D: Morrisons' revenue and share price have risen for the first time in almost four years under new boss David Potts, who shared his vision for a turnaround, replaced several directors and sold off 140 convenience stores. Falling consumer incomes had moved shoppers to discounters such as Aldi and Lidl; Potts cut prices with the 'I'm cheaper' campaign. Research shows cheap prices influence supermarket choice but overall customer experience (range and quality, store layout, service) also matters. An ageing population and more single-person households mean more frequent grocery trips; consumer confidence has improved due to continued low interest rates and falling energy prices.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Explain how Morrisons may benefit from having a mission statement.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Using the data in Extract B, calculate the difference in Morrisons' acid test ratio between 2014 and 2015. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "1(c)",
+                    prompt: "Assess the likely effects on a business, such as Morrisons, of a more competitive environment.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    prompt: "Assess whether the transformational leadership shown by David Potts is the main cause of Morrisons' improved performance.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(e)",
+                    preamble: "Morrisons aims to regain its market share. The two options the management are considering are either to cut prices further, or to improve its overall customer experience.",
+                    prompt: "Evaluate these two options and recommend which option might be preferred by Morrisons' shareholders.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H (soft drinks and consumer goods). Network diagram for Innocent Drinks' launch of a new line of smoothies (durations in days): node 1 to node 2 via A (3) or B (2); node 2 to node 3 via C (8), D (4) or E (3); node 3 to node 4 via F (3) or G (2); node 4 to node 5 via H (4). Extract E: in 2009 Innocent Drinks Ltd raised GBP 30m for expansion by selling 18% of its shares to Coca-Cola, the world's biggest soft drinks company; the owners valued Coca-Cola's funds and 120 years of experience over two other fund-raising offers ('only a minority investor, but we can also draw on their expertise for advice' - Richard Reed). Some customers felt a fizzy drinks company (eight teaspoons of sugar per can of its best-selling drink) was not an ideal investor for a social enterprise proud of its wholesomeness and independence. In February 2013 Coca-Cola raised its stake to 90% and took full control. Extract F: production data - Manufacturer A current output 250,000 units, maximum 500,000; Manufacturer B current output 400,000 units, maximum 500,000. Extract G: in February 2015 AG Barr (Irn Bru) bought cocktail mixer business Funkin in a deal worth up to GBP 21m (GBP 16.5m cash plus up to GBP 4.5m more if performance targets are hit), taking it into a new expanding market; it plans to use its own distribution network to boost Funkin sales and claims a proven record of acquiring and developing high-growth brands. Extract H: Unilever plc (Lipton, Persil, Domestos, Sure) - its Sustainable Living Plan aims to double the size of the business while reducing its environmental footprint and increasing positive social impact, with 2020 targets covering sourcing of raw materials and how consumers use its brands, via partnerships with business, government and society (Paul Polman, CEO). It attracts ethical investors, but a long-term focus on sustainability might be unattractive to some investors.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    preamble: "Innocent Drinks has constructed the network diagram below to plan the launch of a new line of smoothies. Each number represents how many days each activity is estimated to take.",
+                    prompt: "Using the data in the network diagram above, calculate the Earliest Start Times (EST) and Latest Finishing Times (LFT) for each activity and identify the critical path.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(b)",
+                    prompt: "Using the data in Extract F, explain one implication of the level of capacity utilisation for the soft drinks manufacturer A, compared to B. You are advised to show your working.",
+                    marks: 4,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess whether Innocent Drinks Ltd should have raised finance by selling a minority of its shares to a business, such as Coca-Cola.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    prompt: "Assess the likely effects for AG Barr of taking over Funkin, the cocktail mixer business.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(e)",
+                    preamble: "Unilever's Chief Executive believes that Unilever should aim to consider all of its stakeholders in its main business decisions. Some business analysts consider that Unilever should instead consider an aim of focusing purely on its shareholders.",
+                    prompt: "Evaluate these two aims and recommend which is most suitable for a business, such as Unilever.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of mission statements, e.g. a qualitative statement of an organisation's aims",
+                  "Application (up to 2): answers in the context of Morrisons, e.g. refers to human, ethical and ecological values; 'we are one team'; not just focused on numbers; competitors such as Lidl or Aldi",
+                  "Analysis (1): explains the benefit of a mission statement to Morrisons, e.g. customers may agree with its values and consequently prefer to shop there rather than at competitors; motivational and sense of direction for employees",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1.",
+              },
+              "1(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): formula for acid test ratio = (current assets - inventory) / current liabilities",
+                  "Application: 2014 = (1429 - 852) / 2873 = 0.20:1",
+                  "Application: 2015 = (1138 - 658) / 2273 = 0.21:1",
+                  "Application: difference = 0.21 - 0.20 = 0.01",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (QS1). NB if only 0.01 is given award 4 marks. If the candidate only calculates to one decimal place, e.g. 0.2:1 for both years, and states there is no difference - BOD award 4 marks.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and context": "A competitive environment is where there is rivalry between similar companies in the same market; Morrisons competes with Tesco and Sainsbury's as well as rapidly growing smaller supermarkets like Aldi and Lidl.",
+                  "Negative effects": "Consumers are more price sensitive and may choose Aldi and Lidl for lower prices or better value; consumers are less loyal and shop around, creating an opportunity for Aldi and Lidl to expand; market share is hard to maintain - in 2015 Lidl's share grew 17.9% and Aldi's 17.6% while Morrisons' fell 1%; declining share may cut profitability, meaning lower dividends and less retained profit for investment.",
+                  "Possible counterbalance": "Morrisons' customers may be loyal for reasons such as location and range/quality, giving a strong customer base; Morrisons still has 11% market share versus 5.6% for Aldi and 4.3% for Lidl, so greater market power; the 'I'm cheaper' campaign shows it has resources to combat the threat.",
+                  "Potential judgement": "Short run effects likely negative as Morrisons may struggle to compete on price with discounters and lose share; in the long run the threat could reduce as Morrisons has greater market share and more resources, such as more stores and greater funds for promotional campaigns.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Transformational leadership is the ability to implement a vision through radical policies and strategies to bring about positive change.",
+                  "Reasons why": "Potts replaced several directors, which may have introduced new ideas such as the 'I'm cheaper' campaign; previous directors may have resisted his ideas, making his strategy harder to implement; he sold off 140 convenience stores to focus on improving supermarket performance, which could have met resistance from employees and customers.",
+                  "Possible counterbalance": "Improved performance could be due to the rise in consumer confidence increasing spending at Morrisons (a 0.6% increase in revenue); greater disposable incomes from continued low interest rates/lower energy costs increased grocery spending, which has little to do with transformational leadership.",
+                  "Potential judgement": "Potts' transformational leadership has been responsible, having recruited new directors who shared his vision and brought positive change; or, as a newly appointed leader, it is too soon to judge whether he has been transformational - improvement could be due to external factors such as greater disposable incomes.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "1(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments; may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or the business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Market share is the % of the total market a business has in volume or value; shareholders' interests include rising profits, good dividends and an increasing share price.",
+                  "Option 1 - Cutting prices": "Low prices may be key to supermarket choice when budgets are tight, so the 'I'm cheaper' campaign could attract customers from Lidl or Aldi and raise revenue and, if costs are managed, profitability; the growing shares of Aldi and Lidl show the importance of low prices, so Morrisons must cut prices to compete and raise sales volume; higher volume from existing supermarkets should lower unit/average costs as fixed costs are spread over more units.",
+                  "Option 2 - Customer experience": "A wider range, better quality groceries or better service could provide a USP/competitive advantage for which customers pay higher prices with bigger margins; an ageing population and more single-person households mean more frequent shopping trips, so convenience (accessibility, longer opening hours) is becoming more important to profitability, allowing higher prices and margins.",
+                  "Possible recommendations": "Cutting prices might be more suitable as price is a key reason for most customers choosing a supermarket, and Morrisons needs to raise sales revenue and market share to improve profitability; or improving the overall customer experience may be more suitable as it could differentiate Morrisons from rivals and create brand loyalty.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): implicit understanding of network diagrams, e.g. at least 1 correct calculation of either EST or LFT",
+                  "Node values (to be entered on the diagram): node 1 EST 0 / LFT 0; node 2 EST 3 / LFT 3; node 3 EST 11 / LFT 11; node 4 EST 14 / LFT 14; node 5 EST 18 / LFT 18",
+                  "Application (1): correct calculation of all ESTs for each node",
+                  "Application (1): correct calculation of all LFTs for each node",
+                  "Application (1): identification of the critical path A, C, F and H (project duration 18 days)",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 3 (QS3, QS8). The MS gives node values as 'top' (EST) and 'bottom' (LFT) of each circle.",
+              },
+              "2(b)": {
+                type: "points",
+                points: [
+                  "Knowledge (1): understanding of the formula capacity utilisation = current output / maximum output x 100",
+                  "Application: A = 250,000 / 500,000 x 100 = 50%",
+                  "Application: B = 400,000 / 500,000 x 100 = 80%",
+                  "Analysis (1): explains an implication for manufacturer A, e.g. 50% capacity utilisation means fixed costs are spread over fewer units, resulting in higher unit/average costs",
+                ],
+                guidance: "4 marks: Knowledge 1, Application 2, Analysis 1 (QS1).",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [8, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 7],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A private limited company is owned by its shareholders, who usually also run the business; shares cannot be sold without the agreement of other shareholders and cannot be sold on the Stock Exchange.",
+                  "Reasons for selling shares": "Coca-Cola may provide advice as well as finance, useful for owners limited by lack of expertise; Coca-Cola's well developed distribution network could help Innocent expand into new export markets; only a minority of shares were sold, so Richard Reed and the other owners retain control.",
+                  "Reasons against selling shares": "Coca-Cola may expect involvement in decision making, a potential source of conflict over future direction; Coca-Cola will expect a share of profits through dividends, leaving less for owners and reinvestment in new machinery and drinks; potential damage to Innocent's image from Coca-Cola's unhealthy reputation, creating bad publicity and alienating customers and employees who feel its original values were compromised.",
+                  "Potential judgement": "Innocent should have sold, as it enabled expansion using Coca-Cola's expertise and GBP 30m finance when the two alternatives only offered finance; or it should not have, as it ultimately lost control and independence when Coca-Cola became majority shareholder in 2013.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response. Note this MS prints Level 3 as 5-7 and Level 4 as 8-10 for this question.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "A takeover is where one business buys a majority shareholding in another and obtains full management control.",
+                  "Potential financial risks": "Initial cost of GBP 16.5m, possibly rising to GBP 21m, which could be lost if unsuccessful; opportunity cost - could GBP 21m be better spent on new soft drinks or marketing?; lack of expertise in a new market brings greater risk and uncertainty that could hurt profitability.",
+                  "Potential financial rewards": "Diversification means AG Barr is no longer reliant on soft drinks for revenue and profit; entering the growing cocktail mixer market gives a new segment and opportunity for more sales and profit; potential economies of scale from using its existing distribution network and production facilities, reducing unit costs.",
+                  "Potential judgement": "Rewards could be greater as the takeover offers diversification into a growing market; or risks could be greater as AG Barr is entering a new market without expertise and could fail, losing at least GBP 21m.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(e)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments; may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or the business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "The stakeholder approach considers all stakeholders in business decisions/objectives; the shareholder approach focuses purely on shareholder returns.",
+                  "Stakeholder approach - arguments for": "Better image and positive publicity from reducing Unilever's environmental impact and increasing positive social impact could attract customers; attracts ethical investors who actively choose to buy Unilever shares; better supplier relations through fair prices and regular orders should ensure reliable, good quality raw materials.",
+                  "Shareholder approach - arguments for": "Increased costs of the stakeholder approach could reduce profitability, lowering dividends and the share price; lack of focus on shareholder returns could cause confusion and inefficiency; shareholders are the owners so their interests should be more important than other stakeholders'.",
+                  "Potential recommendation": "Adopt the stakeholder approach as long-term success depends on good relations with all stakeholders; or adopt the shareholder approach as the main purpose of a business is to generate good profits for its shareholders, without whom the business would not exist.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+          {
+            id: "business-edexcel-9bs0-2017-p3",
+            year: "June 2017",
+            paperName: "Paper 3 — Investigating business in a competitive environment",
+            paperCode: "9BS0/03",
+            totalMarks: 100,
+            durationMins: 120,
+            qpUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_que_20170623.pdf",
+            msUrl: "https://qualifications.pearson.com/content/dam/pdf/A-Level/Business/2015/Exam-materials/9BS0_03_rms_20170816.pdf",
+            questions: [
+              {
+                number: 1,
+                scenario: "Section A: Extracts A-D (UK health and fitness club industry). Extract A: ethical problems - clubs rely on memberships, getting customers to sign contracts committing them for months or years; members trust staff to help meet fitness goals, so a trainer should tell an overweight, unfit member wanting to do a triathlon in a month that the goal may be unrealistic and suggest a less challenging activity or longer time frame; incentives to promote products such as energy bars must not lead staff to overstate benefits. Extract B: technological innovation and enhanced consumer experience helped the industry expand 2014-2015 (SOFI Report). KPIs (Apr-Mar): 2013-14 revenues GBP 4.07bn, clubs 5,935, members 8.28 million; 2014-15 GBP 4.30bn, 6,312, 8.78 million; 2015-16 (forecast) GBP 4.70bn, 6,400, 9.20 million; 2016-17 (forecast) GBP 4.90bn, 6,500, 9.50 million. Share of UK adults who are members rose 0.5% to 13.7%, the highest ever, and was expected to continue. Revenues include membership, walk-in/guest and personal training fees, sportswear and food and beverage sales. Extract C: a bigger than usual January rush to join gyms after Christmas; media focus on health and fitness encourages less active people to exercise; Fitness First says membership retention is at one of its highest levels. Extract D: standard employee benefits - Virgin Active (96 clubs): complimentary membership plus family, pension plan, discounts, job rotation, further training, living wage, recognition awards, commission payments, job enlargement, flexible working. David Lloyd (85 clubs): complimentary membership, discounts, further training, living wage, recognition awards, commission payments. Fitness First (78 clubs): complimentary membership, discounts, further training, recognition awards, commission payments. Nuffield (77 clubs): complimentary membership, pension plan, discounts, further training, flexible working.",
+                parts: [
+                  {
+                    code: "1(a)",
+                    prompt: "Assess two possible examples of trade-offs between profit and ethics for a health and fitness club.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "1(b)",
+                    prompt: "Assess the usefulness of sales forecasting to a health and fitness club, such as Virgin Active.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "1(c)",
+                    preamble: "The average price elasticity of demand for clubs in the health and fitness market is estimated to be -2.",
+                    prompt: "Assess the likely impact of media health campaigns on the price elasticity of demand for health and fitness clubs.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "1(d)",
+                    preamble: "Health and fitness clubs in the UK have high levels of labour turnover. To reduce this, health and fitness chains could offer either better financial rewards, or use non-financial techniques, to improve employee performance.",
+                    prompt: "Evaluate these two options and recommend which one a health and fitness club, such as Fitness First, should adopt to reduce labour turnover.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+              {
+                number: 2,
+                scenario: "Section B: Extracts E-H (Pure Gym). Extract E: Peter Roberts started Pure Gym in 2009 with four UK sites; it now has 90 gyms. A former chartered surveyor turned leisure entrepreneur (nightclubs, hotels), he spotted the low-cost gym trend in America, Germany and Scandinavia when the UK was dominated by relatively expensive chains. Pure Gym opened 30 gyms in 2014 and 40 in the following year, targets 250-300 UK gyms by 2020, and is Britain's largest gym chain by membership (450,000 members paying GBP 9.99-GBP 25 a month); it expected to overtake Virgin Active on number of sites by end of March 2015. Sites are gym-only (no pools, saunas or racquet courts), typically with two staff supported by up to 12 self-employed trainers; members join online, pay monthly with no annual contract and use PIN codes for 24-hour access. Roberts wants to expand to Italy, Spain and emerging markets in Asia, South America and Africa. Extract F: in 2016 new CEO Humphrey Cobbold won the auction to buy LA Fitness (established over 25 years, 43 mid-market clubs) for GBP 60m-80m; sites need a GBP 20m refurbishment, most will be rebranded and need changed working practices. LA Fitness, like other upmarket chains, was pressured by lower priced rivals. The deal needs Competition and Markets Authority (CMA) clearance; the CMA had foiled a Pure Gym merger with The Gym Group the previous year. Extract G: The Gym Group income statement, year to 31 Dec 2015 / 2014 (GBP 000): Revenue 61 084 / 45 480; Cost of sales (1 073) / (1 040); Gross profit 60 011 / 44 440; Administrative expenses 62 712 / 42 105; Operating profit/(loss) (2 701) / 2 335. Extract H: The Gym Group statement of financial position at 31 Dec 2015 / 2014 (GBP 000): Non-current assets 134 551 / 118 380; Current assets 8 636 / 9 933; Current liabilities 25 546 / 24 656; Non-current liabilities 9 198 / 72 072; Equity 108 443 / 31 585.",
+                parts: [
+                  {
+                    code: "2(a)",
+                    prompt: "Assess the importance of two entrepreneurial roles carried out by Peter Roberts to the success of Pure Gym.",
+                    marks: 8,
+                    extended: true,
+                  },
+                  {
+                    code: "2(b)",
+                    preamble: "When choosing to expand overseas, there are a number of factors that may limit the success of this strategy.",
+                    prompt: "Assess the likely importance of these factors to Pure Gym's expansion into emerging markets, such as those in Asia, South America or Africa.",
+                    marks: 10,
+                    extended: true,
+                  },
+                  {
+                    code: "2(c)",
+                    prompt: "Assess whether Pure Gym is likely to overcome the possible difficulties of changing LA Fitness's culture, as a result of the takeover.",
+                    marks: 12,
+                    extended: true,
+                  },
+                  {
+                    code: "2(d)",
+                    preamble: "In 2016, had it not been for the Competition and Markets Authority, Pure Gym may have been able to reach its target growth by taking over The Gym Group, rather than LA Fitness.",
+                    prompt: "Using the data in Extracts G and H calculate appropriate accounting ratios for The Gym Group and, using other non-financial information, evaluate these two options. Recommend which company it would have been better for Pure Gym to take over to achieve its growth target.",
+                    marks: 20,
+                    extended: true,
+                  },
+                ],
+              },
+            ],
+            markSchemes: {
+              "1(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information and shows awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Trade-offs occur when less of one option is exchanged for more of another; profit is total revenue minus total costs; ethics is doing what is right for individuals and society; trade-offs may tend to occur in the short run.",
+                  "Possible trade-offs": "Fixed 12-month membership contracts guarantee revenue but at the expense of customer flexibility/choice; personal trainers selling fitness plans to members losing weight or training for a triathlon may raise profit but members may feel coerced or get an unrealistic plan; promoting products like energy bars raises profit but they may be high in sugar/fat and cause some members to put on weight; paying near the minimum wage/NLW cuts costs but staff may lack motivation and give poor customer care.",
+                  "Possible counter-balance": "Trade-offs may not result as much in the long term; some members welcome fixed contracts, ensuring a loyal membership base that may improve the club's ethos; profit from product sales may be insignificant compared with memberships; staff are not always motivated by pay but by a social/friendly environment; charging extras for fitness plan advice gives extra income but may not be welcomed, so members leave and revenues and profits fall.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response. NB do not accept definition or application of 'opportunity cost' - this is a different concept, although related. (NB recovered from the raw MS text.)",
+              },
+              "1(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Sales forecasting is a projection of achievable sales revenue based on historical sales data, analysis of market surveys and trends and/or salespersons' estimates.",
+                  Limitations: "Changes in consumer tastes, entry or exit of competitors (Pure Gym, Esporta) and product developments (24-hour access); without past data forecasts are guesswork, e.g. a new club in Virgin's chain of 96 has no sales history; member behaviour cannot be predicted exactly, e.g. news of faulty equipment or food poisoning spreading; unanticipated booms or recessions affect incomes and demand for memberships (8.28m in 2013-14 rising to 9.5m in 2016-17), as membership is a luxury/discretionary spend.",
+                  "Possible counter-balance": "Regular market research, e.g. via social media and company websites, can anticipate changing tastes (e.g. for members at David Lloyd's 85 clubs); estimates can be based on similar clubs in the chain of 96 with similar demographics for memberships, personal training, equipment and classes; business cycle trends are often anticipated and can inform forecasts (revenues rising from GBP 4.07bn in 2013-14 to GBP 4.90bn in 2016-17).",
+                  "Possible judgement": "The industry is dynamic, so clubs must adapt facilities and classes to new preferences/social trends; to be useful a forecast must be very robust, based on previous sales data and up to date market research.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response. NB other accepted examples of context: predicting number of members/memberships, sale of personal training programmes/clients, sales from cafe.",
+              },
+              "1(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Knowledge and quantitative skills": "PED measures the sensitivity of demand to price changes = % change in quantity demanded / % change in price, so a 5% rise in membership fees might reduce demand (new memberships) by 10%; a PED of -2 means gym memberships are price elastic, and for a specific chain (e.g. David Lloyd) PED is likely more elastic given substitutes (e.g. Nuffield).",
+                  "Impact of media campaigns": "Media health campaigns are likely to reduce price elasticity as consumers may see health (keeping fit/losing weight) as more important than money, so while some end memberships others will be keen to retain theirs; Fitness First retention is at its highest ever.",
+                  "Potential counterbalance": "PED may be affected more by seasonal trends - in January people are keen to lose weight gained over the festive season, so a price rise then may not reduce demand at all; if incomes rise in line with membership prices, demand might not fall proportionately more than the price rise.",
+                  "Possible judgement": "PED depends on the economic climate and each member's circumstances; some members may be health club addicts or see membership as part of their lifestyle, so health campaigns might have had no effect on PED.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Application and analysis include up to 4 marks for quantitative skills (QS2: percentages and percentage changes; QS7: interpret values of price and income elasticity of demand). NB if the answer suggests a PED of -2 is inelastic rather than elastic, mark with caution (unlikely to score above Level 2). To access Levels 3 and 4, students need to demonstrate quantitative skills to support their judgements. Level 0 = a completely inaccurate response.",
+              },
+              "1(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments; may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or the business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Option 1 - Financial rewards": "Paying at least the Living Wage lets employees afford a reasonable standard of living and satisfy basic needs, improving retention; pay distinguishes employers, attracting more capable staff and improving job satisfaction, reducing labour turnover; personal trainers are usually paid commission, so they are more likely to leave Fitness First if its commissions are relatively lower than other clubs; private pensions give a sense of job security and are not always easily transferable; most health club employees are young (part-time students), so remuneration matters for spending on entertainment and clothing.",
+                  "Option 2 - Non-financial techniques": "Delegated tasks, decision-making, further training, cross-learning and performance reviews can support self-esteem/actualisation and reduce labour turnover; more experienced personal trainers relying on the club for family income may expect to share in decision making, seeking career progression, job security and a sense of belonging.",
+                  "Possible recommendation": "It depends on the type of worker: young, less skilled support staff such as cleaners or receptionists may be motivated more by pay, so remuneration matters more than empowerment (such workers tend to be transient anyway); managers may care more about non-financial techniques as their career progression is judged on how effectively they delegate and build worker confidence, and empowered employees are easier to manage when their goals are shared with the club's.",
+                  "Examiner notes": "Accept a definition of remuneration; workers may be leaving for good reason, e.g. promotion; credit use of theorists where appropriate (e.g. Maslow, Taylor, Mayo, Hawthorne); recommendation may depend on type of worker, personal circumstances or the economic climate (e.g. recession, changes in real wages).",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Level 0 = a completely inaccurate response.",
+              },
+              "2(a)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [6, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; logical chains of reasoning showing cause(s) and/or effect(s); assessment is balanced, well contextualised, using quantitative and/or qualitative information and shows awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [3, 5],
+                    descriptor: "Level 2",
+                    criteria: "Accurate knowledge and understanding applied accurately to the business and its context; chains of reasoning showing cause(s) and/or effect(s) but may be assertions or incomplete; an attempt at an assessment that is unbalanced and unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Roles of an entrepreneur: creating and setting up a business, running and expanding/developing it, innovation within a business (intrapreneurship), anticipating risk and uncertainty.",
+                  "Importance of roles": "Entrepreneurs usually provide their own capital and take calculated risks, some sacrificing employment, so creating and setting up a business is pivotal and involves opportunity costs - Roberts sacrificed a usually well-paid career as a chartered surveyor; to keep running the business the entrepreneur may need to monitor costs and sales and continue market research, e.g. Pure Gym's membership prices versus competitors or its fitness equipment.",
+                  "Possible counter-balance": "Roberts already had experience as a leisure entrepreneur, so setting up a new gym business was not such a big step; intrapreneurship can be adopted by other staff as the business develops, and the entrepreneur's overall vision may mean delegating - Roberts may have needed to listen to personal trainers as he expanded beyond the original four clubs.",
+                },
+                guidance: "8 marks: Knowledge 2, Application 2, Analysis 2, Evaluation 2. Level 0 = a completely inaccurate response. NB accept 'risk taker' and 'creativity' as roles since they are essentially the same as 'anticipating risk' and 'innovator'; do not accept other entrepreneurial characteristics such as 'hard working', 'resilient', 'initiative'. (Part of this NB recovered from the raw MS text.)",
+              },
+              "2(b)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [7, 10],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 6],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  "Limiting factors": "How appropriate a country is as a market - disposable income, ease of doing business, infrastructure, skills and availability of staff; the potential member - cultural differences, tastes and preferences, appropriateness of branding and promotion, language (Spanish in most South American countries could be a practical or cost hurdle); UK managers may need overseas secondments to export the brand, unpopular if working in countries like Nigeria with political and social instability.",
+                  "Potential counterbalance": "As a low cost operator charging up to GBP 25 a month, more African citizens could afford membership than at Virgin Active; a joint venture with a company in, say, Peru could help overcome cultural differences, tastes and appropriate marketing; with only two employees per site recruitment should be less difficult, and personal trainers are common worldwide as the fitness industry is global.",
+                  "Possible judgement": "The industry is largely similar across the world and what people expect from Pure Gym is fairly standard (free weights, resistance machines, treadmills, rowing machines), so cultural differences and preferences are likely already accounted for and present very little constraint.",
+                },
+                guidance: "10 marks: Knowledge 2, Application 2, Analysis 3, Evaluation 3. Level 0 = a completely inaccurate response.",
+              },
+              "2(c)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [9, 12],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; coherent and logical chain of reasoning showing cause(s) and/or effect(s); assessment is balanced, wide ranging and well contextualised, using quantitative and/or qualitative information, showing awareness of competing arguments/factors leading to a supported judgement.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; analytical perspectives with developed chains of reasoning showing cause(s) and/or effect(s); an attempt at an assessment using quantitative and/or qualitative information, though unlikely to show the significance of competing arguments.",
+                  },
+                  {
+                    range: [3, 4],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; chains of reasoning presented but may be assertions or incomplete; a generic or superficial assessment is presented.",
+                  },
+                  {
+                    range: [1, 2],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding - recall based; weak or no relevant application to business examples; generic assertions may be presented.",
+                  },
+                ],
+                indicative: {
+                  Knowledge: "Corporate culture is an unwritten code of conduct reflecting a business's values and the shared beliefs and assumptions that underpin decision-making; it strongly affects employee attitudes, motivation, productivity and product quality/customer service.",
+                  Difficulties: "LA Fitness staff may be used to larger teams and collaborative local decision-making (task culture), whereas Pure Gyms typically have two staff, so expectations would not be met, reducing motivation and causing former LAF staff to quit; Pure Gym policies may be decided centrally with tight control of behaviour that may alienate LAF workers.",
+                  "Possible counter-balance": "Success stories or ambassadors (e.g. personal trainers with excellent reputations and many clients) could instil Pure Gym's values; some former LAF staff may prefer working in pairs, avoiding sub-cultures so core values are shared and changes implemented quickly; team building across Pure Gyms in a region (e.g. the northwest) could overcome perceptions of central decision-making.",
+                  "Possible judgement": "Culture is most influenced by senior managers at head office and evolves over time, so changing established LAF culture will take time and effort; management must convince the workforce by showing benefits to themselves as well as the company, such as job security and better pay.",
+                  "Hurdles and solutions": "Hurdles may include communication, resentment over (threat of) redundancies, different ethos or protocol, leadership style; solutions may include meetings, shared training, openness, new policies/systems, democratic leadership, team circles, away days.",
+                },
+                guidance: "12 marks: Knowledge 2, Application 2, Analysis 4, Evaluation 4. Level 0 = a completely inaccurate response.",
+              },
+              "2(d)": {
+                type: "levels",
+                levels: [
+                  {
+                    range: [15, 20],
+                    descriptor: "Level 4",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; well-developed, logical, coherent chains of reasoning showing a range of cause(s) and/or effect(s); arguments fully developed; quantitative and/or qualitative information used well to support judgements; full awareness of the validity and significance of competing arguments/factors, leading to balanced comparisons, judgements and an effective conclusion that proposes a solution and/or recommendations.",
+                  },
+                  {
+                    range: [9, 14],
+                    descriptor: "Level 3",
+                    criteria: "Accurate and thorough knowledge and understanding supported throughout by relevant and effective use of the business behaviour/context; developed chains of reasoning so cause(s) and/or consequence(s)/effect(s) are complete, showing understanding of the question; arguments well developed; quantitative or qualitative information introduced in an attempt to support judgements, with partial awareness of the validity and/or significance of competing arguments; may lead to a conclusion.",
+                  },
+                  {
+                    range: [5, 8],
+                    descriptor: "Level 2",
+                    criteria: "Elements of knowledge and understanding applied to the business example; arguments and chains of reasoning presented but connections between cause(s) and/or consequence(s)/effect(s) are incomplete; attempts to address the question; a comparison or judgement may be attempted but will not successfully show awareness of the key features of business behaviour or the business situation.",
+                  },
+                  {
+                    range: [1, 4],
+                    descriptor: "Level 1",
+                    criteria: "Isolated elements of knowledge and understanding; weak or no relevant application of business examples; an argument may be attempted but will be generic and fail to connect cause(s) and/or consequence(s)/effect(s).",
+                  },
+                ],
+                indicative: {
+                  "Quantitative skills - ratios": "Profitability (two types expected): GPM 2015 = 60 011/61 084 x 100 = 98.2%; 2014 = 44 440/45 480 x 100 = 97.7% (0.5% improvement). OPM 2015 = -2 701/61 084 x 100 = -4.42%; 2014 = 2 335/45 480 x 100 = 5.13%. ROCE 2015 = -2 701/117 641 x 100 = -2.3%; 2014 = 2 335/103 657 x 100 = 2.25%. Gearing = non-current liabilities/capital employed x 100: 2015 = 9 198/117 641 = 7.82%; 2014 = 72 072/103 657 = 69.5%. Current ratio 2015 = 8 636/25 546 = 0.34:1; 2014 = 9 933/24 656 = 0.40:1 (0.06 decline). Administrative expenses were 104.5% of gross profit in 2015 (94.7% in 2014).",
+                  Interpretation: "ROCE has seen a dramatic decline; the market is growing due to the growth of budget, low cost gyms; gearing of 7.82% is very low compared with a very high 69.5% in 2014; liquidity has worsened and is extremely low.",
+                  "Option 1 - The Gym Group": "Would have been a merger rather than a takeover, with positive and negative repercussions; inorganic growth better matches the target of 300 UK gyms by 2020 as sites are similar and need no new builds; two discount operators with similar equipment and locker room supplies give purchasing economies of scale and higher profitability; Gym Group sites in the same areas could be sold to remove direct competition and fund staff training or redevelopment; prices could rise with no direct competition, funding expansion in Italy, Spain, South America or Africa; integrating administration and marketing across more sites could lower average costs.",
+                  "Option 2 - LA Fitness": "Although it cost GBP 60m-80m, the 43 sites are likely premium sites from an upmarket chain, some of which could be sold to fund smaller new-build Pure Gyms; converting sites could appeal to different segments by offering former LA Fitness members cheaper memberships, increasing the customer base without expensive marketing; rebranding sites could instead offer a premium upmarket gym to compete with Virgin Active and David Lloyd for higher income customers.",
+                  "Possible recommendations": "Gym Group profitability and liquidity ratios are not healthy, well below industry averages, so taking it over could worsen Pure Gym's cash flow and finance, risking survival in a very competitive market; falling gearing may be good as expansion could cost less to finance with lenders seeing less risk; demand for low cost gyms may rise as real incomes fall, so taking over LA Fitness and offering upmarket sites for those with high real disposable incomes would not tap into a lucrative market.",
+                },
+                guidance: "20 marks: Knowledge 4, Application 4, Analysis 6, Evaluation 6. Application and analysis include up to 8 marks for quantitative skills (QS1, QS2, QS8, QS9). NB to access Levels 3 and 4, students need to demonstrate quantitative skills to support their judgements. The MS as printed also states 'gearing has fallen 88% (69.5-7.82)' and 'liquidity has worsened to 0.40:1'; the calculated 2015 current ratio is 0.34:1. Level 0 = a completely inaccurate response.",
+              },
+            },
+          },
+        ],
+      },
+    ],
   }
 ];
 

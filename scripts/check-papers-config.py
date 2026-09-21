@@ -65,6 +65,7 @@ while i < len(content):
                 ctx = content[max(0,i-60):i+30].replace('\n', '\\n')
                 errors.append(f"Line {line_num}: extra closing bracket: ...{ctx}...")
                 depth = 0
+    i += 1
 
 if depth != 0:
     errors.append(f"End of file: {depth} unclosed bracket(s)")

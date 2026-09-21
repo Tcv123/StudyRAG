@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 3.5 — Assessing Competitiveness</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .thinker { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .thinker { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>3.5 Assessing Competitiveness</h1>
+<p class="spec-ref">Business &mdash; Edexcel (9BS0) &mdash; Theme 3: Business decisions and strategy</p>
+
+<p>How do we know whether a business is competitive? This topic gives two lenses. The <strong>financial</strong> lens reads the two main financial statements and turns them into ratios, of which the specification names <strong>gearing</strong> and <strong>return on capital employed (ROCE)</strong> for calculation in Theme 3 (profitability and liquidity ratios from Theme 2 are used alongside them). The <strong>human resources</strong> lens measures how effectively the workforce is used &mdash; productivity, turnover, retention and absenteeism &mdash; and asks which HR strategies improve them. A ratio on its own proves little; what earns marks is interpreting it against a comparison and turning it into a decision.</p>
+
+<div class="definition">
+<strong>Statement of comprehensive income</strong> (income statement; profit and loss account) &mdash; shows a firm's revenue, costs and profit over a period, usually a year.<br>
+<strong>Statement of financial position</strong> (balance sheet) &mdash; shows a firm's assets, liabilities and equity at a single point in time.<br>
+<strong>Capital employed</strong> &mdash; the long-term finance used by the business: non-current liabilities + total equity.<br>
+<strong>Gearing</strong> &mdash; the proportion of capital employed that is financed by long-term debt (non-current liabilities).<br>
+<strong>ROCE</strong> &mdash; operating profit as a percentage of capital employed; measures how efficiently long-term capital generates profit.<br>
+<strong>Labour productivity</strong> &mdash; output per worker per period.<br>
+<strong>Labour turnover</strong> &mdash; the percentage of the workforce leaving during a period.<br>
+<strong>Retention rate</strong> &mdash; the percentage of employees who stay with the business over a period.<br>
+<strong>Absenteeism</strong> &mdash; the percentage of working days lost through staff absence.
+</div>
+
+<h2>1. Interpretation of financial statements (3.5.1)</h2>
+
+<h3>Statement of comprehensive income (profit and loss account)</h3>
+<p><strong>Worked example &mdash; Brightline Ltd, year ended 31 March 2025 (&pound;000)</strong></p>
+<table>
+<tr><th>Item</th><th>&pound;000</th><th>Notes</th></tr>
+<tr><td>Revenue</td><td>12,000</td><td>Sales income: price &times; quantity sold</td></tr>
+<tr><td>&minus; Cost of sales</td><td>(7,200)</td><td>Direct costs of the goods sold: materials, direct labour</td></tr>
+<tr><td><strong>= Gross profit</strong></td><td><strong>4,800</strong></td><td>Gross profit margin = 4,800 &divide; 12,000 &times; 100 = 40.0%</td></tr>
+<tr><td>&minus; Other operating expenses</td><td>(3,300)</td><td>Overheads: rent, salaries, marketing, depreciation</td></tr>
+<tr><td><strong>= Operating profit</strong></td><td><strong>1,500</strong></td><td>Operating profit margin = 1,500 &divide; 12,000 &times; 100 = 12.5%</td></tr>
+<tr><td>&minus; Interest</td><td>(200)</td><td>Cost of borrowing</td></tr>
+<tr><td><strong>= Profit for the year (net profit)</strong></td><td><strong>1,300</strong></td><td>Net profit margin = 1,300 &divide; 12,000 &times; 100 = 10.83%</td></tr>
+</table>
+<p><strong>Key information:</strong> revenue growth; how well direct costs are controlled (gross margin); how well overheads are controlled (operating margin); the burden of interest; profit available for dividends and reinvestment.</p>
+
+<h3>Statement of financial position (balance sheet)</h3>
+<p><strong>Brightline Ltd at 31 March 2025 (&pound;000)</strong></p>
+<table>
+<tr><th>Item</th><th>&pound;000</th></tr>
+<tr><td>Non-current assets (property, machinery, vehicles)</td><td>9,000</td></tr>
+<tr><td>Current assets: inventory 1,200; receivables 800; cash 400</td><td>2,400</td></tr>
+<tr><td>&minus; Current liabilities (payables, overdraft &mdash; due within one year)</td><td>(1,600)</td></tr>
+<tr><td>&minus; Non-current liabilities (long-term loans, bonds, mortgages)</td><td>(3,000)</td></tr>
+<tr><td><strong>= Net assets</strong></td><td><strong>6,800</strong></td></tr>
+<tr><td>Share capital</td><td>2,000</td></tr>
+<tr><td>Retained profit (reserves)</td><td>4,800</td></tr>
+<tr><td><strong>= Total equity</strong></td><td><strong>6,800</strong></td></tr>
+</table>
+<p>Net assets always equal total equity. <strong>Capital employed = non-current liabilities + total equity = 3,000 + 6,800 = &pound;9,800,000.</strong></p>
+<p><strong>Key information:</strong> what the business owns and owes; how it is financed (debt vs equity); its liquidity (current assets vs current liabilities); working capital (2,400 &minus; 1,600 = &pound;800,000); retained profit available for reinvestment.</p>
+
+<h3>Stakeholder interest in the statements</h3>
+<table>
+<tr><th>Stakeholder</th><th>Main interest</th><th>Looks at</th></tr>
+<tr><td>Shareholders / potential investors</td><td>Returns and growth</td><td>Profit for the year, margins, ROCE, dividends, retained profit</td></tr>
+<tr><td>Lenders (banks, bondholders)</td><td>Ability to pay interest and repay</td><td>Gearing, operating profit relative to interest, non-current assets as security</td></tr>
+<tr><td>Suppliers</td><td>Will they be paid on time?</td><td>Current and acid test ratios, cash</td></tr>
+<tr><td>Employees and trade unions</td><td>Job security, scope for pay rises</td><td>Profit trends, cash reserves</td></tr>
+<tr><td>Managers</td><td>Performance, control of costs, planning</td><td>All ratios compared with targets and rivals</td></tr>
+<tr><td>Government / HMRC</td><td>Tax liability, compliance</td><td>Profit</td></tr>
+<tr><td>Competitors</td><td>Benchmarking</td><td>Margins, ROCE</td></tr>
+</table>
+
+<h2>2. Ratio analysis (3.5.2)</h2>
+
+<h3>Gearing ratio</h3>
+<p><code>Gearing (%) = non-current liabilities &divide; capital employed &times; 100</code></p>
+<p>Brightline: 3,000 &divide; 9,800 &times; 100 = <strong>30.61%</strong></p>
+<table>
+<tr><th>Gearing</th><th>Interpretation</th></tr>
+<tr><td>Below 25%</td><td>Low gearing &mdash; financed mostly by equity; low interest burden; may have unused borrowing capacity (could the firm grow faster by borrowing?)</td></tr>
+<tr><td>25%&ndash;50%</td><td>Generally regarded as acceptable / moderate</td></tr>
+<tr><td>Above 50%</td><td>Highly geared &mdash; heavy interest commitments; vulnerable to rising interest rates and falling profits; lenders may refuse further loans</td></tr>
+</table>
+<p><strong>High gearing is not automatically bad.</strong> If ROCE exceeds the interest rate on borrowing, debt magnifies returns to shareholders; interest is tax-deductible; and owners keep control (no new shares issued). It is risky when profits are volatile or interest rates rise &mdash; as many leveraged firms found when Bank Rate rose from 0.1% (2021) to 5.25% (2023). In the June 2024 Paper 2, the mark scheme calculated a firm's gearing as 0.31 &divide; 15.31 &times; 100 = 2.02% and argued it could therefore borrow easily to fund expansion.</p>
+
+<h3>Return on Capital Employed (ROCE)</h3>
+<p><code>ROCE (%) = operating profit &divide; capital employed &times; 100</code></p>
+<p>Brightline: 1,500 &divide; 9,800 &times; 100 = <strong>15.31%</strong></p>
+<p>ROCE is the key measure of overall performance: it shows the return generated on every pound of long-term finance. Compare it with:</p>
+<ul>
+<li>the firm's previous years (trend),</li>
+<li>competitors and the industry average,</li>
+<li>the interest rate on savings or borrowing (the opportunity cost of capital) &mdash; a ROCE of 15.31% comfortably exceeds a bank savings rate of, say, 4%.</li>
+</ul>
+<p><strong>Improving ROCE:</strong> increase operating profit (raise prices, cut costs, increase sales) or reduce capital employed (sell under-used assets, lease rather than buy, repay debt from surplus cash).</p>
+
+<h3>Supporting ratios from Theme 2 (Appendix 4)</h3>
+<table>
+<tr><th>Ratio</th><th>Formula</th><th>Brightline</th><th>Interpretation</th></tr>
+<tr><td>Gross profit margin</td><td>Gross profit &divide; revenue &times; 100</td><td>40.00%</td><td>Control of direct costs and pricing power</td></tr>
+<tr><td>Operating profit margin</td><td>Operating profit &divide; revenue &times; 100</td><td>12.50%</td><td>Control of all operating costs</td></tr>
+<tr><td>Net profit margin</td><td>Profit for the year &divide; revenue &times; 100</td><td>10.83%</td><td>Profitability after interest</td></tr>
+<tr><td>Current ratio</td><td>Current assets &divide; current liabilities</td><td>2,400 &divide; 1,600 = 1.5:1</td><td>Ideal range often quoted as 1.5&ndash;2:1; Brightline can meet short-term debts</td></tr>
+<tr><td>Acid test ratio</td><td>(Current assets &minus; inventory) &divide; current liabilities</td><td>1,200 &divide; 1,600 = 0.75:1</td><td>Below the 1:1 benchmark &mdash; relies on selling stock to pay debts; normal in retail, risky elsewhere</td></tr>
+</table>
+
+<h3>Interpreting ratios to make business decisions</h3>
+<p>Ratios are used to decide: whether to invest in or lend to a firm; how to finance expansion (a low-geared firm may borrow; a highly-geared firm may issue shares or use retained profit); whether to cut costs or raise prices (margin analysis); which divisions or stores to close (low ROCE); whether to take on a takeover target; and whether the firm can afford to pay a dividend.</p>
+<p><strong>Worked decision:</strong> Brightline wants &pound;2m for a new factory. If borrowed, non-current liabilities rise to &pound;5m and capital employed to &pound;11.8m: gearing = 5,000 &divide; 11,800 &times; 100 = 42.37%. Still below 50%, and ROCE (15.31%) is well above likely borrowing costs, so a loan looks affordable &mdash; <em>provided</em> the factory generates profit reasonably quickly and interest rates stay stable. If sales are volatile, a share issue would avoid the added fixed interest cost.</p>
+
+<h3>Limitations of ratio analysis</h3>
+<ul>
+<li><strong>Historical</strong> &mdash; ratios describe the past, not the future; a statement of financial position is a snapshot on one day.</li>
+<li><strong>Need comparisons</strong> &mdash; a single ratio means little without trends, industry averages and competitor data; different industries have different norms (supermarkets operate with acid test ratios well below 1).</li>
+<li><strong>Window dressing</strong> &mdash; accounts can be presented favourably (timing of sales, asset revaluations, sale and leaseback before the year end).</li>
+<li><strong>Different accounting policies</strong> (depreciation, inventory valuation) make comparisons between firms unreliable.</li>
+<li><strong>Ignore qualitative factors</strong> &mdash; brand strength, staff skills and morale, customer loyalty, the quality of management, the state of the market.</li>
+<li><strong>Inflation</strong> distorts comparisons over time.</li>
+<li><strong>External factors</strong> &mdash; a poor ROCE may reflect a recession rather than poor management.</li>
+</ul>
+
+<div class="exam-tip">
+Use Edexcel's exact formulae: <strong>capital employed = non-current liabilities + total equity</strong>, and ROCE uses <strong>operating</strong> profit (not gross profit or profit for the year). In the June 2024 Paper 2 ROCE question (4 marks: Knowledge 1, Application 3), marks were awarded for the formula, calculating operating profit, calculating capital employed, and the final percentage &mdash; and an answer without the % sign lost a mark. Always add the % sign or &ldquo;:1&rdquo; as appropriate.
+</div>
+
+<h2>3. Human resources (3.5.3)</h2>
+
+<h3>Calculating HR performance measures</h3>
+<table>
+<tr><th>Measure</th><th>Formula</th><th>Worked example</th><th>Result</th></tr>
+<tr><td><strong>Labour productivity</strong></td><td>Output per period &divide; number of employees</td><td>60,000 units a month &divide; 240 workers</td><td><strong>250 units per worker per month</strong></td></tr>
+<tr><td><strong>Labour turnover</strong></td><td>Number of staff leaving &divide; average number of staff employed &times; 100</td><td>30 leavers; staff 230 at start and 250 at end, so average = (230 + 250) &divide; 2 = 240; 30 &divide; 240 &times; 100</td><td><strong>12.5%</strong></td></tr>
+<tr><td><strong>Retention rate</strong></td><td>Number of employees employed for the whole period (e.g. still employed after one year) &divide; number employed at the start of the period &times; 100</td><td>200 employed on 1 January; 176 of them still employed on 31 December; 176 &divide; 200 &times; 100</td><td><strong>88%</strong></td></tr>
+<tr><td><strong>Absenteeism</strong></td><td>Number of staff days lost to absence &divide; total number of possible working days &times; 100</td><td>240 staff &times; 230 working days = 55,200 possible days; 2,208 days lost; 2,208 &divide; 55,200 &times; 100</td><td><strong>4.0%</strong></td></tr>
+</table>
+
+<h3>Interpreting the measures</h3>
+<ul>
+<li><strong>Labour productivity</strong> &mdash; higher productivity lowers labour cost per unit, making the firm more cost-competitive. Rising productivity can come from better technology, training or motivation. Beware: productivity measures quantity, not quality; and in services output is harder to measure. The UK's weak productivity growth since 2008 is a long-standing national concern.</li>
+<li><strong>Labour turnover</strong> &mdash; some turnover is healthy (new ideas, removes poor performers, allows restructuring). High turnover means recruitment and training costs, lost skills and knowledge, lower morale and service quality. It is naturally high in hospitality and retail and low in the professions, so compare with the industry.</li>
+<li><strong>Retention</strong> &mdash; the flip side of turnover; a high retention rate among experienced staff protects knowledge and customer relationships. Retention can be high overall while key staff are leaving, so look at who leaves.</li>
+<li><strong>Absenteeism</strong> &mdash; high absence raises costs (overtime, agency staff, sick pay), disrupts production and may signal low morale, poor working conditions or stress. The CIPD's 2023 survey reported average UK absence of 7.8 days per employee per year, the highest in over a decade.</li>
+</ul>
+
+<h3>HR strategies to increase productivity and retention and to reduce turnover and absenteeism</h3>
+<table>
+<tr><th>Strategy</th><th>How it works</th><th>Limitations</th><th>Example</th></tr>
+<tr><td><strong>Financial rewards</strong></td><td>Competitive pay, performance-related pay, bonuses, profit-sharing, attendance bonuses &mdash; link reward to effort and give staff a reason to stay (Taylor's view of motivation, from 1.4)</td><td>Costly; effects may be short-lived (Herzberg: pay is a hygiene factor); can encourage quantity over quality</td><td>Supermarkets raising pay above the National Living Wage to compete for staff</td></tr>
+<tr><td><strong>Employee share ownership</strong></td><td>Staff own shares (share schemes, Sharesave, employee ownership trusts) so they benefit from the firm's success &mdash; aligns interests with shareholders, encourages long-term commitment</td><td>Value can fall; small holdings may not change behaviour; dilutes existing shareholders</td><td>The John Lewis Partnership is owned in trust for its employees (&ldquo;Partners&rdquo;); Richer Sounds moved into an employee ownership trust in 2019</td></tr>
+<tr><td><strong>Consultation strategies</strong></td><td>Involving employees in decisions through works councils, staff forums, surveys, trade union negotiation &mdash; staff feel valued, useful ideas surface, resistance to change is reduced</td><td>Slower decisions; can raise expectations that are not met; consultation without real influence breeds cynicism</td><td>Large employers' employee forums; statutory consultation before collective redundancies</td></tr>
+<tr><td><strong>Empowerment strategies</strong></td><td>Giving staff authority to make decisions, delegation, teamworking, job enrichment &mdash; raises motivation (Herzberg's motivators, Maslow's higher needs) and speeds up responses to customers</td><td>Needs training and trust; not all staff want responsibility; risk of mistakes and inconsistency</td><td>Timpson's &ldquo;upside-down management&rdquo;: shop colleagues are trusted to set prices and resolve complaints without asking head office</td></tr>
+</table>
+
+<div class="exam-tip">
+The June 2024 Paper 2 12-mark question asked whether financial rewards were the best way to reduce labour turnover. The mark scheme balanced survey data (71% of tech workers leaving for higher pay) against non-financial factors (responsibility, creativity, working conditions) and credited a judgement that used the data. So when the extract gives figures, <strong>quote and compare them</strong> in your evaluation &mdash; that is how you reach Level 4's &ldquo;using quantitative and/or qualitative information&rdquo;.
+</div>
+
+<h2>How Edexcel rewards this topic</h2>
+<ul>
+<li><strong>Knowledge:</strong> the correct formula &mdash; worth 1 mark on every 4-mark calculation.</li>
+<li><strong>Application:</strong> correct figures from the case, correct working, correct units (% or :1), and required decimal places.</li>
+<li><strong>Analysis:</strong> what the ratio means for this firm &mdash; e.g. high gearing &rarr; large interest payments &rarr; less profit for reinvestment &rarr; vulnerable if rates rise.</li>
+<li><strong>Evaluation:</strong> compare with trends/rivals, question the data (window dressing, one year only), bring in qualitative factors, and decide.</li>
+</ul>
+
+<h3>Common mistakes</h3>
+<ul>
+<li>Using total liabilities, or current liabilities, in the gearing ratio &mdash; it is <strong>non-current</strong> liabilities only.</li>
+<li>Using profit for the year instead of operating profit in ROCE.</li>
+<li>Forgetting to add non-current liabilities to equity when calculating capital employed.</li>
+<li>Dividing leavers by the workforce at the end of the year rather than the <em>average</em> number employed.</li>
+<li>Assuming high labour turnover is always bad, or that high gearing is always dangerous.</li>
+<li>Treating an income statement as a snapshot and a balance sheet as covering a period &mdash; it is the other way round.</li>
+</ul>
+
+<h2>Quick recall</h2>
+<ul>
+<li>Income statement: revenue &minus; cost of sales = GP; &minus; other operating expenses = OP; &minus; interest = profit for the year</li>
+<li>Balance sheet: NCA + CA &minus; CL &minus; NCL = net assets = total equity (share capital + retained profit)</li>
+<li>Capital employed = non-current liabilities + total equity</li>
+<li>Gearing = NCL &divide; capital employed &times; 100 (&gt;50% high)</li>
+<li>ROCE = operating profit &divide; capital employed &times; 100 (compare with interest rates, rivals, trend)</li>
+<li>Ratio limitations: historical, need comparisons, window dressing, qualitative factors ignored</li>
+<li>Productivity = output &divide; employees; turnover = leavers &divide; average staff &times; 100; retention = stayers &divide; staff at start &times; 100; absenteeism = days lost &divide; possible days &times; 100</li>
+<li>HR strategies: financial rewards, employee share ownership, consultation, empowerment</li>
+</ul>
+
+</div>
+</body>
+</html>
