@@ -12,6 +12,7 @@ const CONCURRENCY = 4;
 
 const SUBJECT_MAP = {
   biology: 'Biology',
+  business: 'Business Studies',
   chemistry: 'Chemistry',
   cs: 'Computer Science',
   economics: 'Economics',

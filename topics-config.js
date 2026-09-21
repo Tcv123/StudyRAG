@@ -188,6 +188,37 @@
         { id: 'B6.3', name: 'How biodiversity is affected',           sub: 'Human impact, conservation, indicator species, extinction' },
       ],
     },
+    'Business Studies_Edexcel|alevel': {
+      label: 'Business Studies — Edexcel',
+      emoji: '💼',
+      page: 'diagnostics/business-edexcel-alevel-diagnostic.html',
+      /* 9BS0 has no optional content: every student sits all four themes
+         (Papers 1 and 2 split them 1+4 / 2+3; Paper 3 draws on all four),
+         so topics.length is the examined total and no examinedTotal is set.
+         Ids are the spec's own X.Y numbering. */
+      topics: [
+        { id: '1.1', name: 'Meeting Customer Needs', sub: 'The market, market research, market positioning' },
+        { id: '1.2', name: 'The Market', sub: 'Demand, supply, markets, price and income elasticity' },
+        { id: '1.3', name: 'Marketing Mix & Strategy', sub: 'Design mix, branding & promotion, pricing, distribution, strategy' },
+        { id: '1.4', name: 'Managing People', sub: 'Staffing, recruitment & training, organisational design, motivation, leadership' },
+        { id: '1.5', name: 'Entrepreneurs & Leaders', sub: 'Entrepreneurs, motives, objectives, business forms, choices, leadership' },
+        { id: '2.1', name: 'Raising Finance', sub: 'Internal and external finance, liability, business plans' },
+        { id: '2.2', name: 'Financial Planning', sub: 'Sales forecasting, revenue & costs, break-even, budgets' },
+        { id: '2.3', name: 'Managing Finance', sub: 'Profit, liquidity, business failure' },
+        { id: '2.4', name: 'Resource Management', sub: 'Production & productivity, capacity utilisation, stock control, quality' },
+        { id: '2.5', name: 'External Influences', sub: 'Economic influences, legislation, the competitive environment' },
+        { id: '3.1', name: 'Business Objectives & Strategy', sub: 'Corporate objectives, theories of strategy, SWOT, external environment' },
+        { id: '3.2', name: 'Business Growth', sub: 'Growth, mergers & takeovers, organic growth, staying small' },
+        { id: '3.3', name: 'Decision-Making Techniques', sub: 'Sales forecasting, investment appraisal, decision trees, critical path' },
+        { id: '3.4', name: 'Influences on Business Decisions', sub: 'Corporate influences, culture, shareholders vs stakeholders, ethics' },
+        { id: '3.5', name: 'Assessing Competitiveness', sub: 'Financial statements, ratio analysis, human resources' },
+        { id: '3.6', name: 'Managing Change', sub: 'Causes & effects of change, key factors, scenario planning' },
+        { id: '4.1', name: 'Globalisation', sub: 'Growing economies, trade, protectionism, trading blocs' },
+        { id: '4.2', name: 'Global Markets & Business Expansion', sub: 'Conditions for trade, assessing markets & locations, global competitiveness' },
+        { id: '4.3', name: 'Global Marketing', sub: 'Global marketing strategy, niche markets, cultural & social factors' },
+        { id: '4.4', name: 'Global Industries & Companies (MNCs)', sub: 'Impact of MNCs, ethics, controlling MNCs' },
+      ],
+    },
     'Chemistry_AQA': {
       label: 'Chemistry — AQA',
       emoji: '🧪',

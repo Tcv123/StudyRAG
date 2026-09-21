@@ -227,6 +227,35 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
     return probe;
   }
 
+  // cached_level is only written once a page has loaded the profile (the
+  // Dashboard does it after its first batch of queries). On a fresh browser
+  // there is no cache yet, so an A-Level student's first topic_progress query
+  // ran as GCSE — empty progress, and writes tagged with the wrong level. A
+  // second account on the same browser inherited the first one's level the
+  // same way. So read the signed-in user's level from their profile once per
+  // page, before the first scoped query, and refresh the cache from it.
+  var levelSync = null;
+  function syncLevel(client) {
+    if (!levelSync) {
+      levelSync = Promise.resolve(client.auth.getSession()).then(function (res) {
+        var user = res && res.data && res.data.session && res.data.session.user;
+        if (!user) return;
+        return Promise.resolve(
+          client.__rawFrom('profiles').select('level').eq('id', user.id).maybeSingle()
+        ).then(function (p) {
+          var lvl = p && p.data && p.data.level;
+          if (lvl) { try { localStorage.setItem('cached_level', lvl); } catch (e) {} }
+        });
+      }).catch(function () { /* keep whatever is cached */ });
+    }
+    return levelSync;
+  }
+
+  function ready(client) {
+    return Promise.all([hasLevelColumn(client), syncLevel(client)])
+      .then(function (r) { return r[0]; });
+  }
+
   function withLevel(payload, lvl) {
     if (Array.isArray(payload)) {
       return payload.map(function (r) { return withLevel(r, lvl); });
@@ -249,7 +278,7 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
 
         if (prop === 'then') {
           return function (onOk, onErr) {
-            return hasLevelColumn(client).then(function (ok) {
+            return ready(client).then(function (ok) {
               var q = target;
               if (ok && !state.hasLevelFilter && !state.byPrimaryKey) {
                 q = target.eq('level', currentLevel());
@@ -296,7 +325,7 @@ const supabaseClient = supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
             var args = Array.prototype.slice.call(arguments);
             return {
               then: function (onOk, onErr) {
-                return hasLevelColumn(client).then(function (ok) {
+                return ready(client).then(function (ok) {
                   if (ok) args[0] = withLevel(args[0], currentLevel());
                   return Promise.resolve(value.apply(target, args)).then(onOk, onErr);
                 }, onErr);

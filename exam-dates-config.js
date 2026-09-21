@@ -27,6 +27,13 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — UK Government and Non-core Political Ideas', date: '2027-05-24', time: 'PM', duration: '2h' },
     { paper: 'Paper 3 — Comparative Politics (3A USA or 3B Global)', date: '2027-06-15', time: 'PM', duration: '2h' },
   ],
+  // Edexcel 9BS0, from Pearson's FINAL GCE Summer 2027 timetable
+  // (gce-summer-2027-final.pdf) — the by-date and by-subject tables agree.
+  'Business Studies_Edexcel|alevel': [
+    { paper: 'Paper 1 — Marketing, People & Global Businesses', date: '2027-05-13', time: 'PM', duration: '2h' },
+    { paper: 'Paper 2 — Business Activities, Decisions & Strategy', date: '2027-05-19', time: 'AM', duration: '2h' },
+    { paper: 'Paper 3 — Investigating Business in a Competitive Environment', date: '2027-06-08', time: 'PM', duration: '2h' },
+  ],
   'Computer Science_AQA|alevel': [
     { paper: 'Paper 1 — On-screen Programming', date: '2026-06-11', time: 'AM', duration: '2h 30m' },
     { paper: 'Paper 2 — Written Theory', date: '2026-06-18', time: 'PM', duration: '2h 30m' },

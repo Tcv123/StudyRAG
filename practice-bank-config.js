@@ -89,6 +89,7 @@
     ],
     'Politics_AQA|alevel':          ['questions/politics/politics-aqa-alevel-practice.js'],
     'Politics_Edexcel|alevel':      ['questions/politics/politics-edexcel-alevel-practice.js'],
+    'Business Studies_Edexcel|alevel': ['questions/business/business-edexcel-alevel-practice.js'],
     'English Language_AQA':         ['questions/english-aqa/english-aqa-practice.js'],
     'English Language_Edexcel':     ['questions/english-edexcel/english-edexcel-practice.js'],
   };
@@ -140,6 +141,7 @@
     'Further Mathematics_OCR B': () => typeof FM_OCR_B_PRACTICE !== 'undefined' ? FM_OCR_B_PRACTICE : null,
     'Politics_AQA|alevel': () => typeof POLITICS_AQA_PRACTICE !== 'undefined' ? POLITICS_AQA_PRACTICE : null,
     'Politics_Edexcel|alevel': () => typeof POLITICS_EDEXCEL_PRACTICE !== 'undefined' ? POLITICS_EDEXCEL_PRACTICE : null,
+    'Business Studies_Edexcel|alevel': () => typeof BUSINESS_EDEXCEL_PRACTICE !== 'undefined' ? BUSINESS_EDEXCEL_PRACTICE : null,
     'English Language_AQA': () => typeof ENGLISH_AQA_PRACTICE !== 'undefined' ? ENGLISH_AQA_PRACTICE : null,
     'English Language_Edexcel': () => typeof ENGLISH_EDEXCEL_PRACTICE !== 'undefined' ? ENGLISH_EDEXCEL_PRACTICE : null,
   };
@@ -185,6 +187,7 @@
     'Geography_OCR':               ['questions/geography-ocr/geography-ocr-ai-feedback.js'],
     'Politics_AQA|alevel':         ['questions/politics/politics-aqa-alevel-ai-feedback.js'],
     'Politics_Edexcel|alevel':     ['questions/politics/politics-edexcel-alevel-ai-feedback.js'],
+    'Business Studies_Edexcel|alevel': ['questions/business/business-edexcel-alevel-ai-feedback.js'],
   };
 
   const AI_FEEDBACK_MAP = {
@@ -225,6 +228,7 @@
     'Geography_OCR':            () => typeof GEOGRAPHY_OCR_AI_FEEDBACK !== 'undefined' ? GEOGRAPHY_OCR_AI_FEEDBACK : null,
     'Politics_AQA|alevel':      () => typeof POLITICS_AQA_AI_FEEDBACK !== 'undefined' ? POLITICS_AQA_AI_FEEDBACK : null,
     'Politics_Edexcel|alevel':  () => typeof POLITICS_EDEXCEL_AI_FEEDBACK !== 'undefined' ? POLITICS_EDEXCEL_AI_FEEDBACK : null,
+    'Business Studies_Edexcel|alevel': () => typeof BUSINESS_EDEXCEL_AI_FEEDBACK !== 'undefined' ? BUSINESS_EDEXCEL_AI_FEEDBACK : null,
   };
 
   const _loadedScripts = new Set();

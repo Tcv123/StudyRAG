@@ -8,6 +8,29 @@
 ═══════════════════════════════════════════════════════════════════ */
 (function () {
   const FLASHCARDS_TOPICS = {
+    // ── Business Studies ────────────────────────────────────────────
+    'Business Studies|Edexcel|alevel': [
+      { num: '1.1', name: 'Meeting Customer Needs' },
+      { num: '1.2', name: 'The Market' },
+      { num: '1.3', name: 'Marketing Mix & Strategy' },
+      { num: '1.4', name: 'Managing People' },
+      { num: '1.5', name: 'Entrepreneurs & Leaders' },
+      { num: '2.1', name: 'Raising Finance' },
+      { num: '2.2', name: 'Financial Planning' },
+      { num: '2.3', name: 'Managing Finance' },
+      { num: '2.4', name: 'Resource Management' },
+      { num: '2.5', name: 'External Influences' },
+      { num: '3.1', name: 'Business Objectives & Strategy' },
+      { num: '3.2', name: 'Business Growth' },
+      { num: '3.3', name: 'Decision-Making Techniques' },
+      { num: '3.4', name: 'Influences on Business Decisions' },
+      { num: '3.5', name: 'Assessing Competitiveness' },
+      { num: '3.6', name: 'Managing Change' },
+      { num: '4.1', name: 'Globalisation' },
+      { num: '4.2', name: 'Global Markets & Business Expansion' },
+      { num: '4.3', name: 'Global Marketing' },
+      { num: '4.4', name: 'Global Industries & Companies (MNCs)' },
+    ],
     // ── Politics ────────────────────────────────────────────────────
     'Politics|Edexcel|alevel': [
       { num: '1.1', name: 'Democracy and Participation' },

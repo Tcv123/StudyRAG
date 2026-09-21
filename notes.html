@@ -384,6 +384,7 @@ const DIAG_PAGE = {
   'Computer Science|AQA|alevel':  { url: 'diagnostics/cs-aqa-alevel-diagnostic.html',    total: 10, first: '4.1' },
   'Politics|AQA|alevel':          { url: 'diagnostics/politics-aqa-alevel-diagnostic.html', total: 28, first: '1.1' },
   'Politics|Edexcel|alevel':      { url: 'diagnostics/politics-edexcel-alevel-diagnostic.html', total: 18, first: '1.1' },
+  'Business Studies|Edexcel|alevel': { url: 'diagnostics/business-edexcel-alevel-diagnostic.html', total: 20, first: '1.1' },
   'Physics|Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',  total: 13, first: 'T1'  },
   'Physics|AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',      total: 8,  first: '3.1' },
   'Physics|AQA|gcse':             { url: 'diagnostics/physics-aqa-gcse-diagnostic.html', total: 8,  first: '4.1' },
@@ -424,6 +425,31 @@ const DIAG_PAGE = {
 };
 
 const NOTES_AVAILABLE = {
+  'Business Studies|Edexcel|alevel': {
+    url: 'subject-notes/business-edexcel-alevel-notes.html',
+    topics: [
+      { num: '1.1', name: 'Meeting Customer Needs' },
+      { num: '1.2', name: 'The Market' },
+      { num: '1.3', name: 'Marketing Mix & Strategy' },
+      { num: '1.4', name: 'Managing People' },
+      { num: '1.5', name: 'Entrepreneurs & Leaders' },
+      { num: '2.1', name: 'Raising Finance' },
+      { num: '2.2', name: 'Financial Planning' },
+      { num: '2.3', name: 'Managing Finance' },
+      { num: '2.4', name: 'Resource Management' },
+      { num: '2.5', name: 'External Influences' },
+      { num: '3.1', name: 'Business Objectives & Strategy' },
+      { num: '3.2', name: 'Business Growth' },
+      { num: '3.3', name: 'Decision-Making Techniques' },
+      { num: '3.4', name: 'Influences on Business Decisions' },
+      { num: '3.5', name: 'Assessing Competitiveness' },
+      { num: '3.6', name: 'Managing Change' },
+      { num: '4.1', name: 'Globalisation' },
+      { num: '4.2', name: 'Global Markets & Business Expansion' },
+      { num: '4.3', name: 'Global Marketing' },
+      { num: '4.4', name: 'Global Industries & Companies (MNCs)' },
+    ]
+  },
   'Politics|Edexcel|alevel': {
     url: 'subject-notes/politics-edexcel-alevel-notes.html',
     /* All 28 are listed. A student sits 18 of them: the 16 compulsory,
