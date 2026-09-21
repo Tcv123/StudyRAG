@@ -146,6 +146,8 @@
     .qbq-scenario { margin: 12px 22px 0; padding: 14px 16px; background: var(--surface2); border: 1px solid var(--border); border-radius: 10px; font-size: 13.5px; color: var(--muted); line-height: 1.6; }
     .qbq-scenario-label { font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted2); margin-bottom: 4px; }
     .qbq-scenario p { margin-top: 4px; }
+    .qbq-choice { margin: 12px 22px 0; padding: 10px 14px; background: rgba(180,83,9,0.08); border-left: 3px solid var(--warn); border-radius: 6px; font-size: 13.5px; color: var(--text); line-height: 1.55; }
+    .qbq-choice-badge { display: inline-flex; align-items: center; padding: 4px 12px; background: rgba(180,83,9,0.08); color: var(--warn); border: 1px solid rgba(180,83,9,0.3); border-radius: 999px; font-size: 12px; font-weight: 600; }
     .qbq-preamble { margin: 12px 22px 0; padding: 0 4px; font-size: 14.5px; color: var(--muted); line-height: 1.65; font-style: italic; border-left: 3px solid var(--border); padding-left: 12px; }
     .qbq-prompt { margin: 14px 22px 0; padding: 0; font-size: 16.5px; line-height: 1.7; color: var(--text); white-space: pre-line; }
     .qbq-prompt code { background: var(--surface2); border: 1px solid var(--border); padding: 1px 6px; border-radius: 5px; font-family: 'Consolas', 'Monaco', monospace; font-size: 14px; color: var(--accent-dark); }
@@ -487,6 +489,10 @@
     // functions execute (since they live below this dispatch).
     const timerDurationMs = (paper.durationMins || 0) * 60 * 1000;
     let timerInterval = null;
+    // "Answer N of" choice groups (see paperChoiceGroups in papers-config.js).
+    // Papers without them get an empty list and behave exactly as before.
+    const choiceGroups = window.paperChoiceGroups(paper);
+    const hasChoices = choiceGroups.length > 0;
     const stored = loadAttempt();
 
     renderShell();
@@ -519,6 +525,18 @@
     }
     function clearAttempt() {
       try { localStorage.removeItem(STORAGE_KEY); } catch (_) {}
+    }
+    // How many parts a candidate actually answers once choices are made.
+    function requiredPartCount(parts) {
+      const grouped = parts.filter(p => p.choice).length;
+      return parts.length - grouped
+        + choiceGroups.reduce((n, g) => n + g.choose * g.options[0].length, 0);
+    }
+    function scoreResponses(responses) {
+      if (!hasChoices) {
+        return { scored: responses.reduce((n, r) => n + (Number.isFinite(r.marks) ? r.marks : 0), 0), counted: null };
+      }
+      return window.scorePaperMarks(paper, Object.fromEntries(responses.map(r => [r.code, r.marks])));
     }
     function pctBand(pct) {
       // Rough UCAS-style A-level bands — the user can recalibrate against the
@@ -745,7 +763,7 @@
       // the qbq covers a subset of the paper (e.g. AQA Paper 1 has
       // Section D questions tied to the Skeleton Program which AQA
       // doesn't publish, so we wire up Sections A–C only).
-      const qbqMarks = parts.reduce((s, p) => s + (p.marks || 0), 0);
+      const qbqMarks = hasChoices ? window.paperMaxMarks(paper) : parts.reduce((s, p) => s + (p.marks || 0), 0);
       const partial = qbqMarks > 0 && qbqMarks < paper.totalMarks;
       const noteLine = paper.qbqNote
         ? `<div style="margin-top:8px;padding:8px 10px;background:rgba(180,83,9,0.08);border-left:3px solid var(--warn);border-radius:4px;font-size:13px;color:var(--text);"><strong>Note:</strong> ${paper.qbqNote}</div>`
@@ -757,7 +775,7 @@
             <div class="mode-card" data-mode="qbq">
               <div class="mode-icon">📝</div>
               <div class="mode-title">Work through it question by question</div>
-              <div class="mode-desc">Step through each question on-screen. See the actual exam prompt, enter your marks, then move to the next. Totals and grade band update live. <strong>${parts.length} parts</strong> in this paper${partial ? ` <strong>(${qbqMarks}/${paper.totalMarks} marks)</strong>` : ''}.</div>
+              <div class="mode-desc">Step through each question on-screen. See the actual exam prompt, enter your marks, then move to the next. Totals and grade band update live. <strong>${parts.length} parts</strong> in this paper${hasChoices ? ` — some questions give you a choice, so you answer <strong>${requiredPartCount(parts)}</strong> of them` : ''}${partial ? ` <strong>(${qbqMarks}/${paper.totalMarks} marks)</strong>` : ''}.</div>
               ${noteLine}
               <div style="margin-top:10px;"><button class="btn primary" data-pick="qbq">Use this mode →</button></div>
             </div>` : `
@@ -1351,6 +1369,21 @@ builtins.input = __qbq_input
             ${(part.scenarioFigures || []).map(renderFigure).join('')}
           </div>` : '';
 
+        let choiceHtml = '';
+        if (part.choice) {
+          const g = choiceGroups[part.choice.group];
+          const answerOf = c => { const r = attempt.responses.find(x => x.code === c); return r && r.answer && r.answer.trim(); };
+          const answered = g.options.filter(codes => codes.some(answerOf)).length;
+          let note = '';
+          if (phase === 'attempt') {
+            note = answered > g.choose
+              ? ` You've answered ${answered} of these — only your best ${g.choose} will count.`
+              : ` Leave the ones you don't choose blank — they won't count against you.`;
+          } else if (!(response.answer || '').trim()) {
+            note = ` You didn't answer this one, so it doesn't count against you${phase === 'marking' ? ' — just move on' : ''}.`;
+          }
+          choiceHtml = `<div class="qbq-choice">🔀 <strong>Choice:</strong> ${esc(g.instruction)}${note}</div>`;
+        }
         const figureHtml = renderFigure(part.figure);
         const preambleHtml = part.preamble
           ? `<div class="qbq-preamble">${renderPromptText(part.preamble)}</div>`
@@ -1564,9 +1597,11 @@ builtins.input = __qbq_input
               <span class="qbq-qcode">${esc(part.code)}</span>
               <span class="qbq-marks-badge">${part.marks} mark${part.marks === 1 ? '' : 's'}</span>
               ${part.extended ? `<span class="qbq-extended-badge">★ Extended response · quality of writing assessed</span>` : ''}
+              ${part.choice ? `<span class="qbq-choice-badge">Choice · answer ${part.choice.choose} of ${part.choice.optionCount}</span>` : ''}
               ${phaseChip}
               ${paper.qpUrl ? `<a class="qbq-qp-link" href="${esc(paper.qpUrl)}" target="_blank" rel="noopener" title="Open the question paper PDF — needed to see figures and graphs">📄 Question paper PDF</a>` : ''}
             </div>
+            ${choiceHtml}
             ${scenarioHtml}
             ${preambleHtml}
             ${figureHtml}
@@ -1905,7 +1940,7 @@ builtins.input = __qbq_input
             let tick = '·';
             if (phase === 'attempt' && attempt.responses[i].answer && attempt.responses[i].answer.trim()) tick = '✓';
             if ((phase === 'marking' || phase === 'review') && attempt.responses[i].marks != null) tick = '✓';
-            opt.textContent = `${tick} ${p.code} (${p.marks}m)`;
+            opt.textContent = `${tick} ${p.code} (${p.marks}m)${p.choice ? ' · choice' : ''}`;
             if (i === idx) opt.selected = true;
             jump.appendChild(opt);
           });
@@ -1945,12 +1980,15 @@ builtins.input = __qbq_input
           } else {
             // Marking phase — the AI marker (or skip) is the only way to set
             // a score. If the user hasn't marked this part, treat as 0.
-            if (attempt.responses[idx].marks == null) {
+            // An unanswered choice part is an alternative the student didn't
+            // pick — leave it unmarked rather than scoring it 0.
+            const skippedAlternative = part.choice && !(attempt.responses[idx].answer || '').trim();
+            if (attempt.responses[idx].marks == null && !skippedAlternative) {
               if (!confirm(`${part.code} hasn't been marked yet. Skip and count as 0?`)) return;
               attempt.responses[idx].marks = 0;
             }
             if (idx === totalParts - 1) {
-              const scored = attempt.responses.reduce((n, r) => n + (Number.isFinite(r.marks) ? r.marks : 0), 0);
+              const { scored } = scoreResponses(attempt.responses);
               const completed = {
                 ...attempt,
                 status: 'completed',
@@ -1982,7 +2020,7 @@ builtins.input = __qbq_input
             <div class="qbq-intro-icon">📋</div>
             <div class="qbq-intro-title">Answering done — time to self-mark</div>
             <div class="qbq-intro-body">
-              You've written answers for all ${parts.length} parts. Now walk through them again with the official ${esc(boardShort())} mark scheme open, and award yourself the marks you genuinely earned for each part. You'll see your final total at the end.
+              ${hasChoices ? `You've finished answering — alternatives you left blank are skipped automatically. Now walk through your answers again` : `You've written answers for all ${parts.length} parts. Now walk through them again`} with the official ${esc(boardShort())} mark scheme open, and award yourself the marks you genuinely earned for each part. You'll see your final total at the end.
             </div>
             <div class="btn-row" style="justify-content:center;">
               ${paper.msUrl ? `<a class="btn" href="${esc(paper.msUrl)}" target="_blank" rel="noopener">📋 Open mark scheme PDF</a>` : ''}
@@ -2008,7 +2046,7 @@ builtins.input = __qbq_input
             <div class="qbq-intro-icon">⏱️</div>
             <div class="qbq-intro-title">Ready to begin?</div>
             <div class="qbq-intro-body">
-              This paper is ${parts.length} parts and ${durStr} long. Hit <strong>Start timer &amp; begin paper</strong> to kick off the countdown — the timer stays pinned at the top of the page as you work. If you'd rather time yourself externally, you can skip it.
+              This paper is ${parts.length} parts${hasChoices ? ` (you answer ${requiredPartCount(parts)} — parts marked <strong>Choice</strong> are alternatives)` : ''} and ${durStr} long. Hit <strong>Start timer &amp; begin paper</strong> to kick off the countdown — the timer stays pinned at the top of the page as you work. If you'd rather time yourself externally, you can skip it.
             </div>
             <div style="margin: 18px 0;">${timerHtml('card')}</div>
             <div class="btn-row" style="justify-content:center;">
@@ -2065,9 +2103,21 @@ builtins.input = __qbq_input
 
       let breakdownHtml = '';
       if (attempt.mode === 'qbq' && Array.isArray(attempt.responses)) {
+        const { counted } = scoreResponses(attempt.responses);
+        const choiceCodes = new Set(choiceGroups.flatMap(g => g.options.flat()));
         const rows = attempt.responses
           .map((r, i) => {
             const s = Number.isFinite(r.marks) ? r.marks : null;
+            if (counted && choiceCodes.has(r.code) && !counted.has(r.code)) {
+              return `
+                <tr data-review-idx="${i}" style="cursor:pointer;">
+                  <td>${esc(r.code || '')}</td>
+                  <td class="num" style="color:var(--muted2);">${s == null ? '—' : s} / ${r.maxMarks}</td>
+                  <td><div class="bar"></div></td>
+                  <td class="num" style="color:var(--muted2);">${s == null ? 'not chosen' : 'not counted'}</td>
+                  <td class="num" style="color:var(--muted2);font-size:12px;">review →</td>
+                </tr>`;
+            }
             const m = r.maxMarks;
             const hasAi = !!r.aiResult;
             const aiPill = hasAi ? `<span style="display:inline-block;font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.06em;background:rgba(124,58,237,0.1);color:#6D28D9;padding:1px 6px;border-radius:999px;margin-left:8px;vertical-align:middle;">AI</span>` : '';
@@ -2099,7 +2149,7 @@ builtins.input = __qbq_input
               <div class="panel-head" style="display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:14px;">
                 <div>
                   <div class="panel-title">Per-question breakdown</div>
-                  <div class="panel-sub" style="margin-top:2px;">All ${attempt.responses.length} parts. Click any row to walk through your answer and the marking. Skipped parts count as 0.</div>
+                  <div class="panel-sub" style="margin-top:2px;">All ${attempt.responses.length} parts. Click any row to walk through your answer and the marking. ${hasChoices ? 'Where the paper gives a choice, only your best answers count; alternatives you didn\'t choose are ignored. Other skipped parts count as 0.' : 'Skipped parts count as 0.'}</div>
                 </div>
                 <button class="btn primary" id="walkAllBtn" style="font-size:13.5px;padding:9px 16px;">▶ Walk through paper</button>
               </div>

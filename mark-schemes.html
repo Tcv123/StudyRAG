@@ -83,6 +83,8 @@
     .q-card-head:hover { background: var(--surface2); }
     .q-num { font-family: var(--font-display); font-size: 17px; flex: 1; }
     .q-marks { font-size: 13px; color: var(--muted); }
+    .q-choice { font-size: 12px; font-weight: 600; color: var(--warn, #B45309); background: rgba(180,83,9,0.08); border: 1px solid rgba(180,83,9,0.3); border-radius: 999px; padding: 3px 10px; }
+    .q-group-note { font-size: 13.5px; color: var(--text); background: rgba(180,83,9,0.08); border-left: 3px solid var(--warn, #B45309); border-radius: 6px; padding: 10px 14px; }
     .q-arrow { color: var(--muted2); font-size: 13px; margin-left: 8px; transition: transform 0.2s; display: inline-block; }
     .q-card.open .q-arrow { transform: rotate(180deg); }
     .q-card-body { display: none; border-top: 1px solid var(--border); }
@@ -765,9 +767,34 @@ function buildPicker(userSubs) {
     // Group by top-level question number
     const questions = paper.questions || [];
     let globalPartIdx = 0;
+    // "Answer N of" choices — a question's marks count only the parts a
+    // candidate actually answers. Groups spanning several questions get a
+    // note above their first question.
+    const choiceGroups = window.paperChoiceGroups ? window.paperChoiceGroups(paper) : [];
+    const choiceByCode = {};
+    parts.forEach(p => { if (p.choice) choiceByCode[p.code] = p.choice; });
+    const notedGroups = new Set();
     const questionsHtml = questions.map((q, qi) => {
       const qParts = window.paperParts ? window.paperParts({ questions: [q], markSchemes: paper.markSchemes }) : (q.parts || []);
-      const qMarks = qParts.reduce((s, p) => s + (p.marks || 0), 0);
+      const qMarks = choiceGroups.length
+        ? window.paperMaxMarks(paper, [q])
+        : qParts.reduce((s, p) => s + (p.marks || 0), 0);
+      const qCodes = new Set(qParts.map(p => p.code));
+      let groupNoteHtml = '';
+      let qChoiceHtml = '';
+      [...new Set(qParts.filter(p => choiceByCode[p.code]).map(p => choiceByCode[p.code].group))].forEach(gid => {
+        const g = choiceGroups[gid];
+        const withinQuestion = g.options.flat().every(c => qCodes.has(c));
+        if (withinQuestion) {
+          qChoiceHtml += `<span class="q-choice">${esc(g.instruction)}</span>`;
+        } else {
+          qChoiceHtml += `<span class="q-choice">Optional</span>`;
+          if (!notedGroups.has(gid)) {
+            notedGroups.add(gid);
+            groupNoteHtml += `<div class="q-group-note">🔀 <strong>Choice:</strong> ${esc(g.instruction)}</div>`;
+          }
+        }
+      });
       const partsHtml = qParts.map((part) => {
         const pi = globalPartIdx++;
         const msType = part.markScheme ? (part.markScheme.type || 'points') : null;
@@ -780,6 +807,7 @@ function buildPicker(userSubs) {
               <span class="part-prompt">${esc(shortPrompt)}</span>
               <span class="part-row-right">
                 <span class="part-marks-badge">${part.marks} mark${part.marks !== 1 ? 's' : ''}</span>
+                ${choiceByCode[part.code] ? `<span class="part-ms-type">Choice</span>` : ''}
                 ${typeLabel ? `<span class="part-ms-type">${typeLabel}</span>` : ''}
                 <span class="part-arrow">▾</span>
               </span>
@@ -787,10 +815,11 @@ function buildPicker(userSubs) {
             <div class="part-row-body">${renderMsCard(part, paperKey, paper.id)}</div>
           </div>`;
       }).join('');
-      return `
+      return `${groupNoteHtml}
         <div class="q-card">
           <div class="q-card-head" onclick="toggleQuestion(${qi})">
             <span class="q-num">Question ${q.number || qi + 1}</span>
+            ${qChoiceHtml}
             <span class="q-marks">${qMarks} marks</span>
             <span class="q-arrow" id="qa-${qi}">▾</span>
           </div>
