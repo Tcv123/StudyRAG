@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RAG Learning — Edexcel 1.3 — Electoral Systems</title>
+    <style>
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        body { font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif; line-height: 1.7; color: #1a1a2e; background: #fff; padding: 40px; }
+        .container { max-width: 800px; margin: 0 auto; }
+        h1 { font-size: 2rem; color: #1a1a2e; border-bottom: 3px solid #2563eb; padding-bottom: 12px; margin-bottom: 8px; }
+        .spec-ref { font-size: 0.95rem; color: #6b7280; margin-bottom: 32px; }
+        h2 { font-size: 1.45rem; color: #1e40af; margin-top: 40px; margin-bottom: 16px; padding-bottom: 6px; border-bottom: 2px solid #dbeafe; }
+        h3 { font-size: 1.15rem; color: #1e3a5f; margin-top: 28px; margin-bottom: 10px; }
+        p { margin-bottom: 14px; } ul, ol { margin-bottom: 14px; padding-left: 24px; } li { margin-bottom: 6px; }
+        strong { color: #1a1a2e; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 0.95rem; }
+        th, td { border: 1px solid #d1d5db; padding: 10px 14px; text-align: left; vertical-align: top; }
+        th { background: #f0f4ff; color: #1e40af; font-weight: 600; }
+        tr:nth-child(even) { background: #f9fafb; }
+        .definition { background: #eff6ff; border-left: 4px solid #2563eb; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip { background: #fffbeb; border-left: 4px solid #f59e0b; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        .exam-tip::before { content: "Exam Tip: "; font-weight: 700; color: #b45309; }
+        .thinker { background: #f5f3ff; border-left: 4px solid #7c3aed; padding: 16px 20px; margin: 16px 0; border-radius: 0 8px 8px 0; }
+        code { font-family: 'Consolas', monospace; background: #f3f4f6; padding: 2px 6px; border-radius: 4px; font-size: 0.9em; }
+        @media print { body { padding: 20px; font-size: 11pt; } .exam-tip, .definition, .thinker { break-inside: avoid; } h2 { break-after: avoid; } }
+    </style>
+</head>
+<body>
+<div class="container">
+
+<div style="background:#fff;border-bottom:1px solid #B8D0E8;padding:10px 20px;margin:-40px -20px 30px -20px;display:flex;align-items:center;gap:10px;"><a href="../Dashboard.html" style="display:flex;align-items:center;gap:8px;text-decoration:none;color:#0B1E3F;font-family:system-ui,sans-serif;font-size:14px;font-weight:500;"><span style="width:8px;height:8px;border-radius:50%;background:#2563EB;display:inline-block;"></span> RAG Learning</a></div>
+
+<h1>1.3 Electoral Systems</h1>
+<p class="spec-ref">Politics &mdash; Edexcel (9PL0) &mdash; Component 1: UK Politics, Section A</p>
+
+<p>This topic is the most technical in Component 1 and the most rewarding, because almost every other question in UK Politics has an electoral-system component. Party systems, minor-party failure, the democratic deficit and the two-party debate all reduce to how votes are converted into seats. Learn the mechanics precisely: examiners can tell immediately whether a candidate understands how AMS or STV actually works.</p>
+
+<div class="definition">
+<strong>First-past-the-post (FPTP)</strong> &mdash; single-member constituencies; the candidate with the most votes wins, with no majority required.<br>
+<strong>Additional Member System (AMS)</strong> &mdash; hybrid: single-member constituencies elected by FPTP plus a regional top-up list.<br>
+<strong>Single Transferable Vote (STV)</strong> &mdash; multi-member constituencies; voters rank candidates; surpluses and eliminations are transferred until a quota is met.<br>
+<strong>Supplementary Vote (SV)</strong> &mdash; voters express a first and second preference; used for mayors and PCCs until the Elections Act 2022, and restored for them from June 2026.<br>
+<strong>Safe seat</strong> &mdash; a constituency the same party wins consistently by a wide margin.<br>
+<strong>Marginal seat</strong> &mdash; a constituency where the gap between the leading candidates is narrow enough that it may change hands.<br>
+<strong>Minority government</strong> &mdash; a government without an overall Commons majority.<br>
+<strong>Coalition government</strong> &mdash; two or more parties agreeing to govern together and share ministerial office.<br>
+<strong>Wasted vote</strong> &mdash; one cast for a losing candidate, or surplus to the number the winner required.
+</div>
+
+<div class="exam-tip">
+Keep the dates straight. The <strong>Elections Act 2022 replaced SV with FPTP</strong> for elected mayors and police and crime commissioners from May 2023; the <strong>English Devolution and Community Empowerment Act 2026 restored SV</strong> for those elections from June 2026. The Senedd also changed: from May 2026 it is elected by <strong>closed-list PR</strong> (96 members, 16 six-member constituencies), not AMS.
+</div>
+
+<h2>1. Different electoral systems</h2>
+
+<table>
+<tr><th>System</th><th>How it works</th><th>Where used</th><th>Type</th></tr>
+<tr><td><strong>FPTP</strong></td><td>One member per constituency; most votes wins</td><td>UK general elections; English and Welsh local elections; mayors and PCCs May 2023&ndash;May 2026</td><td>Plurality</td></tr>
+<tr><td><strong>AMS</strong></td><td>Two votes: constituency (FPTP) and regional list; list seats top up to improve proportionality</td><td>Scottish Parliament, London Assembly; the Senedd until 2026 (closed-list PR since)</td><td>Hybrid / mixed</td></tr>
+<tr><td><strong>STV</strong></td><td>Multi-member constituencies; ranked preferences; Droop quota; surpluses and eliminations transferred</td><td>Northern Ireland Assembly and local elections; Scottish local elections</td><td>Proportional</td></tr>
+<tr><td><strong>SV</strong></td><td>First and second preference; if no majority, all but the top two eliminated and second preferences added</td><td>Mayors and PCCs, 2000&ndash;2023</td><td>Majoritarian</td></tr>
+</table>
+
+<h3>FPTP in detail</h3>
+<table>
+<tr><th>Advantages</th><th>Disadvantages</th></tr>
+<tr><td>Usually produces a single-party majority, giving clear accountability and a government able to act on its mandate</td><td>Substantial disproportionality between vote share and seat share</td></tr>
+<tr><td>Strong constituency link &mdash; one identifiable member per area, removable by that electorate</td><td>Large numbers of wasted votes: cast for losers, or surplus to the winner's requirement</td></tr>
+<tr><td>Simple to understand and to count, which supports confidence in the result</td><td>Safe seats reduce competition and depress turnout</td></tr>
+<tr><td>Historically kept parties with dispersed extremist support out of the Commons</td><td>Encourages tactical voting rather than sincere preference</td></tr>
+<tr><td>Governments can be removed entire at a general election, without post-election bargaining</td><td>Governments routinely formed on 35&ndash;45% of the vote</td></tr>
+<tr><td>Speedy formation of government &mdash; a new PM can take office the day after polling</td><td>Campaigning concentrates on a small number of marginal seats</td></tr>
+</table>
+
+<h3>Disproportionality: the evidence</h3>
+<table>
+<tr><th>Election</th><th>Illustration</th></tr>
+<tr><td>2015</td><td>UKIP 12.6% of the vote &rarr; 1 seat. SNP 4.7% &rarr; 56 seats. Conservatives 36.9% &rarr; an overall majority</td></tr>
+<tr><td>2005</td><td>Labour won a majority of 66 on 35.2% of the vote &mdash; the lowest winning share of the modern era</td></tr>
+<tr><td>2019</td><td>Conservatives 43.6% &rarr; 365 seats (56% of the Commons); Lib Dems 11.6% &rarr; 11 seats</td></tr>
+<tr><td>1983</td><td>SDP&ndash;Liberal Alliance 25.4% &rarr; 23 seats; Labour 27.6% &rarr; 209 seats</td></tr>
+<tr><td>1951</td><td>Labour won more votes than the Conservatives and fewer seats &mdash; the plurality winner lost</td></tr>
+<tr><td>February 1974</td><td>Same again: the Conservatives led on votes, Labour on seats; a hung parliament followed</td></tr>
+</table>
+
+<p>The 1951 and February 1974 cases are worth knowing because they show the distortion is not merely a matter of degree: FPTP can reverse the order of the two largest parties entirely.</p>
+
+<h3>AMS in detail</h3>
+<p>Voters cast two votes. The constituency vote elects a member by FPTP; the regional vote is for a party list, and list seats are allocated so that each party's <em>overall</em> regional representation more closely reflects its regional vote share. In Scotland, <strong>73 constituency members and 56 regional members</strong> across eight regions; in Wales, 40 constituency and 20 regional under the arrangements in force for most of the devolution period.</p>
+<p>The correction is partial rather than complete, which is why AMS is called a hybrid. A party that wins most constituency seats receives few list seats, because the calculation offsets what it already holds.</p>
+
+<table>
+<tr><th>Strengths</th><th>Weaknesses</th></tr>
+<tr><td>Markedly more proportional than FPTP while keeping a constituency link</td><td>Creates two classes of member with different mandates and workloads</td></tr>
+<tr><td>Voters can split the ticket &mdash; supporting a constituency candidate and a different party regionally</td><td>List members are chosen by the party, not the voter, under a closed list</td></tr>
+<tr><td>Gives smaller parties realistic representation</td><td>Coalition or minority government becomes the norm, so the governing programme is settled after the election</td></tr>
+</table>
+
+<p>Scotland's record illustrates the range of outcomes: a Labour&ndash;Lib Dem coalition, SNP minority governments, an SNP overall majority in 2011 which the system was designed to make unlikely, and later an SNP&ndash;Green co-operation agreement.</p>
+
+<h3>STV in detail</h3>
+<p>Voters rank candidates in multi-member constituencies. A candidate is elected on reaching the <strong>Droop quota</strong>:</p>
+<p style="text-align:center;"><code>quota = ( total valid votes &divide; ( seats + 1 ) ) + 1</code></p>
+<p>Surplus votes above the quota transfer at a reduced value to later preferences; the lowest-placed candidates are eliminated and their votes transferred, until all seats are filled. In a six-seat constituency the quota is therefore just over one-seventh of the vote &mdash; which is why a party with modest but real support wins representation.</p>
+<p>In Northern Ireland the purpose is structural. Multi-member seats and transfers ensure both communities are represented in every area, which makes the Good Friday Agreement's power-sharing executive consistent with the electoral outcome. It also gives candidates an incentive to seek transfers beyond their own community &mdash; though in practice transfers have often stayed within blocs.</p>
+
+<table>
+<tr><th>Strengths</th><th>Weaknesses</th></tr>
+<tr><td>Highly proportional; very few wasted votes</td><td>Weaker constituency link &mdash; several members serve one area, so responsibility is diffused</td></tr>
+<tr><td>Voters choose between candidates of the same party, not just between parties</td><td>Complex count taking several days</td></tr>
+<tr><td>Encourages candidates to appeal beyond their core support</td><td>Intra-party competition can create friction between colleagues</td></tr>
+<tr><td>Almost always produces coalition, which requires broad agreement</td><td>Coalition may deliver a programme no voter actually chose</td></tr>
+</table>
+
+<h3>SV in detail</h3>
+<p>Voters mark a first and a second preference. If a candidate wins more than 50% of first preferences they are elected. Otherwise all but the top two are eliminated, and the second preferences of eliminated candidates' voters are added where they name one of the remaining two. It produces a winner with broad rather than merely plurality support, but only among those whose second preference happened to fall on a survivor &mdash; many ballots are exhausted. The Elections Act 2022 replaced it with FPTP from May 2023, a change its critics argued would advantage the largest party; the English Devolution and Community Empowerment Act 2026 brought it back from June 2026.</p>
+
+<h2>2. Referendums and how they are used</h2>
+
+<table>
+<tr><th>Year</th><th>Question</th><th>Turnout</th><th>Result</th></tr>
+<tr><td>1975</td><td>Remain in the EEC</td><td>64.0%</td><td>67.2% Yes</td></tr>
+<tr><td>1979</td><td>Scottish / Welsh devolution</td><td>63.6% / 58.8%</td><td>Scotland Yes but below the 40% threshold; Wales No</td></tr>
+<tr><td>1997</td><td>Scottish Parliament / Welsh Assembly</td><td>60.2% / 50.1%</td><td>74.3% Yes / 50.3% Yes</td></tr>
+<tr><td>1998</td><td>Good Friday Agreement</td><td>81.1%</td><td>71.1% Yes</td></tr>
+<tr><td>2011</td><td>Alternative Vote</td><td>42.2%</td><td>67.9% No</td></tr>
+<tr><td>2014</td><td>Scottish independence</td><td>84.6%</td><td>55.3% No</td></tr>
+<tr><td>2016</td><td>EU membership</td><td>72.2%</td><td>51.9% Leave</td></tr>
+</table>
+
+<p>Referendums have been used almost exclusively for <strong>constitutional</strong> questions &mdash; a convention rather than a rule, since nothing prevents one on any subject. The 2011 AV referendum repays detailed knowledge: it was conceded by the Conservatives as the price of coalition, AV is not itself a proportional system, turnout was low at 42.2%, and the decisive rejection has been treated as settling the wider reform question for a generation. A campaign framing reform as a preoccupation of politicians was central to the outcome.</p>
+
+<h3>Arguments</h3>
+<table>
+<tr><th>For</th><th>Against</th></tr>
+<tr><td>Direct legitimacy for constitutional change that a parliamentary vote cannot supply</td><td>Reduces a complex, multi-dimensional question to a binary</td></tr>
+<tr><td>Entrenchment by consent &mdash; prevents a temporary majority altering the settlement for advantage</td><td>Advisory in law, binding in practice &mdash; authority with no rules attached</td></tr>
+<tr><td>High participation: 84.6% in Scotland in 2014</td><td>Vulnerable to campaign spending, misinformation and mid-term protest voting</td></tr>
+<tr><td>Settles questions that cut across party lines and so cannot be resolved at a general election</td><td>A narrow result can bind a deeply divided country indefinitely</td></tr>
+<tr><td>Educative &mdash; campaigns generate sustained public engagement with constitutional questions</td><td>No settled rules on thresholds, franchise, or when a question may be asked again</td></tr>
+</table>
+
+<h2>3. Electoral system analysis</h2>
+
+<h3>Comparing the systems</h3>
+<table>
+<tr><th>Criterion</th><th>FPTP</th><th>AMS</th><th>STV</th><th>SV</th></tr>
+<tr><td>Proportionality</td><td>Low</td><td>Moderate to high</td><td>High</td><td>Low</td></tr>
+<tr><td>Constituency link</td><td>Strong</td><td>Mixed &mdash; two classes of member</td><td>Weaker &mdash; several members per area</td><td>Strong</td></tr>
+<tr><td>Voter choice</td><td>One candidate</td><td>Party and candidate separately</td><td>Between candidates of the same party</td><td>Two preferences</td></tr>
+<tr><td>Likely government</td><td>Single-party majority</td><td>Coalition or minority</td><td>Coalition</td><td>Single office-holder</td></tr>
+<tr><td>Wasted votes</td><td>Very high</td><td>Reduced</td><td>Low</td><td>High &mdash; many ballots exhausted</td></tr>
+<tr><td>Simplicity</td><td>High</td><td>Moderate</td><td>Low</td><td>Moderate</td></tr>
+</table>
+
+<h3>Effects on party systems within the UK</h3>
+<p>The same country running different systems is an unusually clean natural experiment, and it is the strongest evidence available in this topic. Proportional rules in Scotland and Wales convert support that FPTP suppresses into seats, so smaller parties such as the Greens hold representation at Holyrood that Westminster arithmetic denies them. Coalition and minority government have been normalised there, which directly weakens a central argument for FPTP &mdash; that only it delivers stable government. Northern Ireland's STV sustains a wholly separate multi-party system.</p>
+
+<h3>Turnout and safe seats</h3>
+<p>Roughly half of Westminster seats change hands very rarely. Turnout is consistently lower in safe seats than in marginals, and campaign resources flow overwhelmingly to the few dozen genuinely competitive constituencies. The consequence extends beyond fairness to <em>governing</em>: policy attention follows the voters who can change the outcome, which is a distortion distinct from disproportionality and arguably more serious.</p>
+
+<h3>Why has Westminster not changed?</h3>
+<ul>
+<li><strong>Self-interest.</strong> The parties able to legislate the change are the ones FPTP advantages.</li>
+<li><strong>The 2011 result.</strong> Rejected 67.9% to 32.1% on 42% turnout.</li>
+<li><strong>Genuine attachment to the status quo.</strong> Decisive government and the constituency link are real goods, and there is no sustained public demand for change.</li>
+<li><strong>No trigger.</strong> Reform tends to follow a hung parliament in which a smaller party extracts it as a condition &mdash; exactly how the AV referendum arose, and its failure removed the mechanism.</li>
+<li><strong>The Jenkins Commission (1998)</strong> recommended AV Plus after a Labour manifesto commitment to a referendum. With a majority of 179 (177 on the stricter count that treats the Speaker as Labour — both figures are in circulation), the government had no incentive to proceed, and it did not.</li>
+</ul>
+
+<p>The circularity is worth stating explicitly: FPTP produces majorities that make reform unnecessary for the governing party, so the system protects itself.</p>
+
+<div class="exam-tip">
+For "Evaluate the case for reforming the Westminster electoral system" (30 marks, AO1/AO2/AO3 10 each), the judgement should turn on what elections are <em>for</em>. If they exist to choose and remove a government, FPTP performs well. If they exist to represent the distribution of opinion, it performs badly. The two purposes genuinely conflict, and saying so <em>is</em> the conclusion &mdash; not a failure to reach one. Use the devolved systems as evidence rather than speculation.
+</div>
+
+<h2>Quick recall</h2>
+<ul>
+<li>FPTP (Westminster, English locals) &middot; AMS (Holyrood, London; Senedd until 2026) &middot; closed list (Senedd from 2026) &middot; STV (NI, Scottish locals) &middot; SV (mayors and PCCs to 2023, again from June 2026)</li>
+<li>2015: UKIP 12.6% = 1 seat; SNP 4.7% = 56. 2005: a majority on 35.2%</li>
+<li>1951 and Feb 1974: the party with more votes won fewer seats</li>
+<li>AMS Scotland = 73 constituency + 56 regional; correction is partial, hence "hybrid"</li>
+<li>STV Droop quota = (votes &divide; (seats + 1)) + 1; in NI it underwrites power-sharing</li>
+<li>1979 is the only turnout threshold used &mdash; and it voided a Yes vote</li>
+<li>2011 AV: rejected 67.9&ndash;32.1 on 42.2% turnout; Jenkins (1998) recommended AV Plus and was shelved</li>
+<li>Devolved proportional systems are the natural experiment against FPTP's stability claim</li>
+<li>Judgement: accountability against representativeness &mdash; the two purposes conflict</li>
+</ul>
+
+</div>
+</body>
+</html>

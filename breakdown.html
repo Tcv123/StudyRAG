@@ -1339,7 +1339,10 @@ async function load() {
       target: s.target_grade && s.target_grade !== 'none' ? s.target_grade : null
     });
 
-    diagData.topics.forEach(t => {
+    // Only the topics this student can sit — see TOPICS_VISIBLE in
+    // topics-config.js. Without this an unchosen Component 3 route shows
+    // as six permanently pending topics.
+    window.TOPICS_VISIBLE(diagData, s.options).forEach(t => {
       const rag = ragMap[`${key}_${t.id}`] || 'pending';
       allTopicData.push({
         ...t,

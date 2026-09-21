@@ -118,9 +118,10 @@ const POLITICS_EDEXCEL_QUESTIONS = {
      Spec 3.1 different electoral systems · 3.2 referendums and their use
      · 3.3 electoral system analysis
 
-     CURRENCY NOTE. The 2017 spec lists the Supplementary Vote as a system in
-     current use. The Elections Act 2022 replaced SV with FPTP for elected
-     mayors and police and crime commissioners from May 2023. Questions below
+     CURRENCY NOTE. The Elections Act 2022 replaced SV with FPTP for elected
+     mayors and police and crime commissioners from May 2023; the English
+     Devolution and Community Empowerment Act 2026 restored SV for those
+     elections from June 2026. Questions below
      treat SV as a system students must know and place it accurately in time
      rather than implying it is still in use.
   */
@@ -134,7 +135,7 @@ const POLITICS_EDEXCEL_QUESTIONS = {
       { q: 'A marginal seat is best defined as a constituency:', options: ['Held by a party other than the governing party', 'Where the gap between the leading candidates is narrow enough that it may change hands', 'Containing fewer electors than the national average', 'Whose boundaries were altered at the last review'], answer: 1 },
       { q: 'A coalition government is one in which:', options: ['A single party governs with fewer than half the seats', 'Two or more parties agree to govern together and share ministerial office', 'The largest party governs with the support of the Crown', 'Ministers are appointed from outside Parliament'], answer: 1 },
       { q: 'A minority government is one that:', options: ['Governs without an overall majority in the Commons', 'Contains ministers from more than one party', 'Has been formed without a general election', 'Holds fewer seats than the official opposition'], answer: 0 },
-      { q: 'Under the Supplementary Vote, electors expressed:', options: ['A single first preference only', 'A first and a second preference', 'A full ranking of every candidate standing', 'One vote for a candidate and one for a party list'], answer: 1 },
+      { q: 'Under the Supplementary Vote, electors express:', options: ['A single first preference only', 'A first and a second preference', 'A full ranking of every candidate standing', 'One vote for a candidate and one for a party list'], answer: 1 },
       { q: 'Which referendum was held across the whole of the United Kingdom?', options: ['The 1997 referendum on a Scottish Parliament', 'The 2011 referendum on the Alternative Vote', 'The 1998 Good Friday Agreement referendum', 'The 2014 referendum on Scottish independence'], answer: 1 },
       { q: 'Proportional representation describes any system that aims to:', options: ['Guarantee a single-party majority government', 'Align each party’s share of seats with its share of votes', 'Ensure every constituency has the same number of electors', 'Require candidates to win an absolute majority'], answer: 1 },
     ],
@@ -342,7 +343,7 @@ const POLITICS_EDEXCEL_QUESTIONS = {
     amber: [
       { q: 'The UK constitution is described as unentrenched because:', options: ['It has never been written down in any form', 'Constitutional law may be changed by an ordinary Act of Parliament with no special procedure', 'It may be amended only by referendum', 'The Supreme Court protects it from amendment'], answer: 1 },
       { q: 'The Salisbury Convention holds that the House of Lords should not:', options: ['Amend any government legislation', 'Block legislation implementing a governing party’s manifesto commitments', 'Debate financial measures', 'Sit during a general election campaign'], answer: 1 },
-      { q: 'Which reform since 1997 most clearly reduced the hereditary principle?', options: ['The Constitutional Reform Act 2005', 'The House of Lords Act 1999', 'The Fixed-term Parliaments Act 2011', 'The Freedom of Information Act 2000'], answer: 1 },
+      { q: 'Which reform removed all but 92 hereditary peers from the Lords?', options: ['The Constitutional Reform Act 2005', 'The House of Lords Act 1999', 'The Fixed-term Parliaments Act 2011', 'The Freedom of Information Act 2000'], answer: 1 },
       { q: 'The West Lothian question concerns:', options: ['Whether Scotland should become independent', 'Whether MPs for devolved nations should vote on matters affecting England only', 'How constituency boundaries are drawn in Scotland', 'Whether the Scottish Parliament may hold referendums'], answer: 1 },
       { q: 'Devolution is often described as having produced "quasi-federalism" because:', options: ['The UK has adopted a codified federal constitution', 'Repealing devolution is legally possible but politically near-unthinkable, so powers behave as though entrenched', 'The devolved bodies have equal status with Westminster in law', 'The Supreme Court allocates powers between the tiers'], answer: 1 },
       { q: 'Which is the strongest argument FOR codifying the UK constitution?', options: ['It would make constitutional change impossible', 'It would place clear limits on government power and make rights and procedures knowable and enforceable', 'It would abolish the monarchy', 'It would remove the need for a Supreme Court'], answer: 1 },
