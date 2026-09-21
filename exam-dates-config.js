@@ -20,6 +20,13 @@ const EXAM_DATES = {
     { paper: 'Paper 2 — Government and Politics of the USA & Comparative', date: '2027-05-24', time: 'PM', duration: '2h' },
     { paper: 'Paper 3 — Political Ideas', date: '2027-06-15', time: 'PM', duration: '2h' },
   ],
+  // Edexcel 9PL0, from Pearson's FINAL GCE Summer 2027 timetable. Paper 3 is
+  // one slot: students sit either 3A (USA) or 3B (Global), both 15 June PM.
+  'Politics_Edexcel|alevel': [
+    { paper: 'Paper 1 — UK Politics and Core Political Ideas', date: '2027-05-12', time: 'AM', duration: '2h' },
+    { paper: 'Paper 2 — UK Government and Non-core Political Ideas', date: '2027-05-24', time: 'PM', duration: '2h' },
+    { paper: 'Paper 3 — Comparative Politics (3A USA or 3B Global)', date: '2027-06-15', time: 'PM', duration: '2h' },
+  ],
   'Computer Science_AQA|alevel': [
     { paper: 'Paper 1 — On-screen Programming', date: '2026-06-11', time: 'AM', duration: '2h 30m' },
     { paper: 'Paper 2 — Written Theory', date: '2026-06-18', time: 'PM', duration: '2h 30m' },

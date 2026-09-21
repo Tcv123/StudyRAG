@@ -29747,11 +29747,132 @@ window.SUBJECTS = [
       {
         board: 'AQA',
         specCode: '7152',
-        // AQA does not publish stable per-paper PDF URLs for Politics — the
-        // assessment-resources page IS the official entry point, so this board
-        // has no `papers` list and surfaces as a single card. Every paper here
-        // is 77 raw marks: 9-mark and 25-mark questions only.
         officialPageUrl: 'https://www.aqa.org.uk/subjects/politics/a-level/politics-7152/assessment-resources',
+        /* Every URL below was checked by content type (application/pdf and a
+           leading %PDF), the same test used for Edexcel above, in Sept 2026.
+           AQA's filestore hosts only these series for 7152: June 2022 and June
+           2023 (Paper 2 question papers withheld, mark schemes available),
+           November 2021 (complete) and November 2020 (question papers only).
+           Other series are on the assessment-resources page, which may need a
+           centre login. Every paper is 77 raw marks over 2 hours: 9-mark and
+           25-mark questions only. */
+        papers: [
+          {
+            id: 'politics-aqa-7152-2023-jun-p1',
+            year: 'June 2023',
+            paperName: 'Paper 1 — Government and Politics of the UK',
+            paperCode: '7152/1',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71521-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71521-MS-JUN23.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2023-jun-p2',
+            year: 'June 2023',
+            paperName: 'Paper 2 — Government and Politics of the USA and Comparative Politics',
+            paperCode: '7152/2',
+            totalMarks: 77,
+            durationMins: 120,
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71522-MS-JUN23.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2023-jun-p3',
+            year: 'June 2023',
+            paperName: 'Paper 3 — Political Ideas',
+            paperCode: '7152/3',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71523-QP-JUN23.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2023/june/AQA-71523-MS-JUN23.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2022-jun-p1',
+            year: 'June 2022',
+            paperName: 'Paper 1 — Government and Politics of the UK',
+            paperCode: '7152/1',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71521-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71521-MS-JUN22.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2022-jun-p2',
+            year: 'June 2022',
+            paperName: 'Paper 2 — Government and Politics of the USA and Comparative Politics',
+            paperCode: '7152/2',
+            totalMarks: 77,
+            durationMins: 120,
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71522-MS-JUN22.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2022-jun-p3',
+            year: 'June 2022',
+            paperName: 'Paper 3 — Political Ideas',
+            paperCode: '7152/3',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71523-QP-JUN22.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2022/june/AQA-71523-MS-JUN22.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2021-nov-p1',
+            year: 'November 2021',
+            paperName: 'Paper 1 — Government and Politics of the UK',
+            paperCode: '7152/1',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71521-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71521-MS-NOV21.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2021-nov-p2',
+            year: 'November 2021',
+            paperName: 'Paper 2 — Government and Politics of the USA and Comparative Politics',
+            paperCode: '7152/2',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71522-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71522-MS-NOV21.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2021-nov-p3',
+            year: 'November 2021',
+            paperName: 'Paper 3 — Political Ideas',
+            paperCode: '7152/3',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71523-QP-NOV21.PDF',
+            msUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2021/november/AQA-71523-MS-NOV21.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2020-nov-p1',
+            year: 'November 2020',
+            paperName: 'Paper 1 — Government and Politics of the UK',
+            paperCode: '7152/1',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71521-QP-NOV20.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2020-nov-p2',
+            year: 'November 2020',
+            paperName: 'Paper 2 — Government and Politics of the USA and Comparative Politics',
+            paperCode: '7152/2',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71522-QP-NOV20.PDF',
+          },
+          {
+            id: 'politics-aqa-7152-2020-nov-p3',
+            year: 'November 2020',
+            paperName: 'Paper 3 — Political Ideas',
+            paperCode: '7152/3',
+            totalMarks: 77,
+            durationMins: 120,
+            qpUrl: 'https://filestore.aqa.org.uk/sample-papers-and-mark-schemes/2020/november/AQA-71523-QP-NOV20.PDF',
+          },
+        ],
       }
     ]
   }
