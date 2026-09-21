@@ -394,6 +394,7 @@
         </div>
         <div>
           <button class="btn btn-primary" id="upgradeBtn" onclick="showUpgrade()">Upgrade to Pro</button>
+          <button class="btn btn-outline" id="manageSubBtn" onclick="openBillingPortal()" style="display:none;">Manage subscription</button>
           <div id="planPrice" style="font-size:11px;color:var(--muted);margin-top:6px;text-align:center;">£9.99/month</div>
         </div>
       </div>
@@ -683,6 +684,28 @@ function showUpgrade() {
   el.style.display = el.style.display === 'none' ? 'block' : 'none';
 }
 
+// Stripe's hosted portal: change plan, update card, see invoices, cancel.
+async function openBillingPortal() {
+  const btn = document.getElementById('manageSubBtn');
+  const label = btn.textContent;
+  try {
+    btn.disabled = true; btn.textContent = 'Loading…';
+    const { data: { session } } = await supabaseClient.auth.getSession();
+    if (!session) { window.location = 'auth/login.html'; return; }
+    const resp = await fetch('/api/create-portal-session', {
+      method: 'POST',
+      headers: { 'Authorization': `Bearer ${session.access_token}` },
+    });
+    const data = await resp.json();
+    if (!resp.ok || !data.url) throw new Error(data.error || 'portal_failed');
+    window.location = data.url;
+  } catch (err) {
+    console.error(err);
+    alert('Sorry, we could not open subscription management. Please try again, or contact support.');
+    btn.disabled = false; btn.textContent = label;
+  }
+}
+
 // Reads subscription_tier / status / expires_at from the profile row and
 // renders the "Your plan" card accordingly. Matches is_pro_user() in
 // supabase-flashcards-migration.sql.
@@ -691,8 +714,11 @@ function renderPlanCard(profile) {
   const status    = profile?.subscription_status || 'active';
   const expiresAt = profile?.subscription_expires_at ? new Date(profile.subscription_expires_at) : null;
 
+  // Same test as nav-gating.js, pricing-app.html and the API. This used to
+  // list pro_monthly and pro_annual only, so a six-month subscriber was shown
+  // Free and offered an upgrade to the plan they were paying for.
   const isPro =
-    (tier === 'pro_monthly' || tier === 'pro_annual') &&
+    tier !== 'free' &&
     (status === 'active' || status === 'trialing') &&
     (!expiresAt || expiresAt > new Date());
 
@@ -700,8 +726,24 @@ function renderPlanCard(profile) {
   const descEl     = document.getElementById('planDesc');
   const priceEl    = document.getElementById('planPrice');
   const upgradeBtn = document.getElementById('upgradeBtn');
+  const manageBtn  = document.getElementById('manageSubBtn');
   const cardEl     = document.getElementById('planCard');
   const proFeats   = document.getElementById('proFeatures');
+
+  // Only a real Stripe customer has anything to manage. Early adopters are
+  // comped pro_monthly with no customer, and the portal 404s for them (G-05).
+  const hasStripe = !!profile?.stripe_customer_id;
+  if (manageBtn) manageBtn.style.display = hasStripe && (isPro || status === 'past_due') ? 'inline-block' : 'none';
+
+  // A failed renewal keeps the subscription alive in Stripe while it retries.
+  // Send them to fix the card, not to start a second subscription.
+  if (!isPro && hasStripe && status === 'past_due') {
+    nameEl.textContent = 'Payment failed';
+    descEl.textContent = 'Your last payment did not go through. Update your card to restore Pro.';
+    if (priceEl)    priceEl.textContent = '';
+    if (upgradeBtn) upgradeBtn.style.display = 'none';
+    return;
+  }
 
   if (!isPro) {
     nameEl.textContent  = 'Free';

@@ -1,7 +1,7 @@
 const Stripe = require('stripe');
 const { createClient } = require('@supabase/supabase-js');
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2025-02-24.acacia' });
 
 const supabaseAdmin = createClient(
   process.env.SUPABASE_URL,
@@ -63,7 +63,15 @@ module.exports = async function handler(req, res) {
       ['active', 'trialing'].includes(profile?.subscription_status || '') &&
       (!expiresAt || expiresAt > new Date());
 
-    if (alreadyPro) {
+    /* past_due is still a live subscription in Stripe — it is retrying the
+     * card. A second checkout would bill them twice once the first recovers;
+     * Settings sends them to the portal to update the card instead. */
+    const pastDue =
+      profile?.stripe_customer_id &&
+      (profile?.subscription_tier || 'free') !== 'free' &&
+      profile?.subscription_status === 'past_due';
+
+    if (alreadyPro || pastDue) {
       return res.status(409).json({ error: 'already_subscribed' });
     }
 

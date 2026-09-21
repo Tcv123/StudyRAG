@@ -35,7 +35,7 @@ AS $$
   SELECT EXISTS (
     SELECT 1 FROM profiles
     WHERE id = auth.uid()
-      AND subscription_tier IN ('pro_monthly','pro_annual')
+      AND coalesce(subscription_tier, 'free') <> 'free'  -- see db/migrations/2026-09-21-is-pro-user-biannual.sql
       AND subscription_status IN ('active','trialing')
       AND (subscription_expires_at IS NULL OR subscription_expires_at > NOW())
   );

@@ -1,7 +1,9 @@
 const Stripe = require('stripe');
 const { createClient } = require('@supabase/supabase-js');
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
+/* Pinned so an npm upgrade cannot silently change the shape of what
+ * subscriptions.retrieve returns. See the note on syncSubscriptionToProfile. */
+const stripe = new Stripe(process.env.STRIPE_SECRET_KEY, { apiVersion: '2025-02-24.acacia' });
 const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET;
 
 const supabaseAdmin = createClient(
@@ -69,8 +71,17 @@ async function resolveUserId(subscription) {
  *
  * Throws on failure rather than logging and moving on, so the handler can
  * answer Stripe with a 500 and get the delivery retried.
+ *
+ * Takes a subscription id and fetches it rather than trusting the event
+ * payload. Events arrive in the webhook endpoint's API version, which for a
+ * new Stripe account is the latest one — and from 2025-03-31 on,
+ * current_period_end moved off the subscription onto its items. Read from the
+ * payload, every paid subscription would have been written with no expiry
+ * date. Fetching through the SDK gets the pinned version's shape every time,
+ * and also means retries and out-of-order events write current state.
  */
-async function syncSubscriptionToProfile(subscription) {
+async function syncSubscriptionToProfile(subscriptionId) {
+  const subscription = await stripe.subscriptions.retrieve(subscriptionId);
   const userId = await resolveUserId(subscription);
   if (!userId) {
     console.warn('No supabase_user_id for subscription', subscription.id);
@@ -78,8 +89,10 @@ async function syncSubscriptionToProfile(subscription) {
   }
 
   const status = mapStatus(subscription.status);
-  const periodEnd = subscription.current_period_end
-    ? new Date(subscription.current_period_end * 1000).toISOString()
+  const periodEndUnix =
+    subscription.current_period_end ?? subscription.items?.data?.[0]?.current_period_end;
+  const periodEnd = periodEndUnix
+    ? new Date(periodEndUnix * 1000).toISOString()
     : null;
 
   /* A subscription that has lapsed is not a downgrade to a cheaper tier, it
@@ -131,9 +144,8 @@ module.exports = async function handler(req, res) {
             await stripe.subscriptions.update(sub.id, {
               metadata: { ...sub.metadata, supabase_user_id: session.client_reference_id },
             });
-            sub.metadata = { ...sub.metadata, supabase_user_id: session.client_reference_id };
           }
-          await syncSubscriptionToProfile(sub);
+          await syncSubscriptionToProfile(sub.id);
         }
         break;
       }
@@ -141,14 +153,15 @@ module.exports = async function handler(req, res) {
       case 'customer.subscription.updated':
       case 'customer.subscription.deleted':
       case 'customer.subscription.trial_will_end': {
-        await syncSubscriptionToProfile(event.data.object);
+        await syncSubscriptionToProfile(event.data.object.id);
         break;
       }
       case 'invoice.payment_failed': {
         const invoice = event.data.object;
-        if (invoice.subscription) {
-          const sub = await stripe.subscriptions.retrieve(invoice.subscription);
-          await syncSubscriptionToProfile(sub);
+        // invoice.subscription moved under parent in 2025-03-31 payloads.
+        const subId = invoice.subscription || invoice.parent?.subscription_details?.subscription;
+        if (subId) {
+          await syncSubscriptionToProfile(typeof subId === 'string' ? subId : subId.id);
         }
         break;
       }
