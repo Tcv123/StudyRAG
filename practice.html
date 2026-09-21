@@ -649,6 +649,55 @@ const SUBJECT_TOPICS = {
       ]},
     ]
   },
+  'Politics_Edexcel|alevel': {
+    /* All 28 are listed. A student sits 18: the 16 compulsory, one of the
+       five non-core ideologies and one of the two Component 3 routes. The
+       route filtering happens on the dashboard and breakdown via
+       TOPICS_VISIBLE in topics-config.js; practice offers the full set so a
+       student can revise material from either route if they wish. */
+    sections: [
+      { label: 'Edexcel A-Level — Component 1: UK Politics (Section A)', topics: [
+        { id: '1.1', name: 'Democracy and Participation', sub: 'Direct vs representative, franchise and suffrage, pressure groups, rights' },
+        { id: '1.2', name: 'Political Parties', sub: 'Functions and funding, established parties, minor parties, parties in context' },
+        { id: '1.3', name: 'Electoral Systems', sub: 'FPTP, AMS, STV, SV; referendums since 1997; system analysis' },
+        { id: '1.4', name: 'Voting Behaviour and the Media', sub: 'Three general election case studies, class/age/education, media influence' },
+      ]},
+      { label: 'Edexcel A-Level — Component 1: Core Political Ideas (Section B)', topics: [
+        { id: '1.5', name: 'Conservatism', sub: 'Hobbes, Burke, Oakeshott, Rand, Nozick' },
+        { id: '1.6', name: 'Liberalism', sub: 'Locke, Wollstonecraft, Mill, Rawls, Friedan' },
+        { id: '1.7', name: 'Socialism', sub: 'Marx & Engels, Webb, Luxemburg, Crosland, Giddens' },
+      ]},
+      { label: 'Edexcel A-Level — Component 2: UK Government (Section A)', topics: [
+        { id: '2.1', name: 'The Constitution', sub: 'Nature and sources, change since 1997, devolution, further reform' },
+        { id: '2.2', name: 'Parliament', sub: 'Commons and Lords, comparative powers, legislation, scrutiny' },
+        { id: '2.3', name: 'Prime Minister and Executive', sub: 'Structure and powers, ministerial responsibility, PM and Cabinet' },
+        { id: '2.4', name: 'Relations Between the Branches', sub: 'Supreme Court, Executive and Parliament, the EU, sovereignty' },
+      ]},
+      { label: 'Edexcel A-Level — Component 2: Non-core Political Ideas — you sit ONE', topics: [
+        { id: '2.5', name: 'Anarchism', sub: 'Stirner, Proudhon, Bakunin, Kropotkin, Goldman — optional' },
+        { id: '2.6', name: 'Ecologism', sub: 'Leopold, Carson, Schumacher, Bookchin, Merchant — optional' },
+        { id: '2.7', name: 'Feminism', sub: 'Gilman, de Beauvoir, Millett, Rowbotham, hooks — optional' },
+        { id: '2.8', name: 'Multiculturalism', sub: 'Berlin, Taylor, Parekh, Modood, Kymlicka — optional' },
+        { id: '2.9', name: 'Nationalism', sub: 'Rousseau, Herder, Mazzini, Garvey, Maurras — optional' },
+      ]},
+      { label: 'Edexcel A-Level — Component 3A: Comparative Politics USA (route 3A)', topics: [
+        { id: '3A.1', name: 'US Constitution and Federalism', sub: 'Codification, separation of powers, federalism, debates — route 3A' },
+        { id: '3A.2', name: 'US Congress', sub: 'Structure, powers, representation, oversight, filibuster — route 3A' },
+        { id: '3A.3', name: 'US Presidency', sub: 'Article II powers, informal powers, imperial presidency — route 3A' },
+        { id: '3A.4', name: 'US Supreme Court and Civil Rights', sub: 'Judicial review, appointments, civil rights, race and rights — route 3A' },
+        { id: '3A.5', name: 'US Democracy and Participation', sub: 'Electoral College, primaries, campaign finance, interest groups — route 3A' },
+        { id: '3A.6', name: 'Comparative Approaches', sub: 'Rational, cultural and structural approaches; UK/US comparison — route 3A' },
+      ]},
+      { label: 'Edexcel A-Level — Component 3B: Global Politics (route 3B)', topics: [
+        { id: '3B.1', name: 'The State and Globalisation', sub: 'Nation-state, sovereignty, globalisation and its impact — route 3B' },
+        { id: '3B.2', name: 'Global Governance: Political and Economic', sub: 'UN, NATO, IMF, World Bank, WTO, G7/G20 — route 3B' },
+        { id: '3B.3', name: 'Global Governance: Human Rights and Environmental', sub: 'ICJ, ICC, R2P, UNFCCC, IPCC, the global commons — route 3B' },
+        { id: '3B.4', name: 'Power and Developments', sub: 'Hard/soft power, polarity, rising powers, democratisation — route 3B' },
+        { id: '3B.5', name: 'Regionalism and the EU', sub: 'Forms of regionalism, EU institutions, integration debates — route 3B' },
+        { id: '3B.6', name: 'Comparative Theories', sub: 'Realism, liberalism, constructivism; UK/US comparison — route 3B' },
+      ]},
+    ]
+  },
   'Politics_AQA|alevel': {
     sections: [
       { label: 'AQA A-Level — Paper 1: Government and Politics of the UK', topics: [
@@ -1622,6 +1671,7 @@ const DIAG_PAGE = {
   'Computer Science_AQA|gcse':    { url: 'diagnostics/cs-aqa-gcse-diagnostic.html',      total: 8,  first: '3.1' },
   'Computer Science_AQA|alevel':  { url: 'diagnostics/cs-aqa-alevel-diagnostic.html',    total: 10, first: '4.1' },
   'Politics_AQA|alevel':          { url: 'diagnostics/politics-aqa-alevel-diagnostic.html', total: 28, first: '1.1' },
+  'Politics_Edexcel|alevel':      { url: 'diagnostics/politics-edexcel-alevel-diagnostic.html', total: 18, first: '1.1' },
   'Physics_Edexcel':              { url: 'diagnostics/physics-edexcel-diagnostic.html',       total: 13, first: 'T1'  },
   'Physics_Edexcel|gcse':         { url: 'diagnostics/physics-edexcel-gcse-diagnostic.html',  total: 15, first: '1'  },
   'Physics_AQA':                  { url: 'diagnostics/physics-aqa-diagnostic.html',           total: 8,  first: '3.1' },

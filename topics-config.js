@@ -851,6 +851,70 @@
         { id: 'P6', name: 'Matter — Models and Explanations', sub: 'Particle model, density, SHC/SLH, pressure, gas laws' },
       ],
     },
+    'Politics_Edexcel|alevel': {
+      label: 'Politics — Edexcel',
+      emoji: '🏛️',
+      page: 'diagnostics/politics-edexcel-alevel-diagnostic.html',
+      /* Edexcel 9PL0 has TWO layers of optionality, where AQA has one.
+         A student sits one of five non-core ideologies (2.5-2.9) AND one
+         of two Component 3 routes (3A USA or 3B Global) — never both.
+         All 28 are offered; only 18 can ever be examined for any one
+         student: 4 + 3 + 4 + 1 + 6. That total is the same on either
+         route, so it does not change when a student switches.
+         Counting 28 would leave ten topics permanently untested and put
+         every progress bar and completion medal out of reach.
+         medals-engine.js reads this in preference to topics.length. */
+      examinedTotal: 18,
+      /* Component 3 is a ROUTE, not a set of optional topics. Unlike the
+         non-core ideologies — where all five are taught from and one is
+         examined — a student sits 3A or 3B and never touches the other.
+         Showing both leaves six topics permanently grey, so the pages
+         filter by the student's recorded choice. TOPICS_VISIBLE() does
+         the filtering; user_subjects.options holds the choice as
+         {"c3":"3A"}. An unrecorded choice shows everything, so nothing
+         breaks for a student who has not picked yet. */
+      optionGroups: [
+        {
+          key: 'c3',
+          label: 'Component 3',
+          prompt: 'Which Component 3 route are you sitting?',
+          choices: [
+            { value: '3A', label: 'Comparative Politics: USA (9PL0/3A)', prefix: '3A.' },
+            { value: '3B', label: 'Global Politics (9PL0/3B)',           prefix: '3B.' },
+          ],
+        },
+      ],
+      topics: [
+        { id: '1.1', name: 'Democracy and Participation', sub: 'Direct vs representative, franchise and suffrage, pressure groups, rights' },
+        { id: '1.2', name: 'Political Parties', sub: 'Functions and funding, established parties, minor parties, parties in context' },
+        { id: '1.3', name: 'Electoral Systems', sub: 'FPTP, AMS, STV, SV; referendums since 1997; system analysis' },
+        { id: '1.4', name: 'Voting Behaviour and the Media', sub: 'Three general election case studies, class/age/education, media influence' },
+        { id: '1.5', name: 'Conservatism', sub: 'Hobbes, Burke, Oakeshott, Rand, Nozick' },
+        { id: '1.6', name: 'Liberalism', sub: 'Locke, Wollstonecraft, Mill, Rawls, Friedan' },
+        { id: '1.7', name: 'Socialism', sub: 'Marx & Engels, Webb, Luxemburg, Crosland, Giddens' },
+        { id: '2.1', name: 'The Constitution', sub: 'Nature and sources, change since 1997, devolution, further reform' },
+        { id: '2.2', name: 'Parliament', sub: 'Commons and Lords, comparative powers, legislation, scrutiny' },
+        { id: '2.3', name: 'Prime Minister and Executive', sub: 'Structure and powers, ministerial responsibility, PM and Cabinet' },
+        { id: '2.4', name: 'Relations Between the Branches', sub: 'Supreme Court, Executive and Parliament, the EU, sovereignty' },
+        { id: '2.5', name: 'Anarchism', sub: 'Stirner, Proudhon, Bakunin, Kropotkin, Goldman — optional' },
+        { id: '2.6', name: 'Ecologism', sub: 'Leopold, Carson, Schumacher, Bookchin, Merchant — optional' },
+        { id: '2.7', name: 'Feminism', sub: 'Gilman, de Beauvoir, Millett, Rowbotham, hooks — optional' },
+        { id: '2.8', name: 'Multiculturalism', sub: 'Berlin, Taylor, Parekh, Modood, Kymlicka — optional' },
+        { id: '2.9', name: 'Nationalism', sub: 'Rousseau, Herder, Mazzini, Garvey, Maurras — optional' },
+        { id: '3A.1', name: 'US Constitution and Federalism', sub: 'Codification, separation of powers, federalism, debates — route 3A' },
+        { id: '3A.2', name: 'US Congress', sub: 'Structure, powers, representation, oversight, filibuster — route 3A' },
+        { id: '3A.3', name: 'US Presidency', sub: 'Article II powers, informal powers, imperial presidency — route 3A' },
+        { id: '3A.4', name: 'US Supreme Court and Civil Rights', sub: 'Judicial review, appointments, civil rights, race and rights — route 3A' },
+        { id: '3A.5', name: 'US Democracy and Participation', sub: 'Electoral College, primaries, campaign finance, interest groups — route 3A' },
+        { id: '3A.6', name: 'Comparative Approaches', sub: 'Rational, cultural and structural approaches; UK/US comparison — route 3A' },
+        { id: '3B.1', name: 'The State and Globalisation', sub: 'Nation-state, sovereignty, globalisation and its impact — route 3B' },
+        { id: '3B.2', name: 'Global Governance: Political and Economic', sub: 'UN, NATO, IMF, World Bank, WTO, G7/G20 — route 3B' },
+        { id: '3B.3', name: 'Global Governance: Human Rights and Environmental', sub: 'ICJ, ICC, R2P, UNFCCC, IPCC, the global commons — route 3B' },
+        { id: '3B.4', name: 'Power and Developments', sub: 'Hard/soft power, polarity, rising powers, democratisation — route 3B' },
+        { id: '3B.5', name: 'Regionalism and the EU', sub: 'Forms of regionalism, EU institutions, integration debates — route 3B' },
+        { id: '3B.6', name: 'Comparative Theories', sub: 'Realism, liberalism, constructivism; UK/US comparison — route 3B' },
+      ],
+    },
     'Politics_AQA|alevel': {
       label: 'Politics — AQA',
       emoji: '🏛️',
@@ -911,6 +975,44 @@
     return entry.examinedTotal || entry.topics.length;
   }
 
+  /* The topics a particular student can actually be shown.
+
+     Most specs offer one set to everyone and this returns it unchanged.
+     Where a spec offers alternative ROUTES — Edexcel Politics Component 3
+     is either 3A (USA) or 3B (Global), never both — a student who has
+     chosen sees only their own route. Without this, six topics render
+     permanently grey on the dashboard and the breakdown, which is the
+     same silent-failure signature as a mismatched topic id.
+
+     `options` is the user_subjects.options object, e.g. {"c3":"3A"}.
+     A missing or unrecognised choice returns every topic, so a student
+     who has not picked yet sees the full list rather than an empty one.
+
+     NOTE this does NOT change the denominator. examinedTotal already
+     counts what a student can sit (18 either way for Edexcel Politics),
+     and it is deliberately the same on both routes, so switching route
+     changes which topics are shown and not what completion requires. */
+  function visibleTopicsFor(entry, options) {
+    if (!entry || !Array.isArray(entry.topics)) return [];
+    const groups = entry.optionGroups;
+    if (!Array.isArray(groups) || !groups.length || !options) return entry.topics;
+
+    // Prefixes belonging to a route the student did NOT choose.
+    const hidden = [];
+    for (const group of groups) {
+      const chosen = options[group.key];
+      if (!chosen) continue;                                   // not picked yet
+      const valid = group.choices.some(c => c.value === chosen);
+      if (!valid) continue;                                    // stale value; show all
+      for (const choice of group.choices) {
+        if (choice.value !== chosen && choice.prefix) hidden.push(choice.prefix);
+      }
+    }
+    if (!hidden.length) return entry.topics;
+    return entry.topics.filter(t => !hidden.some(p => String(t.id).startsWith(p)));
+  }
+
   window.DIAG_TOPICS = DIAG_TOPICS;
   window.TOPICS_EXAMINED_TOTAL = examinedTotalFor;
+  window.TOPICS_VISIBLE = visibleTopicsFor;
 })();

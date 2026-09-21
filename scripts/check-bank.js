@@ -106,8 +106,12 @@ function candidateBanks() {
    broken multiple-choice instead of skipping them. A written question
    carries marks and a modelAnswer and has no options at all. */
 function bankKind(bank) {
-  let mcq = 0, written = 0;
+  let mcq = 0, written = 0, practice = 0;
   for (const topic of Object.values(bank)) {
+    // Practice banks are a THIRD shape: { name, questions: [...] } with no
+    // tiers at all. They were silently skipped as 'empty' until this was
+    // added, which meant nothing validated the exam-practice banks.
+    if (Array.isArray(topic.questions)) practice += topic.questions.length;
     for (const tier of ['green', 'amber', 'red']) {
       for (const q of topic[tier] || []) {
         if (Array.isArray(q.options)) mcq++;
@@ -115,8 +119,54 @@ function bankKind(bank) {
       }
     }
   }
+  if (practice && practice >= mcq && practice >= written) return 'practice';
   if (!mcq && !written) return 'empty';
   return mcq >= written ? 'mcq' : 'written';
+}
+
+/* Practice banks: exam-style questions with a mark scheme to self-mark
+   against. No options and no tiers, so the checks are completeness plus
+   internal consistency of the mark tariffs. As with the written banks,
+   tariffs are compared against each bank's OWN set rather than a house
+   standard, because they follow the exam board's paper — AQA Politics uses
+   9 and 25, Edexcel Politics 12, 24 and 30. */
+function checkPractice(bank) {
+  const errors = [], warnings = [];
+  let questions = 0;
+  const tariffCount = {};
+
+  for (const topic of Object.values(bank)) {
+    for (const q of topic.questions || []) {
+      if (typeof q.marks === 'number') tariffCount[q.marks] = (tariffCount[q.marks] || 0) + 1;
+    }
+  }
+  // A tariff used only once or twice in a whole bank is more likely a typo
+  // than a real paper tariff, so it is reported rather than assumed correct.
+  const rare = Object.entries(tariffCount).filter(([, n]) => n <= 2).map(([m]) => Number(m));
+
+  for (const [id, topic] of Object.entries(bank)) {
+    if (!topic.name) warnings.push(`${id}: no topic name`);
+    const qs = topic.questions;
+    if (!Array.isArray(qs) || !qs.length) { errors.push(`${id}: no questions`); continue; }
+    questions += qs.length;
+
+    qs.forEach((q, i) => {
+      const at = `${id}[${i}]`;
+      if (!q.q || typeof q.q !== 'string') errors.push(`${at}: no question text`);
+      if (typeof q.marks !== 'number') errors.push(`${at}: no mark tariff`);
+      else if (rare.includes(q.marks)) {
+        warnings.push(`${at}: ${q.marks} marks, used only ${tariffCount[q.marks]}x in this bank — check it is a real paper tariff`);
+      }
+      if (!q.markScheme || typeof q.markScheme !== 'string' || !q.markScheme.trim()) {
+        errors.push(`${at}: no mark scheme to self-mark against`);
+      }
+      if (!q.command) warnings.push(`${at}: no command word`);
+      const stray = String(q.q || '').match(WRONG_SCRIPT);
+      if (stray) errors.push(`${at}: question contains ${JSON.stringify(stray[0])} — ${scriptName(stray[0])} in an English question`);
+    });
+  }
+  const tariffs = Object.keys(tariffCount).map(Number).sort((a, b) => a - b).join('/');
+  return { errors, warnings, questions, tariffs };
 }
 
 function loadBank(file) {
@@ -256,6 +306,23 @@ for (const file of files) {
 
   if (kind === 'empty') {
     if (args.length) console.log(`skip ${rel}  (no questions found)`);
+    continue;
+  }
+
+  if (kind === 'practice') {
+    const { errors, warnings, questions, tariffs } = checkPractice(bank);
+    const summary = `${Object.keys(bank).length} topics, ${questions} questions, tariffs ${tariffs}`;
+    if (errors.length) {
+      console.log(`FAIL ${rel}  (practice: ${summary})`);
+      for (const e of errors.slice(0, 12)) console.log(`       ${e}`);
+      if (errors.length > 12) console.log(`       ... and ${errors.length - 12} more`);
+      failed++;
+    } else {
+      console.log(`${warnings.length ? 'warn' : 'ok  '} ${rel}  (practice: ${summary})`);
+    }
+    for (const w of warnings.slice(0, 6)) console.log(`       warn: ${w}`);
+    if (warnings.length > 6) console.log(`       warn: ... and ${warnings.length - 6} more`);
+    if (warnings.length) warned++;
     continue;
   }
 

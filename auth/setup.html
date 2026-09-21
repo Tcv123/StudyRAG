@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
   <script src="../level-config.js"></script>
+  <script src="../topics-config.js"></script>
   <script src="../supabase-config.js"></script>
   <script src="../subjects-config.js"></script>
   <style>
@@ -453,6 +454,11 @@
     body.booting .card { visibility: hidden; }
   </style>
 
+  <style>
+    /* Route picker — shown only for specs declaring optionGroups. */
+    .option-group  { margin-top: 10px; }
+    .option-prompt { font-size: 12px; opacity: .75; margin-bottom: 6px; }
+  </style>
 </head>
 <body class="booting">
 <div class="page">
@@ -756,6 +762,7 @@ function toggleSubject(name, emoji, el) {
   } else {
     selectedSubjects.splice(idx, 1);
     delete subjectBoards[name];
+  delete subjectOptions[name];
     el.classList.remove('selected');
   }
   renderSelected();
@@ -885,6 +892,27 @@ function removeSubject(name) {
 
 function setBoard(name, board) {
   subjectBoards[name] = board;
+  // The route belongs to a subject+board pair, so changing board clears it.
+  delete subjectOptions[name];
+  renderSelected();
+}
+
+/* Optional ROUTES within a spec — see optionGroups in topics-config.js.
+   Edexcel Politics Component 3 is the first: a student sits 3A (USA) or
+   3B (Global) and never the other, so without a choice recorded six
+   topics would render permanently untested. Saved to
+   user_subjects.options as {"c3":"3A"}. */
+const subjectOptions = {};
+
+function optionGroupsFor(name) {
+  const board = subjectBoards[name];
+  if (!board || !window.DIAG_TOPICS || !window.levelLookup) return [];
+  const entry = window.levelLookup(window.DIAG_TOPICS, `${name}_${board}`, selectedLevel);
+  return (entry && entry.optionGroups) || [];
+}
+
+function setOption(name, groupKey, value) {
+  subjectOptions[name] = Object.assign({}, subjectOptions[name], { [groupKey]: value });
   renderSelected();
 }
 
@@ -913,6 +941,17 @@ function renderSelected() {
                 ${b}
               </div>`).join('')}
           </div>
+          ${optionGroupsFor(s.name).map(g => `
+            <div class="option-group">
+              <div class="option-prompt">${g.prompt}</div>
+              <div class="board-pills">
+                ${g.choices.map(c => `
+                  <div class="board-pill ${(subjectOptions[s.name] || {})[g.key] === c.value ? 'active' : ''}"
+                       onclick="setOption('${s.name}','${g.key}','${c.value}')">
+                    ${c.label}
+                  </div>`).join('')}
+              </div>
+            </div>`).join('')}
         </div>`).join('')}
     </div>`;
 }
@@ -1094,7 +1133,10 @@ async function save() {
     emoji:         s.emoji,
     rag_status:    'pending',
     current_grade: subjectCurrentGrade[s.name] || null,
-    target_grade:  subjectTargetGrade[s.name] || null
+    target_grade:  subjectTargetGrade[s.name] || null,
+    // {} where the spec offers no routes, or none has been picked yet —
+    // TOPICS_VISIBLE() treats an absent key as "show everything".
+    options:       subjectOptions[s.name] || {}
   }));
 
   const { error: subErr } = await supabaseClient.from('user_subjects').insert(rows);

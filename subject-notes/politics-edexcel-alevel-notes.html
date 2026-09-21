@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="icon" type="image/svg+xml" href="../favicon.svg">
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RAG Learning — Politics Notes (Edexcel)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@300;400;500;600&family=DM+Serif+Display&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="../level-config.js"></script>
+  <script src="../supabase-config.js"></script>
+  <script src="../study-tracker.js"></script>
+  <script src="../nav-gating.js"></script>
+  <script src="../admin-nav.js"></script>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg: #EAF2FC;
+      --surface: #FFFFFF;
+      --surface2: #F0F6FD;
+      --border: #B8D0E8;
+      --border-hover: #2563EB;
+      --text: #0B1E3F;
+      --muted: #445F85;
+      --muted2: #7891B0;
+      --accent: #2563EB;
+      --accent-dark: #1D4ED8;
+      --accent-dim: rgba(37,99,235,0.1);
+      --accent-glow: rgba(37,99,235,0.2);
+      --font-display: 'DM Serif Display', serif;
+      --font-body: 'DM Sans', sans-serif;
+      --sidebar-w: 240px;
+      --topics-w: 300px;
+    }
+
+    html, body { height: 100%; background: var(--bg); color: var(--text); font-family: var(--font-body); font-size: 15px; -webkit-font-smoothing: antialiased; }
+
+    /* ── LAYOUT ── */
+    .app { display: flex; height: 100vh; overflow: hidden; }
+
+    /* ── LEFT NAV SIDEBAR ── */
+    .sidebar {
+      width: var(--sidebar-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      padding: 24px 0; flex-shrink: 0;
+      box-shadow: 2px 0 16px rgba(37,99,235,0.08);
+      overflow-y: auto;
+    }
+    .sidebar::-webkit-scrollbar { width: 4px; }
+    .sidebar::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .sidebar-logo {
+      display: flex; align-items: center; gap: 10px;
+      padding: 0 20px 24px; border-bottom: 1px solid var(--border); margin-bottom: 16px;
+    }
+    .logo-img { width: 24px; height: 24px; display: inline-block; vertical-align: middle; flex-shrink: 0; }
+    .logo-text { font-family: var(--font-display); font-size: 18px; }
+
+    .nav-section { padding: 0 12px; margin-bottom: 8px; }
+    .nav-label { font-size: 10px; font-weight: 600; color: var(--muted2); text-transform: uppercase; letter-spacing: 0.1em; padding: 0 8px; margin-bottom: 4px; }
+    .nav-item {
+      display: flex; align-items: center; gap: 10px;
+      padding: 9px 10px; border-radius: 8px; font-size: 14px; color: var(--muted);
+      cursor: pointer; transition: all 0.15s; text-decoration: none;
+      border: none; background: none; width: 100%; text-align: left; font-family: var(--font-body);
+    }
+    .nav-item:hover { background: var(--surface2); color: var(--text); }
+    .nav-item.active { background: var(--accent-dim); color: var(--accent-dark); font-weight: 500; }
+    .nav-icon { width: 18px; text-align: center; font-size: 15px; flex-shrink: 0; }
+
+    .sidebar-bottom { margin-top: auto; padding: 16px 12px 0; border-top: 1px solid var(--border); }
+    .back-btn {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 12px; border-radius: 8px; font-size: 13px; color: var(--muted);
+      text-decoration: none; transition: all 0.15s; font-weight: 500; margin-bottom: 10px;
+    }
+    .back-btn:hover { background: var(--surface2); color: var(--text); }
+    .user-chip { display: flex; align-items: center; gap: 10px; padding: 10px; border-radius: 10px; background: var(--surface2); border: 1px solid var(--border); }
+    .avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--accent-dim); border: 2px solid var(--accent); display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 600; color: var(--accent-dark); flex-shrink: 0; }
+    .user-info { flex: 1; min-width: 0; }
+    .user-name  { font-size: 13px; font-weight: 500; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .user-email { font-size: 11px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .logout-btn { background: none; border: none; color: var(--muted); cursor: pointer; padding: 4px; border-radius: 6px; font-size: 14px; transition: color 0.15s; flex-shrink: 0; }
+    .logout-btn:hover { color: #DC2626; }
+
+    /* ── SIGN-OUT CONFIRM MODAL ── */
+    .signout-overlay { position: fixed; inset: 0; background: rgba(11,30,63,0.45); backdrop-filter: blur(4px); -webkit-backdrop-filter: blur(4px); display: none; align-items: center; justify-content: center; z-index: 1000; }
+    .signout-overlay.active { display: flex; }
+    .signout-modal { background: var(--surface, #fff); border: 1px solid var(--border, #B8D0E8); border-radius: 16px; padding: 28px; width: 90%; max-width: 400px; box-shadow: 0 20px 60px rgba(11,30,63,0.25); text-align: center; animation: signoutPop 0.22s cubic-bezier(0.16,1,0.3,1) both; }
+    @keyframes signoutPop { from { opacity: 0; transform: scale(0.94) translateY(8px); } to { opacity: 1; transform: scale(1) translateY(0); } }
+    .signout-icon { width: 52px; height: 52px; border-radius: 50%; background: var(--red-bg, rgba(220,38,38,0.07)); border: 1px solid var(--red-border, rgba(220,38,38,0.18)); display: flex; align-items: center; justify-content: center; font-size: 24px; color: var(--red-text, #B91C1C); margin: 0 auto 14px; }
+    .signout-title { font-family: var(--font-display, 'DM Serif Display', serif); font-size: 22px; color: var(--text, #0B1E3F); margin-bottom: 6px; }
+    .signout-msg { font-size: 14px; color: var(--muted, #445F85); margin-bottom: 22px; line-height: 1.5; }
+    .signout-actions { display: flex; gap: 10px; }
+    .signout-btn { flex: 1; padding: 11px 16px; border-radius: 10px; font-size: 14px; font-weight: 500; font-family: var(--font-body, 'DM Sans', sans-serif); cursor: pointer; transition: all 0.15s; border: 1px solid transparent; }
+    .signout-btn.cancel { background: var(--surface2, #F0F6FD); color: var(--text, #0B1E3F); border-color: var(--border, #B8D0E8); }
+    .signout-btn.cancel:hover { background: var(--surface3, #DBE8F6); border-color: var(--border-hover, #2563EB); }
+    .signout-btn.confirm { background: var(--red, #DC2626); color: #fff; }
+    .signout-btn.confirm:hover { background: var(--red-text, #B91C1C); }
+
+
+    /* ── TOPICS PANEL ── */
+    .topics-panel {
+      width: var(--topics-w); background: var(--surface);
+      border-right: 1px solid var(--border);
+      display: flex; flex-direction: column;
+      flex-shrink: 0; overflow: hidden;
+    }
+
+    .topics-header {
+      padding: 28px 22px 20px;
+      border-bottom: 1px solid var(--border);
+      flex-shrink: 0;
+    }
+
+    .topics-subject {
+      font-size: 11px; font-weight: 600; color: var(--accent);
+      text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 6px;
+    }
+
+    .topics-title {
+      font-family: var(--font-display); font-size: 21px; letter-spacing: -0.01em;
+    }
+
+    .topics-board {
+      display: inline-flex; align-items: center; gap: 6px;
+      margin-top: 10px; padding: 4px 12px; border-radius: 20px;
+      background: var(--accent-dim); border: 1px solid rgba(37,99,235,0.25);
+      font-size: 11px; font-weight: 600; color: var(--accent-dark);
+    }
+
+    .topics-body { flex: 1; overflow-y: auto; padding: 14px; }
+    .topics-body::-webkit-scrollbar { width: 4px; }
+    .topics-body::-webkit-scrollbar-thumb { background: var(--border); border-radius: 2px; }
+
+    .paper-label {
+      font-size: 10px; font-weight: 600; color: var(--muted2);
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 10px 10px 6px; margin-top: 10px;
+    }
+    .paper-label:first-child { margin-top: 0; }
+
+    .topic-btn {
+      display: flex; flex-direction: column;
+      width: 100%; padding: 12px 14px;
+      border: 1px solid transparent; border-radius: 12px;
+      background: none; cursor: pointer; text-align: left;
+      font-family: var(--font-body); transition: all 0.15s;
+      margin-bottom: 6px;
+    }
+    .topic-btn:hover { background: var(--surface2); border-color: var(--border); }
+    .topic-btn.active { background: var(--accent-dim); border-color: rgba(37,99,235,0.3); }
+
+    /* Top row: badge + info + rag dot */
+    .topic-main { display: flex; align-items: center; gap: 12px; width: 100%; }
+
+    .topic-num {
+      width: 30px; height: 30px; border-radius: 9px; flex-shrink: 0;
+      background: var(--surface2); border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 11px; font-weight: 700; color: var(--muted);
+    }
+    .topic-btn.active .topic-num { background: var(--accent); border-color: var(--accent); color: #fff; }
+
+    .topic-info { flex: 1; min-width: 0; }
+    .topic-name { font-size: 13.5px; font-weight: 500; color: var(--text); line-height: 1.4; }
+    .topic-btn.active .topic-name { color: var(--accent-dark); font-weight: 600; }
+    .topic-sub  { font-size: 11.5px; color: var(--muted); margin-top: 3px; }
+
+
+    /* RAG status dot on topic buttons */
+    .rag-dot {
+      width: 10px; height: 10px; border-radius: 50%; flex-shrink: 0;
+      background: var(--border); transition: background 0.3s;
+    }
+    .rag-dot.green { background: #22C55E; box-shadow: 0 0 6px rgba(34,197,94,0.4); }
+    .rag-dot.amber { background: #F59E0B; box-shadow: 0 0 6px rgba(245,158,11,0.4); }
+    .rag-dot.red   { background: #EF4444; box-shadow: 0 0 6px rgba(239,68,68,0.4); }
+
+    /* ── PDF VIEWER ── */
+    .viewer { flex: 1; display: flex; flex-direction: column; overflow: hidden; }
+
+    .viewer-header {
+      padding: 20px 32px; border-bottom: 1px solid var(--border);
+      background: var(--surface); display: flex; align-items: center; justify-content: space-between;
+      flex-shrink: 0;
+    }
+
+    .viewer-title { font-family: var(--font-display); font-size: 22px; letter-spacing: -0.01em; }
+    .viewer-sub   { font-size: 13px; color: var(--muted); margin-top: 3px; }
+
+    .viewer-actions { display: flex; gap: 8px; }
+    .viewer-btn {
+      display: flex; align-items: center; gap: 6px;
+      padding: 8px 14px; border-radius: 8px;
+      font-size: 13px; font-weight: 500; cursor: pointer;
+      text-decoration: none; transition: all 0.15s;
+      border: 1px solid var(--border); background: var(--surface2); color: var(--muted);
+      font-family: var(--font-body);
+    }
+    .viewer-btn:hover { border-color: var(--border-hover); color: var(--text); }
+    .viewer-btn.primary {
+      background: linear-gradient(135deg, var(--accent), var(--accent-dark));
+      color: #fff; border-color: var(--accent);
+      box-shadow: 0 2px 8px var(--accent-glow);
+    }
+    .viewer-btn.primary:hover { filter: brightness(1.05); }
+    .viewer-btn.test {
+      background: #F0FDF4; border-color: #BBF7D0; color: #15803D;
+    }
+    .viewer-btn.test:hover { background: #DCFCE7; border-color: #86EFAC; }
+
+    .pdf-frame { flex: 1; border: none; display: block; }
+
+    /* ── EMPTY STATE ── */
+    .empty-state {
+      flex: 1; display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      gap: 14px; padding: 48px; text-align: center;
+    }
+    .empty-icon { font-size: 52px; opacity: 0.5; }
+    .empty-title { font-family: var(--font-display); font-size: 22px; color: var(--text); }
+    .empty-sub { font-size: 14px; color: var(--muted); line-height: 1.6; max-width: 320px; }
+  
+    .mobile-menu-btn {
+      display: none; width: 36px; height: 36px; border-radius: 10px;
+      background: var(--surface); border: 1px solid var(--border);
+      align-items: center; justify-content: center; cursor: pointer;
+      font-size: 18px;
+    }
+    .mobile-overlay { display: none; position: fixed; inset: 0; background: rgba(0,0,0,0.3); z-index: 99; }
+    .mobile-overlay.active { display: block; }
+    @media (max-width: 768px) {
+      .mobile-menu-btn { display: flex; }
+      .sidebar { position: fixed; transform: translateX(-100%); transition: transform 0.3s ease; z-index: 100; top: 0; left: 0; bottom: 0; }
+      .sidebar.open { transform: translateX(0); }
+      .main { margin-left: 0 !important; padding: 16px 14px !important; }
+    }
+  </style>
+</head>
+<body>
+<div class="app">
+
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <a href="../Dashboard.html" class="sidebar-logo" style="text-decoration:none;color:inherit;cursor:pointer;">
+      <img src="../favicon.svg" alt="RAG Learning" class="logo-img" />
+      <div class="logo-text">RAG Learning</div>
+    </a>
+
+    <div class="nav-section">
+      <div class="nav-label">Menu</div>
+      <a class="nav-item" href="../Dashboard.html"><span class="nav-icon">⊞</span> Dashboard</a>
+      <a class="nav-item" href="../breakdown.html"><span class="nav-icon">📊</span> Breakdown</a>
+      <a class="nav-item active" href="../notes.html"><span class="nav-icon">📄</span> Notes</a>
+      <a class="nav-item" href="../Dashboard.html#diagnostic"><span class="nav-icon">◎</span> Diagnostic</a>
+      <a class="nav-item" href="../medals.html"><span class="nav-icon">🏅</span> Medals</a>
+      <a class="nav-item" href="../practice.html"><span class="nav-icon">✦</span> Practice questions</a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Premium</div>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📆</span> Revision timetable <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🃏</span> Flashcards <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📜</span> Test history <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">🤖</span> AI feedback <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📄</span> Past papers <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+      <a class="nav-item" href="#" style="opacity:0.5;"><span class="nav-icon">📋</span> Mark schemes <span style="margin-left:auto;font-size:10px;color:#D97706;font-weight:600;">PRO</span></a>
+    </div>
+
+    <div class="nav-section" style="margin-top:8px;">
+      <div class="nav-label">Account</div>
+      <a class="nav-item" href="../auth/setup.html"><span class="nav-icon">✏️</span> Edit subjects</a>
+      <a class="nav-item" href="../settings.html"><span class="nav-icon">⚙</span> Settings</a>
+    </div>
+
+    <div class="sidebar-bottom">
+      <div class="user-chip">
+        <div class="avatar" id="avatarInitials" onclick="location.href='../settings.html'" style="cursor:pointer" title="Account settings">?</div>
+        <div class="user-info" onclick="location.href='../settings.html'" style="cursor:pointer" title="Account settings">
+          <div class="user-name"  id="sidebarName">Loading…</div>
+        </div>
+        <button class="logout-btn" onclick="confirmSignOut()" title="Sign out">⏻</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Topics panel -->
+  <div class="topics-panel">
+    <div class="topics-header">
+      <div class="topics-subject">Politics</div>
+      <div class="topics-title">Revision Notes</div>
+      <div class="topics-board">🏛️ Edexcel</div>
+    </div>
+
+    <div class="topics-body">
+
+      <div class="paper-label">Component 1 &mdash; UK Politics (Section A)</div>
+      <button class="topic-btn" id="topicBtn-1.1" onclick="openTopic(this, '1.1', 'Democracy and Participation', '../notes-politics-edexcel-alevel/1.1_democracy_and_participation.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.1</div>
+          <div class="topic-info">
+            <div class="topic-name">Democracy and Participation</div>
+            <div class="topic-sub">Direct vs representative, franchise and suffrage, pressure groups, rights</div>
+          </div>
+          <span class="rag-dot" id="rag-1.1"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-1.2" onclick="openTopic(this, '1.2', 'Political Parties', '../notes-politics-edexcel-alevel/1.2_political_parties.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Political Parties</div>
+            <div class="topic-sub">Functions and funding, established parties, minor parties, parties in context</div>
+          </div>
+          <span class="rag-dot" id="rag-1.2"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-1.3" onclick="openTopic(this, '1.3', 'Electoral Systems', '../notes-politics-edexcel-alevel/1.3_electoral_systems.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.3</div>
+          <div class="topic-info">
+            <div class="topic-name">Electoral Systems</div>
+            <div class="topic-sub">FPTP, AMS, STV, SV; referendums since 1997; system analysis</div>
+          </div>
+          <span class="rag-dot" id="rag-1.3"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-1.4" onclick="openTopic(this, '1.4', 'Voting Behaviour and the Media', '../notes-politics-edexcel-alevel/1.4_voting_behaviour_and_the_media.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.4</div>
+          <div class="topic-info">
+            <div class="topic-name">Voting Behaviour and the Media</div>
+            <div class="topic-sub">Three general election case studies, class/age/education, media influence</div>
+          </div>
+          <span class="rag-dot" id="rag-1.4"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Component 1 &mdash; Core Political Ideas (Section B)</div>
+      <button class="topic-btn" id="topicBtn-1.5" onclick="openTopic(this, '1.5', 'Conservatism', '../notes-politics-edexcel-alevel/1.5_conservatism.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.5</div>
+          <div class="topic-info">
+            <div class="topic-name">Conservatism</div>
+            <div class="topic-sub">Hobbes, Burke, Oakeshott, Rand, Nozick</div>
+          </div>
+          <span class="rag-dot" id="rag-1.5"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-1.6" onclick="openTopic(this, '1.6', 'Liberalism', '../notes-politics-edexcel-alevel/1.6_liberalism.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.6</div>
+          <div class="topic-info">
+            <div class="topic-name">Liberalism</div>
+            <div class="topic-sub">Locke, Wollstonecraft, Mill, Rawls, Friedan</div>
+          </div>
+          <span class="rag-dot" id="rag-1.6"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-1.7" onclick="openTopic(this, '1.7', 'Socialism', '../notes-politics-edexcel-alevel/1.7_socialism.html')">
+        <div class="topic-main">
+          <div class="topic-num">1.7</div>
+          <div class="topic-info">
+            <div class="topic-name">Socialism</div>
+            <div class="topic-sub">Marx & Engels, Webb, Luxemburg, Crosland, Giddens</div>
+          </div>
+          <span class="rag-dot" id="rag-1.7"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Component 2 &mdash; UK Government (Section A)</div>
+      <button class="topic-btn" id="topicBtn-2.1" onclick="openTopic(this, '2.1', 'The Constitution', '../notes-politics-edexcel-alevel/2.1_the_constitution.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.1</div>
+          <div class="topic-info">
+            <div class="topic-name">The Constitution</div>
+            <div class="topic-sub">Nature and sources, change since 1997, devolution, further reform</div>
+          </div>
+          <span class="rag-dot" id="rag-2.1"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-2.2" onclick="openTopic(this, '2.2', 'Parliament', '../notes-politics-edexcel-alevel/2.2_parliament.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Parliament</div>
+            <div class="topic-sub">Commons and Lords, comparative powers, legislation, scrutiny</div>
+          </div>
+          <span class="rag-dot" id="rag-2.2"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-2.3" onclick="openTopic(this, '2.3', 'Prime Minister and Executive', '../notes-politics-edexcel-alevel/2.3_prime_minister_and_executive.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.3</div>
+          <div class="topic-info">
+            <div class="topic-name">Prime Minister and Executive</div>
+            <div class="topic-sub">Structure and powers, ministerial responsibility, PM and Cabinet</div>
+          </div>
+          <span class="rag-dot" id="rag-2.3"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-2.4" onclick="openTopic(this, '2.4', 'Relations Between the Branches', '../notes-politics-edexcel-alevel/2.4_relations_between_the_branches.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.4</div>
+          <div class="topic-info">
+            <div class="topic-name">Relations Between the Branches</div>
+            <div class="topic-sub">Supreme Court, Executive and Parliament, the EU, sovereignty</div>
+          </div>
+          <span class="rag-dot" id="rag-2.4"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Component 2 &mdash; Non-core Political Ideas (Section B) &middot; you sit ONE</div>
+      <button class="topic-btn" id="topicBtn-2.5" onclick="openTopic(this, '2.5', 'Anarchism', '../notes-politics-edexcel-alevel/2.5_anarchism.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.5</div>
+          <div class="topic-info">
+            <div class="topic-name">Anarchism</div>
+            <div class="topic-sub">Stirner, Proudhon, Bakunin, Kropotkin, Goldman — optional</div>
+          </div>
+          <span class="rag-dot" id="rag-2.5"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-2.6" onclick="openTopic(this, '2.6', 'Ecologism', '../notes-politics-edexcel-alevel/2.6_ecologism.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.6</div>
+          <div class="topic-info">
+            <div class="topic-name">Ecologism</div>
+            <div class="topic-sub">Leopold, Carson, Schumacher, Bookchin, Merchant — optional</div>
+          </div>
+          <span class="rag-dot" id="rag-2.6"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-2.7" onclick="openTopic(this, '2.7', 'Feminism', '../notes-politics-edexcel-alevel/2.7_feminism.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.7</div>
+          <div class="topic-info">
+            <div class="topic-name">Feminism</div>
+            <div class="topic-sub">Gilman, de Beauvoir, Millett, Rowbotham, hooks — optional</div>
+          </div>
+          <span class="rag-dot" id="rag-2.7"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-2.8" onclick="openTopic(this, '2.8', 'Multiculturalism', '../notes-politics-edexcel-alevel/2.8_multiculturalism.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.8</div>
+          <div class="topic-info">
+            <div class="topic-name">Multiculturalism</div>
+            <div class="topic-sub">Berlin, Taylor, Parekh, Modood, Kymlicka — optional</div>
+          </div>
+          <span class="rag-dot" id="rag-2.8"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-2.9" onclick="openTopic(this, '2.9', 'Nationalism', '../notes-politics-edexcel-alevel/2.9_nationalism.html')">
+        <div class="topic-main">
+          <div class="topic-num">2.9</div>
+          <div class="topic-info">
+            <div class="topic-name">Nationalism</div>
+            <div class="topic-sub">Rousseau, Herder, Mazzini, Garvey, Maurras — optional</div>
+          </div>
+          <span class="rag-dot" id="rag-2.9"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Component 3A &mdash; Comparative Politics: USA &middot; route 3A</div>
+      <button class="topic-btn" id="topicBtn-3A.1" onclick="openTopic(this, '3A.1', 'US Constitution and Federalism', '../notes-politics-edexcel-alevel/3A.1_us_constitution_and_federalism.html')">
+        <div class="topic-main">
+          <div class="topic-num">3A.1</div>
+          <div class="topic-info">
+            <div class="topic-name">US Constitution and Federalism</div>
+            <div class="topic-sub">Codification, separation of powers, federalism, debates — route 3A</div>
+          </div>
+          <span class="rag-dot" id="rag-3A.1"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3A.2" onclick="openTopic(this, '3A.2', 'US Congress', '../notes-politics-edexcel-alevel/3A.2_us_congress.html')">
+        <div class="topic-main">
+          <div class="topic-num">3A.2</div>
+          <div class="topic-info">
+            <div class="topic-name">US Congress</div>
+            <div class="topic-sub">Structure, powers, representation, oversight, filibuster — route 3A</div>
+          </div>
+          <span class="rag-dot" id="rag-3A.2"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3A.3" onclick="openTopic(this, '3A.3', 'US Presidency', '../notes-politics-edexcel-alevel/3A.3_us_presidency.html')">
+        <div class="topic-main">
+          <div class="topic-num">3A.3</div>
+          <div class="topic-info">
+            <div class="topic-name">US Presidency</div>
+            <div class="topic-sub">Article II powers, informal powers, imperial presidency — route 3A</div>
+          </div>
+          <span class="rag-dot" id="rag-3A.3"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3A.4" onclick="openTopic(this, '3A.4', 'US Supreme Court and Civil Rights', '../notes-politics-edexcel-alevel/3A.4_us_supreme_court_and_civil_rights.html')">
+        <div class="topic-main">
+          <div class="topic-num">3A.4</div>
+          <div class="topic-info">
+            <div class="topic-name">US Supreme Court and Civil Rights</div>
+            <div class="topic-sub">Judicial review, appointments, civil rights, race and rights — route 3A</div>
+          </div>
+          <span class="rag-dot" id="rag-3A.4"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3A.5" onclick="openTopic(this, '3A.5', 'US Democracy and Participation', '../notes-politics-edexcel-alevel/3A.5_us_democracy_and_participation.html')">
+        <div class="topic-main">
+          <div class="topic-num">3A.5</div>
+          <div class="topic-info">
+            <div class="topic-name">US Democracy and Participation</div>
+            <div class="topic-sub">Electoral College, primaries, campaign finance, interest groups — route 3A</div>
+          </div>
+          <span class="rag-dot" id="rag-3A.5"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3A.6" onclick="openTopic(this, '3A.6', 'Comparative Approaches', '../notes-politics-edexcel-alevel/3A.6_comparative_approaches.html')">
+        <div class="topic-main">
+          <div class="topic-num">3A.6</div>
+          <div class="topic-info">
+            <div class="topic-name">Comparative Approaches</div>
+            <div class="topic-sub">Rational, cultural and structural approaches; UK/US comparison — route 3A</div>
+          </div>
+          <span class="rag-dot" id="rag-3A.6"></span>
+        </div>
+      </button>
+
+      <div class="paper-label">Component 3B &mdash; Global Politics &middot; route 3B</div>
+      <button class="topic-btn" id="topicBtn-3B.1" onclick="openTopic(this, '3B.1', 'The State and Globalisation', '../notes-politics-edexcel-alevel/3B.1_the_state_and_globalisation.html')">
+        <div class="topic-main">
+          <div class="topic-num">3B.1</div>
+          <div class="topic-info">
+            <div class="topic-name">The State and Globalisation</div>
+            <div class="topic-sub">Nation-state, sovereignty, globalisation and its impact — route 3B</div>
+          </div>
+          <span class="rag-dot" id="rag-3B.1"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3B.2" onclick="openTopic(this, '3B.2', 'Global Governance: Political and Economic', '../notes-politics-edexcel-alevel/3B.2_global_governance_political_and_economic.html')">
+        <div class="topic-main">
+          <div class="topic-num">3B.2</div>
+          <div class="topic-info">
+            <div class="topic-name">Global Governance: Political and Economic</div>
+            <div class="topic-sub">UN, NATO, IMF, World Bank, WTO, G7/G20 — route 3B</div>
+          </div>
+          <span class="rag-dot" id="rag-3B.2"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3B.3" onclick="openTopic(this, '3B.3', 'Global Governance: Human Rights and Environmental', '../notes-politics-edexcel-alevel/3B.3_global_governance_human_rights_and_environmental.html')">
+        <div class="topic-main">
+          <div class="topic-num">3B.3</div>
+          <div class="topic-info">
+            <div class="topic-name">Global Governance: Human Rights and Environmental</div>
+            <div class="topic-sub">ICJ, ICC, R2P, UNFCCC, IPCC, the global commons — route 3B</div>
+          </div>
+          <span class="rag-dot" id="rag-3B.3"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3B.4" onclick="openTopic(this, '3B.4', 'Power and Developments', '../notes-politics-edexcel-alevel/3B.4_power_and_developments.html')">
+        <div class="topic-main">
+          <div class="topic-num">3B.4</div>
+          <div class="topic-info">
+            <div class="topic-name">Power and Developments</div>
+            <div class="topic-sub">Hard/soft power, polarity, rising powers, democratisation — route 3B</div>
+          </div>
+          <span class="rag-dot" id="rag-3B.4"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3B.5" onclick="openTopic(this, '3B.5', 'Regionalism and the EU', '../notes-politics-edexcel-alevel/3B.5_regionalism_and_the_eu.html')">
+        <div class="topic-main">
+          <div class="topic-num">3B.5</div>
+          <div class="topic-info">
+            <div class="topic-name">Regionalism and the EU</div>
+            <div class="topic-sub">Forms of regionalism, EU institutions, integration debates — route 3B</div>
+          </div>
+          <span class="rag-dot" id="rag-3B.5"></span>
+        </div>
+      </button>
+
+      <button class="topic-btn" id="topicBtn-3B.6" onclick="openTopic(this, '3B.6', 'Comparative Theories', '../notes-politics-edexcel-alevel/3B.6_comparative_theories.html')">
+        <div class="topic-main">
+          <div class="topic-num">3B.6</div>
+          <div class="topic-info">
+            <div class="topic-name">Comparative Theories</div>
+            <div class="topic-sub">Realism, liberalism, constructivism; UK/US comparison — route 3B</div>
+          </div>
+          <span class="rag-dot" id="rag-3B.6"></span>
+        </div>
+      </button>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
