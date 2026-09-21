@@ -30,8 +30,8 @@ breakdown.html and medals.html all read it from there. If the spec has
 optional topics a student can't all sit, set examinedTotal on the entry so
 progress bars and completion medals stay reachable. Tell me what you wired
 and what you skipped, leave the marketing pages until it works, and send me
-any migration before writing code that needs it — the site auto-pushes live
-within minutes.
+any migration before writing code that needs it, and confirm each change
+actually deployed rather than assuming it did.
 ```
 
 ---
