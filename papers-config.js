@@ -12130,7 +12130,7 @@ window.SUBJECTS = [
                   { code: '06.5', preamble: "Some studies have shown that in humans, oestrogen has the opposite effect on two different autoimmune diseases: it accelerates the progression of systemic lupus erythematosus (SLE) but prevents the progression of rheumatoid arthritis (RA). Table 3 shows the effect of oestrogen on the immune response in healthy mice and mice with autoimmune disease (in autoimmune mice: increase in humoral response, decrease in cellular response). A student concluded: (1) in humans, SLE is caused by an overproduction of antibodies; (2) in humans, RA is caused by an overproduction of cytotoxic T cells (TC cells).", prompt: "Evaluate the student's conclusions.", marks: 4, extended: true },
                   { code: '06.6', preamble: "In mice, one type of autoimmune disease is inherited as a dominant allele.", prompt: "Would the Hardy–Weinberg principle hold true for a population of mice, some of which had this autoimmune disease? Explain your answer.", marks: 2 }
                 ] },
-              { number: 7,
+              { number: 7, choose: 1,
                 scenario: "Section B — Answer ONE question. Write an essay on one of the topics below. Each is marked out of 25 using AQA's levels-of-response grid (a fully synoptic answer links at least four different topics from the specification to the theme).",
                 parts: [
                   { code: '07.1', prompt: "Either: Write an essay on 'The importance of interactions between organisms and their environment.'", marks: 25, extended: true },
@@ -12838,7 +12838,7 @@ window.SUBJECTS = [
                   { code: '05.5', preamble: 'Mature leaves from slow-growing, shade-tolerant plants produce poisonous chemicals that are a defence against being eaten by herbivores.', prompt: 'Suggest how this benefits slow-growing, shade-tolerant plants.', marks: 2 },
                   { code: '05.6', preamble: 'Scientists measured the concentration of poisonous chemicals produced by shade-tolerant plant species in six taxa (ferns, monocots, basal angiosperms, magnoliids, rosids, asterids) and compared this with the mean concentration for all plants. Figure 9 shows results alongside the phylogenetic relationships between the six taxa.\n\nA journalist published: "The more recently a shade-tolerant plant species evolved, the greater the concentration of poisonous chemicals it produces."\n\n(See Figure 9 in the question paper PDF.)', prompt: 'Do the data in Figure 9 support this summary? Justify your answer.', marks: 2 }
                 ] },
-              { number: 6,
+              { number: 6, choose: 1,
                 scenario: 'Section B — Answer ONE question. Write an essay on one of the topics below. Each is marked out of 25 using AQA\'s levels-of-response grid (a fully synoptic answer links at least four different topics from the specification to the theme).',
                 parts: [
                   { code: '06.1', prompt: 'Either: Write an essay on \'The uses and importance of ATP in organisms.\'', marks: 25, extended: true },
