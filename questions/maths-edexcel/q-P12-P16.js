@@ -32,7 +32,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P12',
     q: 'The partial fraction decomposition of \\(\\dfrac{f(x)}{(ax+b)^2}\\) has the form:',
-    options: ['\\(\\dfrac{A}{ax+b} + \\dfrac{B}{(ax+b)^2}\\)', '\\(\\dfrac{A}{ax+b} + \\dfrac{B}{ax+b}\\)', '\\(\\dfrac{Ax+B}{(ax+b)^2}\\)', '\\(\\dfrac{A}{(ax+b)^2}\\)'],
+    options: ['\\(\\dfrac{A}{ax+b} + \\dfrac{B}{(ax+b)^2}\\)', '\\(\\dfrac{A}{ax+b} + \\dfrac{B}{ax+b}\\) (repeated)', '\\(\\dfrac{Ax+B}{(ax+b)^2}\\)', '\\(\\dfrac{A}{(ax+b)^2}\\)'],
     answer: 0
   },
   {
@@ -46,7 +46,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P12',
     q: 'Is \\(\\dfrac{x^3 + 2x}{x^2 - 1}\\) a proper or improper fraction?',
-    options: ['Improper, because degree of numerator \\(\\geq\\) degree of denominator', 'Proper, because the numerator has more terms', 'Proper, because \\(x^3\\) divides evenly', 'Improper only if the denominator has repeated factors'],
+    options: ['Improper, because degree of numerator \\(\\geq\\) degree of denominator', 'Proper, because the numerator has more terms', 'Proper, because \\(x^3\\) divides evenly', 'Improper only if the denominator has repeated linear factors of any kind'],
     answer: 0
   },
   {
@@ -104,7 +104,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P12',
     q: 'Express \\(\\dfrac{x^2 + 5x + 3}{(x+1)(x+2)}\\) in partial fractions. What preliminary step is needed?',
-    options: ['Polynomial division, since the fraction is improper', 'Multiply numerator and denominator by \\((x+1)\\)', 'No preliminary step — substitute directly', 'Complete the square on the numerator'],
+    options: ['Polynomial division, since the fraction is improper', 'Multiply the numerator and denominator by \\((x+1)\\) first', 'No preliminary step — substitute directly', 'Complete the square on the numerator'],
     answer: 0
   },
   {
@@ -125,7 +125,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P12',
     q: 'In the proof that there are infinitely many primes, the key is to consider \\(N = p_1 p_2 \\cdots p_n + 1\\). Why does this lead to a contradiction?',
-    options: ['\\(N\\) has a prime factor not in the list \\(\\{p_1,\\ldots,p_n\\}\\)', '\\(N\\) itself must be prime', '\\(N\\) is divisible by all primes in the list', '\\(N\\) cannot be factored'],
+    options: ['\\(N\\) has a prime factor not in the list \\(\\{p_1,\\ldots,p_n\\}\\)', '\\(N\\) itself must be prime', '\\(N\\) is divisible by all of the primes \\(p_1, \\ldots, p_n\\) given', '\\(N\\) cannot be factored'],
     answer: 0
   },
   {
@@ -167,7 +167,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P12',
     q: 'Prove by contradiction: if \\(n^2\\) is even then \\(n\\) is even. Which key step is used?',
-    options: ['Assume \\(n\\) is odd, then \\(n^2\\) is odd — contradiction', 'Assume \\(n^2\\) is odd, derive \\(n\\) is even', 'Use the Factor Theorem on \\(n^2 - 2k\\)', 'Show \\(n^2\\) has no odd divisors'],
+    options: ['Assume \\(n\\) is odd, then \\(n^2\\) is odd — contradiction', 'Assume \\(n^2\\) is odd, then derive that \\(n\\) must be even', 'Use the Factor Theorem on \\(n^2 - 2k\\)', 'Show \\(n^2\\) has no odd divisors'],
     answer: 0
   },
   {
@@ -197,7 +197,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P12',
     q: 'Prove by contradiction: the sum of a rational and an irrational number is irrational. The key contradiction is:',
-    options: ['Rearranging produces an irrational = rational, which is impossible', 'The sum must be positive', 'An irrational squared is rational', 'Rational numbers cannot be added to irrationals'],
+    options: ['Rearranging produces an irrational = rational, which is impossible', 'The sum must be positive', 'An irrational squared is rational', 'Rational numbers cannot be added to irrational numbers, so the sum is undefined'],
     answer: 0
   },
   {
@@ -211,7 +211,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P12',
     q: 'Given \\(\\dfrac{f(x)}{(x-1)^2(x+3)}\\) in partial fractions, which method most efficiently finds all three constants?',
-    options: ['Cover-up for the non-repeated factor; substitute a convenient value and equate coefficients for the repeated factor', 'Equate coefficients only for all three constants', 'Substitute \\(x=0, 1, -3\\) into the multiplied identity', 'Use long division first'],
+    options: ['Cover-up for the non-repeated factor; substitute a convenient value and equate coefficients for the repeated factor', 'Equate coefficients only for all three constants', 'Substitute \\(x=0, 1, -3\\) into the multiplied identity and solve the three equations simultaneously using elimination', 'Use long division first'],
     answer: 0
   },
   {
@@ -264,7 +264,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P13',
     q: 'The graph of \\(y = f(2x)\\) is a:',
-    options: ['Horizontal stretch, scale factor \\(\\frac{1}{2}\\)', 'Vertical stretch, scale factor 2', 'Horizontal stretch, scale factor 2', 'Vertical stretch, scale factor \\(\\frac{1}{2}\\)'],
+    options: ['Horizontal stretch, scale factor \\(\\frac{1}{2}\\)', 'Vertical stretch, scale factor 2', 'Horizontal stretch, scale factor 2', 'Vertical stretch, scale factor \\(\\frac{1}{2}\\), parallel to y'],
     answer: 0
   },
   {
@@ -416,7 +416,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     topic: 'P13',
     q: 'For \\(f\\!: x \\mapsto \\dfrac{2x+3}{x-1}\\), \\(x \\neq 1\\), which statement is true?',
     options: ['\\(f = f^{-1}\\) — the function is self-inverse', '\\(f^{-1}(x) = \\dfrac{x+3}{x-2}\\)', '\\(ff(x) = x + 3\\)', 'The range of \\(f\\) includes all real numbers'],
-    answer: 0
+    answer: 1
   },
   {
     tier: 'red',
@@ -758,7 +758,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P15',
     q: 'Find the area of a segment with radius 8 cm and angle \\(\\dfrac{\\pi}{3}\\) rad.',
-    options: ['\\(\\dfrac{32\\pi}{3} - 16\\sqrt{3}\\) cm²', '\\(\\dfrac{32\\pi}{3}\\) cm²', '\\(16\\pi - 8\\sqrt{3}\\) cm²', '\\(\\dfrac{16\\pi}{3} - 8\\sqrt{3}\\) cm²'],
+    options: ['\\(\\dfrac{32\\pi}{3} - 16\\sqrt{3}\\) cm²', '\\(\\dfrac{32\\pi}{3}\\) cm²', '\\(16\\pi - 8\\sqrt{3}\\) cm²', '\\(\\dfrac{16\\pi}{3} - 8\\sqrt{3}\\) cm² (half)'],
     answer: 0
   },
   {
@@ -779,7 +779,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P15',
     q: 'A chord divides a circle of radius 6 cm, subtending angle \\(\\dfrac{2\\pi}{3}\\) at the centre. Find the area of the minor segment.',
-    options: ['\\(12\\pi - 9\\sqrt{3}\\) cm²', '\\(12\\pi\\) cm²', '\\(6\\pi - 9\\sqrt{3}\\) cm²', '\\(6\\pi + 9\\sqrt{3}\\) cm²'],
+    options: ['\\(12\\pi - 9\\sqrt{3}\\) cm²', '\\(12\\pi\\) cm²', '\\(rac{12\\pi - 9\\sqrt{3}}{2}\\) cm²', '\\(6\\pi + 9\\sqrt{3}\\) cm²'],
     answer: 0
   },
   {
@@ -800,7 +800,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P15',
     q: 'A sector OAB has radius 5 cm. Arc AB = 8 cm. Find the area of triangle OAB.',
-    options: ['\\(\\dfrac{25\\sin(1.6)}{2}\\) cm²', '\\(20\\) cm²', '\\(\\dfrac{25\\sin(8/5)}{2}\\) — same as first option', '\\(10\\sin(1.6)\\) cm²'],
+    options: ['\\(\\dfrac{25\\sin(1.6)}{2} \\approx 12.5\\) cm²', '\\(20\\) cm² (the area of the whole sector)', '\\(25\\sin(1.6) \\approx 25.0\\) cm²', '\\(10\\sin(1.6)\\) cm²'],
     answer: 0
   },
   {
@@ -837,7 +837,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P15',
     q: 'A sector of radius \\(r\\) and angle \\(\\theta\\) has area equal to twice its arc length. Find the relationship between \\(r\\) and \\(\\theta\\).',
-    options: ['\\(r = 4\\) (independent of \\(\\theta\\))', '\\(r\\theta = 4\\)', '\\(r = 2\\theta\\)', '\\(r^2 = 4\\theta\\)'],
+    options: ['\\(r = 4\\) (independent of \\(\\theta\\))', '\\(r\\theta = 4\\)', '\\(r = 2\\theta\\)', '\\(r^2 = 4\\theta\\) (depends on \\(\\theta\\))'],
     answer: 0
   },
   {
@@ -851,7 +851,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P15',
     q: 'A circle has two chords creating sectors of angles \\(\\alpha\\) and \\(\\beta\\) (where \\(\\alpha + \\beta = 2\\pi\\)). The minor segment area is \\(S_1\\) and major segment area is \\(S_2\\). Find \\(S_1 + S_2\\).',
-    options: ['\\(\\pi r^2\\) — the full circle area', '\\(\\pi r^2 - r^2\\sin\\alpha\\)', '\\(r^2(\\pi - \\sin\\alpha)\\)', '\\(2\\pi r^2\\)'],
+    options: ['\\(\\pi r^2\\) — the full circle area', '\\(\\pi r^2 - r^2\\sin\\alpha\\) (the minor part)', '\\(r^2(\\pi - \\sin\\alpha)\\)', '\\(2\\pi r^2\\)'],
     answer: 0
   },
   {
@@ -865,14 +865,14 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P15',
     q: 'A sector has perimeter \\(P\\) and area \\(A\\). Express \\(A\\) in terms of \\(P\\) and \\(r\\).',
-    options: ['\\(A = \\dfrac{r(P - 2r)}{2}\\)', '\\(A = \\dfrac{P^2}{4r}\\)', '\\(A = Pr - r^2\\)', '\\(A = \\dfrac{P-r}{2}\\)'],
+    options: ['\\(A = \\dfrac{r(P - 2r)}{2}\\)', '\\(A = \\dfrac{P^2}{4r} - r^2\\)', '\\(A = Pr - r^2\\)', '\\(A = \\dfrac{P-r}{2}\\)'],
     answer: 0
   },
   {
     tier: 'red',
     topic: 'P15',
     q: 'For small \\(\\theta\\), show \\(\\cos\\theta + \\sin\\theta \\approx 1 + \\theta - \\dfrac{\\theta^2}{2}\\). What is the percentage error when \\(\\theta = 0.1\\) rad?',
-    options: ['Approximately 0.04%', '0.5%', '1%', '0.1%'],
+    options: ['Approximately 0.015%', 'About 0.5% (the size of the θ² term)', 'About 1% (θ² × 100)', 'About 0.15% (ten times too large)'],
     answer: 0
   },
 
@@ -997,7 +997,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P16',
     q: 'Find the exact value of \\(\\cos 15°\\).',
-    options: ['\\(\\dfrac{\\sqrt{6}+\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{6}-\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{3}+1}{4}\\)', '\\(\\dfrac{1+\\sqrt{3}}{2\\sqrt{2}}\\) — same as first option'],
+    options: ['\\(\\dfrac{\\sqrt{6}+\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{6}-\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{3}+1}{4}\\)', '\\(\\dfrac{\\sqrt{3}-1}{2\\sqrt{2}}\\)'],
     answer: 0
   },
   {
@@ -1055,14 +1055,14 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P16',
     q: 'Solve \\(5\\sin x + 12\\cos x = 6\\) for \\(0 \\leq x \\leq 2\\pi\\). Express \\(x\\) in terms of \\(\\arcsin\\).',
-    options: ['\\(x = \\arcsin\\!\\left(\\frac{6}{13}\\right) - \\arctan\\!\\left(\\frac{12}{5}\\right)\\) and the second solution in range', '\\(x = \\arcsin\\!\\left(\\frac{6}{13}\\right)\\) only', '\\(x = \\arccos\\!\\left(\\frac{6}{13}\\right) - 1.176\\)', '\\(x = 0.487\\) rad and \\(x = 3.629\\) rad'],
+    options: ['\\(x = \\arcsin\\!\\left(\\frac{6}{13}\\right) - \\arctan\\!\\left(\\frac{12}{5}\\right)\\) and the second solution in range', '\\(x = \\arcsin\\!\\left(\\frac{6}{13}\\right)\\) only', '\\(x = \\arccos\\!\\left(\\frac{6}{13}\\right) - 1.176\\) and \\(x = 2\\pi - \\arccos\\!\\left(\\frac{6}{13}\\right)\\) in radians', '\\(x = 0.487\\) rad and \\(x = 3.629\\) rad'],
     answer: 0
   },
   {
     tier: 'red',
     topic: 'P16',
     q: 'Prove: \\(\\dfrac{\\tan x - \\sin x}{\\tan x + \\sin x} \\equiv \\dfrac{1 - \\cos x}{1 + \\cos x}\\).',
-    options: ['Factor out \\(\\sin x\\) from numerator and denominator, then divide by \\(\\cos x\\)', 'Use double angle for \\(\\sin x\\)', 'Use \\(\\tan^2 x = \\sec^2 x - 1\\)', 'Substitute \\(x = \\pi/4\\) to verify'],
+    options: ['Factor out \\(\\sin x\\) from numerator and denominator, then divide by \\(\\cos x\\)', 'Use double angle for \\(\\sin x\\)', 'Use \\(\\tan^2 x = \\sec^2 x - 1\\)', 'Substitute \\(x = \\pi/4\\) and \\(x = \\pi/3\\) to verify it holds for both values of x'],
     answer: 0
   },
   {
@@ -1083,7 +1083,7 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P16',
     q: 'Prove: \\(\\dfrac{1 - \\cos 2x}{\\sin 2x} \\equiv \\tan x\\).',
-    options: ['Use \\(1-\\cos 2x = 2\\sin^2 x\\) and \\(\\sin 2x = 2\\sin x\\cos x\\), then simplify', 'Use \\(\\tan 2x\\) formula', 'Expand \\(\\cos 2x = \\cos^2 x - \\sin^2 x\\) only', 'Apply the addition formula for \\(\\sin\\)'],
+    options: ['Use \\(1-\\cos 2x = 2\\sin^2 x\\) and \\(\\sin 2x = 2\\sin x\\cos x\\), then simplify', 'Use \\(\\tan 2x\\) formula', 'Expand \\(\\cos 2x = \\cos^2 x - \\sin^2 x\\) only, then divide by \\(\\cos^2 x\\) throughout', 'Apply the addition formula for \\(\\sin\\)'],
     answer: 0
   },
   {

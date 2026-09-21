@@ -732,13 +732,13 @@ const EDEXCEL_MCQ_M3_M7 = {
       answer: 0, tier: "amber"
     },
     {
-      q: "A 10 kg particle on a rough slope of 25° is in equilibrium. The friction force is 14.6 N (up the slope). What is μ?",
-      options: ["0.161", "0.476", "0.423", "0.340"],
+      q: "A 10 kg particle is on the point of slipping down a rough slope inclined at 25°, with no other applied force. What is μ?",
+      options: ["0.466 (= tan 25°)", "0.906 (= cos 25°)", "0.423 (= sin 25°)", "0.340"],
       answer: 0, tier: "amber"
     },
     {
       q: "A particle of mass 4 kg is pulled up a rough slope of 30° by a force parallel to the slope. μ = 0.2. Find the minimum force P to move the particle. (g = 9.8)",
-      options: ["26.2 N", "19.6 N", "6.6 N", "33.0 N"],
+      options: ["26.4 N", "19.6 N", "6.8 N", "33.9 N"],
       answer: 0, tier: "amber"
     },
     {
@@ -747,8 +747,8 @@ const EDEXCEL_MCQ_M3_M7 = {
       answer: 0, tier: "amber"
     },
     {
-      q: "Using the result from above (R = 38.8 N), find the acceleration of the block when the 30 N force at 20° is applied. (g = 9.8)",
-      options: ["2.29 m/s²", "6.0 m/s²", "1.56 m/s²", "3.48 m/s²"],
+      q: "A force of 30 N at 20° above the horizontal pulls a 5 kg block along a rough horizontal surface (μ = 0.35). The normal reaction is 38.7 N. Find the acceleration. (g = 9.8)",
+      options: ["2.93 m/s²", "5.64 m/s² (ignoring friction)", "2.29 m/s²", "3.48 m/s²"],
       answer: 0, tier: "amber"
     },
     {

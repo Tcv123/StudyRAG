@@ -110,13 +110,13 @@ const EDEXCEL_MCQ_P1_P6 = {
       { q: 'If \\(|x - a| < b\\), the solution is:', options: ['\\(a - b < x < a + b\\)', '\\(x < a - b\\) or \\(x > a + b\\)', '\\(-b < x < b\\)', '\\(a < x < b\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Solve \\(|x^2 - 3x - 4| = 4\\).', options: ['\\(x = 0, 4, \\frac{3\\pm\\sqrt{17}}{2}\\) combined as \\(x=0, x=4','\\(x=0\\) or \\(x=4\\)','\\(x=4\\) or \\(x=-1\\)','\\(x = \\pm 4\\)'], answer: 0 },
+      { q: 'Solve \\(|x^2 - 3x - 4| = 4\\).', options: ['\\(x = 0,\\ 3,\\ \\frac{3\\pm\\sqrt{41}}{2}\\)', '\\(x=0\\) or \\(x=3\\) only', '\\(x=4\\) or \\(x=-1\\)', '\\(x = 0,\\ 4,\\ \\frac{3\\pm\\sqrt{17}}{2}\\)'], answer: 0 },
       { q: 'For \\(f(x) = \\dfrac{x+3}{x-1}\\), solve \\(f(x) > 2\\).', options: ['\\(1 < x < 5\\)','\\(x > 5\\) or \\(x < 1\\)','\\(x > 5\\)','\\(x < 5\\)'], answer: 0 },
       { q: 'Find all solutions to \\(x^2 + y^2 = 25\\) and \\(y = x + 1\\) where both coordinates are integers.', options: ['\\((3,4)\\) and \\((-4,-3)\\)','\\((3,4)\\) only','\\((4,3)\\) and \\((-3,-4)\\)','\\((3,4)\\) and \\((-3,-4)\\)'], answer: 0 },
       { q: 'Solve \\(|2x-1| + |x+1| = 4\\).', options: ['\\(x = 1\\) or \\(x = -\\frac{5}{3}\\)','\\(x = \\frac{4}{3}\\) or \\(x = -2\\)','\\(x = 2\\) or \\(x = -2\\)','\\(x = \\frac{4}{3}\\) or \\(x = -\\frac{4}{3}\\)'], answer: 1 },
       { q: 'The system \\(y = x^2 - k\\) and \\(y = 3x\\) has no real intersection. The range of \\(k\\) is:', options: ['\\(k < -\\frac{9}{4}\\)','\\(k > -\\frac{9}{4}\\)','\\(k < \\frac{9}{4}\\)','\\(k > \\frac{9}{4}\\)'], answer: 0 },
       { q: 'Find the set of values of \\(x\\) satisfying \\(x^2 < 9\\) and \\(x^2 - x - 6 \\geq 0\\).', options: ['\\(x \\leq -2\\) or \\(x \\geq 3\\)','\\(-3 < x < -2\\)','\\(-3 < x \\leq -2\\)','\\(-2 \\leq x < 3\\)'], answer: 2 },
-      { q: 'Solve \\(\\dfrac{1}{|x|} < 2\\).', options: ['\\(|x| > \\frac{1}{2}\\), i.e., \\(x > \\frac{1}{2}\\) or \\(x <','\\(-\\frac{1}{2} < x < \\frac{1}{2}\\)','\\(x > \\frac{1}{2}\\)','\\(x < \\frac{1}{2}\\)'], answer: 0 },
+      { q: 'Solve \\(\\dfrac{1}{|x|} < 2\\).', options: ['\\(x > \\frac{1}{2}\\) or \\(x < -\\frac{1}{2}\\)', '\\(-\\frac{1}{2} < x < \\frac{1}{2}\\)', '\\(x > \\frac{1}{2}\\)', '\\(x < \\frac{1}{2}\\)'], answer: 0 },
     ]
   },
 
@@ -232,10 +232,10 @@ const EDEXCEL_MCQ_P1_P6 = {
     ],
     red: [
       { q: 'Solve \\(\\sin 2\\theta = \\cos\\theta\\) for \\(0° \\leq \\theta \\leq 360°\\).', options: ['\\(\\theta = 30°, 150°\\)','\\(\\theta = 30°, 90°, 150°, 270°\\)','\\(\\theta = 90°, 270°\\)','\\(\\theta = 45°, 135°, 225°, 315°\\)'], answer: 1 },
-      { q: 'Triangle ABC has \\(a = 5\\), \\(b = 8\\), \\(A = 30°\\). How many triangles are possible?', options: ['Cannot determine','None','One','Two (ambiguous case)'], answer: 3 },
+      { q: 'Triangle ABC has \\(a = 5\\), \\(b = 8\\), \\(A = 30°\\). How many triangles are possible?', options: ['Cannot determine without angle B','None','One','Two (ambiguous case)'], answer: 3 },
       { q: 'Find the exact value of \\(\\sin 75°\\).', options: ['\\(\\dfrac{\\sqrt{6}+\\sqrt{2}}{4}\\)','\\(\\dfrac{\\sqrt{3}+1}{4}\\)','\\(\\dfrac{\\sqrt{6}-\\sqrt{2}}{4}\\)','\\(\\dfrac{\\sqrt{2}+1}{2}\\)'], answer: 0 },
       { q: 'In triangle ABC, \\(\\angle A = 120°\\), \\(b = 5\\), \\(c = 7\\). Find \\(a\\).', options: ['\\(\\sqrt{109-35} = \\sqrt{74}\\)','\\(\\sqrt{74}\\)','\\(\\sqrt{25+49+35} = \\sqrt{109}\\)','\\(\\sqrt{109}\\)'], answer: 3 },
-      { q: 'Solve \\(4\\sin^2\\theta - 1 = 0\\) for \\(0 \\leq \\theta < 2\\pi\\), giving all solutions.', options: ['\\(\\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}, \\dfrac{7\\pi}{6}, \\dfrac{11\\pi}{6}\\)','\\(\\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}\\)','\\(\\dfrac{\\pi}{3}, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, \\dfrac{5\\pi}{3}\\)','\\(\\dfrac{\\pi}{6}, \\dfrac{7\\pi}{6}\\)'], answer: 0 },
+      { q: 'Solve \\(4\\sin^2\\theta - 1 = 0\\) for \\(0 \\leq \\theta < 2\\pi\\), giving all solutions.', options: ['\\(\\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}, \\dfrac{7\\pi}{6}, \\dfrac{11\\pi}{6}\\)','\\(\\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}\\)','\\(\\dfrac{\\pi}{3}, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, \\dfrac{5\\pi}{3}\\) only','\\(\\dfrac{\\pi}{6}, \\dfrac{7\\pi}{6}\\)'], answer: 0 },
       { q: 'The area of a regular hexagon with side length \\(a\\) is:', options: ['\\(\\dfrac{3a^2}{2}\\)','\\(3a^2\\)','\\(6a^2\\)','\\(\\dfrac{3\\sqrt{3}}{2}a^2\\)'], answer: 3 },
     ]
   }

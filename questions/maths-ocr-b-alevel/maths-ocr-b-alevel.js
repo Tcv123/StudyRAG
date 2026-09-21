@@ -39,19 +39,19 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The claim "n² − n + 41 is prime for every positive integer n" is disproved by:', options: ['n = 41, since the expression equals 41²','n = 2','n = 10','It cannot be disproved'], answer: 0 }, // p2
       { q: 'In proving √2 irrational by contradiction, the contradiction arises because:', options: ['p and q are both shown to be even, contradicting p/q being in lowest terms','p² is shown to be odd','q is shown to be zero','√2 is shown to be greater than 1'], answer: 0 }, // p3
       { q: 'If P ⟹ Q is true and Q is false, then:', options: ['P is false','P is true','P is undetermined','Q is true'], answer: 0 }, // p1
-      { q: 'Which value disproves "2ⁿ − 1 is prime for every positive integer n"?', options: ['n = 4, giving 15 = 3 × 5','n = 2, giving 3','n = 3, giving 7','n = 5, giving 31'], answer: 0 }, // p2
-      { q: 'Deductively, the sum of two odd numbers 2a + 1 and 2b + 1 simplifies to:', options: ['2(a + b + 1), which is even','2(a + b) + 1, which is odd','4ab, which is even','a + b, of unknown parity'], answer: 0 }, // p1
+      { q: 'Which value disproves "2ⁿ − 1 is prime for every positive integer n"?', options: ['n = 4, giving 15 = 3 × 5','n = 2, giving 3','n = 3, giving 7','n = 5, giving 31 (a prime)'], answer: 0 }, // p2
+      { q: 'Deductively, the sum of two odd numbers 2a + 1 and 2b + 1 simplifies to:', options: ['2(a + b + 1), which is even','2(a + b) + 1, which is always odd','4ab, which is even','a + b, of unknown parity'], answer: 0 }, // p1
       { q: 'The contrapositive of "if n² is odd then n is odd" is:', options: ['If n is even then n² is even','If n is odd then n² is odd','If n² is even then n is even','If n is not odd then n² is odd'], answer: 0 }, // p1
       { q: 'Which value disproves "if n is prime then 2ⁿ − 1 is prime"?', options: ['n = 11, since 2047 = 23 × 89','n = 3','n = 5','n = 7'], answer: 0 }, // p2
-      { q: 'To prove the product of two consecutive integers is always even, the key observation is:', options: ['One of n and n + 1 must be even','Both are even','Their sum is odd','Their difference is 1'], answer: 0 }, // p1
+      { q: 'To prove the product of two consecutive integers is always even, the key observation is:', options: ['One of n and n + 1 must be even','Both are even','Their sum is odd','Their difference is 1, which is odd'], answer: 0 }, // p1
       { q: '"Without loss of generality" (WLOG) means:', options: ['A particular case may be assumed because the argument applies symmetrically to the others','The remaining cases are ignored','All constraints are dropped','Induction is being used'], answer: 0 }, // p1
       { q: 'The statement "x² = 4 ⟹ x = 2" is false because:', options: ['x could equal −2','x could be irrational','4 is not a square','x must be positive'], answer: 0 }, // p1
       { q: 'The negation of "all swans are white" is:', options: ['There exists a swan that is not white','No swan is white','All swans are black','Some swans are white'], answer: 0 }, // p2
       { q: 'Expanding (2n + 1)² − (2n − 1)² gives:', options: ['8n','2','4n²','8n + 2'], answer: 0 }, // p1
       { q: 'The fact "if a² is divisible by 3 then a is divisible by 3" is the key step in proving:', options: ['√3 is irrational','√4 is irrational','3 is prime','There are infinitely many primes'], answer: 0 }, // p3
-      { q: 'Which value disproves "n² + n + 1 is prime for every positive integer n"?', options: ['n = 4, giving 21 = 3 × 7','n = 1, giving 3','n = 2, giving 7','n = 3, giving 13'], answer: 0 }, // p2
+      { q: 'Which value disproves "n² + n + 1 is prime for every positive integer n"?', options: ['n = 4, giving 21 = 3 × 7','n = 1, giving 3','n = 2, giving 7','n = 3, giving 13 (a prime)'], answer: 0 }, // p2
       { q: 'To prove by exhaustion that n² leaves remainder 0 or 1 on division by 4, it is enough to consider:', options: ['n even and n odd','n prime and n composite','n < 10','n positive only'], answer: 0 }, // p1
-      { q: 'Deductively, the sum of three consecutive integers n − 1, n, n + 1 is:', options: ['3n, which is divisible by 3','3n + 1','n³','Always prime'], answer: 0 }, // p1
+      { q: 'Deductively, the sum of three consecutive integers n − 1, n, n + 1 is:', options: ['3n, which is divisible by 3','3n + 1','n³','Always prime whenever n is odd'], answer: 0 }, // p1
       { q: 'A proof that assumes the negation and derives an impossibility is called:', options: ['Proof by contradiction','Proof by exhaustion','Proof by deduction','Disproof by counter-example'], answer: 0 }, // p3
       { q: 'The converse of "if P then Q" is:', options: ['If Q then P','If not P then not Q','If not Q then not P','P if and only if Q'], answer: 0 }, // p1
       { q: 'Which statement is true for every integer n?', options: ['n² ≥ n','n² > n','n² ≤ n','n² = n'], answer: 0 }, // p1
@@ -59,13 +59,13 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
     red: [
       { q: "Euclid's proof of infinitely many primes takes a finite list p₁…p_n and forms N = p₁p₂⋯p_n + 1. The contradiction follows because:", options: ['N is divisible by no prime in the list, so N is prime or has a prime factor outside it','N is always prime','N is always composite','N is divisible by every p_i'], answer: 0 }, // p3
-      { q: 'In the proof that √2 is irrational, the assumption that p/q is in lowest terms is essential because:', options: ['It is the assumption the final contradiction violates','It makes q positive','It ensures p is prime','It guarantees p > q'], answer: 0 }, // p3
-      { q: 'The √2 argument fails if copied to prove √4 irrational because the step that breaks down is:', options: ['"p² divisible by 4 ⟹ p divisible by 4", which is false (take p = 2)','"p/q in lowest terms", which cannot be assumed','"4q² = p²", which is not valid','"q is an integer", which fails'], answer: 0 }, // p3
-      { q: 'To prove by exhaustion that n² ≡ 1 (mod 3) whenever 3 does not divide n, the cases required are:', options: ['n ≡ 1 (mod 3) and n ≡ 2 (mod 3)','n prime and n composite','n < 3 only','n even and n odd'], answer: 0 }, // p1
-      { q: 'The negation of "∀x ∃y such that P(x, y)" is:', options: ['∃x such that ∀y, P(x, y) is false','∀x ∀y, P(x, y) is false','∃x ∃y such that P(x, y) is false','∀x ∃y such that P(x, y) is false'], answer: 0 }, // p2
-      { q: 'To prove √2 + √3 is irrational, the standard opening move is:', options: ['Assume it equals a rational r, then square to isolate a surd','Compute its decimal expansion','Use proof by exhaustion','Find a counter-example'], answer: 0 }, // p3
-      { q: 'Fermat conjectured that 2^(2ⁿ) + 1 is prime for all n. This is disproved by:', options: ['n = 5, since 4294967297 = 641 × 6700417','n = 2','n = 3','n = 4'], answer: 0 }, // p2
-      { q: 'The cleanest route to proving "if 2ⁿ − 1 is prime then n is prime" is:', options: ['Prove the contrapositive: if n is composite then 2ⁿ − 1 factorises','Direct deduction from primality of 2ⁿ − 1','Exhaustion over n ≤ 20','A counter-example'], answer: 0 }, // p1
+      { q: 'In the proof that √2 is irrational, the assumption that p/q is in lowest terms is essential because:', options: ['It is the assumption the final contradiction violates','It makes q positive','It ensures p is prime, so that p² has exactly three factors','It guarantees p > q'], answer: 0 }, // p3
+      { q: 'The √2 argument fails if copied to prove √4 irrational because the step that breaks down is:', options: ['"p² divisible by 4 ⟹ p divisible by 4", which is false (take p = 2)','"p/q in lowest terms", which cannot be assumed when the surd is a whole number','"4q² = p²", which is not valid','"q is an integer", which fails'], answer: 0 }, // p3
+      { q: 'To prove by exhaustion that n² ≡ 1 (mod 3) whenever 3 does not divide n, the cases required are:', options: ['n ≡ 1 (mod 3) and n ≡ 2 (mod 3)','n prime and n composite','n < 3 only','n even and n odd, since these cover all integers'], answer: 0 }, // p1
+      { q: 'The negation of "∀x ∃y such that P(x, y)" is:', options: ['∃x such that ∀y, P(x, y) is false','∀x ∀y, P(x, y) is false','∃x ∃y such that P(x, y) is false for both','∀x ∃y such that P(x, y) is false'], answer: 0 }, // p2
+      { q: 'To prove √2 + √3 is irrational, the standard opening move is:', options: ['Assume it equals a rational r, then square to isolate a surd','Compute its decimal expansion and show it never terminates or repeats','Use proof by exhaustion','Find a counter-example'], answer: 0 }, // p3
+      { q: 'Fermat conjectured that 2^(2ⁿ) + 1 is prime for all n. This is disproved by:', options: ['n = 5, since 4294967297 = 641 × 6700417','n = 2','n = 3','n = 4, since 2^(2⁴) + 1 = 65537 is composite'], answer: 0 }, // p2
+      { q: 'The cleanest route to proving "if 2ⁿ − 1 is prime then n is prime" is:', options: ['Prove the contrapositive: if n is composite then 2ⁿ − 1 factorises','Direct deduction from the primality of 2ⁿ − 1, factorising it for each prime n','Exhaustion over n ≤ 20','A counter-example'], answer: 0 }, // p1
       { q: 'A proof by contradiction is logically valid because:', options: ['A statement and its negation cannot both hold, so a false negation forces the statement','Every mathematical statement is true','Counter-examples are impossible','Contradictions are always resolvable'], answer: 0 }, // p3
       { q: 'Disproving "every odd number ≥ 3 is the sum of a prime and a power of 2" requires:', options: ['One explicit odd number for which no such decomposition exists','A general algebraic argument','Checking all odd numbers','Proof by exhaustion'], answer: 0 }, // p2
     ],
@@ -118,7 +118,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'Solve (x − 1)(x + 2)(x − 3) = 0.', options: ['x = 1, −2 or 3','x = −1, 2 or −3','x = 1 or 3','x = 0'], answer: 0 }, // a2
     ],
     red: [
-      { q: 'Solve x⁴ − 5x² + 4 = 0.', options: ['x = ±1 or x = ±2','x = 1 or x = 4','x = ±2 only','x = ±1 only'], answer: 0 }, // a2
+      { q: 'Solve x⁴ − 5x² + 4 = 0.', options: ['x = ±1 or x = ±2','x = 1 or x = 4 (as x²)','x = ±2 only','x = ±1 only'], answer: 0 }, // a2
       { q: 'Express (2x + 3)/((x + 1)²(x − 2)) in partial fractions. The correct form to assume is:', options: ['A/(x + 1) + B/(x + 1)² + C/(x − 2)','A/(x + 1)² + B/(x − 2)','A/(x + 1) + B/(x − 2)','(Ax + B)/(x + 1)² + C/(x − 2)'], answer: 0 }, // a15
       { q: 'For which k does kx² + (k + 3)x + 4 = 0 have no real roots?', options: ['1 < k < 9','k < 1 or k > 9','k > 9 only','k < 0'], answer: 0 }, // a3
       { q: 'Solve (2x + 1)/(x − 3) > 1.', options: ['x < −4 or x > 3','−4 < x < 3','x > 3 only','x < 3'], answer: 0 }, // a8
@@ -217,7 +217,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
     amber: [
       { q: 'The graph of y = (x − 1)² + 4 has its minimum at:', options: ['(1, 4)','(−1, 4)','(1, −4)','(4, 1)'], answer: 0 }, // g2
-      { q: 'y = 3f(x − 2) transforms y = f(x) by:', options: ['A translation 2 right, then a stretch factor 3 parallel to the y-axis','A stretch factor 3 parallel to the x-axis, then a translation 2 left','A translation 2 left and a stretch factor 1/3','A reflection and a translation'], answer: 0 }, // g2
+      { q: 'y = 3f(x − 2) transforms y = f(x) by:', options: ['A translation 2 right, then a stretch factor 3 parallel to the y-axis','A stretch factor 3 parallel to the x-axis, then a translation 2 units left','A translation 2 left and a stretch factor 1/3','A reflection and a translation'], answer: 0 }, // g2
       { q: 'The asymptotes of y = 1/(x − 3) are:', options: ['x = 3 and y = 0','x = 0 and y = 3','x = −3 and y = 0','y = 3 only'], answer: 0 }, // g1
       { q: 'Using vector notation, the translation taking y = f(x) to y = f(x − 2) + 5 is:', options: ['(2, 5)','(−2, 5)','(2, −5)','(5, 2)'], answer: 0 }, // g2
       { q: 'The graph of y = x²(x − 2) crosses or touches the x-axis at:', options: ['x = 0 (touching) and x = 2 (crossing)','x = 0 and x = −2, both crossing','x = 2 only','x = 0 only'], answer: 0 }, // g1
@@ -246,7 +246,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The number of real solutions of x³ − 3x = k for −2 < k < 2 is:', options: ['3','1','2','0'], answer: 0 }, // g1
       { q: 'y = f(x) has a maximum at (2, 5). After y = f(x + 1) − 3, the maximum is at:', options: ['(1, 2)','(3, 2)','(1, 8)','(3, 8)'], answer: 0 }, // g2
       { q: 'The curve y = 1/(x² + 1) has:', options: ['A maximum at (0, 1) and horizontal asymptote y = 0','Vertical asymptotes at x = ±1','A minimum at the origin','No turning points'], answer: 0 }, // g1
-      { q: 'The graphs of y = eˣ and y = x + 1 meet:', options: ['Exactly once, at x = 0','Exactly twice','Never','Infinitely often'], answer: 0 }, // g1
+      { q: 'The graphs of y = eˣ and y = x + 1 meet:', options: ['Exactly once, at x = 0','Exactly twice, at x = 0 and x = 1','Never','Infinitely often'], answer: 0 }, // g1
       { q: 'A curve is symmetric about the origin if:', options: ['f(−x) = −f(x) for all x','f(−x) = f(x) for all x','f(x) > 0 for all x','It has an asymptote at x = 0'], answer: 0 }, // g1
     ],
   },
@@ -621,9 +621,9 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'Solve dy/dx = 2x.', options: ['y = x² + c','y = 2 + c','y = x²','y = 2x² + c'], answer: 0 }, // c-de
       { q: 'An equation involving only dy/dx and not higher derivatives is called:', options: ['First order','Second order','Linear','Homogeneous'], answer: 0 }, // c-de
       { q: 'Solve dy/dx = 3.', options: ['y = 3x + c','y = 3 + c','y = 3x','y = x³ + c'], answer: 0 }, // c-de
-      { q: 'If a quantity decreases at a rate proportional to its amount, then:', options: ['dy/dt = −ky with k > 0','dy/dt = ky with k > 0','dy/dt = k','dy/dt = 0'], answer: 0 }, // c-de
+      { q: 'If a quantity decreases at a rate proportional to its amount, then:', options: ['dy/dt = −ky with k > 0','dy/dt = ky with k > 0 (growth)','dy/dt = k','dy/dt = 0'], answer: 0 }, // c-de
       { q: 'The solution of dy/dx = y is:', options: ['y = Aeˣ','y = x + c','y = Ax','y = ln x + c'], answer: 0 }, // c-de
-      { q: 'The solution of dP/dt = kP with P = P₀ at t = 0 is:', options: ['P = P₀e^(kt)','P = P₀ + kt','P = P₀kt','P = kP₀t²'], answer: 0 }, // c-de
+      { q: 'The solution of dP/dt = kP with P = P₀ at t = 0 is:', options: ['P = P₀e^(kt)','P = P₀ + kt (linear)','P = P₀kt','P = kP₀t²'], answer: 0 }, // c-de
       { q: "Newton's law of cooling states that the rate of cooling is proportional to:", options: ['The excess temperature over the surroundings','The time elapsed','The square of the temperature','The mass only'], answer: 0 }, // c-de
       { q: 'Solve dy/dx = 1/x for x > 0.', options: ['y = ln x + c','y = −1/x² + c','y = 1/x + c','y = x ln x + c'], answer: 0 }, // c-de
       { q: 'If dy/dx = 0 for all x, then y is:', options: ['Constant','Linear in x','Exponential','Zero'], answer: 0 }, // c-de
@@ -638,22 +638,22 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     amber: [
       { q: 'Solve dy/dx = xy given y = 1 when x = 0.', options: ['y = e^(x²/2)','y = eˣ','y = x²/2 + 1','y = e^(x²)'], answer: 0 }, // c-de
       { q: 'Solve dy/dx = y/x for x > 0.', options: ['y = Ax','y = A/x','y = A ln x','y = Aeˣ'], answer: 0 }, // c-de
-      { q: 'Solve dN/dt = −kN with N = N₀ at t = 0.', options: ['N = N₀e^(−kt)','N = N₀ − kt','N = N₀e^(kt)','N = N₀/kt'], answer: 0 }, // c-de
+      { q: 'Solve dN/dt = −kN with N = N₀ at t = 0.', options: ['N = N₀e^(−kt)','N = N₀ − kt','N = N₀e^(kt), k > 0','N = N₀/kt'], answer: 0 }, // c-de
       { q: "Newton's law of cooling is written as:", options: ['dθ/dt = −k(θ − θ₀)','dθ/dt = −kθ²','dθ/dt = k','dθ/dt = −kt'], answer: 0 }, // c-de
       { q: 'Solve dy/dt = 3y given y = 5 when t = 0.', options: ['y = 5e^(3t)','y = 3e^(5t)','y = 5 + 3t','y = 15t'], answer: 0 }, // c-de
       { q: 'Solve dy/dx = y cos x.', options: ['y = Ae^(sin x)','y = A sin x','y = Ae^(cos x)','y = A + sin x'], answer: 0 }, // c-de
-      { q: 'Solve dy/dx = eˣ/y.', options: ['y² = 2eˣ + c','y = eˣ + c','y² = eˣ + c','y = 2eˣ + c'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = eˣ/y.', options: ['y² = 2eˣ + c','y = eˣ + c','y² = eˣ + c (no factor 2)','y = 2eˣ + c'], answer: 0 }, // c-de
       { q: 'The equation dy/dt = k(A − y) describes a quantity that:', options: ['Approaches the limiting value A','Grows without limit','Decays to zero','Oscillates'], answer: 0 }, // c-de
-      { q: 'Solve dy/dx = 2xy².', options: ['−1/y = x² + c','y = x² + c','1/y = x² + c','y² = x² + c'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = 2xy².', options: ['−1/y = x² + c','y = x² + c','1/y = x² + c (sign lost)','y² = x² + c'], answer: 0 }, // c-de
       { q: 'For radioactive decay dN/dt = −kN, the half-life T satisfies:', options: ['kT = ln 2','kT = 2','T = k/2','kT = 1'], answer: 0 }, // c-de
-      { q: 'Solve dy/dx = x²y.', options: ['y = Ae^(x³/3)','y = Ae^(x²)','y = x³/3 + c','y = Ax³'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = x²y.', options: ['y = Ae^(x³/3)','y = Ae^(x²) (x² not x³)','y = x³/3 + c','y = Ax³'], answer: 0 }, // c-de
       { q: 'A logistic model is preferred to dP/dt = kP because:', options: ['It includes a carrying capacity that limits growth','It is easier to solve','It has no constants','It always decreases'], answer: 0 }, // c-de
       { q: 'Solve dy/dx = (1 + y)/x for x > 0.', options: ['1 + y = Ax','y = Ax','1 + y = A ln x','y = x + c'], answer: 0 }, // c-de
       { q: 'Water drains from a tank so that dV/dt = −k√V. This equation is:', options: ['Separable, giving √V as a linear function of t','Not separable','Second order','Linear in V'], answer: 0 }, // c-de
       { q: 'If dy/dx = k(y − 5) and y > 5 with k > 0, then y:', options: ['Increases away from 5','Decreases towards 5','Stays constant','Oscillates about 5'], answer: 0 }, // c-de
       { q: 'The statement "the rate of growth is proportional to the square of the population" becomes:', options: ['dP/dt = kP²','dP/dt = kP','dP/dt = k√P','dP/dt = 2kP'], answer: 0 }, // c-de
       { q: 'Solve dy/dx = 6x² given y = 4 when x = 1.', options: ['y = 2x³ + 2','y = 2x³','y = 2x³ + 4','y = 6x³ + 4'], answer: 0 }, // c-de
-      { q: 'Separating dy/dx = y² sin x gives:', options: ['∫y⁻² dy = ∫sin x dx','∫y² dy = ∫sin x dx','∫y dy = ∫sin x dx','∫dy = ∫y² sin x dx'], answer: 0 }, // c-de
+      { q: 'Separating dy/dx = y² sin x gives:', options: ['∫y⁻² dy = ∫sin x dx','∫y² dy = ∫sin x dx','∫y dy = ∫sin x dx','∫dy = ∫y² sin x dx (unseparated)'], answer: 0 }, // c-de
       { q: 'In the model dθ/dt = −k(θ − 20) with θ = 100 at t = 0, the solution is:', options: ['θ = 20 + 80e^(−kt)','θ = 100e^(−kt)','θ = 20 + 100e^(−kt)','θ = 80 + 20e^(−kt)'], answer: 0 }, // c-de
       { q: 'The long-term value predicted by θ = 20 + 80e^(−kt) with k > 0 is:', options: ['20','100','80','0'], answer: 0 }, // c-de
     ],
@@ -663,29 +663,29 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'A body falls subject to dv/dt = g − kv. Its terminal velocity is:', options: ['g/k','gk','k/g','0'], answer: 0 }, // c-de
       { q: 'Solve dy/dx = y tan x.', options: ['y = A sec x','y = A cos x','y = A tan x','y = A sin x'], answer: 0 }, // c-de
       { q: 'Solve (1 + x²) dy/dx = xy.', options: ['y = A√(1 + x²)','y = A(1 + x²)','y = A ln(1 + x²)','y = Ae^(x²)'], answer: 0 }, // c-de
-      { q: 'Solve dy/dx = (x + 1)/(y − 2).', options: ['(y − 2)² = x² + 2x + c','(y − 2)² = 2x² + c','y − 2 = x² + 2x + c','y² = x² + c'], answer: 0 }, // c-de
+      { q: 'Solve dy/dx = (x + 1)/(y − 2).', options: ['(y − 2)² = x² + 2x + c','(y − 2)² = 2x² + 2x + c (doubled)','y − 2 = x² + 2x + c','y² = x² + c'], answer: 0 }, // c-de
       { q: 'In dv/dt = g − kv, the approach to terminal velocity is:', options: ['Exponential, never exactly reaching it in finite time','Linear','Instantaneous','Oscillatory'], answer: 0 }, // c-de
       { q: 'A criticism of the model dP/dt = kP for a real population is that:', options: ['It predicts unbounded growth, ignoring finite resources','It cannot be solved','It requires P < 0','It has no initial condition'], answer: 0 }, // c-de
       { q: 'Solve dy/dx = e^(x−y).', options: ['e^y = eˣ + c','y = eˣ + c','e^(−y) = eˣ + c','y = e^(x−y) + c'], answer: 0 }, // c-de
-      { q: 'A tank holds 100 litres of brine. If salt enters at a constant rate and the well-mixed solution leaves at the same volumetric rate, the amount of salt S satisfies an equation of the form:', options: ['dS/dt = a − bS','dS/dt = aS','dS/dt = a','dS/dt = −bS²'], answer: 0 }, // c-de
+      { q: 'A tank holds 100 litres of brine. If salt enters at a constant rate and the well-mixed solution leaves at the same volumetric rate, the amount of salt S satisfies an equation of the form:', options: ['dS/dt = a − bS','dS/dt = aS','dS/dt = a','dS/dt = −bS² (outflow only)'], answer: 0 }, // c-de
     ],
   },
 
   '1.12': {
     name: 'Numerical Methods',
     green: [
-      { q: 'If f is continuous and f(a) and f(b) have opposite signs, then in the interval (a, b) there is:', options: ['At least one root of f(x) = 0','Exactly one root','No root','A turning point'], answer: 0 }, // e1
+      { q: 'If f is continuous and f(a) and f(b) have opposite signs, then in the interval (a, b) there is:', options: ['At least one root of f(x) = 0','Exactly one root and no turning points','No root','A turning point'], answer: 0 }, // e1
       { q: 'The Newton-Raphson formula is:', options: ["x₍ₙ₊₁₎ = xₙ − f(xₙ)/f'(xₙ)","x₍ₙ₊₁₎ = xₙ + f(xₙ)/f'(xₙ)","x₍ₙ₊₁₎ = f(xₙ)/f'(xₙ)","x₍ₙ₊₁₎ = xₙ − f'(xₙ)/f(xₙ)"], answer: 0 }, // e4
       { q: 'A fixed point iteration requires the equation to be rearranged into the form:', options: ['x = g(x)','f(x) = 0','y = mx + c','g(x) = 0'], answer: 0 }, // e3
-      { q: 'The trapezium rule is used to find an approximate value of:', options: ['A definite integral','A derivative','A root','A limit'], answer: 0 }, // c34
-      { q: 'Increasing the number of strips in the trapezium rule generally:', options: ['Improves the accuracy','Reduces the accuracy','Has no effect','Changes the sign'], answer: 0 }, // c34
-      { q: 'Staircase and cobweb diagrams are used to illustrate:', options: ['The behaviour of a fixed point iteration','The trapezium rule','Integration by parts','Differentiation from first principles'], answer: 0 }, // e3
+      { q: 'The trapezium rule is used to find an approximate value of:', options: ['A definite integral','A derivative at a single point','A root','A limit'], answer: 0 }, // c34
+      { q: 'Increasing the number of strips in the trapezium rule generally:', options: ['Improves the accuracy','Reduces the accuracy of the estimate','Has no effect','Changes the sign'], answer: 0 }, // c34
+      { q: 'Staircase and cobweb diagrams are used to illustrate:', options: ['The behaviour of a fixed point iteration','The trapezium rule','Integration by parts','Differentiation from first principles of a curve'], answer: 0 }, // e3
       { q: 'A numerical iteration applied to an equation:', options: ['May converge to a root or may diverge','Always converges','Always diverges','Gives an exact answer'], answer: 0 }, // e5
       { q: 'For n strips over the interval from a to b, the strip width h is:', options: ['(b − a)/n','(b − a)n','(a + b)/n','n/(b − a)'], answer: 0 }, // c34
       { q: 'The Newton-Raphson method requires knowledge of:', options: ["The derivative f'(x)","The second derivative only",'The integral of f','No extra information'], answer: 0 }, // e4
       { q: 'A root of f(x) = 0 corresponds to a point where the graph of y = f(x):', options: ['Meets the x-axis','Meets the y-axis','Has a maximum','Has an asymptote'], answer: 0 }, // e1
       { q: 'Any iterative method requires:', options: ['A starting value','Two derivatives','An exact solution','A definite integral'], answer: 0 }, // e3
-      { q: 'A change of sign method may fail if the curve:', options: ['Touches the x-axis without crossing it','Crosses the x-axis once','Is a straight line','Has a positive gradient'], answer: 0 }, // e2
+      { q: 'A change of sign method may fail if the curve:', options: ['Touches the x-axis without crossing it','Crosses the x-axis once at a steep gradient','Is a straight line','Has a positive gradient'], answer: 0 }, // e2
       { q: 'Numerical methods generally produce:', options: ['An approximation to a specified accuracy','An exact answer','A general formula','A proof'], answer: 0 }, // e1
       { q: 'Using n strips, the number of ordinates needed for the trapezium rule is:', options: ['n + 1','n','n − 1','2n'], answer: 0 }, // c34
       { q: 'If f(1) < 0 and f(2) > 0 for a continuous f, a root lies in:', options: ['(1, 2)','(0, 1)','(2, 3)','No interval'], answer: 0 }, // e1
@@ -703,7 +703,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'For f(x) = x² − 2 and x₀ = 1, one Newton-Raphson iteration gives x₁ =', options: ['1.5','0.5','2','1.25'], answer: 0 }, // e4
       { q: 'The Newton-Raphson method fails at a point where:', options: ["f'(xₙ) = 0","f(xₙ) = 0",'xₙ is negative','f is increasing'], answer: 0 }, // e5
       { q: 'The trapezium rule applied to a curve that is concave upwards gives:', options: ['An overestimate of the integral','An underestimate of the integral','The exact value','A negative value'], answer: 0 }, // c34
-      { q: 'The trapezium rule applied to a curve that is concave downwards gives:', options: ['An underestimate of the integral','An overestimate of the integral','The exact value','Zero'], answer: 0 }, // c34
+      { q: 'The trapezium rule applied to a curve that is concave downwards gives:', options: ['An underestimate of the integral','An overestimate of the integral, whatever the strip width','The exact value','Zero'], answer: 0 }, // c34
       { q: 'Using 4 strips over the interval from 1 to 3, the strip width h is:', options: ['0.5','0.25','2','4'], answer: 0 }, // c34
       { q: 'A change of sign search over an interval containing two roots may:', options: ['Detect no sign change and so miss both roots','Always find both','Always find one','Give an exact answer'], answer: 0 }, // e2
       { q: 'A fixed point iteration x = g(x) converges near a root when, approximately:', options: ["|g'(x)| < 1 near the root","|g'(x)| > 1 near the root","g'(x) = 0 exactly","g(x) = 0"], answer: 0 }, // e5
@@ -712,7 +712,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The equation eˣ = 3 − x has a root in the interval:', options: ['(0, 1)','(1, 2)','(−1, 0)','(2, 3)'], answer: 0 }, // e1
       { q: 'The trapezium rule formula for n strips is approximately:', options: ['(h/2)[y₀ + yₙ + 2(y₁ + … + y₍ₙ₋₁₎)]','h[y₀ + y₁ + … + yₙ]','(h/3)[y₀ + 4y₁ + yₙ]','h(y₀ + yₙ)'], answer: 0 }, // c34
       { q: 'Rearranging x² − x − 3 = 0 as x = 3/(x − 1) is valid provided:', options: ['x ≠ 1','x > 0','x is an integer','x < 3'], answer: 0 }, // e3
-      { q: 'To show a root is 1.86 correct to 2 decimal places, you check the sign of f at:', options: ['1.855 and 1.865','1.86 only','1.8 and 1.9','1.85 and 1.86'], answer: 0 }, // e1
+      { q: 'To show a root is 1.86 correct to 2 decimal places, you check the sign of f at:', options: ['1.855 and 1.865','1.86 only','1.8 and 1.9','1.85 and 1.86 (either side)'], answer: 0 }, // e1
       { q: 'If an iteration produces values increasing without limit, the iteration has:', options: ['Diverged','Converged','Found a root','Reached machine precision'], answer: 0 }, // e5
       { q: 'A different rearrangement of the same equation into x = g(x) may:', options: ['Converge when another rearrangement diverges','Always give the same behaviour','Never converge','Change the roots'], answer: 0 }, // e3
       { q: 'Applying Newton-Raphson to f(x) = x² − a gives the iteration:', options: ['x₍ₙ₊₁₎ = ½(xₙ + a/xₙ)','x₍ₙ₊₁₎ = xₙ − a','x₍ₙ₊₁₎ = a/xₙ','x₍ₙ₊₁₎ = 2xₙ − a'], answer: 0 }, // e4
@@ -721,13 +721,13 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'For f(x) = (x − 2)², a change of sign method applied around x = 2 fails because:', options: ['The curve touches the x-axis without crossing, so f never changes sign','The function is discontinuous','There is no root','The derivative is undefined'], answer: 0 }, // e2
       { q: 'For f(x) = 1/(x − 2), the values f(1) = −1 and f(3) = 1 change sign, yet:', options: ['There is no root — the sign change is caused by a vertical asymptote','There is a root at x = 2','The method has converged','f is continuous throughout'], answer: 0 }, // e2
       { q: 'For f(x) = x³ − 5 with x₀ = 2, two Newton-Raphson iterations give x₂ ≈', options: ['1.7109','1.7500','1.6980','1.7320'], answer: 0 }, // e4
-      { q: 'Newton-Raphson typically converges faster than a simple fixed point iteration because its error is:', options: ['Roughly squared at each step near a simple root','Halved at each step','Constant','Increasing'], answer: 0 }, // e4
-      { q: 'If a fixed point iteration has |g′(x)| > 1 near the root, then the iteration:', options: ['Diverges away from the root','Converges quickly','Converges slowly','Finds a different root'], answer: 0 }, // e5
+      { q: 'Newton-Raphson typically converges faster than a simple fixed point iteration because its error is:', options: ['Roughly squared at each step near a simple root','Halved at each step, like the interval bisection method','Constant','Increasing'], answer: 0 }, // e4
+      { q: 'If a fixed point iteration has |g′(x)| > 1 near the root, then the iteration:', options: ['Diverges away from the root','Converges quickly','Converges slowly','Finds a different root further away from the start'], answer: 0 }, // e5
       { q: 'Halving the strip width in the trapezium rule reduces the error by a factor of roughly:', options: ['4','2','8','16'], answer: 0 }, // c34
-      { q: 'Newton-Raphson started very close to a stationary point of f may:', options: ['Jump far away, converging to a different root or diverging','Always converge to the nearest root','Fail to start','Give an exact answer'], answer: 0 }, // e5
+      { q: 'Newton-Raphson started very close to a stationary point of f may:', options: ['Jump far away, converging to a different root or diverging','Always converge to the nearest root, but more slowly than usual','Fail to start','Give an exact answer'], answer: 0 }, // e5
       { q: 'To justify that a trapezium estimate is an overestimate, you should state that on the interval the curve is:', options: ['Concave upwards, so each chord lies above the curve','Increasing','Positive','Differentiable'], answer: 0 }, // c34
       { q: 'The iteration x₍ₙ₊₁₎ = (xₙ + 4)^(1/3) applied to x³ − x − 4 = 0 converges because near the root:', options: ["|g'(x)| < 1","|g'(x)| > 1","g'(x) = 1",'g is linear'], answer: 0 }, // e5
-      { q: 'Upper and lower rectangle sums for a monotonic function on an interval:', options: ['Bracket the true value of the integral','Both overestimate it','Both underestimate it','Are equal'], answer: 0 }, // c35
+      { q: 'Upper and lower rectangle sums for a monotonic function on an interval:', options: ['Bracket the true value of the integral','Both overestimate the true value of the integral','Both underestimate it','Are equal'], answer: 0 }, // c35
     ],
   },
 
@@ -752,7 +752,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The magnitude of 6i + 8j is:', options: ['10','14','48','100'], answer: 0 }, // v3
       { q: 'Points that lie on the same straight line are described as:', options: ['Collinear','Coplanar','Parallel','Perpendicular'], answer: 0 }, // v1
       { q: 'The magnitude of −a compared with the magnitude of a is:', options: ['Equal','Negative','Larger','Zero'], answer: 0 }, // v2
-      { q: 'The sum of vectors representing forces is interpreted as:', options: ['The resultant force','The average force','The friction','The moment'], answer: 0 }, // v6
+      { q: 'The sum of vectors representing forces is interpreted as:', options: ['The resultant force','The average force on the object','The friction','The moment'], answer: 0 }, // v6
       { q: 'A vector written in column form (3, −2) is equivalent to:', options: ['3i − 2j','−2i + 3j','3i + 2j','2i − 3j'], answer: 0 }, // v1
     ],
     amber: [
@@ -794,19 +794,19 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
   '2.1': {
     name: 'Sampling',
     green: [
-      { q: 'A population in statistics means:', options: ['The entire group being studied','Only the people in a country','A sample of 100','The largest subgroup'], answer: 0 }, // p21
-      { q: 'A sample is:', options: ['A subset of the population','The whole population','A summary statistic','A biased group'], answer: 0 }, // p21
+      { q: 'A population in statistics means:', options: ['The entire group being studied','Only the people living in a country','A sample of 100','The largest subgroup'], answer: 0 }, // p21
+      { q: 'A sample is:', options: ['A subset of the population','The whole population being studied','A summary statistic','A biased group'], answer: 0 }, // p21
       { q: 'In simple random sampling:', options: ['Every sample of the required size is equally likely to be selected','The first items in a list are chosen','Groups are sampled whole','Volunteers come forward'], answer: 0 }, // p23
-      { q: 'Opportunity sampling means selecting:', options: ['Whoever is conveniently available','Every kth member of a list','Proportionally from subgroups','Whole clusters at random'], answer: 0 }, // p24
-      { q: 'Systematic sampling means selecting:', options: ['Every kth member from an ordered list','Whoever is available','Volunteers','Whole groups'], answer: 0 }, // p24
+      { q: 'Opportunity sampling means selecting:', options: ['Whoever is conveniently available','Every kth member of a list','Proportionally from subgroups (strata)','Whole clusters at random'], answer: 0 }, // p24
+      { q: 'Systematic sampling means selecting:', options: ['Every kth member from an ordered list','Whoever is available at the time of sampling','Volunteers','Whole groups'], answer: 0 }, // p24
       { q: 'Stratified sampling means:', options: ['Sampling each subgroup in proportion to its size in the population','Sampling only one subgroup','Choosing volunteers','Choosing every kth item'], answer: 0 }, // p24
-      { q: 'Quota sampling means:', options: ['Selecting until a set number from each category is reached','Selecting randomly from a list','Sampling whole clusters','Using a census'], answer: 0 }, // p24
-      { q: 'Cluster sampling means:', options: ['Dividing the population into groups and sampling whole groups','Sampling every kth item','Sampling proportionally by subgroup','Asking for volunteers'], answer: 0 }, // p24
-      { q: 'A self-selected sample consists of:', options: ['Those who choose to take part','Those chosen at random','Every kth person','A stratified subset'], answer: 0 }, // p24
-      { q: 'A census collects data from:', options: ['The whole population','A random sample','A single cluster','Volunteers only'], answer: 0 }, // p21
-      { q: 'A sample mean is often used as:', options: ['An estimate of the population mean','The exact population mean','A measure of spread','A significance level'], answer: 0 }, // p22
+      { q: 'Quota sampling means:', options: ['Selecting until a set number from each category is reached','Selecting at random from a complete list of the whole population','Sampling whole clusters','Using a census'], answer: 0 }, // p24
+      { q: 'Cluster sampling means:', options: ['Dividing the population into groups and sampling whole groups','Sampling every kth item','Sampling proportionally by subgroup, choosing individuals at random from each','Asking for volunteers'], answer: 0 }, // p24
+      { q: 'A self-selected sample consists of:', options: ['Those who choose to take part','Those chosen at random from a sampling frame','Every kth person','A stratified subset'], answer: 0 }, // p24
+      { q: 'A census collects data from:', options: ['The whole population','A random sample of the population','A single cluster','Volunteers only'], answer: 0 }, // p21
+      { q: 'A sample mean is often used as:', options: ['An estimate of the population mean','The exact value of the population mean itself','A measure of spread','A significance level'], answer: 0 }, // p22
       { q: 'Bias in sampling means:', options: ['The sampling method systematically favours certain outcomes','The sample is small','The data are continuous','The mean is large'], answer: 0 }, // p25
-      { q: 'Two different samples from the same population:', options: ['May lead to different conclusions','Must give identical results','Are always biased','Must be the same size'], answer: 0 }, // p22
+      { q: 'Two different samples from the same population:', options: ['May lead to different conclusions','Must give identical results if both are random','Are always biased','Must be the same size'], answer: 0 }, // p22
       { q: 'A sampling frame is:', options: ['A list of all members of the population from which the sample is drawn','The size of the sample','The margin of error','The set of results obtained'], answer: 0 }, // p23
       { q: 'A main reason for sampling rather than taking a census is:', options: ['Cost and time','Greater accuracy','It removes all bias','It is always required by law'], answer: 0 }, // p25
       { q: 'In general, increasing the sample size:', options: ['Makes estimates of population quantities more reliable','Increases bias','Has no effect','Reduces the population'], answer: 0 }, // p22
@@ -822,16 +822,16 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'An online poll is answered by readers who choose to respond. The main problem is:', options: ['The sample is self-selected and likely to be biased towards those with strong views','The sample is too random','The population is too small','There is no sampling frame needed'], answer: 0 }, // p25
       { q: 'A town is divided into 20 districts and 3 whole districts are surveyed. This is:', options: ['Cluster sampling','Stratified sampling','Systematic sampling','Quota sampling'], answer: 0 }, // p24
       { q: 'A school of 1200 students has 300 in Year 12. In a stratified sample of 80, the number from Year 12 should be:', options: ['20','30','40','15'], answer: 0 }, // p24
-      { q: 'The main advantage of stratified over simple random sampling is that it:', options: ['Ensures each subgroup is represented in proportion to its size','Is always cheaper','Removes the need for a sampling frame','Guarantees no bias at all'], answer: 0 }, // p25
-      { q: 'A disadvantage of opportunity sampling is that:', options: ['It is unlikely to be representative of the population','It requires a full sampling frame','It is very time-consuming','It needs random numbers'], answer: 0 }, // p25
-      { q: 'The main difference between quota and stratified sampling is that quota sampling:', options: ['Does not select within each category at random','Uses larger samples','Requires a sampling frame','Is always unbiased'], answer: 0 }, // p24
-      { q: 'Simple random sampling requires:', options: ['A complete sampling frame','A stratified population','Volunteers','A large budget'], answer: 0 }, // p23
-      { q: 'An incomplete sampling frame is a problem because:', options: ['Some members of the population can never be selected, introducing bias','It makes the sample too large','It changes the population mean','It prevents calculation of the median'], answer: 0 }, // p25
+      { q: 'The main advantage of stratified over simple random sampling is that it:', options: ['Ensures each subgroup is represented in proportion to its size','Is always cheaper','Removes the need for a sampling frame, so it is always quicker and cheaper','Guarantees no bias at all'], answer: 0 }, // p25
+      { q: 'A disadvantage of opportunity sampling is that:', options: ['It is unlikely to be representative of the population','It requires a full sampling frame of the whole population','It is very time-consuming','It needs random numbers'], answer: 0 }, // p25
+      { q: 'The main difference between quota and stratified sampling is that quota sampling:', options: ['Does not select within each category at random','Uses larger samples','Requires a sampling frame for each separate category','Is always unbiased'], answer: 0 }, // p24
+      { q: 'Simple random sampling requires:', options: ['A complete sampling frame','A stratified population with known sizes','Volunteers','A large budget'], answer: 0 }, // p23
+      { q: 'An incomplete sampling frame is a problem because:', options: ['Some members of the population can never be selected, introducing bias','It makes the sample too large','It changes the population mean','It prevents calculation of the median and the quartiles of the sample data'], answer: 0 }, // p25
       { q: 'Non-response bias arises when:', options: ['Those who do not respond differ systematically from those who do','The sample is too small','Random numbers are reused','The population is finite'], answer: 0 }, // p25
-      { q: 'Systematic sampling can go wrong if the ordered list:', options: ['Has a repeating pattern matching the sampling interval','Is alphabetical','Is very long','Contains no duplicates'], answer: 0 }, // p25
-      { q: 'A census is most appropriate when:', options: ['The population is small and accessible','The population is very large','Testing destroys the item','Time is short'], answer: 0 }, // p25
+      { q: 'Systematic sampling can go wrong if the ordered list:', options: ['Has a repeating pattern matching the sampling interval','Is alphabetical','Is very long','Contains no duplicates, so each member can only be picked once'], answer: 0 }, // p25
+      { q: 'A census is most appropriate when:', options: ['The population is small and accessible','The population is very large and spread out','Testing destroys the item','Time is short'], answer: 0 }, // p25
       { q: 'A census would be unsuitable for testing the lifetime of light bulbs because:', options: ['Testing destroys every bulb','Bulbs are too cheap','The population is too small','Bulbs are not random'], answer: 0 }, // p25
-      { q: 'The sample variance is used as:', options: ['An estimate of the population variance','A measure of bias','The population mean','A significance level'], answer: 0 }, // p22
+      { q: 'The sample variance is used as:', options: ['An estimate of the population variance','A measure of bias in the sampling method used','The population mean','A significance level'], answer: 0 }, // p22
       { q: 'A large data set is issued in advance of the examination so that learners:', options: ['Become familiar with its contexts and can interpret related data more confidently','Can memorise every value','Need not revise statistics','Can avoid using a calculator'], answer: 0 }, // LDS
       { q: 'In the examination, learners working with the large data set:', options: ['Will not have a printout, though selected data or summary statistics may be given','Must bring a full printout','May use the internet','Are given the whole data set'], answer: 0 }, // LDS
       { q: 'A conclusion drawn from a sample applies to the population only:', options: ['With some uncertainty, since the sample may not be representative','With certainty','If the sample is small','If the data are categorical'], answer: 0 }, // p22
@@ -841,20 +841,20 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'A college has 480 in Year 12 and 320 in Year 13. For a stratified sample of 120, the numbers from each year should be:', options: ['72 and 48','60 and 60','70 and 50','80 and 40'], answer: 0 }, // p24
       { q: 'A factory samples every 12th item from a production line where a fault recurs on every 12th item. The sample will:', options: ['Either always or never include faulty items, badly misrepresenting the fault rate','Be perfectly representative','Be a simple random sample','Have no bias'], answer: 0 }, // p25
       { q: 'A supermarket surveys shoppers on a Tuesday morning about weekly spending. The most serious criticism is that:', options: ['Tuesday-morning shoppers may differ systematically from the full customer population','The sample size is unknown','Spending is continuous data','The mean cannot be found'], answer: 0 }, // p25
-      { q: 'Two researchers take independent random samples from the same population and obtain different means. This shows that:', options: ['Sample statistics vary between samples; neither is necessarily wrong','One researcher made an error','The population has no mean','The sampling was biased'], answer: 0 }, // p22
-      { q: 'A researcher wants opinions from a population spread over a very large area with a limited travel budget. The most practical method is:', options: ['Cluster sampling, since whole areas can be surveyed cheaply','Simple random sampling across the whole area','A full census','Systematic sampling of the national register'], answer: 0 }, // p25
+      { q: 'Two researchers take independent random samples from the same population and obtain different means. This shows that:', options: ['Sample statistics vary between samples; neither is necessarily wrong','One researcher made an error, as random samples from one population always agree','The population has no mean','The sampling was biased'], answer: 0 }, // p22
+      { q: 'A researcher wants opinions from a population spread over a very large area with a limited travel budget. The most practical method is:', options: ['Cluster sampling, since whole areas can be surveyed cheaply','Simple random sampling across the whole area, using a full list of residents','A full census','Systematic sampling of the national register'], answer: 0 }, // p25
       { q: 'Quadrupling the sample size reduces the standard deviation of the sample mean by a factor of:', options: ['2','4','16','No change'], answer: 0 }, // p22
-      { q: 'A sample is drawn from a telephone directory to estimate national opinion. The most serious source of bias is that:', options: ['People without listed landlines cannot be selected at all','The directory is alphabetical','The sample is too large','Telephone numbers are discrete'], answer: 0 }, // p25
+      { q: 'A sample is drawn from a telephone directory to estimate national opinion. The most serious source of bias is that:', options: ['People without listed landlines cannot be selected at all','The directory is alphabetical','The sample is too large','Telephone numbers are discrete data, so the sample cannot be random at all'], answer: 0 }, // p25
       { q: 'A "self-selected sample is always useless" claim is too strong because:', options: ['It may still be informative if its limitations are recognised and stated','Self-selection removes bias','It is a form of random sampling','It always matches the population'], answer: 0 }, // p25
       { q: 'From September 2026, students on a two-year AS/A Level Mathematics B (MEI) programme use:', options: ['A single large data set','Three large data sets in rotation','A different data set each year','No data set'], answer: 0 }, // LDS
-      { q: 'A sampling method is described as unbiased when:', options: ['It does not systematically favour any particular outcomes','It always gives the correct answer','The sample equals the population','The sample is large'], answer: 0 }, // p25
+      { q: 'A sampling method is described as unbiased when:', options: ['It does not systematically favour any particular outcomes','It always gives the correct answer for the population parameter','The sample equals the population','The sample is large'], answer: 0 }, // p25
     ],
   },
 
   '2.2': {
     name: 'Data Presentation & Interpretation',
     green: [
-      { q: 'Shoe colour is an example of which type of data?', options: ['Categorical','Discrete','Continuous','Ranked'], answer: 0 }, // D1
+      { q: 'Shoe colour is an example of which type of data?', options: ['Categorical','Discrete (countable)','Continuous','Ranked'], answer: 0 }, // D1
       { q: 'The number of cars passing a point is an example of:', options: ['Discrete data','Continuous data','Categorical data','Ranked data'], answer: 0 }, // D1
       { q: 'The height of a plant is an example of:', options: ['Continuous data','Discrete data','Categorical data','Ranked data'], answer: 0 }, // D1
       { q: 'In a histogram, the quantity proportional to frequency is the:', options: ['Area of each bar','Height of each bar','Width of each bar','Perimeter of each bar'], answer: 0 }, // D2
@@ -865,27 +865,27 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The range of a data set is:', options: ['Maximum − minimum','Q3 − Q1','The middle value','The standard deviation'], answer: 0 }, // D11
       { q: 'The interquartile range is:', options: ['Q3 − Q1','Maximum − minimum','The median','Twice the standard deviation'], answer: 0 }, // D11
       { q: 'A box-and-whisker diagram displays:', options: ['Median, quartiles and extreme values','Only the mean','Only the mode','Frequency density'], answer: 0 }, // D1
-      { q: 'A dot plot represents frequency using:', options: ['Stacks of dots in lines','Bars of varying width','Sectors of a circle','A single line'], answer: 0 }, // D1
+      { q: 'A dot plot represents frequency using:', options: ['Stacks of dots in lines','Bars of varying width and height','Sectors of a circle','A single line'], answer: 0 }, // D1
       { q: 'A scatter diagram is used to display:', options: ['Bivariate data','Single-variable categorical data','Frequency densities','Ranked data only'], answer: 0 }, // D6
       { q: 'Standard deviation is a measure of:', options: ['Spread','Central tendency','Correlation','Frequency'], answer: 0 }, // D12
       { q: 'The variance is equal to:', options: ['The square of the standard deviation','The square root of the standard deviation','The range squared','Twice the standard deviation'], answer: 0 }, // D12
       { q: 'Positive correlation means that as one variable increases, the other:', options: ['Tends to increase','Tends to decrease','Stays constant','Becomes categorical'], answer: 0 }, // D6
-      { q: 'An outlier is an item of data that is:', options: ['Inconsistent with the rest of the data','Always the largest value','Always an error','The median'], answer: 0 }, // D13
+      { q: 'An outlier is an item of data that is:', options: ['Inconsistent with the rest of the data','Always the largest value in the data set','Always an error','The median'], answer: 0 }, // D13
       { q: 'A pie chart is most suitable for showing:', options: ['Proportions of a whole for categorical data','Continuous grouped data','Correlation','Cumulative frequency'], answer: 0 }, // D1
-      { q: 'A stem-and-leaf diagram has the advantage that:', options: ['The original data values are retained','It shows correlation','It needs no key','It uses area for frequency'], answer: 0 }, // D1
+      { q: 'A stem-and-leaf diagram has the advantage that:', options: ['The original data values are retained','It shows correlation','It needs no key','It uses area to represent the frequency'], answer: 0 }, // D1
       { q: 'The arithmetic mean is calculated as:', options: ['The sum of the values divided by how many there are','The middle value','The most common value','The largest minus the smallest'], answer: 0 }, // D10
     ],
     amber: [
       { q: 'The sample variance s² is calculated by dividing Sxx by:', options: ['n − 1','n','n + 1','n²'], answer: 0 }, // D12
       { q: 'One accepted criterion identifies an outlier as a value at least:', options: ['2 standard deviations from the mean','1 standard deviation from the mean','3 standard deviations from the mean','half a standard deviation from the mean'], answer: 0 }, // D13
-      { q: 'The other accepted criterion identifies an outlier as a value at least:', options: ['1.5 × IQR beyond the nearer quartile','1.5 × IQR beyond the median','2 × IQR beyond the mean','1 × IQR beyond the nearer quartile'], answer: 0 }, // D13
+      { q: 'The other accepted criterion identifies an outlier as a value at least:', options: ['1.5 × IQR beyond the nearer quartile','1.5 × IQR beyond the median','2 × IQR beyond the mean','1 × IQR beyond the nearer of the two quartiles'], answer: 0 }, // D13
       { q: 'In a histogram, the height of each bar represents:', options: ['Frequency density, that is frequency ÷ class width','Frequency','Cumulative frequency','Relative position'], answer: 0 }, // D2
       { q: 'In comparative pie charts, the quantity made proportional to frequency is the:', options: ['Area of the circle','Radius of the circle','Circumference','Angle only'], answer: 0 }, // D1
       { q: 'Extrapolation from a regression line may not be justified because:', options: ['The relationship may not continue beyond the range of the data','It is always arithmetically wrong','Regression lines have no gradient','The data become categorical'], answer: 0 }, // D6
       { q: 'A strong correlation between two variables does NOT establish that:', options: ['One variable causes the other','The points lie close to a line','There is an association','The data are bivariate'], answer: 0 }, // D7
       { q: 'For markedly skewed data, the most appropriate measure of central tendency is usually the:', options: ['Median','Mean','Midrange','Range'], answer: 0 }, // D10
       { q: 'A weighted mean is appropriate when:', options: ['The groups being combined are of different sizes','All values are equal','The data are categorical','There are outliers'], answer: 0 }, // D10
-      { q: 'Adding a constant 5 to every value in a data set:', options: ['Increases the mean by 5 and leaves the standard deviation unchanged','Increases both the mean and the standard deviation by 5','Leaves the mean unchanged','Multiplies the standard deviation by 5'], answer: 0 }, // D12
+      { q: 'Adding a constant 5 to every value in a data set:', options: ['Increases the mean by 5 and leaves the standard deviation unchanged','Increases both the mean and the standard deviation by 5 each time it is done','Leaves the mean unchanged','Multiplies the standard deviation by 5'], answer: 0 }, // D12
       { q: 'Multiplying every value in a data set by 3:', options: ['Multiplies both the mean and the standard deviation by 3','Multiplies the mean by 3 and leaves the standard deviation unchanged','Multiplies the variance by 3','Leaves the mean unchanged'], answer: 0 }, // D12
       { q: 'Compared with the median, the mean is:', options: ['More affected by an extreme outlier','Less affected by an extreme outlier','Equally affected','Never affected'], answer: 0 }, // D10
       { q: 'A scatter diagram showing points scattered with no pattern indicates:', options: ['Little or no correlation between the variables','Strong positive correlation','Strong negative correlation','A causal relationship'], answer: 0 }, // D6
@@ -893,7 +893,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'As the size of an unbiased sample increases, diagrams representing it:', options: ['Become more representative of the theoretical probability distribution','Become less representative','Are unaffected','Become categorical'], answer: 0 }, // D5
       { q: 'For grouped continuous data with unequal class widths, the correct diagram is a:', options: ['Histogram','Bar chart','Pie chart','Vertical line chart'], answer: 0 }, // D1
       { q: 'Data cleaning includes dealing with:', options: ['Missing data, errors and outliers','Only outliers','Only the mean','Only categorical data'], answer: 0 }, // D14
-      { q: 'A cumulative frequency diagram is most directly used to estimate:', options: ['The median and quartiles','The mode','The variance','The correlation'], answer: 0 }, // D1
+      { q: 'A cumulative frequency diagram is most directly used to estimate:', options: ['The median and quartiles','The mode','The variance','The correlation between two variables'], answer: 0 }, // D1
       { q: 'The standard deviation of a set of lengths measured in cm has units of:', options: ['cm','cm²','No units','cm⁻¹'], answer: 0 }, // D12
       { q: 'A vertical line chart is most appropriate for:', options: ['Discrete numerical data','Continuous grouped data','Categorical data with unequal groups','Bivariate data'], answer: 0 }, // D1
     ],
@@ -905,7 +905,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'For a data set of 10 values with Σx = 200 and Sxx = 360, the sample standard deviation is:', options: ['√40 ≈ 6.32','√36 = 6.00','√360 ≈ 18.97','40'], answer: 0 }, // D12
       { q: 'In a box plot, the median sits much closer to Q1 than to Q3. This indicates:', options: ['Positive skew','Negative skew','Symmetry','No spread'], answer: 0 }, // D1
       { q: 'A regression line is quoted in a question. The specification expects learners to:', options: ['Interpret it, including interpolation and extrapolation, rather than calculate its equation','Calculate its equation from raw data','Derive it algebraically','Prove it is a best fit'], answer: 0 }, // D6
-      { q: 'A correlation coefficient is given in a question. The specification expects learners to:', options: ['Use it to make an inference, not to calculate it or name it','Calculate it from the raw data','Name the particular coefficient used','Prove its properties'], answer: 0 }, // H10
+      { q: 'A correlation coefficient is given in a question. The specification expects learners to:', options: ['Use it to make an inference, not to calculate it or name it','Calculate it from the raw data','Name the particular coefficient used and state its exact formula','Prove its properties'], answer: 0 }, // H10
       { q: 'An item recorded as a height of 1750 cm in a set of adult heights should be treated as:', options: ['A likely data-entry error, to be corrected or removed with justification','A genuine value to keep unchanged','The median','Missing data'], answer: 0 }, // D14
       { q: 'Removing a genuine outlier from a data set without justification is poor practice because:', options: ['It discards real information and can distort the conclusions','It always lowers the mean','It changes the units','It makes the data categorical'], answer: 0 }, // D14
     ],
@@ -929,8 +929,8 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The probability of an impossible event is:', options: ['0','1','1/2','Undefined'], answer: 0 }, // u-basic
       { q: 'The probability of a certain event is:', options: ['1','0','1/2','100'], answer: 0 }, // u-basic
       { q: 'The probability of getting a head on a fair coin toss is:', options: ['1/2','1/4','1','0'], answer: 0 }, // u-basic
-      { q: 'A sample space is:', options: ['The set of all possible outcomes','The set of favourable outcomes','A single outcome','A probability'], answer: 0 }, // u-basic
-      { q: 'The notation A ∩ B means:', options: ['A and B both occur','A or B occurs','A does not occur','A given B'], answer: 0 }, // u5
+      { q: 'A sample space is:', options: ['The set of all possible outcomes','The set of all the favourable outcomes','A single outcome','A probability'], answer: 0 }, // u-basic
+      { q: 'The notation A ∩ B means:', options: ['A and B both occur','Either A or B (or both) occurs','A does not occur','A given B'], answer: 0 }, // u5
       { q: 'The notation A ∪ B means:', options: ['A or B (or both) occurs','A and B both occur','Neither occurs','A given B'], answer: 0 }, // u5
       { q: 'Drawing a card at random from a standard 52-card pack, P(a heart) is:', options: ['1/4','1/13','1/52','1/2'], answer: 0 }, // u-basic
       { q: 'The notation P(A|B) means:', options: ['The probability of A given that B has occurred','The probability of A and B','The probability of A or B','The probability of B given A'], answer: 0 }, // u6
@@ -962,7 +962,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'A test is 95% accurate and 1% of a population has the disease. For a positive result, the probability of actually having the disease is closest to:', options: ['0.16','0.95','0.99','0.05'], answer: 0 }, // u6
       { q: 'Given P(B|A), P(A) and P(B), finding P(A|B) is an example of:', options: ['Reverse conditional probability','Mutual exclusivity','Independence testing','Expected frequency'], answer: 0 }, // u6
       { q: 'Three fair coins are tossed. Given that at least one head appears, P(all three are heads) is:', options: ['1/7','1/8','1/3','1/2'], answer: 0 }, // u6
-      { q: 'A bag holds 5 red and 3 blue balls. Two are drawn without replacement. P(exactly one red) is:', options: ['15/28','5/14','3/28','9/28'], answer: 0 }, // u3
+      { q: 'A bag holds 5 red and 3 blue balls. Two are drawn without replacement. P(exactly one red) is:', options: ['15/28','5/14 (5/8 × 4/7)','3/28','9/28'], answer: 0 }, // u3
       { q: 'For events with P(A) = 0.3, P(B) = 0.5, and A, B mutually exclusive, P(A|B) equals:', options: ['0','0.15','0.6','0.8'], answer: 0 }, // u4
       { q: 'A machine has three independent components each working with probability 0.9. P(all three work) is:', options: ['0.729','0.9','0.27','0.999'], answer: 0 }, // u3
       { q: 'For the same machine, P(at least one component fails) is:', options: ['0.271','0.1','0.729','0.3'], answer: 0 }, // u3
@@ -978,11 +978,11 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'Which is NOT required for a binomial model?', options: ['The trials are carried out in a fixed order','A fixed number of trials','Exactly two outcomes per trial','The probability of success is the same each trial'], answer: 0 }, // R1
       { q: 'The notation X ~ B(n, p) means X:', options: ['Has the binomial distribution with parameters n and p','Is Normally distributed','Is a constant','Has mean n'], answer: 0 }, // R1
       { q: 'In a binomial distribution, q is defined as:', options: ['1 − p','p − 1','np','p/n'], answer: 0 }, // R2
-      { q: 'The symbol ~ in X ~ B(n, p) is read as:', options: ['"has the distribution"','"is approximately"','"is proportional to"','"tends to"'], answer: 0 }, // R1
+      { q: 'The symbol ~ in X ~ B(n, p) is read as:', options: ['"has the distribution"','"is approximately equal to"','"is proportional to"','"tends to"'], answer: 0 }, // R1
       { q: 'A discrete random variable is conventionally written using:', options: ['A capital letter such as X','A lower-case letter only','A Greek letter','A number'], answer: 0 }, // R6
       { q: 'For a discrete random variable, the sum of all the probabilities is:', options: ['1','0','n','p'], answer: 0 }, // R6
       { q: 'A discrete uniform distribution is one in which:', options: ['All outcomes are equally likely','Outcomes become more likely in order','There are exactly two outcomes','The mean is zero'], answer: 0 }, // R7
-      { q: 'The Normal distribution is written:', options: ['X ~ N(μ, σ²)','X ~ B(μ, σ)','X ~ N(n, p)','X ~ U(a, b)'], answer: 0 }, // R8
+      { q: 'The Normal distribution is written:', options: ['X ~ N(μ, σ²)','X ~ B(μ, σ) (binomial)','X ~ N(n, p)','X ~ U(a, b)'], answer: 0 }, // R8
       { q: 'The graph of a Normal distribution is:', options: ['Symmetric and bell-shaped','Skewed to the right','Rectangular','A straight line'], answer: 0 }, // R9
       { q: 'The line of symmetry of a Normal curve is located at:', options: ['The mean','One standard deviation above the mean','Zero','The mode only, which differs from the mean'], answer: 0 }, // R11
       { q: 'The area under a Normal curve represents:', options: ['Probability','Frequency density','The mean','The standard deviation'], answer: 0 }, // R9
@@ -1007,7 +1007,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'If X ~ N(μ, σ²) and Y = aX + b, then Y is:', options: ['Normally distributed with mean aμ + b','Binomially distributed','Not a standard distribution','Uniformly distributed'], answer: 0 }, // R10
       { q: 'For a Normal distribution, approximately what percentage of values lie within one standard deviation of the mean?', options: ['68%','95%','50%','99.7%'], answer: 0 }, // R9
       { q: 'For a Normal distribution, approximately what percentage of values lie within two standard deviations of the mean?', options: ['95%','68%','99.7%','50%'], answer: 0 }, // R9
-      { q: 'X ~ B(5, 0.2). P(X ≥ 1) equals:', options: ['1 − 0.8⁵','0.8⁵','5 × 0.2','0.2⁵'], answer: 0 }, // R3
+      { q: 'X ~ B(5, 0.2). P(X ≥ 1) equals:', options: ['1 − 0.8⁵','0.8⁵ (P(X = 0))','5 × 0.2','0.2⁵'], answer: 0 }, // R3
       { q: 'Using a Normal model for a discrete count X, P(X ≤ 10) becomes:', options: ['P(X < 10.5)','P(X < 10)','P(X < 9.5)','P(X < 11)'], answer: 0 }, // R8
       { q: 'As the sample size increases, a histogram of samples drawn from a Normal population:', options: ['Tends towards the Normal curve','Becomes rectangular','Becomes skewed','Is unaffected'], answer: 0 }, // R9
       { q: 'For X ~ N(100, 25), the standard deviation is:', options: ['5','25','10','100'], answer: 0 }, // R8
@@ -1034,23 +1034,23 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
   '2.5': {
     name: 'Statistical Hypothesis Testing',
     green: [
-      { q: 'The null hypothesis H₀ is:', options: ['The default assumption being tested','The conclusion you hope to reach','Always false','The significance level'], answer: 0 }, // H1
+      { q: 'The null hypothesis H₀ is:', options: ['The default assumption being tested','The conclusion you hope to reach from the data','Always false','The significance level'], answer: 0 }, // H1
       { q: 'The alternative hypothesis H₁ states:', options: ['What is believed if the null hypothesis is rejected','The same as H₀','The sample size','The p-value'], answer: 0 }, // H1
       { q: 'The significance level of a test is:', options: ['The probability of incorrectly rejecting the null hypothesis','The probability H₀ is true','The sample size','The test statistic'], answer: 0 }, // H3
       { q: 'The critical region is also known as the:', options: ['Rejection region','Acceptance region','Confidence interval','Sample space'], answer: 0 }, // H1
       { q: 'If the test statistic falls in the acceptance region, you:', options: ['Do not reject the null hypothesis','Reject the null hypothesis','Accept the alternative hypothesis','Repeat the test'], answer: 0 }, // H6
-      { q: 'A 1-tail test is used when the alternative hypothesis specifies:', options: ['A change in one particular direction','A change in either direction','No change','Two populations'], answer: 0 }, // H2
+      { q: 'A 1-tail test is used when the alternative hypothesis specifies:', options: ['A change in one particular direction','A change in either direction from the stated value','No change','Two populations'], answer: 0 }, // H2
       { q: 'A 2-tail test is used when the alternative hypothesis specifies:', options: ['A change in either direction','An increase only','A decrease only','No change'], answer: 0 }, // H2
       { q: 'The p-value is:', options: ['The probability of a result at least as extreme as the one observed, assuming H₀','The probability H₀ is true','The significance level','The sample proportion'], answer: 0 }, // H1
       { q: 'If the p-value is less than the significance level, you:', options: ['Reject the null hypothesis','Do not reject the null hypothesis','Increase the sample size','Change the hypotheses'], answer: 0 }, // H5
       { q: 'For a binomial hypothesis test, H₀ takes the form:', options: ['p = a particular value','p > a particular value','p ≠ a particular value','n = a particular value'], answer: 0 }, // H4
       { q: 'The test statistic is:', options: ['The quantity calculated from the sample and compared with the critical value','The null hypothesis','The population mean','The significance level'], answer: 0 }, // H1
-      { q: 'A hypothesis test uses a sample in order to:', options: ['Make an inference about the population','Describe only the sample','Remove outliers','Calculate a regression line'], answer: 0 }, // H3
+      { q: 'A hypothesis test uses a sample in order to:', options: ['Make an inference about the population','Describe only the sample','Remove outliers','Calculate a regression line through the sample data points'], answer: 0 }, // H3
       { q: 'A critical value marks the boundary of the:', options: ['Critical region','Sample','Population','Confidence level'], answer: 0 }, // H1
-      { q: 'Hypotheses are always stated in terms of:', options: ['A population parameter','A sample statistic','The test statistic','The p-value'], answer: 0 }, // H4
+      { q: 'Hypotheses are always stated in terms of:', options: ['A population parameter','A sample statistic such as the sample mean','The test statistic','The p-value'], answer: 0 }, // H4
       { q: 'A conclusion to a hypothesis test should always be:', options: ['Stated in the context of the original problem','Given as "accept H₀"','Purely numerical','Left implicit'], answer: 0 }, // H5
-      { q: 'A significance level of 5% means the critical region has probability:', options: ['At most 0.05 under H₀','0.95 under H₀','0.05 under H₁','Exactly 0.5'], answer: 0 }, // H3
-      { q: 'Correlation measures:', options: ['How close data points lie to a straight line','The gradient of the regression line','The spread of one variable','The sample size'], answer: 0 }, // H10
+      { q: 'A significance level of 5% means the critical region has probability:', options: ['At most 0.05 under H₀','0.95 under H₀ in each tail','0.05 under H₁','Exactly 0.5'], answer: 0 }, // H3
+      { q: 'Correlation measures:', options: ['How close data points lie to a straight line','The gradient of the regression line between the two variables','The spread of one variable','The sample size'], answer: 0 }, // H10
       { q: 'A rank correlation coefficient measures correlation between:', options: ['The ranks of the data','The raw data values','Two categorical variables','The residuals'], answer: 0 }, // H10
       { q: 'For a test on a population mean, H₀ takes the form:', options: ['μ = a particular value','x̄ = a particular value','σ = a particular value','n = a particular value'], answer: 0 }, // H8
       { q: 'Never rejecting the null hypothesis when it is false is a failure to detect:', options: ['A real effect','An outlier','A sampling frame','A critical value'], answer: 0 }, // H3
@@ -1059,34 +1059,34 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'A coin is suspected of being biased towards heads. The hypotheses are:', options: ['H₀: p = 0.5, H₁: p > 0.5, one-tailed','H₀: p = 0.5, H₁: p ≠ 0.5, two-tailed','H₀: p > 0.5, H₁: p = 0.5','H₀: p = 0.5, H₁: p < 0.5'], answer: 0 }, // H2
       { q: 'A coin is suspected of being biased, without saying in which direction. The test should be:', options: ['Two-tailed, with H₁: p ≠ 0.5','One-tailed, with H₁: p > 0.5','One-tailed, with H₁: p < 0.5','Not a hypothesis test'], answer: 0 }, // H2
       { q: 'For random samples of size n drawn from N(μ, σ²), the sample mean has distribution:', options: ['N(μ, σ²/n)','N(μ, σ²)','N(μ/n, σ²)','N(nμ, nσ²)'], answer: 0 }, // H7
-      { q: 'The standard deviation of the sample mean for samples of size n is:', options: ['σ/√n','σ/n','σ√n','σ'], answer: 0 }, // H7
+      { q: 'The standard deviation of the sample mean for samples of size n is:', options: ['σ/√n','σ/n (s.e.)','σ√n','σ'], answer: 0 }, // H7
       { q: 'For X ~ N(100, 36) and samples of size 9, the sample mean has standard deviation:', options: ['2','4','6','36'], answer: 0 }, // H7
-      { q: 'The Central Limit Theorem allows a Normal test for a mean when:', options: ['The sample is large, even if the population is not Normal','The sample is small','The population is binomial only','The variance is unknown and the sample is small'], answer: 0 }, // H7
+      { q: 'The Central Limit Theorem allows a Normal test for a mean when:', options: ['The sample is large, even if the population is not Normal','The sample is small','The population is binomial only','The variance is unknown and the sample is small, whatever the population shape'], answer: 0 }, // H7
       { q: 'A test for a single mean using the Normal distribution is valid when:', options: ['The population variance is known, or unknown with a large sample','The sample size is 2','The data are categorical','The variance is always unknown'], answer: 0 }, // H8
-      { q: 'In a binomial test at the 5% level, the observed p-value is 0.032. The conclusion is:', options: ['Reject H₀, since 0.032 < 0.05','Do not reject H₀','Accept H₁ with certainty','The test is invalid'], answer: 0 }, // H5
+      { q: 'In a binomial test at the 5% level, the observed p-value is 0.032. The conclusion is:', options: ['Reject H₀, since 0.032 < 0.05','Do not reject H₀, since 0.032 is small','Accept H₁ with certainty','The test is invalid'], answer: 0 }, // H5
       { q: 'In a binomial test at the 5% level, the observed p-value is 0.08. The conclusion is:', options: ['There is insufficient evidence to reject H₀','Reject H₀','H₀ is proved true','The test is invalid'], answer: 0 }, // H5
-      { q: 'For a two-tailed test at the 5% level, each tail carries a probability of:', options: ['0.025','0.05','0.1','0.5'], answer: 0 }, // H2
+      { q: 'For a two-tailed test at the 5% level, each tail carries a probability of:', options: ['0.025','0.050 (5%)','0.1','0.5'], answer: 0 }, // H2
       { q: 'The acceptance region consists of those values of the test statistic for which:', options: ['H₀ is not rejected','H₀ is rejected','H₁ is proved','The p-value is zero'], answer: 0 }, // H6
-      { q: 'Writing "accept H₀" is discouraged because:', options: ['Failing to reject H₀ is not proof that it is true','H₀ is always false','It is too long','It changes the significance level'], answer: 0 }, // H5
+      { q: 'Writing "accept H₀" is discouraged because:', options: ['Failing to reject H₀ is not proof that it is true','H₀ is always false','It is too long','It changes the significance level of the test after it has been carried out'], answer: 0 }, // H5
       { q: 'Reducing the significance level from 5% to 1% makes rejecting H₀:', options: ['Harder, requiring stronger evidence','Easier','Impossible','Unaffected'], answer: 0 }, // H3
       { q: 'A given correlation coefficient is compared with a critical value in order to:', options: ['Infer whether there is correlation in the population','Calculate the regression line','Find the mean','Identify outliers'], answer: 0 }, // H11
       { q: 'For a correlation test, the null hypothesis is usually that in the population there is:', options: ['No correlation','Perfect correlation','Negative correlation','A causal relationship'], answer: 0 }, // H11
       { q: 'The specification requires learners to know the names of particular correlation coefficients:', options: ['False — names are not required','True for all coefficients','True for rank coefficients only','True only at A Level'], answer: 0 }, // H10
       { q: 'In a test of H₀: μ = 50 against H₁: μ > 50, a sample mean of 47 would:', options: ['Give no evidence at all against H₀ in the stated direction','Lead to rejection of H₀','Prove H₀','Require a two-tailed test'], answer: 0 }, // H8
-      { q: 'A binomial test uses n = 20 and H₀: p = 0.3. The test statistic is:', options: ['The observed number of successes','The sample mean','The significance level','The p-value'], answer: 0 }, // H4
-      { q: 'A significance level must be chosen:', options: ['Before the data are examined','After seeing the result','From the p-value','From the sample mean'], answer: 0 }, // H3
+      { q: 'A binomial test uses n = 20 and H₀: p = 0.3. The test statistic is:', options: ['The observed number of successes','The sample mean of the 20 observations','The significance level','The p-value'], answer: 0 }, // H4
+      { q: 'A significance level must be chosen:', options: ['Before the data are examined','After seeing the result of the test','From the p-value','From the sample mean'], answer: 0 }, // H3
       { q: '"Association" differs from "correlation" in that association refers to:', options: ['A more general relationship between the variables','A straight-line relationship only','A causal link','Identical values'], answer: 0 }, // H11
     ],
     red: [
       { q: 'A sample of 25 is drawn from N(μ, 100). Under H₀: μ = 40, the sample mean has distribution:', options: ['N(40, 4)','N(40, 100)','N(40, 20)','N(40, 2)'], answer: 0 }, // H7
       { q: 'For that test, a sample mean of 44 gives a test statistic z of:', options: ['2','4','0.4','1'], answer: 0 }, // H8
-      { q: 'A result is significant at the 5% level but not at the 1% level. This means the p-value lies:', options: ['Between 0.01 and 0.05','Below 0.01','Above 0.05','Exactly at 0.05'], answer: 0 }, // H5
+      { q: 'A result is significant at the 5% level but not at the 1% level. This means the p-value lies:', options: ['Between 0.01 and 0.05','Below 0.01','Above 0.05','Exactly at 0.05, on the boundary'], answer: 0 }, // H5
       { q: 'For a binomial test the probability of the test statistic falling in the rejection region is:', options: ['Usually less than the intended significance level, because the distribution is discrete','Exactly the significance level','Always greater than the significance level','Always zero'], answer: 0 }, // H3
       { q: 'A researcher runs 20 independent tests at the 5% level on data with no real effect. The expected number of significant results is:', options: ['1','0','5','20'], answer: 0 }, // H3
-      { q: 'A significant correlation between ice cream sales and drownings does not establish causation because:', options: ['A third variable such as hot weather may influence both','Correlation coefficients are unreliable','The sample was too large','The test was two-tailed'], answer: 0 }, // H11
-      { q: 'A test of H₀: p = 0.4 against H₁: p ≠ 0.4 at the 10% level uses critical regions in:', options: ['Both tails, each with probability at most 0.05','One tail with probability 0.10','Both tails, each with probability 0.10','Neither tail'], answer: 0 }, // H2
+      { q: 'A significant correlation between ice cream sales and drownings does not establish causation because:', options: ['A third variable such as hot weather may influence both','Correlation coefficients are unreliable, so the relationship is probably a fluke','The sample was too large','The test was two-tailed'], answer: 0 }, // H11
+      { q: 'A test of H₀: p = 0.4 against H₁: p ≠ 0.4 at the 10% level uses critical regions in:', options: ['Both tails, each with probability at most 0.05','One tail with probability 0.10','Both tails, each with probability 0.10, so 20% in total','Neither tail'], answer: 0 }, // H2
       { q: 'Increasing the sample size in a test for a mean, with everything else fixed:', options: ['Reduces the standard deviation of the sample mean, making real differences easier to detect','Increases the standard deviation of the sample mean','Has no effect on the test','Raises the significance level'], answer: 0 }, // H7
-      { q: 'The conclusion "the coin is definitely biased" after rejecting H₀ at the 5% level is wrong because:', options: ['A hypothesis test gives evidence, never proof','The significance level was too high','Two tails were used','The sample was random'], answer: 0 }, // H5
+      { q: 'The conclusion "the coin is definitely biased" after rejecting H₀ at the 5% level is wrong because:', options: ['A hypothesis test gives evidence, never proof','The significance level was too high, as 5% is not strict enough to prove it','Two tails were used','The sample was random'], answer: 0 }, // H5
       { q: 'A hypothesis test for a mean uses the Normal distribution with an unknown population variance and a sample of size 8. This is:', options: ['Not valid here, since the sample is small and the variance unknown','Always valid','Valid because n > 5','Valid only for a two-tailed test'], answer: 0 }, // H8
     ],
   },
@@ -1101,7 +1101,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The modelling assumption "uniform" means:', options: ['Mass is evenly distributed throughout','The object cannot bend','There is no friction','The object is light'], answer: 0 }, // p31
       { q: 'The modelling assumption "rigid" means the object:', options: ['Does not bend or deform','Has no mass','Is smooth','Is inextensible'], answer: 0 }, // p31
       { q: 'The SI base unit of length is the:', options: ['Metre','Centimetre','Kilometre','Newton'], answer: 0 }, // p33
-      { q: 'The SI base unit of mass is the:', options: ['Kilogram','Gram','Newton','Tonne'], answer: 0 }, // p33
+      { q: 'The SI base unit of mass is the:', options: ['Kilogram','Gram','Newton (N)','Tonne'], answer: 0 }, // p33
       { q: 'The SI base unit of time is the:', options: ['Second','Minute','Hour','Hertz'], answer: 0 }, // p33
       { q: 'The SI unit of velocity is:', options: ['m s⁻¹','m s⁻²','N','kg m'], answer: 0 }, // p34
       { q: 'The SI unit of acceleration is:', options: ['m s⁻²','m s⁻¹','N','kg'], answer: 0 }, // p34
@@ -1126,11 +1126,11 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The unit of force, the newton, is equivalent in base units to:', options: ['kg m s⁻²','kg m s⁻¹','kg m² s⁻²','kg s⁻²'], answer: 0 }, // p34
       { q: 'A mass of 200 g expressed in SI base units is:', options: ['0.2 kg','200 kg','2 kg','0.002 kg'], answer: 0 }, // p33
       { q: 'A speed of 36 km h⁻¹ expressed in m s⁻¹ is:', options: ['10','36','3.6','360'], answer: 0 }, // p33
-      { q: 'The assumption "the rod is uniform" allows you to take its weight as acting:', options: ['At its midpoint','At one end','At the pivot','Nowhere'], answer: 0 }, // p31
+      { q: 'The assumption "the rod is uniform" allows you to take its weight as acting:', options: ['At its midpoint','At one end','At the pivot or support','Nowhere'], answer: 0 }, // p31
       { q: 'A "long term" modelling assumption refers to:', options: ['Behaviour after a long time has elapsed','A long object','A large force','A heavy object'], answer: 0 }, // p31
       { q: 'Refining a model generally means:', options: ['Removing a simplifying assumption to improve realism','Adding more assumptions','Ignoring the data','Changing the units'], answer: 0 }, // p31
       { q: 'A quantity of 15 N m describes a:', options: ['Moment','Force','Velocity','Mass'], answer: 0 }, // p35
-      { q: 'Which of these is a vector quantity?', options: ['Velocity','Speed','Mass','Time'], answer: 0 }, // p34
+      { q: 'Which of these is a vector quantity?', options: ['Velocity','Speed (m/s)','Mass','Time'], answer: 0 }, // p34
       { q: 'Which of these is a scalar quantity?', options: ['Mass','Force','Velocity','Acceleration'], answer: 0 }, // p34
       { q: 'A tension of 20 N in a light inextensible string over a smooth pulley is:', options: ['The same throughout the string','Different on each side','Zero','Equal to the weight'], answer: 0 }, // p31
       { q: 'The mass of an object taken to the Moon:', options: ['Stays the same, although its weight changes','Changes, although its weight stays the same','Becomes zero','Doubles'], answer: 0 }, // p34
@@ -1138,12 +1138,12 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'A force of 1 N gives a mass of 1 kg an acceleration of:', options: ['1 m s⁻²','9.8 m s⁻²','1 m s⁻¹','0'], answer: 0 }, // p34
     ],
     red: [
-      { q: 'A 2 kg mass hangs at rest from a light inextensible string. Taking g = 9.8, the tension is:', options: ['19.6 N','2 N','9.8 N','0 N'], answer: 0 }, // p34
-      { q: 'An answer given as "the acceleration is 3 kg" is wrong because:', options: ['Acceleration has units m s⁻², not kg','The number is too small','Acceleration cannot be positive','Acceleration is a scalar'], answer: 0 }, // p34
-      { q: 'Which modelling assumption is being dropped when air resistance is introduced into a projectile model?', options: ['That the only force acting after release is weight','That the projectile is a particle','That gravity is constant','That the ground is horizontal'], answer: 0 }, // y1
+      { q: 'A 2 kg mass hangs at rest from a light inextensible string. Taking g = 9.8, the tension is:', options: ['19.6 N','2 N','9.80 N (g only)','0 N'], answer: 0 }, // p34
+      { q: 'An answer given as "the acceleration is 3 kg" is wrong because:', options: ['Acceleration has units m s⁻², not kg','The number is too small','Acceleration cannot be positive when a mass is involved','Acceleration is a scalar'], answer: 0 }, // p34
+      { q: 'Which modelling assumption is being dropped when air resistance is introduced into a projectile model?', options: ['That the only force acting after release is weight','That the projectile is a particle with no size or rotation','That gravity is constant','That the ground is horizontal'], answer: 0 }, // y1
       { q: 'A speed of 5 m s⁻¹ expressed in km h⁻¹ is:', options: ['18','50','1.39','0.3'], answer: 0 }, // p33
-      { q: 'Modelling a train as a set of connected particles rather than one particle is necessary when:', options: ['The forces in the couplings between carriages are required','The train moves in a straight line','Friction is negligible','The train is at rest'], answer: 0 }, // n4
-      { q: 'Taking g = 10 rather than 9.8 in a calculation will:', options: ['Introduce a small systematic error of about 2%','Give an exactly correct answer','Make no difference','Change the units'], answer: 0 }, // F2
+      { q: 'Modelling a train as a set of connected particles rather than one particle is necessary when:', options: ['The forces in the couplings between carriages are required','The train moves in a straight line along a level track at constant speed','Friction is negligible','The train is at rest'], answer: 0 }, // n4
+      { q: 'Taking g = 10 rather than 9.8 in a calculation will:', options: ['Introduce a small systematic error of about 2%','Give an exactly correct answer, as 10 is a better value for g','Make no difference','Change the units'], answer: 0 }, // F2
       { q: 'The quantity kg m s⁻² is dimensionally equivalent to:', options: ['A force','An acceleration','A moment','A velocity'], answer: 0 }, // p34
       { q: 'A moment of 12 N m could arise from:', options: ['A force of 4 N acting perpendicular to a rod 3 m from the pivot','A force of 12 N acting at the pivot','A mass of 12 kg','A force of 3 N at 3 m'], answer: 0 }, // p35
       { q: 'The assumption that a string is inextensible is essential in a connected-particle problem because it ensures that:', options: ['Both particles have the same magnitude of acceleration','The tension is zero','The pulley is smooth','The masses are equal'], answer: 0 }, // n4
@@ -1163,7 +1163,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The formula s = ut + ½at² gives:', options: ['Displacement in terms of initial velocity, acceleration and time','Velocity in terms of time','Acceleration','Average speed'], answer: 0 }, // k6
       { q: 'The formula v² = u² + 2as does NOT involve:', options: ['Time','Displacement','Acceleration','Initial velocity'], answer: 0 }, // k6
       { q: 'Average speed is calculated as:', options: ['Distance travelled ÷ elapsed time','Displacement ÷ elapsed time','Final velocity ÷ 2','Acceleration × time'], answer: 0 }, // k1
-      { q: 'Average velocity is calculated as:', options: ['Overall displacement ÷ elapsed time','Distance travelled ÷ elapsed time','(u + v)/2 always','Acceleration × time'], answer: 0 }, // k1
+      { q: 'Average velocity is calculated as:', options: ['Overall displacement ÷ elapsed time','Total distance travelled ÷ elapsed time','(u + v)/2 always','Acceleration × time'], answer: 0 }, // k1
       { q: 'On a displacement-time graph, constant velocity appears as:', options: ['A straight line','A curve','A horizontal line at zero','A vertical line'], answer: 0 }, // k4
       { q: 'A body starting "from rest" has initial velocity:', options: ['0','Its maximum value','Equal to the acceleration','Undefined'], answer: 0 }, // k6
       { q: 'For a body moving in the positive direction, negative acceleration means it is:', options: ['Slowing down','Speeding up','At rest','Reversing immediately'], answer: 0 }, // k3
@@ -1177,16 +1177,16 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
     amber: [
       { q: 'A particle starts from rest and accelerates at 2 m s⁻² for 5 s. Its final velocity is:', options: ['10 m s⁻¹','2 m s⁻¹','25 m s⁻¹','5 m s⁻¹'], answer: 0 }, // k6
-      { q: 'For that same particle, the displacement after 5 s is:', options: ['25 m','10 m','50 m','5 m'], answer: 0 }, // k6
+      { q: 'A particle starts from rest and accelerates at 2 m s⁻² for 5 s. Its displacement after 5 s is:', options: ['25 m','10 m','50 m','5 m'], answer: 0 }, // k6
       { q: 'A stone is dropped from rest. Taking g = 9.8, its speed after 2 s is:', options: ['19.6 m s⁻¹','9.8 m s⁻¹','4.9 m s⁻¹','39.2 m s⁻¹'], answer: 0 }, // k6
-      { q: 'For that same stone, the distance fallen in 2 s is:', options: ['19.6 m','9.8 m','39.2 m','4.9 m'], answer: 0 }, // k6
+      { q: 'A stone is dropped from rest. Taking g = 9.8, the distance fallen in 2 s is:', options: ['19.6 m','9.8 m','39.2 m','4.9 m'], answer: 0 }, // k6
       { q: 'A car travelling at 20 m s⁻¹ decelerates uniformly at 4 m s⁻² to rest. The time taken is:', options: ['5 s','4 s','80 s','2 s'], answer: 0 }, // k6
-      { q: 'For that same car, the distance travelled while stopping is:', options: ['50 m','100 m','40 m','25 m'], answer: 0 }, // k6
+      { q: 'A car travelling at 20 m s⁻¹ decelerates uniformly at 4 m s⁻² to rest. The distance travelled while stopping is:', options: ['50 m','100 m','40 m','25 m'], answer: 0 }, // k6
       { q: 'A body has u = 5 m s⁻¹ and accelerates at 3 m s⁻² over 10 m. Its final speed is closest to:', options: ['9.22 m s⁻¹','8.50 m s⁻¹','35.0 m s⁻¹','6.40 m s⁻¹'], answer: 0 }, // k6
       { q: 'A car slows from 30 m s⁻¹ to rest in 6 s. Its acceleration is:', options: ['−5 m s⁻²','5 m s⁻²','−180 m s⁻²','−0.2 m s⁻²'], answer: 0 }, // k6
       { q: 'For s = t³ − 3t, the velocity at t = 2 is:', options: ['9','2','6','12'], answer: 0 }, // k5
       { q: 'A body travels 100 m north then 100 m south in 40 s. Its average velocity is:', options: ['0 m s⁻¹','5 m s⁻¹','2.5 m s⁻¹','200 m s⁻¹'], answer: 0 }, // k1
-      { q: 'For that same journey, the average speed is:', options: ['5 m s⁻¹','0 m s⁻¹','2.5 m s⁻¹','10 m s⁻¹'], answer: 0 }, // k1
+      { q: 'A body travels 100 m north then 100 m south in 40 s. Its average speed is:', options: ['5 m s⁻¹','0 m s⁻¹','2.5 m s⁻¹','10 m s⁻¹'], answer: 0 }, // k1
       { q: 'A body accelerates uniformly from 10 to 30 m s⁻¹ in 4 s. The distance covered is:', options: ['80 m','40 m','120 m','20 m'], answer: 0 }, // k6
       { q: 'A ball thrown vertically upwards reaches its maximum height when:', options: ['Its velocity is zero','Its acceleration is zero','Its speed is greatest','It returns to the thrower'], answer: 0 }, // k6
       { q: 'A stone falls from rest through 45 m. Taking g = 9.8, the time taken is closest to:', options: ['3.03 s','4.59 s','9.18 s','2.14 s'], answer: 0 }, // k6
@@ -1199,9 +1199,9 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
     red: [
       { q: 'For s = t³ − 6t² + 9t, the particle is instantaneously at rest at:', options: ['t = 1 and t = 3','t = 0 and t = 3','t = 2 only','t = 1 only'], answer: 0 }, // k5
-      { q: 'For that same motion between t = 0 and t = 4, the total distance travelled is:', options: ['12 m','4 m','8 m','0 m'], answer: 0 }, // k5
-      { q: 'For that same motion between t = 0 and t = 4, the displacement is:', options: ['4 m','12 m','0 m','8 m'], answer: 0 }, // k5
-      { q: 'A ball is thrown vertically upwards at 14.7 m s⁻¹. Taking g = 9.8, its maximum height above the point of projection is:', options: ['11.025 m','14.7 m','22.05 m','7.35 m'], answer: 0 }, // k6
+      { q: 'A particle moves with s = t³ − 6t² + 9t. Between t = 0 and t = 4, the total distance travelled is:', options: ['12 m','4 m','8 m (4 + 4)','0 m'], answer: 0 }, // k5
+      { q: 'A particle moves with s = t³ − 6t² + 9t. Between t = 0 and t = 4, the displacement is:', options: ['4 m','12 m','0 m','8 m'], answer: 0 }, // k5
+      { q: 'A ball is thrown vertically upwards at 14.7 m s⁻¹. Taking g = 9.8, its maximum height above the point of projection is:', options: ['11.025 m','14.7 m','22.05 m (u²/g)','7.35 m'], answer: 0 }, // k6
       { q: 'A particle has acceleration a = 6t and velocity 2 m s⁻¹ when t = 0. Its velocity at time t is:', options: ['3t² + 2','6t + 2','3t²','2t³ + 2'], answer: 0 }, // k5
       { q: 'A body travels at 12 m s⁻¹ for 5 s then decelerates uniformly to rest over the next 4 s. The total distance is:', options: ['84 m','60 m','108 m','48 m'], answer: 0 }, // k4
       { q: 'The suvat formulae cannot be applied to a body whose acceleration is a = 6t because:', options: ['The acceleration is not constant, so calculus is needed instead','Time is negative','The units are wrong','The body is at rest'], answer: 0 }, // k5
@@ -1215,14 +1215,14 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     name: 'Kinematics in 2 Dimensions',
     green: [
       { q: 'The position vector r of a particle gives its position:', options: ['Relative to a fixed origin','Relative to its starting point only','As a scalar distance','At time zero only'], answer: 0 }, // k9
-      { q: 'In two dimensions, velocity is obtained from position by:', options: ['Differentiating r with respect to t','Integrating r with respect to t','Dividing r by t','Multiplying r by t'], answer: 0 }, // k10
-      { q: 'Acceleration is obtained from velocity by:', options: ['Differentiating v with respect to t','Integrating v with respect to t','Dividing v by t','Taking the magnitude of v'], answer: 0 }, // k10
-      { q: 'The speed of a particle with velocity v is:', options: ['|v|, the magnitude of v','The i-component of v','v itself','The direction of v'], answer: 0 }, // k9
+      { q: 'In two dimensions, velocity is obtained from position by:', options: ['Differentiating r with respect to t','Integrating r with respect to time t','Dividing r by t','Multiplying r by t'], answer: 0 }, // k10
+      { q: 'Acceleration is obtained from velocity by:', options: ['Differentiating v with respect to t','Integrating v with respect to time t','Dividing v by t','Taking the magnitude of v'], answer: 0 }, // k10
+      { q: 'The speed of a particle with velocity v is:', options: ['|v|, the magnitude of v','The i-component of v, along the x-axis','v itself','The direction of v'], answer: 0 }, // k9
       { q: 'The distance of a particle from the origin is:', options: ['|r|','|v|','|a|','r itself'], answer: 0 }, // k9
       { q: 'The vector form of v = u + at applies when:', options: ['The acceleration is constant','The velocity is constant','The motion is in one dimension','The particle is at rest'], answer: 0 }, // k10
       { q: 'The position of B relative to A is given by:', options: ['r_B − r_A','r_A − r_B','r_A + r_B','|r_B| − |r_A|'], answer: 0 }, // k9
-      { q: 'A two-dimensional velocity is commonly written in terms of:', options: ['The unit vectors i and j','A single scalar','Degrees only','The unit vector k only'], answer: 0 }, // k10
-      { q: 'Average velocity in two dimensions is:', options: ['Overall displacement ÷ elapsed time','Distance travelled ÷ elapsed time','The mean of the speeds','Always zero'], answer: 0 }, // k9
+      { q: 'A two-dimensional velocity is commonly written in terms of:', options: ['The unit vectors i and j','A single scalar','Degrees only','The unit vector k only, pointing out of the page'], answer: 0 }, // k10
+      { q: 'Average velocity in two dimensions is:', options: ['Overall displacement ÷ elapsed time','Total distance travelled ÷ elapsed time','The mean of the speeds','Always zero'], answer: 0 }, // k9
       { q: 'Velocity is obtained from acceleration by:', options: ['Integrating with respect to time','Differentiating with respect to time','Multiplying by time only','Taking the magnitude'], answer: 0 }, // k10
       { q: 'If the acceleration of a particle is zero, its path is:', options: ['A straight line travelled at constant velocity','A parabola','A circle','Undefined'], answer: 0 }, // k10
       { q: 'Motion in the i and j directions under constant acceleration can be treated:', options: ['Independently, component by component','Only together','Only using scalars','Only in one dimension'], answer: 0 }, // k10
@@ -1237,14 +1237,14 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
     amber: [
       { q: 'A particle has r = 3t i + t² j. Its velocity is:', options: ['3i + 2t j','3t i + 2t j','3i + t² j','6t j'], answer: 0 }, // k10
-      { q: 'For that same particle, the speed at t = 2 is:', options: ['5','7','4','3'], answer: 0 }, // k10
-      { q: 'For that same particle, the acceleration is:', options: ['2j','3i','2t j','0'], answer: 0 }, // k10
-      { q: 'For that same particle, the Cartesian equation of its path is:', options: ['y = x²/9','y = x²','y = 3x²','y = x/3'], answer: 0 }, // k11
+      { q: 'A particle has r = 3t i + t² j. Its speed at t = 2 is:', options: ['5','7','4','3'], answer: 0 }, // k10
+      { q: 'A particle has r = 3t i + t² j. Its acceleration is:', options: ['2j','3i','2t j','0'], answer: 0 }, // k10
+      { q: 'A particle has r = 3t i + t² j. The Cartesian equation of its path is:', options: ['y = x²/9','y = x²','y = 3x² (x = t)','y = x/3'], answer: 0 }, // k11
       { q: 'A particle has r = 2t i + (t² − 1) j. Its path has Cartesian equation:', options: ['y = x²/4 − 1','y = x² − 1','y = 4x² − 1','y = x/2 − 1'], answer: 0 }, // k11
       { q: 'A particle has a = 2i + 6t j and v = i at t = 0. Its velocity at time t is:', options: ['(1 + 2t)i + 3t² j','2t i + 3t² j','(1 + 2t)i + 6t j','2i + 6t j'], answer: 0 }, // k10
       { q: 'A has velocity 5i + 2j and B has velocity 3i − j. The velocity of A relative to B is:', options: ['2i + 3j','8i + j','−2i − 3j','2i + j'], answer: 0 }, // k10
       { q: 'A has position 3i + 4j and B has position 7i + j. The position of B relative to A is:', options: ['4i − 3j','−4i + 3j','10i + 5j','4i + 3j'], answer: 0 }, // k9
-      { q: 'For that same pair, the distance between A and B is:', options: ['5','7','25','1'], answer: 0 }, // k9
+      { q: 'A has position 3i + 4j and B has position 7i + j. The distance between A and B is:', options: ['5','7','25','1'], answer: 0 }, // k9
       { q: 'A particle starts at 2i + j with constant velocity 3i − j. Its position at t = 4 is:', options: ['14i − 3j','12i − 4j','5i','14i + 5j'], answer: 0 }, // k10
       { q: 'Two particles collide when:', options: ['Their position vectors are equal at the same instant','Their velocities are equal','Their speeds are equal','Their accelerations are equal'], answer: 0 }, // k10
       { q: 'A velocity of 6i + 8j has magnitude and direction:', options: ['10, at 53.1° above the i-direction','14, at 53.1°','10, at 36.9°','48, at 53.1°'], answer: 0 }, // k9
@@ -1266,7 +1266,7 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'Two ships have constant velocities. The distance between them is least when:', options: ['The relative position vector is shortest, found by minimising its magnitude','Their speeds are equal','Their velocities are equal','They are at the origin'], answer: 0 }, // k10
       { q: 'For a particle with r = (2t)i + (t²)j, the average velocity between t = 0 and t = 2 is:', options: ['2i + 2j','2i + 4j','4i + 4j','i + j'], answer: 0 }, // k9
       { q: 'A particle projected with u = 5i + 12j has initial speed:', options: ['13','17','7','60'], answer: 0 }, // k9
-      { q: 'For a particle moving with constant acceleration a from initial velocity u, the vector form v = u + at shows that:', options: ['The change in velocity is always parallel to a','The speed is constant','The path is a straight line','The acceleration varies'], answer: 0 }, // k10
+      { q: 'For a particle moving with constant acceleration a from initial velocity u, the vector form v = u + at shows that:', options: ['The change in velocity is always parallel to a','The speed is constant','The path is always a straight line in the direction of u','The acceleration varies'], answer: 0 }, // k10
       { q: 'A particle has r = (t − 2)i + (t² − 4)j. It passes through the origin when:', options: ['t = 2','t = 0','t = −2','Never'], answer: 0 }, // k11
     ],
   },
@@ -1282,13 +1282,13 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'Which is a standard modelling assumption for projectile motion?', options: ['There is no air resistance','Air resistance is proportional to speed','The projectile is a rigid body','Gravity varies with height'], answer: 0 }, // y1
       { q: 'Standard projectile modelling treats the projectile as:', options: ['A particle','A uniform rod','A rigid lamina','A light string'], answer: 0 }, // y1
       { q: 'For a projectile launched at speed u and angle θ, the horizontal component of the initial velocity is:', options: ['u cos θ','u sin θ','u tan θ','u'], answer: 0 }, // y1
-      { q: 'For that same projectile, the vertical component of the initial velocity is:', options: ['u sin θ','u cos θ','u tan θ','u'], answer: 0 }, // y1
+      { q: 'For a projectile launched at speed u and angle θ above the horizontal, the vertical component of the initial velocity is:', options: ['u sin θ','u cos θ','u tan θ','u'], answer: 0 }, // y1
       { q: 'On level ground, the range of a projectile is greatest when the angle of projection is:', options: ['45°','30°','60°','90°'], answer: 0 }, // y2
       { q: 'A ball thrown horizontally has initial vertical velocity:', options: ['0','g','u','u sin θ'], answer: 0 }, // y1
       { q: 'Unless otherwise specified, the value of g used in examinations is:', options: ['9.8','10','9.81','9'], answer: 0 }, // F2
       { q: 'Horizontal and vertical motion of a projectile are treated:', options: ['Independently','Only together','As one scalar equation','As a circular motion'], answer: 0 }, // y1
       { q: 'For projection and landing at the same height, the speed on landing equals:', options: ['The speed of projection','Zero','Twice the speed of projection','Half the speed of projection'], answer: 0 }, // y2
-      { q: 'Calculations involving air resistance are:', options: ['Excluded from this specification','Required for all projectiles','Required only at A Level','Required only for heavy objects'], answer: 0 }, // y1
+      { q: 'Calculations involving air resistance are:', options: ['Excluded from this specification','Required for all projectiles at AS and A Level','Required only at A Level','Required only for heavy objects'], answer: 0 }, // y1
       { q: 'The vertical motion of a projectile is an example of:', options: ['Motion with constant acceleration','Motion with constant velocity','Circular motion','Motion with zero acceleration'], answer: 0 }, // y1
       { q: 'The assumption that gravity always acts in the same direction is reasonable when:', options: ['The horizontal distance travelled is small','The projectile is heavy','The speed is large','The angle is 45°'], answer: 0 }, // y1
       { q: 'The time of flight of a projectile on level ground is:', options: ['Twice the time taken to reach maximum height','Equal to the time to maximum height','Independent of the angle','Always 1 second'], answer: 0 }, // y2
@@ -1297,16 +1297,16 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
     amber: [
       { q: 'A projectile is launched at 20 m s⁻¹ at 30° to the horizontal. Its initial horizontal component is closest to:', options: ['17.3 m s⁻¹','10.0 m s⁻¹','20.0 m s⁻¹','11.5 m s⁻¹'], answer: 0 }, // y1
-      { q: 'For that same projectile, the initial vertical component is:', options: ['10.0 m s⁻¹','17.3 m s⁻¹','20.0 m s⁻¹','5.0 m s⁻¹'], answer: 0 }, // y1
-      { q: 'For that same projectile, taking g = 9.8, the time to reach maximum height is closest to:', options: ['1.02 s','2.04 s','0.51 s','1.77 s'], answer: 0 }, // y2
-      { q: 'For that same projectile, the maximum height above the point of projection is closest to:', options: ['5.10 m','10.2 m','2.55 m','15.3 m'], answer: 0 }, // y2
-      { q: 'For that same projectile on level ground, the time of flight is closest to:', options: ['2.04 s','1.02 s','4.08 s','3.06 s'], answer: 0 }, // y2
-      { q: 'For that same projectile on level ground, the range is closest to:', options: ['35.3 m','17.7 m','20.4 m','70.7 m'], answer: 0 }, // y2
+      { q: 'A projectile is launched at 20 m s⁻¹ at 30° to the horizontal. Its initial vertical component is:', options: ['10.0 m s⁻¹','17.3 m s⁻¹','20.0 m s⁻¹','5.0 m s⁻¹'], answer: 0 }, // y1
+      { q: 'A projectile is launched at 20 m s⁻¹ at 30° to the horizontal. Taking g = 9.8, the time to reach maximum height is closest to:', options: ['1.02 s','2.04 s','0.51 s','1.77 s'], answer: 0 }, // y2
+      { q: 'A projectile is launched at 20 m s⁻¹ at 30° to the horizontal. Taking g = 9.8, the maximum height above the point of projection is closest to:', options: ['5.10 m','10.2 m','2.55 m','15.3 m'], answer: 0 }, // y2
+      { q: 'A projectile is launched at 20 m s⁻¹ at 30° to the horizontal over level ground. Taking g = 9.8, the time of flight is closest to:', options: ['2.04 s','1.02 s','4.08 s','3.06 s'], answer: 0 }, // y2
+      { q: 'A projectile is launched at 20 m s⁻¹ at 30° to the horizontal over level ground. Taking g = 9.8, the range is closest to:', options: ['35.3 m','17.7 m','20.4 m','70.7 m'], answer: 0 }, // y2
       { q: 'A ball is thrown horizontally at 15 m s⁻¹ from a height of 20 m. Taking g = 9.8, the time to reach the ground is closest to:', options: ['2.02 s','1.43 s','4.08 s','2.86 s'], answer: 0 }, // y2
-      { q: 'For that same ball, the horizontal distance travelled before landing is closest to:', options: ['30.3 m','21.4 m','15.0 m','61.2 m'], answer: 0 }, // y2
+      { q: 'A ball is thrown horizontally at 15 m s⁻¹ from a height of 20 m. Taking g = 9.8, the horizontal distance travelled before landing is closest to:', options: ['30.3 m','21.4 m','15.0 m','61.2 m'], answer: 0 }, // y2
       { q: 'For a projectile launched at speed u and angle θ, the time of flight on level ground is:', options: ['2u sin θ / g','u sin θ / g','2u cos θ / g','u / g'], answer: 0 }, // y2
-      { q: 'For that same projectile, the maximum height is:', options: ['u² sin²θ / (2g)','u² sin θ / (2g)','u² / (2g)','u sin θ / g'], answer: 0 }, // y2
-      { q: 'For that same projectile, the range on level ground is:', options: ['u² sin 2θ / g','u² sin θ / g','2u² sin θ / g','u² cos θ / g'], answer: 0 }, // y2
+      { q: 'For a projectile launched at speed u and angle θ above the horizontal, the maximum height is:', options: ['u² sin²θ / (2g)','u² sin θ / (2g)','u² / (2g)','u sin θ / g'], answer: 0 }, // y2
+      { q: 'For a projectile launched at speed u and angle θ above the horizontal, the range on level ground is:', options: ['u² sin 2θ / g','u² sin θ / g','2u² sin θ / g','u² cos θ / g'], answer: 0 }, // y2
       { q: 'At time t, the vertical component of a projectile’s velocity is:', options: ['u sin θ − gt','u sin θ + gt','u cos θ − gt','−gt'], answer: 0 }, // y2
       { q: 'At time t, the horizontal displacement of a projectile is:', options: ['u cos θ · t','u sin θ · t','u cos θ · t − ½gt²','u t'], answer: 0 }, // y2
       { q: 'At time t, the vertical displacement of a projectile is:', options: ['u sin θ · t − ½gt²','u sin θ · t','u cos θ · t − ½gt²','−½gt²'], answer: 0 }, // y2
@@ -1325,8 +1325,8 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'A projectile reaches a given height twice during its flight because:', options: ['The quadratic in t for vertical displacement has two roots, on the way up and on the way down','Gravity reverses','The horizontal velocity changes','The path is circular'], answer: 0 }, // y2
       { q: 'For a projectile launched from a height h above level ground, the time of flight is found by solving:', options: ['−h = u sin θ · t − ½gt², taking the positive root','h = u sin θ · t','t = 2u sin θ / g','h = ½gt² only'], answer: 0 }, // y2
       { q: 'Introducing air resistance into a projectile model would generally:', options: ['Reduce both the range and the maximum height','Increase the range','Leave the path a parabola','Have no effect'], answer: 0 }, // y1
-      { q: 'A projectile must clear a wall of height 3 m at horizontal distance 20 m. The check required is:', options: ['Substitute x = 20 into the path equation and confirm y > 3','Confirm the range exceeds 20 m only','Confirm the maximum height exceeds 3 m only','Confirm the angle exceeds 45°'], answer: 0 }, // y4
-      { q: 'The speed of a projectile at time t is found from its components as:', options: ['√((u cos θ)² + (u sin θ − gt)²)','u cos θ + u sin θ − gt','u − gt','u cos θ only'], answer: 0 }, // y2
+      { q: 'A projectile must clear a wall of height 3 m at horizontal distance 20 m. The check required is:', options: ['Substitute x = 20 into the path equation and confirm y > 3','Confirm the range exceeds 20 m only','Confirm the maximum height exceeds 3 m only, wherever it occurs along the path','Confirm the angle exceeds 45°'], answer: 0 }, // y4
+      { q: 'The speed of a projectile at time t is found from its components as:', options: ['√((u cos θ)² + (u sin θ − gt)²)','u cos θ + u sin θ − gt (added directly)','u − gt','u cos θ only'], answer: 0 }, // y2
       { q: 'A projectile launched at 30° with range 50 m on level ground, taking g = 9.8, has initial speed closest to:', options: ['23.8 m s⁻¹','15.6 m s⁻¹','35.0 m s⁻¹','49.0 m s⁻¹'], answer: 0 }, // y3
     ],
   },
@@ -1335,37 +1335,37 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     name: 'Forces',
     green: [
       { q: 'The weight of an object acts:', options: ['Vertically downwards','Vertically upwards','Perpendicular to the surface','Along the direction of motion'], answer: 0 }, // F1
-      { q: 'The normal reaction acts:', options: ['Perpendicular to the surface of contact','Along the surface','Vertically downwards always','In the direction of motion'], answer: 0 }, // F1
+      { q: 'The normal reaction acts:', options: ['Perpendicular to the surface of contact','Along the surface','Vertically downwards always, like the weight','In the direction of motion'], answer: 0 }, // F1
       { q: 'Tension in a string:', options: ['Pulls on the objects at each end','Pushes the objects apart','Acts perpendicular to the string','Is always zero'], answer: 0 }, // F1
-      { q: 'A thrust (or compression) in a rod:', options: ['Pushes the objects at each end apart','Pulls them together','Acts perpendicular to the rod','Equals the weight'], answer: 0 }, // F1
+      { q: 'A thrust (or compression) in a rod:', options: ['Pushes the objects at each end apart','Pulls them together','Acts perpendicular to the rod at each end of it','Equals the weight'], answer: 0 }, // F1
       { q: 'A frictional force acts:', options: ['Along the surface, opposing relative motion or tendency to move','Perpendicular to the surface','Vertically downwards','In the direction of motion'], answer: 0 }, // F1
       { q: 'A surface described as "smooth" has:', options: ['No friction','Large friction','A normal reaction of zero','No weight'], answer: 0 }, // F1
-      { q: 'A surface described as "rough" means:', options: ['There may be a frictional force','There is no normal reaction','The object cannot move','Weight is negligible'], answer: 0 }, // F1
+      { q: 'A surface described as "rough" means:', options: ['There may be a frictional force','There is no normal reaction at the surface','The object cannot move','Weight is negligible'], answer: 0 }, // F1
       { q: 'A particle is in equilibrium if and only if:', options: ['The resultant of the forces acting on it is zero','Its weight is zero','It is at rest at the origin','Friction is zero'], answer: 0 }, // F5
       { q: 'The weight of a body of mass m is:', options: ['mg newtons','m newtons','g newtons','mg kilograms'], answer: 0 }, // F1
       { q: 'Force is:', options: ['A vector quantity measured in newtons','A scalar quantity measured in newtons','A scalar measured in kilograms','A vector measured in kilograms'], answer: 0 }, // F1
-      { q: 'The value of the normal reaction:', options: ['Depends on the other forces acting','Always equals the weight','Is always zero','Is always mg cos θ'], answer: 0 }, // F1
+      { q: 'The value of the normal reaction:', options: ['Depends on the other forces acting','Always equals the weight of the object on it','Is always zero','Is always mg cos θ'], answer: 0 }, // F1
       { q: 'The acceleration due to gravity g is:', options: ['Not a universal constant, but often modelled as constant on Earth','A universal constant everywhere','A force','Measured in newtons'], answer: 0 }, // F2
-      { q: 'A force diagram should show:', options: ['All the forces acting on the body','Only the weight','Only the applied force','The velocity'], answer: 0 }, // F3
-      { q: 'A driving force is:', options: ['The forward force produced by an engine','A resistance to motion','The normal reaction','The weight'], answer: 0 }, // F1
+      { q: 'A force diagram should show:', options: ['All the forces acting on the body','Only the weight','Only the applied force and the resulting motion','The velocity'], answer: 0 }, // F3
+      { q: 'A driving force is:', options: ['The forward force produced by an engine','A resistance to motion from the air and road','The normal reaction','The weight'], answer: 0 }, // F1
       { q: 'Air resistance is an example of:', options: ['A resistance force opposing motion','A driving force','A normal reaction','A tension'], answer: 0 }, // F1
-      { q: 'Concurrent forces are forces that:', options: ['All act through the same point','Are all equal','Are all parallel','Sum to zero'], answer: 0 }, // F4
+      { q: 'Concurrent forces are forces that:', options: ['All act through the same point','Are all equal in magnitude and direction','Are all parallel','Sum to zero'], answer: 0 }, // F4
       { q: 'Vectors representing a set of forces in equilibrium:', options: ['Sum to zero and can be drawn as a closed figure','Sum to the weight','Form an open polygon','Are all parallel'], answer: 0 }, // F8
       { q: 'Resolving a force means:', options: ['Writing it as components in two chosen perpendicular directions','Adding it to another force','Removing it','Finding its moment'], answer: 0 }, // F6
-      { q: 'An internal force in a system is one that acts:', options: ['Between parts of the system','From outside the system','Only at the surface','Only vertically'], answer: 0 }, // F3
+      { q: 'An internal force in a system is one that acts:', options: ['Between parts of the system','From outside the system on each of its parts','Only at the surface','Only vertically'], answer: 0 }, // F3
       { q: 'A body resting on a horizontal table experiences a normal reaction that is:', options: ['Vertically upwards','Vertically downwards','Horizontal','Zero'], answer: 0 }, // F1
     ],
     amber: [
       { q: 'A 5 kg block rests on a horizontal table with no other vertical forces. Taking g = 9.8, the normal reaction is:', options: ['49 N','5 N','9.8 N','24.5 N'], answer: 0 }, // F1
       { q: 'For a body on a plane inclined at θ, the component of weight along the plane is:', options: ['mg sin θ','mg cos θ','mg tan θ','mg'], answer: 0 }, // F6
-      { q: 'For that same body, the component of weight perpendicular to the plane is:', options: ['mg cos θ','mg sin θ','mg tan θ','mg'], answer: 0 }, // F6
+      { q: 'For a body of mass m on a plane inclined at θ, the component of weight perpendicular to the plane is:', options: ['mg cos θ','mg sin θ','mg tan θ','mg'], answer: 0 }, // F6
       { q: 'The relationship between friction F, coefficient μ and normal reaction R is:', options: ['F ≤ μR','F = μR always','F ≥ μR','F = R/μ'], answer: 0 }, // F10
       { q: 'When a body is on the point of sliding, the friction is:', options: ['Limiting, so F = μR','Zero','Greater than μR','Equal to the weight'], answer: 0 }, // F10
       { q: 'With μ = 0.4 and R = 50 N, the maximum possible frictional force is:', options: ['20 N','125 N','50 N','0.4 N'], answer: 0 }, // F10
       { q: 'A force of 20 N acts at 30° above the horizontal. Its horizontal component is closest to:', options: ['17.3 N','10.0 N','20.0 N','11.5 N'], answer: 0 }, // F6
-      { q: 'For that same force, the vertical component is:', options: ['10.0 N','17.3 N','20.0 N','5.0 N'], answer: 0 }, // F6
+      { q: 'A force of 20 N acts at 30° above the horizontal. Its vertical component is:', options: ['10.0 N','17.3 N','20.0 N','5.0 N'], answer: 0 }, // F6
       { q: 'A 10 kg block on a plane inclined at 30°. Taking g = 9.8, the component of weight down the plane is:', options: ['49 N','84.9 N','98 N','56.6 N'], answer: 0 }, // F6
-      { q: 'For that same block, the normal reaction perpendicular to the plane is closest to:', options: ['84.9 N','49 N','98 N','56.6 N'], answer: 0 }, // F6
+      { q: 'A 10 kg block rests on a plane inclined at 30°. Taking g = 9.8, the normal reaction perpendicular to the plane is closest to:', options: ['84.9 N','49 N','98 N','56.6 N'], answer: 0 }, // F6
       { q: 'The angle of friction λ satisfies:', options: ['tan λ = μ','sin λ = μ','cos λ = μ','λ = μ'], answer: 0 }, // F11
       { q: 'The coefficient of friction μ:', options: ['Has no units','Is measured in newtons','Is measured in kg','Is always greater than 1'], answer: 0 }, // F10
       { q: 'Two perpendicular forces of 3 N and 4 N have a resultant of magnitude:', options: ['5 N','7 N','1 N','12 N'], answer: 0 }, // F4
@@ -1381,21 +1381,21 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'A block rests on a rough plane inclined at angle θ with coefficient of friction μ. It remains at rest provided:', options: ['tan θ ≤ μ','tan θ ≥ μ','sin θ ≤ μ','cos θ ≤ μ'], answer: 0 }, // F11
       { q: 'A 4 kg block on a rough horizontal surface has μ = 0.25. Taking g = 9.8, the horizontal force needed to make it start to slide is closest to:', options: ['9.8 N','39.2 N','2.45 N','19.6 N'], answer: 0 }, // F10
       { q: 'Pulling a block along a horizontal surface with a force at an angle above the horizontal:', options: ['Reduces the normal reaction and so reduces the friction','Increases the normal reaction','Leaves friction unchanged','Removes the weight'], answer: 0 }, // F10
-      { q: 'A block in limiting equilibrium on a rough inclined plane has friction acting:', options: ['Up the plane, opposing the tendency to slide down','Down the plane','Perpendicular to the plane','Vertically upwards'], answer: 0 }, // F10
+      { q: 'A block in limiting equilibrium on a rough inclined plane has friction acting:', options: ['Up the plane, opposing the tendency to slide down','Down the plane, in the same direction as the component of weight','Perpendicular to the plane','Vertically upwards'], answer: 0 }, // F10
       { q: 'Three concurrent forces hold a particle in equilibrium. Drawn head-to-tail they form:', options: ['A closed triangle','An open path','A straight line always','A circle'], answer: 0 }, // F8
-      { q: 'A 2 kg block on a rough plane inclined at 20° with μ = 0.5. Taking g = 9.8, the block:', options: ['Remains at rest, since tan 20° ≈ 0.364 < 0.5','Slides down','Accelerates up the plane','Is in limiting equilibrium'], answer: 0 }, // F11
+      { q: 'A 2 kg block on a rough plane inclined at 20° with μ = 0.5. Taking g = 9.8, the block:', options: ['Remains at rest, since tan 20° ≈ 0.364 < 0.5','Slides down','Accelerates up the plane','Is in limiting equilibrium, on the point of sliding down'], answer: 0 }, // F11
       { q: 'The inverse square law for gravitation is:', options: ['Excluded from this specification','Required for all force problems','Used to find the normal reaction','Used to find friction'], answer: 0 }, // F2
       { q: 'A body hangs in equilibrium from two strings at different angles. The number of independent equations obtained by resolving is:', options: ['Two, one in each of two perpendicular directions','One','Three','Four'], answer: 0 }, // F9
       { q: 'A crate is pushed at constant velocity across a rough floor. The applied horizontal force equals:', options: ['The frictional force, since the acceleration is zero','The weight','The normal reaction','Zero'], answer: 0 }, // F9
-      { q: 'A lift descends and decelerates to rest. During the deceleration, the normal reaction on a passenger is:', options: ['Greater than their weight','Less than their weight','Equal to their weight','Zero'], answer: 0 }, // F1
+      { q: 'A lift descends and decelerates to rest. During the deceleration, the normal reaction on a passenger is:', options: ['Greater than their weight','Less than their weight, as they are moving downwards','Equal to their weight','Zero'], answer: 0 }, // F1
     ],
   },
 
   '3.6': {
     name: "Newton's Laws of Motion",
     green: [
-      { q: "Newton's first law states that an object continues at rest or in uniform motion in a straight line unless:", options: ['It is acted on by a resultant force','Its mass changes','It is on a rough surface','Gravity acts on it'], answer: 0 }, // n1
-      { q: "Newton's second law is expressed as:", options: ['F = ma, where F is the resultant force','F = mv','F = m/a','F = ma², where a is speed'], answer: 0 }, // n1
+      { q: "Newton's first law states that an object continues at rest or in uniform motion in a straight line unless:", options: ['It is acted on by a resultant force','Its mass changes','It is on a rough surface, where friction always acts','Gravity acts on it'], answer: 0 }, // n1
+      { q: "Newton's second law is expressed as:", options: ['F = ma, where F is the resultant force','F = mv','F = m/a','F = ma², where a is the speed of the object in m/s'], answer: 0 }, // n1
       { q: "Newton's third law states that when one object exerts a force on another:", options: ['There is a reaction equal in magnitude and opposite in direction','The reaction is smaller','There is no reaction','The reaction acts on the same object'], answer: 0 }, // n1
       { q: 'The equation of motion for a particle is:', options: ["The application of Newton's second law to that particle",'A kinematics graph','The definition of weight','A statement of equilibrium only'], answer: 0 }, // n2
       { q: 'Rearranging F = ma gives acceleration as:', options: ['a = F/m','a = mF','a = m/F','a = F − m'], answer: 0 }, // n3
@@ -1404,22 +1404,22 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'Doubling the mass while keeping the resultant force fixed:', options: ['Halves the acceleration','Doubles the acceleration','Leaves acceleration unchanged','Doubles the force'], answer: 0 }, // n3
       { q: 'The two forces in a Newton\'s third law pair act:', options: ['On different objects','On the same object','In the same direction','Only when moving'], answer: 0 }, // n1
       { q: 'For two particles connected by a light inextensible string, the magnitudes of their accelerations are:', options: ['Equal','In the ratio of their masses','Always zero','Unrelated'], answer: 0 }, // n4
-      { q: 'For a light inextensible string over a smooth pulley, the tension is:', options: ['The same throughout the string','Different on each side','Equal to the total weight','Zero'], answer: 0 }, // n4
+      { q: 'For a light inextensible string over a smooth pulley, the tension is:', options: ['The same throughout the string','Different on each side of the pulley wheel','Equal to the total weight','Zero'], answer: 0 }, // n4
       { q: 'A body in free fall, ignoring resistance, has acceleration:', options: ['g downwards','Zero','g upwards','Depending on its mass'], answer: 0 }, // n3
       { q: "Newton's second law applied in two dimensions is:", options: ['A vector equation, so it may be applied component by component','A scalar equation only','Not applicable','Valid only when a = 0'], answer: 0 }, // n7
       { q: 'When a whole system is treated as one body, internal forces:', options: ['Cancel in pairs and can be ignored','Must be added twice','Become external','Double'], answer: 0 }, // n4
-      { q: 'Problems involving variable mass are:', options: ['Excluded from this specification','Required at A Level','Required at AS Level','Required for pulleys'], answer: 0 }, // n3
+      { q: 'Problems involving variable mass are:', options: ['Excluded from this specification','Required at A Level for rockets and raindrops','Required at AS Level','Required for pulleys'], answer: 0 }, // n3
       { q: 'The F in F = ma must be:', options: ['The resultant of all forces acting','Any one of the forces','The weight only','The largest force'], answer: 0 }, // n3
       { q: 'Equilibrium is the special case of the equation of motion in which:', options: ['a = 0','m = 0','F is largest','v = 0 only'], answer: 0 }, // n3
-      { q: 'A train made of an engine and carriages may be modelled as:', options: ['A set of connected particles','A single rigid lamina','A projectile','A light string'], answer: 0 }, // n4
+      { q: 'A train made of an engine and carriages may be modelled as:', options: ['A set of connected particles','A single rigid lamina of uniform density','A projectile','A light string'], answer: 0 }, // n4
       { q: 'The weight of a body of mass m used in an equation of motion is:', options: ['mg','m','g','m/g'], answer: 0 }, // n3
-      { q: 'An external force on a system is one exerted:', options: ['By something outside the system','Between parts of the system','Only by gravity','Only by friction'], answer: 0 }, // n4
+      { q: 'An external force on a system is one exerted:', options: ['By something outside the system','Between the parts of the system itself','Only by gravity','Only by friction'], answer: 0 }, // n4
     ],
     amber: [
       { q: 'A resultant force of 20 N acts on a mass of 4 kg. The acceleration is:', options: ['5 m s⁻²','80 m s⁻²','0.2 m s⁻²','16 m s⁻²'], answer: 0 }, // n3
       { q: 'A mass of 2 kg accelerates at 3 m s⁻². The resultant force is:', options: ['6 N','1.5 N','0.67 N','5 N'], answer: 0 }, // n3
       { q: 'For a person of mass m in a lift accelerating upwards at a, the equation of motion is:', options: ['R − mg = ma','mg − R = ma','R + mg = ma','R = mg'], answer: 0 }, // n3
-      { q: 'For that same person in a lift accelerating downwards at a, the equation is:', options: ['mg − R = ma','R − mg = ma','R + mg = ma','R = 0'], answer: 0 }, // n3
+      { q: 'For a person of mass m in a lift accelerating downwards at a, with normal reaction R, the equation of motion is:', options: ['mg − R = ma','R − mg = ma','R + mg = ma','R = 0'], answer: 0 }, // n3
       { q: 'Two masses m₁ > m₂ hang over a smooth pulley. Their common acceleration is:', options: ['(m₁ − m₂)g/(m₁ + m₂)','(m₁ + m₂)g/(m₁ − m₂)','m₁g/m₂','g'], answer: 0 }, // n5
       { q: 'A 3 kg block is pulled along a smooth horizontal surface by a force of 12 N. Its acceleration is:', options: ['4 m s⁻²','36 m s⁻²','0.25 m s⁻²','9.8 m s⁻²'], answer: 0 }, // n3
       { q: 'For a block of mass m on a rough surface pulled by force P, the equation of motion is:', options: ['P − μR = ma','P + μR = ma','P = ma','μR = ma'], answer: 0 }, // n3
@@ -1439,9 +1439,9 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     ],
     red: [
       { q: 'Masses of 5 kg and 3 kg hang over a smooth pulley. Taking g = 9.8, the acceleration is:', options: ['2.45 m s⁻²','4.9 m s⁻²','1.225 m s⁻²','9.8 m s⁻²'], answer: 0 }, // n5
-      { q: 'For that same system, the tension in the string is:', options: ['36.75 N','49 N','29.4 N','24.5 N'], answer: 0 }, // n5
+      { q: 'Masses of 5 kg and 3 kg hang over a smooth pulley. Taking g = 9.8, the tension in the string is:', options: ['36.75 N','49 N','29.4 N','24.5 N'], answer: 0 }, // n5
       { q: 'A 4 kg block on a smooth table is connected over a smooth pulley to a 2 kg hanging mass. Taking g = 9.8, the acceleration is closest to:', options: ['3.27 m s⁻²','4.9 m s⁻²','1.63 m s⁻²','9.8 m s⁻²'], answer: 0 }, // n5
-      { q: 'For that same system, the tension is closest to:', options: ['13.1 N','19.6 N','26.1 N','6.5 N'], answer: 0 }, // n5
+      { q: 'A 4 kg block on a smooth table is connected over a smooth pulley to a 2 kg hanging mass. Taking g = 9.8, the tension is closest to:', options: ['13.1 N','19.6 N','26.1 N','6.5 N'], answer: 0 }, // n5
       { q: 'An engine of mass 20 000 kg pulls a carriage of mass 10 000 kg with total driving force 45 000 N and no resistance. The force in the coupling is:', options: ['15 000 N','45 000 N','30 000 N','22 500 N'], answer: 0 }, // n5
       { q: 'A student says "the table pushes up on the book and the book\'s weight pushes down, so these are a third-law pair". This is wrong because:', options: ['A third-law pair acts on two different bodies, but both of these act on the book','The forces are unequal','Weight is not a force','The book is not moving'], answer: 0 }, // n1
       { q: 'A 70 kg passenger is in a lift accelerating upwards at 2 m s⁻². Taking g = 9.8, the normal reaction is:', options: ['826 N','686 N','140 N','546 N'], answer: 0 }, // n3
@@ -1457,22 +1457,22 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'The moment of a force about a point is measured in:', options: ['N m','N','m s⁻²','J'], answer: 0 }, // F13
       { q: 'The moment of a force about a point equals:', options: ['Force × perpendicular distance from the point','Force × time','Force ÷ distance','Force + distance'], answer: 0 }, // F13
       { q: 'A force of 12 N acts perpendicular to a rod, 0.5 m from the pivot. The moment about the pivot is:', options: ['6 N m','24 N m','12 N m','0.5 N m'], answer: 0 }, // F13
-      { q: 'A rigid body is in equilibrium when:', options: ['The resultant force is zero and the sum of the moments about any one point is zero','The resultant force is zero only','The sum of moments about the centre of mass is zero only','All forces act through a single point'], answer: 0 }, // F14
+      { q: 'A rigid body is in equilibrium when:', options: ['The resultant force is zero and the sum of the moments about any one point is zero','The resultant force is zero only','The sum of moments about the centre of mass is zero only, whatever the resultant force','All forces act through a single point'], answer: 0 }, // F14
       { q: 'A system of forces can have a turning effect on:', options: ['A rigid body','A particle only','A light string','A smooth surface'], answer: 0 }, // F15
       { q: 'For the purpose of calculating its moment, the weight of a body acts through:', options: ['Its centre of mass','One end','The pivot','The point of application of the largest force'], answer: 0 }, // F16
       { q: 'For a uniform rod, the centre of mass is at:', options: ['Its midpoint','One end','A quarter of the way along','The pivot'], answer: 0 }, // F16
       { q: 'A force acting through the pivot has a moment about that pivot of:', options: ['Zero','Its full magnitude','Half its magnitude','Infinity'], answer: 0 }, // F13
-      { q: 'Moments are described as clockwise or anticlockwise because:', options: ['A turning effect has a sense of rotation','Forces are scalars','Distance has direction','Moments are always positive'], answer: 0 }, // F15
-      { q: 'A rigid body is one that:', options: ['Does not bend or deform','Has no mass','Is frictionless','Cannot rotate'], answer: 0 }, // F14
+      { q: 'Moments are described as clockwise or anticlockwise because:', options: ['A turning effect has a sense of rotation','Forces are scalars','Distance has direction','Moments are always positive, whichever way the force turns'], answer: 0 }, // F15
+      { q: 'A rigid body is one that:', options: ['Does not bend or deform','Has no mass','Is frictionless','Cannot rotate about any axis'], answer: 0 }, // F14
       { q: 'A lamina is:', options: ['A flat body whose thickness is negligible','A rod','A light string','A particle'], answer: 0 }, // F13
       { q: 'Increasing the perpendicular distance from the pivot, with the force unchanged:', options: ['Increases the moment','Decreases the moment','Leaves the moment unchanged','Reverses the moment'], answer: 0 }, // F13
       { q: 'Although N m and J have the same base units, moment is quoted in:', options: ['N m, to distinguish it from energy','J','N','m'], answer: 0 }, // F13
       { q: 'For a body in equilibrium, taking moments about a point gives:', options: ['Total clockwise moment equals total anticlockwise moment','Total moment equals the weight','Total moment equals mg','No information'], answer: 0 }, // F14
-      { q: 'In this specification, the forces considered in moments problems are:', options: ['Coplanar and perpendicular to the rod or edge','In three dimensions','Always parallel to the rod','Always at 45°'], answer: 0 }, // F13
+      { q: 'In this specification, the forces considered in moments problems are:', options: ['Coplanar and perpendicular to the rod or edge','In three dimensions','Always parallel to the rod or edge they act on','Always at 45°'], answer: 0 }, // F13
       { q: 'The bodies considered in this section are:', options: ['Rods and rectangular laminas, possibly non-uniform','Spheres only','Particles only','Any shape'], answer: 0 }, // F13
       { q: 'A seesaw balances when:', options: ['The moments about the pivot are equal and opposite','The masses are equal','The distances are equal','The weights are zero'], answer: 0 }, // F14
-      { q: 'When taking moments, a sensible choice of pivot is a point:', options: ['Through which an unknown force acts, eliminating it','As far away as possible','At the centre of mass always','Outside the body'], answer: 0 }, // F14
-      { q: 'Equilibrium of a rigid body requires how many types of condition?', options: ['Two — forces and moments','One — forces only','One — moments only','Three'], answer: 0 }, // F14
+      { q: 'When taking moments, a sensible choice of pivot is a point:', options: ['Through which an unknown force acts, eliminating it','As far away as possible','At the centre of mass always, whatever forces are unknown','Outside the body'], answer: 0 }, // F14
+      { q: 'Equilibrium of a rigid body requires how many types of condition?', options: ['Two — forces and moments','One — forces only (no moments)','One — moments only','Three'], answer: 0 }, // F14
       { q: 'A force of 15 N acts perpendicular to a rod at 2 m from the pivot. Its moment is:', options: ['30 N m','7.5 N m','17 N m','13 N m'], answer: 0 }, // F13
     ],
     amber: [
@@ -1484,14 +1484,14 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
       { q: 'Taking moments about a support is useful because:', options: ['The reaction at that support has zero moment there','It doubles the moment','It removes the weight','It makes the body uniform'], answer: 0 }, // F14
       { q: 'Two children of weights 300 N and 500 N sit on a seesaw pivoted at its centre. If the lighter sits 2 m from the pivot, the heavier must sit at:', options: ['1.2 m','1.5 m','3.33 m','2.0 m'], answer: 0 }, // F14
       { q: 'For a non-uniform rod, the centre of mass:', options: ['Is not at the midpoint and must be given or found','Is always at the midpoint','Does not exist','Is at one end'], answer: 0 }, // F16
-      { q: 'A rod rests on two supports. The sum of the two reactions equals:', options: ['The total downward force on the rod','Half the weight','Twice the weight','Zero'], answer: 0 }, // F14
+      { q: 'A rod rests on two supports. The sum of the two reactions equals:', options: ['The total downward force on the rod','Half the weight','Twice the weight of the rod in total','Zero'], answer: 0 }, // F14
       { q: 'A 40 N force acts perpendicular to a 3 m rod at its far end from the pivot. The moment is:', options: ['120 N m','13.3 N m','43 N m','37 N m'], answer: 0 }, // F13
-      { q: 'A uniform beam is supported at one end and held by a vertical force at the other. Taking moments about the supported end eliminates:', options: ['The reaction at that end','The weight','The applied force','Nothing'], answer: 0 }, // F14
-      { q: 'For a body in equilibrium under parallel vertical forces, resolving vertically gives:', options: ['Total upward force equals total downward force','Total moment equals zero','The centre of mass','The pivot position'], answer: 0 }, // F14
-      { q: 'Finding the centre of mass of a composite body is:', options: ['Excluded from this specification','Required at A Level','Required at AS Level','Required for laminas only'], answer: 0 }, // F16
-      { q: 'A vector treatment of moments is:', options: ['Excluded from this specification','Required for rods','Required for laminas','Required in three dimensions'], answer: 0 }, // F13
+      { q: 'A uniform beam is supported at one end and held by a vertical force at the other. Taking moments about the supported end eliminates:', options: ['The reaction at that end','The weight','The applied force at the other end','Nothing'], answer: 0 }, // F14
+      { q: 'For a body in equilibrium under parallel vertical forces, resolving vertically gives:', options: ['Total upward force equals total downward force','Total moment about the centre of mass equals zero','The centre of mass','The pivot position'], answer: 0 }, // F14
+      { q: 'Finding the centre of mass of a composite body is:', options: ['Excluded from this specification','Required at A Level','Required at AS Level','Required for laminas only, not for rods or beams'], answer: 0 }, // F16
+      { q: 'A vector treatment of moments is:', options: ['Excluded from this specification','Required for rods','Required for laminas','Required in three dimensions for all bodies'], answer: 0 }, // F13
       { q: 'In moments questions, the centre of mass may be found:', options: ['From symmetry, from the information given, or by taking moments','Only by integration','Only by experiment','Never'], answer: 0 }, // F16
-      { q: 'A uniform rectangular lamina has its centre of mass:', options: ['At the intersection of its diagonals','At one corner','At the midpoint of one edge','Outside the lamina'], answer: 0 }, // F16
+      { q: 'A uniform rectangular lamina has its centre of mass:', options: ['At the intersection of its diagonals','At one corner','At the midpoint of one of its longer edges','Outside the lamina'], answer: 0 }, // F16
       { q: 'A rod pivoted at one end with a load at the other requires, to stay horizontal:', options: ['An additional force providing a balancing moment','No additional force','Zero weight','A smooth pivot only'], answer: 0 }, // F14
       { q: 'Doubling both the force and its distance from the pivot changes the moment by a factor of:', options: ['4','2','1','1/2'], answer: 0 }, // F13
       { q: 'A rigid body under a single non-zero force applied away from its centre of mass will:', options: ['Not be in equilibrium, since both the resultant force and the moment are non-zero','Be in equilibrium','Only translate','Only rotate'], answer: 0 }, // F14
@@ -1500,14 +1500,14 @@ const MATHS_OCR_B_ALEVEL_QUESTIONS = {
     red: [
       { q: 'A non-uniform rod AB of length 4 m and weight 50 N rests horizontally on supports at A and B. The reaction at A is 20 N. The centre of mass is, from A:', options: ['2.4 m','1.6 m','2.0 m','2.5 m'], answer: 0 }, // F16
       { q: 'A uniform plank of length 6 m and weight 300 N rests on supports 1 m from each end. A child of weight 200 N stands at one end. The reaction at the nearer support is:', options: ['400 N','250 N','150 N','350 N'], answer: 0 }, // F14
-      { q: 'A uniform rod of weight W and length 2a rests on a support at distance a/2 from one end. It will tip about that support unless:', options: ['An additional force provides a balancing moment','The rod is light','The support is smooth','The rod is vertical'], answer: 0 }, // F14
+      { q: 'A uniform rod of weight W and length 2a rests on a support at distance a/2 from one end. It will tip about that support unless:', options: ['An additional force provides a balancing moment','The rod is light','The support is smooth, so no friction can act on the rod','The rod is vertical'], answer: 0 }, // F14
       { q: 'A uniform beam of weight 400 N and length 8 m is supported at one end and at a point 6 m from that end. The reaction at the far support is closest to:', options: ['267 N','200 N','133 N','400 N'], answer: 0 }, // F14
       { q: 'A rod is in equilibrium under three vertical forces. The number of independent equations available is:', options: ['Two — one resolving, one taking moments','One','Three','Four'], answer: 0 }, // F14
       { q: 'A non-uniform rod of weight 80 N and length 5 m rests on supports at its ends, with reactions 30 N and 50 N. Its centre of mass is, from the 30 N end:', options: ['3.125 m','1.875 m','2.5 m','2.0 m'], answer: 0 }, // F16
       { q: 'A plank overhangs a support. A person walking out along the overhang causes tipping when:', options: ['The anticlockwise moment about the support exceeds the clockwise moment','Their weight exceeds the plank\'s weight','The plank becomes non-uniform','The reaction doubles'], answer: 0 }, // F14
       { q: 'Taking moments about two different points for a body in equilibrium gives:', options: ['Two valid equations, though they may not be independent of the resolving equation','Contradictory results','Only one equation','No information'], answer: 0 }, // F14
       { q: 'A uniform rod of weight 60 N and length 4 m is hinged at A and held horizontal by a vertical string at B. The tension in the string is:', options: ['30 N','60 N','120 N','15 N'], answer: 0 }, // F14
-      { q: 'For that same rod, the vertical force at the hinge A is:', options: ['30 N upwards','60 N upwards','30 N downwards','Zero'], answer: 0 }, // F14
+      { q: 'A uniform rod of weight 60 N and length 4 m is hinged at A and held horizontal by a vertical string at B. The vertical force at the hinge A is:', options: ['30 N upwards','60 N upwards','30 N downwards','Zero'], answer: 0 }, // F14
     ],
   },
 

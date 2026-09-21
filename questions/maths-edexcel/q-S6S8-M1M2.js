@@ -80,7 +80,7 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
       },
       {
         q: 'Data is coded using \\(p = x - 10\\) and \\(q = y - 5\\). The regression line of q on p is \\(q = 3 + 2p\\). What is the regression line of y on x?',
-        options: ['\\(y = -12 + 2x\\)', '\\(y = 3 + 2x\\)', '\\(y = 8 + 2x\\)', '\\(y = 18 + 2x\\)'],
+        options: ['\\(y = -12 + 2x\\)', '\\(y = 3 + 2x\\)', '\\(y = 8 + 2x\\)', '\\(y = 18 + 2x\\) (x)'],
         answer: 0
       },
       {
@@ -145,11 +145,11 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
       },
       {
         q: 'Test \\(H_0: \\rho = 0\\) vs \\(H_1: \\rho \\neq 0\\) at 1% significance, \\(n = 15\\), \\(r = 0.60\\). Critical value is 0.6411. Conclusion:',
-        options: ['Do not reject \\(H_0\\); insufficient evidence of linear correlation','Reject \\(H_0\\); significant negative correlation','Accept \\(H_1\\) since \\(r > 0.5\\)','Reject \\(H_0\\); significant positive correlation'], answer: 0
+        options: ['Do not reject \\(H_0\\); insufficient evidence of linear correlation','Reject \\(H_0\\); significant negative correlation','Accept \\(H_1\\) since \\(r > 0.5\\)','Reject \\(H_0\\); there is significant positive correlation at 1% level'], answer: 0
       },
       {
         q: 'The least squares regression minimises which quantity?',
-        options: ['The sum of squared vertical residuals \\(\\sum (y_i - \\hat{y}_i)^2\\)','The sum of squared horizontal residuals','The variance of x','The sum of absolute residuals \\(\\sum |y_i - \\hat{y}_i|\\)'], answer: 0
+        options: ['The sum of squared vertical residuals \\(\\sum (y_i - \\hat{y}_i)^2\\)','The sum of squared horizontal residuals','The variance of x','The sum of the absolute residuals \\(\\sum |y_i - \\hat{y}_i|\\) only for all points'], answer: 0
       },
       {
         q: 'For a bivariate dataset, \\(S_{xx} = 50\\), \\(S_{yy} = 72\\), \\(r = 0.6\\). Find \\(S_{xy}\\).',
@@ -214,7 +214,7 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
       },
       {
         q: 'On a tree diagram, to find the probability of following a particular path, you:',
-        options: ['Multiply the probabilities along the branches', 'Add the probabilities along the branches', 'Subtract the probabilities', 'Divide by the final branch probability'],
+        options: ['Multiply the probabilities along the branches', 'Add the probabilities along each of the branches', 'Subtract the probabilities', 'Divide by the final branch probability'],
         answer: 0
       },
       {
@@ -293,7 +293,7 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
     red: [
       {
         q: '\\(P(A) = 0.4\\), \\(P(B) = 0.35\\), \\(P(A \\cup B) = 0.58\\). Test whether A and B are independent.',
-        options: ['Independent since \\(P(A \\cap B) = P(A) \\times P(B)\\)','Independent since \\(P(A \\cup B) \\neq 0\\)','Cannot be determined from this information','Not independent since \\(P(A \\cap B) = 0.17 \\neq 0.14 = P(A)P(B)\\)'], answer: 3
+        options: ['Independent since \\(P(A \\cap B) = P(A) \\times P(B)\\) in every case','Independent since \\(P(A \\cup B) \\neq 0\\)','Cannot be determined from this information','Not independent since \\(P(A \\cap B) = 0.17 \\neq 0.14 = P(A)P(B)\\)'], answer: 3
       },
       {
         q: 'Machine M1 makes 55% of items (1% defective); M2 makes 45% (3% defective). Given item is defective, find \\(P(M2|\\text{defective})\\).',
@@ -449,7 +449,7 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
     red: [
       {
         q: '\\(X \\sim N(\\mu, \\sigma^2)\\). \\(P(X < 18) = 0.1\\) and \\(P(X < 30) = 0.85\\). Find \\(\\mu\\) and \\(\\sigma\\). [\\(z_{0.1} = -1.282\\), \\(z_{0.85} = 1.036\\)]',
-        options: ['\\(\\mu \\approx 22.3, \\sigma \\approx 3.7\\)','\\(\\mu = 25, \\sigma = 5\\)','\\(\\mu = 24, \\sigma = 6\\)','\\(\\mu \\approx 24.7, \\sigma \\approx 5.24\\)'], answer: 3
+        options: ['\\(\\mu \\approx 22.3, \\sigma \\approx 3.742\\)','\\(\\mu = 25, \\sigma = 5\\)','\\(\\mu = 24, \\sigma = 6\\)','\\(\\mu \\approx 24.6, \\sigma \\approx 5.18\\)'], answer: 3
       },
       {
         q: '\\(X \\sim B(150, 0.3)\\). Using normal approximation, find \\(P(40 \\leq X \\leq 50)\\) (set up the z-scores correctly).',
@@ -491,17 +491,17 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
       },
       {
         q: 'The weight of a 4 kg object (using \\(g = 9.8 \\text{ m s}^{-2}\\)) is:',
-        options: ['\\(39.2 \\text{ N}\\)', '\\(4 \\text{ N}\\)', '\\(9.8 \\text{ N}\\)', '\\(4.9 \\text{ N}\\)'],
+        options: ['\\(39.2 \\text{ N}\\)', '\\(4 \\text{ N}\\)', '\\(9.8 \\text{ N kg}^{-1}\\)', '\\(4.9 \\text{ N}\\)'],
         answer: 0
       },
       {
         q: 'A "smooth" surface means:',
-        options: ['No friction acts between the surface and the object', 'The surface is horizontal', 'The object slides freely regardless of friction', 'The normal reaction is zero'],
+        options: ['No friction acts between the surface and the object', 'The surface is horizontal', 'The object slides freely regardless of the friction force', 'The normal reaction is zero'],
         answer: 0
       },
       {
         q: 'On a free body diagram, which forces act on a book resting on a table?',
-        options: ['Weight (downward) and normal reaction (upward)', 'Weight only', 'Normal reaction only', 'Weight, normal reaction, and friction'],
+        options: ['Weight (downward) and normal reaction (upward)', 'Weight only', 'Normal reaction only', 'Weight, normal reaction, and friction acting sideways'],
         answer: 0
       },
       {
@@ -521,7 +521,7 @@ const EDEXCEL_MCQ_S6S8_M1M2 = {
       },
       {
         q: 'Newton\'s First Law states an object at rest remains at rest unless:',
-        options: ['A resultant force acts on it', 'It has zero mass', 'It is on a smooth surface', 'Friction is present'],
+        options: ['A resultant force acts on it', 'It has zero mass', 'It is on a smooth horizontal surface', 'Friction is present'],
         answer: 0
       },
       {

@@ -31,7 +31,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'Prove: which step correctly starts \\(\\dfrac{\\cos^2\\theta}{1 + \\sin\\theta}\\)?', options: ['\\(\\dfrac{1-\\sin^2\\theta}{1+\\sin\\theta}\\)', '\\(\\dfrac{\\sin^2\\theta-1}{1+\\sin\\theta}\\)', '\\(\\dfrac{1-\\cos^2\\theta}{1+\\sin\\theta}\\)', '\\(\\dfrac{1+\\sin^2\\theta}{1+\\sin\\theta}\\)'], answer: 0 },
     ],
     red: [
-      { q: 'The general solution of \\(\\sin\\theta = k\\) (in degrees) is:', options: ['\\(\\theta = \\pm \\sin^{-1}(k) + 360n\\)','\\(\\theta = \\sin^{-1}(k) + 180n\\)','\\(\\theta = \\sin^{-1}(k) + 360n\\) or \\(\\theta = 180 -','\\(\\theta = \\sin^{-1}(k) + 90n\\)'], answer: 2 },
+      { q: 'The general solution of \\(\\sin\\theta = k\\) (in degrees) is:', options: ['\\(\\theta = \\pm \\sin^{-1}(k) + 360n\\)', '\\(\\theta = \\sin^{-1}(k) + 180n\\)', '\\(\\theta = \\sin^{-1}(k) + 360n\\) or \\(\\theta = 180 - \\sin^{-1}(k) + 360n\\)', '\\(\\theta = \\sin^{-1}(k) + 90n\\)'], answer: 2 },
       { q: 'Express \\(5\\sin x - 12\\cos x\\) in the form \\(R\\sin(x - \\alpha)\\). What is \\(R\\)?', options: ['13','17','\\(\\sqrt{119}\\)','7'], answer: 0 },
       { q: 'Solve \\(2\\sin^2 x + 3\\cos x - 3 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\). The number of solutions is:', options: ['2','3','1','4'], answer: 1 },
       { q: 'If \\(\\cos 2x = 1 - 2\\sin^2 x\\), which quadratic in \\(\\sin x\\) is equivalent to \\(\\cos 2x + \\sin x = 0\\)?', options: ['\\(2\\sin^2 x - \\sin x - 1 = 0\\)','\\(2\\sin^2 x + \\sin x - 1 = 0\\)','\\(2\\sin^2 x - \\sin x + 1 = 0\\)','\\(\\sin^2 x - \\sin x - 1 = 0\\)'], answer: 0 },
@@ -111,7 +111,7 @@ const EDEXCEL_MCQ_P7_P11 = {
       { q: 'The point \\((2, 5)\\) lies on \\(y = x^2 + 1\\). The equation of the normal at this point is:', options: ['\\(y = -\\frac{1}{4}x + \\frac{11}{2}\\)', '\\(y = 4x - 3\\)', '\\(y = -4x + 13\\)', '\\(y = \\frac{1}{4}x + \\frac{11}{2}\\)'], answer: 0 },
     ],
     red: [
-      { q: 'Using first principles, differentiate \\(f(x) = \\dfrac{1}{x}\\). The answer is:', options: ['\\(-\\dfrac{1}{x^2}\\)','\\(\\dfrac{1}{x^2}\\)','\\(\\ln x\\)','\\(-x^{-1}\\)'], answer: 0 },
+      { q: 'Using first principles, differentiate \\(f(x) = \\dfrac{1}{x}\\). The answer is:', options: ['\\(-\\dfrac{1}{x^2}\\)','\\(\\dfrac{1}{x^2}\\)','\\(\\ln x\\)','\\(-x^{-1} \\ln |x| + c\\)'], answer: 0 },
       { q: 'A cylinder has volume \\(V = 500\\) cm³. Express the total surface area \\(S\\) in terms of radius \\(r\\) only, then find \\(r\\) for minimum \\(S\\):', options: ['\\(r = \\left(\\dfrac{250}{\\pi}\\right)^{1/3}\\)','\\(r = 5\\)','\\(r = \\left(\\dfrac{500}{\\pi}\\right)^{1/3}\\)','\\(r = \\dfrac{250}{\\pi}\\)'], answer: 0 },
       { q: 'A curve \\(C\\) has equation \\(y = x^3 - 3x + 2\\). The tangent at \\((-1, 4)\\) has equation:', options: ['\\(y = 0\\cdot x + 4\\)','\\(y = -3x + 1\\)','\\(y = 4\\)','\\(y = 3x + 7\\)'], answer: 0 },
       { q: 'A function has \\(f\'\'(a) = 0\\) at a stationary point. What additional test is needed?', options: ['Check the sign of \\(f\'(x)\\) either side of \\(x = a\\)','Check \\(f(a)\\)','Compute \\(f\'\'\'(a)\\)','No further test needed — it is a point of inflection'], answer: 0 },
