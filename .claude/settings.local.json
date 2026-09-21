@@ -95,7 +95,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"$HOME/.claude/hooks/studyrag-autopush-ask.sh\"",
+            "command": "S=\"${CLAUDE_PROJECT_DIR:-$HOME/StudyRAG}/.claude/hooks/studyrag-autopush-ask.sh\"; [ -x \"$S\" ] || S=\"$HOME/.claude/hooks/studyrag-autopush-ask.sh\"; exec \"$S\"",
             "timeout": 10
           }
         ]
@@ -106,7 +106,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "\"$HOME/.claude/hooks/studyrag-autopush-stop.sh\"",
+            "command": "S=\"${CLAUDE_PROJECT_DIR:-$HOME/StudyRAG}/.claude/hooks/studyrag-autopush-stop.sh\"; [ -x \"$S\" ] || S=\"$HOME/.claude/hooks/studyrag-autopush-stop.sh\"; exec \"$S\"",
             "timeout": 60,
             "statusMessage": "Auto-pushing to GitHub..."
           }
