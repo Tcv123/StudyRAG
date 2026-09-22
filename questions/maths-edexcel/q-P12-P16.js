@@ -11,22 +11,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P12',
     q: 'According to the Factor Theorem, \\(f(a) = 0\\) implies which of the following?',
-    options: ['\\((x - a)\\) is a factor of \\(f(x)\\)', '\\((x + a)\\) is a factor of \\(f(x)\\)', '\\(f(x)\\) has no real roots', '\\(a\\) is the remainder when dividing by \\(x\\)'],
-    answer: 0
+    options: ['\\(a\\) is the remainder when dividing by \\(x\\)', '\\((x - a)\\) is a factor of \\(f(x)\\)', '\\((x + a)\\) is a factor of \\(f(x)\\)', '\\(f(x)\\) has no real roots'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P12',
     q: 'What is the remainder when \\(f(x) = x^3 - 2x + 5\\) is divided by \\((x - 1)\\)?',
-    options: ['4', '5', '2', '−2'],
-    answer: 0
+    options: ['2', '−2', '4', '5'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P12',
     q: 'Which partial fraction form is correct for \\(\\dfrac{3x + 1}{(x-1)(x+2)}\\)?',
-    options: ['\\(\\dfrac{A}{x-1} + \\dfrac{B}{x+2}\\)', '\\(\\dfrac{A}{(x-1)(x+2)}\\)', '\\(\\dfrac{Ax+B}{x-1} + \\dfrac{C}{x+2}\\)', '\\(\\dfrac{A}{x-1} + \\dfrac{Bx+C}{x+2}\\)'],
-    answer: 0
+    options: ['\\(\\dfrac{A}{(x-1)(x+2)}\\)', '\\(\\dfrac{Ax+B}{x-1} + \\dfrac{C}{x+2}\\)', '\\(\\dfrac{A}{x-1} + \\dfrac{Bx+C}{x+2}\\)', '\\(\\dfrac{A}{x-1} + \\dfrac{B}{x+2}\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -39,22 +39,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P12',
     q: 'In proof by contradiction, the first step is to:',
-    options: ['Assume the negation of the statement to be proved', 'Assume the statement is true', 'Find a counterexample', 'Prove a simpler related result'],
-    answer: 0
+    options: ['Prove a simpler related result', 'Assume the negation of the statement to be proved', 'Assume the statement is true', 'Find a counterexample'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P12',
     q: 'Is \\(\\dfrac{x^3 + 2x}{x^2 - 1}\\) a proper or improper fraction?',
-    options: ['Improper, because degree of numerator \\(\\geq\\) degree of denominator', 'Proper, because the numerator has more terms', 'Proper, because \\(x^3\\) divides evenly', 'Improper only if the denominator has repeated linear factors of any kind'],
-    answer: 0
+    options: ['Proper, because \\(x^3\\) divides evenly', 'Improper only if the denominator has repeated linear factors of any kind', 'Improper, because degree of numerator \\(\\geq\\) degree of denominator', 'Proper, because the numerator has more terms'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P12',
     q: 'When dividing \\(f(x)\\) by \\((2x - 1)\\), the Remainder Theorem gives the remainder as:',
-    options: ['\\(f\\!\\left(\\frac{1}{2}\\right)\\)', '\\(f(2)\\)', '\\(f(-1)\\)', '\\(f(1)\\)'],
-    answer: 0
+    options: ['\\(f(2)\\)', '\\(f(-1)\\)', '\\(f(1)\\)', '\\(f\\!\\left(\\frac{1}{2}\\right)\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -67,22 +67,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P12',
     q: 'What contradiction arises in proving \\(\\sqrt{2}\\) is irrational (assuming it equals \\(p/q\\) in lowest terms)?',
-    options: ['Both \\(p\\) and \\(q\\) must be even, contradicting \\(\\gcd(p,q)=1\\)', '\\(p^2 = 2q\\) has no integer solution', '\\(\\sqrt{2}\\) cannot be written as a fraction', '\\(p\\) and \\(q\\) must both be odd'],
-    answer: 0
+    options: ['\\(p\\) and \\(q\\) must both be odd', 'Both \\(p\\) and \\(q\\) must be even, contradicting \\(\\gcd(p,q)=1\\)', '\\(p^2 = 2q\\) has no integer solution', '\\(\\sqrt{2}\\) cannot be written as a fraction'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P12',
     q: 'The degree of the remainder when dividing by a linear factor must be:',
-    options: ['0 (a constant)', '1', 'Less than the divisor degree — 1', 'Equal to the numerator degree'],
-    answer: 0
+    options: ['Less than the divisor degree — 1', 'Equal to the numerator degree', '0 (a constant)', '1'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P12',
     q: 'Algebraic long division of \\(x^3 + 3x^2 - x + 2\\) by \\((x-1)\\) gives a remainder of:',
-    options: ['5', '4', '3', '1'],
-    answer: 0
+    options: ['4', '3', '1', '5'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -97,22 +97,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P12',
     q: 'Given \\(f(x) = 2x^3 - 3x^2 - 11x + 6\\), which linear factor can be confirmed by the Factor Theorem, and what is the fully factorised form?',
-    options: ['\\((x-3)(2x+1)(x-2)\\) — verified by \\(f(3)=0\\)', '\\((x+3)(x-1)(2x-2)\\)', '\\((x-2)(x+2)(2x-3)\\)', '\\((2x-1)(x-3)(x+2)\\)'],
-    answer: 3
+    options: ['\\((x-2)(x+2)(2x-3)\\)', '\\((2x-1)(x-3)(x+2)\\)', '\\((x-3)(2x+1)(x-2)\\) — verified by \\(f(3)=0\\)', '\\((x+3)(x-1)(2x-2)\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P12',
     q: 'Express \\(\\dfrac{x^2 + 5x + 3}{(x+1)(x+2)}\\) in partial fractions. What preliminary step is needed?',
-    options: ['Polynomial division, since the fraction is improper', 'Multiply the numerator and denominator by \\((x+1)\\) first', 'No preliminary step — substitute directly', 'Complete the square on the numerator'],
-    answer: 0
+    options: ['No preliminary step — substitute directly', 'Complete the square on the numerator', 'Polynomial division, since the fraction is improper', 'Multiply the numerator and denominator by \\((x+1)\\) first'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P12',
     q: "When \\(x^3 + ax^2 - x + b\\) is divided by \\((x-2)\\) the remainder is 9, and \\((x+1)\\) is a factor. Find \\(a + b\\).",
-    options: ["0","3","−1","1"],
-    answer: 0
+    options: ["3","−1","1","0"],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -125,22 +125,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P12',
     q: 'In the proof that there are infinitely many primes, the key is to consider \\(N = p_1 p_2 \\cdots p_n + 1\\). Why does this lead to a contradiction?',
-    options: ['\\(N\\) has a prime factor not in the list \\(\\{p_1,\\ldots,p_n\\}\\)', '\\(N\\) itself must be prime', '\\(N\\) is divisible by all of the primes \\(p_1, \\ldots, p_n\\) given', '\\(N\\) cannot be factored'],
-    answer: 0
+    options: ['\\(N\\) cannot be factored', '\\(N\\) has a prime factor not in the list \\(\\{p_1,\\ldots,p_n\\}\\)', '\\(N\\) itself must be prime', '\\(N\\) is divisible by all of the primes \\(p_1, \\ldots, p_n\\) given'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P12',
     q: "\\(f(x) = x^3 + px^2 + qx - 10\\) has factors \\((x+2)\\) and \\((x-1)\\). Find \\(p\\).",
-    options: ["6","3","−2","4"],
-    answer: 0
+    options: ["−2","4","6","3"],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P12',
     q: 'Dividing \\(2x^3 - 5x^2 + x + 2\\) by \\((x - 2)\\) gives quotient:',
-    options: ['\\(2x^2 - x - 1\\)', '\\(2x^2 + x + 1\\)', '\\(2x^2 - 3x - 1\\)', '\\(2x^2 - x + 1\\)'],
-    answer: 0
+    options: ['\\(2x^2 + x + 1\\)', '\\(2x^2 - 3x - 1\\)', '\\(2x^2 - x + 1\\)', '\\(2x^2 - x - 1\\)'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -153,22 +153,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P12',
     q: 'The equation \\(x^3 - 7x - 6 = 0\\) has three integer roots. What are they?',
-    options: ['\\(-1, -2, 3\\)', '\\(1, 2, -3\\)', '\\(-1, 2, 3\\)', '\\(1, -2, -3\\)'],
-    answer: 0
+    options: ['\\(1, -2, -3\\)', '\\(-1, -2, 3\\)', '\\(1, 2, -3\\)', '\\(-1, 2, 3\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P12',
     q: 'A student writes \\(\\dfrac{4x^2+3}{(x^2-1)} \\equiv \\dfrac{A}{x-1}+\\dfrac{B}{x+1}\\). Is this correct?',
-    options: ['No — the fraction is improper; divide first to get \\(4 + \\dfrac{7}{(x-1)(x+1)}\\)', 'Yes — partial fractions apply directly', 'No — a quadratic denominator requires \\(Ax+B\\)', 'Yes — degree of numerator does not matter'],
-    answer: 0
+    options: ['No — a quadratic denominator requires \\(Ax+B\\)', 'Yes — degree of numerator does not matter', 'No — the fraction is improper; divide first to get \\(4 + \\dfrac{7}{(x-1)(x+1)}\\)', 'Yes — partial fractions apply directly'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P12',
     q: 'Prove by contradiction: if \\(n^2\\) is even then \\(n\\) is even. Which key step is used?',
-    options: ['Assume \\(n\\) is odd, then \\(n^2\\) is odd — contradiction', 'Assume \\(n^2\\) is odd, then derive that \\(n\\) must be even', 'Use the Factor Theorem on \\(n^2 - 2k\\)', 'Show \\(n^2\\) has no odd divisors'],
-    answer: 0
+    options: ['Assume \\(n^2\\) is odd, then derive that \\(n\\) must be even', 'Use the Factor Theorem on \\(n^2 - 2k\\)', 'Show \\(n^2\\) has no odd divisors', 'Assume \\(n\\) is odd, then \\(n^2\\) is odd — contradiction'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -183,22 +183,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P12',
     q: "\\(f(x) = 6x^3 + ax^2 + bx - 2\\). Given \\((2x-1)\\) and \\((3x+2)\\) are both factors, find \\(a\\) and \\(b\\) then state the third factor.",
-    options: ["\\(a=7,\\ b=-1\\); third factor \\((x+1)\\)","\\(a=1,\\ b=-5\\); third factor \\((x+2)\\)","\\(a=2,\\ b=-3\\); third factor \\((x-2)\\)","\\(a=-7,\\ b=1\\); third factor \\((x-1)\\)"],
-    answer: 0
+    options: ["\\(a=-7,\\ b=1\\); third factor \\((x-1)\\)","\\(a=7,\\ b=-1\\); third factor \\((x+1)\\)","\\(a=1,\\ b=-5\\); third factor \\((x+2)\\)","\\(a=2,\\ b=-3\\); third factor \\((x-2)\\)"],
+    answer: 1
   },
   {
     tier: 'red',
     topic: 'P12',
     q: "Express \\(\\dfrac{2x^3 + x^2 - x + 3}{(x+1)(x-1)}\\) in the form \\(ax + b + \\dfrac{C}{x+1} + \\dfrac{D}{x-1}\\).",
-    options: ["\\(2x + 1 - \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)","\\(2x + 1 + \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)","\\(2x + 1 - \\dfrac{5}{2(x+1)} + \\dfrac{3}{2(x-1)}\\)","\\(2x - 1 - \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)"],
-    answer: 0
+    options: ["\\(2x + 1 - \\dfrac{5}{2(x+1)} + \\dfrac{3}{2(x-1)}\\)","\\(2x - 1 - \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)","\\(2x + 1 - \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)","\\(2x + 1 + \\dfrac{3}{2(x+1)} + \\dfrac{5}{2(x-1)}\\)"],
+    answer: 2
   },
   {
     tier: 'red',
     topic: 'P12',
     q: 'Prove by contradiction: the sum of a rational and an irrational number is irrational. The key contradiction is:',
-    options: ['Rearranging produces an irrational = rational, which is impossible', 'The sum must be positive', 'An irrational squared is rational', 'Rational numbers cannot be added to irrational numbers, so the sum is undefined'],
-    answer: 0
+    options: ['The sum must be positive', 'An irrational squared is rational', 'Rational numbers cannot be added to irrational numbers, so the sum is undefined', 'Rearranging produces an irrational = rational, which is impossible'],
+    answer: 3
   },
   {
     tier: 'red',
@@ -211,15 +211,15 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P12',
     q: 'Given \\(\\dfrac{f(x)}{(x-1)^2(x+3)}\\) in partial fractions, which method most efficiently finds all three constants?',
-    options: ['Cover-up for the non-repeated factor; substitute a convenient value and equate coefficients for the repeated factor', 'Equate coefficients only for all three constants', 'Substitute \\(x=0, 1, -3\\) into the multiplied identity and solve the three equations simultaneously using elimination', 'Use long division first'],
-    answer: 0
+    options: ['Use long division first', 'Cover-up for the non-repeated factor; substitute a convenient value and equate coefficients for the repeated factor', 'Equate coefficients only for all three constants', 'Substitute \\(x=0, 1, -3\\) into the multiplied identity and solve the three equations simultaneously using elimination'],
+    answer: 1
   },
   {
     tier: 'red',
     topic: 'P12',
     q: 'Prove by contradiction that \\(\\log_2 3\\) is irrational.',
-    options: ['Assume \\(\\log_2 3 = p/q\\); then \\(2^p = 3^q\\) — a power of 2 equals a power of 3, impossible since they have different prime factors', 'Assume \\(\\log_2 3\\) is rational; then \\(\\log_2 3 = 0\\)', 'Note \\(\\log_2 3 > 1\\) and use the Factor Theorem', '\\(\\log_2 3\\) is between integers so cannot be rational'],
-    answer: 0
+    options: ['Note \\(\\log_2 3 > 1\\) and use the Factor Theorem', '\\(\\log_2 3\\) is between integers so cannot be rational', 'Assume \\(\\log_2 3 = p/q\\); then \\(2^p = 3^q\\) — a power of 2 equals a power of 3, impossible since they have different prime factors', 'Assume \\(\\log_2 3\\) is rational; then \\(\\log_2 3 = 0\\)'],
+    answer: 2
   },
 
   // ─── P13: Functions and Graphs ────────────────────────────────────────
@@ -229,8 +229,8 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P13',
     q: 'The notation \\(fg(x)\\) means:',
-    options: ['Apply \\(g\\) first, then \\(f\\) to the result', 'Apply \\(f\\) first, then \\(g\\)', 'Multiply \\(f(x)\\) and \\(g(x)\\)', 'Add \\(f(x)\\) and \\(g(x)\\)'],
-    answer: 0
+    options: ['Apply \\(f\\) first, then \\(g\\)', 'Multiply \\(f(x)\\) and \\(g(x)\\)', 'Add \\(f(x)\\) and \\(g(x)\\)', 'Apply \\(g\\) first, then \\(f\\) to the result'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -243,22 +243,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P13',
     q: 'The graph of \\(y = f^{-1}(x)\\) is the reflection of \\(y = f(x)\\) in:',
-    options: ['The line \\(y = x\\)', 'The \\(x\\)-axis', 'The \\(y\\)-axis', 'The line \\(y = -x\\)'],
-    answer: 0
+    options: ['The line \\(y = -x\\)', 'The line \\(y = x\\)', 'The \\(x\\)-axis', 'The \\(y\\)-axis'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P13',
     q: '\\(|{-7}|\\) equals:',
-    options: ['7', '−7', '0', '49'],
-    answer: 0
+    options: ['0', '49', '7', '−7'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P13',
     q: 'The graph of \\(y = f(x) + 3\\) is obtained from \\(y = f(x)\\) by:',
-    options: ['Translation \\(\\begin{pmatrix}0\\\\3\\end{pmatrix}\\)', 'Translation \\(\\begin{pmatrix}3\\\\0\\end{pmatrix}\\)', 'Vertical stretch factor 3', 'Horizontal stretch factor \\(\\frac{1}{3}\\)'],
-    answer: 0
+    options: ['Translation \\(\\begin{pmatrix}3\\\\0\\end{pmatrix}\\)', 'Vertical stretch factor 3', 'Horizontal stretch factor \\(\\frac{1}{3}\\)', 'Translation \\(\\begin{pmatrix}0\\\\3\\end{pmatrix}\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -271,22 +271,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P13',
     q: 'To find \\(f^{-1}(x)\\) algebraically, you:',
-    options: ['Write \\(y=f(x)\\), swap \\(x\\) and \\(y\\), rearrange for \\(y\\)', 'Reflect the equation in \\(y = x\\)', 'Differentiate \\(f(x)\\) and invert', 'Set \\(f(x) = 0\\) and solve'],
-    answer: 0
+    options: ['Set \\(f(x) = 0\\) and solve', 'Write \\(y=f(x)\\), swap \\(x\\) and \\(y\\), rearrange for \\(y\\)', 'Reflect the equation in \\(y = x\\)', 'Differentiate \\(f(x)\\) and invert'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P13',
     q: 'Which of these is NOT a valid function?',
-    options: ['A one-to-many mapping', 'A many-to-one mapping', 'A one-to-one mapping', 'A constant function'],
-    answer: 0
+    options: ['A one-to-one mapping', 'A constant function', 'A one-to-many mapping', 'A many-to-one mapping'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P13',
     q: 'The range of \\(f(x) = x^2 + 1\\) for \\(x \\in \\mathbb{R}\\) is:',
-    options: ['\\(f(x) \\geq 1\\)', '\\(f(x) > 0\\)', '\\(f(x) \\geq 0\\)', 'All real numbers'],
-    answer: 0
+    options: ['\\(f(x) > 0\\)', '\\(f(x) \\geq 0\\)', 'All real numbers', '\\(f(x) \\geq 1\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -299,15 +299,15 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P13',
     q: '\\(y = -f(x)\\) represents:',
-    options: ['Reflection in the \\(x\\)-axis', 'Reflection in the \\(y\\)-axis', 'Reflection in \\(y = x\\)', 'Vertical stretch factor \\(-1\\) — same as reflection in the origin'],
-    answer: 0
+    options: ['Vertical stretch factor \\(-1\\) — same as reflection in the origin', 'Reflection in the \\(x\\)-axis', 'Reflection in the \\(y\\)-axis', 'Reflection in \\(y = x\\)'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P13',
     q: 'If \\(f(x) = 3x - 1\\), find \\(f^{-1}(x)\\).',
-    options: ['\\(\\dfrac{x+1}{3}\\)', '\\(\\dfrac{x-1}{3}\\)', '\\(3x + 1\\)', '\\(\\dfrac{1}{3x-1}\\)'],
-    answer: 0
+    options: ['\\(3x + 1\\)', '\\(\\dfrac{1}{3x-1}\\)', '\\(\\dfrac{x+1}{3}\\)', '\\(\\dfrac{x-1}{3}\\)'],
+    answer: 2
   },
 
   // AMBER (12)
@@ -315,8 +315,8 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P13',
     q: 'Given \\(f(x)=2x+1\\) and \\(g(x)=x^2-3\\), find \\(fg(2)\\).',
-    options: ['3', '−1', '9', '5'],
-    answer: 0
+    options: ['−1', '9', '5', '3'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -329,22 +329,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P13',
     q: 'For \\(f(x) = \\dfrac{1}{x-2}\\), \\(x > 2\\), what is the domain of \\(f^{-1}\\)?',
-    options: ['\\(x > 0\\)', '\\(x < 0\\)', '\\(x > 2\\)', 'All real \\(x\\)'],
-    answer: 0
+    options: ['All real \\(x\\)', '\\(x > 0\\)', '\\(x < 0\\)', '\\(x > 2\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P13',
     q: 'The solution to \\(|x + 1| < 3\\) is:',
-    options: ['\\(-4 < x < 2\\)', '\\(x < -4\\) or \\(x > 2\\)', '\\(-2 < x < 4\\)', '\\(x > 2\\)'],
-    answer: 0
+    options: ['\\(-2 < x < 4\\)', '\\(x > 2\\)', '\\(-4 < x < 2\\)', '\\(x < -4\\) or \\(x > 2\\)'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P13',
     q: 'Describe fully the transformation from \\(y = f(x)\\) to \\(y = 3f(x+2)\\).',
-    options: ['Translation \\(\\begin{pmatrix}-2\\\\0\\end{pmatrix}\\) then vertical stretch SF 3', 'Vertical stretch SF 3 then translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\)', 'Translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\) then vertical stretch SF 3', 'Horizontal stretch SF 3 then translation \\(\\begin{pmatrix}-2\\\\0\\end{pmatrix}\\)'],
-    answer: 0
+    options: ['Vertical stretch SF 3 then translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\)', 'Translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\) then vertical stretch SF 3', 'Horizontal stretch SF 3 then translation \\(\\begin{pmatrix}-2\\\\0\\end{pmatrix}\\)', 'Translation \\(\\begin{pmatrix}-2\\\\0\\end{pmatrix}\\) then vertical stretch SF 3'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -357,22 +357,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P13',
     q: 'How many solutions does \\(|x^2 - 4| = 3\\) have?',
-    options: ['4', '2', '3', '1'],
-    answer: 0
+    options: ['1', '4', '2', '3'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P13',
     q: 'Find \\(f^{-1}(x)\\) where \\(f(x) = \\dfrac{x}{x+3}\\), \\(x \\neq -3\\).',
-    options: ['\\(\\dfrac{3x}{1-x}\\)', '\\(\\dfrac{x+3}{x}\\)', '\\(\\dfrac{3}{x-1}\\)', '\\(\\dfrac{x}{3-x}\\)'],
-    answer: 0
+    options: ['\\(\\dfrac{3}{x-1}\\)', '\\(\\dfrac{x}{3-x}\\)', '\\(\\dfrac{3x}{1-x}\\)', '\\(\\dfrac{x+3}{x}\\)'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P13',
     q: 'A function \\(f\\) has domain \\(\\{x : x \\geq 2\\}\\) and range \\(\\{y : y \\geq 0\\}\\). Which statement about \\(f^{-1}\\) is correct?',
-    options: ['Domain of \\(f^{-1}\\) is \\(\\{x : x \\geq 0\\}\\); range is \\(\\{y : y \\geq 2\\}\\)', 'Domain of \\(f^{-1}\\) is \\(\\{x : x \\geq 2\\}\\); range is \\(\\{y : y \\geq 0\\}\\)', 'Domain and range of \\(f^{-1}\\) are both \\(\\{x : x \\geq 0\\}\\)', '\\(f^{-1}\\) does not exist'],
-    answer: 0
+    options: ['Domain of \\(f^{-1}\\) is \\(\\{x : x \\geq 2\\}\\); range is \\(\\{y : y \\geq 0\\}\\)', 'Domain and range of \\(f^{-1}\\) are both \\(\\{x : x \\geq 0\\}\\)', '\\(f^{-1}\\) does not exist', 'Domain of \\(f^{-1}\\) is \\(\\{x : x \\geq 0\\}\\); range is \\(\\{y : y \\geq 2\\}\\)'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -385,15 +385,15 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P13',
     q: 'Solve \\(|3x - 1| > 5\\).',
-    options: ['\\(x > 2\\) or \\(x < -\\frac{4}{3}\\)', '\\(-\\frac{4}{3} < x < 2\\)', '\\(x > 2\\) only', '\\(x < -\\frac{4}{3}\\) only'],
-    answer: 0
+    options: ['\\(x < -\\frac{4}{3}\\) only', '\\(x > 2\\) or \\(x < -\\frac{4}{3}\\)', '\\(-\\frac{4}{3} < x < 2\\)', '\\(x > 2\\) only'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P13',
     q: "If \\(f(x) = e^x\\) and \\(g(x) = \\ln x\\), \\(x > 0\\), then \\(fg(x)\\) equals:",
-    options: ["\\(x\\)","\\(e^x \\cdot \\ln x\\)","\\(\\dfrac{1}{x}\\)","\\(\\ln x\\)"],
-    answer: 0
+    options: ["\\(\\dfrac{1}{x}\\)","\\(\\ln x\\)","\\(x\\)","\\(e^x \\cdot \\ln x\\)"],
+    answer: 2
   },
 
   // RED (6)
@@ -401,8 +401,8 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P13',
     q: 'The function \\(f(x) = x^2 - 4x + 5\\) has domain \\(x \\geq 2\\). Find \\(f^{-1}(x)\\) and state its domain.',
-    options: ['\\(f^{-1}(x) = 2 + \\sqrt{x-1}\\), domain \\(x \\geq 1\\)', '\\(f^{-1}(x) = 2 - \\sqrt{x-1}\\), domain \\(x \\geq 1\\)', '\\(f^{-1}(x) = \\sqrt{x-5} + 2\\), domain \\(x \\geq 5\\)', '\\(f^{-1}(x) = 2 + \\sqrt{x+1}\\), domain \\(x \\geq 0\\)'],
-    answer: 0
+    options: ['\\(f^{-1}(x) = 2 - \\sqrt{x-1}\\), domain \\(x \\geq 1\\)', '\\(f^{-1}(x) = \\sqrt{x-5} + 2\\), domain \\(x \\geq 5\\)', '\\(f^{-1}(x) = 2 + \\sqrt{x+1}\\), domain \\(x \\geq 0\\)', '\\(f^{-1}(x) = 2 + \\sqrt{x-1}\\), domain \\(x \\geq 1\\)'],
+    answer: 3
   },
   {
     tier: 'red',
@@ -422,15 +422,15 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P13',
     q: "Which sequence of transformations maps \\(y = \\ln x\\) to \\(y = 3\\ln(2x - 4)\\)?",
-    options: ["Horizontal stretch SF \\(\\frac{1}{2}\\), translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\), vertical stretch SF 3","Translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\), horizontal stretch SF \\(\\frac{1}{2}\\), vertical stretch SF 3","Vertical stretch SF 3, horizontal stretch SF 2, translation \\(\\begin{pmatrix}4\\\\0\\end{pmatrix}\\)","Translation \\(\\begin{pmatrix}-2\\\\0\\end{pmatrix}\\), vertical stretch SF 3, horizontal stretch SF \\(\\frac{1}{2}\\)"],
-    answer: 0
+    options: ["Vertical stretch SF 3, horizontal stretch SF 2, translation \\(\\begin{pmatrix}4\\\\0\\end{pmatrix}\\)","Translation \\(\\begin{pmatrix}-2\\\\0\\end{pmatrix}\\), vertical stretch SF 3, horizontal stretch SF \\(\\frac{1}{2}\\)","Horizontal stretch SF \\(\\frac{1}{2}\\), translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\), vertical stretch SF 3","Translation \\(\\begin{pmatrix}2\\\\0\\end{pmatrix}\\), horizontal stretch SF \\(\\frac{1}{2}\\), vertical stretch SF 3"],
+    answer: 2
   },
   {
     tier: 'red',
     topic: 'P13',
     q: "Solve \\(|x^2 - 5| = |x - 1|\\), giving all real solutions.",
-    options: ["\\(x = 2,\\ x = -3,\\ x = \\dfrac{1\\pm\\sqrt{17}}{2}\\)","\\(x = 2,\\ x = -3\\)","\\(x = \\dfrac{1\\pm\\sqrt{17}}{2}\\)","\\(x = 2,\\ x = -2,\\ x = \\dfrac{1+\\sqrt{17}}{2}\\)"],
-    answer: 0
+    options: ["\\(x = 2,\\ x = -3\\)","\\(x = \\dfrac{1\\pm\\sqrt{17}}{2}\\)","\\(x = 2,\\ x = -2,\\ x = \\dfrac{1+\\sqrt{17}}{2}\\)","\\(x = 2,\\ x = -3,\\ x = \\dfrac{1\\pm\\sqrt{17}}{2}\\)"],
+    answer: 3
   },
   {
     tier: 'red',
@@ -447,22 +447,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P14',
     q: 'The \\(n\\)th term of an arithmetic sequence with first term \\(a\\) and common difference \\(d\\) is:',
-    options: ['\\(a + (n-1)d\\)', '\\(a + nd\\)', '\\(a \\cdot d^{n-1}\\)', '\\(nd + a\\)'],
-    answer: 0
+    options: ['\\(nd + a\\)', '\\(a + (n-1)d\\)', '\\(a + nd\\)', '\\(a \\cdot d^{n-1}\\)'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P14',
     q: 'The sum formula for a geometric series with \\(n\\) terms, first term \\(a\\) and ratio \\(r \\neq 1\\) is:',
-    options: ['\\(\\dfrac{a(r^n - 1)}{r - 1}\\)', '\\(\\dfrac{a(1+r^n)}{r+1}\\)', '\\(a(r^n - 1)\\)', '\\(\\dfrac{a}{1-r}\\)'],
-    answer: 0
+    options: ['\\(a(r^n - 1)\\)', '\\(\\dfrac{a}{1-r}\\)', '\\(\\dfrac{a(r^n - 1)}{r - 1}\\)', '\\(\\dfrac{a(1+r^n)}{r+1}\\)'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P14',
     q: 'The sum to infinity \\(S_\\infty = \\dfrac{a}{1-r}\\) is valid when:',
-    options: ['\\(|r| < 1\\)', '\\(r < 1\\)', '\\(r > 0\\)', '\\(|r| > 1\\)'],
-    answer: 0
+    options: ['\\(r < 1\\)', '\\(r > 0\\)', '\\(|r| > 1\\)', '\\(|r| < 1\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -475,22 +475,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P14',
     q: 'What is \\(\\binom{5}{2}\\)?',
-    options: ['10', '5', '20', '15'],
-    answer: 0
+    options: ['15', '10', '5', '20'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P14',
     q: 'In the binomial expansion \\((1+x)^n\\) for rational \\(n\\), the series is valid for:',
-    options: ['\\(|x| < 1\\)', '\\(x > 0\\)', 'All \\(x\\)', '\\(n > 0\\)'],
-    answer: 0
+    options: ['All \\(x\\)', '\\(n > 0\\)', '\\(|x| < 1\\)', '\\(x > 0\\)'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P14',
     q: 'An arithmetic sequence has \\(a = 3\\), \\(d = 4\\). What is \\(u_{10}\\)?',
-    options: ['39', '40', '43', '36'],
-    answer: 0
+    options: ['40', '43', '36', '39'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -503,22 +503,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P14',
     q: '\\(S_\\infty\\) of a geometric series with \\(a = 8\\), \\(r = \\frac{1}{2}\\) equals:',
-    options: ['16', '8', '12', '4'],
-    answer: 0
+    options: ['4', '16', '8', '12'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P14',
     q: '\\(\\displaystyle\\sum_{r=1}^{n} r^2 = \\)',
-    options: ['\\(\\dfrac{n(n+1)(2n+1)}{6}\\)', '\\(\\dfrac{n(n+1)}{2}\\)', '\\(\\dfrac{n^2(n+1)}{2}\\)', '\\(\\dfrac{n(2n+1)(2n-1)}{6}\\)'],
-    answer: 0
+    options: ['\\(\\dfrac{n^2(n+1)}{2}\\)', '\\(\\dfrac{n(2n+1)(2n-1)}{6}\\)', '\\(\\dfrac{n(n+1)(2n+1)}{6}\\)', '\\(\\dfrac{n(n+1)}{2}\\)'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P14',
     q: 'For the recurrence \\(u_{n+1} = 3u_n + 1\\), \\(u_1 = 2\\). Find \\(u_3\\).',
-    options: ['22', '20', '7', '16'],
-    answer: 0
+    options: ['20', '7', '16', '22'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -533,22 +533,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P14',
     q: "The first three terms of an arithmetic series are \\(x+1\\), \\(3x-1\\), \\(4x+5\\). Find \\(x\\) and the common difference.",
-    options: ["\\(x = 8\\), \\(d = 14\\)","\\(x = 3\\), \\(d = 8\\)","\\(x = -3\\), \\(d = 10\\)","\\(x = 8\\), \\(d = 23\\)"],
-    answer: 0
+    options: ["\\(x = 8\\), \\(d = 23\\)","\\(x = 8\\), \\(d = 14\\)","\\(x = 3\\), \\(d = 8\\)","\\(x = -3\\), \\(d = 10\\)"],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P14',
     q: 'A geometric series has \\(S_\\infty = 12\\) and \\(S_2 = 9\\). Find \\(a\\).',
-    options: ['\\(6\\)', '\\(8\\)', '\\(3\\)', '\\(9\\)'],
-    answer: 0
+    options: ['\\(3\\)', '\\(9\\)', '\\(6\\)', '\\(8\\)'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P14',
     q: 'Find the coefficient of \\(x^3\\) in \\((1 + 2x)^6\\).',
-    options: ['160', '120', '80', '240'],
-    answer: 0
+    options: ['120', '80', '240', '160'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -561,22 +561,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P14',
     q: 'Find the first three terms of \\((1-3x)^{-2}\\) for \\(|x| < \\frac{1}{3}\\).',
-    options: ['\\(1 + 6x + 27x^2 + \\cdots\\)', '\\(1 - 6x + 27x^2 + \\cdots\\)', '\\(1 + 3x + 9x^2 + \\cdots\\)', '\\(1 - 3x + 9x^2 + \\cdots\\)'],
-    answer: 0
+    options: ['\\(1 - 3x + 9x^2 + \\cdots\\)', '\\(1 + 6x + 27x^2 + \\cdots\\)', '\\(1 - 6x + 27x^2 + \\cdots\\)', '\\(1 + 3x + 9x^2 + \\cdots\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P14',
     q: 'An arithmetic series has 20 terms. The first term is 5 and the last is 62. Find \\(S_{20}\\).',
-    options: ['670', '640', '620', '700'],
-    answer: 0
+    options: ['620', '700', '670', '640'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P14',
     q: 'Which is the correct expansion of \\((2+x)^{-1}\\) for \\(|x| < 2\\), up to \\(x^2\\)?',
-    options: ['\\(\\frac{1}{2} - \\frac{x}{4} + \\frac{x^2}{8} - \\cdots\\)', '\\(\\frac{1}{2} + \\frac{x}{4} + \\frac{x^2}{8} + \\cdots\\)', '\\(1 - \\frac{x}{2} + \\frac{x^2}{4} - \\cdots\\)', '\\(\\frac{1}{2} - \\frac{x}{2} + \\frac{x^2}{2} - \\cdots\\)'],
-    answer: 0
+    options: ['\\(\\frac{1}{2} + \\frac{x}{4} + \\frac{x^2}{8} + \\cdots\\)', '\\(1 - \\frac{x}{2} + \\frac{x^2}{4} - \\cdots\\)', '\\(\\frac{1}{2} - \\frac{x}{2} + \\frac{x^2}{2} - \\cdots\\)', '\\(\\frac{1}{2} - \\frac{x}{4} + \\frac{x^2}{8} - \\cdots\\)'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -589,29 +589,29 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P14',
     q: 'A geometric sequence has \\(u_3 = 12\\) and \\(u_6 = 96\\). Find the common ratio.',
-    options: ['2', '3', '4', '\\(\\frac{1}{2}\\)'],
-    answer: 0
+    options: ['\\(\\frac{1}{2}\\)', '2', '3', '4'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P14',
     q: 'The recurrence \\(u_{n+1} = ku_n\\), \\(u_1 = 4\\) represents a geometric sequence. For it to converge to 0, what condition on \\(k\\) is needed?',
-    options: ['\\(|k| < 1\\)', '\\(k < 1\\)', '\\(k > 0\\)', '\\(k \\neq 0\\)'],
-    answer: 0
+    options: ['\\(k > 0\\)', '\\(k \\neq 0\\)', '\\(|k| < 1\\)', '\\(k < 1\\)'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P14',
     q: 'Find the term independent of \\(x\\) in \\(\\left(x + \\dfrac{2}{x}\\right)^6\\).',
-    options: ['240', '160', '120', '192'],
-    answer: 1
+    options: ['120', '192', '240', '160'],
+    answer: 3
   },
   {
     tier: 'amber',
     topic: 'P14',
     q: 'An arithmetic series has \\(S_n > 200\\) for the first time when \\(n = k\\). Given \\(a = 3\\), \\(d = 2\\), find \\(k\\).',
-    options: ['13', '14', '12', '15'],
-    answer: 1
+    options: ['14', '12', '15', '13'],
+    answer: 0
   },
 
   // RED (6)
@@ -619,22 +619,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P14',
     q: 'The \\(n\\)th term of a sequence is \\(u_n = \\dfrac{3n+1}{n+2}\\). Show the sequence is increasing and find \\(\\lim_{n\\to\\infty} u_n\\).',
-    options: ['The sequence is increasing and converges to 3', 'The sequence is decreasing and converges to 3', 'The sequence converges to \\(\\frac{1}{2}\\)', 'The sequence diverges'],
-    answer: 0
+    options: ['The sequence diverges', 'The sequence is increasing and converges to 3', 'The sequence is decreasing and converges to 3', 'The sequence converges to \\(\\frac{1}{2}\\)'],
+    answer: 1
   },
   {
     tier: 'red',
     topic: 'P14',
     q: 'Given \\((1+ax)^n = 1 - 12x + 60x^2 - \\cdots\\), find \\(a\\) and \\(n\\).',
-    options: ['\\(a = -2\\), \\(n = 6\\)', '\\(a = 2\\), \\(n = 6\\)', '\\(a = -3\\), \\(n = 4\\)', '\\(a = -2\\), \\(n = -6\\)'],
-    answer: 0
+    options: ['\\(a = -3\\), \\(n = 4\\)', '\\(a = -2\\), \\(n = -6\\)', '\\(a = -2\\), \\(n = 6\\)', '\\(a = 2\\), \\(n = 6\\)'],
+    answer: 2
   },
   {
     tier: 'red',
     topic: 'P14',
     q: "Evaluate \\(\\displaystyle\\sum_{r=1}^{n}(3r^2 + 2r - 1)\\) in terms of \\(n\\).",
-    options: ["\\(\\dfrac{n(2n^2+5n+1)}{2}\\)","\\(n(n+1)(n+2)\\)","\\(\\dfrac{n(n+1)(3n+1)}{2}\\)","\\(\\dfrac{n(2n^2+5n-1)}{2}\\)"],
-    answer: 0
+    options: ["\\(n(n+1)(n+2)\\)","\\(\\dfrac{n(n+1)(3n+1)}{2}\\)","\\(\\dfrac{n(2n^2+5n-1)}{2}\\)","\\(\\dfrac{n(2n^2+5n+1)}{2}\\)"],
+    answer: 3
   },
   {
     tier: 'red',
@@ -647,15 +647,15 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P14',
     q: 'Use the expansion of \\((1+x)^{1/2}\\) to estimate \\(\\sqrt{1.04}\\) to 4 decimal places.',
-    options: ['1.0198', '1.0200', '1.0196', '1.0202'],
-    answer: 0
+    options: ['1.0202', '1.0198', '1.0200', '1.0196'],
+    answer: 1
   },
   {
     tier: 'red',
     topic: 'P14',
     q: "A geometric series has first term \\(a\\) and ratio \\(r\\). Given \\(S_\\infty = 4S_3\\), find \\(r\\).",
-    options: ["\\(\\sqrt[3]{\\tfrac{3}{4}}\\)","\\(\\dfrac{1}{\\sqrt[3]{4}}\\)","\\(\\frac{3}{4}\\)","\\(\\frac{1}{2}\\)"],
-    answer: 0
+    options: ["\\(\\frac{3}{4}\\)","\\(\\frac{1}{2}\\)","\\(\\sqrt[3]{\\tfrac{3}{4}}\\)","\\(\\dfrac{1}{\\sqrt[3]{4}}\\)"],
+    answer: 2
   },
 
   // ─── P15: Radians ─────────────────────────────────────────────────────
@@ -665,8 +665,8 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P15',
     q: '\\(\\pi\\) radians is equal to:',
-    options: ['180°', '360°', '90°', '270°'],
-    answer: 0
+    options: ['360°', '90°', '270°', '180°'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -679,22 +679,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P15',
     q: 'The arc length formula (\\(\\theta\\) in radians) is:',
-    options: ['\\(l = r\\theta\\)', '\\(l = \\frac{1}{2}r^2\\theta\\)', '\\(l = 2r\\theta\\)', '\\(l = r^2\\theta\\)'],
-    answer: 0
+    options: ['\\(l = r^2\\theta\\)', '\\(l = r\\theta\\)', '\\(l = \\frac{1}{2}r^2\\theta\\)', '\\(l = 2r\\theta\\)'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P15',
     q: 'The area of a sector formula is:',
-    options: ['\\(A = \\dfrac{1}{2}r^2\\theta\\)', '\\(A = r^2\\theta\\)', '\\(A = \\dfrac{1}{2}r\\theta\\)', '\\(A = r\\theta^2\\)'],
-    answer: 0
+    options: ['\\(A = \\dfrac{1}{2}r\\theta\\)', '\\(A = r\\theta^2\\)', '\\(A = \\dfrac{1}{2}r^2\\theta\\)', '\\(A = r^2\\theta\\)'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P15',
     q: '\\(\\sin\\dfrac{\\pi}{6}\\) equals:',
-    options: ['\\(\\dfrac{1}{2}\\)', '\\(\\dfrac{\\sqrt{3}}{2}\\)', '\\(\\dfrac{\\sqrt{2}}{2}\\)', '1'],
-    answer: 0
+    options: ['\\(\\dfrac{\\sqrt{3}}{2}\\)', '\\(\\dfrac{\\sqrt{2}}{2}\\)', '1', '\\(\\dfrac{1}{2}\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -707,22 +707,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P15',
     q: 'The small angle approximation for \\(\\sin\\theta\\) is:',
-    options: ['\\(\\theta\\)', '\\(1 - \\dfrac{\\theta^2}{2}\\)', '\\(\\theta + \\dfrac{\\theta^3}{6}\\)', '\\(\\theta^2\\)'],
-    answer: 0
+    options: ['\\(\\theta^2\\)', '\\(\\theta\\)', '\\(1 - \\dfrac{\\theta^2}{2}\\)', '\\(\\theta + \\dfrac{\\theta^3}{6}\\)'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P15',
     q: 'The area of a segment is:',
-    options: ['\\(\\dfrac{1}{2}r^2(\\theta - \\sin\\theta)\\)', '\\(\\dfrac{1}{2}r^2\\theta\\)', '\\(\\dfrac{1}{2}r^2\\sin\\theta\\)', '\\(r^2(\\theta - \\sin\\theta)\\)'],
-    answer: 0
+    options: ['\\(\\dfrac{1}{2}r^2\\sin\\theta\\)', '\\(r^2(\\theta - \\sin\\theta)\\)', '\\(\\dfrac{1}{2}r^2(\\theta - \\sin\\theta)\\)', '\\(\\dfrac{1}{2}r^2\\theta\\)'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P15',
     q: '\\(\\tan\\dfrac{\\pi}{4}\\) equals:',
-    options: ['1', '\\(\\sqrt{3}\\)', '\\(\\dfrac{1}{\\sqrt{3}}\\)', '0'],
-    answer: 0
+    options: ['\\(\\sqrt{3}\\)', '\\(\\dfrac{1}{\\sqrt{3}}\\)', '0', '1'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -735,15 +735,15 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P15',
     q: 'A sector has radius 5 cm and angle \\(\\dfrac{\\pi}{4}\\) rad. Its arc length is:',
-    options: ['\\(\\dfrac{5\\pi}{4}\\) cm', '\\(\\dfrac{25\\pi}{4}\\) cm', '\\(\\dfrac{5\\pi}{8}\\) cm', '\\(5\\pi\\) cm'],
-    answer: 0
+    options: ['\\(5\\pi\\) cm', '\\(\\dfrac{5\\pi}{4}\\) cm', '\\(\\dfrac{25\\pi}{4}\\) cm', '\\(\\dfrac{5\\pi}{8}\\) cm'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P15',
     q: 'The perimeter of a sector with radius \\(r\\) and angle \\(\\theta\\) rad is:',
-    options: ['\\(r\\theta + 2r\\)', '\\(r\\theta + r\\)', '\\(2r\\theta + r\\)', '\\(r(\\theta + \\pi)\\)'],
-    answer: 0
+    options: ['\\(2r\\theta + r\\)', '\\(r(\\theta + \\pi)\\)', '\\(r\\theta + 2r\\)', '\\(r\\theta + r\\)'],
+    answer: 2
   },
 
   // AMBER (12)
@@ -751,8 +751,8 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P15',
     q: 'A sector has area 24 cm² and radius 6 cm. Find the angle in radians.',
-    options: ['\\(\\dfrac{4}{3}\\) rad', '\\(\\dfrac{2}{3}\\) rad', '2 rad', '4 rad'],
-    answer: 0
+    options: ['\\(\\dfrac{2}{3}\\) rad', '2 rad', '4 rad', '\\(\\dfrac{4}{3}\\) rad'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -765,22 +765,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P15',
     q: "Use small angle approximations to simplify \\(\\dfrac{\\sin 2\\theta}{\\tan 3\\theta}\\) for small \\(\\theta\\).",
-    options: ["\\(\\dfrac{2}{3}\\)","\\(\\dfrac{3}{2}\\)","\\(\\dfrac{2\\theta}{3}\\)","\\(\\dfrac{6\\theta^2}{1}\\)"],
-    answer: 0
+    options: ["\\(\\dfrac{6\\theta^2}{1}\\)","\\(\\dfrac{2}{3}\\)","\\(\\dfrac{3}{2}\\)","\\(\\dfrac{2\\theta}{3}\\)"],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P15',
     q: "Two radii of length 10 cm enclose a sector of area 40 cm². Find the perimeter of the sector.",
-    options: ["28 cm","18 cm","24 cm","36 cm"],
-    answer: 0
+    options: ["24 cm","36 cm","28 cm","18 cm"],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P15',
     q: 'A chord divides a circle of radius 6 cm, subtending angle \\(\\dfrac{2\\pi}{3}\\) at the centre. Find the area of the minor segment.',
-    options: ['\\(12\\pi - 9\\sqrt{3}\\) cm²', '\\(12\\pi\\) cm²', '\\(\\frac{12\\pi - 9\\sqrt{3}}{2}\\) cm²', '\\(6\\pi + 9\\sqrt{3}\\) cm²'],
-    answer: 0
+    options: ['\\(12\\pi\\) cm²', '\\(\\frac{12\\pi - 9\\sqrt{3}}{2}\\) cm²', '\\(6\\pi + 9\\sqrt{3}\\) cm²', '\\(12\\pi - 9\\sqrt{3}\\) cm²'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -793,22 +793,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P15',
     q: 'Show that for small \\(\\theta\\), \\(\\dfrac{1 - \\cos\\theta}{\\sin\\theta} \\approx \\dfrac{\\theta}{2}\\). Which approximations are used?',
-    options: ['\\(\\cos\\theta \\approx 1 - \\frac{\\theta^2}{2}\\) and \\(\\sin\\theta \\approx \\theta\\)', '\\(\\cos\\theta \\approx 1\\) and \\(\\sin\\theta \\approx \\theta\\)', '\\(\\tan\\theta \\approx \\theta\\) and \\(\\cos\\theta \\approx 1\\)', '\\(\\sin\\theta \\approx \\theta\\) and \\(\\cos\\theta \\approx 1 + \\frac{\\theta^2}{2}\\)'],
-    answer: 0
+    options: ['\\(\\sin\\theta \\approx \\theta\\) and \\(\\cos\\theta \\approx 1 + \\frac{\\theta^2}{2}\\)', '\\(\\cos\\theta \\approx 1 - \\frac{\\theta^2}{2}\\) and \\(\\sin\\theta \\approx \\theta\\)', '\\(\\cos\\theta \\approx 1\\) and \\(\\sin\\theta \\approx \\theta\\)', '\\(\\tan\\theta \\approx \\theta\\) and \\(\\cos\\theta \\approx 1\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P15',
     q: 'A sector OAB has radius 5 cm. Arc AB = 8 cm. Find the area of triangle OAB.',
-    options: ['\\(\\dfrac{25\\sin(1.6)}{2} \\approx 12.5\\) cm²', '\\(20\\) cm² (the area of the whole sector)', '\\(25\\sin(1.6) \\approx 25.0\\) cm²', '\\(10\\sin(1.6)\\) cm²'],
-    answer: 0
+    options: ['\\(25\\sin(1.6) \\approx 25.0\\) cm²', '\\(10\\sin(1.6)\\) cm²', '\\(\\dfrac{25\\sin(1.6)}{2} \\approx 12.5\\) cm²', '\\(20\\) cm² (the area of the whole sector)'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P15',
     q: 'Convert 210° to radians in exact form.',
-    options: ['\\(\\dfrac{7\\pi}{6}\\)', '\\(\\dfrac{7\\pi}{4}\\)', '\\(\\dfrac{3\\pi}{2}\\)', '\\(\\dfrac{5\\pi}{6}\\)'],
-    answer: 0
+    options: ['\\(\\dfrac{7\\pi}{4}\\)', '\\(\\dfrac{3\\pi}{2}\\)', '\\(\\dfrac{5\\pi}{6}\\)', '\\(\\dfrac{7\\pi}{6}\\)'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -821,15 +821,15 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P15',
     q: 'Given small angle approximation, simplify \\(\\dfrac{3\\theta - \\sin 3\\theta}{\\theta^3}\\).',
-    options: ['\\(\\dfrac{9}{2}\\)', '3', '\\(\\dfrac{3}{2}\\)', '9'],
-    answer: 0
+    options: ['9', '\\(\\dfrac{9}{2}\\)', '3', '\\(\\dfrac{3}{2}\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P15',
     q: 'A minor sector has area \\(A\\) and the major sector of the same circle has area \\(3A\\). If the radius is 4 cm, find the angle of the minor sector.',
-    options: ['\\(\\dfrac{\\pi}{2}\\) rad', '\\(\\dfrac{\\pi}{4}\\) rad', '\\(\\pi\\) rad', '\\(\\dfrac{3\\pi}{2}\\) rad'],
-    answer: 0
+    options: ['\\(\\pi\\) rad', '\\(\\dfrac{3\\pi}{2}\\) rad', '\\(\\dfrac{\\pi}{2}\\) rad', '\\(\\dfrac{\\pi}{4}\\) rad'],
+    answer: 2
   },
 
   // RED (6)
@@ -837,8 +837,8 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P15',
     q: 'A sector of radius \\(r\\) and angle \\(\\theta\\) has area equal to twice its arc length. Find the relationship between \\(r\\) and \\(\\theta\\).',
-    options: ['\\(r = 4\\) (independent of \\(\\theta\\))', '\\(r\\theta = 4\\)', '\\(r = 2\\theta\\)', '\\(r^2 = 4\\theta\\) (depends on \\(\\theta\\))'],
-    answer: 0
+    options: ['\\(r\\theta = 4\\)', '\\(r = 2\\theta\\)', '\\(r^2 = 4\\theta\\) (depends on \\(\\theta\\))', '\\(r = 4\\) (independent of \\(\\theta\\))'],
+    answer: 3
   },
   {
     tier: 'red',
@@ -851,22 +851,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P15',
     q: 'A circle has two chords creating sectors of angles \\(\\alpha\\) and \\(\\beta\\) (where \\(\\alpha + \\beta = 2\\pi\\)). The minor segment area is \\(S_1\\) and major segment area is \\(S_2\\). Find \\(S_1 + S_2\\).',
-    options: ['\\(\\pi r^2\\) — the full circle area', '\\(\\pi r^2 - r^2\\sin\\alpha\\) (the minor part)', '\\(r^2(\\pi - \\sin\\alpha)\\)', '\\(2\\pi r^2\\)'],
-    answer: 0
+    options: ['\\(2\\pi r^2\\)', '\\(\\pi r^2\\) — the full circle area', '\\(\\pi r^2 - r^2\\sin\\alpha\\) (the minor part)', '\\(r^2(\\pi - \\sin\\alpha)\\)'],
+    answer: 1
   },
   {
     tier: 'red',
     topic: 'P15',
     q: "Two circles of radius \\(r\\) overlap such that each passes through the other's centre. Find the area of the overlap region in terms of \\(r\\).",
-    options: ["\\(r^2\\!\\left(\\dfrac{2\\pi}{3} - \\dfrac{\\sqrt{3}}{2}\\right)\\)","\\(\\dfrac{\\pi r^2}{3}\\)","\\(r^2(\\pi - \\sqrt{3})\\)","\\(r^2\\!\\left(\\dfrac{2\\pi}{3} - \\sqrt{3}\\right)\\)"],
-    answer: 0
+    options: ["\\(r^2(\\pi - \\sqrt{3})\\)","\\(r^2\\!\\left(\\dfrac{2\\pi}{3} - \\sqrt{3}\\right)\\)","\\(r^2\\!\\left(\\dfrac{2\\pi}{3} - \\dfrac{\\sqrt{3}}{2}\\right)\\)","\\(\\dfrac{\\pi r^2}{3}\\)"],
+    answer: 2
   },
   {
     tier: 'red',
     topic: 'P15',
     q: 'A sector has perimeter \\(P\\) and area \\(A\\). Express \\(A\\) in terms of \\(P\\) and \\(r\\).',
-    options: ['\\(A = \\dfrac{r(P - 2r)}{2}\\)', '\\(A = \\dfrac{P^2}{4r} - r^2\\)', '\\(A = Pr - r^2\\)', '\\(A = \\dfrac{P-r}{2}\\)'],
-    answer: 0
+    options: ['\\(A = \\dfrac{P^2}{4r} - r^2\\)', '\\(A = Pr - r^2\\)', '\\(A = \\dfrac{P-r}{2}\\)', '\\(A = \\dfrac{r(P - 2r)}{2}\\)'],
+    answer: 3
   },
   {
     tier: 'red',
@@ -883,22 +883,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P16',
     q: '\\(\\sec x\\) is defined as:',
-    options: ['\\(\\dfrac{1}{\\cos x}\\)', '\\(\\dfrac{1}{\\sin x}\\)', '\\(\\dfrac{\\cos x}{\\sin x}\\)', '\\(\\dfrac{\\sin x}{\\cos x}\\)'],
-    answer: 0
+    options: ['\\(\\dfrac{\\sin x}{\\cos x}\\)', '\\(\\dfrac{1}{\\cos x}\\)', '\\(\\dfrac{1}{\\sin x}\\)', '\\(\\dfrac{\\cos x}{\\sin x}\\)'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P16',
     q: 'The identity \\(1 + \\tan^2 x \\equiv\\) ?',
-    options: ['\\(\\sec^2 x\\)', '\\(\\cosec^2 x\\)', '\\(\\cot^2 x\\)', '\\(1 + \\sec^2 x\\)'],
-    answer: 0
+    options: ['\\(\\cot^2 x\\)', '\\(1 + \\sec^2 x\\)', '\\(\\sec^2 x\\)', '\\(\\cosec^2 x\\)'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P16',
     q: '\\(\\sin 2A\\) equals:',
-    options: ['\\(2\\sin A\\cos A\\)', '\\(\\sin^2 A - \\cos^2 A\\)', '\\(2\\cos^2 A - 1\\)', '\\(1 - 2\\sin^2 A\\)'],
-    answer: 0
+    options: ['\\(\\sin^2 A - \\cos^2 A\\)', '\\(2\\cos^2 A - 1\\)', '\\(1 - 2\\sin^2 A\\)', '\\(2\\sin A\\cos A\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -911,22 +911,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P16',
     q: 'The range of \\(\\arcsin x\\) is:',
-    options: ['\\(-\\dfrac{\\pi}{2} \\leq y \\leq \\dfrac{\\pi}{2}\\)', '\\(0 \\leq y \\leq \\pi\\)', 'All reals', '\\(-\\pi \\leq y \\leq \\pi\\)'],
-    answer: 0
+    options: ['\\(-\\pi \\leq y \\leq \\pi\\)', '\\(-\\dfrac{\\pi}{2} \\leq y \\leq \\dfrac{\\pi}{2}\\)', '\\(0 \\leq y \\leq \\pi\\)', 'All reals'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P16',
     q: 'The domain of \\(\\arccos x\\) is:',
-    options: ['\\(-1 \\leq x \\leq 1\\)', '\\(0 \\leq x \\leq \\pi\\)', 'All reals', '\\(x > 0\\)'],
-    answer: 0
+    options: ['All reals', '\\(x > 0\\)', '\\(-1 \\leq x \\leq 1\\)', '\\(0 \\leq x \\leq \\pi\\)'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P16',
     q: '\\(\\sin(A + B)\\) equals:',
-    options: ['\\(\\sin A\\cos B + \\cos A\\sin B\\)', '\\(\\sin A\\cos B - \\cos A\\sin B\\)', '\\(\\cos A\\cos B - \\sin A\\sin B\\)', '\\(\\sin A\\sin B - \\cos A\\cos B\\)'],
-    answer: 0
+    options: ['\\(\\sin A\\cos B - \\cos A\\sin B\\)', '\\(\\cos A\\cos B - \\sin A\\sin B\\)', '\\(\\sin A\\sin B - \\cos A\\cos B\\)', '\\(\\sin A\\cos B + \\cos A\\sin B\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -939,22 +939,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'green',
     topic: 'P16',
     q: 'In the R-form \\(a\\sin x + b\\cos x = R\\sin(x + \\alpha)\\), \\(R\\) equals:',
-    options: ['\\(\\sqrt{a^2 + b^2}\\)', '\\(a + b\\)', '\\(\\sqrt{a^2 - b^2}\\)', '\\(a^2 + b^2\\)'],
-    answer: 0
+    options: ['\\(a^2 + b^2\\)', '\\(\\sqrt{a^2 + b^2}\\)', '\\(a + b\\)', '\\(\\sqrt{a^2 - b^2}\\)'],
+    answer: 1
   },
   {
     tier: 'green',
     topic: 'P16',
     q: '\\(\\cot x =\\)',
-    options: ['\\(\\dfrac{\\cos x}{\\sin x}\\)', '\\(\\dfrac{\\sin x}{\\cos x}\\)', '\\(\\dfrac{1}{\\cos x}\\)', '\\(\\dfrac{1}{\\sin x}\\)'],
-    answer: 0
+    options: ['\\(\\dfrac{1}{\\cos x}\\)', '\\(\\dfrac{1}{\\sin x}\\)', '\\(\\dfrac{\\cos x}{\\sin x}\\)', '\\(\\dfrac{\\sin x}{\\cos x}\\)'],
+    answer: 2
   },
   {
     tier: 'green',
     topic: 'P16',
     q: '\\(\\cos(A - B)\\) equals:',
-    options: ['\\(\\cos A\\cos B + \\sin A\\sin B\\)', '\\(\\cos A\\cos B - \\sin A\\sin B\\)', '\\(\\sin A\\cos B - \\cos A\\sin B\\)', '\\(\\sin A\\sin B - \\cos A\\cos B\\)'],
-    answer: 0
+    options: ['\\(\\cos A\\cos B - \\sin A\\sin B\\)', '\\(\\sin A\\cos B - \\cos A\\sin B\\)', '\\(\\sin A\\sin B - \\cos A\\cos B\\)', '\\(\\cos A\\cos B + \\sin A\\sin B\\)'],
+    answer: 3
   },
   {
     tier: 'green',
@@ -969,22 +969,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P16',
     q: 'Simplify \\(\\dfrac{\\sin 2x}{1 + \\cos 2x}\\).',
-    options: ['\\(\\tan x\\)', '\\(\\cot x\\)', '\\(\\sin x\\)', '\\(2\\sin x\\)'],
-    answer: 0
+    options: ['\\(2\\sin x\\)', '\\(\\tan x\\)', '\\(\\cot x\\)', '\\(\\sin x\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P16',
     q: 'Write \\(5\\sin x + 12\\cos x\\) in the form \\(R\\sin(x + \\alpha)\\).',
-    options: ['\\(13\\sin(x + 1.176)\\)', '\\(13\\sin(x + 0.395)\\)', '\\(17\\sin(x + 1.176)\\)', '\\(13\\cos(x + 1.176)\\)'],
-    answer: 0
+    options: ['\\(17\\sin(x + 1.176)\\)', '\\(13\\cos(x + 1.176)\\)', '\\(13\\sin(x + 1.176)\\)', '\\(13\\sin(x + 0.395)\\)'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P16',
     q: "Solve \\(2\\cos^2 x - \\cos x - 1 = 0\\) for \\(0 \\leq x \\leq 2\\pi\\).",
-    options: ["\\(x = 0, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, 2\\pi\\)","\\(x = 0, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}\\)","\\(x = \\dfrac{\\pi}{3}, \\pi, \\dfrac{5\\pi}{3}\\)","\\(x = \\dfrac{\\pi}{3}, \\dfrac{5\\pi}{3}\\)"],
-    answer: 0
+    options: ["\\(x = 0, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}\\)","\\(x = \\dfrac{\\pi}{3}, \\pi, \\dfrac{5\\pi}{3}\\)","\\(x = \\dfrac{\\pi}{3}, \\dfrac{5\\pi}{3}\\)","\\(x = 0, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, 2\\pi\\)"],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -997,22 +997,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P16',
     q: 'Find the exact value of \\(\\cos 15°\\).',
-    options: ['\\(\\dfrac{\\sqrt{6}+\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{6}-\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{3}+1}{4}\\)', '\\(\\dfrac{\\sqrt{3}-1}{2\\sqrt{2}}\\)'],
-    answer: 0
+    options: ['\\(\\dfrac{\\sqrt{3}-1}{2\\sqrt{2}}\\)', '\\(\\dfrac{\\sqrt{6}+\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{6}-\\sqrt{2}}{4}\\)', '\\(\\dfrac{\\sqrt{3}+1}{4}\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P16',
     q: 'The maximum value of \\(3\\sin x - 4\\cos x\\) is:',
-    options: ['5', '7', '\\(\\sqrt{7}\\)', '1'],
-    answer: 0
+    options: ['\\(\\sqrt{7}\\)', '1', '5', '7'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P16',
     q: 'Solve \\(\\sec^2 x = 4\\) for \\(0 \\leq x \\leq 2\\pi\\).',
-    options: ['\\(x = \\dfrac{\\pi}{3}, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, \\dfrac{5\\pi}{3}\\)', '\\(x = \\dfrac{\\pi}{4}, \\dfrac{3\\pi}{4}, \\dfrac{5\\pi}{4}, \\dfrac{7\\pi}{4}\\)', '\\(x = \\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}, \\dfrac{7\\pi}{6}, \\dfrac{11\\pi}{6}\\)', '\\(x = \\dfrac{\\pi}{3}, \\pi, \\dfrac{5\\pi}{3}\\)'],
-    answer: 0
+    options: ['\\(x = \\dfrac{\\pi}{4}, \\dfrac{3\\pi}{4}, \\dfrac{5\\pi}{4}, \\dfrac{7\\pi}{4}\\)', '\\(x = \\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}, \\dfrac{7\\pi}{6}, \\dfrac{11\\pi}{6}\\)', '\\(x = \\dfrac{\\pi}{3}, \\pi, \\dfrac{5\\pi}{3}\\)', '\\(x = \\dfrac{\\pi}{3}, \\dfrac{2\\pi}{3}, \\dfrac{4\\pi}{3}, \\dfrac{5\\pi}{3}\\)'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -1025,22 +1025,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'amber',
     topic: 'P16',
     q: 'Solve \\(\\cosec x = 2\\) for \\(0 < x < 2\\pi\\).',
-    options: ['\\(x = \\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}\\)', '\\(x = \\dfrac{\\pi}{3}, \\dfrac{2\\pi}{3}\\)', '\\(x = \\dfrac{\\pi}{4}, \\dfrac{3\\pi}{4}\\)', '\\(x = \\dfrac{\\pi}{2}\\) only'],
-    answer: 0
+    options: ['\\(x = \\dfrac{\\pi}{2}\\) only', '\\(x = \\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}\\)', '\\(x = \\dfrac{\\pi}{3}, \\dfrac{2\\pi}{3}\\)', '\\(x = \\dfrac{\\pi}{4}, \\dfrac{3\\pi}{4}\\)'],
+    answer: 1
   },
   {
     tier: 'amber',
     topic: 'P16',
     q: 'Using double angle formulae, solve \\(\\cos 2x = \\sin x\\) for \\(0 \\leq x \\leq 2\\pi\\).',
-    options: ['\\(x = \\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}, \\dfrac{3\\pi}{2}\\)', '\\(x = \\dfrac{\\pi}{3}, \\pi, \\dfrac{5\\pi}{3}\\)', '\\(x = \\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}\\)', '\\(x = 0, \\dfrac{\\pi}{2}, \\pi\\)'],
-    answer: 0
+    options: ['\\(x = \\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}\\)', '\\(x = 0, \\dfrac{\\pi}{2}, \\pi\\)', '\\(x = \\dfrac{\\pi}{6}, \\dfrac{5\\pi}{6}, \\dfrac{3\\pi}{2}\\)', '\\(x = \\dfrac{\\pi}{3}, \\pi, \\dfrac{5\\pi}{3}\\)'],
+    answer: 2
   },
   {
     tier: 'amber',
     topic: 'P16',
     q: '\\(\\tan(A+B) = \\dfrac{\\tan A + \\tan B}{?}\\)',
-    options: ['\\(1 - \\tan A\\tan B\\)', '\\(1 + \\tan A\\tan B\\)', '\\(\\tan A\\tan B\\)', '\\(\\tan A - \\tan B\\)'],
-    answer: 0
+    options: ['\\(1 + \\tan A\\tan B\\)', '\\(\\tan A\\tan B\\)', '\\(\\tan A - \\tan B\\)', '\\(1 - \\tan A\\tan B\\)'],
+    answer: 3
   },
   {
     tier: 'amber',
@@ -1055,22 +1055,22 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P16',
     q: "Solve \\(5\\sin x + 12\\cos x = 6\\) for \\(0 \\leq x \\leq 2\\pi\\), giving answers in radians to 3 d.p.",
-    options: ["\\(x = 1.486\\) and \\(x = 5.587\\)","\\(x = 0.487\\) and \\(x = 3.629\\)","\\(x = 1.486\\) only","\\(x = 0.480\\) and \\(x = 2.662\\)"],
-    answer: 0
+    options: ["\\(x = 0.480\\) and \\(x = 2.662\\)","\\(x = 1.486\\) and \\(x = 5.587\\)","\\(x = 0.487\\) and \\(x = 3.629\\)","\\(x = 1.486\\) only"],
+    answer: 1
   },
   {
     tier: 'red',
     topic: 'P16',
     q: 'Prove: \\(\\dfrac{\\tan x - \\sin x}{\\tan x + \\sin x} \\equiv \\dfrac{1 - \\cos x}{1 + \\cos x}\\).',
-    options: ['Factor out \\(\\sin x\\) from numerator and denominator, then divide by \\(\\cos x\\)', 'Use double angle for \\(\\sin x\\)', 'Use \\(\\tan^2 x = \\sec^2 x - 1\\)', 'Substitute \\(x = \\pi/4\\) and \\(x = \\pi/3\\) to verify it holds for both values of x'],
-    answer: 0
+    options: ['Use \\(\\tan^2 x = \\sec^2 x - 1\\)', 'Substitute \\(x = \\pi/4\\) and \\(x = \\pi/3\\) to verify it holds for both values of x', 'Factor out \\(\\sin x\\) from numerator and denominator, then divide by \\(\\cos x\\)', 'Use double angle for \\(\\sin x\\)'],
+    answer: 2
   },
   {
     tier: 'red',
     topic: 'P16',
     q: "Find all solutions to \\(3\\cot^2 x - \\cot x - 2 = 0\\) in \\(0 < x < \\pi\\).",
-    options: ["\\(x = \\frac{\\pi}{4}\\) and \\(x \\approx 2.159\\)","\\(x = \\frac{\\pi}{4}\\) only","\\(x = \\frac{\\pi}{4}\\) and \\(x \\approx 0.983\\)","\\(x = \\frac{\\pi}{4}, \\frac{3\\pi}{4}\\)"],
-    answer: 0
+    options: ["\\(x = \\frac{\\pi}{4}\\) only","\\(x = \\frac{\\pi}{4}\\) and \\(x \\approx 0.983\\)","\\(x = \\frac{\\pi}{4}, \\frac{3\\pi}{4}\\)","\\(x = \\frac{\\pi}{4}\\) and \\(x \\approx 2.159\\)"],
+    answer: 3
   },
   {
     tier: 'red',
@@ -1083,15 +1083,15 @@ const EDEXCEL_MCQ_P12_P16 = [
     tier: 'red',
     topic: 'P16',
     q: 'Prove: \\(\\dfrac{1 - \\cos 2x}{\\sin 2x} \\equiv \\tan x\\).',
-    options: ['Use \\(1-\\cos 2x = 2\\sin^2 x\\) and \\(\\sin 2x = 2\\sin x\\cos x\\), then simplify', 'Use \\(\\tan 2x\\) formula', 'Expand \\(\\cos 2x = \\cos^2 x - \\sin^2 x\\) only, then divide by \\(\\cos^2 x\\) throughout', 'Apply the addition formula for \\(\\sin\\)'],
-    answer: 0
+    options: ['Apply the addition formula for \\(\\sin\\)', 'Use \\(1-\\cos 2x = 2\\sin^2 x\\) and \\(\\sin 2x = 2\\sin x\\cos x\\), then simplify', 'Use \\(\\tan 2x\\) formula', 'Expand \\(\\cos 2x = \\cos^2 x - \\sin^2 x\\) only, then divide by \\(\\cos^2 x\\) throughout'],
+    answer: 1
   },
   {
     tier: 'red',
     topic: 'P16',
     q: "The function \\(f(x) = a\\sin x + b\\cos x\\), where \\(a > 0\\), has maximum value 10 and \\(f(0) = 6\\). Find \\(a\\).",
-    options: ["8","6","10","\\(2\\sqrt{19}\\)"],
-    answer: 0
+    options: ["10","\\(2\\sqrt{19}\\)","8","6"],
+    answer: 2
   }
 
 ];
