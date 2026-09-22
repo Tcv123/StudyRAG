@@ -4,6 +4,7 @@
 
 # SQL run by hand in the Supabase editor, not by the app.
 /db
+/migrations
 
 # Claude Code settings, hooks and worktrees.
 /.claude
